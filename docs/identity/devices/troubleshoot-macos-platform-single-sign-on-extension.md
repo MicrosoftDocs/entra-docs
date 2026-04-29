@@ -288,24 +288,25 @@ cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercor
 
 ### Unable to sign-in – Single sign-on application is missing
 
-
+![Unable to Sign in](./media/macos-psso/psso-simplifiedsetup-unable-to-sign-in.png)
 
 **Issue summary: Company Portal/SSO extension not available during Setup Assistant**
 In the case where configuration profiles and the Company Portal app (which provides the SSO extension) arrive late, Setup Assistant may show a missing SSO app message even though the PSSO profile has already been delivered.
+
 - The management profile/configuration can be present while Company Portal is still downloading or installing since enrollment actions occur in separate steps rather than as a single transaction.
-- Retrying using “Try again” button succeed once Company Portal arrives.
+- Retrying using "Try again" button succeed once Company Portal arrives.
 
 ### Re-enroll device with Platform SSO with EnableRegistrationDuringSetup on macOS
 
 In the case of misconfiguration, you will need to re-enroll macOS devices. 
 
-To disable PSSO during setup, remove the existing SSO extension profile (with EnableRegistrationDuringSetup = true) and deploy a new profile with EnableRegistrationDuringSetup = false, and assign a new enrollment file with Setup Assistant with modern authentication method before restarting Setup Assistant.
+To disable PSSO during setup, 
+1. In Intune, unassign the device from the SSO extension profile that has `EnableRegistrationDuringSetup` enabled.
+2. Assign the device to a new SSO extension profile that sets `EnableRegistrationDuringSetup` to disabled (false).
+3. Wipe the device to restart the enrollment process again.
 
-1. In Intune, unassign the device from the SSO extension profile that has EnableRegistrationDuringSetup enabled.
-2. Assign the device to a new SSO extension profile that sets EnableRegistrationDuringSetup to disabled (false).
-3. Wipe the device to restart the enrollment process again.
-Note: Wiping the device is required to restart the enrollment process and apply the updated enrollment profiles.
-
+> [!NOTE]
+> Wiping the device is required to restart the enrollment process and apply the updated enrollment profiles.
 
 ## See also
 

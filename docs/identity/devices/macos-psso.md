@@ -126,6 +126,16 @@ You can learn more about using macOS Platform SSO to meet NIST requirements in t
 * [NIST authenticator types and aligned Microsoft Entra methods](../../standards/nist-authenticator-types.md).
 * [NIST authenticator assurance level 3 by using Microsoft Entra ID](../../standards/nist-authenticator-assurance-level-3.md)
 
+## Platform Single Sign-On (PSSO) with EnableRegistrationDuringSetup 
+
+Platform Single Sign-On (PSSO) with EnableRegistrationDuringSetup enables macOS devices to complete PSSO registration automatically during Automated Device Enrollment (ADE).
+
+To enable this capability, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on how the device is configured, the end-user can set up their device with PSSO via secure enclave, smart card, or password based authentication method.
+
+When combined with Setup Assistant with modern authentication and the Company Portal SSO extension, Intune can complete identity bootstrap and device registration early in the enrollment flow - reducing prompts and ensuring the device is ready for use as soon as it reaches the desktop.
+
+For step-by-step instructions to set up PSSO with EnableRegistrationDuringSetup in Intune, please check this doc: [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/configure-platform-sso-during-enrollment.md)
+
 ## Troubleshooting 
 
 If you experience issues when implementing macOS Platform SSO, refer to our documentation on [macOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
