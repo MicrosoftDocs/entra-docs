@@ -32,7 +32,7 @@ In this tutorial, you:
 ## Prerequisites
 
 - An iOS (Swift) app that uses MSAL native authentication. If you don't have one, complete [Tutorial: Prepare your iOS/macOS mobile app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
-- Your app is configured with an `MSALNativeAuthPublicClientApplicationConfig` instance.
+- Your app is initialized with an `MSALNativeAuthPublicClientApplication` instance.
 
 ## Understand header naming rules
 
