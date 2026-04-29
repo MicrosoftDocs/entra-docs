@@ -27,6 +27,7 @@ This article describes the steps you need to do in both Autodesk SSO and Microso
 > * Keep user attributes synchronized between Microsoft Entra ID and Autodesk SSO.
 > * Provision groups and group memberships in Autodesk SSO.
 > * [Single sign-on](autodesk-sso-tutorial.md) to Autodesk SSO (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

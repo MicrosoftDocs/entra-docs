@@ -27,6 +27,7 @@ This article describes the steps you need to perform in both AWS IAM Identity Ce
 > * Keep user attributes synchronized between Microsoft Entra ID and AWS IAM Identity Center
 > * Provision groups and group memberships in AWS IAM Identity Center
 > * [aws singlesign-on document](aws-single-sign-on-tutorial.md) to AWS IAM Identity Center
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
