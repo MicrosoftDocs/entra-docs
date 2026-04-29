@@ -21,6 +21,20 @@ This article provides information about the latest releases and change announcem
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+## April 2026
+
+### General Availability - Microsoft Entra Agent ID platform
+
+**Type:** General Availability  
+**Service category:** Other  
+**Product capability:** Identity Security & Protection  
+
+The Microsoft Entra Agent ID platform is now generally available. The Agent ID platform provides an identity and authorization framework built specifically for AI agents operating in enterprise environments. It enables developers to create and manage agent identities with enterprise-grade authentication, authorization, and governance, using standard protocols such as OAuth 2.0, MCP, and A2A.
+
+For more information, see: [What is Microsoft Entra Agent ID?](../agent-id/what-is-microsoft-entra-agent-id.md).
+
+---
+
 ## March 2026
 
 ### Plan for change – Agent Registry consolidation into Microsoft Agent 365
