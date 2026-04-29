@@ -11,7 +11,7 @@ ms.custom: sfi-image-nochange
 ---
 # Configure Progress ShareFile for Single sign-on with Microsoft Entra ID
 
-In this article,  you learn how to integrate Progress ShareFile with Microsoft Entra ID. When you integrate Progress ShareFile with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Progress ShareFile with Microsoft Entra ID. When you integrate Progress ShareFile with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Progress ShareFile.
 * Enable your users to be automatically signed-in to Progress ShareFile with their Microsoft Entra accounts.
@@ -28,7 +28,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Scenario description
 
-In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
+In this article, you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Progress ShareFile supports **SP** initiated SSO.
 
@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
-	![Screenshot shows the Certificate download link](common/certificatebase64.png "Certificate")
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
 1. On the **Set up Progress ShareFile** section, copy the appropriate URL(s) as per your requirement.
 
@@ -164,7 +164,7 @@ Follow these steps to enable Microsoft Entra SSO.
 4. Select **Add User**.
   
 	>[!NOTE]
-	>The Microsoft Entra account holder will receive an email and follow a link to confirm their account before it becomes active.You can use any other Progress ShareFile user account creation tools or APIs provided by Progress ShareFile to provision Microsoft Entra user accounts.
+	>The Microsoft Entra account holder will receive an email and follow a link to confirm their account before it becomes active. You can use any other Progress ShareFile user account creation tools or APIs provided by Progress ShareFile to provision Microsoft Entra user accounts.
 
 ## Test SSO 
 
@@ -178,4 +178,4 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ## Related content
 
-Once you configure Progress ShareFile you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+Once you configure Progress ShareFile, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
