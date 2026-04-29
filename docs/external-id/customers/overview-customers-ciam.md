@@ -64,7 +64,7 @@ External ID is intended for businesses that want to make applications available 
 
 - **Consent to your terms of use and privacy policies.** You can prompt users to accept your terms and conditions during sign-up. By using customer user attributes, you can add checkboxes to your sign-up form and include links to your terms of use and privacy policies.
 
-Learn more about [adding sign-in and sign-up to your app](concept-planning-your-solution.md) and [customizing the sign-in look and feel](concept-branding-customers.md).
+Learn more about [planning your integration](concept-planning-your-solution.md), [choosing an authentication approach](concept-choose-authentication-approach.md), and [customizing the sign-in look and feel](concept-branding-customers.md).
 
 ## Design user flows for self-service sign-up
 
