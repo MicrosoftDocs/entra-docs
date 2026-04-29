@@ -49,20 +49,18 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 **Developer-first platform for AI agent integration.** The Microsoft Agent Identity Platform provides comprehensive developer tools, SDKs, and protocols for integrating AI agents with Microsoft Entra ID, featuring specialized OAuth flows, token management, and agent registry capabilities.
 
 - [What is Microsoft agent identity platform](../agent-id/what-is-agent-id-platform.md) (New)
-- [What is Agent Registry?](../agent-id/what-is-agent-registry.md) (New)
 - [Key concepts](../agent-id/key-concepts.md) (New)
 - [Agent OAuth protocols](../agent-id/agent-oauth-protocols.md) (New)
 - [Agent autonomous app OAuth flow](../agent-id/agent-autonomous-app-oauth-flow.md) (New)
 - [Agent on-behalf-of OAuth flow](../agent-id/agent-on-behalf-of-oauth-flow.md) (New)
 - [Agent user OAuth flow](../agent-id/agent-user-oauth-flow.md) (New)
 - [Agent blueprint](../agent-id/agent-blueprint.md) (New)
-- [Agent users](../agent-id/agent-users.md) (New)
+- [Agent's user account](../agent-id/agent-users.md) (New)
 - [Agent identities](../agent-id/agent-identities.md) (New)
 - [Agent service principals](../agent-id/agent-service-principals.md) (New)
 - [Agent token claims](../agent-id/agent-token-claims.md) (New)
 - [Agent metadata and discoverability](../agent-id/agent-metadata-discoverability.md) (New)
 - [Agent owners, sponsors, and managers](../agent-id/agent-owners-sponsors-managers.md) (New)
-- [Agent registry collections](../agent-id/agent-registry-collections.md) (New)
 - [Agent lists](../agent-id/agent-lists.md) (New)
 - [Create blueprint](../agent-id/create-blueprint.md) (New)
 - [Create and delete agent identities](../agent-id/create-delete-agent-identities.md) (New)
@@ -75,8 +73,6 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Call API: Custom](../agent-id/call-api-custom.md) (New)
 - [Call API: Microsoft Graph](../agent-id/call-api-microsoft-graph.md) (New)
 - [Microsoft Entra SDK for agent identities](../agent-id/microsoft-entra-sdk-for-agent-identities.md) (New)
-- [Publish agents to registry](../agent-id/publish-agents-to-registry.md) (New)
-- [Registry agent-to-agent protocol](../agent-id/registry-agent-to-agent-protocol.md) (New)
 
 ## Security Copilot + Microsoft Entra
 
