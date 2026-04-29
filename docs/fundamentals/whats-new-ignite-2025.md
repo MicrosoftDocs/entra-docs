@@ -77,7 +77,6 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Microsoft Entra SDK for agent identities](../agent-id/microsoft-entra-sdk-for-agent-identities.md) (New)
 - [Publish agents to registry](../agent-id/publish-agents-to-registry.md) (New)
 - [Registry agent-to-agent protocol](../agent-id/registry-agent-to-agent-protocol.md) (New)
-- [Manage agent registry collections](../agent-id/agent-registry-manage-collections.md) (New)
 
 ## Security Copilot + Microsoft Entra
 
