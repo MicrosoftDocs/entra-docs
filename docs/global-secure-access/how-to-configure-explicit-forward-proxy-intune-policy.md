@@ -8,7 +8,9 @@ ms.author: alexpav
 author: idmdev
 ---
 
-# Configure Microsoft Edge with Global Secure Access Explicit Forward Proxy (preview) using Intune Mobile Application Management Policy
+# Configure Microsoft Edge with Global Secure Access Explicit Forward Proxy (preview) using Intune Mobile Application Management policy
+
+You can automatically deliver the proxy settings and the automatic Certificate Authority trust settings in Microsoft Edge using the Intune app management policies.
 
 ## Prerequisites
 
@@ -35,89 +37,89 @@ author: idmdev
 
 1. Select **+ Create** > **Managed Apps**:
 
-    1. **Name** = `GSA Explicit Forward Proxy Settings for Edge` (feel free to choose your own name).
-    1. **Target policy to**: Selected Apps.
+   1. **Name** = `GSA Explicit Forward Proxy Settings for Edge` (feel free to choose your own name).
+   1. **Target policy to**: Selected Apps.
 
 1. Select **+ Select public apps**:
 
-    1. Search for `Edge`.
-    1. Select **Microsoft Edge** / **Windows**.
-    1. Select **Select**.
+   1. Search for `Edge`.
+   1. Select **Microsoft Edge** / **Windows**.
+   1. Select **Select**.
 
-    ![Screenshot showing the public apps selection with Microsoft Edge selected.](media/how-to-configure-microsoft-edge-mam-policy/select-target-apps.png)
+   ![Screenshot showing the public apps selection with Microsoft Edge selected.](media/how-to-configure-microsoft-edge-mam-policy/select-target-apps.png)
 
 1. Select **Next** to advance to the Settings Catalog. Then, select **+ Add setting**:
 
-    1. Type `proxy` in the **Search for a setting** bar and select **Search**.
-    1. Select **Microsoft Edge** > **Proxy server** in the results.
-    1. Check the **Proxy settings** checkbox.
+   1. Type `proxy` in the **Search for a setting** bar and select **Search**.
+   1. Select **Microsoft Edge** > **Proxy server** in the results.
+   1. Check the **Proxy settings** checkbox.
 
-    ![Screenshot showing the proxy settings search results in the Settings Catalog.](media/how-to-configure-microsoft-edge-mam-policy/proxy-settings.png)
+   ![Screenshot showing the proxy settings search results in the Settings Catalog.](media/how-to-configure-microsoft-edge-mam-policy/proxy-settings.png)
 
-    1. Select the search box again, type `TLS`, and select **Search**.
-    1. Select **Microsoft Edge Certificate Management settings** in the search results.
-    1. Check the **TLS server certificates that should be trusted by Microsoft Edge** checkbox.
+   1. Select the search box again, type `TLS`, and select **Search**.
+   1. Select **Microsoft Edge Certificate Management settings** in the search results.
+   1. Check the **TLS server certificates that should be trusted by Microsoft Edge** checkbox.
 
-    ![Screenshot showing the TLS certificate settings in the Settings Catalog.](media/how-to-configure-microsoft-edge-mam-policy/tls-certificate-settings.png)
+  ![Screenshot showing the TLS certificate settings in the Settings Catalog.](media/how-to-configure-microsoft-edge-mam-policy/tls-certificate-settings.png)
 
-    1. Close the **Settings** picker (X on the top right) to return to the policy configuration page.
+   1. Close the **Settings** picker (X on the top right) to return to the policy configuration page.
 
 1. Under the **Proxy Server** section, configure proxy settings as follows:
 
-    ```json
-    {"ProxyMode":"pac_script","ProxyPacMandatory":false,"ProxyPacUrl":"URL_you_copied_from_the_Entra_portal"}
-    ```
+   ```json
+   {"ProxyMode":"pac_script","ProxyPacMandatory":false,"ProxyPacUrl":"URL_you_copied_from_the_Entra_portal"}
+   ```
 
 1. Convert the TLS inspection root public key (certificate) to a contiguous plain-text string. You can do this either using PowerShell, or with Linux/macOS terminal:
 
-    **Using PowerShell:**
+**Using PowerShell:**
 
-    1. Change directory to where the `.pem` / `.cer` plaintext key is stored.
+   1. Change directory to where the `.pem` / `.cer` plaintext key is stored.
 
-    1. Confirm that the key is plaintext by running the following command:
+   1. Confirm that the key is plaintext by running the following command:
 
-        ```powershell
-        if ((Get-Content cert.pem -First 1) -match '-----BEGIN') { 'PEM (plain text)' } else { 'DER (binary)' }
-        ```
+      ```powershell
+      if ((Get-Content cert.pem -First 1) -match '-----BEGIN') { 'PEM (plain text)' } else { 'DER (binary)' }
+      ```
 
-        If the output is `PEM (plain text)`, you can continue. Otherwise, convert the binary encoded file to PEM.
+      If the output is `PEM (plain text)`, you can continue. Otherwise, convert the binary encoded file to PEM.
 
-    1. Convert the PEM certificate string to extract only the key, without the line breaks:
+   1. Convert the PEM certificate string to extract only the key, without the line breaks:
 
-        ```powershell
-        (Get-Content cert.pem | Where-Object { $_ -notmatch '-----' }) -join ''
-        ```
+      ```powershell
+      (Get-Content cert.pem | Where-Object { $_ -notmatch '-----' }) -join ''
+      ```
 
-    1. Copy the resulting string from the console output and save it for the next step.
+   1. Copy the resulting string from the console output and save it for the next step.
 
-    **Using Linux/macOS terminal:**
+      **Using Linux/macOS terminal:**
 
-    1. Change directory to where the `.pem` / `.cer` plaintext key is stored.
+   1. Change directory to where the `.pem` / `.cer` plaintext key is stored.
 
-    1. Confirm that the key is plaintext by running the following command:
+   1. Confirm that the key is plaintext by running the following command:
 
-        ```bash
-        head -c 15 cert.pem | grep -q 'BEGIN' && echo 'PEM (plain text)' || echo 'DER (binary)'
-        ```
+      ```bash
+      head -c 15 cert.pem | grep -q 'BEGIN' && echo 'PEM (plain text)' || echo 'DER (binary)'
+      ```
 
-        If the output is `PEM (plain text)`, you can continue. Otherwise, convert the binary encoded file to PEM.
+      If the output is `PEM (plain text)`, you can continue. Otherwise, convert the binary encoded file to PEM.
 
-    1. Extract the key from the file, omitting line breaks:
+   1. Extract the key from the file, omitting line breaks:
 
-        ```bash
-        awk '!/-----/{printf "%s",$0}' cert.pem | tr -d '\r'
-        ```
+      ```bash
+      awk '!/-----/{printf "%s",$0}' cert.pem | tr -d '\r'
+      ```
 
-    1. Copy the resulting string from the console output and save it for the next step. Don't copy the trailing `%` if it shows up in the terminal output.
+   1. Copy the resulting string from the console output and save it for the next step. Don't copy the trailing `%` if it shows up in the terminal output.
 
 1. Paste the output of the converted, plain-text string without line breaks in the text field of the **Certificate management settings** section of the policy.
 
-    > [!NOTE]
-    > Don't use the 'Import' button in this section. Import is intended for bulk configuring settings, where you have multiple certificates that need to be trusted. The Import function of the Intune portal expects a CSV file with a list of plain text contiguous keys, not the PEM/CER file.
+   > [!NOTE]
+   > Don't use the 'Import' button in this section. Import is intended for bulk configuring settings, where you have multiple certificates that need to be trusted. The Import function of the Intune portal expects a CSV file with a list of plain text contiguous keys, not the PEM/CER file.
 
 1. Your resulting configuration should look similar to the screenshot. Select **Next**.
 
-    ![Screenshot showing the completed proxy and certificate configuration.](media/how-to-configure-microsoft-edge-mam-policy/completed-settings-configuration.png)
+   ![Screenshot showing the completed proxy and certificate configuration.](media/how-to-configure-microsoft-edge-mam-policy/completed-settings-configuration.png)
 
 1. Select **Next** again on the **(3) Settings** page.
 
@@ -125,7 +127,7 @@ author: idmdev
 
 1. Your **Review + create** screen should look similar to the screenshot. Select **Create**.
 
-    ![Screenshot showing the Review + create screen with the configured policy.](media/how-to-configure-microsoft-edge-mam-policy/review-create.png)
+   ![Screenshot showing the Review + create screen with the configured policy.](media/how-to-configure-microsoft-edge-mam-policy/review-create.png)
 
 ## Validation
 
@@ -133,7 +135,7 @@ author: idmdev
 
 1. Once signed in, navigate to `edge://policy`. You should see the configured policy settings related to GSA EFP:
 
-    ![Screenshot showing the edge://policy page with the configured GSA EFP policy settings.](media/how-to-configure-microsoft-edge-mam-policy/edge-policy-validation.png)
+   ![Screenshot showing the edge://policy page with the configured GSA EFP policy settings.](media/how-to-configure-microsoft-edge-mam-policy/edge-policy-validation.png)
 
 ## Limitations
 

@@ -8,7 +8,7 @@ author: idmdev
 ms.reviewer: 
 ---
 
-# Explicit Forward Proxy (preview) Overview
+# Explicit Forward Proxy (preview) overview
 
 Explicit Forward Proxy (EFP) is one of the traffic acquisition mechanisms that's useful in scenarios where installation of the Global Secure Access (GSA) client is difficult or not possible. EFP is an effective mechanism to protect internet traffic when users use browsers to access resources from:
 * multi-session Virtual Desktop Infrastructure (VDI)

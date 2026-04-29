@@ -10,8 +10,6 @@ ms.reviewer:
 
 # How to Configure Explicit Forward Proxy (preview)
 
-## Overview
-
 Explicit Forward Proxy (EFP) allows you to use Secure Web and AI Gateway capabilities of Microsoft Entra Internet Access without installing the Global Secure Access (GSA) client. EFP works with any browser that supports proxy automatic configuration (PAC).
 
 > [!IMPORTANT]

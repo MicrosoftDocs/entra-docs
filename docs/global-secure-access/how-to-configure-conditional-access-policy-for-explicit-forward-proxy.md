@@ -14,8 +14,6 @@ ms.reviewer:
 > The Explicit Forward Proxy feature is currently in PREVIEW.   
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-## Overview
-
 Explicit Forward Proxy (EFP) for Microsoft Entra Internet Access relies on IP affinity, among other mechanisms, for session management. While not required, we recommend that you configure a Conditional Access policy that restricts the use of EFP on networks your organization trusts. Additionally, you use Conditional Access policies to assign the Microsoft Entra Internet Access security profiles to users. 
 
 ## Prerequisites
