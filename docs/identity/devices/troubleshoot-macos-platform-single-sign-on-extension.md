@@ -42,7 +42,7 @@ You can also deregister the device completely by doing the following steps.
 
 ### [macOS 13](#tab/macOS13)
 
-On macOS 13 Ventura, if there are problems with your device PSSO registration, or you need to deregister your device, use Company Portal and remove the device from your organization.
+On macOS 13 Ventura, if there are problems with your device PSSO registration, or you need to deregister your device, use the Company Portal to remove the device from your organization.
 
 1. Open the **Company Portal** app and navigate to **Preferences**.
 1. To Deregister the device, select **Deregister**.
@@ -61,7 +61,7 @@ If the Enterprise SSO plug-in fails to activate after system updates are applied
     sudo killall swcd
     ```
 
-2. Then enter the following command to reset the process.
+2. Enter the following command to reset the process.
 
     ```console
     sudo swcutil reset
@@ -69,10 +69,10 @@ If the Enterprise SSO plug-in fails to activate after system updates are applied
 ### TLS Inspection URLs to be excluded for Platform SSO
 
 #### 1. URLs that need to be allowed for PSSO registration flows
-Please ensure that traffic to the URLs listed **[here](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra)** is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration and device auth flows that rely on TLS challenges to complete successfully.
+Ensure that traffic to the URLs listed **[here](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra)** is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration and device auth flows that rely on TLS challenges to complete successfully.
 
 #### 2. URLs that need to be exempted for PSSO token acquisition and token refresh flows
-Please ensure below URLs are exempted from TLS interception/inspection so that Platform SSO token acquisition and refresh can be successfully performed on Platform SSO targeted devices:
+Ensure below URLs are exempted from TLS interception/inspection so that Platform SSO token acquisition and refresh can be successfully performed on Platform SSO targeted devices:
 
 - app-site-association.cdn-apple.com
 - app-site-association.networking.apple
@@ -88,7 +88,7 @@ Please ensure below URLs are exempted from TLS interception/inspection so that P
 Apple's app-site-association domains are critical for SSO extension functioning. (*) You only need to allow sovereign cloud domains if you rely on those in your environment. (**) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner. 
 
 > [!NOTE] 
-> Platform SSO is not compatible with the Microsoft Entra ID Tenant Restrictions v2 feature when Tenant Restrictions is deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
+> Platform SSO isn't compatible with the Microsoft Entra ID Tenant Restrictions v2 feature when Tenant Restrictions are deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
 
 > [!IMPORTANT]
 > **Note: There has been a recent update to the TLS endpoint used in registration flows. Please verify that your environment’s allowlist reflects the latest URL requirements to avoid disruptions.**
@@ -119,15 +119,15 @@ We recommend that IT Admins should use [Managed Apple IDs](https://support.apple
 
 #### Password Sync
 
-Users can reset their password at the login screen or lock screen. If the user received a temporary password from an IT admin they should use another device to log in, set up a new password and use that new password at to log in to their own device. For more info, refer [Apple's documentation on forgotten passwords](https://support.apple.com/102633).
+Users can reset their password at the login screen or lock screen. If the user received a temporary password from an IT admin they should use another device to sign in, set up a new password and use that new password at the login prompt to their own device. For more info, refer [Apple's documentation on forgotten passwords](https://support.apple.com/102633).
 
 > [!IMPORTANT] 
-> There is currently a known issue with PSSO that is causing registration removal during recovery and may prompt users to re-register after recovery. This is expected behavior.
+> There's a known issue with PSSO that's causing registration removal during recovery and may prompt users to re-register after recovery. This is expected behavior.
 
 IT Admins should also enable Keyvault recovery to ensure data can be recovered in case of a forgotten password. To learn more, refer to [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos#password).
 
 > [!NOTE] 
-> If the device is booted and there is FileVault encryption the new Entra password will work on macOS15 only. 
+> If the device is booted and there's FileVault encryption the new Microsoft Entra password will work on macOS15 only. 
 
 #### Secure Enclave
 Users can reset the local password via Apple ID or an admin recovery key. 
@@ -241,7 +241,7 @@ Platform Credential as Passkey option is only available if Secure Enclave is con
 
 ### Troubleshoot Microsoft Edge SSO issues
  
-If Edge users are facing SSO issues after Platform SSO registration, please check if the user has signed into the Edge profile. Users will need to sign into their Edge profile for browser SSO to work with Edge on Platform SSO registered devices.
+If Microsoft Edge users are facing SSO issues after Platform SSO registration, check if the user has signed into the Edge profile. Users need to sign into their Edge profile for browser SSO to work with Edge on Platform SSO registered devices.
 
 ### Troubleshoot Google Chrome SSO issues
 
@@ -298,7 +298,7 @@ In the case where configuration profiles and the Company Portal app (which provi
 
 ### Re-enroll device with Platform SSO with EnableRegistrationDuringSetup on macOS
 
-In the case of misconfiguration, you will need to re-enroll macOS devices. 
+In the case of misconfiguration, you'll need to re-enroll macOS devices. 
 
 To disable PSSO during setup, 
 1. In Intune, unassign the device from the SSO extension profile that has `EnableRegistrationDuringSetup` enabled.
