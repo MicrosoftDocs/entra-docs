@@ -242,7 +242,7 @@ You can customize the sign-in page to provide a better experience for your users
 You can customize the hint text of identifier field on the sign-in page for all apps via [Custom branding](/entra/external-id/customers/how-to-customize-branding-customers#to-customize-the-sign-in-form).
 
 > [!TIP]
-> You can also customize the hint text for a specific application, or subset of applications, by using [Branding themes](how-to-customize-branding-themes-apps.md#apply-a-theme-to-applications).
+> You can also customize the hint text for a specific application, or subset of applications, by using [Branding themes](~/fundamentals/how-to-customize-branding-themes-apps.md#apply-a-theme-to-applications).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
