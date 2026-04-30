@@ -67,6 +67,21 @@ Sponsors operate under least-privilege with limited administrative permissions. 
 
 Sponsors are usually business owners, product managers, team leads, or stakeholders who understand the agent's purpose. For unpublished agents, creators often serve as sponsors. For published agents, sponsors typically come from teams using the agent.
 
+### Agent identity sponsors vs. agent's user account sponsors
+ 
+In Microsoft Agent ID, agents can have an [agent's user account](https://learn.microsoft.com/en-us/entra/agent-id/agent-users) created in order to access user-oriented services. The user account and the agent's identity, blueprint, and blueprint principal may all have sponsors associated with them. There are differences between the user account sponsors and sponsors of the agent identity, blueprint, or blueprint principal.
+ 
+Agent user account sponsors are the same as normal [user sponsors](https://learn.microsoft.com/en-us/entra/external-id/b2b-sponsors). They are not authorized to make any changes to their sponsored users, but they can request access on the user's behalf and may be involved in approval flows. In contrast, sponsors of agent identities, blueprints, and blueprint principals have limited access to manage those identities directly and can also request access or give approvals in lifecycle workflows.
+ 
+When an agent is represented by both agent identity objects and an agent user account, we recommend maintaining the agent identity sponsor as the primary user or group responsible for the agent. When you expect that sponsors may need to request access packages, the user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for the agent's user account as needed.
+ 
+| | Agent user account sponsors | Agent identity, blueprint, blueprint principal sponsors |
+|--|--|--|
+| **Allowed types** | Users, groups (any) | Users, select groups (dynamic membership, Microsoft 365). Role-assignable groups not supported. |
+| **Limits** | Maximum 5 sponsors | Maximum 100 sponsors, with no more than 5 groups |
+| **Authorization** | No direct authorization to modify sponsors users | May delete, disable, and modify sponsors |
+| **Required** | Not required | Required on create for agent identities and agent blueprints |
+
 ## Managers
 
 Managers are individual users responsible for an agent identity within the organizational hierarchy. For agents that are active in user scenarios, consider setting a manager on the agent's user account. Managers can request access packages for their agents' user accounts, and will see agents designated as reporting to them in the Microsoft Entra admin center. Managers don't have authorization to modify or delete agents; owners, sponsors, or administrators are required to take those actions.
