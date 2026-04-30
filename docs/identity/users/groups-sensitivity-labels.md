@@ -2,11 +2,13 @@
 title: Assign sensitivity labels to Microsoft Entra security groups (preview)
 description: Learn how to apply sensitivity labels to cloud security groups in Microsoft Entra ID for consistent classification and governance.
 ms.topic: how-to
-ms.date: 04/28/2026
+ms.date: 04/30/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: mbhargav
-ms.custom: msecd-doc-authoring-1012
+ms.custom:
+ - msecd-doc-authoring-1012
+ - sfi-ga-nochange
 ai-usage: ai-assisted
 #customer intent: As an IT admin, I want to apply sensitivity labels to Microsoft Entra cloud security groups so that I can enforce consistent classification and governance across security and Microsoft 365 groups.
 ---
@@ -16,7 +18,7 @@ ai-usage: ai-assisted
 Apply sensitivity labels to Microsoft Entra cloud security groups to extend the classification and governance you already use for Microsoft 365 groups. The same labels you publish in the Microsoft Purview portal and configure for groups and sites apply automatically to cloud security groups, with no separate label configuration required.
 
 > [!NOTE]
-> This feature doesn't apply to security groups synced from on-premises Active Directory, Exchange managed security groups, and groups with dynamic membership.
+> This feature doesn't apply to security groups synced from on-premises Active Directory or Exchange-managed security groups. Labels also aren't supported on security groups with dynamic membership. See [Known limitations](#known-limitations-preview) for details.
 
 > [!IMPORTANT]
 > This feature is in preview. Certain behaviors, including the ability to change labels once they're set and enforcement for high-privilege roles, might change before general availability. To configure this feature, there must be at least one active Microsoft Entra ID P1 license in your Microsoft Entra organization.
@@ -62,10 +64,10 @@ During preview, the following limitations apply:
   | **Application permissions** | `Group.ReadWrite.All`, `Directory.ReadWrite.All`, `Directory.ReadWriteAdvanced.All`, `GroupMember.ReadWrite.All` |
 
 - **No nested group labeling:** You can't apply a label to a security group that contains nested groups. Remove all nested groups first, apply the label, label the child groups individually, and then add them back. Child group labels must be compatible with the parent.
-- **Dynamic membership groups:** Security groups with dynamic membership aren't supported.
+- **Dynamic membership groups:** You can't apply sensitivity labels to security groups with dynamic membership in this release. While there are certain edge cases where you can apply a label to a dynamic group, the associated label policy isn't enforced.
 - **On-premises and Exchange-managed groups:** Security groups synced from on-premises Active Directory and Exchange-managed security groups aren't supported.
 - **Mail-enabled security groups and distribution lists:** Not supported.
-- **Microsoft 365 admin center:** Assigning sensitivity labels to security groups isn't supported in the Microsoft 365 admin center. Use the Microsoft Entra admin center, the Azure portal, the [My Groups portal](https://myaccount.microsoft.com/groups), PowerShell, or Microsoft Graph instead.
+- **Microsoft 365 admin center and My Groups:** Assigning sensitivity labels to security groups isn't supported in the Microsoft 365 admin center or in the [My Groups portal](https://myaccount.microsoft.com/groups). Use the Microsoft Entra admin center, the Azure portal, PowerShell, or Microsoft Graph instead.
 
 ## Prerequisites
 
@@ -77,7 +79,6 @@ Before you can assign sensitivity labels to cloud security groups, ensure the fo
 1. Labels are synchronized to Microsoft Entra ID by using the `Execute-AzureADLabelSync` cmdlet. Labels can take up to 24 hours after synchronization to become available.
 1. The [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) is installed for the directory-settings and group-management cmdlets in this article.
 1. [Security & Compliance PowerShell](/powershell/exchange/connect-to-scc-powershell) is installed and connected. The `Execute-AzureADLabelSync` cmdlet is available only in Security & Compliance PowerShell, not in the Microsoft Graph PowerShell SDK.
-<!-- @mbhargav Please confirm Security & Compliance PowerShell is the correct/only module customers need for label sync in the security-groups labeling scenario. Public Purview docs say Execute-AzureADLabelSync lives only in S&C PowerShell, but the original draft didn't call this out as a prereq. -->
 
 ## Enable sensitivity label support in PowerShell
 
@@ -103,9 +104,7 @@ To apply sensitivity labels to cloud security groups, you must enable the featur
 
    ```powershell
    $params = @{
-       templateId = "<group-security-template-id>"
-<!-- @mbhargav Please confirm the canonical Group.Security template GUID. For reference, the original draft used d209f6fa-3839-4d70-b83f-60b1c64d0e8f. If that is a sepcific GUID to make the snippet work (or if it's a universal GUID for all customers), we need to add it back in this article AND add it to the SFI Known GUIDs allowlist. Depending on this decision, we will either keep the replacement <group-security-template-id> OR restore the original GUID and request it be added to the SFI allowlist via https://aka.ms/SFIAllowListRequest so the article can pass security review. -->
-
+       templateId = "d209f6fa-3839-4d70-b83f-60b1c64d0e8f"
        values = @(
            @{
                name = "AllowToAddGuests"
@@ -179,8 +178,6 @@ The group is created and the membership restrictions associated with the selecte
 
 1. Select **Save** to apply your changes.
 
-You can also assign labels to security groups from the [My Groups portal](https://myaccount.microsoft.com/groups).
-
 ## Assign a label using PowerShell or Microsoft Graph
 
 To manage labels and labeled-group membership programmatically, use the following PowerShell snippets that call the Microsoft Graph beta endpoint.
@@ -201,9 +198,7 @@ $param = @{
 New-MgBetaGroup @param
 ```
 
-To retrieve available label IDs, use the [List sensitivityLabels](/graph/api/security-informationprotection-list-sensitivitylabels?view=graph-rest-beta&preserve-view=true) Microsoft Graph API.
-<!-- @mbhargav Please confirm this is the correct Graph API path for retrieving sensitivity-label IDs in the security-groups labeling scenario. The original URL (/graph/api/security-sensitivitylabel-list) didn't resolve. -->
-
+To retrieve available label IDs, use the [List sensitivityLabels](/graph/api/security-informationprotection-list-sensitivitylabels) Microsoft Graph API.
 
 ### Apply a label to an existing security group
 
