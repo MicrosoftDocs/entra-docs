@@ -5,7 +5,7 @@ description: Learn how to migrate AI agents from standard Microsoft Entra app re
 author: Dickson-Mwendia
 ms.author: dmwendia
 ms.topic: how-to
-ms.date: 04/20/2026
+ms.date: 04/30/2026
 ms.custom: agent-id, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 #customer intent: As a developer or IT admin who built AI agents using standard app registrations, I want to migrate them to Microsoft Entra Agent ID so that I can take advantage of agent-specific governance, Conditional Access, and audit capabilities.
@@ -13,31 +13,27 @@ ai-usage: ai-assisted
 
 # Migrate custom app registrations to Agent ID
 
-Microsoft Entra Agent ID provides specialized identity constructs for secure AI agent authentication and authorization. Agent identity blueprints serve as governance templates, and agent identities are the runtime principals your agents use to authenticate, acquire tokens, and access resources. These constructs address the requirements of autonomous AI systems that differ from traditional user and application identities.
+If you built AI agents by using standard Microsoft Entra app registrations or service principals, your agents authenticate like any other application. They don't take advantage of agent-specific governance capabilities like Conditional Access policies, centralized audit logging, and lifecycle management that Agent ID provides.
 
-This guide walks you through migrating agents that authenticate with standard Microsoft Entra app registrations or service principals, where you own the code and the identity configuration, to Agent ID. For agents created through Microsoft Copilot Studio, see [Migrate Copilot Studio agents to Agent ID](migrate-copilot-studio-agents-to-agent-id.md).
-
-> [!NOTE]
-> This guide covers custom-built agents and Copilot Studio agents. For agents built on other platforms such as Microsoft 365 Copilot, GitHub Copilot, or Microsoft Fabric, check the platform-specific documentation for Agent ID integration guidance as it becomes available.
-
-## Why migrate to Agent ID?
-
-If you built AI agents before Agent ID was available, your agents likely use Microsoft Entra app registrations or service principals for authentication. While these identities let agents communicate with services like Azure Bot Service, Microsoft Teams, and Bot Framework skills, Microsoft Entra treats them like any other application. They don't take advantage of the governance capabilities that Agent ID provides.
-
-[!INCLUDE [migrate-why-agent-id](includes/migrate-why-agent-id.md)]
+This article shows you how to migrate agents where you own the code and the identity configuration to Agent ID. You create Agent ID resources (a blueprint and agent identity), update your application code, and decommission the old identity. For agents created through Microsoft Copilot Studio, see [Migrate Copilot Studio agents to Agent ID](migrate-copilot-studio-agents-to-agent-id.md).
 
 ## Prerequisites
 
 [!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
-Before you begin, confirm you have the following:
-
 - An existing AI agent that uses an app registration or service principal for authentication.
-- The required Microsoft Entra roles: **Agent ID Developer** or **Agent ID Administrator** to create blueprints and agent identities, and **Privileged Role Administrator** to grant Microsoft Graph application permissions.
+- **Agent ID Developer** or **Agent ID Administrator** role to create blueprints and agent identities.
+- **Privileged Role Administrator** role to grant Microsoft Graph application permissions.
 - Access to the Microsoft Graph v1.0 API.
 - Familiarity with Agent ID key concepts. For more information, see [Agent identity concepts](key-concepts.md).
 
-## Migration phases overview
+## Review migration benefits
+
+Microsoft Entra Agent ID provides specialized identity constructs for AI agent authentication and authorization. Agent identity blueprints serve as governance templates, and agent identities are the runtime principals your agents use to authenticate, acquire tokens, and access resources. By migrating to Agent ID, you get:
+
+[!INCLUDE [migrate-why-agent-id](includes/migrate-why-agent-id.md)]
+
+## Review the migration phases
 
 Migrating to Agent ID is a phased process, not a single-step switch. This guide organizes the process into four phases, each building on the outputs of the previous one. The phased model prevents premature deletion of service principals that might support active workloads. Proper discovery and classification occur before any migration or decommission action.
 
@@ -59,7 +55,7 @@ Scan your tenant for all service principals that might represent AI agents. The 
 For each candidate service principal, capture:
 
 - **Identity metadata:** display name, application ID, object ID, creation date, tenant.
-- **Ownership:** assigned owner(s), owning team or department (where available).
+- **Ownership:** assigned owners, owning team or department (where available).
 - **Sign-in activity:** last interactive and non-interactive sign-in, sign-in count over 30, 90, and 180 days.
 - **Audit log signals:** source system that created the service principal, creation event, recent modifications or permission changes.
 - **Tag analysis:** tags applied to the service principal; check whether it carries any builder-specific tag patterns.
@@ -88,7 +84,7 @@ Heuristic discovery produces candidates, not confirmed agents. Review every matc
 
 ### Organizational discovery
 
-Automated methods won't find every agent. Custom-built agents with generic API permissions and no naming convention overlap are invisible to tag-based and heuristic scanning. Close this gap with organizational input.
+Automated methods won't find every agent. Custom-built agents with generic API permissions and no naming convention overlap are invisible to tag-based and heuristic scanning. 
 
 **CMDB and asset inventory reconciliation**
 
@@ -262,23 +258,23 @@ After migrating an agent identity, validate that the new Agent ID works correctl
 
 ### Parallel run
 
-For agents with high usage, run the old and new identities side by side before cutting over:
+For agents with high usage, run the old and new identities side by side before switching over:
 
 1. Deploy a parallel instance of your agent configured with the new Agent ID.
 1. Route a percentage of traffic to the new instance (start with 5–10%).
 1. Monitor both instances for errors, latency differences, and permission issues.
-1. Gradually increase traffic to the new instance over 1–2 weeks.
+1. Gradually increase traffic to the new instance over one to two weeks.
 1. Once 100% of traffic runs on the new identity, proceed to decommission.
 
 Use feature flags or traffic-splitting infrastructure to control the rollout. This approach lets you revert to the old identity instantly if issues arise.
 
 ### Decommission safeguards
 
-Once the new Agent ID is validated and carrying production traffic, decommission the old identity. Follow these safeguards to minimize risk:
+After you validate the new Agent ID and it carries production traffic, decommission the old identity. Follow these safeguards to minimize risk:
 
-- **Pre-deletion snapshot:** Export the SP's metadata, permissions, and audit history before deletion. This export provides a rollback reference if anything was missed during validation.
-- **Phased batches:** If you're decommissioning multiple identities, delete in small batches (20-50 SPs per wave) rather than bulk-deleting all at once.
-- **Soft-delete first:** Use Microsoft Entra's soft-delete capability (30-day recycle bin for applications) before hard deletion. This gives you a recovery window.
+- **Pre-deletion snapshot:** Export the service principal's metadata, permissions, and audit history before deletion. This export provides a rollback reference if anything was missed during validation.
+- **Phased batches:** If you're decommissioning multiple identities, delete in small batches (20-50 service principals per wave) rather than bulk-deleting all at once.
+- **Soft-delete first:** Use Microsoft Entra's soft-delete capability (30-day recycle bin for applications) before hard deletion. This step gives you a recovery window.
 
 ### Decommission steps
 
@@ -290,7 +286,7 @@ To decommission the old identity, follow these steps:
 1. Delete the app registration (enters 30-day soft-delete).
 1. After 30 days, confirm the app registration is permanently deleted or hard-delete if needed.
 
-## Troubleshooting
+## Troubleshoot common issues
 
 | Symptom | Likely cause | Resolution |
 |---|---|---|

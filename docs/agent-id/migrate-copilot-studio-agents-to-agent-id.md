@@ -5,7 +5,7 @@ description: Learn how to migrate Microsoft Copilot Studio agents from legacy se
 author: Dickson-Mwendia
 ms.author: dmwendia
 ms.topic: how-to
-ms.date: 04/20/2026
+ms.date: 04/30/2026
 ms.custom: agent-id, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 #customer intent: As an IT admin or Copilot Studio maker, I want to migrate my Copilot Studio agents from legacy service principals to Microsoft Entra Agent ID so that I can take advantage of agent-specific governance, Conditional Access, and audit capabilities.
@@ -13,31 +13,29 @@ ai-usage: ai-assisted
 
 # Migrate Copilot Studio agents to Agent ID
 
-Microsoft Copilot Studio agents created before March 18, 2026 (or before your tenant opted in to Agent ID integration) authenticate by using service principals that the platform auto-creates. These service principals enable agents to communicate with Azure Bot Service, Microsoft Teams, and Bot Framework skills, but Microsoft Entra treats them as standard applications, not as AI agents.
+Microsoft Copilot Studio agents created before March 18, 2026 (or before your tenant opted in to Agent ID integration) authenticate by using platform-managed service principals. These service principals let agents communicate with Azure Bot Service, Microsoft Teams, and Bot Framework skills, but Microsoft Entra treats them as standard applications, not as AI agents. Migrating to Agent ID gives you agent-specific governance, including Conditional Access policies, centralized audit logging, and lifecycle management.
 
-This guide covers how to migrate these platform-managed service principals to Agent ID. Because Copilot Studio manages the agent code, credentials, and deployment lifecycle, not you, the migration approach differs from custom-built agents. For agents where you own the code and identity configuration, see [Migrate custom app registrations to Agent ID](migrate-custom-app-registrations-to-agent-id.md).
-
-## Why migrate Copilot Studio agents?
-
-Copilot Studio agents that use legacy service principals miss out on the governance capabilities that Agent ID provides. By moving to Agent ID, you get:
-
-[!INCLUDE [migrate-why-agent-id](includes/migrate-why-agent-id.md)]
+This article shows you how to migrate these platform-managed service principals to Agent ID. Because Copilot Studio manages the agent code, credentials, and deployment lifecycle, the migration approach differs from custom-built agents. For agents where you own the code and identity configuration, see [Migrate custom app registrations to Agent ID](migrate-custom-app-registrations-to-agent-id.md).
 
 ## Prerequisites
 
 [!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
-Before you begin, confirm you have the following:
-
 - One or more Copilot Studio agents that use legacy (pre-Agent ID) service principals, created before March 18, 2026 or before your tenant opted in to Agent ID.
 - Access to the **Copilot Studio admin center** and the **Microsoft Entra admin center**.
-- The required Microsoft Entra roles: **Agent ID Developer** or **Agent ID Administrator** to manage agent identities.
-- Your tenant has opted in to Agent ID integration for Copilot Studio.
+- **Agent ID Developer** or **Agent ID Administrator** role in Microsoft Entra to manage agent identities.
+- Agent ID integration enabled for your tenant in Copilot Studio.
 - Familiarity with Agent ID key concepts. For more information, see [Agent identity concepts](key-concepts.md).
+
+## Why migrate to Agent ID?
+
+Copilot Studio agents that use legacy service principals don't take advantage of the governance capabilities that Agent ID provides. By migrating to Agent ID, you get:
+
+[!INCLUDE [migrate-why-agent-id](includes/migrate-why-agent-id.md)]
 
 ## How Copilot Studio agents differ from custom agents
 
-The following table shows why Copilot Studio agents require a different migration path than custom agents:
+Copilot Studio agents require a different migration path than custom agents:
 
 | Aspect | Custom app registration | Copilot Studio |
 |---|---|---|
@@ -49,7 +47,7 @@ The following table shows why Copilot Studio agents require a different migratio
 
 Because Copilot Studio manages the identity lifecycle, you can't create a blueprint and agent identity directly as you would for a custom agent. Instead, the platform handles Agent ID creation when you republish the agent with Agent ID integration enabled. There's no in-place conversion that transforms an existing service principal into an agent identity. Migration requires a recreate approach: republishing or re-registering the agent to trigger creation of a new native Agent ID.
 
-## Migration overview
+## Review the migration phases
 
 The migration follows four phases, each building on the previous:
 
@@ -211,7 +209,7 @@ To decommission the legacy service principal, follow these steps:
 1. Delete the app registration (enters 30-day soft-delete).
 1. After 30 days, confirm permanent deletion or hard-delete if needed.
 
-## Troubleshooting
+## Troubleshoot common issues
 
 | Symptom | Likely cause | Resolution |
 |---|---|---|
