@@ -1,6 +1,5 @@
 ---
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.topic: include
 # Purpose:
 # To guide users on how to call APIs using agent identities in .NET.

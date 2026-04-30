@@ -3,7 +3,6 @@ title: What is Microsoft Entra Agent ID?
 titleSuffix: Microsoft Entra Agent ID
 description: Learn about Microsoft Entra Agent ID, the identity and security framework that enables organizations to build, discover, govern, and protect AI agent identities at enterprise scale.
 ms.date: 04/14/2026
-ms.custom: agent-id-ignite
 ms.topic: concept-article
 ms.reviewer: kylemar
 ai-usage: ai-assisted
