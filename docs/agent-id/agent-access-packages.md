@@ -15,7 +15,7 @@ Microsoft Entra entitlement management provides access packages as a governance 
 
 ## License requirements
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
 
 ## Prerequisites
 

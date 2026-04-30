@@ -23,7 +23,7 @@ This article explains how to configure Lifecycle Workflows to streamline agent i
 
 ## License Requirements
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
 
 ## Create a sponsor workflow using the Microsoft Entra Admin Center
 

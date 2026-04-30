@@ -24,7 +24,7 @@ IT administrators and security analysts face mounting pressure to identify and r
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ### Known limitations
 

@@ -21,7 +21,7 @@ You can create an agent identity blueprint in two ways:
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 To create an agent identity blueprint, you need:
 

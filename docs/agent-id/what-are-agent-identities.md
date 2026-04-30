@@ -76,7 +76,7 @@ Several Microsoft products already use agent identities for authenticating AI ag
 
 ## How to get started
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ## Related content
 
