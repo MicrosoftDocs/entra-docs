@@ -150,7 +150,7 @@ This update strengthens the security of Microsoft Entra provisioning integration
 *   Update and test provisioning job configuration when your application supports a modern authentication method.
 *   If an application is retired, plan to migrate to a supported alternative.
 
-**Stay informed**
+#### Stay informed
 
 
 Please monitor monthly What’s new articles and the Microsoft 365 Message Center for future announcements, migration guidance, deadlines, and documentation.
