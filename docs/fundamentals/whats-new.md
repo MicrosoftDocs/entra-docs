@@ -177,7 +177,7 @@ Microsoft Entra is introducing workload identity–based authentication for SAP 
 
 This change helps customers transition to a more secure authentication model in preparation for SAP’s plan to [deprecate basic authentication for SuccessFactors APIs by November 2026](https://help.sap.com/docs/successfactors-release-information/8e0d540f96474717bbf18df51e54e522/fcc05a902b4140e585d968c2fe4a96bc.html). 
 
-What’s changing 
+#### What's changing
 
 *   A new authentication option will be available starting May 2026 in the SAP SuccessFactors provisioning apps to use Entra workload identity-based authentication instead of basic authentication. 
     
