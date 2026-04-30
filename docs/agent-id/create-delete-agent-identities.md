@@ -262,3 +262,11 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 ```
 
 ---
+
+## Related content
+
+- [Configure inheritable permissions for blueprints](configure-inheritable-permissions-blueprints.md)
+- [Authenticate and acquire tokens for autonomous agents](autonomous-agent-authentication-authorization-flow.md)
+- [Authenticate users and acquire tokens for interactive agents](interactive-agent-authentication-authorization-flow.md)
+- [Manage owners and sponsors](manage-owners-sponsors-agents.md)
+- [Agent identity blueprints](agent-blueprint.md)
