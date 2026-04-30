@@ -142,7 +142,7 @@ This change will roll out over the coming months, and timing will vary by applic
 
 This update strengthens the security of Microsoft Entra provisioning integrations by moving away from older authentication patterns. Modern methods are better suited for service-to-service scenarios and can reduce credential management overhead, including the need to rotate shared secrets.
 
-**Action required from customers**
+#### Action required from customers
 
 
 *   Identify existing provisioning jobs that use the OAuth 2.0 Authorization Code grant.
