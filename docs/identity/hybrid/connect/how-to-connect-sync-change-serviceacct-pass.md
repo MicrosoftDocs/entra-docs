@@ -19,7 +19,7 @@ Microsoft Entra Connect, as part of the Synchronization Service, uses an encrypt
 
 The encryption key used is secured using [Windows Data Protection (DPAPI)](/previous-versions/ms995355(v=msdn.10)). DPAPI protects the encryption key using the **ADSync service account**. 
 
-If you need to change the ADSync service account password you can use the procedures in [Abandoning the ADSync service account encryption key](#abandoning-the-adsync-service-account-encryption-key) to accomplish this.  These procedures should also be used if you need to abandon the encryption key for any reason.
+If you need to change the ADSync service account password, you can use the procedures in [Abandoning the ADSync service account encryption key](#abandoning-the-adsync-service-account-encryption-key) to accomplish this. These procedures should also be used if you need to abandon the encryption key for any reason.
 
 ## Issues that arise from changing the password
 There are two things that need to be done when you change the ADSync service account password.
