@@ -104,14 +104,14 @@ do {
 
 ## Verify headers are applied
 
-To confirm that your headers reach the intended endpoints, add temporary logging inside your interceptor implementation. Check that:
+To confirm that your headers reach the intended endpoints, inspect the outgoing network traffic using a network proxy tool such as Fiddler or Charles Proxy. Check that:
 
 - Headers starting with `x-` and without reserved prefixes appear in the request.
 - Headers with reserved prefixes (`x-client-`, `x-ms-`, `x-broker-`, `x-app-`) don't appear in the request.
 - Headers are sent only to the endpoints you scoped them to.
 
-> [!IMPORTANT]
-> Remove any temporary logging from your interceptor implementation before releasing to production.
+> [!NOTE]
+> Logging inside the interceptor callback won't show you the final request headers. The callback is invoked before MSAL evaluates and applies the naming rules, so it reflects only the headers you provide — not what is ultimately sent.
 
 ## Related content
 
