@@ -36,8 +36,6 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 ## Microsoft Entra Agent ID
 
-[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
-
 [!INCLUDE [Microsoft Entra Agent ID](../includes/licensing-agent-id.md)]
 
 ## Microsoft Entra ID Governance
