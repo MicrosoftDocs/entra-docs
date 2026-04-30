@@ -125,7 +125,7 @@ Stay tuned to this page for further updates.
 **Service category:** Provisioning  
 **Product capability:** Outbound to SaaS Applications  
 
-**What is changing**
+#### What is changing
 
 
 *   SCIM provisioning applications that use the OAuth 2.0 Authorization Code grant will be updated to support modern authentication methods, such as OAuth 2.0 Client Credentials and workload identity federation.
