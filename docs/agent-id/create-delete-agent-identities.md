@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.topic: how-to
-ms.date: 04/27/2026
+ms.date: 04/28/2026
 ms.reviewer: dastrock
 
 #customer-intent: As a developer, I want to create agent identities that represent my AI agents in Microsoft Entra, so that my agents can securely authenticate.
@@ -23,8 +23,6 @@ You can create agent identities in two ways:
 If you want to quickly create agent identities for testing purposes, consider using [this Microsoft Entra PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell).
 
 ## Prerequisites
-
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
 To create agent identities, you need:
 
@@ -262,3 +260,5 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 	return jsonResult;
 })
 ```
+
+---
