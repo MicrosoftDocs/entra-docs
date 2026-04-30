@@ -121,7 +121,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 **Advanced AI-powered cloud security.** New AI Prompt Shield, comprehensive data loss protection, network content filtering, and cloud firewall capabilities deliver cutting-edge protection for modern workloads.
 
-- [AI Prompt Shield](../global-secure-access/how-to-ai-prompt-shield.md) (New)
+- [AI prompt injection protection](../global-secure-access/how-to-ai-prompt-injection-protection.md) (New)
 - [Configure cloud firewall](../global-secure-access/how-to-configure-cloud-firewall.md) (New)
 - [Full data loss protection](../global-secure-access/how-to-full-data-loss-protection.md) (New)
 - [Network content filtering](../global-secure-access/how-to-network-content-filtering.md) (New)
