@@ -41,7 +41,7 @@ sections:
             text: How it works
       - componentType: card
         title: Govern agent lifecycles
-        summary: Ensure the lifecycle of your agents are governed with access reviews, entitlement management, and sponsor accountability.
+        summary: Ensure the lifecycle of your agents is governed with access reviews, entitlement management, and sponsor accountability.
         imageUrl: media/index/hero-image-entra-copilot-chat.png
         links:
           - componentType: link
@@ -75,7 +75,7 @@ sections:
         url: ./agent-oauth-protocols.md
       - componentType: summary-card
         title: Security for AI
-        summary: Explore how Microsoft Entra Agent ID integrates with Security for AI to protect your agents
+        summary: Explore how Microsoft Entra Agent ID integrates with Security for AI to protect your agents.
         url: /security/security-for-ai/
 
 
