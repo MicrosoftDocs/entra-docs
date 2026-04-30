@@ -1,14 +1,14 @@
 ---
 title: Secure an n8n agent with Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to deploy n8n on Azure Container Apps and secure AI agent workflows with Microsoft Entra Agent ID and Microsoft Graph MCP Server for Enterprise.
+description: Deploy n8n on Azure Container Apps and secure AI agent workflows with Microsoft Entra Agent ID and Microsoft Graph MCP Server for Enterprise.
 ms.service: entra
 ms.topic: how-to
 ms.date: 04/30/2026
 author: Dickson-Mwendia
 ms.author: dmwendia
 ms.reviewer: astaykov
-ms.custom: agent-id
+ms.custom: agent-id, msecd-doc-authoring-1012
 
 #customer intent: As a developer or IT admin, I want to secure n8n workflows with Microsoft Entra Agent ID so that my n8n agents can access Microsoft Graph and MCP Server for Enterprise using agent identities.
 
@@ -16,7 +16,7 @@ ms.custom: agent-id
 
 # Secure an n8n agent with Microsoft Entra Agent ID
 
-This guide walks you through deploying [n8n](https://n8n.io/) on Azure Container Apps with Microsoft Entra Agent ID integration. The deployment uses the Azure Developer CLI (`azd`) for a single-command setup that provisions infrastructure, creates Entra identity objects, and configures n8n workflows automatically.
+This guide shows how to deploy [n8n](https://n8n.io/) on Azure Container Apps with Microsoft Entra Agent ID integration. The deployment uses the Azure Developer CLI (`azd`) to provision infrastructure, create Microsoft Entra identity objects, and configure n8n workflows automatically.
 
 Unlike the sidecar pattern used for custom agents, this integration uses the [n8n-nodes-entraagentid](https://www.npmjs.com/package/@astaykov/n8n-nodes-entraagentid) community node to manage token acquisition directly within n8n workflows. The deployed workflows demonstrate both autonomous (app-only) and on-behalf-of (OBO) token flows, with access to Microsoft Graph and the [Microsoft Graph MCP Server for Enterprise](https://mcp.svc.cloud.microsoft/enterprise).
 
@@ -28,7 +28,7 @@ Unlike the sidecar pattern used for custom agents, this integration uses the [n8
 Before you begin, make sure you have:
 
 - An Azure subscription with quota for Azure OpenAI (GPT-4o or similar), PostgreSQL Flexible Server, and Azure Container Apps.
-- **Global Administrator** role in your Microsoft Entra tenant. This role is required because the automation creates multiple Entra objects and grants admin consent to permissions. Use [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure) to activate this role just-in-time.
+- **Global Administrator** role in your Microsoft Entra tenant. This role is required because the automation creates multiple Microsoft Entra objects and grants admin consent to permissions. Use [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure) to activate this role just-in-time.
 
 **Azure Cloud Shell** (recommended) comes with everything preinstalled: Azure CLI, Azure Developer CLI (`azd`), PowerShell 7, and Git.
 
@@ -39,7 +39,7 @@ If you're running locally instead of Cloud Shell, install these tools before pro
 - [PowerShell 7.4+](/powershell/scripting/install/installing-powershell).
 - Git.
 
-Sign in to both tools before running the deployment:
+Sign in to Azure CLI and Azure Developer CLI before running the deployment:
 
 ```bash
 az login
@@ -48,7 +48,7 @@ azd auth login
 
 ## Clone and deploy
 
-The entire deployment runs through a single `azd up` command that provisions Azure infrastructure and configures n8n automatically.
+The entire deployment runs through a single `azd up` command that provisions Azure infrastructure and configures n8n automatically. Follow these steps to deploy n8n:
 
 1. Open [Azure Cloud Shell](https://shell.azure.com) and select **PowerShell**.
 
@@ -69,7 +69,7 @@ The entire deployment runs through a single `azd up` command that provisions Azu
    - **n8n admin email:** Email for the n8n owner account.
    - **n8n admin password:** Password for the n8n owner account (minimum 8 characters, mixed case, number).
 
-1. During the postprovision phase, the automation performs a second sign-in. A device code is displayed, open the URL and enter the code. This step requires Global Administrator or Application Administrator role.
+1. During the postprovision phase, the automation performs a second sign-in. A device code is displayed. Open the URL and enter the code. This step requires the Global Administrator or Application Administrator role.
 
    The postprovision hook then:
    - Creates Microsoft Entra Agent ID objects (Blueprint, Agent Identity, Agent User).
@@ -96,7 +96,7 @@ The deployment creates the following Azure resources:
 - **Azure OpenAI:** GPT model deployment used by the AI agent workflows.
 - **Log Analytics Workspace:** Diagnostics and monitoring.
 
-### Entra identity objects
+### Microsoft Entra identity objects
 
 The automation creates these objects once and reuses them on subsequent runs:
 
@@ -158,7 +158,7 @@ To add more scopes, edit the `$MCP_SCOPES` array in `scripts/Setup-EntraAgentId.
 The deployment is fully idempotent:
 
 - Azure resources that already exist are skipped by Bicep.
-- Entra object IDs (Blueprint, Agent Identity, Agent User, Blueprint secret) are saved to the `azd` environment after the first run and reused on subsequent runs.
+- Microsoft Entra object IDs (Blueprint, Agent Identity, Agent User, Blueprint secret) are saved to the `azd` environment after the first run and reused on subsequent runs.
 - n8n configuration (credentials, workflows) is applied fresh each run, which allows repairing a broken state.
 
 To rerun just the postprovision scripts without modifying infrastructure:
@@ -216,7 +216,8 @@ Remove all Azure resources created by the deployment:
 azd down --purge
 ```
 
-The `azd down` command removes Azure resources but doesn't delete Entra objects such as blueprints, agent identities, or agernt user accounts. Remove these manually in the Microsoft Entra admin if they're no longer needed.
+> [!NOTE]
+> The `azd down` command removes Azure resources but doesn't delete Microsoft Entra objects such as blueprints, agent identities, or agent user accounts. Remove these manually in the Microsoft Entra admin center if they're no longer needed.
 
 ## Related content
 
