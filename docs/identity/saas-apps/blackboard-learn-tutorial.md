@@ -2,16 +2,9 @@
 title: Configure Blackboard Learn for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Blackboard Learn.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Blackboard Learn so that I can control who has access to Blackboard Learn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -86,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.blackboard.com/auth-saml/saml/SSO/entity-id/SAML_AD`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Blackboard Learn Client support team](https://www.blackboard.com/support/index.aspx) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Blackboard Learn Client support team](https://www.blackboard.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -102,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Blackboard Learn SSO
 
-To configure single sign-on on **Blackboard Learn** side, follow the [link](https://help.blackboard.com/Learn/Administrator/SaaS/Authentication/Implement_Authentication/SAML_Authentication_Provider_Type). If you're facing any problem while configuring, contact [Blackboard Learn support team](https://www.blackboard.com/support/index.aspx).
+To configure single sign-on on **Blackboard Learn** side, follow the [link](https://help.blackboard.com/Learn/Administrator/SaaS/Authentication/Implement_Authentication/SAML_Authentication_Provider_Type). If you're facing any problem while configuring, contact [Blackboard Learn support team](https://www.blackboard.com/support).
 
 
 ### Create Blackboard Learn test user

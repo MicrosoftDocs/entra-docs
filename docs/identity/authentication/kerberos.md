@@ -1,13 +1,10 @@
 ---
 title: Introduction to Microsoft Entra Kerberos
 description: Get an overview of the Microsoft Entra Kerberos protocol.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: conceptual
+author: kenwith
+ms.topic: concept-article
 ms.date: 11/18/2025
-ms.author: barclayn
+ms.author: kenwith
 ms.reviewer: Vimala
 ---
 
@@ -52,7 +49,7 @@ For example, when a Microsoft Entra ID-joined Windows client accesses a file sha
 
 In hybrid scenarios, Microsoft Entra Kerberos allows your Microsoft Entra ID tenant to operate as a dedicated Kerberos realm alongside your existing on-premises Active Directory realm. When a user signs in to a Windows device that's either Microsoft Entra ID joined or hybrid joined, the device authenticates with Microsoft Entra ID and receives a [Primary Refresh Token (PRT)](../devices/concept-primary-refresh-token.md).
 
-In addition to the PRT, Microsoft Entra ID issues a Cloud TGT for the realm `KERBEROS.MICROSOFTONLINE.COM`. This is a partial TGT to access on-premises resources. In this model, Microsoft Entra ID acts as the KDC to facilitate seamless authentication.
+In addition to the PRT, Microsoft Entra ID issues a Cloud TGT for the realm KERBEROS.MICROSOFTONLINE.COM, which is used for authentication to cloud resources. A separate partial TGT is issued for accessing on-premises resources, as described later in this document. In this model, Microsoft Entra ID acts as the KDC to facilitate seamless authentication.
 
 ### Cloud only identities scenarios (Preview)
 
@@ -61,7 +58,7 @@ Windows 10/11 device that is Microsoft Entra-joined.
 
 Support for Microsoft Entra ID with Entra Kerberos for cloud-only identities allows Entra-joined session hosts to authenticate and access cloud resources like Azure file shares without relying on traditional Active Directory infrastructure. This capability is essential for organizations adopting a cloud-only strategy, as it removes the need for domain controllers while preserving enterprise-grade security, access control, and encryption.
 
-Currently the supported workloads are Azure Files and Azure Virtual Desktop.
+Currently the supported workloads are Azure Files, Azure Virtual Desktop and Windows authentication access to Azure SQL Managed Instance.
 
 ## Authentication flow
 
@@ -236,14 +233,14 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 - Microsoft Entra Kerberos doesn't issue partial TGTs to identities that aren't synced to Microsoft Entra ID.
 - Microsoft Entra Kerberos uses a secure TGT exchange model via KDC Proxy. This model minimizes exposure to domain controllers and reduces the attack surface.
 - Admins can configure group resolution policies to limit which groups are included in Kerberos tickets. These controls are essential for managing ticket size and reducing exposure to unnecessary group data.
-- We advise you to maintain clear separation between cloud and on-premises environments. We discourage synchronizing sensitive accounts like `krbtgt_AzureAD` to on-premises Active Directory due to privilege escalation risks.
+- We advise you to clear separation between cloud and on-premises environments and not syncing krbtgt_AzureAD sensitive account to prevent privilege escalation risks. The `krbtgt_AzureAD` account should exist only in Entra ID, created and managed automatically by Microsoft's cloud services.
 - Use the RODC object's allowlist and blocklist to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access.
 
 ## Limitations and other considerations
 
 ### Support for cloud-only user identities (Preview)
 
-Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files and Azure Virtual Desktop.
+Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files, Azure Virtual Desktop and Windows authentication access to Azure SQL Managed Instance.
 
 ### Operating system and device restrictions
 

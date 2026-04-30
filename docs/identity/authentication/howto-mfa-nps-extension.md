@@ -1,16 +1,8 @@
 ---
 title: Use Microsoft Entra multifactor authentication with NPS
 description: Learn how to use Microsoft Entra multifactor authentication capabilities with your existing Network Policy Server (NPS) authentication infrastructure
-
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: jupetter
 ms.custom: has-azure-ad-ps-ref
 ---
@@ -416,7 +408,7 @@ Verify that AD Connect is running, and that the user is present in both the on-p
 
 ### Why do I see HTTP connect errors in logs with all my authentications failing?
 
-Verify that https://adnotifications.windowsazure.com, https://strongauthenticationservice.auth.microsoft.com is reachable from the server running the NPS extension.
+Verify that `https://adnotifications.windowsazure.com` and `https://strongauthenticationservice.auth.microsoft.com` are reachable from the server running the NPS extension.
 
 ### Why is authentication not working, despite a valid certificate being present?
 

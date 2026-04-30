@@ -1,0 +1,54 @@
+### YamlMime:Landing
+
+title: Microsoft Entra Backup and Recovery documentation
+summary: Learn how to use Microsoft Entra Backup and Recovery to protect your tenant from accidental changes and security compromises by reverting directory objects to a previous state.
+
+metadata:
+  title: Microsoft Entra Backup and Recovery documentation
+  description: Microsoft Entra Backup and Recovery enables you to recover critical directory objects such as users, groups, apps, and policies to a previously known good state.
+  author: barclayn
+  manager: dougeby
+  ms.author: barclayn
+  ms.date: 03/02/2026
+  ms.service: entra-id
+  ms.topic: landing-page
+
+landingContent:
+
+  # Card
+  - title: About Backup and Recovery
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Microsoft Entra Backup and Recovery?
+            url: overview.md
+      - linkListType: concept
+        links:
+          - text: Backup, difference report, and recovery model
+            url: backup-difference-report-recovery-model.md
+          - text: Supported objects and recoverable properties
+            url: scope-supported-objects-limitations.md
+          - text: Soft deletion
+            url: soft-deletion.md
+
+  # Card
+  - title: How-to guides
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: View available backups
+            url: view-available-backups.md
+          - text: Create and review difference reports
+            url: create-review-difference-reports.md
+          - text: Recover objects
+            url: recover-objects.md
+          - text: Review recovery history
+            url: review-recovery-history.md
+
+  # Card
+  - title: Troubleshooting
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Troubleshoot Backup and Recovery
+            url: troubleshooting.md

@@ -2,19 +2,18 @@
 title: Link your domain to your decentralized identifier (DID) - Microsoft Entra Verified ID
 description: Learn how to link your domain to your decentralized identifier (DID).
 documentationCenter: ''
-author: barclayn
-manager: femila
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/18/2024
-ms.author: barclayn
 
 #Customer intent: As an administrator, I want to link my domain to our decentralized identifier.
 ---
 
 # Verify domain ownership to your decentralized identifier
 
-In this article, we review the steps needed to verify your ownership of the domain name you're using for your decentralized identifier (DID).
+
+## Overview
+
+This article reviews the steps needed to verify your ownership of the domain name you're using for your decentralized identifier (DID).
 
 ## Prerequisites
 
@@ -26,20 +25,20 @@ To verify domain ownership to your DID, you need to:
 
 The domain you verify ownership of to your DID is defined in the [overview section](verifiable-credentials-configure-tenant.md#set-up-verified-id). The domain needs to be a domain under your control and it should be in the format `https://www.contoso.com/`.
 
-1. From the **Microsoft Entra admin center**, choose **Verified ID** page.
+1. From the **Microsoft Entra admin center**, choose the **Verified ID** page.
 
 1. Select **Overview** and from this section, choose **Verify domain ownership**.
 1. Select **Verify** for the domain.
 
 1. Copy or download the `did-configuration.json` file.
 
-   :::image type="content" source="media/how-to-dnsbind/verify-download.png" alt-text="Screenshot that shows downloading the well-known configuration.":::
+    :::image type="content" source="media/how-to-dnsbind/verify-download.png" alt-text="Screenshot that shows downloading the well-known configuration.":::
 
 1. Host the `did-configuration.json` file at the location specified. For example, if you specified domain `https://www.contoso.com`, the file needs to be hosted at `https://www.contoso.com/.well-known/did-configuration.json`. There can be no other path in the URL except the `.well-known path` name.
 
 1. When `did-configuration.json` is publicly available at the `.well-known/did-configuration.json` URL, verify it by selecting **Refresh verification status**.
 
-   :::image type="content" source="media/how-to-dnsbind/verify-download-verified.png" alt-text="Screenshot that shows the verified well-known configuration.":::
+    :::image type="content" source="media/how-to-dnsbind/verify-download-verified.png" alt-text="Screenshot that shows the verified well-known configuration.":::
 
 1. Test out issuing or presenting with Microsoft Authenticator to validate. Make sure the **Warn about unsafe apps** setting in Authenticator is toggled on. The setting is on by default.
 
@@ -47,7 +46,7 @@ The domain you verify ownership of to your DID is defined in the [overview secti
 
 The portal verifies that `did-configuration.json` is reachable over the internet and valid when you select **Refresh verification status**. Authenticator doesn't honor HTTP redirects. You should also consider verifying that you can request that URL in a browser to avoid errors like not using HTTPS, a bad TLS/SSL certificate, or the URL not being public. If the `did-configuration.json` file can't be requested anonymously in a browser or via tools such as `curl`, without warnings or errors, the portal can't complete the **Refresh verification status** step either.
 
->[!NOTE]
+> [!NOTE]
 > If you're experiencing problems refreshing your verification status, you can troubleshoot it by running `curl -Iv https://contoso.com/.well-known/did-configuration.json` on a machine with Ubuntu OS. Windows Subsystem for Linux with Ubuntu also works. If curl fails, refreshing the verification status won't work.
 
 ## Why do I need to verify domain ownership of our DID?

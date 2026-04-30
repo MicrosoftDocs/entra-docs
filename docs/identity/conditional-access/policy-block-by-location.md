@@ -1,16 +1,13 @@
 ---
 title: Conditional Access - Block access by location
 description: Create a custom Conditional Access policy to block access to resources by IP location.
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
 ms.reviewer: lhuangnorth
-ms.date: 04/01/2025
-ms.service: entra-id
-ms.subservice: conditional-access
+ms.date: 03/24/2026
 ms.topic: how-to
 --- 
 # Block access by location
+
+## Overview
 
 With the location condition in Conditional Access, you can control access to your cloud apps based on the network location of a user. The location condition is commonly used to block access from countries/regions where your organization knows traffic shouldn't come from. For more information about IPv6 support, see the article [IPv6 support in Microsoft Entra ID](/troubleshoot/azure/active-directory/azure-ad-ipv6-support).
 
@@ -28,14 +25,14 @@ With the location condition in Conditional Access, you can control access to you
    - If you choose Countries/Regions, you can optionally choose to include unknown areas.
 1. Select **Create**
 
-More information about the location condition in Conditional Access can be found in the article, [What is the location condition in Microsoft Entra Conditional Access](location-condition.md)
+More information about the location condition in Conditional Access can be found in the article, [Conditional Access: Network assignment conditions](concept-assignment-network.md)
 
 ## Create a Conditional Access policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
@@ -44,14 +41,18 @@ More information about the location condition in Conditional Access can be found
    1. Set **Configure** to **Yes**
    1. Under **Include**, select **Selected networks and locations**
       1. Select the blocked location you created for your organization.
-      1. Click **Select**.
+      1. Select **Select**.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Related Content
+## User exclusions
+
+[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
+## Related content
 
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)

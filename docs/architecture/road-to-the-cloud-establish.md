@@ -2,14 +2,10 @@
 title: Road to the cloud - Establish a footprint for moving identity and access management from Active Directory to Microsoft Entra ID
 description: Establish a Microsoft Entra footprint as part of planning your migration of IAM from Active Directory to Microsoft Entra ID.
 documentationCenter: ''
-author: janicericketts
-manager: martinco
-ms.service: entra
 ms.topic: how-to
-ms.subservice: architecture
 ms.date: 07/27/2023
-ms.author: jricketts
 ms.custom: references_regions
+ms.subservice: architecture
 ---
 # Establish a Microsoft Entra footprint
 
@@ -31,7 +27,7 @@ The following functions aren't specific or mandatory to move from Active Directo
 
 ### Deploy passwordless authentication
 
-In addition to the security benefits of [passwordless credentials](~/identity/authentication/concept-authentication-passwordless.md), passwordless authentication simplifies your environment because the management and registration experience is already native to the cloud. Microsoft Entra ID provides passwordless credentials that align with various use cases. Use the information in this article to plan your deployment: [Plan a passwordless authentication deployment in Microsoft Entra ID](~/identity/authentication/howto-authentication-passwordless-deployment.md).
+In addition to the security benefits of [passwordless credentials](~/identity/authentication/concept-authentication-passkeys-fido2.md), passwordless authentication simplifies your environment because the management and registration experience is already native to the cloud. Microsoft Entra ID provides passwordless credentials that align with various use cases. Use the information in this article to plan your deployment: [Plan a passwordless authentication deployment in Microsoft Entra ID](~/identity/authentication/howto-authentication-passwordless-deployment.md).
 
 After you roll out passwordless credentials to your users, consider reducing the use of password credentials. You can use the [reporting and insights dashboard](~/identity/authentication/howto-authentication-methods-activity.md) to continue to drive the use of passwordless credentials and reduce the use of passwords in Microsoft Entra ID.
 

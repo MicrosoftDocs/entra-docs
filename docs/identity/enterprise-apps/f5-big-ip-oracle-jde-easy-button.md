@@ -3,8 +3,6 @@ title: Configure F5 BIG-IP Easy Button for SSO to Oracle JDE
 description: Implement secure hybrid access with header-based SSO to Oracle JD Edwards using F5 BIG-IP Easy Button Guided Configuration 16.1.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 05/03/2023
 ms.author: gasinh

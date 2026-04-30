@@ -1,14 +1,11 @@
 ---
 title: Sensitivity Labels in Lifecycle Workflows
 description: This article describes sensitivity labels in Workflows, and how to see them during the task creation process.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 11/04/2025
+ms.date: 03/12/2026
 
-#CustomerIntent: As an identity governance administrator, I want to view sensitivity labels of groups or teams so that I can maintain security within my environment.
+#Customer Intent: As an identity governance administrator, I want to view sensitivity labels of groups or teams so that I can maintain security within my environment.
 ---
 
 # Sensitivity labels in Lifecycle Workflows
@@ -47,11 +44,11 @@ To view the sensitivity labels of groups and teams using Lifecycle workflows dur
 
 1. On the tasks page, add the task you want to use to view sensitivity labels with. Task availability is based on which template you selected to create your workflow. For more information on workflow templates, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md).
 
-1.  After adding the group-related tasks to the workflow select the task, and then select **select groups**.
+1.  After adding the group-related tasks to the workflow, select the task, and then select **select groups**.
     :::image type="content" source="media/workflow-sensitivity-labels/select-groups-workflow.png" alt-text="Screenshot of selecting group in workflows.":::
 1. On the list pane, you're able to see a list of groups or teams that can be selected, and their sensitivity labels.
     :::image type="content" source="media/workflow-sensitivity-labels/add-group-sensitivity-label.png" alt-text="Screenshot of adding groups to workflow along with their sensitivity labels.":::
-1. After adding the group or team to the task select **Next** to move to the review screen, and **Create** to create the workflow.
+1. After adding the group or team to the task, select **Next** to move to the review screen, and **Create** to create the workflow.
 
 ## View assigned sensitivity labels on existing workflow tasks
 

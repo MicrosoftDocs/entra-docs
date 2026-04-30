@@ -1,15 +1,8 @@
 ---
 title: Microsoft Entra certificate-based authentication on Apple devices
 description: Learn about Microsoft Entra certificate-based authentication on Apple devices that run macOS or iOS
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
@@ -180,13 +173,6 @@ CBA support for YubiKey is available in the latest Microsoft Authentication Libr
 |:-------------------|:------------------------------:|
 | YubiKey            |              &#x2705;          | 
 
-## Known issues
-
-There are some known issues when the iOS device does not have authenticator application or company portal.
-- Users with certificate-based authentication will see a "double prompt", where they must select the option to use certificate-based authentication twice.
-- Users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor.
-- An auth strength policy requiring CBA and an MAM app protection policy will end up in a loop between device registration and MFA satisfaction. Also when a user uses CBA to satisfy MFA requirement, the MAM policy is not satisfied with error being thrown by server saying device registration is required, even though the device is registered. This incorrect error causes re-registration and the request is stuck in loop of using CBA to sign in and device need registration. 
-
 ## Next steps
 
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)
@@ -198,3 +184,10 @@ There are some known issues when the iOS device does not have authenticator appl
 - [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)
 - [How to migrate federated users](concept-certificate-based-authentication-migration.md)
 - [FAQ](certificate-based-authentication-faq.yml)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
+- [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
+- [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
+- [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)
+- [How to migrate federated users](concept-certificate-based-authentication-migration.md)
+- [FAQ](certificate-based-authentication-faq.yml)
+

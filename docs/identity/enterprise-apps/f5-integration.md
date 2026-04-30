@@ -3,8 +3,6 @@ title: Integrate F5 BIG-IP with Microsoft Entra ID
 description: Integrate F5 BIG-IP with Microsoft Entra ID for secure hybrid access (SHA) to improve access and security.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 06/28/2024
 ms.author: gasinh

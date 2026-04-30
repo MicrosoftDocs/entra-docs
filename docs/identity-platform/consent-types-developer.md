@@ -72,7 +72,7 @@ When the user approves the permission request, consent is recorded. The user doe
 
 ## Requesting consent for an entire tenant through admin consent
 
-Requesting consent for an entire tenant requires admin consent. Admin consent done on behalf of an organization requires the static permissions registered for the app. Set those permissions in the app registration portal if you need an admin to give consent on behalf of the entire organization.
+Requesting consent for an entire tenant requires admin consent. Admin consent done on behalf of an organization requires the static permissions registered for the app. Set those permissions in the Microsoft Entra app registration portal if you need an admin to give consent on behalf of the entire organization.
 
 ### Admin Consent for Delegated Permissions
 
@@ -119,14 +119,14 @@ When you sign the user into your app, you can identify the organization to which
 
 To sign the user in, follow the [Microsoft identity platform protocol tutorials](./v2-protocols.md).
 
-### Request the permissions in the app registration portal
+### Request the permissions in the Microsoft Entra app registration portal
 
-In the app registration portal, applications can list the permissions they require, including both delegated permissions and application permissions. This setup allows the use of the `.default` scope and the Microsoft Entra admin center's **Grant admin consent** option.  
+In the Microsoft Entra app registration portal, applications can list the permissions they require, including both delegated permissions and application permissions. This setup allows the use of the `.default` scope and the Microsoft Entra admin center's **Grant admin consent** option.  
 
 In general, the permissions should be statically defined for a given application. They should be a superset of the permissions that the application requests dynamically or incrementally.
 
 > [!NOTE]
->Application permissions can be requested only by using [`.default`](scopes-oidc.md#the-default-scope). So if your application needs application permissions, make sure they're listed in the app registration portal.
+>Application permissions can be requested only by using [`.default`](scopes-oidc.md#the-default-scope). So if your application needs application permissions, make sure they're listed in the Microsoft Entra app registration portal.
 
 To configure the list of statically requested permissions for an application:
 
@@ -194,3 +194,4 @@ For more information about the OAuth 2.0 protocol and how to get access tokens, 
 - [Consent experience](application-consent-experience.md)
 - [ID tokens](id-tokens.md)
 - [Access tokens](access-tokens.md)
+- [App registrations](quickstart-register-app.md)

@@ -1,14 +1,9 @@
 ---
 title: How to migrate to the Authentication methods policy
 description: Learn about how to centrally manage multifactor authentication and self-service password reset (SSPR) settings in the Authentication methods policy.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: upgrade-and-migration-article
 ms.date: 01/15/2026
-ms.author: justinha
-author: justinha
 ms.reviewer: jpettere, tilarso
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
@@ -190,6 +185,6 @@ When you determine that MFA and SSPR work as expected and you no longer need the
 ## Next steps
 
 - [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md)
-- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)
 - [How Microsoft Entra multifactor authentication works](concept-mfa-howitworks.md)
 - [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview)

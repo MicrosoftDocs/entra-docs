@@ -1,13 +1,8 @@
 ---
 title: Overview of the Microsoft Entra application gallery
 description: Explore the Microsoft Entra application gallery for seamless SaaS integration with preconfigured SSO and user provisioning. Enhance cloud app deployment.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: overview
 ms.date: 01/05/2026
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to easily find and deploy pre-integrated SaaS applications from the Microsoft Entra application gallery, so that I can provide users with a seamless single sign-on experience and automate user provisioning.
@@ -89,6 +84,8 @@ A collection of featured applications is listed by default when you open the Mic
 - **Provisioning** - Microsoft Entra ID to SaaS [application provisioning](~/identity/app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the SaaS applications that users need access to.
 
 > [!NOTE]
+> Linked Sign-on gallery applications will have a grayed out 'Create' button. The Linked Sign-on URL is provided to be used in the create your own application option.
+>
 > The **Create** button might appear disabled for certain gallery apps by design. This occurs in two scenarios: First, for linked-based SSO applications. These templates are link-only and don't support creating a new app or service principal in Microsoft Entra ID. They redirect users to an external URL managed by the service provider. Because no Microsoft Entra object is created, the button is intentionally unavailable. 
 >
 > Second, when the app already exists in your tenant, as gallery applications are limited to one instance per tenant. In both cases, a disabled **Create** button is expected behavior.

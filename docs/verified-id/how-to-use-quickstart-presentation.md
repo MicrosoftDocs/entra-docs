@@ -1,13 +1,9 @@
 ---
 title: Issue verifiable credentials by presenting claims from an existing verifiable credential
-description: Learn how to use a quickstart to create custom credentials for from other Verifiable Credential attestation.
+description: Learn how to use a quickstart to create custom credentials from other Verifiable Credential attestation.
 documentationCenter: ''
-author: barclayn
-manager: pmwongera
-ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/21/2025
-ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for self-asserted claims scenario. 
 ---
@@ -15,6 +11,9 @@ ms.author: barclayn
 # Issue verifiable credentials by presenting claims from an existing verifiable credential
 
   
+
+## Overview
+
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [presentations attestation](rules-and-display-definitions-model.md#verifiablepresentationattestation-type) type produces an issuance flow where you want the user to present another verifiable credential in the wallet during issuance and where claim values for issuance of the new credential are taken from the presented credential. An example of this type of flow can be when you present your VerifiedEmployee credential to get a visitors pass credential.
 
 ## Create a custom credential with the presentations attestation type
@@ -29,7 +28,7 @@ On the **Create a new credential** page, enter the JSON code for the display and
 
 ## Sample JSON display definitions
 
-The JSON display definition is nearly the same, regardless of attestation type. You only have to adjust the labels according to the claims that your verifiable credential has. The expected JSON for the display definitions is the inner content of the displays collection. The JSON is a collection, so if you want to support multiple locales, add multiple entries with a comma as separator. 
+The JSON display definition is nearly the same, regardless of attestation type. You only have to adjust the labels according to the claims that your verifiable credential has. The expected JSON for the display definitions is the inner content of the displays collection. The JSON is a collection, so if you want to support multiple locales, add multiple entries with a comma as a separator. 
 
 ```json
 {
@@ -66,7 +65,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
 
 ## Sample JSON rules definitions
 
-The JSON attestation definition should contain the **presentations** name. The **inputClaim** in the mapping section defines what claims should be captured in the credential the user presents. They need to have the prefix `$.vc.credentialSubject`. The **outputClaim** defined the name of the claims in the credential being issued. 
+The JSON attestation definition should contain the **presentations** name. The **inputClaim** in the mapping section defines what claims should be captured in the credential the user presents. They need to have the prefix `$.vc.credentialSubject`. The **outputClaim** defines the name of the claims in the credential being issued. 
 
 The following rules definition prompts the user to present the **True Identity** credential during issuance. This credential comes from the [public demo application](https://woodgroveemployee.azurewebsites.net/). 
 
@@ -110,9 +109,7 @@ The following rules definition prompts the user to present the **True Identity**
 | -------- | -------- | -------- |
 |`credentialType`| string | credential type being requested during issuance. `TrueIdentity` in the previous example. |
 |`contracts` | string (array) | list of manifest URLs of credentials requested. In the earlier example, the manifest URL is the manifest for `True Identity` |
-| `trustedIssuers` | string (array) | a list of allowed issuer Decentralized Identifiers (DID)s for the credential being requested. In the earlier example, the DID is the DID of the `True Identity`issuer. |
-
-Values
+| `trustedIssuers` | string (array) | a list of allowed issuer decentralized identifiers (DIDs) for the credential being requested. In the earlier example, the DID is the DID of the `True Identity` issuer. |
 
 ## Authenticator experience during issuance
 
@@ -124,11 +121,11 @@ During issuance, Authenticator prompts the user to select a matching credential.
 
 To configure your sample code to issue and verify your custom credential, you need:
 
-- Your tenant's issuer decentralized identifier (DID)
-- The credential type
-- The manifest URL to your credential 
+- Your tenant's issuer decentralized identifier (DID).
+- The credential type.
+- The manifest URL to your credential.
 
-The easiest way to find this information for a custom credential is to go to your credential in the Azure portal. Select **Issue credential**. Then you have access to a text box with a JSON payload for the Request Service API. Replace the placeholder values with your environment's information. The issuer’s DID is the authority value.
+The easiest way to find this information for a custom credential is to go to your credential in the Azure portal. Select **Issue credential**. Then you have access to a text box with a JSON payload for the Request Service API.Replace the placeholder values with your environment's information. The issuer’s DID is the authority value.
 
 :::image type="content" source="media/how-to-use-quickstart/quickstart-config-sample-2.png" alt-text="Screenshot of the quickstart custom credential issue.":::
 

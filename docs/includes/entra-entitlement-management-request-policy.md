@@ -2,7 +2,6 @@
 title: include file
 description: include file
 author: owinfreyATL
-manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 02/27/2023

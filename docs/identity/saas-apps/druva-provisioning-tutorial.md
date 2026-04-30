@@ -2,11 +2,8 @@
 title: Configure Druva for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Druva.
 author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/06/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Druva so that I can streamline the user management process and ensure that users have the appropriate access to Druva.
@@ -47,17 +44,17 @@ Before configuring Druva for automatic user provisioning with Microsoft Entra ID
 
 1. Sign in to your [Druva Admin Console](https://console.druva.com). Navigate to **Druva** > **inSync**.
 
-    ![Druva Admin Console](media/druva-provisioning-tutorial/menubar.png)
+    ![Screenshot of Druva Admin Console.](media/druva-provisioning-tutorial/menubar.png)
 
-2. Navigate to **Manage** > **Deployments** > **Users**.
+1. Navigate to **Manage** > **Deployments** > **Users**.
 
     :::image type="content" source="media/druva-provisioning-tutorial/manage.png" alt-text="Screenshot of the Druva admin console. Manage is highlighted, and the Manage menu is visible. In that menu, under Deployments, Users are highlighted." border="false":::
 
-3. Navigate to **Settings**. Select **Generate Token**.
+1. Navigate to **Settings**. Select **Generate Token**.
 
     :::image type="content" source="media/druva-provisioning-tutorial/settings.png" alt-text="Screenshot of a page in the Druva admin console. Settings are highlighted, and the Settings tab is open. The Generate token button is highlighted." border="false":::
 
-4. Copy the **Auth token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Druva application.
+1. Copy the **Auth token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Druva application.
 
     :::image type="content" source="media/druva-provisioning-tutorial/auth.png" alt-text="Screenshot of the Create token page in the Druva admin console. A link labeled Copy Token is available for copying the Auth token value." border="false":::
 
@@ -71,7 +68,7 @@ To configure Druva for automatic user provisioning with Microsoft Entra ID, you 
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Druva**, select **Druva** in the search box.
 1. Select **Druva** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-    ![Druva in the results list](common/search-new-app.png)
+    ![Screenshot of Druva in the results list.](common/search-new-app.png)
 
 ## Configuring automatic user provisioning to Druva 
 
@@ -87,52 +84,47 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-    ![Enterprise applications blade](common/enterprise-applications.png)
+    ![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Druva**.
 
-    ![The Druva link in the Applications list](common/all-applications.png)
+    ![Screenshot of The Druva link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
     ![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-    ![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the Admin Credentials section, input `https://apis.druva.com/insync/scim` in **Tenant URL**. Input the **Auth token** value in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Druva. If the connection fails, ensure your Druva account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Druva Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Druva. If the connection fails, ensure your Druva account has the required admin permissions and try again.
 
-    ![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications, and select **Send an email notification when a failure occurs**.
+1. Select **Create** to create your configuration.
 
-    ![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Druva**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Druva in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Druva for update operations. Select the **Save** button to commit any changes.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-    ![Druva User Attributes](media/druva-provisioning-tutorial/userattribute.png)
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Druva in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Druva for update operations. Select the **Save** button to commit any changes.
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+    ![Screenshot of Druva User Attributes.](media/druva-provisioning-tutorial/userattribute.png)
 
-11. To enable the Microsoft Entra provisioning service for Druva, change the **Provisioning Status** to **On** in the **Settings** section.
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-    ![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-12. Define the users and/or groups that you would like to provision to Druva by choosing the desired values in **Scope** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
-    ![Provisioning Scope](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-    ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-    This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Druva.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
     For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 

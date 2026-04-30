@@ -1,20 +1,17 @@
 ---
-title: Create Simpler and Faster Rules for Dynamic Membership Groups
+title: Create simpler and faster rules for dynamic membership groups
 description: Learn how to optimize your membership rules to automatically populate groups.
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
-ms.topic: article
+ms.topic: concept-article
 ms.date: 01/15/2025
-ms.author: barclayn
 ms.reviewer: jordandahl
 ms.custom: it-pro
 ---
 
 
 # Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID
+
+
+## Overview
 
 This article discusses the most common methods that you can use to simplify your rules for dynamic membership groups. Rules that are simpler and more efficient result in better processing times for dynamic groups.
 

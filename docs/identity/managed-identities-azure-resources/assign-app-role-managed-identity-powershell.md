@@ -1,15 +1,8 @@
 ---
 title: Assign a managed identity to an application role using PowerShell
 description: Step-by-step instructions for assigning a managed identity access to another application's role using PowerShell.
-
-author: SHERMANOUKO
-manager: CelesteDG
-
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 09/09/2025
-ms.author: shermanouko
 ---
 
 # Assign an application role to a managed identity using PowerShell
@@ -108,7 +101,7 @@ This example script shows you how to assign an Azure web app's managed identity 
 # Install the module.
 # Install-Module Microsoft.Graph -Scope CurrentUser
 
-# Your tenant ID (in the Azure portal, under Azure Active Directory > Overview).
+# Your tenant ID (in the Azure portal, under Microsoft Entra ID > Overview).
 $tenantID = '<tenant-id>'
 
 # The name of your web app, which has a managed identity that should be assigned to the server app's app role.

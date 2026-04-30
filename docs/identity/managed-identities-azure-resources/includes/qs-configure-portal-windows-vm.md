@@ -1,6 +1,4 @@
 ---
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 01/16/2025
 ms.topic: include
 ms.custom: sfi-image-nochange

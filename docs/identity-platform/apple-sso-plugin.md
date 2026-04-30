@@ -42,7 +42,7 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
   - macOS 10.15 and later: [Intune Company Portal app](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp)
 - The device must be *enrolled in MDM*, for example, through Microsoft Intune.
 - Configuration must be *pushed to the device* to enable the Enterprise SSO plug-in. Apple requires this security constraint.
-- Apple devices must be allowed to reach to both identity provider URLs and its own URLs without additional interception. This means that those URLs need to be excluded from network proxies, interception, and other enterprise systems. 
+- Apple devices must be allowed to reach to both identity provider URLs and its own URLs. For more information, see [Use Apple products on enterprise networks](https://support.apple.com/101555).
 
 The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 and not targeted with Platform SSO are as follows: (On the latest operating system versions, Apple relies fully on its CDN):
   - `app-site-association.cdn-apple.com`
@@ -433,6 +433,9 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 In March 2024, Microsoft announced that Microsoft Entra ID will transition from Apple's Keychain to Apple's Secure Enclave for storing device identity keys. Beginning August 2025, the Secure Storage rollout will make Secure Enclave the default key storage for all new device registrations. New device registrations will use the secure storage model by default. Existing devices that do not support Secure Enclave will have registration keys stored in the user's Keychain (but not in the legacy Login Keychain). Existing functionality for devices without Secure Storage remains the same.
 
 If your applications or MDM solutions depend on accessing Microsoft Entra device registration keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
+
+> [!IMPORTANT]
+> Managed devices using Secure Enclave for storing device identity keys will also need to be provisioned with Enterprise SSO or [Platform SSO](/intune/intune-service/configuration/platform-sso-macos) to report [device identity](../identity/devices/overview.md) to Microsoft Entra ID.
 
 ### Using Microsoft Authentication Library (MSAL) to read registration device Information
 

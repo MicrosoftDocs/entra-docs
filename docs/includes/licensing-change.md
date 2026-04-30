@@ -2,7 +2,6 @@
 author: barclayn
 ms.author: barclayn
 ms.date: 03/12/2025
-manager: femila
 ms.service: entra-id
 ms.topic: include
 ---

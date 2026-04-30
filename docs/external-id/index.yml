@@ -9,14 +9,9 @@ brand: azure
 metadata:
   title: Microsoft Entra External ID documentation
   description: Learn how to use Microsoft Entra External ID for all your external identities scenarios, including B2B collaboration for your workforce and, and identity and access management for your consumer apps.
-   
-  ms.service: entra-external-id
-  ms.subservice:
 
   ms.topic: hub-page
   ms.collection: collection
-  ms.author: cmulligan
-  author: csmulligan
   ms.date: 05/16/2025
 
 ## FRONT MATTER END

@@ -3,8 +3,6 @@ title: Plan your Microsoft Entra device deployment
 description: Choose the Microsoft Entra device integration strategies that meet your organizational needs.
 
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 11/25/2024
 ms.author: gasinh
@@ -40,7 +38,7 @@ The key benefits of giving your devices a Microsoft Entra identity:
 
 * Increase productivity – Users can do [seamless sign-on (SSO)](./device-sso-to-on-premises-resources.md) to your on-premises and cloud resources, enabling productivity wherever they are.
 
-* Increase security – Apply [Conditional Access policies](~/identity/conditional-access/overview.md) to resources based on the identity of the device or user. Joining a device to Microsoft Entra ID is a prerequisite for increasing your security with a [Passwordless](~/identity/authentication/concept-authentication-passwordless.md) strategy.
+* Increase security – Apply [Conditional Access policies](~/identity/conditional-access/overview.md) to resources based on the identity of the device or user. Joining a device to Microsoft Entra ID is a prerequisite for increasing your security with a [Passwordless](~/identity/authentication/concept-authentication-passkeys-fido2.md) strategy.
 
    > [!VIDEO https://www.youtube-nocookie.com/embed/NcONUf-jeS4]
 

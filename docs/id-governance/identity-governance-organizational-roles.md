@@ -1,14 +1,12 @@
 ---
 title: Govern access with an organizational role model
 description: Microsoft Entra ID Governance allows you to model organizational roles using access packages, so you can migrate your existing role definitions to entitlement management.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.topic: article
+ms.topic: concept-article
 ms.date: 12/10/2024
-ms.author: owinfrey
 ms.reviewer: markwahl-msft
+#Customer Intent: As an IT admin, I want to govern access with an organizational role model so that I can migrate existing role definitions to entitlement management.
 ---
 
 # Govern access by migrating an organizational role model to Microsoft Entra ID Governance

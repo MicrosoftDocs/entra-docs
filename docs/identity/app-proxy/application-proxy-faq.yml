@@ -2,12 +2,8 @@
 metadata:
   title: Microsoft Entra application proxy frequently asked questions
   description: Learn answers to frequently asked questions (FAQ) about using Microsoft Entra application proxy to publish internal, on-premises applications to remote users.
-  author: kenwith
-  ms.service: entra-id
-  ms.subservice: app-proxy
   ms.topic: faq
-  ms.date: 12/29/2025
-  ms.author: kenwith
+  ms.date: 03/11/2026
   ms.reviewer: ashishj
   ai-usage: ai-assisted
 title: Microsoft Entra application proxy frequently asked questions
@@ -30,10 +26,10 @@ sections:
       - question: |
          An application proxy app's client secret (CWAP_AuthSecret) is nearing expiry or has already expired. What should I do?
         answer: |
-              Application Proxy apps no longer rely on CWAP secrets. For apps using Entra ID pre-authentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, do not expire, and require significantly less maintenance.
-              Applications configured with Passthrough pre-authentication or those using Access Tokens do not require Federated Identity Credentials — even if an FIC was previously created.
+              Application Proxy apps no longer rely on CWAP secrets. For apps using Microsoft Entra ID preauthentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, don't expire, and require significantly less maintenance.
+              Applications configured with Passthrough pre-authentication or those using Access Tokens don't require Federated Identity Credentials — even if an FIC was previously created.
            
-              You can safely ignore any existing CWAP secrets in the app registration of your Application Proxy app and/or clean-up old or expired secrets.
+              You can safely ignore any existing CWAP secrets in the app registration of your Application Proxy app or clean up old or expired secrets.
               For more information about Federated Identity Credentials, see [Overview of federated identity credentials in Microsoft Entra ID](/graph/api/resources/federatedidentitycredentials-overview).
 
       - question: |
@@ -60,7 +56,7 @@ sections:
       - question: |
          Does application proxy use the same connector as Microsoft Entra Private Access?
         answer: |
-              Yes, Microsoft Entra private network connector is used by both application proxy and Microsoft Entra Private Access. To learn more about the connector, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
+              Yes, Microsoft Entra private network connector is used by both application proxy and Microsoft Entra Private Access. For more information about the connector, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
               To troubleshoot connector configuration, see [troubleshoot connectors](../../global-secure-access/troubleshoot-connectors.md).
 
       - question: | 
@@ -69,7 +65,7 @@ sections:
             The ConnectorTroubleshooterLauncher.exe is deprecated and no longer functional. Currently, there is no replacement available.
 
       - question: | 
-         Can I Change the Logon User of the Microsoft Entra Private Network Connector / Updater Services?         
+         Can I change the logon user of the Microsoft Entra Private Network Connector / Updater Services?         
         answer: |
          Changing the logon user of the connector or updater service is not supported.
 
@@ -81,13 +77,21 @@ sections:
   - name: Application configuration
     questions:
       - question: |
+         Do I need to manage or rotate client secrets when deploying Application Proxy apps?
+        answer: |
+              No. Application Proxy apps no longer rely on client secrets (CWAP_AuthSecret). For apps using Microsoft Entra ID preauthentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, doesn't expire, and requires no manual rotation or maintenance.
+              Applications configured with passthrough preauthentication or those using access tokens don't require Federated Identity Credentials.
+              You can safely ignore any existing CWAP secrets in the app registration and remove old or expired secrets.
+              For more information, see [Overview of federated identity credentials in Microsoft Entra ID](/graph/api/resources/federatedidentitycredentials-overview).
+
+      - question: |
          Can I use the domain suffixes `[tenant name].onmicrosoft.com` or `[tenant name].mail.onmicrosoft.com` in the external URL?
         answer: |
             Although these suffixes appear in the suffix list, you shouldn't use them. These domain suffixes aren't meant to be used with Microsoft Entra application proxy. If you use these domain suffixes, the created Microsoft Entra application proxy application won't work.
             You can use either the standard domain suffix `msappproxy.net` or a [custom domain](how-to-configure-custom-domain.md).
 
       - question: |
-         Does application proxy support for sovereign and regional clouds?
+         Does application proxy support sovereign and regional clouds?
         answer: |
             Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account.
             If you have installed connectors in different regions, you can optimize traffic by selecting the closest application proxy cloud service region to use with each connector group, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-add-on-premises-application.md).
@@ -128,10 +132,10 @@ sections:
       - question: |
          Why do I get redirected to a truncated URL when I try to access my published application whenever the  URL contains a "#"  (hashtag) character?
         answer: |
-              If Microsoft Entra preauthentication is configured, and the application URL contains a “#” character when you try to access the application for the first time, you get redirected to Microsoft Entra ID (login.microsoftonline.com) for the authentication. Once you complete the authentication, you get redirected to the URL part prior to the ”#” character and everything that comes after the “#“ seems to be ignored/ removed. For example if the URL is `https://www.contoso.com/#/home/index.html`, once the Microsoft Entra authentication is done the user is redirected to `https://www.contoso.com/`.
+              If Microsoft Entra preauthentication is configured, and the application URL contains a “#” character when you try to access the application for the first time, you get redirected to Microsoft Entra ID (login.microsoftonline.com) for the authentication. After you complete the authentication, you get redirected to the URL part prior to the ”#” character and everything that comes after the “#“ seems to be ignored/ removed. For example if the URL is `https://www.contoso.com/#/home/index.html`, after Microsoft Entra authentication is done the user is redirected to `https://www.contoso.com/`.
               This behavior is by design due to how the “#” character is handled by the browser.
               
-              Possible solutions/  alternatives:
+              Possible solutions/alternatives:
 
               - Set up a redirection from `https://www.contoso.com` to `https://contoso.com/#/home/index.html`. The user must first access `https://www.contoso.com`.
               - The URL used for the first access attempt must include the “#” character in encoded form (%23). The published server might not accept this.
@@ -145,7 +149,7 @@ sections:
       - question: |
          Can I configure application proxy to add the HSTS header?
         answer: |
-              Application proxy doesn't automatically add the HTTP Strict-Transport-Security header to HTTPS responses, but it maintains the header if it is in the original response sent by the published application. Proving a setting to enable this functionality is on the roadmap.
+              Application proxy doesn't automatically add the HTTP Strict-Transport-Security header to HTTPS responses, but it maintains the header if it is in the original response sent by the published application. Providing a setting to enable this functionality is on the roadmap.
 
       - question: |
          Can I use a custom port number in the external URL?
@@ -162,7 +166,7 @@ sections:
         answer: |
               Some responses sent by the published web applications might contain hard-coded URLs.
               In this case it must be ensured by using a link translation solution that the client always uses the correct URL.
-              Link translation solutions might be complex and might not work in all the scenarios. You can find [here](application-proxy-configure-hard-coded-link-translation.md) our documented solutions for link translation.
+              Link translation solutions might be complex and might not work in all the scenarios. For more information, see [Redirect hardcoded links for apps published with Microsoft Entra application proxy](application-proxy-configure-hard-coded-link-translation.md).
               
               As best practice it's advised to use identical external and internal URLs. External and internal URLs are considered to be identical, if the `protocol://hostname:port/path/` in both URLs are identical.
               
@@ -215,7 +219,7 @@ sections:
         answer: |
               No, this won’t work, because a guest user in Microsoft Entra ID doesn't have the attribute that is required by any of the sign in identities mentioned above.
           
-              In this case there's a fallback to “User principal name”. For more details on the B2B scenario, please read [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).
+              In this case there's a fallback to “User principal name”. For more details on the B2B scenario, see [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).
           
   - name: Passthrough preauthentication
     questions:

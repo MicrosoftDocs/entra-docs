@@ -1,13 +1,9 @@
 ---
 title: 'Plan new governance scenarios for business partners and external users with Microsoft ID Governance'
 description: Describes overview of getting started with new business partner and external user scenarios.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 04/09/2025
 zone_pivot_groups: identity-governance-guest-new-project
-ms.author: owinfrey
 ---
 
 

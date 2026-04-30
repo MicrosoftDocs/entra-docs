@@ -6,10 +6,6 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: jeevansd
 manager: pmwongera
 
-ms.service: entra-id
-ms.subservice: saas-apps
-
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -106,21 +102,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot that shows the Provisioning tab.](common/provisioning.png)
 
-1. Set **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Screenshot that shows Provisioning Mode set to Automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, enter your getAbstract **Tenant URL** and **Secret token** information. Select **Test Connection** to ensure that Microsoft Entra ID can connect to getAbstract. If the connection fails, ensure that your getAbstract account has admin permissions and try again.
+1. In the **Tenant URL** field, input your getAbstract Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to getAbstract. If the connection fails, ensure your getAbstract account has the required admin permissions and try again.
 
- 	![Screenshot that shows the Tenant URL and Secret Token boxes.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** box, enter the email address of a person or group who should receive the provisioning error notifications. Select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.	
 
-	![Screenshot that shows the Notification Email box.](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page. 
 
-1. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to getAbstract**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to getAbstract in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in getAbstract for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the getAbstract API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
@@ -134,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |externalId|String||
    |preferredLanguage|String||
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to getAbstract**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to getAbstract in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in getAbstract for update operations. Select **Save** to commit any changes.
 
@@ -144,21 +142,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |externalId|String||
     |members|Reference||
 
-1. To configure scoping filters, see the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for getAbstract, change **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Screenshot that shows the Provisioning Status toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users or groups that you want to provision to getAbstract by selecting the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot that shows the Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot that shows the Save button.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

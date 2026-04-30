@@ -3,14 +3,8 @@ title: Register a passkey (FIDO2) with a FIDO2 security key
 description: User registration of a passkey (FIDO2) with a FIDO2 security key.
 
 services: active-directory
-ms.service: entra-id 
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/28/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: kimhana
 
 ms.collection: M365-identity-device-management
@@ -80,6 +74,6 @@ This article shows how to register a passkey as an authentication method by usin
 ## Next steps
 
 - [Choosing authentication methods for your organization](concept-authentication-methods.md)
-- [Register security keys on behalf of users](how-to-enable-passkey-fido2.md)
+- [Register security keys on behalf of users](how-to-authentication-passkeys-fido2.md)
 
 

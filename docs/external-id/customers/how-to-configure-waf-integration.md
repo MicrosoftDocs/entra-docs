@@ -1,13 +1,8 @@
 ---
 title: Configure Cloudflare WAF with Microsoft Entra External ID
 description: Learn how to configure Cloudflare Web Application Firewall (WAF) to protect against attacks.
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.author: cmulligan
 ms.custom: it-pro
 
 #CustomerIntent: As an IT administrator, I want to learn how to enable the Cloudflare Web Application Firewall (WAF) service for a Microsoft Entra External ID tenant with a Cloudflare WAF so that I can protect web applications from common exploits and vulnerabilities.

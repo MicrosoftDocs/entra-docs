@@ -1,18 +1,13 @@
 ---
 title: Migrate approved client app to application protection policy in Conditional Access 
 description: The approved client app control is going away. Migrate to App protection policies.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 01/12/2026
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: jogro
 ---
 # Migrate approved client app to application protection policy in Conditional Access
+
+## Overview
 
 In this article, you learn how to migrate from the "Require approved client app" Conditional Access grant control to the "Require app protection policy" grant control. App protection policies provide the same data loss and protection as approved client app policies, but with other benefits. For more information about the benefits of using app protection policies, see the article [App protection policies overview](/mem/intune/apps/app-protection-policy). 
 
@@ -35,7 +30,7 @@ Organizations can choose to update their policies using the following steps.
    1. Select **Require approved client app** and **Require app protection policy**
    1. **For multiple controls** select **Require one of the selected controls**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -55,7 +50,7 @@ Organizations can choose to deploy this policy using the following steps.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and exclude at least one account to prevent yourself from being locked out. If you don't exclude any accounts, you can't create the policy.
@@ -68,7 +63,7 @@ Organizations can choose to deploy this policy using the following steps.
    1. Select **Require approved client app** and **Require app protection policy**
    1. **For multiple controls** select **Require one of the selected controls**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

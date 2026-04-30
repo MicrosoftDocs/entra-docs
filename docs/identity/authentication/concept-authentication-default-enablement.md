@@ -1,15 +1,8 @@
 ---
 title: Protecting authentication methods in Microsoft Entra ID
 description: Learn about authentication features that can be enabled by default in Microsoft Entra ID
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 04/29/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---
@@ -55,7 +48,7 @@ The following table lists each setting that can be set to Microsoft managed and 
 | [Registration campaign](how-to-mfa-registration-campaign.md)                                    | Enabled for text message and voice call users |
 | [Location in Microsoft Authenticator notifications](how-to-mfa-additional-context.md)           | Disabled      |
 | [Application name in Microsoft Authenticator notifications](how-to-mfa-additional-context.md)   | Disabled      |
-| [System-preferred MFA](concept-system-preferred-multifactor-authentication.md)                  | Enabled       |
+| [System-preferred authentication](concept-system-preferred-multifactor-authentication.md)        | Enabled       |
 | [Authenticator Lite](how-to-mfa-authenticator-lite.md)                                          | Enabled       |  
 | [Report suspicious activity](howto-mfa-mfasettings.md#report-suspicious-activity)               | Disabled      |
 

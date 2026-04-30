@@ -4,7 +4,6 @@ description: Learn about the chat feature for the Security Copilot for Microsoft
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-manager: pmwongera
 ms.date: 01/08/2026
 ms.update-cycle: 180-days
 ms.service: entra-id

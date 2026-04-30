@@ -1,15 +1,9 @@
 ---
 title: Configure enterprise application properties
 description: Learn how to configure the properties of an enterprise to how users access and interact with the application.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 06/10/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps

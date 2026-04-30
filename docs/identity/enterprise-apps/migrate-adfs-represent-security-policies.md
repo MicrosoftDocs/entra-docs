@@ -1,13 +1,8 @@
 ---
 title: 'Represent AD FS security policies in Microsoft Entra ID: Mappings and examples'
 description: Learn how to map AD FS security policies to Microsoft Entra ID when migrating app authentication, including authorization and multifactor authentication rules.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: concept-article
 ms.date: 05/31/2023
-ms.author: jomondi
 ms.reviewer: gasinh
 ms.custom: sfi-image-nochange
 #customer intent: As an IT admin migrating app authentication to Microsoft Entra ID, I want to map authorization and multifactor authentication rules from AD FS to Microsoft Entra ID, so that I can meet security requirements and make the app migration process easier.
@@ -137,7 +132,7 @@ Here's an example of how to configure the Exclude option for trusted locations i
 
 ### Sync AD FS groups in Microsoft Entra ID
 
-When you map authorization rules, apps that authenticate with AD FS may use Active Directory groups for permissions. In such a case, use [Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771) to sync these groups with Microsoft Entra ID before migrating the applications. Make sure that you verify those groups and membership before migration so that you can grant access to the same users when the application is migrated.
+When you map authorization rules, apps that authenticate with AD FS may use Active Directory groups for permissions. In such a case, use [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) to sync these groups with Microsoft Entra ID before migrating the applications. Make sure that you verify those groups and membership before migration so that you can grant access to the same users when the application is migrated.
 
 For more information, see [Prerequisites for using Group attributes synchronized from Active Directory](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md).
 

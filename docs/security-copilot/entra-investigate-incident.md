@@ -1,9 +1,6 @@
 ---
 title: Investigate identity risk in Microsoft Security Copilot
 description: Use Microsoft Security Copilot and Microsoft Entra skills to quickly investigate identity-based security incident.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days

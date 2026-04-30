@@ -1,13 +1,9 @@
 ---
 title: Understand Microsoft Entra certificate-based authentication Certificate revocation list
 description: Learn how certificate revocation list works with Microsoft Entra certificate-based authentication
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 08/26/2025
-ms.author: justinha
 author: vimrang
-manager: dougeby
 ms.reviewer: vranganathan
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
@@ -67,7 +63,7 @@ Microsoft Entra ID supports only one CRL endpoint and supports only HTTP or HTTP
 
    `The Certificate Revocation List (CRL) downloaded from {uri} has exceeded the maximum allowed size ({size} bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators.`
 
-1. Microsoft Entra ID attempts to download the CRL subject to the service-side limits (45 MB in public Microsoft Entra ID and 150 MB in Azure for US Government).
+1. Microsoft Entra ID attempts to download the CRL subject to the service-side limits (65 MB in public Microsoft Entra ID and 150 MB in Azure for US Government).
 
 1. Users can retry the authentication after a few minutes. If the user's certificate is revoked and appears in the CRL, the authentication fails.
 
@@ -249,7 +245,7 @@ In the CBA Authentication methods policy, select **Configure** and then select *
 
 ### After a CRL endpoint is configured, end users can't sign in and they see "AADSTS500173: Unable to download CRL. Invalid status code Forbidden from CRL distribution point."
 
-When a problem prevents Microsoft Entra from downloading the CRL, the cause is often firewall restrictions. In most cases, you can resolve the issue by updating firewall rules to allow the required IP addresses so Microsoft Entra can successfully download the CRL. For more information, see [List of Microsoft IPAddress](/microsoft-365/enterprise/urls-and-ip-address-ranges#microsoft-365-unified-domains).
+When a problem prevents Microsoft Entra from downloading the CRL, the cause is often firewall restrictions. In most cases, you can resolve the issue by updating firewall rules to allow the required IP addresses so Microsoft Entra can successfully download the CRL. For more information, see [Download Azure IP Ranges and Service Tags – Public Cloud from Official Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=56519).
 
 ### How do I find the CRL for a CA, or how do I troubleshoot the error "AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation"?
 

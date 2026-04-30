@@ -48,26 +48,26 @@ items:
   items:
   - name: Overview of Microsoft Entra agents
     href: entra-agents.md
+  - name: Discover and deploy agents and solutions
+    href: security-store-in-entra.md
   - name: Conditional Access Optimization Agent
     items: 
     - name: Get started
-      href: ./conditional-access-agent-optimization.md
+      href: conditional-access-agent-optimization.md
     - name: Settings
-      href: ./conditional-access-agent-optimization-settings.md
+      href: conditional-access-agent-optimization-settings.md
     - name: Review and approve suggestions
-      href: ./conditional-access-agent-optimization-review-suggestions.md
+      href: conditional-access-agent-optimization-review-suggestions.md
     - name: Chat with the agent
-      href: ./conditional-access-agent-optimization-chat.md
+      href: conditional-access-agent-optimization-chat.md
     - name: Agent logs and metrics
-      href: ./conditional-access-agent-optimization-logs-metrics.md
+      href: conditional-access-agent-optimization-logs-metrics.md
     - name: Phased rollout
-      href: ./conditional-access-agent-optimization-phased-rollout.md
-  - name: Access Review Agent (Preview)
-    items: 
-    - name: Get started (Preview)
-      href: access-review-agent.md
-    - name: Access Review Agent logs and Metrics (Preview)
-      href: access-review-agent-logs-metrics.md
+      href: conditional-access-agent-optimization-phased-rollout.md
+    - name: Passkey adoption campaigns
+      href: conditional-access-agent-optimization-passkeys.md
+    - name: Knowledge base
+      href: conditional-access-agent-optimization-knowledge-base.md
 - name: Responsible AI
   items:
   - name: Responsible AI overview

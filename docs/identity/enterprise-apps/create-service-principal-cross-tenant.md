@@ -1,15 +1,10 @@
 ---
 title: Create an enterprise application from a multitenant application
 description: Create an enterprise application using the client ID for a multitenant application.
-
-author: omondiatieno
 manager: CelesteD
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 07/10/2025
-ms.author: jomondi
 ms.reviewer: karavar
 ms.custom: mode-other, devx-track-azurecli
 zone_pivot_groups: enterprise-apps-cli

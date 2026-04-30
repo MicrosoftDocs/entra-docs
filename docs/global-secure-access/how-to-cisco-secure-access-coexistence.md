@@ -1,12 +1,8 @@
 ---
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Secure Access
-description: Microsoft and Cisco’s Secure Access coexistence solution guide.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
-ms.topic: conceptual
-ms.date: 10/06/2025
-ms.service: global-secure-access
+description: "Configure Microsoft Global Secure Access and Cisco Secure Access for unified SASE capabilities. Covers deployment steps, FQDN and IP bypasses, and client configuration."
+ms.topic: how-to
+ms.date: 03/25/2026
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
@@ -14,13 +10,15 @@ ai-usage: ai-assisted
 
 # Security Service Edge (SSE) coexistence with Microsoft and Cisco Secure Access
 
+## Overview
+
 Learn how to configure Security Service Edge (SSE) coexistence using Global Secure Access and Cisco Secure Access.
 
 In today's digital landscape, organizations need robust, unified solutions for secure and seamless connectivity. Global Secure Access and Cisco Secure Access offer complementary Secure Access Service Edge (SASE) capabilities. When integrated, these platforms enhance security and connectivity for diverse access scenarios.
 
 This guide outlines how to configure and deploy Global Secure Access solutions alongside Cisco Secure Access SSE offerings. By using both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
 
-## Scenarios
+## Supported coexistence scenarios
 
 This guide covers the following coexistence scenarios:
 
@@ -121,19 +119,19 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ### 1. Microsoft Entra Private Access with Cisco Secure Internet Access
 
-**Global Secure Access configuration**
+#### Configure Global Secure Access
 
 1. Enable Private Access forwarding profile.
 1. Install a private network connector.
 1. Configure Quick Access and private DNS.
 1. Install and configure the Global Secure Access client for Windows or macOS.
 
-**Cisco Secure Access configuration**
+#### Configure Cisco Secure Access
 
 1. Configure required destinations to bypass Internet Security. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Cisco Secure Access / Umbrella](#bypass-global-secure-access-ips-and-fqdns-in-cisco-secure-accessumbrella) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
 1. Deploy and configure Cisco Secure Client with Umbrella module.
 
-**Validation**
+#### Validate the configuration
 1. Ensure both clients are enabled and the Umbrella profile is `Active`.
 1. To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 1. Test traffic flow by accessing various sites and validating traffic logs in both platforms.
@@ -147,20 +145,20 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ### 2. Microsoft Entra Private Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
-**Global Secure Access configuration**
+#### Configure Global Secure Access
 
 1. Enable Private Access forwarding profile.
 1. Install a private network connector.
 1. Configure Quick Access and private DNS.
 1. Install and configure the Global Secure Access client for Windows or macOS.
 
-**Cisco Secure Access configuration**
+#### Configure Cisco Secure Access
 
 1. Configure required destinations to bypass Internet Security. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Cisco Secure Access / Umbrella](#bypass-global-secure-access-ips-and-fqdns-in-cisco-secure-accessumbrella) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
 1. Deploy and configure Cisco Secure Client with Zero Trust Access and Umbrella modules.
 1. Add private resources and create access policies.
 
-**Validation**
+#### Validate the configuration
 1. Ensure both clients are enabled and the Umbrella profile is `Active`.
 1. To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 1. Test traffic flow by accessing various sites and validating traffic logs in both platforms.
@@ -176,18 +174,18 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
  
 ### 3. Microsoft Entra Microsoft Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
-**Global Secure Access configuration**
+#### Configure Global Secure Access
 
 1. Enable Microsoft Access forwarding profile.
 1. Install and configure the Global Secure Access client for Windows or macOS.
 
-**Cisco Secure Access configuration**
+#### Configure Cisco Secure Access
 
 1. Configure required destinations to bypass Internet Security, including other Microsoft IPs and FQDNs. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Cisco Secure Access / Umbrella](#bypass-global-secure-access-ips-and-fqdns-in-cisco-secure-accessumbrella) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
 1. Deploy and configure Cisco Secure Client with Zero Trust Access and Umbrella modules.
 1. Add private resources and access policies.
 
-**Validation**
+#### Validate the configuration
 1. Ensure both clients are enabled and the Umbrella profile is `Active`.
 1. To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 1. Test traffic flow by accessing various sites and validating traffic logs in both platforms.
@@ -203,13 +201,13 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ### 4. Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Private Access
 
-**Global Secure Access configuration**
+#### Configure Global Secure Access
 
 1. Enable Internet Access and Microsoft Access forwarding profiles.
 1. Install and configure the Global Secure Access client for Windows or macOS.
 1. Add a custom bypass for Cisco Secure Access: `*.zpc.sse.cisco.com`.
 
-**Cisco Secure Access configuration**
+#### Configure Cisco Secure Access
 
 1. Configure required destinations to bypass Internet Security, including other Microsoft IPs and FQDNs.  For instructions, see [Bypass Global Secure Access IPs and FQDNs in Cisco Secure Access / Umbrella](#bypass-global-secure-access-ips-and-fqdns-in-cisco-secure-accessumbrella) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
 1. Deploy and configure Cisco Secure Client with Zero Trust Access module.
@@ -218,7 +216,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 > [!NOTE]
 > For this scenario, Cisco Secure Access only handles private traffic. The Umbrella module is not installed.
 
-**Validation**
+#### Validate the configuration
 1. Ensure both clients are enabled.
 1. To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 1. Test traffic flow by accessing various sites and validating traffic logs in both platforms.

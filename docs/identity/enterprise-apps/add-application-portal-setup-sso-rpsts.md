@@ -3,9 +3,6 @@ title: Enable single sign-on for an enterprise application with a relying party 
 description: Enable single sign-on for an enterprise application that has a relying party security token service in Microsoft Entra ID.
 
 author: markwahl-msft
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 02/01/2025
 ms.author: mwahl

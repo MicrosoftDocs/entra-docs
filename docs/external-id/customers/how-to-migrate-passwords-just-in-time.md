@@ -1,23 +1,24 @@
 ---
-title: Just-In-Time Password Migration to Microsoft Entra External ID (Preview)
+title: Just-in-time password migration to Microsoft Entra External ID
 description: Learn how to migrate passwords from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
-
+ai-usage: ai-assisted
 author: garrodonnell
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
-ms.date: 12/12/2025
+ms.date: 04/03/2026
 ms.author: godonnell
 
 ## Customer intent: As a developer or administrator responsible for managing user identities, I want to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID, so that users can continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes.
 ---
-# Just-In-Time Password Migration to Microsoft Entra External ID (Preview)
+# Just-in-time password migration to Microsoft Entra External ID
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 This guide describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you're a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
 
+If you're an Azure AD B2C customer and haven't yet reviewed the available options for migration, refer to [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
+
 > [!NOTE]
-> If you have access to user passwords, either at rest or runtime, in your legacy system, you can also proactively populate them. For more information, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
+> If you have access to user passwords, either at rest or runtime, in your legacy system, you can also proactively populate them. For more information, see [Migrate users and credentials to External ID](how-to-migrate-users.md).
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](../includes/active-directory-b2c-end-of-sale-notice.md)]
 
@@ -37,9 +38,7 @@ Before you begin, ensure you have:
 - An account with the following roles assigned:
     - [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) 
     - [User Administrator](../../identity/role-based-access-control/permissions-reference.md#user-administrator)
-    - Authentication Extensibility Password Administrator. This role gives you the necessary permissions to create and manage custom authentication extensions for password migration. The role definition ID is `0b00bede-4072-4d22-b441-e7df02a1ef63`. 
-    You can find more information about role assignments in the [Microsoft Entra ID roles documentation](/entra/identity/role-based-access-control/manage-roles-portal?tabs=ms-graph). 
-
+    - [Authentication Extensibility Password Administrator](../../identity/role-based-access-control/permissions-reference.md#authentication-extensibility-password-administrator). This built-in role is available in the Azure portal and gives you the necessary permissions to create and manage custom authentication extensions for password migration. For more information about role assignments, see [Assign Microsoft Entra roles](/entra/identity/role-based-access-control/manage-roles-portal).
 
 ## Overview of the JIT migration process
 
@@ -58,16 +57,7 @@ The JIT migration process is illustrated in the following diagram:
 
 When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
-- **Consumer user signs in** - User enters credentials from the legacy identity provider. 
-    
-    Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use either one of these workarounds:
-    - **In your custom authentication extension:** Fetch the user from a Graph API call to get the username for legacy IDP validation.
-    
-    **OR**    
-
-    - **During import:** Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation. When your custom authentication extension receives the payload it transforms this UPN back to the legacy format for validation.
-        - Legacy UPN: `casey@legacyidp.com`
-        - Entra UPN: `casey@fabrikam.onmicrosoft.com`
+- **Consumer user signs in** - User enters credentials from the legacy identity provider.   
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
     - If the password entered does not match the password on record for the user, External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
     - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
@@ -81,93 +71,16 @@ When a consumer user account with the migration flag set to `true` signs in, the
    - **Block**: Authentication blocked (e.g., account locked in legacy system)
 - **Authentication completion** - If successful, the user is authenticated and future sign-ins bypass the custom extension.
 
-## 1. Bulk migrate users
+## Stage 1: Prepare users for migration
 
-Before implementing JIT migration, you need to prepare your users in Microsoft Entra External ID. This involves defining a custom extension property to track migration status, generating temporary passwords, and creating user accounts.
+Before implementing JIT migration, complete Stages 1 and 2 in [Migrate users and credentials to External ID](how-to-migrate-users.md). This ensures that:
 
-### 1.1 Define an extension property for tracking migration status
+- User accounts exist in your External ID tenant (Stage 1).
+- The migration extension property is defined and each user is flagged with `toBeMigrated: true` (Stage 2).
 
-To implement JIT migration, you need to define a directory extension property to track whether each user's credentials have been migrated from the legacy identity provider. Microsoft Graph supports adding custom properties to directory objects through [directory (Microsoft Entra ID) extensions](/graph/extensibility-overview#directory-microsoft-entra-id-extensions). 
+Once your users are prepared, proceed to configure the custom authentication extension.
 
-
-#### [Graph](#tab/graph)
-
-Create an extension property using the Microsoft Graph API:
-
-``` http
-POST https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444/extensionProperties 
-
-{ 
-    "name": "toBeMigrated", 
-    "dataType": "Boolean",
-    "targetObjects":[ 
-        "User" 
-    ] 
-} 
-```
-Replace `00001111-aaaa-2222-bbbb-3333cccc4444` with the object ID `b2c-extensions-app` of your application. The value of this extension should be set to true for all users who will require migration.
-
-#### [Admin Center](#tab/admin-center)
-
-To create an extension property using the Microsoft Entra admin center:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Navigate to **Identity** > **External Identities** > **Custom user attributes**.
-1. Select **Add**.
-1. Enter the following values:
-   - **Name**: Enter a name for the property (for example, `toBeMigrated`).
-   - **Data Type**: Select **Boolean**.
-   - **Description**: Enter a meaningful description (for example, "Tracks user password has migration from legacy system").
-1. Select **Create**.
-
----
-
-#### 1.1.1 Get the extension property ID for use in your custom authentication extension
-
-After creating the extension property, you need to retrieve its unique identifier to use in your custom authentication extension. The extension property ID follows this naming convention: `extension_{applicationId-without-hyphens}_{propertyName}`.
-
-To construct your extension property ID:
-
-1. Navigate to **Entra ID** > **App registrations** in the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Select **All applications** from above the application list.
-1. Find the application named `b2c-extensions-app` and copy its **Application (client) ID** value.
-1. Remove the hyphens from the application ID and combine it with your attribute name.
-
-For example, if your application ID is `00001111-aaaa-2222-bbbb-3333cccc4444` and your attribute name is `toBeMigrated`, your extension property ID would be `extension_00001111aaaa2222bbbb3333cccc4444_toBeMigrated`.
-
-### 1.2 Generate random strong password
-
-Before creating users, generate unique, strong temporary passwords for each user account. These will be replaced with the user's actual password from the legacy identity provider during their first sign-in through the JIT migration process.
-
-> [!IMPORTANT]
-> Ensure that the temporary passwords are unique and strong to maintain security during the migration process. Consider using a password generation library or service that meets your organization's security requirements.
-
-### 1.3 Create users with migration property
-
-Create user accounts in your External ID tenant. You can create users through the [Microsoft Entra admin center](https://entra.microsoft.com/) or programmatically using the [Microsoft Graph API](/graph/api/user-post-users). For detailed instructions on user creation, see [How to create, invite, and delete users](/entra/fundamentals/how-to-create-delete-users).
-
-The following example demonstrates how to create a user with the migration extension property set to `true` using the Microsoft Graph API. Replace `{extension-property-id}` with the actual extension property ID you constructed in the previous step. These properties must be present on the user object to trigger the migration event.
-
-This request includes user details and other values that will be shared with the external API. You can set the required primary properties on the user that can be used during the custom extension execution.
-
-``` http
-POST https://graph.microsoft.com/v1.0/users
-
-{
-    "creationType": "LocalAccount",
-    "accountEnabled": true,
-    "passwordProfile": {
-        "forceChangePasswordNextSignIn": false,
-        "password": "<unique-generated-random-strong-password>"
-    },
-    "{extension-property-id}": true
-}
-```
-You can find sample code to support your user migration in our [B2C to MEEID migration tool](https://github.com/microsoft/b2c-to-meeid-migration-tool/).
-
-For more information on bulk migrating users, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
-
-## 2. Configure the custom authentication extension
+## Stage 2: Configure the custom authentication extension
 
 After preparing your users, configure the components that enable JIT migration during the authentication process. This includes securely storing certificates, hosting your custom extension, and configuring the authentication extension application.
 
@@ -228,6 +141,11 @@ Generate an encryption certificate in Azure Key Vault. The public key is configu
 
 Create an Azure Function that validates user credentials against your legacy identity provider.
 
+> [!IMPORTANT]
+> The customer-hosted endpoint configured for the OnPasswordSubmit custom authentication extension must be a customer-managed HTTPS endpoint, typically implemented as an Azure Function. This endpoint is invoked by Microsoft Entra External ID during sign-in to validate the user's password against the legacy identity system and return the migration result.
+>
+> The URL must not point to Microsoft Graph, a Microsoft Entra service endpoint, or the legacy identity provider's interactive sign-in URL. It must reference the Function App function endpoint that implements your validation logic. You're responsible for securing this endpoint.
+
 #### 2.2.1 Request schema
 
 When sending a request to your custom authentication extension, Entra will include a payload with the following schema. This sample payload includes dummy data for illustration purposes only.
@@ -235,7 +153,8 @@ When sending a request to your custom authentication extension, Entra will inclu
 ```json
 {  
   "type": "microsoft.graph.authenticationEvent.passwordSubmit",  
-  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/    00001111-aaaa-2222-bbbb-3333cccc4444",  "data": {  
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/00001111-aaaa-2222-bbbb-3333cccc4444",  
+  "data": {  
     "@odata.type": "microsoft.graph.onPasswordSubmitCalloutData",  
     "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",  
     "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",  
@@ -250,12 +169,6 @@ When sending a request to your custom authentication extension, Entra will inclu
       },  
       "protocol": "OAUTH2.0",  
       "clientServicePrincipal": {  
-        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
-        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
-        "appDisplayName": "My Test application",  
-        "displayName": "My Test application"  
-      },  
-      "resourceServicePrincipal": {  
         "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
         "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
         "appDisplayName": "My Test application",  
@@ -282,6 +195,12 @@ When sending a request to your custom authentication extension, Entra will inclu
 
 ```
 
+The `encryptedPasswordContext` field in the request contains the following claims in encrypted JWE format:
+
+- **user-password**: The password text the user entered at sign-in
+- **username**: The sign-in identifier (email/username) the user entered at sign-in  
+- **nonce**: A GUID that is unique to the request and must be included in the response for verification
+
 #### 2.2.2 Response schema
 
 Entra expects the response from your custom extension in the below format.  
@@ -294,7 +213,7 @@ Entra expects the response from your custom extension in the below format.
       {  
         "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
       } 
-    ]
+    ],
     "nonce": "{nonce-value-from-external-id}"
   }  
 }  
@@ -870,7 +789,7 @@ After you configure your function code, deploy it to Azure using Visual Studio 2
 1. On the **Publish** page, select **Publish**.
 1. Wait for the deployment to complete. A "Publish succeeded" message appears when the deployment is finished.
 
-## 3. Configure custom extension application
+## Stage 3: Configure custom extension application
 
 Create an application registration to represent your custom authentication extension and configure it with the encryption certificate.
 
@@ -991,7 +910,7 @@ POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions
 }  
 ```
 
-## 4. Cutover the legacy app to External ID
+## Stage 4: Cutover the legacy app to External ID
 
 After configuring your custom authentication extension, prepare for production cutover by registering your client application and creating the listener policy that activates JIT migration.
 
@@ -1050,9 +969,9 @@ Content-type: application/json
 }  
 ```
 
-## 5. Test and validate before deploying to production
+## Stage 5: Test and validate before deploying to production
 
-Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely.
+Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely. For more information on testing custom extensions, see [Test your custom authentication extension](../../identity-platform/custom-extension-tokenissuancestart-configuration.md#step-5-test-the-application).
 
 Consider the following testing checklist:
 
@@ -1063,9 +982,39 @@ Consider the following testing checklist:
 - **Monitor Azure Function logs**: Review logs to identify any errors or issues during the authentication process.
 - **Validate encryption**: Ensure that passwords are encrypted end-to-end and never exposed in logs or error messages.
 
-## Next steps
+If you encounter issues during testing, see [Troubleshoot your custom authentication extension](../../identity-platform/custom-extension-troubleshoot.md) for guidance on common problems and solutions.
 
-- [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md)
+## Known issues
+
+**Password complexity mismatch in Native Auth**: During a Native Auth flow, if a user enters a password that is correct according to the legacy identity provider but is considered weak by External ID password complexity standards an error is returned instead of redirecting to SSPR.
+ 
+This only affects users whose legacy passwords don't meet External ID requirements. Users with passwords that already meet External ID standards experience seamless migration without additional prompts.
+
+## Frequently asked questions
+
+### Which URL should I use for the OnPasswordSubmit custom authentication extension?
+
+Use a customer-hosted HTTPS endpoint, typically an Azure Function, that validates the password against the legacy identity system. The URL must not reference Microsoft Graph, a Microsoft Entra service, or the legacy identity provider's interactive sign-in endpoint. It must point to your Function App function endpoint that implements the validation logic.
+
+### Why do on-premises attributes appear in the user schema?
+
+External ID uses the shared Microsoft Entra user model, which includes on-premises attributes. In External ID, these attributes are read-only and aren't used for identity matching or write-back during JIT password migration. User resolution occurs earlier in the sign-in flow using configured sign-in identifiers such as UPN or email.
+
+### Where should I deploy JIT migration components?
+
+Deploy JIT migration components in a secure identity subscription with limited RBAC. Tightly control administrative access to prevent unauthorized changes to customer-hosted authentication logic. This separation helps protect the authentication flow and user accounts from compromise.
+
+## Complete validation and cutover
+
+After you complete JIT password migration setup and testing, return to the migrate guide to validate end-to-end authentication flows and plan your application cutover: [Stage 4: Validate, monitor, and plan cutover](migrate-from-b2c-to-external-id.md#stage-4-validate-monitor-and-plan-cutover).
+
+## Related content
+
+- [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – Choose between the standard and HSC mode migration approaches.
+- [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md) – End-to-end guide for the standard migration approach.
+- [Migrate users and credentials to External ID](how-to-migrate-users.md)
+- [Services and integration partners for External ID](services-integration-partners.md) – Find a partner to help plan and execute your migration.
 - [Custom authentication extensions overview](/graph/api/resources/customauthenticationextension)
+- [Troubleshoot your custom authentication extension](/entra/identity-platform/custom-extension-troubleshoot?tabs=api-testing-tools)
 - [Secure Azure Functions](/azure/azure-functions/security-concepts)
 - [Azure Key Vault documentation](/azure/key-vault/)

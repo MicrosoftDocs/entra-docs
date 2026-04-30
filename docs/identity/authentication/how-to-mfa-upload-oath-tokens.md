@@ -2,14 +2,10 @@
 title: Upload hardware OATH tokens in CSV format
 description: Learn how to upload hardware OATH tokens in Microsoft Entra ID by using CSV file and Global Administrator role.
 services: active-directory
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 12/11/2025
-ms.author: justinha
 author: efdake
 ms.reviewer: lvandenende
-manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: sfi-ga-nochange
 # Customer intent: As an identity administrator, I want to understand how to upload hardware OATH tokens in Microsoft Entra ID by using CSV file and Global Administrator role.

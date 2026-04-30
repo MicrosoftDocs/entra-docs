@@ -1,16 +1,8 @@
 ---
 title: Two-step verification Microsoft Entra multifactor authentication and ADFS
 description: This is the Microsoft Entra multifactor authentication page that describes how to get started with Microsoft Entra multifactor authentication and AD FS.
-
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: get-started
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: michmcla
 ---
 # Getting started with Microsoft Entra multifactor authentication and Active Directory Federation Services

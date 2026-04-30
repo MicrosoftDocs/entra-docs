@@ -1,14 +1,10 @@
 ---
 title: Create an access package in entitlement management
 description: Learn how to create an access package of resources that you want to share in Microsoft Entra entitlement management.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 08/25/2024
-ms.author: owinfrey
-#Customer intent: As an administrator, I want detailed information about the options available when I'm creating a new access package so that the access package can be managed with minimal effort.
+#Customer Intent: As an IT admin, I want to create an access package so that I can share resources with users who need access.
 ---
 # Create an access package in entitlement management
 

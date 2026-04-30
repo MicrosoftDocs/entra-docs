@@ -3,14 +3,8 @@ title: Sign in with passkeys in Authenticator for Android and iOS devices
 description: Learn how to sign in with passkeys for Android and iOS devices with Microsoft Authenticator.
 
 services: active-directory
-ms.service: entra-id 
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/14/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: mjsantani, calui
 
 ms.collection: M365-identity-device-management

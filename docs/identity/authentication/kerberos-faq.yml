@@ -2,8 +2,6 @@
 title: Microsoft Entra Kerberos FAQ
 metadata:
   description: Frequently asked questions and answers for Microsoft Entra Kerberos. 
-  ms.service: entra-id
-  ms.subservice: authentication
   ms.topic: faq
   ms.date: 11/04/2025
   ms.author: barclayn

@@ -3,13 +3,10 @@ title: 'Best practices for securely deploying Microsoft Entra ID Governance '
 description: This article provides best practices for securing deploying Microsoft Entra ID Governance.
 services: entra-id-governance
 documentationcenter: ''
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.topic: best-practice
 ms.date: 04/09/2025
-ms.author: owinfrey
 ms.custom: sfi-ga-nochange
+#Customer Intent: As an IT admin, I want to learn best practices for securely deploying Microsoft Entra ID Governance so that I can protect my organization's identity infrastructure.
 ---
 
 # Best practices for securely deploying Microsoft Entra ID Governance 

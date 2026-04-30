@@ -3,7 +3,6 @@ title: How to audit and monitor User Source of Authority (SOA) in Microsoft Entr
 description: Learn how to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID.
 author: owinfreyATL
 ms.author: owinfrey
-ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 09/16/2025
