@@ -12,6 +12,9 @@ ms.date: 01/15/2025
 
 Application-based authentication (ABA) for Microsoft Entra Connect Sync uses an application identity (a service principal with a certificate) instead of a username and password to authenticate to Microsoft Entra ID. This method improves security by eliminating the need for storing admin credentials on the sync server. This article helps you troubleshoot known issues with ABA in Microsoft Entra Connect Sync and provides steps to resolve them.
 
+> [!IMPORTANT]
+> Several application-based authentication (ABA) issues have been resolved in recent Microsoft Entra Connect versions. We recommend updating to the latest version to benefit from these fixes and prevent known issues.
+
 ## Known issues
 
 **Connectivity parameters missing after auto-upgrade** – After an automatic upgrade to an ABA-enabled Microsoft Entra Connect version, the Microsoft Entra (Azure AD) connector's connectivity fields (such as Application and Certificate) appear blank in the Synchronization Service Manager UI. Selecting **OK** on the connector properties causes **ApplicationManagedBy isn't set** error in the configuration wizard and prevents the next automatic certificate rollover.
@@ -19,9 +22,6 @@ Application-based authentication (ABA) for Microsoft Entra Connect Sync uses an 
 **Multiple servers using the same connector account** – ABA is designed to work with one set of service principal or certificate per server. If two Microsoft Entra Connect Sync servers share the same custom Microsoft Entra (Azure AD) connector account (on-premises service account in Microsoft Entra ID), the automatic ABA setup gives them one shared application registration, causing the servers to use the same Microsoft Entra ID app or service principal. 
 
 When one server updates the certificate for that app, the other server's authentication breaks, leading to sync errors on the second server. This issue can also occur with the default Microsoft Entra (Azure AD) connector account (that is, `Sync_SERVERNAME_############@contoso.onmicrosoft.com`) if the server was cloned after installing the Microsoft Entra Connect Sync service.
-
-> [!IMPORTANT]
-> Several application-based authentication (ABA) issues have been resolved in recent Microsoft Entra Connect versions. We recommend updating to the latest version to benefit from these fixes and prevent known issues.
 
 ## Microsoft Entra Connector's Connectivity Parameters missing after upgrade
 
