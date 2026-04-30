@@ -91,7 +91,7 @@ Once your transition to Entra Cloud Sync is successfully completed: 
 
 *   Entra Cloud Sync will be the primary mechanism for identity synchronization capabilities between Active Directory and Entra ID, replacing the identity sync functionality in Entra Connect tool. 
 
-**What’s not changing**
+#### What's not changing
 
 Once you migrate to Cloud Sync, your hybrid authentication features that enable on‑premises credentials to be used for accessing cloud resources will continue to be available after migration on the Connect Sync config wizard.
 
