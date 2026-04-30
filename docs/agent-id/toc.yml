@@ -74,6 +74,10 @@ items:
         href: create-blueprint.md
       - name: Create and delete agent identities
         href: create-delete-agent-identities.md
+      - name: Learn about agent identity deletion
+        href: concept-agent-identity-deletion.md
+      - name: Delete and restore agent identity objects
+        href: howto-delete-agent-identity.md
       - name: Manage agent blueprints
         href: manage-agent-blueprint.md
       - name: Manage owners and sponsors
@@ -104,6 +108,8 @@ items:
           href: interactive-agent-authentication-authorization-flow.md
     - name: Integrate with APIs and services
       items:
+      - name: Authentication with Auth SDK (sidecar)
+        href: authentication-with-auth-sdk-sidecar.md
       - name: Configure SDK for agent identities
         href: microsoft-entra-sdk-for-agent-identities.md
       - name: Call Microsoft Graph API
@@ -112,6 +118,10 @@ items:
         href: call-api-custom.md
       - name: Call Azure services
         href: call-api-azure-services.md
+    - name: Integrate third-party agent platforms
+      items:
+      - name: Configure third-party agents with Agent ID
+        href: configure-third-party-agents.md
 
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale

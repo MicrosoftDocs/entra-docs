@@ -10,9 +10,6 @@ ms.reviewer: rolyon
 
 # AI-guided setup for Microsoft Entra Agent ID
 
-> [!IMPORTANT]
-> [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) is currently in PREVIEW. This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 Microsoft Entra Agent ID integration involves multiple steps: creating an agent identity blueprint, configuring credentials, setting up identifier URIs and scopes, creating blueprint principals, and provisioning agent identities. Each step has its own prerequisites, validation checks, and decision points.
 
 This AI-guided setup automates this entire workflow by using an AI coding agent (such as GitHub Copilot in VS Code) to execute the steps on your behalf. Instead of navigating between multiple documentation pages and running commands manually, you provide the AI agent with a single instruction file and it walks you through the process interactively.
@@ -95,7 +92,7 @@ Follow the steps in #file:agent-id-setup-instructions.md
 
 The AI agent reads the instruction file and begins the guided setup. It creates a task list and works through the steps sequentially:
 
-1. **Validate prerequisites**: Confirms Frontier is enabled, checks Microsoft Entra roles, validates that PowerShell 7+ and the Microsoft Graph beta module are installed.
+1. **Validate prerequisites**: Checks Microsoft Entra roles, validates that PowerShell 7+ and the Microsoft Graph beta module are installed.
 2. **Authorize and connect**: Connects to Microsoft Graph with the required scopes and sets the profile to beta.
 3. **Create the agent identity blueprint**: Collects a display name, identifies the sponsor (you), creates the blueprint with the required `@odata.type` and `OData-Version` headers, and records the `appId`.
 4. **Configure credentials**: Adds a managed identity (for production) or a certificate or client secret (for local development/testing) to the blueprint.
@@ -131,7 +128,7 @@ The AI-guided setup automates the following stages of the Agent ID integration:
 
 | Stage | What happens | Related documentation |
 |---|---|---|
-| Prerequisites | Validates Microsoft Entra roles, Frontier access, PowerShell module, and Graph permissions | [Create a blueprint: Prerequisites](create-blueprint.md#prerequisites) |
+| Prerequisites | Validates Microsoft Entra roles, PowerShell module, and Graph permissions | [Create a blueprint: Prerequisites](create-blueprint.md#prerequisites) |
 | Environment setup | Connects to Microsoft Graph with correct scopes and beta profile | [Create a blueprint: Prepare your environment](create-blueprint.md#prepare-your-environment) |
 | Blueprint creation | Creates the agent identity blueprint with sponsor and owner | [Create a blueprint](create-blueprint.md#create-an-agent-identity-blueprint-1) |
 | Credential config | Adds managed identity FIC or client secret to the blueprint | [Configure credentials](create-blueprint.md#configure-credentials-for-the-agent-identity-blueprint) |
