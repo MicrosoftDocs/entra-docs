@@ -50,7 +50,7 @@ Use these rules to verify your vendor-required header names before implementing 
 
 ## Implement the request interceptor
 
-The `MSALNativeAuthRequestInterceptor` protocol declares a single method that MSAL calls before it sends each network request. Your implementation receives the request URL and a completion block, and then calls the completion block with a dictionary of headers to add—or `nil` if no headers are needed for that request.
+The `MSALNativeAuthRequestInterceptor` protocol declares a single method that MSAL calls before it sends each network request. Your implementation receives the request URL and a completion block, and then calls the completion block with a dictionary of headers to add, or `nil` if no headers are needed for that request.
 
 Make your view controller (or another class in your app) conform to `MSALNativeAuthRequestInterceptor`:
 
@@ -77,7 +77,7 @@ extension EmailAndPasswordViewController: MSALNativeAuthRequestInterceptor {
 }
 ```
 
-The method receives the full URL of the outgoing request in `requestUrl`. Use this to scope your headers to the specific endpoints your fraud or bot-detection vendor requires—for example, sign-in or sign-up initiation endpoints. Sending headers to unrelated endpoints can degrade signal quality and increase false positives.
+The method receives the full URL of the outgoing request in `requestUrl`. Use this to scope your headers to the specific endpoints your fraud or bot-detection vendor requires. For example, sign-in or sign-up initiation endpoints. Sending headers to unrelated endpoints can degrade signal quality and increase false positives.
 
 > [!NOTE]
 > Always call `completionBlock` exactly once per invocation. Pass `nil` if no extra headers are needed for that request.
@@ -111,7 +111,7 @@ To confirm that your headers reach the intended endpoints, inspect the outgoing 
 - Headers are sent only to the endpoints you scoped them to.
 
 > [!NOTE]
-> Logging inside the interceptor callback won't show you the final request headers. The callback is invoked before MSAL evaluates and applies the naming rules, so it reflects only the headers you provide — not what is ultimately sent.
+> Logging inside the interceptor callback won't show you the final request headers. The callback is invoked before MSAL evaluates and applies the naming rules, so it reflects only the headers you provide, not what is ultimately sent.
 
 ## Related content
 
