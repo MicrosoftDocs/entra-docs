@@ -77,7 +77,7 @@ Beginning in July 2026, we will begin notifying customers through the M365 Me
 
 We are committed to supporting you by providing tooling and documentation for the transition to Entra Cloud Sync. 
 
-**What's changing**
+#### What's changing
 
 Once your organization is notified of its assigned transition window, you will receive detailed guidance and resources to help you begin the move to Entra Cloud Sync. During this period: 
 
