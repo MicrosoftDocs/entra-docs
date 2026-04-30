@@ -4,6 +4,7 @@ description: Describes how to use an AI coding agent to automate the onboarding 
 ms.topic: how-to
 author: arlucaID
 ms.author: arluca
+ms.service: entra-id
 ms.date: 04/16/2026
 ms.reviewer: rolyon
 ---
