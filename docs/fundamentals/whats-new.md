@@ -132,7 +132,7 @@ Stay tuned to this page for further updates.
 *   Existing provisioning jobs will not switch automatically. Customers will need to update job configuration after the new method is available.
 *   A small number of applications that cannot support a modern method may be retired from the Microsoft Entra app gallery.
 
-**When this is changing**
+#### When this is changing
 
 
 This change will roll out over the coming months, and timing will vary by application. We will share impacted applications, customer deadlines, and supporting documentation through monthly What’s new articles and the Microsoft 365 Message Center.
