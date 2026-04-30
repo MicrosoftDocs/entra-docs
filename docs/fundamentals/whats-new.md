@@ -1066,7 +1066,7 @@ By integrating migration into the authentication flow, organizations can simplif
 **Service category:** Internet Access  
 **Product capability:** Network Access  
 
-Block prompt injection attacks to enterprise GenAI apps in real-time with universal policy controls, extending Azure AI Prompt Shield to all network traffic. For more information, see: [Protect Enterprise Generative AI apps with Prompt Shield (preview)](../global-secure-access/how-to-ai-prompt-shield.md).
+Block prompt injection attacks to enterprise GenAI apps in real-time with universal policy controls, extending Azure AI Prompt Shield to all network traffic. For more information, see: [Protect enterprise generative AI apps with prompt injection protection (preview)](../global-secure-access/how-to-ai-prompt-injection-protection.md).
 
 ---
 
