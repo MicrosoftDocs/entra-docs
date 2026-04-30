@@ -67,7 +67,7 @@ As organizations look to strengthen identity security and advance their Zero Tru
 
 This shift is a key step toward a cloud-managed identity future that will provide a more secure, resilient, and easier-to-operate synchronization experience. As part of ongoing modernization efforts, Microsoft’s strategy remains to deliver stronger security, improved reliability, and simpler identity operations.  
 
-**What's next**
+#### What's next
 
 Beginning in July 2026, we will begin notifying customers through the M365 Message Center, Entra Connect Health, and targeted emails about their individual transition timelines. The transition will be rolled out in phases, and we will reach out directly to each organization when their assigned transition window begins. This phased approach ensures that we can provide tailored guidance and support to all our customers. 
 
