@@ -36,7 +36,7 @@ The following diagram shows how you can use cross-tenant synchronization to enab
 
 Organizations that own multiple Microsoft Entra tenants and want to streamline intra-organization cross-tenant application access can benefit from cross-tenant synchronization.
 
-Cross-tenant synchronization can be used across organizations, but doing so might introduce additional compliance responsibilities. Customers are responsible for ensuring that their use complies with applicable privacy, security, and regulatory requirements.
+Cross-tenant synchronization can be used across organizations, but doing so might introduce additional compliance responsibilities. Customers are responsible for ensuring that their use complies with applicable privacy, security, and regulatory requirements, including the European Union General Data Protection Regulation (GDPR).
 
 Microsoft does not facilitate user consent collection through cross-tenant synchronization. Customers should assess whether their scenario requires user consent, data minimization, or other safeguards. Customers should also consult their legal or compliance teams before enabling cross-organization synchronization or cross-tenant synchronization across organizations.
 
