@@ -107,7 +107,7 @@ The automation creates these objects once and reuses them on subsequent runs:
 
 ### n8n credentials and workflows
 
-The postprovision hook configures n8n automatically:
+The postprovision hook automatically configures n8n:
 
 **Credentials created:**
 
@@ -157,8 +157,8 @@ To add more scopes, edit the `$MCP_SCOPES` array in `scripts/Setup-EntraAgentId.
 
 The deployment is fully idempotent:
 
-- Azure resources that already exist are skipped by Bicep.
-- Microsoft Entra object IDs (Blueprint, Agent Identity, Agent User, Blueprint secret) are saved to the `azd` environment after the first run and reused on subsequent runs.
+- Bicep skips Azure resources that already exist.
+- The `azd` environment saves Microsoft Entra object IDs (Blueprint, Agent Identity, Agent User, Blueprint secret) after the first run and reuses them on subsequent runs.
 - n8n configuration (credentials, workflows) is applied fresh each run, which allows repairing a broken state.
 
 To rerun just the postprovision scripts without modifying infrastructure:
@@ -200,24 +200,24 @@ You can run the configuration scripts independently if needed:
 
 | Resource | Configuration | Estimated monthly cost |
 |---|---|---|
-| n8n Container App | 1 vCore, 2 GiB | ~$15 |
+| n8n Container App | 1 vCore, 2 GiB | ~ $15 |
 | Static Web App | Free tier | $0 |
-| PostgreSQL Flexible Server | Burstable B1ms | ~$12 |
+| PostgreSQL Flexible Server | Burstable B1ms | ~ $12 |
 | Azure OpenAI | Pay-per-token (GPT-4o) | Varies |
-| Storage Account | LRS, less than 1 GB | ~$1 |
-| Log Analytics | Pay-as-you-go | ~$2 |
-| **Total (excluding OpenAI)** | | **~$30/month** |
+| Storage Account | LRS, less than 1 GB | ~ $1 |
+| Log Analytics | Pay-as-you-go | ~ $2 |
+| **Total (excluding OpenAI)** | | **~ $30/month** |
 
 ## Clean up resources
 
-Remove all Azure resources created by the deployment:
+Remove all Azure resources that the deployment created:
 
 ```bash
 azd down --purge
 ```
 
 > [!NOTE]
-> The `azd down` command removes Azure resources but doesn't delete Microsoft Entra objects such as blueprints, agent identities, or agent user accounts. Remove these manually in the Microsoft Entra admin center if they're no longer needed.
+> The `azd down` command removes Azure resources but doesn't delete Microsoft Entra objects such as blueprints, agent identities, or agent user accounts. Remove these objects manually in the Microsoft Entra admin center if they're no longer needed.
 
 ## Related content
 
