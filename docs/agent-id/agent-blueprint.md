@@ -5,7 +5,6 @@ titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.date: 03/31/2026
-ms.custom: agent-id-ignite
 ms.topic: concept-article
 
 #customer-intent: As a developer or IT administrator building AI agents, I want to understand agent identity blueprints so that I can properly create, authenticate, and manage agent identities within my organization's Microsoft Entra environment.

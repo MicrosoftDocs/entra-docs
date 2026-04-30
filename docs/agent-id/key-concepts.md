@@ -6,7 +6,6 @@ author: omondiatieno
 ms.author: jomondi
 ms.reviewer: dastrock
 ms.date: 04/03/2026
-ms.custom: agent-id-ignite
 ms.topic: concept-article
 #customer-intent: As a developer, I want to understand the core concepts of agent identities and blueprints in Microsoft Entra ID so that I can implement secure authentication patterns for AI agents in my applications.
 ---
