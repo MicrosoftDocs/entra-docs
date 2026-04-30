@@ -2,9 +2,6 @@
 title: Signals and metrics for tenant discovery (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about the signals and metrics used in Microsoft Entra Tenant Governance to identify and evaluate related tenants
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/20/2026
 ---
