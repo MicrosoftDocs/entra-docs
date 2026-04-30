@@ -20,6 +20,9 @@ Application-based authentication (ABA) for Microsoft Entra Connect Sync uses an 
 
 When one server updates the certificate for that app, the other server's authentication breaks, leading to sync errors on the second server. This issue can also occur with the default Microsoft Entra (Azure AD) connector account (that is, `Sync_SERVERNAME_############@contoso.onmicrosoft.com`) if the server was cloned after installing the Microsoft Entra Connect Sync service.
 
+> [!IMPORTANT]
+> Several application-based authentication (ABA) issues have been resolved in recent Microsoft Entra Connect versions. We recommend updating to the latest version to benefit from these fixes and prevent known issues.
+
 ## Microsoft Entra Connector's Connectivity Parameters missing after upgrade
 
 ### Symptom
