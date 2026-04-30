@@ -35,7 +35,7 @@ For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-micro
 
 - **Use the Agent ID framework for all agents.** Don't create AI agents as plain app registrations or service principals outside the Agent ID framework. Always use the supported [creation channels](agent-id-creation-channels.md) so agents are tracked as agent identities with built-in sponsor accountability and lifecycle controls.
 
-- **Create agent user accounts only when necessary.** [Agent user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent user accounts because they add complexity with licenses, group memberships, and user-level policies.
+- **Create agent's user accounts only when necessary.** [Agent's user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent's user accounts because they add complexity with licenses, group memberships, and user-level policies.
 
 ## Manage credentials securely
 
