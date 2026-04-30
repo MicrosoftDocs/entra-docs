@@ -104,7 +104,7 @@ This operation requires Microsoft Graph PowerShell SDK, preauthenticated with `C
 #### By Identity
  
  ``` powershell
-  Get-ADSyncToolsOnPremisesAttribute [-Identity] <String> [[-Property] <String[]>] [<CommonParameters>] 
+  Get-ADSyncToolsOnPremisesAttribute [-Id] <String> [[-Property] <String[]>] [<CommonParameters>] 
  ```
 #### By IncludeSyncedUsers
  
@@ -251,15 +251,15 @@ This function can be used to set any of the following on-premises attributes:
 ### SYNTAX 
 
 ``` powershell
-Set-ADSyncToolsOnPremisesAttribute [-Identity] <String> [[-onPremisesDistinguishedName] <String>] [[-onPremisesDomainName] <String>] [[-onPremisesImmutableId] <String>] [[-onPremisesSamAccountName] <String>] [[-onPremisesSecurityIdentifier] <String>] [[-onPremisesUserPrincipalName] <String>] [<CommonParameters>] 
+Set-ADSyncToolsOnPremisesAttribute [-Id] <String> [[-onPremisesDistinguishedName] <String>] [[-onPremisesDomainName] <String>] [[-onPremisesImmutableId] <String>] [[-onPremisesSamAccountName] <String>] [[-onPremisesSecurityIdentifier] <String>] [[-onPremisesUserPrincipalName] <String>] [<CommonParameters>] 
 ```
 
 #### By BodyParameter
 
 ``` powershell
-Set-ADSyncToolsOnPremisesAttribute [-Identity] <String> [-BodyParameter] <String> [<CommonParameters>] 
+Set-ADSyncToolsOnPremisesAttribute [-Id] <String> [-BodyParameter] <String> [<CommonParameters>] 
 ```
- 
+
 ### EXAMPLES 
 
 #### Example 1
@@ -285,7 +285,7 @@ $jsonBody = @'
   "onPremisesUserPrincipalName": "User1@Contoso.com" 
 }
 '@
-Set-ADSyncToolsOnPremisesAttribute -Identity '98765432-6f08-40b2-8b66-123456789012' -BodyParameter $jsonBody
+Set-ADSyncToolsOnPremisesAttribute -Id '11111111-2222-3333-4444-555555555555' -BodyParameter $jsonBody
 ```
 
 >[!Note]

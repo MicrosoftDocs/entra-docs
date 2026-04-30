@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both Akamai Enterprise A
 > * Keep user attributes synchronized between Microsoft Entra ID and Akamai Enterprise Application Access.
 > * Provision groups and group memberships in Akamai Enterprise Application Access
 > * [Single sign-on](akamai-tutorial.md) to Akamai Enterprise Application Access (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
