@@ -2,7 +2,7 @@
 title: Global Administrator
 description: Global Administrator
 ms.topic: include
-ms.date: 03/24/2026
+ms.date: 04/22/2026
 ms.custom: include file
 ---
 
@@ -27,6 +27,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
 > | microsoft.commerce.billing/allEntities/allProperties/allTasks | Manage all aspects of Office 365 billing |
 > | microsoft.commerce.billing/purchases/standard/read | Read purchase services in Microsoft 365 admin center. |
+> | microsoft.commerce.tenantRelationships/customerDelegatedAdminPrivileges/allProperties/allTasks | Manage all aspects of granular delegated admin privileges (GDAP) relationships in a customer tenant. |
 > | microsoft.directory/accessReviews/allProperties/allTasks | Create and delete access reviews, and read and update all properties of access reviews in Microsoft Entra ID |
 > | microsoft.directory/accessReviews/definitions/allProperties/allTasks | Manage access reviews of all reviewable resources in Microsoft Entra ID |
 > | microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks | Manage admin consent request policies in Microsoft Entra ID |

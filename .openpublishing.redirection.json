@@ -3106,6 +3106,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/external-id/customers/how-to-customize-branding-themes-apps.md",
+      "redirect_url": "/entra/fundamentals/how-to-customize-branding-themes-apps",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/agent-id/identity-platform/agent-id-setup-instructions.md",
       "redirect_url": "https://github.com/microsoft/skills/blob/main/.github/skills/entra-agent-id",
       "redirect_document_id": false
@@ -3346,6 +3351,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/global-secure-access/how-to-efp-conditional-access.md",
+      "redirect_url": "/entra/global-secure-access/how-to-configure-conditional-access-policy-for-explicit-forward-proxy",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/agent-id/identity-platform/agent-autonomous-app-oauth-flow.md",
       "redirect_url": "/entra/agent-id/agent-autonomous-app-oauth-flow",
       "redirect_document_id": true
@@ -3533,6 +3543,11 @@
     {
       "source_path": "docs/identity/authentication/passkey-authenticator-faq.yml",
       "redirect_url": "/entra/identity/authentication/passkey-faq",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/global-secure-access/concept-edr-antivirus-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-edr-antivirus-coexistence",
       "redirect_document_id": false
     }
   ]

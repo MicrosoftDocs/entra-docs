@@ -10,7 +10,7 @@ ms.topic: concept-article
 
 Passkeys (FIDO2) enable phishing-resistant authentication. They can replace weak credentials with strong phishing-resistant public/private-key credentials that can't be reused, replayed, or shared across services. They can be stored securely on a device or synced across trusted devices through an encrypted cloud service.
 
-In the Microsoft Entra ID authentication methods policy, administrators can enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires extra metadata from passkeys (FIDO2) that are registered with the tenant. As a vendor, your passkey (FIDO2) is usable when attestation is enforced if the following requirements are met.
+In the Microsoft Entra ID authentication methods policy, an Authentication Policy Administrator can enforce attestation for FIDO2 security keys. If **Enforce attestation** is selected, Microsoft requires extra metadata from passkeys (FIDO2) that are registered with the tenant. As a vendor, your passkey (FIDO2) is usable when attestation is enforced if attestation requirements are met.
 
 > [!NOTE]
 > Microsoft Entra ID supports device-bound and synced passkeys (FIDO2). For more information about how to enable passkeys (FIDO2), see [Enable passkeys (FIDO2) for your organization](how-to-authentication-passkeys-fido2.md).
@@ -21,7 +21,7 @@ Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoallia
 
 FIDO2 standards (WebAuthn and CTAP) require providers to return a valid attestation statement.
 
-The specific requirements vary based on how an administrator configures attestation requirements in the **Passkeys (FIDO2)** Authentication methods policy.
+The specific requirements vary based on how an administrator configures attestation requirements in the **Passkeys (FIDO2)** policy.
 
 Attestation | Description
 --------------------|------------
