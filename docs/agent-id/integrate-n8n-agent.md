@@ -63,18 +63,16 @@ The entire deployment runs through a single `azd up` command that provisions Azu
 
 1. When prompted, provide the following values:
 
-   | Prompt | What to enter |
-   |---|---|
-   | **Environment name** | Any name (for example, `my-n8n`). Used to isolate this deployment. |
-   | **Azure subscription** | Select the subscription to deploy into. |
-   | **Azure location** | Select a region (for example, `northeurope`). |
-   | **n8n admin email** | Email for the n8n owner account. |
-   | **n8n admin password** | Password for the n8n owner account (minimum 8 characters, mixed case, number). |
+   - **Environment name:** Any name (for example, `my-n8n`). Used to isolate this deployment.
+   - **Azure subscription:** Select the subscription to deploy into.
+   - **Azure location:** Select a region (for example, `northeurope`).
+   - **n8n admin email:** Email for the n8n owner account.
+   - **n8n admin password:** Password for the n8n owner account (minimum 8 characters, mixed case, number).
 
-1. During the postprovision phase, the automation performs a second Entra sign-in. A device code is displayed — open the URL and enter the code. This step requires Global Administrator or Application Administrator role.
+1. During the postprovision phase, the automation performs a second sign-in. A device code is displayed, open the URL and enter the code. This step requires Global Administrator or Application Administrator role.
 
    The postprovision hook then:
-   - Creates Entra Agent ID objects (Blueprint, Agent Identity, Agent User).
+   - Creates Microsoft Entra Agent ID objects (Blueprint, Agent Identity, Agent User).
    - Enables the Microsoft Graph MCP Server for Enterprise.
    - Waits for n8n to become ready.
    - Creates the owner account.
@@ -90,22 +88,22 @@ When the deployment completes, the script prints your n8n URL and a summary of w
 
 The deployment creates the following Azure resources:
 
-- **Container Apps Environment** — hosts n8n and the test SPA.
-- **n8n Container App** — runs the official `n8nio/n8n` image with HTTPS ingress.
-- **Static Web App** — test SPA for the OBO webhook flow.
-- **PostgreSQL Flexible Server** — persistent store for workflows, credentials, and execution history (Burstable B1ms).
-- **Storage Account and File Share** — persistent `/home/node/.n8n` directory. Community nodes and configuration survive restarts.
-- **Azure OpenAI** — GPT model deployment used by the AI agent workflows.
-- **Log Analytics Workspace** — diagnostics and monitoring.
+- **Container Apps Environment:** Hosts n8n and the test SPA.
+- **n8n Container App:** Runs the official `n8nio/n8n` image with HTTPS ingress.
+- **Static Web App:** Test SPA for the OBO webhook flow.
+- **PostgreSQL Flexible Server:** Persistent store for workflows, credentials, and execution history (Burstable B1ms).
+- **Storage Account and File Share:** Persistent `/home/node/.n8n` directory. Community nodes and configuration survive restarts.
+- **Azure OpenAI:** GPT model deployment used by the AI agent workflows.
+- **Log Analytics Workspace:** Diagnostics and monitoring.
 
 ### Entra identity objects
 
 The automation creates these objects once and reuses them on subsequent runs:
 
-- **Agent Identity Blueprint** — app registration that issues tokens on behalf of Agent Identities via Federated Identity Credentials.
-- **Agent Identity service principal** — the AI agent's service principal. Acquires Microsoft Graph and MCP tokens autonomously.
-- **Agent User** — a cloud-only user identity that enables delegated (OBO) token flows.
-- **SPA app registration** — client app for the webhook demo, preconfigured with redirect URIs and Blueprint API permissions.
+- **Agent Identity Blueprint:** App registration that issues tokens on behalf of Agent Identities via Federated Identity Credentials.
+- **Agent Identity service principal:** The AI agent's service principal. Acquires Microsoft Graph and MCP tokens autonomously.
+- **Agent User:** A cloud-only user identity that enables delegated (OBO) token flows.
+- **SPA app registration:** Client app for the webhook demo, preconfigured with redirect URIs and Blueprint API permissions.
 
 ### n8n credentials and workflows
 
@@ -113,17 +111,17 @@ The postprovision hook configures n8n automatically:
 
 **Credentials created:**
 
-- **EntraAgentID - Autonomous** — app-only Microsoft Graph API token (no user context).
-- **EntraAgentID - Agent User OBO** — delegated token on behalf of the Agent User.
-- **Azure OpenAI** — connection to the deployed GPT model for AI agent workflows.
-- **AgentID Auth Manager - Access Token** — token forwarding from the Auth Manager to downstream nodes.
-- **Bearer from AuthManager** — bearer token forwarding for MCP calls.
+- **EntraAgentID - Autonomous:** App-only Microsoft Graph API token (no user context).
+- **EntraAgentID - Agent User OBO:** Delegated token on behalf of the Agent User.
+- **Azure OpenAI:** Connection to the deployed GPT model for AI agent workflows.
+- **AgentID Auth Manager - Access Token:** Token forwarding from the Auth Manager to downstream nodes.
+- **Bearer from AuthManager:** Bearer token forwarding for MCP calls.
 
 **Workflows imported:**
 
-- **Agent ID Auth Manager - Agent User with MCP Enterprise** — acquires a delegated MCP token for the Agent User and forwards it to a subworkflow.
-- **HTTP Request with autonomous agent token** — demonstrates an autonomous agent calling Microsoft Graph directly with an app-only token.
-- **Webhook - assistive agent (on-behalf-of)** — webhook entry point that receives a bearer token from the SPA, calls the Auth Manager, and responds via the Graph MCP Server on behalf of the signed-in user.
+- **Agent ID Auth Manager - Agent User with MCP Enterprise:** Acquires a delegated MCP token for the Agent User and forwards it to a subworkflow.
+- **HTTP Request with autonomous agent token:** Demonstrates an autonomous agent calling Microsoft Graph directly with an app-only token.
+- **Webhook - assistive agent (on-behalf-of):** Webhook entry point that receives a bearer token from the SPA, calls the Auth Manager, and responds via the Graph MCP Server on behalf of the signed-in user.
 
 ## Deploy the test SPA (optional)
 
@@ -139,16 +137,16 @@ The test SPA is a static JavaScript app that demonstrates the OBO webhook flow f
 
 The setup grants the following delegated `MCP.*` scopes to the Agent Identity service principal. These scopes mirror their Microsoft Graph counterparts (for example, `MCP.User.Read.All` corresponds to `User.Read.All`):
 
-- `MCP.User.Read.All` — read all users.
-- `MCP.Organization.Read.All` — read tenant organization info.
-- `MCP.Group.Read.All` — read all groups.
-- `MCP.GroupMember.Read.All` — read group memberships.
-- `MCP.Application.Read.All` — read app registrations and service principals.
-- `MCP.AuditLog.Read.All` — read sign-in and audit logs.
-- `MCP.Reports.Read.All` — read Microsoft 365 usage reports.
-- `MCP.Policy.Read.All` — read conditional access policies.
-- `MCP.Domain.Read.All` — read verified domains.
-- `MCP.Device.Read.All` — read Entra-registered devices.
+- `MCP.User.Read.All`: Read all users.
+- `MCP.Organization.Read.All`: Read tenant organization info.
+- `MCP.Group.Read.All`: Read all groups.
+- `MCP.GroupMember.Read.All`: Read group memberships.
+- `MCP.Application.Read.All`: Read app registrations and service principals.
+- `MCP.AuditLog.Read.All`: Read sign-in and audit logs.
+- `MCP.Reports.Read.All`: Read Microsoft 365 usage reports.
+- `MCP.Policy.Read.All`: Read conditional access policies.
+- `MCP.Domain.Read.All`: Read verified domains.
+- `MCP.Device.Read.All`: Read Entra-registered devices.
 
 To add more scopes, edit the `$MCP_SCOPES` array in `scripts/Setup-EntraAgentId.ps1` and rerun `azd provision`.
 
@@ -218,8 +216,7 @@ Remove all Azure resources created by the deployment:
 azd down --purge
 ```
 
-> [!IMPORTANT]
-> The `azd down` command removes Azure resources but doesn't delete Entra objects (Blueprint app, Agent Identity, Agent User). Remove these manually in the Azure portal if they're no longer needed.
+The `azd down` command removes Azure resources but doesn't delete Entra objects such as blueprints, agent identities, or agernt user accounts. Remove these manually in the Microsoft Entra admin if they're no longer needed.
 
 ## Related content
 
