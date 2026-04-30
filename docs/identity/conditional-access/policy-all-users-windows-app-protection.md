@@ -85,7 +85,7 @@ If your organization shows the following MDM enrollment option, select **No**. S
    :::image type="content" source="media/policy-all-users-windows-app-protection/mdm-enrollment.png" alt-text="Screenshot showing the MDM enrollment window.":::
 
 > [!TIP]
-> Now in public preview, a new property to [disable the device management UX screen](/intune/intune-service/enrollment/windows-enroll) during this flow can be applied that will not display the option to MDM enroll to end users. This can reduce accidental MDM enrollments that block MAM enrollments.
+> Now in preview, a new property to [disable the device management UX screen](/intune/intune-service/enrollment/windows-enroll) during this flow can be applied that will not display the option to MDM enroll to end users. This can reduce accidental MDM enrollments that block MAM enrollments.
 
 ## Troubleshooting
 
