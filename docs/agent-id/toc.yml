@@ -108,6 +108,8 @@ items:
           href: interactive-agent-authentication-authorization-flow.md
     - name: Integrate with APIs and services
       items:
+      - name: Authentication with Auth SDK (sidecar)
+        href: authentication-with-auth-sdk-sidecar.md
       - name: Configure SDK for agent identities
         href: microsoft-entra-sdk-for-agent-identities.md
       - name: Call Microsoft Graph API
