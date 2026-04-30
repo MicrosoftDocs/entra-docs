@@ -74,7 +74,7 @@ Three tokens are involved in the identity exchange:
 
 In the autonomous flow, the sidecar uses client credentials to get T1, then exchanges it for TR scoped to the downstream API. In the OBO flow, the sidecar also receives Tc (the user's token) and performs an OBO exchange to get TR that acts on behalf of the signed-in user.
 
-In this set up, only the chat UI (port 3001) is exposed to your host. The sidecar and weather API are only reachable within the Docker network, which establishes a clear security boundary.
+In this setup, only the chat UI (port 3001) is exposed to your host. The sidecar and weather API are only reachable within the Docker network, which establishes a clear security boundary.
 
 ## Choose an execution mode and identity flow
 
@@ -118,7 +118,7 @@ If you already have a `.env` file from a previous run with `BLUEPRINT_APP_ID` po
 
 Run the following commands once per tenant to create the Blueprint app, Agent ID, and the SPA app used for OBO sign-in.
 
-1. Create the Blueprint app and Agent ID for the autonomous flow by following the PowerShell workflow in the [scripts directory](https://github.com/microsoft/entra-agentid-samples/blob/dev/scripts/README.md). At the end you have:
+1. Create the Blueprint app and Agent ID for the autonomous flow by following the PowerShell workflow in [Create an agent identity blueprint](create-blueprint.md) and [Create agent identities](create-delete-agent-identities.md). At the end you have:
 
    - **`TENANT_ID`:** Your Entra tenant.
    - **`BLUEPRINT_APP_ID`:** Blueprint app registration.
