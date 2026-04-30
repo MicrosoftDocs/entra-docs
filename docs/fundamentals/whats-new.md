@@ -274,7 +274,7 @@ Issues fixed and improvements added in this update  include
 *   Active Directory Federation Services (AD FS) Single Sign-On (SSO):  Introduces support for claims-based authentication, allowing end-users to sign in via AD FS instead of Windows Integrated Authentication 
     
 
-Download and upgrade information 
+#### Download and upgrade information
 
 *   Based on your licensing, you can download the installer packages here: [Microsoft Identity Manager licensing and downloads | Microsoft Learn](/microsoft-identity-manager/microsoft-identity-manager-licensing#obtaining-windows-installer-packages) 
     
