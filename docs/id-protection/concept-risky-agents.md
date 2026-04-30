@@ -24,7 +24,7 @@ To configure policies that use Agent Risk as a condition, you must have the [Con
 
 ### Licensing
 
-- ID Protection for agents is included with the Microsoft Entra P2 license while in preview.
+[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
 
 ## How it works
 

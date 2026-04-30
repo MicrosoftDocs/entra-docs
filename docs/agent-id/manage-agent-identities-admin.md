@@ -33,8 +33,6 @@ Different management tasks require different roles and licenses. The following t
 | Configure Lifecycle Workflows | Lifecycle Workflows Administrator | &nbsp; |
 | Verify Frontier licensing | Billing Administrator | Required to check Microsoft Agent 365 licensing in the Microsoft 365 admin center. |
 
-[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
-
 ## View agent identities
 
 The Microsoft Entra admin center provides a centralized interface to view all agent identities in your tenant. You can search, filter, sort, and customize columns to find specific agents.

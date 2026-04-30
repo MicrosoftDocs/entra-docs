@@ -24,8 +24,6 @@ IT administrators and security analysts face mounting pressure to identify and r
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
-[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
-
 ### Known limitations
 
 - Each agent run currently investigates up to 100 risky users. To customize the scope within this limitation, use the Agent Scope Setting. 

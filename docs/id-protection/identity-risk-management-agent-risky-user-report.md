@@ -23,8 +23,6 @@ The Identity Risk Management Agent (Preview) in Microsoft Entra ID Protection pr
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
-[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
-
 ## Review agent findings in the Risky users report
 
 The Identity Risk Management Agent is integrated directly into the Risky users report in Microsoft Entra ID Protection to support your existing workflow. 
