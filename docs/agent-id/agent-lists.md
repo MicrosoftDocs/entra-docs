@@ -5,7 +5,6 @@ description: Access Microsoft Entra admin center to view and filter agent identi
 ms.subservice: 
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: alamaral
 
 #Customer intent: As an administrator, I want to view and search for agent identity blueprints / applications in the Microsoft Entra admin center, so that I can manage and configure the applications in my tenant effectively.

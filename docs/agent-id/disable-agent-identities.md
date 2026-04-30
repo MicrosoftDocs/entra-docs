@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how to disable agent identities in your Microsoft Entra ID tenant using Conditional Access policies and creation restrictions.
 ms.topic: how-to
 ms.date: 04/29/2026
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 ai-usage: ai-assisted
 #Customer intent: As a security administrator managing agent identities in my tenant, I want to disable agent identities to prevent their use in my organization so that I can maintain strict control over identity types and reduce potential security risks from AI agents.
