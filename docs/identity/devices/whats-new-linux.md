@@ -186,6 +186,27 @@ To add the appropriate package repository for your Linux distribution, follow th
 
 ## Changes
 
+### 3.0.2 - April 27, 2026 
+
+**Support for Ubuntu 26.04 LTS and notice of deprecation for Ubuntu 22.04 LTS**
+Microsoft Intune now supports Ubuntu 26.04 LTS. Support for Ubuntu 22.04 LTS ends in August 2026. Devices already enrolled on Ubuntu 22.04 remain enrolled, but you should notify users to upgrade to a supported Ubuntu version. You can identify devices running Ubuntu 22.04 in the Intune admin center by going to Devices > All devices, filtering by Linux, and adding the OS version column. For more information, see [Enroll Linux desktop devices in Microsoft Intune](/intune/device-enrollment/guide-linux).
+
+**Fixes/Improvements**
+- Ensure that all browser calls are done in the same thread
+- updated logging to provide better insights into the broker's behavior and issues
+- Fix the package file time missing issue on RHEL 10
+- PKCE support
+
+#### Assets
+- Ubuntu-26.04 - [microsoft-identity-broker_3.0.2-resolute_amd64.deb ](https://packages.microsoft.com/ubuntu/26.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-resolute_amd64.deb)
+- Ubuntu-24.04 - [microsoft-identity-broker_3.0.2-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_3.0.2-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_3.0.2-jammy_amd64.deb)
+- Red Hat Enterprise Linux 10 - [microsoft-identity-broker-3.0.2-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-3.0.2-1.el10.x86_64.rpm)
+- Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-3.0.2-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.2-1.el9.x86_64.rpm)
+- Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-3.0.2-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.2-1.el8.x86_64.rpm)
+
+---
+
 ### 3.0.1 - March 31, 2026 - (GA Major Release)
 
 GA release of the Microsoft Identity Broker for Linux, now using a newly rewritten C++ broker instead of the previous Java-based broker.
@@ -220,6 +241,8 @@ GA release of the Microsoft Identity Broker for Linux, now using a newly rewritt
 - Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-3.0.1-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.1-1.el9.x86_64.rpm) 
 - Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-3.0.1-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-3.0.1-1.el8.x86_64.rpm)
 
+---
+
 ### 2.5.2 - Feb 11, 2026 - (Preview Release in fast Insiders channel)
 
 - (Linux) Fix smartcard dialogs layout for GTK4
@@ -231,6 +254,8 @@ GA release of the Microsoft Identity Broker for Linux, now using a newly rewritt
 - Red Hat Enterprise Linux 10 - [microsoft-identity-broker-2.5.2-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el10.x86_64.rpm) 
 - Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-2.5.2-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el9.x86_64.rpm) 
 - Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-2.5.2-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.2-1.el8.x86_64.rpm)
+
+---
 
 ### 2.5.1 - Jan 29, 2026 - (Preview Release in fast Insiders channel)
 
@@ -247,6 +272,8 @@ GA release of the Microsoft Identity Broker for Linux, now using a newly rewritt
 - Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-2.5.1-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el9.x86_64.rpm) 
 - Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-2.5.1-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el8.x86_64.rpm)
 
+---
+
 ### 2.5.0 - Jan 13, 2026 - (Preview Release in fast Insiders channel)
 
 - (Linux) Change package file names to include target OS
@@ -262,8 +289,10 @@ GA release of the Microsoft Identity Broker for Linux, now using a newly rewritt
 #### Assets
 
 - Ubuntu-24.04 - [microsoft-identity-broker_2.5.0-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.0-noble_amd64.deb)
+
 - Ubuntu-22.04 - [microsoft-identity-broker_2.5.0-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.0-jammy_amd64.deb)
 
+---
 
 ### 2.0.3 - Oct 21, 2025 - (Preview Release in fast Insiders channel)
 

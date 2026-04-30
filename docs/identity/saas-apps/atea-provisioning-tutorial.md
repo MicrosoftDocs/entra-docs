@@ -20,6 +20,7 @@ This article describes the steps you need to do in both Atea and Microsoft Entra
 > * Create users in Atea
 > * Remove users in Atea when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Atea
+> * Code Auth Grant Flow authentication supported.
 
 ## Prerequisites
 
