@@ -117,10 +117,10 @@ Users can go to [Security info](https://aka.ms/mysecurityinfo), or they can sele
 By default, Combined registration enforces all MFA capable users to strongly authenticate prior to registering or managing their security info.
 
 - Adding or modifying a passkey (FIDO2) method requires users to have strongly authenticated within the past 5 minutes. If MFA hasn't been completed in the past 5 minutes, the user is asked to sign-in and complete fresh MFA.
-- Starting August 25, 2025, as announced in MC1135479, users are required to complete multi-factor authentication (MFA) when managing credentials or accessing My Sign Ins if they haven’t done so within the last 10 minutes of their current session.
+- Starting August 25, 2025, as announced in MC1135479, users are required to complete multifactor authentication (MFA) when managing credentials or accessing My Sign-ins if they haven't done so within the last 10 minutes of their current session.
 Enforcing Authentication Strengths to security info registration can conflict with both aforementioned requirements, with end-users potentially experiencing the error message *"Let’s try something else. Another sign-in method is required to access this resource. Close your browser and try again, but choose another way to sign-in"*. Changes can be made at the tenant level, such as enforcing "Sign-in frequency: every time" to the "Register security info" user action or enabling Passkeys for Windows Hello for Business users, or at the user level, such as ensuring they authenticate with a session at most 10 minutes old or ensuring they authenticate with a combination of methods included in the enforced Authentication Strength.
 
-Organizations can modify the authentication requirements by defining [Conditional Access policies for securing security info registration.](~/identity/conditional-access/policy-all-users-security-info-registration.md).
+Organizations can modify the authentication requirements by defining [Conditional Access policies for securing security info registration](~/identity/conditional-access/policy-all-users-security-info-registration.md).
 
 
 ## Key usage scenarios
