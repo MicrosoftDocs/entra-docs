@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how to call Azure services  using .NET Azure SDK from an agent using agent identities.
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 #Customer intent: As a developer building AI agents, I want to call Azure services from my agent using agent identities so that the agent can securely access Azure resources like Storage and Key Vault.
 ---

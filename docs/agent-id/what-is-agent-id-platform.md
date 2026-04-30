@@ -1,16 +1,15 @@
 ---
-title: What is Microsoft agent identity platform
+title: What is the Microsoft agent identity platform
 titleSuffix: Microsoft Entra Agent ID
 description: Learn about the Microsoft Agent Identity Platform, a comprehensive identity, and authorization framework designed specifically for AI agents. Key concepts include agent registry, authentication protocols, tokens, claims, and agent discovery capabilities.
 ms.date: 10/24/2025
 ms.topic: concept-article
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer or architect, I want to understand the Microsoft agent identity platform and its core components including identity constructs, authentication mechanisms, and token systems, so that I can build and manage AI agents with enterprise-grade identity and authorization.
 ---
 
-# What is Microsoft agent identity platform
+# What is the Microsoft agent identity platform
 
 The Microsoft agent identity platform is an identity and authorization framework built to address the unique authentication, authorization, and governance challenges posed by AI agents operating in enterprise environments.
 
@@ -42,7 +41,7 @@ The Microsoft agent identity platform uses OAuth for authorization and OpenID Co
 
 - **OAuth 2.0** allows agents to request access tokens that authorize them to access resources on behalf of themselves or users, supporting both application-only and delegated access scenarios.
 
-For more information, see [Oauth protocols](./agent-oauth-protocols.md)
+For more information, see [OAuth protocols](./agent-oauth-protocols.md).
 
 Tokens are the fundamental security mechanism enabling secure communication and authorization in the Microsoft agent identity platform. The platform supports multiple token flow patterns designed for specific operational scenarios. For more information, see [tokens in Microsoft agent identity platform](./agent-tokens.md)
 
