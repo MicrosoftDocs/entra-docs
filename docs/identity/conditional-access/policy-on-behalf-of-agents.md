@@ -1,30 +1,21 @@
 ---
 title: Conditional Access for agents operating on-behalf-of a user in Microsoft Entra
-description: Learn how to configure Conditional Access for agents operating on-behalf-of a user in Microsoft Entra ID to extend Zero Trust principles to AI agents, ensuring secure access and governance.
+description: Learn how to configure Conditional Access for agents operating on-behalf-of a user in Microsoft Entra ID, extending Zero Trust to AI agents.
 ms.topic: how-to
-ms.date: 03/24/2026
-ms.custom: agent-id-ignite
+ms.date: 04/30/2026
+ms.custom: agent-id-ignite, msecd-doc-authoring-1012
 ms.reviewer: kvenkit
 ---
 # Conditional Access for agents operating on-behalf-of a user in Microsoft Entra
 
-For a high-level guide to managing agent identities across your organization, see [Manage agent identities in your organization](/entra/agent-id/manage-agent-identities-organization). For information and best practices on Conditional Access for agent identities, see [Conditional Access for agent identities](agent-id.md).
-
 ## Overview
 
-This walkthrough explains how to configure Conditional Access for agents operating on behalf of a user. This flow is commonly referred to as OBO (On-Behalf-Of). In this model, a user signs into an agent application and receives an access token. When the agent needs to access a downstream resource, such as Microsoft Graph, Work IQ MCP server, or any other service, it cannot reuse that token, because it was issued for agent application (audience and permission scope). Instead, the agent uses the OBO flow to exchange the inbound token with a new token scoped to the target resource. If the agent needs to call multiple resources, for example, two different MCP servers, it may obtain a separate token for each one.
+Use this guide to configure Conditional Access for agents operating on behalf of a user. This flow is commonly referred to as OBO (On-Behalf-Of). In this model, a user signs into an agent application and receives an access token. When the agent needs to access a downstream resource, such as Microsoft Graph, Work IQ MCP server, or any other service, it can't reuse that token, because it was issued for agent application (audience and permission scope). Instead, the agent uses the OBO flow to exchange the inbound token with a new token scoped to the target resource. If the agent needs to call multiple resources, for example, two different MCP servers, it may obtain a separate token for each one.
 
 In the on-behalf-of flow the scope of the Conditional Access policy includes **users**, not the agent identities. The users and groups can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access.
 
 > [!IMPORTANT]
-> Before configuring a Conditional Access policy, read the [Conditional Access for agent identities](agent-id.md) article. It covers the authentication flow, service boundaries and limitations. To  ensure you cover all scenarios and your corporate data and services are well protected.
- 
-## Prerequisites
-
-- Admins who interact with Conditional Access need one of the following role assignments, depending on the tasks they're performing.
-   - [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) to read Conditional Access policies and configurations.
-   - [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create or modify Conditional Access policies.
-- Microsoft Entra ID P1 license
+> Before configuring a Conditional Access policy, read the [Conditional Access for agent identities](agent-id.md) article. It covers the authentication flow, service boundaries, and limitations to ensure you cover all scenarios and your corporate data and services are well protected.
 
 ## Create a Conditional Access policy
 
@@ -35,7 +26,7 @@ Follow these steps to create a Conditional Access policy that requires multifact
 1. Select **New policy**.
 1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, select **All users**
+   1. Under **Include**, select **All users**.
    1. Under **Exclude**: 
       1. Select **Users and groups** 
          1. Choose your organization's emergency access or break-glass accounts.
