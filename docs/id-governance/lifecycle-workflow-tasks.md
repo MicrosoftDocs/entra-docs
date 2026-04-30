@@ -3,7 +3,7 @@ title: Lifecycle Workflows tasks and definitions
 description: This article guides a user on Workflow task definitions and task parameters.
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 03/12/2026
+ms.date: 04/25/2026
 ms.custom: sfi-image-nochange
 #Customer Intent: As an IT admin, I want to understand lifecycle workflow task definitions and parameters so that I can configure workflow tasks correctly.
 ---
@@ -902,7 +902,7 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 }
 ```
 
-### Send email to manager about sponsorship changes (Preview)
+### Send email to manager about sponsorship changes
 
 Allows an email to be sent to the manager of an employee that has moved or left. This email notifies the manager that the employee, who moved or left, was the sponsor of one or more agent IDs. This allows the manager to decide if the agent ID should have a different employee as their sponsor.
 
@@ -914,7 +914,7 @@ For Microsoft Graph, the parameters for the **Send email to manager about sponso
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Send email to manager about sponsorship changes (Preview)     |
+|displayName     |  Send email to manager about sponsorship changes     |
 |description     |  Notify sponsor's manager about agent identity sponsorship transfer.        |
 |taskDefinitionId     |  b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f      |
 
@@ -950,7 +950,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Send email to co-sponsors about sponsor changes (Preview)
+### Send email to co-sponsors about sponsor changes
 
 Allows an email to be sent to co-sponsors of an agent ID when a user, who was also a sponsor of the agent ID, has moved or left. This notifies cosponsors of changes happening to sponsorship of their agent ID.
 
@@ -962,7 +962,7 @@ For Microsoft Graph, the parameters for the **Send email to co-sponsors about sp
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Send email to co-sponsors about sponsor changes (Preview)  |
+|displayName     |  Send email to co-sponsors about sponsor changes  |
 |description     |  Notify co-sponsors about agent identity sponsorship changes.       |
 |taskDefinitionId     |  ad3b85cd-75b1-43e7-b4b9-0e52faba3944      |
 
@@ -994,6 +994,40 @@ Example of usage within the workflow:
             "value": "en-us"
         }
     ]
+}
+```
+
+### Transfer agent identity sponsorships to manager
+
+Allows all agent identity sponsorships to be transferred from a user to their manager. Accomplishes the task by retrieving the user's manager, determining each of the agent identities they sponsor, adding their manager as a sponsor, and removing the user as a sponsor.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/transfer-agent-identity-sponsorships-manager-task.png" alt-text="Screenshot of Workflows task: transfer agent identity sponsorships to manager.":::
+The Microsoft Entra prerequisites to run the **Transfer agent identity sponsorships to manager** task are:
+
+- A populated manager attribute for the user.
+
+For Microsoft Graph, the parameters for the **Transfer agent identity sponsorships to manager** task are as follows:
+
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Transfer agent identity sponsorships to manager  |
+|description     |  Transfer all agent identities sponsored by user to manager.       |
+|taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
+
+
+
+```Example of usage within the workflow
+{
+    "category": "mover",
+    "continueOnError": false,
+    "description": "Transfer all agent identities sponsored by user to manager.",
+    "displayName": "Transfer agent identity sponsorships to manager",
+    "isEnabled": true,
+    "taskDefinitionId": "b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a",
+    "arguments": []
 }
 ```
 
