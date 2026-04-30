@@ -34,12 +34,12 @@ To create agent identities, you need:
 You can create an agent identity directly in the Microsoft Entra admin center by selecting an existing blueprint and assigning owners and sponsors.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Entra ID** > **Agent ID** > **Agent identities**.
+1. Browse to **Entra ID** > **Agents** > **Agent identities**.
 1. Select **New agent identity (Preview)**.
 1. On the **Basics** tab:
 
-   - Under **Agent blueprint**, select a blueprint from the dropdown to create your agent identity from.
-   - Enter a display name for the agent identity and select **Next**.
+   - Under **Agent blueprint**, select a blueprint to create your agent identity from.
+   - Enter a name in the **Agent identity name** field and select **Next**.
 
      :::image type="content" source="media/create-delete-agent-identities/create-agent-identity-wizard.png" alt-text="Screenshot of the create agent identity wizard showing the Basics tab with blueprint selection and name fields." lightbox="media/create-delete-agent-identities/create-agent-identity-wizard.png":::
 

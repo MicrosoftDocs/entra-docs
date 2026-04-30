@@ -34,6 +34,8 @@ items:
         href: agent-tokens.md
       - name: Authentication protocols for agents
         href: agent-oauth-protocols.md
+      - name: Consent and sign-in process
+        href: sign-in-process.md
     - name: Governance and protection
       items:
       - name: Conditional Access for agents
@@ -48,8 +50,6 @@ items:
         href: /entra/global-secure-access/concept-secure-web-ai-gateway-agents?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Sign-in and audit logs
         href: sign-in-audit-logs-agents.md
-      - name: Consent and sign-in process
-        href: sign-in-process.md
 
   # PLAN ######################
   - name: Plan your agent identity deployment
@@ -67,7 +67,9 @@ items:
   # BUILD / IMPLEMENT ######################
   - name: Create and configure agents
     expanded: true
-    items:    
+    items:
+    - name: AI-guided setup
+      href: agent-id-ai-guided-setup.md
     - name: Create agent identity objects
       items:
       - name: Create an agent blueprint
@@ -82,8 +84,6 @@ items:
         href: manage-agent-blueprint.md
       - name: Manage owners and sponsors
         href: manage-owners-sponsors-agents.md
-      - name: AI-guided setup
-        href: agent-id-ai-guided-setup.md
     - name: Authentication, authorization, and permissions
       items:
       - name: Autonomous agent app OAuth flow
@@ -147,6 +147,15 @@ items:
       href: manage-agent-identities-end-user.md
     - name: Agent Registry convergence
       href: agent-registry-convergence.md
+ 
+      # MIGRATE ######################
+  - name: Migrate to Agent ID
+    expanded: true
+    items:
+    - name: Migrate custom app registrations
+      href: migrate-custom-app-registrations-to-agent-id.md
+    - name: Migrate Copilot Studio agents
+      href: migrate-copilot-studio-agents-to-agent-id.md
   
   # REFERENCE ######################
   - name: Reference
