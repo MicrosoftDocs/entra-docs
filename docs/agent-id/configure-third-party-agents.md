@@ -1,6 +1,6 @@
 ---
 title: Integrate third-party agents with Microsoft Entra Agent ID
-description: Learn how to integrate third-party AI agents with Microsoft Entra Agent ID for secure, credential-free authentication using sidecar and federation patterns.
+description: Learn how to integrate third-party AI agents with Microsoft Entra Agent ID for secure authentication using sidecar and federation patterns.
 ms.service: entra
 ms.topic: how-to
 ms.date: 04/29/2026
@@ -16,7 +16,7 @@ ms.custom: msecd-doc-authoring-1012
 
 # Integrate third-party agents with Microsoft Entra Agent ID
 
-Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as AWS Bedrock, GCP Vertex AI, and n8n.
+Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as Amazon Web Service (AWS) Bedrock, Google Cloud Platform (GCP) Vertex AI, and n8n.
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ Before you start, make sure you have:
 - **Azure subscription**, required for some deployment options.
 - **Docker** and **Docker Compose** for the sidecar pattern.
 - **Credentials or federation setup**, depending on the pattern you choose.
-- **PowerShell 7.5 or later** with the Microsoft.Graph PowerShell module.
+- **PowerShell 7.5 or later** with the Microsoft Graph PowerShell module.
 - **Global Administrator** role, required only for initial setup. Use [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure) to activate this role just-in-time.
 - **Cloud Application Administrator** or **Application Administrator** role to grant Microsoft Graph delegated permissions for agent management operations.
 
@@ -53,7 +53,7 @@ Microsoft Entra Agent ID provides a centralized, secure identity service that th
 
 ## Integration patterns for third-party agents
 
-Choose one of the following two patterns to integrate third-party agents with Microsoft Entra Agent ID.
+To integrate third-party agents with Microsoft Entra Agent ID, choose from the following patterns:
 
 ### Use the Microsoft Entra Auth SDK (sidecar)
 
@@ -69,7 +69,7 @@ The **sidecar pattern** runs the Microsoft Entra Auth SDK as a companion contain
 **Supported platforms:**
 
 - AWS Bedrock, including Claude and other foundation models.
-- Local LLMs such as Ollama with LangChain.
+- Local Large Language Models (LLMs) such as Ollama with LangChain.
 - Any containerized agent.
 
 **Advantages:**
@@ -89,7 +89,7 @@ The following diagram shows the sidecar architecture. An agent container and a s
 
 ### Use Workload Identity Federation (direct identity exchange)
 
-The **federation pattern** uses Workload Identity Federation to exchange credentials from external identity providers, like GCP Workload Identity or AWS STS, directly for Microsoft Entra tokens. This pattern doesn't need a sidecar.
+The **federation pattern** uses Workload Identity Federation to exchange credentials from external identity providers, like GCP Workload Identity or AWS Security Token Service (STS), directly for Microsoft Entra tokens. This pattern doesn't need a sidecar.
 
 **Best for:**
 

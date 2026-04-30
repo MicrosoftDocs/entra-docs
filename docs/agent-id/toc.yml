@@ -106,12 +106,18 @@ items:
         items:
         - name: Authenticate users and request user tokens
           href: interactive-agent-authentication-authorization-flow.md
-    - name: Integrate with APIs and services
+    - name: Use the Microsoft Entra Auth SDK (sidecar)
       items:
-      - name: Authentication with Auth SDK (sidecar)
+      - name: Authentication with the Auth SDK (sidecar)
         href: authentication-with-auth-sdk-sidecar.md
       - name: Configure SDK for agent identities
         href: microsoft-entra-sdk-for-agent-identities.md
+      - name: Run the sidecar for local development
+        href: sidecar-local-development.md
+      - name: Validate agent tokens in a downstream API
+        href: how-to-validate-agent-tokens-downstream-api.md
+    - name: Call APIs and services
+      items:
       - name: Call Microsoft Graph API
         href: call-api-microsoft-graph.md
       - name: Call custom APIs
