@@ -44,7 +44,7 @@ The Global Secure Access client supports bring your own device (BYOD) scenarios 
 - BYOD support without device enrollment is available using Microsoft Authenticator through Microsoft Entra device registration.
 - On the device:
     1. Install Microsoft Authenticator from the App Store and register the device to the tenant.
-    2. Install the Microsoft Defender app from Google Play and complete sign-in.
+    2. Install the Microsoft Defender app from App Store and complete sign-in.
     3. A device-wide VPN profile is created. The Global Secure Access tile is off by default; the user must turn it on to send Private Access traffic.
 - Enable private traffic profiles for these users.
 
