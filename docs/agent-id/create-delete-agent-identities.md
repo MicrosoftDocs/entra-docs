@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.topic: how-to
-ms.date: 04/27/2026
+ms.date: 04/28/2026
 ms.reviewer: dastrock
 
 #customer-intent: As a developer, I want to create agent identities that represent my AI agents in Microsoft Entra, so that my agents can securely authenticate.
@@ -23,8 +23,6 @@ You can create agent identities in two ways:
 If you want to quickly create agent identities for testing purposes, consider using [this Microsoft Entra PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell).
 
 ## Prerequisites
-
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
 To create agent identities, you need:
 
@@ -113,14 +111,17 @@ OData-Version: 4.0
 Content-Type: application/json
 Authorization: Bearer <token>
 {
-    "displayName": "My Agent Identity",
-    "agentIdentityBlueprintId": "<my-agent-blueprint-id>",
-    "sponsors@odata.bind": [
-        "https://graph.microsoft.com/v1.0/users/<id>",
-        "https://graph.microsoft.com/v1.0/groups/<id>"
-    ],
+	"displayName": "My Agent Identity",
+	"agentIdentityBlueprintId": "<my-agent-blueprint-id>",
+	"sponsors@odata.bind": [
+		"https://graph.microsoft.com/v1.0/users/<id>",
+		"https://graph.microsoft.com/v1.0/groups/<group-id>"
+	],
 }
 ```
+
+> [!NOTE]
+> When assigning a group as sponsor, only [supported group types](agent-owners-sponsors-managers.md#sponsors) are accepted. Groups aren't supported as owners.
 
 ## [Microsoft.Identity.Web](#tab/microsoft-identity-web)
 
@@ -131,25 +132,25 @@ To use *Microsoft.Identity.Web* to execute the Microsoft Graph API request to cr
 ```json
 {
   "AzureAd": {
-    "Instance": "https://login.microsoftonline.com/",
-    "TenantId": "<my-test-tenant>",
-    "ClientId": "<my-agent-blueprint-id>",
-    "Scopes": "access_agent",
-    "ClientCredentials": [
-        {
-            "SourceType": "ClientSecret",
-            "ClientSecret": "your-client-secret"
-        }
-    ]
+	"Instance": "https://login.microsoftonline.com/",
+	"TenantId": "<my-test-tenant>",
+	"ClientId": "<my-agent-blueprint-id>",
+	"Scopes": "access_agent",
+	"ClientCredentials": [
+		{
+			"SourceType": "ClientSecret",
+			"ClientSecret": "your-client-secret"
+		}
+	]
   },
 
   "DownstreamApis": {
-    "agent-identity": {
-      "BaseUrl": "https://graph.microsoft.com",
-      "RelativePath": "/beta/serviceprincipals/Microsoft.Graph.AgentIdentity",
-      "Scopes": ["00000003-0000-0000-c000-000000000000/.default"],
-      "RequestAppToken": true
-    }
+	"agent-identity": {
+	  "BaseUrl": "https://graph.microsoft.com",
+	  "RelativePath": "/beta/serviceprincipals/Microsoft.Graph.AgentIdentity",
+	  "Scopes": ["00000003-0000-0000-c000-000000000000/.default"],
+	  "RequestAppToken": true
+	}
   }
 }
 ```
@@ -166,7 +167,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
-    .EnableTokenAcquisitionToCallDownstreamApi();
+	.EnableTokenAcquisitionToCallDownstreamApi();
 builder.Services.AddInMemoryTokenCaches();
 var app = builder.Build();
 
@@ -207,9 +208,9 @@ app.MapGet("/create-agent-identity", async (HttpContext httpContext) =>
 		var jsonResult = await downstreamApi.PostForAppAsync<AgentIdentity, AgentIdentity>(
 			"agent-identity",
 			new AgentIdentity {
-			    displayName = "My agent identity",
-			    agentIdentityBlueprintId = "<my-agent-blueprint-id>",
-          sponsorsOdataBind = new [] { "https://graph.microsoft.com/v1.0/users/<id>" }
+				displayName = "My agent identity",
+				agentIdentityBlueprintId = "<my-agent-blueprint-id>",
+		  sponsorsOdataBind = new [] { "https://graph.microsoft.com/v1.0/users/<id>" }
 			}
 		  );
 		return jsonResult?.id;
@@ -259,3 +260,5 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 	return jsonResult;
 })
 ```
+
+---

@@ -114,10 +114,14 @@ You can view logs for both the agent blueprint principal and the blueprint itsel
 
 ### Agent blueprint principal activity
 
+The agent blueprint principal supports both audit and sign-in logs:
+
 - To view administrative actions taken on the blueprint principal, select **Audit logs** from the left menu under **Agent blueprint principal activity**.
 - To view sign-in activity for the blueprint principal, select **Sign-in logs** from the left menu under **Agent blueprint principal activity**. For more information, see [view sign-in logs for agents](sign-in-audit-logs-agents.md).
 
 ### Agent blueprint activity 
+
+The agent blueprint supports only audit logs:
 
 - To view administrative actions related to the blueprint configuration, select **Audit logs** from the left menu under **Agent blueprint activity**.
 
