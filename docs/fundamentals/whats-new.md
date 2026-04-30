@@ -220,7 +220,7 @@ This change helps customers transition to a more secure authentication model in 
 *   Update any internal documentation or operational processes that reference basic authentication 
     
 
-Additional information 
+#### Additional information
 
 Detailed configuration guidance and step-by-step instructions will be published in Microsoft Learn documentation.
 
