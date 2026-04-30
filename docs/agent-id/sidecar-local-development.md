@@ -55,7 +55,7 @@ cd entra-agentid-samples/sidecar/dev
 
 ## Architecture
 
-The stack runs four containers on an internal Docker network: `llm-agent-dev` (Flask chat UI, exposed on port 3003), `agent-id-sidecar-dev` (Microsoft Entra SDK auth sidecar), `weather-api-dev` (downstream API that validates agent tokens), and `ollama-dev` (local LLM). Only the chat UI is exposed to your host — the sidecar and weather API are reachable only from within the Docker network.
+The stack runs four containers on an internal Docker network: `llm-agent-dev` (Flask chat UI, exposed on port 3003), `agent-id-sidecar-dev` (Microsoft Entra SDK auth sidecar), `weather-api-dev` (downstream API that validates agent tokens), and `ollama-dev` (local LLM). Only the chat UI is exposed to your host; the sidecar and weather API are reachable only from within the Docker network.
 
 :::image type="content" source="media/sidecar-local-development/sidecar-request-flow.png" alt-text="Diagram showing the sidecar architecture: Microsoft Entra ID issues a TR token to the sidecar, the agent asks the sidecar for an authorization header, then calls the weather API with Bearer TR, which validates the token and returns data." lightbox="media/sidecar-local-development/sidecar-request-flow.png":::
 
@@ -75,7 +75,7 @@ The agent never contacts Microsoft Entra ID directly and never sees a credential
 
 ## Understand the token flow
 
-The autonomous flow uses two tokens: **T1** (blueprint app token from client credentials) and **TR** (agent token for the downstream API). The OBO flow adds a third: **Tc** (user access token from MSAL.js browser sign-in). The sidecar handles all token acquisition and caching — your agent code never touches credentials directly.
+The autonomous flow uses two tokens: **T1** (blueprint app token from client credentials) and **TR** (agent token for the downstream API). The OBO flow adds a third: **Tc** (user access token from MSAL.js browser sign-in). The sidecar handles all token acquisition and caching so your agent code never manages credentials directly.
 
 ### Autonomous flow
 
@@ -139,10 +139,10 @@ The autonomous flow requires `TENANT_ID`, `BLUEPRINT_APP_ID`, `BLUEPRINT_CLIENT_
 
 This sample uses `ClientSecret` as the credential source type. The sidecar supports the following credential types through the `AzureAd__ClientCredentials__0__SourceType` setting in `docker-compose.yml`:
 
-- **`ClientSecret`** — Local development only. This type is the default for this sample.
-- **`SignedAssertionFromManagedIdentity`** — Deployed on Azure. Zero secrets, recommended for production.
-- **`KeyVault`** — Certificate from Azure Key Vault.
-- **`StoreWithThumbprint`** — Certificate from local machine store.
+- **`ClientSecret`:** Local development only. This type is the default for this sample.
+- **`SignedAssertionFromManagedIdentity`:** Deployed on Azure. Zero secrets, recommended for production.
+- **`KeyVault`:** Certificate from Azure Key Vault.
+- **`StoreWithThumbprint`:** Certificate from local machine store.
 
 ## Set up OBO sign-in (optional)
 

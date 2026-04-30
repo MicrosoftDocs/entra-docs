@@ -16,7 +16,7 @@ ms.custom: msecd-doc-authoring-1012
 
 # Integrate third-party agents with Microsoft Entra Agent ID
 
-Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as AWS Bedrock, GCP Vertex AI, and n8n.
+Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as Amazon Web Service (AWS) Bedrock, Google Cloud Platform (GCP) Vertex AI, and n8n.
 
 ## Prerequisites
 
@@ -53,7 +53,7 @@ Microsoft Entra Agent ID provides a centralized, secure identity service that th
 
 ## Integration patterns for third-party agents
 
-To integrate third-party agents with Microsoft Entra Agent ID, choose one of the following pattern:
+To integrate third-party agents with Microsoft Entra Agent ID, choose from the following patterns:
 
 ### Use the Microsoft Entra Auth SDK (sidecar)
 
@@ -69,7 +69,7 @@ The **sidecar pattern** runs the Microsoft Entra Auth SDK as a companion contain
 **Supported platforms:**
 
 - AWS Bedrock, including Claude and other foundation models.
-- Local LLMs such as Ollama with LangChain.
+- Local Large Language Models (LLMs) such as Ollama with LangChain.
 - Any containerized agent.
 
 **Advantages:**
@@ -89,7 +89,7 @@ The following diagram shows the sidecar architecture. An agent container and a s
 
 ### Use Workload Identity Federation (direct identity exchange)
 
-The **federation pattern** uses Workload Identity Federation to exchange credentials from external identity providers, like GCP Workload Identity or AWS STS, directly for Microsoft Entra tokens. This pattern doesn't need a sidecar.
+The **federation pattern** uses Workload Identity Federation to exchange credentials from external identity providers, like GCP Workload Identity or AWS Security Token Service (STS), directly for Microsoft Entra tokens. This pattern doesn't need a sidecar.
 
 **Best for:**
 
