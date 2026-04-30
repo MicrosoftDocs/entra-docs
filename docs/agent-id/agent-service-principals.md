@@ -3,8 +3,12 @@ title: Agent identities, service principals, and applications
 description: Learn about agent service principals in Microsoft Entra and how they differ from traditional service principals in authentication, permissions, and lifecycle management.
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
+<<<<<<< HEAD
 ms.date: 04/30/2026
 ms.custom: agent-id-ignite
+=======
+ms.date: 04/29/2026
+>>>>>>> 6cef0a2261bda936cc465e85dcab3b5816f4c9cc
 ms.reviewer: dastrock
 
 #customer-intent: As a developer or IT administrator, I want to understand how agent service principals work and how they differ from traditional service principals, so that I can effectively implement authentication, and permissions for agent applications in my organization.

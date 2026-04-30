@@ -6,7 +6,6 @@ author: Dickson-Mwendia
 ms.author: dmwendia
 ms.topic: how-to
 ms.date: 03/17/2026
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock, jomondi
 
 #customer-intent: As a developer building interactive agents, I want to authenticate users, configure authorization, and acquire tokens through the On-Behalf-Of flow, so that my agent can securely act on behalf of users to access protected resources.
