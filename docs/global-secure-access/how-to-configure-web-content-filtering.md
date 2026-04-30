@@ -96,6 +96,9 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
+> [!Note]
+> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), please follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
+
 ## Enable web content filtering for remote network traffic
 
 Remote network connectivity allows you to connect branch offices and other remote locations to Global Secure Access without installing the client on individual devices. For more information about remote network connectivity, see [Global Secure Access remote network connectivity](concept-remote-network-connectivity.md).

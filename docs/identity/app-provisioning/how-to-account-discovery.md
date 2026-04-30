@@ -2,7 +2,7 @@
 title: Discover identities in target applications with Account Discovery (preview)
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
-ms.date: 04/16/2026
+ms.date: 04/28/2026
 ms.author: jfields
 author: jenniferf-skc
 ms.reviewer: arvinh
@@ -52,9 +52,11 @@ For SCIM based connectors, account discovery requires that the application suppo
 Customers using account discovery with the following applications consistently receive complete discovery results:
 
 - Atlassian Cloud  
+- SCIM
 - Salesforce  
 - SAP Cloud Identity Services
-- ECMA (enables support for on-premises applications through SQL, LDAP, Web Services, and PowerShell connectors)  
+- ECMA (enables support for on-premises applications through SQL, LDAP, Web Services, and PowerShell connectors)
+- GitHub Enterprise Cloud (see [here](https://docs.github.com/enterprise-cloud@latest/rest/scim/scim?apiVersion=2026-03-10#list-scim-provisioned-identities) for limitations)
 
 ### Connectors that do not support discovery
 Account Discovery is currently unsupported for the following applications:
@@ -66,7 +68,7 @@ Account Discovery is currently unsupported for the following applications:
 
 ### All other connectors
 
-Account Discovery can be enabled for all other supported connectors. Discovery outcomes may vary depending on whether the target application supports listing users and pagination through its SCIM API. If you discovery report has 0 results, verify that you have configured a single direct matching attribute (no expressions) in your attribute mappings. Next, verify with the application vendor that the application supports pagination in accordance with section [3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4) of the SCIM standard. 
+Account Discovery can be enabled for all other supported connectors. Discovery outcomes may vary depending on whether the target application supports listing users and pagination through its SCIM API. If your discovery report has 0 results, verify that you have configured a single direct matching attribute (no expressions) in your attribute mappings. Next, verify with the application vendor that the application supports pagination in accordance with section [3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4) of the SCIM standard. 
 
 ## Discover identities in a target application
 
@@ -115,6 +117,61 @@ Use the search and filter capabilities to find specific accounts:
 - Search for accounts by name or attribute values.
 - Filter results by category (local, unassigned, or assigned).
 - Manage columns to view the imported attributes from the target application and the correlation status.
+
+## Assign correlated users to your enterprise application and/or access packages
+After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to the enterprise application or an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users. The scripts should be run in PowerShell 7.X. 
+
+### Optional parameters
+
+| Parameter | Description |
+|---|---|
+| **`-DryRun`** | Shows what *would* happen without making any changes.|
+| **`-SkipAppRoleAssignment`** | Only manage access packages, skip assigning app roles |
+| **Duplicate detection** | Checks for existing assignments before creating new ones |
+| **Client-side status filter** | Verifies API results match expected status (guards against API quirks) |
+| **`-OutputFile`** | Full audit trail as CSV with timestamps, actions, and error details |
+| **Strict mode** | Runs with `Set-StrictMode -Version Latest` and `$ErrorActionPreference = "Stop"` to fail fast on unexpected issues |
+
+### Example scenarios
+
+* Assign all correlated users to the enterprise app:
+   ```powershell
+   pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." 
+   ```
+* Assign all correlated users to a specific access package (example [rules](https://aka.ms/AssignCorrelatedUsersCSV) file):
+
+   ```powershell
+   pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId '7A22...' -RulesFile '.\access-package-rules-internal.csv' -DryRun -OutputFile '.\results-dryrun.csv'
+   ```
+
+* Assign users to packages based on rules that you define (example rules file):
+
+    ```powershell
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
+   ```
+
+* Assign users to access packages with a fallback package for users that don't meet any of the defined rules:
+
+   ```powershell
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
+   ```
+
+* Assign users to access packages and skip app role assignments:
+ 
+    ```powershell
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
+   ```
+### Rules file description
+The rules file is a standard [CSV](https://aka.ms/AssignCorrelatedUsersCSV) with these columns:
+
+| Column | Purpose |
+|---|---|
+| `RuleGroup` | Rows sharing the same group number are AND-ed together. Different groups are evaluated independently. |
+| `PropertyName` | Key in the target SCIM property bag (e.g. `userType`, `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department`). The property names can be found in the discovery UX when clicking on view attributes for an individual user or in your provisioning attribute mappings. |
+| `Operator` | `eq` \| `ne` \| `contains` \| `startswith` \| `endswith` \| `regex` |
+| `Value` | The value to compare against (case-insensitive). |
+| `AccessPackageId` | The access package to assign when the group matches. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |
+| `PolicyId` | The assignment policy for that access package. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |
 
 ## Integrate with Identity Governance
 
