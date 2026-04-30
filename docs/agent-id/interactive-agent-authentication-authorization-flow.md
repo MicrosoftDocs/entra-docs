@@ -22,7 +22,7 @@ Interactive agents take actions on behalf of users. To do so securely, the agent
 1. Acquire tokens for downstream APIs using the On-Behalf-Of (OBO) flow.
 
 > [!NOTE]
-> This article covers interactive agents that act **on behalf of** signed-in users using the OBO flow. If your agent needs its own user-like identity (a digital worker scenario), see [Agent users](agent-users.md) and [Agent user OAuth flow](agent-user-oauth-flow.md).
+> This article covers interactive agents that act **on behalf of** signed-in users using the OBO flow. If your agent needs its own user-like identity (a digital worker scenario), see [Agent's user accounts](agent-users.md) and [Agent's user account OAuth flow](agent-user-oauth-flow.md).
 
 ## Prerequisites
 
@@ -353,6 +353,9 @@ Under the hood, the OBO flow involves two token exchanges: first, the agent iden
 
 - [Token claims reference](agent-token-claims.md)
 - [On-behalf-of flow in agents](agent-on-behalf-of-oauth-flow.md)
+- [Call Microsoft Graph API](call-api-microsoft-graph.md)
+- [Call custom APIs](call-api-custom.md)
+- [Call Azure services](call-api-azure-services.md)
 - [Agent users](agent-users.md)
 - [Authenticate and acquire tokens for autonomous agents](autonomous-agent-authentication-authorization-flow.md)
 - [Permissions and consent in the Microsoft identity platform](/entra/identity-platform/permissions-consent-overview)
