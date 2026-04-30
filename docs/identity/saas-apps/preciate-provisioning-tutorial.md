@@ -4,7 +4,7 @@ description: Learn how to automatically provision and deprovision user accounts 
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 04/21/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Preciate so that I can streamline the user management process and ensure that users have the appropriate access to Preciate.
@@ -40,11 +40,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 1.  Sign in to [Preciate Admin Portal](https://preciate.com/web/admin/keys) and navigate to the **Integrations** page.
 
-	![Preciate secret](media/preciate-provisioning-tutorial/preciate-secret-path.png)
+	![Screenshot of the Preciate secret token configuration page.](media/preciate-provisioning-tutorial/preciate-secret-path.png)
 
 2.  Select the **Generate** button where it says Active Directory Integration Secret Key. 
  
-	![Preciate generate](media/preciate-provisioning-tutorial/preciate-secret-generate.png)
+	![Screenshot of the Preciate secret token generation page.](media/preciate-provisioning-tutorial/preciate-secret-generate.png)
 
 3.  A new **Secret Key** appears. Copy and save the **Secret Key**. Also make a note that Tenant URL is `https://preciate.com/api/v1/scim`. These values are entered in the **Secret Token** and **Tenant URL** field in the Provisioning tab of your Preciate's application.
  
@@ -71,33 +71,35 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Preciate in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**
+1. Browse to **Entra ID** > **Enterprise apps**.
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Preciate**.
 
-	![The Preciate link in the Applications list](common/all-applications.png)
+	![Screenshot of the Preciate link in the Applications list.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+	![Screenshot of the Provisioning tab for configuring automatic user provisioning.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Preciate Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Preciate. If the connection fails, ensure your Preciate account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Preciate Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Preciate. If the connection fails, ensure your Preciate account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page.
 
-7. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Preciate**.
+   ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Preciate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Preciate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Preciate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -113,21 +115,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |externalId|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To enable the Microsoft Entra provisioning service for Preciate, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-12. Define the users and/or groups that you would like to provision to Preciate by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

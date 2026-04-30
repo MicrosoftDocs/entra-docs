@@ -43,11 +43,11 @@ The agent identity and the agent user allow AI agents to take on digital identit
 
 ## Assigning access to agent identities
 
-When created, agent identities have limited permissions, such as OAuth 2 delegated permission scopes [inherited from their parent agent identity blueprint](../agent-id/identity-professional/configure-inheritable-permissions-blueprints.md). In addition, agent identities can have resource access assigned to them directly via access packages. Agents can request an access package for own agent IDs, or have their owner or sponsor request one on their behalf. With access packages, you're able to assign agent identities access to the following resources:
+When created, agent identities have limited permissions, such as OAuth 2 delegated permission scopes [inherited from their parent agent identity blueprint](../agent-id/configure-inheritable-permissions-blueprints.md). In addition, agent identities can have resource access assigned to them directly via access packages. Agents can request an access package for own agent IDs, or have their owner or sponsor request one on their behalf. With access packages, you're able to assign agent identities access to the following resources:
 
 - Security Group memberships
 - [Application OAuth API permissions](../identity/enterprise-apps/assign-agent-identities-to-applications.md), including Graph application permissions
-- [Microsoft Entra roles](../agent-id/identity-professional/authorization-agent-id.md#microsoft-entra-role-assignments-for-agent-identities)
+- [Microsoft Entra roles](../agent-id/authorization-agent-id.md#microsoft-entra-role-assignments-for-agent-identities)
 
 To use access packages for agent identities, configure an access package with the required policy settings. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
 
@@ -64,7 +64,7 @@ After submission, the access request is routed to designated approvers based on 
 
 When the agent identity has received an access package assignment with an expiry date, and if a sponsor is set on the agent identity, as the expiry date approaches, the sponsor receives notifications about the pending expiration. The sponsor then has two options: they can request an extension of the access package (if permitted by policy), or they can allow the access package assignment to expire. If the sponsor requests an extension, this request can trigger a new approval cycle, where approvers again confirm whether continued access is appropriate. If the sponsor takes no action, the access package assignment automatically expires on its end date, and the agent identity loses access to the target resources.
 
-For a guide on creating an access package for agents, see: [access packages for agent identities in Microsoft Entra Agent ID](../agent-id/identity-professional/agent-access-packages.md). For a guide on assigning identities to an existing access package, see: [View, add, and remove assignments for an access package in entitlement management](entitlement-management-access-package-assignments.md).
+For a guide on creating an access package for agents, see: [access packages for agent identities in Microsoft Entra Agent ID](../agent-id/agent-access-packages.md). For a guide on assigning identities to an existing access package, see: [View, add, and remove assignments for an access package in entitlement management](entitlement-management-access-package-assignments.md).
 
 ## Management of agents
 
@@ -82,5 +82,8 @@ One of the most important parts of governing agent identities is making sure tha
 
 ## Related content
 
+- [Manage agent identities in your organization](/entra/agent-id/manage-agent-identities-organization) - Overview of agent identity management across the full lifecycle.
+- [Agent identity sponsor tasks in Lifecycle Workflows](agent-sponsor-tasks.md) - Automate sponsor change notifications using Lifecycle Workflows.
+- [Manage agents in end user experience](/entra/agent-id/manage-agent-identities-end-user) - Sponsors can manage their agents from the My Account portal.
 - [What is entitlement management?](entitlement-management-overview.md)
 - [What is Microsoft Entra ID Governance?](identity-governance-overview.md)

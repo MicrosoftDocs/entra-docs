@@ -3,7 +3,7 @@ title: Microsoft Entra ID Governance licensing for guest users
 description: Learn how Microsoft Entra ID is licensed for guest users.
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 04/27/2026
 ms.reviewer: jercon
 #Customer Intent: As an IT admin, I want to understand how Microsoft Entra ID Governance is licensed for guest users so that I can ensure proper licensing for external collaborators.
 ---
@@ -153,6 +153,10 @@ billed to the governance guest add-on. Only governance features that are exclusi
 **Does Governance guest billing apply to all guest users, including those within the first 50,000 Monthly Active Users (MAU)?**
 
 Yes, there's no free tier for governance billing. Governance guest billing applies to all guest users, even those within the first 50,000 MAU.
+
+**How can I estimate or understand my guest usage for Microsoft Entra ID Governance billing?**
+
+You can use the EIG Guest Usage Monitoring Workbook to understand the guest usage trend within your tenant. This report shows past usage that would have been billed, but future usage may differ. To provide feedback about the EIG Guest Usage Monitoring Workbook, visit this [form](https://forms.office.com/r/N4dYnQcXTN).
 
 
 ## Guest Governance Features Unavailable Without the Microsoft Entra ID Governance for Guests Add-on 

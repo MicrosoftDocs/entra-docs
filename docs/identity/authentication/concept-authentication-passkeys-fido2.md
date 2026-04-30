@@ -55,7 +55,7 @@ Synced passkeys offer a seamless and convenient user experience where users can 
 - Users are **3x more successful signing-in with synced passkey than legacy authentication methods (95% vs 30%)** 
 - Synced passkeys in Microsoft Entra ID bring MFA simplicity at scale for all enterprise users. They're a convenient and low-cost alternative to traditional MFA options like SMS and authenticator apps. 
 
-For more information about how to deploy passkeys in your organization, see [How to enable synced passkeys](how-to-authentication-synced-passkeys.md). 
+For more information about how to deploy passkeys in your organization, see [How to enable synced passkeys](how-to-authentication-passkeys-fido2.md). 
 
 **Attestation** verifies the authenticity of the passkey provider or device during registration. When enforced:
 
@@ -78,8 +78,8 @@ For more details, see [Get started with phishing-resistant MFA deployment in Mic
 
 ## Related content
 
-- [Enable passkeys (FIDO2) in Microsoft Entra ID](how-to-enable-passkey-fido2.md)
-- [Enable passkey profiles in Microsoft Entra ID](how-to-authentication-passkey-profiles.md)
-- [Enable synced passkeys in Microsoft Entra ID](how-to-authentication-synced-passkeys.md)
+- [Enable passkeys (FIDO2) in Microsoft Entra ID](how-to-authentication-passkeys-fido2.md)
+- [Enable passkey profiles in Microsoft Entra ID](how-to-authentication-passkeys-fido2.md)
+- [Enable synced passkeys in Microsoft Entra ID](how-to-authentication-passkeys-fido2.md)
 - [Passkeys in Authenticator App](concept-authentication-authenticator-app.md#passkey-sign-in)
 - [Attestation requirements](concept-fido2-hardware-vendor.md#attestation-requirements)

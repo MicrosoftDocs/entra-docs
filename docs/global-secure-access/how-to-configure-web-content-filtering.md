@@ -2,7 +2,7 @@
 title: How to configure Global Secure Access web content filtering
 description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 04/18/2026
 ms.subservice: entra-internet-access 
 ai-usage: ai-assisted
 ---
@@ -30,7 +30,7 @@ The web filtering feature currently supports user- and context-aware Uniform Res
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
 - IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
-- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
+- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443`. 
  
 
 - Review web content filtering concepts. For more information, see [web content filtering](concept-internet-access.md).
@@ -95,6 +95,9 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
+
+> [!Note]
+> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), please follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
 
 ## Enable web content filtering for remote network traffic
 

@@ -2,7 +2,7 @@
 title: Remediate risks and unblock users
 description: Learn how to configure user self-remediation and manually remediate risky users in Microsoft Entra ID Protection.
 ms.topic: how-to
-ms.date: 01/05/2026
+ms.date: 04/21/2026
 ms.reviewer: ebasseri
 
 # Customer intent: As an IT admin, I want to learn how to remediate risks and unblock users in Microsoft Entra ID Protection.
@@ -66,6 +66,12 @@ In some cases, Microsoft Entra ID Protection can also automatically dismiss a us
 
 - **Risk state**: "At risk" -> "Dismissed"
 - **Risk detail**: "-" -> "Microsoft Entra ID Protection assessed sign-in safe"
+
+### Threat-informed remediation by Microsoft
+
+In limited cases, Microsoft Threat Intelligence identifies accounts, sessions, or resources being actively used in attack campaigns targeting Microsoft Entra tenants. When Microsoft has high-confidence evidence of compromise that poses an active risk to your organization, Microsoft might take remediation action on your behalf to help contain the threat.
+
+These actions are recorded in the Microsoft Entra audit logs with *Microsoft* listed as the initiator. Administrators retain full control of their tenant and can reverse any action taken through this process after completing their own investigation.
 
 ## Administrator manual remediation
 
