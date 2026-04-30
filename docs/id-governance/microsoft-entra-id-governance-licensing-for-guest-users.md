@@ -98,7 +98,7 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 **May**:
 
 - Tailspin Toys creates an inactive guest access review for 200 users. 
-- Tailspin creates a second access review for a security group with 300 guest users with the user-to-group affiliation feature enabled. 
+- Tailspin creates a second access review for a security group with a different set of 300 guest users with the user-to-group affiliation feature enabled. 
 - Billing: For May, Tailspin is billed for 500 users – 200 for the inactive guest access review and 300 for the review with user-to-group affiliation. 
 
 **June**:
