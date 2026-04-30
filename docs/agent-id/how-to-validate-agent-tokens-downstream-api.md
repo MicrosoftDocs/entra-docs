@@ -118,11 +118,9 @@ The API returns a JSON response that includes both the weather data and the toke
 
 The `is_agent_identity`, `agent_app_id`, and `validated_by` fields confirm token validation:
 
-| Field | Meaning |
-|---|---|
-| `is_agent_identity` | Set to `true` when the `xms_par_app_azp` claim is present, which confirms the token was issued to an agent identity rather than a standard app registration. |
-| `agent_app_id` | The value of the `xms_par_app_azp` claim, which identifies the blueprint application that created the agent identity. |
-| `validated_by` | The validation method applied to the token. Displays `Agent Identity Token` when the agent marker claim is present. |
+- **`is_agent_identity`:** Set to `true` when the `xms_par_app_azp` claim is present, which confirms the token was issued to an agent identity rather than a standard app registration.
+- **`agent_app_id`:** The value of the `xms_par_app_azp` claim, which identifies the blueprint application that created the agent identity.
+- **`validated_by`:** The validation method applied to the token. Displays `Agent Identity Token` when the agent marker claim is present.
 
 ## Related content
 
