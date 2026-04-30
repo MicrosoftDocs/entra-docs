@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 As an IT administrator overseeing agent identities in your tenant, you might need to temporarily stop agent activity to investigate an issue or review agent usage. You can disable agent identities and agent identity blueprints in your tenant depending on your need. Both actions have implications that you should understand before proceeding.
 
-You can also can configure Conditional Access policies and remove agent creation permissions, if your organization needs to restrict agent identities from being created or used in your tenant. These processes can serve as a different approach to disabling agent identities. This article covers scenarios related to disabling agent identities.
+You can also configure Conditional Access policies and remove agent creation permissions, if your organization needs to restrict agent identities from being created or used in your tenant. These processes can serve as a different approach to disabling agent identities. This article covers scenarios related to disabling agent identities.
 
 ## Types of identities used by AI agents
 
