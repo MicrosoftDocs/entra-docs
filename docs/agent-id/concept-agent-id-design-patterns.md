@@ -19,8 +19,6 @@ This article describes common AI agent deployment patterns and how they map to M
 
 For step-by-step decision guidance on how many blueprints and agent identities to create, see [Plan your agent identity architecture](how-to-plan-agent-identity-architecture.md).
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## Key concepts
 
 The following components are the foundation of Microsoft Entra Agent ID. If you're new to them, start with [Microsoft Entra Agent ID key concepts](identity-platform/key-concepts.md) before continuing with this article.

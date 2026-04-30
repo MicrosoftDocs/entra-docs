@@ -26,7 +26,7 @@ sections:
       - question: |
           What happens to an agent's user account when an agent identity or blueprint is deleted?
         answer: |
-          When an agent identity blueprint or agent identity is deleted, any associated agents' user accounts remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. Delete orphaned agents' user accounts manually using the Microsoft Entra admin center, Microsoft Graph APIs, or scripting tools.
+          When an agent identity blueprint or agent identity is deleted, any associated agents' user accounts remain in the tenant. They aren't shown as disabled or deleted, though they can't authenticate. Delete orphaned agents' user accounts manually using Microsoft Graph API or Microsoft Entra PowerShell.
 
       - question: |
           Why do sequential Microsoft Graph API requests sometimes fail when creating agent identity objects?
@@ -64,11 +64,6 @@ sections:
           Can I add agent identities to administrative units?
         answer: |
           Agent identities, agent identity blueprints, and agent identity blueprint principals can't be added to administrative units. Use the `owners` property of agent identities to limit which users can manage specific objects.
-
-      - question: |
-          Why am I getting 403 errors when creating or modifying agent identities, even though I have the correct permissions?
-        answer: |
-          If the client has been granted the delegated permission *Directory.AccessAsUser.All*, that permission overrides other delegated permissions, including *AgentIdentityBlueprint.Create* and *AgentIdentityBlueprintPrincipal.EnableDisable.All*. Remove *Directory.AccessAsUser.All* from the client, request new access tokens, and retry the request.
 
       - question: |
           Can I update the photo for an agent's user account?
