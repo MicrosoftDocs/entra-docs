@@ -18,8 +18,6 @@ Unlike nonagentic application identities designed for web services or user ident
 
 This overview introduces the core components of the Microsoft agent identity platform. It focuses on the identity constructs, authentication mechanisms, token systems, and discovery capabilities that form the foundation of agent identity management in enterprise environments.
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## How to get started
 
 [!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]

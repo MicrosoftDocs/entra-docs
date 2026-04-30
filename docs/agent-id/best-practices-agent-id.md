@@ -19,8 +19,6 @@ This article provides operational best practices for designing, securing, and go
 
 For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md) and [Key concepts](identity-platform/key-concepts.md).
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## Design agent identity blueprints
 
 [Agent identity blueprints](identity-platform/agent-blueprint.md) are templates that define the security posture for all agent instances of a common kind. Thoughtful blueprint design is the foundation of well-governed agent deployments.

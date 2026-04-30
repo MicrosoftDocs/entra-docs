@@ -20,8 +20,6 @@ Agent identities can be used to:
 - Receive incoming access tokens issued by Microsoft Entra ID. The audience of the access token is the agent identity.
 - Request user tokens from Microsoft Entra ID for an authenticated user. The subject of the token is a user, while the actor is the agent identity.
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## Anatomy of an agent identity
 
 An account used by an AI agent is referred to as an **agent identity**. Much like your typical user account, an agent identity has a few key components:
