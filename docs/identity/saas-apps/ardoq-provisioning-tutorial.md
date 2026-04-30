@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Ardoq and Microsoft
 > * Remove users in Ardoq when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Ardoq.
 > * [Single sign-on](ardoq-tutorial.md) to Ardoq (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

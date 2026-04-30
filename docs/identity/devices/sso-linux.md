@@ -31,10 +31,10 @@ The Teams web application and a Progressive Web App (PWA) for Linux use Conditio
 
 Microsoft single sign-on for Linux is supported on the following operating systems (physical or Hyper-V machines with x86/64 CPUs):
 
+- Ubuntu Desktop 26.04 LTS (Long Term Support)
 - Ubuntu Desktop 24.04 LTS (Long Term Support)
-- Ubuntu Desktop 22.04 LTS (Long Term Support) 
-- Red Hat Enterprise Linux 8 (Long Term Support)
 - Red Hat Enterprise Linux 9 (Long Term Support)
+- Red Hat Enterprise Linux 10 (Long Term Support)
 
 ### System Requirements
 
@@ -48,7 +48,7 @@ Microsoft single sign-on for Linux is supported on the following operating syste
 - User accounts synchronized with or created in Microsoft Entra ID
 - Appropriate licensing for conditional access policies (if applicable)
 
-## SSO experience
+## Single Sign-on (SSO) experience
 
 The following animation shows the sign-in experience for brokered flows on Linux.
 
@@ -67,10 +67,13 @@ Using PRMFA auth via SmartCard on Linux provides a seamless sign-in experience, 
 ---
 
 > [!NOTE]
-> `microsoft-identity-broker` version 2.0.1 and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
-
+> `microsoft-identity-broker` version 3.0.x and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
 
 ## Installation
+
+The Microsoft Single Sign-on for Linux app package is available at https://packages.microsoft.com/. For more information about how to use, install, and configure Linux software packages for Microsoft products, see [Linux Software Repository](/windows-server/administration/linux-package-repository-for-microsoft-software) for Microsoft Products.
+
+A sample script to install the Microsoft Single Sign-On for Linux & Intune app and its dependencies on your device is available on [GitHub](https://go.microsoft.com/fwlink/?linkid=2358529). Review the instructions carefully before installing.
 
 Run the following commands in a command line to manually install the Microsoft single sign-on (microsoft-identity-broker) and its dependencies on your device.  
 
@@ -85,9 +88,17 @@ Run the following commands in a command line to manually install the Microsoft s
 2. Install the Microsoft package signing key.  
 
     ```bash
-    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-    sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings
-    rm microsoft.gpg
+    # Ubuntu 26.04+ repos are signed with a newer Microsoft GPG key
+    if dpkg --compare-versions "$RELEASE" ge "26.04"; then
+        MS_GPG_KEY_URL="https://packages.microsoft.com/keys/microsoft-2025.asc"
+    else
+        MS_GPG_KEY_URL="https://packages.microsoft.com/keys/microsoft.asc"
+    fi
+
+    # Import Microsoft GPG key (always refresh to pick up key rotations)
+    curl -fsSL "$MS_GPG_KEY_URL" | gpg --dearmor > "$HOME/microsoft.gpg"
+    sudo install -o root -g root -m 644 "$HOME/microsoft.gpg" /usr/share/keyrings/
+    rm -f "$HOME/microsoft.gpg"
     ```
 
 3. Add and update Microsoft Linux Repository to the system repository list.
