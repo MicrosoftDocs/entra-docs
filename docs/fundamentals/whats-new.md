@@ -137,7 +137,7 @@ Stay tuned to this page for further updates.
 
 This change will roll out over the coming months, and timing will vary by application. We will share impacted applications, customer deadlines, and supporting documentation through monthly What’s new articles and the Microsoft 365 Message Center.
 
-**Why this is changing**
+#### Why this is changing
 
 
 This update strengthens the security of Microsoft Entra provisioning integrations by moving away from older authentication patterns. Modern methods are better suited for service-to-service scenarios and can reduce credential management overhead, including the need to rotate shared secrets.
