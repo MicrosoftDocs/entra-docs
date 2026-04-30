@@ -37,8 +37,8 @@ sections:
         imageUrl: media/index/hero-image-security-flow.png
         links:
           - componentType: link
-            url: ./what-is-microsoft-entra-agent-id.md
-            text: How it works
+            url: ./manage-agent-identities-admin.md
+            text: Manage agent identities
       - componentType: card
         title: Govern agent lifecycles
         summary: Ensure the lifecycle of your agents are governed with access reviews, entitlement management, and sponsor accountability.
@@ -53,8 +53,8 @@ sections:
         imageUrl: media/index/hero-image-data-charts.png
         links:
           - componentType: link
-            url: ./what-is-agent-id-platform.md
-            text: Protect agents
+            url: ./security-for-ai-overview.md
+            text: Security for AI overview
 
   # FEATURE GRID #############################################################################
   - componentType: grid
@@ -66,6 +66,10 @@ sections:
         summary: Define reusable templates for agent identities with preconfigured permissions, policies, and settings.
         url: ./agent-blueprint.md
       - componentType: summary-card
+        title: AI-guided setup
+        summary: Use an AI coding agent to automate the full Agent ID onboarding workflow, from blueprint creation to agent provisioning.
+        url: ./agent-id-ai-guided-setup.md
+      - componentType: summary-card
         title:  Microsoft Entra SDK for agents
         summary: Integrate agent authentication and authorization with familiar SDKs and developer tools.
         url: ./microsoft-entra-sdk-for-agent-identities.md
@@ -74,10 +78,36 @@ sections:
         summary: Understand how agents authenticate and obtain tokens using OAuth 2.0 flows optimized for AI workloads.
         url: ./agent-oauth-protocols.md
       - componentType: summary-card
+        title: Create an agent blueprint
+        summary: Follow step-by-step instructions to create your first agent identity blueprint and provision agent identities.
+        url: ./create-blueprint.md
+      - componentType: summary-card
         title: Security for AI
-        summary: Explore how Microsoft Entra Agent ID integrates with Security for AI to protect your agents
+        summary: Explore how Microsoft Entra Agent ID integrates with Security for AI to protect your agents.
         url: /security/security-for-ai/
 
+
+  # PLAN AND OPERATE ###################################################################
+  - componentType: grid
+    title: Plan and operate
+    summary: Plan your agent identity architecture, follow best practices, and monitor agent activity.
+    blocks:
+      - componentType: summary-card
+        title: Plan your agent identity architecture
+        summary: Design your agent identity strategy with guidance on blueprints, permissions, and deployment patterns.
+        url: ./how-to-plan-agent-identity-architecture.md
+      - componentType: summary-card
+        title: Best practices
+        summary: Follow recommended patterns for secure, scalable, and maintainable agent identity deployments.
+        url: ./best-practices-agent-id.md
+      - componentType: summary-card
+        title: Sign-in and audit logs
+        summary: Monitor agent authentication activity and track agent operations across your tenant.
+        url: ./sign-in-audit-logs-agents.md
+      - componentType: summary-card
+        title: FAQ
+        summary: Find answers to common questions about Microsoft Entra Agent ID and the agent identity platform.
+        url: ./faq.yml
 
   # A365 SECTION ###################################################################
   - componentType: cards
