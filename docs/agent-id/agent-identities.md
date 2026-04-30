@@ -51,6 +51,9 @@ Unlike human users, AI agents don't use passwords, Short Message Service (SMS), 
 
 Agent identities can only be issued tokens in the Microsoft Entra tenant where they're created. They can't access resources or APIs in other tenants.
 
+> [!NOTE]
+> While agent identities are single-tenant, agent identity blueprints can be configured as multitenant. A multitenant blueprint can be published and added to other tenants, where it creates tenant-local agent identities. The agent identities themselves always remain single-tenant.
+
 ## Blueprints: Consistent security for agent identities
 
 A key characteristic of agent identities is that all agent identities are created from a reusable template called an agent identity blueprint. The blueprint establishes the "kind" of agent and records metadata shared across all agent identities of a common kind.
