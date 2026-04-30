@@ -15,8 +15,6 @@ ms.reviewer: dastrock
 
 Agent identities are identity accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. As organizations increasingly deploy autonomous AI systems, identity models designed for human users and applications prove insufficient. Agent identities address this gap by providing a specialized identity construct built specifically for the unique requirements of AI agents operating at enterprise scale.
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## What is an agent
 
 In its most fundamental form, an agent is an application that attempts to achieve a goal by understanding its environment / context, making decisions and acting on them autonomously using available tools. Agents can act with or without human intervention when provided with proper goals or objectives.

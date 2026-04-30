@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 #Customer intent: As an IT administrator, I want to understand how the Secure Web and AI Gateway for agents works in Global Secure Access so that I can effectively implement and manage it within my organization.
 ---
 
-# Learn about Secure Web And AI Gateway for Microsoft Copilot Studio agents (preview)
+# Learn about Secure Web And AI Gateway for Microsoft Copilot Studio agents
 
 [!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
