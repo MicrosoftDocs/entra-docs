@@ -2,13 +2,11 @@
 metadata:  
   title: Frequently asked questions (FAQ) about Microsoft Entra, Microsoft Entra ID, and Azure
   description: Common questions and answers about Microsoft Entra, Microsoft Entra ID and Azure, such as password management and application access.
-  author: barclayn
   manager: pmwongera
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: faq
   ms.date: 03/05/2025
-  ms.author: barclayn
   ms.custom:
     - sfi-ga-nochange
 title: Frequently asked questions about Microsoft Entra ID

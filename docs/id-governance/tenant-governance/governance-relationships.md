@@ -2,8 +2,6 @@
 title: Governance relationships in Tenant Governance (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about governance relationships and how they enable centralized management of tenants in Microsoft Entra Tenant Governance
-author: barclayn
-ms.author: barclayn
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/10/2026

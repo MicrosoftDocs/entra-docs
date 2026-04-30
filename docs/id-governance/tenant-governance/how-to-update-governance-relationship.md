@@ -2,8 +2,6 @@
 title: Update a governance relationship (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to update an existing governance relationship between a governing and governed tenant in Microsoft Entra Tenant Governance
-author: barclayn
-ms.author: barclayn
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 03/10/2026
