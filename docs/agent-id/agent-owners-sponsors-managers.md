@@ -71,7 +71,7 @@ Sponsors are usually business owners, product managers, team leads, or stakehold
 
 In Microsoft Agent ID, agents can have an [agent's user account](agent-users.md) created in order to access user-oriented services. The user account and the agent's identity, blueprint, and blueprint principal may all have sponsors associated with them. There are differences between the user account sponsors and sponsors of the agent identity, blueprint, or blueprint principal. 
 
-Agent user account sponsors are the same as normal [user sponsors](../external-id/b2b-sponsors). They are not authorized to make any changes to their sponsored users, but they can request access on the user's behalf and may be involved in approval flows. In contrast, sponsors of agent identities, blueprints, and blueprint principals have limited access to manage those identities directly and can also request access or give approvals in lifecycle workflows.
+Agent user account sponsors are the same as normal [user sponsors](../external-id/b2b-sponsors.md). They are not authorized to make any changes to their sponsored users, but they can request access on the user's behalf and may be involved in approval flows. In contrast, sponsors of agent identities, blueprints, and blueprint principals have limited access to manage those identities directly and can also request access or give approvals in lifecycle workflows.
 
 | | Agent user account sponsors | Agent identity, blueprint, blueprint principal sponsors |
 |--|--|--|
@@ -82,7 +82,7 @@ Agent user account sponsors are the same as normal [user sponsors](../external-i
 
 When an agent is represented by both an agent identity object and an agent user account, we recommend maintaining the agent identity sponsor as the primary user or group responsible for the agent. 
 
-Different scenarios may require different types of access or authorization for an agent identity and its associated user account. Sponsors for each object can [request access packages](../id-governance/entitlement-management-request-access) on behalf of the identity they sponsor. In most cases, the same the user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for both the agent identity and the agent's user account as needed.
+Different scenarios may require different types of access or authorization for an agent identity and its associated user account. Sponsors for each object can [request access packages](../id-governance/entitlement-management-request-access.md) on behalf of the identity they sponsor. In most cases, the same the user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for both the agent identity and the agent's user account as needed.
 
 ## Managers
 
