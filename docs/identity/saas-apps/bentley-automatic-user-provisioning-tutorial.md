@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both Bentley - Automatic
 > * Remove users in Bentley - Automatic User Provisioning when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Bentley - Automatic User Provisioning
 > * Provision groups and group memberships in Bentley - Automatic User Provisioning
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

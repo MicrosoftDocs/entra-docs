@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both AlexisHR and Micros
 > * Remove users in AlexisHR when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and AlexisHR.
 > * [Single sign-on](alexishr-tutorial.md) to AlexisHR (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

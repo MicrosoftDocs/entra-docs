@@ -17,22 +17,10 @@ items:
       href: concept-planning-your-solution.md
     - name: Create a tenant
       href: quickstart-tenant-setup.md
-    - name: Choose your authentication approach
-      items:
-        - name: Native authentication overview
-          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Challenge types
-          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Web fallback
-          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Choose an authentication approach
+      href: concept-choose-authentication-approach.md
     - name: Register an app
       href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-    - name: Enterprise applications
-      items:
-        - name: Add an enterprise application
-          href: how-to-add-enterprise-application.md
-        - name: Register a SAML app
-          href: how-to-register-saml-app.md
     - name: Add a sign-up and sign-in flow
       href: how-to-user-flow-sign-up-sign-in-customers.md
     - name: Add an application to the user flow
@@ -43,6 +31,12 @@ items:
       href: how-to-disable-sign-up-user-flow.md
     - name: Delete an external tenant
       href: how-to-delete-external-tenant-portal.md
+    - name: Enterprise applications
+      items:
+        - name: Add an enterprise application
+          href: how-to-add-enterprise-application.md
+        - name: Register a SAML app
+          href: how-to-register-saml-app.md
 - name: Migrate to External ID
   expanded: false
   items:
@@ -108,6 +102,12 @@ items:
       href: how-to-sign-in-alias.md
     - name: Native authentication
       items:
+        - name: Overview
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Challenge types
+          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Web fallback
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication user attribute builder
           href: /entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication how-to guides
