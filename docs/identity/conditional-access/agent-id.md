@@ -129,7 +129,7 @@ This flow is also known as client credentials flow, or app only access. All type
 
 The following diagram shows the application only access authorization flow.
 
-:::image type="content" source="media/agent-id/application-only-access-flow-diagram.png" alt-text="Diagram showing the application only access flow for agents accessing resources with their own identity." lightbox="media/agent-id/application-only-access-flow-diagram-expanded.png":::
+:::image type="content" source="media/agent-id/application-only-flow-diagram.png" alt-text="Diagram showing the application only access flow for agents accessing resources with their own identity." lightbox="media/agent-id/application-only-flow-diagram-expanded.png":::
 
 This flow applies in the following common scenarios:
 
