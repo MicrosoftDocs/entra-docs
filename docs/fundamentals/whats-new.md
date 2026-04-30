@@ -263,7 +263,7 @@ Issues fixed and improvements added in this update  include
 *   Azure SQL Support: MIM Sync can now use Azure SQL Database, with authentication supported via both System Assigned and User Assigned Managed Identities. 
     
 
-MIM Service and Portal  
+#### MIM Service and Portal
 
 *   SQL Server 2022 and Exchange Server Subscription Edition (SE) Support: Updated integration and database compatibility with the latest SQL and Exchange releases.  
     
