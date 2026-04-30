@@ -57,13 +57,13 @@ For each candidate service principal, capture:
 - **Identity metadata:** display name, application ID, object ID, creation date, tenant.
 - **Ownership:** assigned owners, owning team or department (where available).
 - **Sign-in activity:** last interactive and non-interactive sign-in, sign-in count over 30, 90, and 180 days.
-- **Audit log signals:** source system that created the service principal, creation event, recent modifications or permission changes.
+- **Audit log signals:** source system that created the service principal, creation event, recent modifications, or permission changes.
 - **Tag analysis:** tags applied to the service principal; check whether it carries any builder-specific tag patterns.
 - **API permissions:** delegated and application permissions granted, admin consent status, permission sensitivity level.
 - **Other identity configurations:** credentials used, OAuth flows, custom attributes, RBAC role assignments, redirect URIs, and any downstream dependencies. You need these configuration details during migration to correctly recreate the identity as an Agent ID.
 
 > [!TIP]
-> You can pull most of these configuration details programmatically by using Microsoft Graph. Use the `GET /applications` and `GET /servicePrincipals` endpoints to pull permissions, credentials, ownership, and more. For OAuth flows your application uses and any downstream dependencies, check your application code.
+> You can pull most of the configuration details programmatically by using Microsoft Graph. Use the `GET /applications` and `GET /servicePrincipals` endpoints to pull permissions, credentials, ownership, and more. For OAuth flows your application uses and any downstream dependencies, check your application code.
 
 ### Identify agents through log and permission analysis
 
@@ -84,7 +84,7 @@ Heuristic discovery produces candidates, not confirmed agents. Review every matc
 
 ### Organizational discovery
 
-Automated methods won't find every agent. Custom-built agents with generic API permissions and no naming convention overlap are invisible to tag-based and heuristic scanning. 
+Automated methods might not find every agent, especially custom-built agents with generic API permissions and no naming convention overlap are invisible to tag-based and heuristic scanning. You should therefore consider:
 
 **CMDB and asset inventory reconciliation**
 
@@ -113,13 +113,11 @@ Using the discovery report, classify each service principal by usage level, whic
 | **Medium** | Some recent sign-in activity, non-production permissions, identifiable owner. | Candidate for migration. Proceed through Phases 3–4 with standard validation. |
 | **High** | Frequent sign-ins, production API permissions, active workflows dependent on the SP. | Migrate with extreme caution. Requires extended parallel run (Phase 4), rollback plan, and stakeholder sign-off. |
 
-The 30-day sign-in threshold is based on Microsoft Entra's default retention period. If your organization has extended audit log retention (through Sentinel or another SIEM), adjust thresholds accordingly.
+The 30-day sign-in threshold is based on Microsoft Entra's default retention period. If your organization has audit log retention through Microsoft Sentinel or another SIEM, adjust thresholds accordingly.
 
 ## Phase 3: Migrate
 
-This phase covers the technical migration steps for agents where you own the code and the identity was created as a standard app registration or service principal. You create new Agent ID resources and update your application code to use the two-stage token acquisition model.
-
-Steps 1 through 3 target the Microsoft Entra tenant. Step 4 targets changes to your application code.
+This phase covers the technical migration steps for agents whose identity was created as a standard app registration or service principal. You create new Agent ID resources and update your application code to use the two-stage token acquisition model. Steps 1 through 3 target the Microsoft Entra tenant. Step 4 targets changes to your application code.
 
 > [!IMPORTANT]
 > There's no in-place conversion that transforms an existing app registration or service principal into an agent identity. Migration requires creating a new agent identity alongside your existing identity, then transitioning your agent to use it.
@@ -195,7 +193,7 @@ Content-Type: application/json
 
 To complete this step, you need the **Agent ID Developer** or **Agent ID Administrator** role.
 
-The agent identity is the runtime principal your agent uses. Create it under a blueprint and assign a **sponsor** (required), a human user or group accountable for the agent. Assigning an **owner** is recommended for management purposes.
+The agent identity is the runtime principal your agent uses. Create it under a blueprint and assign a **sponsor** (required), a human user, or group accountable for the agent. Assigning an **owner** is recommended for management purposes.
 
 ```http
 POST https://graph.microsoft.com/beta/serviceprincipals/Microsoft.Graph.AgentIdentity
@@ -237,7 +235,7 @@ New-AzRoleAssignment `
 
 ### Step 4: Update application code
 
-Agent ID uses a two-stage token acquisition model. Your agent first acquires a bootstrap token by using the blueprint's credential, then exchanges it for an agent-specific token. For more guidance on updating your code, see these scenarios:
+Agent ID uses a two-stage token acquisition model. Your agent first acquires a bootstrap token by using the blueprint's credential, then exchanges it for an agent-specific token. For more information on updating your code, see these scenarios:
 
 - [Autonomous agent authentication and authorization flow](autonomous-agent-authentication-authorization-flow.md) for the complete token acquisition walkthrough.
 - [Interactive agent authentication and authorization flow](interactive-agent-authentication-authorization-flow.md) for interactive agents guidance, code samples, and token configuration. The token flow in these agents adds an OBO exchange where a user token is exchanged for an agent token with user context.
