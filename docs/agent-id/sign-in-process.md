@@ -5,7 +5,6 @@ author: omondiatieno
 ms.author: jomondi
 ms.topic: concept-article
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand the Microsoft Entra Agent ID sign-in process so that I can guide end users on how to safely sign in to AI agents using their work accounts.
 ---

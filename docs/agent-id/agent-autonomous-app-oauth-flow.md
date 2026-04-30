@@ -4,7 +4,6 @@ description: Learn how agent identities operate autonomously without user contex
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing autonomous agent scenarios, I want to understand the app-only protocol so that I can enable agents to act independently using client credentials flows.
 ---

@@ -4,7 +4,6 @@ description: Learn how agent applications operate on behalf of signed-in users u
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing on-behalf-of flows for agents, I want to understand how Agent IDs operate on behalf of signed-in users so that I can enable agents to access user data with proper delegated permissions.
 ---

@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn about the Microsoft Agent Identity Platform, a comprehensive identity, and authorization framework designed specifically for AI agents. Key concepts include agent registry, authentication protocols, tokens, claims, and agent discovery capabilities.
 ms.date: 10/24/2025
 ms.topic: concept-article
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer or architect, I want to understand the Microsoft agent identity platform and its core components including identity constructs, authentication mechanisms, and token systems, so that I can build and manage AI agents with enterprise-grade identity and authorization.
