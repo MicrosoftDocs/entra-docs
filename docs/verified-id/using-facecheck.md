@@ -128,7 +128,7 @@ The claim containing the photo must be named and you might optionally specify yo
   "requestedCredentials": [
     {
       "type": "VerifiedEmployee",
-      "acceptedIssuers": [ "did:web:yourdomain.com" ],
+      "acceptedIssuers": [ "did:web:verifiedid.contoso.com" ],
       "configuration": {
         "validation": {
           "allowRevoked": false,
@@ -147,7 +147,7 @@ The JSON payload for the `presentation_verified` has more data in the response w
 ```json
   "verifiedCredentialsData": [ 
     { 
-      "issuer": "did:web:yourdomain.com", 
+      "issuer": "did:web:verifiedid.contoso.com", 
       "type": [ "VerifiableCredential", "VerifiedEmployee" ], 
       "claims": { 
         ... 
