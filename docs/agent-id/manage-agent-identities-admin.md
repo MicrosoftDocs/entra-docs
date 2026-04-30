@@ -19,8 +19,6 @@ Microsoft Entra Agent ID provides a centralized set of tools for managing agent 
 
 This article covers key agent management tasks: from viewing and disabling agents, to governing access, monitoring activity, and responding to security risks. Whether you're an administrator responsible for tenant-wide agent oversight or a sponsor managing specific agents, this guide provides the information you need to effectively manage agent identities in your organization.
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## Prerequisites
 
 Different management tasks require different roles and licenses. The following table summarizes the roles you need for each area of agent identity management.
