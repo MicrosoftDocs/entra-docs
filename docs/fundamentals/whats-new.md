@@ -53,7 +53,7 @@ Microsoft Entra ID federation with External ID (EEID) enables organizations to l
 **Service category:** User Experience and Management  
 **Product capability:** User Authentication  
 
-In Microsoft Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. For more information, see [Customize the sign-in experience for your application with branding themes in external tenants (Preview)](../external-id/customers/how-to-customize-branding-themes-apps.md)
+In Microsoft Entra tenants, customers can create a single, tenant-wide, customized branding experience that applies to all apps. We are introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications.
 
 ---
 
@@ -419,7 +419,7 @@ We’re consolidating agent management experiences to make it easier to observe,
 *   The existing [registry Graph API](/graph/api/resources/agentregistry) will be deprecated and replaced by a new API powered by Agent 365. Agents registered via the current API will need to be re-registered. We’ll follow up soon with details on the deprecation date and the availability of the new registry Graph API.  
 *   All agent access and governance capabilities remain fully available through Agent ID and Agent 365.  
 
-For more information, see: [Agent Registry convergence with Microsoft Agent 365](../agent-id/identity-platform/agent-registry-convergence.md).
+For more information, see: [Agent Registry convergence with Microsoft Agent 365](../agent-id/agent-registry-convergence.md).
 
 ---
 
@@ -1213,7 +1213,7 @@ Soft deletion for cloud security groups introduces a safety mechanism that allow
 **Service category:** Other  
 **Product capability:** End User Experiences  
 
-The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them. Learn more: [Manage Agents in end user experience (Preview)](../agent-id/manage-agent.md).
+The Manage agents end user experiences lets you view, and control, agent identities you own or sponsor. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
 
 ---
 
@@ -1295,7 +1295,7 @@ Microsoft Entra ID with Entra Kerberos has added support for cloud-only identiti
 **Service category:** Identity Protection  
 **Product capability:** Identity Security & Protection  
 
-As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity‑based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) platform.
+As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity‑based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md) platform.
 
 ---
 

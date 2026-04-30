@@ -39,7 +39,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Sign-in and audit logs for agents](../agent-id/sign-in-audit-logs-agents.md) (New)
 - [Agent access packages](../agent-id/agent-access-packages.md) (New)
 - [Configure inheritable permissions blueprints](../agent-id/configure-inheritable-permissions-blueprints.md) (New)
-- [Manage agent in end user experience](../agent-id/manage-agent.md) (New)
+- Manage agent in end user experience (New)
 - [Manage agents without identity](../agent-id/manage-agents-without-identity.md) (New)
 - [Authorization for Agent ID](../agent-id/authorization-agent-id.md) (New)
 - [Reference registry roles](../agent-id/reference-registry-roles.md) (New)
@@ -67,9 +67,9 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Create blueprint](../agent-id/create-blueprint.md) (New)
 - [Create and delete agent identities](../agent-id/create-delete-agent-identities.md) (New)
 - [Manage agent blueprint](../agent-id/manage-agent-blueprint.md) (New)
-- [Autonomous agent request tokens](../agent-id/autonomous-agent-request-tokens.md) (New)
-- [Autonomous agent request agent user tokens](../agent-id/autonomous-agent-request-agent-user-tokens.md) (New)
-- [Autonomous agent request authorization from Entra admin](../agent-id/autonomous-agent-request-authorization-entra-admin.md) (New)
+- Autonomous agent request tokens (New)
+- Autonomous agent request agent user tokens (New)
+- Autonomous agent request authorization from Entra admin (New)
 - [Authenticate users and acquire tokens for interactive agents](../agent-id/interactive-agent-authentication-authorization-flow.md) (New)
 - [Call API: Azure services](../agent-id/call-api-azure-services.md) (New)
 - [Call API: Custom](../agent-id/call-api-custom.md) (New)
@@ -102,8 +102,8 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 ### Microsoft Entra ID Governance
 
 **Next-generation identity governance with AI integration.** Enhanced lifecycle workflows, intelligent risk-based approvals, and streamlined access package management deliver comprehensive identity governance at enterprise scale.
-- [What are agent identities (Agent IDs)?](../agent-id/identity-platform/what-are-agent-identities.md) (New)
-- [Microsoft Entra agent identities for AI agents](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) (New)
+- [What are agent identities (Agent IDs)?](../agent-id/what-are-agent-identities.md) (New)
+- [Microsoft Entra agent identities for AI agents](../agent-id/what-is-microsoft-entra-agent-id.md) (New)
 - [Entitlement management: Configure ID Protection approvals](../id-governance/entitlement-management-configure-id-protection-approvals.md) (New)
 - [Entitlement management: Configure Insider Risk Management approvals](../id-governance/entitlement-management-configure-insider-risk-management-approvals.md) (New)
 - [Workflow sensitivity labels](../id-governance/workflow-sensitivity-labels.md) (New)
@@ -251,11 +251,11 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 **Enhanced enterprise application management.** Comprehensive AI-powered application lifecycle management, intelligent app owner identification, and advanced risk assessment deliver next-generation application governance capabilities.
 
-- [Agent app lifecycle: Discovery and onboard](../identity/enterprise-apps/agent-app-lifecycle-discovery-onboard.md) (New)
-- [Agent app lifecycle management](../identity/enterprise-apps/agent-app-lifecycle-management.md) (New)
-- [Agent app lifecycle: Remediation plans](../identity/enterprise-apps/agent-app-lifecycle-remediation-plans.md) (New)
-- [Agent: Contact app owners](../identity/enterprise-apps/agent-contact-app-owners.md) (New)
-- [Agent: Identify and prioritize risky apps](../identity/enterprise-apps/agent-identify-prioritize-risky-apps.md) (New)
+- Agent app lifecycle: Discovery and onboard (New)
+- Agent app lifecycle management (New)
+- Agent app lifecycle: Remediation plans (New)
+- Agent: Contact app owners (New)
+- Agent: Identify and prioritize risky apps (New)
 - [Assign user or group access](../identity/enterprise-apps/assign-user-or-group-access-portal.md) (Updated)
 - [Disable user sign-in](../identity/enterprise-apps/disable-user-sign-in-portal.md) (Updated)
 - [Manage app consent policies](../identity/enterprise-apps/manage-app-consent-policies.md) (Updated)
