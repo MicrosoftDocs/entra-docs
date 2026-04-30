@@ -1,7 +1,7 @@
 ---
-title: Integrate an n8n agent with Microsoft Entra Agent ID
+title: Secure an n8n agent with Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to deploy n8n on Azure Container Apps with Microsoft Entra Agent ID and Microsoft Graph MCP Server for Enterprise for secure AI agent workflows.
+description: Learn how to deploy n8n on Azure Container Apps and secure AI agent workflows with Microsoft Entra Agent ID and Microsoft Graph MCP Server for Enterprise.
 ms.service: entra
 ms.topic: how-to
 ms.date: 04/30/2026
@@ -10,11 +10,11 @@ ms.author: dmwendia
 ms.reviewer: astaykov
 ms.custom: agent-id
 
-#customer intent: As a developer or IT admin, I want to deploy n8n on Azure Container Apps with Microsoft Entra Agent ID so that my n8n workflows can securely access Microsoft Graph and MCP Server for Enterprise using agent identities.
+#customer intent: As a developer or IT admin, I want to secure n8n workflows with Microsoft Entra Agent ID so that my n8n agents can access Microsoft Graph and MCP Server for Enterprise using agent identities.
 
 ---
 
-# Integrate an n8n agent with Microsoft Entra Agent ID
+# Secure an n8n agent with Microsoft Entra Agent ID
 
 This guide walks you through deploying [n8n](https://n8n.io/) on Azure Container Apps with Microsoft Entra Agent ID integration. The deployment uses the Azure Developer CLI (`azd`) for a single-command setup that provisions infrastructure, creates Entra identity objects, and configures n8n workflows automatically.
 
@@ -36,7 +36,7 @@ If you're running locally instead of Cloud Shell, install these tools before pro
 
 - [Azure Developer CLI (`azd`)](/azure/developer/azure-developer-cli/install-azd) v1.9 or later.
 - [Azure CLI (`az`)](/cli/azure/install-azure-cli) v2.60 or later.
-- PowerShell 7.4 or later.
+- [PowerShell 7.4+](/powershell/scripting/install/installing-powershell).
 - Git.
 
 Sign in to both tools before running the deployment:

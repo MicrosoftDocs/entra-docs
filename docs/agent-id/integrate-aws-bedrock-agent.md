@@ -1,7 +1,7 @@
 ---
-title: Integrate an Amazon Bedrock agent with Microsoft Entra Agent ID
+title: Secure an Amazon Bedrock agent with Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to use the Microsoft Entra Auth SDK (sidecar) to give an Amazon Bedrock–powered AI agent its own identity for calling downstream APIs securely.
+description: Learn how to use the Microsoft Entra Auth SDK (sidecar) to secure an Amazon Bedrock AI agent with its own identity for calling downstream APIs.
 ms.service: entra
 ms.topic: how-to
 ms.date: 04/30/2026
@@ -10,15 +10,12 @@ ms.author: dmwendia
 ms.reviewer: razi.rais
 ms.custom: agent-id
 
-#customer intent: As a developer building AI agents on Amazon Bedrock, I want to integrate Microsoft Entra Agent ID using the sidecar pattern so that my agent can securely call downstream APIs with its own identity.
-
+#customer intent: As a developer building AI agents on Amazon Bedrock, I want to secure my agent with Microsoft Entra Agent ID using the sidecar pattern so that it can call downstream APIs with its own identity.
 ---
 
-# Integrate an Amazon Bedrock agent with Microsoft Entra Agent ID
+# Secure an Amazon Bedrock agent with Microsoft Entra Agent ID
 
 This guide walks you through running an AI agent powered by [Amazon Bedrock](https://aws.amazon.com/bedrock/) (Anthropic Claude) that uses the Microsoft Entra Auth SDK (sidecar) to authenticate to downstream APIs. The sidecar pattern keeps all credential and token handling outside your agent code. Your agent requests an authorization header from the sidecar, and the sidecar handles the OAuth 2.0 exchange with Microsoft Entra ID.
-
-This sample proves the sidecar works identically across clouds. The LLM runs in AWS, identity is managed by Microsoft Entra, and neither side cares about the other's platform.
 
 ## Prerequisites
 
@@ -26,10 +23,10 @@ Before you begin, make sure you have:
 
 - A Microsoft Entra tenant with agent identity capabilities enabled.
 - An Azure subscription.
-- Docker Desktop (macOS/Windows) or Docker Engine with Compose v2 (Linux).
-- PowerShell 7+ — [install instructions](/powershell/scripting/install/installing-powershell).
-- Azure CLI — [install instructions](/cli/azure/install-azure-cli).
-- AWS CLI v2 — [install instructions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (macOS/Windows) or Docker Engine with Compose v2 (Linux).
+- [PowerShell 7+](/powershell/scripting/install/installing-powershell).
+- [Azure CLI](/cli/azure/install-azure-cli).
+- [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 - An AWS account with Bedrock model access enabled for Anthropic Claude 3 Haiku (or your preferred model). Enable access in the AWS Bedrock console under **Model access** > **Manage model access**.
 - **Global Administrator** role for first-time Entra setup. Use [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure) to activate this role just-in-time.
 
@@ -53,6 +50,18 @@ The request flows through these steps:
 1. Microsoft Entra ID returns the requested token (TR) to the sidecar.
 1. The agent calls the weather API with `Authorization: Bearer TR`.
 1. The weather API validates TR and returns the weather JSON response.
+
+### Understand the token flow
+
+Three tokens are involved in the identity exchange:
+
+| Token | Issued to | When | How |
+|---|---|---|---|
+| **Tc** | Signed-in user | OBO flow only | MSAL.js in the browser |
+| **T1** | Blueprint app | Both flows | Sidecar (client credentials) |
+| **TR** | Agent (downstream API) | Both flows | Sidecar — app-only (autonomous) or OBO exchange |
+
+In the autonomous flow, the sidecar uses client credentials to get T1, then exchanges it for TR scoped to the downstream API. In the OBO flow, the sidecar also receives Tc (the user's token) and performs an OBO exchange to get TR that acts on behalf of the signed-in user.
 
 > [!NOTE]
 > Only the chat UI (port 3001) is exposed to your host. The sidecar and weather API are reachable only within the Docker network, which establishes a clear security boundary.
@@ -78,6 +87,20 @@ The sample supports three ways to authenticate to Amazon Bedrock. Choose the tie
 
 > [!TIP]
 > For production deployments, see the [Azure App Service deployment guide](https://github.com/microsoft/entra-agentid-samples/blob/dev/sidecar/aws/DEPLOY-AZURE-APP-SERVICE.md) for step-by-step instructions on setting up OIDC federation between Azure and AWS with zero stored secrets.
+
+## Select a Bedrock model
+
+The sample defaults to `us.anthropic.claude-3-haiku-20240307-v1:0` because it's the cheapest Anthropic model on Bedrock and supports tool calling. The `us.` prefix indicates a cross-region inference profile that routes between US regions for higher availability.
+
+Other supported models:
+
+| Model ID | Cost per 1K input tokens | Notes |
+|---|---|---|
+| `us.anthropic.claude-3-haiku-20240307-v1:0` | $0.00025 | Default. Fast, cheapest, supports tool calling. |
+| `us.anthropic.claude-3-5-haiku-20241022-v1:0` | $0.0008 | Newer, smarter, still affordable. |
+| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | $0.003 | Best quality/cost ratio. |
+
+Override the default by setting `BEDROCK_MODEL_ID` in your `.env` file. You must enable each model in the **AWS Bedrock console** > **Model access** before it can be invoked.
 
 ## Clone the sample repository
 
@@ -126,6 +149,13 @@ Run the following commands once per tenant to create the Blueprint app, Agent ID
 
 ## Configure environment variables
 
+The sidecar supports multiple credential types via `AzureAd__ClientCredentials__0__SourceType` in `docker-compose.yml`:
+
+- **`ClientSecret`** — local development only. This is what the sample ships with.
+- **`SignedAssertionFromManagedIdentity`** — deployed on Azure. Zero secrets, recommended for production.
+- **`KeyVault`** — certificate from Azure Key Vault.
+- **`StoreWithThumbprint`** — certificate from local machine store.
+
 1. Copy the environment template and open it in your editor:
 
    **Bash:**
@@ -151,6 +181,7 @@ Run the following commands once per tenant to create the Blueprint app, Agent ID
    | `CLIENT_SPA_APP_ID` | SPA app ID used by MSAL.js for browser sign-in (OBO only). |
    | `AWS_REGION` | AWS region for Bedrock, for example `us-east-2`. |
    | `BEDROCK_MODEL_ID` | Model ID. Default: `us.anthropic.claude-3-haiku-20240307-v1:0`. |
+   | `VALIDATE_TOKEN_SIGNATURE` | Default `true`. Set to `false` to skip JWKS signature validation in the weather API (debugging only). |
 
 1. Add your AWS credentials based on the tier you chose:
    - **Tier A (STS):** Set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN`.
@@ -208,9 +239,11 @@ Run the following commands once per tenant to create the Blueprint app, Agent ID
 | `/api/status` shows `bedrock_available: false` | AWS credentials missing or expired, or model access not granted. | Check `docker logs llm-agent-aws`. Refresh STS credentials with `aws sso login`. Enable the model in the Bedrock console. |
 | `ExpiredTokenException` from Bedrock | STS session token (Tier A) expired. | Paste fresh credentials in `.env`, then run `docker compose up -d --force-recreate llm-agent-aws`. |
 | `AccessDeniedException` on `InvokeModel` | IAM principal lacks `bedrock:InvokeModel` permission, or model access isn't enabled. | Grant `bedrock:InvokeModel` on the model and inference profile ARNs. |
+| `ValidationException: invalid model identifier` | Region doesn't host the model, or you used a bare model ID instead of the `us.` inference profile. | Use the `us.`-prefixed inference profile ID (for example, `us.anthropic.claude-3-haiku-20240307-v1:0`). |
 | Weather API returns `401 Unauthorized` | Token tenant mismatch, expired secret, or signature check failed. | Verify `TENANT_ID` matches the Blueprint's tenant. Check sidecar logs. |
 | LLM responds without calling the tool | Query wasn't clearly tool-shaped, or model doesn't support tool calling. | Use Claude 3 Haiku or newer. Phrase the request as *"What's the weather in \<city\>?"*. |
 | OBO sign-in popup blocked | Browser popup blocker. | Allow popups for `localhost:3001`. |
+| `4xx` from sidecar during OBO | `CLIENT_SPA_APP_ID` missing or SPA redirect URI mismatch. | Rerun `setup-obo-client-app`. Ensure `http://localhost:3001` is on the SPA's redirect URIs. |
 
 View container logs for debugging:
 

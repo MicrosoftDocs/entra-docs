@@ -118,9 +118,9 @@ items:
       items:
       - name: Configure third-party agents with Agent ID
         href: configure-third-party-agents.md
-      - name: Integrate an Amazon Bedrock agent
+      - name: Secure an Amazon Bedrock agent
         href: integrate-aws-bedrock-agent.md
-      - name: Integrate an n8n agent
+      - name: Secure an n8n agent
         href: integrate-n8n-agent.md
 
   # DEPLOY AND SCALE ######################
