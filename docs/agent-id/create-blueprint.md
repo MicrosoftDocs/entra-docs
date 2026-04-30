@@ -65,9 +65,9 @@ You can create an agent identity blueprint directly in the Microsoft Entra admin
 > The admin center wizard sets the blueprint name and assigns owners and sponsors. To configure credentials, identifier URIs, scopes, or permissions, use the Microsoft Graph API or PowerShell, or configure them after creation through the blueprint's detail pages in the admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Entra ID** > **Agent ID** > **Agent blueprints**.
+1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
 1. Select **New agent blueprint (Preview)**.
-1. On the **Basics** tab, enter a display name for your agent identity blueprint and select **Next**.
+1. On the **Basics** tab, enter a name in the **Agent blueprint name** field and select **Next**.
 
     :::image type="content" source="media/create-blueprint/create-blueprint-wizard.png" alt-text="Screenshot of the create agent blueprint wizard showing the Basics tab with the agent blueprint name field." lightbox="media/create-blueprint/create-blueprint-wizard.png":::
 1. On the **Owners & Sponsors** tab, optionally change or add owners and sponsors for the blueprint:
