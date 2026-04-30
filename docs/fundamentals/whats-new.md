@@ -201,7 +201,7 @@ What this means for you
     
 *   No immediate action is required, but we recommend planning your migration early to avoid last-minute disruption. 
     
-*   The new method improves security by:  
+ The new method improves security by:  
     
 
 *   Eliminating stored passwords 
