@@ -44,7 +44,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Set up Promapp for provisioning
 
-1. Sign in to your [Promapp Admin Console](https://freetrial.promapp.com/axelerate/Login.aspx). Under the user name navigate to **My Profile**.
+1. Sign in to your Promapp Admin Console. Under the user name navigate to **My Profile**.
 
 	![Promapp Admin Console](media/promapp-provisioning-tutorial/admin.png)
 
