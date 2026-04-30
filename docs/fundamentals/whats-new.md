@@ -256,7 +256,7 @@ Microsoft Identity Manager (MIM) 2016 Service Pack 3 (SP3) is now available. SP3
 
 Issues fixed and improvements added in this update  include 
 
-MIM Synchronization Service 
+#### MIM Synchronization Service
 
 *   SQL Server 2022 Support:  Full support for installation with and connection to SQL Server 2022.  
     
