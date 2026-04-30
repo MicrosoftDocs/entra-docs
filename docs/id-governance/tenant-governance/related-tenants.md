@@ -2,7 +2,6 @@
 title: Related tenants in Tenant Governance (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how Microsoft Entra Tenant Governance discovers related tenants through identity, application, and billing signals across your organization
-ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/10/2026
 ---

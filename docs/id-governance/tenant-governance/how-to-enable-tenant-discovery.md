@@ -2,7 +2,6 @@
 title: Enable tenant discovery (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to enable tenant discovery in Microsoft Entra Tenant Governance to identify related tenants across your organization
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 03/10/2026
 ---

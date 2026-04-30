@@ -2,7 +2,6 @@
 title: Cross-tenant delegated administration (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about cross-tenant delegated administration and how it enables centralized management across tenants in Microsoft Entra
-ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/10/2026
 ---

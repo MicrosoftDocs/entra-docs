@@ -7,7 +7,6 @@ metadata:
   description: "Learn how to discover, manage, and govern Microsoft Entra tenants across your organization."
   ms.date: 03/02/2026
   ms.topic: landing-page
-  ms.service: entra
   titleSuffix: Microsoft Entra ID Governance
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new

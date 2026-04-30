@@ -6,9 +6,7 @@ summary: Learn about Microsoft Entra concepts and processes, such as creating a 
 metadata:
   title: Microsoft Entra fundamentals documentation
   description: Microsoft Entra fundamentals, such as users, groups, licenses, company branding, subscriptions, tenants, and more.
-  manager: pmwongera
   ms.date: 08/25/2025
-  ms.service: entra
   ms.subservice: fundamentals
   ms.topic: landing-page
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
