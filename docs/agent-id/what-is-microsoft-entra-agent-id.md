@@ -21,7 +21,7 @@ Microsoft Entra Agent ID brings together identity management, access protection,
 
 ## Agent identity platform
 
-The [Microsoft Entra Agent identity platform](identity-platform/what-is-agent-id-platform.md) enables developers to create and manage [agent identities](identity-platform/what-are-agent-identities.md), which are specialized identity constructs built for AI agents. Agent identity blueprints serve as templates for creating individual agent identities with parent-child relationships, enabling consistent security policies across large numbers of agents. The platform supports standard protocols such as OAuth 2.0, MCP, and A2A for authentication and agent-to-agent communication.
+The [Microsoft Entra Agent identity platform](what-is-agent-id-platform.md) enables developers to create and manage [agent identities](what-are-agent-identities.md), which are specialized identity constructs built for AI agents. Agent identity blueprints serve as templates for creating individual agent identities with parent-child relationships, enabling consistent security policies across large numbers of agents. The platform supports standard protocols such as OAuth 2.0, MCP, and A2A for authentication and agent-to-agent communication.
 
 ## Security and governance for agents
 
@@ -38,10 +38,12 @@ For details on how these capabilities work for agents, see:
 
 ## How to get started
 
+Get started with Microsoft Entra Agent ID by setting up your licensing and creating your first agent identity blueprint.
+
 [!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
 ## Related content
 
 - [Microsoft Entra security for AI overview](security-for-ai-overview.md)
-- [What are agent identities?](identity-platform/what-are-agent-identities.md)
-- [What is the Microsoft Entra Agent identity platform?](identity-platform/what-is-agent-id-platform.md)
+- [What are agent identities?](what-are-agent-identities.md)
+- [What is the Microsoft Entra Agent identity platform?](what-is-agent-id-platform.md)
