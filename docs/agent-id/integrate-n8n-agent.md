@@ -18,7 +18,7 @@ ms.custom: agent-id, msecd-doc-authoring-1012
 
 This guide shows how to deploy [n8n](https://n8n.io/) on Azure Container Apps with Microsoft Entra Agent ID integration. The deployment uses the Azure Developer CLI (`azd`) to provision infrastructure, create Microsoft Entra identity objects, and configure n8n workflows automatically.
 
-Unlike the sidecar pattern used for custom agents, this integration uses the [n8n-nodes-entraagentid](https://www.npmjs.com/package/@astaykov/n8n-nodes-entraagentid) community node to manage token acquisition directly within n8n workflows. The deployed workflows demonstrate both autonomous (app-only) and on-behalf-of (OBO) token flows, with access to Microsoft Graph and the [Microsoft Graph MCP Server for Enterprise](https://mcp.svc.cloud.microsoft/enterprise).
+Unlike the [sidecar pattern](authentication-with-auth-sdk-sidecar.md) used for custom agents, this integration uses the [n8n-nodes-entraagentid](https://www.npmjs.com/package/@astaykov/n8n-nodes-entraagentid) community node to manage token acquisition directly within n8n workflows. The deployed workflows demonstrate both autonomous (app-only) and on-behalf-of (OBO) token flows, with access to Microsoft Graph and the Microsoft Graph MCP Server for Enterprise, `https://mcp.svc.cloud.microsoft/enterprise`.
 
 > [!NOTE]
 > This sample demonstrates the use of the `n8n-nodes-entraagentid` community node within n8n. It isn't guidance for deploying n8n on Azure in production.
@@ -37,6 +37,7 @@ If you're running locally instead of Cloud Shell, install these tools before pro
 - [Azure Developer CLI (`azd`)](/azure/developer/azure-developer-cli/install-azd) v1.9 or later.
 - [Azure CLI (`az`)](/cli/azure/install-azure-cli) v2.60 or later.
 - [PowerShell 7.4+](/powershell/scripting/install/installing-powershell).
+- [Microsoft.Entra PowerShell module](/powershell/entra-powershell/) v1.2 or later.
 - Git.
 
 Sign in to Azure CLI and Azure Developer CLI before running the deployment:
@@ -58,8 +59,7 @@ The entire deployment runs through a single `azd up` command that provisions Azu
    git clone https://github.com/astaykov/n8n-aca.git && cd n8n-aca && azd auth login && azd up
    ```
 
-   > [!NOTE]
-   > In Azure Cloud Shell, `azd auth login` displays a device code. Open the URL shown and enter the code to authenticate, then `azd up` continues automatically.
+   In Azure Cloud Shell, `azd auth login` displays a device code. Open the URL shown and enter the code to authenticate, then `azd up` continues automatically.
 
 1. When prompted, provide the following values:
 
@@ -69,18 +69,18 @@ The entire deployment runs through a single `azd up` command that provisions Azu
    - **n8n admin email:** Email for the n8n owner account.
    - **n8n admin password:** Password for the n8n owner account (minimum 8 characters, mixed case, number).
 
-1. During the postprovision phase, the automation performs a second sign-in. A device code is displayed. Open the URL and enter the code. This step requires the Global Administrator or Application Administrator role.
+1. During the postprovision phase, the automation performs a second sign-in. A device code is displayed. Open the URL and enter the code. This step requires the Global Administrator or Application Administrator role. The postprovision hook then:
 
-   The postprovision hook then:
    - Creates Microsoft Entra Agent ID objects (Blueprint, Agent Identity, Agent User).
    - Enables the Microsoft Graph MCP Server for Enterprise.
    - Waits for n8n to become ready.
    - Creates the owner account.
    - Installs the `@astaykov/n8n-nodes-entraagentid` community node.
-   - Creates all credentials with real values.
-   - Imports and activates the demo workflows.
+   - Generates an API key for n8n automation.
+   - Creates all five credentials with real values.
+   - Imports and activates the three demo workflows.
 
-When the deployment completes, the script prints your n8n URL and a summary of what was configured.
+When the deployment completes, the script prints your n8n URL and a summary of what was configured. The tenant ID is autodetected from your Azure sign-in, so no manual configuration is needed.
 
 ## Explore the deployed resources
 
@@ -100,10 +100,10 @@ The deployment creates the following Azure resources:
 
 The automation creates these objects once and reuses them on subsequent runs:
 
-- **Agent Identity Blueprint:** App registration that issues tokens on behalf of Agent Identities via Federated Identity Credentials.
-- **Agent Identity service principal:** The AI agent's service principal. Acquires Microsoft Graph and MCP tokens autonomously.
-- **Agent User:** A cloud-only user identity that enables delegated (OBO) token flows.
-- **SPA app registration:** Client app for the webhook demo, preconfigured with redirect URIs and Blueprint API permissions.
+- **Agent identity blueprint:** App registration that issues tokens on behalf of Agent Identities via Federated Identity Credentials.
+- **Agent identity service principal:** The AI agent's service principal. Acquires Microsoft Graph and MCP tokens autonomously.
+- **Agent user account:** A cloud-only user identity that enables delegated (OBO) token flows.
+- **Single page app (SPA) app registration:** Client app for the webhook demo, preconfigured with redirect URIs and Blueprint API permissions.
 
 ### n8n credentials and workflows
 
@@ -122,6 +122,16 @@ The postprovision hook automatically configures n8n:
 - **Agent ID Auth Manager - Agent User with MCP Enterprise:** Acquires a delegated MCP token for the Agent User and forwards it to a subworkflow.
 - **HTTP Request with autonomous agent token:** Demonstrates an autonomous agent calling Microsoft Graph directly with an app-only token.
 - **Webhook - assistive agent (on-behalf-of):** Webhook entry point that receives a bearer token from the SPA, calls the Auth Manager, and responds via the Graph MCP Server on behalf of the signed-in user.
+
+### Understand token flow 
+
+The n8n deployment supports two token flow patterns:
+
+- **Autonomous (app-only):** The n8n workflow uses the Agent Identity Blueprint credentials with Federated Identity Credentials to acquire an app-only token for the Agent Identity service principal. The workflow then calls Microsoft Graph directly with this token. No user context is involved.
+
+- **On-behalf-of (OBO) with MCP:** A browser-based SPA sends a bearer token to an n8n webhook. The webhook calls the Auth Manager workflow, which uses the Blueprint credentials to acquire a delegated token on behalf of the Agent User. The Auth Manager forwards the token to a subworkflow that calls the Microsoft Graph MCP Server for Enterprise, which translates MCP tool calls into Microsoft Graph API requests using the delegated token.
+
+In both patterns, the Agent Identity Blueprint acts as a token factory. It issues tokens for Agent Identities without storing credentials on the agent itself. The Auth Manager community node handles token acquisition and AES-256-GCM caching within each workflow run.
 
 ## Deploy the test SPA (optional)
 
@@ -146,7 +156,7 @@ The setup grants the following delegated `MCP.*` scopes to the Agent Identity se
 - `MCP.Reports.Read.All`: Read Microsoft 365 usage reports.
 - `MCP.Policy.Read.All`: Read conditional access policies.
 - `MCP.Domain.Read.All`: Read verified domains.
-- `MCP.Device.Read.All`: Read Entra-registered devices.
+- `MCP.Device.Read.All`: Read Microsoft Entra-registered devices.
 
 To add more scopes, edit the `$MCP_SCOPES` array in `scripts/Setup-EntraAgentId.ps1` and rerun `azd provision`.
 
@@ -164,14 +174,14 @@ The deployment is fully idempotent:
 To rerun just the postprovision scripts without modifying infrastructure:
 
 ```bash
-azd provision
+azd provision   # Bicep detects no changes, runs hooks only
 ```
 
 ## Run the scripts manually (optional)
 
 You can run the configuration scripts independently if needed:
 
-- **Full end-to-end (Entra and n8n):**
+- **Full end-to-end (Microsoft Entra and n8n):**
 
   ```powershell
   .\scripts\Run-All.ps1 `
@@ -195,18 +205,6 @@ You can run the configuration scripts independently if needed:
       -TenantId  "<your-tenant-id>" `
       -N8nUrl    "https://ca-n8n-<token>.<region>.azurecontainerapps.io"
   ```
-
-## Estimate costs
-
-| Resource | Configuration | Estimated monthly cost |
-|---|---|---|
-| n8n Container App | 1 vCore, 2 GiB | ~ $15 |
-| Static Web App | Free tier | $0 |
-| PostgreSQL Flexible Server | Burstable B1ms | ~ $12 |
-| Azure OpenAI | Pay-per-token (GPT-4o) | Varies |
-| Storage Account | LRS, less than 1 GB | ~ $1 |
-| Log Analytics | Pay-as-you-go | ~ $2 |
-| **Total (excluding OpenAI)** | | **~ $30/month** |
 
 ## Clean up resources
 
