@@ -21,8 +21,8 @@ The sample demonstrates two execution modes and two identity flows:
 
 |  | **Autonomous** (app-only) | **OBO** (on behalf of user) |
 |---|---|---|
-| **Direct** (no LLM) | Fast demo path. The agent fetches a token and calls the weather API directly. | Same, but the sidecar exchanges the signed-in user's token through the authenticated endpoint. |
-| **Ollama + LangChain** | A LangGraph ReAct agent decides when to call the `get_weather` tool. | Same, but the agent passes the user token through when the tool runs. |
+| **Direct** (no LLM) | Agent fetches a token and calls the weather API directly. | Same, but the sidecar exchanges the signed-in user's token. |
+| **Ollama + LangChain** | LangGraph ReAct agent decides when to call the `get_weather` tool. | Same, but the agent passes the user token through. |
 
 ## Prerequisites
 
@@ -53,7 +53,46 @@ git clone https://github.com/microsoft/entra-agentid-samples.git
 cd entra-agentid-samples/sidecar/dev
 ```
 
+## Review the architecture
+
+The stack runs four containers on an internal Docker network: `llm-agent-dev` (Flask chat UI, exposed on port 3003), `agent-id-sidecar-dev` (Microsoft Entra SDK auth sidecar), `weather-api-dev` (downstream API that validates agent tokens), and `ollama-dev` (local LLM). Only the chat UI is exposed to your host — the sidecar and weather API are reachable only from within the Docker network.
+
+The agent never contacts Microsoft Entra ID directly and never sees a credential. It asks the sidecar for an `Authorization` header, receives a `Bearer` token, and passes that token to the weather API. Only the sidecar communicates with `login.microsoftonline.com`.
+
+## Review the token flow
+
+The autonomous flow uses two tokens: **T1** (blueprint app token from client credentials) and **TR** (agent token for the downstream API). The OBO flow adds a third: **Tc** (user access token from MSAL.js browser sign-in). The sidecar handles all token acquisition and caching — your agent code never touches credentials directly.
+
+### Autonomous flow
+
+No user sign-in is required. The agent authenticates as itself by using the blueprint's client credentials.
+
+:::image type="content" source="media/sidecar-local-development/autonomous-flow-sequence.png" alt-text="Diagram that shows the autonomous flow sequence from agent to sidecar to Microsoft Entra ID to weather API." lightbox="media/sidecar-local-development/autonomous-flow-sequence.png":::
+
+1. The user sends a query through the chat UI.
+1. The agent (or LangGraph ReAct agent) decides to call the `get_weather` tool.
+1. The tool requests an authorization header from the sidecar at `GET /AuthorizationHeaderUnauthenticated/graph-app?AgentIdentity={agentAppId}`.
+1. The sidecar performs a client credentials exchange with Microsoft Entra ID and receives TR (app-only, `idtyp=app`).
+1. The tool calls the weather API with `Authorization: Bearer TR`.
+1. The weather API validates TR (signature, issuer, expiry, audience) and returns weather data.
+
+### OBO flow
+
+The agent acts on behalf of a signed-in user. The sidecar performs a three-step token exchange.
+
+:::image type="content" source="media/sidecar-local-development/on-behalf-of-flow-sequence.png" alt-text="Diagram that shows the on-behalf-of flow sequence from browser sign-in through sidecar token exchange to weather API." lightbox="media/sidecar-local-development/on-behalf-of-flow-sequence.png":::
+
+1. The user signs in through MSAL.js in the browser and receives Tc (user access token, audience = `api://{BlueprintAppId}`).
+1. The user sends a query. The agent receives Tc with the request.
+1. The tool requests an authorization header from the sidecar at `GET /AuthorizationHeader/graph`, passing `Authorization: Bearer Tc` and `?AgentIdentity={agentAppId}`.
+1. The sidecar validates Tc, performs a client credentials exchange to get T1, then performs an OBO exchange to get TR (delegated, `idtyp=user`). The OBO exchange uses `assertion=Tc`, `client_assertion=T1`, and `grant_type=jwt-bearer`.
+1. The tool calls the weather API with `Authorization: Bearer TR`.
+1. The weather API validates TR and returns weather data. TR acts on behalf of the signed-in user.
+
 ## Configure environment variables
+
+> [!TIP]
+> If you already have a `.env` file from a previous run with `TENANT_ID`, `BLUEPRINT_APP_ID`, `BLUEPRINT_CLIENT_SECRET`, and `AGENT_CLIENT_ID` populated, skip to [Start the stack](#start-the-stack). The Microsoft Entra objects survive container restarts and `docker compose down`.
 
 Copy the example environment file and add your Microsoft Entra values:
 
@@ -84,18 +123,12 @@ Open `.env` in your editor and set the following values:
 
 The autonomous flow requires `TENANT_ID`, `BLUEPRINT_APP_ID`, `BLUEPRINT_CLIENT_SECRET`, and `AGENT_CLIENT_ID`. The OBO flow also requires `CLIENT_SPA_APP_ID`.
 
-### Blueprint credential source types
+This sample uses `ClientSecret` as the credential source type. The sidecar supports the following credential types through the `AzureAd__ClientCredentials__0__SourceType` setting in `docker-compose.yml`:
 
-The sidecar supports multiple credential types through the `AzureAd__ClientCredentials__0__SourceType` setting in `docker-compose.yml`:
-
-| SourceType | When to use |
-|---|---|
-| `ClientSecret` | Local development only. This type is the default for this sample. |
-| `SignedAssertionFromManagedIdentity` | Deployed on Azure. Zero secrets, recommended for production. |
-| `KeyVault` | Certificate from Azure Key Vault. |
-| `StoreWithThumbprint` | Certificate from local machine store. |
-
-For more information, see [Credentials overview for Microsoft.Identity.Web](/entra/msidweb/authentication/credentials-overview).
+- **`ClientSecret`** — Local development only. This type is the default for this sample.
+- **`SignedAssertionFromManagedIdentity`** — Deployed on Azure. Zero secrets, recommended for production.
+- **`KeyVault`** — Certificate from Azure Key Vault.
+- **`StoreWithThumbprint`** — Certificate from local machine store.
 
 ## Set up OBO sign-in (optional)
 
@@ -157,55 +190,6 @@ Invoke-RestMethod http://localhost:3003/api/status
 
 The response shows `ollama_available: true` when the stack is ready.
 
-## Review the architecture
-
-The stack runs four containers on an internal Docker network. Only the chat UI (port 3003) and Ollama (port 11434) are exposed to your host. The sidecar and weather API are reachable only from within the Docker network.
-
-| Service | Container | Host port | Role |
-|---|---|---|---|
-| `llm-agent` | `llm-agent-dev` | **3003** | Flask app, chat UI, and LangChain agent. |
-| `sidecar` | `agent-id-sidecar-dev` | None | Microsoft Entra SDK auth sidecar. Acquires and caches tokens. |
-| `weather-api` | `weather-api-dev` | None | Downstream API. Validates agent tokens on every request. |
-| `ollama` | `ollama-dev` | **11434** | Local LLM. Used only in Ollama execution mode. |
-
-The agent never contacts Microsoft Entra ID directly and never sees a credential - it asks the sidecar for an `Authorization` header, receives a `Bearer` token, and passes that token to the weather API. Only the sidecar communicates with `login.microsoftonline.com`.
-
-## Review the token flow
-
-The full OBO flow uses three tokens. The autonomous flow uses only T1 and TR.
-
-| Token | Issued to | When | How |
-|---|---|---|---|
-| **Tc** | Signed-in user | OBO flow only | MSAL.js in the browser. |
-| **T1** | Blueprint app | Both flows | Sidecar performs client credentials exchange. |
-| **TR** | Agent (downstream API) | Both flows | Sidecar performs app-only (autonomous) or OBO exchange. |
-
-### Autonomous flow
-
-No user sign-in is required. The agent authenticates as itself by using the blueprint's client credentials.
-
-:::image type="content" source="media/sidecar-local-development/autonomous-flow-sequence.png" alt-text="Diagram that shows the autonomous flow sequence from agent to sidecar to Microsoft Entra ID to weather API." lightbox="media/sidecar-local-development/autonomous-flow-sequence.png":::
-
-1. The user sends a query through the chat UI.
-1. The agent (or LangGraph ReAct agent) decides to call the `get_weather` tool.
-1. The tool requests an authorization header from the sidecar at `GET /AuthorizationHeaderUnauthenticated/graph-app?AgentIdentity={agentAppId}`.
-1. The sidecar performs a client credentials exchange with Microsoft Entra ID and receives TR (app-only, `idtyp=app`).
-1. The tool calls the weather API with `Authorization: Bearer TR`.
-1. The weather API validates TR (signature, issuer, expiry, audience) and returns weather data.
-
-### OBO flow
-
-The agent acts on behalf of a signed-in user. The sidecar performs a three-step token exchange.
-
-:::image type="content" source="media/sidecar-local-development/on-behalf-of-flow-sequence.png" alt-text="Diagram that shows the on-behalf-of flow sequence from browser sign-in through sidecar token exchange to weather API." lightbox="media/sidecar-local-development/on-behalf-of-flow-sequence.png":::
-
-1. The user signs in through MSAL.js in the browser and receives Tc (user access token, audience = `api://{BlueprintAppId}`).
-1. The user sends a query. The agent receives Tc with the request.
-1. The tool requests an authorization header from the sidecar at `GET /AuthorizationHeader/graph`, passing `Authorization: Bearer Tc` and `?AgentIdentity={agentAppId}`.
-1. The sidecar validates Tc, performs a client credentials exchange to get T1, then performs an OBO exchange to get TR (delegated, `idtyp=user`). The OBO exchange uses `assertion=Tc`, `client_assertion=T1`, and `grant_type=jwt-bearer`.
-1. The tool calls the weather API with `Authorization: Bearer TR`.
-1. The weather API validates TR and returns weather data. TR acts on behalf of the signed-in user.
-
 ## Send a query through the chat UI
 
 1. Open `http://localhost:3003` in your browser.
@@ -233,7 +217,7 @@ The agent acts on behalf of a signed-in user. The sidecar performs a three-step 
 | Weather API returns `401 Unauthorized` | Token tenant mismatch, expired secret, or signature check failed. | Verify `TENANT_ID` matches the blueprint's tenant. Check sidecar logs by using `docker logs agent-id-sidecar-dev`. |
 | LLM returns weather without calling the tool | The `qwen2.5:1.5b` model is too small for reliable tool calling. | Change `OLLAMA_MODEL` to `qwen2.5:7b` or `llama3.1:8b` in your `.env` file. |
 | OBO sign-in popup is blocked | Browser popup blocker is active. | Allow popups for `localhost:3003`. |
-| `4xx` error from sidecar during OBO | `CLIENT_SPA_APP_ID` is missing or the SPA redirect URI doesn't match. | Re-run the OBO setup scripts. Verify `http://localhost:3003` is listed in the SPA's redirect URIs. |
+| `4xx` error from sidecar during OBO | `CLIENT_SPA_APP_ID` is missing or the SPA redirect URI doesn't match. | Rerun the OBO setup scripts. Verify `http://localhost:3003` is listed in the SPA's redirect URIs. |
 
 To view container logs for any service:
 
