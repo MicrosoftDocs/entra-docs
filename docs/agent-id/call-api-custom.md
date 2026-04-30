@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how to call custom protected APIs from an agent using different approaches including IDownstreamApi, MicrosoftIdentityMessageHandler, and IAuthorizationHeaderProvider.
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 #Customer intent: As a developer building AI agents, I want to call custom protected APIs from my agent using agent identities so that the agent can securely access organization-specific services and resources.
 ---

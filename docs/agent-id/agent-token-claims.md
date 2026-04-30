@@ -4,7 +4,6 @@ description: Learn about specialized token claims used by agent applications in 
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: reference
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 
 #customer-intent: As a developer or security engineer, I want to understand the token claims structure for Agent Identity tokens, so that I can properly validate and authorize agent applications in my resource servers and implement secure authentication flows.

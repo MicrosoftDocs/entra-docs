@@ -41,7 +41,7 @@ sections:
             text: Manage agent identities
       - componentType: card
         title: Govern agent lifecycles
-        summary: Ensure the lifecycle of your agents are governed with access reviews, entitlement management, and sponsor accountability.
+        summary: Ensure the lifecycle of your agents is governed with access reviews, entitlement management, and sponsor accountability.
         imageUrl: media/index/hero-image-entra-copilot-chat.png
         links:
           - componentType: link
