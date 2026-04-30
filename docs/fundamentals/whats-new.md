@@ -211,7 +211,7 @@ This change helps customers transition to a more secure authentication model in 
 *   Aligning with SAP’s supported authentication model 
     
 
-Recommended action 
+#### Recommended action
 
 *   Evaluate the new authentication option once available in your tenant 
     
