@@ -195,7 +195,7 @@ This change helps customers transition to a more secure authentication model in 
 *   [SAP SuccessFactors writeback (Entra to SuccessFactors)](../identity/saas-apps/sap-successfactors-writeback-tutorial.md) 
     
 
-What this means for you 
+#### What this means for you
 
 *   If you are currently using basic authentication for any of the above SAP SuccessFactors provisioning integrations, you must upgrade to workload identity-based authentication before November 2026 to ensure uninterrupted operation of the integrations. 
     
