@@ -26,7 +26,7 @@ Before you start, make sure you have:
 - **Azure subscription**, required for some deployment options.
 - **Docker** and **Docker Compose** for the sidecar pattern.
 - **Credentials or federation setup**, depending on the pattern you choose.
-- **PowerShell 7.5 or later** with the Microsoft.Graph PowerShell module.
+- **PowerShell 7.5 or later** with the Microsoft Graph PowerShell module.
 - **Global Administrator** role, required only for initial setup. Use [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure) to activate this role just-in-time.
 - **Cloud Application Administrator** or **Application Administrator** role to grant Microsoft Graph delegated permissions for agent management operations.
 
@@ -53,7 +53,7 @@ Microsoft Entra Agent ID provides a centralized, secure identity service that th
 
 ## Integration patterns for third-party agents
 
-Choose one of the following two patterns to integrate third-party agents with Microsoft Entra Agent ID.
+To integrate third-party agents with Microsoft Entra Agent ID, choose one of the following pattern:
 
 ### Use the Microsoft Entra Auth SDK (sidecar)
 

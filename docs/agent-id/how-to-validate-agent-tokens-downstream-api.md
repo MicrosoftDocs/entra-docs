@@ -143,6 +143,6 @@ Token validation libraries differ across ecosystems (Python, Node.js, .NET). Thi
 ## Related content
 
 - [Token claims reference](agent-token-claims.md)
-- [Sidecar design pattern for agent authentication](sidecar-design-pattern.md)
+- [Authentication with Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md)
 - [Run the sidecar for local development](sidecar-local-development.md)
 - [Microsoft Entra Agent ID samples repository](https://github.com/microsoft/entra-agentid-samples)
