@@ -17,8 +17,6 @@ Microsoft Entra Agent ID is an identity and security framework that extends Micr
 
 :::image type="content" source="media/what-is-microsoft-entra-agent-id/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra Agent ID." lightbox="media/what-is-microsoft-entra-agent-id/microsoft-entra-agent-identity-capabilities-expanded.png":::
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 Microsoft Entra Agent ID brings together identity management, access protection, governance, and compliance for AI agents.
 
 ## Agent identity platform
