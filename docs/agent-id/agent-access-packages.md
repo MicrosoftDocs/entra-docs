@@ -12,10 +12,6 @@ ms.topic: concept-article
 
 Microsoft Entra entitlement management provides access packages as a governance mechanism. Access packages ensure that agent access assignments are intentional, auditable, and time-bound. Access packages represent a structured approach to managing agent identity permissions, contrasting with ad-hoc permission assignments that might lack appropriate governance controls. Access packages enable standardized access for many AI Agents with the same access needs, for example, a fleet of customer support AI Agents. Through access packages, organizations can establish consistent governance practices for agent identity, agent's user account, and service principal access to resources. For more information, see [Governing agent identities](/entra/id-governance/agent-id-governance-overview).
 
-## License requirements
-
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
-
 ## Prerequisites
 
 Before creating an access package, confirm the following prerequisites are met in your organization:

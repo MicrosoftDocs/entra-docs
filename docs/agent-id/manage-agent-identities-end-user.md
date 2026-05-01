@@ -17,10 +17,6 @@ The Manage Agents feature in Microsoft Entra lets you view and control, [agent i
 > [!NOTE]
 > This article is for agent identity owners and sponsors. The **Manage agents** menu only appears for users who own or sponsor at least one agent identity. For tenant-wide management by administrators, see [Manage agent identities in your organization](manage-agent-identities-admin.md).
 
-## License requirements
-
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
-
 ## Manage agents as an agent identity owner or sponsor
 
 1.	Sign in to the [My Account end user portal](https://myaccount.microsoft.com/) as either an owner or sponsor of at least one agent identity.
