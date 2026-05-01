@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 # Customer intent: As an administrator, I want to enable the Intelligent Local Access (ILA) capability for Microsoft Entra Private Access, to optimize traffic flow for clients accessing Entra apps via private networks.
 ---
 
-# Enable Intelligent Local Access (preview)
+# Enable Intelligent Local Access
 
 Intelligent Local Access capability can help optimize the traffic flow from Microsoft Entra clients to Microsoft Entra Private Access apps when the client is on a corporate/private network. This article explains how to enable the Intelligent Private Network for Microsoft Entra Private Access.
 
