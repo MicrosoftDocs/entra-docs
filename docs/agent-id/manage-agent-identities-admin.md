@@ -6,7 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/09/2026
+ms.date: 05/01/2026
 ms.custom: msecd-doc-authoring-108
 
 #customer intent: As an IT administrator, I want a unified guide for managing agent identities in my organization so that I can efficiently view, govern, monitor, and secure agents across the full management lifecycle.
@@ -18,8 +18,6 @@ ms.custom: msecd-doc-authoring-108
 Microsoft Entra Agent ID provides a centralized set of tools for managing agent identities across your organization. Agent identities are a distinct identity type in Microsoft Entra ID, designed for AI agents with classification, metadata, and security controls tailored to agentic workloads.
 
 This article covers key agent management tasks: from viewing and disabling agents, to governing access, monitoring activity, and responding to security risks. Whether you're an administrator responsible for tenant-wide agent oversight or a sponsor managing specific agents, this guide provides the information you need to effectively manage agent identities in your organization.
-
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
 ## Prerequisites
 
@@ -33,19 +31,16 @@ Different management tasks require different roles and licenses. The following t
 | Configure Conditional Access policies | Conditional Access Administrator | Requires Microsoft Entra ID P1 license. |
 | View ID Protection risk reports | Security Administrator, Security Operator, or Security Reader | Requires Microsoft Entra ID P2 license during preview. |
 | Configure Lifecycle Workflows | Lifecycle Workflows Administrator | &nbsp; |
-| Verify Frontier licensing | Billing Administrator | Required to check Microsoft Agent 365 licensing in the Microsoft 365 admin center. |
-
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## View agent identities
 
 The Microsoft Entra admin center provides a centralized interface to view all agent identities in your tenant. You can search, filter, sort, and customize columns to find specific agents.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Entra ID** > **Agent ID** > **All agent identities**.
+1. Browse to **Entra ID** > **Agents** > **Agent identities**.
 1. Select any agent identity to view its details, including name, description, status, owners, sponsors, granted permissions, and sign-in logs.
 
-To search for a specific agent, enter the **name** or **object ID** in the search box, or add the **Agent Blueprint ID** filter. You can customize which columns are shown by selecting the **Choose columns** button. Available columns include **Name**, **Created On**, **Status**, **Object ID**, **View Access**, **Agent Blueprint ID**, **Owners**, and **Uses agent identity**.
+To search for a specific agent, enter the **name** or **object ID** in the search box, or add the **Blueprint App ID** filter. You can customize which columns are shown by selecting the **Choose columns** button. Available columns include **Name**, **Created On**, **Status**, **Object ID**, **View Access**, **Blueprint App ID**, **Owners and Sponsors**, and **Uses agent identity**.
 
 For detailed instructions on filtering, column customization, and viewing agents from this view, see [View and filter agent identities in your tenant](agent-lists.md).
 
@@ -54,8 +49,7 @@ For detailed instructions on filtering, column customization, and viewing agents
 Agent identity blueprints are the parent definitions from which individual agent identities are created. The admin center lets you view all blueprint principals, manage their permissions, and monitor their activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Entra ID** > **Agent identities** > **All agent identities**.
-1. Select **View agent blueprint** in the upper right of the command bar.
+1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
 1. Select any agent identity blueprint principal to manage it.
 
 From a blueprint's management page, you can:
@@ -102,7 +96,7 @@ Key points about Conditional Access for agent identities:
 - Policies support **Report-only mode** for safe evaluation before enforcement.
 
 > [!IMPORTANT]
-> Conditional Access enforcement applies when an agent identity or agent user requests a token for any resource. It does **not** apply when an agent identity blueprint acquires a token to create agent identities or agent users.
+> Conditional Access enforcement applies when an agent identity or agent's user account requests a token for any resource. It does **not** apply when an agent identity blueprint acquires a token to create agent identities or agent's user accounts.
 
 For detailed policy configuration, step-by-step walkthroughs, and business scenario examples, see [Conditional Access for Agent ID](/entra/identity/conditional-access/agent-id).
 

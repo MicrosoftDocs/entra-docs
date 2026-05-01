@@ -2,7 +2,7 @@
 title: How to configure per-app access using Global Secure Access applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 04/29/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -161,6 +161,42 @@ You can add or update the FQDNs and IP addresses included in your app at any tim
 1. Select **Network access properties** from the side menu.
     - To add a new FQDN or IP address, select **Add  application segment**.
     - To edit an existing app, select it from the **Destination type** column.
+
+## Configure traffic routing for the app
+
+Traffic routing is configured per Global Secure Access application. The default traffic routing method is **Random**, which distributes requests across the available connectors in the selected connector group.
+
+For Global Secure Access applications, you can change the routing behavior to use session persistence, also called session affinity. Session persistence consistently routes requests from the same user and device to the same connector for the duration of a session.
+
+Session persistence is useful for applications that rely on connector egress IP for authentication or access control lists (ACLs).
+
+> [!TIP]
+> Session persistence only works with Global Secure Access applications, not Microsoft Entra application proxy applications.
+
+You can configure the traffic routing method for the Global Secure Access app by updating the `trafficRoutingMethod` property on the application through Microsoft Graph. For the `trafficRoutingMethod` property definition and supported values, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
+
+Update the application object with a separate `PATCH` request to Microsoft Graph:
+
+```http
+PATCH https://graph.microsoft.com/beta/applications/{appRegistrationObjectId}
+Content-Type: application/json
+
+{
+    "onPremisesPublishing": {
+        "trafficRoutingMethod": "sessionPersistence"
+    }
+}
+```
+
+Replace `{appRegistrationObjectId}` with the application registration's object ID. You can find this value in the Microsoft Entra admin center under **Identity** > **Applications** > **App registrations** by selecting the app registration for your Global Secure Access application and copying the **Object ID** from the **Overview** page. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true). 
+
+To confirm that the configuration was committed, retrieve the app registration object with a `GET` request and review the `onPremisesPublishing.trafficRoutingMethod` value:
+
+```http
+GET https://graph.microsoft.com/beta/applications/{appRegistrationObjectId}
+```
+
+For more information, see [Get application](/graph/api/application-get?view=graph-rest-beta&preserve-view=true).
 
 ## Enable or disable access with the Global Secure Access Client
 

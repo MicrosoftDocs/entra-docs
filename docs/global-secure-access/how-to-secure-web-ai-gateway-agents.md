@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to configure network security controls for Microsoft Copilot Studio agents so that I can apply security policies and monitor agent traffic.
 ---
 
-# Configure Secure Web and AI Gateway for Microsoft Copilot Studio agents (preview)
+# Configure Secure Web and AI Gateway for Microsoft Copilot Studio agents
 
 Global Secure Access network controls enable you to implement granular access controls for Microsoft Copilot Studio agents. You can apply network security policies including web content filtering, threat intelligence filtering and network file filtering to agent traffic. This capability provides similar security controls for agents that you use for other traffic types in your organization.
 

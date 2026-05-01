@@ -5,7 +5,7 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
-  - name: Governing Agent IDs (Preview)
+  - name: Governing Agent IDs
     href: agent-ID-governance-overview.md    
 
 
@@ -280,7 +280,9 @@
       - name: Delegate to access package managers
         href: entitlement-management-delegate-managers.md
       - name: Set up group writeback
-        href: entitlement-management-group-writeback.md  
+        href: entitlement-management-group-writeback.md
+      - name: Assign Azure Role-based access control (RBAC) Roles (Preview)
+        href: entitlement-management-azure-role-assignments.md      
     - name: Access package managers and Access package assignment managers
       items:
       - name: Create a new access package
@@ -431,7 +433,7 @@
           href: manage-workflow-insights.md
         - name: Sensitivity Labels in Lifecycle Workflows
           href: workflow-sensitivity-labels.md 
-        - name: Agent Identity Sponsor Tasks (Preview)
+        - name: Agent Identity Sponsor Tasks
           href: agent-sponsor-tasks.md       
       - name: Delete
         items: 
