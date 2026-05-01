@@ -46,16 +46,11 @@ To simplify agent management across the enterprise, agent registry experiences a
 
 Microsoft Entra ID Governance extends lifecycle and access management capabilities to agent identities:
 
-- [Governing agent identities overview](../id-governance/agent-id-governance-overview.md) - Overview of how Microsoft 
-Entra governs agent identity lifecycle and access.
-- [Access packages for agent identities](../id-governance/entitlement-management-access-package-create.md) - Govern 
-agent access through policy-based access packages and permission assignment for both on-behalf-of (OBO) and autonomous 
-(non-OBO) scenarios.
-- [Sponsor lifecycle workflows](../id-governance/agent-sponsor-tasks.md) (New) - Automate sponsor maintenance and 
-reassignment for agent blueprints and agent identities.
-- [Manage your agent identities](manage-agent-identities-end-user.md) (New) - View and control agent identities you own or
-sponsor.
-- [Agent identity sponsor templates](../id-governance/lifecycle-workflow-templates.md) (New) - Two new lifecycle workflow templates for notifying managers and cosponsors when an agent identity sponsor changes roles or leaves the organization.
+- [Governing agent identities overview](../id-governance/agent-id-governance-overview.md) - Overview of how Microsoft Entra governs agent identity lifecycle and access.
+- [Access packages for agent identities](agent-access-packages.md) - Govern agent access through policy-based access packages and permission assignment for both on-behalf-of (OBO) and autonomous (non-OBO) scenarios.
+- [Sponsor lifecycle workflows](../id-governance/agent-sponsor-tasks.md) (New) - Automate sponsor maintenance and reassignment for agent blueprints and agent identities.
+- [Manage your agent identities](manage-agent-identities-end-user.md) (New) - View and control agent identities you own or sponsor.
+- [Agent identity sponsor templates](../id-governance/lifecycle-workflow-templates.md) (New) - Two new lifecycle workflow templates for notifying managers and cosponsors, and automatically transfer sponsorship when an agent identity sponsor changes roles or leaves the organization, to prevent orphaned agents.
 
 ## Protect agent access to resources
 
