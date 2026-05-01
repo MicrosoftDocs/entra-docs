@@ -377,7 +377,7 @@ Allows Licenses to be assigned to users. For a license to be assigned to the use
 
 Example of usage within the workflow:
 
-```Example for usage within the workflow
+```json
 {
             "category": "joiner,mover",
             "continueOnError": false,
@@ -416,7 +416,9 @@ For Microsoft Graph, the parameters for the **Add user to groups** task are as f
 |arguments     |  Argument contains a name parameter that is the "groupID", and a value parameter that is the group ID of the group you're adding the user to.    |
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "description": "Add user to groups",
@@ -453,7 +455,9 @@ For Microsoft Graph, the parameters for the **Add user to teams** task are as fo
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "description": "Add user to team",
@@ -531,7 +535,9 @@ For Microsoft Graph, the parameters for the **Enable user account** task are as 
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
  {
             "category": "joiner,leaver",
             "description": "Enable user account",
@@ -572,7 +578,9 @@ For Microsoft Graph, the parameters for the **Run a Custom Task Extension** task
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "description": "Run a Custom Task Extension to call-out to an external system.",
@@ -610,7 +618,9 @@ For Microsoft Graph, the parameters for the **Disable user account** task are as
 |arguments     |  Can contain the optional *disableOnPremisesAccount* argument. The value is a boolean value of either *true*, if you want the task to run for synced on-premises users, or *false*, if you don't want it to run for synced on-premises users.   |
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "description": "Disable user account",
@@ -650,7 +660,9 @@ For Microsoft Graph, the parameters for the **Remove user from selected groups**
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "displayName": "Remove user from selected groups",
@@ -689,7 +701,9 @@ For Microsoft Graph, the parameters for the **Remove users from all groups** tas
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "continueOnError": true,
@@ -718,7 +732,9 @@ For Microsoft Graph, the parameters for the **Remove User from Teams** task are 
 |arguments     |  Argument contains a name parameter that is the "teamID", and a value parameter that is the Teams ID of the Teams you're removing the user from.   |
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "continueOnError": true,
@@ -752,7 +768,9 @@ For Microsoft Graph, the parameters for the **Remove users from all teams** task
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "continueOnError": true,
@@ -783,7 +801,9 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 |arguments     |  Argument contains a name parameter that is the "accessPackageId".   |
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
     "category": "leaver, mover",
     "continueOnError": false,
@@ -895,7 +915,7 @@ For Microsoft Graph, the parameters for the **Remove selected license assignment
 
 Example of usage within the workflow:
 
-```Example for usage within the workflow 
+```json
 {
             "category": "leaver, mover",
             "description": "Remove selected licenses assigned to the user",
@@ -931,7 +951,9 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
     "category": "leaver, mover",
     "continueOnError": false,
@@ -1057,7 +1079,9 @@ For Microsoft Graph, the parameters for the **Remove all license assignment from
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "continueOnError": true,
@@ -1088,7 +1112,9 @@ For Microsoft Graph, the parameters for the **Delete User** task are as follows:
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "continueOnError": true,
