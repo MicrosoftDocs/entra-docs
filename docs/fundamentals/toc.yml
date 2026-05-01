@@ -115,9 +115,7 @@ items:
     - name: What's new in Microsoft Entra
       href: whats-new-overview.md    
     - name: Releases and announcements
-      href: whats-new.md
-    - name: What's new for Microsoft Entra Agent ID
-      href: whats-new-agent-id.md   
+      href: whats-new.md 
     - name: What's new at Microsoft Ignite
       href: whats-new-ignite-2025.md
     - name: Archive for releases and announcements
