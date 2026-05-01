@@ -287,7 +287,7 @@ For Microsoft Graph the parameters for the **Send email to notify manager of use
 |displayName     |  Send email to notify manager of user move (Customizable by user)       |
 |description     |  Send email to notify user’s manager of user move (Customizable by user)        |
 |taskDefinitionId     |   aab41899-9972-422a-9d97-f626014578b7      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
