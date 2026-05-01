@@ -109,7 +109,7 @@ For Microsoft Graph, the parameters for the **Send welcome email to new hire** t
 |displayName     | Send Welcome Email (Customizable by user)        |
 |description     | Send welcome email to new hire (Customizable by user)      |
 |taskDefinitionId     |   70b29d51-b59a-4773-9280-8841dfd3f2ea     |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 
 Example of usage within the workflow:
