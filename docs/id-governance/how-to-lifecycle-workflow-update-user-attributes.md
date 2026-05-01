@@ -20,8 +20,6 @@ This article walks you through configuring a workflow with the Update user attri
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-- You must have at least the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role to configure workflows with this task.
-
 ## Supported attributes
 
 The Update user attributes task supports the following attribute types:
@@ -68,44 +66,7 @@ To add the Update user attributes task to a workflow using the Microsoft Entra a
 > [!NOTE]
 > You can configure up to 10 attribute updates within a single task instance.
 
-## Configure the Update user attributes task using Microsoft Graph
 
-To add the Update user attributes task to a workflow using Microsoft Graph, include the task in the `tasks` collection when [creating a workflow](/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows) or [creating a new version of an existing workflow](/graph/api/identitygovernance-workflow-createnewversion).
-
-The following example shows how to configure the task to update the `department` and `jobTitle` attributes:
-
-```json
-{
-    "category": "joiner",
-    "continueOnError": false,
-    "description": "Update or clear user attribute values including custom attributes",
-    "displayName": "Update user attributes",
-    "isEnabled": true,
-    "taskDefinitionId": "2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b",
-    "arguments": [
-        {
-            "name": "attributeUpdates",
-            "value": "[{\"attribute\":\"department\",\"value\":\"Sales\"},{\"attribute\":\"jobTitle\",\"value\":\"Account Executive\"}]"
-        }
-    ]
-}
-```
-
-The `attributeUpdates` argument accepts a JSON string containing an array of objects, where each object specifies:
-
-- `attribute`: The name of the user attribute to update.
-- `value`: The new value for the attribute. Use an empty string (`""`) to clear the attribute.
-
-### Clear an attribute example
-
-To clear an attribute value, set the `value` to an empty string:
-
-```json
-{
-    "name": "attributeUpdates",
-    "value": "[{\"attribute\":\"department\",\"value\":\"\"}]"
-}
-```
 
 ## Next steps
 
