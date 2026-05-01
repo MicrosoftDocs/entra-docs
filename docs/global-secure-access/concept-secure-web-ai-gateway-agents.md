@@ -34,6 +34,10 @@ Once agent traffic is forwarded to Global Secure Access, you can apply security 
 
 Security policies for agents are configured using the baseline profile in Global Secure Access. The baseline profile applies security policies at the tenant level, ensuring consistent security controls across all agent traffic.
 
+## How to get started
+
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
+
 ## Next steps
 
 - [Configure network security for Microsoft Copilot Studio agents](how-to-secure-web-ai-gateway-agents.md)

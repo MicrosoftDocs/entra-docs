@@ -4,14 +4,12 @@ description: Describes how to use an AI coding agent to automate the onboarding 
 ms.topic: how-to
 author: arlucaID
 ms.author: arluca
-ms.date: 03/30/2026
+ms.service: entra-id
+ms.date: 05/01/2026
 ms.reviewer: rolyon
 ---
 
 # AI-guided setup for Microsoft Entra Agent ID
-
-> [!IMPORTANT]
-> [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) is currently in PREVIEW. This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Microsoft Entra Agent ID integration involves multiple steps: creating an agent identity blueprint, configuring credentials, setting up identifier URIs and scopes, creating blueprint principals, and provisioning agent identities. Each step has its own prerequisites, validation checks, and decision points.
 
@@ -40,9 +38,12 @@ Before you begin, ensure you have the following prerequisites.
 
 ### Required accounts and permissions
 
-- **Microsoft Entra tenant** with one of the following roles:
-  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints and agent identities.
+- Access to a **Microsoft Entra tenant** with one of the following roles:
+  - [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer) to create agent identity blueprints and agent identities. Any owner of an agent identity blueprint can create an agent identity for that blueprint without an Agent ID role.
   - [Agent ID Administrator](/entra/identity/role-based-access-control/permissions-reference#agent-id-administrator) for full administrative access to Agent ID resources.
+
+[!INCLUDE [blueprint-owner-delegated-permission](includes/blueprint-owner-delegated-permission.md)]
+
 - **Additional roles for permission grants:**
   - [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) to grant Microsoft Graph application permissions.
   - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) to grant Microsoft Graph delegated permissions.
@@ -92,7 +93,7 @@ Follow the steps in #file:agent-id-setup-instructions.md
 
 The AI agent reads the instruction file and begins the guided setup. It creates a task list and works through the steps sequentially:
 
-1. **Validate prerequisites**: Confirms Frontier is enabled, checks Microsoft Entra roles, validates that PowerShell 7+ and the Microsoft Graph beta module are installed.
+1. **Validate prerequisites**: Checks Microsoft Entra roles, validates that PowerShell 7+ and the Microsoft Graph beta module are installed.
 2. **Authorize and connect**: Connects to Microsoft Graph with the required scopes and sets the profile to beta.
 3. **Create the agent identity blueprint**: Collects a display name, identifies the sponsor (you), creates the blueprint with the required `@odata.type` and `OData-Version` headers, and records the `appId`.
 4. **Configure credentials**: Adds a managed identity (for production) or a certificate or client secret (for local development/testing) to the blueprint.
@@ -105,7 +106,7 @@ The AI agent reads the instruction file and begins the guided setup. It creates 
 The AI agent pauses at specific points to collect input from you:
 
 - **Display name**: The display name for your agent identity blueprint (for example, "Contoso Budget Agent").
-- **Sponsor**: The user who is accountable for the agent. Defaults to the currently signed-in user.
+- **Sponsor**: The user or group who is accountable for the agent. Defaults to the currently signed-in user.
 - **Owner**: The user or service principal who can make technical changes to the blueprint. Optional but recommended.
 - **Credential type**: Whether to use a managed identity (recommended for production) or a certificate or client secret (for local development).
 - **Agent identity count**: How many agent identities to create under this blueprint.
@@ -119,7 +120,7 @@ The AI agent pauses at specific points to collect input from you:
 After the setup completes, the AI agent provides instructions on how to verify the resources:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer).
-2. Browse to **Agent ID** > **All agent identities** to see your new agent identity blueprint and any agent identities created under it.
+2. Browse to **Entra ID** > **Agents** > **Agent identities** to see your new agent identity blueprint and any agent identities created under it.
 3. Verify the blueprint has the correct credentials, identifier URI, and scope configured.
 
 ## What the AI-guided setup covers
@@ -128,7 +129,7 @@ The AI-guided setup automates the following stages of the Agent ID integration:
 
 | Stage | What happens | Related documentation |
 |---|---|---|
-| Prerequisites | Validates Microsoft Entra roles, Frontier access, PowerShell module, and Graph permissions | [Create a blueprint: Prerequisites](create-blueprint.md#prerequisites) |
+| Prerequisites | Validates Microsoft Entra roles, PowerShell module, and Graph permissions | [Create a blueprint: Prerequisites](create-blueprint.md#prerequisites) |
 | Environment setup | Connects to Microsoft Graph with correct scopes and beta profile | [Create a blueprint: Prepare your environment](create-blueprint.md#prepare-your-environment) |
 | Blueprint creation | Creates the agent identity blueprint with sponsor and owner | [Create a blueprint](create-blueprint.md#create-an-agent-identity-blueprint-1) |
 | Credential config | Adds managed identity FIC or client secret to the blueprint | [Configure credentials](create-blueprint.md#configure-credentials-for-the-agent-identity-blueprint) |
@@ -157,26 +158,19 @@ Creating an agent identity blueprint (`POST /applications`) does **not** automat
 
 The AI-guided setup always creates the blueprint principal immediately after the blueprint. It also handles the idempotent case. If a previous run created the blueprint but crashed before creating the principal, the setup detects this event and creates the missing principal.
 
-### Sponsors are required and must be users
+### Sponsors are required
 
-Both blueprint and agent identity creation require a `sponsors@odata.bind` field. Without it, you receive:
+Sponsors are required and can be users, groups with dynamic membership, or unified groups. Both blueprint and agent identity creation require a `sponsors@odata.bind` field.  Without it, you receive:
 
 ```
 400: No sponsor specified. Please provide at least one sponsor.
 ```
 
-Sponsors must reference **User** objects. Service principals and groups are **not** accepted as sponsors for blueprints. Use the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The AI-guided setup resolves the current user's object ID and uses it as the default sponsor.
-
-### Azure CLI tokens are rejected by Agent ID APIs
-
-Azure CLI tokens include the `Directory.AccessAsUser.All` delegated permission. The Agent ID APIs explicitly reject any token containing this permission, returning a generic **403 Forbidden**. The AI-guided setup uses Microsoft Graph PowerShell with specific scoped permissions instead, avoiding this issue entirely.
-
-> [!WARNING]
-> Do **not** use `DefaultAzureCredential` or `AzureCliCredential` in custom scripts to call Agent ID APIs. They produce tokens with `Directory.AccessAsUser.All`, which causes every Agent ID API call to fail with 403. Use a dedicated app registration with `client_credentials` flow, or use the Microsoft Graph PowerShell SDK with explicit scopes.
+The AI-guided setup only accepts **User** objects for sponsor assignment and uses the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The setup resolves the current user's object ID and uses it as the default sponsor. To assign a [supported group](agent-owners-sponsors-managers.md#sponsors) as sponsor for a blueprint, use the Microsoft Graph API directly.
 
 ### Permission propagation takes 30–120+ seconds
 
-After you grant admin consent for Agent ID permissions, newly granted permissions don't appear in tokens immediately. The token endpoint serves cached claims, and propagation can take 30–120 seconds or more.
+After you grant admin consent for Agent ID permissions, newly granted permissions don't appear in tokens immediately. The token endpoint serves cached claims, and propagation can take 30-120 seconds or more.
 
 The AI-guided setup handles recent permission changes by retrying operations with exponential backoff when a 403 is received. If you're scripting this manually, implement retry logic:
 
@@ -225,7 +219,7 @@ When adding federated identity credentials (FIC) for managed identity federation
 POST /applications/{blueprint-obj-id}/microsoft.graph.agentIdentityBlueprint/federatedIdentityCredentials
 ```
 
-Using the standard `/applications/{id}/federatedIdentityCredentials` path might not work correctly for agent identity blueprints.
+Using the `/applications/{id}/federatedIdentityCredentials` path might work for agent identity blueprints, but it's not supported and isn't recommended.
 
 ### Token issuer varies by endpoint version
 
@@ -254,7 +248,6 @@ Please start from Step 1 in the setup instructions and work through each step in
 The most common causes of 403 errors:
 
 - **Permission propagation delay**: Wait 1–2 minutes after admin consent and retry.
-- **Azure CLI token contamination**: If you previously used `az` commands in the same session, the cached token might contain `Directory.AccessAsUser.All`. Use Microsoft Graph PowerShell with explicit scopes instead.
 - **Missing admin consent**: Verify that the required permissions have admin consent granted in the [Microsoft Entra admin center](https://entra.microsoft.com/) under **App registrations** > your client app > **API permissions**.
 
 ### Blueprint creation succeeds but returns a standard application

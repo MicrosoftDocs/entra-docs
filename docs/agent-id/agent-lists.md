@@ -4,8 +4,7 @@ titleSuffix: Microsoft Entra Agent ID
 description: Access Microsoft Entra admin center to view and filter agent identities. Streamline tenant oversight with search, filters, and column customization.
 ms.subservice: 
 ms.topic: how-to
-ms.date: 11/04/2025
-ms.custom: agent-id-ignite
+ms.date: 05/01/2026
 ms.reviewer: alamaral
 
 #Customer intent: As an administrator, I want to view and search for agent identity blueprints / applications in the Microsoft Entra admin center, so that I can manage and configure the applications in my tenant effectively.
@@ -34,7 +33,7 @@ To manage agent identities in your Microsoft Entra tenant, you need:
 To view agent identities in your tenant:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)
-1. Browse to **Entra ID** > **Agent ID** > **All agent identities**.
+1. Browse to **Entra ID** > **Agents** > **Agent identities**.
 1. Select any agent identity you'd like to manage.
 
   This page contains a list of all agent identities in your organization. This includes both [agent identity objects](agent-identities.md) and [agents using a service principal](agent-service-principals.md).
@@ -42,7 +41,7 @@ To view agent identities in your tenant:
 ## Search for an agent identity
 
 - To search for an agent identity, enter either the **name** or **object ID** of the agent identity you want to find in the search box.
-- To look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter. You can further refine the list using filters based on various criteria.
+- To look up an agent identity by its **Blueprint App ID**, add the **Blueprint App ID** filter. You can further refine the list using filters based on various criteria.
 
 You can select an agent identity from this list to see information like:
 
@@ -65,8 +64,8 @@ To customize your view of agent identities, you can change filters or select whi
 | **Status** | Current operational state (Active, or Disabled) | ✓ | ✓ |  | 
 | **Object ID** | Unique identifier for agent identity | ✗ | ✓ | | 
 | **View Access** | Direct link to agent identity's permissions | ✗ | ✗ | Navigates to the Agent's Access pane, on Permissions tab | 
-| **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity | ✗ | ✓ | Will be blank for [agents using service principals](agent-service-principals.md) | 
-| **Owners** | Direct link to the owners and sponsors for a given agent identity | ✗ | ✗ | | 
+| **Blueprint App ID** | Unique identifier for the agent identity blueprint of this agent identity | ✗ | ✓ | Will be blank for [agents using service principals](agent-service-principals.md) | 
+| **Owners and Sponsors** | Direct link to the owners and sponsors for a given agent identity | ✗ | ✗ | | 
 | **Uses agent identity** | Represents whether or not this agent has an agent identity object, or utilizes a service principal | ✗ | ✗ | If the answer is "yes," then it uses an agent identity object. If "no" this agent utilizes a service principal
 
 ## Related content
