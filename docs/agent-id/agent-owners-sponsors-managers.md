@@ -4,7 +4,6 @@ description: Learn about the administrative model for agents in Microsoft Entra,
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
 ms.date: 04/16/2026
-ms.custom: agent-id-ignite
 ms.reviewer: jawoods
 
 #customer-intent: As an IT administrator or business stakeholder, I want to understand the administrative model for agents, so that I can properly assign owners, sponsors, and managers to ensure secure operations, business accountability, and compliance oversight.

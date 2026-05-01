@@ -7,7 +7,7 @@ ms.reviewer: sarahlipsey
 ms.service: entra-agent-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-1012
-ms.date: 04/29/2026
+ms.date: 04/30/2026
 ai-usage: ai-assisted
 
 #customer intent: As a developer or IT administrator, I want to understand the difference between required resource access and inheritable permissions so that I can configure agent identity blueprints to balance security with ease of deployment.

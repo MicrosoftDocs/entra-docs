@@ -21,8 +21,6 @@ You can create an agent identity blueprint in two ways:
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
-
 To create an agent identity blueprint, you need:
 
 - [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is the least privileged role required to grant Microsoft Graph Application permissions.
@@ -67,9 +65,9 @@ You can create an agent identity blueprint directly in the Microsoft Entra admin
 > The admin center wizard sets the blueprint name and assigns owners and sponsors. To configure credentials, identifier URIs, scopes, or permissions, use the Microsoft Graph API or PowerShell, or configure them after creation through the blueprint's detail pages in the admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Entra ID** > **Agent ID** > **Agent blueprints**.
+1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
 1. Select **New agent blueprint (Preview)**.
-1. On the **Basics** tab, enter a display name for your agent identity blueprint and select **Next**.
+1. On the **Basics** tab, enter a name in the **Agent blueprint name** field and select **Next**.
 
     :::image type="content" source="media/create-blueprint/create-blueprint-wizard.png" alt-text="Screenshot of the create agent blueprint wizard showing the Basics tab with the agent blueprint name field." lightbox="media/create-blueprint/create-blueprint-wizard.png":::
 1. On the **Owners & Sponsors** tab, optionally change or add owners and sponsors for the blueprint:
@@ -382,37 +380,7 @@ Your agent blueprint is now ready and visible in the [Microsoft Entra admin cent
 
 ## Delete an agent identity blueprint
 
-When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you should first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and agent users associated with the agent. Then you can delete the agent identity blueprint and its service principal. Refer to the [Prepare your environment](#prepare-your-environment) section to make sure you have all the right prerequisites in place.
-
-### [Microsoft Graph API](#tab/microsoft-graph-api)
-
-To send this request, you need the permission `AgentIdentityBlueprint.DeleteRestore.All`.
-
-```http
-DELETE https://graph.microsoft.com/v1.0/applications/<agent-blueprint-id>
-OData-Version: 4.0
-Content-Type: application/json
-Authorization: Bearer <token>
-```
-
-### [Microsoft Graph PowerShell](#tab/powershell)
-
-This step includes the following distinct tasks:
-
-- Install the required module if you haven't already.
-- Connect to your tenant with the `AgentIdentityBlueprint.DeleteRestore.All` scope.
-- Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
-
-```powershell
-$Id = "<agent-blueprint-id>"
-
-Invoke-MgGraphRequest `
-    -Method DELETE `
-    -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint$($Id)" `
-```
-
----
-
+When an agent is decommissioned, delete the associated agent identity blueprint. Deleting the blueprint triggers automatic cleanup of all child agent identities and agents' user accounts. For step-by-step deletion and restore instructions, see [Delete and restore agent identity objects](howto-delete-agent-identity.md).
 
 ## Next step
 

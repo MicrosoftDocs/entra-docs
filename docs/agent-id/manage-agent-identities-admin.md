@@ -19,8 +19,6 @@ Microsoft Entra Agent ID provides a centralized set of tools for managing agent 
 
 This article covers key agent management tasks: from viewing and disabling agents, to governing access, monitoring activity, and responding to security risks. Whether you're an administrator responsible for tenant-wide agent oversight or a sponsor managing specific agents, this guide provides the information you need to effectively manage agent identities in your organization.
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## Prerequisites
 
 Different management tasks require different roles and licenses. The following table summarizes the roles you need for each area of agent identity management.
@@ -33,9 +31,6 @@ Different management tasks require different roles and licenses. The following t
 | Configure Conditional Access policies | Conditional Access Administrator | Requires Microsoft Entra ID P1 license. |
 | View ID Protection risk reports | Security Administrator, Security Operator, or Security Reader | Requires Microsoft Entra ID P2 license during preview. |
 | Configure Lifecycle Workflows | Lifecycle Workflows Administrator | &nbsp; |
-| Verify Frontier licensing | Billing Administrator | Required to check Microsoft Agent 365 licensing in the Microsoft 365 admin center. |
-
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## View agent identities
 
@@ -102,7 +97,7 @@ Key points about Conditional Access for agent identities:
 - Policies support **Report-only mode** for safe evaluation before enforcement.
 
 > [!IMPORTANT]
-> Conditional Access enforcement applies when an agent identity or agent user requests a token for any resource. It does **not** apply when an agent identity blueprint acquires a token to create agent identities or agent users.
+> Conditional Access enforcement applies when an agent identity or agent's user account requests a token for any resource. It does **not** apply when an agent identity blueprint acquires a token to create agent identities or agent's user accounts.
 
 For detailed policy configuration, step-by-step walkthroughs, and business scenario examples, see [Conditional Access for Agent ID](/entra/identity/conditional-access/agent-id).
 

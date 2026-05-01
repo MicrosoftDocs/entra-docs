@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.topic: how-to
-ms.date: 04/27/2026
+ms.date: 04/28/2026
 ms.reviewer: dastrock
 
 #customer-intent: As a developer, I want to create agent identities that represent my AI agents in Microsoft Entra, so that my agents can securely authenticate.
@@ -24,8 +24,6 @@ If you want to quickly create agent identities for testing purposes, consider us
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
-
 To create agent identities, you need:
 
 - An [agent identity blueprint](create-blueprint.md). Record the agent identity blueprint app ID from the creation process.
@@ -36,12 +34,12 @@ To create agent identities, you need:
 You can create an agent identity directly in the Microsoft Entra admin center by selecting an existing blueprint and assigning owners and sponsors.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Entra ID** > **Agent ID** > **Agent identities**.
+1. Browse to **Entra ID** > **Agents** > **Agent identities**.
 1. Select **New agent identity (Preview)**.
 1. On the **Basics** tab:
 
-   - Under **Agent blueprint**, select a blueprint from the dropdown to create your agent identity from.
-   - Enter a display name for the agent identity and select **Next**.
+   - Under **Agent blueprint**, select a blueprint to create your agent identity from.
+   - Enter a name in the **Agent identity name** field and select **Next**.
 
      :::image type="content" source="media/create-delete-agent-identities/create-agent-identity-wizard.png" alt-text="Screenshot of the create agent identity wizard showing the Basics tab with blueprint selection and name fields." lightbox="media/create-delete-agent-identities/create-agent-identity-wizard.png":::
 
@@ -262,3 +260,13 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 	return jsonResult;
 })
 ```
+
+---
+
+## Related content
+
+- [Configure inheritable permissions for blueprints](configure-inheritable-permissions-blueprints.md)
+- [Authenticate and acquire tokens for autonomous agents](autonomous-agent-authentication-authorization-flow.md)
+- [Authenticate users and acquire tokens for interactive agents](interactive-agent-authentication-authorization-flow.md)
+- [Manage owners and sponsors](manage-owners-sponsors-agents.md)
+- [Agent identity blueprints](agent-blueprint.md)

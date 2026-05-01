@@ -8,13 +8,13 @@ ms.custom: include file
 # Purpose:
 # To define the difference between interactive and autonomous agents in the context of agent identities.
 ---
-### Interactive agents
+### Assistive agents (interactive)
 
-Interactive agents perform specific tasks on demand on behalf of a signed-in user often through a chat interface. Tasks include analyzing customer data for sales recommendations or answering support questions with escalation to human representatives. Interactive agents are granted Microsoft Entra delegated permissions that allow them to act on behalf of users.
+Assistive agents (also called interactive agents) perform specific tasks on demand on behalf of a signed-in user, often through a chat interface. Tasks include analyzing customer data for sales recommendations or answering support questions with escalation to human representatives. These agents are granted Microsoft Entra delegated permissions that allow them to act on behalf of users. Common scenarios include customer support assistants, research helpers, and real-time collaboration agents.
 
 ### Autonomous agents
 
-Autonomous agents operate independently using their own identity, not a human user's identity. These agents run in the background, making decisions and taking actions without human intervention, such as monitoring network logs for security operations or managing infrastructure deployments with autoscaling.
+Autonomous agents operate independently using their own identity, not a human user's identity. These agents run in the background, making decisions and taking actions without human intervention, such as monitoring network logs for security operations, managing infrastructure deployments with autoscaling, or processing scheduled maintenance tasks. Autonomous agents authenticate directly with the Microsoft Entra ID platform using their agent identity and the client credentials flow.
 
 ### Agent's user account
 

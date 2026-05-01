@@ -4,14 +4,12 @@ description: Describes how to use an AI coding agent to automate the onboarding 
 ms.topic: how-to
 author: arlucaID
 ms.author: arluca
+ms.service: entra-id
 ms.date: 04/16/2026
 ms.reviewer: rolyon
 ---
 
 # AI-guided setup for Microsoft Entra Agent ID
-
-> [!IMPORTANT]
-> [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) is currently in PREVIEW. This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Microsoft Entra Agent ID integration involves multiple steps: creating an agent identity blueprint, configuring credentials, setting up identifier URIs and scopes, creating blueprint principals, and provisioning agent identities. Each step has its own prerequisites, validation checks, and decision points.
 
@@ -95,7 +93,7 @@ Follow the steps in #file:agent-id-setup-instructions.md
 
 The AI agent reads the instruction file and begins the guided setup. It creates a task list and works through the steps sequentially:
 
-1. **Validate prerequisites**: Confirms Frontier is enabled, checks Microsoft Entra roles, validates that PowerShell 7+ and the Microsoft Graph beta module are installed.
+1. **Validate prerequisites**: Checks Microsoft Entra roles, validates that PowerShell 7+ and the Microsoft Graph beta module are installed.
 2. **Authorize and connect**: Connects to Microsoft Graph with the required scopes and sets the profile to beta.
 3. **Create the agent identity blueprint**: Collects a display name, identifies the sponsor (you), creates the blueprint with the required `@odata.type` and `OData-Version` headers, and records the `appId`.
 4. **Configure credentials**: Adds a managed identity (for production) or a certificate or client secret (for local development/testing) to the blueprint.
@@ -131,7 +129,7 @@ The AI-guided setup automates the following stages of the Agent ID integration:
 
 | Stage | What happens | Related documentation |
 |---|---|---|
-| Prerequisites | Validates Microsoft Entra roles, Frontier access, PowerShell module, and Graph permissions | [Create a blueprint: Prerequisites](create-blueprint.md#prerequisites) |
+| Prerequisites | Validates Microsoft Entra roles, PowerShell module, and Graph permissions | [Create a blueprint: Prerequisites](create-blueprint.md#prerequisites) |
 | Environment setup | Connects to Microsoft Graph with correct scopes and beta profile | [Create a blueprint: Prepare your environment](create-blueprint.md#prepare-your-environment) |
 | Blueprint creation | Creates the agent identity blueprint with sponsor and owner | [Create a blueprint](create-blueprint.md#create-an-agent-identity-blueprint-1) |
 | Credential config | Adds managed identity FIC or client secret to the blueprint | [Configure credentials](create-blueprint.md#configure-credentials-for-the-agent-identity-blueprint) |
@@ -170,14 +168,7 @@ Sponsors are required and can be users, groups with dynamic membership, or unifi
 
 The AI-guided setup only accepts **User** objects for sponsor assignment and uses the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The setup resolves the current user's object ID and uses it as the default sponsor. To assign a [supported group](agent-owners-sponsors-managers.md#sponsors) as sponsor for a blueprint, use the Microsoft Graph API directly.
 
-### Azure CLI tokens are rejected by Agent ID APIs
-
-Azure CLI tokens include the `Directory.AccessAsUser.All` delegated permission. The Agent ID APIs explicitly reject any token containing this permission, returning a generic **403 Forbidden**. The AI-guided setup uses Microsoft Graph PowerShell with specific scoped permissions instead, avoiding this issue entirely.
-
-> [!WARNING]
-> Do **not** use `DefaultAzureCredential` or `AzureCliCredential` in custom scripts to call Agent ID APIs. They produce tokens with `Directory.AccessAsUser.All`, which causes every Agent ID API call to fail with 403. Use a dedicated app registration with `client_credentials` flow, or use the Microsoft Graph PowerShell SDK with explicit scopes.
-
-### Permission propagation takes 30-120+ seconds
+### Permission propagation takes 30–120+ seconds
 
 After you grant admin consent for Agent ID permissions, newly granted permissions don't appear in tokens immediately. The token endpoint serves cached claims, and propagation can take 30-120 seconds or more.
 
@@ -256,8 +247,7 @@ Please start from Step 1 in the setup instructions and work through each step in
 
 The most common causes of 403 errors:
 
-- **Permission propagation delay**: Wait 1-2 minutes after admin consent and retry.
-- **Azure CLI token contamination**: If you previously used `az` commands in the same session, the cached token might contain `Directory.AccessAsUser.All`. Use Microsoft Graph PowerShell with explicit scopes instead.
+- **Permission propagation delay**: Wait 1–2 minutes after admin consent and retry.
 - **Missing admin consent**: Verify that the required permissions have admin consent granted in the [Microsoft Entra admin center](https://entra.microsoft.com/) under **App registrations** > your client app > **API permissions**.
 
 ### Blueprint creation succeeds but returns a standard application
