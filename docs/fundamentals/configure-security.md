@@ -3,7 +3,7 @@ title: Configure Microsoft Entra for increased security
 description: Learn how to improve your security posture with Microsoft Entra.
 
 ms.topic: reference
-ms.date: 03/24/2026
+ms.date: 04/30/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -137,7 +137,6 @@ Protect your network perimeter.
 | [Global Secure Access licenses are available in the tenant and assigned to users](zero-trust-protect-networks.md#global-secure-access-licenses-are-available-in-the-tenant-and-assigned-to-users) | Microsoft Entra Internet Access or Microsoft Entra Private Access |
 | [Microsoft 365 traffic is actively flowing through Global Secure Access](zero-trust-protect-networks.md#microsoft-365-traffic-is-actively-flowing-through-global-secure-access) | Microsoft Entra Suite |
 | [Universal tenant restrictions block unauthorized external tenant access](zero-trust-protect-networks.md#universal-tenant-restrictions-block-unauthorized-external-tenant-access) | Microsoft Entra Internet Access |
-| [External collaboration is governed by explicit cross-tenant access policies](zero-trust-protect-networks.md#external-collaboration-is-governed-by-explicit-cross-tenant-access-policies) | Microsoft Entra ID P1 |
 | [Conditional Access policies use compliant network controls](zero-trust-protect-networks.md#conditional-access-policies-use-compliant-network-controls) | Microsoft Entra ID P1 |
 | [Global Secure Access signaling for Conditional Access is enabled](zero-trust-protect-networks.md#global-secure-access-signaling-for-conditional-access-is-enabled) | Microsoft Entra Internet Access |
 | [Network traffic is routed through Global Secure Access for security policy enforcement](zero-trust-protect-networks.md#network-traffic-is-routed-through-global-secure-access-for-security-policy-enforcement) | Microsoft Entra Internet Access or Microsoft Entra Private Access |
