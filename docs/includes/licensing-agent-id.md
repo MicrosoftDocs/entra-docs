@@ -13,7 +13,7 @@ Microsoft Entra Agent ID is part of [Microsoft Agent 365](/microsoft-agent-365/o
 
 Some Microsoft Entra security features for agents require additional licensing:
 
-- **Conditional Access for agents** — Microsoft Entra ID P1 or Microsoft 365 E3.
-- **ID Protection for agents** — Microsoft Entra ID P2, Microsoft 365 E5, or Microsoft Entra Suite.
-- **ID Governance for agents** — Microsoft Entra ID P2, Microsoft 365 E5, or Microsoft Entra Suite.
-- **Network controls for agents** — Microsoft Entra Internet Access, included in Microsoft Entra Suite or licensed separately. For more information, see [What is Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview).
+- **Conditional Access for agents**: Microsoft Entra ID P1 or Microsoft 365 E3.
+- **ID Protection for agents**: Microsoft Entra ID P2, Microsoft 365 E5, or Microsoft Entra Suite.
+- **ID Governance for agents**: Microsoft Entra ID P2, Microsoft 365 E5, or Microsoft Entra Suite.
+- **Network controls for agents**: Microsoft Entra Internet Access, included in Microsoft Entra Suite or licensed separately. For more information, see [What is Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview).
