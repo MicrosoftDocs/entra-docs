@@ -1283,7 +1283,7 @@ For Microsoft Graph, the parameters for the **Update user attributes (Preview)**
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |       |
+|category    |  joiner, leaver, mover      |
 |displayName     |        |
 |description     | Allows up to 10 attributes for users to be updated. The included attributes include built-in, on-premises extensions, directory extensions, and employee org data.      |
 |taskDefinitionId     |        |
