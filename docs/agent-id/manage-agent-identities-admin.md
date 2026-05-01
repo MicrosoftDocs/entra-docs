@@ -32,8 +32,6 @@ Different management tasks require different roles and licenses. The following t
 | View ID Protection risk reports | Security Administrator, Security Operator, or Security Reader | Requires Microsoft Entra ID P2 license during preview. |
 | Configure Lifecycle Workflows | Lifecycle Workflows Administrator | &nbsp; |
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
-
 ## View agent identities
 
 The Microsoft Entra admin center provides a centralized interface to view all agent identities in your tenant. You can search, filter, sort, and customize columns to find specific agents.

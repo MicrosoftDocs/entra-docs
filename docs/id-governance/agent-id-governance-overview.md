@@ -15,7 +15,7 @@ This allows agent identities to be governed with Microsoft Entra features in the
 
 ## License requirements
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
 
 ## Agent identities basics
 

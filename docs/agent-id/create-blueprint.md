@@ -21,8 +21,6 @@ You can create an agent identity blueprint in two ways:
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
-
 To create an agent identity blueprint, you need:
 
 - [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is the least privileged role required to grant Microsoft Graph Application permissions.
