@@ -5,7 +5,7 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
-  - name: Governing Agent IDs (Preview)
+  - name: Governing Agent IDs
     href: agent-ID-governance-overview.md    
 
 
@@ -433,7 +433,7 @@
           href: manage-workflow-insights.md
         - name: Sensitivity Labels in Lifecycle Workflows
           href: workflow-sensitivity-labels.md 
-        - name: Agent Identity Sponsor Tasks (Preview)
+        - name: Agent Identity Sponsor Tasks
           href: agent-sponsor-tasks.md       
       - name: Delete
         items: 

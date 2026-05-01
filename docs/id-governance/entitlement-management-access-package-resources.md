@@ -49,7 +49,7 @@ When they lose an access package assignment, then they're removed from all the r
 > [!NOTE]
 > If identities were added to the resources outside of entitlement management, and they need to retain access even if they later receive access package assignments and their access package assignments expire, then don't add the resource roles to an access package.
 
-If you want some identities to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles. For example, if you wish to assign API permissions to an agent ID (preview), then you'll need this to be in a separate access package from member or guest users, since member or guest users can't have API permissions assigned to them. You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so identities can't request access to access packages that would give them excessive access.
+If you want some identities to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles. For example, if you wish to assign API permissions to an agent ID, then you'll need this to be in a separate access package from member or guest users, since member or guest users can't have API permissions assigned to them. You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so identities can't request access to access packages that would give them excessive access.
 
 In particular, applications can have multiple app roles. When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those identities in the access package.
 
@@ -85,7 +85,7 @@ If you want the identity who had a resource role membership to also be assigned 
 
     ![Access package - Add resource roles](./media/entitlement-management-access-package-resources/resource-roles-add.png)
 
-1. Depending on whether you want to add a [membership of a group or team](#add-a-group-or-team-resource-role), [access to an application](#add-an-application-resource-role), [SharePoint site](#add-a-sharepoint-site-resource-role), [Microsoft Entra role (Preview)](#add-a-microsoft-entra-role-assignment), [API permission (Preview)](#add-an-api-permission-preview), or [SAP IAG access right (Preview)](#add-a-sap-iag-access-right-preview), perform the steps in one of the following resource role sections.
+1. Depending on whether you want to add a [membership of a group or team](#add-a-group-or-team-resource-role), [access to an application](#add-an-application-resource-role), [SharePoint site](#add-a-sharepoint-site-resource-role), [Microsoft Entra role (Preview)](#add-a-microsoft-entra-role-assignment), [API permission](#add-an-api-permission), or [SAP IAG access right (Preview)](#add-a-sap-iag-access-right-preview), perform the steps in one of the following resource role sections.
 
 ## Add a group or team resource role
 
@@ -154,7 +154,7 @@ Here are some considerations when selecting an application:
 - Applications can also have groups assigned to their app roles as well. You can choose to add a group in place of an application and its role in an access package, however then the application won't be visible to the user as part of the access package in the My Access portal.
 - Microsoft Entra admin center can also show service principals for services that can't be selected as applications. In particular, **Exchange Online** and **SharePoint Online** are services, not applications that have resource roles in the directory, so they can't be included in an access package. Instead, use group-based licensing to establish an appropriate license for a user who needs access to those services.
 - Applications that only support Personal Microsoft Account users for authentication, and don't support organizational accounts in your directory, don't have application roles and can't be added to access package catalogs.
-- If your access package is for agent identities or service principals, then ensure that your application supports interactions from those identities. If the application provides APIs with OAuth permissions, add an [API permission](#add-an-api-permission-preview) to the access package, instead of adding an app role. For more information, see [manage assignment of agent identities to an application (preview)](../identity/enterprise-apps/assign-agent-identities-to-applications.md).
+- If your access package is for agent identities or service principals, then ensure that your application supports interactions from those identities. If the application provides APIs with OAuth permissions, add an [API permission](#add-an-api-permission) to the access package, instead of adding an app role. For more information, see [manage assignment of agent identities to an application](../identity/enterprise-apps/assign-agent-identities-to-applications.md).
 
 1. On the **Add resource roles to access package** page, select **Applications** to open the Select applications pane.
 
@@ -224,13 +224,13 @@ Follow these steps to include a Microsoft Entra role as a resource in an access 
 
 To add a Microsoft Entra role programmatically, see: [Add a Microsoft Entra role as a resource in an access package programmatically](entitlement-management-roles.md#add-a-microsoft-entra-role-as-a-resource-in-an-access-package-programmatically).
 
-## Add an API permission (Preview)
+## Add an API permission
 
 This resource role is used for assigning API permissions to a service principal or agent ID, as part of Microsoft Entra Agent ID.
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
 
-Prior to including API permissions in an access package, ensure that the access package policies are scoped to either all service principals or all agent IDs, as users cannot receive API permissions. Then, select **API Permissions (Preview)**. Choose the source application that provides the API: Microsoft Graph, another Microsoft feature, or an API your organization uses from one of your organization's own applications. If you choose Microsoft Graph, select whether your agent requires a delegated or an application permission. Then, select the checkboxes for the necessary permission, and select **Update permissions**.
+Prior to including API permissions in an access package, ensure that the access package policies are scoped to either all service principals or all agent IDs, as users cannot receive API permissions. Then, select **API Permissions**. Choose the source application that provides the API: Microsoft Graph, another Microsoft feature, or an API your organization uses from one of your organization's own applications. If you choose Microsoft Graph, select whether your agent requires a delegated or an application permission. Then, select the checkboxes for the necessary permission, and select **Update permissions**.
 
 :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
 
