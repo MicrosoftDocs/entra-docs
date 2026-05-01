@@ -164,7 +164,7 @@ For Microsoft Graph, the parameters for the **Send onboarding reminder email** t
 |displayName     | Send onboarding reminder email (Customizable by user)        |
 |description     | Send onboarding reminder email to user’s manager (Customizable by user)      |
 |taskDefinitionId     |   3C860712-2D37-42A4-928F-5C93935D26A1     |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
