@@ -228,7 +228,7 @@ To add a Microsoft Entra role programmatically, see: [Add a Microsoft Entra role
 
 This resource role is used for assigning API permissions to a service principal or agent ID, as part of Microsoft Entra Agent ID.
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
 
 Prior to including API permissions in an access package, ensure that the access package policies are scoped to either all service principals or all agent IDs, as users cannot receive API permissions. Then, select **API Permissions**. Choose the source application that provides the API: Microsoft Graph, another Microsoft feature, or an API your organization uses from one of your organization's own applications. If you choose Microsoft Graph, select whether your agent requires a delegated or an application permission. Then, select the checkboxes for the necessary permission, and select **Update permissions**.
 
