@@ -82,7 +82,7 @@ Agent user account sponsors are the same as normal [user sponsors](../external-i
 
 When an agent is represented by both an agent identity object and an agent user account, we recommend maintaining the agent identity sponsor as the primary user or group responsible for the agent. 
 
-Different scenarios may require different types of access or authorization for an agent identity and its associated user account. Sponsors for each object can [request access packages](../id-governance/entitlement-management-request-access.md) on behalf of the identity they sponsor. In most cases, the same the user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for both the agent identity and the agent's user account as needed.
+Different scenarios may require different types of access or authorization for an agent identity and its associated user account. Sponsors for each object can [request access packages](../id-governance/entitlement-management-request-access.md) on behalf of the identity they sponsor. In most cases, the same user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for both the agent identity and the agent's user account as needed.
 
 ## Managers
 
