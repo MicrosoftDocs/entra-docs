@@ -1,5 +1,5 @@
 ---
-title: Create an Agent Identity Blueprint
+title: Create an agent identity blueprint
 description: Learn how to create an agent identity blueprint that serves as a template for multiple agent identities using Microsoft Graph APIs and PowerShell.
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
