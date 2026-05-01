@@ -941,7 +941,7 @@ For Microsoft Graph, the parameters for the **Send email to manager about sponso
 |displayName     |  Send email to manager about sponsorship changes (Preview)     |
 |description     |  Notify sponsor's manager about agent identity sponsorship transfer.        |
 |taskDefinitionId     |  b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 
 Example of usage within the workflow:
