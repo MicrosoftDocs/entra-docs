@@ -18,7 +18,7 @@ For a high-level overview of Conditional Access, see [What is Conditional Access
 
 As the number of agent identities grows, individually adding each agent identity across every Conditional Access policy becomes operationally unsustainable. Before you start creating Conditional Access policies, it's important to organize the agent identities, enabling consistent, scalable access control enforcement.
 
-Custom security attribute in Microsoft Entra ID is a convenient way to organize agent identities at scale. Custom security attributes are business-specific key-value pairs attributes that you can define and assign to Microsoft Entra objects, including users, agent identities, and enterprise applications (service principals). These attributes let you store meaningful information about each agent identity, like the sensitivity level of the data the agent handles.
+Custom security attributes in Microsoft Entra ID are a convenient way to organize agent identities at scale. Custom security attributes are business-specific key-value attributes that you can define and assign to Microsoft Entra objects, including users, agent identities, and enterprise applications (service principals). These attributes let you store meaningful information about each agent identity, like the sensitivity level of the data the agent handles.
 
 The following diagram shows that agent identities with the "Data Sensitivity" attribute set to "Confidential" are blocked; all other agents are excluded and allowed. These custom security attribute values can be used as filters during Conditional Access evaluation, enabling attribute-based targeting. Instead of maintaining a manual select agent identities or target resources, you can define a rule such as: "If the Data Sensitivity attribute is Confidential," then block access. The policy then automatically applies to every agent identity with those attributes, including the ones added in the future.
 
@@ -94,21 +94,21 @@ The following diagram shows the OBO flow used when an agent accesses a resource 
 The following steps describe the flow in more detail:
 
 1. User accesses the agent application.
-  - The agent application is registered in Microsoft Entra ID and its access is governed by Microsoft Entra ID.
-  - To access the app, users first must authenticate with their account. Admins can target the agent application in the Conditional Access policy.
+    1. The agent application is registered in Microsoft Entra ID and its access is governed by Microsoft Entra ID.
+    1. To access the app, users first must authenticate with their account. Admins can target the agent application in the Conditional Access policy.
 
 1. After the user signs in, the app validates the user's access token and grants access.
-  - The user submits a prompt to the AI platform (for example, Copilot Studio, Microsoft Foundry, or a non-Microsoft platform).
-  - To handle and respond to the request, the LLM calls a corporate resource.
+    1. The user submits a prompt to the AI platform (for example, Copilot Studio, Microsoft Foundry, or a non-Microsoft platform).
+    1. To handle and respond to the request, the LLM calls a corporate resource.
 
 1. The corporate resource (SharePoint, email, etc.) is protected by Microsoft Entra ID and requires its own access token.
-  - You can't pass the token from step one, because it's issued for a different audience and permissions.
-  - Instead, use the OBO flow to exchange tokens with Microsoft Entra ID and obtain a new token scoped to the resource.
-  - This token exchange is also evaluated by the Conditional Access policies, letting admins enforce granular controls over which resources agents can access on behalf of the user.
-  - Depending on your agent architecture, the OBO token exchange can happen at different layers: the agent application itself, a custom middleware API, an AI platform like Copilot Studio or Azure AI Foundry, or even the MCP server.
+    - You can't pass the token from step one, because it's issued for a different audience and permissions.
+    - Instead, use the OBO flow to exchange tokens with Microsoft Entra ID and obtain a new token scoped to the resource.
+    - This token exchange is also evaluated by the Conditional Access policies, letting admins enforce granular controls over which resources agents can access on behalf of the user.
+    - Depending on your agent architecture, the OBO token exchange can happen at different layers: the agent application itself, a custom middleware API, an AI platform like Copilot Studio or Azure AI Foundry, or even the MCP server.
 
 1. With the new access token obtained, the agent invokes the resource, presenting the token for authentication.
-  - The resource validates the inbound token, returns its response, and the flow is completed.
+    - The resource validates the inbound token, returns its response, and the flow is completed.
 
 ### Configure Conditional Access policy for OBO flow
 
@@ -201,7 +201,7 @@ Conditional Access policies don't apply when:
 - [Security defaults](../../fundamentals/security-defaults.md) are enabled.
 - Conditional Access only protects resources secured by Microsoft Entra ID. For example, if an agent accesses resources using an API key, it bypasses the Microsoft Entra ID authentication and token issuance pipeline entirely and Conditional Access policies won't apply to them.
 
-The following configurations aren't yet supported:
+The following configurations aren't currently supported:
 
 - Scoping a Conditional Access policy to include or exclude agent's user account based on their group membership and Custom Security Attributes.
 - A Conditional Access policy targeting agent identities in an agent-to-agent scenario using Custom Security Attributes won't apply to the agent's user account.

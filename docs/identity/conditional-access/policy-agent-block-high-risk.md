@@ -8,8 +8,6 @@ ms.custom: msecd-doc-authoring-1012
 ---
 # Block access for high-risk agent identities (Preview)
 
-## Overview
-
 This Conditional Access policy template blocks [agent identities](../../agent-id/what-are-agent-identities.md) that are detected as high risk by [Microsoft Entra ID Protection](../../id-protection/concept-risky-agents.md), helping prevent potentially compromised AI agents from accessing your organization's resources.
 
 [!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]

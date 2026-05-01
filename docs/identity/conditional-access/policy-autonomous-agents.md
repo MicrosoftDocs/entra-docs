@@ -6,9 +6,7 @@ ms.date: 04/30/2026
 ms.reviewer: kvenkit
 ms.custom: msecd-doc-authoring-1012
 ---
-# Conditional Access for autonomous agents access
-
-## Overview
+# Conditional Access for autonomous agents
 
 Use this guide to configure Conditional Access for agents that authenticate with their own identity, with no signed-in user. The access pattern is known **client credentials flow**. Instead of acting on behalf of a user, the agent authenticates with its own credentials - a client ID paired with a certificate or managed identity managed by the agent identity blueprint. This access pattern applies in the following scenarios:
 
@@ -19,7 +17,7 @@ Use this guide to configure Conditional Access for agents that authenticate with
 - **Agents published on the web for public use**:
   - These agents either don’t authenticate the user or don’t support delegating the user’s context to downstream resources.
 
-In those scenarios, the agent is the one who requests access, and the issued access token's subject is the [agent identity](/entra/agent-id/what-are-agent-identities) rather than the user. As a result, the Conditional Access policy scope apply to the **agent identity**, not a user. 
+In those scenarios, the agent is the one who requests access, and the issued access token's subject is the [agent identity](/entra/agent-id/what-are-agent-identities) rather than the user. As a result, the Conditional Access policy scope applies to the **agent identity**, not a user. 
 
 > [!IMPORTANT]
 > Before configuring a Conditional Access policy, read the [Conditional Access for agent identities](agent-id.md) article. It covers the authentication flow, service boundaries, and limitations to ensure you cover all scenarios and your corporate data and services are well protected.
@@ -107,7 +105,7 @@ The enhanced object picker replaces the previous flat list experience in both th
 
 ---
 
-## Block high-risk agent identities from accessing my organization’s resources
+## Block high-risk agent identities from accessing organizational resources
 
 In the second scenario, organizations can create a Conditional Access policy to block high-risk agent identities based on [signals from Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents). For details on risk detection types and response actions for agents, see [Identity Protection for agents](/entra/id-protection/concept-risky-agents).
 

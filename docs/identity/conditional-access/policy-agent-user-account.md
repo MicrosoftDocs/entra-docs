@@ -8,14 +8,13 @@ ms.custom: msecd-doc-authoring-1012
 ---
 # Block access for high-risk agent's user account
 
-## Overview
-
 An [agent's user account](../../agent-id/agent-users.md) is a specialized identity type provided by [Microsoft Entra Agent ID](../../agent-id/what-is-microsoft-entra-agent-id.md). This identity type is designed to bridge the gap between agents and human user capabilities. The agent's user account enables AI-powered applications to interact with systems and services that require user identities, while maintaining appropriate security boundaries and management controls. It allows organizations to manage the agent's access using similar capabilities as they do for human users.
 
 In contrast to the [on-behalf-of flow](agent-id.md), where an agent operates within the delegated context of a signed-in user, an agent's user account is actually a user, functioning as a digital worker. For example, digital employees that function as team members with their own mailboxes, chat access and participate in collaborative workflows as a team member.
 
 In this model, an admin creates a user account in the directory and links it to the agent's identity. From there, it’s like any other user account. Licenses can be assigned to access Microsoft 365 resources such as mailbox and calendars, and the account can be added to administrative units and security groups just like a human user account.
-Conditional Access works differently in this model. The access token is issued to the user (the token subject), but the policy is evaluated against the user (agent's user account). Today, you can target this with a single scope: “all agents acting as a user”
+
+Conditional Access works differently in this model. The access token is issued to the user (the token subject), but the policy is evaluated against the user (agent's user account). Today, you can target this with a single scope: "all agents acting as a user."
 
 > [!IMPORTANT]
 > Before configuring a Conditional Access policy, read the [Conditional Access for agent identities](agent-id.md) article. It covers the authentication flow, service boundaries, and limitations to ensure you cover all scenarios and your corporate data and services are well protected.

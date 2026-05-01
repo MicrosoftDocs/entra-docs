@@ -8,8 +8,6 @@ ms.reviewer: kvenkit
 ---
 # Conditional Access for agents operating on-behalf-of a user in Microsoft Entra
 
-## Overview
-
 Use this guide to configure Conditional Access for agents operating on behalf of a user. This flow is commonly referred to as OBO (On-Behalf-Of). In this model, a user signs into an agent application and receives an access token. When the agent needs to access a downstream resource, such as Microsoft Graph, Work IQ MCP server, or any other service, it can't reuse that token, because it was issued for agent application (audience and permission scope). Instead, the agent uses the OBO flow to exchange the inbound token with a new token scoped to the target resource. If the agent needs to call multiple resources, for example, two different MCP servers, it may obtain a separate token for each one.
 
 In the on-behalf-of flow the scope of the Conditional Access policy includes **users**, not the agent identities. The users and groups can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access.
