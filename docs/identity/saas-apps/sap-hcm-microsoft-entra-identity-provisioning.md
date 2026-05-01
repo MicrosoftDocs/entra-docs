@@ -4,8 +4,6 @@ description: Learn how to provision users from SAP Human Capital Management (HCM
 author: jenniferf-skc
 manager: pmwongera
 ms.reviewer: chmutali
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 07/18/2025
 ms.author: jfields

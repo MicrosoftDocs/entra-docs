@@ -1,13 +1,8 @@
 ---
 title: Customize your branding for your customers
 description: Learn how to customize the look and feel of your customers' sign-in experiences.
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 09/16/2025
-ms.author: cmulligan
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
 ---
@@ -186,4 +181,4 @@ You can use the Microsoft Graph API to customize a few items programmatically. F
 
 - To learn more about customizing the language of the tenant, see [Language customization](how-to-customize-languages-customers.md).
 - For an understanding of the differences in workforce tenant branding, see the [How to customize branding for your workforce](~/fundamentals/how-to-customize-branding.md).
-- For information about how create unique authentication experiences for applications in your tenant, see [Customize the sign-in experience for your application with branding themes in external tenants](how-to-customize-branding-themes-apps.md).
+- For information about how to create unique authentication experiences for applications in your tenant, see [Customize the sign-in experience for your application with branding themes](~/fundamentals/how-to-customize-branding-themes-apps.md).

@@ -3,8 +3,6 @@ title: Configure Atea for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Atea.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -22,6 +20,7 @@ This article describes the steps you need to do in both Atea and Microsoft Entra
 > * Create users in Atea
 > * Remove users in Atea when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Atea
+> * Code Auth Grant Flow authentication supported.
 
 ## Prerequisites
 

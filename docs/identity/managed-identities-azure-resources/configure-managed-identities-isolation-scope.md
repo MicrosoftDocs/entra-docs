@@ -1,13 +1,7 @@
 ---
 title: Configure Isolation Scope For User Assigned Managed Identities
 description: Learn how to configure isolation scope for user-assigned managed identities to improve security and resilience.
-
-author: SHERMANOUKO
-manager: pmwongera
-ms.author: shermanouko
 ms.reviewer: arluca
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 07/17/2025
 ---

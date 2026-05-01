@@ -3,10 +3,8 @@ title: Convert local guest accounts to Microsoft Entra B2B guest accounts
 description: Learn to convert local guests into Microsoft Entra B2B guest accounts by identifying apps and local guest accounts, migration, and more.
 author: gargi-sinha
 ms.author: gasinh
-manager: martinco
 ms.date: 02/23/2023
 ms.topic: how-to
-ms.service: entra
 ms.subservice: architecture
 ---
 
@@ -55,13 +53,16 @@ After local accounts have user.mail attributes populated with the external ident
 Learn more: [Invite internal users to B2B collaboration](~/external-id/invite-internal-users.md)
 
 ## Post-migration considerations
-
-If external user local accounts were synced from on-premises, reduce their on-premises footprint and use B2B guest accounts. You can:
-
+After you verify external authentication is working, complete the transition:
+ 
 - Transition external user local accounts to Microsoft Entra B2B and stop creating local accounts
   - Invite external users in Microsoft Entra ID
-- Randomize external user's local-account passwords to prevent authentication to on-premises resources
+- Change or randomize local account passwords to phase out legacy authentication
   - This action ensures authentication and user lifecycle is connected to the external user home identity
+  - For on-premises accounts, coordinate with your directory services team to disable local credentials.
+
+> [!IMPORTANT]
+> During conversion, both local and external credentials work simultaneously. This dual authentication period is necessary because external authentication isn't available until invitation acceptance.
 
 ## Next steps
 

@@ -2,14 +2,9 @@
 title: What is a Microsoft Entra hybrid joined device?
 description: Learn how device identity management can help you to manage devices that are accessing resources in your environment.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: concept-article
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 
@@ -32,7 +27,7 @@ Microsoft Entra hybrid joined devices require network line of sight to your on-p
 |   | Domain join by Windows Autopilot and autojoin via Microsoft Entra Connect or AD FS config |
 | **Device sign in options** | Organizational accounts using: |
 |   | Password |
-|   | [Passwordless](~/identity/authentication/concept-authentication-passwordless.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
+|   | [Passwordless](~/identity/authentication/concept-authentication-passkeys-fido2.md) options like [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-planning-guide) and FIDO2.0 security keys. |
 | **Device management** | [Group Policy](/mem/configmgr/comanage/faq#my-environment-has-too-many-group-policy-objects-and-legacy-authenticated-apps--do-i-have-to-use-hybrid-azure-ad-) |
 |   | [Configuration Manager standalone or co-management with Microsoft Intune](/mem/configmgr/comanage/overview) |
 | **Key capabilities** | single sign-on (SSO) to both cloud and on-premises resources |

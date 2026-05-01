@@ -1,13 +1,10 @@
 ---
 title: Delegate Approvals in My Access (Preview)
 description: A how-to article explaining how system admins can delegate approvals using My Access
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 08/26/2025
 
-#CustomerIntent: As an access package approver, I want to delegate approvals so that designated individuals can approve when I am not available to.
+#Customer Intent: As an access package approver, I want to delegate approvals so that designated individuals can approve when I am not available to.
 ---
 
 # Delegate approvals in My Access (Preview)
@@ -15,19 +12,19 @@ ms.date: 08/26/2025
 Approval delegation in My Access allows approvers to assign another individual to respond to access package approval requests on their behalf. This feature helps maintain productivity when approvers are unavailable due to leave, travel, or other commitments.
 
 > [!NOTE]
-> This feature currently applies only to access package approvals and will be expanded to support access reviews in November 2025.
+> This feature currently applies only to access package approvals and will be expanded to support access reviews.
 
 ## License requirements
 
-[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## How delegation works
 
 When an approver sets a delegate, the following happens:
 
-- All approvals assigned after the delegation are routed to the delegate.
+- All approvals explicitly assigned to an approver (not through a group) after delegation are routed to the specified delegate.
 - The original approver can still respond to approvals during the delegation period.
-- Delegations, prior to November 1 2025, are time-bound. After November 1, 2025, they can be time-bound or indefinite.
+- Delegations can be time-bound or indefinite.
 - Delegates are notified when they're assigned.
 - Requestors are notified when their request is approved by a delegate.
 - Delegation is always bulk; approvers can't delegate specific types of approvals.
@@ -50,6 +47,7 @@ When an approver sets a delegate, the following happens:
 
 - Delegation is limited to one level. If User A delegates to User B, and User B delegates to User C, User C won't receive approvals from User A.
 - Delegation isn't restricted. Any user can be selected as a delegate.
+- Delegation only applies to approvals explicitly assigned to an approver, not those assigned through a group.
 - Delegation applies only to approvals assigned after the delegation is configured.
 
 

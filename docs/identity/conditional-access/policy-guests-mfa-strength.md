@@ -1,18 +1,13 @@
 ---
 title: Conditional Access - Authentication strength for external users
 description: Create a custom Conditional Access policy with authentication strength to require specific multifactor authentication (MFA) methods for external users.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: inbarc
 ---
 # Require multifactor authentication strength for external users
+
+## Overview
 
 Authentication strength is a Conditional Access control that lets you define a specific combination of multifactor authentication (MFA) methods that an external user must complete to access your resources. This control is especially useful for restricting external access to sensitive apps in your organization. For example, you can create a Conditional Access policy, require a phishing-resistant authentication strength in the policy, and assign it to guests and external users.
 
@@ -54,17 +49,17 @@ Use the following steps to create a Conditional Access policy that applies an au
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**.
-      1. Select the types of [guest or external users](~/external-id/authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types) you want to apply the policy to.
+      1. Select the types of [guest or external users](~/external-id/authentication-conditional-access.md#assign-conditional-access-policies-to-external-user-types) you want to apply the policy to.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Resources (formerly cloud apps)**, under **Include** or **Exclude**, select any applications you want to include in or exclude from the authentication strength requirements.
 1. Under **Access controls** > **Grant**, select **Grant access**.
    1. Select **Require authentication strength**, then select the appropriate built-in or custom authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

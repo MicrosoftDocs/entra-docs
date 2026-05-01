@@ -2,10 +2,7 @@
 title: How to investigate the Global Secure Access remote network connectivity
 description: Learn how to monitor and troubleshoot remote network connectivity using Microsoft Entra Health monitoring.
 author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 11/18/2025
 ms.author: jfields
 ms.reviewer: gauthamca

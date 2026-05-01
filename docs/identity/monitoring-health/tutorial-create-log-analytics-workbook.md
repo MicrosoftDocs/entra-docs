@@ -1,13 +1,8 @@
 ---
 title: Create a Log Analytics custom workbook
 description: Learn how to create a Log Analytics custom workbook for enhanced analysis and alerting in Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: monitoring-health
 ms.topic: tutorial
 ms.date: 03/27/2025
-ms.author: sarahlipsey
-author: shlipsey3
-manager: pmwongera
 ms.reviewer: sandeo
 
 # Customer intent: As an IT admin, I want to create custom workbooks so I can analyze the health of my environment.

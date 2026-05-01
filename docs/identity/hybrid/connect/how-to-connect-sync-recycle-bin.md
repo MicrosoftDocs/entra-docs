@@ -3,17 +3,11 @@ title: 'Microsoft Entra Connect Sync: Enable AD recycle bin'
 description: This topic recommends the use of AD Recycle Bin feature with Microsoft Entra Connect.
 
 keywords: AD Recycle Bin, accidental deletion, source anchor
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: afec4207-74f7-4cdd-b13a-574af5223a90
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Microsoft Entra Connect Sync: Enable Active Directory recycle bin
 We recommend that you enable the Active Directory Recycle Bin feature for your on-premises instances of Active Directory (AD) that are synchronized to Microsoft Entra ID. 

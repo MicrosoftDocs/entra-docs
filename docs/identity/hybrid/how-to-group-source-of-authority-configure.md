@@ -2,8 +2,6 @@
 title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to convert group management from Active Directory Domain Services to Microsoft Entra ID by using Group Source of Authority (SOA).
 author: Justinha
-manager: dougeby
-ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: how-to
 ms.date: 10/13/2025
@@ -22,7 +20,7 @@ This article explains the prerequisites and steps to configure Group Source of A
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of groups.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
 | **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free license. |
-| **Sync client** | You can use either sync client to to synchronize SOA converted groups. If you use Connect Sync, upgrade to the minimum version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). If you use Cloud Sync, upgrade to minimum version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700).  |
+| **Sync client** | Before applying SOA, make sure you are on a supported version of your sync client so the client will honor the SOA setting. If you use Connect Sync, upgrade to the minimum version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). If you use Cloud Sync, upgrade to minimum version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700).  |
 | **Provisioning to AD DS (optional)** | To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. You also need to complete steps to prepare the groups for provisioning to AD DS with their original OU path. For more information, see [Prepare groups for Group SOA conversion and provisioning](concept-group-source-of-authority-guidance.md#prepare-groups-for-group-soa-conversion-and-provisioning). |
 
 ### Download Connect Sync client

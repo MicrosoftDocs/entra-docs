@@ -3,8 +3,6 @@ title: Secure hybrid access with F5 deployment guide
 description: Tutorial to deploy F5 BIG-IP Virtual Edition (VE) VM in Azure IaaS for Secure hybrid access
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 11/07/2024
 ms.author: gasinh

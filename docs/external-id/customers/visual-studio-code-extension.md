@@ -1,11 +1,6 @@
 ---
 title: Visual Studio Code extension for External ID
 description: Learn how to use the Microsoft Entra External ID extension for Visual Studio Code. Use the application samples provided to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: quickstart
 ms.date: 09/16/2024
 ms.custom: it-pro, sfi-image-nochange
@@ -22,8 +17,6 @@ Integrating authentication into your consumer and business customer applications
 
 This extension provides a basic setup that automatically creates a tenant for applications and prepares it for users. It also streamlines your workflow by automatically populating values such as application IDs into your configuration file for a smoother setup process.
 
-External ID is a service that can be added to an Azure subscription. If you already have one, you can easily include External ID. Otherwise, set up a [free trial of Microsoft Entra External ID](quickstart-trial-setup.md) within Visual Studio Code and start by configuring a sample app.
-
 ## Install the extension
 
 The Microsoft Entra External ID extension is available in the Visual Studio Code Marketplace.
@@ -39,7 +32,7 @@ You can also open the extension from Visual Studio Code **Welcome** page: Select
 
 ## Get started with your External ID setup
 
-The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your app and directory of external users. You can add this new tenant to your existing Azure subscription. Or if you don’t have an Azure subscription, create a trial tenant that doesn't require one ([learn more](quickstart-trial-setup.md)).
+The Microsoft Entra External ID extension creates a tenant in an external configuration, which contains your app and directory of external users. You can add this new tenant to your existing Azure subscription.
 
 - On the Get Started with Microsoft Entra External ID welcome page, choose an option:
 

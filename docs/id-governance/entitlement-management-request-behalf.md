@@ -1,14 +1,11 @@
 ---
 title: Request access packages on-behalf-of other identities
 description: This article describes how to set up an access package so that managers can approve, or deny, requests for identities they own, sponsor, or are reporting to them.
-author: owinfreyATL
-ms.author: owinfrey
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to 
 ms.date: 06/18/2025
 
-#CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
+#Customer Intent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
 ---
 
 
@@ -31,7 +28,7 @@ Now, managers are empowered to request access on behalf of new hires who haven't
 
 ## Scenarios for requesting on behalf of agent identities (Preview)
 
-The ability for administrators to request on behalf of agent identities they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent identity, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](../agent-id/identity-platform/manage-agent.md).
+The ability for administrators to request on behalf of agent identities they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent identity, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](../agent-id/manage-agent.md).
 
 ## Prerequisites
 
@@ -114,17 +111,7 @@ With the setting enabled, do the following steps to manage your team assignments
     :::image type="content" source="media/entitlement-management-request-behalf/manage-team-reviews.png" alt-text="Screenshot of managing team in the my access portal." lightbox="media/entitlement-management-request-behalf/manage-team-reviews.png":::
 
 
-## Request an access package on behalf of an agent identity (Preview)
-
-As the owner or sponsor of an agent identity, you can request an access package for a direct report by doing the following steps:
-
-1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com).
-
-1. On the My Access Portal page, select **Access packages**.
-
-1. On the Access packages page, locate the access package you want to request for an agent identity and select **Request**.
-    
-1. On the Request pane under **Request details**, select requesting for **Sponsored agent**.
+[!INCLUDE [entitlement-management-request-behalf-agent](../includes/governance/entitlement-management-request-behalf-agent.md)]
 
 ## Next steps
 

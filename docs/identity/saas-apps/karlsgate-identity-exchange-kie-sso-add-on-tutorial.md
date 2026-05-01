@@ -2,17 +2,9 @@
 title: Configure Karlsgate Identity Exchange (KIE) SSO Add-on for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Karlsgate Identity Exchange (KIE) SSO Add-on.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: jomondi
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 04/15/2024
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Karlsgate Identity Exchange (KIE) SSO Add-on so that I can control who has access to Karlsgate Identity Exchange (KIE) SSO Add-on, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 

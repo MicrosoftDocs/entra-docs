@@ -1,17 +1,13 @@
 ---
 title: Delegation and roles in entitlement management
 description: Learn how to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
-author: owinfreyatl
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/20/2024
-ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
-#Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
+#Customer Intent: As an IT admin, I want to understand delegation and roles in entitlement management so that I can assign the right governance responsibilities to the appropriate people.
 ---
 
 # Delegation and roles in entitlement management
@@ -84,8 +80,8 @@ Entitlement management has the following roles that are defined for each particu
 | --- | --- | -- |
 | Catalog owner | `ae79f266-94d4-4dab-b730-feca7e132178` | Edit and manage access packages and other resources in a catalog. Typically an IT administrator or resource owners, or an identity who the catalog owner chooses. |
 | Catalog reader | `44272f93-9762-48e8-af59-1b5351b1d6b3` | View existing access packages within a catalog. |
-| Access package manager | `7f480852-ebdc-47d4-87de-0d8498384a83` | Edit and manage all existing access packages within a catalog. |
-| Access package assignment manager | `e2182095-804a-4656-ae11-64734e9b7ae5` | Edit and manage all existing access packages' assignments. |
+| Access package manager | `7f480852-ebdc-47d4-87de-0d8498384a83` | Create new access packages from existing resources in catalog, and edit and manage all existing access packages within the catalog. |
+| Access package assignment manager | `e2182095-804a-4656-ae11-64734e9b7ae5` | For existing access packages in the catalog, can assign users and remove users. Cannot create or edit access packages themselves. |
 
 Also, the chosen approver and a requestor of an access package have rights, although they're not roles.
 
@@ -179,7 +175,7 @@ You can view the list of catalogs currently enabled for external users in the Mi
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. Change the filter setting for **Enabled for external users** to **Yes**.
 

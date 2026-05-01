@@ -2,19 +2,16 @@
 title: Identity Risk Management Agent
 description: Learn about the Identity Risk Management Agent and its role in identifying and mitigating risks within Microsoft Entra ID Protection.
 
-ms.service: entra-id-protection
-
 ms.topic: concept-article
-ms.date: 11/07/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera 
+ms.date: 12/01/2025
 ms.reviewer: chuqiaoshi
 ---
-# Identity Risk Management Agent
+# Identity Risk Management Agent (Preview)
 
-IT administrators and security analysts face mounting pressure to identify and respond to threats quickly while managing increasingly complex environments. They're often overwhelmed by the sheer volume of alerts, struggle to prioritize which risks need immediate attention, and find it difficult to connect scattered data points across their organization's systems. The Identity Risk Management Agent with Security Copilot in Microsoft Entra helps these professionals investigate potential risks, understand their effect, and take decisive action to protect their organization's critical assets.
+IT administrators and security analysts face mounting pressure to identify and respond to threats quickly while managing increasingly complex environments. They're often overwhelmed by the sheer volume of alerts, struggle to prioritize which risks need immediate attention, and find it difficult to connect scattered data points across their organization's systems. The Identity Risk Management Agent with Security Copilot in Microsoft Entra helps these professionals investigate potential risks, understand their effect, and take decisive action to protect their organization's critical assets. 
+
+> [!NOTE]
+> The Identity Risk Management Agent is currently being deployed and in preview. This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -51,7 +48,10 @@ If the agent identifies something that wasn't previously suggested, it takes the
 1. **Generate findings and a risk summary:** The agent generates findings based on the investigation, which includes a thorough risk summary explaining the suggestion and defining the key risk factors.
 1. **Generate a recommended remediation action**: The agent suggests a remediation action, using the information gathered during the investigation.
 1. **Answer questions through chat**: IT administrators ask the agent questions related to the risky users and the risk summary.
-1. **Store custom instructions in agent memory**: Customers can give the agent custom instructions through agent chat, which the agent stores in its memory and applies for future runs. Currently, agent memory can store preferred remediation actions.
+1. **Store custom instructions in agent memory**: Customers can give the agent custom instructions through agent chat, which the agent stores in its memory and applies for future runs. Currently, agent memory can store preferred remediation recommendations. 
+
+> [!NOTE]
+> Agent memory currently stores recommended actions only. Remediations are not executed automatically; instead, custom instructions are used to update the agent’s recommendations.
 
 ## Getting started
 

@@ -1,17 +1,14 @@
 ---
 title: The Conditional Access What If tool
 description: Simulate Conditional Access policy results with the What If tool to troubleshoot and optimize your environment.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: troubleshooting-general
-ms.date: 11/06/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
 ---
 # Troubleshoot Conditional Access Policies with the What If Tool
+
+## Overview
 
 The **Conditional Access What If policy tool** helps you understand the result of [Conditional Access](overview.md) policies in your environment. It can be useful when simulating uncommon scenarios, enabling you to design more comprehensive security policies. Instead of manually testing your policies with multiple sign-ins, this tool helps you simulate a sign-in for a user, agent identity, or single tenant service principal. The simulation estimates how your policies affect this sign-in and generates a report.
 
@@ -48,7 +45,7 @@ The following conditions are required: identity, target resource, device platfor
 
 ## Evaluation
 
-Start an evaluation by clicking **What If**. The evaluation result provides you with a report that consists of:
+Start an evaluation by selecting **What If**. The evaluation result provides you with a report that consists of:
 
 - An indicator showing whether classic policies exist in your environment.
 - Policies that apply to your user, agent, or workload identity.
@@ -64,7 +61,7 @@ The list of policies that don't apply includes the reasons why these policies do
 
 ## Key differences between the What If evaluation API and the legacy experience 
 
-The What If Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The What If tool powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is currently in public preview. The API is different from the legacy What If evaluation in a few ways:
+The What If Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The What If tool powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is currently in preview. The API is different from the legacy What If evaluation in a few ways:
 
 1. The What-if API is a public and fully supported API (once the API is generally available). The API can be used through the Conditional Access UX and the MS Graph API.
 1. The logic aligns with the authentication logic used during sign-in to provide more accurate policy evaluation.

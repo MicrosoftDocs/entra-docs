@@ -1,14 +1,8 @@
 ---
 title: Tutorial - Develop a SCIM endpoint for user provisioning to apps from Microsoft Entra ID
 description: System for Cross-domain Identity Management (SCIM) standardizes automatic user provisioning. In this tutorial, you learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and start automating provisioning users and groups into your cloud applications.
-
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: tutorial
 ms.date: 10/06/2025
-ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -18,7 +12,7 @@ As an application developer, you can use the System for Cross-Domain Identity Ma
 
 ![Provisioning from Microsoft Entra ID to an app with SCIM](media/use-scim-to-provision-users-and-groups/scim-provisioning-overview.png)
 
-SCIM 2.0 is a standardized definition of two endpoints: a `/Users` endpoint and a `/Groups` endpoint. It uses common REST API endpoints to create, update, and delete objects. The SCIM consists of a predefined schema for common attributes like group name, username, first name, last name and email. 
+SCIM 2.0 is a standardized protocol that defines core resource endpoints, including a `/Users` endpoint and a `/Groups` endpoint. It uses common REST API endpoints to create, update, and delete objects. The SCIM consists of a predefined schema for common attributes like group name, username, first name, last name and email. 
 
 Apps that offer a SCIM 2.0 REST API can reduce or eliminate the pain of working with a proprietary user management API. For example, any compliant SCIM client knows how to make an HTTP POST of a JSON object to the `/Users` endpoint to create a new user entry. Instead of needing a slightly different API for the same basic actions, apps that conform to the SCIM standard can instantly take advantage of pre-existing clients, tools, and code. 
 
@@ -1433,7 +1427,11 @@ Applications that support the SCIM profile described in this article can be conn
     > **Test Connection** queries the SCIM endpoint for a user that doesn't exist, using a random GUID as the matching property selected in the Microsoft Entra configuration. The expected correct response is HTTP 200 OK with an empty SCIM ListResponse message.
 
 1. If the attempt to connect to the application succeeds, then select **Create** to create the provisioning job.
-1. If syncing only assigned users and groups (recommended), select the **Users and groups** tab. Then, assign the users or groups you want to sync.
+1. If syncing only assigned users and groups (recommended), select the **Users and groups** tab. Then, assign the users or groups you want to sync. This step is required for provisioning to work when the scope is set to sync only assigned users and groups. If no users or groups are assigned, there's nothing to provision. For detailed instructions on how to assign users and groups, see [Assign users and groups to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
+
+   > [!IMPORTANT]
+   > The Microsoft Entra provisioning service only provisions users and groups that are **assigned** to the application (when the scope is set to **Sync only assigned users and groups**). If you don't assign any users or groups, no provisioning occurs. Make sure to complete this step before you start provisioning.
+
 1. Select **Attribute mapping** in the left panel. There are two selectable sets of [attribute mappings](customize-application-attributes.md): one for user objects and one for group objects. Select each one to review the attributes that are synchronized from Microsoft Entra ID to your app. The attributes selected as **Matching** properties are used to match the users and groups in your app for update operations. Select **Save** to commit any changes.
 
     > You can optionally disable syncing of group objects by disabling the "groups" mapping.
@@ -1530,6 +1528,7 @@ To help drive awareness and demand of our joint integration, we recommend you up
 
 > [!div class="nextstepaction"]
 > [Develop a sample SCIM endpoint](use-scim-to-build-users-and-groups-endpoints.md)
+> [Assign users and groups to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
 > [Automate user provisioning and deprovisioning to SaaS apps](user-provisioning.md)
 > [Customize attribute mappings for user provisioning](customize-application-attributes.md)
 > [Writing expressions for attribute mappings](functions-for-customizing-application-data.md)

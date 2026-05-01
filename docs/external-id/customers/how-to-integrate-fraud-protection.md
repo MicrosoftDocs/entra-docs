@@ -1,11 +1,6 @@
 ---
 title: Fraud Protection Integration
 description: Learn how to configure Arkose Labs and Human fraud protection with Microsoft Entra External ID to block bot attacks and fake account creation during user sign-up flows.
-author: csmulligan
-ms.author: cmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 zone_pivot_groups: fraud-protection-integration
 ms.topic: how-to
 ms.date: 09/24/2025
@@ -20,6 +15,12 @@ Microsoft Entra External ID supports integration with third-party fraud protecti
 By integrating Arkose Labs, HUMAN, or both with Microsoft Entra External ID, you can leverage their advanced risk assessment capabilities to ensure that only legitimate users create accounts.  
 
 This article explains how to integrate fraud protection providers with Microsoft Entra External ID.
+
+## About featured integrations
+
+Arkose Labs and HUMAN Security are available as native integrations for sign-up protection through the Security Store. Microsoft developed and deployed these integrations in partnership with each provider to support bot detection and fake account prevention during user registration.
+
+Native Security Store integrations are developed on a case-by-case basis through direct partnership with Microsoft's product engineering team. If you're a provider interested in integration opportunities with Microsoft Entra External ID, contact your Microsoft partner development representative.
 
 ::: zone pivot="arkose"
 

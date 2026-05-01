@@ -1,16 +1,11 @@
 ---
 title: Join a RHEL VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a Red Hat Enterprise Linux virtual machine to a Microsoft Entra Domain Services managed domain.
-author: justinha
-manager: dougeby
 
 ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
-ms.service: entra-id
-ms.subservice: domain-services
 ms.custom: devx-track-linux, linux-related-content
 ms.topic: how-to
 ms.date: 02/13/2025
-ms.author: justinha
 ---
 # Join a Red Hat Enterprise Linux virtual machine to a Microsoft Entra Domain Services managed domain
 

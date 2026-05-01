@@ -2,7 +2,6 @@
 title: Microsoft Entra ID Protection scenario for mastering risk analysis for effective remediation
 description: Learn about improving risk analysis to identify risky users, discern risk event types, and examine risk levels for access and identity decisions.
 author: gargi-sinha
-manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article

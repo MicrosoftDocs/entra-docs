@@ -2,18 +2,11 @@
 title: 'Microsoft Entra Connect Sync: Understanding the architecture - Azure'
 description: This topic describes the architecture of Microsoft Entra Connect Sync and explains the terms used.
 
-author: omondiatieno
-manager: mwongerapk
-
 ms.assetid: 465bcbe9-3bdd-4769-a8ca-f8905abf426d
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Microsoft Entra Connect Sync: Understanding the architecture
 This article covers the basic architecture for Microsoft Entra Connect Sync. If you're familiar with earlier identity synchronization technologies, the content of this article might be familiar to you as well. If you're new to synchronization, then this article is for you. It's not a requirement to know the details of this article to be successful in making customizations to Microsoft Entra Connect Sync (called sync engine in this article).

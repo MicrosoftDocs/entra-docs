@@ -1,14 +1,10 @@
 ---
 title: Use Microsoft Entra groups to manage role assignments
 description: Use Microsoft Entra groups to simplify role assignment management in Microsoft Entra ID.
-
-author: barclayn
-manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.topic: article
-ms.date: 01/03/2025
-ms.author: barclayn
+ms.topic: concept-article
+ms.date: 03/16/2026
 ms.reviewer: vincesm
 ms.custom: it-pro
 
@@ -53,6 +49,10 @@ Role-assignable groups are designed to help prevent potential breaches by having
 - To prevent elevation of privilege, you must be assigned at least the Privileged Authentication Administrator role to change the credentials, reset MFA, or modify sensitive attributes for members and owners of a role-assignable group.
 - Group nesting isn't supported. A group can't be added as a member of a role-assignable group.
 
+## Delete and restore behavior
+   
+When a role-assignable group is deleted, it's soft-deleted and can be restored within 30 days. Group owners can restore a deleted role-assignable group. For information about how to restore a deleted group, see [Restore a deleted Microsoft 365 group or cloud security group in Microsoft Entra ID](../users/groups-restore-deleted.md).
+
 ## Use PIM to make a group eligible for a role assignment
 
 If you don't want members of the group to have standing access to a role, you can use [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to make a group eligible for a role assignment. Each member of the group is then eligible to activate the role assignment for a fixed time duration.
@@ -72,7 +72,7 @@ The following are known issues with role-assignable groups:
 - *Microsoft Entra ID P2 licensed customers only*: Even after deleting the group, it's still shown as an eligible member of the role in PIM UI. Functionally there's no problem; it's just a cache issue in the Microsoft Entra admin center.  
 - Use the new [Exchange admin center](/exchange/exchange-admin-center) for role assignments via dynamic membership groups. The old Exchange admin center doesn't support this feature. If accessing the old Exchange admin center is required, assign the eligible role directly to the user (not via role-assignable groups). Exchange PowerShell cmdlets work as expected.
 - If an administrator role is assigned to a role-assignable group instead of individual users, members of the group won't be able to access Rules, Organization, or Public Folders in the new [Exchange admin center](/exchange/exchange-admin-center). The workaround is to assign the role directly to users instead of the group.
-- Azure Information Protection Portal (the classic portal) doesn't recognize role membership via group yet. You can [migrate to the unified sensitivity labeling platform](/azure/information-protection/configure-policy-migrate-labels) and then use the Microsoft Purview compliance portal to use group assignments to manage roles.
+- Azure Information Protection Portal (the classic portal) doesn't recognize role membership via group yet. You can [migrate to the unified sensitivity labeling platform](/azure/information-protection/configure-policy-migrate-labels) and then use the Microsoft Purview portal to use group assignments to manage roles.
 
 ## License requirements
 

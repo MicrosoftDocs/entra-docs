@@ -1,13 +1,8 @@
 ---
 title: Custom role permissions for app registration
 description: Delegate custom administrator role permissions for managing app registrations.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 03/30/2025
-ms.author: barclayn
+ms.date: 03/16/2026
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
@@ -140,6 +135,10 @@ Allows the ability to update the certificates and client secrets properties on s
 #### microsoft.directory/applications.myOrganization/credentials/update
 
 Grants the same permissions as microsoft.directory/applications/credentials/update, but only for single-tenant applications.
+
+#### microsoft.directory/applications/disablement/update
+
+Allows the ability to update whether an application is enabled for users to sign in.
 
 #### microsoft.directory/applications/owners/update
 

@@ -2,14 +2,10 @@
 title: 'Microsoft Entra Cloud Sync directory extensions and custom attribute mapping'
 description: This article provides information on custom attribute mapping in cloud sync.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
 ---
 
 # Cloud sync directory extensions and custom attribute mapping
@@ -66,7 +62,7 @@ You need to create an [application](/graph/api/resources/application) with the i
 
    For more information, see [Get-MgServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal).
 
-1. If a service principal doesn't exist, use the `$tenantId` variable from previous step to create a new service principal for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
+1. If a service principal doesn't exist, use the `$appId variable` from the previous step to create a new service principal for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
 
    ```powershell     
    New-MgServicePrincipal -AppId $appId

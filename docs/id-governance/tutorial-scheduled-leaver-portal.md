@@ -1,15 +1,12 @@
 ---
 title: Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center
 description: Tutorial for post off-boarding users from an organization using Lifecycle workflows with the Microsoft Entra admin center.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 11/25/2024
-ms.author: owinfrey
 ms.reviewer: krbain
 ms.custom: template-tutorial, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to automate employee offboarding tasks after their last day of work so that I can ensure former employees are properly deprovisioned.
 ---
 # Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center
 

@@ -1,19 +1,18 @@
 ---
 title: How to manage user profile information in the Microsoft Entra admin center
 description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.reviewer: jeffsta
 ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to manage user profile information in the Microsoft Entra admin center so that I can keep user details accurate and up to date.
 ---
 
 # Add or update a user's profile information and settings in the Microsoft Entra admin center
 
+
+
+## Overview
 
 The user profile is the digital representation of a user's identity that should, where possible, reflect how the user wants to be represented. The user profile appears in several places across the Microsoft suite, including Outlook, Teams, Windows, and others. Identity information that appears across these tools is sourced from the user profile.
 
@@ -37,17 +36,17 @@ When new users are created, only a few details are added to their user profile. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-2. Browse to **Entra ID** > **Users**.
+1. Browse to **Entra ID** > **Users**.
 
-:::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
+    :::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
 
-3. Select a user.
+1. Select a user.
 
-4. There are two ways to edit user profile details. Either select **Edit properties** from the top of the page or select **Properties**.
+1. There are two ways to edit user profile details. Either select **Edit properties** from the top of the page or select **Properties**.
 
-:::image type="content" source="media/how-to-manage-user-profile-info/user-profile-overview.png" alt-text="Screenshot of the overview page for a selected user, with the edit options highlighted.":::
+    :::image type="content" source="media/how-to-manage-user-profile-info/user-profile-overview.png" alt-text="Screenshot of the overview page for a selected user, with the edit options highlighted.":::
 
-5. After making any changes, select the **Save** button.
+1. After making any changes, select the **Save** button.
 
 If you selected the **Edit properties** option:
 
@@ -82,11 +81,11 @@ There are six categories of profile details you might be able to edit.
  - **On-premises:** Accounts synced from Windows Server Active Directory include other values not applicable to Microsoft Entra accounts.
 
 > [!NOTE]
-> For users whose source of authority is Windows Server Active Directory, you must use Windows Server Active Directory to update their identity, contact info, or job info. After making updates, you must wait for the next synchronization cycle to complete before the changes take effect. However, you can update their attributes directly in the Microsoft Entra admin center if you are updating Microsoft Entra ID attributes, such as Usage Location. Some attributes that are synchronized from on-premises, such as User Principal Name, On Premises Immutable ID, and Account Enabled, can be updated in Microsoft Entra ID for users managed from on-premises, but we don't recommend managing these attributes in Entra ID other than for emergency purposes.
+> For users whose source of authority is Windows Server Active Directory, you must use Windows Server Active Directory to update their identity, contact info, or job info. After making updates, you must wait for the next synchronization cycle to complete before the changes take effect. However, you can update their attributes directly in the Microsoft Entra admin center if you are updating Microsoft Entra ID attributes, such as Usage Location. Some attributes that are synchronized from on-premises, such as User Principal Name, On Premises Immutable ID, and Account Enabled, can be updated in Microsoft Entra ID for users managed from on-premises, but managing these attributes in Entra ID isn't recommended other than for emergency purposes.
 
 ## Guidance on user name properties
 
-Microsoft Entra ID provides several fields for specifying full and partial names, departments, and titles. In general, we recommend treating every name-related field in Microsoft Entra ID as user-visible data that Microsoft and non-Microsoft apps might use in different contexts. Name fields in Microsoft Entra ID should represent the user's preferred name that can be reflected through all Microsoft products.
+Microsoft Entra ID provides several fields for specifying full and partial names, departments, and titles. In general, treat every name-related field in Microsoft Entra ID as user-visible data that Microsoft and non-Microsoft apps might use in different contexts. Name fields in Microsoft Entra ID should represent the user's preferred name that can be reflected through all Microsoft products.
 
 Applications in Microsoft 365 display a user's name as defined by either:
 
@@ -105,7 +104,7 @@ Use the following tips when adding and editing the name properties of a user:
 
 ### User name examples
 
-Review the following examples to understand how the name properties are used in different contexts. For these examples, we're using the name Christopher Green, who goes by Chris Green.
+Review the following examples to understand how the name properties are used in different contexts. The examples use the name Christopher Green, who goes by Chris Green.
 
 - If your organization supports nicknames, enter this information in the First name and the Display name fields.
   - First name: Chris
@@ -135,7 +134,7 @@ On the user's overview page, select the camera icon in the lower-right corner of
 All your changes are saved for the user.
 
 > [!NOTE]
-> If you're having issues updating a user's profile picture, please ensure that your Office 365 Exchange Online Enterprise App is Enabled for users to sign in.
+> If you're having issues updating a user's profile picture, ensure that your Office 365 Exchange Online Enterprise App is Enabled for users to sign in.
 
 ## Manage settings for all users
 
@@ -143,9 +142,9 @@ In the **User settings** area, you can adjust several settings that affect all u
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
-2. Browse to **Entra ID** > **Users** > **User settings**.
+1. Browse to **Entra ID** > **Users** > **User settings**.
 
-:::image type="content" source="media/how-to-manage-user-profile-info/user-settings.png" alt-text="Screenshot of the Microsoft Entra user settings options." lightbox="media/how-to-manage-user-profile-info/user-settings.png":::
+    :::image type="content" source="media/how-to-manage-user-profile-info/user-settings.png" alt-text="Screenshot of the Microsoft Entra user settings options." lightbox="media/how-to-manage-user-profile-info/user-settings.png":::
 
 The following settings can be managed from **User settings**.
 
@@ -175,24 +174,24 @@ This new Microsoft Entra admin center update allows editing certain user attribu
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-2. Browse to **Entra ID** > **Users**.
+1. Browse to **Entra ID** > **Users**.
 
-:::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the Microsoft Entra all users settings options." lightbox="media/how-to-manage-user-profile-info/all-users.png":::
+    :::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the Microsoft Entra all users settings options." lightbox="media/how-to-manage-user-profile-info/all-users.png":::
 
-3. Select the users you want to edit (note: you can edit up to 60 users at a time)
+1. Select the users you want to edit. You can edit up to 60 users at a time.
 
-Select **Edit** from the top of the page.
+    Select **Edit** from the top of the page.
 
-:::image type="content" source="media/how-to-manage-user-profile-info/multiple-user-settings.png" alt-text="Screenshot of the multiple user settings options in Microsoft Entra admin center.":::
+    :::image type="content" source="media/how-to-manage-user-profile-info/multiple-user-settings.png" alt-text="Screenshot of the multiple user settings options in Microsoft Entra admin center.":::
 
-4. There are two ways to update the users. Either select “Edit” from the top of the page or right click on the selected users. 
+4. There are two ways to update the users. Either select **Edit** from the top of the page or right click on the selected users. 
 
 
 :::image type="content" source="media/how-to-manage-user-profile-info/multiple-user-settings-edit.png" alt-text="Screenshot of the multiple user settings edit options in Microsoft Entra admin center.":::
 
 5. Select one of the available user management actions in the drop down to perform on your selected users.
 
-6. If you select the **Edit properties** action, the following properties will be available to edit: 
+6. If you select the **Edit properties** action, the following properties are available to edit: 
   - City
   - Company name
   - Country or region
@@ -206,11 +205,11 @@ Select **Edit** from the top of the page.
   - Usage location
   - Zip or postal code
 
->[!NOTE]
+> [!NOTE]
 > You must visit specific user profiles to edit other properties.
 
 ## Related content
 
-- [Add or delete users](add-users.md)
+- [Add or delete users](how-to-create-delete-users.yml)
 - [Assign roles to users](how-subscriptions-associated-directory.md)
 - [Create a basic group and add members](how-to-manage-groups.yml)

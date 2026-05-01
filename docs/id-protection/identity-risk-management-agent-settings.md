@@ -1,20 +1,18 @@
 ---
 title: Identity Risk Management Agent Settings
 description: Learn how to configure the settings for the Identity Risk Management Agent in Microsoft Entra ID Protection.
-ms.service: entra-id-protection
 
 ms.topic: concept-article
 ms.date: 10/20/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
 
-# Identity Risk Management Agent settings
+# Identity Risk Management Agent (Preview) settings
 
 The Identity Risk Management Agent in Microsoft Entra ID Protection provides proactive risk management capabilities by analyzing user behavior and suggesting actions to mitigate potential identity risks. You can configure the settings to meet your organization's needs, such as how often it runs, and email notifications.
+
+> [!NOTE]
+> The Identity Risk Management Agent is currently being deployed and in preview. This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Access the agent settings
 

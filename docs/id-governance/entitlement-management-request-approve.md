@@ -1,16 +1,12 @@
 ---
 title: Approve or deny access requests - entitlement management
 description: Learn how to use the My Access portal to approve or deny requests to an access package in Microsoft Entra entitlement management.
-author: owinfreyatl
-manager: dougeby
 editor: mamtakumar
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: owinfrey
 ms.reviewer: mamkumar
-#Customer intent: As an approver, I want steps for how to approve requests for access packages so that I can unlock requestors who need to use the resources.
+#Customer Intent: As an approver, I want to approve or deny access requests in the My Access portal so that I can manage access to resources in my organization.
 ---
 
 # Approve or deny access requests in entitlement management
@@ -85,7 +81,7 @@ After you open an access request pending approval, you can see details that will
 
     If none of the configured approvers in a stage are able to approve or deny the access request, the request expires after the configured request duration. The user gets notified that their access request has expired, and that they need to resubmit the access request.
 
-## Revoke a request (preview)
+## Revoke a request
 
 Users with Microsoft Entra ID Governance can undo their approval for an access request that they previously approved. This revokes the approval and the requestor will no longer have access to the access package. 
 

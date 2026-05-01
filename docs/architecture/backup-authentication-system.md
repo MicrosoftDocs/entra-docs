@@ -1,9 +1,7 @@
 ---
 title: Backup Authentication System for Microsoft Entra ID
 description: Explore the resilience features of Microsoft Entra ID's backup authentication system, designed to maintain authentication availability for users and services.
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,6 +12,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:07/22/2025
   - ai-gen-description
+ms.subservice: architecture
 ---
 # Microsoft Entra ID's backup authentication system
 
@@ -70,7 +69,7 @@ Certain other types of policies don't support use of the backup authentication s
 
 - Use of the [sign-in frequency control](~/identity/conditional-access/concept-conditional-access-session.md#sign-in-frequency) as part of a Conditional Access policy.
 - Use of the [authentication methods policy](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength).
-- Use of [classic Conditional Access policies](~/identity/conditional-access/policy-migration-mfa.md).
+- Use of classic Conditional Access policies (deprecated — classic policies stopped functioning after July 10, 2024).
 
 #### Evaluation of report-only Conditional Access policies
 

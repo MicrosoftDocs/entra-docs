@@ -1,14 +1,10 @@
 ---
 title: Governing Microsoft Entra service accounts
 description: Principles and procedures for managing the lifecycle of service accounts in Microsoft Entra ID.
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 02/09/2023
-ms.author: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
+ms.subservice: architecture
 ---
 
 # Governing Microsoft Entra service accounts

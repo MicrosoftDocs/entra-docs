@@ -2,11 +2,8 @@
 title: User self-remediation with Microsoft Entra ID Protection
 description: How can users self-remediate risk when administrators allow it? What is the experience when they don't?
 ms.service: entra-id-protection
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/30/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---
@@ -44,9 +41,9 @@ If the user is at risk, not just the sign-in, administrators can configure a use
 
 :::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-password-change-prompt.png" alt-text="A screenshot showing the password change is required prompt when user risk is detected." lightbox="media/concept-identity-protection-user-experience/conditional-access-password-change-prompt.png":::
 
-### Microsoft managed remediation
+### Adaptive risk remediation
 
-The Microsoft-managed remediation policy accommodates all authentication methods, including password-based and passwordless. The grant controls for this policy automatically include **Require authentication strength** and **Sign-in frequency - Every time** to ensure that users are prompted to reauthenticate after their sessions are revoked. For more information, see [concept-identity-protection-policies.md#require-risk-remediation-with-microsoft-managed-remediation-preview].
+The adaptive risk remediation policy accommodates all authentication methods, including password-based and passwordless. The grant controls for this policy automatically include **Require authentication strength** and **Sign-in frequency - Every time** to ensure that users are prompted to reauthenticate after their sessions are revoked. For more information, see [concept-identity-protection-policies#require-risk-remediation-control-preview].
 
 When a user is required to remediate risk with this policy turned on, users must sign in immediately after their sessions are revoked. If the user just signed in but they're at risk, they'll be prompted to sign in again. The risk is remediated after the user successfully signed in the second time.  
 

@@ -3,10 +3,8 @@ title: Configure Whimsical for automatic user provisioning with Microsoft Entra 
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Whimsical.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 03/25/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Whimsical so that I can streamline the user management process and ensure that users have the appropriate access to Whimsical.
@@ -14,7 +12,7 @@ ms.author: jeedes
 
 # Configure Whimsical for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both Whimsical and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Whimsical](https://service-portaltest.benq.com/login) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+This article describes the steps you need to perform in both Whimsical and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Whimsical](https://whimsical.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities Supported
 > [!div class="checklist"]
@@ -71,27 +69,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Whimsical link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Provision tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, input your Whimsical Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Whimsical. If the connection fails, ensure your Whimsical account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Whimsical tenant URL and secret token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Whimsical. If the connection fails, ensure your Whimsical account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-7. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Whimsical**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Whimsical in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Whimsical for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Whimsical API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Whimsical in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Whimsical for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Whimsical API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -100,21 +100,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |active|Boolean|
    |displayName|String|
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To enable the Microsoft Entra provisioning service for Whimsical, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-12. Define the users and/or groups that you would like to provision to Whimsical by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
