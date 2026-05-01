@@ -491,7 +491,24 @@ For Microsoft Graph, the parameters for the **Update user attributes (Preview)**
 Example of usage within the workflow:
 
 ```json
-
+{
+    "category": "joiner",
+    "continueOnError": false,
+    "description": "Update or clear user attribute values including custom attributes",
+    "displayName": "Update user attributes",
+    "isEnabled": true,
+    "taskDefinitionId": "2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b",
+    "arguments": [
+        {
+            "name": "attributeUpdates",
+            "value": "[{\"attribute\":\"department\",\"value\":\"Sales\"},{\"attribute\":\"jobTitle\",\"value\":\"Account Executive\"}]"
+        },
+        {
+            "name": "updateOnPremisesAccount",
+            "value": "true"
+        }
+    ]
+}
 ```
 
 ### Enable user account
