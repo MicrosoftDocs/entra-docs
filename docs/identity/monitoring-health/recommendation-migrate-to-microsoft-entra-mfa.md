@@ -2,7 +2,7 @@
 title: Recommendation to migrate to Microsoft Entra MFA
 description: Learn about the Microsoft Entra recommendation to migrate to Microsoft Entra multifactor authentication from MFA server
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 04/28/2026
 ms.reviewer:  jupetter
 
 # Customer intent: As an IT admin, I need to migrate from MFA Server to Microsoft Entra MFA to align with Microsoft Entra recommendations.
@@ -13,6 +13,10 @@ ms.reviewer:  jupetter
 [Microsoft Entra recommendations](overview-recommendations.md) provide you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
 This article covers the recommendation to migrate from MFA server to Microsoft Entra MFA. This recommendation is called `mfaServerDeprecation` in the recommendations API in Microsoft Graph.
+
+## Prerequisites
+
+[!INCLUDE [Recommendations roles](../../includes/recommendations-roles.md)]
 
 ## Description
 

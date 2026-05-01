@@ -27,6 +27,7 @@ This article describes the steps you need to perform in both AuditBoard and Micr
 > * Remove users in AuditBoard when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and AuditBoard
 > * [Single sign-on](./auditboard-tutorial.md) to AuditBoard (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

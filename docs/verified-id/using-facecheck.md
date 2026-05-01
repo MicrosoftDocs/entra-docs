@@ -29,7 +29,7 @@ Face Check is a premium feature within Verified ID. You need to enable the Face 
 The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you're going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level, and the configuration applies to all authorities within that tenant. For any other licenses, you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
 
 > [!NOTE]
-> The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
+> The ARM Rest API for Microsoft Entra Verified ID is currently in preview.
 
 ### Set up Face Check with Microsoft Entra Verified ID in the Admin Center
 1. In the Verified ID overview page, scroll down to the new Add-ons section and **Enable** the Face Check add-on.
@@ -49,7 +49,7 @@ Now you can start using Face Check in your enterprise applications.
 ### Set up Face Check with Microsoft Entra Verified ID using the Azure Resource Manager (ARM) Rest API
 
 > [!NOTE]
-> The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
+> The ARM Rest API for Microsoft Entra Verified ID is currently in preview.
 
 To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. This mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly.
 
@@ -128,7 +128,7 @@ The claim containing the photo must be named and you might optionally specify yo
   "requestedCredentials": [
     {
       "type": "VerifiedEmployee",
-      "acceptedIssuers": [ "did:web:yourdomain.com" ],
+      "acceptedIssuers": [ "did:web:verifiedid.contoso.com" ],
       "configuration": {
         "validation": {
           "allowRevoked": false,
@@ -147,7 +147,7 @@ The JSON payload for the `presentation_verified` has more data in the response w
 ```json
   "verifiedCredentialsData": [ 
     { 
-      "issuer": "did:web:yourdomain.com", 
+      "issuer": "did:web:verifiedid.contoso.com", 
       "type": [ "VerifiableCredential", "VerifiedEmployee" ], 
       "claims": { 
         ... 
