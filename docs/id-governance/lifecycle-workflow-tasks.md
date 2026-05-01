@@ -474,11 +474,9 @@ For Microsoft Graph, the parameters for the **Add user to teams** task are as fo
 ### Update user attributes (Preview)
 
 Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
 :::image type="content" source="media/lifecycle-workflow-task/update-user-attribute-task.png" alt-text="Screenshot of the update user attribute task.":::
 
-The Microsoft Entra prerequisite to run the **Update user attributes (Preview)** task is:
-
--
 
 For Microsoft Graph, the parameters for the **Update user attributes (Preview)** task are as follows:
 
