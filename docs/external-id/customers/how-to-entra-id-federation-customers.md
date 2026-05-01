@@ -96,7 +96,7 @@ An admin can invite an external user from the Microsoft Entra admin center. The 
 
 ### Create the user with Microsoft Graph API
 
-An admin can use the [Microsoft Graph API](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-3-create-a-customer-account-in-external-tenants) to create a user directly in the External ID tenant. This approach is useful for automated provisioning or migration scenarios.
+An admin can use the [Microsoft Graph API](/graph/api/user-post-users?tabs=http#example-3-create-a-customer-account-in-external-tenants) to create a user directly in the External ID tenant. This approach is useful for automated provisioning or migration scenarios.
 
 The following example creates a federated user with an identity linked to the source Microsoft Entra ID tenant:
 
