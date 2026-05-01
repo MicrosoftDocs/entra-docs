@@ -37,9 +37,7 @@ For details on how these capabilities work for agents, see:
 
 ## How to get started
 
-Get started with Microsoft Entra Agent ID by setting up your licensing and creating your first agent identity blueprint.
-
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ## Related content
 
