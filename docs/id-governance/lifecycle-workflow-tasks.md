@@ -486,7 +486,7 @@ For Microsoft Graph, the parameters for the **Update user attributes (Preview)**
 |displayName     |   Update user attributes (Preview)     |
 |description     | Update or clear user attribute values.    |
 |taskDefinitionId     |   2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     |
-|arguments     |  Argument contains the name parameter "attributeUpdates," which is a JSON string specifying up to 10 user attributes to update or clear. The attributes can include built-in, on-premises extensions, directory extensions, and employee org data. Can also contain the optional *updateOnPremisesAccount* argument. The value is a boolean value of either *true*, if you want the task to run for synced on-premises users, or *false*, if you don't want it to run for synced on-premises users.    |
+|arguments     |  Argument contains the name parameter "attributeUpdates," which is a JSON string specifying up to 10 user attributes to update or clear. The attributes can include built-in, on-premises extensions, directory extensions, and employee org data. Can also contain the optional *updateOnPremisesAccount* argument.   |
 
 Example of usage within the workflow:
 
