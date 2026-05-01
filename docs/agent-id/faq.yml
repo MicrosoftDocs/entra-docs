@@ -4,8 +4,7 @@ metadata:
   description: Common questions and answers about Microsoft Entra Agent ID and the Microsoft Entra agent identity platform.
   author: shlipsey3
   manager: pmwongera
-  ms.service: entra
-  ms.subservice: fundamentals
+  ms.service: entra-id
   ms.topic: faq
   ms.date: 04/13/2026
   ms.author: sarahlipsey
@@ -21,7 +20,7 @@ sections:
       - question: |
           How do I filter Microsoft Graph API queries to return only agent identities?
         answer: |
-          Microsoft Graph APIs that support relationships involving agent identities such as `/ownedObjects`, `/deletedItems`, and `/owners`don't support filtering by entity type. Use the existing APIs and filter results on the client side using the `odata.type` property to identify agent identity objects in the response.
+          Microsoft Graph APIs that support relationships involving agent identities such as `/ownedObjects`, `/deletedItems`, and `/owners` don't support filtering by entity type. Use the existing APIs and filter results on the client side using the `odata.type` property to identify agent identity objects in the response.
 
       - question: |
           What happens to an agent's user account when an agent identity or blueprint is deleted?
@@ -83,7 +82,7 @@ sections:
           Agent identities can't sign in to Microsoft Entra ID sign-in pages, which means they can't use single sign-on with OpenID Connect or SAML protocols. Use available web APIs to integrate agents with workplace apps and services.
 
       - question: |
-          Does the admin consent workflow work for Microsoft EntraAgent ID permission requests?
+          Does the admin consent workflow work for Microsoft Entra Agent ID permission requests?
         answer: |
           The Microsoft Entra ID [admin consent workflow](/entra/identity/enterprise-apps/configure-admin-consent-workflow) doesn't work correctly for permissions requested by agent identities. Users should contact their Microsoft Entra tenant admin to request that permissions be granted directly to the agent identity.
 
@@ -119,7 +118,7 @@ sections:
   - name: Development resources
     questions:
       - question: |
-          Are there SDKs or libraries available for Microsoft EntraAgent ID scenarios?
+          Are there SDKs or libraries available for Microsoft Entra Agent ID scenarios?
         answer: |
           The SDK you use depends on your scenario:
 
@@ -127,6 +126,6 @@ sections:
 
           Microsoft.Identity.Web provides higher-level APIs for acquiring tokens for agent identities in .NET applications. Use the [Microsoft.Identity.Web.AgentIdentities](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.AgentIdentities/README.AgentIdentities.md) package to simplify managing agent identities.
 
-          The Microsoft Entra SDK container wraps Microsoft.Identity.Web as a web service deployed as a sidecar container. Use this option when your agent runs on Kubernetes and/or isn't built in .NET. For more information, see [Microsoft Entra SDK for agent identity scenarios](/entra/msidweb/agent-id-sdk/overview).
+          The Microsoft Entra SDK container wraps Microsoft.Identity.Web as a web service deployed as a sidecar container. Use this option when your agent runs on Kubernetes and/or isn't built in .NET. For more information, see [Microsoft Entra SDK for Agent ID](/entra/msidweb/agent-id-sdk/overview).
 
           Microsoft Graph APIs provide agent identity management when the other options don't fit your scenario. For more information, see [Microsoft Graph API for agent identity blueprints](/graph/api/resources/agentidentityblueprint).

@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how autonomous agents acquire tokens using the Microsoft Entra SDK for Agent ID to call downstream APIs independently.
 ms.topic: how-to
 ms.date: 11/05/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 #Customer intent: As a developer building autonomous agents, I want to acquire tokens using the Microsoft Entra SDK for Agent ID so that my agents can independently call downstream APIs with proper authentication.
 ---
@@ -38,7 +37,7 @@ Follow these steps to configure your Microsoft Entra SDK for Agent ID settings:
 
 1. If you're calling a downstream API, ensure that the necessary permissions are granted. Calling a custom web API requires you to provide the API registration details in the SDK configuration.
 
-For more information, see [Configure your Microsoft Entra SDK for AgentID settings](/entra/msidweb/agent-id-sdk/configuration)
+For more information, see [Configure your Microsoft Entra SDK for Agent ID settings](/entra/msidweb/agent-id-sdk/configuration).
 
 ## Acquire tokens using the Microsoft Entra SDK for Agent ID
 

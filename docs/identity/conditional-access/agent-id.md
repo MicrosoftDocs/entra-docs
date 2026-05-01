@@ -217,7 +217,7 @@ Admins can use the sign-in logs to investigate why a Conditional Access policy d
 
 ## Next steps
 
-Learn how to configure conditional access policies for agent identities:
+Learn how to configure Conditional Access policies for agent identities:
 
 - [Agents operate on behalf of a signed-in user](policy-on-behalf-of-agents.md)
 - [Agents operate with their own identity](policy-agent-block-high-risk.md)

@@ -17,13 +17,13 @@ The Microsoft Entra admin center allows you to view all agent identity blueprint
 ## Navigate to the agent identity blueprint list
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Entra ID** > **Agent ID** > **Agent blueprints**.
+1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
 1. Select a blueprint principal to open its management page.
 
 ## Search and filter blueprints
 
 1. Enter the **name** or **object ID** of the blueprint principal in the search box.
-1. To look up a blueprint by its **Blueprint App ID**, select **Add filters** and add the **Blueprint App ID** filter.
+1. To look up a blueprint by its **Blueprint Application ID**, select **Add filters** and add the **Blueprint App ID** filter.
 1. You can further refine the list using filters based on various criteria.
 
 ## Select viewing options
@@ -35,7 +35,7 @@ To customize your view, select **Choose columns** to configure which columns are
 | **Name** | Display name of the agent identity blueprint principal | ✓ | ✓ | Primary search field; clickable to view details of the agent identity blueprint principal |
 | **Agent identities** | The number of child agent identities created by the agent blueprint principal| ✗ | ✗ | Select this to see a list of linked child agent identities for that agent identity blueprint principal|
 | **Status** | Current operational state (Active, or Disabled) | ✓ | ✓ |  |
-| **Blueprint App ID** | Unique identifier for the agent identity blueprint of this agent identity blueprint principal | ✗ | ✓ | |
+| **Blueprint Application ID** | Unique identifier for the agent identity blueprint of this agent identity blueprint principal | ✗ | ✓ | |
 | **Object ID** | Unique identifier for agent blueprint principal | ✗ | ✓ | |
 
 ## View linked agent identities
@@ -54,6 +54,13 @@ Review the permissions assigned to a blueprint principal, organized by consent t
 1. From the blueprint's management page, select **Granted permissions** under **Access**.
 1. Select the **Admin consent** tab to view permissions granted through administrator consent, or select the **User consent** tab to view permissions granted through user consent.
 1. The list shows the **API name**, **Claim value**, **Permission**, **Type**, **Granted through**, and **Granted by** for each permission entry.
+
+## View the manifest
+
+To view or edit the raw JSON manifest for the agent identity blueprint, select **Manifest** under **Developer settings** from the blueprint's management page.
+
+> [!NOTE]
+> The manifest editor is currently in preview.
 
 ## Manage credentials
 

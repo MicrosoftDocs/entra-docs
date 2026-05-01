@@ -12,12 +12,13 @@ ms.date: 10/25/2025
 
 Governing agent identities sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent identity sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. For an overview of agent identity governance including access packages and sponsor responsibilities, see [Governing Agent Identities](agent-id-governance-overview.md).
 
-Lifecycle Workflows currently contain the following two tasks that involve the governing of sponsors of agent identities:
+Lifecycle Workflows currently contain the following tasks that involve the governing of sponsors of agent identities:
 
-- [Send email to manager about sponsorship changes](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes-preview)
-- [Send email to cosponsors about sponsor changes](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes-preview)
+- [Send email to manager about sponsorship changes](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes)
+- [Send email to cosponsors about sponsor changes](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes)
+- [Transfer agent identity sponsorships to manager](lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager)
 
-These tasks ensure continuity of sponsorship when an agent's sponsor changes roles or leaves the organization. Both tasks are classified as **mover and leaver** tasks and are available only under mover or leaver workflow templates.
+These tasks ensure continuity of sponsorship when an agent's sponsor changes roles or leaves the organization. All three tasks are classified as **mover and leaver** tasks and are available only under mover or leaver workflow templates.
 
 This article explains how to configure Lifecycle Workflows to streamline agent identity sponsor governance.
 
@@ -35,7 +36,7 @@ To create a workflow that notifies the manager or cosponsors of an existing agen
 
 1. On the workflow screen, select the specific mover or leaver workflow template you want to add the sponsorship email tasks to, or create a new workflow based on a template.
     > [!NOTE]
-    > Both the **Send email to manager about sponsorship changes** and **Send email to co-sponsors about sponsor changes** are mover and leaver tasks, and are only available as selectable tasks under workflow templates of the same category.
+    > The **Send email to manager about sponsorship changes**, **Send email to co-sponsors about sponsor changes**, and **Transfer agent identity sponsorships to manager** are mover and leaver tasks, and are only available as selectable tasks under workflow templates of the same category.
 1. On the **Basics** tab, after entering a unique display name and description for the workflow,  select your trigger and select **Next**.
 
 1. On the **Configure scope** screen, select the scope of the workflow and select **Next**.

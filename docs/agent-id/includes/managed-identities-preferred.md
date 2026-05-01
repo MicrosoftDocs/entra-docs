@@ -1,6 +1,5 @@
 ---
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.topic: include
 # Purpose:
 # To provide information about managed identities support for agent identities.
