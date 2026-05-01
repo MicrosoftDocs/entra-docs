@@ -16,7 +16,7 @@ ms.custom: msecd-doc-authoring-1012
 
 # Integrate third-party agents with Microsoft Entra Agent ID
 
-Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as Amazon Web Service (AWS) Bedrock, Google Cloud Platform (GCP) Vertex AI, and n8n.
+Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as Amazon Web Service (AWS) Bedrock and n8n.
 
 ## Prerequisites
 
@@ -34,11 +34,11 @@ To verify your environment is ready:
 
 1. Confirm you have the permissions to create applications and service principals in your Microsoft Entra tenant.
 1. If you're deploying to Azure, confirm your subscription and resource group.
-1. Review the documentation for your agent platform, such as AWS Bedrock, GCP Vertex AI, or n8n.
+1. Review the documentation for your agent platform, such as AWS Bedrock or n8n.
 
 ## Why you need third-party agent integration
 
-Organizations use AI agents from multiple platforms, such as AWS Bedrock, GCP Vertex AI, n8n, and others. These agents often need to:
+Organizations use AI agents from multiple platforms, such as AWS Bedrock, n8n, and others. These agents often need to:
 
 - Call Microsoft APIs such as Microsoft Graph and Azure services.
 - Access your internal APIs and resources.
@@ -89,11 +89,10 @@ The following diagram shows the sidecar architecture. An agent container and a s
 
 ### Use Workload Identity Federation (direct identity exchange)
 
-The **federation pattern** uses Workload Identity Federation to exchange credentials from external identity providers, like GCP Workload Identity or AWS Security Token Service (STS), directly for Microsoft Entra tokens. This pattern doesn't need a sidecar.
+The **federation pattern** uses Workload Identity Federation to exchange credentials from external identity providers such as AWS Security Token Service (STS) directly for Microsoft Entra tokens. This pattern doesn't need a sidecar.
 
 **Best for:**
 
-- GCP agents that use Workload Identity.
 - AWS agents that use STS and OIDC.
 - Organizations that already have federation infrastructure.
 - Agents that can't run containers.
@@ -106,7 +105,7 @@ The **federation pattern** uses Workload Identity Federation to exchange credent
 **Advantages:**
 
 - No sidecar required.
-- Uses existing infrastructure in GCP, AWS, and other platforms.
+- Uses existing infrastructure in AWS, and other platforms.
 - Direct token exchange at the identity layer.
 
 **Requirements:**
@@ -140,14 +139,18 @@ An AWS Bedrock agent, such as Claude, needs to query Microsoft 365 data or manag
 1. The sidecar acquires a token from Microsoft Entra Agent ID.
 1. The agent uses the token to call Microsoft Graph.
 
-### GCP Vertex AI agent accessing a custom API
+For step-by-step instructions, see [Secure an Amazon Bedrock agent with Microsoft Entra Agent ID](integrate-aws-bedrock-agent.md).
 
-A GCP Vertex AI agent needs to call your internal API. The federation pattern works best for this scenario. To set up GCP federation with Microsoft Entra Agent ID:
+### n8n agent calling Microsoft Graph and MCP Server for Enterprise
 
-1. Configure a Federated Identity Credential in Microsoft Entra that trusts GCP Workload Identity.
-1. The agent authenticates to GCP Workload Identity, which is native to GCP.
-1. The agent exchanges its GCP OIDC token for a Microsoft Entra token through Microsoft Entra Agent ID.
-1. The agent uses the Microsoft Entra token to call your internal API.
+An n8n agent needs to access Microsoft 365 data through Microsoft Graph or the Microsoft Graph MCP Server for Enterprise. This scenario uses the n8n-nodes-entraagentid community node to manage token acquisition directly within n8n workflows. To integrate an n8n agent:
+
+1. Deploy n8n to Azure Container Apps by using the Azure Developer CLI (`azd`).
+1. Configure an Agent Identity in Microsoft Entra with permissions to Microsoft Graph.
+1. The n8n workflow uses the community node to acquire a token from Microsoft Entra Agent ID.
+1. The agent uses the token to call Microsoft Graph or the MCP Server for Enterprise.
+
+For step-by-step instructions, see [Secure an n8n agent with Microsoft Entra Agent ID](integrate-n8n-agent.md).
 
 ### Local development with Ollama
 
@@ -157,6 +160,8 @@ You're developing with a local LLM like Ollama and want to test authentication b
 1. The agent calls `localhost:7000/token` to request a token from the sidecar.
 1. The sidecar acquires a token from Microsoft Entra Agent ID.
 1. Test agent behavior locally before deploying.
+
+For step-by-step instructions, see [Run the sidecar for local development](sidecar-local-development.md).
 
 ## High-level roadmap
 
@@ -169,7 +174,7 @@ Use the following table to identify the steps for your chosen pattern:
 | 3 | Sidecar | Deploy agent and sidecar containers, then test locally. |
 | 4 | Sidecar | Deploy to production on Azure Container Apps, Kubernetes, or another platform. |
 | 5 | Federation | Configure federated identity credentials in Microsoft Entra. |
-| 6 | Federation | Deploy the agent to the target platform, such as GCP or AWS. |
+| 6 | Federation | Deploy the agent to the target platform. |
 
 ## Security best practices
 
