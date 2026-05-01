@@ -1,5 +1,5 @@
 ---
-title: Manage Agent Identity Blueprints in the Microsoft Entra Admin Center
+title: Manage agent identity blueprints in the Microsoft Entra admin center
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to manage agent identity blueprints in the Microsoft Entra admin center, including viewing permissions, managing credentials, and configuring owners and sponsors.
 ms.date: 04/27/2026

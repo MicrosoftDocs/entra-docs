@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra Agent ID Logs
+title: Microsoft Entra Agent ID logs
 description: Learn how audit and sign-in activities associated with agent identities are logged in Microsoft Entra ID.
 author: shlipsey3
 ms.service: entra

@@ -29,7 +29,6 @@ Disabling an agent identity in your tenant might have broader consequences than 
 
 - Existing agents running in your organization might begin to fail.
 - Microsoft product experiences that assume agent identity availability (for example, Copilot Studio agents, Security Copilot scenario agents, Microsoft Entra Conditional Access Optimization Agent) might fail or degrade to less transparent application or service principal patterns.
-<!--- How does this work for CA agent? iF you disable in AGent ID? --->
 - Support or troubleshooting: Helpdesk and SOC teams might receive increased tickets when features fail quietly due to missing agent identities.
 - Blocking agent identities might push teams to build agents using generic application or service principal identities, reducing visibility and making it harder to distinguish agents from other software projects.
 

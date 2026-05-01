@@ -1,5 +1,5 @@
 ---
-title: Add and Manage Owners and Sponsors for Agent Identities and Blueprints
+title: Add and manage owners and sponsors for agent identities and blueprints
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to add and manage owners and sponsors for agent identity blueprints and agent identities in the Microsoft Entra admin center.
 author: omondiatieno

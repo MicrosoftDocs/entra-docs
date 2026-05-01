@@ -1,11 +1,11 @@
 ---
-title: Manage Agents in end user experience
+title: Manage agents in end user experience
 description: Learn how to manage agent identities in the end user experience within Microsoft Entra. View, control, and take action on agents you own or sponsor with ease.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 11/05/2025
+ms.date: 05/01/2026
 
 #CustomerIntent: As an agent identity owner, I want to manage the agents I own so that I can control their access and functionality.
 ---
@@ -29,7 +29,7 @@ The Manage Agents feature in Microsoft Entra lets you view and control, [agent i
     > [!NOTE]
     > This menu item will only appear if you're an owner or sponsor of at least one agent identity.
 
-1.	Choose either the **Agents you sponsor** or **Agents you own tab** to view your agents.
+1.	Choose either the **Agents you sponsor** or **Agents you own** tab to view your agents.
     :::image type="content" source="media/manage-agent/manage-agents-list.png" alt-text="Screenshot of the managed agents page in the My Account portal.":::
 
 1.	Select an agent to view details about it.

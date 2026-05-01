@@ -5,7 +5,7 @@ ms.topic: how-to
 author: arlucaID
 ms.author: arluca
 ms.service: entra-id
-ms.date: 04/16/2026
+ms.date: 05/01/2026
 ms.reviewer: rolyon
 ---
 
@@ -120,7 +120,7 @@ The AI agent pauses at specific points to collect input from you:
 After the setup completes, the AI agent provides instructions on how to verify the resources:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer).
-2. Browse to **Agent ID** > **All agent identities** to see your new agent identity blueprint and any agent identities created under it.
+2. Browse to **Entra ID** > **Agents** > **Agent identities** to see your new agent identity blueprint and any agent identities created under it.
 3. Verify the blueprint has the correct credentials, identifier URI, and scope configured.
 
 ## What the AI-guided setup covers
