@@ -1263,7 +1263,7 @@ For Microsoft Graph, the parameters for the **Send email about user inactivity**
 |displayName     | Send email about user inactivity    |
 |description     |  Notify manager that user has been inactive (Customizable by user)        |
 |taskDefinitionId     |   92f74cb4-f1b6-4ec0-b766-96210f56edc2      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
