@@ -61,6 +61,8 @@ To add the Update user attributes task to a workflow using the Microsoft Entra a
     - Select the attributes you want to update or clear.
     - Provide the new values for each attribute, or leave the value empty to clear an attribute.
 
+    :::image type="content" source="media/how-to-lifecycle-workflow-update-user-attributes/configure-attribute-user-task.png" alt-text="Screenshot showing the attribute configuration panel for the Update user attributes task.":::
+
 1. Select **Save** to add the task to the workflow.
 
 > [!NOTE]
