@@ -2,12 +2,17 @@ items:
   - name: Microsoft Entra Agent ID
     expanded: true
     items:
+    - name: What's new in Agent ID
+      href: whats-new-agent-id.md
     - name: What is Microsoft Entra Agent ID?
       href: what-is-microsoft-entra-agent-id.md
     - name: What is the Microsoft agent identity platform?
       href: what-is-agent-id-platform.md
     - name: Security for AI overview
       href: security-for-ai-overview.md
+    - name: What's new at Microsoft Ignite
+      href: whats-new-ignite-2025.md
+
   # LEARN ######################
   - name: Learn about Agent ID
     expanded: true
