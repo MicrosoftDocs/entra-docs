@@ -20,6 +20,7 @@ Lifecycle Workflows currently support the following tasks:
 | [Assign licenses to user](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user)     |  683c87a4-2ad4-420b-97d4-220d90afcd24       | Joiner, Mover         | 
 | [Add user to groups](../id-governance/lifecycle-workflow-tasks.md#add-user-to-groups)     |    22085229-5809-45e8-97fd-270d28d66910     | Joiner, Leaver, Mover |
 | [Add user to teams](../id-governance/lifecycle-workflow-tasks.md#add-user-to-teams)      |  e440ed8d-25a1-4618-84ce-091ed5be5594       | Joiner, Leaver, Mover | 
+| [Update user attributes (Preview)](../id-governance/lifecycle-workflow-tasks.md#update-user-attributes-preview)    |    2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     | Joiner, Leaver, Mover         |
 |[Enable user account](../id-governance/lifecycle-workflow-tasks.md#enable-user-account)     |    6fc52c9d-398b-4305-9763-15f42c1676fc     | Joiner, Leaver | 
 | [Run a custom task extension](../id-governance/lifecycle-workflow-tasks.md#run-a-custom-task-extension)    |    4262b724-8dba-4fad-afc3-43fcbb497a0e    | Joiner, Leaver, Mover | 
 | [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account)     |   1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950      | Leaver |
@@ -40,5 +41,4 @@ Lifecycle Workflows currently support the following tasks:
 | [Send email on user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-on-users-last-day)    |    9c0a1eaf-5bda-4392-9d9e-6e155bb57411     | Leaver         | 
 | [Send email to user's manager after their last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-users-manager-after-their-last-day)    |    6f22ddd4-b3a5-47a4-a846-0d7c201a49ce     | Leaver         |
 | [Send email about user inactivity](../id-governance/lifecycle-workflow-tasks.md#send-email-about-user-inactivity)    |    92f74cb4-f1b6-4ec0-b766-96210f56edc2     | Leaver         |
-| [Update user attributes (Preview)](../id-governance/lifecycle-workflow-tasks.md#update-user-attributes-preview)    |    2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     | Joiner, Leaver, Mover         |
 
