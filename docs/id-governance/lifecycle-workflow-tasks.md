@@ -1159,7 +1159,7 @@ For Microsoft Graph, the parameters for the **Send email on user last day** task
 |displayName     |  Send email on user’s last day (Customizable by user)       |
 |description     |  Send offboarding email to user’s manager on the last day of work (Customizable by user)        |
 |taskDefinitionId     |   9c0a1eaf-5bda-4392-9d9e-6e155bb57411      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
