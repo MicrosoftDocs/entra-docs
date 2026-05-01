@@ -1,6 +1,6 @@
 ---
-title: Add a Microsoft Entra ID tenant as an OpenID Connect identity provider (Preview)
-description: Learn how to set up OpenID Connect federation with a Microsoft Entra ID tenant in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
+title: Add Microsoft Entra ID as an OIDC identity provider (Preview)
+description: Learn how to federate a Microsoft Entra ID tenant as an OpenID Connect identity provider in External ID so users can sign in with organizational accounts.
 
 author: csmulligan
 manager: dougeby
@@ -11,17 +11,17 @@ ms.topic: how-to
 ms.date: 04/30/2026
 ms.author: cmulligan
 ms.reviewer: brozbab
-ms.custom: it-pro
+ms.custom: it-pro, msecd-doc-authoring-1012
 
-#Customer intent: As a developer, devops, or it administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider for my external tenant.
+#Customer intent: As an IT administrator, I want to add a Microsoft Entra ID tenant as an OpenID Connect identity provider so that organizational users can sign in to my external tenant apps with their existing credentials.
 ---
 # Add a Microsoft Entra ID tenant as an OpenID Connect identity provider (Preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign up and sign in to your applications using their existing organizational accounts. This approach uses the custom OIDC identity provider feature to federate with a Microsoft Entra ID tenant.
+By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign up and sign in to your applications using their existing organizational accounts.
 
-When you add a Microsoft Entra ID identity provider to your user flow's sign-in options, users can sign up and sign in to the registered applications defined in that user flow using their Microsoft Entra ID credentials. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+When you add a Microsoft Entra ID identity provider to your user flow's sign-in options, users can sign up and sign in to the registered applications defined in that user flow using their Microsoft Entra ID credentials. For details, see [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).
 
 ## Prerequisites
 
