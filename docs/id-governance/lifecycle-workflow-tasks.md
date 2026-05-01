@@ -471,6 +471,30 @@ For Microsoft Graph, the parameters for the **Add user to teams** task are as fo
 
 ```
 
+### Update user attributes (Preview)
+
+Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+The Microsoft Entra prerequisite to run the **Update user attributes (Preview)** task is:
+
+-
+
+For Microsoft Graph, the parameters for the **Update user attributes (Preview)** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  joiner, leaver, mover      |
+|displayName     |        |
+|description     | Allows up to 10 attributes for users to be updated. The included attributes include built-in, on-premises extensions, directory extensions, and employee org data.      |
+|taskDefinitionId     |   2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     |
+|arguments     |       |
+
+Example of usage within the workflow:
+
+```json
+
+```
+
 ### Enable user account
 
 Allows user accounts to be enabled. For prerequisites on running this task for synced on-premises users, see: [User account tasks](../id-governance/lifecycle-workflow-on-premises.md#user-account-tasks). Users with Microsoft Entra role assignments aren't supported, nor are users with membership or ownership of role-assignable groups. You can also utilize Microsoft Entra ID's HR driven provisioning to on-premises Active Directory to disable and enable synchronized accounts with an attribute mapping to `accountDisabled` based on data from your HR source. For more information, see: [Workday Configure attribute mappings](../identity/saas-apps/workday-inbound-tutorial.md#part-4-configure-attribute-mappings) and [SuccessFactors Configure attribute mappings](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#part-4-configure-attribute-mappings). You're able to customize the task name and description for this task in the Microsoft Entra admin center.
@@ -1269,30 +1293,6 @@ Example of usage within the workflow:
         }
     ]
 }
-```
-
-### Update user attributes (Preview)
-
-Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
-
-The Microsoft Entra prerequisite to run the **Update user attributes (Preview)** task is:
-
--
-
-For Microsoft Graph, the parameters for the **Update user attributes (Preview)** task are as follows:
-
-|Parameter |Definition  |
-|---------|---------|
-|category    |  joiner, leaver, mover      |
-|displayName     |        |
-|description     | Allows up to 10 attributes for users to be updated. The included attributes include built-in, on-premises extensions, directory extensions, and employee org data.      |
-|taskDefinitionId     |   2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     |
-|arguments     |       |
-
-Example of usage within the workflow:
-
-```json
-
 ```
 
 ## Next steps
