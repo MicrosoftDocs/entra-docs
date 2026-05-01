@@ -1271,6 +1271,30 @@ Example of usage within the workflow:
 }
 ```
 
+### Update user attributes (Preview)
+
+Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+The Microsoft Entra prerequisite to run the **Update user attributes (Preview)** task is:
+
+-
+
+For Microsoft Graph, the parameters for the **Update user attributes (Preview)** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |       |
+|displayName     |        |
+|description     | Allows up to 10 attributes for users to be updated.      |
+|taskDefinitionId     |        |
+|arguments     |       |
+
+Example of usage within the workflow:
+
+```json
+
+```
+
 ## Next steps
 
 - [Manage lifecycle workflows properties](manage-workflow-properties.md)
