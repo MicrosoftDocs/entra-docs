@@ -20,7 +20,7 @@ This article summarizes the key capabilities and documentation currently availab
 
 ## Manage AI agents at scale
 
-Microsoft Entra Agent ID introduces new identity constructs and authentication protocols designed specifically for AI agents. Key concepts include:
+Microsoft Entra Agent ID introduces new identity constructs and authentication protocols designed specifically for AI agents. Notable updates include:
 
 - [Key concepts](key-concepts.md) - New concepts added to further define core agent identity concepts and their relationships.
 - [Administrative relationships](agent-owners-sponsors-managers.md) - Deeper definitions and clarified differences between owners, sponsors, and managers of agent identities, blueprints, and agents' user accounts. 
