@@ -2,7 +2,7 @@
 title: Assign sensitivity labels to Microsoft Entra security groups (preview)
 description: Learn how to apply sensitivity labels to cloud security groups in Microsoft Entra ID for consistent classification and governance.
 ms.topic: how-to
-ms.date: 04/30/2026
+ms.date: 05/01/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: mbhargav
@@ -47,9 +47,9 @@ When a sensitivity label applied to a cloud security group forbids guest access,
 Security groups are used directly in authorization decisions such as Conditional Access scoping, application access, and resource permissions. Their labeled membership represents a bundle of entitlements. Enforcement depends on Microsoft Entra ID's membership resolution and validation logic, not on administrative governance practices alone. **Current validation processes apply only on group creation or when a label is first assigned.** Extending these validation processes for other scenarios is in progress.
 
 > [!WARNING]
-> Changes to a sensitivity label's protection policies in Microsoft Purview take effect immediately on all security groups that use that label. For example, if you change a label from blocking guest access to allowing it, all groups with that label immediately permit guest membership. Conversely, tightening a policy takes effect immediately as well. Deleting a label in Purview removes its protections from all labeled groups.
+> Sensitivity label policy changes in Microsoft Purview apply immediately to new policy checks, **but they don't alter existing group membership**. For example, if you change a label from allowing to blocking guest access, the new policy blocks guests in newly labeled groups and blocks new guest additions to existing labeled groups, but guests already in those groups remain until an owner or admin removes them.
 >
-> **Don't change the policy of a label or delete a label** after the label is in use on security groups. Group owners adopt a label based on the protections it provides at the time of assignment. Weakening or removing those protections silently breaks that promise across every group that uses the label. For broader Purview guidance, see [Sensitivity labels in Microsoft Purview](/purview/sensitivity-labels) and [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites).
+> **Avoid changing or deleting a label's policy after the label is in use on security groups.** Owners choose a label based on the protections it provides at assignment time. Weakening, tightening, or removing those protections can create a mismatch between the label's current policy and the group's existing state. For broader Purview guidance, see [Sensitivity labels in Microsoft Purview](/purview/sensitivity-labels) and [Enable sensitivity labels for containers and synchronize labels](/purview/sensitivity-labels-teams-groups-sites).
 
 ## Known limitations (preview)
 
