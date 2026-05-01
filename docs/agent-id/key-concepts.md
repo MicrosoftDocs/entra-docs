@@ -64,6 +64,5 @@ The Microsoft Entra SDK for Agent ID is a containerized web service that handles
 ## Related content
 
 - [What is an agent ID?](what-are-agent-identities.md)
-- [What is the agent identity platform?](what-is-agent-id-platform.md)
 - [Microsoft Entra Agent ID oauth protocols](agent-oauth-protocols.md)
-- [Create an agent identity blueprint](create-blueprint.md)
+- [Inheritable permissions](concept-inheritable-permissions.md)
