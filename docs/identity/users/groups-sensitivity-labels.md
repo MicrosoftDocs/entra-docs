@@ -57,11 +57,8 @@ During preview, the following limitations apply:
 
 - **Label immutability:** You can't change or remove a label after you apply it. Choose labels carefully before you apply them.
 - **High-privilege bypass:** The following admin roles and application permissions can bypass label policy enforcement when adding members. This behavior might change before general availability.
-
-  | | |
-  |---|---|
-  | **Admin roles** | Global Administrator, User Administrator, Groups Administrator, Directory Writers, Exchange Administrator, SharePoint Administrator, SharePoint Advanced Management Administrator, Teams Administrator, Yammer Administrator, Helpdesk Administrator, Service Support Administrator |
-  | **Application permissions** | `Group.ReadWrite.All`, `Directory.ReadWrite.All`, `Directory.ReadWriteAdvanced.All`, `GroupMember.ReadWrite.All` |
+  - **Admin roles:** Global Administrator, User Administrator, Groups Administrator, Directory Writers, Exchange Administrator, SharePoint Administrator, SharePoint Advanced Management Administrator, Teams Administrator, Yammer Administrator, Helpdesk Administrator, Service Support Administrator
+  - **Application permissions:** `Group.ReadWrite.All`, `Directory.ReadWrite.All`, `Directory.ReadWriteAdvanced.All`, `GroupMember.ReadWrite.All`
 
 - **No nested group labeling:** You can't apply a label to a security group that contains nested groups. Remove all nested groups first, apply the label, label the child groups individually, and then add them back. Child group labels must be compatible with the parent.
 - **Dynamic membership groups:** You can't apply sensitivity labels to security groups with dynamic membership in this release. While there are certain edge cases where you can apply a label to a dynamic group, the associated label policy isn't enforced.
