@@ -1,27 +1,22 @@
 ---
-title: Add Microsoft Entra ID as an OIDC identity provider (Preview)
-description: Learn how to federate a Microsoft Entra ID tenant as an OpenID Connect identity provider in External ID so users can sign in with organizational accounts.
-
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-
-ms.subservice: external
+title: Add Microsoft Entra ID for customer sign-in
+description: Learn how to configure a Microsoft Entra ID tenant as an OpenID Connect identity provider in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
 ms.topic: how-to
-ms.date: 04/30/2026
-ms.author: cmulligan
-ms.reviewer: brozbab
+ms.date: 03/09/2026
+ms.author: godonnell
+author: garrodonnell
 ms.custom: it-pro, msecd-doc-authoring-1012
+ai-usage: ai-assisted
 
-#Customer intent: As an IT administrator, I want to add a Microsoft Entra ID tenant as an OpenID Connect identity provider so that organizational users can sign in to my external tenant apps with their existing credentials.
+#customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
 ---
 # Add a Microsoft Entra ID tenant as an OpenID Connect identity provider (Preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign up and sign in to your applications using their existing organizational accounts.
+By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign up and sign in to your applications using their existing organizational accounts. This approach uses the custom OIDC identity provider feature to federate with a Microsoft Entra ID tenant.
 
-When you add a Microsoft Entra ID identity provider to your user flow's sign-in options, users can sign up and sign in to the registered applications defined in that user flow using their Microsoft Entra ID credentials. For details, see [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).
+When you add a Microsoft Entra ID identity provider to your user flow's sign-in options, users can sign up and sign in to the registered applications defined in that user flow using their Microsoft Entra ID credentials. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 ## Prerequisites
 
@@ -32,36 +27,36 @@ When you add a Microsoft Entra ID identity provider to your user flow's sign-in 
 
 ## Register the external tenant in your Microsoft Entra ID tenant
 
-To federate users from your Microsoft Entra ID tenant, first register the external tenant as an application in the Microsoft Entra ID tenant that acts as the identity provider.
+To federate users from your Microsoft Entra ID tenant, first register the external tenant as an application in the Microsoft Entra ID tenant that acts as the identity provider. 
 
 When you register the application, use the following federation-specific settings:
 
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
-2. Under **Redirect URI**, select **Web** and add the following URIs:
+1. Under **Redirect URI**, select **Web** and add the following URIs:
 
-    `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
+   `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
 
-    `https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
+   `https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
 
-    Replace `<tenant-subdomain>` and `<tenant-ID>` with the values from your external tenant. If your external tenant uses a custom domain, add the redirect URI with the custom domain as well, for example:
+   Replace `<tenant-subdomain>` and `<tenant-ID>` with the values from your external tenant. If your external tenant uses a custom domain, add the redirect URI with the custom domain as well, for example:
 
-    `https://<tenant-subdomain>.ciamlogin.com/<custom-domain>/federation/oauth2`
+   `https://<tenant-subdomain>.ciamlogin.com/<custom-domain>/federation/oauth2`
 
 For step-by-step guidance, see [Register an application](/entra/identity-platform/quickstart-register-app).
 
 After the app is registered, complete the following configuration:
 
 1. Add a [client secret](/entra/identity-platform/how-to-add-credentials?tabs=client-secret) and record the secret value (not the secret ID). You need this value when you configure the identity provider in your external tenant.
-2. Under **Token configuration**, add the optional claims you want the identity provider to send.
-3. Under **API permissions**, add Microsoft Graph [delegated permissions](/entra/identity-platform/howto-update-permissions): `email`, `openid`, `profile`, and `User.Read`. Then grant admin consent for the identity provider tenant.
-4. Under **Overview**, record the **Application (client) ID** and **Directory (tenant) ID**. You need these values to configure federation in the external tenant.
+1. Under **Token configuration**, add the optional claims you want the identity provider to send.
+1. Under **API permissions**, add Microsoft Graph [delegated permissions](/entra/identity-platform/howto-update-permissions): `email`, `openid`, `profile`, and `User.Read`. Then grant admin consent for the identity provider tenant.
+1. Under **Overview**, record the **Application (client) ID** and **Directory (tenant) ID**. You need these values to configure federation in the external tenant.
 
 ## Configure the identity provider in the external tenant
 
 After you register the external tenant in the Microsoft Entra ID tenant, add it as a custom OIDC identity provider in the external tenant. Follow the steps in [Configure a new OpenID Connect identity provider in the admin center](how-to-custom-oidc-federation-customers.md#configure-a-new-openid-connect-identity-provider-in-the-admin-center) and use the following Microsoft Entra ID-specific values:
 
 | Setting | Value |
-| --- | --- |
+|---------|-------|
 | **Display name** | A name your users see during sign-in, for example *Sign in with Contoso*. |
 | **Well-known endpoint** | `https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration` |
 | **OpenID Issuer URI** | `https://login.microsoftonline.com/<tenant-ID>/v2.0`, where `<tenant-ID>` is the directory (tenant) ID of the Microsoft Entra ID tenant. |
@@ -80,12 +75,12 @@ After you set up the identity provider, add it to a user flow so it appears on t
 To verify your federation setup, test the user flow:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-2. Browse to **Entra ID** > **External Identities** > **User flows**.
-3. Select the user flow you configured. At least one application with a redirect URI must be associated with this user flow.
-4. Select **Run user flow**.
-5. In the **Run user flow** pane, for **Application**, select the application you want to test. The remaining fields, including **Reply URL** and **Response type**, are auto-populated from the application registration.
-6. Select the **Run user flow** button, or copy the **Run user flow endpoint** URL and open it in a new browser window.
-7. On the sign-in page, select the Microsoft Entra ID identity provider and sign in with an account from the federated tenant.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
+1. Select the user flow you configured. At least one application with a redirect URI must be associated with this user flow.
+1. Select **Run user flow**.
+1. In the **Run user flow** pane, for **Application**, select the application you want to test. The remaining fields, including **Reply URL** and **Response type**, are auto-populated from the application registration.
+1. Select the **Run user flow** button, or copy the **Run user flow endpoint** URL and open it in a new browser window.
+1. On the sign-in page, select the Microsoft Entra ID identity provider and sign in with an account from the federated tenant.
 
 ## Create users in the external tenant
 
@@ -183,7 +178,7 @@ When `domain_hint` is used, a domain confirmation dialog appears to ensure the u
 
 **Can new users be automatically redirected based on their email domain when they enter their email address on the sign-in page?**
 
-There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The `domain_hint` value for Microsoft Entra ID should be the domain name, for example `domain_hint=contoso.onmicrosoft.com`. For more information, see [Issuer Acceleration](concept-authentication-methods-customers.md#issuer-acceleration).
+There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The `domain_hint` value for Microsoft Entra ID should be the domain name, for example `domain_hint=contoso.onmicrosoft.com`. For more information, see [Issuer Acceleration](./concept-authentication-methods-customers.md#issuer-acceleration).
 
 **Can I hide other identity provider buttons and show only Microsoft Entra ID?**
 
@@ -196,3 +191,9 @@ No. Microsoft Entra ID issues standard signed JWT tokens. ID tokens are readable
 **Can I use multiple Microsoft Entra ID tenants with a single external tenant?**
 
 Yes. You can configure multiple Microsoft Entra ID tenants as separate custom OIDC identity providers and expose them within External ID user flows.
+
+## Related content
+
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
+- [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
+- [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)
