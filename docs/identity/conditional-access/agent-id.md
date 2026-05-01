@@ -6,6 +6,7 @@ ms.date: 04/30/2026
 ms.reviewer: yoelhor
 ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
+#customer-intent: As an identity administrator, I want to understand how Conditional Access policies apply to agent identities in Microsoft Entra ID, so that I can effectively manage and secure access for AI agents in my organization.
 ---
 
 # Conditional Access for agent identities
