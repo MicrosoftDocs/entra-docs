@@ -61,7 +61,7 @@ The list of policies that don't apply includes the reasons why these policies do
 
 ## Key differences between the What If evaluation API and the legacy experience 
 
-The What If Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The What If tool powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is currently in public preview. The API is different from the legacy What If evaluation in a few ways:
+The What If Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The What If tool powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is currently in preview. The API is different from the legacy What If evaluation in a few ways:
 
 1. The What-if API is a public and fully supported API (once the API is generally available). The API can be used through the Conditional Access UX and the MS Graph API.
 1. The logic aligns with the authentication logic used during sign-in to provide more accurate policy evaluation.

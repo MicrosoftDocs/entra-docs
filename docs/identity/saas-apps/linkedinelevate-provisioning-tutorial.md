@@ -25,7 +25,7 @@ The scenario outlined in this article assumes that you already have the followin
 > [!NOTE]
 > Microsoft Entra ID integrates with LinkedIn Elevate using the SCIM protocol.
 
-## Assigning users to LinkedIn Elevate
+## Step 1: Assign users to LinkedIn Elevate
 
 Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that have been "assigned" to an application in Microsoft Entra ID is synchronized.
 
@@ -39,7 +39,7 @@ Before configuring and enabling the provisioning service, you need to decide wha
 
 * When assigning a user to LinkedIn Elevate, you must select the **User** role in the assignment dialog. The "Default Access" role doesn't work for provisioning.
 
-## Configuring user provisioning to LinkedIn Elevate
+## Step 2: Configure user provisioning to LinkedIn Elevate
 
 This section guides you through connecting your Microsoft Entra ID to LinkedIn Elevate's SCIM user account provisioning API, and configuring the provisioning service to create, update disable assigned user accounts in LinkedIn Elevate based on user and group assignment in Microsoft Entra ID.
 
@@ -47,7 +47,7 @@ This section guides you through connecting your Microsoft Entra ID to LinkedIn E
 
 <a name='to-configure-automatic-user-account-provisioning-to-linkedin-elevate-in-azure-ad'></a>
 
-### To configure automatic user account provisioning to LinkedIn Elevate in Microsoft Entra ID:
+### Configure automatic user account provisioning to LinkedIn Elevate in Microsoft Entra ID
 
 The first step is to retrieve your LinkedIn access token. If you're an Enterprise administrator, you can self-provision an access token. In your account center, go to **Settings &gt; Global Settings** and open the **SCIM Setup** panel.
 
@@ -83,7 +83,7 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 
 1. Select your instance of LinkedIn Elevate, then select the **Provisioning** tab.
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
 1. Fill in the following fields under **Admin Credentials** :
 
@@ -93,21 +93,25 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 
     * You should see a success notification on the upper-right side of your portal.
 
-1. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox below.
+1. Select **Create** to create your configuration.
 
-1. Select **Save**.
+1. Select **Properties** on the **Overview** page.
+
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
 1. In the **Attribute Mappings** section, review the user and group attributes that are synchronized from Microsoft Entra ID to LinkedIn Elevate. The attributes selected as **Matching** properties are used to match the user accounts and groups in LinkedIn Elevate for update operations. Select the Save button to commit any changes.
 
     ![Screenshot shows Mappings, including Attribute Mappings.](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate4.PNG)
 
-1. To enable the Microsoft Entra provisioning service for LinkedIn Elevate, change the **Provisioning Status** to **On** in the **Settings** section
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Select **Save**.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-This starts the initial synchronization of any users and/or groups assigned to LinkedIn Elevate in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your LinkedIn Elevate app.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
-For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+## Step 3: Monitor your deployment
+
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## More Resources
 

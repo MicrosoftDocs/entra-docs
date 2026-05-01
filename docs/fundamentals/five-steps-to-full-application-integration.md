@@ -70,7 +70,7 @@ Learn more:
 
 In addition, use the Active Directory Federation Services (AD FS) in the Azure portal to discover AD FS apps in your organization. Discover unique users that signed in to the apps, and see information about integration compatibility.
 
-See: [Review the application activity report](~/identity/enterprise-apps/migrate-adfs-application-activity.md)
+See: [Discover and scope AD FS applications](~/identity/enterprise-apps/migrate-adfs-discover-scope-apps.md)
 
 ### Application migration
 

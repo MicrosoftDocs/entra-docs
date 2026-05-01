@@ -2,9 +2,6 @@
 title: Create a governed workforce tenant (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to create a new Microsoft Entra tenant using the secure add-on tenant creation workflow in Tenant Governance
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 03/12/2026
 ---
