@@ -227,7 +227,7 @@ For Microsoft Graph, the parameters for the **Generate Temporary Access Pass and
 |displayName     | GenerateTAPAndSendEmail (Customizable by user)      |
 |description     | Generate Temporary Access Pass and send via email to user's manager (Customizable by user)       |
 |taskDefinitionId     |   1b555e50-7f65-41d5-b514-5894a026d10d     |
-|arguments     |  Argument contains the name parameter "tapLifetimeInMinutes," which is the lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days). The argument also contains the tapIsUsableOnce parameter, which determines whether the passcode is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime. Additionally, the optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  Argument contains the name parameter "tapLifetimeInMinutes," which is the lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days). The argument also contains the tapIsUsableOnce parameter, which determines whether the passcode is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime. Additionally, the optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
