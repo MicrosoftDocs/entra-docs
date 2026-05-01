@@ -55,6 +55,7 @@ agent access through policy-based access packages and permission assignment for 
 reassignment for agent blueprints and agent identities.
 - [Manage your agent identities](manage-agent-identities-end-user.md) (New) - View and control agent identities you own or
 sponsor.
+- [Agent identity sponsor templates](../id-governance/lifecycle-workflow-templates.md) (New) - Two new lifecycle workflow templates for notifying managers and cosponsors when an agent identity sponsor changes roles or leaves the organization.
 
 ## Protect agent access to resources
 
