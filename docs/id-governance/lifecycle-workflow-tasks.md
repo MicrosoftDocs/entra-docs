@@ -1108,7 +1108,7 @@ For Microsoft Graph the parameters for the **Send email before user's last day**
 |displayName     |  Send email before user’s last day (Customizable by user)       |
 |description     |  Send offboarding email to user’s manager before the last day of work (Customizable by user)        |
 |taskDefinitionId     |   52853a3e-f4e5-4eb8-bb24-1ac09a1da935      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
