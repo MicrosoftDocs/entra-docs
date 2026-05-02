@@ -15,8 +15,7 @@ ms.custom: sfi-image-nochange
 
 # Configure Confluence SAML SSO by Microsoft for Single sign-on with Microsoft Entra ID
 
-> [!WARNING]
-> **Deprecation notice:** We are going to End of Support this plugin from May 1, 2026 and will end the support by 30th July 2026 to align with Atlassian on server deprecations.
+> **Deprecation notice:** This plugin is deprecated on May 1, 2026. Support ends on July 30, 2026, to align with Atlassian server deprecations.
 
 In this article,  you learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
