@@ -396,7 +396,9 @@
       - name: Manage
         items:
         - name: Synchronize attributes
-          href: how-to-lifecycle-workflow-sync-attributes.md  
+          href: how-to-lifecycle-workflow-sync-attributes.md
+        - name: Update user attributes
+          href: how-to-lifecycle-workflow-update-user-attributes.md
         - name: Manage workflow properties
           href: manage-workflow-properties.md
         - name: Manage workflow versions
