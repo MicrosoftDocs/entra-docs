@@ -16,7 +16,7 @@ ms.custom: sfi-image-nochange
 # Configure JIRA SAML SSO by Microsoft for Single sign-on with Microsoft Entra ID
 
 > [!WARNING]
-> **Deprecation notice:** This plugin is deprecated on May 1, 2026.
+> **Deprecation notice:** This plugin will be deprecated on May 1, 2026. To continue setting up single sign-on for Jira, use a supported replacement from [Atlassian Marketplace](https://marketplace.atlassian.com/search?product=jira&query=sso).
 
 In this article,  you learn how to integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID. When you integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
