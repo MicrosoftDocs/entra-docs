@@ -21,7 +21,7 @@ This article walks through the complete process of enabling and configuring acco
 ## Prerequisites
 
 - A Microsoft Entra ID P1 license
-- [Verified ID](../../verified-id/verifiable-credentials-configure-tenant-quick.md) enabled and [Face Check](../../verified-id/verify-faces.md) configured in your tenant
+- [Verified ID](../../verified-id/verifiable-credentials-configure-tenant-quick.md) enabled and [Face Check](../../verified-id/using-facecheck.md) configured in your tenant
 - The [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) role in the Microsoft Entra tenant
 - The Contributor or Billing Administrator role for your Azure subscription (required for identity verification provider subscription)
 
