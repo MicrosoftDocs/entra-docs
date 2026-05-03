@@ -305,6 +305,9 @@ Before configuring authentication (Step 5), verify the function's claims matchin
 > [!WARNING]
 > This step tests the function with no authentication configured. This is for development and testing only. Don't expose your function without authentication in production. Complete Step 5 to configure authentication before deploying to production.
 
+> [!NOTE]
+> Even with no authentication identity provider configured, Azure Functions still requires an `Authorization: Bearer` header. You can pass any value (for example, `Bearer test`) during local testing. In production, Microsoft Entra ID provides a valid token automatically.
+
 1. Open a terminal and run:
 
    ```powershell
@@ -335,10 +338,11 @@ Before configuring authentication (Step 5), verify the function's claims matchin
    }
    '@
 
-   Invoke-RestMethod -Method Post `
+   (Invoke-WebRequest -Method Post `
      -Uri "https://<your-function-app>.azurewebsites.net/api/CustomClaimMatching" `
      -ContentType "application/json" `
-     -Body $body
+     -Headers @{ Authorization = "Bearer test" } `
+     -Body $body).Content
    ```
 
 1. Verify the response:
