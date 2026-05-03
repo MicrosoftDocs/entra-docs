@@ -130,7 +130,11 @@ When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time pass
 
 ### Verified ID claim validation (account recovery)
 
-The **OnVerifiedIdClaimValidation** event is triggered during [account recovery](~/identity/authentication/concept-account-recovery-overview.md) when a user presents Verified ID claims to re-establish their identity. It allows you to [call a REST API to validate those claims](./tutorial-custom-authentication-extension-account-recovery.md) against an authoritative data source, such as an HR system or employee records database, and return a pass or fail decision. Only one custom authentication extension per tenant is allowed for this event type.
+The **OnVerifiedIdClaimValidation** event is triggered during [account recovery](~/identity/authentication/concept-account-recovery-overview.md) when a user presents Verified ID claims to re-establish their identity. The primary reason to use a custom authentication extension for account recovery is to confirm that the person requesting recovery is an actual employee, not just a valid human. When a user presents their Verified ID, Microsoft Entra passes the claims from the credential to your custom authentication extension. Your REST API can then compare those claims against an authoritative data source, such as an HR system or employee records database, and return a pass or fail decision.
+
+When you move an account recovery profile from Eval mode to Production mode, we highly recommend using a custom authentication extension. The built-in first name and last name matching isn't reliable enough for larger user groups and should only be used for a very small set of users.
+
+For more information, see [Create a custom authentication extension for account recovery claim validation](./tutorial-custom-authentication-extension-account-recovery.md). Only one custom authentication extension per tenant is allowed for this event type.
 
 ## Related content
 
