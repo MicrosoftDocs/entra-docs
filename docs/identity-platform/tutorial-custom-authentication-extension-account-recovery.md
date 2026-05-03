@@ -24,28 +24,13 @@ In addition to creating a custom authentication extension, you need to create a 
 
 - An Azure subscription. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A Microsoft Entra ID tenant with [account recovery enabled](~/identity/authentication/how-to-account-recovery-enable.md).
-- At least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) roles.
+- At least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) roles.
 
 ## How it works
 
 During account recovery, a user who has lost all authentication methods must re-establish their identity. The custom authentication extension adds a claim validation step into this flow:
 
-```
-User selects "Recover my account"
-        │
-        ├── Identity proofing (IDV partner)
-        ├── Face Check
-        ├── Verified ID presentation to Entra
-        │
-        ├── OnVerifiedIdClaimValidation event fires
-        │       │
-        │       ├── Entra calls your Azure Function with VID claims
-        │       ├── Function validates claims against HR system / Excel
-        │       └── Function returns pass or fail
-        │
-        ├── TAP issuance
-        └── New auth method registration
-```
+:::image type="content" source="media/custom-extension-account-recovery/account-recovery-flow.png" alt-text="Architecture diagram showing the account recovery flow: user starts recovery, Microsoft Entra ID triggers event listener, custom authentication extension calls REST API endpoint (Logic Apps or Azure Functions), which validates against external system, then response is processed and TAP code is presented.":::
 
 The `OnVerifiedIdClaimValidation` event is the pre-proofing hook in the recovery pipeline. It lets you plug in custom validation logic — HR lookups, external database checks, or partner trust verification — before Microsoft Entra ID proceeds with recovery.
 
@@ -59,7 +44,7 @@ The sample function is available as a one-click deployment. It deploys an Azure 
 
 1. Select the **Deploy to Azure** button:
 
-   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Frogulati%2FAccountRecoveryClaimsMatchingAPI%2Fmain%2FARMTemplate%2Ftemplate.json)
+   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Factive-directory-verifiable-credentials-dotnet%2Fmain%2F7-AccountRecovery-ClaimsMatching%2FARMTemplate%2Ftemplate.json)
 
 1. Fill in the deployment parameters:
 
@@ -90,7 +75,7 @@ The sample function is available as a one-click deployment. It deploys an Azure 
 
 For testing, the function supports an Excel file hosted on any web server with read access as a data source. In production, you can switch to the HR API provider (see [Switch to production: use the HR API provider](#switch-to-production-use-the-hr-api-provider)).
 
-1. Download the sample Excel file from the [SampleData folder](https://github.com/rogulati/AccountRecoveryClaimsMatchingAPI/tree/main/SampleData) in the repo, or create your own with these columns:
+1. Download the sample Excel file from the [SampleData folder](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/tree/main/7-AccountRecovery-ClaimsMatching/SampleData) in the repo, or create your own with these columns:
 
    | EmployeeId | UPN | firstName | lastName | fullName | dateOfBirth | documentType | documentId | documentExpiryDate |
    |---|---|---|---|---|---|---|---|---|
@@ -125,7 +110,7 @@ In this step, you register a custom authentication extension that Microsoft Entr
 
 # [Azure portal](#tab/azure-portal)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
 1. Browse to **Entra ID** > **Enterprise apps** > **Custom authentication extensions**.
 
@@ -270,7 +255,7 @@ Now you associate the custom authentication extension with the identity verifica
 
 # [Azure portal](#tab/azure-portal)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
 1. Browse to **Protection** > **Identity verification** > **Identity verification profiles**.
 
@@ -316,6 +301,9 @@ Create an authentication event listener to bind the custom authentication extens
 Before configuring authentication (Step 5), verify the function's claims matching logic works by calling it directly. At this point, the function should have no authentication configured — no EasyAuth identity provider and `EntraId__TenantId` / `EntraId__ClientId` environment variables should be empty.
 
 ### 4.1 Test the function directly
+
+> [!WARNING]
+> This step tests the function with no authentication configured. This is for development and testing only. Don't expose your function without authentication in production. Complete Step 5 to configure authentication before deploying to production.
 
 1. Open a terminal and run:
 
@@ -384,24 +372,6 @@ Before configuring authentication (Step 5), verify the function's claims matchin
    }
    ```
 
-### 4.2 Test the end-to-end recovery flow (after Step 5)
-
-> [!IMPORTANT]
-> Complete **Step 5** (configure EasyAuth) before testing the end-to-end flow. Microsoft Entra's custom authentication extension sends a Bearer token to your function — EasyAuth must be configured to validate it.
-
-1. Sign in to the Microsoft Entra admin center and confirm the custom authentication extension is active and assigned to the identity verification profile (Step 3).
-1. In a private browser window, go to [https://myaccount.microsoft.com](https://myaccount.microsoft.com) and initiate an account recovery.
-1. Complete the identity proofing steps (face check, Verified ID presentation).
-1. The `OnVerifiedIdClaimValidation` event fires and calls your Azure Function. The function validates the claims against your data source and returns pass or fail.
-1. Verify in **Application Insights** > **Logs** that the function was called and the claims were validated:
-
-   ```kusto
-   traces
-   | where message has "claims" or message has "validation"
-   | order by timestamp desc
-   | take 20
-   ```
-
 ## Step 5: Protect your Azure Function
 
 Microsoft Entra custom authentication extensions use server-to-server flow to obtain an access token that is sent in the HTTP `Authorization` header to your Azure Function. When publishing your function to Azure, especially in a production environment, you need to validate the token sent in the authorization header.
@@ -446,6 +416,21 @@ If the Azure Function is hosted in a different tenant than the tenant where your
 1. Back in the Azure Function, enter the **Client secret**.
 1. Unselect the **Token store** option.
 1. Select **Add** to add the OpenID Connect identity provider.
+
+## Step 6: Test the end-to-end recovery flow
+
+1. Sign in to the Microsoft Entra admin center and confirm the custom authentication extension is active and assigned to the identity verification profile (Step 3).
+1. In a private browser window, go to [https://myaccount.microsoft.com](https://myaccount.microsoft.com) and initiate an account recovery.
+1. Complete the identity proofing steps (face check, Verified ID presentation).
+1. The `OnVerifiedIdClaimValidation` event fires and calls your Azure Function. The function validates the claims against your data source and returns pass or fail.
+1. Verify in **Application Insights** > **Logs** that the function was called and the claims were validated:
+
+   ```kusto
+   traces
+   | where message has "claims" or message has "validation"
+   | order by timestamp desc
+   | take 20
+   ```
 
 ## Switch to production: use the HR API provider
 
@@ -511,4 +496,4 @@ For more troubleshooting guidance, see [Troubleshoot your custom authentication 
 - [Custom authentication extensions overview](custom-extension-overview.md)
 - [Overview of Microsoft Entra ID Account Recovery](~/identity/authentication/concept-account-recovery-overview.md)
 - [Enable account recovery for your organization](~/identity/authentication/how-to-account-recovery-enable.md)
-- [Sample code: AccountRecoveryClaimsMatchingAPI](https://github.com/rogulati/AccountRecoveryClaimsMatchingAPI)
+- [Sample code: AccountRecoveryClaimsMatchingAPI](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/tree/main/7-AccountRecovery-ClaimsMatching)

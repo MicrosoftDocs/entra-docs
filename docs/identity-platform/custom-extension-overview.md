@@ -108,7 +108,7 @@ This section lists the custom authentication extensions events available in Micr
 | [Attribute collection start](#attribute-collection-start)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 | [Attribute collection submit](#attribute-collection-submit)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 | [One time passcode send](#one-time-passcode-send)||:::image type="icon" source="./media/common/yes.png" border="false":::|
-| [Verified ID claim validation (account recovery)](#verified-id-claim-validation-account-recovery)  | :::image type="icon" source="./media/common/yes.png" border="false"::: | |
+| [Account Recovery (additional claim validation)](#account-recovery-additional-claim-validation)  | :::image type="icon" source="./media/common/yes.png" border="false"::: | |
 
 ### Token issuance start
 
@@ -128,7 +128,7 @@ The **OnOtpSend** event is triggered when a one time passcode email is activated
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
 
-### Verified ID claim validation (account recovery)
+### Account Recovery (additional claim validation)
 
 The **OnVerifiedIdClaimValidation** event is triggered during [account recovery](~/identity/authentication/concept-account-recovery-overview.md) when a user presents Verified ID claims to re-establish their identity. The primary reason to use a custom authentication extension for account recovery is to confirm that the person requesting recovery is an actual employee, not just a valid human. When a user presents their Verified ID, Microsoft Entra passes the claims from the credential to your custom authentication extension. Your REST API can then compare those claims against an authoritative data source, such as an HR system or employee records database, and return a pass or fail decision.
 
