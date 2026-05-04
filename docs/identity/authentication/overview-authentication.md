@@ -22,11 +22,11 @@ The following table outlines when an authentication method can be used for prima
 
 | Method | Primary authentication | Secondary authentication | SSPR / Account recovery |
 |---|---|---|---|
-| [Authenticator Lite](how-to-mfa-authenticator-lite) | No | MFA | No |
-| [Certificate-based authentication](concept-certificate-based-authentication) | Yes | MFA | No |
-| [Email OTP](concept-sspr-howitworks#authentication-methods) | No | SSPR and sign-in<sup>2</sup> | SSPR |
-| [External MFA](how-to-authentication-external-method-manage) | No | MFA | No |
-| [Hardware OATH tokens (preview)](concept-authentication-oath-tokens#hardware-oath-tokens-preview) | No | MFA | SSPR |
+| [Authenticator Lite](how-to-mfa-authenticator-lite.md) | No | MFA | No |
+| [Certificate-based authentication](concept-certificate-based-authentication.md) | Yes | MFA | No |
+| [Email OTP](concept-sspr-howitworks.md#authentication-methods) | No | SSPR and sign-in<sup>2</sup> | SSPR |
+| [External MFA](how-to-authentication-external-method-manage.md) | No | MFA | No |
+| [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview) | No | MFA | SSPR |
 | [Microsoft Authenticator passwordless](concept-authentication-authenticator-app#passwordless-sign-in-via-notifications) | Yes | No | No |
 | [Microsoft Authenticator push notifications](concept-authentication-authenticator-app#mfa-via-notifications-through-mobile-app) | Yes | MFA | SSPR |
 | [Passkey (FIDO2)](concept-authentication-passkeys-fido2) | Yes | MFA | No |

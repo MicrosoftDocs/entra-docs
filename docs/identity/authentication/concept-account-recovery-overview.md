@@ -5,8 +5,7 @@ author: tilarso
 ms.author: tilarso
 ms.service: entra-id
 ms.topic: concept-article
-ms.custom: msecd-doc-authoring-108
-ms.custom: msecd-doc-authoring-1012
+ms.custom: msecd-doc-authoring-108, msecd-doc-authoring-1012
 ms.date: 04/29/2026
 
 #customer intent: As an identity administrator, I want to understand how account recovery works in Microsoft Entra ID so that I can evaluate whether to deploy it for users who lose all their authentication methods.
@@ -145,7 +144,7 @@ Account recovery takes about 5–10 minutes to set up. Start in Evaluation mode 
 
 - [Enable and configure account recovery in Microsoft Entra ID](how-to-account-recovery-enable.md)
 - [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-for-users.md)
-- [Frequently asked questions about Microsoft Entra ID account recovery](self-service-account-recovery.md)
+- [Frequently asked questions about Microsoft Entra ID account recovery](self-service-account-recovery.yml)
 - [What is Microsoft Entra Verified ID?](/entra/verified-id/decentralized-identifier-overview)
 - [Enable the Temporary Access Pass policy](howto-authentication-temporary-access-pass.md)
 - [How it works: Microsoft Entra self-service password reset](concept-sspr-howitworks.md)

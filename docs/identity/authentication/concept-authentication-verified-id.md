@@ -42,13 +42,13 @@ Identity verification profiles are automatically created and configured when an 
 
 The Verified ID authentication method policy provides visibility into profiles and user assignments.
 
-[![Screenshot that shows the Verified ID authentication method policy page with the Enable toggle, Include and Exclude tabs, group assignment table, and profile dropdown.](media/vid-auth-method-policy.png)](media/vid-auth-method-policy.png#lightbox)
+[![Screenshot that shows the Verified ID authentication method policy page with the Enable toggle, Include and Exclude tabs, group assignment table, and profile dropdown.](media/how-to-account-recovery-enable/vid-auth-method-policy.png)](media/how-to-account-recovery-enable/vid-auth-method-policy.png#lightbox)
 
 From the policy settings, administrators can:
 
 - **View profile details** — See the configuration, provider, state, and priority of each identity verification profile, including the account validation claims mapping and custom authentication extension settings.
 
-   [![Screenshot that shows the Identity Verification Profile details panel with profile mode, profile details, user group, identity verification provider, account validation claims table, and custom authentication extension.](media/vid-profile-details.png)](media/vid-profile-details.png#lightbox)
+   [![Screenshot that shows the Identity Verification Profile details panel with profile mode, profile details, user group, identity verification provider, account validation claims table, and custom authentication extension.](media/how-to-account-recovery-enable/vid-profile-details.png)](media/how-to-account-recovery-enable/vid-profile-details.png#lightbox)
 
 - **Scope user groups** — Assign a group of users to a specific Verified ID profile, controlling which users can participate in the verified credential flow.
 - **Create new assignments** — Add new group-to-profile assignments for users who need access to a specific identity verification profile.
@@ -100,7 +100,7 @@ The following properties define a Verified ID profile:
 | **verifiedIdUsageConfigurations** | The scenarios the profile applies to (such as `recovery`) |
 | **lastModifiedDateTime** | When the profile was last modified |
 
-For the full API reference, see [verifiedIdProfile resource type (beta)](/graph/api/resources/verifiedidprofile?view=graph-rest-beta).
+For the full API reference, see [verifiedIdProfile resource type (beta)](/graph/api/resources/verifiedidprofile?view=graph-rest-beta&preserve-view=true).
 
 ## Face Check
 
@@ -112,6 +112,6 @@ Face Check requires a [Face Check license](/entra/verified-id/using-facecheck), 
 
 - [Account recovery overview](concept-account-recovery-overview.md)
 - [Enable and configure account recovery in Microsoft Entra ID](how-to-account-recovery-enable.md)
-- [Frequently asked questions about account recovery](self-service-account-recovery.md)
+- [Frequently asked questions about account recovery](self-service-account-recovery.yml)
 - [What is Microsoft Entra Verified ID?](/entra/verified-id/decentralized-identifier-overview)
-- [verifiedIdProfile resource type (beta)](/graph/api/resources/verifiedidprofile?view=graph-rest-beta)
+- [verifiedIdProfile resource type (beta)](/graph/api/resources/verifiedidprofile?view=graph-rest-beta&preserve-view=true)
