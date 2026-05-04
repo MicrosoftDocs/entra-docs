@@ -323,18 +323,27 @@ The nudge won't appear on mobile devices that run Android or iOS.
 
 ## Passkey nudge evaluation by platform
 
-The registration campaign evaluates whether a user has a local passkey for their current device and browser combination. The following table describes which passkey types satisfy the nudge on each platform:
+The registration campaign evaluates whether a user has a local passkey for their current device and browser combination. The following table describes which platform passkey types suppress the nudge on each OS and browser combination:
 
-| Platform | Browser | Passkey types that satisfy the nudge (user isn't nudged) |
-|---|---|---|
-| Windows | Chrome | Windows Hello for Business, Microsoft Entra passkey on Windows, Google Password Manager, or a non-platform passkey provider |
-| Windows | Edge | Windows Hello for Business, Microsoft Entra passkey on Windows, Microsoft Password Manager, or a non-platform passkey provider |
-| macOS | Chrome, Edge, or other | Mac platform passkeys, or a non-platform passkey provider |
-| iOS | Any | iCloud Keychain, or a non-platform passkey provider |
-| Android | Any | Google Password Manager, Samsung Pass, or a non-platform passkey provider |
-| Linux | Any | Passkeys aren't supported; users aren't nudged |
+| Credential | Windows + Chrome | Windows + Edge | Windows + Other | Mac + Chrome | Mac + Edge | Mac + Other | iOS | Android |
+|---|---|---|---|---|---|---|---|---|
+| Windows Hello for Business | ✔️ | ✔️ | ✔️ | — | — | — | — | — |
+| Entra passkey on Windows (EPOW) | ✔️ | ✔️ | — | ✔️ | — | — | — | — |
+| Google Password Manager | ✔️ | — | — | ✔️ | — | — | — | ✔️ |
+| Microsoft Password Manager | ✔️ | — | — | ✔️ | — | — | — | — |
+| iCloud Keychain (incl. Managed) | — | — | — | — | ✔️ | ✔️ | ✔️ | — |
+| Mac Platform SSO | — | — | — | ✔️ | ✔️ | ✔️ | — | — |
+| Samsung Pass | — | — | — | — | — | — | — | ✔️ |
 
-Non-platform passkey providers include third-party passkey providers like security keys, Microsoft Authenticator, 1Password, and other FIDO2-compatible providers.
+The following table describes which non-platform passkey types suppress the nudge:
+
+| Credential | Windows + Chrome | Windows + Edge | Windows + Other | Mac + Chrome | Mac + Edge | Mac + Other | iOS | Android |
+|---|---|---|---|---|---|---|---|---|
+| Any non-platform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | — | ✔️ | ✔️ | — | ✔️ | ✔️ |
+
+> [!NOTE]
+> - **Windows**: Users are only nudged on Chrome and Edge. Other browsers don't trigger the nudge.
+> - **Linux**: Users aren't nudged. FIDO2 passkeys aren't available on Linux.
 
 ## Frequently asked questions
 
