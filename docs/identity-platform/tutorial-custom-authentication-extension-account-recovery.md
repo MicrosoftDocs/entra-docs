@@ -257,13 +257,15 @@ Now you associate the custom authentication extension with the identity verifica
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
-1. Browse to **Protection** > **Identity verification** > **Identity verification profiles**.
+1. Browse to **Entra ID** > **Account Recovery** > **Identity verification profiles**.
 
 1. Select the identity verification profile you want to update (or create a new one).
 
 1. On the **Account validation** step, under **Additional claim validations**, toggle **Enable** to **On**.
 
 1. In the **Selected extension** dropdown, select the custom authentication extension you created in Step 2 (`Account Recovery Claims Validation`).
+
+    :::image type="content" source="media/custom-extension-account-recovery/account-recovery-identity-verification-profile.png" alt-text="Screenshot showing the identity verification profile with the custom authentication extension selected.":::
 
 1. Select **Review and finalize**, then **Save**.
 
