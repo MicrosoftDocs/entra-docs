@@ -109,17 +109,17 @@ items:
   - name: Install the Windows client as a proof of concept
     href: ./scripts/powershell-windows-client-install-proof-of-concept.md
   - name: List Microsoft Entra snapshots for Global Secure Access recovery
-    href: ./scripts/powershell-get-gsa-entra-snapshot.md
+    href: ./scripts/powershell-get-entra-snapshot.md
   - name: Preview a Microsoft Entra recovery for Global Secure Access objects
-    href: ./scripts/powershell-start-gsa-entra-recovery-preview.md
+    href: ./scripts/powershell-start-entra-recovery-preview.md
   - name: Run a Microsoft Entra recovery for Global Secure Access objects
-    href: ./scripts/powershell-invoke-gsa-entra-recovery.md
+    href: ./scripts/powershell-invoke-entra-recovery.md
   - name: Calculate the alert noise ratio for Global Secure Access detections
-    href: ./scripts/powershell-test-gsa-alert-noise-ratio.md
+    href: ./scripts/powershell-test-alert-noise-ratio.md
   - name: Verify Global Secure Access configuration backup compliance
-    href: ./scripts/powershell-test-gsa-backup-compliance.md
+    href: ./scripts/powershell-test-backup-compliance.md
   - name: Check Global Secure Access RBAC review hygiene
-    href: ./scripts/powershell-test-gsa-rbac-hygiene.md
+    href: ./scripts/powershell-test-rbac-hygiene.md
 - name: Concepts
   expanded: false
   items: 
