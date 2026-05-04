@@ -21,22 +21,22 @@ Use this template for **normal** and **major** changes that have user-visible im
 | **Change summary** | _(one-sentence description)_ |
 | **Change date and time** | |
 | **Expected duration** | |
-| **Expected user impact** | _(e.g., brief reconnection, temporary access loss, new client version required)_ |
+| **Expected user impact** | _(for example, brief reconnection, temporary access loss, new client version required)_ |
 
 ## Stakeholder notification matrix
 
 | Audience | When to notify | Channel | Owner | Sent? |
 | --- | --- | --- | --- | --- |
-| **Operations team** | 5 business days before change | Team meeting or Teams channel | Service owner | [ ] |
-| **IT support / help desk** | 3 business days before change | Email and knowledge base article update | Network security engineer | [ ] |
-| **Affected users** | 2 business days before change | Email or company portal announcement | Service owner | [ ] |
-| **Security / SOC team** | 2 business days before change | Email or SIEM notification | Network security engineer | [ ] |
-| **Management / leadership** | 2 business days before major changes | Email summary | Service owner | [ ] |
+| **Operations team** | Five business days before change | Team meeting or Teams channel | Service owner | [ ] |
+| **IT support / help desk** | Three business days before change | Email and knowledge base article update | Network security engineer | [ ] |
+| **Affected users** | Two business days before change | Email or company portal announcement | Service owner | [ ] |
+| **Security / SOC team** | Two business days before change | Email or security information and event management (SIEM) notification | Network security engineer | [ ] |
+| **Management / leadership** | Two business days before major changes | Email summary | Service owner | [ ] |
 | **All stakeholders** | Immediately after change completion | Email or Teams channel update | Service owner | [ ] |
 
-## Pre-change notification template
+## Prechange notification template
 
-**Subject:** Planned Global Secure Access maintenance — *date and time*
+**Subject:** Planned Global Secure Access maintenance—*date and time*
 
 ---
 
@@ -46,7 +46,7 @@ Use this template for **normal** and **major** changes that have user-visible im
 
 **When:**
 
-*Date, start time, expected end time, and time zone.*
+*Date of the change, start time, expected end time, and time zone.*
 
 **Who is affected:**
 
@@ -58,7 +58,7 @@ Describe what users experience. Be specific. Examples:
 
 - "You might be briefly disconnected and need to reconnect."
 - "Access to *application* is temporarily unavailable."
-- "No user impact expected. We are notifying you as a precaution."
+- "No user impact expected. We're notifying you as a precaution."
 
 **What you need to do:**
 
@@ -76,7 +76,7 @@ Contact *help desk email or Teams channel* if you have questions or experience i
 
 ## Post-change notification template
 
-**Subject:** Global Secure Access maintenance complete — *date*
+**Subject:** Global Secure Access maintenance completed—*date*
 
 ---
 
@@ -92,9 +92,9 @@ Contact *help desk email or Teams channel* if you have questions or experience i
 
 ## Communication checklist
 
-- [ ] Pre-change notification drafted and reviewed
+- [ ] Prechange notification drafted and reviewed
 - [ ] Help desk briefed and knowledge base updated with expected issues and responses
-- [ ] Pre-change notification sent to all audiences per the matrix above
+- [ ] Prechange notification sent to all audiences in the stakeholder notification matrix
 - [ ] Day-of reminder sent (for major changes affecting many users)
 - [ ] Post-change notification sent after the change completes
 - [ ] Help desk debriefed on any unexpected issues reported during the change
