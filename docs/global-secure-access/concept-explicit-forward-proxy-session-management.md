@@ -1,6 +1,6 @@
 ---
-title: Learn about Explicit Forward Proxy session management concepts
-description: Learn about Explicit Forward Proxy session management concepts
+title: Explicit Forward Proxy Session Management Concepts
+description: Learn about Explicit Forward Proxy session management concepts.
 ms.topic: concept-article
 ms.date: 04/06/2026
 ms.author: alexpav
@@ -8,46 +8,47 @@ author: idmdev
 ms.reviewer: 
 ---
 
-# Explicit Forward Proxy (preview) Session Management
+# Explicit Forward Proxy (preview) session management
 
-Explicit Forward Proxy (EFP) uses Microsoft Entra ID authentication and authorization to validate user access before allowing network traffic, allowing for adaptive politics in Microsoft Entra Conditional Access, modern credentials like passkeys, and Continuous Access Evaluation (CAE) with session revocation. Classic proxy authorization methods, such as basic, digest, NTLM, or Kerberos, aren't supported.
-
+Explicit Forward Proxy uses Microsoft Entra ID authentication and authorization to validate user access before allowing network traffic. This validation method allows for adaptive policies in Microsoft Entra Conditional Access, modern credentials like passkeys, and continuous access evaluation with session revocation. Classic proxy authorization methods, such as basic, digest, NTLM, or Kerberos, aren't supported.
 
 > [!IMPORTANT]
-> The Explicit Forward Proxy feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Session management settings
 
-EFP supports smart session management (enabled by default), HTTP header-based session affinity (can be enabled), IP-based session affinity (enabled by default), and cookie-based session affinity. Different capabilities available with different affinity methods:
+Explicit Forward Proxy supports smart session management (enabled by default), HTTP header-based session affinity (can be enabled), IP-based session affinity (enabled by default), and cookie-based session affinity. Available capabilities depend on the affinity method.
 
-| Capability | IP affinity | Session ID	| HTTP header |
+| Capability | IP affinity | Session ID | HTTP header |
 | --- | --- | --- | --- |
 | Enabled by default | Yes | Yes | No |
 | Can be disabled | No | Yes | Yes |
-| Supports User Profile Assignments | No | Yes | Yes |
-| Relies on EFP-based PAC hosting | No | Yes | No |
-
+| Supports user profile assignments | No | Yes | Yes |
+| Relies on Explicit Forward Proxy-based proxy automatic configuration (PAC) hosting | No | Yes | No |
 
 > [!IMPORTANT]
-> We recommend that you enable a Conditional Access policy that only allows access to EFP from your trusted networks.
+> We recommend that you enable a Conditional Access policy that only allows access to Explicit Forward Proxy from your trusted networks.
 
-## EFP Smart Session Management
+## Explicit Forward Proxy Smart Session Management
 
-Browsers request PAC files when the browser is first started, upon change of network location, change in power state of the device, and every 12 hours. When EFP is used for PAC file hosting, EFP returns a unique session ID as part of the EFP proxy endpoint defined in the PAC file. Each time PAC file is requested, a new session ID is generated. Using unique session identifiers allows EFP to map unique browsing sessions to specific authenticated users.
+Browsers request PAC files when the browser is first started, upon change of network location, upon change in power state of the device, and every 12 hours. When you use Explicit Forward Proxy for PAC file hosting, Explicit Forward Proxy returns a unique session ID as part of the proxy endpoint defined in the PAC file.
 
-## HTTP Header Session Management
+Each time a PAC file is requested, a new session ID is generated. Using unique session identifiers allows Explicit Forward Proxy to map unique browsing sessions to specific authenticated users.
 
-EFP also supports HTTP header session management. You can configure your organization’s outbound proxy service to inject x-ms-gsa-efp-forwarded-for header to all traffic for *.interent.efp.globalsecureaccess.microsoft.com with a unique IP address of the device (for example, internal IP address), allowing EFP to use x-ms-gsa-efp-forwarded-for values to map authenticated users to EFP sessions.
+## HTTP header session management
+
+Explicit Forward Proxy also supports HTTP header session management. You can configure your organization's outbound proxy service to inject the `x-ms-gsa-efp-forwarded-for` header to all traffic for `*.interent.efp.globalsecureaccess.microsoft.com` with a unique IP address of the device (for example, internal IP address). This configuration allows Explicit Forward Proxy to use `x-ms-gsa-efp-forwarded-for` values to map authenticated users to Explicit Forward Proxy sessions.
 
 ## IP-based session affinity
 
-Once the user session is authenticated and authorized, EFP records the source IP of that user connection. Subsequent requests from the same IP address are allowed. If no other session management mechanism can be negotiated besides the source IP, EFP falls back to baseline security profile enforcement.
+After the user session is authenticated and authorized, Explicit Forward Proxy records the source IP of that user connection. Subsequent requests from the same IP address are allowed. If no other session management mechanism can be negotiated besides the source IP, Explicit Forward Proxy falls back to baseline security profile enforcement.
 
-## Continuous Access Evaluation
+## Continuous access evaluation
 
-If the user session is revoked (for example, due to account becoming disabled, password reset/change, MFA methods reset, or user session revocation), EFP receives a Continuous Access Evaluation (CAE) signal from Microsoft Entra ID and invalidate sessions associated with that user identity in near real time (2-5 minutes). After that, the user is required to reauthenticate with Microsoft Entra ID, and if successful, EFP connectivity is re-established.
+If the user session is revoked, Explicit Forward Proxy receives a continuous access evaluation signal from Microsoft Entra ID and invalidates sessions associated with that user identity in near real time (2 to 5 minutes). The revocation can be due to disabling of the user account, password reset/change, reset of multifactor authentication methods, or user risk change.
 
-## Next steps
+After the invalidation, the user must reauthenticate with Microsoft Entra ID. If the reauthentication is successful, Explicit Forward Proxy connectivity is re-established.
 
-- [Learn How to Configure Explicit Forward Proxy](how-to-configure-explicit-forward-proxy.md)
+## Related content
+
+- [Learn how to configure Explicit Forward Proxy](how-to-configure-explicit-forward-proxy.md)

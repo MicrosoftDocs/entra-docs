@@ -8,9 +8,12 @@ ms.author: alexpav
 author: idmdev
 ---
 
-# Configure Microsoft Edge with Global Secure Access Explicit Forward Proxy (preview) using Intune Mobile Application Management policy
+# Configure Microsoft Edge with Global Secure Access Explicit Forward Proxy (preview) by using a Intune Mobile Application Management policy
 
 You can automatically deliver the proxy settings and the automatic Certificate Authority trust settings in Microsoft Edge using the Intune app management policies.
+
+> [!IMPORTANT]
+> The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -21,13 +24,9 @@ You can automatically deliver the proxy settings and the automatic Certificate A
 
 ## Configuration
 
-> [!IMPORTANT]
-> The Explicit Forward Proxy feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Navigate to **Global Secure Access** > **Settings** > **Session Management** > **Explicit Forward Proxy**.
+1. Go to **Global Secure Access** > **Settings** > **Session Management** > **Explicit Forward Proxy**.
 
 1. Copy the PAC file URL from settings page and save it for the Intune app configuration policy you configure next.
 
@@ -72,7 +71,7 @@ You can automatically deliver the proxy settings and the automatic Certificate A
 
 1. Convert the TLS inspection root public key (certificate) to a contiguous plain-text string. You can do this either using PowerShell, or with Linux/macOS terminal:
 
-**Using PowerShell:**
+   **Using PowerShell:**
 
    1. Change directory to where the `.pem` / `.cer` plaintext key is stored.
 
@@ -92,7 +91,7 @@ You can automatically deliver the proxy settings and the automatic Certificate A
 
    1. Copy the resulting string from the console output and save it for the next step.
 
-      **Using Linux/macOS terminal:**
+   **Using Linux/macOS terminal:**
 
    1. Change directory to where the `.pem` / `.cer` plaintext key is stored.
 
