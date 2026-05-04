@@ -332,12 +332,7 @@ The registration campaign evaluates whether a user has a local passkey for their
 | iCloud Keychain (incl. Managed) | — | — | — | — | ✔️ | ✔️ | ✔️ | — |
 | Mac Platform SSO | — | — | — | ✔️ | ✔️ | ✔️ | — | — |
 | Samsung Pass | — | — | — | — | — | — | — | ✔️ |
-
-The following table describes which non-platform passkey types suppress the nudge:
-
-| Credential | Windows + Chrome | Windows + Edge | Windows + Other | Mac + Chrome | Mac + Edge | Mac + Other | iOS | Android |
-|---|---|---|---|---|---|---|---|---|
-| Any non-platform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | — | ✔️ | ✔️ | — | ✔️ | ✔️ |
+| Any non-platform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 > [!NOTE]
 > - **Windows**: Users are only nudged on Chrome and Edge. Other browsers don't trigger the nudge.
