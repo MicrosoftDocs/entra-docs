@@ -119,7 +119,7 @@ items:
   - name: Verify Global Secure Access configuration backup compliance
     href: ./scripts/powershell-test-backup-compliance.md
   - name: Check Global Secure Access RBAC review hygiene
-    href: ./scripts/powershell-test-rbac-hygiene.md
+    href: ./scripts/powershell-test-role-based-access-control-hygiene.md
 - name: Concepts
   expanded: false
   items: 
