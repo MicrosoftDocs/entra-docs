@@ -5,7 +5,7 @@ author: tilarso
 ms.author: tilarso
 ms.service: entra-id
 ms.topic: how-to
-ms.custom: msecd-doc-authoring-108
+ms.custom: msecd-doc-authoring-1012
 ms.date: 04/29/2026
 
 #customer intent: As an identity administrator, I want to enable and configure account recovery in Microsoft Entra ID so that users who lose all their authentication methods can securely recover their accounts through identity verification without contacting the help desk.
@@ -14,7 +14,7 @@ ms.date: 04/29/2026
 
 # Enable and configure account recovery in Microsoft Entra ID
 
-Account recovery is a Microsoft Entra ID feature that helps users regain access to their accounts when they lose all their authentication methods — such as when they lose a phone,  hardware token, or their passkeys. The feature uses third-party identity verification providers to verify a user's identity through government-issued identification, allowing them to recover their account and re-enroll authentication methods.
+Account recovery is a Microsoft Entra ID feature that helps users regain access to their accounts when they lose all their authentication methods — such as when they lose a phone, hardware token, or their passkeys. The feature uses third-party identity verification providers to verify a user's identity through government-issued identification, allowing them to recover their account and re-enroll authentication methods.
 
 This article walks through the complete process of enabling and configuring account recovery, from initial setup through creating identity verification profiles and deploying to production.
 
@@ -31,11 +31,11 @@ This article walks through the complete process of enabling and configuring acco
 
 1. Go to **Entra ID** > **Account recovery**.
 
-2. If this is your first time opening Account Recovery, you see the **Getting started** page with a setup checklist.
+1. If this is your first time opening Account Recovery, you see the **Getting started** page with a setup checklist.
 
-3. After setup is complete, the **Account Recovery** overview page shows the status of each setup task and provides information about the feature.
+1. After setup is complete, the **Account Recovery** overview page shows the status of each setup task and provides information about the feature.
 
-   [![Screenshot that shows the Account Recovery overview page with the getting started checklist and feature information.](media/how-to-account-recovery-enable/account-recovery-overview.png)](media/how-to-account-recovery-enable/account-recovery-overview.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/account-recovery-overview.png" alt-text="Screenshot that shows the Account Recovery overview page with the getting started checklist and feature information." border="true" lightbox="media/how-to-account-recovery-enable/account-recovery-overview.png":::
 
 The overview page guides you through the required setup tasks:
 
@@ -48,7 +48,7 @@ The overview page guides you through the required setup tasks:
 > [!TIP]
 > Select **Estimate savings** on the overview page to open the cost savings estimator. This tool helps you project potential savings by comparing the cost of traditional help desk recovery against self-service account recovery.
 >
-> [![Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings.](media/how-to-account-recovery-enable/cost-savings-estimator.png)](media/how-to-account-recovery-enable/cost-savings-estimator.png#lightbox)
+> :::image type="content" source="media/how-to-account-recovery-enable/cost-savings-estimator.png" alt-text="Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings." border="true" lightbox="media/how-to-account-recovery-enable/cost-savings-estimator.png":::
 
 ## Subscribe to an identity verification provider
 
@@ -58,7 +58,7 @@ Before you create an identity verification profile, subscribe to at least one id
 
 1. In the **Identity verification providers** panel, browse the available providers. You can filter by compliance standard.
 
-   [![Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options.](media/how-to-account-recovery-enable/select-idv-provider.png)](media/how-to-account-recovery-enable/select-idv-provider.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/select-idv-provider.png" alt-text="Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options." border="true" lightbox="media/how-to-account-recovery-enable/select-idv-provider.png":::
 
 1. For a provider you haven't subscribed to, select **Get Solution** to open the provider's listing in the Microsoft Security Store.
 
@@ -88,7 +88,7 @@ Identity verification profiles define how account recovery works for a specific 
 
 1. On the **Profile details** step, enter a **Name** for the profile and an optional **Description** to help you identify it later.
 
-   [![Screenshot that shows the profile details step of the wizard with fields for profile name and description.](media/how-to-account-recovery-enable/profile-setup-name.png)](media/how-to-account-recovery-enable/profile-setup-name.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/profile-setup-name.png" alt-text="Screenshot that shows the profile details step of the wizard with fields for profile name and description." border="true" lightbox="media/how-to-account-recovery-enable/profile-setup-name.png":::
 
 1. Select **Next**.
 
@@ -99,7 +99,7 @@ Identity verification profiles define how account recovery works for a specific 
    - **Evaluation** — Users can test the identity verification process without actually recovering their accounts. Use this mode to validate the flow before production deployment.
    - **Production** — Users who complete identity verification can fully recover their accounts and re-enroll authentication methods.
 
-   [![Screenshot that shows the recovery mode step with Evaluation and Production options and their descriptions.](media/how-to-account-recovery-enable/profile-recovery-mode.png)](media/how-to-account-recovery-enable/profile-recovery-mode.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/profile-recovery-mode.png" alt-text="Screenshot that shows the recovery mode step with Evaluation and Production options and their descriptions." border="true" lightbox="media/how-to-account-recovery-enable/profile-recovery-mode.png":::
 
    > [!NOTE]
    > Start with **Evaluation** mode to test the identity verification flow with a small group before enabling full recovery. In Evaluation mode, accounts are **not** recovered — users can only verify the process works.
@@ -113,7 +113,7 @@ Identity verification profiles define how account recovery works for a specific 
    - Select the **Include** tab to target specific groups. Choose **All users** or **Select targets** and then **Select groups** to pick specific groups.
    - Select the **Exclude** tab to exclude specific groups from the profile. Exclusions are feature-wide.
 
-   [![Screenshot that shows the user group selection step with Include and Exclude tabs and group selection options.](media/how-to-account-recovery-enable/profile-group-selection.png)](media/how-to-account-recovery-enable/profile-group-selection.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/profile-group-selection.png" alt-text="Screenshot that shows the user group selection step with Include and Exclude tabs and group selection options." border="true" lightbox="media/how-to-account-recovery-enable/profile-group-selection.png":::
 
 1. Select **Next**.
 
@@ -121,7 +121,7 @@ Identity verification profiles define how account recovery works for a specific 
 
 1. On the **Identity verification providers** step, select a provider to use for this profile. The list shows providers you've already subscribed to and providers available for new subscriptions.
 
-   [![Screenshot that shows the identity verification providers step with available providers and their compliance badges.](media/how-to-account-recovery-enable/profile-idv-partner.png)](media/how-to-account-recovery-enable/profile-idv-partner.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/profile-idv-partner.png" alt-text="Screenshot that shows the identity verification providers step with available providers and their compliance badges." border="true" lightbox="media/how-to-account-recovery-enable/profile-idv-partner.png":::
 
    - For subscribed providers, select **Select**.
    - For new providers, select **Get Solution** to subscribe through the Microsoft Security Store first.
@@ -132,9 +132,9 @@ Identity verification profiles define how account recovery works for a specific 
 
 1. On the **Account validation** step, configure how identity claims from the verification provider are matched against user properties in Microsoft Entra ID.
 
-   [![Screenshot that shows the account validation step with ID claim matching, match confidence, and custom authentication extension options.](media/how-to-account-recovery-enable/profile-account-validation.png)](media/how-to-account-recovery-enable/profile-account-validation.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/profile-account-validation.png" alt-text="Screenshot that shows the account validation step with ID claim matching, match confidence, and custom authentication extension options." border="true" lightbox="media/how-to-account-recovery-enable/profile-account-validation.png":::
 
-   **ID Claim matching** shows the default claim mapping between the provider's claims and Entra attributes:
+   **ID Claim matching** shows the default claim mapping between the provider's claims and Microsoft Entra attributes:
 
    | Provider claim (Target) | Entra claim (Source) |
    |---|---|
@@ -158,7 +158,7 @@ Identity verification profiles define how account recovery works for a specific 
    1. Set the **Enable** toggle to on.
    1. Select an existing custom authentication extension, or select **Create new extension** to register a new Azure Function, Logic App, or REST API endpoint.
 
-   [![Screenshot that shows the custom authentication extension configuration with enable toggle and extension selection.](media/how-to-account-recovery-enable/profile-account-validation-scrolled.png)](media/how-to-account-recovery-enable/profile-account-validation-scrolled.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/profile-account-validation-scrolled.png" alt-text="Screenshot that shows the custom authentication extension configuration with enable toggle and extension selection." border="true" lightbox="media/how-to-account-recovery-enable/profile-account-validation-scrolled.png":::
 
    <!-- TODO: Link to custom authentication extension documentation for account recovery when available. -->
 
@@ -173,7 +173,7 @@ Identity verification profiles define how account recovery works for a specific 
    - **Identity verification providers** — The selected provider
    - **Account validation** — Claim mappings, match confidence, and custom authentication extension settings
 
-   [![Screenshot that shows the review and finalize step with a summary of all profile configuration settings.](media/how-to-account-recovery-enable/profile-review-create.png)](media/how-to-account-recovery-enable/profile-review-create.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/profile-review-create.png" alt-text="Screenshot that shows the review and finalize step with a summary of all profile configuration settings." border="true" lightbox="media/how-to-account-recovery-enable/profile-review-create.png":::
 
    Select **edit** next to any section to go back and change settings.
 
@@ -183,7 +183,7 @@ Identity verification profiles define how account recovery works for a specific 
 
 After you create one or more profiles, the **Profiles** tab shows all your identity verification profiles in a table view.
 
-[![Screenshot that shows the Profiles tab with a table listing profile name, provider, state, mode, priority, and actions.](media/how-to-account-recovery-enable/profiles-list.png)](media/how-to-account-recovery-enable/profiles-list.png#lightbox)
+:::image type="content" source="media/how-to-account-recovery-enable/profiles-list.png" alt-text="Screenshot that shows the Profiles tab with a table listing profile name, provider, state, mode, priority, and actions." border="true" lightbox="media/how-to-account-recovery-enable/profiles-list.png":::
 
 From this page, you can:
 
