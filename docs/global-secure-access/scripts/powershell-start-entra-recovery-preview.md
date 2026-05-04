@@ -1,6 +1,6 @@
 ---
 title: PowerShell sample - Preview a Microsoft Entra recovery for Global Secure Access objects
-description: "Use this PowerShell script to create a non-destructive Microsoft Entra recovery preview job scoped to Global Secure Access-related directory objects."
+description: "Use this PowerShell script to create a nondestructive Microsoft Entra recovery preview job scoped to Global Secure Access-related directory objects."
 ms.topic: sample
 ms.date: 05/04/2026
 ms.reviewer: tdetzner
@@ -12,9 +12,9 @@ ai-usage: ai-assisted
 Creates a recoveryPreviewJob against a chosen tenant snapshot, scoped to
 entity types that affect Global Secure Access: Conditional Access policies,
 named locations, applications, and service principals. The preview job is a
-non-destructive dry run.
+nondestructive dry run.
 
-After the job reaches status 'succeeded', call the getChanges function
+After the job reaches status 'succeeded,' call the getChanges function
 against the returned PreviewJobUri to enumerate the objects and property
 changes that a recovery would apply.
 
@@ -27,7 +27,7 @@ Use Get-GsaEntraSnapshot.ps1 to retrieve available SnapshotId values.
 - **Minimum module versions**: Microsoft.Graph.Authentication 2.x
 - **Beta API**: subject to change per Microsoft Graph versioning policy.
 - Only one preview or recovery job can run per tenant at a time.
-- **Reference**: [Microsoft Entra Backup and Recovery — recovery preview job](/graph/api/resources/entrarecoveryservices-recoverypreviewjob?view=graph-rest-beta&preserve-view=true)
+- **Reference**: [Microsoft Entra Backup and Recovery—recovery preview job](/graph/api/resources/entrarecoveryservices-recoverypreviewjob?view=graph-rest-beta&preserve-view=true)
 
 ## Parameters
 
@@ -56,9 +56,9 @@ Use Get-GsaEntraSnapshot.ps1 to retrieve available SnapshotId values.
     Creates a recoveryPreviewJob against a chosen tenant snapshot, scoped to
     entity types that affect Global Secure Access: Conditional Access policies,
     named locations, applications, and service principals. The preview job is a
-    non-destructive dry run.
+    nondestructive dry run.
 
-    After the job reaches status 'succeeded', call the getChanges function
+    After the job reaches status 'succeeded,' call the getChanges function
     against the returned PreviewJobUri to enumerate the objects and property
     changes that a recovery would apply.
 

@@ -10,8 +10,8 @@ ai-usage: ai-assisted
 # Run a Microsoft Entra recovery for Global Secure Access objects
 
 Creates a recoveryJob that restores the in-scope directory objects to their
-state in the selected snapshot. This is a destructive operation and should
-only be run after a preview job has been reviewed and approved.
+state in the selected snapshot. This operation is destructive. Run it only
+after you review and approve a preview job.
 
 Use Start-GsaEntraRecoveryPreview.ps1 first, review the output of its
 getChanges function, then execute this script with the same SnapshotId and
@@ -26,9 +26,9 @@ EntityTypes.
 - **Destructive**: always run a preview job first and review the changes.
 - Only one preview or recovery job can run per tenant at a time.
 - Recovery operations are logged in Entra audit logs under category
-- "Backup and Recovery". Recovery operations don't fire Graph subscriptions
+- "Backup and Recovery." Recovery operations don't fire Graph subscriptions
 - or delta records.
-- **Reference**: [Microsoft Entra Backup and Recovery — recovery job](/graph/api/resources/entrarecoveryservices-recoveryjob?view=graph-rest-beta&preserve-view=true)
+- **Reference**: [Microsoft Entra Backup and Recovery—recovery job](/graph/api/resources/entrarecoveryservices-recoveryjob?view=graph-rest-beta&preserve-view=true)
 
 ## Parameters
 
@@ -56,8 +56,8 @@ EntityTypes.
     Executes a Microsoft Entra recovery job for GSA-related objects from a snapshot.
 .DESCRIPTION
     Creates a recoveryJob that restores the in-scope directory objects to their
-    state in the selected snapshot. This is a destructive operation and should
-    only be run after a preview job has been reviewed and approved.
+    state in the selected snapshot. This operation is destructive. Run it only
+    after you review and approve a preview job.
 
     Use Start-GsaEntraRecoveryPreview.ps1 first, review the output of its
     getChanges function, then execute this script with the same SnapshotId and
@@ -90,7 +90,7 @@ EntityTypes.
     Destructive: always run a preview job first and review the changes.
     Only one preview or recovery job can run per tenant at a time.
     Recovery operations are logged in Entra audit logs under category
-    "Backup and Recovery". Recovery operations don't fire Graph subscriptions
+    "Backup and Recovery." Recovery operations don't fire Graph subscriptions
     or delta records.
     Reference: https://learn.microsoft.com/graph/api/resources/entrarecoveryservices-recoveryjob?view=graph-rest-beta&preserve-view=true
     Author: GSA Operations
