@@ -2,8 +2,9 @@
 title: Run a registration campaign to set up Microsoft Authenticator or passkey
 description: Learn how to nudge users to set up Microsoft Authenticator or a passkey by using a registration campaign in Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 03/11/2026
+ms.date: 05/04/2026
 author: mjsantani
+ai-usage: ai-assisted
 ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-108
 #Customer intent: As an identity administrator, I want to encourage users to set up Microsoft Authenticator or a passkey in Microsoft Entra ID to improve and secure user sign-in events.
 ---
@@ -45,30 +46,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
     :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot showing the registration campaign prompt asking the user to set up Microsoft Authenticator.":::
 
-1. Select **Next** and step through the Authenticator app setup. 
-1. First download the app.  
-
-    :::image type="content" source="./media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png" alt-text="Screenshot showing the prompt to download Microsoft Authenticator from the app store."::: 
-
-   1. See how to set up the Authenticator app. 
-
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/setup.png" alt-text="Screenshot showing the Authenticator app setup instructions with a QR code.":::
-
-   1. Scan the QR Code. 
-
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/scan.png" alt-text="Screenshot showing a QR code to scan with the Authenticator app.":::
-
-   1. Verify your identity.
-
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/approved.png" alt-text="Screenshot showing the Verify your identity screen during Authenticator setup."::: 
-
-   1. Approve the test notification on your device.
-
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/test.png" alt-text="Screenshot showing a test notification sent to the Authenticator app for approval."::: 
-
-   1. Authenticator app is now successfully set up.
-   
-      :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot showing that Authenticator app setup completed successfully.":::
+1. Select **Next** and step through the Authenticator app setup. For detailed setup instructions, see [Set up the Microsoft Authenticator app as your verification method](/entra/user-help/user-help-auth-app-download-install).
 
 1. If you don't want to set up the Authenticator app, you can select **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
@@ -81,9 +59,11 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 1. If passkey is enabled for your account and you haven't already registered a passkey, you get prompted to set up a passkey.
 
    > [!NOTE]
-   > Users who already have a passkey registered aren't nudged again. However, users who only have a Windows Hello for Business passkey or a Mac platform SSO passkey are still nudged to register an additional passkey.
+   > The passkey nudge evaluates whether you have a **local passkey** for your current device and browser combination. If you already have a local passkey for that experience, you aren't nudged. This means the nudge is per-device/browser, not account-wide. For details about which passkey types satisfy the nudge on each platform, see the [passkey nudge evaluation by platform](#passkey-nudge-evaluation-by-platform) section.
 
 1. If you don't want to set up a passkey, you can tap **Skip for now** to snooze the prompt.
+
+1. If you encounter an error during passkey registration, you see an error screen with a skip option. Skips from the error screen don't count toward your limited skip count, so you won't be blocked from sign-in due to registration errors.
 
 ## Enable the registration campaign policy using the Microsoft Entra admin center
 
@@ -109,7 +89,7 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
    > - **Limited number of snoozes** changes to Disabled (unlimited snoozes). This setting is no longer configurable.
    > - **User targeting** changes from voice call or text message users to all multifactor authentication (MFA) capable users.
    >
-   > If your tenant has AAGUID-specific key restrictions configured, the targeted authentication method won't update to passkeys under Microsoft managed mode. You can still switch to **Enabled** and configure passkey targeting manually. Once the changes take effect, targeted users receive passkey registration nudges during sign-in after they complete multifactor authentication.
+   > If your tenant targets specific AAGUIDs in the passkey (FIDO2) policy, the targeted authentication method won't update to passkeys under Microsoft managed mode. You can still switch to **Enabled** and configure passkey targeting manually. Once the changes take effect, targeted users receive passkey registration nudges during sign-in after they complete multifactor authentication.
    >
    > If you want passkeys enabled but don't want the registration campaign to target passkeys, you can switch the state to **Enabled** and target Microsoft Authenticator, or set the state to **Disabled**. For more information about how Microsoft managed values are set, see [Microsoft managed values](concept-authentication-default-enablement.md).
 
@@ -207,9 +187,6 @@ Here are a few sample JSON bodies you can use to get started.
 
 - Include all users and target passkey
   
-  > [!NOTE]
-  > Passkey targeting via the Graph API isn't available yet. The following example is for future use when the API supports passkey as a `targetedAuthenticationMethod`. Use the Microsoft Entra admin center to configure passkey registration campaigns.
-
   If you want to include ALL users in your tenant and nudge them to register a passkey, update the following JSON example. Then paste it in Graph Explorer and run `PATCH` on the endpoint. 
 
   ```json
@@ -337,6 +314,24 @@ Here are a few sample JSON bodies you can use to get started.
 
 The nudge won't appear on mobile devices that run Android or iOS.
 
+> [!IMPORTANT]
+> The passkey nudge experience is currently tailored for users in a passkey profile that allows all types of passkeys (both synced and device-bound), has no AAGUID restrictions, and doesn't enforce attestation. If you use the **Enabled** state to target passkeys for users who are limited to device-bound only, synced only, or have AAGUID restrictions, users might be nudged to register a passkey type they aren't allowed to register, and registration fails. Future updates will refine the nudge logic for synced-only and device-bound-only scenarios.
+
+## Passkey nudge evaluation by platform
+
+The registration campaign evaluates whether a user has a local passkey for their current device and browser combination. The following table describes which passkey types satisfy the nudge on each platform:
+
+| Platform | Browser | Passkey types that satisfy the nudge (user isn't nudged) |
+|---|---|---|
+| Windows | Chrome | Windows Hello for Business, Entra passkey on Windows, Google Password Manager, or a non-platform passkey provider |
+| Windows | Edge | Windows Hello for Business, Entra passkey on Windows, Microsoft Password Manager, or a non-platform passkey provider |
+| macOS | Chrome, Edge, or other | Mac platform passkeys, or a non-platform passkey provider |
+| iOS | Any | iCloud Keychain, or a non-platform passkey provider |
+| Android | Any | Google Password Manager, Samsung Pass, or a non-platform passkey provider |
+| Linux | Any | Passkeys aren't supported; users aren't nudged |
+
+Non-platform passkey providers include third-party passkey providers like security keys, Microsoft Authenticator, 1Password, and other FIDO2-compatible providers.
+
 ## Frequently asked questions
 
 **Can users be nudged within an application?**
@@ -373,7 +368,7 @@ Yes. If a user is enabled for an Authenticator registration campaign and the Aut
 
 **Will a user who already has a passkey see the nudge?**
 
-No. If a user already has a registered passkey and the registration campaign targets passkeys, the user isn't nudged again. However, users who only have a Windows Hello for Business passkey or a Mac platform SSO passkey are still nudged to register an additional passkey.
+The passkey nudge evaluates whether a user has a **local passkey** for their current device and browser combination. If the user already has a local passkey for that experience, they aren't nudged. This means a user might be nudged on one device but not another. For platform-specific details, see the [passkey nudge evaluation by platform](#passkey-nudge-evaluation-by-platform) section.
 
 **Can I run registration campaigns for both Authenticator and passkeys at the same time?**
 
