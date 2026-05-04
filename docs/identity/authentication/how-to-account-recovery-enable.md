@@ -5,6 +5,7 @@ author: tilarso
 ms.author: tilarso
 ms.service: entra-id
 ms.topic: how-to
+ms.custom: msecd-doc-authoring-108
 ms.custom: msecd-doc-authoring-1012
 ms.date: 04/29/2026
 
@@ -14,14 +15,14 @@ ms.date: 04/29/2026
 
 # Enable and configure account recovery in Microsoft Entra ID
 
-Account recovery is a Microsoft Entra ID feature that helps users regain access to their accounts when they lose all their authentication methods — such as when they lose a phone, hardware token, or their passkeys. The feature uses third-party identity verification providers to verify a user's identity through government-issued identification, allowing them to recover their account and re-enroll authentication methods.
+Account recovery is a Microsoft Entra ID feature that helps users regain access to their accounts when they lose all their authentication methods — such as when they lose a phone,  hardware token, or their passkeys. The feature uses third-party identity verification providers to verify a user's identity through government-issued identification, allowing them to recover their account and re-enroll authentication methods.
 
 This article walks through the complete process of enabling and configuring account recovery, from initial setup through creating identity verification profiles and deploying to production.
 
 ## Prerequisites
 
 - A Microsoft Entra ID P1 license
-- [Verified ID](../../verified-id/verifiable-credentials-configure-tenant-quick.md) enabled and [Face Check](../../verified-id/using-facecheck.md) configured in your tenant
+- [Verified ID](../../verified-id/verifiable-credentials-configure-tenant-quick.md) enabled and [Face Check](../../verified-id/verify-faces.md) configured in your tenant
 - The [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) role in the Microsoft Entra tenant
 - The Contributor or Billing Administrator role for your Azure subscription (required for identity verification provider subscription)
 
@@ -31,11 +32,11 @@ This article walks through the complete process of enabling and configuring acco
 
 1. Go to **Entra ID** > **Account recovery**.
 
-1. If this is your first time opening Account Recovery, you see the **Getting started** page with a setup checklist.
+2. If this is your first time opening Account Recovery, you see the **Getting started** page with a setup checklist.
 
-1. After setup is complete, the **Account Recovery** overview page shows the status of each setup task and provides information about the feature.
+3. After setup is complete, the **Account Recovery** overview page shows the status of each setup task and provides information about the feature.
 
-   :::image type="content" source="media/how-to-account-recovery-enable/account-recovery-overview.png" alt-text="Screenshot that shows the Account Recovery overview page with the getting started checklist and feature information." border="true" lightbox="media/how-to-account-recovery-enable/account-recovery-overview.png":::
+   [![Screenshot that shows the Account Recovery overview page with the getting started checklist and feature information.](media/account-recovery-overview.png)](media/account-recovery-overview.png#lightbox)
 
 The overview page guides you through the required setup tasks:
 
@@ -48,7 +49,7 @@ The overview page guides you through the required setup tasks:
 > [!TIP]
 > Select **Estimate savings** on the overview page to open the cost savings estimator. This tool helps you project potential savings by comparing the cost of traditional help desk recovery against self-service account recovery.
 >
-> :::image type="content" source="media/how-to-account-recovery-enable/cost-savings-estimator.png" alt-text="Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings." border="true" lightbox="media/how-to-account-recovery-enable/cost-savings-estimator.png":::
+> [![Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings.](media/cost-savings-estimator.png)](media/cost-savings-estimator.png#lightbox)
 
 ## Subscribe to an identity verification provider
 
@@ -58,7 +59,7 @@ Before you create an identity verification profile, subscribe to at least one id
 
 1. In the **Identity verification providers** panel, browse the available providers. You can filter by compliance standard.
 
-   :::image type="content" source="media/how-to-account-recovery-enable/select-idv-provider.png" alt-text="Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options." border="true" lightbox="media/how-to-account-recovery-enable/select-idv-provider.png":::
+   [![Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options.](media/select-idv-provider.png)](media/select-idv-provider.png#lightbox)
 
 1. For a provider you haven't subscribed to, select **Get Solution** to open the provider's listing in the Microsoft Security Store.
 
@@ -144,7 +145,7 @@ Identity verification profiles define how account recovery works for a specific 
 1. Under **Match confidence**, select the matching behavior:
 
    - **Exact** — Claims must match exactly.
-   - **Relaxed** — Allows for minor variations in name matching.
+   - **Relaxed** — Uses cross-field word matching to accommodate variations in how names appear on government-issued documents versus Microsoft Entra ID user profiles. For details on how relaxed matching works, see [How is the Verified ID matched against Microsoft Entra ID account details?](self-service-account-recovery.md#how-is-the-verified-id-matched-against-microsoft-entra-id-account-details)
 
 1. (Optional) Under **Additional claim validations**, enable a custom authentication extension to add organization-specific account matching logic during recovery.
 

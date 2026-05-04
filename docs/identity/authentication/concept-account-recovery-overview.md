@@ -5,6 +5,7 @@ author: tilarso
 ms.author: tilarso
 ms.service: entra-id
 ms.topic: concept-article
+ms.custom: msecd-doc-authoring-108
 ms.custom: msecd-doc-authoring-1012
 ms.date: 04/29/2026
 
@@ -76,19 +77,19 @@ Account recovery operates through a structured identity verification and trust r
 
 The account recovery process combines multiple verification layers to ensure that only legitimate account owners regain access.
 
-#### Account discovery
+### Account discovery
 
 The user provides their account identifier at sign-in and indicates they can't access their account. The system checks whether the account is eligible for recovery based on the identity verification profiles configured by the tenant administrator, then directs the user to the appropriate identity verification provider.
 
-#### Identity verification
+### Identity verification
 
 The user is redirected to the identity verification provider specified in their applicable profile. The provider verifies government-issued identification documents using advanced fraud detection. Liveness checks and facial recognition confirm the person is physically present. Upon successful verification, the user receives a verifiable credential (Verified ID) stored in Microsoft Authenticator.
 
-#### Credential validation
+### Credential validation
 
 The user presents their newly acquired Verified ID to Microsoft Entra ID. The system validates the credential's authenticity and matches identity attributes from the credential against stored user profile information — first name and last name by default. If a custom authentication extension is configured in the profile, additional claim validation runs against organizational data.
 
-#### Access restoration
+### Access restoration
 
 The user receives a Temporary Access Pass with limited validity and is guided through registering new authentication methods, such as passkeys.
 
@@ -136,13 +137,15 @@ For organizations that need stronger validation, custom authentication extension
 > [!IMPORTANT]
 > Data processed by the custom authentication extension stays within the organization's trust boundary. No organizational data is shared with Microsoft — only the match result is returned to the account recovery flow.
 
-## Related content
+## Next steps
 
-Account recovery takes about 5–10 minutes to set up. Start in Evaluation mode so you can validate the experience before enabling production recovery.
+Account recovery takes about 5–10 minutes to set up. Start in Evaluation mode so you can validate the experience before enabling production recovery. To get started, see [Enable and configure account recovery in Microsoft Entra ID](how-to-account-recovery-enable.md).
+
+## Related content
 
 - [Enable and configure account recovery in Microsoft Entra ID](how-to-account-recovery-enable.md)
 - [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-for-users.md)
-- [Frequently asked questions about Microsoft Entra ID account recovery](self-service-account-recovery.yml)
+- [Frequently asked questions about Microsoft Entra ID account recovery](self-service-account-recovery.md)
 - [What is Microsoft Entra Verified ID?](/entra/verified-id/decentralized-identifier-overview)
 - [Enable the Temporary Access Pass policy](howto-authentication-temporary-access-pass.md)
 - [How it works: Microsoft Entra self-service password reset](concept-sspr-howitworks.md)
