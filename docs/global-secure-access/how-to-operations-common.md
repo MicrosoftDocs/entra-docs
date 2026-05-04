@@ -27,7 +27,7 @@ For initial deployment and configuration, see the [Global Secure Access deployme
 
 Assign clear ownership for GSA operations. The following RACI matrix defines who is **R**esponsible, **A**ccountable, **C**onsulted, and **I**nformed for key operational activities.
 
-| Activity | Service Owner | Network Security Engineer | Identity Engineer | SOC Analyst | IT Support / Helpdesk | Platform Ops / Monitoring |
+| Activity | Service Owner | Network Security Engineer | Identity Engineer | SOC Analyst | IT Support / Help desk | Platform Ops / Monitoring |
 | --- | --- | --- | --- | --- | --- | --- |
 | Approve policy changes | A | R | C | C | I | I |
 | Configure access policies | I | R | C | C | — | I |
@@ -50,10 +50,10 @@ Assign clear ownership for GSA operations. The following RACI matrix defines who
 | Role | Key responsibilities |
 | --- | --- |
 | **Service Owner / GSA Administrator** | Overall accountability for GSA performance, compliance, and alignment with business requirements. Approves significant changes. Coordinates across identity, endpoint, and networking teams. |
-| **Network Security Engineer** | Day-to-day administration: access policies, routing rules, connector/tunnel management, certificate management. Tests changes before production deployment. Escalation point for complex IT Support/Helpdesk issues. |
+| **Network Security Engineer** | Day-to-day administration: access policies, routing rules, connector/tunnel management, certificate management. Tests changes before production deployment. Escalation point for complex IT Support/Help desk issues. |
 | **Identity Engineer / Identity Team** | Owns the Microsoft Entra ID tenant as it intersects with GSA. Manages Conditional Access policies that gate GSA traffic profiles and compliant-network enforcement. Administers GSA service principals and enterprise app registrations (CRUD). Troubleshoots authentication, token, and sign-in failures using Entra sign-in logs. Partners with SOC Analyst on identity-related incidents. |
 | **SOC Analyst** | Monitors security alerts. Investigates suspicious events. Fine-tunes analytics rules in Sentinel. Handles or escalates GSA-related security incidents. For detailed SecOps procedures, see the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
-| **IT Support / Helpdesk** | Tier-1 support for user access issues (client installation, connectivity problems). Follows runbooks and escalates to Network Security Engineer for complex issues. |
+| **IT Support / Help desk** | Tier-1 support for user access issues (client installation, connectivity problems). Follows runbooks and escalates to Network Security Engineer for complex issues. |
 | **Platform Ops / Monitoring Engineer** | Oversees infrastructure health: dashboards, connector/tunnel uptime, automation scripts, and configuration backup processes. |
 
 > [!TIP]

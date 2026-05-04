@@ -1,6 +1,6 @@
 ---
 title: PowerShell sample - Verify Global Secure Access configuration backup compliance
-description: "Use this PowerShell script as a watchdog runbook that verifies your Global Secure Access configuration backup runbook ran successfully and alerts on failures or missed schedules."
+description: "Verify that your Global Secure Access configuration backup runbook ran successfully. Send an alert when the runbook fails or misses a scheduled run."
 ms.topic: sample
 ms.date: 05/04/2026
 ms.reviewer: tdetzner
@@ -27,7 +27,7 @@ Run this script daily as a secondary watchdog runbook in the same Automation Acc
 | `BackupRunbookName` | Name of the runbook that performs Global Secure Access configuration backups. |
 | `LookbackHours` | Number of hours to look back for completed jobs. Default: 26 (covers a daily schedule with 2-hour buffer). |
 | `AlertRecipient` | Email address to receive failure alerts. |
-| `SenderId` | UserId or UPN of the mailbox used to send alert emails. |
+| `SenderId` | UserId or UPN of the mailbox that sends alert emails. |
 
 ## Examples
 

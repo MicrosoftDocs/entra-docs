@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 This guide provides security monitoring and detection guidance for Microsoft Entra Global Secure Access (GSA). It covers what to monitor, where to look, and the analytics rules that surface network-layer threats across all GSA capabilities.
 
-This guide is a companion to the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps), which covers identity-centric signals. Use both guides together — identity signals and network signals often need to be correlated to determine the scope and impact of a security event.
+This guide is a companion to the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps), which covers identity-centric signals. Use both guides together. Identity signals and network signals often need correlation to determine the scope and impact of a security event.
 
 For day-to-day operational procedures (health checks, change management, capacity planning), see the [GSA operations guides](overview-operations.md).
 
@@ -72,7 +72,7 @@ The Azure portal and Microsoft Sentinel offer several integration points for the
 
 ## Enable GSA diagnostic logs
 
-All detections in this guide require that one or more GSA diagnostic categories are streamed to your Log Analytics workspace. Configure diagnostic settings once, then enable the categories you need for security monitoring.
+Every detection in this guide requires that you stream one or more Global Secure Access diagnostic categories to your Log Analytics workspace. Configure diagnostic settings once, then enable the categories you need for security monitoring.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with the **Global Secure Access Administrator** role.
 2. Go to **Global Secure Access** > **Monitor** > **Diagnostic settings**.
@@ -110,7 +110,7 @@ Run the cross-cutting baseline below during your first month and record the resu
 
 ### Cross-cutting baseline (all capabilities)
 
-This single query captures the headline signals shared by every capability: session volume, block and failure ratios, user reach, bytes, **TLS inspection failure rate**, and **threat intelligence match volume**. A sustained increase in `TlsFailureRatePct` is itself a content-inspection signal — set an alert at 2x the 30-day mean.
+This single query captures the headline signals that every capability shares: session volume, block and failure ratios, user reach, bytes, **TLS inspection failure rate**, and **threat intelligence match volume**. A sustained increase in `TlsFailureRatePct` is itself a content-inspection signal — set an alert at 2x the 30-day mean.
 
 ```kusto
 NetworkAccessTraffic
@@ -185,7 +185,7 @@ Use the **P95** values as your starting upper bound. If your P95 distinct-apps-p
 | Access from risky identity to private apps | High | `NetworkAccessTraffic` joined with `SigninLogs` | User with medium/high `RiskLevelDuringSignIn` successfully connects to Private Access apps | Use the [risky-user cross-signal query](#cross-signal-identity-and-network-correlation). Triage in Microsoft Entra ID Protection. |
 | Private application access from a non-managed device | High | `NetworkAccessTraffic` joined with `NetworkAccessConnectionEvents` on `ConnectionId` | Successful Private Access session where `DeviceJoinType` is `unjoined` or empty | Verify with the device owner and endpoint team. If unsanctioned, hand off to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1078. **Validate `NetworkAccessConnectionEvents` column names with `NetworkAccessConnectionEvents &#124; take 10` before enabling.** |
 | Off-hours private application access | Medium | `NetworkAccessTraffic` | Access to sensitive application segments outside business hours by a non-service account | Review with application owner; verify authorized access. |
-| Brute-force against private app | High | `NetworkAccessTraffic` | > 50 failed connection attempts (`Action == "Block"`) to a single app segment within 5 minutes | Note that `Action == "Block"` records a policy denial, not an authentication failure — always pair with `SigninLogs` for the same user and app. Block the source identity if a credential attack is confirmed; escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1110. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
+| Brute-force against private app | High | `NetworkAccessTraffic` | > 50 failed connection attempts (`Action == "Block"`) to a single app segment within 5 minutes | `Action == "Block"` records a policy denial, not an authentication failure — always pair with `SigninLogs` for the same user and app. When you confirm a credential attack, block the source identity and escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1110. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
 | Unauthorized connector group change | High | `AuditLogs` | Connector reassigned to a different group by an actor outside the change-management allow list | Revert the change; investigate the actor through the [audit log query](#detect-unauthorized-configuration-changes). |
 
 ### Detection queries
@@ -408,12 +408,12 @@ NetworkAccessTraffic
 
 | What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
 | --- | --- | --- | --- | --- |
-| Unhealthy Remote Network alert | High | `NetworkAccessAlerts` | GSA emits an `Unhealthy Remote Network` alert | Native GSA alert — primary tunnel-health signal. Engage branch network team. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) only if compromise is suspected. |
+| Unhealthy Remote Network alert | High | `NetworkAccessAlerts` | GSA emits an `Unhealthy Remote Network` alert | Native GSA alert — primary tunnel-health signal. Engage branch network team. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) only when you suspect compromise. |
 | Tunnel flapping | High | `RemoteNetworkHealthLogs` | A remote network records > 3 tunnel state changes within 15 minutes | Verify CPE stability and PSK or certificate validity; investigate ISP and routing changes. |
 | BGP session reset or route count drop | High | `RemoteNetworkHealthLogs` | BGP session leaves the `Established` state, or advertised route count drops > 50% from baseline | Verify CPE BGP configuration; confirm no unauthorized router replacement. |
 | Unusual traffic volume from branch site | Medium | `NetworkAccessTraffic` | Traffic from a remote network exceeds 200% of 7-day average | Investigate for compromised devices on the branch network; contact the branch network team. |
 | New source IP from branch tunnel | High | `NetworkAccessTraffic` | Traffic arrives through an established tunnel from an IP range not in the site's known subnets | Verify with the branch network team; might indicate a rogue device or tunnel hijacking. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) on confirmation. |
-| IKE authentication failure spike (CPE-side) | High | `CommonSecurityLog` | > 10 IKE Phase 1 authentication failures from a branch site within 5 minutes | Verify pre-shared key or certificate validity; if brute-force is confirmed, escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1133. Available only when the CPE forwards CEF logs. |
+| IKE authentication failure spike (CPE-side) | High | `CommonSecurityLog` | > 10 IKE Phase 1 authentication failures from a branch site within 5 minutes | Verify pre-shared key or certificate validity. When you confirm a brute-force attack, escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1133. Available only when the CPE forwards CEF logs. |
 
 ### Detection queries
 
@@ -736,7 +736,7 @@ NetworkAccessTraffic
 
 ### Sign-in outside the GSA path for a GSA-enforced user
 
-This pattern detects a user who normally has GSA traffic but just signed in successfully **without** going through GSA — a real bypass scenario. The seed list is users who generated GSA traffic in the last 24 hours, used as a proxy for "this user is supposed to be on GSA." Tighten the seed list with your own group membership when available.
+This pattern detects a user who normally has Global Secure Access traffic but just signed in successfully **without** going through Global Secure Access — a real bypass scenario. The seed list contains users who generated Global Secure Access traffic in the last 24 hours, which serves as a proxy for "this user is supposed to be on Global Secure Access." Tighten the seed list with your own group membership when available.
 
 ```kusto
 let gsaEnforcedUsers = NetworkAccessTraffic
@@ -820,7 +820,7 @@ AuditLogs
 
 ### Anti-forensic — enriched audit logging changed
 
-The `Update Enriched Audit Logs Settings` operation alters which GSA fields are written to audit logs. An unexpected change is a strong anti-forensic indicator.
+The `Update Enriched Audit Logs Settings` operation alters which Global Secure Access fields appear in audit logs. An unexpected change is a strong anti-forensic indicator.
 
 ```kusto
 AuditLogs

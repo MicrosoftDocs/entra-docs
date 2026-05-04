@@ -267,7 +267,7 @@ This section defines the recurring checks that keep Microsoft traffic operations
 | Check | Role | Procedure | What to do if it fails |
 | --- | --- | --- | --- |
 | High-severity alerts | SOC Analyst | Review alerts in Sentinel or your SIEM for P1/P2 Microsoft traffic alerts from the last 24 hours. | Ensure each alert is assigned and under investigation. Unassigned alerts older than 4 hours should be escalated. |
-| Microsoft 365 user experience | IT Support / Helpdesk | Check Microsoft 365 service health dashboard and any user-reported issues in your helpdesk system. | If users report M365 performance issues, compare with GSA traffic logs to determine if GSA routing is a factor. |
+| Microsoft 365 user experience | IT Support / Help desk | Check Microsoft 365 service health dashboard and any user-reported issues in your help desk system. | If users report Microsoft 365 performance issues, compare with Global Secure Access traffic logs to determine whether Global Secure Access routing is a factor. |
 
 ### Weekly checks
 
@@ -275,7 +275,7 @@ This section defines the recurring checks that keep Microsoft traffic operations
 | --- | --- | --- | --- |
 | Compliant network failures | Identity Engineer / Identity Team | Review Conditional Access policy failures due to compliant network check. Microsoft traffic denials should be near zero. | Investigate any denials — they usually indicate client connectivity issues or attempts to connect from unauthorized devices. |
 | Configuration backup | Platform Ops / Monitoring Engineer | Run the [automated configuration export](#automation-playbooks). | Troubleshoot the export. Manually export traffic forwarding rules. |
-| Client agent deployment status | IT Support / Helpdesk | Review GSA client deployment coverage in Intune. | Push client updates to devices that are not reporting or outdated. |
+| Client agent deployment status | IT Support / Help desk | Review Global Secure Access client deployment coverage in Intune. | Push client updates to devices that are not reporting or outdated. |
 
 ### Monthly checks
 
@@ -543,7 +543,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 | Microsoft traffic denial rate | Denied sessions / total Microsoft traffic sessions | < 1% | Weekly |
 | Compliant network check success rate | Sessions with successful compliant network enrichment / total M365 sessions | > 99% | Weekly |
 | Configuration backup success | Successful backups / scheduled backups | 100% | Weekly |
-| User-reported M365 performance issues | Helpdesk tickets related to M365 performance through GSA | Trending toward 0 | Monthly |
+| User-reported Microsoft 365 performance issues | Help desk tickets related to Microsoft 365 performance through Global Secure Access | Trending toward 0 | Monthly |
 
 ## Related content
 

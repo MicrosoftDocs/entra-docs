@@ -1,6 +1,6 @@
 ---
 title: PowerShell sample - Check Global Secure Access RBAC review hygiene
-description: "Use this PowerShell script to flag Global Secure Access admin role assignments that have not been reviewed this quarter and alert when overdue accounts are found."
+description: "Find Global Secure Access admin role assignments that miss the quarterly review and send an alert when overdue accounts exist."
 ms.topic: sample
 ms.date: 05/04/2026
 ms.reviewer: tdetzner
@@ -22,9 +22,9 @@ Run this script weekly as an Azure Automation runbook or scheduled task.
 
 | Parameter | Description |
 | --- | --- |
-| `ReviewLogPath` | Path to the JSON file tracking last-reviewed dates per account. If running in Azure Automation, use an Azure Storage blob or Automation variable. |
-| `AlertRecipient` | Email address to receive the alert when overdue accounts are found. |
-| `SenderId` | UserId or UPN of the mailbox used to send alert emails (requires Mail.Send permission). |
+| `ReviewLogPath` | Path to the JSON file that tracks last-reviewed dates per account. In Azure Automation, point this parameter to an Azure Storage blob or Automation variable. |
+| `AlertRecipient` | Email address that receives the alert when overdue accounts exist. |
+| `SenderId` | UserId or UPN of the mailbox that sends alert emails. Requires the Mail.Send permission. |
 
 ## Examples
 

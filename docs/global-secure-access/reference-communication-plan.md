@@ -1,6 +1,6 @@
 ---
 title: Global Secure Access change communication plan template
-description: "Template for communicating planned Global Secure Access changes to stakeholders, support teams, and users."
+description: "Use this template to plan how you communicate Global Secure Access changes to stakeholders, support teams, and users."
 ms.topic: reference
 ms.date: 05/04/2026
 ms.reviewer: tdetzner
@@ -28,7 +28,7 @@ Use this template for **normal** and **major** changes that have user-visible im
 | Audience | When to notify | Channel | Owner | Sent? |
 | --- | --- | --- | --- | --- |
 | **Operations team** | 5 business days before change | Team meeting or Teams channel | Service Owner | [ ] |
-| **IT Support / Helpdesk** | 3 business days before change | Email + knowledge base article update | Network Security Engineer | [ ] |
+| **IT Support / Help desk** | 3 business days before change | Email and knowledge base article update | Network Security Engineer | [ ] |
 | **Affected users** | 2 business days before change | Email or company portal announcement | Service Owner | [ ] |
 | **Security / SOC team** | 2 business days before change | Email or SIEM notification | Network Security Engineer | [ ] |
 | **Management / leadership** | 2 business days before major changes | Email summary | Service Owner | [ ] |
@@ -68,7 +68,7 @@ Use this template for **normal** and **major** changes that have user-visible im
 
 **Questions?**
 
-Contact [helpdesk email or Teams channel] if you have questions or experience issues after the maintenance window.
+Contact [help desk email or Teams channel] if you have questions or experience issues after the maintenance window.
 
 ---
 
@@ -84,18 +84,18 @@ Contact [helpdesk email or Teams channel] if you have questions or experience is
 
 **Impact:** [Confirm whether the maintenance completed within the expected window and whether any unexpected impact occurred]
 
-**If you experience issues:** Contact [helpdesk email or Teams channel]. Reference ticket [Change ID].
+**If you experience issues:** Contact [help desk email or Teams channel]. Reference ticket [Change ID].
 
 ---
 
 ## Communication checklist
 
 - [ ] Pre-change notification drafted and reviewed
-- [ ] Helpdesk briefed and knowledge base updated with expected issues and responses
+- [ ] Help desk briefed and knowledge base updated with expected issues and responses
 - [ ] Pre-change notification sent to all audiences per the matrix above
 - [ ] Day-of reminder sent (for major changes affecting many users)
 - [ ] Post-change notification sent after successful completion
-- [ ] Helpdesk debriefed on any unexpected issues reported during the change
+- [ ] Help desk debriefed on any unexpected issues reported during the change
 
 ## Escalation during change
 
