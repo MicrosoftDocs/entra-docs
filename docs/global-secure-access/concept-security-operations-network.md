@@ -16,7 +16,7 @@ This guide is a companion to the [Entra Security Operations Guide](https://aka.m
 For day-to-day operational procedures (health checks, change management, capacity planning), see the [GSA operations guides](overview-operations.md).
 
 > [!IMPORTANT]
-> This guide focuses on **detection** — what to monitor, how to detect it, and where the signal originates. It is not an incident response (IR) guide. When a detection fires and you need to contain, eradicate, and recover, use the [Microsoft Incident Response Playbooks](https://aka.ms/IRPlaybooks) and your organization's IR runbooks. Each detection in this guide ends with a brief next-step pointer rather than a full IR procedure.
+> This guide focuses on **detection**—what to monitor, how to detect it, and where the signal originates. It isn't an incident response (IR) guide. When a detection fires and you need to contain, eradicate, and recover, use the [Microsoft Incident Response Playbooks](https://aka.ms/IRPlaybooks) and your organization's IR runbooks. Each detection in this guide ends with a brief next-step pointer rather than a full IR procedure.
 
 ## Who this guide is for
 
@@ -24,7 +24,7 @@ For day-to-day operational procedures (health checks, change management, capacit
 | --- | --- |
 | **SOC Analyst** | Primary audience. Use the detection queries, alert rules, and investigation procedures to monitor and respond to GSA-related threats. |
 | **Network Security Engineer** | Use as a reference when tuning policies, reviewing alert efficacy, and supporting SOC investigations with infrastructure context. Owns the Remote Networks and Internet Access detections in this guide. |
-| **Identity Admin** | Owns the identity-bound detections in this guide — compliant-network bypass, **Token / Device Inconsistency**, **Increased External Tenant Activity**, and the GSA admin-operation rules under [Detect unauthorized configuration changes](#detect-unauthorized-configuration-changes). Investigate in Microsoft Entra ID Protection and Conditional Access; collaborate with SOC on response. |
+| **Identity Admin** | Owns the identity-bound detections in this guide—compliant-network bypass, **Token / Device Inconsistency**, **Increased External Tenant Activity**, and the GSA admin-operation rules under [Detect unauthorized configuration changes](#detect-unauthorized-configuration-changes). Investigate in Microsoft Entra ID Protection and Conditional Access; collaborate with SOC on response. |
 
 ## How this guide relates to the Entra SecOps Guide
 
@@ -34,37 +34,37 @@ The [Entra Security Operations Guide](https://aka.ms/AzureADSecOps) covers secur
 - Application registrations, service principals, and consent grants
 - Devices and Conditional Access evaluation
 
-This guide extends that coverage to the **network layer** — specifically, the traffic that flows through GSA.
+This guide extends that coverage to the **network layer**—specifically, the traffic that flows through GSA.
 
 ## Where to look
 
-Global Secure Access exposes five native diagnostic categories. Each maps to a dedicated Log Analytics table and surfaces a different layer of network telemetry. Combine them with the Entra identity tables and CPE (customer premises equipment — the [branch routers that terminate Remote Network tunnels](/entra/global-secure-access/quickstart-remote-network)) syslog where applicable.
+Global Secure Access exposes five native diagnostic categories. Each maps to a dedicated Log Analytics table and surfaces a different layer of network telemetry. Combine them with the Entra identity tables and CPE (customer premises equipment—the [branch routers that terminate Remote Network tunnels](/entra/global-secure-access/quickstart-remote-network)) syslog where applicable.
 
 | Source | What it contains | When to use it |
 | --- | --- | --- |
-| `NetworkAccessTraffic` | Transaction-level events for every HTTP request through GSA: user, device, destination, URL, bytes, action, applied policy, threat type, TLS inspection result, cloud app risk score, initiating process | Primary table for traffic, threat, and policy detections across all GSA capabilities |
+| `NetworkAccessTraffic` | Transaction-level events for every HTTP request through GSA: user, device, destination, URL, bytes, action, applied policy, threat type, Transport Layer Security (TLS) inspection result, cloud app risk score, initiating process | Primary table for traffic, threat, and policy detections across all GSA capabilities |
 | `NetworkAccessConnectionEvents` | Connection lifecycle events with device context (OS, join type, name), the applied security profile / policy / rule, PoP region, cross-tenant access, and Intelligent Local Access (`IsLocal`) | Add device and policy context to traffic-based detections; investigate B2B and PoP routing anomalies. Join to `NetworkAccessTraffic` on `ConnectionId` |
-| `RemoteNetworkHealthLogs` | IPsec tunnel and BGP session state, heartbeats, advertised route counts, throughput per remote network | Primary source for branch tunnel and BGP detections — replaces or supplements CPE-side `CommonSecurityLog` |
-| `NetworkAccessAlerts` | GSA-generated alerts: malicious URL, malware, phishing, **Increased External Tenant Activity**, **Token / Device Inconsistency**, **Unhealthy Remote Network** | Primary feed for native GSA threat alerts — pair with the [Sentinel Content hub Global Secure Access solution](/azure/sentinel/sentinel-solutions-deploy) for prebuilt rules |
-| `NetworkAccessGenerativeAIInsights` (Preview) | Generative AI prompts, MCP client/server activity, AI tool and sub-activity metadata | Shadow AI detection, MCP governance, prompt monitoring, AI usage compliance |
+| `RemoteNetworkHealthLogs` | IPsec tunnel and Border Gateway Protocol (BGP) session state, heartbeats, advertised route counts, throughput per remote network | Primary source for branch tunnel and BGP detections—replaces or supplements CPE-side `CommonSecurityLog` |
+| `NetworkAccessAlerts` | GSA-generated alerts: malicious URL, malware, phishing, **Increased External Tenant Activity**, **Token / Device Inconsistency**, **Unhealthy Remote Network** | Primary feed for native GSA threat alerts—pair with the [Sentinel Content hub Global Secure Access solution](/azure/sentinel/sentinel-solutions-deploy) for prebuilt rules |
+| `NetworkAccessGenerativeAIInsights` (Preview) | Generative AI prompts, Model Context Protocol (MCP) client/server activity, AI tool, and subactivity metadata | Shadow AI detection, MCP governance, prompt monitoring, AI usage compliance |
 | `SigninLogs` | Entra ID sign-in events with GSA-aware fields (`IsThroughGlobalSecureAccess`, `NetworkLocationDetails`) | Correlate identity risk with network activity |
 | `AuditLogs` | Entra admin operations: GSA filtering and forwarding policies, profiles, remote networks, certificates, onboarding/offboarding | Detect unauthorized configuration changes (see [Detect unauthorized configuration changes](#detect-unauthorized-configuration-changes)) |
 | `EnrichedMicrosoft365AuditLogs` | Microsoft 365 audit events enriched with GSA network metadata | Microsoft Traffic anomalies |
-| `CommonSecurityLog` | CEF-formatted logs from branch CPE devices | Supplement `RemoteNetworkHealthLogs` with CPE-side IKE/IPsec events |
+| `CommonSecurityLog` | Common Event Format (CEF) logs from branch CPE devices | Supplement `RemoteNetworkHealthLogs` with CPE-side Internet Key Exchange (IKE) and IPsec events |
 
 The Azure portal and Microsoft Sentinel offer several integration points for these data sources:
 
-- [Microsoft Sentinel](/azure/sentinel/overview) — install the [**Global Secure Access** solution from the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) for prebuilt analytics rules, workbooks, and hunting queries that complement this guide.
-- [Azure Monitor](/azure/azure-monitor/overview) — for workbook-based dashboards and alert rules over Log Analytics.
-- [Azure Event Hubs](/azure/event-hubs/event-hubs-about) — to stream GSA logs to third-party SIEMs (Splunk, ArcSight, QRadar, Sumo Logic).
-- [Microsoft Security Copilot](/security-copilot/) — for cross-table investigation and natural-language triage.
+- [Microsoft Sentinel](/azure/sentinel/overview)—install the [**Global Secure Access** solution from the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) for prebuilt analytics rules, workbooks, and hunting queries that complement this guide.
+- [Azure Monitor](/azure/azure-monitor/overview)—for workbook-based dashboards and alert rules over Log Analytics.
+- [Azure Event Hubs](/azure/event-hubs/event-hubs-about)—to stream GSA logs to third-party security information and event management (SIEM) systems (Splunk, ArcSight, QRadar, Sumo Logic).
+- [Microsoft Security Copilot](/security-copilot/)—for cross-table investigation and natural-language triage.
 
 > [!NOTE]
-> **Field-name and enum validation.** Column names and enum values referenced in this guide come from the GSA diagnostic settings integration guide and the Microsoft Sentinel content pack — they might differ between tenants and change as the service evolves. Before turning any KQL in this guide into a Sentinel analytics rule, run `<TableName> | take 10` against your tenant and confirm the columns and values used. Common values to spot-check:
+> **Field-name and enum validation.** Column names and enum values referenced in this guide come from the GSA diagnostic settings integration guide and the Microsoft Sentinel content pack—they might differ between tenants and change as the service evolves. Before turning any Kusto Query Language (KQL) query in this guide into a Sentinel analytics rule, run `<TableName> | take 10` against your tenant and confirm the columns and values used. Common values to spot-check:
 >
 > - `NetworkAccessTraffic.TrafficType`: `private`, `internet`, `microsoft365`, `remoteNetwork`.
 > - `NetworkAccessTraffic.Action`: typically `Allow` or `Block`. Some tenants also emit content-inspection actions; confirm before using the value as a filter.
-> - `NetworkAccessAlerts.AlertType`, `Severity`, `AlertDescription`: alert-table column names are not yet documented — verify against `NetworkAccessAlerts | take 10`.
+> - `NetworkAccessAlerts.AlertType`, `Severity`, `AlertDescription`: alert-table column names aren't yet documented—verify against `NetworkAccessAlerts | take 10`.
 > - `NetworkAccessConnectionEvents` columns (`DeviceJoinType`, `SecurityProfileName`, `PolicyName`, `PopProcessingRegion`, `IsLocal`): verify before enabling the join detection in the Private Access section.
 > - `NetworkAccessGenerativeAIInsights` (Preview): the entire schema is subject to change.
 > - Cross-table joins on `UserId`: `SigninLogs.UserId` is a GUID. Confirm GSA tables expose the same `UserId` column; if not, fall back to joining on `UserPrincipalName`.
@@ -87,7 +87,7 @@ Every detection in this guide requires that you stream one or more Global Secure
    | Security Alert Logs | `NetworkAccessAlerts` | Required |
    | Generative AI Insights (Preview) | `NetworkAccessGenerativeAIInsights` | Recommended where AI governance applies |
 
-5. Send the data to the **Log Analytics workspace** connected to Microsoft Sentinel. Each category can target multiple destinations simultaneously — add an **Event Hub** destination if you also need to forward to a third-party SIEM, and a **Storage Account** destination for long-term archival.
+5. Send the data to the **Log Analytics workspace** connected to Microsoft Sentinel. Each category can target multiple destinations simultaneously—add an **Event Hub** destination if you also need to forward to a third-party SIEM, and a **Storage Account** destination for long-term archival.
 6. Save. Logs typically begin flowing within 2–5 minutes.
 
 > [!TIP]
@@ -95,22 +95,22 @@ Every detection in this guide requires that you stream one or more Global Secure
 
 ### Ingestion cost and retention considerations
 
-Enabling all five GSA diagnostic categories on a mid-size tenant produces multiple GB per day of Log Analytics ingest. Plan capacity and retention before turning everything on.
+Enabling all five GSA diagnostic categories on a mid-size tenant produces multiple GB per day of Log Analytics ingest. Plan capacity and retention before turning on every category.
 
 - **Estimate ingest volume.** `NetworkAccessTraffic` is by far the highest-volume category. Run the [Cross-cutting baseline](#cross-cutting-baseline-all-capabilities) for one week against a sample of your tenant traffic to project monthly volume.
 - **Pick the right destination per category.** Send investigation-grade categories (`NetworkAccessAlerts`, `AuditLogs`, `RemoteNetworkHealthLogs`) to Log Analytics. Archive high-volume `NetworkAccessTraffic` to a Storage Account if you don't need real-time KQL on the full firehose, or use Sentinel's [Auxiliary Logs / basic logs](/azure/azure-monitor/logs/basic-logs-configure) tier for cost-aware querying.
-- **Set retention by category.** SOC investigation typically needs 90–180 days of `NetworkAccessTraffic`. Retain audit and certificate operations for the full compliance window your organization requires (often 1–2 years) — use Log Analytics archive tier or Storage Account export.
+- **Set retention by category.** SOC investigation typically needs 90–180 days of `NetworkAccessTraffic`. Retain audit and certificate operations for the full compliance window your organization requires (often 1–2 years)—use Log Analytics archive tier or Storage Account export.
 - **Monitor cost with Azure Cost Management.** Tag the diagnostic destinations and review monthly; spikes often indicate noisy traffic patterns worth investigating in their own right.
 
 ## Define a baseline
 
-Before tuning alert thresholds, establish a **30-day baseline** of normal activity for your environment. The thresholds in every alert table in this guide are starting values — replace them with values derived from your baseline.
+Before tuning alert thresholds, establish a **30-day baseline** of normal activity for your environment. The thresholds in every alert table in this guide are starting values—replace them with values derived from your baseline.
 
-Run the cross-cutting baseline below during your first month and record the results in a workbook or spreadsheet. Each capability section also opens with a focused per-capability baseline that grounds the Critical and High alerts in that section.
+Run the cross-cutting baseline in this section during your first month and record the results in a workbook or spreadsheet. Each capability section also opens with a focused per-capability baseline that grounds the Critical and High alerts in that section.
 
 ### Cross-cutting baseline (all capabilities)
 
-This single query captures the headline signals that every capability shares: session volume, block and failure ratios, user reach, bytes, **TLS inspection failure rate**, and **threat intelligence match volume**. A sustained increase in `TlsFailureRatePct` is itself a content-inspection signal — set an alert at 2x the 30-day mean.
+This single query captures the headline signals that every capability shares: session volume, block and failure ratios, user reach, bytes, **TLS inspection failure rate**, and **threat intelligence match volume**. A sustained increase in `TlsFailureRatePct` is itself a content-inspection signal—set an alert at 2x the 30-day mean.
 
 ```kusto
 NetworkAccessTraffic
@@ -141,7 +141,7 @@ NetworkAccessTraffic
 Record per traffic type: daily sessions, blocked-session ratio, distinct users, bytes, TLS inspection failure rate, and threat intelligence match volume.
 
 > [!NOTE]
-> Re-run this baseline and the per-capability baselines after any of the following: a Global Secure Access service update, a major policy change, a user-population growth event, or onboarding/offboarding a Remote Network. If you don't track service updates actively, **re-baseline at least once per quarter**. Stale baselines are the leading cause of false positives.
+> Rerun this baseline and the per-capability baselines after any of the following events: a Global Secure Access service update, a major policy change, a user-population growth event, or onboarding/offboarding a Remote Network. If you don't track service updates actively, **rebaseline at least once per quarter**. Stale baselines are the leading cause of false positives.
 >
 > **Get notified of service changes automatically:**
 >
@@ -152,7 +152,7 @@ Record per traffic type: daily sessions, blocked-session ratio, distinct users, 
 
 ### Per-user activity baseline (Private Access)
 
-Before enabling the Private Access alerts below, capture the typical daily ceiling of per-user activity. The same baseline also applies to the Internet Access detections that follow.
+Before enabling the Private Access alerts in this section, capture the typical daily ceiling of per-user activity. The same baseline also applies to the Internet Access detections that follow.
 
 Grounds: brute-force (`> 50 blocks / 5 min`), lateral movement (`> 10 distinct apps / 15 min`), repeated blocks (`> 100 blocks / hour`), data exfiltration (`> 500 MB upload / hour`).
 
@@ -174,23 +174,23 @@ NetworkAccessTraffic
     by TrafficType
 ```
 
-Use the **P95** values as your starting upper bound. If your P95 distinct-apps-per-user is 4, the lateral-movement threshold of `> 10` is reasonable; if it is 12, raise the alert threshold to reduce noise.
+Use the **P95** values as your starting upper bound. If your P95 distinct-apps-per-user is 4, the lateral-movement threshold of `> 10` is reasonable; if it's 12, raise the alert threshold to reduce noise.
 
 ### Alert summary
 
-| What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
+| What to monitor | Severity | Where to look | Filter / Subfilter | Notes |
 | --- | --- | --- | --- | --- |
-| Connector compromise indicators | Critical | Connector host telemetry (Defender for Endpoint or equivalent on the connector VM) — not detectable from `NetworkAccessTraffic` alone | Connector host generates outbound traffic to destinations outside `*.msappproxy.net`, `*.servicebus.windows.net`, and known application backends | Investigation pattern — this guide does **not** ship a Sentinel rule because the signal lives on the connector host, not in GSA logs. Configure endpoint detection on the connector hosts and rely on the [**Global Secure Access** Content hub solution](/azure/sentinel/sentinel-solutions-deploy) for any prebuilt connector-aware rules. Hand off to [Microsoft Incident Response Playbooks](https://aka.ms/IRPlaybooks) on confirmed indicators. |
+| Connector compromise indicators | Critical | Connector host telemetry (Defender for Endpoint or equivalent on the connector VM)—not detectable from `NetworkAccessTraffic` alone | Connector host generates outbound traffic to destinations outside `*.msappproxy.net`, `*.servicebus.windows.net`, and known application backends | Investigation pattern—this guide does **not** ship a Sentinel rule because the signal lives on the connector host, not in GSA logs. Configure endpoint detection on the connector hosts and rely on the [**Global Secure Access** Content hub solution](/azure/sentinel/sentinel-solutions-deploy) for any prebuilt connector-aware rules. Hand off to [Microsoft Incident Response Playbooks](https://aka.ms/IRPlaybooks) on confirmed indicators. |
 | Lateral movement through Private Access | High | `NetworkAccessTraffic` | Single user accesses > 10 distinct application segments within 15 minutes (see the lateral movement detection query that follows) | Validate with the application owner; if unauthorized, hand off to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1021. |
 | Access from risky identity to private apps | High | `NetworkAccessTraffic` joined with `SigninLogs` | User with medium/high `RiskLevelDuringSignIn` successfully connects to Private Access apps | Use the [risky-user cross-signal query](#cross-signal-identity-and-network-correlation). Triage in Microsoft Entra ID Protection. |
-| Private application access from a non-managed device | High | `NetworkAccessTraffic` joined with `NetworkAccessConnectionEvents` on `ConnectionId` | Successful Private Access session where `DeviceJoinType` is `unjoined` or empty | Verify with the device owner and endpoint team. If unsanctioned, hand off to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1078. **Validate `NetworkAccessConnectionEvents` column names with `NetworkAccessConnectionEvents &#124; take 10` before enabling.** |
-| Off-hours private application access | Medium | `NetworkAccessTraffic` | Access to sensitive application segments outside business hours by a non-service account | Review with application owner; verify authorized access. |
-| Brute-force against private app | High | `NetworkAccessTraffic` | > 50 failed connection attempts (`Action == "Block"`) to a single app segment within 5 minutes | `Action == "Block"` records a policy denial, not an authentication failure — always pair with `SigninLogs` for the same user and app. When you confirm a credential attack, block the source identity and escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1110. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
+| Private application access from a nonmanaged device | High | `NetworkAccessTraffic` joined with `NetworkAccessConnectionEvents` on `ConnectionId` | Successful Private Access session where `DeviceJoinType` is `unjoined` or empty | Verify with the device owner and endpoint team. If unsanctioned, hand off to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1078. **Validate `NetworkAccessConnectionEvents` column names with `NetworkAccessConnectionEvents &#124; take 10` before enabling.** |
+| Off-hours private application access | Medium | `NetworkAccessTraffic` | Access to sensitive application segments outside business hours by a nonservice account | Review with application owner; verify authorized access. |
+| Brute-force against private app | High | `NetworkAccessTraffic` | > 50 failed connection attempts (`Action == "Block"`) to a single app segment within 5 minutes | `Action == "Block"` records a policy denial, not an authentication failure—always pair with `SigninLogs` for the same user and app. When you confirm a credential attack, block the source identity and escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1110. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
 | Unauthorized connector group change | High | `AuditLogs` | Connector reassigned to a different group by an actor outside the change-management allow list | Revert the change; investigate the actor through the [audit log query](#detect-unauthorized-configuration-changes). |
 
 ### Detection queries
 
-**Lateral movement — rapid multi-app access:**
+**Lateral movement—rapid multi-app access:**
 
 ```kusto
 NetworkAccessTraffic
@@ -209,15 +209,15 @@ NetworkAccessTraffic
 
 **Sentinel analytics rule:**
 
-- **Rule name:** GSA — Lateral movement through Private Access
+- **Rule name:** GSA—Lateral movement through Private Access
 - **Severity:** High
 - **Query frequency:** Every 15 minutes
 - **Query period:** Last 1 hour
 - **Trigger:** Number of results > 0
 - **Entities:** Account (UserPrincipalName)
-- **MITRE ATT&CK:** Lateral Movement — T1021
+- **MITRE ATT&CK:** Lateral Movement—T1021
 
-**Private Access from a non-managed device (joined detection):**
+**Private Access from a nonmanaged device (joined detection):**
 
 This query joins `NetworkAccessTraffic` to `NetworkAccessConnectionEvents` on `ConnectionId` to add device context (OS, join type, applied security profile, PoP region) to a successful Private Access session.
 
@@ -236,18 +236,18 @@ NetworkAccessTraffic
 | order by TimeGenerated desc
 ```
 
-- **Rule name:** GSA — Private Access from non-managed device
+- **Rule name:** GSA—Private Access from nonmanaged device
 - **Severity:** High
 - **Query frequency:** Every 30 minutes
 - **Query period:** Last 1 hour
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Initial Access — T1078
+- **MITRE ATT&CK:** Initial Access—T1078
 
 **Off-hours access to sensitive applications:**
 
-Localize this query to your primary business timezone. `TimeGenerated` is UTC — a UTC `7–19` window does not match local working hours outside the UK during summer time. Set `tzOffsetHours` to your primary office's offset; for tenants with multiple regions, run one variant per region or replace the offset with a per-user lookup.
+Localize this query to your primary business timezone. `TimeGenerated` is UTC—a UTC `7–19` window doesn't match local working hours outside the UK during summer time. Set `tzOffsetHours` to your primary office's offset; for tenants with multiple regions, run one variant per region or replace the offset with a per-user lookup.
 
-Replace `<application-segment-id-N>` with the IDs of the application segments you classify as sensitive. Find them in the **Entra admin center > Global Secure Access > Applications** — each application segment has an **Application ID** (GUID) shown on its overview page; copy that value into the `sensitiveApps` array.
+Replace `<application-segment-id-N>` with the IDs of the application segments you classify as sensitive. Find them in the **Entra admin center > Global Secure Access > Applications**—each application segment has an **Application ID** (GUID) shown on its overview page; copy that value into the `sensitiveApps` array.
 
 ```kusto
 let tzOffsetHours = -5; // -5 EST, -8 PST, +1 CET, +9 JST, etc. — customize to your environment
@@ -268,7 +268,7 @@ NetworkAccessTraffic
 **Brute-force against a private application:**
 
 > [!NOTE]
-> `Action == "Block"` in `NetworkAccessTraffic` records a **policy denial**, not an authentication failure. A burst of denials usually indicates a configuration issue (non-compliant device, missing entitlement, stale CA scope) — but the same signal is also produced by automated brute-force tools that have valid credentials but fail Conditional Access. Always pair this rule with `SigninLogs` for the target app to confirm a credential attack.
+> `Action == "Block"` in `NetworkAccessTraffic` records a **policy denial**, not an authentication failure. A burst of denials usually indicates a configuration issue (noncompliant device, missing entitlement, stale CA scope), but automated brute-force tools that have valid credentials but fail Conditional Access produce the same signal. Always pair this rule with `SigninLogs` for the target app to confirm a credential attack.
 
 ```kusto
 NetworkAccessTraffic
@@ -280,17 +280,17 @@ NetworkAccessTraffic
 | project TimeGenerated, UserPrincipalName, AppId, FailureCount
 ```
 
-- **Rule name:** GSA — Private Access brute-force attempt
+- **Rule name:** GSA—Private Access brute-force attempt
 - **Severity:** High
 - **Query frequency:** Every 5 minutes
 - **Query period:** Last 15 minutes
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Credential Access — T1110
+- **MITRE ATT&CK:** Credential Access—T1110
 
 **Unauthorized connector group change:**
 
 > [!NOTE]
-> The `OperationName` filter below uses a `has`-based match against the connector-group operations exposed in `AuditLogs`. Operation strings can change between service updates — validate against `AuditLogs | where OperationName has "connector" | distinct OperationName` in your tenant before enabling, and add any tenant-specific values to the filter.
+> The `OperationName` filter in the following query uses a `has`-based match against the connector-group operations exposed in `AuditLogs`. Operation strings can change between service updates—validate against `AuditLogs | where OperationName has "connector" | distinct OperationName` in your tenant before enabling, and add any tenant-specific values to the filter.
 
 ```kusto
 AuditLogs
@@ -307,25 +307,25 @@ AuditLogs
 | order by TimeGenerated desc
 ```
 
-- **Rule name:** GSA — Unauthorized connector group change
+- **Rule name:** GSA—Unauthorized connector group change
 - **Severity:** High
 - **Query frequency:** Every 15 minutes
 - **Query period:** Last 1 hour
 - **Trigger:** Number of results > 0
 - **Entities:** Account (Actor)
-- **MITRE ATT&CK:** Defense Evasion — T1562; Persistence — T1098
+- **MITRE ATT&CK:** Defense Evasion—T1562; Persistence—T1098
 
 ## Internet Access security detections
 
-The Internet Access detections share the [per-user activity baseline](#per-user-activity-baseline-private-access) defined in the Private Access section. Capture that baseline before tuning the thresholds below.
+The Internet Access detections share the [per-user activity baseline](#per-user-activity-baseline-private-access) defined in the Private Access section. Capture that baseline before tuning the thresholds in this section.
 
 ### Alert summary
 
-| What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
+| What to monitor | Severity | Where to look | Filter / Subfilter | Notes |
 | --- | --- | --- | --- | --- |
 | Malware or phishing URL detected | High | `NetworkAccessAlerts` and `NetworkAccessTraffic` | GSA threat intelligence detects an attempted connection to a known malicious URL (`ThreatType` is set and not `NoneFound`) | Check whether the payload was downloaded; coordinate with endpoint protection to scan the device. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) on confirmed compromise. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
-| Data exfiltration — high upload volume | Critical | `NetworkAccessTraffic` | User uploads > 500 MB to an uncategorized or newly registered domain within 1 hour | Add the destination to the web-filtering block list; engage your DLP team; escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1041. |
-| Web filtering policy change — unauthorized | High | `AuditLogs` | Web-filtering policy modified by an identity outside the change-management allow list | Revert the change; investigate the actor through the [audit log query](#detect-unauthorized-configuration-changes). |
+| Data exfiltration—high upload volume | Critical | `NetworkAccessTraffic` | User uploads > 500 MB to an uncategorized or newly registered domain within 1 hour | Add the destination to the web-filtering block list; engage your data loss prevention (DLP) team; escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1041. |
+| Web filtering policy change—unauthorized | High | `AuditLogs` | Web-filtering policy modified by an identity outside the change-management allow list | Revert the change; investigate the actor through the [audit log query](#detect-unauthorized-configuration-changes). |
 | Repeated blocks from single user | Medium | `NetworkAccessTraffic` | One user triggers > 100 block actions across categories in 1 hour | Distinguish between misconfigured app and deliberate circumvention; review with the user's manager. |
 
 ### Detection queries
@@ -340,7 +340,7 @@ NetworkAccessTraffic
 | project UserPrincipalName, ThreatType , DestinationFqdn, DestinationUrl , DestinationIp, Action
 ```
 
-**Data exfiltration — high upload to uncommon domains:**
+**Data exfiltration—high upload to uncommon domains:**
 
 ```kusto
 NetworkAccessTraffic
@@ -357,20 +357,20 @@ NetworkAccessTraffic
 | order by TotalUploadMB desc
 ```
 
-- **Rule name:** GSA — Potential data exfiltration through Internet Access
+- **Rule name:** GSA—Potential data exfiltration through Internet Access
 - **Severity:** Critical
 - **Query frequency:** Every 30 minutes
 - **Query period:** Last 1 hour
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Exfiltration — T1041
+- **MITRE ATT&CK:** Exfiltration—T1041
 
 ## Remote Networks security detections
 
 ### Per-network health baseline (Remote Networks)
 
-Ground the Remote Network detections by capturing typical tunnel and BGP behavior per site. Sites with healthy networks usually show `0` daily state changes — a single change above zero might already be alert-worthy.
+Ground the Remote Network detections by capturing typical tunnel and BGP behavior per site. Sites with healthy networks usually show `0` daily state changes—a single change above zero might already be alert-worthy.
 
-Grounds: tunnel flapping (`> 3 state changes / 15 min`), BGP anomaly (`> 50% route drop`), branch traffic anomaly (`> 200% of 7-day average`), new source IP from branch.
+Grounds: tunnel flapping (`> 3 state changes / 15 min`), BGP anomaly (`> 50% route drop`), branch traffic anomaly (`> 200% of seven-day average`), new source IP from branch.
 
 ```kusto
 RemoteNetworkHealthLogs
@@ -389,7 +389,7 @@ RemoteNetworkHealthLogs
     by RemoteNetworkId, RemoteNetworkName
 ```
 
-Use the query below to seed the allow list for the **New source IP from branch tunnel** detection.
+Use the following query to seed the allow list for the **New source IP from branch tunnel** detection.
 
 ```kusto
 NetworkAccessTraffic
@@ -402,18 +402,18 @@ NetworkAccessTraffic
 ```
 
 > [!IMPORTANT]
-> The detection queries below reference `RemoteNetworkHealthLogs`, the native GSA table for tunnel and BGP health. Field names follow the diagnostic settings integration guide and might differ in your tenant — **validate column names** against `RemoteNetworkHealthLogs | take 10` before enabling these as Sentinel analytics rules.
+> The detection queries that follow reference `RemoteNetworkHealthLogs`, the native GSA table for tunnel and BGP health. Field names follow the diagnostic settings integration guide and might differ in your tenant—**validate column names** against `RemoteNetworkHealthLogs | take 10` before enabling these as Sentinel analytics rules.
 
 ### Alert summary
 
-| What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
+| What to monitor | Severity | Where to look | Filter / Subfilter | Notes |
 | --- | --- | --- | --- | --- |
-| Unhealthy Remote Network alert | High | `NetworkAccessAlerts` | GSA emits an `Unhealthy Remote Network` alert | Native GSA alert — primary tunnel-health signal. Engage branch network team. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) only when you suspect compromise. |
+| Unhealthy Remote Network alert | High | `NetworkAccessAlerts` | GSA emits an `Unhealthy Remote Network` alert | Native GSA alert—primary tunnel-health signal. Engage branch network team. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) only when you suspect compromise. |
 | Tunnel flapping | High | `RemoteNetworkHealthLogs` | A remote network records > 3 tunnel state changes within 15 minutes | Verify CPE stability and PSK or certificate validity; investigate ISP and routing changes. |
 | BGP session reset or route count drop | High | `RemoteNetworkHealthLogs` | BGP session leaves the `Established` state, or advertised route count drops > 50% from baseline | Verify CPE BGP configuration; confirm no unauthorized router replacement. |
-| Unusual traffic volume from branch site | Medium | `NetworkAccessTraffic` | Traffic from a remote network exceeds 200% of 7-day average | Investigate for compromised devices on the branch network; contact the branch network team. |
+| Unusual traffic volume from branch site | Medium | `NetworkAccessTraffic` | Traffic from a remote network exceeds 200% of seven-day average | Investigate for compromised devices on the branch network; contact the branch network team. |
 | New source IP from branch tunnel | High | `NetworkAccessTraffic` | Traffic arrives through an established tunnel from an IP range not in the site's known subnets | Verify with the branch network team; might indicate a rogue device or tunnel hijacking. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) on confirmation. |
-| IKE authentication failure spike (CPE-side) | High | `CommonSecurityLog` | > 10 IKE Phase 1 authentication failures from a branch site within 5 minutes | Verify pre-shared key or certificate validity. When you confirm a brute-force attack, escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1133. Available only when the CPE forwards CEF logs. |
+| IKE authentication failure spike (CPE-side) | High | `CommonSecurityLog` | > 10 IKE Phase 1 authentication failures from a branch site within 5 minutes | Verify preshared key or certificate validity. When you confirm a brute-force attack, escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1133. Available only when the CPE forwards CEF logs. |
 
 ### Detection queries
 
@@ -429,7 +429,7 @@ RemoteNetworkHealthLogs
 | project RemoteNetworkId, RemoteNetworkName, StateChanges, FirstSeen, LastSeen
 ```
 
-- **Rule name:** GSA — Remote Network tunnel flapping
+- **Rule name:** GSA—Remote Network tunnel flapping
 - **Severity:** High
 - **Query frequency:** Every 15 minutes
 - **Query period:** Last 15 minutes
@@ -451,7 +451,7 @@ RemoteNetworkHealthLogs
 | project TimeGenerated, RemoteNetworkId, RemoteNetworkName, BgpSessionState, AdvertisedRouteCount, AvgRoutes, RouteDropRatio
 ```
 
-- **Rule name:** GSA — Remote Network BGP session anomaly
+- **Rule name:** GSA—Remote Network BGP session anomaly
 - **Severity:** High
 - **Query frequency:** Every 15 minutes
 - **Query period:** Last 15 minutes
@@ -488,18 +488,18 @@ CommonSecurityLog
 | project TimeGenerated, SourceIP, DeviceName, FailCount
 ```
 
-- **Rule name:** GSA — Remote Network IKE authentication failure spike
+- **Rule name:** GSA—Remote Network IKE authentication failure spike
 - **Severity:** High
 - **Query frequency:** Every 5 minutes
 - **Query period:** Last 1 hour
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Initial Access — T1133
+- **MITRE ATT&CK:** Initial Access—T1133
 
 ## Microsoft Traffic security detections
 
 ### Microsoft Traffic baseline
 
-Ground the Microsoft Traffic detections by capturing the typical volume of GSA-routed sign-ins, the country distribution of Microsoft 365 access, and the baseline rate of each native GSA alert. Treat any non-zero day for `Token / Device Inconsistency` as Critical regardless of baseline.
+Ground the Microsoft Traffic detections by capturing the typical volume of GSA-routed sign-ins, the country distribution of Microsoft 365 access, and the baseline rate of each native GSA alert. Treat any nonzero day for `Token / Device Inconsistency` as Critical regardless of baseline.
 
 Grounds: compliant network bypass (`SigninLogs.IsThroughGlobalSecureAccess == "false"`), Microsoft 365 access from blocked geography, Token/Device Inconsistency, Increased External Tenant Activity, and Unhealthy Remote Network alert volumes.
 
@@ -533,13 +533,13 @@ NetworkAccessAlerts
 ```
 
 > [!NOTE]
-> The `Unhealthy Remote Network` alert is a Remote Networks signal — baseline it under [Per-network health baseline (Remote Networks)](#per-network-health-baseline-remote-networks).
+> The `Unhealthy Remote Network` alert is a Remote Networks signal—baseline it under [Per-network health baseline (Remote Networks)](#per-network-health-baseline-remote-networks).
 
 ### Alert summary
 
-| What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
+| What to monitor | Severity | Where to look | Filter / Subfilter | Notes |
 | --- | --- | --- | --- | --- |
-| Compliant network bypass — successful sign-in | High | `SigninLogs` | Successful sign-in to an app protected by a compliant-network Conditional Access policy where `NetworkLocationDetails` does not contain `compliantNetwork` | Review Conditional Access policies; verify compliant-network enforcement is active. MITRE T1562. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
+| Compliant network bypass—successful sign-in | High | `SigninLogs` | Successful sign-in to an app protected by a compliant-network Conditional Access policy where `NetworkLocationDetails` doesn't contain `compliantNetwork` | Review Conditional Access policies; verify compliant-network enforcement is active. MITRE T1562. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
 | Token / Device Inconsistency alert | Critical | `NetworkAccessAlerts` | GSA emits a `Token / Device Inconsistency` alert | High-fidelity token-theft signal. Pair with `SigninLogs.TokenIssuerType` and Microsoft Entra ID Protection. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1528 / T1550. |
 | Increased External Tenant Activity alert | High | `NetworkAccessAlerts` | GSA emits an `Increased External Tenant Activity` alert | Correlate with `SigninLogs` cross-tenant access events; review B2B and cross-tenant access settings. |
 | Microsoft 365 access from blocked geography | High | `NetworkAccessConnectionEvents` joined with `NetworkAccessTraffic` | Source country in your blocked-country list (`CN`, `RU`, `KP`, `IR`, or your policy) | Review the user's full activity; review Conditional Access geographic block policies. |
@@ -548,7 +548,7 @@ NetworkAccessAlerts
 
 **Compliant network bypass:**
 
-This query detects successful sign-ins to Microsoft 365 services where the sign-in did not originate from a network marked `compliantNetwork`. Restrict the rule to apps protected by your compliant-network Conditional Access policy — firing it for all apps produces constant noise from any legitimate sign-in that doesn't traverse GSA.
+This query detects successful sign-ins to Microsoft 365 services where the sign-in didn't originate from a network marked `compliantNetwork`. Restrict the rule to apps protected by your compliant-network Conditional Access policy—firing it for all apps produces constant noise from any legitimate sign-in that doesn't traverse GSA.
 
 ```kusto
 let protectedApps = dynamic(["Office 365 Exchange Online", "Office 365 SharePoint Online", "Microsoft Teams"]);
@@ -562,12 +562,12 @@ SigninLogs
 
 ```
 
-- **Rule name:** GSA — Microsoft 365 access from non-compliant network
+- **Rule name:** GSA—Microsoft 365 access from noncompliant network
 - **Severity:** High
 - **Query frequency:** Every 15 minutes
 - **Query period:** Last 1 hour
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Defense Evasion — T1562
+- **MITRE ATT&CK:** Defense Evasion—T1562
 
 **GSA-native alert: Token / Device Inconsistency:**
 
@@ -579,12 +579,12 @@ NetworkAccessAlerts
 | order by TimeGenerated desc
 ```
 
-- **Rule name:** GSA — Token / Device Inconsistency
+- **Rule name:** GSA—Token / Device Inconsistency
 - **Severity:** Critical
 - **Query frequency:** Every 5 minutes
 - **Query period:** Last 1 hour
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Credential Access — T1528; Lateral Movement — T1550
+- **MITRE ATT&CK:** Credential Access—T1528; Lateral Movement—T1550
 
 **GSA-native alert: Increased External Tenant Activity:**
 
@@ -596,12 +596,12 @@ NetworkAccessAlerts
 | order by TimeGenerated desc
 ```
 
-- **Rule name:** GSA — Increased External Tenant Activity
+- **Rule name:** GSA—Increased External Tenant Activity
 - **Severity:** High
 - **Query frequency:** Every 15 minutes
 - **Query period:** Last 1 hour
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Initial Access — T1199 (Trusted Relationship)
+- **MITRE ATT&CK:** Initial Access—T1199 (Trusted Relationship)
 
 **Microsoft 365 access from blocked geography:**
 
@@ -652,18 +652,18 @@ NetworkAccessGenerativeAIInsights
 ```
 
 > [!NOTE]
-> The `NetworkAccessGenerativeAIInsights` table is in **Preview**. Schema, column names, and operation values can change. **Validate the queries below against `NetworkAccessGenerativeAIInsights | take 10` in your tenant before enabling them as Sentinel analytics rules.** Treat these as a starting template, not a tested production ruleset.
+> The `NetworkAccessGenerativeAIInsights` table is in **Preview**. Schema, column names, and operation values can change. **Validate the queries that follow against `NetworkAccessGenerativeAIInsights | take 10` in your tenant before enabling them as Sentinel analytics rules.** Treat the rules in this section as a starting template, not a tested production ruleset.
 >
 > The published table reference exposes `DestinationUrl` and dedicated `McpClientName` / `McpServerName` columns. The queries in this section use those column names. If you need to group by host instead of full URL, derive an FQDN with `parse_url(DestinationUrl).Host`.
 
 ### Alert summary
 
-| What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
+| What to monitor | Severity | Where to look | Filter / Subfilter | Notes |
 | --- | --- | --- | --- | --- |
-| Shadow AI — unsanctioned AI tool usage | Medium | `NetworkAccessGenerativeAIInsights` and `NetworkAccessTraffic` | User accesses an AI service that is not on the sanctioned-app list | Review with the user's manager; consider adding the service to the web filtering allow or block list. |
+| Shadow AI—unsanctioned AI tool usage | Medium | `NetworkAccessGenerativeAIInsights` and `NetworkAccessTraffic` | User accesses an AI service that isn't on the sanctioned-app list | Review with the user's manager; consider adding the service to the web filtering allow or block list. |
 | Unsanctioned MCP server access | High | `NetworkAccessGenerativeAIInsights` | MCP client connects to an MCP server FQDN not in the approved-server list | Block the destination through web filtering; review the user's other AI activity. |
-| AI usage by risky user | High | `NetworkAccessGenerativeAIInsights` joined with `SigninLogs` | User with `RiskLevelDuringSignIn` of medium or high generates AI prompts | Recommended path: block the AI service through a **GSA Internet Access web filtering rule** targeting the AI service FQDN — fastest to apply, scoped to GSA-enrolled devices, no app-registration prerequisite. As a backup for unmanaged devices, add a **Conditional Access policy** that blocks the AI app's enterprise app registration for medium/high risk users. Triage in Microsoft Entra ID Protection. |
-| Anomalous prompt volume per user | Medium | `NetworkAccessGenerativeAIInsights` | One user issues > 500 prompts in 1 hour, or more than 5x the 7-day per-user average | Verify legitimate use; investigate for automation, scraping, or compromised credentials. |
+| AI usage by risky user | High | `NetworkAccessGenerativeAIInsights` joined with `SigninLogs` | User with `RiskLevelDuringSignIn` of medium or high generates AI prompts | Recommended path: block the AI service through a **GSA Internet Access web filtering rule** targeting the AI service FQDN—fastest to apply, scoped to GSA-enrolled devices, no app-registration prerequisite. As a backup for unmanaged devices, add a **Conditional Access policy** that blocks the AI app's enterprise app registration for medium/high risk users. Triage in Microsoft Entra ID Protection. |
+| Anomalous prompt volume per user | Medium | `NetworkAccessGenerativeAIInsights` | One user issues > 500 prompts in one hour, or more than 5x the seven-day per-user average | Verify legitimate use; investigate for automation, scraping, or compromised credentials. |
 
 ### Detection queries
 
@@ -736,7 +736,7 @@ NetworkAccessTraffic
 
 ### Sign-in outside the GSA path for a GSA-enforced user
 
-This pattern detects a user who normally has Global Secure Access traffic but just signed in successfully **without** going through Global Secure Access — a real bypass scenario. The seed list contains users who generated Global Secure Access traffic in the last 24 hours, which serves as a proxy for "this user is supposed to be on Global Secure Access." Tighten the seed list with your own group membership when available.
+This pattern detects a user who normally has Global Secure Access traffic but signed in successfully **without** going through Global Secure Access—a real bypass scenario. The seed list contains users who generated Global Secure Access traffic in the last 24 hours, which serves as a proxy for "this user is supposed to be on Global Secure Access." Tighten the seed list with your own group membership when available.
 
 ```kusto
 let gsaEnforcedUsers = NetworkAccessTraffic
@@ -757,11 +757,11 @@ SigninLogs
 
 ## Detect unauthorized configuration changes
 
-Configuration changes to GSA policies outside your change management process are a high-priority detection. The queries below filter `AuditLogs` on the GSA `OperationName` values listed in the [Entra audit activities reference](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access).
+Configuration changes to GSA policies outside your change management process are a high-priority detection. The queries that follow filter `AuditLogs` on the GSA `OperationName` values listed in the [Entra audit activities reference](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access).
 
 ### Audit operations baseline
 
-Before enabling the rules below, capture which GSA operations occur in your tenant, who performs them, and at what frequency. Use the result to seed the **authorized actor allow list** that every detection in this section filters against.
+Before enabling the rules in this section, capture which GSA operations your tenant emits, who performs them, and at what frequency. Use the result to seed the **authorized actor allow list** that every detection in this section filters against.
 
 Grounds: unauthorized configuration change, enriched audit logging changed, tenant onboarding/offboarding, TLS certificate operations.
 
@@ -781,8 +781,8 @@ AuditLogs
 
 > [!IMPORTANT]
 >
-> 1. Run each rule as a hunting query for at least 7 days, confirm rows return for known-good admin actions, and adjust `OperationName` strings or filter on `LoggedByService == "Global Secure Access"` if your tenant emits a different value.
-> 2. Re-validate after every GSA service update.
+> 1. Run each rule as a hunting query for at least seven days, confirm rows return for known-good admin actions, and adjust `OperationName` strings or filter on `LoggedByService == "Global Secure Access"` if your tenant emits a different value.
+> 2. Revalidate after every GSA service update.
 
 ### Unauthorized policy or profile change
 
@@ -811,14 +811,14 @@ AuditLogs
 | order by TimeGenerated desc
 ```
 
-- **Rule name:** GSA — Unauthorized network access configuration change
+- **Rule name:** GSA—Unauthorized network access configuration change
 - **Severity:** High
 - **Query frequency:** Every 60 minutes
 - **Query period:** Last 24 hours
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Defense Evasion — T1562.001
+- **MITRE ATT&CK:** Defense Evasion—T1562.001
 
-### Anti-forensic — enriched audit logging changed
+### Anti-forensic—enriched audit logging changed
 
 The `Update Enriched Audit Logs Settings` operation alters which Global Secure Access fields appear in audit logs. An unexpected change is a strong anti-forensic indicator.
 
@@ -830,12 +830,12 @@ AuditLogs
 | project TimeGenerated, Actor, OperationName, Result, ResultReason
 ```
 
-- **Rule name:** GSA — Enriched audit logging changed
+- **Rule name:** GSA—Enriched audit logging changed
 - **Severity:** Critical
 - **Query frequency:** Every 15 minutes
 - **Query period:** Last 24 hours
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Defense Evasion — T1562.002
+- **MITRE ATT&CK:** Defense Evasion—T1562.002
 
 ### Tenant-level GSA onboarding or offboarding
 
@@ -849,12 +849,12 @@ AuditLogs
 | project TimeGenerated, Actor, OperationName, Result
 ```
 
-- **Rule name:** GSA — Tenant onboarding/offboarding initiated
+- **Rule name:** GSA—Tenant onboarding/offboarding initiated
 - **Severity:** Critical
 - **Query frequency:** Every 15 minutes
 - **Query period:** Last 24 hours
 - **Trigger:** Number of results > 0
-- **MITRE ATT&CK:** Impact — T1531
+- **MITRE ATT&CK:** Impact—T1531
 
 ### TLS inspection certificate change
 
@@ -873,39 +873,39 @@ AuditLogs
 | project TimeGenerated, Actor, OperationName, Result
 ```
 
-- **Rule name:** GSA — TLS inspection certificate operation
+- **Rule name:** GSA—TLS inspection certificate operation
 - **Severity:** High
 - **Query frequency:** Every 60 minutes
 - **Query period:** Last 24 hours
 - **Trigger:** Number of results > 0
 
 > [!IMPORTANT]
-> Maintain an **allow list** of identities authorized to make GSA configuration changes. Filter every query above to exclude authorized actors so each rule only fires for unexpected changes.
+> Maintain an **allow list** of identities authorized to make GSA configuration changes. Filter every query in this section to exclude authorized actors so each rule only fires for unexpected changes.
 
 ## Sample Sentinel analytics rule templates
 
-The table below lists the rules with full Sentinel definitions in this guide (rule name, severity, query frequency, trigger). The remaining detections in this guide are **patterns to operationalize** — alert-table rows or KQL snippets that don't yet ship as importable rules. Pair this guide with the [**Global Secure Access** solution available in the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) for the canonical, Microsoft-maintained rule set.
+The following table lists the rules with full Sentinel definitions in this guide (rule name, severity, query frequency, trigger). The remaining detections in this guide are **patterns to operationalize**—alert-table rows or KQL snippets that don't yet ship as importable rules. Pair this guide with the [**Global Secure Access** solution available in the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) for the canonical, Microsoft-maintained rule set.
 
 | Rule name | Capability | Severity | MITRE ATT&CK |
 | --- | --- | --- | --- |
-| GSA — Lateral movement through Private Access | Private Access | High | T1021 |
-| GSA — Private Access brute-force attempt | Private Access | High | T1110 |
-| GSA — Private Access from non-managed device | Private Access | High | T1078 |
-| GSA — Unauthorized connector group change | Private Access | High | T1562 / T1098 |
-| GSA — Potential data exfiltration through Internet Access | Internet Access | Critical | T1041 |
-| GSA — Remote Network tunnel flapping | Remote Networks | High | — |
-| GSA — Remote Network BGP session anomaly | Remote Networks | High | — |
-| GSA — Remote Network IKE authentication failure spike | Remote Networks | High | T1133 |
-| GSA — Microsoft 365 access from non-compliant network | Microsoft Traffic | High | T1562 |
-| GSA — Token / Device Inconsistency | Microsoft Traffic | Critical | T1528 / T1550 |
-| GSA — Increased External Tenant Activity | Microsoft Traffic | High | T1199 |
-| GSA — Unauthorized network access configuration change | All | High | T1562.001 |
-| GSA — Enriched audit logging changed | All | Critical | T1562.002 |
-| GSA — Tenant onboarding/offboarding initiated | All | Critical | T1531 |
-| GSA — TLS inspection certificate operation | Internet Access | High | — |
+| GSA—Lateral movement through Private Access | Private Access | High | T1021 |
+| GSA—Private Access brute-force attempt | Private Access | High | T1110 |
+| GSA—Private Access from nonmanaged device | Private Access | High | T1078 |
+| GSA—Unauthorized connector group change | Private Access | High | T1562 / T1098 |
+| GSA—Potential data exfiltration through Internet Access | Internet Access | Critical | T1041 |
+| GSA—Remote Network tunnel flapping | Remote Networks | High |—|
+| GSA—Remote Network BGP session anomaly | Remote Networks | High |—|
+| GSA—Remote Network IKE authentication failure spike | Remote Networks | High | T1133 |
+| GSA—Microsoft 365 access from noncompliant network | Microsoft Traffic | High | T1562 |
+| GSA—Token / Device Inconsistency | Microsoft Traffic | Critical | T1528 / T1550 |
+| GSA—Increased External Tenant Activity | Microsoft Traffic | High | T1199 |
+| GSA—Unauthorized network access configuration change | All | High | T1562.001 |
+| GSA—Enriched audit logging changed | All | Critical | T1562.002 |
+| GSA—Tenant onboarding/offboarding initiated | All | Critical | T1531 |
+| GSA—TLS inspection certificate operation | Internet Access | High |—|
 
 > [!NOTE]
-> Install the [**Global Secure Access** solution from the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) first — it includes prebuilt rules, workbooks, and hunting queries. The rules in this guide supplement the solution for scenarios it doesn't cover. The Content hub solution typically ships workbooks for **traffic analytics**, **threat insights**, and **administrative activity** — import them after enabling diagnostic settings to get a working dashboard before any of the rules in this guide fire.
+> Install the [**Global Secure Access** solution from the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) first—it includes prebuilt rules, workbooks, and hunting queries. The rules in this guide supplement the solution for scenarios it doesn't cover. The Content hub solution typically ships workbooks for **traffic analytics**, **threat insights**, and **administrative activity**—import them after enabling diagnostic settings to get a working dashboard before any of the rules in this guide fire.
 
 ## Operational alignment
 
@@ -915,15 +915,15 @@ The table below lists the rules with full Sentinel definitions in this guide (ru
 | --- | --- | --- |
 | Review false positive rate for each analytics rule | Weekly | SOC Analyst |
 | Adjust thresholds based on baseline trends | Monthly | SOC Analyst + Network Security Engineer |
-| Re-run capacity baselines | Quarterly, or after any GSA service update | SOC Analyst + Network Security Engineer |
-| Review and update the authorized change actor allow list | After every RBAC change | Network Security Engineer |
+| Rerun capacity baselines | Quarterly, or after any GSA service update | SOC Analyst + Network Security Engineer |
+| Review and update the authorized change actor allow list | After every role-based access control (RBAC) change | Network Security Engineer |
 | Evaluate new MITRE ATT&CK techniques relevant to network access | Quarterly | SOC Analyst |
 
 ## Related content
 
 - [Microsoft Incident Response Playbooks](https://aka.ms/IRPlaybooks)
 - [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)
-- [Microsoft Entra audit log categories and activities — Global Secure Access](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access)
+- [Microsoft Entra audit log categories and activities—Global Secure Access](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access)
 - [Microsoft Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy)
 - [Log Analytics data retention and archive](/azure/azure-monitor/logs/data-retention-configure)
 - [Common operations guide](how-to-operations-common.md)
@@ -933,7 +933,7 @@ The table below lists the rules with full Sentinel definitions in this guide (ru
 - [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md)
 - [Global Secure Access documentation](/entra/global-secure-access/)
 - [MITRE ATT&CK framework](https://attack.mitre.org/)
-- [Microsoft Zero Trust — Network pillar](https://zerotrust.microsoft.com/)
+- [Microsoft Zero Trust—Network pillar](https://zerotrust.microsoft.com/)
 
 ## Next steps
 
