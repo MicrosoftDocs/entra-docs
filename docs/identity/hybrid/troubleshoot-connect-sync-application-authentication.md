@@ -12,6 +12,9 @@ ms.date: 01/15/2025
 
 Application-based authentication (ABA) for Microsoft Entra Connect Sync uses an application identity (a service principal with a certificate) instead of a username and password to authenticate to Microsoft Entra ID. This method improves security by eliminating the need for storing admin credentials on the sync server. This article helps you troubleshoot known issues with ABA in Microsoft Entra Connect Sync and provides steps to resolve them.
 
+> [!IMPORTANT]
+> Several application-based authentication (ABA) issues have been resolved in recent Microsoft Entra Connect versions. We recommend updating to the latest version to benefit from these fixes and prevent known issues.
+
 ## Known issues
 
 **Connectivity parameters missing after auto-upgrade** – After an automatic upgrade to an ABA-enabled Microsoft Entra Connect version, the Microsoft Entra (Azure AD) connector's connectivity fields (such as Application and Certificate) appear blank in the Synchronization Service Manager UI. Selecting **OK** on the connector properties causes **ApplicationManagedBy isn't set** error in the configuration wizard and prevents the next automatic certificate rollover.

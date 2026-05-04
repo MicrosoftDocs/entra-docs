@@ -45,8 +45,8 @@ The following table lists some more service dependencies, where the client apps 
 |                     | Microsoft Stream                            | Late-bound  |
 |                     | SharePoint                                  | Early-bound |
 |                     | Microsoft Whiteboard                        | Late-bound  |
-| Microsoft 365 portal | Exchange                                   | Late-bound  |
-|                     | SharePoint                                  | Late-bound  |
+| Microsoft 365 portal | Exchange                                   | Early-bound  |
+|                     | SharePoint                                  | Early-bound  |
 | Outlook groups      | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
 | Power Apps          | Windows Azure Service Management API (portal and API) | Early-bound |

@@ -8,6 +8,8 @@ items:
       href: what-is-agent-id-platform.md
     - name: Security for AI overview
       href: security-for-ai-overview.md
+    - name: What's new in Agent ID
+      href: whats-new-agent-id.md
   # LEARN ######################
   - name: Learn about Agent ID
     expanded: true
@@ -30,10 +32,14 @@ items:
       items:
       - name: Authorization in Entra Agent ID
         href: authorization-agent-id.md
+      - name: Inheritable permissions
+        href: concept-inheritable-permissions.md
       - name: Tokens in Microsoft agent identity platform
         href: agent-tokens.md
       - name: Authentication protocols for agents
         href: agent-oauth-protocols.md
+      - name: Consent and sign-in process
+        href: sign-in-process.md
     - name: Governance and protection
       items:
       - name: Conditional Access for agents
@@ -48,8 +54,6 @@ items:
         href: /entra/global-secure-access/concept-secure-web-ai-gateway-agents?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Sign-in and audit logs
         href: sign-in-audit-logs-agents.md
-      - name: Consent and sign-in process
-        href: sign-in-process.md
 
   # PLAN ######################
   - name: Plan your agent identity deployment
@@ -67,17 +71,23 @@ items:
   # BUILD / IMPLEMENT ######################
   - name: Create and configure agents
     expanded: true
-    items:    
+    items:
+    - name: AI-guided setup
+      href: agent-id-ai-guided-setup.md
     - name: Create agent identity objects
       items:
       - name: Create an agent blueprint
         href: create-blueprint.md
       - name: Create and delete agent identities
         href: create-delete-agent-identities.md
+      - name: Learn about agent identity deletion
+        href: concept-agent-identity-deletion.md
+      - name: Delete and restore agent identity objects
+        href: howto-delete-agent-identity.md
       - name: Manage agent blueprints
         href: manage-agent-blueprint.md
-      - name: AI-guided setup
-        href: agent-id-ai-guided-setup.md
+      - name: Manage owners and sponsors
+        href: manage-owners-sponsors-agents.md
     - name: Authentication, authorization, and permissions
       items:
       - name: Autonomous agent app OAuth flow
@@ -100,16 +110,32 @@ items:
         items:
         - name: Authenticate users and request user tokens
           href: interactive-agent-authentication-authorization-flow.md
-    - name: Integrate with APIs and services
+    - name: Use the Microsoft Entra Auth SDK (sidecar)
       items:
+      - name: Authentication with the Auth SDK (sidecar)
+        href: authentication-with-auth-sdk-sidecar.md
       - name: Configure SDK for agent identities
         href: microsoft-entra-sdk-for-agent-identities.md
+      - name: Run the sidecar for local development
+        href: sidecar-local-development.md
+      - name: Validate agent tokens in a downstream API
+        href: how-to-validate-agent-tokens-downstream-api.md
+    - name: Call APIs and services
+      items:
       - name: Call Microsoft Graph API
         href: call-api-microsoft-graph.md
       - name: Call custom APIs
         href: call-api-custom.md
       - name: Call Azure services
         href: call-api-azure-services.md
+    - name: Integrate third-party agent platforms
+      items:
+      - name: Configure third-party agents with Agent ID
+        href: configure-third-party-agents.md
+      - name: Secure an Amazon Bedrock agent
+        href: integrate-aws-bedrock-agent.md
+      - name: Secure an n8n agent
+        href: integrate-n8n-agent.md
 
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale
@@ -127,12 +153,25 @@ items:
       href: agent-lists.md
     - name: Manage agents (owner and sponsor portal)
       href: manage-agent-identities-end-user.md
-
+    - name: Agent Registry convergence
+      href: agent-registry-convergence.md
+ 
+      # MIGRATE ######################
+  - name: Migrate to Agent ID
+    expanded: true
+    items:
+    - name: Migrate custom app registrations
+      href: migrate-custom-app-registrations-to-agent-id.md
+    - name: Migrate Copilot Studio agents
+      href: migrate-copilot-studio-agents-to-agent-id.md
+  
   # REFERENCE ######################
   - name: Reference
     items:
     - name: Token claims reference
       href: agent-token-claims.md
+    - name: FAQ
+      href: faq.yml
     - name: Microsoft Graph API
       items:
       - name: Permissions reference
@@ -143,25 +182,5 @@ items:
         href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Agent identity API
         href: /graph/api/resources/agentidentity?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
-      - name: Known issues
-        href: preview-known-issues.md
       - name: Error codes reference
         href: error-codes.md
-    - name: Agent registry
-      items:
-      - name: Agent Registry convergence
-        href: agent-registry-convergence.md
-      - name: What is the agent registry?
-        href: what-is-agent-registry.md
-      - name: Register agents with Agent Registry
-        href: publish-agents-to-registry.md
-      - name: Agent Registry collections
-        href: agent-registry-collections.md
-      - name: Manage agent collections
-        href: agent-registry-manage-collections.md
-      - name: Agent communication
-        href: registry-agent-to-agent-protocol.md
-      - name: Manage Agent Registry-only agents
-        href: manage-agents-without-identity.md
-      - name: Agent Registry roles
-        href: reference-registry-roles.md

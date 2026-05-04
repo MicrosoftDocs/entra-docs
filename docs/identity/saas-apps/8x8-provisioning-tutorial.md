@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both 8x8 Admin Console a
 > * Deactivate users in 8x8 when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and 8x8
 > * [Single sign-on](./8x8virtualoffice-tutorial.md) to 8x8 (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -6,8 +6,7 @@ ms.author: sarahlipsey
 ms.service: entra
 ms.topic: concept-article
 ms.date: 04/05/2026
-ms.reviewer: jadedsouza
-ms.custom: agent-id-ignite
+ms.reviewer: paparth
 ai-usage: ai-assisted
 
 #customer-intent: As an IT administrator, I want to understand how the agent registry experiences are converging under Microsoft Agent 365 so that I can manage agents in one place while continuing to use Microsoft Entra for identity and access control.
@@ -18,13 +17,13 @@ ai-usage: ai-assisted
 
 Organizations are rapidly adopting AI agents across Microsoft platforms, partner ecosystems, and custom applications. As agents grow in number and capability, organizations need a centralized way to observe, govern, and secure them.
 
-Microsoft Agent 365 is Microsoft's control plane for AI agents. It helps organizations:
+[Microsoft Agent 365](/microsoft-agent-365/overview) is Microsoft's control plane for AI agents. It helps organizations:
 
 - Observe agents across the enterprise.
 - Govern how agents access systems, data, and tools.
 - Secure agents using Microsoft identity and security capabilities.
 
-A key capability within Microsoft Agent 365 is the agent registry, which provides a unified inventory of all agents operating in the organization, including both Microsoft and non-Microsoft agents.
+A key capability within Microsoft Agent 365 is the [agent registry](/microsoft-365/admin/manage/agent-registry), which provides a unified inventory of all agents operating in the organization, including both Microsoft and non-Microsoft agents.
 
 ## Registry convergence
 
@@ -72,7 +71,9 @@ Identity administrators can optionally use Agent 365, via the Microsoft 365 admi
 
 ### Do I need a different role to view agents in Agent 365?
 
-To see all agents in Agent 365, users need the [AI Administrator](../identity/role-based-access-control/permissions-reference.md#ai-administrator) role. To see all agents with a Microsoft Entra Agent ID in the Microsoft Entra admin center, users need the [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) role. Identity administrators can be assigned these roles for complete agent visibility.
+To see all agents in Agent 365 and Microsoft Entra Agent ID, users need the [AI Reader](../identity/role-based-access-control/permissions-reference.md#ai-reader) role. This role is intended for users who need visibility for monitoring or reporting access.
+
+The [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) role is needed to manage or change agent identities.
 
 ### Is a license required?
 
@@ -84,7 +85,7 @@ Applying security and governance controls for agents, such as Conditional Access
 
 To view the complete inventory of agents in your organization:
 
-1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com) as at least an [AI Administrator](../identity/role-based-access-control/permissions-reference.md#ai-administrator).
+1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com) as at least an [AI Reader](../identity/role-based-access-control/permissions-reference.md#ai-reader).
 1. Select **Agents** from the navigation menu.
 1. Select **All agents** to view the comprehensive list of agents in your tenant.
 
