@@ -17,7 +17,7 @@ This operations guide suite provides prescriptive, post-deployment procedures fo
 - **Platform operations and monitoring engineers** who manage health checks, automation, and dashboards
 - **Security leadership** reviewing operational metrics and service value
 
-This guide assumes GSA is already deployed and configured. For deployment and initial setup, see the [Global Secure Access deployment guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro). For GSA-specific network-layer detections and investigations, see [Security operations for network access](concept-security-operations-network.md). For broader identity-layer security investigations and incident response, see the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps).
+This guide assumes GSA is already deployed and configured. For deployment and initial setup, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For GSA-specific network-layer detections and investigations, see [Security operations for network access](concept-security-operations-network.md). For broader identity-layer security investigations and incident response, see the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps).
 
 ## Overview
 
@@ -65,8 +65,8 @@ If you've just completed deployment, follow this sequence:
 
 ## Related content
 
-- [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/)
-- [Global Secure Access deployment guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro)
+- [Global Secure Access documentation](/entra/global-secure-access/)
+- [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro)
 - [Security operations for network access](concept-security-operations-network.md)
 - [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)
-- [Microsoft Entra what's new](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new)
+- [Microsoft Entra what's new](/entra/fundamentals/whats-new)

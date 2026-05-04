@@ -23,7 +23,7 @@ Output is PowerShell objects suitable for pipeline use. The latest snapshot
 - **Required Entra role**: Microsoft Entra Backup Reader
 - **Minimum module versions**: Microsoft.Graph.Authentication 2.x
 - **Beta API**: subject to change per Microsoft Graph versioning policy.
-- **Reference**: <https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta>
+- **Reference**: <https://learn.microsoft.com/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta>
 
 ## Parameters
 
@@ -79,7 +79,7 @@ Output is PowerShell objects suitable for pipeline use. The latest snapshot
     Minimum module versions:
         Microsoft.Graph.Authentication 2.x
     Beta API: subject to change per Microsoft Graph versioning policy.
-    Reference: https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta
+    Reference: https://learn.microsoft.com/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta
     Author: GSA Operations
 #>
 

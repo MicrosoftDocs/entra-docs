@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 This guide covers day-to-day operations for Global Secure Access remote networks after deployment. Remote networks provide branch site connectivity to Global Secure Access via GRE or IPsec tunnels, enabling site-level traffic forwarding without requiring a per-device client agent.
 
-For initial deployment and tunnel configuration, see the [Global Secure Access deployment guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md).
+For initial deployment and tunnel configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md).
 
 Use the role assignments in this guide to identify the primary owner for each task. Role definitions live in the [Common operations guide](how-to-operations-common.md#roles-and-responsibilities). If your operating model uses different role names, map them to the ones used here.
 
@@ -217,5 +217,5 @@ If your organization uses a network management platform (SolarWinds, PRTG, Thous
 - [Internet Access operations](how-to-operate-internet-access.md)
 - [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md)
 - [Daily health check template](reference-daily-health-check.md)
-- [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/)
-- [GSA Deployment Guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro)
+- [Global Secure Access documentation](/entra/global-secure-access/)
+- [GSA Deployment Guide](/entra/architecture/gsa-deployment-guide-intro)

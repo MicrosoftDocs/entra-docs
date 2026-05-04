@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 This guide covers day-to-day operations for the Microsoft traffic profile in Global Secure Access. The Microsoft traffic profile routes Microsoft 365 and other Microsoft service traffic through the Global Secure Access infrastructure, enabling security controls and optimized routing for Microsoft cloud services.
 
-For initial deployment and configuration, see the [Global Secure Access deployment guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md).
+For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md).
 
 Use the role assignments in this guide to identify the primary owner for each task. Role definitions live in the [Common operations guide](how-to-operations-common.md#roles-and-responsibilities). If your operating model uses different role names, map them to the ones used here.
 
@@ -20,7 +20,7 @@ Use the role assignments in this guide to identify the primary owner for each ta
 This section is organized in the order you should implement monitoring for Microsoft traffic: first, review the critical alerts and their required operator response; next, use the KQL queries to create the detections; then follow the automation steps to enable Sentinel-driven notification and response workflows.
 
 > [!IMPORTANT]
-> In the first 30 days after deployment, use the [Microsoft traffic volume — daily trend](#kql-queries) query to establish a normal traffic baseline before finalizing alert thresholds. The 50-user CA failure threshold in the Conditional Access failure KQL query is a starting point — calibrate it to your organization's actual sign-in volume.
+> In the first 30 days after deployment, use the [Microsoft traffic volume — daily trend](#kql-queries---non-critical) query to establish a normal traffic baseline before finalizing alert thresholds. The 50-user CA failure threshold in the Conditional Access failure KQL query is a starting point — calibrate it to your organization's actual sign-in volume.
 
 ### Critical alerts to configure
 
@@ -552,6 +552,6 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 - [Internet Access operations](how-to-operate-internet-access.md)
 - [Remote Networks operations](how-to-operate-remote-networks.md)
 - [Daily health check template](reference-daily-health-check.md)
-- [Microsoft 365 URLs and IP address ranges](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges)
-- [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/)
-- [GSA Deployment Guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro)
+- [Microsoft 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges)
+- [Global Secure Access documentation](/entra/global-secure-access/)
+- [GSA Deployment Guide](/entra/architecture/gsa-deployment-guide-intro)

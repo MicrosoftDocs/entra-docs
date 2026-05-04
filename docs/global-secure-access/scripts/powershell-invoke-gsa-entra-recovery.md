@@ -28,7 +28,7 @@ EntityTypes.
 - Recovery operations are logged in Entra audit logs under category
 - "Backup and Recovery". Recovery operations don't fire Graph subscriptions
 - or delta records.
-- **Reference**: <https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-recoveryjob?view=graph-rest-beta>
+- **Reference**: <https://learn.microsoft.com/graph/api/resources/entrarecoveryservices-recoveryjob?view=graph-rest-beta>
 
 ## Parameters
 
@@ -92,7 +92,7 @@ EntityTypes.
     Recovery operations are logged in Entra audit logs under category
     "Backup and Recovery". Recovery operations don't fire Graph subscriptions
     or delta records.
-    Reference: https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-recoveryjob?view=graph-rest-beta
+    Reference: https://learn.microsoft.com/graph/api/resources/entrarecoveryservices-recoveryjob?view=graph-rest-beta
     Author: GSA Operations
 #>
 

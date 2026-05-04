@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 This guide covers day-to-day operations for Microsoft Entra Private Access after deployment. It provides prescriptive procedures for alerting, health checks, integration, and automation specific to Private Access connectors, application segments, and connector groups.
 
-For initial deployment and configuration, see the [Global Secure Access deployment guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md).
+For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md).
 
 ### How to use this guide
 
@@ -40,9 +40,9 @@ In order to leverage full ZTNA application segmentation, it is recommended to mi
 
 ## Automated posture assessment
 
-The [Zero Trust Assessment](https://learn.microsoft.com/en-us/security/zero-trust/assessment/overview) continuously evaluates your tenant against the [Protect networks](https://learn.microsoft.com/en-us/entra/fundamentals/configure-security#protect-networks) pillar, which includes a dedicated set of Private Access checks. **Running the Zero Trust Assessment replaces most of the manual configuration-review work that used to fall on Private Access operators.** Use it as your primary *"is my configuration correct?"* control — you do not need to build these checks yourself.
+The [Zero Trust Assessment](/security/zero-trust/assessment/overview) continuously evaluates your tenant against the [Protect networks](/entra/fundamentals/configure-security#protect-networks) pillar, which includes a dedicated set of Private Access checks. **Running the Zero Trust Assessment replaces most of the manual configuration-review work that used to fall on Private Access operators.** Use it as your primary *"is my configuration correct?"* control — you do not need to build these checks yourself.
 
-For the full list of checks and the latest additions, see [Configure Microsoft Entra for increased security — Protect networks](https://learn.microsoft.com/en-us/entra/fundamentals/configure-security#protect-networks). The **Automated by** column in the tables throughout this guide calls out which specific Zero Trust Assessment check covers each operational task.
+For the full list of checks and the latest additions, see [Configure Microsoft Entra for increased security — Protect networks](/entra/fundamentals/configure-security#protect-networks). The **Automated by** column in the tables throughout this guide calls out which specific Zero Trust Assessment check covers each operational task.
 
 ### Schedule the assessment and deliver results
 
@@ -57,7 +57,7 @@ Lead your operational practice with alerts — don't rely on manually watching d
 
 ### Critical alerts to configure
 
-Configure the following alerts and document the response action for each. Use [Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/) with the [Global Secure Access Sentinel integration](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-sentinel-integration), or Azure Monitor alert rules.
+Configure the following alerts and document the response action for each. Use [Microsoft Sentinel](/azure/sentinel/) with the [Global Secure Access Sentinel integration](/entra/global-secure-access/how-to-sentinel-integration), or Azure Monitor alert rules.
 
 | Alert | Condition | Role | Automated by | What to do next |
 | --- | --- | --- | --- | --- |
@@ -69,7 +69,7 @@ Configure the following alerts and document the response action for each. Use [M
 | Unauthorized configuration change | A Private Access configuration change is made by an unexpected identity or without a matching change ticket | SOC + IAM Admin | [Playbook 8: Private Access configuration change alert](#playbook-8-private-access-configuration-change-alert) | 1. Identify the actor and change details in Entra audit logs. 2. Verify whether the change was approved through your change management process. 3. If unauthorized, revert the change and investigate the identity compromise. See [How to access the Global Secure Access audit logs](https://learn.microsoft.com/entra/global-secure-access/how-to-access-audit-logs#overview), [Microsoft Entra audit log categories and activities](https://learn.microsoft.com/entra/identity/monitoring-health/reference-audit-activities#global-secure-access), and [Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
 
 > [!TIP]
-> Use [Microsoft Security Copilot](https://learn.microsoft.com/en-us/security-copilot/) to investigate alert context. Security Copilot can correlate Private Access connection failures with identity risk signals and summarize cross-data findings. For example, prompt: *"Summarize the risk context for users with denied Private Access connections and elevated identity risk in the last 24 hours."*
+> Use [Microsoft Security Copilot](/security-copilot/) to investigate alert context. Security Copilot can correlate Private Access connection failures with identity risk signals and summarize cross-data findings. For example, prompt: *"Summarize the risk context for users with denied Private Access connections and elevated identity risk in the last 24 hours."*
 
 ### KQL queries for Private Access monitoring
 
@@ -77,7 +77,7 @@ Use these queries in Microsoft Sentinel or Log Analytics to monitor Private Acce
 
 **Connector health — identify offline connectors:**
 > [!IMPORTANT]
-> Connector status (Active/Inactive) is determined by heartbeats between the connector service and the Entra cloud. This status is visible in the Entra admin center and via Graph API, but is **not** written to a Log Analytics table. To monitor connector host availability via KQL, deploy [Azure Monitor Agent](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/agents-overview) on each connector host and configure a data collection rule that sends `Heartbeat` data to your Log Analytics workspace.
+> Connector status (Active/Inactive) is determined by heartbeats between the connector service and the Entra cloud. This status is visible in the Entra admin center and via Graph API, but is **not** written to a Log Analytics table. To monitor connector host availability via KQL, deploy [Azure Monitor Agent](/azure/azure-monitor/agents/agents-overview) on each connector host and configure a data collection rule that sends `Heartbeat` data to your Log Analytics workspace.
 
 ```kusto
 let connectorHosts = dynamic(["connector-host-01", "connector-host-02", "connector-host-03"]); // replace with your hostnames
@@ -210,7 +210,7 @@ If required by your organization, you can use the [Private Access health check t
 | Capacity assessment | Network Ops L2 + Capacity Planner | [Playbook 10: Monthly capacity trend report](#playbook-10-monthly-capacity-trend-report) (email) | Review the monthly capacity-trend email. | If any connector group is consistently above 70% capacity, plan to add connectors. See [Capacity thresholds](#capacity-thresholds). |
 | Performance baseline comparison | Network Ops L2 | Sentinel workbook *GSA traffic trend* against the [30-day baseline query](#kql-queries-for-private-access-monitoring) | Compare the current month to the baseline captured in your first month. | Investigate significant deviations. Update the baseline after approved growth events (for example, new user populations). |
 | DR / fallback plan review | Network Ops Lead | Manual — documentation review | Confirm the fallback connectivity plan and contacts are current. | Update the plan and re-test the fallback path. |
-| New feature and functionality review | Network Ops L2 + IAM Admin | Manual — documentation review | Review the [What's new in Microsoft Entra](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new) page and the [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/) for new Private Access features, preview announcements, deprecations, and breaking changes. Document relevant items and assess impact on your environment. | Create change requests for features that improve your security posture or operational efficiency. Plan adoption of new GA features and evaluate previews for future roadmap. Update runbooks and procedures to reflect any deprecations or behavioral changes. |
+| New feature and functionality review | Network Ops L2 + IAM Admin | Manual — documentation review | Review the [What's new in Microsoft Entra](/entra/fundamentals/whats-new) page and the [Global Secure Access documentation](/entra/global-secure-access/) for new Private Access features, preview announcements, deprecations, and breaking changes. Document relevant items and assess impact on your environment. | Create change requests for features that improve your security posture or operational efficiency. Plan adoption of new GA features and evaluate previews for future roadmap. Update runbooks and procedures to reflect any deprecations or behavioral changes. |
 
 ### Failover validation
 
@@ -238,7 +238,7 @@ If required by your organization, you can use the [Private Access health check t
 <!-- Configure the CPU and memory thresholds in Azure Monitor metric alerts on each connector host VM as described in [Playbook 5: Connector group capacity alert](#playbook-5-connector-group-capacity-alert); use the Sentinel integration in this guide for log collection, incident correlation, and workflow automation, not for the host metric thresholds themselves. -->
 
 > [!TIP]
-> Connector sizing depends on the host server specifications and workload. Use the [Private Access Sizing Planner](https://github.com/FranckhDev/GSA-Private-Access-Sizing-Planner) to estimate connector requirements based on your user counts and application patterns. For general connector architecture guidance, see [Understand the Microsoft Entra private network connector](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-connectors). As a starting point, a 4-vCPU / 16 GB RAM server can handle approximately 200–300 concurrent connections, but always validate with your own workload.
+> Connector sizing depends on the host server specifications and workload. Use the [Private Access Sizing Planner](https://github.com/FranckhDev/GSA-Private-Access-Sizing-Planner) to estimate connector requirements based on your user counts and application patterns. For general connector architecture guidance, see [Understand the Microsoft Entra private network connector](/entra/global-secure-access/concept-connectors). As a starting point, a 4-vCPU / 16 GB RAM server can handle approximately 200–300 concurrent connections, but always validate with your own workload.
 
 ## Integration and automation
 
@@ -283,7 +283,7 @@ Write-Host "Configuration export complete. Files saved to current directory."
 
 ### Sentinel integration — step by step
 
-For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Access](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-sentinel-integration).
+For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Access](/entra/global-secure-access/how-to-sentinel-integration).
 
 1. **Enable diagnostic settings** for Global Secure Access: In the Entra admin center, go to **Global Secure Access** > **Settings** > **Diagnostic settings**. Add a setting that sends `NetworkAccessTrafficLogs` and `AuditLogs` to your Log Analytics workspace.
 2. **Install the content pack**: In Microsoft Sentinel, go to **Content hub**, search for **Global Secure Access**, and install the solution. This adds analytics rules, workbooks, and hunting queries.
@@ -430,12 +430,12 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 
 **Steps:**
 
-1. In Azure Automation, create a PowerShell runbook that installs and invokes the [Zero Trust Assessment](https://learn.microsoft.com/en-us/security/zero-trust/assessment/overview) module on a schedule.
+1. In Azure Automation, create a PowerShell runbook that installs and invokes the [Zero Trust Assessment](/security/zero-trust/assessment/overview) module on a schedule.
 2. Filter the output to the **Protect networks** pillar and the checks tagged with *Microsoft Entra Private Access* licensing (see [Automated posture assessment](#automated-posture-assessment) for the full list).
 3. Post an HTML summary email to the Network Ops and IAM Admin distribution lists: pass/fail totals, diffs since last run, and links to each failing check's remediation guidance.
 4. For each *Fail* finding, open an ITSM ticket via the Logic Apps ServiceNow (or equivalent) connector with severity set by the Zero Trust Assessment severity.
 5. Store the raw JSON in Azure Blob Storage with versioning enabled for trend analysis.
-6. Add a [Grafana](https://learn.microsoft.com/en-us/azure/managed-grafana/) or Sentinel-workbook tile showing "Zero Trust Assessment pass rate (Private Access)" \u2014 this becomes the single posture number for management reporting.
+6. Add a [Grafana](/azure/managed-grafana/) or Sentinel-workbook tile showing "Zero Trust Assessment pass rate (Private Access)" \u2014 this becomes the single posture number for management reporting.
 
 ---
 
@@ -471,11 +471,32 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 2. Run the [application access failures query](#kql-queries-for-private-access-monitoring) against a 7-day window.
 3. Also run the [cross-data correlation query](#kql-queries-for-private-access-monitoring) so IAM Admin sees denials alongside identity-risk context.
 4. Format results as an HTML table: application, user count, denial reason, risk context.
-5. Email to the IAM Admin distribution list with subject `Private Access policy efficacy \u2014 week of yyyy-MM-dd`.\n6. Include a one-click link to the Sentinel workbook view for deeper drill-down.\n\n---\n\n#### Playbook 10: Monthly capacity trend report\n\n| Field | Value |\n|---|---|\n| **Trigger** | Scheduled: first business day of each month, 06:00 UTC |\n| **Frequency** | Monthly |\n| **Required permissions** | `Log Analytics Reader` on the workspace; `Storage Blob Data Reader` on the baseline storage account; Logic Apps email connector |\n\n**Steps:**\n\n1. Run the [connector group load distribution query](#kql-queries-for-private-access-monitoring) against the last 30 days.\n2. Load the 30-day baseline captured in your first month (stored in Azure Blob Storage per [performance baseline](#kql-queries-for-private-access-monitoring)).\n3. Generate a report showing per-connector-group: current utilization as % of [capacity threshold](#capacity-thresholds), month-over-month growth, and recommended action (for example, *\"Add a connector to group X \u2014 sustained > 70% for 14 days\"*).\n4. Email to the Network Ops Lead and Capacity Planner.\n5. File an ITSM change request automatically if any group exceeds the Warning threshold for more than 14 consecutive days.\n\n### ITSM integration
+5. Email to the IAM Admin distribution list with subject `Private Access policy efficacy — week of yyyy-MM-dd`.
+6. Include a one-click link to the Sentinel workbook view for deeper drill-down.
+
+---
+
+#### Playbook 10: Monthly capacity trend report
+
+| Field | Value |
+| --- | --- |
+| **Trigger** | Scheduled: first business day of each month, 06:00 UTC |
+| **Frequency** | Monthly |
+| **Required permissions** | `Log Analytics Reader` on the workspace; `Storage Blob Data Reader` on the baseline storage account; Logic Apps email connector |
+
+**Steps:**
+
+1. Run the [connector group load distribution query](#kql-queries-for-private-access-monitoring) against the last 30 days.
+2. Load the 30-day baseline captured in your first month (stored in Azure Blob Storage per [performance baseline](#kql-queries-for-private-access-monitoring)).
+3. Generate a report showing per-connector-group: current utilization as % of [capacity threshold](#capacity-thresholds), month-over-month growth, and recommended action (for example, *"Add a connector to group X — sustained > 70% for 14 days"*).
+4. Email to the Network Ops Lead and Capacity Planner.
+5. File an ITSM change request automatically if any group exceeds the Warning threshold for more than 14 consecutive days.
+
+### ITSM integration
 
 If your organization uses ServiceNow, Microsoft System Center Service Manager, or another ITSM tool:
 
-1. **Alert-to-ticket**: Use [Playbook 2](#playbook-2-auto-create-itsm-ticket-for-connector-group-failure) as a starting point. Extend the same pattern with the [ServiceNow connector for Logic Apps](https://learn.microsoft.com/en-us/connectors/service-now/) to cover additional Private Access alerts.
+1. **Alert-to-ticket**: Use [Playbook 2](#playbook-2-auto-create-itsm-ticket-for-connector-group-failure) as a starting point. Extend the same pattern with the [ServiceNow connector for Logic Apps](/connectors/service-now/) to cover additional Private Access alerts.
 2. **Change tracking**: Log all Private Access configuration changes as change records in your ITSM. Use the [audit log KQL query](#kql-queries-for-private-access-monitoring) to generate a daily change summary.
 3. **CMDB entries**: Register each connector server and connector group as configuration items in your CMDB. Associate Private Access applications with their connector groups for impact analysis.
 
@@ -502,6 +523,6 @@ Track these metrics specific to Private Access. For the broader metrics framewor
 - [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md)
 - [Private Access health check template](reference-private-access-health-check.md)
 - [Daily health check template (all capabilities)](reference-daily-health-check.md)
-- [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/)
-- [GSA Deployment Guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro)
+- [Global Secure Access documentation](/entra/global-secure-access/)
+- [GSA Deployment Guide](/entra/architecture/gsa-deployment-guide-intro)
 - [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)

@@ -27,7 +27,7 @@ Use Get-GsaEntraSnapshot.ps1 to retrieve available SnapshotId values.
 - **Minimum module versions**: Microsoft.Graph.Authentication 2.x
 - **Beta API**: subject to change per Microsoft Graph versioning policy.
 - Only one preview or recovery job can run per tenant at a time.
-- **Reference**: <https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-recoverypreviewjob?view=graph-rest-beta>
+- **Reference**: <https://learn.microsoft.com/graph/api/resources/entrarecoveryservices-recoverypreviewjob?view=graph-rest-beta>
 
 ## Parameters
 
@@ -87,7 +87,7 @@ Use Get-GsaEntraSnapshot.ps1 to retrieve available SnapshotId values.
         Microsoft.Graph.Authentication 2.x
     Beta API: subject to change per Microsoft Graph versioning policy.
     Only one preview or recovery job can run per tenant at a time.
-    Reference: https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-recoverypreviewjob?view=graph-rest-beta
+    Reference: https://learn.microsoft.com/graph/api/resources/entrarecoveryservices-recoverypreviewjob?view=graph-rest-beta
     Author: GSA Operations
 #>
 

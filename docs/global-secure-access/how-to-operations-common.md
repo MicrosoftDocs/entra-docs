@@ -19,7 +19,7 @@ For capability-specific operations, see the individual guides:
 - [Remote Networks operations](how-to-operate-remote-networks.md)
 - [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md)
 
-For initial deployment and configuration, see the [Global Secure Access deployment guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro). For security detection, investigation, and incident response procedures, see the [Security operations for network access](concept-security-operations-network.md) guide.
+For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For security detection, investigation, and incident response procedures, see the [Security operations for network access](concept-security-operations-network.md) guide.
 
 ## Roles and responsibilities
 
@@ -107,7 +107,7 @@ Back up GSA configurations on a weekly automated schedule and before every norma
 
 #### GSA-related Entra ID objects — Microsoft Entra Backup and Recovery
 
-Microsoft Entra ID provides a native [Backup and Recovery service](https://learn.microsoft.com/en-us/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta) (beta) that takes an automatic daily snapshot of supported directory objects and allows scoped restore. The snapshots cover objects that directly affect GSA:
+Microsoft Entra ID provides a native [Backup and Recovery service](/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta) (beta) that takes an automatic daily snapshot of supported directory objects and allows scoped restore. The snapshots cover objects that directly affect GSA:
 
 - **Conditional Access policies** — policies that gate GSA traffic profiles and compliant-network enforcement
 - **Named location policies** — named locations referenced by CA rules (including the GSA-managed compliant network location)
@@ -138,7 +138,7 @@ Microsoft Entra ID provides a native [Backup and Recovery service](https://learn
 | [Start-GsaEntraRecoveryPreview.ps1](scripts/powershell-start-gsa-entra-recovery-preview.md) | Create a scoped preview job for Conditional Access policies, named locations, and GSA service principals. Scope defaults to the GSA-relevant entity types; override with `-EntityTypes` when needed. | `POST /directory/recovery/snapshots/{id}/recoveryPreviewJobs` |
 | [Invoke-GsaEntraRecovery.ps1](scripts/powershell-invoke-gsa-entra-recovery.md) | After the preview is reviewed and approved, execute the recovery job with the same filter scope and log the outcome. Requires `-Force` or interactive confirmation. | `POST /directory/recovery/snapshots/{id}/recoveryJobs` |
 
-Each playbook is authored in the numbered playbook format used across the guide (see script `.NOTES` header for Trigger, Required permissions, and references). For the end-to-end concept, see [Microsoft Entra Backup and Recovery overview](https://learn.microsoft.com/en-us/entra/identity/backup-recovery/overview).
+Each playbook is authored in the numbered playbook format used across the guide (see script `.NOTES` header for Trigger, Required permissions, and references). For the end-to-end concept, see [Microsoft Entra Backup and Recovery overview](/entra/backup/overview).
 
 > [!IMPORTANT]
 > Store the GSA JSON exports in a secured location with versioning enabled (for example, an Azure Storage account with soft delete, or a Git repository). Retain at least 30 days of GSA-specific exports. Treat the Entra snapshot history as an additional 5-day safety net, not a replacement.
@@ -175,7 +175,7 @@ Aim to back every cross-cutting metric with an automated alert when it breaches 
 | RBAC review overdue (< 100% this quarter) | Scheduled runbook ([Test-GsaRbacHygiene.ps1](scripts/powershell-test-gsa-rbac-hygiene.md)) runs weekly and queries Graph API for unreviewed admin role assignments | Alert email listing overdue accounts and their roles | 1. Review each flagged assignment in Microsoft Entra ID under **Roles and administrators**. 2. Confirm that the role is still required and least-privileged, or remove access. 3. Update the RBAC review log with the review date. 4. If your organization uses Identity Governance, you can use Access Reviews or Privileged Identity Management role reviews for the same control. |
 | Alert noise ratio > 20% | Scheduled runbook ([Test-GsaAlertNoiseRatio.ps1](scripts/powershell-test-gsa-alert-noise-ratio.md)) runs weekly and queries Sentinel incident classifications | Alert email with noise ratio and top noisy analytics rules | 1. Open Sentinel > Analytics. 2. Tune or add exclusions to the noisiest rules. 3. Re-assess after the next reporting period. |
 | Change success rate < 95% | Manual — review your ITSM change records monthly | Your ITSM system (ServiceNow, Jira Service Management, or equivalent) | 1. Identify failed or rolled-back changes. 2. Conduct root cause analysis on each. 3. Update change procedures to address gaps. 4. Report findings in the quarterly ops review. |
-| MTTD > 5 min or MTTR > 15 min | Sentinel analytics rule on incident response times (see the [incident response time detection](concept-security-operations-network.md#incident-response-time-detection) in the SecOps guide) | Sentinel Incidents dashboard; alert email if rule fires | 1. Review the slow-response incidents. 2. Check if alert routing or on-call assignment caused the delay. 3. Adjust notification channels or escalation paths. |
+| MTTD > 5 min or MTTR > 15 min | Sentinel analytics rule on incident response times (correlate against the detections in the [Security operations for Global Secure Access](concept-security-operations-network.md) guide) | Sentinel Incidents dashboard; alert email if rule fires | 1. Review the slow-response incidents. 2. Check if alert routing or on-call assignment caused the delay. 3. Adjust notification channels or escalation paths. |
 
 > [!TIP]
 > Deploy the three automation runbooks ([Test-GsaBackupCompliance.ps1](scripts/powershell-test-gsa-backup-compliance.md), [Test-GsaRbacHygiene.ps1](scripts/powershell-test-gsa-rbac-hygiene.md), [Test-GsaAlertNoiseRatio.ps1](scripts/powershell-test-gsa-alert-noise-ratio.md)) to an Azure Automation Account with a system-assigned managed identity. Grant the identity `Log Analytics Reader` on your workspace, `Automation Job Operator` on the Automation Account, `RoleManagement.Read.Directory` and `Mail.Send` in Microsoft Graph. Schedule each runbook on its recommended cadence (daily for backup compliance, weekly for the others).
@@ -195,7 +195,7 @@ The following tools provide operational visibility across all GSA capabilities. 
 
 #### Global Secure Access dashboard
 
-The built-in [Global Secure Access dashboard](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-dashboard) in the Entra admin center provides a single-pane overview of all traffic flowing through the service. Navigate to **Global Secure Access** > **Dashboard** to view:
+The built-in [Global Secure Access dashboard](/entra/global-secure-access/concept-traffic-dashboard) in the Entra admin center provides a single-pane overview of all traffic flowing through the service. Navigate to **Global Secure Access** > **Dashboard** to view:
 
 - Traffic volume and trends across all profiles (Private Access, Internet Access, Microsoft Traffic)
 - Top users and destinations
@@ -204,11 +204,11 @@ The built-in [Global Secure Access dashboard](https://learn.microsoft.com/en-us/
 
 #### Traffic logs
 
-The [traffic logs](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-view-traffic-logs) provide session-level detail for all GSA traffic. Navigate to **Global Secure Access** > **Monitor** > **Traffic logs** to filter by user, destination, policy action, and connection status. Traffic logs are also available in Log Analytics via the `NetworkAccessTraffic` table for KQL queries.
+The [traffic logs](/entra/global-secure-access/how-to-view-traffic-logs) provide session-level detail for all GSA traffic. Navigate to **Global Secure Access** > **Monitor** > **Traffic logs** to filter by user, destination, policy action, and connection status. Traffic logs are also available in Log Analytics via the `NetworkAccessTraffic` table for KQL queries.
 
 #### Remote network health logs
 
-The [remote network health logs](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-remote-network-health-logs) provide tunnel-level status and connectivity data for all branch sites. Navigate to **Global Secure Access** > **Monitor** > **Remote network health logs** to view:
+The [remote network health logs](/entra/global-secure-access/how-to-remote-network-health-logs) provide tunnel-level status and connectivity data for all branch sites. Navigate to **Global Secure Access** > **Monitor** > **Remote network health logs** to view:
 
 - Tunnel connectivity status (connected, disconnected) per remote network
 - Last state change timestamps
@@ -219,11 +219,11 @@ Remote network health data is also available in Log Analytics via the `RemoteNet
 
 #### Enriched Microsoft 365 logs
 
-The [enriched Microsoft 365 logs](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-view-enriched-logs) augment standard Microsoft 365 audit events with network context from GSA (source IP, device, user agent). Navigate to **Global Secure Access** > **Monitor** > **Enriched Microsoft 365 logs** to correlate Microsoft 365 activity with network-level details. These logs require the Microsoft traffic profile to be enabled.
+The [enriched Microsoft 365 logs](/entra/global-secure-access/how-to-view-enriched-logs) augment standard Microsoft 365 audit events with network context from GSA (source IP, device, user agent). Navigate to **Global Secure Access** > **Monitor** > **Enriched Microsoft 365 logs** to correlate Microsoft 365 activity with network-level details. These logs require the Microsoft traffic profile to be enabled.
 
 #### Alerts
 
-The [Global Secure Access alerts](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-alerts) view surfaces platform-level issues, including unhealthy connectors, configuration changes to traffic forwarding, and integration alerts from third-party security services. Navigate to **Global Secure Access** > **Monitor** > **Alerts**. When exported via Microsoft Entra diagnostic settings (`NetworkAccessAlerts` category), alerts are available in Log Analytics via the `NetworkAccessAlerts` table for KQL queries and Sentinel analytics rules.
+The [Global Secure Access alerts](/entra/global-secure-access/concept-alerts) view surfaces platform-level issues, including unhealthy connectors, configuration changes to traffic forwarding, and integration alerts from third-party security services. Navigate to **Global Secure Access** > **Monitor** > **Alerts**. When exported via Microsoft Entra diagnostic settings (`NetworkAccessAlerts` category), alerts are available in Log Analytics via the `NetworkAccessAlerts` table for KQL queries and Sentinel analytics rules.
 
 #### Microsoft Sentinel workbooks
 
@@ -233,13 +233,13 @@ The **Global Secure Access** workbook in Microsoft Sentinel provides advanced op
 2. Search for **Global Secure Access** and open the workbook.
 
 > [!NOTE]
-> The workbook requires the Global Secure Access solution from the [Microsoft Sentinel content hub](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-catalog). If the workbook is not visible, go to **Content management** > **Content hub**, search for **Global Secure Access**, and install the solution.
+> The workbook requires the Global Secure Access solution from the [Microsoft Sentinel content hub](/azure/sentinel/sentinel-solutions-catalog). If the workbook is not visible, go to **Content management** > **Content hub**, search for **Global Secure Access**, and install the solution.
 
-Pin frequently-used views to a shared [Azure dashboard](https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards) for team-wide visibility.
+Pin frequently-used views to a shared [Azure dashboard](/azure/azure-portal/azure-portal-dashboards) for team-wide visibility.
 
 #### Security Copilot
 
-Use [Microsoft Security Copilot](https://learn.microsoft.com/en-us/security-copilot/) to accelerate cross-product investigation and correlation when an alert spans Entra, Global Secure Access, and Microsoft Sentinel data sources; do not use it as a replacement for the dashboards, logs, and alerting workflows described earlier in this section.
+Use [Microsoft Security Copilot](/security-copilot/) to accelerate cross-product investigation and correlation when an alert spans Entra, Global Secure Access, and Microsoft Sentinel data sources; do not use it as a replacement for the dashboards, logs, and alerting workflows described earlier in this section.
 
 Prompt examples:
 
@@ -249,7 +249,7 @@ Prompt examples:
 
 #### Graph API and PowerShell
 
-Automate report generation with custom scripts that query Log Analytics via the [Azure Monitor Query API](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/api/overview) and output formatted reports. See the [automated weekly report playbook](#playbook-1-automated-weekly-operations-report) for an example.
+Automate report generation with custom scripts that query Log Analytics via the [Azure Monitor Query API](/azure/azure-monitor/logs/api/overview) and output formatted reports. See the [automated weekly report playbook](#playbook-1-automated-weekly-operations-report) for an example.
 
 ### Automated weekly report (example playbook)
 
@@ -305,7 +305,7 @@ Run a structured feature review every month and bring the outcome into the quart
 
 | Cadence | Role | Automated by | Procedure | What to do next |
 | --- | --- | --- | --- | --- |
-| Monthly | Service Owner + Network Security Engineer + Identity Engineer | Manual — documentation review | Review [What's new in Microsoft Entra](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new) and the [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/) for new features, preview announcements, deprecations, release notes, and breaking changes across all GSA capabilities. Record each relevant item, map it to the affected capability guide, and assess operational impact, prerequisites, licensing impact, and rollout risk. | Create change requests for features that improve security posture or operational efficiency. Schedule testing for approved candidates, track preview items on the roadmap, and update runbooks, alert thresholds, and operating procedures when Microsoft changes service behavior or retires functionality. |
+| Monthly | Service Owner + Network Security Engineer + Identity Engineer | Manual — documentation review | Review [What's new in Microsoft Entra](/entra/fundamentals/whats-new) and the [Global Secure Access documentation](/entra/global-secure-access/) for new features, preview announcements, deprecations, release notes, and breaking changes across all GSA capabilities. Record each relevant item, map it to the affected capability guide, and assess operational impact, prerequisites, licensing impact, and rollout risk. | Create change requests for features that improve security posture or operational efficiency. Schedule testing for approved candidates, track preview items on the roadmap, and update runbooks, alert thresholds, and operating procedures when Microsoft changes service behavior or retires functionality. |
 
 > [!TIP]
 > Use the capability guides to capture feature-specific actions after the shared review. For example, update [Private Access operations](how-to-operate-private-access.md), [Internet Access operations](how-to-operate-internet-access.md), [Remote Networks operations](how-to-operate-remote-networks.md), or [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md) when a change affects only one capability.
@@ -313,9 +313,9 @@ Run a structured feature review every month and bring the outcome into the quart
 ### Training and knowledge sharing
 
 - Schedule quarterly knowledge-sharing sessions, especially after major GSA feature releases.
-- Monitor the [Microsoft Tech Community for Global Secure Access](https://techcommunity.microsoft.com/) and the [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/) for updates.
-- Stay informed via [Microsoft Entra what's new](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new) for feature announcements and deprecation notices.
-- Review the current [Microsoft Entra private network connector version release history](https://learn.microsoft.com/en-us/entra/global-secure-access/reference-version-history),  [Global Secure Access client for Windows release notes](https://learn.microsoft.com/en-us/entra/global-secure-access/reference-windows-client-release-history) and [Global Secure Access client for macOS release notes](https://learn.microsoft.com/en-us/entra/global-secure-access/reference-macos-client-release-history) so your team keeps current with connector and client versions, new features, and update requirements.
+- Monitor the [Microsoft Tech Community for Global Secure Access](https://techcommunity.microsoft.com/) and the [Global Secure Access documentation](/entra/global-secure-access/) for updates.
+- Stay informed via [Microsoft Entra what's new](/entra/fundamentals/whats-new) for feature announcements and deprecation notices.
+- Review the current [Microsoft Entra private network connector version release history](/entra/global-secure-access/reference-version-history),  [Global Secure Access client for Windows release notes](/entra/global-secure-access/reference-windows-client-release-history) and [Global Secure Access client for macOS release notes](/entra/global-secure-access/reference-macos-client-release-history) so your team keeps current with connector and client versions, new features, and update requirements.
 
 > [!TIP]
 > Treat your guides and runbooks as living documents — update troubleshooting references after every significant incident, and update procedures after every change review. Version-control all documentation.
@@ -342,6 +342,6 @@ Review your GSA capacity and configuration when:
 - [Communication plan template](reference-communication-plan.md)
 - [Daily health check template](reference-daily-health-check.md)
 - [Private Access health check template](reference-private-access-health-check.md)
-- [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/)
-- [GSA Deployment Guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro)
+- [Global Secure Access documentation](/entra/global-secure-access/)
+- [GSA Deployment Guide](/entra/architecture/gsa-deployment-guide-intro)
 - [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)

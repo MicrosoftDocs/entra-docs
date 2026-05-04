@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 This guide covers day-to-day operations for Microsoft Entra Internet Access after deployment. It provides prescriptive procedures for alerting, health checks, web filtering policy management, TLS inspection, and automation specific to Internet Access traffic profiles.
 
-For initial deployment and configuration, see the [Global Secure Access deployment guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md). For remote network (branch site) operations, see the [Remote Networks operations guide](how-to-operate-remote-networks.md).
+For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md). For remote network (branch site) operations, see the [Remote Networks operations guide](how-to-operate-remote-networks.md).
 
 ### How to use this guide
 
@@ -28,9 +28,9 @@ Every section helps you answer three questions:
 
 ## Automated posture assessment
 
-The [Zero Trust Assessment](https://learn.microsoft.com/en-us/security/zero-trust/assessment/overview) continuously evaluates your tenant against the [Protect networks](https://learn.microsoft.com/en-us/entra/fundamentals/configure-security#protect-networks) pillar, which includes a dedicated set of Internet Access checks. **Running the Zero Trust Assessment replaces most of the manual configuration-review work that used to fall on Internet Access operators.** Use it as your primary *"is my configuration correct?"* control — you do not need to build these checks yourself.
+The [Zero Trust Assessment](/security/zero-trust/assessment/overview) continuously evaluates your tenant against the [Protect networks](/entra/fundamentals/configure-security#protect-networks) pillar, which includes a dedicated set of Internet Access checks. **Running the Zero Trust Assessment replaces most of the manual configuration-review work that used to fall on Internet Access operators.** Use it as your primary *"is my configuration correct?"* control — you do not need to build these checks yourself.
 
-For the full list of checks and the latest additions, see [Configure Microsoft Entra for increased security — Protect networks](https://learn.microsoft.com/en-us/entra/fundamentals/configure-security#protect-networks). The **Automated by** column in the tables throughout this guide calls out which specific Zero Trust Assessment check covers each operational task.
+For the full list of checks and the latest additions, see [Configure Microsoft Entra for increased security — Protect networks](/entra/fundamentals/configure-security#protect-networks). The **Automated by** column in the tables throughout this guide calls out which specific Zero Trust Assessment check covers each operational task.
 
 ### Schedule the assessment and deliver results
 
@@ -45,7 +45,7 @@ Lead your operational practice with alerts — don't rely on manually watching d
 
 ### Critical alerts to configure
 
-Configure the following alerts and document the response action for each. Use [Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/) with the [Global Secure Access Sentinel integration](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-sentinel-integration), or Azure Monitor alert rules.
+Configure the following alerts and document the response action for each. Use [Microsoft Sentinel](/azure/sentinel/) with the [Global Secure Access Sentinel integration](/entra/global-secure-access/how-to-sentinel-integration), or Azure Monitor alert rules.
 
 | Alert | Condition | Role | Automated by | What to do next |
 | --- | --- | --- | --- | --- |
@@ -58,7 +58,7 @@ Configure the following alerts and document the response action for each. Use [M
 | Unauthorized configuration change | An Internet Access configuration change is made by an unexpected identity or without a matching change ticket | SOC + IAM Admin | [Playbook 8: Internet Access configuration change alert](#playbook-8-internet-access-configuration-change-alert) | 1. Identify the actor and change details in Entra audit logs. 2. Verify whether the change was approved through your change management process. 3. If unauthorized, revert the change and investigate the identity compromise. See [Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
 
 > [!TIP]
-> Use [Microsoft Security Copilot](https://learn.microsoft.com/en-us/security-copilot/) to analyze patterns in blocked traffic and correlate with threat intelligence feeds.
+> Use [Microsoft Security Copilot](/security-copilot/) to analyze patterns in blocked traffic and correlate with threat intelligence feeds.
 
 ### KQL queries for Internet Access monitoring
 
@@ -202,7 +202,7 @@ Validate each prerequisite before testing prompt injection enforcement. If any p
 | # | Prerequisite | How to validate | Pass criteria | If it fails |
 | --- | --- | --- | --- | --- |
 | 1 | TLS inspection applies to target AI sites | On the test device, navigate to the target AI site. Select the lock icon in the browser address bar and inspect the certificate. | The certificate is the Global Secure Access inspection certificate (not the site's native certificate). | Verify the prompt policy rules include the correct endpoint and conversation scheme. For logged-out users, confirm the correct backend URL is configured (for example, `https://chatgpt.com/backend-anon/f/conversation` for ChatGPT). See [TLS inspection certificate lifecycle](#tls-inspection-certificate-lifecycle). |
-| 2 | TLS inspection works for other policy types | Test a different policy type that relies on TLS inspection, such as web content filtering or a file policy (for example, blocking file downloads). | The expected block page or error appears. | Confirm the correct root certificate is installed in the **Trusted Root Certification Authorities** store on the client device. Review the [TLS inspection tutorial](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-tls-inspection) to enable TLS inspection. |
+| 2 | TLS inspection works for other policy types | Test a different policy type that relies on TLS inspection, such as web content filtering or a file policy (for example, blocking file downloads). | The expected block page or error appears. | Confirm the correct root certificate is installed in the **Trusted Root Certification Authorities** store on the client device. Review the [TLS inspection tutorial](tutorial-internet-access-tls-inspection.md) to enable TLS inspection. |
 | 3 | QUIC is disabled | Check the browser flag at `edge://flags/#enable-quic` (or equivalent for Chrome). Also verify the registry: `HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge` → `QuicAllowed` = `0`. | QUIC is set to **Disabled** via Group Policy or registry. | Disable QUIC persistently using Group Policy or registry — browser settings can reset after updates. See [QUIC enforcement](#quic-enforcement) for all methods. |
 | 4 | Device health check passes | Open the **Global Secure Access client Health Check** on the test device. | All checks pass: device is Microsoft Entra joined, tunneling/engine/policy retriever services running, driver running, policy server reachable, forwarding profile registry exists. | Address each failing check individually. Focus on connectivity and service status before retesting prompt injection. |
 
@@ -308,7 +308,7 @@ Write-Host "Internet Access configuration export complete."
 
 ### Sentinel integration
 
-For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Access](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-sentinel-integration).
+For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Access](/entra/global-secure-access/how-to-sentinel-integration).
 
 1. **Enable diagnostic settings**: In the Entra admin center, go to **Global Secure Access** > **Settings** > **Diagnostic settings**. Add a setting that sends `NetworkAccessTrafficLogs` and `AuditLogs` to your Log Analytics workspace.
 2. **Install the content pack**: In Microsoft Sentinel, go to **Content hub**, search for **Global Secure Access**, and install the solution. This adds analytics rules, workbooks, and hunting queries.
@@ -677,12 +677,12 @@ Write-Output "$($results.Where({$_.Status -eq 'Applied'}).Count) of $($overrides
 
 **Steps:**
 
-1. In Azure Automation, create a PowerShell runbook that installs and invokes the [Zero Trust Assessment](https://learn.microsoft.com/en-us/security/zero-trust/assessment/overview) module on a schedule. This runbook can be shared with Private Access — filter the output per capability.
+1. In Azure Automation, create a PowerShell runbook that installs and invokes the [Zero Trust Assessment](/security/zero-trust/assessment/overview) module on a schedule. This runbook can be shared with Private Access — filter the output per capability.
 2. Filter the output to the **Protect networks** pillar and the checks tagged with *Microsoft Entra Internet Access* licensing (see [Automated posture assessment](#automated-posture-assessment) for the full list).
 3. Post an HTML summary email to the Network Ops and IAM Admin distribution lists: pass/fail totals, diffs since last run, and links to each failing check's remediation guidance.
 4. For each *Fail* finding, open an ITSM ticket via the Logic Apps ServiceNow (or equivalent) connector with severity set by the Zero Trust Assessment severity.
 5. Store the raw JSON in Azure Blob Storage with versioning enabled for trend analysis.
-6. Add a [Grafana](https://learn.microsoft.com/en-us/azure/managed-grafana/) or Sentinel-workbook tile showing "Zero Trust Assessment pass rate (Internet Access)" — this becomes the single posture number for management reporting.
+6. Add a [Grafana](/azure/managed-grafana/) or Sentinel-workbook tile showing "Zero Trust Assessment pass rate (Internet Access)" — this becomes the single posture number for management reporting.
 
 ---
 
@@ -755,7 +755,7 @@ Write-Output "$($results.Where({$_.Status -eq 'Applied'}).Count) of $($overrides
 
 If your organization uses ServiceNow, Microsoft System Center Service Manager, or another ITSM tool:
 
-1. **Alert-to-ticket**: Use [Playbook 2](#playbook-2-auto-create-itsm-ticket-for-policy-override-requests) as a starting point. Extend the same pattern with the [ServiceNow connector for Logic Apps](https://learn.microsoft.com/en-us/connectors/service-now/) to cover additional Internet Access alerts.
+1. **Alert-to-ticket**: Use [Playbook 2](#playbook-2-auto-create-itsm-ticket-for-policy-override-requests) as a starting point. Extend the same pattern with the [ServiceNow connector for Logic Apps](/connectors/service-now/) to cover additional Internet Access alerts.
 2. **Change tracking**: Log all Internet Access configuration changes as change records in your ITSM. [Playbook 8](#playbook-8-internet-access-configuration-change-alert) already correlates changes against open tickets automatically.
 3. **CMDB entries**: Register each web filtering policy, security profile, and TLS inspection policy as configuration items in your CMDB. Associate them with the applications or user populations they protect for impact analysis.
 
@@ -783,6 +783,6 @@ Track these metrics specific to Internet Access. For the broader metrics framewo
 - [Remote Networks operations](how-to-operate-remote-networks.md)
 - [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md)
 - [Daily health check template](reference-daily-health-check.md)
-- [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/)
-- [GSA Deployment Guide](https://learn.microsoft.com/en-us/entra/architecture/gsa-deployment-guide-intro)
+- [Global Secure Access documentation](/entra/global-secure-access/)
+- [GSA Deployment Guide](/entra/architecture/gsa-deployment-guide-intro)
 - [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)

@@ -57,7 +57,7 @@ _______________________________________________________________________________
 
 | # | Check | How | Status | What to do if it fails |
 | --- | --- | --- | --- | --- |
-| 1 | Connector software version | Compare installed version on each host against the [latest available version](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-connectors) | Pass / Fail | Schedule connector updates during a maintenance window. Update one connector at a time per group. |
+| 1 | Connector software version | Compare installed version on each host against the [latest available version](/entra/global-secure-access/concept-connectors) | Pass / Fail | Schedule connector updates during a maintenance window. Update one connector at a time per group. |
 | 2 | Failover validation | Follow the [failover validation procedure](how-to-operate-private-access.md#failover-validation) during a scheduled maintenance window | Pass / Fail | Investigate connector group assignment and network routing. Do not run in production without a maintenance window. |
 | 3 | RBAC review | Review accounts with Global Secure Access Administrator or related roles in the Entra admin center | Pass / Fail | Remove access for accounts that no longer require it. Verify all admin accounts use phishing-resistant MFA. |
 | 4 | Capacity assessment | Review 30-day trend of concurrent sessions and bandwidth per connector group against [capacity thresholds](how-to-operate-private-access.md#capacity-thresholds) | Pass / Fail | If any group is consistently above 70%, plan to add connectors. Use the [Private Access Sizing Planner](https://github.com/FranckhDev/GSA-Private-Access-Sizing-Planner). |

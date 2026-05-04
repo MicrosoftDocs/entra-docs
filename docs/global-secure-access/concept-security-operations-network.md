@@ -1,7 +1,7 @@
 ---
 title: Security operations for Microsoft Entra Global Secure Access
 description: "Security operations guide for Global Secure Access covering detection patterns and Sentinel analytics for Private Access, Internet Access, Remote Networks, and Microsoft Traffic."
-ms.topic: concept
+ms.topic: concept-article
 ms.date: 05/04/2026
 ms.reviewer: jebley
 ai-usage: ai-assisted
@@ -38,14 +38,14 @@ This guide extends that coverage to the **network layer** — specifically, the 
 
 ## Where to look
 
-Global Secure Access exposes five native diagnostic categories. Each maps to a dedicated Log Analytics table and surfaces a different layer of network telemetry. Combine them with the Entra identity tables and CPE (customer premises equipment — the [branch routers that terminate Remote Network tunnels](https://learn.microsoft.com/en-us/entra/global-secure-access/quickstart-remote-network)) syslog where applicable.
+Global Secure Access exposes five native diagnostic categories. Each maps to a dedicated Log Analytics table and surfaces a different layer of network telemetry. Combine them with the Entra identity tables and CPE (customer premises equipment — the [branch routers that terminate Remote Network tunnels](/entra/global-secure-access/quickstart-remote-network)) syslog where applicable.
 
 | Source | What it contains | When to use it |
 | --- | --- | --- |
 | `NetworkAccessTraffic` | Transaction-level events for every HTTP request through GSA: user, device, destination, URL, bytes, action, applied policy, threat type, TLS inspection result, cloud app risk score, initiating process | Primary table for traffic, threat, and policy detections across all GSA capabilities |
 | `NetworkAccessConnectionEvents` | Connection lifecycle events with device context (OS, join type, name), the security profile / policy / rule that was applied, PoP region, cross-tenant access, and Intelligent Local Access (`IsLocal`) | Add device and policy context to traffic-based detections; investigate B2B and PoP routing anomalies. Join to `NetworkAccessTraffic` on `ConnectionId` |
 | `RemoteNetworkHealthLogs` | IPsec tunnel and BGP session state, heartbeats, advertised route counts, throughput per remote network | Primary source for branch tunnel and BGP detections — replaces or supplements CPE-side `CommonSecurityLog` |
-| `NetworkAccessAlerts` | GSA-generated alerts: malicious URL, malware, phishing, **Increased External Tenant Activity**, **Token / Device Inconsistency**, **Unhealthy Remote Network** | Primary feed for native GSA threat alerts — pair with the [Sentinel Content hub Global Secure Access solution](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy) for prebuilt rules |
+| `NetworkAccessAlerts` | GSA-generated alerts: malicious URL, malware, phishing, **Increased External Tenant Activity**, **Token / Device Inconsistency**, **Unhealthy Remote Network** | Primary feed for native GSA threat alerts — pair with the [Sentinel Content hub Global Secure Access solution](/azure/sentinel/sentinel-solutions-deploy) for prebuilt rules |
 | `NetworkAccessGenerativeAIInsights` (Preview) | Generative AI prompts, MCP client/server activity, AI tool and sub-activity metadata | Shadow AI detection, MCP governance, prompt monitoring, AI usage compliance |
 | `SigninLogs` | Entra ID sign-in events with GSA-aware fields (`IsThroughGlobalSecureAccess`, `NetworkLocationDetails`) | Correlate identity risk with network activity |
 | `AuditLogs` | Entra admin operations: GSA filtering and forwarding policies, profiles, remote networks, certificates, onboarding/offboarding | Detect unauthorized configuration changes (see [Detect unauthorized configuration changes](#detect-unauthorized-configuration-changes)) |
@@ -54,10 +54,10 @@ Global Secure Access exposes five native diagnostic categories. Each maps to a d
 
 The Azure portal and Microsoft Sentinel offer several integration points for these data sources:
 
-- [Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/overview) — install the [**Global Secure Access** solution from the Sentinel Content hub](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy) for prebuilt analytics rules, workbooks, and hunting queries that complement this guide.
-- [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview) — for workbook-based dashboards and alert rules over Log Analytics.
-- [Azure Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) — to stream GSA logs to third-party SIEMs (Splunk, ArcSight, QRadar, Sumo Logic).
-- [Microsoft Security Copilot](https://learn.microsoft.com/en-us/security-copilot/) — for cross-table investigation and natural-language triage.
+- [Microsoft Sentinel](/azure/sentinel/overview) — install the [**Global Secure Access** solution from the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) for prebuilt analytics rules, workbooks, and hunting queries that complement this guide.
+- [Azure Monitor](/azure/azure-monitor/overview) — for workbook-based dashboards and alert rules over Log Analytics.
+- [Azure Event Hubs](/azure/event-hubs/event-hubs-about) — to stream GSA logs to third-party SIEMs (Splunk, ArcSight, QRadar, Sumo Logic).
+- [Microsoft Security Copilot](/security-copilot/) — for cross-table investigation and natural-language triage.
 
 > [!NOTE]
 > **Field-name and enum validation.** Column names and enum values referenced in this guide come from the GSA diagnostic settings integration guide and the Microsoft Sentinel content pack — they may differ between tenants and change as the service evolves. Before turning any KQL in this guide into a Sentinel analytics rule, run `<TableName> | take 10` against your tenant and confirm the columns and values used. Common values to spot-check:
@@ -98,7 +98,7 @@ All detections in this guide require that one or more GSA diagnostic categories 
 Enabling all five GSA diagnostic categories on a mid-size tenant produces multiple GB per day of Log Analytics ingest. Plan capacity and retention before turning everything on.
 
 - **Estimate ingest volume.** `NetworkAccessTraffic` is by far the highest-volume category. Run the [Cross-cutting baseline](#cross-cutting-baseline-all-capabilities) for one week against a sample of your tenant traffic to project monthly volume.
-- **Pick the right destination per category.** Send investigation-grade categories (`NetworkAccessAlerts`, `AuditLogs`, `RemoteNetworkHealthLogs`) to Log Analytics. Archive high-volume `NetworkAccessTraffic` to a Storage Account if you don't need real-time KQL on the full firehose, or use Sentinel's [Auxiliary Logs / basic logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/basic-logs-configure) tier for cost-aware querying.
+- **Pick the right destination per category.** Send investigation-grade categories (`NetworkAccessAlerts`, `AuditLogs`, `RemoteNetworkHealthLogs`) to Log Analytics. Archive high-volume `NetworkAccessTraffic` to a Storage Account if you don't need real-time KQL on the full firehose, or use Sentinel's [Auxiliary Logs / basic logs](/azure/azure-monitor/logs/basic-logs-configure) tier for cost-aware querying.
 - **Set retention by category.** SOC investigation typically needs 90–180 days of `NetworkAccessTraffic`. Audit and certificate operations should be retained for the full compliance window your organization requires (often 1–2 years) — use Log Analytics archive tier or Storage Account export.
 - **Monitor cost with Azure Cost Management.** Tag the diagnostic destinations and review monthly; spikes often indicate noisy traffic patterns worth investigating in their own right.
 
@@ -141,13 +141,12 @@ NetworkAccessTraffic
 Record per traffic type: daily sessions, blocked-session ratio, distinct users, bytes, TLS inspection failure rate, and threat intelligence match volume.
 
 > [!NOTE]
-> Re-run this baseline and the per-capability baselines after any of the following: a [GSA service update](https://learn.microsoft.com/en-us/entra/global-secure-access/whats-new-global-secure-access), a major policy change, a user-population growth event, or onboarding/offboarding a Remote Network. If you don't track service updates actively, **re-baseline at least once per quarter**. Stale baselines are the leading cause of false positives.
+> Re-run this baseline and the per-capability baselines after any of the following: a Global Secure Access service update, a major policy change, a user-population growth event, or onboarding/offboarding a Remote Network. If you don't track service updates actively, **re-baseline at least once per quarter**. Stale baselines are the leading cause of false positives.
 >
 > **Get notified of service changes automatically:**
 >
-> - Subscribe to the [What's new in GSA](https://learn.microsoft.com/en-us/entra/global-secure-access/whats-new-global-secure-access) RSS feed for feature announcements and schema changes.
-> - Configure [Azure Service Health alerts](https://learn.microsoft.com/en-us/azure/service-health/alerts-activity-log-service-notifications-portal) for the **Global Secure Access** service to receive incident, planned-maintenance, and health-advisory notifications in your monitoring channel.
-> - For tenant-level admin announcements, monitor the [Microsoft 365 Message Center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center) filtered to Microsoft Entra and Global Secure Access.
+> - Configure [Azure Service Health alerts](/azure/service-health/alerts-activity-log-service-notifications-portal) for the **Global Secure Access** service to receive incident, planned-maintenance, and health-advisory notifications in your monitoring channel.
+> - For tenant-level admin announcements, monitor the [Microsoft 365 Message Center](/microsoft-365/admin/manage/message-center) filtered to Microsoft Entra and Global Secure Access.
 
 ## Private Access security detections
 
@@ -181,12 +180,12 @@ Use the **P95** values as your starting upper bound. If your P95 distinct-apps-p
 
 | What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
 | --- | --- | --- | --- | --- |
-| Connector compromise indicators | Critical | Connector host telemetry (Defender for Endpoint or equivalent on the connector VM) — not detectable from `NetworkAccessTraffic` alone | Connector host generates outbound traffic to destinations outside `*.msappproxy.net`, `*.servicebus.windows.net`, and known application backends | Investigation pattern — this guide does **not** ship a Sentinel rule because the signal lives on the connector host, not in GSA logs. Configure endpoint detection on the connector hosts and rely on the [**Global Secure Access** Content hub solution](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy) for any prebuilt connector-aware rules. Hand off to [Microsoft Incident Response Playbooks](https://aka.ms/IRPlaybooks) on confirmed indicators. |
+| Connector compromise indicators | Critical | Connector host telemetry (Defender for Endpoint or equivalent on the connector VM) — not detectable from `NetworkAccessTraffic` alone | Connector host generates outbound traffic to destinations outside `*.msappproxy.net`, `*.servicebus.windows.net`, and known application backends | Investigation pattern — this guide does **not** ship a Sentinel rule because the signal lives on the connector host, not in GSA logs. Configure endpoint detection on the connector hosts and rely on the [**Global Secure Access** Content hub solution](/azure/sentinel/sentinel-solutions-deploy) for any prebuilt connector-aware rules. Hand off to [Microsoft Incident Response Playbooks](https://aka.ms/IRPlaybooks) on confirmed indicators. |
 | Lateral movement via Private Access | High | `NetworkAccessTraffic` | Single user accesses > 10 distinct application segments within 15 minutes (see the lateral movement detection query that follows) | Validate with the application owner; if unauthorized, hand off to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1021. |
 | Access from risky identity to private apps | High | `NetworkAccessTraffic` joined with `SigninLogs` | User with medium/high `RiskLevelDuringSignIn` successfully connects to Private Access apps | Use the [risky-user cross-signal query](#cross-signal-identity-and-network-correlation). Triage in Microsoft Entra ID Protection. |
 | Private application access from a non-managed device | High | `NetworkAccessTraffic` joined with `NetworkAccessConnectionEvents` on `ConnectionId` | Successful Private Access session where `DeviceJoinType` is `unjoined` or empty | Verify with the device owner and endpoint team. If unsanctioned, hand off to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1078. **Validate `NetworkAccessConnectionEvents` column names with `NetworkAccessConnectionEvents &#124; take 10` before enabling.** |
 | Off-hours private application access | Medium | `NetworkAccessTraffic` | Access to sensitive application segments outside business hours by a non-service account | Review with application owner; verify authorized access. |
-| Brute-force against private app | High | `NetworkAccessTraffic` | > 50 failed connection attempts (`Action == "Block"`) to a single app segment within 5 minutes | Note that `Action == "Block"` records a policy denial, not an authentication failure — always pair with `SigninLogs` for the same user and app. Block the source identity if a credential attack is confirmed; escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1110. Microsoft Sentinel template: [GSA Content hub solution](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy). |
+| Brute-force against private app | High | `NetworkAccessTraffic` | > 50 failed connection attempts (`Action == "Block"`) to a single app segment within 5 minutes | Note that `Action == "Block"` records a policy denial, not an authentication failure — always pair with `SigninLogs` for the same user and app. Block the source identity if a credential attack is confirmed; escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1110. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
 | Unauthorized connector group change | High | `AuditLogs` | Connector reassigned to a different group by an actor outside the change-management allow list | Revert the change; investigate actor via the [audit log query](#detect-unauthorized-configuration-changes). |
 
 ### Detection queries
@@ -324,7 +323,7 @@ The Internet Access detections share the [per-user activity baseline](#per-user-
 
 | What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
 | --- | --- | --- | --- | --- |
-| Malware or phishing URL detected | High | `NetworkAccessAlerts` and `NetworkAccessTraffic` | GSA threat intelligence detects an attempted connection to a known malicious URL (`ThreatType` is set and not `NoneFound`) | Check whether the payload was downloaded; coordinate with endpoint protection to scan the device. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) on confirmed compromise. Microsoft Sentinel template: [GSA Content hub solution](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy). |
+| Malware or phishing URL detected | High | `NetworkAccessAlerts` and `NetworkAccessTraffic` | GSA threat intelligence detects an attempted connection to a known malicious URL (`ThreatType` is set and not `NoneFound`) | Check whether the payload was downloaded; coordinate with endpoint protection to scan the device. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks) on confirmed compromise. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
 | Data exfiltration — high upload volume | Critical | `NetworkAccessTraffic` | User uploads > 500 MB to an uncategorized or newly registered domain within 1 hour | Add the destination to the web-filtering block list; engage your DLP team; escalate to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1041. |
 | Web filtering policy change — unauthorized | High | `AuditLogs` | Web-filtering policy modified by an identity outside the change-management allow list | Revert change; investigate actor via the [audit log query](#detect-unauthorized-configuration-changes). |
 | Repeated blocks from single user | Medium | `NetworkAccessTraffic` | One user triggers > 100 block actions across categories in 1 hour | Distinguish between misconfigured app and deliberate circumvention; review with the user's manager. |
@@ -540,7 +539,7 @@ NetworkAccessAlerts
 
 | What to monitor | Severity | Where to look | Filter / Sub-filter | Notes |
 | --- | --- | --- | --- | --- |
-| Compliant network bypass — successful sign-in | High | `SigninLogs` | Successful sign-in to an app protected by a compliant-network Conditional Access policy where `NetworkLocationDetails` does not contain `compliantNetwork` | Review Conditional Access policies; verify compliant-network enforcement is active. MITRE T1562. Microsoft Sentinel template: [GSA Content hub solution](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy). |
+| Compliant network bypass — successful sign-in | High | `SigninLogs` | Successful sign-in to an app protected by a compliant-network Conditional Access policy where `NetworkLocationDetails` does not contain `compliantNetwork` | Review Conditional Access policies; verify compliant-network enforcement is active. MITRE T1562. Microsoft Sentinel template: [GSA Content hub solution](/azure/sentinel/sentinel-solutions-deploy). |
 | Token / Device Inconsistency alert | Critical | `NetworkAccessAlerts` | GSA emits a `Token / Device Inconsistency` alert | High-fidelity token-theft signal. Pair with `SigninLogs.TokenIssuerType` and Microsoft Entra ID Protection. Hand off to [IR Playbooks](https://aka.ms/IRPlaybooks). MITRE T1528 / T1550. |
 | Increased External Tenant Activity alert | High | `NetworkAccessAlerts` | GSA emits an `Increased External Tenant Activity` alert | Correlate with `SigninLogs` cross-tenant access events; review B2B and cross-tenant access settings. |
 | M365 access from blocked geography | High | `NetworkAccessConnectionEvents` joined with `NetworkAccessTraffic` | Source country in your blocked-country list (`CN`, `RU`, `KP`, `IR`, or your policy) | Review the user's full activity; review Conditional Access geographic block policies. |
@@ -709,7 +708,7 @@ NetworkAccessGenerativeAIInsights
 ```
 
 > [!TIP]
-> Use [Microsoft Security Copilot](https://learn.microsoft.com/en-us/security-copilot/) to correlate AI usage patterns with identity risk signals across `NetworkAccessGenerativeAIInsights` and `SigninLogs`. Prompt example: *"Show me all users with medium or high sign-in risk who accessed unsanctioned AI services in the last 24 hours, and list which services they used."*
+> Use [Microsoft Security Copilot](/security-copilot/) to correlate AI usage patterns with identity risk signals across `NetworkAccessGenerativeAIInsights` and `SigninLogs`. Prompt example: *"Show me all users with medium or high sign-in risk who accessed unsanctioned AI services in the last 24 hours, and list which services they used."*
 
 ## Cross-signal: identity and network correlation
 
@@ -754,11 +753,11 @@ SigninLogs
 ```
 
 > [!TIP]
-> Use [Microsoft Security Copilot](https://learn.microsoft.com/en-us/security-copilot/) to correlate cross-signal findings at scale. Prompt example: *"For users who were denied by GSA Private Access in the last 24 hours, summarize their identity risk signals and any successful sign-ins from different IP addresses."*
+> Use [Microsoft Security Copilot](/security-copilot/) to correlate cross-signal findings at scale. Prompt example: *"For users who were denied by GSA Private Access in the last 24 hours, summarize their identity risk signals and any successful sign-ins from different IP addresses."*
 
 ## Detect unauthorized configuration changes
 
-Configuration changes to GSA policies outside your change management process are a high-priority detection. The queries below filter `AuditLogs` on the GSA `OperationName` values listed in the [Entra audit activities reference](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/reference-audit-activities#global-secure-access).
+Configuration changes to GSA policies outside your change management process are a high-priority detection. The queries below filter `AuditLogs` on the GSA `OperationName` values listed in the [Entra audit activities reference](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access).
 
 ### Audit operations baseline
 
@@ -885,7 +884,7 @@ AuditLogs
 
 ## Sample Sentinel analytics rule templates
 
-The table below lists the rules with full Sentinel definitions in this guide (rule name, severity, query frequency, trigger). The remaining detections in this guide are **patterns to operationalize** — alert-table rows or KQL snippets that don't yet ship as importable rules. Pair this guide with the [**Global Secure Access** solution available in the Sentinel Content hub](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy) for the canonical, Microsoft-maintained rule set.
+The table below lists the rules with full Sentinel definitions in this guide (rule name, severity, query frequency, trigger). The remaining detections in this guide are **patterns to operationalize** — alert-table rows or KQL snippets that don't yet ship as importable rules. Pair this guide with the [**Global Secure Access** solution available in the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) for the canonical, Microsoft-maintained rule set.
 
 | Rule name | Capability | Severity | MITRE ATT&CK |
 | --- | --- | --- | --- |
@@ -906,7 +905,7 @@ The table below lists the rules with full Sentinel definitions in this guide (ru
 | GSA — TLS inspection certificate operation | Internet Access | High | — |
 
 > [!NOTE]
-> Install the [**Global Secure Access** solution from the Sentinel Content hub](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy) first — it includes prebuilt rules, workbooks, and hunting queries. The rules in this guide supplement the solution for scenarios it doesn't cover. The Content hub solution typically ships workbooks for **traffic analytics**, **threat insights**, and **administrative activity** — import them after enabling diagnostic settings to get a working dashboard before any of the rules in this guide fire.
+> Install the [**Global Secure Access** solution from the Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy) first — it includes prebuilt rules, workbooks, and hunting queries. The rules in this guide supplement the solution for scenarios it doesn't cover. The Content hub solution typically ships workbooks for **traffic analytics**, **threat insights**, and **administrative activity** — import them after enabling diagnostic settings to get a working dashboard before any of the rules in this guide fire.
 
 ## Operational alignment
 
@@ -924,16 +923,15 @@ The table below lists the rules with full Sentinel definitions in this guide (ru
 
 - [Microsoft Incident Response Playbooks](https://aka.ms/IRPlaybooks)
 - [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)
-- [Microsoft Entra audit log categories and activities — Global Secure Access](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/reference-audit-activities#global-secure-access)
-- [Microsoft Sentinel Content hub](https://learn.microsoft.com/en-us/azure/sentinel/sentinel-solutions-deploy)
-- [What's new in Global Secure Access](https://learn.microsoft.com/en-us/entra/global-secure-access/whats-new-global-secure-access)
-- [Log Analytics data retention and archive](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-configure)
+- [Microsoft Entra audit log categories and activities — Global Secure Access](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access)
+- [Microsoft Sentinel Content hub](/azure/sentinel/sentinel-solutions-deploy)
+- [Log Analytics data retention and archive](/azure/azure-monitor/logs/data-retention-configure)
 - [Common operations guide](how-to-operations-common.md)
 - [Private Access operations](how-to-operate-private-access.md)
 - [Internet Access operations](how-to-operate-internet-access.md)
 - [Remote Networks operations](how-to-operate-remote-networks.md)
 - [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md)
-- [Global Secure Access documentation](https://learn.microsoft.com/en-us/entra/global-secure-access/)
+- [Global Secure Access documentation](/entra/global-secure-access/)
 - [MITRE ATT&CK framework](https://attack.mitre.org/)
 - [Microsoft Zero Trust — Network pillar](https://zerotrust.microsoft.com/)
 
@@ -941,8 +939,8 @@ The table below lists the rules with full Sentinel definitions in this guide (ru
 
 See these companion articles in the Microsoft Entra security operations guide series:
 
-- [Security operations for user accounts](https://learn.microsoft.com/en-us/entra/architecture/security-operations-user-accounts)
-- [Security operations for privileged accounts](https://learn.microsoft.com/en-us/entra/architecture/security-operations-privileged-accounts)
-- [Security operations for applications](https://learn.microsoft.com/en-us/entra/architecture/security-operations-applications)
-- [Security operations for devices](https://learn.microsoft.com/en-us/entra/architecture/security-operations-devices)
-- [Security operations for infrastructure](https://learn.microsoft.com/en-us/entra/architecture/security-operations-infrastructure)
+- [Security operations for user accounts](/entra/architecture/security-operations-user-accounts)
+- [Security operations for privileged accounts](/entra/architecture/security-operations-privileged-accounts)
+- [Security operations for applications](/entra/architecture/security-operations-applications)
+- [Security operations for devices](/entra/architecture/security-operations-devices)
+- [Security operations for infrastructure](/entra/architecture/security-operations-infrastructure)
