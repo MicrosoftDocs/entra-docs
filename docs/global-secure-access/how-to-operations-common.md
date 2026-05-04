@@ -107,7 +107,7 @@ Back up GSA configurations on a weekly automated schedule and before every norma
 
 #### GSA-related Entra ID objects — Microsoft Entra Backup and Recovery
 
-Microsoft Entra ID provides a native [Backup and Recovery service](/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta) (beta) that takes an automatic daily snapshot of supported directory objects and allows scoped restore. The snapshots cover objects that directly affect GSA:
+Microsoft Entra ID provides a native [Backup and Recovery service](/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta&preserve-view=true) (beta) that takes an automatic daily snapshot of supported directory objects and allows scoped restore. The snapshots cover objects that directly affect GSA:
 
 - **Conditional Access policies** — policies that gate GSA traffic profiles and compliant-network enforcement
 - **Named location policies** — named locations referenced by CA rules (including the GSA-managed compliant network location)
