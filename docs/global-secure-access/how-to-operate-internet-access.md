@@ -60,7 +60,9 @@ Configure the following alerts and document the response action for each. Use [M
 > [!TIP]
 > Use [Microsoft Security Copilot](/security-copilot/) to analyze patterns in blocked traffic and correlate with threat intelligence feeds.
 
-### Kusto Query Language (KQL) queries for Internet Access monitoring
+The following Kusto Query Language (KQL) queries cover the most common Internet Access monitoring needs.
+
+### KQL queries for Internet Access monitoring
 
 **Blocked traffic by category—daily summary:**
 
