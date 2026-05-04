@@ -36,55 +36,57 @@ Use this template for **normal** and **major** changes that have user-visible im
 
 ## Pre-change notification template
 
-**Subject:** Planned Global Secure Access maintenance — [date and time]
+**Subject:** Planned Global Secure Access maintenance — *date and time*
 
 ---
 
 **What is happening:**
 
-[Brief description of the change. Keep it nontechnical for users.]
+*Briefly describe the change. Keep it nontechnical for users.*
 
 **When:**
 
-[Date, start time, expected end time, and time zone]
+*Date, start time, expected end time, and time zone.*
 
 **Who is affected:**
 
-[Describe the affected user groups, sites, or applications]
+*Describe the affected user groups, sites, or applications.*
 
 **Expected impact:**
 
-[Describe what users will experience. Be specific:
-- "You might be briefly disconnected and need to reconnect"
-- "Access to [application] will be temporarily unavailable"
-- "No user impact expected, but we are notifying you as a precaution"]
+Describe what users experience. Be specific. Examples:
+
+- "You might be briefly disconnected and need to reconnect."
+- "Access to *application* is temporarily unavailable."
+- "No user impact expected. We are notifying you as a precaution."
 
 **What you need to do:**
 
-[If users need to take action, list it here. If no action needed, say so:
-- "No action required on your part"
-- "Restart the Global Secure Access client after [time]"
-- "Save your work before [time] as a precaution"]
+If users must take action, list it here. If no action is needed, say so. Examples:
+
+- "No action required on your part."
+- "Restart the Global Secure Access client after *time*."
+- "Save your work before *time* as a precaution."
 
 **Questions?**
 
-Contact [help desk email or Teams channel] if you have questions or experience issues after the maintenance window.
+Contact *help desk email or Teams channel* if you have questions or experience issues after the maintenance window.
 
 ---
 
 ## Post-change notification template
 
-**Subject:** Global Secure Access maintenance complete — [date]
+**Subject:** Global Secure Access maintenance complete — *date*
 
 ---
 
-**The planned maintenance on [date] is complete.**
+**The planned maintenance on *date* is complete.**
 
-**What was changed:** [Brief summary]
+**What was changed:** *Brief summary*
 
-**Impact:** [Confirm whether the maintenance completed within the expected window and whether any unexpected impact occurred]
+**Impact:** *Confirm whether the maintenance completed within the expected window and whether any unexpected impact occurred.*
 
-**If you experience issues:** Contact [help desk email or Teams channel]. Reference ticket [Change ID].
+**If you experience issues:** Contact *help desk email or Teams channel*. Reference ticket *Change ID*.
 
 ---
 
@@ -103,9 +105,9 @@ If unexpected issues arise during the change, use this escalation path:
 
 | Severity | Escalation action | Contact |
 | --- | --- | --- |
-| Minor (cosmetic, < 5 users affected) | Notify operations team; continue monitoring | [Team channel or on-call engineer] |
-| Moderate (> 5 users affected, workaround available) | Notify Service Owner; decide whether to continue or roll back | [Service Owner name and contact] |
-| Major (widespread outage, no workaround) | Roll back immediately; notify all stakeholders; open incident | [Incident management process / bridge call number] |
+| Minor (cosmetic, < 5 users affected) | Notify operations team; continue monitoring | *Team channel or on-call engineer* |
+| Moderate (> 5 users affected, workaround available) | Notify Service Owner; decide whether to continue or roll back | *Service Owner name and contact* |
+| Major (widespread outage, no workaround) | Roll back immediately; notify all stakeholders; open incident | *Incident management process or bridge call number* |
 
 ---
 
