@@ -27,24 +27,24 @@ The following table outlines when an authentication method can be used for prima
 | [Email OTP](concept-sspr-howitworks.md#authentication-methods) | No | SSPR and sign-in<sup>2</sup> | SSPR |
 | [External MFA](how-to-authentication-external-method-manage.md) | No | MFA | No |
 | [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview) | No | MFA | SSPR |
-| [Microsoft Authenticator passwordless](concept-authentication-authenticator-app#passwordless-sign-in-via-notifications) | Yes | No | No |
-| [Microsoft Authenticator push notifications](concept-authentication-authenticator-app#mfa-via-notifications-through-mobile-app) | Yes | MFA | SSPR |
-| [Passkey (FIDO2)](concept-authentication-passkeys-fido2) | Yes | MFA | No |
-| [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app) | Yes | MFA | No |
+| [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md#passwordless-sign-in-via-notifications) | Yes | No | No |
+| [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app) | Yes | MFA | SSPR |
+| [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md) | Yes | MFA | No |
+| [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app.md) | Yes | MFA | No |
 | Password | Yes | No | No |
-| [Platform Credential for macOS](concept-authentication-platform-credential-for-macos) | Yes | MFA | No |
-| [QR code](concept-authentication-qr-code) | Yes | No | No |
-| [SMS sign-in](howto-authentication-sms-signin) | Yes | MFA | SSPR |
-| [Software OATH tokens](concept-authentication-oath-tokens#software-oath-tokens) | No | MFA | SSPR |
-| [Synced passkey](concept-authentication-passkeys-fido2) | Yes | MFA | No |
-| [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass) | Yes | MFA | No |
+| [Platform Credential for macOS](concept-authentication-platform-credential-for-macos.md) | Yes | MFA | No |
+| [QR code](concept-authentication-qr-code.md) | Yes | No | No |
+| [SMS sign-in](howto-authentication-sms-signin.md) | Yes | MFA | SSPR |
+| [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens) | No | MFA | SSPR |
+| [Synced passkey](concept-authentication-passkeys-fido2.md) | Yes | MFA | No |
+| [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md) | Yes | MFA | No |
 | [Verified ID](concept-authentication-verified-id.md)<sup>3</sup> | No | No | Account recovery |
-| [Voice call](concept-authentication-phone-options) | No | MFA | SSPR |
+| [Voice call](concept-authentication-phone-options.md) | No | MFA | SSPR |
 | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes | MFA<sup>1</sup> | No |
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
 
-<sup>2</sup>Email OTP is available for tenant members for [self-service password reset (SSPR)](concept-sspr-howitworks#authentication-methods). You can also configure it for [sign-in by guest users](/entra/external-id/one-time-passcode).
+<sup>2</sup>Email OTP is available for tenant members for [self-service password reset (SSPR)](concept-sspr-howitworks.md#authentication-methods). You can also configure it for [sign-in by guest users](/entra/external-id/one-time-passcode).
 
 <sup>3</sup>Verified ID is an identity verification capability, not a traditional authentication method. It provides proof of identity for account recovery but can't be used for sign-in, MFA, or SSPR.
 
@@ -79,8 +79,8 @@ Organizations can choose from leading identity verification providers (IDV) thro
 
 ## Related content
 
-- [Passkeys (FIDO2)](concept-authentication-passkeys-fido2)
+- [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
 - [Verified ID identity verification overview](concept-authentication-verified-id.md)
 - [Account recovery overview](concept-account-recovery-overview.md)
 - [Enable and configure account recovery](how-to-account-recovery-enable.md)
-- [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication)
+- [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md)

@@ -144,7 +144,7 @@ Identity verification profiles define how account recovery works for a specific 
 1. Under **Match confidence**, select the matching behavior:
 
    - **Exact** — Claims must match exactly.
-   - **Relaxed** — Uses cross-field word matching to accommodate variations in how names appear on government-issued documents versus Microsoft Entra ID user profiles. For details on how relaxed matching works, see [How is the Verified ID matched against Microsoft Entra ID account details?](self-service-account-recovery.yml#how-is-the-verified-id-matched-against-microsoft-entra-id-account-details)
+   - **Relaxed** — Uses cross-field word matching to accommodate variations in how names appear on government-issued documents versus Microsoft Entra ID user profiles. For details on how relaxed matching works, see [How is the Verified ID matched against Microsoft Entra ID account details?](self-service-account-recovery.yml#how-is-the-verified-id-matched-against-microsoft-entra-id-account-details-)
 
 1. (Optional) Under **Additional claim validations**, enable a custom authentication extension to add organization-specific account matching logic during recovery.
 
