@@ -48,6 +48,17 @@ The samples are grouped by scenario.
 | [Create and sign TLS certificates using Active Directory Certificate Services](scripts/powershell-active-directory-certificate-service.md) | Generate a certificate signing request through the TLS inspection Graph API, sign it with ADCS, and upload the certificate and chain to TLS inspection settings. |
 | [Create and sign TLS certificates using OpenSSL](scripts/powershell-open-secure-sockets-layer.md) | Generate a certificate signing request through the TLS inspection Graph API, sign it with a self-signed root CA created by OpenSSL, and upload the certificate and chain to TLS inspection settings. |
 
+## Operations and recovery automation
+
+| Sample | Description |
+|---|---|
+| [List Microsoft Entra snapshots for Global Secure Access recovery](scripts/powershell-get-gsa-entra-snapshot.md) | Enumerate available Microsoft Entra Backup and Recovery snapshots that you can use to recover Global Secure Access configuration. |
+| [Preview a Microsoft Entra recovery for Global Secure Access objects](scripts/powershell-start-gsa-entra-recovery-preview.md) | Create a non-destructive Microsoft Entra recovery preview job scoped to Global Secure Access-related directory objects. |
+| [Run a Microsoft Entra recovery for Global Secure Access objects](scripts/powershell-invoke-gsa-entra-recovery.md) | Execute a Microsoft Entra recovery job that restores Global Secure Access-related directory objects from a snapshot. |
+| [Calculate the alert noise ratio for Global Secure Access detections](scripts/powershell-test-gsa-alert-noise-ratio.md) | Calculate the false-positive ratio of Global Secure Access analytics rules in Microsoft Sentinel and alert when the ratio exceeds a threshold. |
+| [Verify Global Secure Access configuration backup compliance](scripts/powershell-test-gsa-backup-compliance.md) | Watchdog runbook that verifies your Global Secure Access configuration backup runbook ran successfully and alerts on failures or missed schedules. |
+| [Check Global Secure Access RBAC review hygiene](scripts/powershell-test-gsa-rbac-hygiene.md) | Flag Global Secure Access admin role assignments that haven't been reviewed this quarter and alert when overdue accounts are found. |
+
 ## Related content
 
 - [What is Global Secure Access?](overview-what-is-global-secure-access.md)
