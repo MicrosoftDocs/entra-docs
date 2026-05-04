@@ -24,10 +24,10 @@ items:
   - name: Configure per-app access to private resources
     href: quickstart-per-app-access.md
 - name: Tutorials
-  expanded: true
+  expanded: false
   items:
   - name: Internet Access labs
-    expanded: true
+    expanded: false
     items:
     - name: Get started
       href: tutorial-internet-access-introduction.md
@@ -46,7 +46,7 @@ items:
     - name: Configure content policies
       href: tutorial-internet-access-content-policies.md
   - name: Private Access labs
-    expanded: true
+    expanded: false
     items:
     - name: Get started
       href: tutorial-private-access-introduction.md
