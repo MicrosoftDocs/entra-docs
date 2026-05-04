@@ -27,12 +27,12 @@ Use this template for **normal** and **major** changes that have user-visible im
 
 | Audience | When to notify | Channel | Owner | Sent? |
 | --- | --- | --- | --- | --- |
-| **Operations team** | 5 business days before change | Team meeting or Teams channel | Service Owner | [ ] |
-| **IT Support / Help desk** | 3 business days before change | Email and knowledge base article update | Network Security Engineer | [ ] |
-| **Affected users** | 2 business days before change | Email or company portal announcement | Service Owner | [ ] |
-| **Security / SOC team** | 2 business days before change | Email or SIEM notification | Network Security Engineer | [ ] |
-| **Management / leadership** | 2 business days before major changes | Email summary | Service Owner | [ ] |
-| **All stakeholders** | Immediately after change completion | Email or Teams channel update | Service Owner | [ ] |
+| **Operations team** | 5 business days before change | Team meeting or Teams channel | Service owner | [ ] |
+| **IT support / help desk** | 3 business days before change | Email and knowledge base article update | Network security engineer | [ ] |
+| **Affected users** | 2 business days before change | Email or company portal announcement | Service owner | [ ] |
+| **Security / SOC team** | 2 business days before change | Email or SIEM notification | Network security engineer | [ ] |
+| **Management / leadership** | 2 business days before major changes | Email summary | Service owner | [ ] |
+| **All stakeholders** | Immediately after change completion | Email or Teams channel update | Service owner | [ ] |
 
 ## Pre-change notification template
 
@@ -96,7 +96,7 @@ Contact *help desk email or Teams channel* if you have questions or experience i
 - [ ] Help desk briefed and knowledge base updated with expected issues and responses
 - [ ] Pre-change notification sent to all audiences per the matrix above
 - [ ] Day-of reminder sent (for major changes affecting many users)
-- [ ] Post-change notification sent after successful completion
+- [ ] Post-change notification sent after the change completes
 - [ ] Help desk debriefed on any unexpected issues reported during the change
 
 ## Escalation during change
@@ -106,7 +106,7 @@ If unexpected issues arise during the change, use this escalation path:
 | Severity | Escalation action | Contact |
 | --- | --- | --- |
 | Minor (cosmetic, < 5 users affected) | Notify operations team; continue monitoring | *Team channel or on-call engineer* |
-| Moderate (> 5 users affected, workaround available) | Notify Service Owner; decide whether to continue or roll back | *Service Owner name and contact* |
+| Moderate (> 5 users affected, workaround available) | Notify service owner; decide whether to continue or roll back | *Service owner name and contact* |
 | Major (widespread outage, no workaround) | Roll back immediately; notify all stakeholders; open incident | *Incident management process or bridge call number* |
 
 ---
