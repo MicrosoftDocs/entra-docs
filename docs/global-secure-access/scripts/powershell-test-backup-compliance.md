@@ -15,8 +15,8 @@ Run this script daily as a secondary watchdog runbook in the same Automation Acc
 
 ## Prerequisites and notes
 
-- **Required permissions**: Azure — Automation Job Operator on the Automation Account; Graph — Mail.Send
-- **Minimum module versions**: Az.Automation, Microsoft.Graph 2.x
+- **Required permissions**: Azure—Automation Job Operator on the Automation Account; Graph—Mail.Send
+- **Minimum module versions**: `Az.Automation`, `Microsoft.Graph` 2.x
 
 ## Parameters
 
@@ -25,9 +25,9 @@ Run this script daily as a secondary watchdog runbook in the same Automation Acc
 | `AutomationAccountName` | Name of the Azure Automation Account running the backup runbooks. |
 | `ResourceGroupName` | Resource group containing the Automation Account. |
 | `BackupRunbookName` | Name of the runbook that performs Global Secure Access configuration backups. |
-| `LookbackHours` | Number of hours to look back for completed jobs. Default: 26 (covers a daily schedule with 2-hour buffer). |
+| `LookbackHours` | Number of hours to look back for completed jobs. Default: 26 (covers a daily schedule with two-hour buffer). |
 | `AlertRecipient` | Email address to receive failure alerts. |
-| `SenderId` | UserId or UPN of the mailbox that sends alert emails. |
+| `SenderId` | UserId or user principal name (UPN) of the mailbox that sends alert emails. |
 
 ## Examples
 
@@ -56,7 +56,7 @@ Run this script daily as a secondary watchdog runbook in the same Automation Acc
     Name of the runbook that performs GSA configuration backups.
 .PARAMETER LookbackHours
     Number of hours to look back for completed jobs. Default: 26 (covers a
-    daily schedule with 2-hour buffer).
+    daily schedule with two-hour buffer).
 .PARAMETER AlertRecipient
     Email address to receive failure alerts.
 .PARAMETER SenderId
