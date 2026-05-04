@@ -9,9 +9,9 @@ ai-usage: ai-assisted
 
 # List Microsoft Entra snapshots for Global Secure Access recovery
 
-Queries the Microsoft Entra Backup and Recovery service (beta) for available
+Queries the Microsoft Entra Backup and Recovery service (beta) for available Global Secure Access (GSA)
 tenant snapshots. Microsoft Entra automatically creates one snapshot per day
-and retains up to five. Use the returned snapshot IDs as input to
+and retains up to five. Use the returned snapshot identifiers (IDs) as input to
 Start-GsaEntraRecoveryPreview.ps1.
 
 Output is PowerShell objects suitable for pipeline use. The latest snapshot
@@ -19,11 +19,11 @@ Output is PowerShell objects suitable for pipeline use. The latest snapshot
 
 ## Prerequisites and notes
 
-- **Required Graph permissions**: BackupRestore-Configuration.Read.All (application or delegated)
+- **Required Graph permissions**: ``BackupRestore-Configuration.Read.All`` (application or delegated)
 - **Required Entra role**: Microsoft Entra Backup Reader
 - **Minimum module versions**: Microsoft.Graph.Authentication 2.x
 - **Beta API**: subject to change per Microsoft Graph versioning policy.
-- **Reference**: [Microsoft Entra Backup and Recovery — Graph reference](/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta&preserve-view=true)
+- **Reference**: [Microsoft Entra Backup and Recovery—Graph reference](/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta&preserve-view=true)
 
 ## Parameters
 
@@ -51,9 +51,9 @@ Output is PowerShell objects suitable for pipeline use. The latest snapshot
 .SYNOPSIS
     Lists Microsoft Entra Backup and Recovery snapshots for the tenant.
 .DESCRIPTION
-    Queries the Microsoft Entra Backup and Recovery service (beta) for available
+    Queries the Microsoft Entra Backup and Recovery service (beta) for available Global Secure Access (GSA)
     tenant snapshots. Microsoft Entra automatically creates one snapshot per day
-    and retains up to five. Use the returned snapshot IDs as input to
+    and retains up to five. Use the returned snapshot identifiers (IDs) as input to
     Start-GsaEntraRecoveryPreview.ps1.
 
     Output is PowerShell objects suitable for pipeline use. The latest snapshot
