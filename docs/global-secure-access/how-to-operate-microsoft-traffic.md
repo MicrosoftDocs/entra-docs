@@ -11,16 +11,18 @@ ai-usage: ai-assisted
 
 This guide covers day-to-day operations for the Microsoft traffic profile in Global Secure Access. The Microsoft traffic profile routes Microsoft 365 and other Microsoft service traffic through the Global Secure Access infrastructure, enabling security controls and optimized routing for Microsoft cloud services.
 
-For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md).
+For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For shared operational topics (roles, change management, metrics framework), see the [Common operations guide](how-to-operations-common.md). This article uses *GSA* as the abbreviation for Global Secure Access.
 
 Use the role assignments in this guide to identify the primary owner for each task. Role definitions live in the [Common operations guide](how-to-operations-common.md#roles-and-responsibilities). If your operating model uses different role names, map them to the ones used here.
 
 ## Alerting and monitoring
 
-This section is organized in the order you should implement monitoring for Microsoft traffic: first, review the critical alerts and their required operator response; next, use the KQL queries to create the detections; then follow the automation steps to enable Sentinel-driven notification and response workflows.
+This section is organized in the order you should implement monitoring for Microsoft traffic: 1. Review the critical alerts and the required operator response.
+2. Use the Kusto Query Language (KQL) queries to create the detections.
+3. Follow the automation steps to enable Sentinel-driven notification and response workflows.
 
 > [!IMPORTANT]
-> In the first 30 days after deployment, use the [Microsoft traffic volume — daily trend](#kql-queries---non-critical) query to establish a normal traffic baseline before finalizing alert thresholds. The 50-user CA failure threshold in the Conditional Access failure KQL query is a starting point — calibrate it to your organization's actual sign-in volume.
+> In the first 30 days after deployment, use the [Microsoft traffic volume—daily trend](#kql-queries---non-critical) query to establish a normal traffic baseline before finalizing alert thresholds. The 50-user CA failure threshold in the Conditional Access failure KQL query is a starting point—calibrate it to your organization's actual sign-in volume.
 
 ### Critical alerts to configure
 
@@ -29,8 +31,8 @@ This section is organized in the order you should implement monitoring for Micro
 | Conditional Access policy failure for Microsoft traffic | Conditional Access policy applied to Microsoft traffic is blocking more users than expected | Identity Engineer / Identity Team | 1. Review the Conditional Access policy evaluation in Entra sign-in logs. 2. Check if a recent policy change is causing overblocking. 3. Validate device compliance status for affected users. |
 | Audit log: traffic forwarding rule change | A traffic forwarding rule for Microsoft traffic is modified | Network Security Engineer | 1. Verify the change was approved through change management. 2. Confirm the modified rule still includes all required Microsoft 365 service endpoints. 3. Monitor for user-reported issues after the change. |
 | Microsoft traffic profile disabled | The Microsoft traffic forwarding profile is disabled | Network Security Engineer | Microsoft 365 traffic is no longer routed through GSA. 1. Re-enable the profile in **Global Secure Access** > **Connect** > **Traffic forwarding**. 2. Check audit logs to identify who disabled it. 3. Verify Microsoft 365 connectivity is restored for users. |
-| Conditional Access Signaling disabled | The CA Signaling setting in Global Secure Access is turned off, preventing GSA from providing network location signals to Conditional Access | Identity Engineer / Identity Team | Compliant network Conditional Access policies will stop enforcing. 1. Re-enable CA Signaling in **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**. 2. Check audit logs to identify who disabled it. 3. Verify compliant network location signals are appearing in sign-in logs before closing the incident. |
-| Universal Tenant Restrictions disabled | The Universal Tenant Restrictions policy is turned off | Identity Engineer / Identity Team | **This is only applicable for organizations using Tenant Restrictions.** External tenant access controls are no longer enforced — users may be able to sign into unauthorized external tenants. 1. Re-enable Universal Tenant Restrictions in **Global Secure Access** > **Settings** > **Session management** > **Universal tenant restrictions**. 2. Check audit logs to identify who disabled it. 3. Review sign-in logs for any external tenant sign-ins that occurred during the gap. |
+| Conditional Access Signaling disabled | The CA Signaling setting in Global Secure Access is turned off, preventing GSA from providing network location signals to Conditional Access | Identity Engineer / Identity Team | Compliant network Conditional Access policies stop enforcing. 1. Re-enable CA Signaling in **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**. 2. Check audit logs to identify who disabled it. 3. Verify compliant network location signals are appearing in sign-in logs before closing the incident. |
+| Universal Tenant Restrictions disabled | The Universal Tenant Restrictions policy is turned off | Identity Engineer / Identity Team | **This is only applicable for organizations using Tenant Restrictions.** External tenant access controls are no longer enforced—users may be able to sign into unauthorized external tenants. 1. Re-enable Universal Tenant Restrictions in **Global Secure Access** > **Settings** > **Session management** > **Universal tenant restrictions**. 2. Check audit logs to identify who disabled it. 3. Review sign-in logs for any external tenant sign-ins that occurred during the gap. |
 
 
 > [!TIP]
@@ -38,17 +40,17 @@ This section is organized in the order you should implement monitoring for Micro
 
 ### KQL queries - Critical Alerts
 
-The following queries implement detection for each [critical alert](#critical-alerts-to-configure). Deploy these as Microsoft Sentinel analytics rules.
+The following queries implement detection for each [critical alert](#critical-alerts-to-configure). Deploy these queries as Microsoft Sentinel analytics rules.
 
 > [!NOTE]
-> The short time windows in these queries (`ago(5m)`, `ago(15m)`) are designed for Sentinel analytics rules, where the rule runs on a matching schedule and looks back exactly that window — giving continuous, non-overlapping coverage. If you run these queries manually in Log Analytics, extend the window to `ago(24h)` or longer to see historical results.
+> The short time windows in these queries (`ago(5m)`, `ago(15m)`) are designed for Sentinel analytics rules, where the rule runs on a matching schedule and looks back exactly that window—giving continuous, nonoverlapping coverage. If you run these queries manually in Log Analytics, extend the window to `ago(24h)` or longer to see historical results.
 
 **Alert: Conditional Access policy failure for Microsoft traffic**
 
 Detects a spike in sign-in failures caused specifically by CA policies that have **Block** as the grant control and **exclude all compliant network locations**. When the affected user count exceeds your configured threshold, it indicates the compliant network signal is missing or not propagating correctly. Set the threshold to a value appropriate for your organization's sign-in volume.
 
 > [!NOTE]
-> `SigninLogs` contains per-sign-in evaluation results, not policy definitions. Named location exclusions (condition B) are part of the policy configuration in Entra ID and are not stored in the log. Populate `TargetPolicyIds` with the IDs of your Block + compliant-network-excluding CA policies. Retrieve them from **Entra admin center** > **Entra ID** > **Conditional Access** > **Policies** > Select a policy > **View policy information**, or via Graph API: `GET https://graph.microsoft.com/v1.0/policies/conditionalAccessPolicies`.
+> `SigninLogs` contains per-sign-in evaluation results, not policy definitions. Named location exclusions (condition B) are part of the policy configuration in Entra ID and aren't stored in the log. Populate `TargetPolicyIds` with the identifiers (IDs) of your Block + compliant-network-excluding CA policies. Retrieve them from **Entra admin center** > **Entra ID** > **Conditional Access** > **Policies** > Select a policy > **View policy information**, or via Graph API: `GET https://graph.microsoft.com/v1.0/policies/conditionalAccessPolicies`.
 
 ```kql
 // IDs of CA policies with Block grant control that exclude all compliant network locations.
@@ -76,7 +78,7 @@ SigninLogs
 
 **Alert: Traffic forwarding rule change**
 
-Detects any modification to traffic forwarding policies or rules in the Microsoft traffic profile. A single admin action generates multiple audit entries — one per affected rule plus one per affected policy. This query expands all target resources and summarizes by operation to correctly identify which M365 service areas were affected. Every result requires change management verification.
+Detects any modification to traffic forwarding policies or rules in the Microsoft traffic profile. A single admin action generates multiple audit entries—one per affected rule plus one per affected policy. This query expands all target resources and summarizes by operation to correctly identify which M365 service areas were affected. Every result requires change management verification.
 
 ```kql
 AuditLogs
@@ -114,10 +116,10 @@ AuditLogs
 
 **Alert: Microsoft traffic profile disabled**
 
-Detects when the Microsoft traffic forwarding profile is disabled. Any result is a Critical incident — Microsoft 365 traffic is no longer routed through GSA.
+Detects when the Microsoft traffic forwarding profile is disabled. Any result is a Critical incident—Microsoft 365 traffic is no longer routed through GSA.
 
 > [!NOTE]
-> GSA audit logs do not populate `modifiedProperties` for profile state changes. This query alerts on any forwarding profile update or deletion operation. When it fires, verify the current profile state in **Global Secure Access** > **Connect** > **Traffic forwarding**.
+> GSA audit logs don't populate `modifiedProperties` for profile state changes. This query alerts on any forwarding profile update or deletion operation. When it fires, verify the current profile state in **Global Secure Access** > **Connect** > **Traffic forwarding**.
 
 ```kql
 AuditLogs
@@ -137,10 +139,10 @@ AuditLogs
 
 **Alert: Conditional Access Signaling disabled**
 
-Detects when the CA Signaling (Adaptive Access) setting is turned off in Global Secure Access. Any result is a Critical incident — compliant network enforcement stops immediately.
+Detects when the CA Signaling (Adaptive Access) setting is turned off in Global Secure Access. Any result is a Critical incident—compliant network enforcement stops immediately.
 
 > [!NOTE]
-> GSA audit logs do not populate `modifiedProperties` for session management setting changes. This query alerts on any Adaptive Access policy update. When it fires, verify the current CA Signaling state in **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**.
+> GSA audit logs don't populate `modifiedProperties` for session management setting changes. This query alerts on any Adaptive Access policy update. When it fires, verify the current CA Signaling state in **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**.
 
 ```kql
 AuditLogs
@@ -158,10 +160,10 @@ AuditLogs
 
 **Alert: Universal Tenant Restrictions disabled**
 
-Detects when the Universal Tenant Restrictions policy is turned off. Any result is a Critical incident — external tenant sign-in controls are no longer enforced.
+Detects when the Universal Tenant Restrictions policy is turned off. Any result is a Critical incident—external tenant sign-in controls are no longer enforced.
 
 > [!NOTE]
-> GSA audit logs do not populate `modifiedProperties` for tenant restrictions policy changes. This query alerts on any Universal Tenant Restrictions policy update or deletion. When it fires, verify the current state in **Global Secure Access** > **Settings** > **Session management** > **Universal tenant restrictions**.
+> GSA audit logs don't populate `modifiedProperties` for tenant restrictions policy changes. This query alerts on any Universal Tenant Restrictions policy update or deletion. When it fires, verify the current state in **Global Secure Access** > **Settings** > **Session management** > **Universal tenant restrictions**.
 
 ```kql
 AuditLogs
@@ -177,20 +179,20 @@ AuditLogs
 | order by TimeGenerated desc
 ```
 
-### Non-critical alerts to review
+### Noncritical alerts to review
 
-Use the following non-critical alerts to detect trends, policy-tuning opportunities, and changes in user behavior that do not usually require immediate incident response.
+Use the following noncritical alerts to detect trends, policy-tuning opportunities, and changes in user behavior that don't usually require immediate incident response.
 
 | Alert | Condition | Role | What to do next |
 | --- | --- | --- | --- |
 | Microsoft traffic volume change | Daily Microsoft 365 traffic volume changes significantly from the 30-day baseline, but no outage indicators are present | Platform Ops / Monitoring Engineer | 1. Compare the change with expected business events such as a large meeting, migration wave, or return-to-office day. 2. Check whether the change affects one site, user group, or service more than others. 3. Update traffic baselines if the increase or decrease reflects a sustained usage pattern. |
-| Microsoft traffic distribution by service | One Microsoft 365 service generates a larger share of traffic than usual | Platform Ops / Monitoring Engineer | 1. Confirm whether the increase is expected for that workload, such as Teams events or SharePoint migrations. 2. Review policy coverage and forwarding behavior for the affected destination FQDNs. 3. If the pattern is unexpected, investigate whether a client, script, or workload is generating abnormal traffic. |
+| Microsoft traffic distribution by service | One Microsoft 365 service generates a larger share of traffic than usual | Platform Ops / Monitoring Engineer | 1. Confirm whether the increase is expected for that workload, such as Teams events or SharePoint migrations. 2. Review policy coverage and forwarding behavior for the affected destination fully qualified domain names (FQDNs). 3. If the pattern is unexpected, investigate whether a client, script, or workload is generating abnormal traffic. |
 | Tenant restriction blocks trending upward | Sign-ins blocked by tenant restrictions increase over the normal monthly pattern | Identity Engineer / Identity Team | 1. Confirm whether the blocked attempts are tied to approved business scenarios or unauthorized tenant access. 2. Review the affected applications and resource tenants. 3. If legitimate access is being blocked, adjust policy or user guidance; otherwise document the trend as expected enforcement. |
 | Foreign tenant usage on your network | Requests to external Microsoft Entra tenants are observed from users on your network, but enforcement remains intact | Identity Engineer / Identity Team | 1. Review which resource tenants and applications users are attempting to access. 2. Distinguish between approved partner scenarios and unapproved external tenant use. 3. Use the results to refine tenant restrictions policy, exception handling, and monthly access reviews. |
 
 ### KQL queries - non-critical
 
-**Microsoft traffic volume — daily trend:**
+**Microsoft traffic volume—daily trend:**
 
 ```kql
 NetworkAccessTraffic
@@ -204,7 +206,7 @@ NetworkAccessTraffic
 | order by TimeGenerated asc
 ```
 
-**Microsoft traffic by service — identify which M365 services generate the most traffic:**
+**Microsoft traffic by service—identify which M365 services generate the most traffic:**
 
 ```kql
 NetworkAccessTraffic
@@ -247,7 +249,7 @@ SigninLogs
 
 ### Sentinel workbook
 
-The **Global Secure Access** workbook in Microsoft Sentinel provides operational dashboards for traffic volume, denied sessions, and compliant network coverage. Use it for trend analysis and management reporting — not for primary alerting.
+The **Global Secure Access** workbook in Microsoft Sentinel provides operational dashboards for traffic volume, denied sessions, and compliant network coverage. Use it for trend analysis and management reporting—not for primary alerting.
 
 To access the workbook:
 
@@ -256,39 +258,48 @@ To access the workbook:
 3. Use the **Microsoft Traffic** tab to view traffic volume by service, denied session trends, and compliant network coverage over time.
 
 > [!NOTE]
-> The workbook requires the Global Secure Access solution to be installed from the Microsoft Sentinel content hub. If the workbook is not visible, go to **Content management** > **Content hub**, search for **Global Secure Access**, and install the solution.
+> The workbook requires the Global Secure Access solution to be installed from the Microsoft Sentinel content hub. If the workbook isn't visible, go to **Content management** > **Content hub**, search for **Global Secure Access**, and install the solution.
 
 ## Maintenance and health checks
 
-This section defines the recurring checks that keep Microsoft traffic operations stable after deployment. Use the daily, weekly, and monthly procedures here to validate alert handling, user experience, compliant network enforcement, configuration backup, client coverage, and ongoing alignment between your traffic forwarding rules and Conditional Access design.
+This section defines the recurring checks that keep Microsoft traffic operations stable after deployment. Use the daily, weekly, and monthly procedures in this section to validate:
+
+- Alert handling and user experience.
+- Compliant network enforcement.
+- Configuration backup and client coverage.
+- Alignment between your traffic forwarding rules and Conditional Access design.
 
 ### Daily checks
 
 | Check | Role | Procedure | What to do if it fails |
 | --- | --- | --- | --- |
-| High-severity alerts | SOC Analyst | Review alerts in Sentinel or your SIEM for P1/P2 Microsoft traffic alerts from the last 24 hours. | Ensure each alert is assigned and under investigation. Unassigned alerts older than 4 hours should be escalated. |
+| High-severity alerts | SOC Analyst | Review alerts in Sentinel or your security information and event management (SIEM) platform for P1/P2 Microsoft traffic alerts from the last 24 hours. | Ensure each alert is assigned and under investigation. Unassigned alerts older than 4 hours should be escalated. |
 | Microsoft 365 user experience | IT Support / Help desk | Check Microsoft 365 service health dashboard and any user-reported issues in your help desk system. | If users report Microsoft 365 performance issues, compare with Global Secure Access traffic logs to determine whether Global Secure Access routing is a factor. |
 
 ### Weekly checks
 
 | Check | Role | Procedure | What to do if it fails |
 | --- | --- | --- | --- |
-| Compliant network failures | Identity Engineer / Identity Team | Review Conditional Access policy failures due to compliant network check. Microsoft traffic denials should be near zero. | Investigate any denials — they usually indicate client connectivity issues or attempts to connect from unauthorized devices. |
+| Compliant network failures | Identity Engineer / Identity Team | Review Conditional Access policy failures due to compliant network check. Microsoft traffic denials should be near zero. | Investigate any denials—they usually indicate client connectivity issues or attempts to connect from unauthorized devices. |
 | Configuration backup | Platform Ops / Monitoring Engineer | Run the [automated configuration export](#automation-playbooks). | Troubleshoot the export. Manually export traffic forwarding rules. |
-| Client agent deployment status | IT Support / Help desk | Review Global Secure Access client deployment coverage in Intune. | Push client updates to devices that are not reporting or outdated. |
+| Client agent deployment status | IT Support / Help desk | Review Global Secure Access client deployment coverage in Intune. | Push client updates to devices that aren't reporting or outdated. |
 
 ### Monthly checks
 
 | Check | Role | Procedure | What to do if it fails |
 | --- | --- | --- | --- |
-| Conditional Access policy review | Identity Engineer / Identity Team | Review CA policies that use Block grant control and exclude compliant network locations. Verify the `TargetPolicyIds` in the Conditional Access policy failure KQL query are still current. | Update the KQL query and Sentinel rule if policies have changed. Ensure policies are still aligned with your security requirements. |
-| Review Universal Tenant Restrictions policy | Identity Engineer / Identity Team | If your organization uses Universal Tenant Restrictions: 1. Review the allowed tenant list and remove any tenants that have had no access in the last 30 days. 2. Review sign-in logs for blocked access attempts to unauthorized external tenants and investigate any patterns. | Remove stale tenants allowed by Tenant Restrictions policy. For blocked access attempts that appear suspicious, escalate to your security team. |
-| Traffic profile rule coverage | Network Security Engineer | Review the traffic forwarding rules for the Microsoft traffic profile. Confirm all expected Microsoft 365 service endpoints are included — specifically Skype for Business Online and Microsoft Teams, SharePoint Online and OneDrive for Business, Exchange Online, and Microsoft 365 Common and Office Online. | Update rules to include any missing endpoints. Check Microsoft's published endpoint lists for changes. |
+| Conditional Access policy review | Identity Engineer / Identity Team | Review CA policies that use Block grant control and exclude compliant network locations. Verify the `TargetPolicyIds` in the Conditional Access policy failure KQL query are still current. | Update the KQL query and Sentinel rule if policies changed. Ensure policies are still aligned with your security requirements. |
+| Review Universal Tenant Restrictions policy | Identity Engineer / Identity Team | If your organization uses Universal Tenant Restrictions: 1. Review the allowed tenant list and remove any tenants with no access in the last 30 days. 2. Review sign-in logs for blocked access attempts to unauthorized external tenants and investigate any patterns. | Remove stale tenants allowed by Tenant Restrictions policy. For blocked access attempts that appear suspicious, escalate to your security team. |
+| Traffic profile rule coverage | Network Security Engineer | Review the traffic forwarding rules for the Microsoft traffic profile. Confirm all expected Microsoft 365 service endpoints are included—specifically Skype for Business Online and Microsoft Teams, SharePoint Online and OneDrive for Business, Exchange Online, and Microsoft 365 Common and Office Online. | Update rules to include any missing endpoints. Check Microsoft's published endpoint lists for changes. |
 
 
 ## Integration and automation
 
-Microsoft traffic operations should rely on integrated monitoring and scheduled automation rather than manual portal checks. Use the procedures in this section to export Microsoft traffic profile configuration for backup and change tracking, connect Microsoft traffic telemetry to Microsoft Sentinel for alerting and correlation with Entra sign-in logs, and implement playbooks that handle common operational tasks such as policy-failure response, configuration-change notification, profile-state monitoring, and recurring backup and review workflows.
+Microsoft traffic operations should rely on integrated monitoring and scheduled automation rather than manual portal checks. The procedures in this section let you:
+
+- Export Microsoft traffic profile configuration for backup and change tracking.
+- Connect Microsoft traffic telemetry to Microsoft Sentinel for alerting and correlation with Entra sign-in logs.
+- Implement playbooks for routine tasks: policy-failure response, configuration-change notification, profile-state monitoring, and scheduled backup and review workflows.
 
 ### Export Microsoft traffic profile configuration via Graph API
 
@@ -437,8 +448,8 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 
 - **Trigger:** Sentinel alert "Traffic forwarding rule change"
 - **Frequency:** Event-driven
-- **Required permissions:** Microsoft Sentinel Responder; Logic App Contributor; Teams Incoming Webhook; ITSM connector credentials (ServiceNow, Jira, etc.) with permission to open and close change records
-- **Output:** Teams notification with change details (who, what, when) and an auto-opened change-management ticket; ticket auto-closes if the change is confirmed approved within 2 hours
+- **Required permissions:** Microsoft Sentinel Responder; Logic App Contributor; Teams Incoming Webhook; IT service management (ITSM) connector credentials (ServiceNow, Jira, etc.) with permission to open and close change records
+- **Output:** Teams notification with change details (who, what, when) and an autoopened change-management ticket; ticket autocloses if the change is confirmed approved within two hours
 
 **Steps:**
 
@@ -493,7 +504,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 
 1. Create the Logic App and bind it to the automation rule for the "Universal Tenant Restrictions disabled" analytics rule.
 2. Capture the disable event timestamp.
-3. Query `SigninLogs` for sign-ins where `ResourceTenantId` is not the home tenant, after the disable timestamp.
+3. Query `SigninLogs` for sign-ins where `ResourceTenantId` isn't the home tenant, after the disable timestamp.
 4. Post the enriched payload to Teams and email the security team's distribution list.
 
 **Script / Request:** Logic App ARM template; embedded KQL provided in the action body.
@@ -509,7 +520,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 
 1. Create an Azure Automation account with a system-assigned managed identity and grant it the required Graph and Storage permissions.
 2. Import the `Microsoft.Graph.Beta.NetworkAccess` and `Az.Storage` modules.
-3. Publish the configuration export script (see [Export Microsoft traffic profile configuration via Graph API](#export-microsoft-traffic-profile-configuration-via-graph-api) above) as a PowerShell runbook, parameterized with the destination storage account and container.
+3. Publish the configuration export script ([Export Microsoft traffic profile configuration via Graph API](#export-microsoft-traffic-profile-configuration-via-graph-api)) as a PowerShell runbook, parameterized with the destination storage account and container.
 4. Schedule the runbook to run weekly during the maintenance window.
 5. Configure an alert on runbook failure that posts to the GSA operations Teams channel.
 
@@ -529,7 +540,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 3. Render the result as HTML using `ConvertTo-Html` and send via `Send-MailMessage` (or the SendGrid connector).
 4. Schedule the runbook to run on the first business day of each month.
 
-**Script / Request:** Build the runbook from the two KQL queries linked above; no published script in this repo yet.
+**Script / Request:** Build the runbook from the two KQL queries referenced earlier in this playbook; no published script in this repo yet.
 
 ### Microsoft 365 service integration
 
@@ -547,7 +558,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 
 ## Related content
 
-- [Common operations guide](how-to-operations-common.md) — Roles, change management, metrics framework
+- [Common operations guide](how-to-operations-common.md)—Roles, change management, metrics framework
 - [Private Access operations](how-to-operate-private-access.md)
 - [Internet Access operations](how-to-operate-internet-access.md)
 - [Remote Networks operations](how-to-operate-remote-networks.md)
