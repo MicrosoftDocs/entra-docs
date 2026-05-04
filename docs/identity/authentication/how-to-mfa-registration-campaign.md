@@ -21,7 +21,7 @@ Registration campaigns support two authentication methods:
 > [!NOTE]
 > A registration campaign can only target one authentication method at a time. You can't run campaigns for both Microsoft Authenticator and passkeys simultaneously in the same tenant.
 
-You can also define how many days a user can postpone, or "snooze," the nudge. If a user taps **Skip for now** to postpone setup, they get nudged again on the next MFA attempt after the snooze duration has elapsed. You can decide whether the user can snooze indefinitely or up to three times (after which registration is required).
+You can also define how many days a user can postpone, or "snooze," the nudge. If a user taps **Skip for now** to postpone setup, they get nudged again on the next MFA attempt after the snooze duration elapses. You can decide whether the user can snooze indefinitely or up to three times (after which registration is required).
 
 > [!NOTE]
 > As users go through their regular sign-in, Conditional Access policies that govern security info registration apply before the user is nudged to set up an authentication method. For example, if a Conditional Access policy requires that security info updates can only occur on an internal network, users won't be prompted unless they're on the internal network.
@@ -37,7 +37,9 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ### Authenticator campaign
 
-1. First, successfully authenticate using Microsoft Entra multifactor authentication (MFA). 
+When you're targeted for an Authenticator registration campaign, you experience the following flow:
+
+1. Authenticate using Microsoft Entra multifactor authentication (MFA). 
 
 1. If you're enabled for Authenticator push notifications and don't have it already set up, you get prompted to set up Authenticator to improve your sign-in experience. 
 
@@ -46,7 +48,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
     :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot showing the registration campaign prompt asking the user to set up Microsoft Authenticator.":::
 
-1. Select **Next** and step through the Authenticator app setup. For detailed setup instructions, see [Set up the Microsoft Authenticator app as your verification method](/entra/user-help/user-help-auth-app-download-install).
+1. Select **Next** and step through the Authenticator app setup.
 
 1. If you don't want to set up the Authenticator app, you can select **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
 
@@ -54,7 +56,9 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ### Passkey campaign
 
-1. First, successfully authenticate using Microsoft Entra multifactor authentication (MFA).
+When you're targeted for a passkey registration campaign, you experience the following flow:
+
+1. Authenticate using Microsoft Entra multifactor authentication (MFA).
 
 1. If passkey is enabled for your account and you haven't already registered a passkey, you get prompted to set up a passkey.
 
@@ -63,7 +67,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 1. If you don't want to set up a passkey, you can tap **Skip for now** to snooze the prompt.
 
-1. If you encounter an error during passkey registration, you see an error screen with a skip option. Skips from the error screen don't count toward your limited skip count, so you won't be blocked from sign-in due to registration errors.
+1. If you encounter an error during passkey registration, you see an error screen with a skip option. Skips from the error screen don't count toward your limited skip count, so registration errors don't block your sign-in.
 
 ## Enable the registration campaign policy using the Microsoft Entra admin center
 
@@ -99,7 +103,7 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
  
    **Days allowed to snooze** sets the period between two successive interrupt prompts. For example, if it's set to 3 days, users who skipped registration don't get prompted again until after 3 days.
 
-   :::image type="content" border="true" source="media/how-to-mfa-registration-campaign/admin-experience.png" alt-text="Screenshot of enabling a registration campaign.":::
+   :::image type="content" border="true" source="media/how-to-mfa-registration-campaign/admin-experience.png" alt-text="Screenshot of the Microsoft Entra admin center registration campaign settings showing state, authentication method, and snooze configuration options.":::
 
 1. Select any users or groups to exclude from the registration campaign, and then select **Save**.
 
@@ -323,8 +327,8 @@ The registration campaign evaluates whether a user has a local passkey for their
 
 | Platform | Browser | Passkey types that satisfy the nudge (user isn't nudged) |
 |---|---|---|
-| Windows | Chrome | Windows Hello for Business, Entra passkey on Windows, Google Password Manager, or a non-platform passkey provider |
-| Windows | Edge | Windows Hello for Business, Entra passkey on Windows, Microsoft Password Manager, or a non-platform passkey provider |
+| Windows | Chrome | Windows Hello for Business, Microsoft Entra passkey on Windows, Google Password Manager, or a non-platform passkey provider |
+| Windows | Edge | Windows Hello for Business, Microsoft Entra passkey on Windows, Microsoft Password Manager, or a non-platform passkey provider |
 | macOS | Chrome, Edge, or other | Mac platform passkeys, or a non-platform passkey provider |
 | iOS | Any | iCloud Keychain, or a non-platform passkey provider |
 | Android | Any | Google Password Manager, Samsung Pass, or a non-platform passkey provider |
@@ -336,7 +340,7 @@ Non-platform passkey providers include third-party passkey providers like securi
 
 **Can users be nudged within an application?**
 
-Yes, we support embedded browser views in certain applications. We don't nudge users in out-of-the-box experiences or in browser views embedded in Windows settings.
+Yes. Registration campaigns support embedded browser views in certain applications. We don't nudge users in out-of-the-box experiences or in browser views embedded in Windows settings.
 
 **Can users be nudged within a single sign-on (SSO) session?**
  
