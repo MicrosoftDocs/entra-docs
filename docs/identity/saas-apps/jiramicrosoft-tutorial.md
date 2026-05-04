@@ -10,12 +10,12 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft so that I can control who has access to JIRA SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
+# Configure JIRA SAML SSO by Microsoft for Single sign-on with Microsoft Entra ID
+
 > [!WARNING]
 > **Deprecation notice:** This plugin was deprecated on May 1, 2026. To continue setting up single sign-on for JIRA, use a supported replacement from [Atlassian Marketplace](https://marketplace.atlassian.com/search?product=jira&query=sso).
 
-# Configure JIRA SAML SSO by Microsoft for Single sign-on with Microsoft Entra ID
-
-In this article,  you learn how to integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID. When you integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID, you can:
+In this article,you learn how to integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID. When you integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to JIRA SAML SSO by Microsoft.
 * Enable your users to be automatically signed-in to JIRA SAML SSO by Microsoft with their Microsoft Entra accounts.
