@@ -316,8 +316,6 @@ Here are a few sample JSON bodies you can use to get started.
 
 ## Limitations
 
-The nudge won't appear on mobile devices that run Android or iOS.
-
 > [!IMPORTANT]
 > The passkey nudge experience is currently tailored for users in a passkey profile that allows all types of passkeys (both synced and device-bound), has no AAGUID restrictions, and doesn't enforce attestation. If you use the **Enabled** state to target passkeys for users who are limited to device-bound only, synced only, or have AAGUID restrictions, users might be nudged to register a passkey type they aren't allowed to register, and registration fails. Future updates will refine the nudge logic for synced-only and device-bound-only scenarios.
 
