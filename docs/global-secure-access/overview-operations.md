@@ -28,7 +28,7 @@ The guide suite is organized by GSA capability, with a shared common guide for c
 ### Shared operations
 
 | Guide | What it covers |
-|---|---|
+| --- | --- |
 | [Common operations](how-to-operations-common.md) | Roles and responsibilities (RACI matrix), change management process, metrics and reporting framework, continuous improvement |
 
 ### Capability-specific operations
@@ -36,7 +36,7 @@ The guide suite is organized by GSA capability, with a shared common guide for c
 Each capability guide follows a consistent structure: Alerting and monitoring, Maintenance and health checks, Integration and automation, Operational metrics, and Troubleshooting quick reference.
 
 | Guide | What it covers |
-|---|---|
+| --- | --- |
 | [Private Access operations](how-to-operate-private-access.md) | Connector health, application segment management, ZTNA-specific alerting, Graph API automation for connector and app management |
 | [Internet Access operations](how-to-operate-internet-access.md) | Web filtering policy management, TLS inspection, URL categorization, threat blocking metrics |
 | [Remote Networks operations](how-to-operate-remote-networks.md) | GRE/IPsec tunnel monitoring, branch site capacity management, CPE device health, tunnel failover testing |
@@ -46,7 +46,7 @@ Each capability guide follows a consistent structure: Alerting and monitoring, M
 ### Templates and checklists
 
 | Template | Purpose |
-|---|---|
+| --- | --- |
 | [Daily health check](reference-daily-health-check.md) | Consolidated daily checklist covering all GSA capabilities |
 | [Private Access health check](reference-private-access-health-check.md) | Capability-specific checklist for Private Access connectors and application segments |
 | [Change request template](reference-change-request-template.md) | Structured template for GSA configuration change requests |

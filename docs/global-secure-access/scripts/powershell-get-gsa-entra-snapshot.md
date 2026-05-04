@@ -28,7 +28,7 @@ Output is PowerShell objects suitable for pipeline use. The latest snapshot
 ## Parameters
 
 | Parameter | Description |
-|---|---|
+| --- | --- |
 | `TenantId` | Target Microsoft Entra tenant ID. Omit when running under managed identity in the same tenant. |
 | `ClientId` | App registration client ID. Required with CertificateThumbprint. |
 | `CertificateThumbprint` | Certificate thumbprint for service principal authentication. |

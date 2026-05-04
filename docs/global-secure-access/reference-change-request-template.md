@@ -16,7 +16,7 @@ Use this template for all **normal** and **major** changes to Global Secure Acce
 ## Change request details
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Change ID** | _(your ITSM ticket number or sequential ID)_ |
 | **Date submitted** | |
 | **Requested by** | |
@@ -62,7 +62,7 @@ _(Estimate the number of users or sites impacted. List specific groups or locati
 ## Risk assessment
 
 | Risk factor | Assessment |
-|---|---|
+| --- | --- |
 | **Risk level** | Low / Medium / High |
 | **Potential for service disruption** | None / Minimal / Moderate / High |
 | **Reversibility** | Fully reversible / Partially reversible / Irreversible |
@@ -101,7 +101,7 @@ _(How long to wait before deciding the change has failed and needs to be rolled 
 ## Execution
 
 | Step | Action | Completed | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | Back up current configuration | [ ] | |
 | 2 | _(Add change steps)_ | [ ] | |
 | 3 | _(Add change steps)_ | [ ] | |
@@ -118,7 +118,7 @@ _(How long to wait before deciding the change has failed and needs to be rolled 
 ## Approvals
 
 | Role | Name | Approved | Date |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Service Owner | | Yes / No | |
 | Network Security Engineer | | Yes / No | |
 | Change Advisory Board (if major) | | Yes / No | |

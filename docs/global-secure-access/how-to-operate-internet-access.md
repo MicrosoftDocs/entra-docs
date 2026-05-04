@@ -48,7 +48,7 @@ Lead your operational practice with alerts — don't rely on manually watching d
 Configure the following alerts and document the response action for each. Use [Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/) with the [Global Secure Access Sentinel integration](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-sentinel-integration), or Azure Monitor alert rules.
 
 | Alert | Condition | Role | Automated by | What to do next |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Web filtering policy bypass | Traffic matching a blocked category is allowed due to a policy misconfiguration or override | IAM Admin | Sentinel analytics rule *Web filtering anomaly detection* (content hub) | 1. Review the policy rule order in the Entra admin center. 2. Check for user or group exceptions that may be overriding the block. 3. Correct the policy and test from an affected user device. |
 | Traffic forwarding profile disabled | The Internet Access traffic forwarding profile is disabled or removed | Network Ops L2 + Incident Commander | Sentinel scheduled analytics rule on `AuditLogs` for `Update forwarding profile` + [Playbook 8](#playbook-8-internet-access-configuration-change-alert) | **Severity: Critical.** Users' internet traffic is no longer routed through GSA. 1. Re-enable the profile in **Global Secure Access** > **Connect** > **Traffic forwarding**. 2. Check audit logs to identify who disabled it and whether it was an approved change. |
 | TLS inspection failure spike | TLS inspection failures increase by more than 30% compared to the 7-day baseline | Network Ops L2 | Sentinel analytics rule *TLS inspection failure spike* + ZT Assessment *TLS inspection failure rate is below 1%* | 1. Check if a major SaaS provider changed their certificate pinning. 2. Review the TLS inspection bypass list for applications that require exemption. 3. Update the bypass list and monitor for resolution. |
@@ -161,7 +161,7 @@ NetworkAccessTraffic
 ### Daily checks
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Traffic forwarding status | Network Ops L1 | ZT Assessment *Internet Access forwarding profile is enabled* + [Playbook 8](#playbook-8-internet-access-configuration-change-alert) (near real-time on disable) | Alerts fire automatically. Spot-check: Entra admin center > **Global Secure Access** > **Connect** > **Traffic forwarding**. | Re-enable the profile. Check audit logs for a recent change. |
 | High-severity alerts | SOC | Sentinel incidents (auto-assigned via automation rule) | Review P1/P2 Internet Access incidents from the last 24 hours. | Ensure each alert is assigned. Escalate unassigned alerts older than 4 hours. |
 | Web filtering policy alignment | IAM Admin | [Playbook 9: Weekly policy-efficacy digest](#playbook-9-weekly-policy-efficacy-digest) provides the recurring view; daily spot-check only if the digest flags anomalies | Spot-check the top 10 blocked URLs from the last 24 hours in the Sentinel workbook. Verify they should be blocked. | Adjust policies or add exceptions for legitimate business sites incorrectly categorized. |
@@ -170,7 +170,7 @@ NetworkAccessTraffic
 ### Weekly checks
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Policy efficacy review | IAM Admin | [Playbook 9: Weekly policy-efficacy digest](#playbook-9-weekly-policy-efficacy-digest) (email) | Review the weekly digest: top blocked categories, allow-list usage, and user override requests. | Adjust policies for recurring false positives. Investigate categories with unexpected spikes. |
 | TLS inspection health | Network Ops L2 | ZT Assessment *TLS inspection failure rate is below 1%* + Sentinel analytics rule *TLS inspection failure spike* | Review the assessment result and alert history. Run the TLS inspection KQL query only if the assessment flags a regression. | Update the TLS inspection bypass list for known-incompatible services. |
 | Configuration backup compliance | Network Ops L2 | [Playbook 3](#playbook-3-weekly-web-filtering-policy-backup) + [`Test-GsaBackupCompliance.ps1`](scripts/powershell-test-gsa-backup-compliance.md) | Backup compliance script runs after Playbook 3 and alerts if files are missing or stale. | Troubleshoot the runbook or script. Manually export via Graph API as a fallback. |
@@ -181,7 +181,7 @@ NetworkAccessTraffic
 ### Monthly checks
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Web filtering category review | IAM Admin | ZT Assessment *Web content filtering blocks high-risk categories* + *Web content filtering uses category-based rules* | Review the full list of blocked and allowed categories against your organization's acceptable use policy. Assessment flags high-risk gaps; monthly review covers acceptable-use alignment. | Update categories to match current policy. Coordinate with HR/legal if the acceptable use policy has changed. |
 | User override/exception audit | IAM Admin | [Playbook 5: Monthly exception audit report](#playbook-5-monthly-exception-audit-report) + ZT Assessment *TLS inspection bypass rules are regularly reviewed* + *TLS inspection custom bypass rules don't duplicate system bypass destinations* | Review the monthly CSV report of all custom allow-list entries, user/group exceptions, and TLS bypass rules. | Remove exceptions that are no longer needed. Document the justification for each remaining exception. |
 | Bandwidth and capacity trend | Network Ops L2 + Capacity Planner | [Playbook 10: Monthly capacity trend report](#playbook-10-monthly-capacity-trend-report) (email) | Review the monthly capacity-trend email against the 30-day baseline. | If traffic is growing faster than expected, coordinate with your network team for capacity planning. |
@@ -200,7 +200,7 @@ Run this procedure after initial deployment, after any configuration change to p
 Validate each prerequisite before testing prompt injection enforcement. If any prerequisite fails, prompt injection policies cannot inspect traffic.
 
 | # | Prerequisite | How to validate | Pass criteria | If it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | TLS inspection applies to target AI sites | On the test device, navigate to the target AI site. Select the lock icon in the browser address bar and inspect the certificate. | The certificate is the Global Secure Access inspection certificate (not the site's native certificate). | Verify the prompt policy rules include the correct endpoint and conversation scheme. For logged-out users, confirm the correct backend URL is configured (for example, `https://chatgpt.com/backend-anon/f/conversation` for ChatGPT). See [TLS inspection certificate lifecycle](#tls-inspection-certificate-lifecycle). |
 | 2 | TLS inspection works for other policy types | Test a different policy type that relies on TLS inspection, such as web content filtering or a file policy (for example, blocking file downloads). | The expected block page or error appears. | Confirm the correct root certificate is installed in the **Trusted Root Certification Authorities** store on the client device. Review the [TLS inspection tutorial](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-tls-inspection) to enable TLS inspection. |
 | 3 | QUIC is disabled | Check the browser flag at `edge://flags/#enable-quic` (or equivalent for Chrome). Also verify the registry: `HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge` → `QuicAllowed` = `0`. | QUIC is set to **Disabled** via Group Policy or registry. | Disable QUIC persistently using Group Policy or registry — browser settings can reset after updates. See [QUIC enforcement](#quic-enforcement) for all methods. |
@@ -328,7 +328,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 1: Blocked threat-category notification
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Sentinel alert: user accesses a URL classified as malware, phishing, or command-and-control |
 | **Frequency** | Event-driven (real-time) |
 | **Required permissions** | Logic Apps managed identity with `SecurityAlert.Read.All`; Microsoft Teams connector or Exchange `Mail.Send` permission |
@@ -348,7 +348,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 2: Auto-create ITSM ticket for policy override requests
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | User submits a URL categorization exception request via email or web form |
 | **Frequency** | Event-driven |
 | **Required permissions** | Logic Apps managed identity with `Mail.Read` (if email-triggered) or HTTP webhook; ServiceNow Logic Apps connector configured with valid ServiceNow credentials |
@@ -367,7 +367,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 3: Weekly web filtering policy backup
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: every Sunday at 02:00 UTC |
 | **Frequency** | Weekly |
 | **Required permissions** | Azure Automation account managed identity with `NetworkAccess.Read.All` (Microsoft Graph) and `Storage Blob Data Contributor` on the target storage account |
@@ -458,7 +458,7 @@ try {
 #### Playbook 4: TLS inspection bypass list update
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Manual: initiated by an approved change request |
 | **Frequency** | As needed |
 | **Required permissions** | Service principal or user account with `NetworkAccess.ReadWrite.All` |
@@ -532,7 +532,7 @@ Use these steps to create a new TLS inspection policy or modify an existing one.
 #### Playbook 5: Monthly exception audit report
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: first Monday of each month |
 | **Frequency** | Monthly |
 | **Required permissions** | `NetworkAccess.Read.All` (Microsoft Graph); `Log Analytics Reader` on the Log Analytics workspace |
@@ -602,7 +602,7 @@ Write-Output "Route this report to the web filtering policy owner for review."
 #### Playbook 6: Bulk URL category override
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Manual: initiated by an approved change request |
 | **Frequency** | As needed |
 | **Required permissions** | `NetworkAccess.ReadWrite.All` (Microsoft Graph) |
@@ -670,7 +670,7 @@ Write-Output "$($results.Where({$_.Status -eq 'Applied'}).Count) of $($overrides
 #### Playbook 7: Scheduled Zero Trust Assessment digest
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: every Monday at 06:00 UTC |
 | **Frequency** | Weekly |
 | **Required permissions** | Azure Automation managed identity with `Policy.Read.All`, `Directory.Read.All`, `NetworkAccess.Read.All`, `SecurityEvents.Read.All` on Microsoft Graph; Logic Apps connector for email and ITSM |
@@ -689,7 +689,7 @@ Write-Output "$($results.Where({$_.Status -eq 'Applied'}).Count) of $($overrides
 #### Playbook 8: Internet Access configuration change alert
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Any `AuditLogs` entry targeting an Internet Access object (forwarding profile, web content filtering policy, security profile, TLS inspection policy, custom URL category override) |
 | **Frequency** | Near real-time — Sentinel scheduled analytics rule with 5-minute query frequency and 5-minute lookback |
 | **Required permissions** | Microsoft Sentinel Contributor; Logic Apps access to your ITSM/CMDB API |
@@ -717,7 +717,7 @@ Write-Output "$($results.Where({$_.Status -eq 'Applied'}).Count) of $($overrides
 #### Playbook 9: Weekly policy-efficacy digest
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: every Monday at 07:00 UTC |
 | **Frequency** | Weekly |
 | **Required permissions** | `Log Analytics Reader` on the workspace; Logic Apps email connector |
@@ -737,7 +737,7 @@ Write-Output "$($results.Where({$_.Status -eq 'Applied'}).Count) of $($overrides
 #### Playbook 10: Monthly capacity trend report
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: first business day of each month, 06:00 UTC |
 | **Frequency** | Monthly |
 | **Required permissions** | `Log Analytics Reader` on the workspace; `Storage Blob Data Reader` on the baseline storage account; Logic Apps email connector |
@@ -764,7 +764,7 @@ If your organization uses ServiceNow, Microsoft System Center Service Manager, o
 Track these metrics specific to Internet Access. For the broader metrics framework and reporting cadence, see the [Common operations guide](how-to-operations-common.md#metrics-and-reporting).
 
 | Metric | Role (owner) | How to measure | Target | Review cadence |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Threats blocked | SOC | Count of connections blocked in malware, phishing, and C2 categories | Trending — report for value demonstration | Weekly |
 | False positive rate | IAM Admin | User-reported legitimate blocks / total blocks | < 1% | Monthly |
 | TLS inspection coverage | Network Ops L2 | % of internet traffic successfully inspected | > 95% (excluding bypass-listed services) | Weekly |

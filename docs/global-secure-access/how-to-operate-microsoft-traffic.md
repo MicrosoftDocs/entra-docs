@@ -25,7 +25,7 @@ This section is organized in the order you should implement monitoring for Micro
 ### Critical alerts to configure
 
 | Alert | Condition | Role | What to do next |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Conditional Access policy failure for Microsoft traffic | Conditional Access policy applied to Microsoft traffic is blocking more users than expected | Identity Engineer / Identity Team | 1. Review the Conditional Access policy evaluation in Entra sign-in logs. 2. Check if a recent policy change is causing overblocking. 3. Validate device compliance status for affected users. |
 | Audit log: traffic forwarding rule change | A traffic forwarding rule for Microsoft traffic is modified | Network Security Engineer | 1. Verify the change was approved through change management. 2. Confirm the modified rule still includes all required Microsoft 365 service endpoints. 3. Monitor for user-reported issues after the change. |
 | Microsoft traffic profile disabled | The Microsoft traffic forwarding profile is disabled | Network Security Engineer | Microsoft 365 traffic is no longer routed through GSA. 1. Re-enable the profile in **Global Secure Access** > **Connect** > **Traffic forwarding**. 2. Check audit logs to identify who disabled it. 3. Verify Microsoft 365 connectivity is restored for users. |
@@ -182,7 +182,7 @@ AuditLogs
 Use the following non-critical alerts to detect trends, policy-tuning opportunities, and changes in user behavior that do not usually require immediate incident response.
 
 | Alert | Condition | Role | What to do next |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Microsoft traffic volume change | Daily Microsoft 365 traffic volume changes significantly from the 30-day baseline, but no outage indicators are present | Platform Ops / Monitoring Engineer | 1. Compare the change with expected business events such as a large meeting, migration wave, or return-to-office day. 2. Check whether the change affects one site, user group, or service more than others. 3. Update traffic baselines if the increase or decrease reflects a sustained usage pattern. |
 | Microsoft traffic distribution by service | One Microsoft 365 service generates a larger share of traffic than usual | Platform Ops / Monitoring Engineer | 1. Confirm whether the increase is expected for that workload, such as Teams events or SharePoint migrations. 2. Review policy coverage and forwarding behavior for the affected destination FQDNs. 3. If the pattern is unexpected, investigate whether a client, script, or workload is generating abnormal traffic. |
 | Tenant restriction blocks trending upward | Sign-ins blocked by tenant restrictions increase over the normal monthly pattern | Identity Engineer / Identity Team | 1. Confirm whether the blocked attempts are tied to approved business scenarios or unauthorized tenant access. 2. Review the affected applications and resource tenants. 3. If legitimate access is being blocked, adjust policy or user guidance; otherwise document the trend as expected enforcement. |
@@ -265,14 +265,14 @@ This section defines the recurring checks that keep Microsoft traffic operations
 ### Daily checks
 
 | Check | Role | Procedure | What to do if it fails |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | High-severity alerts | SOC Analyst | Review alerts in Sentinel or your SIEM for P1/P2 Microsoft traffic alerts from the last 24 hours. | Ensure each alert is assigned and under investigation. Unassigned alerts older than 4 hours should be escalated. |
 | Microsoft 365 user experience | IT Support / Helpdesk | Check Microsoft 365 service health dashboard and any user-reported issues in your helpdesk system. | If users report M365 performance issues, compare with GSA traffic logs to determine if GSA routing is a factor. |
 
 ### Weekly checks
 
 | Check | Role | Procedure | What to do if it fails |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Compliant network failures | Identity Engineer / Identity Team | Review Conditional Access policy failures due to compliant network check. Microsoft traffic denials should be near zero. | Investigate any denials — they usually indicate client connectivity issues or attempts to connect from unauthorized devices. |
 | Configuration backup | Platform Ops / Monitoring Engineer | Run the [automated configuration export](#automation-playbooks). | Troubleshoot the export. Manually export traffic forwarding rules. |
 | Client agent deployment status | IT Support / Helpdesk | Review GSA client deployment coverage in Intune. | Push client updates to devices that are not reporting or outdated. |
@@ -280,7 +280,7 @@ This section defines the recurring checks that keep Microsoft traffic operations
 ### Monthly checks
 
 | Check | Role | Procedure | What to do if it fails |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Conditional Access policy review | Identity Engineer / Identity Team | Review CA policies that use Block grant control and exclude compliant network locations. Verify the `TargetPolicyIds` in the Conditional Access policy failure KQL query are still current. | Update the KQL query and Sentinel rule if policies have changed. Ensure policies are still aligned with your security requirements. |
 | Review Universal Tenant Restrictions policy | Identity Engineer / Identity Team | If your organization uses Universal Tenant Restrictions: 1. Review the allowed tenant list and remove any tenants that have had no access in the last 30 days. 2. Review sign-in logs for blocked access attempts to unauthorized external tenants and investigate any patterns. | Remove stale tenants allowed by Tenant Restrictions policy. For blocked access attempts that appear suspicious, escalate to your security team. |
 | Traffic profile rule coverage | Network Security Engineer | Review the traffic forwarding rules for the Microsoft traffic profile. Confirm all expected Microsoft 365 service endpoints are included — specifically Skype for Business Online and Microsoft Teams, SharePoint Online and OneDrive for Business, Exchange Online, and Microsoft 365 Common and Office Online. | Update rules to include any missing endpoints. Check Microsoft's published endpoint lists for changes. |
@@ -538,7 +538,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 ## Operational metrics
 
 | Metric | How to measure | Target | Review cadence |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Microsoft traffic profile uptime | % time the profile is enabled and functioning | 100% | Weekly |
 | Microsoft traffic denial rate | Denied sessions / total Microsoft traffic sessions | < 1% | Weekly |
 | Compliant network check success rate | Sessions with successful compliant network enrichment / total M365 sessions | > 99% | Weekly |

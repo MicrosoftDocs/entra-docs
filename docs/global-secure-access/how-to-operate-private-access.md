@@ -31,9 +31,9 @@ Every section helps you answer three questions:
 Private Access supports two application models. Your operational procedures must cover both:
 
 | Model | When to use | Operational implication |
-|---|---|---|
+| --- | --- | --- |
 | **Quick Access** | Single enterprise application containing multiple application segments (FQDNs, IPs, IP ranges) used to enable VPN replacement. Shared Conditional Access policy across all segments. | Simpler to manage, but a policy change affects all associated application segments. Monitor as a single unit. |
-| **Per-app enterprise applications** | Individual enterprise applications that include smaller groups of application segments facilitating customer move to ZTNA.  | Granular policy control is configurable per enterprise application (for example, different MFA or device compliance requirements). Each app must be monitored and maintained independently. |
+| **Per-app enterprise applications** | Individual enterprise applications that include smaller groups of application segments facilitating customer move to ZTNA. | Granular policy control is configurable per enterprise application (for example, different MFA or device compliance requirements). Each app must be monitored and maintained independently. |
 
 Both models often coexist in the same environment. When performing application segment inventories, configuration exports, or policy reviews, ensure you cover both Quick Access segments and enterprise app segments.
 In order to leverage full ZTNA application segmentation, it is recommended to migrate from Quick Access to Per-app enterprise applications. The Zero Trust Assessment will help you tracking these efforts.
@@ -60,7 +60,7 @@ Lead your operational practice with alerts — don't rely on manually watching d
 Configure the following alerts and document the response action for each. Use [Microsoft Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/) with the [Global Secure Access Sentinel integration](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-sentinel-integration), or Azure Monitor alert rules.
 
 | Alert | Condition | Role | Automated by | What to do next |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Connector offline | A Private Access connector stops sending heartbeats for more than 5 minutes | Network Ops L1 | Sentinel analytics rule *Connector health degradation* (content hub) | 1. Check the connector server: verify the `Microsoft Entra private network connector` Windows service is running. 2. Check outbound connectivity to `*.msappproxy.net` on port 443. 3. Review Windows Event Logs on the connector host. 4. If the connector can't be recovered, verify traffic has failed over to another connector in the group (see [Failover validation](#failover-validation)). See [Microsoft Entra private network connectors](https://learn.microsoft.com/entra/global-secure-access/concept-connectors#maintenance) and [Troubleshoot problems installing the private network connector](https://learn.microsoft.com/entra/global-secure-access/troubleshoot-connectors#troubleshooting-connector-functionality). |
 | All connectors in a group offline | No connectors in a connector group are sending heartbeats | Network Ops L2 + Incident Commander | Sentinel analytics rule *Connector group offline* + [Playbook 2](#playbook-2-auto-create-itsm-ticket-for-connector-group-failure) | **Severity: Critical.** All users of applications assigned to this group lose access. 1. Escalate immediately per your incident management process. 2. Check for common root cause: network outage, firewall change, or server patching affecting all connector hosts. 3. If recovery isn't immediate, activate your fallback connectivity plan (for example, temporary VPN access). |
 | Connector high resource usage | CPU > 80% or memory > 85% sustained for 15+ minutes on a connector host | Network Ops L1 | Azure Monitor alert ([Playbook 5](#playbook-5-connector-group-capacity-alert)) | 1. Check the number of active sessions on the connector. 2. Redistribute load by adding another connector to the group. 3. Investigate if a specific application is generating unusual traffic volume. |
@@ -185,7 +185,7 @@ If required by your organization, you can use the [Private Access health check t
 ### Daily checks
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Connector heartbeat status | Network Ops L1 | Sentinel analytics rule *Connector health degradation* + ZT Assessment *Private network connectors are active and healthy* | Alerts fire automatically. Spot-check: Entra admin center > **Global Secure Access** > **Connect** > **Connectors**. | Restart the `Microsoft Entra private network connector` service on the affected host. If still offline, check network connectivity and review Windows Event Logs. |
 | High-severity incident triage | SOC | Sentinel incidents (auto-assigned via automation rule) | Review P1/P2 Private Access incidents from the last 24 hours. | Ensure each incident is assigned and under investigation. Unassigned incidents older than 4 hours should be escalated. |
 | Configuration-change review | IAM Admin | [Playbook 8: Private Access configuration change alert](#playbook-8-private-access-configuration-change-alert) (near real-time) | Rule fires on every Private Access config change. No daily manual query required. | Verify each flagged change maps to an approved change request. Revert and investigate unauthorized changes. |
@@ -193,7 +193,7 @@ If required by your organization, you can use the [Private Access health check t
 ### Weekly checks
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Connector resource utilization trend | Network Ops L2 | Azure Monitor alert ([Playbook 5](#playbook-5-connector-group-capacity-alert)) | Review the week's alert history for sustained trends, not isolated spikes. | If any host trends above 70% CPU or 80% memory, plan to add a connector. Use the [Private Access Sizing Planner](https://github.com/FranckhDev/GSA-Private-Access-Sizing-Planner). |
 | Policy efficacy digest | IAM Admin | [Playbook 9: Weekly policy-efficacy digest](#playbook-9-weekly-policy-efficacy-digest) (email) | Review the weekly digest of top denied apps/users. | Adjust policies for persistent false positives. Investigate repeated unauthorized access attempts. |
 | Configuration backup compliance | Network Ops L2 | [Playbook 3](#playbook-3-weekly-configuration-backup) + [`Test-GsaBackupCompliance.ps1`](scripts/powershell-test-gsa-backup-compliance.md) | Backup compliance script runs after Playbook 3 and alerts if files are missing or stale. | Troubleshoot the runbook or script. Manually export via Graph API as a fallback. |
@@ -203,7 +203,7 @@ If required by your organization, you can use the [Private Access health check t
 ### Monthly checks
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Connector software version | Network Ops L2 | ZT Assessment *Private network connectors are running the latest version* | Assessment flags outdated connectors in the weekly digest ([Playbook 7](#playbook-7-scheduled-zero-trust-assessment-digest)). | Schedule connector updates during a maintenance window. Update one connector at a time per group to maintain availability. |
 | Failover validation | Network Ops L2 | **Manual — requires maintenance window** (no safe way to automate disruption testing in production) | See [Failover validation](#failover-validation). | Investigate connector group assignment and network routing before the next maintenance window. |
 | RBAC review | IAM Admin | ZT Assessment *Application admin rights are constrained* + [`Test-GsaRbacHygiene.ps1`](scripts/powershell-test-gsa-rbac-hygiene.md) | Assessment checks role-scope hygiene; script reports standing assignments, stale admins, and admins without phishing-resistant MFA. | Remove access for accounts that no longer require it. Enforce phishing-resistant MFA for all admins. |
@@ -229,7 +229,7 @@ If required by your organization, you can use the [Private Access health check t
 ### Capacity thresholds
 
 | Metric | Target | Warning threshold | Critical threshold |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Connector CPU | < 50% average | > 70% sustained 30 min | > 85% sustained 15 min |
 | Connector memory | < 60% average | > 75% sustained 30 min | > 85% sustained 15 min |
 | Concurrent sessions per connector | Varies by server spec | > 70% of tested maximum | > 85% of tested maximum |
@@ -295,7 +295,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 1: Connector offline notification
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Sentinel alert: connector heartbeat missing > 5 minutes |
 | **Frequency** | Event-driven (real-time) |
 | **Required permissions** | Logic Apps managed identity with `SecurityAlert.Read.All`; Microsoft Teams connector or Exchange `Mail.Send` permission |
@@ -315,7 +315,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 2: Auto-create ITSM ticket for connector group failure
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Sentinel alert: all connectors in a connector group are offline |
 | **Frequency** | Event-driven (real-time) |
 | **Required permissions** | Logic Apps managed identity with `SecurityAlert.Read.All`; ServiceNow Logic Apps connector configured with valid ServiceNow credentials |
@@ -334,7 +334,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 3: Weekly configuration backup
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: every Sunday at 02:00 UTC |
 | **Frequency** | Weekly |
 | **Required permissions** | Azure Automation account managed identity with `NetworkAccess.ReadWrite.All` (Microsoft Graph) and `Storage Blob Data Contributor` on the target storage account |
@@ -353,7 +353,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 4: Application segment onboarding
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Manual: initiated by an approved change request |
 | **Frequency** | As needed |
 | **Required permissions** | Service principal or user account with `NetworkAccess.ReadWrite.All` |
@@ -374,7 +374,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 5: Connector group capacity alert
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | CPU > 70% or memory > 80% sustained for 30 minutes on a connector host |
 | **Frequency** | Event-driven (continuous evaluation) |
 | **Required permissions** | `Monitoring Contributor` on the connector host resource or resource group |
@@ -393,7 +393,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 6: Stale application segment cleanup
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: first Monday of each month |
 | **Frequency** | Monthly |
 | **Required permissions** | `Log Analytics Reader` on the Log Analytics workspace; `NetworkAccess.ReadWrite.All` to remove segments after review |
@@ -423,7 +423,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 7: Scheduled Zero Trust Assessment digest
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: every Monday at 06:00 UTC |
 | **Frequency** | Weekly |
 | **Required permissions** | Azure Automation managed identity with `Policy.Read.All`, `Directory.Read.All`, `NetworkAccess.Read.All`, `SecurityEvents.Read.All` on Microsoft Graph; Logic Apps connector for email and ITSM |
@@ -442,7 +442,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 8: Private Access configuration change alert
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Any `AuditLogs` entry targeting a Private Access object (connector, connector group, application segment, CA policy bound to a Private Access app) |
 | **Frequency** | Near real-time \u2014 Sentinel scheduled analytics rule with 5-minute query frequency and 5-minute lookback |
 | **Required permissions** | Microsoft Sentinel Contributor; Logic Apps access to your ITSM/CMDB API |
@@ -460,7 +460,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 #### Playbook 9: Weekly policy-efficacy digest
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Trigger** | Scheduled: every Monday at 07:00 UTC |
 | **Frequency** | Weekly |
 | **Required permissions** | `Log Analytics Reader` on the workspace; Logic Apps email connector |
@@ -484,7 +484,7 @@ If your organization uses ServiceNow, Microsoft System Center Service Manager, o
 Track these metrics specific to Private Access. For the broader metrics framework and reporting cadence, see the [Common operations guide](how-to-operations-common.md#metrics-and-reporting).
 
 | Metric | Role (owner) | How to measure | Target | Review cadence |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Connector availability | Network Ops L2 | % time all connectors in a group are Active | > 99.9% | Weekly |
 | Mean time to detect connector failure | SOC | Time between connector going offline and alert firing | < 5 minutes | Monthly |
 | Application access success rate | IAM Admin | Successful connections / total connection attempts | > 99.5% | Weekly |

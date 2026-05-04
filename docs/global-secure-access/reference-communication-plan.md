@@ -16,7 +16,7 @@ Use this template for **normal** and **major** changes that have user-visible im
 ## Communication plan details
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Change ID** | _(match the change request template)_ |
 | **Change summary** | _(one-sentence description)_ |
 | **Change date and time** | |
@@ -26,7 +26,7 @@ Use this template for **normal** and **major** changes that have user-visible im
 ## Stakeholder notification matrix
 
 | Audience | When to notify | Channel | Owner | Sent? |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Operations team** | 5 business days before change | Team meeting or Teams channel | Service Owner | [ ] |
 | **IT Support / Helpdesk** | 3 business days before change | Email + knowledge base article update | Network Security Engineer | [ ] |
 | **Affected end users** | 2 business days before change | Email or company portal announcement | Service Owner | [ ] |
@@ -102,7 +102,7 @@ Contact [helpdesk email or Teams channel] if you have questions or experience is
 If unexpected issues arise during the change, use this escalation path:
 
 | Severity | Escalation action | Contact |
-|---|---|---|
+| --- | --- | --- |
 | Minor (cosmetic, < 5 users affected) | Notify operations team; continue monitoring | [Team channel or on-call engineer] |
 | Moderate (> 5 users affected, workaround available) | Notify Service Owner; decide whether to continue or roll back | [Service Owner name and contact] |
 | Major (widespread outage, no workaround) | Roll back immediately; notify all stakeholders; open incident | [Incident management process / bridge call number] |

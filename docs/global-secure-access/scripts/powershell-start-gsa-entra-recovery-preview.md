@@ -32,7 +32,7 @@ Use Get-GsaEntraSnapshot.ps1 to retrieve available SnapshotId values.
 ## Parameters
 
 | Parameter | Description |
-|---|---|
+| --- | --- |
 | `SnapshotId` | Snapshot ID from the output of Get-GsaEntraSnapshot.ps1. |
 | `EntityTypes` | Directory object types to include in the preview scope. Defaults to the GSA-relevant set. |
 | `TenantId` | Target Microsoft Entra tenant ID. |

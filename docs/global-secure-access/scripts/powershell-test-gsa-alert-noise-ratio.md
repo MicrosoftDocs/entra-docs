@@ -24,7 +24,7 @@ Run this script weekly as an Azure Automation runbook.
 ## Parameters
 
 | Parameter | Description |
-|---|---|
+| --- | --- |
 | `WorkspaceId` | Log Analytics workspace ID containing Sentinel incident data. |
 | `ThresholdPercent` | Maximum acceptable false-positive/informational ratio. Default: 20. |
 | `LookbackDays` | Number of days to analyze. Default: 7. |

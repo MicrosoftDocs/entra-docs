@@ -24,7 +24,7 @@ different) Automation Account.
 ## Parameters
 
 | Parameter | Description |
-|---|---|
+| --- | --- |
 | `AutomationAccountName` | Name of the Azure Automation Account running the backup runbooks. |
 | `ResourceGroupName` | Resource group containing the Automation Account. |
 | `BackupRunbookName` | Name of the runbook that performs GSA configuration backups. |

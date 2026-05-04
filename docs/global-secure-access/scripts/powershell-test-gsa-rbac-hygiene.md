@@ -24,7 +24,7 @@ Run this script weekly as an Azure Automation runbook or scheduled task.
 ## Parameters
 
 | Parameter | Description |
-|---|---|
+| --- | --- |
 | `ReviewLogPath` | Path to the JSON file tracking last-reviewed dates per account. If running in Azure Automation, use an Azure Storage blob or Automation variable. |
 | `AlertRecipient` | Email address to receive the alert when overdue accounts are found. |
 | `SenderId` | UserId or UPN of the mailbox used to send alert emails (requires Mail.Send permission). |

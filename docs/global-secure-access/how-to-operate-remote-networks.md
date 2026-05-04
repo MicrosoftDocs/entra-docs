@@ -22,7 +22,7 @@ Remote Networks operations should start with alerts that identify branch connect
 ### Critical alerts to configure
 
 | Alert | Condition | Role | What to do next |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tunnel down | A GRE or IPsec tunnel has been disconnected for more than 5 minutes | Network Security Engineer | 1. Check the on-premises CPE (Customer Premises Equipment) device status. 2. Verify the public IP and tunnel configuration haven't changed. 3. Check ISP connectivity at the branch. 4. If using redundant tunnels, verify traffic has failed over. |
 | All tunnels for a site down | No active tunnels remain for a remote network location | Network Security Engineer | **Severity: Critical.** All users at the site lose GSA-secured connectivity. 1. Escalate immediately. 2. Check for site-wide network outage. 3. Activate fallback plan (direct internet egress or backup VPN). |
 | Tunnel flapping | A tunnel goes up and down more than 3 times in 1 hour | Network Security Engineer | 1. Check the CPE device logs for IKE/IPsec negotiation errors. 2. Verify the tunnel keepalive and Dead Peer Detection (DPD) settings. 3. Check for ISP instability or MTU issues. 4. If flapping persists, engage your network provider. |
@@ -90,7 +90,7 @@ RemoteNetworkHealthLogs
 ### Daily checks
 
 | Check | Role | Procedure | What to do if it fails |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tunnel status | Platform Ops / Monitoring Engineer | Entra admin center > **Global Secure Access** > **Connect** > **Remote networks**. Verify all tunnels show **Connected**. | Check CPE device status and ISP connectivity at the affected site. |
 | High-severity alerts | SOC Analyst | Review Sentinel or SIEM for P1/P2 remote network alerts. | Ensure each alert is assigned. Escalate unassigned alerts older than 4 hours. |
 | Site traffic volume | Platform Ops / Monitoring Engineer | Spot-check traffic volumes for your largest sites against the baseline. | Investigate significant drops (possible outage) or spikes (possible anomaly). |
@@ -98,7 +98,7 @@ RemoteNetworkHealthLogs
 ### Weekly checks
 
 | Check | Role | Procedure | What to do if it fails |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tunnel stability | Network Security Engineer | Review tunnel flap history in logs. Count up/down transitions per tunnel. | Investigate tunnels with more than 2 transitions in the week. Check CPE logs and ISP stability. |
 | Bandwidth utilization trend | Platform Ops / Monitoring Engineer | Run the bandwidth KQL query for the past 7 days. | If any site exceeds 70% sustained utilization, plan capacity expansion. |
 | CPE device health | Network Security Engineer | Check CPU, memory, and interface errors on branch CPE devices via your network management tool. | Address devices nearing resource limits. Plan firmware updates if available. |
@@ -107,7 +107,7 @@ RemoteNetworkHealthLogs
 ### Monthly checks
 
 | Check | Role | Procedure | What to do if it fails |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tunnel redundancy validation | Network Security Engineer | For sites with redundant tunnels, verify failover works. See [Tunnel failover testing](#tunnel-failover-testing). | Investigate and resolve failover issues before the next maintenance window. |
 | CPE firmware review | Network Security Engineer | Check current firmware versions against vendor-recommended versions. | Schedule firmware upgrades during maintenance windows. |
 | Capacity planning review | Platform Ops / Monitoring Engineer | Compare 30-day traffic trend against provisioned bandwidth for each site. | Initiate bandwidth upgrades or add tunnels for sites approaching limits. |
@@ -131,7 +131,7 @@ RemoteNetworkHealthLogs
 ### Capacity thresholds
 
 | Metric | Target | Warning threshold | Critical threshold |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tunnel bandwidth utilization | < 60% of provisioned | > 70% sustained 30 min | > 85% sustained 15 min |
 | Tunnel uptime per site | > 99.9% | < 99.5% in any week | < 99.0% in any week |
 | Tunnel flap count | 0 per week | > 2 per week | > 5 per week |
@@ -172,7 +172,7 @@ Write-Host "Remote network configuration export complete."
 ### Automation playbooks
 
 | # | Scenario | Implementation | Trigger |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | **Tunnel down notification** | Logic Apps playbook: sends Teams alert and email with site name, tunnel ID, and last-seen time | Sentinel alert: tunnel offline > 5 min |
 | 2 | **Auto-create ITSM ticket for site outage** | Logic Apps playbook: creates a ServiceNow incident for all-tunnels-down at a site | Sentinel alert: all tunnels for a site offline |
 | 3 | **Weekly configuration backup** | Azure Automation runbook: exports remote network and device link config via Graph API | Scheduled: weekly |
@@ -191,7 +191,7 @@ If your organization uses a network management platform (SolarWinds, PRTG, Thous
 ## Operational metrics
 
 | Metric | How to measure | Target | Review cadence |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tunnel availability per site | % time at least one tunnel is active per site | > 99.9% | Weekly |
 | Mean time to detect tunnel failure | Time from tunnel disconnect to alert firing | < 5 minutes | Monthly |
 | Mean time to restore tunnel | Time from alert to tunnel reestablished | < 30 minutes | Monthly |
@@ -203,7 +203,7 @@ If your organization uses a network management platform (SolarWinds, PRTG, Thous
 ## Troubleshooting quick reference
 
 | Symptom | Likely cause | Resolution |
-|---|---|---|
+| --- | --- | --- |
 | Tunnel won't establish | IKE/IPsec parameter mismatch, wrong PSK, or blocked port (UDP 500/4500) | 1. Verify IKE version, ciphers, and PSK match the GSA configuration. 2. Check firewall rules at the branch for UDP 500/4500. 3. Review CPE device logs for IKE negotiation errors. |
 | Tunnel established but no traffic flows | Routing issue — traffic not being directed into the tunnel, or source NAT misconfiguration | 1. Verify route table on the CPE sends target traffic into the tunnel. 2. Check source NAT/PAT settings if required. 3. Test with a packet capture on the CPE. |
 | Intermittent connectivity at a site | Tunnel flapping, ISP instability, or MTU issues | 1. Check tunnel flap count. 2. Review ISP performance. 3. Adjust MTU settings (1400 for GRE, 1380 for IPsec). Enable TCP MSS clamping. |

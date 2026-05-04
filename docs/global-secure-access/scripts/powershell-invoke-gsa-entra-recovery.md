@@ -33,7 +33,7 @@ EntityTypes.
 ## Parameters
 
 | Parameter | Description |
-|---|---|
+| --- | --- |
 | `SnapshotId` | Snapshot ID returned by Get-GsaEntraSnapshot.ps1. |
 | `EntityTypes` | Directory object types to include in the recovery scope. Must match the scope of the previously approved preview job. |
 | `TenantId` | Target Microsoft Entra tenant ID. |

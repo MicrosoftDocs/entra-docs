@@ -18,7 +18,7 @@ Use this checklist to maintain the health of your Microsoft Entra Private Access
 **Date:** _______________  **Completed by:** _______________
 
 | # | Check | How | Status | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | All connectors **Active** | Entra admin center > **Global Secure Access** > **Connect** > **Connectors** | Pass / Fail | Restart the `Microsoft Entra private network connector` service. Check outbound connectivity to `*.msappproxy.net:443`. Review Windows Event Logs on the connector host. |
 | 2 | Connector resource utilization normal | Check CPU and memory on each connector host via your monitoring tool | Pass / Fail | If CPU > 80% or memory > 85%, investigate high-traffic applications and consider adding a connector to the group. |
 | 3 | No unassigned P1/P2 alerts | Review Private Access alerts in Sentinel (or your SIEM) from the last 24 hours | Pass / Fail | Assign and begin investigation. Escalate alerts unassigned for more than 4 hours. |
@@ -37,7 +37,7 @@ _______________________________________________________________________________
 **Week of:** _______________  **Completed by:** _______________
 
 | # | Check | How | Status | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | Connector group load distribution | Run the [connector group load KQL query](how-to-operate-private-access.md#kql-queries-for-private-access-monitoring) — look for hot connectors | Pass / Fail | If one connector handles significantly more traffic, check connector group assignments and consider rebalancing. |
 | 2 | Policy efficacy review | Review top denied applications and users in the Sentinel workbook | Pass / Fail | Adjust policies for persistent false positives (legitimate traffic blocked). Investigate repeated unauthorized access attempts. |
 | 3 | Configuration backup completed | Verify the [weekly configuration export](how-to-operate-private-access.md#export-private-access-configuration-via-graph-api) ran successfully and output is stored | Pass / Fail | Run the export manually. Troubleshoot the automation runbook. |
@@ -56,7 +56,7 @@ _______________________________________________________________________________
 **Month:** _______________  **Completed by:** _______________
 
 | # | Check | How | Status | What to do if it fails |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | Connector software version | Compare installed version on each host against the [latest available version](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-connectors) | Pass / Fail | Schedule connector updates during a maintenance window. Update one connector at a time per group. |
 | 2 | Failover validation | Follow the [failover validation procedure](how-to-operate-private-access.md#failover-validation) during a scheduled maintenance window | Pass / Fail | Investigate connector group assignment and network routing. Do not run in production without a maintenance window. |
 | 3 | RBAC review | Review accounts with Global Secure Access Administrator or related roles in the Entra admin center | Pass / Fail | Remove access for accounts that no longer require it. Verify all admin accounts use phishing-resistant MFA. |

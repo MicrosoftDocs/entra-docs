@@ -133,7 +133,7 @@ Microsoft Entra ID provides a native [Backup and Recovery service](https://learn
 **Suggested playbooks:**
 
 | Playbook | Purpose | Key Graph call |
-|---|---|---|
+| --- | --- | --- |
 | [Get-GsaEntraSnapshot.ps1](scripts/powershell-get-gsa-entra-snapshot.md) | List the most recent snapshots and record the ID used in an incident ticket. | `GET /directory/recovery/snapshots` |
 | [Start-GsaEntraRecoveryPreview.ps1](scripts/powershell-start-gsa-entra-recovery-preview.md) | Create a scoped preview job for Conditional Access policies, named locations, and GSA service principals. Scope defaults to the GSA-relevant entity types; override with `-EntityTypes` when needed. | `POST /directory/recovery/snapshots/{id}/recoveryPreviewJobs` |
 | [Invoke-GsaEntraRecovery.ps1](scripts/powershell-invoke-gsa-entra-recovery.md) | After the preview is reviewed and approved, execute the recovery job with the same filter scope and log the outcome. Requires `-Force` or interactive confirmation. | `POST /directory/recovery/snapshots/{id}/recoveryJobs` |
