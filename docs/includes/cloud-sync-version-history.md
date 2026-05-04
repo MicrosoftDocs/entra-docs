@@ -20,6 +20,8 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 April 14, 2026: released for download
 
+May 5, 2026: released for auto upgrade
+
 ### New or changed functionality
 
 - [Account discovery](https://aka.ms/accountDiscoveryDocumentation) is now supported for on-premises applications using ECMA connectors.
