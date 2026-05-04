@@ -33,7 +33,7 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md)
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Code42 tenant with Identity Management enabled.
-* A Code42 user account with [Customer Cloud Admin](https://support.code42.com/hc/en-us/articles/14827655905943-Roles-reference#Customer_Cloud_Admin) permission.
+* A Code42 user account with Customer Cloud Admin permission.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Code42 to support provisioning with Microsoft Entra ID
 
-This section guides you through the steps to configure Microsoft Entra ID as a provisioning provider in the Identity Management section of Code42's console. Doing so will enable Code42 to securely receive provisioning requests from Microsoft Entra ID. It's recommended to review [Code42's support documentation](https://support.code42.com/hc/en-us/articles/14827670461207-How-to-provision-users-to-Code42-from-Azure-AD) before provisioning with Microsoft Entra ID.
+This section guides you through the steps to configure Microsoft Entra ID as a provisioning provider in the Identity Management section of Code42's console. Doing so will enable Code42 to securely receive provisioning requests from Microsoft Entra ID.
 
 ### To create a provisioning provider in Code42's console:
 
@@ -150,8 +150,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
-* [Configure organization assignments based on SCIM groups in Code42](https://support.code42.com/hc/en-us/articles/14827670461207-How-to-provision-users-to-Code42-from-Azure-AD#step-6-map-users-to-organizations-and-roles-using-scim-groups-0-18)
-* [Configure role assignments based on SCIM groups in Code42](https://support.code42.com/hc/en-us/articles/14827670461207-How-to-provision-users-to-Code42-from-Azure-AD#apply-organization-and-role-mappings-0-21)
 
 ## Related content
 
