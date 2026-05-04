@@ -19,7 +19,7 @@ Use this checklist every business day. Record results and escalate any failed ch
 | --- | --- | --- | --- |
 | 1 | All connectors show **Active** in Entra admin center > Global Secure Access > Connect > Connectors | Pass / Fail | Restart the connector service. If unresolved, check network connectivity and Windows Event Logs on the connector host. |
 | 2 | No unassigned P1/P2 Private Access alerts in Sentinel | Pass / Fail | Assign and investigate. Escalate alerts older than 4 hours. |
-| 3 | Audit log reviewed — no unauthorized configuration changes | Pass / Fail | Flag unrecognized changes. Verify each change maps to an approved change request. |
+| 3 | Audit logs reviewed—no unauthorized configuration changes | Pass / Fail | Flag unrecognized changes. Verify each change maps to an approved change request. |
 
 ## Internet Access
 
@@ -27,13 +27,13 @@ Use this checklist every business day. Record results and escalate any failed ch
 | --- | --- | --- | --- |
 | 4 | Internet Access traffic forwarding profile is enabled | Pass / Fail | Re-enable the profile. Check audit logs for who disabled it. |
 | 5 | No unassigned P1/P2 Internet Access alerts in Sentinel | Pass / Fail | Assign and investigate. Escalate alerts older than 4 hours. |
-| 6 | Spot-check top 10 blocked URLs — verify they should be blocked | Pass / Fail | Adjust policies or add exceptions for legitimate business sites. |
+| 6 | Spot-check top 10 blocked URLs—verify they should be blocked | Pass / Fail | Adjust policies or add exceptions for legitimate business sites. |
 
 ## Remote Networks
 
 | # | Check | Status | What to do if it fails |
 | --- | --- | --- | --- |
-| 7 | All tunnels show **Connected** in Entra admin center > Global Secure Access > Connect > Remote networks | Pass / Fail | Check CPE device status and ISP connectivity at the affected branch. |
+| 7 | All tunnels show **Connected** in Entra admin center > Global Secure Access > Connect > Remote networks | Pass / Fail | Check the customer premises equipment (CPE) device status and internet service provider (ISP) connectivity at the affected branch. |
 | 8 | No unassigned P1/P2 Remote Networks alerts in Sentinel | Pass / Fail | Assign and investigate. Escalate alerts older than 4 hours. |
 | 9 | Traffic volumes for major sites are within baseline range | Pass / Fail | Investigate significant drops (possible outage) or spikes (possible anomaly). |
 
@@ -49,8 +49,8 @@ Use this checklist every business day. Record results and escalate any failed ch
 
 | # | Check | Status | What to do if it fails |
 | --- | --- | --- | --- |
-| 13 | Azure Service Health and Microsoft 365 service health — no reported Global Secure Access service issues | Pass / Fail | If Microsoft reports an issue, communicate it to your operations team and follow the published mitigation guidance. |
-| 14 | All scheduled automation jobs (backups, reports) ran successfully | Pass / Fail | Troubleshoot the failed job. Run the backup or report manually if needed. |
+| 13 | Azure Service Health and Microsoft 365 service health—no reported Global Secure Access service issues | Pass / Fail | If Microsoft reports an issue, communicate it to your operations team and follow the published mitigation guidance. |
+| 14 | All scheduled automation jobs (backups, reports) ran without errors | Pass / Fail | Troubleshoot the failed job. Run the backup or report manually if needed. |
 
 ---
 
