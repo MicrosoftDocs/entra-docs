@@ -477,7 +477,10 @@ Example of usage within the workflow:
 
 ### Update user attributes (Preview)
 
-Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center. 
+
+> [!NOTE]
+> This task does not currently support updating user attribute for synced users. For more information, see: [Update user attributes with Lifecycle Workflows (Preview)](how-to-lifecycle-workflow-update-user-attributes.md).
 
 :::image type="content" source="media/lifecycle-workflow-task/update-user-attribute-task.png" alt-text="Screenshot of the update user attribute task.":::
 
