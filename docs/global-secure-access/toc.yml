@@ -60,6 +60,33 @@ items:
       href: tutorial-private-access-app-segmentation.md
     - name: Intelligent Local Access
       href: tutorial-private-access-intelligent-local-access.md
+- name: Operations
+  expanded: false
+  items:
+  - name: Operations guide overview
+    href: overview-operations.md
+  - name: Common operations (RACI, change, metrics)
+    href: how-to-operations-common.md
+  - name: Operate Private Access
+    href: how-to-operate-private-access.md
+  - name: Operate Internet Access
+    href: how-to-operate-internet-access.md
+  - name: Operate Microsoft Traffic
+    href: how-to-operate-microsoft-traffic.md
+  - name: Operate Remote Networks
+    href: how-to-operate-remote-networks.md
+  - name: Security operations for network access
+    href: concept-security-operations-network.md
+  - name: Templates
+    items:
+    - name: Daily health check
+      href: reference-daily-health-check.md
+    - name: Private Access health check
+      href: reference-private-access-health-check.md
+    - name: Change request template
+      href: reference-change-request-template.md
+    - name: Communication plan
+      href: reference-communication-plan.md
 - name: Samples
   expanded: false
   items: 
@@ -81,6 +108,18 @@ items:
     href: ./scripts/powershell-open-secure-sockets-layer.md
   - name: Install the Windows client as a proof of concept
     href: ./scripts/powershell-windows-client-install-proof-of-concept.md
+  - name: List Microsoft Entra snapshots for Global Secure Access recovery
+    href: ./scripts/powershell-get-gsa-entra-snapshot.md
+  - name: Preview a Microsoft Entra recovery for Global Secure Access objects
+    href: ./scripts/powershell-start-gsa-entra-recovery-preview.md
+  - name: Run a Microsoft Entra recovery for Global Secure Access objects
+    href: ./scripts/powershell-invoke-gsa-entra-recovery.md
+  - name: Calculate the alert noise ratio for Global Secure Access detections
+    href: ./scripts/powershell-test-gsa-alert-noise-ratio.md
+  - name: Verify Global Secure Access configuration backup compliance
+    href: ./scripts/powershell-test-gsa-backup-compliance.md
+  - name: Check Global Secure Access RBAC review hygiene
+    href: ./scripts/powershell-test-gsa-rbac-hygiene.md
 - name: Concepts
   expanded: false
   items: 
