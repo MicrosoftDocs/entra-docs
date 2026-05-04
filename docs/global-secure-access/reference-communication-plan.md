@@ -1,6 +1,6 @@
 ---
 title: Global Secure Access change communication plan template
-description: "Template for communicating planned Global Secure Access changes to stakeholders, support teams, and end users."
+description: "Template for communicating planned Global Secure Access changes to stakeholders, support teams, and users."
 ms.topic: reference
 ms.date: 05/04/2026
 ms.reviewer: tdetzner
@@ -29,7 +29,7 @@ Use this template for **normal** and **major** changes that have user-visible im
 | --- | --- | --- | --- | --- |
 | **Operations team** | 5 business days before change | Team meeting or Teams channel | Service Owner | [ ] |
 | **IT Support / Helpdesk** | 3 business days before change | Email + knowledge base article update | Network Security Engineer | [ ] |
-| **Affected end users** | 2 business days before change | Email or company portal announcement | Service Owner | [ ] |
+| **Affected users** | 2 business days before change | Email or company portal announcement | Service Owner | [ ] |
 | **Security / SOC team** | 2 business days before change | Email or SIEM notification | Network Security Engineer | [ ] |
 | **Management / leadership** | 2 business days before major changes | Email summary | Service Owner | [ ] |
 | **All stakeholders** | Immediately after change completion | Email or Teams channel update | Service Owner | [ ] |
@@ -42,7 +42,7 @@ Use this template for **normal** and **major** changes that have user-visible im
 
 **What is happening:**
 
-[Brief description of the change. Keep it non-technical for end users.]
+[Brief description of the change. Keep it nontechnical for users.]
 
 **When:**
 
@@ -55,7 +55,7 @@ Use this template for **normal** and **major** changes that have user-visible im
 **Expected impact:**
 
 [Describe what users will experience. Be specific:
-- "You may be briefly disconnected and need to reconnect"
+- "You might be briefly disconnected and need to reconnect"
 - "Access to [application] will be temporarily unavailable"
 - "No user impact expected, but we are notifying you as a precaution"]
 
@@ -63,8 +63,8 @@ Use this template for **normal** and **major** changes that have user-visible im
 
 [If users need to take action, list it here. If no action needed, say so:
 - "No action required on your part"
-- "Please restart the Global Secure Access client after [time]"
-- "Please save your work before [time] as a precaution"]
+- "Restart the Global Secure Access client after [time]"
+- "Save your work before [time] as a precaution"]
 
 **Questions?**
 
@@ -78,11 +78,11 @@ Contact [helpdesk email or Teams channel] if you have questions or experience is
 
 ---
 
-**The planned maintenance on [date] has been completed successfully.**
+**The planned maintenance on [date] is complete.**
 
 **What was changed:** [Brief summary]
 
-**Impact:** [Confirm whether the maintenance was completed within the expected window and whether any unexpected impact occurred]
+**Impact:** [Confirm whether the maintenance completed within the expected window and whether any unexpected impact occurred]
 
 **If you experience issues:** Contact [helpdesk email or Teams channel]. Reference ticket [Change ID].
 

@@ -9,10 +9,7 @@ ai-usage: ai-assisted
 
 # Check Global Secure Access RBAC review hygiene
 
-Queries Microsoft Graph for directory role assignments relevant to Global Secure Access
-administration. Compares the last review date (stored in a review log file) against the
-current quarter boundary. Sends an alert email via Microsoft Graph when overdue accounts
-are found.
+This script queries Microsoft Graph for directory role assignments relevant to Global Secure Access administration. It compares the last review date (stored in a review log file) against the current quarter boundary. When the script finds overdue accounts, it sends an alert email through Microsoft Graph.
 
 Run this script weekly as an Azure Automation runbook or scheduled task.
 

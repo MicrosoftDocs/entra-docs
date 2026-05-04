@@ -42,14 +42,14 @@ Use this checklist every business day. Record results and escalate any failed ch
 | # | Check | Status | What to do if it fails |
 | --- | --- | --- | --- |
 | 10 | Microsoft traffic forwarding profile is enabled | Pass / Fail | Re-enable the profile. Check audit logs for who disabled it. |
-| 11 | No user-reported Microsoft 365 performance issues in helpdesk queue | Pass / Fail | If reported, compare GSA traffic logs with M365 service health dashboard. |
-| 12 | Spot-check sign-in logs for compliant network enrichment | Pass / Fail | Verify the GSA client is running on affected devices and the compliant network check is configured. |
+| 11 | No user-reported Microsoft 365 performance issues in helpdesk queue | Pass / Fail | If reported, compare Global Secure Access traffic logs with the Microsoft 365 service health dashboard. |
+| 12 | Spot-check sign-in logs for compliant network enrichment | Pass / Fail | Verify the Global Secure Access client is running on affected devices and the compliant network check is configured. |
 
 ## Cross-cutting
 
 | # | Check | Status | What to do if it fails |
 | --- | --- | --- | --- |
-| 13 | Azure Service Health / M365 service health — no reported GSA service issues | Pass / Fail | If Microsoft reports an issue, communicate to your operations team and follow the published mitigation guidance. |
+| 13 | Azure Service Health and Microsoft 365 service health — no reported Global Secure Access service issues | Pass / Fail | If Microsoft reports an issue, communicate it to your operations team and follow the published mitigation guidance. |
 | 14 | All scheduled automation jobs (backups, reports) ran successfully | Pass / Fail | Troubleshoot the failed job. Run the backup or report manually if needed. |
 
 ---

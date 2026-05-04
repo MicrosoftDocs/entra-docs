@@ -9,12 +9,9 @@ ai-usage: ai-assisted
 
 # Verify Global Secure Access configuration backup compliance
 
-Queries Azure Automation for the status of GSA backup runbook jobs over a
-configurable lookback window. If any jobs failed or no jobs ran during the
-expected schedule, sends an alert email via Microsoft Graph.
+This script queries Azure Automation for the status of Global Secure Access backup runbook jobs over a configurable lookback window. If any jobs failed or no jobs ran during the expected schedule, the script sends an alert email through Microsoft Graph.
 
-Run this script daily as a secondary watchdog runbook in the same (or a
-different) Automation Account.
+Run this script daily as a secondary watchdog runbook in the same Automation Account or a different one.
 
 ## Prerequisites and notes
 
@@ -27,7 +24,7 @@ different) Automation Account.
 | --- | --- |
 | `AutomationAccountName` | Name of the Azure Automation Account running the backup runbooks. |
 | `ResourceGroupName` | Resource group containing the Automation Account. |
-| `BackupRunbookName` | Name of the runbook that performs GSA configuration backups. |
+| `BackupRunbookName` | Name of the runbook that performs Global Secure Access configuration backups. |
 | `LookbackHours` | Number of hours to look back for completed jobs. Default: 26 (covers a daily schedule with 2-hour buffer). |
 | `AlertRecipient` | Email address to receive failure alerts. |
 | `SenderId` | UserId or UPN of the mailbox used to send alert emails. |
