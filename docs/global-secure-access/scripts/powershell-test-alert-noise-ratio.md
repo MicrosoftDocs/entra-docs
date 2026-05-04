@@ -11,15 +11,15 @@ ai-usage: ai-assisted
 
 Queries Log Analytics for Sentinel incident classifications over a configurable lookback
 period. Calculates the ratio of false-positive and informational closures to total incidents.
-If the ratio exceeds the threshold (default 20%), sends an alert email with details on the
+If the ratio exceeds the threshold (default 20%), the script sends an alert email with details on the
 noisiest analytics rules.
 
 Run this script weekly as an Azure Automation runbook.
 
 ## Prerequisites and notes
 
-- **Required permissions**: Azure — Log Analytics Reader on the workspace; Graph — Mail.Send
-- **Minimum module versions**: Az.OperationalInsights, Microsoft.Graph 2.x
+- **Required permissions**: Azure—Log Analytics Reader on the workspace; Graph—Mail.Send
+- **Minimum module versions**: `Az.OperationalInsights`, `Microsoft.Graph` 2.x
 
 ## Parameters
 
@@ -29,7 +29,7 @@ Run this script weekly as an Azure Automation runbook.
 | `ThresholdPercent` | Maximum acceptable false-positive/informational ratio. Default: 20. |
 | `LookbackDays` | Number of days to analyze. Default: 7. |
 | `AlertRecipient` | Email address to receive the alert when the threshold is exceeded. |
-| `SenderId` | UserId or UPN of the mailbox used to send alert emails. |
+| `SenderId` | UserId or user principal name (UPN) of the mailbox used to send alert emails. |
 
 ## Examples
 
