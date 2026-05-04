@@ -17,7 +17,7 @@ Use this template for all **normal** and **major** changes to Global Secure Acce
 
 | Field | Value |
 | --- | --- |
-| **Change ID** | _(your ITSM ticket number or sequential ID)_ |
+| **Change ID** | _(your IT service management (ITSM) ticket number or sequential ID)_ |
 | **Date submitted** | |
 | **Requested by** | |
 | **Change category** | Standard / Normal / Emergency / Major |
@@ -29,7 +29,7 @@ Use this template for all **normal** and **major** changes to Global Secure Acce
 
 **What is being changed?**
 
-_(Describe the specific configuration change in detail. Include the GSA capability affected: Private Access, Internet Access, Remote Networks, or Microsoft Traffic.)_
+_(Describe the specific configuration change in detail. Include the Global Secure Access capability affected: Private Access, Internet Access, Remote Networks, or Microsoft Traffic.)_
 
 **Why is this change needed?**
 
@@ -37,7 +37,7 @@ _(Business justification, user request, security requirement, or compliance need
 
 ## Scope and impact
 
-**Affected GSA capability:**
+**Affected Global Secure Access capability:**
 - [ ] Private Access
 - [ ] Internet Access
 - [ ] Remote Networks
@@ -57,7 +57,7 @@ _(Estimate the number of users or sites impacted. List specific groups or locati
 - [ ] No user impact
 - [ ] Brief reconnection (< 1 minute)
 - [ ] Service interruption during maintenance window
-- [ ] Extended impact — communication plan required
+- [ ] Extended impact—communication plan required
 
 ## Risk assessment
 
@@ -79,24 +79,24 @@ _(Describe the worst-case scenario if the change fails.)_
 
 _(Describe testing performed and outcomes. If not tested, explain why.)_
 
-## Pre-change checklist
+## Prechange checklist
 
 - [ ] Configuration backup completed (see capability guide for export scripts)
 - [ ] Change approved by Service Owner or Change Advisory Board
-- [ ] Communication sent to affected users and support teams (if required)
-- [ ] Rollback plan documented (see below)
-- [ ] Maintenance window scheduled (if required)
+- [ ] Communication sent to affected users and support teams (if necessary)
+- [ ] Rollback plan documented (see Rollback plan)
+- [ ] Maintenance window scheduled (if necessary)
 - [ ] On-call engineer confirmed for maintenance window
 
 ## Rollback plan
 
 **How to roll back if the change fails:**
 
-_(Step-by-step procedure to restore the previous configuration. Reference the backup file created in the pre-change checklist.)_
+_(Step-by-step procedure to restore the previous configuration. Reference the backup file created in the prechange checklist.)_
 
 **Maximum time to decide on rollback:**
 
-_(How long to wait before deciding the change has failed and needs to be rolled back.)_
+_(How long to wait before deciding the change failed and needs to be rolled back.)_
 
 ## Execution
 
@@ -105,8 +105,8 @@ _(How long to wait before deciding the change has failed and needs to be rolled 
 | 1 | Back up current configuration | [ ] | |
 | 2 | _(Add change steps)_ | [ ] | |
 | 3 | _(Add change steps)_ | [ ] | |
-| 4 | Verify change — check traffic logs, alerts, and user connectivity | [ ] | |
-| 5 | Confirm rollback is not needed | [ ] | |
+| 4 | Verify change—check traffic logs, alerts, and user connectivity | [ ] | |
+| 5 | Confirm rollback isn't needed | [ ] | |
 
 ## Post-change verification
 
