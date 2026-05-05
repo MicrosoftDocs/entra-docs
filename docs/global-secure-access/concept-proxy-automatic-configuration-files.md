@@ -10,7 +10,7 @@ ms.reviewer:
 
 # Introduction to proxy automatic configuration (PAC) files
 
-A proxy automatic configuration (PAC) file is a mechanism for automatically determining which proxy server a web browser or application should use for a request. PAC files are an integral part of Explicit Forward Proxy configuration, where they enable flexible and dynamic traffic steering decisions. In the context of Global Secure Access, PAC files are similar to the traffic forwarding policies of the Global Secure Access client.
+A proxy automatic configuration (PAC) file is a mechanism for automatically determining which proxy server a web browser or application should use for a request. PAC files are an integral part of Explicit Forward Proxy configuration, where they enable flexible and dynamic traffic-steering decisions. In the context of Global Secure Access, PAC files are similar to the traffic forwarding policies of the Global Secure Access client.
 
 ## How PAC files work
 
@@ -44,9 +44,9 @@ The mechanism for applying PAC file settings varies depending on device manageme
 
 On managed devices, such as those governed by browser policy or enterprise mobility management, you can distribute PAC file URLs or content through centralized configuration tools.
 
-For unmanaged devices, you can instruct users to manually enter the PAC file location in browser settings or rely on network-provided configuration. A network-provided configuration might be Dynamic Host Configuration Protocol (DHCP) or Web Proxy Auto-Discovery (WPAD).
+For unmanaged devices, you can instruct users to manually enter the PAC file location in browser settings or rely on a network-provided configuration. A network-provided configuration might be Dynamic Host Configuration Protocol (DHCP) or Web Proxy Auto-Discovery (WPAD).
 
 ## Related content
 
 - [Learn how to configure Explicit Forward Proxy](how-to-configure-explicit-forward-proxy.md)
-- [Learn how to configure a Microsoft Edge mobile application management (MAM) policy for Explicit Forward Proxy](how-to-configure-explicit-forward-proxy-intune-policy.md)
+- [Learn how to configure a Microsoft Edge application management policy for Explicit Forward Proxy](how-to-configure-explicit-forward-proxy-intune-policy.md)

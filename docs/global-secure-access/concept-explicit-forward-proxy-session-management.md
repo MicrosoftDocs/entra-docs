@@ -17,7 +17,7 @@ Explicit Forward Proxy uses Microsoft Entra ID authentication and authorization 
 
 ## Session management settings
 
-Explicit Forward Proxy supports smart session management (enabled by default), HTTP header session management (can be enabled), IP-based session affinity (enabled by default), and cookie-based session affinity. Available capabilities depend on the affinity method.
+Explicit Forward Proxy supports smart session management (enabled by default), HTTP header-based session affinity (can be enabled), IP-based session affinity (enabled by default), and cookie-based session affinity. Available capabilities depend on the affinity method.
 
 | Capability | IP affinity | Session ID | HTTP header |
 | --- | --- | --- | --- |
@@ -27,7 +27,7 @@ Explicit Forward Proxy supports smart session management (enabled by default), H
 | Relies on Explicit Forward Proxy-based proxy automatic configuration (PAC) hosting | No | Yes | No |
 
 > [!IMPORTANT]
-> We recommend that you enable a Conditional Access policy that only allows access to Explicit Forward Proxy from your trusted networks.
+> We recommend that you enable a Conditional Access policy that allows access to Explicit Forward Proxy only from your trusted networks.
 
 ## Smart session management
 

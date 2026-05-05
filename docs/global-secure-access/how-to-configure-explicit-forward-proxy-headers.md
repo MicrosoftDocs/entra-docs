@@ -17,7 +17,7 @@ You can configure Explicit Forward Proxy (preview) to rely on the private IP add
 
 ## Prerequisites
 
-- The account used to configure HTTP header session management has an active Global Secure Access Administrator role assignment.
+- The account that you use to configure HTTP header session management has an active Global Secure Access Administrator role assignment.
 - Your organization has an existing proxy service that can perform Transport Layer Security (TLS) inspection and header injection before sending traffic to Explicit Forward Proxy.
 - Client devices that use Explicit Forward Proxy with HTTP header session management trust the TLS certificate's root certificate authority.
 

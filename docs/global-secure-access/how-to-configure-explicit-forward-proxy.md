@@ -27,7 +27,7 @@ With Explicit Forward Proxy, you can use the secure web and AI gateway capabilit
 
 ## Enable Explicit Forward Proxy
 
-You can enable and manage Explicit Forward Proxy by using the Microsoft Entra admin portal:
+You can enable and manage Explicit Forward Proxy by using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 

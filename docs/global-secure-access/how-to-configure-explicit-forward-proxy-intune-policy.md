@@ -35,7 +35,7 @@ You can automatically deliver proxy settings and automatic certificate authority
 
 1. Go to **Global Secure Access** > **Settings** > **Session management** > **Explicit Forward Proxy**.
 
-1. Copy the URL of the proxy automatic configuration (PAC) file from settings page. Save it for the Intune app management policy that you configure next.
+1. Copy the URL of the proxy automatic configuration (PAC) file. Save it for the Intune app management policy that you configure next.
 
 ### 2. Select Microsoft Edge for the app
 
@@ -61,9 +61,7 @@ You can automatically deliver proxy settings and automatic certificate authority
 
 ### 3. Add proxy settings
 
-1. Select **+ Add setting**.
-
-1. In the **Settings picker** pane:
+1. Select **+ Add setting**. In the **Settings picker** pane:
 
    1. Enter **proxy** in the search box, and then select **Search**.
    1. In the results, select **Microsoft Edge** > **Proxy server**.
@@ -142,17 +140,17 @@ Convert the TLS inspection root public key (certificate) to a contiguous plain-t
 
 ### 6. Assign the security group and create the policy
 
-1. On the **Settings** pane, select **Next**.
+1. On the **Settings** tab, select **Next**.
 
-1. On the **Assignments** pane:
+1. On the **Assignments** tab:
 
    1. Select **Add Groups**.
    1. Select the security group in Microsoft Entra ID that contains users of Explicit Forward Proxy.
    1. Select **Next**.
 
-1. Your **Review + create** pane should look similar to the following screenshot. Select **Create**.
+1. Your **Review + create** tab should look similar to the following screenshot. Select **Create**.
 
-   ![Screenshot that shows the pane for reviewing and creating a configured policy.](media/how-to-configure-microsoft-edge-mam-policy/review-create.png)
+   ![Screenshot that shows the tab for reviewing and creating a configured policy.](media/how-to-configure-microsoft-edge-mam-policy/review-create.png)
 
 ## Validation
 

@@ -48,16 +48,16 @@ Modern web applications are complex. Interactive redirection to Microsoft Entra 
 
 A foundational element of Explicit Forward Proxy session management is source IP affinity. Smart session management and header-based session affinity are built on it.
 
-Smart session management is enabled by default when you enable Explicit Forward Proxy. This feature relies on Explicit Forward Proxy PAC file hosting. It introduces a random session identifier each time the PAC file is requested, to ensure that each user in your organization always has a unique proxy address. This unique proxy address allows the Explicit Forward Proxy service to use that unique identifier, together with the source IP, to maintain the session after initial user authorization. When Explicit Forward Proxy detects a user-specific session identifier, it applies a user-specific security profile.
+Smart session management is enabled by default when you enable Explicit Forward Proxy. This feature relies on Explicit Forward Proxy PAC file hosting. It introduces a random session identifier each time the PAC file is requested, to ensure that each user in your organization always has a unique proxy address. This unique proxy address allows Explicit Forward Proxy to use that unique identifier, together with the source IP, to maintain the session after initial user authorization. When Explicit Forward Proxy detects a user-specific session identifier, it applies a user-specific security profile.
 
 Optionally, you can also enable header-based session affinity and configure your egress proxy to send the user's private IP address in a specific HTTP header on all traffic to the Explicit Forward Proxy service domains. If Explicit Forward Proxy detects that HTTP header, it applies a user-specific security profile.
 
-If both smart session management and header-based session affinity are disabled, Explicit Forward Proxy falls back to source IP affinity. After the user is authenticated initially, the egress IP address that's visible to the Explicit Forward Proxy service is cached in relation to that user session.
+If both smart session management and header-based session affinity are disabled, Explicit Forward Proxy falls back to source IP affinity. After the user is authenticated initially, the egress IP address that's visible to Explicit Forward Proxy is cached in relation to that user session.
 
-Because multiple users or devices might be using a particular IP address, you should configure a Microsoft Entra Conditional Access policy to only allow company networks to access resources by using Explicit Forward Proxy as the network channel. If Explicit Forward Proxy can't establish a session management mechanism beyond the source IP address of the user, only the baseline security profile applies.
+Because multiple users or devices might be using a particular IP address, you should configure a Microsoft Entra Conditional Access policy to allow company networks to access resources only by using Explicit Forward Proxy as the network channel. If Explicit Forward Proxy can't establish a session management mechanism beyond the source IP address of the user, only the baseline security profile applies.
 
 > [!IMPORTANT]
-> Explicit Forward Proxy session management relies on IP affinity as one of the session management anchors. We recommend that you configure a Conditional Access policy that restricts the use of Explicit Forward Proxy to networks that you trust. For more information, see [Explicit Forward Proxy (preview) session management](/entra/global-secure-access/concept-explicit-forward-proxy-session-management) and [Configure a Microsoft Entra Conditional Access policy for Explicit Forward Proxy (preview)](/entra/global-secure-access/how-to-configure-conditional-access-policy-for-explicit-forward-proxy).
+> Explicit Forward Proxy session management relies on IP affinity as one of the session management anchors. We recommend that you configure a Conditional Access policy that restricts the use of Explicit Forward Proxy to networks you trust. For more information, see [Explicit Forward Proxy (preview) session management](/entra/global-secure-access/concept-explicit-forward-proxy-session-management) and [Configure a Microsoft Entra Conditional Access policy for Explicit Forward Proxy (preview)](/entra/global-secure-access/how-to-configure-conditional-access-policy-for-explicit-forward-proxy).
 
 Smart session management and HTTP headers can be enabled simultaneously. If Explicit Forward Proxy detects both HTTP headers and random session identifier, it prefers the random session identifier for session management.
 
@@ -69,7 +69,7 @@ Smart session management and HTTP headers can be enabled simultaneously. If Expl
 | Smart session management and HTTP header | Same as HTTP header. Source IP + session ID takes precedence. | User-specific supported |
 
 > [!NOTE]
-> Even with smart session management and HTTP header session affinity enabled, if a particular request is missing both values, Explicit Forward Proxy reverts to relying on source IP-based affinity and baseline policies.
+> Even with smart session management and HTTP header-based session affinity enabled, if a particular request is missing both values, Explicit Forward Proxy reverts to relying on source IP-based affinity and baseline policies.
 
 ## Session lifetime and access revocation
 
