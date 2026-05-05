@@ -1,6 +1,6 @@
 ---
 title: System-preferred authentication in Microsoft Entra ID
-description: Learn how system-preferred authentication evaluates methods to prompt users with the most secure sign-in option for both primary and multifactor authentication.
+description: Learn how system-preferred authentication evaluates methods to prompt users with the most secure sign-in option for both first-factor and second-factor authentication.
 ms.topic: overview
 ms.date: 04/15/2026
 ms.reviewer: msft-poulomi
@@ -28,12 +28,12 @@ System-preferred authentication has three modes:
 
 - **Disabled** - No change to sign-in logic.
 - **Enabled** - System-preferred authentication applies to second-factor (MFA) only. The existing sign-in behavior continues to apply for first-factor authentication.
-- **Microsoft managed** - System-preferred authentication applies to both primary and secondary authentication. The system evaluates which credentials are registered for the user and selects the highest-ranked method for each authentication step.
+- **Microsoft managed** - System-preferred authentication applies to both first-factor and second-factor authentication. The system evaluates which credentials are registered for the user and selects the highest-ranked method for each authentication step.
 
 Both **Enabled** and **Microsoft managed** modes allow administrators to include or exclude specific users or groups.
 
 > [!TIP]
-> If you don't want system-preferred authentication to apply to primary authentication, switch from **Microsoft managed** to **Enabled**. The **Enabled** state applies system-preferred logic to second-factor only.
+> If you don't want system-preferred authentication to apply to first-factor authentication, switch from **Microsoft managed** to **Enabled**. The **Enabled** state applies system-preferred logic to second-factor only.
 
 > [!NOTE]
 > System-preferred authentication is scoped to users, not devices. Administrators include or exclude users or groups but can't assign the feature to specific devices or device groups.
@@ -122,7 +122,7 @@ Content-Type: application/json
 
 When a user signs in, the authentication process checks which methods are registered. The user is prompted to sign in with the most secure method according to the following order. The method order is dynamic and updates as the security landscape changes. Users can always cancel and choose a different available sign-in method. If your organization has Conditional Access policies that require specific authentication methods, those policies continue to take priority over the system-preferred authentication order.
 
-When in the **Microsoft managed** state, the system evaluates available credentials and selects the highest-ranked method for both primary and secondary authentication.
+When in the **Microsoft managed** state, the system evaluates available credentials and selects the highest-ranked method for both first-factor and second-factor authentication.
 
 | Rank | Credential | Category | Meets requirement for |
 |------|-----------|----------|----------------------|
@@ -155,11 +155,11 @@ System-preferred authentication also applies for users who are enabled for MFA i
 
 :::image type="content" border="true" source="./media/how-to-mfa-number-match/legacy-settings.png" alt-text="Screenshot of legacy MFA settings.":::
 
-### How does system-preferred authentication affect primary sign-in?
+### How does system-preferred authentication affect first-factor sign-in?
 
-When set to **Microsoft managed**, the system applies the credential ranking to both primary and secondary authentication. For example, if a user has both a password and a passkey registered, they're prompted with the passkey at first-factor sign-in instead of the password. The user can still select other sign-in options.
+When set to **Microsoft managed**, the system applies the credential ranking to both first-factor and second-factor authentication. For example, if a user has both a password and a passkey registered, they're prompted with the passkey at first-factor sign-in instead of the password. The user can still select other sign-in options.
 
-When set to **Enabled**, the credential ranking applies only to second-factor authentication. Primary sign-in behavior remains unchanged.
+When set to **Enabled**, the credential ranking applies only to second-factor authentication. First-factor sign-in behavior remains unchanged.
 
 ### Can users still choose a different sign-in method?
 
