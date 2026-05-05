@@ -18,7 +18,7 @@ System-preferred authentication prompts users to sign in by using the most secur
 
 For example, if a user registered both a password and a passkey, system-preferred authentication prompts the user to sign in with the passkey instead of the password. The user can still choose to sign in by using another method, but they're first prompted to try the most secure method they registered.
 
-System-preferred authentication is a Microsoft managed setting, which is a [three-state policy](#authentication-method-feature-configuration-properties) (enabled, disabled, or Microsoft managed). The **Microsoft managed** value of system-preferred authentication is **Enabled**. If you don't want to enable system-preferred authentication, change the state from **Microsoft managed** to **Disabled**, or exclude users and groups from the policy.
+System-preferred authentication is a Microsoft managed setting, which is a [three-state policy](#authentication-method-feature-configuration-properties) (enabled, disabled, or Microsoft managed). If you don't want to enable system-preferred authentication, change the state from **Microsoft managed** to **Disabled**, or exclude users and groups from the policy.
 
 After system-preferred authentication is enabled, the authentication system does all the work. Users don't need to set any authentication method as their default because the system always determines and presents the most secure method they registered.
 
