@@ -27,7 +27,7 @@ After system-preferred authentication is enabled, the authentication system does
 System-preferred authentication has three modes:
 
 - **Disabled** - No change to sign-in logic.
-- **Enabled** - System-preferred authentication applies to second-factor (MFA) only. The existing sign-in behavior continues to apply for first-factor authentication.
+- **Enabled** - System-preferred authentication applies to second-factor only. The existing sign-in behavior continues to apply for first-factor authentication.
 - **Microsoft managed** - System-preferred authentication applies to both first-factor and second-factor authentication. The system evaluates which credentials are registered for the user and selects the highest-ranked method for each authentication step.
 
 Both **Enabled** and **Microsoft managed** modes allow administrators to include or exclude specific users or groups.
@@ -41,7 +41,7 @@ Both **Enabled** and **Microsoft managed** modes allow administrators to include
 ### Known limitations
 
 - When you change the policy for a target group, the change might not take effect on the user's very next sign-in. It applies to all subsequent sign-ins after that.
-- Conditional Access policy is validated only for MFA and doesn't apply to first-factor authentication. Authentication happens first, and then Conditional Access evaluates authorization. System-preferred authentication doesn't override Conditional Access policies or authentication strength requirements.
+- Conditional Access policy is validated only for second-factor authentication and doesn't apply to first-factor authentication. Authentication happens first, and then Conditional Access evaluates authorization. System-preferred authentication doesn't override Conditional Access policies or authentication strength requirements.
 
 ## Enable system-preferred authentication in the Microsoft Entra admin center
 
@@ -146,12 +146,6 @@ When in the **Microsoft managed** state, the system evaluates available credenti
 ### How does system-preferred authentication affect the NPS extension?
 
 System-preferred authentication doesn't affect users who sign in by using the Network Policy Server (NPS) extension. Those users don't see any change to their sign-in experience.
-
-### What happens for users who aren't specified in the Authentication methods policy but enabled in the legacy MFA tenant-wide policy?
-
-System-preferred authentication also applies for users who are enabled for MFA in the legacy MFA policy.
-
-:::image type="content" border="true" source="./media/how-to-mfa-number-match/legacy-settings.png" alt-text="Screenshot of legacy MFA settings.":::
 
 ### How does system-preferred authentication affect first-factor sign-in?
 
