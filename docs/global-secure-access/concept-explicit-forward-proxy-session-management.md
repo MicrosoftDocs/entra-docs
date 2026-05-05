@@ -17,7 +17,7 @@ Explicit Forward Proxy uses Microsoft Entra ID authentication and authorization 
 
 ## Session management settings
 
-Explicit Forward Proxy supports smart session management (enabled by default), HTTP header-based session affinity (can be enabled), IP-based session affinity (enabled by default), and cookie-based session affinity. Available capabilities depend on the affinity method.
+Explicit Forward Proxy supports smart session management (enabled by default), HTTP header session management (can be enabled), IP-based session affinity (enabled by default), and cookie-based session affinity. Available capabilities depend on the affinity method.
 
 | Capability | IP affinity | Session ID | HTTP header |
 | --- | --- | --- | --- |
@@ -29,7 +29,7 @@ Explicit Forward Proxy supports smart session management (enabled by default), H
 > [!IMPORTANT]
 > We recommend that you enable a Conditional Access policy that only allows access to Explicit Forward Proxy from your trusted networks.
 
-## Explicit Forward Proxy Smart Session Management
+## Smart session management
 
 Browsers request PAC files when the browser is first started, upon change of network location, upon change in power state of the device, and every 12 hours. When you use Explicit Forward Proxy for PAC file hosting, Explicit Forward Proxy returns a unique session ID as part of the proxy endpoint defined in the PAC file.
 
@@ -37,7 +37,7 @@ Each time a PAC file is requested, a new session ID is generated. Using unique s
 
 ## HTTP header session management
 
-Explicit Forward Proxy also supports HTTP header session management. You can configure your organization's outbound proxy service to inject the `x-ms-gsa-efp-forwarded-for` header to all traffic for `*.interent.efp.globalsecureaccess.microsoft.com` with a unique IP address of the device (for example, internal IP address). This configuration allows Explicit Forward Proxy to use `x-ms-gsa-efp-forwarded-for` values to map authenticated users to Explicit Forward Proxy sessions.
+You can configure your organization's outbound proxy service to inject the `x-ms-gsa-efp-forwarded-for` header to all traffic for `*.interent.efp.globalsecureaccess.microsoft.com` with a unique IP address of the device (for example, internal IP address). This configuration allows Explicit Forward Proxy to use `x-ms-gsa-efp-forwarded-for` values to map authenticated users to Explicit Forward Proxy sessions.
 
 ## IP-based session affinity
 
