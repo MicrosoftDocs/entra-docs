@@ -1,6 +1,6 @@
 ---
 title: Run a registration campaign to set up Microsoft Authenticator or passkey
-description: Learn how to nudge users to set up Microsoft Authenticator or a passkey by using a registration campaign in Microsoft Entra ID.
+description: Learn how to run a registration campaign in Microsoft Entra ID to nudge users toward Microsoft Authenticator or passkeys for stronger sign-in security.
 ms.topic: how-to
 ms.date: 05/04/2026
 author: mjsantani
@@ -30,7 +30,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 - If you want to know the number of users who registered each authentication method before you configure the registration campaign, see [the Authentication methods activity report](howto-authentication-methods-activity.md#registration-details).
 - Your organization must enable Microsoft Entra multifactor authentication. The registration campaign has no license requirements.
-- **For Authenticator campaigns**: Users can't have already set up the Authenticator app for push notifications on their account. Admins need to enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the **Authentication mode** is set to **Passwordless**, users aren't eligible for the nudge. For more information about how to set the **Authentication mode**, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
+- **For Authenticator campaigns**: Users can't already have the Authenticator app set up for push notifications on their account. Enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the mode is set to **Passwordless**, users aren't eligible for the nudge. For more information, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
 - **For passkey campaigns**: The passkey (FIDO2) authentication method must be enabled in the Authentication methods policy. In addition, the **Allow self-service setup** toggle must be enabled in the passkey (FIDO2) method configuration. For more information, see [Enable passkeys](how-to-enable-passkey-fido2.md).
 
 ## User experience
@@ -109,7 +109,7 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
 
 ## Enable the registration campaign policy using Graph Explorer
 
-In addition to using the Microsoft Entra admin center, you can also enable the registration campaign policy using Graph Explorer. To enable the registration campaign policy, you must use the Authentication Methods Policy using Graph APIs. Those assigned at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role can update the policy. 
+In addition to using the Microsoft Entra admin center, you can enable the registration campaign policy using Graph Explorer. You must use the Authentication Methods Policy Graph APIs. Those assigned at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role can update the policy. 
 
 To configure the policy using Graph Explorer:
 
@@ -127,7 +127,7 @@ To configure the policy using Graph Explorer:
 
 1. Update the registrationEnforcement and authenticationMethodsRegistrationCampaign section of the policy to enable the nudge on a user or group.
 
-   ![Screenshot of the API response.](media/how-to-mfa-registration-campaign/response.png)
+   ![Screenshot of the Graph Explorer API response showing the registrationEnforcement section of the authentication methods policy.](media/how-to-mfa-registration-campaign/response.png)
    
    To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
 
@@ -280,23 +280,23 @@ Here are a few sample JSON bodies you can use to get started.
   }
   ```
 
-### Identify the GUIDs of users to insert in the JSONs
+### Identify user GUIDs for the JSON request body
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. In the **Manage** blade, select **Users**.
 1. On the **Users** page, identify the specific user you want to target.
-1. When you tap the specific user, you’ll see their **Object ID**, which is the user’s GUID.
+1. When you select the specific user, you see their **Object ID**, which is the user's GUID.
 
-   ![User object ID](./media/how-to-nudge-authenticator-app/object-id.png)
+   ![Screenshot of user properties page showing the Object ID field.](./media/how-to-nudge-authenticator-app/object-id.png)
    
-### Identify the GUIDs of groups to insert in the JSONs
+### Identify group GUIDs for the JSON request body
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. In the **Manage** blade, select **Groups**.
 1. On the **Groups** page, identify the specific group you want to target.
 1. Select the group to get the **Object ID**.
 
-   ![Nudge group](./media/how-to-nudge-authenticator-app/group.png)
+   ![Screenshot of group properties page showing the Object ID field.](./media/how-to-nudge-authenticator-app/group.png)
    
 <!-- comment out PS until ready
 
@@ -342,11 +342,11 @@ The registration campaign evaluates whether a user has a local passkey for their
 
 **Can users be nudged within an application?**
 
-Yes. Registration campaigns support embedded browser views in certain applications. We don't nudge users in out-of-the-box experiences or in browser views embedded in Windows settings.
+Yes. Registration campaigns support embedded browser views in certain applications. The campaign doesn't nudge users in out-of-the-box experiences or in browser views embedded in Windows settings.
 
 **Can users be nudged within a single sign-on (SSO) session?**
  
-Nudge doesn't trigger if the user is already signed in with SSO. 
+The nudge doesn't trigger if the user is already signed in with SSO. 
 
 **Can users be nudged on a mobile device?** 
 
@@ -420,7 +420,7 @@ A nudge won't appear if a user is redirected during sign-in due to [Conditional 
 
 No, there are no such plans.
 
-## Next steps
+## Related content
 
 - [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md)
 - [Enable passkeys (FIDO2)](how-to-enable-passkey-fido2.md)
