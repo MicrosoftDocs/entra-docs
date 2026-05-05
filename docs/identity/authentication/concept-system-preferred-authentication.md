@@ -140,6 +140,8 @@ When in the **Microsoft managed** state, the system evaluates available credenti
 
 > [!IMPORTANT]
 > Certificate-based authentication (CBA) was previously placed last in the system-preferred authentication order due to known issues with CBA and system-preferred authentication. Now that those issues are resolved, starting March 18th, 2026, certificate-based authentication moved to the third position in the authentication order.
+>
+> With the current Microsoft Managed behavior, users are directed to the best available authentication methods for both first and second factors based on the system-preferred MFA ordering. While this avoids presenting the password page by default, users on devices without certificates will fail immediately during CBA and must manually select "Sign in another way" to continue with an alternate method.
 
 ### How does system-preferred authentication affect the NPS extension?
 
