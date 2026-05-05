@@ -286,10 +286,10 @@ Windows security updates related to CVE-2026-20833 move Kerberos KDC behavior to
 
 To resolve this alert, complete the following steps:
 
-1. Update and validate affected workloads, devices, and service accounts to support AES Kerberos encryption.
-2. Turn on security events for the managed domain by following [Enable security and DNS audits for Microsoft Entra Domain Services](security-audit-events.md).
+1. Turn off RC4 from the managed domain's security settings by following [Security settings](secure-your-domain.md). Unless you have workloads, devices, or services that are explicitly dependent on RC4, no need to go to to the next steps.
+2. Turn on security events for the managed domain by following [Enable security and DNS audits for Microsoft Entra Domain Services](security-audit-events.md). Use [Sample query 7](security-audit-events.md#sample-query-7) to identify RC4 dependencies.
 3. Monitor Kerberos ticket event IDs **4768** and **4769** to identify RC4 dependencies that block enforcement.
-4. For workloads that temporarily require RC4, explicitly configure the affected service account **msDS-SupportedEncryptionTypes** value to include RC4 as documented in [How to manage Kerberos KDC usage of RC4 for service account ticket issuance changes related to CVE-2026-20833](https://support.microsoft.com/en-us/topic/how-to-manage-kerberos-kdc-usage-of-rc4-for-service-account-ticket-issuance-changes-related-to-cve-2026-20833-1ebcda33-720a-4da8-93c1-b0496e1910dc).
+1. For service accounts synced from on-premises via Microsoft Entra Connect that temporarily require RC4, explicitly configure the affected service account **msDS-SupportedEncryptionTypes** value in your on-premises Active Directory to include RC4 as documented in [How to manage Kerberos KDC usage of RC4 for service account ticket issuance changes related to CVE-2026-20833](https://support.microsoft.com/en-us/topic/how-to-manage-kerberos-kdc-usage-of-rc4-for-service-account-ticket-issuance-changes-related-to-cve-2026-20833-1ebcda33-720a-4da8-93c1-b0496e1910dc). The updated attribute syncs to the managed domain through Microsoft Entra Connect.
 5. Keep domain-wide Kerberos security hardened by using [Security settings](secure-your-domain.md) and avoid broad RC4 enablement unless no other mitigation is possible.
 6. Continue monitoring Kerberos-related system events and Domain Services health until the alert is removed.
 
