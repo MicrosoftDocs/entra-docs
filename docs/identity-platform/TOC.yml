@@ -726,7 +726,7 @@
                   href: custom-extension-email-otp-get-started.md
                 - name: On email OTP send event reference
                   href: custom-extension-email-otp-send-data.md
-            - name: Verified ID Claim Validation
+            - name: Account Recovery (additional claim validation)
               items:
                 - name: Create a custom authentication extension for account recovery
                   href: tutorial-custom-authentication-extension-account-recovery.md
