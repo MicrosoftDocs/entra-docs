@@ -42,7 +42,7 @@ The logic of this diagram is as follows:
 
     1. The policy's "*Who can get access*" setting logically includes the current user based on their identity, group memberships, or connected organization affiliation. Policies set to "None (Administrator direct assignments only)" don't make a package visible in the My Access portal.
 
-    1.  The 'Who can request access' must have the 'Self' option checked so users can request access for themselves. If a manager is trying to request access for one of their direct reports the 'Manager' option for 'Who can request access' must be checked.
+    1. The policy's '*Who can request access*' setting must have the 'Self' option checked so users can request access for themselves. If a manager is trying to request access for one of their direct reports the 'Manager' option must be checked.
 
 If **all** these checks pass, then the access package is Visible in the user's browse/search view. Otherwise, it's not visible.
 
