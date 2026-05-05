@@ -45,7 +45,7 @@ Both **Enabled** and **Microsoft managed** modes allow administrators to include
 
 ## Enable system-preferred authentication in the Microsoft Entra admin center
 
-By default, system-preferred authentication is Microsoft managed and enabled for all users.
+By default, system-preferred authentication is Microsoft managed for all users.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Microsoft Entra ID** > **Authentication methods** > **Settings**.
@@ -59,7 +59,7 @@ To enable system-preferred authentication in advance, choose a single target gro
 
 ### Authentication method feature configuration properties
 
-By default, system-preferred authentication is [Microsoft managed](concept-authentication-default-enablement.md#microsoft-managed-settings) and enabled.
+By default, system-preferred authentication is [Microsoft managed](concept-authentication-default-enablement.md#microsoft-managed-settings).
 
 | Property | Type | Description |
 |----------|------|-------------|
