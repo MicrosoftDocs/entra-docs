@@ -2,7 +2,8 @@
 title: Use Azure Policy to assign managed identities (preview)
 description: Documentation for the Azure Policy that can be used to assign managed identities to Azure resources.
 ms.topic: how-to
-ms.date: 05/23/2022
+ms.date: 05/05/2026
+ai-usage: ai-assisted
 
 ---
 
@@ -22,7 +23,7 @@ Policy definitions for these common use cases are already available in your Azur
 
 Azure Monitoring Agents require a [managed identity](overview.md) on the monitored Azure Virtual Machines (VMs). This document describes the behavior of a built-in Azure Policy provided by Microsoft that helps ensure a managed identity, needed for these scenarios, is assigned to VMs at scale.
 
-While using system-assigned managed identity is possible, when used at scale (for example, for all VMs in a subscription) it results in substantial number of identities created (and deleted) in Microsoft Entra ID. To avoid this churn of identities, it is recommended to use user-assigned managed identities, which can be created once and shared across multiple VMs.
+While using a system-assigned managed identity is possible, when used at scale (for example, for all VMs in a subscription) it results in a substantial number of identities created (and deleted) in Microsoft Entra ID. To avoid this churn of identities, use user-assigned managed identities. They can be created once and shared across multiple VMs.
 
 ## Policy definition and details
 
@@ -33,37 +34,37 @@ While using system-assigned managed identity is possible, when used at scale (fo
 
 When executed, the policy takes the following actions:
 
-1. Create, if not exist, a new built-in user-assigned managed identity in the subscription and each Azure region based on the VMs that are in scope of the policy.
-2. Once created, put a lock on the user-assigned managed identity so that it will not be accidentally deleted.
-3. Assign the built-in user-assigned managed identity to Virtual Machines from the subscription and region based on the VMs that are in scope of the policy.
+1. Create a new built-in user-assigned managed identity (if one doesn't exist) in the subscription. The identity is created in each Azure region based on the VMs that are in scope of the policy.
+1. Lock the user-assigned managed identity to prevent accidental deletion.
+1. Assign the built-in user-assigned managed identity to virtual machines from the subscription and region based on the VMs that are in scope of the policy.
 > [!NOTE]
-> If the Virtual Machine has exactly 1 user-assigned managed identity already assigned, then the policy skips this VM to assign the built-in identity. This is to make sure assignment of the policy does not break applications that take a dependency on [the default behavior of the token endpoint on IMDS.](managed-identities-faq.md#what-identity-will-imds-default-to-if-i-dont-specify-the-identity-in-the-request)
+> If the virtual machine already has exactly one user-assigned managed identity assigned, the policy skips assigning the built-in identity to that VM. This behavior makes sure that the policy assignment doesn't break applications that depend on [the default behavior of the token endpoint on Azure Instance Metadata Service (IMDS)](managed-identities-faq.md#what-identity-will-imds-default-to-if-i-dont-specify-the-identity-in-the-request).
 
 
 There are two scenarios to use the policy:
 
--	Let the policy create and use a “built-in” user-assigned managed identity.
--	Bring your own user-assigned managed identity.
+- Let the policy create and use a built-in user-assigned managed identity.
+- Bring your own user-assigned managed identity.
 
 The policy takes the following input parameters:
 
-- Bring-Your-Own-UAMI? - Should the policy create, if not exist, a new user-assigned managed identity?
-  - If set to true, then you must specify:
+- **Bring-Your-Own-UAMI?** - Should the policy create a new user-assigned managed identity if one doesn't exist?
+  - If set to true, you must specify:
     - Name of the managed identity.
     - Resource group containing the managed identity.
-  - If set to false, then no additional input is needed.
-    - The policy will create the required user-assigned managed identity called “built-in-identity” in a resource group called “built-in-identity-rg".
-- Restrict-Bring-Your-Own-UAMI-To-Subscription? - When the Bring-Your-Own-UAMI parameter is set to true, should the policy utilize a centralized user-assigned managed identity or utilize an identity for each subscription?
-  - If set to true, then no additional input is needed.
-    - The policy will use a user-assigned managed identity per subscription.
-  - If set to false, the policy will utilize a single centralized user assigned managed identity that will be applied across all the subscriptions covered by the policy assignment. You must specify:
-    - User Assigned Managed Identity Resource Id
+  - If set to false, no more input is needed.
+    - The policy creates the required user-assigned managed identity called `built-in-identity` in a resource group called `built-in-identity-rg`.
+- **Restrict-Bring-Your-Own-UAMI-To-Subscription?** - When the **Bring-Your-Own-UAMI** parameter is set to true, should the policy use a centralized user-assigned managed identity or use an identity for each subscription?
+  - If set to true, no more input is needed.
+    - The policy uses a user-assigned managed identity per subscription.
+  - If set to false, the policy uses a single centralized user-assigned managed identity that's applied across all the subscriptions covered by the policy assignment. You must specify:
+    - User Assigned Managed Identity Resource ID
 
 ## Using the policy
 ### Creating the policy assignment
 
-The policy definition can be assigned to different scopes in Azure – at the management group subscription or a specific resource group. As policies need to be enforced all the time, the assignment operation is performed using a managed identity associated with the policy-assignment object. The policy assignment object supports both system-assigned and user-assigned managed identity.
-For example, Joe can create a user-assigned managed identity called PolicyAssignmentMI. The built-in policy creates a user-assigned managed identity in each subscription and in each region with resources that are in scope of the policy assignment. The user-assigned managed identities created by the policy has the following resourceId format:
+The policy definition can be assigned to different scopes in Azure - at the management group, subscription, or a specific resource group. Because policies must be enforced continuously, the assignment operation uses a managed identity associated with the policy-assignment object. The policy assignment object supports both system-assigned and user-assigned managed identities.
+For example, you can create a user-assigned managed identity called PolicyAssignmentMI. The built-in policy creates a user-assigned managed identity in each subscription and in each region with resources that are in scope of the policy assignment. The user-assigned managed identities created by the policy have the following resource ID format:
 
 > /subscriptions/your-subscription-id/resourceGroups/built-in-identity-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/built-in-identity-{location}
 
@@ -82,9 +83,9 @@ For PolicyAssignmentMI managed identity to be able to assign the built-in policy
 |PolicyAssignmentMI |User Access Administrator | /subscription/subscription-id/resourceGroups/built-in-identity <br> OR <br>Bring-your-own-User-assigned-Managed identity |Required to set a lock on the user-assigned managed identity created by the policy.|
 
 
-As the policy assignment object must have this permission ahead of time, PolicyAssignmentMI cannot be a system-assigned managed identity for this scenario. The user performing the policy assignment task must pre-authorize PolicyAssignmentMI ahead of time with the above role assignments.
+Because the policy assignment object must have this permission ahead of time, PolicyAssignmentMI can't be a system-assigned managed identity for this scenario. The user performing the policy assignment task must preauthorize PolicyAssignmentMI with the role assignments shown in the preceding table.
 
-As you can see the resultant least privilege role required is “contributor” at the subscription scope.
+The resultant least-privilege role required is `Contributor` at the subscription scope.
 
 
 
@@ -92,8 +93,9 @@ As you can see the resultant least privilege role required is “contributor” 
 
 Possible race condition with another deployment that changes the identities assigned to a VM can result in unexpected results.
 
-If there are two or more parallel deployments updating the same virtual machine and they all change the identity configuration of the virtual machine, then it is possible, under specific race conditions, that all expected identities will NOT be assigned to the machines.
-For example, if the policy in this document is updating the managed identities of a VM and at the same time another process is also making changes to the managed identities section, then it is not guaranteed that all the expected identities are properly assigned to the VM.
+Under specific race conditions, when two or more parallel deployments update the same virtual machine and all change the identity configuration of the virtual machine, all expected identities might not be assigned to the machines.
+
+For example, the policy in this document might update the managed identities of a VM while another process changes the managed identities section at the same time. In that case, the VM isn't guaranteed to have all the expected identities properly assigned.
 
 
 ## Next steps
