@@ -1,10 +1,10 @@
 ---
-title: System-preferred authentication
+title: System-preferred authentication in Microsoft Entra ID
 description: Learn how system-preferred authentication evaluates methods to prompt users with the most secure sign-in option for both primary and multifactor authentication.
-ms.topic: how-to
+ms.topic: concept
 ms.date: 04/15/2026
 ms.reviewer: msft-poulomi
-ms.custom: msecd-doc-authoring-106
+ms.custom: msecd-doc-authoring-1012
 author: Justinha
 ms.author: Justinha
 ai-usage: ai-assisted
@@ -18,7 +18,7 @@ System-preferred authentication prompts users to sign in by using the most secur
 
 For example, if a user registered both a password and a passkey, system-preferred authentication prompts the user to sign in with the passkey instead of the password. The user can still choose to sign in by using another method, but they're first prompted to try the most secure method they registered.
 
-System-preferred authentication is a Microsoft managed setting, which is a [tristate policy](#authentication-method-feature-configuration-properties). The **Microsoft managed** value of system-preferred authentication is **Enabled**. If you don't want to enable system-preferred authentication, change the state from **Microsoft managed** to **Disabled**, or exclude users and groups from the policy.
+System-preferred authentication is a Microsoft managed setting, which is a [three-state policy](#authentication-method-feature-configuration-properties) (enabled, disabled, or Microsoft managed). The **Microsoft managed** value of system-preferred authentication is **Enabled**. If you don't want to enable system-preferred authentication, change the state from **Microsoft managed** to **Disabled**, or exclude users and groups from the policy.
 
 After system-preferred authentication is enabled, the authentication system does all the work. Users don't need to set any authentication method as their default because the system always determines and presents the most secure method they registered.
 
@@ -59,7 +59,7 @@ By default, system-preferred authentication is Microsoft managed and enabled for
 
 ## Enable system-preferred authentication by using Graph APIs
 
-To enable system-preferred authentication in advance, you need to choose a single target group for the schema configuration, as shown in the [Request](#request) example.
+To enable system-preferred authentication in advance, choose a single target group for the schema configuration, as shown in the [Request](#request) example.
 
 ### Authentication method feature configuration properties
 
@@ -120,7 +120,7 @@ Content-Type: application/json
 
 ### How does system-preferred authentication determine the most secure method?
 
-When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign in with the most secure method according to the following order. The order of authentication methods is dynamic, and updated as the security landscape changes and as better authentication methods emerge. Users can always cancel and choose a different available sign-in method. If your organization has Conditional Access policies that require specific authentication methods, those policies continue to take priority over the system-preferred authentication order.
+When a user signs in, the authentication process checks which methods are registered. The user is prompted to sign in with the most secure method according to the following order. The method order is dynamic and updates as the security landscape changes. Users can always cancel and choose a different available sign-in method. If your organization has Conditional Access policies that require specific authentication methods, those policies continue to take priority over the system-preferred authentication order.
 
 When in the **Microsoft managed** state, the system evaluates available credentials and selects the highest-ranked method for both primary and secondary authentication.
 
@@ -142,8 +142,8 @@ When in the **Microsoft managed** state, the system evaluates available credenti
 
 <sup>3</sup>Includes SMS and voice calls.
 
->[!IMPORTANT]
->Certificate-based authentication (CBA) was previously placed last in the system-preferred authentication order due to known issues with CBA and system-preferred authentication. Now that those issues are resolved, starting March 18th, 2026, certificate-based authentication moved to the third position in the authentication order.
+> [!IMPORTANT]
+> Certificate-based authentication (CBA) was previously placed last in the system-preferred authentication order due to known issues with CBA and system-preferred authentication. Now that those issues are resolved, starting March 18th, 2026, certificate-based authentication moved to the third position in the authentication order.
 
 ### How does system-preferred authentication affect the NPS extension?
 
@@ -165,7 +165,7 @@ When set to **Enabled**, the credential ranking applies only to second-factor au
 
 Yes. System-preferred authentication prompts users with the highest-ranked credential, but users can still choose other allowed methods during sign-in.
 
-## Next steps
+## Related content
 
 * [Authentication methods in Microsoft Entra ID](concept-authentication-authenticator-app.md)
 * [How to run a registration campaign to set up Microsoft Authenticator](how-to-mfa-registration-campaign.md)
