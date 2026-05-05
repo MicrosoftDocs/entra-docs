@@ -335,7 +335,6 @@ The registration campaign evaluates whether a user has a local passkey for their
 | Any non-platform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 > [!NOTE]
-> - **Windows**: Users are only nudged on Chrome and Edge. Other browsers don't trigger the nudge.
 > - **Linux**: Users aren't nudged. FIDO2 passkeys aren't available on Linux.
 
 ## Frequently asked questions
