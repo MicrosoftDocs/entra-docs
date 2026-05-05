@@ -1,7 +1,7 @@
 ---
 title: System-preferred authentication in Microsoft Entra ID
 description: Learn how system-preferred authentication evaluates methods to prompt users with the most secure sign-in option for both primary and multifactor authentication.
-ms.topic: concept
+ms.topic: overview
 ms.date: 04/15/2026
 ms.reviewer: msft-poulomi
 ms.custom: msecd-doc-authoring-1012
