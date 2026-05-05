@@ -92,52 +92,22 @@ items:
   items: 
   - name: Overview of Global Secure Access samples
     href: powershell-samples.md
-  - name: Connector setup
-    expanded: false
-    items:
-    - name: Get token for connector
-      href: ./scripts/powershell-get-token.md
-  - name: Client deployment
-    expanded: false
-    items:
-    - name: Install the Windows client as a proof of concept
-      href: ./scripts/powershell-windows-client-install-proof-of-concept.md
-  - name: Traffic forwarding and bypass
-    expanded: false
-    items:
-    - name: Bypass internet destinations from the Internet Access profile
-      href: ./scripts/powershell-bypass-script.md
-    - name: Bypass Intune endpoints from the Internet Access profile
-      href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
-  - name: Break glass
-    expanded: false
-    items:
-    - name: Restore productivity in a break glass scenario
-      href: ./scripts/powershell-break-glass.md
-    - name: Restore traffic forwarding and compliant network requirement after a break glass operation
-      href: ./scripts/powershell-break-glass-recovery.md
-  - name: TLS inspection certificates
-    expanded: false
-    items:
-    - name: Create a TLS certificate using Active Directory Certificate Services
-      href: ./scripts/powershell-active-directory-certificate-service.md
-    - name: Create a TLS certificate using OpenSSL
-      href: ./scripts/powershell-open-secure-sockets-layer.md
-  - name: Operations and recovery automation
-    expanded: false
-    items:
-    - name: List Microsoft Entra snapshots for Global Secure Access recovery
-      href: ./scripts/powershell-get-entra-snapshot.md
-    - name: Preview a Microsoft Entra recovery for Global Secure Access objects
-      href: ./scripts/powershell-start-entra-recovery-preview.md
-    - name: Run a Microsoft Entra recovery for Global Secure Access objects
-      href: ./scripts/powershell-invoke-entra-recovery.md
-    - name: Calculate the alert noise ratio for Global Secure Access detections
-      href: ./scripts/powershell-test-alert-noise-ratio.md
-    - name: Verify Global Secure Access configuration backup compliance
-      href: ./scripts/powershell-test-backup-compliance.md
-    - name: Check Global Secure Access role-based access control (RBAC) review hygiene
-      href: ./scripts/powershell-test-role-based-access-control-hygiene.md
+  - name: Get token for connector
+    href: ./scripts/powershell-get-token.md
+  - name: Restore productivity in a break glass scenario
+    href: ./scripts/powershell-break-glass.md
+  - name: Restore traffic forwarding and compliant network requirement after a break glass operation
+    href: ./scripts/powershell-break-glass-recovery.md
+  - name: Bypass internet destinations from the Internet Access profile
+    href: ./scripts/powershell-bypass-script.md
+  - name: Bypass Intune endpoints from the Internet Access profile
+    href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
+  - name: Create a TLS certificate using ADCS
+    href: ./scripts/powershell-active-directory-certificate-service.md
+  - name: Create a TLS certificate using OpenSSL
+    href: ./scripts/powershell-open-secure-sockets-layer.md
+  - name: Install the Windows client as a proof of concept
+    href: ./scripts/powershell-windows-client-install-proof-of-concept.md
 - name: Concepts
   expanded: false
   items: 
