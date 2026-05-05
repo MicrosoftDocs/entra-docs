@@ -18,7 +18,7 @@ Explicit Forward Proxy for Microsoft Entra Internet Access relies on IP affinity
 ## Prerequisites
 
 - Administrators who configure and manage the Conditional Access policy for Explicit Forward Proxy must have at least the Conditional Access Administrator role.
-- Enable Explicit Forward Proxy in the **Global Secure Access** > **Session Management** section of the Microsoft Entra admin center. Enabling Explicit Forward Proxy creates the workload identity in your tenant. This workload identity is the target for the Conditional Access policy.
+- Enable Explicit Forward Proxy in the **Global Secure Access** > **Session management** section of the Microsoft Entra admin center. Enabling Explicit Forward Proxy creates the workload identity in your tenant. This workload identity is the target for the Conditional Access policy.
 - Configure a security profile in **Global Secure Access** > **Secure** > **Security Profiles**.
 - Define a named location that represents known company networks in Microsoft Entra Conditional Access.
 
