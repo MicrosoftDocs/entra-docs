@@ -1,6 +1,6 @@
 ---
-author: barclayn
-ms.author: barclayn
+author: kenwith
+ms.author: kenwith
 ms.date: 08/12/2025
 manager: pmwongera
 ms.service: entra-id

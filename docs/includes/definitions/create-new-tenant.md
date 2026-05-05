@@ -1,9 +1,9 @@
 ---
-author: barclayn
+author: kenwith
 ms.service: entra-id
 ms.topic: include
 ms.date: 05/10/2024
-ms.author: barclayn
+ms.author: kenwith
 ms.custom: Identity-Managed-Definition, sfi-image-nochange
 ---
 

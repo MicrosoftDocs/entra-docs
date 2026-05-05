@@ -1,9 +1,9 @@
 ---
-author: barclayn
+author: kenwith
 ms.service: entra-id
 ms.topic: include
 ms.date: 01/31/2025
-ms.author: barclayn
+ms.author: kenwith
 ms.custom: include file, sfi-ga-nochange
 ---
 
