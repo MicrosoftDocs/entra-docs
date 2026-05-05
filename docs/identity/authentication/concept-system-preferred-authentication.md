@@ -49,7 +49,7 @@ By default, system-preferred authentication is Microsoft managed and enabled for
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Microsoft Entra ID** > **Authentication methods** > **Settings**.
-1. For **System-preferred authentication**, choose whether to explicitly enable or disable the feature, and include or exclude any users. Excluded groups take precedence over include groups.
+1. For **System-preferred authentication**, choose **Microsoft-managed**, **Enabled**, or **Disabled**, and include or exclude any users. Excluded groups take precedence over include groups.
 
    For example, the following screenshot shows how to make system-preferred authentication explicitly enabled for only the Engineering group.
 
