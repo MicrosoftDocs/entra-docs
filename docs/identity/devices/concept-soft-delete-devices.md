@@ -1,6 +1,6 @@
 ---
-title: Device soft delete in Microsoft Entra ID
-description: Learn about device soft delete in Microsoft Entra ID, which moves deleted devices to a recoverable state instead of permanently removing them.
+title: Device soft delete in Microsoft Entra ID (preview)
+description: Learn about device soft delete (preview) in Microsoft Entra ID, which moves deleted devices to a recoverable state instead of permanently removing them.
 author: Justinha
 ms.author: justinha
 ms.service: entra-id
@@ -12,14 +12,16 @@ ms.date: 04/05/2026
 
 ---
 
-# Device soft delete overview
+# Device soft delete overview (preview)
 
 Device soft delete is a recoverability feature in Microsoft Entra ID that moves deleted device objects to a suspended state instead of permanently removing them. When a device is soft deleted, the Azure Device Registration Service (ADRS) de-registers the device and moves the device object into a separate soft-deleted container in the directory. The device is removed from active device lists but remains recoverable for up to 30 days.
 
 This feature helps prevent accidental loss of important device data, such as BitLocker recovery keys and Local Administrator Password Solution (LAPS) passwords. It also reduces the risk of hitting tenant object quotas from orphaned device objects and provides an undo option for device deletions, similar to how soft delete works for users and groups.
 
+[!INCLUDE [preview-alert](~/../docs/reusable-content/ce-skilling/azure/includes/entra-previews.md)]
+
 > [!IMPORTANT]
-> Device soft delete is currently in public preview. Some features and behaviors might change before general availability.
+> Device soft delete is currently in preview. Some features and behaviors might change before general availability.
 
 ## How device soft delete works
 
@@ -37,7 +39,7 @@ After 30 days in the soft-deleted state, the device is automatically hard delete
 
 ## Supported device types
 
-In the current preview, device soft delete is supported for the following device types:
+During the preview, device soft delete is supported for the following device types:
 
 - **Microsoft Entra joined devices** &mdash; Enterprise-managed devices directly joined to Microsoft Entra ID.
 - **Microsoft Entra registered devices** &mdash; Personal or BYOD devices registered with a work or school account.
@@ -80,7 +82,7 @@ After a device is restored, the IsCompliant value remains False until the device
 
 ## Restore a soft-deleted device
 
-During the preview, soft-deleted devices can be restored using Microsoft Graph API or PowerShell. A portal experience for viewing and restoring soft-deleted devices is planned for general availability.
+During the preview, soft-deleted devices can be restored using Microsoft Graph API or PowerShell. A portal experience for viewing and restoring soft-deleted devices is planned for general availability (GA).
 
 To verify whether a device is soft deleted, administrators can use:
 
@@ -117,7 +119,7 @@ This auto-restore behavior helps prevent credential loss from accidental mass de
 
 ## Limitations
 
-- There's no portal experience for viewing or restoring soft-deleted devices during the preview. Restoration requires PowerShell or Microsoft Graph API.
+- During the preview, there's no portal experience for viewing or restoring soft-deleted devices. Restoration requires PowerShell or Microsoft Graph API.
 - Custom RBAC roles for device soft-delete or restore operations aren't supported.
 - DeviceId uniqueness is enforced across both active and soft-deleted containers. A new device can't register with the same DeviceId as a soft-deleted device until that device is restored or permanently deleted.
 - Older Azure AD Graph APIs that don't recognize soft delete might hard delete a device instead of soft deleting it.
