@@ -18,8 +18,6 @@ Device soft delete is a recoverability feature in Microsoft Entra ID that moves 
 
 This feature helps prevent accidental loss of important device data, such as BitLocker recovery keys and Local Administrator Password Solution (LAPS) passwords. It also reduces the risk of hitting tenant object quotas from orphaned device objects and provides an undo option for device deletions, similar to how soft delete works for users and groups.
 
-[!INCLUDE [preview-alert](~/../docs/reusable-content/ce-skilling/azure/includes/entra-previews.md)]
-
 > [!IMPORTANT]
 > Device soft delete is currently in preview. Some features and behaviors might change before general availability.
 
