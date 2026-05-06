@@ -9,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to monitor and detect cyberthreats so that I can strengthen my organization's security posture.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Monitor and detect cyberthreats

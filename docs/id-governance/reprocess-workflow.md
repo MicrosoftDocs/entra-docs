@@ -3,9 +3,9 @@ title: Reprocess workflow runs using Lifecycle Workflows
 description: This article guides a user on reprocessing workflow runs using Lifecycle Workflows
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 09/06/2025
+ms.date: 03/12/2026
 
-#CustomerIntent: As a Lifecycle Workflow Administrator, I want to reprocess workflow runs so that I can quickly re-run workflows that may have failed.
+#Customer Intent: As a Lifecycle Workflow Administrator, I want to reprocess workflow runs so that I can quickly re-run workflows that may have failed.
 ---
 
 # Reprocess workflow runs using Lifecycle Workflows
@@ -16,7 +16,7 @@ Reprocessing workflows is a feature that allows workflows created using lifecycl
 ## Reprocess a workflow using the Microsoft Entra admin center
 
 
-To reprocess a workflow using the Microsoft Entra admin center, you do the following steps:
+To reprocess a workflow using the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
@@ -34,7 +34,7 @@ To reprocess a workflow using the Microsoft Entra admin center, you do the follo
     > You're able to reprocess up to 10 users at a time.
 1. If you want to reprocess a workflow based on a run, select the **Runs** tab.
 
-1. In the runs tab, you're able to see a full list of workflow runs. Select the run you want to reprocess and select **Reprocess**. 
+1. On the **Runs** tab, you can see a full list of workflow runs. Select the run you want to reprocess and select **Reprocess**. 
     > [!NOTE]
     > Only a single run can be reprocessed at a time.
 

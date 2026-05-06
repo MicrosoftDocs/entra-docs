@@ -2,7 +2,7 @@
 title: Troubleshoot Conditional Access policy changes
 description: Learn how to use Microsoft Entra audit logs to identify and troubleshoot Conditional Access policy modifications in your environment.
 ms.topic: troubleshooting
-ms.date: 09/02/2025
+ms.date: 03/24/2026
 ms.reviewer: calebb, martinco
 ms.custom:
   - sfi-image-nochange
@@ -11,6 +11,8 @@ ms.custom:
   - ai-seo-date:09/02/2025
 ---
 # Use audit logs to troubleshoot Conditional Access policy changes
+
+## Overview
 
 The Microsoft Entra audit log is a valuable source of information when troubleshooting why and how Conditional Access policy changes happened in your environment.
 

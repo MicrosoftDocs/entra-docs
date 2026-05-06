@@ -55,6 +55,7 @@ By default, *BypassDirSyncOverridesEnabled* feature is turned off. Enabling *Byp
 To enable BypassDirSyncOverridesEnabled feature, use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
 
 ```powershell
+Connect-MgGraph -Scopes "Directory.ReadWrite.All"
 $directorySynchronization = Get-MgDirectoryOnPremiseSynchronization
 $directorySynchronization.Features.BypassDirSyncOverridesEnabled = $true
 Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $directorySynchronization.Id -Features $directorySynchronization.Features

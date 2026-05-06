@@ -3,10 +3,8 @@ title: Configure GoTo for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to GoTo.
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/07/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GoTo so that I can streamline the user management process and ensure that users have the appropriate access to GoTo.
@@ -29,14 +27,14 @@ This article describes the steps you need to perform in both GoTo and Microsoft 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An organization created in the GoTo Organization Center with at least one verified domain 
 * A user account in the GoTo Organization Center with [permission](https://support.goto.com/meeting/help/manage-organization-users-g2m710102) to configure provisioning (for example, organization administrator role with Read & Write permissions) as shown in Step 2.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Determine what data to [map between Microsoft Entra ID and GoTo](~/identity/app-provisioning/customize-application-attributes.md). 
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine what data to [map between Microsoft Entra ID and GoTo](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-goto-to-support-provisioning-with-azure-ad'></a>
 
@@ -44,22 +42,22 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to the [Organization Center](https://organization.logmeininc.com).
 
-2. The domain used in your account's email address is the domain that you're prompted to verify within 10 days.  
+1. The domain used in your account's email address is the domain that you're prompted to verify within 10 days.  
 
-3. You can verify ownership of your domain using either of the following methods:
+1. You can verify ownership of your domain using either of the following methods:
 
    **Method 1:  Add a DNS record to your domain zone file.**  
    To use the DNS method, you place a DNS record at the level of the email domain within your DNS zone.  Examples using "main.com" as the domain would resemble:  `@ IN TXT "goto-verification-code=00aa00aa-bb11-cc22-dd33-44ee44ee44ee"` OR `main.com. IN TXT “goto-verification-code=00aa00aa-bb11-cc22-dd33-44ee44ee44ee”`
 
    Detailed instructions are as follows:
      1. Sign in to your domain's account at your domain host.
-     2. Navigate to the page for updating your domain's DNS records.
-     3. Locate the TXT records for your domain, then add a TXT record for the domain and for each subdomain.
-     4. Save all changes.
-     5. You can verify that the change has taken place by opening a command line and entering one of the following commands below (based on your operating system, with "main.com" as the domain example):
+     1. Navigate to the page for updating your domain's DNS records.
+     1. Locate the TXT records for your domain, then add a TXT record for the domain and for each subdomain.
+     1. Save all changes.
+     1. You can verify that the change has taken place by opening a command line and entering one of the following commands below (based on your operating system, with "main.com" as the domain example):
          * For Unix and Linux systems:  `$ dig TXT main.com`
          * For Windows systems:  `c:\ > nslookup -type=TXT main.com`
-     6. The response will display on its own line.
+     1. The response will display on its own line.
 
    **Method 2: Upload a web server file to the specific website.**
    Upload a plain-text file to your web server root containing a verification string without any blank spaces or special characters outside of the string.
@@ -67,9 +65,9 @@ The scenario outlined in this article assumes that you already have the followin
       * Location: `http://<yourdomain>/goto-verification-code.txt`
       * Contents: `goto-verification-code=00aa00aa-bb11-cc22-dd33-44ee44ee44ee`
 
-4. Once you have added the DNS record or TXT file, return to [Organization Center](https://organization.logmeininc.com) and select **Verify**.
+1. Once you have added the DNS record or TXT file, return to [Organization Center](https://organization.logmeininc.com) and select **Verify**.
 
-5. You have now created an organization in the Organization Center by verifying your domain, and the account used during this verification process is now the organization admin.
+1. You have now created an organization in the Organization Center by verifying your domain, and the account used during this verification process is now the organization admin.
 
 <a name='step-3-add-goto-from-the-azure-ad-application-gallery'></a>
 
@@ -98,15 +96,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The GoTo link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. Under the **Admin Credentials** section, select **Authorize**. You be redirected to **GoTo**'s authorization page. Input your GoTo username and select the **Next** button. Input your GoTo password and select the **Sign In** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to GoTo. If the connection fails, ensure your GoTo account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, select **Authorize**. You're redirected to **GoTo**'s authorization page. Enter your GoTo username and select the **Next** button. Enter your GoTo password and select the **Sign In** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to GoTo. If the connection fails, ensure your GoTo account has Admin permissions and try again.
 
  	![authorization](./media/goto-provisioning-tutorial/admin.png)
 
@@ -114,15 +112,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       ![connection](./media/goto-provisioning-tutorial/password.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Notification Email](common/provisioning-notification-email.png)
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-7. Select **Save**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to GoTo**.
-
-9. Review the user attributes that are synchronized from Microsoft Entra ID to GoTo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GoTo for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GoTo API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to GoTo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GoTo for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GoTo API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -136,9 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to GoTo**.
-
-11. Review the group attributes that are synchronized from Microsoft Entra ID to GoTo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GoTo for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to GoTo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GoTo for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|
       |---|---|
@@ -146,21 +140,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for GoTo, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-14. Define the users and/or groups that you would like to provision to GoTo by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-15. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

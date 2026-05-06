@@ -2,7 +2,8 @@
 title: Troubleshoot user update issues with HR provisioning
 description: Learn how to troubleshoot user update issues with HR provisioning
 ms.topic: troubleshooting
-ms.date: 03/26/2025
+ai-usage: ai-assisted
+ms.date: 04/07/2026
 ms.reviewer: chmutali
 ---
 
@@ -121,6 +122,26 @@ wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assi
 Use this field in the attribute mapping logic for the accountDisabled flag.  
 - Example:  
   ``` `Switch([TerminatedWorkers], Switch([Active], , "1", "False", "0", "True"), "Terminated Workers", "True")` ```
+
+## SuccessFactors termination processing delay
+
+**Applies to:**
+* SuccessFactors to on-premises Active Directory user provisioning
+* SuccessFactors to Microsoft Entra ID user provisioning
+
+| Troubleshooting | Details |
+|-- | -- |
+| **Issue** | In certain scenarios, there might be delays in propagation of terminated employment status as an "account disable" operation. This isn't due to a lack of user-disable capability in Microsoft Entra, but rather how real-time identity lifecycle changes are detected during HR-driven provisioning. |
+| **Cause** | Microsoft Entra's provisioning service operates as a stateless change-detection system. It relies on the source system (for example, SAP SuccessFactors) to emit a time-based change event—such as a termination becoming effective—at the point when the change should take effect. Provisioning cycles then detect and act on those events during incremental sync. In scenarios where termination is effective *as of the current day*, SuccessFactors might not emit an incremental change event at the exact time the user's employment status changes (for example, at end of business day). As a result, Microsoft Entra provisioning doesn't receive a detectable change during its polling cycle and the "disable" action might be delayed until a subsequent update occurs in the source system. |
+| **Resolution** | To support deterministic, policy-driven offboarding, use [Microsoft Entra ID Governance Lifecycle Workflows](../../id-governance/what-are-lifecycle-workflows.md). This model is based on state, rather than time-based events. [Synchronize the employee's `endDate`](../../id-governance/how-to-lifecycle-workflow-sync-attributes.md) from SuccessFactors into Microsoft Entra (for example, via the `employeeLeaveDateTime` attribute). Organizations can then trigger automated offboarding workflows directly from directory state—ensuring accounts are disabled exactly when the employment end date is reached, independent of incremental change detection in the HR system. |
+
+This approach enables:
+- Timely and predictable user offboarding.
+- Policy-based automation aligned to HR intent.
+- Reduced reliance on custom scripts or manual intervention.
+- Centralized lifecycle governance across hybrid and cloud identities.
+
+[Lifecycle Workflows](../../id-governance/what-are-lifecycle-workflows.md) are part of Microsoft Entra ID Governance and are designed specifically for enforcing joiner-mover-leaver policies based on authoritative identity state in the directory.
 
 ## Next steps
 

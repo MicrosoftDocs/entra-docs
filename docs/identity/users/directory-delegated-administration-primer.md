@@ -11,7 +11,10 @@ ms.custom: it-pro, sfi-ga-nochange
 ---
 # What is delegated administration?
 
-Managing permissions for external partners is a key part of your security posture. We’ve added capabilities to the administrator portal experience in Microsoft Entra ID, part of Microsoft Entra, so that an administrator can see the relationships that their Microsoft Entra tenant has with Microsoft Cloud Service Providers (CSP) who can manage the tenant. This permissions model is called delegated administration. This article introduces the Microsoft Entra administrator to the relationship between the old Delegated Admin Permissions (DAP) permission model and the new [Granular Delegated Admin Permissions (GDAP)](/partner-center/gdap-introduction) permission model.
+
+## Overview
+
+Managing permissions for external partners is a key part of your security posture. The administrator portal experience in Microsoft Entra ID, part of Microsoft Entra, now includes capabilities so that an administrator can see the relationships that their Microsoft Entra tenant has with Microsoft Cloud Service Providers (CSP) who can manage the tenant. This permissions model is called delegated administration. This article introduces the Microsoft Entra administrator to the relationship between the old Delegated Admin Permissions (DAP) permission model and the new [Granular Delegated Admin Permissions (GDAP)](/partner-center/gdap-introduction) permission model.
 
 ## Delegated administration relationships
 
@@ -32,7 +35,7 @@ If you have GDAP relationships in your tenant, you see a notification banner on 
 
 All DAP relationships enable the CSP to delegate Global Administrator and Helpdesk Administrator roles to their technicians. Unlike a GDAP relationship, a DAP relationship persists until you or your CSP revokes them.
 
-If you have any DAP relationships in your tenant, you can see them in the list on the Delegated Administration page in the Azure portal. To remove a DAP relationship for a CSP, follow the link to the Partners page in the Microsoft Admin Center.
+If you have any DAP relationships in your tenant, you can see them in the list on the **Delegated Administration** page in the Azure portal. To remove a DAP relationship for a CSP, follow the link to the **Partners** page in the Microsoft Admin Center.
 
 ## Next steps
 

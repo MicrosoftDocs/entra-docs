@@ -1,13 +1,16 @@
 ---
 title: Remove personal data - Microsoft Entra application proxy
-description:  Remove personal data from connectors installed on devices for Microsoft Entra application proxy.
+description: Remove personal data from connectors installed on devices for Microsoft Entra application proxy.
 ms.topic: how-to
-ms.date: 05/01/2025
-ms.reviewer: harshja
+ms.date: 03/25/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Remove personal data for Microsoft Entra application proxy
+
+
+## Overview
 
 Microsoft Entra application proxy requires that you install connectors on your devices, which means that there might be personal data on your devices. This article provides steps for how to delete that personal data to improve privacy.
 
@@ -20,7 +23,7 @@ It's possible for application proxy to write personal data to the following log 
 
 ## Remove personal data from Windows event logs
 
-For information on how to configure data retention for the Windows event logs, see [Settings for event logs](https://technet.microsoft.com/library/cc952132.aspx). To learn about Windows event logs, see [Using Windows Event Log](/windows/win32/wes/using-windows-event-log).
+For information on how to configure data retention for the Windows event logs, see the Windows event log settings documentation. For more information about Windows event logs, see [Using Windows Event Log](/windows/win32/wes/using-windows-event-log).
 
 [!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
@@ -62,7 +65,7 @@ To delete specific data:
 
 One option to ensure the connector logs don't contain personal data is to turn off the log generation. To stop generating connector logs, remove the following highlighted line from `C:\Program Files\Microsoft Entra private network connector\MicrosoftEntraPrivateNetworkConnectorService.exe.config`.
 
-![Shows a code snippet with the highlighted code to remove](./media/application-proxy-remove-personal-data/01.png)
+![Screenshot that shows a code snippet with the highlighted code to remove.](./media/application-proxy-remove-personal-data/01.png)
 
 ## Next steps
 

@@ -3,13 +3,14 @@ title: Manage workflow versions
 description: This article guides a user on managing workflow versions with Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 03/12/2026
 ms.custom: template-how-to, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to manage workflow versions so that I can update and track changes to lifecycle workflow tasks.
 ---
 
 # Manage workflow versions
 
-Workflows created with Lifecycle Workflows are able to grow and change with the needs of your organization. Workflows exist as versions from creation. When making changes to other than basic information, you create a new version of the workflow. For more information, see  [Manage a workflow's properties](manage-workflow-properties.md).
+Workflows created with Lifecycle Workflows are able to grow and change with the needs of your organization. Workflows exist as versions from creation. When you make changes to anything other than basic information, you create a new version of the workflow. For more information, see [Manage a workflow's properties](manage-workflow-properties.md).
 
 Changing a workflow's tasks or execution conditions requires the creation of a new version of that workflow. Tasks within workflows can be added, reordered, and removed at will. Updating a workflow's tasks or execution conditions within the Microsoft Entra admin center triggers the creation of a new version of the workflow automatically. Making these updates in Microsoft Graph requires the new workflow version to be created manually.
 
@@ -47,13 +48,13 @@ To edit the execution conditions of a workflow using the Microsoft Entra admin c
 1. On the left side of the screen, select **Execution conditions**.
     :::image type="content" source="media/manage-workflow-tasks/execution-conditions-details.png" alt-text="Screenshot of the execution condition details of a workflow." lightbox="media/manage-workflow-tasks/execution-conditions-details.png":::
 
-1. On this screen, you're presented with **Trigger details**. Here we have a trigger type and attribute details. In the template you can edit the attribute details to define when a workflow runs.
+1. On this screen, you're presented with **Trigger details**. You see a trigger type and attribute details. In the template you can edit the attribute details to define when a workflow runs.
     
 
 1. Select the **Scope details** tab.
     :::image type="content" source="media/manage-workflow-tasks/execution-conditions-scope.png" alt-text="Screenshot of the execution scope page of a workflow." lightbox="media/manage-workflow-tasks/execution-conditions-scope.png":::
 
-1. On this screen you can define rules for who the workflow runs. if the trigger **Scope type** is set as Rule-Based you  can define the rule using expressions on user properties. For more information on supported user properties. see: [supported queries on user properties](/graph/aad-advanced-queries#user-properties). If the trigger scope type is group-based, you're able to select which group is the scope of the workflow.
+1. On this screen you can define rules for who the workflow runs. If the trigger **Scope type** is set as Rule-Based, you can define the rule using expressions on user properties. For more information on supported user properties, see [supported queries on user properties](/graph/aad-advanced-queries#user-properties). If the trigger scope type is group-based, you're able to select which group is the scope of the workflow.
 
 1. After making changes, select **save** to capture changes to the execution conditions.
 
@@ -86,5 +87,5 @@ To list workflow versions via API using Microsoft Graph, see: [List versions (of
 
 ## Next steps
 
-- [Check status of a workflows](check-status-workflow.md)
+- [Check status of a workflow](check-status-workflow.md)
 - [Customize workflow schedule](customize-workflow-schedule.md)

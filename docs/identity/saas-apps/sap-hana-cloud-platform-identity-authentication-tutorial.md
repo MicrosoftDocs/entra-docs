@@ -1,14 +1,9 @@
 ---
 title: Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Cloud Identity Services.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Cloud Identity Services so that I can control who has access to SAP Cloud Identity Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -228,7 +223,8 @@ If you encounter errors from signing into SAP Cloud Identity Services, with a co
 
 You can also use Microsoft My Apps to test the application in any mode. When you select the SAP Cloud Identity Services tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SAP Cloud Identity Services for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-
+## Discover existing users in SAP Cloud Identity Services
+Prior to integration with Microsoft Entra, your SAP Cloud Identity Services account may already have one or more users. Using the account discovery functionality, you can generate a report of all the users in SAP Cloud Identity Services, identify which users have matching accounts in Entra, and which users are local to SAP Cloud Identity Services with one click. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). This enables you to simplify onboarding to Entra, while also pereodically monitoring for unauthorized access. 
 
 ## Related content
 

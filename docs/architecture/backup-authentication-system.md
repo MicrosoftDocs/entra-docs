@@ -69,7 +69,7 @@ Certain other types of policies don't support use of the backup authentication s
 
 - Use of the [sign-in frequency control](~/identity/conditional-access/concept-conditional-access-session.md#sign-in-frequency) as part of a Conditional Access policy.
 - Use of the [authentication methods policy](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength).
-- Use of [classic Conditional Access policies](~/identity/conditional-access/policy-migration-mfa.md).
+- Use of classic Conditional Access policies (deprecated — classic policies stopped functioning after July 10, 2024).
 
 #### Evaluation of report-only Conditional Access policies
 

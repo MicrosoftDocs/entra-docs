@@ -24,7 +24,7 @@ If you plan to use the Azure PowerShell or Azure CLI examples in this article, b
 
 > [!IMPORTANT]
 > - All sample script in this article assumes the command-line client is running on a VM with managed identities for Azure resources enabled. Use the VM "Connect" feature in the Azure portal, to remotely connect to your VM. For details on enabling managed identities for Azure resources on a VM, see [Configure managed identities for Azure resources on a VM using the Azure portal](qs-configure-portal-windows-vm.md), or one of the variant articles (using PowerShell, CLI, a template, or an Azure SDK). 
-> - To prevent errors during resource access, the VM's managed identity must be given at least "Reader" access at the appropriate scope (the VM or higher) to allow Azure Resource Manager operations on the VM. See [Assign managed identities for Azure resources access to a resource using the Azure portal](howto-assign-access-portal.md) for details.
+> - To prevent errors during resource access, the VM's managed identity must be given at least "Reader" access at the appropriate scope (the VM or higher) to allow Azure Resource Manager operations on the VM. See [Assign managed identities for Azure resources access to a resource using the Azure portal](grant-managed-identity-resource-access-azure-portal.md) for details.
 
 ## Overview
 

@@ -1,13 +1,17 @@
 ---
 title: Use Microsoft Entra application proxy with a Network Device Enrollment Service (NDES) server
-description: Learn how to use Microsoft Entra application proxy to protect your Network Device Enrollment Service (NDES).
+description: "Secure NDES certificate enrollment for mobile devices using Microsoft Entra application proxy. Includes connector setup and certificate request validation."
 ms.topic: how-to
-ms.date: 05/01/2025
+ms.date: 03/25/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # Integrate with Microsoft Entra application proxy on a Network Device Enrollment Service (NDES) server
+
+
+## Overview
 
 Learn how to use Microsoft Entra application proxy to protect your Network Device Enrollment Service (NDES).
 
@@ -17,7 +21,7 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 1. Select **Download connector service**.
-    ![Download connector service to see the Terms of Service](./media/app-proxy-protect-ndes/application-proxy-download-connector-service.png)
+    ![Download connector service to see the Terms of Service.](./media/app-proxy-protect-ndes/application-proxy-download-connector-service.png)
 1. Read the Terms of Service. When you're ready, select **Accept terms & Download**.
 1. Copy the Microsoft Entra private network connector setup file to your NDES server. 
    > You install the connector on any server within your corporate network with access to NDES. You don't have to install it on the NDES server itself.
@@ -35,12 +39,12 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
     If connector registration fails, see [Troubleshoot application proxy](application-proxy-troubleshoot.md).
 1. At the end of the setup, a note is shown for environments with an outbound proxy. To configure the Microsoft Entra private network connector to work through the outbound proxy, run the provided script, such as `C:\Program Files\Microsoft Entra private network connector\ConfigureOutBoundProxy.ps1`.
 1. On the Application proxy page in the Microsoft Entra admin center, the new connector is listed with a status of *Active*, as shown in the example.
-    ![The new Microsoft Entra private network connector shown as active in the Microsoft Entra admin center](./media/app-proxy-protect-ndes/connected-app-proxy.png)
+    ![The new Microsoft Entra private network connector shown as active in the Microsoft Entra admin center.](./media/app-proxy-protect-ndes/connected-app-proxy.png)
     > [!NOTE]
     > To provide high availability for applications authenticating through the Microsoft Entra application proxy, you can install connectors on multiple VMs. Repeat the same steps listed in the previous section to install the connector on other servers joined to the Microsoft Entra Domain Services managed domain.
 1. After successful installation, go back to the Microsoft Entra admin center.
 1. Select **Enterprise applications**.
-   ![ensure that you're engaging the right stakeholders](./media/app-proxy-protect-ndes/enterprise-applications.png)
+   ![Ensure that you're engaging the right stakeholders.](./media/app-proxy-protect-ndes/enterprise-applications.png)
 1. Select **+New Application**, and then select **On-premises application**. 
 1. On the **Add your own on-premises application**, configure the fields.
    
@@ -48,7 +52,7 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
    
     **Internal Url**: Enter the internal URL/FQDN of your NDES server on which you installed the connector.
 
-    **Pre Authentication**: Select **Passthrough**. It’s not possible to use any form of pre authentication. The protocol used for certificate requests, Simple Certificate Enrollment Protocol (SCEP), doesn't provide such option.
+    **Pre Authentication**: Select **Passthrough**. It’s not possible to use any form of preauthentication. The protocol used for certificate requests, Simple Certificate Enrollment Protocol (SCEP), doesn't provide such option.
 
     Copy the provided **External URL** to your clipboard.
 1. Select **+Add** to save your application.

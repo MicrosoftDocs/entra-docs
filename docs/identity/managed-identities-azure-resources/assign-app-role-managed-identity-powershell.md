@@ -101,7 +101,7 @@ This example script shows you how to assign an Azure web app's managed identity 
 # Install the module.
 # Install-Module Microsoft.Graph -Scope CurrentUser
 
-# Your tenant ID (in the Azure portal, under Azure Active Directory > Overview).
+# Your tenant ID (in the Azure portal, under Microsoft Entra ID > Overview).
 $tenantID = '<tenant-id>'
 
 # The name of your web app, which has a managed identity that should be assigned to the server app's app role.

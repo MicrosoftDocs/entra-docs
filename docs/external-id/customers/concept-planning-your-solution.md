@@ -1,8 +1,9 @@
 ---
 title: Plan a CIAM Deployment
 description: Discover the steps for setting up a customer identity and access management (CIAM) solution in an external tenant, including creating a tenant, registering apps, and setting up user flows for sign-in.
+ai-usage: ai-assisted
 ms.topic: concept-article
-ms.date: 10/02/2025
+ms.date: 04/24/2026
 
 ms.custom: it-pro, seo-july-2024
 
@@ -16,26 +17,27 @@ Microsoft Entra External ID is a customizable, extensible solution for adding cu
 
 This article provides a general framework for integrating your app and configuring External ID. It describes the capabilities available in an external tenant and outlines the important planning considerations for each step in your integration.
 
-Adding secure sign-in to your app and setting up a customer identity and access management involves four main steps:
+Adding secure sign-in to your app and setting up a customer identity and access management involves five main steps:
 
-:::image type="content" source="media/concept-planning-your-solution/overview-setup-steps-inline.png" alt-text="Diagram showing an overview of steps.":::
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-steps-inline.png" lightbox="media/concept-planning-your-solution/overview-setup-steps-inline.png" alt-text="Diagram showing an overview of the five setup steps: create a tenant, choose an authentication approach, register your application, integrate a sign-in flow, and customize and secure your sign-in.":::
 
 This article describes each of these steps and outlines important planning considerations. In the following table, select a **Step** for details and planning considerations, or go directly to the **How-to guides**.
 
 | Step  |  How-to guides |
 |---------|---------|
 |**[Step 1: Create an external tenant](#step-1-create-an-external-tenant)**   | &#8226; [Create an external tenant](how-to-create-external-tenant-portal.md)</br>&#8226; <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">Or start a free trial</a>  |
-|**[Step 2: Register your application](#step-2-register-your-application)**   | &#8226; [Register your application](/entra/identity-platform/quickstart-register-app)  |
-|**[Step 3: Integrate a sign-in flow with your app](#step-3-integrate-a-sign-in-flow-with-your-app)**     | &#8226; [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) </br>&#8226; [Add your app to the user flow](how-to-user-flow-add-application.md)   |
-|**[Step 4: Customize and secure your sign-in](#step-4-customize-and-secure-your-sign-in)**     |  &#8226; [Customize branding](concept-branding-customers.md) </br>&#8226; [Add identity providers](concept-authentication-methods-customers.md)  </br>&#8226; [Collect attributes during sign-up](how-to-define-custom-attributes.md)</br>&#8226; [Add attributes to the token](how-to-add-attributes-to-token.md) </br>&#8226; [Add multifactor authentication (MFA)](concept-security-customers.md)    |
+|**[Step 2: Choose an authentication approach](#step-2-choose-an-authentication-approach)**   | &#8226; [Choose an authentication approach](concept-choose-authentication-approach.md)  |
+|**[Step 3: Register your application](#step-3-register-your-application)**   | &#8226; [Register your application](/entra/identity-platform/quickstart-register-app)  |
+|**[Step 4: Integrate a sign-in flow with your app](#step-4-integrate-a-sign-in-flow-with-your-app)**     | &#8226; [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) </br>&#8226; [Add your app to the user flow](how-to-user-flow-add-application.md)   |
+|**[Step 5: Customize and secure your sign-in](#step-5-customize-and-secure-your-sign-in)**     |  &#8226; [Customize branding](concept-branding-customers.md) </br>&#8226; [Add identity providers](concept-authentication-methods-customers.md)  </br>&#8226; [Collect attributes during sign-up](how-to-define-custom-attributes.md)</br>&#8226; [Add attributes to the token](how-to-add-attributes-to-token.md) </br>&#8226; [Add multifactor authentication (MFA)](concept-security-customers.md)    |
 
 ## Step 1: Create an external tenant
 
-:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-1.png" alt-text="Diagram showing step 1 in the setup flow.":::
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-1.png" lightbox="media/concept-planning-your-solution/overview-setup-step-1.png" alt-text="Diagram showing step 1, create an external tenant, highlighted in the setup flow.":::
 
 An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. Your external tenant is where you register your application. It also contains a directory where you manage customer identities and access, separate from your workforce tenant.
 
-When you create an external tenant, you can set your correct geographic location and your domain name. If you currently use Azure AD B2C, the new workforce and external tenant model doesn't affect your existing Azure AD B2C tenants.
+When you create an external tenant, you can set your correct geographic location and your domain name. If you currently use Azure AD B2C, the new workforce and external tenant model doesn't affect your existing Azure AD B2C tenants. For guidance on migrating from Azure AD B2C, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
@@ -53,9 +55,26 @@ Customer accounts have a [default set of permissions](reference-user-permissions
 
 - If you use Visual Studio Code, you can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to create an external tenant directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
 
-## Step 2: Register your application
+## Step 2: Choose an authentication approach
 
-:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 2 in the setup flow.":::
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" lightbox="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 2, choose an authentication approach, highlighted in the setup flow.":::
+
+Before you register your app, decide how you want to build the sign-in experience. Microsoft Entra External ID supports two approaches:
+
+- **Browser-delegated authentication** redirects users to a Microsoft-hosted sign-in page. It offers broad platform support, cross-app single sign-on (SSO) through the system browser, and lower maintenance. Microsoft manages the sign-in surface and security updates.
+
+- **Native authentication** lets you build the sign-in UI experience directly into your app by using the Microsoft Authentication Library (MSAL) or the native authentication API. You get full UI control, but your team takes on more development effort and security responsibility.
+
+Your choice affects how you register your app, which SDKs you use, and how you configure user flows. Make this decision early so the rest of your integration follows the right path.
+
+### How to choose an authentication approach
+
+- [Choose an authentication approach](concept-choose-authentication-approach.md). Compare features, security trade-offs, and supported platforms.
+- [Native authentication overview](/entra/identity-platform/concept-native-authentication). Detailed guidance if you're considering native authentication.
+
+## Step 3: Register your application
+
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-3.png" lightbox="media/concept-planning-your-solution/overview-setup-step-3.png" alt-text="Diagram showing step 3, register your application, highlighted in the setup flow.":::
 
 Before your applications can interact with External ID, you need to register them in your external tenant. Microsoft Entra ID performs identity and access management only for registered applications. [Registering your app](/entra/identity-platform/quickstart-register-app) establishes a trust relationship and allows you to integrate your app with External ID.
 
@@ -69,11 +88,11 @@ We provide code sample guides and in-depth integration guides for several app ty
 
 - If we don't have a guide specific to your platform or language, refer to the general instructions for [registering an application](/entra/identity-platform/quickstart-register-app) in an external tenant.
 
-## Step 3: Integrate a sign-in flow with your app
+## Step 4: Integrate a sign-in flow with your app
 
-:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-3.png" alt-text="Diagram showing step 3 in the setup flow.":::
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-4.png" lightbox="media/concept-planning-your-solution/overview-setup-step-4.png" alt-text="Diagram showing step 4, integrate a sign-in flow with your app, highlighted in the setup flow.":::
 
-Once you've set up your external tenant and registered your application, create a sign-up and sign-in user flow. Then integrate your application with the user flow so that anyone who accesses it goes through the sign-up and sign-in experience you've designed.
+After you set up your external tenant and registered your application, create a sign-up and sign-in user flow. Then integrate your application with the user flow so that anyone who accesses it goes through the sign-up and sign-in experience you've designed.
 
 To integrate your application with a user flow, you add your application to the user flow properties and update your application code with your tenant information and authorization endpoint. 
 
@@ -89,9 +108,9 @@ When sign-up is complete, Microsoft Entra ID generates a token and redirects the
 
 When planning your sign-up and sign-in experience, determine your requirements:
 
-- **Number of user flows**. Each application can have just one sign-up and sign-in user flow. If you have several applications, you can use a single user flow for all of them. Or, if you want a different experience for each application, you can create multiple user flows. The maximum is 10 user flows per external tenant.
+- **Number of user flows**. Each application can have only one sign-up and sign-in user flow. If you have several applications, you can use a single user flow for all of them. Or, if you want a different experience for each application, you can create multiple user flows. The maximum is 10 user flows per external tenant.
 
-- **Company branding and language customizations**. Although we describe configuring company branding and language customizations later in Step 4, you can configure them anytime, either before or after you integrate an app with a user flow. If you configure company branding before you create the user flow, the sign-in pages reflect that branding. Otherwise, the sign-in pages reflect the default, neutral branding.
+- **Company branding and language customizations**. Although we describe configuring company branding and language customizations later in Step 5, you can configure them anytime, either before or after you integrate an app with a user flow. If you configure company branding before you create the user flow, the sign-in pages reflect that branding. Otherwise, the sign-in pages reflect the default, neutral branding.
 
 - **Attributes to collect**. In the user flow settings, you can select from a set of built-in user attributes you want to collect from customers. The customer enters the information on the sign-up page, and it's stored with their profile in your directory. If you want to collect more information, you can [define custom attributes](how-to-define-custom-attributes.md) and add them to your user flow.
 
@@ -99,7 +118,7 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 - **Requirements for token claims**. If your application requires specific user attributes, you can include them in the token sent to your application.
 
-- **Identity providers**. You can set up social identity providers like [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or a [custom-configured OpenID Connect (OIDC)](how-to-custom-oidc-federation-customers.md) identity provider. Then, you can add them to your user flow as sign-in options
+- **Identity providers**. You can set up social identity providers like [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md), a [Microsoft Entra ID tenant](how-to-entra-id-federation-customers.md), or a [custom-configured OpenID Connect (OIDC)](how-to-custom-oidc-federation-customers.md) identity provider. Then, you can add them to your user flow as sign-in options.
 
 ### How to integrate a user flow with your app
 
@@ -109,21 +128,19 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 - [Add your application](how-to-user-flow-add-application.md) to the user flow.
 
-## Step 4: Customize and secure your sign-in
+## Step 5: Customize and secure your sign-in
 
-:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-4.png" alt-text="Diagram showing step 4 in the setup flow.":::
+:::image type="content" source="media/concept-planning-your-solution/overview-setup-step-5.png" lightbox="media/concept-planning-your-solution/overview-setup-step-5.png" alt-text="Diagram showing step 5, customize and secure your sign-in, highlighted in the setup flow.":::
 
 When planning for configuring company branding, language customizations, and custom extensions, consider the following points:
 
-- **Company branding**. After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in or sign up, to personalize their end-user experience. In Microsoft Entra ID, the default Microsoft branding appear in your sign-in pages before you customize any settings. This branding represents the global look and feel that applies across all sign-ins to your tenant. Learn more about [customizing the sign-in look and feel](concept-branding-customers.md).
+- **Company branding**. After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in or sign up, to personalize their end-user experience. In Microsoft Entra ID, the default Microsoft branding appears in your sign-in pages before you customize any settings. This branding represents the global look and feel that applies across all sign-ins to your tenant. For details, see [Customize the sign-in look and feel](concept-branding-customers.md).
 
-- **Extending the authentication token claims**. External ID is designed for flexibility. You can use a custom authentication extension to add claims from external systems to the application token just before the token is issued to the application. Learn more about [adding your own business logic](concept-custom-extensions.md) with custom authentication extensions.
+- **Extending the authentication token claims**. External ID is designed for flexibility. You can use a custom authentication extension to add claims from external systems to the application token just before the token is issued to the application. For details, see [Add your own business logic with custom authentication extensions](concept-custom-extensions.md).
 
-- **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. Learn more about [available MFA authentication methods](concept-multifactor-authentication-customers.md).
+- **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. For details, see [Available MFA authentication methods](concept-multifactor-authentication-customers.md).
 
-- **Native authentication**. Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers. Learn more about [native authentication](concept-native-authentication.md) in External ID.
-
-- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant.
+- **Security and governance**. For details, see [Security and governance](concept-security-customers.md) features available in your external tenant.
 
 ### How to customize and secure your sign-in
 

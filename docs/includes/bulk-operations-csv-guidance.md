@@ -1,12 +1,12 @@
 ---
 title: Include file
 description: Include file for bulk operations CSV template guidance
-author: barclayn
+author: kenwith
 manager: pmwongera
 ms.service: entra-id
 ms.topic: include
 ms.date: 12/05/2025
-ms.author: barclayn
+ms.author: kenwith
 ms.custom: include file
 ---
 

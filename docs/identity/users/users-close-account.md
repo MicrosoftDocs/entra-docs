@@ -9,7 +9,10 @@ ms.custom: it-pro
 
 # Close your work or school account in an unmanaged Microsoft Entra organization
 
-If you are a user in an unmanaged organization (tenant) in Microsoft Entra ID, and you no longer need to use apps from that organization or maintain any association with it, you can close your account at any time. An unmanaged organization does not have an administrator. Users in an unmanaged organization can close their accounts on their own, without contacting an administrator.
+
+## Overview
+
+If you're a user in an unmanaged organization (tenant) in Microsoft Entra ID, and you no longer need to use apps from that organization or maintain any association with it, you can close your account at any time. An unmanaged organization doesn't have an administrator. Users in an unmanaged organization can close their accounts on their own, without contacting an administrator.
 
 Users in an unmanaged organization are often created during self-service sign-up. An example of this occurring is when an information worker in an organization signs up for a free service. For more information about self-service sign-up, see [What is self-service sign-up for Microsoft Entra ID?](directory-self-service-signup.md).
 
@@ -19,12 +22,12 @@ Users in an unmanaged organization are often created during self-service sign-up
 
 Before you can close your account, you'll need to confirm the following items:
 
-* Make sure you are a user of an unmanaged Microsoft Entra organization. You can't close your account if you belong to a managed organization. If you belong to a managed organization and want to close your account, you must contact your administrator. For information about how to determine whether you belong to an unmanaged organization, see [Delete the user from Unmanaged Tenant](/power-automate/privacy-dsr-delete#delete-the-user-from-unmanaged-tenant).
+* Make sure you're a user of an unmanaged Microsoft Entra organization. You can't close your account if you belong to a managed organization. If you belong to a managed organization and want to close your account, you must contact your administrator. For information about how to determine whether you belong to an unmanaged organization, see [Delete the user from Unmanaged Tenant](/power-automate/privacy-dsr-delete#delete-the-user-from-unmanaged-tenant).
 
 * Save any data you want to keep. For information about how to submit an export request, see [Accessing and exporting system-generated logs for Unmanaged Tenants](/power-platform/admin/powerapps-privacy-dsr-guide-systemlogs#accessing-and-exporting-system-generated-logs-for-unmanaged-tenants).
 
 > [!WARNING]
-> Closing your account is irreversible. When you close your account, all personal data will be removed. You won't have access to your account and you will no longer have access to the data associated with your account.
+> Closing your account is irreversible. When you close your account, the service removes all personal data. You won't have access to your account and you'll no longer have access to the data associated with your account.
 
 ## Close your account
 

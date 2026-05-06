@@ -4,7 +4,7 @@ description: This is a reference guide on best practices when securing custom ex
 ms.topic: best-practice
 ms.date: 08/28/2024
 
-#CustomerIntent: As an administrator I want to learn the best practices for securing custom extension extensibility to Azure Logic Apps.
+#Customer Intent: As an administrator I want to learn the best practices for securing custom extension extensibility to Azure Logic Apps.
 ---
 
 

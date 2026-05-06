@@ -65,7 +65,7 @@ Consider the following questions as you map out your Microsoft Entra Private Acc
 
 ### Microsoft Entra Internet Access use cases
 
-You can test several Microsoft Entra Internet Access and Microsoft Entra Internet Access for Microsoft Services scenarios in your PoC. Consider testing coexistence with other solutions, as the [Learn about Security Service Edge (SSE) coexistence with Microsoft and Cisco](../global-secure-access/concept-cisco-coexistence.md) article describes.
+You can test several Microsoft Entra Internet Access and Microsoft Entra Internet Access for Microsoft Services scenarios in your PoC. Consider testing coexistence with other solutions, as the [Learn about Security Service Edge (SSE) coexistence with Microsoft and Cisco](../global-secure-access/how-to-cisco-coexistence.md) article describes.
 
 - **Do you need to block or allow certain fully qualified domain names (FQDNs) or web categories from access by all users when they're using a managed device?** If you plan to block or allow most of your user base's access to specific FQDNs or web categories, consider testing the [Create a baseline policy that applies to all internet access traffic routed through the service](gsa-poc-internet-access.md#create-a-baseline-profile-that-applies-to-all-internet-traffic-routed-through-the-service) use case. You can create and apply the baseline policy to all users without needing to create Conditional Access policies. If necessary, you can override it for subsets of users.
 

@@ -39,7 +39,7 @@ To finish this tutorial, you need the following resources and privileges:
 * A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 license is required for password reset. For more information about license requirements for password change and password reset in Microsoft Entra ID, see [Licensing requirements for Microsoft Entra self-service password reset](concept-sspr-licensing.md).
 * An account with at least the Authentication Policy Administrator role.
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
-    * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
+    * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml).
 * A group that the non-administrator user is a member of, likes *SSPR-Test-Group*. You'll enable SSPR for this group in this tutorial.
     * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 

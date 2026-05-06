@@ -11,6 +11,9 @@ ms.custom: references_regions
 
 # What's new in Microsoft Entra Verified ID
 
+
+## Overview
+
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
 ## November 2025
@@ -32,7 +35,7 @@ Partner Gallery Update: Reorganized content and removed deprecated individual pa
 
 - Entra Verified ID is supported on Microsoft GCC environments. 
     
-    >[!NOTE] 
+    > [!NOTE]
     > This is GCC only and not GCC High.
 
 - Updates to the IDV Partner Gallery
@@ -56,20 +59,20 @@ Partner Gallery Update: Reorganized content and removed deprecated individual pa
 
 ## June 2024
 
-- [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Microsoft Entra Verified ID free to use during the public preview period ending on August 12.
+- [FaceCheck](using-facecheck.md) introduces the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Microsoft Entra Verified ID free to use during the public preview period ending on August 12.
 
 ## April 2024
 
-- [Quick setup](verifiable-credentials-configure-tenant-quick.md) Generally available, it enables an admin to onboard Microsoft Entra Verified ID in a Microsoft Entra tenant with just one select of a button.
+- [Quick setup](verifiable-credentials-configure-tenant-quick.md) is now generally available. It enables an admin to onboard Microsoft Entra Verified ID in a Microsoft Entra tenant with just one select of a button.
 
 ## March 2024
 
 - Starting February 2024, Verified ID [supports NIST compliant P-256 curve](verifiable-credentials-standards.md#supported-algorithms).
-- [Wallet Library 1.0.1](using-wallet-library.md#prerequisites) supports P-256.
+- [Wallet Library 1.0.1](decentralized-identifier-overview.md) supports P-256.
 
 ## February 2024
 
-- New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to identity of callers seeking help using Microsoft Entra Verified ID.
+- New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to verify the identity of callers seeking help using Microsoft Entra Verified ID.
 - Override of [expirationDate](issuance-request-api.md#issuance-request-payload) on issuance for idTokenHint attestation flow requires that the contract needs to have the flag [allowOverrideValidityOnIssuance](admin-api.md#contract-type) set to true.
 
 ## January 2024
@@ -78,7 +81,7 @@ Partner Gallery Update: Reorganized content and removed deprecated individual pa
 
 ## December 2023
 
-- [Request Service API](issuance-request-api.md#issuance-request-payload) now supports the issuing application to set the expiry date of the credential during and issuance request when the attestation is using the [idTokenHint flow](how-to-use-quickstart.md).
+- [Request Service API](issuance-request-api.md#issuance-request-payload) now supports the issuing application to set the expiry date of the credential during an issuance request when the attestation is using the [idTokenHint flow](how-to-use-quickstart.md).
 - The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`.
 
 ## November 2023
@@ -93,7 +96,7 @@ Partner Gallery Update: Reorganized content and removed deprecated individual pa
 
 ## September 2023
 
-Verified ID is retiring old Request Service API endpoints that were available before Verified ID was General Available. These APIs shouldn't have been used since GA in August 2022, but if they are used in your app, you need to migrate. The API endpoints being retired are:
+Verified ID is retiring old Request Service API endpoints that were available before the General Availability release. These APIs were deprecated at GA in August 2022. If your app still uses them, migrate to the current endpoints. The retiring API endpoints are:
 
 ```http
 POST https://verifiedid.did.msidentity.com/v1.0/:tenant/verifiablecredentials/request
@@ -102,7 +105,7 @@ POST https://verifiedid.did.msidentity.com/v1.0/:tenant/verifiablecredentials/pr
 POST https://verifiedid.did.msidentity.com/v1.0/:tenant/verifiablecredentials/issuance
 ```
 
-The first API was for creating an issuance or presentation request. The second API was for retrieving a request and the last two APIs was for a wallet completing issuance or presentation. The API endpoints are:
+The first API was for creating an issuance or presentation request. The second API was for retrieving a request and the last two APIs were for a wallet completing issuance or presentation. The API endpoints are:
 
 ```http
 POST https://verifiedid.did.msidentity.com/v1.0/verifiablecredentials/createPresentationRequest
@@ -112,17 +115,17 @@ POST https://verifiedid.did.msidentity.com/v1.0/verifiablecredentials/completeIs
 POST https://verifiedid.did.msidentity.com/v1.0/verifiablecredentials/verifyPresentation
 ```
 
-The `/request` API is split into two depending on if you are creating an issuance or presentation request.
+The `/request` API is split into two depending on whether you're creating an issuance or presentation request.
 
 The retired API endpoints don't work since October 2023.
 
 ## August 2023
 
-The `presentation_verified` callback from the Request Service API now returns when a Verified ID credential was issued and when it expires. Business rules can use these values to see the time window of when the presented Verified ID credential is valid. An example of this is that it expires in an hour while the business required in needs to be valid until the end of the day.
+The `presentation_verified` callback from the Request Service API now returns when a Verified ID credential was issued and when it expires. Business rules can use these values to see the time window of when the presented Verified ID credential is valid. An example of this is that it expires in an hour while the business requires it to be valid until the end of the day.
 
 ## June 2023
 
-Tutorial for getting started with the Wallet Library demo on Android and iOS is available in the [Wallet Library quickstart](using-wallet-library.md).
+Tutorial for getting started with the Wallet Library demo on Android and iOS is available in the [Wallet Library quickstart](decentralized-identifier-overview.md).
 
 ## May 2023
 
@@ -130,20 +133,20 @@ Tutorial for getting started with the Wallet Library demo on Android and iOS is 
 
 ## April 2023
 
-Instructions for setting up place of work verification on LinkedIn are available in [LinkedIn employment verification guidance](linkedin-employment-verification.md).
+Instructions for setting up place of work verification on LinkedIn are available in [LinkedIn employment verification guidance](whats-new.md).
 
 ## March 2023
 
-- Admin API now supports [application access tokens](admin-api.md#authentication) and in addition to user bearer tokens.
+- Admin API now supports [application access tokens](admin-api.md#authentication) in addition to user bearer tokens.
 - Introducing the Microsoft Entra Verified ID [Services partner gallery](services-partners.md) listing trusted partners that can help accelerate your Microsoft Entra Verified ID implementation.
-- Improvements to our Administrator onboarding experience in the [Admin portal](verifiable-credentials-configure-tenant.md#register-decentralized-id-and-verify-domain-ownership) based on customer feedback.
-- Updates to our samples in [GitHub](https://github.com/Azure-Samples/active-directory-verifiable-credentials) showcasing how to dynamically display VC claims.
+- Improvements to the administrator onboarding experience in the [Admin portal](verifiable-credentials-configure-tenant.md#register-decentralized-id-and-verify-domain-ownership) based on customer feedback.
+- Updates to the samples in [GitHub](https://github.com/Azure-Samples/active-directory-verifiable-credentials) showcasing how to dynamically display VC claims.
 
 ## February 2023
 
 - *Public preview* - Entitlement Management customers can now create access packages that use Microsoft Entra Verified ID [learn more](~/id-governance/entitlement-management-verified-id-settings.md)
 
-- The Request Service API can now do revocation check for verifiable credentials presented that was issued with [StatusList2021](https://www.w3.org/TR/vc-status-list/) or the [RevocationList2020](https://w3c-ccg.github.io/vc-status-rl-2020/) status list types.
+- The Request Service API can now do revocation check for verifiable presented credentials that were issued with [StatusList2021](https://www.w3.org/TR/vc-status-list/) or the [RevocationList2020](https://w3c-ccg.github.io/vc-status-rl-2020/) status list types.
 
 ## January 2023
 
@@ -161,7 +164,7 @@ Instructions for setting up place of work verification on LinkedIn are available
 
 ## August 2022
 
-Microsoft Entra Verified ID is now generally available (GA) as the new member of the Microsoft Entra portfolio! [read more](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-verified-id-now-generally-available/ba-p/3295506) 
+Microsoft Entra Verified ID is now generally available (GA) as the new member of the Microsoft Entra portfolio! [Learn more](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-verified-id-now-generally-available/ba-p/3295506).
 
 ### Known issues
 
@@ -176,21 +179,21 @@ Microsoft Entra Verified ID is now generally available (GA) as the new member of
 - Find issuers and credentials to verify via the [Microsoft Entra Verified ID Network](how-use-vcnetwork.md).
 - For migrating your Azure Storage based credentials to become Managed Credentials there's a PowerShell script in the [GitHub samples repo](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/contractmigration/scripts/contractmigration) for the task.
 
-- We also made the following updates to our Plan and design docs:
+- The following updates were made to the plan and design docs:
   - (updated) [architecture planning overview](introduction-to-verifiable-credentials-architecture.md).
   - (updated) [Plan your issuance solution](plan-issuance-solution.md).
   - (updated) [Plan your verification solution](plan-verification-solution.md).
 
 ## June 2022
 
-- We're adding support for the [did:web](https://w3c-ccg.github.io/did-method-web/) method. Any new tenant that starts using the Verifiable Credentials Service after June 14, 2022 will have Web as a new, default, trust system when [onboarding](verifiable-credentials-configure-tenant.md#set-up-verified-id). VC Administrators can still choose to use ION when setting a tenant. If you want to use did:web instead of ION or viceversa, you need to [reconfigure your tenant](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service).
-- We're rolling out several features to improve the overall experience of creating verifiable credentials in the Microsoft Entra Verified ID platform:
+- Support for the [did:web](https://w3c-ccg.github.io/did-method-web/) method is now available. Any new tenant that starts using the Verifiable Credentials Service after June 14, 2022 will have Web as a new, default, trust system when [onboarding](verifiable-credentials-configure-tenant.md#set-up-verified-id). VC Administrators can still choose to use ION when setting a tenant. If you want to use did:web instead of ION or viceversa, you need to [reconfigure your tenant](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service).
+- Several new features improve the overall experience of creating verifiable credentials in the Microsoft Entra Verified ID platform:
   - Introducing Managed Credentials, which are verifiable credentials that no longer use Azure Storage to store the [display & rules JSON definitions](rules-and-display-definitions-model.md). Their display and rule definitions are different from earlier versions.
   - Create Managed Credentials using the [new quickstart experience](how-to-use-quickstart.md).
   - Administrators can create a Verified Employee Managed Credential using the [new quick start](how-to-use-quickstart-verifiedemployee.md). The Verified Employee is a verifiable credential of type verifiedEmployee that is based on a predefined set of claims from your tenant's directory.
 
 
-- We made the following updates to our docs:
+- The following updates were made to the docs:
   - (new) [Current supported open standards for Microsoft Entra Verified ID](verifiable-credentials-standards.md).
   - (new) [How to create verifiable credentials for ID token hint](how-to-use-quickstart.md).
   - (new) [How to create verifiable credentials for ID token](how-to-use-quickstart-idtoken.md).
@@ -200,34 +203,34 @@ Microsoft Entra Verified ID is now generally available (GA) as the new member of
 
 ## May 2022
 
-We're expanding our service to all Microsoft Entra ID customers! Verifiable credentials are now available to everyone with a Microsoft Entra ID subscription (Free and Premium). Existing tenants that configured the Verifiable Credentials service prior to May 4, 2022 must make a small change to avoid service disruptions.
+Microsoft Entra Verified ID is expanding to all Microsoft Entra ID customers! Verifiable credentials are now available to everyone with a Microsoft Entra ID subscription (Free and Premium). Existing tenants that configured the Verifiable Credentials service prior to May 4, 2022 must make a small change to avoid service disruptions.
 
 ## April 2022
 
-Starting next month, we're rolling out exciting changes to the subscription requirements for the Verifiable Credentials service. Administrators must perform a small configuration change before **May 4, 2022** to avoid service disruptions.
+Starting next month, exciting changes to the subscription requirements for the Verifiable Credentials service are rolling out. Administrators must perform a small configuration change before **May 4, 2022** to avoid service disruptions.
 
->[!IMPORTANT]
-> If changes aren't applied before **May 4, 2022**, you will experience errors on issuance and presentation for your application or service using the Microsoft Entra Verified ID Service.
+> [!IMPORTANT]
+> If changes aren't applied before **May 4, 2022**, you'll experience errors on issuance and presentation for your application or service using the Microsoft Entra Verified ID Service.
 
 ## March 2022
 
 - Microsoft Entra Verified ID customers can now change the [domain linked](how-to-dnsbind.md) to their DID easily from the Azure portal.
-- We made updates to Microsoft Authenticator that change the interaction between the Issuer of a verifiable credential and the user presenting the verifiable credential. This update forces all Verifiable Credentials to be reissued in Microsoft Authenticator for iOS. [More information](whats-new.md?#microsoft-authenticator-did-generation-update)
+- Updates to Microsoft Authenticator change the interaction between the Issuer of a verifiable credential and the user presenting the verifiable credential. This update forces all Verifiable Credentials to be reissued in Microsoft Authenticator for iOS. [More information](whats-new.md?#microsoft-authenticator-did-generation-update)
 
 ## February 2022
 
-We're rolling out some breaking changes to our service. These updates require Microsoft Entra Verified ID service reconfiguration. End-users need to have their verifiable credentials reissued.
+Breaking changes are rolling out to the service. These updates require Microsoft Entra Verified ID service reconfiguration. End-users need to have their verifiable credentials reissued.
 
 - The Microsoft Entra Verified ID service can now store and handle data processing in the Azure European region.
 - Microsoft Entra Verified ID customers can take advantage of enhancements to credential revocation. These changes add a higher degree of privacy through the implementation of the [W3C Status List 2021](https://w3c-ccg.github.io/vc-status-list-2021/) standard.
-- We made updates to Microsoft Authenticator that change the interaction between the Issuer of a verifiable credential and the user presenting the verifiable credential. This update forces all Verifiable Credentials to be reissued in Microsoft Authenticator for Android. [More information](whats-new.md?#microsoft-authenticator-did-generation-update)
+- Updates to Microsoft Authenticator change the interaction between the Issuer of a verifiable credential and the user presenting the verifiable credential. This update forces all Verifiable Credentials to be reissued in Microsoft Authenticator for Android. [More information](whats-new.md?#microsoft-authenticator-did-generation-update)
 
 
 ### Microsoft Entra Verified ID available in Europe
 
-Since the beginning of the Microsoft Entra Verified ID service public preview, the service has only been available in our Azure North America region. Now, the service is also available in our Azure Europe region.
+Since the beginning of the Microsoft Entra Verified ID service public preview, the service has only been available in the Azure North America region. Now, the service is also available in the Azure Europe region.
 
-- New customers with Microsoft Entra European tenants now have their Verifiable Credentials data located and processed in our Azure Europe region.
+- New customers with Microsoft Entra European tenants now have their Verifiable Credentials data located and processed in the Azure Europe region.
 - Customers with Microsoft Entra ID tenants setup in Europe who start using the Microsoft Entra Verified ID service after February 15, 2022, have their data automatically processed in Europe. There's no need to take any further actions.
 - Customers with Microsoft Entra ID tenants setup in Europe that started using the Microsoft Entra Verified ID service before February 15, 2022, are required to reconfigure the service on their tenants before March 31, 2022.
 
@@ -237,7 +240,7 @@ Take the following steps to configure the Verifiable Credentials service in Euro
 1. [Reconfigure the Verifiable Credentials service](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service) in your tenant.
 
 
-#### Are there any changes to the way that we use the Request API as a result of this move?
+#### Are there any changes to the way the Request API is used as a result of this move?
 
 Applications that use the Microsoft Entra Verified ID service must use the Request API endpoint that corresponds to their Microsoft Entra tenant's region.  
 
@@ -246,22 +249,22 @@ Applications that use the Microsoft Entra Verified ID service must use the Reque
 | Europe | `https://beta.eu.did.msidentity.com/v1.0/{tenantID}/verifiablecredentials/request` |
 | Non-EU | `https://beta.did.msidentity.com/v1.0/{tenantID}/verifiablecredentials/request`  |
 
-To confirm which endpoint you should use, we recommend checking your Microsoft Entra tenant's region as described previously. If the Microsoft Entra tenant is in the EU, you should use the Europe endpoint.  
+To confirm which endpoint to use, check your Microsoft Entra tenant's region as described previously. If the Microsoft Entra tenant is in the EU, you should use the Europe endpoint.  
 
 ### Microsoft Authenticator DID Generation Update
 
-We're making protocol updates in Microsoft Authenticator to support Single Long Form DID, thus deprecating the use of pairwise. With this update, your DID in Microsoft Authenticator is used for every issuer and relaying party exchange. Holders of verifiable credentials using Microsoft Authenticator must get their verifiable credentials reissued as any previous credentials aren't going to continue working.
+Protocol updates in Microsoft Authenticator now support Single Long Form DID, thus deprecating the use of pairwise. With this update, your DID in Microsoft Authenticator is used for every issuer and relaying party exchange. Holders of verifiable credentials using Microsoft Authenticator must get their verifiable credentials reissued as any previous credentials aren't going to continue working.
 
 ## December 2021
 
-- We added [Postman collections](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/Postman) to our samples as a quick start to start using the Request Service REST API.
+- [Postman collections](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/Postman) were added to the samples as a quick start to start using the Request Service REST API.
 - New sample added that demonstrates the integration of [Microsoft Entra Verified ID with Microsoft Entra B2C](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/B2C).
 - Sample for setting up the Microsoft Entra Verified ID services using [PowerShell and an ARM template](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/ARM).
 - Sample Verifiable Credential configuration files to show sample cards for [ID Token](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/CredentialFiles/IDToken), [IDTokenHit](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/CredentialFiles/IDTokenHint) and [Self-attested](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/CredentialFiles/IDTokenHint) claims.
 
 ## November 2021
 
-- We made updates to the Request Service REST API for [issuance](issuance-request-api.md?#callback-type) and [presentation](presentation-request-api.md?#callback-type). Callback types enforcing rules so that URL endpoints for callbacks are reachable.
+- Updates to the Request Service REST API for [issuance](issuance-request-api.md?#callback-type) and [presentation](presentation-request-api.md?#callback-type). Callback types enforcing rules so that URL endpoints for callbacks are reachable.
 - UX updates to the Microsoft Authenticator verifiable credentials experience: Animations on card selection from the wallet.
 
 ## October 2021

@@ -128,7 +128,7 @@ The connector server communicates with Microsoft's Security Service Edge Solutio
 1. Follow the installation wizard to install the connector service on the connector server. When prompted, enter tenant credentials to complete installation.
 1. The connector server is installed when it appears in **Connectors**.
 
-In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
+In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](~/global-secure-access/concept-connector-groups.md).
 
 ### Create security group for remote access with quick access
 
@@ -295,7 +295,7 @@ The connector server communicates with Microsoft's Security Service Edge solutio
 1. Follow the installation wizard to install the connector service on the connector server. When prompted, enter tenant credentials to complete installation.
 1. The connector server is installed when it appears in **Connectors**.
 
-In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
+In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](~/global-secure-access/concept-connector-groups.md).
 
 ### Create Private Access application security group
 

@@ -4,8 +4,6 @@ description: Learn how to integrate Darwinbox HR with Microsoft Entra ID to auto
 author: jenniferf-skc
 manager: pmwongera
 ms.reviewer: cmmdesai
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 06/19/2025
 ms.author: jfields

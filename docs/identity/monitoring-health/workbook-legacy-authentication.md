@@ -91,4 +91,4 @@ This workbook supports multiple filters:
 ## Related content
 
 - [How to use the identity workbooks](howto-use-workbooks.md)
-- [Authentication methods overview](../authentication/concept-authentication-methods.md)
+- [Authentication methods overview](../authentication/overview-authentication.md)

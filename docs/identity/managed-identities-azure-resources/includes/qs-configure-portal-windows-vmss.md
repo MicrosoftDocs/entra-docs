@@ -79,4 +79,4 @@ Navigate to the desired virtual machine scale set and click **Identity**, **User
 
 ## Next steps
 
-- Using the Azure portal, give an Azure virtual machine scale set managed identity [access to another Azure resource](~/identity/managed-identities-azure-resources/howto-assign-access-portal.md).
+- Using the Azure portal, give an Azure virtual machine scale set managed identity [access to another Azure resource](~/identity/managed-identities-azure-resources/grant-managed-identity-resource-access-azure-portal.md).

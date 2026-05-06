@@ -74,4 +74,4 @@ You can also register passkeys in Microsoft Authenticator on your mobile device.
 
 ## Related content
 
-- [Choosing authentication methods for your organization](concept-authentication-methods.md)
+- [Choosing authentication methods for your organization](overview-authentication.md)

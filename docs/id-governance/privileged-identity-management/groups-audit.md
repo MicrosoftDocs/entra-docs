@@ -1,17 +1,17 @@
 ---
 title: Audit activity history for group assignments in Privileged Identity Management
 description: View activity and audit activity history for group assignments in Privileged Identity Management (PIM).
-author: barclayn
 ms.topic: how-to
-ms.subservice: privileged-identity-management
-ms.date: 12/16/2024
-ms.author: barclayn
+ms.date: 04/23/2026
 ms.reviewer: shaunliu
 ms.custom: sfi-image-nochange
+#Customer Intent: As an administrator, I want to view audit logs and activity history for PIM group assignments to monitor access changes and maintain compliance.
 ---
 # Audit activity history for group assignments in Privileged Identity Management
 
-When working with your organization's groups in Privileged Identity Management (PIM), you can view activity, activations, and audit history for Microsoft Entra group membership or ownership changes. 
+## Overview
+
+When working with your organization's groups in Privileged Identity Management (PIM), you can view activity, activations, and audit history for Microsoft Entra group membership or ownership changes.
 
 > [!NOTE]
 > If your organization has outsourced management functions to a service provider who uses [Azure Lighthouse](/azure/lighthouse/overview), role assignments authorized by that service provider won't be shown here.

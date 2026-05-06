@@ -31,7 +31,7 @@ The minimum SKU supported for custom attributes is the Enterprise SKU. If you us
 
 ## How custom attributes work 
 
-After you create a managed domain, click **Custom Attributes (Preview)** under **Settings** to enable attribute synchronization. Click **Save** to confirm the change. 
+After you create a managed domain, click **Custom Attributes** under **Settings** to enable attribute synchronization. Click **Save** to confirm the change. 
 
 :::image type="content" border="true" source="./media/concepts-custom-attributes/enable.png" alt-text="Screenshot of how to enable custom attributes.":::
 

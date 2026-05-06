@@ -10,7 +10,7 @@ ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 11/17/2025
+ms.date: 03/10/2026
 ms.custom:
 #Customer intent: As a dev, devops, I want to learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS/macOS app by using native authentication.
 ---
@@ -178,6 +178,49 @@ To sign in a user, you need to:
     }
 
     ```
+
+## Access a refresh token
+
+In scenarios such as companion device support (for example, Apple Watch), your app might need a trusted component to refresh access tokens independently.
+
+By default, MSAL manages refresh tokens internally and doesn’t return them to application code. When your scenario requires it, you can **explicitly request** a refresh token after sign‑in.
+
+> [!Important]
+>
+> Refresh tokens are long‑lived credentials. Only request a refresh token when your app requires it, and store and transmit it securely.
+
+### Request a refresh token (opt‑in)
+
+MSAL disables refresh token return by default. To request a refresh token, set `returnRefreshToken` to `true` when you acquire tokens.
+
+```swift
+let parameters = MSALNativeAuthGetAccessTokenParameters()
+parameters.returnRefreshToken = true
+
+result.getAccessToken(parameters: parameters, delegate: self)
+```
+
+If you don’t set `returnRefreshToken` to `true`, MSAL doesn’t return a refresh token.
+
+### Read the refresh token
+
+After token acquisition completes, read the refresh token from the token result.
+
+```swift
+func onAccessTokenRetrieveCompleted(result: MSALNativeAuthTokenResult) {
+    let accessToken = result.accessToken
+    let refreshToken = result.refreshToken
+}
+```
+
+### Security guidance
+
+When you enable refresh token access, follow these guidelines:
+
+- Store refresh tokens in encrypted, platform‑protected storage.
+- Avoid logging or exporting refresh tokens.
+- Minimize refresh token copies across devices.
+- Remove refresh tokens from all devices when the user signs out.
 
 ### Handle sign-in errors
 

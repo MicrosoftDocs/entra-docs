@@ -2,12 +2,15 @@
 title: PowerShell samples for Microsoft Entra application proxy
 description: Use these PowerShell samples for Microsoft Entra application proxy to get information about application proxy apps and connectors in your directory, assign users and groups to apps, and get certificate information.
 ms.topic: sample
-ms.date: 05/01/2025
-ms.reviewer: ashishj
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Microsoft Entra application proxy PowerShell examples
+
+
+## Overview
 
 The following table includes links to PowerShell script examples for Microsoft Entra application proxy. These samples require the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer, unless otherwise noted.
 
@@ -18,7 +21,7 @@ For more information about the cmdlets used in these samples, see [application p
 |---|---|
 |**Application proxy apps**||
 | [List basic information for all application proxy apps](scripts/powershell-get-all-app-proxy-apps-basic.md) | Lists basic information (AppId, DisplayName, ObjId) about all the application proxy apps in your directory. |
-| [List extended information for all application proxy apps](scripts/powershell-get-all-app-proxy-apps-extended.md) | Lists extended information  (AppId, DisplayName, ExternalUrl, InternalUrl, ExternalAuthenticationType) about all the application proxy apps in your directory.  |
+| [List extended information for all application proxy apps](scripts/powershell-get-all-app-proxy-apps-extended.md) | Lists extended information (AppId, DisplayName, ExternalUrl, InternalUrl, ExternalAuthenticationType) about all the application proxy apps in your directory.  |
 | [List all application proxy apps by connector group](scripts/powershell-get-all-app-proxy-apps-by-connector-group.md) | Lists information about all the application proxy apps in your directory and which connector groups the apps are assigned to. |
 | [Get all application proxy apps with a token lifetime policy](scripts/powershell-get-all-app-proxy-apps-with-policy.md) | Lists all application proxy apps in your directory with a token lifetime policy and its details.|
 |**Connector groups**||
