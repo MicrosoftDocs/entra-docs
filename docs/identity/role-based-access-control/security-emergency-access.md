@@ -45,7 +45,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
     - [Register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md)
     - [Configure certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
 
-1. [Require phishing-resistant multifactor authentication](../conditional-access/policy-admin-phish-resistant-mfa.md) for all of your emergency accounts.
+1. Verify that emergency access accounts are excluded from any Conditional Access policy that blocks or restricts sign-in. The phishing-resistant authentication method registered in the previous step protects the account; an enforced Conditional Access policy could prevent sign-in during the exact emergency the account is designed for. Report-only policies don't block access and don't require an exclusion. For details, see [Conditional Access considerations](#conditional-access-considerations).
 
 1. [Store account credentials safely](#store-account-credentials-safely).
 
@@ -83,7 +83,7 @@ Exclude emergency access accounts from Conditional Access policies that block or
 
 When planning your Conditional Access deployment, consider the following:
 
-- Create a dedicated security group for your emergency access accounts (for example, **EmergencyAccess**) and exclude this group from all Conditional Access policies.
+- Create a dedicated security group for your emergency access accounts (for example, **EmergencyAccess**) and exclude this group from Conditional Access policies that block or restrict sign-in.
 - Regularly test (for example, every quarter) that emergency access accounts can sign in successfully with your current Conditional Access configuration.
 - Create contingency Conditional Access policies that can be enabled during an outage to restore access for critical users. For more information, see [Create a resilient access control management strategy](~/identity/authentication/concept-resilient-controls.md).
 
@@ -100,7 +100,7 @@ The following checklist summarizes the security requirements for emergency acces
 - In Privileged Identity Management, assign the Global Administrator role as permanent active (not eligible) for emergency accounts.
 - Require the use of a designated secure workstation or [Privileged Access Workstation](/security/privileged-access-workstations/privileged-access-deployment) when using emergency access accounts.
 - Store credentials in separate, secure, fireproof locations accessible to authorized individuals.
-- Exclude emergency access accounts from all Conditional Access policies.
+- Exclude emergency access accounts from Conditional Access policies that block or restrict sign-in. Report-only policies don't require an exclusion.
 - Monitor all sign-in and audit log activity for emergency access accounts with alerts to detect unnecessary or unauthorized use.
 - Validate account functionality at least every 90 days.
 
@@ -267,4 +267,4 @@ These steps should be performed at regular intervals and for key changes:
 - [Plan a Privileged Identity Management deployment](~/id-governance/privileged-identity-management/pim-deployment-plan.md)
 - [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md)
 - [HIPAA access controls](~/standards/hipaa-access-controls.md)
-- [Microsoft Entra and DORA act](/compliance/dora/dora-entra)
+- [Microsoft Entra customer considerations under DORA](/compliance/dora/dora-entra)
