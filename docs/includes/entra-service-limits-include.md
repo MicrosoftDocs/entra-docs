@@ -2,11 +2,11 @@
 title: Include file
 description: Include file
 
-author: barclayn
+author: kenwith
 ms.service: entra-id
 ms.topic: include
 ms.date: 03/26/2026
-ms.author: barclayn
+ms.author: kenwith
 ms.custom: include file
 ---
 Here are the usage constraints and other service limits for the Microsoft Entra service.
