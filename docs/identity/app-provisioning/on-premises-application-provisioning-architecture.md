@@ -180,31 +180,6 @@ You can also check whether all the required ports are open.
   - Microsoft Entra Connect Agent Updater
   - Microsoft Entra Connect Provisioning Agent Package
 
-## Provisioning agent history
-This article lists the versions and features of Microsoft Entra Connect Provisioning Agent that have been released. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. Ensure that you don't use the same agent for on-premises provisioning and cloud sync / HR-driven provisioning.
-
-Microsoft provides direct support for the latest agent version and one version before.
-
-### Download link
-On-premises app provisioning has been rolled into the provisioning agent and is available from the portal. See [installing the provisioning agent](~/identity/hybrid/cloud-sync/how-to-install.md).
-
-### 1.1.892.0 
-
-May 20, 2022 - released for download
-
-#### Fixed issues
-
-- We added support for exporting changes to integer attributes, which benefits customers using the generic LDAP connector.
-
-### 1.1.846.0
-
-April 11, 2022 - released for download
-
-#### Fixed issues
-
-- We added support for ObjectGUID as an anchor for the generic LDAP connector when provisioning users into AD LDS. 
-
-
 ## Agent updates
 
 Microsoft regularly releases new versions of the provisioning agent with features, fixes, and updates. For the current version history and release notes, see [Microsoft Entra Connect Provisioning Agent: Version release history](provisioning-agent-release-version-history.md).
