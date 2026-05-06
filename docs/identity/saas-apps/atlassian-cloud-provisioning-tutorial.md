@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Attribute Mapping** in the left panel and select users.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Atlassian Cloud in the **Attribute Mapping** section.
    **The email attribute is used to match Atlassian Cloud accounts with your Microsoft Entra accounts.**
