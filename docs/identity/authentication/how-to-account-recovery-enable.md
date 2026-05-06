@@ -25,7 +25,7 @@ This article walks through the complete process of enabling and configuring acco
 - The [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) role in the Microsoft Entra tenant
 - The Contributor or Billing Administrator role for your Azure subscription (required for identity verification provider subscription)
 
-## Open account recovery
+## Open Account Recovery
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator).
 
@@ -35,7 +35,7 @@ This article walks through the complete process of enabling and configuring acco
 
 3. After setup is complete, the **Account Recovery** overview page shows the status of each setup task and provides information about the feature.
 
-   [![Screenshot that shows the Account Recovery overview page with the getting started checklist and feature information.](media/how-to-account-recovery-enable/account-recovery-overview.png)](media/how-to-account-recovery-enable/account-recovery-overview.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/account-recovery-overview.png" alt-text="Screenshot that shows the Account Recovery overview page with the getting started checklist and feature information." lightbox="media/how-to-account-recovery-enable/account-recovery-overview.png":::
 
 The overview page guides you through the required setup tasks:
 
@@ -48,7 +48,7 @@ The overview page guides you through the required setup tasks:
 > [!TIP]
 > Select **Estimate savings** on the overview page to open the cost savings estimator. This tool helps you project potential savings by comparing the cost of traditional help desk recovery against self-service account recovery.
 >
-> [![Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings.](media/how-to-account-recovery-enable/cost-savings-estimator.png)](media/how-to-account-recovery-enable/cost-savings-estimator.png#lightbox)
+> :::image type="content" source="media/how-to-account-recovery-enable/cost-savings-estimator.png" alt-text="Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings." lightbox="media/how-to-account-recovery-enable/cost-savings-estimator.png":::
 
 ## Subscribe to an identity verification provider
 
@@ -58,7 +58,7 @@ Before you create an identity verification profile, subscribe to at least one id
 
 1. In the **Identity verification providers** panel, browse the available providers. You can filter by compliance standard.
 
-   [![Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options.](media/how-to-account-recovery-enable/select-idv-provider.png)](media/how-to-account-recovery-enable/select-idv-provider.png#lightbox)
+   :::image type="content" source="media/how-to-account-recovery-enable/select-idv-provider.png" alt-text="Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options." lightbox="media/how-to-account-recovery-enable/select-idv-provider.png":::
 
 1. For a provider you haven't subscribed to, select **Get Solution** to open the provider's listing in the Microsoft Security Store.
 
