@@ -204,6 +204,8 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 
 ### Enable synced passkeys
 
+If you haven't opted in to passkey profiles yet and you have attestation enforcement off, synced passkeys are already enabled. Otherwise, you can follow these steps to enable synced passkeys:
+
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Make sure passkey profiles are enabled.
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
