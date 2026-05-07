@@ -29,7 +29,7 @@ This article describes each of these steps and outlines important planning consi
 |**[Step 2: Choose an authentication approach](#step-2-choose-an-authentication-approach)**   | &#8226; [Choose an authentication approach](concept-choose-authentication-approach.md)  |
 |**[Step 3: Register your application](#step-3-register-your-application)**   | &#8226; [Register your application](/entra/identity-platform/quickstart-register-app)  |
 |**[Step 4: Integrate a sign-in flow with your app](#step-4-integrate-a-sign-in-flow-with-your-app)**     | &#8226; [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) </br>&#8226; [Add your app to the user flow](how-to-user-flow-add-application.md)   |
-|**[Step 5: Customize and secure your sign-in](#step-5-customize-and-secure-your-sign-in)**     |  &#8226; [Customize branding](concept-branding-customers.md) </br>&#8226; [Add identity providers](concept-authentication-methods-customers.md)  </br>&#8226; [Collect attributes during sign-up](how-to-define-custom-attributes.md)</br>&#8226; [Add attributes to the token](how-to-add-attributes-to-token.md) </br>&#8226; [Add multifactor authentication (MFA)](concept-security-customers.md)    |
+|**[Step 5: Customize and secure your sign-in](#step-5-customize-and-secure-your-sign-in)**     |  &#8226; [Customize branding](concept-branding-customers.md) </br>&#8226; [Add identity providers](concept-authentication-methods-customers.md)  </br>&#8226; [Collect attributes during sign-up](how-to-define-custom-attributes.md)</br>&#8226; [Add attributes to the token](how-to-add-attributes-to-token.md) </br>&#8226; [Add multifactor authentication (MFA)](concept-security-customers.md)</br>&#8226; [Integrate third-party bot protection (native authentication)](tutorial-third-party-bot-protection-native-api-sign-up.md)</br>&#8226; [Integrate third-party account takeover protection (native authentication)](tutorial-third-party-account-take-over-protection-native-api.md)    |
 
 ## Step 1: Create an external tenant
 
@@ -142,6 +142,8 @@ When planning for configuring company branding, language customizations, and cus
 
 - **Security and governance**. For details, see [Security and governance](concept-security-customers.md) features available in your external tenant.
 
+- **Third-party fraud protection for native authentication**. If your app uses [native authentication](/entra/identity-platform/concept-native-authentication), you can secure sign-up and sign-in flows by integrating third-party bot protection and account takeover (ATO) protection through a web application firewall (WAF) in front of the native authentication endpoints. For details, see [Integrate third-party bot protection with native authentication](tutorial-third-party-bot-protection-native-api-sign-up.md) and [Integrate third-party account takeover protection with native authentication](tutorial-third-party-account-take-over-protection-native-api.md).
+
 ### How to customize and secure your sign-in
 
 - [Customize branding](concept-branding-customers.md) 
@@ -150,6 +152,8 @@ When planning for configuring company branding, language customizations, and cus
 - [Add attributes to the token](how-to-add-attributes-to-token.md)
 - [Add multifactor authentication](concept-security-customers.md)
 - [Use a custom URL domain](concept-custom-url-domain.md)
+- [Integrate third-party bot protection with native authentication](tutorial-third-party-bot-protection-native-api-sign-up.md)
+- [Integrate third-party account takeover protection with native authentication](tutorial-third-party-account-take-over-protection-native-api.md)
 
 ## Next steps
 - [Start a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl) or [create your external tenant](how-to-create-external-tenant-portal.md).
