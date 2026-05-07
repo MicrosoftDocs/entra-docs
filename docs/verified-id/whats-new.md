@@ -20,7 +20,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 - **Non-FIPS compliant signing keys (P-256K) retirement**: Non-FIPS compliant signing keys (P-256K) will be retired on July 1, 2026. If you haven't already, [upgrade your signing keys](signing-key-upgrade.md) to become FIPS compliant.
 
-- **Face Check device security FAQ**: Added [frequently asked questions](using-facecheck.md#what-are-the-device-security-requirements-for-face-check) about device security requirements for Face Check on Android and iOS devices.
+- **Face Check device security FAQ**: Added [frequently asked questions](using-facecheck.md#what-device-security-requirements-are-needed-to-support-verified-id-face-check) about device security requirements for Face Check on Android and iOS devices.
 
 - **Microsoft Entra ID account recovery**: Microsoft Entra ID account recovery with Verified ID is now generally available. For more information, see [plan your verification solution](plan-verification-solution.md).
 
