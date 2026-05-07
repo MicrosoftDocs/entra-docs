@@ -108,6 +108,7 @@ This section lists the custom authentication extensions events available in Micr
 | [Attribute collection start](#attribute-collection-start)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 | [Attribute collection submit](#attribute-collection-submit)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 | [One time passcode send](#one-time-passcode-send)||:::image type="icon" source="./media/common/yes.png" border="false":::|
+| [Account Recovery (additional claim validation)](#account-recovery-additional-claim-validation)  | :::image type="icon" source="./media/common/yes.png" border="false"::: | |
 
 ### Token issuance start
 
@@ -127,8 +128,17 @@ The **OnOtpSend** event is triggered when a one time passcode email is activated
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
 
+### Account Recovery (additional claim validation)
+
+The **OnVerifiedIdClaimValidation** event is triggered during [account recovery](~/identity/authentication/concept-account-recovery-overview.md) when a user presents Verified ID claims to re-establish their identity. The primary reason to use a custom authentication extension for account recovery is to confirm that the person requesting recovery is an actual employee, not just a valid human. When a user presents their Verified ID, Microsoft Entra passes the claims from the credential to your custom authentication extension. Your REST API can then compare those claims against an authoritative data source, such as an HR system or employee records database, and return a pass or fail decision.
+
+When you move an account recovery profile from Eval mode to Production mode, we highly recommend using a custom authentication extension. The built-in first name and last name matching isn't reliable enough for larger user groups and should only be used for a very small set of users.
+
+For more information, see [Create a custom authentication extension for account recovery claim validation](./tutorial-custom-authentication-extension-account-recovery.md). Only one custom authentication extension per tenant is allowed for this event type.
+
 ## Related content
 
 - Learn more about [custom claims providers](custom-claims-provider-overview.md)
 - [Create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application
 - [Configure a custom email provider for one time passcode send events](custom-extension-email-otp-get-started.md)
+- [Create a custom authentication extension for account recovery claim validation](tutorial-custom-authentication-extension-account-recovery.md)
