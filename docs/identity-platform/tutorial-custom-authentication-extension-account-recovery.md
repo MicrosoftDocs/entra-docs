@@ -30,7 +30,7 @@ In addition to creating a custom authentication extension, you need to create a 
 
 During account recovery, a user who has lost all authentication methods must re-establish their identity. The custom authentication extension adds a claim validation step into this flow:
 
-:::image type="content" source="media/custom-extension-account-recovery/account-recovery-flow.png" alt-text="Architecture diagram showing the account recovery flow: user starts recovery, Microsoft Entra ID triggers event listener, custom authentication extension calls REST API endpoint (Logic Apps or Azure Functions), which validates against external system, then response is processed and TAP code is presented.":::
+:::image type="content" source="media/custom-extension-account-recovery/account-recovery-flow.png" lightbox="media/custom-extension-account-recovery/account-recovery-flow.png" alt-text="Architecture diagram showing the account recovery flow: user starts recovery, Microsoft Entra ID triggers event listener, custom authentication extension calls REST API endpoint (Logic Apps or Azure Functions), which validates against external system, then response is processed and TAP code is presented.":::
 
 The `OnVerifiedIdClaimValidation` event is the pre-proofing hook in the recovery pipeline. It lets you plug in custom validation logic — HR lookups, external database checks, or partner trust verification — before Microsoft Entra ID proceeds with recovery.
 
@@ -265,7 +265,7 @@ Now you associate the custom authentication extension with the identity verifica
 
 1. In the **Selected extension** dropdown, select the custom authentication extension you created in Step 2 (`Account Recovery Claims Validation`).
 
-    :::image type="content" source="media/custom-extension-account-recovery/account-recovery-identity-verification-profile.png" alt-text="Screenshot showing the identity verification profile with the custom authentication extension selected.":::
+    :::image type="content" source="media/custom-extension-account-recovery/account-recovery-identity-verification-profile.png" lightbox="media/custom-extension-account-recovery/account-recovery-identity-verification-profile.png" alt-text="Screenshot showing the identity verification profile with the custom authentication extension selected.":::
 
 1. Select **Review and finalize**, then **Save**.
 
