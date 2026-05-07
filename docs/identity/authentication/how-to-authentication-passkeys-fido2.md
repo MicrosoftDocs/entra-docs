@@ -192,7 +192,6 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 
 ### Synced passkey requirements
 
-- To enable synced passkeys, your organization must have [passkey profiles](#enable-passkey-profiles) enabled.
 - An account with at least [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) permissions.
 - The following table outlines the minimum device requirements for using synced passkeys. The columns represent the device platform where the user signs in.
 
