@@ -260,7 +260,7 @@ Verified ID Face Check on Android requires both a supported Android version and 
 
 Devices must run Android API level 26 or higher. This aligns with the minimum requirements of the Azure Face client used by Face Check.
 
-Reference: [Azure AI Vision Face UI – Android requirements](/azure/ai-services/computer-vision/overview-identity)
+For more information, see [Azure AI Vision Face UI – Android requirements](/azure/ai-services/computer-vision/overview-identity).
 
 **Device integrity (Google Play Integrity)**
 
@@ -274,7 +274,7 @@ This indicates that:
 
 Face Check results from devices that don't meet this integrity level are rejected for security reasons, even if the Android OS version is supported.
 
-Reference: [Google Play Integrity API – optional device integrity labels](https://developer.android.com/google/play/integrity)
+For more information, see [Google Play Integrity API – optional device integrity labels](https://developer.android.com/google/play/integrity).
 
 **Authenticator installation**
 
@@ -300,7 +300,7 @@ iOS devices are expected to:
 
 While Apple provides less granular, customer-visible "integrity verdicts" compared to Android, similar device trust checks are enforced internally to protect Face Check flows.
 
-Reference: [Apple DeviceCheck documentation](https://developer.apple.com/documentation/devicecheck)
+For more information, see [Apple DeviceCheck documentation](https://developer.apple.com/documentation/devicecheck).
 
 #### Why these requirements exist
 
