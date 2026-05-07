@@ -2,8 +2,8 @@
 title: Tutorial - Use Face Check with Microsoft Entra Verified ID
 description: Learn how to set up and use Face Check with Microsoft Entra Verified ID for high-assurance facial matching verifications that protect user privacy at enterprise scale.
 ms.topic: tutorial
-ms.date: 04/22/2026
-ms.custom: sfi-image-nochange
+ms.date: 05/07/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1012
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 ---
 
@@ -246,6 +246,72 @@ When the camera is turned on the mobile device, live footage is captured on the 
 Data isn't stored by or kept by any of the services Microsoft Authenticator, Verified ID, or Azure AI. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system, the confidence score is the probability percentage answer for a query to the system. For this scenario, the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
 For more information, see [Data and privacy for Azure AI Services](/legal/cognitive-services/face/data-privacy-security).
 
+### What device security requirements are needed to support Verified ID Face Check?
+
+Verified ID Face Check requires devices that meet platform-specific OS and device integrity requirements. These checks ensure Face Check results are generated on trusted devices and protect against spoofing, tampering, or replay attacks.
+
+Both Android and iOS require secure, unmodified devices running supported OS versions, though enforcement mechanisms differ by platform.
+
+#### Android device requirements
+
+Verified ID Face Check on Android requires both a supported Android version and strong device integrity validation via Google.
+
+**Android version**
+
+Devices must run Android API level 26 or higher. This aligns with the minimum requirements of the Azure Face client used by Face Check.
+
+For more information, see [Azure AI Vision Face UI – Android requirements](/azure/ai-services/computer-vision/overview-identity).
+
+**Device integrity (Google Play Integrity)**
+
+The device must pass Google Play Integrity checks and return a `MEETS_STRONG_INTEGRITY` verdict.
+
+This indicates that:
+
+- The device isn't rooted.
+- The device passes Google-certified system integrity checks.
+- The device is running with acceptable security patch levels.
+
+Face Check results from devices that don't meet this integrity level are rejected for security reasons, even if the Android OS version is supported.
+
+For more information, see [Google Play Integrity API – optional device integrity labels](https://developer.android.com/google/play/integrity).
+
+**Authenticator installation**
+
+Microsoft Authenticator must be installed via the Google Play Store, ensuring:
+
+- The app itself is trusted.
+- Play Integrity enforcement can be applied correctly.
+
+#### iOS device requirements
+
+Verified ID Face Check on iOS relies on Apple's device trust and platform security guarantees.
+
+**iOS version**
+
+Devices must run a supported version of iOS (iOS 11 or later).
+
+**Device trust**
+
+iOS devices are expected to:
+
+- Be unmodified (not jailbroken).
+- Use Apple-provided device security and trust mechanisms.
+
+Apple doesn't provide granular, customer-visible integrity verdicts like Android. However, similar device trust checks are enforced internally to protect Face Check flows.
+
+For more information, see [Apple DeviceCheck documentation](https://developer.apple.com/documentation/devicecheck).
+
+#### Why these requirements exist
+
+Verified ID Face Check is designed for high-assurance identity verification scenarios. Device security requirements help ensure that:
+
+- Camera input can't be tampered with.
+- Biometric signals originate from trusted hardware and OS components.
+- Results can't be replayed or manipulated on compromised devices.
+
+Without these controls, Face Check results could be spoofed or reused, weakening the security guarantees of Verified ID.
+
 ### How much does Face Check cost?
 For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
@@ -303,13 +369,6 @@ The photo should be clear and sharp in quality and no smaller than 200 pixels x 
 For more information on how to improve the photo processing accuracy, see [Face API characteristics and limitations](/legal/cognitive-services/face/characteristics-and-limitations?#best-practices-for-improving-accuracy).
 
 For more information on verifiable credentials sizing limits, see [Verified ID FAQ](verifiable-credentials-faq.md).
-
-### What are the device security requirements for Face Check?
-
-Face Check requires devices to meet minimum security standards to ensure the integrity of the liveness check and protect against tampering:
-
-- **Android**: Face Check requires Android 10 or later with the latest security patches. The device must have Google Play Services installed and a functioning front-facing camera. Rooted devices or devices with unlocked bootloaders aren't supported.
-- **iOS**: Face Check requires iOS 16 or later with the latest security updates. The device must have a functioning front-facing camera. Jailbroken devices aren't supported.
 
 ## Next steps
 
