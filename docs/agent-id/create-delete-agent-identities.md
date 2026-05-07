@@ -263,6 +263,27 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 
 ---
 
+## Register agents in the Agent 365 registry
+
+After you create an agent identity, register it in the [Agent 365 registry](/microsoft-365/admin/manage/agent-registry) so administrators can discover, govern, and manage the agent from the Microsoft 365 admin center.
+
+### Use the Microsoft 365 Agents SDK (Recommended)
+
+The [Microsoft 365 Agents SDK](#) handles agent identity creation and registration in the Agent 365 registry automatically. Agents appear for administrators with no additional steps.
+
+### Call the Agent Registry API directly
+
+If you create agent identities programmatically with the Microsoft Graph API, add a call to the Agent Registry API after creating the agent identity to post the corresponding agent card:
+
+1. Create the agent identity using the Microsoft Graph API (as shown in the previous sections).
+1. Call the Agent Registry API to post the agent card with the metadata administrators need.
+1. Handle retries so that a transient failure on either call leaves your environment in a recoverable state.
+
+For request and response schemas, required permissions, and code samples, see the [Agent Registry API reference](#).
+
+> [!TIP]
+> If you have existing agents that don't appear in the Agent 365 registry, register them using the Agent Registry API. For agents in bulk, use the batch endpoint. For more information, see [Agent Registry convergence with Microsoft Agent 365](agent-registry-convergence.md).
+
 ## Related content
 
 - [Configure inheritable permissions for blueprints](configure-inheritable-permissions-blueprints.md)
