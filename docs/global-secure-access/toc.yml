@@ -111,9 +111,9 @@ items:
     items:
     - name: Understand Explicit Forward Proxy
       href: concept-explicit-forward-proxy.md
-    - name: Explicit Forward Proxy Session Management
+    - name: Explicit Forward Proxy session management
       href: concept-explicit-forward-proxy-session-management.md
-    - name: Proxy Auto-Configuration (PAC) files
+    - name: Proxy automatic configuration (PAC) files
       href: concept-proxy-automatic-configuration-files.md
 - name: How-to guides
   expanded: true
@@ -273,11 +273,11 @@ items:
     items:
       - name: Configure Explicit Forward Proxy
         href: how-to-configure-explicit-forward-proxy.md
-      - name: Configure Conditional Access policy for Explicit Forward Proxy
+      - name: Configure a Conditional Access policy for Explicit Forward Proxy
         href: how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md
-      - name: Configure HTTP Header Session Management
+      - name: Configure HTTP header session management
         href: how-to-configure-explicit-forward-proxy-headers.md
-      - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune Mobile Application Management
+      - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune mobile application management
         href: how-to-configure-explicit-forward-proxy-intune-policy.md
   - name: Logs and monitoring
     expanded: false
