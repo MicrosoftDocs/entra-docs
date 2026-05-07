@@ -45,7 +45,7 @@ Agents automatically receive updates and security patches from Microsoft without
 
 ### Advanced disconnected forest capabilities
 
-Cloud Sync natively supports synchronization from multiple disconnected Active Directory forests. These scenarios are commonly required during mergers, acquisitions, or complex organizational structures. Unlike Connect sync, which requires complicated configurations or multiple instances for disconnected forests, Cloud Sync handles these scenarios through its multi-tenant architecture.
+Cloud Sync natively supports synchronization from multiple disconnected Active Directory forests. These scenarios are commonly required during mergers, acquisitions, or complex organizational structures. Unlike Connect sync, which requires complicated configurations or multiple instances for disconnected forests, Cloud Sync handles these scenarios through its multitenant architecture.
 
 Each disconnected forest can have dedicated agents while maintaining unified management through the cloud service. This capability simplifies complex organizational scenarios and reduces the infrastructure complexity traditionally required for multi-forest synchronization.
 
