@@ -3,7 +3,7 @@ title: View, add, and remove assignments for an access package in entitlement ma
 description: Learn how to view, add, and remove assignments for an access package in entitlement management.
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 06/26/2025
+ms.date: 05/07/2026
 ms.custom: sfi-image-nochange
 #Customer Intent: As an IT admin, I want to view, add, and remove assignments for an access package so that I can manage who has access to bundled resources.
 ---
