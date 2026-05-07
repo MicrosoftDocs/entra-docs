@@ -77,7 +77,7 @@ Users must authenticate with Microsoft Entra ID to use Explicit Forward Proxy. S
 
 During the session lifetime, Explicit Forward Proxy attempts to revalidate the user at regular intervals by using single sign-on. If validation is successful, Explicit Forward Proxy extends the user's cache entry by the lifetime of the new access token.
 
-Explicit Forward Proxy supports *continuous access evaluation*. With continuous access evaluation, the user's Explicit Forward Proxy session terminates with identity change events detected by Microsoft Entra ID and sent as a signal to Explicit Forward Proxy. These events include password reset/change, reset of multifactor authentication methods, session revocation, and user risk change. In that case, explicit navigation to a new web resource triggers the authentication flow in 2 to 5 minutes and requires the user to sign in to Microsoft Entra ID.
+Explicit Forward Proxy supports Continuous Access Evaluation. With Continuous Access Evaluation, the user's Explicit Forward Proxy session terminates with identity change events detected by Microsoft Entra ID and sent as a signal to Explicit Forward Proxy. These events include password reset/change, reset of multifactor authentication methods, session revocation, and user risk change. In that case, explicit navigation to a new web resource triggers the authentication flow in 2 to 5 minutes and requires the user to sign in to Microsoft Entra ID.
 
 ## Limitations
 

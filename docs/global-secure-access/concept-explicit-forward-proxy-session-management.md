@@ -10,7 +10,7 @@ ms.reviewer:
 
 # Explicit Forward Proxy (preview) session management
 
-Explicit Forward Proxy uses Microsoft Entra ID authentication and authorization to validate user access before allowing network traffic. This validation method allows for adaptive policies in Microsoft Entra Conditional Access, modern credentials like passkeys, and continuous access evaluation with session revocation. Classic proxy authorization methods, such as basic, digest, NTLM, or Kerberos, aren't supported.
+Explicit Forward Proxy uses Microsoft Entra ID authentication and authorization to validate user access before allowing network traffic. This validation method allows for adaptive policies in Microsoft Entra Conditional Access, modern credentials like passkeys, and Continuous Access Evaluation with session revocation. Classic proxy authorization methods, such as basic, digest, NTLM, or Kerberos, aren't supported.
 
 > [!IMPORTANT]
 > The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -43,11 +43,9 @@ You can configure your organization's outbound proxy service to inject the `x-ms
 
 After the user session is authenticated and authorized, Explicit Forward Proxy records the source IP of that user connection. Subsequent requests from the same IP address are allowed. If no other session management mechanism can be negotiated besides the source IP, Explicit Forward Proxy falls back to baseline security profile enforcement.
 
-## Continuous access evaluation
+## Continuous Access Evaluation
 
-If the user session is revoked, Explicit Forward Proxy receives a continuous access evaluation signal from Microsoft Entra ID and invalidates sessions associated with that user identity in near real time (2 to 5 minutes). The revocation can be due to disabling of the user account, password reset/change, reset of multifactor authentication methods, or user risk change.
-
-After the invalidation, the user must reauthenticate with Microsoft Entra ID. If the reauthentication is successful, Explicit Forward Proxy connectivity is re-established.
+If the user session is revoked (for example, due to disabling of the user account, password reset/change, reset of multifactor authentication methods, or user risk change), Explicit Forward Proxy receives a Continuous Access Evaluation signal from Microsoft Entra ID and invalidates sessions associated with that user identity in near real time (2 to 5 minutes). After that, the user must reauthenticate with Microsoft Entra ID. If the reauthentication is successful, Explicit Forward Proxy connectivity is re-established.
 
 ## Related content
 
