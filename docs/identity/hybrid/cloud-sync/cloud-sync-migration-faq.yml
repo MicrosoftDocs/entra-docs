@@ -87,4 +87,4 @@ sections:
       - question: |
           What happens to hybrid authentication features like Pass-Through Authentication (PTA)?
         answer: |
-          Once you migrate to Cloud Sync, your hybrid authentication features that enable on-premises credentials to be used for accessing cloud resources continue to be available. Features like [Pass-Through Authentication](../connect/how-to-connect-pta.md) and [Seamless Single Sign-On](../connect/how-to-connect-sso.md) are configured separately from the sync tool and remain functional after migration through the Connect Sync configuration wizard.
+          Once you migrate to Cloud Sync, your hybrid authentication features that enable on-premises credentials to be used for accessing cloud resources continue to be available. Features like [Pass-Through Authentication](../connect/how-to-connect-pta.md) and [seamless single sign-on](../connect/how-to-connect-sso.md) are configured separately from the sync tool and remain functional after migration through the Connect Sync configuration wizard.
