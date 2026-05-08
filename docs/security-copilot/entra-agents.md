@@ -83,7 +83,7 @@ For more information, see [Discover and deploy agents and solutions in Microsoft
 ### Prerequisites
 
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-    - In order to purchase security compute units, you need to have an Azure subscription. [Create your free Azure account](https://azure.microsoft.com/free).
+    - In order to purchase security compute units, you need to have an Azure subscription. [Create your free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Setup process
