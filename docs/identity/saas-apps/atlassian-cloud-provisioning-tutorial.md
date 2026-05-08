@@ -85,15 +85,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Atlassian Cloud link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-4. Set the **+ New configuration**.
+1. Set the **+ New configuration**.
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. In the **Tenant URL** field, input the **Tenant URL** and **Secret Token** retrieved earlier from your Atlassian Cloud's account. Select **Test Connection** to ensure Microsoft Entra ID can connect to Atlassian Cloud. If the connection fails, ensure your Atlassian Cloud account  has the required admin permissions and try again.
+1. In the **Tenant URL** field, enter the **Tenant URL** and **Secret Token** retrieved earlier from your Atlassian Cloud's account. Select **Test Connection** to ensure Microsoft Entra ID can connect to Atlassian Cloud. If the connection fails, ensure your Atlassian Cloud account  has the required admin permissions and try again.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Atlassian Cloud in the **Attribute Mapping** section.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Atlassian Cloud in the **Attribute Mapping** section.
    **The email attribute is used to match Atlassian Cloud accounts with your Microsoft Entra accounts.**
    Select the **Save** button to commit any changes.
 
@@ -119,9 +119,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.givenName|String|
    |emails[type eq "work"].value|String|   
 
- Select **Groups**.
+1. Select **Groups**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Atlassian Cloud in the **Attribute Mapping** section.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Atlassian Cloud in the **Attribute Mapping** section.
     The display name attribute is used to match Atlassian Cloud groups with your Microsoft Entra groups.
     Select the **Save** button to commit any changes.
 

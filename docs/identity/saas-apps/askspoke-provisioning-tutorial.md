@@ -45,21 +45,21 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to your askSpoke admin console.
 
-2. Navigate to **Settings**.
+1. Navigate to **Settings**.
 
-3. Select the **Integrations** tab.
+1. Select the **Integrations** tab.
 
-4. Scroll to the SCIM card. Select **Connect**.
+1. Scroll to the SCIM card. Select **Connect**.
 
    ![Edit](media/askspoke-provisioning-tutorial/connection.png)
 
-5. Select **Enable SCIM**.
+1. Select **Enable SCIM**.
 
-6. Copy and save the **API Token**. This value is entered in the **Secret Token** field in the Provisioning tab of your askSpoke application.
+1. Copy and save the **API Token**. This value is entered in the **Secret Token** field in the Provisioning tab of your askSpoke application.
 
    ![Api](media/askspoke-provisioning-tutorial/scim.png)
 
-7. The Tenant URL is your askSpoke URL followed by **/scim/v2**. For example: `https://example.askspoke.com/scim/v2`. This value is entered in the **Tenant URL** field in the Provisioning tab of your askSpoke application.
+1. The Tenant URL is your askSpoke URL followed by **/scim/v2**. For example: `https://example.askspoke.com/scim/v2`. This value is entered in the **Tenant URL** field in the Provisioning tab of your askSpoke application.
 
 <a name='step-3-add-askspoke-from-the-azure-ad-application-gallery'></a>
 
@@ -88,15 +88,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![The askSpoke link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
    ![Provisioning tab](common/provisioning.png)
 
-4. Set the **+ New configuration**.
+1. Select **+ New configuration**.
 
    ![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. In the **Tenant URL** field, input your askSpoke Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to askSpoke. If the connection fails, ensure your askSpoke account  has the required admin permissions and try again.
+1. In the **Tenant URL** field, input your askSpoke Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to askSpoke. If the connection fails, ensure your askSpoke account  has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to askSpoke in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in askSpoke for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the askSpoke API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to askSpoke in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in askSpoke for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the askSpoke API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    | Attribute                                                             | Type      | Supported For Filtering |
    | --------------------------------------------------------------------- | --------- | ----------------------- |
@@ -129,9 +129,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager    | Reference |                         |
    | urn:ietf:params:scim:schemas:extension:SpokeCustom:2.0:User:startDate | String    |                         |
 
- Select **Groups**.
+1. Select **Groups**.
 
-11.   Review the group attributes that are synchronized from Microsoft Entra ID to askSpoke in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in askSpoke for update operations. Select the **Save** button to commit any changes.
+1.   Review the group attributes that are synchronized from Microsoft Entra ID to askSpoke in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in askSpoke for update operations. Select the **Save** button to commit any changes.
 
       | Attribute   | Type      | Supported For Filtering |
       | ----------- | --------- | ----------------------- |
