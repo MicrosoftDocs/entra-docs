@@ -90,10 +90,6 @@ There are multiple ways to create external users in your External ID tenant afte
 
 An external user can self-register in the External ID tenant by using the sign-up and sign-in user flow. When the user selects the federated Microsoft Entra ID identity provider on the sign-in page and authenticates with their organizational account, a user account is automatically created in the external tenant. For more information, see [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).
 
-### Invite an external user through the admin center
-
-An admin can invite an external user from the Microsoft Entra admin center. The invited user receives an email invitation and can redeem it by selecting the invitation link, which creates the user account in the External ID tenant. For more information, see [Invite users to your external tenant](/entra/external-id/customers/how-to-manage-customer-accounts#invite-a-customer).
-
 ### Create the user with Microsoft Graph API
 
 An admin can use the [Microsoft Graph API](/graph/api/user-post-users?tabs=http#example-3-create-a-customer-account-in-external-tenants) to create a user directly in the External ID tenant. This approach is useful for automated provisioning or migration scenarios.
