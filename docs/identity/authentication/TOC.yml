@@ -75,6 +75,8 @@
       href: concept-account-recovery-overview.md
     - name: Account recovery FAQ
       href: self-service-account-recovery.yml
+    - name: Verified ID identity verification
+      href: concept-authentication-verified-id.md
   - name: Multifactor authentication
     items:
     - name: How MFA works

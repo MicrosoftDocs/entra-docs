@@ -3589,6 +3589,11 @@
       "source_path": "docs/global-secure-access/concept-edr-antivirus-coexistence.md",
       "redirect_url": "/entra/global-secure-access/how-to-edr-antivirus-coexistence",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/saas-apps/openforms-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/forms-workflow-provisioning-tutorial",
+      "redirect_document_id": false
     }
   ]
 }
