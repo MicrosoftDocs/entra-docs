@@ -33,18 +33,18 @@ The following Linux distributions are currently supported for deployments in a s
 
 | Distribution | Version |
 | --- | --- |
-| AlmaLinux | AlmaLinux 8, AlmaLinux 9 |
-| Azure Linux (formerly known as Common Base Linux Mariner)| CBL-Mariner 2.0, Azure Linux 3.0 |
-| Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
-| openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1 to 15.5, openSUSE Leap 15.6+ |
-| Oracle | Oracle Linux 8, Oracle Linux 9 |
-| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+, RHEL 9.0+ |
-| Rocky | Rocky 8, Rocky 9 |
-| SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1 to 15.5, SLES 15.6+ |
-| Ubuntu | Ubuntu 16.04 to Ubuntu 24.04 |
+| AlmaLinux | 8+ |
+| Azure Linux (formerly known as Common Base Linux Mariner)| 2.0, 3.0 |
+| Debian | 9+ |
+| openSUSE | openSUSE Leap 42.3, 15+ |
+| Oracle | 8+ |
+| RedHat Enterprise Linux (RHEL) | 7.4 to 7.9, 8.3+ |
+| Rocky | 8+ |
+| SUSE Linux Enterprise Server (SLES) | 12, 15.1+ |
+| Ubuntu | 16.04+ |
 
 > [!NOTE]
-> SUSE made a breaking change with version 15.6 that is incompatible with the older versions. Since the Microsoft Entra login VM extension always installs the latest package, this will not work on older SUSE versions. You can install the aadsshlogin packages from packages.microsoft.com for older SUSE versions. After adding the repo, one can manually install them with this command: `sudo zypper install aadsshlogin=1.0.027980001`.
+> There was a breaking change on EL-like distribution on version 9.6, as well as on SUSE 15.6 that is incompatible with versions 9.0-9.5 or 15.0-15.6 respectively. Since http://packages.microsoft.com does not provide repositories for each minor version, the VM extension was modified to not install the latests version of aadsshlogin package. Staying on these version can pose a security risk as it does not allow making hotfixes to our packages. Also, you should avoid calling any cpommand that will result to upgrading aadsshlogin package, because it can render the machine unusable.
 
 The following Azure regions are currently supported for this feature:
 
