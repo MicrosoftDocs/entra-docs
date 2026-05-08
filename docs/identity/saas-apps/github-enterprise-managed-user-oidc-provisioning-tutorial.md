@@ -60,6 +60,9 @@ The scenario outlined in this article assumes that you already have the followin
 
 Add GitHub Enterprise Managed User (OIDC) from the Microsoft Entra application gallery to start managing provisioning to GitHub Enterprise Managed User (OIDC). If you have previously setup GitHub Enterprise Managed User (OIDC) for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
+> [!NOTE]
+> If you need another instance of the application then you can consent to  GitHub Enterprise Managed User (OIDC) - ghe.com and please work with GitHub account team to enable this feature for your instance.
+
 ## Step 4: Define who is in scope for provisioning
 
 [!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]

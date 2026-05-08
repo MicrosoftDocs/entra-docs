@@ -184,7 +184,7 @@ Multitenant organization collaboration in Microsoft 365 relies on the provisioni
 - [Synchronize users in multitenant organizations in Microsoft 365](/microsoft-365/enterprise/sync-users-multi-tenant-orgs)
 - [Configure cross-tenant synchronization in the Microsoft Entra admin center](cross-tenant-synchronization-configure.md)
 - Provision external member users using your preexisting bulk provisioning engine
-- [Provision an individual external member user using Microsoft Entra admin center](../../fundamentals/how-to-create-delete-users.yml#users-in-workforce-tenants)
+- [Provision an individual external member user using Microsoft Entra admin center](../../fundamentals/how-to-create-delete-users.md#users-in-workforce-tenants)
 
 For more information about provisioning external member users, see [Options to provision your external member users](./multi-tenant-organization-known-issues.md#options-to-provision-your-external-member-users).
 

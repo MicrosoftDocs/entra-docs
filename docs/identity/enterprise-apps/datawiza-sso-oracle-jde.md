@@ -48,7 +48,7 @@ Learn more: [Datawiza and Microsoft Entra authentication Architecture](./datawiz
 Ensure the following prerequisites are met.
 
 * An Azure subscription. 
-  * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free)
+  * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * A Microsoft Entra tenant linked to the Azure subscription
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID.](~/fundamentals/create-new-tenant.md)
 * Docker and Docker Compose
