@@ -3,7 +3,7 @@ title: Microsoft Entra ID Governance
 description: Microsoft Entra ID Governance enables you to balance your organization's need for security and end user productivity with the right processes and visibility.
 editor: markwahl-msft
 ms.topic: overview
-ms.date: 04/09/2025
+ms.date: 05/08/2026
 ms.reviewer: markwahl-msft
 #Customer Intent: As an IT admin, I want to understand Microsoft Entra ID Governance so that I can balance security and end user productivity with the right processes and visibility.
 ---

@@ -4,7 +4,7 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how Microsoft Entra provides identity-based security controls for AI agents, applications, and services through authentication, governance, and Zero Trust policy enforcement.
 author: omondiatieno
 ms.author: jomondi
-ms.date: 03/04/2026
+ms.date: 05/08/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
