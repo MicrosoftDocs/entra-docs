@@ -228,7 +228,7 @@ At each stage of your deployment from initial pilot groups through organization-
 
 ### Plan testing
 
-To ensure that your deployment works as expected, plan a set of test cases to validate the implementation. To assess the test cases, you need a non-administrator test user with a password. If you need to create a user, see [Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml).
+To ensure that your deployment works as expected, plan a set of test cases to validate the implementation. To assess the test cases, you need a non-administrator test user with a password. If you need to create a user, see [Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.md).
 
 The following table includes useful test scenarios you can use to document your organizations expected results based on your policies.
 <br>

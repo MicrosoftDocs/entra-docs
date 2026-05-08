@@ -117,7 +117,7 @@ The following table lists common administrative tasks you can perform from the M
 
 | Task | Description | Learn more |
 |------|-------------|------------|
-| Create or delete users | Add new members or guests to your organization, or remove existing users. | [Create or delete users](./how-to-create-delete-users.yml) |
+| Create or delete users | Add new members or guests to your organization, or remove existing users. | [Create or delete users](./how-to-create-delete-users.md) |
 | Manage groups | Create and manage groups to organize users for access management and licensing. | [Manage groups and group membership](./how-to-manage-groups.yml) |
 | Assign roles | Delegate administrative responsibilities using built-in or custom roles. | [Overview of role-based access control](~/identity/role-based-access-control/custom-overview.md) |
 | Manage applications | Register and configure applications for single sign-on and API access. | [What is application management?](~/identity/enterprise-apps/what-is-application-management.md) |
@@ -138,7 +138,7 @@ The following table lists common administrative tasks you can perform from the M
 ## Related content
 
 * [What is Microsoft Entra?](./what-is-entra.md)
-* [Create or delete users](./how-to-create-delete-users.yml)
+* [Create or delete users](./how-to-create-delete-users.md)
 * [Manage groups and group membership](./how-to-manage-groups.yml)
 * [Overview of role-based access control](~/identity/role-based-access-control/custom-overview.md)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
