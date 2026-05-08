@@ -192,7 +192,6 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 
 ### Synced passkey requirements
 
-- To enable synced passkeys, your organization must have [passkey profiles](#enable-passkey-profiles) enabled.
 - An account with at least [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) permissions.
 - The following table outlines the minimum device requirements for using synced passkeys. The columns represent the device platform where the user signs in.
 
@@ -203,6 +202,8 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   Other passkey providers (such as 1Password, Bitwarden) | Check for a browser extension | Check for a browser extension | Check for an app. iOS 17+ | Check for an app. Android 14+
 
 ### Enable synced passkeys
+
+If you haven't opted in to passkey profiles yet and you have attestation enforcement off, synced passkeys are already enabled. Otherwise, you can follow these steps to enable synced passkeys:
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Make sure passkey profiles are enabled.

@@ -588,7 +588,7 @@ Details: This tenant was not found by the authentication authority of the curren
 
 **Cause**
 
-This error indicates the **Setup cross-tenant synchronization across Microsoft clouds** checkbox is not checked. 
+This error indicates the **Setup cross-tenant synchronization across Microsoft clouds** checkbox is not checked. 
 
 **Solution**
 
@@ -608,7 +608,7 @@ Details: The identity of the calling application could not be established.
 
 **Cause**
 
-This error indicates the cross-cloud setting for synchronization has not been enabled. 
+This error indicates the cross-cloud setting for synchronization has not been enabled. 
 
 **Solution**
 

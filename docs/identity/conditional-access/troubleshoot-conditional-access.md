@@ -95,7 +95,7 @@ Learn more about error codes in [Microsoft Entra authentication and authorizatio
 
 In some scenarios, users are blocked because cloud apps depend on resources that a Conditional Access policy blocks.
 
-To check the service dependency, review the sign-in log for the application and resource called by the sign-in. In the following screenshot, the application is **Azure Portal**, but the resource is **Azure Resource Manager**. To target this scenario, combine all the applications and resources in the Conditional Access policy.
+To check the service dependency, review the sign-in log for the application and resource called by the sign-in. In the following screenshot, the application is **Azure portal**, but the resource is **Azure Resource Manager**. To target this scenario, combine all the applications and resources in the Conditional Access policy.
 
 :::image type="content" source="media/troubleshoot-conditional-access/service-dependency-example-sign-in.png" alt-text="Screenshot of a sign-in log that shows an application calling a resource. This scenario is also known as a service dependency." lightbox="media/troubleshoot-conditional-access/service-dependency-example-sign-in.png":::
 

@@ -4,7 +4,7 @@ description: Learn about the architecture of Microsoft Entra ID, including servi
 author: kenwith
 
 ms.topic: concept-article
-ms.date: 09/10/2025
+ms.date: 05/07/2026
 ms.author: kenwith
 ms.reviewer: jeffsta
 ms.subservice: architecture
@@ -98,7 +98,7 @@ Application writes using the Microsoft Graph API of Microsoft Entra ID are abstr
 > [!NOTE]
 > Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
 >
-> For [application-only requests](../identity-platform/app-only-access-primer.md), Microsoft Entra ID does not provide session consistency. Session consistency is only supported for [delegated requests](../identity-platform/delegated-access-primer.md) (application+user token flow). 
+> For [application-only requests](../identity-platform/app-only-access-primer.md), Microsoft Entra ID does not provide session consistency. Session consistency is only supported for [delegated requests](../identity-platform/delegated-access-primer.md) (application+user token flow). For guidance on building applications that account for replication delays, see [Designing for eventual consistency for Microsoft Entra](https://devblogs.microsoft.com/identity/designing-for-eventual-consistency-for-microsoft-entra/).
 
 #### Service-level backup
 

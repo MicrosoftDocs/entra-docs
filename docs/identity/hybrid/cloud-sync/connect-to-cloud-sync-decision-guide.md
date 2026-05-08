@@ -45,7 +45,7 @@ Agents automatically receive updates and security patches from Microsoft without
 
 ### Advanced disconnected forest capabilities
 
-Cloud Sync natively supports synchronization from multiple disconnected Active Directory forests. These scenarios are commonly required during mergers, acquisitions, or complex organizational structures. Unlike Connect sync, which requires complicated configurations or multiple instances for disconnected forests, Cloud Sync handles these scenarios through its multi-tenant architecture.
+Cloud Sync natively supports synchronization from multiple disconnected Active Directory forests. These scenarios are commonly required during mergers, acquisitions, or complex organizational structures. Unlike Connect sync, which requires complicated configurations or multiple instances for disconnected forests, Cloud Sync handles these scenarios through its multitenant architecture.
 
 Each disconnected forest can have dedicated agents while maintaining unified management through the cloud service. This capability simplifies complex organizational scenarios and reduces the infrastructure complexity traditionally required for multi-forest synchronization.
 
@@ -69,7 +69,7 @@ The following table provides a detailed comparison of technical capabilities bet
 | **Large Group Support** | 250K members | 50K members | Connect supports larger groups; Cloud Sync limited to 50,000 members |
 | **Password Hash Synchronization** | ✓ | ✓ | Full parity for password synchronization capabilities |
 | **Password Writeback** | ✓ | ✓ | SSPR writeback supported in both platforms |
-| **Pass-Through Authentication Config** | ✓ | ✗ | PTA configuration managed separately from sync in Cloud Sync |
+| **Pass-Through Authentication Config** | ✓ | ✗ | PTA configuration managed separately from sync in Cloud Sync; PTA and Seamless SSO remain functional after migration |
 | **ADFS Integration Setup** | ✓ | ✗ | Federation configuration requires separate tools in Cloud Sync |
 | **Exchange Hybrid Attributes** | ✓ | ✓ | Full support for Exchange hybrid scenarios |
 | **Directory Extensions (1-15)** | ✓ | ✓ | Standard extension attribute synchronization supported |
@@ -102,7 +102,7 @@ Your organization can migrate immediately if you meet all these criteria:
 - **Object Scale**: Fewer than 150,000 objects per Active Directory domain
 - **Group Size**: Groups with fewer than 50,000 members  
 - **Device Management**: Not using Hybrid Azure AD Join, or willing to transition to Cloud Kerberos Trust
-- **Authentication**: Using Password Hash Sync or managing ADFS/PTA configurations separately
+- **Authentication**: Using Password Hash Sync or managing ADFS/PTA configurations separately.
 - **Filtering**: Using OU-based filtering rather than complex attribute-based rules
 - **Forest Configuration**: Single forest or connected forests (no disconnected forest requirements)
 

@@ -73,7 +73,7 @@ You don’t have to worry about maintaining and patching on-premises servers.
 
 Unpatched software still accounts for a large number of attacks. Microsoft Entra application proxy is an Internet-scale service that Microsoft owns, so you always get the latest security patches and upgrades.
 
-To improve the security of applications published by Microsoft Entra application proxy, application proxy blocks web crawler robots from indexing and archiving your applications. Each time a web crawler robot tries to retrieve the robot's settings for a published app, application proxy replies with a robots.txt file that includes `User-agent: * Disallow: /`.
+To improve the security of applications published by Microsoft Entra application proxy, application proxy blocks web crawler robots from indexing and archiving your applications. Each time a web crawler robot tries to retrieve the robot's settings for a published app, application proxy replies with a robots.txt file that includes `User-agent: * Disallow: /`.
 
 #### Microsoft Distributed Denial of Service (DDoS) protection service
 

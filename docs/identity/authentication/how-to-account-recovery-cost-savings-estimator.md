@@ -1,22 +1,27 @@
 ---
-title: How to Estimate Cost Savings for Account Recovery (Preview) in the Microsoft Entra Admin Center
-description: Learn how to estimate cost savings for account recovery (preview) in the Microsoft Entra Admin Center
+title: Estimate Cost Savings for Account Recovery in Microsoft Entra ID
+description: Use the cost savings estimator to compare help desk recovery costs against self-service account recovery in Microsoft Entra ID and project potential savings.
+author: tilarso
+ms.author: tilarso
+ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/07/2025
+ms.date: 04/02/2026
 ms.reviewer: tilarso
-ms.custom: sfi-ga-nochange, sfi-image-nochange
-# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and test Microsoft Entra ID account recovery for end users.
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1012
+
+#customer intent: As an identity administrator, I want to estimate cost savings for account recovery so that I can build a business case for enabling self-service account recovery in my organization.
+
 ---
 
-# How to estimate cost savings for account recovery (preview) in the Microsoft Entra Admin Center
+# Estimate cost savings for account recovery in Microsoft Entra ID
 
 The cost savings estimator helps organizations understand the potential financial and productivity benefits of enabling account recovery in Microsoft Entra ID. This tool compares the cost and time impact of traditional help desk recovery versus self-service recovery, providing an estimate of:
 
 - Monthly cost savings
 - Time gained per month
 
->[!Important]
->Savings shown are estimates based on industry averages and **aren't actual quotes**. Actual savings might vary depending on your subscription, licensing, and internal cost structures.
+> [!IMPORTANT]
+> Savings shown are estimates based on industry averages and **aren't guaranteed amounts**. Actual savings might vary depending on your subscription, licensing, and internal cost structures.
 
 ## How the cost savings estimator works
 
@@ -42,20 +47,20 @@ Productivity time lost (minutes) | Average time a user is unable to work during 
 The tool displays two comparison panels:
 
 - Traditional Help Desk: shows total monthly cost and time lost based on your inputs.
-- Self-Service Account Recovery: shows reduced cost and time lost when using SSAR.
+- Self-Service Account Recovery (SSAR): shows reduced cost and time lost when using self-service recovery.
 
 At the bottom, you’ll see:
 
 - Monthly cost savings: estimated dollar savings.
 - Time gained per month: productivity hours regained.
 
-## How to use the estimator
+## Use the estimator
 
 1. Enter your organization’s user count and recovery percentage.
 1. Adjust cost and time values to reflect your environment.
-1. Compare totals for help desk vs. self-service recovery.
+1. Compare totals for help desk compared to self-service recovery.
 1. Use the savings estimate to: 
-   - Build a business case for SSAR adoption.
+   - Build a business case for self-service account recovery adoption.
    - Communicate ROI to stakeholders.
    - Plan operational improvements.
 

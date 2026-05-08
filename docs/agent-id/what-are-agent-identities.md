@@ -6,7 +6,6 @@ author: omondiatieno
 ms.author: jomondi
 ms.topic: concept-article
 ms.date: 11/06/2025
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent identities are and how they provide first-class identity constructs that differ from traditional identities, so that I can build customer trust and drive adoption through secure identity solutions for AI agents in my organization.
 ---
@@ -14,8 +13,6 @@ ms.reviewer: dastrock
 # What are agent identities
 
 Agent identities are identity accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. As organizations increasingly deploy autonomous AI systems, identity models designed for human users and applications prove insufficient. Agent identities address this gap by providing a specialized identity construct built specifically for the unique requirements of AI agents operating at enterprise scale.
-
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
 ## What is an agent
 
@@ -78,7 +75,7 @@ Several Microsoft products already use agent identities for authenticating AI ag
 
 ## How to get started
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ## Related content
 

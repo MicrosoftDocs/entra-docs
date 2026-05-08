@@ -2,8 +2,7 @@
 title: What is Microsoft Entra Agent ID?
 titleSuffix: Microsoft Entra Agent ID
 description: Learn about Microsoft Entra Agent ID, the identity and security framework that enables organizations to build, discover, govern, and protect AI agent identities at enterprise scale.
-ms.date: 03/25/2026
-ms.custom: agent-id-ignite
+ms.date: 04/14/2026
 ms.topic: concept-article
 ms.reviewer: kylemar
 ai-usage: ai-assisted
@@ -15,15 +14,15 @@ ai-usage: ai-assisted
 
 Microsoft Entra Agent ID is an identity and security framework that extends Microsoft Entra capabilities to AI agents. As organizations deploy assistive, autonomous, and user-like agents, they need purpose-built identity constructs to authenticate, authorize, govern, and protect these nonhuman identities. Microsoft Entra Agent ID addresses these needs by providing a unified platform for managing agent identities at enterprise scale.
 
-:::image type="content" source="media/what-is-microsoft-entra-agent-id/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra Agent ID.":::
-
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
+:::image type="content" source="media/what-is-microsoft-entra-agent-id/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra Agent ID." lightbox="media/what-is-microsoft-entra-agent-id/microsoft-entra-agent-identity-capabilities-expanded.png":::
 
 Microsoft Entra Agent ID brings together identity management, access protection, governance, and compliance for AI agents.
 
 ## Agent identity platform
 
-The [Microsoft Entra Agent identity platform](identity-platform/what-is-agent-id-platform.md) enables developers to create and manage [agent identities](identity-platform/what-are-agent-identities.md)—specialized identity constructs built for AI agents. Agent identity blueprints serve as templates for creating individual agent identities with parent-child relationships, enabling consistent security policies across large numbers of agents. The platform supports standard protocols such as OAuth 2.0, MCP, and A2A for authentication and agent-to-agent communication.
+The [Microsoft Entra Agent identity platform](what-is-agent-id-platform.md) enables developers to create and manage [agent identities](what-are-agent-identities.md), which are specialized identity constructs built for AI agents. Agent identity blueprints serve as templates for creating individual agent identities with parent-child relationships, enabling consistent security policies across large numbers of agents. The platform supports standard protocols such as OAuth 2.0, MCP, and A2A for authentication and agent-to-agent communication.
+
+Microsoft Entra Agent ID works with agents built on Microsoft and non-Microsoft platforms. Organizations can [integrate third-party agents](configure-third-party-agents.md) from platforms such as AWS Bedrock and n8n by using the Microsoft Entra Auth SDK (sidecar) or workload identity federation, giving every agent a governed identity regardless of where it was built.
 
 ## Security and governance for agents
 
@@ -35,15 +34,15 @@ For details on how these capabilities work for agents, see:
 - [Conditional Access for agents](/entra/identity/conditional-access/agent-id)
 - [Identity Protection for agents](/entra/id-protection/concept-risky-agents)
 - [Identity governance for agents](/entra/id-governance/agent-id-governance-overview)
-- [Secure Web and AI Gateway for agents](/entra/global-secure-access/concept-secure-web-ai-gateway-agents)
+- [Network controls for agents](/entra/global-secure-access/concept-secure-web-ai-gateway-agents)
 - [Sign-in and audit logs for agents](sign-in-audit-logs-agents.md)
 
 ## How to get started
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ## Related content
 
 - [Microsoft Entra security for AI overview](security-for-ai-overview.md)
-- [What are agent identities?](identity-platform/what-are-agent-identities.md)
-- [What is the Microsoft Entra Agent identity platform?](identity-platform/what-is-agent-id-platform.md)
+- [What are agent identities?](what-are-agent-identities.md)
+- [What is the Microsoft Entra Agent identity platform?](what-is-agent-id-platform.md)

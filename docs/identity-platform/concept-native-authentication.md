@@ -38,36 +38,9 @@ When it comes to implementing authentication for mobile and desktop apps on Exte
 - Microsoft-hosted browser-delegated authentication.
 - Fully custom SDK based native authentication. 
 
-The approach you choose depends on your app’s specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra External ID supports both of them.
+The approach you choose depends on your app's specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra External ID supports both of them.
 
-The following table compares the two authentication methods to help you decide then right option for your app.
-
-|   | Browser-delegated authentication | Native authentication | 
-| ---- | --- |  --- |
-| **User authentication experience** | Users are taken to a system browser or embedded browser for authentication only to be redirected back to the app when the sign-in is complete. This method is recommended if the redirection doesn't negatively affect the end user experience. | Users have a rich, native sign-up and sign-in journey without ever leaving the app. |
-| **Customization experience** |Managed [branding and customization options](/entra/external-id/customers/how-to-customize-branding-customers) are available as an out-of-the-box feature.  | This API-centric approach offers a high level of customization, providing extensive flexibility in design and the ability to create tailored interactions and flows. |
-| **Applicability**  | Suitable for workforce, B2B, and B2C apps, it can be used for native apps, single-page applications, and web apps. | For customer first-party apps, when the same entity operates the authorization server and the app and the user perceives them both as the same entity.|
-| **Go live effort** |  Low. Use it straight out of the box.  |High. The developer builds, owns, and maintains the authentication experience. |
-| **Maintenance effort** | Low. |High. For each feature that Microsoft releases, you need to update the SDK to use it.  |
-| **Security** | Most secure option. |Security responsibility is shared with developers, and best practices need to be followed. It's prone to phishing attacks. |
-| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular) </li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md).  |
-
-
-## Feature availability
-
-The following table shows the availability of features for browser-delegated and native authentication. 
-
-|   | Browser-delegated authentication | Native authentication |
-| ---- | --- |  --- |
-| **Sign up and sign in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Sign up and sign in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Sign in with email and password can use username (alias) and password** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Self-service password reset (SSPR)**  | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
-| **Multifactor authentication with SMS one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
-| **Social identity provider sign-in (Apple, Facebook, Google and  custom OIDC providers with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
-| **Single sign-on (SSO)** | :heavy_check_mark:  | :x:  |
+For a side-by-side comparison of the two approaches, including feature availability, supported languages and frameworks, user experience, customization, and security trade-offs, see [Choose an authentication approach](/entra/external-id/customers/concept-choose-authentication-approach).
 
 ## How to enable native authentication
 
@@ -88,9 +61,21 @@ If your team determines that native authentication is necessary for your applica
 After enabling the native authentication APIs in the admin center, you still need to update your application's configuration code to support native authentication flows for Android or iOS/macOS. To do so, you need to add the challenge type field to your configuration. Challenge types are a list of values that the app uses to notify Microsoft Entra about the authentication method it supports. You can find more information about native authentication challenge types in [Native authentication challenge types](/entra/external-id/customers/concept-native-authentication-challenge-types). 
 If the configuration isn't updated to integrate native authentication components, the native authentication SDKs and APIs aren't usable. 
 
-## Risk of enabling native authentication
+## Security considerations for native authentication
 
-Microsoft Entra's native authentication doesn't support single sign-on (SSO), and the responsibility for ensuring the app's security lies with your development team.
+Native authentication gives your development team full control over the authentication experience. With this control comes the responsibility to follow security best practices in your app's implementation, such as secure token handling and transport security (HTTPS).
+
+
+## Single sign-on (SSO)
+
+Native authentication supports single sign-on (SSO) for embedded web views. This allows users to sign in once through the native app's UI and then access web resources hosted in an embedded web view (for example, `WKWebView` on iOS or `WebView` on Android) without encountering a second login prompt.
+
+The app achieves this by retrieving an access token using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md) and injecting it into the web view's HTTP request via the `Authorization` header. The web resource validates the token and establishes a session, providing a seamless transition from the native experience to web content.
+
+For implementation steps, see [Implement single sign-on from native apps to embedded web views](how-to-native-authentication-webview-sso.md).
+
+> [!NOTE]
+> Cross-app SSO through system browsers isn't supported with native authentication.
 
 ## How to use native authentication
 

@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both askSpoke and Micros
 > -  Keep user attributes synchronized between Microsoft Entra ID and askSpoke
 > -  Provision groups and group memberships in askSpoke
 > -  [Single sign-on](./askspoke-tutorial.md) to askSpoke (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

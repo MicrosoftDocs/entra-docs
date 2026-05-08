@@ -31,7 +31,7 @@ Administrators, via the Microsoft Entra admin center, can configure:
 ## License requirements
 
 [!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
 
 ## Overview page
 

@@ -5,7 +5,6 @@ author: omondiatieno
 ms.author: jomondi
 ms.topic: concept-article
 ms.date: 03/30/2026
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent identities are in Microsoft Entra ID, how they differ from application and human identities, and why my organization needs them so that I can deploy AI agents securely in our Microsoft Entra environment.
 ---
@@ -19,8 +18,6 @@ Agent identities can be used to:
 - Request agent tokens from Microsoft Entra ID. The subject of the access token is the agent identity.
 - Receive incoming access tokens issued by Microsoft Entra ID. The audience of the access token is the agent identity.
 - Request user tokens from Microsoft Entra ID for an authenticated user. The subject of the token is a user, while the actor is the agent identity.
-
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
 ## Anatomy of an agent identity
 
@@ -53,6 +50,9 @@ Unlike human users, AI agents don't use passwords, Short Message Service (SMS), 
 - Client secrets
 
 Agent identities can only be issued tokens in the Microsoft Entra tenant where they're created. They can't access resources or APIs in other tenants.
+
+> [!NOTE]
+> While agent identities are single-tenant, agent identity blueprints can be configured as multitenant. A multitenant blueprint can be published and added to other tenants, where it creates tenant-local agent identities. The agent identities themselves always remain single-tenant.
 
 ## Blueprints: Consistent security for agent identities
 

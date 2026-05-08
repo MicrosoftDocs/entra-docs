@@ -90,7 +90,7 @@ Refer to the following links for licensing details for Microsoft Entra Verified 
 - [Face Check with Microsoft Entra Verified ID pricing](~/verified-id/verified-id-pricing.md)
 - [Microsoft Entra Plans and Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
-Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-authentication-passkeys-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
 ### Step 2: Bootstrap a portable credential
 
@@ -107,15 +107,15 @@ User Persona | Recommended portable credential | Alternative portable credential
 Admins and highly regulated users| FIDO2 security keys | Passkey for Microsoft Authenticator, Certificate-based authentication (Smart Card)|
 Any other user | Synced passkey | FIDO2 security key, Passkeys for Microsoft Authenticator App|
 
-The passkey authentication credential can be scoped to specific user groups using [passkey profiles](how-to-authentication-passkey-profiles.md). A passkey profile should be set up for each persona with the recommended portable credential selected.
+The passkey authentication credential can be scoped to specific user groups using [passkey profiles](how-to-authentication-passkeys-fido2.md). A passkey profile should be set up for each persona with the recommended portable credential selected.
 
 Use the following guidance to enable recommended and alternative portable credentials for the relevant user personas for your organization:
 
 Method | Guidance
 -------|---------
-FIDO2 security keys | <li>FIDO2 security keys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md).<li>Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
-Synced passkey| <li>Synced passkeys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md)</li><li>Users can use synced passkeys managed by Apple Keychain and Google cloud or 3rd party passkey managers</li>|
-Passkey in Microsoft Authenticator | <li>Passkey in Microsoft Authenticator must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md)</li><li>Users sign in to Microsoft Authenticator App directly to bootstrap a passkey in the app.<li>Users can use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device. [Register passkeys in Authenticator on Android or iOS devices](how-to-register-passkey-authenticator.md).
+FIDO2 security keys | <li>FIDO2 security keys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-authentication-passkeys-fido2.md).<li>Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API](how-to-authentication-passkeys-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+Synced passkey| <li>Synced passkeys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-authentication-passkeys-fido2.md)</li><li>Users can use synced passkeys managed by Apple Keychain and Google cloud or 3rd party passkey managers</li>|
+Passkey in Microsoft Authenticator | <li>Passkey in Microsoft Authenticator must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-authentication-passkeys-fido2.md)</li><li>Users sign in to Microsoft Authenticator App directly to bootstrap a passkey in the app.<li>Users can use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device. [Register passkeys in Authenticator on Android or iOS devices](how-to-register-passkey-authenticator.md).
 Smart card/certificate-based authentication (CBA) | <li>Certificate-based authentication is more complicated to configure than passkeys or other methods. Consider only using it if necessary.<li>[How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).<li>Make sure to configure your on-premises PKI and Microsoft Entra ID CBA policies so that users truly complete multifactor authentication to sign in. The configuration generally requires the smart card Policy Object Identifier (OID) and the necessary affinity binding settings. For more advanced CBA configurations, see [Understanding the authentication binding policy](concept-certificate-based-authentication-technical-deep-dive.md#authentication-binding-policy).
 
 

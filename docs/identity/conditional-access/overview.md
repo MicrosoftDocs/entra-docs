@@ -2,7 +2,7 @@
 title: "Microsoft Entra Conditional Access: Zero Trust Policy Engine"
 description: Explore Microsoft Entra Conditional Access, the Zero Trust policy engine that integrates signals to secure access to resources.
 ms.topic: overview
-ms.date: 03/24/2026
+ms.date: 04/27/2026
 ms.reviewer: kvenkit
 ---
 # What is Conditional Access?
@@ -102,7 +102,9 @@ The [Conditional Access Optimization Agent](../../security-copilot/conditional-a
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) can also use Conditional Access features.
 
-Other products and features that interact with Conditional Access policies require appropriate licensing for those products and features, including Microsoft Entra Workload ID, Microsoft Entra ID Protection, and Microsoft Purview.
+Risk-based Conditional Access policies (sign-in risk and user risk) require [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), which is a Microsoft Entra ID P2 feature. For details, see [Microsoft Entra licensing](~/fundamentals/licensing.md).
+
+Other products and features that interact with Conditional Access policies require appropriate licensing for those products and features, including Microsoft Entra Workload ID, Microsoft Entra ID Protection, Microsoft Intune, and Microsoft Purview.
 
 When the licenses required for Conditional Access expire, policies aren't automatically disabled or deleted. This graceful state lets customers migrate away from Conditional Access policies without a sudden change in their security posture. You can view and delete remaining policies, but you can't update them.
 

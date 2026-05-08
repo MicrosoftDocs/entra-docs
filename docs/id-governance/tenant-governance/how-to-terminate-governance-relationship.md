@@ -2,9 +2,6 @@
 title: Terminate a governance relationship (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to terminate a governance relationship between tenants in Microsoft Entra Tenant Governance and understand what resources are removed
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 03/10/2026
 ---
