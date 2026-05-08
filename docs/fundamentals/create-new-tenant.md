@@ -135,7 +135,7 @@ If you're not going to continue to use this tenant, you can delete the tenant us
 
 - To change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
 
-- To add users, see [Add or delete a new user](./how-to-create-delete-users.yml).
+- To add users, see [Add or delete a new user](./how-to-create-delete-users.md).
 
 - To add groups and members, see [Create a basic group and add members](./how-to-manage-groups.yml).
 

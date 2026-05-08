@@ -60,6 +60,6 @@ Follow these steps:
 
 ## Related content
 
-- [Add or delete users](./how-to-create-delete-users.yml)
+- [Add or delete users](./how-to-create-delete-users.md)
 - [Assign roles to users](./how-subscriptions-associated-directory.md)
 - [Add or change profile information](./how-to-manage-user-profile-info.md)

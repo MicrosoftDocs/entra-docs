@@ -25,7 +25,7 @@ See also [Manage user accounts for consumers and business customers](how-to-mana
 
 ## Add an admin account
 
-Use the following steps to create a new user account and to grant admin permissions to the account by adding a Microsoft Entra role. (Only required steps are described here. For a complete description of all properties, see the Microsoft Entra ID article [How to create users](~/fundamentals/how-to-create-delete-users.yml#create-a-new-user).)
+Use the following steps to create a new user account and to grant admin permissions to the account by adding a Microsoft Entra role. (Only required steps are described here. For a complete description of all properties, see the Microsoft Entra ID article [How to create users](~/fundamentals/how-to-create-delete-users.md#create-a-new-user).)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
