@@ -82,6 +82,46 @@ To verify your federation setup, test the user flow:
 1. Select the **Run user flow** button, or copy the **Run user flow endpoint** URL and open it in a new browser window.
 1. On the sign-in page, select the Microsoft Entra ID identity provider and sign in with an account from the federated tenant.
 
+## Create users in the external tenant
+
+There are multiple ways to create external users in your External ID tenant after you configure federation:
+
+### Sign up through the user flow
+
+An external user can self-register in the External ID tenant by using the sign-up and sign-in user flow. When the user selects the federated Microsoft Entra ID identity provider on the sign-in page and authenticates with their organizational account, a user account is automatically created in the external tenant. For more information, see [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).
+
+### Create the user with Microsoft Graph API
+
+An admin can use the [Microsoft Graph API](/graph/api/user-post-users?tabs=http#example-3-create-a-customer-account-in-external-tenants) to create a user directly in the External ID tenant. This approach is useful for automated provisioning or migration scenarios.
+
+The following example creates a federated user with an identity linked to the source Microsoft Entra ID tenant:
+
+```http
+POST https://graph.microsoft.com/v1.0/users
+Content-type: application/json
+
+{
+  "accountEnabled": true,
+  "displayName": "Test User",
+  "givenName": "Test",
+  "mail": "testuser@contoso.com",
+  "surname": "Test User",
+  "identities": [
+    {
+      "signInType": "federated",
+      "issuer": "https://login.microsoftonline.com/<entra-tenant-id>/v2.0/<entra-external-tenant-id>",
+      "issuerAssignedId": "<entra-tenant-user-object-id>"
+    }
+  ]
+}
+```
+
+Replace the following values:
+
+- `<entra-tenant-id>`: The directory (tenant) ID of the source Microsoft Entra ID tenant.
+- `<entra-external-tenant-id>`: The directory (tenant) ID of the External ID tenant.
+- `<entra-tenant-user-object-id>`: The object ID of the user in the source Microsoft Entra ID tenant.
+
 ## Frequently asked questions
 
 **I get an error: "No email address was obtained from the external OIDC identity provider." How do I fix it?**
