@@ -263,45 +263,6 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 
 ---
 
-## Register agents in the Agent 365 registry
-
-After you create an agent identity, register it in the [Agent 365 registry](/microsoft-365/admin/manage/agent-registry) so administrators can discover, govern, and manage the agent from the Microsoft 365 admin center. This section also provides instructions to add existing agents that might not currently appear in the Agent 365 registry.
-
-### Use the Microsoft 365 Agents SDK (Recommended)
-
-The [Microsoft 365 Agents SDK](/microsoft-365/agents-sdk/) is now generally available and is the recommended way to build and provision agents. The SDK The SDK handles agent identity creation and registration in the Agent 365 registry for you, so your agents will appear automatically with no extra code. If you are starting a new agent project, or have flexibility to migrate existing code, use the SDK. It's the simplest, most durable path and avoids the need to coordinate multiple API calls yourself.
-
-### Use the Agent 365 CLI
-
-The [Agent 365 CLI](/microsoft-agent-365/developer/reference/cli/setup) is another option that handles setup for you, including agent registration. Follow the setup instructions using the [recommended execution order](/microsoft-agent-365/developer/reference/cli/setup#recommended-execution-order). Use the following command:
-
-```http
-a365 setup all
-```
-
-If registration fails, you can rerun just the registration step without having to go through the entire process. Use the following command:
-
-```http
-a365 setup all --agent-registration-only
-```
-
-### Call the Agent Registry API directly
-
-If you must create agent identities programmatically with the Microsoft Graph API, for example because you have existing identity-issuance workflows you can't change immediately, you need to add an explicit call to the Agent Registry API *after* creating the agent identity to post the corresponding agent card. This step registers the agent card in the Agent 365 registry so it appears for administrators.
-
-1. Create the agent identity using the Microsoft Graph API (as shown in the previous sections).
-1. Immediately follow with a call to the Agent Registry API to post the corresponding agent card, including the metadata your administrators need to govern it.
-1. Handle the two-call pattern in a retry-safe way so that a transient failure on either call leaves your environment in a recoverable state.
-
-For request and response schemas, required permissions, and code samples, see the [Agent Registry API reference](/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/overview).
-
-> [!TIP]
-> If you have existing agents that don't appear in the Agent 365 registry, register them using the Agent Registry API. For agents in bulk, use the batch endpoint. For more information, see [Agent Registry convergence with Microsoft Agent 365](agent-registry-convergence.md).
-
-### Existing agents that aren't in the Agent 365 registry
-
-For agents that were previously created using the Microsoft Entra Agent ID Graph API but are not currently visible in the Agent 365 registry, you can register them using the Agent Registry API. This step ensures they appear in the Agent 365 registry.
-
 ## Related content
 
 - [Configure inheritable permissions for blueprints](configure-inheritable-permissions-blueprints.md)
