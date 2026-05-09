@@ -269,17 +269,29 @@ After you create an agent identity, register it in the [Agent 365 registry](/mic
 
 ### Use the Microsoft 365 Agents SDK (Recommended)
 
-The [Microsoft 365 Agents SDK](#) is the recommended way to build and provision agents. The SDK handles agent identity creation and registration in the Agent 365 registry for you, so your agents will appear automatically with no extra code. If you are starting a new agent project, or have flexibility to migrate existing code, use the SDK.
+The [Microsoft 365 Agents SDK](/microsoft-365/agents-sdk/) is now generally available and is the recommended way to build and provision agents. The SDK The SDK handles agent identity creation and registration in the Agent 365 registry for you, so your agents will appear automatically with no extra code. If you are starting a new agent project, or have flexibility to migrate existing code, use the SDK. It's the simplest, most durable path and avoids the need to coordinate multiple API calls yourself.
 
-<!--- Need to confirm the SDK to use. And the high-level steps, not just "Use the SDK" --->
+### Use the Agent 365 CLI
+
+The [Agent 365 CLI](/microsoft-agent-365/developer/reference/cli/setup) is another option that handles setup for you, including agent registration. Follow the setup instructions using the [recommended execution order](/microsoft-agent-365/developer/reference/cli/setup#recommended-execution-order).Use the following command:
+
+```http
+a365 setup all
+```
+
+If registration fails, you can rerun just that step without having to go through the entire process. Use the following command:
+
+```http
+a365 setup all --agent-registration-only
+```
 
 ### Call the Agent Registry API directly
 
-If you create agent identities programmatically with the Microsoft Graph API, you need to add a call to the Agent Registry API *after* creating the agent identity to post the corresponding agent card.
+If you must create agent identities programmatically with the Microsoft Graph API, for example because you have existing identity-issuance workflows you cannot change immediately, you need to add an explicit call to the Agent Registry API *after* creating the agent identity to post the corresponding agent card. This step registers the agent card in the Agent 365 registry so it appears for administrators.
 
 1. Create the agent identity using the Microsoft Graph API (as shown in the previous sections).
-1. Call the Agent Registry API to post the agent card with the metadata administrators need.
-1. Handle retries so that a transient failure on either call leaves your environment in a recoverable state.
+1. Immediately follow with a call to the Agent Registry API to post the corresponding agent card, including the metadata your administrators need to govern it.
+1. Handle the two-call pattern in a retry-safe way so that a transient failure on either call leaves your environment in a recoverable state.
 
 For request and response schemas, required permissions, and code samples, see the [Agent Registry API reference](/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/overview).
 
