@@ -81,30 +81,9 @@ Viewing all agents in the Microsoft 365 admin center doesn't require a specific 
 
 Applying security and governance controls for agents, such as Conditional Access or identity governance policies, requires the appropriate licensing for [Microsoft Entra Agent ID](../fundamentals/licensing.md#microsoft-entra-agent-id).
 
-## Register agents in the Agent 365 registry
+### How do I get agent identities to appear in the Agent 365 registry?
 
-When you create agents with Microsoft Entra Agent ID, register them in the Agent 365 registry so administrators can discover, govern, and manage them from the Microsoft 365 admin center.
-
-### Option 1 (Recommended): Use the Microsoft 365 Agents SDK
-
-The [Microsoft 365 Agents SDK](#) handles agent identity creation and registration in the Agent 365 registry automatically. Agents appear for administrators with no additional steps. If you're starting a new agent project or can migrate existing code, the SDK provides the simplest path.
-
-### Option 2: Call the Agent Registry API directly
-
-If you create agent identities through the [Microsoft Entra Agent ID Graph API](create-delete-agent-identities.md) directly — for example, because you have existing identity-issuance workflows — add a call to the Agent Registry API after creating the agent identity:
-
-1. **Create the agent identity** using the Microsoft Entra Agent ID Graph API as part of your existing workflow.
-1. **Call the Agent Registry API** to post the corresponding agent card. Include the metadata administrators need to govern the agent.
-1. **Handle retries** so that a transient failure on either call leaves your environment in a recoverable state.
-
-For request and response schemas, required permissions, and code samples, see the [Agent Registry API reference](#).
-
-### An agent doesn't appear in the Agent 365 registry
-
-If you previously created an agent through the Microsoft Entra Agent ID Graph API and it isn't visible in the Agent 365 registry:
-
-- **Individual agents:** Call the Agent Registry API to post the agent card. The agent appears immediately after successful registration.
-- **Multiple agents:** Use the Agent Registry API's batch endpoint to register agents programmatically.
+After you create an agent identity, register it in the [Agent 365 registry](/microsoft-365/admin/manage/agent-registry) so administrators can discover, govern, and manage the agent from the Microsoft 365 admin center. In some scenarios, previously created agent identities may not appear in the registry. To ensure that all agent identities are registered, see [Register agents in the Agent 365 registry](create-delete-agent-identities.md#register-agents-in-the-agent-365-registry).
 
 ## How to view the complete agent inventory
 
