@@ -273,13 +273,13 @@ The [Microsoft 365 Agents SDK](/microsoft-365/agents-sdk/) is now generally avai
 
 ### Use the Agent 365 CLI
 
-The [Agent 365 CLI](/microsoft-agent-365/developer/reference/cli/setup) is another option that handles setup for you, including agent registration. Follow the setup instructions using the [recommended execution order](/microsoft-agent-365/developer/reference/cli/setup#recommended-execution-order).Use the following command:
+The [Agent 365 CLI](/microsoft-agent-365/developer/reference/cli/setup) is another option that handles setup for you, including agent registration. Follow the setup instructions using the [recommended execution order](/microsoft-agent-365/developer/reference/cli/setup#recommended-execution-order). Use the following command:
 
 ```http
 a365 setup all
 ```
 
-If registration fails, you can rerun just that step without having to go through the entire process. Use the following command:
+If registration fails, you can rerun just the registration step without having to go through the entire process. Use the following command:
 
 ```http
 a365 setup all --agent-registration-only
@@ -287,7 +287,7 @@ a365 setup all --agent-registration-only
 
 ### Call the Agent Registry API directly
 
-If you must create agent identities programmatically with the Microsoft Graph API, for example because you have existing identity-issuance workflows you cannot change immediately, you need to add an explicit call to the Agent Registry API *after* creating the agent identity to post the corresponding agent card. This step registers the agent card in the Agent 365 registry so it appears for administrators.
+If you must create agent identities programmatically with the Microsoft Graph API, for example because you have existing identity-issuance workflows you can't change immediately, you need to add an explicit call to the Agent Registry API *after* creating the agent identity to post the corresponding agent card. This step registers the agent card in the Agent 365 registry so it appears for administrators.
 
 1. Create the agent identity using the Microsoft Graph API (as shown in the previous sections).
 1. Immediately follow with a call to the Agent Registry API to post the corresponding agent card, including the metadata your administrators need to govern it.
