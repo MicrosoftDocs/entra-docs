@@ -48,7 +48,7 @@ The overview page guides you through the required setup tasks:
 > [!TIP]
 > Select **Estimate savings** on the overview page to open the cost savings estimator. This tool helps you project potential savings by comparing the cost of traditional help desk recovery against self-service account recovery.
 >
-> :::image type="content" source="media/how-to-account-recovery-enable/cost-savings-estimator.png" alt-text="Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings." lightbox="media/how-to-account-recovery-enable/cost-savings-estimator.png":::
+> :::image type="content" border="true" source="media/how-to-account-recovery-enable/cost-savings-estimator.png" alt-text="Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings." lightbox="media/how-to-account-recovery-enable/cost-savings-estimator.png":::
 
 ## Subscribe to an identity verification provider
 
@@ -58,7 +58,7 @@ Before you create an identity verification profile, subscribe to at least one id
 
 1. In the **Identity verification providers** panel, browse the available providers. You can filter by compliance standard.
 
-   :::image type="content" source="media/how-to-account-recovery-enable/select-idv-provider.png" alt-text="Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options." lightbox="media/how-to-account-recovery-enable/select-idv-provider.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/select-idv-provider.png" alt-text="Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options." lightbox="media/how-to-account-recovery-enable/select-idv-provider.png":::
 
 1. For a provider you haven't subscribed to, select **Get Solution** to open the provider's listing in the Microsoft Security Store.
 
