@@ -48,7 +48,7 @@ The overview page guides you through the required setup tasks:
 > [!TIP]
 > Select **Estimate savings** on the overview page to open the cost savings estimator. This tool helps you project potential savings by comparing the cost of traditional help desk recovery against self-service account recovery.
 >
-> :::image type="content" source="media/how-to-account-recovery-enable/cost-savings-estimator.png" alt-text="Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings." lightbox="media/how-to-account-recovery-enable/cost-savings-estimator.png":::
+> :::image type="content" border="true" source="media/how-to-account-recovery-enable/cost-savings-estimator.png" alt-text="Screenshot that shows the cost savings estimator panel with fields for users, recovery rates, and projected savings." lightbox="media/how-to-account-recovery-enable/cost-savings-estimator.png":::
 
 ## Subscribe to an identity verification provider
 
@@ -58,7 +58,7 @@ Before you create an identity verification profile, subscribe to at least one id
 
 1. In the **Identity verification providers** panel, browse the available providers. You can filter by compliance standard.
 
-   :::image type="content" source="media/how-to-account-recovery-enable/select-idv-provider.png" alt-text="Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options." lightbox="media/how-to-account-recovery-enable/select-idv-provider.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/select-idv-provider.png" alt-text="Screenshot that shows the identity verification providers panel with available providers, pricing, compliance badges, and subscription options." lightbox="media/how-to-account-recovery-enable/select-idv-provider.png":::
 
 1. For a provider you haven't subscribed to, select **Get Solution** to open the provider's listing in the Microsoft Security Store.
 
@@ -146,7 +146,7 @@ Identity verification profiles define how account recovery works for a specific 
    - **Exact** — Claims must match exactly.
    - **Relaxed** — Uses cross-field word matching to accommodate variations in how names appear on government-issued documents versus Microsoft Entra ID user profiles. For details on how relaxed matching works, see [How is the Verified ID matched against Microsoft Entra ID account details?](self-service-account-recovery.yml#how-is-the-verified-id-matched-against-microsoft-entra-id-account-details-)
 
-1. (Optional) Under **Additional claim validations**, enable a custom authentication extension to add organization-specific account matching logic during recovery.
+1. (Recommended) Under **Additional claim validations**, enable a custom authentication extension to add organization-specific account matching logic during recovery. For an example of a custom authentication extension that validates Verified ID claims during Microsoft Entra account recovery, see [Create a custom authentication extension for account recovery claim validation](/entra/identity-platform/tutorial-custom-authentication-extension-account-recovery).
 
    This step requires a pre-configured Azure Function, Logic App, or REST endpoint that connects to your organization's data — such as an HRIS system, employee directory, or other authoritative source. During recovery, verified claims from the identity verification provider are passed to your endpoint, which validates them against your organizational data and returns a match decision.
 
@@ -231,4 +231,5 @@ Once a profile is set to Production mode, users in the scoped groups can use acc
 ## Related content
 
 - [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-for-users.md)
+- [Create a custom authentication extension for account recovery claim validation](/entra/identity-platform/tutorial-custom-authentication-extension-account-recovery)
 - [FAQ for account recovery](self-service-account-recovery.yml)
