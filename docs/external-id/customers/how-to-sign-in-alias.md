@@ -226,6 +226,9 @@ Also, if you configure a custom regex for both the sign-up attribute validation 
 
 Like other attributes, you can customize signup by pre-filling username or assigning it after gathering other user information. To prefill the value, use a custom extension with the [onAttributeCollectionStart](../../identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md) event, and configure how it is presented via Page Layout or [via Microsoft Graph](how-to-define-custom-attributes.md#configure-attribute-visibility-and-editability-with-microsoft-graph). If you need to assign, modify, or validate the username after collecting more details, use the [onAttributeCollectionSubmit](../../identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md) event.
 
+> [!NOTE]
+> If the username field is hidden from the user and the username value is assigned programmatically, make sure that the username value is unique or sign-up will be blocked.
+
 ## Test signing in with the alias or username
 
 You can test signing up and signing in with the email address and username you assigned to the user you created using the [Run user flow](how-to-test-user-flows.md) feature. If you sign in with email address, you'll see email address in `preferred_username` claim.  If you sign in with username, you'll see the username in `preferred_username` claim.
