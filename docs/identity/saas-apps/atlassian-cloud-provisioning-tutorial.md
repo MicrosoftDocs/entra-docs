@@ -12,7 +12,7 @@ ms.author: jeedes
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Atlassian Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Atlassian Cloud.
 ---
 
-# Configure Configure Atlassian Cloud for for automatic user provisioning with Microsoft Entra ID
+# Configure Atlassian Cloud for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Atlassian Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Atlassian Cloud](https://www.atlassian.com/cloud) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
