@@ -89,6 +89,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| username | user.userprincipalname |
 
 	> [!Note]
+    > 
  	> Refer to [Add group claims to tokens for SAML applications using SSO configuration](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) to add the `groups` attribute in the **Attributes & Claims** section.
  	>
  	> Guidelines for updating SANnav-specific attributes:
