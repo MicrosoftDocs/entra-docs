@@ -89,13 +89,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| username | user.userprincipalname |
 
 	> [!Note]
-	> Please refer [this](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) link on how to add the groups attribute in the Attributes & Claims section.
- 
-	> Guidelines for updating SANNav specific attributes:
- 
-	> **groups**: To ensure the application receives the user's group information correctly, you need to modify the "Attributes & Claims" settings. You need to change the source attribute from default value "None" to the actual source of truth for your groups. The "Claim name" must be renamed to "groups" using the "Customize the name of the group claim" option.
-
-	> **username**: Refer to the SANnav Management Portal User Guide for the supported username format.
+	 	> Refer to [Add group claims to tokens for SAML applications using SSO configuration](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) to add the `groups` attribute in the **Attributes & Claims** section.
+ 	>
+ 	> Guidelines for updating SANnav-specific attributes:
+ 	> - **groups**: To ensure the application receives the user's group information correctly, modify the **Attributes & Claims** settings. Change the source attribute from the default value of `None` to the actual source of truth for your groups. Rename **Claim name** to `groups` by using the **Customize the name of the group claim** option.
+ 	> - **username**: Refer to the SANnav Management Portal User Guide for the supported username format.
    
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
