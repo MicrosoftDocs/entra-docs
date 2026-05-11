@@ -58,8 +58,8 @@ The following table shows what features associated with identity governance are 
 |[EM - SAP Identity Access Governance (IAG) business roles (Preview)](~/id-governance/entitlement-management-sap-integration.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - API permissions in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-an-api-permission)|||||| :white_check_mark: |
 |**EM - Approval options**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
-|[EM - Multi-stage approvals with alternate approvers if no action is taken](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
-|[EM - Specific approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
+|[EM - Multi-stage approvals with alternate approvers if no action is taken](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[EM - Specific approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Managers as approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - Internal sponsors as approvers (from assignees' connected organizations)](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - External sponsors as approvers (from assignees' connected organizations)](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
