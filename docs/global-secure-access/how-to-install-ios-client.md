@@ -105,7 +105,7 @@ The iOS device (phone or tablet) must meet the following requirements:
 
       |Key |Value |Details |
       |---------|---------|---------|
-      |`EnableGSA` |No value | Global Secure Access isn't enabled and the tile isn't visible. |
+      |`EnableGSA` |No value | Global Secure Access defaults to value 1 behavior. |
       |  |`0` | Global Secure Access isn't enabled and the tile isn't visible.|
       |  |`1` | Global Secure Access tile is visible and defaults to a disabled state. The user can enable or disable the tile by using the toggle.|
       |  |`2` | Global Secure Access tile is visible and defaults to an enabled state. The user can enable or disable the tile by using the toggle from the app. |
