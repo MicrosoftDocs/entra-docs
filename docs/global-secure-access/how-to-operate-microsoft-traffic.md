@@ -314,7 +314,7 @@ $exportStatus = [ordered]@{
 }
 
 # Connect to Microsoft Graph
-Connect-MgGraph -Scopes "NetworkAccess.ReadWrite.All"
+Connect-MgGraph -Scopes "NetworkAccess.Read.All"
 
 # Export Microsoft traffic forwarding profile
 $profiles = Get-MgBetaNetworkAccessForwardingProfile

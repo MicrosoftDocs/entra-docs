@@ -152,7 +152,7 @@ Install-Module Microsoft.Graph.Beta.NetworkAccess -Scope CurrentUser -Force
 Import-Module Microsoft.Graph.Beta.NetworkAccess
 
 # Connect to Microsoft Graph
-Connect-MgGraph -Scopes "NetworkAccess.ReadWrite.All" -UseDeviceCode
+Connect-MgGraph -Scopes "NetworkAccess.Read.All" -UseDeviceCode
 
 # Export remote network configurations
 $response = Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks"

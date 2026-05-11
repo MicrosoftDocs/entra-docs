@@ -250,11 +250,11 @@ Integration and automation are the core operational value of a cloud-delivered Z
 
 Back up your Private Access configuration regularly using Microsoft Graph API. This export enables rollback if a change causes issues.
 
-**Prerequisites:** An app registration with `Directory.ReadWrite.All` and `NetworkAccess.ReadWrite.All` permissions, or a user account with Global Secure Access Administrator role.
+**Prerequisites:** An app registration with `Application.Read.All` and `NetworkAccess.Read.All` permissions (least privilege for export—write scopes aren't needed for backup), or a user account with the Global Secure Access Administrator role.
 
 ```powershell
 # Connect to Microsoft Graph
-Connect-MgGraph -Scopes "Directory.ReadWrite.All","NetworkAccess.ReadWrite.All"
+Connect-MgGraph -Scopes "Application.Read.All","NetworkAccess.Read.All"
 
 # Export connector groups
 $connectorGroups = Get-MgBetaOnPremisePublishingProfileConnectorGroup -OnPremisesPublishingProfileId "applicationProxy"
@@ -339,12 +339,12 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 | --- | --- |
 | **Trigger** | Scheduled: every Sunday at 02:00 UTC |
 | **Frequency** | Weekly |
-| **Required permissions** | Azure Automation account managed identity with `NetworkAccess.ReadWrite.All` (Microsoft Graph) and `Storage Blob Data Contributor` on the target storage account |
+| **Required permissions** | Azure Automation account managed identity with `NetworkAccess.Read.All` and `Application.Read.All` (Microsoft Graph—read-only for backup) and `Storage Blob Data Contributor` on the target storage account |
 
 **Steps:**
 
 1. In Azure Automation, create a new runbook of type **PowerShell** using the [configuration export script](#export-private-access-configuration-via-graph-api). Replace `Out-File` calls with `Set-AzStorageBlobContent` to upload to Azure Blob Storage.
-2. Assign the Automation account managed identity `NetworkAccess.ReadWrite.All` on Microsoft Graph and `Storage Blob Data Contributor` on the backup storage account.
+2. Assign the Automation account managed identity `NetworkAccess.Read.All` and `Application.Read.All` on Microsoft Graph, and `Storage Blob Data Contributor` on the backup storage account.
 3. Create a schedule: weekly, Sunday 02:00 UTC. Link the schedule to the runbook.
 4. Run a test execution and verify JSON files appear in the storage container.
 5. Enable soft delete on the storage container to retain 90 days of backup versions.

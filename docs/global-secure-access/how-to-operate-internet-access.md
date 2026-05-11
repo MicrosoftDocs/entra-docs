@@ -299,7 +299,7 @@ Internet Access operations should rely on integrated monitoring and scheduled au
 
 ```powershell
 # Connect to Microsoft Graph
-Connect-MgGraph -Scopes "NetworkAccess.ReadWrite.All"
+Connect-MgGraph -Scopes "NetworkAccess.Read.All"
 
 # Export web filtering policies
 $filteringPolicies = Get-MgBetaNetworkAccessFilteringPolicy
@@ -526,6 +526,10 @@ Use these steps to create a new TLS inspection policy or modify an existing one.
 1. Sign in with an eligible **Global Secure Access Administrator** role.
 2. Navigate to **Global Secure Access** > **Secure** > **TLS inspection policies** > **Create policy** (or select an existing policy to edit).
 3. Set the **Default action** (*Inspect* or *Bypass*).
+
+   > [!WARNING]
+   > Setting the default action to **Bypass** disables TLS inspection for any traffic that doesn't match an explicit Inspect rule, which materially weakens inspection coverage and reduces the SWG's ability to detect threats inside encrypted traffic. Default to **Inspect** unless you have a documented exception with an owner, expiration date, and review cadence.
+
 4. Add rules to define custom bypass or inspection behavior:
    - Specify destinations by **FQDN** or **Web category** (use `*` to inspect all traffic).
    - Set **rule priority**—lower numbers take precedence.

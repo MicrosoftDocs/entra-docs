@@ -74,6 +74,9 @@ Apply a consistent change management process for all GSA configuration changes, 
 | **Emergency** | Urgent changes to address an active threat or outage | Blocking a malicious URL category, disabling a compromised connector | Execute immediately; document and review after | No (but post-change review required) |
 | **Major** | High-impact changes affecting many users or core architecture | Enabling a new traffic profile, restructuring connector groups, onboarding a major site | Change Advisory Board | Required |
 
+> [!IMPORTANT]
+> **Standard** changes are preapproved at the *category* level, not the *change* level. Each Standard change—especially **allow-list additions and removals**—must still record an explicit owner approval in the ITSM ticket, set an expiration or review date so entries don't become permanent by default, and be captured in the audit log. Without these guardrails, the "preapproved" path becomes an audit gap.
+
 ### Change execution process
 
 For **normal** and **major** changes:
