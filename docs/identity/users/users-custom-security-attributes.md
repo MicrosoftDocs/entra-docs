@@ -1,7 +1,7 @@
 ---
 title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
-ms.date: 04/27/2026
+ms.date: 05/11/2026
 ms.topic: how-to
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ai-usage: ai-assisted
@@ -562,14 +562,14 @@ If there are no custom security attributes assigned to the user or if the callin
 
 ### List all users and any custom security attribute assignments
 
-The following example lists all users and any custom security attribute assignments. You must add `ConsistencyLevel=eventual` in the request or the header. You must also include `$count=true` to ensure the request is routed correctly.
+The following example lists all users and any custom security attribute assignments. Because this example uses only `$select` (no `$filter`, `$search`, `$count`, or `$orderby`), advanced query parameters aren't required. The List examples later in this article that use `$filter` on `customSecurityAttributes` do require `ConsistencyLevel=eventual` and `$count=true`. For more information, see [Advanced query capabilities on directory objects](/graph/aad-advanced-queries).
 
 # [PowerShell](#tab/ms-powershell)
 
 [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser)
 
 ```powershell
-$userAttributes = Get-MgUser -All -CountVariable CountVar -Property "id,displayName,customSecurityAttributes" -ConsistencyLevel eventual
+$userAttributes = Get-MgUser -All -Property "id,displayName,customSecurityAttributes"
 $userAttributes | select Id,DisplayName,CustomSecurityAttributes
 $userAttributes.CustomSecurityAttributes.AdditionalProperties | Format-List
 ```
@@ -602,8 +602,7 @@ Value : {[@odata.type, #microsoft.graph.customSecurityAttributeValue], [ProjectD
 [List users](/graph/api/user-list)
 
 ```http
-GET https://graph.microsoft.com/v1.0/users?$count=true&$select=id,displayName,customSecurityAttributes
-ConsistencyLevel: eventual
+GET https://graph.microsoft.com/v1.0/users?$select=id,displayName,customSecurityAttributes
 ```
 
 If your tenant has more users than fit in a single page, the response includes an `@odata.nextLink` property. Follow that link to retrieve the next page of results. For more information, see [Paging Microsoft Graph data in your app](/graph/paging).
@@ -611,7 +610,6 @@ If your tenant has more users than fit in a single page, the response includes a
 ```http
 {
     "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(id,displayName,customSecurityAttributes)",
-    "@odata.count": 42,
     "value": [
         {
             "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
