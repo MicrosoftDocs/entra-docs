@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	> [!Note]
 	> Please refer [this](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) link on how to add the groups attribute in the Attributes & Claims section.
  
-	> Guidelines for updaing SANNav specific attributes:
+	> Guidelines for updating SANNav specific attributes:
  
 	> **groups**: To ensure the application receives the user's group information correctly, you need to modify the "Attributes & Claims" settings. You need to change the source attribute from default value "None" to the actual source of truth for your groups. The "Claim name" must be renamed to "groups" using the "Customize the name of the group claim" option.
 
