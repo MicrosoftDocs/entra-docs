@@ -54,7 +54,7 @@ The following table shows what features associated with identity governance are 
 |[EM - SharePoint sites in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-a-sharepoint-site-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - SAP Identity Access Governance (IAG) business roles (Preview)](~/id-governance/entitlement-management-sap-integration.md)|||| :white_check_mark: | :white_check_mark: ||
-|[EM - API permissions in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-an-api-permission)  - [part of Microsoft Agent 365](~/id-governance/agent-id-governance-overview.md#license-requirements)|| :white_check_mark: |||||
+|[EM - API permissions in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-an-api-permission)  - [part of Microsoft Agent 365](~/id-governance/agent-id-governance-overview.md#license-requirements)|| :white_check_mark: |||| :white_check_mark: |
 |**EM - Approval options**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
 |[EM - Multi-stage approvals with alternate approvers if no action is taken](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - Specific approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
