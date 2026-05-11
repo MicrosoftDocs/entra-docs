@@ -82,10 +82,6 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	![Screenshot shows user attributes and claims with default values.](common/default-attributes.png "Claims")
 
 1. In addition, Brocade SANnav Management Portal application expects a few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
-   
-**groups**: To ensure the application receives the user's group information correctly, you need to modify the "Attributes & Claims" settings. You need to change the source attribute from default value "None" to the actual source of truth for your groups. The "Claim name" must be renamed to "groups" using the "Customize the name of the group claim" option.
-   
-**username**: Refer to the SANnav Management Portal User Guide for the supported username format.
 
 	| Name |  Source Attribute|
 	| ---------------|  --------- |
@@ -94,6 +90,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	> [!Note]
 	> Please refer [this](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) link on how to add the groups attribute in the Attributes & Claims section.
+ 
+	> Guidelines for updaing SANNav specific attributes:
+ 
+		> **groups**: To ensure the application receives the user's group information correctly, you need to modify the "Attributes & Claims" settings. You need to change the source attribute from default value "None" to the actual source of truth for your groups. The "Claim name" must be renamed to "groups" using the "Customize the name of the group claim" option.
+   
+		> **username**: Refer to the SANnav Management Portal User Guide for the supported username format.
+   
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
