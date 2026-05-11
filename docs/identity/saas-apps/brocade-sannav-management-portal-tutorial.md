@@ -82,7 +82,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	![Screenshot shows user attributes and claims with default values.](common/default-attributes.png "Claims")
 
 1. In addition, Brocade SANnav Management Portal application expects a few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+   
    **groups**: To ensure the application receives the user's group information correctly, you need to modify the Attributes & Claims settings. You need to change the source attribute from default value "None" to the actual source of truth for your groups. The "Claim name" must be renamed to "groups" using the "Customize the name of the group claim" using option.
+   
    **username**: Refer to the SANnav user guide for the supported username format.
 
 	| Name |  Source Attribute|
