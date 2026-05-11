@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| Name |  Source Attribute|
 	| ---------------|  --------- |
 	| groups | user.groups |
-	| username | user.displayname |
+	| username | user.userprincipalname |
 
 	> [!Note]
 	> Please refer [this](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) link on how to add the groups attribute in the Attributes & Claims section.
