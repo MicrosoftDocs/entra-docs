@@ -80,6 +80,10 @@ You can also query risky agents [using the Microsoft Graph API](/graph/use-the-a
    - `riskyAgents`
    - `agentRiskDetections`
 
+## Export risk data
+
+Organizations can export data by configuring [diagnostic settings in Microsoft Entra ID](howto-export-risk-data.md) to send risk data to a Log Analytics workspace, archive it to a storage account, stream it to an event hub, or send it to a SIEM solution.
+
 ## Related content
 
 - [Manage agent identities in your organization](/entra/agent-id/manage-agent-identities-organization) - Overview of agent identity management across the full lifecycle.
