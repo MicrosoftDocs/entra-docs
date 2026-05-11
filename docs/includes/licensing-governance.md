@@ -30,7 +30,7 @@ The following table shows what features associated with identity governance are 
 |**Lifecycle Workflows (LCW)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
 |[Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md)|||| :white_check_mark: | :white_check_mark: ||
 |[LCW + Custom Extensions (Logic Apps)](~/id-governance/lifecycle-workflow-extensibility.md)|||| :white_check_mark: | :white_check_mark: ||
-|[LCW + Agent Sponsorship tasks](~/id-governance/agent-sponsor-tasks.md)||| :white_check_mark: ||| :white_check_mark: |
+|[LCW + Agent Sponsorship tasks](~/id-governance/agent-sponsor-tasks.md)|| :white_check_mark: |||| :white_check_mark: |
 |**Access reviews (AR)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
 |[AR - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/access-reviews-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[AR - PIM For Groups (Preview)](~/id-governance/create-access-review-pim-for-groups.md)|||| :white_check_mark: | :white_check_mark: ||
