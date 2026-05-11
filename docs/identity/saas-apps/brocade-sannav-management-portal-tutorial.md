@@ -93,9 +93,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
  
 	> Guidelines for updaing SANNav specific attributes:
  
-		> **groups**: To ensure the application receives the user's group information correctly, you need to modify the "Attributes & Claims" settings. You need to change the source attribute from default value "None" to the actual source of truth for your groups. The "Claim name" must be renamed to "groups" using the "Customize the name of the group claim" option.
-   
-		> **username**: Refer to the SANnav Management Portal User Guide for the supported username format.
+	> **groups**: To ensure the application receives the user's group information correctly, you need to modify the "Attributes & Claims" settings. You need to change the source attribute from default value "None" to the actual source of truth for your groups. The "Claim name" must be renamed to "groups" using the "Customize the name of the group claim" option.
+
+	> **username**: Refer to the SANnav Management Portal User Guide for the supported username format.
    
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
