@@ -75,8 +75,6 @@ items:
     href: how-to-operate-microsoft-traffic.md
   - name: Operate Remote Networks
     href: how-to-operate-remote-networks.md
-  - name: Security operations for network access
-    href: concept-security-operations-network.md
   - name: Templates
     items:
     - name: Daily health check

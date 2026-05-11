@@ -19,7 +19,7 @@ For capability-specific operations, see the individual guides:
 - [Remote Networks operations](how-to-operate-remote-networks.md)
 - [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md)
 
-For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For security detection, investigation, and incident response procedures, see the [Security operations for network access](concept-security-operations-network.md) guide.
+For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For identity-layer security investigations and incident response, see the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps).
 
 ## Roles and responsibilities
 
@@ -182,7 +182,7 @@ Aim to back every cross-cutting metric with an automated alert when it breaches 
 | RBAC review overdue (< 100% this quarter) | Scheduled runbook (Test-GsaRbacHygiene.ps1) runs weekly and queries Graph API for unreviewed admin role assignments | Alert email listing overdue accounts and their roles | 1. Review each flagged assignment in Microsoft Entra ID under **Roles and administrators**. 2. Confirm that the role is still required and least-privileged, or remove access. 3. Update the RBAC review log with the review date. 4. If your organization uses Identity Governance, you can use Access Reviews or Privileged Identity Management role reviews for the same control. |
 | Alert noise ratio > 20% | Scheduled runbook (Test-GsaAlertNoiseRatio.ps1) runs weekly and queries Sentinel incident classifications | Alert email with noise ratio and top noisy analytics rules | 1. Open Sentinel > Analytics. 2. Tune or add exclusions to the noisiest rules. 3. Reassess after the next reporting period. |
 | Change success rate < 95% | Manual—review your ITSM change records monthly | Your ITSM system (ServiceNow, Jira Service Management, or equivalent) | 1. Identify failed or rolled-back changes. 2. Conduct root cause analysis on each. 3. To prevent recurrence, update change procedures to address gaps. 4. Report findings in the quarterly ops review. |
-| MTTD > 5 min or MTTR > 15 min | Sentinel analytics rule on incident response times (correlate against the detections in the [Security operations for Global Secure Access](concept-security-operations-network.md) guide) | Sentinel Incidents dashboard; alert email if rule fires | 1. Review the slow-response incidents. 2. Check if alert routing or on-call assignment caused the delay. 3. Adjust notification channels or escalation paths. |
+| MTTD > 5 min or MTTR > 15 min | Sentinel analytics rule on incident response times | Sentinel Incidents dashboard; alert email if rule fires | 1. Review the slow-response incidents. 2. Check if alert routing or on-call assignment caused the delay. 3. Adjust notification channels or escalation paths. |
 
 > [!TIP]
 > Deploy the three automation runbooks (Test-GsaBackupCompliance.ps1, Test-GsaRbacHygiene.ps1, Test-GsaAlertNoiseRatio.ps1) to an Azure Automation Account with a system-assigned managed identity. Grant the identity `Log Analytics Reader` on your workspace, `Automation Job Operator` on the Automation Account, and the Microsoft Graph permissions `RoleManagement.Read.Directory` and `Mail.Send`. Schedule each runbook on its recommended cadence (daily for backup compliance, weekly for the others).

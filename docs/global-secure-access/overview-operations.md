@@ -17,7 +17,7 @@ This operations guide suite provides prescriptive, post-deployment procedures fo
 - **Platform operations and monitoring engineers** who manage health checks, automation, and dashboards
 - **Security leadership** reviewing operational metrics and service value
 
-This guide assumes Global Secure Access is already deployed and configured. For deployment and initial setup, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For Global Secure Access-specific network-layer detections and investigations, see [Security operations for network access](concept-security-operations-network.md). For broader identity-layer security investigations and incident response, see the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps).
+This guide assumes Global Secure Access is already deployed and configured. For deployment and initial setup, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For broader identity-layer security investigations and incident response, see the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps).
 
 ## Overview
 
@@ -41,7 +41,6 @@ Each capability guide follows a consistent structure: Alerting and monitoring, M
 | [Internet Access operations](how-to-operate-internet-access.md) | Web filtering policy management, Transport Layer Security (TLS) inspection, URL categorization, threat blocking metrics |
 | [Remote Networks operations](how-to-operate-remote-networks.md) | GRE/IPsec tunnel monitoring, branch site capacity management, customer-premises equipment (CPE) device health, tunnel failover testing |
 | [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md) | Microsoft 365 traffic profile management, compliant network enforcement, M365 endpoint coverage, service performance monitoring |
-| [Security operations for network access](concept-security-operations-network.md) | Network-layer detection queries, Sentinel analytics rules, investigation procedures, and cross-signal correlation across all Global Secure Access capabilities |
 
 ### Templates and checklists
 
@@ -67,6 +66,5 @@ If you completed deployment, follow this sequence:
 
 - [Global Secure Access documentation](/entra/global-secure-access/)
 - [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro)
-- [Security operations for network access](concept-security-operations-network.md)
 - [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)
 - [Microsoft Entra what's new](/entra/fundamentals/whats-new)
