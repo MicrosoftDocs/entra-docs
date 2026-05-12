@@ -19,7 +19,7 @@ For capability-specific operations, see the individual guides:
 - [Remote Networks operations](how-to-operate-remote-networks.md)
 - [Microsoft Traffic operations](how-to-operate-microsoft-traffic.md)
 
-For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For identity-layer security investigations and incident response, see the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps).
+For initial deployment and configuration, see the [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro). For identity-layer security investigations and incident response, see the [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps).
 
 ## Roles and responsibilities
 
@@ -53,8 +53,8 @@ Assign clear ownership for GSA operations. The following RACI matrix defines who
 | --- | --- |
 | **Service Owner / GSA Administrator** | Overall accountability for GSA performance, compliance, and alignment with business requirements. Approves significant changes. Coordinates across identity, endpoint, and networking teams. |
 | **Network Security Engineer** | Day-to-day administration: access policies, routing rules, connector/tunnel management, certificate management. Tests changes before production deployment. Escalation point for complex IT Support/Help desk issues. |
-| **Identity Engineer / Identity Team** | Owns the Microsoft Entra ID tenant as it intersects with GSA. Manages Conditional Access policies that gate GSA traffic profiles and compliant-network enforcement. Administers GSA service principals and enterprise app registrations (CRUD). Troubleshoots authentication, token, and sign-in failures using Entra sign-in logs. Partners with SOC Analyst on identity-related incidents. |
-| **SOC Analyst** | Monitors security alerts. Investigates suspicious events. Fine-tunes analytics rules in Sentinel. Handles or escalates GSA-related security incidents. For detailed SecOps procedures, see the [Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
+| **Identity Engineer / Identity Team** | Owns the Microsoft Entra ID tenant as it intersects with GSA. Manages Conditional Access policies that gate GSA traffic profiles and compliant-network enforcement. Administers GSA service principals and enterprise app registrations (CRUD). Troubleshoots authentication, token, and sign-in failures using Microsoft Entra sign-in logs. Partners with SOC Analyst on identity-related incidents. |
+| **SOC Analyst** | Monitors security alerts. Investigates suspicious events. Fine-tunes analytics rules in Sentinel. Handles or escalates GSA-related security incidents. For detailed SecOps procedures, see the [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
 | **IT Support / Help desk** | Tier-1 support for user access issues (client installation, connectivity problems). Follows runbooks and escalates to Network Security Engineer for complex issues. |
 | **Platform Ops / Monitoring Engineer** | Oversees infrastructure health: dashboards, connector/tunnel uptime, automation scripts, and configuration backup processes. |
 
@@ -104,7 +104,7 @@ GSA configuration lives in two places:
 - **GSA-specific Graph resources**: connector groups, traffic forwarding profiles, remote networks, and filtering policies.
 - **Surrounding Microsoft Entra ID objects** that gate and support GSA: Conditional Access policies, named locations, service principals, and app role assignments.
 
-Use two complementary mechanisms: **Graph API JSON exports** for GSA-specific resources and long-term retention, and the **Microsoft Entra Backup and Recovery APIs** for tenant-wide Entra ID objects and scoped restore.
+Use two complementary mechanisms: **Graph API JSON exports** for GSA-specific resources and long-term retention, and the **Microsoft Entra Backup and Recovery APIs** for tenant-wide Microsoft Entra ID objects and scoped restore.
 
 #### GSA-specific resources — Graph API JSON export
 
@@ -115,7 +115,7 @@ Back up GSA configurations on a weekly automated schedule and before every norma
 - [Remote Networks configuration](how-to-operate-remote-networks.md#export-remote-network-configuration-via-graph-api)
 - [Microsoft Traffic profile configuration](how-to-operate-microsoft-traffic.md#export-microsoft-traffic-profile-configuration-via-graph-api)
 
-#### GSA-related Entra ID objects — Microsoft Entra Backup and Recovery
+#### GSA-related Microsoft Entra ID objects — Microsoft Entra Backup and Recovery
 
 Microsoft Entra ID provides a native [Backup and Recovery service](/graph/api/resources/entrarecoveryservices-backup-recovery-overview?view=graph-rest-beta&preserve-view=true) (beta) that takes an automatic daily snapshot of supported directory objects and allows scoped restore. The snapshots cover objects that directly affect GSA:
 
@@ -181,11 +181,11 @@ Aim to back every cross-cutting metric with an automated alert when it breaches 
 
 | Metric breach | How to detect | Where you see it | What to do next |
 | --- | --- | --- | --- |
-| Backup job failure or missed schedule | Azure Automation watchdog runbook (Test-GsaBackupCompliance.ps1) runs daily and checks for failed or missing backup jobs | Alert email to your ops distribution list; Automation Account job history in the Azure portal | 1. Check the failed job output in the Automation Account. 2. Run the backup manually. 3. Fix the root cause (expired credentials, API throttling, storage quota). 4. Confirm the next scheduled run succeeds. |
-| RBAC review overdue (< 100% this quarter) | Scheduled runbook (Test-GsaRbacHygiene.ps1) runs weekly and queries Graph API for unreviewed admin role assignments | Alert email listing overdue accounts and their roles | 1. Review each flagged assignment in Microsoft Entra ID under **Roles and administrators**. 2. Confirm that the role is still required and least-privileged, or remove access. 3. Update the RBAC review log with the review date. 4. If your organization uses Identity Governance, you can use Access Reviews or Privileged Identity Management role reviews for the same control. |
-| Alert noise ratio > 20% | Scheduled runbook (Test-GsaAlertNoiseRatio.ps1) runs weekly and queries Sentinel incident classifications | Alert email with noise ratio and top noisy analytics rules | 1. Open Sentinel > Analytics. 2. Tune or add exclusions to the noisiest rules. 3. Reassess after the next reporting period. |
-| Change success rate < 95% | Manual—review your ITSM change records monthly | Your ITSM system (ServiceNow, Jira Service Management, or equivalent) | 1. Identify failed or rolled-back changes. 2. Conduct root cause analysis on each. 3. To prevent recurrence, update change procedures to address gaps. 4. Report findings in the quarterly ops review. |
-| MTTD > 5 min or MTTR > 15 min | Sentinel analytics rule on incident response times | Sentinel Incidents dashboard; alert email if rule fires | 1. Review the slow-response incidents. 2. Check if alert routing or on-call assignment caused the delay. 3. Adjust notification channels or escalation paths. |
+| Backup job failure or missed schedule | Azure Automation watchdog runbook (Test-GsaBackupCompliance.ps1) runs daily and checks for failed or missing backup jobs | Alert email to your ops distribution list; Automation Account job history in the Azure portal | 1. Check the failed job output in the Automation Account.<br>2. Run the backup manually.<br>3. Fix the root cause (expired credentials, API throttling, storage quota).<br>4. Confirm the next scheduled run succeeds. |
+| RBAC review overdue (< 100% this quarter) | Scheduled runbook (Test-GsaRbacHygiene.ps1) runs weekly and queries Graph API for unreviewed admin role assignments | Alert email listing overdue accounts and their roles | 1. Review each flagged assignment in Microsoft Entra ID under **Roles and administrators**.<br>2. Confirm that the role is still required and least-privileged, or remove access.<br>3. Update the RBAC review log with the review date.<br>4. If your organization uses Identity Governance, you can use Access Reviews or Privileged Identity Management role reviews for the same control. |
+| Alert noise ratio > 20% | Scheduled runbook (Test-GsaAlertNoiseRatio.ps1) runs weekly and queries Sentinel incident classifications | Alert email with noise ratio and top noisy analytics rules | 1. Open Sentinel > Analytics.<br>2. Tune or add exclusions to the noisiest rules.<br>3. Reassess after the next reporting period. |
+| Change success rate < 95% | Manual—review your ITSM change records monthly | Your ITSM system (ServiceNow, Jira Service Management, or equivalent) | 1. Identify failed or rolled-back changes.<br>2. Conduct root cause analysis on each.<br>3. To prevent recurrence, update change procedures to address gaps.<br>4. Report findings in the quarterly ops review. |
+| MTTD > 5 min or MTTR > 15 min | Sentinel analytics rule on incident response times | Sentinel Incidents dashboard; alert email if rule fires | 1. Review the slow-response incidents.<br>2. Check if alert routing or on-call assignment caused the delay.<br>3. Adjust notification channels or escalation paths. |
 
 > [!TIP]
 > Deploy the three automation runbooks (Test-GsaBackupCompliance.ps1, Test-GsaRbacHygiene.ps1, Test-GsaAlertNoiseRatio.ps1) to an Azure Automation Account with a system-assigned managed identity. Grant the identity `Log Analytics Reader` on your workspace, `Automation Job Operator` on the Automation Account, and the Microsoft Graph permissions `RoleManagement.Read.Directory` and `Mail.Send`. Schedule each runbook on its recommended cadence (daily for backup compliance, weekly for the others).
@@ -205,7 +205,7 @@ The following tools provide operational visibility across all GSA capabilities. 
 
 #### Global Secure Access dashboard
 
-The built-in [Global Secure Access dashboard](/entra/global-secure-access/concept-traffic-dashboard) in the Entra admin center provides a single-pane overview of all traffic flowing through the service. Navigate to **Global Secure Access** > **Dashboard** to view:
+The built-in [Global Secure Access dashboard](/entra/global-secure-access/concept-traffic-dashboard) in the Microsoft Entra admin center provides a single-pane overview of all traffic flowing through the service. Navigate to **Global Secure Access** > **Dashboard** to view:
 
 - Traffic volume and trends across all profiles (Private Access, Internet Access, Microsoft Traffic)
 - Top users and destinations
@@ -253,7 +253,7 @@ Use [Microsoft Security Copilot](/security-copilot/) to speed cross-product inve
 
 Prompt examples:
 
-- *"Summarize the last 24 hours of Global Secure Access incidents by correlating Entra sign-in logs, Global Secure Access traffic logs, and Microsoft Sentinel incidents; group the findings by user, application, and policy, and identify the likely root cause for each cluster."*
+- *"Summarize the last 24 hours of Global Secure Access incidents by correlating Microsoft Entra sign-in logs, Global Secure Access traffic logs, and Microsoft Sentinel incidents; group the findings by user, application, and policy, and identify the likely root cause for each cluster."*
 - *"Compare the last seven days of Global Secure Access alerts to the previous 30-day baseline and highlight the top anomalies across denied sessions, connector health, and Conditional Access failures."*
 - *"Show me Global Secure Access configuration changes in the last 24 hours that coincide with a spike in user access failures or Microsoft Sentinel incidents."*
 
@@ -270,7 +270,7 @@ Automate report generation with custom scripts that query Log Analytics via the 
 | **Trigger** | Azure Automation scheduled runbook (every Monday 06:00 UTC) |
 | **Frequency** | Weekly |
 | **Required permissions** | `Log Analytics Reader` on the GSA Log Analytics workspace; `Mail.Send` Graph API permission for the managed identity or service principal running the runbook |
-| **Steps** | 1. Connect to Azure using the Automation Account managed identity. 2. Query Log Analytics for the past seven days across all GSA capabilities (total alerts by severity from `NetworkAccessAlerts`, total and failed traffic sessions from `NetworkAccessTraffic`, Global Secure Access sign-ins from `SigninLogs` filtered on `IsThroughGlobalSecureAccess`, and remote network tunnel status from `RemoteNetworkHealthLogs`). 3. Format the results into an HTML email body. 4. Send the report via Microsoft Graph `Send-MgUserMail` to the operations distribution list. 5. Log the execution result to the Automation Account job output. |
+| **Steps** | 1. Connect to Azure using the Automation Account managed identity.<br>2. Query Log Analytics for the past seven days across all GSA capabilities (total alerts by severity from `NetworkAccessAlerts`, total and failed traffic sessions from `NetworkAccessTraffic`, Global Secure Access sign-ins from `SigninLogs` filtered on `IsThroughGlobalSecureAccess`, and remote network tunnel status from `RemoteNetworkHealthLogs`).<br>3. Format the results into an HTML email body.<br>4. Send the report via Microsoft Graph `Send-MgUserMail` to the operations distribution list.<br>5. Log the execution result to the Automation Account job output. |
 | **Script** | See the runbook code that follows. |
 
 ```powershell
@@ -357,4 +357,4 @@ Review your GSA capacity and configuration when:
 - [Private Access health check template](reference-private-access-health-check.md)
 - [Global Secure Access documentation](/entra/global-secure-access/)
 - [GSA Deployment Guide](/entra/architecture/gsa-deployment-guide-intro)
-- [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)
+- [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps)

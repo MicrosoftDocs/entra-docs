@@ -49,13 +49,13 @@ Configure the following alerts and document the response action for each. Use [M
 
 | Alert | Condition | Role | Automated by | What to do next |
 | --- | --- | --- | --- | --- |
-| Web filtering policy bypass | Traffic matching a blocked category is allowed due to a policy misconfiguration or override | Identity and access management (IAM) Admin | Sentinel analytics rule *Web filtering anomaly detection* (content hub) | 1. Review the policy rule order in the Entra admin center. 2. Check for user or group exceptions that may be overriding the block. 3. Correct the policy and test from an affected user device. |
-| Traffic forwarding profile disabled | The Internet Access traffic forwarding profile is disabled or removed | Network Ops L2 + Incident Commander | Sentinel scheduled analytics rule on `AuditLogs` for `Update forwarding profile` + [Playbook 8](#playbook-8-internet-access-configuration-change-alert) | **Severity: Critical.** Users' internet traffic is no longer routed through Global Secure Access. 1. Re-enable the profile in **Global Secure Access** > **Connect** > **Traffic forwarding**. 2. Check audit logs to identify who disabled it and whether it was an approved change. |
-| TLS inspection failure spike | TLS inspection failures increase by more than 30% compared to the seven-day baseline | Network Ops L2 | Sentinel analytics rule *TLS inspection failure spike* + Zero Trust (ZT) Assessment *TLS inspection failure rate is below 1%* | 1. Check if a major SaaS provider changed their certificate pinning. 2. Review the TLS inspection bypass list for applications that require exemption. 3. Update the bypass list and monitor for resolution. |
-| Unusual outbound data transfer | A single user or device transfers more than 500-MB outbound in a 1-hour window (adjust to your baseline) | SOC | Sentinel analytics rule *Unusual outbound data transfer* | 1. Identify the user and destination in `NetworkAccessTraffic`. 2. Determine whether the activity is a legitimate bulk upload or potential data exfiltration. 3. If suspicious, escalate to your SOC. See [Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
-| High volume of blocked URL requests | A single user generates more than 100 blocked URL requests in 1 hour | SOC → Endpoint Admin | Sentinel scheduled analytics rule on `NetworkAccessTraffic` (denied count per user) | 1. Review whether the traffic represents malware on the device (automated callbacks) or user behavior. 2. If malware-related, escalate to endpoint management. 3. If user behavior, consider user education or policy adjustment. |
-| Web category reclassification impact | After a Microsoft URL category database update, legitimate business sites are newly blocked | IAM Admin → App Owner | [Playbook 9: Weekly policy-efficacy digest](#playbook-9-weekly-policy-efficacy-digest) (surfaces newly blocked top destinations) | 1. Review the newly blocked URLs in traffic logs. 2. Add legitimate sites to a custom allow list. 3. Open a categorization review request with Microsoft if the classification is incorrect. |
-| Unauthorized configuration change | An Internet Access configuration change is made by an unexpected identity or without a matching change ticket | SOC + IAM Admin | [Playbook 8: Internet Access configuration change alert](#playbook-8-internet-access-configuration-change-alert) | 1. Identify the actor and change details in Entra audit logs. 2. Verify whether the change was approved through your change management process. 3. If unauthorized, revert the change and investigate the identity compromise. See [Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
+| Web filtering policy bypass | Traffic matching a blocked category is allowed due to a policy misconfiguration or override | Identity and access management (IAM) Admin | Sentinel analytics rule *Web filtering anomaly detection* (content hub) | 1. Review the policy rule order in the Microsoft Entra admin center.<br>2. Check for user or group exceptions that may be overriding the block.<br>3. Correct the policy and test from an affected user device. |
+| Traffic forwarding profile disabled | The Internet Access traffic forwarding profile is disabled or removed | Network Ops L2 + Incident Commander | Sentinel scheduled analytics rule on `AuditLogs` for `Update forwarding profile` + [Playbook 8](#playbook-8-internet-access-configuration-change-alert) | **Severity: Critical.** Users' internet traffic is no longer routed through Global Secure Access.<br>1. Re-enable the profile in **Global Secure Access** > **Connect** > **Traffic forwarding**.<br>2. Check audit logs to identify who disabled it and whether it was an approved change. |
+| TLS inspection failure spike | TLS inspection failures increase by more than 30% compared to the seven-day baseline | Network Ops L2 | Sentinel analytics rule *TLS inspection failure spike* + Zero Trust (ZT) Assessment *TLS inspection failure rate is below 1%* | 1. Check if a major SaaS provider changed their certificate pinning.<br>2. Review the TLS inspection bypass list for applications that require exemption.<br>3. Update the bypass list and monitor for resolution. |
+| Unusual outbound data transfer | A single user or device transfers more than 500-MB outbound in a 1-hour window (adjust to your baseline) | SOC | Sentinel analytics rule *Unusual outbound data transfer* | 1. Identify the user and destination in `NetworkAccessTraffic`.<br>2. Determine whether the activity is a legitimate bulk upload or potential data exfiltration.<br>3. If suspicious, escalate to your SOC. See [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
+| High volume of blocked URL requests | A single user generates more than 100 blocked URL requests in 1 hour | SOC → Endpoint Admin | Sentinel scheduled analytics rule on `NetworkAccessTraffic` (denied count per user) | 1. Review whether the traffic represents malware on the device (automated callbacks) or user behavior.<br>2. If malware-related, escalate to endpoint management.<br>3. If user behavior, consider user education or policy adjustment. |
+| Web category reclassification impact | After a Microsoft URL category database update, legitimate business sites are newly blocked | IAM Admin → App Owner | [Playbook 9: Weekly policy-efficacy digest](#playbook-9-weekly-policy-efficacy-digest) (surfaces newly blocked top destinations) | 1. Review the newly blocked URLs in traffic logs.<br>2. Add legitimate sites to a custom allow list.<br>3. Open a categorization review request with Microsoft if the classification is incorrect. |
+| Unauthorized configuration change | An Internet Access configuration change is made by an unexpected identity or without a matching change ticket | SOC + IAM Admin | [Playbook 8: Internet Access configuration change alert](#playbook-8-internet-access-configuration-change-alert) | 1. Identify the actor and change details in Microsoft Entra audit logs.<br>2. Verify whether the change was approved through your change management process.<br>3. If unauthorized, revert the change and investigate the identity compromise. See [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
 
 > [!TIP]
 > Use [Microsoft Security Copilot](/security-copilot/) to analyze patterns in blocked traffic and correlate with threat intelligence feeds.
@@ -127,7 +127,7 @@ NetworkAccessTraffic
 **Prompt injection detections—sessions matched by your prompt-protection policy:**
 
 > [!NOTE]
-> Replace `<your-prompt-policy-name>` with the **PolicyName** of your prompt-protection policy (Entra admin center > **Global Secure Access** > **Secure** > **Prompt policies**). The `NetworkAccessTraffic` schema doesn't expose a dedicated *PromptInjectionDetected* column—detections surface as sessions evaluated by the prompt policy. Use the **Generative AI Insights logs** blade for the verdict per prompt.
+> Replace `<your-prompt-policy-name>` with the **PolicyName** of your prompt-protection policy (Microsoft Entra admin center > **Global Secure Access** > **Secure** > **Prompt policies**). The `NetworkAccessTraffic` schema doesn't expose a dedicated *PromptInjectionDetected* column—detections surface as sessions evaluated by the prompt policy. Use the **Generative AI Insights logs** blade for the verdict per prompt.
 
 ```kusto
 NetworkAccessTraffic
@@ -164,7 +164,7 @@ NetworkAccessTraffic
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
 | --- | --- | --- | --- | --- |
-| Traffic forwarding status | Network Ops L1 | ZT Assessment *Internet Access forwarding profile is enabled* + [Playbook 8](#playbook-8-internet-access-configuration-change-alert) (near real-time on disable) | Alerts fire automatically. Spot-check: Entra admin center > **Global Secure Access** > **Connect** > **Traffic forwarding**. | Re-enable the profile. Check audit logs for a recent change. |
+| Traffic forwarding status | Network Ops L1 | ZT Assessment *Internet Access forwarding profile is enabled* + [Playbook 8](#playbook-8-internet-access-configuration-change-alert) (near real-time on disable) | Alerts fire automatically. Spot-check: Microsoft Entra admin center > **Global Secure Access** > **Connect** > **Traffic forwarding**. | Re-enable the profile. Check audit logs for a recent change. |
 | High-severity alerts | SOC | Sentinel incidents (autoassigned via automation rule) | Review P1/P2 Internet Access incidents from the last 24 hours. | Ensure each alert is assigned. Escalate unassigned alerts older than 4 hours. |
 | Web filtering policy alignment | IAM Admin | [Playbook 9: Weekly policy-efficacy digest](#playbook-9-weekly-policy-efficacy-digest) provides the recurring view; daily spot-check only if the digest flags anomalies | Spot-check the top 10 blocked URLs from the last 24 hours in the Sentinel workbook. Verify they should be blocked. | Adjust policies or add exceptions for legitimate business sites incorrectly categorized. |
 | Configuration-change review | IAM Admin | [Playbook 8: Internet Access configuration change alert](#playbook-8-internet-access-configuration-change-alert) (near real-time) | Rule fires on every Internet Access config change. No daily manual query required. | Verify each flagged change maps to an approved change request. Revert and investigate unauthorized changes. |
@@ -316,7 +316,7 @@ Write-Host "Internet Access configuration export complete."
 
 For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Access](/entra/global-secure-access/how-to-sentinel-integration).
 
-1. **Enable diagnostic settings**: In the Entra admin center, go to **Global Secure Access** > **Settings** > **Diagnostic settings**. Add a setting that sends `NetworkAccessTrafficLogs` and `AuditLogs` to your Log Analytics workspace.
+1. **Enable diagnostic settings**: In the Microsoft Entra admin center, go to **Global Secure Access** > **Settings** > **Diagnostic settings**. Add a setting that sends `NetworkAccessTrafficLogs` and `AuditLogs` to your Log Analytics workspace.
 2. **Install the content pack**: In Microsoft Sentinel, go to **Content hub**, search for **Global Secure Access**, and install the solution. The content pack adds analytics rules, workbooks, and hunting queries.
 3. **Enable Internet Access analytics rules**: Go to **Analytics** > **Rule templates**. Enable the rules specific to Internet Access:
    - **Web filtering anomaly detection**—triggers when blocked-traffic patterns deviate from the 7-day baseline.
@@ -512,10 +512,10 @@ foreach ($fqdn in $Fqdns) {
     }
 }
 
-Write-Output "TLS bypass list update complete. Verify in the Entra admin center."
+Write-Output "TLS bypass list update complete. Verify in the Microsoft Entra admin center."
 ```
 
-4. Verify the changes in the Entra admin center under **Global Secure Access** > **Secure** > **TLS inspection policies**.
+4. Verify the changes in the Microsoft Entra admin center under **Global Secure Access** > **Secure** > **TLS inspection policies**.
 5. Test from a client device that the bypassed FQDN is no longer inspected (or is now inspected, if removed).
 6. Record the change outcome in the ITSM ticket.
 
@@ -671,7 +671,7 @@ $results | Format-Table -AutoSize
 Write-Output "$($results.Where({$_.Status -eq 'Applied'}).Count) of $($overrides.Count) overrides applied successfully."
 ```
 
-5. After the script completes, verify the overrides in the Entra admin center under **Global Secure Access** > **Secure** > **Web content filtering policies**.
+5. After the script completes, verify the overrides in the Microsoft Entra admin center under **Global Secure Access** > **Secure** > **Web content filtering policies**.
 6. Test from a client device: access an overridden URL and confirm the expected allow/block behavior.
 7. Record the change outcome in the ITSM ticket.
 
@@ -795,4 +795,4 @@ Track these metrics specific to Internet Access. For the broader metrics framewo
 - [Daily health check template](reference-daily-health-check.md)
 - [Global Secure Access documentation](/entra/global-secure-access/)
 - [Global Secure Access deployment guide](/entra/architecture/gsa-deployment-guide-intro)
-- [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)
+- [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps)

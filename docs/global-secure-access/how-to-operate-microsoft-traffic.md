@@ -17,9 +17,11 @@ Use the role assignments in this guide to identify the primary owner for each ta
 
 ## Alerting and monitoring
 
-This section is organized in the order you should implement monitoring for Microsoft traffic: 1. Review the critical alerts and the required operator response.
-2. Use the Kusto Query Language (KQL) queries to create the detections.
-3. Follow the automation steps to enable Sentinel-driven notification and response workflows.
+This section is organized in the order you should implement monitoring for Microsoft traffic:
+
+1. Review the critical alerts and the required operator response.
+1. Use the Kusto Query Language (KQL) queries to create the detections.
+1. Follow the automation steps to enable Sentinel-driven notification and response workflows.
 
 > [!IMPORTANT]
 > In the first 30 days after deployment, use the [Microsoft traffic volume—daily trend](#kql-queries---non-critical) query to establish a normal traffic baseline before finalizing alert thresholds. The 50-user CA failure threshold in the Conditional Access failure KQL query is a starting point—calibrate it to your organization's actual sign-in volume.
@@ -28,11 +30,11 @@ This section is organized in the order you should implement monitoring for Micro
 
 | Alert | Condition | Role | What to do next |
 | --- | --- | --- | --- |
-| Conditional Access policy failure for Microsoft traffic | Conditional Access policy applied to Microsoft traffic is blocking more users than expected | Identity Engineer / Identity Team | 1. Review the Conditional Access policy evaluation in Entra sign-in logs. 2. Check if a recent policy change is causing overblocking. 3. Validate device compliance status for affected users. |
-| Audit log: traffic forwarding rule change | A traffic forwarding rule for Microsoft traffic is modified | Network Security Engineer | 1. Verify the change was approved through change management. 2. Confirm the modified rule still includes all required Microsoft 365 service endpoints. 3. Monitor for user-reported issues after the change. |
-| Microsoft traffic profile disabled | The Microsoft traffic forwarding profile is disabled | Network Security Engineer | Microsoft 365 traffic is no longer routed through GSA. 1. Re-enable the profile in **Global Secure Access** > **Connect** > **Traffic forwarding**. 2. Check audit logs to identify who disabled it. 3. Verify Microsoft 365 connectivity is restored for users. |
-| Conditional Access Signaling disabled | The CA Signaling setting in Global Secure Access is turned off, preventing GSA from providing network location signals to Conditional Access | Identity Engineer / Identity Team | Compliant network Conditional Access policies stop enforcing. 1. Re-enable CA Signaling in **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**. 2. Check audit logs to identify who disabled it. 3. Verify compliant network location signals are appearing in sign-in logs before closing the incident. |
-| Universal Tenant Restrictions disabled | The Universal Tenant Restrictions policy is turned off | Identity Engineer / Identity Team | **This is only applicable for organizations using Tenant Restrictions.** External tenant access controls are no longer enforced—users may be able to sign into unauthorized external tenants. 1. Re-enable Universal Tenant Restrictions in **Global Secure Access** > **Settings** > **Session management** > **Universal tenant restrictions**. 2. Check audit logs to identify who disabled it. 3. Review sign-in logs for any external tenant sign-ins that occurred during the gap. |
+| Conditional Access policy failure for Microsoft traffic | Conditional Access policy applied to Microsoft traffic is blocking more users than expected | Identity Engineer / Identity Team | 1. Review the Conditional Access policy evaluation in Microsoft Entra sign-in logs.<br>2. Check if a recent policy change is causing overblocking.<br>3. Validate device compliance status for affected users. |
+| Audit log: traffic forwarding rule change | A traffic forwarding rule for Microsoft traffic is modified | Network Security Engineer | 1. Verify the change was approved through change management.<br>2. Confirm the modified rule still includes all required Microsoft 365 service endpoints.<br>3. Monitor for user-reported issues after the change. |
+| Microsoft traffic profile disabled | The Microsoft traffic forwarding profile is disabled | Network Security Engineer | Microsoft 365 traffic is no longer routed through GSA.<br>1. Re-enable the profile in **Global Secure Access** > **Connect** > **Traffic forwarding**.<br>2. Check audit logs to identify who disabled it.<br>3. Verify Microsoft 365 connectivity is restored for users. |
+| Conditional Access Signaling disabled | The CA Signaling setting in Global Secure Access is turned off, preventing GSA from providing network location signals to Conditional Access | Identity Engineer / Identity Team | Compliant network Conditional Access policies stop enforcing.<br>1. Re-enable CA Signaling in **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**.<br>2. Check audit logs to identify who disabled it.<br>3. Verify compliant network location signals are appearing in sign-in logs before closing the incident. |
+| Universal Tenant Restrictions disabled | The Universal Tenant Restrictions policy is turned off | Identity Engineer / Identity Team | **This is only applicable for organizations using Tenant Restrictions.** External tenant access controls are no longer enforced—users may be able to sign into unauthorized external tenants.<br>1. Re-enable Universal Tenant Restrictions in **Global Secure Access** > **Settings** > **Session management** > **Universal tenant restrictions**.<br>2. Check audit logs to identify who disabled it.<br>3. Review sign-in logs for any external tenant sign-ins that occurred during the gap. |
 
 
 > [!TIP]
@@ -50,11 +52,11 @@ The following queries implement detection for each [critical alert](#critical-al
 Detects a spike in sign-in failures caused specifically by CA policies that have **Block** as the grant control and **exclude all compliant network locations**. When the affected user count exceeds your configured threshold, it indicates the compliant network signal is missing or not propagating correctly. Set the threshold to a value appropriate for your organization's sign-in volume.
 
 > [!NOTE]
-> `SigninLogs` contains per-sign-in evaluation results, not policy definitions. Named location exclusions (condition B) are part of the policy configuration in Entra ID and aren't stored in the log. Populate `TargetPolicyIds` with the identifiers (IDs) of your Block + compliant-network-excluding CA policies. Retrieve them from **Entra admin center** > **Entra ID** > **Conditional Access** > **Policies** > Select a policy > **View policy information**, or via Graph API: `GET https://graph.microsoft.com/v1.0/policies/conditionalAccessPolicies`.
+> `SigninLogs` contains per-sign-in evaluation results, not policy definitions. Named location exclusions (condition B) are part of the policy configuration in Microsoft Entra ID and aren't stored in the log. Populate `TargetPolicyIds` with the identifiers (IDs) of your Block + compliant-network-excluding CA policies. Retrieve them from **Microsoft Entra admin center** > **Microsoft Entra ID** > **Conditional Access** > **Policies** > Select a policy > **View policy information**, or via Graph API: `GET https://graph.microsoft.com/v1.0/policies/conditionalAccessPolicies`.
 
 ```kql
 // IDs of CA policies with Block grant control that exclude all compliant network locations.
-// Retrieve from Entra admin center > Protection > Conditional Access, or via Graph API.
+// Retrieve from Microsoft Entra admin center > Protection > Conditional Access, or via Graph API.
 let TargetPolicyIds = dynamic([
     "<policy-id-1>",
     "<policy-id-2>"
@@ -78,7 +80,7 @@ SigninLogs
 
 **Alert: Traffic forwarding rule change**
 
-Detects any modification to traffic forwarding policies or rules in the Microsoft traffic profile. A single admin action generates multiple audit entries—one per affected rule plus one per affected policy. This query expands all target resources and summarizes by operation to correctly identify which M365 service areas were affected. Every result requires change management verification.
+Detects any modification to traffic forwarding policies or rules in the Microsoft traffic profile. A single admin action generates multiple audit entries—one per affected rule plus one per affected policy. This query expands all target resources and summarizes by operation to correctly identify which Microsoft 365 service areas were affected. Every result requires change management verification.
 
 ```kql
 AuditLogs
@@ -93,7 +95,7 @@ AuditLogs
     )
 | extend InitiatedByUser = tostring(InitiatedBy.user.userPrincipalName)
 // Expand all target resources — a single operation generates one entry per affected rule
-// plus one per affected policy. Filter on M365 service names to identify which services changed.
+// plus one per affected policy. Filter on Microsoft 365 service names to identify which services changed.
 | mv-expand Resource = TargetResources
 | extend ResourceName = tostring(Resource.displayName)
 | where ResourceName has_any (
@@ -185,10 +187,10 @@ Use the following noncritical alerts to detect trends, policy-tuning opportuniti
 
 | Alert | Condition | Role | What to do next |
 | --- | --- | --- | --- |
-| Microsoft traffic volume change | Daily Microsoft 365 traffic volume changes significantly from the 30-day baseline, but no outage indicators are present | Platform Ops / Monitoring Engineer | 1. Compare the change with expected business events such as a large meeting, migration wave, or return-to-office day. 2. Check whether the change affects one site, user group, or service more than others. 3. Update traffic baselines if the increase or decrease reflects a sustained usage pattern. |
-| Microsoft traffic distribution by service | One Microsoft 365 service generates a larger share of traffic than usual | Platform Ops / Monitoring Engineer | 1. Confirm whether the increase is expected for that workload, such as Teams events or SharePoint migrations. 2. Review policy coverage and forwarding behavior for the affected destination fully qualified domain names (FQDNs). 3. If the pattern is unexpected, investigate whether a client, script, or workload is generating abnormal traffic. |
-| Tenant restriction blocks trending upward | Sign-ins blocked by tenant restrictions increase over the normal monthly pattern | Identity Engineer / Identity Team | 1. Confirm whether the blocked attempts are tied to approved business scenarios or unauthorized tenant access. 2. Review the affected applications and resource tenants. 3. If legitimate access is being blocked, adjust policy or user guidance; otherwise document the trend as expected enforcement. |
-| Foreign tenant usage on your network | Requests to external Microsoft Entra tenants are observed from users on your network, but enforcement remains intact | Identity Engineer / Identity Team | 1. Review which resource tenants and applications users are attempting to access. 2. Distinguish between approved partner scenarios and unapproved external tenant use. 3. Use the results to refine tenant restrictions policy, exception handling, and monthly access reviews. |
+| Microsoft traffic volume change | Daily Microsoft 365 traffic volume changes significantly from the 30-day baseline, but no outage indicators are present | Platform Ops / Monitoring Engineer | 1. Compare the change with expected business events such as a large meeting, migration wave, or return-to-office day.<br>2. Check whether the change affects one site, user group, or service more than others.<br>3. Update traffic baselines if the increase or decrease reflects a sustained usage pattern. |
+| Microsoft traffic distribution by service | One Microsoft 365 service generates a larger share of traffic than usual | Platform Ops / Monitoring Engineer | 1. Confirm whether the increase is expected for that workload, such as Teams events or SharePoint migrations.<br>2. Review policy coverage and forwarding behavior for the affected destination fully qualified domain names (FQDNs).<br>3. If the pattern is unexpected, investigate whether a client, script, or workload is generating abnormal traffic. |
+| Tenant restriction blocks trending upward | Sign-ins blocked by tenant restrictions increase over the normal monthly pattern | Identity Engineer / Identity Team | 1. Confirm whether the blocked attempts are tied to approved business scenarios or unauthorized tenant access.<br>2. Review the affected applications and resource tenants.<br>3. If legitimate access is being blocked, adjust policy or user guidance; otherwise document the trend as expected enforcement. |
+| Foreign tenant usage on your network | Requests to external Microsoft Entra tenants are observed from users on your network, but enforcement remains intact | Identity Engineer / Identity Team | 1. Review which resource tenants and applications users are attempting to access.<br>2. Distinguish between approved partner scenarios and unapproved external tenant use.<br>3. Use the results to refine tenant restrictions policy, exception handling, and monthly access reviews. |
 
 ### KQL queries - non-critical
 
@@ -206,7 +208,7 @@ NetworkAccessTraffic
 | order by TimeGenerated asc
 ```
 
-**Microsoft traffic by service—identify which M365 services generate the most traffic:**
+**Microsoft traffic by service—identify which Microsoft 365 services generate the most traffic:**
 
 ```kql
 NetworkAccessTraffic
@@ -298,7 +300,7 @@ This section defines the recurring checks that keep Microsoft traffic operations
 Microsoft traffic operations should rely on integrated monitoring and scheduled automation rather than manual portal checks. The procedures in this section let you:
 
 - Export Microsoft traffic profile configuration for backup and change tracking.
-- Connect Microsoft traffic telemetry to Microsoft Sentinel for alerting and correlation with Entra sign-in logs.
+- Connect Microsoft traffic telemetry to Microsoft Sentinel for alerting and correlation with Microsoft Entra sign-in logs.
 - Implement playbooks for routine tasks: policy-failure response, configuration-change notification, profile-state monitoring, and scheduled backup and review workflows.
 
 ### Export Microsoft traffic profile configuration via Graph API
@@ -344,7 +346,7 @@ if ($microsoftProfile) {
         $exportStatus["Policy Links"] = "FAILED: $_"
     }
 
-    # Retrieve and export policyRules (IPs/FQDNs) for the four core M365 forwarding policies
+    # Retrieve and export policyRules (IPs/FQDNs) for the four core Microsoft 365 forwarding policies
     $targetPolicies = @(
         "Skype for Business Online and Microsoft Teams",
         "SharePoint Online and OneDrive for Business",
@@ -423,7 +425,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 
 1. Enable analytics rules for unusual Microsoft 365 access patterns.
 2. Configure alerts for denied Microsoft traffic (which typically indicates a misconfiguration).
-3. Correlate Microsoft traffic logs with Entra sign-in logs to validate compliant network enforcement.
+3. Correlate Microsoft traffic logs with Microsoft Entra sign-in logs to validate compliant network enforcement.
 
 ### Automation playbooks
 
@@ -432,7 +434,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 - **Trigger:** Sentinel alert "Conditional Access policy failure for Microsoft traffic"
 - **Frequency:** Event-driven
 - **Required permissions:** Microsoft Sentinel Responder on the workspace; Logic App Contributor on the playbook resource group; Teams Incoming Webhook (or Graph `ChannelMessage.Send` on the target channel); `SecurityEvents.Read.All` for sign-in log enrichment
-- **Output:** Teams channel message with affected user count, blocked apps, and policy names, plus a deep link to the Entra sign-in log filtered to the impacted policy
+- **Output:** Teams channel message with affected user count, blocked apps, and policy names, plus a deep link to the Microsoft Entra sign-in log filtered to the impacted policy
 
 **Steps:**
 
@@ -552,7 +554,7 @@ Follow the same Sentinel integration steps as the [Private Access guide](how-to-
 | --- | --- | --- | --- |
 | Microsoft traffic profile uptime | % time the profile is enabled and functioning | 100% | Weekly |
 | Microsoft traffic denial rate | Denied sessions / total Microsoft traffic sessions | < 1% | Weekly |
-| Compliant network check success rate | Sessions with successful compliant network enrichment / total M365 sessions | > 99% | Weekly |
+| Compliant network check success rate | Sessions with successful compliant network enrichment / total Microsoft 365 sessions | > 99% | Weekly |
 | Configuration backup success | Successful backups / scheduled backups | 100% | Weekly |
 | User-reported Microsoft 365 performance issues | Help desk tickets related to Microsoft 365 performance through Global Secure Access | Trending toward 0 | Monthly |
 

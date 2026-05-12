@@ -27,12 +27,12 @@ Remote Networks operations should start with alerts that identify branch connect
 
 | Alert | Condition | Role | What to do next |
 | --- | --- | --- | --- |
-| Tunnel down | A GRE or IPsec tunnel disconnected for more than 5 minutes | Network Security Engineer | 1. Check the on-premises CPE (Customer Premises Equipment) device status. 2. Verify the public IP and tunnel configuration didn't change. 3. Check internet service provider (ISP) connectivity at the branch. 4. If using redundant tunnels, verify traffic failed over. |
-| All tunnels for a site down | No active tunnels remain for a remote network location | Network Security Engineer | **Severity: Critical.** All users at the site lose GSA-secured connectivity. 1. Escalate immediately. 2. Check for site-wide network outage. 3. Activate fallback plan (direct internet egress or backup VPN). |
-| Tunnel flapping | A tunnel goes up and down more than three times in 1 hour | Network Security Engineer | 1. Check the CPE device logs for IKE/IPsec negotiation errors. 2. Verify the tunnel keepalive and Dead Peer Detection (DPD) settings. 3. Check for ISP instability or MTU issues. 4. If flapping persists, engage your network provider. |
-| Tunnel bandwidth near capacity | Sustained throughput exceeds 80% of the tunnel's provisioned bandwidth for 30+ minutes | Platform Ops / Monitoring Engineer | 1. Review top traffic consumers at the site using KQL queries. 2. Determine if the traffic is legitimate growth or an anomaly. 3. Plan to add a second tunnel or upgrade bandwidth. |
-| Border Gateway Protocol (BGP) session down (if applicable) | BGP peering session with GSA drops | Network Security Engineer | 1. Check BGP configuration on the CPE device. 2. Verify the peer IP and Autonomous System Number (ASN) settings. 3. Review route advertisements for changes. |
-| Tunnel MTU-related packet drops | High rate of fragmented or dropped packets on the tunnel | Network Security Engineer | 1. Reduce the tunnel MTU on the CPE device (recommended: 1,400 bytes for GRE, 1,380 for IPsec). 2. Enable Transmission Control Protocol (TCP) Maximum Segment Size (MSS) clamping if not already configured. |
+| Tunnel down | A GRE or IPsec tunnel disconnected for more than 5 minutes | Network Security Engineer | 1. Check the on-premises CPE (Customer Premises Equipment) device status.<br>2. Verify the public IP and tunnel configuration didn't change.<br>3. Check internet service provider (ISP) connectivity at the branch.<br>4. If using redundant tunnels, verify traffic failed over. |
+| All tunnels for a site down | No active tunnels remain for a remote network location | Network Security Engineer | **Severity: Critical.** All users at the site lose GSA-secured connectivity.<br>1. Escalate immediately.<br>2. Check for site-wide network outage.<br>3. Activate fallback plan (direct internet egress or backup VPN). |
+| Tunnel flapping | A tunnel goes up and down more than three times in 1 hour | Network Security Engineer | 1. Check the CPE device logs for IKE/IPsec negotiation errors.<br>2. Verify the tunnel keepalive and Dead Peer Detection (DPD) settings.<br>3. Check for ISP instability or MTU issues.<br>4. If flapping persists, engage your network provider. |
+| Tunnel bandwidth near capacity | Sustained throughput exceeds 80% of the tunnel's provisioned bandwidth for 30+ minutes | Platform Ops / Monitoring Engineer | 1. Review top traffic consumers at the site using KQL queries.<br>2. Determine if the traffic is legitimate growth or an anomaly.<br>3. Plan to add a second tunnel or upgrade bandwidth. |
+| Border Gateway Protocol (BGP) session down (if applicable) | BGP peering session with GSA drops | Network Security Engineer | 1. Check BGP configuration on the CPE device.<br>2. Verify the peer IP and Autonomous System Number (ASN) settings.<br>3. Review route advertisements for changes. |
+| Tunnel MTU-related packet drops | High rate of fragmented or dropped packets on the tunnel | Network Security Engineer | 1. Reduce the tunnel MTU on the CPE device (recommended: 1,400 bytes for GRE, 1,380 for IPsec).<br>2. Enable Transmission Control Protocol (TCP) Maximum Segment Size (MSS) clamping if not already configured. |
 
 ### KQL queries for remote network monitoring
 
@@ -95,7 +95,7 @@ RemoteNetworkHealthLogs
 
 | Check | Role | Procedure | What to do if it fails |
 | --- | --- | --- | --- |
-| Tunnel status | Platform Ops / Monitoring Engineer | Entra admin center > **Global Secure Access** > **Connect** > **Remote networks**. Verify all tunnels show **Connected**. | Check CPE device status and ISP connectivity at the affected site. |
+| Tunnel status | Platform Ops / Monitoring Engineer | Microsoft Entra admin center > **Global Secure Access** > **Connect** > **Remote networks**. Verify all tunnels show **Connected**. | Check CPE device status and ISP connectivity at the affected site. |
 | High-severity alerts | SOC Analyst | Review Sentinel or your security information and event management (SIEM) platform for P1/P2 remote network alerts. | Ensure each alert is assigned. Escalate unassigned alerts older than 4 hours. |
 | Site traffic volume | Platform Ops / Monitoring Engineer | Spot-check traffic volumes for your largest sites against the baseline. | Investigate significant drops (possible outage) or spikes (possible anomaly). |
 
@@ -115,7 +115,7 @@ RemoteNetworkHealthLogs
 | Tunnel redundancy validation | Network Security Engineer | For sites with redundant tunnels, verify failover works. See [Tunnel failover testing](#tunnel-failover-testing). | Investigate and resolve failover issues before the next maintenance window. |
 | CPE firmware review | Network Security Engineer | Check current firmware versions against vendor-recommended versions. | Schedule firmware upgrades during maintenance windows. |
 | Capacity planning review | Platform Ops / Monitoring Engineer | Compare 30-day traffic trend against provisioned bandwidth for each site. | Initiate bandwidth upgrades or add tunnels for sites approaching limits. |
-| Remote network inventory | Network Security Engineer | Compare the list of active remote networks in the Entra admin center against your site inventory. | Remove entries for decommissioned sites. Add entries for new sites. |
+| Remote network inventory | Network Security Engineer | Compare the list of active remote networks in the Microsoft Entra admin center against your site inventory. | Remove entries for decommissioned sites. Add entries for new sites. |
 | IKE/IPsec security association review | Network Security Engineer | Verify that Security Association (SA) lifetimes and ciphers align with your security policy. | Update tunnel parameters to meet current security standards. |
 
 ### Tunnel failover testing
@@ -208,11 +208,11 @@ If your organization uses a network management platform like SolarWinds, Paessle
 
 | Symptom | Likely cause | Resolution |
 | --- | --- | --- |
-| Tunnel doesn't establish | Internet Key Exchange (IKE) or IPsec parameter mismatch, wrong pre-shared key (PSK), or blocked port (User Datagram Protocol [UDP] 500/4500) | 1. Verify IKE version, ciphers, and PSK match the GSA configuration. 2. Check firewall rules at the branch for UDP 500/4500. 3. Review CPE device logs for IKE negotiation errors. |
-| Tunnel established but no traffic flows | Routing issue—traffic not being directed into the tunnel, or source NAT misconfiguration | 1. Verify route table on the CPE sends target traffic into the tunnel. 2. Check source NAT/PAT settings if necessary. 3. Test with a packet capture on the CPE. |
-| Intermittent connectivity at a site | Tunnel flapping, ISP instability, or MTU issues | 1. Check tunnel flap count. 2. Review ISP performance. 3. Adjust MTU settings (1400 for GRE, 1380 for IPsec). Enable TCP MSS clamping. |
-| Slow performance at a branch site | Tunnel bandwidth saturation or suboptimal routing | 1. Check bandwidth utilization. 2. Review top consumers. 3. Add a second tunnel or upgrade bandwidth if at capacity. |
-| One site can't reach resources other sites can | Site-specific tunnel configuration issue or local network problem | 1. Verify the tunnel is up. 2. Check routing on the CPE. 3. Compare the site's traffic forwarding profile assignment against working sites. |
+| Tunnel doesn't establish | Internet Key Exchange (IKE) or IPsec parameter mismatch, wrong pre-shared key (PSK), or blocked port (User Datagram Protocol [UDP] 500/4500) | 1. Verify IKE version, ciphers, and PSK match the GSA configuration.<br>2. Check firewall rules at the branch for UDP 500/4500.<br>3. Review CPE device logs for IKE negotiation errors. |
+| Tunnel established but no traffic flows | Routing issue—traffic not being directed into the tunnel, or source NAT misconfiguration | 1. Verify route table on the CPE sends target traffic into the tunnel.<br>2. Check source NAT/PAT settings if necessary.<br>3. Test with a packet capture on the CPE. |
+| Intermittent connectivity at a site | Tunnel flapping, ISP instability, or MTU issues | 1. Check tunnel flap count.<br>2. Review ISP performance.<br>3. Adjust MTU settings (1400 for GRE, 1380 for IPsec). Enable TCP MSS clamping. |
+| Slow performance at a branch site | Tunnel bandwidth saturation or suboptimal routing | 1. Check bandwidth utilization.<br>2. Review top consumers.<br>3. Add a second tunnel or upgrade bandwidth if at capacity. |
+| One site can't reach resources other sites can | Site-specific tunnel configuration issue or local network problem | 1. Verify the tunnel is up.<br>2. Check routing on the CPE.<br>3. Compare the site's traffic forwarding profile assignment against working sites. |
 
 ## Related content
 

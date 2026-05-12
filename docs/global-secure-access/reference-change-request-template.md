@@ -38,11 +38,11 @@ _(Business justification, user request, security requirement, or compliance need
 ## Scope and impact
 
 **Affected Global Secure Access capability:**
-- [ ] Private Access
-- [ ] Internet Access
-- [ ] Remote Networks
-- [ ] Microsoft Traffic
-- [ ] Common / Cross-cutting
+- Private Access
+- Internet Access
+- Remote Networks
+- Microsoft Traffic
+- Common / Cross-cutting
 
 **Affected components:**
 
@@ -54,10 +54,10 @@ _(Estimate the number of users or sites impacted. List specific groups or locati
 
 **Expected user impact during change:**
 
-- [ ] No user impact
-- [ ] Brief reconnection (< 1 minute)
-- [ ] Service interruption during maintenance window
-- [ ] Extended impact—communication plan required
+- No user impact
+- Brief reconnection (< 1 minute)
+- Service interruption during maintenance window
+- Extended impact—communication plan required
 
 ## Risk assessment
 
@@ -81,12 +81,12 @@ _(Describe testing performed and outcomes. If not tested, explain why.)_
 
 ## Prechange checklist
 
-- [ ] Configuration backup completed (see capability guide for export scripts)
-- [ ] Change approved by Service Owner or Change Advisory Board
-- [ ] Communication sent to affected users and support teams (if necessary)
-- [ ] Rollback plan documented (see Rollback plan)
-- [ ] Maintenance window scheduled (if necessary)
-- [ ] On-call engineer confirmed for maintenance window
+- Configuration backup completed (see capability guide for export scripts)
+- Change approved by Service Owner or Change Advisory Board
+- Communication sent to affected users and support teams (if necessary)
+- Rollback plan documented (see Rollback plan)
+- Maintenance window scheduled (if necessary)
+- On-call engineer confirmed for maintenance window
 
 ## Rollback plan
 
@@ -110,10 +110,10 @@ _(How long to wait before deciding the change failed and needs to be rolled back
 
 ## Post-change verification
 
-- [ ] Traffic logs show expected behavior
-- [ ] No new alerts triggered
-- [ ] User access confirmed for affected applications / sites
-- [ ] Change documented in ITSM system
+- Traffic logs show expected behavior
+- No new alerts triggered
+- User access confirmed for affected applications / sites
+- Change documented in ITSM system
 
 ## Approvals
 

@@ -92,12 +92,12 @@ Contact *help desk email or Teams channel* if you have questions or experience i
 
 ## Communication checklist
 
-- [ ] Prechange notification drafted and reviewed
-- [ ] Help desk briefed and knowledge base updated with expected issues and responses
-- [ ] Prechange notification sent to all audiences in the stakeholder notification matrix
-- [ ] Day-of reminder sent (for major changes affecting many users)
-- [ ] Post-change notification sent after the change completes
-- [ ] Help desk debriefed on any unexpected issues reported during the change
+- Prechange notification drafted and reviewed
+- Help desk briefed and knowledge base updated with expected issues and responses
+- Prechange notification sent to all audiences in the stakeholder notification matrix
+- Day-of reminder sent (for major changes affecting many users)
+- Post-change notification sent after the change completes
+- Help desk debriefed on any unexpected issues reported during the change
 
 ## Escalation during change
 

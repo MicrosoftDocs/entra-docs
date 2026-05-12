@@ -1,6 +1,6 @@
 ---
 title: Operate Microsoft Entra Private Access
-description: "Post-deployment operations guide for Microsoft Entra Private Access, the zero trust network access (ZTNA) capability, covering alerting, health checks, integration, automation, and operational metrics."
+description: "Post-deployment operations guide for Microsoft Entra Private Access, the Zero Trust network access (ZTNA) capability, covering alerting, health checks, integration, automation, and operational metrics."
 ms.topic: how-to
 ms.date: 05/04/2026
 ms.reviewer: plenzke
@@ -61,12 +61,12 @@ Configure the following alerts and document the response action for each. Use [M
 
 | Alert | Condition | Role | Automated by | What to do next |
 | --- | --- | --- | --- | --- |
-| Connector offline | A Private Access connector stops sending heartbeats for more than 5 minutes | Network Ops L1 | Sentinel analytics rule *Connector health degradation* (content hub) | 1. Check the connector server: verify the `Microsoft Entra private network connector` Windows service is running. 2. Check outbound connectivity to `*.msappproxy.net` on port 443. 3. Review Windows Event Logs on the connector host. 4. If the connector can't be recovered, verify traffic has failed over to another connector in the group (see [Failover validation](#failover-validation)). See [Microsoft Entra private network connectors](/entra/global-secure-access/concept-connectors#maintenance) and [Troubleshoot problems installing the private network connector](/entra/global-secure-access/troubleshoot-connectors#troubleshooting-connector-functionality). |
-| All connectors in a group offline | No connectors in a connector group are sending heartbeats | Network Ops L2 + Incident Commander | Sentinel analytics rule *Connector group offline* + [Playbook 2](#playbook-2-auto-create-itsm-ticket-for-connector-group-failure) | **Severity: Critical.** All users of applications assigned to this group lose access. 1. Escalate immediately per your incident management process. 2. Check for common root cause: network outage, firewall change, or server patching affecting all connector hosts. 3. If recovery isn't immediate, activate your fallback connectivity plan (for example, temporary VPN access). |
-| Connector high resource usage | CPU > 80% or memory > 85% sustained for 15+ minutes on a connector host | Network Ops L1 | Azure Monitor alert ([Playbook 5](#playbook-5-connector-group-capacity-alert)) | 1. Check the number of active sessions on the connector. 2. Redistribute load by adding another connector to the group. 3. Investigate if a specific application is generating unusual traffic volume. |
-| Application segment unreachable | Users receive connection failures for a specific Private Access application | Network Ops L1 → App Owner | Sentinel analytics rule *Private access segment failures* | 1. Verify the backend application server is running and reachable from the connector host. 2. Test DNS resolution from the connector host for the application fully qualified domain name (FQDN). 3. Check the application segment configuration in the Entra admin center for correct IP/FQDN and port ranges. See [Troubleshoot application access](/entra/global-secure-access/troubleshoot-app-access#how-does-dns-work-with-global-secure-access) and [Troubleshoot problems installing the private network connector](/entra/global-secure-access/troubleshoot-connectors#troubleshooting-connector-functionality). |
-| Unusual access denials spike | Access denial count for Private Access applications increases by more than 50% compared to the seven-day baseline | Identity and access management (IAM) Ops + SOC | Sentinel scheduled analytics rule *Unusual private access denials* (derived from the top-denied-apps Kusto Query Language (KQL) query) | 1. Review `NetworkAccessTraffic` for the denied sessions—identify the users, apps, and denial reasons. 2. Determine whether this denial pattern is a policy misconfiguration (legitimate users blocked) or a security event (unauthorized access attempts). 3. For policy issues, adjust the Conditional Access or app assignment. For security events, escalate to your SOC. |
-| Unauthorized configuration change | A Private Access configuration change is made by an unexpected identity or without a matching change ticket | SOC + IAM Admin | [Playbook 8: Private Access configuration change alert](#playbook-8-private-access-configuration-change-alert) | 1. Identify the actor and change details in Entra audit logs. 2. Verify whether the change was approved through your change management process. 3. If unauthorized, revert the change and investigate the identity compromise. See [How to access the Global Secure Access audit logs](/entra/global-secure-access/how-to-access-audit-logs#overview), [Microsoft Entra audit log categories and activities](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access), and [Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
+| Connector offline | A Private Access connector stops sending heartbeats for more than 5 minutes | Network Ops L1 | Sentinel analytics rule *Connector health degradation* (content hub) | 1. Check the connector server: verify the `Microsoft Entra private network connector` Windows service is running.<br>2. Check outbound connectivity to `*.msappproxy.net` on port 443.<br>3. Review Windows Event Logs on the connector host.<br>4. If the connector can't be recovered, verify traffic has failed over to another connector in the group (see [Failover validation](#failover-validation)). See [Microsoft Entra private network connectors](/entra/global-secure-access/concept-connectors#maintenance) and [Troubleshoot problems installing the private network connector](/entra/global-secure-access/troubleshoot-connectors#troubleshooting-connector-functionality). |
+| All connectors in a group offline | No connectors in a connector group are sending heartbeats | Network Ops L2 + Incident Commander | Sentinel analytics rule *Connector group offline* + [Playbook 2](#playbook-2-auto-create-itsm-ticket-for-connector-group-failure) | **Severity: Critical.** All users of applications assigned to this group lose access.<br>1. Escalate immediately per your incident management process.<br>2. Check for common root cause: network outage, firewall change, or server patching affecting all connector hosts.<br>3. If recovery isn't immediate, activate your fallback connectivity plan (for example, temporary VPN access). |
+| Connector high resource usage | CPU > 80% or memory > 85% sustained for 15+ minutes on a connector host | Network Ops L1 | Azure Monitor alert ([Playbook 5](#playbook-5-connector-group-capacity-alert)) | 1. Check the number of active sessions on the connector.<br>2. Redistribute load by adding another connector to the group.<br>3. Investigate if a specific application is generating unusual traffic volume. |
+| Application segment unreachable | Users receive connection failures for a specific Private Access application | Network Ops L1 → App Owner | Sentinel analytics rule *Private access segment failures* | 1. Verify the backend application server is running and reachable from the connector host.<br>2. Test DNS resolution from the connector host for the application fully qualified domain name (FQDN).<br>3. Check the application segment configuration in the Microsoft Entra admin center for correct IP/FQDN and port ranges. See [Troubleshoot application access](/entra/global-secure-access/troubleshoot-app-access#how-does-dns-work-with-global-secure-access) and [Troubleshoot problems installing the private network connector](/entra/global-secure-access/troubleshoot-connectors#troubleshooting-connector-functionality). |
+| Unusual access denials spike | Access denial count for Private Access applications increases by more than 50% compared to the seven-day baseline | Identity and access management (IAM) Ops + SOC | Sentinel scheduled analytics rule *Unusual private access denials* (derived from the top-denied-apps Kusto Query Language (KQL) query) | 1. Review `NetworkAccessTraffic` for the denied sessions—identify the users, apps, and denial reasons.<br>2. Determine whether this denial pattern is a policy misconfiguration (legitimate users blocked) or a security event (unauthorized access attempts).<br>3. For policy issues, adjust the Conditional Access or app assignment. For security events, escalate to your SOC. |
+| Unauthorized configuration change | A Private Access configuration change is made by an unexpected identity or without a matching change ticket | SOC + IAM Admin | [Playbook 8: Private Access configuration change alert](#playbook-8-private-access-configuration-change-alert) | 1. Identify the actor and change details in Microsoft Entra audit logs.<br>2. Verify whether the change was approved through your change management process.<br>3. If unauthorized, revert the change and investigate the identity compromise. See [How to access the Global Secure Access audit logs](/entra/global-secure-access/how-to-access-audit-logs#overview), [Microsoft Entra audit log categories and activities](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access), and [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
 
 > [!TIP]
 > Use [Microsoft Security Copilot](/security-copilot/) to investigate alert context. Security Copilot can correlate Private Access connection failures with identity risk signals and summarize cross-data findings. For example, prompt: *"Summarize the risk context for users with denied Private Access connections and elevated identity risk in the last 24 hours."*
@@ -77,7 +77,7 @@ Use these queries in Microsoft Sentinel or Log Analytics to monitor Private Acce
 
 **Connector health—identify offline connectors:**
 > [!IMPORTANT]
-> Heartbeats between the connector service and the Entra cloud determine the connector status (Active/Inactive). This status is visible in the Entra admin center and via Graph API, but is **not** written to a Log Analytics table. To monitor connector host availability via KQL, deploy [Azure Monitor Agent](/azure/azure-monitor/agents/agents-overview) on each connector host and configure a data collection rule that sends `Heartbeat` data to your Log Analytics workspace.
+> Heartbeats between the connector service and the Microsoft Entra cloud determine the connector status (Active/Inactive). This status is visible in the Microsoft Entra admin center and via Graph API, but is **not** written to a Log Analytics table. To monitor connector host availability via KQL, deploy [Azure Monitor Agent](/azure/azure-monitor/agents/agents-overview) on each connector host and configure a data collection rule that sends `Heartbeat` data to your Log Analytics workspace.
 
 ```kusto
 let connectorHosts = dynamic(["connector-host-01", "connector-host-02", "connector-host-03"]); // replace with your hostnames
@@ -186,7 +186,7 @@ If required by your organization, you can use the [Private Access health check t
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
 | --- | --- | --- | --- | --- |
-| Connector heartbeat status | Network Ops L1 | Sentinel analytics rule *Connector health degradation* + Zero Trust (ZT) Assessment *Private network connectors are active and healthy* | Alerts fire automatically. Spot-check: Entra admin center > **Global Secure Access** > **Connect** > **Connectors**. | Restart the `Microsoft Entra private network connector` service on the affected host. If still offline, check network connectivity and review Windows Event Logs. |
+| Connector heartbeat status | Network Ops L1 | Sentinel analytics rule *Connector health degradation* + Zero Trust (ZT) Assessment *Private network connectors are active and healthy* | Alerts fire automatically. Spot-check: Microsoft Entra admin center > **Global Secure Access** > **Connect** > **Connectors**. | Restart the `Microsoft Entra private network connector` service on the affected host. If still offline, check network connectivity and review Windows Event Logs. |
 | High-severity incident triage | SOC | Sentinel incidents (autoassigned via automation rule) | Review P1/P2 Private Access incidents from the last 24 hours. | Ensure each incident is assigned and under investigation. Unassigned incidents older than 4 hours should be escalated. |
 | Configuration-change review | IAM Admin | [Playbook 8: Private Access configuration change alert](#playbook-8-private-access-configuration-change-alert) (near real-time) | Rule fires on every Private Access config change. No daily manual query required. | Verify each flagged change maps to an approved change request. Revert and investigate unauthorized changes. |
 
@@ -210,9 +210,7 @@ If required by your organization, you can use the [Private Access health check t
 | Capacity assessment | Network Ops L2 + Capacity Planner | [Playbook 10: Monthly capacity trend report](#playbook-10-monthly-capacity-trend-report) (email) | Review the monthly capacity-trend email. | If any connector group is consistently above 70% capacity, plan to add connectors. See [Capacity thresholds](#capacity-thresholds). |
 | Performance baseline comparison | Network Ops L2 | Sentinel workbook *GSA traffic trend* against the [30-day baseline query](#kql-queries-for-private-access-monitoring) | Compare the current month to the baseline captured in your first month. | Investigate significant deviations. Update the baseline after approved growth events (for example, new user populations). |
 | Disaster recovery (DR) / fallback plan review | Network Ops Lead | Manual—documentation review | Confirm the fallback connectivity plan and contacts are current. | Update the plan and retest the fallback path. |
-| New feature and functionality review | Network Ops L2 + IAM Admin | Manual—documentation review | Review two sources for new Private Access features, preview announcements, deprecations, and breaking changes:
-   - [What's new in Microsoft Entra](/entra/fundamentals/whats-new)
-   - [Global Secure Access documentation](/entra/global-secure-access/) Document relevant items and assess impact on your environment. | Create change requests for features that improve your security posture or operational efficiency. Plan adoption of new GA features and evaluate previews for future roadmap. Update runbooks and procedures to reflect any deprecations or behavioral changes. |
+| New feature and functionality review | Network Ops L2 + IAM Admin | Manual—documentation review | Review two sources for new Private Access features, preview announcements, deprecations, and breaking changes: [What's new in Microsoft Entra](/entra/fundamentals/whats-new) and [Global Secure Access documentation](/entra/global-secure-access/). Document relevant items and assess impact on your environment. | Create change requests for features that improve your security posture or operational efficiency. Plan adoption of new GA features and evaluate previews for future roadmap. Update runbooks and procedures to reflect any deprecations or behavioral changes. |
 
 ### Failover validation
 
@@ -222,7 +220,7 @@ If required by your organization, you can use the [Private Access health check t
 1. Identify the connector group to test. Verify at least two connectors are **Active**.
 2. Notify affected users and support teams of the maintenance window.
 3. On one connector host, stop the `Microsoft Entra private network connector` service.
-4. Wait 5 minutes. Verify in the Entra admin center that the connector shows as **Inactive**.
+4. Wait 5 minutes. Verify in the Microsoft Entra admin center that the connector shows as **Inactive**.
 5. Test application access from a user device—access should continue through one or more remaining connectors.
 6. Check `NetworkAccessTraffic` to confirm traffic is flowing through the remaining connector.
 7. **Rollback:** Restart the connector service on the test host. Verify it returns to **Active** status.
@@ -287,7 +285,7 @@ Write-Host "Configuration export complete. Files saved to current directory."
 
 For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Access](/entra/global-secure-access/how-to-sentinel-integration).
 
-1. **Enable diagnostic settings** for Global Secure Access: In the Entra admin center, go to **Global Secure Access** > **Settings** > **Diagnostic settings**. Add a setting that sends `NetworkAccessTrafficLogs` and `AuditLogs` to your Log Analytics workspace.
+1. **Enable diagnostic settings** for Global Secure Access: In the Microsoft Entra admin center, go to **Global Secure Access** > **Settings** > **Diagnostic settings**. Add a setting that sends `NetworkAccessTrafficLogs` and `AuditLogs` to your Log Analytics workspace.
 2. **Install the content pack**: In Microsoft Sentinel, go to **Content hub**, search for **Global Secure Access**, and install the solution. The content pack adds analytics rules, workbooks, and hunting queries.
 3. **Enable analytics rules**: Go to **Analytics** > **Rule templates**. Enable the Private Access-related rules (for example, "Connector health degradation," "Unusual private access patterns").
 4. **Configure automation rules**: For each enabled analytics rule, create an automation rule to assign incidents to your operations team and optionally trigger a Logic Apps playbook for notification.
@@ -367,7 +365,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
    ```
    PATCH https://graph.microsoft.com/beta/applications/{appId}/onPremisesPublishing/segmentsConfiguration/microsoft.graph.ipSegmentConfiguration/applicationSegments/{segmentId}
    ```
-3. After import, verify each segment appears in the Entra admin center under **Global Secure Access** > **Applications**.
+3. After import, verify each segment appears in the Microsoft Entra admin center under **Global Secure Access** > **Applications**.
 4. Test user access for each newly added segment from a client device before closing the change request.
 5. Record the new segments in your configuration management database (CMDB).
 
@@ -416,7 +414,7 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
    ```
 
 2. Export the results and route to application owners for confirmation that the applications are decommissioned.
-3. For confirmed decommissioned applications, remove the segment in the Entra admin center: **Global Secure Access** > **Applications** > select app > **Application segments** > delete.
+3. For confirmed decommissioned applications, remove the segment in the Microsoft Entra admin center: **Global Secure Access** > **Applications** > select app > **Application segments** > delete.
 4. Log each removal as a change record in your ITSM.
 5. Rerun the [connector group load distribution query](#kql-queries-for-private-access-monitoring) to confirm traffic patterns are unchanged after removal.
 
@@ -527,4 +525,4 @@ Track these metrics specific to Private Access. For the broader metrics framewor
 - [Daily health check template (all capabilities)](reference-daily-health-check.md)
 - [Global Secure Access documentation](/entra/global-secure-access/)
 - [GSA Deployment Guide](/entra/architecture/gsa-deployment-guide-intro)
-- [Entra Security Operations Guide](https://aka.ms/AzureADSecOps)
+- [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps)

@@ -17,7 +17,7 @@ Use this checklist every business day. Record results and escalate any failed ch
 
 | # | Check | Status | What to do if it fails |
 | --- | --- | --- | --- |
-| 1 | All connectors show **Active** in Entra admin center > Global Secure Access > Connect > Connectors | Pass / Fail | Restart the connector service. If unresolved, check network connectivity and Windows Event Logs on the connector host. |
+| 1 | All connectors show **Active** in Microsoft Entra admin center > Global Secure Access > Connect > Connectors | Pass / Fail | Restart the connector service. If unresolved, check network connectivity and Windows Event Logs on the connector host. |
 | 2 | No unassigned P1/P2 Private Access alerts in Sentinel | Pass / Fail | Assign and investigate. Escalate alerts older than 4 hours. |
 | 3 | Audit logs reviewed—no unauthorized configuration changes | Pass / Fail | Flag unrecognized changes. Verify each change maps to an approved change request. |
 
@@ -33,7 +33,7 @@ Use this checklist every business day. Record results and escalate any failed ch
 
 | # | Check | Status | What to do if it fails |
 | --- | --- | --- | --- |
-| 7 | All tunnels show **Connected** in Entra admin center > Global Secure Access > Connect > Remote networks | Pass / Fail | Check the customer premises equipment (CPE) device status and internet service provider (ISP) connectivity at the affected branch. |
+| 7 | All tunnels show **Connected** in Microsoft Entra admin center > Global Secure Access > Connect > Remote networks | Pass / Fail | Check the customer premises equipment (CPE) device status and internet service provider (ISP) connectivity at the affected branch. |
 | 8 | No unassigned P1/P2 Remote Networks alerts in Sentinel | Pass / Fail | Assign and investigate. Escalate alerts older than 4 hours. |
 | 9 | Traffic volumes for major sites are within baseline range | Pass / Fail | Investigate significant drops (possible outage) or spikes (possible anomaly). |
 
