@@ -67,7 +67,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Agent Sponsors as approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)|||||| :white_check_mark: |
 |[EM - Externally determine approval requirements using custom extensions](~/id-governance/entitlement-management-dynamic-approval.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - Collect additional requestor information for approval](~/id-governance/entitlement-management-access-package-approval-policy.md#collect-additional-requestor-information-for-approval)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
-|**EM - Lifecycle**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
+|**EM - Lifecycle**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |
 |[EM - Expiration of access package assignments](~/id-governance/entitlement-management-access-package-lifecycle-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Manage the lifecycle of external users](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - Mark guest as governed](~/id-governance/entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: | :white_check_mark: ||
