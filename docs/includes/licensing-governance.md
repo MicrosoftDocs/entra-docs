@@ -71,7 +71,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Expiration of access package assignments](~/id-governance/entitlement-management-access-package-lifecycle-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Manage the lifecycle of external users](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - Mark guest as governed](~/id-governance/entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: | :white_check_mark: ||
-|**EM - Additional capabilities**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
+|**EM - Additional capabilities**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |
 |[EM - Separation of duties](~/id-governance/entitlement-management-access-package-incompatible.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - Custom Extensions (Logic Apps)](~/id-governance/entitlement-management-logic-apps-integration.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - Auto Assignment Policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: | :white_check_mark: ||
