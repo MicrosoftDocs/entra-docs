@@ -85,7 +85,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Suggested access packages in My Access](~/id-governance/entitlement-management-suggested-access-packages.md)||| | :white_check_mark: | :white_check_mark: ||
 |[EM - Configure whether requestors can see approver details in My Access (Preview)](~/id-governance/my-access-approver-details.md)||| | :white_check_mark: | :white_check_mark: ||
 |[EM - Delegate approvals in My Access (Preview)](~/id-governance/my-access-portal-overview.md)||| | :white_check_mark: | :white_check_mark: ||
-|**Privileged Identity Management (PIM)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
+|**Privileged Identity Management (PIM)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |
 |[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[PIM For Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[PIM Conditional Access Controls](../id-governance/privileged-identity-management/pim-how-to-change-default-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
