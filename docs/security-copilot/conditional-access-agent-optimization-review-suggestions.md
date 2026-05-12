@@ -110,6 +110,9 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 
 Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. The agent goes beyond identifying new users who are missing coverage. It also evaluates how your policies are configured to find persistent gaps, such as exclusions or scoping rules that leave existing users unprotected. Deep analysis evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions—flagging policies that exclude a large portion of users and recommending explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
 
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png" alt-text="Screenshot of a policy suggestion provided by the deep analysis feature." lightbox="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png":::
+
+
 Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and the "notes" option to provide context and rationale for your decision-making process.
 
 #### MFA gap analysis
