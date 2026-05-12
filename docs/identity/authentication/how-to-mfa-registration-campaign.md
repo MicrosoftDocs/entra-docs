@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/04/2026
 author: mjsantani
 ai-usage: ai-assisted
-ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-108
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1012
 #Customer intent: As an identity administrator, I want to encourage users to set up Microsoft Authenticator or a passkey in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -28,7 +28,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ## Prerequisites 
 
-- If you want to know the number of users who registered each authentication method before you configure the registration campaign, see [the Authentication methods activity report](howto-authentication-methods-activity.md#registration-details).
+- If you want to know the number of users who registered each authentication method before you configure the registration campaign, see [Authentication methods activity report](howto-authentication-methods-activity.md#registration-details).
 - Your organization must enable Microsoft Entra multifactor authentication. The registration campaign has no license requirements.
 - **For Authenticator campaigns**: Users can't already have the Authenticator app set up for push notifications on their account. Enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the mode is set to **Passwordless**, users aren't eligible for the nudge. For more information, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
 - **For passkey campaigns**: The passkey (FIDO2) authentication method must be enabled in the Authentication methods policy. In addition, the **Allow self-service setup** toggle must be enabled in the passkey (FIDO2) method configuration. For more information, see [Enable passkeys](how-to-enable-passkey-fido2.md).
@@ -317,7 +317,7 @@ Here are a few sample JSON bodies you can use to get started.
 ## Limitations
 
 > [!IMPORTANT]
-> The passkey nudge is evaluated on a per-user basis. When a user signs in and is scoped into the registration campaign, their passkey profile is checked for restrictions. If the user's passkey profile has any of the following restrictions, they don't see a nudge upon MFA completion:
+> The passkey nudge is evaluated on a per-user basis under Microsoft managed mode. When a user signs in and is scoped into the registration campaign, their passkey profile is checked for restrictions. If the user's passkey profile has any of the following restrictions, they don't see a nudge upon MFA completion:
 >
 > - Synced only
 > - Device-bound only
@@ -342,7 +342,7 @@ For example, if a user has a Windows Hello for Business credential and signs in 
 | Any non-platform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 > [!NOTE]
-> - **Linux**: Users aren't nudged. FIDO2 passkeys aren't available on Linux.
+> **Linux**: Users aren't nudged. FIDO2 passkeys aren't available on Linux.
 
 ## Frequently asked questions
 
@@ -404,7 +404,7 @@ No. The nudge only works for users who are doing MFA using the Microsoft Entra m
 
 **Will Guest/B2B users in my tenant be nudged?** 
 
-Yes. If they have been scoped for the nudge using the policy. 
+Yes, if they're included in the registration campaign policy. 
 
 **What if the user closes the browser?** 
 
