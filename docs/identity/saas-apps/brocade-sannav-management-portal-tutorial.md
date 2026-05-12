@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     > [!Note]
     > Guidelines for updating SANnav-specific attributes:
-    > - **groups**: To ensure the application receives the user's group information correctly, update the existing groups claim with Claim name **http://schemas.microsoft.com/ws/2008/06/identity/claims/groups** in the **Attributes & Claims** settings. Pick the appropriate **Source attribute** from the drop-down list (for example, **Group ID** or **sAMAccountName**). Then, select the **Customize the name of the group claim** option under **Advanced options** and enter `groups` in the **Name** field.
+    > - **groups**: To ensure the application receives the user's group information correctly, update the existing groups claim with Claim name `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` in the **Attributes & Claims** settings. Pick the appropriate **Source attribute** from the drop-down list (for example, **Group ID** or **sAMAccountName**). Then, select the **Customize the name of the group claim** option under **Advanced options** and enter `groups` in the **Name** field.
     > Refer to [Add group claims to tokens for SAML applications using SSO configuration](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) to know more about the `groups` attribute in the **Attributes & Claims** section.
     > - **username**: Refer to the SANnav Management Portal User Guide for the supported username format.
 
