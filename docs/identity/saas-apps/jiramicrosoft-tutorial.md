@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: dhivyagana
 ms.reviewer: celested
 ms.topic: how-to
-ms.date: 05/05/2026
+ms.date: 05/12/2026
 ms.author: dhivyag
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft so that I can control who has access to JIRA SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -29,7 +29,7 @@ Use your Microsoft Entra account with Atlassian JIRA server to enable single sig
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-- JIRA Core and Software 7.0 to 10.5.1 or JIRA Service Desk 3.0 to 5.12.22 should be installed and configured on Windows 64-bit version.
+- JIRA Core and Software 7.0 to 11.3.0 or JIRA Service Desk 3.0 to 5.12.22 should be installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
 - Note the supported versions for JIRA Plugin are mentioned in below section.
 - JIRA server is reachable on the Internet particularly to the Microsoft Entra login page for authentication and should able to receive the token from Microsoft Entra ID.
@@ -50,7 +50,7 @@ To get started, you need the following items:
 
 ## Supported versions of JIRA
 
-* JIRA Core and Software: 7.0 to 10.5.1.
+* JIRA Core and Software: 7.0 to 11.3.0.
 * JIRA Service Desk 3.0 to 5.12.22.
 * JIRA also supports 5.2. For more details, select [Microsoft Entra single sign-on for JIRA 5.2](jira52microsoft-tutorial.md).
 
@@ -63,6 +63,12 @@ To get started, you need the following items:
 
 * [Microsoft Entra ID single sign-on for JIRA server-side application](https://www.microsoft.com/en-us/download/details.aspx?id=56506)
 
+## Release history
+
+* **05/12/2026**
+  - Separate plugin to support JIRA 10.4 and above
+  - Separate plugin to support JIRA 10.4 below should use another plugin version
+  - Critical security fix
 
 ## Scenario description
 
