@@ -75,11 +75,6 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Registration campaign** and select **Edit**.
-1. For **Authentication method**, select the method to target:
-
-   - **Microsoft Authenticator** — Nudge users to set up the Authenticator app.
-   - **Passkey** — Nudge users to register a passkey (includes both sync passkeys and device-bound passkeys).
-
 1. For **State**:
 
    - Select **Enabled** to enable the registration campaign for all users. When the state is set to **Enabled**, you can configure the target authentication method, snooze duration, limited number of snoozes, and include/exclude targets.
@@ -104,6 +99,11 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
    **Days allowed to snooze** sets the period between two successive interrupt prompts. For example, if it's set to 3 days, users who skipped registration don't get prompted again until after 3 days.
 
    :::image type="content" border="true" source="media/how-to-mfa-registration-campaign/admin-experience.png" alt-text="Screenshot of the Microsoft Entra admin center registration campaign settings showing state, authentication method, and snooze configuration options.":::
+
+1. For **Authentication method**, select the method to target:
+
+   - **Microsoft Authenticator** — Nudge users to set up the Authenticator app.
+   - **Passkey** — Nudge users to register a passkey (includes both sync passkeys and device-bound passkeys).
 
 1. Select any users or groups to exclude from the registration campaign, and then select **Save**.
 
@@ -317,11 +317,18 @@ Here are a few sample JSON bodies you can use to get started.
 ## Limitations
 
 > [!IMPORTANT]
-> The passkey nudge experience is currently tailored for users in a passkey profile that allows all types of passkeys (both synced and device-bound), has no AAGUID restrictions, and doesn't enforce attestation. If you use the **Enabled** state to target passkeys for users who are limited to device-bound only, synced only, or have AAGUID restrictions, users might be nudged to register a passkey type they aren't allowed to register, and registration fails. Future updates will refine the nudge logic for synced-only and device-bound-only scenarios.
+> The passkey nudge is evaluated on a per-user basis. When a user signs in and is scoped into the registration campaign, their passkey profile is checked for restrictions. If the user's passkey profile has any of the following restrictions, they don't see a nudge upon MFA completion:
+>
+> - Synced only
+> - Device-bound only
+> - Attestation enforced
+> - AAGUID restrictions
 
 ## Passkey nudge evaluation by platform
 
-The registration campaign evaluates whether a user has a local passkey for their current device and browser combination. The following table describes which platform passkey types suppress the nudge on each OS and browser combination:
+The registration campaign evaluates whether a user has a local passkey for their current device and browser combination. The following table describes which platform passkey types suppress the nudge on each OS and browser combination. A user needs at least one matching passkey type for the nudge to be suppressed on that device and browser.
+
+For example, if a user has a Windows Hello for Business credential and signs in on Windows with Chrome, the nudge is suppressed. But if the same user signs in on a Mac with Chrome, they're nudged because that credential doesn't apply to that platform.
 
 | Credential | Windows + Chrome | Windows + Edge | Windows + Other | Mac + Chrome | Mac + Edge | Mac + Other | iOS | Android |
 |---|---|---|---|---|---|---|---|---|
