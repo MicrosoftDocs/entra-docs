@@ -32,9 +32,12 @@ Before you begin, ensure you have the following prerequisites.
 
 ### Required tools
 
-- [Visual Studio Code](https://code.visualstudio.com/) with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extensions installed. The AI-guided setup requires an AI coding agent with terminal access.
+The AI-guided setup requires an AI coding agent with terminal access:
+
+- [Visual Studio Code](https://code.visualstudio.com/) with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extensions installed. 
 - [PowerShell 7](/powershell/scripting/install/installing-powershell) or later is required for the Microsoft Graph PowerShell module.
 - [Microsoft Graph PowerShell SDK (beta)](/powershell/microsoftgraph/installation) installed using `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`.
+- [Python](https://www.python.org/downloads/) 3.8 or later is required for running the AI agent scripts.
 
 ### Required accounts and permissions
 
@@ -85,10 +88,10 @@ Open the GitHub Copilot Chat panel and switch to **Agent mode**. Agent mode give
 
 ### Step 3: Attach the instructions file and start
 
-In the Copilot Chat input, attach the `agent-id-setup-instructions.md` file and send it with a short prompt. For example:
+In the Copilot Chat input, attach the `SKILLS.md` file and send it with a short prompt. For example:
 
 ```text
-Follow the steps in #file:agent-id-setup-instructions.md
+Follow the steps in https://github.com/microsoft/skills/blob/main/.github/skills/entra-agent-id/SKILL.md
 ```
 
 The AI agent reads the instruction file and begins the guided setup. It creates a task list and works through the steps sequentially:
