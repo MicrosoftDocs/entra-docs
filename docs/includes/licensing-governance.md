@@ -49,7 +49,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Admins directly assign any user (Preview) - via email address for users not yet in your directory](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-identity-preview)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - Managers requesting on behalf of employees](~/id-governance/entitlement-management-request-behalf.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - Owners and sponsors request access on behalf of their agents or service principals](~/id-governance/entitlement-management-request-behalf.md#scenarios-for-requesting-on-behalf-of-agent-identities)|||||| :white_check_mark: |
-|**EM - Supported resources**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
+|**EM - Supported resources**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |
 |[EM - Groups and teams in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-a-group-or-team-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - Eligible group ownerships and memberships in access packages (PIM for Groups)](~/id-governance/entitlement-management-access-package-eligible.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - Applications in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-an-application-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
