@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     > - **username**: Use the User Principal Name (UPN) format for SANnav usernames. While you can modify the username claim to suit your specific requirements, make sure the format complies with the standards outlined in the SANnav Management Portal User Guide.
 
 
-1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
