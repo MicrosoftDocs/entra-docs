@@ -27,7 +27,7 @@ The following table shows what features associated with identity governance are 
 |[Cross-tenant synchronization for users (same cloud)](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[Cross-tenant synchronization for groups (same cloud)](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|||| :white_check_mark: | :white_check_mark: ||
 |[Cross-cloud synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|||| :white_check_mark: | :white_check_mark: ||
-|**Lifecycle Workflows (LCW)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
+|**Lifecycle Workflows (LCW)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |
 |[Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md)|||| :white_check_mark: | :white_check_mark: ||
 |[LCW + Custom Extensions (Logic Apps)](~/id-governance/lifecycle-workflow-extensibility.md)|||| :white_check_mark: | :white_check_mark: ||
 |[LCW + Agent Sponsorship tasks](~/id-governance/agent-sponsor-tasks.md)|||||| :white_check_mark: |
