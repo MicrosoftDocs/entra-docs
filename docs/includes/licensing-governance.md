@@ -64,7 +64,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Internal sponsors as approvers (from assignees' connected organizations)](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - External sponsors as approvers (from assignees' connected organizations)](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |[EM - Sponsors as approvers (from assignees' user profile)](~/id-governance/entitlement-management-access-package-approval-policy.md)|||| :white_check_mark: | :white_check_mark: ||
-|[EM - Agent Sponsors as approvers (from assignees' user profile)](~/id-governance/entitlement-management-access-package-approval-policy.md)|||||| :white_check_mark: |
+|[EM - Agent Sponsors as approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)|||||| :white_check_mark: |
 |[EM - Externally determine approval requirements using custom extensions](~/id-governance/entitlement-management-dynamic-approval.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - Collect additional requestor information for approval](~/id-governance/entitlement-management-access-package-approval-policy.md#collect-additional-requestor-information-for-approval)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
 |**EM - Lifecycle**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
