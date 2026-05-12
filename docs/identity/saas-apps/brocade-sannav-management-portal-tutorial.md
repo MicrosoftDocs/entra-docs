@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows user attributes and claims with default values.](common/default-attributes.png "Claims")
 
-1. In addition, Brocade SANnav Management Portal application expects a few more attributes to be passed back in SAML response which are shown below. These attributes are also prepopulated but you can review them as per your requirements.
+1. The Brocade SANnav Management Portal requires several additional attributes within the SAML response. While these attributes are pre-configured by default, they should be reviewed to ensure they align with your specific environment and security requirements. The following table outlines the expected attributes:
 
     | Name |  Source Attribute|
     | ---------------|  --------- |
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     > [!Note]
     > Guidelines for updating SANnav-specific attributes:
-    > - **groups**: The claim might appear as the URL `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` by default in the edit experience, but the expected final claim name for the application is **groups**. To ensure the application receives the user's group information correctly, update the existing groups claim with Claim name `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` in the **Attributes & Claims** settings. Pick the appropriate **Source attribute** from the drop-down list (for example, **Group ID** or **sAMAccountName**). Then, select the **Customize the name of the group claim** option under **Advanced options** and enter `groups` in the **Name** field.
+    > - **groups**: While the default claim URI is `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` under **Attributes & Claims**, the application specifically requires the shortened name **groups**. To configure this, edit the existing group with claim name `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups`. After selecting your preferred **Source attribute** (such as** Group ID** or **sAMAccountName**), expand the **Advanced options** to select **Customize the name of the group claim**. Finally, enter **groups** into the **Name** field to ensure the application correctly identifies user permissions.
     > Refer to [Add group claims to tokens for SAML applications using SSO configuration](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) to learn more about the `groups` attribute in the **Attributes & Claims** section.
     > - **username**: Use the User Principal Name (UPN) format for SANnav usernames. While you can modify the username claim to suit your specific requirements, make sure the format complies with the standards outlined in the SANnav Management Portal User Guide.
 
