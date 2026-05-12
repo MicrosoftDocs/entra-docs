@@ -5,6 +5,7 @@ ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Management Portal so that I can control who has access to Brocade SANnav Management Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -81,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows user attributes and claims with default values.](common/default-attributes.png "Claims")
 
-1. In addition, Brocade SANnav Management Portal application expects a few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition, Brocade SANnav Management Portal application expects a few more attributes to be passed back in SAML response which are shown below. These attributes are also prepopulated but you can review them as per your requirements.
 
     | Name |  Source Attribute|
     | ---------------|  --------- |
@@ -90,9 +91,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     > [!Note]
     > Guidelines for updating SANnav-specific attributes:
-    > - **groups**: The claim might appear as the URL `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` by default in the edit experience, but the expected final claim name for the app is **groups**. To ensure the application receives the user's group information correctly, update the existing groups claim with Claim name `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` in the **Attributes & Claims** settings. Pick the appropriate **Source attribute** from the drop-down list (for example, **Group ID** or **sAMAccountName**). Then, select the **Customize the name of the group claim** option under **Advanced options** and enter `groups` in the **Name** field.
+    > - **groups**: The claim might appear as the URL `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` by default in the edit experience, but the expected final claim name for the application is **groups**. To ensure the application receives the user's group information correctly, update the existing groups claim with Claim name `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` in the **Attributes & Claims** settings. Pick the appropriate **Source attribute** from the drop-down list (for example, **Group ID** or **sAMAccountName**). Then, select the **Customize the name of the group claim** option under **Advanced options** and enter `groups` in the **Name** field.
     > Refer to [Add group claims to tokens for SAML applications using SSO configuration](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) to learn more about the `groups` attribute in the **Attributes & Claims** section.
-    > - **username**: We recommend using the User Principal Name (UPN) format for SANnav usernames. While you can modify the username claim to suit your specific requirements, make sure the format complies with the standards outlined in the SANnav Management Portal User Guide.
+    > - **username**: Use the User Principal Name (UPN) format for SANnav usernames. While you can modify the username claim to suit your specific requirements, make sure the format complies with the standards outlined in the SANnav Management Portal User Guide.
 
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
