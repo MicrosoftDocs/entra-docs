@@ -79,7 +79,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Microsoft Entra ID Protection integration](~/id-governance/entitlement-management-configure-id-protection-approvals.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - Microsoft Purview Insider Risk Management integration](~/id-governance/entitlement-management-configure-insider-risk-management-approvals.md)|||| :white_check_mark: | :white_check_mark: ||
 |[EM - Conditional Access Scoping](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies)||| :white_check_mark: | :white_check_mark: | :white_check_mark: ||
-|**My Access**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Agent 365** |
+|**My Access**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |
 |[My Access portal](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - My Access Search](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Suggested access packages in My Access](~/id-governance/entitlement-management-suggested-access-packages.md)||| | :white_check_mark: | :white_check_mark: ||
