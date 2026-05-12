@@ -1,22 +1,24 @@
 ---
-title: Run a registration campaign to set up Microsoft Authenticator or passkey
-description: Learn how to run a registration campaign in Microsoft Entra ID to nudge users toward Microsoft Authenticator or passkeys for stronger sign-in security.
+title: Run a registration campaign to set up passkey or Microsoft Authenticator
+description: Learn how to run a registration campaign in Microsoft Entra ID to nudge users toward passkeys or Microsoft Authenticator for stronger sign-in security.
 ms.topic: how-to
 ms.date: 05/04/2026
-author: mjsantani
+author: justinha
+ms.reviewer: marisanchez
 ai-usage: ai-assisted
 ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1012
-#Customer intent: As an identity administrator, I want to encourage users to set up Microsoft Authenticator or a passkey in Microsoft Entra ID to improve and secure user sign-in events.
+#Customer intent: As an identity administrator, I want to encourage users to set up a passkey or Microsoft Authenticator in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
-# Run a registration campaign to set up Microsoft Authenticator or passkey
+# Run a registration campaign to set up passkey or Microsoft Authenticator
 
-You can nudge users to set up Microsoft Authenticator or a passkey during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up the targeted authentication method. You can include or exclude users or groups to control who gets nudged, and create targeted campaigns to move users from less secure authentication methods to Authenticator or passkeys.
+You can nudge users to set up a passkey or Microsoft Authenticator during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up the targeted authentication method. You can include or exclude users or groups to control who gets nudged, and create targeted campaigns to move users from less secure authentication methods to passkeys or Authenticator.
 
 Registration campaigns support two authentication methods:
 
-- **Microsoft Authenticator** — Nudge users to download and set up the Authenticator app for push notifications.
+
 - **Passkey (FIDO2)** — Nudge users to register a passkey, which includes both sync passkeys and device-bound passkeys.
+- - **Microsoft Authenticator** — Nudge users to download and set up the Authenticator app for push notifications.
 
 > [!NOTE]
 > A registration campaign can only target one authentication method at a time. You can't run campaigns for both Microsoft Authenticator and passkeys simultaneously in the same tenant.
@@ -333,10 +335,10 @@ For example, if a user has a Windows Hello for Business credential and signs in 
 | Credential | Windows + Chrome | Windows + Edge | Windows + Other | Mac + Chrome | Mac + Edge | Mac + Other | iOS | Android |
 |---|---|---|---|---|---|---|---|---|
 | Windows Hello for Business | ✔️ | ✔️ | ✔️ | — | — | — | — | — |
-| Entra passkey on Windows (EPOW) | ✔️ | ✔️ | — | ✔️ | — | — | — | — |
+| Entra passkey on Windows (EPOW) | ✔️ | ✔️ | ✔️ | — | — | — | — | — |
 | Google Password Manager | ✔️ | — | — | ✔️ | — | — | — | ✔️ |
-| Microsoft Password Manager | ✔️ | — | — | ✔️ | — | — | — | — |
-| iCloud Keychain (incl. Managed) | — | — | — | — | ✔️ | ✔️ | ✔️ | — |
+| Microsoft Password Manager | — | ✔️ | — | — | ✔️ | — | — | — |
+| iCloud Keychain (incl. Managed) | — | — | — | ✔️ | ✔️ | ✔️ | ✔️ | — |
 | Mac Platform SSO | — | — | — | ✔️ | ✔️ | ✔️ | — | — |
 | Samsung Pass | — | — | — | — | — | — | — | ✔️ |
 | Any non-platform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
