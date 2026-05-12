@@ -67,7 +67,7 @@ To get started, you need the following items:
 
 * **05/12/2026**
   - Separate plugin to support JIRA 10.4 and above
-  - Separate plugin to support JIRA 10.4 below should use another plugin version
+  - Separate plugin for JIRA versions below 10.4
   - Critical security fix
 
 ## Scenario description

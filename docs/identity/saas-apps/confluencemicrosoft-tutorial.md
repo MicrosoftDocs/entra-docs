@@ -71,8 +71,8 @@ As of now, following versions of Confluence are supported:
 ## Release history
 
 * **05/12/2026**
-  - Support for Confluence 10.2 version with the new plugin
-  - For Confluence 9.x different plugin for it
+  - Separate plugin to support Confluence 10.x and above
+  - Separate plugin for Confluence 9.x and below
   - Critical security fix
 
 ## Scenario description
