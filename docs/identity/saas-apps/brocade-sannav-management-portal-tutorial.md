@@ -61,7 +61,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **Brocade SANnav Management Portal** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
