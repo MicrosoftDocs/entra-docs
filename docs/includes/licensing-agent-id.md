@@ -9,7 +9,7 @@ ms.author: godonnell
 ms.custom: include file
 ---
 
-Microsoft Entra Agent ID is part of [Microsoft Agent 365](/microsoft-agent-365/overview). To use Agent ID features, users need a **Microsoft Agent 365** or **Microsoft 365 E7** license. All agents acting on behalf of a licensed user are covered under that user's license. Agents don't require their own license. For pricing details, see [Microsoft Agent 365 licensing FAQ](https://www.microsoft.com/licensing/faqs/122).
+Microsoft Entra Agent ID is part of [Microsoft Agent 365](/microsoft-agent-365/overview). To use Agent ID features, users need a **Microsoft Agent 365** or **Microsoft 365 E7** license. All agents acting on behalf of a licensed user are covered under that user's license. Agents don't require their own license. For pricing details, see [Microsoft Agent 365 plans and pricing](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing).
 
 Some Microsoft Entra security features for agents require additional licensing:
 
