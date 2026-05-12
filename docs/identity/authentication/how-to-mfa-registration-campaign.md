@@ -17,7 +17,7 @@ You can nudge users to set up a passkey or Microsoft Authenticator during sign-i
 Registration campaigns support two authentication methods:
 
 
-- **Passkey (FIDO2)** — Nudge users to register a passkey, which includes both sync passkeys and device-bound passkeys.
+- **Passkey (FIDO2)** — Nudge users to register a passkey, which includes both synced passkeys and device-bound passkeys.
 - - **Microsoft Authenticator** — Nudge users to download and set up the Authenticator app for push notifications.
 
 > [!NOTE]
@@ -100,12 +100,11 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
  
    **Days allowed to snooze** sets the period between two successive interrupt prompts. For example, if it's set to 3 days, users who skipped registration don't get prompted again until after 3 days.
 
-   :::image type="content" border="true" source="media/how-to-mfa-registration-campaign/admin-experience.png" alt-text="Screenshot of the Microsoft Entra admin center registration campaign settings showing state, authentication method, and snooze configuration options.":::
 
 1. For **Authentication method**, select the method to target:
 
    - **Microsoft Authenticator** — Nudge users to set up the Authenticator app.
-   - **Passkey** — Nudge users to register a passkey (includes both sync passkeys and device-bound passkeys).
+   - **Passkey** — Nudge users to register a passkey (includes both synced passkeys and device-bound passkeys).
 
 1. Select any users or groups to exclude from the registration campaign, and then select **Save**.
 
