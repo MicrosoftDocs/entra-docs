@@ -4,7 +4,8 @@ description: Remote desktop connection guidance to deploy passwordless and phish
 ms.topic: how-to
 ms.date: 05/11/2026
 author: mepples21
-ms.reviewer: miepping
+ms.author: justinha
+ms.reviewer: sipower
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID
