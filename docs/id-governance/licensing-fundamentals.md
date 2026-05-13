@@ -89,7 +89,7 @@ This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID
 
 ## Account Discovery
 
-Account Discovery requires the Microsoft Entra ID Governance add-on or Microsoft Entra Suite. TThis feature allows administrators to discover existing user accounts in target applications and identify which users have matching Entra accounts or are orphan accounts. For more information, see [Discover identities in target applications with Account Discovery](../identity/app-provisioning/how-to-account-discovery.md).
+Account Discovery requires the Microsoft Entra ID Governance add-on or Microsoft Entra Suite. This feature allows administrators to discover existing user accounts in target applications and identify which users have matching Entra accounts or are orphan accounts. For more information, see [Discover identities in target applications with Account Discovery](../identity/app-provisioning/how-to-account-discovery.md).
 
 ### License scenarios
 
