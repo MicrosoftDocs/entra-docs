@@ -2,7 +2,7 @@
 title: Conditional Access service dependencies 
 description: Learn about service dependencies in Microsoft Entra Conditional Access and how they affect policy enforcement.
 ms.topic: concept-article
-ms.date: 04/01/2026
+ms.date: 05/12/2026
 ms.reviewer: kvenkit
 ---
 # Service dependencies in Microsoft Entra Conditional Access
@@ -38,8 +38,14 @@ The following table lists some more service dependencies, where the client apps 
 | Client apps         | Downstream service                          | Enforcement |
 | :--                 | :--                                         | ---         |
 | Azure Data Lake     | Windows Azure Service Management API (portal and API) | Early-bound |
+| Azure portal        | Exchange                                    | Early-bound |
+|                     | SharePoint                                  | Early-bound |
+|                     | Microsoft 365 Reporting Service             | Early-bound |
+|                     | Windows 365                                 | Early-bound |
 | Microsoft Classroom | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
+| Microsoft Intune Portal Extension | Microsoft Intune              | Early-bound |
+|                     | Windows 365                                 | Early-bound |
 | Microsoft Teams     | Exchange                                    | Early-bound |
 |                     | MS Planner                                  | Late-bound  |
 |                     | Microsoft Stream                            | Late-bound  |
@@ -47,6 +53,9 @@ The following table lists some more service dependencies, where the client apps 
 |                     | Microsoft Whiteboard                        | Late-bound  |
 | Microsoft 365 portal | Exchange                                   | Early-bound  |
 |                     | SharePoint                                  | Early-bound  |
+|                     | Microsoft Teams Services                    | Early-bound  |
+|                     | Microsoft 365 Reporting Service             | Early-bound  |
+|                     | Windows 365                                 | Early-bound  |
 | Outlook groups      | Exchange                                    | Early-bound |
 |                     | SharePoint                                  | Early-bound |
 | Power Apps          | Windows Azure Service Management API (portal and API) | Early-bound |
