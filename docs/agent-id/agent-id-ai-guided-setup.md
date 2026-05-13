@@ -101,7 +101,7 @@ Open the GitHub Copilot Chat panel and switch to **Agent mode**. Agent mode give
 If you have the GitHub Copilot for Azure extension installed, ask Copilot to set up Agent ID. For example:
 
 ```text
-@azure Set up an agent identity blueprint and create agent identities for my project using Microsoft Entra Agent ID.
+@azure Use the Agent ID Skill to set up an agent identity blueprint and create agent identities for my project using Microsoft Entra Agent ID.
 ```
 
 If you don't have the extension, reference the skill directly from GitHub:
