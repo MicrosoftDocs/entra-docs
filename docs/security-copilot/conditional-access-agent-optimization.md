@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
 
-ms.date: 03/16/2026
+ms.date: 05/12/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -77,7 +77,7 @@ The policy suggestions identified by the agent include:
 - **Risky agents**: The agent suggests a policy to block authentication for high risk sign-ins. Requires Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 - **Deep analysis**: The agent looks at policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout).
-- **Deep analysis MFA gap analysis (Preview)**: The agent scans all enabled Conditional Access policies in your tenant to identify users not covered by any MFA policy. This includes users excluded from baseline policies, missed in group membership, or falling through gaps between overlapping policies. Unlike standard scans, this analysis evaluates the entire tenant configuration and isn't limited to the last 24 hours.
+- **Deep analysis MFA gap analysis**: The agent scans all enabled Conditional Access policies in your tenant to identify users not covered by any MFA policy. This includes users excluded from baseline policies, missed in group membership, or falling through gaps between overlapping policies. Unlike standard scans, this analysis evaluates the entire tenant configuration and isn't limited to the last 24 hours.
 - **Least-privileged access for agent identities (Preview)**: The agent identifies agent identities with unused or overprivileged Microsoft Graph permissions and recommends least-privilege enforcement, such as removing unused permissions or replacing broad permissions with more specific ones.
 
 > [!IMPORTANT]
