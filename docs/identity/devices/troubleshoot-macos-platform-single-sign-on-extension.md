@@ -202,7 +202,7 @@ We'd love to hear your feedback. You should include the following information:
 - Steps to reproduce the issue
 - Where applicable, include relevant screenshots and/or recordings
 
-#### Capturing Sysdiagnose and diagnostic logs
+### Capturing Sysdiagnose and diagnostic logs
 
 1. Enable debug logs persistence by running the following command in Terminal.
 
@@ -291,10 +291,12 @@ cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercor
 ![Unable to Sign in](./media/macos-psso/psso-simplifiedsetup-unable-to-sign-in.png)
 
 **Issue summary: Company Portal/SSO extension not available during Setup Assistant**
+
 In the case where configuration profiles and the Company Portal app (which provides the SSO extension) arrive late, Setup Assistant may show a missing SSO app message even though the PSSO profile has already been delivered.
 
 - The management profile/configuration can be present while Company Portal is still downloading or installing since enrollment actions occur in separate steps rather than as a single transaction.
-- Retrying using "Try again" button succeed once Company Portal arrives.
+- Retrying using "Try again" button should succeed once Company Portal arrives.
+- If the issue persists, and the profile is updated while the setup assistant flow is in progress, the changes won't take effect until the device is wiped and started clean.
 
 ### Re-enroll device with Platform SSO with EnableRegistrationDuringSetup on macOS
 
@@ -307,6 +309,18 @@ To disable PSSO during setup,
 
 > [!NOTE]
 > Wiping the device is required to restart the enrollment process and apply the updated enrollment profiles.
+
+### To Capture Sysdiagnose and CP logs in macOS Setup Assistant
+1.	In macOS Setup Assistant, press Control + Option + Command + Shift + Period (.) to start a sysdiagnose capture.
+    - The screen may appear to freeze briefly while the capture is triggered.
+    - Logs are collected in the background and packaged into a .tar.gz file.
+2.	After you can access the system, 
+    - Retrieve sys dianostics file from /private/var/tmp/ (sometimes /var/tmp/). File name format: sysdiagnose_YYYY.MM.DD_*.tar.gz
+    - Open company portal app and go to Help -> Send diagnostic report and share the incident id
+3.	If the user can’t complete Setup Assistant (for example, due to a PSSO configuration error), you can still collect and share the sysdiagnose output and CP logs.
+    - Triggering sysdiagnose in Setup Assistant opens a Finder-like window showing the sysdiagnose .tar.gz file. Use AirDrop to share the file.
+    - In the same finder window, navigate to Applications tab and open Company portal app. Go to Help ->Send diagnostic report and share the incident id.
+
 
 ## See also
 

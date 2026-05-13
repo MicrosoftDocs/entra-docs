@@ -136,6 +136,10 @@ When combined with Setup Assistant with modern authentication and the Company Po
 
 For step-by-step instructions to set up PSSO with EnableRegistrationDuringSetup in Intune, check this doc: [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/configure-platform-sso-during-enrollment.md)
 
+> [!NOTE]
+> Authenticating with Smart Card in Setup Assistant is not supported. If you want to use Smart Card as the authentication method, you must complete PSSO registration after Setup Assistant is completed.
+
+
 ## Troubleshooting 
 
 If you experience issues when implementing macOS Platform SSO, refer to our documentation on [macOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
