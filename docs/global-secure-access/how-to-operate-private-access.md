@@ -66,6 +66,8 @@ Configure the following alerts and document the response action for each. Use [M
 | Connector high resource usage | CPU > 80% or memory > 85% sustained for 15+ minutes on a connector host | Network Ops L1 | Azure Monitor alert ([Playbook 5](#playbook-5-connector-group-capacity-alert)) | 1. Check the number of active sessions on the connector.<br>2. Redistribute load by adding another connector to the group.<br>3. Investigate if a specific application is generating unusual traffic volume. |
 | Application segment unreachable | Users receive connection failures for a specific Private Access application | Network Ops L1 → App Owner | Sentinel analytics rule *Private access segment failures* | 1. Verify the backend application server is running and reachable from the connector host.<br>2. Test DNS resolution from the connector host for the application fully qualified domain name (FQDN).<br>3. Check the application segment configuration in the Microsoft Entra admin center for correct IP/FQDN and port ranges. See [Troubleshoot application access](/entra/global-secure-access/troubleshoot-app-access#how-does-dns-work-with-global-secure-access) and [Troubleshoot problems installing the private network connector](/entra/global-secure-access/troubleshoot-connectors#troubleshooting-connector-functionality). |
 | Unusual access denials spike | Access denial count for Private Access applications increases by more than 50% compared to the seven-day baseline | Identity and access management (IAM) Ops + SOC | Sentinel scheduled analytics rule *Unusual private access denials* (derived from the top-denied-apps Kusto Query Language (KQL) query) | 1. Review `NetworkAccessTraffic` for the denied sessions—identify the users, apps, and denial reasons.<br>2. Determine whether this denial pattern is a policy misconfiguration (legitimate users blocked) or a security event (unauthorized access attempts).<br>3. For policy issues, adjust the Conditional Access or app assignment. For security events, escalate to your SOC. |
+| App segment published without user assignment | An application segment is added or updated while the parent enterprise application has zero user or group assignments | IAM Admin | Sentinel scheduled rule *Private Access segment created without assignment* + the [pre-flight safety gate in Playbook 4](#playbook-4-application-segment-onboarding) | The segment matches traffic but no user is authorized, which can disrupt user access. 1. Assign at least one user or group to the parent enterprise app, **or** delete the offending **segment** — not the parent enterprise app. 2. Confirm activity returns to baseline before closing the alert. |
+| App segment with broad destination | A new or updated application segment uses `destinationType` of `dnsSuffix` (wildcard suffix match), or its `destinationHost` is `0.0.0.0/0` or `::/0` | IAM Admin + Network Ops L2 | Sentinel scheduled rule *Private Access broad segment destination* (conservative trigger) + Zero Trust Assessment check [Entra Private Access Application segments are defined to enforce least-privilege access](/entra/fundamentals/zero-trust-protect-networks#entra-private-access-application-segments-are-defined-to-enforce-least-privilege-access) | A wildcard or default-route segment can capture traffic intended for unrelated services, including globally-deployed agents. 1. Confirm with the change requester that the broad destination is intentional. 2. If unintentional, narrow to specific FQDNs or `/24`-or-tighter ranges and remove `dnsSuffix` wildcards. 3. Run [Playbook 7](#playbook-7-scheduled-zero-trust-assessment-digest) to pick up the wider posture findings (CIDR > /24, broad port ranges, missing Custom Security Attributes) that ZT Assessment 25395 reports. |
 | Unauthorized configuration change | A Private Access configuration change is made by an unexpected identity or without a matching change ticket | SOC + IAM Admin | [Playbook 8: Private Access configuration change alert](#playbook-8-private-access-configuration-change-alert) | 1. Identify the actor and change details in Microsoft Entra audit logs.<br>2. Verify whether the change was approved through your change management process.<br>3. If unauthorized, revert the change and investigate the identity compromise. See [How to access the Global Secure Access audit logs](/entra/global-secure-access/how-to-access-audit-logs#overview), [Microsoft Entra audit log categories and activities](/entra/identity/monitoring-health/reference-audit-activities#global-secure-access), and [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps). |
 
 > [!TIP]
@@ -356,9 +358,25 @@ For the full walkthrough, see [Configure Microsoft Sentinel for Global Secure Ac
 | --- | --- |
 | **Trigger** | Manual: initiated by an approved change request |
 | **Frequency** | As needed |
-| **Required permissions** | Service principal or user account with `NetworkAccess.ReadWrite.All` |
+| **Required permissions** | Service principal or user account with `NetworkAccess.ReadWrite.All`; `Application.Read.All` for the pre-flight assignment lookup |
 
-**Steps:**
+> [!IMPORTANT]
+> Run the four-step **pre-flight safety gate** below before every segment creation or update. A segment published with no user assignment or with an overly broad destination can disrupt access to unrelated apps; if that happens, mitigate by assigning users or deleting the **segment** — do not delete the parent enterprise app.
+
+**Pre-flight safety gate:**
+
+1. **Verify user assignment exists on the parent enterprise app.** A segment begins matching traffic the moment the policy is delivered to clients. If the parent app has no user or group assignment, every matched session is denied. Query Graph and confirm at least one assignment exists **before** writing the segment:
+
+   ```http
+   GET https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalId}/appRoleAssignedTo
+   ```
+
+   If the response is empty, assign a pilot user or group first.
+2. **Check the destination for conservative-trigger patterns.** Reject the change automatically if the proposed `destinationHost` is `0.0.0.0/0` or `::/0`, or the `destinationType` is `dnsSuffix` — these patterns can capture traffic intended for unrelated services.
+3. **Check for overlap with existing segments and broader posture findings.** Run the Zero Trust Assessment check [Entra Private Access Application segments are defined to enforce least-privilege access](/entra/fundamentals/zero-trust-protect-networks#entra-private-access-application-segments-are-defined-to-enforce-least-privilege-access) — it flags broad CIDR (> /24), broad port ranges, missing Custom Security Attributes, and other risky configurations. Resolve any findings on the parent app before proceeding.
+4. **Pilot before broad rollout.** Assign the segment to a pilot group of 5–10 users. Watch `NetworkAccessTraffic` for unexpected denials for **30 minutes**. Only expand the assignment after the pilot window is clean.
+
+**Import steps:**
 
 1. Prepare a CSV file with columns: `AppName`, `FQDN`, `IPRange`, `Ports`, `Protocol`, `ConnectorGroup`.
 2. For each row, call the Graph API to create or update the application segment:
