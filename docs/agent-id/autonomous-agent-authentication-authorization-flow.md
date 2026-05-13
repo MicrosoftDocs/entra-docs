@@ -252,14 +252,14 @@ Use the following steps to get an app role assignment.
 
 ### Request authorization from a tenant administrator
 
-To grant delegated permissions, construct the authorization URL that is used to prompt the administrator. The role parameter is used to specify the requested application permissions.
+To grant application permissions, construct the authorization URL that is used to prompt the administrator. The role parameter is used to specify the requested application permissions.
 
 Be sure to use the agent identity client ID in the following request.
 
 ```bash
 https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 ?client_id=<agent-identity-client-id>
-&role=User.Read.All
+&role=https://graph.microsoft.com/User.Read.All
 &redirect_uri=https://entra.microsoft.com/TokenAuthorize
 &state=xyz123
 ```

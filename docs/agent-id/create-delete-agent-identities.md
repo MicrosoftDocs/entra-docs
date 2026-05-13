@@ -116,7 +116,7 @@ Authorization: Bearer <token>
 	"sponsors@odata.bind": [
 		"https://graph.microsoft.com/v1.0/users/<id>",
 		"https://graph.microsoft.com/v1.0/groups/<group-id>"
-	],
+	]
 }
 ```
 
