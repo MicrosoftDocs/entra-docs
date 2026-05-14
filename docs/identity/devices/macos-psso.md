@@ -134,7 +134,9 @@ To enable this capability, an administrator needs to configure PSSO through Micr
 
 When combined with Setup Assistant with modern authentication and the Company Portal SSO extension, Intune can complete identity bootstrap and device registration early in the enrollment flow - reducing prompts and ensuring the device is ready for use as soon as it reaches the desktop.
 
-For step-by-step instructions to set up PSSO with EnableRegistrationDuringSetup in Intune, check this doc: [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/configure-platform-sso-during-enrollment.md)
+For step-by-step instructions to set up PSSO with EnableRegistrationDuringSetup in Intune, check this doc: [Configure Platform Single Sign-On (PSSO) during Automated Device Enrollment for macOS devices](/mem/intune/device-configuration/settings-catalog/configure-platform-sso-during-enrollment.md)
+
+
 
 > [!NOTE]
 > Authenticating with Smart Card in Setup Assistant is not supported. If you want to use Smart Card as the authentication method, you must complete PSSO registration after Setup Assistant is completed.
