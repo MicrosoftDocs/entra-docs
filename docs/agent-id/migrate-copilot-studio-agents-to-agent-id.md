@@ -13,10 +13,7 @@ ai-usage: ai-assisted
 
 # Recreate Copilot Studio agents in Microsoft Entra Agent ID
 
-Some agents created in Microsoft Copilot Studio authenticate by using platform-managed service principals. These agents could have been created:
-- before Copilot Studio began automatically creating agent identities for all new agents, which happened on March 18, 2026.
-- before your organization opted in to the [Microsoft Entra Agent ID integration with Copilot Studio](/microsoft-copilot-studio/admin-use-entra-agent-identities)
-- if your organization opted out of creating agent identities
+Some agents created in Microsoft Copilot Studio authenticate by using platform-managed service principals. These agents could have been created before Copilot Studio began automatically creating agent identities for all new agents, which happened on March 18, 2026. These agents could have also been created before your organization opted in to the [Microsoft Entra Agent ID integration with Copilot Studio](/microsoft-copilot-studio/admin-use-entra-agent-identities) or if your organization opted out of creating agent identities.
 
 These service principals let agents communicate with Azure Bot Service, Microsoft Teams, and Bot Framework skills, but Microsoft Entra treats them as standard applications, not as AI agents. Adopting Microsoft Entra Agent ID gives you agent-specific governance, including Conditional Access policies, centralized audit logging, and lifecycle management.
 
