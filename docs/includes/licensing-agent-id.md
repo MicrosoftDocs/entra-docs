@@ -4,16 +4,16 @@ description: Microsoft Entra Agent ID licensing details
 author: garrodonnell
 ms.service: entra
 ms.topic: include
-ms.date: 05/12/2026
+ms.date: 05/14/2026
 ms.author: godonnell
 ms.custom: include file
 ---
 
 Microsoft Entra Agent ID is a product within Microsoft Entra that provides the platform for creating and managing agent identities and agent identity blueprints. Agent ID is available for all Microsoft Entra customers.
 
-Integration with [Microsoft Agent 365](/microsoft-agent-365/overview) enables agents to operate across Microsoft 365 services and enterprise workflows, which requires a **Microsoft Agent 365** license. For pricing details, see [Microsoft Agent 365 plans and pricing](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing).
+Integration with [Microsoft Agent 365](/microsoft-agent-365/overview) enables agents to operate across Microsoft 365 services and enterprise workflows, which requires a **Microsoft Agent 365** license for each user. For pricing details, see [Microsoft Agent 365 plans and pricing](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing).
 
-Some Microsoft Entra security features for agents require **Microsoft 365 E5** or the following licensing:
+Technical requirements that enable the security features for agents within Microsoft Entra require **Microsoft 365 E5** or the following licensing:
 
 - **Conditional Access for agents**: Microsoft Entra ID P1
 - **ID Protection for agents**: Microsoft Entra ID P2

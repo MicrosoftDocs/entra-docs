@@ -19,13 +19,15 @@ This article shows you how to migrate these platform-managed service principals 
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
-
 - One or more Copilot Studio agents that use legacy (pre-Agent ID) service principals, created before March 18, 2026 or before your tenant opted in to Agent ID.
 - Access to the **Copilot Studio admin center** and the **Microsoft Entra admin center**.
 - **Agent ID Developer** or **Agent ID Administrator** role in Microsoft Entra to manage agent identities.
 - Agent ID integration enabled for your tenant in Copilot Studio.
 - Familiarity with Agent ID key concepts. For more information, see [Agent identity concepts](key-concepts.md).
+
+### Licensing requirements
+
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ## Why migrate to Agent ID?
 
