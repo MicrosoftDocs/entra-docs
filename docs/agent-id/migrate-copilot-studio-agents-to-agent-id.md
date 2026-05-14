@@ -84,7 +84,7 @@ You can enrich your discovery with additional data sources: Copilot Studio telem
 
 ### Automate discovery with the migration toolkit
 
-The [Microsoft Entra Agent Identity Migration Toolkit](https://github.com/microsoft/entra-agentid-samples/tree/main/migration-toolkit/toolkit) automates discovery of Copilot Studio service principals by scanning for platform-specific tags. It enriches each service principal with ownership, permissions, credentials, sign-in activity, and generates an interactive HTML dashboard for review.
+The [Microsoft Entra Agent Identity Migration Toolkit](https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR3zXD-SxVfxJk_JOzmqkhUdUREtMUEVRS0RYRzJPVUVMNUFMRTFXODgxVS4u&route=shorturl) automates discovery of Copilot Studio service principals by scanning for platform-specific tags. It enriches each service principal with ownership, permissions, credentials, sign-in activity, and generates an interactive HTML dashboard for review. Fill out the access request form to get the toolkit.
 
 ## Phase 2: Classify Copilot Studio agents
 
@@ -224,4 +224,4 @@ To decommission the legacy service principal, follow these steps:
 - [Agent identity concepts](key-concepts.md)
 - [Create an agent identity blueprint](create-blueprint.md)
 - [Best practices for Agent ID](best-practices-agent-id.md)
-- [Microsoft Entra Agent Identity Migration Toolkit](https://github.com/microsoft/entra-agentid-samples/tree/main/migration-toolkit/toolkit)
+- [Microsoft Entra Agent Identity Migration Toolkit](https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR3zXD-SxVfxJk_JOzmqkhUdUREtMUEVRS0RYRzJPVUVMNUFMRTFXODgxVS4u&route=shorturl)
