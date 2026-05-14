@@ -192,13 +192,13 @@ For domains that set the **SupportsMfa** property, these rules determine how **f
 You can check the status of **federatedIdpMfaBehavior** by using [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration?view=graph-powershell-1.0&preserve-view=true&viewFallbackFrom=graph-powershell-beta).
 
 ```powershell
-Get-MgDomainFederationConfiguration –DomainID yourdomain.com
+Get-MgDomainFederationConfiguration –DomainID contoso.com
 ```
 
 You can also check the status of your **SupportsMfa** flag with [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration):
 
 ```powershell
-Get-MgDomainFederationConfiguration –DomainName yourdomain.com
+Get-MgDomainFederationConfiguration –DomainName contoso.com
 ```
 
 The following example shows how to set **federatedIdpMfaBehavior** to `enforceMfaByFederatedIdp` by using Graph PowerShell. 
