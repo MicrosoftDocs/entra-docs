@@ -84,7 +84,7 @@
     - name: Default protection
       href: concept-authentication-default-enablement.md
     - name: System-preferred authentication
-      href: concept-system-preferred-multifactor-authentication.md
+      href: concept-system-preferred-authentication.md
     - name: Mandatory MFA
       href: concept-mandatory-multifactor-authentication.md
     - name: External MFA provider
