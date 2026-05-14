@@ -273,7 +273,7 @@ Registration of passkey (FIDO2) credentials isn't supported for internal or exte
 
 If a user's UPN changes, you can no longer modify passkeys (FIDO2) to account for the change. If the user has a passkey (FIDO2), they need to sign in to [Security info](https://mysignins.microsoft.com/security-info), delete the old passkey (FIDO2), and add a new one.
 
-## Next steps
+## Related content
 
 After you enable passkey profiles, share end-user registration and sign-in guidance for each passkey type:
 
@@ -281,9 +281,6 @@ After you enable passkey profiles, share end-user registration and sign-in guida
 - **Passkeys in Microsoft Authenticator** — [Enable passkeys in Authenticator](how-to-enable-authenticator-passkey.md) | [Register a passkey in Authenticator](how-to-register-passkey-authenticator.md) | [Sign in with passkeys in Authenticator](how-to-sign-in-passkey-authenticator.md)
 - **Microsoft Entra passkeys on Windows (preview)** — [Enable passkeys on Windows](how-to-authentication-entra-passkeys-on-windows.md)
 - **FIDO2 security keys** — [Register a passkey with a security key](how-to-register-passkey-with-security-key.md)
-
-## Related content
-
 - [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md)
 - [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md)
 - [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md)
