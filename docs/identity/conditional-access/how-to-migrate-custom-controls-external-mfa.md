@@ -1,23 +1,37 @@
 ---
 title: Migrate from custom controls to external MFA in Conditional Access
-description: Learn how to migrate from custom controls to external MFA (external authentication methods) in Microsoft Entra Conditional Access.
+description: Learn how to migrate from custom controls to external multifactor authentication in Microsoft Entra Conditional Access.
 ms.topic: how-to
 ms.date: 05/13/2026
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycollin
+manager: pmwongera
 ms.reviewer: akuloomba
 ai-usage: ai-assisted
 ---
 
-# Migrate from custom controls to external MFA
+# Migrate from custom controls to external multifactor authentication
 
-With the general availability of external MFA (previously known as external authentication methods), custom controls are deprecated and scheduled for retirement. This guide helps IT administrators migrate existing custom control Conditional Access policies to external MFA.
+External multifactor authentication (MFA) lets users choose an external provider to meet MFA requirements when they sign in with a work or school account. Custom controls in Microsoft Entra Conditional Access previously provided similar functionality, but with the general availability of external MFA (previously known as external authentication methods), custom controls are deprecated and scheduled for retirement. This guide provides the steps to migrate existing custom control Conditional Access policies to external MFA.
 
 > [!IMPORTANT]
-> Custom controls are deprecated and will be retired in late 2026. Start planning your migration now. For more information, see the [External MFA GA announcement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/4488926).
+> Custom controls are deprecated and will be retired in September 2026. Start planning your migration now. For more information, see the [External MFA GA announcement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/4488926).
 
-This guide is relevant only if your organization currently uses custom controls. If you don't use custom controls, no action is needed.
+*This guide is relevant only if your organization currently uses custom controls. If you don't use custom controls, no action is needed.*
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- Microsoft Entra ID P1 or P2 license.
+- [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role (or Global Administrator).
+- [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to grant admin consent for the provider's application.
+- Metadata from your external MFA provider:
+  - **Application ID**: App Registration ID (typically multitenant).
+  - **Client ID**: Identifies Entra requests to the provider.
+  - **Discovery URL**: OIDC metadata endpoint (for example, `https://provider.example.com/.well-known/openid-configuration`).
+- A test user group in Microsoft Entra ID for testing.
+- An inventory of all existing Conditional Access policies that use custom controls.
 
 ## Why migrate?
 
@@ -31,25 +45,21 @@ External MFA addresses key limitations of custom controls:
 | Risk-based Conditional Access | ❌ Not supported | ✅ Supported |
 | Intune device registration | ❌ Not supported | ✅ Supported |
 
-## Prerequisites
+## Migration overview
 
-Before you begin, ensure you have:
+The high-level migration process includes the following steps:
 
-- Microsoft Entra ID P1 or P2 license.
-- [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role (or Global Administrator).
-- [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to grant admin consent for the provider's application.
-- Metadata from your external MFA provider:
-  - **Application ID** — App Registration ID (typically multitenant).
-  - **Client ID** — Identifies Entra requests to the provider.
-  - **Discovery URL** — OIDC metadata endpoint (for example, `https://provider.example.com/.well-known/openid-configuration`).
-- A test user group in Microsoft Entra ID for piloting.
-- An inventory of all existing Conditional Access policies that use custom controls.
+1. [Audit your existing custom control policies.](#audit-your-existing-custom-control-policies)
+1. [Configure the external MFA authentication method policy.](#configure-the-external-mfa-authentication-method-policy)
+1. [Register test users for external MFA.](#register-test-users-for-external-mfa)
+1. [Create a test Conditional Access policy requiring MFA.](#create-a-test-conditional-access-policy-requiring-mfa)
+1. [Move test users from custom control policy to external MFA policy.](#move-test-users-from-custom-control-policy-to-external-mfa-policy)
+1. [Test sign-in to protected apps.](#test-sign-in-to-protected-apps)
+1. [Full rollout.](#full-rollout)
 
-## Step 1: Audit your existing custom control policies
+## Audit your existing custom control policies
 
-Before making changes, document your current state.
-
-### Identify Conditional Access policies using custom controls
+Before making changes, document your current state. To identify Conditional Access policies using custom controls:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
@@ -80,11 +90,11 @@ Get-MgIdentityConditionalAccessPolicy -All | Where-Object {
 > [!TIP]
 > Large tenants might have dozens or hundreds of Conditional Access policies. Export the results and track migration status per policy to avoid underestimating migration effort.
 
-## Step 2: Configure the external MFA authentication method policy
+## Configure the external MFA authentication method policy
 
-This step registers your external MFA provider as a recognized authentication method in Microsoft Entra ID.
+This step registers your external MFA provider as a recognized authentication method in Microsoft Entra ID. We recommend configuring your external MFA provider in the Microsoft Entra admin center for better visibility and easier management, but you can also use the Microsoft Graph API and PowerShell.
 
-### Configure via the Microsoft Entra admin center (recommended)
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
@@ -101,7 +111,7 @@ This step registers your external MFA provider as a recognized authentication me
    - Optionally configure exclude targets for break-glass/emergency accounts.
 1. Select **Save**.
 
-### Configure via Microsoft Graph API (alternative)
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 If you prefer automation, use the Microsoft Graph API:
 
@@ -129,7 +139,7 @@ Content-Type: application/json
 }
 ```
 
-PowerShell equivalent:
+### [PowerShell](#tab/powershell)
 
 ```powershell
 Connect-MgGraph -Scopes "Policy.ReadWrite.AuthenticationMethod"
@@ -154,8 +164,9 @@ $params = @{
 
 New-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration -BodyParameter $params
 ```
+---
 
-## Step 3: Register test users for external MFA
+## Register test users for external MFA
 
 Once the external MFA policy is configured and targeted at your test group, ensure users are registered for the external authentication method.
 
@@ -211,7 +222,7 @@ $report | Export-Csv -Path "ExternalMFA-Registration-Report.csv" -NoTypeInformat
 > [!NOTE]
 > If your organization previously enabled the external MFA registration public preview, users who registered during that period should already appear as registered. Verify with the registration check before bulk-registering.
 
-## Step 4: Create a test Conditional Access policy requiring MFA
+## Create a test Conditional Access policy requiring MFA
 
 Create a new Conditional Access policy that uses the standard **Require multifactor authentication** grant (which external MFA now satisfies), rather than a custom control.
 
@@ -220,6 +231,7 @@ Create a new Conditional Access policy that uses the standard **Require multifac
 
 ### Create the policy in the Microsoft Entra admin center
 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select **+ New policy**.
 1. Configure the policy:
@@ -239,7 +251,7 @@ Create a new Conditional Access policy that uses the standard **Require multifac
 1. Select **Create**.
 
 > [!IMPORTANT]
-> Don't use **Require authentication strength** for external MFA — use the standard **Require multifactor authentication** grant. External MFA is not yet compatible with authentication strength policies.
+> Don't use **Require authentication strength** for external MFA. Use the standard **Require multifactor authentication** grant. External MFA is not yet compatible with authentication strength policies.
 
 ### Verify report-only behavior
 
@@ -257,7 +269,7 @@ Once satisfied with report-only results:
 1. Change from **Report-only** to **On**.
 1. Save.
 
-## Step 5: Move test users from custom control policy to external MFA policy
+## Move test users from custom control policy to external MFA policy
 
 ### Exclude test users from the custom control policy
 
@@ -278,7 +290,7 @@ Once satisfied with report-only results:
    - The old custom control policy does **NOT** apply to the test user.
    - The new MFA policy **DOES** apply.
 
-## Step 6: Test sign-in to protected apps
+## Test sign-in to protected apps
 
 ### Perform test sign-ins
 
@@ -314,7 +326,7 @@ If applicable, verify that these scenarios work correctly with external MFA:
 - **Risk-based policies** — Sign-in risk and user risk policies correctly interact with external MFA.
 - **Intune device enrollment** — Device registration completes with external MFA.
 
-## Step 7: Full rollout
+## Full rollout
 
 After successful testing, expand the migration to all users.
 
