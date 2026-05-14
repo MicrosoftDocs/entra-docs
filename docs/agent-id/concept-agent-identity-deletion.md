@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: shlipsey3
 ms.author: sarahlipsey
 ms.topic: concept-article
-ms.date: 04/28/2026
+ms.date: 05/15/2026
 ms.custom: agent-id
 ai-usage: ai-assisted
 
@@ -50,6 +50,21 @@ The cascade process works as follows:
 
 > [!IMPORTANT]
 > If you restore the agent identity blueprint principal before the background cleanup runs, child agent identities aren't affected. After the cleanup runs, each child identity must be restored individually. Restoring the agent identity blueprint principal doesn't reverse cascade deletions that already occurred.
+
+### Cascade cleanup in audit logs
+
+When the background cleanup task deletes agent identities, the deletions appear in your tenant's [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md). These entries have the following characteristics:
+
+| Audit log field | Value |
+|---|---|
+| **Activity** | Delete service principal |
+| **Initiated by (actor)** | Application: *Delete Agent Identities Task* |
+| **Actor App ID** | (blank) |
+
+The actor is shown as an application named **Delete Agent Identities Task** with no app ID. This is expected because the cleanup is performed by an internal Microsoft Entra background process, not by an external application or user.
+
+> [!NOTE]
+> The cascade cleanup runs asynchronously after the blueprint is deleted. It might not run immediately — there can be a delay of hours or days between the blueprint deletion and the cleanup of child agent identities. Each child identity deletion appears as a separate audit log entry.
 
 ## Orphaned objects and quota considerations
 
