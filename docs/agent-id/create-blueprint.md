@@ -104,11 +104,11 @@ Authorization: Bearer <token>
   "@odata.type": "Microsoft.Graph.AgentIdentityBlueprint",
   "displayName": "My Agent Identity Blueprint",
   "sponsors@odata.bind": [
-    "https://graph.microsoft.com/v1.0/users/<id>",
+    "https://graph.microsoft.com/v1.0/users/<id>"
   ],
   "owners@odata.bind": [
     "https://graph.microsoft.com/v1.0/users/<id>"
-  ],
+  ]
 }
 
 ```
