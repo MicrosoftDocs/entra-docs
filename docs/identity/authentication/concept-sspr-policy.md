@@ -1,6 +1,6 @@
 ---
 title: Self-service password reset policies
-description: Learn about the different Microsoft Entra self-service password reset policy options
+description: Learn about Microsoft Entra self-service password reset (SSPR) policy options, including password complexity requirements, administrator reset policies, and password expiration settings.
 ms.topic: concept-article
 ms.date: 05/15/2025
 ms.reviewer: tilarso
@@ -10,7 +10,7 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 
 In Microsoft Entra ID, there's a password policy that defines settings like the password complexity, length, or age. There's also a policy that defines acceptable characters and length for usernames.
 
-When self-service password reset (SSPR) is used to change or reset a password in Microsoft Entra ID, the password policy is checked. If the password doesn't meet the policy requirements, the user is prompted to try again. Azure administrators have some restrictions on using SSPR that are different to regular user accounts, and there are minor exceptions for trial and free versions of Microsoft Entra ID.
+When self-service password reset (SSPR) is used to change or reset a password in Microsoft Entra ID, the password policy is checked. If the password doesn't meet the policy requirements, the user is prompted to try again. Azure administrators have some restrictions on using SSPR that are different from regular user accounts, and there are minor exceptions for trial and free versions of Microsoft Entra ID.
 
 This article describes the password policy settings and complexity requirements associated with user accounts. It also covers how to use PowerShell to check or set password expiration settings.
 
@@ -47,13 +47,13 @@ The following Microsoft Entra password policy options are defined. Unless noted,
 | Password reset history | The last password *can* be used again when the user resets a forgotten password. |
 
 > [!IMPORTANT]
-> The password change history applies to password writeback. For users in the cloud only, reset password for Entra ID doesn't have the user's old password and can't check for or prevent password reuse.
+> The password change history applies to password writeback. For users in the cloud only, reset password for Microsoft Entra ID doesn't have the user's old password and can't check for or prevent password reuse.
 
 If you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*, the Microsoft Entra password policy applies to user accounts synchronized from on-premises using Microsoft Entra Connect. In addition, if a user changes a password on-premises to include a unicode character, the password change may succeed on-premises but not in Microsoft Entra ID. If password hash synchronization is enabled with Microsoft Entra Connect, the user can still receive an access token for cloud resources. But if the tenant enables [User risk-based password change](~/identity/conditional-access/policy-risk-based-user.md), the password change is reported as high risk. 
 
 The user is prompted to change their password again. But if the change still includes a unicode character, they could get locked out if [smart lockout](howto-password-smart-lockout.md) is also enabled. 
 
-## Risk based password reset policy limitations
+## Risk-based password reset policy limitations
 
 If you enable [EnforceCloudPasswordPolicyForPasswordSyncedUsers](~/identity/conditional-access/policy-risk-based-user.md), a cloud password change is required once a high risk is identified. The user is prompted to change their password when they sign in to Microsoft Entra ID. The new password must comply with both the cloud and on-premises password policies. 
  
@@ -63,34 +63,79 @@ If the password didn't comply with the cloud password requirements, it isn't upd
 
 ## Administrator reset policy differences
 
-By default, administrator accounts are enabled for self-service password reset, and a strong default *two-gate* password reset policy is enforced. This policy may be different from the one you defined for your users, and this policy can't be changed. You should always test password reset functionality as a user without any Azure administrator roles assigned.
+By default, administrator accounts are enabled for self-service password reset, and a strong default *two-gate* password reset policy is enforced. This policy might be different from the one you defined for your users, and this policy can't be changed. You should always test password reset functionality as a user without any Azure administrator roles assigned.
 
 The two-gate policy requires two pieces of authentication data, such as an email address, authenticator app, or a phone number, and it prohibits security questions. Office and mobile voice calls are also prohibited for trial or free versions of Microsoft Entra ID. 
 
-The SSPR administrator policy doesn't depend upon the Authentications method policy. For example, if you disable third party software tokens in the Authentication methods policy, administrator accounts can still register third party software token applications and use them, but only for SSPR. 
+The SSPR administrator policy doesn't depend upon the Authentication methods policy. For example, if you disable third-party software tokens in the Authentication methods policy, administrator accounts can still register third-party software token applications and use them, but only for SSPR. 
 
 A two-gate policy applies in the following circumstances:
 
 * All the following Azure administrator roles are affected:
+  * AdHoc License Administrator
   * Application Administrator
+  * Application Proxy Service Administrator
+  * Attack Simulation Administrator
+  * Attribute Assignment Administrator
+  * Attribute Definition Administrator
+  * Attribute Log Administrator
   * Authentication Administrator
+  * Authentication Extensibility Administrator
+  * Authentication Policy Administrator
+  * Azure DevOps Administrator
+  * Azure Information Protection Administrator
+  * B2C IEF Keyset Administrator
+  * B2C IEF Policy Administrator
   * Billing Administrator
-  * Compliance Administrator
+  * Cloud App Security Administrator
   * Cloud Device Administrator
+  * Compliance Administrator
+  * Compliance Data Administrator
+  * Conditional Access Administrator
+  * Customer LockBox Access Approver
+  * Desktop Analytics Administrator
+  * Device Administrators
   * Directory Synchronization Accounts (an admin role assigned to the Microsoft Entra Connect service)
   * Directory Writers
+  * Domain Name Administrator
   * Dynamics 365 Administrator
+  * Dynamics 365 Business Central Administrator
+  * Edge Administrator
+  * Email Verified User Creator
   * Exchange Administrator
+  * Exchange Recipient Administrator
+  * External ID User Flow Administrator
+  * External ID User Flow Attribute Administrator
+  * External Identity Provider Administrator
   * Global Administrator
+  * Global Secure Access Administrator
+  * Groups Administrator
   * Helpdesk Administrator
+  * Hybrid Identity Administrator
+  * Identity Governance Administrator
+  * Insights Administrator
   * Intune Administrator
+  * Knowledge Administrator
+  * License Administrator
+  * Lifecycle Workflows Administrator
+  * Mailbox Administrator
   * Microsoft Entra Joined Device Local Administrator
+  * Microsoft Hardware Warranty Administrator
+  * Microsoft365 Migration Administrator
+  * Modern Commerce Administrator
+  * Network Administrator
+  * Office Apps Administrator
+  * Organizational Branding Administrator
   * Partner Tier1 Support
   * Partner Tier2 Support
   * Password Administrator
+  * Permissions Management Administrator
+  * Power BI Service Administrator
   * Power Platform Administrator
+  * Printer Administrator
   * Privileged Authentication Administrator
   * Privileged Role Administrator
+  * Search Administrator
   * Security Administrator
   * Service Support Administrator
   * SharePoint Administrator
@@ -99,6 +144,12 @@ A two-gate policy applies in the following circumstances:
   * Teams Communications Administrator
   * Teams Devices Administrator
   * User Administrator
+  * Virtual Visits Administrator
+  * Viva Goals Administrator
+  * Viva Pulse Administrator
+  * Windows365 Administrator
+  * Windows Update Deployment Administrator
+  * Yammer Administrator
 
 * If 30 days elapsed in a trial subscription 
 
@@ -111,6 +162,9 @@ A two-gate policy applies in the following circumstances:
 * Microsoft Entra Connect synchronizes identities from your on-premises directory
 
 You can disable the use of SSPR for administrator accounts by setting the value of the `AllowedToUseSspr` property on the tenant authorization policy to `false`. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect.
+
+> [!IMPORTANT]
+> When the password reset policy for administrators is disabled, administrators can't reset their passwords via SSPR, even if they are in scope of the password reset policy for users. If SSPR registration is enabled and administrators are included in the password reset policy for users, they're still prompted to register but see a message indicating they can't register any methods. To avoid this experience, explicitly exclude administrators from the password reset policy for users when the password reset policy for administrators is disabled.
 
 # [PowerShell](#tab/ms-powershell)
 
@@ -216,7 +270,7 @@ After the module is installed, use the following steps to complete each task as 
    > [!WARNING]
    > Passwords set to `-PasswordPolicies DisablePasswordExpiration` still age based on the `LastPasswordChangeDateTime` attribute. Based on the `LastPasswordChangeDateTime` attribute, if you change the expiration to `-PasswordPolicies None`, all passwords that have a `LastPasswordChangeDateTime` older than 90 days require the user to change them the next time they sign in. This change can affect a large number of users.
 
-## Next steps
+## Related content
 
 To get started with SSPR, see [Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset](tutorial-enable-sspr.md).
 
