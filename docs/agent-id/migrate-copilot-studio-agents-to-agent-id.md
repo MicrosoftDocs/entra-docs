@@ -1,5 +1,5 @@
 ---
-title: Recreate Copilot Studio agents in Microsoft Entra Agent ID
+title: Recreate Copilot Studio agents with Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to recreate Microsoft Copilot Studio agents with Microsoft Entra Agent ID for enhanced governance and security. No in-place migration path exists today.
 author: Dickson-Mwendia
@@ -13,14 +13,17 @@ ai-usage: ai-assisted
 
 # Recreate Copilot Studio agents in Microsoft Entra Agent ID
 
-Some agents created in Microsoft Copilot Studio authenticate by using platform-managed service principals. These agents could have been created before March 18, 2026 or before your organization opted in to the [Microsoft Entra Agent ID integration with Copilot Studio](/microsoft-copilot-studio/admin-use-entra-agent-identities).
+Some agents created in Microsoft Copilot Studio authenticate by using platform-managed service principals. These agents could have been created:
+- before Copilot Studio began automatically creating agent identities for all new agents, which happened on March 18, 2026.
+- before your organization opted in to the [Microsoft Entra Agent ID integration with Copilot Studio](/microsoft-copilot-studio/admin-use-entra-agent-identities)
+- if your organization opted out of creating agent identities
 
-Microsoft Copilot Studio agents created before March 18, 2026 (or before your tenant opted in to the Microsoft Entra Agent ID integration) authenticate by using platform-managed service principals. These service principals let agents communicate with Azure Bot Service, Microsoft Teams, and Bot Framework skills, but Microsoft Entra treats them as standard applications, not as AI agents. Adopting Microsoft Entra Agent ID gives you agent-specific governance, including Conditional Access policies, centralized audit logging, and lifecycle management.
-
-> [!IMPORTANT]
-> At this time, there is no automated or in-place migration path to convert an existing Copilot Studio agent's service principal to an agent identity. To use Microsoft Entra Agent ID with Copilot Studio, you must **create a new agent** with the Agent ID integration enabled, manually reconfigure it, and then decommission the legacy agent. This article describes that recreate-and-deprecate process.
+These service principals let agents communicate with Azure Bot Service, Microsoft Teams, and Bot Framework skills, but Microsoft Entra treats them as standard applications, not as AI agents. Adopting Microsoft Entra Agent ID gives you agent-specific governance, including Conditional Access policies, centralized audit logging, and lifecycle management.
 
 This article describes the manual process of recreating Copilot Studio agents with Microsoft Entra Agent ID and decommissioning the legacy service principals. Because Copilot Studio manages the agent code, credentials, and deployment lifecycle, this process differs from custom-built agents. For agents where you own the code and identity configuration, see [Migrate custom app registrations to Agent ID](migrate-custom-app-registrations-to-agent-id.md).
+
+> [!IMPORTANT]
+> At this time, there is no automated or in-place migration path to convert an existing Copilot Studio agent's service principal to an agent identity. To use Microsoft Entra Agent ID with Copilot Studio, you must **create a new agent** with the Agent ID integration enabled, manually reconfigure the agent, and then decommission the legacy agent. This article describes that recreate-and-deprecate process.
 
 ## Prerequisites
 
@@ -87,10 +90,6 @@ For each Copilot Studio service principal, capture:
 
 You can enrich your discovery with more data sources: Copilot Studio telemetry (agent session counts, last conversation date), Power Platform admin center (environment-level deployment status), and Microsoft 365 usage analytics.
 
-### Automate discovery with the migration toolkit
-
-The **Microsoft Entra Agent Identity Migration Toolkit** automates discovery of Copilot Studio service principals by scanning for platform-specific tags. To request access to this toolkit, complete the [Microsoft Entra Agent ID Migration Toolkit form](https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR3zXD-SxVfxJk_JOzmqkhUdUREtMUEVRS0RYRzJPVUVMNUFMRTFXODgxVS4u&route=shorturl) form. The toolkit enriches each service principal with ownership, permissions, credentials, sign-in activity, and generates an interactive HTML dashboard for review. Fill out the access request form to get the toolkit.
-
 ## Phase 2: Classify Copilot Studio agents
 
 Classify each Copilot Studio agent by its usage level to determine the migration approach:
@@ -105,7 +104,7 @@ The 30-day sign-in threshold is based on Microsoft Entra's default retention per
 
 ### Production-critical agents
 
-For Copilot Studio agents with high usage, **don't recreate at this time**. There's no automated migration path, and the manual recreation process carries significant risk for production agents. Maintain these service principals as-is until an official automated migration path is available from the Copilot Studio product team.
+For Copilot Studio agents with high usage, **don't recreate at this time**. There's no automated migration path, and the manual recreation process carries significant risk for production agents. Maintain these service principals as-is until an official automated migration path is available.
 
 The risks specific to high-usage Copilot Studio agents include:
 
@@ -137,20 +136,20 @@ Before making any changes, document:
 
 Use this documentation as your checklist to re-establish every item on the new agent.
 
-### Step 3: Enable Agent ID integration
+### Step 3: Enable Microsoft Entra Agent ID integration
 
-Ensure your tenant opts in to Agent ID integration for Copilot Studio. Verify this setting in the **Copilot Studio admin center** or through your tenant's feature settings.
+Ensure your tenant opts in to Microsoft Entra Agent ID integration for Copilot Studio. Verify this setting in the **Copilot Studio admin center** or through your tenant's feature settings.
 
-### Step 4: Create a new agent with Agent ID
+### Step 4: Create a new agent with Microsoft Entra Agent ID
 
-In Copilot Studio, create a new agent with Agent ID integration enabled. This new agent receives a native Agent ID during provisioning. Recreate the agent's topics, knowledge sources, and configuration to match the legacy agent.
+In Copilot Studio, create a new agent with the Microsoft Entra Agent ID integration enabled. This new agent receives a native agent identity during provisioning. Recreate the agent's topics, knowledge sources, and configuration to match the legacy agent.
 
 > [!NOTE]
-> Republishing or re-registering an existing agent does **not** create an Agent ID. You must create a new agent to get a native Agent ID.
+> Republishing or re-registering an existing agent does **not** create a Microsoft Entra agent identity. You must create a new agent to get a Microsoft Entra Agent ID-native agent identity.
 
-### Step 5: Validate the new Agent ID
+### Step 5: Validate the new agent identity
 
-Confirm the new Agent ID appears correctly under the **Agents** area in the **Microsoft Entra admin center**. Verify:
+Confirm the new agent identity appears correctly under the **Agents** area in the **Microsoft Entra admin center**. Verify:
 
 - The agent identity is linked to the correct blueprint.
 - The display name and metadata match your agent.
@@ -236,4 +235,3 @@ To decommission the legacy service principal, follow these steps:
 - [Agent identity concepts](key-concepts.md)
 - [Create an agent identity blueprint](create-blueprint.md)
 - [Best practices for Agent ID](best-practices-agent-id.md)
-- [Microsoft Entra Agent Identity Migration Toolkit](https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR3zXD-SxVfxJk_JOzmqkhUdUREtMUEVRS0RYRzJPVUVMNUFMRTFXODgxVS4u&route=shorturl)
