@@ -41,13 +41,13 @@ The option to create a custom control is located in the **Manage** section of th
 
 ![Custom controls interface in Conditional Access](./media/controls/custom-controls-conditional-access.png)
 
-Selecting **New custom control** opens a blade with a textbox for the JSON data of your control.  
+Selecting **New custom control** opens a page with a textbox for the JSON data of your control.  
 
 ![New custom control](./media/controls/new-custom-controls-conditional-access.png)
 
 ## Deleting custom controls
 
-To delete a custom control, ensure that it isn't being used in any Conditional Access policy. After that:
+To delete a custom control, ensure that it isn't being used in any Conditional Access policy. Then follow these steps:
 
 1. Go to the Custom controls list.
 1. Select … .

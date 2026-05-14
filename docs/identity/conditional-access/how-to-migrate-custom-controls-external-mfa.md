@@ -28,7 +28,7 @@ Before you begin, ensure you have:
 - [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to grant admin consent for the provider's application.
 - Metadata from your external MFA provider:
   - **Application ID**: App Registration ID (typically multitenant).
-  - **Client ID**: Identifies Entra requests to the provider.
+  - **Client ID**: Identifies Microsoft Entra requests to the provider.
   - **Discovery URL**: OIDC metadata endpoint (for example, `https://provider.example.com/.well-known/openid-configuration`).
 - A test user group in Microsoft Entra ID for testing.
 - An inventory of all existing Conditional Access policies that use custom controls.
@@ -100,10 +100,10 @@ This step registers your external MFA provider as a recognized authentication me
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
 1. Select **Add external method** (or **Add method** > **External Authentication Method**).
 1. Fill in the required fields:
-   - **Display Name** — A user-friendly name (for example, "Contoso External MFA - Duo"). This value can't be changed after creation.
-   - **Client ID** — The Client ID provided by your external MFA vendor.
-   - **App ID** — The Application (registration) ID for the provider's app in Microsoft Entra ID.
-   - **Discovery Endpoint** — The OIDC discovery URL from your provider.
+   - **Display Name**: A user-friendly name (for example, "Contoso External MFA - Duo"). This value can't be changed after creation.
+   - **Client ID**: The Client ID provided by your external MFA vendor.
+   - **App ID**: The Application (registration) ID for the provider's app in Microsoft Entra ID.
+   - **Discovery Endpoint**: The OIDC discovery URL from your provider.
 1. When prompted, grant admin consent for the external provider's application. If you don't consent immediately, the method remains disabled until consent is granted.
 1. Under **Enable and target**:
    - Set the state to **Enabled**.
@@ -224,7 +224,7 @@ $report | Export-Csv -Path "ExternalMFA-Registration-Report.csv" -NoTypeInformat
 
 ## Create a test Conditional Access policy requiring MFA
 
-Create a new Conditional Access policy that uses the standard **Require multifactor authentication** grant (which external MFA now satisfies), rather than a custom control.
+Create a new Conditional Access policy that uses the standard **Require multifactor authentication** grant, which external MFA now satisfies, rather than a custom control.
 
 > [!NOTE]
 > Due to caching and replication, it might take up to a few hours for a new policy to take effect at authentication time.
@@ -235,13 +235,13 @@ Create a new Conditional Access policy that uses the standard **Require multifac
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select **+ New policy**.
 1. Configure the policy:
-   - **Name** — `Test - Require MFA via External Auth Method`
+   - **Name**: `Test - Require MFA via External Auth Method`
    - **Assignments:**
-     - **Users** — Select your test user group only.
-     - **Exclude** — Your break-glass/emergency access accounts.
+     - **Users**: Select your test user group only.
+     - **Exclude**: Your break-glass/emergency access accounts.
    - **Target resources:**
-     - **Cloud apps** — Select the same apps that your existing custom control policy targets (for example, Office 365, or specific LOB apps).
-   - **Conditions** (optional — mirror your existing custom control policy):
+     - **Cloud apps**: Select the same apps that your existing custom control policy targets (for example, Office 365, or specific line-of-business apps).
+   - **Conditions** (Optionally mirror your existing custom control policy):
      - Client apps, device platforms, locations, and so on.
    - **Grant:**
      - Select **Grant access**.
@@ -251,7 +251,7 @@ Create a new Conditional Access policy that uses the standard **Require multifac
 1. Select **Create**.
 
 > [!IMPORTANT]
-> Don't use **Require authentication strength** for external MFA. Use the standard **Require multifactor authentication** grant. External MFA is not yet compatible with authentication strength policies.
+> Don't use **Require authentication strength** for external MFA. Use the standard **Require multifactor authentication** grant. External MFA isn't yet compatible with authentication strength policies.
 
 ### Verify report-only behavior
 
@@ -271,14 +271,13 @@ Once satisfied with report-only results:
 
 ## Move test users from custom control policy to external MFA policy
 
+To avoid users being subject to both the old custom control policy and the new external MFA policy simultaneously, exclude test users from the old custom control policy.
+
 ### Exclude test users from the custom control policy
 
 1. Open your existing custom control Conditional Access policy.
 1. Under **Users** > **Exclude**, add your test user group.
 1. Save the policy.
-
-> [!NOTE]
-> This ensures test users are no longer subject to the custom control, and are instead governed by the new external MFA-backed policy from Step 4.
 
 ### Verify policy assignment with What If
 
@@ -292,11 +291,13 @@ Once satisfied with report-only results:
 
 ## Test sign-in to protected apps
 
+To confirm the sign-in to protected apps works as expected, have your test users sign in and then verify they were challenged for MFA by the external provider, not the old custom control, and that the sign-in logs reflect the new policy and authentication method correctly.
+
 ### Perform test sign-ins
 
-Have each test user (or a representative sample) perform the following:
+Have each test user (or a representative sample) perform the following steps:
 
-1. Sign in to a targeted app (for example, Office 365, Azure portal, or your LOB app).
+1. Sign in to a targeted app (for example, Office 365, Azure portal, or your line-of-business app).
 1. Verify:
    - The user is challenged by the external MFA provider (not custom controls).
    - After completing MFA, the user gains access to the app.
@@ -312,19 +313,19 @@ Have each test user (or a representative sample) perform the following:
 1. Browse to **Protection** > **Sign-in logs**.
 1. Filter for test users.
 1. For each sign-in, confirm:
-   - **MFA result** — Success
-   - **Authentication method** — Your external authentication method name
-   - **Conditional Access** — The new policy evaluated and granted access
-   - **MFA requirement satisfied by** — External authentication method (not custom control)
+   - **MFA result**: Success
+   - **Authentication method**: Your external authentication method name
+   - **Conditional Access**: The new policy evaluated and granted access
+   - **MFA requirement satisfied by**: External authentication method (not custom control)
 
 ### Validate downstream integrations
 
 If applicable, verify that these scenarios work correctly with external MFA:
 
-- **Self-Service Password Reset (SSPR)** — User can reset password using external MFA.
-- **PIM role activation** — User can activate privileged roles with external MFA.
-- **Risk-based policies** — Sign-in risk and user risk policies correctly interact with external MFA.
-- **Intune device enrollment** — Device registration completes with external MFA.
+- **Self-Service Password Reset (SSPR)**: User can reset password using external MFA.
+- **PIM role activation**: User can activate privileged roles with external MFA.
+- **Risk-based policies**: Sign-in risk and user risk policies correctly interact with external MFA.
+- **Intune device enrollment**: Device registration completes with external MFA.
 
 ## Full rollout
 
@@ -365,7 +366,7 @@ Update-MgPolicyAuthenticationMethodPolicyAuthenticationMethodConfiguration `
 
 ### Update the MFA Conditional Access policy
 
-Expand the new CA policy to target all users (replacing the test group).
+Expand the new Conditional Access policy to target all users (replacing the test group).
 
 ### Remove custom control references
 
