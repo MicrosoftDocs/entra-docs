@@ -288,7 +288,7 @@ cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercor
 
 ### Unable to sign-in – Single sign-on application is missing
 
-![Screenshot of dialog that states Unable to Sign in due to an issue with the extension while registering your account for single sign on](./media/macos-psso/psso-simplifiedsetup-unable-to-sign-in.png)
+![Screenshot of dialog that states Unable to Sign in due to an issue with the extension while registering your account for single sign on](./media/macos-psso/psso-simplified-setup-unable-to-sign-in.png)
 
 **Issue summary: Company Portal/SSO extension not available during Setup Assistant**
 
