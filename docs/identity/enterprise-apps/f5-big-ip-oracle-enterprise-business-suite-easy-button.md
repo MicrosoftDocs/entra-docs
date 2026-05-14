@@ -3,8 +3,6 @@ title: Configure F5 BIG-IP Easy Button for SSO to Oracle EBS
 description: Learn to implement SHA with header-based SSO to Oracle EBS using F5 BIG-IP Easy Button Guided Configuration
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 03/23/2023
 ms.author: gasinh
@@ -68,7 +66,7 @@ SHA supports SP- and IdP-initiated flows. The following diagram illustrates the 
 You need the following components:
 
 * An Azure subscription
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * A Cloud Application Administrator, or Application Administrator role.
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)

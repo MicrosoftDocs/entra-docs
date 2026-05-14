@@ -1,15 +1,10 @@
 ---
 title: Create an enterprise application from a multitenant application
 description: Create an enterprise application using the client ID for a multitenant application.
-
-author: omondiatieno
 manager: CelesteD
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 07/10/2025
-ms.author: jomondi
 ms.reviewer: karavar
 ms.custom: mode-other, devx-track-azurecli
 zone_pivot_groups: enterprise-apps-cli
@@ -30,7 +25,7 @@ If you verify that the application isn't in your tenant, proceed with any of the
 
 To add an enterprise application to your Microsoft Entra tenant, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, or Application Administrator.
 - The client ID (also called appId in Microsoft Graph) of the multitenant application.
 

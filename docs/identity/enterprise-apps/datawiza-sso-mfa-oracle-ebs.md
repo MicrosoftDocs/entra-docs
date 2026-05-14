@@ -3,8 +3,6 @@ title: Configure Datawiza for Microsoft Entra multifactor authentication and sin
 description: Learn how to enable Microsoft Entra multifactor authentication and SSO for an Oracle E-Business Suite application via Datawiza.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 01/31/2024
 ms.author: gasinh
@@ -41,7 +39,7 @@ The solution has the following components:
 
 To complete the steps in this article, you need:
 
-* An Azure subscription. If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/).
+* An Azure subscription. If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant linked to the Azure subscription.
 * A [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 * Docker and Docker Compose, to run DAP. For more information, see [Get Docker](https://docs.docker.com/get-docker/) and [Docker Compose Overview](https://docs.docker.com/compose/install/).

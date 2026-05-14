@@ -247,7 +247,7 @@ Follow the directions [here](./howto-configure-publisher-domain.md) to set a Pub
 
 The target application's Publisher Domain (`publisherDomain`) either doesn't match the domain used to perform email verification in Partner Center (`pcDomain`) or has not been verified. Ensure these domains match and have been verified then try again. 
     
-Occurs when neither the app's [Publisher Domain](howto-configure-publisher-domain.md) nor one of the [custom domains](~/fundamentals/add-custom-domain.yml) added to the Microsoft Entra tenant match the domain used to perform email verification in Partner Center or has not been verified.
+Occurs when neither the app's [Publisher Domain](howto-configure-publisher-domain.md) nor one of the [custom domains](~/fundamentals/add-custom-domain.md) added to the Microsoft Entra tenant match the domain used to perform email verification in Partner Center or has not been verified.
 
 See [requirements](publisher-verification-overview.md) for a list of allowed domain or sub-domain matches. 
 
@@ -306,7 +306,7 @@ Error: "You're unable to add a verified publisher to this application. Contact y
 When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, the above error is returned. Investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
 
 **Remediation Steps**
-> [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users-report)
+> [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md)
 > 
 > [Remediate risk/unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 > 

@@ -3,8 +3,6 @@ title: Configure Cloudflare with Microsoft Entra ID for secure hybrid access
 description: In this tutorial, learn how to integrate Cloudflare with Microsoft Entra ID for secure hybrid access
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 05/21/2025
 ms.author: gasinh
@@ -20,7 +18,7 @@ In this tutorial, learn to integrate Microsoft Entra ID with Cloudflare Zero Tru
 ## Prerequisites
 
 * A Microsoft Entra subscription
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * A Microsoft Entra tenant linked to the Microsoft Entra subscription
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 * A Cloudflare Zero Trust account

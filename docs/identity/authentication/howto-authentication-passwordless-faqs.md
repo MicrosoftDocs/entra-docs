@@ -1,15 +1,8 @@
 ---
 title: FAQs for hybrid FIDO2 security key deployment
 description: Learn about some frequently asked questions for passwordless hybrid FIDO2 security key sign-in using Microsoft Entra ID
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: faq
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: aakapo
 ---
 # Deployment frequently asked questions (FAQs) for hybrid FIDO2 security keys in Microsoft Entra ID
@@ -38,11 +31,11 @@ To get started with FIDO2 security keys and hybrid access to on-premises resourc
 
 ### My organization requires multifactor authentication to access resources. What can I do to support this requirement?
 
-FIDO2 Security keys come in a variety of form factors. Contact the device manufacturer of interest to discuss how their devices can be enabled with a PIN or biometric as a second factor. For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md).
+FIDO2 Security keys come in a variety of form factors. Contact the device manufacturer of interest to discuss how their devices can be enabled with a PIN or biometric as a second factor. For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passkeys-fido2.md).
 
 ### Where can I find compliant FIDO2 security keys?
 
-For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passwordless.md).
+For a list of supported providers, see [FIDO2 security keys providers](concept-authentication-passkeys-fido2.md).
 
 ### What if I lose my security key?
 

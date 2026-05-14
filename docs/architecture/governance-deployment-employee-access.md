@@ -2,7 +2,6 @@
 title: Microsoft Entra ID Governance deployment guide to assign employee access
 description: Learn how to assign employee access to resources in Microsoft Entra ID Governance.
 author: gargi-sinha
-manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 04/17/2025
@@ -19,7 +18,6 @@ The following products and services appear in this guide:
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 * [Microsoft Entra](../fundamentals/what-is-entra.md)
-* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
 * [Access reviews](../id-governance/access-reviews-overview.md)
 * Privileged Identity Manager [(PIM) for Groups](../id-governance/access-reviews-overview.md)

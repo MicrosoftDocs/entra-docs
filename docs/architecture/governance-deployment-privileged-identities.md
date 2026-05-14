@@ -2,7 +2,6 @@
 title: Microsoft Entra ID Governance deployment guide to govern privileged identities
 description: Learn how to govern privileged identities and their access in Microsoft Entra ID Governance.
 author: gargi-sinha
-manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/25/2025
@@ -20,7 +19,6 @@ Use this scenario to help determine the need for Microsoft Entra ID Governance t
 The following products and services appear in this guide: 
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Microsoft Entra](../fundamentals/what-is-entra.md)
 * [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md)
 * [PIM for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md)

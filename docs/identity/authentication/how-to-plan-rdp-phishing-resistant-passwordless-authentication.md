@@ -1,16 +1,11 @@
 ---
 title: Considerations for Remote Desktop Connections in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 description: Remote desktop connection guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
-
-ms.service: entra-id 
-ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/31/2025
-
-ms.author: justinha
+ms.date: 05/11/2026
 author: mepples21
-manager: dougeby
-ms.reviewer: miepping
+ms.author: justinha
+ms.reviewer: sipower
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID
@@ -219,6 +214,26 @@ Here's how you might evaluate if your scenario is "my frontline workers need to 
 | Remote Desktop Connection In-Session Auth using FIDO2 Security Key          | Linux Embedded Distro | Domain-Joined Windows 11 | Vendor-Provided Client           | Maybe+Yes+Maybe = **Maybe** |
 
 In this example, users likely can't use their FIDO2 security keys for remote desktop connection at all because the thin client OS and remote desktop connection client don’t support FIDO2/passkeys in every scenario required. Work with your thin client vendor to understand their roadmap for support. Additionally, plan on Microsoft Entra hybrid joining or Microsoft Entra joining the Target Platform virtual machines so that passkeys can be better supported.
+
+## Troubleshoot Windows 11 passkey privacy consent
+
+Windows 11 version 24H2 and later includes privacy controls that let users decide whether passkeys can be used by an app or website. If a user declines the privacy consent prompt, passkey registration and authentication might not work in AVD and RDP sessions.
+
+Users might be unable to use or provision passkeys for Microsoft Entra in AVD and RDP sessions because they:
+
+- Accidentally refused the privacy consent prompt and selected **No** when asked to allow passkey access.
+- Customized the Settings app and hidden the navigation options to the passkey privacy settings.
+
+### Resolve the privacy consent issue
+
+To resolve this issue, direct the user to re-enable passkey access:
+
+1. Open **Settings** > **Privacy & security** > **Passkey access**.
+1. Find the app or website that needs passkey access, and select **Allow**.
+
+If the user can't navigate to the passkey access settings because the settings page is hidden, an administrator can configure [Settings page visibility](/windows/configuration/settings/page-visibility) to restore access to the **Privacy & security** > **Passkey access** page.
+
+For more information, see [Support for passkeys in Windows](/windows/security/identity-protection/passkeys/).
 
 ## Next steps
 

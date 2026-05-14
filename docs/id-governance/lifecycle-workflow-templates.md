@@ -1,14 +1,11 @@
 ---
 title: Lifecycle Workflows templates and categories
 description: Conceptual article discussing workflow templates and categories with Lifecycle Workflows.
-author: owinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: article
-ms.date: 06/25/2025
+ms.topic: concept-article
+ms.date: 04/25/2026
 ms.custom: template-concept
+#Customer Intent: As an IT admin, I want to understand lifecycle workflow templates and categories so that I can choose the right templates for my workflows.
 ---
 
 # Lifecycle Workflows templates and categories
@@ -17,11 +14,11 @@ Lifecycle Workflows allows you to automate the lifecycle management process for 
 
 ## Lifecycle Workflows built-in templates
 
-Lifecycle Workflows currently have eight built-in templates you can use or customize:
+Lifecycle Workflows currently have 14 built-in templates you can use or customize:
 
 :::image type="content" source="media/lifecycle-workflow-templates/templates-list.png" alt-text="Screenshot of a list of lifecycle workflow templates." lightbox="media/lifecycle-workflow-templates/templates-list.png":::
 
-The list of templates are as follows:
+The list of templates is as follows:
 
 - [Onboard pre-hire employee](lifecycle-workflow-templates.md#onboard-pre-hire-employee)
 - [Onboard new hire employee](lifecycle-workflow-templates.md#onboard-new-hire-employee)
@@ -33,6 +30,10 @@ The list of templates are as follows:
 - [Post-Offboarding of an employee](lifecycle-workflow-templates.md#post-offboarding-of-an-employee)
 - [Employee group membership changes](lifecycle-workflow-templates.md#employee-group-membership-changes)
 - [Employee job profile change](lifecycle-workflow-templates.md#employee-job-profile-change)
+- [Pre-Offboard inactive users](lifecycle-workflow-templates.md#pre-offboard-inactive-users)
+- [Offboard inactive users](lifecycle-workflow-templates.md#offboard-inactive-users)
+- [Transition agent sponsorships when a sponsor leaves](lifecycle-workflow-templates.md#transition-agent-sponsorships-when-a-sponsor-leaves)
+- [Transition agent sponsorships when a sponsor changes roles](lifecycle-workflow-templates.md#transition-agent-sponsorships-when-a-sponsor-changes-roles)
 
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
 
@@ -81,7 +82,7 @@ The default specific parameters for the **Onboard new hire employee** template a
 
 ### Post-Onboarding of an employee
 
-The **Post-Onboarding of an employee** template is designed to configure tasks that will be completed after an employee's start, or creation, date.
+The **Post-Onboarding of an employee** template is designed to configure tasks that are completed after an employee's start, or creation, date.
 
 :::image type="content" source="media/lifecycle-workflow-templates/onboard-post-employee-template.png" alt-text="Screenshot of a Lifecycle Workflow post-onboard new hire template.":::
 
@@ -172,7 +173,7 @@ The default specific parameters for the **Offboard an employee** template are as
 
 ### Post-Offboarding of an employee
 
-The **Post-Offboarding of an employee** template is designed to configure tasks that will be completed after an employee's last day of work.
+The **Post-Offboarding of an employee** template is designed to configure tasks that are completed after an employee's last day of work.
 
 :::image type="content" source="media/lifecycle-workflow-templates/offboard-post-employee-template.png" alt-text="Screenshot of an offboarding an employee after last day template.":::
 
@@ -221,10 +222,83 @@ The default specific parameters for the **Employee job profile change** template
 |Scope     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
-For a tutorial on setting up a workflow that uses the **Employer job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
+For a tutorial on setting up a workflow that uses the **Employee job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
+
+### Pre-Offboard inactive users
+
+The **Pre-Offboard inactive users** template is designed to configure tasks that must be completed before offboarding inactive users.
+
+
+:::image type="content" source="media/lifecycle-workflow-templates/begin-off-board-inactive-users-template.png" alt-text="Screenshot of the pre-offboard inactive users template.":::
+
+The default specific parameters for the **Pre-Offboard inactive users** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Leaver       |  ❌       |
+|Trigger Type     | Sign-in inactivity, Attribute changes, Group Membership change      |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Days of inactivity     | 90       | ✔️        |
+|Event timing     | Before        |  ❌       |
+|Event User attribute     | LastSignInDateTime        |   ❌      |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
+
+### Offboard inactive users
+
+The **Offboard inactive users** template is designed to configure tasks that must be completed to offboard inactive users.
+
+:::image type="content" source="media/lifecycle-workflow-templates/off-board-inactive-users-template.png" alt-text="Screenshot of the offboard inactive users template.":::
+
+The default specific parameters for the **Offboard inactive users** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Leaver       |  ❌       |
+|Trigger Type     | Sign-in inactivity, Attribute changes, Group Membership change         |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Days from event     | 120        | ✔️        |
+|Event timing     | After        |  ❌       |
+|Event User attribute     | LastSignInDateTime        |   ❌      |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
+
+
+### Transition agent sponsorships when a sponsor leaves
+
+The **Transition agent sponsorships when a sponsor leaves** template is designed to configure tasks that transition agent sponsorships when a sponsor leaves the organization. This template is available for tenants with the Microsoft Agent 365 license. For more information, see: [Microsoft Agent 365 Documentation](https://aka.ms/entraagent365).
+
+The default specific parameters for the **Transition agent sponsorships when a sponsor leaves** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Leaver       |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Days from event     | 0        | ✔️        |
+|Event timing     | On        |  ❌       |
+|Event User attribute     | employeeLeaveDateTime        |   ❌      |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Send email to manager about sponsorship changes**, **Send email to co-sponsors about sponsor changes**, **Transfer agent sponsorships to manager**     |  ✔️       |
+
+### Transition agent sponsorships when a sponsor changes roles
+
+The **Transition agent sponsorships when a sponsor changes roles** template is designed to configure tasks that transition agent sponsorships when a sponsor changes roles within the organization. This template is available for tenants with the Microsoft Agent 365 license. For more information, see: [Microsoft Agent 365 Documentation](https://aka.ms/entraagent365).
+
+The default specific parameters for the **Transition agent sponsorships when a sponsor changes roles** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Mover       |  ❌       |
+|Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Scope     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Send email to manager about sponsorship changes**, **Send email to co-sponsors about sponsor changes**, **Transfer agent sponsorships to manager**     |  ✔️       |
 
 ## Next steps
 
 - [`workflowTemplate` resource type](/graph/api/resources/identitygovernance-workflowtemplate?view=graph-rest-beta&preserve-view=true)
 - [Lifecycle Workflow tasks and definitions](lifecycle-workflow-tasks.md)
 - [Create a Lifecycle workflow](create-lifecycle-workflow.md)
+- [Custom task extensions for workflows beyond built-in templates](lifecycle-workflow-extensibility.md)
+- [Trigger Logic Apps based on custom task extensions](trigger-custom-task.md)

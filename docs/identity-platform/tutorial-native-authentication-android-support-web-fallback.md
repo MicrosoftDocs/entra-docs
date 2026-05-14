@@ -3,10 +3,10 @@ title: Support web fallback in Android app
 description: Learn how to implement support web fallback in Android app.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
@@ -101,10 +101,9 @@ To do so, use the following steps:
 
 <!--We'll update these instructions once we author the Android tutorials for the browser-delegated authentication flow --> 
 
-1. To add a redirect URI to the app that you registered earlier, use the steps in [Add a platform redirect URL](../external-id/customers/sample-mobile-app-android-kotlin-sign-in.md#add-a-platform-redirect-url).
+1. To add a redirect URI to the app that you registered earlier, use the steps in [Add a platform redirect URL](quickstart-mobile-app-sign-in.md#add-a-redirect-uri).
 
-1. To update your client app's configuration file, use the steps in [Configure the redir
-1. ect URI in SDK's configuration](../external-id/customers/sample-mobile-app-android-kotlin-sign-in.md#configure-the-sample-android-mobile-application).
+1. To update your client app's configuration file, use the steps in [Configure the sample application](quickstart-mobile-app-sign-in.md#configure-the-sample-application).
   
 1. Use the following code snippet to acquire a token by using the `acquireToken()` method:
 

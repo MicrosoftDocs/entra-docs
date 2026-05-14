@@ -1,15 +1,10 @@
 ---
 title: Enable security and DNS audits for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to enable security audits to centralize the logging of events for analysis and alerts in Microsoft Entra Domain Services
-author: justinha
-manager: dougeby
 
 ms.assetid: 662362c3-1a5e-4e94-ae09-8e4254443697
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 02/19/2025
-ms.author: justinha
 ms.custom: devx-track-azurepowershell
 ---
 # Enable security and DNS audits for Microsoft Entra Domain Services
@@ -201,6 +196,39 @@ AADDomainServicesAccountLogon
 | summarize count()
 ```
 
+### Sample query 7
+
+View all Kerberos ticket-granting (event ID 4768) and service ticket (event ID 4769) events that used RC4 encryption in the last seven days, to identify workloads and service accounts that still rely on RC4:
+
+```Kusto
+let EncryptionTypeFromHex = (hex_value: int) {
+    case(
+        hex_value == 0x1, "DES-CRC",
+        hex_value == 0x3, "DES-MD5",
+        hex_value == 0x11, "AES128-SHA96",
+        hex_value == 0x12, "AES256-SHA96",
+        hex_value == 0x13, "AES128-SHA256",
+        hex_value == 0x14, "AES256-SHA384",
+        hex_value == 0x17, "RC4",
+        "Unknown"
+    )
+};
+AADDomainServicesAccountLogon
+| where TimeGenerated >= ago(7d)
+| where OperationName has "4768" or OperationName has "4769"
+| parse ResultDescription with * "Ticket Encryption Type:\t" EncryptionType "\n" *
+| where EncryptionType has "0x17"
+| parse ResultDescription with * "Account Name:\t\t" AccountName "\n" *
+| parse ResultDescription with * "Service Name:\t\t" ServiceName "\n" *
+| extend EncryptionTypeName = EncryptionTypeFromHex(toint(EncryptionType))
+| project TimeGenerated, OperationName, AccountName, ServiceName, EncryptionType, EncryptionTypeName
+| summarize Count = count() by AccountName, ServiceName, EncryptionType, EncryptionTypeName
+| order by Count desc
+```
+
+> [!TIP]
+> Encryption type `0x17` indicates RC4-HMAC. Use this query to identify RC4 dependencies before disabling RC4 in your managed domain's [security settings](secure-your-domain.md). For more information about the RC4 deprecation timeline, see [CVE-2026-20833](https://www.cve.org/CVERecord?id=CVE-2026-20833).
+
 ## Audit security and DNS event categories
 
 Domain Services security and DNS audits align with traditional auditing for traditional AD DS domain controllers. In hybrid environments, you can reuse existing audit patterns so the same logic may be used when analyzing the events. Depending on the scenario you need to troubleshoot or analyze, the different audit event categories need to be targeted.
@@ -228,6 +256,7 @@ The following audit event categories are available:
 | Event Category Name | Event IDs |
 |:---|:---|
 |Account Logon security|4767, 4774, 4775, 4776, 4777|
+|Kerberos Tickets|4768, 4769|
 |Account Management security|4720, 4722, 4723, 4724, 4725, 4726, 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4734, 4735, 4737, 4738, 4740, 4741, 4742, 4743, 4754, 4755, 4756, 4757, 4758, 4764, 4765, 4766, 4780, 4781, 4782, 4793, 4798, 4799, 5376, 5377|
 |Detail Tracking security|None|
 |DNS Server |513-523, 525-531, 533-537, 540-582|

@@ -2,7 +2,7 @@
 title: Update an app's requested permissions in Microsoft Entra ID
 description: Learn how developers can stop applications from requesting unnecessary permissions and also add new permissions for applications in the Microsoft identity platform.
 author: omondiatieno
-manager: celesteDG
+manager: pmwongera
 ms.author: jomondi
 ms.date: 10/01/2024
 ms.reviewer: yuhko, ergreenl
@@ -29,7 +29,7 @@ Updating permissions for your app isn't only a security best practice, but also 
 
 To update an app's requested permissions, you need:
 
-- A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
 
 ## Scenarios for updating permissions

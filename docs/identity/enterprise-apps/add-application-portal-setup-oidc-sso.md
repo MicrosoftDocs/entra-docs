@@ -1,15 +1,9 @@
 ---
 title: Configure OIDC SSO for gallery and custom applications
 description: Learn how to configure OpenID Connect-based single sign-on (SSO) in Microsoft Entra ID for both gallery applications and your own custom (non-gallery) applications.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 07/22/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
 
@@ -36,7 +30,7 @@ Before configuring OIDC SSO, it's helpful to understand the following core conce
 
 To configure OIDC-based SSO, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles:
   - Cloud Application Administrator
   - Application Administrator

@@ -2,9 +2,9 @@
 title: Best practices for the Microsoft identity platform
 description: Learn about best practices, recommendations, and common oversights when integrating with the Microsoft identity platform.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: scenarios:getting-started, has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 11/22/2023
 ms.reviewer: sureshja
 ms.service: identity-platform
@@ -48,7 +48,7 @@ Use the following checklist to ensure that your application is effectively integ
 
 ![checkbox](./media/integration-checklist/checkbox-two.svg) If your app is registered in a directory, minimize and manually monitor the list of app registration owners.
 
-![checkbox](./media/integration-checklist/checkbox-two.svg) Don't enable support for the [OAuth2 implicit grant flow](v2-oauth2-implicit-grant-flow.md) unless explicitly required. Learn about the valid scenario [here](v2-oauth2-implicit-grant-flow.md#suitable-scenarios-for-the-oauth2-implicit-grant).
+![checkbox](./media/integration-checklist/checkbox-two.svg) Don't enable support for the [OAuth2 implicit grant flow](v2-oauth2-implicit-grant-flow.md) unless explicitly required.
 
 ![checkbox](./media/integration-checklist/checkbox-two.svg) Move beyond username/password. Don't use [resource owner password credential flow (ROPC)](v2-oauth-ropc.md), which directly handles users' passwords. This flow requires a high degree of trust and user exposure and should only be used when other, more secure, flows can't be used. This flow is still needed in some scenarios (like DevOps), but beware that using it will impose constraints on your application.  For more modern approaches, read [Authentication flows and application scenarios](authentication-flows-app-scenarios.md).
 

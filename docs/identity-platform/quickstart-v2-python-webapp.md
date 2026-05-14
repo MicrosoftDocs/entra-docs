@@ -3,7 +3,7 @@ title: "Quickstart: Add sign-in with Microsoft to a Python web app"
 description: In this quickstart, learn how a Python web app can sign in users, get an access token from the Microsoft identity platform, and call the Microsoft Graph API.
 ROBOTS: NOINDEX
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom:
 ms.date: 01/24/2023
@@ -29,7 +29,7 @@ ms.topic: quickstart
 > 
 > ## Prerequisites
 > 
-> - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 > - [Python 2.7+](https://www.python.org/downloads/release/python-2713) or [Python 3+](https://www.python.org/downloads/release/python-364/)
 > - [Flask](http://flask.pocoo.org/), [Flask-Session](https://pypi.org/project/Flask-Session/), [requests](https://github.com/psf/requests/graphs/contributors)
 > - [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)
@@ -95,7 +95,7 @@ ms.topic: quickstart
 > 
 > ## Next steps
 > 
-> Learn more about web apps that sign in users in our multi-part scenario series.
+> Learn more about web apps that calls an API in our multi-part scenario series.
 > 
 > > [!div class="nextstepaction"]
-> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md)
+> > [Scenario: Web app that calls an API](scenario-web-app-call-api-app-configuration.md)

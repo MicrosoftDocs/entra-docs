@@ -3,11 +3,9 @@ title: Migrate applications from Okta to Microsoft Entra ID
 description: Discover the process of migrating applications from Okta to Microsoft Entra ID, covering SAML, OpenID Connect, and OAuth 2.0 configurations.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: gasinh
-ms.subservice: enterprise-apps
 ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using Okta for application management, I want to migrate my applications to Microsoft Entra ID, so that I can centralize application access and management in one platform.
 ---
@@ -20,7 +18,7 @@ In this tutorial, you learn how to migrate your applications from Okta to Micros
 
 To manage the application in Microsoft Entra ID, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 

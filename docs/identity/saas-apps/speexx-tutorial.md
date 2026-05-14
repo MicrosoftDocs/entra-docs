@@ -2,17 +2,9 @@
 title: Configure Speexx for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Speexx.
 
-author: nguhiu
-manager: mwongerapk
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
-
+ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Speexx so that I can control who has access to Speexx, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -28,7 +20,7 @@ In this article,  you learn how to integrate Speexx with Microsoft Entra ID. Whe
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Speexx single sign-on (SSO) enabled subscription.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
@@ -81,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
    1. In the **Identifier** text box, type a URL using the following pattern: `https://portal.speexx.com/auth/saml/<customername>`
-   1. In the **Reply URL** text box, type a URL using the following pattern: `https://portal.speexx.com/auth/saml/<customername>/adfs/postResponse`
+   1. In the **Reply URL** text box, type a URL using the following pattern: `https://portal.speexx.com/auth/saml/<customername>/back`
    1. In the **Sign-on URL** text box, type a URL using the following pattern: `https://portal.speexx.com/auth/saml/<customername>`
    
    > [!NOTE]

@@ -2,17 +2,9 @@
 title: Configure Tripwire Enterprise for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tripwire Enterprise.
 
-author: nguhiu
-manager: mwongerapk
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
-
+ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tripwire Enterprise so that I can control who has access to Tripwire Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -30,9 +22,9 @@ You'll configure and test Microsoft Entra single sign-on for Tripwire Enterprise
 
 To integrate Microsoft Entra ID with Tripwire Enterprise, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Tripwire Enterprise single sign-on (SSO) enabled subscription.
 
 ## Add application and assign a test user
@@ -88,11 +80,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Tripwire Enterprise SSO
 
-To configure single sign-on in Tripwire Enterprise, please see **Using Tripwire Enterprise with SAML Authentication** section in the Tripwire Enterprise Hardening Guide, available for download on the [Tripwire Customer Center](https://tripwireinc.force.com/customers/home). If you require assistance, contact [Tripwire Enterprise support team](mailto:support@tripwire.com).
+To configure single sign-on in Tripwire Enterprise, please see **Using Tripwire Enterprise with SAML Authentication** section in the Tripwire Enterprise Hardening Guide, available for download on the Tripwire Customer Center. If you require assistance, contact [Tripwire Enterprise support team](mailto:support@tripwire.com).
 
 ### Create Tripwire Enterprise test user
 
-To create a Tripwire Enterprise user, please see **Creating a User Account** section in the Tripwire Enterprise User Guide, available for download on the [Tripwire Customer Center](https://tripwireinc.force.com/customers/home). If you require assistance, contact [Tripwire Enterprise support team](mailto:support@tripwire.com).
+To create a Tripwire Enterprise user, please see **Creating a User Account** section in the Tripwire Enterprise User Guide, available for download on the Tripwire Customer Center. If you require assistance, contact [Tripwire Enterprise support team](mailto:support@tripwire.com).
 
 ## Test SSO 
 

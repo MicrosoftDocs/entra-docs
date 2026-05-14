@@ -1,13 +1,11 @@
 ---
 title: Configure Britive for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Britive.
-author: adimitui
-manager: jeedes
-ms.service: entra-id
-ms.subservice: saas-apps
+author: jeevansd
+manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: addimitu
+ms.date: 02/27/2026
+ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Britive so that I can streamline the user management process and ensure that users have the appropriate access to Britive.
 ---
@@ -43,26 +41,26 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Britive to support provisioning with Microsoft Entra ID
 
-The application has to be manually configured using the steps provided in the this section:
-1. Login to Britive application with administrator privileges
-1. Select **Admin->User Administration->Identity Providers**
-1. Select **Add Identity Provider**. Enter the name and description. Select Add Identity Provider button.
+The application has to be manually configured using the steps provided in this section:
+1. Log in to the Britive application with administrator privileges.
+1. Select **Admin->Identity Management->Identity Providers**.
+1. Select **Add Identity Provider**. Enter the name and description. Select the **Add** button.
 
 	![Identity Provider](media/britive-provisioning-tutorial/identity.png)
 
-1. A configuration page similar to one displayed below is shown.
+1. A configuration page similar to the one displayed below is shown.
 
 	![Configuration Page](media/britive-provisioning-tutorial/configuration.png)
 
-1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the SCIM URL and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application.
+1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the SCIM URL and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application in the Azure portal.
 
 	![SCIM Page](media/britive-provisioning-tutorial/scim.png)
 
-1. Select **Create Token**. Select the validity of the token as required and select Create Token button.
+1. Select **Create Token**. Select the validity of the token as required and select the **Create Token** button.
 
 	![Create Token](media/britive-provisioning-tutorial/create-token.png)
 
-1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select Re-Create button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
+1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select the **Recreate token** button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
 
 	![Copy Token](media/britive-provisioning-tutorial/copy-token.png) 
 
@@ -71,7 +69,7 @@ The application has to be manually configured using the steps provided in the th
 
 ## Step 3: Add Britive from the Microsoft Entra application gallery
 
-Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously setup Britive for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously set up Britive for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -98,21 +96,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Set **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your Britive Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Britive. If the connection fails, ensure your Britive account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Britive Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Britive. If the connection fails, ensure your Britive account has the required admin permissions and try again.
 
- 	![Token](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.	
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** in the **Overview** page. 
 
-1. Select **Save**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Britive**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Britive in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Britive for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Britive API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -165,7 +165,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
 
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Britive**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Britive in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Britive for update operations. Select the **Save** button to commit any changes.
 
@@ -177,19 +177,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Britive, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a few users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to Britive by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

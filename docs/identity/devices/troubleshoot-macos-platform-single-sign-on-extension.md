@@ -2,8 +2,6 @@
 title: macOS Platform single sign-on known issues and troubleshooting
 description: Identify and resolve known issues with macOS Platform single sign-on (PSSO).
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 12/19/2024
 
@@ -14,7 +12,7 @@ ms.reviewer: brianmel, miepping
 #Customer intent: As a customer, I want to understand how to troubleshoot macOS Platform single sign-on (PSSO) issues, have some frequently asked questions answered, and understand different scenarios to validate.
 ---
 
-# macOS Platform single sign-on known issues and troubleshooting (preview)
+# macOS Platform single sign-on known issues and troubleshooting
 
 This article outlines the current known issues and common questions with macOS Platform single sign-on (PSSO). It provides issue solutions and information on how to report an issue that isn't covered. This article also includes troubleshooting guidance.
 
@@ -69,6 +67,11 @@ If the Enterprise SSO plug-in fails to activate after system updates are applied
     sudo swcutil reset
     ```
 ### TLS Inspection URLs to be excluded for Platform SSO
+
+#### 1. URLs that need to be allowed for PSSO registration flows
+Please ensure that traffic to the URLs listed **[here](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra)** is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration and device auth flows that rely on TLS challenges to complete successfully.
+
+#### 2. URLs that need to be exempted for PSSO token acquisition and token refresh flows
 Please ensure below URLs are exempted from TLS interception/inspection so that Platform SSO token acquisition and refresh can be successfully performed on Platform SSO targeted devices:
 
 - app-site-association.cdn-apple.com
@@ -86,10 +89,6 @@ Apple's app-site-association domains are critical for SSO extension functioning.
 
 > [!NOTE] 
 > Platform SSO is not compatible with the Microsoft Entra ID Tenant Restrictions v2 feature when Tenant Restrictions is deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
-
-#### URLs that need to be allowed for PSSO registration flows
-
-Please ensure that traffic to the URLs listed [here](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra) is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration flows that rely on TLS challenges to complete successfully.
 
 > [!IMPORTANT]
 > **Note: There has been a recent update to the TLS endpoint used in registration flows. Please verify that your environment’s allowlist reflects the latest URL requirements to avoid disruptions.**
@@ -142,7 +141,7 @@ Users can reset the local password via Apple ID or an admin recovery key.
 
 There's a known concurrency issue on macOS 15+ (Sequoia) that can cause the PSSO device configuration to become corrupted. The device configuration can be corrupted by simultaneous updates from the system AppSSOAgent and AppSSODaemon processes. The corrupted configuration causes the operating system to trigger its re-registration remediation flow, resulting in unexpected registration prompts for users.
 
-This issue is currently being investigated by Apple..
+This issue is currently being investigated by Apple.
 
 Sysdiagnose logs from affected users contain the following error:
 

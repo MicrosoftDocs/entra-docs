@@ -1,13 +1,8 @@
 ---
 title: Access activity logs in Microsoft Entra ID
 description: How to choose the right method for accessing and integrating the activity logs in Microsoft Entra ID.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 11/11/2024
-ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to learn about the different ways to access activity logs in Microsoft Entra ID so that I can choose the right method for my scenario and organization.
@@ -53,7 +48,7 @@ The reports available in the Azure portal provide a wide range of capabilities t
 
 - Research a user's sign-in activity or track an application's usage.
 - Review details around group name changes, device registration, and password resets with audit logs.
-- Use the Identity Protection reports for monitoring at risk users, risky workload identities, and risky sign-ins.
+- Use the Identity Protection reports for monitoring at risk users, risky workload identities, risky agents, and risky sign-ins.
 - Review the sign-in success rate in the Microsoft Entra application activity (preview) report from Usage and insights to ensure that your users can access the applications in use in your tenant.
 - Compare the different authentication methods your users prefer with the Authentication methods report from Usage and insights.
 

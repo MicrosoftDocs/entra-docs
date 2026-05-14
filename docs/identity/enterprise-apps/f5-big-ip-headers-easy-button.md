@@ -3,8 +3,6 @@ title: Configure F5 BIG-IP Easy Button for Header-based SSO
 description: Learn to implement secure hybrid access (SHA) with single sign-on (SSO) to header-based applications using F5 BIG-IP Easy Button Guided Configuration.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
@@ -63,7 +61,7 @@ For this scenario, SHA supports SP- and IdP-initiated flows. The following diagr
 For the scenario you need:
 
 * An Azure subscription
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * One of the following roles: Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)

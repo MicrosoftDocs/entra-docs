@@ -1,16 +1,14 @@
 ---
 title: Global Reader
 description: Global Reader
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 03/24/2026
 ms.custom: include file
 ---
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
-This is a [privileged role](../privileged-roles-permissions.md). Users in this role can read settings and administrative information across Microsoft 365 services but can't take management actions. Global Reader is the read-only counterpart to Global Administrator. Assign Global Reader instead of Global Administrator for planning, audits, or investigations. Use Global Reader in combination with other limited admin roles like Exchange Administrator to make it easier to get work done without the assigning the Global Administrator role. Global Reader works with Microsoft 365 admin center, Exchange admin center, SharePoint admin center, Teams admin center, Microsoft 365 Defender portal, Microsoft Purview compliance portal, Azure portal, and Device Management admin center.
+This is a [privileged role](../privileged-roles-permissions.md). Users in this role can read settings and administrative information across Microsoft 365 services but can't take management actions. Global Reader is the read-only counterpart to Global Administrator. Assign Global Reader instead of Global Administrator for planning, audits, or investigations. Use Global Reader in combination with other limited admin roles like Exchange Administrator to make it easier to get work done without the assigning the Global Administrator role. Global Reader works with Microsoft 365 admin center, Exchange admin center, SharePoint admin center, Teams admin center, Microsoft Defender portal, Microsoft Purview portal, Azure portal, and Device Management admin center.
 
 Users with this role **cannot** do the following:
 
@@ -20,9 +18,9 @@ Users with this role **cannot** do the following:
 > Global Reader role has the following limitations:
 >
 >- OneDrive admin center - OneDrive admin center does not support the Global Reader role
->- [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) - Global Reader can't do content search or see Secure Score.
+>- [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) - Global Reader can't do content search or see Secure Score.
 >- [Teams admin center](/microsoftteams/manage-teams-in-modern-portal) - Global Reader cannot read **Teams lifecycle**, **Analytics & reports**, **IP phone device management**, and **App catalog**. For more information, see [Use Microsoft Teams administrator roles to manage Teams](/microsoftteams/using-admin-roles).
->- [Privileged Access Management](/microsoft-365/compliance/privileged-access-management) doesn't support the Global Reader role.
+>- [Privileged Access Management](/purview/privileged-access-management) doesn't support the Global Reader role.
 >- [Azure Information Protection](/azure/information-protection/what-is-information-protection) - Global Reader is supported [for central reporting](/azure/information-protection/reports-aip) only, and when your Microsoft Entra organization isn't on the [unified labeling platform](/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
 > - [SharePoint](/sharepoint/get-started-new-admin-center) - Global Reader has read access to SharePoint Online PowerShell cmdlets and Read APIs.
 > - [Power Platform admin center](/power-platform/admin/admin-documentation) - Global Reader is not yet supported in the Power Platform admin center.
@@ -33,6 +31,7 @@ Users with this role **cannot** do the following:
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.agentRegistry/allEntities/allProperties/read | Read all properties of Agent Registry in Microsoft Entra ID |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.backup/allEntities/allProperties/read | Read all aspects of Microsoft 365 Backup |
 > | microsoft.cloudPC/allEntities/allProperties/read | Read all aspects of Windows 365 |
@@ -108,6 +107,7 @@ Users with this role **cannot** do the following:
 > | microsoft.hardware.support/shippingAddress/allProperties/read | Read shipping addresses for Microsoft hardware warranty claims, including existing shipping addresses created by others |
 > | microsoft.hardware.support/shippingStatus/allProperties/read | Read shipping status for open Microsoft hardware warranty claims |
 > | microsoft.hardware.support/warrantyClaims/allProperties/read | Read Microsoft hardware warranty claims |
+> | microsoft.healthPlatform/allEntities/allProperties/read | Read all aspects of Microsoft Dragon admin center |
 > | microsoft.insights/allEntities/allProperties/read | Read all aspects of Viva Insights |
 > | microsoft.microsoft365.organizationalData/allEntities/allProperties/read | Read all aspects of organizational data in Microsoft 365 |
 > | microsoft.networkAccess/allEntities/allProperties/read | Read all aspects of Microsoft Entra Network Access |

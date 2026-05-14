@@ -5,7 +5,7 @@ description: Learn how to handle web fallback in native authentication JavaScrip
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 06/30/2025

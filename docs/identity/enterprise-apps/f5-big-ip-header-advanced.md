@@ -3,8 +3,6 @@ title: Configure F5 BIG-IP Access Policy Manager for header-based single sign-on
 description: Learn to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra SSO for header-based authentication.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
@@ -60,7 +58,7 @@ The following diagram illustrates the user flow with Microsoft Entra ID, BIG-IP,
 For the scenario you need:
 
 * An Azure subscription
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * One of the following roles: Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)

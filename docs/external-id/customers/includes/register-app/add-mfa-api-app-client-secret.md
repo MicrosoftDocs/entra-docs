@@ -1,11 +1,8 @@
 ---
 author: kengaderdus
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 05/05/2023
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 
 Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens.

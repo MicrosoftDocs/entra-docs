@@ -5,7 +5,7 @@ description: Learn how to set up a CORS proxy server for single-page application
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 02/07/2025

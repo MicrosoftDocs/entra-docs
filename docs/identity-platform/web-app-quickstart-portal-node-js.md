@@ -32,7 +32,7 @@ ms.topic: quickstart
 > 
 > ## Prerequisites
 > 
-> * An Azure subscription. [Create an Azure subscription for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> * An Azure subscription. [Create an Azure subscription for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 > * [Node.js](https://nodejs.org/en/download/)
 > * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 > 

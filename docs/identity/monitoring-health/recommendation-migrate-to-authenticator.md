@@ -2,13 +2,8 @@
 title: Recommendation to migrate to Microsoft authenticator
 description: Learn the importance of migrating your users to the Microsoft authenticator app in Microsoft Entra ID.
 
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
-ms.date: 06/12/2025
-ms.author: sarahlipsey
+ms.date: 04/28/2026
 ms.reviewer: jadedsouza
 
 # Customer intent: As an IT admin, I want to make sure that my users are using the most secure multi-factor authentication method available in Microsoft Entra ID.
@@ -19,6 +14,10 @@ ms.reviewer: jadedsouza
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
 This article covers the recommendation to migrate users to the Microsoft Authenticator app, which is currently a preview recommendation. This recommendation is called `useAuthenticatorApp` in the recommendations API in Microsoft Graph.
+
+## Prerequisites
+
+[!INCLUDE [Recommendations roles](../../includes/recommendations-roles.md)]
 
 ## Description
 

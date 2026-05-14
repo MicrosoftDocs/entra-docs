@@ -2,14 +2,9 @@
 title: 'What is inter-directory provisioning with Microsoft Entra ID?'
 description: Describes overview of identity inter-directory provisioning.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: jomondi
-
 ---
 
 # What is inter-directory provisioning?
@@ -44,7 +39,7 @@ This capability of inter-directory provisioning offers the following significant
 
 
 ### Common scenarios
-For a list of common hybrid synchronization scenarios, see [Common scenarios](#common-scenarios).
+For a list of common hybrid synchronization scenarios, see [Common scenarios](common-scenarios.md).
 
 ## Next steps 
 - [What is identity lifecycle management](~/id-governance/scenarios/govern-the-employee-lifecycle.md)

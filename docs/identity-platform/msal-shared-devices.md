@@ -2,12 +2,12 @@
 title: Shared device mode overview
 description: Learn how Microsoft Entra ID's shared device mode feature enables device sharing for your frontline workers.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.date: 05/09/2025
 ms.reviewer: akgoel
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: concept-article
 #Customer intent: As a developer building applications for frontline workers, I want to understand how to enable shared device mode in my apps using Microsoft Entra ID, so that I can provide a secure and optimized experience for users on shared Android and iOS devices.
 ---

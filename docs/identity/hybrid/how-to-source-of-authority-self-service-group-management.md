@@ -1,15 +1,15 @@
 ---
-title: Set up self-service group management after Group SOA conversion (Preview)
+title: Set up self-service group management after Group SOA conversion
 description: Configure self-service group management in Microsoft Entra for security groups, mail-enabled security groups, and distribution groups after SOA conversion.
 author: Justinha
+ms.subservice: hybrid
 ms.topic: how-to
 ms.date: 08/01/2025
 ms.author: justinha
-manager: dougeby
 ms.reviewer: mbhargav
 ---
 
-# Set up self-service group management after Group Source of Authority (SOA) conversion (Preview)
+# Set up self-service group management after Group Source of Authority (SOA) conversion
 
 When you convert groups to Microsoft Entra using Source of Authority (SOA), enabling self-service group management empowers your users to manage their own group memberships while reducing administrative overhead. This article explains how to configure self-service group management for different group types after SOA conversion, including the capabilities, limitations, and best practices for each group type.
 

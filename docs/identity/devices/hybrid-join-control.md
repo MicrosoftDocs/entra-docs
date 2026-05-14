@@ -2,14 +2,9 @@
 title: Targeted deployments of Microsoft Entra hybrid join
 description: Learn how to do a targeted deployment of Microsoft Entra hybrid join before enabling it across the entire organization all at once.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 06/27/2024
 
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 # Microsoft Entra hybrid join targeted deployment

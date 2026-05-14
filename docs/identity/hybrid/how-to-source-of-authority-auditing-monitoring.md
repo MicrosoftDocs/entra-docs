@@ -1,15 +1,15 @@
 ---
-title: How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID.
 author: Justinha
-manager: dougeby
 ms.topic: concept-article
+ms.subservice: hybrid
 ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
 
-# How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
+# How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID
 
 Admins can use **Audit Logs** in the Azure portal or the onPremisesSyncBehavior Microsoft Graph API to monitor and report SOA changes in their environment. They can also integrate SOA changes with third-party monitoring systems. For more information, see [onPremisesSyncBehavior](/graph/api/resources/onpremisessyncbehavior).
 

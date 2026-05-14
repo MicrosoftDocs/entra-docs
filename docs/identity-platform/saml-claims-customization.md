@@ -4,7 +4,7 @@ description: Learn how to customize the claims issued by Microsoft identity plat
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 05/14/2025
 ms.reviewer: alamaral
 ms.service: identity-platform
@@ -44,7 +44,7 @@ To edit the name identifier value claim:
 
 If the SAML request contains the element `NameIDPolicy` with a specific format, then the Microsoft identity platform honors the format in the request.
 
-If the SAML request doesn't contain an element for `NameIDPolicy`, then the Microsoft identity platform issues the `nameID` with the  format you specify. If no format is specified, the Microsoft identity platform uses the default source format associated with the claim source selected. If a transformation results in a null or illegal value, Microsoft Entra ID sends a persistent pairwise identifier in the `nameID`.
+If the SAML request doesn't contain an element for `NameIDPolicy`, then the Microsoft identity platform issues the `nameID` with the  format you specify. If no format is specified, the Microsoft identity platform uses the default source format associated with the claim source selected. When the configured source attribute is `null`, the Microsoft identify platform will use the `userprincipalName`. If a transformation results in a null or illegal value, Microsoft Entra ID sends a persistent pairwise identifier in the `nameID`. 
 
 From the **Choose name identifier format** dropdown, select one of the options in the following table.
 
@@ -155,6 +155,8 @@ You can use the following functions to transform claims.
 
 ## Regex-based claims transformation
 
+You can use regular expressions to transform claims. A maximum of 20 total regex replacements can be made when using regex-based claims transformations.
+
 The following image shows an example of the first level of transformation:
 
 :::image type="content" source="./media/saml-claims-customization/regexreplace-transform1.png" alt-text="Screenshot of the first level of transformation.":::
@@ -170,7 +172,7 @@ The actions listed in the following table provide information about the first le
 | `5` | `Add additional parameter` | More than one user attribute can be used for the transformation. The values of the attributes would then be merged with regex transformation output. Up to five more parameters are supported. |
 | `6` | `Replacement pattern` | The replacement pattern is the text template, which contains placeholders for regex outcome. All group names must be wrapped inside the curly braces such as `{group-name}`. Let's say the administration wants to use user alias with some other domain name, for example `xyz.com` and merge country name with it. In this case, the replacement pattern would be `{country}.{domain}@xyz.com`, where `{country}` is the value of input parameter and `{domain}` is the group output from the regular expression evaluation. In such a case, the expected outcome is `US.swmal@xyz.com`. |
 
-The following image shows an example of the second  level of transformation:
+The following image shows an example of the second level of transformation:
 
 :::image type="content" source="./media/saml-claims-customization/regexreplace-transform2.png" alt-text="Screenshot of second level of claims transformation.":::
 

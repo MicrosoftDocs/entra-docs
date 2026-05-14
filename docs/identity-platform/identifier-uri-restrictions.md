@@ -51,7 +51,7 @@ Read this section if you're a developer, and you're trying to add an identifier 
 There are three possible ways that you can add an identifier URI to your app. We recommend them in the following order:
 
 1.  Use one of the [secure URI patterns](#secure-patterns)
-1. If you encountered this error, it means your API currently uses v1.0 tokens. You can unblock yourself by updating your service to accept v2.0 tokens. V2.0 tokens are similar to v1.0, but there are some [differences](https://learn.microsoft.com/entra/identity-platform/access-token-claims-reference). Once your service is able to handle v2.0 tokens, you can update your app configuration so that Microsoft Entra sends them v2.0 tokens. An easy way to do this is through the manifest editor in the [Microsoft Entra admin center App registrations experience](https://aka.ms/ra/prod):
+1. If you encountered this error, it means your API currently uses v1.0 tokens. You can unblock yourself by updating your service to accept v2.0 tokens. V2.0 tokens are similar to v1.0, but there are some [differences](/entra/identity-platform/access-token-claims-reference). Once your service is able to handle v2.0 tokens, you can update your app configuration so that Microsoft Entra sends them v2.0 tokens. An easy way to do this is through the manifest editor in the [Microsoft Entra admin center App registrations experience](https://aka.ms/ra/prod):
 
     :::image type="content" source="media/identifier-uri-restrictions/update-access-token-version-cropped.png" alt-text="Screenshot of update token version experience." lightbox="media/identifier-uri-restrictions/update-access-token-version.png":::
 
@@ -91,8 +91,26 @@ Identifier URIs are configured using the 'Expose an API' page in [App registrati
 
 ### How do these policies work?
 
-The enforcements are turned on by configuring an organization's [app management policies](https://learn.microsoft.com/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta). A tenant administrator can turn it on or off.   Microsoft is enabling it by default in some organizations during the months of June and July 2025.  
+The enforcements are turned on by configuring an organization's [app management policies](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta&preserve-view=true). A tenant administrator can turn it on or off.   Microsoft is enabling it by default in some organizations during the months of June and July 2025.  
 
 [Learn how to check if the protection has been enabled in your organization](https://aka.ms/check-identifier-uri-protection-state)
 
 Even though Microsoft is enabling this setting by default, tenant administrators retain control over it. They can turn it on, off, or grant exceptions to it.
+
+### Why am I hitting this error when configuring my SAML application?
+
+SAML applications are exempt from the identifier URI restrictions by default.  However, they must be explicitly indicated as SAML applications in order for the exemption to apply.
+
+If the SAML setup was configured using the 'Single Sign On' page of 'Enterprise applications', then the app will automatically be indicated as a SAML app.  If not, you can indicate the app as a SAML app by setting the `preferredSingleSignOn` mode property of the service principal to `SAML`.
+
+To do this, make the following request.  You can get the object ID of the service principal from the [Enterprise applications experience](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview).
+
+```http
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/{objectIdOfServicePrincipal}
+```
+
+```json
+{
+    "preferredSingleSignOnMode": "SAML"
+}
+```

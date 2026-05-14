@@ -2,15 +2,10 @@
 title: Configure ADP (OIDC) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and ADP (OIDC).
 services: active-directory
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADP (OIDC) so that I can control who has access to ADP (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -27,7 +22,7 @@ Manage your accounts in one central location: the Azure portal.
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * ADP (OIDC) single sign-on (SSO) enabled subscription.
 
 ## Add ADP (OIDC) from the gallery

@@ -2,7 +2,7 @@
 title: Support and help options for Microsoft identity platform developers
 description: Learn where to get help and find answers to your questions as you build identity and access management (IAM) solutions that integrate with Microsoft Entra ID and other components of the Microsoft identity platform.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 05/31/2023
 ms.service: identity-platform

@@ -2,16 +2,9 @@
 title: Configure Uberflip for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Uberflip.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Uberflip so that I can control who has access to Uberflip, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure Uberflip for Single sign-on with Microsoft Entra ID
@@ -30,7 +23,7 @@ For details about software as a service (SaaS) app integration with Microsoft En
 
 To configure Microsoft Entra integration with Uberflip, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 * An Uberflip subscription with single sign-on enabled.
 
 ## Scenario description

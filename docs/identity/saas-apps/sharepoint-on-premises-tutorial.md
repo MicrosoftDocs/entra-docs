@@ -1,14 +1,9 @@
 ---
 title: Configure SharePoint on-premises for Single sign-on with Microsoft Entra ID
 description: Learn how to implement federated authentication between Microsoft Entra ID and SharePoint on-premises.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SharePoint on-premises so that I can control who has access to SharePoint on-premises, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -21,7 +16,7 @@ In this article,  you configure a federated authentication between Microsoft Ent
 ## Prerequisites
 
 To perform the configuration, you need the following resources:
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]. If you don't have one, you can create a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]. If you don't have one, you can create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A SharePoint 2013 farm or newer.
 
 This article uses the following values:

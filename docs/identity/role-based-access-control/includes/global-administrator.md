@@ -1,16 +1,14 @@
 ---
 title: Global Administrator
 description: Global Administrator
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 04/22/2026
 ms.custom: include file
 ---
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
-This is a [privileged role](../privileged-roles-permissions.md). Users with this role have access to all administrative features in Microsoft Entra ID, as well as services that use Microsoft Entra identities like the Microsoft 365 Defender portal, the Microsoft Purview compliance portal, Exchange Online, SharePoint Online, and Skype for Business Online. Global Administrators can view Directory Activity logs. Furthermore, Global Administrators can [elevate their access](/azure/role-based-access-control/elevate-access-global-admin) to manage all Azure subscriptions and management groups. This allows Global Administrators to get full access to all Azure resources using the respective Microsoft Entra tenant. The person who signs up for the Microsoft Entra organization becomes a Global Administrator. There can be more than one Global Administrator at your company. Global Administrators can reset the password for any user and all other administrators. A Global Administrator cannot remove their own Global Administrator assignment. This is to prevent a situation where an organization has zero Global Administrators.
+This is a [privileged role](../privileged-roles-permissions.md). Users with this role have access to all administrative features in Microsoft Entra ID, as well as services that use Microsoft Entra identities like the Microsoft Defender portal, the Microsoft Purview portal, Exchange Online, SharePoint Online, and Skype for Business Online. Global Administrators can view Directory Activity logs. Furthermore, Global Administrators can [elevate their access](/azure/role-based-access-control/elevate-access-global-admin) to manage all Azure subscriptions and management groups. This allows Global Administrators to get full access to all Azure resources using the respective Microsoft Entra tenant. The person who signs up for the Microsoft Entra organization becomes a Global Administrator. There can be more than one Global Administrator at your company. Global Administrators can reset the password for any user and all other administrators. A Global Administrator cannot remove their own Global Administrator assignment. This is to prevent a situation where an organization has zero Global Administrators.
 
 > [!NOTE]
 > As a best practice, Microsoft recommends that you assign the Global Administrator role to fewer than five people in your organization. For more information, see [Best practices for Microsoft Entra roles](../best-practices.md).
@@ -20,6 +18,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.agentRegistry/allEntities/allProperties/allTasks | Manage all aspects of Agent Registry in Microsoft Entra ID |
 > | microsoft.azure.advancedThreatProtection/allEntities/allTasks | Manage all aspects of Azure Advanced Threat Protection |
 > | microsoft.azure.informationProtection/allEntities/allTasks | Manage all aspects of Azure Information Protection |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
@@ -28,16 +27,69 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
 > | microsoft.commerce.billing/allEntities/allProperties/allTasks | Manage all aspects of Office 365 billing |
 > | microsoft.commerce.billing/purchases/standard/read | Read purchase services in Microsoft 365 admin center. |
+> | microsoft.commerce.tenantRelationships/customerDelegatedAdminPrivileges/allProperties/allTasks | Manage all aspects of granular delegated admin privileges (GDAP) relationships in a customer tenant. |
 > | microsoft.directory/accessReviews/allProperties/allTasks | Create and delete access reviews, and read and update all properties of access reviews in Microsoft Entra ID |
 > | microsoft.directory/accessReviews/definitions/allProperties/allTasks | Manage access reviews of all reviewable resources in Microsoft Entra ID |
 > | microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks | Manage admin consent request policies in Microsoft Entra ID |
 > | microsoft.directory/administrativeUnits/allProperties/allTasks | Create and manage administrative units (including members) |
+> | microsoft.directory/agentIdentities/appRoleAssignedTo/update | Update agent identity role assignments. |
+> | microsoft.directory/agentIdentities/basic/update | Update basic properties of agent identities. |
+> | microsoft.directory/agentIdentities/create | Create agent identities.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentities/delete | Delete agent identities.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentities/disable | Disable agent identities.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentities/enable | Enable agent identities.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentities/owners/update | Add and remove owners to agent identities. |
+> | microsoft.directory/agentIdentities/tag/update | Update tags for agent identities. |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/appRoleAssignedTo/update | Update agent identity blueprint principal role assignments. |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/basic/update | Update basic properties of agent identity blueprint principals. |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/create | Create agent identity blueprint principals.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/delete |  Delete agent identity blueprint principals.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/disable |  Disable agent identity blueprint principals.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/enable |  Enable agent identity blueprint principals.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/owners/update | Add and remove owners to agent identity blueprint principals. |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/tag/update | Update tags for agent identity blueprint principals. |
+> | microsoft.directory/agentIdentityBlueprints/allProperties/read | Read all properties and settings for agent identity blueprints. |
+> | microsoft.directory/agentIdentityBlueprints/allProperties/update | Update all properties and settings for agent identity blueprints. |
+> | microsoft.directory/agentIdentityBlueprints/appRoles/update | Modify app roles defined on agent identity blueprints. |
+> | microsoft.directory/agentIdentityBlueprints/authentication/update | Update authentication related settings for agent identity blueprints.  |
+> | microsoft.directory/agentIdentityBlueprints/audience/update | Update the sign-in audience setting for agent identity blueprints. |
+> | microsoft.directory/agentIdentityBlueprints/basic/update | Update basic properties of agent identity blueprints. |
+> | microsoft.directory/agentIdentityBlueprints/create | Create agent identity blueprints.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprints/credentials/update | Add and remove credentials to agent identity blueprints.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprints/delete | Delete agent identity blueprints.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprints/owners/update | Add and remove owners to agent identity blueprints.  |
+> | microsoft.directory/agentIdentityBlueprints/permissions/update | Modify exposed permissions on agent identity blueprints.  |
+> | microsoft.directory/agentIdentityBlueprints/tag/update | Update tags for agent identity blueprints. |
+> | microsoft.directory/agentIdentityBlueprints/verification/update | Update publisher verification setting for agent identity blueprints. |
+> | microsoft.directory/agentUsers/assignLicense | Manage agent user licenses |
+> | microsoft.directory/agentUsers/basic/update | Update basic properties on agent users |
+> | microsoft.directory/agentUsers/create | Add agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/delete | Delete agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/disable | Disable agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/enable | Enable agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/invalidateAllRefreshTokens | Force sign-out by invalidating agent user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/lifeCycleInfo/read | Read lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/lifeCycleInfo/update | Update lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/manager/update | Update manager for agent users |
+> | microsoft.directory/agentUsers/photo/update | Update photo of agent users |
+> | microsoft.directory/agentUsers/reprocessLicenseAssignment | Reprocess license assignments for agent users |
+> | microsoft.directory/agentUsers/restore | Restore deleted agent users |
+> | microsoft.directory/agentUsers/revokeSignInSessions | Revoke sign-in sessions for a agent user |
+> | microsoft.directory/agentUsers/sponsors/update | Update sponsors of agent users |
+> | microsoft.directory/agentUsers/usageLocation/update | Update usage location of agent users |
+> | microsoft.directory/agentUsers/userPrincipalName/update | Update User Principal Name of agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/appConsent/appConsentRequests/allProperties/read | Read all properties of consent requests for applications registered with Microsoft Entra ID |
 > | microsoft.directory/applications/allProperties/allTasks | Create and delete applications, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/applications/disablement/update | Update whether an application is enabled for users to sign in |
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/backup/preview/cancel | Cancel a Microsoft Entra backup operation to compare a backup snapshot with the current state. |
+> | microsoft.directory/backup/preview/create | Create a Microsoft Entra backup operation that allows a user to compare a backup snapshot with the current state. |
+> | microsoft.directory/backup/recovery/cancel | Cancel a Microsoft Entra recovery operation to recover the contents of a backup snapshot |
+> | microsoft.directory/backup/recovery/create | Create a Microsoft Entra recovery operation that allows a user to recover the contents of a backup snapshot. |
+> | microsoft.directory/backup/standard/read | List Microsoft Entra backups (for example, backup IDs and timestamps), view difference reports, and list recovery jobs and their associated properties. |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/bulkJobs/basic/update | Update all the bulk jobs in a directory |
 > | microsoft.directory/bulkJobs/create | Create all bulk jobs in a directory |
@@ -187,6 +239,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.hardware.support/shippingAddress/allProperties/allTasks | Create, read, update, and delete shipping addresses for Microsoft hardware warranty claims, including shipping addresses created by others |
 > | microsoft.hardware.support/shippingStatus/allProperties/read | Read shipping status for open Microsoft hardware warranty claims |
 > | microsoft.hardware.support/warrantyClaims/allProperties/allTasks | Create and manage all aspects of Microsoft hardware warranty claims |
+> | microsoft.healthPlatform/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Dragon admin center |
 > | microsoft.insights/allEntities/allProperties/allTasks | Manage all aspects of Insights app |
 > | microsoft.intune/allEntities/allTasks | Manage all aspects of Microsoft Intune |
 > | microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks | Manage all aspects of organizational data in Microsoft 365 |
@@ -213,6 +266,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.office365.securityComplianceCenter/allEntities/allTasks | Create and delete all resources, and read and update standard properties in the Microsoft 365 Security and Compliance Center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.sharePoint/allEntities/allTasks | Create and delete all resources, and read and update standard properties in SharePoint |
+> | microsoft.office365.sharePointAdvancedManagement/allEntities/allProperties/allTasks | Manage all aspects of SharePoint Advanced Management |
 > | microsoft.office365.skypeForBusiness/allEntities/allTasks | Manage all aspects of Skype for Business Online |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |

@@ -2,7 +2,7 @@
 title: Code samples for authentication and authorization
 description: An index of identity platform code samples, grouped by app types, languages, and frameworks, shows how these libraries enable app authentication and authorization.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 01/27/2025
 ms.reviewer: jmprieur

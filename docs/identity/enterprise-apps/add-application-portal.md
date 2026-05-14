@@ -1,15 +1,9 @@
 ---
 title: 'Quickstart: Add an enterprise application'
 description: Learn to add pre-integrated apps to your Microsoft Entra tenant with clear, step-by-step instructions.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: quickstart
 
 ms.date: 03/31/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: mode-other, enterprise-apps
 #customer intent: As an IT admin, I want to add an enterprise application to my Microsoft Entra tenant, so that I can provide my organization with access to pre-integrated applications from the gallery.
@@ -25,7 +19,7 @@ We recommend that you use a nonproduction environment to test the steps in this 
 
 To add an enterprise application to your Microsoft Entra tenant, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, or Application Administrator.
 
 ## Add an enterprise application

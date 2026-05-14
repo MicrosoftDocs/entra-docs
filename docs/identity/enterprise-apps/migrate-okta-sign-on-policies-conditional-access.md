@@ -3,11 +3,9 @@ title: Tutorial to migrate Okta sign-on policies to Microsoft Entra Conditional 
 description: Learn how to migrate Okta sign-on policies to Microsoft Entra Conditional Access.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
 ms.topic: tutorial
 ms.date: 01/13/2023
 ms.author: gasinh
-ms.subservice: enterprise-apps
 ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using Okta sign-on policies, I want to migrate to Microsoft Entra Conditional Access, so that I can secure user access in Microsoft Entra ID and connected applications.
 ---
@@ -31,7 +29,7 @@ See the following two sections for licensing and credentials prerequisites.
 
 There are licensing requirements if you switch from Okta sign-on to Conditional Access. The process requires a Microsoft Entra ID P1 license to enable registration for Microsoft Entra multifactor authentication.
 
-Learn more: [Assign or remove licenses in the Microsoft Entra admin center](~/fundamentals/license-users-groups.yml)
+Learn more: [Assign or remove licenses in the Microsoft Entra admin center](~/fundamentals/licensing.md)
 
 ### Enterprise Administrator credentials
 

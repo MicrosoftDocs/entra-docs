@@ -6,6 +6,7 @@ manager: pmwongera
 ms.author: cwerner
 ms.date: 04/09/2024
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I want to build a Node.js console daemon app that calls the Microsoft Graph API using its own identity, and learn how to authenticate and make requests to the API in my own applications.
@@ -295,4 +296,4 @@ The scope to request for a client credential flow is the name of the resource fo
 If you'd like to dive deeper into Node.js daemon application development on the Microsoft identity platform, see our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Daemon application](scenario-daemon-app-registration.md)
+> [Scenario: Daemon application](scenario-daemon-app-configuration.md)

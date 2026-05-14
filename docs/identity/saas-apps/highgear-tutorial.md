@@ -1,14 +1,9 @@
 ---
 title: Configure HighGear for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HighGear.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HighGear so that I can control who has access to HighGear, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -21,7 +16,7 @@ In this article,  you can learn how to integrate HighGear with Microsoft Entra I
 * You can manage your accounts in one central location.
 
 If you want to know more details about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
-If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 

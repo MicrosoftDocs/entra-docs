@@ -1,12 +1,9 @@
 ---
 title: Build more resilient hybrid authentication in Microsoft Entra ID
 description: A guide for architects and IT administrators on building a resilient hybrid infrastructure.
-author: janicericketts
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/16/2022
-ms.author: jricketts
+ms.subservice: architecture
 ---
 # Build resilience in your hybrid architecture
 
@@ -81,6 +78,17 @@ If you're implementing a federated authentication strategy or want to make it mo
 * Follow the [AD FS capacity planning documentation](/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity)
 * [Deploying AD FS in Azure IaaS](/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs)
 * [Enable PHS](~/identity/hybrid/connect/tutorial-phs-backup.md) along with your federation
+
+## Related architecture resources
+
+For more architecture and deployment guidance related to hybrid identity, see:
+
+- [Microsoft Entra deployment plans](deployment-plans.md) — deployment guidance for authentication, apps, devices, and hybrid scenarios
+- [Microsoft Entra architecture overview](architecture.md) — service design, scalability, continuous availability, and datacenter architecture
+- [Identity and access management architecture in Azure](/azure/architecture/identity/identity-start-here) — reference architectures, baseline implementations, and design guidance for hybrid identity
+- [Integrate on-premises AD with Microsoft Entra ID](/azure/architecture/reference-architectures/identity/azure-ad) — full reference architecture with downloadable Visio diagrams
+- [Choose the right authentication method](~/identity/hybrid/connect/choose-ad-authn.md) — authentication decision tree for hybrid identity solutions
+- [Data residency for Microsoft Entra ID](~/fundamentals/data-residency.md) — data storage locations, sovereign clouds, and environment constraints
 
 ## Next steps
 

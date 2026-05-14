@@ -2,7 +2,7 @@
 title: Avoid page reloads (MSAL.js)
 description: Learn how to avoid page reloads when acquiring and renewing tokens silently using the Microsoft Authentication Library for JavaScript (MSAL.js).
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 05/29/2019

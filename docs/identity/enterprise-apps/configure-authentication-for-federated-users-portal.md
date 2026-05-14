@@ -1,13 +1,8 @@
 ---
 title: Configure sign-in auto-acceleration
 description: Learn how to force federated IdP auto-acceleration for an application using Home Realm Discovery policy.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 11/29/2024
-ms.author: jomondi
 ms.reviewer: ludwignick
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-minus-portal-aad
@@ -24,7 +19,7 @@ This article provides an introduction to configuring Microsoft Entra authenticat
 
 To configure HRD policy for an application in Microsoft Entra ID, you need:
 
-- An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - The Application Administrator role
 
 ## Auto-acceleration sign-in
@@ -71,6 +66,9 @@ In this example, you create a policy such that when you assign it to an applicat
 - Auto-accelerates users to a federated identity provider sign-in screen when they're signing in to an application when there's a single domain in your tenant.
 - Auto-accelerates users to a federated identity provider sign-in screen if there's more than one federated domain in your tenant.
 - Enables non-interactive username/password sign-in directly to Microsoft Entra ID for federated users for the applications the policy is assigned to.
+
+[!Note]
+Enabling `"AccelerateToFederatedDomain": true` in the policy may prevent guest users from signing in, even if the policy isn’t explicitly applied to any service principals. Review this setting carefully before applying the policy to avoid unintended access issues.
 
 The following policy auto-accelerates users to a federated identity provider sign-in screen when they're signing in to an application when there's a single domain in your tenant.
 

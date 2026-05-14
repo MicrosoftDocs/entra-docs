@@ -1,28 +1,28 @@
 ---
 title: Review access to groups & applications in access reviews
 description: Learn how to review access of group members or application access in Microsoft Entra access reviews.
-author: owinfreyATL
-manager: dougeby
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/18/2025
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
+#Customer Intent: As a reviewer, I want to review access to groups and applications so that I can make informed access decisions during an access review.
 ---
 
 # Review access to groups and applications in access reviews
 
 Microsoft Entra ID simplifies how enterprises manage access to groups and applications in Microsoft Entra ID and other Microsoft web services with a feature called access reviews. This article covers how a designated reviewer performs an access review for members of a group or users with access to an application. If you want to review access to an access package, read [Review access of an access package in entitlement management](entitlement-management-access-reviews-review-access.md).
 
-## Perform access review by using My Access
-You can review access to groups and applications via My Access. My Access is a user-friendly portal for granting, approving, and reviewing access needs.
+> [!NOTE]
+> If you're looking to delegate **access package approval requests** to someone else, see [Delegate approvals in My Access](delegate-approvals-my-access.md).
+
+## Perform access review by using the My Access portal
+The [My Access portal](https://myaccess.microsoft.com/) is a user-friendly portal for granting, approving, and reviewing access needs.
 
 ### Use email to go to My Access
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft asking you to review access. Here's an example email message:
@@ -86,7 +86,7 @@ There are two ways that you can approve or deny access:
 
 ### Review access based on recommendations
 
-To make access reviews easier and faster for you, we also provide recommendations that you can accept with a single selection. There are two ways that the system generates recommendations for the reviewer. One method is by the user's sign-in activity. If a user has been inactive for 30 days or more, the system recommends that the reviewer deny access. 
+To make access reviews easier and faster for you, there are also recommendations that you can accept with a single selection. There are two ways that the system generates recommendations for the reviewer. One method is by the user's sign-in activity. If a user has been inactive for 30 days or more, the system recommends that the reviewer deny access. 
 
 The other method is based on the access that the user's peers have. If the user doesn't have the same access as their peers, the system recommends that the reviewer deny that user access.
 
@@ -127,7 +127,7 @@ To review access of B2B direct connect users, use the following instructions:
 1. Follow the instructions in [Review access for one or more users](#review-access-for-one-or-more-users) to make decisions to approve or deny the users access to the teams.
 
 > [!NOTE]
-> Unlike internal users and B2B collaboration users, B2B direct connect users and teams *don't* have recommendations based on last sign-in activity to make decisions when you perform the review.
+> Unlike internal users and B2B collaboration users, B2B direct connect users and teams *don't* have recommendations based on last sign-in activity when you perform the review.
 
 If a team you review shares channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](../external-id/b2b-direct-connect-overview.md).
 

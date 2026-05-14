@@ -1,28 +1,26 @@
 ---
 title: Architecture overview
 description: Learn about the architecture of Microsoft Entra ID, including service design, scalability, availability, and data consistency.
-author: barclayn
-manager: femila
+author: kenwith
 
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
-ms.date: 01/16/2025
-ms.author: barclayn
+ms.date: 05/07/2026
+ms.author: kenwith
 ms.reviewer: jeffsta
+ms.subservice: architecture
 ---
 
 # What is the Microsoft Entra architecture?
 
-Microsoft Entra enables you to securely manage user access to services and resources. Included with Microsoft Entra is a family of identity management and network access capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra?](~/fundamentals/whatis.md)
+Microsoft Entra enables you to securely manage user access to services and resources. Included with Microsoft Entra is a family of identity management and network access capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra?](~/fundamentals/what-is-entra.md)
 
-With Microsoft Entra, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see the [fundamentals of identity management](~/fundamentals/whatis.md).
+With Microsoft Entra, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see the [fundamentals of identity management](~/fundamentals/identity-fundamental-concepts.md).
 
 <a name='azure-ad-architecture'></a>
 
 ## Microsoft Entra architecture
 
-Microsoft Entra ID combines extensive monitoring, automated rerouting, failover, and recovery capabilities within its geographically distributed architecture to provide company-wide availability and performance
+Microsoft Entra ID combines extensive monitoring, automated rerouting, failover, and recovery capabilities within its geographically distributed architecture to provide company-wide availability and performance.
 
 The following architecture elements are covered in this article:
 
@@ -91,14 +89,16 @@ Microsoft Entra ID operates across datacenters with the following characteristic
 
 #### Data consistency
 
-The directory model is one of eventual consistencies. One typical problem with distributed asynchronously replicating systems is that the data returned from a "particular" replica might not be up-to-date.
+The directory model is one of eventual consistency. One typical problem with distributed asynchronously replicating systems is that the data returned from a "particular" replica might not be up-to-date.
 
 Microsoft Entra ID provides read-write consistency for applications targeting a secondary replica by routing its writes to the primary replica, and synchronously pulling the writes back to the secondary replica.
 
 Application writes using the Microsoft Graph API of Microsoft Entra ID are abstracted from maintaining affinity to a directory replica for read-write consistency. The Microsoft Graph API service maintains a logical session. The session has affinity to a secondary replica used for reads. Affinity is captured in a "replica token" that the service caches using a distributed cache in the secondary replica datacenter. This token is then used for subsequent operations in the same logical session. To continue using the same logical session, subsequent requests must be routed to the same Microsoft Entra datacenter. It isn't possible to continue a logical session if the directory client requests are being routed to multiple Microsoft Entra datacenters. If sessions are split, then the client has multiple logical sessions that have independent read-write consistencies.
 
 > [!NOTE]
- > Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
+> Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
+>
+> For [application-only requests](../identity-platform/app-only-access-primer.md), Microsoft Entra ID does not provide session consistency. Session consistency is only supported for [delegated requests](../identity-platform/delegated-access-primer.md) (application+user token flow). For guidance on building applications that account for replication delays, see [Designing for eventual consistency for Microsoft Entra](https://devblogs.microsoft.com/identity/designing-for-eventual-consistency-for-microsoft-entra/).
 
 #### Service-level backup
 
@@ -117,5 +117,12 @@ If any Microsoft Entra service isn't working as expected, immediate action is ta
 Microsoft Entra ID uses operational controls such as multifactor authentication for any operation and auditing of all operations. In addition, it uses a just-in-time elevation system to grant necessary temporary access for any operational task-on-demand on an ongoing basis. For more information, see The [Trusted Cloud](https://azure.microsoft.com/support/trust-center).
 
 ## Next steps
+
+To learn more about deploying and building resilience with Microsoft Entra, see:
+
+- [Microsoft Entra deployment plans](deployment-plans.md) — step-by-step deployment guidance for authentication, apps, devices, and hybrid scenarios
+- [Build resilience in your hybrid architecture](resilience-in-hybrid.md) — architecture diagrams for PHS, PTA, and Federation, with resilience guidance
+- [Building resilience into identity and access management](resilience-overview.md) — resilience patterns for IAM infrastructure and applications
+- [Identity and access management architecture in Azure](/azure/architecture/identity/identity-start-here) — reference architectures and design guidance
 
 To learn more about developing with Microsoft Entra, see the [Microsoft Entra developer's guide](~/identity-platform/index.yml).

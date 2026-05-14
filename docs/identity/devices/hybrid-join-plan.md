@@ -2,14 +2,9 @@
 title: Plan your Microsoft Entra hybrid join deployment
 description: Explains the steps that are required to implement Microsoft Entra hybrid joined devices in your environment.
 
-ms.service: entra-id
-ms.subservice: devices
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 
@@ -157,7 +152,7 @@ Beginning with version 1.1.819.0, Microsoft Entra Connect provides you with a wi
 
 ## Review on-premises Microsoft Windows Server Active Directory users UPN support for Microsoft Entra hybrid join
 
-- Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises AD owned by Contoso and [verified in Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).
+- Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises AD owned by Contoso and [verified in Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
 - Nonroutable users UPN: A nonroutable UPN doesn't have a verified domain and is applicable only within your organization's private network. For example, if contoso.com is the primary domain in Microsoft Entra ID and contoso.local is the primary domain in on-premises AD but isn't a verifiable domain in the internet and only used within Contoso's network.
 
 > [!NOTE]

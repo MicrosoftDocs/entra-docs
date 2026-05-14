@@ -2,8 +2,6 @@
 title: Flexible federated identity credentials (preview)
 description: Learn about Microsoft Entra Workload ID Flexible federated identity credentials and its capabilities.
 author: cilwerner
-manager: CelesteDG
-ms.service: entra-workload-id
 ms.topic: concept-article
 ms.date: 08/28/2024
 ms.author: cwerner

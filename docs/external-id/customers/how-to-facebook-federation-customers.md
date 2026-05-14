@@ -1,13 +1,8 @@
 ---
 title: Add Facebook for customer sign-in
 description: Learn how to add Facebook as an identity provider for your external tenant, enabling customers to sign in to your applications using their Facebook accounts.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
-ms.date: 05/22/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 #Customer intent: As a developer or IT admin, I want to add Facebook as an identity provider for my external tenant so that customers can sign in to my applications using their Facebook accounts.
 ---
@@ -17,11 +12,6 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-noch
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 By setting up federation with Facebook, you can allow customers to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra External ID with a Facebook account. (Learn more about [authentication methods and identity providers for customers](/entra/external-id/customers/concept-authentication-methods-customers).)
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Social)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Sign-in with a social account” use case.
 
 ## Create a Facebook application
 
@@ -124,4 +114,5 @@ At this point, the Facebook identity provider has been set up in your external t
 
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

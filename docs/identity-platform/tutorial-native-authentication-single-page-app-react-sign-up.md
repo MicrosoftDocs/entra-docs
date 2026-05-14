@@ -5,7 +5,7 @@ description: Learn how to build a React single-page application that uses native
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 02/07/2025
@@ -40,7 +40,7 @@ In a location of choice in your computer, run the following commands to create a
   npx create-react-app reactspa --template typescript
   cd reactspa
   npm install ajv
-  npm installreact-router-dom
+  npm install react-router-dom
   npm install
   ```
 

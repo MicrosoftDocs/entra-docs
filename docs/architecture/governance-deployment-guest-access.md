@@ -2,7 +2,6 @@
 title: Microsoft Entra ID Governance deployment guide to govern guest and partner access
 description: Learn how to govern guest and partner access to resources in Microsoft Entra ID Governance.
 author: gargi-sinha
-manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/25/2025
@@ -18,7 +17,6 @@ Deployment scenarios are guidance on how to combine and test Microsoft Security 
 The following products and services appear in this guide:
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Microsoft Entra](../fundamentals/what-is-entra.md)
 * [Entitlement management](../id-governance/entitlement-management-overview.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)

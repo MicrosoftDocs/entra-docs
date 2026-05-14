@@ -3,7 +3,7 @@ title: "Quickstart: Call an ASP.NET web API that is protected by the Microsoft i
 description: In this quickstart, learn how to call an ASP.NET web API that's protected by the Microsoft identity platform from a Windows Desktop (WPF) application.
 ROBOTS: NOINDEX
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 01/11/2022
@@ -30,7 +30,7 @@ ms.topic: quickstart
 > 
 > ## Prerequisites
 > 
-> * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 > * Visual Studio 2017 or 2019. Download [Visual Studio for free](https://www.visualstudio.com/downloads/).
 > 
 > ## Clone or download the sample

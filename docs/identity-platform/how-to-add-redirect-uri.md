@@ -4,7 +4,7 @@ description: Learn how to add a redirect URI to your application in Microsoft En
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: mode-other
+ms.custom:
 ms.date: 05/23/2025
 ms.service: identity-platform
 ms.topic: how-to

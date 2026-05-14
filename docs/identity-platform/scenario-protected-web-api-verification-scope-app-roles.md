@@ -7,7 +7,7 @@ ms.author: cwerner
 ms.date: 1/30/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to write a protected web API using the Microsoft identity platform for developers.
 ---
@@ -256,7 +256,7 @@ For a full version of `ValidateScopes` for ASP.NET Core, refer to [_ScopesRequir
 
 ## Verify app roles in APIs called by daemon apps
 
-If your web API is called by a [daemon app](scenario-daemon-app-registration.md), that app should require an application permission to your web API. As shown in [Exposing application permissions (app roles)](./scenario-protected-web-api-app-registration.md#expose-application-permissions-app-roles), your API exposes such permissions. One example is the `access_as_application` app role.
+If your web API is called by a [daemon app](scenario-daemon-app-configuration.md), that app should require an application permission to your web API. As shown in [Exposing application permissions (app roles)](./scenario-protected-web-api-expose-scopes.md#expose-application-permissions-app-roles), your API exposes such permissions. One example is the `access_as_application` app role.
 
 You now need to have your API verify that the token it receives contains the `roles` claim and that this claim has the expected value. The verification code is similar to the code that verifies delegated permissions, except that your controller action tests for roles instead of scopes:
 

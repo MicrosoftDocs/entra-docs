@@ -2,7 +2,7 @@
 title: How to preserve and use the original organizational unit (OU) for group provisioning in Microsoft Entra ID
 description: Learn how to preserve and use the original organizational unit (OU) for group provisioning in Microsoft Entra ID.
 author: Justinha
-manager: dougeby
+ms.subservice: hybrid
 ms.topic: concept-article
 ms.date: 08/01/2025
 ms.author: justinha
@@ -54,13 +54,13 @@ You can also store the OU information in some other attribute like *info* or any
 Use PowerShell or Microsoft Graph Explorer to verify the attribute sync.
  
 
-- **PowerShell (Microsoft Graph SDK)**
+- **Microsoft Graph PowerShell**
 
   ```powershell
   Get-MgGroup -GroupId <groupId> | Select -ExpandProperty OnPremisesExtensionAttributes 
   ```
 
-- **Microsoft Graph Explorer**
+- **Graph Explorer**
 
   ```https
   GET https://graph.microsoft.com/v1.0/groups/{group-id}?$select=onPremisesExtensionAttributes 

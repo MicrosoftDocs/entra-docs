@@ -1,14 +1,9 @@
 ---
 title: Sign-up logs in Microsoft Entra External ID
 description: Learn about the sign-up logs that are available in Microsoft Entra External ID monitoring and health.
-author: msmimart
-manager: celestedg
-ms.service: entra-id
 ms.topic: troubleshooting-general
-ms.subservice: monitoring-health
 ms.date: 06/30/2025
-ms.author: mimart
-ms.reviewer: celested
+ms.reviewer: pmwongera
 
 # Customer intent: As an IT admin for an external tenant, I need to know what information is available in the sign-up logs so that I can use the logs to monitor all sign-up attempts and troubleshoot issues.
 ---

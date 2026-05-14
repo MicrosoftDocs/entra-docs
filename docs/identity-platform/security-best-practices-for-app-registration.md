@@ -2,13 +2,13 @@
 title: Security best practices for application properties
 description: Learn about the best practices and general guidance for security related application properties in Microsoft Entra ID.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 01/06/2023
 ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
-ms.custom: template-concept, sfi-ropc-nochange, sfi-image-nochange
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an application developer, I want to follow security best practices for application properties in Microsoft Entra ID, so that I can ensure the security and health of my applications and protect them from compromise or downtime.
 ---
 
@@ -39,8 +39,8 @@ Azure managed identities are secure by default and require little to no ongoing 
 - The app doesn't need to sign in users
 - The app doesn't need to act as the resource in a token flow (isn't a web API)
 - The app doesn't need to operate in multiple tenants
-
-Note that managed identities **can** be used to access resources outside of Azure - including [Microsoft Graph](https://learn.microsoft.com/graph/overview).
+> [!NOTE]
+> Managed identities can be used to access resources outside of Azure, including [Microsoft Graph](/graph/overview).
 
 The rest of this article covers security best practices for properties of Entra app registrations.
 
@@ -80,12 +80,6 @@ Consider the following guidance for redirect URIs:
 Scenarios that required **implicit flow** can now use **Auth code flow** to reduce the risk of compromise associated with implicit flow misuse. Under **Authentication** for the application in the Azure portal, a platform must be selected for the application and then the **Access tokens (used for implicit flows)** property can be set.
 
 :::image type="content" source="./media/application-registration-best-practices/implict-grant-flow.png" alt-text="Screenshot that shows where the implicit flow property is located.":::
-
-Consider the following guidance related to implicit flow:
-
-- Understand if [implicit flow is required](./v2-oauth2-implicit-grant-flow.md#suitable-scenarios-for-the-oauth2-implicit-grant). Don't use implicit flow unless explicitly required.
-- If the application was configured to receive access tokens using implicit flow, but doesn't actively use them, turn off the setting to protect from misuse.
-- Use separate applications for valid implicit flow scenarios.
 
 ## Application ID URI (also known as Identifier URI)
 
@@ -130,7 +124,7 @@ To reduce this risk, applications should [configure app instance lock](../identi
 
 Your application may need to be granted permissions to access protected resources or APIs. When requesting permissions, always ensure the following:
 
-- Follow [least privilege](../identity-platform/secure-least-privileged-access.md) principles. Only request the permission that grants the least permissive access required to perform the action the app needs to take.   If calling Microsoft Graph, use the [API documentation](https://learn.microsoft.com/graph/api/overview) to identify the least permissive permission for a given API call. Periodically review your app's permissions to check if a less privileged option is available. If an app no longer needs a permission, remove it.
+- Follow [least privilege](../identity-platform/secure-least-privileged-access.md) principles. Only request the permission that grants the least permissive access required to perform the action the app needs to take. If calling Microsoft Graph, use the [API documentation](/graph/api/overview) to identify the least permissive permission for a given API call. Periodically review your app's permissions to check if a less privileged option is available. If an app no longer needs a permission, remove it.
 - Whenever possible, use [delegated access](../identity-platform/delegated-access-primer.md) instead of [app-only access](../identity-platform/app-only-access-primer.md). 
 - Review the [permissions and consent](../identity-platform/permissions-consent-overview.md) documentation to ensure you understand permission fundamentals.
 

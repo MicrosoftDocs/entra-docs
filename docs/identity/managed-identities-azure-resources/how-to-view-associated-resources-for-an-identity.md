@@ -2,16 +2,9 @@
 title: View associated resources for a user-assigned managed identity
 description: Step-by-step instructions for viewing the Azure resources that are associated with a user-assigned managed identity
 
-author: SHERMANOUKO
-manager: CelesteDG
-
-ms.service: entra-id
-ms.subservice: managed-identities
-
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 03/15/2025
-ms.author: shermanouko
 
 ---
 
@@ -22,7 +15,7 @@ This article explains how to view the Azure resources that are associated with a
 ## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 
 ## View resources for a user-assigned managed identity

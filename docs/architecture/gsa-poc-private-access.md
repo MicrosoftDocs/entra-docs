@@ -1,13 +1,9 @@
 ---
 title: Microsoft Global Secure Access Proof-of-Concept Guidance - Configure Microsoft Entra Private Access
 description: Learn how to deploy and test Microsoft Global Secure Access as a proof of concept with Microsoft Entra Private Access.
-author: jricketts
-manager: martinco
 ms.service: global-secure-access
 ms.topic: concept-article
 ms.date: 01/22/2025
-ms.author: jricketts
-
 #customer intent: As a Microsoft partner, I want to deploy and test Microsoft Global Secure Access for Microsoft Entra Private Access as a proof of concept in my production or test environment.
 ---
 
@@ -70,7 +66,7 @@ To help protect on-premises resources like domain controllers by enabling multif
 
 ### Coexist with a partner
 
-When customers deploy the 3P solution, they might want to use the Environmental Protection Agency (EPA) while using other solutions for internet access. For guidance, see [Partner ecosystem overview](../global-secure-access/partner-ecosystems-overview.md).
+When customers deploy the 3P solution, they might want to use Microsoft Entra Private Access while using other solutions for internet access. For guidance, see [Partner ecosystem overview](../global-secure-access/partner-ecosystems-overview.md).
 
 ## Troubleshoot
 

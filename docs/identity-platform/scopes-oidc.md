@@ -2,7 +2,7 @@
 title: Scopes and permissions in the Microsoft identity platform
 description: Learn about openID connect scopes and permissions in the Microsoft identity platform endpoint.
 author: omondiatieno
-manager: CelesteDG
+manager: pmwongera
 ms.author: jomondi
 ms.date: 07/24/2025
 ms.reviewer: jawoods, ludwignick, phsignor
@@ -42,7 +42,7 @@ Permissions in the Microsoft identity platform can be set to admin restricted. F
 
 - `User.Read.All`: Read all user's full profiles
 - `Directory.ReadWrite.All`: Write data to an organization's directory
-- `Groups.Read.All`: Read all groups in an organization's directory
+- `Group.Read.All`: Read all groups in an organization's directory
 
 > [!NOTE]
 > In requests to the authorization, token or consent endpoints for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `scope=User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
