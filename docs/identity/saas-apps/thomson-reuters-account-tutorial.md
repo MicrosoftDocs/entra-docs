@@ -62,6 +62,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     b. In the **Reply URL** text box, type the URL:
     `https://trtasso.thomson.com/sp/ACS.saml2`
 
+    ![Screenshot that shows of reply url checkbox.](./media/thomson-reuters-account-tutorial/save-button.png)
+
 1. Thomson Reuters Account application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Thomson Reuters Account application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
 
@@ -77,7 +79,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 ## Configure Thomson Reuters Account SSO
 
-To configure single sign-on on **Thomson Reuters Account** side, you need to send the **App Federation Metadata Url** to the representative from Thomson Reuters whom you are working with to set up SSO along with which **Identifier (Entity ID)** was chosen (`trtasso.thomson.com` or `trtasso.thomson.com_TRAccount`).
+To configure Single Sign-On on Thomson Reuters' side, you need to send the below details to the representative from Thomson Reuters whom you are working with to set up SSO:
+1. The **App Federation Metadata Url** of your configuration on Microsoft Entra ID.
+1. The **Identifier (Entity ID)** that was chosen (`trtasso.thomson.com` or `trtasso.thomson.com_TRAccount`).
+1. The **Email domains** of users from your organization that would access Thomson Reuters applications (This is used by the Thomson Reuters Team to enable SSO for those email domains).
 
 ## Related content
 
