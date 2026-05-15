@@ -21,7 +21,7 @@ The Microsoft Entra Conditional Access Optimization Agent helps you ensure that 
 The Conditional Access Optimization Agent evaluates policies such as:
 
 - Requiring multifactor authentication (MFA).
-- Enforcing device-based controls (device compliance, app protection policies, and domain-joined devices)
+- Enforcing device-based controls (device compliance, app protection policies, and domain-joined devices).
 - Blocking legacy authentication and device code flow.
 
 The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one-click remediation.
@@ -34,7 +34,7 @@ The agent also evaluates all existing enabled policies to propose potential cons
 - You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCUs)](/copilot/security/manage-usage). On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
-  - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) is required to *activate the agent the first time*.
+  - A [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is required to *activate the agent the first time*.
   - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any action*.
   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
   - You can assign [Conditional Access Administrators](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) with Microsoft Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent.
@@ -45,7 +45,7 @@ The agent also evaluates all existing enabled policies to propose potential cons
 ### Limitations
 
 - After you start agents, you can't stop or pause them. They might take a few minutes to run.
-- For policy consolidation, each agent run looks at 40 similar policy pairs.
+- For policy consolidation, each agent run evaluates 40 similar policy pairs.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24-hour period.
 - You can't customize or overrise suggestions from the agent.
@@ -53,7 +53,9 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 ## How it works
 
-The Conditional Access Optimization Agent scans your tenant for new users, applications, and agent identities from the last 24 hours and determines if Conditional Access policies are applicable. If the agent finds users, applications, or agent identities that Conditional Access policies don't cover, it provides suggested next steps. A next step might be turning on or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what the policy would include.
+The Conditional Access Optimization Agent scans your tenant for new users, applications, and agent identities from the last 24 hours and determines if Conditional Access policies are applicable. If the agent finds users, applications, or agent identities that Conditional Access policies don't cover, it provides suggested next steps.
+
+A next step might be turning on or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what the policy would include.
 
 Each time the agent runs, it takes the following steps. *These initial scanning steps don't consume any SCUs.*
 
@@ -80,8 +82,8 @@ The policy suggestions from the agent include:
 - **Risky sign-ins**: The agent suggests a policy to require multifactor authentication for high-risk sign-ins. Requires a Microsoft Entra ID P2 license.
 - **Risky agents**: The agent suggests a policy to block authentication for high-risk sign-ins. Requires a Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
-- **Deep analysis**: The agent looks at policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout).
-- **Deep analysis MFA gap analysis**: The agent scans all enabled Conditional Access policies in your tenant to identify users not covered by any MFA policy. This includes users excluded from baseline policies, missed in group membership, or falling through gaps between overlapping policies. Unlike standard scans, this analysis evaluates the entire tenant configuration and isn't limited to the last 24 hours.
+- **Deep analysis**: The agent evaluates policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout).
+- **Deep analysis MFA gap analysis**: The agent scans all enabled Conditional Access policies in your tenant to identify users not covered by any MFA policy. This scan includes users excluded from baseline policies, missed in group membership, or falling through gaps between overlapping policies. Unlike standard scans, this analysis evaluates the entire tenant configuration and isn't limited to the last 24 hours.
 - **Least-privileged access for agent identities (preview)**: The agent identifies agent identities with unused or overprivileged Microsoft Graph permissions. It then recommends least-privilege enforcement, such as removing unused permissions or replacing broad permissions with more specific ones.
 
 > [!IMPORTANT]
@@ -185,7 +187,7 @@ The Conditional Access Optimization Agent and Microsoft Copilot Chat provide dif
 
 ### I activated the agent, but the activity status is Fail. What's happening?
 
-It's possible that you activated the agent before Microsoft Ignite 2025 by using an account that required role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time.  A Conditional Access Optimization Agent that was activated after November 17, 2025, no longer uses the identity of the user who activated it.
+It's possible that you activated the agent before Microsoft Ignite 2025 by using an account that required role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. A Conditional Access Optimization Agent that was activated after November 17, 2025, no longer uses the identity of the user who activated it.
 
 You can resolve this problem by migrating to [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md). Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
 
