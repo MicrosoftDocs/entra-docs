@@ -3,13 +3,8 @@ title: Microsoft Entra ID Protection risk-based access policies
 description: Identifying risk-based Conditional Access policies
 ms.service: entra-id-protection
 ms.topic: concept-article
-<<<<<<< HEAD
-ms.date: 03/25/2026
-ms.reviewer: lvandenende
-=======
-ms.date: 03/20/2026
-ms.reviewer: cokoopma
->>>>>>> 4a7cd5938942bc5535d9e61ac0549a1723f52e50
+ms.date: 05/15/2026
+ms.reviewer: ebasseri
 ms.custom: sfi-image-nochange
 ---
 # Risk-based access policies
