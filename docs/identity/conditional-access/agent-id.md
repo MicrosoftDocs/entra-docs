@@ -170,7 +170,7 @@ To create a Conditional Access policy for an agent's user account, use the follo
 
 - **Assignments**: In an agent's user account flow, choose the "Select agents active as users", and then select "All agent users"
 - **Target resources**: All resources
-- **Conditions**: Configure whether the agent identity is at risk. For more information, see [ID Protection for agents](../../id-protection/concept-risky-agents.md)
+- **Conditions**: Conditions aren't currently supported for agent's user accounts. Risk status can't be evaluated, and no exceptions can be configured. The only supported policy for agent's user accounts is blocking access to all resources for all agent users
 - **Access control**: Because this policy covers an agent's user account, there's no remediation to authentication challenges, therefore the only available option is blocking access
 
 ## Select the target resource
