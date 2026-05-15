@@ -24,10 +24,10 @@ items:
   - name: Configure per-app access to private resources
     href: quickstart-per-app-access.md
 - name: Tutorials
-  expanded: true
+  expanded: false
   items:
   - name: Internet Access labs
-    expanded: true
+    expanded: false
     items:
     - name: Get started
       href: tutorial-internet-access-introduction.md
@@ -46,7 +46,7 @@ items:
     - name: Configure content policies
       href: tutorial-internet-access-content-policies.md
   - name: Private Access labs
-    expanded: true
+    expanded: false
     items:
     - name: Get started
       href: tutorial-private-access-introduction.md
@@ -60,6 +60,31 @@ items:
       href: tutorial-private-access-app-segmentation.md
     - name: Intelligent Local Access
       href: tutorial-private-access-intelligent-local-access.md
+- name: Operations
+  expanded: false
+  items:
+  - name: Operations guide overview
+    href: overview-operations.md
+  - name: Common operations (RACI, change, metrics)
+    href: how-to-operations-common.md
+  - name: Operate Private Access
+    href: how-to-operate-private-access.md
+  - name: Operate Internet Access
+    href: how-to-operate-internet-access.md
+  - name: Operate Microsoft Traffic
+    href: how-to-operate-microsoft-traffic.md
+  - name: Operate Remote Networks
+    href: how-to-operate-remote-networks.md
+  - name: Templates
+    items:
+    - name: Daily health check
+      href: reference-daily-health-check.md
+    - name: Private Access health check
+      href: reference-private-access-health-check.md
+    - name: Change request template
+      href: reference-change-request-template.md
+    - name: Communication plan
+      href: reference-communication-plan.md
 - name: Samples
   expanded: false
   items: 

@@ -6,6 +6,10 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/identity/authentication/concept-system-preferred-multifactor-authentication.md",
+      "redirect_url": "/entra/identity/authentication/concept-system-preferred-authentication",
+      "redirect_document_id": false    },
+    {
       "source_path": "docs/security-copilot/access-review-agent.md",
       "redirect_url": "/entra/id-governance/access-reviews-overview",
       "redirect_document_id": false
