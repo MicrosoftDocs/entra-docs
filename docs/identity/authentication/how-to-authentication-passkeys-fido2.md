@@ -89,7 +89,7 @@ You can work with your passkey vendor to determine the AAGUID of the passkey (FI
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 - If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
 - Policy size limit:
-  - The Authentication methods policy supports a size limit of 20 KB. You can't save more passkey profiles after the size limit is reached. To check the size, use the [Get authenticationMethodsPolicy Microsoft Graph API](/graph/api/authenticationmethodspolicy-get) to retrieve the JSON for the Authentication methods policy. Save the output as a .txt file, then right-click and select **Properties** to view the file size.
+  - The **Passkey (FIDO2)** policy supports a size limit of 20 KB. You can't save more passkey profiles after the size limit is reached.
   - Reference sizes:
     - Base passkey policy without changes: 1.44 KB
     - Target with 1 applied passkey profile: 0.23 KB
