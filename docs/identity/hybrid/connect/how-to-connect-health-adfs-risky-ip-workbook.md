@@ -4,7 +4,7 @@ description: Describes the Microsoft Entra Connect Health AD FS risky IP report 
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 05/15/2026
 ms.custom: sfi-image-nochange
 ms.collection: 
 ---
@@ -22,7 +22,7 @@ Additionally, it's possible for a single IP address to attempt multiple logins a
 - Supports enabling alerts through Azure Alerts
 - Customizable threshold settings that match with the security policy of an organization
 - Customizable queries and expanded visualizations for further analysis
-- Expanded functionality from the previous Risky IP report, which will be deprecated after January 24, 2022.
+- Expanded functionality from the previous Risky IP report, which was deprecated after January 24, 2022.
 
 ## Requirements
 1. Connect Health for AD FS installed and updated to the latest agent.

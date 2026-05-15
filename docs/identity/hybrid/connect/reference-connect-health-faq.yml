@@ -11,7 +11,7 @@ metadata:
   ms.custom: no-azure-ad-ps-ref
     - sfi-ga-nochange
   ms.topic: faq
-  ms.date: 12/27/2024
+  ms.date: 05/15/2026
   ms.author: jomondi
   
 title: Microsoft Entra Connect Health frequently asked questions
@@ -34,7 +34,7 @@ sections:
           |Role| Operating system / Version|
           |--|--|
           |Active Directory Federation Services (AD FS)| <ul> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> <li> Windows Server 2022  </li> <li> Windows Server 2025  </li> </ul>|
-          |Microsoft Entra Connect | Version 1.0.9125 or higher|
+          |Microsoft Entra Connect | Version 2.5.79.0 or higher|
           |Active Directory Domain Services (AD DS)| <ul><li> Windows Server 2016  </li> <li> Windows Server 2019  </li> <li> Windows Server 2022  </li> <li> Windows Server 2025  </li> </ul>|
           
           Windows Server Core installations aren't supported.

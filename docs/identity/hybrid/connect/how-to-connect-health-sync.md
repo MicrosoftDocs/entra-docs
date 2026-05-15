@@ -5,7 +5,7 @@ ms.assetid: 1dfbeaba-bda2-4f68-ac89-1dbfaf5b4015
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 05/15/2026
 ms.custom: H1Hack27Feb2017, sfi-image-nochange
 ---
 # Monitor Microsoft Entra Connect Sync with Microsoft Entra Connect Health
@@ -14,8 +14,8 @@ The following documentation is specific to monitoring Microsoft Entra Connect (S
 ![Screenshot of the Microsoft Entra Connect Health for Sync page.](./media/how-to-connect-health-sync/syncsnapshot.png)
 
 > [!IMPORTANT]
-> Microsoft Entra Connect Health for Sync requires Microsoft Entra Connect Sync V2. If you are still using Azure AD Connect V1 you must upgrade to the latest version. 
-> Azure AD Connect V1 is retired on August 31, 2022. Microsoft Entra Connect Health for Sync no longer works with Azure AD Connect V1 in December 2022.
+> Microsoft Entra Connect Health for Sync requires Microsoft Entra Connect Sync V2. If you're still using Azure AD Connect V1, you must upgrade to the latest version. 
+> Azure AD Connect V1 was retired on August 31, 2022. Microsoft Entra Connect Health for Sync stopped working with Azure AD Connect V1 in December 2022.
 > 
 <a name='alerts-for-azure-ad-connect-health-for-sync'></a>
 
@@ -56,7 +56,7 @@ This feature provides a graphical trend of the number of changes that are being 
 ## Object Level Synchronization Error Report
 This feature provides a report about synchronization errors that can occur when identity data is synchronized between Windows Server AD and Microsoft Entra ID using Microsoft Entra Connect.
 
-* The report covers errors recorded by the sync client (Microsoft Entra Connect version 1.1.281.0 or higher)
+* The report covers errors recorded by the sync client (Microsoft Entra Connect version 2.5.79.0 or higher)
 * It includes the errors that occurred in the last synchronization operation on the sync engine. ("Export" on the Microsoft Entra Connector.)
 * Microsoft Entra Connect Health agent for sync must have outbound connectivity to the required end points for the report to include the latest data.
 * The report is **updated after every 30 minutes** using the data uploaded by Microsoft Entra Connect Health agent for sync.

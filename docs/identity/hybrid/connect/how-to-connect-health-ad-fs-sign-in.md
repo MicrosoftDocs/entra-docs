@@ -4,7 +4,7 @@ description: This document describes how to integrate AD FS sign-ins with the Mi
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 05/15/2026
 ms.custom: sfi-ga-nochange, sfi-ropc-nochange
 ---
 
@@ -15,7 +15,7 @@ AD FS sign-ins can now be integrated into the Microsoft Entra sign-ins report by
 The Connect Health for AD FS agent correlates multiple Event IDs from AD FS, dependent on the server version, to provide information about the request and error details if the request fails. This information is correlated to the Microsoft Entra sign-in report schema and displayed in the Microsoft Entra sign-in report UX. Alongside the report, a new Log Analytics stream is available with the AD FS data and a new Azure Monitor Workbook template. The template can be used and modified for an in-depth analysis for scenarios such as AD FS account lockouts, bad password attempts, and spikes of unexpected sign-in attempts.
 
 ## Prerequisites
-* Microsoft Entra Connect Health for AD FS installed and upgraded to latest version (3.1.95.0 or later).
+* Microsoft Entra Connect Health for AD FS installed and upgraded to the latest version (4.5.2466.0 or later).
 *  Reports Reader role to view the Microsoft Entra sign-ins
 
 ## What data is displayed in the report?
