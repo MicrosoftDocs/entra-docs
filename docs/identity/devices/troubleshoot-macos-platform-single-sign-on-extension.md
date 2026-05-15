@@ -288,7 +288,7 @@ cp /Applications/Company\ Portal.app/Contents/Resources/com.microsoft.browsercor
 
 ### Unable to sign-in – Single sign-on application is missing
 
-![Screenshot of dialog that states Unable to Sign in due to an issue with the extension while registering your account for single sign on](./media/macos-psso/psso-simplified-setup-unable-to-sign-in.png)
+![Screenshot of dialog that states Unable to Sign in due to an issue with the extension while registering your account for single sign on.](./media/macos-psso/psso-simplified-setup-unable-to-sign-in.png)
 
 **Issue summary: Company Portal/SSO extension not available during Setup Assistant**
 
@@ -315,11 +315,11 @@ To disable PSSO during setup,
     - The screen may appear to freeze briefly while the capture is triggered.
     - Logs are collected in the background and packaged into a .tar.gz file.
 2.	After you can access the system, 
-    - Retrieve sys dianostics file from /private/var/tmp/ (sometimes /var/tmp/). File name format: sysdiagnose_YYYY.MM.DD_*.tar.gz
-    - Open company portal app and go to Help -> Send diagnostic report and share the incident id
+    - Retrieve sys diagnostics file from /private/var/tmp/ (sometimes /var/tmp/). File name format: sysdiagnose_YYYY.MM.DD_*.tar.gz
+    - Open company portal app and go to Help -> Send diagnostic report and share the incident ID
 3.	If the user can’t complete Setup Assistant (for example, due to a PSSO configuration error), you can still collect and share the sysdiagnose output and CP logs.
     - Triggering sysdiagnose in Setup Assistant opens a Finder-like window showing the sysdiagnose .tar.gz file. Use AirDrop to share the file.
-    - In the same finder window, navigate to Applications tab and open Company portal app. Go to Help ->Send diagnostic report and share the incident id.
+    - In the same finder window, navigate to Applications tab and open Company portal app. Go to Help ->Send diagnostic report and share the incident ID.
 
 
 ## See also
