@@ -111,24 +111,24 @@ The policy suggestions from the agent include:
 
    :::image type="content" source="media/conditional-access-agent-optimization/start-agent.png" alt-text="Screenshot that shows the button for starting an agent on the Conditional Access Optimization Agent pane." lightbox="media/conditional-access-agent-optimization/start-agent.png":::
 
-On the **Overview** tab for the agent, any suggestions appear in the **Recent suggestions** box. For a suggestion, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and apply suggestions from the Conditional Access Optimization Agent](./conditional-access-agent-optimization-review-suggestions.md).
+1. On the **Overview** tab for the agent, any suggestions appear in the **Recent suggestions** box. For a suggestion, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and apply suggestions from the Conditional Access Optimization Agent](./conditional-access-agent-optimization-review-suggestions.md).
 
-:::image type="content" source="media/conditional-access-agent-optimization/review-suggestions.png" alt-text="Screenshot of an agent summary and recent suggestions, with buttons for reviewing suggestions highlighted." lightbox="media/conditional-access-agent-optimization/review-suggestions.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/review-suggestions.png" alt-text="Screenshot of an agent summary and recent suggestions, with buttons for reviewing suggestions highlighted." lightbox="media/conditional-access-agent-optimization/review-suggestions.png":::
 
 ## Settings
 
 The agent includes several powerful settings to expand the capabilities while making them unique to your organization. You can configure the following capabilities on the **Settings** tab. For more information, see [Conditional Access Optimization Agent settings](conditional-access-agent-optimization-settings.md).
 
-- Allow the agent to run automatically, every 24 hours
-- Enable [activity-based runs](conditional-access-agent-optimization-settings.md#trigger) to trigger the agent when relevant tenant changes occur (preview)
-- Set the agent to check for changes to users and applications
-- Allow the agent to create policies in report-only mode
-- Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams
-- Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md)
-- Allow the agent to create [passkey adoption campaigns](conditional-access-agent-optimization-passkeys.md)
-- Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation
-- Provide [knowledge sources](conditional-access-agent-optimization-settings.md#knowledge-sources) to the agent for organization-specific suggestions
-- View the [insights dashboard](conditional-access-agent-optimization-logs-metrics.md#insights-dashboard-preview) to track agent-driven Zero Trust improvements to security posture (preview)
+- Allow the agent to run automatically, every 24 hours.
+- Enable [activity-based runs](conditional-access-agent-optimization-settings.md#trigger) to trigger the agent when relevant tenant changes occur (preview).
+- Set the agent to check for changes to users and applications.
+- Allow the agent to create policies in report-only mode.
+- Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams.
+- Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md).
+- Allow the agent to create [passkey adoption campaigns](conditional-access-agent-optimization-passkeys.md).
+- Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation.
+- Provide [knowledge sources](conditional-access-agent-optimization-settings.md#knowledge-sources) to the agent for organization-specific suggestions.
+- View the [insights dashboard](conditional-access-agent-optimization-logs-metrics.md#insights-dashboard-preview) to track agent-driven Zero Trust improvements to security posture (preview).
 
 ## Built-in integrations
 
@@ -136,7 +136,7 @@ The Conditional Access Optimization Agent can make policy suggestions for organi
 
 ### Intune integration
 
-The Conditional Access Optimization Agent integrates with Microsoft Intune to:
+The Conditional Access Optimization Agent integrates with Intune to:
 
 - Monitor device compliance and application protection policies configured in Intune.
 - Identify potential gaps in Conditional Access enforcement.
@@ -145,7 +145,7 @@ This proactive and automated approach ensures that Conditional Access policies r
 
 Agent suggestions for Intune scenarios cover specific user groups and platforms (iOS or Android). For example, the agent identifies an active Intune policy for app protection that targets the Finance group, but it determines that no sufficient Conditional Access policy enforces app protection. The agent creates a report-only policy that requires users to access resources only through compliant applications on iOS devices.
 
-To identify Intune device compliance and app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator *and* Global Reader. Conditional Access Administrator isn't sufficient on its own for the agent to produce Intune suggestions.
+To identify Intune device compliance and app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator *and* Global Reader. The Conditional Access Administrator role isn't sufficient on its own for the agent to produce Intune suggestions.
 
 ### Global Secure Access integration
 
