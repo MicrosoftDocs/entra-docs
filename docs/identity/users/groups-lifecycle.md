@@ -9,6 +9,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-n
 
 # Configure the expiration policy for Microsoft 365 groups
 
+
+## Overview
+
 This article tells you how to manage the lifecycle of Microsoft 365 groups by setting an expiration policy for them. You can set an expiration policy only for Microsoft 365 groups in Microsoft Entra ID.
 
 After you set a group to expire:

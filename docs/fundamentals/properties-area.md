@@ -1,14 +1,17 @@
 ---
 title: Add your organization's privacy information
 description: Add your organization's privacy information, privacy contact, and technical contact to your directory.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 04/30/2025
 ms.custom: template-how-to, ge-structured-content-pilot, sfi-ga-nochange
+#Customer Intent: As an IT admin, I want to add my organization's privacy information so that I can comply with privacy requirements and inform employees.
 ---
 
 # Add your organization's privacy information to Microsoft Entra
 
+
+
+## Overview
 
 This article explains how an administrator can add privacy-related info to an organization's directory through the Microsoft Entra admin center.
 

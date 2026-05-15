@@ -7,6 +7,8 @@ ms.date: 03/16/2026
 
 # Disable traffic forwarding and Conditional Access policies using the Compliant Network condition in a break glass scenario
 
+## Overview
+
 In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users remain protected. However, you might want to perform a "break glass" operation: Temporarily disabling traffic forwarding profiles and disabling the Compliant Network condition policies can help your users regain access to their Microsoft apps in favor of productivity.
 
 The following sample script helps you quickly disable traffic forwarding and switch your Conditional Access policies using the [Compliant Network](../how-to-compliant-network.md) condition into Report-Only mode.

@@ -3,11 +3,14 @@ title: User management enhancements
 description: Describes how Microsoft Entra ID enables user search, filtering, and more information about your users.
 ms.topic: how-to
 ms.date: 01/06/2025
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, sfi-image-nochange
 ---
 
 # User management enhancements in Microsoft Entra ID
+
+
+## Overview
 
 This article describes how to use the user management enhancements in the Microsoft Entra admin center. In this article, you review the **All users** and **user profile** pages.
 
@@ -76,7 +79,7 @@ You can edit properties by selecting the pencil icon next to any category, which
 **User operations**
 
 - [Add or change profile information](~/fundamentals/how-to-manage-user-profile-info.md)
-- [Add or delete users](~/fundamentals/add-users.md)
+- [Add or delete users](~/fundamentals/how-to-create-delete-users.md)
 
 **Bulk operations**
 

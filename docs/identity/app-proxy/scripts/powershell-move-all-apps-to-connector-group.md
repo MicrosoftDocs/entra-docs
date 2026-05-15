@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Move all Microsoft Entra application proxy apps assigned to a connector group to another connector group
 
+
+## Overview
+
 The PowerShell script example moves all Microsoft Entra application proxy applications currently assigned to a connector group to a different connector group.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

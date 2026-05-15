@@ -2,14 +2,16 @@
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 04/23/2026
 ms.reviewer: ilyal
 ms.custom: pim, sfi-image-nochange
+#Customer Intent: As an administrator, I want to assign eligible membership or ownership for groups in PIM to enable just-in-time access for users who need temporary group permissions.
 ---
-
 # Assign eligibility for a group in Privileged Identity Management
 
-In Microsoft Entra ID, formerly known as Azure Active Directory, you can use Privileged Identity Management (PIM) to manage just-in-time membership in the group or just-in-time ownership of the group.
+## Overview
+
+In Microsoft Entra ID, you can use Privileged Identity Management (PIM) to manage just-in-time membership in the group or just-in-time ownership of the group.
 
 When a membership or ownership is assigned, the assignment:
 

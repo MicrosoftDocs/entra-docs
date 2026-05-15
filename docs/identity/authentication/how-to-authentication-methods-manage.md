@@ -185,6 +185,6 @@ When you determine that MFA and SSPR work as expected and you no longer need the
 ## Next steps
 
 - [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md)
-- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)
 - [How Microsoft Entra multifactor authentication works](concept-mfa-howitworks.md)
 - [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview)

@@ -87,7 +87,7 @@ Valid values to prompt a user to confirm their authentication information are fr
 
 ## Authentication methods
 
-When a user is enabled for SSPR, they must register at least one authentication method. We highly recommend that you choose two or more authentication methods so that your users have more flexibility in case they're unable to access one method when they need it. For more information, see [What are authentication methods?](concept-authentication-methods.md).
+When a user is enabled for SSPR, they must register at least one authentication method. We highly recommend that you choose two or more authentication methods so that your users have more flexibility in case they're unable to access one method when they need it. For more information, see [What are authentication methods?](overview-authentication.md).
 
 The following authentication methods are available for SSPR:
 

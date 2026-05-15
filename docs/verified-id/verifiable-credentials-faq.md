@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 # Frequently asked questions (FAQ)
 
   
+
+## Overview
+
 This page contains commonly asked questions about Verifiable Credentials and Decentralized Identity. Questions are organized into the following sections.
 
 - [Vocabulary and basics](#the-basics)

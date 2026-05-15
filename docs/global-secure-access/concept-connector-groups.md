@@ -2,11 +2,13 @@
 title: Microsoft Entra Private Network Connector Groups
 description: Learn how Microsoft Entra private network connector groups work, and how Microsoft Entra Private Access and application proxy use them.
 ms.topic: concept-article
-ms.date: 03/12/2026
+ms.date: 04/29/2026
 ai-usage: ai-assisted
 ---
 
 # Microsoft Entra private network connector groups
+
+## Overview
 
 Use private network connector groups to assign connectors to applications. Connector groups give you more control and help you optimize deployments.
 
@@ -69,6 +71,16 @@ There are two approaches to consider for disaster recovery (DR) sites:
 You can implement a model in which a single service provider deploys and maintains Microsoft Entra-related services for multiple companies. Connector groups help you separate connectors and apps into groups.
 
 One option for small companies is to use a single Microsoft Entra tenant, while each company keeps its own domain name and networks. The same approach works for merger scenarios and situations where a single division serves several companies for regulatory or business reasons.
+
+## Connector load balancing
+
+When you add multiple connectors to a connector group, the group selects which connector handles each request.
+
+### Random
+
+Random is the default traffic routing method. New requests for a Global Secure Access application are distributed across the available connectors in the assigned connector group.
+
+You can change the traffic routing behavior per Global Secure Access application. For more information about traffic routing options and when to use them, see [How to configure per-app access using Global Secure Access applications](how-to-configure-per-app-access.md#configure-traffic-routing-for-the-app). For Microsoft Graph details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
 
 ## Sample configurations
 

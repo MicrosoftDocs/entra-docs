@@ -1,13 +1,16 @@
 ---
 title: Bulk create users in the Azure portal
 description: Add users in bulk in Microsoft Entra ID
-ms.date: 12/05/2025
+ms.date: 04/02/2026
 ms.topic: how-to
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
 
 # Bulk create users in Microsoft Entra ID
+
+
+## Overview
 
 Microsoft Entra ID, part of Microsoft Entra, supports bulk user create and delete operations and supports downloading lists of users. Just fill out the comma-separated values (CSV) template you can download from Microsoft Entra ID.
 
@@ -76,6 +79,9 @@ Joseph Price,joseph@contoso.com,Password1!,No,Joseph,Price,Sales Representative,
 1. After the file contents are validated, you’ll see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
 1. When your file passes validation, select **Submit** to start the bulk operation that imports the new users.
 1. When the import operation completes, you see a notification of the bulk operation job status.
+
+> [!NOTE]
+> The bulk create operation creates internal member accounts with the passwords specified in the CSV file. No invitation emails are sent to the new users. You must communicate the sign-in credentials to the users through your own process. To bulk invite external guest users and send invitation emails, see [Bulk invite B2B users](~/external-id/tutorial-bulk-invite.md).
 
 [!INCLUDE [bulk-operations-error-results](~/includes/bulk-operations-error-results.md)]
 

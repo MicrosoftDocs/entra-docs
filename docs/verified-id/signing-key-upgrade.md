@@ -10,6 +10,9 @@ ms.date: 01/31/2025
 
 # Upgrade signing key to become FIPS compliant
 
+
+## Overview
+
 This article covers the steps to upgrade your Microsoft Entra Verified ID signing keys to become FIPS compliant. 
 Most authorities are already FIPS compliant. It's only authorities created before February 2024 using [Advanced Setup](verifiable-credentials-configure-tenant.md) method that require signing key upgrade. [Quick Setup](verifiable-credentials-configure-tenant-quick.md) authorities are already FIPS compliant and are using P-256 signing keys.
 

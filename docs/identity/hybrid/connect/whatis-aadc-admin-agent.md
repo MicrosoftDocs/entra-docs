@@ -43,6 +43,9 @@ To install the agent:
 
 When prompted, enter your Microsoft Entra Hybrid Identity Administrator credentials. These credentials should be the same credentials you entered during Microsoft Entra Connect installation.
 
+> [!NOTE]
+> The `ConfigureAdminAgent.ps1` script is no longer included in Microsoft Entra Connect version 2.1.12.0 or later. The Microsoft Entra Connect Administration Agent itself is deprecated and cannot be installed on these versions.
+
 After the agent is installed, you'll see the following two new programs in **Add/Remove Programs** in Control Panel on your server:
 
 :::image type="content" source="media/whatis-aadc-admin-agent/adminagent1.png" alt-text="Screenshot that shows the Add/Remove Programs list that includes the new programs you added.":::

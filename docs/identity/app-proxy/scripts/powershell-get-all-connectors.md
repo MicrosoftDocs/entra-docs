@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all private network connector groups and connectors in the directory
 
+
+## Overview
+
 The PowerShell script example lists all Microsoft Entra private network connector groups and connectors in your directory.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

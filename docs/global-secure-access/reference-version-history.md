@@ -3,11 +3,12 @@ title: Microsoft Entra private network connector version release notes
 description: This article lists all releases of Microsoft Entra private network connector and describes new features and fixed issues.
 ms.topic: reference
 ms.date: 03/13/2026
-ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---
 
 # Microsoft Entra private network connector: version release history
+## Overview
+
 This article lists the versions and features of the Microsoft Entra private network connector. The Microsoft Entra ID team regularly updates the private network connector with new features and functionality. Look into the release notes for information on whether the connector version will be pushed for automatic update or available for download and manual update only.     
 
 > [!IMPORTANT]
@@ -20,7 +21,7 @@ Here's a list of related resources:
 | Resource                                         | Details                                                      |
 | ------------------------------------------------ | ------------------------------------------------------------ |
 | How to enable application proxy                  | Prerequisites for enabling application proxy and installing and registering a connector are described in this [tutorial](../identity/app-proxy/application-proxy-add-on-premises-application.md). |
-| Understand Microsoft Entra private network connectors | Find out more about [connector management](../identity/app-proxy/application-proxy-connectors.md) and how connectors [autoupgrade](../identity/app-proxy/application-proxy-connectors.md#automatic-updates). |
+| Understand Microsoft Entra private network connectors | Find out more about [connector management](~/global-secure-access/concept-connectors.md) and how connectors [autoupgrade](~/global-secure-access/concept-connectors.md#connector-updates). |
 | Microsoft Entra private network connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
 ## Version 1.5.4594.0

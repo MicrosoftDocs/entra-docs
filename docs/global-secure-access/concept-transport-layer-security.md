@@ -4,7 +4,8 @@ description: "This article provides an overview of the Transport Layer Security 
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.topic: concept-article
-ms.date: 05/28/2025
+ms.date: 03/23/2026
+ms.reviewer: teresayao
 
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 
@@ -37,7 +38,7 @@ Traffic logs include four TLS-related metadata fields that help you understand h
 To get started with TLS inspection, see [Configure Transport Layer Security Policies](how-to-transport-layer-security.md).
 
 ## Supported ciphers
-| List of supported ciphers |
+|List of supported ciphers  |
 |-------------------|
 |ECDHE-ECDSA-AES128-GCM-SHA256|
 |ECDHE-ECDSA-CHACHA20-POLY1305| 

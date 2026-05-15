@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Display users and groups assigned to an application proxy application
 
+
+## Overview
+
 The PowerShell script example lists the users and groups assigned to a specific Microsoft Entra application proxy application.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

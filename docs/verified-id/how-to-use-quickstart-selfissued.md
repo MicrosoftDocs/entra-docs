@@ -12,6 +12,9 @@ ms.custom: sfi-image-nochange
 
   
 
+
+## Overview
+
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [selfIssued attestation](rules-and-display-definitions-model.md#selfissuedattestation-type) type produces an issuance flow where you're required to manually enter values for the claims in Microsoft Authenticator.  
 
 ## Create a custom credential with the selfIssued attestation type

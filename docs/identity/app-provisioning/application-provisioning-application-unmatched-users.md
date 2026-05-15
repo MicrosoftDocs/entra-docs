@@ -24,6 +24,9 @@ These inconsistencies between Microsoft Entra ID and an existing application's d
 
 Before enabling provisioning or SSO to an application with existing users, you should check to ensure that users are matching, and investigate and resolve those users from the application that did not match. This article outlines options for how to resolve for different situations that a user could not be matched.
 
+> [!TIP]
+> For supported applications, you can use [Account Discovery](how-to-account-discovery.md) to automatically scan the target application and categorize existing users as local accounts, unassigned users, or assigned users. This provides visibility into the application's user landscape before you configure provisioning.
+
 ## Determine if there are users in the application that did not match
 
 If you already determined the list of users in the application that do not match users in Microsoft Entra ID, then continue in the next section.
@@ -231,9 +234,9 @@ After making updates to Microsoft Entra users, users in the application, or the 
 
 * If you are using SAP Cloud Identity Services, then follow the [SAP Cloud Identity Services provisioning tutorial](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md#ensure-existing-sap-cloud-identity-services-users-have-the-necessary-matching-attributes) starting at the step to ensure existing SAP Cloud Identity Services users have the necessary matching attributes. In that tutorial, you export a list of users from SAP Cloud Identity Services to a CSV file, and then use PowerShell to match those users to users in Microsoft Entra ID.
 
-* If your application is using an LDAP directory, then follow the [LDAP directory provisioning tutorial](~/identity/app-provisioning/on-premises-ldap-connector-configure.md#collect-existing-users-from-the-ldap-directory) starting at the step to collect existing users from the LDAP directory.
+* If your application is using an LDAP directory, then follow the [LDAP directory provisioning tutorial](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
 
-* For other applications, including those applications with a SQL database or that have provisioning support in the application gallery, follow the tutorial to [govern an application's existing users](~/id-governance/identity-governance-applications-existing-users.md#collect-existing-users-from-an-application) starting at the step to collect existing users from the application.
+* For other applications, including those applications with a SQL database or that have provisioning support in the application gallery, follow the tutorial to [govern an application's existing users](~/id-governance/identity-governance-applications-existing-users.md).
 
 ## Assign users to application roles and enable provisioning
 
@@ -243,6 +246,7 @@ Once you have completed the necessary updates and confirm all users from the app
 
 ## Next steps
 
+- [Discover existing user accounts in target applications](how-to-account-discovery.md)
 - [Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access](~/id-governance/identity-governance-applications-integrate.md)
 - [Govern an application's existing users in Microsoft Entra ID with Microsoft PowerShell](~/id-governance/identity-governance-applications-existing-users.md)
 - [Prepare for an access review of users' access to an application](~/id-governance/access-reviews-application-preparation.md)

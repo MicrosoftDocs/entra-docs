@@ -3,11 +3,14 @@ title: Security considerations for Microsoft Entra application proxy
 description: Learn about security considerations and architecture for using Microsoft Entra application proxy.
 ms.topic: concept-article
 ms.date: 03/10/2026
-ms.reviewer: ashishj
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Security considerations for accessing apps remotely with Microsoft Entra application proxy
+
+
+## Overview
 
 This article explains the components that work to keep your users and applications safe when you use Microsoft Entra application proxy.
 
@@ -70,7 +73,7 @@ You don’t have to worry about maintaining and patching on-premises servers.
 
 Unpatched software still accounts for a large number of attacks. Microsoft Entra application proxy is an Internet-scale service that Microsoft owns, so you always get the latest security patches and upgrades.
 
-To improve the security of applications published by Microsoft Entra application proxy, application proxy blocks web crawler robots from indexing and archiving your applications. Each time a web crawler robot tries to retrieve the robot's settings for a published app, application proxy replies with a robots.txt file that includes `User-agent: * Disallow: /`.
+To improve the security of applications published by Microsoft Entra application proxy, application proxy blocks web crawler robots from indexing and archiving your applications. Each time a web crawler robot tries to retrieve the robot's settings for a published app, application proxy replies with a robots.txt file that includes `User-agent: * Disallow: /`.
 
 #### Microsoft Distributed Denial of Service (DDoS) protection service
 

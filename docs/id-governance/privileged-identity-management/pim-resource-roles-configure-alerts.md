@@ -3,12 +3,14 @@ title: Configure security alerts for Azure roles in Privileged Identity Manageme
 description: Learn how to configure security alerts for Azure resource roles in Privileged
   Identity Management (PIM).
 ms.topic: how-to
-ms.date: 01/31/2025
+ms.date: 04/23/2026
 ms.reviewer: rianakarim
 ms.custom: pim
+#Customer Intent: As an administrator, I want to configure and monitor security alerts for Azure resource roles to detect and respond to suspicious activity.
 ---
-
 # Configure security alerts for Azure roles in Privileged Identity Management
+
+## Overview
 
 Privileged Identity Management (PIM) generates alerts when there's suspicious or unsafe activity in your organization in Microsoft Entra ID. When an alert is triggered, it shows up on the Alerts page.
 

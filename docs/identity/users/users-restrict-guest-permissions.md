@@ -4,10 +4,13 @@ description: Restrict guest user access permissions using the Azure portal, Powe
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ---
 
 # Restrict guest access permissions in Microsoft Entra ID
+
+
+## Overview
 
 Microsoft Entra ID, part of Microsoft Entra, allows you to restrict what guest users can see in their organization in Microsoft Entra ID. Guest users are set to a limited permission level by default in Microsoft Entra ID, while the default for member users is the full set of user permissions. There's another guest user permission level in your Microsoft Entra organization's external collaboration settings for even more restricted access, so that the guest access levels are:
 

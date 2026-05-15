@@ -9,6 +9,8 @@ ms.custom: sfi-image-nochange
 ---
 # Universal Conditional Access through Global Secure Access
 
+## Overview
+
 In addition to sending traffic to Global Secure Access, administrators can use Conditional Access policies to secure traffic profiles. They can mix and match controls as needed like requiring multifactor authentication, requiring a compliant device, or defining an acceptable sign-in risk. Applying these controls to network traffic not just cloud applications allows for universal Conditional Access.
 
 Conditional Access on traffic profiles provides administrators with enormous control over their security posture. Administrators can enforce [Zero Trust principles](/security/zero-trust/) using policy to manage access to the network. Using traffic profiles allows consistent application of policy. For example, applications that don't support modern authentication can now be protected behind a traffic profile.

@@ -1,27 +1,22 @@
 ---
 title: How to Customize Global Secure Access Block Page
 description: Use custom block pages to display organization-specific messaging internet access policies block users from accessing websites.
-author: fgomulka
-ms.author: frankgomulka
 ms.topic: how-to
 ms.date: 09/24/2025
-ms.reviewer: kenwith
 ai-usage: ai-assisted
 ---
 
 # How to customize Global Secure Access block page
 
-Use custom block pages to display organization-specific messaging internet access policies block users from accessing websites.
+## Overview
+
+The custom block page empowers you to customize the default body of the page from, "It's been restricted by your organization." you configure and preview tailored messaging to coincide with your organization's style guide when internet access policies block a user's request to access an internet resource. Use custom block pages to display organization-specific messaging internet access policies block users from accessing websites.
 
 ## Prerequisites
 
 - Configure [Transport Layer Security (TLS) inspection](./how-to-transport-layer-security.md).
 - Configure [web content filtering](./how-to-configure-web-content-filtering.md) and/or [threat intelligence filtering](./how-to-configure-threat-intelligence.md).
 - Ensure you have the [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) or equivalent role in Microsoft Entra ID assigned.
-
-## Overview
-
-The custom block page empowers you to customize the default body of the page from, "It's been restricted by your organization." you configure and preview tailored messaging to coincide with your organization's style guide when internet access policies block a user's request to access an internet resource.
 
 ## Configure a custom block page
 

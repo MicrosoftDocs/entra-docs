@@ -4,7 +4,7 @@ description: Learn how to view requests and remove for an access package in enti
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 06/25/2025
-#Customer intent: As an access package manager, I want detailed information about requests for access packages so that I can view the status and troubleshoot any issues.
+#Customer Intent: As an IT admin, I want to view and remove requests for an access package so that I can manage pending and completed access requests.
 ---
 # View and remove requests for an access package in entitlement management
 
@@ -35,7 +35,7 @@ You can also retrieve requests for an access package using Microsoft Graph. A us
 
 Microsoft Graph will return the results in pages, and will continue to return a reference to the next page of results in the `@odata.nextLink` property with each response, until all pages of the results have been read. To read all results, you must continue to call Microsoft Graph with the `@odata.nextLink` property returned in each response until the `@odata.nextLink` property is no longer returned, as described in [paging Microsoft Graph data in your app](/graph/paging).
 
-## Remove request (Preview)
+## Remove request
 
 You can also remove a completed request that is no longer needed. To remove a request:
 

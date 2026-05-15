@@ -28,7 +28,7 @@ The scenario outlined in this article assumes that you already have the followin
 In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Adobe Identity Management (SAML) supports **SP** initiated SSO.
-* Adobe Identity Management (SAML) supports [**automated** user provisioning and deprovisioning](adobe-identity-management-provisioning-tutorial.md) (recommended).
+* Adobe Identity Management (SAML) supports [**automated** user provisioning and deprovisioning](adobe-identity-management-provisioning-saml-tutorial.md) (recommended).
 
 ## Adding Adobe Identity Management (SAML) from the gallery
 

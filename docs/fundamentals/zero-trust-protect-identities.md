@@ -9,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect identities and secrets so that I can prevent unauthorized access to critical resources.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Protect identities and secrets
@@ -119,8 +120,14 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Users have strong authentication methods configured
 [!INCLUDE [21801](../includes/secure-recommendations/21801.md)]
 
+### Reduce the user-visible password surface area
+[!INCLUDE [21889](../includes/secure-recommendations/21889.md)]
+
 ### User sign-in activity uses token protection
 [!INCLUDE [21786](../includes/secure-recommendations/21786.md)]
+
+### Token protection policies are configured
+[!INCLUDE [21941](../includes/secure-recommendations/21941.md)]
 
 ### All user sign-in activity uses phishing-resistant authentication methods
 [!INCLUDE [21784](../includes/secure-recommendations/21784.md)]
@@ -166,6 +173,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 
 ### Entra Connect Sync is configured with Service Principal Credentials
 [!INCLUDE [24570](../includes/secure-recommendations/24570.md)]
+
+### Directory sync account is locked down to specific named location
+[!INCLUDE [21834](../includes/secure-recommendations/21834.md)]
 
 ### No usage of ADAL in the tenant
 [!INCLUDE [21780](../includes/secure-recommendations/21780.md)]

@@ -54,4 +54,17 @@ Below are instructions specific to this repository. These may be updated by repo
 
 <!--- Add additional repository level instructions below. Do NOT update this line or above. --->
 
+### Entra Documentation Style Rules
 
+#### Product and Feature Naming
+- **"multitenant"** (no hyphen) in all content unless directly mirroring UI text
+- **"preexisting"** (no hyphen)
+- **"Azure portal"** (lowercase "portal")
+- **"Microsoft Entra"** must always include "Microsoft" — never use "Entra" alone
+- **"preview"** not "public preview" when describing preview features
+
+#### Markdown Formatting
+- Use regular spaces for indentation — never non-breaking spaces (U+00A0 / `\xa0`)
+- Sublists under numbered steps need 4-space indentation to render correctly
+- Single-step procedures should use a bullet (`-`), not a numbered list (`1.`)
+- When a verb phrase is used in a filename (e.g., "set up"), hyphenate it: `how-to-set-up-*`

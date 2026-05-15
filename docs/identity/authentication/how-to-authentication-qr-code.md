@@ -559,7 +559,7 @@ Restrict the QR code authentication method to only frontline workers, compliant,
 
 - [Authentication methods in Microsoft Entra ID - QR code authentication method](concept-authentication-qr-code.md)
 - [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
-- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)
 
 
 <!-- INTERNAL LINKS -->

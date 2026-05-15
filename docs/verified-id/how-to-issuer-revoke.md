@@ -10,6 +10,9 @@ ms.date: 06/25/2025
 
 # Revoke a verifiable credential
 
+
+## Overview
+
 As part of the process of working with verifiable credentials, you issue credentials, and sometimes, you need to revoke them. This article reviews the `Status` property part of the verifiable credential specification. We also take a closer look at the revocation process, why we want to revoke credentials, and some data and privacy implications.
 
 ## Why revoke a verifiable credential?

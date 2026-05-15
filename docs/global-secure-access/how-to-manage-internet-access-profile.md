@@ -2,7 +2,7 @@
 title: How to manage the Internet Access profile
 description: Learn how to manage the Internet Access traffic forwarding profile for Microsoft Entra Internet Access.
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 03/25/2026
 ms.subservice: entra-internet-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -11,6 +11,8 @@ ai-usage: ai-assisted
 ---
 
 # How to manage the Internet Access traffic forwarding profile
+
+## Overview
 
 The Internet Access traffic forwarding profile routes internet traffic through the Global Secure Access client. Enabling this traffic forwarding profile allows remote workers to connect to the internet in a controlled and secure way. With the features of Microsoft Entra Internet Access, you can control which internet sites can be accessed. You can also configure which traffic to exclude from Global Secure Access based on IP addresses, IP address ranges, IP subnets, and Fully Qualified Domain Names (FQDNs).
 

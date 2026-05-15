@@ -4,10 +4,12 @@ description: Deploy Token Protection with Microsoft Entra Conditional Access for
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/04/2026
+ms.date: 03/24/2026
 ms.reviewer: sgrandhi
 ---
 # Token Protection Deployment Guide - Apple Platforms (Preview)
+## Overview
+
 This guide covers the steps required to deploy and enforce Token Protection for sign-in session tokens on Apple platforms (iOS, iPadOS, and macOS). Token Protection on Apple platforms is currently in Preview.
 
 Before using this deployment guide, review [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md) for an overview of the feature and supported platforms.
@@ -106,8 +108,8 @@ Complete the following steps for *each* platform you're deploying to. These step
 Before enforcing the policy, deploy it in report-only mode to assess the effect and identify noncompliant sign-in sessions.
 
 1.	Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1.	Browse to **Protection** > **Conditional Access** > **Policies**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1.	Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users, agents, or workload identities**.
    1. Under **Include**, select the users or groups to target.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
@@ -325,7 +327,7 @@ AADNonInteractiveUserSignInLogs
 
 After reviewing sign-in log data and confirming that your targeted users and devices are ready, move the **Enable policy** toggle from **Report-only** to **On**.
 
-We recommend communicating the change to affected users and your help desk team in advance, particularly noting:
+Communicate the change to affected users and your help desk team in advance, particularly noting:
 - Users who will be prompted to upgrade their device registration.
 - Users of Apple's native Mail and Calendar apps, who will be blocked.
 

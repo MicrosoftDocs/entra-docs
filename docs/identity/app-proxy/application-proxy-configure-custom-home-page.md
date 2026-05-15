@@ -1,13 +1,16 @@
 ---
 title: Custom home page for published apps using Microsoft Entra application proxy
-description: Learn how to set a custom home page for published apps using Microsoft Entra application proxy to ensure users land on the correct page.
+description: "Set a custom home page URL for applications published through Microsoft Entra application proxy so users land on the correct internal page after sign-in."
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 03/25/2026
 ms.reviewer: KaTabish
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: As an IT admin, I want to set a custom home page for published apps using Microsoft Entra application proxy so that users are directed to the correct page when accessing the app.
 ---
 # Set a custom home page for published apps by using Microsoft Entra application proxy
+
+
+## Overview
 
 This article discusses how to configure an app to direct a user to a custom home page. When you publish an app with application proxy, you set an internal URL, but sometimes that's not the page a user should see first. Set a custom home page so users get the correct page when accessing the app. Users see the custom home page you set, regardless of whether they access the app from Microsoft Entra My Apps or the Microsoft 365 app launcher.
 
@@ -57,7 +60,7 @@ To configure the home page of an app using PowerShell, you need to:
 
 ### Install the Microsoft Entra PowerShell module
 
-Before you define a custom home page URL by using PowerShell, install the Microsoft Entra PowerShell module. You can download the package from the [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph.Entra), which uses the Graph API endpoint.
+Before you define a custom home page URL by using PowerShell, install the Microsoft Entra PowerShell module. You can download the package from the [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph.Entra), which uses the Graph API endpoint.
 
 To install the package, follow these steps:
 

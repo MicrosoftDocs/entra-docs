@@ -1,15 +1,18 @@
 ---
 title: Add your custom domain
 description: Instructions about how to add your custom domain name to your tenant.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 12/04/2025
 ms.reviewer: elkuzmen
 ms.custom: ge-structured-content-pilot, sfi-ga-nochange
+#Customer Intent: As an IT admin, I want to add a custom domain to my Microsoft Entra tenant so that I can use my organization's domain name for user accounts.
 ---
 
 # Add your custom domain name to your tenant
 
+
+
+## Overview
 
 Microsoft Entra tenants come with an initial domain name like `domainname.onmicrosoft.com`. You can't change or delete the initial domain name, but you can add your organization's DNS name as a custom domain name and set it as primary. By adding your domain name, you can add user names that are familiar to your users, such as `alain@contoso.com`.
 
@@ -100,5 +103,5 @@ If you can't verify a custom domain name, try the following suggestions:
 ## Related content
 
 - [How to assign roles and administrators](./how-subscriptions-associated-directory.md)
-- [How to add or delete users](./add-users.md)
+- [How to add or delete users](./how-to-create-delete-users.md)
 - [Managing custom domain names](~/identity/users/domains-manage.md)
