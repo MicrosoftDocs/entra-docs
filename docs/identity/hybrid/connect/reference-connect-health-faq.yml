@@ -33,9 +33,9 @@ sections:
           
           |Role| Operating system / Version|
           |--|--|
-          |Active Directory Federation Services (AD FS)| <ul> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> <li> Windows Server 2022  </li> <li> Windows Server 2025  </li> </ul>|
+          |Active Directory Federation Services (AD FS)| Windows Server 2016, 2019, 2022, or 2025|
           |Microsoft Entra Connect | Version 2.5.79.0 or higher|
-          |Active Directory Domain Services (AD DS)| <ul><li> Windows Server 2016  </li> <li> Windows Server 2019  </li> <li> Windows Server 2022  </li> <li> Windows Server 2025  </li> </ul>|
+          |Active Directory Domain Services (AD DS)| Windows Server 2016, 2019, 2022, or 2025|
           
           Windows Server Core installations aren't supported.
           
