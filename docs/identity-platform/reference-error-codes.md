@@ -75,7 +75,7 @@ The `error` field has several possible values - review the protocol documentatio
 | Error | Description |
 |---|---|
 | AADSTS16000 | InteractionRequired - User account '{EmailHidden}' from identity provider '{idp}' doesn't exist in tenant '{tenant}' and can't access the application '{appid}'({appName}) in that tenant. This account needs to be added as an external user in the tenant first. Sign out and sign in again with a different Microsoft Entra user account. This error is fairly common when you try to sign in to Microsoft Entra admin center by using personal Microsoft Account and no directory associated with it. |
-| AADSTS16001 | UserAccountSelectionInvalid - You see this error if the user selects on a tile that the session select logic has rejected. When triggered, this error allows the user to recover by picking from an updated list of tiles/sessions, or by choosing another account. This error can occur because of a code defect or race condition. |
+| AADSTS16001 | UserAccountSelectionInvalid - You see this error if the user selects a tile that the session select logic has rejected. When triggered, this error allows the user to recover by picking from an updated list of tiles/sessions, or by choosing another account. This error can occur because of a code defect or race condition. |
 | AADSTS16002 | AppSessionSelectionInvalid - The app-specified SID requirement wasn't met.  |
 | AADSTS160021| AppSessionSelectionInvalidSessionNotExist - Application requested a user session that doesn't exist. This issue can be resolved by creating new Azure account. |
 | AADSTS16003 | SsoUserAccountNotFoundInResourceTenant - Indicates that the user hasn't been explicitly added to the tenant. |
