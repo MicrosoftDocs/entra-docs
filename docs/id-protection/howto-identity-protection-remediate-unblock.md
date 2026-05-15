@@ -162,7 +162,7 @@ If after investigation, you confirm that the sign-in or user *is* at risk, you c
 
 1. Select the event or user in the **Risky sign-ins** or **Risky users** reports and choose **Confirm compromised**.
 1. If a risk-based policy wasn't triggered, and the risk wasn't self-remediated using one of the methods described in this article, then take one or more of the following actions:
-   1. [Request a password reset](#require-a-password-reset).
+   1. [Request a password change](#require-a-password-change).
    1. Block the user if you suspect the attacker can reset the password or do multifactor authentication for the user.
    1. [Revoke refresh tokens](/entra/identity/users/users-revoke-access).
    1. [Disable any devices](../identity/devices/manage-device-identities.md) that are considered compromised.
