@@ -3,11 +3,14 @@ title: "Resolve a 'Corporate app can't be accessed' error"
 description: Learn how to resolve common access issues with Microsoft Entra application proxy applications.
 ms.topic: troubleshooting
 ms.date: 03/11/2026
-ms.reviewer: asteen
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Troubleshoot "corporate app can't be accessed" error in application proxy
+
+
+## Overview
 
 This article helps you troubleshoot common issues for the `This corporate app can't be accessed` error in a Microsoft Entra application proxy application.
 
@@ -58,7 +61,7 @@ Verify that all required ports are open. For required ports, see the open ports 
 
 Look for issues or errors with the connector itself. For more information about common errors, see [Application proxy troubleshooting](application-proxy-troubleshoot.md).
 
-Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, view the [private network connectors](application-proxy-connectors.md).
+Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, view the [private network connectors](~/global-secure-access/concept-connectors.md).
 
 ## Common solutions
 
@@ -70,4 +73,4 @@ If the error persists, use the computer where the connector is installed to open
 
 ## Related content
 
-- [Understand Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)
+- [Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)

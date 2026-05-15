@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps published with no certificate uploaded
 
+
+## Overview
+
 The PowerShell script example lists all Microsoft Entra application proxy apps that are using custom domains that don't have a valid TLS/SSL certificate uploaded.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

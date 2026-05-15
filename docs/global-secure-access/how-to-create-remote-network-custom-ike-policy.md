@@ -4,7 +4,7 @@ description: Learn how to set up the bidirectional communication tunnel between 
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 03/23/2026
 ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a custom Internet Key Exchange (IKE) policy to set up the communication tunnel with Global Secure Access.
@@ -29,7 +29,7 @@ If you prefer to add custom IKE policy details to your remote network, you can d
 
 To create a remote network with a custom IKE policy in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 
 1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 
@@ -63,7 +63,7 @@ There are several details to enter on the General tab. Pay close attention to th
         - This address is entered as the *peer* BGP​​ IP address on your CPE.
         - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.
     
-1. Select the **Next**.
+1. Select **Next**.
 
 ### Add a link - Details tab
 
@@ -97,13 +97,16 @@ There are several details to enter on the General tab. Pay close attention to th
 
 Remote networks with a custom IKE policy can be created using Microsoft Graph on the `/beta` endpoint.
 
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. For details, see [Microsoft Graph versioning and support](/graph/versioning-and-support).
+
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **POST** as the HTTP method from the dropdown.
 1. Set the API version to **beta**.
 1. Add the following query, then select **Run query**.
 
 ```http
-    POST https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks/dc6a7efd-6b2b-4c6a-84e7-5dcf97e62e04/deviceLinks
+    POST https://graph.microsoft.com/beta/networkAccess/connectivity/remoteNetworks/{remoteNetworkId}/deviceLinks
 Content-Type: application/json
 
 {

@@ -10,6 +10,9 @@ ms.date: 12/18/2024
 
 # Register your decentralized ID for did:web
 
+
+## Overview
+
 This article covers the steps to register your decentralized ID (DID) for did:web.
 
 ## Prerequisites
@@ -47,7 +50,7 @@ The DID document in the `did.json` file must be republished if you change the li
 The portal verifies that `did.json` is reachable and correct when you select **Refresh registration status**. You should also consider verifying that you can request that URL in a browser to avoid errors like not using HTTPS, a bad TLS/SSL certificate, or the URL not being public. If the `did.json` file can't be requested anonymously in a browser or via tools such as `curl`, without warnings or errors, the portal won't be able to complete the **Refresh registration status** step.
 
 > [!NOTE]
-> If you're experiencing problems refreshing your registration status, you can troubleshoot it by running `curl -Iv https://yourdomain.com/.well-known/did.json` on a machine with Ubuntu OS. Windows Subsystem for Linux with Ubuntu also works. If curl fails, refreshing the registration status won't work.
+> If you're experiencing problems refreshing your registration status, you can troubleshoot it by running `curl -Iv https://<your-domain>/.well-known/did.json` (for example, `https://verifiedid.contoso.com/.well-known/did.json`) on a machine with Ubuntu OS. Windows Subsystem for Linux with Ubuntu also works. If curl fails, refreshing the registration status won't work.
 
 ## Next steps
 

@@ -20,6 +20,9 @@ When reviewing admin consent requests, you have several options to choose from:
 
 For instance, if an application is found to be non-compliant with company policies, an administrator might choose to 'Block' it. Conversely, if an application is legitimate but requires further review, the administrator may opt to 'Deny' the request temporarily while seeking more information.
 
+>[!NOTE]
+>The "My Pending" tab is where actions can be taken on admin consent requests. The "All (Preview)" tab is to view the history of the admin consent request only.
+
 ## Prerequisites
 
 To review and take action on admin consent requests, you need:
@@ -44,6 +47,7 @@ To review the admin consent requests and take action:
    - **Approve the request**. To approve a request, grant admin consent to the application. Once a request is approved, all requestors are notified that their request for access is granted. Approving a request allows all users in your tenant to access the application unless otherwise restricted with user assignment. 
    - **Deny the request**. To deny a request, you must provide a justification that is provided to all requestors. Once a request is denied, all requestors are notified that their request for access is denied. Denying a request won't prevent users from requesting admin consent to the application again in the future. 
    - **Block the request**. To block a request, you must provide a justification that is provided to all requestors. Once a request is blocked, all requestors are notified that their request to access the application is denied. Blocking a request creates a service principal object for the application in your tenant in a disabled state. Users won't be able to request admin consent to the application in the future.
+
 
 ## Review admin consent requests using Microsoft Graph
 

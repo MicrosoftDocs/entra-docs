@@ -14,6 +14,9 @@ ms.custom: it-pro
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](../includes/active-directory-b2c-end-of-sale-notice.md)]
 
+> [!TIP]
+> This article covers federating with an existing Azure AD B2C tenant. If you're looking to migrate your users and applications from Azure AD B2C to External ID instead, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
+
 To configure your Azure AD B2C tenant as an identity provider, you need to create an Azure AD B2C custom policy, and then an application.
 
 ## Prerequisites

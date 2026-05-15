@@ -9,6 +9,9 @@ ms.custom: it-pro
 
 # LinkedIn account connections data sharing and consent
 
+
+## Overview
+
 You can enable users in your organization in Microsoft Entra ID, part of Microsoft Entra, to consent to connect their Microsoft work or school account with their LinkedIn account. After a user connects their accounts, information and highlights from LinkedIn are available in some Microsoft apps and services. Users can also expect their networking experience on LinkedIn to be improved and enriched with information from Microsoft.
 
 To see LinkedIn information in Microsoft apps and services, users must consent to connect their own Microsoft and LinkedIn accounts. Users are prompted to connect their accounts the first time they select to see someone's LinkedIn information on a profile card in Outlook, OneDrive, or SharePoint Online. LinkedIn account connections aren't fully enabled for your users until they consent to the experience and to connect their accounts.

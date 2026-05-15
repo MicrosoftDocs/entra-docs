@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all Microsoft Entra application proxy applications published with the identical certificate and replace it
 
+
+## Overview
+
 The PowerShell script example replaces the certificates in bulk for all Microsoft Entra application proxy applications published with identical certificate.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

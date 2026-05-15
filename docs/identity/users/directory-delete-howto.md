@@ -8,6 +8,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-noch
 ---
 # Delete a tenant in Microsoft Entra ID
 
+
+## Overview
+
 When an organization (tenant) is deleted in Microsoft Entra ID, all resources in the organization are also deleted. Prepare your organization by minimizing its associated resources before you delete. Only a Global Administrator can delete a Microsoft Entra organization from the Microsoft Entra admin center.
 
 ## Prepare the organization

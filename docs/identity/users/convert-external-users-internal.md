@@ -10,6 +10,9 @@ ms.reviewer: yuank
 
 # Convert external users to internal users
 
+
+## Overview
+
 Enterprises, such as those going through reorganizations, mergers, and acquisitions, sometimes need to change the way they work with some or all of their existing users. In some cases, administrators need to change existing external users into internal ones. 
 
 External user conversion handles the conversion of external users into internal users without the need to delete existing user objects and create new ones. The preservation of the user objects allows users to keep their original account so that their access isn’t disrupted. A converted user's account maintains its history of activities intact as their relationship with the host organization changes.

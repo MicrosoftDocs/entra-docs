@@ -1,20 +1,24 @@
 ---
 title: How to configure Global Secure Access web content filtering
-description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
+description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 04/18/2026
 ms.subservice: entra-internet-access 
-ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
+
+## Overview
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
 Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
 The web filtering feature currently supports user- and context-aware Uniform Resource Locator (URL)-based web category filtering, URL filtering, and FQDN filtering.
+
+> [!TIP]
+> For file type-based filtering (MIME types) and integration with Microsoft Purview for data loss prevention, see [Create a content policy to filter network file content](how-to-network-content-filtering.md).
 
 ## Prerequisites
 
@@ -26,7 +30,7 @@ The web filtering feature currently supports user- and context-aware Uniform Res
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
 - IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
-- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
+- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443`. 
  
 
 - Review web content filtering concepts. For more information, see [web content filtering](concept-internet-access.md).
@@ -91,6 +95,9 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
+
+> [!Note]
+> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), please follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
 
 ## Enable web content filtering for remote network traffic
 
@@ -206,9 +213,9 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
 
-![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
+![Screenshot that shows a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
 
-![Screenshot showing a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
+![Screenshot that shows a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
 
 
 > [!NOTE]
@@ -219,4 +226,5 @@ The current blocking experience for all browsers includes a plaintext browser er
 
 ## Next steps
 
+- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)

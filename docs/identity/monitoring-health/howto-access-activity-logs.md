@@ -48,7 +48,7 @@ The reports available in the Azure portal provide a wide range of capabilities t
 
 - Research a user's sign-in activity or track an application's usage.
 - Review details around group name changes, device registration, and password resets with audit logs.
-- Use the Identity Protection reports for monitoring at risk users, risky workload identities, and risky sign-ins.
+- Use the Identity Protection reports for monitoring at risk users, risky workload identities, risky agents, and risky sign-ins.
 - Review the sign-in success rate in the Microsoft Entra application activity (preview) report from Usage and insights to ensure that your users can access the applications in use in your tenant.
 - Compare the different authentication methods your users prefer with the Authentication methods report from Usage and insights.
 

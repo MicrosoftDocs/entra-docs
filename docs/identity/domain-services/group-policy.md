@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 10/07/2025
 ---
 
-# Group Policy (Private Preview)
+# Group Policy (Preview)
 
 Group Policy Objects (GPOs) are collections of policy settings that define how computer systems and user accounts behave within a Windows Active Directory domain environment. GPOs serve as the primary mechanism for centralized configuration management, security enforcement, and administrative control across Windows networks.
 
@@ -72,7 +72,7 @@ Creates an encrypted SMB (Server Message Block) share with the following charact
 
 ### Access Control
 
-The backup location and network share are configured with appropriate Active Directory security groups to ensure only authorized administrators can access the backup data.
+The backup location and network share are configured with appropriate Active Directory security groups to ensure only authorized administrators can access the backup data. The ACL model aligns with the permissions used in Group Policy Management Console (GPMC), maintaining consistency with existing GPO management practices.
 
 ## Usage Examples
 

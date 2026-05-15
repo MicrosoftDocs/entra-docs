@@ -3,11 +3,14 @@ title: API concepts in Privileged Identity Management
 description: Information for understanding the APIs in Microsoft Entra Privileged
   Identity Management (PIM).
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 04/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim
+#Customer Intent: As a developer or administrator, I want to understand the PIM APIs so I can programmatically manage privileged access assignments and automation workflows.
 ---
 # Privileged Identity Management APIs
+
+## Overview
 
 Privileged Identity Management (PIM), part of Microsoft Entra, includes three providers: 
 
@@ -39,6 +42,8 @@ Under the `/beta/privilegedRoles` endpoint, Microsoft had a classic version of t
 ### Iteration 2 – Deprecated
 
 Under the `/beta/privilegedAccess` endpoint, Microsoft supported both `/aadRoles` and `/azureResources` segments for managing Microsoft Entra roles and Azure resource roles, respectively. This endpoint is deprecated and will stop returning data on October 28, 2026. Microsoft recommends against starting any new development with these APIs.
+
+Additionally, we are currently in the process of migrating the UI to Iteration 3 APIs.
 
 <a name='iteration-3-current--pim-for-azure-ad-roles-groups-in-microsoft-graph-api-and-for-azure-resources-in-arm-api-'></a>
 

@@ -3,7 +3,7 @@ title: Manage users and groups assignment to an application
 description: Learn how to assign and unassign users, and groups, for an app using Microsoft Entra ID for identity management.
 
 ms.topic: how-to
-ms.date: 04/14/2025
+ms.date: 04/01/2026
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
@@ -20,6 +20,8 @@ When you assign a group to an application, only users in the group have access. 
 Group-based assignment requires Microsoft Entra ID P1 or P2 edition. Nested group memberships aren't currently supported. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
 
 For greater control, certain types of enterprise applications can be configured to require user assignment. For more information on requiring user assignment for an app, see [Manage access to an application](what-is-access-management.md#requiring-user-assignment-for-an-app). Applications that require users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
+
+Prior to integration with Microsoft Entra, your application may already have one or more users. Using the account discovery functionality, you can generate a report of all the users in your application, identify which users have matching accounts in Entra, and which users are local to your application with one click. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). This enables you to simplify onboarding to Entra, while also pereodically monitoring for unauthorized access. 
 
 > [!NOTE]
 > If you encounter limitations when managing groups through the portal, such as with application access policy groups, consider using alternative methods like [PowerShell](#assign-users-and-groups-to-an-application-using-microsoft-graph-powershell) or [Microsoft Graph API](#assign-users-and-groups-to-an-application-using-microsoft-graph-api). 

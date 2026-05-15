@@ -71,7 +71,7 @@ items:
       href: application-proxy-configure-single-sign-on-password-vaulting.md
     - name: Network topology
       href: application-proxy-network-topology.md
-    - name: Continuous Access Evaluation (preview)
+    - name: Continuous Access Evaluation
       href: concept-continuous-access-evaluation.md
     - name: Security
       href: application-proxy-security.md
@@ -151,7 +151,7 @@ items:
     - name: Application proxy FAQ
       href: application-proxy-faq.yml
     - name: Application proxy version history
-      href: application-proxy-release-version-history.md
+      href: ~/global-secure-access/reference-version-history.md
   - name: Resources
     items:
     - name: Support and help options for developers

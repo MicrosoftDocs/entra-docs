@@ -3,11 +3,14 @@ title: Configure dynamic membership groups with the memberOf attribute in the Az
 description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 01/27/2026
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro
 ---
 
-# Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
+# Configure dynamic membership groups with the memberOf attribute in the Entra Admin Center (preview)
+
+
+## Overview
 
 This feature preview in Microsoft Entra ID enables admins to create dynamic membership groups and administrative units that populate by adding members of other groups using the `memberOf` attribute. Apps that couldn't read group-based membership previously in Microsoft Entra ID can now read the entire membership of these new `memberOf` groups. Not only can these groups be used for apps but they can also be used for licensing assignments.
 
@@ -38,6 +41,8 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 - Users included in `memberOf` dynamic membership groups might cause a slower processing time for your tenant, if the tenant has a large number of groups or frequent dynamic membership groups updates.
 - Membership of a memberOf dynamic group doesn't automatically update when a child group is deleted or when members are removed from a child group. The affected users or devices remain members of the memberOf dynamic group until the rule is modified.
 
+
+- Only available in public cloud. 
 
 ## Get started
 

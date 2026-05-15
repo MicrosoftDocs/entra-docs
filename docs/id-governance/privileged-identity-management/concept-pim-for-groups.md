@@ -2,11 +2,13 @@
 title: Privileged Identity Management (PIM) for Groups
 description: How to manage Microsoft Entra Privileged Identity Management (PIM) for Groups.
 ms.topic: overview
-ms.date: 02/24/2025
+ms.date: 04/23/2026
 ms.custom: pim, sfi-ga-nochange
+#Customer Intent: As an IT administrator, I want to understand how to use PIM for Groups to provide just-in-time group membership and ownership for controlling access to resources.
 ---
-
 # Privileged Identity Management (PIM) for Groups
+
+## Overview
 
 Microsoft Entra ID allows you to grant users just-in-time membership and ownership of groups through Privileged Identity Management (PIM) for Groups. Groups can be used to control access to a variety of scenarios, including Microsoft Entra roles, Azure roles, Azure SQL, Azure Key Vault, Intune, other application roles, and third-party applications.
 

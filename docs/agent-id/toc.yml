@@ -1,0 +1,186 @@
+items:
+  - name: Microsoft Entra Agent ID
+    expanded: true
+    items:
+    - name: What is Microsoft Entra Agent ID?
+      href: what-is-microsoft-entra-agent-id.md
+    - name: What is the Microsoft agent identity platform?
+      href: what-is-agent-id-platform.md
+    - name: Security for AI overview
+      href: security-for-ai-overview.md
+    - name: What's new in Agent ID
+      href: whats-new-agent-id.md
+  # LEARN ######################
+  - name: Learn about Agent ID
+    expanded: true
+    items:
+    - name: Core concepts
+      items:
+      - name: Key concepts
+        href: key-concepts.md
+      - name: Agent identities
+        href: what-are-agent-identities.md
+      - name: Agent identity blueprints
+        href: agent-blueprint.md
+      - name: Agent's user account
+        href: agent-users.md
+      - name: Agent service principals
+        href: agent-service-principals.md
+      - name: Owners, sponsors, and managers
+        href: agent-owners-sponsors-managers.md
+    - name: Authentication and authorization
+      items:
+      - name: Authorization in Entra Agent ID
+        href: authorization-agent-id.md
+      - name: Inheritable permissions
+        href: concept-inheritable-permissions.md
+      - name: Tokens in Microsoft agent identity platform
+        href: agent-tokens.md
+      - name: Authentication protocols for agents
+        href: agent-oauth-protocols.md
+      - name: Consent and sign-in process
+        href: sign-in-process.md
+    - name: Governance and protection
+      items:
+      - name: Conditional Access for agents
+        href: /entra/identity/conditional-access/agent-id?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: ID Governance for agents
+        href: /entra/id-governance/agent-id-governance-overview?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Access packages for agents
+        href: agent-access-packages.md
+      - name: ID Protection for agents
+        href: /entra/id-protection/concept-risky-agents?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Network controls for agents
+        href: /entra/global-secure-access/concept-secure-web-ai-gateway-agents?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Sign-in and audit logs
+        href: sign-in-audit-logs-agents.md
+
+  # PLAN ######################
+  - name: Plan your agent identity deployment
+    expanded: true
+    items:
+    - name: Agent creation channels
+      href: agent-id-creation-channels.md
+    - name: Agent ID design patterns
+      href: concept-agent-id-design-patterns.md
+    - name: Plan your agent identity architecture
+      href: how-to-plan-agent-identity-architecture.md
+    - name: Best practices
+      href: best-practices-agent-id.md
+    
+  # BUILD / IMPLEMENT ######################
+  - name: Create and configure agents
+    expanded: true
+    items:
+    - name: AI-guided setup
+      href: agent-id-ai-guided-setup.md
+    - name: Create agent identity objects
+      items:
+      - name: Create an agent blueprint
+        href: create-blueprint.md
+      - name: Create and delete agent identities
+        href: create-delete-agent-identities.md
+      - name: Learn about agent identity deletion
+        href: concept-agent-identity-deletion.md
+      - name: Delete and restore agent identity objects
+        href: howto-delete-agent-identity.md
+      - name: Manage agent blueprints
+        href: manage-agent-blueprint.md
+      - name: Manage owners and sponsors
+        href: manage-owners-sponsors-agents.md
+    - name: Authentication, authorization, and permissions
+      items:
+      - name: Autonomous agent app OAuth flow
+        href: agent-autonomous-app-oauth-flow.md
+      - name: On-behalf-of OAuth flow
+        href: agent-on-behalf-of-oauth-flow.md
+      - name: Agent's user account OAuth flow
+        href: agent-user-oauth-flow.md
+      - name: Configure inheritable permissions
+        href: configure-inheritable-permissions-blueprints.md
+      - name: Grant agent access to Microsoft 365
+        href: grant-agent-access-microsoft-365.md
+      - name: Control user access to agents
+        href: control-user-access-agents.md
+      - name: Autonomous agents
+        items:
+        - name: Authenticate and acquire tokens for autonomous agents
+          href: autonomous-agent-authentication-authorization-flow.md
+      - name: Interactive agents
+        items:
+        - name: Authenticate users and request user tokens
+          href: interactive-agent-authentication-authorization-flow.md
+    - name: Use the Microsoft Entra Auth SDK (sidecar)
+      items:
+      - name: Authentication with the Auth SDK (sidecar)
+        href: authentication-with-auth-sdk-sidecar.md
+      - name: Configure SDK for agent identities
+        href: microsoft-entra-sdk-for-agent-identities.md
+      - name: Run the sidecar for local development
+        href: sidecar-local-development.md
+      - name: Validate agent tokens in a downstream API
+        href: how-to-validate-agent-tokens-downstream-api.md
+    - name: Call APIs and services
+      items:
+      - name: Call Microsoft Graph API
+        href: call-api-microsoft-graph.md
+      - name: Call custom APIs
+        href: call-api-custom.md
+      - name: Call Azure services
+        href: call-api-azure-services.md
+    - name: Integrate third-party agent platforms
+      items:
+      - name: Configure third-party agents with Agent ID
+        href: configure-third-party-agents.md
+      - name: Secure an Amazon Bedrock agent
+        href: integrate-aws-bedrock-agent.md
+      - name: Secure an n8n agent
+        href: integrate-n8n-agent.md
+
+  # DEPLOY AND SCALE ######################
+  - name: Deploy and scale
+    expanded: true
+    items:
+    - name: Assign agents to applications
+      href: /entra/identity/enterprise-apps/assign-agent-identities-to-applications?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+    - name: Maintain agent sponsors and lifecycle
+      href: /entra/id-governance/agent-sponsor-tasks?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+    - name: Manage agent identities in your organization
+      href: manage-agent-identities-admin.md
+    - name: Disable agent identities
+      href: disable-agent-identities.md
+    - name: View and filter agent identities (admin center)
+      href: agent-lists.md
+    - name: Manage agents (owner and sponsor portal)
+      href: manage-agent-identities-end-user.md
+    - name: Agent Registry convergence
+      href: agent-registry-convergence.md
+ 
+      # MIGRATE ######################
+  - name: Migrate to Agent ID
+    expanded: true
+    items:
+    - name: Migrate custom app registrations
+      href: migrate-custom-app-registrations-to-agent-id.md
+    - name: Recreate Copilot Studio agents with Entra Agent ID
+      href: migrate-copilot-studio-agents-to-agent-id.md
+  
+  # REFERENCE ######################
+  - name: Reference
+    items:
+    - name: Token claims reference
+      href: agent-token-claims.md
+    - name: FAQ
+      href: faq.yml
+    - name: Microsoft Graph API
+      items:
+      - name: Permissions reference
+        href: /graph/permissions-reference?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Agent identity blueprint API
+        href: /graph/api/resources/agentidentityblueprint?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Agent identity blueprint principal API
+        href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Agent identity API
+        href: /graph/api/resources/agentidentity?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+      - name: Error codes reference
+        href: error-codes.md

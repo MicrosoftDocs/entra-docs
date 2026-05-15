@@ -52,7 +52,7 @@ In addition to challenge types, client apps can specify a list of *capabilities*
 
 Native authentication API supports the following capabilities:
 
-- `mfa_required`: Indicates that the client app can handle multifactor authentication (MFA) flows, including displaying the appropriate UI for users to complete MFA challenges when required.
+- `mfa_required`: Indicates that the client app can handle multifactor authentication (MFA) flows inline, including calling the `/introspect`, `/challenge`, and `/token` endpoints in sequence and displaying the appropriate UI for users to complete MFA challenges when required. Advertise this capability if your app integrates inline MFA scenarios such as risk-based MFA driven by Conditional Access authentication context (for example, third-party account takeover protection integrations that use a Web Application Firewall in front of native authentication endpoints). If the app doesn't advertise `mfa_required` and MFA is required, the native authentication API initiates a [web fallback](concept-native-authentication-web-fallback.md).
 - `registration_required`: The client can handle strong authentication registration: it can call the registration APIs and show UI to guide users through registering strong authentication methods.
 
 ## Behavior for unsupported challenge types and capabilities

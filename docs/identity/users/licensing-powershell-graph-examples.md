@@ -9,6 +9,9 @@ ms.date: 03/19/2025
 
 # Group-based licensing PowerShell examples
 
+
+## Overview
+
 Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com). There are useful tasks that can be performed using [Microsoft Graph PowerShell Cmdlets](/powershell/microsoftgraph/get-started). 
 
 In this article, some examples are covered using Microsoft Graph PowerShell.

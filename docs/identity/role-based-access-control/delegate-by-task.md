@@ -385,7 +385,7 @@ Here are the least privileged roles you should use when performing tasks for [ro
 
 ## Security - Authentication methods least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [authentication methods](../authentication/concept-authentication-methods.md) in Microsoft Entra ID.
+Here are the least privileged roles you should use when performing tasks for [authentication methods](../authentication/overview-authentication.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -479,7 +479,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 
 ## Users least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [users](../../fundamentals/how-to-create-delete-users.yml) in Microsoft Entra ID.
+Here are the least privileged roles you should use when performing tasks for [users](../../fundamentals/how-to-create-delete-users.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |

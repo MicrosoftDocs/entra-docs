@@ -10,16 +10,12 @@ items:
     - name: Agent ID
       tocHref: /entra/agent-id/
       topicHref: /entra/agent-id/
-      items:
-      - name: Identity professionals
-        tocHref: /entra/agent-id/identity-professional/
-        topicHref: /entra/agent-id/identity-professional/
-      - name: Developers
-        tocHref: /entra/agent-id/identity-platform/
-        topicHref: /entra/agent-id/identity-platform/
     - name: Architecture
       tocHref: /entra/architecture/
       topicHref: /entra/architecture/
+    - name: Microsoft Entra Backup and Recovery
+      tocHref: /entra/backup/
+      topicHref: /entra/backup/
     - name: Global Secure Access
       tocHref: /entra/global-secure-access/
       topicHref: /entra/global-secure-access/
@@ -85,6 +81,9 @@ items:
       - name: Privileged Identity Management
         tocHref: /entra/id-governance/privileged-identity-management/
         topicHref: /entra/id-governance/privileged-identity-management/
+      - name: Tenant Governance
+        tocHref: /entra/id-governance/tenant-governance/
+        topicHref: /entra/id-governance/tenant-governance/
     - name: Microsoft Entra ID Protection
       tocHref: /entra/id-protection/
       topicHref: /entra/id-protection/

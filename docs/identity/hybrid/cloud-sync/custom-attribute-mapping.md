@@ -62,7 +62,7 @@ You need to create an [application](/graph/api/resources/application) with the i
 
    For more information, see [Get-MgServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal).
 
-1. If a service principal doesn't exist, use the `$tenantId` variable from previous step to create a new service principal for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
+1. If a service principal doesn't exist, use the `$appId variable` from the previous step to create a new service principal for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
 
    ```powershell     
    New-MgServicePrincipal -AppId $appId

@@ -52,6 +52,9 @@ Log storage within Microsoft Entra varies by report type and license type. You c
 | Risky sign-ins | 7 days        | 30 days             | 90 days             |
 
 > [!NOTE]
+> Organizations with Microsoft 365 E5, Office 365 E5, Microsoft Purview Suite, or E5 eDiscovery and Audit add-on licenses can also use Microsoft Purview Audit (Premium) to retain Microsoft Entra ID audit logs beyond the default period, providing an alternative to exporting logs to Azure Storage. For more information, see [Manage audit log retention policies with Microsoft Purview](/purview/audit-log-retention-policies).
+
+> [!NOTE]
 > Risky users and workload identities are not deleted until the risk has been remediated.
 
 ### Microsoft Entra External ID logs

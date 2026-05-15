@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
-#Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
+#Customer Intent: As an IT admin, I want to create an access review for an access package so that I can regularly review access assignments in entitlement management.
 ---
 # Create an access review of an access package in entitlement management
 
@@ -96,9 +96,6 @@ You can enable access reviews when [creating a new access package](entitlement-m
         - **approve** the review if the user has signed-in at least once during the last 30 days. 
         - **deny** the review if the user hasn't signed-in during the last 30 days.
     1. If you want the reviewer to share their reasons for their approval decision, select **Require reviewer justification**. Their justification is visible to other reviewers and the requestor.
-    1. **Access Review Agent (Preview)**: Select this checkbox to allow reviewers to complete the access review in Microsoft Teams with natural language, insights, and recommendations.
-        > [!NOTE]
-        > This setting is only available for review configurations currently supported by the Access Review Agent and additional setup steps are required. For more information, see: [Access Review Agent with Microsoft Security Copilot](access-review-agent.md).
     
 1. Select **Review + Create** or select **next** if you're creating a new access package. Select **Update** if you're editing an access package, at the bottom of the page.
 

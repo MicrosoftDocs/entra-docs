@@ -1,23 +1,25 @@
 ---
 title: Conditional Access for High-Risk Agent Identities
 description: Learn how to configure Conditional Access policies to block risky agent identities. Follow best practices to enhance security in Microsoft Entra.
-ms.date: 11/04/2025
-ms.custom: agent-id-ignite
+ms.date: 04/30/2026
 ms.topic: how-to
 ms.reviewer: kvenkit
---- 
-# Block access by high-risk agent identities (Preview)
+ms.custom: msecd-doc-authoring-1012
+---
+# Block access for high-risk agent identities (Preview)
 
-This Conditional Access policy template blocks agent identities that are detected as high risk by [Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents), helping prevent potentially compromised AI agents from accessing your organization's resources.
+This Conditional Access policy template blocks [agent identities](../../agent-id/what-are-agent-identities.md) that are detected as high risk by [Microsoft Entra ID Protection](../../id-protection/concept-risky-agents.md), helping prevent potentially compromised AI agents from accessing your organization's resources.
 
 [!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 
 ## Create a Conditional Access policy
 
+The following steps create a Conditional Access policy to block agent identities detected as high risk.
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
    1. Under **What does this policy apply to?**, select **Agents (Preview)**.
       1. Under **Include**, select **All agent identities (Preview)**.
@@ -34,8 +36,9 @@ This Conditional Access policy template blocks agent identities that are detecte
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Related Content
+## Related content
 
+- [Conditional Access for agent identities](agent-id.md)
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

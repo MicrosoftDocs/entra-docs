@@ -3,12 +3,15 @@ title: Manage rules for dynamic membership groups in Microsoft Entra ID
 description: Learn how to manage rules for dynamic membership groups to automatically populate group members and rule references.
 ms.topic: how-to
 ms.date: 03/05/2026
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro
 ai-usage: ai-assisted
 ---
 
 # Manage rules for dynamic membership groups in Microsoft Entra ID
+
+
+## Overview
 
 You can create user-based or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID. You can add and remove dynamic membership groups automatically by using membership rules based on member attributes. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 

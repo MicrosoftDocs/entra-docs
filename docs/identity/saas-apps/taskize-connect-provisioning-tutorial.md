@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/24/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Taskize Connect so that I can streamline the user management process and ensure that users have the appropriate access to Taskize Connect.
@@ -13,7 +13,6 @@ ms.author: jeedes
 # Configure Taskize Connect for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Taskize Connect and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Taskize Connect](https://www.taskize.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
-
 
 ## Capabilities Supported
 > [!div class="checklist"]
@@ -32,7 +31,6 @@ The scenario outlined in this article assumes that you already have the followin
 * A [Taskize Connect](https://www.taskize.com/) tenant.
 * A user account in Taskize Connect with Admin permission.
 
-
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
@@ -47,8 +45,6 @@ To configure Taskize Connect to support provisioning with Microsoft Entra ID, co
 <a name='step-3-add-taskize-connect-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Taskize Connect from the Microsoft Entra application gallery
-
-
 
 Add Taskize Connect from the Microsoft Entra application gallery to start managing provisioning to Taskize Connect. If you have previously setup Taskize Connect for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
@@ -77,20 +73,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Provisioning tab automatic](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, select Authorize, make sure that you enter your Taskize Connect account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Taskize Connect. If the connection fails, ensure your Taskize Connect account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Taskize Connect Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Taskize Connect. If the connection fails, ensure your Taskize Connect account has the required admin permissions and try again.
 
-   ![Token](media/taskize-connect-provisioning-tutorial/taskize-connect-authorize.png)
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-	![Notification Email](common/provisioning-notification-email.png)
+1. Select **Create** to create your configuration.
 
-1. Select **Save**.
+1. Select **Properties** on the **Overview** page.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Taskize Connect**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Taskize Connect in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Taskize Connect for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Taskize Connect API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -102,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.formatted|String|
    |externalId|String|
    
-1. In the **Mappings** section, select **Synchronize Microsoft Entra groups to Taskize Connect**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Taskize Connect in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Taskize Connect for update operations. Select the **Save** button to commit any changes.
 
@@ -112,21 +111,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Taskize Connect, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
-
-1. Define the users and/or groups that you would like to provision to Taskize Connect by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Provisioning Scope](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

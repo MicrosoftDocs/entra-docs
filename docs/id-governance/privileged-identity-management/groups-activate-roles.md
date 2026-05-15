@@ -3,12 +3,14 @@ title: Activate your group membership or ownership in Privileged Identity Manage
 description: Learn how to activate your group membership or ownership in Privileged
   Identity Management (PIM).
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 04/23/2026
 ms.reviewer: ilyal
 ms.custom: pim
+#Customer Intent: As a user with eligible group membership or ownership, I want to activate my just-in-time access when I need to perform tasks that require group permissions.
 ---
-
 # Activate your group membership or ownership in Privileged Identity Management
+
+## Overview
 
 You can use Privileged Identity Management (PIM) in Microsoft Entra ID to have just-in-time membership in the group or just-in-time ownership of the group.
 

@@ -11,6 +11,9 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Issue Microsoft Entra Verified ID credentials from an application
 
   
+
+## Overview
+
 In this tutorial, you run a sample application from your local computer that connects to your Microsoft Entra tenant. Using the application, you're going to issue and verify a verified credential expert card.
 
 In this article, you learn how to:

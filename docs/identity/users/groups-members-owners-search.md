@@ -9,6 +9,9 @@ ms.custom: it-pro, sfi-image-nochange
 
 # Search groups and members in Microsoft Entra ID
 
+
+## Overview
+
 This article tells you how to search for members and owners of a group and how to use search filters in Microsoft Entra ID, part of Microsoft Entra. Search functions for groups include:
 
 - Groups search capabilities, such as substring search in group names

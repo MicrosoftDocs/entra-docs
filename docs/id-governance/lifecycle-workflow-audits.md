@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 03/12/2026
 ms.custom: template-concept, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to understand how auditing works with lifecycle workflows so that I can track and review workflow activities.
 ---
 
 # Auditing Lifecycle Workflows

@@ -9,6 +9,9 @@ ms.date: 12/13/2024
 # Customize your verifiable credentials
 
   
+
+## Overview
+
 Verifiable credential (VC) definitions are made up of two components, *display* definitions and *rules* definitions. A display definition controls the branding of the credential and styling of the claims. A rules definition determines what users need to provide before they receive a verifiable credential.  
 
 This article explains how to modify both types of definitions to meet the requirements of your organization. 

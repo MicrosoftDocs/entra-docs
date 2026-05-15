@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 ---
 # Global Secure Access Threat intelligence threat types
 
+## Overview
+
 When you set up threat intelligence rules blocking access to high severity threat sites, Microsoft assigns each transaction a threat type. This article provides a list of categories along with explanations.
 
 > [!NOTE]

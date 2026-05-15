@@ -3,13 +3,16 @@ title: Add users to a dynamic group
 description: Use groups with user membership rules to add or remove users automatically
 ms.topic: tutorial
 ms.date: 01/31/2025
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, I want to automatically add or remove users, so I don't have to manually do it."
 ---
 
 # Add or remove group members automatically
+
+
+## Overview
 
 In Microsoft Entra ID, part of Microsoft Entra, you can automatically add or remove users to security groups or Microsoft 365 groups, so you don't always have to do it manually. Whenever any properties of a user or device change, Microsoft Entra ID evaluates all rules for dynamic membership groups in your Microsoft Entra organization to see if the change should add or remove members.
 

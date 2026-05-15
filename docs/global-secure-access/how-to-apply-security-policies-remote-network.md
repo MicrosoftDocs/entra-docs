@@ -11,6 +11,8 @@ ai-usage: ai-assisted
 
 # Apply security policies to remote network traffic
 
+## Overview
+
 Global Secure Access enables you to apply comprehensive security policies to remote network traffic, providing consistent protection across your entire network perimeter. By leveraging the baseline security profile, you can enforce tenant-wide security controls on all remote networks without requiring Conditional Access policies.
 
 This article explains how to configure and apply security policies to protect traffic from remote networks such as branch offices, retail locations, and other remote sites.
@@ -21,7 +23,7 @@ To apply security policies to remote network traffic, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - Remote networks configured and connected to Global Secure Access. For more information, see [How to create a remote network](how-to-create-remote-networks.md).
-- At least one security policy created (such as web content filtering, threat intelligence, TLS inspection, cloud firewall, etc.).
+- At least one security policy created (such as web content filtering, threat intelligence, TLS inspection, cloud firewall).
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations

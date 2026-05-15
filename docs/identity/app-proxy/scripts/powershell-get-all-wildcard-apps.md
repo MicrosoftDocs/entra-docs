@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps using wildcard publishing
 
+
+## Overview
+
 The PowerShell script example lists all Microsoft Entra application proxy applications using wildcard publishing.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

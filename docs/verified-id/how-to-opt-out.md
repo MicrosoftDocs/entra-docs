@@ -10,6 +10,9 @@ ms.custom: sfi-image-nochange
 
 # Opt out of Microsoft Entra Verified ID
 
+
+## Overview
+
 Opting out is the process of resetting your Microsoft Entra Verified ID environment.
 
 ## When do you need to opt out?

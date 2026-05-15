@@ -9,6 +9,9 @@ ms.custom: sfi-image-nochange
 
 # Scenarios, limitations, and known issues for groups that manage licensing in Microsoft Entra ID
 
+
+## Overview
+
 Use the following information and examples to gain a more advanced understanding of group-based licensing in Microsoft Entra ID, part of Microsoft Entra.
 
 [!INCLUDE [Microsoft 365 licensing](../../includes/licensing-microsoft-365.md)]

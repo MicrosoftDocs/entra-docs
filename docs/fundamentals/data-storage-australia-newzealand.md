@@ -2,14 +2,17 @@
 title: Customer data storage for Australian and New Zealand customers
 description: Learn about where Microsoft Entra ID stores customer-related data for
   its Australian and New Zealand customers.
-manager: pmwongera
 ms.topic: concept-article
 ms.date: 03/05/2025
 ms.custom: it-pro, references_regions
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to understand where customer data is stored for Australian and New Zealand customers so that I can meet regional data residency requirements.
 ---
 
 # Customer data storage for Australian and New Zealand customers in Microsoft Entra ID
+
+
+## Overview
 
 Microsoft Entra ID stores identity data in a location chosen based on the address provided by your organization when subscribing to a Microsoft service like Microsoft 365 or Azure. Microsoft Online Services include Microsoft 365 and Azure.
 
