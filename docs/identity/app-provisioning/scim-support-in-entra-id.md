@@ -1,7 +1,7 @@
 ---
 title: SCIM support in Microsoft Entra ID
 description: Learn how Microsoft Entra ID supports the SCIM standard both as a provisioning client for SaaS applications and as a SCIM service provider through its SCIM APIs.
-ms.topic: conceptual
+ms.topic: article
 ms.service: entra-id
 ms.subservice: app-provisioning
 author: jenniferf-skc
