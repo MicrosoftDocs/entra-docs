@@ -31,7 +31,8 @@ To register an application in your Microsoft Entra tenant, you need:
 
 ## Register an application with Microsoft Entra ID and create a service principal
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
+    -   For further information on least privilege for application management, see [Delegate app registration permissions in Microsoft Entra ID](~/identity/role-based-access-control/delegate-app-roles)
 1. Browse to **Entra ID** > **App registrations** then select **New registration**.
 1. Give the application a name, such as *example-app*. 
 1. Under **Supported account types**, select _Accounts in this organizational directory only_. 
