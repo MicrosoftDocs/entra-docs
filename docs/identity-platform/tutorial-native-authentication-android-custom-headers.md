@@ -87,41 +87,43 @@ The method receives the full URL of the outgoing request in `requestUrl`. Use th
 
 ## Register the interceptor
 
-After implementing the interface, pass the interceptor when you create your `INativeAuthPublicClientApplication` instance. If your app uses a JSON configuration file (such as *app/src/main/res/raw/native_auth_sample_app_config.json*), pass the interceptor as an additional parameter:
+After implementing the interface, set the `requestInterceptor` property on your app's `NativeAuthPublicClientApplicationConfiguration`. If your app initializes the auth client with a JSON configuration file (such as *app/src/main/res/raw/native_auth_sample_app_config.json*), set the interceptor on the configuration after creating the client:
 
 ```kotlin
 import com.microsoft.identity.client.PublicClientApplication
 import com.microsoft.identity.nativeauth.INativeAuthPublicClientApplication
+import com.microsoft.identity.nativeauth.NativeAuthPublicClientApplicationConfiguration
 
 val authClient: INativeAuthPublicClientApplication =
     PublicClientApplication.createNativeAuthPublicClientApplication(
         context,
-        R.raw.native_auth_sample_app_config,
-        CustomHeaderInterceptor()
+        R.raw.native_auth_sample_app_config
     )
+
+(authClient as? PublicClientApplication)?.let { app ->
+    (app.configuration as? NativeAuthPublicClientApplicationConfiguration)?.requestInterceptor =
+        CustomHeaderInterceptor()
+}
 ```
 
-If your app uses programmatic configuration instead of a JSON file, set the `requestInterceptor` property on your configuration object before creating the application:
+If your app uses programmatic configuration, set the `requestInterceptor` property on your `NativeAuthPublicClientApplicationParameters` instance before creating the application:
 
 ```kotlin
 import com.microsoft.identity.client.PublicClientApplication
 import com.microsoft.identity.nativeauth.INativeAuthPublicClientApplication
-import com.microsoft.identity.client.configuration.NativeAuthPublicClientApplicationConfiguration
+import com.microsoft.identity.nativeauth.NativeAuthPublicClientApplicationParameters
 
-val config = NativeAuthPublicClientApplicationConfiguration()
-config.clientId = "Enter_the_Application_Id_Here"
-config.authorities = listOf(
-    NativeAuthCIAMAuthority(
-        authorityUrl = "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/"
-    )
+val parameters = NativeAuthPublicClientApplicationParameters(
+    clientId = "Enter_the_Application_Id_Here",
+    authorityUrl = "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/",
+    challengeTypes = listOf("oob", "password")
 )
-config.challengeTypes = listOf("oob", "password")
-config.requestInterceptor = CustomHeaderInterceptor()
+parameters.requestInterceptor = CustomHeaderInterceptor()
 
 val authClient: INativeAuthPublicClientApplication =
     PublicClientApplication.createNativeAuthPublicClientApplication(
         context,
-        config
+        parameters
     )
 ```
 
