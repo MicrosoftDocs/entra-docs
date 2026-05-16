@@ -71,85 +71,36 @@ The SSPR administrator policy doesn't depend upon the Authentication methods pol
 
 A two-gate policy applies in the following circumstances:
 
-* All the following Azure administrator roles are affected:
-  * AdHoc License Administrator
-  * Application Administrator
-  * Application Proxy Service Administrator
-  * Attack Simulation Administrator
-  * Attribute Assignment Administrator
-  * Attribute Definition Administrator
-  * Attribute Log Administrator
-  * Authentication Administrator
-  * Authentication Extensibility Administrator
-  * Authentication Policy Administrator
-  * Azure DevOps Administrator
-  * Azure Information Protection Administrator
-  * B2C IEF Keyset Administrator
-  * B2C IEF Policy Administrator
-  * Billing Administrator
-  * Cloud App Security Administrator
-  * Cloud Device Administrator
-  * Compliance Administrator
-  * Compliance Data Administrator
-  * Conditional Access Administrator
-  * Customer LockBox Access Approver
-  * Desktop Analytics Administrator
-  * Device Administrators
-  * Directory Synchronization Accounts (an admin role assigned to the Microsoft Entra Connect service)
-  * Directory Writers
-  * Domain Name Administrator
-  * Dynamics 365 Administrator
-  * Dynamics 365 Business Central Administrator
-  * Edge Administrator
-  * Email Verified User Creator
-  * Exchange Administrator
-  * Exchange Recipient Administrator
-  * External ID User Flow Administrator
-  * External ID User Flow Attribute Administrator
-  * External Identity Provider Administrator
-  * Global Administrator
-  * Global Secure Access Administrator
-  * Groups Administrator
-  * Helpdesk Administrator
-  * Hybrid Identity Administrator
-  * Identity Governance Administrator
-  * Insights Administrator
-  * Intune Administrator
-  * Knowledge Administrator
-  * License Administrator
-  * Lifecycle Workflows Administrator
-  * Mailbox Administrator
-  * Microsoft Entra Joined Device Local Administrator
-  * Microsoft Hardware Warranty Administrator
-  * Microsoft365 Migration Administrator
-  * Modern Commerce Administrator
-  * Network Administrator
-  * Office Apps Administrator
-  * Organizational Branding Administrator
-  * Partner Tier1 Support
-  * Partner Tier2 Support
-  * Password Administrator
-  * Permissions Management Administrator
-  * Power BI Service Administrator
-  * Power Platform Administrator
-  * Printer Administrator
-  * Privileged Authentication Administrator
-  * Privileged Role Administrator
-  * Search Administrator
-  * Security Administrator
-  * Service Support Administrator
-  * SharePoint Administrator
-  * Skype for Business Administrator
-  * Teams Administrator
-  * Teams Communications Administrator
-  * Teams Devices Administrator
-  * User Administrator
-  * Virtual Visits Administrator
-  * Viva Goals Administrator
-  * Viva Pulse Administrator
-  * Windows365 Administrator
-  * Windows Update Deployment Administrator
-  * Yammer Administrator
+* The following administrator roles are affected:
+
+  | | | |
+  |---|---|---|
+  | AdHoc License Administrator | Application Administrator | Application Proxy Service Administrator |
+  | Attack Simulation Administrator | Attribute Assignment Administrator | Attribute Definition Administrator |
+  | Attribute Log Administrator | Authentication Administrator | Authentication Extensibility Administrator |
+  | Authentication Policy Administrator | Azure DevOps Administrator | Azure Information Protection Administrator |
+  | B2C IEF Keyset Administrator | B2C IEF Policy Administrator | Billing Administrator |
+  | Cloud App Security Administrator | Cloud Device Administrator | Compliance Administrator |
+  | Compliance Data Administrator | Conditional Access Administrator | Customer LockBox Access Approver |
+  | Desktop Analytics Administrator | Device Administrators | Directory Synchronization Accounts |
+  | Directory Writers | Domain Name Administrator | Dynamics 365 Administrator |
+  | Dynamics 365 Business Central Administrator | Edge Administrator | Email Verified User Creator |
+  | Exchange Administrator | Exchange Recipient Administrator | External ID User Flow Administrator |
+  | External ID User Flow Attribute Administrator | External Identity Provider Administrator | Global Administrator |
+  | Global Secure Access Administrator | Groups Administrator | Helpdesk Administrator |
+  | Hybrid Identity Administrator | Identity Governance Administrator | Insights Administrator |
+  | Intune Administrator | Knowledge Administrator | License Administrator |
+  | Lifecycle Workflows Administrator | Mailbox Administrator | Microsoft Entra Joined Device Local Administrator |
+  | Microsoft Hardware Warranty Administrator | Microsoft365 Migration Administrator | Modern Commerce Administrator |
+  | Network Administrator | Office Apps Administrator | Organizational Branding Administrator |
+  | Partner Tier1 Support | Partner Tier2 Support | Password Administrator |
+  | Permissions Management Administrator | Power BI Service Administrator | Power Platform Administrator |
+  | Printer Administrator | Privileged Authentication Administrator | Privileged Role Administrator |
+  | Search Administrator | Security Administrator | Service Support Administrator |
+  | SharePoint Administrator | Skype for Business Administrator | Teams Administrator |
+  | Teams Communications Administrator | Teams Devices Administrator | User Administrator |
+  | Virtual Visits Administrator | Viva Goals Administrator | Viva Pulse Administrator |
+  | Windows365 Administrator | Windows Update Deployment Administrator | Yammer Administrator |
 
 * If 30 days elapsed in a trial subscription 
 
