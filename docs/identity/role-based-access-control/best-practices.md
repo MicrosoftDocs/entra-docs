@@ -5,6 +5,7 @@ ms.topic: best-practice
 ms.date: 03/30/2025
 ms.reviewer: vincesm
 ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Best practices for Microsoft Entra roles

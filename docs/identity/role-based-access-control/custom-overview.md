@@ -5,6 +5,7 @@ ms.topic: overview
 ms.date: 03/30/2025
 ms.reviewer: abhijeetsinha
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Overview of role-based access control in Microsoft Entra ID
@@ -100,7 +101,7 @@ Microsoft Entra ID provides multiple options for assigning roles:
 
 Listing role assignments is one part of answering the broader question: "who has access to what in my organization?" Microsoft Entra ID provides several tools that, when used together, give you visibility into access across your tenant.
 
-- **Role assignments.** Use the procedures in this article to list who holds Microsoft Entra roles at the tenant, application, or administrative unit scope. You can [download role assignments](#download-role-assignments) as a CSV for offline analysis, or query them programmatically with the [Microsoft Graph roleAssignments API](/graph/api/rbacapplication-list-roleassignments).
+- **Role assignments.** Use the procedures in this article to list who holds Microsoft Entra roles at the tenant, application, or administrative unit scope. You can [download role assignments](view-assignments.md#download-role-assignments) as a CSV for offline analysis, or query them programmatically with the [Microsoft Graph roleAssignments API](/graph/api/rbacapplication-list-roleassignments).
 - **Access reviews.** Use [access reviews](~/id-governance/access-reviews-overview.md) to periodically verify that users, groups, and service principals still need their current role assignments or group memberships. Reviewers attest to continued need, and access that's no longer required can be removed automatically.
 - **Entitlement management.** Use [entitlement management](~/id-governance/entitlement-management-overview.md) to see which users have been granted access through access packages. The entitlement management catalog provides a centralized view of resources, access packages, and assignments for governed access.
 - **Sign-in and audit logs.** Use [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) to see who has been actively accessing resources and under what conditions. Use [audit logs](~/identity/monitoring-health/concept-audit-logs.md) to track changes to role assignments, group memberships, and other directory objects over time. Audit logs show *historical changes*, while sign-in logs show *current activity* — together they help you distinguish between granted access and exercised access.

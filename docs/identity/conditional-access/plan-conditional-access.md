@@ -11,6 +11,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:09/02/2025
   - ai-gen-description
+ai-usage: ai-assisted
 ---
 # Plan a Conditional Access deployment
 
@@ -167,9 +168,9 @@ Conditional Access policies are contained in a JSON file, and that file has a si
 
 As your organization grows, managing Conditional Access policies at scale requires deliberate governance practices. Consider these strategies to maintain control over a large policy set:
 
-- **Establish naming and ownership standards.** Adopt a consistent [naming convention](#set-naming-standards-for-your-policies) that identifies each policy's purpose, target, and scope at a glance. Assign clear ownership so that each policy has a responsible admin or team.
+- **Establish naming and ownership conventions.** Adopt a consistent [naming convention](#set-naming-standards-for-your-policies) that identifies each policy's purpose, target, and scope at a glance. Because Conditional Access policies don't have a built-in owner attribute, encode ownership in the policy name (for example, a team prefix) and maintain an out-of-band registry that maps each policy to a responsible admin or team.
 - **Audit and consolidate regularly.** Review your policies periodically to remove redundant or conflicting rules. The [Conditional Access Optimization Agent](../../security-copilot/conditional-access-agent-optimization.md) with Microsoft Security Copilot can analyze your existing policies, identify gaps in coverage, and suggest consolidation opportunities.
-- **Monitor impact with reporting tools.** Use the [Insights and Reporting workbook](howto-conditional-access-insights-reporting.md) to visualize policy impact across your tenant. Stream sign-in logs to a Log Analytics workspace so you can query trends, identify policy conflicts, and track coverage over time.
+- **Monitor impact with reporting tools.** Use the Insights and Reporting workbook in [Analyze Conditional Access policy impact](howto-conditional-access-insights-reporting.md) to visualize policy impact across your tenant. Stream sign-in logs to a Log Analytics workspace so you can query trends, identify policy conflicts, and track coverage over time.
 - **Troubleshoot efficiently.** When users report access issues, use the [What If tool](what-if-tool.md) to simulate sign-in scenarios and identify which policies apply. For deeper investigation, review the Conditional Access details on individual sign-in events in the [sign-in logs](troubleshoot-conditional-access.md).
 - **Protect policy changes.** Enable [protected actions](~/identity/role-based-access-control/protected-actions-add.md) to require additional verification before anyone creates, modifies, or deletes Conditional Access policies.
 
