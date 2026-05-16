@@ -18,7 +18,7 @@ Learn about Conditional Access and agent identities:
 - High-level overview of Conditional Access: [What is Conditional Access?](overview.md)
 - Guide to managing agent identities across your organization: [Manage agent identities in your organization](../../agent-id/manage-agent-identities-admin.md).
 - Policy templates:
-    - [High-risk agent's user account](policy-agent-user-account.md)
+    - [Block high-risk agent identities](policy-agent-block-high-risk.md)
     - [Configure policy for autonomous agent access](policy-autonomous-agents.md)
     - [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)
 
@@ -236,5 +236,6 @@ Admins can use the sign-in logs to investigate why a Conditional Access policy d
 
 Learn how to configure Conditional Access policies for agent identities:
 
-- [Agents operate on behalf of a signed-in user](policy-on-behalf-of-agents.md)
-- [Agent acts as user](policy-agent-user-account.md)
+- [Block high-risk agent identities](policy-agent-block-high-risk.md)
+- [Configure policy for autonomous agent access](policy-autonomous-agents.md)
+- [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)

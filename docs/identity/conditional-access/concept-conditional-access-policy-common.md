@@ -93,7 +93,7 @@ Policies in this category provide new ways to protect against compromise.
 
 Policies in this category provide ways to control agents in your environment.
 
-- [High-risk agent's user account](policy-agent-user-account.md)
+- [Block high-risk agent identities](policy-agent-block-high-risk.md)
 - [Configure policy for autonomous agent access](policy-autonomous-agents.md)
 - [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)
 
