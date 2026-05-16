@@ -112,6 +112,8 @@ Microsoft Entra ID provides several complementary capabilities that work togethe
 
 **Example layered approach:** Assign a custom role scoped to an administrative unit so a regional helpdesk admin can only reset passwords for users in their region. Require PIM activation so the role is time-bound and approval-based. Apply a Conditional Access policy that requires a compliant device and multifactor authentication when the admin activates the role. Use access reviews in entitlement management to periodically validate that the admin still needs the assignment.
 
+To audit what these layered controls have granted, see [Understand who has access to what](custom-overview.md#understand-who-has-access-to-what).
+
 For more information about designing a least-privilege access strategy, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
 
 ## Next steps

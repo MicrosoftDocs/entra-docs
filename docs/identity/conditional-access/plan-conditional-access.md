@@ -173,6 +173,7 @@ As your organization grows, managing Conditional Access policies at scale requir
 - **Monitor impact with reporting tools.** Use the Insights and Reporting workbook in [Analyze Conditional Access policy impact](howto-conditional-access-insights-reporting.md) to visualize policy impact across your tenant. Stream sign-in logs to a Log Analytics workspace so you can query trends, identify policy conflicts, and track coverage over time.
 - **Troubleshoot efficiently.** When users report access issues, use the [What If tool](what-if-tool.md) to simulate sign-in scenarios and identify which policies apply. For deeper investigation, review the Conditional Access details on individual sign-in events in the [sign-in logs](troubleshoot-conditional-access.md).
 - **Protect policy changes.** Enable [protected actions](~/identity/role-based-access-control/protected-actions-add.md) to require additional verification before anyone creates, modifies, or deletes Conditional Access policies.
+- **Automate policy management.** Manage Conditional Access policies programmatically with the [Microsoft Graph `conditionalAccessPolicy` API](/graph/api/resources/conditionalaccesspolicy) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/) to bulk-create, version, and audit policies. Adopt a policy-as-code workflow with source control and continuous integration so changes are reviewable, testable, and reversible.
 
 ### Configure report-only mode
 
