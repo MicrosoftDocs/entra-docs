@@ -95,6 +95,23 @@ In this case, you should use [Privileged Identity Management (PIM) for Groups](~
 
 Avoid using on-premises synced accounts for Microsoft Entra role assignments. If your on-premises account is compromised, it can compromise your Microsoft Entra resources as well.
 
+## 10. Use layered controls for fine-grained access governance
+
+Microsoft Entra ID provides several complementary capabilities that work together to help you enforce least-privilege access at a granular level. No single feature covers every authorization scenario, so combine these controls in layers based on your organization's requirements:
+
+| Control | What it does | When to use it |
+|---|---|---|
+| [Administrative units](administrative-units.md) | Scope role assignments to a specific subset of users, groups, or devices. | Delegate administration to regional or departmental admins without granting tenant-wide permissions. |
+| [Custom roles](custom-create.md) | Define roles with only the permissions a job function requires. | Built-in roles are too broad or too narrow for a specific responsibility. |
+| [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) | Grant just-in-time, time-bound, approval-based role activation. | Eliminate standing privileged access for administrators, developers, and service accounts. |
+| [Conditional Access](~/identity/conditional-access/overview.md) | Evaluate real-time signals (user risk, device compliance, location, application) to enforce or block access. | Apply context-based access decisions that adapt to changing risk conditions. |
+| [Entitlement management](~/id-governance/entitlement-management-overview.md) | Bundle resources into access packages with automated request, approval, and expiration workflows. | Govern access for projects, teams, or cross-organization collaboration at scale. |
+| [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) | Re-evaluate access during an active session when critical events occur, such as account compromise or network change. | Enforce policy changes in near-real-time instead of waiting for token expiration. |
+
+**Example layered approach:** Assign a custom role scoped to an administrative unit so a regional helpdesk admin can only reset passwords for users in their region. Require PIM activation so the role is time-bound and approval-based. Apply a Conditional Access policy that requires a compliant device and multifactor authentication when the admin activates the role. Use access reviews in entitlement management to periodically validate that the admin still needs the assignment.
+
+For more information about designing a least-privilege access strategy, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
+
 ## Next steps
 
 - [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md)

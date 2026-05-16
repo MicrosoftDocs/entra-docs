@@ -163,6 +163,16 @@ Conditional Access policies are contained in a JSON file, and that file has a si
 - [Use groups or roles to include or exclude users instead of listing each user individually](concept-conditional-access-users-groups.md).
 - [Use filter for applications to include or exclude applications instead of individually specifying them](concept-filter-for-applications.md).
 
+### Govern and manage policies at scale
+
+As your organization grows, managing Conditional Access policies at scale requires deliberate governance practices. Consider these strategies to maintain control over a large policy set:
+
+- **Establish naming and ownership standards.** Adopt a consistent [naming convention](#set-naming-standards-for-your-policies) that identifies each policy's purpose, target, and scope at a glance. Assign clear ownership so that each policy has a responsible admin or team.
+- **Audit and consolidate regularly.** Review your policies periodically to remove redundant or conflicting rules. The [Conditional Access Optimization Agent](../../security-copilot/conditional-access-agent-optimization.md) with Microsoft Security Copilot can analyze your existing policies, identify gaps in coverage, and suggest consolidation opportunities.
+- **Monitor impact with reporting tools.** Use the [Insights and Reporting workbook](howto-conditional-access-insights-reporting.md) to visualize policy impact across your tenant. Stream sign-in logs to a Log Analytics workspace so you can query trends, identify policy conflicts, and track coverage over time.
+- **Troubleshoot efficiently.** When users report access issues, use the [What If tool](what-if-tool.md) to simulate sign-in scenarios and identify which policies apply. For deeper investigation, review the Conditional Access details on individual sign-in events in the [sign-in logs](troubleshoot-conditional-access.md).
+- **Protect policy changes.** Enable [protected actions](~/identity/role-based-access-control/protected-actions-add.md) to require additional verification before anyone creates, modifies, or deletes Conditional Access policies.
+
 ### Configure report-only mode
 
 [Enable policies in report-only mode](howto-conditional-access-insights-reporting.md). After you save a policy in report-only mode, you see the effect on real-time sign-ins in the sign-in logs. From the sign-in logs, select an event and go to the **Report-only** tab to see the result of each report-only policy.

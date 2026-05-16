@@ -96,6 +96,18 @@ Microsoft Entra ID provides multiple options for assigning roles:
 - With Microsoft Entra ID P1, you can create role-assignable groups and assign roles to these groups. Assigning roles to a group instead of individuals allows for easy addition or removal of users from a role and creates consistent permissions for all members of the group. For more information, see [Assign Microsoft Entra roles](manage-roles-portal.md).
 - With Microsoft Entra ID P2, you can use Microsoft Entra Privileged Identity Management (Microsoft Entra PIM) to provide just-in-time access to roles. This feature allows you to grant time-limited access to a role to users who require it, rather than granting permanent access. It also provides detailed reporting and auditing capabilities. For more information, see [Assign Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
 
+## Understand who has access to what
+
+Listing role assignments is one part of answering the broader question: "who has access to what in my organization?" Microsoft Entra ID provides several tools that, when used together, give you visibility into access across your tenant.
+
+- **Role assignments.** Use the procedures in this article to list who holds Microsoft Entra roles at the tenant, application, or administrative unit scope. You can [download role assignments](#download-role-assignments) as a CSV for offline analysis, or query them programmatically with the [Microsoft Graph roleAssignments API](/graph/api/rbacapplication-list-roleassignments).
+- **Access reviews.** Use [access reviews](~/id-governance/access-reviews-overview.md) to periodically verify that users, groups, and service principals still need their current role assignments or group memberships. Reviewers attest to continued need, and access that's no longer required can be removed automatically.
+- **Entitlement management.** Use [entitlement management](~/id-governance/entitlement-management-overview.md) to see which users have been granted access through access packages. The entitlement management catalog provides a centralized view of resources, access packages, and assignments for governed access.
+- **Sign-in and audit logs.** Use [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) to see who has been actively accessing resources and under what conditions. Use [audit logs](~/identity/monitoring-health/concept-audit-logs.md) to track changes to role assignments, group memberships, and other directory objects over time. Audit logs show *historical changes*, while sign-in logs show *current activity* — together they help you distinguish between granted access and exercised access.
+
+> [!TIP]
+> For large tenants, stream logs to a [Log Analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) and use Kusto queries to analyze access patterns across thousands of users and roles.
+
 ## License requirements
 
 Using built-in roles in Microsoft Entra ID is free. Using custom roles require a Microsoft Entra ID P1 license for every user with a custom role assignment. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
