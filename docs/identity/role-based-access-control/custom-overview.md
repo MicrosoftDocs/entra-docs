@@ -102,12 +102,30 @@ Microsoft Entra ID provides multiple options for assigning roles:
 Listing role assignments is one part of answering the broader question: "who has access to what in my organization?" Microsoft Entra ID provides several tools that, when used together, give you visibility into access across your tenant.
 
 - **Role assignments.** Use the procedures in this article to list who holds Microsoft Entra roles at the tenant, application, or administrative unit scope. You can [download role assignments](view-assignments.md#download-role-assignments) as a CSV for offline analysis, or query them programmatically with the [Microsoft Graph roleAssignments API](/graph/api/rbacapplication-list-roleassignments).
+- **App role assignments and consent grants.** Use [Assign users and groups to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to see which users and groups can access a given enterprise application. Use [Review permissions granted to applications](~/identity/enterprise-apps/manage-application-permissions.md) to inspect the delegated and application permissions that users or administrators have consented to.
+- **Custom security attributes.** Use [custom security attributes](~/fundamentals/custom-security-attributes-overview.md) to tag users and service principals with business attributes such as project, classification, or region. You can then filter and query the directory by attribute to answer questions like "which apps are tagged confidential?" or "which users are assigned to Project Apollo?" — a business-attribute view of access that complements role-based queries.
 - **Access reviews.** Use [access reviews](~/id-governance/access-reviews-overview.md) to periodically verify that users, groups, and service principals still need their current role assignments or group memberships. Reviewers attest to continued need, and access that's no longer required can be removed automatically.
 - **Entitlement management.** Use [entitlement management](~/id-governance/entitlement-management-overview.md) to see which users have been granted access through access packages. The entitlement management catalog provides a centralized view of resources, access packages, and assignments for governed access.
-- **Sign-in and audit logs.** Use [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) to see who has been actively accessing resources and under what conditions. Use [audit logs](~/identity/monitoring-health/concept-audit-logs.md) to track changes to role assignments, group memberships, and other directory objects over time. Audit logs show *historical changes*, while sign-in logs show *current activity* — together they help you distinguish between granted access and exercised access.
+- **Sign-in and audit logs.** Use [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) to see who has been actively accessing resources and under what conditions. Use [audit logs](~/identity/monitoring-health/concept-audit-logs.md) to track changes to role assignments, group memberships, and other directory objects over time. Audit logs show *historical changes*, while sign-in logs show *current activity* — together they help you distinguish between granted access and exercised access. For richer tracing of Microsoft Graph API calls, see [Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview).
 
 > [!TIP]
 > For large tenants, stream logs to a [Log Analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) and use Kusto queries to analyze access patterns across thousands of users and roles.
+
+## Govern access for workload identities
+
+A complete authorization-at-scale strategy must cover non-human identities — service principals, managed identities, agents, and federated workloads — not just users. Microsoft Entra supports several methods for registering machine identities, each suited to a different scenario:
+
+- **[App registration](~/identity-platform/quickstart-register-app.md).** Register an application to create a service principal that authenticates with a client secret, certificate, or federated credential. Use for traditional applications and platform integrations.
+- **[Managed identities](~/identity/managed-identities-azure-resources/overview.md).** Use system-assigned or user-assigned managed identities for workloads running in Azure. Azure provisions and rotates the credentials, so no secrets are stored in code or configuration.
+- **[Workload identity federation](~/workload-id/workload-identity-federation.md).** Configure trust between Microsoft Entra and an external identity provider so workloads outside Azure — such as GitHub Actions, Kubernetes, Google Cloud, AWS, or Terraform Cloud — can authenticate without storing secrets.
+- **[Flexible federated identity credentials](~/workload-id/workload-identities-flexible-federated-identity-credentials.md).** Extend the secretless pattern to user-assigned managed identities and to scenarios that require wildcard or claims-based matching.
+
+Govern these identities at scale with the same layered controls you apply to users:
+
+- Apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md) to restrict where and when a service principal can authenticate.
+- Run [access reviews](~/id-governance/create-access-review-pim-for-groups.md) on service principals to confirm continued need.
+- Tag workload identities with [custom security attributes](~/fundamentals/custom-security-attributes-overview.md) so you can build a filterable inventory and drive [Azure ABAC](/azure/role-based-access-control/conditions-custom-security-attributes) decisions from business attributes.
+- Enable [app instance property lock](~/identity-platform/howto-configure-app-instance-property-locks.md) to prevent unauthorized modification of sensitive application properties.
 
 ## License requirements
 
