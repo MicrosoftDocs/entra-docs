@@ -61,7 +61,7 @@ The following diagram illustrates the data access patterns.
 
 :::image type="content" source="media/agent-id/data-access-patterns-diagram.png" alt-text="Diagram showing the data access patterns for agent identities." lightbox="media/agent-id/data-access-patterns-diagram.png":::
 
-Conditional Access policies are if-then statements: *if* a user or agent wants to access a resource, *then* something must happen first. For example, if an agent needs to read a user's email on their behalf through the Work IQ MCP, the user must complete multifactor authentication before access is granted. Likewise, if an agent attempts to access any resource not explicitly included in the policy, access is blocked by default.
+Conditional Access policies are built like if-then statements: *if* a user or agent action satisfies a requirement, *then* the agent or user can access a resource. Or *if* a requirement is not met, access is denied. For example, if an agent needs to read a user's email on their behalf through the Work IQ MCP, the user must complete multifactor authentication before access is granted. Likewise, if a risky agent attempts to access any resource, access is blocked.
 
 Microsoft Entra ID issues an access token to a subject for a specific audience (resource). Each token has exactly one subject and one audience.
 
@@ -168,7 +168,7 @@ To create a Conditional Access policy for agents operating with their own identi
 
 - **Assignments**: In an agent access flow, the access token is issued to the agent identity (the token subject), so you assign the policy to agent identities or their agent identity blueprint.
 - **Target resources**: Select the resources the agent identity needs to access.
-- **Conditions**: Configure Conditional Access policy for agents' user accounts accessing resources.
+- **Conditions**: Conditions aren't currently supported for agent's user accounts because risk status can't be evaluated so no exceptions can be configured. The only supported policy for agent's user accounts is blocking access to all resources for all agent users
 - **Access control**: Because this agent accesses resources with its own identity, there's no remediation and the only available option is blocking access.
 
 ## Agent's user account
