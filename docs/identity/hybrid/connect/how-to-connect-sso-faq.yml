@@ -37,7 +37,7 @@ sections:
           Seamless SSO is available for the [Azure Government cloud](https://www.microsoft.com/de-de/microsoft-cloud). For details, view [Hybrid Identity Considerations for Azure Government](./reference-connect-government-cloud.md).
           
       - question: |
-          What applications take advantage of `domain_hint` or `login_hint` parameter capability of Seamless SSO?
+          What applications take advantage of 'domain_hint' or 'login_hint' parameter capability of Seamless SSO?
         answer: |
           The table has a list of applications that can send these parameters to Microsoft Entra ID. This action provides users a silent sign-on experience using Seamless SSO.:
           
@@ -59,9 +59,9 @@ sections:
           If you want other applications using our silent sign-on experience, let us know in the feedback section.
           
       - question: |
-          Does Seamless SSO support `Alternate ID` as the username, instead of `userPrincipalName`?
+          Does Seamless SSO support 'Alternate ID' as the username, instead of 'userPrincipalName'?
         answer: |
-          Yes. Seamless SSO supports `Alternate ID` as the username when configured in Microsoft Entra Connect as shown [here](how-to-connect-install-custom.md). Not all Microsoft 365 applications support `Alternate ID`. Refer to the specific application's documentation for the support statement.
+          Yes. Seamless SSO supports 'Alternate ID' as the username when configured in Microsoft Entra Connect as shown [here](how-to-connect-install-custom.md). Not all Microsoft 365 applications support 'Alternate ID'. Refer to the specific application's documentation for the support statement.
           
       - question: |
           What is the difference between the single sign-on experience provided by Microsoft Entra join and Seamless SSO?
@@ -76,30 +76,30 @@ sections:
           Yes, this scenario needs version 2.1 or later of the [workplace-join client](https://www.microsoft.com/download/details.aspx?id=53554).
           
       - question: |
-          How can I roll over the Kerberos decryption key of the `AZUREADSSO` computer account?
+          How can I roll over the Kerberos decryption key of the 'AZUREADSSO' computer account?
         answer: |
-          It's important to frequently roll over the Kerberos decryption key of the `AZUREADSSO` computer account (which represents Microsoft Entra ID) created in your on-premises AD forest.
+          It's important to frequently roll over the Kerberos decryption key of the 'AZUREADSSO' computer account (which represents Microsoft Entra ID) created in your on-premises AD forest.
           
           >[!IMPORTANT]
-          >We highly recommend that you roll over the Kerberos decryption key at least every **30 days** using the `Update-AzureADSSOForest` cmdlet.  When using the `Update-AzureADSSOForest` cmdlet, ensure that you *don't* run the `Update-AzureADSSOForest` command more than once per forest. Otherwise, the feature stops working until the time your users' Kerberos tickets expire and are reissued by your on-premises Active Directory.
+          >We highly recommend that you roll over the Kerberos decryption key at least every **30 days** using the 'Update-AzureADSSOForest' cmdlet.  When using the 'Update-AzureADSSOForest' cmdlet, ensure that you *don't* run the 'Update-AzureADSSOForest' command more than once per forest. Otherwise, the feature stops working until the time your users' Kerberos tickets expire and are reissued by your on-premises Active Directory.
           
           
           Follow these steps on the on-premises server where you're running Microsoft Entra Connect:
           
              > [!NOTE]
              >You need domain administrator and Hybrid Identity Administrator credentials for the steps.
-             >If you're not a domain admin and you were assigned permissions by the domain admin, you should call `Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount`
+             >If you're not a domain admin and you were assigned permissions by the domain admin, you should call 'Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount'
           
              **Step 1. Get list of AD forests where Seamless SSO is enabled**
           
-             1. Navigate to the `$env:programfiles"\Microsoft Azure Active Directory Connect"` folder.
-             2. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
-             3. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
-             4. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides a list of AD forests (look at the "Domains" list) on which this feature has been enabled.
+             1. Navigate to the '$env:programfiles"\Microsoft Azure Active Directory Connect"' folder.
+             2. Import the Seamless SSO PowerShell module using this command: 'Import-Module .\AzureADSSO.psd1'.
+             3. Run PowerShell as an Administrator. In PowerShell, call 'New-AzureADSSOAuthenticationContext'. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
+             4. Call 'Get-AzureADSSOStatus | ConvertFrom-Json'. This command provides a list of AD forests (look at the "Domains" list) on which this feature has been enabled.
           
              **Step 2. Update the Kerberos decryption key on each AD forest that it was set up on**
           
-             1. Call `$creds = Get-Credential`. When prompted, enter the Domain Administrator credentials for the intended AD forest.
+             1. Call '$creds = Get-Credential'. When prompted, enter the Domain Administrator credentials for the intended AD forest.
           
              > [!NOTE]
              >The domain administrator credentials username must be entered in the SAM account name format  (contoso\johndoe or contoso.com\johndoe). We use the domain portion of the username to locate the Domain Controller of the Domain Administrator using DNS.
@@ -107,7 +107,7 @@ sections:
              >[!NOTE]
              >The domain administrator account used must not be a member of the Protected Users group. If so, the operation fails.
           
-             2. Call `Update-AzureADSSOForest -OnPremCredentials $creds`. This command updates the Kerberos decryption key for the `AZUREADSSO` computer account in this specific AD forest and updates it in Microsoft Entra ID.
+             2. Call 'Update-AzureADSSOForest -OnPremCredentials $creds'. This command updates the Kerberos decryption key for the 'AZUREADSSO' computer account in this specific AD forest and updates it in Microsoft Entra ID.
              
              3. Repeat the preceding steps for each AD forest that you’ve set up the feature on.
              
@@ -138,12 +138,12 @@ sections:
           
              Run the following steps on the on-premises server where you're running Microsoft Entra Connect:
           
-             1. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
-             2. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
-             3. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
-             4. Call `Enable-AzureADSSO -Enable $false`.
+             1. Navigate to the '$env:ProgramFiles"\Microsoft Azure Active Directory Connect"' folder.
+             2. Import the Seamless SSO PowerShell module using this command: 'Import-Module .\AzureADSSO.psd1'.
+             3. Run PowerShell as an Administrator. In PowerShell, call 'New-AzureADSSOAuthenticationContext'. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
+             4. Call 'Enable-AzureADSSO -Enable $false'.
              
-             At this point Seamless SSO is disabled but the domains remain configured in case you would like to enable Seamless SSO back. If you would like to remove the domains from Seamless SSO configuration completely, call the following cmdlet after you completed step 5 above: `Disable-AzureADSSOForest -DomainFqdn <fqdn>`.
+             At this point Seamless SSO is disabled but the domains remain configured in case you would like to enable Seamless SSO back. If you would like to remove the domains from Seamless SSO configuration completely, call the following cmdlet after you completed step 5 above: Disable-AzureADSSOForest -DomainFqdn "&lt;fqdn&gt;"
           
              >[!IMPORTANT]
              >Disabling Seamless SSO using PowerShell won't change the state in Microsoft Entra Connect. Seamless SSO shows as enabled in the **Change user sign-in** page.
@@ -155,12 +155,12 @@ sections:
           
              Follow tasks 1 through 4 if you have disabled Seamless SSO using Microsoft Entra Connect. If you have disabled Seamless SSO using PowerShell instead, jump ahead to task 5.
           
-             1. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
-             2. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
-             3. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
-             4. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides you with the list of AD forests (look at the "Domains" list) on which this feature has been enabled.
+             1. Navigate to the '$env:ProgramFiles"\Microsoft Azure Active Directory Connect"' folder.
+             2. Import the Seamless SSO PowerShell module using this command: 'Import-Module .\AzureADSSO.psd1'.
+             3. Run PowerShell as an Administrator. In PowerShell, call 'New-AzureADSSOAuthenticationContext'. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
+             4. Call 'Get-AzureADSSOStatus | ConvertFrom-Json'. This command provides you with the list of AD forests (look at the "Domains" list) on which this feature has been enabled.
           
-             **Step 3. Manually delete the `AZUREADSSO` computer account from each AD forest that you see listed.**
+             **Step 3. Manually delete the 'AZUREADSSO' computer account from each AD forest that you see listed.**
           
 additionalContent: |
 
