@@ -2,10 +2,11 @@
 title: Conditional Access for Agent Identities in Microsoft Entra
 description: Learn how Conditional Access for agent identities in Microsoft Entra ID extends Zero Trust principles to AI agents, ensuring secure access and governance.
 ms.topic: concept-article
-ms.date: 05/15/2026
+ms.date: 05/18/2026
 ms.reviewer: yoelhor
 ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
+reviewer: kvenkit
 #customer-intent: As an identity administrator, I want to understand how Conditional Access policies apply to agent identities in Microsoft Entra ID, so that I can effectively manage and secure access for AI agents in my organization.
 ---
 
@@ -168,7 +169,7 @@ To create a Conditional Access policy for agents operating with their own identi
 
 - **Assignments**: In an agent access flow, the access token is issued to the agent identity (the token subject), so you assign the policy to agent identities or their agent identity blueprint.
 - **Target resources**: Select the resources the agent identity needs to access.
-- **Conditions**: Conditions aren't currently supported for agent's user accounts because risk status can't be evaluated so no exceptions can be configured. The only supported policy for agent's user accounts is blocking access to all resources for all agent users
+- **Conditions**: Configure whether the agent identity is at risk. For more information, see [ID Protection for agents](../../id-protection/concept-risky-agents.md).
 - **Access control**: Because this agent accesses resources with its own identity, there's no remediation and the only available option is blocking access.
 
 ## Agent's user account
@@ -183,13 +184,7 @@ In this model, the access token is issued to the agent's user account (the token
 
 ### Agent's user account Conditional Access considerations
 
-Agent's user accounts have a different security risk profile than human users. For example, an agent's user account is inherently phish resistant. For this reason, many of the main user-based Conditional Access controls such as MFA and device compliance do not apply to them.   
-
-For example, "Require MFA" assumes a human user can complete an interactive authentication challenge, including phishing-resistant methods where applicable. An agent's user account cannot satisfy such interactive requirements in the same manner as human users.
-
-"Require compliant device" assumes access originates from a managed client device whose compliance posture can be evaluated. Today, agents' user accounts do not operate from traditional end-user client devices.
-
-For these reasons, human-centric Conditional Access controls are intentionally not applied to agents' user accounts. This separation is a deliberate design choice to preserve correct policy semantics across supported Microsoft and non-Microsoft agent scenarios.
+Many traditional user-based Conditional Access controls, such as MFA and device compliance, do not apply to agents' user accounts in the same way they apply to human users. For example, "Require MFA" assumes a human user can complete an interactive authentication challenge, including phishing-resistant methods where applicable. An agent's user account cannot satisfy such interactive requirements in the same manner as human users. "Require compliant device" assumes access originates from a managed client device whose compliance posture can be evaluated. Today, agents' user accounts do not operate from traditional end-user client devices. For these reasons, human-centric Conditional Access controls are intentionally not applied to agents' user accounts. This separation is a deliberate design choice to preserve correct policy semantics across supported Microsoft and non-Microsoft agent scenarios.
 
 ### Configure Conditional Access policy for an agent's user account
 
@@ -197,7 +192,7 @@ To create a Conditional Access policy for an agent's user account, use the follo
 
 - **Assignments**: In an agent's user account flow, choose the "Select agents acting as users", and then select "All agent users"
 - **Target resources**: All resources
-- **Access control**: At this time, blocking access to all resources is the only policy configuration allowed for agents' user accounts. Because this policy covers an agent's user account, there's no remediation to authentication challenges, therefore the only available option is blocking access.
+- **Conditions** and **Access control**: At this time, blocking access to all resources is the only policy configuration allowed for agents' user accounts. Because this policy covers an agent's user account, there's no remediation to authentication challenges, therefore the only available option is blocking access.
 
 ## Plan Conditional Access deployment
 
