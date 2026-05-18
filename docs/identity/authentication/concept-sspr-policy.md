@@ -95,10 +95,10 @@ A two-gate policy applies in the following circumstances:
   | Compliance Administrator | Knowledge Administrator | Teams Communications Administrator |
   | Compliance Data Administrator | License Administrator | Teams Devices Administrator |
   | Conditional Access Administrator | Lifecycle Workflows Administrator | User Administrator |
-  | Customer LockBox Access Approver | Mailbox Administrator | Virtual Visits Administrator |
+  | Customer Lockbox Access Approver | Mailbox Administrator | Virtual Visits Administrator |
   | Desktop Analytics Administrator | Microsoft Entra Joined Device Local Administrator | Viva Goals Administrator |
   | Device Administrators | Microsoft Hardware Warranty Administrator | Viva Pulse Administrator |
-  | Directory Synchronization Accounts | Microsoft365 Migration Administrator | Windows365 Administrator |
+  | Directory Synchronization Accounts | Microsoft 365 Migration Administrator | Windows365 Administrator |
   | Directory Writers | Modern Commerce Administrator | Windows Update Deployment Administrator |
   | Domain Name Administrator | Network Administrator | Yammer Administrator |
 
