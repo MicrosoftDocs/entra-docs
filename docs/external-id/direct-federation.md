@@ -208,7 +208,7 @@ Users can then authenticate successfully using email addresses from any domain (
 
 To enable domainless federation for a new SAML IdP, follow these steps:
 
-1. On the **New SAML/WS-Fed IdP** page, select **Domainless**. Selecting **Domainless** enforces no domain check of the user's email address.
+- On the **New SAML/WS-Fed IdP** page, select **Domainless**. Selecting **Domainless** enforces no domain check of the user's email address.
 
     :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-domainless.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the domainless configuration." lightbox="media/direct-federation/new-saml-wsfed-idp-domainless.png":::
 
@@ -232,7 +232,7 @@ After configuring domainless federation, you can invite guest users from the par
 
 The following known issue is being actively addressed and this section will be updated after the fix is available.
 
-1. The IdP configuration gets deleted if an invalid domain name is entered even when the IdP config is not saved.
+- The IdP configuration gets deleted if an invalid domain name is entered even when the IdP config is not saved.
 
 ## How to update the certificate or configuration details
 
