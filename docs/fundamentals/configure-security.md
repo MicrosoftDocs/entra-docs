@@ -214,7 +214,7 @@ Improve security incident response and incident communications.
 
 ## AI
 
-Secure AI agents and workloads with identity controls.
+Secure AI agents and agent-based workloads with identity controls.
 
 | Check | Minimum required license |
 |---|---|
