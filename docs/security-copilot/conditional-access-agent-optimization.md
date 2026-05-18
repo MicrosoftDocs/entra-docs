@@ -44,11 +44,11 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 ### Limitations
 
-- After you start agents, you can't stop or pause them. They might take a few minutes to run.
+- After the agent starts, you can't stop or pause the run. It might take a few minutes to run.
 - For policy consolidation, each agent run evaluates 40 similar policy pairs.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24-hour period.
-- You can't customize or overrise suggestions from the agent.
+- You can't customize or override suggestions from the agent.
 - The agent can review up to 300 users and 150 applications in a single run.
 
 ## How it works
@@ -70,7 +70,7 @@ If the agent identifies something that it didn't previously suggest, it takes th
 1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic in the custom instructions.
 
 > [!NOTE]
-> Security Copilot requires the provisioning of at least one SCU in your tenant. That SCU is billed each month, even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
+> Security Copilot requires that at least one SCU is provisioned in your tenant. That SCU is billed each month, even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
 
 The policy suggestions from the agent include:
 
@@ -111,9 +111,9 @@ The policy suggestions from the agent include:
 
    :::image type="content" source="media/conditional-access-agent-optimization/start-agent.png" alt-text="Screenshot that shows the button for starting an agent on the Conditional Access Optimization Agent pane." lightbox="media/conditional-access-agent-optimization/start-agent.png":::
 
-1. On the **Overview** tab for the agent, any suggestions appear in the **Recent suggestions** box. For a suggestion, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and apply suggestions from the Conditional Access Optimization Agent](./conditional-access-agent-optimization-review-suggestions.md).
+On the **Overview** tab for the agent, any suggestions appear in the **Recent suggestions** box. You can then review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and apply suggestions from the Conditional Access Optimization Agent](./conditional-access-agent-optimization-review-suggestions.md).
 
-   :::image type="content" source="media/conditional-access-agent-optimization/review-suggestions.png" alt-text="Screenshot of an agent summary and recent suggestions, with buttons for reviewing suggestions highlighted." lightbox="media/conditional-access-agent-optimization/review-suggestions.png":::
+:::image type="content" source="media/conditional-access-agent-optimization/review-suggestions.png" alt-text="Screenshot of an agent summary and recent suggestions, with buttons for reviewing suggestions highlighted." lightbox="media/conditional-access-agent-optimization/review-suggestions.png":::
 
 ## Settings
 
