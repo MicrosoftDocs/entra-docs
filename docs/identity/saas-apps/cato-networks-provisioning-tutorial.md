@@ -21,6 +21,7 @@ This article describes the steps you need to do in both Cato Networks and Micros
 > * Remove users in Cato Networks when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cato Networks
 > * Provision groups and group memberships in Cato Networks
+> * Long lived bearer token authentication supported.
 
 
 ## Prerequisites

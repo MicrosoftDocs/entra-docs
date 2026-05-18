@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Britive and Microso
 > * Keep user attributes synchronized between Microsoft Entra ID and Britive
 > * Provision groups and group memberships in Britive
 > * [Single sign-on](britive-tutorial.md) to Britive (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

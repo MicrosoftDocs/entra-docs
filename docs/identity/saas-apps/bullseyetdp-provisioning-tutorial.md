@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both BullseyeTDP and Mic
 > * Remove users in BullseyeTDP when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and BullseyeTDP.
 > * [Single sign-on](bullseyetdp-tutorial.md) to BullseyeTDP.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

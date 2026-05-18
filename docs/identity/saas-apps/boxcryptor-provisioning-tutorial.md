@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both Boxcryptor and Micr
 > * Keep user attributes synchronized between Microsoft Entra ID and Boxcryptor
 > * Provision groups and group memberships in Boxcryptor
 > * [Single sign-on](./boxcryptor-tutorial.md) to Boxcryptor (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

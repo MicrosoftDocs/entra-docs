@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both BrowserStack Single
 > * Remove users in BrowserStack Single Sign-on when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and BrowserStack Single Sign-on
 > * [Single sign-on](./browserstack-single-sign-on-tutorial.md) to BrowserStack Single Sign-on (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
