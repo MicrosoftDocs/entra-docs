@@ -27,6 +27,7 @@ These basic controls include:
 - [Requiring administrators to do multifactor authentication](#require-administrators-to-do-multifactor-authentication)
 - [Requiring users to do multifactor authentication when necessary](#require-users-to-do-multifactor-authentication-when-necessary)
 - [Blocking legacy authentication protocols](#block-legacy-authentication-protocols)
+- [Blocking device code flow](#block-device-code-flow)
 - [Protecting privileged activities like access to the Azure portal](#protect-privileged-activities-like-access-to-the-azure-portal)
 
 ## Who's it for?
@@ -125,6 +126,13 @@ After security defaults are enabled in your tenant, all authentication requests 
 > Before you enable security defaults, make sure your administrators aren't using older authentication protocols. For more information, see [How to move away from legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 - [How to set up a multifunction device or application to send email using Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
+
+### Block device code flow
+
+Device code flow is an authentication flow that lets users sign in to devices or applications that have limited input capabilities, such as devices without a browser or keyboard. Attackers can abuse device code flow in phishing attacks by tricking users into entering a code on another device.
+
+After security defaults are enabled in your tenant, authentication requests that use device code flow are blocked. Applications or devices that depend on device code flow won't be able to complete sign-in while security defaults are enabled.
+If your organization needs granular control and exceptions, you should consider [Conditional Access](/entra/identity/conditional-access/concept-conditional-access-policy-common).
 
 ### Protect privileged activities like access to the Azure portal
 
