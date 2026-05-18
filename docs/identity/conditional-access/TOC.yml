@@ -118,8 +118,6 @@
       items:
       - name: Block high-risk agent identities
         href: policy-agent-block-high-risk.md
-      - name: Block high-risk agent's user account
-        href: policy-agent-user-account.md
       - name: Configure policy for autonomous agent access
         href: policy-autonomous-agents.md
       - name: Configure policy for on-behalf-of agent access
