@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Freshservice Provis
 > * Create users in Freshservice Provisioning
 > * Remove users in Freshservice Provisioning when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Freshservice Provisioning
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
