@@ -81,11 +81,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning.png)
+	![Screenshot of the Provisioning tab in the myPolicies application.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+	![Screenshot of the new application provisioning configuration page.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your myPolicies Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to myPolicies. If the connection fails, ensure your myPolicies account has the required admin permissions and try again.
 
