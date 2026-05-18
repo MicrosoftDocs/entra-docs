@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both CheckProof and Micr
 > * Keep user attributes synchronized between Microsoft Entra ID and CheckProof
 > * Provision groups and group memberships in CheckProof
 > * [Single sign-on](./checkproof-tutorial.md) to CheckProof (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Coda and Microsoft 
 > * Remove users in Coda when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Coda
 > * [Single sign-on](./coda-tutorial.md) to Coda (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

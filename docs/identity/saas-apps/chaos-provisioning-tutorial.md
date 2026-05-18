@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Chaos and Microsoft
 > * Remove users in Chaos when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Chaos
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Chaos (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
