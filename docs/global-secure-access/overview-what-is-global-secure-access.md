@@ -74,31 +74,41 @@ Most Global Secure Access services operate on a per-user license model unless ot
 
 ### Feature comparison table
 
-| Feature                          | Entra P1/P2 License - Microsoft traffic profile | Internet Access License* - Internet Access profile | Private Access License* - Private Access profile |
+| Feature                          | Entra P1/P2 License - Microsoft traffic profile | Internet Access License¹ - Internet Access profile | Private Access License¹ - Private Access profile |
 |----------------------------------|:----------------------------------------------:|:-------------------------------------------------:|:-----------------------------------------------:|
-| Windows client                   | ✅                                              | ✅                                               | ✅                                              |
-| macOS client                     | ✅                                              | ✅                                               | ✅                                              |
-| Mobile client (iOS, Android)     | ✅                                              | ✅                                               | ✅                                              |
-| Traffic logs                     | ✅                                              | ✅                                               | ✅                                              |
-| Remote network (branch connectivity) | ✅                                          | ✅                                               |                                                  |
-| Universal Tenant Restrictions    | ✅                                              |                                                   |                                                  |
-| Compliant network check          | ✅                                              |                                                   |                                                  |
-| Source IP restoration            | ✅                                              |                                                   |                                                  |
-| Microsoft 365 Enriched logs      | ✅                                              |                                                   |                                                  |
-| Universal Conditional Access (CA)| ✅                                              | ✅                                               |                                                  |
-| Context-aware network security   |                                                  | ✅                                               |                                                  |
-| Web category filtering           |                                                  | ✅                                               |                                                  |
-| Fully qualified domain name (FQDN) filtering |                                      | ✅                                               |                                                  |
-| Universal Continuous Access Evaluation (CAE) | ✅                                   | ✅                                               | ✅                                              |
-| VPN replacement with an identity-centric ZTNA |                                     |                                                   | ✅                                              |
-| Quick Access                     |                                                  |                                                   | ✅                                              |
-| App Discovery                    |                                                  |                                                   | ✅                                              |
-| Private Domain Name System (DNS) |                                                  |                                                   | ✅                                              |
-| Single sign-on across all private apps |                                            |                                                   | ✅                                              |
-| Marketplace availability         |                                                  |                                                   | ✅                                              |
-| Private network connector multicloud support |                                     |                                                   | ✅                                              |
+| [Windows client](how-to-install-windows-client.md)                   | ✅                                              | ✅                                               | ✅                                              |
+| [macOS client](how-to-install-macos-client.md)                     | ✅                                              | ✅                                               | ✅                                              |
+| Mobile client ([iOS](how-to-install-ios-client.md), [Android](how-to-install-android-client.md))     | ✅                                              | ✅                                               | ✅                                              |
+| [Traffic logs (Preview)](how-to-view-traffic-logs.md)           | ✅                                              | ✅                                               | ✅                                              |
+| [Remote network (branch connectivity)](concept-remote-network-connectivity.md) | ✅                                          | ✅                                               |                                                  |
+| [Direct Microsoft services connectivity](how-to-manage-microsoft-profile.md) | ✅                                              |                                                   |                                                  |
+| [Universal Tenant Restrictions](how-to-universal-tenant-restrictions.md)    | ✅                                              |                                                   |                                                  |
+| [Compliant network check](how-to-compliant-network.md)          | ✅                                              |                                                   |                                                  |
+| [Source IP restoration](how-to-source-ip-restoration.md)            | ✅                                              |                                                   |                                                  |
+| [Microsoft 365 Enriched logs](how-to-view-enriched-logs.md)      | ✅                                              |                                                   |                                                  |
+| [Universal Conditional Access (CA)](concept-universal-conditional-access.md)| ✅                                              | ✅                                               |                                                  |
+| [Context-aware network security](concept-internet-access.md)   |                                                  | ✅                                               |                                                  |
+| [Web category filtering](how-to-configure-web-content-filtering.md)           |                                                  | ✅                                               |                                                  |
+| [Fully qualified domain name (FQDN) filtering](how-to-configure-web-content-filtering.md) |                                      | ✅                                               |                                                  |
+| [TLS inspection](tutorial-internet-access-tls-inspection.md) |                                                          | ✅                                               |                                                  |
+| [Threat intelligence](how-to-configure-threat-intelligence.md) |                                                  | ✅                                               |                                                  |
+| [Prompt injection protection](how-to-ai-prompt-injection-protection.md) |                                                  | ✅                                               |                                                  |
+| [Data Loss Prevention](how-to-network-content-filtering.md) |                                                  | ✅                                               |                                                  |
+| [Universal Continuous Access Evaluation (CAE)](concept-universal-continuous-access-evaluation.md) | ✅                                   | ✅                                               | ✅                                              |
+| [VPN replacement with an identity-centric ZTNA](tutorial-private-access-vpn-replacement.md) |                                     |                                                   | ✅                                              |
+| [Quick Access](how-to-configure-quick-access.md)                     |                                                  |                                                   | ✅                                              |
+| [Per-app access (TCP/UDP)](how-to-configure-per-app-access.md) |                                                       |                                                   | ✅                                              |
+| [App Discovery](how-to-application-discovery.md)                    |                                                  |                                                   | ✅                                              |
+| [Shadow AI discovery](concept-shadow-ai-discovery.md) |                                                  | ✅                                               |                                                  |
+| [Private Domain Name System (DNS)](concept-private-name-resolution.md) |                                                  |                                                   | ✅                                              |
+| [Single sign-on across all private apps](how-to-configure-kerberos-sso.md) |                                            |                                                   | ✅                                              |
+| [Marketplace availability (Preview)](how-to-configure-connectors.md) |                                              |                                                   | ✅                                              |
+| [Private network connector multicloud support (Preview)](how-to-configure-connectors.md) |                            |                                                   | ✅                                              |
+| [Network controls for agents²](how-to-secure-web-ai-gateway-agents.md) |                                              | ✅                                               |                                                  |
 
-*Included in Microsoft Entra Suite
+¹ Included in [Microsoft Entra Suite](~/fundamentals/licensing.md#microsoft-entra-suite).
+
+² Network controls for agents requires a [Microsoft Agent 365](/microsoft-agent-365/overview) license.
 
 **Remote Network licensing**
 
