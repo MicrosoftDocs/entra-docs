@@ -2,7 +2,7 @@
 title: Migrate from custom controls to external MFA in Conditional Access
 description: Learn how to migrate from custom controls to external multifactor authentication in Microsoft Entra Conditional Access.
 ms.topic: how-to
-ms.date: 05/13/2026
+ms.date: 05/19/2026
 ms.author: sarahlipsey
 author: shlipsey3
 manager: pmwongera
@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 External multifactor authentication (MFA) lets users choose an external provider to meet MFA requirements when they sign in with a work or school account. Custom controls in Microsoft Entra Conditional Access previously provided similar functionality, but with the general availability of external MFA (previously known as external authentication methods), custom controls are deprecated and scheduled for retirement. This guide provides the steps to migrate existing custom control Conditional Access policies to external MFA.
 
 > [!IMPORTANT]
-> Custom controls are deprecated and will be retired in September 2026. Start planning your migration now. For more information, see the [External MFA GA announcement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/4488926).
+> Custom controls are deprecated. Adding new custom controls and editing existing custom controls will not be allowed starting September 2026. Full retirement is scheduled for early 2027. Start planning your migration now. For more information, see the [External MFA GA announcement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/4488926).
 
 *This guide is relevant only if your organization currently uses custom controls. If you don't use custom controls, no action is needed.*
 
