@@ -106,7 +106,7 @@ Most Global Secure Access services operate on a per-user license model unless ot
 | [Private network connector multicloud support (Preview)](how-to-configure-connectors.md) |                            |                                                   | ✅                                              |
 | [Network controls for agents²](how-to-secure-web-ai-gateway-agents.md) |                                              | ✅                                               |                                                  |
 
-¹ Included in [Microsoft Entra Suite](~/fundamentals/licensing.md#microsoft-entra-suite).
+¹ Included in [Microsoft Entra Suite](~/fundamentals/try-microsoft-entra-suite.md#what-is-the-microsoft-entra-suite).
 
 ² Network controls for agents requires a [Microsoft Agent 365](/microsoft-agent-365/overview) license.
 
