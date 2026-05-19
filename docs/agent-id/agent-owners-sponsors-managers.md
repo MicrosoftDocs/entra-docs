@@ -100,4 +100,4 @@ A sponsor is required when creating an agent identity or agent blueprint. Agent 
 
 For delegated creation requests where both an application and user context exist, the calling user automatically becomes the sponsor if no sponsors are explicitly specified. However, if one or more other sponsors are designated during creation, the calling user isn't automatically added. Users with Agent ID admin roles aren't made sponsor automatically during creation. This avoids unintentionally overburdening admins with direct responsibility for individual agents.
 
-For app-only create requests, the creating service must set one or more users or [supported groups](#sponsors) as the sponsor.
+For app-only create requests, the creating service must set one or more users or [supported groups](#sponsors) as the sponsor. 
