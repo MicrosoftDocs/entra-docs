@@ -12,9 +12,7 @@ ai-usage: ai-assisted
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!IMPORTANT]
-> **User Insights is being retired on August 31, 2026.** The Application user activity dashboards in the Microsoft Entra admin center and the related Microsoft Graph `reports/userInsights/*` (beta) endpoints will no longer be available after that date. After retirement, the dashboards stop rendering, the Graph endpoints stop returning data, and the `Insights-UserMetric.Read.All` permission no longer grants access to user insights data.
->
-> To avoid loss of reporting, migrate to **Azure Monitor and Log Analytics** (primary) and the **Microsoft Graph sign-in and audit log APIs** before the retirement date. See [Migrate from User Insights](#migrate-from-user-insights) for recommended alternatives and next steps.
+> **User Insights is being retired on August 31, 2026.** Plan to migrate to Azure Monitor and Log Analytics before the retirement date. See [Migrate from User Insights](#migrate-from-user-insights) for recommended alternatives and next steps.
 
 The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This feature can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
