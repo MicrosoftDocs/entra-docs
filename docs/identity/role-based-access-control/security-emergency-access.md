@@ -118,8 +118,6 @@ Organizations should monitor sign-in and audit log activity from the emergency a
     
         > [!NOTE]
         > For each additional emergency access account you want to include, add another `or UserId == "ObjectGuid"` to the query.
-        > 
-        > The table name in these queries depends on your workspace type. Use `SigninLogs` for standard Log Analytics workspaces, or `AADSignInLogs` for Microsoft Sentinel workspaces.
                 
         Sample queries:
         ```kusto
@@ -154,7 +152,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
         1. Set the **Threshold value** to **0**.
         1. Set the **Frequency of evaluation** to how often you want the query to run.
 
-        :::image type="content" source="./media/security-emergency-access/alert-logic.png" alt-text="Screenshot of Alert logic settings with example values for Threshold type, Operator, Threshold vlaue, and Frequency of evaluation." lightbox="./media/security-emergency-access/alert-logic.png":::
+        :::image type="content" source="./media/security-emergency-access/alert-logic.png" alt-text="Screenshot of Alert logic settings with example values for Threshold type, Operator, Threshold value, and Frequency of evaluation." lightbox="./media/security-emergency-access/alert-logic.png":::
 
     1. Select **Next** to proceed.
 
