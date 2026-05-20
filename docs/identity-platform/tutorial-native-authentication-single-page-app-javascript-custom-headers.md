@@ -45,7 +45,7 @@ MSAL applies the following rules when it evaluates the headers that you provide:
     - `x-ms-`
     - `x-broker-`
     - `x-app-`
-- MSAL adds headers that pass both rules to the network request. If a header that you provide has the same name as one of MSAL's internal headers, your value takes precedence.
+- MSAL adds headers names that pass both rules to the network request. For any header name conflict not rejected by validation, the header name you provide is favored over the SDK-defined value.
 
 Use these rules to verify your vendor-required header names before you implement the interceptor.
 
