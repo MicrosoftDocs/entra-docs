@@ -71,9 +71,11 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 ## Control the 'Stay signed in?' prompt
 
-By default, after a customer signs in to an app that uses your user flow, they see a **Stay signed in?** prompt. The prompt appears regardless of whether the user flow is branded or whether multifactor authentication is required. If the user selects **Yes**, a persistent authentication cookie is issued and they remain signed in across browser sessions. If they select **No**, a non-persistent cookie is issued.
+By default, after a customer signs in to an app that uses your user flow, they see a **Stay signed in?** prompt asking whether to stay signed in across browser sessions. If the user selects **Yes**, a persistent authentication cookie is issued and they remain signed in across browser sessions. If they select **No**, a non-persistent cookie is issued.
 
-This prompt isn't a user flow setting. To change or suppress it, configure the **Persistent browser session** session control in a Conditional Access policy that targets your customers and apps:
+This prompt is the default behavior for every user flow. Applying custom branding to the user flow or requiring multifactor authentication doesn't change whether the prompt appears. It's shown in all cases unless you override it with a Conditional Access policy.
+
+The prompt isn't a user flow setting. To change or suppress it, configure the **Persistent browser session** session control in a Conditional Access policy that targets your customers and apps:
 
 - **Always persistent**: The browser session is always persisted. The **Stay signed in?** prompt isn't shown.
 - **Never persistent**: The browser session ends when the browser is closed. The **Stay signed in?** prompt isn't shown.
