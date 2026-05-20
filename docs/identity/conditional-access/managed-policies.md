@@ -4,9 +4,10 @@ description: Secure your resources with Microsoft-managed Conditional Access pol
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 05/20/2026
 ms.reviewer: swethar
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 ---
 # Microsoft-managed Conditional Access policies
 
@@ -151,55 +152,30 @@ This policy targets:
 
 Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
 
-## Security defaults policies
+## Upgrade from security defaults
 
-The following policies are available for when you upgrade from using security defaults.
+When organizations [disable security defaults](../../fundamentals/security-defaults.md#disabling-security-defaults) to adopt Conditional Access, Microsoft automatically creates managed policies in the tenant to maintain the same protections. These policies ensure there's no gap in security coverage during the transition.
 
-- [Block legacy authentication](#block-legacy-authentication)
-- [Require multifactor authentication for Azure management](#require-multifactor-authentication-for-azure-management)
-- [Require multifactor authentication for admins](#require-multifactor-authentication-for-admins)
-- [Require multifactor authentication for all users](#require-multifactor-authentication-for-all-users)
+The following managed policies are created as part of the upgrade:
 
-### Block legacy authentication
-
-This policy blocks legacy authentication protocols from accessing applications. Legacy authentication refers to an authentication request made by:
-
-- Clients that don't use modern authentication (for example, an Office 2010 client)
-- Any client that uses older mail protocols such as IMAP, SMTP, or POP3
-- Any sign-in attempts to use legacy authentication. 
- 
-Most observed compromising sign-in attempts come from legacy authentication. Because legacy authentication doesn't support multifactor authentication, attackers can bypass multifactor authentication requirements by using older protocols.
-
-### Require multifactor authentication for Azure management
-
-This policy covers all users when they're trying to access various Azure services managed through the Windows Azure Service Management API including:
-
-- Azure portal
-- Microsoft Entra admin center
-- Azure PowerShell
-- Azure CLI
-
-Users must complete multifactor authentication to access these resources. 
-
-### Require multifactor authentication for admins
-
-This policy applies to users with highly privileged admin roles:
-
-[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
-
-These accounts must use multifactor authentication to sign in to any application. 
-
-### Require multifactor authentication for all users
-
-This policy applies to all users in your organization and requires multifactor authentication for every sign-in. In most cases, sessions persist on devices, so users don't need to complete multifactor authentication when interacting with other applications. 
+| Upgrade policy | Similar Microsoft-managed policy | Notes |
+| --- | --- | --- |
+| Block legacy authentication | [Block legacy authentication](#block-legacy-authentication) | Same scope. Blocks sign-in attempts from clients using legacy authentication protocols. |
+| Require multifactor authentication for Azure management | *No equivalent* | Unique to the security defaults upgrade. Requires MFA for all users accessing Azure Resource Manager services, including the Azure portal, Microsoft Entra admin center, Azure PowerShell, and Azure CLI. |
+| Require multifactor authentication for admins | [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals) | Broader scope. Requires MFA for privileged admin roles signing in to *all applications*, not just admin portals. Also includes Authentication Policy Administrator and Identity Governance Administrator roles. |
+| Require multifactor authentication for all users | [Multifactor authentication for all users](#multifactor-authentication-for-all-users) | Same scope. Requires MFA for all users in the organization. |
 
 ## Monitor and review
 
-The managed policy and the sign-in logs are the two places where you can see the effect of these policies on your organization.
+To see the effect of these policies on your organization and investigate changes to the policies, you have a few options.
 
-Review the **Policy impact** tab of the managed policy to see a summary of how the policy affects your environment.
+### Policy impact
+
+Select the **Policy impact** tab of the managed policy from within Conditional Access to see a summary of how the policy affects your environment. Adjust the filter, data format, and more to explore the policy's effect, even on report-only policies.
 
 :::image type="content" source="media/managed-policies/microsoft-managed-policy-impact-on-sign-in.png" alt-text="Screenshot showing the effect of a policy on the organization.":::
+
+### Sign-in logs
 
 Analyze the **Microsoft Entra sign-in logs** to see details about how the policies affect sign-in activity.
 
@@ -213,6 +189,17 @@ Analyze the **Microsoft Entra sign-in logs** to see details about how the polici
 1. Select a specific sign-in event, then select **Conditional Access**.
    - To investigate further, select the **Policy Name** to drill down into the configuration of the policies.
 1. Explore the other tabs to see the **client user** and **device details** that were used for the Conditional Access policy assessment.
+
+### Audit logs
+
+The **Microsoft Entra audit logs** are helpful when investigating changes made to a policy.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
+1. Set the **Service** filter to **Conditional Access**.
+1. If needed, select a specific **Activity** filter.
+
+The **Target(s)** column displays the name of the policy that was updated. Microsoft-managed policy names start with **Microsoft-managed:** so you can easily filter for them.
 
 ## Common questions
 
