@@ -110,7 +110,7 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
 
 1. Select any users or groups to exclude from the registration campaign, and then select **Save**.
 
-   :::image type="content" source="./media/how-to-mfa-registration-campaign/enabled-passkey-campaign.png" alt-text="Screenshot of the Registration campaign page in the Microsoft Entra admin center showing an enabled passkey campaign with authentication method, snooze settings, and include/exclude targets.":::
+   :::image type="content" source="./media/how-to-mfa-registration-campaign/enabled-passkey-campaign.png" alt-text="Screenshot of the Registration campaign page in the Microsoft Entra admin center showing an enabled passkey campaign with authentication method, snooze settings, and include/exclude targets." lightbox="./media/how-to-mfa-registration-campaign/enabled-passkey-campaign.png" border="true":::
 
 ## Enable the registration campaign policy using Graph Explorer
 
