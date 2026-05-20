@@ -4,7 +4,7 @@ description: Learn how to review and apply suggestions provided by the Security 
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-ms.date: 03/16/2026
+ms.date: 05/12/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -20,7 +20,7 @@ The Microsoft Entra Conditional Access Optimization Agent provides suggestions t
 This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
 > [!IMPORTANT]
-> The ServiceNow integration, multifactor authentication (MFA) gap analysis, and least-privileged access suggestions for agent identities in the Conditional Access Optimization Agent are currently in PREVIEW.
+> The ServiceNow integration and least-privileged access suggestions for agent identities in the Conditional Access Optimization Agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -36,7 +36,7 @@ This article provides an overview of the logic behind the suggestions and report
 ### Limitations
 
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- For policy consolidation, each agent run only looks at four similar policy pairs.
+- For policy consolidation, each agent run looks at 40 similar policy pairs.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
@@ -110,9 +110,12 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 
 Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions—flagging policies that exclude a large portion of users and recommending explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
 
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png" alt-text="Screenshot of a policy suggestion provided by the deep analysis feature." lightbox="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png":::
+
+
 Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and the "notes" option to provide context and rationale for your decision-making process.
 
-#### MFA gap analysis (Preview)
+#### MFA gap analysis
 
 Deep analysis includes an MFA gap analysis that scans all enabled Conditional Access policies in your tenant and identifies users not covered by any MFA policy. This analysis evaluates the entire tenant configuration, not just the last 24 hours of activity. When the agent finds a coverage gap, it explains why those users aren't covered and recommends a specific fix, such as adding users to an existing policy or creating a new one.
 

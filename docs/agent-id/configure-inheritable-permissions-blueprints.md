@@ -12,7 +12,9 @@ ms.reviewer: ergreenl
 
 # Configure inheritable permissions for agent identity blueprints
 
-Inheritable permissions let agent identities automatically inherit delegated permission (scopes) and application permissions (app-roles) from their parent agent identity blueprint. Use inheritable permissions to preauthorize a base set of scopes and roles so that newly created agent identities can take action without interactive user or admin consent prompts.
+Configure inheritable permissions on an agent identity blueprint to preauthorize a base set of delegated scopes and application roles. Agent identities created from the blueprint automatically inherit those permissions without interactive consent prompts.
+
+For conceptual background on how inheritable permissions relate to required resource access and direct permission grants, see [Inheritable permissions and required resource access](concept-inheritable-permissions.md).
 
 ## Prerequisites
 
@@ -23,15 +25,11 @@ Inheritable permissions let agent identities automatically inherit delegated per
 
 ## How inheritable permissions work
 
-You configure inheritable permissions for one or more resources on the agent identity blueprint, specifying which delegated scopes and application roles should be inherited by the blueprint's child agent identities. 
-
-Inheritable permissions are configured only on the agent identity blueprint  and granted on the agent identity blueprint principal. You won't see the inheritable permissions as permissions on the blueprint's child agent identities in the admin center nor when calling Microsoft Graph. During token issuance for an agent identity, the platform merges any eligible inherited scopes and roles with the individual agent identity's granted scopes and roles. The inherited scopes appear in the agent's delegated permission access token (has the 'idtyp' claim as "user") **scp** claim. Inherited application roles appear in the agent's application permission token (has the 'idtyp' claim as "app") in the token's **roles** claim.
-
-To be eligible for inheritance, the permission's resource must be listed as an inheritable permission in the agent identity blueprint, and the permission must be granted by an admin to the agent identity blueprint principal in the tenant. If inherited scopes or roles don't appear in tokens, verify that the agent identity blueprint principal (service principal) is granted the necessary delegated scopes and app-role assignments for the resource application before retrying token acquisition.
+During token issuance for an agent identity, the platform merges eligible inherited scopes with the agent's requested delegated scopes. Inherited scopes appear in the access token's **scp** claim and inherited roles appear in the **roles** claim. For details on inheritance conditions and the relationship between declarations, grants, and effective permissions, see [Inheritable permissions and required resource access](concept-inheritable-permissions.md).
 
 ## Inheritance patterns
 
-The following inheritance patterns are supported per resource app for both scopes and roles:
+The concept article describes inheritance patterns at a high level. The following table shows the specific `kind` values used in the API when you configure inheritance per resource app:
 
 | Inheritance | Kind | Description |
 |-------------|------|-------------|
@@ -362,6 +360,7 @@ HTTP/1.1 204 No Content
 
 ## Related content
 
+- [Inheritable permissions and required resource access](concept-inheritable-permissions.md)
 - [Create an agent identity from your blueprint](identity-platform/create-delete-agent-identities.md)
 - [Microsoft Entra roles and permissions for agent identities](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents)
 - [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](../identity-platform/v2-protocols.md)

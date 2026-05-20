@@ -1317,7 +1317,7 @@ After the client app successfully retrieves a list of strong authentication meth
 
 Microsoft Entra determines the default MFA method for the user by priority as follows:
 
-1. Use [a system-preferred MFA](../identity/authentication/concept-system-preferred-multifactor-authentication.md).
+1. Use [system-preferred authentication](../identity/authentication/concept-system-preferred-authentication.md).
 1. Use an MFA set as default on the user by the tenant administrator.
 1. User has only one registered MFA method. -->
 

@@ -5,8 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.topic: how-to
-ms.date: 03/31/2026
-ms.custom: agent-id-ignite
+ms.date: 04/27/2026
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to create an agent identity blueprint that defines the security and permissions template for my agent identities, so that I can efficiently manage multiple agents with consistent security policies.
 ---
@@ -15,22 +14,23 @@ ms.reviewer: dastrock
 
 An [agent identity blueprint](agent-blueprint.md) is used to create agent identities and request tokens using those agent identities. During the process for creating an agent identity blueprint, you set the [owner and sponsor](agent-owners-sponsors-managers.md) of that blueprint, to establish accountability and administrative relationships. You also configure an identifier URI and define a scope for agents created from this blueprint if the agent is designed to receive incoming requests from other agents and users.
 
-This guide walks you through creating an agent identity blueprint using the Microsoft Graph REST API and Microsoft Graph PowerShell.
+You can create an agent identity blueprint in two ways:
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
+- **Microsoft Entra admin center** — Use the wizard for a quick setup that creates the blueprint and its principal.
+- **Microsoft Graph API or PowerShell** — Create and fully configure the blueprint programmatically, including credentials, identifier URIs, scopes, and the blueprint principal in a single workflow.
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
-
 To create an agent identity blueprint, you need:
 
-- [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is required to grant Microsoft Graph Application permissions.
+- [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is the least privileged role required to grant Microsoft Graph Application permissions.
 - [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator) is required to grant Microsoft Graph delegated permissions.
 - Both [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) and [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles can create agent identity blueprints and agent identity blueprint principals.
     - [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) can configure federated identity credentials on an agent identity blueprint.
     - [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) can configure federated identity credentials on an agent identity blueprint and is required to add a secret or certificate credential.
 - If using PowerShell, version 7 is required.
+
+[!INCLUDE [blueprint-owner-delegated-permission](includes/blueprint-owner-delegated-permission.md)]
 
 ## Prepare your environment
 
@@ -55,15 +55,44 @@ Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint
 
 ## Create an agent identity blueprint
 
-Agent identity blueprints must have a sponsor, which is the human user or group that's accountable for the agent. An owner is recommended, which is human the user or group that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
+Agent identity blueprints must have a sponsor, which is the user or [supported group](agent-owners-sponsors-managers.md#sponsors) that's accountable for the agent. An owner is recommended, which is the user or service principal that can make changes to the agent identity blueprint. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
-#### [Microsoft Graph API](#tab/microsoft-graph-api)
+### Use the Microsoft Entra admin center
+
+You can create an agent identity blueprint directly in the Microsoft Entra admin center. The admin center wizard creates both the agent identity blueprint and its blueprint principal automatically.
+
+> [!NOTE]
+> The admin center wizard sets the blueprint name and assigns owners and sponsors. To configure credentials, identifier URIs, scopes, or permissions, use the Microsoft Graph API or PowerShell, or configure them after creation through the blueprint's detail pages in the admin center.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
+1. Select **New agent blueprint (Preview)**.
+1. On the **Basics** tab, enter a name in the **Agent blueprint name** field and select **Next**.
+
+    :::image type="content" source="media/create-blueprint/create-blueprint-wizard.png" alt-text="Screenshot of the create agent blueprint wizard showing the Basics tab with the agent blueprint name field." lightbox="media/create-blueprint/create-blueprint-wizard.png":::
+1. On the **Owners & Sponsors** tab, optionally change or add owners and sponsors for the blueprint:
+    - Select the pencil icon next to the **Owners** field to change or add users who can manage the blueprint.
+    - Select the pencil icon next to the **Sponsors** field to change or add users who can sponsor the blueprint.
+
+    > [!NOTE]
+    > Sponsors can be users, dynamic membership groups, or Microsoft 365 groups. Security groups and role-assignable groups are not supported as sponsors.
+1. Select **Next**.
+1. Review your settings, and then select **Create**.
+1. Select **Done** to exit the wizard or **Go to agent blueprint** to view the blueprint's detail page or configure more settings.
+
+For more information on managing agent identity blueprints, see [Manage agent identity blueprints](manage-agent-blueprint.md).
+
+### Create programmatically
+
+To create an agent identity blueprint using code, use the Microsoft Graph API or PowerShell.
+
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 This step creates the agent identity blueprint, assigns an owner and sponsor, and requires the following details:
 
 - The `AgentIdentityBlueprint.Create` permission.
 - The OData-Version header must be set to 4.0.
-- An owner and a sponsor.
+- A user ID for the owner and sponsor fields in the example request body. A sponsor is required, but an owner is optional.
 
 ```http
 POST https://graph.microsoft.com/v1.0/applications/
@@ -75,7 +104,7 @@ Authorization: Bearer <token>
   "@odata.type": "Microsoft.Graph.AgentIdentityBlueprint",
   "displayName": "My Agent Identity Blueprint",
   "sponsors@odata.bind": [
-    "https://graph.microsoft.com/v1.0/users/<id>",
+    "https://graph.microsoft.com/v1.0/users/<id>"
   ],
   "owners@odata.bind": [
     "https://graph.microsoft.com/v1.0/users/<id>"
@@ -107,8 +136,8 @@ Write-Host "Sponsor user: $($user.DisplayName) ($($user.Id))"
 $body = @{
     "@odata.type" = "Microsoft.Graph.AgentIdentityBlueprint"
     "displayName" = "My Agent Identity Blueprint"
-    "sponsors@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$($user.Id)")
-    "owners@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$($user.Id)")
+    "sponsors@odata.bind" = @("https://microsoft.graph.microsoft.com/v1.0/users/$($user.Id)")
+    "owners@odata.bind" = @("https://microsoft.graph.microsoft.com/v1.0/users/$($user.Id)")
 } | ConvertTo-Json -Depth 5
 
 $response = Invoke-MgGraphRequest `
@@ -190,7 +219,7 @@ New-MgApplicationFederatedIdentityCredential `
 
 For scenarios where managed identities won't work or if you're creating a blueprint locally for testing, use the following steps to add the credentials.
 
-#### [Microsoft Graph API](#tab/microsoft-graph-api)
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To send this request, you first need to obtain an access token with the delegated permission `AgentIdentityBlueprint.AddRemoveCreds.All`
 
@@ -207,7 +236,7 @@ Authorization: Bearer <token>
 }
 ```
 
-#### [Microsoft Graph PowerShell](#tab/powershell)
+### [Microsoft Graph PowerShell](#tab/powershell)
 
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId <your-tenant-id>
@@ -244,7 +273,7 @@ If the agents created with the blueprint will support interactive agents, where 
 
 To receive incoming requests from users and other agents, like for any web API, you need to define an identifier URI and OAuth scope for your agent identity blueprint:
 
-## [Microsoft Graph API](#tab/microsoft-graph-api)
+### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To send this request:
 - You need the permission `AgentIdentityBlueprint.UpdateAuthProperties.All`.
@@ -276,7 +305,7 @@ Authorization: Bearer <token>
 
 A successful call generates a 204 response.
 
-## [Microsoft Graph PowerShell](#tab/powershell)
+### [Microsoft Graph PowerShell](#tab/powershell)
 
 This step includes the following distinct tasks:
 
@@ -349,39 +378,48 @@ Invoke-MgGraphRequest -Method POST `
 
 Your agent blueprint is now ready and visible in the [Microsoft Entra admin center](https://entra.microsoft.com). In the next step, you'll use this blueprint to [create agent identities](create-delete-agent-identities.md).
 
-## Delete an agent identity blueprint
+## Register agents in the Agent 365 registry
 
-When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you should first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and agent users associated with the agent. Then you can delete the agent identity blueprint and its service principal. Refer to the [Prepare your environment](#prepare-your-environment) section to make sure you have all the right prerequisites in place.
+After you create an agent identity blueprint, register it in the [Agent 365 registry](/microsoft-365/admin/manage/agent-registry) so administrators can discover, govern, and manage the agent from the Microsoft 365 admin center. This section also provides instructions to add existing agent identity blueprints that might not currently appear in the Agent 365 registry.
 
-## [Microsoft Graph API](#tab/microsoft-graph-api)
+### Use the Microsoft 365 Agents SDK (Recommended)
 
-To send this request, you need the permission `AgentIdentityBlueprint.DeleteRestore.All`.
+The [Microsoft 365 Agents SDK](/microsoft-365/agents-sdk/) is now generally available and is the recommended way to build and provision agents. The SDK The SDK handles agent identity creation and registration in the Agent 365 registry for you, so your agent identities will appear automatically with no extra code. If you are starting a new agent project, or have flexibility to migrate existing code, use the SDK. It's the simplest, most durable path and avoids the need to coordinate multiple API calls yourself.
+
+### Use the Agent 365 CLI
+
+The [Agent 365 CLI](/microsoft-agent-365/developer/reference/cli/setup) is another option that handles setup for you, including agent registration. Follow the setup instructions using the [recommended execution order](/microsoft-agent-365/developer/reference/cli/setup#recommended-execution-order). Use the following command:
 
 ```http
-DELETE https://graph.microsoft.com/v1.0/applications/<agent-blueprint-id>
-OData-Version: 4.0
-Content-Type: application/json
-Authorization: Bearer <token>
+a365 setup all
 ```
 
-## [Microsoft Graph PowerShell](#tab/powershell)
+If registration fails, you can rerun just the registration step without having to go through the entire process. Use the following command:
 
-This step includes the following distinct tasks:
-
-- Install the required module if you haven't already.
-- Connect to your tenant with the `AgentIdentityBlueprint.DeleteRestore.All` scope.
-- Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
-
-```powershell
-$Id = "<agent-blueprint-id>"
-
-Invoke-MgGraphRequest `
-    -Method DELETE `
-    -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint/$($Id)" `
+```http
+a365 setup all --agent-registration-only
 ```
 
----
+### Call the Agent Registry API directly
 
+If you must create agent identity blueprints programmatically with the Microsoft Graph API, for example because you have existing identity-issuance workflows you can't change immediately, you need to add an explicit call to the Agent Registry API *after* creating the agent identity blueprint to post the corresponding agent card. This step registers the agent card in the Agent 365 registry so it appears for administrators.
+
+1. Create the agent identity blueprint using the Microsoft Graph API (as shown in the previous sections).
+1. Immediately follow with a call to the Agent Registry API to post the corresponding agent card, including the metadata your administrators need to govern it.
+1. Handle the two-call pattern in a retry-safe way so that a transient failure on either call leaves your environment in a recoverable state.
+
+For request and response schemas, required permissions, and code samples, see the [Agent Registry API reference](/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/overview).
+
+> [!TIP]
+> If you have existing agent identity blueprints that don't appear in the Agent 365 registry, register them using the Agent Registry API. For agent identity blueprints in bulk, use the batch endpoint. For more information, see [Agent Registry convergence with Microsoft Agent 365](agent-registry-convergence.md).
+
+### Existing agent identity blueprints that aren't in the Agent 365 registry
+
+For agent identity blueprints that were previously created using the Microsoft Entra Agent ID Graph API but are not currently visible in the Agent 365 registry, you can register them using the Agent Registry API. This step ensures they appear in the Agent 365 registry.
+
+## Delete an agent identity blueprint
+
+When an agent is decommissioned, delete the associated agent identity blueprint. Deleting the blueprint triggers automatic cleanup of all child agent identities and agents' user accounts. For step-by-step deletion and restore instructions, see [Delete and restore agent identity objects](howto-delete-agent-identity.md).
 
 ## Next step
 

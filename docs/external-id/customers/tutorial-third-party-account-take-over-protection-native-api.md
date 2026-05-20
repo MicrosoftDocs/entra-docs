@@ -15,6 +15,9 @@ author: garrodonnell
 
 This tutorial guides you through integrating third-party Account Takeover (ATO) protection providers with Native API authentication in Microsoft Entra External ID. By using a Web Application Firewall (WAF) to intercept authentication requests, you can implement risk-based MFA challenges during sign-in to protect against automated attacks and account compromise.
 
+> [!IMPORTANT]
+> Third-party ATO protection for native authentication is supported through a WAF placed in front of the native authentication API endpoints. This is the supported architecture for Native API flows. Microsoft Entra External ID doesn't expose a `RiskPreventionProvider`-style configuration for native authentication; risk evaluation is performed by your third-party provider via the WAF, and Microsoft Entra enforces the resulting MFA requirement through Conditional Access authentication context. Browser-delegated (web-hosted) sign-in flows aren't covered by this tutorial.
+
 > [!NOTE]
 > This tutorial assumes you manually make raw HTTP requests to execute the authentication flow. When possible, use a Microsoft-built and supported authentication SDK. See [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md) and [Tutorial: Prepare your iOS/macOS mobile app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
 
@@ -233,6 +236,16 @@ The following flow uses the WAF as the layer to evaluate the risk for the /token
 
 > [!TIP]
 > Your native app must be prepared to handle the MFA flow when triggered. Ensure your app can call the `/introspect` endpoint, handle the `/challenge` for email OTP, and submit the OTP value in the final `/token` call.
+
+### Test the end-to-end flow
+
+After you finish the configuration, validate the integration:
+
+1. Sign in with a test customer user from a low-risk context (for example, a known device and IP). The sign-in should complete without an MFA challenge.
+1. Repeat the sign-in from a context that your third-party ATO provider classifies as risky (for example, a new device, anonymized IP, or simulated bot traffic per your provider's testing guidance). The WAF should trigger the Conditional Access authentication context, and your app should receive a challenge that requires email OTP MFA before issuing tokens.
+1. Confirm that the `/token` response after MFA contains the expected access and ID tokens, and that sign-in telemetry in your tenant and provider dashboard reflects the risk decision.
+
+If MFA isn't triggered as expected, verify that the user has email configured as a strong authentication method, the Conditional Access policy targets the correct authentication context (for example, `c3`), and the WAF worker is invoking the provider's risk API and forwarding the auth context on the `/token` call.
 
 ## Next steps
 

@@ -24,10 +24,10 @@ items:
   - name: Configure per-app access to private resources
     href: quickstart-per-app-access.md
 - name: Tutorials
-  expanded: true
+  expanded: false
   items:
   - name: Internet Access labs
-    expanded: true
+    expanded: false
     items:
     - name: Get started
       href: tutorial-internet-access-introduction.md
@@ -46,7 +46,7 @@ items:
     - name: Configure content policies
       href: tutorial-internet-access-content-policies.md
   - name: Private Access labs
-    expanded: true
+    expanded: false
     items:
     - name: Get started
       href: tutorial-private-access-introduction.md
@@ -60,6 +60,31 @@ items:
       href: tutorial-private-access-app-segmentation.md
     - name: Intelligent Local Access
       href: tutorial-private-access-intelligent-local-access.md
+- name: Operations
+  expanded: false
+  items:
+  - name: Operations guide overview
+    href: overview-operations.md
+  - name: Common operations (RACI, change, metrics)
+    href: how-to-operations-common.md
+  - name: Operate Private Access
+    href: how-to-operate-private-access.md
+  - name: Operate Internet Access
+    href: how-to-operate-internet-access.md
+  - name: Operate Microsoft Traffic
+    href: how-to-operate-microsoft-traffic.md
+  - name: Operate Remote Networks
+    href: how-to-operate-remote-networks.md
+  - name: Templates
+    items:
+    - name: Daily health check
+      href: reference-daily-health-check.md
+    - name: Private Access health check
+      href: reference-private-access-health-check.md
+    - name: Change request template
+      href: reference-change-request-template.md
+    - name: Communication plan
+      href: reference-communication-plan.md
 - name: Samples
   expanded: false
   items: 
@@ -106,8 +131,15 @@ items:
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
-  - name: Configure antivirus-client coexistence
-    href: concept-edr-antivirus-coexistence.md
+  - name: Explicit Forward Proxy
+    expanded: false
+    items:
+    - name: Understand Explicit Forward Proxy
+      href: concept-explicit-forward-proxy.md
+    - name: Explicit Forward Proxy session management
+      href: concept-explicit-forward-proxy-session-management.md
+    - name: Proxy automatic configuration (PAC) files
+      href: concept-proxy-automatic-configuration-files.md
 - name: How-to guides
   expanded: true
   items:
@@ -122,6 +154,8 @@ items:
         href: how-to-install-android-client.md
       - name: Install the iOS client
         href: how-to-install-ios-client.md
+      - name: Configure antivirus-client coexistence
+        href: how-to-edr-antivirus-coexistence.md
   - name: Remote networks
     expanded: false
     items:
@@ -259,6 +293,17 @@ items:
         href: how-to-ai-prompt-injection-protection.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
+  - name: Explicit Forward Proxy
+    expanded: false
+    items:
+      - name: Configure Explicit Forward Proxy
+        href: how-to-configure-explicit-forward-proxy.md
+      - name: Configure a Conditional Access policy for Explicit Forward Proxy
+        href: how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md
+      - name: Configure HTTP header session management
+        href: how-to-configure-explicit-forward-proxy-headers.md
+      - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune mobile application management
+        href: how-to-configure-explicit-forward-proxy-intune-policy.md
   - name: Logs and monitoring
     expanded: false
     items:
@@ -319,6 +364,8 @@ items:
             href: troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md
       - name: Troubleshoot connectors
         href: troubleshoot-connectors.md       
+      - name: Troubleshoot prompt injection protection
+        href: troubleshoot-prompt-injection-protection.md
       - name: Troubleshoot application access
         href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"

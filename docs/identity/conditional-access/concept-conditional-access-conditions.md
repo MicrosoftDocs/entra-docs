@@ -124,7 +124,7 @@ This setting works with all browsers. However, to satisfy a device policy, like 
 | Windows Server 2019 | Microsoft Edge, [Chrome](#chrome-support) |
 | iOS | Microsoft Edge, Safari (see the notes) |
 | Android | Microsoft Edge, Chrome |
-| macOS | Microsoft Edge, Chrome, [Firefox 133+](https://support.mozilla.org/kb/firefox-enterprise-133-release-notes), Safari |
+| macOS | Microsoft Edge, [Chrome](#chrome-support), [Firefox 133+](https://support.mozilla.org/kb/firefox-enterprise-133-release-notes), Safari |
 | Linux Desktop|Microsoft Edge|
 
 These browsers support device authentication, allowing the device to be identified and validated against a policy. The device check fails if the browser is running in private mode or if cookies are disabled. 
@@ -139,8 +139,6 @@ These browsers support device authentication, allowing the device to be identifi
 >
 > [Chrome 111+](https://chromeenterprise.google/policies/#CloudAPAuthEnabled) is supported for device-based Conditional Access, but "CloudApAuthEnabled" needs to be enabled.
 >
-> macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device-based Conditional Access in Google Chrome.
-> 
 > macOS devices using the Firefox browser must be running macOS version 10.15 or newer and have the [Microsoft Enterprise SSO plug-in installed](/mem/intune-service/user-help/enroll-your-device-in-intune-macos-cp) and [configured appropriately](/entra/identity-platform/apple-sso-plugin#microsoft-intune-configuration).
 
 #### Why do I see a certificate prompt in the browser
@@ -155,7 +153,7 @@ For Chrome support in **Windows 10 Creators Update (version 1703)** or later, in
 
 To automatically enable the CloudAPAuthEnabled policy in Chrome, create the following registry key:
 
- - Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome`
+- Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome`
  - Name: `CloudAPAuthEnabled` 
  - Value: `0x00000001`
  - PropertyType: `DWORD`
@@ -195,6 +193,10 @@ This setting has an effect on access attempts made from the following mobile app
 | Outlook mobile app | Exchange Online | Android, iOS |
 | Power BI app | Power BI service | Windows 10, Android, and iOS |
 | Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) app | Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) | Windows 10, iOS, and Android |
+
+> [!NOTE]
+> For Apple devices, as Microsoft Entra ID transitions the storage of device identity keys from Apple Keychain to Apple Secure Enclave, the Microsoft Enterprise SSO plug‑in for Apple devices must be enabled for applications that do not use the Microsoft Authentication Library (MSAL), including Safari. Enabling the Enterprise SSO plug‑in ensures that these applications can participate in device-based authentication required by Conditional Access policies, such as Require device to be marked as compliant and Filter for devices condition. For more information about this transition to Apple Secure Enclave, see [Microsoft Enterprise SSO plug‑in for Apple devices – Microsoft identity platform on Microsoft Learn](/entra/identity-platform/apple-sso-plugin#device-identity-key-storage)
+
 
 ### Exchange ActiveSync clients
 

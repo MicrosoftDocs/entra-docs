@@ -86,6 +86,8 @@ On-premises synchronized objects can't be recovered through Backup and Recovery,
 
 Microsoft Entra Backup and Recovery is available for workforce tenants only. Microsoft Entra External ID tenants and Azure AD B2C tenants aren't supported.
 
+Microsoft Entra Backup and Recovery backs up and recovers Microsoft Entra directory objects. Microsoft 365 resources, such as mailboxes, OneDrive, or SharePoint sites, and Azure resources aren't backed up by Microsoft Entra Backup and Recovery.
+
 ## Related content
 
 - [View available backups](view-available-backups.md)

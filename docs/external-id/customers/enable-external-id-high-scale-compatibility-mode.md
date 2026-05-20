@@ -26,6 +26,9 @@ In this article, you’ll learn how to:
 
 This article assumes you've already chosen the **High Scale Compatibility (HSC) mode migration approach**. If you still need to decide between approaches (standard vs. HSC mode), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
+> [!IMPORTANT]
+> Enabling HSC mode is a significant tenant-level change and can only be reversed by contacting Microsoft support. Before you call the enable API, confirm you've reviewed the [HSC mode limitations](plan-your-migration-from-b2c-to-external-id.md#hsc-mode-limitations) — including gaps for social identity providers, passkeys, age gating, admin portal experience, and Conditional Access — and validated that your scenarios are supported.
+
 Before you begin, contact your Microsoft account team or raise a support ticket to request allowlisting for HSC mode. This process can take a few days to complete. You can't proceed to Stage 1 until your tenant is allowlisted.
 
 If your Azure AD B2C tenant uses custom attributes, verify that every custom attribute has a nonempty `description` value before enabling HSC mode. The enable API syncs custom attributes to the External ID context and fails if any attribute has a null or empty description. To check and fix attribute descriptions, see [Custom attribute sync fails](troubleshoot-high-scale-compatibility-mode.md#custom-attribute-sync-fails).
@@ -124,4 +127,5 @@ After the initial application is validated:
 - [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – Decide whether HSC mode or the standard approach is right for your tenant.
 - [Troubleshoot HSC mode](troubleshoot-high-scale-compatibility-mode.md) – Diagnose and resolve common errors when using the HSC API.
 - [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md) – Follow the standard approach implementation steps (for tenants that aren't using HSC mode).
+- [Services and integration partners for External ID](services-integration-partners.md) – Find a partner to help plan and execute your migration.
 - [B2C HSC native auth configuration sample](https://github.com/microsoft/b2c-hsc-native-auth-configuration) – Sample configuration for native authentication in HSC mode.

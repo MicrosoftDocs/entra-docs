@@ -6,7 +6,6 @@ author: Dickson-Mwendia
 ms.author: dmwendia
 ms.topic: how-to
 ms.date: 03/30/2026
-ms.custom: agent-id-ignite
 ms.reviewer: jomondi, dastrock
 
 #customer-intent: As a developer building autonomous agents, I want to authenticate my agent, grant it application permissions, and optionally create an agent's user account, so that my agent can operate independently and access Microsoft Graph and other resources.
@@ -253,14 +252,14 @@ Use the following steps to get an app role assignment.
 
 ### Request authorization from a tenant administrator
 
-To grant delegated permissions, construct the authorization URL that is used to prompt the administrator. The role parameter is used to specify the requested application permissions.
+To grant application permissions, construct the authorization URL that is used to prompt the administrator. The role parameter is used to specify the requested application permissions.
 
 Be sure to use the agent identity client ID in the following request.
 
 ```bash
 https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 ?client_id=<agent-identity-client-id>
-&role=User.Read.All
+&role=https://graph.microsoft.com/User.Read.All
 &redirect_uri=https://entra.microsoft.com/TokenAuthorize
 &state=xyz123
 ```
@@ -526,6 +525,9 @@ You can also use the agent's user account principal name instead of the object I
 ## Related content
 
 - [Agent identity access token claims](./agent-token-claims.md)
+- [Call Microsoft Graph API](call-api-microsoft-graph.md)
+- [Call custom APIs](call-api-custom.md)
+- [Call Azure services](call-api-azure-services.md)
 - [Acquire token using Microsoft Entra SDK for agent ID](./microsoft-entra-sdk-for-agent-identities.md)
 - [Microsoft Graph permissions reference](/graph/permissions-reference)
 - [Permissions and consent in the Microsoft identity platform](/entra/identity-platform/permissions-consent-overview)

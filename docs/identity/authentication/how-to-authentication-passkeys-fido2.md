@@ -89,7 +89,7 @@ You can work with your passkey vendor to determine the AAGUID of the passkey (FI
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 - If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
 - Policy size limit:
-  - The Authentication methods policy supports a size limit of 20 KB. You can't save more passkey profiles after the size limit is reached. To check the size, use the [Get authenticationMethodsPolicy Microsoft Graph API](/graph/api/authenticationmethodspolicy-get) to retrieve the JSON for the Authentication methods policy. Save the output as a .txt file, then right-click and select **Properties** to view the file size.
+  - The **Passkey (FIDO2)** policy supports a size limit of 20 KB. You can't save more passkey profiles after the size limit is reached.
   - Reference sizes:
     - Base passkey policy without changes: 1.44 KB
     - Target with 1 applied passkey profile: 0.23 KB
@@ -192,7 +192,6 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 
 ### Synced passkey requirements
 
-- To enable synced passkeys, your organization must have [passkey profiles](#enable-passkey-profiles) enabled.
 - An account with at least [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) permissions.
 - The following table outlines the minimum device requirements for using synced passkeys. The columns represent the device platform where the user signs in.
 
@@ -203,6 +202,8 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   Other passkey providers (such as 1Password, Bitwarden) | Check for a browser extension | Check for a browser extension | Check for an app. iOS 17+ | Check for an app. Android 14+
 
 ### Enable synced passkeys
+
+If you haven't opted in to passkey profiles yet and you have attestation enforcement off, synced passkeys are already enabled. Otherwise, you can follow these steps to enable synced passkeys:
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Make sure passkey profiles are enabled.
@@ -274,6 +275,12 @@ If a user's UPN changes, you can no longer modify passkeys (FIDO2) to account fo
 
 ## Related content
 
+After you enable passkey profiles, share end-user registration and sign-in guidance for each passkey type:
+
+- **Synced passkeys** — [Register a passkey (FIDO2)](how-to-register-passkey.md) | [Sign in with a passkey (FIDO2)](how-to-sign-in-passkey.md)
+- **Passkeys in Microsoft Authenticator** — [Enable passkeys in Authenticator](how-to-enable-authenticator-passkey.md) | [Register a passkey in Authenticator](how-to-register-passkey-authenticator.md) | [Sign in with passkeys in Authenticator](how-to-sign-in-passkey-authenticator.md)
+- **Microsoft Entra passkeys on Windows (preview)** — [Enable passkeys on Windows](how-to-authentication-entra-passkeys-on-windows.md)
+- **FIDO2 security keys** — [Register a passkey with a security key](how-to-register-passkey-with-security-key.md)
 - [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md)
 - [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md)
 - [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md)

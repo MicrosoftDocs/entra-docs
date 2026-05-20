@@ -8,8 +8,6 @@ items:
       href: concept-supported-features-customers.md
     - name: Data residency
       href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-    - name: Services and integration partners
-      href: services-integration-partners.md
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
 - name: Get started
@@ -19,22 +17,10 @@ items:
       href: concept-planning-your-solution.md
     - name: Create a tenant
       href: quickstart-tenant-setup.md
-    - name: Choose your authentication approach
-      items:
-        - name: Native authentication overview
-          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Challenge types
-          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Web fallback
-          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Choose an authentication approach
+      href: concept-choose-authentication-approach.md
     - name: Register an app
       href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-    - name: Enterprise applications
-      items:
-        - name: Add an enterprise application
-          href: how-to-add-enterprise-application.md
-        - name: Register a SAML app
-          href: how-to-register-saml-app.md
     - name: Add a sign-up and sign-in flow
       href: how-to-user-flow-sign-up-sign-in-customers.md
     - name: Add an application to the user flow
@@ -45,6 +31,12 @@ items:
       href: how-to-disable-sign-up-user-flow.md
     - name: Delete an external tenant
       href: how-to-delete-external-tenant-portal.md
+    - name: Enterprise applications
+      items:
+        - name: Add an enterprise application
+          href: how-to-add-enterprise-application.md
+        - name: Register a SAML app
+          href: how-to-register-saml-app.md
 - name: Migrate to External ID
   expanded: false
   items:
@@ -58,12 +50,16 @@ items:
       items:
         - name: Plan your migration
           href: plan-your-migration-from-b2c-to-external-id.md
+        - name: HSC mode limitations
+          href: plan-your-migration-from-b2c-to-external-id.md#hsc-mode-limitations
         - name: Standard migration
           href: migrate-from-b2c-to-external-id.md
         - name: Enable HSC mode
           href: enable-external-id-high-scale-compatibility-mode.md
         - name: Troubleshoot HSC mode
           href: troubleshoot-high-scale-compatibility-mode.md
+        - name: Services and integration partners
+          href: services-integration-partners.md
 - name: Security
   expanded: false
   items:
@@ -106,6 +102,12 @@ items:
       href: how-to-sign-in-alias.md
     - name: Native authentication
       items:
+        - name: Overview
+          href: /entra/identity-platform/concept-native-authentication?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Challenge types
+          href: /entra/identity-platform/concept-native-authentication-challenge-types?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Web fallback
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Native authentication user attribute builder
           href: /entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication how-to guides
@@ -301,6 +303,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback
                   href: /entra/identity-platform/tutorial-native-authentication-android-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add custom headers to network requests
+                  href: /entra/identity-platform/tutorial-native-authentication-android-custom-headers?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Call an API
                   href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                   displayName: multiple access token 
@@ -328,8 +332,12 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback
                   href: /entra/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add custom headers to network requests
+                  href: /entra/identity-platform/tutorial-native-authentication-ios-swift-custom-headers?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Call an API
                   href: /entra/identity-platform/tutorial-native-authentication-ios-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Implement WebView SSO
+              href: /entra/identity-platform/how-to-native-authentication-webview-sso?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Command-line interface (CLI) app tutorials
       items:
         - name: Node.js
@@ -385,7 +393,7 @@ items:
         - name: Language-specific branding
           href: how-to-customize-languages-customers.md
       - name: Branding themes
-        href: how-to-customize-branding-themes-apps.md
+        href: /entra/fundamentals/how-to-customize-branding-themes-apps?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Customize attribute collection
       items:
         - name: Collect custom user attributes during sign-up

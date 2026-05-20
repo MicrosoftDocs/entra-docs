@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/21/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Playvox so that I can streamline the user management process and ensure that users have the appropriate access to Playvox.
@@ -44,13 +44,13 @@ The scenario in this article assumes that you already have the following prerequ
 
 2. Select **Create API Key**.
 
-    ![Partial screenshot showing the location of the Create API Key button in the Playvox user interface.](media/playvox-provisioning-tutorial/create.png)
+    ![Screenshot showing the location of the Create API Key button in the Playvox user interface.](media/playvox-provisioning-tutorial/create.png)
 
 3. Enter a meaningful name for the API key, and then select **Save**. After the API key is generated, select **Close**.
 
 4. On the API key that you created, select the **Details** icon.
 
-    ![Partial screenshot showing the location of the Details icon, which is a magnifying glass, in the Playvox user interface.](media/playvox-provisioning-tutorial/api.png)
+    ![Screenshot showing the location of the Details icon, which is a magnifying glass, in the Playvox user interface.](media/playvox-provisioning-tutorial/api.png)
 
 5. Copy and save the **BASE64 KEY** value. Later, in the Azure portal, you enter this value in the **Secret Token** text box in the **Provisioning** tab of your Playvox application.
 
@@ -77,35 +77,33 @@ To configure automatic user provisioning for Playvox in Microsoft Entra ID:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 
-    ![Partial screenshot of the Azure portal, with Enterprise applications and All applications items highlighted](common/enterprise-applications.png)
+    ![Screenshot of the Azure portal with Enterprise applications and All applications items highlighted.](common/enterprise-applications.png)
 
-2. In the applications list, search for and select **Playvox**.
+1. In the applications list, search for and select **Playvox**.
 
     ![Partial screenshot of the applications list, with the application search box highlighted.](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+1. Select the **Provisioning** tab.
 
     ![Partial screenshot showing the Provisioning menu item.](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-    ![Partial screenshot of the Provisioning tab, showing the Automatic option selected in the Provisioning Mode drop-down list box.](common/provisioning-automatic.png)
+    ![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-5. In the **Admin Credentials** section, enter your Playvox **Tenant URL** as:
+1. In the **Tenant URL** field, enter your Playvox Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Playvox. If the connection fails, ensure your Playvox account has the required admin permissions and try again.
 
-    `https://{tenant}.playvox.com/scim/v1`
+    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-    Enter the **Secret Token** that you copied earlier in Step 2. Then, select **Test Connection** to ensure that Microsoft Entra ID can connect to Playvox. If the connection fails, make sure your Playvox account has Admin permissions and try again.
+1. Select **Create** to create your configuration.
 
-    ![Partial screenshot showing the Admin Credentials section, including Tenant URL and Secret Token text boxes, and with the Test Connection link highlighted.](common/provisioning-testconnection-tenanturltoken.png)
+1. Select **Properties** in the **Overview** page.
 
-6. In the **Notification Email** text box, enter the email address of a person or group who receives the provisioning error notifications. Then, select the **Send an email notification when a failure occurs** check box.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-    ![Partial screenshot showing the Notification Email text box and the email notification check box.](common/provisioning-notification-email.png)
+    ![Screenshot of the Provisioning properties page showing notification and deletion settings.](common/provisioning-properties.png)
 
-7. Select **Save**.
-
-8. In the **Mappings** section, select **Synchronize Microsoft Entra users to Playvox**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Playvox in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Playvox for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), make sure that the Playvox API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
@@ -120,21 +118,11 @@ To configure automatic user provisioning for Playvox in Microsoft Entra ID:
    |name.formatted|String|
    |externalId|String|
 
-10. To configure scoping filters, see the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. To enable the Microsoft Entra provisioning service for Playvox, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-    ![Partial screenshot  of Settings section, showing the Provisioning Status set to On.](common/provisioning-toggle-on.png)
-
-12. Still in **Settings**, define the users or groups to provision to Playvox by choosing the values you want in **Scope**.
-
-    ![Partial screenshot of the Settings section, showing the Scope drop-down list box.](common/provisioning-scope.png)
-
-13. When you're ready to provision, select **Save**.
-
-    ![Partial screenshot showing Save and Discard options.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer than later cycles. Later cycles occur approximately every 40 minutes, provided that the Microsoft Entra provisioning service is running.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

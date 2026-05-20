@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 # Customer intent: As an administrator, I want to enable the Intelligent Local Access (ILA) capability for Microsoft Entra Private Access, to optimize traffic flow for clients accessing Entra apps via private networks.
 ---
 
-# Enable Intelligent Local Access (preview)
+# Enable Intelligent Local Access
 
 Intelligent Local Access capability can help optimize the traffic flow from Microsoft Entra clients to Microsoft Entra Private Access apps when the client is on a corporate/private network. This article explains how to enable the Intelligent Private Network for Microsoft Entra Private Access.
 
@@ -19,9 +19,9 @@ Intelligent Local Access capability can help optimize the traffic flow from Micr
 
 To configure a Global Secure Access (GSA) Private Networks, you must have:
 
-- [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator) role or the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role.
+- [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator) role or the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role.
 
-- Product licensing. For details, see the licensing section of [What is Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- Product licensing. For details, see the licensing section of [What is Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Private Access overview
 
@@ -35,9 +35,9 @@ The GSA client uses DNS probes to determine if the client is inside the corporat
 
 To enable the Intelligent local access for Microsoft Entra Private Access, complete these steps. This procedure involves creating Private networks and adding application to the private network.
 
-1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
+1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
-2.  Browse to **Global Secure Access** **\> Connect \> Private networks**.
+2.  Browse to **Global Secure Access** **\> Connect \> Private networks**.
 
 3.  Select **Add Private network**.
 
@@ -45,15 +45,15 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 
 4.  In the **Add Private network** panel that opens, define following:
 
-    1.  Name - The friendly name of the network. 
+    1.  Name - The friendly name of the network. 
 
-    2.  DNS Servers - Server address used for DNS resolution.
+    2.  DNS Servers - Server address used for DNS resolution.
 
         1.  Internet Protocol version 4 (IPv4) address, such as 10.10.2.1, that identifies a DNS server on the network.
 
     3.  Fully qualified domain name
 
-        1.  The fully qualified domain name (FQDN) that needs to be resolved. 
+        1.  The fully qualified domain name (FQDN) that needs to be resolved. 
 
     4.  Enter the appropriate details for the selected Resolved to IP address type. Depending on what you select, fill in an appropriate value in the subsequent field **Resolved to IP address value**.
 

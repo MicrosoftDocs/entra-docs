@@ -19,8 +19,6 @@ This article provides operational best practices for designing, securing, and go
 
 For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md) and [Key concepts](identity-platform/key-concepts.md).
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## Design agent identity blueprints
 
 [Agent identity blueprints](identity-platform/agent-blueprint.md) are templates that define the security posture for all agent instances of a common kind. Thoughtful blueprint design is the foundation of well-governed agent deployments.
@@ -37,7 +35,7 @@ For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-micro
 
 - **Use the Agent ID framework for all agents.** Don't create AI agents as plain app registrations or service principals outside the Agent ID framework. Always use the supported [creation channels](agent-id-creation-channels.md) so agents are tracked as agent identities with built-in sponsor accountability and lifecycle controls.
 
-- **Create agent user accounts only when necessary.** [Agent user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent user accounts because they add complexity with licenses, group memberships, and user-level policies.
+- **Create agent's user accounts only when necessary.** [Agent's user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent's user accounts because they add complexity with licenses, group memberships, and user-level policies.
 
 ## Manage credentials securely
 
@@ -80,7 +78,7 @@ Effective governance prevents agent sprawl and ensures agents remain accountable
 
 - **Include agents in access reviews.** Configure periodic [access reviews](/entra/id-governance/access-reviews-overview) that include agent identities. Have sponsors attest every 6-12 months that each agent is still needed and properly configured. If a sponsor doesn't confirm, evaluate the agent for decommissioning.
 
-- **Monitor for orphaned agents.** Develop a quarterly review process to identify agents with missing sponsors, outdated metadata, or no recent activity. Reassign sponsorship or decommission unused agents. For a centralized view, see [View and manage agent identities](identity-platform/agent-lists.md).
+- **Monitor for orphaned agents.** Develop a quarterly review process to identify agents with missing sponsors, outdated metadata, or no recent activity. Reassign sponsorship or decommission unused agents. For a centralized view, see [View and filter agent identities](identity-platform/agent-lists.md).
 
 - **Use access packages for standardized access.** For agents with common access patterns (for example, a fleet of customer support agents), use [access packages](agent-access-packages.md) to grant time-bound, auditable access through approval workflows rather than direct permission assignments.
 
@@ -116,5 +114,6 @@ Smooth agent deployments require alignment between developers building agents an
 
 ## Related content
 
+- [Manage agent identities in your organization](manage-agent-identities-admin.md)
 - [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md)
 - [Microsoft Entra security for AI overview](security-for-ai-overview.md)

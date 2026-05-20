@@ -10,10 +10,10 @@ ms.topic: concept-article
 
 Passkeys (FIDO2) enable phishing-resistant authentication. They can replace weak credentials with strong phishing-resistant public/private-key credentials that can't be reused, replayed, or shared across services. They can be stored securely on a device or synced across trusted devices through an encrypted cloud service.
 
-In the Microsoft Entra ID authentication methods policy, administrators can enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires extra metadata from passkeys (FIDO2) that are registered with the tenant. As a vendor, your passkey (FIDO2) is usable when attestation is enforced if the following requirements are met.
+In the Microsoft Entra ID authentication methods policy, an Authentication Policy Administrator can enforce attestation for FIDO2 security keys. If **Enforce attestation** is selected, Microsoft requires extra metadata from passkeys (FIDO2) that are registered with the tenant. As a vendor, your passkey (FIDO2) is usable when attestation is enforced if attestation requirements are met.
 
 > [!NOTE]
-> Microsoft Entra ID supports device-bound and synced passkeys (FIDO2). For more information about how to enable passkeys (FIDO2), see [Enable passkeys (FIDO2) for your organization](how-to-enable-passkey-fido2.md).
+> Microsoft Entra ID supports device-bound and synced passkeys (FIDO2). For more information about how to enable passkeys (FIDO2), see [Enable passkeys (FIDO2) for your organization](how-to-authentication-passkeys-fido2.md).
 
 ## Attestation requirements
 
@@ -21,7 +21,7 @@ Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoallia
 
 FIDO2 standards (WebAuthn and CTAP) require providers to return a valid attestation statement.
 
-The specific requirements vary based on how an administrator configures attestation requirements in the **Passkeys (FIDO2)** Authentication methods policy.
+The specific requirements vary based on how an administrator configures attestation requirements in the **Passkeys (FIDO2)** policy.
 
 Attestation | Description
 --------------------|------------
@@ -53,8 +53,8 @@ ACS FIDO Authenticator Card|973446ca-e21c-9a9b-99f5-9b985a67af0f|&#10060;|&#1006
 ACS FIDO Authenticator NFC|c89e6a38-6c00-5426-5aa5-c9cbf48f0382|&#10060;|&#x2705;|&#x2705;|&#10060;
 Allthenticator Android App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers|5ca1ab1e-fa57-1337-f1d0-a117371ca702|&#x2705;|&#x2705;|&#10060;|&#10060;
 Allthenticator iOS App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|&#x2705;|&#x2705;|&#10060;|&#10060;
-Arculus FIDO 2.1 Key Card [P71]|3f59672f-20aa-4afe-b6f4-7e5e916b6d98|&#10060;|&#x2705;|&#10060;|&#10060;
-Arculus FIDO2/U2F Key Card|9d3df6ba-282f-11ed-a261-0242ac120002|&#10060;|&#x2705;|&#10060;|&#10060;
+Arculus FIDO 2.1 Key Card [P71]|3f59672f-20aa-4afe-b6f4-7e5e916b6d98|&#10060;|&#10060;|&#x2705;|&#10060;
+Arculus FIDO2/U2F Key Card|9d3df6ba-282f-11ed-a261-0242ac120002|&#10060;|&#10060;|&#x2705;|&#10060;
 ATKey.Card CTAP2.0|d41f5a69-b817-4144-a13c-9ebd6d9254d6|&#x2705;|&#10060;|&#10060;|&#10060;
 ATKey.Card NFC|da1fa263-8b25-42b6-a820-c0036f21ba7f|&#x2705;|&#x2705;|&#x2705;|&#10060;
 ATKey.Pro CTAP2.0|e1a96183-5016-4f24-b55b-e3ae23614cc6|&#x2705;|&#10060;|&#10060;|&#10060;
@@ -101,7 +101,7 @@ Feitian BioPass FIDO2 Pro Authenticator|4c0cf95d-2f40-43b5-ba42-4c83a11c04ba|&#x
 Feitian ePass FIDO Authenticator (CTAP2.1, CTAP2.0, U2F)|12755c32-8ad1-46eb-881c-e0b38d848b09|&#10060;|&#x2705;|&#10060;|&#10060;
 Feitian ePass FIDO-NFC (Enterprise Profile) (CTAP2.1, CTAP2.0, U2F)|39589099-9a75-49fc-afaa-801ca211c62a|&#10060;|&#x2705;|&#x2705;|&#10060;
 Feitian ePass FIDO-NFC(CTAP2.1, CTAP2.0, U2F)|78ba3993-d784-4f44-8d6e-cc0a8ad5230e|&#10060;|&#x2705;|&#x2705;|&#10060;
-Feitian ePass FIDO2 Authenticator|833b721a-ff5f-4d00-bb2e-bdda3ec01e29|&#10060;|&#10060;|&#10060;|&#10060;
+Feitian ePass FIDO2 Authenticator|833b721a-ff5f-4d00-bb2e-bdda3ec01e29|&#10060;|&#x2705;|&#10060;|&#10060;
 Feitian ePass FIDO2-NFC Authenticator|ee041bce-25e5-4cdb-8f86-897fd6418464|&#10060;|&#x2705;|&#x2705;|&#10060;
 Feitian ePass FIDO2-NFC Series (CTAP2.1, CTAP2.0, U2F)|234cd403-35a2-4cc2-8015-77ea280c77f5|&#10060;|&#x2705;|&#x2705;|&#10060;
 Feitian iePass FIDO Authenticator|3e22415d-7fdf-4ea4-8a0c-dd60c4249b9d|&#10060;|&#x2705;|&#10060;|&#10060;

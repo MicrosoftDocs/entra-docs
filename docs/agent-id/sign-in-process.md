@@ -5,7 +5,6 @@ author: omondiatieno
 ms.author: jomondi
 ms.topic: concept-article
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand the Microsoft Entra Agent ID sign-in process so that I can guide end users on how to safely sign in to AI agents using their work accounts.
 ---
@@ -73,7 +72,7 @@ It doesn't give the agent unlimited access. It only gets the specific items show
 
 ## Disable an agent or its permissions
 
-You (or an administrator) can remove or disable the agent or its permissions. For more information, see [manage agents in end user experience](/entra/agent-id/identity-platform/manage-agent). For global removal, administrators can delete the agent identity from the Microsoft Entra admin center.
+You (or an administrator) can remove or disable the agent or its permissions. For more information, see [manage agents in end user experience](manage-agent-identities-end-user.md). For global removal, administrators can delete the agent identity using Microsoft Graph API or Microsoft Entra PowerShell.
 
 ## Criteria to report a suspicious agent
 

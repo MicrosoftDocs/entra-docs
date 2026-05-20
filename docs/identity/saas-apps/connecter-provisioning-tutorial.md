@@ -5,7 +5,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 04/03/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Connecter so that I can streamline the user management process and ensure that users have the appropriate access to Connecter.
@@ -55,17 +55,17 @@ There are two main roles involved in the configuration:
 
 	![Screenshot of navigating to features tab.](media/connecter-provisioning-tutorial/feature-tab.png)
 
-6. *Optional*: If you would like to select a workspace that your team members are automatically added to when they are synchronized from Microsoft Entra ID select the **Workspace configuration** action and select the workspace and the permissions.
+1. *Optional*: If you would like to select a workspace that your team members are automatically added to when they are synchronized from Microsoft Entra ID select the **Workspace configuration** action and select the workspace and the permissions.
 
 	![Screenshot of selecting workspace configuration.](media/connecter-provisioning-tutorial/workspace-configuration.png)
 
-7. Select the **Authenticate** button. This will open the sign-in page. Sign in with your **Microsoft Entra admin** account to add Connecter to your enterprise applications.
+1. Select the **Authenticate** button. This will open the sign-in page. Sign in with your **Microsoft Entra admin** account to add Connecter to your enterprise applications.
 
 	![Screenshot of Microsoft Entra admin sign-in page.](media/connecter-provisioning-tutorial/azure-sign-in-page.png)
 
 
-8. Select **Get SCIM token**.
-9. Use the button to copy the token to your clipboard and save it for future purpose.
+1. Select **Get SCIM token**.
+1. Use the button to copy the token to your clipboard and save it for future purpose.
 
 <a name='step-3-add-connecter-from-the-azure-ad-application-gallery'></a>
 
@@ -98,21 +98,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your Connecter Tenant URL as `https://teamwork.connecterapp.com/scim/v2` and corresponding Secret Token obtained from step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Connecter. If the connection fails, ensure your Connecter account has Admin permissions and try again.
+1. In the **Tenant URL** field, enter your Connecter Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Connecter. If the connection fails, ensure your Connecter account has the required admin permissions and try again.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Connecter**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Connecter in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Connecter for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Connecter API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -123,21 +125,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |displayName|String||&check;|
    |externalId|String|||
    
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Connecter, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users that you would like to provision to Connecter by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

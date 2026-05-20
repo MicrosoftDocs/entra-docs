@@ -1,11 +1,11 @@
 {
     "__comment": "This file contains overrides for Microsoft Entra role definitions. It affects some info displayed on https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference VS what is retrieved through supporting Microsoft Graph APIs.",    "documentation": {
-        "roleDisplayNames": "(NOT HANDLED) Replace role display names",
+        "roleDisplayNames": "Replace role display names",
         "excludedRoles": "Roles to exclude from the documentation, with reasons for exclusion",
         "manualRoles": "(NOT HANDLED) Additional roles and their permissions to include in the documentation. These roles aren't available through Microsoft Graph APIs. Format the JSON object to match the API response format and avoid breaking the script.",
         "roleDescriptions": "Replace role descriptions",
         "resourceActionDescriptions": "Replace resource action descriptions",
-        "typos": "(NOT HANDLED) Common typos to fix in the documentation."
+        "typos": "Common typos and term normalizations to fix. Word-character keys (e.g., 'allowlist') are matched as whole words, case-insensitively, and preserve leading capitalization. Non-word keys (e.g., smart quotes) are replaced literally. Replacements skip text inside backtick code spans."
     },
     "roleDisplayNames": {
         "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator",

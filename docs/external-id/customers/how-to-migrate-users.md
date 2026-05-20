@@ -196,4 +196,5 @@ After you complete user and credential migration, return to the migrate guide to
 - [Migrate to External ID](migrate-to-external-id.md) – Overview of migrating from any legacy CIAM solution.
 - [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) – B2C-specific decision guidance and password preservation options.
 - [Just-in-time password migration](how-to-migrate-passwords-just-in-time.md) – Preserve passwords during migration using custom authentication extensions.
+- [Services and integration partners for External ID](services-integration-partners.md) – Find a partner to help plan and execute your migration.
 - [Custom authentication extensions](/entra/identity-platform/custom-extension-overview) – Invoke external logic during authentication flows.

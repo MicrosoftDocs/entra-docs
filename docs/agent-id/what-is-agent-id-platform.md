@@ -1,16 +1,15 @@
 ---
-title: What is Microsoft agent identity platform
+title: What is the Microsoft agent identity platform
 titleSuffix: Microsoft Entra Agent ID
 description: Learn about the Microsoft Agent Identity Platform, a comprehensive identity, and authorization framework designed specifically for AI agents. Key concepts include agent registry, authentication protocols, tokens, claims, and agent discovery capabilities.
 ms.date: 10/24/2025
 ms.topic: concept-article
-ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer or architect, I want to understand the Microsoft agent identity platform and its core components including identity constructs, authentication mechanisms, and token systems, so that I can build and manage AI agents with enterprise-grade identity and authorization.
 ---
 
-# What is Microsoft agent identity platform
+# What is the Microsoft agent identity platform
 
 The Microsoft agent identity platform is an identity and authorization framework built to address the unique authentication, authorization, and governance challenges posed by AI agents operating in enterprise environments.
 
@@ -18,11 +17,9 @@ Unlike nonagentic application identities designed for web services or user ident
 
 This overview introduces the core components of the Microsoft agent identity platform. It focuses on the identity constructs, authentication mechanisms, token systems, and discovery capabilities that form the foundation of agent identity management in enterprise environments.
 
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
-
 ## How to get started
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ## Platform architecture overview
 
@@ -44,15 +41,16 @@ The Microsoft agent identity platform uses OAuth for authorization and OpenID Co
 
 - **OAuth 2.0** allows agents to request access tokens that authorize them to access resources on behalf of themselves or users, supporting both application-only and delegated access scenarios.
 
-For more information, see [Oauth protocols](./agent-oauth-protocols.md)
+For more information, see [OAuth protocols](./agent-oauth-protocols.md).
 
 Tokens are the fundamental security mechanism enabling secure communication and authorization in the Microsoft agent identity platform. The platform supports multiple token flow patterns designed for specific operational scenarios. For more information, see [tokens in Microsoft agent identity platform](./agent-tokens.md)
 
 ## Integration and interoperability
 
 The Microsoft agent identity platform is designed to work seamlessly across the Microsoft ecosystem and beyond. It integrates with:
-- **Microsoft Entra ID**: The platform extends Microsoft Entra ID capabilities to support agent scenarios, using existing identity infrastructure and policies
-- **Platforms / services that create agents**: Platforms that create and manage agents can integrate with the Microsoft agent identity platform to secure agents. This includes both Microsoft-owned platforms like Copilot Studio and third-party platforms.
-- **Extended Microsoft identity and security products**: Integration with conditional access, identity protection, identity governance, global secure access, and other security services enable comprehensive agent security
 
-This interoperability ensures that organizations can build, deploy, and manage agent identities consistently regardless of where agents are created or deployed.
+- **Microsoft Entra ID**: The platform extends Microsoft Entra ID capabilities to support agent scenarios, using existing identity infrastructure and policies.
+- **Platforms and services that create agents**: Platforms that create and manage agents can integrate with the Microsoft agent identity platform to secure agents. This includes Microsoft-owned platforms like Copilot Studio and non-Microsoft platforms such as Amazon Web Services (AWS) Bedrock, n8n, and other agent frameworks that support OAuth 2.0 and OpenID Connect. Organizations can onboard agents from these platforms by using the [Microsoft Entra Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md) or [workload identity federation](/entra/workload-id/workload-identity-federation), with no platform-specific credential management required.
+- **Extended Microsoft identity and security products**: Integration with Conditional Access, identity protection, identity governance, Global Secure Access, and other security services enable comprehensive agent security.
+
+This interoperability ensures that organizations can build, deploy, and manage agent identities consistently regardless of where agents are created or deployed. For step-by-step guidance on integrating non-Microsoft agents, see [Integrate third-party agents with Microsoft Entra Agent ID](configure-third-party-agents.md).

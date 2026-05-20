@@ -1,7 +1,7 @@
 ---
-author: barclayn
-ms.author: barclayn
-ms.date: 01/31/2025
+author: kenwith
+ms.author: kenwith
+ms.date: 05/05/2026
 ms.service: entra-id
 ms.topic: include
 ms.custom: sfi-ga-nochange
@@ -59,11 +59,11 @@ The "reprocessing" button was originally introduced to address an issue with con
     Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/v1.0/users/$userid/reprocessLicense 
     ```
 
-### What if I don’t have a Microsoft 365 Admin account or license and I manage licenses from the Azure portal?
+### What if I don't have a Microsoft 365 Admin account or license and I manage licenses from the Azure portal?
 
 For non-Microsoft 365 users, transitioning to managing licenses through a Microsoft 365 Admin Center account is essential.
 
-Microsoft Entra ID roles: Global Administrator, User Administrator, and License Administrator have access to the Microsoft 365 Admin Center to manage licenses using their existing Microsoft Entra ID account. You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center. You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center, and can manage licenses there regardless. You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center, and can manage licenses there regardless. All Microsoft Entra customers have access to the Microsoft 365 Admin Center for domain and license management.
+Microsoft Entra ID roles: Global Administrator, User Administrator, and License Administrator have access to the Microsoft 365 Admin Center to manage licenses using their existing Microsoft Entra ID account. You don't have to be a Microsoft 365 customer to use the Microsoft 365 admin center, and can manage licenses there regardless. All Microsoft Entra customers have access to the Microsoft 365 Admin Center for domain and license management.
 
 ### How can I view license consumption and utilization now?
 
@@ -77,9 +77,9 @@ For detailed instructions on assigning licenses, visit the [Microsoft 365 Admin 
 
 ## Known Issues:
 
-- Users with the Group Administrator role can't assign licenses in the Microsoft 365 Admins Center.
+- Users with the Group Administrator role can't assign licenses in the Microsoft 365 Admin Center.
   - This functionality was fully supported in both the Azure portal and Microsoft Entra admin center. 
   - PowerShell continues to support the use of the Group Administrator role for license assignment.
-  - Alternatively Group Administrators can be given the Licenses Administrator role in order to assign group based Licenses from the Microsoft 365 Admin Portal.  
+  - Alternatively, Group Administrators can be given the License Administrator role to assign group-based licenses from the Microsoft 365 Admin Portal.  
 
-- We are loosing some detailed group license assignments logging. The Azure portal was able to provide a detailed error to administrators.
+- We are losing some detailed group license assignments logging. The Azure portal was able to provide a detailed error to administrators.
