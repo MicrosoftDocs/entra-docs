@@ -117,15 +117,15 @@ A complete authorization-at-scale strategy must cover non-human identities — s
 
 - **[App registration](~/identity-platform/quickstart-register-app.md).** Register an application to create a service principal that authenticates with a client secret, certificate, or federated credential. Use for traditional applications and platform integrations.
 - **[Managed identities](~/identity/managed-identities-azure-resources/overview.md).** Use system-assigned or user-assigned managed identities for workloads running in Azure. Azure provisions and rotates the credentials, so no secrets are stored in code or configuration.
-- **[Workload identity federation](~/workload-id/workload-identity-federation.md).** Configure trust between Microsoft Entra and an external identity provider so workloads outside Azure — such as GitHub Actions, Kubernetes, Google Cloud, AWS, or Terraform Cloud — can authenticate without storing secrets.
-- **[Flexible federated identity credentials](~/workload-id/workload-identities-flexible-federated-identity-credentials.md).** Extend the secretless pattern to user-assigned managed identities and to scenarios that require wildcard or claims-based matching.
+- **[Workload identity federation](~/workload-id/workload-identity-federation.md).** Configure trust between Microsoft Entra and an external identity provider so workloads outside Azure — such as GitHub Actions, Kubernetes, Google Cloud, AWS, or other OIDC-capable platforms — can authenticate without storing secrets.
+- **[Flexible federated identity credentials (preview)](~/workload-id/workload-identities-flexible-federated-identity-credentials.md).** Extend the secretless pattern to user-assigned managed identities and to scenarios that require wildcard or claims-based matching.
 
 Govern these identities at scale with the same layered controls you apply to users:
 
-- Apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md) to restrict where and when a service principal can authenticate.
-- Run [access reviews](~/id-governance/create-access-review-pim-for-groups.md) on service principals to confirm continued need.
+- Apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md) to restrict where and when a service principal can authenticate. This capability requires Workload Identities Premium licenses and applies only to single-tenant service principals registered in your tenant — managed identities and multitenant or third-party SaaS apps aren't in scope.
+- Run [access reviews of groups and applications](~/id-governance/create-access-review.md) to confirm that service principals and other principals still need their assignments.
 - Tag workload identities with [custom security attributes](~/fundamentals/custom-security-attributes-overview.md) so you can build a filterable inventory and drive [Azure ABAC](/azure/role-based-access-control/conditions-custom-security-attributes) decisions from business attributes.
-- Enable [app instance property lock](~/identity-platform/howto-configure-app-instance-property-locks.md) to prevent unauthorized modification of sensitive application properties.
+- Enable [app instance property lock](~/identity-platform/howto-configure-app-instance-property-locks.md) on multitenant apps to prevent unauthorized modification of sensitive properties on the service principal after the app is provisioned in another tenant.
 
 ## License requirements
 
