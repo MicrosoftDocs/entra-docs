@@ -34,7 +34,6 @@ In this tutorial, you:
 - A React or Angular SPA that uses native authentication. If you don't have one, complete one of the following tutorials first:
     - [Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md)
     - [Sign in users in an Angular single-page app by using native authentication](tutorial-native-authentication-single-page-app-angular-sign-in.md)
-- A version of `@azure/msal-browser` that exports `CustomAuthRequestInterceptor` from `@azure/msal-browser/custom-auth`.
 
 ## Understand header naming rules
 
