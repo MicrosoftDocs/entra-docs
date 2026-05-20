@@ -67,7 +67,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Thomson Reuters Account application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Thomson Reuters Account application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
 
-	![Screenshot for showing the fixed attribute values.](common/edit-attribute.png)
+    |Name| Entra ID attribute mapping |Value|
+    |--------|---------|--------------------|
+    |Unique UserIdentifier (Name ID)| user.objectid| A value that is both unique and persistent. Do not use an email address as that can change over time.|
+    |emailaddress| user.emailaddress |Email address of the user|
+    |givenname| user.givenname |First name of user|
+    |surname |user.surname |Last name of user|
+    |name |user.displayname |Full name of user|
 
 1. If you have chosen the **Identifier (Entity ID)** as `trtasso.thomson.com_TRAccount`, then click on the **Edit** option in **Attributes and Claims** and in the next page, click and expand **Advanced settings**, select the **Edit** option right next to **Advanced SAML claims** options. Once you do that, a pane will appear to the right from which you’ll have to check the **Append application ID to issuer** and click **Save**.
 
