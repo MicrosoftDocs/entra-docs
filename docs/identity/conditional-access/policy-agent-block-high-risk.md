@@ -10,6 +10,9 @@ ms.custom: msecd-doc-authoring-1012
 
 This Conditional Access policy template blocks [agent identities](../../agent-id/what-are-agent-identities.md) that are detected as high risk by [Microsoft Entra ID Protection](../../id-protection/concept-risky-agents.md), helping prevent potentially compromised AI agents from accessing your organization's resources.
 
+> [!IMPORTANT]
+> Before configuring a Conditional Access policy, read the [Conditional Access for agent identities](agent-id.md) article. It covers the authentication flow, service boundaries, and limitations to ensure you cover all scenarios and your corporate data and services are well protected.
+
 [!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 
 ## Create a Conditional Access policy

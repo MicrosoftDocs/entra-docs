@@ -527,6 +527,8 @@
                   href: tutorial-native-authentication-android-self-service-password-reset.md
                 - name: Support web fallback
                   href: tutorial-native-authentication-android-support-web-fallback.md
+                - name: Add custom headers to network requests
+                  href: tutorial-native-authentication-android-custom-headers.md
                 - name: Call an API
                   href: tutorial-native-authentication-android-sign-in-call-api.md
                   displayName: multiple access token

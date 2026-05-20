@@ -102,7 +102,7 @@ Policy can be scoped to:
 
 ## Workload identities 
 
-A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user. Conditional Access policies can be applied to single tenant service principals registered in your tenant. Non-Microsoft SaaS and multitenant apps are out of scope. Managed identities aren't covered by policy.
+A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user. Conditional Access policies can be applied to single tenant service principals registered in your tenant. Microsoft and third-party SaaS applications, including multitenant apps, are not covered by these policies. Managed identities aren't covered by policy.
 
 Organizations can target specific workload identities to be included or excluded from policy.
 
