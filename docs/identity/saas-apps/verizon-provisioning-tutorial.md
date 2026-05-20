@@ -55,7 +55,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 3. Copy the **URL Endpoint**, the **Token URL endpoint** and **Client ID** required for configuration and you will need to enter these in Microsoft Entra side. 
 4. Select any **additional attributes** you want to synchronize with Verizon’s Private Network.
-    > ![Note]
+    > [!Note]
     > Certain mandatory attributes (e.g. ICCID) are preselected and grayed out.
 5. Click **Save**.
 
