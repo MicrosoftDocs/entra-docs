@@ -63,7 +63,7 @@ When a user risk policy with the **Require password change** grant control is co
 - Risk detail: "-" -> "User performed secured password reset"
 
 > [!NOTE]
-> The risk detail value "User performed secured password reset" is a system-reported label. Despite the name, this value indicates the user completed a secure password change (MFA + password change), not a self-service password reset (SSPR) flow.
+> The risk detail value "User performed secured password reset" is a system-reported label. Despite the name, this value indicates the user completed a secure password change (MFA + password change), not a self-service password reset flow.
 
 #### Considerations for cloud and hybrid users
 
