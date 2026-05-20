@@ -133,7 +133,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 1. On the **New SAML/WS-Fed IdP** page, enter the following:
    - **Display name** - Enter a name to help you identify the partner's IdP.
    - **Identity provider protocol** - Select **SAML** or **WS-Fed**.
-   - **Domainless** - Selecting **Domainless** enforces no domain check of the user's email address. For more details, see [Domainless SAML IdP federation](./direct-federation.md#domainless-saml-idp-federation).
+   - **Domainless** - Selecting **Domainless** enforces no domain check of the user's email address. For more details, see [Domainless SAML IdP federation](./direct-federation.md#domainless-saml-idp-federation-preview).
    - **Domain name of federating IdP** - Enter your partner’s IdP target domain name for federation. During this initial configuration, enter just one domain name. You can add more domains later.
 
     :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-parse.png" alt-text="Screenshot showing the new SAML or WS-Fed IdP page.":::
@@ -179,7 +179,7 @@ You can test your federation setup by inviting a new B2B guest user. For details
 > [!NOTE]
 > You can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
  
-## Domainless SAML IdP federation
+## Domainless SAML IdP federation (Preview)
 
 Traditional federation in Microsoft Entra ID requires you to verify a custom domain (for example, `contoso.com`) and configure that domain to redirect authentication requests to an external SAML Identity Provider (IdP). In this setup, the domain of the email claim provided by the external IdP after authentication is validated against the domain associated with the configured SAML IdP in Microsoft Entra ID.
 

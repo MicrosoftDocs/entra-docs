@@ -74,7 +74,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     | Identifier |
     |-------------|
-    | `https://<SUBDOMAIN>.creatio.com/` |
+    | `https://<SUBDOMAIN>.creatio.com` |
 
     b. In the **Reply URL** text box, type a URL using one of the following patterns:
 
