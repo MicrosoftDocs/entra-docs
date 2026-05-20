@@ -1,7 +1,7 @@
 ---
 title: Manage emergency access admin accounts
 description: This article describes how to use emergency access accounts to help prevent being inadvertently locked out of your Microsoft Entra organization.
-ms.date: 04/22/2026
+ms.date: 05/20/2026
 ms.topic: how-to
 ms.custom: it-pro, sfi-ga-nochange
 ms.reviewer: mwahl
@@ -29,9 +29,7 @@ An organization might need to use an emergency access account in the following s
 
 Create two or more emergency access accounts. These accounts should be cloud-only accounts that use the \*.onmicrosoft.com domain and that aren't federated or synchronized from an on-premises environment. At a high level, follow these steps.
 
-1. Find your existing emergency access accounts or create new accounts with the Global Administrator role.
-
-    :::image type="content" source="./media/security-emergency-access/create-emergency-access-account.png" alt-text="Screenshot of creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account.png":::
+1. Find your existing emergency access accounts or [create new cloud-only users](../../fundamentals/how-to-create-delete-users.md#create-a-new-user) and assign them the Global Administrator role.
 
 1. Choose one of these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
 
