@@ -1,6 +1,6 @@
 ---
-title: Add custom headers to native auth requests in Android (Kotlin)
-description: Learn how to attach custom x-* headers to native auth network requests in an Android (Kotlin) app to integrate fraud-detection SDKs with Microsoft Entra External ID.
+title: Add custom headers to native authentication requests in Android (Kotlin)
+description: Learn how to attach custom x-* headers to native authentication network requests in an Android (Kotlin) app to integrate fraud-detection SDKs with Microsoft Entra External ID.
 author: henrymbuguakiarie
 manager: pmwongera
 
@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.custom: msecd-doc-authoring-105
 ms.date: 05/15/2026
 ai-usage: ai-assisted
-#Customer intent: As an Android developer, I want to attach custom headers to native auth network requests so that I can integrate fraud and bot-detection SDKs with my Microsoft Entra External ID app.
+#Customer intent: As an Android developer, I want to attach custom headers to native authentication network requests so that I can integrate fraud and bot-detection SDKs with my Microsoft Entra External ID app.
 ---
 
-# Tutorial: Add custom headers to native auth network requests in Android (Kotlin)
+# Tutorial: Add custom headers to native authentication network requests in Android (Kotlin)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
