@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 05/20/2026
 ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
-#Customer intent: As a JavaScript SPA developer using native authentication, I want to attach custom headers to native auth network requests so that I can integrate fraud and bot-detection SDKs with my Microsoft Entra External ID app.
+#Customer intent: As a JavaScript SPA developer using native authentication JavaScript SDK, I want to attach custom headers to network requests so that I can integrate fraud and bot-detection SDKs with my Microsoft Entra External ID app.
 ---
 
-# Tutorial: Attach custom x-* headers to native authentication requests in a React or Angular SPA
+# Tutorial: Add custom headers to network requests with native authentication JavaScript SDK 
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
