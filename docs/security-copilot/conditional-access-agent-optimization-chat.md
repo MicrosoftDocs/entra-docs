@@ -146,5 +146,5 @@ You're prompted a second time to turn on the policy. If you select **Confirm** a
 
 ## Related content
 
-- [Conditional Access optimization agent overview](./conditional-access-agent-optimization.md)
-- [Conditional Access optimization agent phased rollout](./conditional-access-agent-optimization-phased-rollout.md)
+- [Conditional Access Optimization Agent overview](./conditional-access-agent-optimization.md)
+- [Conditional Access Optimization Agent phased rollout](./conditional-access-agent-optimization-phased-rollout.md)
