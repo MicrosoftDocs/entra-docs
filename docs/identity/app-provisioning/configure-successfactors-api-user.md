@@ -1,14 +1,14 @@
 ---
 title: Configure SAP SuccessFactors API user
 description: Learn how to configure an API user in SAP SuccessFactors that can be used for provisioning integrations.
-author: 
-ms.author: 
-manager: 
+author: jenniferf-skc
+ms.author: jfields
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 05/19/2026
-ms.reviewer: 
+ms.reviewer: cmmdesai
 ms.custom: sap-successfactors, provisioning
 ---
 
@@ -16,10 +16,11 @@ ms.custom: sap-successfactors, provisioning
 
 A common requirement of all the SuccessFactors provisioning connectors is that they require credentials of a SuccessFactors account with the right permissions to invoke the SuccessFactors OData APIs. This section describes steps to create the service account in SuccessFactors and grant appropriate permissions. 
 
-* [Create/identify API user account in SuccessFactors](#createidentify-api-user-account-in-successfactors)
-* [Create an API permissions role](#create-an-api-permissions-role)
-* [Create a Permission Group for the API user](#create-a-permission-group-for-the-api-user)
-* [Grant Permission Role to the Permission Group](#grant-permission-role-to-the-permission-group)
+- [Configure SAP SuccessFactors API user](#configure-sap-successfactors-api-user)
+  - [Create/identify API user account in SuccessFactors](#createidentify-api-user-account-in-successfactors)
+  - [Create an API permissions role](#create-an-api-permissions-role)
+  - [Create a Permission Group for the API user](#create-a-permission-group-for-the-api-user)
+  - [Grant Permission Role to the Permission Group](#grant-permission-role-to-the-permission-group)
 
 ## Create/identify API user account in SuccessFactors
 Work with your SuccessFactors admin team or implementation partner to create or identify a user account in SuccessFactors to invoke the OData APIs. The username and password credentials of this account are required when configuring the provisioning apps in Microsoft Entra ID. 

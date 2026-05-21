@@ -1,14 +1,14 @@
 ---
 title: Configure workload identity-based authentication for SAP SuccessFactors provisioning (Preview)
 description: Learn how to replace basic authentication with short-lived, federated OpenID Connect tokens for Microsoft Entra provisioning to SAP SuccessFactors.
-author: 
-ms.author: 
-manager: 
+author: jenniferf-skc    
+ms.author: jfields
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 05/19/2026
-ms.reviewer: 
+ms.reviewer: cmmdesai
 ms.custom: sap-successfactors, workload-identity, provisioning
 ---
 
