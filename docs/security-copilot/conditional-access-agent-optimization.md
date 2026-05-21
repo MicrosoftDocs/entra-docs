@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
 
-ms.date: 05/12/2026
+ms.date: 05/21/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -125,7 +125,7 @@ The agent includes several powerful settings to expand the capabilities while ma
 - Allow the agent to create policies in report-only mode.
 - Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams.
 - Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md).
-- Allow the agent to create [passkey adoption campaigns](conditional-access-agent-optimization-passkeys.md).
+- View [passkey adoption campaign](conditional-access-agent-optimization-passkeys.md) suggestions from the agent.
 - Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation.
 - Provide [knowledge sources](conditional-access-agent-optimization-settings.md#knowledge-sources) to the agent for organization-specific suggestions.
 - View the [insights dashboard](conditional-access-agent-optimization-logs-metrics.md#insights-dashboard-preview) to track agent-driven Zero Trust improvements to security posture (preview).
