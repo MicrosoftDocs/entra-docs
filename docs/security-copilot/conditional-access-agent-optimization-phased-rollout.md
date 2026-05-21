@@ -4,7 +4,7 @@ description: Learn about the phased rollout capability for the Security Copilot 
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-ms.date: 03/02/2026
+ms.date: 05/21/2026
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -47,7 +47,10 @@ The agent can suggest a phased rollout plan when it creates new policies or to e
 
     :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
 
-- For existing report-only policies, look for **Phased rollout available (preview)** in the **Conditional Access - Policies** page.
+- For existing report-only policies, browse to the **Phased rollout** tab on the **Conditional Access - Policies** page. This dedicated tab provides a full lifecycle view of your rollouts: Discover → Generate → Monitor → Progress → Rollback.
+
+    You can also use the **Eligible for rollout** filter on the Conditional Access policies list to find policies that qualify for a phased rollout.
+
     :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list.png" alt-text="Screenshot of policy list with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list-expanded.png":::
 
 ### Administrator reviews, edits, and accepts the rollout plan
@@ -84,15 +87,11 @@ You're provided several options to manage the phased rollout during deployment. 
 - Select **Roll back to previous phase** to cancel the current phase and return to the previous phase.
 - Select **Mark rollout as complete** to apply the new policy to all groups and complete the deployment.
 
-- Select **Move to next phase** to advance each phase of the rollout.
-- Select **Roll back to previous phase** to cancel the current phase and return to the previous phase.
-- Select **Mark rollout as complete** to apply the new policy to all groups and complete the deployment.
-
 :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-manual-details.png" alt-text="Screenshot of a phased rollout plan in manual execution mode." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-manual-details.png":::
 
 ## Built-in safeguards
 
-Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified so the details can be reviewed and potentially modified.
+Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified and troubleshooting guidance is provided, which includes a report showing why sign-ins failed. This guidance always appears when a rollback is recommended, helping administrators quickly identify and resolve issues before resuming the rollout.
 
 ## Frequently asked questions
 
