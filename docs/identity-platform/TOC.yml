@@ -210,6 +210,8 @@
                     href: tutorial-native-authentication-single-page-app-react-enable-mfa.md
                   - name: Add social sign-in
                     href: tutorial-native-authentication-single-page-app-react-social-sign-in.md
+                  - name: Add custom headers to network requests
+                    href: tutorial-native-authentication-single-page-app-javascript-custom-headers.md
         - name: Angular
           items:
             - name: Browser-delegated authentication
@@ -236,6 +238,8 @@
                 href: tutorial-native-authentication-single-page-app-angular-enable-mfa.md
               - name: Add social sign-in
                 href: tutorial-native-authentication-single-page-app-angular-social-sign-in.md
+              - name: Add custom headers to network requests
+                href: tutorial-native-authentication-single-page-app-javascript-custom-headers.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
