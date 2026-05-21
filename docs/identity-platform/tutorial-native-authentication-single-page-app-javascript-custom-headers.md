@@ -1,5 +1,5 @@
 ---
-title: Add custom headers to native auth requests in JavaScript SPAs
+title: Add custom headers to native authentication requests in JavaScript SPAs
 description: Learn how to attach custom x-* headers to native authentication requests in a React or Angular SPA to integrate fraud-detection SDKs with Microsoft Entra External ID.
 author: kengaderdus
 manager: dougeby
@@ -17,22 +17,19 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial shows you how to attach custom `x-*` headers to native authentication network requests in a React or Angular single-page app (SPA). Use the `CustomAuthRequestInterceptor` from the native authentication JavaScript SDK to integrate third-party fraud and bot-detection SDKs such as Akamai, HUMAN, Prove, or ThreatMetrix.
-
-The same interceptor pattern applies to both React and Angular apps. The code is identical; only the location of your app configuration file differs.
+This tutorial shows you how to add custom `x-*` headers to native authentication network requests in a React or Angular single-page app (SPA). Use the `CustomAuthRequestInterceptor` from the native authentication JavaScript SDK to integrate third-party fraud and bot-detection SDKs.
 
 In this tutorial, you:
 
 > [!div class="checklist"]
 >
-> - Understand the header naming rules that MSAL enforces.
-> - Implement a `CustomAuthRequestInterceptor`.
-> - Register the interceptor on your `CustomAuthConfiguration`.
+> - Learn the header naming rules that our SDK enforces.
+> - Register the interceptor on your app configuration.
 > - Verify that your headers reach the intended endpoints.
 
 ## Prerequisites
 
-- A React or Angular SPA that uses native authentication. If you don't have one, complete one of the following tutorials first:
+A React or Angular SPA that uses native authentication JavaScript SDK. If you don't have one, complete one of the following tutorials first:
     - [Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md)
     - [Sign in users in an Angular single-page app by using native authentication](tutorial-native-authentication-single-page-app-angular-sign-in.md)
 
@@ -51,14 +48,14 @@ MSAL adds any header that passes both rules to the network request. If a header 
 
 ## Implement the request interceptor
 
-The `CustomAuthRequestInterceptor` interface declares a single method, `addAdditionalHeaderFields`, that MSAL calls before it sends each native authentication network request. Your implementation receives the request URL and returns a dictionary of headers to add, or `null` if no headers are needed for that request.
+The `CustomAuthRequestInterceptor` interface declares a single method, `addAdditionalHeaderFields`, that our SDK calls before it sends each native authentication network request. Your implementation receives the request URL and returns a dictionary of headers to add, or `null` if no headers are needed for that request.
 
-Open your app configuration file:
+1. Open your app configuration file such as:
 
-- **Angular**: `src/app/config/auth-config.ts`
-- **React (Next.js)**: `src/config/auth-config.ts`
+- `src/app/config/auth-config.ts` for Angular. 
+- `src/config/auth-config.ts` for React.
 
-Add the following interceptor above your existing `customAuthConfig` definition:
+1. Add the following interceptor above your existing `customAuthConfig` definition:
 
 ```typescript
 import { CustomAuthConfiguration, LogLevel } from "@azure/msal-browser/custom-auth";
@@ -104,7 +101,7 @@ export const customAuthConfig: CustomAuthConfiguration = {
 };
 ```
 
-The configuration shape is identical for the React and Angular samples.
+The configuration is identical for both React and Angular.
 
 ## Verify headers are applied
 
@@ -117,6 +114,4 @@ To confirm that your headers reach the intended endpoints, inspect the outgoing 
 ## Related content
 
 - [Native authentication overview](concept-native-authentication.md)
-- [Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md)
-- [Sign in users in an Angular single-page app by using native authentication](tutorial-native-authentication-single-page-app-angular-sign-in.md)
-- [Tutorial: Add custom headers to native auth network requests in iOS (Swift)](tutorial-native-authentication-ios-swift-custom-headers.md)
+- [Secure SMS MFA in native authentication with third‑party fraud protection](concept-native-authentication-sms-mfa-third-party-fraud-protection.md)
