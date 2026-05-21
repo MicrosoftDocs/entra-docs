@@ -18,7 +18,7 @@ ms.collection: msec-ai-copilot
 
 # Deploy passkey adoption campaigns with the Conditional Access Optimization Agent
 
-The Conditional Access Optimization Agent helps organizations plan and deploy campaigns that guide users toward stronger authentication methods. The agent supports deploying passkey adoption campaigns to help organizations roll out phishing-resistant authentication in a structured, intelligent, and automated way. Campaigns can target up to 200 users.
+The Conditional Access Optimization Agent helps organizations plan and deploy campaigns that guide users toward stronger authentication methods. The agent supports deploying passkey adoption campaigns to help organizations roll out phishing-resistant authentication in a structured, intelligent, and automated way.
 
 The agent is designed to reduce manual effort for large scale campaigns. The agent can:
 
@@ -40,9 +40,9 @@ The agent continuously evaluates progress and advances users through the campaig
 
 ## How the agent identifies passkey campaign candidates
 
-The passkey campaign capability is enabled by default. The agent automatically analyzes your tenant to identify users eligible for a passkey campaign. Currently, the agent targets privileged administrator users by default. For more information, see [Supported admin roles](#supported-admin-roles).
+The passkey campaign capability is enabled by default. The agent automatically analyzes your tenant to identify users eligible for a passkey campaign. Each campaign can include up to 200 users. Currently, the agent targets privileged administrator users by default. For more information, see [Supported admin roles](#supported-admin-roles).
 
-If you don't want to act on the passkey campaign recommendation, you can dismiss it like any other Conditional Access Optimization Agent suggestion.
+If you don't want to act on a passkey campaign suggestion, you can dismiss it like any other Conditional Access Optimization Agent suggestion.
 
 > [!NOTE]
 > Initial analysis can take several minutes. If **Review campaign** doesn't appear, you can select **Run analysis** on the suggestion card or wait for the agent's next scheduled run.

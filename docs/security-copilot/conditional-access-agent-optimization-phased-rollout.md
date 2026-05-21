@@ -41,17 +41,19 @@ You can review the groups included in each phase and make changes before and dur
 
 ## Agent identifies a report-only policy for phased rollout
 
-The agent can suggest a phased rollout plan when it creates new policies or to existing report-only policies that target all users. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
+The agent can suggest a phased rollout plan when it creates new policies or to existing any report-only policy that targets all users. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups. There are a few ways to find the phased rollout suggestions in the Microsoft Entra admin center:
 
 - For agent-created policies, look for **Suggested phased rollout** in the **Actions taken by agent** column in the list of suggestions.
 
     :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
 
-- For existing report-only policies, browse to the **Phased rollout** tab on the **Conditional Access - Policies** page. This dedicated tab provides a full lifecycle view of your rollouts: Discover → Generate → Monitor → Progress → Rollback.
+- For existing report-only policies, browse to the **Phased rollout** tab on the **Conditional Access - Policies** page. This dedicated tab provides a full lifecycle view of your phased rollout process.
 
-    You can also use the **Eligible for rollout** filter on the Conditional Access policies list to find policies that qualify for a phased rollout.
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-menu-option.png" alt-text="Screenshot of the Conditional Access policies page with the Phased rollout menu highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-menu-option.png":::
 
-    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list.png" alt-text="Screenshot of policy list with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list-expanded.png":::
+- Use the **Show policies eligible for phased rollout** filter button on the Conditional Access policies list to find policies that qualify for a phased rollout.
+
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list.png" alt-text="Screenshot of policy list with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list.png":::
 
 ### Administrator reviews, edits, and accepts the rollout plan
 
