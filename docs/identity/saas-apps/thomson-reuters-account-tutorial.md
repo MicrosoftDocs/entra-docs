@@ -11,7 +11,7 @@ ms.date: 05/07/2026
 
 # Configure Thomson Reuters Account for Single sign-on with Microsoft Entra ID
 
-In this article, you learn how to integrate Thomson Reuters Account with Microsoft Entra ID. When you integrate Thomson Reuters Account with Microsoft Entra ID, users will have access seamless Single-Sign On experience to the wide range of applications from Thomson Reuters that their organization has subscribed to. Also, you can:
+In this article, you learn how to integrate Thomson Reuters Account with Microsoft Entra ID. When you integrate Thomson Reuters Account with Microsoft Entra ID, users have a seamless single sign-on experience with the wide range of applications from Thomson Reuters that their organization has subscribed to. Also, you can:
 
 * Control in Microsoft Entra ID who has access to Thomson Reuters Account.
 * Enable your users to be automatically signed-in to Thomson Reuters Account with their Microsoft Entra accounts.
@@ -30,7 +30,7 @@ To configure the integration of Thomson Reuters Account into Microsoft Entra ID,
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **+ New application**.
-1. In the **Add from the gallery** section, type **Thomson Reuters Account** in the search box.
+1. In the **Add from the gallery** section, enter **Thomson Reuters Account** in the search box.
 1. Select **Thomson Reuters Account** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
@@ -52,32 +52,32 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     
     i. In the **Identifier (Entity ID)** select `trtasso.thomson.com` (by default) and proceed to step 5.b.
 
-    ii. In the **Identifier (Entity ID)** text box, type the URL: `trtasso.thomson.com_TRAccount `.
+    ii. In the **Identifier (Entity ID)** text box, enter the URL: `trtasso.thomson.com_TRAccount `.
 
-    >[!Note]
+    > [!NOTE]
     > If there’s an existing SSO configuration that is used to access Thomson Reuters products, then you won’t be able to select and save `trtasso.thomson.com` as the Identifier/Entity ID. In such a case you’ll get the below error. So, switch to `trtasso.thomson.com_TRAccount` as default by checking the checkbox next to it and delete the `trtasso.thomson.com` Entity ID else you won’t be able to save the configuration.
 
-    ![Screenshot that shows of identifier checkbox.](./media/thomson-reuters-account-tutorial/identifier.png)
+    ![Screenshot that shows the identifier checkbox.](./media/thomson-reuters-account-tutorial/identifier.png)
 
     b. In the **Reply URL** text box, type the URL:
     `https://trtasso.thomson.com/sp/ACS.saml2`
 
-    ![Screenshot that shows of reply url checkbox.](./media/thomson-reuters-account-tutorial/save-button.png)
+    ![Screenshot that shows the Reply URL configuration.](./media/thomson-reuters-account-tutorial/save-button.png)
 
 1. Thomson Reuters Account application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Thomson Reuters Account application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
 
-    |Name| Entra ID attribute mapping |Value|
+    |Name| Microsoft Entra ID attribute mapping |Value|
     |--------|---------|--------------------|
-    |Unique UserIdentifier (Name ID)| user.objectid| A value that is both unique and persistent. Do not use an email address as that can change over time.|
+    |Unique UserIdentifier (Name ID)| user.objectid| A value that is both unique and persistent. Don't use an email address as that can change over time.|
     |emailaddress| user.emailaddress |Email address of the user|
     |givenname| user.givenname |First name of user|
     |surname |user.surname |Last name of user|
     |name |user.displayname |Full name of user|
 
-1. If you have chosen the **Identifier (Entity ID)** as `trtasso.thomson.com_TRAccount`, then click on the **Edit** option in **Attributes and Claims** and in the next page, click and expand **Advanced settings**, select the **Edit** option right next to **Advanced SAML claims** options. Once you do that, a pane will appear to the right from which you’ll have to check the **Append application ID to issuer** and click **Save**.
+1. If you have chosen the **Identifier (Entity ID)** as `trtasso.thomson.com_TRAccount`, then select the **Edit** option in **Attributes and Claims** and in the next page, select and expand **Advanced settings**, select the **Edit** option right next to **Advanced SAML claims** options. Once you do that, a pane will appear to the right from which you have to check the **Append application ID to issuer** and select **Save**.
 
-    ![Screenshot of Advanced SAML claims options Entra side.](./media/thomson-reuters-account-tutorial/attributes.png)
+    ![Screenshot of Advanced SAML claims options Microsoft Entra side.](./media/thomson-reuters-account-tutorial/attributes.png)
 
 1. On the **Set up single sign-on with SAML** page, in the SAML Signing Certificate section, select copy button to copy **App Federation Metadata Url**.
 
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 To configure Single Sign-On on Thomson Reuters' side, you need to send the below details to the representative from Thomson Reuters whom you are working with to set up SSO:
 1. The **App Federation Metadata Url** of your configuration on Microsoft Entra ID.
 1. The **Identifier (Entity ID)** that was chosen (`trtasso.thomson.com` or `trtasso.thomson.com_TRAccount`).
-1. The **Email domains** of users from your organization that would access Thomson Reuters applications (This is used by the Thomson Reuters Team to enable SSO for those email domains).
+1. The **Email domains** of users from your organization that would access Thomson Reuters applications (This is used by the Thomson Reuters team to enable SSO for those email domains).
 
 ## Related content
 
