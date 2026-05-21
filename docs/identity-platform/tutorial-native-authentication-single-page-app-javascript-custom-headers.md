@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial shows you how to add custom `x-*` headers to native authentication network requests in a React or Angular single-page app (SPA). Use the `CustomAuthRequestInterceptor` from the native authentication JavaScript SDK to integrate third-party fraud and bot-detection SDKs.
+This tutorial shows you how to add custom `x-*` headers to native authentication network requests in a React or Angular single-page app (SPA). Use the `CustomAuthRequestInterceptor` from the native authentication JavaScript SDK to integrate with  third-party fraud and bot-detection providers.
 
 In this tutorial, you:
 
