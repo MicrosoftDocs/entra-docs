@@ -30,8 +30,9 @@ In this tutorial, you:
 ## Prerequisites
 
 A React or Angular SPA that uses native authentication JavaScript SDK. If you don't have one, complete one of the following tutorials first:
-    - [Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md)
-    - [Sign in users in an Angular single-page app by using native authentication](tutorial-native-authentication-single-page-app-angular-sign-in.md)
+
+- [Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md)
+- [Sign in users in an Angular single-page app by using native authentication](tutorial-native-authentication-single-page-app-angular-sign-in.md)
 
 ## Understand header naming rules
 
@@ -52,8 +53,8 @@ The `CustomAuthRequestInterceptor` interface declares a single method, `addAddit
 
 1. Open your app configuration file such as:
 
-- `src/app/config/auth-config.ts` for Angular. 
-- `src/config/auth-config.ts` for React.
+    - `src/app/config/auth-config.ts` for Angular. 
+    - `src/config/auth-config.ts` for React.
 
 1. Add the following interceptor above your existing `customAuthConfig` definition:
 
