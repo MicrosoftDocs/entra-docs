@@ -1,6 +1,6 @@
 ---
-title: Add custom headers to native authentication network requests in a JavaScript SPA
-description: Learn how to attach custom x-* headers to native authentication network requests in a React or Angular single-page app to integrate fraud-detection SDKs with Microsoft Entra External ID.
+title: Add custom headers to native auth requests in JavaScript SPAs
+description: Learn how to attach custom x-* headers to native authentication requests in a React or Angular SPA to integrate fraud-detection SDKs with Microsoft Entra External ID.
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
@@ -8,17 +8,18 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 05/20/2026
+ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
 #Customer intent: As a JavaScript SPA developer using native authentication, I want to attach custom headers to native auth network requests so that I can integrate fraud and bot-detection SDKs with my Microsoft Entra External ID app.
 ---
 
-# Tutorial: Add custom headers to native authentication network requests in a JavaScript SPA
+# Tutorial: Attach custom x-* headers to native authentication requests in a React or Angular SPA
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial shows you how to attach custom `x-*` headers to native authentication network requests in a React or Angular single-page app (SPA). You use the `CustomAuthRequestInterceptor` from the native authentication JavaScript SDK to integrate third-party fraud and bot-detection SDKs, such as Akamai, HUMAN, Prove, or ThreatMetrix.
+This tutorial shows you how to attach custom `x-*` headers to native authentication network requests in a React or Angular single-page app (SPA). Use the `CustomAuthRequestInterceptor` from the native authentication JavaScript SDK to integrate third-party fraud and bot-detection SDKs such as Akamai, HUMAN, Prove, or ThreatMetrix.
 
-The same interceptor pattern applies to both React and Angular apps. The code is identical, only the location of your app configuration file differs.
+The same interceptor pattern applies to both React and Angular apps. The code is identical; only the location of your app configuration file differs.
 
 In this tutorial, you:
 
@@ -37,7 +38,7 @@ In this tutorial, you:
 
 ## Understand header naming rules
 
-MSAL applies the following rules when it evaluates the headers that you provide. Use these rules to verify your vendor-required header names before you implement the interceptor:
+The Microsoft Authentication Library (MSAL) applies the following rules when it evaluates the headers that you provide. Use these rules to verify your vendor-required header names before you implement the interceptor:
 
 - Headers **must** start with `x-` (case-insensitive). MSAL ignores headers that don't start with `x-`.
 - MSAL ignores headers that start with any of the following reserved prefixes, because they're owned by the SDK:
@@ -46,8 +47,7 @@ MSAL applies the following rules when it evaluates the headers that you provide.
     - `x-broker-`
     - `x-app-`
 
-MSAL adds headers names that pass both rules to the network request. For any header name conflict not rejected by validation, the header name you provide is favored over the SDK-defined value.
-
+MSAL adds any header that passes both rules to the network request. If a header name you provide conflicts with one the SDK would set, your value takes precedence.
 
 ## Implement the request interceptor
 
@@ -112,7 +112,7 @@ To confirm that your headers reach the intended endpoints, inspect the outgoing 
 
 - Headers that start with `x-` and don't use a reserved prefix appear in the request.
 - Headers that use reserved prefixes (`x-client-`, `x-ms-`, `x-broker-`, `x-app-`) don't appear in the request.
-- Headers are sent only to the endpoints that you scoped them to.
+- Headers appear only on the endpoints you targeted in your interceptor.
 
 ## Related content
 
