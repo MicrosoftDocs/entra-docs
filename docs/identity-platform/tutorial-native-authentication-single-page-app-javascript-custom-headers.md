@@ -37,7 +37,7 @@ In this tutorial, you:
 
 ## Understand header naming rules
 
-MSAL applies the following rules when it evaluates the headers that you provide:
+MSAL applies the following rules when it evaluates the headers that you provide. Use these rules to verify your vendor-required header names before you implement the interceptor:
 
 - Headers **must** start with `x-` (case-insensitive). MSAL ignores headers that don't start with `x-`.
 - MSAL ignores headers that start with any of the following reserved prefixes, because they're owned by the SDK:
@@ -45,9 +45,9 @@ MSAL applies the following rules when it evaluates the headers that you provide:
     - `x-ms-`
     - `x-broker-`
     - `x-app-`
-- MSAL adds headers names that pass both rules to the network request. For any header name conflict not rejected by validation, the header name you provide is favored over the SDK-defined value.
 
-Use these rules to verify your vendor-required header names before you implement the interceptor.
+MSAL adds headers names that pass both rules to the network request. For any header name conflict not rejected by validation, the header name you provide is favored over the SDK-defined value.
+
 
 ## Implement the request interceptor
 
