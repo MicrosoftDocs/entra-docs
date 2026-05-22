@@ -208,7 +208,7 @@ After you complete the steps, use service logs to troubleshoot and verify the se
 - **SAP Cloud Identity Service troubleshooting logs** — In the SAP Cloud Identity Service admin portal access **Monitoring & reporting > Troubleshooting logs** to view actions of type `login` and `issueJwtToken` for the SAP IAS client identifier configured in Microsoft Entra.
     :::image type="content" source="./media/sap-successfactors-workload-identity/sap-ias-troubleshooting-logs.png" alt-text="Screenshot showing SAP Cloud Identity Service troubleshooting logs." lightbox="./media/sap-successfactors-workload-identity/sap-ias-troubleshooting-logs.png":::
 - **SAP SuccessFactors OData audit logs** — In the SAP SuccessFactors Admin center, access the **OData API Audit Log** and filter by the API User Login ID, to retrieve API call records.
-    :::image type="content" source="./media/sap-successfactors-workload-identity/successfactors-odata-api-audit-log.png" alt-text="Screenshot showing SAP Cloud Identity Service troubleshooting logs." lightbox="./media/sap-successfactors-workload-identity/successfactors-odata-api-audit-log.png":::
+    :::image type="content" source="./media/sap-successfactors-workload-identity/successfactors-odata-api-audit-log.png" alt-text="Screenshot showing the SAP SuccessFactors OData API audit log." lightbox="./media/sap-successfactors-workload-identity/successfactors-odata-api-audit-log.png":::
   You'll observe that prior to the change, the **HTTP Message** column in the logs had the string `authorization: Basic **********`. After switching to workload identity-based authentication, the **HTTP Message** column in the logs will display the string `authorization: Bearer **********`.
 
 ## Roll back
@@ -225,7 +225,7 @@ If you need to roll back, you can re-enable basic authentication in the SuccessF
 
 ## Related content
 
-- [Plan for change: Switch from basic auth to workload identity-based auth for SAP SuccessFactors provisioning integrations](https://learn.microsoft.com/en-us/entra/fundamentals/whats-new#plan-for-change---switch-from-basic-auth-to-workload-identity-based-auth-for-sap-successfactors-provisioning-integrations)
-- [Microsoft Entra ID and SAP SuccessFactors integration reference](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/sap-successfactors-integration-reference)
-- [Workload identity federation in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation)
-- [Federated identity credentials](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust)
+- [Plan for change: Switch from basic auth to workload identity-based auth for SAP SuccessFactors provisioning integrations](../../fundamentals/whats-new.md#plan-for-change---switch-from-basic-auth-to-workload-identity-based-auth-for-sap-successfactors-provisioning-integrations)
+- [Microsoft Entra ID and SAP SuccessFactors integration reference](sap-successfactors-integration-reference.md)
+- [Workload identity federation in Microsoft Entra ID](../../workload-id/workload-identity-federation.md)
+- [Federated identity credentials](../../workload-id/workload-identity-federation-create-trust.md)
