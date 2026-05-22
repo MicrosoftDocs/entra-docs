@@ -6,6 +6,7 @@ ms.date: 05/22/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
+ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
 
 ---
@@ -23,11 +24,11 @@ You can download the current version of the Global Secure Access client from the
 ## Version 2.30.130
 Released for download on June XX, 2026.
 ### Functional changes
-- When the **Sign Out** button is shown (on Microsoft Entra-joined devices with the appropriate registry key or on Microsoft Entra-registered devices), an account picker is added to make it easier to sign in to a different account.
-- Health check tests are enhanced to include **Single Windows user session detected**. The Global Secure Access client currently supports one interactive session in Windows.
-- In the **Connections** tab, active channels are shown in the following order: Microsoft Entra, Microsoft 365, Private, Internet.
+- Adds an account picker to the **Sign Out** flow to make it easier to sign in to a different account. The picker appears on Microsoft Entra-registered devices and on Microsoft Entra-joined devices that have the appropriate registry key set.
+- Adds a **Single Windows user session detected** health check test. The Global Secure Access client currently supports one interactive session in Windows.
+- Shows active channels in the **Connections** tab in this order: Microsoft Entra, Microsoft 365, Private, Internet.
 - The client status distinguishes between **network is disconnected** and **no internet connectivity**.
-- Enhancement to Intelligent Local Access: an information bar in the **Connections** tab indicates that the device is connected to a private network.
+- Enhancement to Intelligent Local Access: adds an information bar in the **Connections** tab that indicates when the device is connected to a private network.
 ### Other changes
 - The client installer includes .NET Runtime version 8.0.26.
 - Performance improvements when opening new connections.
