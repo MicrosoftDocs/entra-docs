@@ -46,7 +46,7 @@ Microsoft Entra provisioning service authenticates to SAP SuccessFactors using s
 2. **SAP Cloud Identity Service exchanges the JWT for an access token.** The signed JWT is presented to SAP Cloud Identity Service, which is trusted by SAP SuccessFactors. SAP Cloud Identity Service validates the JWT against the trust rules you configure in the SAP Cloud Identity Service admin console and returns a short-lived access token that can only be used to query the SAP SuccessFactors OData API.
 3. **The provisioning service calls the OData API.** Microsoft Entra provisioning service uses the short-lived access token to query the SAP SuccessFactors OData API. The access token includes a client ID that's mapped to a technical/API user in SAP SuccessFactors with role-based permission to access SAP SuccessFactors entities.
 
-:::image type="content" source="./media/sap-successfactors-workload-identity/entra-sap-workload-identity-detailed-flow.png" alt-text="Detailed runtime flow showing AT1 acquisition from Microsoft Entra, exchange for AT2 at SAP Cloud Identity Service, and the OData API call to SAP SuccessFactors." lightbox="./media/sap-successfactors-workload-identity/entra-sap-workload-identity-detailed-flow.png":::
+:::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/entra-sap-workload-identity-detailed-flow.png" alt-text="Detailed runtime flow showing AT1 acquisition from Microsoft Entra, exchange for AT2 at SAP Cloud Identity Service, and the OData API call to SAP SuccessFactors." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/entra-sap-workload-identity-detailed-flow.png":::
 
 ### Token exchange sequence diagram
 
@@ -57,7 +57,7 @@ The runtime exchange involves three cloud services (Microsoft Entra ID, SAP IAS 
 
 The following swim-lane shows who calls whom, in order, at runtime.
 
-:::image type="content" source="./media/sap-successfactors-workload-identity/token-exchange-sequence-diagram.png" alt-text="Sequence diagram of the runtime token exchange between Microsoft Entra provisioning service, the customer's Entra ID tenant, SAP Cloud Identity Service, and SAP SuccessFactors." lightbox="./media/sap-successfactors-workload-identity/token-exchange-sequence-diagram.png":::
+:::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/token-exchange-sequence-diagram.png" alt-text="Sequence diagram of the runtime token exchange between Microsoft Entra provisioning service, the customer's Entra ID tenant, SAP Cloud Identity Service, and SAP SuccessFactors." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/token-exchange-sequence-diagram.png":::
 
 ### Token claim reference
 
@@ -116,7 +116,7 @@ The configuration is a one-time setup that spans three admin consoles. The Micro
    > When you select **Pause provisioning**, the existing sync state and watermarks are preserved. After you switch the authentication method from basic authentication to workload identity, you can select **Start provisioning** and incremental provisioning cycles continue from the state where you paused provisioning.
 1. Select **Provisioning** and locate the **Connectivity** section. While basic authentication remains active, you see the **Admin password** and **Tenant URL** fields and a banner indicating that SAP is deprecating basic authentication by **November 2026** and that you should upgrade to workload identity-based authentication before that date.
 1. In the **Select authentication method** dropdown, select **Workload identity-based authentication** to start the guided configuration experience.
-  :::image type="content" source="./media/sap-successfactors-workload-identity/switch-to-workload-identity-authentication.png" alt-text="Screenshot showing how to switch to workload identity-based authentication" lightbox="./media/sap-successfactors-workload-identity/switch-to-workload-identity-authentication.png":::
+  :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/switch-to-workload-identity-authentication.png" alt-text="Screenshot showing how to switch to workload identity-based authentication" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/switch-to-workload-identity-authentication.png":::
 
 ### Step 2: Create or select the workload identity application
 
@@ -125,20 +125,20 @@ The guided experience prompts you to register a workload identity application. T
 1. Select **Select workload identity**. In the side-panel, choose one of the following:
    - **Register** to let the guided experience create a fresh workload identity app registration. You can optionally rename the default **App registration name**.
    - **Select existing** if you already configured a workload identity application that talks to SAP Cloud Identity Service (for example, if you have multiple SAP SuccessFactors provisioning apps and you want to reuse an existing workload identity app).
-     :::image type="content" source="./media/sap-successfactors-workload-identity/select-or-register-workload-identity-app.png" alt-text="Screenshot showing the register and select options." lightbox="./media/sap-successfactors-workload-identity/select-or-register-workload-identity-app.png":::
+     :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/select-or-register-workload-identity-app.png" alt-text="Screenshot showing the register and select options." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/select-or-register-workload-identity-app.png":::
 1. When you register a new workload identity app, the guided experience automatically creates a new app registration and attaches a **federated identity credential** to the workload identity application so the Microsoft Entra provisioning service (Sync Fabric) can impersonate the application running in your tenant and request the short-lived access token from SAP SuccessFactors.
    > [!TIP]
    > You can select the app registration link to open the app and inspect the federated identity credential on the workload identity application's **Certificates & secrets** > **Federated credentials** blade. Don't remove or rename it — Microsoft Entra provisioning service relies on this credential to acquire AT1 at runtime.
 1. After you select the workload identity application, Microsoft Entra displays the values that SAP Cloud Identity Service needs to trust tokens issued by your tenant. Keep this panel open and switch to the SAP Cloud Identity Service admin console.
-   :::image type="content" source="./media/sap-successfactors-workload-identity/workload-identity-setup-parameters.png" alt-text="Screenshot showing the workload identity setup parameters." lightbox="./media/sap-successfactors-workload-identity/workload-identity-setup-parameters.png":::
+   :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/workload-identity-setup-parameters.png" alt-text="Screenshot showing the workload identity setup parameters." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/workload-identity-setup-parameters.png":::
 
 ### Step 3: Copy the Microsoft Entra trust parameters into SAP Cloud Identity Service
 
 1. Sign in as administrator to the **SAP Cloud Identity Service admin console** associated with your SAP SuccessFactors instance.
 1. From the **Applications & Resources** menu, select **Applications** and select **Create** to create a new **OpenID Connect** application.
-   :::image type="content" source="./media/sap-successfactors-workload-identity/sap-ias-create-app.png" alt-text="Screenshot showing SAP IAS app creation options." lightbox="./media/sap-successfactors-workload-identity/sap-ias-create-app.png":::
+   :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-create-app.png" alt-text="Screenshot showing SAP IAS app creation options." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-create-app.png":::
 1. In the **Trust** tab, under **Application APIs**, select **Dependencies**. Add a new dependency so that this app can consume the APIs of your SAP SuccessFactors. From the **Application** dropdown, select your SAP SuccessFactors instance and from the **API** dropdown select `sf_technical_access`. Note down the **Dependency name** because you use it in step 5.
-   :::image type="content" source="./media/sap-successfactors-workload-identity/configure-successfactors-dependency.png" alt-text="Screenshot showing SAP IAS to SuccessFactors dependency configuration." lightbox="./media/sap-successfactors-workload-identity/configure-successfactors-dependency.png":::
+   :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/configure-successfactors-dependency.png" alt-text="Screenshot showing SAP IAS to SuccessFactors dependency configuration." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/configure-successfactors-dependency.png":::
 1. In the **Trust** tab, under **Application APIs**, select **Client Authentication**. Go to the **JSON Web Tokens > Configure Trust By Issuer** section and select **Add** to configure SAP IAS to trust Microsoft Entra issued tokens. From the Microsoft Entra panel, copy the following values into the corresponding fields in SAP Cloud Identity Service:
 
    | Microsoft Entra field | SAP Cloud Identity Service field |
@@ -148,7 +148,7 @@ The guided experience prompts you to register a workload identity application. T
    | **Subject** | Subject |
    | **Audience** | Audience |
 
-    :::image type="content" source="./media/sap-successfactors-workload-identity/configure-json-web-token-issuer-trust.png" alt-text="Screenshot showing which values to copy from Microsoft Entra provisioning app to SAP IAS app" lightbox="./media/sap-successfactors-workload-identity/configure-json-web-token-issuer-trust.png":::
+    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/configure-json-web-token-issuer-trust.png" alt-text="Screenshot showing which values to copy from Microsoft Entra provisioning app to SAP IAS app" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/configure-json-web-token-issuer-trust.png":::
 1. Save the trust configuration in SAP Cloud Identity Service. The configured trust enables SAP Cloud Identity Service to validate AT1 — verify the signature against the JWKS URI and confirm the subject and audience match — and issue AT2 (the SAP IAS access token with the `sf_technical_access` scope).
 
 ### Step 4: Configure OIDC OAuth Client Application mapping in SAP SuccessFactors
@@ -161,9 +161,9 @@ The SAP IAS client ID that's now part of the trust configuration must be mapped 
 1. Sign in to the **SAP SuccessFactors** admin console.
 1. Go to **Admin Center > Security Center > Manage OIDC OAuth Client Application**.
 1. Open the **Application Type** tab and select **Register** to register `Entra-Provisioning` as a new application type.
-    :::image type="content" source="./media/sap-successfactors-workload-identity/register-new-app-type-in-successfactors.png" alt-text="Screenshot showing registering new application type in SAP SuccessFactors" lightbox="./media/sap-successfactors-workload-identity/register-new-app-type-in-successfactors.png":::
+    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/register-new-app-type-in-successfactors.png" alt-text="Screenshot showing registering new application type in SAP SuccessFactors" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/register-new-app-type-in-successfactors.png":::
 1. Open the **Application Map** tab and select **Register** to bind the SAP IAS `Client ID` from step 3 to an existing technical/API user in SAP SuccessFactors.
-    :::image type="content" source="./media/sap-successfactors-workload-identity/sap-ias-to-successfactors-oidc-mapping.png" alt-text="Screenshot showing how to map SAP IAS client id to SuccessFactors technical/API user" lightbox="./media/sap-successfactors-workload-identity/sap-ias-to-successfactors-oidc-mapping.png":::
+    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-to-successfactors-oidc-mapping.png" alt-text="Screenshot showing how to map SAP IAS client id to SuccessFactors technical/API user" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-to-successfactors-oidc-mapping.png":::
 1. In the mapping, ensure that:
    - **Client ID** matches the SAP IAS client ID from the trust configuration in Step 3.
    - **User ID** is the SuccessFactors API user (for example, `entra.sap.admin`) whose **role-based permission group** grants OData API access to the Employee Central entities your provisioning job consumes. If you're switching from basic authentication to workload identity-based authentication, you can map the **Client ID** to the same API user that you configured for use with basic authentication.
@@ -177,7 +177,7 @@ SAP Cloud Identity Service generates one or more values that Microsoft Entra nee
 1. Set the `OAuth token endpoint` parameter to your SAP IAS authorization server's token endpoint. Example: `https://<ias-server>.accounts.ondemand.com/oauth2/token`
 1. Set the `Application API URL` parameter to your [SAP SuccessFactors OData API server](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/list-of-sap-successfactors-api-servers). Example: `https://apisalesdemo8.successfactors.com`.
 1. After you fill in all connectivity parameters, your configuration matches the layout shown in this screenshot.
-    :::image type="content" source="./media/sap-successfactors-workload-identity/sap-ias-to-successfactors-oidc-mapping.png" alt-text="Screenshot showing how to map SAP IAS client id to SuccessFactors technical/API user" lightbox="./media/sap-successfactors-workload-identity/sap-ias-to-successfactors-oidc-mapping.png":::
+    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-to-successfactors-oidc-mapping.png" alt-text="Screenshot showing how to map SAP IAS client id to SuccessFactors technical/API user" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-to-successfactors-oidc-mapping.png":::
 
 ### Step 6: Test the connection and activate workload identity-based authentication
 
@@ -186,7 +186,7 @@ Back in the Microsoft Entra admin center, validate the end-to-end token exchange
 1. In the workload identity configuration panel, select **Test connection**. Microsoft Entra performs the full runtime flow — acquire AT1 from the federated identity credential, exchange it for AT2 at SAP Cloud Identity Service, and call the SAP SuccessFactors OData API.
 1. Confirm that the test connection returns **successful**. If it fails, see the [Troubleshooting](#troubleshooting) section.
 1. Select **Save and activate**. Workload identity-based authentication becomes the active method for the SuccessFactors provisioning app.
-    :::image type="content" source="./media/sap-successfactors-workload-identity/workload-identity-as-active-auth-method.png" alt-text="Screenshot showing workload identity as the active authentication method." lightbox="./media/sap-successfactors-workload-identity/workload-identity-as-active-auth-method.png":::
+    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/workload-identity-as-active-auth-method.png" alt-text="Screenshot showing workload identity as the active authentication method." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/workload-identity-as-active-auth-method.png":::
 
 > [!NOTE]
 > Until November 2026, you can switch back to basic authentication at any time from the same **Authentication method** dropdown. After SAP retires basic authentication, only workload identity-based authentication is available.
@@ -204,11 +204,11 @@ Before turning provisioning on at full scale, validate the upgraded configuratio
 After you complete the steps, use service logs to troubleshoot and verify the setup:
 
 - **Microsoft Entra sign-in logs** — You can view sign-in events associated with the workload identity app in the Microsoft Entra admin portal under **Monitoring & health > Sign-in logs** in the **Service principal sign-ins** tab. You can filter by **Client credential type** == "Federated identity credential".
-    :::image type="content" source="./media/sap-successfactors-workload-identity/service-principal-sign-in-events.png" alt-text="Screenshot showing Microsoft Entra sign-in event logs of federated identity credential type." lightbox="./media/sap-successfactors-workload-identity/service-principal-sign-in-events.png":::
+    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/service-principal-sign-in-events.png" alt-text="Screenshot showing Microsoft Entra sign-in event logs of federated identity credential type." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/service-principal-sign-in-events.png":::
 - **SAP Cloud Identity Service troubleshooting logs** — In the SAP Cloud Identity Service admin portal access **Monitoring & reporting > Troubleshooting logs** to view actions of type `login` and `issueJwtToken` for the SAP IAS client identifier configured in Microsoft Entra.
-    :::image type="content" source="./media/sap-successfactors-workload-identity/sap-ias-troubleshooting-logs.png" alt-text="Screenshot showing SAP Cloud Identity Service troubleshooting logs." lightbox="./media/sap-successfactors-workload-identity/sap-ias-troubleshooting-logs.png":::
+    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-troubleshooting-logs.png" alt-text="Screenshot showing SAP Cloud Identity Service troubleshooting logs." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-troubleshooting-logs.png":::
 - **SAP SuccessFactors OData audit logs** — In the SAP SuccessFactors Admin center, access the **OData API Audit Log** and filter by the API User Login ID, to retrieve API call records.
-    :::image type="content" source="./media/sap-successfactors-workload-identity/successfactors-odata-api-audit-log.png" alt-text="Screenshot showing the SAP SuccessFactors OData API audit log." lightbox="./media/sap-successfactors-workload-identity/successfactors-odata-api-audit-log.png":::
+    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/successfactors-odata-api-audit-log.png" alt-text="Screenshot showing the SAP SuccessFactors OData API audit log." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/successfactors-odata-api-audit-log.png":::
   You can observe that before the change, the **HTTP Message** column in the logs had the string `authorization: Basic **********`. After switching to workload identity-based authentication, the **HTTP Message** column in the logs displays the string `authorization: Bearer **********`.
 
 ## Roll back
