@@ -33,11 +33,11 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. Under Permission settings, select **Permission...**, then scroll down the permission list and select **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
     > [!div class="mx-imgBorder"]
     > ![Manage integration tools](./media/configure-successfactors-api-user/manage-integration-tools.png)
-1. Scroll down in the same box and select **Employee Central API**. Add permissions as shown below to read using ODATA API and edit using ODATA API. Select the edit option if you plan to use the same account for the Writeback to SuccessFactors scenario.
+1. Scroll down in the same box and select **Employee Central API**. Add permissions to read using ODATA API and edit using ODATA API. Select the edit option if you plan to use the same account for the Writeback to SuccessFactors scenario.
     > [!div class="mx-imgBorder"]
     > ![Read write permissions](./media/configure-successfactors-api-user/odata-read-write-perm.png)
 
-1. In the same permissions box, go to **User Permissions -> Employee Data** and review the attributes that the service account can read from the SuccessFactors tenant. For example, to retrieve the *Username* attribute from SuccessFactors, ensure that "View" permission is granted for this attribute. Similarly review each attribute for view permission.
+1. In the same permissions box, go to **User Permissions** > **Employee Data** and review the attributes that the service account can read from the SuccessFactors tenant. For example, to retrieve the **Username** attribute from SuccessFactors, ensure that "View" permission is granted for this attribute. Similarly review each attribute for view permission.
 
     > [!div class="mx-imgBorder"]
     > ![Employee data permissions](./media/configure-successfactors-api-user/review-employee-data-permissions.png)
@@ -58,7 +58,7 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. Add a Group Name for the new group. The group name should indicate that the group is for API users.
     > [!div class="mx-imgBorder"]
     > ![Permission group name](./media/configure-successfactors-api-user/permission-group-name.png)
-1. Add members to the group. For example, you could select **Username** from the People Pool drop-down menu and then enter the username of the API account that's used for the integration.
+1. Add members to the group. For example, you could select **Username** from the People Pool dropdown menu and then enter the username of the API account that's used for the integration.
     > [!div class="mx-imgBorder"]
     > ![Add group members](./media/configure-successfactors-api-user/add-group-members.png)
 1. Select **Done** to finish creating the Permission Group.
@@ -68,7 +68,7 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. In SuccessFactors Admin Center, search for **Manage Permission Roles**, then select **Manage Permission Roles** from the search results.
 1. From the **Permission Role List**, select the role that you created for API usage permissions.
 1. Under **Grant this role to...**, select the **Add...** button.
-1. Select **Permission Group...** from the drop-down menu, then select **Select...** to open the Groups window to search and select the group created above.
+1. Select **Permission Group...** from the dropdown menu, then select **Select...** to open the Groups window to search and select the group that you created.
 1. Review the Permission Role grant to the Permission Group.
 1. Select **Save Changes**.
 
