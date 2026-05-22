@@ -100,13 +100,21 @@ NODE_USE_SYSTEM_CA=1 node <your-app>.js
 
 #### Environment Variable (all Node.js apps)
 
-To apply the setting permanently to all Node.js applications on the machine, set `NODE_USE_SYSTEM_CA` as a system environment variable:
+To apply the setting permanently for all Node.js applications, set `NODE_USE_SYSTEM_CA` as a persistent environment variable.
+
+For the current user:
 
 ```powershell
 setx NODE_USE_SYSTEM_CA 1
 ```
 
-After running this command, restart any open terminals for the change to take effect. All Node.js processes will then use the system certificate store automatically.
+For all users on the machine (requires administrator privileges):
+
+```powershell
+setx NODE_USE_SYSTEM_CA 1 /M
+```
+
+After running either command, restart any open terminals for the change to take effect. All Node.js processes will then use the system certificate store automatically.
 
 ## Applications don't work on mobile platforms
 Mobile applications might fail when TLS inspection is enabled due to certificate pinning, which restricts applications to trust only specific certificates.
