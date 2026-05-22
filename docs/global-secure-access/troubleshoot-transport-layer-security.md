@@ -84,15 +84,29 @@ Node.js doesn't use the operating system's certificate store by default. You can
 
 #### Command Line
 
-```bash
-node --use-system-ca app.js
-```
-
-#### Environment Variable
+Use the `--use-system-ca` flag when running your application. Replace `<your-app>.js` with your application's entry point (for example, `index.js` or `server.js`):
 
 ```bash
-NODE_USE_SYSTEM_CA=1 node app.js
+node --use-system-ca <your-app>.js
 ```
+
+#### Environment Variable (single session)
+
+Set the variable inline for a single command:
+
+```bash
+NODE_USE_SYSTEM_CA=1 node <your-app>.js
+```
+
+#### Environment Variable (all Node.js apps)
+
+To apply the setting permanently to all Node.js applications on the machine, set `NODE_USE_SYSTEM_CA` as a system environment variable:
+
+```powershell
+setx NODE_USE_SYSTEM_CA 1
+```
+
+After running this command, restart any open terminals for the change to take effect. All Node.js processes will then use the system certificate store automatically.
 
 ## Applications don't work on mobile platforms
 Mobile applications might fail when TLS inspection is enabled due to certificate pinning, which restricts applications to trust only specific certificates.
