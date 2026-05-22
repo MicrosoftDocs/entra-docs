@@ -95,17 +95,21 @@ If your legacy provider's complexity rules are equivalent to or stricter than th
 
 JIT password migration relies on [custom authentication extensions](/graph/api/resources/customauthenticationextension), which are subject to Microsoft Entra service limits and throttling. Plan your rollout with these constraints in mind, especially for high-volume migrations or large initial sign-in waves.
 
-At a high level, throttling and timeouts can apply to:
+At a high level, throttling and limits can apply to:
 
-- Custom authentication extension invocations per tenant. Microsoft Entra throttles sustained high volumes of extension calls to protect the service.
+- Per-call execution time and automatic retries for each custom authentication extension invocation.
+- Custom authentication extension invocations per tenant.
 - Sign-in requests originating from a single IP address or client.
-- Per-call execution: each custom authentication extension invocation must complete within **2,000 ms**, and the service performs at most **1 automatic retry** if the call fails or times out. See [Service limits](reference-service-limits.md).
+
+For the authoritative values — including the per-call timeout and retry count — see [Microsoft Entra External ID service limits](reference-service-limits.md).
 
 Your custom extension also makes outbound calls (for example, to Microsoft Graph or to your legacy identity provider). Those calls are governed by the target service's own throttling and aren't part of the Microsoft Entra extension limits; design your function to handle their transient errors independently.
 
-When the per-call timeout is exceeded or throttling is applied, the sign-in attempt fails and the user's password isn't migrated on that attempt. To reduce risk, stage your migration in waves, monitor sign-in telemetry for custom-extension failures and timeouts, and ensure your function handles transient errors gracefully.
+When the per-call timeout is exceeded or throttling is applied, the sign-in attempt fails and the user's password isn't migrated on that attempt. The user receives an HTTP 400 response with error code `AADSTS1100001` (underlying error code `100300`):
 
-For the latest published limits, see the [service limits documentation](reference-service-limits.md).
+> Non-retriable error has occurred.
+
+To reduce risk, stage your migration in waves, monitor sign-in telemetry for custom-extension failures and timeouts, and ensure your function handles transient errors gracefully.
 
 ## Stage 1: Prepare users for migration
 
