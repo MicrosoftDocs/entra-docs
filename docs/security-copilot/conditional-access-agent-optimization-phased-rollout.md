@@ -95,6 +95,19 @@ You're provided several options to manage the phased rollout during deployment. 
 
 Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified and troubleshooting guidance is provided, which includes a report showing why sign-ins failed. This guidance always appears when a rollback is recommended, helping administrators quickly identify and resolve issues before resuming the rollout.
 
+## Signals used for phased rollout group recommendations
+
+To ensure a safe and effective rollout of Conditional Access policies, the Conditional Access Optimization Agent analyzes several key signals to recommend the best groups for each stage of deployment. This approach helps minimize disruption while maximizing security coverage.
+
+- **Group size and reach**: The agent considers the size of each group relative to your total user base. Starting with smaller, representative groups allows for safer testing before expanding to broader populations.
+- **Historical policy performance**: The agent analyzes how users in a group have interacted with existing policies over time.
+    - High success rates indicate users are already meeting security requirements.
+    - High block rates might indicate potential friction points that need addressing before a strict rollout.
+    - The agent also looks at how often policies apply to the group's sign-ins.
+- **Usage patterns**: The agent assesses the volume of activity for each group. Groups with high activity levels provide more data points for validation, while low-activity groups might not generate enough signals for a confident pilot.
+- **Existing security controls**: The agent identifies which types of controls are already effective for the group to effectively suggest new policy types, reducing the likelihood of user confusion or lockout.
+- **Recent administrative context**: The agent considers groups that have been recently involved in policy changes or administrative actions, to ensure suggestions are current and reflect the latest organizational changes, rather than relying solely on static group definitions.
+
 ## Frequently asked questions
 
 ### How does the phased rollout capability work?
