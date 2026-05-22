@@ -71,6 +71,42 @@ When a consumer user account with the migration flag set to `true` signs in, the
    - **Block**: Authentication blocked (e.g., account locked in legacy system)
 - **Authentication completion** - If successful, the user is authenticated and future sign-ins bypass the custom extension.
 
+### Use the disableStrongPassword option for legacy complexity mismatches
+
+Microsoft Entra External ID enforces its own password complexity requirements. When you migrate users from a legacy identity provider whose complexity rules differ from External ID, passwords that were valid in the legacy system might not satisfy the External ID strong password policy. By default, those users are routed through the `UpdatePassword` flow and must reset their password during sign-in, even though their credentials are otherwise correct.
+
+The `disableStrongPassword` option for JIT password migration changes this behavior. It applies to all sign-in surfaces that invoke the `OnPasswordSubmit` custom authentication extension, including browser-based and Native Auth flows.
+
+- When `disableStrongPassword` is enabled, users aren't forced into a password reset solely because their existing password doesn't meet the External ID strong password complexity rules.
+- The minimum password length of 8 characters is still enforced. Passwords shorter than 8 characters continue to require a reset.
+- Expired passwords still require a reset. This option only relaxes the complexity check, not expiry or other credential-validity signals.
+- All other authentication controls, including the `Retry` and `Block` response actions, continue to apply unchanged.
+
+Use this option when you're migrating users at scale from a legacy identity provider with different complexity rules and you want to avoid forcing a reset for every affected user during the coexistence period. This option only affects the JIT migration scenario; it doesn't weaken authentication for users who are already migrated or for new accounts created directly in External ID.
+
+**Security trade-off**: When this option is enabled, External ID stores and accepts migrated passwords that don't meet its standard complexity rules until the user next changes their password. Time-box the JIT coexistence period and plan a final password rotation or forced reset so that all stored credentials eventually meet the External ID policy.
+
+If your legacy provider's complexity rules are equivalent to or stricter than the External ID strong password policy, leave `disableStrongPassword` disabled so that weak passwords are caught and reset through the `UpdatePassword` flow.
+
+> [!NOTE]
+> Configuration steps for `disableStrongPassword` are maintained alongside the custom authentication extension setup in Stage 2 and Stage 3. Confirm the current configuration surface with the JIT migration feature documentation before enabling this option in production.
+
+## Throttling and service limits
+
+JIT password migration relies on [custom authentication extensions](/graph/api/resources/customauthenticationextension), which are subject to Microsoft Entra service limits and throttling. Plan your rollout with these constraints in mind, especially for high-volume migrations or large initial sign-in waves.
+
+At a high level, throttling and timeouts can apply to:
+
+- Custom authentication extension invocations per tenant. Microsoft Entra throttles sustained high volumes of extension calls to protect the service.
+- Sign-in requests originating from a single IP address or client.
+- Per-call execution: each custom authentication extension invocation must complete within **2,000 ms**, and the service performs at most **1 automatic retry** if the call fails or times out. See [Service limits](reference-service-limits.md).
+
+Your custom extension also makes outbound calls (for example, to Microsoft Graph or to your legacy identity provider). Those calls are governed by the target service's own throttling and aren't part of the Microsoft Entra extension limits; design your function to handle their transient errors independently.
+
+When the per-call timeout is exceeded or throttling is applied, the sign-in attempt fails and the user's password isn't migrated on that attempt. To reduce risk, stage your migration in waves, monitor sign-in telemetry for custom-extension failures and timeouts, and ensure your function handles transient errors gracefully.
+
+For the latest published limits, see the [service limits documentation](reference-service-limits.md).
+
 ## Stage 1: Prepare users for migration
 
 Before implementing JIT migration, complete Stages 1 and 2 in [Migrate users and credentials to External ID](how-to-migrate-users.md). This ensures that:
@@ -988,7 +1024,7 @@ If you encounter issues during testing, see [Troubleshoot your custom authentica
 
 **Password complexity mismatch in Native Auth**: During a Native Auth flow, if a user enters a password that is correct according to the legacy identity provider but is considered weak by External ID password complexity standards an error is returned instead of redirecting to SSPR.
  
-This only affects users whose legacy passwords don't meet External ID requirements. Users with passwords that already meet External ID standards experience seamless migration without additional prompts.
+This only affects users whose legacy passwords don't meet External ID requirements. Users with passwords that already meet External ID standards experience seamless migration without additional prompts. To avoid forcing a password reset for users whose legacy passwords don't meet External ID complexity rules but are otherwise valid, see [Use the disableStrongPassword option for legacy complexity mismatches](#use-the-disablestrongpassword-option-for-legacy-complexity-mismatches).
 
 ## Frequently asked questions
 
