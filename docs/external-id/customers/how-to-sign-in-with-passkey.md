@@ -1,4 +1,4 @@
----
+Did y---
 title: Sign in with passkeys in Microsoft Entra External ID
 description: Learn how to enable passkeys (FIDO2) for phishing-resistant, passwordless sign-in in your consumer and business customer apps using Microsoft Entra External ID.
 ms.service: entra-external-id
@@ -15,42 +15,32 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Passkeys enable your customers to sign in securely without needing to remember passwords or enter one-time codes. They provide a phishing-resistant authentication method, using familiar gestures such as face, fingerprint, or PIN.
+This article explains how to enable passkeys (FIDO2) as a sign-in method for your consumer applications built on Microsoft Entra External ID. Passkeys let your customers sign in with face, fingerprint, PIN, or a security key, instead of remembering passwords or entering one-time codes. They provide phishing-resistant authentication.
 
-In an external tenant, passkeys can be used in two primary ways:
+In an external tenant, you can use passkeys in two ways:
 
-**1. Sign in with passkey (passwordless)**
+- **Passwordless sign-in.** The user enters their email or username. If a passkey is available, they're prompted to sign in with face, fingerprint, PIN, or a security key. The passkey completes first-factor authentication and also satisfies multifactor authentication (MFA) requirements.
+- **Passkey for MFA.** The user signs in with their email or username and password. If a passkey is registered, they complete MFA with the passkey — a phishing-resistant alternative to traditional verification methods.
 
-The user enters their email or username during sign-in. If a passkey is available, they're prompted to sign in using face, fingerprint, PIN, or security key instead of a password.
-
-- The passkey completes first-factor authentication.
-- It also satisfies multifactor authentication (MFA) requirements.
-
-This provides a fully passwordless sign-in experience.
-
-**2. Use passkey for MFA**
-
-The user signs in using their email or username and password. If a passkey is registered, the user can complete MFA using the passkey (face, fingerprint, PIN, or security key), providing a phishing-resistant alternative to traditional verification methods.
-
-Learn more about MFA options in [MFA in external tenants](concept-multifactor-authentication-customers.md).
-
-This article explains how to enable passkeys as a sign-in method for your consumer applications built on Microsoft Entra External ID.
+For more about MFA options, see [MFA in external tenants](concept-multifactor-authentication-customers.md).
 
 ## Prerequisites
 
 - A Microsoft Entra external tenant. [Create a free trial](https://aka.ms/ciam-free-trial) or use an existing external tenant.
 - An account with at least the [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) role to configure passkey policies.
-- A [custom URL domain](how-to-custom-url-domain.md) configured for your tenant. All passkeys are registered against the custom URL as the relying party (RP).
+- A [custom URL domain](how-to-custom-url-domain.md) configured for your tenant. Passkeys are registered against the custom URL as the relying party.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) associated with your application.
 - An app that's [registered](how-to-register-ciam-app.md) in your external tenant and added to the sign-up and sign-in user flow.
 
 ### End-user requirements
 
-- Email + password and username + password local accounts are supported to register a passkey.
-- These users must be capable of completing MFA before registering a passkey. [Set up MFA in your external tenant](how-to-multifactor-authentication-customers.md).
-- Customers need a WebAuthn-capable browser and device. See [supported platforms](#what-platforms-and-browsers-are-supported).
+- Only email + password and username + password local accounts can register a passkey.
+- Users must complete MFA before they register a passkey. To set up MFA, see [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md).
+- Customers need a WebAuthn-capable browser and device. For details, see [What platforms and browsers are supported?](#what-platforms-and-browsers-are-supported).
 
 ## Step 1: Enable the passkey (FIDO2) authentication method
+
+Turn on the passkey (FIDO2) authentication method for your tenant:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 
@@ -66,7 +56,9 @@ This article explains how to enable passkeys as a sign-in method for your consum
 
 ## Step 2: Configure passkey profiles
 
-Passkey profiles let you define different policies for different user groups. For detailed steps, see [Enable passkeys (FIDO2) in Microsoft Entra ID](/entra/identity/authentication/how-to-enable-passkey-fido2).
+Passkey profiles let you define different policies for different user groups. For full reference, see [Enable passkeys (FIDO2) in Microsoft Entra ID](/entra/identity/authentication/how-to-enable-passkey-fido2).
+
+To configure a profile:
 
 1. On the **Passkey (FIDO2)** policy page, select the **Configure** tab.
 
@@ -76,11 +68,9 @@ Passkey profiles let you define different policies for different user groups. Fo
 
 1. Configure the profile:
 
-    1. **Passkey types** — Select both **Synced** and **Device-bound** for maximum flexibility.
-
-    1. **Enforce attestation** — **No** for consumer scenarios (allows synced passkeys). **Yes** only for regulated environments.
-
-    1. **Key restrictions** — Leave disabled unless you need to allow or block specific authenticators by AAGUID.
+    - **Passkey types** — Select both **Synced** and **Device-bound** for maximum flexibility.
+    - **Enforce attestation** — Set to **No** for consumer scenarios (allows synced passkeys). Set to **Yes** only for regulated environments.
+    - **Key restrictions** — Leave disabled unless you need to allow or block specific authenticators by AAGUID.
 
 1. Under **Target**, assign the profile to the appropriate user groups.
 
@@ -99,15 +89,19 @@ The credential management experience should enable customers to:
 
 For a complete reference implementation, see the [passkey management sample app on GitHub](https://github.com/Azure-Samples/ms-eeid-passkey-sample-app). The sample is a React single-page application (SPA) that demonstrates how to sign in users with Microsoft Entra External ID and manage passkey credentials by using the Microsoft Graph API.
 
-## End-user sign-in experience
+## User experience
+
+The following sections describe what your customers see when they register, sign in with, or manage a passkey.
 
 ### Register a passkey
 
-1. The user signs in to the application with their email or username and password.
-1. The user navigates to the settings page to manage their credentials and selects the option to add a passkey.
-1. The user is required to complete MFA verification (must have completed MFA within the last five minutes).
-1. The browser presents the native passkey creation dialog:
-    - **Same device** — Windows Hello, iCloud Keychain, Google Password Manager, or a third-party provider (1Password, Bitwarden).
+The user registers a passkey from your credential management experience:
+
+1. The user signs in to your application with their email or username and password.
+1. The user goes to the settings page to manage their credentials and selects the option to add a passkey.
+1. The user completes MFA. They must have completed MFA within the last five minutes.
+1. The browser presents the native passkey creation dialog. The user chooses one of the following options:
+    - **Same device** — Windows Hello, iCloud Keychain, Google Password Manager, or a third-party provider such as 1Password or Bitwarden.
     - **Cross-device** — scan a QR code to register from a phone or tablet.
     - **Security key** — insert or tap a FIDO2 hardware key.
 1. The user completes verification with face, fingerprint, or PIN.
@@ -115,44 +109,34 @@ For a complete reference implementation, see the [passkey management sample app 
 
 ### Sign in with a passkey
 
-1. The user navigates to the application and starts the sign-in process.
+A registered user signs in with their passkey instead of a password:
 
+1. The user goes to your application and starts the sign-in process.
 1. The user enters their email address or username.
-
-1. If a passkey is registered:
-
-    1. The first time, the user signs in with a passkey by selecting **Use your face, fingerprint, PIN or security key instead**.
-
-    1. For subsequent sign-ins:
-
-        - The user is immediately prompted to authenticate using a passkey after entering their email address or username.
-        - The browser or platform might also surface the passkey automatically, for example, through autofill or a password manager.
-
-    1. For cross-device sign-in, the user selects the option to use a passkey from another device and scans a QR code with their phone or tablet to complete authentication.
-
-1. After successful authentication, the user is signed in to the application.
+1. If a passkey is registered, the sign-in experience depends on whether the user has signed in before:
+    - **First time.** The user selects **Use your face, fingerprint, PIN or security key instead**.
+    - **Subsequent sign-ins.** The user is immediately prompted to authenticate with a passkey. The browser or platform might also surface the passkey automatically through autofill or a password manager.
+    - **Cross-device sign-in.** The user selects the option to use a passkey from another device and scans a QR code with their phone or tablet.
+1. After successful authentication, the user is signed in to your application.
 
 ### Use a passkey for MFA
 
-When a Conditional Access policy requires the user to complete MFA and a passkey is registered as a verification method:
+When a Conditional Access policy requires MFA and the user has a registered passkey, the user can satisfy MFA with the passkey:
 
-1. The user navigates to the application and starts the sign-in process.
-
+1. The user goes to your application and starts the sign-in process.
 1. The user enters their email address or username and password.
+1. At the MFA prompt, the user selects the passkey option.
+1. The user completes verification with face, fingerprint, PIN, or security key.
 
-1. At the MFA prompt, the user selects the passkey option (if a passkey is registered).
-
-1. The user completes verification using face, fingerprint, PIN, or security key.
-
-After successful verification, the user is signed in to the application.
+After successful verification, the user is signed in to your application.
 
 ### Manage passkeys
 
-Through the credential management app, customers can:
+Through your credential management experience, customers can:
 
-- **View** registered passkeys (name, type, creation date).
+- **View** their registered passkeys (name, type, creation date).
 - **Delete** a passkey they no longer need.
-- **Register** additional passkeys for backup.
+- **Register** more passkeys for backup.
 
 ## Frequently asked questions
 
