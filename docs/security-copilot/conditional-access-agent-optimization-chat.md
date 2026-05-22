@@ -45,7 +45,7 @@ You can access the chat from the main Conditional Access Optimization Agent page
 
     - From any page in the Microsoft Entra admin center, select **Copilot chat** from the navigation menu then select the **Conditional Access Optimization Agent** for focused conversations. If you navigate away from the full-screen chat view, the chat moves to the side panel for continued interaction.
 
-    :::image type="content" source="media/conditional-access-agent-optimization-chat/copilot-chat-conditional-access-agent.png" alt-text="Screenshot of the Copilot chat interface with the Conditional Access Optimization Agent highlighted." lightbox="media/conditional-access-agent-optimization-chat/opilot-chat-conditional-access-agent.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-chat/copilot-chat-conditional-access-agent.png" alt-text="Screenshot of the Copilot chat interface with the Conditional Access Optimization Agent highlighted." lightbox="media/conditional-access-agent-optimization-chat/copilot-chat-conditional-access-agent.png":::
 
 1. Enter a prompt in the chat window using natural language from the supported scenarios in the [What you can do with chat](#what-you-can-do-with-chat) section. Quick-start prompts are provided to help you get started.
 
