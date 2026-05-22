@@ -78,6 +78,22 @@ COPY myTLSInspectionRootCA.crt /usr/local/share/ca-certificates/
 RUN apk update && apk add ca-certificates && update-ca-certificates
 ```
 
+### Troubleshooting for Node
+
+Node.js doesn't use the operating system's certificate store by default. You can configure Node.js to use the system certificate store using one of the following methods:
+
+#### Command Line
+
+```bash
+node --use-system-ca app.js
+```
+
+#### Environment Variable
+
+```bash
+NODE_USE_SYSTEM_CA=1 node app.js
+```
+
 ## Applications don't work on mobile platforms
 Mobile applications might fail when TLS inspection is enabled due to certificate pinning, which restricts applications to trust only specific certificates.
 
