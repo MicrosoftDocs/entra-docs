@@ -1,4 +1,4 @@
-Did y---
+---
 title: Sign in with passkeys in Microsoft Entra External ID
 description: Learn how to enable passkeys (FIDO2) for phishing-resistant, passwordless sign-in in your consumer and business customer apps using Microsoft Entra External ID.
 ms.service: entra-external-id
