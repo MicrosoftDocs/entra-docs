@@ -71,3 +71,7 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. Select **Permission Group...** from the drop-down menu, then select **Select...** to open the Groups window to search and select the group created above.
 1. Review the Permission Role grant to the Permission Group.
 1. Select **Save Changes**.
+
+## Related content
+
+- [Configuring SuccessFactors for the integration](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md#configuring-successfactors-for-the-integration)
