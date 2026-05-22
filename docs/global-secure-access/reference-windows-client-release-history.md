@@ -2,7 +2,7 @@
 title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.topic: reference
-ms.date: 04/27/2026
+ms.date: 05/22/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 ms.reviewer: lirazbarak
@@ -19,6 +19,22 @@ You can download the current version of the Global Secure Access client from the
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted." lightbox="media/reference-windows-client-release-history/client-download-screen.png":::
+
+## Version 2.30.130
+Released for download on June XX, 2026.
+### Functional changes
+- When the **Sign Out** button is shown (on Microsoft Entra-joined devices with the appropriate registry key or on Microsoft Entra-registered devices), an account picker is added to make it easier to sign in to a different account.
+- Health check tests are enhanced to include **Single Windows user session detected**. The Global Secure Access client currently supports one interactive session in Windows.
+- In the **Connections** tab, active channels are shown in the following order: Microsoft Entra, Microsoft 365, Private, Internet.
+- The client status distinguishes between **network is disconnected** and **no internet connectivity**.
+- Enhancement to Intelligent Local Access: an information bar in the **Connections** tab indicates that the device is connected to a private network.
+### Other changes
+- The client installer includes .NET Runtime version 8.0.26.
+- Performance improvements when opening new connections.
+- The **Global Secure Access Forwarding Profile Service** is configured to automatically restart on failure.
+- New telemetries are available.
+- Accessibility improvements.
+- Miscellaneous bug fixes and improvements.
 
 ## Version 2.28.96
 Released for download on April 27, 2026.
