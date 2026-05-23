@@ -23,13 +23,13 @@ This article provides information about the latest releases and change announcem
 
 ## May 2026
 
-### Public Preview - Enable soft-delete for Entra Device objects
+### Public Preview - Enable soft-delete for Microsoft Entra Device objects
 
 **Type:** New feature  
 **Service category:** Device Access Management  
 **Product capability:** Entra Backup and Recovery
 
-Device Soft Delete, now available in preview, enables administrators to safely remove device objects by moving them to a recoverable state instead of permanently deleting them. This allows organizations to restore devices within a defined retention period while preserving critical data such as device identity and associated security artifacts. The feature supports Microsoft Entra joined, registered, and hybrid joined devices and helps reduce risk from accidental deletions while improving device lifecycle management.
+Device Soft Delete, now available in preview, enables administrators to safely remove device objects by moving them to a recoverable state instead of permanently deleting them. This feature allows organizations to restore devices within a defined retention period while preserving critical data such as device identity and associated security artifacts. The feature supports Microsoft Entra joined, registered, and hybrid joined devices and helps reduce risk from accidental deletions while improving device lifecycle management.
 
 ---
 
@@ -41,19 +41,19 @@ Device Soft Delete, now available in preview, enables administrators to safely r
 
 Account discovery for connected applications is now generally available in Microsoft Entra ID Governance. This capability provides administrators with visibility into all accounts that exist within connected applications, including orphan accounts.
 
-By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that are not assigned to the enterprise application in Entra and simplify onboarding the application.
+By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that aren't assigned to the enterprise application in Microsoft Entra and simplify onboarding the application.
 
 This capability requires a Microsoft Entra ID Governance or Microsoft Entra Suite license. Learn more: [https://aka.ms/accountDiscoveryDocumentation](https://aka.ms/accountDiscoveryDocumentation)
 
 ---
 
-### General Availability - Support for passkeys in Entra ID registration campaign
+### General Availability - Support for passkeys in Microsoft Entra ID registration campaign
 
 **Type:** General Availability  
 **Service category:** MFA  
 **Product capability:** Identity Security & Protection
 
-Microsoft Registration Campaigns now supports Passkeys (FIDO2) as an authentication method. Administrators can configure registration campaigns to nudge users to register passkeys during sign-in, helping organizations drive passkey adoption at scale. This first rollout experience is optimized for users who are in a passkey profile that does not have any restrictions.
+Microsoft Registration Campaigns now supports Passkeys (FIDO2) as an authentication method. Administrators can configure registration campaigns to nudge users to register passkeys during sign-in, helping organizations drive passkey adoption at scale. This first rollout experience is optimized for users who are in a passkey profile that doesn't have any restrictions.
 
 ---
 
@@ -67,13 +67,13 @@ We're excited to introduce the User Attribute Updates task in Lifecycle Workflow
 
 ---
 
-### General Availability - System-preferred authentication expanded to first-factor in Entra ID
+### General Availability - System-preferred authentication expanded to first-factor in Microsoft Entra ID
 
 **Type:** General Availability  
 **Service category:** MFA  
 **Product capability:** Identity Security & Protection
 
-We are extending system-preferred authentication to apply to the **first factor** in Microsoft-managed configurations (in addition to second factor). With this change, the system evaluates the credentials registered for a user and selects the highest-ranked authentication method for each step of the sign-in flow.
+We're extending system-preferred authentication to apply to the **first factor** in Microsoft-managed configurations (in addition to second factor). With this change, the system evaluates the credentials registered for a user and selects the highest-ranked authentication method for each step of the sign-in flow.
 
 As a result, users with strong, phishing-resistant credentials (such as passkeys) might be signed in **without needing to use a password**, improving both security and user experience.
 
@@ -89,7 +89,7 @@ This behavior applies only to the Microsoft-managed state, where system-preferre
 
 Starting **July 6, 2026**, Conditional Access policies scoped to the **Register security information** user action will be evaluated during credential registration for Windows Hello for Business and macOS Platform SSO. Rollout completes July 13, 2026.
 
-Today, these policies aren't evaluated during Windows Hello for Business provisioning or macOS Platform SSO registration. This means any additional security requirements your organization has specifically configured for credential registration — such as requiring a particular authentication strength, restricting registration to trusted network locations, or requiring MFA with a specific method like a FIDO2 security key — aren't enforced when users enroll these credentials. We're closing this gap to ensure your registration policies apply consistently across all registration flows.
+Today, these policies aren't evaluated during Windows Hello for Business provisioning or macOS Platform SSO registration. This means any additional security requirements your organization has specifically configured for credential registration, such as requiring a particular authentication strength, restricting registration to trusted network locations, or requiring MFA with a specific method like a FIDO2 security key, aren't enforced when users enroll these credentials. We're closing this gap to ensure your registration policies apply consistently across all registration flows.
 
 Organizations without Conditional Access policies targeting this user action aren't affected by this change.
 
@@ -143,7 +143,7 @@ For more information, see:
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C
 
-High Scale Compatibility (HSC) mode enables organizations to **migrate to Microsoft Entra External ID while preserving their existing user directory**. It is designed for large, established customer identity platforms transitioning from Azure AD B2C or legacy systems.
+High Scale Compatibility (HSC) mode enables organizations to **migrate to Microsoft Entra External ID while preserving their existing user directory**. It's designed for large, established customer identity platforms transitioning from Azure AD B2C or legacy systems.
 
 With HSC mode, customers can **rebuild applications on External ID** while maintaining continuity for existing users, supporting a **seamless, phased migration at scale**. Some advanced customization capabilities are limited in this mode and will continue to evolve.
 
@@ -155,9 +155,9 @@ With HSC mode, customers can **rebuild applications on External ID** while maint
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication
 
-We increased the passkey (FIDO2) policy size limit in the authentication methods policy to a dedicated 20 KB allocation.
+We increased the passkey (FIDO2) policy size limit in the authentication methods policy to a dedicated 20-KB allocation.
 
-Previously, all authentication methods shared a single 20 KB policy size limit. With this update, a dedicated 20 KB limit is now allocated specifically to the passkey (FIDO2) policy, while the remaining authentication methods continue to use their existing limit.
+Previously, all authentication methods shared a single 20-KB policy size limit. With this update, a dedicated 20-KB limit is now allocated specifically to the passkey (FIDO2) policy, while the remaining authentication methods continue to use their existing limit.
 
 This change helps address scenarios where tenants approach the overall policy size limit, which can block configuration of passkey profiles. By separating passkey policy storage, organizations can more easily adopt passkeys and configure advanced targeting scenarios.
 
@@ -171,7 +171,7 @@ In addition, the maximum number of passkey profiles per tenant has been increase
 **Service category:** Entitlement Management  
 **Product capability:** Entitlement Management
 
-You can now govern eligible and active assignments to Azure roles at the Management Group, Subscription, and Resource Group levels directly through access packages. This brings role assignment into the same request, approval, and lifecycle governance model as apps, groups, and more - making it significantly easier to manage access to Azure resources at scale while aligning to least privilege and just-in-time access.
+You can now govern eligible and active assignments to Azure roles at the Management Group, Subscription, and Resource Group levels directly through access packages. This brings role assignment into the same request, approval, and lifecycle governance model as apps, groups, and more - making it easier to manage access to Azure resources at scale while aligning to least privilege and just-in-time access.
 
 ---
 
@@ -198,7 +198,7 @@ One of the most important parts of governing agent identities is making sure tha
 
 **Customer action recommended**
 
-Before September 7, 2026, review your tenant's authentication method registration coverage and ensure users have at least one registered method that satisfies your [SSPR policy](../identity/authentication/concept-sspr-policy.md). Plan helpdesk-assisted registration for users who cannot self-register. Users without registered methods after enforcement are unable to reset passwords via SSPR.
+Before September 7, 2026, review your tenant's authentication method registration coverage and ensure users have at least one registered method that satisfies your [SSPR policy](../identity/authentication/concept-sspr-policy.md). Plan helpdesk-assisted registration for users who can't self-register. Users without registered methods after enforcement are unable to reset passwords via SSPR.
 
 For more information, see:
 
@@ -230,7 +230,7 @@ For more information, see: [What is Microsoft Entra Agent ID?](../agent-id/what-
 
 Microsoft Entra ID Governance now supports account discovery for connected applications in public preview. This capability provides administrators with visibility into all accounts that exist within connected applications, including orphan accounts. 
 
-By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that are not assigned to the enterprise application in Entra and simplify onboarding the application. 
+By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that aren't assigned to the enterprise application in Microsoft Entra and simplify onboarding the application. 
 
 This capability requires a Microsoft Entra ID Governance or Microsoft Entra Suite license. Learn more: [https://aka.ms/accountDiscoveryDocumentation](https://aka.ms/accountDiscoveryDocumentation)
 
