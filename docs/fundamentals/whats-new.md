@@ -175,20 +175,6 @@ You can now govern eligible and active assignments to Azure roles at the Managem
 
 ---
 
-### Private Preview - OIDC External Claims Management enables Microsoft Entra External ID to act as a true federation broker
-
-**Type:** New feature  
-**Service category:** Authentications (Logins)  
-**Product capability:** User Authentication
-
-OIDC External Claims Management enables Microsoft Entra External ID to act as a true federation broker by allowing customers to bring through and use non-standard claims from external identity providers (for example, Okta, Ping). Today these claims are dropped, limiting authorization and user context scenarios; this feature closes that gap by introducing flexible claim handling across three models: mapped (persisted), passthrough (session-only), and /userinfo-enriched claims.
-
-Administrators can configure how external claims are stored, forwarded, and exposed per application, enabling apps to make richer authorization decisions while keeping user profiles in sync with the upstream IdP.
-
-Customers can sign up to be part of private preview at [Private Preview: External ID tenant - OIDC External Claims Management – Collaboration](https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?subpage=design&FormId=v4j5cvGGr0GRqy180BHbR8s5USWI379DnMtt7vP1Wu5UQUFZRFk2U0ozNU5aNlQyWUo5VFZaQVk2Ny4u).
-
----
-
 ### General Availability - Manage Agent ID sponsorship lifecycle with Lifecycle Workflows
 
 **Type:** General Availability  
