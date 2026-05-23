@@ -7,7 +7,7 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 04/15/2026
+ms.date: 05/15/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -20,6 +20,217 @@ ms.collection: M365-identity-device-management
 This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see: [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
+
+## May 2026
+
+### Public Preview - Enable soft-delete for Entra Device objects
+
+**Type:** New feature  
+**Service category:** Device Access Management  
+**Product capability:** Entra Backup and Recovery
+
+Device Soft Delete, now available in preview, enables administrators to safely remove device objects by moving them to a recoverable state instead of permanently deleting them. This allows organizations to restore devices within a defined retention period while preserving critical data such as device identity and associated security artifacts. The feature supports Microsoft Entra joined, registered, and hybrid joined devices and helps reduce risk from accidental deletions while improving device lifecycle management.
+
+---
+
+### General Availability - Account Discovery
+
+**Type:** General Availability  
+**Service category:** Provisioning  
+**Product capability:** 3rd Party Integration
+
+Account discovery for connected applications is now generally available in Microsoft Entra ID Governance. This capability provides administrators with visibility into all accounts that exist within connected applications, including orphan accounts.
+
+By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that are not assigned to the enterprise application in Entra and simplify onboarding the application.
+
+This capability requires a Microsoft Entra ID Governance or Microsoft Entra Suite license. Learn more: [https://aka.ms/accountDiscoveryDocumentation](https://aka.ms/accountDiscoveryDocumentation)
+
+---
+
+### General Availability - Support for passkeys in Entra ID registration campaign
+
+**Type:** General Availability  
+**Service category:** MFA  
+**Product capability:** Identity Security & Protection
+
+Microsoft Registration Campaigns now supports Passkeys (FIDO2) as an authentication method. Administrators can configure registration campaigns to nudge users to register passkeys during sign-in, helping organizations drive passkey adoption at scale. This first rollout experience is optimized for users who are in a passkey profile that does not have any restrictions.
+
+---
+
+### Public Preview - Automate setting or clearing user attributes values in Lifecycle workflows
+
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance
+
+We're excited to introduce the User Attribute Updates task in Lifecycle Workflows, extending existing attribute change trigger capabilities with a built-in, customer-ready way to automate attribute updates (set or clear values) directly within a workflow. With a secure, consistent, and auditable experience, organizations can reduce manual effort, improve governance, and scale identity automation with greater confidence.
+
+---
+
+### General Availability - System-preferred authentication expanded to first-factor in Entra ID
+
+**Type:** General Availability  
+**Service category:** MFA  
+**Product capability:** Identity Security & Protection
+
+We are extending system-preferred authentication to apply to the **first factor** in Microsoft-managed configurations (in addition to second factor). With this change, the system evaluates the credentials registered for a user and selects the highest-ranked authentication method for each step of the sign-in flow.
+
+As a result, users with strong, phishing-resistant credentials (such as passkeys) might be signed in **without needing to use a password**, improving both security and user experience.
+
+This behavior applies only to the Microsoft-managed state, where system-preferred authentication now covers both first- and second-factor authentication. The rollout is currently in progress and will be fully deployed to all Microsoft-managed tenants by the end of June.
+
+---
+
+### Plan for change - Conditional Access enforcement during credential registration for Windows Hello for Business and macOS Platform SSO
+
+**Type:** Plan for change  
+**Service category:** Conditional Access  
+**Product capability:** User Authentication
+
+Starting **July 6, 2026**, Conditional Access policies scoped to the **Register security information** user action will be evaluated during credential registration for Windows Hello for Business and macOS Platform SSO. Rollout completes July 13, 2026.
+
+Today, these policies aren't evaluated during Windows Hello for Business provisioning or macOS Platform SSO registration. This means any additional security requirements your organization has specifically configured for credential registration — such as requiring a particular authentication strength, restricting registration to trusted network locations, or requiring MFA with a specific method like a FIDO2 security key — aren't enforced when users enroll these credentials. We're closing this gap to ensure your registration policies apply consistently across all registration flows.
+
+Organizations without Conditional Access policies targeting this user action aren't affected by this change.
+
+**Important:** Even without Conditional Access policies protecting the Register security information user action, MFA continues to be required by default for all passwordless credential registration — including Windows Hello for Business, macOS Platform SSO, and all passkey types.
+
+**What's changing**
+
+Beginning July 6, 2026, when a user provisions Windows Hello for Business on a new device or registers macOS Platform SSO credentials, Microsoft Entra ID evaluates any Conditional Access policies that target the **Register security information** user action. If the user doesn't meet the policy requirements, they're prompted to satisfy them before completing registration. This only applies to organizations that have configured Conditional Access policies protecting this user action.
+
+Depending on your organization's Conditional Access policies, users setting up a new device need to satisfy your registration policy requirements before completing enrollment. For example, they might need to:
+
+- **Use specific authentication methods** or approve a push notification in Microsoft Authenticator to meet an authentication strength requirement
+- **Connect from a trusted network location** if your policy restricts registration by network
+- **Use a managed or Intune-compliant device** if your policy requires device compliance for registration
+
+These are examples — any Grant controls you've configured on your registration policies will apply. Users who don't meet the requirements are blocked from completing registration until the conditions are met. This appears as a standard Conditional Access prompt during the setup process — the same experience users already see during sign-in.
+
+**What's not changing**
+
+- Organizations without Conditional Access policies targeting the **Register security information** user action aren't affected by this change.
+- MFA remains required by default for all passwordless credential registration — including Windows Hello for Business, macOS Platform SSO, and all passkey types — regardless of whether Conditional Access policies are configured.
+- Sign-in behavior and existing Conditional Access policy evaluation for sign-in aren't affected.
+- Credential registration through [My Security Info](https://aka.ms/mysecurityinfo) continues to work as before.
+
+**Customer action recommended:**
+
+If your tenant has a Conditional Access policy targeting the user action of Register security information, expect registration enforcement during Windows Hello for Business and macOS Platform SSO setup. Otherwise, no action is required.
+
+To identify Conditional Access policies that might be affected, review the following:
+
+1. In the **Microsoft Entra admin center**, go to **Protection** > **Conditional Access** > **Policies**.
+1. Identify policies where the target is set to **User actions** > **Register security information**.
+1. Review the **Grant** controls on those policies — these apply during Windows Hello for Business and macOS Platform SSO registration.
+1. Check the **Users and groups** scope to understand which users are affected.
+1. Enable **report-only mode** on relevant policies to understand the impact before enforcement begins.
+
+If you experience issues during the rollout window (July 6–July 13), contact Microsoft Support or your account team for assistance.
+
+Enforcement begins rolling out **July 6, 2026** and is complete for all tenants by **July 13, 2026**.
+
+For more information, see:
+
+- [Conditional Access: Require MFA for security info registration](../identity/conditional-access/policy-all-users-security-info-registration.md)
+- [My Security Info](https://aka.ms/mysecurityinfo)
+
+---
+
+### General Availability - High Scale Compatibility (HSC) mode for Microsoft Entra External ID
+
+**Type:** General Availability  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C
+
+High Scale Compatibility (HSC) mode enables organizations to **migrate to Microsoft Entra External ID while preserving their existing user directory**. It is designed for large, established customer identity platforms transitioning from Azure AD B2C or legacy systems.
+
+With HSC mode, customers can **rebuild applications on External ID** while maintaining continuity for existing users, supporting a **seamless, phased migration at scale**. Some advanced customization capabilities are limited in this mode and will continue to evolve.
+
+---
+
+### Expanded policy storage for passkeys (FIDO2) in Microsoft Entra ID
+
+**Type:** Changed feature  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication
+
+We increased the passkey (FIDO2) policy size limit in the authentication methods policy to a dedicated 20 KB allocation.
+
+Previously, all authentication methods shared a single 20 KB policy size limit. With this update, a dedicated 20 KB limit is now allocated specifically to the passkey (FIDO2) policy, while the remaining authentication methods continue to use their existing limit.
+
+This change helps address scenarios where tenants approach the overall policy size limit, which can block configuration of passkey profiles. By separating passkey policy storage, organizations can more easily adopt passkeys and configure advanced targeting scenarios.
+
+In addition, the maximum number of passkey profiles per tenant has been increased from 3 to 10.
+
+---
+
+### Private Preview - Lifecycle Workflows Relative Time-Based Trigger Support
+
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance
+
+Lifecycle Workflows has enhanced the existing time-based trigger and now supports a relative time-based trigger, allowing organizations to run workflows before or after key user lifecycle milestones using configurable time windows around attribute dates. This capability supports existing user attributes, offset ranges, and workflow categories, and is available in both the Entra admin center and Microsoft Graph.
+
+---
+
+### Public Preview - Azure Roles assignments can now be governed via Entitlement Management
+
+**Type:** New feature  
+**Service category:** Entitlement Management  
+**Product capability:** Entitlement Management
+
+You can now govern eligible and active assignments to Azure roles at the Management Group, Subscription, and Resource Group levels directly through access packages. This brings role assignment into the same request, approval, and lifecycle governance model as apps, groups, and more - making it significantly easier to manage access to Azure resources at scale while aligning to least privilege and just-in-time access.
+
+---
+
+### Private Preview - OIDC External Claims Management enables Microsoft Entra External ID to act as a true federation broker
+
+**Type:** New feature  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication
+
+OIDC External Claims Management enables Microsoft Entra External ID to act as a true federation broker by allowing customers to bring through and use non-standard claims from external identity providers (for example, Okta, Ping). Today these claims are dropped, limiting authorization and user context scenarios; this feature closes that gap by introducing flexible claim handling across three models: mapped (persisted), passthrough (session-only), and /userinfo-enriched claims.
+
+Administrators can configure how external claims are stored, forwarded, and exposed per application, enabling apps to make richer authorization decisions while keeping user profiles in sync with the upstream IdP.
+
+Customers can sign up to be part of private preview at [Private Preview: External ID tenant - OIDC External Claims Management – Collaboration](https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?subpage=design&FormId=v4j5cvGGr0GRqy180BHbR8s5USWI379DnMtt7vP1Wu5UQUFZRFk2U0ozNU5aNlQyWUo5VFZaQVk2Ny4u).
+
+---
+
+### General Availability - Manage Agent ID sponsorship lifecycle with Lifecycle Workflows
+
+**Type:** General Availability  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance
+
+One of the most important parts of governing agent identities is making sure that a delegated human user is always assigned to make sure the agent identity's access to resources are current. If the sponsor is leaving the organization, sponsorship of the agent identities is automatically transferred to their manager. With sponsorship transferred, there's always a human user accountable for managing the access and lifecycle of the agent identities. Microsoft Entra ID Governance features can help streamline this process within your organization. Lifecycle workflows include multiple tasks around notifying cosponsors, and managers of sponsors, of impending sponsorship changes. For a guide on setting up a workflow for agent identities sponsors, see: [Agent identity sponsor tasks in Lifecycle Workflows](../id-governance/agent-sponsor-tasks.md).
+
+---
+
+### Plan for change - Self Service Password Reset will require registered authentication methods only
+
+**Type:** Plan for change  
+**Service category:** Self Service Password Reset  
+**Product capability:** User Authentication
+
+**Effective September 7, 2026**, Self-Service Password Reset (SSPR) will only accept explicitly registered authentication methods for identity verification. Directory-sourced contact information — phone numbers and email addresses stored only as user object properties (mobilePhone, businessPhone, otherMails) that were never registered as authentication methods — will no longer be accepted. This applies to all users, including administrators, across Public cloud, GCC, GCC High, and DoD.
+
+- Today, SSPR allows verification using directory attributes that can be modified through provisioning systems, automation, and delegated admin workflows — without user intent or proof of possession. Approximately 86% of SSPR verifications already use registered methods. This change closes the remaining gap.
+- Starting **July 6, 2026**, Microsoft will automatically launch a registration campaign that prompts affected users to register authentication methods after sign-in. No admin action is required to enable this campaign.
+
+**Customer action recommended**
+
+Before September 7, 2026, review your tenant's authentication method registration coverage and ensure users have at least one registered method that satisfies your [SSPR policy](../identity/authentication/concept-sspr-policy.md). Plan helpdesk-assisted registration for users who cannot self-register. Users without registered methods after enforcement are unable to reset passwords via SSPR.
+
+For more information, see:
+
+- [SSPR policy configuration](../identity/authentication/concept-sspr-policy.md)
+- [Prepopulate user authentication contact info](../identity/authentication/howto-authentication-methods-activity.md)
+- [My Security Info](https://aka.ms/mysecurityinfo)
+
+---
 
 ## April 2026
 
