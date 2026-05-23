@@ -165,16 +165,6 @@ In addition, the maximum number of passkey profiles per tenant has been increase
 
 ---
 
-### Private Preview - Lifecycle Workflows Relative Time-Based Trigger Support
-
-**Type:** New feature  
-**Service category:** Lifecycle Workflows  
-**Product capability:** Identity Governance
-
-Lifecycle Workflows has enhanced the existing time-based trigger and now supports a relative time-based trigger, allowing organizations to run workflows before or after key user lifecycle milestones using configurable time windows around attribute dates. This capability supports existing user attributes, offset ranges, and workflow categories, and is available in both the Entra admin center and Microsoft Graph.
-
----
-
 ### Public Preview - Azure Roles assignments can now be governed via Entitlement Management
 
 **Type:** New feature  
