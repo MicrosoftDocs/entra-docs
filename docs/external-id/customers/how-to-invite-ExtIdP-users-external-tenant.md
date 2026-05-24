@@ -71,8 +71,6 @@ Content-Type: application/json
 }
 ```
 
-For detailed steps on finding your user flow ID and disabling sign-up, see [Disable sign-up in a user flow](how-to-disable-sign-up-user-flow.md).
-
 ## Step 2: Invite users
 
 You can invite users using either the Microsoft Graph API or the admin center.
@@ -191,8 +189,8 @@ After the flow is complete:
 
 ## Considerations and limitations
 
-- **Special link required for initial redemption**: Users must use the invitation link containing `domain_hint` to redeem their invitation and associate the correct identity provider.
 - **Custom email required**: When you set `sendInvitationMessage` to `false` in the invitation API, you must send your own invitation email containing the application link with the `domain_hint` parameter.
+- **Special link required for initial redemption**: Users must use the invitation link containing `domain_hint` to redeem their invitation and associate the correct identity provider.
 
 ### Future improvements
 
