@@ -12,11 +12,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-This article describes how to invite users to a Microsoft Entra External ID tenant and ensure they authenticate using a specific external identity provider (IdP), such as:
-
-- **Social identity providers** (for example, Google or Facebook)
-- **Custom OpenID Connect (OIDC) providers** (for example, a Microsoft Entra ID workforce tenant)
-- **Custom SAML identity providers**
+This article describes how to invite users to a Microsoft Entra External ID tenant and ensure they authenticate using a specific external identity provider (IdP), such as a social provider, custom OIDC provider, or custom SAML provider.
 
 This approach is useful when:
 
@@ -29,13 +25,10 @@ This approach is useful when:
 Before you begin, ensure you have the following:
 
 - A [Microsoft Entra External ID tenant](how-to-create-external-tenant-portal.md).
-- An external identity provider configured in your tenant. Depending on your scenario, set up one of the following:
-  - [Custom OIDC identity provider](how-to-custom-oidc-federation-customers.md) (including [Microsoft Entra ID federation](how-to-entra-id-federation-customers.md))
-  - [SAML/WS-Fed identity provider](../direct-federation.md)
-  - A social identity provider ([Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), or [Apple](how-to-apple-federation-customers.md))
+- A configured external identity provider: [Custom OIDC](how-to-custom-oidc-federation-customers.md), [Microsoft Entra ID](how-to-entra-id-federation-customers.md), [SAML/WS-Fed](../direct-federation.md), or a social provider ([Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md)).
 - A [registered application](/entra/identity-platform/quickstart-register-app) in your external tenant.
-- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) with the identity provider added and the user flow associated with your application.
-- The **Issuer URI** or **domain name** for the identity provider (used for routing during sign-in). For more information, see [Issuer acceleration](concept-authentication-methods-customers.md#issuer-acceleration).
+- A [user flow](how-to-user-flow-sign-up-sign-in-customers.md) associated with your application. Adding the identity provider to the user flow is only required if you want explicit IdP buttons on the sign-in page or you want to allow self-service sign-up with the identity providers. If you always invite users and rely on `domain_hint` for routing, you don't need to add identity providers to the user flow.
+- The **Issuer URI** or **domain name** for the identity provider. For more information, see [Issuer acceleration](concept-authentication-methods-customers.md#issuer-acceleration).
 
 ## Overview of the invitation flow
 
