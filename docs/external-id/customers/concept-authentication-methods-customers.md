@@ -152,4 +152,3 @@ The following Microsoft Graph API operations are supported for managing identity
 - [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add federation with SAML/WS-Fed identity providers](../direct-federation.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
-- [Invite users to authenticate with an external identity provider](how-to-invite-ExtIdP-users-external-tenant.md)
