@@ -113,7 +113,7 @@ You can also invite users through the Microsoft Entra admin center:
 
 To use this pattern, disable the default email and send your own custom invitation containing the `domain_hint` parameter as described in the next step.
 
-For step-by-step instructions, see [Add and manage customer accounts](how-to-manage-customer-accounts.md).
+For step-by-step instructions, see [Invite external user](~/fundamentals/how-to-create-delete-users.yml#invite-an-external-user).
 
 ## Step 3: Send a custom invitation email with the domain_hint parameter
 

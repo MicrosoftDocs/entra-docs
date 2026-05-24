@@ -76,7 +76,7 @@ You can also invite a new guest user to manage your tenant. To invite a new gues
 An invitation email is sent to the user. The user needs to accept the invitation to be able to sign in.
 
 > [!NOTE]
-> You can invite external users for administrative purposes. However, the **Invite external user** feature in the admin center is not designed for customer use cases. The default invitation redemption flow uses [invitation redemption precedence](/entra/external-id/redemption-experience) to determine how the user should authenticate, which includes using B2B federation for users with Microsoft Entra ID identities and using Email OTP as invitation fallback. It is not possible for invited users to have Email+password accounts. To invite non-admin users and route them to a specific external identity provider, see [Invite users to authenticate with an external identity provider](how-to-invite-ExtIdP-users-external-tenant.md).
+> The **Invite external user** feature is not designed for customer use cases. To invite users and route them to a specific external identity provider, see [Invite users to authenticate with an external identity provider](how-to-invite-ExtIdP-users-external-tenant.md).
 
 ## Change or add a role assignment
 
