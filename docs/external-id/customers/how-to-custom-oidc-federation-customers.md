@@ -53,7 +53,7 @@ To configure OpenID Connect federation with your identity provider in Microsoft 
   - Name
   - Given name
   - Family name
-  - Email (required)
+  - Email (required by default; can be [made optional](how-to-custom-oidc-federation-customers.md#make-email-optional-for-external-idp-sign-up-preview))
   - Email_verified
   - Phone number
   - Phone_number_verified
@@ -110,12 +110,75 @@ At this point, you set up the OIDC identity provider in your Microsoft Entra ID,
 
 1. Select **Save**.
 
+## Make email optional for external IdP sign-up (preview)
+
+By default, an email address is required when users sign up with an external identity provider. If your external IdP doesn't emit an email claim, users encounter the error `AADSTS901011: No email address was obtained from the external oidc identity provider` during sign-up. To avoid this error, you can configure your user flow to make the email attribute optional. This allows users to complete sign-up using only their external IdP identity, without providing an email address.
+
+> [!IMPORTANT]
+> Making email not required is a user flow–level setting. This change applies to sign-ups for **all applications** associated with the user flow.
+
+> [!NOTE]
+> When email is not collected, Email OTP can't be used for MFA. Ensure an alternative MFA method (such as SMS) is enabled if your policies require MFA.
+
+### Update the user flow to make email optional
+
+To make the email attribute optional in your user flow, use the Microsoft Graph API to update the `onAttributeCollection` property of the user flow.
+
+1. Find the ID of the user flow you want to update. One way to do this is to use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to list all your user flows:
+
+   ```http
+   GET https://graph.microsoft.com/v1.0/identity/authenticationEventsFlows
+   ```
+
+   Locate the `id` of the user flow and the `onAttributeCollection` property in the response.
+
+1. Copy the `onAttributeCollection` property from the response, and use it to update the user flow with a `PATCH` request. The only change you need to make is to set the `required` property on the email attribute to `false`:
+
+   ```http
+   PATCH https://graph.microsoft.com/v1.0/identity/authenticationEventsFlows/{user-flow-id}
+   Content-Type: application/json
+
+   {
+       "@odata.type": "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow",
+       "onAttributeCollection": {
+           "@odata.type": "#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp",
+           "attributeCollectionPage": {
+               "views": [
+                   {
+                       "title": null,
+                       "description": null,
+                       "inputs": [
+                           {
+                               "attribute": "email",
+                               "label": "Email Address",
+                               "inputType": "text",
+                               "defaultValue": null,
+                               "hidden": false,
+                               "editable": true,
+                               "writeToDirectory": true,
+                               "required": false,
+                               "validationRegEx": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$",
+                               "options": []
+                           }
+                       ]
+                   }
+               ]
+           }
+       }
+   }
+   ```
+
+   > [!NOTE]
+   > Include all the attribute inputs from your existing user flow in the `PATCH` request, not just the email attribute. The example above shows only the email input, but your user flow may include additional attributes.
+
 ## Known limitations
 
 Conditional Access policies that require MFA registration don't function as expected when an External ID tenant is federated with an external identity provider (IdP). This can result in one of the following behaviors:
 
 - Users are unable to register an MFA method and can't complete sign-in, often encountering an error.
 - Users aren't redirected to the MFA registration (sign-up) flow during sign-in as expected.
+
+Additionally, a user created without an email address can't register an email address for use with Email OTP as an MFA method.
 
 ## Related content
 
