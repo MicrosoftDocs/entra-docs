@@ -121,4 +121,5 @@ Conditional Access policies that require MFA registration don't function as expe
 
 - [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
+- [Invite users to authenticate with an external identity provider](how-to-invite-workforce-users-external-tenant.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

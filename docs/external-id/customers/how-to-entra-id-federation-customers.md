@@ -152,4 +152,5 @@ Yes. You can configure multiple Microsoft Entra ID tenants as separate custom OI
 
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
 - [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
+- [Invite users to authenticate with an external identity provider](how-to-invite-workforce-users-external-tenant.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

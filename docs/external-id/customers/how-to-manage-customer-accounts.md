@@ -14,7 +14,7 @@ User accounts for your consumers and business customers are most commonly create
 
 This article focuses on managing user accounts using the Microsoft Entra admin center. You must have at least [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) permissions to add or delete users.
 
-See also [Add and manage admin accounts](how-to-manage-admin-accounts.md) for information about user accounts for your external tenant admins.
+See also [Add and manage admin accounts](how-to-manage-admin-accounts.md) for information about user accounts for your external tenant admins. To invite users and route them to a specific external identity provider, see [Invite users to authenticate with an external identity provider](how-to-invite-workforce-users-external-tenant.md).
 
 ## Prerequisites
 
