@@ -76,7 +76,7 @@ You can also invite a new guest user to manage your tenant. To invite a new gues
 An invitation email is sent to the user. The user needs to accept the invitation to be able to sign in.
 
 > [!NOTE]
-> You can invite external users for administrative purposes only. You can’t use this feature to invite customers to sign in to your apps. [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) isn’t compatible with customer identity and access management (CIAM) user flows.
+> By default, the **Invite external user** feature is designed for administrative purposes. The system-generated invitation email includes a redemption URL that directs users to myApplications, which is inaccessible to users without admin roles. In addition, the default invitation redemption flow uses [invitation redemption precedence](/entra/external-id/redemption-experience) to determine the identity provider, which may not route the user to the intended external IdP. To invite non-admin users and route them to a specific external identity provider, see [Invite users to authenticate with an external identity provider](how-to-invite-ExtIdP-users-external-tenant.md).
 
 ## Change or add a role assignment
 
