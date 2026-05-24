@@ -363,6 +363,8 @@ items:
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
+        - name: Invite users with an external IdP
+          href: how-to-invite-workforce-users-external-tenant.md
     - name: Enable password reset
       href: how-to-enable-password-reset-customers.md
     - name: Monitor and troubleshoot
@@ -420,8 +422,6 @@ items:
           href: how-to-custom-oidc-federation-customers.md
         - name: Microsoft Entra ID federation
           href: how-to-entra-id-federation-customers.md
-        - name: Invite users with an external IdP
-          href: how-to-invite-workforce-users-external-tenant.md
         - name: Microsoft account federation
           href: how-to-microsoft-accounts-federation-customers.md
         - name: Azure AD B2C federation
