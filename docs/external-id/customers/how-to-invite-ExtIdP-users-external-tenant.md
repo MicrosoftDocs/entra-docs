@@ -192,11 +192,6 @@ After the flow is complete:
 - **Custom email required**: When you set `sendInvitationMessage` to `false` in the invitation API, you must send your own invitation email containing the application link with the `domain_hint` parameter.
 - **Special link required for initial redemption**: Users must use the invitation link containing `domain_hint` to redeem their invitation and associate the correct identity provider.
 
-### Future improvements
-
-- **Domain-based routing (Home Realm Discovery for OIDC)**: When OIDC domain support becomes available, users won't need a special invitation link. Entering their email address on the sign-in page will automatically route them to the correct identity provider, even during initial invitation redemption.
-- **Enhanced invitation experience**: Improved integration between invitation and IdP selection will reduce reliance on custom email flows.
-
 ## Related content
 
 - [Create invitation (Microsoft Graph)](/graph/api/invitation-post?view=graph-rest-1.0&tabs=http)
