@@ -420,7 +420,7 @@ items:
           href: how-to-custom-oidc-federation-customers.md
         - name: Microsoft Entra ID federation
           href: how-to-entra-id-federation-customers.md
-        - name: Invite workforce users to external tenant
+        - name: Invite users with an external IdP
           href: how-to-invite-workforce-users-external-tenant.md
         - name: Microsoft account federation
           href: how-to-microsoft-accounts-federation-customers.md

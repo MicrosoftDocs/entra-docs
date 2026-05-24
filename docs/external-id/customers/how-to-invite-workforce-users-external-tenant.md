@@ -1,27 +1,54 @@
 ---
-title: Invite Microsoft Entra ID (workforce) users to an external tenant
-description: Learn how to invite users from a Microsoft Entra ID workforce tenant to sign in to apps in your external tenant, using the invitation API with issuer acceleration for seamless identity provider redirection.
+title: Invite users to authenticate with an external identity provider
+description: Learn how to invite users to a Microsoft Entra External ID tenant and route them to a specific external identity provider (OIDC, SAML, or social) using the invitation API or admin center with issuer acceleration.
 ms.topic: how-to
 ms.date: 05/23/2026
 ms.custom: it-pro
 
-#Customer intent: As an IT admin or developer, I want to invite users from a Microsoft Entra ID workforce tenant to access apps in my external tenant so that they can sign in using their existing organizational credentials without self-service sign-up.
+#Customer intent: As an IT admin or developer, I want to invite users to my External ID tenant and ensure they authenticate with a specific external identity provider, so that only invited users can access my application using their existing credentials.
 ---
 
-# Invite Microsoft Entra ID workforce users to an external tenant
+# Invite users to authenticate with an external identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-If you've set up federation with a Microsoft Entra ID workforce tenant as an [OpenID Connect (OIDC) identity provider](how-to-entra-id-federation-customers.md), you can invite specific users from that tenant to access your applications. By using the invitation API, you can control exactly which users have access and skip the default invitation email in favor of a custom one that includes an issuer acceleration link. This approach is useful when you want to restrict access to invited users only, without allowing self-service sign-up.
+This article describes how to invite users to a Microsoft Entra External ID tenant and ensure they authenticate using a specific external identity provider (IdP), such as:
 
-This article walks you through the admin configuration steps, the invitation process, and the end-user experience for inviting workforce users to your external tenant.
+- **Social identity providers** (for example, Google or Facebook)
+- **Custom OpenID Connect (OIDC) providers** (for example, a Microsoft Entra ID workforce tenant)
+- **Custom SAML identity providers**
+
+This approach is useful when:
+
+- Only invited users should be able to access your application (no self-service sign-up).
+- Users must authenticate with a specific external identity provider.
+- You want full control over the invitation experience and communication.
 
 ## Prerequisites
 
-- An [external tenant](how-to-create-external-tenant-portal.md).
-- A Microsoft Entra ID workforce tenant configured as an [OIDC identity provider](how-to-entra-id-federation-customers.md) in your external tenant.
+Before you begin, ensure you have the following:
+
+- A [Microsoft Entra External ID tenant](how-to-create-external-tenant-portal.md).
+- An external identity provider configured in your tenant. Depending on your scenario, set up one of the following:
+  - [Custom OIDC identity provider](how-to-custom-oidc-federation-customers.md) (including [Microsoft Entra ID federation](how-to-entra-id-federation-customers.md))
+  - [SAML/WS-Fed identity provider](../direct-federation.md)
+  - A social identity provider ([Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), or [Apple](how-to-apple-federation-customers.md))
 - A [registered application](/entra/identity-platform/quickstart-register-app) in your external tenant.
-- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) associated with your application.
+- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) with the identity provider added and the user flow associated with your application.
+- The **Issuer URI** or **domain name** for the identity provider (used for routing during sign-in). For more information, see [Issuer acceleration](concept-authentication-methods-customers.md#issuer-acceleration).
+
+## Overview of the invitation flow
+
+This pattern uses:
+
+- The **Invitation API** or **Admin UX** to create users in a pending state.
+- A **custom invitation email** with a specialized application link.
+- The **`domain_hint` parameter** to route users to the intended identity provider during invitation redemption.
+
+You can create invitations using either method:
+
+- **Microsoft Graph Invitation API**: See [Create invitation](/graph/api/invitation-post?view=graph-rest-1.0&tabs=http).
+- **Microsoft Entra admin center**: See [Add and manage customer accounts](how-to-manage-customer-accounts.md). Browse to **Users** > **New user** > **Invite external user**.
 
 ## Step 1: (Optional) Disable self-service sign-up
 
@@ -44,9 +71,13 @@ Content-Type: application/json
 
 For detailed steps on finding your user flow ID and disabling sign-up, see [Disable sign-up in a user flow](how-to-disable-sign-up-user-flow.md).
 
-## Step 2: Invite users using the invitation API
+## Step 2: Invite users
 
-Invite users from the workforce tenant by calling the [invitation API](/graph/api/invitation-post). Set `sendInvitationMessage` to `false` so that Microsoft Entra ID doesn't send the default invitation email. You'll send your own custom email in the next step.
+You can invite users using either the Microsoft Graph API or the admin center.
+
+### Option 1: Use the Invitation API
+
+Create a user in the External ID tenant using the [Microsoft Graph Invitation API](/graph/api/invitation-post?view=graph-rest-1.0&tabs=http). Set `sendInvitationMessage` to `false` so that Microsoft doesn't send the default invitation email. You send your own custom email in the next step.
 
 ```http
 POST https://graph.microsoft.com/v1.0/invitations
@@ -59,35 +90,58 @@ Content-Type: application/json
 }
 ```
 
-Key details about this API call:
+Key configuration details:
 
-- **`invitedUserEmailAddress`**: The email address of the user you're inviting from the workforce tenant.
+- **`invitedUserEmailAddress`**: The email address of the user you're inviting.
 - **`inviteRedirectUrl`**: The URL of the application you want the user to access after they redeem the invitation.
-- **`sendInvitationMessage`**: Set to `false` to suppress the default Microsoft invitation email.
+- **`sendInvitationMessage`**: Set to `false` to suppress the default Microsoft invitation email. This ensures you can send a custom email with your own application link that includes the `domain_hint` parameter.
 
-After this call succeeds, a user object is created in your external tenant with `externalUserState` set to `PendingAcceptance`.
+When the invitation is created:
 
-> [!NOTE]
-> You can also invite users through the Microsoft Entra admin center. Browse to **Identity** > **Users** > **All users** > **New user** > **Invite external user**. If you use the admin center, make sure you still send a custom invitation email with the issuer acceleration link as described in the next step.
+- A user object is created in the external tenant with `externalUserState` set to `PendingAcceptance`.
+- No identity provider is yet associated with the user object.
 
-## Step 3: Send a custom invitation email with the issuer acceleration link
+For more information, see [Create invitation (Microsoft Graph)](/graph/api/invitation-post?view=graph-rest-1.0&tabs=http).
 
-Because you suppressed the default invitation email, you need to send your own email to the invited user. The key element of this email is a link to your application URL that includes a `domain_hint` parameter. The `domain_hint` parameter triggers [issuer acceleration](concept-authentication-methods-customers.md#issuer-acceleration), which redirects the user directly to their workforce identity provider to authenticate, bypassing the generic sign-in page.
+### Option 2: Use the admin center
 
-Construct the link using the following format:
+You can also invite users through the Microsoft Entra admin center:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Entra ID** > **Users** > **All users**.
+1. Select **New user** > **Invite external user**.
+1. Provide the user's email address and any optional attributes.
+1. Choose whether to send the Microsoft invitation email or send your own.
+
+To use this pattern, disable the default email and send your own custom invitation containing the `domain_hint` parameter as described in the next step.
+
+For step-by-step instructions, see [Add and manage customer accounts](how-to-manage-customer-accounts.md).
+
+## Step 3: Send a custom invitation email with the domain_hint parameter
+
+After creating the user, send your own email that includes a link to your application. The key element is the `domain_hint` parameter, which triggers [issuer acceleration](concept-authentication-methods-customers.md#issuer-acceleration). This routes the user directly to the specified identity provider during sign-in, bypassing the generic sign-in page.
+
+Construct the application link using the following format:
 
 ```
-https://your-app-url.com?domain_hint=<workforce-tenant-domain>
+https://<app-url>?domain_hint=<Issuer URI>
 ```
 
-For a Microsoft Entra ID workforce tenant configured as a custom OIDC identity provider, use the workforce tenant's domain name as the `domain_hint` value. For example:
+The `domain_hint` value depends on the type of identity provider:
 
-```
-https://your-app-url.com?domain_hint=contoso.onmicrosoft.com
-```
+| Identity provider type | `domain_hint` value | Example |
+|------------------------|---------------------|---------|
+| **Custom OIDC (Entra ID)** | Domain name of the Entra ID tenant | `domain_hint=contoso.onmicrosoft.com` |
+| **Custom OIDC (other)** | Domain part of the Issuer URI | `domain_hint=www.linkedin.com` |
+| **Google** | `google` | `domain_hint=google` |
+| **Facebook** | `facebook` | `domain_hint=facebook` |
+| **Apple** | `apple` | `domain_hint=apple` |
+| **Custom SAML** | Domain name of the federating IdP | `domain_hint=adfs.contoso.com` |
+
+For more information about `domain_hint` values, see [Issuer acceleration](concept-authentication-methods-customers.md#issuer-acceleration) and [Domain acceleration](concept-authentication-methods-customers.md#domain-acceleration).
 
 > [!TIP]
-> Only the initial invitation redemption step requires the user to select a link with the `domain_hint` parameter. For all subsequent sign-ins, the user can enter their email address on the sign-in page and will be automatically redirected to the identity provider they used during invitation redemption.
+> Only the initial invitation redemption step requires the user to select a link with the `domain_hint` parameter. For all subsequent sign-ins, the user can enter their email address on the sign-in page and is automatically redirected to the identity provider they used during invitation redemption.
 
 Include this link in your custom invitation email. For example:
 
@@ -99,42 +153,60 @@ Include this link in your custom invitation email. For example:
 >
 > [Accept invitation and sign in](https://your-app-url.com?domain_hint=contoso.onmicrosoft.com)
 >
-> You'll be asked to sign in with your organizational account (for example, user@contoso.com).
+> You'll be asked to sign in with your existing credentials.
 
 ## End-user experience
 
-After you complete the configuration and send the invitation, here's what the invited user experiences:
+After you complete the configuration and send the invitation, here's what the invited user experiences.
 
 ### First sign-in (invitation redemption)
 
 1. The user receives your custom invitation email and selects the link that includes the `domain_hint` parameter.
-1. The user is redirected directly to their workforce tenant's sign-in page (the Microsoft Entra ID identity provider), bypassing the generic External ID sign-in page.
-1. The user signs in with their workforce credentials (for example, `user@contoso.com`).
-1. After successful authentication, the user's invitation is redeemed. In your external tenant, the user object is updated:
-   - The `identities` collection includes a new entry for the federated identity.
+1. The application launches the External ID sign-in experience. The `domain_hint` parameter routes the user directly to the specified identity provider, bypassing the generic sign-in page.
+1. The user authenticates with their existing credentials at the identity provider.
+1. The invitation is redeemed. In your external tenant, the user object is updated:
+   - A federated identity is added to the `identities` collection.
    - The `externalUserState` changes to `Accepted`.
+
+> [!NOTE]
+> The `domain_hint` parameter is only required during this initial invitation redemption step.
 
 ### Subsequent sign-ins
 
-1. The user navigates to your application's sign-in page (no `domain_hint` parameter is needed).
+After the user completes invitation redemption:
+
+1. The user navigates to your application (no `domain_hint` parameter is needed).
 1. The user enters their email address on the sign-in page.
-1. Microsoft Entra External ID recognizes the user's identity provider from their previous redemption and automatically redirects them to the correct workforce tenant for authentication.
+1. External ID identifies the user and redirects them to the same identity provider used during redemption.
 
-## End state summary
+## Resulting behavior
 
-After you complete this configuration:
+After the flow is complete:
 
 | Outcome | Description |
 |---------|-------------|
 | **Invited-only access** | Only users you've explicitly invited can sign in. Self-service sign-up is disabled (if you completed [Step 1](#step-1-optional-disable-self-service-sign-up)). |
-| **Workforce identity sign-in** | Invited users sign in using their existing Microsoft Entra ID (workforce) credentials. No separate passwords or accounts are needed. |
-| **Initial invitation link** | Until OIDC domain support is available, invited users need to select a link with the `domain_hint` parameter to redeem their invitation. After initial redemption, the `domain_hint` is no longer required. |
-| **Future improvement** | When OIDC domain support becomes available, users won't need the special invitation link. They'll be automatically redirected to redeem their invitation with the correct external identity provider when they sign in. |
+| **External IdP sign-in** | Users authenticate using their external identity provider. No local account or separate password is required. |
+| **Automatic sign-in routing** | After the first sign-in, users are automatically redirected to the correct identity provider based on their email address. |
+
+## Considerations and limitations
+
+- **Special link required for initial redemption**: Users must use the invitation link containing `domain_hint` to redeem their invitation and associate the correct identity provider.
+- **Custom email required**: When you set `sendInvitationMessage` to `false` in the invitation API, you must send your own invitation email containing the application link with the `domain_hint` parameter.
+
+### Future improvements
+
+- **Domain-based routing (Home Realm Discovery for OIDC)**: When OIDC domain support becomes available, users won't need a special invitation link. Email entry will automatically route to the correct identity provider, even during initial invitation redemption.
+- **Enhanced invitation experience**: Improved integration between invitation and IdP selection will reduce reliance on custom email flows.
 
 ## Related content
 
-- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
+- [Create invitation (Microsoft Graph)](/graph/api/invitation-post?view=graph-rest-1.0&tabs=http)
+- [Add and manage customer accounts](how-to-manage-customer-accounts.md)
 - [Identity providers for external tenants](concept-authentication-methods-customers.md)
-- [Disable sign-up in a user flow](how-to-disable-sign-up-user-flow.md)
-- [Microsoft Entra B2B collaboration API and customization](../customize-invitation-api.md)
 - [Issuer acceleration](concept-authentication-methods-customers.md#issuer-acceleration)
+- [Disable sign-up in a user flow](how-to-disable-sign-up-user-flow.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
+- [Configure a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md)
+- [Configure SAML/WS-Fed IdP federation](../direct-federation.md)
+- [Self-service sign-up for SAML/WS-Fed federated users](how-to-saml-ws-federation-self-service-sign-up.md)
