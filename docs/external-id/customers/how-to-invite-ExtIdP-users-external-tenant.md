@@ -52,9 +52,11 @@ You can create invitations using either method:
 
 ## Step 1: (Optional) Disable self-service sign-up
 
-If you want only explicitly invited users to access your application, disable the sign-up option in your user flow. This prevents new users from self-registering and ensures that access is controlled entirely through invitations.
+If you want only explicitly invited users to access your application, disable the sign-up option in your user flow. This prevents new users from self-registering and ensures that access is controlled entirely through [user creation](how-to-manage-customer-accounts.md) and/or invitations.
 
-To disable sign-up, update the **onInteractiveAuthFlowStart** property of your user flow using the [Update authenticationEventsFlow API](/graph/api/authenticationeventsflow-update):
+For detailed steps on finding your user flow ID and disabling sign-up, see [Disable sign-up in a user flow](how-to-disable-sign-up-user-flow.md).
+
+To disable sign-up, update the **onInteractiveAuthFlowStart** property of your user flow:
 
 ```http
 PATCH https://graph.microsoft.com/beta/identity/authenticationEventsFlows/{user-flow-id}
@@ -100,8 +102,6 @@ When the invitation is created:
 
 - A user object is created in the external tenant with `externalUserState` set to `PendingAcceptance`.
 - No identity provider is yet associated with the user object.
-
-For more information, see [Create invitation (Microsoft Graph)](/graph/api/invitation-post?view=graph-rest-1.0&tabs=http).
 
 ### Option 2: Use the admin center
 
@@ -196,7 +196,7 @@ After the flow is complete:
 
 ### Future improvements
 
-- **Domain-based routing (Home Realm Discovery for OIDC)**: When OIDC domain support becomes available, users won't need a special invitation link. Email entry will automatically route to the correct identity provider, even during initial invitation redemption.
+- **Domain-based routing (Home Realm Discovery for OIDC)**: When OIDC domain support becomes available, users won't need a special invitation link. Entering their email address on the sign-in page will automatically route them to the correct identity provider, even during initial invitation redemption.
 - **Enhanced invitation experience**: Improved integration between invitation and IdP selection will reduce reliance on custom email flows.
 
 ## Related content

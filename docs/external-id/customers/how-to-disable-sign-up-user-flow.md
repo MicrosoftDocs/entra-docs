@@ -61,7 +61,7 @@ Follow these steps to disable the sign-up flow:
 ## Next steps
 
 - [Add your application to the user flow](how-to-user-flow-add-application.md)
-- [Invite users to authenticate with an external identity provider](how-to-invite-workforce-users-external-tenant.md)
+- [Invite users to authenticate with an external identity provider](how-to-invite-ExtIdP-users-external-tenant.md)
 - [Create custom user attributes and customize the order of the attributes on the sign-up page](how-to-define-custom-attributes.md).
 
 

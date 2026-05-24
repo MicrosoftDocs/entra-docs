@@ -364,7 +364,7 @@ items:
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
         - name: Invite users with an external IdP
-          href: how-to-invite-workforce-users-external-tenant.md
+          href: how-to-invite-ExtIdP-users-external-tenant.md
     - name: Enable password reset
       href: how-to-enable-password-reset-customers.md
     - name: Monitor and troubleshoot
