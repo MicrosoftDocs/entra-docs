@@ -28,6 +28,12 @@ This article describes the steps you need to perform in both GitHub Enterprise M
 > * Single sign-on to GitHub Enterprise Managed User (recommended)
 
 
+GitHub Enterprise Managed User is available in the following [national cloud deployments](/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: | :white_check_mark:    |        |
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -35,9 +41,6 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md)
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * Enterprise Managed Users enabled GitHub Enterprise and configured to log in with SAML SSO through your Microsoft Entra tenant.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
