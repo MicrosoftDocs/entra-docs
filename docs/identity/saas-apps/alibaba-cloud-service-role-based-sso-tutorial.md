@@ -16,6 +16,12 @@ In this article,  you learn how to integrate Alibaba Cloud Service (Role-based S
 * Enable your users to be automatically signed-in to Alibaba Cloud Service (Role-based SSO) with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Alibaba Cloud Service is available in the following [national cloud deployments](/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: |     | :white_check_mark:    |
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

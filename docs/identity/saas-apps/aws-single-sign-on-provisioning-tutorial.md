@@ -29,6 +29,12 @@ This article describes the steps you need to perform in both AWS IAM Identity Ce
 > * [aws singlesign-on document](aws-single-sign-on-tutorial.md) to AWS IAM Identity Center
 > * Long lived bearer token authentication supported.
 
+AWS IAM Identity Center is available in the following [national cloud deployments](/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: |     | :white_check_mark:    |
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

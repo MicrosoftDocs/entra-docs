@@ -18,6 +18,12 @@ In this article,  you learn how to integrate AWS IAM Identity Center (successor 
 
 **Note:** When using AWS Organizations, it's important to delegate another account as the Identity Center Administration account, enable the IAM Identity Center on it, and set up the Entra ID SSO with that account, not the root management account. This ensures a more secure and manageable setup.
 
+AWS IAM Identity Center is available in the following [national cloud deployments](/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: |     | :white_check_mark:    |
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
