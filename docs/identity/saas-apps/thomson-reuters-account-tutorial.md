@@ -62,8 +62,6 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     b. In the **Reply URL** text box, type the URL:
     `https://trtasso.thomson.com/sp/ACS.saml2`
 
-    [![Screenshot that shows the Reply URL configuration.](./media/thomson-reuters-account-tutorial/save-button.png)](./media/thomson-reuters-account-tutorial/save-button.png#lightbox)
-
 1. Thomson Reuters Account application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Thomson Reuters Account application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
 
@@ -76,8 +74,6 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     |name |user.displayname |Full name of user|
 
 1. If you have chosen the **Identifier (Entity ID)** as `trtasso.thomson.com_TRAccount`, then select the **Edit** option in **Attributes and Claims** and in the next page, select and expand **Advanced settings**, select the **Edit** option right next to **Advanced SAML claims** options. Once you do that, a pane will appear to the right from which you have to check the **Append application ID to issuer** and select **Save**.
-
-    [![Screenshot of Advanced SAML claims options at Microsoft Entra side.](./media/thomson-reuters-account-tutorial/attributes.png)](./media/thomson-reuters-account-tutorial/attributes.png#lightbox)
 
 1. On the **Set up single sign-on with SAML** page, in the SAML Signing Certificate section, select copy button to copy **App Federation Metadata Url**.
 
