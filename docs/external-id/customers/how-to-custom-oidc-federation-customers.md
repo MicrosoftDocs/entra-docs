@@ -53,7 +53,7 @@ To configure OpenID Connect federation with your identity provider in Microsoft 
   - Name
   - Given name
   - Family name
-  - Email (required by default; can be [made optional](how-to-custom-oidc-federation-customers.md#make-email-optional-for-external-idp-sign-up-preview))
+  - Email (required by default; can be [made optional](how-to-custom-oidc-federation-customers.md#make-email-optional-for-external-idp-sign-up))
   - Email_verified
   - Phone number
   - Phone_number_verified
@@ -110,7 +110,7 @@ At this point, you set up the OIDC identity provider in your Microsoft Entra ID,
 
 1. Select **Save**.
 
-## Make email optional for external IdP sign-up (preview)
+## Make email optional for external IdP sign-up
 
 By default, an email address is required when users sign up with an external identity provider. If your external IdP doesn't emit an email claim, users encounter the error `AADSTS901011: No email address was obtained from the external oidc identity provider` during sign-up. To avoid this error, you can configure your user flow to make the email attribute optional. This allows users to complete sign-up using only their external IdP identity, without providing an email address.
 
