@@ -16,15 +16,18 @@ In this article,  you learn how to integrate DocuSign with Microsoft Entra ID. W
 * Enable automatic sign-in to DocuSign for your users through their Microsoft Entra accounts.
 * Manage your accounts in one central location: the Azure portal.
 
+DocuSign is available in the following [national cloud deployments](/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: | :white_check_mark:    |        |
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A DocuSign subscription that's single sign-on (SSO) enabled.
 * Control over your domain DNS. This is needed to claim domain on DocuSign. 
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 
