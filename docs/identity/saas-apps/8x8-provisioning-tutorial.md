@@ -24,6 +24,12 @@ This article describes the steps you need to perform in both 8x8 Admin Console a
 > * [Single sign-on](./8x8virtualoffice-tutorial.md) to 8x8 (recommended)
 > * Long lived bearer token authentication supported.
 
+8x8 is available in the following [national cloud deployments](/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: | :white_check_mark:    |        |
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -33,9 +39,6 @@ The scenario outlined in this article assumes that you already have the followin
 * An 8x8 X series subscription of any level.
 * An 8x8 user account with administrator permission in [Admin Console](https://vo-cm.8x8.com).
 * [Single sign-on with Microsoft Entra ID](./8x8virtualoffice-tutorial.md) has already been configured.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).

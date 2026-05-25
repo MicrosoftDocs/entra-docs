@@ -25,6 +25,12 @@ This article describes the steps you need to perform in both Adobe Identity Mana
 > * Provision groups and group memberships in Adobe Identity Management (SAML).
 > * [Single sign-on](adobe-identity-management-tutorial.md) to Adobe Identity Management (SAML) (recommended).
 
+Adobe Identity Management (SAML) is available in the following [national cloud deployments](/graph/deployments).
+
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: | :white_check_mark:    |        |
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -36,9 +42,6 @@ The scenario outlined in this article assumes that you already have the followin
 
 > [!NOTE]
 > If your organization uses the User Sync Tool or a UMAPI integration, you must first pause the integration. Then, add Microsoft Entra automatic provisioning to automate user management. Once Microsoft Entra automatic provisioning is configured and running, you can completely remove the User Sync Tool or UMAPI integration.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
