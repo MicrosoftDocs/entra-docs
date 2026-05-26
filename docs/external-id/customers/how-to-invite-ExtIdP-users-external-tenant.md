@@ -55,7 +55,7 @@ Regardless of which option you use, when the invitation is created:
 
 ### Option 1: Use the Invitation API
 
-Create a user in the External ID tenant using the [Microsoft Graph Invitation API](/graph/api/invitation-post?view=graph-rest-1.0&tabs=http).
+Create a user in the External ID tenant using the [Microsoft Graph Invitation API](/graph/api/invitation-post).
 
 ```http
 POST https://graph.microsoft.com/v1.0/invitations
@@ -128,7 +128,7 @@ After the user completes invitation redemption:
 
 ## Related content
 
-- [Create invitation (Microsoft Graph)](/graph/api/invitation-post?view=graph-rest-1.0&tabs=http)
+- [Create invitation (Microsoft Graph)](/graph/api/invitation-post)
 - [Add and manage customer accounts](how-to-manage-customer-accounts.md)
 - [Identity providers for external tenants](concept-authentication-methods-customers.md)
 - [Issuer acceleration](concept-authentication-methods-customers.md#issuer-acceleration)
