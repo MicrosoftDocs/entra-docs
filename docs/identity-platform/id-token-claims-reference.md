@@ -36,6 +36,12 @@ The following table shows header claims present in ID tokens.
 
 The following table shows the claims that are in most ID tokens by default (except where noted).  However, your app can use [optional claims](./optional-claims.md) to request more claims in the ID token. Optional claims can range from the `groups` claim to information about the user's name.
 
+The payload claims should contain the information about "amr" claim as well, just like the access token doc does https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference#payload-claims
+Tests show that V1.0 ID tokens will also contain the "amr" claim, and V2.0 does not.
+<img width="251" height="1167" alt="image" src="https://github.com/user-attachments/assets/7fdc8cd4-94e5-4631-9568-6cb89d21b2c6" />
+<img width="330" height="786" alt="image" src="https://github.com/user-attachments/assets/73fe6720-8e9c-43f8-a86f-bda1335b4a5f" />
+
+
 | Claim | Format | Description |
 |-------|--------|-------------|
 |`aud` |  String, an App ID GUID | Identifies the intended recipient of the token. In `id_tokens`, the audience is your app's Application ID, assigned to your app in the Azure portal. This value should be validated. The token should be rejected if it fails to match your app's Application ID. |
