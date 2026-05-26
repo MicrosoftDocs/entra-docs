@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Visibly and Microso
 > * Keep user attributes synchronized between Microsoft Entra ID and Visibly
 > * Provision groups and group memberships in Visibly
 > * [Single sign-on](./visibly-tutorial.md) to Visibly (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
