@@ -30,9 +30,7 @@ This article describes the steps you need to perform in both GitHub Enterprise M
 
 GitHub Enterprise Managed User (OIDC) is available in the following [national cloud deployments](/graph/deployments).
 
-| Global service | US Government | China operated by 21Vianet |
-|-----------------|------------------------|----------------------------|
-| :white_check_mark: | :white_check_mark:    |        |
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 
