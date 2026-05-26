@@ -213,7 +213,16 @@ sections:
           When will the agent certificate be automatically renewed before expiration?
         answer: |
           The agent certification is automatically renewed **six months** before its expiration date. If it isn't renewed, ensure the network connection of the agent is stable. Restart the agent services or update to the latest version may also solve the issue.
-          
+
+      - question: |
+          Is it safe to remove PKS certificates from servers running the Microsoft Entra Connect Health agent?
+        answer: |
+          Yes. PKS certificates are no longer used by the Microsoft Entra Connect Health agent and are safe to remove.
+
+          Legacy versions of the agent installed certificates named after the server they ran on. Current versions of the agent don't use these certificates, but they're left in place after upgrade. Because the certificates remain in the local certificate store, expiry monitoring tools can raise false alerts as they approach their expiration date.
+
+          You can safely delete these certificates from the local certificate store on the agent server to stop the false alerts. Removing them doesn't affect the operation of the agent.
+
 additionalContent: |
 
   ## Related links
