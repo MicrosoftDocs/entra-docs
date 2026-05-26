@@ -32,7 +32,7 @@ items:
     expanded: false
     items: 
     - name: Create or delete users
-      href: how-to-create-delete-users.yml
+      href: how-to-create-delete-users.md
     - name: Assign roles to users
       href: how-to-assign-roles-to-users.yml
     - name: Default user permissions

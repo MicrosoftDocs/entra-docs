@@ -2,7 +2,7 @@
 title: Default user permissions
 description: Compare the default user permissions available in Microsoft Entra ID and learn how to restrict access.
 ms.topic: concept-article
-ms.date: 03/05/2025
+ms.date: 05/18/2026
 ms.reviewer: vincesm
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer Intent: As an IT admin, I want to understand default user permissions in Microsoft Entra ID so that I can manage what actions users can perform by default.
@@ -37,13 +37,16 @@ The set of default permissions depends on whether the user is a native member of
 | Applications | <ul><li>Register (create) new applications<li>Enumerate the list of all applications<li>Read properties of registered and enterprise applications<li>Manage application properties, assignments, and credentials for owned applications<li>Create or delete application passwords for users<li>Delete owned applications<li>Restore owned applications<li>List permissions granted to applications</ul> | <ul><li>Read properties of registered and enterprise applications<li>List permissions granted to applications</ul> | <ul><li>Read properties of registered and enterprise applications</li><li>List permissions granted to applications</li></ul> |
 | Agents | <ul><li>Enumerate the list of all blueprints, blueprint principals, and agent identities<li>Read properties of blueprints, blueprint principals, and agent identities<li>Manage properties, assignments, and credentials for owned blueprints, blueprint principals, and agent identities<li>Delete owned blueprints, blueprint principals, and agent identities <li>Delete and update sponsors of blueprints, blueprint principals, and agent identities when listed as a sponsor <li>List permissions granted to blueprint principals and agent identities <li>Create blueprint principals and agent identities when owner of the blueprint <li>Create agent identities when owner of the blueprint principal </ul> | None | None |
 | Devices</li></ul> | <ul><li>Enumerate the list of all devices<li>Read all properties of devices<li>Manage all properties of owned devices</li></ul> | No permissions | No permissions |
-| Organization | <ul><li>Read all company information<li>Read all domains<li>Read configuration of certificate-based authentication<li>Read all partner contracts</li><li>Read multitenant organization basic details and active tenants</li></ul> | <ul><li>Read company display name<li>Read all domains<li>Read configuration of certificate-based authentication</li></ul> | <ul><li>Read company display name<li>Read all domains</li></ul> |
+| Organization | <ul><li>Read all company information<li>Read all domains<li>Read configuration of certificate-based authentication<li>Read all partner contracts</li><li>Read multitenant organization basic details and active tenants</li><li>Read tenant-wide directory settings (the directorySetting and groupSetting objects in Microsoft Graph) when the calling app has been granted the Directory.Read.All or Directory.ReadWrite.All delegated permission</li></ul> | <ul><li>Read company display name<li>Read all domains<li>Read configuration of certificate-based authentication</li></ul> | <ul><li>Read company display name<li>Read all domains</li></ul> |
 | Roles and scopes | <ul><li>Read all administrative roles and memberships<li>Read all properties and membership of administrative units</li></ul> | No permissions | No permissions |
 | Subscriptions | <ul><li>Read all licensing subscriptions<li>Enable service plan memberships</li></ul> | No permissions | No permissions |
 | Policies | <ul><li>Read all properties of policies<li>Manage all properties of owned policies</li></ul> | No permissions | No permissions |
 | Terms of use | Read terms of use a user has accepted. | Read terms of use a user has accepted. | Read terms of use a user has accepted. |
 
-## Restrict member users' default permissions 
+> [!NOTE]
+> Some read permissions listed for member users—including reading tenant-wide directory settings—are accessible through Microsoft Graph only when the calling app has been granted an appropriate delegated permission, such as Directory.Read.All. Both the user's role and the app's delegated permission must allow the operation.
+
+## Restrict member users' default permissions
 
 It's possible to add restrictions to users' default permissions.
 
@@ -181,4 +184,4 @@ Users can perform the following actions on owned groups.
 * To learn more about how to assign Microsoft Entra administrator roles, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md).
 * To learn more about how resource access is controlled in Microsoft Azure, see [Understanding resource access in Azure](/azure/role-based-access-control/rbac-and-directory-admin-roles).
 
-* [Manage users](./how-to-create-delete-users.yml).
+* [Manage users](./how-to-create-delete-users.md).

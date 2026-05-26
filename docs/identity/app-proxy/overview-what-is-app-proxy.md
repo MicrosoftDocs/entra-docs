@@ -1,7 +1,7 @@
 ---
 title: Publish on-premises apps with Microsoft Entra application proxy
 description: Learn about the architecture, connectors, authentication methods, and security benefits of Microsoft Entra application proxy.
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/10/2026
 ms.reviewer: KaTabish
 ms.custom:

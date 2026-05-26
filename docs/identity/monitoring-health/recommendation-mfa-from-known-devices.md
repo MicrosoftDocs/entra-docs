@@ -12,7 +12,10 @@ ms.custom: sfi-image-nochange
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to minimize multifactor authentication prompts from known devices. This recommendation is called `tenantMFA` in the recommendations API in Microsoft Graph. 
+This article covers the recommendation to minimize multifactor authentication prompts from known devices. This recommendation is called `tenantMFA` in the recommendations API in Microsoft Graph.
+
+> [!NOTE]
+> If you have a Microsoft Entra ID P1 or P2 license, Microsoft recommends using [Conditional Access sign-in frequency](../conditional-access/howto-conditional-access-session-lifetime.md) to control how often users are prompted for MFA, rather than the **remember multifactor authentication** setting described in this article. For more information, see [Reauthentication prompts and session lifetime for Microsoft Entra multifactor authentication](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
 ## Prerequisites
 
@@ -33,6 +36,8 @@ This recommendation shows up if the **remember multifactor authentication** feat
 This recommendation improves your user's productivity and minimizes the sign-in time with fewer MFA prompts. Ensure that your most sensitive resources can have the tightest controls, while your least sensitive resources can be more freely accessible.
 
 ## Action plan
+
+If you have a Microsoft Entra ID P1 or P2 license, consider migrating to [Conditional Access sign-in frequency](../conditional-access/howto-conditional-access-session-lifetime.md) for session management instead of using the **remember multifactor authentication** setting. For tenants that continue to use this setting, complete the following steps to ensure the duration is set to at least 90 days.
 
 1. Review the [How to configure Microsoft Entra multifactor authentication settings](../../identity/authentication/howto-mfa-mfasettings.md) article.
 

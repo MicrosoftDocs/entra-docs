@@ -21,6 +21,7 @@ This article describes the steps you need to do in both Plandisc and Microsoft E
 > * Remove users in Plandisc when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Plandisc
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Plandisc (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

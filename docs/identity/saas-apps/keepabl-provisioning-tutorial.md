@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Keepabl and Microso
 > * Remove users in Keepabl when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Keepabl.
 > * [Single sign-on](keepabl-tutorial.md) to Keepabl (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

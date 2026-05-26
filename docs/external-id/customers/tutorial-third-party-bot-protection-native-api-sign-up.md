@@ -16,6 +16,9 @@ author: garrodonnell
 This tutorial guides you through integrating third-party bot protection providers with Native API sign-up flows in Microsoft Entra External ID. By using a Web Application Firewall (WAF) to intercept sign-up requests, you can implement risk-based challenge mechanisms during user registration to protect against automated bot attacks and fake account creation.
 
 > [!NOTE]
+> This integration applies to native authentication API flows only. The WAF intercepts the native authentication `/start` endpoint to evaluate the request before user registration proceeds. Browser-delegated (web-hosted) sign-up flows aren't covered by this tutorial and use a different integration model.
+
+> [!NOTE]
 > This tutorial assumes you manually make raw HTTP requests to execute the sign-up flow. When possible, use a Microsoft-built and supported authentication SDK. See [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md) and [Tutorial: Prepare your iOS/macOS mobile app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
 
 ## Prerequisites

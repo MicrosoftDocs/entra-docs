@@ -124,20 +124,20 @@ Follow these steps to enable Microsoft Entra SSO.
 
     | **Identifier** |
     |----|
-    | `google.com/a/<yourdomain.com>` |
+    | `google.com/a/<customer-domain>` |
     | `google.com` |
     | `https://google.com` | 
-    | `https://google.com/a/<yourdomain.com>` |
+    | `https://google.com/a/<customer-domain>` |
 
     b. In the **Reply URL** textbox, type a URL using one of the following patterns: 
 
     | **Reply URL** |
     |-----|
     | `https://www.google.com` |
-    | `https://www.google.com/a/<yourdomain.com>` |
+    | `https://www.google.com/a/<customer-domain>` |
     
     c. In the **Sign on URL** textbox, type a URL using the following pattern: 
-    `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://mail.google.com`
+    `https://www.google.com/a/<customer-domain>/ServiceLogin?continue=https://mail.google.com`
 
 1. On the **Basic SAML Configuration** section, if you want to configure for the **Google Cloud Platform** perform the following steps:
 
@@ -145,20 +145,20 @@ Follow these steps to enable Microsoft Entra SSO.
 	
     | **Identifier** |
     |-----|
-    | `google.com/a/<yourdomain.com>` |
+    | `google.com/a/<customer-domain>` |
     | `google.com` |
     | `https://google.com` |
-    | `https://google.com/a/<yourdomain.com>` |
+    | `https://google.com/a/<customer-domain>` |
     
     b. In the **Reply URL** textbox, type a URL using one of the following patterns: 
     
     | **Reply URL** |
     |-----|
     | `https://www.google.com/acs` |
-    | `https://www.google.com/a/<yourdomain.com>/acs` |
+    | `https://www.google.com/a/<customer-domain>/acs` |
     
     c. In the **Sign on URL** textbox, type a URL using the following pattern:
-    `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://console.cloud.google.com`
+    `https://www.google.com/a/<customer-domain>/ServiceLogin?continue=https://console.cloud.google.com`
 
     > [!NOTE]
 	> These values aren't real. Update these values with the actual Identifier,Reply URL and Sign on URL. Google Cloud / G Suite Connector by Microsoft doesn't provide Entity ID/Identifier value on Single Sign On configuration so when you uncheck the **domain specific issuer** option the Identifier value is `google.com`. If you check the **domain specific issuer** option it's `google.com/a/<yourdomainname.com>`. To check/uncheck the **domain specific issuer** option you need to go to the **Configure Google Cloud / G Suite Connector by Microsoft SSO** section which is explained later in the article. For more information contact [Google Cloud / G Suite Connector by Microsoft Client support team](https://www.google.com/contact/).

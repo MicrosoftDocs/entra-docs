@@ -70,7 +70,7 @@ Content-Type: application/json
 
 ### Option 2: Use the admin center
 
-You can also invite users through the Microsoft Entra admin center using the [Invite external user](~/fundamentals/how-to-create-delete-users.yml#invite-an-external-user) option. To use this pattern, disable the default Microsoft invitation email and send your own custom invitation containing the `domain_hint` parameter as described in the next step.
+You can also invite users through the Microsoft Entra admin center using the [Invite external user](~/fundamentals/how-to-create-delete-users.md#invite-an-external-user) option. To use this pattern, disable the default Microsoft invitation email and send your own custom invitation containing the `domain_hint` parameter as described in the next step.
 
 ## Step 3: Send a custom invitation email with the domain_hint parameter
 

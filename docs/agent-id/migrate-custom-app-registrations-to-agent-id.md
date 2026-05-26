@@ -19,13 +19,15 @@ This article shows you how to migrate agents where you own the code and the iden
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
-
 - An existing AI agent that uses an app registration or service principal for authentication.
 - **Agent ID Developer** or **Agent ID Administrator** role to create blueprints and agent identities.
 - **Privileged Role Administrator** role to grant Microsoft Graph application permissions.
 - Access to the Microsoft Graph v1.0 API.
 - Familiarity with Agent ID key concepts. For more information, see [Agent identity concepts](key-concepts.md).
+
+### Licensing requirements
+
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ## Review migration benefits
 

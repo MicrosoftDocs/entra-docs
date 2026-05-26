@@ -1,10 +1,19 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md",
+      "redirect_url": "/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/global-secure-access/tutorial-internet-access-file-controls.md",
       "redirect_url": "/entra/global-secure-access/tutorial-internet-access-content-policies",
       "redirect_document_id": true
     },
+    {
+      "source_path": "docs/identity/authentication/concept-system-preferred-multifactor-authentication.md",
+      "redirect_url": "/entra/identity/authentication/concept-system-preferred-authentication",
+      "redirect_document_id": false    },
     {
       "source_path": "docs/security-copilot/access-review-agent.md",
       "redirect_url": "/entra/id-governance/access-reviews-overview",
@@ -3588,6 +3597,16 @@
     {
       "source_path": "docs/global-secure-access/concept-edr-antivirus-coexistence.md",
       "redirect_url": "/entra/global-secure-access/how-to-edr-antivirus-coexistence",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/saas-apps/openforms-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/forms-workflow-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/conditional-access/policy-agent-user-account.md",
+      "redirect_url": "/entra/identity/conditional-access/agent-id",
       "redirect_document_id": false
     }
   ]

@@ -5,8 +5,9 @@ author: owinfreyATL
 ms.author: owinfrey
 ms.subservice: hybrid
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 02/03/2026
+ms.date: 04/15/2026
 ms.reviewer: dhanyak
+ai-usage: ai-assisted
 
 #CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.
 ---
@@ -219,7 +220,22 @@ Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | I
 > [!IMPORTANT] 
 > Make sure that the users that you roll back have no cloud references. Remove cloud users from SOA transferred groups, and remove these groups from access packages before you roll back the users to AD DS. The sync client takes over the object in the next sync cycle.
 
-You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
+Follow these steps to roll back the SOA update and revert the SOA to on-premises:
+
+1. Disable the `blockCloudObjectTakeoverThroughHardMatchEnabled` feature flag. This flag blocks switching source of authority from cloud to on-premises by default. Issue the following request to Microsoft Graph to disable it:
+
+   ```http
+   PATCH https://graph.microsoft.com/beta/directory/onPremisesSynchronization/{id}
+   {
+       "features": {
+           "blockCloudObjectTakeoverThroughHardMatchEnabled": false
+       }
+   }
+   ```
+
+   Replace `{id}` with the on-premises directory synchronization configuration ID for your tenant.
+
+1. Run the following operation to roll back the SOA and revert to on-premises management.
 
    ```https
    PATCH https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior
@@ -250,6 +266,18 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and *blockOnPremisesSync* = false, which means the object SOA is taken over by the on-premises again.
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
+
+> [!IMPORTANT]
+> After the rollback is complete and Connect Sync takes over the object, re-enable the `blockCloudObjectTakeoverThroughHardMatchEnabled` feature flag to maintain protection against unintended cloud object takeover:
+>
+> ```http
+> PATCH https://graph.microsoft.com/beta/directory/onPremisesSynchronization/{id}
+> {
+>     "features": {
+>         "blockCloudObjectTakeoverThroughHardMatchEnabled": true
+>     }
+> }
+> ```
 
 ## Clear on-premises attributes for SOA transferred users
 

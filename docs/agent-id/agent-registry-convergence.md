@@ -81,6 +81,10 @@ Viewing all agents in the Microsoft 365 admin center doesn't require a specific 
 
 Applying security and governance controls for agents, such as Conditional Access or identity governance policies, requires the appropriate licensing for [Microsoft Entra Agent ID](../fundamentals/licensing.md#microsoft-entra-agent-id).
 
+### How do I get agent identity blueprints to appear in the Agent 365 registry?
+
+After you create an agent identity blueprint, register it in the [Agent 365 registry](/microsoft-365/admin/manage/agent-registry) so administrators can discover, govern, and manage the agent from the Microsoft 365 admin center. In some scenarios, previously created agent identity blueprints may not appear in the registry. To ensure that all agent identity blueprints are registered, see [Register agents in the Agent 365 registry](create-blueprint.md#register-agents-in-the-agent-365-registry).
+
 ## How to view the complete agent inventory
 
 To view the complete inventory of agents in your organization:
