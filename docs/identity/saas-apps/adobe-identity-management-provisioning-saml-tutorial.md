@@ -5,7 +5,7 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 02/25/2026
+ms.date: 05/26/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Adobe Identity Management (SAML) so that I can streamline the user management process and ensure that users have the appropriate access to Adobe Identity Management (SAML).
