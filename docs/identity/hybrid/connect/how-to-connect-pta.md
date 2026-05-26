@@ -59,7 +59,7 @@ You can combine Pass-through Authentication with the [Seamless single sign-on](h
 - Installing multiple agents provides high availability of sign-in requests.
 - It [protects](~/identity/authentication/howto-password-smart-lockout.md) your on-premises accounts against brute force password attacks in the cloud.
 
-## Privacy Considerations
+## Privacy considerations
 
 When a pass-through sign-in attempt from Tenant A (for example, Contoso) to Tenant B (for example, Fabrikam) fails, Microsoft Entra ID publishes the sign-in log to both tenants. For failed attempts, Microsoft Entra ID doesn't expose personally identifiable information (PII) to Tenant B, because the user in Tenant A never consented to share their identity with Tenant B. In these cases, attributes like the user principal name (UPN) are replaced with unresolved GUIDs.
 
