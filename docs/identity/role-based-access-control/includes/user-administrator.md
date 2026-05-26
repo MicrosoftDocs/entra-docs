@@ -2,7 +2,7 @@
 title: User Administrator
 description: User Administrator
 ms.topic: include
-ms.date: 05/21/2026
+ms.date: 01/26/2026
 ms.custom: include file
 ---
 
@@ -61,7 +61,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/contacts/delete | Delete contacts |
 > | microsoft.directory/deletedItems.groups/restore | Restore soft deleted groups to original state |
 > | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
-> | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management |
 > | microsoft.directory/groups.unified/assignedLabels/update | Update the assigned labels property on Microsoft 365 groups of assigned membership type, excluding role-assignable groups |
 > | microsoft.directory/groups/assignLicense | Assign product licenses to groups for group-based licensing |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
