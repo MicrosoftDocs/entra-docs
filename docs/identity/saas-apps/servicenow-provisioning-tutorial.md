@@ -19,6 +19,7 @@ For more information on the Microsoft Entra automatic user provisioning service,
 ## Capabilities supported
 
 > [!div class="checklist"]
+> * Basic Authentication authentication supported.
 > - Create users in ServiceNow.
 > - Remove users in ServiceNow when they don't need access anymore.
 > - Keep user attributes synchronized between Microsoft Entra ID and ServiceNow.

@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both Gong and Microsoft 
 > * Remove users in Gong when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Gong.
 > * Provision groups and group memberships in Gong.
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Jostle and Microsof
 > * Remove users in Jostle when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Jostle
 > * [Single sign-on](jostle-tutorial.md) to Jostle (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

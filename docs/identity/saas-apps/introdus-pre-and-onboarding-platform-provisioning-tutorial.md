@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both introDus Pre and On
 > * Remove users in introDus Pre and Onboarding Platform when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and introDus Pre and Onboarding Platform
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to introDus Pre and Onboarding Platform (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
