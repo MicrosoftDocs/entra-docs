@@ -3,7 +3,7 @@ title: Configure Cisco Umbrella Admin SSO for Single sign-on with Microsoft Entr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cisco Umbrella Admin SSO.
 ms.reviewer: celested
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Umbrella so that I can control who has access to Cisco Umbrella, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
