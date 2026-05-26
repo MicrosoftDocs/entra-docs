@@ -8,10 +8,12 @@ metadata:
   ms.service: entra-id
   ms.subservice: hybrid-connect
   ms.tgt_pltfrm: na
-  ms.custom: no-azure-ad-ps-ref
+  ms.custom:
+    - no-azure-ad-ps-ref
     - sfi-ga-nochange
+    - msecd-doc-authoring-1012
   ms.topic: faq
-  ms.date: 12/27/2024
+  ms.date: 05/15/2026
   ms.author: jomondi
   
 title: Microsoft Entra Connect Health frequently asked questions
@@ -33,9 +35,9 @@ sections:
           
           |Role| Operating system / Version|
           |--|--|
-          |Active Directory Federation Services (AD FS)| <ul> <li> Windows Server 2016  </li> <li> Windows Server 2019  </li> <li> Windows Server 2022  </li> <li> Windows Server 2025  </li> </ul>|
-          |Microsoft Entra Connect | Version 1.0.9125 or higher|
-          |Active Directory Domain Services (AD DS)| <ul><li> Windows Server 2016  </li> <li> Windows Server 2019  </li> <li> Windows Server 2022  </li> <li> Windows Server 2025  </li> </ul>|
+          |Active Directory Federation Services (AD FS)| Windows Server 2016, 2019, 2022, or 2025|
+          |Microsoft Entra Connect | [Version 2.5.79.0 or higher](reference-connect-version-history.md)|
+          |Active Directory Domain Services (AD DS)| Windows Server 2016, 2019, 2022, or 2025|
           
           Windows Server Core installations aren't supported.
           
@@ -118,7 +120,7 @@ sections:
       - question: |
           What firewall ports do I need to open for the Microsoft Entra Connect Health Agent to work?
         answer: |
-          See the [requirements section](how-to-connect-health-agent-install.md#requirements) for the list of firewall ports and other connectivity requirements.
+          See the [prerequisites section](how-to-connect-health-agent-install.md#prerequisites) for the list of firewall ports and other connectivity requirements.
           
       - question: |
           Why do I see two servers with the same name in the Microsoft Entra Connect Health portal?
@@ -145,7 +147,7 @@ sections:
         answer: |
           The health agent can fail to register due to the following possible reasons:
           
-          * The agent can't communicate with the required endpoints because a firewall is blocking traffic. This issue is common on web application proxy servers. Make sure that you allowed outbound communication to the required endpoints and ports. See the [requirements section](how-to-connect-health-agent-install.md#requirements) for details.
+          * The agent can't communicate with the required endpoints because a firewall is blocking traffic. This issue is common on web application proxy servers. Make sure that you allowed outbound communication to the required endpoints and ports. See the [prerequisites section](how-to-connect-health-agent-install.md#prerequisites) for details.
           * Outbound communication is subjected to a TLS inspection by the network layer. This causes the certificate that the agent uses to be replaced by the inspection server/entity, and the steps to complete the agent registration fail.
           * The user can't perform the registration of the agent. Global Administrators can by default. You can use [Azure role-based access control (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-azure-rbac) to delegate access to other users.
           
