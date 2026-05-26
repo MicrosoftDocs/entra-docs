@@ -243,7 +243,6 @@ If the troubleshooting steps don't resolve your issue and you still need help, o
    | **Summary** | SuccessFactors provisioning - Workload identity authentication issue |
    | **Problem type** | Provisioning from Cloud HR to AD or Microsoft Entra ID |
    | **Problem subtype** | Problem configuring the provisioning service |
-
 1. Complete the remaining fields and submit the request.
 
 ## Related content
