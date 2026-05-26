@@ -27,6 +27,9 @@ Applies to the following provisioning integrations:
 - SuccessFactors to Microsoft Entra ID user provisioning
 - SuccessFactors Writeback
 
+> [!NOTE]
+> Workload identity authentication is currently enabled for the **SuccessFactors Writeback** and **SuccessFactors to Microsoft Entra ID user provisioning** scenarios. Support for the **SuccessFactors to on-premises Active Directory user provisioning** scenario will be enabled soon.
+
 ## Why workload identity-based authentication
 
 Workload identity-based authentication strengthens your security posture by removing static credentials and replacing them with tokens that expire in minutes rather than never.
@@ -93,6 +96,7 @@ Consider the following approach:
 - **Replicate after the first app is validated.** After your team is comfortable with the process for one SuccessFactors provisioning app, you can apply the same steps quickly to other provisioning apps in your tenant.
 - **Use a test app if you can't change the production app directly.** If there are organizational or change-management constraints that prevent you from modifying the production provisioning app directly, you can create a new SAP SuccessFactors provisioning app in your production tenant. Use that test app to validate end-to-end connectivity and targeted user flows with **Provision on demand** before applying the change to the production app.
 - **Reuse the existing API user account.** When you configure the OIDC OAuth Client Application mapping in SAP SuccessFactors (Step 4), bind the SAP IAS Client ID to the same [SuccessFactors API user account](./configure-successfactors-api-user.md) that was previously used with basic authentication. This binding ensures that the role-based permissions governing which SuccessFactors Employee Central entities are accessible remain identical before and after the switch, so there are no unexpected changes in the data fetched by the provisioning job.
+- **Use a recommended sequence if you have multiple SuccessFactors provisioning apps.** If your tenant has more than one SAP SuccessFactors provisioning app, upgrade them in the following order: (1) **SuccessFactors Writeback**, (2) **SuccessFactors to Microsoft Entra ID user provisioning**, and (3) **SuccessFactors to on-premises Active Directory user provisioning**. This sequence ensures that write-back operations are validated first before inbound provisioning flows are switched over.
 
 > [!NOTE]
 > Switching the authentication method doesn't trigger a full sync or restart the provisioning job. When making this change in a production environment, first select **Pause provisioning** to suspend the active sync cycles, then switch the authentication method to workload identity-based authentication, and then select **Start provisioning** to resume. When you pause provisioning, the existing sync state and watermarks are preserved. Incremental provisioning cycles continue from the point where they were paused after you start provisioning again.
@@ -148,7 +152,7 @@ The guided experience prompts you to register a workload identity application. T
    | **Subject** | Subject |
    | **Audience** | Audience |
 
-    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/configure-json-web-token-issuer-trust.png" alt-text="Screenshot showing which values to copy from Microsoft Entra provisioning app to SAP IAS app" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/configure-json-web-token-issuer-trust.png":::
+   :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/configure-json-web-token-issuer-trust.png" alt-text="Screenshot showing which values to copy from Microsoft Entra provisioning app to SAP IAS app" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/configure-json-web-token-issuer-trust.png":::
 1. Save the trust configuration in SAP Cloud Identity Service. The configured trust enables SAP Cloud Identity Service to validate AT1 — verify the signature against the JWKS URI and confirm the subject and audience match — and issue AT2 (the SAP IAS access token with the `sf_technical_access` scope).
 
 ### Step 4: Configure OIDC OAuth Client Application mapping in SAP SuccessFactors
@@ -177,7 +181,7 @@ SAP Cloud Identity Service generates one or more values that Microsoft Entra nee
 1. Set the `OAuth token endpoint` parameter to your SAP IAS authorization server's token endpoint. Example: `https://<ias-server>.accounts.ondemand.com/oauth2/token`
 1. Set the `Application API URL` parameter to your [SAP SuccessFactors OData API server](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/list-of-sap-successfactors-api-servers). Example: `https://apisalesdemo8.successfactors.com`.
 1. After you fill in all connectivity parameters, your configuration matches the layout shown in this screenshot.
-    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-to-successfactors-oidc-mapping.png" alt-text="Screenshot showing how to map SAP IAS client id to SuccessFactors technical/API user" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-to-successfactors-oidc-mapping.png":::
+    :::image type="content" source="./media/sap-successfactors-workload-identity/workload-identity-all-parameters-configured.png" alt-text="Screenshot showing all workload identity connectivity parameters configured" lightbox="./media/sap-successfactors-workload-identity/workload-identity-all-parameters-configured.png":::
 
 ### Step 6: Test the connection and activate workload identity-based authentication
 

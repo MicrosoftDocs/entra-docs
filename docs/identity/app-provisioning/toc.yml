@@ -131,6 +131,8 @@ items:
         href: migrate-from-sap-idm.md
       - name: Configure workload identity for SAP SuccessFactors provisioning
         href: configure-workload-identity-sap-successfactors-provisioning.md
+      - name: Configure SuccessFactors API user account
+        href: configure-successfactors-api-user.md
     - name: Workday provisioning scenarios
       items:
       - name: Retrieve pronoun information
