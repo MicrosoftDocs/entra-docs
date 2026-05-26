@@ -3,7 +3,7 @@ title: Configure Elium for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Elium.
 author: jeevansd
 ms.topic: how-to
-ms.date: 04/06/2026
+ms.date: 05/26/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Elium so that I can streamline the user management process and ensure that users have the appropriate access to Elium.
@@ -20,9 +20,7 @@ This article shows how to configure Elium and Microsoft Entra ID to automaticall
 
 Elium is available in the following [national cloud deployments](/graph/deployments).
 
-| Global service | US Government | China operated by 21Vianet |
-|-----------------|------------------------|----------------------------|
-| :white_check_mark: | :white_check_mark:    |        |
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 

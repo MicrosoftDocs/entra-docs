@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 author: dhivyagana
 ms.reviewer: celested
 ms.topic: how-to
-ms.date: 05/05/2026
+ms.date: 05/26/2026
 ms.author: dhivyag
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft so that I can control who has access to Confluence SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -28,9 +28,7 @@ Use your Microsoft Entra account with Atlassian Confluence server to enable sing
 
 Confluence is available in the following [national cloud deployments](/graph/deployments).
 
-| Global service | US Government | China operated by 21Vianet |
-|-----------------|------------------------|----------------------------|
-| :white_check_mark: | :white_check_mark:    |        |
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 
