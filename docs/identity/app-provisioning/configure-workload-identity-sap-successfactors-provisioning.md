@@ -234,8 +234,8 @@ If you need to roll back, you can re-enable basic authentication in the SuccessF
 If the troubleshooting steps don't resolve your issue and you still need help, open a support request from the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Select **New support request**.
-1. Fill in the support request form using the following values:
+2. Select **New support request**.
+3. Fill in the support request form using the following values:
 
    | Field | Value |
    | --- | --- |
@@ -243,7 +243,7 @@ If the troubleshooting steps don't resolve your issue and you still need help, o
    | **Summary** | SuccessFactors provisioning - Workload identity authentication issue |
    | **Problem type** | Provisioning from Cloud HR to AD or Microsoft Entra ID |
    | **Problem subtype** | Problem configuring the provisioning service |
-1. Complete the remaining fields and submit the request.
+4. Complete the remaining fields and submit the request.
 
 ## Related content
 

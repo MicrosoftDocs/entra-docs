@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 05/19/2026
+ms.date: 05/26/2026
 ms.reviewer: cmmdesai
 ms.custom: sap-successfactors, provisioning
 ---
