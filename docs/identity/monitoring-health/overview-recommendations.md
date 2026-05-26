@@ -1,13 +1,8 @@
 ---
 title: What are Microsoft Entra recommendations?
 description: Provides a general overview of Microsoft Entra recommendations so you can keep your tenant secure and healthy.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: overview
-ms.subservice: monitoring-health
-ms.date: 02/02/2026
-ms.author: sarahlipsey
+ms.date: 04/28/2026
 ms.reviewer: jadedsouza 
 ms.custom: sfi-ga-nochange
 # Customer intent: As a Microsoft Entra administrator, I want guidance to so that I can keep my Microsoft Entra tenant in a healthy state.
@@ -34,6 +29,12 @@ On a daily basis, Microsoft Entra ID analyzes the configuration of your tenant. 
 
 Each recommendation contains a description, a summary of the value of addressing the recommendation, and a step-by-step action plan. If applicable, impacted resources associated with the recommendation are listed, so you can resolve each affected area. If a recommendation doesn't have any associated resources, the impacted resource type is *Tenant level*, so your step-by-step action plan impacts the entire tenant and not just a specific resource. The system processes recommendation data daily, reflecting activity from the preceding 24-hour window. Occasionally, data synchronization may extend up to 72 hours.
 
+
+## Roles and licenses
+
+The following roles and Microsoft Graph permissions provide access to Microsoft Entra recommendations. License requirements depend on the specific recommendation; see the [Recommendations overview table](#recommendations-overview-table) for per-recommendation details.
+
+[!INCLUDE [Recommendations roles](~/includes/recommendations-roles.md)]
 
 ## Recommendations overview table
 

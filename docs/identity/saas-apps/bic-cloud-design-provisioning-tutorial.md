@@ -6,10 +6,6 @@ description: Learn how to automatically provision and de-provision user accounts
 author: jeevansd
 manager: pmwongera
 
-ms.service: entra-id
-ms.subservice: saas-apps
-
-
 ms.topic: how-to
 ms.date: 02/24/2026
 ms.author: jeedes
@@ -29,6 +25,7 @@ This article describes the steps you need to perform in both BIC Cloud Design an
 > * Keep user attributes synchronized between Microsoft Entra ID and BIC Cloud Design.
 > * Provision groups and group memberships in BIC Cloud Design.
 > * [Single sign-on](bic-cloud-design-tutorial.md) to BIC Cloud Design.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

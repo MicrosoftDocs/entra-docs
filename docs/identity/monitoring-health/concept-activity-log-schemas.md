@@ -2,13 +2,8 @@
 title: Learn about the monitoring and health activity log schemas
 description: Learn how to interpret the details found in the Microsoft Entra audit and sign-in and logs schema.
 
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: concept-article
-ms.subservice: monitoring-health
 ms.date: 05/27/2025
-ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to understand the schema of the Microsoft Entra audit and sign-in logs so that I can interpret the data in the logs and use it to monitor and troubleshoot my organization's identity and access management.

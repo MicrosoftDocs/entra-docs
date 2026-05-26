@@ -4,9 +4,6 @@ description: Learn how to automatically provision and de-provision user accounts
 
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 02/20/2026
 ms.author: jeedes
@@ -25,6 +22,7 @@ This article describes the steps you need to do in both Appaegis Isolation Acces
 > * Remove users in Appaegis Isolation Access Cloud when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Appaegis Isolation Access Cloud
 > * [Single sign-on](appaegis-isolation-access-cloud-tutorial.md) to Appaegis Isolation Access Cloud (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -2,11 +2,13 @@
 title: Microsoft Entra Private Network Connectors
 description: Learn how Microsoft Entra private network connectors work and how Microsoft Entra Private Access and application proxy use them.
 ms.topic: concept-article
-ms.date: 09/25/2025
+ms.date: 03/12/2026
 ai-usage: ai-assisted
 ---
 
 # Microsoft Entra private network connectors
+
+## Overview
 
 Connectors make Microsoft Entra Private Access and application proxy possible. This article explains what connectors are, how they work, and how to optimize your deployment.
 
@@ -148,7 +150,7 @@ These commands set the dynamic port range from 1025 to the maximum of 65535. The
 
 ## Specifications and sizing requirements
 
-We recommend the following specifications for each Microsoft Entra private network connector:
+The following specifications are recommended for each Microsoft Entra private network connector:
 
 - **Memory**: 8 GiB or more.
 - **CPU**: Four CPU cores or more.
@@ -172,7 +174,7 @@ Scenario-based benchmark data (mixed workloads, high-connection concurrency, lat
 
 After a connector is enrolled, it establishes outbound TLS tunnels to the Private Access cloud infrastructure. These tunnels handle all data path traffic. In addition, the control plane channel uses minimal bandwidth to drive keep-alive heartbeat, health reporting, connector updates, and other functions.
 
-You can deploy more connectors in the same connector group to increase overall throughput, if adequate network and internet connectivity is available. We recommend that you maintain a minimum of two healthy connectors to ensure resiliency and consistent availability.
+You can deploy more connectors in the same connector group to increase overall throughput, if adequate network and internet connectivity is available. Maintain a minimum of two healthy connectors to ensure resiliency and consistent availability.
 
 To learn more, see [Best practices for high availability of connectors](../identity/app-proxy/application-proxy-high-availability-load-balancing.md#best-practices-for-high-availability-of-connectors).
 
@@ -212,7 +214,7 @@ Register-MicrosoftEntraPrivateNetworkConnector -EnvironmentName "AzureCloud"
 
 For Azure Government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install the agent for the Azure Government cloud](../identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 
-To learn how to verify the certificate and troubleshoot problems, see [Troubleshoot problems installing the private network connector](../identity/app-proxy/application-proxy-connector-installation-problem.md).
+To learn how to verify the certificate and troubleshoot problems, see [Troubleshoot problems installing the private network connector](~/global-secure-access/troubleshoot-connectors.md).
 
 ## Inactive connectors
 

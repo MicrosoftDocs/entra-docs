@@ -1,13 +1,8 @@
 ---
 title: Logs available for streaming from Microsoft Entra ID
 description: Learn about the Microsoft Entra logs available for streaming to an endpoint for storage, analysis, or monitoring.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: concept-article
-ms.subservice: monitoring-health
 ms.date: 04/16/2025
-ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
 # Customer Intent: As an IT admin, I want to know what logs are available for streaming to an endpoint from Microsoft Entra ID so that I can choose the best option for my organization.
@@ -81,6 +76,14 @@ The `RiskyServicePrincipals` logs provide information about service principals t
 ### Service principal risk events
 
 The `ServicePrincipalRiskEvents` provide details around the risky sign-in events for service principals. These logs might include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md).
+
+### Risky agents
+
+The `RiskyAgents` logs provide information about agents that Microsoft Entra ID Protection detected as risky. Agent risk represents the probability that an agent identity is compromised. For more information, see [ID Protection for agents](~/id-protection/concept-risky-agents.md).
+
+### Agent risk events
+
+The `AgentRiskEvents` logs capture details about the individual risk detections that contribute to an agent being flagged as risky. For more information, see [ID Protection for agents](~/id-protection/concept-risky-agents.md).
 
 ### Enriched Microsoft 365 audit logs
 

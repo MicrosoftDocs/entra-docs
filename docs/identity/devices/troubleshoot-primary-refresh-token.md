@@ -3,8 +3,6 @@ title: Troubleshoot primary refresh token issues on Windows devices
 description: Troubleshoot primary refresh token issues during authentication through Microsoft Entra credentials on Microsoft Entra joined Windows devices.
 
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 02/23/2026
 

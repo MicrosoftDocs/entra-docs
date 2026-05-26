@@ -3,11 +3,10 @@ title: "Microsoft Entra Ignite 2025: Key Announcements and Updates"
 description: Get the latest Microsoft Entra release notes, including updates on authentication, governance, and AI-powered identity protection for modern enterprises.
 author: MicrosoftGuyJFlo
 manager: dougeby
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: reference
 ms.date: 11/10/2025
 ms.author: joflore
+#Customer Intent: As an IT admin, I want to learn about Microsoft Entra announcements from Ignite 2025 so that I can plan for upcoming features and changes.
 ---
 # What's new at Microsoft Ignite 2025 - Microsoft Entra
 
@@ -31,57 +30,49 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 **The future of AI security is here.** Microsoft Entra Agent ID introduces revolutionary identity and access management capabilities specifically designed for AI agents. This groundbreaking service provides first-class identity constructs for AI agents, bringing the same Zero Trust principles that protect human users to autonomous AI systems.
 
-- [What are agent identities (Agent IDs)?](../agent-id/identity-platform/what-is-agent-id.md) (New)
-- [Microsoft Entra agent identities for AI agents](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) (New)
-- [Security for AI](../agent-id/identity-professional/security-for-ai.md) (New)
-- [Agent ID creation channels](../agent-id/identity-professional/agent-id-creation-channels.md) (New)
-- [Control user access to agents](../agent-id/identity-professional/control-user-access-agents.md) (New)
-- [Grant agent access to Microsoft 365](../agent-id/identity-professional/grant-agent-access-microsoft-365.md) (New)
-- [Sign-in and audit logs for agents](../agent-id/identity-professional/sign-in-audit-logs-agents.md) (New)
-- [Agent access packages](../agent-id/identity-professional/agent-access-packages.md) (New)
-- [Configure inheritable permissions blueprints](../agent-id/identity-professional/configure-inheritable-permissions-blueprints.md) (New)
-- [Manage agent in end user experience](../agent-id/identity-platform/manage-agent.md) (New)
-- [Manage agents without identity](../agent-id/identity-professional/manage-agents-without-identity.md) (New)
-- [Authorization for Agent ID](../agent-id/identity-professional/authorization-agent-id.md) (New)
-- [Reference registry roles](../agent-id/identity-professional/reference-registry-roles.md) (New)
+- [What are agent identities (Agent IDs)?](../agent-id/what-are-agent-identities.md) (New)
+- [Microsoft Entra agent identities for AI agents](../agent-id/what-is-microsoft-entra-agent-id.md) (New)
+- [Security for AI](../agent-id/security-for-ai-overview.md) (New)
+- [Agent ID creation channels](../agent-id/agent-id-creation-channels.md) (New)
+- [Control user access to agents](../agent-id/control-user-access-agents.md) (New)
+- [Grant agent access to Microsoft 365](../agent-id/grant-agent-access-microsoft-365.md) (New)
+- [Sign-in and audit logs for agents](../agent-id/sign-in-audit-logs-agents.md) (New)
+- [Agent access packages](../agent-id/agent-access-packages.md) (New)
+- [Configure inheritable permissions blueprints](../agent-id/configure-inheritable-permissions-blueprints.md) (New)
+- Manage agent in end user experience (New)
+- [Manage agents without identity](../agent-id/manage-agents-without-identity.md) (New)
+- [Authorization for Agent ID](../agent-id/authorization-agent-id.md) (New)
+- [Reference registry roles](../agent-id/reference-registry-roles.md) (New)
 
 ## Microsoft Entra Agent Platform
 
 **Developer-first platform for AI agent integration.** The Microsoft Agent Identity Platform provides comprehensive developer tools, SDKs, and protocols for integrating AI agents with Microsoft Entra ID, featuring specialized OAuth flows, token management, and agent registry capabilities.
 
-- [What is Microsoft agent identity platform](../agent-id/identity-platform/what-is-agent-id-platform.md) (New)
-- [What is Agent Registry?](../agent-id/identity-platform/what-is-agent-registry.md) (New)
-- [Key concepts](../agent-id/identity-platform/key-concepts.md) (New)
-- [Agent OAuth protocols](../agent-id/identity-platform/agent-oauth-protocols.md) (New)
-- [Agent autonomous app OAuth flow](../agent-id/identity-platform/agent-autonomous-app-oauth-flow.md) (New)
-- [Agent on-behalf-of OAuth flow](../agent-id/identity-platform/agent-on-behalf-of-oauth-flow.md) (New)
-- [Agent user OAuth flow](../agent-id/identity-platform/agent-user-oauth-flow.md) (New)
-- [Agent blueprint](../agent-id/identity-platform/agent-blueprint.md) (New)
-- [Agent users](../agent-id/identity-platform/agent-users.md) (New)
-- [Agent identities](../agent-id/identity-platform/agent-identities.md) (New)
-- [Agent service principals](../agent-id/identity-platform/agent-service-principals.md) (New)
-- [Agent token claims](../agent-id/identity-platform/agent-token-claims.md) (New)
-- [Agent metadata and discoverability](../agent-id/identity-platform/agent-metadata-discoverability.md) (New)
-- [Agent owners, sponsors, and managers](../agent-id/identity-platform/agent-owners-sponsors-managers.md) (New)
-- [Agent registry collections](../agent-id/identity-platform/agent-registry-collections.md) (New)
-- [Agent lists](../agent-id/identity-platform/agent-lists.md) (New)
-- [Create blueprint](../agent-id/identity-platform/create-blueprint.md) (New)
-- [Create and delete agent identities](../agent-id/identity-platform/create-delete-agent-identities.md) (New)
-- [Manage agent blueprint](../agent-id/identity-platform/manage-agent-blueprint.md) (New)
-- [Autonomous agent request tokens](../agent-id/identity-platform/autonomous-agent-request-tokens.md) (New)
-- [Autonomous agent request agent user tokens](../agent-id/identity-platform/autonomous-agent-request-agent-user-tokens.md) (New)
-- [Autonomous agent request authorization from Entra admin](../agent-id/identity-platform/autonomous-agent-request-authorization-entra-admin.md) (New)
-- [Interactive agent authenticate user](../agent-id/identity-platform/interactive-agent-authenticate-user.md) (New)
-- [Interactive agent request user authorization](../agent-id/identity-platform/interactive-agent-request-user-authorization.md) (New)
-- [Interactive agent request user tokens](../agent-id/identity-platform/interactive-agent-request-user-tokens.md) (New)
-- [Interactive agent request admin authorization](../agent-id/identity-platform/interactive-agent-request-admin-authorization.md) (New)
-- [Call API: Azure services](../agent-id/identity-platform/call-api-azure-services.md) (New)
-- [Call API: Custom](../agent-id/identity-platform/call-api-custom.md) (New)
-- [Call API: Microsoft Graph](../agent-id/identity-platform/call-api-microsoft-graph.md) (New)
-- [Microsoft Entra SDK for agent identities](../agent-id/identity-platform/microsoft-entra-sdk-for-agent-identities.md) (New)
-- [Publish agents to registry](../agent-id/identity-platform/publish-agents-to-registry.md) (New)
-- [Registry agent-to-agent protocol](../agent-id/identity-platform/registry-agent-to-agent-protocol.md) (New)
-- [Manage agent registry collections](../agent-id/identity-platform/agent-registry-manage-collections.md) (New)
+- [What is Microsoft agent identity platform](../agent-id/what-is-agent-id-platform.md) (New)
+- [Key concepts](../agent-id/key-concepts.md) (New)
+- [Agent OAuth protocols](../agent-id/agent-oauth-protocols.md) (New)
+- [Agent autonomous app OAuth flow](../agent-id/agent-autonomous-app-oauth-flow.md) (New)
+- [Agent on-behalf-of OAuth flow](../agent-id/agent-on-behalf-of-oauth-flow.md) (New)
+- [Agent user OAuth flow](../agent-id/agent-user-oauth-flow.md) (New)
+- [Agent blueprint](../agent-id/agent-blueprint.md) (New)
+- [Agent's user account](../agent-id/agent-users.md) (New)
+- [Agent identities](../agent-id/agent-identities.md) (New)
+- [Agent service principals](../agent-id/agent-service-principals.md) (New)
+- [Agent token claims](../agent-id/agent-token-claims.md) (New)
+- [Agent metadata and discoverability](../agent-id/agent-metadata-discoverability.md) (New)
+- [Agent owners, sponsors, and managers](../agent-id/agent-owners-sponsors-managers.md) (New)
+- [Agent lists](../agent-id/agent-lists.md) (New)
+- [Create blueprint](../agent-id/create-blueprint.md) (New)
+- [Create and delete agent identities](../agent-id/create-delete-agent-identities.md) (New)
+- [Manage agent blueprint](../agent-id/manage-agent-blueprint.md) (New)
+- Autonomous agent request tokens (New)
+- Autonomous agent request agent user tokens (New)
+- Autonomous agent request authorization from Entra admin (New)
+- [Authenticate users and acquire tokens for interactive agents](../agent-id/interactive-agent-authentication-authorization-flow.md) (New)
+- [Call API: Azure services](../agent-id/call-api-azure-services.md) (New)
+- [Call API: Custom](../agent-id/call-api-custom.md) (New)
+- [Call API: Microsoft Graph](../agent-id/call-api-microsoft-graph.md) (New)
+- [Microsoft Entra SDK for agent identities](../agent-id/microsoft-entra-sdk-for-agent-identities.md) (New)
 
 ## Security Copilot + Microsoft Entra
 
@@ -106,8 +97,8 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 ### Microsoft Entra ID Governance
 
 **Next-generation identity governance with AI integration.** Enhanced lifecycle workflows, intelligent risk-based approvals, and streamlined access package management deliver comprehensive identity governance at enterprise scale.
-- [What are agent identities (Agent IDs)?](../agent-id/identity-platform/what-is-agent-id.md) (New)
-- [Microsoft Entra agent identities for AI agents](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) (New)
+- [What are agent identities (Agent IDs)?](../agent-id/what-are-agent-identities.md) (New)
+- [Microsoft Entra agent identities for AI agents](../agent-id/what-is-microsoft-entra-agent-id.md) (New)
 - [Entitlement management: Configure ID Protection approvals](../id-governance/entitlement-management-configure-id-protection-approvals.md) (New)
 - [Entitlement management: Configure Insider Risk Management approvals](../id-governance/entitlement-management-configure-insider-risk-management-approvals.md) (New)
 - [Workflow sensitivity labels](../id-governance/workflow-sensitivity-labels.md) (New)
@@ -125,7 +116,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 **Advanced AI-powered cloud security.** New AI Prompt Shield, comprehensive data loss protection, network content filtering, and cloud firewall capabilities deliver cutting-edge protection for modern workloads.
 
-- [AI Prompt Shield](../global-secure-access/how-to-ai-prompt-shield.md) (New)
+- [AI prompt injection protection](../global-secure-access/how-to-ai-prompt-injection-protection.md) (New)
 - [Configure cloud firewall](../global-secure-access/how-to-configure-cloud-firewall.md) (New)
 - [Full data loss protection](../global-secure-access/how-to-full-data-loss-protection.md) (New)
 - [Network content filtering](../global-secure-access/how-to-network-content-filtering.md) (New)
@@ -211,17 +202,17 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Account recovery cost savings estimator](../identity/authentication/how-to-account-recovery-cost-savings-estimator.md) (New)
 - [Enable account recovery](../identity/authentication/how-to-account-recovery-enable.md) (New)
 - [Account recovery for users](../identity/authentication/how-to-account-recovery-for-users.md) (New)
-- [Passkey profiles](../identity/authentication/how-to-authentication-passkey-profiles.md) (New)
-- [Synced passkeys](../identity/authentication/how-to-authentication-synced-passkeys.md) (New)
+- [Passkey profiles](../identity/authentication/how-to-authentication-passkeys-fido2.md) (New)
+- [Synced passkeys](../identity/authentication/how-to-authentication-passkeys-fido2.md) (New)
 - [Self-service account recovery](../identity/authentication/self-service-account-recovery.yml) (New)
-- [Synced passkey FAQ](../identity/authentication/synced-passkey-faq.yml) (New)
+- [Passkey FAQ](../identity/authentication/passkey-faq.yml) (New)
 - [Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md) (Updated)
 - [Manage authentication methods](../identity/authentication/concept-authentication-methods-manage.md) (Updated)
-- [Authentication methods](../identity/authentication/concept-authentication-methods.md) (Updated)
+- [Authentication methods](../identity/authentication/overview-authentication.md) (Updated)
 - [Phone authentication options](../identity/authentication/concept-authentication-phone-options.md) (Updated)
 - [FIDO2 hardware vendor considerations](../identity/authentication/concept-fido2-hardware-vendor.md) (Updated)
 - [Deploy phishing-resistant passwordless authentication](../identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md) (Updated)
-- [Enable passkey (FIDO2)](../identity/authentication/how-to-enable-passkey-fido2.md) (Updated)
+- [Enable passkey (FIDO2)](../identity/authentication/how-to-authentication-passkeys-fido2.md) (Updated)
 - [Plan persona-based phishing-resistant passwordless authentication](../identity/authentication/how-to-plan-persona-phishing-resistant-passwordless-authentication.md) (Updated)
 - [Plan prerequisites for phishing-resistant passwordless authentication](../identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md) (Updated)
 - [Register passkey with security key](../identity/authentication/how-to-register-passkey-with-security-key.md) (Updated)
@@ -255,11 +246,11 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 **Enhanced enterprise application management.** Comprehensive AI-powered application lifecycle management, intelligent app owner identification, and advanced risk assessment deliver next-generation application governance capabilities.
 
-- [Agent app lifecycle: Discovery and onboard](../identity/enterprise-apps/agent-app-lifecycle-discovery-onboard.md) (New)
-- [Agent app lifecycle management](../identity/enterprise-apps/agent-app-lifecycle-management.md) (New)
-- [Agent app lifecycle: Remediation plans](../identity/enterprise-apps/agent-app-lifecycle-remediation-plans.md) (New)
-- [Agent: Contact app owners](../identity/enterprise-apps/agent-contact-app-owners.md) (New)
-- [Agent: Identify and prioritize risky apps](../identity/enterprise-apps/agent-identify-prioritize-risky-apps.md) (New)
+- Agent app lifecycle: Discovery and onboard (New)
+- Agent app lifecycle management (New)
+- Agent app lifecycle: Remediation plans (New)
+- Agent: Contact app owners (New)
+- Agent: Identify and prioritize risky apps (New)
 - [Assign user or group access](../identity/enterprise-apps/assign-user-or-group-access-portal.md) (Updated)
 - [Disable user sign-in](../identity/enterprise-apps/disable-user-sign-in-portal.md) (Updated)
 - [Manage app consent policies](../identity/enterprise-apps/manage-app-consent-policies.md) (Updated)

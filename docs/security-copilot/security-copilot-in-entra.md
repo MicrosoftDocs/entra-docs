@@ -1,17 +1,15 @@
 ---
 title: Security Copilot in Microsoft Entra
 description: Use Security Copilot in Microsoft Entra to investigate identity risks and troubleshoot identity tasks quickly.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
-ms.date: 09/23/2025
+ms.date: 04/23/2026
 ms.update-cycle: 180-days
 ms.topic: concept-article
 ms.service: entra
 ms.custom: security-copilot
 ms.collection: msec-ai-copilot
-#Customer intent: As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
+ai-usage: ai-assisted
+#Customer intent:As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
 ---
 
 # Security Copilot in Microsoft Entra
@@ -32,7 +30,7 @@ For more information, see:
 
 ## Get started
 
-In the Security Copilot platform, Microsoft Entra is a plugin that provides access to your organization's identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin. 
+In the Security Copilot platform, Microsoft Entra is a plugin that provides access to your organization's identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin.
 
 1. Onboard to Security Copilot by following the [Get started with Microsoft Security Copilot](/security-copilot/get-started-security-copilot) guide.
     - This guide contains guidance around subscription requirements, billing, and capacity.
@@ -46,6 +44,29 @@ Once you're all set up in Security Copilot, you can start using [natural languag
 - *List the recent risky sign-ins for karita@woodgrovebank.com.*
 - *Can you give me sign-in logs for karita@woodgrovebank.com for the past 48 hours? Put this information in a table format.*
 - *Get Microsoft Entra audit logs for karita@woodgrovebank.com for the past 72 hours. Put information in table format.*
+
+## Access Copilot chat in the Microsoft Entra admin center
+
+Copilot chat is available directly from the left side navigation in the Microsoft Entra admin center.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader).
+1. Select **Copilot chat** from the side navigation menu.
+
+    :::image type="content" source="./media/security-copilot-in-entra/copilot-chat-left-nav.png" alt-text="Screenshot of the Copilot chat option in the Microsoft Entra admin center." lightbox="./media/security-copilot-in-entra/copilot-chat-left-nav-expanded.png":::
+
+1. Enter a question or task in the chat prompt bar, or select one of the suggestion cards to get started.
+
+The **Entra Copilot** panel opens with the following options:
+
+- **New chat**: Start a new conversation with Copilot.
+- **Agent chat**: Select a specialized agent, such as the **Identity Risk Management Agent** or the **Conditional Access Optimization Agent**, to get targeted assistance.
+- **Recent sessions**: View and resume previous Copilot chat sessions.
+
+The Microsoft Entra Copilot chat experience is designed to meet you where you are in your workflow and stay with you when needed. You can expand or collapse the chat history pane on the left and switch between "sidecar mode" and "fullscreen mode" in the upper-right corner.
+
+:::image type="content" source="./media/security-copilot-in-entra/copilot-chat-collapse-buttons.png" alt-text="Screenshot of the Copilot chat buttons to expand and collapse the views." lightbox="./media/security-copilot-in-entra/copilot-chat-collapse-buttons.png":::
+
+In addition, when you navigate around the Microsoft Entra admin center from the Copilot chat experience, the sidecar remains open in the new page, allowing you to continue your conversation with Copilot without interruption.
 
 ## Provide feedback
 

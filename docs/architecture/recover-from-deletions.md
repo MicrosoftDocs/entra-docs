@@ -1,15 +1,11 @@
 ---
 title: Recover from deletions in Microsoft Entra ID
 description: Understand the difference between soft and hard deletions and how to recover or recreate objects in Microsoft Entra ID.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
-ms.date: 11/03/2025
-ms.author: jricketts
+ms.date: 05/06/2026
 ms.reviewer: jricketts
 ms.custom: sfi-image-nochange
+ms.subservice: architecture
 ---
 # Recover from deletions
 
@@ -155,7 +151,7 @@ You should review and validate the Conditional Access policy configuration after
 To restore a Conditional access policy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Entra ID** > **Conditional Access** > **Deleted Policies (Preview**).
+1. Browse to **Entra ID** > **Conditional Access** > **Deleted policies**.
 1. Select the ellipsis (...) on the far right of the policy to restore.
 1. Select **Restore**.
 1. In the **Restore Conditional Access policy?** dialog box, you can choose to restore the policy in [Report-only mode](../identity/conditional-access/concept-conditional-access-report-only.md) or leave it in the state it was when deleted, which might be **On**. Make your selection and select **Restore**.
@@ -170,7 +166,7 @@ Named locations can't be deleted when marked as trusted, and when recovered from
 To restore a named location:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Entra ID** > **Conditional Access** > **Named locations** > **Deleted Named Locations (Preview)**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations** > **Deleted named locations**.
 1. Select the ellipsis (...) on the far right of the location you want to restore.
 1. Select **Restore**.
 1. In the **Restore selected Named location?** dialog box, select **Restore**.

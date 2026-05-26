@@ -2,13 +2,9 @@
 title: Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 description: Learn how to sign in to an Azure VM that's running Linux by using Microsoft Entra ID and OpenSSH certificate-based authentication.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---
@@ -42,7 +38,7 @@ The following Linux distributions are currently supported for deployments in a s
 | Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
 | openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1 to 15.5, openSUSE Leap 15.6+ |
 | Oracle | Oracle Linux 8, Oracle Linux 9 |
-| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+, RHEL 9.0+ |
+| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+, RHEL 9.0+, RHEL 10.1 |
 | Rocky | Rocky 8, Rocky 9 |
 | SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1 to 15.5, SLES 15.6+ |
 | Ubuntu | Ubuntu 16.04 to Ubuntu 24.04 |

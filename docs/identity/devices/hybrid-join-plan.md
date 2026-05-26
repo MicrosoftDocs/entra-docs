@@ -2,13 +2,9 @@
 title: Plan your Microsoft Entra hybrid join deployment
 description: Explains the steps that are required to implement Microsoft Entra hybrid joined devices in your environment.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: concept-article
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: sandeo
 ---
 

@@ -1,9 +1,6 @@
 ---
 title: Investigate risky users with Copilot
 description: Use Copilot in Microsoft Entra to quickly respond to identity threats by summarizing the risk level for a user and receiving insights relevant to the incident.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days
@@ -23,6 +20,9 @@ Respond to identity threats quickly:
 - Recommendations: get guidance on how to mitigate and respond to these types of attacks, with quick links to help and documentation.
 
 This article describes how to access the risky user summary capability of Microsoft Entra ID Protection and Copilot in Microsoft Entra. Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
+
+> [!NOTE]
+> If the [Identity Risk Management Agent](/entra/id-protection/identity-risk-management-agent-get-started) is enabled in your tenant, you will see a separate risky user summary in this view. 
 
 ## Prerequisites
 

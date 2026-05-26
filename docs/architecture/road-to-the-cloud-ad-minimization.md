@@ -4,12 +4,11 @@ description: Learn about case studies to reduce your dependency on traditional o
 documentationCenter: ''
 author: rolyon
 manager: pmwongera
-ms.service: entra
 ms.topic: how-to
-ms.subservice: architecture
 ms.date: 01/04/2026
 ms.author: rolyon
 ms.custom: references_regions
+ms.subservice: architecture
 ---
 
 # Active Directory minimization case studies

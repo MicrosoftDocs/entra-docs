@@ -3,7 +3,6 @@ title: Prepare Your Environment for User SOA
 description: Learn the steps to prepare your environment to use Source of Authority (SOA) for users.
 author: owinfreyATL
 ms.topic: how-to
-ms.service: entra-id
 ms.subservice: hybrid
 ms.date: 08/14/2025
 ms.author: owinfrey

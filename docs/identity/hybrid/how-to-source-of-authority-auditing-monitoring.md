@@ -3,7 +3,6 @@ title: How to audit and monitor Group Source of Authority (SOA) in Microsoft Ent
 description: Learn how to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID.
 author: Justinha
 ms.topic: concept-article
-ms.service: entra-id
 ms.subservice: hybrid
 ms.date: 08/01/2025
 ms.author: justinha

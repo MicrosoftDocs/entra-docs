@@ -1,13 +1,9 @@
 ---
 title: University multilateral federation solution design
 description: Learn how to design a multilateral federation solution for universities.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 04/01/2023
-ms.author: jricketts
+ms.subservice: architecture
 ---
 
 # Introduction to multilateral federation solutions

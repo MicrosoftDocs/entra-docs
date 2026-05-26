@@ -1,14 +1,10 @@
 ---
 title: Microsoft Entra security operations for Privileged Identity Management
 description: Establish baselines and use Microsoft Entra Privileged Identity Management (PIM) to monitor and alert on issues with accounts governed by PIM.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 09/06/2022
-ms.author: jricketts
 ms.custom: sfi-ga-nochange
+ms.subservice: architecture
 ---
 
 # Microsoft Entra security operations for Privileged Identity Management

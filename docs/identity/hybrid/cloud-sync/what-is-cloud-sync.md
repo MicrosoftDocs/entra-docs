@@ -2,14 +2,9 @@
 title: What is Microsoft Entra Cloud sync?
 description: Describes Microsoft Entra Cloud sync.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: overview
 ms.date: 02/17/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: jomondi
-
 ---
 
 # What is Microsoft Entra Cloud sync?
@@ -19,6 +14,9 @@ ms.author: jomondi
 Microsoft Entra Cloud Sync is a hybrid identity synchronization service that provides modern, cloud-managed synchronization of users, groups, and contacts between Active Directory and Microsoft Entra ID. It represents Microsoft's strategic direction for hybrid identity, offering a lightweight, agent-based approach that simplifies deployment and management while enabling advanced scenarios like disconnected forest synchronization.
 
 Cloud Sync solves common challenges organizations face with hybrid identity infrastructure by eliminating single points of failure, reducing on-premises management overhead, and enabling complex multi-forest scenarios that support organizational growth and change.
+
+> [!NOTE]
+> Cloud sync can be used for tenants in the Microsoft Commercial, US Government, and [21Vianet (China)](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-operated-by-21vianet) clouds. SSPR for on-prem identities is not yet available to be used with Cloud Sync in the 21 Vianet (China) cloud.
 
 ## Core architecture and components
 

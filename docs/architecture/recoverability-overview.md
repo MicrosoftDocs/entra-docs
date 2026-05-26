@@ -1,14 +1,10 @@
 ---
 title: Recoverability best practices in Microsoft Entra ID
 description: Learn the best practices for increasing recoverability.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: best-practice
 ms.date: 11/03/2025
-ms.author: jricketts
 ms.reviewer: jricketts
+ms.subservice: architecture
 ---
 
 # Recoverability best practices
@@ -97,7 +93,7 @@ Document the state of your tenant and its objects regularly. Then if a hard dele
 
 - [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations.
 - [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings.
-- [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings.
+- [Tenant Configuration Management APIs in Microsoft Graph](/graph/unified-tenant-configuration-management-concept-overview) let you define configuration baselines, monitor tenants for drift, and generate snapshots of current settings. You can download snapshots as JSON files for reference or to restore many settings to a previous state.
 - [Conditional Access APIs](/graph/api/resources/conditionalaccesspolicy) can be used to manage your Conditional Access policies as code.
 
 In the rare case that an API is not available for a certain configuration setting, screenshot(s) can be taken to enable manual recovery.
@@ -131,7 +127,6 @@ The [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) can p
 
 > [!NOTE]
 > Settings in the legacy multifactor authentication portal for Application Proxy and federation settings might not be exported with the Microsoft Entra Exporter, or with the Microsoft Graph API.
-The [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) module uses Microsoft Graph and PowerShell to retrieve the state of many of the configurations in Microsoft Entra ID. This information can be used as reference information or, by using PowerShell Desired State Configuration scripting, to reapply a known good state.
 
 Use [Conditional Access Graph APIs](/graph/api/resources/conditionalaccesspolicy) to manage policies like code.
  
@@ -199,6 +194,7 @@ Preventing unwanted changes is far less difficult than needing to re-create and 
 - Use a least privilege model. Ensure that each member of your team has the least privileges necessary to complete their usual tasks. Require a process to escalate privileges for more unusual tasks.
 - Administrative control of an object enables configuration and deletion. Use less privileged roles, like [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader), for tasks that don't require operations to create, update, or delete (CRUD). When CRUD operations are required, use object-specific roles when possible. For example, User Administrators can delete only users, and Application Administrators can delete only applications. Use these more limited roles whenever possible.
 - [Use Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md). PIM enables just-in-time escalation of privileges to perform tasks like hard deletion. You can configure PIM to have notifications or approvals for the privilege escalation.
+- Use [protected actions in Microsoft Entra ID](../identity/role-based-access-control/protected-actions-overview.md) to enforce an additional layer of Conditional Access policy protection, independent of the role being used or how the user was given the permission. Protected actions should be applied to sensitive operations such as hard deletion, authentication context changes and Conditional Access changes.
 
 ## Next steps
 

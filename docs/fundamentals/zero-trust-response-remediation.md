@@ -2,8 +2,6 @@
 title: Security guidance | accelerate response and remediation
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to accelerate response and remediation.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/12/2025
 
@@ -11,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to accelerate response and remediation so that I can quickly recover from security incidents.
 ---
 # Accelerate response and remediation with the Zero Trust Assessment
 

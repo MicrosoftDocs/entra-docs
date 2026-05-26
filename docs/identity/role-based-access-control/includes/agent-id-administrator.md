@@ -2,7 +2,7 @@
 title: Agent ID Administrator
 description: Agent ID Administrator
 ms.topic: include
-ms.date: 01/26/2026
+ms.date: 05/21/2026
 ms.custom: include file, agent-id-ignite
 ---
 
@@ -48,9 +48,9 @@ Assign the Agent ID Administrator role to users who need to do the following:
 > | microsoft.directory/agentIdentityBlueprints/permissions/update | Modify exposed permissions on agent identity blueprints.  |
 > | microsoft.directory/agentIdentityBlueprints/tag/update | Update tags for agent identity blueprints. |
 > | microsoft.directory/agentIdentityBlueprints/verification/update | Update publisher verification setting for agent identity blueprints. |
-> | microsoft.directory/agentUsers/assignLicense | Manage agent user licenses |
-> | microsoft.directory/agentUsers/basic/update | Update basic properties on agent users |
-> | microsoft.directory/agentUsers/create | Add agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/assignLicense | Assign product licenses for agent users |
+> | microsoft.directory/agentUsers/basic/update | Update basic properties on agent users, such display name, user type, and mail nickname |
+> | microsoft.directory/agentUsers/create | Create agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/agentUsers/delete | Delete agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/agentUsers/disable | Disable agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/agentUsers/enable | Enable agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
@@ -58,17 +58,22 @@ Assign the Agent ID Administrator role to users who need to do the following:
 > | microsoft.directory/agentUsers/lifeCycleInfo/read | Read lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/agentUsers/lifeCycleInfo/update | Update lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/agentUsers/manager/update | Update manager for agent users |
+> | microsoft.directory/agentUsers/photo/update | Update photo of agent users |
+> | microsoft.directory/agentUsers/reprocessLicenseAssignment | Reprocess license assignments for agent users |
 > | microsoft.directory/agentUsers/restore | Restore deleted agent users |
-> | microsoft.directory/agentUsers/revokeSignInSessions | Revoke sign-in sessions for a agent user |
+> | microsoft.directory/agentUsers/revokeSignInSessions | Revoke sign-in sessions for agent users |
 > | microsoft.directory/agentUsers/sponsors/update | Update sponsors of agent users |
 > | microsoft.directory/agentUsers/usageLocation/update | Update usage location of agent users |
-> | microsoft.directory/agentUsers/userPrincipalName/update | Update User Principal Name of agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs.  |
+> | microsoft.directory/agentUsers/userPrincipalName/update | Update the user principal name of agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/deletedItems.agentIdentityBlueprints/delete | Permanently delete agent identity blueprints, which can no longer be restored |
 > | microsoft.directory/deletedItems.agentIdentityBlueprints/restore | Restore soft deleted agent identity blueprints to original state |
-> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
+> | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
 > | microsoft.directory/groups.unified/createAsOwner | Create Microsoft 365 groups, excluding role-assignable groups. Creator is added as the first owner. |
+> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
+> | microsoft.directory/organization/standard/read | Read basic properties on an organization |
 > | microsoft.directory/policies/standard/read | Read basic properties on policies |
-> | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties. |
+> | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+

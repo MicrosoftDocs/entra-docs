@@ -4,9 +4,6 @@ description: Learn how to automatically provision and de-provision user accounts
 
 author: jeevansd
 manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -24,6 +21,7 @@ This article describes the steps you need to perform in both Cofense Recipient S
 > * Create users in Cofense Recipient Sync
 > * Remove users in Cofense Recipient Sync when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cofense Recipient Sync
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

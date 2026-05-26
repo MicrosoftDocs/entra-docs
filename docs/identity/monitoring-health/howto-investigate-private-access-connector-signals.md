@@ -2,10 +2,7 @@
 title: How to investigate private application access requiring Microsoft Entra Private Access connector
 description: Learn how to monitor and troubleshoot private application access scenarios that require the Microsoft Entra Private Access connector, using Microsoft Entra Health monitoring tools.
 author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 11/18/2025
 ms.author: jfields
 ms.reviewer: gauthamca

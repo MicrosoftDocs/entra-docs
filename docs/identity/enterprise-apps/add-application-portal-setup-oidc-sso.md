@@ -77,8 +77,8 @@ For applications not available in the Microsoft Entra gallery, you need to manua
    - **Accounts in any organizational directory** for more information on multitenant applications, see [multitenant applications](~/identity-platform/howto-convert-app-to-be-multi-tenant.md)
    - **Accounts in any organizational directory and personal Microsoft accounts** if you want to support both work/school and personal accounts
 1. For **Redirect URI**, select the platform type and enter your application's redirect URI:
-   - **Web**: For server-side web applications (for example, `https://yourdomain.com/auth/callback`)
-   - **Single-page application (SPA)**: For client-side applications using modern auth flows (for example, `https://yourdomain.com` or `http://localhost:3000` for development)
+   - **Web**: For server-side web applications (for example, `https://contoso.com/auth/callback`)
+   - **Single-page application (SPA)**: For client-side applications using modern auth flows (for example, `https://contoso.com` or `http://localhost:3000` for development)
    - **Public client/native**: For mobile and desktop applications
 1. Select **Register**.
 

@@ -99,7 +99,7 @@ Alternatively, if you want to get the specific enterprise application that was d
    $deletedServicePrincipal = Get-EntraDeletedServicePrincipal -Filter "DisplayName eq 'test-App1-Deleted'"
    
    #assign the value returned to a variable and restore the deleted service principal
-   Id = $deletedServicePrincipal.Id
+   $Id = $deletedServicePrincipal.Id
    Restore-EntraDeletedDirectoryObject -Id $deletedServicePrincipal.Id
    ```
 
@@ -184,3 +184,4 @@ DELETE https://graph.microsoft.com/v1.0/directory/deletedItems/{object-id}
 
 - [Recovery and deletion FAQ](delete-recover-faq.yml)
 - [Applications and service principals](~/identity-platform/app-objects-and-service-principals.md)
+- [Microsoft Entra Agent ID agent identity deletion](../../agent-id/concept-agent-identity-deletion.md)

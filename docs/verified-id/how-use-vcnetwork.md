@@ -10,7 +10,10 @@ ms.date: 04/30/2025
 
 # Verify credentials by using the Microsoft Entra Verified ID Network
 
-The Microsoft Entra Verified ID Network simplifies the verification of credentials by streamlining the discovery of issuers' decentralized identifiers (DIDs) and credential types. In this article, we review the steps required to use the network.
+
+## Overview
+
+The Microsoft Entra Verified ID Network simplifies the verification of credentials by streamlining the discovery of issuers' decentralized identifiers (DIDs) and credential types. This article reviews the steps required to use the network.
 
 ## Prerequisites
 
@@ -22,7 +25,7 @@ To use the Microsoft Entra Verified ID Network, you need to:
 
 ## What is the Microsoft Entra Verified ID Network?
 
-In our scenario, Proseware is a verifier. Woodgrove is the issuer. The verifier needs to know Woodgrove's issuer DID and the verifiable credential type that represents Woodgrove employees before it can create a presentation request for a verified credential for Woodgrove employees. The necessary information might come from some kind of manual exchange between the companies, but this approach would be both manual and complex.
+In this scenario, Proseware is a verifier. Woodgrove is the issuer. The verifier needs to know Woodgrove's issuer DID and the verifiable credential type that represents Woodgrove employees before it can create a presentation request for a verified credential for Woodgrove employees. The necessary information might come from some kind of manual exchange between the companies, but this approach would be both manual and complex.
 
 The Microsoft Entra Verified ID Network makes this process easier. Woodgrove, as an issuer, can publish credential types to the Microsoft Entra Verified ID Network. Proseware, as the verifier, can search for published credential types and schemas in the Microsoft Entra Verified ID Network. With this information, Woodgrove can create a [presentation request](presentation-request-api.md#presentation-request-payload) and easily invoke the Request Service API.
   
@@ -33,7 +36,7 @@ The Microsoft Entra Verified ID Network makes this process easier. Woodgrove, as
 
 ## How do I use the Microsoft Entra Verified ID Network?
 
-1. On the start page of **Microsoft Entra Verified ID** in the **Azure portal**, you have a quickstart named **Verification request**. Selecting **start** takes you to a page where you can browse the Verifiable Credentials Network.
+1. On the start page of **Microsoft Entra Verified ID** in the **Azure portal**, you have a quickstart named **Verification request**. Selecting **Start** takes you to a page where you can browse the Verifiable Credentials Network.
 
     :::image type="content" source="media/how-use-vcnetwork/vcnetwork-quickstart.png" alt-text="Screenshot that shows the Verified ID Network quickstart.":::
 

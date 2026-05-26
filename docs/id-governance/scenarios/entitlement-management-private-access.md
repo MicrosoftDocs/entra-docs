@@ -1,8 +1,7 @@
 ---
 title: 'Entra Suite Scenario: Using Entra Private Access with Entitlement Management  '
 description: Describes how to use Entitlement Management with Private Access
-ms.subservice:
-
+ms.subservice: entitlement-management
 ms.workload: identity
 ms.topic: overview
 ms.date: 04/09/2025

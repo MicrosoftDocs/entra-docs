@@ -1,13 +1,8 @@
 ---
 title: Customize and filter activity logs in Microsoft Entra ID
 description: Learn how to customize the columns and filter of the Microsoft Entra activity logs so you can analyze the results.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 11/07/2025
-ms.author: sarahlipsey
 ms.reviewer: egreenberg
 ms.custom: sfi-image-nochange,agent-id-ignite
 # Customer intent: As an IT admin, I want to learn how to customize my view of the logs so I can more effectively filter the results.

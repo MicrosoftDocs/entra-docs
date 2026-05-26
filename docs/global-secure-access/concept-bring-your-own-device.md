@@ -5,13 +5,15 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: concept-article
-ms.date: 01/22/2026
+ms.date: 03/12/2026
 ms.service: global-secure-access
 ms.reviewer: gauthamca
 ai-usage: ai-assisted
 ---
 
 # Bring Your Own Device (Preview)
+
+## Overview
 
 The Global Secure Access client supports bring your own device (BYOD) scenarios so users can access company resources. As a tenant administrator, enable Global Secure Access traffic profiles for members, including internal guests. The client supports automatic Microsoft Entra device registration.
 
@@ -35,13 +37,22 @@ The Global Secure Access client supports bring your own device (BYOD) scenarios 
     1. Install Microsoft Authenticator from the App Store and register the device to the tenant or install the Company Portal app (no device enrollment required).
     2. Install the Microsoft Defender app from Google Play and complete sign-in.
     3. A device-wide VPN profile is created. The Global Secure Access tile is off by default; the user must turn it on to send Private Access traffic.
-- Enable required traffic profiles for these users.
+- Enable private traffic profiles for these users.
+
+## iOS
+
+- BYOD support without device enrollment is available using Microsoft Authenticator through Microsoft Entra device registration.
+- On the device:
+    1. Install Microsoft Authenticator from the App Store and register the device to the tenant.
+    2. Install the Microsoft Defender app from App Store and complete sign-in.
+    3. A device-wide VPN profile is created. The Global Secure Access tile is off by default; the user must turn it on to send Private Access traffic.
+- Enable private traffic profiles for these users.
 
 ## macOS
 
 BYOD support without device enrollment is available through Microsoft Entra device registration.
 - Install and register the device using the Company Portal (no device enrollment required).
-- Enable required traffic profiles for these users.
+- Enable private traffic profiles for these users.
 
 ## Tenant selection and switching (Preview)
 
@@ -53,13 +64,13 @@ How the Global Secure Access client selects a tenant depends on platform and Mic
 
 ### Platform behavior
 
-| Platform/device state | Connection target | Entra tunnel | M365 tunnel | Internet tunnel | Private tunnel | Notes |
+| Platform/device state | Connection target | Microsoft Entra tunnel | M365 tunnel | Internet tunnel | Private tunnel | Notes |
 |---|---|---|---|---|---|---|
 | Windows Microsoft Entra Joined and Hybrid joined device | Client connects to the tenant to which device joined. | ✅ | ✅ | ✅ | ✅ | Cannot switch to a registered tenants for now. Allows user to switch to a resource tenant using external user access(B2B). |
 | Windows Microsoft Entra Registered device | User selects a tenant at first sign-in; remains connected to that tenant. | ❌ | ❌ | ❌ | ✅ | Cannot switch to other registered tenants for now. Allows user to switch to a resource tenant using external user access(B2B). |
-| MacOS Microsoft Entra Registered device with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Uses Company Portal to Entra register the device. |
-| Android Microsoft Entra Registered with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. For unmanaged devices, entra registration can be done with Company portal and Authenticator app. |
-| iOS Microsoft Entra Registered with device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. Unmanaged devices are not supported as of now. |
+| MacOS Microsoft Entra Registered device with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Uses Company Portal to Microsoft Entra register the device. |
+| Android Microsoft Entra Registered with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. For unmanaged devices, Microsoft Entra registration can be done with Company portal and Authenticator app. |
+| iOS Microsoft Entra Registered with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. For unmanaged devices, Microsoft Entra registration can be done with Authenticator app. |
 
 ### Summary
 - ✅ Device join takes precedence on Windows.

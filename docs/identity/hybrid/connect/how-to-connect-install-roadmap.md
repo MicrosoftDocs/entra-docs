@@ -2,15 +2,10 @@
 title: 'Microsoft Entra Connect and Microsoft Entra Connect Health installation roadmap.'
 description: This document provides an overview of the installation options and paths available for installing Microsoft Entra Connect and Connect Health.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
 ---
 
 # Microsoft Entra Connect and Microsoft Entra Connect Health installation roadmap
@@ -147,14 +142,14 @@ To get started with Microsoft Entra Connect Health, use the following steps:
 <a name='download-and-install-azure-ad-connect-health-agent'></a>
 
 ## Download and install Microsoft Entra Connect Health Agent
-* Make sure that you [satisfy the requirements](how-to-connect-health-agent-install.md#requirements) for Microsoft Entra Connect Health.
+* Make sure that you [satisfy the prerequisites](how-to-connect-health-agent-install.md#prerequisites) for Microsoft Entra Connect Health.
 * Get started using Microsoft Entra Connect Health for AD FS
-    * [Download Microsoft Entra Connect Health Agent for AD FS.](https://go.microsoft.com/fwlink/?LinkID=518973)
+    * [Download Microsoft Entra Connect Health Agent for AD FS.](https://www.microsoft.com/en-us/download/details.aspx?id=108565)
     * [See the installation instructions](how-to-connect-health-agent-install.md#install-the-agent-for-ad-fs).
 * Get started using Microsoft Entra Connect Health for sync
     * [Download and install the latest version of Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). The Health Agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or higher).
 * Get started using Microsoft Entra Connect Health for AD DS
-    * [Download Microsoft Entra Connect Health Agent for AD DS](https://go.microsoft.com/fwlink/?LinkID=820540).
+    * [Download Microsoft Entra Connect Health Agent for AD DS](https://www.microsoft.com/en-us/download/details.aspx?id=108565).
     * [See the installation instructions](how-to-connect-health-agent-install.md#install-the-agent-for-azure-ad-ds).
 
 

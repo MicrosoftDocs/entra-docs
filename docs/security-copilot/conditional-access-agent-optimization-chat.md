@@ -4,7 +4,6 @@ description: Learn about the chat feature for the Security Copilot for Microsoft
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
-manager: pmwongera
 ms.date: 01/08/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -147,5 +146,5 @@ You're prompted a second time to turn on the policy. If you select **Confirm** a
 
 ## Related content
 
-- [Conditional Access optimization agent overview](../identity/conditional-access/overview.md)
-- [Conditional Access optimization agent phased rollout](./conditional-access-agent-optimization-phased-rollout.md)
+- [Conditional Access Optimization Agent overview](./conditional-access-agent-optimization.md)
+- [Conditional Access Optimization Agent phased rollout](./conditional-access-agent-optimization-phased-rollout.md)

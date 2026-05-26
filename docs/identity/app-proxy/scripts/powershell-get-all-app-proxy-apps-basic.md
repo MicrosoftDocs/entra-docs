@@ -3,11 +3,15 @@ title: PowerShell sample - List basic info for application proxy apps
 description: PowerShell example that lists Microsoft Entra application proxy applications along with the application ID (AppId), name (DisplayName), and object ID (ObjId).
 ms.custom:
 ms.topic: sample
-ms.date: 05/01/2025
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Get all application proxy apps and list basic information
+
+
+## Overview
 
 The PowerShell script example lists information about all Microsoft Entra application proxy applications, including the application ID (AppId), name (DisplayName), and object ID (ObjId).
 

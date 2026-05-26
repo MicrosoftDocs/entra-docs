@@ -2,13 +2,9 @@
 title: Troubleshoot devices by using the dsregcmd command
 description: This article covers how to use the output from the dsregcmd command to understand the state of devices in Microsoft Entra ID.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: jploegert
 ---
 # Troubleshoot devices by using the dsregcmd command

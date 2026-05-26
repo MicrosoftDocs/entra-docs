@@ -2,8 +2,6 @@
 title: Security guidance - Monitor and detect cyberthreats
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to monitor and detect threats.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/11/2025
 
@@ -11,6 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to monitor and detect cyberthreats so that I can strengthen my organization's security posture.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Monitor and detect cyberthreats

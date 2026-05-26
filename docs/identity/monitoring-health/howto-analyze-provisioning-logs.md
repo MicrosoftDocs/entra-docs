@@ -1,13 +1,8 @@
 ---
 title: How to analyze the Microsoft Entra provisioning logs
 description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 07/10/2025
-ms.author: sarahlipsey
 ms.reviewer: arvinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.

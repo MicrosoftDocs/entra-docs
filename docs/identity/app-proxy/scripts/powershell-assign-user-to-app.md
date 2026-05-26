@@ -3,11 +3,15 @@ title: PowerShell sample - Assign user to a Microsoft Entra application proxy ap
 description: PowerShell example that assigns a user to a Microsoft Entra application proxy application.
 ms.custom:
 ms.topic: sample
-ms.date: 05/01/2025
+ms.date: 03/11/2026
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Assign a user to a specific Microsoft Entra application proxy application
+
+
+## Overview
 
 The PowerShell script example assigns a user to a specific Microsoft Entra application proxy application.
 

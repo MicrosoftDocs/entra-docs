@@ -1,14 +1,9 @@
 ---
 title: Secure standalone managed service accounts
 description: Learn when to use, how to assess, and to secure standalone managed service accounts (sMSAs)
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 02/08/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # Secure standalone managed service accounts

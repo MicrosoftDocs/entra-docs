@@ -2,13 +2,17 @@
 title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/07/2026
 ms.reviewer: sumitp
-ms.custom: it-pro, sfi-ga-nochange
+ms.custom: it-pro
+ai-usage: ai-assisted
 ---
-# Managing custom domain names in your Microsoft Entra ID
+# Manage custom domain names in your Microsoft Entra ID
 
-A domain name is an important part of the identifier for resources in many Microsoft Entra deployments. It's part of a user name or email address for a user, part of the address for a group, and is sometimes part of the app ID URI for an application. A resource in Microsoft Entra ID can include a domain name that's owned by the Microsoft Entra organization (sometimes called a tenant) that contains the resource. [Global Administrators](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and [Domain name administrators](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) can manage domains in Microsoft Entra ID. 
+
+## Overview
+
+A domain name is an important part of the identifier for resources in many Microsoft Entra deployments. It's part of a user name or email address for a user, part of the address for a group, and is sometimes part of the app ID URI for an application. A resource in Microsoft Entra ID can include a domain name that's owned by the Microsoft Entra organization (sometimes called a tenant) that contains the resource. The [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) role is the least privileged role required to manage domains in Microsoft Entra ID. 
 
 <a name='set-the-primary-domain-name-for-your-azure-ad-organization'></a>
 
@@ -17,16 +21,16 @@ A domain name is an important part of the identifier for resources in many Micro
 
 When your organization is created, the initial domain name, such as "contoso.onmicrosoft.com," is also the primary domain name. The primary domain is the default domain name for a new user when you create a new user. Setting a primary domain name streamlines the process for an administrator to create new users in the portal. To change the primary domain name:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
 1. Browse to **Entra ID** > **Domain names**  
-3. Select **Custom domain names**.
+1. Select **Custom domain names**.
 
-   :::image type="content" source="./media/domains-manage/add-custom-domain.png" alt-text="Screenshot of opening the user management page.":::
+    :::image type="content" source="./media/domains-manage/add-custom-domain.png" alt-text="Screenshot of opening the user management page.":::
 
-4. Select the name of the domain that you want to be the primary domain.
-5. Select the **Make primary** command. Confirm your choice when prompted.
+1. Select the name of the domain that you want to be the primary domain.
+1. Select the **Make primary** command. Confirm your choice when prompted.
 
-   :::image type="content" source="./media/domains-manage/make-primary-domain.png" alt-text="Screenshot of making a domain name the primary.":::
+    :::image type="content" source="./media/domains-manage/make-primary-domain.png" alt-text="Screenshot of making a domain name the primary.":::
 
 You can change the primary domain name for your organization to be any verified custom domain that isn't federated. Changing the primary domain for your organization doesn't change the user name for any existing users.
 
@@ -40,7 +44,7 @@ You can add up to 5000 managed domain names. If you're configuring all your doma
 
 If you want to add a subdomain name such as ‘europe.contoso.com’ to your organization, you should first add and verify the root domain, such as contoso.com. Microsoft Entra ID automatically verifies the subdomain. To see that the subdomain you added is verified, refresh the domain list in the browser.
 
-If you have already added a contoso.com domain to one Microsoft Entra organization, you can also verify the subdomain europe.contoso.com in a different Microsoft Entra organization. When adding the subdomain, you are prompted to add a TXT record in the Domain Name Server (DNS) hosting provider.
+If you have already added a contoso.com domain to one Microsoft Entra organization, you can also verify the subdomain europe.contoso.com in a different Microsoft Entra organization. When adding the subdomain, you're prompted to add a TXT record in the Domain Name Server (DNS) hosting provider.
 
 ## What to do if you change the DNS registrar for your custom domain name
 
@@ -59,7 +63,7 @@ To delete a custom domain name, you must first ensure that no resources in your 
 You must change or delete any such resource in your Microsoft Entra organization before you can delete the custom domain name. 
 
 > [!NOTE]
-> To delete the custom domain, use a Global Administrator account that is based on either the default domain (onmicrosoft.com) or a different custom domain (mydomainname.com).
+> To delete the custom domain, use an account with at least the [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) role that is based on either the default domain (onmicrosoft.com) or a different custom domain (mydomainname.com).
 
 ## ForceDelete option
 
@@ -68,47 +72,47 @@ You can `ForceDelete` a domain name in the [Azure portal](https://portal.azure.c
 To call **ForceDelete** in the Azure portal, you must ensure that there are fewer than 1,000 references to the domain name, and any references where Exchange is the provisioning service must be updated or removed in the [Exchange Admin Center (EAC)](/exchange/exchange-admin-center). This includes Exchange Mail-Enabled Security Groups and distributed lists. For more information, see [Removing mail-enabled security groups](/Exchange/recipients/mail-enabled-security-groups#Remove%20mail-enabled%20security%20groups). Also, the **ForceDelete** operation doesn't succeed if either of the following is true:
 
 * You purchased a domain via Microsoft 365 domain subscription services
-* You are a partner administering on behalf of another customer organization
+* You're a partner administering on behalf of another customer organization
 
 The following actions are performed as part of the **ForceDelete** operation:
 
 * Renames the UPN, EmailAddress, and ProxyAddress of users with references to the custom domain name to the initial default domain name.
 * Renames the EmailAddress of groups with references to the custom domain name to the initial default domain name.
 * Renames the identifierUris of applications with references to the custom domain name to the initial default domain name.
-* Disables user accounts impacted by the ForceDelete option in the Azure/Microsoft Microsoft Entra admin center and optionally when using the Graph API.
+* Disables user accounts impacted by the ForceDelete option in the Microsoft Entra admin center and optionally when using the Graph API.
 
 An error is returned when:
 
 * The number of objects to be renamed is greater than 1000
 * One of the applications to be renamed is a multitenant app
 
-## Best Practices for Domain Hygiene
+## Best practices for domain hygiene
 
 Use a reputable registrar that provides ample notifications for domain name changes, registration expiry, a grace period for expired domains, and maintains high security standards for controlling who has access to your domain name configuration and TXT records.
-Keep your domain names current with your Registrar, and verify TXT records for accuracy.
+Keep your domain names current with your registrar, and verify TXT records for accuracy.
 
 * If you purposefully are expiring your domain name or turning over ownership to someone else (separately from your Microsoft Entra tenant), you should delete it from your Microsoft Entra tenant before expiring or transferring.
-* If you do allow your domain name to expire, if you are able to reactivate it/regain control of it, carefully review all TXT records with the registrar to ensure no tampering of your domain name took place.
-* If you can't reactivate or regain control of your domain name immediately, you should delete it from your Microsoft Entra tenant. Don't read/re-verify until you are able to resolve ownership of the domain name and verify the full TXT record for correctness.
+* If you do allow your domain name to expire, if you're able to reactivate it/regain control of it, carefully review all TXT records with the registrar to ensure no tampering of your domain name took place.
+* If you can't reactivate or regain control of your domain name immediately, you should delete it from your Microsoft Entra tenant. Don't read/re-verify until you're able to resolve ownership of the domain name and verify the full TXT record for correctness.
 
->[!NOTE]
-> Microsoft will not allow a domain name to be verified with more than one Microsoft Entra tenant. Once you delete a domain name from your tenant, you will not be able to re-add/re-verify it with your Microsoft Entra tenant if it is subsequently added and verified with another Microsoft Entra tenant.
+> [!NOTE]
+> Microsoft won't allow a domain name to be verified with more than one Microsoft Entra tenant. Once you delete a domain name from your tenant, you won't be able to re-add/re-verify it with your Microsoft Entra tenant if it is subsequently added and verified with another Microsoft Entra tenant.
 
 ## Frequently asked questions
 
 **Q: Why is the domain deletion failing with an error that states that I have Exchange mastered groups on this domain name?** <br>
-**A:** Today, certain groups like Mail-Enabled Security groups and distributed lists are provisioned by Exchange and need to be manually cleaned up in [Exchange Admin Center](/exchange/exchange-admin-center). There may be lingering ProxyAddresses, which rely on the custom domain name and will need to be updated manually to another domain name. 
+**A:** Today, certain groups like Mail-Enabled Security groups and distributed lists are provisioned by Exchange and need to be manually cleaned up in [Exchange Admin Center](/exchange/exchange-admin-center). There might be lingering ProxyAddresses, which rely on the custom domain name and will need to be updated manually to another domain name. 
 
 **Q: I am logged in as admin\@contoso.com but I cannot delete the domain name “contoso.com”?**<br>
-**A:** You can't reference the custom domain name you are trying to delete in your user account name. Ensure that the Global Administrator account is using the initial default domain name (.onmicrosoft.com) such as admin@contoso.onmicrosoft.com. Sign in with a different Global Administrator account that such as admin@contoso.onmicrosoft.com or another custom domain name like “fabrikam.com” where the account is admin@fabrikam.com.
+**A:** You can't reference the custom domain name you're trying to delete in your user account name. Ensure that your account with at least the [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) role is using the initial default domain name (.onmicrosoft.com) such as admin@contoso.onmicrosoft.com. Sign in with a different account that has at least the [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) role, such as admin@contoso.onmicrosoft.com or another custom domain name like “fabrikam.com” where the account is admin@fabrikam.com.
 
 **Q: I clicked the Delete domain button and see `In Progress` status for the Delete operation. How long does it take? What happens if it fails?**<br>
-**A:**  The delete domain operation is an asynchronous background task that renames all references to the domain name. It may take up to 24 hours to complete. If domain deletion fails, ensure that you don’t have:
+**A:**  The delete domain operation is an asynchronous background task that renames all references to the domain name. It might take up to 24 hours to complete. If domain deletion fails, ensure that you don’t have:
 
 * Apps configured on the domain name with the appIdentifierURI
 * Any mail-enabled group referencing the custom domain name
 * More than 1000 references to the domain name
-* The domain to be removed the set as the Primary domain of your organization
+* The domain to be removed is set as the primary domain of your organization
 
 Also note that the ForceDelete option won't work if the domain uses Federated authentication type. In that case the users/groups on the domain must be renamed or removed using the on-premises Active Directory before reattempting the domain removal.
 If you find that any of the conditions haven’t been met, manually clean up the references, and try to delete the domain again.

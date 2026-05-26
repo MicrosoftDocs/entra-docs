@@ -1,19 +1,18 @@
 ---
 title: How to find your tenant ID
-description: Instructions about how to find and Microsoft Entra tenant ID to an existing Azure subscription.
-author: barclayn
-ms.author: barclayn
-manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
+description: Instructions about how to find your Microsoft Entra tenant ID for an existing Azure subscription.
 ms.topic: how-to
 ms.date: 01/14/2025
 ms.reviewer: jeffsta
 ms.custom: it-pro, ge-structured-content-pilot, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to find my tenant ID so that I can use it for configuration and troubleshooting tasks.
 ---
 
 # How to find your Microsoft Entra tenant ID
 
+
+
+## Overview
 
 Azure subscriptions have a trust relationship with Microsoft Entra ID. Microsoft Entra ID is trusted to authenticate the subscription's users, services, and devices. Each subscription has a tenant ID associated with it, and there are a few ways you can find the tenant ID for your subscription.
 
@@ -23,11 +22,11 @@ Follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
 
-2. Browse to **Entra ID** > **Overview** > **Properties**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 
-:::image type="content" source="media/how-to-find-tenant/identity-overview-properties.png" alt-text="Screenshot of Microsoft Entra ID - Identity Properties overview.":::
+    :::image type="content" source="media/how-to-find-tenant/identity-overview-properties.png" alt-text="Screenshot of Microsoft Entra ID - Identity Properties overview.":::
 
-3. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
+1. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
 
 <!-- docutune:disable -->
 
@@ -37,11 +36,11 @@ Follow these steps:
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 
-2. Browse to **Microsoft Entra ID** > **Properties**.
+1. Browse to **Microsoft Entra ID** > **Properties**.
 
-3. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
+1. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
 
-:::image type="content" source="media/how-to-find-tenant/portal-tenant-id.png" alt-text="Screenshot of Microsoft Entra ID - Properties - Tenant ID - Tenant ID field.":::
+    :::image type="content" source="media/how-to-find-tenant/portal-tenant-id.png" alt-text="Screenshot of Microsoft Entra ID - Properties - Tenant ID - Tenant ID field.":::
 <!-- docutune:enable -->
 
 ## Find tenant ID with PowerShell
@@ -58,9 +57,9 @@ For more information, see the [Get-AzTenant](/powershell/module/az.accounts/get-
 
 ## Find tenant ID with CLI
 
-The [Azure CLI](/cli/azure/install-azure-cli) or [Microsoft 365 CLI](https://github.com/pnp/cli-microsoft365) can be used to find the tenant ID.
+Use the [Azure CLI](/cli/azure/install-azure-cli) or [Microsoft 365 CLI](https://github.com/pnp/cli-microsoft365) to find the tenant ID.
 
-For Azure CLI, use one of the commands **az login**, **az account list**, or **az account tenant list**. All of commands included below return the **tenantId** property for each of your subscriptions.
+For Azure CLI, use one of the commands `az login`, `az account list`, or `az account tenant list`. All commands included below return the `tenantId` property for each of your subscriptions.
 
 ```azurecli-interactive
 az login
@@ -71,7 +70,7 @@ az account tenant list
 For more information, see [az login](/cli/azure/reference-index#az-login) command reference, [az account](/cli/azure/account) command reference, or [az account tenant](/cli/azure/account/tenant) command reference.
 
 
-For Microsoft 365 CLI, use the cmdlet **tenant id** as shown in the following example:
+For Microsoft 365 CLI, use the cmdlet `tenant id` as shown in the following example:
 
 ```cli
 m365 tenant id get

@@ -2,10 +2,12 @@
 title: How to Require Device Compliance with Conditional Access
 description: "Learn how to enforce device compliance with Conditional Access policies. Ensure secure access to resources by meeting your organization's configuration requirements."
 ms.topic: how-to
-ms.date: 10/01/2025
+ms.date: 03/24/2026
 ms.reviewer: jodah
 ---
 # Require device compliance with Conditional Access
+
+## Overview
 
 Microsoft Intune and Microsoft Entra work together to secure your organization through [device compliance policies](/mem/intune/protect/device-compliance-get-started) and Conditional Access. Device compliance policies ensure user devices meet minimum configuration requirements. The requirements can be enforced when users access services protected with Conditional Access policies.
 
@@ -31,7 +33,7 @@ The following steps help create a Conditional Access policy to require devices a
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
    1. Under **Exclude**: 
@@ -43,7 +45,7 @@ The following steps help create a Conditional Access policy to require devices a
    1. Select **Require device to be marked as compliant**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

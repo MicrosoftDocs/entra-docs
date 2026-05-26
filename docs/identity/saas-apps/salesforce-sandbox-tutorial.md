@@ -1,11 +1,7 @@
 ---
 title: Configure Salesforce Sandbox for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Salesforce Sandbox.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: jeedes

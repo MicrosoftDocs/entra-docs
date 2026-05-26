@@ -1,11 +1,12 @@
 ---
-title: Leave an Organization
+title: Leave an organization
 titleSuffix: Microsoft Entra External ID
 description: As a B2B collaboration user, learn how to leave an organization if you no longer need guest user access to apps. If you're an admin, see how to allow external users to leave.
 ms.topic: how-to
-ms.date: 06/17/2025
+ms.date: 04/24/2026
 
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 adobe-target: true
 
 # Customer intent: As a Microsoft Entra B2B collaboration or B2B direct connect user, I want to leave an organization, so that I can stop using apps from that organization and end any association with it.
@@ -21,15 +22,15 @@ As a Microsoft Entra B2B collaboration or B2B direct connect user, you can leave
 
 You can usually leave an organization on your own without having to contact an administrator. However, in some cases this option won't be available and you'll need to contact your tenant admin, who can delete your account in the external organization.
 
-This article is intended for administrators.
+This article includes guidance for users who want to leave an organization and for administrators who manage external user leave settings.
 
-If you're a user looking for information about how to manage and leave an organization, see the [Manage organizations article.](https://support.microsoft.com/account-billing/manage-organizations-for-a-work-or-school-account-in-the-my-account-portal-a9b65a70-fec5-4a1a-8e00-09f99ebdea17)
+If you're a user looking for information about how to manage and leave an organization, see [Manage organizations for your work or school account in the My Account portal](https://support.microsoft.com/account-billing/manage-organizations-for-a-work-or-school-account-in-the-my-account-portal-a9b65a70-fec5-4a1a-8e00-09f99ebdea17).
 
 ## What organizations do I belong to?
 
-1. To view the organizations you belong to, first open your **My Account** page. You either have a work or school account  created by an organization or a personal account such as for Xbox, Hotmail, or Outlook.com.  
+1. To view the organizations you belong to, first open your **My Account** page. You either have a work or school account created by an organization or a personal account such as for Xbox, Hotmail, or Outlook.com.
 
-   - If you're using a work or school account, go to https://myaccount.microsoft.com and sign in.
+   - If you're using a work or school account, go to <https://myaccount.microsoft.com> and sign in.
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
    For example:
 
@@ -85,7 +86,7 @@ Administrators can use the **External user leave settings** to control whether e
 > [!IMPORTANT]
 > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable. We recommend adding your privacy information to allow external users to review your policies and email your privacy contact when necessary.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 
 1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
@@ -102,7 +103,7 @@ When a B2B collaboration user leaves an organization, the user's account is "sof
 
 If desired, a tenant administrator can permanently delete the account at any time during the soft-deleted period with the following steps. This action is irrevocable.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 
 1. Browse to **Entra ID** > **Users**
 

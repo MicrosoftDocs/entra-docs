@@ -1,12 +1,10 @@
 ---
 title: Use Microsoft Entra groups to manage role assignments
 description: Use Microsoft Entra groups to simplify role assignment management in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: concept-article
-ms.date: 01/03/2025
+ms.date: 03/16/2026
 ms.reviewer: vincesm
 ms.custom: it-pro
 
@@ -50,6 +48,10 @@ Role-assignable groups are designed to help prevent potential breaches by having
 - For Microsoft Graph, the *RoleManagement.ReadWrite.Directory* permission is required to be able to manage the membership of role-assignable groups. The *Group.ReadWrite.All* permission won't work.
 - To prevent elevation of privilege, you must be assigned at least the Privileged Authentication Administrator role to change the credentials, reset MFA, or modify sensitive attributes for members and owners of a role-assignable group.
 - Group nesting isn't supported. A group can't be added as a member of a role-assignable group.
+
+## Delete and restore behavior
+   
+When a role-assignable group is deleted, it's soft-deleted and can be restored within 30 days. Group owners can restore a deleted role-assignable group. For information about how to restore a deleted group, see [Restore a deleted Microsoft 365 group or cloud security group in Microsoft Entra ID](../users/groups-restore-deleted.md).
 
 ## Use PIM to make a group eligible for a role assignment
 

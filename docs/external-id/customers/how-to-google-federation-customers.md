@@ -2,9 +2,10 @@
 title: Add Google as an identity provider
 description: Learn how to add Google as an identity provider for your external tenant.
 ms.topic: how-to
-ms.date: 09/16/2025
+ms.date: 03/27/2026
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
-#Customer intent: As a dev, devops, or it admin, I want to
+ai-usage: ai-assisted
+#Customer intent: As a dev, devops, or it admin, I want to add Google as an identity provider for my external tenant so that customers can sign in with their Google accounts.
 ---
 
 # Add Google as an identity provider
@@ -20,9 +21,9 @@ By setting up federation with Google, you allow customers to sign in to your app
 
 ## Create a Google application
 
-To enable sign-in for customers with a Google account, you need to create an application in [Google Developers Console](https://console.developers.google.com/). For more information, see [Setting up OAuth 2.0](https://support.google.com/googleapi/answer/6158849). If you don't already have a Google account, you can sign up at [`https://accounts.google.com/signup`](https://accounts.google.com/signup).
+To enable sign-in for customers with a Google account, you need to create an application in [Google Cloud console](https://console.cloud.google.com/). For more information, see [Manage OAuth clients](https://support.google.com/cloud/answer/15549257). If you don't already have a Google account, you can sign up at [`https://accounts.google.com/signup`](https://accounts.google.com/signup).
 
-1. Sign in to the [Google Developers Console](https://console.developers.google.com/) with your Google account credentials.
+1. Sign in to the [Google Cloud console](https://console.cloud.google.com/) with your Google account credentials.
 1. Accept the terms of service if you're prompted to do so.
 1. In the upper-left corner of the page, select the project list, and then select **New Project**.
 1. Enter a **Project Name**, select **Create**.
@@ -52,7 +53,7 @@ To enable sign-in for customers with a Google account, you need to create an app
 1. Record the values of **Client ID** and **Client secret**. You need both values to configure Google as an identity provider in your tenant.
 
 > [!NOTE]
-> In some cases, your app might require verification by Google (for example, if you update the application logo). For more information, check out the [Google's verification status guid](https://support.google.com/cloud/answer/10311615#verification-status).
+> In some cases, your app might require verification by Google (for example, if you update the application logo). For more information, check out the [Google's verification status guide](https://support.google.com/cloud/answer/10311615#verification-status).
 
 <a name='configure-google-federation-in-azure-ad-for-customers'></a>
 
@@ -112,4 +113,5 @@ At this point, the Google identity provider has been set up in your Microsoft En
 
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

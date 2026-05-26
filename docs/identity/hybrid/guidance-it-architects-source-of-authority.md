@@ -6,7 +6,6 @@ ms.author: owinfrey
 ms.reviewer: dhanyak
 ms.date: 09/17/2025
 ms.topic: concept-article
-ms.service: entra-id
 ms.subservice: hybrid
 
 

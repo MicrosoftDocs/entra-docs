@@ -1,14 +1,8 @@
 ---
 title: Turn off per user MFA in Microsoft Entra ID
 description: Learn why you should turn off per user MFA in Microsoft Entra ID with Microsoft Entra recommendations
-author: shlipsey3
-manager: pmwongera
-
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
-ms.date: 02/21/2025
-ms.author: sarahlipsey
+ms.date: 04/28/2026
 ms.reviewer: deawari
 
 # Customer intent: As an IT admin, I need to know how many users in my tenant are using per-user MFA so I can make a plan to switch to Conditional Access MFA.
@@ -19,6 +13,10 @@ ms.reviewer: deawari
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
 This article covers the recommendation to switch per-user multifactor authentication (MFA) accounts to Conditional Access MFA accounts. This recommendation is called `switchFromPerUserMFA` in the recommendations API in Microsoft Graph.
+
+## Prerequisites
+
+[!INCLUDE [Recommendations roles](../../includes/recommendations-roles.md)]
 
 ## Description
 

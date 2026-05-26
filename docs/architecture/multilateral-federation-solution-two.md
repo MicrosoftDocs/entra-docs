@@ -1,13 +1,9 @@
 ---
 title: 'Solution 2: Microsoft Entra ID with Shibboleth as a SAML proxy'
 description: This article describes design considerations for using Microsoft Entra ID with Shibboleth as a SAML proxy as a multilateral federation solution for universities.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 04/01/2023
-ms.author: jricketts
+ms.subservice: architecture
 ---
 
 # Solution 2: Microsoft Entra ID with Shibboleth as a SAML proxy

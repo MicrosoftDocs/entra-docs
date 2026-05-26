@@ -1,14 +1,10 @@
 ---
 title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
-author: omondiatieno
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
-ms.service: entra-id
-manager: mwongerapk
 ms.topic: reference
-ms.date: 11/19/2025
+ms.date: 03/10/2026
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 
 #customer-intent: As a Microsoft Entra administrator, I want to learn about the latest version of Microsoft Entra Connect, so that I can keep my environment up to date.
@@ -108,7 +104,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
 |[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
 |[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|
-|[2.6.1.0](#2610)||
+|[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|
+|[2.6.3.0](#2630)||
 
 **All other versions are not supported**
 
@@ -133,6 +130,16 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 
 
+
+## 2.6.3.0
+
+### Release status
+
+03/10/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release. Auto-upgrade will upgrade your existing installations to this build starting March 11th, 2026, and will complete in multiple phases.
+
+### Bug Fixes
+
+- Fixed a [known issue](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) where auto-upgrade could stop your Microsoft Entra Connect server unexpectedly. Auto-upgrade now detects modifications to the `miiserver.exe.config` and `miisclient.exe.config` configuration files and skips automatic upgrade on those servers. If you manually upgrade and previously modified these configuration files, you might encounter installation failures. To resolve the issue, see the [known issues section](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified).
 
 ## 2.6.1.0
 

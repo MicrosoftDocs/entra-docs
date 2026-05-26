@@ -2,13 +2,9 @@
 title: Security update to remove support for KDFv1 algorithm for authentication
 description: Removal of Key Derivation Function version 1 algorithm and proactive guidance for device administrators.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
 ms.reviewer: sgrandhi
 ---
 # Security update to remove KDFv1 algorithm support in Microsoft Entra authentication

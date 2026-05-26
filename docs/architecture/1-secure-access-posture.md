@@ -1,14 +1,9 @@
 ---
 title: Determine your security posture for external access with Microsoft Entra ID
 description: Learn about governance of external access and assessing collaboration needs, by scenario
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 02/23/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # Determine your security posture for external access with Microsoft Entra ID

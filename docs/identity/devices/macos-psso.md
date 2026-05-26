@@ -1,8 +1,6 @@
 ---
 title: macOS Platform Single Sign-on (PSSO) overview
 description: Overview of macOS Platform Single Sign On (PSSO) for Microsoft Entra ID registered devices.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: overview
 ms.date: 06/12/2025
 ms.author: godonnell
@@ -46,9 +44,9 @@ You can find more information and instructions on how to configure in these arti
 - [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
 
 > [!NOTE]
-> If you are configuring Platform SSO for macOS devices using a 3rd party MDM, refer to the documentation provided by your MDM vendor for specific instructions on how to configure Platform SSO.
+> If you're configuring Platform SSO for macOS devices using a third party MDM, refer to the documentation provided by your MDM vendor for specific instructions on how to configure Platform SSO.
 >
-> If you are a developer of a 3rd party MDM solution, refer to the [Integrate macOS Platform Single Sign On (PSSO) into your MDM solution](./macos-psso-integration-guide.md) guide for more information on how to integrate PSSO into your MDM solution.
+> If you're a developer of a third party MDM solution, refer to the [Integrate macOS Platform Single Sign On (PSSO) into your MDM solution](./macos-psso-integration-guide.md) guide for more information on how to integrate PSSO into your MDM solution.
 
 ## Deployment
 
@@ -63,20 +61,20 @@ Passwords are a primary attack vector for bad actors. They use social engineerin
 
 Learn how you can use Platform SSO for macOS to enable passwordless authentication for your organization.
 
-* [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md)
+* [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../../identity/authentication/concept-authentication-passkeys-fido2.md)
 * [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment.md)
 
-Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-authentication scenarios). If you use key restrictions in your FIDO policy then you'll need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
+Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser reauthentication scenarios). If you use key restrictions in your FIDO policy, then you need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
 
 ### Microsoft Platform SSO: UserSecureEnclaveKeyBiometricPolicy
 
 Microsoft Platform SSO supports the [UserSecureEnclaveKeyBiometricPolicy](https://developer.apple.com/documentation/authenticationservices/asauthorizationproviderextensionloginconfiguration/usersecureenclavekeybiometricpolicy) option when using Platform SSO with the UserSecureEnclaveKey authentication method. This policy enhances security by requiring users to authenticate with Touch ID whenever the User Secure Enclave Key needs to be accessed.
 
-- When this policy is enabled, users are prompted for Touch ID authentication whenever the User Secure Enclave Key is accessed. Prompting will occur during PSSO registration, browser re-authentication scenarios using the user key as a passkey, and authentication during sign in to obtain the PSSO token.
+- When this policy is enabled, users are prompted for Touch ID authentication whenever the User Secure Enclave Key is accessed. Prompting will occur during PSSO registration, browser reauthentication scenarios using the user key as a passkey, and authentication during sign in to obtain the PSSO token.
 - Enabling this policy requires that the device supports Touch ID biometric authentication. Users need to configure Touch ID to proceed with PSSO registration. Administrators should ensure that users have a biometric-supported device or an external keyboard supporting Touch ID before enabling this policy.
 
 > [!NOTE]
-> There is no option for password fallback while authenticating with User Secure Enclave Key when UserSecureEnclaveKeyBiometricPolicy is enabled. Therefore, users won't be able to authenticate to Microsoft Entra ID if they don't have Touch ID biometrics available.
+> There's no option for password fallback while authenticating with User Secure Enclave Key when UserSecureEnclaveKeyBiometricPolicy is enabled. Therefore, users won't be able to authenticate to Microsoft Entra ID if they don't have Touch ID biometrics available.
 
 #### Requirements for UserSecureEnclaveKeyBiometricPolicy
 
@@ -101,7 +99,7 @@ High-security customers can opt in to enable this feature by setting a flag in t
 
 #### Drawbacks of UserSecureEnclaveKeyBiometricPolicy
 
-- More Prompts: Users will encounter extra prompts during PSSO registration as the key is accessed multiple times during the process.
+- More Prompts: Users encounter extra prompts during PSSO registration as the key is accessed multiple times during the process.
 - Biometric-Only Access: The PSSO passkey can only be accessed with biometric authentication. There's no password fallback. If the device is unlocked with a password, users will still be prompted for biometric authentication to obtain the PSSO token.
 
 ## Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources
@@ -120,13 +118,29 @@ The following APIs are available:
    
 ## National Institute of Standards and Technology (NIST)
 
-The National Institute of Standards and Technology (NIST) is a non-regulatory federal agency within the U.S. Department of Commerce. NIST develops and issues standards, guidelines, and other publications to assist federal agencies in managing cost-effective programs to protect their information and information systems.
+The National Institute of Standards and Technology (NIST) is a nonregulatory federal agency within the U.S. Department of Commerce. NIST develops and issues standards, guidelines, and other publications to assist federal agencies in managing cost-effective programs to protect their information and information systems.
 
 You can learn more about using macOS Platform SSO to meet NIST requirements in these articles.
 
 * [Configure Microsoft Entra ID to meet NIST authenticator assurance levels](../../standards/nist-overview.md)
 * [NIST authenticator types and aligned Microsoft Entra methods](../../standards/nist-authenticator-types.md).
 * [NIST authenticator assurance level 3 by using Microsoft Entra ID](../../standards/nist-authenticator-assurance-level-3.md)
+
+## Platform Single Sign-On (PSSO) with EnableRegistrationDuringSetup 
+
+Platform Single Sign-On (PSSO) with EnableRegistrationDuringSetup enables macOS devices to complete PSSO registration automatically during Automated Device Enrollment (ADE).
+
+To enable this capability, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on how the device is configured, the end-user can set up their device with PSSO via secure enclave, smart card, or password based authentication method.
+
+When combined with Setup Assistant with modern authentication and the Company Portal SSO extension, Intune can complete identity bootstrap and device registration early in the enrollment flow - reducing prompts and ensuring the device is ready for use as soon as it reaches the desktop.
+
+For step-by-step instructions to set up PSSO with EnableRegistrationDuringSetup in Intune, check this doc: [Configure Platform Single Sign-On (PSSO) during Automated Device Enrollment for macOS devices](/mem/intune/device-configuration/settings-catalog/configure-platform-sso-during-enrollment)
+
+
+
+> [!NOTE]
+> Authenticating with Smart Card in Setup Assistant is not supported. If you want to use Smart Card as the authentication method, you must complete PSSO registration after Setup Assistant is completed.
+
 
 ## Troubleshooting 
 

@@ -3,13 +3,11 @@ title: Microsoft Entra Suite deployment scenario - Modernize remote access
 description: Configure Microsoft Entra Suite products for upgrading existing VPN solution to a scalable cloud-based solution and move towards Secure Access Service Edge (SASE).
 ms.author: gasinh
 author: gargi-sinha
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want replace existing VPN with a cloud-based solution so that we can move towards Secure Access Service Edge (SASE).
+ms.subservice: architecture
 ---
 # Microsoft Entra Suite deployment scenario - Modernize remote access to on-premises apps with MFA per app
 
@@ -130,7 +128,7 @@ The connector server communicates with Microsoft's Security Service Edge Solutio
 1. Follow the installation wizard to install the connector service on the connector server. When prompted, enter tenant credentials to complete installation.
 1. The connector server is installed when it appears in **Connectors**.
 
-In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
+In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](~/global-secure-access/concept-connector-groups.md).
 
 ### Create security group for remote access with quick access
 
@@ -297,7 +295,7 @@ The connector server communicates with Microsoft's Security Service Edge solutio
 1. Follow the installation wizard to install the connector service on the connector server. When prompted, enter tenant credentials to complete installation.
 1. The connector server is installed when it appears in **Connectors**.
 
-In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](../identity/app-proxy/application-proxy-connector-groups.md).
+In this scenario, we use the default connector group with one connector server. In a production environment, create connector groups with multiple connector servers. See detailed guidance for [publishing apps on separate networks by using connector groups](~/global-secure-access/concept-connector-groups.md).
 
 ### Create Private Access application security group
 

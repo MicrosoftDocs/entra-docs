@@ -1,14 +1,9 @@
 ---
 title: FortiGate deployment guide
 description: Set up and work with the Fortinet FortiGate next-generation firewall product.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 11/21/2022
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 

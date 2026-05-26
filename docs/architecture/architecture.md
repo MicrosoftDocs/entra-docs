@@ -1,14 +1,13 @@
 ---
 title: Architecture overview
 description: Learn about the architecture of Microsoft Entra ID, including service design, scalability, availability, and data consistency.
-author: barclayn
+author: kenwith
 
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
-ms.date: 09/10/2025
-ms.author: barclayn
+ms.date: 05/07/2026
+ms.author: kenwith
 ms.reviewer: jeffsta
+ms.subservice: architecture
 ---
 
 # What is the Microsoft Entra architecture?
@@ -99,7 +98,7 @@ Application writes using the Microsoft Graph API of Microsoft Entra ID are abstr
 > [!NOTE]
 > Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
 >
-> For [application-only requests](../identity-platform/app-only-access-primer.md), Microsoft Entra ID does not provide session consistency. Session consistency is only supported for [delegated requests](../identity-platform/delegated-access-primer.md) (application+user token flow). 
+> For [application-only requests](../identity-platform/app-only-access-primer.md), Microsoft Entra ID does not provide session consistency. Session consistency is only supported for [delegated requests](../identity-platform/delegated-access-primer.md) (application+user token flow). For guidance on building applications that account for replication delays, see [Designing for eventual consistency for Microsoft Entra](https://devblogs.microsoft.com/identity/designing-for-eventual-consistency-for-microsoft-entra/).
 
 #### Service-level backup
 
@@ -118,5 +117,12 @@ If any Microsoft Entra service isn't working as expected, immediate action is ta
 Microsoft Entra ID uses operational controls such as multifactor authentication for any operation and auditing of all operations. In addition, it uses a just-in-time elevation system to grant necessary temporary access for any operational task-on-demand on an ongoing basis. For more information, see The [Trusted Cloud](https://azure.microsoft.com/support/trust-center).
 
 ## Next steps
+
+To learn more about deploying and building resilience with Microsoft Entra, see:
+
+- [Microsoft Entra deployment plans](deployment-plans.md) — step-by-step deployment guidance for authentication, apps, devices, and hybrid scenarios
+- [Build resilience in your hybrid architecture](resilience-in-hybrid.md) — architecture diagrams for PHS, PTA, and Federation, with resilience guidance
+- [Building resilience into identity and access management](resilience-overview.md) — resilience patterns for IAM infrastructure and applications
+- [Identity and access management architecture in Azure](/azure/architecture/identity/identity-start-here) — reference architectures and design guidance
 
 To learn more about developing with Microsoft Entra, see the [Microsoft Entra developer's guide](~/identity-platform/index.yml).

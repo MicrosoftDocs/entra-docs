@@ -2,12 +2,8 @@
 title: Authorize applications, resources, and workloads with Microsoft Entra ID
 description: Use Microsoft Entra ID to authorize individuals, APIs, applications, resources, services, and workloads.
 customer-intent: I'm an independent software developer, and I want to learn about authorization when a person is interacting and directing an application, when Application Programming Interfaces (API) act for a user, and when applications or services work independently.
-author: jricketts
-manager: martinco
-ms.service: entra
 ms.topic: concept-article
 ms.date: 03/14/2024
-ms.author: jricketts
 ---
 # Authorize applications, resources, and workloads with Microsoft Entra ID
 

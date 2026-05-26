@@ -1,9 +1,6 @@
 ---
 title: Troubleshoot Microsoft Entra Connect Sync application-based authentication
 description: Learn how to troubleshoot known issues with application-based authentication (ABA) in Microsoft Entra Connect Sync, including missing connectivity parameters and multiple servers using the same connector account.
-author: omondiatieno
-ms.author: jomondi
-ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: troubleshooting
 ms.date: 01/15/2025
@@ -14,6 +11,9 @@ ms.date: 01/15/2025
 # Troubleshoot Microsoft Entra Connect Sync application-based authentication
 
 Application-based authentication (ABA) for Microsoft Entra Connect Sync uses an application identity (a service principal with a certificate) instead of a username and password to authenticate to Microsoft Entra ID. This method improves security by eliminating the need for storing admin credentials on the sync server. This article helps you troubleshoot known issues with ABA in Microsoft Entra Connect Sync and provides steps to resolve them.
+
+> [!IMPORTANT]
+> Several application-based authentication (ABA) issues have been resolved in recent Microsoft Entra Connect versions. We recommend updating to the latest version to benefit from these fixes and prevent known issues.
 
 ## Known issues
 
