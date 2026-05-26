@@ -30,7 +30,7 @@ The three biggest factors that influence processing and can cause membership upd
 - **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.
 
 > [!NOTE]
-> Dynamic group rules evaluate every user and device in your tenant, including objects that are inactive or no longer in use. Stale devices and stale users can inflate group membership and slow down dynamic membership group processing. Before usin dynamic membership groups clean-up [stale devices](/entra/identity/devices/manage-stale-devices) and [inactive users](/entra/identity/monitoring-health/howto-manage-inactive-user-accounts) so your group reflects only the objects you intend to manage.
+> Dynamic group rules evaluate every user and device in your tenant, including objects that are inactive or no longer in use. Stale devices and stale users can inflate group membership and slow down dynamic membership group processing. Before using dynamic membership groups clean-up [stale devices](/entra/identity/devices/manage-stale-devices) and [inactive users](/entra/identity/monitoring-health/howto-manage-inactive-user-accounts) so your group reflects only the objects you intend to manage.
 
 
 ## Best practices for dynamic membership groups in your tenant
