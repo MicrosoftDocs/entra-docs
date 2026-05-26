@@ -4,7 +4,7 @@ description: Learn how to configure Microsoft Entra ID to automatically provisio
 
 author: jeevansd
 ms.topic: how-to
-ms.date: 02/27/2026
+ms.date: 05/26/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Blink so that I can streamline the user management process and ensure that users have the appropriate access to Blink.
@@ -20,9 +20,7 @@ The objective of this article is to demonstrate the steps to be performed in Bli
 
 Blink is available in the following [national cloud deployments](/graph/deployments).
 
-| Global service | US Government | China operated by 21Vianet |
-|-----------------|------------------------|----------------------------|
-| :white_check_mark: | :white_check_mark:    |        |
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 
