@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 05/19/2026
+ms.date: 05/26/2026
 ms.reviewer: cmmdesai
 ms.custom: sap-successfactors, workload-identity, provisioning
 ---
@@ -139,11 +139,11 @@ The guided experience prompts you to register a workload identity application. T
 ### Step 3: Copy the Microsoft Entra trust parameters into SAP Cloud Identity Service
 
 1. Sign in as administrator to the **SAP Cloud Identity Service admin console** associated with your SAP SuccessFactors instance.
-1. From the **Applications & Resources** menu, select **Applications** and select **Create** to create a new **OpenID Connect** application.
+1. From the **Applications & Resources** menu, select **Applications** and select **Create** to create a new **OpenID Connect** application. 
    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-create-app.png" alt-text="Screenshot showing SAP IAS app creation options." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-create-app.png":::
-1. In the **Trust** tab, under **Application APIs**, select **Dependencies**. Add a new dependency so that this app can consume the APIs of your SAP SuccessFactors. From the **Application** dropdown, select your SAP SuccessFactors instance and from the **API** dropdown select `sf_technical_access`. Note down the **Dependency name** because you use it in step 5.
+2. In the **Trust** tab, under **Application APIs**, select **Dependencies**. Add a new dependency so that this app can consume the APIs of your SAP SuccessFactors. From the **Application** dropdown, select your SAP SuccessFactors instance and from the **API** dropdown select `sf_technical_access`. Note down the **Dependency name** because you use it in step 5.
    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/configure-successfactors-dependency.png" alt-text="Screenshot showing SAP IAS to SuccessFactors dependency configuration." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/configure-successfactors-dependency.png":::
-1. In the **Trust** tab, under **Application APIs**, select **Client Authentication**. Go to the **JSON Web Tokens > Configure Trust By Issuer** section and select **Add** to configure SAP IAS to trust Microsoft Entra issued tokens. From the Microsoft Entra panel, copy the following values into the corresponding fields in SAP Cloud Identity Service:
+3. In the **Trust** tab, under **Application APIs**, select **Client Authentication**. Go to the **JSON Web Tokens > Configure Trust By Issuer** section and select **Add** to configure SAP IAS to trust Microsoft Entra issued tokens. From the Microsoft Entra panel, copy the following values into the corresponding fields in SAP Cloud Identity Service:
 
    | Microsoft Entra field | SAP Cloud Identity Service field |
    | --- | --- |
@@ -153,7 +153,7 @@ The guided experience prompts you to register a workload identity application. T
    | **Audience** | Audience |
 
    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/configure-json-web-token-issuer-trust.png" alt-text="Screenshot showing which values to copy from Microsoft Entra provisioning app to SAP IAS app" lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/configure-json-web-token-issuer-trust.png":::
-1. Save the trust configuration in SAP Cloud Identity Service. The configured trust enables SAP Cloud Identity Service to validate AT1 — verify the signature against the JWKS URI and confirm the subject and audience match — and issue AT2 (the SAP IAS access token with the `sf_technical_access` scope).
+4. Save the trust configuration in SAP Cloud Identity Service. The configured trust enables SAP Cloud Identity Service to validate AT1 — verify the signature against the JWKS URI and confirm the subject and audience match — and issue AT2 (the SAP IAS access token with the `sf_technical_access` scope).
 
 ### Step 4: Configure OIDC OAuth Client Application mapping in SAP SuccessFactors
 
