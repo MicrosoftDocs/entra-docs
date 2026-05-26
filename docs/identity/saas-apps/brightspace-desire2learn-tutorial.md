@@ -17,9 +17,7 @@ In this article,  you learn how to integrate Brightspace by Desire2Learn with Mi
 
 Brightspace by Desire2Learn is available in the following [national cloud deployments](/graph/deployments).
 
-| Global service | US Government | China operated by 21Vianet |
-|-----------------|------------------------|----------------------------|
-| :white_check_mark: | :white_check_mark:    |        |
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 
