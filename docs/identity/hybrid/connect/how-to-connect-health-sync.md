@@ -1,12 +1,15 @@
 ---
 title: Using Microsoft Entra Connect Health with sync
 description: This is the Microsoft Entra Connect Health page that discusses how to monitor Microsoft Entra Connect Sync.
+author: omondiatieno
+ms.author: jomondi
 ms.assetid: 1dfbeaba-bda2-4f68-ac89-1dbfaf5b4015
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 05/15/2026
-ms.custom: H1Hack27Feb2017, sfi-image-nochange
+ms.custom: H1Hack27Feb2017, sfi-image-nochange, msecd-doc-authoring-1012
+#customer intent: As an identity administrator, I want to monitor my Microsoft Entra Connect Sync deployment with Microsoft Entra Connect Health so that I can identify and resolve synchronization alerts and errors.
 ---
 # Monitor Microsoft Entra Connect Sync with Microsoft Entra Connect Health
 The following documentation is specific to monitoring Microsoft Entra Connect (Sync) with Microsoft Entra Connect Health. For information on monitoring AD FS with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md). Additionally, for information on monitoring Active Directory Domain Services with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).
@@ -56,7 +59,7 @@ This feature provides a graphical trend of the number of changes that are being 
 ## Object Level Synchronization Error Report
 This feature provides a report about synchronization errors that can occur when identity data is synchronized between Windows Server AD and Microsoft Entra ID using Microsoft Entra Connect.
 
-* The report covers errors recorded by the sync client (Microsoft Entra Connect version 2.5.79.0 or higher)
+* The report covers errors recorded by the sync client (Microsoft Entra Connect version [2.5.79.0 or higher](reference-connect-version-history.md))
 * It includes the errors that occurred in the last synchronization operation on the sync engine. ("Export" on the Microsoft Entra Connector.)
 * Microsoft Entra Connect Health agent for sync must have outbound connectivity to the required end points for the report to include the latest data.
 * The report is **updated after every 30 minutes** using the data uploaded by Microsoft Entra Connect Health agent for sync.
@@ -104,7 +107,7 @@ By selecting the "Export" button you can download a CSV file with all the detail
 For specific duplicated attribute sync error scenario involving user Source Anchor update, you can fix them directly from the portal. 
 Read more about [Diagnose and remediate duplicated attribute sync errors](how-to-connect-health-diagnose-sync-errors.md)
 
-## Related links
+## Related content
 * [Troubleshooting Errors during synchronization](tshoot-connect-sync-errors.md)
 * [Duplicate Attribute Resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md)
 * [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md)
