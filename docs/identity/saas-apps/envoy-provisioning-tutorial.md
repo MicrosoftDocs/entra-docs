@@ -4,7 +4,7 @@ description: Learn how to automatically provision and de-provision user accounts
 
 author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/26/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Envoy so that I can streamline the user management process and ensure that users have the appropriate access to Envoy.
