@@ -7,12 +7,16 @@ ms.assetid: 1dfbeaba-bda2-4f68-ac89-1dbfaf5b4015
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 05/15/2026
+ms.date: 05/26/2026
 ms.custom: H1Hack27Feb2017, sfi-image-nochange, msecd-doc-authoring-1012
 #customer intent: As an identity administrator, I want to monitor my Microsoft Entra Connect Sync deployment with Microsoft Entra Connect Health so that I can identify and resolve synchronization alerts and errors.
 ---
 # Monitor Microsoft Entra Connect Sync with Microsoft Entra Connect Health
 The following documentation is specific to monitoring Microsoft Entra Connect (Sync) with Microsoft Entra Connect Health. For information on monitoring AD FS with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md). Additionally, for information on monitoring Active Directory Domain Services with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).
+
+## Prerequisites
+
+Before you use Microsoft Entra Connect Health for sync, install the Microsoft Entra Connect Health agent on each Microsoft Entra Connect Sync server. The agent is supported on Windows Server 2016, 2019, 2022, and 2025. For installation steps, requirements, and the full list of supported Windows Server versions, see [Install the Microsoft Entra Connect Health agents](how-to-connect-health-agent-install.md).
 
 ![Screenshot of the Microsoft Entra Connect Health for Sync page.](./media/how-to-connect-health-sync/syncsnapshot.png)
 
