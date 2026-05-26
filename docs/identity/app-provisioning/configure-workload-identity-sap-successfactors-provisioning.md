@@ -229,9 +229,25 @@ If you need to roll back, you can re-enable basic authentication in the SuccessF
 | `unauthorized_client` from SAP IAS | JWKS URI is unreachable or signature validation failed. | Confirm the Microsoft Entra OIDC discovery endpoint is reachable from SAP IAS and that the tenant ID in the issuer claim matches. |
 | OData call returns 403 | SAP IAS client ID is not mapped to the right API User ID, or the API user lacks appropriate role-based permissions. | Re-verify the OIDC OAuth client mapping in SAP SuccessFactors and the permission group on the API user. |
 
+## Contact support
+
+If the troubleshooting steps don't resolve your issue and you still need help, open a support request from the Microsoft Entra admin center:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Select **New support request**.
+1. Fill in the support request form using the following values:
+
+   | Field | Value |
+   | --- | --- |
+   | **Service type** | Microsoft Entra User Provisioning and Synchronization |
+   | **Summary** | SuccessFactors provisioning - Workload identity authentication issue |
+   | **Problem type** | Provisioning from Cloud HR to AD or Microsoft Entra ID |
+   | **Problem subtype** | Problem configuring the provisioning service |
+
+1. Complete the remaining fields and submit the request.
+
 ## Related content
 
-- [Plan for change: Switch from basic auth to workload identity-based auth for SAP SuccessFactors provisioning integrations](../../fundamentals/whats-new.md#plan-for-change---switch-from-basic-auth-to-workload-identity-based-auth-for-sap-successfactors-provisioning-integrations)
 - [Microsoft Entra ID and SAP SuccessFactors integration reference](sap-successfactors-integration-reference.md)
 - [Workload identity federation in Microsoft Entra ID](../../workload-id/workload-identity-federation.md)
 - [Federated identity credentials](../../workload-id/workload-identity-federation-create-trust.md)
