@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both GroupTalk and Micro
 > * Remove users in GroupTalk when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and GroupTalk
 > * Provision groups and group memberships in GroupTalk
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
