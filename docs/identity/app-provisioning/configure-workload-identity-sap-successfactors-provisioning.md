@@ -134,12 +134,14 @@ The guided experience prompts you to register a workload identity application. T
    > [!TIP]
    > You can select the app registration link to open the app and inspect the federated identity credential on the workload identity application's **Certificates & secrets** > **Federated credentials** blade. Don't remove or rename it — Microsoft Entra provisioning service relies on this credential to acquire AT1 at runtime.
 1. After you select the workload identity application, Microsoft Entra displays the values that SAP Cloud Identity Service needs to trust tokens issued by your tenant. Keep this panel open and switch to the SAP Cloud Identity Service admin console.
+   
    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/workload-identity-setup-parameters.png" alt-text="Screenshot showing the workload identity setup parameters." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/workload-identity-setup-parameters.png":::
 
 ### Step 3: Copy the Microsoft Entra trust parameters into SAP Cloud Identity Service
 
 1. Sign in as administrator to the **SAP Cloud Identity Service admin console** associated with your SAP SuccessFactors instance.
 1. From the **Applications & Resources** menu, select **Applications** and select **Create** to create a new **OpenID Connect** application. 
+   
    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-create-app.png" alt-text="Screenshot showing SAP IAS app creation options." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/sap-ias-create-app.png":::
 2. In the **Trust** tab, under **Application APIs**, select **Dependencies**. Add a new dependency so that this app can consume the APIs of your SAP SuccessFactors. From the **Application** dropdown, select your SAP SuccessFactors instance and from the **API** dropdown select `sf_technical_access`. Note down the **Dependency name** because you use it in step 5.
    :::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/configure-successfactors-dependency.png" alt-text="Screenshot showing SAP IAS to SuccessFactors dependency configuration." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/configure-successfactors-dependency.png":::
