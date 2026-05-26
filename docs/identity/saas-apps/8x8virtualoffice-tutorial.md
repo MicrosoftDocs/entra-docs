@@ -3,7 +3,7 @@ title: Configure 8x8 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and 8x8.
 ms.reviewer: jomondi
 ms.topic: how-to
-ms.date: 05/22/2024
+ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and 8x8 so that I can control who has access to 8x8, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
