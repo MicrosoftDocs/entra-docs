@@ -3,7 +3,7 @@ title: Configure Alibaba Cloud Service (Role-based SSO) for Single sign-on with 
 description: Learn how to configure single sign-on between Microsoft Entra ID and Alibaba Cloud Service (Role-based SSO).
 ms.reviewer: celested
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alibaba Cloud Service (Role-based SSO) so that I can control who has access to Alibaba Cloud Service (Role-based SSO), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
