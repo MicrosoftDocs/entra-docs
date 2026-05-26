@@ -20,9 +20,7 @@ In this article,  you learn how to integrate AWS IAM Identity Center (successor 
 
 AWS IAM Identity Center is available in the following [national cloud deployments](/graph/deployments).
 
-| Global service | US Government | China operated by 21Vianet |
-|-----------------|------------------------|----------------------------|
-| :white_check_mark: |     | :white_check_mark:    |
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 
