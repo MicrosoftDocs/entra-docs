@@ -2,7 +2,7 @@
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Umbrella
 description: "Deploy Global Secure Access alongside Cisco Umbrella with DNS security. Includes step-by-step configuration for both platforms to support private access, Microsoft 365 traffic, and internet access."
 ms.topic: how-to
-ms.date: 05/26/2026
+ms.date: 05/27/2026
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
@@ -190,6 +190,8 @@ To configure Cisco Umbrella:
     > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
 5. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 6. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
+
+---
 
 ## Configuration scenarios
 

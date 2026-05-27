@@ -2,7 +2,7 @@
 title: How to use enriched Microsoft 365 logs
 description: "View performance, experience, and availability insights for Microsoft 365 apps routed through Microsoft Entra Internet Access. Integrate enriched log data with Log Analytics or Microsoft Sentinel for network diagnostics and security analysis."
 ms.topic: how-to
-ms.date: 05/26/2026
+ms.date: 05/27/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
@@ -55,7 +55,7 @@ Viewing enriched Microsoft 365 audit logs is a one-time, two-step process. First
 > At this time, only SharePoint Online logs are available for log enrichment.
 
 > [!NOTE]
-> MS365 audit logs have undergone a feature change. Instead of creating a separate new stream of logs, you can now leverage the two existing log tables &mdash; Microsoft  365 OfficeActivity and Global Secure Access NetworkAccessTraffic tables &mdash; then combine the data using a Unique Token Id. 
+> MS365 audit logs have undergone a feature change. Instead of creating a separate new stream of logs, you can now leverage the two existing log tables &mdash; Microsoft  365 OfficeActivity and Global Secure Access NetworkAccessTraffic tables &mdash; then combine the data using a Unique Token ID. 
 
 ### Configure Diagnostic settings
 

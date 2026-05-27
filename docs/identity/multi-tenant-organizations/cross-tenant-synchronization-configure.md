@@ -2,7 +2,7 @@
 title: Configure cross-tenant synchronization
 description: "Configure cross-tenant synchronization using the Microsoft Entra admin center. Step-by-step guide covering trust settings, provisioning scope, attribute mappings, and testing."
 ms.topic: how-to
-ms.date: 05/26/2026
+ms.date: 05/27/2026
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
 zone_pivot_groups: same-cloud-cross-cloud-synchronization
@@ -554,13 +554,13 @@ This setting also applies to B2B collaboration and B2B direct connect, so if you
 
 When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with one of the following error messages:
 
-*Automatic redemption is not setup in the source tenant* 
+*Automatic redemption is not set up in the source tenant* 
 ```
 You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
 Error code: AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
 Details: The source tenant has not enabled automatic user consent with the target tenant. Please enable the outbound cross-tenant access policy for automatic user consent in the source tenant. aka.ms/TroubleshootingCrossTenantSyncPolicyCheck
 ```
-*Automatic redemption is not setup in the target tenant* 
+*Automatic redemption is not set up in the target tenant* 
 ```
 You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
 Error code: AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
