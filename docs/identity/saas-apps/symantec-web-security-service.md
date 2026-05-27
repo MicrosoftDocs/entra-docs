@@ -18,6 +18,13 @@ The objective of this article is to demonstrate the steps to be performed in Sym
 >
 > This connector is currently in Public Preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Symantec Web Security Service (WSS).
+> * Remove users in Symantec Web Security Service (WSS) when they don't require access anymore.
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

@@ -18,6 +18,15 @@ The objective of this article is to demonstrate the steps to be performed in Bli
 > This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Blink.
+> * Remove users in Blink when they don't require access anymore.
+> * Keep user attributes synchronized between Microsoft Entra ID and Blink.
+> * [Single sign-on](blink-tutorial.md) to Blink (recommended).
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

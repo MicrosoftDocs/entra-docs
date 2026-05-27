@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Joyn FSM and Micros
 > * Create users in Joyn FSM
 > * Remove users in Joyn FSM when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Joyn FSM
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

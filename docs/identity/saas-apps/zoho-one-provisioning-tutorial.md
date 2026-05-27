@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Zoho One and Micros
 > * Keep user attributes synchronized between Microsoft Entra ID and Zoho One.
 > * Provision groups and group memberships in Zoho One
 > * [Single sign-on](zohoone-tutorial.md) to Zoho One (recommended).
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

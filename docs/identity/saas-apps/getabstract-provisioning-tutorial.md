@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both getAbstract and Mic
 > * Keep user attributes synchronized between Microsoft Entra ID and getAbstract.
 > * Provision groups and group memberships in getAbstract.
 > * Enable [single sign-on (SSO)](getabstract-tutorial.md) to getAbstract (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

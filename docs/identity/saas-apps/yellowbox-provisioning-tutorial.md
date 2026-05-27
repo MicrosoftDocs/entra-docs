@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Yellowbox and Micro
 > * Create users in Yellowbox
 > * Remove users in Yellowbox when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Yellowbox
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

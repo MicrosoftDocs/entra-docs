@@ -22,6 +22,8 @@ This article describes the steps you need to perform in both OpenText Directory 
 > * Keep user attributes synchronized between Microsoft Entra ID and OpenText Directory Services
 > * Provision groups and group memberships in OpenText Directory Services
 > * [Single sign-on](./directory-services-tutorial.md) to OpenText Directory Services (recommended)
+> * Client Credentials Authentication authentication supported.
+> * Long lived bearer token authentication supported.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.

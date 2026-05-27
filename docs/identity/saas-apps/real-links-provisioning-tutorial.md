@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Real Links and Micr
 > * Remove users in Real Links when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Real Links
 > * [Single sign-on](real-links-tutorial.md) to Real Links (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

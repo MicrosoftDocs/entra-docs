@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both SurveyMonkey Enterp
 > * Remove users in SurveyMonkey Enterprise when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and SurveyMonkey Enterprise.
 > * [Single sign-on](surveymonkey-enterprise-tutorial.md) to SurveyMonkey Enterprise (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

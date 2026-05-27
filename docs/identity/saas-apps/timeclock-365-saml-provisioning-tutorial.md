@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both TimeClock 365 SAML 
 > * Remove users in TimeClock 365 SAML when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and TimeClock 365 SAML
 > * [Single sign-on](timeclock-365-saml-tutorial.md) to TimeClock 365 SAML (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both LimbleCMMS and Micr
 > * Keep user attributes synchronized between Microsoft Entra ID and LimbleCMMS.
 > * Provision groups and group memberships in LimbleCMMS.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to LimbleCMMS (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Twingate and Micros
 > * Keep user attributes synchronized between Microsoft Entra ID and Twingate
 > * Provision groups and group memberships in Twingate
 > * Single sign-on to Twingate (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

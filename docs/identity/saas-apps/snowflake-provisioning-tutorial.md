@@ -23,6 +23,7 @@ This article demonstrates the steps that you perform in Snowflake and Microsoft 
 > * Keep user attributes synchronized between Microsoft Entra ID and Snowflake
 > * Provision groups and group memberships in Snowflake
 > * Allow [single sign-on](./snowflake-tutorial.md) to Snowflake (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

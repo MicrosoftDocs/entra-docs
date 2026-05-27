@@ -28,6 +28,7 @@ This article describes the steps you need to perform in both UiPath and Microsof
 > * Remove users in UiPath when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and UiPath
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to UiPath (recommended).
+> * Client Credentials Authentication authentication supported.
 
 > [!NOTE]
 > UiPath currently supports user provisioning only. Group provisioning isn't supported.

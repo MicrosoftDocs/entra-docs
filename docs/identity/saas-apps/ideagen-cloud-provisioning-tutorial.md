@@ -20,6 +20,7 @@ This article describes the steps you need to perform in both Ideagen Cloud and M
 > * Create users in Ideagen Cloud.
 > * Remove users in Ideagen Cloud when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Ideagen Cloud.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

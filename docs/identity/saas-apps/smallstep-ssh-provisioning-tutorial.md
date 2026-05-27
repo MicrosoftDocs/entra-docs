@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Smallstep SSH and M
 > * Keep user attributes synchronized between Microsoft Entra ID and Smallstep SSH
 > * Provision groups and group memberships in Smallstep SSH
 > * Single sign-on to Smallstep SSH (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

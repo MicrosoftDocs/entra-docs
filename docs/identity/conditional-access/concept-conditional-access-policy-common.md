@@ -93,7 +93,9 @@ Policies in this category provide new ways to protect against compromise.
 
 Policies in this category provide ways to control agents in your environment.
 
-- [Block high-risk agent identities from accessing resources](policy-agent-block-high-risk.md) **Requires Microsoft Entra ID P2**
+- [Block high-risk agent identities](policy-agent-block-high-risk.md)
+- [Configure policy for autonomous agent access](policy-autonomous-agents.md)
+- [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)
 
 ---
 

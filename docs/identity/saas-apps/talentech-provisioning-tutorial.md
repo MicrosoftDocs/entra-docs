@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Talentech and Micro
 > * Keep user attributes synchronized between Microsoft Entra ID and Talentech
 > * Provision groups and group memberships in Talentech
 > * Single sign-on to Talentech (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Tic-Tac Mobile and 
 > * Create users in Tic-Tac Mobile.
 > * Remove users in Tic-Tac Mobile when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tic-Tac Mobile.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

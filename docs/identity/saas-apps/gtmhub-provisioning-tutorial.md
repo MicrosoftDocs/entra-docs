@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Gtmhub and Microsof
 > * Remove users in Gtmhub when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Gtmhub.
 > * Map users into their teams automatically and align them.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

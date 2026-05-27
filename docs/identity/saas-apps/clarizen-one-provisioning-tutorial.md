@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both Clarizen One and Mi
 > * Keep user attributes synchronized between Microsoft Entra ID and Clarizen One.
 > * Provision groups and group memberships in Clarizen One.
 > * [Single sign-on (SSO)](./clarizen-tutorial.md) to Clarizen One is recommended.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

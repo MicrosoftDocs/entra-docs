@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both SecureLogin and Mic
 > * Keep user attributes synchronized between Microsoft Entra ID and SecureLogin
 > * Provision groups and group memberships in SecureLogin
 > * Single sign-on to SecureLogin (recommended)
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

@@ -22,6 +22,7 @@ This article describes the steps you need to do in both Olfeo SAAS and Microsoft
 > * Keep user attributes synchronized between Microsoft Entra ID and Olfeo SAAS
 > * Provision groups and group memberships in Olfeo SAAS
 > * [Single sign-on](olfeo-saas-tutorial.md) to Olfeo SAAS (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

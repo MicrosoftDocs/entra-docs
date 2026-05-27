@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Iris Intranet and M
 > * Remove users in Iris Intranet when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Iris Intranet
 > * [Single sign-on](iris-intranet-tutorial.md) to Iris Intranet (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

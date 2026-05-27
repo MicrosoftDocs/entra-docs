@@ -21,6 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in IDE
 > * Keep user attributes synchronized between Microsoft Entra ID and IDEO
 > * Provision groups and group memberships in IDEO
 > * Single sign-on to IDEO (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

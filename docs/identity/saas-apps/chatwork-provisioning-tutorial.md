@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Chatwork and Micros
 > * Remove users in Chatwork when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Chatwork.
 > * [Single sign-on](chatwork-tutorial.md) to Chatwork (required).
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

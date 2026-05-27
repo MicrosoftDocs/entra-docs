@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Palo Alto Networks 
 > * Keep user attributes synchronized between Microsoft Entra ID and Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 > * Provision groups and group memberships in Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 > * [Single sign-on](palo-alto-networks-cloud-identity-engine---cloud-authentication-service-tutorial.md) to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

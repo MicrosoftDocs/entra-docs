@@ -17,6 +17,14 @@ The objective of this article is to demonstrate the steps you perform in Visitly
 > This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software-as-a-service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Visitly.
+> * Remove users in Visitly when they don't require access anymore.
+> * [Single sign-on](visitly-tutorial.md) to Visitly (recommended).
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

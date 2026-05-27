@@ -21,6 +21,8 @@ This article describes the steps you need to do in both Tableau Cloud and Micros
 > * Keep user attributes synchronized between Microsoft Entra ID and Tableau Cloud.
 > * Provision groups and group memberships in Tableau Cloud.
 > * [Single sign-on](tableauonline-tutorial.md) to Tableau Cloud (recommended).
+> * Long lived bearer token authentication supported.
+> * Basic authentication supported.
 
 ## Prerequisites
 

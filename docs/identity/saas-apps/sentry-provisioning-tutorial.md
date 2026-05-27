@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Sentry and Microsof
 > * Keep user attributes synchronized between Microsoft Entra ID and Sentry.
 > * Provision groups and group memberships in Sentry.
 > * [Single sign-on](sentry-tutorial.md) to Sentry (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

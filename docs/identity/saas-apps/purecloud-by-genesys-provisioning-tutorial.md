@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Genesys Cloud for A
 > * Keep user attributes synchronized between Microsoft Entra ID and Genesys Cloud for Azure
 > * Provision groups and group memberships in Genesys Cloud for Azure
 > * [Single sign-on](./purecloud-by-genesys-tutorial.md) to Genesys Cloud for Azure (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

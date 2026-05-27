@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both RingCentral and Mic
 > * Remove users in RingCentral when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and RingCentral
 > * [Single sign-on](./ringcentral-tutorial.md) to RingCentral (recommended)
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

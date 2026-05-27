@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both GoTo and Microsoft 
 > * Keep user attributes synchronized between Microsoft Entra ID and GoTo
 > * Provision groups and group memberships in GoTo
 > * [Single sign-on](./goto-tutorial.md) to GoTo (recommended)
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

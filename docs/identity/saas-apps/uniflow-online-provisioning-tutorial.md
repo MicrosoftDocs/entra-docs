@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both uniFLOW Online and 
 > * Remove users in uniFLOW Online when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and uniFLOW Online.
 > * [Single sign-on](uniflow-online-tutorial.md) to uniFLOW Online (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

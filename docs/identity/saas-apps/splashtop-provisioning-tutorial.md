@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Splashtop and Micro
 > * Keep user attributes synchronized between Microsoft Entra ID and Splashtop
 > * Provision groups and group memberships in Splashtop
 > * [Single sign-on](./splashtop-tutorial.md) to Splashtop (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

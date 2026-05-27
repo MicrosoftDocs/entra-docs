@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both SoSafe and Microsof
 > * Keep user attributes synchronized between Microsoft Entra ID and SoSafe.
 > * Provision groups and group memberships in SoSafe.
 > * [Single sign-on](servicessosafe-tutorial.md) to SoSafe (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Cinode and Microsof
 > * Remove users in Cinode when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cinode
 > * Provision groups and group memberships in Cinode
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

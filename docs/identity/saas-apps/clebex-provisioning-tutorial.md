@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both Clebex and Microsof
 > * Remove users in Clebex when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Clebex
 > * [Single sign-on](./clebex-tutorial.md) to Clebex (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

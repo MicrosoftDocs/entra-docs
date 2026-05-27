@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both TAP App Security an
 > * Remove users in TAP App Security when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and TAP App Security.
 > * [Single sign-on](tap-app-security-tutorial.md) to TAP App Security.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

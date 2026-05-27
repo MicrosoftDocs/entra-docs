@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both kpifire and Microso
 > * Keep user attributes synchronized between Microsoft Entra ID and kpifire
 > * Provision groups and group memberships in kpifire
 > * [Single sign-on](kpifire-tutorial.md) to kpifire (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

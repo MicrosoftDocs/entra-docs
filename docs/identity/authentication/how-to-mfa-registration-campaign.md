@@ -2,7 +2,7 @@
 title: Run a registration campaign to set up passkey or Microsoft Authenticator
 description: Learn how to run a registration campaign in Microsoft Entra ID to nudge users toward passkeys or Microsoft Authenticator for stronger sign-in security.
 ms.topic: how-to
-ms.date: 05/04/2026
+ms.date: 05/20/2026
 author: justinha
 ms.reviewer: marisanchez
 ai-usage: ai-assisted
@@ -16,9 +16,8 @@ You can nudge users to set up a passkey or Microsoft Authenticator during sign-i
 
 Registration campaigns support two authentication methods:
 
-
 - **Passkey (FIDO2)** — Nudge users to register a passkey, which includes both synced passkeys and device-bound passkeys.
-- - **Microsoft Authenticator** — Nudge users to download and set up the Authenticator app for push notifications.
+- **Microsoft Authenticator** — Nudge users to download and set up the Authenticator app for push notifications.
 
 > [!NOTE]
 > A registration campaign can only target one authentication method at a time. You can't run campaigns for both Microsoft Authenticator and passkeys simultaneously in the same tenant.
@@ -97,6 +96,9 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
    If the registration campaign state is set to **Enabled**, you can configure the experience for end users by using **Limited number of snoozes**:
    - If **Limited number of snoozes** is Enabled, users can skip the interrupt prompt 3 times, after which they're forced to register the targeted authentication method.
    - If **Limited number of snoozes** is Disabled, users can snooze an unlimited number of times and avoid registration.
+
+   > [!NOTE]
+   > When **Limited number of snoozes** is enabled, the snooze count is tracked per user and persists across campaign restarts or configuration changes (including targeted method updates). This ensures a consistent and predictable registration experience.
  
    **Days allowed to snooze** sets the period between two successive interrupt prompts. For example, if it's set to 3 days, users who skipped registration don't get prompted again until after 3 days.
 
@@ -107,6 +109,8 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
    - **Passkey** — Nudge users to register a passkey (includes both synced passkeys and device-bound passkeys).
 
 1. Select any users or groups to exclude from the registration campaign, and then select **Save**.
+
+   :::image type="content" source="./media/how-to-mfa-registration-campaign/enabled-passkey-campaign.png" alt-text="Screenshot of the Registration campaign page in the Microsoft Entra admin center showing an enabled passkey campaign with authentication method, snooze settings, and include/exclude targets." lightbox="./media/how-to-mfa-registration-campaign/enabled-passkey-campaign.png" border="true":::
 
 ## Enable the registration campaign policy using Graph Explorer
 

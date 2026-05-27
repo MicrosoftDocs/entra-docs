@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both Klaxoon SAML and Mi
 > * Keep user attributes synchronized between Microsoft Entra ID and Klaxoon.
 > * Provide licenses to users in Klaxoon based on Microsoft Entra groups.
 > * [Single sign-on](klaxoon-saml-tutorial.md) to Klaxoon using SAML (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

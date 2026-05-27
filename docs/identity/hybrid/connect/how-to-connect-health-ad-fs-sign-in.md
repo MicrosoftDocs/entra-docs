@@ -1,11 +1,14 @@
 ---
 title: AD FS sign-ins in Microsoft Entra ID with Connect Health
 description: This document describes how to integrate AD FS sign-ins with the Microsoft Entra Connect Health sign-ins report.
+author: omondiatieno
+ms.author: jomondi
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
-ms.custom: sfi-ga-nochange, sfi-ropc-nochange
+ms.date: 05/15/2026
+ms.custom: sfi-ga-nochange, sfi-ropc-nochange, msecd-doc-authoring-1012
+#customer intent: As an IT administrator, I want to integrate AD FS sign-ins into the Microsoft Entra sign-ins report so that I can review federated and cloud authentication events in a single report.
 ---
 
 # AD FS sign-ins in Microsoft Entra ID with Connect Health - preview
@@ -15,15 +18,15 @@ AD FS sign-ins can now be integrated into the Microsoft Entra sign-ins report by
 The Connect Health for AD FS agent correlates multiple Event IDs from AD FS, dependent on the server version, to provide information about the request and error details if the request fails. This information is correlated to the Microsoft Entra sign-in report schema and displayed in the Microsoft Entra sign-in report UX. Alongside the report, a new Log Analytics stream is available with the AD FS data and a new Azure Monitor Workbook template. The template can be used and modified for an in-depth analysis for scenarios such as AD FS account lockouts, bad password attempts, and spikes of unexpected sign-in attempts.
 
 ## Prerequisites
-* Microsoft Entra Connect Health for AD FS installed and upgraded to latest version (3.1.95.0 or later).
-*  Reports Reader role to view the Microsoft Entra sign-ins
+* Microsoft Entra Connect Health for AD FS installed and upgraded to the latest version (4.5.2466.0 or higher).
+* Reports Reader role to view the Microsoft Entra sign-ins report.
 
 ## What data is displayed in the report?
 The data available mirrors the same data available for Microsoft Entra sign-ins. Five tabs with information are available based on the type of sign-in, either Microsoft Entra ID or AD FS. Connect Health correlates events from AD FS, dependent on the server version, and matches them to the AD FS schema. 
 
 
 
-#### User sign-ins 
+### User sign-ins 
 Each tab in the sign-ins blade shows the default values below:
 * Sign-in date
 * Request ID
@@ -32,7 +35,7 @@ Each tab in the sign-ins blade shows the default values below:
 * IP Address of the device used for the sign-in
 * Sign-In Identifier
 
-#### Authentication Method Information
+### Authentication Method Information
 The following values may be displayed in the authentication tab. The authentication method is taken from the AD FS audit logs.
 
 |Authentication Method|Description|
@@ -49,7 +52,7 @@ The following values may be displayed in the authentication tab. The authenticat
 |ADFSExternalAuthenticationProvider|This field is if a third-party authentication provider was registered and used for authentication|
 
 
-#### AD FS Additional Details
+### AD FS Additional Details
 The following details are available for AD FS sign-ins:
 * Server Name
 * IP Chain
@@ -100,7 +103,7 @@ The ResourceId/Name fields are "NotSet" in some error cases, such as "Username a
 The report has a known issue where the "Authentication Requirement" field in the "Basic Info" tab are populated as a single factor authentication value for AD FS sign-ins regardless of the sign-in. Additionally, the Authentication Details tab displays "Primary or Secondary" under the Requirement field, with a fix in progress to differentiate Primary or Secondary authentication types.
 
 
-## Related links
+## Related content
 * [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md)
 * [Microsoft Entra Connect Health Agent Installation](how-to-connect-health-agent-install.md)
 * [Risky IP report](how-to-connect-health-adfs-risky-ip.md)

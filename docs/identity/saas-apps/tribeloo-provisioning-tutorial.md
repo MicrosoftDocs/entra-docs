@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Tribeloo and Micros
 > * Remove users in Tribeloo when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tribeloo.
 > * [Single sign-on](tribeloo-tutorial.md) to Tribeloo (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

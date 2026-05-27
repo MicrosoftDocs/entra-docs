@@ -17,6 +17,7 @@ This article describes the steps you need to perform in both TravelPerk and Micr
 ## Capabilities supported
 
 > [!div class="checklist"]
+> * Code Auth Grant flow authentication supported.
 >
 > - Create users in TravelPerk
 > - Remove users in TravelPerk when they don't require access anymore

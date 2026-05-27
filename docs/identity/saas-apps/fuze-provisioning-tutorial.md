@@ -20,6 +20,7 @@ The objective of this article is to demonstrate the steps to be performed in Fuz
 > * Remove users in Fuze when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Fuze
 > * [Single sign-on](./fuze-tutorial.md) to Fuze (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

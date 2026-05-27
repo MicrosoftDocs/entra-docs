@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both H5mag and Microsoft
 > * Remove users in H5mag when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and H5mag
 > * Single sign-on to H5mag (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

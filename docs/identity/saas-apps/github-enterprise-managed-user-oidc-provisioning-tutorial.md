@@ -26,6 +26,7 @@ This article describes the steps you need to perform in both GitHub Enterprise M
 > * Keep user attributes synchronized between Microsoft Entra ID and GitHub Enterprise Managed User (OIDC)
 > * Provision groups and group memberships in GitHub Enterprise Managed User (OIDC)
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to GitHub Enterprise Managed User (OIDC) (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
@@ -61,7 +62,7 @@ The scenario outlined in this article assumes that you already have the followin
 Add GitHub Enterprise Managed User (OIDC) from the Microsoft Entra application gallery to start managing provisioning to GitHub Enterprise Managed User (OIDC). If you have previously setup GitHub Enterprise Managed User (OIDC) for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 > [!NOTE]
-> If you need another instance of the application then you can consent to  GitHub Enterprise Managed User (OIDC) - ghe.com and please work with GitHub account team to enable this feature for your instance.
+> Each Entra ID tenant can support only one OIDC integration with Enterprise Managed Users. If you want to connect Entra ID to more than one enterprise on GitHub, use SAML instead. See [Configuring SAML single sign-on for Enterprise Managed Users](https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/configuring-saml-single-sign-on-for-enterprise-managed-users)
 
 ## Step 4: Define who is in scope for provisioning
 

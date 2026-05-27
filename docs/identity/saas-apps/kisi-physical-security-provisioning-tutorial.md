@@ -24,6 +24,7 @@ This article describes the steps you need to do in both Kisi Physical Security a
 > * Keep user attributes synchronized between Microsoft Entra ID and Kisi Physical Security.
 > * Provision groups and group memberships in Kisi Physical Security.
 > * [Single sign-on](kisi-physical-security-tutorial.md) to Kisi Physical Security(recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

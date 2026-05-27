@@ -19,6 +19,16 @@ The objective of this article is to demonstrate the steps to be performed in Cis
 >
 > This connector is currently in Preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Cisco Webex.
+> * Remove users in Cisco Webex when they don't require access anymore.
+> * Keep user attributes synchronized between Microsoft Entra ID and Cisco Webex.
+> * Provision groups and group memberships in Cisco Webex.
+> * [Single sign-on](cisco-webex-tutorial.md) to Cisco Webex (recommended).
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

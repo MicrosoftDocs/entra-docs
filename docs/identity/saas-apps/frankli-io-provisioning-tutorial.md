@@ -21,6 +21,7 @@ This article describes the steps you need to do in both frankli and Microsoft En
 > * Remove users in frankli when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and frankli.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to frankli.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

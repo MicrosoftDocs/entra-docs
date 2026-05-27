@@ -107,6 +107,8 @@
     items:
     - name: Introduction to Microsoft Entra Kerberos
       href: kerberos.md
+    - name: Kerberos server key rotation
+      href: kerberos-server-key-rotation.md
     - name: FAQ
       href: kerberos-faq.yml
   - name: Self-service password reset

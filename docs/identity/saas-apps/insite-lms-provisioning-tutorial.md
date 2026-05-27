@@ -21,6 +21,7 @@ This article describes the steps you need to do in both Insite LMS and Microsoft
 > * Create users in Insite LMS
 > * Remove users in Insite LMS when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Insite LMS
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

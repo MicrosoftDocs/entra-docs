@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both Klaxoon and Microso
 > * Keep user attributes synchronized between Microsoft Entra ID and Klaxoon.
 > * Provide licenses to users in Klaxoon based on Microsoft Entra groups.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Klaxoon (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

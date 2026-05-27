@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both Code42 and Microsof
 > * Keep user attributes synchronized between Microsoft Entra ID and Code42
 > * Provision groups and group memberships in Code42
 > * [Single sign-on](./code42-tutorial.md) to Code42 (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

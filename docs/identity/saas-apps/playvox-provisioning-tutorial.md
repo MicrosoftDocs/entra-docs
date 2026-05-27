@@ -19,6 +19,7 @@ This article describes the steps to follow in both Playvox and Microsoft Entra I
 > * Create users in Playvox.
 > * Remove users in Playvox when they don't need access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Playvox.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

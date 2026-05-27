@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both GitHub Enterprise S
 > * Keep user attributes synchronized between Microsoft Entra ID and GitHub Enterprise Server
 > * Provision groups and group memberships in GitHub Enterprise Server
 > * Single sign-on to [GitHub Enterprise Server](./github-enterprise-server-tutorial.md) (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

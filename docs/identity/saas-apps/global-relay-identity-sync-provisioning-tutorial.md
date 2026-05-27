@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both Global Relay Identi
 > * Remove users in Global Relay Identity Sync when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Global Relay Identity Sync
 > * Provision groups and group memberships in Global Relay Identity Sync
+> * Client Credentials Authentication authentication supported.
 
 
 > [!NOTE]

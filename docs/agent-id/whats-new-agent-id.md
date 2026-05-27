@@ -58,7 +58,6 @@ Conditional Access and ID Protection features extend Microsoft Entra Agent ID to
 
 - [Conditional Access for agents](/entra/identity/conditional-access/agent-id) (Updated)- Improved guidance and detailed scenarios for Conditional Access policies, plus new templates for agent-specific policies.
 - [Block access for high-risk agent identities](../identity/conditional-access/policy-agent-block-high-risk.md) (New) - Conditional Access template to block sign-ins from risky agent identities.
-- [Block access for high-risk agent's user account](../identity/conditional-access/policy-agent-user-account.md) (New) - Conditional Access template to block sign-ins from risky agents' user accounts.
 - [Autonomous agent access policy](../identity/conditional-access/policy-autonomous-agents.md) (New) - Conditional Access template for autonomous agents without user context.
 - [On behalf of agent access policy](../identity/conditional-access/policy-on-behalf-of-agents.md) (New) - Conditional Access template for agents acting on behalf of users.
 

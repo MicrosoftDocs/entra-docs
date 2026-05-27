@@ -26,6 +26,7 @@ This article describes the steps you need to perform in both GitHub Enterprise M
 > * Keep user attributes synchronized between Microsoft Entra ID and GitHub Enterprise Managed User
 > * Provision groups and group memberships in GitHub Enterprise Managed User
 > * Single sign-on to GitHub Enterprise Managed User (recommended)
+> * Long lived bearer token authentication supported.
 
 
 ## Prerequisites

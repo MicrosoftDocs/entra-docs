@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both NordPass and Micros
 > * Remove users in NordPass when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and NordPass.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to NordPass.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

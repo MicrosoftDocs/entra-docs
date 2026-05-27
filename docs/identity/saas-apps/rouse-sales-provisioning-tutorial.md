@@ -20,6 +20,7 @@ This article describes the steps you need to perform in both Rouse Sales and Mic
 > * Create users in Rouse Sales.
 > * Remove users in Rouse Sales when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Rouse Sales.
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

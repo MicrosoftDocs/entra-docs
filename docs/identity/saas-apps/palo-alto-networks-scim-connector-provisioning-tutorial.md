@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Palo Alto Networks 
 > * Remove users in Palo Alto Networks SCIM Connector when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Palo Alto Networks SCIM Connector.
 > * Provision groups and group memberships in Palo Alto Networks SCIM Connector.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

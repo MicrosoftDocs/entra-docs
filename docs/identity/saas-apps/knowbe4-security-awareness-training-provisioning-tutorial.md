@@ -25,6 +25,7 @@ This article describes the steps you need to perform in both KnowBe4 Security Aw
 > * Keep user attributes synchronized between Microsoft Entra ID and KnowBe4 Security Awareness Training.
 > * Provision groups and group memberships in KnowBe4 Security Awareness Training.
 > * [Single sign-on](knowbe4-tutorial.md) to KnowBe4 Security Awareness Training (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

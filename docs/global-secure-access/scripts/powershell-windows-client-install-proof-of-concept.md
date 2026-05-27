@@ -56,7 +56,7 @@ $RegistrySettings = @(
     @{ Key="HKLM:\SOFTWARE\Policies\Microsoft\Edge"; Name="BuiltInDnsClientEnabled"; Type="DWord"; Value=0 },
     @{ Key="HKLM:\SOFTWARE\Policies\Microsoft\Edge"; Name="QuicAllowed"; Type="DWord"; Value=0 },
     # Chrome DoH and QUIC settings
-    @{ Key="HKLM:\SOFTWARE\Policies\Google\Chrome"; Name="DnsOverHttpsMode"; ype="String"; Value="off" },
+    @{ Key="HKLM:\SOFTWARE\Policies\Google\Chrome"; Name="DnsOverHttpsMode"; Type="String"; Value="off" },
     @{ Key="HKLM:\SOFTWARE\Policies\Google\Chrome"; Name="QuicAllowed"; Type="DWord"; Value=0 }
 )
 # --- Track whether the IPv4-preferred setting was already correct ---

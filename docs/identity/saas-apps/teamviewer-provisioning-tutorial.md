@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both TeamViewer and Micr
 > * Remove users in TeamViewer when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and TeamViewer
 > * [Single sign-on](./teamviewer-tutorial.md) to TeamViewer (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

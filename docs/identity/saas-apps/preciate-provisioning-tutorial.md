@@ -20,6 +20,7 @@ This article describes the steps you need to perform in both Preciate and Micros
 > * Create users in Preciate
 > * Remove users in Preciate when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Preciate
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

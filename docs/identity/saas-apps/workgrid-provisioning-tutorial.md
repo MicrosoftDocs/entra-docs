@@ -17,6 +17,16 @@ The objective of this article is to demonstrate the steps to be performed in Wor
 > This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Workgrid.
+> * Remove users in Workgrid when they don't require access anymore.
+> * Keep user attributes synchronized between Microsoft Entra ID and Workgrid.
+> * Provision groups and group memberships in Workgrid.
+> * [Single sign-on](workgrid-tutorial.md) to Workgrid (recommended).
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
