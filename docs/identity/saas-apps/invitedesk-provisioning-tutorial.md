@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both InviteDesk and Micr
 > * Keep user attributes synchronized between Microsoft Entra ID and InviteDesk
 > * Provision groups and group memberships in InviteDesk.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to InviteDesk (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
