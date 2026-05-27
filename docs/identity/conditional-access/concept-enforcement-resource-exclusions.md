@@ -46,7 +46,7 @@ After the rollout, the following scenarios might now trigger Conditional Access 
 - **Public client applications** (like desktop apps) that request only baseline scopes. For example, a user signs into the Visual Studio Code desktop client, which requests `openid` and `profile` scopes. Another example is Azure CLI, which requests only `User.Read`.
 - **Confidential client applications** (like web apps) that are excluded from an All resources policy and request only baseline directory scopes. For example, a web application excluded from the policy that requests only `User.Read` and `People.Read`.
 
-The exact challenges depend on the access controls configured in your policies that target All resources or explicitly target Windows Azure Active Directory (Microsoft Entra ID directory) as the resource.
+The exact challenges depend on the access controls configured in your policies that target All resources or explicitly target Windows Azure Active Directory (also known as Azure AD Graph) as the resource.
 
 ## What isn't changing
 
@@ -70,9 +70,14 @@ Use the following table to determine the required actions for your applications:
 
 This enforcement change is applied to all tenants as part of the rollout. You have control over how it takes effect through the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX). You can enable enforcement immediately to test the impact, customize it at the policy level to exclude specific scenarios, or temporarily opt out until you're ready.
 
+> [!TIP]
+> You can update your enforcement settings at any time from the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX). All three options are reversible.
+
 ### Enable enforcement (recommended)
 
 You can enable the improved enforcement behavior before the rollout begins. Use this option in a test tenant to review the impact on your applications and users.
+
+You're ready to enable enforcement when you have reviewed the app exclusions in your **All resources** policies and have not identified any scenarios similar to those outlined in the [Who should use this setting](#who-should-use-this-setting) section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Access the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX) in Conditional Access. This direct link is required to view the settings.
@@ -92,6 +97,8 @@ To revert to the legacy behavior, return to the [Baseline scopes settings](https
 ## Customize behavior
 
 If you need to opt out of enforcement for specific policies rather than your entire tenant, use the **Customize behavior** option. This approach retains legacy behavior only for the policies you configure, while enforcement applies everywhere else.
+
+You're ready to customize the behavior if you have identified business critical scenarios similar to those described in the [Who should use this setting](#who-should-use-this-setting) section that would be impacted by this change. You can use this option to retain the legacy behavior for specific policies.
 
 > [!NOTE]
 > Microsoft recommends aligning with the new enforcement model. Use the **Customize behavior** option only if you have specific scenarios that require the legacy behavior for certain policies.
@@ -115,7 +122,9 @@ Use this setting only if you have specific scenarios that require you to retain 
 
 ## Disable enforcement
 
-The **Disable enforcement** option in the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX) is not recommended. Selecting this option disables enforcement for all policies in the tenant, which could create gaps in you Conditional Access coverage. 
+The **Disable enforcement** option in the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX) is not recommended. Selecting this option opts your tenant out of the enforcement change entirely — your tenant is excluded from the upcoming rollout and retains the legacy behavior. This could create gaps in your Conditional Access coverage.
+
+If you previously opted out or customized behavior, your tenant continues to use your selected configuration. You can enable the updated enforcement behavior at any time.
 
 ## Identify affected applications with a custom target resource
 
@@ -126,7 +135,7 @@ You can use baseline scope settings to identify which applications in your tenan
 Use the following Microsoft Graph query to list applications that request only the baseline scopes:
 
 ```http
-https://graph.microsoft.com/beta/auditLogs/signIns?$filter=conditionalAccessAudiences/any(a:a eq '<your-custom-app-id>')&$select=appId,appDisplayName
+https://graph.microsoft.com/beta/auditLogs/signIns?$filter=createdDateTime ge 2026-05-26T00:00:00Z and createdDateTime lt 2026-05-27T00:00:00Z and conditionalAccessAudiences/any(a:a eq '<your-custom-app-id>')&$select=createdDateTime,appId,appDisplayName,userDisplayName,userPrincipalName,ipAddress,conditionalAccessStatus
 ```
 
 Replace `<your-custom-app-id>` with your custom application's app ID.
@@ -163,9 +172,13 @@ Most applications request scopes beyond the previously listed scopes and are alr
 
 Custom applications that are intentionally designed to request only the previously listed scopes and are not designed to handle Conditional Access challenges might need to be updated so that they can handle Conditional Access challenges. Refer to the [Microsoft Conditional Access developer guidance](../../identity-platform/v2-conditional-access-dev-guide.md) for implementation details.   
 
-
 ## FAQ
 
+### What happens if I don't take any action?
+
+Enforcement is applied automatically as part of the scheduled rollout beginning June 15, 2026. If you haven't made any changes to the baseline scopes settings, the enforcement is enabled automatically, over a period of approximately two weeks. You won't see any selections in the admin center after enforcement is applied because the behavior becomes the default.
+
+If you previously chose **Disable enforcement** or **Customize behavior**, your tenant continues to use your selected configuration. You can switch to full enforcement at any time.
 ### How can I enable enforcement ahead of the rollout?
 
 Go to <https://aka.ms/BaselineScopesSettingsUX>, select **Enable enforcement** and **Save**. This setting immediately enforces the improved behavior. To revert back, select **Disable enforcement**. 
@@ -174,19 +187,14 @@ Go to <https://aka.ms/BaselineScopesSettingsUX>, select **Enable enforcement** a
 
 Use **Customize behavior** to assign a custom tenant-owned application as the target resource for baseline scopes, then exclude that application from your All resources policies. For more information, see [Retain legacy behavior with customize behavior](#customize-behavior).
 
+
+
+
 ### How do I know when I'm ready to enable enforcement?
 
-You're ready to enable enforcement when:
 
-- You reviewed the applications in your tenant that request only [baseline scopes](#what-are-baseline-scopes) and confirmed they can handle Conditional Access challenges (such as MFA or device compliance).
-- You tested the enforcement behavior in a test tenant and validated that your users and applications aren't adversely affected.
-- You addressed any scenarios that require legacy behavior by using the **Customize behavior** option for those specific policies.
 
 If you're unsure, enable enforcement in a test tenant first and monitor sign-in logs for unexpected failures.
-
-### What happens if I don't take any action?
-
-Enforcement is applied automatically as part of the scheduled rollout beginning June 15, 2026. If you haven't made any changes to the baseline scopes settings, the enforcement is enabled automatically, over the course of several weeks. You won't see any selections in the admin center after enforcement is applied because the behavior becomes the default.
 
 ### Do I need to update all applications?
 
