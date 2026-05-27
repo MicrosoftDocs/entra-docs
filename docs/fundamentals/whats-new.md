@@ -175,7 +175,7 @@ For more information, see:
 
 High Scale Compatibility (HSC) mode enables organizations to **migrate to Microsoft Entra External ID while preserving their existing user directory**. It's designed for large, established customer identity platforms transitioning from Azure AD B2C or legacy systems.
 
-With HSC mode, customers can **rebuild applications on External ID** while maintaining continuity for existing users, supporting a **seamless, phased migration at scale**. Some advanced customization capabilities are limited in this mode and will continue to evolve.
+With HSC mode, customers can **rebuild applications on External ID** while maintaining continuity for existing users, supporting a **seamless, phased migration at scale**. Some advanced customization capabilities are limited in this mode and will continue to evolve. For more information, see: [Enable External ID High Scale Compatibility (HSC) mode](../external-id/customers/enable-external-id-high-scale-compatibility-mode.md).
 
 ---
 
@@ -195,11 +195,11 @@ In addition, the maximum number of passkey profiles per tenant has been increase
 
 ---
 
-### Public Preview - Azure Roles assignments can now be governed via Entitlement Management
+### Public Preview - Azure Role assignments can now be governed via Entitlement Management
 
 **Type:** New feature  
 **Service category:** Entitlement Management  
-**Product capability:** Entitlement Management
+**Product capability:** Identity Governance  
 
 You can now govern eligible and active assignments to Azure roles at the Management Group, Subscription, and Resource Group levels directly through access packages. This brings role assignment into the same request, approval, and lifecycle governance model as apps, groups, and more - making it easier to manage access to Azure resources at scale while aligning to least privilege and just-in-time access.
 
