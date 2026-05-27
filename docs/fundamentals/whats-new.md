@@ -59,6 +59,24 @@ With cross tenant group synchronization, organizations can extend their existing
 
 ---
 
+### General Availability - Modernized My Account pages
+
+**Type:** Changed feature  
+**Service category:** Modernized My Account pages  
+**Product capability:** End User Experiences    
+
+We're excited to announce the upcoming general availability of three redesigned pages in the My Account portal (myaccount.microsoft.com), bringing a modernized experience to help end users manage their account with greater ease and clarity.
+
+The redesigned Devices page features a modernized layout that makes it easier for users to view and manage their registered devices. BitLocker recovery keys are now more prominently surfaced, reducing the need to contact IT helpdesk for key retrieval.
+
+The new Personal Info page gives users a centralized view of their profile information alongside language and region settings - making it simple to review and update personal details in one place.
+
+The redesigned Organizations page delivers a modernized experience and resolves a longstanding issue where users were unable to successfully leave an organization.
+
+Availability: These pages will be generally available to all Microsoft Entra ID customers by end of June 2026. No admin action is required - users will see the updated experience automatically.
+
+---
+
 ### General Availability - Support for passkeys in Microsoft Entra ID registration campaign
 
 **Type:** General Availability  
