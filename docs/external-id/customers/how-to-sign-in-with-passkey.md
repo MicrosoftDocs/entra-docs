@@ -20,9 +20,7 @@ This article explains how to enable passkeys (FIDO2) as a sign-in method for you
 In an external tenant, you can use passkeys in two ways:
 
 - **Passwordless sign-in.** The user enters their email or username. If a passkey is available, they're prompted to sign in with face, fingerprint, PIN, or a security key. The passkey completes first-factor authentication and also satisfies multifactor authentication (MFA) requirements.
-- **Passkey for MFA.** The user signs in with their email or username and password. If a passkey is registered, they complete MFA with the passkey — a phishing-resistant alternative to traditional verification methods.
-
-For more about MFA options, see [MFA in external tenants](concept-multifactor-authentication-customers.md).
+- **Passkey for MFA.** The user signs in with their email or username and password. If a passkey is registered, they complete MFA with the passkey — a phishing-resistant alternative to traditional verification methods. For more about MFA options, see [MFA in external tenants](concept-multifactor-authentication-customers.md).
 
 ## Prerequisites
 
@@ -104,7 +102,7 @@ The user registers a passkey from your credential management experience:
     - **Same device** — Windows Hello, iCloud Keychain, Google Password Manager, or a third-party provider such as 1Password or Bitwarden.
     - **Cross-device** — scan a QR code to register from a phone or tablet.
     - **Security key** — insert or tap a FIDO2 hardware key.
-1. The user completes verification with face, fingerprint, or PIN.
+1. The user completes verification with face, fingerprint, PIN, or security key.
 1. The passkey is registered and ready for sign-in.
 
 ### Sign in with a passkey
@@ -161,11 +159,11 @@ Device-bound passkeys stay on a single physical device and never leave it. Synce
 
 ### Is Microsoft Authenticator supported for passkeys?
 
-No. Registering passkeys through the Microsoft Authenticator app isn't currently supported. Use Windows Hello, FIDO2 security keys, iCloud Keychain, Google Password Manager, 1Password, or Bitwarden instead. Authenticator support is planned for a future release.
+No. Registering passkeys through the Microsoft Authenticator app isn't currently supported. Use Windows Hello, FIDO2 security keys, iCloud Keychain, Google Password Manager, 1Password, or Bitwarden instead.
 
 ### What is a passkey?
 
-A passkey is a FIDO2-based credential that uses public-key cryptography. A private key stays on the customer's device; a public key is stored with Microsoft Entra ID. Sign-in requires a local biometric or PIN, making passkeys phishing-resistant. No shared secret is ever transmitted.
+A passkey is a FIDO2-based credential that uses public-key cryptography. A private key stays on the customer's device; a public key is stored with Microsoft Entra External ID. Sign-in requires a local biometric or PIN, making passkeys phishing-resistant. No shared secret is ever transmitted.
 
 ### What's the difference between synced and device-bound passkeys?
 
@@ -177,11 +175,11 @@ Yes. A passkey combines device possession (something you have) with biometric or
 
 ### Can a customer use a passkey as their only sign-in method?
 
-Yes, once registered. However, customers currently need an email + password account to register the passkey initially.
+Yes, once registered. However, customers currently need an email + password or username + password account to register the passkey initially.
 
 ### What happens if a customer loses their device?
 
-For synced passkeys, the credential is available on the customer's other linked devices. For device-bound passkeys, the customer signs in with email + password (fallback) and registers a new passkey. Admins can delete the lost passkey via the admin center or Graph API.
+For synced passkeys, the credential is available on the customer's other linked devices. The customer can also sign in with email + password or username + password and a fallback MFA method. Admins can delete the lost passkey via the admin center or Graph API.
 
 ### Can customers use a passkey on a different device from where they registered it?
 
@@ -189,7 +187,7 @@ Yes — synced passkeys are automatically available on all linked devices. For a
 
 ### Can I enforce passkeys using Conditional Access authentication strengths?
 
-No. External ID tenants don't currently support authentication strengths in Conditional Access. You can't enforce phishing-resistant MFA through a Conditional Access policy. Passkeys are offered as an available sign-in method, but can't be required via policy at this time.
+No. External ID tenants don't currently support authentication strengths in Conditional Access. You can't enforce phishing-resistant MFA through a Conditional Access policy. Passkeys are offered as an available sign-in method, but can't be required via policy at this time. You can, however, require MFA through a Conditional Access policy. For details, see [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md).
 
 ### Can I use passkeys with email one-time passcode or social IdP users?
 
