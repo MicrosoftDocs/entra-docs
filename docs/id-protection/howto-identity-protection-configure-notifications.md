@@ -69,7 +69,7 @@ It includes:
 - New risky sign-ins detected (in real time)
 - Links to the related reports in ID Protection
 
-![Screenshot of a sample weekly digest email from Microsoft Entra ID Protection showing new risky users and risky sign-ins summary.](./media/howto-identity-protection-configure-notifications/weekly-digest-email.png)
+:::image type="content" source="./media/howto-identity-protection-configure-notifications/weekly-digest-email.png" alt-text="Screenshot of a sample weekly digest email from Microsoft Entra ID Protection showing new risky users and risky sign-ins summary.":::
 
 ### Configure weekly digest email
 
