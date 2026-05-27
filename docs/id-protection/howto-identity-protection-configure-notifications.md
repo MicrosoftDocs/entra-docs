@@ -2,8 +2,9 @@
 title: Microsoft Entra ID Protection notifications
 description: Learn how notifications support your investigation activities.
 ms.topic: how-to
-ms.date: 08/06/2025
+ms.date: 05/27/2026
 ms.reviewer: chuqiaoshi
+ai-usage: ai-assisted
 ms.custom: sfi-ga-nochange
 ---
 # Microsoft Entra ID Protection notifications
@@ -18,8 +19,11 @@ This article provides you with an overview of both notification emails.
 > [!NOTE]
 > **We don't support sending emails to users in group-assigned roles.**
 
-> [!IMPORTANT]
-> By default users actively assigned Global Administrator, Security Administrator, or Security Reader roles are automatically added to this list if that user has a valid "Email" or "Alternate email" configured. If a user is enrolled in Privileged Identity Management (PIM) to elevate to one of these roles on demand, then **they will only receive emails if they are elevated at the time the email is sent**.
+## Who receives notification emails
+
+By default, users actively assigned Global Administrator, Security Administrator, or Security Reader roles are automatically added to the notification recipient list if that user has a valid **Email** or **Alternate email** configured.
+
+If a user is enrolled in Privileged Identity Management (PIM) to elevate to one of these roles on demand, they only receive emails if they're elevated at the time the email is sent.
 
 ## Prerequisites
 

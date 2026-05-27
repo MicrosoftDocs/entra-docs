@@ -7,6 +7,7 @@ ms.author: jomondi
 ms.topic: how-to
 ms.date: 04/28/2026
 ms.reviewer: arluca
+ai-usage: ai-assisted
 
 #customer intent: As an IT administrator, I want to assign owners and sponsors to agent identity blueprints and agent identities so that I can establish clear accountability and governance for my organization's AI agents.
 ---
@@ -23,6 +24,11 @@ To manage owners and sponsors, you must:
 
 - Have the [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) role.
 - Be an existing owner of the agent identity blueprint or agent identity you want to manage.
+
+## Important considerations
+
+> [!NOTE]
+> When you use a dynamic membership group as a sponsor, it can take up to 24 hours after a membership rule change or a user property change before the authorization check on sponsorship succeeds. Plan accordingly when assigning dynamic groups as sponsors for agent identities or blueprints.
 
 ## Add an owner or sponsor to an agent blueprint
 
