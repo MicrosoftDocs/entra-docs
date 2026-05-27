@@ -8,7 +8,7 @@ ai-usage: ai-assisted
 ---
 # Restrict device code flow for Microsoft Teams devices with Conditional Access
 
-Device code flow lets users sign in to devices that don't have a browser or rich input experience. Some Microsoft Teams devices use device code flow during first-time registration or reprovisioning.
+Device code flow lets users sign in to devices that don't have a browser or rich input experience. Some Microsoft Teams devices use device code flow during first-time registration, reprovisioning, and some reauthentication scenarios.
 
 Device code flow is also a high-risk authentication flow. An attacker can start the flow, send a user a code, and ask the user to enter that code on a legitimate Microsoft sign-in page. Because the sign-in page is real, this attack can be harder for users to recognize.
 
@@ -61,7 +61,7 @@ Roll the policy out in stages:
 1. Add new Teams device resource accounts to the exception group as devices are deployed.
 1. Monitor blocked sign-ins and exception group membership.
 
-Teams devices need device code flow both for initial sign-in and for reauthentication scenarios such as password changes or Conditional Access policy changes. The exception for Teams device resource accounts is persistent, not time-boxed. Passwordless Entra Resource Accounts are an exception to the reauthentication requirement: they need device code flow only at initial provisioning. The exception is still managed the same way.
+Teams devices need device code flow both for initial sign-in and for reauthentication scenarios such as password changes or Conditional Access policy changes. The exception for Teams device resource accounts is persistent, not time-boxed. Teams resource accounts that use passwordless authentication are an exception to the reauthentication requirement: they need device code flow only at initial provisioning. Keep these accounts in the persistent exception group so that reprovisioning and recovery scenarios aren't blocked.
 
 An exception is account-scoped. There's no way to scope the exception to just one resource or scenario. During the exception, an excluded account can use device code flow for any app or resource in scope of the policy. Keep exception membership limited to genuine Teams device resource accounts, monitored, and owner-approved.
 
