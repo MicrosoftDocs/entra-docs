@@ -49,7 +49,7 @@ Microsoft Entra provisioning service authenticates to SAP SuccessFactors using s
 2. **SAP Cloud Identity Service exchanges the JWT for an access token.** The signed JWT is presented to SAP Cloud Identity Service, which is trusted by SAP SuccessFactors. SAP Cloud Identity Service validates the JWT against the trust rules you configure in the SAP Cloud Identity Service admin console and returns a short-lived access token that can only be used to query the SAP SuccessFactors OData API.
 3. **The provisioning service calls the OData API.** Microsoft Entra provisioning service uses the short-lived access token to query the SAP SuccessFactors OData API. The access token includes a client ID that's mapped to a technical/API user in SAP SuccessFactors with role-based permission to access SAP SuccessFactors entities.
 
-:::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/entra-sap-workload-identity-detailed-flow.png" alt-text="Detailed runtime flow showing AT1 acquisition from Microsoft Entra, exchange for AT2 at SAP Cloud Identity Service, and the OData API call to SAP SuccessFactors." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/entra-sap-workload-identity-detailed-flow.png":::
+:::image type="content" source="./media/configure-workload-identity-sap-successfactors-provisioning/entra-sap-workload-identity-detailed-flow.png" alt-text="Diagram of the detailed runtime flow showing AT1 acquisition from Microsoft Entra, exchange for AT2 at SAP Cloud Identity Service, and the OData API call to SAP SuccessFactors." lightbox="./media/configure-workload-identity-sap-successfactors-provisioning/entra-sap-workload-identity-detailed-flow.png":::
 
 ### Token exchange sequence diagram
 
