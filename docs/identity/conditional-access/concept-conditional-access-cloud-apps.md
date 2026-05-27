@@ -164,7 +164,6 @@ For guidance on assessing impact, identifying affected applications, and retaini
 > [!NOTE]
 > The [Azure AD Graph retirement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/important-update-azure-ad-graph-retirement/4364990) does not affect the Azure AD Graph (Windows Azure Active Directory) resource registered in your tenant.
 
-
 ### Protect directory information
 
 > [!NOTE]
