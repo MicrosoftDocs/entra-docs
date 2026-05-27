@@ -173,7 +173,7 @@ For more information, see:
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C
 
-High Scale Compatibility (HSC) mode enables organizations to **migrate to Microsoft Entra External ID while preserving their existing user directory**. It's designed for large, established customer identity platforms transitioning from Azure AD B2C or legacy systems.
+High Scale Compatibility (HSC) mode enables organizations to **migrate to Microsoft Entra External ID while preserving their existing user directory**. It's designed for large, established customer identity platforms transitioning from Azure AD B2C.
 
 With HSC mode, customers can **rebuild applications on External ID** while maintaining continuity for existing users, supporting a **seamless, phased migration at scale**. Some advanced customization capabilities are limited in this mode and will continue to evolve. For more information, see: [Enable External ID High Scale Compatibility (HSC) mode](../external-id/customers/enable-external-id-high-scale-compatibility-mode.md).
 
