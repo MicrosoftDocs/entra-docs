@@ -19,7 +19,7 @@ When you're writing membership rules for dynamic membership groups, follow the t
 
 ## Minimize use of the -match operator
 
-Minimize your use of the `-match` operator in rules as much as possible. Instead, explore if it's possible to use the `-startsWith`, `endsWith` or `-eq` operator. `-eq` is preferred when the full attribute value is known; `-startsWith` and `-endsWith` are next most efficient when only a prefix or suffix is known. Consider using other properties that allow you to write rules to select the users for a group without using the `-match` operator.
+Minimize your use of the `-match` operator in rules as much as possible. Instead, explore if it's possible to use the `-startsWith`, `-endsWith` or `-eq` operator. `-eq` is preferred when the full attribute value is known; `-startsWith` and `-endsWith` are next most efficient when only a prefix or suffix is known. Consider using other properties that allow you to write rules to select the users for a group without using the `-match` operator.
 
 For example, if you want a rule for the group that contains all users whose city is Lagos, don't use a rule like these:
 
@@ -33,6 +33,16 @@ It's better to use a rule like this example:
 Or, best of all:
 
 - `user.city -eq "Lagos"`
+
+Similarly, for email-domain rules, don't use:
+
+- user.mail -match ".*@Contoso\.com$"
+- user.mail -notMatch ".*@Contoso\.com$"
+
+It's better to use:
+
+- user.userPrincipalName -endsWith "@Contoso.com"
+- user.mail -notEndsWith "@Contoso.com"
 
 ## Minimize use of the -contains operator
 
