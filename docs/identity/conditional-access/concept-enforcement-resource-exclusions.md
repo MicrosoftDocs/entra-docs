@@ -80,7 +80,7 @@ You can enable the improved enforcement behavior before the rollout begins. Use 
 1. Select **Save**.
 1. Select **Enable enforcement** again to confirm the change.
 
-
+:::image type="content" source="media/concept-enforcement-resource-exclusions/baseline-scope-settings.png" alt-text="Screenshot of the baseline scope settings in Conditional Access." lightbox="media/concept-enforcement-resource-exclusions/baseline-scope-settings.png":::
 
 > [!NOTE]
 > This setting immediately enables the updated Conditional Access behavior for **All resources** policies with exclusions.
@@ -100,7 +100,7 @@ To customize the behavior, configure a custom application to target baseline sco
 
 1. **Create an application**: [Register a new application](../enterprise-apps/add-application-portal.md) in Microsoft Entra ID to serve as the custom target resource for baseline scopes.
 1. **Exclude the application from the relevant policy**: In the Conditional Access policy where you need to retain legacy behavior, exclude the custom application from the target resources.
-1. **Select the application in the Baseline scopes settings UX**: Go to the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX), select **Customize behavior**, and choose your placeholder application from the list.
+1. **Select the application in the Baseline scopes settings UX**: Go to the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX), select **Customize behavior**, then select **Save** and choose your placeholder application from the list.
 
 After you complete these steps, baseline scopes are evaluated against your custom placeholder application for that policy. Because the placeholder application is excluded from the policy, the legacy behavior is retained for that policy only.
 
