@@ -76,7 +76,7 @@ To configure a profile:
 
 ## Step 3: Build a passkey management experience for your application
 
-Your application needs a credential management experience so customers can register and manage their passkeys. Use the [FIDO2 provisioning APIs](/graph/api/resources/fido2authenticationmethod?view=graph-rest-beta&preserve-view=true) to build this into your app.
+Your application needs a credential management experience so customers can register and manage their passkeys. Use the [FIDO2 provisioning APIs](https://aka.ms/fido2provisioningapi) to build this into your app.
 
 The credential management experience should enable customers to:
 
@@ -211,7 +211,7 @@ No. Registration requires the customer's physical presence and local biometric o
 
 ### Are there low-privilege APIs for building a credential management experience?
 
-Not yet. Low-privilege credential management APIs for passkeys are on the roadmap. Currently, use the [FIDO2 provisioning APIs](/graph/api/resources/fido2authenticationmethod?view=graph-rest-beta&preserve-view=true) to build your credential management experience.
+Not yet. Low-privilege credential management APIs for passkeys are on the roadmap. Currently, use the [FIDO2 provisioning APIs](https://aka.ms/fido2provisioningapi) to build your credential management experience.
 
 ### Can I use the same passkey across multiple domains (related origins)?
 
@@ -223,7 +223,7 @@ No. Passkeys aren't currently supported through native authentication APIs. Supp
 
 ### Is there an out-of-box passkey registration experience?
 
-No. There isn't a built-in passkey registration experience provided by Microsoft at this time. You need to build your own credential management experience using the [FIDO2 provisioning APIs](/graph/api/resources/fido2authenticationmethod?view=graph-rest-beta&preserve-view=true). An out-of-box registration experience is coming soon.
+No. There isn't a built-in passkey registration experience provided by Microsoft at this time. You need to build your own credential management experience using the [FIDO2 provisioning APIs](https://aka.ms/fido2provisioningapi). An out-of-box registration experience is coming soon.
 
 ## Related content
 
