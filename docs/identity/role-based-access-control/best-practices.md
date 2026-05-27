@@ -112,6 +112,9 @@ Microsoft Entra ID provides several complementary capabilities that work togethe
 
 **Example layered approach:** Assign a custom role scoped to an administrative unit so a regional helpdesk admin can only reset passwords for users in their region. Require PIM activation so the role is time-bound and approval-based. Apply a Conditional Access policy that requires a compliant device and multifactor authentication when the admin activates the role. Use access reviews in entitlement management to periodically validate that the admin still needs the assignment.
 
+> [!NOTE]
+> Availability of the controls in the preceding table depends on your Microsoft Entra license tier. For example, custom roles, Conditional Access, and Continuous Access Evaluation require Microsoft Entra ID P1, while Privileged Identity Management, entitlement management, and access reviews require Microsoft Entra ID P2 or Microsoft Entra ID Governance. To compare what's included in each tier, see [Microsoft Entra plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+
 To audit what these layered controls have granted, see [Understand who has access to what](custom-overview.md#understand-who-has-access-to-what).
 
 For more information about designing a least-privilege access strategy, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
