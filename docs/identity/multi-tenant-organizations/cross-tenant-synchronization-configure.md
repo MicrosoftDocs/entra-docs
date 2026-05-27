@@ -2,7 +2,7 @@
 title: Configure cross-tenant synchronization
 description: "Configure cross-tenant synchronization using the Microsoft Entra admin center. Step-by-step guide covering trust settings, provisioning scope, attribute mappings, and testing."
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 05/26/2026
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
 zone_pivot_groups: same-cloud-cross-cloud-synchronization
@@ -283,7 +283,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Select **Test Connection** to test the connection.
 
-    You should see a message that the supplied credentials are authorized to enable provisioning. If the test connection fails, see [Common scenarios and solutions](#common-scenarios-and-solutions) later in this article.
+    You should see a message that the supplied credentials are authorized to enable provisioning. If the test connection fails, see [Troubleshoot common cross-tenant synchronization scenarios](#troubleshoot-common-cross-tenant-synchronization-scenarios) later in this article.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-success.png" alt-text="Screenshot that shows a testing connection notification." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-success.png":::
 
@@ -548,9 +548,9 @@ Even though users are being provisioned in the target tenant, they still might b
 
 This setting also applies to B2B collaboration and B2B direct connect, so if you set **External user leave settings** to **No**, B2B collaboration users and B2B direct connect users can't leave your organization themselves. For more information, see [Leave an organization as an external user](../../external-id/leave-the-organization.md#more-information-for-administrators).
 
-## Common scenarios and solutions
+## Troubleshoot common cross-tenant synchronization scenarios
 
-#### Symptom - Test connection fails with AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
+### Symptom - Test connection fails with AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
 
 When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with one of the following error messages:
 
@@ -576,7 +576,7 @@ This error indicates the policy to automatically redeem invitations in the sourc
 Follow the steps in [Step 3: Automatically redeem invitations in the target tenant](#step-3-automatically-redeem-invitations-in-the-target-tenant) and [Step 4: Automatically redeem invitations in the source tenant](#step-4-automatically-redeem-invitations-in-the-source-tenant).
 
 ::: zone pivot="cross-cloud-synchronization"
-#### Symptom - Test connection fails with ExternalTenantNotFound
+### Symptom - Test connection fails with ExternalTenantNotFound
 
 When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
 
@@ -596,7 +596,7 @@ This error indicates the **Setup cross-tenant synchronization across Microsoft c
 
 1. In the target tenant, create a new configuration and be sure to check the **Setup cross-tenant synchronization across Microsoft clouds** checkbox as described in [Step 5: Create a configuration in the source tenant](#step-5-create-a-configuration-in-the-source-tenant).
 
-#### Symptom - Test connection fails with AzureActiveDirectoryTokenExpired
+### Symptom - Test connection fails with AzureActiveDirectoryTokenExpired
 
 When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
 
@@ -615,7 +615,7 @@ This error indicates the cross-cloud setting for synchronization has not been en
 In the target tenant, on the **Microsoft cloud settings** tab, select the cross-cloud synchronization checkbox for the source tenant. Follow the steps in [Step 1: Enable cross-cloud settings in both tenants](#step-1-enable-cross-cloud-settings-in-both-tenants).
 ::: zone-end
 
-#### Symptom - Automatic redemption checkbox is disabled
+### Symptom - Automatic redemption checkbox is disabled
 
 When configuring cross-tenant synchronization, the **Automatic redemption** checkbox is disabled.
 
@@ -629,7 +629,7 @@ Your tenant doesn't have a Microsoft Entra ID P1 or P2 license.
 
 You must have Microsoft Entra ID P1 or P2 to configure trust settings.
 
-#### Symptom - Recently deleted user in the target tenant is not restored
+### Symptom - Recently deleted user in the target tenant is not restored
 
 After soft deleting a synchronized user in the target tenant, the user isn't restored during the next synchronization cycle. If you try to soft delete a user with on-demand provisioning and then restore the user, it can result in duplicate users.
 
@@ -641,7 +641,7 @@ Restoring a previously soft-deleted user in the target tenant isn't supported.
 
 Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.md).
 
-#### Symptom - Users are skipped because SMS sign-in is enabled on the user
+### Symptom - Users are skipped because SMS sign-in is enabled on the user
 
 Users are skipped from synchronization. The scoping step includes the following filter with status false: "Filter external users.alternativeSecurityIds EQUALS 'None'"
 
@@ -692,7 +692,7 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 ```
 
 ::: zone pivot="same-cloud-synchronization"
-#### Symptom - Group skipped due to EntityTypeNotSupported
+### Symptom - Group skipped due to EntityTypeNotSupported
 
 Group is skipped from synchronization because EntityTypeNotSupported.
 
@@ -707,7 +707,7 @@ This message likely indicates that group synchronization is not enabled in the s
 In the source tenant, on the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page. Make sure the **Enabled** toggle is set to **Yes**. For more information, see [Step 8: (Optional) Define who is in scope for provisioning with scoping filters](#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
 ::: zone-end
 
-#### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
+### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
 
 Users in scope fail to provision. The provisioning logs details include the following error message:
 
@@ -721,7 +721,7 @@ This error indicates the Guest invite settings in the target tenant are configur
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
 
-#### Symptom - UserPrincipalName does not update for existing B2B users in pending acceptance state
+### Symptom - UserPrincipalName does not update for existing B2B users in pending acceptance state
 
 When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UserPrincipalName (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case, the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
 
