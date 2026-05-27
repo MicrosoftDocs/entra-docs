@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2026
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Global View so that I can control who has access to Brocade SANnav Global View, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -62,6 +62,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Browse to **Entra ID** > **Enterprise apps** > **Brocade SANnav Global View** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
+
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, then perform the following steps:
@@ -82,21 +83,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Brocade SANnav Global View application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows user attributes and claims with default values.](common/default-attributes.png "Claims")
-
-1. The Brocade SANnav Global View requires several additional attributes within the SAML response. While these attributes are pre-configured by default, they should be reviewed to ensure they align with your specific environment and security requirements. The following table outlines the expected attributes:
-
-    | Name |  Source Attribute|
-    | ---------------|  --------- |
-    | groups | user.groups |
-    | username | user.userprincipalname |
-
-    > [!Note]
-    > Guidelines for updating SANnav-specific attributes:
-    > - **groups**: While the default claim URI is `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` under **Attributes & Claims**, the application specifically requires the shortened name **groups**. To configure this, edit the existing group claim (the claim whose name appears as `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` in the edit UI). After selecting your preferred **Source attribute** (such as **Group ID** or **sAMAccountName**), expand the **Advanced options** to select **Customize the name of the group claim**. Finally, enter **groups** into the **Name** field to ensure the application correctly identifies user permissions.
-    > Refer to [Add group claims to tokens for SAML applications using SSO configuration](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) to learn more about the `groups` attribute in the **Attributes & Claims** section.
-    > - **username**: Use the User Principal Name (UPN) format for SANnav usernames. While you can modify the username claim to suit your specific requirements, make sure the format complies with the standards outlined in the SANnav Global View User Guide.
 	
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+
     ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
 <a name='create-a-microsoft-entra-id-test-user'></a>
