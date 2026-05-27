@@ -31,7 +31,7 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 
 ## Zero Trust security recommendations for AI
 
-### Require users to use Microsoft Entra ID auth to interact with agents
+### Require Microsoft Entra ID authentication to interact with agents
 [!INCLUDE [61011](../includes/secure-recommendations/61011.md)]
 
 ### Conditional Access policies cover both agent identities and agent users
@@ -43,7 +43,7 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Custom security attributes for agent identities are present
 [!INCLUDE [61008](../includes/secure-recommendations/61008.md)]
 
-### Identity governance for agents — sponsors assigned, entitlement-management channel exists, and lifecycle automation in place
+### Identity governance for agent identity sponsors is configured
 [!INCLUDE [61013](../includes/secure-recommendations/61013.md)]
 
 ### Agent identities and blueprint principals have assigned technical owners and no disabled agents remain in the directory
