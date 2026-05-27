@@ -59,7 +59,7 @@ After you register the external tenant in the Microsoft Entra ID tenant, add it 
 |---------|-------|
 | **Display name** | A name your users see during sign-in, for example *Sign in with Contoso*. |
 | **Well-known endpoint** | `https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration` |
-| **OpenID Issuer URI** | `https://login.microsoftonline.com/<tenant-ID>/v2.0`, where `<tenant-ID>` is the directory (tenant) ID of the Microsoft Entra ID tenant. |
+| **OpenID Issuer URI** | `https://login.microsoftonline.com/<tenant-ID>/v2.0`, where `<tenant-ID>` is the directory (tenant) ID of the Microsoft Entra ID tenant. If using `domain_hint` for IdP acceleration, use the domain-based issuer format `https://login.microsoftonline.com/<domain-name>/v2.0` rather than tenant ID, where `<domain-name>` is the primary domain name of the Microsoft Entra ID tenant. |
 | **Client ID** | The application (client) ID from the app registration you created in the Microsoft Entra ID tenant. |
 | **Client Authentication** | `client_secret` |
 | **Client Secret** | The client secret value you recorded from the app registration. |

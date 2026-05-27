@@ -2,10 +2,11 @@
 title: Conditional Access for Agent Identities in Microsoft Entra
 description: Learn how Conditional Access for agent identities in Microsoft Entra ID extends Zero Trust principles to AI agents, ensuring secure access and governance.
 ms.topic: concept-article
-ms.date: 04/30/2026
+ms.date: 05/18/2026
 ms.reviewer: yoelhor
 ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
+reviewer: kvenkit
 #customer-intent: As an identity administrator, I want to understand how Conditional Access policies apply to agent identities in Microsoft Entra ID, so that I can effectively manage and secure access for AI agents in my organization.
 ---
 
@@ -13,7 +14,14 @@ ai-usage: ai-assisted
 
 Conditional Access is an intelligent policy engine that helps organizations control how users and agent identities access corporate resources. It brings together real-time signals such as user's context, device, location, and session risk information to determine when to allow, block, or limit access, or require more verification steps.
 
-For a high-level overview of Conditional Access, see [What is Conditional Access?](overview.md). For a high-level guide to managing agent identities across your organization, see [Manage agent identities in your organization](../../agent-id/manage-agent-identities-admin.md).
+Learn about Conditional Access and agent identities:
+
+- High-level overview of Conditional Access: [What is Conditional Access?](overview.md)
+- Guide to managing agent identities across your organization: [Manage agent identities in your organization](../../agent-id/manage-agent-identities-admin.md).
+- Policy templates:
+    - [Block high-risk agent identities](policy-agent-block-high-risk.md)
+    - [Configure policy for autonomous agent access](policy-autonomous-agents.md)
+    - [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)
 
 ## Attribute-driven Conditional Access
 
@@ -38,7 +46,7 @@ Custom security attributes aren't just for agent identities. You can also use th
 
 ## Agent identity blueprints
 
-Another way to apply a Conditional Access policy to multiple agent identities at once is by targeting their parent agent identity blueprint. Every agent identity is derived from an agent identity blueprint, which defines its configuration and governance model. Applying a policy at the blueprint level automatically covers all agents derived from it, including any new ones added in the future.
+Another way to apply a Conditional Access policy to multiple agent identities at once is by targeting their parent agent identity blueprint. Every agent identity is derived from an agent identity blueprint, which defines its configuration and governance model. Applying a policy at the blueprint level automatically covers all agent identities derived from it, including any new ones added in the future. Targeting the agent identity blueprint does not cover agents' user accounts.
 
 The following diagram shows that only agent identities associated with blueprint "A" are granted access; all other agents are excluded and blocked.
 
@@ -54,7 +62,7 @@ The following diagram illustrates the data access patterns.
 
 :::image type="content" source="media/agent-id/data-access-patterns-diagram.png" alt-text="Diagram showing the data access patterns for agent identities." lightbox="media/agent-id/data-access-patterns-diagram.png":::
 
-Conditional Access policies are if-then statements: *if* a user or agent wants to access a resource, *then* something must happen first. For example, if an agent needs to read a user's email on their behalf through the Work IQ MCP, the user must complete multifactor authentication before access is granted. Likewise, if an agent attempts to access any resource not explicitly included in the policy, access is blocked by default.
+Conditional Access policies are built like if-then statements: *if* a user or agent action satisfies a requirement, *then* the agent or user can access a resource. Or *if* a requirement is not met, access is denied. For example, if an agent needs to read a user's email on their behalf through the Work IQ MCP, the user must complete multifactor authentication before access is granted. Likewise, if a risky agent attempts to access any resource, access is blocked.
 
 Microsoft Entra ID issues an access token to a subject for a specific audience (resource). Each token has exactly one subject and one audience.
 
@@ -74,6 +82,16 @@ Agents can access corporate resources that are protected by Microsoft Entra ID u
 - [Agent user's account](#agents-user-account)
 
 For more information about the types of agents and the identity and access management challenges they present, see [Security for AI](../../agent-id/security-for-ai-overview.md).
+
+## Select the target resource
+
+To select a target resource in a Conditional Access policy, the resource must have an enterprise application (service principal) with its set of permission in your Microsoft Entra ID tenant. This policy applies to all resource types, including SharePoint Online, Exchange Online, Work IQ MCP servers, the Azure MCP Server, the Microsoft 365 MCP Server, Microsoft Graph, Open API, MCP servers, non-Microsoft tools, and custom tools you build.
+
+The enterprise application is required regardless of the data access pattern, whether agents access on-behalf-of a user, application-only access, or an agent's user account. The type of permissions granted will differ between user-delegated and application access, but the service principal requirement applies in all cases.
+
+Some Microsoft services require an explicit provisioning step before they appear in your directory. For example, enable the required license or running a PowerShell command. For more information, see the relevant product documentation for details.
+
+For custom MCP servers, Open API-based tools, or any other custom tool type, register the tool as an application in Microsoft Entra ID and expose its set of permissions (delegated or app roles). For more information, see [How to configure an application to expose a web API](../../identity-platform/quickstart-configure-app-expose-web-apis.md).
 
 ## On-Behalf-Of (OBO) flow
 
@@ -158,30 +176,23 @@ To create a Conditional Access policy for agents operating with their own identi
 
 Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate with its own identity. In certain scenarios, an agent is actually a user. For example, digital workers that function as team members with their own mailboxes, access to chat, and can participate in collaborative workflows as a team member.
 
-In this model, an admin creates a user account in the directory and links it to the agent's identity. From there, it's like any other user account. Licenses can be assigned to access Microsoft 365 resources such as mailbox and calendars. The account can be added to administrative units and security groups just like a human user account.
+In this model, an admin creates a user account in the directory and links it to the agent's identity. From there, it's like any other user account. Licenses can be assigned to access Microsoft 365 resources such as a mailbox and calendar. The account can be added to administrative units and security groups just like a human user account.
 
 Agents using this flow are sometimes called "digital worker," or "AI teammate." They're also considered autonomous agents as they don't involve a user interface for human interaction.
 
 In this model, the access token is issued to the agent's user account (the token subject), and policy is evaluated against the agent's user account, not the agent identity. Today, you can target an agent's user account with a single scope: "all agents acting as a user."
 
+### Agent's user account Conditional Access considerations
+
+Many traditional user-based Conditional Access controls, such as MFA and device compliance, do not apply to agents' user accounts in the same way they apply to human users. For example, "Require MFA" assumes a human user can complete an interactive authentication challenge, including phishing-resistant methods where applicable. An agent's user account cannot satisfy such interactive requirements in the same manner as human users. "Require compliant device" assumes access originates from a managed client device whose compliance posture can be evaluated. Today, agents' user accounts do not operate from traditional end-user client devices. For these reasons, human-centric Conditional Access controls are intentionally not applied to agents' user accounts. This separation is a deliberate design choice to preserve correct policy semantics across supported Microsoft and non-Microsoft agent scenarios.
+
 ### Configure Conditional Access policy for an agent's user account
 
 To create a Conditional Access policy for an agent's user account, use the following settings:
 
-- **Assignments**: In an agent's user account flow, choose the "Select agents active as users", and then select "All agent users"
+- **Assignments**: In an agent's user account flow, choose the "Select agents acting as users", and then select "All agent users"
 - **Target resources**: All resources
-- **Conditions**: Configure whether the agent identity is at risk. For more information, see [ID Protection for agents](../../id-protection/concept-risky-agents.md)
-- **Access control**: Because this policy covers an agent's user account, there's no remediation to authentication challenges, therefore the only available option is blocking access
-
-## Select the target resource
-
-To select a target resource in a Conditional Access policy, the resource must have an enterprise application (service principal) with its set of permission in your Microsoft Entra ID tenant. This policy applies to all resource types, including SharePoint Online, Exchange Online, Work IQ MCP servers, the Azure MCP Server, the Microsoft 365 MCP Server, Microsoft Graph, Open API, MCP servers, non-Microsoft tools, and custom tools you build.
-
-The enterprise application is required regardless of the data access pattern, whether agents access on-behalf-of a user, application-only access, or an agent's user account. The type of permissions granted will differ between user-delegated and application access, but the service principal requirement applies in all cases.
-
-Some Microsoft services require an explicit provisioning step before they appear in your directory. For example, enable the required license or running a PowerShell command. For more information, see the relevant product documentation for details.
-
-For custom MCP servers, Open API-based tools, or any other custom tool type, register the tool as an application in Microsoft Entra ID and expose its set of permissions (delegated or app roles). For more information, see [How to configure an application to expose a web API](../../identity-platform/quickstart-configure-app-expose-web-apis.md).
+- **Conditions** and **Access control**: At this time, blocking access to all resources is the only policy configuration allowed for agents' user accounts. Because this policy covers an agent's user account, there's no remediation to authentication challenges, therefore the only available option is blocking access.
 
 ## Plan Conditional Access deployment
 
@@ -220,6 +231,6 @@ Admins can use the sign-in logs to investigate why a Conditional Access policy d
 
 Learn how to configure Conditional Access policies for agent identities:
 
-- [Agents operate on behalf of a signed-in user](policy-on-behalf-of-agents.md)
-- [Agents operate with their own identity](policy-agent-block-high-risk.md)
-- [Agent acts as user](policy-agent-user-account.md)
+- [Block high-risk agent identities](policy-agent-block-high-risk.md)
+- [Configure policy for autonomous agent access](policy-autonomous-agents.md)
+- [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)

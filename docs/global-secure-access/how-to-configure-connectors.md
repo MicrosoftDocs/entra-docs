@@ -2,7 +2,7 @@
 title: How to configure connectors for Microsoft Entra Private Access
 description: "Set up private network connectors that enable outbound connections from your private network to Global Secure Access. Includes installation, connector groups, and high availability."
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 05/26/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -44,10 +44,12 @@ The Microsoft Entra private network connector requires a server running Windows 
 > "EnableDefaultHTTP2"=dword:00000000
 > ```
 >
-> The key can be set via PowerShell with the following command:
+> The key can be set via PowerShell. The `WinHttp` registry key isn't present by default on freshly installed servers, so the script tests for it and creates it first if needed:
 >
 > ```powershell
-> Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\' -Name EnableDefaultHTTP2 -Value 0
+> $key = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp'
+> if (-not (Test-Path $key)) { New-Item -Path $key -Force | Out-Null }
+> Set-ItemProperty -Path $key -Name 'EnableDefaultHTTP2' -Value 0 -Type DWord
 > ```
 
 > [!WARNING]

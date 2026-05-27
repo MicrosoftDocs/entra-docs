@@ -23,7 +23,7 @@ These administrative relationships must be configured for each Agent ID object a
 
 ## Owners
 
-Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Individual users and service principals can be set as owners. Groups aren't supported as owners. Service principals as owners enable automated management of agent identities. Owners are optional for agent identity blueprints and agent identities.
+Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Individual users (including guest users) and service principals can be set as owners. Groups aren't supported as owners. Service principals as owners enable automated management of agent identities. Owners are optional for agent identity blueprints and agent identities.
 
 ### Owner responsibilities
 
@@ -45,7 +45,7 @@ Service principals can also be set as owners when some other managing service ne
 
 Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent, and they can determine whether an agent is still needed or requires access. Sponsors are required for agent identity blueprints and agent identities, ensuring every agent has a designated business owner.
 
-Sponsorship should be maintained ensuring succession when an employee who's a sponsor moves or leaves. Both users and groups can be assigned as sponsors. When a group is assigned, all members of the group have sponsor rights over the Agent ID object. Not all group types are supported as sponsors. The following group types are allowed:
+Sponsorship should be maintained ensuring succession when an employee who's a sponsor moves or leaves. Both users (including guest users) and groups can be assigned as sponsors. When a group is assigned, all members of the group have sponsor rights over the Agent ID object. Not all group types are supported as sponsors. The following group types are allowed:
 
 - Dynamic membership groups (security or Microsoft 365)
 - Assigned membership groups (Microsoft 365)
@@ -75,7 +75,7 @@ Agent user account sponsors are the same as normal [user sponsors](../external-i
 
 | | Agent user account sponsors | Agent identity, blueprint, blueprint principal sponsors |
 |--|--|--|
-| **Allowed types** | Users, groups (any) | Users, select groups (dynamic membership, Microsoft 365). Role-assignable groups not supported. |
+| **Allowed types** | Users (including guests), groups (any) | Users (including guests), select groups (dynamic membership, Microsoft 365). Role-assignable groups not supported. |
 | **Limits** | Maximum 5 sponsors | Maximum 100 sponsors, with no more than 5 groups |
 | **Authorization** | No direct authorization to modify sponsors users | Delete or disable the agent identity and modify its sponsors |
 | **Required** | Not required | Required on create for agent identities and agent blueprints |
@@ -100,4 +100,4 @@ A sponsor is required when creating an agent identity or agent blueprint. Agent 
 
 For delegated creation requests where both an application and user context exist, the calling user automatically becomes the sponsor if no sponsors are explicitly specified. However, if one or more other sponsors are designated during creation, the calling user isn't automatically added. Users with Agent ID admin roles aren't made sponsor automatically during creation. This avoids unintentionally overburdening admins with direct responsibility for individual agents.
 
-For app-only create requests, the creating service must set one or more users or [supported groups](#sponsors) as the sponsor.
+For app-only create requests, the creating service must set one or more users or [supported groups](#sponsors) as the sponsor. 
