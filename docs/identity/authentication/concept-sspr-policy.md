@@ -73,7 +73,7 @@ A two-gate policy applies in the following circumstances:
 
 * The following administrator roles are affected:
 
-  | Administrator role | Administrator role | Administrator role |
+  | Roles A–D | Roles D–N | Roles O–Y |
   |---|---|---|
   | AdHoc License Administrator | Dynamics 365 Administrator | Office Apps Administrator |
   | Application Administrator | Dynamics 365 Business Central Administrator | Organizational Branding Administrator |
