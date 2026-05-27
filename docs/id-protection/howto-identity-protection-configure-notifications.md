@@ -45,7 +45,7 @@ To prevent an overload of emails, you only receive one email within a 5-second t
 If your organization enabled self-remediation as described in the article, [User experiences with Microsoft Entra ID Protection](concept-identity-protection-user-experience.md) there's a chance that the user might remediate their risk before you have the opportunity to investigate. You can see risky users and risky sign-ins that were already remediated by adding **Remediated** to the **Risk state** filter in either the **Risky users** or **Risky sign-ins** reports.
 
 If you receive notifications for risky sign-ins but don't see any results in the Microsoft Entra admin center, the sign-ins might have been automatically remediated.
-To view these events, go to **ID Protection > Risky sign-ins** and set the **Risk state** filter to include **Remediated**.
+To view these events, go to **ID Protection** > **Risky sign-ins** and set the **Risk state** filter to include **Remediated**.
 The notification emails include detections at the time they occur, even if the risk is later resolved automatically. As a result, remediated sign-ins may not appear in reports unless explicitly filtered.
 
 ### Configure users at risk detected alerts

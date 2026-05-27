@@ -25,14 +25,12 @@ To manage owners and sponsors, you must:
 - Have the [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) role.
 - Be an existing owner of the agent identity blueprint or agent identity you want to manage.
 
-## Important considerations
-
-> [!NOTE]
-> When you use a dynamic membership group as a sponsor, it can take up to 24 hours after a membership rule change or a user property change before the authorization check on sponsorship succeeds. Plan accordingly when assigning dynamic groups as sponsors for agent identities or blueprints.
-
 ## Add an owner or sponsor to an agent blueprint
 
 When managing agent identity blueprint owners and sponsors, you can assign them to either the agent identity blueprint or the agent blueprint principal using the respective tabs.
+
+> [!NOTE]
+> When you use a dynamic membership group as a sponsor, it can take up to 24 hours after a membership rule change or a user property change before the authorization check on sponsorship succeeds. Plan accordingly when assigning dynamic groups as sponsors for agent identities or blueprints.
 
 :::image type="content" source="media/manage-owners-sponsors-agents/blueprint-owners-sponsors.png" alt-text="Screenshot of the owners and sponsors page for a blueprint showing the list of owners and sponsors with their roles." lightbox="media/manage-owners-sponsors-agents/blueprint-owners-sponsors.png":::
 
