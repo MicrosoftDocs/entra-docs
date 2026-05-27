@@ -144,7 +144,7 @@ Over a multiday period, the result of this query provides a list of client appli
 > [!WARNING]
 > The **Disable enforcement** option in the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX) is not recommended.
 >
-> Selecting this option disables enforcement for all policies in the tenant, which could create gaps in you Conditional Access coverage.
+> Selecting this option disables enforcement for all policies in the tenant, which could create gaps in your Conditional Access coverage.
 
 If you choose to disable enforcement or customize behavior, your organization will continue to use the behavior you configure and the upcoming rollout will not override your configured behavior. You can manually update the configuration at any time by accessing the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX).
 
