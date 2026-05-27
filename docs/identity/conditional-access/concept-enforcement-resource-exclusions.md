@@ -13,14 +13,21 @@ ai-usage: ai-assisted
 
 Microsoft Entra ID is rolling out an improved enforcement model for Conditional Access policies that target **All resources** and include one or more **resource exclusions**. This change ensures that sign-ins requesting only baseline scopes receive the same Conditional Access protections as other resource access.
 
-Previously, certain low-privilege scopes were automatically excluded from policy enforcement when a resource exclusion existed. With this change, those scopes are now evaluated as directory access and are subject to your Conditional Access policies.
+Previously, baseline scopes were automatically excluded from policy enforcement when a resource exclusion existed in an **All resources** policy. With this change, those scopes are now evaluated as directory access and are subject to your Conditional Access policies even when the policy has exclusions.
 
 For detailed technical background, see [New Conditional Access behavior when an ALL resources policy has a resource exclusion](concept-conditional-access-cloud-apps.md#new-conditional-access-behavior-when-an-all-resources-policy-has-a-resource-exclusion).
 
 > [!IMPORTANT]
 > Rollout of the enforcement model for baseline scopes begins on June 15, 2026.
 >
-> This enforcement update aligns with Microsoft's Secure Future Initiative and defense-in-depth investments. Microsoft recommends adopting the new enforcement model to improve your security posture.
+> This enforcement update aligns with Microsoft's Secure Future Initiative and defense-in-depth investments. Microsoft recommends adopting the new enforcement model to improve your security posture. For more information, see [Upcoming Conditional Access change: Improved enforcement for policies with resource exclusions](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for-policies-with-resour/4488925).
+
+## What are baseline scopes
+
+Baseline scopes is an umbrella term for the following set of scopes:
+
+- **OpenID Connect (OIDC) scopes**: `email`, `offline_access`, `openid`, `profile`
+- **Baseline directory scopes**: `User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`
 
 ## Who is affected
 
@@ -31,13 +38,6 @@ This change affects your tenant if all of the following conditions are true:
 - Users in your tenant sign in through applications that request **only baseline scopes**.
 
 If your policies target All resources without any resource exclusions, this change doesn't affect you.
-
-## What are baseline scopes
-
-Baseline scopes is an umbrella term for the following set of scopes:
-
-- **OpenID Connect (OIDC) scopes**: `email`, `offline_access`, `openid`, `profile`
-- **Baseline directory scopes**: `User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`
 
 ## What is changing
 
@@ -59,7 +59,7 @@ Use the following table to determine the required actions for your applications:
 
 | Application type | Ownership | Action required |
 |---|---|---|
-| Public client requesting only baseline scopes | Any | Review whether these applications should remain exempt from Conditional Access enforcement. If there are valid business reasons to maintain an exemption, see [Retain legacy behavior with customize behavior](#retain-legacy-behavior-with-customize-behavior). |
+| Public client requesting only baseline scopes | Tenant-owned or ISV-owned | Review whether these applications should remain exempt from Conditional Access enforcement. If there are valid business reasons to maintain an exemption, see [Retain legacy behavior with customize behavior](#retain-legacy-behavior-with-customize-behavior). |
 | Confidential client requesting only baseline directory scopes, excluded from All resources policy | Tenant-owned | Review whether the exclusion is still necessary. Work with your application developers to assess whether the app can request OIDC scopes (like `openid`, `profile`) instead of directory scopes like `User.Read` for basic user information. If updates can't be completed before rollout, see [Retain legacy behavior with customize behavior](#retain-legacy-behavior-with-customize-behavior). |
 | Confidential client requesting only baseline directory scopes, excluded from All resources policy | ISV-owned | Review whether the exclusion is still necessary. Engage with your ISV to evaluate whether the application can request OIDC scopes instead of directory scopes. In most cases, OIDC scopes provide the least-privilege access required for these scenarios. If the ISV can't make updates in time, see [Retain legacy behavior with customize behavior](#retain-legacy-behavior-with-customize-behavior). |
 
@@ -79,6 +79,8 @@ You can enable the improved enforcement behavior before the rollout begins. Use 
 1. Select **Enable enforcement**.
 1. Select **Save**.
 1. Select **Enable enforcement** again to confirm the change.
+
+
 
 > [!NOTE]
 > This setting immediately enables the updated Conditional Access behavior for **All resources** policies with exclusions.
@@ -130,6 +132,37 @@ https://graph.microsoft.com/beta/auditLogs/signIns?$filter=conditionalAccessAudi
 Replace `<your-custom-app-id>` with your custom application's app ID.
 
 Over a multiday period, the result of this query provides a list of client applications that request only baseline scopes.
+
+## User experience
+
+In user sign-in flows where client applications request only the scopes listed above, users might now receive Conditional Access challenges (such as MFA or device compliance). The exact challenge depends on the access controls configured in your policies that target All resources (with or without resource exclusions) or policies that explicitly target Azure AD Graph. 
+
+In the following example, the tenant has a Conditional Access policy with the following details:
+- Targeting All users and All resources
+- Resource exclusions for a confidential client application and Exchange Online
+- MFA is configured as the grant control
+
+### Example scenarios
+
+| Example scenario | User impact (before → after) | Conditional Access evaluation |
+|---|---|---|
+| A user signs into Visual Studio Code desktop client, which requests openid and profile scopes. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs in using Azure CLI, which requests only `User.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs in through a confidential client application (excluded from the policy) that requests only `User.Read` and `People.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+
+There is no change in behavior when a client application requests a scope beyond those listed previously, as illustrated in the following examples.
+
+### Example scenarios
+
+| Example scenario | User impact | Conditional Access evaluation |
+|---|---|---|
+| A user signs in to a confidential client application (excluded from the policy) that requests offline_access and SharePoint access (`Files.Read`). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
+| A user signs in to the OneDrive desktop sync client. OneDrive requests offline_access and Exchange Online access (`Mail.Read`). | No change in behavior | Conditional Access is not enforced because Exchange Online is excluded from the policy. |
+
+Most applications request scopes beyond the previously listed scopes and are already subject to Conditional Access enforcement, unless the application is explicitly excluded from the policy. In such cases, there is no change in behavior.  
+
+Custom applications that are intentionally designed to request only the previously listed scopes and are not designed to handle Conditional Access challenges might need to be updated so that they can handle Conditional Access challenges. Refer to the [Microsoft Conditional Access developer guidance](../../identity-platform/v2-conditional-access-dev-guide.md) for implementation details.   
+
 
 ## FAQ
 
