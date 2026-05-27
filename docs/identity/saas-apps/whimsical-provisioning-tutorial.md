@@ -20,6 +20,7 @@ This article describes the steps you need to perform in both Whimsical and Micro
 > * Remove users in Whimsical when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Whimsical
 > * [Single sign-on](benq-iam-tutorial.md) to Whimsical (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

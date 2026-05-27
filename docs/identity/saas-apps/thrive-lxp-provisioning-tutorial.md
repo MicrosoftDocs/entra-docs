@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Thrive LXP and Micr
 > * Keep user attributes synchronized between Microsoft Entra ID and Thrive LXP
 > * Provision groups and group memberships in Thrive LXP
 > * [Single sign-on](./thrive-lxp-tutorial.md) to Thrive LXP (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

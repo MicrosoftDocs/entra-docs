@@ -2,7 +2,7 @@
 title: Global Administrator
 description: Global Administrator
 ms.topic: include
-ms.date: 04/22/2026
+ms.date: 05/21/2026
 ms.custom: include file
 ---
 
@@ -146,7 +146,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/domains/federationConfiguration/create | Create federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/delete | Delete federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
-> | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management |
+> | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/externalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
 > | microsoft.directory/externalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
 > | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
