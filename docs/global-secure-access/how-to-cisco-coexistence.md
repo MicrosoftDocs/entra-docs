@@ -71,18 +71,10 @@ To configure Cisco Umbrella:
 1. In the Microsoft Entra admin center, go to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
 2. Under **Internet access policies**, select **View**.
 3. Expand **Custom Bypass** and select **Add rule**.
-4. Enter the following IPs:
+4. Enter the following IPs (comma-separated, no whitespace, to paste as a single rule):
 
     ```text
-    208.67.222.222
-    208.67.220.220
-    67.215.64.0/19
-    146.112.0.0/16
-    155.190.0.0/16
-    185.60.84.0/22
-    204.194.232.0/21
-    208.67.216.0/21
-    208.69.32.0/21
+    208.67.222.222,208.67.220.220,67.215.64.0/19,146.112.0.0/16,155.190.0.0/16,185.60.84.0/22,204.194.232.0/21,208.67.216.0/21,208.69.32.0/21
     ```
 5. Select **Save**.
 
