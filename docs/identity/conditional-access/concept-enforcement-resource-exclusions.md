@@ -1,6 +1,6 @@
 ---
 title: Enforcement for baseline scopes in Conditional Access
-description: Learn about the Conditional Access enforcement behavior for baseline scopes, the three enforcement options (enable enforcement, customize behavior, disable enforcement), and how to assess impact.
+description: Learn about the Conditional Access enforcement behavior for baseline scopes when targeting all resources with resource exclusions.
 ms.topic: concept-article
 ms.date: 05/27/2026
 ms.reviewer: kvenkit
@@ -19,25 +19,6 @@ For detailed technical background, see [New Conditional Access behavior when an 
 
 > [!IMPORTANT]
 > This enforcement update aligns with Microsoft's Secure Future Initiative and defense-in-depth investments. Microsoft recommends adopting the new enforcement model to improve your security posture.
-
-## Enforcement options
-
-The [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX) UX provides three options for managing how your tenant handles the enforcement change:
-
-| Option | Description |
-|---|---|
-| **Enable enforcement** | Immediately applies the improved Conditional Access enforcement for baseline scopes. Use this option to test the new behavior in a test tenant or to adopt the enforcement model ahead of the scheduled rollout. If you don't take action, enforcement is applied automatically during the rollout period. |
-| **Customize behavior** | Allows you to select specific applications to exclude from enforcement. This option retains legacy behavior only for the policies where you configure exclusions, while applying enforcement everywhere else. Use this option if you need granular, policy-level control. |
-| **Disable enforcement** | Opts your tenant out of the enforcement change entirely and retains the legacy behavior. Use this option only if necessary, and only until you're ready to adopt the recommended enforcement model. |
-
-> [!NOTE]
-> Starting June 15, 2026, enforcement is applied to all tenants over a period of weeks unless you chose **Disable enforcement** or **Customize behavior**. Customers who take no action are automatically enrolled in enforcement as part of the rollout.
-
-### When to use each option
-
-- **Enable enforcement** — You're ready to adopt the new behavior, or you want to test it in a test tenant before the rollout reaches your production environment.
-- **Customize behavior** — You have specific applications or policies that require an exception, but you want enforcement applied everywhere else.
-- **Disable enforcement** — You identified scenarios that can't accommodate the enforcement change yet. Microsoft recommends resolving those scenarios and enabling enforcement as soon as possible.
 
 ## Who is affected
 
@@ -83,7 +64,9 @@ Use the following table to determine the required actions for your applications:
 > [!IMPORTANT]
 > For both public and confidential client applications owned by your tenant, ensure the application can handle Conditional Access challenges (for example, MFA or device compliance). If not, application updates might be required. Refer to the [Conditional Access developer guidance](../../identity-platform/v2-conditional-access-dev-guide.md) on how to update your application appropriately.
 
-## How to assess impact
+## Choose how baseline scopes are enforced
+
+This enforcement change is applied to all tenants as part of the rollout. However, the [Baseline scopes settings](https://aka.ms/BaselineScopesSettingsUX) UX gives you control over when and how it takes effect — you can enable enforcement immediately to test the impact, customize it at the policy level to exclude specific scenarios, or temporarily opt out until you're ready.
 
 ### Enable enforcement for testing
 
@@ -144,6 +127,12 @@ Use this setting if you have specific scenarios that require you to retain the l
 
 > [!TIP]
 > If you need to opt out entirely, use the **Disable enforcement** option instead. However, Microsoft recommends using **Customize behavior** for granular exclusions where possible, so that enforcement is applied to the rest of your policies.
+
+### When to use each option
+
+- **Enable enforcement** — You're ready to adopt the new behavior, or you want to test it in a test tenant before the rollout reaches your production environment.
+- **Customize behavior** — You have specific applications or policies that require an exception, but you want enforcement applied everywhere else.
+- **Disable enforcement** — You identified scenarios that can't accommodate the enforcement change yet. Microsoft recommends resolving those scenarios and enabling enforcement as soon as possible.
 
 ## FAQ
 
