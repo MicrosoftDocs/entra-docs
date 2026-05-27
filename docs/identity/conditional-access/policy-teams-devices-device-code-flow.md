@@ -1,8 +1,8 @@
 ---
 title: Restrict device code flow for Microsoft Teams devices with Conditional Access
-description: Use Conditional Access to block device code flow by default and grant time-boxed exceptions for Microsoft Teams device registration and reprovisioning.
+description: Use Conditional Access to block device code flow by default and grant persistent, account-based exceptions for Microsoft Teams device resource accounts.
 ms.topic: how-to
-ms.date: 05/26/2026
+ms.date: 05/27/2026
 ms.reviewer: swethar
 ai-usage: ai-assisted
 ---
@@ -12,7 +12,7 @@ Device code flow lets users sign in to devices that don't have a browser or rich
 
 Device code flow is also a high-risk authentication flow. An attacker can start the flow, send a user a code, and ask the user to enter that code on a legitimate Microsoft sign-in page. Because the sign-in page is real, this attack can be harder for users to recognize.
 
-Microsoft recommends blocking device code flow wherever possible. If your organization uses Teams devices that require device code flow, allow it only for the accounts and time period required to register or reprovision those devices.
+Microsoft recommends blocking device code flow wherever possible. If your organization uses Teams devices that require device code flow, scope the exception to specific Teams device resource accounts and exclude the Device Registration Service resource from your Conditional Access policy.
 
 ## Who should use this guidance
 
@@ -41,24 +41,29 @@ Start with report-only mode. Validate expected Teams device behavior before you 
 
 ## Recommended approach
 
-This article uses a default-block approach with explicit, time-boxed exceptions:
+This article uses a default-block approach with two layered exceptions:
+
+- A persistent security group containing the Teams device resource accounts that need device code flow.
+- An exclusion for the Device Registration Service resource, so device registration through device code flow isn't blocked by your policy.
+
+Roll the policy out in stages:
 
 1. Inventory device code flow usage in sign-in logs.
 1. Create exception groups:
 
-    - A temporary Teams device registration group that's empty by default.
+    - A persistent Teams device exception group containing the resource accounts assigned to your Teams devices.
     - A persistent approved non-Teams group, if you have approved non-Teams device code flow scenarios.
 
-1. Create a Conditional Access policy that blocks device code flow and excludes only those groups.
-1. Pilot the policy with selected accounts and Teams devices.
+1. Create a Conditional Access policy that blocks device code flow, excludes those groups, and excludes the Device Registration Service resource.
+1. Pilot the policy with selected accounts and Teams devices in report-only mode.
 1. Review report-only results and sign-in logs.
 1. Turn the policy on.
-1. Add Teams device resource accounts to the temporary exception group only when registration or reprovisioning is needed, then remove them after validation.
+1. Add new Teams device resource accounts to the exception group as devices are deployed.
 1. Monitor blocked sign-ins and exception group membership.
 
-An exception is account-scoped. There's no way to scope the exception to just the registration event. During the exception window, an excluded account can use device code flow for any app or resource in scope of the policy, not just for Teams device registration. Keep exception membership limited, time-boxed, monitored, and owner-approved.
+Teams devices need device code flow both for initial sign-in and for reauthentication scenarios such as password changes or Conditional Access policy changes. The exception for Teams device resource accounts is persistent, not time-boxed. Passwordless Entra Resource Accounts are an exception to the reauthentication requirement: they need device code flow only at initial provisioning. The exception is still managed the same way.
 
-For Teams device resource accounts, the exception should be temporary. After successful provisioning, supported Teams devices should continue normal sign-in without needing device code flow unless the device is reset or reprovisioned.
+An exception is account-scoped. There's no way to scope the exception to just one resource or scenario. During the exception, an excluded account can use device code flow for any app or resource in scope of the policy. Keep exception membership limited to genuine Teams device resource accounts, monitored, and owner-approved.
 
 ## User exclusions
 
@@ -76,7 +81,9 @@ Create one policy that blocks device code flow by default.
     1. Under **Include**, select the users you want in scope for the policy (**All users** recommended).
     1. Under **Exclude**:
         1. Select **Users and groups** and choose your organization's emergency access or break-glass accounts and your approved device code flow exception groups. Audit this exclusion list regularly.
-1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')** unless your organization validated a narrower resource scope for the scenario.
+1. Under **Target resources** > **Resources (formerly cloud apps)**:
+    1. Under **Include**, select **All resources (formerly 'All cloud apps')** unless your organization validated a narrower resource scope for the scenario.
+    1. Under **Exclude**, select **Select excluded cloud apps** and add **Device Registration Service**. This exclusion is required so device registration through device code flow isn't blocked by your policy. For more information, see [Enforcement of Authentication Flows policies on Device Registration Service resource](concept-authentication-flows.md#enforcement-of-authentication-flows-policies-on-device-registration-service-resource).
 1. Under **Conditions** > **Authentication Flows**, set **Configure** to **Yes**.
     1. Select **Device code flow**.
     1. Select **Done**.
@@ -87,28 +94,30 @@ Create one policy that blocks device code flow by default.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Temporarily exempt Teams device resource accounts
+## Manage Teams device resource account exceptions
 
-Use this process when a Teams device needs device code flow for registration or reprovisioning.
+Add Teams device resource accounts to the persistent exception group as devices are deployed. Remove an account only when the device is retired or the resource account is no longer used.
 
-1. Identify the Teams device resource account used for registration.
-1. Add the resource account to the temporary Teams device exception group.
-1. Record the owner, reason, start time, expected end time, and change or ticket ID.
+1. Identify the Teams device resource account assigned to the device.
+1. Add the resource account to the persistent Teams device exception group.
+1. Record the owner, the device, and a change or ticket ID for auditing.
 1. Register or reprovision the Teams device with device code flow.
 1. Confirm the device completes provisioning and signs in as expected.
-1. Remove the resource account from the exception group.
-1. Document the exception removal.
 
-Only re-add the resource account if reprovisioning is required.
+To retire a Teams device:
+
+1. Remove the resource account from the exception group.
+1. Disable or delete the resource account.
+1. Document the retirement.
 
 ## Validate before enforcement
 
 Before you turn the policy on, use report-only results and sign-in logs to confirm:
 
 - Expected Teams device registration succeeds.
-- Registration isn't blocked by the device code flow policy when the temporary resource account exception is in place.
-- Teams device resource accounts are removed from the exception group after registration.
-- Teams devices continue to sign in after registration without device code flow.
+- Registration isn't blocked by the device code flow policy when the resource account exception is in place.
+- Device Registration Service is excluded from the policy.
+- Teams devices continue to sign in after registration, including reauthentication scenarios such as password changes or Conditional Access policy changes.
 - Approved non-Teams device code flow scenarios are represented by explicit exception groups.
 - Unknown or unjustified device code flow usage is blocked.
 - Emergency access accounts remain excluded.
@@ -119,19 +128,25 @@ Use **Authentication protocol = Device code flow** when you inventory active dev
 | --- | --- | --- |
 | Inventory current device code flow usage before rollout | **Authentication protocol = Device code flow** | Finds sign-ins where device code flow was used for that event. |
 | Review report-only impact | Both fields | Shows direct device code flow usage and later sessions that would still be evaluated as device-code-derived. |
-| Confirm a Teams device no longer relies on device code flow after registration | **Original transfer method = Device code flow** | Helps identify whether later sign-ins or refreshes are still protocol-tracked to the registration session. |
-| Troubleshoot sign-outs or blocks after removing a Teams resource account exception | **Original transfer method = Device code flow** | The current sign-in event might not show device code flow as the authentication protocol, but Conditional Access can still evaluate the session as device-code-derived. |
+| Audit ongoing device code flow use by Teams device resource accounts | **Authentication protocol = Device code flow** | Expected to show device code flow for initial sign-in and reauthentication events for accounts in the exception group. |
+| Troubleshoot an unexpected block on a Teams device | **Original transfer method = Device code flow** | The current sign-in event might not show device code flow as the authentication protocol, but Conditional Access can still evaluate the session as device-code-derived. |
 | Audit approved non-Teams exceptions | Both fields | Shows new device code flow usage and ongoing activity from device-code-derived sessions. |
 
 A session that started with device code flow can remain protocol-tracked on later token refreshes, even when the current sign-in event doesn't show device code flow as the authentication protocol. For more information, see [Protocol tracking](concept-authentication-flows.md#protocol-tracking).
 
 ## Troubleshooting
 
-### A Teams device is blocked after registration
+### A Teams device is unexpectedly blocked
 
-If a Teams device is blocked after you remove the temporary exception, review the sign-in logs. If **Original transfer method** shows device code flow, the session might still be protocol-tracked from the original registration flow, even if the current **Authentication protocol** value isn't device code flow.
+A Teams device shouldn't be blocked by the Conditional Access policy if the resource account is in the exception group and Device Registration Service is excluded from the policy.
 
-To resolve the issue, terminate the provisioning session and require a fresh sign-in. If the device must be reprovisioned, temporarily re-add the resource account to the exception group and remove it again after validation.
+If a Teams device is unexpectedly blocked:
+
+1. Confirm the resource account is in the persistent exception group.
+1. Confirm Device Registration Service is excluded from **Target resources** in the policy.
+1. Review the sign-in logs. If **Original transfer method** shows device code flow, the session might be protocol-tracked from an earlier authentication, even if the current **Authentication protocol** value isn't device code flow.
+
+If the device is still blocked after these checks, open a support ticket to investigate.
 
 ### Personal Teams devices need device code flow
 
@@ -157,15 +172,16 @@ After the policy is enforced, continue to monitor device code flow usage and kee
 
 | Do | Don't |
 | --- | --- |
-| Review exception membership regularly. | Treat persistent device code flow exceptions as permanent defaults. |
+| Review exception membership regularly. | Treat persistent device code flow exceptions as permanent defaults without ongoing review. |
 | Monitor sign-ins where **Original transfer method** is device code flow. | Rely only on **Authentication protocol** when investigating protocol-tracked sessions. |
-| Move non-Teams dependencies away from device code flow when safer authentication methods are available. | Let temporary Teams device exceptions become standing exclusions. |
+| Move non-Teams dependencies away from device code flow when safer authentication methods are available. | Add non-Teams accounts to the Teams device exception group. |
 | Alert on unexpected device code flow use by privileged users, emergency access accounts, unfamiliar apps, or unexpected locations. | Assume approved exceptions remain safe without recurring review. |
 
 ## Related content
 
 - [Conditional Access: Authentication flows](concept-authentication-flows.md)
 - [Block authentication flows with Conditional Access policy](policy-block-authentication-flows.md)
+- [Supported Conditional Access policies for Microsoft Teams Rooms](/microsoftteams/rooms/supported-ca-and-compliance-policies)
 - [Manage emergency access accounts in Microsoft Entra ID](../role-based-access-control/security-emergency-access.md)
 - [Microsoft Entra sign-in logs](../monitoring-health/concept-sign-ins.md)
 - [Deploy Microsoft Teams Rooms](/microsoftteams/rooms/rooms-deploy)
