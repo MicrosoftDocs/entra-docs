@@ -137,13 +137,6 @@ items:
       - name: Secure an n8n agent
         href: integrate-n8n-agent.md
 
-  # Zero Trust ######################
-  - name: Fundamental security settings
-    expanded: false
-    items:
-    - name: Configure Microsoft Entra for agent identity security
-      href: zero-trust-ai.md
-
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale
     expanded: true
