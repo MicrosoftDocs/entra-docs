@@ -48,7 +48,7 @@ Describe how different user populations in your organization are secured with Co
 - Contractors are governed by their own policies separate from the baseline
 
 If your Conditional Access strategy applies certain policies to full-time employees, describe how full-time employees are defined. For example, are these employees defined with specific user attributes or group membership? 
-Be explicit. If the your person-based policy design is based on roles, provide the exact Microsoft Entra ID built-in roles. For example, say "Conditional Access Administrator" not "users with administrative privileges".
+Be explicit. If your person-based policy design is based on roles, provide the exact Microsoft Entra ID built-in roles. For example, say "Conditional Access Administrator" not "users with administrative privileges".
 
 ### Policy naming conventions
 
