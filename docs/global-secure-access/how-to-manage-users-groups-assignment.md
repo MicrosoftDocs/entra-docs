@@ -2,7 +2,7 @@
 title: Assign users and groups to traffic forwarding profiles
 description: "Control which users and groups receive traffic forwarding policies, enabling gradual rollout and limiting scope during testing or deployment phases."
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 05/26/2026
 ai-usage: ai-assisted
 ---
 # How to assign users and groups to traffic forwarding profiles
@@ -32,7 +32,7 @@ The screenshot illustrates the setting. The Microsoft profile is disabled and is
 
 You can configure the user and group assignments before or after enabling the traffic profile. You must enable the traffic profile to acquire and forward any traffic. For more information, see [About traffic forwarding profiles](concept-traffic-forwarding.md).
 
-### How to assign users and group to a traffic profile
+### Assign users and groups to a traffic profile
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator)  AND [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator).
 
