@@ -108,7 +108,7 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 
 ### Deep analysis
 
-Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions—flagging policies that exclude a large portion of users and recommending explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
+Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions and flags policies that exclude a large portion of users or recommends explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
 
 :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png" alt-text="Screenshot of a policy suggestion provided by the deep analysis feature." lightbox="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png":::
 
@@ -128,7 +128,7 @@ Deep analysis includes an MFA gap analysis that scans all enabled Conditional Ac
 
 ### Microsoft Teams agent suggestion notifications
 
-Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
+Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. The Teams integration currently provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
 
 For more information, see the **Notifications** section of [Conditional Access Optimization Agent Settings](conditional-access-agent-optimization-settings.md#notifications).
 
