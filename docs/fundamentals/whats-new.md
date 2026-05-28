@@ -159,28 +159,6 @@ One of the most important parts of governing agent identities is making sure tha
 
 ---
 
-### Plan for change - Self Service Password Reset will require registered authentication methods only
-
-**Type:** Plan for change  
-**Service category:** Self Service Password Reset  
-**Product capability:** User Authentication
-
-**Effective September 7, 2026**, Self-Service Password Reset (SSPR) will only accept explicitly registered authentication methods for identity verification. Directory-sourced contact information — phone numbers and email addresses stored only as user object properties (mobilePhone, businessPhone, otherMails) that were never registered as authentication methods — will no longer be accepted. This applies to all users, including administrators, across Public cloud, GCC, GCC High, and DoD.
-
-- Today, SSPR allows verification using directory attributes that can be modified through provisioning systems, automation, and delegated admin workflows — without user intent or proof of possession. Approximately 86% of SSPR verifications already use registered methods. This change closes the remaining gap.
-- Starting **July 6, 2026**, Microsoft will automatically launch a registration campaign that prompts affected users to register authentication methods after sign-in. No admin action is required to enable this campaign.
-
-**Customer action recommended**
-
-Before September 7, 2026, review your tenant's authentication method registration coverage and ensure users have at least one registered method that satisfies your [SSPR policy](../identity/authentication/concept-sspr-policy.md). Plan helpdesk-assisted registration for users who can't self-register. Users without registered methods after enforcement are unable to reset passwords via SSPR.
-
-For more information, see:
-
-- [SSPR policy configuration](../identity/authentication/concept-sspr-policy.md)
-- [Prepopulate user authentication contact info](../identity/authentication/howto-authentication-methods-activity.md)
-- [My Security Info](https://aka.ms/mysecurityinfo)
-
----
 
 ## April 2026
 
