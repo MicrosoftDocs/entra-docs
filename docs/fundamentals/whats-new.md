@@ -1606,25 +1606,6 @@ This public preview allows you to configure URL filtering rules to granularly de
 
 ## October 2025
 
-### General Availability - Granular, Least-Privileged Permissions for UserAuthenticationMethod APIs
-
-**Type:** New feature    
-**Service category:** MS Graph    
-**Product capability:** Developer Experience    
-
-**Summary**
-
-We're introducing new, granular permissions for the UserAuthenticationMethod APIs in Microsoft Entra ID. This update enables organizations to apply the principle of least privilege when managing authentication methods, supporting both security and operational efficiency.
-
-**What’s New?**
-
-- **New per-method permissions:** Fine-grained permissions for each authentication method (for example, Password, Microsoft Authenticator, Phone, Email, Temporary Access Pass, Passkey, Windows Hello for Business, QR+PIN, and others).
-- **Read-only policy permission:** A new permission allows read-only access to authentication method policies, improving role separation and auditability.
-
-For more information, see [Microsoft Graph permissions reference - Microsoft Graph | Microsoft Learn](/graph/permissions-reference)
-
----
-
 ### Public Preview - Cloud Managed Remote Mailboxes
 
 **Type:** New feature    
