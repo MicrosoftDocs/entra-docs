@@ -49,6 +49,16 @@ Lifecycle workflows can now be managed with Administrative Units (AUs), enabling
 
 ---
 
+### Public Preview - App-based branding via Branding themes in Microsoft Entra External ID
+ 
+**Type:** New feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+ 
+In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [Customize branding themes for apps](/entra/fundamentals/how-to-customize-branding-themes-apps).
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
