@@ -5,7 +5,7 @@ description: Discover the known limitations of Global Secure Access, including p
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
-ms.date: 04/15/2026
+ms.date: 05/29/2026
 ms.custom: agent-id-ignite
 
 
@@ -263,6 +263,10 @@ Known limitations for Internet Access include:
 - The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic and transfers IPv6 traffic directly to the network. To make sure that all traffic routes to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
 - UDP isn't supported on this platform yet.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
+- Source traffic type filtering (preview) is supported only for client-based Global Secure Access connections. Remote networks don't support source traffic type rules.
+- HTTP method request filtering (preview) enforcement requires TLS inspection for HTTPS traffic. Without TLS inspection, HTTP method headers aren't visible, and only Server Name Indication (SNI)-based web content filtering rules apply.
+- When the Global Secure Access client can't determine task or processor information, source traffic type is classified as **Unknown**.
+- Source traffic type classification accuracy depends on the Global Secure Access client's ability to inspect process metadata on the endpoint device.
 
 ## B2B guest access (preview) limitations
 <a name="b2b-guest-access-limitations"></a>
