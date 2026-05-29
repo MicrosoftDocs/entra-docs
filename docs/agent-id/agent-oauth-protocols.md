@@ -38,9 +38,9 @@ Agent identities use `client_credentials` for app-only autonomous operations, en
  
 ### Unsupported flows
 
-The agent application model explicitly excludes certain authentication patterns to maintain security boundaries. OBO flows using the `/authorize` endpoint aren't supported for any agent entity, ensuring all authentication occurs programmatically.
- 
-Public client capabilities aren't available, requiring all agents to operate as confidential clients. Redirect URLs aren't supported.
+- The agent application model explicitly excludes certain authentication patterns to maintain security boundaries. Agents aren't supported for interactive (`/authorize`) flows, ensuring all authentication occurs programmatically.
+- Public client capabilities aren't available, requiring all agents to operate as confidential clients.
+- Redirect URIs aren't supported on the agent identity blueprint itself; they're configured on the client application.
 
 ## Core protocol patterns
  
