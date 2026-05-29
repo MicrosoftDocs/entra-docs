@@ -160,6 +160,25 @@ The external to internal user conversion feature includes the ability to convert
 
 ---
 
+### General Availability - Granular, Least-Privileged Permissions for UserAuthenticationMethod APIs
+
+**Type:** New feature    
+**Service category:** MS Graph    
+**Product capability:** Developer Experience    
+
+**Summary**
+
+We're introducing new, granular permissions for the UserAuthenticationMethod APIs in Microsoft Entra ID. This update enables organizations to apply the principle of least privilege when managing authentication methods, supporting both security and operational efficiency.
+
+**What’s New?**
+
+- **New per-method permissions:** Fine-grained permissions for each authentication method (for example, Password, Microsoft Authenticator, Phone, Email, Temporary Access Pass, Passkey, Windows Hello for Business, QR+PIN, and others).
+- **Read-only policy permission:** A new permission allows read-only access to authentication method policies, improving role separation and auditability.
+
+For more information, see [Microsoft Graph permissions reference - Microsoft Graph | Microsoft Learn](/graph/permissions-reference)
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
