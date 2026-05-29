@@ -1603,6 +1603,4 @@ Organizations can define flexible TLS inspection policies to specify which traff
 This public preview allows you to configure URL filtering rules to granularly deny or allow access to full URLs (including hostname and full path). These rules are part of the existing web content filtering policy schema that allows security policies to become context-aware by linking a policy to a security profile to a conditional access policy. For more information, see: [How to configure Global Secure Access web content filtering](../global-secure-access/how-to-configure-web-content-filtering.md).
 
 ---
-
-## October 2025
 
