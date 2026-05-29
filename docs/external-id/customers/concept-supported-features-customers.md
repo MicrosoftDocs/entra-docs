@@ -278,7 +278,7 @@ The following table compares the features for activity logs and reports across v
 | [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) | The provisioning logs provide detailed records of provisioning events within a tenant, such as user account creations, updates, and deletions. | Not available. |
 | [Activity logs for retention policies](~/identity/monitoring-health/concept-provisioning-logs.md) | Microsoft Entra data retention policies determine how long various types of logs (like audit, sign-in, and provisioning logs) are stored. | Seven days. |
 | [Export activity logs](~/identity/monitoring-health/howto-configure-diagnostic-settings.md) | By using diagnostic settings in Microsoft Entra ID, you can integrate logs with Azure Monitor, stream logs to an event hub, or integrate with security information and event management (SIEM) tools. | [Azure Monitor for external tenants (preview)](./how-to-azure-monitor.md). |
-| [Reports for application user activity](./how-to-user-insights.md) | Not available. | Application user activity provides analytics on how users interact with registered applications in your tenant. It tracks metrics like active users, new users, sign-ins, and MFA success rates. |
+| [Reports for application user activity](./how-to-user-insights.md) (retiring August 31, 2026; see [migration guidance](./how-to-user-insights.md#migrate-from-user-insights)) | Not available. | Application user activity provides analytics on how users interact with registered applications in your tenant. It tracks metrics like active users, new users, sign-ins, and MFA success rates. |
 
 ## Microsoft Graph APIs
 
