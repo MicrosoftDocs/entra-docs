@@ -86,6 +86,36 @@ In Microsoft Entra External ID (EEID), users with a local email+password credent
 
 ---
 
+### Deprecation - Iteration 2 beta APIs for Microsoft Entra PIM will be retired. Migrate to Iteration 3 APIs. 
+
+**Type:** Deprecated   
+**Service category:** Privileged Identity Management    
+**Product capability:** Identity Governance   
+
+**Introduction**
+
+Starting Oct 28, 2026, all applications and scripts making calls to Microsoft Entra Privileged Identity Management (PIM) [Iteration 2](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta&preserve-view=true) (beta) APIs for Azure resources, Microsoft Entra roles and Groups will fail.
+
+**How this will affect your organization**
+
+After Oct 28, 2026, any applications or scripts calling Microsoft Entra PIM Iteration 2 (beta) API endpoints will fail. These calls will no longer return data, which might disrupt workflows or integrations relying on these endpoints. These APIs were released in beta and are being retired, Iteration 3 are generally available (GA) APIs which offer improved reliability and broader scenario support.
+
+**What you need to do to prepare**
+
+We strongly recommend migrating to the **Iteration 3 (GA) APIs**, which are generally available. 
+
+- Begin migration planning and testing as soon as possible.
+- Halt any new development using Iteration 2 APIs.
+- Review documentation for Iteration 3 APIs to ensure compatibility.
+
+Learn more: 
+
+- [API concepts in Privileged Identity management - Microsoft Entra ID Governance | Microsoft Learn](../id-governance/privileged-identity-management/pim-apis.md)
+- [Privileged Identity Management iteration 2 APIs](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta&preserve-view=true)
+- [Migrate from PIM iteration 2 APIs to PIM iteration 3 APIs](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta&preserve-view=true#migrate-from-pim-iteration-2-apis-to-pim-iteration-3-apis)
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
