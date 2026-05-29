@@ -33,6 +33,20 @@ Device Soft Delete, now available in preview, enables administrators to safely r
 
 ---
 
+### Public Preview - Sensitivity labels for Microsoft Entra security groups
+
+**Type:** New feature  
+**Service category:** Group Management 
+**Product capability:** Platform    
+
+Microsoft Entra ID now supports applying Microsoft Purview sensitivity labels to Entra cloud security groups in public preview.
+
+Administrators can use labels to govern security group settings such as guest access using the same labels and policies that apply to Microsoft 365 groups today. 
+
+Labels can be managed in Microsoft Purview and applied through the Microsoft Entra Admin Center, Azure Portal, and Microsoft Graph. For more information, see: [Assign sensitivity labels to Microsoft Entra security groups (preview)](/entra/identity/users/groups-sensitivity-labels).
+
+---
+
 ### General Availability - Account Discovery
 
 **Type:** General Availability  
