@@ -1606,18 +1606,6 @@ This public preview allows you to configure URL filtering rules to granularly de
 
 ## October 2025
 
-### General Availability - Conversion of external users to internal members
-
-**Type:** New feature    
-**Service category:** User Management    
-**Product capability:** User Management    
-
-External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user’s account and access to resources isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
-
-The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well.
-
----
-
 ### General Availability - Granular, Least-Privileged Permissions for UserAuthenticationMethod APIs
 
 **Type:** New feature    
