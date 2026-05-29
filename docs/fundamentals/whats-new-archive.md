@@ -39,6 +39,16 @@ Admins should update workflows and guidance to use “*Revoke sessions*” inste
 
 ---
 
+### Public Preview - Delegated Workflow Management in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers are able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope. For more information, see: [Delegated workflow management (preview)](../id-governance/manage-delegate-workflow.md).
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
