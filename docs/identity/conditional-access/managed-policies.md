@@ -4,7 +4,7 @@ description: Secure your resources with Microsoft-managed Conditional Access pol
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 05/28/2026
 ms.reviewer: swethar
 ms.custom: sfi-image-nochange
 ---
@@ -96,6 +96,8 @@ Based on Microsoft's analysis, more than 99 percent of password spray attacks us
 This policy blocks device code flow, where a user initiates authentication on one device, completes on another, and their token is sent back to the original device. This type of authentication is common where users can't enter their credentials, like smart TVs, Microsoft Teams Room devices, IoT devices, or printers.
 
 Device code flow is rarely used by customers, but is frequently used by attackers. Enabling this Microsoft-managed policy for your organization helps remove this attack vector.
+
+If your organization uses Microsoft Teams devices that require device code flow, follow the guidance in [Restrict device code flow for Microsoft Teams devices with Conditional Access](policy-teams-devices-device-code-flow.md) to scope exceptions correctly while continuing to block device code flow for other accounts.
 
 ### Multifactor authentication for admins accessing Microsoft Admin portals
 

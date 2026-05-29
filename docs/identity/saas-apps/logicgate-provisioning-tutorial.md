@@ -20,6 +20,7 @@ This article describes the steps you need to perform in both LogicGate and Micro
 > * Create users in LogicGate
 > * Remove users in LogicGate when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and LogicGate
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -39,6 +39,8 @@ Organizations might migrate to Microsoft Entra External ID from another tool bas
 
 The [Microsoft Entra External ID deployment guide](/entra/architecture/deployment-external-intro) helps organizations get started with their deployment if they're new to the concept of a CIAM solution. Following that along with the steps outlined in this article help organizations with existing CIAM deployments complete their migration to Microsoft Entra External ID. Organizations start by [evaluating the availability of critical features in Microsoft Entra External ID](concept-supported-features-customers.md#general-feature-comparison) to confirm readiness for migration.
 
+If you plan to migrate a workload from AWS to Azure, we suggest you have a methodical approach to that initiative. Component selection and Azure fundamentals are important parts of that larger process. To fine tune your migration plan using Microsoft's guidance, see [Migrate security services from Amazon Web Services](/azure/migration/migrate-security-from-aws).
+
 ### Migration steps
 
 This guide helps you migrate legacy customer identity access management (CIAM) solutions to Microsoft Entra External ID. Follow this series of articles to navigate the steps in the migration process.

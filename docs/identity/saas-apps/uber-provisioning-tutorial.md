@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Uber and Microsoft 
 > * Create users in Uber.
 > * Remove users in Uber when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Uber.
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

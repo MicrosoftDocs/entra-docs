@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
 
-ms.date: 05/12/2026
+ms.date: 05/22/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -99,7 +99,7 @@ The policy suggestions from the agent include:
 
 1. On the new home page, select **Go to agents** from the agent notification card.
 
-   You can also select **Agents** from the left menu.
+   You can also select **Security Copilot agents** from the left menu.
 
    :::image type="content" source="media/conditional-access-agent-optimization/go-to-agents.png" alt-text="Screenshot of the Microsoft Entra admin center that shows the new Security Copilot agents experience." lightbox="media/conditional-access-agent-optimization/go-to-agents.png":::
 
@@ -125,10 +125,8 @@ The agent includes several powerful settings to expand the capabilities while ma
 - Allow the agent to create policies in report-only mode.
 - Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams.
 - Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md).
-- Allow the agent to create [passkey adoption campaigns](conditional-access-agent-optimization-passkeys.md).
 - Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation.
 - Provide [knowledge sources](conditional-access-agent-optimization-settings.md#knowledge-sources) to the agent for organization-specific suggestions.
-- View the [insights dashboard](conditional-access-agent-optimization-logs-metrics.md#insights-dashboard-preview) to track agent-driven Zero Trust improvements to security posture (preview).
 
 ## Built-in integrations
 
@@ -189,7 +187,7 @@ The Conditional Access Optimization Agent and Microsoft Copilot Chat provide dif
 
 It's possible that you activated the agent before Microsoft Ignite 2025 by using an account that required role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. A Conditional Access Optimization Agent that was activated after November 17, 2025, no longer uses the identity of the user who activated it.
 
-You can resolve this problem by migrating to [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md). Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
+You can resolve this problem by migrating to [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md). Select **Create agent identity** from either the banner message on the agent page or the **Permissions** section of the agent settings.
 
 ## Related content
 

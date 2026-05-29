@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both LanSchool Air and M
 > * Remove users in LanSchool Air when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and LanSchool Air.
 > * [Single sign-on](lanschool-air-tutorial.md) to LanSchool Air.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

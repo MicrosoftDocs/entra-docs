@@ -167,7 +167,7 @@ Review these limitations carefully before enabling HSC mode. They apply in addit
 
 - Advanced Conditional Access scenarios, including authentication context, step-up authentication, and session-based controls.
 - Application assignment via groups.
-- Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
+- Passkeys (FIDO2) aren't currently available in HSC mode. They are available in standard Microsoft Entra External ID deployments. For setup, see [Sign in with passkeys](how-to-sign-in-with-passkey.md).
 
 **Federation and ecosystem integrations**
 
