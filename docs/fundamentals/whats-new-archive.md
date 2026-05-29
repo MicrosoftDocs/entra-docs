@@ -189,6 +189,16 @@ The Source of Authority (SOA) at the object level allows administrators to conve
 
 ---
 
+### Public Preview - Prefetch Workday termination data to customize account disable logic
+
+**Type:** Fixed    
+**Service category:** Provisioning    
+**Product capability:** Inbound to Microsoft Entra ID    
+
+This Workday connector update resolves termination processing delays observed for workers in APAC and ANZ regions. Admins can now enable termination lookahead setting to prefetch data and tailor deprovisioning logic for accounts in Microsoft Entra ID and on-premises Active Directory. For more information, see: [Configure Workday termination lookahead (Preview)](../identity/app-provisioning/configure-workday-termination-lookahead.md).
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
