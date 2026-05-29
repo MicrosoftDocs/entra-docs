@@ -12,7 +12,7 @@ ms.reviewer: jmprieur
 
 Agents (agent identity blueprints) operating on behalf of regular, signed-in users use the standard OAuth 2.0 protocol with all its capabilities. User delegation enables agent identities to operate on behalf of signed-in users using standard OAuth 2.0 On-Behalf-Of flows with agent-specific impersonation. The agent identity is assigned the necessary delegated permissions needed for OBO access. It requires consent from users to access their data.
 
-Agents have the capabilities of Microsoft Entra ID resource (API) applications and support the API attributes required for the (OAuth2Permissions, AppURI). Agent identity blueprints can't initiate interactive authorization (`/authorize`) flows directly — they must receive a user token from a client application and then perform an OBO token exchange. Redirect URIs aren't supported on the agent identity blueprint itself; they're configured on the client application.
+Agents have the capabilities of Microsoft Entra ID resource (API) applications and support the API attributes required for the (OAuth2Permissions, AppURI). Agent identity blueprints can't initiate interactive authorization (`/authorize`) flows directly. They must receive a user token from a client application and then perform an OBO token exchange. Redirect URIs aren't supported on the agent identity blueprint itself; they're configured on the client application.
 
 [!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-libraries.md)]
 

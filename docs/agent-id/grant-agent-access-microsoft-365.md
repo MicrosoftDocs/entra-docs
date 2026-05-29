@@ -80,6 +80,6 @@ Agents can call other OAuth‑protected APIs. Ensure the resource application an
 
 ## Related content
 
-- [Authentication protocols in agents](agent-oauth-protocols.md) - developer-focused protocol details for implementing agent token flows.
+- [Authentication protocols in agents](agent-oauth-protocols.md)
 - [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)
 - [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
