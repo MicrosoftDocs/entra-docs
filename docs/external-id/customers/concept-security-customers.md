@@ -47,6 +47,7 @@ These protections are foundational. They're quick to enable and essential for es
 | **[Passkeys (FIDO2)](how-to-sign-in-with-passkey.md)** | Phishing-resistant, passwordless authentication that uses face, fingerprint, PIN, or a security key. A passkey satisfies MFA in a single gesture and can also serve as a primary, passwordless sign-in method. | Prevents phishing, password theft, and credential replay. | Low – Familiar gestures | Medium – Setup and credential management UX required |
 | **[Activity logging](/entra/identity/monitoring-health/concept-sign-ups) & [User insights](/entra/external-id/customers/how-to-user-insights)** |Activity logs and insights provide visibility into sign-ups, sign-ins, error patterns, and anomalies. They help you identify unusual trends and investigate issues quickly, supporting early detection, and informed decision making.  |Enables threat detection. | None — No end-user impact |Medium – Setup required |
 
+
 ### Priority 2: Short-term implementation
 
 Once baseline controls are in place, implement protections that materially improve threat resilience.
