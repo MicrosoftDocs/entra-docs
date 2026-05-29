@@ -199,6 +199,16 @@ This Workday connector update resolves termination processing delays observed fo
 
 ---
 
+### General Availability - Ability to convert Source of Authority of synced on-premises AD groups to cloud groups is now available 
+
+**Type:** New feature    
+**Service category:** Group Management    
+**Product capability:** Microsoft Entra Cloud Sync    
+
+The Group SOA feature lets organizations move application access governance from on-premises to the cloud by transferring Active Directory group authority to Microsoft Entra ID using Connect Sync or Cloud Sync. With phased migration, admins can reduce AD dependencies gradually and minimize disruption. Microsoft Entra ID Governance manages access for both cloud and on-premises apps linked to security groups, and customers of either sync client can now use this feature. For more information, see: [Group source of authority](https://aka.ms/groupsoadocs).
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
