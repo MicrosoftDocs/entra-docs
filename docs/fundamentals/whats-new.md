@@ -43,7 +43,7 @@ Microsoft Entra ID now supports applying Microsoft Purview sensitivity labels to
 
 Administrators can use labels to govern security group settings such as guest access using the same labels and policies that apply to Microsoft 365 groups today. 
 
-Labels can be managed in Microsoft Purview and applied through the Microsoft Entra Admin Center, Azure Portal, and Microsoft Graph. For more information, see: [Assign sensitivity labels to Microsoft Entra security groups (preview)](/entra/identity/users/groups-sensitivity-labels).
+Labels can be managed in Microsoft Purview and applied through the Microsoft Entra Admin Center, Azure portal, and Microsoft Graph. For more information, see: [Assign sensitivity labels to Microsoft Entra security groups (preview)](/entra/identity/users/groups-sensitivity-labels).
 
 ---
 
@@ -1603,4 +1603,4 @@ Organizations can define flexible TLS inspection policies to specify which traff
 This public preview allows you to configure URL filtering rules to granularly deny or allow access to full URLs (including hostname and full path). These rules are part of the existing web content filtering policy schema that allows security policies to become context-aware by linking a policy to a security profile to a conditional access policy. For more information, see: [How to configure Global Secure Access web content filtering](../global-secure-access/how-to-configure-web-content-filtering.md).
 
 ---
-
+
