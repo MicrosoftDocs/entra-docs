@@ -76,6 +76,16 @@ This enhancement gives administrators greater flexibility to automate lifecycle 
 
 ---
 
+### Public Preview - Sign-in with username/alias
+
+**Type:** New feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C   
+
+In Microsoft Entra External ID (EEID), users with a local email+password credential can sign in with email address as identifier.  We are adding the ability for these users to sign in with an alternative identifier such as customer/member ID, for example insurance number, frequent flier number assigned via Graph API or Microsoft Entra admin center. For more information, see [Sign in with an alias or username (preview)](/entra/external-id/customers/how-to-sign-in-alias).
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
