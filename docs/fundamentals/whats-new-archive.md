@@ -209,6 +209,22 @@ The Group SOA feature lets organizations move application access governance from
 
 ---
 
+### Plan for Change - Jailbreak Detection in Authenticator App
+
+**Type:** Plan for change    
+**Service category:** Microsoft Authenticator App    
+**Product capability:** Identity Security & Protection    
+
+**Starting February 2026**, we'll introduce **Jailbreak/Root detection for Microsoft Entra credentials in the Authenticator app**. This update strengthens security by preventing Microsoft Entra credentials from functioning on jail-broken or rooted devices. All existing credentials on such devices will be wiped to protect your organization.
+
+This capability is secure by default and requires no admin configuration or control. The change applies to both iOS and Android.This change won't apply to personal or third party accounts.
+
+**Action required:** Notify end users about this upcoming change. Authenticator will become unusable for Microsoft Entra accounts on jail-broken or rooted devices.
+
+For more information, see: [About Microsoft Authenticator](https://support.microsoft.com/account-billing/about-microsoft-authenticator-9783c865-0308-42fb-a519-8cf666fe0acc).
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
