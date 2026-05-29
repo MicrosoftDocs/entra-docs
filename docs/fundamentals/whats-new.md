@@ -7,7 +7,7 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 04/15/2026
+ms.date: 05/15/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -20,6 +20,159 @@ ms.collection: M365-identity-device-management
 This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see: [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
+
+## May 2026
+
+### Public Preview - Enable soft-delete for Microsoft Entra Device objects
+
+**Type:** New feature  
+**Service category:** Device Access Management  
+**Product capability:** Entra Backup and Recovery
+
+Device Soft Delete, now available in preview, enables administrators to safely remove device objects by moving them to a recoverable state instead of permanently deleting them. This feature allows organizations to restore devices within a defined retention period while preserving critical data such as device identity and associated security artifacts. The feature supports Microsoft Entra joined, registered, and hybrid joined devices and helps reduce risk from accidental deletions while improving device lifecycle management.
+
+---
+
+### Public Preview - Sensitivity labels for Microsoft Entra security groups
+
+**Type:** New feature  
+**Service category:** Group Management    
+**Product capability:** Platform    
+
+Microsoft Entra ID now supports applying Microsoft Purview sensitivity labels to Entra cloud security groups in public preview.
+
+Administrators can use labels to govern security group settings such as guest access using the same labels and policies that apply to Microsoft 365 groups today. 
+
+Labels can be managed in Microsoft Purview and applied through the Microsoft Entra Admin Center, Azure Portal, and Microsoft Graph. For more information, see: [Assign sensitivity labels to Microsoft Entra security groups (preview)](/entra/identity/users/groups-sensitivity-labels).
+
+---
+
+### General Availability - Account Discovery
+
+**Type:** General Availability  
+**Service category:** Provisioning  
+**Product capability:** 3rd Party Integration
+
+Account discovery for connected applications is now generally available in Microsoft Entra ID Governance. This capability provides administrators with visibility into all accounts that exist within connected applications, including orphan accounts.
+
+By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that aren't assigned to the enterprise application in Microsoft Entra and simplify onboarding the application.
+
+This capability requires a Microsoft Entra ID Governance or Microsoft Entra Suite license. Learn more: [https://aka.ms/accountDiscoveryDocumentation](https://aka.ms/accountDiscoveryDocumentation).
+
+---
+
+### General Availability - Cross tenant group synchronization
+
+**Type:** General Availability  
+**Service category:** Provisioning  
+**Product capability:** Identity Lifecycle Management    
+
+Cross tenant group synchronization allows organizations to synchronize security groups across Microsoft Entra tenants. This feature enables centralized management of group membership in a source tenant while making those groups available in one or more target tenants, simplifying cross-tenant collaboration and reducing administrative overhead associated with managing duplicate groups.
+
+With cross tenant group synchronization, organizations can extend their existing cross tenant synchronization configurations to include groups, supporting scenarios such as shared application access, resource authorization, and consistent group-based access control across tenants. Admins can opt in to this functionality and configure attribute mappings and cross tenant access policies to enable group synchronization into target tenants. Use of cross-tenant group synchronization requires Microsoft Entra ID Governance licenses. Existing licensing requirements for cross tenant user synchronization features remains unchanged. [https://learn.microsoft.com/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md).
+
+---
+
+### General Availability - Modernized My Account pages
+
+**Type:** Changed feature  
+**Service category:** Modernized My Account pages  
+**Product capability:** End User Experiences    
+
+We're excited to announce the upcoming general availability of three redesigned pages in the My Account portal (myaccount.microsoft.com), bringing a modernized experience to help end users manage their account with greater ease and clarity.
+
+The redesigned Devices page features a modernized layout that makes it easier for users to view and manage their registered devices. BitLocker recovery keys are now more prominently surfaced, reducing the need to contact IT helpdesk for key retrieval.
+
+The new Personal Info page gives users a centralized view of their profile information alongside language and region settings - making it simple to review and update personal details in one place.
+
+The redesigned Organizations page delivers a modernized experience and resolves a longstanding issue where users were unable to successfully leave an organization.
+
+Availability: These pages will be generally available to all Microsoft Entra ID customers by end of June 2026. No admin action is required - users will see the updated experience automatically.
+
+---
+
+### General Availability - Support for passkeys in Microsoft Entra ID registration campaign
+
+**Type:** General Availability  
+**Service category:** MFA  
+**Product capability:** Identity Security & Protection
+
+Microsoft Registration Campaigns now supports Passkeys (FIDO2) as an authentication method. Administrators can configure registration campaigns to nudge users to register passkeys during sign-in, helping organizations drive passkey adoption at scale. This first rollout experience is optimized for users who are in a passkey profile that doesn't have any restrictions.
+
+---
+
+### Public Preview - Automate setting or clearing user attributes values in Lifecycle workflows
+
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance
+
+We're excited to introduce the User Attribute Updates task in Lifecycle Workflows, extending existing attribute change trigger capabilities with a built-in, customer-ready way to automate attribute updates (set or clear values) directly within a workflow. With a secure, consistent, and auditable experience, organizations can reduce manual effort, improve governance, and scale identity automation with greater confidence.
+
+---
+
+### General Availability - System-preferred authentication expanded to first-factor in Microsoft Entra ID
+
+**Type:** General Availability  
+**Service category:** MFA  
+**Product capability:** Identity Security & Protection
+
+We're extending system-preferred authentication to apply to the **first factor** in Microsoft-managed configurations (in addition to second factor). With this change, the system evaluates the credentials registered for a user and selects the highest-ranked authentication method for each step of the sign-in flow.
+
+As a result, users with strong, phishing-resistant credentials (such as passkeys) might be signed in **without needing to use a password**, improving both security and user experience.
+
+This behavior applies only to the Microsoft-managed state, where system-preferred authentication now covers both first- and second-factor authentication. The rollout is currently in progress and will be fully deployed to all Microsoft-managed tenants by the end of June.
+
+---
+
+### General Availability - High Scale Compatibility (HSC) mode for Microsoft Entra External ID
+
+**Type:** General Availability  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C
+
+High Scale Compatibility (HSC) mode enables organizations to **migrate to Microsoft Entra External ID while preserving their existing user directory**. It's designed for large, established customer identity platforms transitioning from Azure AD B2C.
+
+With HSC mode, customers can **rebuild applications on External ID** while maintaining continuity for existing users, supporting a **seamless, phased migration at scale**. Some advanced customization capabilities are limited in this mode and will continue to evolve. For more information, see: [Enable External ID High Scale Compatibility (HSC) mode](../external-id/customers/enable-external-id-high-scale-compatibility-mode.md).
+
+---
+
+### Expanded policy storage for passkeys (FIDO2) in Microsoft Entra ID
+
+**Type:** Changed feature  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication
+
+We increased the passkey (FIDO2) policy size limit in the authentication methods policy to a dedicated 20-KB allocation.
+
+Previously, all authentication methods shared a single 20-KB policy size limit. With this update, a dedicated 20-KB limit is now allocated specifically to the passkey (FIDO2) policy, while the remaining authentication methods continue to use their existing limit.
+
+This change helps address scenarios where tenants approach the overall policy size limit, which can block configuration of passkey profiles. By separating passkey policy storage, organizations can more easily adopt passkeys and configure advanced targeting scenarios.
+
+In addition, the maximum number of passkey profiles per tenant has been increased from 3 to 10.
+
+---
+
+### Public Preview - Azure Role assignments can now be governed via Entitlement Management
+
+**Type:** New feature  
+**Service category:** Entitlement Management  
+**Product capability:** Identity Governance  
+
+You can now govern eligible and active assignments to Azure roles at the Management Group, Subscription, and Resource Group levels directly through access packages. This brings role assignment into the same request, approval, and lifecycle governance model as apps, groups, and more - making it easier to manage access to Azure resources at scale while aligning to least privilege and just-in-time access.
+
+---
+
+### General Availability - Manage Agent ID sponsorship lifecycle with Lifecycle Workflows
+
+**Type:** General Availability  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance
+
+One of the most important parts of governing agent identities is making sure that a delegated human user is always assigned to make sure the agent identity's access to resources are current. If the sponsor is leaving the organization, sponsorship of the agent identities is automatically transferred to their manager. With sponsorship transferred, there's always a human user accountable for managing the access and lifecycle of the agent identities. Microsoft Entra ID Governance features can help streamline this process within your organization. Lifecycle workflows include multiple tasks around notifying cosponsors, and managers of sponsors, of impending sponsorship changes. For a guide on setting up a workflow for agent identities sponsors, see: [Agent identity sponsor tasks in Lifecycle Workflows](../id-governance/agent-sponsor-tasks.md).
+
+---
+
 
 ## April 2026
 
@@ -43,7 +196,7 @@ For more information, see: [What is Microsoft Entra Agent ID?](../agent-id/what-
 
 Microsoft Entra ID Governance now supports account discovery for connected applications in public preview. This capability provides administrators with visibility into all accounts that exist within connected applications, including orphan accounts. 
 
-By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that are not assigned to the enterprise application in Entra and simplify onboarding the application. 
+By generating discovery reports directly from the provisioning experience, organizations can identify accounts in connected applications that aren't assigned to the enterprise application in Microsoft Entra and simplify onboarding the application. 
 
 This capability requires a Microsoft Entra ID Governance or Microsoft Entra Suite license. Learn more: [https://aka.ms/accountDiscoveryDocumentation](https://aka.ms/accountDiscoveryDocumentation)
 
