@@ -118,7 +118,7 @@ A complete authorization-at-scale strategy must cover non-human identities — s
 - **[App registration](~/identity-platform/quickstart-register-app.md).** Register an application to create a service principal that authenticates with a client secret, certificate, or federated credential. Use for traditional applications and platform integrations.
 - **[Managed identities](~/identity/managed-identities-azure-resources/overview.md).** Use system-assigned or user-assigned managed identities for workloads running in Azure. Azure provisions and rotates the credentials, so no secrets are stored in code or configuration.
 - **[Workload identity federation](~/workload-id/workload-identity-federation.md).** Configure trust between Microsoft Entra and an external identity provider so workloads outside Azure — such as GitHub Actions, Kubernetes, Google Cloud, AWS, or other OIDC-capable platforms — can authenticate without storing secrets.
-- **[Flexible federated identity credentials (preview)](~/workload-id/workload-identities-flexible-federated-identity-credentials.md).** Extend the secretless pattern to user-assigned managed identities and to scenarios that require wildcard or claims-based matching.
+- **[Flexible federated identity credentials (preview)](~/workload-id/workload-identities-flexible-federated-identity-credentials.md).** Extend the secretless pattern for app registrations to scenarios that require wildcard or claims-based matching against tokens issued by GitHub, GitLab, or Terraform Cloud.
 
 Govern these identities at scale with the same layered controls you apply to users:
 
