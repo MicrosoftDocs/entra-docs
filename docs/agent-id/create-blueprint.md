@@ -143,6 +143,7 @@ $body = @{
 $response = Invoke-MgGraphRequest `
     -Method POST `
     -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint" `
+    -Headers @{ "OData-Version" = "4.0" } `
     -Body $body `
     -ContentType "application/json"
 
