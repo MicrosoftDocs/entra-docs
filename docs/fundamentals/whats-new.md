@@ -1606,16 +1606,6 @@ This public preview allows you to configure URL filtering rules to granularly de
 
 ## October 2025
 
-### Public Preview - Cloud Managed Remote Mailboxes
-
-**Type:** New feature    
-**Service category:** User Management    
-**Product capability:** Microsoft Entra Cloud Sync    
-
-The Source of Authority (SOA) at the object level allows administrators to convert specific users synced from Active Directory (AD) to Microsoft Entra ID into cloud-editable objects, which are no longer synced from AD and act as if originally created in the cloud. This feature supports a gradual migration process, decreasing dependencies on AD while aiming to minimize user and operational impact. Both Microsoft Entra Connect Sync and Cloud Sync recognize the SOA switch for these objects. The option to switch the SOA of synced users from AD to Microsoft Entra ID is currently available in Public Preview. For more information, see: [Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud (Preview)](../identity/hybrid/user-source-of-authority-overview.md).
-
----
-
 ### Public Preview - Prefetch Workday termination data to customize account disable logic
 
 **Type:** Fixed    
