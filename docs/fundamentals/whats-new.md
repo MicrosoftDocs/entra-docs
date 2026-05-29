@@ -1606,16 +1606,6 @@ This public preview allows you to configure URL filtering rules to granularly de
 
 ## October 2025
 
-### Public Preview - Prefetch Workday termination data to customize account disable logic
-
-**Type:** Fixed    
-**Service category:** Provisioning    
-**Product capability:** Inbound to Microsoft Entra ID    
-
-This Workday connector update resolves termination processing delays observed for workers in APAC and ANZ regions. Admins can now enable termination lookahead setting to prefetch data and tailor deprovisioning logic for accounts in Microsoft Entra ID and on-premises Active Directory. For more information, see: [Configure Workday termination lookahead (Preview)](../identity/app-provisioning/configure-workday-termination-lookahead.md).
-
----
-
 ### General Availability - Ability to convert Source of Authority of synced on-premises AD groups to cloud groups is now available 
 
 **Type:** New feature    
