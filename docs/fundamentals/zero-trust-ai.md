@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to understand how to secure AI agents and workloads so that I can prevent unauthorized access and enforce governance over autonomous identities.
 ---
 
-# Configure Microsoft Entra for Zero Trust: AI (Preview)
+# Configure agent identity security with the Zero Trust Assessment
 
 AI agents acquire access tokens for organizational resources on every interaction, including mail, files, line-of-business APIs, and downstream agents. Unlike interactive users, agents usually don't present the same sign-in signals, such as user MFA, managed device state, or location context. Securing the AI control plane is therefore essential to your Zero Trust journey.
 
