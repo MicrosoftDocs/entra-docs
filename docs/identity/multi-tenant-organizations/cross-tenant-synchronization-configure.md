@@ -134,9 +134,6 @@ By the end of this article, you'll be able to:
 ::: zone pivot="same-cloud-synchronization"
 ## Step 2: Enable user and group synchronization in the target tenant
 
-> [!IMPORTANT]
-> Group synchronization is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 ::: zone-end
 
 ::: zone pivot="cross-cloud-synchronization"
