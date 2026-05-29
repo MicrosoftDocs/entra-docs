@@ -18,7 +18,7 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 
 ## Prerequisites
 
-Face Check is a premium feature within Verified ID. If you are a Microsoft Entra Suite customer, Face Check is included as part of the Suite. If you're not using Microsoft Entra Suite, you need to enable the Face Check Add-on in your Microsoft Entra Verified ID setup before doing Face Check verifications.
+Face Check is a premium feature within Verified ID. If you're a Microsoft Entra Suite customer, Face Check is included as part of the Suite. If you're not using Microsoft Entra Suite, you need to enable the Face Check Add-on in your Microsoft Entra Verified ID setup before doing Face Check verifications.
 
 - Make sure Microsoft Entra Verified ID is [set up in your tenant](verifiable-credentials-configure-tenant-quick.md) before using Face Check.
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
