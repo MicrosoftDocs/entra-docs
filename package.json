@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "md-to-pdf": "^5.2.5",
+    "pdfkit": "^0.18.0"
+  }
+}
