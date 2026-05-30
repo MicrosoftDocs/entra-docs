@@ -8,6 +8,9 @@ _repo.*/
 .openpublishing.buildcore.ps1
 *.DS_Store
 
+# Dependencies
+node_modules/
+
 # Visual Studio and VS Code files
 .vscode/*
 .vs/*
