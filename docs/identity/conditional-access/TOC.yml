@@ -33,7 +33,7 @@
        href: concept-conditional-access-users-groups.md
      - name: Target resources
        href: concept-conditional-access-cloud-apps.md
-     - name: Enforcement for resource exclusions
+     - name: Enforcement for baseline scopes
        href: concept-enforcement-resource-exclusions.md
      - name: Network
        href: concept-assignment-network.md
@@ -142,6 +142,8 @@
         href: policy-all-users-persistent-browser.md
       - name: Require MFA for Intune enrollment
         href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+      - name: Restrict device code flow for Teams devices
+        href: policy-teams-devices-device-code-flow.md
     - name: Multifactor authentication
       items:
       - name: Require MFA for administrators
