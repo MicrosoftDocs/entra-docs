@@ -166,7 +166,7 @@ Yes. Because all authentication occurs in the user's home Microsoft Entra ID ten
 - Device-based and risk-based controls
 
 > [!NOTE]
-> External ID Conditional Access policies that require MFA registration aren't honored by the home tenant. For details, see [Known limitations](how-to-custom-oidc-federation-customers.md#known-limitations) in the custom OIDC federation article.
+> External ID Conditional Access policies that require MFA registration aren't honored by the home tenant. For details, see [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md).
 
 **Why do I see a domain confirmation dialog when using domain_hint?**
 
