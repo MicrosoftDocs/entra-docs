@@ -113,7 +113,7 @@ Listing role assignments is one part of answering the broader question: "who has
 
 ## Govern access for workload identities
 
-A complete authorization-at-scale strategy must cover workload identities — applications, service principals, and managed identities — not just users. Microsoft Entra supports several methods for registering machine identities, each suited to a different scenario:
+A complete authorization-at-scale strategy must cover workload identities — applications, service principals, and managed identities — not just users. Microsoft Entra supports several methods for establishing machine identities, each suited to a different scenario:
 
 - **[App registration](~/identity-platform/quickstart-register-app.md).** Register an [application object](~/identity-platform/app-objects-and-service-principals.md) to create a service principal that authenticates with a client secret, certificate, or federated credential. Use for traditional applications and platform integrations.
 - **[Managed identities](~/identity/managed-identities-azure-resources/overview.md).** Use system-assigned or user-assigned managed identities for workloads running in Azure. Azure manages the credentials for you, so no secrets are stored in code or configuration.
@@ -123,8 +123,8 @@ A complete authorization-at-scale strategy must cover workload identities — ap
 Govern these identities at scale with the same layered controls you apply to users:
 
 - Apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md) to restrict where and when a service principal can authenticate. This capability requires Workload Identities Premium licenses and applies only to single-tenant service principals registered in your tenant — managed identities and multitenant or third-party SaaS apps aren't in scope.
-- Run [access reviews of groups and applications](~/id-governance/create-access-review.md) to confirm that users and service principals assigned to those resources still need their access. Access reviews require Microsoft Entra ID Governance or Microsoft Entra Suite (some capabilities are available with Microsoft Entra ID P2); for details, see [License requirements](~/id-governance/access-reviews-overview.md#license-requirements).
-- Tag workload identities with [custom security attributes](~/fundamentals/custom-security-attributes-overview.md) so you can build a filterable inventory and drive [Azure ABAC](/azure/role-based-access-control/conditions-custom-security-attributes) decisions from business attributes.
+- Run [access reviews of groups and applications](~/id-governance/create-access-review.md) to confirm that users assigned to those resources still need their access, and use [PIM access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) to review service principals assigned to Microsoft Entra and Azure resource roles. Reviews of groups and applications require Microsoft Entra ID Governance or Microsoft Entra Suite (some capabilities are available with Microsoft Entra ID P2); for details, see [License requirements](~/id-governance/access-reviews-overview.md#license-requirements). Reviews of service principals additionally require Microsoft Entra Workload ID Premium.
+- Tag service principals for your registered applications with [custom security attributes](~/fundamentals/custom-security-attributes-overview.md) so you can build a filterable inventory and drive [Azure ABAC](/azure/role-based-access-control/conditions-custom-security-attributes) decisions from business attributes.
 - Enable [app instance property lock](~/identity-platform/howto-configure-app-instance-property-locks.md) on multitenant apps to prevent unauthorized modification of sensitive properties on the service principal after the app is provisioned in another tenant.
 
 ## License requirements
