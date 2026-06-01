@@ -2,7 +2,7 @@
 title: Best practices for Microsoft Entra roles
 description: Best practices for using Microsoft Entra roles.
 ms.topic: best-practice
-ms.date: 03/30/2025
+ms.date: 06/01/2026
 ms.reviewer: vincesm
 ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ai-usage: ai-assisted

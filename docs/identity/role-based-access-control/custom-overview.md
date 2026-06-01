@@ -2,7 +2,7 @@
 title: Overview of Microsoft Entra role-based access control (RBAC)
 description: Learn how to understand the parts of a role assignment and restricted scope in Microsoft Entra ID.
 ms.topic: overview
-ms.date: 03/30/2025
+ms.date: 06/01/2026
 ms.reviewer: abhijeetsinha
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ai-usage: ai-assisted
