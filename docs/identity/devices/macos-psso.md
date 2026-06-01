@@ -141,6 +141,25 @@ For step-by-step instructions to set up PSSO with EnableRegistrationDuringSetup 
 > [!NOTE]
 > Authenticating with Smart Card in Setup Assistant is not supported. If you want to use Smart Card as the authentication method, you must complete PSSO registration after Setup Assistant is completed.
 
+## Known issues
+
+### PSSO re-registration triggered after Company Portal update
+
+Updating the Company Portal app can trigger an unexpected PSSO re-registration prompt. When Company Portal is updated, the AppSSO framework reloads with `reason = ExtensionsChanged`, which can clear the Platform SSO login manager configuration. Platform SSO then returns `no login configuration data to load` and shows listener-start failures (`Code=-1008 "Did not start listening"`). After a reboot or new console session, Platform SSO enters a grace/auth-required state and delivers a new registration notification.
+
+This issue is under investigation with Apple. Rebooting the device restores Platform SSO to a functional state. Users should complete re-registration when prompted.
+
+### SSO extension temporarily unavailable after Setup Assistant enrollment
+
+The SSO extension may not be available for approximately 10–15 seconds after completing Setup Assistant–based enrollment. On the first launch of the Company Portal app after enrollment, an embedded web view is shown for sign-in instead of the expected SSO extension experience. The macOS quarantine resolver temporarily locks the SSO extension configuration, blocking its availability. This behavior has also been observed in the standard PSSO flow outside of Setup Assistant.
+
+This issue is under investigation with Apple. Closing and reopening the Company Portal app resolves the issue.
+
+### SSO failures after Setup Assistant with password sync configuration
+
+SSO can fail after PSSO registration completes in the Setup Assistant flow when using password sync as the authentication method. The Primary Refresh Token (PRT) isn't saved during device registration. When Setup Assistant completes and the PRT refresh request is sent to Microsoft Entra ID, no PRT is attached, causing an authentication failure. Users are prompted for an unexpected additional authentication before they can access resources.
+
+This issue is under investigation with Apple. A device reboot may help restore normal SSO behavior.
 
 ## Troubleshooting 
 
