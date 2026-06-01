@@ -3608,6 +3608,11 @@
       "source_path": "docs/identity/conditional-access/policy-agent-user-account.md",
       "redirect_url": "/entra/identity/conditional-access/agent-id",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-custom-headers.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-swift-custom-headers",
+      "redirect_document_id": false
     }
   ]
 }
