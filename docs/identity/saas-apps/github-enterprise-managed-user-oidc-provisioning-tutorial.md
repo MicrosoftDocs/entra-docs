@@ -129,6 +129,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "home"].value|String||
    |emails[type eq "other"].value|String||
 
+   > [!NOTE]
+   > The **AppRoleAssignmentComplex** configuration works only when the **Sync Only Assigned Users and Groups** option is selected as scope. If this option is not selected, approleassignment will not works as expected.
+
+   ![Screenshot of showing AppRoleAssignmentComplex.](./media/github-enterprise-managed-user-oidc-provisioning-tutorial/role.png)
+
 10. Select **Groups**.
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GitHub Enterprise Managed User (OIDC) for update operations. Select the **Save** button to commit any changes.
