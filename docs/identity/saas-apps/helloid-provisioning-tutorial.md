@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both HelloID and Microso
 > * Remove users in HelloID when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and HelloID
 > * Provision groups and group memberships in HelloID
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -335,16 +335,15 @@ The registration campaign evaluates whether a user has a local passkey for their
 
 For example, if a user has a Windows Hello for Business credential and signs in on Windows with Chrome, the nudge is suppressed. But if the same user signs in on a Mac with Chrome, they're nudged because that credential doesn't apply to that platform.
 
-| Credential | Windows + Chrome | Windows + Edge | Windows + Other | Mac + Chrome | Mac + Edge | Mac + Other | iOS | Android |
-|---|---|---|---|---|---|---|---|---|
-| Windows Hello for Business | ✔️ | ✔️ | ✔️ | — | — | — | — | — |
-| Entra passkey on Windows (EPOW) | ✔️ | ✔️ | ✔️ | — | — | — | — | — |
-| Google Password Manager | ✔️ | — | — | ✔️ | — | — | — | ✔️ |
-| Microsoft Password Manager | — | ✔️ | — | — | ✔️ | — | — | — |
-| iCloud Keychain (incl. Managed) | — | — | — | ✔️ | ✔️ | ✔️ | ✔️ | — |
-| Mac Platform SSO | — | — | — | ✔️ | ✔️ | ✔️ | — | — |
-| Samsung Pass | — | — | — | — | — | — | — | ✔️ |
-| Any non-platform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| Credential | Windows + Chrome | Windows + Other | Mac + Chrome | Mac + Other | iOS | Android |
+|---|---|---|---|---|---|---|
+| Windows Hello for Business | ✔️ | ✔️ | — | — | — | — |
+| Microsoft Entra passkey on Windows | ✔️ | ✔️ | — | — | — | — |
+| Google Password Manager | ✔️ | — | ✔️ | — | — | ✔️ |
+| iCloud Keychain (including Managed) | — | — | ✔️ | ✔️ | ✔️ | — |
+| Mac Platform SSO | — | — | ✔️ | ✔️ | — | — |
+| Samsung Pass | — | — | — | — | — | ✔️ |
+| Any non-platform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 > [!NOTE]
 > **Linux**: Users aren't nudged. FIDO2 passkeys aren't available on Linux.

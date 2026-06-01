@@ -154,7 +154,7 @@ See [Test user flows](how-to-test-user-flows.md), [Samples](samples-ciam-all.md)
 
 After you go to production, implement monitoring and analytics to maintain system health and optimize user experience:
 - Set up logging and monitoring with Azure Monitor and Microsoft Sentinel. For more information, see [Azure Monitor integration](how-to-azure-monitor.md).
-- Use built-in dashboards for user activity, authentication, and engagement insights. For more information, see [User insights](how-to-user-insights.md).
+- Use built-in dashboards for user activity, authentication, and engagement insights. For more information, see [User insights](how-to-user-insights.md). User Insights is being retired on August 31, 2026; for new deployments, use Azure Monitor with Log Analytics. See [Migrate from User Insights](how-to-user-insights.md#migrate-from-user-insights).
 
 Ongoing monitoring enables proactive issue resolution, data-driven optimization, and continuous improvement of your CIAM solution.
 

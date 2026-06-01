@@ -2,7 +2,7 @@
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 ms.topic: reference
-ms.date: 04/29/2026
+ms.date: 05/21/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -20,7 +20,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > [!div class="mx-tableFixed"]
 > | Role | Description | Template ID |
 > | --- | --- | --- |
-> | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | db506228-d27e-4b7d-95e5-295956d6615f |
+> | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent identity blueprint principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | db506228-d27e-4b7d-95e5-295956d6615f |
 > | [Agent ID Developer](#agent-id-developer) | Create an agent identity blueprint and its agent identity blueprint principal in a tenant. User will be added as an owner of the created agent identity blueprint and its agent identity blueprint principal. | adb2368d-a9be-41b5-8667-d96778e081b0 |
 > | [Agent Registry Administrator](#agent-registry-administrator) | Manage all aspects of the Agent Registry service in Microsoft Entra ID | 6b942400-691f-4bf0-9d12-d8a254a2baf5 |
 > | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d2562ede-74db-457e-a7b6-544e236ebb61 |
@@ -81,7 +81,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Guest Inviter](#guest-inviter) | Can invite guest users independent of the 'members can invite guests' setting. | 95e79109-95c0-4d8e-aee3-d01accf2d47b |
 > | [Helpdesk Administrator](#helpdesk-administrator) | Can reset passwords for non-administrators and Helpdesk Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 729827e3-9c14-49f7-bb1b-9608f156bbb8 |
 > | [Hybrid Identity Administrator](#hybrid-identity-administrator) | Manage Active Directory to Microsoft Entra cloud provisioning, Microsoft Entra Connect, pass-through authentication (PTA), password hash synchronization (PHS), seamless single sign-on (seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2 |
-> | [Identity Governance Administrator](#identity-governance-administrator) | Manage access using Microsoft Entra ID for identity governance scenarios. | 45d8d3c5-c802-45c6-b32a-1d70b5e1e86e |
+> | [Identity Governance Administrator](#identity-governance-administrator) | Manage access using Microsoft Entra ID for identity governance scenarios.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 45d8d3c5-c802-45c6-b32a-1d70b5e1e86e |
 > | [Insights Administrator](#insights-administrator) | Has administrative access in the Microsoft 365 Insights app. | eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c |
 > | [Insights Analyst](#insights-analyst) | Access the analytical capabilities in Microsoft Viva Insights and run custom queries. | 25df335f-86eb-4119-b717-0ff02de207e9 |
 > | [Insights Business Leader](#insights-business-leader) | View and share dashboards and insights via the Microsoft Viva Insights app. | 31e939ad-9672-4796-9c2e-873181342d2d |

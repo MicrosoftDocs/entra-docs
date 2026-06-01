@@ -132,6 +132,8 @@
   href: manage-device-identities.md
 - name: Manage stale devices
   href: manage-stale-devices.md
+- name: Device soft delete
+  href: concept-soft-delete-devices.md
 - name: Frequently asked questions
   href: faq.yml
 - name: Reference

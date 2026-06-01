@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Insight4GRC and Mic
 > * Keep user attributes synchronized between Microsoft Entra ID and Insight4GRC
 > * Provision groups and group memberships in Insight4GRC
 > * [Single sign-on](./insight4grc-tutorial.md) to Insight4GRC (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Segment and Microso
 > * Keep user attributes synchronized between Microsoft Entra ID and Segment
 > * Provision groups and group memberships in Segment
 > * [Single sign-on](./segment-tutorial.md) to Segment (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

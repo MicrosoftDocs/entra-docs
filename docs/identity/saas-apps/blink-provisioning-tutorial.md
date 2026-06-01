@@ -22,6 +22,15 @@ Blink is available in the following [national cloud deployments](/graph/deployme
 
 [!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Blink.
+> * Remove users in Blink when they don't require access anymore.
+> * Keep user attributes synchronized between Microsoft Entra ID and Blink.
+> * [Single sign-on](blink-tutorial.md) to Blink (recommended).
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

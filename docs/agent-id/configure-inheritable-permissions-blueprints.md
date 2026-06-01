@@ -40,7 +40,7 @@ You can configure scopes and roles independently on the same resource. For examp
 
 ## Inheritable permissions limitations
 
-- Maximum of 60 resource apps per agent identity blueprint (for example, up to 60 entries in the *inheritablePermissions* collection). If you exceed this limit, reduce the number of resource apps to stay within the supported boundary.
+- Maximum of 50 resource apps per agent identity blueprint (for example, up to 50 entries in the *inheritablePermissions* collection). If you exceed this limit, reduce the number of resource apps to stay within the supported boundary.
 
 Regularly review and monitor your inheritable permissions configuration. Reevaluate inherited scopes and roles to ensure they remain appropriate for your use case. Audit which inherited scopes and roles are being used by agents and remove any unused permissions from both the agent identity blueprint principal and the inheritable permissions list to maintain security hygiene.
 

@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Sigma Computing and
 > * Keep user attributes synchronized between Microsoft Entra ID and Sigma Computing
 > * Provision groups and group memberships in Sigma Computing
 > * [Single sign-on](./sigma-computing-tutorial.md) to Sigma Computing (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
