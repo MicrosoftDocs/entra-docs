@@ -2,12 +2,17 @@
 title: How to configure Global Secure Access web content filtering
 description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
-ms.date: 05/29/2026
+ms.date: 06/01/2026
 ms.subservice: entra-internet-access 
 ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
+
+<!-- TEMPORARY NOTICE: Remove this IMPORTANT alert after the erroneous "Deprecating soon" label on Web Content Filtering Policy (V1) is fixed in the Microsoft Entra admin center. Tracking with PM Michael Aldridge / engineering. -->
+
+> [!IMPORTANT]
+> You might see a red **Deprecating soon** label next to **Web Content Filtering Policy (V1)** in the Microsoft Entra admin center. This label is displayed in error. Your existing web content filtering policies aren't affected, continue to work as configured, and no action is required at this time. This article is updated when the display issue is resolved.
 
 ## Overview
 
