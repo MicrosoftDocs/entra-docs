@@ -1,8 +1,8 @@
 ---
-title: Discover identities in target applications with Account Discovery (preview)
+title: Discover identities in target applications with Account Discovery
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
-ms.date: 04/28/2026
+ms.date: 05/26/2026
 ms.author: jfields
 author: jenniferf-skc
 ms.reviewer: arvinh
@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Discover identities in target applications with Account Discovery (preview)
+# Discover identities in target applications with Account Discovery
 
 When organizations adopt Microsoft Entra ID for application provisioning, target applications often already contain user accounts that were created before provisioning was configured. Account Discovery helps you find these existing accounts, match them to Microsoft Entra ID users, and categorize them so you can bring unmanaged identities under governance. After onboarding to provisioning, application administrators can manually create accounts in the application. This report allows organizations to identify local or orphan accounts both during initial onboarding and after they have operationalized provisioning.
 
@@ -25,10 +25,6 @@ Account Discovery retrieves all user accounts from a target application and clas
 - **Assigned users** — Accounts that match a Microsoft Entra ID user who is assigned to the enterprise application. These accounts are fully managed by the provisioning service.
 
 This classification gives you visibility into who has access to your applications and helps you identify accounts that should be governed, reassigned, or removed.
-
-> [!IMPORTANT]
-> The Account Discovery feature is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

@@ -2,7 +2,7 @@
 title: Self-service password reset policies
 description: Learn about Microsoft Entra self-service password reset (SSPR) policy options, including password complexity requirements, administrator reset policies, and password expiration settings.
 ms.topic: concept-article
-ms.date: 05/15/2025
+ms.date: 05/26/2026
 ms.reviewer: tilarso
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -73,7 +73,7 @@ A two-gate policy applies in the following circumstances:
 
 * The following administrator roles are affected:
 
-  | | | |
+  | Roles A–D | Roles D–N | Roles O–Y |
   |---|---|---|
   | AdHoc License Administrator | Dynamics 365 Administrator | Office Apps Administrator |
   | Application Administrator | Dynamics 365 Business Central Administrator | Organizational Branding Administrator |

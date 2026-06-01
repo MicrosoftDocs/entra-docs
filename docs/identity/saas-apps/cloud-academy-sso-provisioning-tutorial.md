@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both QA and Microsoft En
 > * Remove users in QA when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and QA
 > * [Single sign-on](./cloud-academy-sso-tutorial.md) to QA (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

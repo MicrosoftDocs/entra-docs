@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both PrinterLogic SaaS a
 > * Keep user attributes synchronized between Microsoft Entra ID and PrinterLogic SaaS
 > * Provision groups and group memberships in PrinterLogic SaaS
 > * [Single sign-on](./printerlogic-saas-tutorial.md) to PrinterLogic SaaS (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both TimeClock 365 and M
 > * Remove users in TimeClock 365 when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and TimeClock 365
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to TimeClock 365 (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

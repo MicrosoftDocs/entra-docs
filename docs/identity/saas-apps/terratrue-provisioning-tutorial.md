@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both TerraTrue and Micro
 > * Remove users in TerraTrue when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and TerraTrue.
 > * [Single sign-on](terratrue-tutorial.md) to TerraTrue.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

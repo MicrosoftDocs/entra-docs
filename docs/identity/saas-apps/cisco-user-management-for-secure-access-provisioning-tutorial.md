@@ -24,6 +24,7 @@ This article describes the steps you need to perform in both Cisco User Manageme
 > * Remove users in Cisco User Management for Secure Access when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cisco User Management for Secure Access
 > * Provision groups and group memberships in Cisco User Management for Secure Access
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

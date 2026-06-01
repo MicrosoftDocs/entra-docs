@@ -18,6 +18,14 @@ This article shows how to configure Elium and Microsoft Entra ID to automaticall
 >
 > This connector is currently in preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Elium.
+> * Remove users in Elium when they don't require access anymore.
+> * [Single sign-on](elium-tutorial.md) to Elium (recommended).
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 This article assumes that you already have the following prerequisites:
