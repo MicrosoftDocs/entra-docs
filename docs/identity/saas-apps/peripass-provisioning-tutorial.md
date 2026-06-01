@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Peripass and Micros
 > * Remove users in Peripass when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Peripass
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Peripass (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

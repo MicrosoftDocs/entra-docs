@@ -44,7 +44,9 @@ These protections are foundational. They're quick to enable and essential for es
 | **[Common networking HTTP protection](/entra/external-id/customers/reference-service-limits)** |These built‑in protections help filter malformed traffic, limit abusive request patterns, and mitigate common protocol‑level attacks.<br> **Note:** These safeguards support application stability, but high‑volume DDoS and sophisticated bots require WAF or bot‑mitigation integrations described later.  |Protects against common network attacks.  |Low – Sensitive actions only |None – Enabled by default |
 | **[Access Control](/entra/external-id/customers/how-to-use-app-roles-customers)** | Ensures users only access what they should by applying app roles and authorization rules.<br> **Note:** Access Control enforces authorization, not user verification -so combining it with MFA and adaptive controls enhances overall security. |Enforces authorization in applications.  |Medium– User adoption |Medium – Setup required | 
 | **[Enable multifactor authentication (MFA) for all users](concept-multifactor-authentication-customers.md)** |MFA adds a second verification step beyond passwords, significantly reducing the risk of account takeover.<br> **Note:** MFA limits stolen‑credential attacks but must be paired with fraud detection and monitoring to prevent automated or malicious sign‑up attempts.  |Adds second factor authentication. |High – User adoption |Medium – Setup required | 
+| **[Passkeys (FIDO2)](how-to-sign-in-with-passkey.md)** | Phishing-resistant, passwordless authentication that uses face, fingerprint, PIN, or a security key. A passkey satisfies MFA in a single gesture and can also serve as a primary, passwordless sign-in method. | Prevents phishing, password theft, and credential replay. | Low – Familiar gestures | Medium – Setup and credential management UX required |
 | **[Activity logging](/entra/identity/monitoring-health/concept-sign-ups) & [User insights](/entra/external-id/customers/how-to-user-insights)** |Activity logs and insights provide visibility into sign-ups, sign-ins, error patterns, and anomalies. They help you identify unusual trends and investigate issues quickly, supporting early detection, and informed decision making.  |Enables threat detection. | None — No end-user impact |Medium – Setup required |
+
 
 ### Priority 2: Short-term implementation
 
@@ -75,7 +77,6 @@ These security features have limitations or are unavailable in external tenants.
 
 |**Feature** | **Current limitation** |**Workaround** |
 |----|----|----|----|
-| **[Passkeys (FIDO2)](/entra/identity/authentication/concept-authentication-passkeys-fido2)** | Passkey registration isn't supported in external tenants.  | Use built-in controls. |
 | **[ID Protection](/entra/id-protection/overview-identity-protection)** | ID Protection isn’t supported in external tenants. | Not available in external tenants.|
 
 ## Related content

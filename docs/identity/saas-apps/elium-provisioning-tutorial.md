@@ -21,6 +21,13 @@ This article shows how to configure Elium and Microsoft Entra ID to automaticall
 Elium is available in the following [national cloud deployments](/graph/deployments).
 
 [!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Elium.
+> * Remove users in Elium when they don't require access anymore.
+> * [Single sign-on](elium-tutorial.md) to Elium (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

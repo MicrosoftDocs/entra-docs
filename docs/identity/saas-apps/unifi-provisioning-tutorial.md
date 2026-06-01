@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both UNIFI and Microsoft
 > * Keep user attributes synchronized between Microsoft Entra ID and UNIFI
 > * Provision groups and group memberships in UNIFI
 > * [Single sign-on](unifi-tutorial.md) to UNIFI (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

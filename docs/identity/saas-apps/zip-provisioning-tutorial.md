@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Zip and Microsoft E
 > * Keep user attributes synchronized between Microsoft Entra ID and Zip
 > * Provision groups and group memberships in Zip
 > * [Single sign-on](zip-tutorial.md) to Zip (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

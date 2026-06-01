@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both ContractS CLM and M
 > * Keep user attributes synchronized between Microsoft Entra ID and ContractS CLM.
 > * Provision groups and group memberships in ContractS CLM.
 > * [Single sign-on](holmes-tutorial.md) to ContractS CLM (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

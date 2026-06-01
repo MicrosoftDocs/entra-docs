@@ -2,7 +2,7 @@
 title: What is cross-tenant synchronization in Microsoft Entra ID?
 description: Learn about cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: overview
-ms.date: 04/27/2026
+ms.date: 05/29/2026
 ms.custom: it-pro
 ai-usage: ai-assisted
 #customer intent: As a development, DevOps, or IT admin, I want to understand what cross-tenant synchronization is so that I can manage Microsoft Entra B2B collaboration across tenants in my organization.
@@ -251,12 +251,9 @@ If you don't make any changes to the synced user in the source tenant, the setti
 
 ### Group synchronization
 
-> [!IMPORTANT]
-> Group synchronization is currently in preview. This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 #### Is synchronization of groups supported?
 
-Yes, cross-tenant synchronization can create security groups in the target tenant. This capability is currently in preview.
+Yes, cross-tenant synchronization can create security groups in the target tenant. 
 
 When a group is synchronized, all members of the group who are in scope for synchronization are synchronized. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md?pivots=same-cloud-synchronization).
 

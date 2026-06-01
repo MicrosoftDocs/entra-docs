@@ -23,6 +23,7 @@ This article describes the steps you need to perform in both Grammarly and Micro
 > * Create users in Grammarly
 > * Remove users in Grammarly when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Grammarly
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
