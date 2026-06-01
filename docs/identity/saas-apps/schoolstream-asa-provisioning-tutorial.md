@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both SchoolStream ASA an
 > * Keep user attributes synchronized between Microsoft Entra ID and SchoolStream ASA.
 > * Provision groups and group memberships in SchoolStream ASA.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to SchoolStream ASA (recommended).
+> * Long lived bearer token authentication supported.
 
 
 ## Prerequisites

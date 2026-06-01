@@ -23,6 +23,16 @@ Cisco Webex is available in the following [national cloud deployments](/graph/de
 
 [!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Cisco Webex.
+> * Remove users in Cisco Webex when they don't require access anymore.
+> * Keep user attributes synchronized between Microsoft Entra ID and Cisco Webex.
+> * Provision groups and group memberships in Cisco Webex.
+> * [Single sign-on](cisco-webex-tutorial.md) to Cisco Webex (recommended).
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

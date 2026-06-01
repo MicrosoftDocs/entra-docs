@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Shopify Plus and Mi
 > * Remove users in Shopify Plus when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Shopify Plus
 > * [Single sign-on](./shopify-plus-tutorial.md) to Shopify Plus (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

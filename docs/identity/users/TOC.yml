@@ -142,8 +142,10 @@
       href: groups-lifecycle.md
     - name: Set up group self-service    
       href: groups-self-service-management.md
-    - name: Assign sensitivity labels
+    - name: Assign sensitivity labels to Microsoft 365 groups
       href: groups-assign-sensitivity-labels.md
+    - name: Assign sensitivity labels to security groups
+      href: groups-sensitivity-labels.md
   - name: Licenses
     items:
     - name: Assign licenses to users    

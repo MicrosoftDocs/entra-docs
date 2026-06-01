@@ -142,7 +142,7 @@ To get started with Microsoft Entra Connect Health, use the following steps:
 <a name='download-and-install-azure-ad-connect-health-agent'></a>
 
 ## Download and install Microsoft Entra Connect Health Agent
-* Make sure that you [satisfy the requirements](how-to-connect-health-agent-install.md#requirements) for Microsoft Entra Connect Health.
+* Make sure that you [satisfy the prerequisites](how-to-connect-health-agent-install.md#prerequisites) for Microsoft Entra Connect Health.
 * Get started using Microsoft Entra Connect Health for AD FS
     * [Download Microsoft Entra Connect Health Agent for AD FS.](https://www.microsoft.com/en-us/download/details.aspx?id=108565)
     * [See the installation instructions](how-to-connect-health-agent-install.md#install-the-agent-for-ad-fs).

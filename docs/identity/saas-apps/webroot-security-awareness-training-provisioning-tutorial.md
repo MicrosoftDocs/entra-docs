@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both Webroot Security Aw
 > * Remove users in Webroot Security Awareness Training when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Webroot Security Awareness Training
 > * Provision groups and group memberships in Webroot Security Awareness Training
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

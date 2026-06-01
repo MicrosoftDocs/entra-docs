@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both Taskize Connect and
 > * Keep user attributes synchronized between Microsoft Entra ID and Taskize Connect.
 > * Provision groups and group memberships in Taskize Connect
 > * [Single sign-on](taskize-connect-tutorial.md) to Taskize Connect (recommended).
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 
