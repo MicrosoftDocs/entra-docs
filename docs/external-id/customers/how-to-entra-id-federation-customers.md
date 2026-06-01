@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 #customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
 ---
-# Add a Microsoft Entra ID tenant as an OpenID Connect identity provider (Preview)
+# Add a Microsoft Entra ID tenant as an OpenID Connect identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

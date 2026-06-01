@@ -85,6 +85,8 @@ items:
       href: zero-trust-monitor-detect.md
     - name: Accelerate response and remediation
       href: zero-trust-response-remediation.md
+    - name: Configure agent identity security
+      href: zero-trust-ai.md
   - name: Identity secure score
     href: ~/identity/monitoring-health/concept-identity-secure-score.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Integrate your apps with Microsoft Entra ID
