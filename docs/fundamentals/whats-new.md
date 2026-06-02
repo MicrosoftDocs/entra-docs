@@ -47,7 +47,7 @@ What’s changing 
 
 *   Customers can switch existing provisioning configurations from basic authentication to workload identity–based authentication directly through updated connectivity settings in the provisioning experience, without needing to recreate or restart their configuration. 
 *   This method removes the need to store long-lived credentials and uses a standards-based authentication method between Entra and SAP SuccessFactors through SAP Cloud Identity Services.  
-*   This capability applies to the following provisioning scenarios:  
+This capability applies to the following provisioning scenarios:  
 *   [SAP SuccessFactors to Active Directory user provisioning](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial) 
 *   [SAP SuccessFactors to Microsoft Entra ID user provisioning](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial) 
 *   [SAP SuccessFactors writeback (Entra to SuccessFactors)](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-writeback-tutorial) 
@@ -57,7 +57,7 @@ What this means for you 
 
 *   If you are currently using basic authentication for any of the above SAP SuccessFactors provisioning integrations, you must upgrade to workload identity-based authentication before November 2026 to ensure uninterrupted operation of the integrations. 
 *   No immediate action is required, but we recommend planning your migration early to avoid last-minute disruption. 
-*   The new method improves security by:  
+The new method improves security by:  
 *   Eliminating stored passwords 
 *   Using short-lived, verifiable tokens 
 *   Aligning with SAP’s supported authentication model 
