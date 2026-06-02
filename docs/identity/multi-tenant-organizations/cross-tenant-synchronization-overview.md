@@ -4,6 +4,7 @@ description: Learn about cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: overview
 ms.date: 05/29/2026
 ms.custom: it-pro
+ms.reviewer: hafowler
 ai-usage: ai-assisted
 #customer intent: As a development, DevOps, or IT admin, I want to understand what cross-tenant synchronization is so that I can manage Microsoft Entra B2B collaboration across tenants in my organization.
 ---
