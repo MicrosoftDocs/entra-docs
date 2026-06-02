@@ -27,6 +27,8 @@
     href: concept-conditional-access-policy-common.md
   - name: Conditional Access policy components
     href: concept-conditional-access-policies.md
+  - name: Conditional Access for agent identities
+    href: agent-id.md
   - name: Assignments
     items: 
      - name: Users, groups, and roles
@@ -45,8 +47,6 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
-  - name: Conditional Access for agent identities
-    href: agent-id.md
   - name: Analyze impact
     href: concept-conditional-access-report-only.md
   - name: Service dependencies
@@ -90,6 +90,8 @@
   items:
   - name: Plan your Conditional Access deployment
     href: plan-conditional-access.md
+  - name: Build policies for agent identities
+    href: howto-target-agent-identities.md
   - name: Recommended policies
     items: 
     - name: Block legacy authentication
@@ -118,6 +120,8 @@
       items:
       - name: Block high-risk agent identities
         href: policy-agent-block-high-risk.md
+      - name: Agents' user accounts
+        href: policy-agent-user-account.md
       - name: Configure policy for autonomous agent access
         href: policy-autonomous-agents.md
       - name: Configure policy for on-behalf-of agent access

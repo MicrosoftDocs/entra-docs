@@ -6,9 +6,9 @@ ms.date: 04/30/2026
 ms.reviewer: etbasser
 ---
 
-# ID Protection for agents (Preview)
+# ID Protection for agents
 
-As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md) platform.
+As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks on agents that have agent identities provided by [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md).
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ To configure policies that use Agent Risk as a condition, you must have the [Con
 
 ## How it works
 
-Because agents can operate autonomously and on behalf of a user, they can display unique sign-in behavior. Agents can take initiative, interact with sensitive data, and operate at scale. Microsoft Entra ID Protection for agents is designed to identify and mitigate risks associated with these capabilities. The system determines a baseline for an agent's normal activity and then continuously monitors it for anomalies in Microsoft Entra ID. Once an agent exhibits suspicious behavior, ID Protection flags the activity and marks it as risky. 
+Because agents can operate autonomously and on behalf of (OBO) a user, they can display unique sign-in behavior. Agents can take initiative, interact with sensitive data, and operate at scale. Microsoft Entra ID Protection for agents is designed to identify and mitigate risks associated with these capabilities. The system determines a baseline for an agent's normal activity and then continuously monitors it for anomalies in Microsoft Entra ID. Once an agent exhibits suspicious behavior, ID Protection flags the activity and marks it as risky. 
 
 ## Activities contributing to risk
 
@@ -38,9 +38,11 @@ The following table provides the anomalous activities that can contribute to the
 | Unfamiliar resource access | Offline  | Agent targeted resources that it doesn't usually access. This detection can mean that an attacker is trying to access sensitive resources beyond the agent's intended purpose. | unfamiliarResourceAccess |
 | Sign-in spike | Offline | Agent made a higher number of sign-ins compared to its usual sign-in frequency. This spike can be an indicator that an attacker is using automation or a toolkit. | signInSpike | 
 | Failed access attempt | Offline  | Agent attempted and failed to access resources for which it isn't authorized. This detection can indicate an attacker is attempting to replay an agent's token against an unauthorized resource. | failedAccessAttempt |
-| Sign-in by risky user  | Offline | Agent signed in on behalf of a risky user during a delegated authentication. This detection means that an attacker might be using a compromised user's credentials to exploit an agent. | riskyUserSignIn |
 | Confirmed compromised | Offline | Admin confirmed agent compromised | adminConfirmedAgentCompromised |
 | Microsoft Entra threat intelligence | Offline | Microsoft identified activity that is consistent with known attack patterns based on its internal and external threat intelligence sources. | threatIntelligenceAccount |
+
+> [!NOTE]
+> In OBO flows, where an agent acts using a user's delegated permissions, risky activity is attributed to the **user** rather than the agent. This approach targets remediation at the compromised user session without disrupting the agent for other users. Risk detections in this table apply specifically to autonomous agent activity.
 
 ## View the risky agent report
 

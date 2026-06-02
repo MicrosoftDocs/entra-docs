@@ -1,12 +1,13 @@
 ---
 title: Conditional Access for High-Risk Agent Identities
 description: Learn how to configure Conditional Access policies to block risky agent identities. Follow best practices to enhance security in Microsoft Entra.
-ms.date: 04/30/2026
+ms.date: 06/02/2026
+ai-usage: ai-assisted
 ms.topic: how-to
 ms.reviewer: kvenkit
 ms.custom: msecd-doc-authoring-1012
 ---
-# Block access for high-risk agent identities (Preview)
+# Block access for high-risk agent identities
 
 This Conditional Access policy template blocks [agent identities](../../agent-id/what-are-agent-identities.md) that are detected as high risk by [Microsoft Entra ID Protection](../../id-protection/concept-risky-agents.md), helping prevent potentially compromised AI agents from accessing your organization's resources.
 
@@ -23,9 +24,9 @@ The following steps create a Conditional Access policy to block agent identities
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. Create a meaningful standard for the names of your policies.
-1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
-   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
-      1. Under **Include**, select **All agent identities (Preview)**.
+1. Under **Assignments**, select **Users, agents or workload identities**. 
+   1. Under **What does this policy apply to?**, select **Agents**.
+      1. Under **Include**, select **All agent identities**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
    1. Include, **All resources (formerly 'All cloud apps')**.

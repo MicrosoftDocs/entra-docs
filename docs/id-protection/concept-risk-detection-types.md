@@ -70,7 +70,7 @@ Location in risk detections is determined using IP address lookup. Sign-ins from
 > [!NOTE]
 > Looking for the **Risk detections mapped to riskEventType** table? It moved to the new [**Risk detection and event types**](concept-identity-protection-risks.md) article.
 
-## Agent detections (Preview)
+## Agent detections
 
 The **Risk detections** report includes a dedicated tab for **Agent detections** that displays risk detections specifically for autonomous AI agents using [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md). These detections help identify suspicious activities associated with agents, allowing administrators to monitor and respond to potential threats effectively. For a list of the risk detections associated with agents, see [ID Protection for agents](concept-risky-agents.md#activities-contributing-to-risk).
 
