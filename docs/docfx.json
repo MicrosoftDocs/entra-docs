@@ -175,6 +175,10 @@
         "workload-id/**/*.md": "kengaderdus",
         "workload-id/**/*.yml": "kengaderdus"
       },
+      "ms.reviewer": {
+        "identity/multi-tenant-organizations/**/*.md": "hafowler",
+        "identity/multi-tenant-organizations/**/*.yml": "hafowler",
+      },
       "ms.service": {
         "agent-id/**/*.md": "entra-id",
         "agent-id/**/*.yml": "entra-id",
