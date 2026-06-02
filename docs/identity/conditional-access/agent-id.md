@@ -27,7 +27,7 @@ To access a corporate resource such as SharePoint file, MCP servers, or Open API
  
 When a Conditional Access policy applies, Microsoft Entra ID evaluates the configured policy requirements before issuing the token. If the requirements are satisfied, an access token is issued. The token is then presented to the target resource, which validates the token and uses its claims to make authorization decisions.
 
-The following diagram illustrates the data access patterns.
+The following diagram illustrates this process.
 
 :::image type="content" source="media/agent-id/data-access-patterns-diagram.png" alt-text="Diagram showing the data access patterns for agent identities." lightbox="media/agent-id/data-access-patterns-diagram.png":::
 
