@@ -2,15 +2,10 @@
 title: Configure LifeBalance Program for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and LifeBalance Program.
 services: active-directory
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/02/2024
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LifeBalance Program so that I can control who has access to LifeBalance Program, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -27,7 +22,7 @@ Manage your accounts in one central location: the Azure portal.
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a Microsoft Entra subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * LifeBalance Program single sign-on (SSO) enabled subscription with a custom domain. If you don't have a LifeBalance Program subscription you can visit the [LifeBalance sales page](https://sales.lifebalanceprogram.com/).
 
 ## Add LifeBalance Program from the gallery

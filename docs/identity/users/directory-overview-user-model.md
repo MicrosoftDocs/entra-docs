@@ -2,19 +2,17 @@
 title: Users, groups, licensing, and roles in Microsoft Entra ID
 description: The relationship between users and licenses assigned, administrator roles, dynamic membership groups in Microsoft Entra ID
 keywords: 
-author: barclayn
-manager: pmwongera
-ms.author: barclayn
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.date: 01/31/2025
 ms.topic: overview
-ms.service: entra-id
-ms.subservice: users
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ---
 # What is enterprise user management?
+
+
+## Overview
 
 This article introduces an administrator for Microsoft Entra ID, part of Microsoft Entra, to the relationship between top [identity management](~/fundamentals/what-is-entra.md?context=azure/active-directory/users-groups-roles/context/ugr-context) tasks for users in terms of their groups, licenses, deployed enterprise apps, and administrator roles. As your organization grows, you can use Microsoft Entra groups and administrator roles to:
 
@@ -26,14 +24,14 @@ This article introduces an administrator for Microsoft Entra ID, part of Microso
 
 You can use groups in Microsoft Entra ID to assign licenses, or deployed enterprise apps, to large numbers of users. You can also use groups to assign all administrator roles except for Microsoft Entra Global Administrator, or you can grant access to external resources, such as SaaS applications or SharePoint sites.
 
-You can use [dynamic membership groups](groups-create-rule.md) in Microsoft Entra ID to expand and contract dynamic membership groups automatically. Dynamic groups give you greater flexibility and they reduce dynamic membership group management work. 
+You can use [dynamic membership groups](groups-create-rule.md) in Microsoft Entra ID to expand and contract dynamic membership groups automatically. Dynamic groups give you greater flexibility and reduce dynamic membership group management work.
 
 > [!NOTE]
 > You need a Microsoft Entra ID P1 license for each unique user that is a member of one or more dynamic membership groups.
 
 ## Assign licenses to groups
 
-Managing user license assignments individually is time consuming and error prone. If you [assign licenses to groups](~/fundamentals/license-users-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context) instead, you experience easier large-scale license management.
+Managing user license assignments individually is time consuming and error prone. If you [assign licenses to groups](~/fundamentals/licensing.md?context=azure/active-directory/users-groups-roles/context/ugr-context) instead, you experience easier large-scale license management.
 
 Microsoft Entra users who join a licensed group are automatically assigned the appropriate licenses. When users leave the group, Microsoft Entra ID removes their license assignments. Without Microsoft Entra groups, you'd have to write a PowerShell script or use Graph API to bulk add or remove user licenses for users joining or leaving the organization. For more information about group bulk operations, see [Bulk upload to add or create members of a group](~/identity/users/groups-bulk-import-members.md).
 
@@ -49,7 +47,7 @@ Many large organizations want options for their users to obtain sufficient permi
  **Cloud Application Administrator** | Can add and manage enterprise applications and enterprise app registrations. This role has all of the permissions of the Application Administrator, except it can't manage application proxy settings.
 **Application Developer** | Can add and update application registrations, but can't manage enterprise applications or configure an application proxy.
 
-New Microsoft Entra administrator roles are being added. Check the Azure portal or the [administrator role permission reference](~/identity/role-based-access-control/permissions-reference.md) for current available roles.
+New Microsoft Entra administrator roles continue to be added. Check the Azure portal or the [administrator role permission reference](~/identity/role-based-access-control/permissions-reference.md) for currently available roles.
 
 ## Assign app access
 
@@ -67,5 +65,5 @@ Microsoft Entra ID also gives you specific control of the data that flows betwee
 
 If you're a beginning Microsoft Entra administrator, get the basics down in [Microsoft Entra Fundamentals](~/fundamentals/index.yml).
 
-Or you can start [creating groups](/entra/fundamentals/how-to-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](~/fundamentals/license-users-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).
+Or you can start [creating groups](/entra/fundamentals/how-to-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](~/fundamentals/licensing.md?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).
 

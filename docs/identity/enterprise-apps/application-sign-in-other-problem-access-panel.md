@@ -2,14 +2,8 @@
 title: Troubleshoot problems signing in to an application from My Apps portal
 description: Troubleshoot problems signing in to an application from Microsoft Entra My Apps
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: troubleshooting
 ms.date: 09/05/2023
-ms.author: jomondi
 ms.reviewer: lenalepa
 ms.custom: enterprise-apps
 

@@ -1,17 +1,15 @@
 ---
 title: How to use enriched Microsoft 365 logs
-description: Learn how to use enriched Microsoft 365 logs for Global Secure Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
+description: "View performance, experience, and availability insights for Microsoft 365 apps routed through Microsoft Entra Internet Access. Integrate enriched log data with Log Analytics or Microsoft Sentinel for network diagnostics and security analysis."
 ms.topic: how-to
-ms.date: 03/19/2025
-ms.service: global-secure-access
+ms.date: 05/27/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # How to use the Global Secure Access enriched Microsoft 365 logs
+
+## Overview
 
 With your Microsoft traffic flowing through the Microsoft Entra Internet Access for Microsoft Services, you want to gain insights into the performance, experience, and availability of the Microsoft 365 apps your organization uses. With Global Secure Access, Microsoft 365 Audit logs can be easily enriched with the information you need to gain these insights. You can integrate the logs with a third-party security information and event management (SIEM) tool for further analysis.
 
@@ -21,18 +19,18 @@ This article describes the information in the logs and how to use them for the a
 
 To use the enriched logs, you need the following roles, configurations, and subscriptions:
 
-### Roles and Permissions
+### Required roles and permissions
 
 - A **Security Administrator** role is required to export Global Secure Access Network Traffic Logs in Diagnostic Settings.
 
-### Configurations
+### Required configurations
 
 - **Microsoft Profile** - Ensure the Microsoft traffic profile is enabled. Microsoft traffic forwarding profile is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
 - **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service.
-- **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace or Sentinel workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article.
+- **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace or Sentinel workspace. The requirements for each endpoint differ and are outlined in the [Configure Diagnostic settings](#configure-diagnostic-settings) section of this article.
 - **Export the OfficeActivity log table** - The OfficeActivity table must be exported to the same LogAnalytics or Microsoft Sentinel workspace as the GSA traffic logs, or another third-party SIEM or Log system.
 
-### Subscriptions
+### Required subscriptions
 
 - The product requires licensing to enable the traffic forwarding profile for Microsoft Services. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
@@ -47,7 +45,7 @@ These logs provide:
 - Additional information added to original logs
 - Accurate IP address
 
-Following the steps in this article, the logs are enriched with more information, including the device ID, operating system, and original IP address. Enriched SharePoint logs provide information on files that were downloaded, uploaded, deleted, modified, or recycled. Deleted or recycled list items are also included in the enriched logs.
+After you enable the Microsoft traffic forwarding profile and configure diagnostic settings, the logs include the device ID, operating system, and original IP address. Enriched SharePoint logs provide information on files that were downloaded, uploaded, deleted, modified, or recycled. Deleted or recycled list items are also included in the enriched logs.
 
 ## How to view the logs
 
@@ -57,7 +55,7 @@ Viewing enriched Microsoft 365 audit logs is a one-time, two-step process. First
 > At this time, only SharePoint Online logs are available for log enrichment.
 
 > [!NOTE]
-> MS365 audit logs have undergone a feature change. Instead of creating a separate new stream of logs, you can now leverage the two existing log tables &mdash; Microsoft  365 OfficeActivity and Global Secure Access NetworkAccessTraffic tables &mdash; then combine the data using a Unique Token Id. 
+> MS365 audit logs have undergone a feature change. Instead of creating a separate new stream of logs, you can now leverage the two existing log tables &mdash; Microsoft  365 OfficeActivity and Global Secure Access NetworkAccessTraffic tables &mdash; then combine the data using a Unique Token ID. 
 
 ### Configure Diagnostic settings
 

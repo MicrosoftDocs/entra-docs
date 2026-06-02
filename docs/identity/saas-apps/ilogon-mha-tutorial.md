@@ -2,15 +2,10 @@
 title: Configure iLOGON_MHA for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and iLOGON_MHA.
 services: active-directory
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/22/2024
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 
@@ -26,7 +21,7 @@ Manage your accounts in one central location: the Azure portal.
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * iLOGON_MHA single sign-on (SSO) enabled subscription.
 
 ## Add iLOGON_MHA from the gallery

@@ -11,7 +11,7 @@ The following API and HTTP scheme-based application ID URI formats are supported
 
 | Supported application ID <br/> URI formats | Example app ID URIs |
 |--|--|
-| *api://\<appId\>* | *api://00001111-aaaa-2222-bbbb-3333cccc4444* |
+| *api://\<appId\>* | *api://aaaabbbb-0000-cccc-1111-dddd2222eeee* |
 | *api://\<tenantId\>/\<appId\>* | *api://aaaabbbb-0000-cccc-1111-dddd2222eeee/00001111-aaaa-2222-bbbb-3333cccc4444* |
 | *api://\<tenantId\>/\<string\>* | *api://aaaabbbb-0000-cccc-1111-dddd2222eeee/api* |
 | *api://\<string\>/<appId\>* | *api://productapi/00001111-aaaa-2222-bbbb-3333cccc4444* |

@@ -4,12 +4,11 @@ description: In this tutorial, you learn how to access data in Microsoft Graph f
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: azureday1
+ms.custom:
 ms.date: 09/15/2023
-ms.devlang: csharp
 ms.reviewer: stsoneff
-ms.service: azure-app-service
-ms.subservice: web-apps
+ms.service: identity-platform
+ms.subservice:
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph from a web app for a signed-in user.
 ---

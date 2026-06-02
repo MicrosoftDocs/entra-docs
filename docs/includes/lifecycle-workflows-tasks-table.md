@@ -20,21 +20,26 @@ Lifecycle Workflows currently support the following tasks:
 | [Assign licenses to user](../id-governance/lifecycle-workflow-tasks.md#assign-licenses-to-user)     |  683c87a4-2ad4-420b-97d4-220d90afcd24       | Joiner, Mover         | 
 | [Add user to groups](../id-governance/lifecycle-workflow-tasks.md#add-user-to-groups)     |    22085229-5809-45e8-97fd-270d28d66910     | Joiner, Leaver, Mover |
 | [Add user to teams](../id-governance/lifecycle-workflow-tasks.md#add-user-to-teams)      |  e440ed8d-25a1-4618-84ce-091ed5be5594       | Joiner, Leaver, Mover | 
+| [Update user attributes (Preview)](../id-governance/lifecycle-workflow-tasks.md#update-user-attributes-preview)    |    2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     | Joiner, Leaver, Mover         |
 |[Enable user account](../id-governance/lifecycle-workflow-tasks.md#enable-user-account)     |    6fc52c9d-398b-4305-9763-15f42c1676fc     | Joiner, Leaver | 
 | [Run a custom task extension](../id-governance/lifecycle-workflow-tasks.md#run-a-custom-task-extension)    |    4262b724-8dba-4fad-afc3-43fcbb497a0e    | Joiner, Leaver, Mover | 
 | [Disable user account](../id-governance/lifecycle-workflow-tasks.md#disable-user-account)     |   1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950      | Leaver |
 | [Remove user from selected groups](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-selected-groups)     |   1953a66c-751c-45e5-8bfe-01462c70da3c      | Joiner, Leaver, Mover |
 | [Remove users from all groups](../id-governance/lifecycle-workflow-tasks.md#remove-users-from-all-groups)     |    b3a31406-2a15-4c9a-b25b-a658fa5f07fc     | Leaver | 
-| [Remove user from teams](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-teams)    |    06aa7acb-01af-4824-8899-b14e5ed788d6     | Leaver        | 
+| [Remove user from selected teams](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-selected-teams)    |    06aa7acb-01af-4824-8899-b14e5ed788d6     | Leaver        | 
 | [Remove user from all teams](../id-governance/lifecycle-workflow-tasks.md#remove-users-from-all-teams)     |    81f7b200-2816-4b3b-8c5d-dc556f07b024     | Leaver        | 
 | [Remove access package assignment for user](../id-governance/lifecycle-workflow-tasks.md#remove-access-package-assignment-for-user)     |    4a0b64f2-c7ec-46ba-b117-18f262946c50     | Leaver, Mover        | 
 | [Remove all access package assignments for user](../id-governance/lifecycle-workflow-tasks.md#remove-all-access-package-assignments-for-user)     |    42ae2956-193d-4f39-be06-691b8ac4fa1d     | Leaver        | 
 | [Cancel all pending access package assignment requests for user](../id-governance/lifecycle-workflow-tasks.md#cancel-all-pending-access-package-assignment-requests-for-user)     |    498770d9-bab7-4e4c-b73d-5ded82a1d0b3    | Leaver        |
 | [Remove selected license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-selected-license-assignments-from-user)     | 5fc402a8-daaf-4b7b-9203-da868b05fc5f         | Leaver, Mover |
 | [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user)     | 509589a4-0466-4471-829e-49c5e502bdee         | Leaver, Mover |
+| [Send email to manager about sponsorship changes](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes)     | b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f        | Leaver, Mover |
+| [Send email to co-sponsors about sponsor changes](../id-governance/lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes)     | ad3b85cd-75b1-43e7-b4b9-0e52faba3944        | Leaver, Mover |
+| [Transfer agent identity sponsorships to manager](../id-governance/lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager)     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      | Leaver, Mover         |
 | [Remove all license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-all-license-assignments-from-user)     | 8fa97d28-3e52-4985-b3a9-a1126f9b8b4e         | Leaver |
 | [Delete user](../id-governance/lifecycle-workflow-tasks.md#delete-user)   |    8d18588d-9ad3-4c0f-99d0-ec215f0e3dff     | Leaver         |
 | [Send email to manager before user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-before-users-last-day)    |    52853a3e-f4e5-4eb8-bb24-1ac09a1da935     | Leaver         |
 | [Send email on user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-on-users-last-day)    |    9c0a1eaf-5bda-4392-9d9e-6e155bb57411     | Leaver         | 
 | [Send email to user's manager after their last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-users-manager-after-their-last-day)    |    6f22ddd4-b3a5-47a4-a846-0d7c201a49ce     | Leaver         |
+| [Send email about user inactivity](../id-governance/lifecycle-workflow-tasks.md#send-email-about-user-inactivity)    |    92f74cb4-f1b6-4ec0-b766-96210f56edc2     | Leaver         |
 

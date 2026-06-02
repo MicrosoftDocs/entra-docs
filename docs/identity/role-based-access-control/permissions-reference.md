@@ -1,21 +1,15 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-author: rolyon
-manager: pmwongera
-search.appverid: MET150
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 08/12/2025
-ms.author: rolyon
+ms.date: 05/21/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 
 # Microsoft Entra built-in roles
 
-In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
+In Microsoft Entra ID, if another administrator or nonadministrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
 
 This article lists the Microsoft Entra built-in roles you can assign to allow management of Microsoft Entra resources. For information about how to assign roles, see [Assign Microsoft Entra roles](manage-roles-portal.md). If you are looking for roles to manage Azure resources, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
@@ -26,7 +20,11 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > [!div class="mx-tableFixed"]
 > | Role | Description | Template ID |
 > | --- | --- | --- |
-> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365. | d2562ede-74db-457e-a7b6-544e236ebb61 |
+> | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent identity blueprint principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | db506228-d27e-4b7d-95e5-295956d6615f |
+> | [Agent ID Developer](#agent-id-developer) | Create an agent identity blueprint and its agent identity blueprint principal in a tenant. User will be added as an owner of the created agent identity blueprint and its agent identity blueprint principal. | adb2368d-a9be-41b5-8667-d96778e081b0 |
+> | [Agent Registry Administrator](#agent-registry-administrator) | Manage all aspects of the Agent Registry service in Microsoft Entra ID | 6b942400-691f-4bf0-9d12-d8a254a2baf5 |
+> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d2562ede-74db-457e-a7b6-544e236ebb61 |
+> | [AI Reader](#ai-reader) | Read all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 1fe13547-53f6-408d-ac04-7f8eed167b38 |
 > | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
 > | [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | cf1c38e5-3621-4004-a7cb-879624dced7c |
 > | [Attack Payload Author](#attack-payload-author) | Can create attack payloads that an administrator can initiate later. | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f |
@@ -41,34 +39,40 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Attribute Provisioning Reader](#attribute-provisioning-reader) | Read the provisioning configuration of all active custom security attributes for an application.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 422218e4-db15-4ef9-bbe0-8afb41546d79 |
 > | [Authentication Administrator](#authentication-administrator) | Can access to view, set and reset authentication method information for any non-admin user.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | c4e39bd9-1100-46d3-8c65-fb160da0071f |
 > | [Authentication Extensibility Administrator](#authentication-extensibility-administrator) | Customize sign in and sign up experiences for users by creating and managing custom authentication extensions.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 25a516ed-2fa0-40ea-a2d0-12923a21473a |
+> | [Authentication Extensibility Password Administrator](#authentication-extensibility-password-administrator) | Trigger a password submit event for custom authentication.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 0b00bede-4072-4d22-b441-e7df02a1ef63 |
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
-> | [Azure DevOps Administrator](#azure-devops-administrator) | Can manage Azure DevOps policies and settings. | e3973bdf-4987-49ae-837a-ba8e231c7286 |
+> | [Azure DevOps Administrator](#azure-devops-administrator) | Manage Azure DevOps policies and settings. | e3973bdf-4987-49ae-837a-ba8e231c7286 |
 > | [Azure Information Protection Administrator](#azure-information-protection-administrator) | Can manage all aspects of the Azure Information Protection product. | 7495fdc4-34c4-4d15-a289-98788ce399fd |
 > | [B2C IEF Keyset Administrator](#b2c-ief-keyset-administrator) | Can manage secrets for federation and encryption in the Identity Experience Framework (IEF).<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | aaf43236-0c0d-4d5f-883a-6955382ac081 |
 > | [B2C IEF Policy Administrator](#b2c-ief-policy-administrator) | Can create and manage trust framework policies in the Identity Experience Framework (IEF). | 3edaf663-341e-4475-9f94-5c398ef6c070 |
 > | [Billing Administrator](#billing-administrator) | Can perform common billing related tasks like updating payment information. | b0f54661-2d74-4c50-afa3-1ec803f12efe |
-> | [Cloud App Security Administrator](#cloud-app-security-administrator) | Can manage all aspects of the Defender for Cloud Apps product. | 892c5842-a9a6-463a-8041-72aa08ca3cf6 |
+> | [Cloud App Security Administrator](#cloud-app-security-administrator) | Manage all aspects of the Defender for Cloud Apps product. | 892c5842-a9a6-463a-8041-72aa08ca3cf6 |
 > | [Cloud Application Administrator](#cloud-application-administrator) | Can create and manage all aspects of app registrations and enterprise apps except App Proxy.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 158c047a-c907-4556-b7ef-446551a6b5f7 |
 > | [Cloud Device Administrator](#cloud-device-administrator) | Limited access to manage devices in Microsoft Entra ID.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 7698a772-787b-4ac8-901f-60d6b08affd2 |
 > | [Compliance Administrator](#compliance-administrator) | Can read and manage compliance configuration and reports in Microsoft Entra ID and Microsoft 365. | 17315797-102d-40b4-93e0-432062caca18 |
 > | [Compliance Data Administrator](#compliance-data-administrator) | Creates and manages compliance content. | e6d1a23a-da11-4be4-9570-befc86d067a7 |
 > | [Conditional Access Administrator](#conditional-access-administrator) | Can manage Conditional Access capabilities.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | b1be1c3e-b65d-4f19-8427-f6fa0d97feb9 |
-> | [Customer LockBox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
+> | [Customer Delegated Admin Relationship Administrator](#customer-delegated-admin-relationship-administrator) | Manage all aspects of granular delegated admin privileges (GDAP) relationships in a customer tenant. | fc8ad4e2-40e4-4724-8317-bcda7503ecbf |
+> | [Customer Lockbox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
 > | [Desktop Analytics Administrator](#desktop-analytics-administrator) | Can access and manage Desktop management tools and services. | 38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4 |
 > | [Directory Readers](#directory-readers) | Can read basic directory information. Commonly used to grant directory read access to applications and guests. | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b |
 > | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service. | d29b2b05-8046-44ba-8758-1e26182fcf32 |
 > | [Directory Writers](#directory-writers) | Can read and write basic directory information. For granting access to applications, not intended for users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9360feb5-f418-4baa-8175-e2a00bac4301 |
 > | [Domain Name Administrator](#domain-name-administrator) | Can manage domain names in cloud and on-premises.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8329153b-31d0-4727-b945-745eb3bc5f31 |
+> | [Dragon Administrator](#dragon-administrator) | Manage all aspects of the Microsoft Dragon admin center. | e93e3737-fa85-474a-aee4-7d3fb86510f3 |
 > | [Dynamics 365 Administrator](#dynamics-365-administrator) | Can manage all aspects of the Dynamics 365 product. | 44367163-eba1-44c3-98af-f5787879f96a |
 > | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Access and perform all administrative tasks on Dynamics 365 Business Central environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
+> | [Entra Backup Administrator](#entra-backup-administrator) | Manage all aspects of Microsoft Entra Backup, such as create recovery jobs and manage backup snapshots. | b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb |
+> | [Entra Backup Reader](#entra-backup-reader) | Read all aspects of Microsoft Entra Backup, such as list all preview jobs, recovery jobs, backup snapshots, and create preview jobs. | f42252d9-5400-4d7b-b9ef-cc582dbb8577 |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
+> | [Exchange Backup Administrator](#exchange-backup-administrator) | Back up and restore content (including granular restore) for Exchange in Microsoft 365 Backup | 49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31 |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
 > | [Extended Directory User Administrator](#extended-directory-user-administrator) | Manage all aspects of external user profiles in the extended directory for Teams. | dd13091a-6207-4fc0-82ba-3641e056ab95 |
 > | [External ID User Flow Administrator](#external-id-user-flow-administrator) | Can create and manage all aspects of user flows. | 6e591065-9bad-43ed-90f3-e9424366d2f0 |
 > | [External ID User Flow Attribute Administrator](#external-id-user-flow-attribute-administrator) | Can create and manage the attribute schema available to all user flows. | 0f971eea-41eb-4569-a71e-57bb8a3eff1e |
 > | [External Identity Provider Administrator](#external-identity-provider-administrator) | Can configure identity providers for use in direct federation.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | be2f45a1-457d-42af-a067-6ec1fa63bc45 |
-> | [Fabric Administrator](#fabric-administrator) | Can manage all aspects of the Fabric and Power BI products. | a9ea8996-122f-4c74-9520-8edcd192826c |
+> | [Fabric Administrator](#fabric-administrator) | Manage all aspects of the Fabric and Power BI products. | a9ea8996-122f-4c74-9520-8edcd192826c |
 > | [Global Administrator](#global-administrator) | Can manage all aspects of Microsoft Entra ID and Microsoft services that use Microsoft Entra identities.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 62e90394-69f5-4237-9190-012177145e10 |
 > | [Global Reader](#global-reader) | Can read everything that a Global Administrator can, but not update anything.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | f2ef992c-3afb-46b9-b7cf-a126ee74c451 |
 > | [Global Secure Access Administrator](#global-secure-access-administrator) | Create and manage all aspects of Global Secure Internet Access and Microsoft Global Secure Private Access, including managing access to public and private endpoints. | ac434307-12b9-4fa1-a708-88bf58caabc1 |
@@ -77,15 +81,15 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Guest Inviter](#guest-inviter) | Can invite guest users independent of the 'members can invite guests' setting. | 95e79109-95c0-4d8e-aee3-d01accf2d47b |
 > | [Helpdesk Administrator](#helpdesk-administrator) | Can reset passwords for non-administrators and Helpdesk Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 729827e3-9c14-49f7-bb1b-9608f156bbb8 |
 > | [Hybrid Identity Administrator](#hybrid-identity-administrator) | Manage Active Directory to Microsoft Entra cloud provisioning, Microsoft Entra Connect, pass-through authentication (PTA), password hash synchronization (PHS), seamless single sign-on (seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2 |
-> | [Identity Governance Administrator](#identity-governance-administrator) | Manage access using Microsoft Entra ID for identity governance scenarios. | 45d8d3c5-c802-45c6-b32a-1d70b5e1e86e |
+> | [Identity Governance Administrator](#identity-governance-administrator) | Manage access using Microsoft Entra ID for identity governance scenarios.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 45d8d3c5-c802-45c6-b32a-1d70b5e1e86e |
 > | [Insights Administrator](#insights-administrator) | Has administrative access in the Microsoft 365 Insights app. | eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c |
 > | [Insights Analyst](#insights-analyst) | Access the analytical capabilities in Microsoft Viva Insights and run custom queries. | 25df335f-86eb-4119-b717-0ff02de207e9 |
-> | [Insights Business Leader](#insights-business-leader) | Can view and share dashboards and insights via the Microsoft 365 Insights app. | 31e939ad-9672-4796-9c2e-873181342d2d |
+> | [Insights Business Leader](#insights-business-leader) | View and share dashboards and insights via the Microsoft Viva Insights app. | 31e939ad-9672-4796-9c2e-873181342d2d |
 > | [Intune Administrator](#intune-administrator) | Can manage all aspects of the Intune product.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 3a2c62db-5318-420d-8d74-23affee5d9d5 |
 > | [IoT Device Administrator](#iot-device-administrator) | Provision new IoT devices, manage their lifecycle, configure certificates, and manage device templates. | 2ea5ce4c-b2d8-4668-bd81-3680bd2d227a |
 > | [Kaizala Administrator](#kaizala-administrator) | Can manage settings for Microsoft Kaizala. | 74ef975b-6605-40af-a5d2-b9539d836353 |
 > | [Knowledge Administrator](#knowledge-administrator) | Can configure knowledge, learning, and other intelligent features. | b5a8dcf3-09d5-43a9-a639-8e29ef291470 |
-> | [Knowledge Manager](#knowledge-manager) | Can organize, create, manage, and promote topics and knowledge. | 744ec460-397e-42ad-a462-8b3f9747a02c |
+> | [Knowledge Manager](#knowledge-manager) | Organize, create, manage, and promote topics and knowledge. | 744ec460-397e-42ad-a462-8b3f9747a02c |
 > | [License Administrator](#license-administrator) | Can manage product licenses on users and groups. | 4d6ac14f-3453-41d0-bef9-a3e0c569773a |
 > | [Lifecycle Workflows Administrator](#lifecycle-workflows-administrator) | Create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 59d46f88-662b-457b-bceb-5c3809e5908f |
 > | [Message Center Privacy Reader](#message-center-privacy-reader) | Can read security messages and updates in Office 365 Message Center only. | ac16e43d-7b2d-40e0-ac05-243ff356ab5b |
@@ -108,7 +112,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [People Administrator](#people-administrator) | Manage profile photos of users and people settings for all users in the organization. | 024906de-61e5-49c8-8572-40335f1e0e10 |
 > | [Permissions Management Administrator](#permissions-management-administrator) | Manage all aspects of Microsoft Entra Permissions Management. | af78dc32-cf4d-46f9-ba4e-4428526346b5 |
 > | [Places Administrator](#places-administrator) | Manage all aspects of the Microsoft Places service. | 78b0ccd1-afc2-4f92-9116-b41aedd09592 |
-> | [Power Platform Administrator](#power-platform-administrator) | Can create and manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate. | 11648597-926c-4cf3-9c36-bcebb0ba8dcc |
+> | [Power Platform Administrator](#power-platform-administrator) | Manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate. | 11648597-926c-4cf3-9c36-bcebb0ba8dcc |
 > | [Printer Administrator](#printer-administrator) | Can manage all aspects of printers and printer connectors. | 644ef478-e28f-4e28-b9dc-3fdde9aa0b1f |
 > | [Printer Technician](#printer-technician) | Can register and unregister printers and update printer status. | e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477 |
 > | [Privileged Authentication Administrator](#privileged-authentication-administrator) | Can access to view, set and reset authentication method information for any user (admin or non-admin).<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 7be44c8a-adaf-4e2a-84d6-ab2649e08a13 |
@@ -121,6 +125,8 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Security Reader](#security-reader) | Can read security information and reports in Microsoft Entra ID and Office 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 5d6b6bb7-de71-4623-b4af-96380a352509 |
 > | [Service Support Administrator](#service-support-administrator) | Can read service health information and manage support tickets. | f023fd81-a637-4b56-95fd-791ac0226033 |
 > | [SharePoint Administrator](#sharepoint-administrator) | Can manage all aspects of the SharePoint service. | f28a1f50-f6e7-4571-818b-6a12f2af6b6c |
+> | [SharePoint Advanced Management Administrator](#sharepoint-advanced-management-administrator) | Manage all aspects of SharePoint Advanced Management. | 99009c4a-3b3f-4957-82a9-9d35e12db77e |
+> | [SharePoint Backup Administrator](#sharepoint-backup-administrator) | Back up and restore content (including granular restore) for SharePoint and OneDrive in Microsoft 365 Backup | 9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be |
 > | [SharePoint Embedded Administrator](#sharepoint-embedded-administrator) | Manage all aspects of SharePoint Embedded containers. | 1a7d78b6-429f-476b-b8eb-35fb715fffd4 |
 > | [Skype for Business Administrator](#skype-for-business-administrator) | Can manage all aspects of the Skype for Business product. | 75941009-915a-4869-abe7-691bff18279e |
 > | [Teams Administrator](#teams-administrator) | Can manage the Microsoft Teams service. | 69091246-20e8-4a56-aa4d-066075b2a7a8 |
@@ -128,9 +134,14 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Teams Communications Support Engineer](#teams-communications-support-engineer) | Can troubleshoot communications issues within Teams using advanced tools. | f70938a0-fc10-4177-9e90-2178f8765737 |
 > | [Teams Communications Support Specialist](#teams-communications-support-specialist) | Can troubleshoot communications issues within Teams using basic tools. | fcf91098-03e3-41a9-b5ba-6f0ec8188a12 |
 > | [Teams Devices Administrator](#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. | 3d762c5a-1b6c-493f-843e-55a3b42923d4 |
+> | [Teams External Collaboration Administrator](#teams-external-collaboration-administrator) | Manage external collaboration policies and settings for Teams, including configuring external domains and controlling which groups and users can interact with the organization. | 2fe872fb-daa8-4afc-8f6c-53c4565cfef4 |
 > | [Teams Reader](#teams-reader) | Read everything in the Teams admin center, but not update anything. | 1076ac91-f3d9-41a7-a339-dcdf5f480acc |
 > | [Teams Telephony Administrator](#teams-telephony-administrator) | Manage voice and telephony features and troubleshoot communication issues within the Microsoft Teams service. | aa38014f-0993-46e9-9b45-30501a20909d |
 > | [Tenant Creator](#tenant-creator) | Create new Microsoft Entra or Azure AD B2C tenants. | 112ca1a2-15ad-4102-995e-45b0bc479a6a |
+> | [Tenant Governance Administrator](#tenant-governance-administrator) | Manage all capabilities in the Microsoft Entra Tenant Governance service. | 1981f584-96e9-4a6f-95b0-f522373f8fae |
+> | [Tenant Governance Reader](#tenant-governance-reader) | Can read all tenant governance data. | e0a4caa6-fe82-443f-b92f-d87341d17b2e |
+> | [Tenant Governance Relationship Administrator](#tenant-governance-relationship-administrator) | Can initiate governance relationships and terminate them. | b8e31d83-1534-480f-9b10-0338ded51b7e |
+> | [Tenant Governance Relationship Reader](#tenant-governance-relationship-reader) | Can read tenant governance relationships and relevant objects. | 124577f8-48ed-456a-839f-13b419002e33 |
 > | [Usage Summary Reports Reader](#usage-summary-reports-reader) | Read Usage reports and Adoption Score, but can't access user details. | 75934031-6c7e-415a-99d7-48dbd49e875e |
 > | [User Administrator](#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | fe930be7-5e62-47db-91af-98c3a49a38b1 |
 > | [User Experience Success Manager](#user-experience-success-manager) | View product feedback, survey results, and reports to find training and communication opportunities. | 27460883-1df1-4691-b032-3b79643e5e63 |
@@ -143,9 +154,25 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
 
 
+## Agent ID Administrator
+
+[!INCLUDE [agent-id-administrator](includes/agent-id-administrator.md)]
+
+## Agent ID Developer
+
+[!INCLUDE [agent-id-developer](includes/agent-id-developer.md)]
+
+## Agent Registry Administrator
+
+[!INCLUDE [agent-registry-administrator](includes/agent-registry-administrator.md)]
+
 ## AI Administrator
 
 [!INCLUDE [ai-administrator](includes/ai-administrator.md)]
+
+## AI Reader
+
+[!INCLUDE [ai-reader](includes/ai-reader.md)]
 
 ## Application Administrator
 
@@ -203,6 +230,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [authentication-extensibility-administrator](includes/authentication-extensibility-administrator.md)]
 
+## Authentication Extensibility Password Administrator
+
+[!INCLUDE [authentication-extensibility-password-administrator](includes/authentication-extensibility-password-administrator.md)]
+
 ## Authentication Policy Administrator
 
 [!INCLUDE [authentication-policy-administrator](includes/authentication-policy-administrator.md)]
@@ -251,7 +282,11 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [conditional-access-administrator](includes/conditional-access-administrator.md)]
 
-## Customer LockBox Access Approver
+## Customer Delegated Admin Relationship Administrator
+
+[!INCLUDE [customer-delegated-admin-relationship-administrator](includes/customer-delegated-admin-relationship-administrator.md)]
+
+## Customer Lockbox Access Approver
 
 [!INCLUDE [customer-lockbox-access-approver](includes/customer-lockbox-access-approver.md)]
 
@@ -275,6 +310,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [domain-name-administrator](includes/domain-name-administrator.md)]
 
+## Dragon Administrator
+
+[!INCLUDE [dragon-administrator](includes/dragon-administrator.md)]
+
 ## Dynamics 365 Administrator
 
 [!INCLUDE [dynamics-365-administrator](includes/dynamics-365-administrator.md)]
@@ -287,9 +326,21 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [edge-administrator](includes/edge-administrator.md)]
 
+## Entra Backup Administrator
+
+[!INCLUDE [entra-backup-administrator](includes/entra-backup-administrator.md)]
+
+## Entra Backup Reader
+
+[!INCLUDE [entra-backup-reader](includes/entra-backup-reader.md)]
+
 ## Exchange Administrator
 
 [!INCLUDE [exchange-administrator](includes/exchange-administrator.md)]
+
+## Exchange Backup Administrator
+
+[!INCLUDE [exchange-backup-administrator](includes/exchange-backup-administrator.md)]
 
 ## Exchange Recipient Administrator
 
@@ -523,6 +574,14 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [sharepoint-administrator](includes/sharepoint-administrator.md)]
 
+## SharePoint Advanced Management Administrator
+
+[!INCLUDE [sharepoint-advanced-management-administrator](includes/sharepoint-advanced-management-administrator.md)]
+
+## SharePoint Backup Administrator
+
+[!INCLUDE [sharepoint-backup-administrator](includes/sharepoint-backup-administrator.md)]
+
 ## SharePoint Embedded Administrator
 
 [!INCLUDE [sharepoint-embedded-administrator](includes/sharepoint-embedded-administrator.md)]
@@ -551,6 +610,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [teams-devices-administrator](includes/teams-devices-administrator.md)]
 
+## Teams External Collaboration Administrator
+
+[!INCLUDE [teams-external-collaboration-administrator](includes/teams-external-collaboration-administrator.md)]
+
 ## Teams Reader
 
 [!INCLUDE [teams-reader](includes/teams-reader.md)]
@@ -562,6 +625,22 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Tenant Creator
 
 [!INCLUDE [tenant-creator](includes/tenant-creator.md)]
+
+## Tenant Governance Administrator
+
+[!INCLUDE [tenant-governance-administrator](includes/tenant-governance-administrator.md)]
+
+## Tenant Governance Reader
+
+[!INCLUDE [tenant-governance-reader](includes/tenant-governance-reader.md)]
+
+## Tenant Governance Relationship Administrator
+
+[!INCLUDE [tenant-governance-relationship-administrator](includes/tenant-governance-relationship-administrator.md)]
+
+## Tenant Governance Relationship Reader
+
+[!INCLUDE [tenant-governance-relationship-reader](includes/tenant-governance-relationship-reader.md)]
 
 ## Usage Summary Reports Reader
 
@@ -619,21 +698,27 @@ The following roles should not be used. They have been deprecated and will be re
 
 ## Roles not shown in the portal
 
-Not every role returned by PowerShell or Microsoft Graph API is visible in Azure portal. The following table organizes those differences.
+Not every role returned by PowerShell or Microsoft Graph API is visible in Microsoft Entra roles interface. The following table organizes those differences.
 
 | API name | Microsoft Entra admin center portal name | Notes |
 | --- | --- | --- |
+| Agent User | Not shown because it's implicitly assigned to users of agents | NA |
 | Device Join | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Device Managers | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Device Users | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Directory Synchronization Accounts | Not shown because it shouldn't be used | [Directory Synchronization Accounts documentation](#directory-synchronization-accounts) |
-| Guest User | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
+| Guest User | Not shown because it can't be used | NA |
+| Microsoft 365 Support Engineer | Not shown because it shouldn't be used | [Microsoft 365 Support Engineer documentation](#microsoft-365-support-engineer) |
 | Modern Commerce Administrator | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
 | Partner Tier 1 Support | Not shown because it shouldn't be used | [Partner Tier1 Support documentation](#partner-tier1-support) |
 | Partner Tier 2 Support | Not shown because it shouldn't be used | [Partner Tier2 Support documentation](#partner-tier2-support) |
 | Restricted Guest User | Not shown because it can't be used | NA |
 | User | Not shown because it can't be used | NA |
 | Workplace Device Join | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
+
+### Microsoft 365 Support Engineer
+
+[!INCLUDE [microsoft-365-support-engineer](includes/microsoft-365-support-engineer.md)]
 
 ### Modern Commerce Administrator
 

@@ -16,8 +16,6 @@
     href: agent-optimization-logs-metrics.md
   - name: Phased rollout
     href: agent-optimization-phased-rollout.md
-  - name: Optimization agent FAQ
-    href: agent-optimization-faq.yml
 - name: Tutorials
   items:
   - name: Require multifactor authentication
@@ -35,6 +33,8 @@
        href: concept-conditional-access-users-groups.md
      - name: Target resources
        href: concept-conditional-access-cloud-apps.md
+     - name: Enforcement for baseline scopes
+       href: concept-enforcement-resource-exclusions.md
      - name: Network
        href: concept-assignment-network.md
      - name: Conditions
@@ -45,6 +45,8 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
+  - name: Conditional Access for agent identities
+    href: agent-id.md
   - name: Analyze impact
     href: concept-conditional-access-report-only.md
   - name: Service dependencies
@@ -52,9 +54,17 @@
   - name: Filter for applications
     href: concept-filter-for-applications.md
   - name: Token protection
-    href: concept-token-protection.md
+    items:
+    - name: Token protection overview
+      href: concept-token-protection.md
+    - name: Deploy token protection for Windows
+      href: deployment-guide-token-protection-windows.md
+    - name: Deploy token protection for Apple platforms
+      href: deployment-guide-token-protection-apple.md
   - name: Authentication flows
     href: concept-authentication-flows.md    
+  - name: Resilience defaults
+    href: resilience-defaults.md
   - name: Authentication transfer
     href: concept-authentication-transfer.md
   - name: Workload identities
@@ -94,7 +104,7 @@
       href: policy-all-users-security-info-registration.md
     - name: Require MFA for risky sign-in
       href: policy-risk-based-sign-in.md
-    - name: Require password change for risky users
+    - name: Require remediation for risky users
       href: policy-risk-based-user.md
     - name: Require authentication strength for device registration
       href: policy-all-users-device-registration.md
@@ -104,6 +114,14 @@
       href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
+    - name: Agent identities
+      items:
+      - name: Block high-risk agent identities
+        href: policy-agent-block-high-risk.md
+      - name: Configure policy for autonomous agent access
+        href: policy-autonomous-agents.md
+      - name: Configure policy for on-behalf-of agent access
+        href: policy-on-behalf-of-agents.md
     - name: Applications
       items:
       - name: Require approved app or app protection policy
@@ -124,6 +142,8 @@
         href: policy-all-users-persistent-browser.md
       - name: Require MFA for Intune enrollment
         href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+      - name: Restrict device code flow for Teams devices
+        href: policy-teams-devices-device-code-flow.md
     - name: Multifactor authentication
       items:
       - name: Require MFA for administrators
@@ -134,8 +154,6 @@
         href: policy-old-require-mfa-admin-portals.md
       - name: Require MFA for Azure management
         href: policy-old-require-mfa-azure-mgmt.md
-    - name: Conditional Access for Generative AI
-      href: policy-all-users-copilot-ai-security.md
     - name: Block users with elevated insider risk
       href: policy-risk-based-insider-block.md
     - name: Require terms of use to be accepted
@@ -152,6 +170,10 @@
     href: terms-of-use.md
   - name: Sign-in frequency and browser persistence control
     href: howto-conditional-access-session-lifetime.md
+  - name: Deploy Token Protection for Windows
+    href: deployment-guide-token-protection-windows.md
+  - name: Deploy Token Protection for Apple platforms
+    href: deployment-guide-token-protection-apple.md
   - name: Troubleshooting
     items:
     - name: Troubleshoot policy changes
@@ -160,8 +182,6 @@
       href: troubleshoot-conditional-access.md
     - name: Troubleshoot Security Copilot
       href: troubleshoot-security-copilot-policies.md
-    - name: Troubleshoot using the What If tool 
-      href: troubleshoot-conditional-access-what-if.md
     - name: Troubleshoot continuous access evaluation
       href: howto-continuous-access-evaluation-troubleshoot.md
   - name: Approved client app migration
@@ -184,10 +204,8 @@
       href: /graph/api/resources/conditionalaccesstemplate?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
   - name: Custom controls
     href: controls.md
-  - name: Classic policies
-    items:
-    - name: Migrate from classic policies
-      href: policy-migration-mfa.md
+  - name: Migrate custom controls to external MFA
+    href: how-to-migrate-custom-controls-external-mfa.md
 - name: Resources
   items:
   - name: Azure feedback forum
@@ -200,5 +218,3 @@
     href: ~/fundamentals/whats-new.md
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
-  - name: Videos
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory

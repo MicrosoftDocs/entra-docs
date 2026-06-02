@@ -2,16 +2,9 @@
 title: Configure PageDNA for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and PageDNA.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PageDNA so that I can control who has access to PageDNA, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -27,7 +20,7 @@ In this article,  you learn how to integrate PageDNA with Microsoft Entra ID. Wh
 
 To configure Microsoft Entra integration with PageDNA, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 * A PageDNA subscription with single sign-on enabled.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID. For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
@@ -87,7 +80,14 @@ Follow these steps to enable Microsoft Entra SSO.
         | **Identifier** |
         |------|
         |`https://stores.pagedna.com/<your site>/saml2ep.cgi`|
-        |`https://www.nationsprint.com/<your site>/saml2ep.cgi`|
+        |`https://www.nationsprint.com/clients/<your site>/saml2ep.cgi`|
+    
+    1. In the **Reply URL (Assertion Consumer Service URL)** box, type a URL by using one of the following patterns:
+
+        | **Reply URL** |
+        |------|
+        |`https://stores.pagedna.com/<your site>/saml2ep.cgi`|
+        |`https://www.nationsprint.com/clients/<your site>/saml2ep.cgi`|
 
     1. In the **Sign on URL** box, type a URL by using one of the following patterns:
 
@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
         |`https://stores.pagedna.com/<your site>`|
         |`https://<your domain>`|
         |`https://<your domain>/<your site>` |
-        |`https://www.nationsprint.com/<your site>`|
+        |`https://www.nationsprint.com/clients/<your site>`|
 
     > [!NOTE]
     > These values aren't real. Update these values with the actual Identifier and Sign on URL. To get these values, contact the [PageDNA support team](mailto:success@pagedna.com). You can also refer to the patterns shown in the **Basic SAML Configuration** pane.

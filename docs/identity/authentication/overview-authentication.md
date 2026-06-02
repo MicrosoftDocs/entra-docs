@@ -1,101 +1,86 @@
 ---
 title: Microsoft Entra authentication overview
-description: Learn about the different authentication methods and security features for user sign-ins with Microsoft Entra ID.
-
+description: Authentication is the process of verifying identity before granting access. Learn about the authentication methods available in Microsoft Entra ID.
+author: tilarso
+ms.author: tilarso
 ms.service: entra-id
-ms.subservice: authentication
-ms.topic: overview
-ms.date: 03/04/2025
+ms.topic: concept-article
+ms.custom: msecd-doc-authoring-108
+ms.date: 04/30/2026
 
-ms.author: justinha
-author: justinha
-manager: dougeby
-ms.reviewer: sahenry, michmcla
+#customer intent: As an identity administrator, I want to understand the authentication methods available in Microsoft Entra ID so that I can choose the right methods for my organization's security and user experience requirements.
 
-# Customer intent: As a Microsoft Entra administrator, I want to understand which Microsoft Entra features I can use to secure sign-in and make the user authentication process safe and easy.
 ---
-# What is Microsoft Entra authentication?
 
-One of the main features of an identity platform is to verify, or *authenticate*, credentials when a user signs in to a device, application, or service. In Microsoft Entra ID, authentication involves more than just the verification of a username and password. To improve security and reduce the need for help desk assistance, Microsoft Entra authentication includes the following components:
+# Microsoft Entra authentication overview
 
-* Self-service password reset
-* Microsoft Entra multifactor authentication
-* Hybrid integration to write password changes back to on-premises environment
-* Hybrid integration to enforce password protection policies for an on-premises environment
-* Passwordless authentication
+Authentication is a security process that verifies a user's identity before granting access to apps, services, devices, or networks.
 
-Take a look at our short video to learn more about these authentication components.
+## Authentication methods supported by Microsoft Entra ID
 
-> [!VIDEO https://learn-video.azurefd.net/vod/player?id=5ee3cad5-3360-48da-b520-1a0d96710a38]
+The following table outlines when an authentication method can be used for primary authentication (first factor), secondary authentication with Microsoft Entra multifactor authentication (MFA), self-service password reset (SSPR), or account recovery.
 
-## Improve the end-user experience
+| Method | Primary authentication | Secondary authentication | SSPR / Account recovery |
+|---|---|---|---|
+| [Authenticator Lite](how-to-mfa-authenticator-lite.md) | No | MFA | No |
+| [Certificate-based authentication](concept-certificate-based-authentication.md) | Yes | MFA | No |
+| [Email OTP](concept-sspr-howitworks.md#authentication-methods) | No | SSPR and sign-in<sup>2</sup> | SSPR |
+| [External MFA](how-to-authentication-external-method-manage.md) | No | MFA | No |
+| [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview) | No | MFA | SSPR |
+| [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md#passwordless-sign-in-via-notifications) | Yes | No | No |
+| [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app) | Yes | MFA | SSPR |
+| [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md) | Yes | MFA | No |
+| [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app.md) | Yes | MFA | No |
+| Password | Yes | No | No |
+| [Platform Credential for macOS](concept-authentication-platform-credential-for-macos.md) | Yes | MFA | No |
+| [QR code](concept-authentication-qr-code.md) | Yes | No | No |
+| [SMS sign-in](howto-authentication-sms-signin.md) | Yes | MFA | SSPR |
+| [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens) | No | MFA | SSPR |
+| [Synced passkey](concept-authentication-passkeys-fido2.md) | Yes | MFA | No |
+| [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md) | Yes | MFA | No |
+| [Verified ID](concept-authentication-verified-id.md)<sup>3</sup> | No | No | Account recovery |
+| [Voice call](concept-authentication-phone-options.md) | No | MFA | SSPR |
+| [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes | MFA<sup>1</sup> | No |
 
-Microsoft Entra ID helps to protect a user's identity and simplify their sign-in experience. Features like self-service password reset let users update or change their passwords using a web browser from any device. This feature is especially useful when the user has forgotten their password or their account is locked. Without waiting for a helpdesk or administrator to provide support, a user can unblock themselves and continue to work.
+<sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
 
-Microsoft Entra multifactor authentication lets users choose an additional form of authentication during sign-in, such as a phone call or mobile app notification. This ability reduces the requirement for a single, fixed form of secondary authentication like a hardware token. If the user doesn't currently have one form of additional authentication, they can choose a different method and continue to work.
+<sup>2</sup>Email OTP is available for tenant members for [self-service password reset (SSPR)](concept-sspr-howitworks.md#authentication-methods). You can also configure it for [sign-in by guest users](/entra/external-id/one-time-passcode).
 
-![Authentication methods in use at the sign-in screen](media/concept-authentication-methods/overview-login.png)
+<sup>3</sup>Verified ID is an identity verification capability, not a traditional authentication method. It provides proof of identity for account recovery but can't be used for sign-in, MFA, or SSPR.
 
-Passwordless authentication removes the need for the user to create and remember a secure password at all. Capabilities like Windows Hello for Business or FIDO2 security keys let users sign in to a device or application without a password. This ability can reduce the complexity of managing passwords across different environments.
+## Phishing-resistant authentication methods
 
-## Self-service password reset
+While traditional MFA with SMS, email OTP, or authenticator apps significantly improves security over password-only systems, these options introduce friction — requiring additional steps for users, like entering codes, approving push notifications, or using authenticator apps. Moreover, these MFA options are prone to remote phishing attacks. In a remote phishing attack, attackers use social engineering and AI-driven tools to steal identity credentials — like passwords or one-time codes — without physical access to a user's device.
 
-Self-service password reset gives users the ability to change or reset their password, with no administrator or help desk involvement. If a user's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work. This ability reduces help desk calls and loss of productivity when a user can't sign in to their device or an application.
+Microsoft recommends using phishing-resistant authentication methods such as Windows Hello for Business, passkeys (FIDO2) and FIDO2 security keys, or certificate-based authentication (CBA) because they provide the most secure sign-in experience.
 
-Self-service password reset works in the following scenarios:
+The following phishing-resistant authentication methods are available in Microsoft Entra ID:
 
-* **Password change -** when a user knows their password but wants to change it to something new.
-* **Password reset -** when a user can't sign in, such as when they forgot password, and want to reset their password.
-* **Account unlock -** when a user can't sign in because their account is locked out and want to unlock their account.
+- Windows Hello for Business
+- Platform Credential for macOS
+- Synced passkeys (FIDO2)
+- FIDO2 security keys
+- Passkeys in Microsoft Authenticator
+- Certificate-based authentication (CBA)
 
-When a user updates or resets their password using self-service password reset, that password can also be written back to an on-premises Active Directory environment. Password writeback makes sure that a user can immediately use their updated credentials with on-premises devices and applications.
+## Verified ID identity verification
 
-<a name='azure-ad-multi-factor-authentication'></a>
+Verified ID is an identity verification capability in Microsoft Entra ID — not a traditional authentication method. It can't be used to satisfy authentication requirements like sign-in, MFA, or SSPR. Instead, Verified ID provides cryptographic proof of a user's verified identity for scenarios where trust must be re-established, such as account recovery when all authentication methods are lost.
 
-## Microsoft Entra multifactor authentication
+Identity verification profiles control which users can participate in Verified ID flows, which provider performs verification, and how identity claims are validated. Admins configure profiles through the Account Recovery setup wizard in the Microsoft Entra admin center, and the Verified ID policy page provides visibility into profile assignments and global exclusions.
 
-Multifactor authentication is a process where a user is prompted during the sign-in process for an additional form of identification, such as to enter a code on their cellphone or to provide a fingerprint scan.
+For more information, see [Verified ID identity verification overview](concept-authentication-verified-id.md).
 
-If you only use a password to authenticate a user, it leaves an insecure vector for attack. If the password is weak or has been exposed elsewhere, is it really the user signing in with the username and password, or is it an attacker? When you require a second form of authentication, security is increased as this additional factor isn't something that's easy for an attacker to obtain or duplicate.
+## High-assurance account recovery
 
-![Conceptual image of the different forms of multifactor authentication](./media/concept-mfa-howitworks/methods.png)
+Account recovery is the process of helping users who have lost all their credentials and can no longer access their account. Traditionally, a user calls the help desk, answers questions to verify their identity, and the help desk resets their credentials. Microsoft Entra ID now supports government-issued ID verification with biometric matching for high-assurance account recovery — removing the need for helpdesk intervention and eliminating social engineering risks.
 
-Microsoft Entra multifactor authentication works by requiring two or more of the following authentication methods:
+Organizations can choose from leading identity verification providers (IDV) through the [Microsoft Security Store](https://securitystore.microsoft.com/). These partners offer coverage across 192 countries/regions and remote verification for most government-issued ID documents, including driver's licenses and passports. Microsoft Entra Verified ID Face Check, powered by Azure AI services, verifies proof of presence by matching a user's real-time selfie to the photo from their identity document. Only the match result is shared — no sensitive identity data — which preserves user privacy while providing strong identity assurance.
 
-* Something you know, typically a password.
-* Something you have, such as a trusted device that isn't easily duplicated, like a phone or hardware key.
-* Something you are - biometrics like a fingerprint or face scan.
+## Related content
 
-Users can register themselves for both self-service password reset and Microsoft Entra multifactor authentication in one step to simplify the on-boarding experience. Administrators can define what forms of secondary authentication can be used. Microsoft Entra multifactor authentication can also be required when users perform a self-service password reset to further secure that process.
-
-## Password protection
-
-By default, Microsoft Entra ID blocks weak passwords such as *Password1*. A global banned password list is automatically updated and enforced that includes known weak passwords. If a Microsoft Entra user tries to set their password to one of these weak passwords, they receive a notification to choose a more secure password.
-
-To increase security, you can define custom password protection policies. These policies can use filters to block any variation of a password containing a name such as *Contoso* or a location like *London*, for example.
-
-For hybrid security, you can integrate Microsoft Entra password protection with an on-premises Active Directory environment. A component installed in the on-premises environment receives the global banned password list and custom password protection policies from Microsoft Entra ID, and domain controllers use them to process password change events. This hybrid approach makes sure that no matter how or where a user changes their credentials, you enforce the use of strong passwords.
-
-## Passwordless authentication
-
-The end-goal for many environments is to remove the use of passwords as part of sign-in events. Features like Azure password protection or Microsoft Entra multifactor authentication help improve security, but a username and password remains a weak form of authentication that can be exposed or brute-force attacked.
-
-![Security versus convenience with the authentication process that leads to passwordless](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
-
-When you sign in with a passwordless method, credentials are provided by using methods like biometrics with Windows Hello for Business, or a FIDO2 security key. These authentication methods can't be easily duplicated by an attacker.
-
-Microsoft Entra ID provides ways to natively authenticate using passwordless methods to simplify the sign-in experience for users and reduce the risk of attacks.  
-
-## Next steps
-
-To get started, see the [tutorial for self-service password reset (SSPR)][tutorial-sspr] and [Microsoft Entra multifactor authentication][tutorial-azure-mfa].
-
-To learn more about self-service password reset concepts, see [How Microsoft Entra self-service password reset works][concept-sspr].
-
-To learn more about multifactor authentication concepts, see [How Microsoft Entra multifactor authentication works][concept-mfa].
-
-<!-- INTERNAL LINKS -->
-[tutorial-sspr]: tutorial-enable-sspr.md
-[tutorial-azure-mfa]: tutorial-enable-azure-mfa.md
-[concept-sspr]: concept-sspr-howitworks.md
-[concept-mfa]: concept-mfa-howitworks.md
+- [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
+- [Verified ID identity verification overview](concept-authentication-verified-id.md)
+- [Account recovery overview](concept-account-recovery-overview.md)
+- [Enable and configure account recovery](how-to-account-recovery-enable.md)
+- [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md)

@@ -1,15 +1,9 @@
 ---
 title: Add password-based single sign-on to an application
 description: Add password-based single sign-on to an application in Microsoft Entra ID.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 06/20/2025
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
 # Customer intent: As an Application Administrator, I want to configure password-based single sign-on (SSO) in Microsoft Entra ID, so that users can sign in to the application with a username and password and have their credentials securely stored and sent to the application after the first sign-on.
@@ -31,7 +25,7 @@ The configuration page for password-based SSO is simple. It includes only the UR
 ## Prerequisites
 
 To configure password-based SSO in your Microsoft Entra tenant, you need:
--	An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+-	An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 -   Application Administrator, Cloud Application Administrator, or owner of the service principal.
 -	An application that supports password-based SSO.
 

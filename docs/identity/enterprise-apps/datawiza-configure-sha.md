@@ -3,8 +3,6 @@ title: Tutorial to configure Secure Hybrid Access with Microsoft Entra ID and Da
 description: Learn to use Datawiza and Microsoft Entra ID to authenticate users and give them access to on-premises and cloud apps.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 01/30/2024
 ms.author: gasinh
@@ -44,7 +42,7 @@ The following diagram illustrates the authentication architecture with Datawiza 
 To get started, you need:
 
 * An Azure subscription
-  * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * A [Microsoft Entra tenant](~/fundamentals/create-new-tenant.md) linked to the Azure subscription
 * [Docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) are required to run DAP
   * Your applications can run on platforms, such as a virtual machine (VM) or bare metal

@@ -2,7 +2,7 @@
 title: "Migrate your JavaScript application from ADAL.js to MSAL.js"
 description: How to update your existing JavaScript application to use the Microsoft Authentication Library (MSAL) for authentication and authorization instead of the Active Directory Authentication Library (ADAL).
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 07/06/2021
 ms.service: identity-platform
@@ -243,7 +243,7 @@ Another common error is `interaction_required`. This error is often resolved by 
 
 Yet another common error you might face is `consent_required`, which occurs when permissions required for obtaining an access token for a protected resource aren't consented by the user. As in `interaction_required`, the solution for `consent_required` error is often initiating an interactive token acquisition prompt, using either `acquireTokenPopup` or `acquireTokenRedirect`.
 
-See for more: [Common MSAL.js errors and how to handle them](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/errors.md)
+See for more: [Common MSAL.js errors and how to handle them](~/identity-platform/msal-error-handling-js.md)
 
 ## Use the Events API
 

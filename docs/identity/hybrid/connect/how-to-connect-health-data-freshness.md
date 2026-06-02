@@ -1,14 +1,10 @@
 ---
 title: Microsoft Entra Connect Health - Health service data isn't up to date alert
 description: This document describes the cause of "Health service data isn't up to date" alert and how to troubleshoot it.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 
@@ -52,7 +48,7 @@ The steps required to diagnose the issue is given below. The first is a set of b
 * Make sure that Microsoft Entra Connect Health Agents services are **running** on the machine. For example, Connect Health for AD FS should have two services.
   ![Verify Microsoft Entra Connect Health](./media/how-to-connect-health-agent-install/install5.png)
 
-* Make sure to go over and meet the [requirements section](how-to-connect-health-agent-install.md#requirements).
+* Make sure to go over and meet the [prerequisites](how-to-connect-health-agent-install.md#prerequisites).
 * Use [test connectivity tool](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) to discover connectivity issues.
 * If you have an HTTP Proxy, follow these [configuration steps](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). 
 

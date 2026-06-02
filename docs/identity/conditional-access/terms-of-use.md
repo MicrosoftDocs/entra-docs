@@ -1,13 +1,8 @@
 ---
 title: Set Up Microsoft Entra Terms of Use with Conditional Access
 description: Set up Microsoft Entra terms of use with Conditional Access to require policy acceptance before resource access. Complete guide with prerequisites, step-by-step configuration, and troubleshooting tips.
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/21/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: siz
 ms.custom:
   - sfi-image-nochange
@@ -17,6 +12,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Set up Microsoft Entra terms of use with Conditional Access
+
+## Overview
 
 Microsoft Entra terms of use policies provide a simple method to present information to end users before granting access to resources. This guide shows you how to set up Microsoft Entra terms of use with Conditional Access policies to require acceptance of your terms of use policy before accessing applications and data. These terms of use statements can be generalized or specific to groups or users and provided in multiple languages. Administrators can determine who has or hasn't accepted terms of use with the provided logs or APIs.
 
@@ -28,7 +25,7 @@ To use and configure Microsoft Entra terms of use policies, you must have:
 
 * Microsoft Entra ID P1 licenses.
 * Administrators who need to read terms of use configuration and Conditional Access policies need at least the [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) role assigned.
-* Administrators who need to Create or modify terms of use and Conditional Access policies need at least the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned.
+* Administrators who need to create or modify terms of use and Conditional Access policies need at least the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned.
 * A terms of use document in PDF format. The PDF file can be any content you decide to display. To support users on mobile devices, the recommended font size in the PDF is 24 point.
 
 ### Service limits
@@ -41,9 +38,9 @@ Once you complete your terms of use policy document, use the following procedure
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
-1. Select, **New terms**.
+1. Select **New terms**.
 
-   ![A screenshot showing the new terms of use pane to specify your terms of use settings.](./media/terms-of-use/new-terms-of-use.png)
+   :::image type="content" source="media/terms-of-use/new-terms-of-use.png" alt-text="A screenshot showing the new terms of use pane to specify your terms of use settings.":::
 
 1. In the **Name** box, enter a name for the terms of use policy.
 1. For **Terms of use document**, browse to your finalized terms of use policy PDF and select it.
@@ -56,8 +53,8 @@ Once you complete your terms of use policy document, use the following procedure
 
       | Expire starting on | Frequency | Result |
       | --- | --- | --- |
-      | Today's date  | Monthly | Starting today, users must accept the terms of use policy and then reaccept every month. |
-      | Date in the future  | Monthly | Starting today, users must accept the terms of use policy. When the future date occurs, consents expire, and then users must reaccept every month.  |
+      | Today's date | Monthly | Starting today, users must accept the terms of use policy and then reaccept every month. |
+      | Date in the future | Monthly | Starting today, users must accept the terms of use policy. When the future date occurs, consents expire, and then users must reaccept every month.  |
 
       For example, if you set the expire starting on date to **Jan 1** and frequency to **Monthly**, this example is how expirations might occur for two users:
 
@@ -86,7 +83,7 @@ Once you complete your terms of use policy document, use the following procedure
    | **Create Conditional Access policy later** | This terms of use policy appears in the grant control list when creating a Conditional Access policy. |
 
    > [!IMPORTANT]
-   > Conditional Access policy controls (including terms of use policies) don't support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
+   > Conditional Access policy controls (including terms of use policies) don't support enforcement on service accounts. Exclude all service accounts from the Conditional Access policy.
 
     Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](policy-all-users-require-terms-of-use.md).
 
@@ -96,19 +93,20 @@ Once you complete your terms of use policy document, use the following procedure
 
 ### Per-device terms of use
 
-The **Require users to consent on every device** setting enables you to require end users to accept your terms of use policy on every device they're accessing from. The end user's device must be registered in Microsoft Entra ID. When the device is registered, the device ID is used to enforce the terms of use policy on each device. Their experience is dependent on permissions to join devices and the platform or software used. For more information, see [device identity in Microsoft Entra ID](~/identity/devices/overview.md).
+The **Require users to consent on every device** setting enables you to require end users to accept your terms of use policy on every device they use to access resources. The end user's device must be registered in Microsoft Entra ID. When the device is registered, the device ID is used to enforce the terms of use policy on each device. Their experience is dependent on permissions to join devices and the platform or software used. For more information, see [device identity in Microsoft Entra ID](~/identity/devices/overview.md).
 
 Per-device terms of use have the following constraints:
 
 * The Microsoft Intune Enrollment app `Application ID: d4ebce55-015a-49b5-a083-c84d1797ae8c` isn't supported. Ensure that it's excluded from any Conditional Access policy requiring Terms of Use.
 * Microsoft Entra B2B users aren't supported.
+* Customers that aren't using per-device terms of use might have users who are prompted to accept terms of use at every sign-in on Microsoft Edge. Instruct the user to sync their work profile to their Microsoft Edge profile to enable single sign-on, so the Edge profile shows the user accepted the terms of use.
 
 ### Policy changes
 
 Conditional Access policies take effect immediately. When this enforcement happens, the administrator might see errors in the Microsoft Entra admin center. The administrator must sign out and sign in to satisfy the new policy.
 
 > [!IMPORTANT]
-> Users in scope need to sign out and sign in in order to satisfy a new policy if:
+> Users in scope need to sign out and sign back in to satisfy a new policy if:
 >
 > * a Conditional Access policy is enabled on a terms of use policy
 > * or a second terms of use policy is created
@@ -139,16 +137,16 @@ If there are other settings you would like to change, you must create a new term
 1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to edit.
 1. Select **Edit terms**.
-1. For the language that you would like to update a new version, select **Update** under the action column
-1. In the pane on the right, upload the pdf for the new version
+1. For the language that you would like to update a new version, select **Update** under the action column.
+1. In the pane on the right, upload the PDF for the new version.
 1. There's also a toggle option here **Require reaccept** if you want to require your users to accept this new version the next time they sign in.
 
    - If you require your users to reaccept, next time they try to access the resource defined in your Conditional Access policy they'll be prompted to accept this new version. 
    - If you don’t require your users to reaccept, their previous consent stays current and only new users who haven't consented before or whose consent expires see the new version. Until the session expires, **Require reaccept** doesn't require users to accept the new terms of use. If you want to ensure reaccept, delete and recreate or create a new terms of use for this case.
 
-   ![A screenshot showing the edit terms of use pane with the re-accept option highlighted.](./media/terms-of-use/re-accept.png)
+   :::image type="content" source="media/terms-of-use/re-accept.png" alt-text="A screenshot showing the edit terms of use pane with the re-accept option highlighted.":::
 
-1. Once you upload your new pdf and decide on reaccept, select Add at the bottom of the pane.
+1. Once you upload your new PDF and decide on reaccept, select **Add** at the bottom of the pane.
 1. You see the most recent version under the Document column.
 
 ### Add a language
@@ -162,10 +160,10 @@ The following procedure describes how to add a language to your terms of use.
 1. Select **Add language** at the bottom of the page.
 1. In the **Add terms of use language** pane, upload your localized PDF, and select the language.
 
-   ![A screenshot showing terms of use selected and showing the languages tab in the details pane.](./media/terms-of-use/select-language.png)
+   :::image type="content" source="media/terms-of-use/select-language.png" alt-text="A screenshot showing terms of use selected and showing the languages tab in the details pane.":::
 
 1. Select **Add language**.
-1. Select **Save**
+1. Select **Save**.
 1. Select **Add** to add the language.
 
 #### View previous versions of a terms of use
@@ -179,12 +177,12 @@ The following procedure describes how to add a language to your terms of use.
 
 ## View report of who has accepted and declined
 
-The **Terms of use** blade shows a count of the users who accepted and declined. These counts and who accepted/declined are stored for the life of the terms of use policy.
+The **Terms of use** page shows a count of the users who accepted and declined. These counts and who accepted/declined are stored for the life of the terms of use policy.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 
-    ![A screenshot showing the terms of use blade listing the number of user show have accepted and declined.](./media/terms-of-use/view-tou.png)
+    :::image type="content" source="media/terms-of-use/view-tou.png" alt-text="A screenshot showing the terms of use page listing the number of user show have accepted and declined.":::
 
 1. For a terms of use policy, select the numbers under **Accepted** or **Declined** to view the current state for users.
    1. By default, the next page will show you the current state of each user's acceptance to the terms of use.
@@ -203,9 +201,9 @@ User acceptance records are deleted when:
 
 ## View Microsoft Entra audit logs
 
-If you want to view more activity, Microsoft Entra terms of use policies include audit logs. Each user consent triggers an event in the audit logs that is stored for **30 days**. You can view these logs in the portal or download as a .csv file.
+Changes to Microsoft Entra terms of use policies are captured in the Microsoft Entra audit logs. Each user consent triggers an event in the audit logs. Data retention of logs is dependent on your license. For more information, see [Microsoft Entra data retention](../monitoring-health/reference-reports-data-retention.md).
 
-To get started with Microsoft Entra audit logs, use the following procedure:
+To get started with Microsoft Entra audit logs in the admin center, use the following procedure:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
@@ -215,15 +213,15 @@ To get started with Microsoft Entra audit logs, use the following procedure:
 
     You can also select **Download** to download the information in a .csv file for use locally.
 
-   ![A screenshot showing the Microsoft Entra audit logs screen listing date, target policy, initiated by, and activity.](./media/terms-of-use/audit-logs-tou.png)
+   :::image type="content" source="media/terms-of-use/audit-logs-tou.png" alt-text="A screenshot showing the Microsoft Entra audit logs screen listing date, target policy, initiated by, and activity.":::
 
    If you select a log, a pane appears with more activity details.
 
-   ![A screenshot showing activity details for a log showing activity, activity status, initiated by, target policy.](./media/terms-of-use/audit-log-activity-details.png)
+   :::image type="content" source="media/terms-of-use/audit-log-activity-details.png" alt-text="A screenshot showing activity details for a log showing activity, activity status, initiated by, target policy.":::
 
 ## What terms of use looks like for users
 
-Once a terms of use policy is created and enforced, users, who are in scope, see the following screen during sign-in.
+Once a terms of use policy is created and enforced, users who are in scope see the following screen during sign-in.
 
 :::image type="content" source="media/terms-of-use/user-tou.png" alt-text="A screenshot showing an example terms of use policy that appears when a user signs in." lightbox="media/terms-of-use/zoom-buttons.png":::
 
@@ -267,13 +265,13 @@ Supported modern web browsers (latest stable versions):
 * Safari
 
 ### Functionality on other configurations
-Users on operating systems or browsers not listed above, or those using older versions of supported operating systems or browsers, may still be able to accept terms of use during the sign-in process. Some features, visual rendering, or performance might be degraded on unsupported configurations. We don't actively test or provide support for operating systems and browsers not explicitly listed as supported. This includes, but isn't limited to, browsers based on legacy engines such as EdgeHTML  and Trident/MSHTML. 
+Users on operating systems or browsers not listed previously, or those using older versions of supported operating systems or browsers, might still be able to accept terms of use during the sign-in process. Some features, visual rendering, or performance might be degraded on unsupported configurations. Operating systems and browsers not explicitly listed as supported, such as browsers based on legacy engines such as EdgeHTML and Trident/MSHTML, aren't actively tested or supported.
 
 ### Desktop and mobile applications with web views
-Applications that utilize web views based on the latest stable versions of modern HTML5 compliant browser engines (such as Blink, Gecko, or WebKit) should generally allow users to accept terms of use during sign-in. Nevertheless, some features, visual rendering, or performance degradation may occur. We don't actively test or offer support for all specific web view implementations.
+Applications that utilize web views based on the latest stable versions of modern HTML5 compliant browser engines (such as Blink, Gecko, or WebKit) should generally allow users to accept terms of use during sign-in. Nevertheless, some features, visual rendering, or performance degradation might occur. Not all specific web view implementations are actively tested or supported.
 
-### Experiencing Issues? 
-If you encounter issues accepting terms of use on a specific operating system, browser, browser engine, or web view implementation within an application, open a support case. We evaluate supportability on a case-by-case basis. 
+### Report issues
+If you encounter issues accepting terms of use on a specific operating system, browser, browser engine, or web view implementation within an application, open a support case. Supportability is evaluated on a case-by-case basis. 
 
 ## B2B guests
 
@@ -283,11 +281,11 @@ Terms of use policies are only displayed when the user has a guest account in Mi
 
 ### Azure Information Protection
 
-You can configure a Conditional Access policy for the Azure Information Protection app and require a terms of use policy when a user accesses a protected document. This configuration triggers a terms of use policy before a user accessing a protected document for the first time.
+You can configure a Conditional Access policy for the Azure Information Protection app and require a terms of use policy when a user accesses a protected document. This configuration triggers a terms of use policy before a user accesses a protected document for the first time.
 
 ### Microsoft Intune Enrollment
 
-You can configure a Conditional Access policy for the Microsoft Intune Enrollment app and require a terms of use policy before enrollment of a device in Intune. For more information, see the Read [Choosing the right Terms solution for your organization blog post](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
+You can configure a Conditional Access policy for the Microsoft Intune Enrollment app and require a terms of use policy before enrollment of a device in Intune. For more information, see the [Choosing the right Terms solution for your organization blog post](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
 > [!NOTE]
 > The Intune Enrollment app isn't supported for [Per-device terms of use](#per-device-terms-of-use).
@@ -311,7 +309,7 @@ If the user accepts the terms of use policy, the other sign-in is successful.
 A: Terms of use can only be accepted when authenticating interactively.
 
 **Q: How do I see when/if a user has accepted a terms of use?**<br />
-A: On the Terms of use blade, select the number under **Accepted**. You can also view or search the accepted activity in the Microsoft Entra audit logs. For more information, see View report of who accepted and declined and [View Microsoft Entra audit logs](#view-microsoft-entra-audit-logs).
+A: On the Terms of use page, select the number under **Accepted**. You can also view or search the accepted activity in the Microsoft Entra audit logs. For more information, see View report of who accepted and declined and [View Microsoft Entra audit logs](#view-microsoft-entra-audit-logs).
 
 **Q: How long is information stored?**<br />
 A: The user counts in the terms of use report and who accepted/declined are stored for the life of the terms of use. The Microsoft Entra audit logs are stored for 30 days.
@@ -322,11 +320,11 @@ A: The terms of use details overview data is stored for the lifetime of the term
 **Q: Why do I see a different number of consents in the terms of use details overview versus the exported CSV report?**<br />
 A: The terms of use details overview reflect aggregated acceptances of the current version of the policy (updated once every day). If expiration is enabled or a terms of use agreement is updated (with reacceptance required), the count on the details overview is reset since the acceptances are expired, this page shows the count of the current version. All acceptance history is still captured in the CSV report.
 
-**Q: If hyperlinks are in the terms of use policy PDF document, will end users be able to click them?**<br />
+**Q: If hyperlinks are in the terms of use policy PDF document, will end users be able to select them?**<br />
 A: Yes, end users are able to select hyperlinks to other pages but links to sections within the document aren't supported. Also, hyperlinks in terms of use policy PDFs don't work when accessed from the Microsoft Entra My Apps/MyAccount portal.
 
 **Q: Can a terms of use policy support multiple languages?**<br />
-A: Yes. An administrator can upload multiple PDF documents and tag those documents with a corresponding language. When end users sign in, we look at their browser language preference and display the matching document. If there's no match, we display the default document, which is the first document that is uploaded. Windows desktop applications using [Web Account Manager](/windows/uwp/security/web-account-manager), such as Microsoft Teams, will use the operating system language for the terms, not application-specific language settings.
+A: Yes. An administrator can upload multiple PDF documents and tag those documents with a corresponding language. When end users sign in, the terms of use feature checks their browser language preference and displays the matching document. If there's no match, the default document, which is the first document uploaded, is displayed. Windows desktop applications using [Web Account Manager](/windows/uwp/security/web-account-manager), such as Microsoft Teams, will use the operating system language for the terms, not application-specific language settings.
 
 **Q: When is the terms of use policy triggered?**<br />
 A: A terms of use policy triggers during the sign-in experience.
@@ -347,7 +345,12 @@ A: You can [review previously accepted terms of use policies](#how-users-can-rev
 A: If you configure both Microsoft Entra terms of use and [Intune terms and conditions](/mem/intune/enrollment/terms-and-conditions-create), the user is required to accept both. For more information, see the [Choosing the right Terms solution for your organization blog post](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
 **Q: What endpoints does the terms of use service use for authentication?**<br />
-A: Terms of use utilize the following endpoints for authentication: https://tokenprovider.termsofuse.identitygovernance.azure.com, https://myaccount.microsoft.com, and https://account.activedirectory.windowsazure.com. If your organization has an allowlist of URLs for enrollment, you need to add these endpoints to your allowlist, along with the Microsoft Entra endpoints for sign-in.
+A: Terms of use utilize the following endpoints for authentication: https://tokenprovider.termsofuse.identitygovernance.azure.com, https://myaccount.microsoft.com, and https://account.activedirectory.windowsazure.com. If your organization has an allow list of URLs for enrollment, you need to add these endpoints to your allow list, along with the Microsoft Entra endpoints for sign-in.
+
+**Q: Users are reporting that they need to accept the terms of use every time they sign in on Microsoft Edge. Why is this happening?**<br />
+A: When a user signs into their Edge profile with their work account, Edge obtains a Primary Refresh Token (PRT) that enables single-sign on. This PRT lets the authentication system recognize the user and their previous terms of use acceptance.
+
+Without signing into the Edge profile, each authentication might not carry the proper session context, so Microsoft Entra sees what looks like a fresh session and re-prompts for terms of use acceptance. Users should sync their work profile with their Edge profile to establish their identity so Edge remembers they accepted the terms of use.
 
 ## Related content
 

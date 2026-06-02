@@ -2,7 +2,7 @@
 title: "Tutorial: Prepare a JavaScript single-page app (SPA) for authentication"
 description: Learn how to prepare a JavaScript single-page app (SPA) for authentication using the Microsoft identity platform.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.service: identity-platform
 ms.custom:
@@ -189,7 +189,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     * Scopes you add here will be prompted for user consent during sign-in.
     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
     * For more information about OIDC scopes, visit: 
-    * https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
+    * https://learn.microsoft.com/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
     */
     const loginRequest = {
         scopes: ["User.Read"],
@@ -270,7 +270,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     * Scopes you add here will be prompted for user consent during sign-in.
     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
     * For more information about OIDC scopes, visit: 
-    * https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
+    * https://learn.microsoft.com/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
     */
     const loginRequest = {
         scopes: ["User.Read"],

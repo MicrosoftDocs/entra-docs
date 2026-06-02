@@ -1,13 +1,10 @@
 ---
 title: Configure Symantec Web Security Service (WSS) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Symantec Web Security Service (WSS).
-author: twimmers
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
+author: jeevansd
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: thwimmer
+ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Symantec Web Security Service (WSS) so that I can streamline the user management process and ensure that users have the appropriate access to Symantec Web Security Service (WSS).
 ---
@@ -20,6 +17,13 @@ The objective of this article is to demonstrate the steps to be performed in Sym
 > This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 > This connector is currently in Public Preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Symantec Web Security Service (WSS).
+> * Remove users in Symantec Web Security Service (WSS) when they don't require access anymore.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

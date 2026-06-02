@@ -2,14 +2,8 @@
 title: View Activity logs of application permissions
 description: Understand how to view the activity logs of what permissions are being granted and revoked for applications in my directory.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 04/28/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
 
@@ -31,7 +25,7 @@ In this article, you:
 
 To view Activity Logs for applications, you need:
 
-- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Reports Reader, Security Reader, Security Administrator, Global Reader
 
 ## How to view permission audit logs for all applications in your directory

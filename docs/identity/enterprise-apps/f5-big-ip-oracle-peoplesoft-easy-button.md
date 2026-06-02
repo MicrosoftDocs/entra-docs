@@ -3,8 +3,6 @@ title: Tutorial to configure F5 BIG-IP Easy Button for SSO to Oracle PeopleSoft
 description: Implement secure hybrid access with header-based SSO to PeopleSoft using F5 BIG-IP Easy Button Guided Configuration 16.1.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 05/03/2023
 ms.author: gasinh
@@ -64,7 +62,7 @@ For this scenario, SHA supports SP- and IdP-initiated flows. The following diagr
 ## Prerequisites
 
 * A Microsoft Entra ID Free account, or higher
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/active-directory/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn/)
 * A BIG-IP or a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP licenses:

@@ -2,17 +2,9 @@
 title: Configure Parkable for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Parkable.
 
-author: nguhiu
-manager: mwongerapk
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
-
+ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 08/13/2024
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Parkable so that I can control who has access to Parkable, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -30,9 +22,9 @@ You'll configure and test Microsoft Entra single sign-on for Parkable in a test 
 
 To integrate Microsoft Entra ID with Parkable, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Parkable single sign-on (SSO) enabled subscription.
 
 ## Add application and assign a test user
@@ -95,7 +87,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Parkable SSO
 
-To configure single sign-on on **Parkable**, you need to follow the steps outlined in [this document](https://admin.parkable.com/s/article/Set-up-SSP-SAML) to continue the setup on the Parkable admin panel.
+To configure single sign-on on **Parkable**, you need to follow the steps outlined in the Parkable admin panel to continue the SSO (SAML) setup.
 
 * Select **Test this application**, this option redirects to Parkable Sign-on URL where you can initiate the login flow. 
 

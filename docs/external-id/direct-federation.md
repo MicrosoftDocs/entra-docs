@@ -1,14 +1,13 @@
 ---
 title: Add a SAML/WS-Fed identity provider
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
-ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 05/07/2025
+ms.date: 04/08/2026
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange, msecd-doc-authoring-1012
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
@@ -22,6 +21,10 @@ Your Microsoft Entra tenant can be directly federated with external organization
 
 - Review the configuration considerations in [SAML/WS-Fed identity providers](direct-federation-overview.md).
 - A workforce tenant or an [external tenant](customers/how-to-create-external-tenant-portal.md).
+
+> [!NOTE]
+> The Issuer value for the IdP must be a valid URI following RFC 3986 format (for example, `https://testdev.example.com` or `http://www.example.com/exk10l6w90DHM0yi`). Single-word or non-URI values (for example, `testdev`) aren't supported and are rejected by the portal.
+> This aligns with Microsoft Entra ID's secure identifier patterns, as documented in [Restrictions on identifier URIs](~/identity-platform/identifier-uri-restrictions.md). For SAML IdPs, the Issuer must uniquely identify the provider as a URI, per SAML 2.0 standards and [Microsoft Entra validation rules](~/identity/hybrid/connect/how-to-connect-fed-saml-idp.md#required-attributes).
 
 ## How to configure SAML/WS-Fed IdP federation
 
@@ -61,7 +64,7 @@ Refer to the following tables for the required values.
 
 |Attribute                |Value for a workforce tenant                   |Value for an external tenant                |
 |-------------------------|-----------------------------------------------|--------------------------------------------|
-|AssertionConsumerService |`https://login.microsoftonline.com/login.srf`  |`https://<tenantID>.ciamlogin.com/login.srf`|
+|AssertionConsumerService |`https://login.microsoftonline.com/login.srf`  |`https://<tenantID>.ciamlogin.com/login.srf` Add `https://<tenantID>.ciamlogin.com/login.srf` as the callback/ACS URL on the external IdP if required by that provider.|
 |Audience                 |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.      |`https://login.microsoftonline.com/<tenant ID>/`<br>Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.      |
 |Issuer                   |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`    |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
 
@@ -121,8 +124,8 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your tenant from the **Directories** menu.
-1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your tenant from the **Directories** menu.
+1. Browse to **Microsoft Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
 
    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp.png" alt-text="Screenshot showing button for adding a new SAML or WS-Fed IdP." lightbox="media/direct-federation/new-saml-wsfed-idp.png":::
@@ -130,6 +133,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 1. On the **New SAML/WS-Fed IdP** page, enter the following:
    - **Display name** - Enter a name to help you identify the partner's IdP.
    - **Identity provider protocol** - Select **SAML** or **WS-Fed**.
+   - **Domainless** - Selecting **Domainless** enforces no domain check of the user's email address. For more details, see [Domainless SAML IdP federation](./direct-federation.md#domainless-saml-idp-federation-preview).
    - **Domain name of federating IdP** - Enter your partner’s IdP target domain name for federation. During this initial configuration, enter just one domain name. You can add more domains later.
 
     :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-parse.png" alt-text="Screenshot showing the new SAML or WS-Fed IdP page.":::
@@ -159,7 +163,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
    1. Next to **Domain name of federating IdP**, type the domain name, and then select **Add**. Repeat for each domain you want to add. When you're finished, select **Done**.
 
       :::image type="content" source="media/direct-federation/add-domain.png" alt-text="Screenshot showing the Add button in the domain details pane.":::
-   
+
 #### To configure federation using the Microsoft Graph API
 
 You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-beta&preserve-view=true) resource type to set up federation with an identity provider that supports either the SAML or WS-Fed protocol.
@@ -175,6 +179,61 @@ You can test your federation setup by inviting a new B2B guest user. For details
 > [!NOTE]
 > You can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
  
+## Domainless SAML IdP federation (Preview)
+
+Traditional federation in Microsoft Entra ID requires you to verify a custom domain (for example, `contoso.com`) and configure that domain to redirect authentication requests to an external SAML Identity Provider (IdP). In this setup, the domain of the email claim provided by the external IdP after authentication is validated against the domain associated with the configured SAML IdP in Microsoft Entra ID.
+
+If the user's email domain differs from the domain configured on the SAML IdP (for example, yahoo.com or gmail.com), users might encounter the following error during sign-in:
+
+**AADSTS5000819**: SAML Assertion is invalid. Email address claim is missing or does not match domain from an external realm.
+
+This error typically occurs when:
+
+- The external SAML IdP does not send an email claim, or
+- The email address domain provided by the IdP does not match the domain configured on the external IdP in Microsoft Entra ID
+
+Even when an email claim is present, authentication might still fail if the email domain doesn't align with the configured IdP domain due to domain-based matching requirements.
+
+Domainless SAML federation with a SAML Identity Provider allows external users to authenticate into your apps or workforce resources using their IdP-managed credentials, regardless of their email domain. Domainless federation removes the need for domain matching between the user's email and pre-configured IdP domains during sign-in or invitation redemption.
+
+### Configure domainless SAML IdP federation
+
+To address the domain matching limitation, you can configure the SAML IdP as domainless.
+When domainless federation is enabled:
+
+- Microsoft Entra ID routes authentication requests to the configured SAML IdP based on the Issuer URI association.
+- The user's email address domain isn't matched against the domain configured for the IdP.
+
+Users can then authenticate successfully using email addresses from any domain (for example, yahoo.com or gmail.com) when signing in with the external SAML IdP.
+
+To enable domainless federation for a new SAML IdP, follow these steps:
+
+- On the **New SAML/WS-Fed IdP** page, select **Domainless**. Selecting **Domainless** enforces no domain check of the user's email address.
+
+    :::image type="content" source="media/direct-federation/new-saml-wsfed-identity-provider-domain-less.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the domainless configuration." lightbox="media/direct-federation/new-saml-wsfed-identity-provider-domain-less.png":::
+
+
+> [!IMPORTANT]
+> When the **Domainless** field is selected, federation is configured as domainless. Microsoft Entra ID uses the **Issuer URI** to match incoming authentication requests instead of domain-based routing. Currently, only **one** wildcard IdP can be configured per tenant.    
+
+### User flow for domainless SAML IdP federation
+After configuring domainless federation, you can invite guest users from the partner organization by following these steps:
+
+1. In the Microsoft Entra admin center, navigate to **Identity** > **Users** > **All users**.
+1. Select **+ New user** and choose **Invite external user**.
+1. Enter the guest user's email address. The email domain doesn't need to match a verified domain in your tenant.
+1. In the invitation redirect URL, include a **domain_hint** parameter to ensure the user is routed to the appropriate IdP based on the configured Issuer URI. The **domain_hint** value must match the **Issuer URI** defined in the SAML IdP configuration.
+1. Complete and send the invitation.
+1. When the invited user redeems the invitation, Microsoft Entra ID routes the authentication request to the configured SAML IdP using the Issuer URI in the `domain_hint` parameter. 
+1. The user authenticates with the external SAML IdP. The user's email address domain isn't matched against the domain configured for the IdP, and the user can access the resource tenant.
+1. For subsequent sign-ins, the user can directly access the resource tenant application by authenticating with the external SAML IdP because the user object is updated with the external IdP association.
+
+### Known issues
+
+The following known issue is being actively addressed and this section will be updated after the fix is available.
+
+- The IdP configuration gets deleted if an invalid domain name is entered even when the IdP config is not saved.
+
 ## How to update the certificate or configuration details
 
 On the **All identity providers** page, you can view the list of SAML/WS-Fed identity providers configured and their certificate expiration dates. From this list, you can renew certificates and modify other configuration details.
@@ -182,7 +241,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 <!--TODO:::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list-multi.png" alt-text="Screenshot showing an identity provider in the SAML WS-Fed list.":::-->
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
+1. Browse to **Microsoft Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab.
 1. Scroll to an identity provider in the list or use the search box.
 1. To update the certificate or modify configuration details:
@@ -205,16 +264,21 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 
    :::image type="content" source="media/direct-federation/edit-domains.png" alt-text="Screenshot of the domain configuration page.":::
 
+1. To switch to domainless federation, select the **Domainless** checkbox, and then select **Done**.
+
+   :::image type="content" source="media/direct-federation/edit-domains-domain-less.png" alt-text="Screenshot of the domain configuration page for domainless.":::
+
+
    > [!NOTE]
    > To remove federation with a partner, first delete all domains except one, and then follow the steps in the [next section](#how-to-remove-federation).
 
 ## How to remove federation
 
-You can remove your federation configuration. If you do, federation guest users who already redeemed their invitations can no longer sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
+You can remove your federation configuration. If you do, federation guest users who already redeemed their invitations can no longer sign in. However, you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
 To remove a configuration for an IdP in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
+1. Browse to **Microsoft Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then scroll to the identity provider in the list or use the search box.
 1. Select the link in the **Domains** column to view the IdP's domain details.
 1. Delete all but one of the domains in the **Domain name** list.

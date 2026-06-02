@@ -1,13 +1,9 @@
 ---
 title: 'Solution 1: Microsoft Entra ID with Cirrus Bridge'
 description: This article describes design considerations for using Microsoft Entra ID with Cirrus Bridge as a multilateral federation solution for universities.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 04/1/2023
-ms.author: jricketts
+ms.subservice: architecture
 ---
 
 # Solution 1: Microsoft Entra ID with Cirrus Bridge

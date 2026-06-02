@@ -2,14 +2,9 @@
 title: Configure Microsoft Entra hybrid join
 description: Learn how to configure Microsoft Entra hybrid join.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 06/27/2025
 
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
 ms.reviewer: sandeo
 ---
 # Configure Microsoft Entra hybrid join

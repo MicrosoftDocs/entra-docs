@@ -2,7 +2,6 @@
 title: include file
 description: include file
 author: amsliu
-manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 01/31/2023

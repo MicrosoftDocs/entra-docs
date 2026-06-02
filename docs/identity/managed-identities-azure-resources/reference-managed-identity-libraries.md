@@ -1,14 +1,8 @@
 ---
 title: Client libraries for managed identity authentication
 description: Get to know the client libraries that you can use to authenticate your apps using managed identities for Azure resources.
-author: SHERMANOUKO
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: reference
 ms.date: 11/11/2024
-ms.author: shermanouko
-ms.reviewer: rwike77
 
 #Customer intent: As a developer, I'd like to know the available libraries that I can use when authenticating my apps using managed identities.
 ---

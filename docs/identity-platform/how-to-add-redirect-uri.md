@@ -4,10 +4,11 @@ description: Learn how to add a redirect URI to your application in Microsoft En
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: mode-other
-ms.date: 05/23/2025
+ms.custom:
+ms.date: 05/14/2026
 ms.service: identity-platform
 ms.topic: how-to
+ai-usage: ai-assisted
 #Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
 ---
 
@@ -21,21 +22,19 @@ To sign in a user, your application must send a login request to the Microsoft E
 
 ## Add a redirect URI
 
-A *redirect URI* is where the Microsoft identity platform sends security tokens after authentication. Redirect URIs are configured in **Platform configurations** in the Microsoft Entra admin center. For **Web** and **Single-page applications**, you need to specify a redirect URI manually. For **Mobile and desktop** platforms, you select from generated redirect URIs. 
+A *redirect URI* is where the Microsoft identity platform sends security tokens after authentication. Redirect URIs are configured on the **Authentication** page in the Microsoft Entra admin center. For **Web** and **Single-page applications**, you specify a redirect URI manually. For **Mobile and desktop** platforms, you select from generated redirect URIs.
 
 Follow these steps to configure settings based on your target platform or device:
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Under **Manage**, select **Authentication**.
-1. Under **Platform configurations**, select **Add a platform**.
-1. Under **Configure platforms**, select the tile for your application type (platform) to configure its settings.
-
-   :::image type="content" source="./media/quickstart-register-app/portal-04-app-reg-03-platform-config.png" alt-text="Screenshot of the platform configuration pane in the Azure portal." border="false":::
+1. On the **Redirect URI configuration** tab, select **Add Redirect URI**.
+1. On the **Select a platform to add redirect URI** pane, select the tile for your application type (platform) to configure its settings.
 
    | Platform  | Configuration settings | Example |
    | --------- |------------------------|---------|
-   | **Web**   | Enter the **Redirect URI** for a web app that runs on a server. Front channel logout URLs can also be added | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally. |
-   | **Single-page application** | Enter a **Redirect URI** for client-side apps using JavaScript, Angular, React.js, or Blazor WebAssembly. Front channel logout URLs can also be added | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.|
+   | **Web**   | Enter the **Redirect URI** for a web app that runs on a server. You can also enter a **Front-channel logout URL**. | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally. |
+   | **Single-page application** | Enter a **Redirect URI** for client-side apps using JavaScript, Angular, React.js, or Blazor WebAssembly. You can also enter a **Front-channel logout URL**. | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.|
    | **iOS / macOS** | Enter the app **Bundle ID**, which generates a redirect URI for you. Find it in **Build Settings** or in Xcode in *Info.plist*. | `com.microsoft.identityapp.ciam.MSALiOS`. |
    | **Android** | Enter the app **Package name**, which generates a redirect URI for you. Find it in the *AndroidManifest.xml* file. Also generate and enter the **Signature hash**. | Package name: <br>&#8226; `com.azuresamples.msalandroidapp` <br> Signature has: <br>&#8226; `aB1cD2eF-3gH4iJ5kL6-mN7oP8qR=`. |
    | **Mobile and desktop applications** | Select this platform for desktop apps or mobile apps not using MSAL or a broker. Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | `https://login.microsoftonline.com/common/oauth2/nativeclient` |

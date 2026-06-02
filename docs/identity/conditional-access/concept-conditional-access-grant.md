@@ -1,13 +1,8 @@
 ---
 title: How to Configure Grant Controls in Microsoft Entra
 description: Learn how to configure grant controls in Microsoft Entra Conditional Access policies to secure access to your organization's resources effectively.
-ms.service: entra-id
-ms.subservice: conditional-access
-ms.topic: article
-ms.date: 08/28/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.topic: concept-article
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth, jogro
 ms.custom:
   - sfi-image-nochange
@@ -17,6 +12,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Conditional Access: Grant
+
+## Overview
 
 In a Conditional Access policy, an admin can use access controls to grant or block access to resources.
 
@@ -30,7 +27,7 @@ The control for blocking access evaluates assignments and prevents access based 
 
 ## Grant access
 
-Administrators can choose to enforce one or more controls when granting access. These controls include the following options:
+Admins can choose to enforce one or more controls when granting access. These controls include the following options:
 
 - [Require multifactor authentication (Microsoft Entra multifactor authentication)](~/identity/authentication/concept-mfa-howitworks.md)
 - [Require authentication strength](#require-authentication-strength)
@@ -40,7 +37,7 @@ Administrators can choose to enforce one or more controls when granting access. 
 - [Require app protection policy](./policy-all-users-device-compliance.md)
 - [Require password change](#require-password-change)
 
-When administrators choose to combine these options, they can use the following methods:
+When admins choose to combine these options, they can use the following methods:
 
 - Require all the selected controls (control *and* control)
 - Require one of the selected controls (control *or* control)
@@ -55,7 +52,7 @@ Selecting this checkbox requires users to perform Microsoft Entra multifactor au
 
 ### Require authentication strength
 
-Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Entra ID** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
+Admins can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Entra ID** > **Authentication methods** > **Authentication strengths**. Admins can choose to create their own or use the built-in versions.
 
 ### Require device to be marked as compliant
 
@@ -146,7 +143,7 @@ See [Require approved client apps for cloud app access with Conditional Access](
 
 In Conditional Access policy, you can require that an [Intune app protection policy](/mem/intune/apps/app-protection-policy) is present on the client app before access is available to the selected applications. These mobile application management (MAM) app protection policies allow you to manage and protect your organization's data within specific applications.
 
-To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. The Microsoft Authenticator app can be used as the broker app but doesn't support being targeted as an approved client app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than three Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-three-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](policy-all-users-windows-app-protection.md).
+To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. The Microsoft Authenticator app can be used as the broker app but doesn't support being targeted as an approved client app. App protection policies are generally available for iOS and Android, and in preview for Microsoft Edge on Windows. [Windows devices support no more than three Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-three-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](policy-all-users-windows-app-protection.md).
 
 Applications must meet certain requirements to support app protection policies. Developers can find more information about these requirements in the section [Apps you can manage with app protection policies](/mem/intune/apps/app-protection-policy#apps-you-can-manage-with-app-protection-policies). 
 
@@ -191,9 +188,7 @@ See [Require app protection policy and an approved client app for cloud app acce
 
 ### Require password change
 
-When user risk is detected, administrators can employ the user risk policy conditions to have the user securely change a password by using Microsoft Entra self-service password reset. Users can perform a self-service password reset to self-remediate. This process closes the user risk event to prevent unnecessary alerts for administrators.
-
-When a user is prompted to change a password, they're first required to complete multifactor authentication. Make sure all users register for multifactor authentication, so they're prepared in case risk is detected for their account.  
+When user risk is detected, admins can employ the user risk policy conditions to have the user perform a secure password change after successful authentication. This process doesn't use the self-service password reset (SSPR) flow. The user must complete multifactor authentication and then change their password to remediate the risk. This process closes the user risk event to prevent unnecessary alerts for admins. For this process to work, you need to make sure all users register for multifactor authentication, so they're prepared in case risk is detected for their account.  
 
 > [!WARNING]
 > Users must have previously registered for multifactor authentication before triggering the user risk policy.
@@ -204,9 +199,19 @@ The following restrictions apply when you configure a policy by using the passwo
 - **Require password change** can't be used with other controls, such as requiring a compliant device.  
 - The password change control can only be used with the user and group assignment condition, cloud app assignment condition (which must be set to "all"), and user risk conditions.
 
+### Require risk remediation
+
+When user risk is detected, users can self-remediate by completing the appropriate remediation flow, regardless of their authentication method. The Microsoft-managed remediation policy in Conditional Access accommodates all authentication methods, including password-based and passwordless. For more information, see [Require risk remediation control](../../id-protection/concept-identity-protection-policies.md#require-risk-remediation-control).
+
+When you select **Require risk remediation** as a grant control, the following settings are automatically applied to the policy:
+- **Require authentication strength**
+- **Sign-in frequency - Every time**
+
+When a user is required to remediate risk with this control selected, users are prompted to sign in immediately after their sessions are revoked. Selecting this grant control means if the user just signed in but they're at risk, they'll be prompted to sign in again. The risk is remediated after the user successfully signs in the second time.
+
 ### Terms of use
 
-If your organization created terms of use, other options might be visible under grant controls. These options allow administrators to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
+If your organization created terms of use, other options might be visible under grant controls. These options allow admins to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
 
 ## Multiple grant controls
 

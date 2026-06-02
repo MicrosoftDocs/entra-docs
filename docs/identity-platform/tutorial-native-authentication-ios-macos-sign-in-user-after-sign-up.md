@@ -3,10 +3,10 @@ title: Sign in user automatically after sign-up in iOS/macOS app
 description: Learn how to automatically sign-in a user after sign-up in an iOS/macOS app by using native authentication.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial

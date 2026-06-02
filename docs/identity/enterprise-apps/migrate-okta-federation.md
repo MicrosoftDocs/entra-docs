@@ -3,8 +3,6 @@ title: Migrate Okta federation to Microsoft Entra authentication
 description: Migrate Okta-federated applications to managed authentication under Microsoft Entra ID. See how to migrate federation in a staged manner.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: gasinh
@@ -238,12 +236,12 @@ When your organization is comfortable with the managed authentication experience
 
 2. To convert the domain, run the following command:
    ```powershell
-    Update-MgDomain -DomainId yourdomain.com -AuthenticationType "Managed"
+    Update-MgDomain -DomainId contoso.com -AuthenticationType "Managed"
     ```
 
 3. Verify that the domain is converted to managed by running the following command. The Authentication type should be set to managed.
     ```powershell
-    Get-MgDomain -DomainId yourdomain.com
+    Get-MgDomain -DomainId contoso.com
     ```
 
 After you set the domain to managed authentication, you defederate your Office 365 tenant from Okta while maintaining user access to the Okta home page.

@@ -2,8 +2,6 @@
 title: Set up a Flexible Federated identity credential (preview)
 description: Learn how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer.
 author: cilwerner
-manager: CelesteDG
-ms.service: entra-workload-id
 ms.topic: how-to
 ms.date: 08/28/2024
 ms.author: cwerner
@@ -18,7 +16,7 @@ This article provides a guide on how to set up a [Flexible Federated identity cr
 
 ## Prerequisites
 
-- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - [Create an app registration](~/identity-platform/quickstart-register-app.md). Grant your app access to the Azure resources targeted by your external software workload.
 
 > [!NOTE]

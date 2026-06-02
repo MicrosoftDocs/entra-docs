@@ -62,7 +62,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Copilot in Microsoft Entra
-            url: ~/fundamentals/copilot-security-entra.md
+            url: ~/security-copilot/security-copilot-in-entra.md
           - text: Secure Gen AI
             url: secure-generative-ai.md
 

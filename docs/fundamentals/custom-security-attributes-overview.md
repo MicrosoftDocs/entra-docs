@@ -2,13 +2,11 @@
 title: What are custom security attributes in Microsoft Entra ID?
 description: Learn about custom security attributes in Microsoft Entra ID.
 author: rolyon
-manager: femila
 ms.author: rolyon
-ms.service: entra
-ms.subservice: fundamentals
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/28/2024
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to understand custom security attributes so that I can define business-specific attributes for objects in my directory.
 ---
 
 # What are custom security attributes in Microsoft Entra ID?
@@ -37,6 +35,7 @@ Custom security attributes **aren't** supported in the following areas:
 
 - [Microsoft Entra Domain Services](/entra/identity/domain-services/overview)
 - [Security Assertion Markup Language (SAML) token claims](~/identity-platform/saml-claims-customization.md)
+- [JSON Web Token claims](/entra/identity-platform/security-tokens)
 
 ## Features of custom security attributes
 

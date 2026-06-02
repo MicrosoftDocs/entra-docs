@@ -1,13 +1,10 @@
 ---
 title: Automate Microsoft Entra ID Governance tasks with Azure Automation
 description: Learn how to write PowerShell scripts in Azure Automation to interact with Microsoft Entra entitlement management and other features.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 11/25/2024
-ms.author: owinfrey
 ms.custom:
+#Customer Intent: As an IT admin, I want to automate Microsoft Entra ID Governance tasks with Azure Automation so that I can use PowerShell scripts to manage entitlement management and other features.
 ---
 # Automate Microsoft Entra ID Governance tasks via Azure Automation and Microsoft Graph
 

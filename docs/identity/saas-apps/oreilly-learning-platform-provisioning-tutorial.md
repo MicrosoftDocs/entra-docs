@@ -1,13 +1,11 @@
 ---
 title: Configure O'Reilly learning platform for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to O'Reilly learning platform.
-author: adimitui
-manager: jeedes
-ms.service: entra-id
-ms.subservice: saas-apps
+author: jeevansd
+manager: pmwongera
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: addimitu
+ms.date: 04/13/2026
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to O'Reilly learning platform so that I can streamline the user management process and ensure that users have the appropriate access to O'Reilly learning platform.
 ---
@@ -44,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 Before you begin to configure the O'Reilly learning platform to support provisioning with Microsoft Entra ID, you’ll need to generate a SCIM API token within the O’Reilly Admin Console.
 
-1. Navigate to [O’Reilly Admin Console](https://learning.oreilly.com/) by logging in to your O’Reilly account. 
+1. Navigate to O'Reilly Admin Console by logging in to your O'Reilly account.
 1. Once you’ve logged in, select **Admin** in the top navigation and select **Integrations**.
 1. Scroll down to the **API tokens** section. Under API tokens, select **Create token** and select the **SCIM API**. Then give your token a name and expiration date, and select Continue. You’ll receive your API key in a pop-up message prompting you to store a copy of it in a secure place. Once you’ve saved a copy of your key, select the checkbox and Continue.
 1. You use the O’Reilly SCIM API token in Step 5.
@@ -80,21 +78,26 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your O'Reilly learning platform Tenant URL, which is `https://api.oreilly.com/api/scim/v2`, and Secret Token, which you generated in Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to O'Reilly learning platform. If the connection fails, double-check that your token is correct or [contact the O’Reilly platform integration team](mailto:platform-integration@oreilly.com) for help.
+1. In the **Tenant URL** field, enter your O'Reilly learning platform Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to O'Reilly learning platform. If the connection fails, ensure your O'Reilly learning platform account has the required admin permissions and try again.
+	> [!NOTE]
+    > Enter `https://api.oreilly.com/api/scim/v2` in the **Tenant URL**.
+	> If the connection fails, double-check that your token is correct or [contact the O’Reilly platform integration team](mailto:platform-integration@oreilly.com) for help.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+
+1. Select **Create** to create your configuration.
+
+1. Select **Properties** on the **Overview** page.
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+   ![Screenshot of the Provisioning properties page.](common/provisioning-properties.png)
 
-1. Select **Save**.
-
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to O'Reilly learning platform**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to O'Reilly learning platform in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in O'Reilly learning platform for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the O'Reilly learning platform API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -107,21 +110,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String||&check;
    |externalId|String||&check;
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for O'Reilly learning platform, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users that you would like to provision to O'Reilly learning platform by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 

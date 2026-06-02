@@ -1,14 +1,9 @@
 ---
 title: Configure Veza for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Veza.
-author: nguhiu
-manager: mwongerapk
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
+ms.reviewer: jomondi
 ms.topic: how-to
-ms.date: 05/07/2024
-ms.author: gideonkiratu
+ms.date: 03/19/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Veza so that I can control who has access to Veza, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -25,7 +20,7 @@ In this article,  you learn how to integrate Veza with Microsoft Entra ID. When 
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Veza single sign-on (SSO) enabled subscription.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID. For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
@@ -86,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<instancename>.veza.com/login`.
+    `https://<instancename>.vezacloud.com/login`.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

@@ -1,11 +1,6 @@
 ---
 title: Provision a User with Expression Builder
 description: Learn how to simplify user provisioning with Expression Builder, handle duplicate users, and transform user attributes for seamless integration. 
-author: jenniferf-skc
-manager: pmwongera
-ms.author: jfields
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 03/04/2025
 ---
@@ -91,6 +86,7 @@ The process checks for specific users based on UPN and applies a custom modifica
 
 - **Test Extensively:** Always test expressions in a non-production environment to verify functionality. 
 - **Character Limitations:** Ensure the transformed username doesn’t exceed character limits specified by the application (for example, GitHub has a 39-character limit). 
+- **Expression Limitations:** The maximum supported length for a single attribute mapping expression is **10,000 characters**.
 - **Documentation:** Maintain clear documentation of expressions and changes for troubleshooting and future reference. 
 
 ## Tools and steps for testing 

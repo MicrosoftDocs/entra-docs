@@ -1,13 +1,8 @@
 ---
 title: What are Microsoft Entra recommendations?
 description: Provides a general overview of Microsoft Entra recommendations so you can keep your tenant secure and healthy.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: overview
-ms.subservice: monitoring-health
-ms.date: 08/22/2025
-ms.author: sarahlipsey
+ms.date: 04/28/2026
 ms.reviewer: jadedsouza 
 ms.custom: sfi-ga-nochange
 # Customer intent: As a Microsoft Entra administrator, I want guidance to so that I can keep my Microsoft Entra tenant in a healthy state.
@@ -34,6 +29,12 @@ On a daily basis, Microsoft Entra ID analyzes the configuration of your tenant. 
 
 Each recommendation contains a description, a summary of the value of addressing the recommendation, and a step-by-step action plan. If applicable, impacted resources associated with the recommendation are listed, so you can resolve each affected area. If a recommendation doesn't have any associated resources, the impacted resource type is *Tenant level*, so your step-by-step action plan impacts the entire tenant and not just a specific resource. The system processes recommendation data daily, reflecting activity from the preceding 24-hour window. Occasionally, data synchronization may extend up to 72 hours.
 
+
+## Roles and licenses
+
+The following roles and Microsoft Graph permissions provide access to Microsoft Entra recommendations. License requirements depend on the specific recommendation; see the [Recommendations overview table](#recommendations-overview-table) for per-recommendation details.
+
+[!INCLUDE [Recommendations roles](~/includes/recommendations-roles.md)]
 
 ## Recommendations overview table
 
@@ -62,7 +63,6 @@ The recommendations listed in the following table are currently available in pub
 | Group Policy Object (GPO) assigns unprivileged identities to local groups with elevated privileges | Users | Preview | Yes | N/A |
 | [Migrate applications from AD FS to Microsoft Entra ID](recommendation-migrate-apps-from-adfs-to-azure-ad.md) | Applications | Generally available | No | Application Administrator, Authentication Administrator Hybrid Identity Administrator |
 | [Migrate applications from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | Preview | No | Application Administrator |
-| [Migrate from ADAL to MSAL](recommendation-migrate-from-adal-to-msal.md) | Applications | Generally available | No | Application Administrator |
 | [Migrate from MFA server to Microsoft Entra MFA](recommendation-migrate-to-microsoft-entra-mfa.md) | Tenant | Generally Available | No | Global Administrator |
 | [Migrate service principals from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | Preview | No | Application Administrator |
 | [Migrate to Microsoft Authenticator](recommendation-migrate-to-authenticator.md) | Users | Preview | No | Global Administrator | 

@@ -1,22 +1,21 @@
 ---
 title: Bulk operations in Microsoft Entra ID (Preview)
 description: Learn about the new Microsoft Entra bulk operations experience for managing users, groups, and devices.
-author: barclayn
-manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
-ms.topic: conceptual
-ms.date: 08/18/2025
-ms.author: barclayn
+ms.topic: article
+ms.date: 02/24/2026
 ms.custom: it-pro
+#Customer Intent: As an IT admin, I want to understand bulk operations in Microsoft Entra ID so that I can perform large-scale user management tasks efficiently.
 ---
 
 # Bulk operations in Microsoft Entra ID (Preview)
 
-The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups** and **Devices**. This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
+
+## Overview
+
+The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups**, **Devices, Administrative Unit and Role assignments.** This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 
 > [!NOTE] 
-> The new bulk operations service currently only supports **Groups**, **Devices**, and **Users** export. Support for additional entities like **Enterprise applications** will be added in a future update.
+> The new bulk operations service currently only supports **Groups**, **Devices**, **Users** export, **Administrative Unit and Role assignment**. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is partially supported (exported CSV doesn't have a localization template, but import and remove are supported). Additionally, guest users cannot initiate bulk operations. The new bulk operations service doesn't support exporting hidden memberships.
 
 For information about limitations and to learn more about the previous Bulk Operations experience, see [Bulk operations service limitations](bulk-operations-service-limitations.md).
 
@@ -48,7 +47,7 @@ To download a filtered subset of groups:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade) and in the left-hand navigation pane, select the **Groups** tab.
 
-2. Select **Manage filters** to edit the column filters.
+2. Select **Add filter** to open the **Manage filters** panel. Apply desired filters to narrow down the group list. Only selected columns appear in the CSV file.
 
     :::image type="content" source="Media/bulk-operations/filters-download-groups.png" alt-text="Screenshot of the Manage filters panel on the Groups page with filters applied and the Download groups action available.":::
 
@@ -70,7 +69,7 @@ To download all members of a specific group:
 
     :::image type="content" source="Media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
 
-4. Enter a filename and select **Start download**.
+4. Enter a filename and select **Start bulk operation**.
 
 5. Follow the download process as described in [Bulk download groups](#bulk-download-groups).
 
@@ -87,7 +86,9 @@ To add multiple members to a group:
 
     :::image type="content" source="Media/bulk-operations/members-bulk-operations-import.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Import members selected.":::
 
-4. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
+4. Select **Download csv template** to get a template file with the correct column header. The template contains one column: `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Delete the example row and add the Object IDs or UPNs for the members you want to import, one per row. You can use either:
+   - **Object ID**: The GUID of the user (for example, `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`)
+   - **User principal name**: The UPN of the user (for example, `user@contoso.com`)
 
     :::image type="content" source="Media/bulk-operations/template-download-object-ids.png" alt-text="Screenshot of the CSV template for importing members showing the ObjectId column for pasting member IDs.":::
 
@@ -95,8 +96,8 @@ To add multiple members to a group:
 
 6. Monitor the notification for job completion. Select the **Success!** link to view the operation status. 
 
->[!IMPORTANT]
-> If you add invalid Object IDs in the uploaded csv file, the bulk operation status shows **Failed** with reason **NotAllRowsSuccessfullyProcessed**. You can select on the filename to download a detailed report showing the status of each object ID.
+> [!IMPORTANT]
+> If you add invalid Object IDs in the uploaded CSV file, the bulk operation status shows **Failed** with reason **NotAllRowsSuccessfullyProcessed**. You can select on the filename to download a detailed report showing the status of each object ID.
 
 
 ## Bulk remove group members 
@@ -109,9 +110,9 @@ To remove multiple members from a group:
 
     :::image type="content" source="Media/bulk-operations/members-bulk-operations-remove.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Remove members selected.":::
 
-3. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
-
-
+3. Select **Download csv template** to get a template file with the correct column header. The template contains one column: `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Delete the example row and add the Object IDs or UPNs for the members you want to remove, one per row. You can use either:
+   - **Object ID**: The GUID of the user (for example, `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`)
+   - **User principal name**: The UPN of the user (for example, `user@contoso.com`)
 
 4. Upload the completed CSV file and select **Submit**.
 
@@ -152,7 +153,7 @@ To delete completed or failed bulk operations:
 
     :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations.png" alt-text="Screenshot of the All devices page with Bulk operations open and the Download devices option selected.":::
 
-3. Enter a filename that matches your naming convention and select **Start download**.
+3. Enter a filename that matches your naming convention and select **Start bulk operation**.
     :::image type="content" source="Media/bulk-operations/all-devices-success.png" alt-text="Screenshot of a success notification after starting the Download devices job.":::
 
 4. Verify the notification message and, if the job was submitted successfully, select the **Success!** or **File is ready! Click here to download** link.
@@ -163,6 +164,81 @@ To delete completed or failed bulk operations:
 
 You can bulk export users following the steps in [Download a list of users in Microsoft Entra admin center](~/identity/users/users-bulk-download.md).
 
+## Add users to an administrative unit in a bulk operation
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+
+2. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
+
+3. Select the administrative unit you want to add users to.
+
+4. Select **Users** > **Bulk operations** > **Bulk add members**.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-bulk-add-members.png" alt-text="Screenshot of the Users page for assigning users to an administrative unit as a bulk operation.":::
+
+5. In the **Bulk add members** pane, download the comma-separated values (CSV) template. Update and format the CSV as follows:
+
+    Entries: Object Ids or UPN of members to add to the Admin Unit. Rename the file if desired, then select and upload the edited file.
+
+6. Select **Submit** after successful upload.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-submit-upload.png" alt-text="Screenshot of the bulk add members submission screen.":::
+
+7. Verify the notification message and ensure the job was submitted successfully.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-success-notification.png" alt-text="Screenshot of success notification for bulk add members operation.":::
+
+8. Select **Success** to navigate to the bulk jobs list. You can sort by creation time to find your job, then select it to download.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-bulk-jobs-list.png" alt-text="Screenshot of the bulk jobs list showing the completed operation.":::
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-download-results.png" alt-text="Screenshot of downloading the bulk operation results.":::
+
+> [!NOTE]
+> Verify that the correct object IDs were added to the admin unit successfully. Refresh the UX if needed to see the updated state; it takes some time to reflect especially when adding groups to Admin Unit.
+>
+> If the input includes an invalid Object ID or one already assigned to this admin unit, the bulk operation status shows "Failed" instead of "Success" due to not all rows successfully processed. In the results csv, you will see the failure reason as 'The request was malformed or contains invalid parameters'. This is most likely due to the object being already assigned to this admin unit pre-operation. Other valid rows should still be processed successfully, please verify accordingly.
+
+## Remove users from an administrative unit in a bulk operation
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+
+2. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
+
+3. Select the administrative unit that you want to remove users from.
+
+4. Select **Users** > **Bulk operations** > **Bulk remove members**.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-bulk-remove-members.png" alt-text="Screenshot of Users page that shows the Bulk remove members link.":::
+
+5. In the **Bulk remove members** pane, download the comma-separated values (CSV) template.
+
+6. Don't change the first row of the template, and for each row fill in objectID or UPN of the users/devices/groups that you want to remove.
+
+7. Save your changes and upload the CSV file.
+
+8. Select **Submit**.
+
+## Download Role Assignment
+
+To download all active role assignments across all roles, including built-in and custom roles, follow these steps.
+
+1. On the **Roles and administrators** page, select **All roles**.
+
+2. Select **Download assignments**.
+
+3. Select **Success** to navigate to the bulk jobs list. You can sort by creation time to find your job, then select it to download.
+
+    :::image type="content" source="Media/bulk-operations/role-assignment-bulk-jobs-list.png" alt-text="Screenshot of bulk jobs list for role assignment download.":::
+
+    :::image type="content" source="Media/bulk-operations/role-assignment-download-results.png" alt-text="Screenshot of downloading role assignment results.":::
+
+4. Sample output:
+
+    :::image type="content" source="Media/bulk-operations/role-assignment-sample-output.png" alt-text="Screenshot of sample role assignment CSV output.":::
+
+> [!NOTE]
+> Filters and sorting are **not** supported for this bulk job type; this downloads all role assignments.
 
 ## Related content
 

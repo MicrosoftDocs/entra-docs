@@ -4,7 +4,7 @@ description: Describes directory extension attributes that are used for sending 
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 05/26/2023
 ms.reviewer: ludwignick, alamaral
 ms.service: identity-platform

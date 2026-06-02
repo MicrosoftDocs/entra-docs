@@ -1,14 +1,10 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Microsoft Entra connectivity issues'
 description: Learn how to troubleshoot connectivity issues with Microsoft Entra Connect.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ---
 # Troubleshoot Microsoft Entra Connect connectivity issues
@@ -42,6 +38,7 @@ Of these URLs, the URLs listed in the following table are the absolute bare mini
 | `*.entrust.net` |HTTP/80 |Used to download CRL lists for multifactor authentication (MFA). |
 | `*.management.core.windows.net` (Azure Storage)</br>`*.graph.windows.net` (Azure AD Graph)|HTTPS/443|Used for the various Azure services.|
 | `secure.aadcdn.microsoftonline-p.com` |HTTPS/443 |Used for MFA. |
+| `graph.microsoft.com` |HTTPS/443 |Used in 2.4.18.0 or later. |
 | `*.microsoftonline.com` |HTTPS/443 |Used to configure your Microsoft Entra directory and import/export data. |
 | `*.crl3.digicert.com` |HTTP/80 |Used to verify certificates. |
 | `*.crl4.digicert.com` |HTTP/80 |Used to verify certificates. |

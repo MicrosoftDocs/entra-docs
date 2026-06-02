@@ -3,8 +3,6 @@ title: Configure the F5 BIG-IP Easy Button for Header-based and LDAP SSO
 description: Learn to configure the F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure hybrid access to header-based applications that also require session augmentation through Lightweight Directory Access Protocol (LDAP) sourced attributes.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 04/19/2024
 ms.author: gasinh
@@ -57,7 +55,7 @@ SHA for this scenario supports SP and IdP initiated flows. The following image i
 
 Prior BIG-IP experience isn't necessary, but you need:
 
-- An [Azure free account](https://azure.microsoft.com/free/active-directory/), or a higher-tier subscription
+- An [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn/), or a higher-tier subscription
 - A BIG-IP or [deploy a BIG-IP Virtual Edition (VE) in Azure](./f5-bigip-deployment-guide.md)
 - Any of the following F5 BIG-IP licenses:
   - F5 BIG-IP® Best bundle

@@ -1,32 +1,36 @@
 ---
-title: The Global Secure Access Client for Android
-description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
-ms.service: global-secure-access
+title: Install the Global Secure Access Client for Android
+description: The Global Secure Access client helps secure network traffic at the user device. This article describes how to download and install the Android client.
+#customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 02/21/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
-ms.reviewer: dhruvinrshah
+ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
-# Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
+
 ---
-# Global Secure Access client for Android
 
-The Global Secure Access client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how your end users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
+# Install the Global Secure Access client for Android
 
-This article explains the prerequisites and how to deploy the client onto Android devices.
+This article describes how to deploy the Global Secure Access client to Android devices by using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your users to connect to the resources that they need without having to manually configure VPN settings on their devices.
 
 ## Prerequisites
 
-- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- You must enable at least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md).
-- Device installation permissions on the device are required for installation.
-- Android devices must be running Android 10.0 or later.
-- Android devices must be Microsoft Entra registered devices.
-  - Devices not managed by your organization must have the Microsoft Authenticator app must be installed.
-  - Devices not managed through Intune must have the Company Portal app installed.
-  - Device enrollment is required for Intune device compliance policies to be enforced.
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access?](overview-what-is-global-secure-access.md). If necessary, [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+
+- Enable at least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md).
+
+- You need device installation permissions to install the client.
+
+- Android devices need to run Android 11.0 or later.
+
+- Android devices need to be Microsoft Entra registered devices:
+  - Devices that your organization doesn't manage need to have the Microsoft Authenticator app installed.
+  - Devices not managed through Intune need to have the Company Portal app installed.
+  - Device enrollment is required to enforce Intune device compliance policies.
+
+- To enable a Kerberos single sign-on (SSO) experience, install and configure a non-Microsoft SSO client.
 
 ### Known limitations
 
@@ -34,128 +38,113 @@ This article explains the prerequisites and how to deploy the client onto Androi
 
 ## Supported scenarios
 
-Global Secure Access client for Android supports deployment for the legacy Device Administrator and Android Enterprise scenarios. The following Android Enterprise scenarios are supported:
+The Global Secure Access client for Android supports deployment in these Android Enterprise scenarios:
 
-- Corporate-owned, fully managed user devices.
-- Corporate-owned devices with a work profile.
-- Personal devices with a work profile.
+- Corporate-owned, fully managed user devices
+- Corporate-owned devices with a work profile
+- Personal devices with a work profile
 
 ### Non-Microsoft mobile device management
 
-Non-Microsoft mobile device management (MDM) scenarios are also supported. In these scenarios, known as *Global Secure Access only mode*, you only need to enable a traffic forwarding profile and configure the app according to the vendor documentation.
+The Global Secure Access client also supports non-Microsoft mobile device management (MDM) scenarios. These scenarios, known as *Global Secure Access only mode*, require enabling a traffic forwarding profile and configuring the app based on the vendor documentation.
 
-## Deploy Microsoft Defender for Endpoint Android
+When you're configuring through a non-Microsoft MDM solution, use the following key/value pairs in the managed app configuration:
 
-There are several combinations of deployment modes and scenarios for using the Global Secure Access client for Android.
+| Configuration key                | Value | Details |
+|----------------------------------|-------|---------|
+| `Global Secure Access`             | `1`–`3`   | Required. Controls whether Global Secure Access is enabled in the Defender app. For detailed value descriptions, see the table [later in this article](#deploy-microsoft-defender-for-endpoint-on-android). |
+| `GlobalSecureAccessPrivateChannel` | `0`–`3`   | Optional. Controls the Private Access channel. For detailed value descriptions, see the table [later in this article](#deploy-microsoft-defender-for-endpoint-on-android). |
 
-Once you enable a traffic forwarding profile and configure your network, the Global Secure Access Android client appears in the Defender app automatically; however, the Global Secure Access client is disabled by default. Users can enable the client from the Defender app. The steps to enable the client are provided in the [Confirm Global Secure Access appears in Defender app](#confirm-global-secure-access-appears-in-defender-app) section.
+## Deploy Microsoft Defender for Endpoint on Android
 
-### [Device Administrator](#tab/device-administrator)
+To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and configure Global Secure Access:
 
-This legacy enrollment mode allows you to deploy Defender for Endpoint on Android with Microsoft Intune Company Portal - Device Administrator enrolled devices.
+1. In the [Microsoft Intune admin center](https://intune.microsoft.com/#home), go to **Apps** > **Android** > **Manage Apps** > **Configuration**.
 
-The high level process is as follows:
+1. Select **+ Create**, and then select **Managed devices**. The **Create app configuration policy** form opens.
 
-1. Deploy Defender to Intune enrolled Android devices.
+1. On the **Basics** tab:
 
-1. [Enable at least one traffic forwarding profile](concept-traffic-forwarding.md) if Defender is already deployed.
+    1. Enter a **Name** value.
+    1. Set **Platform** to **Android Enterprise**.
+    1. Set **Profile Type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
+    1. Set **Targeted app** to **Microsoft Defender**.
 
-1. [Confirm Global Secure Access appears in the Defender app](#confirm-global-secure-access-appears-in-defender-app).
+    :::image type="content" source="media/how-to-install-android-client/create-policy-basics.png" alt-text="Screenshot of the Basics tab in the pane for creating an app configuration policy." lightbox="media/how-to-install-android-client/create-policy-basics-expanded.png":::
 
-The detailed process for deploying Defender is as follows:
+1. Select **Next**.
 
-1. Sign in to the [Microsoft Intune admin center](https://intune.microsoft.com/) as an [Intune Administrator](../identity/role-based-access-control/permissions-reference.md#intune-administrator).
-1. Browse to **Apps** > **Android** > **Add** > **Android store app** > **Select**.
+1. On the **Settings** tab:
 
-    ![Screenshot of the add Android app store options.](media/how-to-install-android-client/intune-add-android-store-app.png)
+    1. Set **Configuration settings format** to **Use configuration designer**.
+    1. Select the **+ Add** button.
+    1. In the search box, type **global** and select the Global Secure Access configuration keys listed in the following table.
+    1. Set the appropriate values for each configuration key according to the following table.
 
-1. Provide a **Name**, **Description**, and **Publisher**.
-1. Enter the URL in the **Appstore URL** field.
-    - `https://play.google.com/store/apps/details?id=com.microsoft.scmx`
-1. Leave all other fields as their default values and select **Next**.
+    > [!NOTE]
+    > The Android configuration keys differ from the iOS client keys. On Android, use `Global Secure Access` and `GlobalSecureAccessPrivateChannel` as shown here. Don't use the iOS key names (`EnableGSA`, `EnableGSAPrivateChannel`).
+    >
+    > The `GlobalSecureAccessPA` configuration key is no longer supported.
 
-    ![Screenshot of the completed fields.](media/how-to-install-android-client/intune-add-defender-app-fields.png)
+    | Configuration key                | Value    | Details   |
+    |----------------------------------|----------|-----------|
+    | `Global Secure Access`           | No value | Global Secure Access defaults to value 1 behavior. |
+    |                                  | `0`      | Global Secure Access isn't enabled and the tile isn't visible. |
+    |                                  | `1`      | The tile is visible and defaults to `false` (disabled state). The user can enable or disable Global Secure Access by using the toggle in the app. |
+    |                                  | `2`      | The tile is visible and defaults to `true` (enabled state). The user can override Global Secure Access. The user can enable or disable Global Secure Access by using the toggle in the app. |
+    |                                  | `3`      | The tile is visible and defaults to `true` (enabled state). The user *can't* disable Global Secure Access. |
+    | `GlobalSecureAccessPrivateChannel` | No value | Global Secure Access defaults to value `2` behavior. |
+    |                                  | `0`      | Private Access isn't enabled and the toggle option isn't visible to the user. |
+    |                                  | `1`      | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
+    |                                  | `2`      | The Private Access toggle is visible and defaults to the enabled state. The user can enable or disable Private Access. |
+    |                                  | `3`      | The Private Access toggle is visible but unavailable, and it defaults to the enabled state. The user *can't* disable Private Access. |
 
-1. In the **Required** section, select **Add group**, then select the groups to assign the app to and select **Next**.
-    - The selected group should consist of your Intune enrolled users.
-    - You can edit or add more groups later.
+    :::image type="content" source="media/how-to-install-android-client/create-policy-settings.png" alt-text="Screenshot of the Settings tab in the pane for creating an app configuration policy." lightbox="media/how-to-install-android-client/create-policy-settings-expanded.png":::
 
-    ![Screenshot of the add groups steps.](media/how-to-install-android-client/intune-add-group.png)
+1. Select **Next**.
 
-1. On the **Review + create** tab, confirm the information is correct and select **Create**.
-1. On the new app details page, select **Device install status** and confirm the app is installed.
+1. On the **Scope tags** tab, configure scope tags as needed and then select **Next**.
 
-**Users need to enable the client in the Defender app. It's disabled by default.** Proceed to the next section to confirm the app is installed and for how to enable the client.
+1. On the **Assignments** tab, select **+ Add groups** to assign the configuration policy and enable Global Secure Access.
 
-### [Android Enterprise](#tab/android-enterprise)
+    :::image type="content" source="media/how-to-install-android-client/create-policy-assignments.png" alt-text="Screenshot of the Assignments tab in the pane for creating an app configuration policy." lightbox="media/how-to-install-android-client/create-policy-assignments-expanded.png":::
 
-Follow these steps to add the Microsoft Defender for Endpoint app into your managed Google Play store.
+    > [!TIP]
+    > To enable the policy for all but a few specific users, select **Add all devices** in the **Included groups** section. Then, add the users or groups to exclude in the **Excluded groups** section.
 
-The high level process is as follows:
+1. Select **Next**.
 
-1. Deploy Defender on Android Enterprise enrolled devices.
+1. Review the configuration summary, and then select **Create**.
 
-1. [Enable at least one traffic forwarding profile](concept-traffic-forwarding.md).
+## Confirm Global Secure Access appears in the Defender app
 
-1. [Confirm Global Secure Access appears in the Microsoft Defender for Endpoint app](#confirm-global-secure-access-appears-in-defender-app).
+Because the Android client is integrated with Defender for Endpoint, it's helpful to understand the user experience. The client appears in the Defender dashboard after you onboard to Global Secure Access. Onboarding happens by enabling a traffic forwarding profile.
 
-The detailed process for deploying to the Google Play store is as follows:
+![Screenshot of the Global Secure Access tile on the dashboard of the Defender app.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
 
-1. Sign in to the [Microsoft Intune admin center](https://intune.microsoft.com/) as an [Intune Administrator](../identity/role-based-access-control/permissions-reference.md#intune-administrator).
-1. Browse to **Apps** > **Android** > **Add** > **Managed Google Play app** > **Select**.
+*The client is disabled by default when it's deployed to user devices.* Users need to enable the client from the Defender app. To enable the client, tap the toggle.
 
-    ![Screenshot of the add Google Play app options.](media/how-to-install-android-client/intune-add-google-play-app.png)
+![Screenshot of the Global Secure Access client in a disabled state.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
 
-1. On the managed Google Play page, search for **Microsoft Defender** and select it from the search results.
-1. On the details page for Microsoft Defender, select the **Select** button.
-1. Select the **Sync** button in the upper-left corner. This step syncs Defender with your apps list.
+To view client details, tap the tile on the dashboard. When the client is enabled and working properly, the dashboard displays an "Enabled" message. It also shows the date and time when the client connected to Global Secure Access.
 
-    ![Screenshot of the Defender app details, with the Sync button highlighted.](media/how-to-install-android-client/intune-sync-google-play.png)
+![Screenshot of the Global Secure Access client in an enabled state.](media/how-to-install-android-client/defender-global-secure-access-enabled.png)
 
-1. Select the **Refresh** button on the Android apps screen so Microsoft Defender for Endpoint appears in the list.
-1. Select **Microsoft Defender** from the app list and browse to **Properties** > **Assignments** > **Edit**.
+If the client can't connect, a toggle appears to disable the service. Users can return later to enable the client.
 
-    ![Screenshot of the Edit option for assigning groups.](media/how-to-install-android-client/intune-google-assignments-edit.png)
-
-1. In the **Required** section, select **Add group**, then select the groups to assign the app to and select **Next**.
-1. Select **Review + save** and once the details are confirmed, select **Save**.
-
-    ![Screenshot of the Add group option.](media/how-to-install-android-client/intune-google-add-group.png)
-
-After you assign a group, the app is automatically installed in the *work profile* during the next sync of the device via the Company Portal app.
-
-**Users need to enable the client in the Defender app. It's disabled by default.** Proceed to the next section to confirm the app is installed and for how to enable the client.
-
----
-
-## Confirm Global Secure Access appears in Defender app
-
-Because the Android client is integrated with Defender for Endpoint, it's helpful to understand the end user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access. Onboarding happens by enabling a traffic forwarding profile.
-
-![Screenshot of the Defender app with the Global Secure Access tile on the dashboard.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
-
-**The client is disabled by default when it's deployed to user devices.** Users need to enable the client from the Defender app. To enable the client, tap the toggle.
-
-![Screenshot of the disabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
-
-To view the details of the client, tap on the tile on the dashboard. When enabled and working properly, the client displays an "Enabled" message. The date and time for when the client connected to Global Secure Access also appears.
-
-![Screenshot of the enabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-enabled.png)
-
-If the client is unable to connect, a toggle appears to disable the service. Users can come back later to try enabling the client.
-
-![Screenshot of the Global Secure Access client that is unable to connect.](media/how-to-install-android-client/defender-global-secure-access-unable.png)
+![Screenshot of a Global Secure Access client that's unable to connect.](media/how-to-install-android-client/defender-global-secure-access-unable.png)
 
 ## Troubleshooting
 
-The Global Secure Access tile doesn't appear after onboarding the tenant to the service. Restart the Defender app.
+If the Global Secure Access tile doesn't appear after you onboard the tenant to the service, restart the Defender app.
 
-When attempting to access a Private Access application, the connection might time out after a successful interactive sign-in. Reloading the application through a web browser refresh should resolve the issue.
+When you try to access a Private Access application, the connection might time out after a successful interactive sign-in. Reload the application by refreshing the web browser.
 
 ## Related content
-- [About Microsoft Defender for Endpoint on Android](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-android)
+
+- [Microsoft Defender for Endpoint on Android](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-android)
 - [Deploy Microsoft Defender for Endpoint on Android with Microsoft Intune](/microsoft-365/security/defender-endpoint/android-intune)
-- [Learn about managed Google Play apps and Android Enterprise devices with Intune](/mem/intune/apps/apps-add-android-for-work)
-- [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md)
-- [Global Secure Access client for macOS](how-to-install-macos-client.md)
-- [Global Secure Access client for iOS](how-to-install-ios-client.md)
+- [Add managed Google Play apps to Android Enterprise devices with Intune](/mem/intune/apps/apps-add-android-for-work)
+- [Install the Global Secure Access client for Windows](how-to-install-windows-client.md)
+- [Install the Global Secure Access client for macOS](how-to-install-macos-client.md)
+- [Install the Global Secure Access client for iOS](how-to-install-ios-client.md)

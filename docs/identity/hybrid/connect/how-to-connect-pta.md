@@ -3,16 +3,11 @@ title: 'Microsoft Entra Connect: Pass-through Authentication'
 description: This article describes Microsoft Entra pass-through authentication and how it allows Microsoft Entra sign-ins by validating users' passwords against on-premises Active Directory.
 
 keywords: what is Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
 ---
 
 # User sign-in with Microsoft Entra pass-through authentication
@@ -63,6 +58,12 @@ You can combine Pass-through Authentication with the [Seamless single sign-on](h
 - It uses a lightweight on-premises agent that listens for and responds to password validation requests.
 - Installing multiple agents provides high availability of sign-in requests.
 - It [protects](~/identity/authentication/howto-password-smart-lockout.md) your on-premises accounts against brute force password attacks in the cloud.
+
+## Privacy considerations
+
+When a pass-through sign-in attempt from Tenant A (for example, Contoso) to Tenant B (for example, Fabrikam) fails, Microsoft Entra ID publishes the sign-in log to both tenants. For failed attempts, Microsoft Entra ID doesn't expose personally identifiable information (PII) to Tenant B, because the user in Tenant A never consented to share their identity with Tenant B. In these cases, attributes like the user principal name (UPN) are replaced with unresolved GUIDs.
+
+If the sign-in succeeds and the user enters Tenant B as a guest with resource access, they become a B2B guest user. Microsoft Entra ID then surfaces their identity information to Tenant B.
 
 ## Next steps
 

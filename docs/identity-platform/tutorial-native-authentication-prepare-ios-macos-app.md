@@ -3,10 +3,10 @@ title: Prepare your iOS/macOS app for native authentication
 description: Learn how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your iOS/macOS application.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial

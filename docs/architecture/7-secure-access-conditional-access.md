@@ -1,14 +1,9 @@
 ---
 title: Manage external access to resources with Conditional Access
 description: Learn to use Conditional Access policies to secure external access to resources.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 02/23/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # Manage external access to resources with Conditional Access policies

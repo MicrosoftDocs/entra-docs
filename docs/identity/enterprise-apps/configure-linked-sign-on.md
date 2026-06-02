@@ -1,15 +1,9 @@
 ---
 title: Add linked single sign-on to an application
 description: Add linked single sign-on to an application in Microsoft Entra ID.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 06/20/2025
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
 # Customer intent: As an Application Administrator, I want to configure linked-based single sign-on for my application in Microsoft Entra ID, so that users can access the application through the My Apps or Microsoft 365 portal and be redirected to the correct sign-in page.
@@ -33,7 +27,7 @@ Some common scenarios where linked-based SSO is valuable include:
 ## Prerequisites
 
 To configure linked-based SSO in your Microsoft Entra tenant, you need:
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 - One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - An application that supports linked-based SSO.
 

@@ -1,15 +1,8 @@
 ---
 title: Training, demos, and videos
 description: Explore Microsoft Entra External ID training, live demos, and videos. Learn to create secure sign-up experiences and protect access with multifactor authentication.
-
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-
-ms.subservice: external
 ms.topic: concept-article
-ms.date: 06/25/2025
+ms.date: 09/16/2025
 ms.custom: it-pro
 
 
@@ -31,12 +24,6 @@ In the training module, you'll:
 - Protect access to your application with Conditional Access and multifactor authentication.
 
 To start the training, go to [Guided project – Build a sample app to evaluate Microsoft Entra External ID](https://aka.ms/eeid/training-module) and follow the units in order.
-
-## Woodgrove Groceries live demo
-
-The Woodgrove Groceries live demo app is a fictional grocery store that incorporates Microsoft Entra External ID into its online shopping platform. It illustrates several common authentication experiences that can be configured for your apps. To explore the demo environment, visit [Woodgrove Groceries](https://woodgrovedemo.com/). On the right side of the screen, choose the **Select a use case** button, or use [this link](https://woodgrovedemo.com/#usecase=Default). Then, choose from a list of features and use cases related to authentication experiences.
-
-:::image type="content" source="media/overview-solutions-customers/demo-woodgrove.png" alt-text="Screenshot of the Woodgrove Groceries demo home page.":::
 
 ## Visit our video library
 

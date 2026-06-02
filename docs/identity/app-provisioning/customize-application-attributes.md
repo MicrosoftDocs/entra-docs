@@ -1,13 +1,8 @@
 ---
 title: Tutorial - Customize Microsoft Entra attribute mappings in Application Provisioning
 description: Learn about attribute mappings for Software as a Service (SaaS) apps in Microsoft Entra Application Provisioning. Learn what attributes are and how you can modify them to address your business needs.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: tutorial
 ms.date: 03/04/2025
-ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -62,6 +57,10 @@ There are four different mapping types supported:
 - **Direct** – the target attribute is populated with the value of an attribute of the linked object in Microsoft Entra ID.
 - **Constant** – the target attribute is populated with a specific string you specified.
 - **Expression** - the target attribute is populated based on the result of a script-like expression. For more information about expressions, see [Writing Expressions for Attribute-Mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
+
+  > [!NOTE]
+  > The maximum supported length for a single attribute mapping expression is **10,000 characters**.
+
 - **None** - the target attribute is left unmodified. However, if the target attribute is ever empty, it populates with the default value that you specify.
 
 Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank. For more information about mapping attributes, see [How Application Provisioning works in Microsoft Entra ID](~/identity/app-provisioning/how-provisioning-works.md#mapping-attributes).
@@ -152,6 +151,10 @@ The SCIM Request for Comments (RFC) defines a core user and group schema, while 
   1. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.
   1. At the bottom of the page, select **Show advanced options**.
   1. Select **Edit attribute list for AppName**.
+
+      > [!NOTE]
+      > If the **Edit attribute list for AppName** option doesn't appear, navigate to your application using the URL `https://portal.azure.com/?Microsoft_AAD_Connect_Provisioning_forceSchemaEditorEnabled=true` to enable the schema editor.
+
   1. At the bottom of the attribute list, enter information about the custom attribute in the fields provided. Then select **Add Attribute**.
 
 For SCIM applications, the attribute name must follow the pattern shown in the example. The "CustomExtensionName" and "CustomAttribute" can be customized per your application's requirements, for example: urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User:CustomAttribute 

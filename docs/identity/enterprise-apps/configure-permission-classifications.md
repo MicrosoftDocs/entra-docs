@@ -2,14 +2,8 @@
 title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.author: jomondi
 ms.reviewer: phsignor, jawoods
 ms.custom: no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
@@ -28,7 +22,7 @@ The minimum permissions needed to do basic sign-in are `openid`, `profile`, `ema
 
 To configure permission classifications, you need:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Application Administrator, or Cloud Application Administrator
 
 ## Manage permission classifications

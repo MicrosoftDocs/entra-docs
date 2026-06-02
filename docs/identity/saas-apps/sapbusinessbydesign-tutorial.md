@@ -2,16 +2,9 @@
 title: Configure SAP Business ByDesign for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Business ByDesign.
 
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Business ByDesign so that I can control who has access to SAP Business ByDesign, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure SAP Business ByDesign for Single sign-on with Microsoft Entra ID
@@ -82,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<servername>.sapbydesign.com`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [SAP Business ByDesign Client support team](https://www.sap.com/products/cloud-analytics.support.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact SAP Business ByDesign Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. The SAP Business ByDesign application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, select **Edit** button to open **User Attributes** dialog.
 
@@ -160,7 +153,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create SAP Business ByDesign test user
 
-In this section, you create a user called Britta Simon in SAP Business ByDesign. Please work with [SAP Business ByDesign Client support team](https://www.sap.com/products/cloud-analytics.support.html) to add the users in the SAP Business ByDesign platform. 
+In this section, you create a user called Britta Simon in SAP Business ByDesign. Please work with SAP Business ByDesign Client support team to add the users in the SAP Business ByDesign platform. 
 
 > [!NOTE]
 > Please make sure that NameID value should match with the username field in the SAP Business ByDesign platform.

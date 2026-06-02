@@ -1,15 +1,10 @@
 ---
 title: Secure Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to disable weak ciphers, old protocols, and NTLM password hash synchronization for a Microsoft Entra Domain Services managed domain.
-author: justinha
-manager: dougeby
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 03/14/2025
-ms.author: justinha
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Harden a Microsoft Entra Domain Services managed domain
@@ -20,7 +15,7 @@ This article shows you how to harden a managed domain by using settings such as:
 
 - Disable NTLM v1 and TLS v1 ciphers
 - Disable NTLM password hash synchronization
-- Disable the ability to change passwords with RC4 encryption
+- Disable Kerberos RC4 encryption (on the pathway to deprecation)
 - Enable Kerberos armoring
 - LDAP signing 
 - LDAP channel binding
@@ -30,7 +25,7 @@ This article shows you how to harden a managed domain by using settings such as:
 To complete this article, you need the following resources:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.
@@ -52,6 +47,41 @@ To complete this article, you need the following resources:
    - **LDAP Channel Binding**
 
    ![Screenshot of Security settings to disable weak ciphers and NTLM password hash sync](media/secure-your-domain/security-settings.png)
+
+## Disable Kerberos RC4 encryption
+
+RC4 encryption for Kerberos is on the pathway to deprecation. Windows security updates related to [CVE-2026-20833](https://www.cve.org/CVERecord?id=CVE-2026-20833) shift default Kerberos KDC behavior to AES-first and reduce RC4 usage in phases. Unless you have workloads, devices, or services that are explicitly dependent on RC4, you should disable RC4 from your managed domain's security settings.
+
+### Deprecation timeline
+
+| Phase | Date | Behavior |
+|---|---|---|
+| Initial deployment | January 13, 2026 | Updates introduce audit signals and preparation controls. |
+| Enforcement (manual rollback available) | April 2026 | Default Kerberos KDC behavior shifts to AES-first. RC4-dependent scenarios can start failing unless explicitly configured. |
+| Enforcement (final) | July 2026 | Updates remove rollback support and keep enforcement enabled. |
+
+For more details, see [How to manage Kerberos KDC usage of RC4 for service account ticket issuance changes related to CVE-2026-20833](https://support.microsoft.com/en-us/topic/how-to-manage-kerberos-kdc-usage-of-rc4-for-service-account-ticket-issuance-changes-related-to-cve-2026-20833-1ebcda33-720a-4da8-93c1-b0496e1910dc).
+
+### Turn off RC4 in the Azure portal
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Search for and select **Microsoft Entra Domain Services**.
+1. Choose your managed domain, such as *aaddscontoso.com*.
+1. On the left-hand side, select **Security settings**.
+1. Set **Kerberos RC4 Encryption** to **Disabled**.
+1. Select **Save**.
+
+### Turn off RC4 with PowerShell
+
+To disable RC4 using PowerShell, set the `KerberosRc4Encryption` property to `Disabled`:
+
+```powershell
+$securitySettings = @{"DomainSecuritySettings"=@{"KerberosRc4Encryption"="Disabled"}}
+Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -ApiVersion "2021-03-01" -Verbose -Force
+```
+
+> [!WARNING]
+> Before you disable RC4, verify that no workloads, devices, or service accounts depend on RC4 encryption. You can identify RC4 dependencies by enabling [security audits](security-audit-events.md) and monitoring Kerberos ticket event IDs **4768** and **4769**. For workloads that temporarily require RC4, configure the affected service account **msDS-SupportedEncryptionTypes** value to include RC4 as documented in the [CVE-2026-20833 support article](https://support.microsoft.com/en-us/topic/how-to-manage-kerberos-kdc-usage-of-rc4-for-service-account-ticket-issuance-changes-related-to-cve-2026-20833-1ebcda33-720a-4da8-93c1-b0496e1910dc).
 
 ## Assign Azure Policy compliance for TLS 1.2 usage
 

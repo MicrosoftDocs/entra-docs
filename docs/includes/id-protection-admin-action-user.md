@@ -3,11 +3,11 @@ author: joflore
 ms.service: entra-id-protection
 
 ms.topic: include
-ms.date: 08/20/2024
+ms.date: 10/06/2025
 ms.author: joflore
 ---
 
-Taking action on the user level applies to all the detections currently associated with that user. Administrators can take action on users and choose to:
+Taking action on the user level applies to all the detections currently associated with that user. If the action buttons are greyed out, you need a higher privileged role. Administrators can take action on users and choose to:
 
 - **Reset password** - This action revokes user's current sessions.
 - **Confirm user compromised** - This action is taken on a true positive. ID Protection sets the user risk to high and adds a new detection, Admin confirmed user compromised. The user is considered risky until remediation steps are taken.

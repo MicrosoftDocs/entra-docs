@@ -1,14 +1,9 @@
 ---
 title: Configure Form.com for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Form.com.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Form.com so that I can control who has access to Form.com, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -88,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     ```
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Sign-On URL, Identifier and Reply URL. Contact [Form.com Client support team](https://form.com/about/company/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign-On URL, Identifier and Reply URL. Contact Form.com Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** and select the copy **icon** to copy **App Federation Metadata Url** from the given options as per your requirement and save it on your computer.
 
@@ -104,11 +99,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Form.com SSO
 
-To configure single sign-on on **Form.com** side, you need to send the downloaded **Certificate (Base64)**, **App Federation Metadata Url** and appropriate copied URLs from the application configuration to [Form.com support team](https://form.com/about/company/contact-us/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Form.com** side, you need to send the downloaded **Certificate (Base64)**, **App Federation Metadata Url** and appropriate copied URLs from the application configuration to Form.com support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Form.com test user
 
-In this section, you create a user called Britta Simon in Form.com. Work with [Form.com support team](https://form.com/about/company/contact-us/) to add the users in the Form.com platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Form.com. Work with Form.com support team to add the users in the Form.com platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

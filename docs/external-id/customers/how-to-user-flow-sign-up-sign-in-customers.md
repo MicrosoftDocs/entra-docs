@@ -1,13 +1,8 @@
 ---
 title: Create a User Flow
 description: Add sign-up and sign-in user flows for your consumer and business customers. Create a branded, customized user experience for apps in your external tenant.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
-ms.date: 04/23/2025
+ms.date: 09/16/2025
 ms.reviewer: kengaderdus
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-in experience for my customer users.
@@ -23,11 +18,6 @@ ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md)) or a custom [OIDC federation](how-to-custom-oidc-federation-customers.md). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
 
 This article describes how to create a sign-in and sign-up user flow. After you create the user flow, the next step is to [add your application to the user flow](how-to-user-flow-add-application.md). You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow. 
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=OnlineRetail)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Online retail” use case.
 
 ## Prerequisites
 
@@ -78,6 +68,19 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 1. Select **OK**.
 
 1. Select **Create** to create the user flow.
+
+## Control the 'Stay signed in?' prompt
+
+By default, after a customer signs in to an app that uses your user flow, they see a **Stay signed in?** prompt asking whether to stay signed in across browser sessions. If the user selects **Yes**, a persistent authentication cookie is issued and they remain signed in across browser sessions. If they select **No**, a non-persistent cookie is issued.
+
+This prompt is the default behavior for every user flow. Applying custom branding to the user flow or requiring multifactor authentication doesn't change whether the prompt appears. It's shown in all cases unless you override it with a Conditional Access policy.
+
+The prompt isn't a user flow setting. To change or suppress it, configure the **Persistent browser session** session control in a Conditional Access policy that targets your customers and apps:
+
+- **Always persistent**: The browser session is always persisted. The **Stay signed in?** prompt isn't shown.
+- **Never persistent**: The browser session ends when the browser is closed. The **Stay signed in?** prompt isn't shown.
+
+For details about the session control and how to apply it, see [Conditional Access: Session - Persistent browser session](~/identity/conditional-access/concept-conditional-access-session.md#persistent-browser-session) and [Configure authentication session management](~/identity/conditional-access/concept-session-lifetime.md#persistence-of-browsing-sessions).
 
 ## Next steps
 

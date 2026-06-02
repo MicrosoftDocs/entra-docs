@@ -1,13 +1,8 @@
 ---
 title: Microsoft Entra on-premises app provisioning to SCIM-enabled apps
 description: This article describes how to use the Microsoft Entra provisioning service to provision users into an on-premises app that's SCIM enabled.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: jfields
 ms.reviewer: arvinh
 ---
 
@@ -45,7 +40,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
  8. Leave the portal and open the provisioning agent installer, agree to the terms of service, and select **Install**.
  9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.    
- 11. The provisioning agent uses the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider. If you're using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
+ 11. The provisioning agent uses the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider. If you're using Microsoft Edge on Windows Server, ensure that Microsoft sites aren't blocked. If your organization requires legacy browser support, you can use [Microsoft Edge with IE Mode](/deployedge/edge-ie-mode) and add Microsoft sites to the trusted site list.
  12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
 

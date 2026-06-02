@@ -2,7 +2,7 @@
 title: Redirect URI (reply URL) best practices and limitations
 description: A description of the best practices and limitations of redirect URIs in the Microsoft identity platform.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.date: 05/14/2025
 ms.reviewer: jmprieur
@@ -160,18 +160,23 @@ Per [RFC 8252 sections 8.3](https://tools.ietf.org/html/rfc8252#section-8.3) and
 1. `http` URI schemes are acceptable because the redirect never leaves the device. As such, both of these URIs are acceptable:
     - `http://localhost/myApp`
     - `https://localhost/myApp`
-1. Due to ephemeral port ranges often required by native applications, the port component (for example, `:5001` or `:443`) is ignored for the purposes of matching a redirect URI. As a result, all of these URIs are considered equivalent:
+
+1. Due to ephemeral port ranges often required by native applications, the port component (for example, `:5001` or `:443`) is ignored for the purposes of matching a localhost redirect URI. As a result, all of these URIs are considered equivalent:
     - `http://localhost/MyApp`
     - `http://localhost:1234/MyApp`
     - `http://localhost:5000/MyApp`
     - `http://localhost:8080/MyApp`
 
+    This is *only* true for localhost redirect URIs. In all other cases, the port component is *not* ignored when matching redirect URIs. 
+
 From a development standpoint, this means a few things:
 
-* Do not register multiple redirect URIs where only the port differs. The login server picks one arbitrarily and uses the behavior associated with that redirect URI (for example, whether it's a `web`-, `native`-, or `spa`-type redirect).
+* Do not register multiple localhost redirect URIs where only the port differs. The login server picks one arbitrarily and uses the behavior associated with that registered redirect URI (for example, whether it's a `web`-, `native`-, or `spa`-type redirect).
 
     This is especially important when you want to use different authentication flows in the same application registration, for example both the authorization code grant and implicit flow. To associate the correct response behavior with each redirect URI, the login server must be able to distinguish between the redirect URIs and can't do so when only the port differs.
+
 * To register multiple redirect URIs on localhost to test different flows during development, differentiate them using the *path* component of the URI. For example, `http://localhost/MyWebApp` doesn't match `http://localhost/MyNativeApp`.
+
 * The IPv6 loopback address (`[::1]`) isn't currently supported.
 
 #### Prefer 127.0.0.1 over localhost
@@ -202,6 +207,7 @@ In this approach:
 
 1. Create a "shared" redirect URI per application to process the security tokens you receive from the authorization endpoint.
 1. Your application can send application-specific parameters (such as subdomain URL where the user originated or anything like branding information) in the state parameter. When using a state parameter, guard against CSRF protection as specified in [section 10.12 of RFC 6749](https://tools.ietf.org/html/rfc6749#section-10.12).
+    For security and privacy, do not put URLs or other sensitive data directly in the state parameter. Instead, use a key or identifier that corresponds to data stored in browser storage, such as localStorage or sessionStorage. This approach lets your app securely reference the necessary data after authentication.
 1. The application-specific parameters include all the information needed for the application to render the correct experience for the user, that is, construct the appropriate application state. The Microsoft Entra authorization endpoint strips HTML from the state parameter so make sure you aren't passing HTML content in this parameter.
 1. When Microsoft Entra ID sends a response to the "shared" redirect URI, it sends the state parameter back to the application.
 1. The application can then use the value in the state parameter to determine which URL to further send the user to. Make sure you validate for CSRF protection.

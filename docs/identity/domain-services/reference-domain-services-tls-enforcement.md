@@ -1,15 +1,10 @@
 ---
 title: How to migrate to Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services | Microsoft Learn
 description: Learn how to enforce TLS 1.2 for a Microsoft Entra Domain Services managed domain.
-author: justinha
-manager: dougeby
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 08/15/2025
-ms.author: justinha
+ms.date: 09/03/2025
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -21,13 +16,18 @@ Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they're d
 
 You can use the Azure portal or PowerShell to enable **TLS 1.2 Only Mode**.
 
+## Prerequisites
+
+You need the [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) and [Groups Administrator](../role-based-access-control/permissions-reference.md#groups-administrator) roles in Microsoft Entra ID to change security settings such as **TLS 1.2 Only Mode**.
+
 ## Identify applications that use deprecated TLS versions
 
 Before you enable **TLS 1.2 Only Mode**, it's important to identify applications that still use TLS 1.0 or 1.1, and update them or replace them with alternatives that support TLS 1.2. For more information about apps that are expected to be impacted, see [TLS 1.0 and TLS 1.1 deprecation in Windows](/windows/win32/secauthn/tls-10-11-deprecation-in-windows).
 
 ## [**Azure portal**](#tab/portal)
 
-1. In the Azure portal, search for **Domain Services**, and select your Domain Services instance. 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) and a [Groups Administrator](../role-based-access-control/permissions-reference.md#groups-administrator).
+1. Search for **Domain Services**, and select your Domain Services instance. 
 1. Select **Security Settings**.
 1. If **TLS 1.2 Only Mode** is set to **Disable**, the instance enables TLS versions 1.0 and 1.1. Set **TLS 1.2 Only Mode** to **Enable**, and then click **Save**.
 
@@ -36,7 +36,7 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
    :::image type="content" border="true" source="media/reference-domain-services-tls-enforcement/enable.png" alt-text="Screenshot that shows how to enable TLS 1.2 Only Mode for Domain Services.":::
 
 >[!Note] 
->Until August 31, 2025, you can select **Disable** to temporarily allow legacy TLS traffic while you update or replace apps that might fail. Select **Enable** again to remain compliant. 
+>Until June 30, 2026, you can select **Disable** to temporarily allow legacy TLS traffic while you update or replace apps that might fail. Select **Enable** again to remain compliant. 
 
 ## [**PowerShell**](#tab/powershell)
 
@@ -65,11 +65,12 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
 
    This command may take about 10 minutes to complete as domain security updates are enforced.
 
+
 ## Troubleshooting
 
 - Some apps provide logs or error messages when TLS handshakes fail. Use application-level diagnostics to  look for errors related to unsupported protocols.
 
-- Until August 31, 2025, you can modify the following PowerShell example to temporarily allow legacy TLS traffic while you update or replace apps:
+- Until June 30, 2026, you can modify the following PowerShell example to temporarily allow legacy TLS traffic while you update or replace apps:
 
   ```powershell
   Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Enabled

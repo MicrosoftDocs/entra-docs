@@ -1,13 +1,8 @@
 ---
 title: On-premises password writeback with self-service password reset
 description: Learn how password change or reset events in Microsoft Entra ID can be written back to an on-premises directory environment
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: article
-ms.date: 07/21/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
+ms.topic: concept-article
+ms.date: 10/25/2025
 ms.reviewer: tilarso
 ---
 # How does self-service password reset writeback work in Microsoft Entra ID?
@@ -26,7 +21,7 @@ Password writeback is supported in environments that use the following hybrid id
 * [Active Directory Federation Services](~/identity/hybrid/connect/how-to-connect-fed-management.md)
 
 > [!NOTE]
-> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. 
+> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. Although it works in some cases, SSPR can't be guaranteed to work consistently when staged rollout is enabled.
 
 Password writeback provides the following features:
 
@@ -49,7 +44,7 @@ To get started with SSPR writeback, complete either one or both of the following
 
 ## Microsoft Entra Connect and cloud sync side-by-side deployment
 
-You can deploy Microsoft Entra Connect and cloud sync side-by-side in different domains to target different sets of users. This helps existing users continue to writeback password changes while adding the option in cases where users are in disconnected domains because of a company merger or split. Microsoft Entra Connect and cloud sync can be configured in different domains so users from one domain can use Microsoft Entra Connect while users in another domain use cloud sync. Cloud sync can also provide higher availability because it doesn't rely on a single instance of Microsoft Entra Connect. For a feature comparison between the two deployment options, see [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
+You can deploy Microsoft Entra Connect and cloud sync side-by-side in different domains to target different sets of users. This helps existing users continue to writeback password changes while adding the option in cases where users are in disconnected domains because of a company merger or split. Microsoft Entra Connect and cloud sync can be configured in different domains so users from one domain can use Microsoft Entra Connect while users in another domain use cloud sync. Cloud sync can also provide higher availability because it doesn't rely on a single instance of Microsoft Entra Connect. For a feature comparison between the two deployment options, see [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync). 
 
 ## How password writeback works
 
@@ -68,9 +63,9 @@ When a user account configured for federation, password hash synchronization (or
    * The user object must exist in the AD DS connector space.
    * The user object must be linked to the corresponding metaverse (MV) object.
    * The user object must be linked to the corresponding Microsoft Entra connector object.
-   * The link from the AD DS connector object to the MV must have the synchronization rule `Microsoft.InfromADUserAccountEnabled.xxx` on the link.
+   * The link from the AD DS connector object to the MV must have the synchronization rule `Microsoft.InformADUserAccountEnabled.xxx` on the link.
 
-   When the call comes in from the cloud, the synchronization engine uses the **cloudAnchor** attribute to look up the Microsoft Entra connector space object. It then follows the link back to the MV object, and then follows the link back to the AD DS object. Because there can be multiple AD DS objects (multi-forest) for the same user, the sync engine relies on the `Microsoft.InfromADUserAccountEnabled.xxx` link to pick the correct one.
+   When the call comes in from the cloud, the synchronization engine uses the **cloudAnchor** attribute to look up the Microsoft Entra connector space object. It then follows the link back to the MV object, and then follows the link back to the AD DS object. Because there can be multiple AD DS objects (multi-forest) for the same user, the sync engine relies on the `Microsoft.InformADUserAccountEnabled.xxx` link to pick the correct one.
 
 1. After the user account is found, an attempt to reset the password directly in the appropriate AD DS forest is made.
 1. If the password set operation is successful, the user is told their password has been changed.

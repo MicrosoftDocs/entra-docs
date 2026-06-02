@@ -1,14 +1,9 @@
 ---
 title: Configure ThirdLight for Single sign-on with Microsoft Entra ID
 description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and ThirdLight.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ThirdLight so that I can control who has access to ThirdLight, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -24,7 +19,7 @@ In this article,  you learn how to integrate ThirdLight with Microsoft Entra ID.
 
 To configure Microsoft Entra integration with ThirdLight, you need to have:
 
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A ThirdLight subscription that has single sign-on enabled.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).

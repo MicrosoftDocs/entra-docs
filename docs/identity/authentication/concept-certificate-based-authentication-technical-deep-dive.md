@@ -1,13 +1,9 @@
 ---
 title: Microsoft Entra CBA Technical Concepts
 description: Learn how Microsoft Entra certificate-based authentication (CBA) works and the technical concepts you need to set up and manage CBA.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
 author: vimrang
-manager: dougeby
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
@@ -53,7 +49,7 @@ The following steps summarize the Microsoft Entra CBA process:
    >
    > Make sure that turning off TLS inspection also works for issuer hints with the new URL. Don't hard-code the URL with the tenant ID. The tenant ID might change for business-to-business (B2B) users. Use a regular expression to allow both the previous URL and the new URL to work when you turn off TLS inspection. For example, depending on the proxy, use `*.certauth.login.microsoftonline.com` or `*certauth.login.microsoftonline.com`. In Azure Government, use `*.certauth.login.microsoftonline.us` or `*certauth.login.microsoftonline.us`.
 
-   Unless access is allowed, CBA fails if you turn on [issuer hints](#issuer-hints-preview).
+   Unless access is allowed, CBA fails if you turn on [issuer hints](#issuer-hints).
 
 1. Microsoft Entra ID requests a client certificate. The user selects the client certificate, and then selects **OK**.
 
@@ -65,7 +61,7 @@ The following steps summarize the Microsoft Entra CBA process:
 
 If user sign-in is successful, the user can access the application.
 
-## Issuer hints (preview)
+## Issuer hints
 
 Issuer hints send back a *trusted CA* indicator as part of the TLS handshake. The trusted CA list is set to the subject of the CAs that the tenant uploads to the Microsoft Entra trust store. A browser client or native application client can use the hints that the server sends back to filter the certificates shown in the certificate picker. The client shows only the authentication certificates issued by the CAs in the trust store.
 
@@ -79,7 +75,7 @@ To turn on issuer hints, select the **Issuer Hints** checkbox. An [Authenticatio
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot that shows how to turn on issuer hints." lightbox="media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png":::
 
 > [!NOTE]
-> After you turn on issuer hints, the CA URL has the format `<tenantId>.certauth.login.microsoftonline.com`.
+> After you turn on issuer hints, the CA URL has the format `t<tenantId>.certauth.login.microsoftonline.com`.
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints-picker.png" alt-text="Screenshot that shows the certificate picker after you turn on issuer hints.":::
 
@@ -100,19 +96,16 @@ Here are some supported combinations:
 - CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey.md) (second factor)
 - CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
 - CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md) (second factor)
-- Password (first factor) and CBA (second factor) (preview)
-
-> [!NOTE]
-> Currently, using CBA as a second factor on iOS has [known issues](./concept-certificate-based-authentication-mobile-ios.md#known-issues) and is blocked on iOS. We're working to resolve the issues.
+- Password (first factor) and CBA (second factor)
 
 Users must have a way to get MFA and register passwordless sign-in or FIDO2 in advance of signing in by using Microsoft Entra CBA.
 
 > [!IMPORTANT]
 > A user is considered MFA capable if their username appears in the CBA method settings. In this scenario, the user can't use their identity as part of their authentication to register other available methods. Make sure that users without a valid certificate aren't included in the CBA method settings. For more information about how authentication works, see [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
 
-## Options to get MFA capability with single-factor certificates
+## Options to get MFA capability with CBA enabled
 
-Microsoft Entra CBA can be either single-factor or multifactor depending on the tenant configuration. Turning on CBA makes a user potentially capable of completing MFA. A user that has a single-factor certificate must use another factor to complete MFA.
+Microsoft Entra CBA can be either single-factor or multifactor depending on the tenant configuration. Turning on CBA makes a user potentially capable of completing MFA. A user that has a single-factor certificate or password must use another factor to complete MFA. 
 
 We don't allow registration of other methods without first satisfying MFA. If the user doesn't have any other MFA method registered and is in scope for CBA, the user can't use identity proof to register other authentication methods and get MFA.
 
@@ -417,7 +410,7 @@ To sync an empty value:
 Ensure that CBA in each tenant is configured with the username bindings pointing to the `certificateUserIds` field for the field types that you mapped from the certificate. Now any of these users can present the certificate at sign-in. After the unique value from the certificate is validated against the `certificateUserIds` field, the user is successfully signed in.
 
 
-## Certificate Authority (CA) Scoping (Preview)
+## Certificate Authority (CA) Scoping
 
 CA scoping in Microsoft Entra allows tenant administrators to restrict the use of specific CAs to defined user groups. This feature enhances the security and manageability of CBA by ensuring that only authorized users can authenticate by using certificates issued by specific CAs.
 
@@ -646,11 +639,19 @@ An external identity B2B guest user can use CBA on the home tenant. If the cross
 ## Related content
 
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)
-- [Set up Microsoft Entra CBA](how-to-certificate-based-authentication.md)
-- [Microsoft Entra CBA on iOS devices](concept-certificate-based-authentication-mobile-ios.md)
+- [Technical deep dive for Microsoft Entra CBA](concept-certificate-based-authentication-technical-deep-dive.md)
+- [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
 - [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
-- [Windows smart card sign-in by using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
+- [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
 - [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)
-- [Migrate federated users](concept-certificate-based-authentication-migration.md)
+- [How to migrate federated users](concept-certificate-based-authentication-migration.md)
 - [FAQ](certificate-based-authentication-faq.yml)
-- [Troubleshoot Microsoft Entra CBA](./certificate-based-authentication-faq.yml)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
+- [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
+- [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
+- [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)
+- [How to migrate federated users](concept-certificate-based-authentication-migration.md)
+- [FAQ](certificate-based-authentication-faq.yml)
+
+

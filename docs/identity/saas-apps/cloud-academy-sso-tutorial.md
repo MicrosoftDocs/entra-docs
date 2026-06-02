@@ -1,14 +1,9 @@
 ---
 title: Configure Cloud Academy for Single sign-on with Microsoft Entra ID
 description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy.
-author: nguhiu
-manager: mwongerapk
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy so that I can control who has access to Cloud Academy, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -25,7 +20,7 @@ In this article,  you learn how to integrate Cloud Academy with Microsoft Entra 
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Cloud Academy subscription with single sign-on (SSO) enabled.
 
 ## Article description

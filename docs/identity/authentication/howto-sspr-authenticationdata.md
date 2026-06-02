@@ -1,13 +1,8 @@
 ---
 title: Prepopulate Contact Information for Self-Service Password Reset
 description: Learn how to prepopulate contact information for users of Microsoft Entra self-service password reset (SSPR) so that they can use the feature without completing a registration process.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: tilarso
 ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ---
@@ -16,6 +11,10 @@ ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 To use Microsoft Entra self-service password reset (SSPR), authentication information for a user must be present. Most organizations have users register their authentication data themselves while collecting information for multifactor authentication.
 
 Some organizations prefer to bootstrap this process through synchronization of authentication data that already exists in Active Directory Domain Services. This synchronized data is made available to Microsoft Entra ID and SSPR without requiring user interaction. When users need to change or reset their password, they can do so even if they haven't previously registered their contact information.
+
+> [!IMPORTANT]
+> Starting **July 6, 2026**, a registration campaign will prompt affected users to register methods ahead of enforcement. Ensure users have registered at least one method that satisfies your SSPR policy. For more information, see [How to manage authentication methods](how-to-authentication-methods-manage.md).
+> Starting **September 7, 2026**, SSPR will only accept explicitly registered authentication methods. Directory-sourced properties — such as `mobilePhone`, `businessPhone`, and `otherMails` — that were never registered will no longer work for SSPR verification. 
 
 You can prepopulate authentication contact information if you meet the following requirements:
 

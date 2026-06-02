@@ -4,7 +4,7 @@ description: Learn about the custom claims policy and claims mapping policy type
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 06/02/2023
 ms.reviewer: ludwignick
 ms.service: identity-platform
@@ -448,7 +448,7 @@ Based on the method chosen, a set of inputs and outputs is expected. Define the 
 
 ### Exceptions and restrictions
 
-**SAML NameID and UPN** - The attributes from which you source the NameID and UPN values, and the claims transformations that are permitted, are limited.
+**SAML NameID and UPN** - The attributes from which you source the NameID and UPN values, and the claims transformations that are permitted, are limited. Custom claim provider attributes cannot be used as NameID source in Microsoft Entra ID SAML SSO. 
 
 | Source | ID | Description |
 |--------|----|-------------|

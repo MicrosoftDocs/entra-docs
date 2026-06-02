@@ -3,8 +3,6 @@ title: Configure F5 BIG-IP Easy Button for Kerberos single sign-on
 description: Learn to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications using F5 BIG-IP Easy Button guided configuration.
 author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 06/28/2024
 ms.author: gasinh
@@ -62,7 +60,7 @@ SHA for this scenario supports SP- and IdP-initiated flows. The following image 
 
 Prior BIG-IP experience isn't necessary, but you need:
 
-* An [Azure free account](https://azure.microsoft.com/free/), or higher
+* An [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn), or higher
 * A BIG-IP or [deploy a BIG-IP Virtual Edition (VE) in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP licenses:
     * F5 BIG-IP&reg; Best bundle

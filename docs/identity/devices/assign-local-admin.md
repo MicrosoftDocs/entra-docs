@@ -1,13 +1,8 @@
 ---
 title: How to manage local administrators on Microsoft Entra joined devices
 description: Learn how to assign Azure roles to the local administrators group of a Windows device.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/27/2025
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
+ms.date: 04/03/2026
 ms.reviewer: 
 ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
@@ -79,7 +74,7 @@ Organizations can use Intune to manage these policies using [Custom OMA-URI Sett
 - Microsoft Entra groups deployed to a device with this policy don't apply to remote desktop connections. To control remote desktop permissions for Microsoft Entra joined devices, you need to add the individual user's SID to the appropriate group.
 
 > [!IMPORTANT]
-> Windows sign-in with Microsoft Entra ID supports evaluation of up to 20 groups for administrator rights. We recommend having no more than 20 Microsoft Entra groups on each device to ensure that administrator rights are correctly assigned. This limitation also applies to nested groups.
+> Windows sign-in with Microsoft Entra ID supports evaluation of up to 20 groups for administrator rights. We recommend having no more than 20 Microsoft Entra groups on each device, and having a user as a member in no more than 20 groups, to ensure that administrator rights are correctly assigned. This limitation also applies to nested groups.
 
 ## Manage regular users
 
@@ -96,8 +91,8 @@ Starting with the **Windows 10 1709** release, you can perform this task from **
 
 Additionally, you can also add users using the command prompt:
 
-- If your tenant users are synchronized from on-premises Active Directory, use `net localgroup administrators /add "Contoso\username"`.
-- If your tenant users are created in Microsoft Entra ID, use `net localgroup administrators /add "AzureAD\UserUpn"`
+- If your tenant users are synchronized from on-premises Active Directory, use `net localgroup administrators /add "<domain>\<username>"`, where `<domain>` is your on-premises Active Directory domain name and `<username>` is the user's SAM account name.
+- If your tenant users are created in Microsoft Entra ID, use `net localgroup administrators /add "AzureAD\<UserUPN>"`, where `<UserUPN>` is the user's User Principal Name.
 
 ## Considerations
 

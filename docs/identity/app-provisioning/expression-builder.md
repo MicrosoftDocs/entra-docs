@@ -1,14 +1,8 @@
 ---
 title: Understand how expression builder works with Application Provisioning in Microsoft Entra ID
 description: Understand how expression builder works with Application Provisioning in Microsoft Entra ID.
-
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -37,6 +31,7 @@ When you're satisfied with the expression, move it to an attribute mapping. Copy
 
 ## Known limitations
 * Extension attributes aren't available for selection in the expression builder. However, extension attributes can be used in the attribute mapping expression. 
+* The maximum supported length for a single attribute mapping expression is **10,000 characters**.
 
 ## Next steps
 
