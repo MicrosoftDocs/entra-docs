@@ -33,6 +33,48 @@ Device Soft Delete, now available in preview, enables administrators to safely r
 
 ---
 
+### Public Preview - Workload identity-based authentication for SAP SuccessFactors provisioning integrations 
+
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Inbound to Entra ID    
+
+Microsoft Entra is introducing workload identity–based authentication for SAP SuccessFactors provisioning. This new capability allows the Microsoft Entra provisioning service to authenticate to SAP SuccessFactors using Entra workload identity and short‑lived tokens instead of static credentials (username and password). 
+
+This change helps customers transition to a more secure authentication model in preparation for SAP’s plan to [deprecate basic authentication for SuccessFactors APIs by November 2026](https://help.sap.com/docs/successfactors-release-information/8e0d540f96474717bbf18df51e54e522/fcc05a902b4140e585d968c2fe4a96bc.html). 
+
+What’s changing 
+
+*   Customers can switch existing provisioning configurations from basic authentication to workload identity–based authentication directly through updated connectivity settings in the provisioning experience, without needing to recreate or restart their configuration. 
+*   This method removes the need to store long-lived credentials and uses a standards-based authentication method between Entra and SAP SuccessFactors through SAP Cloud Identity Services.  
+*   This capability applies to the following provisioning scenarios:  
+*   [SAP SuccessFactors to Active Directory user provisioning](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial) 
+*   [SAP SuccessFactors to Microsoft Entra ID user provisioning](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial) 
+*   [SAP SuccessFactors writeback (Entra to SuccessFactors)](https://learn.microsoft.com/entra/identity/saas-apps/sap-successfactors-writeback-tutorial) 
+    
+
+What this means for you 
+
+*   If you are currently using basic authentication for any of the above SAP SuccessFactors provisioning integrations, you must upgrade to workload identity-based authentication before November 2026 to ensure uninterrupted operation of the integrations. 
+*   No immediate action is required, but we recommend planning your migration early to avoid last-minute disruption. 
+*   The new method improves security by:  
+*   Eliminating stored passwords 
+*   Using short-lived, verifiable tokens 
+*   Aligning with SAP’s supported authentication model 
+    
+
+Recommended action 
+
+*   Evaluate the new authentication option once available in your tenant 
+*   Plan and test migration of existing provisioning jobs to workload identity-based authentication 
+*   Update any internal documentation or operational processes that reference basic authentication 
+    
+Additional information 
+
+For detailed configuration guidance and step-by-step instructions visit https://aka.ms/EntraSAPSFConnectivityGuide.
+
+---
+
 ### Public Preview - Sensitivity labels for Microsoft Entra security groups
 
 **Type:** New feature  
