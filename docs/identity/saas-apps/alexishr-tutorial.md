@@ -33,7 +33,7 @@ The scenario outlined in this article assumes that you already have the followin
 In this article, you configure and test SAML SSO between Microsoft Entra ID and AlexisHR in a test environment.
 
 * AlexisHR supports **IdP-initiated** SSO.
-* You will first create a **basic (mock) SAML configuration** in Microsoft Entra ID to obtain the Login URL and certificate, then configure SSO in AlexisHR, and finally return to Microsoft Entra ID to update the Identifier and Reply URL with the real values from AlexisHR.
+* You first create a **basic (mock) SAML configuration** in Microsoft Entra ID to obtain the Login URL and certificate, then configure SSO in AlexisHR, and finally return to Microsoft Entra ID to update the Identifier and Reply URL with the real values from AlexisHR.
 
 ## Add AlexisHR from the gallery
 
