@@ -130,7 +130,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "other"].value|String||
 
    > [!NOTE]
-   > The **AppRoleAssignmentComplex** configuration works only when the **Sync Only Assigned Users and Groups** option is selected as scope. If this option is not selected, approleassignment will not works as expected.
+   > The **AppRoleAssignmentComplex** configuration works only when the **Sync Only Assigned Users and Groups** option is selected as scope. If this option is not selected, approleassignment will not work as expected.
 
    ![Screenshot of showing AppRoleAssignmentComplex.](./media/github-enterprise-managed-user-oidc-provisioning-tutorial/role.png)
 
