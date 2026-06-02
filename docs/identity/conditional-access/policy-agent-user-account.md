@@ -3,6 +3,7 @@ title: Conditional Access for agent's user account
 description: Learn how to configure Conditional Access for agents' user accounts in Microsoft Entra ID to extend Zero Trust principles to AI agents, ensuring secure access and governance.
 ms.topic: how-to
 ms.date: 06/01/2026
+ai-usage: ai-assisted
 ms.reviewer: kvenkit
 ms.custom: msecd-doc-authoring-1012
 ---
@@ -27,11 +28,18 @@ Follow these steps to configure a Conditional Access policy that applies to all 
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. Create a meaningful standard for the names of your policies.
-1. Under **Assignments**, select **Agents**.
-1. Choose **Select agents active as users**, and then select **All agents' user accounts**. 
-1. Under **Target resources**, select **all resources**
-1. Under **Conditions**, select the **Agent risk** needed for the policy to be enforced. 
-1. Under **Access controls** > **Grant**, select **block access**.
+1. Under **Assignments**, select **Users, agents or workload identities**.
+	1. Under **What does this policy apply to?**, select **Agents**.
+		1. Under **Include**, select **Select agents acting as users**.
+		1. Select **All agents' user accounts**.
+1. Under **Target resources**, select the following options:
+	1. Select what this policy applies to **Resources (formerly cloud apps)**.
+	1. Include, **All resources (formerly 'All cloud apps')**.
+1. Under **Conditions** > **Agent risk (Preview)**, set **Configure** to **Yes**.
+	1. Under **Configure agent risk levels needed for policy to be enforced**, select the risk levels needed for your organization.
+1. Under **Access controls** > **Grant**.
+	1. Select **Block**.
+	1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to enable your policy.
 

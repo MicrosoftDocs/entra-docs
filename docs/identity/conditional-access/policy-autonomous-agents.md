@@ -56,8 +56,6 @@ The enhanced object picker replaces the previous flat list experience in both th
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
----
-
 ### [Use custom security attributes](#tab/use-custom-security-attributes)
 
 ### Create Conditional Access policy using custom security attributes
@@ -103,6 +101,8 @@ After you complete the previous steps, create a Conditional Access policy using 
 1. Select **Create** to create your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
+
+---
 
 ## Block high-risk agent identities from accessing organizational resources
 

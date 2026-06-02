@@ -31,7 +31,7 @@ The following diagram illustrates the data access patterns.
 
 :::image type="content" source="media/agent-id/data-access-patterns-diagram.png" alt-text="Diagram showing the data access patterns for agent identities." lightbox="media/agent-id/data-access-patterns-diagram.png":::
 
-### Subjects and audiences
+### How subjects and audiences are used
 
 Microsoft Entra ID issues an access token to a subject for a specific audience (resource). Each access token has exactly one subject and one audience.
 
@@ -83,13 +83,13 @@ The most common access is the on-behalf-of signed-in user (OBO) flow. In this fl
 
 The following diagram shows the OBO flow used when an agent accesses a resource on a user's behalf, including the following components:
 
-:::image type="content" source="media/agent-id/on-behalf-of-agent-flow-diagram.png" alt-text="Diagram showing the OBO flow for agents accessing resources on behalf of a user." lightbox="media/agent-id/on-behalf-of-agent-flow-diagram-expanded.png":::
-
 - **User**: Who submits prompts to the agent
 - **Agent/Client application**: The user interface where users submit their prompts
 - **Microsoft Entra ID**: The identity provider managing the agent identity, user account, and where the resources are registered
 - **AI platform**: The runtime environment in which the large language model (LLM) runs
 - **Resource**: The resource the agent calls to retrieve data or perform an action, such as Work IQ, SharePoint online, or a custom MCP server
+
+:::image type="content" source="media/agent-id/on-behalf-of-agent-flow-diagram.png" alt-text="Diagram showing the OBO flow for agents accessing resources on behalf of a user." lightbox="media/agent-id/on-behalf-of-agent-flow-diagram-expanded.png":::
 
 The following steps describe the flow in more detail:
 
@@ -169,11 +169,6 @@ The **Agent execution environments (Preview)** condition provides a way for admi
 
 > [!IMPORTANT]
 > An agent *can* technically run on any machine, including unmanaged Linux servers or personal devices. But without Intune enrollment and a Global Secure Access client, there's no mechanism to enforce device compliance or network checks. The execution environments condition ensures policies requiring these controls only target sessions where the controls can actually be enforced.
-
-#### Access controls for agent user accounts
-
-- **Block access**: Deny the agent's user account access to resources.
-- **Grant access** with **Require device to be marked as compliant**: Requires agents to run on Intune-managed compliant devices, such as [Windows 365 Cloud PCs for Agents](/windows-365/agents/introduction-windows-365-for-agents).
 
 ## Ways to select agents to apply Conditional Access policies
 
