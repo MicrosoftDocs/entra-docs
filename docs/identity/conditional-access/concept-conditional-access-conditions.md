@@ -55,8 +55,6 @@ Use the **Agent execution environments** condition to scope a Conditional Access
 
 When a policy uses this condition, agents that aren't running on a device are excluded from evaluation. Use this condition with other endpoint-based conditions, such as **Device platforms**, **Filter for devices**, and **Network**, when you want to enforce controls only for agents running on managed endpoints.
 
-For more information about how this condition applies to agents, see [Conditional Access for agent identities](agent-id.md#device-and-network-protections-for-agents-on-endpoints).
-
 ## Device platforms
 
 Conditional Access identifies the device platform using information provided by the device, such as user agent strings. Because user agent strings can be modified, this information isn't verified. Use device platform with Microsoft Intune device compliance policies or as part of a block statement. By default, it applies to all device platforms.
