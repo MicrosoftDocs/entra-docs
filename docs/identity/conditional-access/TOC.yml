@@ -27,7 +27,7 @@
     href: concept-conditional-access-policy-common.md
   - name: Conditional Access policy components
     href: concept-conditional-access-policies.md
-  - name: Conditional Access for agent identities
+  - name: Conditional Access for agents
     href: agent-id.md
   - name: Assignments
     items: 
@@ -90,7 +90,7 @@
   items:
   - name: Plan your Conditional Access deployment
     href: plan-conditional-access.md
-  - name: Build policies for agent identities
+  - name: Build policies for agents
     href: howto-target-agent-identities.md
   - name: Recommended policies
     items: 

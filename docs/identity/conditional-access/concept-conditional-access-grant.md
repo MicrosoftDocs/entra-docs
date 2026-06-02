@@ -52,7 +52,7 @@ When a policy targets agents acting as users, the available grant behavior diffe
 - **Block access**
 - **Grant access** with **Require device to be marked as compliant**
 
-Use **Require device to be marked as compliant** when agent user sessions run on managed endpoints that provide device compliance signals.
+Use **Require device to be marked as compliant** when agent user sessions run on managed endpoints that provide device compliance signals. For more information about agents, see [What is Windows 365 for Agents?](/windows-365/agents/introduction-windows-365-for-agents).
 
 Agent identities don't support grant controls and only support **Block access**. For targeting and condition guidance, see [Target agent identities in Conditional Access policies](howto-target-agent-identities.md).
 

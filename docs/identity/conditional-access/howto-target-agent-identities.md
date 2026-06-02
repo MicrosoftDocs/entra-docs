@@ -25,7 +25,7 @@ Each section builds on the previous one to form a complete policy.
 ## Prerequisites
 
 - A Microsoft Entra ID P1 or P2 license
-- An Agent 365 license for each user
+- Agent 365 license will soon be required
 - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and manage Conditional Access policies
 - At least one agent identity registered in your tenant
 
@@ -61,6 +61,7 @@ The first agent-specific configuration is selecting which agents the policy appl
 
 Keep in mind the following important details when selecting agent assignments:
 
+- Policies targeting all users don't include agent's user accounts.
 - The **agent users** option targets agents' user accounts. This option is currently in Preview.
 - Agent-based policies apply when agents access resources using their own identity, not on behalf of a user.
 - Targeting a blueprint automatically covers all agent identities derived from it, including ones added in the future. For more information about targeting agent identity blueprints, see [Conditional Access for agent identities: Agent identity blueprints](agent-id.md#agent-identity-blueprints).
@@ -77,7 +78,9 @@ Target resources define which resources the policy protects when agents attempt 
 
 ## Network
 
-The network settings control agent access based on where they run, such as cloud-hosted virtual machines or endpoints with a Global Secure Access client. This option is only available when the policy targets **All agent users (Preview)**.
+The network settings control agent access based on where they run, such as cloud-hosted virtual machines or endpoints with a Global Secure Access client. This option is only available when the policy targets **All agent users (Preview)** and **Select agent users (Preview)**.
+
+**Compliant network** works for agents' user accounts on endpoints because the hosted environment can have a [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) client installed. The Global Secure Access client provides the network location signal that Conditional Access evaluates. Agents running in cloud infrastructure without a Global Secure Access client can't provide this signal.
 
 1. Under **Network**, set **Configure** to **Yes** to enable the network location options.
 1. Under **Include**, select one of the following:
@@ -88,6 +91,12 @@ The network settings control agent access based on where they run, such as cloud
 ## Conditions
 
 Conditions are the signals that Conditional Access evaluates when deciding whether to apply a policy. The available conditions depend on whether the policy targets agent identities, agents' user accounts, or users in OBO flows.
+
+Not all agents run the same way. Some agents run directly from the cloud similar to SaaS applications (for example, Copilot Studio hosted agents) with no associated device. Others run on managed endpoints. This distinction determines which Conditional Access controls can be enforced. For more information about agents, see [What is Windows 365 for Agents?](/windows-365/agents/introduction-windows-365-for-agents).
+
+Device compliance and compliant network controls depend on signals that only an endpoint can provide. A Cloud PC enrolled in Microsoft Intune can prove its compliance. An agent running directly from the cloud like a managed service has no device to check, so a policy requiring device compliance would block it with no path to remediation.
+
+Admins with access to [ID Protection](../../id-protection/overview-identity-protection.md) can evaluate agent risk as part of a Conditional Access policy. Agent risk shows the likelihood that an agent is compromised. For more information, see [ID Protection for agents](../../id-protection/concept-risky-agents.md).
 
 ### Conditions for agent identities
 
@@ -114,7 +123,7 @@ Keep in mind the following important details when selecting conditions for agent
 
 #### Agent execution environments
 
-Configure restrictions based on where the agent user is executed.
+Configure restrictions based on where the agent user is executed. The **Agent execution environments (Preview)** condition provides a way for administrators to scope a policy to only apply when the agent's user account session is initiated from an endpoint. When a policy uses this condition, agents that are not running on a device are excluded from evaluation, preventing unintended blocking.
 
 1. Under **Conditions**, set **Configure** to **Yes** to enable the agent execution environments.
 1. Under **Include** select the execution environments that apply to your agents:
@@ -151,7 +160,7 @@ Access controls determine what happens when conditions are met.
 
 - **Block access**: Deny the agent user account access to resources.
 - **Grant access** with:
-  - **Require device to be marked as compliant**: Requires agents to run on Intune-managed compliant devices, such as Windows 365 Cloud PCs for Agents.
+  - **Require device to be marked as compliant**: Requires agents to run on Intune-managed compliant devices, such as Windows 365 Cloud PCs for Agents. For more information, see[What is Windows 365 for Agents?](/windows-365/agents/introduction-windows-365-for-agents).
     :::image type="content" source="media/howto-target-agent-identities/agent-policy-grant-device-compliant.png" alt-text="Screenshot of the Conditional Access policy builder showing the grant option for device compliance." lightbox="media/howto-target-agent-identities/agent-policy-grant-device-compliant.png":::
 
 > [!IMPORTANT]

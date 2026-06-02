@@ -145,31 +145,6 @@ Agents using this flow are sometimes called "digital worker," or "AI teammate." 
 - **All agent users (Preview)**: Targets all agent user accounts in your directory.
 - **Select agent users (Preview)**: Target specific agent user accounts individually.
 
-#### Agent risk (Preview)
-
-Admins with access to [ID Protection](../../id-protection/overview-identity-protection.md) can evaluate agent risk as part of a Conditional Access policy. Agent risk shows the likelihood that an agent is compromised. For more information, see [ID Protection for agents](../../id-protection/concept-risky-agents.md).
-
-#### Device and network protections for agents on endpoints
-
-Not all agents run the same way. Some agents run directly from the cloud similar to SaaS applications (for example, Copilot Studio hosted agents) with no associated device. Others run on managed endpoints. This distinction determines which Conditional Access controls can be enforced. For more information about agents, see [What is Windows 365 for Agents?](/windows-365/agents/introduction-windows-365-for-agents).
-
-Device compliance and compliant network controls depend on signals that only an endpoint can provide. A Cloud PC enrolled in Microsoft Intune can prove its compliance. An agent running directly from the cloud like a managed service has no device to check, so a policy requiring device compliance would block it with no path to remediation.
-
-The **Agent execution environments (Preview)** condition provides a way for administrators to scope a policy to only apply when the agent's user account session is initiated from an endpoint. When a policy uses this condition, agents that are not running on a device are excluded from evaluation, preventing unintended blocking.
-
-**Device compliance** works for agents on endpoints because:
-- Computer-using agents operate within dedicated hosted environments, such as Windows 365 Cloud PCs.
-- The Cloud PC is an Intune-managed Windows device, so its compliance status can be evaluated just like any employee laptop.
-- If the device falls out of compliance, the agent's access is blocked until compliance is restored.
-
-**Compliant network** works for agents on endpoints because:
-- The hosted environment can have a [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) client installed.
-- The Global Secure Access client provides the network location signal that Conditional Access evaluates.
-- Agents running in cloud infrastructure without a Global Secure Access client can't provide this signal.
-
-> [!IMPORTANT]
-> An agent *can* technically run on any machine, including unmanaged Linux servers or personal devices. But without Intune enrollment and a Global Secure Access client, there's no mechanism to enforce device compliance or network checks. The execution environments condition ensures policies requiring these controls only target sessions where the controls can actually be enforced.
-
 ## Ways to select agents to apply Conditional Access policies
 
 In addition to the specific agent access patterns, you can also select agent identity blueprints to apply Conditional Access policies to a class of agents. Custom security attributes can also be used to categorize and target agents for Conditional Access.
@@ -227,15 +202,16 @@ Conditional Access policies don't apply when:
 
 - An agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent's user account.
   - Agent blueprints have limited functionality. They can't act independently to access resources and are only involved in creating agent identities and agents' user accounts.
-  - Agentic tasks are always performed by the agent identity.
+  - Agent tasks are always performed by the agent identity.
 - An agent identity blueprint or agent identity performs an intermediate token exchange at the `AAD Token Exchange Endpoint: Public` endpoint (Resource ID: `fb60f99c-7a34-4190-8149-302f77469936`).
   - Tokens scoped to the `AAD Token Exchange Endpoint: Public` can't call Microsoft Graph.
-  - Agentic flows are protected because Conditional Access protects token acquisition from the agent identity or agent's user account.
+  - Agent flows are protected because Conditional Access protects token acquisition from the agent identity or agent's user account.
 - [Security defaults](../../fundamentals/security-defaults.md) are enabled.
 - Conditional Access only protects resources secured by Microsoft Entra ID. For example, if an agent accesses resources using an API key, it bypasses the Microsoft Entra ID authentication and token issuance pipeline entirely and Conditional Access policies won't apply to them.
 
 The following configurations aren't currently supported:
 
+- Policies targeting all users don't include agent's user accounts.
 - Scoping a Conditional Access policy to include or exclude agent's user account based on their group membership
 - A Conditional Access policy targeting agent identities won't apply to the agent's user account.
 - A Conditional Access policy targeting agent identities using agent identity blueprint covers only the agent identity, not the agent's user account.
