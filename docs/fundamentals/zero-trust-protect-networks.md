@@ -3,12 +3,13 @@ title: Security guidance - Protect networks
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect networks.
 
 ms.topic: concept-article
-ms.date: 03/02/2026
+ms.date: 04/30/2026
 
 ms.author: sarahlipsey
 author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect networks so that I can implement Zero Trust network security principles.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Protect networks
@@ -86,9 +87,6 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### Universal tenant restrictions block unauthorized external tenant access
 [!INCLUDE [25377](../includes/secure-recommendations/25377.md)]
 
-### External collaboration is governed by explicit cross-tenant access policies
-[!INCLUDE [25378](../includes/secure-recommendations/25378.md)]
-
 ### Conditional Access policies use compliant network controls
 [!INCLUDE [25379](../includes/secure-recommendations/25379.md)]
 
@@ -140,17 +138,4 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 ### All Private Access apps have user or group assignments
 [!INCLUDE [25481](../includes/secure-recommendations/25481.md)]
 
-### Outbound traffic from VNet integrated workloads is routed through Azure Firewall
-[!INCLUDE [25535](../includes/secure-recommendations/25535.md)]
 
-### Threat intelligence is enabled in deny mode on Azure Firewall
-[!INCLUDE [25537](../includes/secure-recommendations/25537.md)]
-
-### IDPS inspection is enabled in deny mode on Azure Firewall
-[!INCLUDE [25539](../includes/secure-recommendations/25539.md)]
-
-### Application Gateway WAF is enabled in prevention mode
-[!INCLUDE [25541](../includes/secure-recommendations/25541.md)]
-
-### Azure Front Door WAF is enabled in prevention mode
-[!INCLUDE [25543](../includes/secure-recommendations/25543.md)]

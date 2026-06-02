@@ -2,11 +2,13 @@
 title: "Conditional Access Policy: Using Network Signals"
 description: Discover how to configure Conditional Access policies with network-based signals, including trusted locations, IP ranges, and GPS-based settings.
 ms.topic: concept-article
-ms.date: 09/22/2025
+ms.date: 04/01/2026
 ms.reviewer: lhuangnorth, inbarc
 ms.custom: sfi-image-nochange
 ---
 # Conditional Access: Network assignment
+
+## Overview
 
 Admins can create policies that target specific network locations as a signal along with other conditions in their decision making process. They can include or exclude these network locations as part of their policy configuration. These network locations might include public IPv4 or IPv6 network information, countries or regions, unknown areas that don't map to specific countries or regions, or [Global Secure Access compliant network](../../global-secure-access/how-to-compliant-network.md).
 
@@ -124,7 +126,7 @@ To use **Determine location by GPS coordinates**, users need the Microsoft Authe
 - After 24 hours, the user must open the app and approve the notification.
 - Every time the user shares their GPS location, the app does jailbreak detection using the same logic as the Microsoft Intune MAM SDK. If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. 
    - The Microsoft Authenticator app on Android uses the Google Play Integrity API to facilitate jailbreak detection. If the Google Play Integrity API is unavailable, the request is denied and the user isn't able to access the requested resource unless the Conditional Access policy is disabled. For more information about the Microsoft Authenticator app, see the article [Common questions about the Microsoft Authenticator app](https://support.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
-- Users can modify the GPS location as reported by iOS and Android devices. As a result, the Microsoft Authenticator app denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the app is installed. Users who modify the location of their device get a denial message for GPS location-based based policies.
+- Users can modify the GPS location as reported by iOS and Android devices. As a result, the Microsoft Authenticator app denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the app is installed. Users who modify the location of their device get a denial message for GPS location-based policies.
 - The country code returned depends on the device platform API: For example one platform might report US for Puerto Rico, while another reports PR.
 
 > [!NOTE]
@@ -132,7 +134,7 @@ To use **Determine location by GPS coordinates**, users need the Microsoft Authe
 
 GPS location can be used with [passwordless phone sign-in](~/identity/authentication/concept-authentication-authenticator-app.md) only if MFA push notifications are also enabled. Users can use Microsoft Authenticator to sign in, but they also need to approve subsequent MFA push notifications to share their GPS location.
 
-GPS location doesn't work when only [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md) are set.
+GPS location doesn't work when only [passwordless authentication methods](~/identity/authentication/concept-authentication-passkeys-fido2.md) are set.
 
 Multiple Conditional Access policies might prompt users for their GPS location before all are applied. Because of the way Conditional Access policies are applied, a user might be denied access if they pass the location check but fail another policy. For more information about policy enforcement, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
 

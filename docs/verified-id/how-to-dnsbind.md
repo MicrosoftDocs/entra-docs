@@ -10,6 +10,9 @@ ms.date: 12/18/2024
 
 # Verify domain ownership to your decentralized identifier
 
+
+## Overview
+
 This article reviews the steps needed to verify your ownership of the domain name you're using for your decentralized identifier (DID).
 
 ## Prerequisites

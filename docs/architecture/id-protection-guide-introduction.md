@@ -66,7 +66,7 @@ To kick off a Microsoft Entra ID Protection PoC, you need these prerequisites.
     - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
     - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)
 
-  - A test user who isn't an administrator to verify that policies work as expected before you deploy real users. To create a user, follow the steps in [How to create, invite, and delete users](../fundamentals/how-to-create-delete-users.yml).
+  - A test user who isn't an administrator to verify that policies work as expected before you deploy real users. To create a user, follow the steps in [How to create, invite, and delete users](../fundamentals/how-to-create-delete-users.md).
 
 - A group, and the user is a member. To create a group, see [Create a group and add members in Microsoft Entra ID](../fundamentals/how-to-manage-groups.yml).
 

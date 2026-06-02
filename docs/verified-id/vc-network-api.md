@@ -11,6 +11,9 @@ ms.date: 01/30/2025
 
 # Microsoft Entra Verified ID network API
 
+
+## Overview
+
 The Microsoft Entra Verified ID Network API enables you to search for published credentials in the [Microsoft Entra Verified ID Network](how-use-vcnetwork.md). 
 
 > [!NOTE]

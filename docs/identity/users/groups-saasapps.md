@@ -3,10 +3,13 @@ title: Use a group to manage access to SaaS apps
 description: Learn how to use groups in Microsoft Entra ID to assign access to SaaS applications that are integrated with Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 12/13/2024
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, sfi-image-nochange
 ---
 # Use a group to manage access to SaaS applications
+
+
+## Overview
 
 When you use Microsoft Entra ID with a Microsoft Entra ID P1 or P2 license plan, you can use groups to assign access to software as a service (SaaS) applications integrated with Microsoft Entra ID.
 

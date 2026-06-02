@@ -1,13 +1,16 @@
 ---
 title: Use application proxy to integrate on-premises apps with Defender for Cloud Apps
-description: Use Microsoft Defender for Cloud Apps with on-premises applications in Microsoft Entra ID. Use the Defender for Cloud Apps Conditional Access App Control to monitor and control sessions in real-time based on Conditional Access policies. You apply these policies to on-premises applications that use application proxy in Microsoft Entra ID.
+description: Integrate Microsoft Defender for Cloud Apps with on-premises apps published through Microsoft Entra application proxy to monitor and control user sessions.
 ms.topic: how-to
-ms.date: 03/11/2026
-ms.reviewer: ashishj
+ms.date: 05/26/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Configure real-time application access monitoring with Microsoft Defender for Cloud Apps and Microsoft Entra ID
+
+## Overview
+
 Use Microsoft Defender for Cloud Apps for real-time monitoring with on-premises application in Microsoft Entra ID. Defender for Cloud Apps uses Conditional Access App Control to monitor and control sessions in real-time based on Conditional Access policies. Apply these policies to on-premises applications that use application proxy in Microsoft Entra ID.
 
 Some examples of the policies you create with Defender for Cloud Apps include:
@@ -19,13 +22,11 @@ Some examples of the policies you create with Defender for Cloud Apps include:
 
 For more information, see [Protect apps with Microsoft Defender for Cloud Apps Conditional Access App Control](/defender-cloud-apps/proxy-intro-aad).
 
-## Requirements
+## Prerequisites
 
-EMS E5 license, or Microsoft Entra ID P1 and Defender for Cloud Apps Standalone.
-
-The on-premises application must use Kerberos Constrained Delegation (KCD).
-
-Configure Microsoft Entra ID to use application proxy. Configuring application proxy includes preparing your environment and installing the private network connector. For a tutorial, see [Add an on-premises applications for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md). 
+- EMS E5 license, or Microsoft Entra ID P1 and Defender for Cloud Apps Standalone.
+- The on-premises application must use Kerberos Constrained Delegation (KCD).
+- Configure Microsoft Entra ID to use application proxy. Configuring application proxy includes preparing your environment and installing the private network connector. For a tutorial, see [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
 
 <a name='add-on-premises-application-to-azure-ad'></a>
 

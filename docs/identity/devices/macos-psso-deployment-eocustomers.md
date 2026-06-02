@@ -78,7 +78,7 @@ Device Compliance Policies in Microsoft Intune allow administrators to ensure th
 
 #### Deleting users from a tenant
 
-See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.yml). 
+See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.md). 
 
 #### Revoke a user's access
 
@@ -159,7 +159,7 @@ If you experience issues when deploying macOS Platform SSO, refer to our documen
 
 - [macOS Platform Single Sign-on overview (preview)](../devices/macos-psso.md)
 - [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
-- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
 - [Plan a passwordless deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Configure Microsoft Entra ID to meet NIST authenticator assurance levels](../../standards/nist-overview.md)
 - [NIST authenticator types and aligned Microsoft Entra methods](../../standards/nist-authenticator-types.md)

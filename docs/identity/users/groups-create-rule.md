@@ -3,11 +3,14 @@ title: Create or Edit a Dynamic Membership Group and Get Its Processing Status
 description: Learn how to create or update rules for dynamic membership groups in the Azure portal and check their processing status.
 ms.topic: how-to
 ms.date: 12/19/2024
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, sfi-image-nochange
 ---
 
 # Create or update a dynamic membership group in Microsoft Entra ID
+
+
+## Overview
 
 You can use rules to determine dynamic membership groups based on user or device properties in Microsoft Entra ID. This article describes how to set up a rule for dynamic membership groups in the Azure portal.
 
@@ -17,6 +20,10 @@ Group membership based on user or device properties is supported for security gr
 > Security groups can include either devices or users, but Microsoft 365 groups can include only users.
 
 Using dynamic membership groups requires a Microsoft Entra ID P1 license or an Intune for Education license. For more information, see [Manage rules for dynamic membership groups in Microsoft Entra ID](./groups-dynamic-membership.md).
+
+>[!NOTE]
+> Dynamic group rules evaluate every user and device in your tenant, including objects that are inactive or no longer in use. Stale devices and stale users can inflate group membership and slow dynamic membership group processing. Before you create a rule, clean up [stale devices](/entra/identity/devices/manage-stale-devices) and [inactive users](/entra/identity/monitoring-health/howto-manage-inactive-user-accounts) so your group reflects only the objects you intend to manage.
+
 
 ## Rule builder in the Azure portal
 

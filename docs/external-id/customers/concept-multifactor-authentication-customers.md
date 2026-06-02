@@ -1,22 +1,24 @@
 ---
 title: MFA in external tenants
-description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP) or SMS as a second verification method for sign-up and sign-in.
+description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP), SMS, or passkeys (FIDO2) as a second verification method for sign-up and sign-in.
 
 ms.topic: concept-article
-ms.date: 11/20/2024
+ms.date: 05/21/2026
 ms.custom: it-pro, references_regions
+ai-usage: ai-assisted
 
-#Customer intent: As a dev, devops, or it admin, I want to learn about ways to secure apps in my external tenant by adding multifactor authentication and enabling SMS and email one-time passcodes.
+#Customer intent: As a dev, devops, or it admin, I want to learn about ways to secure apps in my external tenant by adding multifactor authentication and enabling SMS, email one-time passcodes, and passkeys.
 ---
 
 # Multifactor authentication in external tenants
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Multifactor authentication (MFA) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
+Multifactor authentication (MFA) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support the following methods for authentication as a second factor:
 
 - Email one-time passcode
 - SMS-based authentication, available as an add-on ([see details](#sms-based-authentication)).
+- Passkey (FIDO2). Passkeys are a phishing-resistant authentication method that can satisfy MFA in a single gesture and also enable passwordless sign-in ([see details](#passkey-fido2)).
 
 Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
 
@@ -40,8 +42,9 @@ When you select identity provider options in your user flows, you define the fir
 
 Depending on which option you choose as the first factor, different second-factor verification methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md).
 
-- **Email with password and external identity providers**: For any of these first-factor methods, you can enable email one-time passcode, SMS, or both as second-factor verification methods for MFA.
-- **Email one-time passcode**: When email with one-time passcode is selected as the first-factor authentication method, it can't be used for second-factor verification. Therefore, only SMS-based verification can be enabled for MFA.
+- **Email with password or username with password**: For these first-factor methods, you can enable email one-time passcode, SMS, passkey (FIDO2), or a combination as second-factor verification methods for MFA.
+- **External identity providers**: You can enable email one-time passcode, SMS, or a combination as second-factor verification methods for MFA. Passkey (FIDO2) isn't currently available for users who sign in with an external identity provider.
+- **Email one-time passcode**: When email with one-time passcode is selected as the first-factor authentication method, it can't be used for second-factor verification. Therefore, only SMS-based verification can be enabled for MFA. Passkey (FIDO2) isn't currently available for email one-time passcode users.
 
 For details, see [how to enable MFA methods in an external tenant](how-to-multifactor-authentication-customers.md#enable-email-one-time-passcode-as-an-mfa-method).
 
@@ -80,6 +83,12 @@ SMS is an add-on feature and requires a [linked subscription](../external-identi
 ### Opt-in regions for SMS
 
 Starting January 2025, certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them for your application using the Microsoft Graph `onPhoneMethodLoadStartevent` policy. See [Regions requiring opt-in for SMS verification](how-to-region-code-opt-in.md).
+
+## Passkey (FIDO2)
+
+Passkeys (FIDO2) provide phishing-resistant, passwordless authentication that uses public-key cryptography. A passkey can be used to satisfy MFA in a single gesture (face, fingerprint, PIN, or security key) or as a primary, passwordless sign-in method. Only email + password and username + password local account users can register a passkey. Passkey registration requires a [custom URL domain](how-to-custom-url-domain.md), and users must complete MFA before registering a passkey.
+
+For setup steps, see [Sign in with passkeys](how-to-sign-in-with-passkey.md).
 
 ## Next steps
 

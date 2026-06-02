@@ -1,20 +1,34 @@
 ---
 title: How to configure Global Secure Access web content filtering
-description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
+description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 06/01/2026
 ms.subservice: entra-internet-access 
-ms.reviewer: frankgomulka
 ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
+
+<!-- TEMPORARY NOTICE: Remove this IMPORTANT alert after the erroneous "Deprecating soon" label on Web Content Filtering Policy (V1) is fixed in the Microsoft Entra admin center. Tracking with PM Michael Aldridge / engineering. -->
+
+> [!IMPORTANT]
+> You might see a red **Deprecating soon** label next to **Web Content Filtering Policy (V1)** in the Microsoft Entra admin center. This label is displayed in error. Your existing web content filtering policies aren't affected, continue to work as configured, and no action is required at this time. This article is updated when the display issue is resolved.
+
+## Overview
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
 
 Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
 The web filtering feature currently supports user- and context-aware Uniform Resource Locator (URL)-based web category filtering, URL filtering, and FQDN filtering.
+
+Web content filtering also supports two optional rule conditions that enable traffic-aware policy enforcement:
+
+- **Source traffic type filtering (preview)**: Scope rules to specific traffic types, such as agent, browser, or application.
+- **HTTP method request filtering (preview)**: Block or allow specific HTTP methods, such as GET, POST, PUT, PATCH, and DELETE.
+
+> [!TIP]
+> For file type-based filtering (MIME types) and integration with Microsoft Purview for data loss prevention, see [Create a content policy to filter network file content](how-to-network-content-filtering.md).
 
 ## Prerequisites
 
@@ -26,9 +40,11 @@ The web filtering feature currently supports user- and context-aware Uniform Res
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
 - IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
-- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
+- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443`. 
  
 
+- To enforce source traffic type and HTTP method request rules for HTTPS traffic, enable TLS inspection. Without TLS inspection, only Server Name Indication (SNI)-based web content filtering rules apply.
+- Source traffic type filtering requires client-based Global Secure Access connections. Remote networks don't support source traffic type rules.
 - Review web content filtering concepts. For more information, see [web content filtering](concept-internet-access.md).
 
 ## High level steps
@@ -56,7 +72,98 @@ The first step is to enable the Internet Access traffic forwarding profile. For 
      - To match all subdomains of a domain, use the wildcard format `*.domain.com`. Note that the wildcard `*.domain.com` matches subdomains like `www.domain.com` but doesn't match the root domain `domain.com` itself. To cover both the domain and all its subdomains, include both entries as a comma-separated list (for example, `*.contoso.com,contoso.com`).
      - When entering multiple FQDNs in a comma-separated list, don't include spaces between entries (for example, `contoso.com,fabrikam.com,*.example.com`).
      - Note, the URL filtering Preview supports a maximum of 1,000 URLs per tenant.
+1. (Optional) Configure the **Source type** condition (preview). For more information, see [Configure source traffic type filtering (preview)](#configure-source-traffic-type-filtering-preview).
+1. (Optional) Configure the **HTTP method request** condition (preview). For more information, see [Configure HTTP method request filtering (preview)](#configure-http-method-request-filtering-preview).
 1. Select **Next** to review the policy and then select **Create policy**.
+
+## Configure source traffic type filtering (preview)
+
+Source traffic type filtering lets you scope web content filtering rules to specific types of network traffic. You can enforce differentiated policies based on whether traffic originates from an AI agent, a web browser, or an application.
+
+### Supported source traffic types
+
+| Source type | Description |
+| --- | --- |
+| Agent | Traffic that originates from AI agents, such as Copilot agents or autonomous AI tools. |
+| Browser | Traffic that originates from web browsers. |
+| Application | Traffic that originates from desktop or mobile applications. |
+| Unknown | Traffic where the source type can't be determined. |
+
+### Configure the source traffic type condition
+
+1. In the web content filtering rule configuration, locate the **Source type** field.
+1. Enable the **Source type** field to include it in the rule.
+1. Select the source traffic types to include in the rule.
+
+> [!NOTE]
+> Source traffic type filtering is available only for client-based Global Secure Access connections. This capability depends on the Global Secure Access client sending task and processor metadata to classify traffic. Remote networks don't support source traffic type rules.
+
+> [!NOTE]
+> When a request's traffic type can't be determined, traffic is classified as **Unknown**. Traffic-type-specific rules don't match unless you explicitly target **Unknown** in a rule.
+
+### Example: Block AI agents from accessing social networking sites
+
+To prevent AI agents from accessing social networking websites while allowing browser and application traffic:
+
+1. Create a web content filtering policy rule.
+1. Select the **SocialNetworking** web category.
+1. Enable **Source type** and select **Agent**.
+1. Set the policy action to **Block**.
+
+This configuration blocks AI agent traffic to social networking sites while allowing browser and application users to access the same sites.
+
+## Configure HTTP method request filtering (preview)
+
+HTTP method request filtering lets you block or allow specific HTTP methods for matching traffic. You can enforce least-privilege access by restricting write operations while permitting read-only access.
+
+### Supported HTTP methods
+
+| Method | Description |
+| --- | --- |
+| GET | Retrieve a resource. |
+| POST | Submit data to a resource. |
+| PUT | Replace a resource. |
+| PATCH | Partially update a resource. |
+| DELETE | Remove a resource. |
+
+### Configure the HTTP method request condition
+
+1. In the web content filtering rule configuration, locate the **HTTP method request** field.
+1. Enable the **HTTP method request** field to include it in the rule.
+1. Select the HTTP methods to include in the rule.
+
+> [!IMPORTANT]
+> HTTP method enforcement requires TLS inspection for HTTPS traffic. Without TLS inspection, the Secure Web Gateway can't observe HTTP method headers, and only SNI-based web content filtering rules apply. Unencrypted HTTP traffic is always inspectable.
+
+### Example: Block AI agent write operations
+
+To prevent AI agents from performing write operations (PUT, PATCH, and DELETE) on enterprise resources:
+
+1. Create a web content filtering policy rule.
+1. Select the destination URLs, FQDNs, or web categories you want to protect.
+1. Enable **Source type** and select **Agent**.
+1. Enable **HTTP method request** and select **PUT**, **PATCH**, and **DELETE**.
+1. Set the policy action to **Block**.
+
+This configuration blocks AI agent traffic from performing write operations on the specified destinations while allowing GET and other read-only methods.
+
+## Combine source traffic type and HTTP method conditions
+
+You can use source traffic type and HTTP method request conditions independently or together in a single rule:
+
+- **Source type only**: Apply a rule to all traffic from a specific source type regardless of HTTP method.
+- **HTTP method request only**: Apply a rule to specific HTTP methods regardless of traffic source.
+- **Both conditions**: Apply a rule only when both the source traffic type and the HTTP method match.
+
+When you configure both conditions in a rule, a request must match both the specified source traffic type and the specified HTTP method for the rule to apply. Conditions are evaluated using AND logic across attributes.
+
+### Policy evaluation and precedence
+
+Policy evaluation follows the existing web content filtering policy framework ordering and precedence rules:
+
+- **Within the same attribute**: OR logic. Matching any selected value triggers the condition.
+- **Across attributes**: AND logic. All configured conditions must match.
+- **Conflicting actions**: When multiple policies match with conflicting actions, the most restrictive action wins (block over allow).
 
 ## Create a security profile
 
@@ -92,11 +199,17 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
+> [!Note]
+> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), please follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
+
 ## Enable web content filtering for remote network traffic
 
 Remote network connectivity allows you to connect branch offices and other remote locations to Global Secure Access without installing the client on individual devices. For more information about remote network connectivity, see [Global Secure Access remote network connectivity](concept-remote-network-connectivity.md).
 
 You can use the baseline security profile to apply tenant-wide web content filtering policies to all remote network traffic. The baseline profile enforces policies at the lowest priority in the policy stack and applies to all Internet Access traffic routed through the service, making it ideal for securing remote network locations.
+
+> [!IMPORTANT]
+> Source traffic type filtering isn't supported for remote network traffic. Source traffic type rules require the Global Secure Access client to provide task and processor metadata for traffic classification. You can still apply web category, URL, FQDN, and HTTP method rules without source traffic type conditions to remote networks through the baseline profile.
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
@@ -176,14 +289,14 @@ The following flow diagram illustrates web content filtering policies blocking o
 
 |Step|Description|
 |-----|-----|
-|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
+|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution. The client includes task and processor metadata for source traffic type classification.|
 |2|The client redirects to Microsoft Entra ID for authentication and authorization.|
 |3|The user and device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
 |4|After the user and device authenticate, Conditional Access matches on Internet Access Conditional Access rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
 |5|Microsoft Entra ID presents the token to Microsoft Security Service Edge for validation.|
 |6|The tunnel establishes between the Global Secure Access client and Microsoft Security Service Edge.|
 |7|Traffic starts being acquired and tunnels through the Internet Access tunnel.|
-|8|Microsoft Security Service Edge evaluates the security policies in the access token in priority order. After it matches on a web content filtering rule, web content filtering policy evaluation stops.|
+|8|Microsoft Security Service Edge evaluates the security policies in the access token in priority order. It evaluates source traffic type, HTTP method, web category, URL, and FQDN conditions. After it matches on a web content filtering rule, web content filtering policy evaluation stops.|
 |9|Microsoft Security Service Edge enforces the security policies.|
 |10|Policy = block results in an error for HTTP traffic or a connection reset exception occurs for HTTPS traffic.|
 |11|Policy = allow results in traffic forwarding to the destination.|
@@ -204,11 +317,13 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 1. Navigate to allowed and blocked sites and check if they behave properly. Browse to **Global Secure Access** > **Monitor** > **Traffic logs** to confirm traffic is blocked or allowed appropriately.
 
+1. To verify source traffic type and HTTP method request rules, generate traffic from different source types. For example, use an AI agent to send a PATCH request to a protected resource, and confirm the rule enforces correctly in **Traffic logs**.
+
 The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
 
-![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
+![Screenshot that shows a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
 
-![Screenshot showing a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
+![Screenshot that shows a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
 
 
 > [!NOTE]
@@ -217,6 +332,8 @@ The current blocking experience for all browsers includes a plaintext browser er
 > [!NOTE]
 > To expedite Conditional Access configuration changes *for testing*, revoke user sessions in the Microsoft Entra admin center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
 
-## Next steps
+## Related content
 
+- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)
+- [Known limitations for Global Secure Access](reference-current-known-limitations.md)

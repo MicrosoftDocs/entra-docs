@@ -8,6 +8,8 @@ ai-usage: ai-assisted
 
 # Global Secure Access data storage and privacy
 
+## Overview
+
 Frequently asked questions regarding privacy and data handling for Microsoft 365 enriched logs.
 
 Global Secure Access prioritizes the protection of your data and understand the importance of transparency, especially when it comes to data processing and privacy. This article outlines the stringent standards that give you a comprehensive understanding of how your data is handled and the measures put in place to ensure its security.

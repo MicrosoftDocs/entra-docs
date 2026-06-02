@@ -4,6 +4,7 @@ description: This page provides an overview of the Microsoft Entra ID Governance
 ms.topic: overview
 ms.date: 12/03/2025
 ms.reviewer: amycolannino
+#Customer Intent: As an IT admin, I want to understand the Microsoft Entra ID Governance integrations available so that I can automate provisioning and governance controls for my applications.
 ---
 
 # Microsoft Entra ID Governance integrations
@@ -316,6 +317,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Foodee](../identity/saas-apps/foodee-provisioning-tutorial.md) | ● | ● |
 | [Forcepoint Cloud Security Gateway - User Authentication](../identity/saas-apps/forcepoint-cloud-security-gateway-provisioning-tutorial.md) | ● | ● |
 | [ForeSee CX Suite](../identity/saas-apps/foreseecxsuite-tutorial.md) |  | ● |
+| [Forms and Workflow](../identity/saas-apps/forms-workflow-provisioning-tutorial.md) | ● |  |
 | [Fortes Change Cloud](../identity/saas-apps/fortes-change-cloud-provisioning-tutorial.md) | ● | ● |
 | [FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md) |  | ● |
 | [FortiSASE](../identity/saas-apps/fortisase-sia-tutorial.md) |  | ● |
@@ -556,7 +558,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Open DJ (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
 | [Open DS (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
 | [OpenAthens](../identity/saas-apps/openathens-tutorial.md) |  | ● |
-| [OpenForms](../identity/saas-apps/openforms-provisioning-tutorial.md) | ● |  |
 | [OpenLDAP](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [OpenText Directory Services](../identity/saas-apps/open-text-directory-services-provisioning-tutorial.md) | ● | ● |
 | [OptiTurn](../identity/saas-apps/optiturn-tutorial.md) |  | ● |

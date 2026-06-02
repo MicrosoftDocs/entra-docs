@@ -12,11 +12,14 @@ ms.date: 01/30/2025
 # Request Service API error codes
 
   
+
+## Overview
+
 Microsoft Entra Verified ID includes the Request Service REST API that allows you to issue and verify a credential. This article specifies the error codes for the Request Service API.
 
 ## Error object
 
-During public preview, the Request Service API returned errors in the following format.
+During preview, the Request Service API returned errors in the following format.
 
 ```json
 {

@@ -9,6 +9,9 @@ ms.reviewer: jeffsta
 
 # Bulk restore deleted users in Microsoft Entra ID
 
+
+## Overview
+
 Microsoft Entra ID supports bulk user restore operations and downloading lists of users, groups, and group members.
 
 ## Understand the CSV template

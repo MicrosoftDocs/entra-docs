@@ -10,6 +10,9 @@ ms.date: 01/31/2025
 
 # Issue a Verifiable Credential for directory-based claims
 
+
+## Overview
+
 Employees with accounts in your Microsoft Entra ID environment can have Verifiable Credentials of the type VerifiedEmployee, created with claims sourced from their user profiles. In this tutorial, you create a credential with claims sourced from a user's profile in Microsoft Entra ID.
 
 You can create VerifiedEmployee credentials using the [Quick setup](verifiable-credentials-configure-tenant-quick.md) or the [advanced setup](verifiable-credentials-configure-tenant.md). If you use the quick setup, the VerifiedEmployee credential is automatically created for you in a workforce tenant. If you use the advanced setup, you need to manually create the VerifiedEmployee credential as explained in this guide.
@@ -34,7 +37,7 @@ In this article, you learn how to:
 
 ## Configure your test user account
 
-1. [Create a new user](../fundamentals/how-to-create-delete-users.yml#create-a-new-user) to use in your testing.
+1. [Create a new user](../fundamentals/how-to-create-delete-users.md#create-a-new-user) to use in your testing.
 
 1. Sign in with your new user. The user name would be something like meganb@yourtenant.onmicrosoft.com. You must change your password.
 

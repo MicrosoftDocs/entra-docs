@@ -16,6 +16,8 @@
     href: tutorial-enable-cloud-sync-sspr-writeback.md
   - name: Enable password writeback to on-premises
     href: tutorial-enable-sspr-writeback.md
+  - name: Password policy overview and frequently asked questions
+    href: tutorial-password-policy-overview-frequently-asked-questions.md
   - name: Configure custom banned password lists
     href: tutorial-configure-custom-password-protection.md
   - name: Enable security notifications
@@ -73,14 +75,16 @@
       href: concept-account-recovery-overview.md
     - name: Account recovery FAQ
       href: self-service-account-recovery.yml
+    - name: Verified ID identity verification
+      href: concept-authentication-verified-id.md
   - name: Multifactor authentication
     items:
     - name: How MFA works
       href: concept-mfa-howitworks.md
     - name: Default protection
       href: concept-authentication-default-enablement.md
-    - name: System-preferred MFA
-      href: concept-system-preferred-multifactor-authentication.md
+    - name: System-preferred authentication
+      href: concept-system-preferred-authentication.md
     - name: Mandatory MFA
       href: concept-mandatory-multifactor-authentication.md
     - name: External MFA provider
@@ -103,6 +107,8 @@
     items:
     - name: Introduction to Microsoft Entra Kerberos
       href: kerberos.md
+    - name: Kerberos server key rotation
+      href: kerberos-server-key-rotation.md
     - name: FAQ
       href: kerberos-faq.yml
   - name: Self-service password reset
@@ -138,7 +144,7 @@
     href: how-to-authentication-methods-manage.md
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
-  - name: Plan phishing-resistant MFA
+  - name: Phishing-resistant MFA
     items:
     - name: Plan phishing-resistant passwordless authentication
       items:
@@ -152,20 +158,18 @@
         href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
     - name: Passkey (FIDO2) authentication
       items:
-      - name: Enable passkey profiles
-        href: how-to-authentication-passkey-profiles.md
-      - name: Enable device-bound passkeys 
-        href: how-to-enable-passkey-fido2.md
-      - name: Enable synced passkeys
-        href: how-to-authentication-synced-passkeys.md
+      - name: Enable passkeys (FIDO2)
+        href: how-to-authentication-passkeys-fido2.md
+      - name: Enable Entra passkey on Windows
+        href: how-to-authentication-entra-passkeys-on-windows.md
       - name: Register passkey
         href: how-to-register-passkey.md
       - name: Register passkey with a mobile device
         href: how-to-register-passkey-mobile.md
       - name: Sign in with passkey
         href: how-to-sign-in-passkey.md
-      - name: Synced passkeys FAQ
-        href: synced-passkey-faq.yml
+      - name: Passkey FAQ
+        href: passkey-faq.yml
       - name: Passkey (FIDO2) compatibility matrix
         href: concept-fido2-compatibility.md
       - name: Become a passkey (FIDO2) vendor
@@ -362,6 +366,8 @@
         href: how-to-mfa-server-migration-utility.md
   - name: Troubleshoot
     items:
+    - name: Voice call and SMS authentication
+      href: troubleshoot-voice-call-sms.md
     - name: Self-service password reset (SSPR)
       href: troubleshoot-sspr.md
     - name: SSPR writeback

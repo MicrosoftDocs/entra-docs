@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps with a token lifetime policy
 
+
+## Overview
+
 The PowerShell script example lists all the Microsoft Entra application proxy applications in your directory that have a token lifetime policy and lists details about the policy.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
@@ -23,8 +26,8 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 ```powershell
 # This sample script gets all Microsoft Entra proxy applications that have assigned an Azure AD policy (token lifetime) with policy details.
 # Reference:
-# Configurable token lifetimes in Azure Active Directory (Preview)
-# https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-configurable-token-lifetimes
+# Configurable token lifetimes in Microsoft Entra ID
+# https://learn.microsoft.com/entra/identity-platform/configurable-token-lifetimes
 #
 # Version 1.0
 #

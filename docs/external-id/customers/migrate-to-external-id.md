@@ -37,7 +37,9 @@ Organizations might migrate to Microsoft Entra External ID from another tool bas
 
 ## Plan your migration
 
-The [Microsoft Entra External ID deployment guide](/entra/architecture/deployment-external-intro) helps organizations get started with their deployment if they're new to the concept of a CIAM solution. Following that along with the steps outlined in this article help organizations with existing CIAM deployments complete their migration to Microsoft Entra External ID. Organizations start by [determining if there are any feature gaps between products](concept-supported-features-customers.md#general-feature-comparison) that might block their migration.
+The [Microsoft Entra External ID deployment guide](/entra/architecture/deployment-external-intro) helps organizations get started with their deployment if they're new to the concept of a CIAM solution. Following that along with the steps outlined in this article help organizations with existing CIAM deployments complete their migration to Microsoft Entra External ID. Organizations start by [evaluating the availability of critical features in Microsoft Entra External ID](concept-supported-features-customers.md#general-feature-comparison) to confirm readiness for migration.
+
+If you plan to migrate a workload from AWS to Azure, we suggest you have a methodical approach to that initiative. Component selection and Azure fundamentals are important parts of that larger process. To fine tune your migration plan using Microsoft's guidance, see [Migrate security services from Amazon Web Services](/azure/migration/migrate-security-from-aws).
 
 ### Migration steps
 
@@ -48,7 +50,7 @@ This guide helps you migrate legacy customer identity access management (CIAM) s
 | Premigration planning | &#8226; Map legacy CIAM features to [Microsoft Entra External ID capabilities](overview-customers-ciam.md). </br>&#8226; Complete an [inventory of the existing CIAM solution](#inventory). |
 | Microsoft Entra External ID setup | &#8226; [Create an external tenant](how-to-create-external-tenant-portal.md). </br>&#8226; [Add and manage admin accounts](how-to-manage-admin-accounts.md). </br>&#8226; [Enable other identity providers](concept-authentication-methods-customers.md). </br>&#8226; [Register all customer-facing applications](/entra/identity-platform/quickstart-register-app). </br>&#8226; [Add an application to the user flow](how-to-user-flow-add-application.md). </br>&#8226; [Test the user flow](how-to-test-user-flows.md).|
 | Identity flows and branding | &#8226; [Add a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) </br>&#8226; [Add an application to the user flow](how-to-user-flow-add-application.md) </br>&#8226; [Manage access](how-to-use-app-roles-customers.md) </br>&#8226; [Test the user flow](how-to-test-user-flows.md)  </br>&#8226; [Customize branding](how-to-customize-branding-customers.md) |
-| Security and monitoring | &#8226; [Configure MFA](how-to-multifactor-authentication-customers.md) </br>&#8226; [Create dashboards](how-to-user-insights.md) </br>&#8226; [Set up Azure Monitor](how-to-azure-monitor.md) |
+| Security and monitoring | &#8226; [Configure MFA](how-to-multifactor-authentication-customers.md) </br>&#8226; [Create dashboards](how-to-user-insights.md) (retiring August 31, 2026; see [migration guidance](how-to-user-insights.md#migrate-from-user-insights)) </br>&#8226; [Set up Azure Monitor](how-to-azure-monitor.md) |
 | Test and rollout | &#8226; Define your rollout strategy. </br>&#8226; Import the final batch of users if needed using the [Microsoft Graph API](/graph/api/user-post-users). </br>&#8226; Cut over live traffic to Microsoft Entra External ID. </br>&#8226; Monitor live authentication logs and error rates. </br>&#8226; Collect feedback. </br>&#8226; Decommission legacy solution. |
 
 ### Inventory

@@ -1,14 +1,16 @@
 ---
 title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Umbrella
-description: Microsoft and Cisco’s Security Service Edge (SSE) coexistence solution guide.
+description: "Deploy Global Secure Access alongside Cisco Umbrella with DNS security. Includes step-by-step configuration for both platforms to support private access, Microsoft 365 traffic, and internet access."
 ms.topic: how-to
-ms.date: 03/13/2026
+ms.date: 05/27/2026
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 
 # Security Service Edge (SSE) coexistence with Microsoft and Cisco Umbrella DNS protection
+
+## Overview
 
 Learn how to deploy Global Secure Access and Cisco Umbrella, with DNS security only, in a unified environment. This guide provides step-by-step instructions for configuring both platforms to enhance security and connectivity as part of your Secure Access Service Edge (SASE) strategy.
 The configurations outlined apply to both Cisco Umbrella and Cisco Secure Access. Detailed instructions for configuring each portal are provided.
@@ -69,7 +71,11 @@ To configure Cisco Umbrella:
 1. In the Microsoft Entra admin center, go to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
 2. Under **Internet access policies**, select **View**.
 3. Expand **Custom Bypass** and select **Add rule**.
-4. Enter the following IPs: `208.67.222.222, 208.67.220.220, 67.215.64.0/19, 146.112.0.0/16, 155.190.0.0/16, 185.60.84.0/22, 204.194.232.0/21, 208.67.216.0/21, 208.69.32.0/21`
+4. Enter the following IPs (comma-separated, no whitespace, to paste as a single rule):
+
+    ```text
+    208.67.222.222,208.67.220.220,67.215.64.0/19,146.112.0.0/16,155.190.0.0/16,185.60.84.0/22,204.194.232.0/21,208.67.216.0/21,208.69.32.0/21
+    ```
 5. Select **Save**.
 
 ### Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access
@@ -80,7 +86,49 @@ To configure Cisco Umbrella:
     > [!NOTE]
     > Cisco Umbrella supports implied wildcards, so you can use `globalsecureaccess.microsoft.com`.
 2. Add these Microsoft FQDNs (only required if Microsoft traffic forwarding profile is enabled):
-    `auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net`
+
+    ```text
+    auth.microsoft.com
+    msftidentity.com
+    msidentity.com
+    onmicrosoft.com
+    outlook.com
+    protection.outlook.com
+    sharepoint.com
+    sharepointonline.com
+    svc.ms
+    wns.windows.com
+    account.activedirectory.windowsazure.com
+    accounts.accesscontrol.windows.net
+    admin.onedrive.com
+    adminwebservice.microsoftonline.com
+    api.passwordreset.microsoftonline.com
+    autologon.microsoftazuread-sso.com
+    becws.microsoftonline.com
+    ccs.login.microsoftonline.com
+    clientconfig.microsoftonline-p.net
+    companymanager.microsoftonline.com
+    device.login.microsoftonline.com
+    g.live.com
+    graph.microsoft.com
+    graph.windows.net
+    login-us.microsoftonline.com
+    login.microsoft.com
+    login.microsoftonline-p.com
+    login.microsoftonline.com
+    login.windows.net
+    logincert.microsoftonline.com
+    loginex.microsoftonline.com
+    nexus.microsoftonline-p.com
+    officeclient.microsoft.com
+    oneclient.sfx.ms
+    outlook.cloud.microsoft
+    outlook.office.com
+    outlook.office365.com
+    passwordreset.microsoftonline.com
+    provisioningapi.microsoftonline.com
+    spoprod-a.akamaihd.net
+    ```
 3. Add the Quick Access FQDN (only required if you use Private Access with Quick Access). `<quickaccessapplicationid>.globalsecureaccess.local`
   > [!NOTE]
   > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
@@ -94,12 +142,56 @@ To configure Cisco Umbrella:
     > [!NOTE]
     > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.microsoft.com`.
 3. Add these Microsoft FQDNs (only required if Microsoft traffic forwarding profile is enabled):
-    `auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net`
+
+    ```text
+    auth.microsoft.com
+    msftidentity.com
+    msidentity.com
+    onmicrosoft.com
+    outlook.com
+    protection.outlook.com
+    sharepoint.com
+    sharepointonline.com
+    svc.ms
+    wns.windows.com
+    account.activedirectory.windowsazure.com
+    accounts.accesscontrol.windows.net
+    admin.onedrive.com
+    adminwebservice.microsoftonline.com
+    api.passwordreset.microsoftonline.com
+    autologon.microsoftazuread-sso.com
+    becws.microsoftonline.com
+    ccs.login.microsoftonline.com
+    clientconfig.microsoftonline-p.net
+    companymanager.microsoftonline.com
+    device.login.microsoftonline.com
+    g.live.com
+    graph.microsoft.com
+    graph.windows.net
+    login-us.microsoftonline.com
+    login.microsoft.com
+    login.microsoftonline-p.com
+    login.microsoftonline.com
+    login.windows.net
+    logincert.microsoftonline.com
+    loginex.microsoftonline.com
+    nexus.microsoftonline-p.com
+    officeclient.microsoft.com
+    oneclient.sfx.ms
+    outlook.cloud.microsoft
+    outlook.office.com
+    outlook.office365.com
+    passwordreset.microsoftonline.com
+    provisioningapi.microsoftonline.com
+    spoprod-a.akamaihd.net
+    ```
 4. Add the Quick Access FQDN (only required if you use Private Access with Quick Access). `<quickaccessapplicationid>.globalsecureaccess.local`
     > [!NOTE]
     > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
 5. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 6. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
+
+---
 
 ## Configuration scenarios
 

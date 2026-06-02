@@ -4097,5 +4097,6 @@
   "Threat Intelligence Briefing Agent resource": "43d7b169-1d9e-4d32-8cd8-06c5974ed90c",
   "app governance in Microsoft Defender for Cloud": "b5304409-74ae-42bf-a3e3-d62da4845129",
   "Microsoft Defender XDR streaming API video": "56edfb3f-b612-4e4c-acb9-4bbd141bd535",
-  "Windows Defender Security Intelligence Enterprise app": "4a918a14-4069-4108-9b7d-76486212d75d"
+  "Windows Defender Security Intelligence Enterprise app": "4a918a14-4069-4108-9b7d-76486212d75d",
+  "AAD Token Exchange Endpoint": "fb60f99c-7a34-4190-8149-302f77469936"
 }

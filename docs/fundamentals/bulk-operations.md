@@ -4,9 +4,13 @@ description: Learn about the new Microsoft Entra bulk operations experience for 
 ms.topic: article
 ms.date: 02/24/2026
 ms.custom: it-pro
+#Customer Intent: As an IT admin, I want to understand bulk operations in Microsoft Entra ID so that I can perform large-scale user management tasks efficiently.
 ---
 
 # Bulk operations in Microsoft Entra ID (Preview)
+
+
+## Overview
 
 The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups**, **Devices, Administrative Unit and Role assignments.** This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 

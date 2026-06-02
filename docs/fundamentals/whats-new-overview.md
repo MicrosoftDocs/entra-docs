@@ -1,13 +1,15 @@
 ---
 title: What's new
 description: Overview of the What's new experience in the Microsoft Entra admin center.
-manager: pmwongera
 ms.topic: overview
 ms.date: 11/13/2024
 # Customer intent: As a customer, I want an overview of the What's new experience in the Microsoft Entra admin center.
 ---
 
 # What's new
+
+
+## Overview
 
 Microsoft Entra is updated regularly to deliver new features, enhance existing functionality, fix defects, and address customer feedback. The best way to stay current with these developments is to visit **What's new** in the [Microsoft Entra admin center](./entra-admin-center.md). 
 

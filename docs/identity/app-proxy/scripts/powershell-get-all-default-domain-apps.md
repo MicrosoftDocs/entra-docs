@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps using default domains (.msappproxy.net)
 
+
+## Overview
+
 The PowerShell script example lists all the Microsoft Entra application proxy applications using default domains. Default domains end with `.msappproxy.net`.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]

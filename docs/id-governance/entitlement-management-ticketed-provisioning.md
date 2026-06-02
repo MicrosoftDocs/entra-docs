@@ -5,6 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: tutorial
 ms.date: 02/02/2026
 ms.custom: template-tutorial, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to automate ServiceNow ticket creation with entitlement management so that I can integrate ticketed provisioning with access management workflows.
 ---
 
 # Tutorial: Automated ServiceNow Ticket Creation with Microsoft Entra Entitlement Management Integration

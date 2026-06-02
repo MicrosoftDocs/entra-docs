@@ -2,7 +2,7 @@
 title: What's new for Microsoft Entra Verified ID
 description: Recent updates for Microsoft Entra Verified ID
 ms.topic: whats-new
-ms.date: 09/23/2025
+ms.date: 04/22/2026
 ms.custom: references_regions
 
 #Customer intent: As a Microsoft Entra Verified ID issuer, verifier or developer, I want to know what's new in the product so that I can make full use of the functionality as it becomes available.
@@ -11,7 +11,20 @@ ms.custom: references_regions
 
 # What's new in Microsoft Entra Verified ID
 
+
+## Overview
+
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
+
+## May 2026
+
+- **Non-FIPS compliant signing keys (P-256K) retirement**: Non-FIPS compliant signing keys (P-256K) will be retired on July 1, 2026. If you haven't already, [upgrade your signing keys](signing-key-upgrade.md) to become FIPS compliant.
+
+- **Face Check device security FAQ**: Added [frequently asked questions](using-facecheck.md#what-device-security-requirements-are-needed-to-support-verified-id-face-check) about device security requirements for Face Check on Android and iOS devices.
+
+- **Microsoft Entra ID account recovery**: Microsoft Entra ID account recovery with Verified ID is now generally available. For more information, see [plan your verification solution](plan-verification-solution.md).
+
+- **IDV partner gallery: 2 new Security Store partners**: Added [1Kosmos](https://aka.ms/1kosmos) and [CLEAR](https://aka.ms/clear1) to the [IDV partner gallery](idv-partners.md) as Security Store integration partners.
 
 ## November 2025
 
@@ -65,7 +78,7 @@ Partner Gallery Update: Reorganized content and removed deprecated individual pa
 ## March 2024
 
 - Starting February 2024, Verified ID [supports NIST compliant P-256 curve](verifiable-credentials-standards.md#supported-algorithms).
-- [Wallet Library 1.0.1](using-wallet-library.md#prerequisites) supports P-256.
+- [Wallet Library 1.0.1](decentralized-identifier-overview.md) supports P-256.
 
 ## February 2024
 
@@ -122,7 +135,7 @@ The `presentation_verified` callback from the Request Service API now returns wh
 
 ## June 2023
 
-Tutorial for getting started with the Wallet Library demo on Android and iOS is available in the [Wallet Library quickstart](using-wallet-library.md).
+Tutorial for getting started with the Wallet Library demo on Android and iOS is available in the [Wallet Library quickstart](decentralized-identifier-overview.md).
 
 ## May 2023
 
@@ -130,7 +143,7 @@ Tutorial for getting started with the Wallet Library demo on Android and iOS is 
 
 ## April 2023
 
-Instructions for setting up place of work verification on LinkedIn are available in [LinkedIn employment verification guidance](linkedin-employment-verification.md).
+Instructions for setting up place of work verification on LinkedIn are available in [LinkedIn employment verification guidance](whats-new.md).
 
 ## March 2023
 

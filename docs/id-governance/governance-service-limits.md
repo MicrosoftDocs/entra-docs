@@ -4,7 +4,7 @@ description: This article details service limits for offerings within Microsoft 
 ms.topic: concept-article
 ms.date: 12/10/2024
 
-#CustomerIntent: As a customer, I want to become informed on service limits for offerings within Microsoft Entra ID Governance so that restraints are understood and can be accounted for.
+#Customer Intent: As a customer, I want to become informed on service limits for offerings within Microsoft Entra ID Governance so that restraints are understood and can be accounted for.
 ---
 
 # Microsoft Entra ID Governance service limits
@@ -42,7 +42,7 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 |offsetInDays range of triggerAndScopeBasedConditions executionConditions     |  180 days       |
 |Workflow schedule interval in hours     |   1-24 hours      |
 |Number of users per on-demand selection	     |  10       |
-|durationBeforeTimeout range of custom task extensions     |   5 minutes-3 hours      |
+|durationBeforeTimeout range of custom task extensions     |   30 minutes-3 hours      |
 |Administrative scopes per workflow     |   5      |
 
 > [!NOTE]

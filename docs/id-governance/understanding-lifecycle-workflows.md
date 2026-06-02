@@ -5,6 +5,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: concept-article
 ms.date: 03/12/2026
 ms.custom: sfi-image-nochange
+#Customer Intent: As an IT admin, I want to understand lifecycle workflows and their components so that I can effectively use them to automate identity lifecycle processes.
 ---
 # Understanding lifecycle workflows 
 

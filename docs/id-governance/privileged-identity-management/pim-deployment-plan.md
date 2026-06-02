@@ -2,12 +2,14 @@
 title: Plan a Privileged Identity Management deployment
 description: Learn how to deploy Privileged Identity Management (PIM) in your Microsoft Entra organization.
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 04/23/2026
 ms.reviewer: shaunliu
 ms.custom: pim, sfi-ga-nochange
+#Customer Intent: As an IT administrator, I want to plan and execute a successful PIM deployment to secure privileged access across my organization.
 ---
-
 # Plan a Privileged Identity Management deployment
+
+## Overview
 
 **Privileged Identity Management (PIM)** provides a time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions to important resources. These resources include resources in Microsoft Entra ID, Azure, and other Microsoft Online Services such as Microsoft 365 or Microsoft Intune.
 

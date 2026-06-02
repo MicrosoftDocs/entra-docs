@@ -26,6 +26,9 @@ To configure SSO, you need:
 - One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - Completion of the steps in [Quickstart: Create and assign a user account](add-application-portal-assign-users.md).
 
+> [!NOTE]
+> SAML SSO is only configurable on single tenant applications or gallery applications. Multi-tenant applications will show SAML SSO configurations greyed out.
+
 ## Enable single sign-on
 
 

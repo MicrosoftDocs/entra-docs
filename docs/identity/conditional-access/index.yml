@@ -40,9 +40,9 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Block legacy authentication
-            url: block-legacy-authentication.md
+            url: policy-block-legacy-authentication.md
           - text: Troubleshooting using the What If tool
-            url: troubleshoot-conditional-access-what-if.md
+            url: what-if-tool.md
 
   # Card
   - title: Common Conditional Access policies

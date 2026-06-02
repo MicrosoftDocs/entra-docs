@@ -158,7 +158,7 @@ Use the following checklist to enhance application security.
 
 - Authentication method, such as multifactor authentication:
   - Multifactor authentication is recommended for users that trigger high-value transactions or other risk events. For example, banking, finance, and check-out processes.
-  - See, [What authentication and verification methods are available in Microsoft Entra ID?](~/identity/authentication/concept-authentication-methods.md)
+  - See, [What authentication and verification methods are available in Microsoft Entra ID?](~/identity/authentication/overview-authentication.md)
 - Confirm use of anti-bot mechanisms
 - Assess the risk of attempts to create a fraudulent account or sign-in
   - See, [Tutorial: Configure Microsoft Dynamics 365 Fraud Protection with Azure Active Directory B2C](/azure/active-directory-b2c/partner-dynamics-365-fraud-protection)

@@ -10,6 +10,8 @@ ai-usage: ai-assisted
 
 # Microsoft's SASE partner ecosystem overview
 
+## Overview
+
 Microsoft's Secure Access Service Edge (SASE) partner ecosystem gives organizations a robust, flexible security framework. Microsoft works with leading security vendors so its SASE solution can integrate with different non-Microsoft products. This integration lets organizations use their existing security investments and strengthen their overall security. This article explains the types of partner integrations and coexistence offerings so you can make informed decisions about how to secure your network infrastructure.
 
 Microsoft works with partners to deliver these categories:
@@ -35,9 +37,9 @@ You can choose to direct different types of traffic based on your network needs.
 - Private network traffic
 
 The following partners support coexistence:
-- [Cisco](concept-cisco-coexistence.md)
+- [Cisco](how-to-cisco-coexistence.md)
 - [Netskope](how-to-netskope-coexistence.md)
-- [Palo Alto Networks](concept-palo-alto-coexistence.md)
+- [Palo Alto Networks](how-to-palo-alto-coexistence.md)
 - [Zscaler](how-to-zscaler-coexistence.md)
 
 ## Partner connectivity offerings

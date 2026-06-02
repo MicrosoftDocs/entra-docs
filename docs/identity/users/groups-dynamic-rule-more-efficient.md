@@ -10,13 +10,16 @@ ms.custom: it-pro
 
 # Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID
 
+
+## Overview
+
 This article discusses the most common methods that you can use to simplify your rules for dynamic membership groups. Rules that are simpler and more efficient result in better processing times for dynamic groups.
 
 When you're writing membership rules for dynamic membership groups, follow the tips in this article to ensure that you create these rules as efficiently as possible.
 
 ## Minimize use of the -match operator
 
-Minimize your use of the `-match` operator in rules as much as possible. Instead, explore if it's possible to use the `-startswith` or `-eq` operator. Consider using other properties that allow you to write rules to select the users for a group without using the `-match` operator.
+Minimize your use of the `-match` operator in rules as much as possible. Instead, explore if it's possible to use the `-startsWith`, `-endsWith` or `-eq` operator. `-eq` is preferred when the full attribute value is known; `-startsWith` and `-endsWith` are next most efficient when only a prefix or suffix is known. Consider using other properties that allow you to write rules to select the users for a group without using the `-match` operator.
 
 For example, if you want a rule for the group that contains all users whose city is Lagos, don't use a rule like these:
 
@@ -25,15 +28,25 @@ For example, if you want a rule for the group that contains all users whose city
 
 It's better to use a rule like this example:
 
-- `user.city -startswith "Lag"`
+- `user.city -startsWith "Lag"`
 
 Or, best of all:
 
 - `user.city -eq "Lagos"`
 
+Similarly, for email-domain rules, don't use:
+
+- user.mail -match ".*@Contoso\.com$"
+- user.mail -notMatch ".*@Contoso\.com$"
+
+It's better to use:
+
+- user.userPrincipalName -endsWith "@Contoso.com"
+- user.mail -notEndsWith "@Contoso.com"
+
 ## Minimize use of the -contains operator
 
-As with `-match`, minimize your use of the `-contains` operator in rules as much as possible. Instead, explore if it's possible to use the `-startswith` or `-eq` operator. Using `-contains` can increase processing times, especially for tenants that have many dynamic membership groups.
+As with `-match`, minimize your use of the `-contains` operator in rules as much as possible. Instead, explore if it's possible to use the `-startsWith`, `-endsWith` or `-eq` operator. Using `-contains` can increase processing times, especially for tenants that have many dynamic membership groups.
 
 ## Use fewer -or operators
 

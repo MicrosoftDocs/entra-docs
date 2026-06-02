@@ -1,8 +1,6 @@
 ---
 title: Check web content filtering categories (preview)
 description: Use the web category checker to find which web content category a URL belongs to via Microsoft Graph.
-author: fgomulka
-ms.author: frankgomulka
 ms.topic: how-to
 ms.date: 08/28/2025
 ms.custom: sfi-image-nochange
@@ -10,6 +8,8 @@ ai-usage: ai-assisted
 ---
 
 # Check web categories with the web category checker tool (preview)
+
+## Overview
 
 The article shows how to use the web category checker tool to determine which content category a given Uniform Resource Locator (URL) belongs to. The tool is currently available only via Microsoft Graph API.
 

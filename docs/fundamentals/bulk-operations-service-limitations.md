@@ -7,9 +7,13 @@ ms.topic: how-to
 ms.date: 12/05/2025
 ms.reviewer: krbain
 ms.custom: it-pro
+#Customer Intent: As an IT admin, I want to understand bulk operations service limitations so that I can plan large-scale user management operations effectively.
 ---
 
 # Bulk operations service limitations
+
+
+## Overview
 
 Bulk operations in Microsoft Entra ID enable you to perform actions on multiple entities, such as users, groups, and devices, at once. These actions can include creating, deleting, or updating multiple records in a single operation. Bulk operations can greatly streamline administrative tasks and improve efficiency.
 

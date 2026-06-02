@@ -10,6 +10,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 
 # Change subdomain authentication type in Microsoft Entra ID
 
+
+## Overview
+
 After a root domain is added to Microsoft Entra ID, part of Microsoft Entra, all subsequent subdomains added to that root in your Microsoft Entra organization automatically inherit the authentication setting from the root domain. However, if you want to manage domain authentication settings independently from the root domain settings, you can now do so with the Microsoft Graph API. For example, if you have a federated root domain such as contoso.com, this article can help you verify a subdomain such as child.contoso.com as managed instead of federated.
 
 In the Azure portal, when the parent domain is federated and the admin tries to verify a managed subdomain on the **Custom domain names** page, the page displays a 'Failed to add domain' error with the reason "One or more properties contains invalid values." If you try to add this subdomain from the Microsoft 365 admin center, you receive a similar error. For more information about the error, see [A child domain doesn't inherit parent domain changes in Office 365, Azure, or Intune](/microsoft-365/troubleshoot/administration/child-domain-fails-inherit-parent-domain-changes).
@@ -22,6 +25,9 @@ Because subdomains inherit the authentication type of the root domain by default
 
 ## Add the subdomain
 
+> [!NOTE]
+> The following examples use `<your-root-domain>` as a placeholder. Replace it with your own verified root domain name (for example, `contoso.com`).
+
 1. Use PowerShell to add the new subdomain, which has its root domain's default authentication type. The Microsoft Entra ID and Microsoft 365 admin centers don't yet support this operation.
 
     ```powershell
@@ -31,7 +37,7 @@ Because subdomains inherit the authentication type of the root domain by default
     
     # Define the parameters for the new domain
     $domainParams = @{
-        Id = "child6.mydomain.com"
+        Id = "child6.<your-root-domain>"
         AuthenticationType = "Federated"
     }
     
@@ -58,7 +64,7 @@ Because subdomains inherit the authentication type of the root domain by default
           "isInitial": false,
           "isRoot": false,          <---------------- Not a root domain, so it inherits parent domain's authentication type (federated)
           "isVerified": true,
-          "name": "child.mydomain.com",
+          "name": "child.<your-root-domain>",
           "supportedServices": [],
           "forceDeleteState": null,
           "state": null,
@@ -110,7 +116,7 @@ Invoking API with a federated verified subdomain with user references | POST | 4
           "isInitial": false,
           "isRoot": true,   <------------------------------ Also a root domain, so not inheriting from parent domain any longer
           "isVerified": true,
-          "name": "child.mydomain.com",
+          "name": "child.<your-root-domain>",
           "supportedServices": [
               "Email",
               "OfficeCommunicationsOnline",

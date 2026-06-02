@@ -17,10 +17,11 @@ This article describes the steps you need to perform in both Bizagi Studio for D
 
 ## Capabilities supported
 > [!div class="checklist"]
-> * Create users in Bizagi Studio for Digital Process Automation
-> * Remove users in Bizagi Studio for Digital Process Automation when they don't require access anymore
-> * Keep user attributes synchronized between Microsoft Entra ID and Bizagi Studio for Digital Process Automation
-> * [Single sign-on](./bizagi-studio-for-digital-process-automation-tutorial.md) to Bizagi Studio for Digital Process Automation (recommended)
+> * Create users in Bizagi Studio for Digital Process Automation.
+> * Remove users in Bizagi Studio for Digital Process Automation when they don't require access anymore.
+> * Keep user attributes synchronized between Microsoft Entra ID and Bizagi Studio for Digital Process Automation.
+> * [Single sign-on](./bizagi-studio-for-digital-process-automation-tutorial.md) to Bizagi Studio for Digital Process Automation (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

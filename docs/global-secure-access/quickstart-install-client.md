@@ -11,6 +11,8 @@ ai-usage: ai-assisted
   
 # Quickstart: Install the Windows client to acquire Microsoft traffic
 
+## Overview
+
 Microsoft Entra Internet Access isolates the traffic for Microsoft applications and resources, such as Exchange Online and SharePoint Online. Users can access these resources by connecting to the Global Secure Access client or through a remote network, such as in a branch office location.
  
 This quickstart shows you the steps needed to install the client and start acquiring Microsoft traffic. For more information about Global Secure Access, see [What is Global Secure Access?](overview-what-is-global-secure-access.md)

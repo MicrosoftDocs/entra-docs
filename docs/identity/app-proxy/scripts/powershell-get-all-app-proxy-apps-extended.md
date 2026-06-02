@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 
 # Get all application proxy apps and list extended information
 
+
+## Overview
+
 The PowerShell script example lists information about all Microsoft Entra application proxy applications, including the application ID (AppId), name (DisplayName), external URL (ExternalUrl), internal URL (InternalUrl), authentication type (ExternalAuthenticationType), single sign-on (SSO) mode and further settings.
 
 Changing the value of the `$ssoMode` variable enables a filtered output by SSO mode. Further details are documented in the script.

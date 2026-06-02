@@ -3,18 +3,21 @@ title: Configure group settings using PowerShell
 description: How to manage the settings for groups using Microsoft Entra cmdlets
 ms.topic: how-to
 ms.date: 06/05/2025
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 # Microsoft Entra cmdlets for configuring group settings
+
+
+## Overview
 
 This article contains instructions for using PowerShell cmdlets to create and update groups in Microsoft Entra ID, part of Microsoft Entra. This content applies only to Microsoft 365 groups.
 
 > [!IMPORTANT]
 > Some settings require a Microsoft Entra ID P1 license. For more information, see the [Template settings](#template-settings) table.
 
-For more information on how to prevent nonadministrator users from creating security groups, set the `AllowedToCreateSecurityGroups` property to False as described in [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy).
+For more information on how to prevent nonadministrator users from creating security groups, set the `AllowedToCreateSecurityGroups` property to False as described in [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy).
 
 Microsoft 365 groups settings are configured using a Settings object and a SettingsTemplate object. Initially, you don't see any Settings objects in your directory, because your directory is configured with the default settings. To change the default settings, you must create a new settings object using a settings template. Microsoft provides several settings templates. To configure Microsoft 365 group settings for your directory, you use the template named "Group.Unified". To configure Microsoft 365 group settings on a single group, use the template named "Group.Unified.Guest". This template is used to manage guest access to a Microsoft 365 group. 
 
