@@ -41,7 +41,7 @@ The transition from VPN to per-application segmentation follows a phased approac
 | **Phase 1: VPN modernization** | Deploy Quick Access with broad IP ranges and wildcard FQDNs to replicate VPN-level connectivity. Users can access the same resources they reached through the VPN, and you can decommission the VPN. |
 | **Phase 2: Discovery** | Use Application Discovery to analyze traffic patterns and understand which applications users are accessing through Quick Access. Identify the most-used application segments and the users who access them. |
 | **Phase 3: Segmentation** | Create individual [per-app access](how-to-configure-per-app-access.md) enterprise applications for high-value or sensitive resources. Assign only the users and groups that require access to each application. |
-| **Phase 4: Governance** | Apply [Conditional Access](how-to-target-resource-private-access-apps.md) policies to individual applications, enforce multifactor authentication (MFA) for sensitive resources, and continue to monitor access patterns. |
+| **Phase 4: Governance** | Apply [Conditional Access](how-to-target-resource-private-access-apps.md) to your segmented applications, manage access with [Microsoft Entra ID Governance](/entra/id-governance/identity-governance-overview), and continue to monitor access patterns. |
 
 > [!TIP]
 > Don't attempt to segment all applications at once. Start with the most critical or most-used applications identified through Application Discovery, then expand your segmentation over time.
@@ -49,6 +49,8 @@ The transition from VPN to per-application segmentation follows a phased approac
 ## Phase 1: Modernize your VPN with Quick Access
 
 If you haven't already, [configure Quick Access](how-to-configure-quick-access.md) with the IP ranges and FQDNs that your VPN currently provides access to. Quick Access gives users broad connectivity similar to a VPN but through Microsoft Entra Private Access.
+
+Most customers also configure [Private DNS](concept-private-name-resolution.md) at this stage so users can reach internal resources by name. Configure your private DNS suffixes alongside Quick Access to replicate the name resolution behavior that users expect from a VPN.
 
 At this stage, all users who are assigned to Quick Access can reach any resource within the defined ranges. This broad access is intentional — it ensures a smooth transition from VPN without disrupting user productivity.
 
@@ -103,6 +105,18 @@ For example:
 > [!IMPORTANT]
 > When you move an application segment from Quick Access to a specific enterprise application, all traffic to that segment follows the new application's configuration. No traffic to the segmented application goes through Quick Access, even if the segment remains within the ranges defined by Quick Access. Verify that the correct users are assigned before you segment to avoid access disruptions.
 
+### Move both FQDNs and the IP addresses they resolve to
+
+If you use Private DNS, be aware of how FQDN-based and IP-based segments interact during segmentation:
+
+- When you move an FQDN to an enterprise application, only traffic that's addressed to that FQDN (and resolved through Private DNS) follows the new application's configuration.
+- Traffic that the client sends directly to the IP address — for example, traffic generated after a local DNS resolution, or traffic from a process that uses cached IPs — continues to match Quick Access if that IP is still within a Quick Access range.
+
+To ensure all traffic to a segmented application follows its enterprise application configuration:
+
+1. Add the FQDNs *and* the IP addresses or ranges that the application resolves to into the new enterprise application.
+1. Remove those same IP addresses or ranges from Quick Access so the application's configuration is the only match for that traffic.
+
 ### Prioritize which applications to segment first
 
 Consider this order when deciding which applications to segment first:
@@ -111,25 +125,55 @@ Consider this order when deciding which applications to segment first:
 1. **High-traffic, well-defined applications** — Applications with many users but a clear audience. Examples: department-specific portals.
 1. **Infrastructure services** — Services like AD DS or DNS that many users depend on. These require careful planning because they often span multiple segments and protocols.
 
-## Phase 4: Apply governance and Conditional Access
+## Phase 4: Apply Conditional Access
 
-After you create segmented applications, apply security policies to each one individually — something that isn't possible with broad VPN or Quick Access connectivity.
+After you create segmented applications, apply Conditional Access policies to each one individually — something that isn't possible with broad VPN or Quick Access connectivity. Common policies include:
 
 - **Require MFA** for sensitive applications such as financial or HR systems.
 - **Require compliant devices** for applications that handle confidential data.
 - **Block access from risky sign-ins** using Microsoft Entra ID Protection signals.
 
-For guidance on applying Conditional Access to Private Access applications, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
+For most environments, the recommended baseline is to apply the Conditional Access guidance in [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md) consistently across your segmented applications. Avoid creating many individual, app-specific policies unless a specific use case requires it — broad, well-tested policies are easier to operate and audit than dozens of one-off configurations. Reserve app-specific policies for cases where the data sensitivity, regulatory requirements, or user population of an application genuinely differs from the rest of your environment.
+
+## Govern access and continue monitoring
+
+Segmentation isn't a one-time activity. After you segment applications, use governance and ongoing monitoring to keep access aligned with business need.
+
+### Govern access with Microsoft Entra ID Governance
+
+Manage who has access to your segmented enterprise applications by using [Microsoft Entra ID Governance](/entra/id-governance/identity-governance-overview):
+
+- Use [access packages](/entra/id-governance/entitlement-management-overview) to bundle related Private Access enterprise applications and grant access through self-service requests with approval workflows.
+- Configure [access reviews](/entra/id-governance/access-reviews-overview) so application owners regularly recertify who needs access.
+- Use [lifecycle workflows](/entra/id-governance/what-are-lifecycle-workflows) to automatically remove access when users change roles or leave the organization.
+
+This approach scales segmentation: instead of manually managing user and group assignments on each enterprise application, owners request access through packages and reviews keep assignments accurate over time.
 
 ### Continue monitoring
 
-Segmentation isn't a one-time activity. Regularly review Application Discovery to:
+Regularly review Application Discovery to:
 
 - Identify new applications that users are accessing through Quick Access.
 - Detect changes in usage patterns that suggest new segmentation opportunities.
 - Verify that segmented applications have the correct user assignments.
 
-Over time, reduce the scope of Quick Access as you move more application segments to individually managed enterprise applications.
+Over time, move more application segments out of Quick Access and into individually managed enterprise applications.
+
+## Should you remove Quick Access entirely?
+
+Quick Access isn't designed to be removed entirely after segmentation is complete. It's expected to remain in place even in mature deployments, for the following reasons:
+
+- **Catch-all for unsegmented traffic** — Quick Access continues to serve traffic for resources you haven't segmented yet, including newly discovered applications surfaced by Application Discovery.
+- **Private DNS host** — Private DNS suffixes are typically configured on Quick Access. Keeping Quick Access in place preserves consistent name resolution for users, even as individual applications are pulled into their own enterprise applications.
+- **Recommended fallback segments** — Some application segments — for example, broad infrastructure ranges or services that aren't well-suited to per-app segmentation — are intentionally left in Quick Access.
+
+When segmentation is mature, Quick Access typically retains:
+
+- Private DNS configuration.
+- Recommended infrastructure or fallback application segments.
+- A user assignment that matches the population that still needs broad access (often a subset of the original VPN-replacement assignment, not all users).
+
+Treat the goal as *minimizing* the scope of Quick Access — narrowing its assignments and segments — rather than removing it entirely.
 
 ## Related content
 
@@ -137,4 +181,6 @@ Over time, reduce the scope of Quick Access as you move more application segment
 - [Configure Quick Access for Global Secure Access](how-to-configure-quick-access.md)
 - [Configure per-app access to private resources](how-to-configure-per-app-access.md)
 - [Application Discovery for Global Secure Access](how-to-application-discovery.md)
+- [Private DNS for Global Secure Access](concept-private-name-resolution.md)
 - [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md)
+- [What is Microsoft Entra ID Governance?](/entra/id-governance/identity-governance-overview)
