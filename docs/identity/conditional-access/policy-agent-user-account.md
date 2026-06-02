@@ -45,14 +45,10 @@ Follow these steps to configure a Conditional Access policy that applies to all 
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Investigating policy evaluation using sign-in logs
-
-Admins can use the Sign-in logs to investigate why a Conditional Access policy did or didn't apply as explained in [Microsoft Entra sign-in events](troubleshoot-conditional-access.md#microsoft-entra-sign-in-events). These events appear in the **User sign-ins (non-interactive)**.
-
 ## Related content
 
-- [Manage agent identities in your organization](/entra/agent-id/manage-agent-identities-organization) - Overview of agent identity management across the full lifecycle.
-- [Conditional Access for agent identities](agent-id.md)
+- [Manage agent identities in your organization](/entra/agent-id/manage-agent-identities-organization) - Overview of agent management across the full lifecycle.
+- [Conditional Access for agents](agent-id.md)
 - [Conditional Access template policies](concept-conditional-access-policy-common.md)
 - [Conditional Access: Users, groups, agents, and workload identities](concept-conditional-access-users-groups.md)
 - [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)

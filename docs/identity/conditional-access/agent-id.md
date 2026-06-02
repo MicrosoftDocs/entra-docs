@@ -6,7 +6,7 @@ ms.date: 06/02/2026
 ms.reviewer: yoelhor, kvenkit
 ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
-#customer-intent: As an identity administrator, I want to understand how Conditional Access policies apply to agent identities in Microsoft Entra ID, so that I can effectively manage and secure access for AI agents in my organization.
+#customer-intent: As an identity administrator, I want to understand how Conditional Access policies apply to agents in Microsoft Entra ID, so that I can effectively manage and secure access for AI agents in my organization.
 ---
 
 # Conditional Access for agents
@@ -17,7 +17,7 @@ Learn about Conditional Access for agents:
 
 - High-level overview of Conditional Access: [What is Conditional Access?](overview.md)
 - Guide to managing agent identities across your organization: [Manage agent identities in your organization](../../agent-id/manage-agent-identities-admin.md).
-- - Securing agent flows using Conditional Access:
+- Securing agent flows using Conditional Access:
     - [Configure policies for autonomous agent access](policy-autonomous-agents.md)
     - [Configure policies for on-behalf-of agent access](policy-on-behalf-of-agents.md)
 
@@ -226,8 +226,8 @@ Admins can use the sign-in logs to investigate why a Conditional Access policy d
 
 ## Next steps
 
-Learn how to configure Conditional Access policies for agent identities:
+Learn how to configure Conditional Access policies for agents:
 
-- [Block high-risk agent identities](policy-agent-block-high-risk.md)
+- [Block high-risk agents](policy-agent-block-high-risk.md)
 - [Configure policy for autonomous agent access](policy-autonomous-agents.md)
 - [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)

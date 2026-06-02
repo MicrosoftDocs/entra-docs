@@ -31,9 +31,8 @@ Each section builds on the previous one to form a complete policy.
 
 ## Create a Conditional Access policy for agent identities
 
-Policies that target agent identities introduce unique assignment options, conditions, and control limitations that differ from user-targeted policies. Templates for specific scenarios are also available. We recommend reviewing this article first to understand the best practices and considerations for agent-specific policies.
+Policies that target agent identities introduce unique assignment options, conditions, and control limitations that differ from user-targeted policies. 
 
-- [Block high-risk agent identities](policy-agent-block-high-risk.md)
 - [Configure policy for autonomous agent access](policy-autonomous-agents.md)
 - [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)
 
@@ -150,7 +149,7 @@ Configure a filter to apply the policy to specific devices.
 
 ## Access controls
 
-Access controls determine what happens when conditions are met.
+Access controls determine what happens when conditions are met. For more information, see [How to Configure Grant Controls](concept-conditional-access-grant.md).
 
 ### Controls for agent identities
 

@@ -122,9 +122,9 @@
         href: policy-agent-block-high-risk.md
       - name: Agents' user accounts
         href: policy-agent-user-account.md
-      - name: Configure policy for autonomous agent access
+      - name: Recommended policies for autonomous agent access
         href: policy-autonomous-agents.md
-      - name: Configure policy for on-behalf-of agent access
+      - name: Recommended policies for on-behalf-of agent access
         href: policy-on-behalf-of-agents.md
     - name: Applications
       items:
