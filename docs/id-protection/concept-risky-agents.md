@@ -6,7 +6,7 @@ ms.date: 04/30/2026
 ms.reviewer: etbasser
 ---
 
-# ID Protection for agents
+# ID Protection for agents (Preview)
 
 As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks on agents that have agent identities provided by [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md).
 
