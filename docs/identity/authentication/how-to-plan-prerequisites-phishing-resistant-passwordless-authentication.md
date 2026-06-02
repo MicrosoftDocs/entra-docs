@@ -25,7 +25,7 @@ Microsoft Entra ID offers the following phishing-resistant passwordless authenti
 
 - Passkeys (FIDO2)
   - Windows Hello for Business
-  - Microsoft Entra passkey on Windows (preview)
+  - Microsoft Entra passkey on Windows
   - Platform credential for macOS (preview)
   - Entra Passkey on Windows
   - Microsoft Authenticator app passkeys
