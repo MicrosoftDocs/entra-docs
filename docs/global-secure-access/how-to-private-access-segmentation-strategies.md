@@ -19,6 +19,12 @@ Microsoft Entra Private Access provides a path from traditional VPN solutions to
 
 This article walks through the recommended strategy for transitioning from Quick Access to per-application segmentation, using [Application Discovery](how-to-application-discovery.md) to inform your segmentation decisions.
 
+Per-application segmentation aligns with the broader Zero Trust principle of network segmentation and software-defined perimeters. For wider context and planning guidance, see:
+
+- [Secure networks with Zero Trust: Network segmentation and software-defined perimeters](/security/zero-trust/deploy/networks#1-network-segmentation-and-software-defined-perimeters)
+- [Microsoft Zero Trust](https://zerotrust.microsoft.com/)
+- [Zero Trust Workshop: Network segmentation guidance (NET_012)](https://microsoft.github.io/zerotrustassessment/docs/workshop-guidance/network/NET_012)
+
 ## Prerequisites
 
 - A Microsoft Entra tenant onboarded to [Microsoft Entra Private Access](concept-private-access.md).
@@ -32,7 +38,7 @@ The transition from VPN to per-application segmentation follows a phased approac
 
 | Phase | Description |
 |---|---|
-| **Phase 1: VPN replacement** | Deploy Quick Access with broad IP ranges and wildcard FQDNs to replicate VPN-level connectivity. Users can access the same resources they reached through the VPN, and you can decommission the VPN. |
+| **Phase 1: VPN modernization** | Deploy Quick Access with broad IP ranges and wildcard FQDNs to replicate VPN-level connectivity. Users can access the same resources they reached through the VPN, and you can decommission the VPN. |
 | **Phase 2: Discovery** | Use Application Discovery to analyze traffic patterns and understand which applications users are accessing through Quick Access. Identify the most-used application segments and the users who access them. |
 | **Phase 3: Segmentation** | Create individual [per-app access](how-to-configure-per-app-access.md) enterprise applications for high-value or sensitive resources. Assign only the users and groups that require access to each application. |
 | **Phase 4: Governance** | Apply [Conditional Access](how-to-target-resource-private-access-apps.md) policies to individual applications, enforce multifactor authentication (MFA) for sensitive resources, and continue to monitor access patterns. |
@@ -40,7 +46,7 @@ The transition from VPN to per-application segmentation follows a phased approac
 > [!TIP]
 > Don't attempt to segment all applications at once. Start with the most critical or most-used applications identified through Application Discovery, then expand your segmentation over time.
 
-## Phase 1: Replace your VPN with Quick Access
+## Phase 1: Modernize your VPN with Quick Access
 
 If you haven't already, [configure Quick Access](how-to-configure-quick-access.md) with the IP ranges and FQDNs that your VPN currently provides access to. Quick Access gives users broad connectivity similar to a VPN but through Microsoft Entra Private Access.
 
