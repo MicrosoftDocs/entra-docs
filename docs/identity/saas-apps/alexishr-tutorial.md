@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO with temporary values.
 
 6. In the **Attributes & Claims** section, set **Name ID format** to **Email address** and ensure the **Name ID** value is **user.email**.
 
-7. In the **SAML Signing Certificate** section, select **Certificate (Base64)** and **Download**. This file has *.cer extension and is PEM-encoded and will be needed later during the AlexisHR setup.
+7. In the **SAML Signing Certificate** section, select **Certificate (Base64)** and **Download**. This file has a .cer extension, is PEM-encoded, and is needed later during the AlexisHR setup.
 
 8. In the **Set up AlexisHR** section, copy the **Login URL** and **Logout URL** values. These values will also be needed in the AlexisHR setup.
 
