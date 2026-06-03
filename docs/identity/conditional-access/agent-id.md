@@ -62,19 +62,11 @@ For example, an organization may require multifactor authentication before a use
 
 Conditional Access is evaluated whenever Microsoft Entra ID issues or refreshes an access token. Some resources also support Continuous Access Evaluation, which can trigger near-real-time enforcement for specific events.
 
-Agents can access Microsoft Entra-protected resources using one of the following patterns:
-
-- On behalf of a user (delegated access)
-- As an application (autonomous access using the agent identity)
-- As a user (autonomous access using the agent's user account)
-
-This access model provides a consistent framework for securing both human and agent access to organizational resources.
-
 ## Agent access patterns
 
-There are three agent access patterns for Conditional Access. The on-behalf-of flow, the agents acting as an application (autonomous access) flow, and the agents acting as a user flow.
+Agents can access Microsoft Entra-protected resources using one of the following patterns:
 
-### On-behalf-of flow
+### Agents acting on behalf of a user
 
 The most common access pattern is the on-behalf-of (OBO) flow. In this flow, a user signs in to an agent application, and the agent accesses downstream resources using the user's identity and delegated permissions. For example, when an agent reads your emails, it accesses your mailbox *on your behalf*. For more information about how the OBO flow works for agents, see [Agent OAuth flows: On-behalf-of](../../agent-id/agent-on-behalf-of-oauth-flow.md).
 
@@ -125,6 +117,8 @@ Agents using this flow are sometimes called "digital worker," or "AI teammate." 
 - **Select agent users (Preview)**: Target specific agent user accounts individually.
 
 For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md). For more information about the agent user OAuth flow, see [Agent user OAuth flow](../../agent-id/agent-user-oauth-flow.md).
+
+Agents running on managed endpoints like [Windows 365 Cloud PCs for Agents](/windows-365/agents/introduction-windows-365-for-agents) can also be subject to device compliance and compliant network controls. Use the **Agent execution environments (Preview)** condition to scope these policies to endpoint-based sessions only. For more information, see [Require a compliant device for agents' user accounts](policy-autonomous-agents.md#require-a-compliant-device-for-agents-user-accounts).
 
 ## Ways to select agents to apply Conditional Access policies
 

@@ -138,8 +138,8 @@ Conditional Access extends policy enforcement to these user-like autonomous agen
 - Target all agent users or select specific agent users
 - Apply policies using custom security attributes
 - Apply agent risk conditions to block risky agents
-- Scope policies by agent execution environment (cloud, cloud-hosted VMs, end-user devices, on-premises)
-- Enforce device compliance for agents running on managed endpoints
+- Use the agent execution environments condition to scope policies to agents running on endpoints
+- Enforce device compliance for agents running on managed endpoints (Windows 365 Cloud PCs)
 - Enforce compliant network locations for agents with a Global Secure Access client
 
 To create a Conditional Access policy for agents operating with their own identity, use the following settings:
@@ -195,6 +195,32 @@ The **Agent execution environments (Preview)** condition solves this by restrict
 1. Under **Access controls** > **Grant**.
    1. Select **Grant access**.
    1. Select **Require device to be marked as compliant**.
+   1. Select **Select**.
+1. Confirm your settings and set **Enable policy** to **Report-only**.
+1. Select **Create** to enable your policy.
+
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
+
+### Require a compliant network for agents' user accounts
+
+Similar to device compliance, you can require agents running on endpoints to connect through a compliant network using [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access). The Global Secure Access client installed on the endpoint provides the network location signal that Conditional Access evaluates.
+
+Use the **Agent execution environments (Preview)** condition to scope this policy to endpoint-based sessions only. Without this condition, cloud-native agents without a Global Secure Access client are blocked with no path to compliance.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
+1. Under **Assignments**, select **Users, agents or workload identities**.
+   1. Under **What does this policy apply to?**, select **Agents**.
+      1. Under **Include**, select **All agent users (Preview)**.
+1. Under **Target resources**:
+   1. Under **Include**, select **All resources (formerly 'All cloud apps')**.
+1. Under **Conditions** > **Agent execution environments (Preview)**, set **Configure** to **Yes**.
+   1. Under **Include**, select **Agent user sessions initiated from endpoints**.
+1. Under **Access controls** > **Grant**.
+   1. Select **Grant access**.
+   1. Select **Require compliant network**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to enable your policy.
