@@ -113,7 +113,7 @@ In some cases, you might want to directly assign specific identities to an acces
 > [!NOTE]
 > Access package assignment managers will no longer be able to bypass approval settings if the policy requires approval. This means identities can't be directly assigned to the package without necessary approval(s) from the designated approver(s). In the case that you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to identities who need access.
 
-## Directly assign any identity (Preview)
+## Directly assign any identity
 
 Entitlement management also allows you to directly assign external identities to an access package to make collaborating with partners easier. To do this, the access package must have a policy that allows identities not yet in your directory to request access.
 
@@ -130,7 +130,7 @@ Entitlement management also allows you to directly assign external identities to
 
 1. In the **Select policy** list, select a policy that allows that is set to **For users not in your directory**
 
-1. Select **External user (Preview)**. You're able to specify which users you want to assign to this access package.
+1. Select **External user**. You're able to specify which users you want to assign to this access package.
     ![Assignments - Add any user to access package](./media/entitlement-management-access-package-assignments/assignments-add-any-user.png)
 
 1. Enter the identity **Name** (optional) and the identity **Email address** (required).
