@@ -110,8 +110,8 @@
         "identity/multi-tenant-organizations/**/*.yml": "kenwith",
         "identity/role-based-access-control/**/*.md": "rolyon",
         "identity/role-based-access-control/**/*.yml": "rolyon",
-        "identity/saas-apps/**/*.md": "nguhiu",
-        "identity/saas-apps/**/*.yml": "nguhiu",
+        "identity/saas-apps/**/*.md": "jeevansd",
+        "identity/saas-apps/**/*.yml": "jeevansd",
         "identity/users/**/*.md": "kenwith",
         "identity/users/**/*.yml": "kenwith",
         "security-copilot/**/*.md": "cilwerner",
@@ -164,8 +164,8 @@
         "identity/multi-tenant-organizations/**/*.yml": "kenwith",
         "identity/role-based-access-control/**/*.md": "rolyon",
         "identity/role-based-access-control/**/*.yml": "rolyon",
-        "identity/saas-apps/**/*.md": "gideonkiratu",
-        "identity/saas-apps/**/*.yml": "gideonkiratu",
+        "identity/saas-apps/**/*.md": "jeedes",
+        "identity/saas-apps/**/*.yml": "jeedes",
         "identity/users/**/*.md": "kenwith",
         "identity/users/**/*.yml": "kenwith",
         "security-copilot/**/*.md": "cwerner",
@@ -178,6 +178,8 @@
       "ms.reviewer": {
         "identity/multi-tenant-organizations/**/*.md": "hafowler",
         "identity/multi-tenant-organizations/**/*.yml": "hafowler",
+        "identity/saas-apps/**/*.md": "jomondi",
+        "identity/saas-apps/**/*.yml": "jomondi"
       },
       "ms.service": {
         "agent-id/**/*.md": "entra-id",

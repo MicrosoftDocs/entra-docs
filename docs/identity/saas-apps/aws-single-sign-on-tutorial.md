@@ -3,7 +3,7 @@ title: Configure AWS IAM Identity Center (successor to AWS Single Sign-On) for S
 description: Learn how to configure single sign-on between Microsoft Entra ID and AWS IAM Identity Center (successor to AWS Single Sign-On).
 ms.reviewer: jomondi
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS IAM Identity Center so that I can control who has access to AWS IAM Identity Center, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -17,6 +17,10 @@ In this article,  you learn how to integrate AWS IAM Identity Center (successor 
 * Manage your accounts in one central location.
 
 **Note:** When using AWS Organizations, it's important to delegate another account as the Identity Center Administration account, enable the IAM Identity Center on it, and set up the Entra ID SSO with that account, not the root management account. This ensures a more secure and manageable setup.
+
+AWS IAM Identity Center is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 
