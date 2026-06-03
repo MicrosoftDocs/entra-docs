@@ -5,7 +5,7 @@ titleSuffix: Microsoft Entra Agent ID
 author: Dickson-Mwendia
 ms.author: dmwendia
 ms.topic: how-to
-ms.date: 03/17/2026
+ms.date: 06/03/2026
 ms.reviewer: dastrock, jomondi
 
 #customer-intent: As a developer building interactive agents, I want to authenticate users, configure authorization, and acquire tokens through the On-Behalf-Of flow, so that my agent can securely act on behalf of users to access protected resources.
@@ -15,8 +15,7 @@ ms.reviewer: dastrock, jomondi
 
 Interactive agents take actions on behalf of users. To do so securely, the agent must authenticate the user, obtain consent for the required permissions, and acquire access tokens for downstream APIs. This article walks you through implementing the end-to-end flow for your interactive agent:
 
-1. Register a redirect URI for your agent identity blueprint.
-1. Configure user or admin authorization (consent).
+1. Grant permissions through inheritable permissions or consent.
 1. Authenticate the user and obtain an access token.
 1. Validate the token and extract user claims.
 1. Acquire tokens for downstream APIs using the On-Behalf-Of (OBO) flow.
@@ -37,11 +36,24 @@ For admin authorization, you also need:
 
 - [Administrator access to grant consent](grant-agent-access-microsoft-365.md) for application permissions.
 
-## Register a redirect URI
+## Permissions and consent
 
-To support delegated permissions, your agent identity blueprint must be configured with a valid redirect URI. This URI is where Microsoft Entra ID sends users after they grant or deny consent to your agent.
+Before the agent can act on behalf of a user, the user or an administrator must consent to the required permissions. There are two approaches to granting permissions:
 
-### [Microsoft Graph API](#tab/microsoft-graph-api)
+- **Inheritable permissions**: Preauthorize permissions on the blueprint so agent identities inherit them automatically.
+- **Request consent**: Register a redirect URI and prompt users or administrators to grant consent through an OAuth request.
+
+### Use inheritable permissions
+
+Configure inheritable permissions on the agent identity blueprint to preauthorize a base set of delegated scopes and application roles. Agent identities created from the blueprint automatically inherit those permissions without interactive consent prompts. For more information, see [Configure inheritable permissions for agent identity blueprints](configure-inheritable-permissions-blueprints.md).
+
+### Request consent
+
+To request consent through an OAuth flow, your agent identity blueprint must first be configured with a redirect URI. For blueprints, the redirect URI must be a **web application** type. Unlike redirect URIs on app registrations, a redirect URI on a blueprint can't be used to obtain delegated permission tokens. Only `response_type=none` is supported in the OAuth2 request, which means the request records consent only and no tokens are returned.
+
+#### Register a redirect URI
+
+##### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To send this request, you first need to obtain an access token with the delegated permission `AgentIdentityBlueprint.ReadWrite.All`.
 
@@ -60,7 +72,7 @@ Authorization: Bearer <token>
 }
 ```
 
-### [Microsoft Graph PowerShell](#tab/microsoft-graph-powershell)
+##### [Microsoft Graph PowerShell](#tab/microsoft-graph-powershell)
 
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.ReadWrite.All" -TenantId <your-test-tenant>
@@ -84,7 +96,7 @@ Invoke-MgGraphRequest -Method PATCH `
 
 ---
 
-## Configure user authorization
+#### Request user consent
 
 Before the agent can act on behalf of a user, the user must consent to the required permissions. This consent step doesn't return a token. Instead, it records that the user has granted the agent permission to act on their behalf. Token acquisition happens in a [later step](#authenticate-the-user-and-request-a-token).
 
@@ -115,9 +127,9 @@ The key parameters in the consent URL are:
 
 For more information on OAuth authorization concepts, see [Permissions and consent in the Microsoft identity platform](/entra/identity-platform/permissions-consent-overview).
 
-## Configure admin authorization
+#### Request admin consent for all users
 
-Agents can also request authorization from a Microsoft Entra ID administrator, who can grant authorization to the agent for all users in their tenant. Application permissions require admin authorization because individual users can't consent to them.
+Agents can also request authorization from a Microsoft Entra ID administrator, who can grant consent to the agent for all users in their tenant. Admin consent might be required depending on the consent settings configured in the tenant.
 
 To grant admin consent, construct the authorization URL that prompts the administrator. Use the agent identity ID in the following request.
 
@@ -125,15 +137,21 @@ To grant admin consent, construct the authorization URL that prompts the adminis
 https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 ?client_id=<agent-identity-id>
 &scope=User.Read
-&redirect_uri=https://entra.microsoft.com/TokenAuthorize
+&redirect_uri=<redirect-uri>
 &state=xyz123
 ```
 
 After the administrator grants consent, the permissions are applied tenant-wide and users in that tenant don't need to individually consent to those permissions.
 
+> [!NOTE]
+> For multi-tenant agents, there's no notification when an administrator in another tenant grants consent. Developers must poll or check manually. Single-tenant (line-of-business) agents can retry token requests until consent is granted because the tenant ID is already known.
+
 ## Authenticate the user and request a token
 
-After authorization is configured, the client app (such as a frontend or mobile app) initiates an OAuth 2.0 authorization code request to obtain a token where the audience is the agent identity blueprint. In this step, `client_id` refers to the client app's own registered application ID, not the agent identity or agent identity blueprint ID.
+After consent is granted, the client app (such as a frontend or mobile app) initiates an OAuth 2.0 authorization code request to obtain a token where the audience is the agent identity blueprint. In this step, `client_id` refers to the client app's own registered application ID, not the agent identity or agent identity blueprint.
+
+> [!NOTE]
+> The `redirect_uri` in this request belongs to the **client app's** registration, not the blueprint's redirect URI configured in the previous consent step.
 
 1. Redirect the user to the Microsoft Entra ID authorization endpoint with the following parameters:
 

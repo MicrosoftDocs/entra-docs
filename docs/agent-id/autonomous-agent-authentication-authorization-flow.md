@@ -266,6 +266,9 @@ https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 
 Agent implementations might redirect the admin to this URL in various ways, such as including it in a message sent to the admin in a chat window. When the admin is redirected to this URL, they're asked to sign in and grant consent to the permissions specified in the scope parameter. At the moment you must use the redirect URI listed, which directs the admin to a blank page after granting consent.
 
+> [!IMPORTANT]
+> There's no notification mechanism when an administrator grants consent in another tenant. For multi-tenant agents, the developer must poll or check manually whether consent has been granted. Single-tenant (line-of-business) agents can retry token requests until consent is granted because the tenant ID is already known.
+
 After you grant your application the required permissions, request a new agent access token for the permissions to take effect.
 
 ## Authenticate as an agent's user account
