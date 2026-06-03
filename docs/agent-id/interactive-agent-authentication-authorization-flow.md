@@ -41,7 +41,7 @@ For admin authorization, you also need:
 Before the agent can act on behalf of a user, the user or an administrator must consent to the required permissions. There are two approaches to granting permissions:
 
 - **Inheritable permissions**: Preauthorize permissions on the blueprint so agent identities inherit them automatically.
-- **Request consent**: Register a redirect URI and prompt users or administrators to grant consent through an OAuth request.
+- **Request consent**: Register a redirect URI and prompt users or administrators to grant consent through an OAuth request or use the admin consent endpoint.
 
 ### Use inheritable permissions
 
@@ -144,7 +144,7 @@ https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 After the administrator grants consent, the permissions are applied tenant-wide and users in that tenant don't need to individually consent to those permissions.
 
 > [!NOTE]
-> For multi-tenant agents, there's no notification when an administrator in another tenant grants consent. Developers must poll or check manually. Single-tenant (line-of-business) agents can retry token requests until consent is granted because the tenant ID is already known.
+> Configure a redirect URI on your blueprint and include a `state` parameter in the consent request. When consent is granted, the user is sent to the redirect URI where you can display confirmation. Your endpoint can use the `state` parameter to track that permission was granted. For single-tenant agents, you can alternatively retry token requests until consent is granted because the tenant ID is already known.
 
 ## Authenticate the user and request a token
 
