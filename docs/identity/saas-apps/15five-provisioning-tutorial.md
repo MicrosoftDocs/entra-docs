@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 02/18/2026
+ms.date: 05/26/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 15Five so that I can streamline the user management process and ensure that users have the appropriate access to 15Five.
@@ -25,6 +25,10 @@ The objective of this article is to demonstrate the steps to be performed in 15F
 > * [Single sign-on](./15five-tutorial.md) to 15Five (recommended)
 > * Long lived bearer token authentication supported.
 
+15Five is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -33,9 +37,6 @@ The scenario outlined in this article assumes that you already have the followin
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)).
 * [A 15Five tenant](https://www.15five.com/pricing/).
 * A user account in 15Five with Admin permissions.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
