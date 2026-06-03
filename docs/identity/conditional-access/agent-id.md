@@ -17,9 +17,7 @@ Learn about Conditional Access for agents:
 
 - High-level overview of Conditional Access: [What is Conditional Access?](overview.md)
 - Guide to managing agent identities across your organization: [Manage agent identities in your organization](../../agent-id/manage-agent-identities-admin.md).
-- Securing agent flows using Conditional Access:
-    - [Configure policies for autonomous agent access](policy-autonomous-agents.md)
-    - [Configure policies for on-behalf-of agent access](policy-on-behalf-of-agents.md)
+- [Configure policies for autonomous agent access](policy-autonomous-agents.md)
 
 ## How Conditional Access evaluates agent access requests
 
