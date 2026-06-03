@@ -33,6 +33,55 @@ Device Soft Delete, now available in preview, enables administrators to safely r
 
 ---
 
+### General Availability - NetBiosName resolution test now informational
+
+**Type:** Changed feature  
+**Service category:** Entra Connect  
+**Product capability:** Entra Connect    
+
+The “NetBIOS Name Sysvol Connectivity resolution” test in the AD DS health monitoring agent has been _reclassified_ from an alerting test to an informational test. Going forward, if this test fails, it will no longer generate an alert or require remediation action on your part. Instead, the test runs in the background and logs results for your information only.  
+
+**What Changed**
+
+
+**The NetBIOS Name Sysvol Connectivity test is now _informational-only_**. Previously, when this test failed (e.g. if a domain controller couldn’t resolve the **NetBIOS name** to access its **SYSVOL share**), an **alert was triggered** in Connect Health, prompting you for action. Now, **failures in this test will not raise an alert** in Microsoft Entra Connect Health.
+
+**Why We Made This Change**
+
+
+**NetBIOS is a legacy networking protocol that is not critical in modern Active Directory environments.** Many organizations no longer rely on NetBIOS name resolution in day-to-day operations. **Reclassifying this test as informational reduces noise in your alert feed and allows you to focus on issues that are genuinely critical to your identity infrastructure.** In short, we want to ensure that Connect Health alerts highlight _meaningful issues_ and help you prioritize real problems, rather than flagging non-essential conditions.
+
+---
+
+### Upcoming change - Enhanced admin authorization for Microsoft Entra Connect Sync configuration changes
+
+**Type:** Changed feature  
+**Service category:** Entra Connect  
+**Product capability:** Entra Connect  
+
+We're enhancing the security posture of Microsoft Entra Connect Sync by introducing interactive admin authorization for configuration changes. With this update, an authorized administrator will need to sign in and explicitly approve changes to sync settings, ensuring that configuration updates are intentional and made by the right person.
+
+**What’s changing**
+
+*   **Interactive admin authorization for sync configuration changes:** Going forward, changes to sync configuration settings – such as enabling or disabling features – will require interactive authentication from an authorized cloud administrator. Whether you're using the Entra Connect wizard or PowerShell, a verified admin sign-in will be required to complete the action. This strengthens the authorization model for all sync-related configuration changes.
+*   **Greater consistency in admin-driven configuration:** We are aligning sync behavior so that configuration decisions made by cloud administrators are consistently respected. The cloud will serve as the source of truth for sync feature state, giving administrators greater confidence that their intended configuration is maintained.
+*   **Updated management paths:** All management interfaces for Entra Connect will incorporate delegated admin authentication where needed. Specifically:
+
+*   **Entra Connect wizard flows:** The installation and configuration wizard will use delegated admin tokens for sync configuration changes, providing a more secure authorization flow.
+*   **PowerShell cmdlets:** PowerShell-based management of sync settings will now prompt for an interactive admin sign-in to complete configuration changes. Ensure you run these commands in a session where you can provide admin credentials.
+*   **Uninstall behavior:** If you uninstall Entra Connect Sync and choose to make cloud-side changes such as converting the tenant to cloud-only synchronization, the uninstall process will require admin authentication before modifying settings in the cloud tenant.
+
+**What’s not changing**
+
+*   Sync functionality and the end-user experience remain unchanged. Everything continues to work as expected when features are enabled or disabled.
+*   There is no change to how administrators choose to enable or disable sync features; only that these actions now require interactive authentication.
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
+
+Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details on available versions.
+
+---
+
 ### Public Preview - Workload identity-based authentication for SAP SuccessFactors provisioning integrations 
 
 **Type:** New feature  
