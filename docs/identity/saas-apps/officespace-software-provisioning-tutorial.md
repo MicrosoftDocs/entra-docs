@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your OfficeSpace Software Tenant URL (the format should be [[https://(YOURTENANTNAME).officespacesoftware.com/api/scim/v2/](https://(YOURTENANTNAME).officespacesoftware.com/api/scim/v2/)] ) and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to OfficeSpace Software. If the connection fails, ensure your OfficeSpace Software account has the required admin permissions and try again.
+1. In the **Tenant URL** field, input your OfficeSpace Software Tenant URL (the format should be [https://(YOURTENANTNAME).officespacesoftware.com/api/scim/v2/](https://(YOURTENANTNAME).officespacesoftware.com/api/scim/v2/) ) and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to OfficeSpace Software. If the connection fails, ensure your OfficeSpace Software account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
