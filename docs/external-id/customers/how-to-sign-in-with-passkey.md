@@ -85,7 +85,7 @@ The credential management experience should enable customers to:
 - View their registered passkeys.
 - Delete a passkey.
 
-For a complete reference implementation, see the [passkey management sample app on GitHub](https://github.com/Azure-Samples/ms-eeid-passkey-sample-app). The sample is a React single-page application (SPA) that demonstrates how to sign in users with Microsoft Entra External ID and manage passkey credentials by using the Microsoft Graph API.
+For a complete reference implementation, see the [passkey management sample app on GitHub](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample is a React single-page application (SPA) that demonstrates how to sign in users with Microsoft Entra External ID and manage passkey credentials by using the Microsoft Graph API.
 
 ## User experience
 
