@@ -76,7 +76,7 @@ There are three agent access patterns for Conditional Access. The on-behalf-of f
 
 ### On-behalf-of flow
 
-The most common access pattern is the on-behalf-of (OBO) flow. In this flow, a user signs in to an agent application, and the agent accesses downstream resources using the user's identity and delegated permissions. For example, when an agent reads your emails, it accesses your mailbox *on your behalf*.
+The most common access pattern is the on-behalf-of (OBO) flow. In this flow, a user signs in to an agent application, and the agent accesses downstream resources using the user's identity and delegated permissions. For example, when an agent reads your emails, it accesses your mailbox *on your behalf*. For more information about how the OBO flow works for agents, see [Agent OAuth flows: On-behalf-of](../../agent-id/agent-on-behalf-of-oauth-flow.md).
 
 > [!NOTE]
 > The on-behalf-of flow is also known as delegated access. Agents using this type of access are sometimes called interactive agents or assistive agents, as they involve a user interface for human interaction.
@@ -85,11 +85,11 @@ The most common access pattern is the on-behalf-of (OBO) flow. In this flow, a u
 
 In this flow, the agent can't reuse the user's original token because it was issued for a different audience. Instead, the agent uses the OBO flow to exchange tokens with Microsoft Entra ID, obtaining a new token scoped to the target resource. This token exchange is also evaluated by Conditional Access, letting admins enforce granular controls over which resources agents can access on behalf of the user.
 
-Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities. For step-by-step policy configuration, see [Conditional Access for agents operating on-behalf-of a user](policy-on-behalf-of-agents.md). For more information about how the OBO flow works for agents, see [Agent OAuth flows: On-behalf-of](../../agent-id/agent-on-behalf-of-oauth-flow.md).
+Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities. For step-by-step policy configuration, see [Conditional Access for agents operating on-behalf-of a user](policy-on-behalf-of-agents.md).
 
 ### Agents acting as an application
 
-Agents might access resources without a signed-in user. In this case the agent accesses the resource with its own identity. This flow is also known as client credentials flow, or app only access. All types of agents might use this flow.
+Agents might access resources without a signed-in user. In this case the agent accesses the resource with its own identity. This flow is also known as client credentials flow, or app only access. All types of agents might use this flow. For more information about how agents authenticate with their own identity, see [Agent OAuth flows: Autonomous apps](../../agent-id/agent-autonomous-app-oauth-flow.md).
 
 The following diagram shows the application only access authorization flow.
 
@@ -111,7 +111,7 @@ In these scenarios, the agent requests an access token using its own agent ident
 - **All agent identities**: Targets all agent identities in your directory.
 - **Select agent identities**: Target specific agent identities individually.
 
-For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md). For more information about how agents authenticate with their own identity, see [Agent OAuth flows: Autonomous apps](../../agent-id/agent-autonomous-app-oauth-flow.md).
+For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md).
 
 ### Agents acting as a user
 

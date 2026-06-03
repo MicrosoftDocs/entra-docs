@@ -172,7 +172,7 @@ This policy blocks autonomous agents operating as users when [Microsoft Entra ID
 
 ### Require a compliant device for agents' user accounts
 
-Some autonomous agents are computer-using agents — they operate a desktop environment to complete tasks, similar to how a human user interacts with applications. These agents typically run on dedicated [Windows 365 Cloud PCs for Agents](/windows-365/agents/introduction-windows-365-for-agents), which are Intune-managed Windows devices. Because the Cloud PC is a managed endpoint, its compliance status can be evaluated by Conditional Access just like an employee's laptop.
+Some autonomous agents are computer-using agents. They operate a desktop environment to complete tasks, similar to how a human user interacts with applications. These agents typically run on dedicated [Windows 365 Cloud PCs for Agents](/windows-365/agents/introduction-windows-365-for-agents), which are Intune-managed Windows devices. Because the Cloud PC is a managed endpoint, its compliance status can be evaluated by Conditional Access just like an employee's laptop.
 
 However, not all agents run on endpoints. Agents running directly in Microsoft infrastructure don't have an associated device. Policies scoped with this condition don't apply to those cloud-native agents, which prevents unintended blocking.
 
