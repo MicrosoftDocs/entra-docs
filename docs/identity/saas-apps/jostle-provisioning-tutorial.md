@@ -135,6 +135,34 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "alternate2"].value|String||
    |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:alternateEmail1Label|String||
    |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:alternateEmail2Label|String||
+   |DisplayName|String||
+   |ExternalIdentifier|String||
+   |Title|String||
+   |Nickname|String||
+   |UserType|String||
+   |BirthDate|String||
+   |AttributePathCustomBadge|String||
+   |AttributePathCustomFilterCategory|String||
+   |AttributePathCustomProfile|String||
+   |AttributePathJoinDate|String||
+   |AttributePathLocations|String||
+   |AttributePathLoginType|String||
+   |AttributePathPersonalPronouns|String||
+   |AttributePathAddress1Country|String||
+   |AttributePathAddress1Locality|String||
+   |AttributePathAddress1PostalCode|String||
+   |AttributePathAddress1StreetAddress|String||
+   |AttributePathAddress1Region|String||
+   |AttributePathAddress2Country|String||
+   |AttributePathAddress2Locality|String||
+   |AttributePathAddress2PostalCode|String||
+   |AttributePathAddress2StreetAddress|String||
+   |AttributePathAddress2Region|String||
+   |AttributeWorkOfficePhone|String||
+   |AttributeHomePhone|String||
+   |AttributeWorkMobilePhone|String||
+   |AttributePersonalMobilePhone|String||
+
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
