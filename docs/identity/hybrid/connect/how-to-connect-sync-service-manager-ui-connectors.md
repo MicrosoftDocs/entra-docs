@@ -31,8 +31,7 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 
 
 > [!WARNING]
-> Deleting a connector or connector space is **$\color{red} unsupported$**. Performing these actions may have serious consequences and damage your hybrid identity environment. These actions should **never** be a troubleshooting step.
->
+> Deleting a connector or connector space is **not supported** and can have serious consequences for your hybrid identity environment. Don't use these actions as a troubleshooting step.
 
 
 ### Configure Run Profiles
