@@ -270,24 +270,24 @@ Communications should be repeated multiple times to help catch as many users as 
 1. 7 days out from enforcement: repeat message, inform them of how to contact the help desk
 1. 1 day out from enforcement: inform them enforcement will occur in 24 hours, inform them of how to contact the help desk
 
-Microsoft recommends communicating to users through other channels beyond just email. Other options may include Microsoft Teams messages, break room posters, and champion programs where select employees are trained to advocate for the program to their peers.
+Microsoft recommends communicating with users through other channels beyond just email. Other options may include Microsoft Teams messages, break room posters, and champion programs where select employees are trained to advocate for the program to their peers.
 
 ### Reporting and monitoring
 
-Use the previously covered [Phishing-Resistant Passwordless Workbook](#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to assist with monitoring and reporting on your rollout. Additionally use the reports discussed below, or rely on them if you cannot use the Phishing-Resistant Passwordless Workbook.
+Use the previously covered [Phishing-Resistant Passwordless Workbook](#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to assist with monitoring and reporting on your rollout. Additionally, use the reports discussed below, or rely on them if you cannot use the Phishing-Resistant Passwordless Workbook.
 
 Microsoft Entra ID reports (such as [Authentication Methods Activity](howto-authentication-methods-activity.md) and [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md)) provide technical and business insights that can help you measure and drive adoption.
 
 From the Authentication methods activity dashboard, you can view registration and usage.
 
-- **Registration** shows the number of users capable of phishing-resistant passwordless authentication, and other authentication methods. You can see graphs that show which authentication methods users registered, and recent registration for each method.
+- **Registration** shows the number of users capable of phishing-resistant passwordless authentication, and other authentication methods. You can see graphs that show which authentication methods users registered, and recent registrations for each method.
 - **Usage** shows which authentication methods were used for sign-in.
 
 Business and technical application owners should own and receive reports based on organization requirements.
 
 - Track phishing-resistant passwordless credentials rollout with Authentication Methods registration activity reports.
-- Track user adoption of phishing-resistant passwordless credentials with Authentication Methods sign in activity reports and sign in logs.
-- Use the [sign-in activity report](~/identity/monitoring-health/concept-sign-ins.md) to track the authentication methods used to sign in to the various applications. Select the user row; select **Authentication Details** to view authentication method and its corresponding sign-in activity.
+- Track user adoption of phishing-resistant passwordless credentials with Authentication Methods sign-in activity reports and sign-in logs.
+- Use the [sign-in activity report](~/identity/monitoring-health/concept-sign-ins.md) to track the authentication methods used to sign in to the various applications. Select the user row; select **Authentication Details** to view the authentication method and its corresponding sign-in activity.
 
 Microsoft Entra ID adds entries to audit logs when these conditions occur:
 
@@ -330,7 +330,7 @@ To enforce phishing-resistant credentials in Microsoft Entra ID the primary mech
 1. Any other user on iOS and Android
 
 
-Microsoft recommends that you build a report of all your user/device pairs by using sign-in data from your tenant. You can use querying tools like [Azure Monitor and Workbooks](~/identity/monitoring-health/overview-workbooks.md). At minimum, try to identify all user/device pairs that match these categories.
+Microsoft recommends that you build a report of all your user/device pairs by using sign-in data from your tenant. You can use querying tools like [Azure Monitor and Workbooks](~/identity/monitoring-health/overview-workbooks.md). At a minimum, try to identify all user/device pairs that match these categories.
 
 Use the previously covered [Phishing-Resistant Passwordless Workbook](#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to assist with the enforcement phase, if possible.
 
@@ -358,7 +358,7 @@ Then move on to other scenarios where the user/device pairs require readiness ef
 
 Create a set of Microsoft Entra ID groups to roll out enforcement gradually. Reuse the groups from the [previous step](#monitor-help-desk-ticket-volume) if you used the wave-based rollout approach.
 
-### Recommended enforcement Conditional Access policies
+### Recommended enforcement of Conditional Access policies
 
 Target each group with a specific Conditional Access policy. This approach helps you roll out your enforcement controls gradually by user/device pair.
 
@@ -376,7 +376,7 @@ Add each user to each group as you determine whether their device and operating 
 
 Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. Microsoft Entra ID Protection provides important and useful detections for your users even after they switch to using phishing-resistant passwordless credentials. For example, some relevant detections for phishing-resistant users include:
 
-- Activity from anonymous IP address
+- Activity from an anonymous IP address
 - Admin confirmed user compromised
 - Anomalous Token
 - Malicious IP address
@@ -391,7 +391,7 @@ Microsoft recommends that Microsoft Entra ID Protection customers take the follo
 1. Review the Microsoft Entra ID Protection deployment guidance: [Plan an ID Protection deployment](~/id-protection/how-to-deploy-identity-protection.md)
 1. Configure your risk logs to export to a SIEM
 1. Investigate and act on any medium **user** risk
-1. Configure a Conditional Access policy to block high risk **users**
+1. Configure a Conditional Access policy to block high-risk users
 
 After you deploy Microsoft Entra ID Protection, consider using [Conditional Access token protection](~/identity/conditional-access/concept-token-protection.md). As users sign in with phishing-resistant passwordless credentials, attacks and detections continue to evolve. For example, when user credentials can no longer be easily phished, attackers may move on to try to exfiltrate tokens from user devices. Token protection helps mitigate this risk by binding tokens to the hardware of the device they were issued to.
 
