@@ -40,7 +40,7 @@ Agent identities use `client_credentials` for app-only autonomous operations, en
 
 - The agent application model explicitly excludes certain authentication patterns to maintain security boundaries. Agents aren't supported for interactive (`/authorize`) flows, ensuring all authentication occurs programmatically.
 - Public client capabilities aren't available, requiring all agents to operate as confidential clients.
-- Redirect URIs aren't supported on the agent identity blueprint itself; they're configured on the client application.
+- A web redirect URI can be configured on a blueprint for consent flows only (`response_type=none`), but can't be used for interactive token acquisition. Full redirect URI functionality is configured on the client application.
 
 ## Core protocol patterns
  
