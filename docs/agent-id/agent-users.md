@@ -78,10 +78,6 @@ The agent's user account operates under specific security constraints to ensure 
 
 - Permission model: The agent's user account typically has permissions similar to guest users, with more capabilities for enumerating users and groups. The agent's user account can't be assigned privileged admin roles. Custom role assignment and role-assignable groups aren't available to the agent's user account. For more information, see [Microsoft Graph permissions reference](/graph/permissions-reference)
 
-## Provisioning digital worker capabilities
-
-Creating an agent's user account through the Microsoft Graph API establishes the identity in Microsoft Entra, but doesn't automatically provision full digital worker capabilities such as a mailbox, Teams presence, or HR system integration. To provision these capabilities, use [Microsoft 365 Agent 365](https://developer.microsoft.com/microsoft-365/agents) in addition to the Graph API.
-
 ## Related content
 
 - [Agent's user account OAuth flow](agent-user-oauth-flow.md)
