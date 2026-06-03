@@ -214,7 +214,7 @@ These capabilities enable security analysts to correlate authentication events w
 
 ```kql
 MicrosoftGraphActivityLogs
-| where TimeGenerated > ago(4d) and UserId == '4624cd8c-6c94-4593-b0d8-a4983d797ccb'
+| where TimeGenerated > ago(4d) and UserId == '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 | join kind=leftouter (union
 SigninLogs,
 AADNonInteractiveUserSignInLogs,
@@ -402,4 +402,3 @@ By analyzing the log files with linkable identifiers, tenant administrators and 
 - [Teams audit logs](/purview/audit-teams-audit-log-events)
 - [SharePoint Online audit logs](/purview/audit-log-sharing#tabs=microsoft-purview-portal)
 - [Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview)
-
