@@ -3,7 +3,7 @@ title: Configure Comeet Recruiting Software for automatic user provisioning with
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Comeet Recruiting Software.
 author: jeevansd
 ms.topic: how-to
-ms.date: 04/03/2026
+ms.date: 05/26/2026
 ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Comeet Recruiting Software so that I can streamline the user management process and ensure that users have the appropriate access to Comeet Recruiting Software.
@@ -17,6 +17,10 @@ The objective of this article is to demonstrate the steps to be performed in Com
 > This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
+Comeet Recruiting Software is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -24,9 +28,6 @@ The scenario outlined in this article assumes that you already have the followin
 * [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Comeet Recruiting Software tenant](https://www.comeet.co/)
 * A user account in Comeet Recruiting Software with Admin permissions.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 ## Add Comeet Recruiting Software from the gallery
 
 Before configuring Comeet Recruiting Software for automatic user provisioning with Microsoft Entra ID, you need to add Comeet Recruiting Software from the Microsoft Entra application gallery to your list of managed SaaS applications.
