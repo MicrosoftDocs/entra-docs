@@ -19,7 +19,7 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 | --- | --- |
 | Create |Not supported. For connecting additional AD forests, use the configuration wizard. |
 | Properties |Read-only. Connector properties for connectivity, domain and OU filtering and attribute selection and anchors. |
-| Delete <br> (Connector or Connector Space) |Not supported*. For removing AD forests, reinstall the Microsoft Entra Connect product.|
+| Delete <br> (connector or connector space) |Not supported. For removing AD forests, reinstall the Microsoft Entra Connect product.|
 | [Configure Run Profiles](#configure-run-profiles) |Read-only. Connector run profiles.|
 | Run |Starts a one-off connector run profile.|
 | Stop |Stops a connector run profile.|
