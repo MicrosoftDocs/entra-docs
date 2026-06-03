@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 02/26/2026
+ms.date: 05/26/2026
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AWS IAM Identity Center so that I can streamline the user management process and ensure that users have the appropriate access to AWS IAM Identity Center.
@@ -28,6 +28,10 @@ This article describes the steps you need to perform in both AWS IAM Identity Ce
 > * Provision groups and group memberships in AWS IAM Identity Center
 > * [aws singlesign-on document](aws-single-sign-on-tutorial.md) to AWS IAM Identity Center
 > * Long lived bearer token authentication supported.
+
+AWS IAM Identity Center is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 
