@@ -4,7 +4,7 @@ description: Strengthen your organization's security posture by integrating Glob
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.topic: how-to
-ms.date: 06/01/2026
+ms.date: 06/02/2026
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 
@@ -41,7 +41,7 @@ To configure Microsoft Entra diagnostic settings so Global Secure Access can str
    |---|---|---|---|---|
    | [NetworkAccessTrafficLogs](how-to-view-traffic-logs.md) | `NetworkAccessTraffic` | **Global Secure Access** > **Monitor** > **Traffic logs** | Transaction-level visibility for every HTTP and HTTPS request that flows through Global Secure Access (Internet, Microsoft 365, and Private Access). Shows destination, full URL (when TLS-inspected), user, device, app, policy, action, bytes, threat intelligence, and AI or agent signals. | Traffic investigation and forensics. Policy enforcement validation. Shadow IT and shadow AI discovery. Threat detection (command and control, risky destinations). Data exfiltration analysis. |
    | [NetworkAccessConnectionEvents](how-to-view-traffic-logs.md) | `NetworkAccessConnectionEvents` | **Global Secure Access** > **Monitor** > **Connection logs** | Connection-level lifecycle view (start and end) with identity, device, point of presence (PoP) region, security profile, and policy decisions. One connection can map to many traffic rows. | Troubleshoot access and policy issues. Add device and user context to traffic. Cross-tenant access visibility. Geographic and PoP analysis. |
-   | [NetworkAccessGenerativeAIInsights](concept-shadow-ai-discovery.md) | `NetworkAccessGenerativeAIInsights` | **Global Secure Access** > **Monitor** > **Gen AI insights logs** | Visibility into generative AI and Model Context Protocol (MCP) activity, including prompt content, MCP client and server names, tool invocations, and transaction linkage to traffic logs. | Shadow AI and shadow MCP discovery. AI usage auditing and governance. Prompt-level inspection. AI agent behavior profiling. |
+   | [NetworkAccessGenerativeAIInsights](how-to-view-model-context-protocol-logging.md) | `NetworkAccessGenerativeAIInsights` | **Global Secure Access** > **Monitor** > **Gen AI insights logs** | Visibility into generative AI and Model Context Protocol (MCP) activity, including prompt content, MCP client and server names, tool invocations, and transaction linkage to traffic logs. | Shadow AI and shadow MCP discovery. AI usage auditing and governance. Prompt-level inspection. AI agent behavior profiling. |
    | [RemoteNetworkHealthLogs](how-to-remote-network-health-logs.md) | `RemoteNetworkHealthLogs` | **Global Secure Access** > **Monitor** > **Remote network health logs** | Health and performance of IPsec tunnels and Border Gateway Protocol (BGP) sessions for branch and remote networks, including status, uptime, throughput, and connect or disconnect events. | Branch and site connectivity monitoring. Tunnel-flapping detection. Service-level agreement (SLA) and availability tracking. Network operations troubleshooting. |
    | [NetworkAccessAlerts](concept-alerts.md) | `NetworkAccessAlerts` | **Global Secure Access** > **Monitor** > **Alerts** | Security and policy alerts that Global Secure Access generates natively, with severity, description, related entities, and timestamps. Examples include the **Increased External Tenant Activity** alert, the **Token or Device Inconsistency** alert, and the **Unhealthy Remote Network** alert. | Real-time threat detection. Alert triage. Incident response. |
 
@@ -50,29 +50,36 @@ To configure Microsoft Entra diagnostic settings so Global Secure Access can str
 1. Select **Save**.   
 :::image type="content" source="media/how-to-sentinel-integration/diagnostic-settings.png" alt-text="Screenshot of the Diagnostic setting screen showing the selected log categories and destination details." lightbox="media/how-to-sentinel-integration/diagnostic-settings.png":::
 
-## Install the Global Secure Access solution from the Sentinel Content hub
-
+## Install the Global Secure Access solution from the Sentinel content hub
+ 
 The Global Secure Access solution includes three workbooks and seven analytics rules. To install the solution:
-
-1. Sign in to the [Microsoft Defender portal](https://security.microsoft.com/).
-1. Browse to **Microsoft Sentinel** > **Content management** > **Content hub**.
-1. To find the **Global Secure Access** solution in the Content hub, enter "Global Secure Access" in the **Search** field.   
-:::image type="content" source="media/how-to-sentinel-integration/solution-search-result.png" alt-text="Screenshot of the Global Secure Access solution as a search result." lightbox="media/how-to-sentinel-integration/solution-search-result.png":::
-
-1. Select the Global Secure Access solution. Its description opens.
-1. To add the solution to your workspace, select **Install**.   
-:::image type="content" source="media/how-to-sentinel-integration/install-solution.png" alt-text="Screenshot of the solution description with the Install button highlighted." lightbox="media/how-to-sentinel-integration/install-solution-expanded.png":::
-
-### Enable enriched Microsoft 365 logs (optional)
-
-Enriched Microsoft 365 logs combine Microsoft 365 OfficeActivity data with Global Secure Access NetworkAccessTraffic logs. This enrichment provides more context such as device ID, operating system, and original IP address to audit events. This extra information is critical for diagnosing issues like blocked access or performance anomalies.
-
-To enable this workbook:
-
-1. Follow the steps in [Configure Microsoft Entra diagnostic settings](#configure-microsoft-entra-diagnostic-settings).
-1. In the **Logs** section, select the **OfficeActivity** category.
-1. From the **Log Analytics workspace** menu, select the same Sentinel workspace. 
-1. Select **Save**.
+ 
+ 1. Sign in to the [Microsoft Defender portal](https://security.microsoft.com/).
+ 1. Browse to **Microsoft Sentinel** > **Content management** > **Content hub**.
+ 1. In the **Search** field, enter **Global Secure Access** to filter the catalog.
+    :::image type="content" source="media/how-to-sentinel-integration/solution-search-result.png" alt-text="Screenshot of the Global Secure Access solution as a search result." lightbox="media/how-to-sentinel-integration/solution-search-result.png":::
+ 1. Select the **Global Secure Access** solution. Its description opens.
+ 1. Select **Install** to add the solution to your workspace.
+    :::image type="content" source="media/how-to-sentinel-integration/install-solution.png" alt-text="Screenshot of the solution description with the Install button highlighted." lightbox="media/how-to-sentinel-integration/install-solution-expanded.png":::
+ 
+After the solution installs, you can enable its workbooks and analytics rules. The **Network Traffic Insights** and **MCP Servers Dashboard** workbooks need only the Global Secure Access diagnostic settings you already configured. The **Enriched Microsoft 365 logs** workbook also requires Microsoft 365 audit data, which you enable through a separate Sentinel data connector. See the next section.
+ 
+ ### Enable enriched Microsoft 365 logs (optional)
+ 
+ The **Enriched Microsoft 365 logs** workbook correlates Microsoft 365 audit events in the `OfficeActivity` table with Global Secure Access traffic in the `NetworkAccessTraffic` table. This correlation enriches Microsoft 365 events with device ID, operating system, and original source IP address. It helps you diagnose blocked access, troubleshoot performance issues, and investigate user activity with full network context.
+ 
+ `OfficeActivity` isn't a Microsoft Entra diagnostic category. The Microsoft Sentinel **Microsoft 365** (Office 365) data connector populates it and streams the Microsoft 365 unified audit log (Exchange, SharePoint, and Teams activity) into your Log Analytics workspace.
+ 
+ To enable enriched Microsoft 365 logs:
+ 
+ 1. Confirm that [Microsoft 365 unified audit logging](/purview/audit-log-enable-disable) is turned on for your tenant. Unified audit logging is on by default for most tenants.
+ 1. Sign in to the [Microsoft Defender portal](https://security.microsoft.com/).
+ 1. Browse to **Microsoft Sentinel** > **Configuration** > **Data connectors**.
+ 1. Search for and open the **Microsoft 365** (Office 365) data connector. Select **Open connector page**.
+ 1. Under **Configuration**, select the workloads you want to stream (**Exchange**, **SharePoint**, and **Teams**), and then select **Apply Changes**. For full guidance, see [Connect Office 365 logs to Microsoft Sentinel](/azure/sentinel/connect-office-365).
+ 1. Confirm that the same Microsoft Sentinel workspace receives both `NetworkAccessTraffic` and `OfficeActivity` data. The workbook can only correlate events that land in the same workspace.
+ 
+To verify that `OfficeActivity` is ingesting data, follow [Validate the data flow](#validate-the-data-flow) and confirm that `OfficeActivity` appears in **Advanced hunting** > **Log Management** alongside the Global Secure Access tables.
 
 ## Validate the data flow
 
@@ -114,7 +121,7 @@ The Global Secure Access solution includes the following analytics rules:
 
 The Global Secure Access solution includes the following preconfigured workbooks. Each workbook provides a different view of Global Secure Access activity to support security operations.
 
-#### Global Secure Access Network Traffic Insights
+#### Network Traffic Insights
 
 An interactive dashboard that provides an end-to-end view of Global Secure Access traffic across Internet, Microsoft 365, and Private Access. Use this workbook as the operational pane for Global Secure Access traffic to identify anomalies, traffic spikes, policy drift, and misuse.
 
@@ -126,7 +133,7 @@ An interactive dashboard that provides an end-to-end view of Global Secure Acces
   - Monitor traffic trends and access patterns.
 - **Requirements**: Global Secure Access diagnostic settings enabled, with `NetworkAccessTrafficLogs` streamed to Microsoft Sentinel.
 
-####  Microsoft 365 Enriched Event
+####  Enriched Microsoft 365 logs Workbook
 
 Correlates Microsoft 365 audit events with Global Secure Access network traffic to add user, device, and network context to Microsoft 365 activity. Use this workbook to combine network telemetry with audit evidence for stronger investigations.
 
@@ -139,7 +146,7 @@ Correlates Microsoft 365 audit events with Global Secure Access network traffic 
   - Strengthen incident investigations and threat hunting with full context.
 - **Requirements**: Both `NetworkAccessTrafficLogs` and Microsoft 365 `OfficeActivity` logs streamed to the same Microsoft Sentinel workspace. To enable Microsoft 365 logs, see [Enable enriched Microsoft 365 logs (optional)](#enable-enriched-microsoft-365-logs-optional).
 
-#### MCP Insights (Preview)
+#### MCP Servers Dashboard (preview)
 
 Visualizes Model Context Protocol (MCP) traffic that AI agents and users generate across the organization. Use this workbook to improve visibility into AI-driven traffic and identify unmanaged or noncompliant MCP services.
 
