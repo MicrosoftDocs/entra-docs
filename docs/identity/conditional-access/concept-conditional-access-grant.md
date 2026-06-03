@@ -2,7 +2,8 @@
 title: How to Configure Grant Controls in Microsoft Entra
 description: Learn how to configure grant controls in Microsoft Entra Conditional Access policies to secure access to your organization's resources effectively.
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 06/02/2026
+ai-usage: ai-assisted
 ms.reviewer: lhuangnorth, jogro
 ms.custom:
   - sfi-image-nochange
@@ -44,6 +45,17 @@ When admins choose to combine these options, they can use the following methods:
 
 By default, Conditional Access requires all selected controls.
 
+### Grant controls for agent users (Preview)
+
+When a policy targets agents acting as users, the available grant behavior differs from user and group scenarios:
+
+- **Block access**
+- **Grant access** with **Require device to be marked as compliant**
+
+Use **Require device to be marked as compliant** when agent user sessions run on managed endpoints that provide device compliance signals. For more information about agents, see [What is Windows 365 for Agents?](/windows-365/agents/introduction-windows-365-for-agents).
+
+Agent identities don't support grant controls and only support **Block access**. For targeting and condition guidance, see [Target agent identities in Conditional Access policies](howto-target-agent-identities.md).
+
 ### Require multifactor authentication
 
 Selecting this checkbox requires users to perform Microsoft Entra multifactor authentication. You can find more information about deploying Microsoft Entra multifactor authentication in [Planning a cloud-based Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
@@ -66,6 +78,10 @@ The **Require device to be marked as compliant** control:
 
 - Only supports Windows 10+, iOS, Android, macOS, and Linux Ubuntu devices registered with Microsoft Entra ID and enrolled with Intune.
 - Microsoft Edge in InPrivate mode on Windows is considered as a noncompliant device.
+
+For agent user scenarios, this control only applies when the agent user session runs from an endpoint where device state is available. Agent user sessions that run directly in cloud infrastructure might not provide device compliance signals.
+
+For policies that target agent users, combine this control with scoping conditions so the policy applies only to endpoint-based sessions. For details, see [Target agent identities in Conditional Access policies](howto-target-agent-identities.md).
 
 > [!NOTE]
 > On Windows, iOS, Android, macOS, and some non-Microsoft web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
