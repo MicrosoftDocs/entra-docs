@@ -15,7 +15,7 @@ The objective of this article is to show you the steps you need to perform in Gi
 > [!NOTE]
 > The Microsoft Entra provisioning integration relies on the [GitHub SCIM API](https://developer.github.com/v3/scim/), which is available to [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) customers on the [GitHub Enterprise billing plan](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
 
-github provisioning tutorial is available in the following [national cloud deployments](/graph/deployments).
+Github is available in the following [national cloud deployments](/graph/deployments).
 
 [!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
