@@ -2,7 +2,7 @@
 title: Configure Microsoft Entra Private Access for Active Directory Domain Controllers
 description: "Enforce Conditional Access and multifactor authentication for Kerberos authentication to Active Directory Domain Controllers through Microsoft Entra Private Access."
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 06/04/2026
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
@@ -22,7 +22,7 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 - A client machine that runs at least Windows 10 and is a Microsoft Entra joined or hybrid joined device. The client machine must also have line of sight to the private resources and DC (user is in a corporate network and accessing on-premises resources). The user identity used for joining the device and accessing these resources must be created in Active Directory (AD) and synced to Microsoft Entra ID using Microsoft Entra Connect.
 - The latest Microsoft Entra Private network connector is installed and has a line of sight to the DC.
 - Open inbound Transmission Control Protocol (TCP) port `1337` in the Windows Firewall on the DCs.
-- Ensure your firewall or proxy allows outbound connections to the wildcard domain suffix `*.msappproxy.net:443`. Private Access Sensor uses this secure channel to register and fetch policies from the Microsoft Entra cloud service.
+- Allow the required outbound network connectivity for the Private Access Sensor. Outbound access to `*.msappproxy.net:443` alone isn't sufficient. For the full set of URLs and ports, see [Network requirements](#network-requirements).
 - The Service Principal Names (SPNs) of the private apps you want to protect. You add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
 > The SPNs are *case insensitive* and should be an *exact match* or a wildcard in the format `<serviceclass>/*` such as `cifs/*`.
@@ -37,6 +37,20 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 > [Auditing and restricting NTLM usage guide | Microsoft Learn](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/jj865674(v=ws.10))
 > [Using security policies to restrict NTLM traffic | Microsoft Learn](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/jj865668(v=ws.10))
 
+
+## Network requirements
+
+The Private Access Sensor communicates with the same Microsoft Entra cloud service as the Microsoft Entra private network connector, so it requires the same outbound network connectivity. Allowing outbound access to `*.msappproxy.net:443` alone isn't sufficient. Configure the sensor's outbound connectivity by using the same network requirements documented for the connector, including:
+
+- The service communication channel: `*.msappproxy.net` and `*.servicebus.windows.net` on 443/HTTPS.
+- Authentication and registration endpoints, such as `login.windows.net`, `*.microsoftonline.com`, `*.msauth.net`, and `*.msftauth.net` on 443/HTTPS.
+- Certificate-validation endpoints (Certificate Revocation List and Online Certificate Status Protocol), such as `crl3.digicert.com`, `ocsp.digicert.com`, and `oneocsp.microsoft.com` on 80/HTTP.
+
+For the complete, authoritative list of URLs and ports, see [Allow access to URLs](how-to-configure-connectors.md#allow-access-to-urls) and [Open ports](how-to-configure-connectors.md#open-ports).
+
+### Outbound proxy support
+
+If your environment routes outbound traffic through a proxy server, the Private Access Sensor supports communicating with the Microsoft Entra cloud service through an outbound proxy, the same as the Microsoft Entra private network connector. Proxy authentication isn't supported, so allow the sensor anonymous access to the required destinations. For the connector proxy scenarios and the network requirements that also apply to the sensor, see [Work with existing on-premises proxy servers](~/identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
 
 ## Configuration steps
 
