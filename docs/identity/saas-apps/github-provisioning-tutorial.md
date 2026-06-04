@@ -15,6 +15,10 @@ The objective of this article is to show you the steps you need to perform in Gi
 > [!NOTE]
 > The Microsoft Entra provisioning integration relies on the [GitHub SCIM API](https://developer.github.com/v3/scim/), which is available to [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) customers on the [GitHub Enterprise billing plan](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
 
+github provisioning tutorial is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following items:
@@ -25,9 +29,6 @@ The scenario outlined in this article assumes that you already have the followin
 * [SAML configured for the GitHub Enterprise Cloud organization](./github-tutorial.md)
 * Ensure that OAuth access has been provided for your organization as described [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization)
 * SCIM provisioning to a single organization is supported only when SSO is enabled at the organization level
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Assigning users to GitHub
 
