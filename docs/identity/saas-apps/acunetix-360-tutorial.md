@@ -2,7 +2,6 @@
 title: Configure Acunetix 360 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Acunetix 360.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/26/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Acunetix 360 so that I can control who has access to Acunetix 360, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.

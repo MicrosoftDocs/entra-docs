@@ -1,7 +1,6 @@
 ---
 title: Configure SharePoint on-premises for Single sign-on with Microsoft Entra ID
 description: Learn how to implement federated authentication between Microsoft Entra ID and SharePoint on-premises.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange

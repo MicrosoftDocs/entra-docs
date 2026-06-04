@@ -1,13 +1,11 @@
 ---
 title: Configure 4me for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to 4me.
-author: jeevansd
 manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/26/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 4me so that I can streamline the user management process and ensure that users have the appropriate access to 4me.
 ---

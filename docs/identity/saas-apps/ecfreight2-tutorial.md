@@ -2,7 +2,6 @@
 title: Configure ecFreight2 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and ecFreight2.
 services: active-directory
-ms.reviewer: celested
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/16/2024

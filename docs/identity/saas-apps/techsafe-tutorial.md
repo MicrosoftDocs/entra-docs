@@ -2,7 +2,6 @@
 title: Configure TechSafe Entra ID SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and TechSafe Entra ID SSO.
 services: active-directory
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 06/18/2024

@@ -2,7 +2,6 @@
 title: Configure ADP (OIDC) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and ADP (OIDC).
 services: active-directory
-ms.reviewer: celested
 ms.workload: identity
 ms.topic: how-to
 ms.date: 03/25/2025
