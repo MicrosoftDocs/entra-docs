@@ -26,6 +26,11 @@ Non-persistent versions use a collection of desktops that users can access on an
 
 It's important to ensure organizations manage stale devices that are created because frequent device registration without having a proper strategy for device lifecycle management.
 
+**Important clarification**
+In Azure Virtual Desktop, the terms persistent and non‑persistent describe the user session and profile experience, not the lifecycle of the underlying virtual machines.​‌
+
+Session host VMs in both pooled and personal host pools are standard Azure virtual machines and are persistent by default. Azure Virtual Desktop does not automatically delete, reset, or recreate these VMs unless customers explicitly implement automation or third‑party tooling, which can result in non‑persistent behavior at the device or identity level.
+
 > [!IMPORTANT]
 > Failure to manage stale devices can lead to pressure increase on your tenant quota usage consumption and potential risk of service interruption, if you run out of tenant quota. Use the following guidance when deploying non persistent VDI environments to avoid this situation.
 
