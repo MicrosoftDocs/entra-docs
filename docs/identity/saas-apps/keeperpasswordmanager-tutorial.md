@@ -121,7 +121,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Keeper Password Manager SSO
 
-To configure SSO for the app, see the guidelines in the [Keeper support guide](https://docs.keeper.io/sso-connect-guide/).
+To configure SSO for the app, see the guidelines in the [Keeper support guide](https://docs.keeper.io/sso-connect-cloud/identity-provider-setup/azure-o365-keeper).
 
 ### Create a Keeper Password Manager test user
 
