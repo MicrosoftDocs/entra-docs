@@ -15,21 +15,21 @@ Administrators commonly deploy virtual desktop infrastructure (VDI) platforms ho
 - Reduce costs through consolidation and centralization of resources.
 - Deliver end-users mobility and the freedom to access virtual desktops anytime, from anywhere, on any device.
 
-There are two primary types of virtual desktops:
+There are two versions of virtual desktops. These names refer to the user session and profile experience, not the lifecycle of the underlying virtual machine (VM).
 
 - Persistent
 - Non-persistent
 
-Persistent versions use a unique desktop image for each user or a pool of users. These unique desktops can be customized and saved for future use.
+Persistent versions use a unique desktop image for each user or a pool of users. These unique desktops can be customized and saved for future use. 
+
+Session host VMs in both pooled and personal host pools are standard Azure virtual machines and are persistent by default. Azure Virtual Desktop doesn't automatically delete, reset, or recreate these VMs unless customers explicitly implement automation or third‑party tooling, which can result in non‑persistent behavior at the device or identity level.
 
 Non-persistent versions use a collection of desktops that users can access on an as needed basis. These non-persistent desktops are reverted to their original state when a virtual machine goes through a shutdown/restart/OS reset process.
 
-It's important to ensure organizations manage stale devices that are created because frequent device registration without having a proper strategy for device lifecycle management.
-
 > [!IMPORTANT]
-> Failure to manage stale devices can lead to pressure increase on your tenant quota usage consumption and potential risk of service interruption, if you run out of tenant quota. Use the following guidance when deploying non persistent VDI environments to avoid this situation.
+> Stale devices increase your tenant quota usage consumption. To avoid consumption increase from stale devices when you deploy non-persistent VDI environments, see [Non-persistent-vdi](#non-persistent-vdi).
 
-For successful execution of some scenarios, it's important to have unique device names in the directory. This can be achieved by proper management of stale devices, or you can guarantee device name uniqueness by using some pattern in device naming.
+Some scenarios require unique device names in the directory. This can be achieved by proper management of stale devices, or you can guarantee device name uniqueness by using some pattern in device naming.
 
 This article covers Microsoft's guidance to administrators on support for device identity and VDI. For more information about device identity, see the article [What is a device identity](overview.md).
 
