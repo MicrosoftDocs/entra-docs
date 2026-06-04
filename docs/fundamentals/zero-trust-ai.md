@@ -30,7 +30,7 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Require Microsoft Entra ID authentication to interact with agents
 [!INCLUDE [61011](../includes/secure-recommendations/61011.md)]
 
-### Conditional Access policies cover both agent identities and agent users
+### Conditional Access policies cover both agent identities and agents' user accounts
 [!INCLUDE [61009](../includes/secure-recommendations/61009.md)]
 
 ### Risk-based Conditional Access blocks risky agent identities
