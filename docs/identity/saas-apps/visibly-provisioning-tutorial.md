@@ -2,11 +2,9 @@
 title: Configure Visibly for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Visibly.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Visibly so that I can streamline the user management process and ensure that users have the appropriate access to Visibly.
 ---
@@ -23,6 +21,7 @@ This article describes the steps you need to perform in both Visibly and Microso
 > * Keep user attributes synchronized between Microsoft Entra ID and Visibly
 > * Provision groups and group memberships in Visibly
 > * [Single sign-on](./visibly-tutorial.md) to Visibly (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

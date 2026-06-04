@@ -2,11 +2,9 @@
 title: Configure Thrive LXP for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Thrive LXP.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/09/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Thrive LXP so that I can streamline the user management process and ensure that users have the appropriate access to Thrive LXP.
 ---
@@ -23,6 +21,7 @@ This article describes the steps you need to perform in both Thrive LXP and Micr
 > * Keep user attributes synchronized between Microsoft Entra ID and Thrive LXP
 > * Provision groups and group memberships in Thrive LXP
 > * [Single sign-on](./thrive-lxp-tutorial.md) to Thrive LXP (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

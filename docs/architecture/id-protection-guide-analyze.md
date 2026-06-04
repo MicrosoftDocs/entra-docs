@@ -176,7 +176,7 @@ In the following screenshot, there are many total detections, but only three are
 
    ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/three-high.png)
 
-Learn more about access control decisions: [What is Conditional Access?](/azure/data-explorer/security-conditional-access)
+Learn more about access control decisions: [What is Conditional Access?](../identity/conditional-access/overview.md)
 
 ## Get started with Azure Monitor Logs reference tables
 

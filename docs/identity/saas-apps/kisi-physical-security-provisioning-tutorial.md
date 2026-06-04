@@ -2,12 +2,10 @@
 title: Configure Kisi Physical Security for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Kisi Physical Security.
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/12/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Kisi Physical Security so that I can streamline the user management process and ensure that users have the appropriate access to Kisi Physical Security.
 ---
@@ -24,6 +22,7 @@ This article describes the steps you need to do in both Kisi Physical Security a
 > * Keep user attributes synchronized between Microsoft Entra ID and Kisi Physical Security.
 > * Provision groups and group memberships in Kisi Physical Security.
 > * [Single sign-on](kisi-physical-security-tutorial.md) to Kisi Physical Security(recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

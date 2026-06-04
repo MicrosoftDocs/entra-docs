@@ -1,7 +1,6 @@
 ---
 title: Configure Workspot Control for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on for Microsoft Entra ID and Workspot Control.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange

@@ -1,7 +1,6 @@
 ---
 title: Configure Standard for Success Accreditation for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Standard for Success Accreditation.
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange

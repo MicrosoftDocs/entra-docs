@@ -1,10 +1,8 @@
 ---
 title: Configure Zscaler One for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler One.
-author: jeevansd
 ms.topic: how-to
 ms.date: 03/30/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler One so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler One.
 ---

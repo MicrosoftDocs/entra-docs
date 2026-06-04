@@ -1,11 +1,9 @@
 ---
 title: Configure Teamgo for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Teamgo.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/24/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Teamgo so that I can streamline the user management process and ensure that users have the appropriate access to Teamgo.
 ---
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both Teamgo and Microsof
 > * Remove users in Teamgo when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Teamgo
 > * [Single sign-on](teamgo-tutorial.md) to Teamgo (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

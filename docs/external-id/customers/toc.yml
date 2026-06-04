@@ -100,6 +100,8 @@ items:
       href: how-to-region-code-opt-in.md
     - name: Sign in with a username
       href: how-to-sign-in-alias.md
+    - name: Sign in with passkeys
+      href: how-to-sign-in-with-passkey.md
     - name: Native authentication
       items:
         - name: Overview
@@ -176,6 +178,8 @@ items:
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                     - name: Add social sign-in
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Add custom headers to network requests
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-custom-headers?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Angular
               items:
                 - name: Sign up
@@ -192,6 +196,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Add social sign-in
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Add custom headers to network requests
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-custom-headers?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app tutorials
       items: 
         - name: Node/Express.js
@@ -303,8 +309,6 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback
                   href: /entra/identity-platform/tutorial-native-authentication-android-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Add custom headers to network requests
-                  href: /entra/identity-platform/tutorial-native-authentication-android-custom-headers?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Call an API
                   href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                   displayName: multiple access token 

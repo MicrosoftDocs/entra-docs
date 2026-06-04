@@ -2,11 +2,9 @@
 title: Configure SurveyMonkey Enterprise for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to SurveyMonkey Enterprise.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/13/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SurveyMonkey Enterprise so that I can streamline the user management process and ensure that users have the appropriate access to SurveyMonkey Enterprise.
 ---
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both SurveyMonkey Enterp
 > * Remove users in SurveyMonkey Enterprise when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and SurveyMonkey Enterprise.
 > * [Single sign-on](surveymonkey-enterprise-tutorial.md) to SurveyMonkey Enterprise (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

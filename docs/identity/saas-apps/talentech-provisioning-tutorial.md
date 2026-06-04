@@ -1,11 +1,9 @@
 ---
 title: Configure Talentech for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Talentech.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/14/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Talentech so that I can streamline the user management process and ensure that users have the appropriate access to Talentech.
 ---
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both Talentech and Micro
 > * Keep user attributes synchronized between Microsoft Entra ID and Talentech
 > * Provision groups and group memberships in Talentech
 > * Single sign-on to Talentech (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

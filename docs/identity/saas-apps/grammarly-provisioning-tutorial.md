@@ -3,12 +3,10 @@ title: Configure Grammarly for automatic user provisioning with Microsoft Entra 
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Grammarly.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/07/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Grammarly so that I can streamline the user management process and ensure that users have the appropriate access to Grammarly.
 ---
@@ -23,6 +21,7 @@ This article describes the steps you need to perform in both Grammarly and Micro
 > * Create users in Grammarly
 > * Remove users in Grammarly when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Grammarly
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

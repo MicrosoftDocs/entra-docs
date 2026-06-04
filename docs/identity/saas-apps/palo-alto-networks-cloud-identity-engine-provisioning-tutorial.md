@@ -2,11 +2,9 @@
 title: Configure Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/13/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service so that I can streamline the user management process and ensure that users have the appropriate access to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 ---
@@ -23,6 +21,7 @@ This article describes the steps you need to perform in both Palo Alto Networks 
 > * Keep user attributes synchronized between Microsoft Entra ID and Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 > * Provision groups and group memberships in Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 > * [Single sign-on](palo-alto-networks-cloud-identity-engine---cloud-authentication-service-tutorial.md) to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

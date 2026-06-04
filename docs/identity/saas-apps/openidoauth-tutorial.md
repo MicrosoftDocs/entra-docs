@@ -1,7 +1,6 @@
 ---
 title: Configure an OpenID Connect OAuth application from Microsoft Entra app gallery
 description: Steps to Configure an OpenID Connect OAuth application from Microsoft Entra app gallery.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange

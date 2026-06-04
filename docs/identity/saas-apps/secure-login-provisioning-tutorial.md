@@ -1,11 +1,9 @@
 ---
 title: Configure SecureLogin for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to SecureLogin.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/20/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SecureLogin so that I can streamline the user management process and ensure that users have the appropriate access to SecureLogin.
 ---
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both SecureLogin and Mic
 > * Keep user attributes synchronized between Microsoft Entra ID and SecureLogin
 > * Provision groups and group memberships in SecureLogin
 > * Single sign-on to SecureLogin (recommended)
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

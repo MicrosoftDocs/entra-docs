@@ -1,11 +1,9 @@
 ---
 title: Configure Plandisc for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Plandisc.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/21/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Plandisc so that I can streamline the user management process and ensure that users have the appropriate access to Plandisc.
 ---
@@ -21,6 +19,7 @@ This article describes the steps you need to do in both Plandisc and Microsoft E
 > * Remove users in Plandisc when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Plandisc
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Plandisc (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

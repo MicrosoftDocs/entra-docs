@@ -1,11 +1,9 @@
 ---
 title: Configure Olfeo SAAS for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Olfeo SAAS.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/21/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Olfeo SAAS so that I can streamline the user management process and ensure that users have the appropriate access to Olfeo SAAS.
 ---
@@ -22,6 +20,7 @@ This article describes the steps you need to do in both Olfeo SAAS and Microsoft
 > * Keep user attributes synchronized between Microsoft Entra ID and Olfeo SAAS
 > * Provision groups and group memberships in Olfeo SAAS
 > * [Single sign-on](olfeo-saas-tutorial.md) to Olfeo SAAS (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

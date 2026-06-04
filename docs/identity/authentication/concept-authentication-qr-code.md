@@ -133,7 +133,7 @@ For more information about how to optimize the sign-in experience or suppress ca
 - Custom tenant endpoint for sign in 
 - Configurable PIN protection policies that define account lockout threshold, duration, or PIN complexity
 
-## Known issue
+## Known limitation
 
 If you enable QR code authentication for a user, they need to sign-in with an existing authentication method before they can sign in with a QR code for the first time, or they see an **Incorrect QR code** error. 
 

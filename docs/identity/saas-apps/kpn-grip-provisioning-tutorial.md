@@ -3,12 +3,10 @@ title: Configure KPN Grip for automatic user provisioning with Microsoft Entra I
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to KPN Grip.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/13/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to KPN Grip so that I can streamline the user management process and ensure that users have the appropriate access to KPN Grip.
 ---
@@ -24,6 +22,7 @@ This article describes the steps you need to do in both KPN Grip and Microsoft E
 > * Remove users in KPN Grip when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and KPN Grip.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to KPN Grip.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

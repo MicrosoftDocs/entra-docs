@@ -2,11 +2,9 @@
 title: Configure Chaos for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Chaos.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/31/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Chaos so that I can streamline the user management process and ensure that users have the appropriate access to Chaos.
 ---
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both Chaos and Microsoft
 > * Remove users in Chaos when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Chaos
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Chaos (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

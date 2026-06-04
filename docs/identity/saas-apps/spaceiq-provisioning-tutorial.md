@@ -1,10 +1,8 @@
 ---
 title: Configure SpaceIQ for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to SpaceIQ.
-author: jeevansd
 ms.topic: how-to
 ms.date: 03/24/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SpaceIQ so that I can streamline the user management process and ensure that users have the appropriate access to SpaceIQ.
 ---
@@ -16,6 +14,14 @@ The objective of this article is to demonstrate the steps to be performed in Spa
 > [!NOTE]
 > This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
+
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in SpaceIQ.
+> * Remove users in SpaceIQ when they don't require access anymore.
+> * [Single sign-on](spaceiq-tutorial.md) to SpaceIQ (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

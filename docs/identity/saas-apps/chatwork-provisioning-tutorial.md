@@ -1,11 +1,9 @@
 ---
 title: Configure Chatwork for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Chatwork.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/31/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Chatwork so that I can streamline the user management process and ensure that users have the appropriate access to Chatwork.
 ---
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both Chatwork and Micros
 > * Remove users in Chatwork when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Chatwork.
 > * [Single sign-on](chatwork-tutorial.md) to Chatwork (required).
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

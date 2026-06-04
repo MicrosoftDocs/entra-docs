@@ -2,10 +2,8 @@
 title: Configure Fuze for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Fuze.
 
-author: jeevansd
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Fuze so that I can streamline the user management process and ensure that users have the appropriate access to Fuze.
 ---
@@ -20,6 +18,7 @@ The objective of this article is to demonstrate the steps to be performed in Fuz
 > * Remove users in Fuze when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Fuze
 > * [Single sign-on](./fuze-tutorial.md) to Fuze (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

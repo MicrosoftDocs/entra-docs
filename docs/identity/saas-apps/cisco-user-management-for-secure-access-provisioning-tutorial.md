@@ -3,12 +3,10 @@ title: Configure Cisco User Management for Secure Access for automatic user prov
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Cisco User Management for Secure Access.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/31/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cisco User Management for Secure Access so that I can streamline the user management process and ensure that users have the appropriate access to Cisco User Management for Secure Access.
 ---
@@ -24,6 +22,7 @@ This article describes the steps you need to perform in both Cisco User Manageme
 > * Remove users in Cisco User Management for Secure Access when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cisco User Management for Secure Access
 > * Provision groups and group memberships in Cisco User Management for Secure Access
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

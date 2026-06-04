@@ -2,7 +2,6 @@
 title: Configure Palo Alto Networks - GlobalProtect for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - GlobalProtect.
 
-ms.reviewer: celested
 ms.workload: identity
 ms.topic: how-to
 ms.date: 05/20/2025
@@ -68,7 +67,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `https://<Customer Firewall URL>/SAML20/SP`
+    `https://<Customer Firewall URL>:443/SAML20/SP`
 
     b. In the **Reply URL (Assertion Consumer Service URL)** text box, type a URL using the following pattern:
    `https://<Customer Firewall URL>/SAML20/SP/ACS`

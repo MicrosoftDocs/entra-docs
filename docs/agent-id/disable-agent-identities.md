@@ -28,13 +28,11 @@ Your Microsoft Entra tenant might contain AI agents with or without a Microsoft 
 Disabling an agent identity in your tenant might have broader consequences than simply stopping new AI agents from being created or used. Before you proceed, evaluate the following considerations:
 
 - Existing agents running in your organization might begin to fail.
-- Microsoft product experiences that assume agent identity availability (for example, Copilot Studio agents, Security Copilot scenario agents, Microsoft Entra Conditional Access Optimization Agent) might fail or degrade to less transparent application or service principal patterns.
-- Support or troubleshooting: Helpdesk and SOC teams might receive increased tickets when features fail quietly due to missing agent identities.
-- Blocking agent identities might push teams to build agents using generic application or service principal identities, reducing visibility and making it harder to distinguish agents from other software projects.
+- Microsoft product experiences that assume agent identity availability (for example, Copilot Studio agents, Security Copilot scenario agents, Microsoft Entra Conditional Access Optimization Agent) might fail or fall back to standard service principals that lack agent-specific tracking and controls.
 
 ## Monitor for agent identity creation and activity
 
-Before disabling an agent identity or agent identity blueprint, you should be aware of what kind of activity is associated with those identities. Agent identity activities are logged under the base identity types they originate from. For example, creating an agent identity shows up as *add service principal" and adding an agent identity blueprint shows up as *add application* in the audit logs. 
+Before disabling an agent identity or agent identity blueprint, you should be aware of what kind of activity is associated with those identities. Agent identity activities are logged under the base identity types they originate from. For example, creating an agent identity shows up as *add service principal* and adding an agent identity blueprint shows up as *add application* in the audit logs. 
 
 To identify whether an audit event involves an agent identity, check the `agentType` property on the `initiatedBy` and `targetResources` fields. A value other than `notAgentic` indicates agent involvement.
 

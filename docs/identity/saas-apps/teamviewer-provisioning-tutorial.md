@@ -2,10 +2,8 @@
 title: Configure TeamViewer for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TeamViewer.
 
-author: jeevansd
 ms.topic: how-to
 ms.date: 03/24/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TeamViewer so that I can streamline the user management process and ensure that users have the appropriate access to TeamViewer.
 ---
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both TeamViewer and Micr
 > * Remove users in TeamViewer when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and TeamViewer
 > * [Single sign-on](./teamviewer-tutorial.md) to TeamViewer (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

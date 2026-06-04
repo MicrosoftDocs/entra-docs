@@ -3,12 +3,10 @@ title: Configure CheckProof for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to CheckProof.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/31/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to CheckProof so that I can streamline the user management process and ensure that users have the appropriate access to CheckProof.
 ---
@@ -25,6 +23,7 @@ This article describes the steps you need to perform in both CheckProof and Micr
 > * Keep user attributes synchronized between Microsoft Entra ID and CheckProof
 > * Provision groups and group memberships in CheckProof
 > * [Single sign-on](./checkproof-tutorial.md) to CheckProof (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

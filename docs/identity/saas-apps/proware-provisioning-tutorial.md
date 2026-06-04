@@ -2,11 +2,9 @@
 title: Configure Proware for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Proware.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/16/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Proware so that I can streamline the user management process and ensure that users have the appropriate access to Proware.
 ---
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both Proware and Microso
 > * Remove users in Proware when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Proware
 > * [Single sign-on](./proware-tutorial.md) to Proware (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

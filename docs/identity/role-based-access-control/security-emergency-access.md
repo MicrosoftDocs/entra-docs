@@ -3,7 +3,7 @@ title: Manage emergency access admin accounts
 description: This article describes how to use emergency access accounts to help prevent being inadvertently locked out of your Microsoft Entra organization.
 ms.date: 06/04/2026
 ms.topic: how-to
-ms.custom: it-pro, sfi-ga-nochange
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ms.reviewer: mwahl
 ai-usage: ai-assisted
 ---
@@ -42,10 +42,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
     - **Passkey (FIDO2)**: [Enable passkeys (FIDO2) for your organization](../authentication/how-to-authentication-passkeys-fido2.md), then [register a passkey (FIDO2)](../authentication/how-to-register-passkey-with-security-key.md)
     - **Certificate-based authentication**: [Configure certificate-based authentication](../authentication/concept-certificate-based-authentication.md)
 
-1. Review your Conditional Access policies for administrators and ensure that emergency access accounts are explicitly excluded from all policies, including [phishing-resistant multifactor authentication](../conditional-access/policy-admin-phish-resistant-mfa.md) requirements.
-
-    > [!IMPORTANT]
-    > Exclude emergency access accounts from all Conditional Access policies. You use these accounts when normal sign-in methods or policies fail, so a Conditional Access policy could block access when you need it most. The phishing-resistant authentication method you registered in the previous step secures the account instead.
+1. Verify that emergency access accounts are excluded from any Conditional Access policy that blocks or restricts sign-in. The phishing-resistant authentication method registered in the previous step protects the account; an enforced Conditional Access policy could prevent sign-in during the exact emergency the account is designed for. Report-only policies don't block access and don't require an exclusion. For details, see [Conditional Access considerations](#conditional-access-considerations).
 
 1. [Store account credentials safely](#store-account-credentials-safely).
 
@@ -76,6 +73,42 @@ Some organizations use Active Directory Domain Services and Active Directory Fed
 ## Store account credentials safely
 
 Ensure that the credentials for emergency access accounts are kept secure and known only to individuals who are authorized to use them. For example, you might use [FIDO2 security keys](../authentication/how-to-authentication-passkeys-fido2.md) for Microsoft Entra ID or smartcards for Windows Server Active Directory. Store credentials in secure, fireproof safes that are in secure, separate locations.
+
+## Conditional Access considerations
+
+Exclude emergency access accounts from Conditional Access policies that block or restrict sign-in. Report-only policies don't block access and don't need to exclude emergency accounts. If an emergency access account is subject to a Conditional Access policy that requires MFA, a compliant device, or another control, the account might be unusable during the exact emergency scenarios it's designed for.
+
+When planning your Conditional Access deployment, consider the following:
+
+- Create a dedicated security group for your emergency access accounts (for example, **EmergencyAccess**) and exclude this group from Conditional Access policies that block or restrict sign-in.
+- Regularly test (for example, every quarter) that emergency access accounts can sign in successfully with your current Conditional Access configuration.
+- Create contingency Conditional Access policies that can be enabled during an outage to restore access for critical users. For more information, see [Create a resilient access control management strategy](~/identity/authentication/concept-resilient-controls.md).
+
+For more information about planning Conditional Access exclusions, see [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md).
+
+## Security guardrails summary
+
+The following checklist summarizes the security requirements for emergency access accounts:
+
+- Maintain at least two emergency access accounts for redundancy.
+- Use cloud-only accounts (`.onmicrosoft.com` domain) with no dependency on federated identity providers.
+- Use phishing-resistant authentication methods (FIDO2 security keys or certificate-based authentication) that are different from your normal admin accounts.
+- Ensure credentials and devices don't expire and aren't subject to automated cleanup.
+- In Privileged Identity Management, assign the Global Administrator role as permanent active (not eligible) for emergency accounts.
+- Require the use of a designated secure workstation or [Privileged Access Workstation](/security/privileged-access-workstations/privileged-access-deployment) when using emergency access accounts.
+- Store credentials in separate, secure, fireproof locations accessible to authorized individuals.
+- Exclude emergency access accounts from Conditional Access policies that block or restrict sign-in. Report-only policies don't require an exclusion.
+- Monitor all sign-in and audit log activity for emergency access accounts with alerts to detect unnecessary or unauthorized use.
+- Validate account functionality at least every 90 days.
+
+## Auditability and compliance
+
+Organizations in regulated industries might need to demonstrate that the use of emergency access accounts is properly governed. The monitoring and validation practices described in this article support auditability:
+
+- **Sign-in and audit log monitoring** — Configure alerts for every use of an emergency access account. Capture sign-in logs and audit logs for review. For details, see [Monitor sign-in and audit logs](#monitor-sign-in-and-audit-logs) in this article.
+- **Post-mortem review** — After any use of an emergency access account, conduct a review to determine whether the use was authorized and whether the actions taken were appropriate. For details, see [Prepare a post-mortem team](#prepare-a-post-mortem-team-to-evaluate-each-emergency-access-account-credential-use) in this article.
+- **Regular validation** — Perform account validation drills at least every 90 days, including reviewing the authorized-user list and testing sign-in and administrative task functionality. For details, see [Validate accounts regularly](#validate-accounts-regularly) in this article.
+- **Compliance mapping** — If your organization must comply with HIPAA regulations, Microsoft provides guidance on how emergency access accounts map to HIPAA emergency access procedure requirements. For more information, see [HIPAA access controls](~/standards/hipaa-access-controls.md).
 
 ## Monitor sign-in and audit logs
 
@@ -232,3 +265,12 @@ Perform these steps at regular intervals and for key changes:
 - [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md)
 - [Configure additional protections for privileged roles in Microsoft 365](/microsoft-365/enterprise/protect-your-global-administrator-accounts), if you're using Microsoft 365
 - [Start an access review of privileged roles](../../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing privileged role assignments to more specific administrator roles](permissions-reference.md)
+
+## Related content
+
+- [Create a resilient access control management strategy](~/identity/authentication/concept-resilient-controls.md)
+- [Security operations for privileged accounts](~/architecture/security-operations-privileged-accounts.md)
+- [Plan a Privileged Identity Management deployment](~/id-governance/privileged-identity-management/pim-deployment-plan.md)
+- [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md)
+- [HIPAA access controls](~/standards/hipaa-access-controls.md)
+- [Microsoft Entra customer considerations under DORA](/compliance/dora/dora-entra)

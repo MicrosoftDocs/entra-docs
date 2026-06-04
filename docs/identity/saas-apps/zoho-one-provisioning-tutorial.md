@@ -1,11 +1,9 @@
 ---
 title: Configure Zoho One for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zoho One.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/25/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoho One so that I can streamline the user management process and ensure that users have the appropriate access to Zoho One.
 ---
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both Zoho One and Micros
 > * Keep user attributes synchronized between Microsoft Entra ID and Zoho One.
 > * Provision groups and group memberships in Zoho One
 > * [Single sign-on](zohoone-tutorial.md) to Zoho One (recommended).
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

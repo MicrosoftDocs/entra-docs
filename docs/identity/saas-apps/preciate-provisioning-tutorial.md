@@ -1,11 +1,9 @@
 ---
 title: Configure Preciate for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Preciate.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/21/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Preciate so that I can streamline the user management process and ensure that users have the appropriate access to Preciate.
 ---
@@ -20,6 +18,7 @@ This article describes the steps you need to perform in both Preciate and Micros
 > * Create users in Preciate
 > * Remove users in Preciate when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Preciate
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

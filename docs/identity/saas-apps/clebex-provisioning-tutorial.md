@@ -3,12 +3,10 @@ title: Configure Clebex for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Clebex.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/31/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clebex so that I can streamline the user management process and ensure that users have the appropriate access to Clebex.
 ---
@@ -24,6 +22,7 @@ This article describes the steps you need to perform in both Clebex and Microsof
 > * Remove users in Clebex when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Clebex
 > * [Single sign-on](./clebex-tutorial.md) to Clebex (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

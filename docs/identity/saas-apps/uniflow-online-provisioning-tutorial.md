@@ -1,11 +1,9 @@
 ---
 title: Configure uniFLOW Online for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to uniFLOW Online.
-author: jeevansd
 manager: beatrizd
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to uniFLOW Online so that I can streamline the user management process and ensure that users have the appropriate access to uniFLOW Online.
 ---
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both uniFLOW Online and 
 > * Remove users in uniFLOW Online when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and uniFLOW Online.
 > * [Single sign-on](uniflow-online-tutorial.md) to uniFLOW Online (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

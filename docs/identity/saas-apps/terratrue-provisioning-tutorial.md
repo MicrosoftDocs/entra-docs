@@ -2,11 +2,9 @@
 title: Configure TerraTrue for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to TerraTrue.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TerraTrue so that I can streamline the user management process and ensure that users have the appropriate access to TerraTrue.
 ---
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both TerraTrue and Micro
 > * Remove users in TerraTrue when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and TerraTrue.
 > * [Single sign-on](terratrue-tutorial.md) to TerraTrue.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

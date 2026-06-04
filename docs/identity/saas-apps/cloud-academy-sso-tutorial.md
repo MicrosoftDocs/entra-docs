@@ -1,7 +1,6 @@
 ---
 title: Configure Cloud Academy for Single sign-on with Microsoft Entra ID
 description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange

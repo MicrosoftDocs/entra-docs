@@ -196,7 +196,7 @@ If required by your organization, you can use the [Private Access health check t
 
 | Check | Role | Automated by | Procedure | What to do if it fails |
 | --- | --- | --- | --- | --- |
-| Connector resource utilization trend | Network Ops L2 | Azure Monitor alert ([Playbook 5](#playbook-5-connector-group-capacity-alert)) | Review the week's alert history for sustained trends, not isolated spikes. | If any host trends above 70% CPU or 80% memory, plan to add a connector. Use the [Private Access Sizing Planner](https://github.com/FranckhDev/GSA-Private-Access-Sizing-Planner). |
+| Connector resource utilization trend | Network Ops L2 | Azure Monitor alert ([Playbook 5](#playbook-5-connector-group-capacity-alert)) | Review the week's alert history for sustained trends, not isolated spikes. | If any host trends above 70% CPU or 80% memory, plan to add a connector. Use the [Private Access Sizing Planner](https://aka.ms/gsaPAPlanner). |
 | Policy efficacy digest | IAM Admin | [Playbook 9: Weekly policy-efficacy digest](#playbook-9-weekly-policy-efficacy-digest) (email) | Review the weekly digest of top denied apps/users. | Adjust policies for persistent false positives. Investigate repeated unauthorized access attempts. |
 | Configuration backup compliance | Network Ops L2 | [Playbook 3](#playbook-3-weekly-configuration-backup) + `Test-GsaBackupCompliance.ps1` | Backup compliance script runs after Playbook 3 and alerts if files are missing or stale. | Troubleshoot the runbook or script. Manually export via Graph API as a fallback. |
 | Alert noise ratio | SOC | `Test-GsaAlertNoiseRatio.ps1` scheduled weekly | Script reports analytic-rule-to-incident ratio per Private Access rule. | Tune high-noise rules. Close the loop with Sentinel tuning recommendations. |
@@ -240,7 +240,7 @@ If required by your organization, you can use the [Private Access health check t
 <!-- Configure the CPU and memory thresholds in Azure Monitor metric alerts on each connector host virtual machine (VM) as described in [Playbook 5: Connector group capacity alert](#playbook-5-connector-group-capacity-alert); use the Sentinel integration in this guide for log collection, incident correlation, and workflow automation, not for the host metric thresholds themselves. -->
 
 > [!TIP]
-> Connector sizing depends on the host server specifications and workload. Use the [Private Access Sizing Planner](https://github.com/FranckhDev/GSA-Private-Access-Sizing-Planner) to estimate connector requirements based on your user counts and application patterns. For general connector architecture guidance, see [Understand the Microsoft Entra private network connector](/entra/global-secure-access/concept-connectors). As a starting point, a 4-vCPU / 16-GB RAM server can handle approximately 200–300 concurrent connections, but always validate with your own workload.
+> Connector sizing depends on the host server specifications and workload. Use the [Private Access Sizing Planner](https://aka.ms/gsaPAPlanner) to estimate connector requirements based on your user counts and application patterns. For general connector architecture guidance, see [Understand the Microsoft Entra private network connector](/entra/global-secure-access/concept-connectors). As a starting point, a 4-vCPU / 16-GB RAM server can handle approximately 200–300 concurrent connections, but always validate with your own workload.
 
 ## Integration and automation
 
