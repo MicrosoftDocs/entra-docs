@@ -22,7 +22,7 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 - A client machine that runs at least Windows 10 and is a Microsoft Entra joined or hybrid joined device. The client machine must also have line of sight to the private resources and DC (user is in a corporate network and accessing on-premises resources). The user identity used for joining the device and accessing these resources must be created in Active Directory (AD) and synced to Microsoft Entra ID using Microsoft Entra Connect.
 - The latest Microsoft Entra Private network connector is installed and has a line of sight to the DC.
 - Open inbound Transmission Control Protocol (TCP) port `1337` in the Windows Firewall on the DCs.
-- Allow the required outbound network connectivity for the Private Access Sensor. Outbound access to `*.msappproxy.net:443` alone isn't sufficient. For the full set of URLs and ports, see [Network requirements](#network-requirements).
+- Allow the outbound network connectivity required by the Private Access Sensor. For the required URLs and ports, see [Network requirements](#network-requirements).
 - The Service Principal Names (SPNs) of the private apps you want to protect. You add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
 > The SPNs are *case insensitive* and should be an *exact match* or a wildcard in the format `<serviceclass>/*` such as `cifs/*`.
@@ -40,17 +40,42 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 
 ## Network requirements
 
-The Private Access Sensor communicates with the same Microsoft Entra cloud service as the Microsoft Entra private network connector, so it requires the same outbound network connectivity. Allowing outbound access to `*.msappproxy.net:443` alone isn't sufficient. Configure the sensor's outbound connectivity by using the same network requirements documented for the connector, including:
+The Private Access Sensor communicates with the same Microsoft Entra cloud service as the Microsoft Entra private network connector, so it requires the same outbound network connectivity. Allow outbound access to the following URLs:
 
-- The service communication channel: `*.msappproxy.net` and `*.servicebus.windows.net` on 443/HTTPS.
-- Authentication and registration endpoints, such as `login.windows.net`, `*.microsoftonline.com`, `*.msauth.net`, and `*.msftauth.net` on 443/HTTPS.
-- Certificate-validation endpoints (Certificate Revocation List and Online Certificate Status Protocol), such as `crl3.digicert.com`, `ocsp.digicert.com`, and `oneocsp.microsoft.com` on 80/HTTP.
+| URL | Port | How it's used |
+| --- | --- | --- |
+| `*.msappproxy.net` <br> `*.servicebus.windows.net` | 443/HTTPS | Communication between the sensor and the Microsoft Entra cloud service. |
+| `crl3.digicert.com` <br> `crl4.digicert.com` <br> `ocsp.digicert.com` <br> `crl.microsoft.com` <br> `oneocsp.microsoft.com` <br> `ocsp.msocsp.com` | 80/HTTP | The sensor uses these URLs to verify certificates. |
+| `login.windows.net` <br> `secure.aadcdn.microsoftonline-p.com` <br> `*.microsoftonline.com` <br> `*.microsoftonline-p.com` <br> `*.msauth.net` <br> `*.msauthimages.net` <br> `*.msecnd.net` <br> `*.msftauth.net` <br> `*.msftauthimages.net` <br> `*.phonefactor.net` <br> `enterpriseregistration.windows.net` <br> `management.azure.com` <br> `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | 443/HTTPS | The sensor uses these URLs during and beyond the registration process. |
+| `ctldl.windowsupdate.com` <br> `www.microsoft.com/pkiops` | 80/HTTP | The sensor uses these URLs during and beyond the registration process. |
 
-For the complete, authoritative list of URLs and ports, see [Allow access to URLs](how-to-configure-connectors.md#allow-access-to-urls) and [Open ports](how-to-configure-connectors.md#open-ports).
+If your firewall or proxy lets you configure access rules based on domain suffixes, you can allow connections to `*.msappproxy.net`, `*.servicebus.windows.net`, and the other URLs in the table. If not, allow access to the [Azure IP ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519), which are updated weekly.
+
+These requirements match the Microsoft Entra private network connector. For the source tables, see [Allow access to URLs](how-to-configure-connectors.md#allow-access-to-urls) and [Open ports](how-to-configure-connectors.md#open-ports).
+
+> [!IMPORTANT]
+> Avoid all forms of inline inspection and termination on outbound TLS communications between the Private Access Sensor and the Microsoft Entra cloud service.
 
 ### Outbound proxy support
 
-If your environment routes outbound traffic through a proxy server, the Private Access Sensor supports communicating with the Microsoft Entra cloud service through an outbound proxy, the same as the Microsoft Entra private network connector. Proxy authentication isn't supported, so allow the sensor anonymous access to the required destinations. For the connector proxy scenarios and the network requirements that also apply to the sensor, see [Work with existing on-premises proxy servers](~/identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
+If your environment routes outbound traffic through a proxy server, the Private Access Sensor can communicate with the Microsoft Entra cloud service through an outbound proxy, the same as the Microsoft Entra private network connector.
+
+To route the sensor's traffic through an outbound proxy:
+
+1. On the domain controller, open the `C:\Program Files\Private Access Sensor\bin\PaSensorServices.exe.config` file.
+1. Inside the `<configuration>` element, add the following `system.net` section. Replace `proxyserver:8080` with your proxy server name or IP address and port. Include the `http://` prefix even when you use an IP address.
+
+    ```xml
+    <system.net>
+      <defaultProxy>
+        <proxy proxyaddress="http://proxyserver:8080" bypassonlocal="True" usesystemdefault="True" />
+      </defaultProxy>
+    </system.net>
+    ```
+
+1. Save the file, and then restart the Private Access Sensor service.
+
+Proxy authentication isn't supported, so allow the sensor anonymous access to the required destinations. For more about the outbound proxy scenarios, see [Work with existing on-premises proxy servers](~/identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
 
 ## Configuration steps
 
