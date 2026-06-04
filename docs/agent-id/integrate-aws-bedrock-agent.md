@@ -269,6 +269,7 @@ docker compose down
 
 # Remove everything including volumes and images
 docker compose down -v --rmi all
+```
 
 ## Related content
 
