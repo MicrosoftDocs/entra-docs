@@ -2,7 +2,6 @@
 title: Configure Authenion for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Authenion.
 services: active-directory
-ms.reviewer: celested
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/02/2024

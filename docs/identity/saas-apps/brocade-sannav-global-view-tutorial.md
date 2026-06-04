@@ -1,7 +1,6 @@
 ---
 title: Configure Brocade SANnav Global View for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Global View.
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2026
 ms.custom: sfi-image-nochange, msecd-doc-authoring-1012

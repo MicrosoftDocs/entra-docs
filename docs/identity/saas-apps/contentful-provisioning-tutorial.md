@@ -3,12 +3,10 @@ title: Configure Contentful for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentful.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/03/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentful so that I can streamline the user management process and ensure that users have the appropriate access to Contentful.
 ---

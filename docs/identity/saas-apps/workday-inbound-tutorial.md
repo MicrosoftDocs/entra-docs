@@ -1,10 +1,8 @@
 ---
 title: Configure Workday for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Workday.
-author: cmmdesai
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: chmutali
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Active Directory.
 ---

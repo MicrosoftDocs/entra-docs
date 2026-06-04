@@ -2,7 +2,6 @@
 title: Configure User Interviews for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and User Interviews.
 services: active-directory
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 04/05/2024

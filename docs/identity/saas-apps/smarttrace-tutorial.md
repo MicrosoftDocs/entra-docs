@@ -2,7 +2,6 @@
 title: Configure SmartTrace for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and SmartTrace.
 services: active-directory
-ms.reviewer: celested
 ms.workload: identity
 ms.topic: how-to
 ms.date: 09/10/2024

@@ -2,7 +2,6 @@
 title: Configure Mosaic Project Operations for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mosaic Project Operations.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mosaic Project Operations so that I can control who has access to Mosaic Project Operations, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
