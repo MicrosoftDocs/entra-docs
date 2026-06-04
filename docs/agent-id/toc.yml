@@ -136,6 +136,8 @@ items:
         href: integrate-aws-bedrock-agent.md
       - name: Secure an n8n agent
         href: integrate-n8n-agent.md
+      - name: Deploy a local LLM agent to Azure Container Apps
+        href: deploy-local-llm-agent-to-azure-container-apps.md
 
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale
