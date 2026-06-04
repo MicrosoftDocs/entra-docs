@@ -2,7 +2,6 @@
 title: Configure Bugcrowd for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Bugcrowd.
 services: active-directory
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 04/15/2024

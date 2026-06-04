@@ -2,7 +2,6 @@
 title: Configure Vibe HCM for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Vibe HCM.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Vibe HCM so that I can control who has access to Vibe HCM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.

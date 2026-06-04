@@ -1,7 +1,6 @@
 ---
 title: Configure Kion (formerly cloudtamer.io) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kion (formerly cloudtamer.io).
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange

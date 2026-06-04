@@ -2,10 +2,8 @@
 title: Configure Fuze for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Fuze.
 
-author: jeevansd
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Fuze so that I can streamline the user management process and ensure that users have the appropriate access to Fuze.
 ---

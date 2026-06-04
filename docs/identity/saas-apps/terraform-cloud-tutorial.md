@@ -1,7 +1,6 @@
 ---
 title: Configure Terraform Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Terraform Cloud.
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: devx-track-terraform, sfi-image-nochange

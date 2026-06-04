@@ -2,7 +2,6 @@
 title: Configure Nulab Pass (Backlog and Cacoo) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Nulab Pass (Backlog and Cacoo).
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 07/01/2024
 

@@ -2,7 +2,6 @@
 title: Configure HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator.
 services: active-directory
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/02/2024
