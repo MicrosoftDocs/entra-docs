@@ -396,8 +396,8 @@ The following SCIM query parameters can be used with this API endpoint:
 The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - When multiple pages are involved in the result:
-  - The default page size of 10 entries per page.
-  - The max page size is 100 entries per page.
+  - The default page size of 100 entries per page.
+  - The max page size is 1000 entries per page.
 
 - In the “filter” query parameter, only the “and” logic operator is supported. The following user attributes are allowed for “eq” compare operator:
   - `username`
@@ -1041,9 +1041,9 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - When multiple pages are involved in the result:
 
-  - The default page size of 10 entries per page.
+  - The default page size of 100 entries per page.
 
-  - The max page size is 100 entries per page.
+  - The max page size is 1000 entries per page.
 
 - In the `filter` query parameter, only the “and” logic operator is supported. The following group attributes are allowed for “eq” compare operator.  
 
@@ -1344,7 +1344,7 @@ The `/groups` endpoint allows a PATCH request to be made for updating an existin
 
 PATCH `https://graph.microsoft.com/rp/scim/groups/{id}`
 
-Upon success, the API returns HTTP Status 200.
+Upon success, the API returns HTTP Status 204.
 
 ### Permissions
 
