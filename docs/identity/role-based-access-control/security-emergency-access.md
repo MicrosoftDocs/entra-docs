@@ -78,11 +78,11 @@ Ensure that the credentials for emergency access accounts are kept secure and kn
 
 Exclude emergency access accounts from Conditional Access policies that block or restrict sign-in. Report-only policies don't block access and don't need to exclude emergency accounts. If an emergency access account is subject to a Conditional Access policy that requires MFA, a compliant device, or another control, the account might be unusable during the exact emergency scenarios it's designed for.
 
-When planning your Conditional Access deployment, consider the following:
+When planning your Conditional Access deployment, consider the following points:
 
-- Create a dedicated security group for your emergency access accounts (for example, **EmergencyAccess**) and exclude this group from Conditional Access policies that block or restrict sign-in.
+- Create a dedicated security group for your emergency access accounts, such as **EmergencyAccess**, and exclude this group from Conditional Access policies that block or restrict sign-in.
 - Regularly test (for example, every quarter) that emergency access accounts can sign in successfully with your current Conditional Access configuration.
-- Create contingency Conditional Access policies that can be enabled during an outage to restore access for critical users. For more information, see [Create a resilient access control management strategy](~/identity/authentication/concept-resilient-controls.md).
+- Create contingency Conditional Access policies that you can enable during an outage to restore access for critical users. For more information, see [Create a resilient access control management strategy](~/identity/authentication/concept-resilient-controls.md).
 
 For more information about planning Conditional Access exclusions, see [Plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md).
 
@@ -105,10 +105,10 @@ The following checklist summarizes the security requirements for emergency acces
 
 Organizations in regulated industries might need to demonstrate that the use of emergency access accounts is properly governed. The monitoring and validation practices described in this article support auditability:
 
-- **Sign-in and audit log monitoring** — Configure alerts for every use of an emergency access account. Capture sign-in logs and audit logs for review. For details, see [Monitor sign-in and audit logs](#monitor-sign-in-and-audit-logs) in this article.
-- **Post-mortem review** — After any use of an emergency access account, conduct a review to determine whether the use was authorized and whether the actions taken were appropriate. For details, see [Prepare a post-mortem team](#prepare-a-post-mortem-team-to-evaluate-each-emergency-access-account-credential-use) in this article.
-- **Regular validation** — Perform account validation drills at least every 90 days, including reviewing the authorized-user list and testing sign-in and administrative task functionality. For details, see [Validate accounts regularly](#validate-accounts-regularly) in this article.
-- **Compliance mapping** — If your organization must comply with HIPAA regulations, Microsoft provides guidance on how emergency access accounts map to HIPAA emergency access procedure requirements. For more information, see [HIPAA access controls](~/standards/hipaa-access-controls.md).
+- **Sign-in and audit log monitoring**: Configure alerts for every use of an emergency access account. Capture sign-in logs and audit logs for review. For details, see [Monitor sign-in and audit logs](#monitor-sign-in-and-audit-logs) in this article.
+- **Post-mortem review**: After any use of an emergency access account, conduct a review to determine whether the use was authorized and whether the actions taken were appropriate. For details, see [Prepare a post-mortem team](#prepare-a-post-mortem-team-to-evaluate-each-emergency-access-account-credential-use) in this article.
+- **Regular validation**: Perform account validation drills at least every 90 days, including reviewing the authorized-user list and testing sign-in and administrative task functionality. For details, see [Validate accounts regularly](#validate-accounts-regularly) in this article.
+- **Compliance mapping**: If your organization must comply with HIPAA regulations, Microsoft provides guidance on how emergency access accounts map to HIPAA emergency access procedure requirements. For more information, see [HIPAA access controls](~/standards/hipaa-access-controls.md).
 
 ## Monitor sign-in and audit logs
 
