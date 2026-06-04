@@ -5,6 +5,7 @@ ms.topic: concept-article
 ms.date: 12/05/2025
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: As a B2B collaboration user, I want to understand the elements of the invitation email, so that I can effectively invite partners to join my organization and provide them with the necessary information to make an informed decision.
 ---
 
@@ -35,42 +36,6 @@ Before December 2025, invitations originate from Microsoft Invitations invites@m
 > [!NOTE]
 > For the Azure service operated by [21Vianet in China](/azure/china/), the sender address is `<primary domain>.partner.onmschina.cn`.  
 > For [Microsoft Entra ID for government](/azure/azure-government/), the sender address is `<primary domain>.onmicrosoft.us`.
-
-### Custom domain email requirements
-
-When invitation emails are sent from your organization's custom domain (rather than the default MOERA domain), the following requirements must be met for successful delivery.
-
-#### Mail-enabled tenant
-
-Your tenant must be mail-enabled with an Exchange Online (EXO) license. Without this, invitation emails can't be sent from a custom domain. If your tenant doesn't meet this requirement, invitations are sent from `microsoft.com` instead.
-
-#### Avoid MOERA (Microsoft Online Email Routing Address) domains
-
-MOERA domains (`.onmicrosoft.com`) are **strongly discouraged** for sending invitation emails because:
-
-- MOERA domains are subject to [throttling limits](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4292065).
-- Emails sent from MOERA domains have a high likelihood of being filtered as spam.
-
-[Set a verified custom domain as the default domain for your tenant](/microsoft-365/admin/setup/add-domain).
-
-#### DNS configuration (SPF, DKIM, DMARC)
-
-Email authentication records must be configured in DNS based on how your organization routes outbound email. Owning and verifying a custom domain in Microsoft Entra ID alone isn't sufficient — DNS records must also be in place.
-
-- **Outbound mail goes directly through Exchange Online** — Configure SPF, DKIM, and DMARC based on Microsoft 365 settings:
-    - [Add DNS records to connect your domain](/microsoft-365/admin/get-started/add-domain)
-    - [Set up SPF, DKIM, and DMARC](/defender-office-365/email-authentication-about)
-
-- **Outbound mail routes through a third-party gateway** (for example, Proofpoint or Mimecast) — Configure SPF, DKIM, and DMARC based on your third-party provider's requirements, not Microsoft 365. Your SPF record should authorize your provider's sending IPs, and DKIM signing is handled by your provider's infrastructure.
-
-> [!IMPORTANT]
-> If your organization doesn't send outbound email directly from Exchange Online, do **not** add Microsoft 365 SPF/DKIM records to your DNS. Instead, align your DNS authentication records with the third-party service that handles your outbound mail.
-
-#### Related resources
-
-- [Add a custom domain to Microsoft 365](/microsoft-365/admin/setup/add-domain)
-- [Set up email authentication (SPF, DKIM, DMARC)](/defender-office-365/email-authentication-about)
-- [Limiting onmicrosoft domain usage for sending emails](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4292065)
 
 ### Reply To
 
@@ -111,6 +76,43 @@ The following settings determine the language presented to the guest user in the
 
 If you don't configure any of these settings, the language defaults to English (US).
 
+## Custom domain email requirements
+
+When invitation emails are sent from your organization's custom domain (rather than the default MOERA domain), the following requirements must be met for successful delivery.
+
+### Mail-enabled tenant
+
+Your tenant must be mail-enabled with an Exchange Online (EXO) license. Without this, invitation emails can't be sent from a custom domain.
+
+### Avoid MOERA (Microsoft Online Email Routing Address) domains
+
+MOERA domains (`.onmicrosoft.com`) are **strongly discouraged** for sending invitation emails because:
+
+- MOERA domains are subject to [throttling limits](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4292065).
+- Emails sent from MOERA domains have a high likelihood of being filtered as spam.
+
+To avoid these issues, [set a verified custom domain as the default domain for your tenant](/microsoft-365/admin/setup/add-domain).
+
+### DNS configuration (SPF, DKIM, DMARC)
+
+Email authentication records must be configured in DNS based on how your organization routes outbound email. Owning and verifying a custom domain in Microsoft Entra ID alone isn't sufficient — DNS records must also be in place.
+
+- **Outbound mail goes directly through Exchange Online** — Configure SPF, DKIM, and DMARC based on Microsoft 365 settings:
+    - [Add DNS records to connect your domain](/microsoft-365/admin/get-started/add-domain)
+    - [Set up SPF, DKIM, and DMARC](/defender-office-365/email-authentication-about)
+
+- **Outbound mail routes through a third-party gateway** (for example, Proofpoint or Mimecast) — Configure SPF, DKIM, and DMARC based on your third-party provider's requirements, not Microsoft 365. Your SPF record should authorize your provider's sending IPs, and DKIM signing is handled by your provider's infrastructure.
+
+> [!IMPORTANT]
+> If your organization doesn't send outbound email directly from Exchange Online, do **not** add Microsoft 365 SPF/DKIM records to your DNS. Instead, align your DNS authentication records with the third-party service that handles your outbound mail.
+
+## Related content
+
+- [Add a custom domain to Microsoft 365](/microsoft-365/admin/setup/add-domain)
+- [Set up email authentication (SPF, DKIM, DMARC)](/defender-office-365/email-authentication-about)
+- [Limiting onmicrosoft domain usage for sending emails](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4292065)
+
 ## Next steps
 
 - [B2B collaboration invitation redemption](redemption-experience.md)
+
