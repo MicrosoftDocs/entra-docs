@@ -219,7 +219,7 @@ Secure AI agents and agent-based workloads with identity controls.
 | Check | Minimum required license |
 |---|---|
 | [Require Microsoft Entra ID authentication to interact with agents](zero-trust-ai.md#require-microsoft-entra-id-authentication-to-interact-with-agents) | Microsoft Entra ID P1 |
-| [Conditional Access policies cover both agent identities and agent users](zero-trust-ai.md#conditional-access-policies-cover-both-agent-identities-and-agent-users) | Microsoft Entra ID P1 |
+| [Conditional Access policies cover both agent identities and agents' user accounts](zero-trust-ai.md#conditional-access-policies-cover-both-agent-identities-and-agents-user-accounts) | Microsoft Entra ID P1 |
 | [Risk-based Conditional Access blocks risky agent identities](zero-trust-ai.md#risk-based-conditional-access-blocks-risky-agent-identities) | Microsoft Entra ID P2 |
 | [Custom security attributes for agent identities are present](zero-trust-ai.md#custom-security-attributes-for-agent-identities-are-present) | None (included with Microsoft Entra ID) |
 | [Identity governance for agent identity sponsors is configured](zero-trust-ai.md#identity-governance-for-agent-identity-sponsors-is-configured) | Microsoft Entra ID P1 |
