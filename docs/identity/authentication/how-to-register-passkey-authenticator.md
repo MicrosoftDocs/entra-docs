@@ -2,7 +2,7 @@
 title: Register passkeys in Authenticator on Android and iOS devices
 description: Registration and management of passkeys with Microsoft Authenticator on Android and iOS devices.
 ms.topic: how-to
-ms.date: 12/04/2025
+ms.date: 06/05/2026
 ms.reviewer: hanki77, tilarso
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
@@ -324,7 +324,7 @@ By default, **Security info** prompts users to sign in to the Authenticator app 
 If you can't sign in to the Authenticator to register a passkey, you can register directly from **Security info** with WebAuthn. 
 
 > [!NOTE]
-> You can't register a passkey in Authenticator this way if attestation is enabled by you administrator. 
+> You can't register a passkey in Authenticator this way if attestation is enabled by your administrator. 
 
 If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
 
