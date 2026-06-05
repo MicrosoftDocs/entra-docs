@@ -1,10 +1,8 @@
 ---
 title: Configure iPass SmartConnect for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to iPass SmartConnect.
-author: jeevansd
 ms.topic: how-to
 ms.date: 04/10/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to iPass SmartConnect so that I can streamline the user management process and ensure that users have the appropriate access to iPass SmartConnect.
 ---

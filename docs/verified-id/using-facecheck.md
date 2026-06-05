@@ -18,7 +18,7 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 
 ## Prerequisites
 
-Face Check is a premium feature within Verified ID. You need to enable the Face Check Add-on in your Microsoft Entra Verified ID setup before doing Face Check verifications.
+Face Check is a premium feature within Verified ID. If you're a Microsoft Entra Suite customer, Face Check is included as part of the Suite. If you're not using Microsoft Entra Suite, you need to enable the Face Check Add-on in your Microsoft Entra Verified ID setup before doing Face Check verifications.
 
 - Make sure Microsoft Entra Verified ID is [set up in your tenant](verifiable-credentials-configure-tenant-quick.md) before using Face Check.
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
@@ -331,7 +331,7 @@ Yes. Face Check is limited to Verified ID usage with Microsoft Authenticator. Th
 
 ### What is the confidence percentage match and what does confidence mean?
 
-Organizations can choose their confidence score threshold for their application to accept a Face Check verification. A higher threshold means that it's less likely for an impersonator to be falsely accepted. At the default confidence score of 50%, the chance that the person in the live selfie isn't the rightful credential owner is one in 100,000. The required level depends on the specific scenario, how public the entry point is and the planned users. At a 90% confidence score, that false positive user chance is one in a billion. A higher threshold results in the increased potential for an authorized user being rejected due to the higher sensitivity of the application. It's important to find the right balance between setting a high confidence score threshold that secures your application while not making it so high that it often rejects authorized users due to slight changes in appearance or the visual conditions of their surroundings such as lighting.
+Organizations can choose their confidence score threshold for their application to accept a Face Check verification. A higher threshold means that it's less likely for an impersonator to be falsely accepted. At the minimum confidence score of 50%, the chance that the person in the live selfie isn't the rightful credential owner is one in 100,000. The required level depends on the specific scenario, how public the entry point is and the planned users. At a 90% confidence score, that false positive user chance is one in a billion. A higher threshold results in the increased potential for an authorized user being rejected due to the higher sensitivity of the application. It's important to find the right balance between setting a high confidence score threshold that secures your application while not making it so high that it often rejects authorized users due to slight changes in appearance or the visual conditions of their surroundings such as lighting.
 
 Learn more about [Azure Face API](/legal/cognitive-services/face/characteristics-and-limitations).  
 

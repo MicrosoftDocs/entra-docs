@@ -2,9 +2,10 @@
 title: Prevent Attacks Using Smart Lockout
 description: Learn how Microsoft Entra smart lockout helps protect your organization from brute-force attacks that try to guess user passwords.
 ms.topic: how-to
-ms.date: 05/27/2026
+ms.date: 06/03/2026
 ms.reviewer: rogoya
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 ---
 # Protect user accounts from attacks with Microsoft Entra smart lockout
 
@@ -35,7 +36,7 @@ Using smart lockout doesn't guarantee that a genuine user is never locked out. W
 
   To prevent the system from locking out a user signing in from an unfamiliar location, they must use the correct password to avoid being locked out and have a low number of previous lockout attempts from unfamiliar locations. If the user is locked out from an unfamiliar location, they should consider SSPR to reset the lockout counter.
 
-- After an account lockout, the user can initiate self-service password reset (SSPR) to sign in again. If the user chooses **I forgot my password** during SSPR, the duration of the lockout resets to 0 seconds. If the user chooses **I know my password** during SSPR, the lockout timer continues, and the lockout duration isn't reset. To reset the duration and sign in again, the user needs to change their password.
+* After an account lockout, the user can initiate self-service password reset (SSPR) to sign in again. SSPR lets users reset or change their own passwords without help desk or administrator assistance. If the user chooses **I forgot my password** during SSPR, the duration of the lockout is reset to 0 seconds, so the user doesn't need to wait for the lockout duration to expire. If the user chooses **I know my password** during SSPR, the lockout timer continues and the duration of the lockout isn't reset. In that case, to regain access the user should either change their password or wait until the configured lockout duration expires.
 
 You can integrate smart lockout with hybrid deployments that use password hash sync or pass-through authentication to protect on-premises Active Directory Domain Services (AD DS) accounts from being locked out by attackers. By setting smart lockout policies in Microsoft Entra ID appropriately, you can filter out attacks before they reach on-premises AD DS.
 

@@ -83,8 +83,8 @@ After you configure your identity provider, complete this step to configure a ne
    > [!NOTE]
    > To federate with a Microsoft Entra ID tenant, see [Add a Microsoft Entra ID tenant as an OpenID Connect identity provider](how-to-entra-id-federation-customers.md). OIDC federation also isn't compatible with the [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) feature.
 
-   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Provide a client secret if you select `client_secret` authentication. If you select `private_key_jwt`, the public key needs to be provided in the OpenID provider metadata (well-known endpoint), retrievable via the property `jwks_uri`.
-   - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post`, `client_secret_jwt`, and `private_key_jwt` authentication methods are supported.
+   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Provide a client secret when you select a `client_secret`-based authentication method.
+   - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post` and `client_secret_jwt` authentication methods are supported. Although the admin center UI might display `private_key_jwt` as an option, this method isn't currently supported and shouldn't be selected.
 
    > [!NOTE]
    > Due to possible security problems, the `client_secret_basic` client authentication method isn't supported.
@@ -109,13 +109,6 @@ At this point, you set up the OIDC identity provider in your Microsoft Entra ID,
    :::image type="content" source="media/how-to-custom-oidc-federation-customers/custom-oidc-provider.png" alt-text="Screenshot of the custom OIDC provider in the IdP list.":::
 
 1. Select **Save**.
-
-## Known limitations
-
-Conditional Access policies that require MFA registration don't function as expected when an External ID tenant is federated with an external identity provider (IdP). This can result in one of the following behaviors:
-
-- Users are unable to register an MFA method and can't complete sign-in, often encountering an error.
-- Users aren't redirected to the MFA registration (sign-up) flow during sign-in as expected.
 
 ## Related content
 

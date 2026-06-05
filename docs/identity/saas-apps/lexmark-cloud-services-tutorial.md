@@ -1,7 +1,6 @@
 ---
 title: Integrate Lexmark Cloud Services (SAML) for SSO with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Lexmark Cloud Services (SAML).
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 8/6/2025
