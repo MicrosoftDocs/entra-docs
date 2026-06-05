@@ -22,6 +22,9 @@ In this article,  you learn how to integrate Salesforce Sandbox with Microsoft E
 >
 >  For customers using AD FS as the federation provider with Entra ID, please follow the guidance published [here](~/identity/authentication/how-to-mfa-expected-inbound-assertions.md#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
 
+> [!Note]
+> We are aware that Salesforce has announced a [Phishing-Resistant MFA requirement](https://help.salesforce.com/s/articleView?id=005321563&type=1) for admins across Sandbox and Production environments. We are actively working with the Salesforce team to ensure Entra ID can send the required granular information via token claims. Once timelines are aligned, updates will be published here. Stay tuned.
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
