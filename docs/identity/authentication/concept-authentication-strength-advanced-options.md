@@ -18,7 +18,7 @@ An authentication strength is a Microsoft Entra Conditional Access control that 
 
 ## Create a custom authentication strength
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-comtrol/permissions-reference.md#conditional-access-administrator) or [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 
