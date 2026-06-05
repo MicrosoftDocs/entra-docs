@@ -174,8 +174,4 @@ Use the sign-in logs to investigate why a Conditional Access policy did or didn'
 
 ## Next steps
 
-Learn how to configure Conditional Access policies for agents:
-
-- [Block high-risk agents](policy-agent-block-high-risk.md)
 - [Configure policy for autonomous agent access](policy-autonomous-agents.md)
-- [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)
