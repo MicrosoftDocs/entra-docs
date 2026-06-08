@@ -140,7 +140,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Added features
 
-- Added support for France Cloud (Bleu) and Delos sovereign cloud environments. Microsoft Entra Connect Sync can now be configured and deployed in these sovereign clouds, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
+- Added support for the France Cloud (Bleu) sovereign cloud environment. Microsoft Entra Connect Sync can now be configured and deployed in this sovereign cloud, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
 - Added Mooncake cloud instance name as returned by the Discovery Endpoint API, improving cloud instance detection for customers in the China cloud environment.
 
 ### Updated features
