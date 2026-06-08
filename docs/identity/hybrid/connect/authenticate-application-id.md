@@ -127,7 +127,7 @@ The Microsoft Entra Connect Sync managed application and credential is automatic
 
 ### Automatic
 
-Starting with version 2.5.76.0 or higher, the service will automatically configure application authentication within a six-hour window if the service is using username and password to authenticate to Microsoft Entra ID.
+New installations of Microsoft Entra Connect Sync are configured for application-based authentication during setup. Existing servers using a legacy directory synchronization account are not switched over automatically. To switch an existing server, follow the Manual steps below.
 
 ### Manual
 

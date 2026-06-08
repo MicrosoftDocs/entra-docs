@@ -105,7 +105,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
 |[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|
 |[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|
-|[2.6.3.0](#2630)||
+|[2.6.3.0](#2630)|MM/DD/2027 (12 months after release of 2.6.x.0)|
+|[2.6.x.0](#26x0)||
 
 **All other versions are not supported**
 
@@ -130,6 +131,35 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 
 
+
+## 2.6.x.0
+
+### Release status
+
+MM/DD/2026: Released for download via the Microsoft Entra admin center.
+
+### Added features
+
+- Added support for France Cloud (Bleu) and Delos sovereign cloud environments. Microsoft Entra Connect Sync can now be configured and deployed in these sovereign clouds, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
+- Added Mooncake cloud instance name as returned by the Discovery Endpoint API, improving cloud instance detection for customers in the China cloud environment.
+
+### Updated features
+
+- Improved the auto-upgrade process to preserve customer modifications to configuration files. Previously, auto-upgrade overwrote the `miiserver.exe.config` file, discarding any manual customizations. The system now merges customer modifications with the new configuration and validates the result before applying.
+- Improved the setup process for Application-Based Authentication to handle TPM-backed certificates. The system now tests a certificate's signing capability upfront and handles TPM signature verification correctly.
+- Microsoft Entra Connect setup wizard no longer silently falls back to the legacy directory synchronization account when Application-Based Authentication setup fails. The wizard now stops with an error so the underlying issue can be resolved: "Microsoft Entra Connect could not configure application-based authentication for this server. Setup cannot continue."
+- Microsoft Entra Connect no longer automatically switches existing servers from the legacy directory synchronization account to Application-Based Authentication during background sync. New installations continue to configure Application-Based Authentication during setup. To switch an existing server, run the wizard and choose **Configure application-based authentication to Microsoft Entra ID**.
+- Refreshed the list of Exchange attributes managed by the cloud for the Lightweight Exchange Sync (LES) feature.
+- Updated the bundled Microsoft Authentication Library (MSAL) from version 4.64.1 to 4.83.3.
+
+### Bug fixes
+
+- Improved Application-Based Authentication setup on servers with non-conforming TPM firmware by falling back to a software-based certificate when the TPM cannot produce a valid signature.
+- Fixed an issue with Generic SQL (GSQL) connector profile creation failing during configuration.
+- Fixed an issue where the Application Proxy cloud name was not correctly resolved in sovereign cloud environments.
+- Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action.
+- Fixed an issue where the iteration count was not being calculated correctly during password hash synchronization.
+- Fixed multiple security vulnerabilities in bundled third-party dependencies.
 
 ## 2.6.3.0
 
