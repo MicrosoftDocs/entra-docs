@@ -4,7 +4,7 @@ description: Strengthen your organization's security posture by integrating Glob
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.topic: how-to
-ms.date: 06/02/2026
+ms.date: 06/04/2026
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 
@@ -41,7 +41,7 @@ To configure Microsoft Entra diagnostic settings so Global Secure Access can str
    |---|---|---|---|---|
    | [NetworkAccessTrafficLogs](how-to-view-traffic-logs.md) | `NetworkAccessTraffic` | **Global Secure Access** > **Monitor** > **Traffic logs** | Transaction-level visibility for every HTTP and HTTPS request that flows through Global Secure Access (Internet, Microsoft 365, and Private Access). Shows destination, full URL (when TLS-inspected), user, device, app, policy, action, bytes, threat intelligence, and AI or agent signals. | Traffic investigation and forensics. Policy enforcement validation. Shadow IT and shadow AI discovery. Threat detection (command and control, risky destinations). Data exfiltration analysis. |
    | [NetworkAccessConnectionEvents](how-to-view-traffic-logs.md) | `NetworkAccessConnectionEvents` | **Global Secure Access** > **Monitor** > **Connection logs** | Connection-level lifecycle view (start and end) with identity, device, point of presence (PoP) region, security profile, and policy decisions. One connection can map to many traffic rows. | Troubleshoot access and policy issues. Add device and user context to traffic. Cross-tenant access visibility. Geographic and PoP analysis. |
-   | [NetworkAccessGenerativeAIInsights](how-to-view-model-context-protocol-logging.md) | `NetworkAccessGenerativeAIInsights` | **Global Secure Access** > **Monitor** > **Gen AI insights logs** | Visibility into generative AI and Model Context Protocol (MCP) activity, including prompt content, MCP client and server names, tool invocations, and transaction linkage to traffic logs. | Shadow AI and shadow MCP discovery. AI usage auditing and governance. Prompt-level inspection. AI agent behavior profiling. |
+   | [NetworkAccessGenerativeAIInsights](concept-generative-ai-insights.md) | `NetworkAccessGenerativeAIInsights` | **Global Secure Access** > **Monitor** > **Gen AI insights logs** | Visibility into generative AI and Model Context Protocol (MCP) activity, including prompt content, MCP client and server names, tool invocations, and transaction linkage to traffic logs. | Shadow AI and shadow MCP discovery. AI usage auditing and governance. Prompt-level inspection. AI agent behavior profiling. |
    | [RemoteNetworkHealthLogs](how-to-remote-network-health-logs.md) | `RemoteNetworkHealthLogs` | **Global Secure Access** > **Monitor** > **Remote network health logs** | Health and performance of IPsec tunnels and Border Gateway Protocol (BGP) sessions for branch and remote networks, including status, uptime, throughput, and connect or disconnect events. | Branch and site connectivity monitoring. Tunnel-flapping detection. Service-level agreement (SLA) and availability tracking. Network operations troubleshooting. |
    | [NetworkAccessAlerts](concept-alerts.md) | `NetworkAccessAlerts` | **Global Secure Access** > **Monitor** > **Alerts** | Security and policy alerts that Global Secure Access generates natively, with severity, description, related entities, and timestamps. Examples include the **Increased External Tenant Activity** alert, the **Token or Device Inconsistency** alert, and the **Unhealthy Remote Network** alert. | Real-time threat detection. Alert triage. Incident response. |
 
@@ -90,9 +90,10 @@ To validate the data flow from Global Secure Access to Microsoft Sentinel:
 1. In the **Tables** view, use filters or search to confirm that the following Sentinel tables are in the workspace: 
     - `NetworkAccessTraffic`
     - `NetworkAccessConnectionEvents`
-    - `NetworkAccessGenerativeAIInsights`
+    - `NetworkAccessGenerativeAIInsights` (preview)
     - `RemoteNetworkHealthLogs`
     - `NetworkAccessAlerts`
+    - `OfficeActivity` (if you enabled enriched Microsoft 365 logs)
    
 :::image type="content" source="media/how-to-sentinel-integration/workspace-tables.png" alt-text="Screenshot of the workspace tables showing the Sentinel tables." lightbox="media/how-to-sentinel-integration/workspace-tables.png":::
 
