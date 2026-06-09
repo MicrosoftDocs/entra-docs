@@ -144,7 +144,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Added features
 
 - Added support for the France Cloud (Bleu) sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
-- Enabled Pass-through Authentication and Seamless Single Sign-On for the Delos sovereign cloud environment.
 
 ### Updated features
 
