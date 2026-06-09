@@ -153,11 +153,13 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Bug fixes
 
+- Fixed a security vulnerability in the Invoke-ADSyncSingleObjectSync and Debug-ADSync* diagnostic cmdlets where Active Directory attribute values were rendered in HTML reports without encoding.
+- Fixed a security vulnerability in the Synchronization Service Manager metaverse search where user-supplied filter input was not properly validated before being used in database queries.
+- Fixed an issue where Password Hash Synchronization automatically re-enabled its cloud feature flag using stored service credentials instead of requiring explicit administrator authentication.
 - Improved Application-Based Authentication setup on servers with non-conforming TPM firmware by falling back to a software-based certificate when the TPM cannot produce a valid signature.
-- Fixed an issue with Generic SQL (GSQL) connector profile creation failing during configuration.
-- Fixed an issue where the Application Proxy cloud name was not correctly resolved in sovereign cloud environments.
+- Fixed an issue where Generic SQL (GSQL) connector profile creation failed because required profile parameters were not populated during configuration.
+- Fixed an issue where the Application Proxy cloud name was not correctly resolved in sovereign cloud environments, causing proxy configuration to target the wrong endpoint.
 - Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action.
-- Fixed an issue where the iteration count was not being calculated correctly during password hash synchronization.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies.
 
 ## 2.6.3.0
