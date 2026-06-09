@@ -2,7 +2,7 @@
 title: Configure Salesforce for Single sign-on in Microsoft Entra ID
 description: Learn how to configure the single sign-on between Microsoft Entra ID and Salesforce.
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 06/09/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce so that I can control who has access to Salesforce, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -16,14 +16,14 @@ In this article, you learn how to integrate Salesforce with Microsoft Entra ID. 
 * Manage your accounts in one central location.
 
 > [!Note]
+> **Updated: June 9, 2025** - We are aware that Salesforce has announced a [Phishing-Resistant MFA requirement](https://help.salesforce.com/s/articleView?id=005321563&type=1) for admins across Sandbox and Production environments. We are actively working with the Salesforce team to ensure Entra ID can send the required granular information via token claims. Once timelines are aligned, updates will be published here. Stay tuned.
+
+> [!Note]
 >   We are aware that Salesforce has enforced the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy which will enforce MFA is configured to satisfy this requirement. You can read more about this claim [here](~/identity-platform/single-sign-on-saml-protocol.md#authnmethodreferences).
 > 
 >   For customers using [OpenID Connect Authentication with Salesforce](https://help.salesforce.com/s/articleView?id=xcloud.sso_provider_microsoft_only.htm&type=5) or if you have configured Salesforce with [custom OpenID Connect provider](https://help.salesforce.com/s/articleView?id=xcloud.sso_provider_plugin_custom.htm&type=5) then please ensure that you are using Entra ID V1 endpoint only as the V1 endpoint can provide the AMR claim in the token to Salesforce. V2 endpoint support will come soon but till that time please use V1 endpoint only. 
 >
 >  For customers using AD FS as the federation provider with Entra ID, please follow the guidance published [here](~/identity/authentication/how-to-mfa-expected-inbound-assertions.md#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
-
-> [!Note]
-> We are aware that Salesforce has announced a [Phishing-Resistant MFA requirement](https://help.salesforce.com/s/articleView?id=005321563&type=1) for admins across Sandbox and Production environments. We are actively working with the Salesforce team to ensure Entra ID can send the required granular information via token claims. Once timelines are aligned, updates will be published here. Stay tuned.
 
 ## Prerequisites
 
