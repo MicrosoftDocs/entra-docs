@@ -134,14 +134,17 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ## 2.6.76.0
 
+> [!IMPORTANT]
+> This release includes security fixes. We recommend upgrading to this version as soon as possible.
+
 ### Release status
 
 06/15/2026: Released for download via the Microsoft Entra admin center.
 
 ### Added features
 
-- Added support for the France Cloud (Bleu) sovereign cloud environment. Microsoft Entra Connect Sync can now be configured and deployed in this sovereign cloud, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
-- Added Mooncake cloud instance name as returned by the Discovery Endpoint API, improving cloud instance detection for customers in the China cloud environment.
+- Added support for the France Cloud (Bleu) sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
+- Enabled Pass-through Authentication and Seamless Single Sign-On for the Delos sovereign cloud environment.
 
 ### Updated features
 
@@ -149,16 +152,18 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Improved the setup process for Application-Based Authentication to handle TPM-backed certificates. The system now tests a certificate's signing capability upfront and handles TPM signature verification correctly.
 - Microsoft Entra Connect setup wizard no longer silently falls back to the legacy directory synchronization account when Application-Based Authentication setup fails. The wizard now stops with an error so the underlying issue can be resolved: "Microsoft Entra Connect could not configure application-based authentication for this server. Setup cannot continue."
 - Microsoft Entra Connect no longer automatically switches existing servers from the legacy directory synchronization account to Application-Based Authentication during background sync. New installations continue to configure Application-Based Authentication during setup. To switch an existing server, run the wizard and choose **Configure application-based authentication to Microsoft Entra ID**.
+- PowerShell cmdlets that modify cloud configuration (Set-ADSyncAADCompanyFeature, Set-ADSyncAADPasswordSyncState, Set-ADSyncDirSyncConfiguration) now require explicit `-AADUsername` for interactive admin authentication. The setup wizard uses interactive MSAL authentication for cloud writes instead of stored service credentials. The uninstall wizard now prompts for admin credentials to clean up cloud configuration; if skipped, local cleanup still proceeds.
 - Updated the bundled Microsoft Authentication Library (MSAL) from version 4.64.1 to 4.83.3.
 
 ### Bug fixes
 
-- Fixed a security vulnerability in the Invoke-ADSyncSingleObjectSync and Debug-ADSync* diagnostic cmdlets where Active Directory attribute values were rendered in HTML reports without encoding.
-- Fixed a security vulnerability in the Synchronization Service Manager metaverse search where user-supplied filter input was not properly validated before being used in database queries.
+- Fixed a security vulnerability in the PowerShell diagnostic cmdlets that generate HTML reports.
+- Fixed a security vulnerability in the Synchronization Service Manager metaverse search.
 - Fixed an issue where Password Hash Synchronization automatically re-enabled its cloud feature flag using stored service credentials instead of requiring explicit administrator authentication.
 - Improved Application-Based Authentication setup on servers with non-conforming TPM firmware by falling back to a software-based certificate when the TPM cannot produce a valid signature.
 - Fixed an issue where Generic SQL (GSQL) connector profile creation failed because required profile parameters were not populated during configuration.
-- Fixed an issue where the Application Proxy cloud name was not correctly resolved in sovereign cloud environments, causing proxy configuration to target the wrong endpoint.
+- Fixed an issue where the Application Proxy cloud name was not correctly resolved in the France Cloud (Bleu) environment, causing Pass-through Authentication registration to fail with an "EnvironmentName attribute is invalid" error.
+- Fixed an issue where the China cloud (Mooncake) instance name was not correctly resolved by the Discovery Endpoint API, which could cause cloud instance detection to fail.
 - Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies.
 
