@@ -32,11 +32,11 @@ June 8, 2026: Released for download. This version is only available for install 
  
 ### New features and improvements
 
-- Introduced a system tray diagnostics tool: New interactive diagnostics experience that validates endpoint connectivity (including customer-configured outbound proxies), checks service health, and collects logs from Windows Event Viewer.
-- Improved connector logging and observability: Connector logs are now written to Windows Event Viewer; Audit events include agent identity information; and a remote feature flag allows log verbosity control without a connector update.
+- Diagnostics tool added to system tray: New interactive diagnostics experience that validates endpoint connectivity (including customer-configured outbound proxies), checks service health, and collects logs from Windows Event Viewer.
+- Improved connector logging and observability: Connector logs available in Windows Event Viewer; Audit events include agent identity information; and a remote feature flag allows log verbosity control without a connector update.
 - Improved DNS resolution reliability: Invalid DNS response records are now filtered out, preventing spurious resolution failures in certain network environments.
 - Fixed WebSocket connection leaks that could cause port exhaustion. Connections to unresponsive backends are now properly closed with a configurable timeout instead of lingering indefinitely.
-- Fixed issues related to connector not starting in certain configurations. Resolved an issue where the connector's control channel listener could fail to initialize when specific features were disabled.
+- Fixed an issue where the connector's control channel listener could fail to initialize when specific features were disabled, causing the connector to not start.
 
 ## Version 1.5.4594.0
  
