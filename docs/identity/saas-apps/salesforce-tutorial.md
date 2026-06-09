@@ -16,7 +16,7 @@ In this article, you learn how to integrate Salesforce with Microsoft Entra ID. 
 * Manage your accounts in one central location.
 
 > [!Note]
-> **Updated: June 9, 2025** - We are aware that Salesforce has announced a [Phishing-Resistant MFA requirement](https://help.salesforce.com/s/articleView?id=005321563&type=1) for admins across Sandbox and Production environments. We are actively working with the Salesforce team to ensure Entra ID can send the required granular information via token claims. Once timelines are aligned, updates will be published here. Stay tuned.
+> **Updated: June 9, 2026** - We are aware that Salesforce has announced a [Phishing-Resistant MFA requirement](https://help.salesforce.com/s/articleView?id=005321563&type=1) for admins across Sandbox and Production environments. We are actively working with the Salesforce team to ensure Entra ID can send the required granular information via token claims. Once timelines are aligned, updates will be published here. Stay tuned.
 
 > [!Note]
 >   We are aware that Salesforce has enforced the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy which will enforce MFA is configured to satisfy this requirement. You can read more about this claim [here](~/identity-platform/single-sign-on-saml-protocol.md#authnmethodreferences).
