@@ -141,7 +141,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Nickname|String||
    |UserType|String||
    |BirthDate|String||
-   |AttributePathCustomBadge|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomBadge|String||
    |AttributePathCustomFilterCategory|String||
    |AttributePathCustomProfile|String||
    |AttributePathJoinDate|String||
@@ -158,10 +158,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |AttributePathAddress2PostalCode|String||
    |AttributePathAddress2StreetAddress|String||
    |AttributePathAddress2Region|String||
-   |AttributeWorkOfficePhone|String||
-   |AttributeHomePhone|String||
-   |AttributeWorkMobilePhone|String||
-   |AttributePersonalMobilePhone|String||
+   |phoneNumbers[type eq "workofficephone"].value|String||
+   |phoneNumbers[type eq "homephone"].value|String||
+   |phoneNumbers[type eq "workmobilephone"].value|String||
+   |phoneNumbers[type eq "personalmobilephone"].value|String||
 
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
