@@ -153,6 +153,8 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Microsoft Entra Connect no longer automatically switches existing servers from the legacy directory synchronization account to Application-Based Authentication during background sync. New installations continue to configure Application-Based Authentication during setup. To switch an existing server, run the wizard and choose **Configure application-based authentication to Microsoft Entra ID**.
 - PowerShell cmdlets that modify cloud configuration (Set-ADSyncAADCompanyFeature, Set-ADSyncAADPasswordSyncState, Set-ADSyncDirSyncConfiguration) now require explicit `-AADUsername` for interactive admin authentication. The setup wizard uses interactive MSAL authentication for cloud writes instead of stored service credentials. The uninstall wizard now prompts for admin credentials to clean up cloud configuration; if skipped, local cleanup still proceeds.
 - Updated the bundled Microsoft Authentication Library (MSAL) from version 4.64.1 to 4.83.3.
+- Upgraded the bundled SQL LocalDB from SQL Server 2019 to SQL Server 2022.
+- Removed the Visual C++ 2013 redistributable dependency.
 
 ### Bug fixes
 
