@@ -149,7 +149,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Improved the setup process for Application-Based Authentication to handle TPM-backed certificates. The system now tests a certificate's signing capability upfront and handles TPM signature verification correctly.
 - Microsoft Entra Connect setup wizard no longer silently falls back to the legacy directory synchronization account when Application-Based Authentication setup fails. The wizard now stops with an error so the underlying issue can be resolved: "Microsoft Entra Connect could not configure application-based authentication for this server. Setup cannot continue."
 - Microsoft Entra Connect no longer automatically switches existing servers from the legacy directory synchronization account to Application-Based Authentication during background sync. New installations continue to configure Application-Based Authentication during setup. To switch an existing server, run the wizard and choose **Configure application-based authentication to Microsoft Entra ID**.
-- Refreshed the list of Exchange attributes managed by the cloud for the Lightweight Exchange Sync (LES) feature.
 - Updated the bundled Microsoft Authentication Library (MSAL) from version 4.64.1 to 4.83.3.
 
 ### Bug fixes
