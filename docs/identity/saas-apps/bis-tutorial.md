@@ -73,7 +73,7 @@ To configure single sign-on on **BIS** side, you need a **Client Security Admin*
 
 ### Create BIS test user if necessary
 
-BIS supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in BIS, a new one is created after authentication.
+BIS supports just-in-time user provisioning, which is disabled by default. Please contact BIS Support team if an account should automatically be created if user doesn't already exist in BIS. If automatic account creation is not required, please create a new one before testing authentication.
 
 ## Configure Microsoft Entra SSO
 
