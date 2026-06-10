@@ -1,7 +1,6 @@
 ---
 title: Configure SolarWinds Service Desk (previously Samanage) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SolarWinds Service Desk (previously Samanage).
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 06/09/2026
 ms.custom: sfi-image-nochange
