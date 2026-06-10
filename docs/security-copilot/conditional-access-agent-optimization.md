@@ -81,6 +81,7 @@ The policy suggestions from the agent include:
 - **Risky users**: The agent suggests a policy to require secure password change for high-risk users. Requires a Microsoft Entra ID P2 license.
 - **Risky sign-ins**: The agent suggests a policy to require multifactor authentication for high-risk sign-ins. Requires a Microsoft Entra ID P2 license.
 - **Risky agents**: The agent suggests a policy to block authentication for high-risk sign-ins. Requires a Microsoft Entra ID P2 license.
+- **Agent-assisted flows (preview)**: The agent suggests a policy to block high-risk agent-assisted flows. Requires a Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 - **Deep analysis**: The agent evaluates policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout).
 - **Deep analysis MFA gap analysis**: The agent scans all enabled Conditional Access policies in your tenant to identify users not covered by any MFA policy. This scan includes users excluded from baseline policies, missed in group membership, or falling through gaps between overlapping policies. Unlike standard scans, this analysis evaluates the entire tenant configuration and isn't limited to the last 24 hours.
