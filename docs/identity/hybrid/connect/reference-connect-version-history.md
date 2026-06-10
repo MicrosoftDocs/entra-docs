@@ -143,6 +143,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Added features
 
+- Added support for passwordless authentication in the Microsoft Entra Connect setup wizard using Windows Broker (WAM). Administrators can now sign in using FIDO2 security keys, or other passwordless methods when configuring Microsoft Entra Connect (Public Preview).
 - Added support for the France Cloud (Bleu) sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
 
 ### Updated features
