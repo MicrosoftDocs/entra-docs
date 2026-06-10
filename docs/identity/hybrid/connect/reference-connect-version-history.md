@@ -144,10 +144,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Added features
 
 - Added support for passwordless authentication in the Microsoft Entra Connect setup wizard using Windows Broker (WAM). Administrators can now sign in using FIDO2 security keys, or other passwordless methods when configuring Microsoft Entra Connect (Public Preview).
-- Added support for the France Cloud (Bleu) sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
+- Added support for the France Cloud sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
 
 ### Updated features
 
+- Upgraded the Visual C++ redistributable from version 12 (2013) to version 14.42.34438 (2015-2022).
 - Improved the auto-upgrade process to preserve customer modifications to configuration files. Previously, auto-upgrade overwrote the `miiserver.exe.config` file, discarding any manual customizations. The system now merges customer modifications with the new configuration and validates the result before applying.
 - Improved the setup process for Application-Based Authentication to handle TPM-backed certificates. The system now tests a certificate's signing capability upfront and handles TPM signature verification correctly.
 - Microsoft Entra Connect setup wizard no longer silently falls back to the legacy directory synchronization account when Application-Based Authentication setup fails. The wizard now stops with an error so the underlying issue can be resolved: "Microsoft Entra Connect could not configure application-based authentication for this server. Setup cannot continue."
@@ -164,8 +165,8 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an issue where Password Hash Synchronization automatically re-enabled its cloud feature flag using stored service credentials instead of requiring explicit administrator authentication.
 - Improved Application-Based Authentication setup on servers with non-conforming TPM firmware by falling back to a software-based certificate when the TPM cannot produce a valid signature.
 - Fixed an issue where Generic SQL (GSQL) connector profile creation failed because required profile parameters were not populated during configuration.
-- Fixed an issue where the Application Proxy cloud name was not correctly resolved in the France Cloud (Bleu) environment, causing Pass-through Authentication registration to fail with an "EnvironmentName attribute is invalid" error.
-- Fixed an issue where the China cloud (Mooncake) instance name was not correctly resolved by the Discovery Endpoint API, which could cause cloud instance detection to fail.
+- Fixed an issue where the Application Proxy cloud name was not correctly resolved in the France Cloud environment, causing Pass-through Authentication registration to fail with an "EnvironmentName attribute is invalid" error.
+- Fixed an issue where the China cloud instance name was not correctly resolved by the Discovery Endpoint API, which could cause cloud instance detection to fail.
 - Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies.
 
