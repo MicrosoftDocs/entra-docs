@@ -63,9 +63,9 @@ The list of policies that don't apply includes the reasons why these policies do
 
 The [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is a Microsoft Graph API that is called by the Conditional Access experience. The API is different from the legacy What If evaluation in a few ways:
 
-1. The What-if API is a public and fully supported API. The API can be used through the Conditional Access UX and the MS Graph API.
+1. The What If API is a public and fully supported API. You can use it through the Conditional Access experience and the Microsoft Graph API.
 1. The logic aligns with the authentication logic used during sign-in to provide more accurate policy evaluation.
-1. The What-if API expects all sign-in parameters to be defined for the evaluation to provide the most accurate results. If your tenant has policies with specific conditions and the sign-in details for those conditions aren't provided, the What If API can't evaluate those conditions.
+1. The What If API expects all sign-in parameters to be defined for the evaluation to provide the most accurate results. If your tenant has policies with specific conditions and the sign-in details for those conditions aren't provided, the What If API can't evaluate those conditions.
 
 > [!NOTE]
 > For application specification, provide the App ID. Groups of apps, such as **Office 365** or **Microsoft Admin Portals**, don't result in a match.
