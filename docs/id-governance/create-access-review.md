@@ -141,7 +141,9 @@ If you're reviewing access to an application, then before you create the review,
         > If the setting **If reviewers don't respond** is set to **Remove access** or **Take recommendations** and **Auto apply results to resource** is enabled, all access to this resource could potentially be revoked if the reviewers fail to respond.
         
         > [!NOTE]
-        > In multi-stage access reviews, the "**If reviewers don't respond**" setting (such as **No change, Remove access, Approve access,** or **Take recommendations**) is only applied at the parent review level at the end of the overall review period. For child stage instances, only explicit reviewer decisions (Approve, Deny, or DontKnow) are carried over to the parent instance—a **NotReviewed** result from a child stage will not overwrite a decision already made in a previous stage. If you want system recommendations applied during a multi-stage review, reviewers should select **Accept recommendations** within the child stage instance so those results carry forward to the parent.
+        > In multi-stage access reviews, the **If reviewers don't respond** setting (such as **No change**, **Remove access**, **Approve access**, or **Take recommendations**) is only applied at the parent review level at the end of the overall review period.
+        > For child stage instances, only explicit reviewer decisions (`Approve`, `Deny`, or `DontKnow`) are carried over to the parent instance. A `NotReviewed` result from a child stage doesn't overwrite a decision already made in a previous stage.
+        > If you want system recommendations applied during a multi-stage review, reviewers should select **Accept recommendations** within the child stage instance so those results carry forward to the parent.
  
 
     - **Action to apply on denied guest users**: This option is only available if the access review is scoped to include only guest users to specify what happens to guest users if they're denied either by a reviewer or by the **If reviewers don't respond** setting.
