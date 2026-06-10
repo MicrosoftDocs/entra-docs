@@ -55,6 +55,7 @@ To use the content policy feature, you need the following prerequisites:
 - A user with the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to configure Global Secure Access settings.
 - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role to configure Conditional Access policies.
 - The Global Secure Access client requires a device (or virtual machine) that is either Microsoft Entra ID joined or Microsoft Entra ID Hybrid joined.
+- To use **web categories** as a content policy destination, you must also configure a [web content filtering policy](how-to-configure-web-content-filtering.md).
 - User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443:
 
     ```powershell
@@ -88,13 +89,13 @@ To configure a content policy in Global Secure Access, complete the following st
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **Content policies**.
-    :::image type="content" source="media/how-to-network-content-filtering/file-policies-create.png" alt-text="Screenshot of the Content policies page in the Microsoft Entra admin center showing the Create policy button." lightbox="media/how-to-network-content-filtering/file-policies-create.png":::
+    :::image type="content" source="media/how-to-network-content-filtering/content-policies-create.png" alt-text="Screenshot of the Content policies page in the Microsoft Entra admin center showing the Create policy button." lightbox="media/how-to-network-content-filtering/content-policies-create.png":::
 1. Select **+ Create Policy**. Pick the options that fit your needs.
 1. On the **Basics** tab: 
     1. Enter the policy **Name**. 
     1. Enter the policy **Description**.
     1. Select **Next**.
-    :::image type="content" source="media/how-to-network-content-filtering/file-policy-basics-tab.png" alt-text="Screenshot of the Basics tab for a new content policy showing the Policy name and Description fields." lightbox="media/how-to-network-content-filtering/file-policy-basics-tab.png":::
+    :::image type="content" source="media/how-to-network-content-filtering/content-policy-basics-tab.png" alt-text="Screenshot of the Basics tab for a new content policy showing the Policy name and Description fields." lightbox="media/how-to-network-content-filtering/content-policy-basics-tab.png":::
 1. On the **Rules** tab:  
     1. Add a new rule.
     1. Enter the **Rule name**, **Description**, **Priority**, and **Status** as appropriate.
@@ -103,13 +104,13 @@ To configure a content policy in Global Secure Access, complete the following st
         - To use data policies configured in Microsoft Purview, select **Scan with Purview** (preview).
             :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the content rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **Content types**.
-        :::image type="content" source="media/how-to-network-content-filtering/file-rule-content-types.png" alt-text="Screenshot of the Add Content Rule page showing the Matching conditions section with Activities set to Upload, and the Content types dropdown expanded with PDF selected." lightbox="media/how-to-network-content-filtering/file-rule-content-types.png":::
+        :::image type="content" source="media/how-to-network-content-filtering/content-rule-content-types.png" alt-text="Screenshot of the Add Content Rule page showing the Matching conditions section with Activities set to Upload, and the Content types dropdown expanded with PDF selected." lightbox="media/how-to-network-content-filtering/content-rule-content-types.png":::
     1. Select **+ Add destination** and configure the destinations.
         - For application-specific control, you can add the exact upload URLs and related FQDNs that the app uses. Use browser developer tools or network traffic analysis to identify the endpoints used during file upload.
         - You can also select web categories as a destination. If you select web categories, you must also configure a [web content filtering policy](how-to-configure-web-content-filtering.md).
 1. Select **Next**.
 1. On the **Review** tab, review your settings.
-    :::image type="content" source="media/how-to-network-content-filtering/file-policy-review-tab.png" alt-text="Screenshot of the Review tab showing a summary of the content policy settings including policy name, description, and number of rules before creation." lightbox="media/how-to-network-content-filtering/file-policy-review-tab.png":::
+    :::image type="content" source="media/how-to-network-content-filtering/content-policy-review-tab.png" alt-text="Screenshot of the Review tab showing a summary of the content policy settings including policy name, description, and number of rules before creation." lightbox="media/how-to-network-content-filtering/content-policy-review-tab.png":::
 1. Select **Create** to create the policy.
 
 > [!IMPORTANT]

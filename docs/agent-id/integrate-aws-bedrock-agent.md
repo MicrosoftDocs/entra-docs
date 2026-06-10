@@ -126,6 +126,8 @@ Run the following commands once per tenant to create the Blueprint app, Agent ID
    - **`AGENT_CLIENT_ID`:** The Agent ID created from the Blueprint.
 
 1. (Optional) Create the SPA app and configure OBO. This step is required only if you want to use the OBO identity flow:
+    
+   Run the following scripts to create the SPA app registration and configure OBO permissions on the Blueprint. The scripts register the SPA redirect URI and grant the required delegated permissions.
 
    **Bash:**
 
@@ -156,7 +158,7 @@ The sidecar supports multiple credential types through the `AzureAd__ClientCrede
 - **`KeyVault`:** Certificate from Azure Key Vault.
 - **`StoreWithThumbprint`:** Certificate from local machine store.
 
-1. Copy the environment template and open it in your editor:
+1.  Create a local `.env` configuration file from the included template. This file stores your tenant, app, and AWS credentials:
 
    **Bash:**
 
@@ -191,13 +193,15 @@ The sidecar supports multiple credential types through the `AzureAd__ClientCrede
 
 ## Start the stack
 
-1. Make sure Docker is running and then start all containers:
+1. Verify that Docker Desktop (or Docker Engine) is running on your machine.
+
+1. Build the container images and start all three services (agent, sidecar, and weather API) in detached mode:
 
    ```bash
    docker compose up --build -d
    ```
 
-1. Verify the stack is ready:
+1. Check that all containers started successfully by querying the status endpoint. The response reports whether the agent can reach AWS Bedrock:
 
    **Bash:**
 
@@ -245,27 +249,27 @@ If something isn't working as expected, check the following table for common iss
 | OBO sign-in popup blocked | Browser popup blocker. | Allow popups for `localhost:3001`. |
 | `4xx` from sidecar during OBO | `CLIENT_SPA_APP_ID` missing or SPA redirect URI mismatch. | Rerun `setup-obo-client-app`. Ensure `http://localhost:3001` is on the SPA's redirect URIs. |
 
-View container logs for debugging:
+If an issue persists even after following the troubleshooting steps, inspect the container logs directly. Each service logs to its own container:
 
 ```bash
-docker logs llm-agent-aws
-docker logs agent-id-sidecar-aws
-docker logs weather-api-aws
+docker logs llm-agent-aws          # Agent app: Bedrock calls, tool invocations
+docker logs agent-id-sidecar-aws   # Sidecar: token acquisition, credential errors
+docker logs weather-api-aws        # Weather API: JWT validation, request handling
 ```
-
 ## Clean up resources
 
-Stop and remove the containers when you're done:
+When you finish testing, stop the local containers to free system resources. Choose one of the following cleanup options based on whether you want to keep images for faster restarts.
+
+> [!IMPORTANT]
+> `docker compose down` removes only the local Docker containers. Microsoft Entra objects (agent blueprint, Agent ID, SPA app registration) are tenant-side state and persist. Delete them manually in the Microsoft Entra admin center if you no longer need them.
 
 ```bash
-# Stop containers but keep volumes and images
+# Stop containers but keep volumes and images for faster restarts
 docker compose down
 
 # Remove everything including volumes and images
 docker compose down -v --rmi all
 ```
-
-The Entra objects (agent blueprint, Agent ID, SPA app registration) are tenant-side state, so using `docker compose down` won't remove them. Remove them manually in the Microsoft Entra admin center if no longer needed.
 
 ## Related content
 

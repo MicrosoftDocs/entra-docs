@@ -1,7 +1,6 @@
 ---
 title: Configure KnowledgeOwl for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and KnowledgeOwl.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/19/2026
 ms.custom: sfi-image-nochange

@@ -57,7 +57,7 @@ The following diagram shows how tokens flow from the agent through the sidecar t
 
 :::image type="content" source="media/how-to-validate-agent-tokens-downstream-api/agent-token-flow-to-downstream-api.png" alt-text="Diagram showing the agent caller sending a Bearer token to the weather API, which verifies the token and calls Open-Meteo." lightbox="media/how-to-validate-agent-tokens-downstream-api/agent-token-flow-to-downstream-api.png":::
 
-TR is the agent identity token issued by Microsoft Entra ID through the sidecar. It contains the claims your API validates, including the `xms_par_app_azp` agent identity marker. For a detailed breakdown of all tokens in the flow, see [Run the sidecar for local development](sidecar-local-development.md#understand-the-token-flow).
+The agent identity token, TR, is issued by Microsoft Entra ID through the sidecar. It contains the claims your API validates, including the `xms_par_app_azp` agent identity marker. For a detailed breakdown of all tokens in the flow, see [Run the sidecar for local development](sidecar-local-development.md#understand-the-token-flow).
 
 Token validation libraries differ across ecosystems (Python, Node.js, .NET). This sample uses PyJWT with the `cryptography` backend for RS256 signature verification. When you build your own downstream API, choose the equivalent JWT validation library for your technology stack.
 

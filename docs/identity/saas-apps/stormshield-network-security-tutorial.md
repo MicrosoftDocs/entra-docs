@@ -1,15 +1,12 @@
 ---
 title: Configure Stormshield Network Security (OIDC) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Stormshield Network Security (OIDC).
-author: nguhiu
 manager: mwongerapk
-ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 10/03/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Stormshield Network Security (OIDC) so that I can control who has access to Stormshield Network Security (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---

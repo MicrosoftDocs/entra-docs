@@ -2,7 +2,6 @@
 title: Configure DDC Web for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DDC Web.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DDC Web so that I can control who has access to DDC Web, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.

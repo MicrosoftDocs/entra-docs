@@ -156,8 +156,8 @@ You can use the following user properties to create a single expression.
 
 | Property | Allowed values | Examples |
 | --- | --- | --- |
-| `otherMails` |Any string value | ```user.otherMails -startsWith "alias@domain"```<br><br>```user.otherMails -endsWith"@contoso.com"``` |
-| `proxyAddresses` |`SMTP: alias@domain`, `smtp: alias@domain` | ```user.proxyAddresses -startsWith "SMTP: alias@domain"```<br><br>```user.proxyAddresses -notEndsWith "@outlook.com"``` |
+| `otherMails` |Any string value | ```(user.otherMails -any (_ -startsWith "alias@domain"))```<br><br>```(user.otherMails -any (_ -endsWith "@contoso.com"))``` |
+| `proxyAddresses` |`SMTP: alias@domain`, `smtp: alias@domain` | ```(user.proxyAddresses -any (_ -startsWith "SMTP: alias@domain"))```<br><br>```(user.proxyAddresses -any (_ -notEndsWith "@outlook.com"))``` |
 
 For the properties used for device rules, see [Rules for devices](#rules-for-devices).
 

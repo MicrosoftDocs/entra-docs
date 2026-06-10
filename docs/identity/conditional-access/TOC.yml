@@ -27,6 +27,8 @@
     href: concept-conditional-access-policy-common.md
   - name: Conditional Access policy components
     href: concept-conditional-access-policies.md
+  - name: Conditional Access for agents
+    href: agent-id.md
   - name: Assignments
     items: 
      - name: Users, groups, and roles
@@ -45,8 +47,6 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
-  - name: Conditional Access for agent identities
-    href: agent-id.md
   - name: Analyze impact
     href: concept-conditional-access-report-only.md
   - name: Service dependencies
@@ -90,6 +90,8 @@
   items:
   - name: Plan your Conditional Access deployment
     href: plan-conditional-access.md
+  - name: Build policies for agents
+    href: howto-target-agent-identities.md
   - name: Recommended policies
     items: 
     - name: Block legacy authentication
@@ -114,14 +116,6 @@
       href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
-    - name: Agent identities
-      items:
-      - name: Block high-risk agent identities
-        href: policy-agent-block-high-risk.md
-      - name: Configure policy for autonomous agent access
-        href: policy-autonomous-agents.md
-      - name: Configure policy for on-behalf-of agent access
-        href: policy-on-behalf-of-agents.md
     - name: Applications
       items:
       - name: Require approved app or app protection policy
@@ -154,6 +148,8 @@
         href: policy-old-require-mfa-admin-portals.md
       - name: Require MFA for Azure management
         href: policy-old-require-mfa-azure-mgmt.md
+    - name: Recommended policies for autonomous agent access
+      href: policy-autonomous-agents.md
     - name: Block users with elevated insider risk
       href: policy-risk-based-insider-block.md
     - name: Require terms of use to be accepted
