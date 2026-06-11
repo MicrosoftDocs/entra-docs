@@ -24,7 +24,7 @@ The following Microsoft Entra password policy requirements apply for all passwor
 | Property | Requirements |
 | --- | --- |
 | Characters allowed |Uppercase characters (A - Z)<br>Lowercase characters (a - z)<br>Numbers (0 - 9)<br>Symbols:<br>- @ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ' , . ? / \` ~ " ( ) ; < ><br>- blank space |
-| Characters not allowed | Unicode characters. For Microsoft Entra External ID tenants, Unicode characters are allowed if the user is created by using Microsoft Graph API or Self-Service Sign-Up. |
+| Characters not allowed | Unicode characters.<br><br> **Note:** For Microsoft Entra External ID tenants, Unicode characters are allowed if the user is created by using Microsoft Graph API or Self-Service Sign-Up. |
 | Password length |Passwords require<br>- A minimum of eight characters<br>- A maximum of 256 characters</li> |
 | Password complexity |Passwords require three out of four of the following categories:<br>- Uppercase characters<br>- Lowercase characters<br>- Numbers <br>- Symbols<br> Note: Password complexity check isn't required for Education tenants. |
 | Password not recently used | When a user changes their password, the new password shouldn't be the same as the current password. |
