@@ -1,17 +1,17 @@
 ---
-title: Conditional Access Optimization Agent knowledge base (Preview)
+title: Conditional Access Optimization Agent knowledge base
 description: Learn how Knowledge Bases help the Conditional Access Optimization Agent create tailored policy recommendations based on your organization's unique standards.
 #customer intent: As an IT admin, I want to upload organizational Conditional Access standards to a Knowledge Base so that the Conditional Access Optimization Agent can generate recommendations aligned with my organization's policies.
 author: shlipsey3
 ms.author: sarahlipsey
 reviewer: jodahl
-ms.date: 05/22/2026
+ms.date: 06/10/2026
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: conditional-access
 ---
 
-# Conditional Access Optimization Agent knowledge base (Preview)
+# Conditional Access Optimization Agent knowledge base
 
 Organizations that use Conditional Access policies to protect access to resources should establish standards and patterns to stay organized. For example, having a consistent naming convention can keep you organized and prevent policy overlap or gaps. The Conditional Access Optimization Agent can use a document from your organization that maps out these standards so that agent reasons with context using the patterns that you design.
 
@@ -22,12 +22,13 @@ Knowledge Bases are especially useful in environments where:
 - Different user personas require distinct policy sets, such as admins, workforce users, and contractors
 - Policy naming standards are enforced
 - Breakglass accounts must be consistently excluded
+- A defined set of desired Conditional Access policies should be maintained across the tenant
 
 ## How the knowledge base works
 
 The general process for setting up and using the knowledge base is as follows:
 
-1. **Upload guidance**: An administrator uploads a single Word (.docx) or PDF document that describes organizational Conditional Access standards.
+1. **Upload guidance**: An administrator uploads a single Word (.docx) or PDF document that describes organizational Conditional Access standards. You can download a template or upload your own document.
 
 1. **Interpretation by the agent**: The agent parses the document and extracts Conditional Access–related guidance, even when it's embedded within broader governance or operational documentation.
 
@@ -39,15 +40,20 @@ The general process for setting up and using the knowledge base is as follows:
 
 A usable and effective knowledge base file should be detailed, specific, and structured. The file should contain clear and actionable information that the Conditional Access Optimization Agent can use to make informed decisions.
 
+You can download a template from the agent settings to use as a starting point. The template provides a structured format with sections for each supported category, so you can fill in your organization's specific details.
+
+:::image type="content" source="media/conditional-access-agent-optimization-knowledge-base/knowledge-base-download-template.png" alt-text="Screenshot of the knowledge base template download option." lightbox="media/conditional-access-agent-optimization-knowledge-base/knowledge-base-download-template.png":::
+
 ### Persona‑based policy design
 
 Describe how different user populations in your organization are secured with Conditional Access policies. When multiple policies enforce the same control (such as MFA), the agent uses this guidance to select the correct policy based on the user's persona. Examples include:
 
-- Regular workforce users use baseline policies
+- Regular workforce users are included in baseline policies
 - Administrators might be included in the baseline policies as well as a dedicated set of policies for their specific needs
 - Contractors are governed by their own policies separate from the baseline
 
 If your Conditional Access strategy applies certain policies to full-time employees, describe how full-time employees are defined. For example, are these employees defined with specific user attributes or group membership? 
+
 Be explicit. If your person-based policy design is based on roles, provide the exact Microsoft Entra ID built-in roles. For example, say "Conditional Access Administrator" not "users with administrative privileges".
 
 ### Policy naming conventions
@@ -70,16 +76,44 @@ The agent applies this guidance when:
 - Identifying missing exclusions
 - Recommending updates to existing policies
 
+### Desired Conditional Access policies
+
+Define the set of Conditional Access policies that your organization expects to have in place across the tenant. For each desired policy, describe the target users, applications, conditions, and grant controls that the policy should enforce.
+
+The agent uses this guidance to:
+
+- Audit your current Conditional Access policies against your desired state
+- Identify gaps where required policies are missing or incomplete
+- Propose new policies to close coverage gaps and align with your organization's intended configuration
+
+For example, if your organization requires that all guest users authenticate with MFA when accessing any cloud application, describe that expectation in the knowledge base. The agent compares your desired state against the policies currently configured in your tenant and surfaces recommendations for any missing policies.
+
+Write each desired policy as a complete instruction. For example:
+
+- "Create a Conditional Access policy that requires MFA and a compliant device for all users accessing Office 365 from Windows or macOS. Exclude breakglass and service accounts. Set the policy to report-only."
+- "Create a Conditional Access policy that blocks legacy authentication for all users accessing all apps. Exclude the EmergencyAccess group. Set the policy to enabled."
+
 ## Add a file to the knowledge base
 
-To add a file to the knowledge base:
+To simplify the setup process, you can download a template to use as a starting point. The template is available directly in the agent settings.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Conditional Access Optimization Agent** > **Settings** > **Files**.
-1. Select the **Upload** button.
-1. Either drag and drop the file into the panel that opens or select the **Upload file** space to navigate to the file on your computer.
+1. Browse to **Conditional Access Optimization Agent** > **Settings** > **Knowledge sources**.
+1. Select **Download file template** to download the knowledge base template file.
+1. Open the template (CA_Knowledge_Base_Template.docx) and replace the placeholder content with your organization's specific Conditional Access standards, naming conventions, breakglass accounts, and desired policies.
+1. Save the file as a Word (.docx) or PDF document.
+1. Return to the **Knowledge sources** section and select the **Upload** button.
 
-The agent processes the file and analyzes it to ensure it includes the necessary information. 
+    :::image type="content" source="media/conditional-access-agent-optimization-knowledge-base/knowledge-base-settings.png" alt-text="Screenshot of the knowledge base template options." lightbox="media/conditional-access-agent-optimization-knowledge-base/knowledge-base-settings.png":::
+    
+1. Either drag and drop the file into the panel that opens or select **Upload file** to navigate to the file on your computer.
+
+    :::image type="content" source="media/conditional-access-agent-optimization-knowledge-base/knowledge-base-upload.png" alt-text="Screenshot of the knowledge base upload panel." lightbox="media/conditional-access-agent-optimization-knowledge-base/knowledge-base-upload.png":::
+
+The agent processes the file and analyzes it to ensure it includes the necessary information.
+
+> [!NOTE]
+> You aren't required to use the template. You can upload any Word (.docx) or PDF document that contains your organization's Conditional Access standards. The template provides a convenient starting point with sections for each supported category.
 
 ## Recommendations influenced by the knowledge base
 
@@ -95,6 +129,8 @@ Once you've successfully added your guidance to the knowledge base, the Conditio
 
 - **Policy naming remediation**: If a policy doesn't follow defined naming standards, the agent recommends an appropriately named replacement.
 
+- **Desired policy audit**: When you define your intended Conditional Access policies, the agent compares them against your current configuration and recommends new policies to close any gaps.
+
 ## When should you use the knowledge base?
 
 Consider using the knowledge base if your organization:
@@ -103,10 +139,31 @@ Consider using the knowledge base if your organization:
 - Separates policies by user persona or risk profile
 - Audits Conditional Access policies regularly
 - Needs recommendations to align with internal governance processes
+- Wants to define and enforce a specific set of Conditional Access policies across the tenant
+
+## Best practices for writing a knowledge base document
+
+The quality of the agent's recommendations depends on the clarity and specificity of your knowledge base document. Follow these guidelines to get the best results:
+
+- **Be explicit and specific.** Use exact Microsoft Entra object names, group names, and role names. For example, say "Conditional Access Administrator" instead of "users with administrative privileges."
+- **Write complete instructions.** Each statement should be actionable on its own. Instead of listing bullet points, write full sentences that describe the intended behavior.
+- **Define your terms.** If your organization uses personas like "Admin" or "Guest," define exactly who belongs to each persona using roles, group membership, or user attributes.
+- **Include scope for every requirement.** Specify which users, apps, conditions, controls, and exclusions apply. Don't leave the agent to infer missing details.
+- **Use the provided template.** Download the knowledge base template from the **Knowledge sources** section of the agent settings to ensure your document follows the expected structure.
+
+The knowledge base template includes sections for:
+
+- **Naming conventions**: The exact pattern and allowed values for naming Conditional Access policies.
+- **Breakglass accounts**: The identities or groups designated as emergency access and the rules for excluding them.
+- **Persona definitions and policy coverage**: How user populations are segmented and what policies apply to each persona.
+- **Baseline policy requirements**: A list of expected policy states that describe the minimum access controls your organization enforces.
+
+> [!TIP]
+> Replace all placeholder text in the template with information specific to your tenant. Generic or vague descriptions reduce the agent's ability to produce relevant suggestions.
 
 ## Scope and limitations
 
-During the Preview, the knowledge base has the following constraints:
+The knowledge base has the following constraints:
 
 - One knowledge base document per tenant
 - Supported file formats: Word (.docx) and PDF
