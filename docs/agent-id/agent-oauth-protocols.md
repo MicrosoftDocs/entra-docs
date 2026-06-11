@@ -38,9 +38,9 @@ Agent identities use `client_credentials` for app-only autonomous operations, en
  
 ### Unsupported flows
 
-The agent application model explicitly excludes certain authentication patterns to maintain security boundaries. OBO flows using the `/authorize` endpoint aren't supported for any agent entity, ensuring all authentication occurs programmatically.
- 
-Public client capabilities aren't available, requiring all agents to operate as confidential clients. Redirect URLs aren't supported.
+- The agent application model explicitly excludes certain authentication patterns to maintain security boundaries. Agents aren't supported for interactive (`/authorize`) flows, ensuring all authentication occurs programmatically.
+- Public client capabilities aren't available, requiring all agents to operate as confidential clients.
+- A web redirect URI can be configured on a blueprint for consent flows only (`response_type=none`), but can't be used for interactive token acquisition. Full redirect URI functionality is configured on the client application.
 
 ## Core protocol patterns
  
@@ -63,3 +63,8 @@ There are three agent oauth flows:
 - [Agent on-behalf of flow](./agent-on-behalf-of-oauth-flow.md): Agents operating on behalf of regular users (interactive agents).
 - [Autonomous app flow](./agent-autonomous-app-oauth-flow.md): App-only operations enable agent identities to act autonomously without user context.
 - [Agent's user account flow](./agent-user-oauth-flow.md): Agents operating on their own behalf using user principals created specifically for agents.
+
+## Related content
+
+- [Grant agents access to Microsoft 365 resources](grant-agent-access-microsoft-365.md) - admin-focused guidance on consent, manual authorization, and other authorization systems.
+- [Agent identity token claims](agent-token-claims.md) - claims reference for tokens issued to agents.

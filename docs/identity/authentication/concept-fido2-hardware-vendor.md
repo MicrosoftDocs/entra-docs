@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Learn about requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID.
-ms.date: 05/11/2026
+ms.date: 06/11/2026
 ms.reviewer: kimhana
 ms.topic: concept-article
 ---
@@ -144,8 +144,8 @@ IDEMIA ID-ONE Card|8d1b1fcb-3c76-49a9-9129-5515b346aa02|&#10060;|&#x2705;|&#x270
 IDEMIA SOLVO Fly 80 R3 FIDO Card c|dda9aa35-aaf1-4d3c-b6db-7902fd7dbbbf|&#10060;|&#10060;|&#x2705;|&#10060;
 IDEMIA SOLVO Fly 80 R3 FIDO Card e|def8ab1a-9f91-44f1-a103-088d8dc7d681|&#10060;|&#10060;|&#x2705;|&#10060;
 IDEX CTAP2.1 Biometrics|49a15c1c-3f63-3f51-23a7-b9e00096edd1|&#x2705;|&#x2705;|&#x2705;|&#10060;
-IDmelon Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|&#x2705;|&#10060;|&#10060;|&#10060;
-IDmelon Key|39a5647e-1853-446c-a1f6-a79bae9f5bc7|&#x2705;|&#10060;|&#10060;|&#10060;
+IDmelon Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|&#x2705;|&#x2705;|&#10060;|&#x2705;
+IDmelon Key|39a5647e-1853-446c-a1f6-a79bae9f5bc7|&#x2705;|&#x2705;|&#x2705;|&#10060;
 IDPrime 3930 FIDO|ca4cff1b-5a81-4404-8194-59aabcf1660b|&#10060;|&#10060;|&#x2705;|&#10060;
 IDPrime 3940 FIDO|b50d5e0a-7f81-4959-9b12-f45407407503|&#10060;|&#10060;|&#x2705;|&#10060;
 IDPrime 931 Fido|2194b428-9397-4046-8f39-007a1605a482|&#10060;|&#10060;|&#x2705;|&#10060;
