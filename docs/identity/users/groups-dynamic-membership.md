@@ -134,7 +134,7 @@ You can use the following user properties to create a single expression.
 | `jobTitle` |Any string value or `null` | ```user.jobTitle -eq "value"``` |
 | `mail` |Any string value or `null` (SMTP address of the user) | ```user.mail -eq "value"```<br><br>```user.mail -notEndsWith "@Contoso.com"``` |
 | `mailNickName` |Any string value (mail alias of the user) | ```user.mailNickName -eq "value"```<br><br>```user.mailNickname -endsWith "-vendor"``` |
-| `memberOf` | Any string value (valid group object ID) | ```user.memberOf -any (group.objectId -in ['value'])``` |
+| `memberOf` | Array of Strings (Group Object GUID) | ```user.memberOf -any (group.objectId -in ['value'])``` |
 | `mobile` |Any string value or `null` | ```user.mobile -eq "value"```|
 | `objectId` |GUID of the user object | ```user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"```|
 | `onPremisesDistinguishedName` | Any string value or `null` | ```user.onPremisesDistinguishedName -eq "value"```|
@@ -314,11 +314,21 @@ You can use the following operators to apply a condition to one or all of the it
 
 ##### Example 1
 
-`assignedPlans` is a multi-value property that lists all service plans assigned to the user. The following expression selects users who have the Exchange Online (Plan 2) service plan (as a GUID value) that's also in an `Enabled` state:
+`assignedPlans` is a multi-value property that lists all service plans assigned to the user. Note that the service plans are NOT the same as the licenses or products. A list of service plans can be (found here)[https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference]. A better list of service plans can be obtained for a given user, using the Graph Powershell utility, with scope Organization.ReadAll. This will populate Service Plan ID's that can be used. Note there is a great deal of mismatch between the various names retrieved by Graph and in the above spreadsheet - the actual service any particular ID corresponds to may be completely different from how it is labeled. It may be practical  to pull two users with different licenses, to compare and find a suitable ID to target - depending on your query.
+
+```
+Get-MgUser -UserId user@domain.com -Property assignedPlans |
+  Select-Object -ExpandProperty assignedPlans |
+  Select-Object service, servicePlanId, capabilityStatus | fl
+```
+
+The following expression selects users who have this particular Exchange Online (Plan 2) service plan (as a GUID value) that's also in an `Enabled` state:
 
 ```
 user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled")
 ```
+
+**Note that the assignedPlan.capabilityStatus parameter IS required for the query to work.**
 
 You can use a rule like this one to group all users for whom a Microsoft 365 or other Microsoft Online Services capability is enabled. You could then apply the rule with a set of policies to the group.
 
@@ -439,7 +449,7 @@ For more information, see [Use the attributes in dynamic membership groups](~/id
 
 ## Rules for devices
 
-You can create a rule that selects device objects for membership in a group. You can't have both users and devices as group members.
+You can create a rule that selects device objects for membership in a group. You can't have both users and devices as group members. If you use Intune, it is recommended to use Device Filters when possible, as these are more stable and efficient, and work off existing groups. See (Assignment Filters)[https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/filters]
 
 > [!NOTE]
 > The `organizationalUnit` attribute is no longer listed, and you shouldn't use it. Intune sets this string in specific cases, but Microsoft Entra ID doesn't recognize it. No devices are added to groups based on this attribute.
