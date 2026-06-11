@@ -1,7 +1,6 @@
 ---
 title: Configure ADP EMEA French HR Portal mon.adp.com for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ADP EMEA French HR Portal mon.adp.com.
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange

@@ -2,7 +2,6 @@
 title: Configure Lexmark Cloud Services (OIDC) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Lexmark Cloud Services (OIDC).
 services: active-directory
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 10/03/2025

@@ -2,7 +2,6 @@
 title: Configure Second Nature AI for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Second Nature AI.
 services: active-directory
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/08/2024

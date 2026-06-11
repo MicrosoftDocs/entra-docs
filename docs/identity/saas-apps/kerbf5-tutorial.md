@@ -1,7 +1,6 @@
 ---
 title: Configure F5 Kerberos Constrained Delegation for a Single-Tier SaaS App
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and F5.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange

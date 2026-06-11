@@ -2,7 +2,6 @@
 title: Configure Alcumus Info Exchange for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Alcumus Info Exchange.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alcumus Info Exchange so that I can control who has access to Alcumus Info Exchange, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
