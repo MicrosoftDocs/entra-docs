@@ -175,7 +175,7 @@ In Graph Explorer, run the following request.
 - Replace `{authenticationeventsAPI_AppId}` with the **appId** you recorded earlier.
 - Replace `{authenticationeventsAPI_ObjectId}` with the **id** you recorded earlier.
 
-An example `identifierUris` value is `api://contoso-recovery-claims.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`. Take note of this value as you use it later in this article in place of `{functionApp_IdentifierUri}`.
+An example `identifierUris` value is `api://contoso-recovery-claims.azurewebsites.net/aaaabbbb-0000-cccc-1111-dddd2222eeee`. Take note of this value as you use it later in this article in place of `{functionApp_IdentifierUri}`.
 
 ```http
 PATCH https://graph.microsoft.com/v1.0/applications/{authenticationeventsAPI_ObjectId}
