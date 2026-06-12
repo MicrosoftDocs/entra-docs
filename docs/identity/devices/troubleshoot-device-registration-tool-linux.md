@@ -51,7 +51,7 @@ sudo yum install microsoft-identity-broker
 ---
 
 > [!NOTE]
->  Once you install the `microsoft-identity-broker`, the dsregcmd tool is available system-wide.
+>  Once you install the `microsoft-identity-broker`, the dsreg tool is available system-wide.
 
 ```bash
 dsreg --help
