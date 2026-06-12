@@ -165,7 +165,7 @@ In this example, you create a customization to the claims that adds the `Employe
 
 ### Use a claims transformation in tokens
 
-In this example, you update a policy to emit a custom claim "JoinedData" to JWTs issued to linked service principals. This claim contains a value created by joining the data stored in the extensionattribute1 attribute on the user object with "-ext". In this example, we exclude the basic claims set in the tokens.
+In this example, you update a policy to emit a custom claim "JoinedData" to JWTs issued to linked service principals. This claim contains a value created by joining the data stored in the extensionattribute1 attribute on the user object with "-ext".
 1.	In Microsoft Graph Explorer, identify the application you want to configure the custom claims policy for using the [service principal API](/graph/api/resources/serviceprincipal).
 1.	Create the custom claims policy by running the following API. This policy emits a custom claim `JoinedData` to tokens.
     ```http
