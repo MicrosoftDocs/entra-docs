@@ -44,13 +44,14 @@ Microsoft ingests the latest version of the FIDO Alliance MDS every month. There
 
 ## FIDO2 security keys eligible for attestation with Microsoft Entra ID
 
-The following table includes each FIDO2 security key model listed in MDS version 251 that's eligible for attestation with Microsoft Entra ID. For each model, the table shows its Authenticator Attestation Globally Unique Identifier (AAGUID) and feature capabilities. 
+The following table includes each FIDO2 security key model listed in MDS version 258 that's eligible for attestation with Microsoft Entra ID. For each model, the table shows its Authenticator Attestation Globally Unique Identifier (AAGUID) and feature capabilities. 
 
 Description|AAGUID|Bio|USB|NFC|BLE
 -----------|------|---------|-----|----|------
 ACS FIDO Authenticator|50a45b0c-80e7-f944-bf29-f552bfa2e048|&#10060;|&#x2705;|&#10060;|&#10060;
 ACS FIDO Authenticator Card|973446ca-e21c-9a9b-99f5-9b985a67af0f|&#10060;|&#10060;|&#x2705;|&#10060;
 ACS FIDO Authenticator NFC|c89e6a38-6c00-5426-5aa5-c9cbf48f0382|&#10060;|&#x2705;|&#x2705;|&#10060;
+ACS PocketKey+ Bio|cb4f796c-a20a-af9e-d639-213c1ec247f3|&#x2705;|&#x2705;|&#x2705;|&#10060;
 Allthenticator Android App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers|5ca1ab1e-fa57-1337-f1d0-a117371ca702|&#x2705;|&#x2705;|&#10060;|&#10060;
 Allthenticator iOS App: roaming BLE FIDO2 Allthenticator for Windows, Mac, Linux, and Allthenticate door readers|5ca1ab1e-1337-fa57-f1d0-a117e71ca702|&#x2705;|&#x2705;|&#10060;|&#10060;
 Arculus FIDO 2.1 Key Card [P71]|3f59672f-20aa-4afe-b6f4-7e5e916b6d98|&#10060;|&#10060;|&#x2705;|&#10060;
@@ -113,9 +114,11 @@ FT-JCOS FIDO Fingerprint Card|8c97a730-3f7b-41a6-87d6-1e9b62bda6f0|&#10060;|&#10
 G+D StarKey FIDO2-NFC|7a53c643-9dec-4219-b3a4-f9d24aca4e12|&#10060;|&#x2705;|&#x2705;|&#10060;
 GoldKey Security Token|0db01cd6-5618-455b-bb46-1ec203d3213e|&#10060;|&#x2705;|&#x2705;|&#10060;
 Google Titan Security Key v2|42b4fb4a-2866-43b2-9bf7-6c6669c2e5d3|&#10060;|&#x2705;|&#x2705;|&#10060;
+GoTrust Cyber Key|6d4aa745-dad5-40c4-b9b4-6a252fcee70f|&#10060;|&#x2705;|&#x2705;|&#10060;
 GoTrust Idem Card|9f0d8150-baa5-4c00-9299-ad62c8bb4e87|&#10060;|&#10060;|&#10060;|&#10060;
 GoTrust Idem Key|3b1adb99-0dfe-46fd-90b8-7f7614a4de2a|&#10060;|&#x2705;|&#x2705;|&#10060;
 GoTrust Idem Key|c611b55c-77b2-4527-8082-590e931b2f08|&#10060;|&#x2705;|&#x2705;|&#10060;
+GoTrust Idem Key mini|72a2b5b1-95a5-4df9-a881-4192aff4f72e|&#10060;|&#x2705;|&#10060;|&#10060;
 GSTAG OAK FIDO2 Authenticator|773c30d9-5919-4e96-a4f5-db65e95cf890|&#10060;|&#10060;|&#x2705;|&#10060;
 HID Crescendo 4000|0b8b05a4-ebd4-4b0b-8f5f-33d7b6e606ab|&#10060;|&#10060;|&#x2705;|&#10060;
 HID Crescendo 4000|2a55aee6-27cb-42c0-bc6e-04efe999e88a|&#10060;|&#10060;|&#x2705;|&#10060;
@@ -167,6 +170,7 @@ Nitrokey 3 AM|2cd2f727-f6ca-44da-8f48-5c2e5da000a2|&#10060;|&#x2705;|&#10060;|&#
 NXP Semiconductros FIDO2 Conformance Testing CTAP2 Authenticator|07a9f89c-6407-4594-9d56-621d5f1e358b|&#10060;|&#10060;|&#10060;|&#10060;
 Nymi FIDO2 Authenticator|0acf3011-bc60-f375-fb53-6f05f43154e0|&#x2705;|&#10060;|&#x2705;|&#10060;
 OCTATCO EzFinger2 FIDO2 AUTHENTICATOR|a1f52be5-dfab-4364-b51c-2bd496b14a56|&#x2705;|&#10060;|&#10060;|&#10060;
+OneKey FIDO2 Bluetooth Authenticator|70e7c36f-f2f6-9e0d-07a6-bcc243262e6b|&#10060;|&#x2705;|&#10060;|&#x2705;
 OneSpan DIGIPASS FX1 BIO|30b5035e-d297-4ff1-b00b-addc96ba6a98|&#x2705;|&#x2705;|&#10060;|&#x2705;
 OneSpan DIGIPASS FX1-C|30b5035e-d297-4ff1-020b-addc96ba6a98|&#10060;|&#x2705;|&#x2705;|&#10060;
 OneSpan DIGIPASS FX1a|30b5035e-d297-4ff1-010b-addc96ba6a98|&#x2705;|&#x2705;|&#x2705;|&#10060;
@@ -236,6 +240,7 @@ VeridiumID Passkey iOS SDK|1e906e14-77af-46bc-ae9f-fe6ef18257e4|&#x2705;|&#10060
 VeriMark Guard Fingerprint Key|d94a29d9-52dd-4247-9c2d-8b818b610389|&#x2705;|&#10060;|&#10060;|&#10060;
 VeriMark NFC+ USB-A Security Key|76692dc1-c56a-48d9-8e7d-31b5ced430ac|&#10060;|&#x2705;|&#x2705;|&#10060;
 VeriMark NFC+ USB-C Security Key|ee7fa1e0-9539-432f-bd43-9c2fc6d4f311|&#10060;|&#x2705;|&#x2705;|&#10060;
+VeriMark(TM) Guard 2.1 Fingerprint Security Key|09619fbf-d75e-4a62-be1d-fe4d240864ae|&#x2705;|&#x2705;|&#10060;|&#10060;
 VeroCard FIDO2 Authenticator|99ed6c29-4573-4847-816d-78ad8f1c75ef|&#10060;|&#10060;|&#10060;|&#x2705;
 VinCSS FIDO2 Authenticator|5fdb81b8-53f0-4967-a881-f5ec26fe4d18|&#10060;|&#10060;|&#10060;|&#10060;
 VinCSS FIDO2 Fingerprint|9012593f-43e4-4461-a97a-d92777b55d74|&#x2705;|&#x2705;|&#x2705;|&#x2705;
