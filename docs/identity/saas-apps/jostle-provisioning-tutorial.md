@@ -142,22 +142,22 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |UserType|String||
    |BirthDate|String||
    |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomBadge|String||
-   |AttributePathCustomFilterCategory|String||
-   |AttributePathCustomProfile|String||
-   |AttributePathJoinDate|String||
-   |AttributePathLocations|String||
-   |AttributePathLoginType|String||
-   |AttributePathPersonalPronouns|String||
-   |AttributePathAddress1Country|String||
-   |AttributePathAddress1Locality|String||
-   |AttributePathAddress1PostalCode|String||
-   |AttributePathAddress1StreetAddress|String||
-   |AttributePathAddress1Region|String||
-   |AttributePathAddress2Country|String||
-   |AttributePathAddress2Locality|String||
-   |AttributePathAddress2PostalCode|String||
-   |AttributePathAddress2StreetAddress|String||
-   |AttributePathAddress2Region|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomFilterCategory|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomProfile|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:JoinDate|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Locations|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:LoginType|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:PersonalPronouns|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Country|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Locality|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1PostalCode|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1StreetAddress|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Region|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Country|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Locality|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2PostalCode|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2StreetAddress|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Region|String||
    |phoneNumbers[type eq "workofficephone"].value|String||
    |phoneNumbers[type eq "homephone"].value|String||
    |phoneNumbers[type eq "workmobilephone"].value|String||
