@@ -111,8 +111,5 @@ Email authentication records must be configured in DNS based on how your organiz
 - [Add a custom domain to Microsoft 365](/microsoft-365/admin/setup/add-domain)
 - [Set up email authentication (SPF, DKIM, DMARC)](/defender-office-365/email-authentication-about)
 - [Limiting onmicrosoft domain usage for sending emails](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4292065)
-
-## Next steps
-
 - [B2B collaboration invitation redemption](redemption-experience.md)
 
