@@ -3,7 +3,7 @@ title: Authorization in Microsoft Entra Agent ID
 description: Learn about how authorization in Microsoft Entra Agent ID works for AI agents.
 author: rolyon
 ms.author: rolyon
-ms.date: 04/28/2026
+ms.date: 06/12/2026
 ms.topic: concept-article
 #customer intent: As a developer or IT administrator, I want to understand authorization controls for agent IDs so that I can properly configure roles and permissions while maintaining security boundaries for AI agents in my organization.
 ---
@@ -32,7 +32,7 @@ Microsoft has created the Agent ID Administrator and Agent ID Developer roles fo
 
 ## Microsoft Entra roles allowed for agents
 
-The following is the list of Microsoft Entra roles that can be assigned to agent identities:
+The following is the list of [Microsoft Entra roles](../identity/role-based-access-control/permissions-reference.md) that can be assigned to agent identities:
 
 - AI Administrator
 - Attack Payload Author
@@ -54,7 +54,7 @@ The following is the list of Microsoft Entra roles that can be assigned to agent
 - Directory Synchronization Accounts
 - Dynamics 365 Administrator
 - Dynamics 365 Business Central Administrator
-- Microsoft Edge Administrator
+- Edge Administrator
 - Exchange Administrator
 - Exchange Recipient Administrator
 - Extended Directory User Administrator
@@ -90,9 +90,13 @@ The following is the list of Microsoft Entra roles that can be assigned to agent
 - Power Platform Administrator
 - Printer Administrator
 - Printer Technician
+- Purview Workload Content Administrator
+- Purview Workload Content Reader
+- Purview Workload Content Writer
 - Reports Reader
 - Search Administrator
 - Search Editor
+- Security Reader
 - Service Support Administrator
 - SharePoint Administrator
 - SharePoint Embedded Administrator
