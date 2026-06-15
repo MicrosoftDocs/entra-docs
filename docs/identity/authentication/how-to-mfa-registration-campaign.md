@@ -352,7 +352,13 @@ The nudge doesn't trigger if the user is already signed in with SSO.
 
 #### Can users be nudged on a mobile device?
 
-The registration campaign isn't available on mobile devices.
+It depends on the registration campaign:
+
+- Microsoft Authenticator registration campaigns aren't supported on mobile devices.
+- Passkey registration campaigns are supported on mobile devices, including:
+
+    - Browser-based experiences on mobile devices.
+    - Native iOS mobile apps. Native Android mobile app support isn't currently available.
 
 #### How long does the campaign run?
 
@@ -400,7 +406,7 @@ No. The nudge works only for users who are doing MFA by using Microsoft Entra MF
 
 #### Are Guest/B2B users in my tenant nudged?
 
-Yes, if they're included in the registration campaign policy.
+They're nudged if they're included in a registration campaign for Authenticator. They're not nudged if they're included in a registration campaign for passkeys because passkey support for guest users isn't currently available.
 
 #### What if the user closes the browser?
 

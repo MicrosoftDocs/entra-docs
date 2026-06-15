@@ -1,11 +1,11 @@
 ---
-title: Enable Combined Security Information Registration
+title: Combined Security Information Registration
 description: Learn how to simplify the user experience with combined Microsoft Entra multifactor authentication and self-service password reset registration.
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.reviewer: tilarso
 ---
-# Enable combined security information registration in Microsoft Entra ID
+# Combined security information registration in Microsoft Entra ID
 
 Before combined registration was introduced, users registered authentication methods for Microsoft Entra multifactor authentication (MFA) and self-service password reset (SSPR) separately. Users were confused that similar methods were used for Microsoft Entra MFA and SSPR, but they had to register for both features. Now, with combined registration, users can register once and get the benefits of both Microsoft Entra MFA and SSPR.
 
