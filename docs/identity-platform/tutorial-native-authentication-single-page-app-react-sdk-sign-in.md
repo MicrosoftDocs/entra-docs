@@ -2,9 +2,7 @@
 title: Sign in users in React SPA by using native authentication JavaScript SDK
 description: Learn how to build a React single-page app that signs in users in a React single-page app into an external tenant by using native authentication JavaScript SDK.
 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

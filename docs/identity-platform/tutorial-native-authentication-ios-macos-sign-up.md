@@ -2,10 +2,8 @@
 title: Add sign-up in native iOS/macOS app
 description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an iOS/macOS mobile app using native authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external

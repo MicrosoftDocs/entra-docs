@@ -1,10 +1,8 @@
 ---
 title: Add custom headers to native authentication network requests in iOS (Swift)
 description: Learn how to attach custom x-* headers to native authentication network requests in an iOS (Swift) app to integrate fraud-detection SDKs with Microsoft Entra External ID.
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external

@@ -2,10 +2,8 @@
 title: Add SMS strong authentication method registration to an Android app using native authentication
 description: Learn how to register an SMS one-time passcode as a strong authentication method for MFA-enabled users in an Android app using Microsoft Entra native authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

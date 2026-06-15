@@ -2,10 +2,8 @@
 title: Sign in user automatically after sign-up in Android by using native authentication
 description: Learn how to automatically sign-in a user after sign-up in an Android app by using native authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external

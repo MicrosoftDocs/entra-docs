@@ -2,10 +2,8 @@
 title: Add SMS one-time passcode MFA to an Android app using native authentication
 description: Learn how to add multifactor authentication (MFA) with SMS one-time passcodes to an Android app using Microsoft Entra native authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

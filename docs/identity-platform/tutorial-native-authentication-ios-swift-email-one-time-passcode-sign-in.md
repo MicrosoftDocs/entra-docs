@@ -1,10 +1,8 @@
 ---
 title: Add email one-time passcode MFA to your iOS/macOS app by using native authentication
 description: Learn how to add email one-time passcode (OTP) multifactor authentication (MFA) to an iOS or macOS app by using native authentication and enforce MFA with authentication context.
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
