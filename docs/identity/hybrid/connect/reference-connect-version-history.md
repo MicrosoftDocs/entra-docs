@@ -106,7 +106,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|
 |[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|
 |[2.6.3.0](#2630)|15 Jun 2027 (12 months after release of 2.6.77.0)|
-|[2.6.77.0](#26760)||
+|[2.6.77.0](#26770)||
 
 **All other versions are not supported**
 
