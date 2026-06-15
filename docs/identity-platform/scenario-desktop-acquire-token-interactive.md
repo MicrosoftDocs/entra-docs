@@ -1,9 +1,7 @@
 ---
 title: Acquire a token to call a web API interactively (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app interactively.
-author: Dickson-Mwendia
 manager: dougeby
-ms.author: dmwendia
 ms.date: 01/15/2024
 ms.service: identity-platform
 ms.subservice: workforce

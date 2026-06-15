@@ -8,7 +8,6 @@ ms.date: 03/16/2026
 ms.reviewer: vincesm
 ms.custom: it-pro
 
-
 ---
 
 # Use Microsoft Entra groups to manage role assignments

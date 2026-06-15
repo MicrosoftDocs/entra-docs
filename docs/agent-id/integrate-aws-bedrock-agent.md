@@ -5,8 +5,6 @@ description: Learn how to use the Microsoft Entra Auth SDK (sidecar) to secure a
 ms.service: entra
 ms.topic: how-to
 ms.date: 04/30/2026
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.reviewer: razi.rais
 ms.custom: agent-id, msecd-doc-authoring-1012
 

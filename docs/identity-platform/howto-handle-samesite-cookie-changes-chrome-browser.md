@@ -1,9 +1,7 @@
 ---
 title: How to handle SameSite cookie changes in Chrome browser
 description: Learn how to handle SameSite cookie changes in Chrome browser.
-author: henrymbuguakiarie
 manager: pmwongera
-ms.author: henrymbugua
 ms.custom:
 ms.date: 02/09/2024
 ms.reviewer: jmprieur

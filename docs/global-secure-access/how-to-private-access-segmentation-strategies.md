@@ -3,8 +3,6 @@ title: Private Access segmentation strategies for Global Secure Access
 description: Learn best practices for transitioning from VPN replacement with Quick Access to per-application segmentation using Microsoft Entra Private Access.
 ms.topic: how-to
 ms.date: 03/17/2026
-ms.author: jfields
-author: jenniferf-skc
 ms.reviewer: katabish
 ms.service: global-secure-access
 ai-usage: ai-assisted

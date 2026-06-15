@@ -6,7 +6,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 05/06/2024
 ms.custom: sfi-image-nochange
----
+--- 
 
 # Configure Zscaler for Single sign-on with Microsoft Entra ID
 

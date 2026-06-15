@@ -2,8 +2,6 @@
 title: Best practices for Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Learn operational best practices for designing, securing, and governing AI agent identities with Microsoft Entra Agent ID, including blueprint design, credential management, access controls, and monitoring strategies.
-author: omondiatieno
-ms.author: jomondi
 ms.date: 03/27/2026
 ms.service: entra-id
 ms.topic: best-practice

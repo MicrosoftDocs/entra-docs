@@ -3,7 +3,6 @@ title: App support for SMS-based authentication in Microsoft Entra ID
 description: Learn which apps are supported for users to sign in to Microsoft Entra ID using SMS
 ms.topic: reference
 ms.date: 03/04/2025
-author: aanjusingh
 ms.reviewer: anjusingh
 ---
 

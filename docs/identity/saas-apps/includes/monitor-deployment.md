@@ -1,11 +1,9 @@
 ---
-author: omondiatieno
-ms.author: jomondi
 ms.date: 02/24/2025
 ms.topic: include
 # Purpose:
 # This is used to include the content for monitoring deployment of an application in SaaS apps provisioning articles
----
+--- 
 
 Once you configure provisioning, use the following resources to monitor your deployment:
 

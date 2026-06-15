@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 04/10/2024
-ms.author: kengaderdus
 ---
 1. From the **App registrations** page, select the application that you created (such as *ciam-client-app*) to open its **Overview** page.
  

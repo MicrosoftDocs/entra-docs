@@ -1,12 +1,10 @@
 ---
 title: Troubleshoot prompt injection protection
 description: Reduce risk from malicious or manipulated prompts sent to generative AI sites and apps with prompt injection protection policies in Global Secure Access.
-author: jricketts
-ms.author: jricketts
 ms.topic: troubleshooting
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
-ms.reviewer: KaTabish
+ms.reviewer: KaTabish, jricketts
 ms.date: 04/21/2026
 
 #customer intent: As an IT admin, I want to validate tenant and device prerequisites and troubleshoot configuration issues with prompt injection protection policies in Global Secure Access so that I can reduce risk from malicious or manipulated prompts sent to generative AI sites and apps.

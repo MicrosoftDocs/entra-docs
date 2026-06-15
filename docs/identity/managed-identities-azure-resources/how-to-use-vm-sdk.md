@@ -4,7 +4,6 @@ description: Code samples for using Azure SDKs with an Azure VM that has managed
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 05/23/2023
-
 ---
 
 # How to use managed identities for Azure resources on an Azure VM with Azure SDKs 

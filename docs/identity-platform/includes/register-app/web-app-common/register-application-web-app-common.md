@@ -1,8 +1,6 @@
 ---
 title: "Include file - Register a web application in the Microsoft identity platform"
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.custom: sfi-image-nochange
 ms.date: 01/18/2024
 ms.reviewer: 

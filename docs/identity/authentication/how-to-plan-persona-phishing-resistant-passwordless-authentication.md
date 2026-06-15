@@ -3,9 +3,7 @@ title: Considerations for specific personas in a phishing-resistant passwordless
 description: Persona-specific guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 10/30/2025
-ms.author: sipower
-author: sipower
-ms.reviewer: justinha
+ms.reviewer: sipower
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID

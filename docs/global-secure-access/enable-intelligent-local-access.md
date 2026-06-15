@@ -3,8 +3,6 @@ title: Enable Intelligent Local Network
 description: Learn how to enable the Intelligent Local Access (ILA) capability for Microsoft Entra Private Access, which optimizes traffic flow for clients accessing Entra apps via private networks.
 ms.topic: how-to
 ms.date: 11/07/2025
-ms.author: jfields
-author: jenniferf-skc
 ms.reviewer: dhruvinshah
 ai-usage: ai-assisted
 

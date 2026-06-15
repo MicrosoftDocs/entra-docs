@@ -1,8 +1,6 @@
 ---
 title: Plan your migration from Azure AD B2C to External ID
 description: Choose between the standard migration approach and High Scale Compatibility (HSC) mode when moving from Azure AD B2C to Microsoft Entra External ID.
-author: garrodonnell
-ms.author: godonnell
 ms.topic: concept-article
 ms.date: 03/13/2026
 ai-usage: ai-assisted

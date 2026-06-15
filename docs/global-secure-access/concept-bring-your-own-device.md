@@ -1,8 +1,6 @@
 ---
 title: Learn about bring your own device (BYOD) with the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access
 description: Learn about bring your own device (BYOD) with the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access.
-author: kenwith    
-ms.author: kenwith
 manager: dougeby
 ms.topic: concept-article
 ms.date: 03/12/2026

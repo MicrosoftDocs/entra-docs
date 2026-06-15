@@ -1,7 +1,6 @@
 ---
 title: Disable user sign-in for application
 description: Learn how to prevent users from signing in to an application in Microsoft Entra ID and prevent tokens from being issued.
-
 ms.topic: how-to
 ms.date: 03/03/2025
 ms.reviewer: ergreenl

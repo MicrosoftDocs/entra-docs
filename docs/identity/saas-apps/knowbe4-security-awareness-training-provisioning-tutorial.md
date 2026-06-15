@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 04/13/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to KnowBe4 Security Awareness Training so that I can streamline the user management process and ensure that users have the appropriate access to KnowBe4 Security Awareness Training.
----
+--- 
 
 # Configure KnowBe4 Security Awareness Training for automatic user provisioning with Microsoft Entra ID
 

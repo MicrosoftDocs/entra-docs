@@ -5,8 +5,6 @@ ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 04/22/2026
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Assign the AI Reader role to users who need to do the following tasks:

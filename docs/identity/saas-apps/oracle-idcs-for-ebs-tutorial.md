@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Oracle IDCS for E-Business Suite so that I can control who has access to Oracle IDCS for E-Business Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Oracle IDCS for E-Business Suite for Single sign-on with Microsoft Entra ID
 

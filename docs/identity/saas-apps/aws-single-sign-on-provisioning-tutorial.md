@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 05/26/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AWS IAM Identity Center so that I can streamline the user management process and ensure that users have the appropriate access to AWS IAM Identity Center.
----
+--- 
 
 # Configure AWS IAM Identity Center (successor to AWS single sign-on) for automatic user provisioning with Microsoft Entra ID
 

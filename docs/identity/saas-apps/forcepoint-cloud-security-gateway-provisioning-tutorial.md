@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/07/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Forcepoint Cloud Security Gateway - User Authentication so that I can streamline the user management process and ensure that users have the appropriate access to Forcepoint Cloud Security Gateway - User Authentication.
----
+--- 
 
 # Configure Forcepoint Cloud Security Gateway - User Authentication for automatic user provisioning with Microsoft Entra ID
 

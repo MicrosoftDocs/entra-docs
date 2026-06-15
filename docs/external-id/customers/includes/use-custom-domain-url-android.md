@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 06/27/2024
-ms.author: kengaderdus
 ---
 
 ### Use custom URL domain (Optional)

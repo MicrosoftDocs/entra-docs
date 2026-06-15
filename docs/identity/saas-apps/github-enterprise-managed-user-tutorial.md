@@ -4,7 +4,7 @@ description: Learn how to configure SAML single sign-on between Microsoft Entra 
 ms.topic: how-to
 ms.date: 05/22/2024
 # Customer intent: As an IT administrator, I want to learn how to configure SAML single sign-on between Microsoft Entra ID and a GitHub enterprise with Enterprise Managed Users so that I can control who has access to the type of GitHub enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure a GitHub enterprise with Enterprise Managed Users for SAML Single sign-on with Microsoft Entra ID
 

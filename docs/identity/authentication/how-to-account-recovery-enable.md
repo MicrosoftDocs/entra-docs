@@ -1,8 +1,7 @@
 ---
 title: Enable and configure account recovery in Microsoft Entra ID
 description: Configure account recovery in Microsoft Entra ID so users can regain access through identity verification. Learn how to set up profiles and providers.
-author: tilarso
-ms.author: tilarso
+ms.reviewer: tilarso
 ms.service: entra-id
 ms.topic: how-to
 ms.custom: msecd-doc-authoring-108, msecd-doc-authoring-1012

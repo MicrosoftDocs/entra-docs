@@ -1,8 +1,6 @@
 ---
 title: Create a custom authentication extension for account recovery claim validation
 description: Learn how to set up a custom authentication extension that validates Verified ID claims during Microsoft Entra account recovery using an Azure Function and REST API.
-author: justinha
-ms.author: justinha
 ms.date: 04/22/2026
 ms.reviewer: rohulati
 ms.service: identity-platform

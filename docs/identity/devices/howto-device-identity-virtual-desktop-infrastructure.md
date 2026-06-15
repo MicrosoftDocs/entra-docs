@@ -4,7 +4,6 @@ description: Learn how VDI and Microsoft Entra device identities can be used tog
 
 ms.topic: concept-article
 ms.date: 03/04/2026
-
 ms.reviewer: sandeo
 ---
 # Device identity and desktop virtualization

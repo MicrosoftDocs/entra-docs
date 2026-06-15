@@ -4,8 +4,9 @@ description: Use Microsoft Entra ID to meet NIST authenticator assurance levels.
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: gasinh
 manager: martinco
 ms.date: 11/23/2022
 ms.custom: it-pro

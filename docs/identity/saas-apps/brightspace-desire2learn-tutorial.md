@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 05/26/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brightspace by Desire2Learn so that I can control who has access to Brightspace by Desire2Learn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Brightspace by Desire2Learn for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Brightspace by Desire2Learn with Microsoft Entra ID. When you integrate Brightspace by Desire2Learn with Microsoft Entra ID, you can:

@@ -2,10 +2,10 @@
 title: Configure AWS Single-Account Access for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access.
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 06/15/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access so that I can control who has access to AWS Single-Account Access, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure AWS Single-Account Access for Single sign-on with Microsoft Entra ID
 
@@ -119,7 +119,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Screenshot showing Edit Basic SAML Configuration.](common/edit-urls.png)
 
-1. In the **Basic SAML Configuration** section, update both **Identifier (Entity ID)** and **Reply URL** with the same default value: `https://signin.aws.amazon.com/saml`. You must select **Save** to save the configuration changes.
+1. In the **Basic SAML Configuration** section, update both **Identifier (Entity ID)** and **Reply URL** with correct values. You must select **Save** to save the configuration changes.
+
+> [!Note]
+> If configuring multiple instances of the AWS applications, do not append suffixes such as **#1** or **#2** to the **Reply URL** value. Consult AWS documentation for the correct **Reply URL** value. 
 
 1. AWS application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

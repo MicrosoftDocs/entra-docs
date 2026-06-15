@@ -3,7 +3,6 @@ title: Find and address gaps in strong authentication coverage for your administ
 description: Learn how to find and address gaps in strong authentication coverage for your administrators in Microsoft Entra ID
 ms.topic: how-to
 ms.date: 03/04/2025
-author: inbarckMS
 ms.reviewer: inbarc
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---

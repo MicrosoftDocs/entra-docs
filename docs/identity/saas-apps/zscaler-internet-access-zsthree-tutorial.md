@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 04/10/2024
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSThree so that I can control who has access to Zscaler Internet Access ZSThree, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Zscaler Internet Access ZSThree for Single sign-on with Microsoft Entra ID
 

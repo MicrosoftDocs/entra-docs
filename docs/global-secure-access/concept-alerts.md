@@ -1,8 +1,6 @@
 ---
 title: Learn about Global Secure Access Alerts
 description: "Learn how Global Secure Access alerts notify you about security issues and operational concerns, helping to strengthen your organization's security posture."
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: overview
 ms.date: 12/08/2025
 ms.reviewer: kerenSemel

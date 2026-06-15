@@ -1,9 +1,7 @@
 ---
 title: Pass custom state in authentication requests (MSAL.js)
 description: Learn how to pass a custom state parameter value in authentication request using the Microsoft Authentication Library for JavaScript (MSAL.js).
-author: Dickson-Mwendia
 manager: dougeby
-ms.author: dmwendia
 ms.date: 01/09/2026
 ms.reviewer: jo.arroyo
 ms.service: identity-platform

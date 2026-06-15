@@ -1,9 +1,7 @@
 ---
 title: How to configure daemon apps that call web APIs
 description: Learn how to configure the code for your daemon application that calls web APIs (app configuration)
-author: Dickson-Mwendia
 manager: dougeby
-ms.author: dmwendia
 ms.date: 03/25/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform

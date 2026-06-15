@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/11/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Insite LMS so that I can streamline the user management process and ensure that users have the appropriate access to Insite LMS.
----
+--- 
 
 # Configure Insite LMS for automatic user provisioning with Microsoft Entra ID
 

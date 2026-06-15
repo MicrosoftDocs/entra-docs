@@ -4,8 +4,7 @@ description: Learn how to configure a Microsoft Intune app management policy for
 ms.topic: how-to
 ms.date: 04/22/2026
 ms.subservice: entra-internet-access
-ms.author: alexpav
-author: idmdev
+ms.reviewer: alexpav
 ---
 
 # Configure Microsoft Edge with Explicit Forward Proxy (preview) by using an Intune application management policy

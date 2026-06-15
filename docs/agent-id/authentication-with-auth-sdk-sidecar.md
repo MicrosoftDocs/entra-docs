@@ -2,8 +2,6 @@
 title: Authentication with Microsoft Entra Auth SDK (sidecar)
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how Microsoft Entra Auth SDK (sidecar) manages credentials and tokens for AI agents so that secrets never enter agent code.
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.topic: concept-article
 ms.date: 04/28/2026
 ms.custom: agent-id, msecd-doc-authoring-1012

@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Reflektive so that I can control who has access to Reflektive, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Reflektive for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Reflektive with Microsoft Entra ID.
