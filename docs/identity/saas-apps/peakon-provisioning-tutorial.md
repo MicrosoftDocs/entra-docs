@@ -2,7 +2,7 @@
 title: Configure Peakon for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Peakon .
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 06/09/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Peakon so that I can streamline the user management process and ensure that users have the appropriate access to Peakon.
 ---
@@ -16,6 +16,10 @@ The objective of this article is to demonstrate the steps to be performed in Pea
 >
 > This connector is currently in Preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
+Peakon is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites.
@@ -23,9 +27,6 @@ The scenario outlined in this article assumes that you already have the followin
 * [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Peakon tenant](https://www.workday.com/en-us/products/employee-voice/overview.html).
 * A user account in Peakon  with Admin permissions.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Assigning users to Peakon
 
