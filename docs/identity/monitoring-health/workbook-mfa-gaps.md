@@ -1,7 +1,6 @@
 ---
 title: Multifactor Authentication Gaps workbook
 description: Learn how to use the MFA Gaps workbook in Microsoft Entra ID to identify apps and users who aren't protected by MFA.
-
 ms.topic: how-to
 ms.date: 11/04/2024
 ms.reviewer: sarbar

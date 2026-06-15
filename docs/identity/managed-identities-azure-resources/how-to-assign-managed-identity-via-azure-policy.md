@@ -4,7 +4,6 @@ description: Documentation for the Azure Policy that can be used to assign manag
 ms.topic: how-to
 ms.date: 05/05/2026
 ai-usage: ai-assisted
-
 ---
 
 # Use Azure Policy to assign managed identities (preview)
