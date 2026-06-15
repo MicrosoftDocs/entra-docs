@@ -1,7 +1,6 @@
 ---
 title: 'What is inter-directory provisioning with Microsoft Entra ID?'
 description: Describes overview of identity inter-directory provisioning.
-
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid

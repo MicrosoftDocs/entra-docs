@@ -4,8 +4,6 @@ description: The Global Secure Access client helps secure network traffic at the
 #customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
 ms.topic: how-to
 ms.date: 02/21/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
 

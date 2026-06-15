@@ -1,8 +1,6 @@
 ---
 title: Device soft delete in Microsoft Entra ID (preview)
 description: Learn about device soft delete (preview) in Microsoft Entra ID, which moves deleted devices to a recoverable state instead of permanently removing them.
-author: Justinha
-ms.author: justinha
 ms.service: entra-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-108

@@ -3,7 +3,6 @@ title: Troubleshoot Conditional Access Authentication Strengths
 description: Learn how to resolve errors when you're using Microsoft Entra Conditional Access authentication strengths.
 ms.topic: troubleshooting
 ms.date: 03/04/2025
-author: inbarckms
 ms.reviewer: inbarc
 ms.custom: sfi-image-nochange
 ---

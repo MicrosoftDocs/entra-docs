@@ -3,7 +3,6 @@ title: Run a Registration Campaign to Set Up a Passkey or Microsoft Authenticato
 description: Learn how to run a registration campaign in Microsoft Entra ID to nudge users toward passkeys or Microsoft Authenticator for stronger sign-in security.
 ms.topic: how-to
 ms.date: 05/20/2026
-author: justinha
 ms.reviewer: marisanchez
 ai-usage: ai-assisted
 ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1012

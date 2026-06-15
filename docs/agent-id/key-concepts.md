@@ -2,8 +2,6 @@
 title: Fundamental concepts in Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Discover the role of agent identities in AI authentication. Understand their unique identifiers, token usage, and how they enable secure access to systems.
-author: omondiatieno
-ms.author: jomondi
 ms.reviewer: dastrock
 ms.date: 04/03/2026
 ms.topic: concept-article

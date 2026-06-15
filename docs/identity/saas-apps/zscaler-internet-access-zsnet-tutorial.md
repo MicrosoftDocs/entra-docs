@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 04/10/2024
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSNet so that I can control who has access to Zscaler Internet Access ZSNet, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Zscaler Internet Access ZSNet for Single sign-on with Microsoft Entra ID
 

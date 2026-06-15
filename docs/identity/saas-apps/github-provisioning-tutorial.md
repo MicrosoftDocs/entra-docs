@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 04/08/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub so that I can streamline the user management process and ensure that users have the appropriate access to GitHub.
----
+--- 
 # Configure GitHub for automatic user provisioning in Microsoft Entra ID
 
 The objective of this article is to show you the steps you need to perform in GitHub and Microsoft Entra ID to automate provisioning of GitHub Enterprise Cloud organization membership.

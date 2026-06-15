@@ -1,10 +1,9 @@
 ---
 title: Onboard external users to line of business applications using Microsoft Entra B2B
 description: Learn how to onboard external users to line of business applications using Microsoft Entra B2B
-author: gargi-sinha
 ms.topic: how-to
 ms.date: 08/25/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 
 ms.subservice: architecture
 ---

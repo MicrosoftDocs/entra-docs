@@ -3,8 +3,6 @@ title: Add a SAML/WS-Fed identity provider
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
 ms.topic: how-to
 ms.date: 04/08/2026
-ms.author: cmulligan
-author: csmulligan
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange, msecd-doc-authoring-1012

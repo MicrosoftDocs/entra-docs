@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and The People Experience Hub so that I can control who has access to The People Experience Hub, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure The People Experience Hub for Single sign-on with Microsoft Entra ID
 

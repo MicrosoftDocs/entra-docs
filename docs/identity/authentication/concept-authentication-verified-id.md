@@ -1,8 +1,7 @@
 ---
 title: Verified ID identity verification overview in Microsoft Entra ID
 description: Learn how Verified ID in Microsoft Entra ID uses identity verification profiles to scope users to secure identity verification flows like account recovery.
-author: tilarso
-ms.author: tilarso
+ms.reviewer: tilarso
 ms.service: entra-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-108

@@ -5,8 +5,6 @@ ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 02/24/2026
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Assign the Authentication Extensibility Password Administrator role to users who need to do the following tasks:

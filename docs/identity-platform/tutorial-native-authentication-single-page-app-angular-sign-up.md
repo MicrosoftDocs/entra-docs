@@ -2,9 +2,7 @@
 title: Sign up users into an Angular SPA by using native authentication SDK
 description: Learn how to build an Angular single-page application that uses native authentication JavaScript SDK to sign up users.
 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

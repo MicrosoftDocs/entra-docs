@@ -1,9 +1,7 @@
 ---
 title: Single sign-on SAML (Security Assertion Markup Language) protocol
 description: This article describes the single sign-on (SSO) SAML protocol in Microsoft Entra ID.
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.custom:
 ms.date: 04/08/2024
 ms.reviewer: 

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 10/01/2024
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP BTP.
----
+--- 
 
 # Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP BTP
 

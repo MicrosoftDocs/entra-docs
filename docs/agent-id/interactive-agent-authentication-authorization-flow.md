@@ -2,8 +2,8 @@
 title: Authenticate users and acquire tokens for interactive agents
 description: Learn how to authenticate users, configure authorization, and implement the On-Behalf-Of flow for interactive agents to access resources on behalf of users.
 titleSuffix: Microsoft Entra Agent ID
-author: Dickson-Mwendia
-ms.author: dmwendia
+ 
+ 
 ms.topic: how-to
 ms.date: 06/03/2026
 ms.reviewer: dastrock, jomondi

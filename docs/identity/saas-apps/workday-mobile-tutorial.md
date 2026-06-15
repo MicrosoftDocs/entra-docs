@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange
----
+--- 
 
 # Configure Workday Mobile Application for Single sign-on with Microsoft Entra ID
 

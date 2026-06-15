@@ -2,9 +2,7 @@
 title: Sign In Users in Angular SPA by Using Native Authentication JavaScript SDK
 description: Learn how to build Angular single-page app that signs in users into an external tenant by using native authentication JavaScript SDK.
 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

@@ -5,8 +5,6 @@ ms.topic: overview
 ms.date: 04/15/2026
 ms.reviewer: msft-poulomi
 ms.custom: msecd-doc-authoring-1012
-author: Justinha
-ms.author: Justinha
 ai-usage: ai-assisted
 
 # Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method so that I can improve my organization's sign-in security.

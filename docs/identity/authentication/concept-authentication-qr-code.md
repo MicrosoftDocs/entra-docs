@@ -3,7 +3,6 @@ title: QR code authentication method in Microsoft Entra ID
 description: Learn about using QR code authentication method in Microsoft Entra ID to help improve and secure sign-in events for frontline workers.
 ms.topic: concept-article
 ms.date: 07/24/2025
-author: aanjusingh
 contributors: minatoruan
 ms.reviewer: anjusingh
 

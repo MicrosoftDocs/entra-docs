@@ -1,8 +1,6 @@
 ---
 title: Troubleshoot Transport Layer Security inspection errors
 description: "Learn how to troubleshoot and resolve Transport Layer Security (TLS) inspection errors in Global Secure Access."
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: troubleshooting-known-issue
 ms.reviewer: teresayao
 ms.date: 11/07/2025

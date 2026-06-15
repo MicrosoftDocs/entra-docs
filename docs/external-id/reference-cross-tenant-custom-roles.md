@@ -1,7 +1,6 @@
 ---
 title: Custom roles for cross-tenant access settings
 description: Learn how your organization can define custom roles to manage cross-tenant access settings, allowing for precise control without relying on built-in management roles.
-
 ms.topic: reference
 ms.date: 07/07/2025
 ms.custom: it-pro

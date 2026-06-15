@@ -5,7 +5,7 @@ services: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 05/20/2025
----
+--- 
 
 # Configure TextUnited Translation for Single sign-on with Microsoft Entra ID
 

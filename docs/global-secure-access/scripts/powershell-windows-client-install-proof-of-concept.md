@@ -1,8 +1,6 @@
 ---
 title: PowerShell Sample - Install the Global Secure Access Windows Client as Proof of Concept
 description: Install the Global Secure Access Windows client as a proof of concept. This script automates installation and applies essential configurations.
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: sample
 ms.date: 11/18/2025
 ms.reviewer: JeffBley

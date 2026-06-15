@@ -1,9 +1,7 @@
 ---
 title: "Increase application security with the principle of least privilege"
 description: Learn how the principle of least privilege can help increase the security of an application and its data.
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.custom:
 ms.date: 01/06/2023
 ms.reviewer:

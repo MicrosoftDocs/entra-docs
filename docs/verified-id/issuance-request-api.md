@@ -5,7 +5,6 @@ description: Learn how to issue a verifiable credential.
 documentationCenter: ''
 ms.topic: reference
 ms.date: 01/30/2025
-
 #Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
 ---
 

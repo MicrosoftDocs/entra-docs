@@ -1,8 +1,6 @@
 ---
 title: Review suggestions from the Conditional Access Optimization Agent
 description: Learn how to review and apply suggestions provided by the Security Copilot for Microsoft Entra optimization agent.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
 ms.date: 05/12/2026
 ms.update-cycle: 180-days

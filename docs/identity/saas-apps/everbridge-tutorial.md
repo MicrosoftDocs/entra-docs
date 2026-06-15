@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 04/17/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EverBridge so that I can control who has access to EverBridge, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure EverBridge for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EverBridge with Microsoft Entra ID.

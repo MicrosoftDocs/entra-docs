@@ -1,12 +1,10 @@
 ---
 title: Compare Active Directory to Microsoft Entra ID
 description: This document compares Active Directory Domain Services (AD DS) to Microsoft Entra ID. It outlines key concepts in both identity solutions and explains how it's different or similar.
-author: martincoetzer
-manager: travisgr
 tags: azuread
 ms.topic: concept-article
 ms.date: 08/17/2022
-ms.author: martinco
+ms.reviewer: martinco
 # Customer intent: As an IT administrator, I want to compare Active Directory to Microsoft Entra ID, so that I can understand the differences and similarities between the on-premises and cloud identity and access management solutions.
 ---
 

@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FortiWeb Web Application Firewall so that I can control who has access to FortiWeb Web Application Firewall, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure FortiWeb Web Application Firewall for Single sign-on with Microsoft Entra ID
 

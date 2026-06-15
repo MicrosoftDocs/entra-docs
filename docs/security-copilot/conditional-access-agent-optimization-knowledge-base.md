@@ -2,8 +2,6 @@
 title: Conditional Access Optimization Agent knowledge base
 description: Learn how Knowledge Bases help the Conditional Access Optimization Agent create tailored policy recommendations based on your organization's unique standards.
 #customer intent: As an IT admin, I want to upload organizational Conditional Access standards to a Knowledge Base so that the Conditional Access Optimization Agent can generate recommendations aligned with my organization's policies.
-author: shlipsey3
-ms.author: sarahlipsey
 reviewer: jodahl
 ms.date: 06/10/2026
 ms.topic: how-to

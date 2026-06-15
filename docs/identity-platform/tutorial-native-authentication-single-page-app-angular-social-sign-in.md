@@ -1,9 +1,7 @@
 ---
 title: Support Social Sign-in in an Angular SPA With Native Auth JS SDK
 description: Learn how to add social sign-in with Apple, Facebook, Google and custom OIDC identity providers to your Angular SPA using native authentication JavaScript SDK.
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

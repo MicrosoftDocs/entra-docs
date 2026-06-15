@@ -1,8 +1,6 @@
 ---
 title: Microsoft Entra Conditional Access Optimization Agent
 description: Learn how the Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot can help secure your organization.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
 
 ms.date: 06/10/2026
@@ -81,6 +79,7 @@ The policy suggestions from the agent include:
 - **Risky users**: The agent suggests a policy to require secure password change for high-risk users. Requires a Microsoft Entra ID P2 license.
 - **Risky sign-ins**: The agent suggests a policy to require multifactor authentication for high-risk sign-ins. Requires a Microsoft Entra ID P2 license.
 - **Risky agents**: The agent suggests a policy to block authentication for high-risk sign-ins. Requires a Microsoft Entra ID P2 license.
+- **Agent-assisted flows (preview)**: The agent suggests a policy to block high-risk agent-assisted flows. Requires a Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 - **Deep analysis**: The agent evaluates policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout).
 - **Deep analysis MFA gap analysis**: This analysis identifies users who aren't protected by any Conditional Access policy that requires MFA or authentication strengths. The agent evaluates both enabled and report-only policies across your entire tenant to calculate how many users fall outside MFA coverage. Common causes include users excluded from policies, missing from required groups, or falling through gaps between overlapping policies. The analysis also provides a sample of impacted users, prioritized by recent sign-in activity, so you can investigate the highest-risk gaps first.

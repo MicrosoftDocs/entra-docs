@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Kisi Physical Security so that I can streamline the user management process and ensure that users have the appropriate access to Kisi Physical Security.
----
+--- 
 
 # Configure Kisi Physical Security for automatic user provisioning with Microsoft Entra ID
 
