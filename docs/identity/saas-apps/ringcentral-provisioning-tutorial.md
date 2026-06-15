@@ -3,7 +3,7 @@ title: Configure RingCentral for automatic user provisioning with Microsoft Entr
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to RingCentral.
 
 ms.topic: how-to
-ms.date: 04/20/2026
+ms.date: 06/09/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to RingCentral so that I can streamline the user management process and ensure that users have the appropriate access to RingCentral.
 ---
@@ -21,6 +21,10 @@ This article describes the steps you need to perform in both RingCentral and Mic
 > * [Single sign-on](./ringcentral-tutorial.md) to RingCentral (recommended)
 > * Code Auth Grant flow authentication supported.
 
+RingCentral is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -29,9 +33,6 @@ The scenario outlined in this article assumes that you already have the followin
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)). 
 * [A RingCentral tenant](https://www.ringcentral.com/office/plansandpricing.html)
 * A user account in RingCentral with Admin permissions.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 
 ## Step 1: Plan your provisioning deployment
