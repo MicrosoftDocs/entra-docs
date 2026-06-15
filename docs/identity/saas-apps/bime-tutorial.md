@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Bime so that I can control who has access to Bime, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Bime for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Bime with Microsoft Entra ID. When you integrate Bime with Microsoft Entra ID, you can:

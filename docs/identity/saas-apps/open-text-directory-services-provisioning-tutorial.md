@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 06/09/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to OpenText Directory Services so that I can streamline the user management process and ensure that users have the appropriate access to OpenText Directory Services.
----
+--- 
 
 # Configure OpenText Directory Services for automatic user provisioning with Microsoft Entra ID
 

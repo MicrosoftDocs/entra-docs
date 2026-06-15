@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 06/09/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Michigan Data Hub Single Sign-On so that I can control who has access to Michigan Data Hub Single Sign-On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Michigan Data Hub Single Sign-On for Single sign-on with Microsoft Entra ID
 

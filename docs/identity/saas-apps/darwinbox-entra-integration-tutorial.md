@@ -8,7 +8,7 @@ ms.custom: ai-gen-description
 ai-usage: ai-assisted
 
 #customer intent: As an IT admin, I want to integrate Darwinbox HR with Microsoft Entra ID so that I can automate user provisioning and lifecycle workflows.
----
+--- 
 
 
 # Integrate Darwinbox HR with Microsoft Entra ID

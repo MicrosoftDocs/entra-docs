@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 02/27/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BullseyeTDP so that I can streamline the user management process and ensure that users have the appropriate access to BullseyeTDP.
----
+--- 
 
 # Configure BullseyeTDP for automatic user provisioning with Microsoft Entra ID
 

@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/06/2024
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors to Active Directory.
----
+--- 
 # Configure SAP SuccessFactors to Active Directory user provisioning 
 The objective of this article is to show the steps you need to perform to provision users from SuccessFactors Employee Central into Active Directory (AD) and Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
 

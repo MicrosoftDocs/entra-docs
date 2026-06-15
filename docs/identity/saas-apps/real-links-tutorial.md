@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Real Links so that I can control who has access to Real Links, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Real Links for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Real Links with Microsoft Entra ID. When you integrate Real Links with Microsoft Entra ID, you can:

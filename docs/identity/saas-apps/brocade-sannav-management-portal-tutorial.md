@@ -6,7 +6,7 @@ ms.date: 05/20/2026
 ms.custom: sfi-image-nochange, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Management Portal so that I can control who has access to Brocade SANnav Management Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Brocade SANnav Management Portal for Single sign-on with Microsoft Entra ID
 

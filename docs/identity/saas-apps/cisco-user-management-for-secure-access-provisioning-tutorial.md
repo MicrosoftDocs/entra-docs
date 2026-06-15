@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 03/31/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cisco User Management for Secure Access so that I can streamline the user management process and ensure that users have the appropriate access to Cisco User Management for Secure Access.
----
+--- 
 
 # Configure Cisco User Management for Secure Access for automatic user provisioning with Microsoft Entra ID
 

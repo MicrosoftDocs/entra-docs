@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cofense Recipient Sync so that I can streamline the user management process and ensure that users have the appropriate access to Cofense Recipient Sync.
----
+--- 
 
 # Configure Cofense Recipient Sync for automatic user provisioning with Microsoft Entra ID
 

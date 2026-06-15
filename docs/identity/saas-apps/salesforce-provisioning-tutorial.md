@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/23/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Salesforce so that I can streamline the user management process and ensure that users have the appropriate access to Salesforce.
----
+--- 
 # Configure Salesforce for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to show the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.

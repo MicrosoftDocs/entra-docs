@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 05/06/2024
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday Writeback so that I can streamline the user management process and ensure that users have the appropriate access to Workday Writeback.
----
+--- 
 # Configure attribute writeback from Microsoft Entra ID to Workday
 The objective of this article is to show the steps you need to perform to writeback attributes from Microsoft Entra ID to Workday. The Workday writeback provisioning app supports assigning values to the following Workday attributes:
 * Work Email 

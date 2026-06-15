@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HighGear so that I can control who has access to HighGear, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure HighGear for Single sign-on with Microsoft Entra ID
 
 In this article,  you can learn how to integrate HighGear with Microsoft Entra ID. Integrating HighGear with Microsoft Entra ID provides you with the following benefits:
