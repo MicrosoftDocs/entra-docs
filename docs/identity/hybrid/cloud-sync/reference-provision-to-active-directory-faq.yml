@@ -6,7 +6,7 @@ metadata:
   manager: mwongerapk
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 12/17/2024
+  ms.date: 06/09/2026
   ms.subservice: hybrid-cloud-sync
   ms.author: jomondi
   
@@ -39,6 +39,41 @@ sections:
           If I am following the steps outlined in Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync, will this impact my synchronization from Active Directory to Microsoft Entra ID with Microsoft Entra Connect?
         answer:
           No, following the migration steps for moving from group writeback V2 to Microsoft Entra cloud sync will not affect synchronization between AD and Microsoft Entra ID.
+
+  - name: AD group enforcement (preview)
+    questions:
+      - question: |
+          What object types does AD group enforcement support?
+        answer: |
+          Groups are supported in this preview. Users aren't supported, but the AD team plans to add support for users in a future release.
+      - question: |
+          When I install the provisioning agent, will enforcement be enabled on all of my Active Directory objects?
+        answer: |
+          No. In addition to installing the policy on the primary domain controller emulator (PDCe), you must explicitly mark each group as in scope. Configure the attribute mapping in group provisioning to Active Directory to set the `msDS-ObjectSoa` attribute on the groups you want to protect. Groups without the attribute set aren't enforced.
+      - question: |
+          Can I define a break-glass account for emergency changes to a protected group?
+        answer: |
+          Yes. You can add the security identifier (SID) of an authorized user or group to the policy so that account can make changes to enforced groups when the provisioning service isn't available. For more information, see [Enforce that Active Directory group changes only come from Microsoft Entra](how-to-ad-group-enforcement.md).
+      - question: |
+          If group A is marked for enforcement, can it be added as a member of group B that isn't marked for enforcement?
+        answer: |
+          Yes. Group A can be added as a member of group B. However, changes to the members of group A can still only be made by the provisioning service.
+      - question: |
+          What happens if a change is made on a domain controller that doesn't have AD group enforcement enabled?
+        answer: |
+          The change is processed. For full enforcement across the domain, every domain controller must have the feature enabled, either by installing the cumulative Windows Server update plus the matching Group Policy MSI, or by running a Windows Server Insider Preview build that has the feature already enabled.
+      - question: |
+          How does this feature change the Active Directory role-based access control (RBAC) model?
+        answer: |
+          AD group enforcement is additive to the existing RBAC model. It places another restriction on top of the existing role assignments, without giving any user extra access.
+      - question: |
+          What role is required to enable the policy?
+        answer: |
+          Domain Admin is required to run the PowerShell script that installs the policy on the PDCe role domain controller.
+      - question: |
+          How do I see enforcement events in the event log?
+        answer: |
+          To see Audit-mode events, set the Security Diagnostics registry value to **1** on the PDCe. Audited changes then appear in the Directory Services event log on that domain controller. For more information, see [AD and LDS diagnostic event logging](/troubleshoot/windows-server/active-directory/configure-ad-and-lds-event-logging).
 
 additionalContent: |
 
