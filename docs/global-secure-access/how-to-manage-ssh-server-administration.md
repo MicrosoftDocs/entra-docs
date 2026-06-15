@@ -1,11 +1,9 @@
 ---
 title: Use SSH to administer servers with Microsoft Entra Private Access
 description: Learn to configure and establish a Secure Shell (SSH) connection using Microsoft Entra Private Access for enhanced security.
-author: jricketts
 ms.topic: how-to
-ms.date: 05/12/2025
-ms.author: jricketts
-ms.reviewer: mgarciafani
+ms.date: 05/12/2025 
+ms.reviewer: jricketts
 ai-usage: human-only
 ---
 

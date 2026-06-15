@@ -1,8 +1,6 @@
 ---
 title: Shadow AI discovery in Global Secure Access
 description: Learn how Shadow AI discovery in Global Secure Access provides network-based visibility into unsanctioned AI applications and tools used in your organization.
-author: jenniferf-skc
-ms.author: jfields
 ms.topic: concept-article
 ms.date: 06/04/2026
 ms.reviewer: kerenSemel

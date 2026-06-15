@@ -1,8 +1,6 @@
 ---
 title: What is Transport Layer Security Inspection?
 description: "This article provides an overview of the Transport Layer Security (TLS) inspection process and how it increases security between two communicating parties."
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: concept-article
 ms.date: 06/04/2026
 ms.reviewer: teresayao
