@@ -128,7 +128,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. In the **Basic SAML Configuration** section, update both **Identifier (Entity ID)** and **Reply URL** with correct values. You must select **Save** to save the configuration changes.
 
 > [!Note]
-> If configuring multiple instances of the AWS applications, do not add the values of **#1** or **#2** and so on, to the **Reply URL** value. Consult AWS documentation for correct **Reply URL** value. 
+> If configuring multiple instances of the AWS applications, do not append suffixes such as **#1** or **#2** to the **Reply URL** value. Consult AWS documentation for the correct **Reply URL** value. 
 
 1. AWS application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
