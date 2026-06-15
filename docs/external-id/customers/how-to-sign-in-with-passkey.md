@@ -4,8 +4,6 @@ description: Learn how to enable passkeys (FIDO2) for phishing-resistant, passwo
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/21/2026
-ms.author: godonnell
-author: garrodonnell
 ai-usage: ai-assisted
 ms.custom: it-pro
 #Customer intent: As a developer or IT admin, I want to enable passkey (FIDO2) sign-in for my external tenant so that customers can use phishing-resistant, passwordless authentication.

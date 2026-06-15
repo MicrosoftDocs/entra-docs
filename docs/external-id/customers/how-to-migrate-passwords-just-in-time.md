@@ -2,10 +2,8 @@
 title: Just-in-time password migration to Microsoft Entra External ID
 description: Learn how to migrate passwords from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
 ai-usage: ai-assisted
-author: garrodonnell
 ms.topic: how-to
 ms.date: 04/03/2026
-ms.author: godonnell
 
 ## Customer intent: As a developer or administrator responsible for managing user identities, I want to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID, so that users can continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes.
 ---
