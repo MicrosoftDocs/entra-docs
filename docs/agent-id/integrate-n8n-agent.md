@@ -5,8 +5,6 @@ description: Deploy n8n on Azure Container Apps and secure AI agent workflows wi
 ms.service: entra
 ms.topic: how-to
 ms.date: 04/30/2026
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.reviewer: astaykov
 ms.custom: agent-id, msecd-doc-authoring-1012
 

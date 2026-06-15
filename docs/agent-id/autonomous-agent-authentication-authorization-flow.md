@@ -2,8 +2,6 @@
 title: Authenticate and acquire tokens for autonomous agents
 description: Learn how to authenticate autonomous agents with Microsoft Entra ID, grant application permissions, and optionally create and authenticate as an agent's user account.
 titleSuffix: Microsoft Entra Agent ID
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.topic: how-to
 ms.date: 03/30/2026
 ms.reviewer: jomondi, dastrock

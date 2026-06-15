@@ -1,8 +1,6 @@
 ---
 title: Inheritable permissions for Microsoft Entra Agent ID
 description: Understand the difference between required resource access declarations and inheritable permissions for agent identity blueprints in Microsoft Entra Agent ID.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: sarahlipsey
 ms.service: entra-agent-id
 ms.topic: concept-article
