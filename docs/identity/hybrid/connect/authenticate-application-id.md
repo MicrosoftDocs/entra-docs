@@ -127,7 +127,7 @@ The Microsoft Entra Connect Sync managed application and credential is automatic
 
 ### Automatic
 
-New installations of Microsoft Entra Connect Sync are configured for application-based authentication during setup. Existing servers using a legacy directory synchronization account are not switched over automatically. To switch an existing server, follow the Manual steps below.
+New installations of Microsoft Entra Connect Sync are configured for application-based authentication during setup. Microsoft Entra Connect doesn't automatically switch existing servers that use a legacy directory synchronization account. To switch an existing server, follow the steps in the [Manual](#manual) section.
 
 ### Manual
 
