@@ -5,10 +5,8 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 08/26/2025
-ms.author: justinha
-author: vimrang
 manager: dougeby
-ms.reviewer: vranganathan
+ms.reviewer: vranganathan, vimrang
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
 ---

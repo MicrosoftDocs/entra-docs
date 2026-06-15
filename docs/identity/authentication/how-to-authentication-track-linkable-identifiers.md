@@ -5,7 +5,6 @@ ms.topic: how-to
 ms.date: 05/27/2025
 ms.subservice: hybrid
 ms.custom: msecd-doc-authoring-106
-author: vimrang
 ms.reviewer: vranganathan
 #customer intent: As a security analyst, I want to use linkable identifiers in Microsoft Entra tokens so that I can trace and investigate identity-related activities across Microsoft 365 services.
 ---
