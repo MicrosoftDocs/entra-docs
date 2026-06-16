@@ -11,7 +11,7 @@ ms.reviewer: jmprieur
  
 # Authentication protocols in agents
  
-Agents use OAuth 2.0 protocols with specialized token exchange patterns enabled by Federated Identity Credentials (FIC). All agent auth flows involve multi-stage token exchanges where the agent identity blueprint impersonates the agent identity to perform operations. This article explains the authentication protocols and token flows used by agents. It covers delegation scenarios, autonomous operations, and federated identity credential patterns. Microsoft recommends that you use our SDKs like [Microsoft Entra SDK for Agent ID](https://aka.ms/entra/sdk/agentid) since implementing these protocol steps isn't easy.
+Agents use OAuth 2.0 protocols with specialized token exchange patterns enabled by Federated Identity Credentials (FIC). All agent auth flows involve multi-stage token exchanges where the agent identity blueprint impersonates the agent identity to perform operations. This article explains the authentication protocols and token flows used by agents. It covers delegation scenarios, autonomous operations, and federated identity credential patterns. Microsoft recommends that you use our SDKs like [Microsoft Entra ID Auth SDK (sidecar)](https://aka.ms/entra/sdk/agentid) since implementing these protocol steps isn't easy.
  
 All agent entities are confidential clients that can also serve as APIs for On-Behalf-Of scenarios. Interactive flows aren't supported for any agent entity type, ensuring that all authentication occurs through programmatic token exchanges rather than user interaction flows.
  

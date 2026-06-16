@@ -133,6 +133,34 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "alternate2"].value|String||
    |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:alternateEmail1Label|String||
    |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:alternateEmail2Label|String||
+   |DisplayName|String||
+   |ExternalIdentifier|String||
+   |Title|String||
+   |Nickname|String||
+   |UserType|String||
+   |BirthDate|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomBadge|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomFilterCategory|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomProfile|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:JoinDate|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Locations|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:LoginType|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:PersonalPronouns|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Country|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Locality|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1PostalCode|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1StreetAddress|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Region|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Country|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Locality|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2PostalCode|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2StreetAddress|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Region|String||
+   |phoneNumbers[type eq "workofficephone"].value|String||
+   |phoneNumbers[type eq "homephone"].value|String||
+   |phoneNumbers[type eq "workmobilephone"].value|String||
+   |phoneNumbers[type eq "personalmobilephone"].value|String||
+
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
