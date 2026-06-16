@@ -346,6 +346,16 @@ user.assignedPlans -any (assignedPlan.service -eq "SCO" -and assignedPlan.capabi
 
 ##### Example 3
 
+The following expression selects all users who have no enabled service plan that's associated with the Intune service (identified by the service name `SCO`):
+
+```
+user.assignedPlans -all (assignedPlan.service -ne "SCO" -or assignedPlan.capabilityStatus -ne "Enabled")
+```
+
+This rule also includes users who have no assigned service plans. If you want to exclude users with no service plans, combine this rule with another condition.
+
+##### Example 4
+
 The following expression selects all users who have no assigned service plan:
 
 ```
