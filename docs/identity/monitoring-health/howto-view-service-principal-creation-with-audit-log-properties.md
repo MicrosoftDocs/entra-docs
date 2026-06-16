@@ -3,7 +3,7 @@ title: How to investigate why a service principal was created in your tenant
 description: Use new audit log properties to understand why a new service principal was added to your tenant. 
 
 ms.topic: how-to
-ms.date: 01/26/2026
+ms.date: 06/05/2026
 ms.reviewer: arielsc
 ai-usage: ai-assisted
 
@@ -48,5 +48,13 @@ Once the new properties are available in your tenant, you can use them to stream
 
 These enhancements are designed to make it easier for you to interpret service principal creation events, quickly understand the meaning of different values, and plug that information into your own alerting and governance workflows. These alerts can categorize service principal creation events as "expected" versus "unexpected" based on your tenant security preferences. 
 
+## Use Microsoft Graph
+
+To retrieve these events programmatically, query the [List directoryAudits](/graph/api/directoryaudit-list?view=graph-rest-1.0&preserve-view=true) operation and filter on the activity name. The new properties are returned in the `additionalDetails` collection of each event.
+
+```http
+GET https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?$filter=activityDisplayName eq 'Add service principal'
+```
+
 ## Related content
-[Microsost Entra audit log categories and activities](reference-audit-activities.md)
+[Microsoft Entra audit log categories and activities](reference-audit-activities.md)
