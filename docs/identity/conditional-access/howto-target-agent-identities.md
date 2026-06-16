@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Target agent identities in Conditional Access policies
 
-Conditional Access policies for agent identities let you control how AI agents access corporate resources. As your organization deploys more agents, you need policies that target the right agents, evaluate the right signals, and enforce the right controls.
+Conditional Access policies for agent identities let you control how AI agents access corporate resources. As your organization deploys more agents, you need policies that target the right agents, evaluate the right signals, and enforce the right controls. To learn more about how Conditional Access policies for agents work for different scenarios, see [Conditional Access policies for agents](agent-id.md).
 
 This article walks through each section of the Conditional Access policy builder for agents:
 
@@ -63,11 +63,13 @@ Keep in mind the following important details when selecting agent assignments:
 - Policies targeting all users don't include agent's user accounts.
 - The **agent users** option targets agents' user accounts. This option is currently in Preview.
 - Agent-based policies apply when agents access resources using their own identity, not on behalf of a user.
-- Targeting a blueprint automatically covers all agent identities derived from it, including ones added in the future. For more information about targeting agent identity blueprints, see [Conditional Access for agent identities: Agent identity blueprints](agent-id.md#agent-identity-blueprints).
+- Targeting a blueprint automatically covers all agent identities derived from it, including ones added in the future. For more information about targeting agent identity blueprints, see [Conditional Access for agent identities: Agent identity blueprints](agent-id.md#conditional-access-policies-and-agent-identity-blueprints).
 
 ## Target resources
 
-Target resources define which resources the policy protects when agents attempt to access them.
+Target resources define which resources the policy protects when agents attempt to access them. To select a target resource in a Conditional Access policy, the resource must have an enterprise application (service principal) in your Microsoft Entra ID tenant. This requirement applies regardless of the data access pattern or resource type, including Microsoft Graph, MCP servers, Open API tools, and custom tools you build. For more information, see [Targeting resources with Conditional Access](concept-conditional-access-cloud-apps.md).
+
+For custom MCP servers, Open API-based tools, or other custom tool types, register the tool as an application in Microsoft Entra ID and expose its permissions. For more information, see [How to configure an application to expose a web API](../../identity-platform/quickstart-configure-app-expose-web-apis.md).
 
 1. Under **Target resources**, select the resources you want to protect.
 1. Under **Include**, select one of the following:
@@ -168,6 +170,4 @@ Access controls determine what happens when conditions are met. For more informa
 ## Related content
 
 - [Conditional Access for agent identities](agent-id.md)
-- [Block high-risk agent identities](policy-agent-block-high-risk.md)
 - [Configure policy for autonomous agent access](policy-autonomous-agents.md)
-- [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)

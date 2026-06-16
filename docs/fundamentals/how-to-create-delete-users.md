@@ -1,8 +1,6 @@
 ---
 title: How to create, invite, and delete users in Microsoft Entra ID
 description: Instructions for IT admins to create new users, invite external guests, and delete existing users in Microsoft Entra ID.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: adelle.dimitui
 ms.date: 05/08/2026
 ms.service: entra

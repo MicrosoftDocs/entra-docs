@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 8x8 so that I can streamline the user management process and ensure that users have the appropriate access to 8x8.
----
+--- 
 
 # Configure 8x8 for automatic user provisioning with Microsoft Entra ID
 

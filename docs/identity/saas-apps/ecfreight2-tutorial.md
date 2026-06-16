@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 08/16/2024
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ecFreight2 so that I can control who has access to ecFreight2, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure ecFreight2 for Single sign-on with Microsoft Entra ID
 

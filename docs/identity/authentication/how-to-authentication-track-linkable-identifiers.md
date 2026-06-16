@@ -5,7 +5,6 @@ ms.topic: how-to
 ms.date: 05/27/2025
 ms.subservice: hybrid
 ms.custom: msecd-doc-authoring-106
-author: vimrang
 ms.reviewer: vranganathan
 #customer intent: As a security analyst, I want to use linkable identifiers in Microsoft Entra tokens so that I can trace and investigate identity-related activities across Microsoft 365 services.
 ---
@@ -214,7 +213,7 @@ These capabilities enable security analysts to correlate authentication events w
 
 ```kql
 MicrosoftGraphActivityLogs
-| where TimeGenerated > ago(4d) and UserId == '4624cd8c-6c94-4593-b0d8-a4983d797ccb'
+| where TimeGenerated > ago(4d) and UserId == '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 | join kind=leftouter (union
 SigninLogs,
 AADNonInteractiveUserSignInLogs,

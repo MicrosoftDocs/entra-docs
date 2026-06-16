@@ -4,7 +4,6 @@ description: Explains the steps that are required to implement Microsoft Entra j
 
 ms.topic: how-to
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo
 ---
 # How to: Plan your Microsoft Entra join implementation

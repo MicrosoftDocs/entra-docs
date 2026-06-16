@@ -1,9 +1,7 @@
 ---
 title: "Tutorial: Prepare a JavaScript single-page app (SPA) for authentication"
 description: Learn how to prepare a JavaScript single-page app (SPA) for authentication using the Microsoft identity platform.
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.service: identity-platform
 ms.custom:
 ms.topic: tutorial

@@ -295,6 +295,213 @@ To resolve this alert, complete the following steps:
 
 The managed domain's health automatically updates itself within two hours and removes the alert when RC4 dependencies are remediated.
 
+### Self-service RC4 configuration
+
+Members of the *AAD DC Administrators* group can configure RC4 deprecation settings directly on the managed domain. The configuration files are hosted on an encrypted SMB share on each domain controller.
+
+#### Access the configuration files
+
+Connect to the hidden SMB share on your domain controller using the following UNC path:
+
+```
+\\<domain-controller-name>\CustomerExecutionScripts$
+```
+
+Replace `<domain-controller-name>` with the hostname of your managed domain's domain controller. The share requires SMB encryption and grants:
+
+- **Full access** to *Domain Admins*
+- **Change access** to *AAD DC Administrators*
+
+The share contains the following files:
+
+| File | Description |
+|---|---|
+| `rc4-configuration.json` | Customer-editable configuration file. Edit this file to change RC4 settings. |
+| `rc4-status.json` | Auto-generated status file. Don't edit this file. Check it to verify applied changes. |
+| `README.txt` | Usage instructions and reference. |
+
+#### How to use
+
+1. Connect to the `CustomerExecutionScripts$` share on the domain controller.
+1. Edit `rc4-configuration.json` with your desired settings.
+1. Save the file.
+1. Wait for the next evaluation cycle (approximately 10 minutes).
+1. Check `rc4-status.json` for confirmation of applied changes.
+
+> [!NOTE]
+> Don't delete or rename `rc4-configuration.json`, `rc4-status.json`, or `README.txt`. The service depends on these files.
+
+#### Configuration options
+
+| Setting | Value | Description |
+|---|---|---|
+| `rc4DefaultDisablementPhase` | `0` | No change. RC4 is fully permitted, no logging. |
+| `rc4DefaultDisablementPhase` | `1` | Audit mode. Logs warnings when RC4 is used, but continues to allow it. |
+| `rc4DefaultDisablementPhase` | `2` | Enforcement mode. Blocks RC4 for AES-capable accounts. |
+| `defaultDomainSupportedEncTypes` | `24` | AES only (most secure, April 2026 enforcement default). |
+| `defaultDomainSupportedEncTypes` | `36` | RC4 + AES256 (recommended for non-Windows legacy interop). |
+| `defaultDomainSupportedEncTypes` | `56` | AES only with session keys (secure, preferred over 24 for modern clients). |
+| `defaultDomainSupportedEncTypes` | `60` | AES + RC4 with session keys (recommended for transition). |
+| `serviceAccountsRequiringRc4` | Array of strings | List of `sAMAccountName` values for service accounts that need RC4 support added to their `msDS-SupportedEncryptionTypes` attribute. |
+
+Only the values listed in the table are accepted. Invalid values are rejected, and `rc4-status.json` shows validation errors.
+
+#### Configuration examples
+
+Start with audit mode to identify RC4 usage before enforcing (recommended first step):
+
+```json
+{
+    "version": 1,
+    "rc4DefaultDisablementPhase": 1,
+    "defaultDomainSupportedEncTypes": 60,
+    "serviceAccountsRequiringRc4": []
+}
+```
+
+Move to enforcement mode with exceptions for specific service accounts:
+
+```json
+{
+    "version": 1,
+    "rc4DefaultDisablementPhase": 2,
+    "defaultDomainSupportedEncTypes": 24,
+    "serviceAccountsRequiringRc4": ["svc-legacy-app", "svc-old-service"]
+}
+```
+
+#### Verify applied changes
+
+After the evaluation cycle completes, check `rc4-status.json` on the same share to confirm changes are applied. Each setting shows a `status` value:
+
+| Status | Description |
+|---|---|
+| `InSync` | Desired and actual values match. No change needed. |
+| `Applied` | A change was just applied to match the desired value. |
+| `Drift` | A difference exists between desired and actual values before remediation runs. |
+
+Service account statuses in `rc4-status.json`:
+
+| Status | Description |
+|---|---|
+| `Updated` | RC4 flag was successfully added to the account. |
+| `AlreadyCompliant` | Account already had the RC4 flag set. No change needed. |
+| `NotFound` | Account `sAMAccountName` wasn't found in the directory. |
+| `Failed` | An error occurred updating the account. See the `errors` array for details. |
+
+If `configurationValid` is `false` in the status file, the configuration file has a syntax or validation error. Review the `errors` array for details and correct `rc4-configuration.json`.
+
+#### Status examples
+
+All settings in sync, no remediation needed:
+
+```json
+{
+    "lastEvaluated": "2026-05-04T14:30:00Z",
+    "lastRemediated": "2026-05-04T14:30:00Z",
+    "configurationValid": true,
+    "currentState": {
+        "rc4DefaultDisablementPhase": {
+            "desired": 1,
+            "actual": 1,
+            "status": "InSync"
+        },
+        "defaultDomainSupportedEncTypes": {
+            "desired": 60,
+            "actual": 60,
+            "status": "InSync"
+        },
+        "serviceAccounts": []
+    },
+    "errors": []
+}
+```
+
+Changes applied with service account updates:
+
+```json
+{
+    "lastEvaluated": "2026-05-04T14:30:00Z",
+    "lastRemediated": "2026-05-04T14:30:00Z",
+    "configurationValid": true,
+    "currentState": {
+        "rc4DefaultDisablementPhase": {
+            "desired": 2,
+            "actual": 1,
+            "status": "Applied"
+        },
+        "defaultDomainSupportedEncTypes": {
+            "desired": 24,
+            "actual": 60,
+            "status": "Applied"
+        },
+        "serviceAccounts": [
+            {
+                "account": "svc-legacy-app",
+                "status": "Updated",
+                "previousEncTypes": 24,
+                "currentEncTypes": 28
+            },
+            {
+                "account": "svc-old-service",
+                "status": "AlreadyCompliant",
+                "previousEncTypes": 28,
+                "currentEncTypes": 28
+            }
+        ]
+    },
+    "errors": []
+}
+```
+
+Partial failure with service account errors:
+
+```json
+{
+    "lastEvaluated": "2026-05-04T14:30:00Z",
+    "lastRemediated": "2026-05-04T14:30:00Z",
+    "configurationValid": true,
+    "currentState": {
+        "rc4DefaultDisablementPhase": {
+            "desired": 2,
+            "actual": 2,
+            "status": "InSync"
+        },
+        "defaultDomainSupportedEncTypes": {
+            "desired": 24,
+            "actual": 24,
+            "status": "InSync"
+        },
+        "serviceAccounts": [
+            {
+                "account": "svc-legacy-app",
+                "status": "Updated",
+                "previousEncTypes": 24,
+                "currentEncTypes": 28
+            },
+            {
+                "account": "svc-missing",
+                "status": "NotFound",
+                "previousEncTypes": null,
+                "currentEncTypes": null
+            },
+            {
+                "account": "svc-broken",
+                "status": "Failed",
+                "previousEncTypes": null,
+                "currentEncTypes": null
+            }
+        ]
+    },
+    "errors": [
+        "Failed to update service account 'svc-broken': Access is denied."
+    ]
+}
+```
+
+> [!IMPORTANT]
+> This configuration is applied independently on each domain controller (DC) in the managed domain. A KDC service restart is performed automatically when registry values change. To avoid a simultaneous KDC restart on all DCs (which causes a temporary Kerberos authentication outage), space the rollout across DCs. If your domain has multiple replica sets, ensure the configuration is applied to each DC. Monitor `rc4-status.json` on each DC to confirm all controllers have successfully applied the new settings.
+
 > [!WARNING]
 > Windows updates for CVE-2026-20833 enforce RC4 hardening in phases. Plan and complete remediation before full enforcement:
 >

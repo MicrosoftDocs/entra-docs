@@ -1,16 +1,14 @@
 ---
 title: Provision users from SAP Human Capital Management (HCM) to Microsoft Entra ID
 description: Learn how to provision users from SAP Human Capital Management (HCM) to Microsoft Entra ID.
-author: jenniferf-skc
 manager: pmwongera
 ms.reviewer: chmutali
 ms.topic: how-to
 ms.date: 07/18/2025
-ms.author: jfields
 ai-usage: ai-assisted
 
 # Customer intent: As an IT administrator, I want to learn how to provision current users from SAP Human Capital Management (HCM) to Microsoft Entra ID so that I can streamline identity management and enhance security.
----
+--- 
 
 # Provision users from SAP human capital management (HCM) to Microsoft Entra ID
 

@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Software AG Cloud so that I can control who has access to Software AG Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Software AG Cloud for Single sign-on with Microsoft Entra ID
 

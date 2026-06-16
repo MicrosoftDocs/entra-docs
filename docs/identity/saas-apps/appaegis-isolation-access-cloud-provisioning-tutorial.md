@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 02/20/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Appaegis Isolation Access Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Appaegis Isolation Access Cloud.
----
+--- 
 
 # Configure Appaegis Isolation Access Cloud for automatic user provisioning with Microsoft Entra ID
 

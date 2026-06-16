@@ -1,11 +1,10 @@
 ---
 title: Microsoft Entra External ID deployment guide for customer authentication experience
 description: Learn about implementing self-service flows, native user experience, and more in Microsoft Entra External ID.
-author: gargi-sinha
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 05/22/2025
-ms.author: gasinh
+ms.reviewer: gasinh
 
 #customer intent: I need to understand self-service user flows, and other customer authentication experiences in Microsoft Entra External ID.
 ---

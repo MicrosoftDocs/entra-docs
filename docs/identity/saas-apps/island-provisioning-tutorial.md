@@ -5,7 +5,7 @@ description: Learn how to automatically provision and deprovision user accounts 
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/10/2026
----
+--- 
 
 # Configure Island for automatic user provisioning with Microsoft Entra ID
 

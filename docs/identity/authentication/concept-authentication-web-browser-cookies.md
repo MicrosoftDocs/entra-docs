@@ -3,8 +3,7 @@ title: Web browser cookies used in Microsoft Entra authentication
 description: Learn about Web browser cookies used in Microsoft Entra authentication.
 ms.topic: overview
 ms.date: 03/04/2025
-author: custorod
-ms.reviewer: sahenry, michmcla
+ms.reviewer: sahenry, michmcla, custorod
 
 # Customer intent: As a Microsoft Entra administrator, I want to understand which weh browser cookies are used for Microsoft Entra ID.
 

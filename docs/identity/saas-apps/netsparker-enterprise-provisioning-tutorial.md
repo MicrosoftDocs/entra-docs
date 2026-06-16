@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/17/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Netsparker Enterprise so that I can streamline the user management process and ensure that users have the appropriate access to Netsparker Enterprise.
----
+--- 
 
 # Configure Netsparker Enterprise for automatic user provisioning with Microsoft Entra ID
 

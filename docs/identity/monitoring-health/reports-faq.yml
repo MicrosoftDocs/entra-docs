@@ -3,13 +3,11 @@ metadata:
   title: Microsoft Entra monitoring and health FAQ
   description: Frequently asked questions around Microsoft Entra monitoring and health, including logs and reports.
   
-  author: shlipsey3
   manager: pmwongera
   ms.service: entra-id
   ms.topic: faq
   ms.subservice: monitoring-health
   ms.date: 05/06/2025
-  ms.author: sarahlipsey
   ms.reviewer: egreenberg14
 
 title: Frequently asked questions around Microsoft Entra monitoring and health

@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Blackboard Learn so that I can control who has access to Blackboard Learn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Blackboard Learn for Single sign-on with Microsoft Entra ID
 

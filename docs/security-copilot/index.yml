@@ -5,9 +5,7 @@ summary: Learn how to secure your Microsoft Entra tenant with Security Copilot, 
 metadata:
   title: AI for Security in Microsoft Entra documentation 
   description: Microsoft Entra Security fundamentals to configure and maintain a secure tenant using Security Copilot agents, Zero Trust principles, and health monitoring.
-  author: cilwerner
   manager: pmwongera
-  ms.author: cwerner
   ms.date: 06/20/2025
   ms.service: entra
   ms.subservice: fundamentals

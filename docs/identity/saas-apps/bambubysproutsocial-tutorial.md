@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Employee Advocacy by Sprout Social so that I can control who has access to Employee Advocacy by Sprout Social, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Employee Advocacy by Sprout Social for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Employee Advocacy by Sprout Social with Microsoft Entra ID. When you integrate Employee Advocacy by Sprout Social with Microsoft Entra ID, you can:

@@ -1,12 +1,10 @@
 ---
 title: Troubleshoot prompt injection protection
 description: Reduce risk from malicious or manipulated prompts sent to generative AI sites and apps with prompt injection protection policies in Global Secure Access.
-author: jricketts
-ms.author: jricketts
 ms.topic: troubleshooting
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
-ms.reviewer: KaTabish
+ms.reviewer: KaTabish, jricketts
 ms.date: 04/21/2026
 
 #customer intent: As an IT admin, I want to validate tenant and device prerequisites and troubleshoot configuration issues with prompt injection protection policies in Global Secure Access so that I can reduce risk from malicious or manipulated prompts sent to generative AI sites and apps.
@@ -59,7 +57,7 @@ If you don't see the Global Secure Access inspection certificate, Global Secure 
 
 Prompt policies, like other policies in Global Secure Access, rely on TLS inspection. Before you troubleshoot prompt specific behavior, test a different policy type to verify that TLS inspection functions for your tenant. If TLS inspection works for other policies, then you correctly set your tenant settings for TLS inspection.
 
-1. Access a site or perform an action that another policy type blocks. For example, **Web content filtering** or **File policy** (such as blocking file downloads).
+1. Access a site or perform an action that another policy type blocks. For example, **Web content filtering** or **Content policy** (such as blocking file downloads).
 1. Confirm display of the expected block page or error message.
 1. If the other policies don’t apply, ensure the correct [root certificate](/windows-hardware/drivers/install/trusted-root-certification-authorities-certificate-store) installation in the trusted root certification authorities on the client device.
 

@@ -2,8 +2,6 @@
 title: Fundamental concepts in Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Discover the role of agent identities in AI authentication. Understand their unique identifiers, token usage, and how they enable secure access to systems.
-author: omondiatieno
-ms.author: jomondi
 ms.reviewer: dastrock
 ms.date: 04/03/2026
 ms.topic: concept-article
@@ -35,7 +33,7 @@ When a blueprint is added to a tenant, Microsoft Entra creates a corresponding p
 
 ### Traditional service principal (not recommended for AI agents)
 
-Traditional service principals were designed for static, deterministic workloads. Microsoft Entra Agent ID exists because service principals lack the governance infrastructure AI agents need.There's no enforced sponsorship, no agent-aware audit entries, and no blueprint-managed lifecycle. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
+Traditional service principals were designed for static, deterministic workloads. Microsoft Entra Agent ID exists because service principals lack the governance infrastructure AI agents need. There's no enforced sponsorship, no agent-aware audit entries, and no blueprint-managed lifecycle. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
 
 ### Regular user account (not recommended for AI agents)
 
@@ -57,9 +55,9 @@ The agent identity platform introduces an administrative model that separates te
 
 For more information, see [Administrative relationships for agent identities (Owners, sponsors, and managers)](agent-owners-sponsors-managers.md)
 
-## Microsoft Entra SDK for agent ID
+## Microsoft Entra ID Auth SDK (sidecar)
 
-The Microsoft Entra SDK for Agent ID is a containerized web service that handles token acquisition, validation, and secure downstream API calls for agents registered in the Microsoft identity platform. It runs as a companion container alongside your application, allowing you to offload identity logic to a dedicated service. For more information, see [Microsoft Entra SDK for Agent ID](/entra/msidweb/agent-id-sdk/overview).
+The Microsoft Entra ID Auth SDK (sidecar) is a containerized web service that handles token acquisition, validation, and secure downstream API calls for agents registered in the Microsoft identity platform. It runs as a companion container alongside your application, allowing you to offload identity logic to a dedicated service. For more information, see [Microsoft Entra ID Auth SDK (sidecar)](/entra/msidweb/agent-id-sdk/overview).
 
 ## Related content
 

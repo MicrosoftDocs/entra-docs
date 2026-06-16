@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 05/03/2024
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProMaster (by Inlogik) so that I can control who has access to ProMaster (by Inlogik), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure ExpenseMe Pro (by Inlogik) for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ExpenseMe Pro (by Inlogik) with Microsoft Entra ID. When you integrate ExpenseMe Pro (by Inlogik) with Microsoft Entra ID, you can:

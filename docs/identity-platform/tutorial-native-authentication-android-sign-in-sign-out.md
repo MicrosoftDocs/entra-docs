@@ -2,10 +2,8 @@
 title: Add sign-in in Android app by using native authentication
 description: Learn how to add sign-in and sign-out with email one-time passcode or username and password in Android app by using native authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external

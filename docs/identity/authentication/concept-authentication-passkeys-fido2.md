@@ -3,8 +3,6 @@ title: Passkeys (FIDO2) authentication method in Microsoft Entra ID
 description: Learn about using passkey (FIDO2) authentication in Microsoft Entra ID to help improve and secure sign-in events
 ms.topic: concept-article
 ms.date: 02/02/2026
-ms.author: justinha
-author: justinha
 ms.reviewer: kimhana
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use passkey (FIDO2) authentication in Microsoft Entra ID to improve and secure user sign-in events.

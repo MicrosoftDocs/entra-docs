@@ -3,8 +3,7 @@ title: Plan a phishing-resistant passwordless authentication deployment in Micro
 description: Detailed guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 3/26/2026
-author: sipower
-ms.reviewer: justinha
+ms.reviewer: sipower
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID
