@@ -268,7 +268,7 @@ docker compose down -v --rmi all
 ## Related content
 
 - [Authentication with Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md)
-- [Microsoft Entra SDK for Agent ID documentation](/entra/msidweb/agent-id-sdk/overview)
-- [Acquire tokens and call downstream APIs with Microsoft Entra SDK for Agent ID](microsoft-entra-sdk-for-agent-identities.md)
+- [Microsoft Entra ID Auth SDK (sidecar) documentation](/entra/msidweb/agent-id-sdk/overview)
+- [Acquire tokens and call downstream APIs with Microsoft Entra ID Auth SDK (sidecar)](microsoft-entra-sdk-for-agent-identities.md)
 - [Validate agent identity tokens in a downstream API](how-to-validate-agent-tokens-downstream-api.md)
 - [Microsoft Entra Agent ID samples repository](https://github.com/microsoft/entra-agentid-samples)

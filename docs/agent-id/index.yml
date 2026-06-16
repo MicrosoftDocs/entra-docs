@@ -68,7 +68,7 @@ sections:
         summary: Use an AI coding agent to automate the full Agent ID onboarding workflow, from blueprint creation to agent provisioning.
         url: ./agent-id-ai-guided-setup.md
       - componentType: summary-card
-        title:  Microsoft Entra SDK for agents
+        title:  Microsoft Entra ID Auth SDK (sidecar)
         summary: Integrate agent authentication and authorization with familiar SDKs and developer tools.
         url: ./microsoft-entra-sdk-for-agent-identities.md
       - componentType: summary-card

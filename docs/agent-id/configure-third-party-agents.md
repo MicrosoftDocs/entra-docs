@@ -198,7 +198,7 @@ If you run into problems during integration, use the following guidance to ident
 
 ## Related content
 
-- [Configure SDK for agent identities](microsoft-entra-sdk-for-agent-identities.md)
+- [Configure Entra ID Auth SDK (sidecar) for agent identities](microsoft-entra-sdk-for-agent-identities.md)
 - [Call Microsoft Graph API](call-api-microsoft-graph.md)
 - [Call custom APIs](call-api-custom.md)
 - [Call Azure services](call-api-azure-services.md)

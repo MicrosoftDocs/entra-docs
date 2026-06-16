@@ -29,7 +29,7 @@ Microsoft Entra Agent ID introduces new identity constructs and authentication p
 - [AI-guided setup](agent-id-ai-guided-setup.md) (New) - Automate onboarding with an AI coding agent that walks you through blueprint creation, credential configuration, and agent identity provisioning.
 - [Agent identity deletion](concept-agent-identity-deletion.md) (New) - Learn about the automated cascade cleanup process and soft-delete functionality for agent identities.
 - [Authentication with the Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md) (New) - Overview of the sidecar pattern for agent authentication.
-- [Configure SDK for agent identities](microsoft-entra-sdk-for-agent-identities.md) - SDK configuration for token acquisition.
+- [Configure Entra ID Auth SDK (sidecar) for agent identities](microsoft-entra-sdk-for-agent-identities.md) - SDK configuration for token acquisition.
 - [Run the sidecar for local development](sidecar-local-development.md) (New) - Local development setup for the Auth SDK.
 - [Validate agent tokens in a downstream API](how-to-validate-agent-tokens-downstream-api.md) (New) - Token validation guidance for APIs that receive agent tokens.
 - [Configure non-Microsoft agents with Agent ID](configure-third-party-agents.md) (New) - Integration patterns (sidecar and federation) for platforms like AWS, GCP, and n8n.

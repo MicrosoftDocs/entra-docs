@@ -77,8 +77,8 @@ The [Microsoft Entra Agent ID sidecar samples](https://github.com/microsoft/entr
 
 ## Related content
 
-- [Microsoft Entra SDK for Agent ID documentation](/entra/msidweb/agent-id-sdk/overview)
-- [Acquire tokens and call downstream APIs with Microsoft Entra SDK for Agent ID](microsoft-entra-sdk-for-agent-identities.md)
+- [Microsoft Entra ID Auth SDK (sidecar) documentation](/entra/msidweb/agent-id-sdk/overview)
+- [Acquire tokens and call downstream APIs with Microsoft Entra ID Auth SDK (sidecar)](microsoft-entra-sdk-for-agent-identities.md)
 - [Microsoft Entra Agent ID design patterns](concept-agent-id-design-patterns.md)
 - [Agent identity blueprints](agent-blueprint.md)
 - [Autonomous agent app OAuth flow](agent-autonomous-app-oauth-flow.md)

@@ -70,7 +70,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Call API: Azure services](../agent-id/call-api-azure-services.md) (New)
 - [Call API: Custom](../agent-id/call-api-custom.md) (New)
 - [Call API: Microsoft Graph](../agent-id/call-api-microsoft-graph.md) (New)
-- [Microsoft Entra SDK for agent identities](../agent-id/microsoft-entra-sdk-for-agent-identities.md) (New)
+- [Microsoft Entra ID Auth SDK (sidecar)](../agent-id/microsoft-entra-sdk-for-agent-identities.md) (New)
 
 ## Security Copilot + Microsoft Entra
 
