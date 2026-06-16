@@ -4,9 +4,12 @@ titleSuffix: Microsoft Entra Agent ID
 description: Deploy n8n on Azure Container Apps and secure AI agent workflows with Microsoft Entra Agent ID and Microsoft Graph MCP Server for Enterprise.
 ms.service: entra
 ms.topic: how-to
-ms.date: 04/30/2026
+ms.date: 06/15/2026
+author: Dickson-Mwendia
+ms.author: dmwendia
 ms.reviewer: astaykov
-ms.custom: agent-id, msecd-doc-authoring-1012
+ms.custom: agent-id, msecd-doc-authoring-1013
+ai-usage: ai-assisted
 
 #customer intent: As a developer or IT admin, I want to secure n8n workflows with Microsoft Entra Agent ID so that my n8n agents can access Microsoft Graph and MCP Server for Enterprise using agent identities.
 
@@ -16,7 +19,7 @@ ms.custom: agent-id, msecd-doc-authoring-1012
 
 This guide shows how to deploy [n8n](https://n8n.io/) on Azure Container Apps with Microsoft Entra Agent ID integration. The deployment uses the Azure Developer CLI (`azd`) to provision infrastructure, create Microsoft Entra identity objects, and configure n8n workflows automatically.
 
-Unlike the [sidecar pattern](authentication-with-auth-sdk-sidecar.md) used for custom agents, this integration uses the [n8n-nodes-entraagentid](https://www.npmjs.com/package/@astaykov/n8n-nodes-entraagentid) community node to manage token acquisition directly within n8n workflows. The deployed workflows demonstrate both autonomous (app-only) and on-behalf-of (OBO) token flows, with access to Microsoft Graph and the Microsoft Graph MCP Server for Enterprise, `https://mcp.svc.cloud.microsoft/enterprise`.
+Unlike the [Authentication with Microsoft Entra Auth SDK sidecar](authentication-with-auth-sdk-sidecar.md) pattern used for custom agents, the n8n integration uses the [n8n-nodes-entraagentid](https://www.npmjs.com/package/@astaykov/n8n-nodes-entraagentid) community node to manage token acquisition directly within n8n workflows. The deployed workflows demonstrate both autonomous (app-only) and on-behalf-of (OBO) token flows, with access to Microsoft Graph and the Microsoft Graph MCP Server for Enterprise, `https://mcp.svc.cloud.microsoft/enterprise`.
 
 > [!NOTE]
 > This sample demonstrates the use of the `n8n-nodes-entraagentid` community node within n8n. It isn't guidance for deploying n8n on Azure in production.
@@ -38,7 +41,7 @@ If you're running locally instead of Cloud Shell, install these tools before pro
 - [Microsoft.Entra PowerShell module](/powershell/entra-powershell/) v1.2 or later.
 - Git.
 
-Sign in to Azure CLI and Azure Developer CLI before running the deployment:
+Authenticate both the Azure CLI and Azure Developer CLI so that the deployment commands can create and manage resources in your subscription:
 
 ```bash
 az login
@@ -67,7 +70,7 @@ The entire deployment runs through a single `azd up` command that provisions Azu
    - **n8n admin email:** Email for the n8n owner account.
    - **n8n admin password:** Password for the n8n owner account (minimum 8 characters, mixed case, number).
 
-1. During the postprovision phase, the automation performs a second sign-in. A device code is displayed. Open the URL and enter the code. This step requires the Global Administrator or Application Administrator role. The postprovision hook then:
+1. During the postprovision phase, the automation performs a second sign-in. A device code is displayed. Open the URL and enter the code. This step requires the Global Administrator or Application Administrator role. The `azd up` postprovision hook then:
 
    - Creates Microsoft Entra Agent ID objects (Blueprint, Agent Identity, Agent User).
    - Enables the Microsoft Graph MCP Server for Enterprise.
@@ -82,7 +85,10 @@ When the deployment completes, the script prints your n8n URL and a summary of w
 
 ## Explore the deployed resources
 
-### Azure infrastructure
+The deployment creates Azure resources, Microsoft Entra identity objects, and n8n configuration assets that work together to support the sample workflows.
+
+<a name="azure-infrastructure"></a>
+### Review the Azure infrastructure resources
 
 The deployment creates the following Azure resources:
 
@@ -94,7 +100,8 @@ The deployment creates the following Azure resources:
 - **Azure OpenAI:** GPT model deployment used by the AI agent workflows.
 - **Log Analytics Workspace:** Diagnostics and monitoring.
 
-### Microsoft Entra identity objects
+<a name="microsoft-entra-identity-objects"></a>
+### Review the Microsoft Entra identity objects
 
 The automation creates these objects once and reuses them on subsequent runs:
 
@@ -103,7 +110,8 @@ The automation creates these objects once and reuses them on subsequent runs:
 - **Agent user account:** A cloud-only user identity that enables delegated (OBO) token flows.
 - **Single page app (SPA) app registration:** Client app for the webhook demo, preconfigured with redirect URIs and Blueprint API permissions.
 
-### n8n credentials and workflows
+<a name="n8n-credentials-and-workflows"></a>
+### Review the n8n credentials and workflows
 
 The postprovision hook automatically configures n8n:
 
@@ -129,7 +137,7 @@ The n8n deployment supports two token flow patterns:
 
 - **On-behalf-of (OBO) with MCP:** A browser-based SPA sends a bearer token to an n8n webhook. The webhook calls the Auth Manager workflow, which uses the Blueprint credentials to acquire a delegated token on behalf of the Agent User. The Auth Manager forwards the token to a subworkflow that calls the Microsoft Graph MCP Server for Enterprise, which translates MCP tool calls into Microsoft Graph API requests using the delegated token.
 
-In both patterns, the Agent Identity Blueprint acts as a token factory. It issues tokens for Agent Identities without storing credentials on the agent itself. The Auth Manager community node handles token acquisition and AES-256-GCM caching within each workflow run.
+In both patterns, the Agent Identity Blueprint acts as a token factory. The Agent Identity Blueprint issues tokens for Agent Identities without storing credentials on the agent itself. The Auth Manager community node handles token acquisition and AES-256-GCM caching within each workflow run.
 
 ## Deploy the test SPA (optional)
 
@@ -169,7 +177,7 @@ The deployment is fully idempotent:
 - The `azd` environment saves Microsoft Entra object IDs (Blueprint, Agent Identity, Agent User, Blueprint secret) after the first run and reuses them on subsequent runs.
 - n8n configuration (credentials, workflows) is applied fresh each run, which allows repairing a broken state.
 
-To rerun just the postprovision scripts without modifying infrastructure:
+To rerun just the postprovision scripts without modifying infrastructure, run provisioning again. The Bicep templates detect no infrastructure changes and only execute the deployment hooks:
 
 ```bash
 azd provision   # Bicep detects no changes, runs hooks only
@@ -206,7 +214,7 @@ You can run the configuration scripts independently if needed:
 
 ## Clean up resources
 
-Remove all Azure resources that the deployment created:
+Remove all Azure resources that the deployment created and purge any retained deployment state:
 
 ```bash
 azd down --purge

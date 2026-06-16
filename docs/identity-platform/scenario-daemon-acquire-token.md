@@ -2,11 +2,14 @@
 title: Acquire tokens to call a web API using a daemon application
 description: Learn how to build a daemon app that calls web APIs (acquiring tokens)
 manager: dougeby
-ms.date: 03/25/2025
+ms.author: dmwendia
+ms.date: 06/15/2026
 ms.reviewer: jmprieur
 ms.service: identity-platform
 ms.subservice: workforce
 ms.topic: how-to
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
@@ -14,11 +17,13 @@ ms.topic: how-to
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-After you've constructed a confidential client application, you can acquire a token for the app by calling `AcquireTokenForClient`, passing the scope, and optionally forcing a refresh of the token.
+## Acquire a token for a confidential client application
+
+Daemon applications and other confidential client apps that run without user interaction use the OAuth 2.0 client credentials flow to acquire app-only access tokens. This article explains how to configure the required scopes, call the `AcquireTokenForClient` API (or its platform equivalent) to acquire a token, and troubleshoot common errors. Before you proceed, make sure you've already created a confidential client application.
 
 ## Scopes to request
 
-The scope to request for a client credential flow is the name of the resource followed by `/.default`. This notation tells Microsoft Entra ID to use the *application-level permissions* declared statically during application registration. Also, these API permissions must be granted by a tenant administrator.
+The scope to request for a client credential flow is the name of the resource followed by `/.default`. The `/.default` notation tells Microsoft Entra ID to use the *application-level permissions* declared statically during application registration. Also, these API permissions must be granted by a tenant administrator.
 
 # [.NET](#tab/idweb)
 
@@ -41,11 +46,15 @@ Here's an example of defining the scopes for the web API as part of the configur
 
 # [Java](#tab/java)
 
+In Java, define the default Microsoft Graph scope as a constant:
+
 ```Java
 final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default";
 ```
 
 # [Node.js](#tab/nodejs)
+
+In Node.js, specify the scope in the token request object:
 
 ```JavaScript
 const tokenRequest = {
@@ -64,6 +73,8 @@ In MSAL Python, the configuration file looks like this code snippet:
 ```
 
 # [.NET (low level)](#tab/dotnet)
+
+In low-level .NET code, build the scope by appending `/.default` to the resource ID:
 
 ```csharp
 ResourceId = "someAppIDURI";
@@ -88,7 +99,7 @@ To acquire a token for the app, use `AcquireTokenForClient` or its equivalent, d
 
 # [.NET](#tab/idweb)
 
-With Microsoft.Identity.Web, you don't need to acquire a token. You can use higher level APIs, as you see in [Calling a web API from a daemon application](scenario-daemon-call-api.md). If however you're using an SDK that requires a token, the following code snippet shows how to get this token.
+With Microsoft.Identity.Web, you don't need to acquire a token directly. You can use higher level APIs, as you see in [Calling a web API from a daemon application](scenario-daemon-call-api.md). If however you're using an SDK that requires a token, you can obtain an app token through the `ITokenAcquirer` abstraction as shown in the following example:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -105,7 +116,7 @@ string accessToken = tokenResult.AccessToken;
 
 # [Java](#tab/java)
 
-This code is extracted from the [MSAL Java dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/msal4j-sdk/src/samples/confidential-client/).
+The following Java token-acquisition example is extracted from the [MSAL Java dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/msal4j-sdk/src/samples/confidential-client/).
 
 ```Java
 private static IAuthenticationResult acquireToken() throws Exception {
@@ -167,8 +178,9 @@ try {
 
 # [Python](#tab/python)
 
+The following example shows the MSAL Python pattern for acquiring an app-only access token with client credentials:
+
 ```Python
-# The pattern to acquire a token looks like this.
 result = None
 
 # First, the code looks up a token from the cache.
@@ -267,7 +279,7 @@ If you get an error message telling you that you used an invalid scope, you prob
 
 If you get an **Insufficient privileges to complete the operation** error when you call the API, the tenant administrator needs to grant permissions to the application.
 
-If you don't grant admin consent to your application, you run into the following error:
+If you don't grant admin consent to your application, the API returns an error response similar to the following example:
 
 ```json
 Failed to call the web API: Forbidden
@@ -291,7 +303,7 @@ For a Cloud Application Administrator, go to **Enterprise applications** in the 
 
 ##### Standard user
 
-For a standard user of your tenant, ask a Cloud Application Administrator to grant admin consent to the application. To do this, provide the following URL to the administrator:
+For a standard user of your tenant, ask a Cloud Application Administrator to grant admin consent to the application. To request consent, direct the administrator to the following admin consent endpoint URL:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
@@ -302,7 +314,7 @@ In the URL:
 - Replace `Enter_the_Tenant_Id_Here` with the tenant ID or tenant name (for example, `contoso.microsoft.com`).
 - `Enter_the_Application_Id_Here` is the application (client) ID for the registered application.
 
-The error `AADSTS50011: No reply address is registered for the application` may be displayed after you grant consent to the app by using the preceding URL. This error occurs because the application and the URL don't have a redirect URI. This can be ignored.
+The error `AADSTS50011: No reply address is registered for the application` may be displayed after you grant consent to the app by using the preceding URL. The `AADSTS50011` error occurs because the application and the URL don't have a redirect URI. You can safely ignore this error.
 
 ### Are you calling your own API?
 

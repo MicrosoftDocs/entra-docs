@@ -5,11 +5,12 @@ titleSuffix: Microsoft Entra Agent ID
  
  
 ms.topic: how-to
-ms.date: 06/03/2026
+ms.date: 06/15/2026
 ms.reviewer: dastrock, jomondi
 ai-usage: ai-assisted
 
 #customer-intent: As a developer building interactive agents, I want to authenticate users, configure authorization, and acquire tokens through the On-Behalf-Of flow, so that my agent can securely act on behalf of users to access protected resources.
+ms.custom: msecd-doc-authoring-1013
 ---
 
 # Authenticate users and acquire tokens for interactive agents
@@ -75,6 +76,8 @@ Authorization: Bearer <token>
 ```
 
 ##### [Microsoft Graph PowerShell](#tab/microsoft-graph-powershell)
+
+Use Microsoft Graph PowerShell to update the agent identity blueprint with the redirect URI.
 
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.ReadWrite.All" -TenantId <your-test-tenant>
