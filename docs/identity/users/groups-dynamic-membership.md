@@ -134,7 +134,6 @@ You can use the following user properties to create a single expression.
 | `jobTitle` |Any string value or `null` | ```user.jobTitle -eq "value"``` |
 | `mail` |Any string value or `null` (SMTP address of the user) | ```user.mail -eq "value"```<br><br>```user.mail -notEndsWith "@Contoso.com"``` |
 | `mailNickName` |Any string value (mail alias of the user) | ```user.mailNickName -eq "value"```<br><br>```user.mailNickname -endsWith "-vendor"``` |
-| `memberOf` | Array of strings (group object GUIDs) | ```user.memberOf -any (group.objectId -in ['value'])``` |
 | `mobile` |Any string value or `null` | ```user.mobile -eq "value"```|
 | `objectId` |GUID of the user object | ```user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"```|
 | `onPremisesDistinguishedName` | Any string value or `null` | ```user.onPremisesDistinguishedName -eq "value"```|
@@ -156,6 +155,7 @@ You can use the following user properties to create a single expression.
 
 | Property | Allowed values | Examples |
 | --- | --- | --- |
+| `memberOf` (preview) | Collection of strings (group object IDs) | ```user.memberOf -any (group.objectId -in ['value'])``` |
 | `otherMails` |Any string value | ```(user.otherMails -any (_ -startsWith "alias@domain"))```<br><br>```(user.otherMails -any (_ -endsWith "@contoso.com"))``` |
 | `proxyAddresses` |`SMTP: alias@domain`, `smtp: alias@domain` | ```(user.proxyAddresses -any (_ -startsWith "SMTP: alias@domain"))```<br><br>```(user.proxyAddresses -any (_ -notEndsWith "@outlook.com"))``` |
 
@@ -316,10 +316,12 @@ You can use the following operators to apply a condition to one or all of the it
 
 `assignedPlans` is a multi-value property that lists all service plans assigned to the user. Service plans aren't the same as licenses or products. For more information, see [Product names and service plan identifiers for licensing](/entra/identity/users/licensing-service-plan-reference).
 
-To find the service plan IDs assigned to a user, use Microsoft Graph PowerShell with the `Organization.Read.All` permission:
+To find the service plan IDs assigned to a user, use Microsoft Graph PowerShell with the `User.Read.All` permission:
 
 ```powershell
-Get-MgUser -UserId user@domain.com -Property assignedPlans |
+Connect-MgGraph -Scopes 'User.Read.All'
+
+Get-MgUser -UserId user@contoso.com -Property assignedPlans |
   Select-Object -ExpandProperty assignedPlans |
   Select-Object service, servicePlanId, capabilityStatus | Format-List
 ```
@@ -330,7 +332,7 @@ The following expression selects users who have the Exchange Online (Plan 2) ser
 user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled")
 ```
 
-The `assignedPlan.capabilityStatus` parameter is required for the query to work.
+Include `assignedPlan.capabilityStatus -eq "Enabled"` when you want the rule to match only users whose service plan is enabled.
 
 You can use a rule like this one to group all users for whom a Microsoft 365 or other Microsoft Online Services capability is enabled. You could then apply the rule with a set of policies to the group.
 
@@ -451,7 +453,7 @@ For more information, see [Use the attributes in dynamic membership groups](~/id
 
 ## Rules for devices
 
-You can create a rule that selects device objects for membership in a group. You can't have both users and devices as group members. If you use Intune, consider using assignment filters when possible because they apply to existing groups. For more information, see [Use filters when assigning your apps, policies, and profiles in Microsoft Intune](/intune/intune-service/fundamentals/filters).
+You can create a rule that selects device objects for membership in a group. You can't have both users and devices as group members. For Intune app and policy assignments, use assignment filters when they meet the targeting need. Filters include or exclude managed devices or apps within an assigned group. Use dynamic groups for non-Intune or cross-workload scenarios, such as Conditional Access, licensing, or Autopilot profile assignment. For more information, see [Create assignment filters in Microsoft Intune](/intune/fundamentals/filters/overview).
 
 > [!NOTE]
 > The `organizationalUnit` attribute is no longer listed, and you shouldn't use it. Intune sets this string in specific cases, but Microsoft Entra ID doesn't recognize it. No devices are added to groups based on this attribute.
@@ -500,7 +502,7 @@ You can use the following device attributes.
  | `extensionAttribute15` | Any string value | `device.extensionAttribute15 -eq "some string value"` |
  | `isRooted` | `true`, `false` | `device.isRooted -eq true` |
  | `managementType` | Mobile device management (for mobile devices) | `device.managementType -eq "MDM"` |
- | `memberOf` | Any string value (valid group object ID) | `device.memberOf -any (group.objectId -in ['value'])` |
+ | `memberOf` (preview) | Collection of strings (group object IDs) | `device.memberOf -any (group.objectId -in ['value'])` |
  | `objectId` | A valid Microsoft Entra object ID | `device.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"` |
  | `profileType` | A valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | `device.profileType -eq "RegisteredDevice"` |
  | `systemLabels`<sup>4</sup> | A read-only string that matches the Intune device property for tagging Modern Workplace devices | `device.systemLabels -startsWith "M365Managed" SystemLabels` |
