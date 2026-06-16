@@ -4,10 +4,10 @@ description: Learn PCI-DSS defined approach requirements for restricting access 
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: jricketts
-ms.author: jricketts
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, jricketts
 ms.date: 08/23/2024
 ms.custom: it-pro
 ms.collection:

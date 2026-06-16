@@ -1,12 +1,11 @@
 ---
 title: Configure STACKIT Cloud for single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and STACKIT Cloud.
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/18/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and STACKIT Cloud so that I can control who has access to STACKIT Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure STACKIT Cloud for single sign-on with Microsoft Entra ID
 

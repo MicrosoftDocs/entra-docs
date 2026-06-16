@@ -1,8 +1,6 @@
 ---
 title: Review suggestions from the Conditional Access Optimization Agent
 description: Learn how to review and apply suggestions provided by the Security Copilot for Microsoft Entra optimization agent.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
 ms.date: 05/12/2026
 ms.update-cycle: 180-days
@@ -108,7 +106,7 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 
 ### Deep analysis
 
-Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions and flags policies that exclude a large portion of users or recommends explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
+Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device code flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions and flags policies that exclude a large portion of users or recommends explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
 
 :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png" alt-text="Screenshot of a policy suggestion provided by the deep analysis feature." lightbox="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png":::
 

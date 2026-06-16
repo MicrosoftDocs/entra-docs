@@ -1,13 +1,14 @@
 ---
 title: Configure Microsoft Entra ID for CMMC compliance
 description: Learn how to configure Microsoft Entra ID to meet CMMC requirements.
-author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: standards
 ms.topic: concept-article
 ms.date: 1/3/2023
+author: janicericketts
 ms.author: jricketts
+ms.reviewer: jricketts
 ms.custom: it-pro
 ---
 

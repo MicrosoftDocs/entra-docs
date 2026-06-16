@@ -3,7 +3,6 @@ title: How to manage external MFA in Microsoft Entra ID
 description: Learn how to manage external MFA methods for Microsoft Entra multifactor authentication
 ms.topic: how-to
 ms.date: 02/24/2026
-author: aloom3
 ms.reviewer: akulloomba
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an authentication administrator, I want to learn how to manage an external multifactor authentication method for Microsoft Entra ID.

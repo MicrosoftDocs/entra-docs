@@ -4,8 +4,6 @@ description: Learn how to enable passkeys (FIDO2) for phishing-resistant, passwo
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/21/2026
-ms.author: godonnell
-author: garrodonnell
 ai-usage: ai-assisted
 ms.custom: it-pro
 #Customer intent: As a developer or IT admin, I want to enable passkey (FIDO2) sign-in for my external tenant so that customers can use phishing-resistant, passwordless authentication.
@@ -85,7 +83,7 @@ The credential management experience should enable customers to:
 - View their registered passkeys.
 - Delete a passkey.
 
-For a complete reference implementation, see the [passkey management sample app on GitHub](https://github.com/Azure-Samples/ms-eeid-passkey-sample-app). The sample is a React single-page application (SPA) that demonstrates how to sign in users with Microsoft Entra External ID and manage passkey credentials by using the Microsoft Graph API.
+For a complete reference implementation, see the [passkey management sample app on GitHub](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample is a React single-page application (SPA) that demonstrates how to sign in users with Microsoft Entra External ID and manage passkey credentials by using the Microsoft Graph API.
 
 ## User experience
 

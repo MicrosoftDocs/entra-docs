@@ -1,14 +1,12 @@
 ---
 title: Configure OpenText Directory Services for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to OpenText Directory Services.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/18/2026
-ms.author: jeedes
+ms.date: 06/09/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to OpenText Directory Services so that I can streamline the user management process and ensure that users have the appropriate access to OpenText Directory Services.
----
+--- 
 
 # Configure OpenText Directory Services for automatic user provisioning with Microsoft Entra ID
 
@@ -22,11 +20,12 @@ This article describes the steps you need to perform in both OpenText Directory 
 > * Keep user attributes synchronized between Microsoft Entra ID and OpenText Directory Services
 > * Provision groups and group memberships in OpenText Directory Services
 > * [Single sign-on](./directory-services-tutorial.md) to OpenText Directory Services (recommended)
-> * Client Credentials Authentication authentication supported.
+> * Client Credentials authentication supported.
 > * Long lived bearer token authentication supported.
 
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
+OpenText Directory Services is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 

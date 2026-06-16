@@ -1,8 +1,6 @@
 ---
 title: Configure SAP SuccessFactors API user
 description: Learn how to configure an API user in SAP SuccessFactors that can be used for provisioning integrations.
-author: jenniferf-skc
-ms.author: jfields
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning

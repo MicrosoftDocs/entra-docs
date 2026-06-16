@@ -2,11 +2,10 @@
 title: Configure Hosted MyCirqa SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hosted MyCirqa SSO.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hosted MyCirqa so that I can control who has access to Hosted MyCirqa, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Hosted MyCirqa SSO for Single sign-on with Microsoft Entra ID
 

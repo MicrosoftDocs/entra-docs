@@ -1,14 +1,12 @@
 ---
 title: Configure WATS for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to WATS.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to WATS so that I can streamline the user management process and ensure that users have the appropriate access to WATS.
----
+--- 
 
 # Configure WATS for automatic user provisioning with Microsoft Entra ID
 

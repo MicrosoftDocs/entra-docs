@@ -4,10 +4,10 @@ description: Guidance on navigating details and recommendations for services and
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: jricketts
-ms.author: jricketts
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, jricketts
 ms.date: 03/19/2024
 ms.custom: it-pro
 ---

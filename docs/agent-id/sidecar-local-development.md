@@ -2,11 +2,9 @@
 title: Run the Microsoft Entra Auth SDK (sidecar) for local development
 titleSuffix: Microsoft Entra Agent ID
 description: Run the Microsoft Entra SDK auth sidecar on your laptop with Docker Compose and Ollama to see autonomous and on-behalf-of agent authentication working end-to-end.
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.topic: how-to
-ms.date: 04/28/2026
-ms.custom: agent-id, msecd-doc-authoring-1012
+ms.date: 06/15/2026
+ms.custom: agent-id, msecd-doc-authoring-1013
 ai-usage: ai-assisted
 
 #customer intent: As a developer building AI agents, I want to run the Microsoft Entra SDK auth sidecar locally so that I can see agent authentication working end-to-end before deploying to production.
@@ -15,7 +13,7 @@ ai-usage: ai-assisted
 
 # Run the sidecar for local development
 
-This article shows how to run the [Microsoft Entra Auth SDK sidecar](https://mcr.microsoft.com/en-us/product/entra-sdk/auth-sidecar/about) in your local environment by using Docker Compose. You start a four-container stack - chat agent, sidecar, downstream weather API, and a local LLM ([Ollama](https://ollama.com)). Then you send a query through the chat UI and observe the full token flow from agent to API.
+This article shows how to run the [Microsoft Entra Auth SDK sidecar](https://mcr.microsoft.com/en-us/product/entra-sdk/auth-sidecar/about) in your local environment by using Docker Compose. You start a four-container stack - chat agent, sidecar, downstream weather API, and a local large language model (LLM) such as ([Ollama](https://ollama.com)). Then you send a query through the chat UI and observe the full token flow from agent to API. Before you begin, review the [Prerequisites](#prerequisites) for required tools, Microsoft Entra tenant objects, and local environment setup.
 
 The sample demonstrates two execution modes and two identity flows:
 
@@ -46,14 +44,15 @@ Ollama is **not** a prerequisite on your host - it runs inside the compose stack
 
 ## Clone the sample repository
 
-Clone the repository and navigate to the `sidecar/dev` directory:
+Run the following commands to download the sample project and change into the sidecar directory, which contains the Docker Compose configuration and agent source code for this walkthrough:
 
 ```bash
 git clone https://github.com/microsoft/entra-agentid-samples.git
 cd entra-agentid-samples/sidecar/dev
 ```
 
-## Architecture
+<a name="architecture"></a>
+## Sidecar local development architecture
 
 The stack runs four containers on an internal Docker network: `llm-agent-dev` (Flask chat UI, exposed on port 3003), `agent-id-sidecar-dev` (Microsoft Entra SDK auth sidecar), `weather-api-dev` (downstream API that validates agent tokens), and `ollama-dev` (local LLM). Only the chat UI is exposed to your host; the sidecar and weather API are reachable only from within the Docker network.
 
@@ -69,7 +68,7 @@ The request path works like this:
 1. The sidecar (`agent-id-sidecar-dev`) performs an OAuth 2.0 exchange with Microsoft Entra ID and receives a token (TR).
 1. The sidecar returns the `Authorization: Bearer TR` header to the agent.
 1. The agent calls the weather API (`weather-api-dev`) with that header.
-1. The weather API validates TR (JWKS, RS256, issuer, expiry, audience) and returns weather data.
+1. The weather API validates TR (JSON Web Key Set (JWKS), RS256 signature algorithm, issuer, expiry, audience) and returns weather data.
 
 The agent never contacts Microsoft Entra ID directly and never sees a credential. It asks the sidecar for an `Authorization` header, receives a `Bearer` token, and passes that token to the weather API. Only the sidecar communicates with `login.microsoftonline.com`.
 
@@ -77,7 +76,8 @@ The agent never contacts Microsoft Entra ID directly and never sees a credential
 
 The autonomous flow uses two tokens: **T1** (blueprint app token from client credentials) and **TR** (agent token for the downstream API). The OBO flow adds a third: **Tc** (user access token from MSAL.js browser sign-in). The sidecar handles all token acquisition and caching so your agent code never manages credentials directly.
 
-### Autonomous flow
+<a name="autonomous-flow"></a>
+### Understand the autonomous token flow
 
 No user sign-in is required. The agent authenticates as itself by using the blueprint's client credentials.
 
@@ -90,7 +90,8 @@ No user sign-in is required. The agent authenticates as itself by using the blue
 1. The tool calls the weather API with `Authorization: Bearer TR`.
 1. The weather API validates TR (signature, issuer, expiry, audience) and returns weather data.
 
-### OBO flow
+<a name="obo-flow"></a>
+### Understand the on-behalf-of (OBO) token flow
 
 The agent acts on behalf of a signed-in user. The sidecar performs a three-step token exchange.
 
@@ -112,11 +113,15 @@ Copy the example environment file and add your Microsoft Entra values:
 
 ### [Bash](#tab/bash)
 
+Create a local environment file from the sample template so you can fill in your tenant and app registration values:
+
 ```bash
 cp .env.example .env
 ```
 
 ### [PowerShell](#tab/powershell)
+
+Copy the example environment file to `.env` so you can populate it with your tenant and app registration values:
 
 ```powershell
 Copy-Item .env.example .env
@@ -137,7 +142,7 @@ Open `.env` in your editor and set the following values:
 
 The autonomous flow requires `TENANT_ID`, `BLUEPRINT_APP_ID`, `BLUEPRINT_CLIENT_SECRET`, and `AGENT_CLIENT_ID`. The OBO flow also requires `CLIENT_SPA_APP_ID`.
 
-This sample uses `ClientSecret` as the credential source type. The sidecar supports the following credential types through the `AzureAd__ClientCredentials__0__SourceType` setting in `docker-compose.yml`:
+This sidecar sample uses `ClientSecret` as the credential source type. The sidecar supports the following credential types through the `AzureAd__ClientCredentials__0__SourceType` setting in `docker-compose.yml`:
 
 - **`ClientSecret`:** Local development only. This type is the default for this sample.
 - **`SignedAssertionFromManagedIdentity`:** Deployed on Azure. Zero secrets, recommended for production.
@@ -180,13 +185,13 @@ Add the `CLIENT_SPA_APP_ID` value to your `.env` file after running the scripts.
 
 ## Start the stack
 
-Start all four containers:
+Build the container images and start all four services in detached mode by running the following command:
 
 ```bash
 docker compose up --build -d
 ```
 
-The first run takes about 30 seconds while Ollama pulls the `qwen2.5:1.5b` model. To verify the stack is ready:
+The first run takes about 30 seconds while Ollama pulls the `qwen2.5:1.5b` model. To verify that the local sample stack is running and that components such as the sidecar and Ollama are ready, query the status endpoint:
 
 ### [Bash](#tab/bash)
 
@@ -195,6 +200,8 @@ curl http://localhost:3003/api/status
 ```
 
 ### [PowerShell](#tab/powershell)
+
+Query the sample app's status endpoint to confirm that the local environment is healthy and all services are running:
 
 ```powershell
 Invoke-RestMethod http://localhost:3003/api/status
@@ -205,6 +212,8 @@ Invoke-RestMethod http://localhost:3003/api/status
 The response shows `ollama_available: true` when the stack is ready.
 
 ## Send a query through the chat UI
+
+Perform the following steps to send a test query through the chat UI and observe the token flow:
 
 1. Open `http://localhost:3003` in your browser.
 
@@ -233,7 +242,7 @@ The response shows `ollama_available: true` when the stack is ready.
 | OBO sign-in popup is blocked | Browser popup blocker is active. | Allow popups for `localhost:3003`. |
 | `4xx` error from sidecar during OBO | `CLIENT_SPA_APP_ID` is missing or the SPA redirect URI doesn't match. | Rerun the OBO setup scripts. Verify `http://localhost:3003` is listed in the SPA's redirect URIs. |
 
-To view container logs for any service:
+To diagnose startup, authentication, or downstream API issues, display the logs from each container by running the following commands:
 
 ```bash
 docker logs llm-agent-dev
@@ -243,7 +252,7 @@ docker logs weather-api-dev
 
 ## Clean up resources
 
-Stop the containers when you're done:
+Stop the containers when you're done. Choose the cleanup level that fits your needs. The first command stops the demo containers while preserving volumes and images for a faster restart later:
 
 ```bash
 # Stop containers, keep volumes and images

@@ -2,11 +2,10 @@
 title: Configure HireVue for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HireVue.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HireVue so that I can control who has access to HireVue, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure HireVue for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate HireVue with Microsoft Entra ID. When you integrate HireVue with Microsoft Entra ID, you can:

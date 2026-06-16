@@ -1,12 +1,11 @@
 ---
 title: Configure Citrix ShareFile for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Citrix ShareFile.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Citrix ShareFile so that I can control who has access to Citrix ShareFile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Citrix ShareFile for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Citrix ShareFile with Microsoft Entra ID. When you integrate Citrix ShareFile with Microsoft Entra ID, you can:

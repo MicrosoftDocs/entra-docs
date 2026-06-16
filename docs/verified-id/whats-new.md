@@ -4,7 +4,6 @@ description: Recent updates for Microsoft Entra Verified ID
 ms.topic: whats-new
 ms.date: 04/22/2026
 ms.custom: references_regions
-
 #Customer intent: As a Microsoft Entra Verified ID issuer, verifier or developer, I want to know what's new in the product so that I can make full use of the functionality as it becomes available.
 
 ---

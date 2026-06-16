@@ -3,7 +3,6 @@ title: Create and Manage Custom Conditional Access Authentication Strengths
 description: Learn how admins can create custom authentication strengths with advanced options for passkey (FIDO2) security keys and certificate-based authentication.
 ms.topic: how-to
 ms.date: 09/15/2025
-author: inbarckms
 ms.reviewer: inbarc
 ms.custom: sfi-image-nochange
 ---

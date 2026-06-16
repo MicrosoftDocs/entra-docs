@@ -2,10 +2,8 @@
 title: Add federated identity provider sign-in and sign-up to an Android app using native authentication web flow
 description: Learn how to enable federated identity provider sign-in and sign-up in an Android app using Microsoft Entra native authentication with web-based authentication flow.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external

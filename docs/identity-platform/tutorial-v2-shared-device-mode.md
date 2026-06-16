@@ -2,8 +2,6 @@
 title: "Tutorial: Add shared-device mode support to your Android application"
 description: In this tutorial, you learn how to set up an Android application to run in shared device mode.
 manager: pmwongera
-author: henrymbuguakiarie
-ms.author: henrymbugua
 ms.date: 08/19/2024
 ms.reviewer: akgoel
 ms.service: identity-platform

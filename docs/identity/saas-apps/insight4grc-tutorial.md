@@ -2,11 +2,10 @@
 title: Configure Insight4GRC for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Insight4GRC.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Insight4GRC so that I can control who has access to Insight4GRC, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Insight4GRC for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Insight4GRC with Microsoft Entra ID. When you integrate Insight4GRC with Microsoft Entra ID, you can:

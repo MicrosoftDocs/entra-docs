@@ -1,14 +1,12 @@
 ---
 title: Configure elia for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to elia.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to elia so that I can streamline the user management process and ensure that users have the appropriate access to elia.
----
+--- 
 
 # Configure elia for automatic user provisioning with Microsoft Entra ID
 

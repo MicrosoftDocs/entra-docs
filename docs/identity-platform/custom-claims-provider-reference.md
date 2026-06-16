@@ -1,9 +1,7 @@
 ---
 title: Custom claims provider reference
 description: Reference documentation for custom claims providers
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom: 
 ms.date: 05/25/2025
 ms.reviewer: jasuri

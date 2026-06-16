@@ -2,13 +2,13 @@
 title: Authenticate and acquire tokens for autonomous agents
 description: Learn how to authenticate autonomous agents with Microsoft Entra ID, grant application permissions, and optionally create and authenticate as an agent's user account.
 titleSuffix: Microsoft Entra Agent ID
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 06/15/2026
 ms.reviewer: jomondi, dastrock
 
 #customer-intent: As a developer building autonomous agents, I want to authenticate my agent, grant it application permissions, and optionally create an agent's user account, so that my agent can operate independently and access Microsoft Graph and other resources.
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
 ---
 
 # Authenticate and acquire tokens for autonomous agents
@@ -57,7 +57,7 @@ Gather the credential you configured on your agent identity blueprint. You need 
 
 ### [Microsoft.Identity.Web](#tab/microsoft-identity-web)
 
-For production, use a managed identity as a federated identity credential:
+Configure *Microsoft.Identity.Web* to authenticate your agent identity blueprint using a federated identity credential. For production, use a managed identity as the federated identity credential:
 
 ```json
 {
@@ -102,6 +102,8 @@ When requesting the token for the agent identity blueprint, provide the agent id
 When using a client secret during local development, provide the `client_secret` parameter. For certificates and managed identities, use `client_assertion` and `client_assertion_type` instead.
 
 ### [Microsoft Graph API](#tab/Microsoft-graph-api)
+
+Use the following token request to obtain a token for the agent identity blueprint:
 
 ```http
 POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
@@ -199,7 +201,7 @@ There are two ways to grant application permissions to an autonomous agent:
 
 Use the following steps to get an app role assignment.
 
-1. [Obtain an access token](#request-an-agent-identity-token) with the application permissions `Application.Read.All` and `AppRoleAssignment.ReadWrite.All`.
+1. [Request an agent identity token](#request-an-agent-identity-token) with the application permissions `Application.Read.All` and `AppRoleAssignment.ReadWrite.All`.
 
 1. Get the object ID of the resource service principal that you're trying to access. For example, to find the Microsoft Graph service principal object ID:
     1. Go to the [Microsoft Entra admin center](https://entra.microsoft.com/).
@@ -207,7 +209,7 @@ Use the following steps to get an app role assignment.
     1. Filter by Application type == Microsoft Applications
     1. Search for **Microsoft Graph**.
 
-1. Get the unique ID of the [app role you want to assign](/graph/permissions-reference).
+1. Get the unique ID of the app role you want to assign from the [Microsoft Graph permissions reference](/graph/permissions-reference).
 
 1. Create the app role assignment:
 
@@ -266,7 +268,10 @@ https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 
 Agent implementations might redirect the admin to this URL in various ways, such as including it in a message sent to the admin in a chat window. When the admin is redirected to this URL, they're asked to sign in and grant consent to the permissions specified in the scope parameter. At the moment you must use the redirect URI listed, which directs the admin to a blank page after granting consent.
 
-After you grant your application the required permissions, request a new agent access token for the permissions to take effect.
+> [!NOTE]
+> Configure a redirect URI on your blueprint and include a `state` parameter in the consent request. When consent is granted, the user is sent to the redirect URI where you can display confirmation. Your endpoint can use the `state` parameter to track that permission was granted. For single-tenant agents, you can alternatively retry token requests until consent is granted because the tenant ID is already known.
+
+After you grant your agent identity blueprint the required permissions, request a new agent access token for the permissions to take effect.
 
 ## Authenticate as an agent's user account
 
@@ -278,14 +283,14 @@ Each agent identity can only have a single associated agent's user account, and 
 
 To create agents' user accounts, your agent identity blueprint must be granted the application permission `AgentIdUser.ReadWrite.IdentityParentedBy` in the tenant. You can obtain authorization in one of two ways:
 
-- [Request agent authorization](#request-authorization-from-a-tenant-administrator). Be sure to use your agent identity blueprint as the `client_id`, not the agent identity.
-- [Manually create an appRoleAssignment](#create-an-app-role-assignment-via-apis) in the tenant. Use the service principal object ID of the agent identity blueprint as the `principalId` value, not its application (client) ID.
+- [Request authorization from a tenant administrator](#request-authorization-from-a-tenant-administrator). Be sure to use your agent identity blueprint as the `client_id`, not the agent identity.
+- [Create an app role assignment via APIs](#create-an-app-role-assignment-via-apis) in the tenant. Use the service principal object ID of the agent identity blueprint as the `principalId` value, not its application (client) ID.
 
 If you wish to use a different client, not the agent identity blueprint, to create agents' user accounts, that client needs to obtain the `AgentIdUser.ReadWrite.All` delegated or application permission instead.
 
 ### Create an agent's user account
 
-Create an agent's user account using your agent identity blueprint or other approved client. The recommended way to create an agent's user account is using your agent identity blueprint. You [require an access token](create-delete-agent-identities.md#get-an-access-token-using-agent-identity-blueprint) to create an agent's user account.
+Create an agent's user account using your agent identity blueprint or other approved client. The recommended way to create an agent's user account is using your agent identity blueprint. You need to [get an access token using the agent identity blueprint](create-delete-agent-identities.md#get-an-access-token-using-agent-identity-blueprint) to create an agent's user account.
 
 #### [REST](#tab/rest)
 
@@ -408,7 +413,7 @@ Once you have your agent's user account created, you don't need to configure any
 
 ### Grant consent to agent identity
 
-Agents' user accounts behave like any other user account. Before you can request tokens using your agent's user account, you need to authorize the agent identity to act on its behalf. You can authorize the agent identity using [admin authorization](#request-authorization-from-a-tenant-administrator) or manually create an `oAuth2PermissionGrant` using Microsoft Graph or Microsoft Graph PowerShell.
+Agents' user accounts behave like any other user account. Before you can request tokens using your agent's user account, you need to authorize the agent identity to act on its behalf. You can authorize the agent identity by [requesting authorization from a tenant administrator](#request-authorization-from-a-tenant-administrator) or manually create an `oAuth2PermissionGrant` using Microsoft Graph or Microsoft Graph PowerShell.
 
 For Microsoft Graph, your request is as shown in the following snippet:
 
@@ -457,7 +462,7 @@ To authenticate an agent's user account, you need to follow a three-step process
 
 #### [REST](#tab/rest)
 
-First, request a token as the agent identity blueprint, as described in [Request a token for the agent identity blueprint](#request-a-token-for-the-agent-identity-blueprint). Once you have your agent app token, use it to request a Federated Identity Credential (FIC) for your agent identity:
+First, request a token as the agent identity blueprint, as described in [Request a token for the agent identity blueprint](#request-a-token-for-the-agent-identity-blueprint). Once you have the agent identity blueprint token, use the agent identity blueprint token to request a Federated Identity Credential (FIC) for your agent identity:
 
 ```http
 POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token

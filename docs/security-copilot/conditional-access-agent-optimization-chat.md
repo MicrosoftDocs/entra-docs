@@ -1,8 +1,6 @@
 ---
 title: Conditional Access Optimization Agent chat
 description: Learn about the chat feature for the Security Copilot for Microsoft Entra Conditional Access Optimization Agent.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
 ms.date: 05/22/2026
 ms.update-cycle: 180-days

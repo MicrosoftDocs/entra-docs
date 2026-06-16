@@ -3,8 +3,6 @@ title: Join a Mac device with Microsoft Entra ID and configure it for shared dev
 description: How users can set up a Microsoft Entra Joined Mac that supports multiple users for shared device scenarios with macOS Platform Single Sign-on
 ms.topic: tutorial
 ms.date: 02/23/2026
-ms.author: godonnell
-author: garrodonnell
 manager: leventbesik
 ms.reviewer: jploegert
 ms.custom: sfi-image-nochange

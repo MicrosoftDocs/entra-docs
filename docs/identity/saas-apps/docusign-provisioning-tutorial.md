@@ -4,10 +4,9 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to DocuSign so that I can streamline the user management process and ensure that users have the appropriate access to DocuSign.
----
+--- 
 # Configure DocuSign for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to show you the steps you need to perform in DocuSign and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to DocuSign.

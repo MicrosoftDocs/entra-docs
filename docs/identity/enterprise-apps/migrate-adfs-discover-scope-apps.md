@@ -2,7 +2,6 @@
 title: 'Phase 1: Discover and scope apps'
 description: This article describes phase 1 of planning migration of applications from AD FS to Microsoft Entra ID
 ms.topic: concept-article
-
 ms.date: 01/31/2025
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management

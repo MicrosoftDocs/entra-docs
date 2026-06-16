@@ -4,9 +4,7 @@ description: Step-by-step guidance to move from MFA Server on-premises to Micros
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: gasinh
-author: gargi-sinha
-ms.reviewer: michmcla
+ms.reviewer: michmcla, gasinh
 ---
 # Migrate to Microsoft Entra multifactor authentication with federation
 
