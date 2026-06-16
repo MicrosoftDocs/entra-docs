@@ -2,12 +2,14 @@
 title: Configure Zoom for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom.
 
+author: jeevansd
 manager: pmwongera
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 06/11/2026
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom so that I can streamline the user management process and ensure that users have the appropriate access to Zoom.
---- 
+---
 
 # Configure Zoom for automatic user provisioning with Microsoft Entra ID
 
@@ -20,6 +22,10 @@ This article describes the steps you need to perform in both Zoom and Microsoft 
 > * Remove users in Zoom when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Zoom
 > * [Single sign-on](./zoom-tutorial.md) to Zoom (recommended)
+
+Zoom is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 
