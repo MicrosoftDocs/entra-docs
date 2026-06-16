@@ -2,9 +2,7 @@
 title: Known Limitations for Global Secure Access
 ms.reviewer: teresayao
 description: Discover the known limitations of Global Secure Access, including platform-specific issues and mitigations, to ensure seamless deployment and management.
-author: HULKsmashGithub
 ms.topic: reference
-ms.author: jayrusso
 ms.date: 05/29/2026
 ms.custom: agent-id-ignite
 

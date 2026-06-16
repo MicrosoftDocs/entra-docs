@@ -4,8 +4,6 @@ description: The Global Secure Access client helps secure network traffic at the
 #customer intent: As an IT admin, I want to set up and deploy the Global Secure Access client for iOS devices so that I can secure network traffic for my organization.
 ms.topic: how-to
 ms.date: 10/13/2025
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
 

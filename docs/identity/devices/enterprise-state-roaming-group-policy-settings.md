@@ -4,7 +4,6 @@ description: Management settings for Enterprise State Roaming
 
 ms.topic: reference
 ms.date: 06/27/2025
-
 ms.reviewer: sempofu, micrider
 ---
 # Group Policy and MDM settings

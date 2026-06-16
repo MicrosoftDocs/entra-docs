@@ -1,8 +1,6 @@
 ---
 title: Microsoft Entra Connect Health with AD FS risky IP report workbook
 description: Describes the Microsoft Entra Connect Health AD FS risky IP report with Azure Monitor Workbooks.
-author: omondiatieno
-ms.author: jomondi
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to

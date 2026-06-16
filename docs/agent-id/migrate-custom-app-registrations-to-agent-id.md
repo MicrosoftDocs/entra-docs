@@ -2,8 +2,6 @@
 title: Migrate custom app registrations to Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to migrate AI agents from standard Microsoft Entra app registrations to Agent ID for agent-specific governance and security.
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.topic: how-to
 ms.date: 06/15/2026
 ms.custom: agent-id, msecd-doc-authoring-1013

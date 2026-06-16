@@ -6,7 +6,6 @@ services: active-directory
 ms.topic: how-to
 ms.date: 10/14/2025
 ms.reviewer: mjsantani, calui
-
 ms.collection: M365-identity-device-management
 ---
 

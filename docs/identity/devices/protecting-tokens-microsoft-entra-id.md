@@ -4,8 +4,6 @@ description: To protect against token theft and replay attacks, explore the type
 ms.topic: concept-article
 ms.date: 04/24/2025
 
-ms.author: jfields
-author: jenniferf-skc
 ms.reviewer: jbley 
 ---
 

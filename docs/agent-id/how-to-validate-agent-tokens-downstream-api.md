@@ -2,8 +2,6 @@
 title: Validate agent identity tokens in a downstream API
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to validate Microsoft Entra Agent ID tokens in a downstream API by checking the signature, issuer, audience, and agent identity marker claim.
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.topic: how-to
 ms.date: 04/28/2026
 ms.custom: agent-id, msecd-doc-authoring-1012

@@ -2,10 +2,8 @@
 title: Add phone SMS strong authentication method registration to an iOS and macOS app using native authentication
 description: Learn how to register phone SMS as a strong authentication method for MFA-enabled users in an iOS or macOS app using native authentication, including configuring client capabilities and handling registration challenges.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

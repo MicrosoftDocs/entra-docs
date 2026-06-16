@@ -2,9 +2,7 @@
 title: "Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform"
 description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET Core web API by using the Microsoft identity platform for authorization.
 ROBOTS: NOINDEX
-author: Dickson-Mwendia
 manager: dougeby
-ms.author: dmwendia
 ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform

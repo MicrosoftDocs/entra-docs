@@ -1,7 +1,6 @@
 ---
 title: Acquire tokens to call a web API using a daemon application
 description: Learn how to build a daemon app that calls web APIs (acquiring tokens)
-author: Dickson-Mwendia
 manager: dougeby
 ms.author: dmwendia
 ms.date: 06/15/2026

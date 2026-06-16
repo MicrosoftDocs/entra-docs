@@ -3,8 +3,6 @@ title: Discover identities in target applications with Account Discovery
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
 ms.date: 05/26/2026
-ms.author: jfields
-author: jenniferf-skc
 ms.reviewer: arvinh
 ms.service: entra-id
 ms.subservice: app-provisioning

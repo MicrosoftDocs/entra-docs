@@ -4,7 +4,6 @@ description: Step-by-step instructions and examples for using an Azure VM-manage
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 01/11/2022
-
 ms.tool: azure-cli, azure-powershell
 ms.devlang: azurecli
 ms.custom: devx-track-azurepowershell, devx-track-azurecli

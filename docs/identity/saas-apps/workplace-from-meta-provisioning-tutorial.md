@@ -4,7 +4,7 @@ description: Learn the steps you need to do in both Workplace from Meta and Micr
 ms.topic: how-to
 ms.date: 04/02/2026
 ms.custom: sfi-image-nochange
----
+--- 
 
 # Configure Workplace from Meta for automatic user provisioning with Microsoft Entra ID
 

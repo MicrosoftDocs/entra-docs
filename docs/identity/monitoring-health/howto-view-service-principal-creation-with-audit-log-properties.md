@@ -2,10 +2,8 @@
 title: How to investigate why a service principal was created in your tenant
 description: Use new audit log properties to understand why a new service principal was added to your tenant. 
 
-author: jenniferf-skc
 ms.topic: how-to
 ms.date: 01/26/2026
-ms.author: jfields
 ms.reviewer: arielsc
 ai-usage: ai-assisted
 

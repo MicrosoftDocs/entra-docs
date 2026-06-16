@@ -2,8 +2,6 @@
 title: Tenant management with Azure REST API
 description: Learn how to manage your external tenant by calling the Azure REST API.
  
-author: garrodonnell
-ms.author: godonnell
 ms.topic: how-to
 ms.date: 04/24/2026
 ms.custom: developer

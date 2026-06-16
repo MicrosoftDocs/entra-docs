@@ -5,7 +5,7 @@ services: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 03/25/2025
----
+--- 
 
 # Configure Acronis Cyber Protect Cloud for Single Sign-On with Microsoft Entra ID
 

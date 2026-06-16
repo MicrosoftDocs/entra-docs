@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/03/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bustle B2B Transport Systems so that I can streamline the user management process and ensure that users have the appropriate access to Bustle B2B Transport Systems.
----
+--- 
 
 # Configure Bustle B2B Transport Systems for automatic user provisioning with Microsoft Entra ID
 

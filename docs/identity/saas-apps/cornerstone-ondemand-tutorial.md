@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cornerstone Single Sign-On so that I can control who has access to Cornerstone Single Sign-On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Cornerstone for Single sign-on with Microsoft Entra ID
 

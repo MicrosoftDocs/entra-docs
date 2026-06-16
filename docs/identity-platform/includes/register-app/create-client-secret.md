@@ -1,8 +1,6 @@
 ---
 title: "Include file - Create a client secret"
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.custom:
 ms.date: 03/28/2024
 ms.reviewer:

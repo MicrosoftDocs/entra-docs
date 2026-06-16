@@ -6,7 +6,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 06/19/2024
 ms.custom: sfi-image-nochange
----
+--- 
 
 # Configure Muzeek for Single sign-on with Microsoft Entra ID
 

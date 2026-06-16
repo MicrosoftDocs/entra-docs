@@ -5,7 +5,6 @@ ms.topic: tutorial
 ms.date: 06/06/2024
 ms.custom: mode-api, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
-
 appliesto:
 zone_pivot_groups: identity-windows-mi-vm-access
 ---

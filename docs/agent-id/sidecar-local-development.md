@@ -2,8 +2,6 @@
 title: Run the Microsoft Entra Auth SDK (sidecar) for local development
 titleSuffix: Microsoft Entra Agent ID
 description: Run the Microsoft Entra SDK auth sidecar on your laptop with Docker Compose and Ollama to see autonomous and on-behalf-of agent authentication working end-to-end.
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.topic: how-to
 ms.date: 06/15/2026
 ms.custom: agent-id, msecd-doc-authoring-1013

@@ -3,7 +3,6 @@ title: How to enable passkeys (FIDO2) in Microsoft Entra ID
 description: Learn how to enable passkeys (FIDO2) in Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 03/08/2026
-author: hanki71
 ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable passkeys (FIDO2) in Microsoft Entra ID.

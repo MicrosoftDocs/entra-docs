@@ -4,7 +4,6 @@ description: Microsoft Entra joined devices can help you to manage devices acces
 
 ms.topic: concept-article
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo
 ---
 

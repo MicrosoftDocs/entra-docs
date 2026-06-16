@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 02/27/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Britive so that I can streamline the user management process and ensure that users have the appropriate access to Britive.
----
+--- 
 
 # Configure Britive for automatic user provisioning with Microsoft Entra ID
 

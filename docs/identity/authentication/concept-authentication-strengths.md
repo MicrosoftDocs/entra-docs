@@ -3,7 +3,6 @@ title: Overview of Conditional Access Authentication Strengths
 description: Learn how admins can use Microsoft Entra Conditional Access to distinguish which authentication methods users can use based on relevant security factors.
 ms.topic: concept-article
 ms.date: 03/04/2025
-author: inbarckms
 ms.reviewer: inbarc
 ---
 

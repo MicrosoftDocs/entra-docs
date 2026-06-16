@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 06/11/2024
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PoliteMail - SSO so that I can control who has access to PoliteMail - SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure PoliteMail - SSO for Single sign-on with Microsoft Entra ID
 

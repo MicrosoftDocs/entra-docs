@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 04/08/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Juno Journey so that I can streamline the user management process and ensure that users have the appropriate access to Juno Journey.
----
+--- 
 
 # Configure Juno Journey for automatic user provisioning with Microsoft Entra ID
 

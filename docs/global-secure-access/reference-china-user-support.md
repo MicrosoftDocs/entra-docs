@@ -1,8 +1,6 @@
 ---
 title: Global Secure Access support in China
 description: Learn about how Microsoft is dedicated to supporting Global Secure Access capabilities in China.
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.topic: reference
 ms.service: global-secure-access
 ms.date: 03/09/2026

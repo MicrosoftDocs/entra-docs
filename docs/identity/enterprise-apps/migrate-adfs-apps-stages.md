@@ -2,7 +2,6 @@
 title: Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID
 description: Migrating application authentication from AD FS to Microsoft Entra ID in four stages. Plan your move, test configurations, and secure apps.
 ms.topic: concept-article
-
 ms.date: 04/29/2025
 ms.reviewer: alamaral
 ms.custom: not-enterprise-apps

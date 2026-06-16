@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ServiceNow so that I can control who has access to ServiceNow, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure ServiceNow | Microsoft Docs for Single sign-on with Microsoft Entra ID
 

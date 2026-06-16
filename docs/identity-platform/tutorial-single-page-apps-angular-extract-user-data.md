@@ -1,9 +1,7 @@
 ---
 title: "Tutorial: Extract user data with an Angular single-page app (SPA)"
 description: Learn how extract user data using an Angular single-page app (SPA).
-author: garrodonnell
 manager: dougeby
-ms.author: godonnell
 ms.date: 02/20/2025
 ms.service: identity-platform
 ms.topic: tutorial

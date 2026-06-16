@@ -1,10 +1,8 @@
 ---
-author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: include
 ms.date: 02/27/2026
-ms.author: kengaderdus
 ---
 
 Here's an example of the request (we present the example request in multiple lines for readability):

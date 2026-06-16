@@ -6,7 +6,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 08/09/2024
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zenvoices IMAP so that I can control who has access to Zenvoices IMAP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Zenvoices IMAP for Single sign-on with Microsoft Entra ID
 

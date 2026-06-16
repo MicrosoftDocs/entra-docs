@@ -1,8 +1,6 @@
 ---
 title: Learn about Global Secure Access external user access
 description: Learn how Global Secure Access enables secure external user access for partners through the Global Secure Access client and Azure Virtual Desktop.
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: concept-article
 ms.date: 04/09/2026
 ms.reviewer: cagautham

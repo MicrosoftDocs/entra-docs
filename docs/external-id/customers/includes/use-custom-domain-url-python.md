@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 07/23/2024
-ms.author: kengaderdus
 ---
 
 Use a custom URL domain to fully brand the authentication URL. From a user perspective, users remain on your domain during the authentication process, rather than being redirected to *ciamlogin.com* domain name.

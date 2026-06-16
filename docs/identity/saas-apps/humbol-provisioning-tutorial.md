@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/09/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Humbol so that I can streamline the user management process and ensure that users have the appropriate access to Humbol.
----
+--- 
 
 # Configure Humbol for automatic user provisioning with Microsoft Entra ID
 

@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Rackspace SSO so that I can control who has access to Rackspace SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Rackspace SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Rackspace SSO with Microsoft Entra ID. When you integrate Rackspace SSO with Microsoft Entra ID, you can:
@@ -121,7 +121,7 @@ The following example **Attribute Mapping Policy** demonstrates:
 1. Using the `"{D}"` *default substitution* to let Rackspace retrieve additional SAML fields by looking for standard and well-known SAML claims in the SAML exchange.
 
 ```yaml
----
+--- 
 mapping:
     rules:
     - local:
