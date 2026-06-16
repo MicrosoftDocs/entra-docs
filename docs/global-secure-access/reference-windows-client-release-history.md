@@ -19,7 +19,7 @@ You can download the current version of the Global Secure Access client from the
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted." lightbox="media/reference-windows-client-release-history/client-download-screen.png":::
 
-## Version 2.31.125 (preview)
+## Version 2.31.125
 Released for download on June 2, 2026.
 ### Functional changes
 - Adds an account picker to the **Sign Out** flow to make it easier to sign in to a different account. The picker appears on Microsoft Entra-registered devices and on Microsoft Entra-joined devices that have the appropriate registry key set.

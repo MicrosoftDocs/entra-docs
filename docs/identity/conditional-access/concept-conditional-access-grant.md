@@ -85,6 +85,8 @@ For policies that target agent users, combine this control with scoping conditio
 
 > [!NOTE]
 > On Windows, iOS, Android, macOS, and some non-Microsoft web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
+>
+> On iOS and macOS, as Microsoft Entra ID transitions device identity key storage to Apple Secure Enclave, some browsers require additional configuration to present this certificate. For browser-specific requirements, see [Supported browsers](concept-conditional-access-conditions.md#supported-browsers).
 
 You can use the Microsoft Defender for Endpoint app with the approved client app policy in Intune to set the device compliance policy to Conditional Access policies. There's no exclusion required for the Microsoft Defender for Endpoint app while you're setting up Conditional Access. Although Microsoft Defender for Endpoint on Android and iOS (app ID dd47d17a-3194-4d86-bfd5-c6ae6f5651e3) isn't an approved app, it has permission to report device security posture. This permission enables the flow of compliance information to Conditional Access.
 
