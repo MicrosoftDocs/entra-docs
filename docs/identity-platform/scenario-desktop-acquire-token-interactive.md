@@ -4,10 +4,12 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: Dickson-Mwendia
 manager: dougeby
 ms.author: dmwendia
-ms.date: 01/15/2024
+ms.date: 06/15/2026
 ms.service: identity-platform
 ms.subservice: workforce
 ms.topic: how-to
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform for developers.
 ---
 
@@ -46,7 +48,7 @@ catch (MsalUiRequiredException)
 
 `AcquireTokenInteractive` has only one mandatory parameter, `scopes`. It contains an enumeration of strings that define the scopes for which a token is required. If the token is for Microsoft Graph, you can find the required scopes in the API reference of each Microsoft Graph API in the section named "Permissions." For instance, to [list the user's contacts](/graph/api/user-list-contacts), you must use both `User.Read` and `Contacts.Read` as the scope. For more information, see [Microsoft Graph permissions reference](/graph/permissions-reference).
 
-On both desktop and mobile applications, it's important to specify the parent by using `.WithParentActivityOrWindow`. In many cases, it's a requirement and MSAL will throw exceptions.
+On both desktop and mobile applications, it's important to specify the parent window or activity for the interactive sign-in UI by using `.WithParentActivityOrWindow`. In many cases, it's a requirement and MSAL will throw exceptions.
 
 For desktop applications, see [Parent window handles](./scenario-desktop-acquire-token-wam.md#parent-window-handles).
 
@@ -54,9 +56,11 @@ For mobile applications, provide `Activity` (Android) or `UIViewController` (iOS
 
 ### Optional parameters in MSAL.NET
 
+The following optional parameters let you customize the interactive token acquisition experience.
+
 #### WithParentActivityOrWindow
 
-The UI is important because it's interactive. `AcquireTokenInteractive` has one specific optional parameter that can specify (for platforms that support it) the parent UI. When you use `.WithParentActivityOrWindow` in a desktop application, it has a different type that depends on the platform.
+Specifying the parent window or activity is important because the sign-in experience is interactive. `AcquireTokenInteractive` has one specific optional parameter that can specify (for platforms that support it) the parent window or activity. When you use `.WithParentActivityOrWindow` in a desktop application, it has a different type that depends on the platform.
 
 Alternatively, you can omit the optional parent window parameter to create a window, if you don't want to control where the sign-in dialog appears on the screen. This option is applicable for applications that are based on a command line, are used to pass calls to any other back-end service, and don't need any windows for user interaction.
 
@@ -105,7 +109,7 @@ The structure defines the following constants:
 
 #### WithUseEmbeddedWebView
 
-This method enables you to specify if you want to force the usage of an embedded WebView or the system WebView (when available). For more information, see [Usage of web browsers](/entra/msal/dotnet/acquiring-tokens/using-web-browsers).
+`WithUseEmbeddedWebView` enables you to specify whether to force the usage of an embedded WebView or the system WebView (when available). For more information, see [Usage of web browsers](/entra/msal/dotnet/acquiring-tokens/using-web-browsers).
 
 ```csharp
 var result = await app.AcquireTokenInteractive(scopes)
@@ -115,7 +119,7 @@ var result = await app.AcquireTokenInteractive(scopes)
 
 #### WithExtraScopeToConsent
 
-This modifier is for advanced scenarios where you want the user to consent to several resources up front and you don't want to use incremental consent. Developers normally use incremental consent with MSAL.NET and the Microsoft identity platform.
+`WithExtraScopeToConsent` is for advanced scenarios where you want the user to consent to several resources up front and you don't want to use incremental consent. Developers normally use incremental consent with MSAL.NET and the Microsoft identity platform.
 
 ```csharp
 var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
@@ -151,7 +155,7 @@ using Microsoft.Identity.Client.Extensions;
 
 To use `WithCustomWebUI`, follow these steps:
 
-1. Implement the `ICustomWebUi` interface. For more information, see [this GitHub page](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/blob/053a98d16596be7e9ca1ab916924e5736e341fe8/src/Microsoft.Identity.Client/Extensibility/ICustomWebUI.cs#L32-L70).
+1. Implement the `ICustomWebUi` interface. For more information, see the [ICustomWebUi interface source on GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/blob/053a98d16596be7e9ca1ab916924e5736e341fe8/src/Microsoft.Identity.Client/Extensibility/ICustomWebUI.cs#L32-L70).
 1. Implement one `AcquireAuthorizationCodeAsync`method and accept the authorization code URL that MSAL.NET computes.
 1. Let the user go through the interaction with the identity provider and return the URL that the identity provider used to call back your implementation, along with the authorization code. If you have problems, your implementation should throw an `MsalExtensionException` exception to cooperate with MSAL.
 1. In your `AcquireTokenInteractive` call, use the `.WithCustomWebUi()` modifier by passing the instance of your custom web UI:
@@ -192,9 +196,11 @@ var result = app.AcquireTokenInteractive(scopes)
 
 #### Other optional parameters
 
-To learn about the other optional parameters for `AcquireTokenInteractive`, see [AcquireTokenInteractiveParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder#methods).
+To learn about additional optional parameters for `AcquireTokenInteractive`, see [AcquireTokenInteractiveParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder#methods).
 
 # [Java](#tab/java)
+
+### Code in MSAL Java
 
 ```java
 private static IAuthenticationResult acquireTokenInteractive() throws Exception {
@@ -246,6 +252,8 @@ private static IAuthenticationResult acquireTokenInteractive() throws Exception 
 # [macOS](#tab/macOS)
 
 ### Code in MSAL for iOS and macOS
+
+The following examples show interactive token acquisition in MSAL for iOS and macOS, in Objective-C and Swift:
 
 ```objc
 MSALInteractiveTokenParameters *interactiveParams = [[MSALInteractiveTokenParameters alloc] initWithScopes:scopes webviewParameters:[MSALWebviewParameters new]];
@@ -325,7 +333,12 @@ pca.getAuthCodeUrl(authCodeUrlParameters).then((response) => {
 
 # [Python](#tab/python)
 
-MSAL Python 1.7+ provides an interactive method for acquiring a token:
+### Code in MSAL Python
+
+> [!NOTE]
+> This feature requires MSAL Python version 1.7 or later.
+
+MSAL Python provides an interactive method for acquiring a token:
 
 ```python
 result = None
@@ -343,6 +356,6 @@ if not result:
 ---
 ## Next steps
 
-- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [React single-page app sign-in tutorial series](tutorial-single-page-app-react-prepare-app.md).
 
-- Explore Microsoft identity platform [desktop  code samples](sample-v2-code.md) 
+- Explore [Microsoft identity platform desktop application code samples](sample-v2-code.md) 
