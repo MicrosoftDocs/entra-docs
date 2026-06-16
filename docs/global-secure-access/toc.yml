@@ -127,6 +127,8 @@ items:
     href: overview-application-usage-analytics.md
   - name: Shadow AI discovery
     href: concept-shadow-ai-discovery.md
+  - name: AI agent discovery (preview)
+    href: concept-ai-agent-discovery.md
   - name: Generative AI Insights (preview)
     href: concept-generative-ai-insights.md
   - name: External user access
