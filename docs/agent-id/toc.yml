@@ -114,7 +114,7 @@ items:
       items:
       - name: Authentication with the Auth SDK (sidecar)
         href: authentication-with-auth-sdk-sidecar.md
-      - name: Configure SDK for agent identities
+      - name: Configure Entra ID Auth SDK (sidecar) for agent identities
         href: microsoft-entra-sdk-for-agent-identities.md
       - name: Run the sidecar for local development
         href: sidecar-local-development.md

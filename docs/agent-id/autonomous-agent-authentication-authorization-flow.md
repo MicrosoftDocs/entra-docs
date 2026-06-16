@@ -533,7 +533,7 @@ You can also use the agent's user account principal name instead of the object I
 - [Call Microsoft Graph API](call-api-microsoft-graph.md)
 - [Call custom APIs](call-api-custom.md)
 - [Call Azure services](call-api-azure-services.md)
-- [Acquire token using Microsoft Entra SDK for agent ID](./microsoft-entra-sdk-for-agent-identities.md)
+- [Acquire token using Microsoft Entra ID Auth SDK (sidecar)](./microsoft-entra-sdk-for-agent-identities.md)
 - [Microsoft Graph permissions reference](/graph/permissions-reference)
 - [Permissions and consent in the Microsoft identity platform](/entra/identity-platform/permissions-consent-overview)
 - [Agent's user account flow in agents](agent-user-oauth-flow.md)
