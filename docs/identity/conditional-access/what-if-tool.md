@@ -59,7 +59,7 @@ The list of policies that don't apply includes the reasons why these policies do
 
 **Has filter** indicates whether the policy has app filters that use custom security attributes.
 
-## Key differences between the What If evaluation API and the legacy experience 
+## Key differences between the What If evaluation API and the legacy experience
 
 The [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is a Microsoft Graph API that is called by the Conditional Access experience. The API is different from the legacy What If evaluation in a few ways:
 
