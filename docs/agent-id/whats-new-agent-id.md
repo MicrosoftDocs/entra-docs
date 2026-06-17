@@ -1,7 +1,6 @@
 ---
 title: What's new in Microsoft Entra Agent ID
 description: Learn about new features and updates in Microsoft Entra Agent ID at general availability, including non-Microsoft integrations, migration guides, and enterprise governance.
-ms.service: entra
 ms.topic: whats-new
 ms.date: 05/01/2026
 ai-usage: ai-assisted
