@@ -7,16 +7,13 @@ ms.topic: overview
 ai-usage: ai-assisted
 ---
 
-# Microsoft Entra Backup and Recovery overview (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Microsoft Entra Backup and Recovery overview
 
 Microsoft Entra Backup and Recovery is a built-in backup and recovery solution that lets you recover critical Microsoft Entra directory objects to a previously known good state after accidental changes or security compromises. Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authentication method policy, and partial authorization policy. The solution also supports Agent ID because it consists of user and service principal objects with distinct types and characteristics.
 
 ## How backups work
 
-Microsoft Entra Backup and Recovery takes backups of supported objects automatically, once a day, retaining up to five days of backup history. The solution helps restore your tenant to a productive and secure state. Microsoft regularly improves and expands the solution to support more directory objects and more attributes.
+Microsoft Entra Backup and Recovery takes backups of supported objects automatically, once a day, retaining up to seven days of backup history. The solution helps restore your tenant to a productive and secure state. Microsoft regularly improves and expands the solution to support more directory objects and more attributes.
 
 Microsoft creates backups automatically and makes them available to administrators with sufficient permissions. No signed-in user or application, even with the highest admin privileges, can turn off, delete, or modify backups in the tenant. Backup data resides securely in the same [geo-location as the Microsoft Entra tenant](/entra/fundamentals/data-residency), determined during tenant creation.
 
@@ -36,10 +33,10 @@ Microsoft Entra Backup and Recovery lets you:
 
 To get started, browse to the [Microsoft Entra admin center](https://entra.microsoft.com) and select **Backup and recovery** in the left navigation pane. These pages are available:
 
-- **Overview (Preview)**: View a summary of the backup and recovery feature.
-- **Backups (Preview)**: Browse available backups from the last five days.
-- **Difference Reports (Preview)**: Create and review reports that compare a backup with the current tenant state.
-- **Recovery History (Preview)**: View completed and in-progress recovery operations for your tenant.
+- **Overview**: View a summary of the backup and recovery feature.
+- **Backups**: Browse available backups from the last seven days.
+- **Difference Reports**: Create and review reports that compare a backup with the current tenant state.
+- **Recovery History**: View completed and in-progress recovery operations for your tenant.
 
 ## Prerequisites
 

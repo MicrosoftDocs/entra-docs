@@ -6,10 +6,7 @@ ms.service: entra-id
 ms.topic: how-to
 ---
 
-# Recover application secrets using Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Recover application secrets using Microsoft Entra Backup and Recovery
 
 This article describes how to restore application secrets after accidental or malicious changes, using Microsoft Entra Backup and Recovery.
 
@@ -132,9 +129,11 @@ For other solutions, you either need to generate and apply a new secret to your 
 
 ## Appendix
 
+The appendix lists application and service principal properties that Backup and Recovery doesn't restore automatically.
+
 ### Application and service principal properties not supported by Backup and Recovery
 
-Using Backup and Recovery, recover the applications and service principals to a point in time before the malicious activity occurred. This capability supports recovery of a limited set of properties: *displayName*, *description*, *notes*, *applicationTag*, *appIdentifierUri*, *publicClient*, *publisherDomain*, *isDeviceOnlyAuthSupported*, and *serviceManagementReference*. Additional properties will be supported in the upcoming preview.
+Using Backup and Recovery, recover the applications and service principals to a point in time before the malicious activity occurred. This capability supports recovery of a limited set of properties: *displayName*, *description*, *notes*, *applicationTag*, *appIdentifierUri*, *publicClient*, *publisherDomain*, *isDeviceOnlyAuthSupported*, and *serviceManagementReference*. Additional properties will be supported in a future update.
 
 Review key application settings such as redirect URIs, supported account types, assigned permissions or roles, and exposed API properties to ensure your application functions as expected after recovery:
 

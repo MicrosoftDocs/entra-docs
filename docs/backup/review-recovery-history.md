@@ -7,10 +7,7 @@ ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# Review recovery history in Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Review recovery history in Microsoft Entra Backup and Recovery
 
 Learn how to review past recovery operations in your tenant by using the Recovery History page in Microsoft Entra Backup and Recovery.
 
@@ -21,7 +18,7 @@ Recovery history includes:
 - The start and completion time of the recovery.
 - The number of objects and links modified.
 
-Use recovery history for recent operational review and troubleshooting. Recovery history data is retained for up to 5 days after the recovery completion time.
+Use recovery history for recent operational review and troubleshooting. Recovery history data is retained for up to seven days after the recovery completion time.
 
 ## Prerequisites
 
@@ -31,10 +28,7 @@ To view available recovery history in your tenant, you must sign in with at leas
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Microsoft Entra Backup Reader**.
 
-1. In the left navigation pane, select **Recovery History (Preview)** under **Backup and recovery**.
-
-   :::image type="content" source="media/review-recovery-history/recovery-history-page.png#lightbox" alt-text="Screenshot of the Recovery History page showing recovery operations with Status, Backup timestamp, Recovery started, and Modified objects columns.":::
-
+1. In the left navigation pane, select **Recovery History** under **Backup and recovery**.
    The Recovery History page displays all recent recovery operations in your tenant. From this page:
 
    - View the **Recovery ID** for each operation.
@@ -44,10 +38,8 @@ To view available recovery history in your tenant, you must sign in with at leas
    - See how many objects and links the recovery modified.
    - Filter or search recovery records to narrow results.
 
-   :::image type="content" source="media/review-recovery-history/recovery-history-details.png#lightbox" alt-text="Screenshot of the Recovery History page showing multiple recovery operations with status and timestamp details.":::
-
 > [!NOTE]
-> The system automatically removes recovery history 5 days after recovery completes.
+> The system automatically removes recovery history seven days after recovery completes.
 
 ### Recovery statuses
 
@@ -66,15 +58,9 @@ Recovery operations move through these statuses as the system applies changes to
 
 If a recovery operation partially succeeds, the **Status** column shows **Completed with warnings**, allowing you to identify objects that weren't recovered. Select **Completed with warnings** to view the details of the changes that were not recovered.
 
-:::image type="content" source="media/review-recovery-history/recovery-completed-with-warnings.png#lightbox" alt-text="Screenshot of the Recovery History page with a Completed with Warnings entry highlighted in the Status column.":::
-
 Select **Changed Attributes** or **Changed Links** of an object to view the details of the failure.
 
-:::image type="content" source="media/review-recovery-history/failed-recovery-changes.png#lightbox" alt-text="Screenshot of the Failed recovery changes page showing recovery job details and a failed object with Error Code 400.":::
-
 **Value at recovery attempt** shows the attribute value at the time the recovery was attempted. **Backup value** shows the value the recovery service attempted to restore.
-
-:::image type="content" source="media/review-recovery-history/failed-changed-attributes.png#lightbox" alt-text="Screenshot of the View failed changed attributes flyout showing error details and attribute value comparison.":::
 
 Use failed recovery entries to:
 
@@ -83,4 +69,4 @@ Use failed recovery entries to:
 - View failure details that explain why the recovery didn't succeed.
 
 > [!NOTE]
-> Failed recovery records remain available for 5 days after the recovery completion date.
+> Failed recovery records remain available for seven days after the recovery completion date.
