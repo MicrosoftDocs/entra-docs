@@ -11,6 +11,9 @@ ms.custom: sfi-image-nochange
 
 In entitlement management, you can see who is assigned to access packages, their policy, status, and identity lifecycle (preview). If an access package has an appropriate policy, you can also directly assign identities to an access package. This article describes how to view, add, and remove assignments for access packages.
 
+> [!NOTE]
+> These Microsoft Entra admin center steps require the signed-in user to be able to access the Microsoft Entra admin center. Entitlement management roles, such as Access package assignment manager, authorize assignment-management actions within entitlement management, but they don't by themselves change tenant-wide access settings for the admin center. If the **Restrict access to Microsoft Entra administration portal** user setting is enabled, verify that the delegated user can access the admin center, or use an authorized programmatic method. For more information about this setting, see [Default user permissions](../fundamentals/users-default-permissions.md).
+
 ## View who has an assignment
 
 
