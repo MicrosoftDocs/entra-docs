@@ -1,5 +1,5 @@
 ---
-title: Configure ServiceNow | Microsoft Docs for Single sign-on with Microsoft Entra ID
+title: Configure ServiceNow for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ServiceNow.
 ms.reviewer: celested
 ms.topic: how-to
