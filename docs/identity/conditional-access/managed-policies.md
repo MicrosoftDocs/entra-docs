@@ -154,16 +154,45 @@ Administrators can review policy impact in report-only mode, exclude emergency a
 
 ## Upgrade from security defaults
 
-When organizations [disable security defaults](../../fundamentals/security-defaults.md#disabling-security-defaults) to adopt Conditional Access, Microsoft automatically creates managed policies in the tenant to maintain the same protections. These policies ensure there's no gap in security coverage during the transition.
+The following policies are available for when you upgrade from using security defaults.
 
-The following managed policies are created as part of the upgrade:
+- [Block legacy authentication](#block-legacy-authentication)
+- [Require multifactor authentication for Azure management](#require-multifactor-authentication-for-azure-management)
+- [Require multifactor authentication for admins](#require-multifactor-authentication-for-admins)
+- [Require multifactor authentication for all users](#require-multifactor-authentication-for-all-users)
 
-| Upgrade policy | Similar Microsoft-managed policy | Notes |
-| --- | --- | --- |
-| Block legacy authentication | [Block legacy authentication](#block-legacy-authentication) | Same scope. Blocks sign-in attempts from clients using legacy authentication protocols. |
-| Require multifactor authentication for Azure management | *No equivalent* | Unique to the security defaults upgrade. Requires MFA for all users accessing Azure Resource Manager services, including the Azure portal, Microsoft Entra admin center, Azure PowerShell, and Azure CLI. |
-| Require multifactor authentication for admins | [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals) | Broader scope. Requires MFA for privileged admin roles signing in to *all applications*, not just admin portals. Also includes Authentication Policy Administrator and Identity Governance Administrator roles. |
-| Require multifactor authentication for all users | [Multifactor authentication for all users](#multifactor-authentication-for-all-users) | Same scope. Requires MFA for all users in the organization. |
+### Block legacy authentication
+
+This policy blocks legacy authentication protocols from accessing applications. Legacy authentication refers to an authentication request made by:
+
+- Clients that don't use modern authentication (for example, an Office 2010 client)
+- Any client that uses older mail protocols such as IMAP, SMTP, or POP3
+- Any sign-in attempts to use legacy authentication. 
+ 
+Most observed compromising sign-in attempts come from legacy authentication. Because legacy authentication doesn't support multifactor authentication, attackers can bypass multifactor authentication requirements by using older protocols.
+
+### Require multifactor authentication for Azure management
+
+This policy covers all users when they're trying to access various Azure services managed through the Windows Azure Service Management API including:
+
+- Azure portal
+- Microsoft Entra admin center
+- Azure PowerShell
+- Azure CLI
+
+Users must complete multifactor authentication to access these resources. 
+
+### Require multifactor authentication for admins
+
+This policy applies to users with highly privileged admin roles:
+
+[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
+
+These accounts must use multifactor authentication to sign in to any application. 
+
+### Require multifactor authentication for all users
+
+This policy applies to all users in your organization and requires multifactor authentication for every sign-in. In most cases, sessions persist on devices, so users don't need to complete multifactor authentication when interacting with other applications.
 
 ## Monitor and review
 
