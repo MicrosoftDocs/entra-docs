@@ -4,7 +4,6 @@ description: Learn how to delete an agent identity blueprint and restore soft-de
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: how-to
 ms.date: 04/29/2026
-ms.custom: agent-id
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin or developer, I want to delete an agent identity blueprint and restore soft-deleted agent identity objects so I can manage the lifecycle of my agents.

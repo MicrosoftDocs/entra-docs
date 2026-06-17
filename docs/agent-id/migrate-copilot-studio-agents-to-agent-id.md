@@ -4,7 +4,7 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how to recreate Microsoft Copilot Studio agents with Microsoft Entra Agent ID for enhanced governance and security. No in-place migration path exists today.
 ms.topic: how-to
 ms.date: 06/15/2026
-ms.custom: agent-id, msecd-doc-authoring-1013
+ms.custom: msecd-doc-authoring-1013
 ai-usage: ai-assisted
 #customer intent: As an IT admin or Copilot Studio maker, I want to understand how to recreate my Copilot Studio agents with Microsoft Entra Agent ID so that I can take advantage of agent-specific governance, Conditional Access, and audit capabilities.
 ---

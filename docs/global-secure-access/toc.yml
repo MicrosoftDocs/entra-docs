@@ -434,6 +434,8 @@ items:
     href: resource-faq.yml
   - name: Connector version history
     href: reference-version-history.md
+  - name: Private Access Sensor version history
+    href: reference-private-access-sensor-release-history.md
   - name: Windows client version history
     href: reference-windows-client-release-history.md
   - name: macOS client version history

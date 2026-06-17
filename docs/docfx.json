@@ -236,6 +236,8 @@
         "workload-id/**/*.yml": "entra-workload-id"
       },
       "ms.subservice": {
+        "agent-id/**/*.md": "agent-id",
+        "agent-id/**/*.yml": "agent-id",
         "external-id/**/*.md": "external",
         "external-id/**/*.yml": "external",
         "fundamentals/**/*.md": "fundamentals",

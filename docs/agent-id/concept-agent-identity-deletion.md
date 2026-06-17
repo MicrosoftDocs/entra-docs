@@ -4,7 +4,6 @@ description: Learn how deleting an agent identity blueprint triggers automatic c
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
 ms.date: 05/15/2026
-ms.custom: agent-id
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin or developer, I want to understand what happens when I delete an agent identity blueprint so I can plan for cleanup and restoration.
