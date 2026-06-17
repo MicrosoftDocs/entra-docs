@@ -125,7 +125,7 @@ With the separation of duties settings on an access package, you can configure t
 
 If you have configured to send audit log events to [Azure Monitor](entitlement-management-logs-and-reporting.md), then you can use the built-in workbooks and custom workbooks to view the audit logs retained in Azure Monitor. 
 
-To view events for an access package, you must have access to the underlying Azure monitor workspace (see [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access#azure-rbac) for information) and in one of the following roles: 
+To view events for an access package, you must have access to the underlying Azure Monitor workspace (see [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access#azure-rbac) for information) and in one of the following roles:
 
 - Global Administrator  
 - Security Administrator  
@@ -167,7 +167,7 @@ The workbook *Application role assignment activity* shows if there have been cha
 
 ## View orphan or local accounts in your applications
 
-Administrators of your connected applications (Salesforce, SAP Cloud Identity Services, etc.) can manually create accounts in your applications, circumventing the governance controls in place. Using the account discovery functionality, you can generate a report of all the users in your application, identify which users have matching accounts in Entra, and which users are local to your application with one click. It enables you to simplify onboarding to Entra, while also pereodically monitoring for unauthorized access. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). 
+Administrators of your connected applications (Salesforce, SAP Cloud Identity Services, etc.) can manually create accounts in your applications, circumventing the governance controls in place. Using the account discovery functionality, you can generate a report of all the users in your application, identify which users have matching Microsoft Entra accounts, and which users are local to your application with one click. The report classifies accounts as local accounts, unassigned users, or assigned users, which helps you identify unmanaged access and access drift. It enables you to simplify onboarding to Microsoft Entra, while also periodically monitoring for unauthorized access. For detailed steps, see [Discover identities in target applications with Account Discovery](~/identity/app-provisioning/how-to-account-discovery.md).
 
 ## Next steps
 
