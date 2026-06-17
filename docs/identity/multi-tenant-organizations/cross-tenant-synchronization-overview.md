@@ -138,9 +138,7 @@ The following table lists the required licenses, depending on your scenario.
 
 #### Within the same cloud, where can I use cross-tenant synchronization?
 
-Cross-tenant synchronization is supported within the commercial cloud and Azure Government.
-
-Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud.
+Cross-tenant synchronization is supported within the commercial cloud, Azure Government, and 21Vianet.
 
 [!INCLUDE [cross-tenant-synchronization-cloud-pairs-include](../../includes/cross-tenant-synchronization-cloud-pairs-include.md)]
 
