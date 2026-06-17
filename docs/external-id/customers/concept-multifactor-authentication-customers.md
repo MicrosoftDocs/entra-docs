@@ -22,6 +22,9 @@ Multifactor authentication (MFA) adds a layer of security to your applications b
 
 Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
 
+> [!NOTE]
+> MFA is supported for both browser-delegated and native authentication. With browser-delegated authentication, the MFA challenge is handled on the Microsoft-hosted sign-in page. With native authentication, your app surfaces the MFA prompt inline using the MSAL SDK; if the app doesn't advertise the `mfa_required` capability, the native authentication API initiates a [web fallback](/entra/identity-platform/concept-native-authentication-web-fallback) to complete the challenge. For more information about choosing an approach, see [Choose an authentication approach](concept-choose-authentication-approach.md).
+
 ## Creating an MFA policy
 
 In an external tenant, you can use Microsoft Entra Conditional Access to create a policy that prompts users for MFA when they sign up or sign in to your app. You create this policy in the Microsoft Entra admin center under Conditional Access in the Protection section. You can specify which users and groups the policy apply to, including all users and excluding any emergency access or break-glass accounts.
