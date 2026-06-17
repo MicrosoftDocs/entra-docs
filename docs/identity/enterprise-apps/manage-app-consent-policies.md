@@ -63,7 +63,7 @@ The setting labeled "Let Microsoft manage your consent settings," the Microsoft 
 - For Office 365 Exchange Online: `EAS.AccessAsUser.All`, `EWS.AccessAsUser.All`, `IMAP.AccessAsUser.All`, `POP.AccessAsUser.All`.
 
 ### Mail client policy
-An additional policy is enabled by default is the **microsoft-user-allow-default-consent-apps** policy. This policy allows end-users in your organization to consent for popular mail applications for mail permissions. When this policy is enabled, end users will be able to consent for specific delegated mail permissions (All Microsoft Graph and Office 365 Exchange Online permissions listed above) for the following applications:
+An additional policy enabled by default is the **microsoft-user-allow-default-consent-apps** policy. This policy allows end-users in your organization to consent for popular mail applications for mail permissions. When this policy is enabled, end users are able to consent for specific delegated mail permissions (All Microsoft Graph and Office 365 Exchange Online permissions listed above) for the following applications:
 - Apple Mail (application ID: f8d98a96-0999-43f5-8af3-69971c7bb423)
 - Spark Email (application ID:b50c1dbd-1855-4e54-b07c-d3c3029e93d3)
 - eM Client (application ID:e9a7fea1-1cc0-4cd9-a31b-9137ca5deedd)
