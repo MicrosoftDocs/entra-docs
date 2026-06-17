@@ -6,7 +6,7 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 05/15/2026
+ms.date: 06/17/2026
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.collection: M365-identity-device-management
@@ -542,7 +542,7 @@ Issues fixed and improvements added in this update  include
 **Service category:** Entitlement Management  
 **Product capability:** Entitlement Management  
 
-In May, requestors will be able to see the name and email address of approvers for their pending access package requests directly in the My Access portal will be in General Availability. This feature improves transparency and helps streamline communication between requestors and approvers. At the tenant level, approver visibility is enabled by default for all members (non-guests) and can be controlled through the Entitlement Management settings in the Microsoft Entra Admin Center. At the access package level, admins and access package owners can configure the approver visibility and choose to override the tenant level setting under the advanced request settings in the access package policy. For more information, see: [View approver information for pending requests (preview)](../id-governance/entitlement-management-request-access.md#view-approver-information-for-pending-requests-preview).
+In May, requestors will be able to see the name and email address of approvers for their pending access package requests directly in the My Access portal will be in General Availability. This feature improves transparency and helps streamline communication between requestors and approvers. At the tenant level, approver visibility is enabled by default for all members (non-guests) and can be controlled through the Entitlement Management settings in the Microsoft Entra Admin Center. At the access package level, admins and access package owners can configure the approver visibility and choose to override the tenant level setting under the advanced request settings in the access package policy. For more information, see: [View approver information for pending requests](../id-governance/entitlement-management-request-access.md#view-approver-information-for-pending-requests).
 
 ---
 
