@@ -133,7 +133,7 @@ The appendix lists application and service principal properties that Backup and 
 
 ### Application and service principal properties not supported by Backup and Recovery
 
-Using Backup and Recovery, recover the applications and service principals to a point in time before the malicious activity occurred. This capability supports recovery of a limited set of properties: *displayName*, *description*, *notes*, *applicationTag*, *appIdentifierUri*, *publicClient*, *publisherDomain*, *isDeviceOnlyAuthSupported*, and *serviceManagementReference*. Additional properties will be supported in a future update.
+Using Backup and Recovery, recover the applications and service principals to a point in time before the malicious activity occurred. This capability supports recovery of a limited set of properties: *displayName*, *description*, *notes*, *applicationTag*, *appIdentifierUri*, *publicClient*, *publisherDomain*, *isDeviceOnlyAuthSupported*, and *serviceManagementReference*.
 
 Review key application settings such as redirect URIs, supported account types, assigned permissions or roles, and exposed API properties to ensure your application functions as expected after recovery:
 
