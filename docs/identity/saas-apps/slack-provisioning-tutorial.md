@@ -28,7 +28,7 @@ The objective of this article is to show you the steps you need to perform in Sl
 > * [Single sign-on](./slack-tutorial.md) to Slack (recommended)
 
 
-Slack provisioning tutorial is available in the following [national cloud deployments](/graph/deployments).
+Slack is available in the following [national cloud deployments](/graph/deployments).
 
 [!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
