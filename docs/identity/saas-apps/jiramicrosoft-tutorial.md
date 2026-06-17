@@ -22,12 +22,15 @@ In this article,you learn how to integrate JIRA SAML SSO by Microsoft with Micro
 
 Use your Microsoft Entra account with Atlassian JIRA server to enable single sign-on. This way all your organization users can use the Microsoft Entra credentials to sign in into the JIRA application. This plugin uses SAML 2.0 for federation.
 
+JIRA is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-- JIRA Core and Software 7.0 to 10.3 (Plugin Version 1.3.7) or JIRA Core and Software 10.4 to 11.3 (Plugin Version 2.0.1) should be installed and configured on Windows 64-bit version.
-- JIRA Service Desk 3.0 to 5.12.22 should be installed and configured on Windows 64-bit version.
+- JIRA Core and Software 7.0 to 10.5.1 or JIRA Service Desk 3.0 to 5.12.22 should be installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
 - Note the supported versions for JIRA Plugin are mentioned in below section.
 - JIRA server is reachable on the Internet particularly to the Microsoft Entra login page for authentication and should able to receive the token from Microsoft Entra ID.
@@ -43,13 +46,9 @@ To get started, you need the following items:
 * don't use your production environment, unless it's necessary.
 * JIRA SAML SSO by Microsoft single sign-on (SSO) enabled subscription.
 
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
-
 ## Supported versions of JIRA
 
-* JIRA Core and Software: 7.0 to 10.3 (Plugin Version 1.3.7)
-* JIRA Core and Software: 10.4 to 11.3 (Plugin Version 2.0.1)
+* JIRA Core and Software: 7.0 to 10.5.1.
 * JIRA Service Desk 3.0 to 5.12.22.
 * JIRA also supports 5.2. For more details, select [Microsoft Entra single sign-on for JIRA 5.2](jira52microsoft-tutorial.md).
 
@@ -62,12 +61,6 @@ To get started, you need the following items:
 
 * [Microsoft Entra ID single sign-on for JIRA server-side application](https://www.microsoft.com/en-us/download/details.aspx?id=56506)
 
-## Release history
-
-* **05/12/2026**
-  - Separate plugin to support JIRA 10.4 and above
-  - Separate plugin for JIRA versions below 10.4
-  - Critical security fix
 
 ## Scenario description
 

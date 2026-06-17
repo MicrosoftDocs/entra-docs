@@ -20,15 +20,16 @@ This article describes the steps you need to do in both Hootsuite and Microsoft 
 > * Provision groups and group memberships in Hootsuite
 > * [Single sign-on](./hootsuite-tutorial.md) to Hootsuite (recommended)
 
+Hootsuite is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A user account with [Hootsuite](http://www.hootsuite.com/) that has **Manage Member** permissions on the organization.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
