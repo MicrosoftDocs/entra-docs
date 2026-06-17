@@ -2,7 +2,6 @@
 title: Manage agent identities in your organization
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to manage agent identities across your organization. View, disable, govern, and monitor agents using the Microsoft Entra admin center and Conditional Access.
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 05/01/2026
 ms.custom: msecd-doc-authoring-108

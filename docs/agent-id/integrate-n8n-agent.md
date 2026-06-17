@@ -2,13 +2,12 @@
 title: Secure an n8n agent with Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Deploy n8n on Azure Container Apps and secure AI agent workflows with Microsoft Entra Agent ID and Microsoft Graph MCP Server for Enterprise.
-ms.service: entra
 ms.topic: how-to
 ms.date: 06/15/2026
 author: Dickson-Mwendia
 ms.author: dmwendia
 ms.reviewer: astaykov
-ms.custom: agent-id, msecd-doc-authoring-1013
+ms.custom: msecd-doc-authoring-1013
 ai-usage: ai-assisted
 
 #customer intent: As a developer or IT admin, I want to secure n8n workflows with Microsoft Entra Agent ID so that my n8n agents can access Microsoft Graph and MCP Server for Enterprise using agent identities.

@@ -1,7 +1,7 @@
 ---
 title: Manage agents in end user experience
 description: Learn how to manage agent identities in the end user experience within Microsoft Entra. View, control, and take action on agents you own or sponsor with ease.
-ms.service: entra-id-governance
+ms.custom: entra-id-governance
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 05/01/2026
 

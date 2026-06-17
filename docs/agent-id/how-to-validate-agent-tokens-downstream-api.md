@@ -4,7 +4,7 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how to validate Microsoft Entra Agent ID tokens in a downstream API by checking the signature, issuer, audience, and agent identity marker claim.
 ms.topic: how-to
 ms.date: 04/28/2026
-ms.custom: agent-id, msecd-doc-authoring-1012
+ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
 
 #customer intent: As an API developer, I want to validate Microsoft Entra Agent ID tokens in my downstream API so that I can verify that requests come from authenticated agents with the correct identity.

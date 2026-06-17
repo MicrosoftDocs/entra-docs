@@ -2,11 +2,10 @@
 title: Secure an Amazon Bedrock agent with Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to use the Microsoft Entra Auth SDK (sidecar) to secure an Amazon Bedrock AI agent with its own identity for calling downstream APIs.
-ms.service: entra
 ms.topic: how-to
 ms.date: 04/30/2026
 ms.reviewer: razi.rais
-ms.custom: agent-id, msecd-doc-authoring-1012
+ms.custom: msecd-doc-authoring-1012
 
 #customer intent: As a developer building AI agents on Amazon Bedrock, I want to secure my agent with Microsoft Entra Agent ID so that it can call downstream APIs with its own identity.
 ---

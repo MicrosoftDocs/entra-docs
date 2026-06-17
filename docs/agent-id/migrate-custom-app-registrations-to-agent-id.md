@@ -4,7 +4,7 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how to migrate AI agents from standard Microsoft Entra app registrations to Agent ID for agent-specific governance and security.
 ms.topic: how-to
 ms.date: 06/15/2026
-ms.custom: agent-id, msecd-doc-authoring-1013
+ms.custom: msecd-doc-authoring-1013
 ai-usage: ai-assisted
 #customer intent: As a developer or IT admin who built AI agents using standard app registrations, I want to migrate them to Microsoft Entra Agent ID so that I can take advantage of agent-specific governance, Conditional Access, and audit capabilities.
 ---
