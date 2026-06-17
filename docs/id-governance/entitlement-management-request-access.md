@@ -4,7 +4,7 @@ description: Learn how to use the My Access portal to request access to an acces
 editor: mamtakumar
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 09/11/2024
+ms.date: 06/17/2026
 ms.reviewer: mamkumar
 #Customer Intent: As a user, I want to request access to an access package using the My Access portal so that I can get access to the resources I need.
 ---
