@@ -3,7 +3,7 @@ title: Plan your Microsoft Entra join deployment
 description: Explains the steps that are required to implement Microsoft Entra joined devices in your environment.
 
 ms.topic: how-to
-ms.date: 06/27/2025
+ms.date: 06/17/2026
 ms.reviewer: sandeo
 ---
 # How to: Plan your Microsoft Entra join implementation
@@ -194,6 +194,9 @@ Here's a comparison of these three approaches.
 | Local admin rights to primary user | Yes, by default | Configurable | No |
 | Require device OEM support | No | Yes | No |
 | Supported versions | 1511+ | 1709+ | 1703+ |
+
+> [!NOTE]
+> In self-service setup, the user who completes Microsoft Entra join becomes the device's primary user and is a local administrator on that device by default. This local administrator status applies to the device only. It doesn't grant a Microsoft Entra directory role. For Windows Autopilot, the user account type is configurable. Bulk enrollment doesn't add users who sign in after the device is joined to the local Administrators group.
 
 Choose your deployment approach or approaches by reviewing the previous table and reviewing the following considerations for adopting either approach:
 
