@@ -86,6 +86,9 @@ For access package assignments with policies that support on behalf of requests,
 - The ability to see active access package assignment of all of their direct reports.
 - The ability to remove assignments for reports if the policy supports on behalf of requests.
 
+> [!NOTE]
+> This My Access experience is for managers who manage access package assignments for their direct reports when the access package policy and My Access settings support on-behalf-of requests. Administrative assignment-management tasks for delegated entitlement management roles, such as Access package assignment manager, are performed in the Microsoft Entra admin center or by using authorized programmatic methods.
+
 Before managing teams in the My Access Portal, make sure you have the manage team settings configured by doing the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
