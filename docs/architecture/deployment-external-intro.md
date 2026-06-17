@@ -1,11 +1,10 @@
 ---
 title: Introduction to Microsoft Entra External ID deployment guide
 description: Learn how to plan, design, implement, and operate Microsoft Entra External ID tenants.
-author: gargi-sinha
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 03/10/2025
-ms.author: gasinh
+ms.reviewer: gasinh
 
 #customer intent: I want to documentation to plan, design, implement, and operate Microsoft Entra External ID in my environment.
 ---

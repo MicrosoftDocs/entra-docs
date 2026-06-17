@@ -142,8 +142,10 @@
       href: groups-lifecycle.md
     - name: Set up group self-service    
       href: groups-self-service-management.md
-    - name: Assign sensitivity labels
+    - name: Assign sensitivity labels to Microsoft 365 groups
       href: groups-assign-sensitivity-labels.md
+    - name: Assign sensitivity labels to security groups
+      href: groups-sensitivity-labels.md
   - name: Licenses
     items:
     - name: Assign licenses to users    
@@ -178,6 +180,21 @@
       href: groups-troubleshooting.md
     - name: Troubleshoot group licensing    
       href: licensing-groups-resolve-problems.md
+- name: Samples
+  expanded: false
+  items: 
+  - name: PowerShell samples for dynamic membership processing
+    href: groups-dynamic-membership-powershell-samples.md
+  - name: Pause all groups and administrative units
+    href: ./scripts/powershell-pause-all-dynamic-membership.md
+  - name: Pause specific groups and administrative units
+    href: ./scripts/powershell-pause-specific-dynamic-membership.md
+  - name: Pause all except specified groups and administrative units
+    href: ./scripts/powershell-pause-all-except-dynamic-membership.md
+  - name: Resume specific critical groups and administrative units
+    href: ./scripts/powershell-resume-specific-critical-dynamic-membership.md
+  - name: Resume noncritical groups and administrative units in batches
+    href: ./scripts/powershell-resume-noncritical-dynamic-membership.md
 - name: Reference
   items:
   - name: Microsoft Graph API  

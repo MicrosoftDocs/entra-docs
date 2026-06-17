@@ -1,9 +1,7 @@
 ---
 title: Overview of permissions and consent in the Microsoft identity platform
 description: Learn the foundational concepts and scenarios around consent and permissions in the Microsoft identity platform
-author: omondiatieno
 manager: pmwongera
-ms.author: jomondi
 ms.custom:
 ms.date: 03/18/2025
 ms.reviewer: jawoods, ludwignick, phsignor

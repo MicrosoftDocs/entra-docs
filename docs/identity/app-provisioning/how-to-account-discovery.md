@@ -1,10 +1,8 @@
 ---
-title: Discover identities in target applications with Account Discovery (preview)
+title: Discover identities in target applications with Account Discovery
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
-ms.date: 04/28/2026
-ms.author: jfields
-author: jenniferf-skc
+ms.date: 05/26/2026
 ms.reviewer: arvinh
 ms.service: entra-id
 ms.subservice: app-provisioning
@@ -14,7 +12,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Discover identities in target applications with Account Discovery (preview)
+# Discover identities in target applications with Account Discovery
 
 When organizations adopt Microsoft Entra ID for application provisioning, target applications often already contain user accounts that were created before provisioning was configured. Account Discovery helps you find these existing accounts, match them to Microsoft Entra ID users, and categorize them so you can bring unmanaged identities under governance. After onboarding to provisioning, application administrators can manually create accounts in the application. This report allows organizations to identify local or orphan accounts both during initial onboarding and after they have operationalized provisioning.
 
@@ -25,10 +23,6 @@ Account Discovery retrieves all user accounts from a target application and clas
 - **Assigned users** — Accounts that match a Microsoft Entra ID user who is assigned to the enterprise application. These accounts are fully managed by the provisioning service.
 
 This classification gives you visibility into who has access to your applications and helps you identify accounts that should be governed, reassigned, or removed.
-
-> [!IMPORTANT]
-> The Account Discovery feature is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -119,7 +113,8 @@ Use the search and filter capabilities to find specific accounts:
 - Manage columns to view the imported attributes from the target application and the correlation status.
 
 ## Assign correlated users to your enterprise application and/or access packages
-After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to the enterprise application or an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users. The scripts should be run in PowerShell 7.X. 
+
+After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to the enterprise application or an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsers.ps1 file and run it in PowerShell 7.x to assign users.
 
 ### Optional parameters
 
@@ -168,7 +163,7 @@ The rules file is a standard [CSV](https://aka.ms/AssignCorrelatedUsersCSV) with
 |---|---|
 | `RuleGroup` | Rows sharing the same group number are AND-ed together. Different groups are evaluated independently. |
 | `PropertyName` | Key in the target SCIM property bag (e.g. `userType`, `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department`). The property names can be found in the discovery UX when clicking on view attributes for an individual user or in your provisioning attribute mappings. |
-| `Operator` | `eq` \| `ne` \| `contains` \| `startswith` \| `endswith` \| `regex` |
+| `Operator` | `eq`, `ne`, `contains`, `startswith`, `endswith`, `regex` |
 | `Value` | The value to compare against (case-insensitive). |
 | `AccessPackageId` | The access package to assign when the group matches. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |
 | `PolicyId` | The assignment policy for that access package. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |

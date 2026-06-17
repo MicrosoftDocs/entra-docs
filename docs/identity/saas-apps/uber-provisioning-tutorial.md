@@ -2,14 +2,12 @@
 title: Configure Uber for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Uber.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/25/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Uber so that I can streamline the user management process and ensure that users have the appropriate access to Uber.
----
+--- 
 
 # Configure Uber for automatic user provisioning with Microsoft Entra ID
 
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both Uber and Microsoft 
 > * Create users in Uber.
 > * Remove users in Uber when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Uber.
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

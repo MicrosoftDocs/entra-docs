@@ -5,7 +5,6 @@ ms.topic: concept-article
 ms.reviewer: hosamsh
 ms.date: 05/09/2025
 
-
 #Customer intent: As a Azure developer or IT admin, I'd like learn about secretless authentication in Azure so I can securely access Azure resources without managing or storing passwords or secrets.
 ---
 

@@ -3,15 +3,13 @@ title: Configure LanSchool Air for automatic user provisioning with Microsoft En
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to LanSchool Air.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/13/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LanSchool Air so that I can streamline the user management process and ensure that users have the appropriate access to LanSchool Air.
----
+--- 
 
 # Configure LanSchool Air for automatic user provisioning with Microsoft Entra ID
 
@@ -24,6 +22,7 @@ This article describes the steps you need to perform in both LanSchool Air and M
 > * Remove users in LanSchool Air when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and LanSchool Air.
 > * [Single sign-on](lanschool-air-tutorial.md) to LanSchool Air.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -3,8 +3,8 @@ title: Microsoft Entra ID Protection risk-based access policies
 description: Identifying risk-based Conditional Access policies
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 03/20/2026
-ms.reviewer: cokoopma
+ms.date: 05/15/2026
+ms.reviewer: ebasseri
 ms.custom: sfi-image-nochange
 ---
 # Risk-based access policies
@@ -53,7 +53,7 @@ This control uses adaptive risk remediation to let you author a Conditional Acce
 - **Require authentication strength** and **Sign-in frequency - Every time** are automatically applied to the policy to ensure that after session revocation, end users are immediately prompted to reauthenticate with the specified authentication strength.
 - **Require risk remediation** is not supported for external and guest users because Microsoft Entra ID doesn't support session revocation for those users.
 - During risk remediation, Microsoft Entra ID uses a dedicated, secure flow to perform actions such as session revocation. To ensure remediation is not blocked, this flow is allowed to proceed without being impacted by other Conditional Access policies.
-  - `AppId`: Public cloud = `93625bc8-bfe2-437a-97e0-3d0060024faa`, Azure for US Government = `2e5ecfc8-ea79-48bd-8140-c19324acb278`
+  - `AppId`: Public cloud = `93625bc8-bfe2-437a-97e0-3d0060024faa`, Azure for US Government = `00001111-aaaa-2222-bbbb-3333cccc4444`
   - `ResourceId`: `00000003-0000-0000-c000-000000000000`
 
 ## Sign-in risk-based Conditional Access policy

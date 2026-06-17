@@ -1,8 +1,7 @@
 ---
 title: Restore group policy objects from backups in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to restore group policy objects in a Microsoft Entra Domain Services managed domain.
-author: JamesNyamu
-ms.author: janyamu
+ms.reviewer: janyamu
 ms.topic: how-to
 ms.date: 10/07/2025
 ---

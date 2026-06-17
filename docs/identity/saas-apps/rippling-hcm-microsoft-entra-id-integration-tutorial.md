@@ -1,13 +1,10 @@
 ---
 title: Configure Rippling Human Capital Management (HCM) for user provisioning in Active Directory
 description: Integrating Rippling Human Capital Management (HCM) with Microsoft Entra ID/Active Directory.
-author: jenniferf-skc
 manager: pmwongera
-ms.reviewer: cmmdesai
 ms.topic: how-to
 ms.date: 06/18/2025
-ms.author: jfields
----
+--- 
 
 # Configure Rippling Human Capital Management (HCM) for user provisioning
 

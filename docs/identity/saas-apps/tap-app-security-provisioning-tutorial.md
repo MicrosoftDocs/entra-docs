@@ -1,14 +1,12 @@
 ---
 title: Configure TAP App Security for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to TAP App Security.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/24/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tap App Security so that I can streamline the user management process and ensure that users have the appropriate access to Tap App Security.
----
+--- 
 
 # Configure TAP App Security for automatic user provisioning with Microsoft Entra ID
 
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both TAP App Security an
 > * Remove users in TAP App Security when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and TAP App Security.
 > * [Single sign-on](tap-app-security-tutorial.md) to TAP App Security.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

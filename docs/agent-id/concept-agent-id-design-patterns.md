@@ -2,8 +2,6 @@
 title: Microsoft Entra Agent ID design patterns
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to map your AI agent architecture to Microsoft Entra Agent ID, including blueprints, agent identities, and an agent's user account.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.topic: concept-article
 ms.date: 04/03/2026
 ms.custom: agent-id

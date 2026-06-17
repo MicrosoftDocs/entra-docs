@@ -2,11 +2,10 @@
 title: Add and manage owners and sponsors for agent identities and blueprints
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to add and manage owners and sponsors for agent identity blueprints and agent identities in the Microsoft Entra admin center.
-author: omondiatieno
-ms.author: jomondi
 ms.topic: how-to
 ms.date: 04/28/2026
 ms.reviewer: arluca
+ai-usage: ai-assisted
 
 #customer intent: As an IT administrator, I want to assign owners and sponsors to agent identity blueprints and agent identities so that I can establish clear accountability and governance for my organization's AI agents.
 ---
@@ -27,6 +26,9 @@ To manage owners and sponsors, you must:
 ## Add an owner or sponsor to an agent blueprint
 
 When managing agent identity blueprint owners and sponsors, you can assign them to either the agent identity blueprint or the agent blueprint principal using the respective tabs.
+
+> [!NOTE]
+> When you use a dynamic membership group as a sponsor, it can take up to 24 hours after a membership rule change or a user property change before the authorization check on sponsorship succeeds. Plan accordingly when assigning dynamic groups as sponsors for agent identities or blueprints.
 
 :::image type="content" source="media/manage-owners-sponsors-agents/blueprint-owners-sponsors.png" alt-text="Screenshot of the owners and sponsors page for a blueprint showing the list of owners and sponsors with their roles." lightbox="media/manage-owners-sponsors-agents/blueprint-owners-sponsors.png":::
 

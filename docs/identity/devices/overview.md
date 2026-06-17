@@ -4,7 +4,6 @@ description: Device identities and their use cases
 
 ms.topic: overview
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo, jogro, jploegert
 ---
 # What is a device identity?

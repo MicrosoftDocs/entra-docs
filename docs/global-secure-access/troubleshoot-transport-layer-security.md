@@ -1,8 +1,6 @@
 ---
 title: Troubleshoot Transport Layer Security inspection errors
 description: "Learn how to troubleshoot and resolve Transport Layer Security (TLS) inspection errors in Global Secure Access."
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: troubleshooting-known-issue
 ms.reviewer: teresayao
 ms.date: 11/07/2025
@@ -76,6 +74,44 @@ RUN update-ca-certificates
 COPY myTLSInspectionRootCA.crt /usr/local/share/ca-certificates/
 RUN apk update && apk add ca-certificates && update-ca-certificates
 ```
+
+### Troubleshooting for Node
+
+Node.js doesn't use the operating system's certificate store by default. You can configure Node.js to use the system certificate store using one of the following methods:
+
+#### Command Line
+
+Use the `--use-system-ca` flag when running your application. Replace `<your-app>.js` with your application's entry point (for example, `index.js` or `server.js`):
+
+```bash
+node --use-system-ca <your-app>.js
+```
+
+#### Environment Variable (single session)
+
+Set the variable inline for a single command:
+
+```bash
+NODE_USE_SYSTEM_CA=1 node <your-app>.js
+```
+
+#### Environment Variable (all Node.js apps)
+
+To apply the setting permanently for all Node.js applications, set `NODE_USE_SYSTEM_CA` as a persistent environment variable.
+
+For the current user:
+
+```powershell
+setx NODE_USE_SYSTEM_CA 1
+```
+
+For all users on the machine (requires administrator privileges):
+
+```powershell
+setx NODE_USE_SYSTEM_CA 1 /M
+```
+
+After running either command, restart any open terminals for the change to take effect. All Node.js processes will then use the system certificate store automatically.
 
 ## Applications don't work on mobile platforms
 Mobile applications might fail when TLS inspection is enabled due to certificate pinning, which restricts applications to trust only specific certificates.

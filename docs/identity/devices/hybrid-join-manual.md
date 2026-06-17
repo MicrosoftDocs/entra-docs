@@ -5,7 +5,6 @@ description: Learn how to manually configure Microsoft Entra hybrid join devices
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo
 ---
 

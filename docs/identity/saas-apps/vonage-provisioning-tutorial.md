@@ -1,14 +1,12 @@
 ---
 title: Configure Vonage for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Vonage.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Vonage so that I can streamline the user management process and ensure that users have the appropriate access to Vonage.
----
+--- 
 
 # Configure Vonage for automatic user provisioning with Microsoft Entra ID
 
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both Vonage and Microsof
 > * Remove users in Vonage when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Vonage.
 > * [Single sign-on](vonage-tutorial.md) to Vonage (recommended).
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

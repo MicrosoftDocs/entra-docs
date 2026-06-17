@@ -1,9 +1,7 @@
 ---
 title: "How to configure app instance property lock in your applications"
 description: How to increase app security by configuring property modification locks for sensitive properties of the application.
-author: henrymbuguakiarie
 manager: pmwongera
-ms.author: henrymbugua
 ms.date: 10/26/2023
 ms.reviewer: 
 ms.service: identity-platform

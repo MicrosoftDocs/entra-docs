@@ -2,11 +2,9 @@
 title: Migrate custom app registrations to Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to migrate AI agents from standard Microsoft Entra app registrations to Agent ID for agent-specific governance and security.
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.topic: how-to
-ms.date: 04/30/2026
-ms.custom: agent-id, msecd-doc-authoring-1012
+ms.date: 06/15/2026
+ms.custom: agent-id, msecd-doc-authoring-1013
 ai-usage: ai-assisted
 #customer intent: As a developer or IT admin who built AI agents using standard app registrations, I want to migrate them to Microsoft Entra Agent ID so that I can take advantage of agent-specific governance, Conditional Access, and audit capabilities.
 ---
@@ -46,11 +44,13 @@ Migrating to Agent ID is a phased process, not a single-step switch. This guide 
 | **Migrate** | Create Agent ID resources (blueprint + agent identity) and update your agents to use them. | New agent identities running on Agent ID with matching permissions and credentials. |
 | **Validate and decommission** | Confirm the new identity works end-to-end, parallel-run if needed, then retire the legacy identity with safeguards. | Legacy identities removed; agents running fully on Agent ID. |
 
-## Phase 1: Discover
+<a name="phase-1-discover"></a>
+## Phase 1: Discover existing app registrations
 
 Before migrating anything, build a complete inventory of the agent-related identities in your tenant. Start with an organization-wide sweep to find all migration candidates, then narrow down to individual agents to capture the configuration details you need during migration.
 
-### Organization-level inventory
+<a name="organization-level-inventory"></a>
+### Create an organization-level inventory
 
 Scan your tenant for all service principals that might represent AI agents. The goal is to create a structured report that surfaces usage signals and helps you classify each identity in the next phase.
 
@@ -84,7 +84,8 @@ To operationalize heuristic discovery, query service principal sign-in logs and 
 
 Heuristic discovery produces candidates, not confirmed agents. Review every match before proceeding to classification. Expect false positives, such as backend microservices that call Azure OpenAI but aren't autonomous agents.
 
-### Organizational discovery
+<a name="organizational-discovery"></a>
+### Discover agents through organizational knowledge sources
 
 Automated methods might not find every agent, especially custom-built agents with generic API permissions and no naming convention overlap are invisible to tag-based and heuristic scanning. You should therefore consider:
 
@@ -105,7 +106,8 @@ Run these methods in order:
 1. **CMDB reconciliation:** Match remaining service principals against your asset inventory to catch agents registered under non-obvious names.
 1. **Developer attestation:** Publish the residual unmatched list to application owners for final classification.
 
-## Phase 2: Classify
+<a name="phase-2-classify"></a>
+## Phase 2: Classify agent identities for migration
 
 Using the discovery report, classify each service principal by usage level, which determines how you proceed with the migration.
 
@@ -117,7 +119,8 @@ Using the discovery report, classify each service principal by usage level, whic
 
 The 30-day sign-in threshold is based on Microsoft Entra's default retention period. If your organization has audit log retention through Microsoft Sentinel or another SIEM, adjust thresholds accordingly.
 
-## Phase 3: Migrate
+<a name="phase-3-migrate"></a>
+## Phase 3: Migrate app registrations to Agent ID
 
 This phase covers the technical migration steps for agents whose identity was created as a standard app registration or service principal. You create new Agent ID resources and update your application code to use the two-stage token acquisition model. Steps 1 through 3 target the Microsoft Entra tenant. Step 4 targets changes to your application code.
 
@@ -161,6 +164,7 @@ $body = @{
 Invoke-MgGraphRequest `
     -Method POST `
     -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint" `
+    -Headers @{ "OData-Version" = "4.0" } `
     -Body $body `
     -ContentType "application/json"
 ```
@@ -180,7 +184,7 @@ The recommended credentials depend on your hosting environment:
 | Non-Azure cloud (AWS, GCP) | Federated identity credential with external IDP | Configure workload identity federation with your cloud provider. |
 | On-premises or local development | Client secret or certificate | Certificates are recommended over client secrets for production on-premises deployments. Use client secrets for local testing only. |
 
-Create the blueprint service principal:
+After you configure the credential, create a service principal for the blueprint. The service principal is required before you can create agent identities under the blueprint:
 
 ```http
 POST https://graph.microsoft.com/v1.0/servicePrincipals
@@ -226,7 +230,7 @@ To replicate Microsoft Graph application permissions, grant the same `appRoles` 
 
 If your agent uses the on-behalf-of (OBO) flow to act on behalf of a user, you need to add a custom scope to the blueprint so that front-end applications can request tokens for it. After adding the scope, update your front-end application to request a token for the blueprint's resource instead of the previous resource. For the complete OBO configuration walkthrough, see [Interactive agent authentication and authorization flow](interactive-agent-authentication-authorization-flow.md).
 
-For Azure RBAC role assignments, assign the new agent identity's service principal to the same roles:
+If your original app registration had Azure RBAC role assignments, assign the same roles to the new agent identity's service principal so it can access the required Azure resources at runtime:
 
 ```powershell
 New-AzRoleAssignment `
@@ -246,7 +250,8 @@ Agent ID uses a two-stage token acquisition model. Your agent first acquires a b
 
 After migrating an agent identity, validate that the new Agent ID works correctly before decommissioning the old identity.
 
-### Validation checklist
+<a name="validation-checklist"></a>
+### Validate the migrated agent identity
 
 | Check | How to verify | Expected result |
 |---|---|---|
@@ -256,7 +261,8 @@ After migrating an agent identity, validate that the new Agent ID works correctl
 | **Audit logs** | **Microsoft Entra admin center** > **Audit logs**. | Agent ID creation and permission assignment events are logged. |
 | **Conditional Access** | Review CA policies that target the resource. | CA policies evaluate correctly for the new agent identity. No unexpected blocks. |
 
-### Parallel run
+<a name="parallel-run"></a>
+### Run old and new identities in parallel
 
 For agents with high usage, run the old and new identities side by side before switching over:
 
@@ -276,7 +282,8 @@ After you validate the new Agent ID and it carries production traffic, decommiss
 - **Phased batches:** If you're decommissioning multiple identities, delete in small batches (20-50 service principals per wave) rather than bulk-deleting all at once.
 - **Soft-delete first:** Use Microsoft Entra's soft-delete capability (30-day recycle bin for applications) before hard deletion. This step gives you a recovery window.
 
-### Decommission steps
+<a name="decommission-steps"></a>
+### Decommission the original app registration
 
 To decommission the old identity, follow these steps:
 
@@ -287,6 +294,8 @@ To decommission the old identity, follow these steps:
 1. After 30 days, confirm the app registration is permanently deleted or hard-delete if needed.
 
 ## Troubleshoot common issues
+
+The following table lists common issues you might encounter during migration and how to resolve them.
 
 | Symptom | Likely cause | Resolution |
 |---|---|---|

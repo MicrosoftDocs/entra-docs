@@ -1,9 +1,7 @@
 ---
 title: App sign-in flow with the Microsoft identity platform
 description: Learn about the sign-in flow of web, desktop, and mobile apps in Microsoft identity platform.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom:
 ms.date: 08/11/2023
 ms.reviewer: jmprieur, sureshja, ludwignick

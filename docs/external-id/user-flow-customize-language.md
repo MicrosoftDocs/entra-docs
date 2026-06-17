@@ -3,9 +3,7 @@ title: Language customization in Microsoft Entra user flows
 description: Learn about customizing the language experience in your user flows in Microsoft Entra External ID.
 ms.topic: how-to
 ms.date: 04/24/2026
-
 ms.collection: M365-identity-device-management
-ms.custom:
 ai-usage: ai-assisted
 # Customer intent: As a B2B collaboration user flow administrator, I want to customize the language of the authentication experience in Microsoft Entra External ID so that I can accommodate different languages for my users and provide a personalized user flow.
 ---

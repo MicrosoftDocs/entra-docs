@@ -5,8 +5,6 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.topic: reference
 ms.date: 04/30/2026
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: ramical
 #Customer Intent: As an IT admin, I want to configure Microsoft Entra for increased security so that I can harden my organization's identity infrastructure.
@@ -211,6 +209,20 @@ Improve security incident response and incident communications.
 | [Workload Identities are configured with risk-based policies](zero-trust-response-remediation.md#workload-identities-are-configured-with-risk-based-policies) | Microsoft Entra Workload ID |
 | [Restrict high risk sign-ins](zero-trust-response-remediation.md#restrict-high-risk-sign-ins) | Microsoft Entra ID P2 |
 | [Restrict access to high risk users](zero-trust-response-remediation.md#restrict-access-to-high-risk-users) | Microsoft Entra ID P2 |
+
+## AI
+
+Secure AI agents and agent-based workloads with identity controls.
+
+| Check | Minimum required license |
+|---|---|
+| [Require Microsoft Entra ID authentication to interact with agents](zero-trust-ai.md#require-microsoft-entra-id-authentication-to-interact-with-agents) | Microsoft Entra ID P1 |
+| [Conditional Access policies cover both agent identities and agents' user accounts](zero-trust-ai.md#conditional-access-policies-cover-both-agent-identities-and-agents-user-accounts) | Microsoft Entra ID P1 |
+| [Risk-based Conditional Access blocks risky agent identities](zero-trust-ai.md#risk-based-conditional-access-blocks-risky-agent-identities) | Microsoft Entra ID P2 |
+| [Custom security attributes for agent identities are present](zero-trust-ai.md#custom-security-attributes-for-agent-identities-are-present) | None (included with Microsoft Entra ID) |
+| [Identity governance for agent identity sponsors is configured](zero-trust-ai.md#identity-governance-for-agent-identity-sponsors-is-configured) | Microsoft Entra ID P1 |
+| [Agent identities and blueprint principals have assigned technical owners and no disabled agents remain in the directory](zero-trust-ai.md#agent-identities-and-blueprint-principals-have-assigned-technical-owners-and-no-disabled-agents-remain-in-the-directory) | None (included with Microsoft Entra ID) |
+| [AI administrative roles have assigned principals](zero-trust-ai.md#ai-administrative-roles-have-assigned-principals) | None (included with Microsoft Entra ID) |
 
 ## Related content
 

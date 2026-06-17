@@ -2,14 +2,12 @@
 title: Configure GroupTalk for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to GroupTalk.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/07/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GroupTalk so that I can streamline the user management process and ensure that users have the appropriate access to GroupTalk.
----
+--- 
 
 # Configure GroupTalk for automatic user provisioning with Microsoft Entra ID
 
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both GroupTalk and Micro
 > * Remove users in GroupTalk when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and GroupTalk
 > * Provision groups and group memberships in GroupTalk
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

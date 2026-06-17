@@ -1,14 +1,12 @@
 ---
 title: Configure Rouse Sales for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Rouse Sales.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/16/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Rouse Sales so that I can streamline the user management process and ensure that users have the appropriate access to Rouse Sales.
----
+--- 
 
 # Configure Rouse Sales for automatic user provisioning with Microsoft Entra ID
 
@@ -20,6 +18,7 @@ This article describes the steps you need to perform in both Rouse Sales and Mic
 > * Create users in Rouse Sales.
 > * Remove users in Rouse Sales when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Rouse Sales.
+> * Code Auth Grant flow authentication supported.
 
 ## Prerequisites
 

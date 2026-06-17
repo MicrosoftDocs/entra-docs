@@ -1,14 +1,12 @@
 ---
 title: Configure Jostle for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Jostle.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/08/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jostle so that I can streamline the user management process and ensure that users have the appropriate access to Jostle.
----
+--- 
 
 # Configure Jostle for automatic user provisioning with Microsoft Entra ID
 
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both Jostle and Microsof
 > * Remove users in Jostle when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Jostle
 > * [Single sign-on](jostle-tutorial.md) to Jostle (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
@@ -134,6 +133,34 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "alternate2"].value|String||
    |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:alternateEmail1Label|String||
    |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:alternateEmail2Label|String||
+   |DisplayName|String||
+   |ExternalIdentifier|String||
+   |Title|String||
+   |Nickname|String||
+   |UserType|String||
+   |BirthDate|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomBadge|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomFilterCategory|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:CustomProfile|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:JoinDate|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Locations|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:LoginType|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:PersonalPronouns|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Country|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Locality|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1PostalCode|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1StreetAddress|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address1Region|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Country|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Locality|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2PostalCode|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2StreetAddress|String||
+   |urn:ietf:params:scim:schemas:extension:jostle:2.0:User:Address2Region|String||
+   |phoneNumbers[type eq "workofficephone"].value|String||
+   |phoneNumbers[type eq "homephone"].value|String||
+   |phoneNumbers[type eq "workmobilephone"].value|String||
+   |phoneNumbers[type eq "personalmobilephone"].value|String||
+
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

@@ -2,14 +2,12 @@
 title: Configure Iris Intranet for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Iris Intranet.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/10/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Iris Intranet so that I can streamline the user management process and ensure that users have the appropriate access to Iris Intranet.
----
+--- 
 
 # Configure Iris Intranet for automatic user provisioning with Microsoft Entra ID
 
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both Iris Intranet and M
 > * Remove users in Iris Intranet when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Iris Intranet
 > * [Single sign-on](iris-intranet-tutorial.md) to Iris Intranet (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

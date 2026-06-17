@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra ID Protection scenario for mastering risk analysis for effective remediation
 description: Learn about improving risk analysis to identify risky users, discern risk event types, and examine risk levels for access and identity decisions.
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 10/31/2025
@@ -176,7 +175,7 @@ In the following screenshot, there are many total detections, but only three are
 
    ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/three-high.png)
 
-Learn more about access control decisions: [What is Conditional Access?](/azure/data-explorer/security-conditional-access)
+Learn more about access control decisions: [What is Conditional Access?](../identity/conditional-access/overview.md)
 
 ## Get started with Azure Monitor Logs reference tables
 

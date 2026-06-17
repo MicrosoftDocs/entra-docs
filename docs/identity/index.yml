@@ -42,7 +42,7 @@ productDirectory:
       url: ./conditional-access/overview.md
     - title: Device identity
       imageSrc: ./media/index/devices.svg
-      summary: "Register and join devices to Microsoft Entra ID for device management and Condition Access."
+      summary: "Register and join devices to Microsoft Entra ID for device management and Conditional Access."
       url: ./devices/overview.md
     - title: Hybrid identity
       imageSrc: ./media/index/hybrid-identity.svg

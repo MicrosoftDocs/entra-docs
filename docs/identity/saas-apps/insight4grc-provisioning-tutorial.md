@@ -2,13 +2,11 @@
 title: Configure Insight4GRC for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Insight4GRC.
 
-author: jeevansd
 ms.topic: how-to
 ms.date: 04/07/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Insight4GRC so that I can streamline the user management process and ensure that users have the appropriate access to Insight4GRC.
----
+--- 
 
 # Configure Insight4GRC for automatic user provisioning with Microsoft Entra ID
 
@@ -23,6 +21,10 @@ This article describes the steps you need to perform in both Insight4GRC and Mic
 > * Provision groups and group memberships in Insight4GRC
 > * [Single sign-on](./insight4grc-tutorial.md) to Insight4GRC (recommended)
 
+Insight4GRC is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -30,9 +32,6 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)). 
 * A user account in Insight4GRC with Admin permissions.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).

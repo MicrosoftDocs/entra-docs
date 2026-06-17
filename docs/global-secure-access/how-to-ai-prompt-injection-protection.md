@@ -3,8 +3,6 @@ title: Protect enterprise generative AI apps with prompt injection protection
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway prompt injection protection."
 ms.topic: how-to
 ms.date: 04/27/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: KaTabish
 ms.custom: sfi-image-nochange
 ai-usage: ai-assisted

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lexmark Cloud Services (OIDC) so that I can streamline the user management process and ensure that users have the appropriate access to Lexmark Cloud Services (OIDC).
 
----
+--- 
 
 # Configure Lexmark Cloud Services (OIDC) for automatic user provisioning with Microsoft Entra ID
 
@@ -18,6 +18,7 @@ This article describes the steps you need to perform in both Lexmark Cloud Servi
 > * Create users in Lexmark Cloud Services (OIDC)
 > * Disable users in Lexmark Cloud Services (OIDC) when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Lexmark Cloud Services (OIDC) [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Lexmark Cloud Services (OIDC) (recommended).
+> * Client Credentials Authentication authentication supported.
 
 > [!NOTE]
 > Lexmark Cloud Services (OIDC) application currently only supports user provisioning. Group provisioning isn't supported and is planned for a future release.

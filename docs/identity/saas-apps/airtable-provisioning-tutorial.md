@@ -1,15 +1,13 @@
 ---
 title: Configure Airtable for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airtable.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 02/25/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airtable so that I can streamline the user management process and ensure that users have the appropriate access to Airtable.
 
----
+--- 
 
 # Configure Airtable for automatic user provisioning with Microsoft Entra ID
 

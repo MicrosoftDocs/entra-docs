@@ -3,8 +3,6 @@ title: Password Policy Overview and Frequently Asked Questions
 description: This document explains password policies in a clear and easy-to-understand way.
 ms.topic: faq
 ms.date: 04/15/2026
-ms.author: justinha
-author: rui0122
 adobe-target: true
 # Customer intent: As a Microsoft Entra Administrator, I want to understand how password policies apply to different types of users
 ---

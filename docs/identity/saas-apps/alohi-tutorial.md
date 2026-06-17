@@ -2,11 +2,10 @@
 title: Configure Alohi for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Alohi.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alohi so that I can control who has access to Alohi, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Alohi for Single sign-on with Microsoft Entra ID
 

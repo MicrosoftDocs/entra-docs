@@ -360,7 +360,7 @@ Content-type: application/json
                 "displayName": "AWS Contoso",
                 "details": {
                     "ApplicationId": "00001111-aaaa-2222-bbbb-3333cccc4444",
-                    "ServicePrincipalId": "chc46a42-966b-47d7-9774-576b1c8bd0b8",
+                    "ServicePrincipalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                     "ServicePrincipalDisplayName": "AWS Contoso"
                 }
             },

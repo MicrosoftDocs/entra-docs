@@ -1,8 +1,6 @@
 ---
 title: Plan your migration from Azure AD B2C to External ID
 description: Choose between the standard migration approach and High Scale Compatibility (HSC) mode when moving from Azure AD B2C to Microsoft Entra External ID.
-author: garrodonnell
-ms.author: godonnell
 ms.topic: concept-article
 ms.date: 03/13/2026
 ai-usage: ai-assisted
@@ -167,7 +165,7 @@ Review these limitations carefully before enabling HSC mode. They apply in addit
 
 - Advanced Conditional Access scenarios, including authentication context, step-up authentication, and session-based controls.
 - Application assignment via groups.
-- Passkeys aren't currently available in Microsoft Entra External ID or HSC mode.
+- Passkeys (FIDO2) aren't currently available in HSC mode. They are available in standard Microsoft Entra External ID deployments. For setup, see [Sign in with passkeys](how-to-sign-in-with-passkey.md).
 
 **Federation and ecosystem integrations**
 

@@ -1,13 +1,11 @@
 ---
 title: Microsoft Entra ID SCIM API 
 description: Build custom integrations to provision users and groups to Microsoft Entra ID using the System for Cross-domain Identity Management (SCIM) v2.0 protocol.
-author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 04/07/2026
-ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 
@@ -396,8 +394,8 @@ The following SCIM query parameters can be used with this API endpoint:
 The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - When multiple pages are involved in the result:
-  - The default page size of 10 entries per page.
-  - The max page size is 100 entries per page.
+  - The default page size of 100 entries per page.
+  - The max page size is 1000 entries per page.
 
 - In the “filter” query parameter, only the “and” logic operator is supported. The following user attributes are allowed for “eq” compare operator:
   - `username`
@@ -1041,9 +1039,9 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - When multiple pages are involved in the result:
 
-  - The default page size of 10 entries per page.
+  - The default page size of 100 entries per page.
 
-  - The max page size is 100 entries per page.
+  - The max page size is 1000 entries per page.
 
 - In the `filter` query parameter, only the “and” logic operator is supported. The following group attributes are allowed for “eq” compare operator.  
 
@@ -1344,7 +1342,7 @@ The `/groups` endpoint allows a PATCH request to be made for updating an existin
 
 PATCH `https://graph.microsoft.com/rp/scim/groups/{id}`
 
-Upon success, the API returns HTTP Status 200.
+Upon success, the API returns HTTP Status 204.
 
 ### Permissions
 

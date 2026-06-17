@@ -2,14 +2,12 @@
 title: Configure Shopify Plus for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Shopify Plus.
 
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 04/20/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Shopify Plus so that I can streamline the user management process and ensure that users have the appropriate access to Shopify Plus.
----
+--- 
 
 # Configure Shopify Plus for automatic user provisioning with Microsoft Entra ID
 
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both Shopify Plus and Mi
 > * Remove users in Shopify Plus when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Shopify Plus
 > * [Single sign-on](./shopify-plus-tutorial.md) to Shopify Plus (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -2,8 +2,6 @@
 title: Create agent identities in Microsoft agent identity platform
 description: Learn how to create agent identities that represent AI agents in your tenant using Microsoft Graph APIs and various authentication libraries.
 titleSuffix: Microsoft Entra Agent ID
-author: omondiatieno
-ms.author: jomondi
 ms.topic: how-to
 ms.date: 04/28/2026
 ms.reviewer: dastrock

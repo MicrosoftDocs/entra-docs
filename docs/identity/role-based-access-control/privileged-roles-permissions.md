@@ -4,8 +4,9 @@ description: Privileged roles and permissions in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: concept-article
-ms.date: 10/15/2024
+ms.date: 06/05/2026
 ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Privileged roles and permissions in Microsoft Entra ID (preview)
@@ -402,6 +403,12 @@ Here are some best practices for using privileged roles.
 - Limit the number of privileged role assignments to less than 10
 
 For more information, see [Best practices for Microsoft Entra roles](best-practices.md).
+
+### Isolate privileged intermediaries as control plane assets
+
+Any system that can manage or broker access to privileged roles is part of the control plane and must be protected at that level. Examples include privileged access management (PAM) solutions, jump hosts and session hosts, automation runbooks, and service principals or applications that hold highly privileged roles.
+
+In the [Enterprise access model](/security/privileged-access-workstations/privileged-access-access-model), Tier 0 expands to become the control plane, which must be isolated from the management and data/workload planes so that control of higher planes can't be obtained from lower ones. If a lower-tier system can administer a control plane asset, an attacker who compromises that system can escalate privilege. Treat these intermediaries as control plane (Tier 0) assets and administer them only from equally trusted control plane systems.
 
 ## Privileged permissions versus protected actions
 
