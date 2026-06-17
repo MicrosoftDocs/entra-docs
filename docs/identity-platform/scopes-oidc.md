@@ -185,7 +185,7 @@ Preauthorized permissions will always appear in the relevant token claims. Not a
 
 Microsoft services calling other Microsoft services on your behalf or in your tenant may be authorized using preauthorization. Preauthorized permissions appear in token claims, similar to permissions granted through other methods like consent.
 
-In some cases, these requests will use preauthorized permissions that are created specifically for service-to-service requests and are not available to external developers. These permissions may also grant access to internal business data or other sensitive content which is not exposed in public APIs. Following internal naming conventions, some of these service-to-service permissions may have claim values like "MS-{permissionName}" or "_A.AA".
+In some cases, these requests use preauthorized permissions that are created specifically for service-to-service requests and aren't available to external developers. These permissions might also grant access to internal business data or other sensitive content that isn't exposed in public APIs. Following internal naming conventions, some of these service-to-service permissions might have claim values like `MS-{permissionName}` or `_A.AA`.
 
 Customers who see such values in token claims should know that this is expected behavior and represents normal access between Microsoft services, as described in our Terms of Service.
 
