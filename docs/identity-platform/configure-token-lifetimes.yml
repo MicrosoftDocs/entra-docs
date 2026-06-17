@@ -124,7 +124,7 @@ procedureSection:
       # Display the policy
       Get-MgPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId
 
-      # Assign the token lifetime policy to an app
+      # Assign the token lifetime policy to a service principal
       $params = @{
         "@odata.id" = "https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/$tokenLifetimePolicyId"
       }
@@ -133,10 +133,10 @@ procedureSection:
 
       New-MgServicePrincipalTokenLifetimePolicyByRef -ServicePrincipalId $spId -BodyParameter $params
 
-      # List the token lifetime policy on the app
+      # List the token lifetime policy on the service principal
       Get-MgServicePrincipalTokenLifetimePolicy -ServicePrincipalId $spId
 
-      # Remove the policy from the app
+      # Remove the policy from the service principal
       Remove-MgServicePrincipalTokenLifetimePolicyByRef -ServicePrincipalId $spId -TokenLifetimePolicyId $tokenLifetimePolicyId
 
       # Delete the policy
