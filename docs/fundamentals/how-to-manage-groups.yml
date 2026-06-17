@@ -39,7 +39,7 @@ procedureSection:
       You can create a basic group and add your members at the same time using the Microsoft Entra admin center. You must have at least the **Groups Administrator** or **User Administrator** role assigned to create groups. Review the [appropriate Microsoft Entra roles for managing groups](../identity/role-based-access-control/delegate-by-task.md#groups-least-privileged-roles).
 
       > [!NOTE]
-      > When you use [cross-tenant delegated administration](../id-governance/tenant-governance/cross-tenant-delegated-administration.md), which uses granular delegated admin privileges (GDAP), group creation by GDAP administrators isn't supported if the target tenant uses a group naming policy prefix or suffix that references attributes of the calling user, such as department or company name. Use an administrator account in the target tenant to create the group.
+      > [Cross-tenant delegated administration](../id-governance/tenant-governance/cross-tenant-delegated-administration.md) uses granular delegated admin privileges (GDAP). Group creation by GDAP administrators isn't supported if the target tenant uses a group naming policy prefix or suffix that references attributes of the calling user, such as department or company name. Use an administrator account in the target tenant to create the group.
 
       To create a basic group and add members:
     steps: 
