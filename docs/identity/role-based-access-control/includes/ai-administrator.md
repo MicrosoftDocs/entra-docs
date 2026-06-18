@@ -2,15 +2,18 @@
 title: AI Administrator
 description: AI Administrator
 ms.topic: include
-ms.date: 04/29/2026
+ms.date: 06/17/2026
 ms.custom: include file
 ---
 
-Assign the AI Administrator role to users who need to do the following tasks:
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
+
+This is a [privileged role](../privileged-roles-permissions.md). Assign the AI Administrator role to users who need to do the following tasks:
 
 - Manage all aspects of Microsoft 365 Copilot
 - Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center
 - Approve and publish line-of-business copilot agents
+- Allow users to install an app or install an app for users in the organization if the app does not require permission
 - Read and configure Azure and Microsoft 365 service health dashboards
 - View usage reports, adoption insights, and organizational insight
 - Create and manage support tickets in Azure and the Microsoft 365 admin center
@@ -22,6 +25,23 @@ Assign the AI Administrator role to users who need to do the following tasks:
 > | --- | --- |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/agentUsers/assignLicense | Assign product licenses for agent users |
+> | microsoft.directory/agentUsers/basic/update | Update basic properties on agent users, such display name, user type, and mail nickname |
+> | microsoft.directory/agentUsers/create | Create agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/delete | Delete agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/disable | Disable agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/enable | Enable agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/invalidateAllRefreshTokens | Force sign-out by invalidating agent user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/lifeCycleInfo/read | Read lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/lifeCycleInfo/update | Update lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentUsers/manager/update | Update manager for agent users |
+> | microsoft.directory/agentUsers/photo/update | Update photo of agent users |
+> | microsoft.directory/agentUsers/reprocessLicenseAssignment | Reprocess license assignments for agent users |
+> | microsoft.directory/agentUsers/restore | Restore deleted agent users |
+> | microsoft.directory/agentUsers/revokeSignInSessions | Revoke sign-in sessions for agent users |
+> | microsoft.directory/agentUsers/sponsors/update | Update sponsors of agent users |
+> | microsoft.directory/agentUsers/usageLocation/update | Update usage location of agent users |
+> | microsoft.directory/agentUsers/userPrincipalName/update | Update the user principal name of agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/entitlementManagement/allProperties/read | Read all properties in Microsoft Entra entitlement management |
 > | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
 > | microsoft.directory/users/allProperties/read | Read all properties of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
