@@ -3,6 +3,7 @@ title: Configure Harness for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Harness.
 ms.topic: how-to
 ms.date: 06/18/2026
+ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Harness so that I can streamline the user management process and ensure that users have the appropriate access to Harness.
 
@@ -41,7 +42,7 @@ Before you configure provisioning, you must assign users or groups to the Harnes
 Before you configure and enable automatic user provisioning, decide which users or groups in Microsoft Entra ID need access to Harness. You can then assign these users or groups to Harness by following the instructions in [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
 
 
-###  Recommendations for user assignment
+### Recommendations for user assignment
 
 
 Start with a small test group before you roll out provisioning to your entire organization. Assign a single Microsoft Entra user to Harness to test the automatic user provisioning configuration. After you verify that provisioning works correctly, you can assign additional users or groups.
@@ -71,13 +72,13 @@ You must generate a SCIM API token in Harness before you can configure provision
    ![Harness API Keys link](media/harness-provisioning-tutorial/apikeys.png)
 
 
-2. Specify a **Name** and click **Save**. Harness creates an API key for your account.
+1. Specify a **Name** and click **Save**. Harness creates an API key for your account.
 
 
    ![Harness Add API Key link](media/harness-provisioning-tutorial/addkey.png)
 
 
-3. To create a token for your API key, select **+Token** under your newly created API key.  
+1. To create a token for your API key, select **+Token** under your newly created API key.
 
 
    a. Provide a name and click **Generate token**.
@@ -164,21 +165,21 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
 
 
    ![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
-  * In the **Tenant URL** box, enter **`https://app.harness.io/gateway/api/scim/account/<your_harness_account_ID>`**. You can obtain your Harness account ID from the URL in your browser when you are logged into Harness.
+   
+      * In the **Tenant URL** box, enter **`https://app.harness.io/gateway/api/scim/account/<your_harness_account_ID>`**. You can obtain your Harness account ID from the URL in your browser when you are logged into Harness.
 
-
-  * In the **Secret Token** box, enter the SCIM Authentication Token value that you saved in step 3 of the "Set up Harness for provisioning" section.
+      * In the **Secret Token** box, enter the SCIM Authentication Token value that you saved in step 3 of the "Set up Harness for provisioning" section.
   
-  * Select **Test Connection** to ensure that Microsoft Entra ID can connect to Harness. If the connection fails, ensure that your Harness account has *Admin* permissions, and then try again.
+      * Select **Test Connection** to ensure that Microsoft Entra ID can connect to Harness. If the connection fails, ensure that your Harness account has *Admin* permissions, and then try again.
 
 
-  ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+         ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
 
 1. Select **Create** to create your configuration. 
 
 
-1. Select **Properties** in the **Overview** page.
+1. Select **Properties** in the **Overview** page.
 
 
 1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
@@ -224,7 +225,6 @@ After you start provisioning, monitor the provisioning logs to verify that users
 
 
 ## Related articles
-
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
