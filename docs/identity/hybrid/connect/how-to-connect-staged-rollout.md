@@ -207,7 +207,7 @@ To configure Staged Rollout, follow these steps:
    >Editing a group (adding or removing users), it can take up to 24 hours for changes to take effect.
    >Seamless SSO will apply only if users are in the Seamless SSO group and also in either a PTA or PHS group.
 
-### User Authentication Behavior During Staged Rollout Transitions
+## User Authentication Behavior During Staged Rollout Transitions
 
 When a user is added to a Staged Rollout (SR) group or when a group they belong to is added to SR, their authentication method will transition from federated to managed. This change takes effect after the user completes one more interactive sign-in using their existing federated login. After this sign-in, Microsoft Entra applies the managed authentication experience for subsequent logins.
 
