@@ -365,15 +365,17 @@ catch {
         "C:\Program Files\Microsoft Entra private network connector updater"
     )
     
-    foreach ($folder in $foldersToCleanOnError) {
-        if (Test-Path -Path $folder) {
-            try {
-                Remove-Item -Path $folder -Recurse -Force -ErrorAction SilentlyContinue
-                Write-Host "Cleaned up: $folder" -ForegroundColor Green
-            }
-            catch {
-                Write-Warning "Could not clean up '$folder'. You may need to manually remove it."
-            }
+foreach ($folder in $foldersToCleanOnError) {
+    if ($folder -and (Test-Path -LiteralPath $folder)) {
+        try {
+            Remove-Item -LiteralPath $folder -Recurse -Force -ErrorAction Stop
+            Write-Host "Cleaned up: $folder" -ForegroundColor Green
+        }
+        catch {
+            Write-Warning "Could not clean up '$folder'. You may need to manually remove it. Error: $_"
+        }
+    }
+}
         }
     }
     
