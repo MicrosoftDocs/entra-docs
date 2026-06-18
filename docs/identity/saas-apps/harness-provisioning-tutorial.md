@@ -116,7 +116,7 @@ You must add the Harness application from the Microsoft Entra application galler
 1. In the search box, enter **Harness**, select **Harness** in the results list, and then select the **Add** button to add the application.
 
 
-   ![Harness in the results list](common/search-new-app.png)
+   ![Harness in the results list](media/harness-provisioning-tutorial/search-new-app.png)
 
 
 ## Configure automatic user provisioning to Harness
