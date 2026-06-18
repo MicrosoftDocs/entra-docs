@@ -19,10 +19,9 @@ The admin center brings together the following Microsoft Entra product areas, ea
 
 - **[Entra ID](#entra-id)** — Manage users, groups, devices, applications, roles, and authentication methods.
 - **[ID Protection](#id-protection)** — Monitor and respond to identity-based risks with risk policies and reports.
-- **[Identity Governance](#identity-governance)** — Control access lifecycle with entitlement management, access reviews, and lifecycle workflows.
+- **[ID Governance](#id-governance)** — Control access lifecycle with entitlement management, access reviews, and lifecycle workflows.
 - **[Verified ID](#verified-id)** — Issue and manage verifiable credentials.
 - **[Global Secure Access](#global-secure-access)** — Secure access to apps and resources with Private Access and Internet Access.
-- **[Agent ID](#agent-id)** — Create and manage identities for AI agents, with built-in governance, protection, and access controls.
 
 ## Explore the Microsoft Entra admin center
 
@@ -49,6 +48,7 @@ For more information about configuring and managing Microsoft Entra ID solutions
 
 * [Users and groups](~/identity/users/directory-overview-user-model.md)
 * [Devices](~/identity/devices/overview.md)
+* [Agents](~/agent-id/what-is-microsoft-entra-agent-id.md)
 * [Enterprise applications](~/identity/enterprise-apps/what-is-application-management.md)
 * [App registrations](~/identity-platform/application-model.md)
 * [Roles and admins](~/identity/role-based-access-control/custom-overview.md)
@@ -73,9 +73,9 @@ For more information about configuring and managing Microsoft Entra ID Protectio
 * [Risky users](~/id-protection/howto-identity-protection-investigate-risk.md)
 * [Risky workload identities](~/id-protection/concept-workload-identity-risk.md)
 
-### Identity governance
+### ID Governance
 
-**Identity Governance** gives administrators and developers access to [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) solutions, including entitlement management, access reviews, and lifecycle workflows.
+**ID Governance** gives administrators and developers access to [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) solutions, including entitlement management, access reviews, and lifecycle workflows.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-identity-governance.png" alt-text="Screenshot of the Microsoft Entra admin center Identity governance menu.":::
 
@@ -111,17 +111,6 @@ For more information about configuring and managing Global Secure Access solutio
 * [Traffic forwarding](~/global-secure-access/concept-traffic-forwarding.md)
 * [Remote networks](~/global-secure-access/concept-remote-network-connectivity.md)
 * [Logs and monitoring](~/global-secure-access/concept-global-secure-access-logs-monitoring.md)
-
-### Agent ID
-
-**Agent ID** gives administrators access to [Microsoft Entra Agent ID](~/agent-id/what-is-microsoft-entra-agent-id.md) solutions for creating and managing AI agent identities. From this section, administrators can register agent identities, configure agent identity blueprints, assign sponsors, and apply security policies to agents.
-
-For more information about configuring and managing Microsoft Entra Agent ID solutions, see the following documentation:
-
-* [What is Microsoft Entra Agent ID?](~/agent-id/what-is-microsoft-entra-agent-id.md)
-* [What are agent identities?](~/agent-id/what-are-agent-identities.md)
-* [Agent identity platform overview](~/agent-id/what-is-agent-id-platform.md)
-* [Governing agent identities](~/id-governance/agent-id-governance-overview.md)
 
 ## Common admin tasks
 

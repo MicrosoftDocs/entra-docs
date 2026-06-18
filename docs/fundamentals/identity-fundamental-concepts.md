@@ -8,7 +8,7 @@ ms.reviewer: null
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
-  - ai-seo-date:07/31/2025
+  - ai-seo-date:06/18/2026
   - ai-gen-description
 #Customer Intent: As an IT admin, I want to understand identity and access management core concepts so that I can make informed decisions about my organization's identity strategy.
 ---
