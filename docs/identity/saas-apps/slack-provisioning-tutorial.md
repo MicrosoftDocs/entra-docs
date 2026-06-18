@@ -2,7 +2,6 @@
 title: Automate User provisioning into Slack with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Slack.
 
-manager: jeedes
 ms.topic: how-to
 ms.date: 04/16/2026
 
