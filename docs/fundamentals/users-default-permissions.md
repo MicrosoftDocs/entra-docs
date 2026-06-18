@@ -23,7 +23,7 @@ The set of default permissions depends on whether the user is a native member of
 * *Member users* can register applications, manage their own profile photo and mobile phone number, change their own password, and invite B2B guests. These users can also read all directory information (with a few exceptions). 
 * *Guest users* have restricted directory permissions. They can manage their own profile, change their own password, and retrieve some information about other users, groups, and apps. However, they can't read all directory information. 
 
-  For example, guest users can't enumerate the list of all users, groups, and other directory objects. Guests can be added to administrator roles, which grant them full read and write permissions. Guests can also invite other guests when **Guest invite settings** allow it.
+  For example, guest users can't enumerate the list of all users, groups, and other directory objects. Guests can be added to administrator roles, which grant them full read and write permissions. Guests can also invite other guests when [Guest invite settings](~/external-id/external-collaboration-settings-configure.md#to-configure-guest-invite-settings) allow it.
 
 > [!NOTE]
 > As Intune employs its own RBAC system to manage access to device management features, restricted guest users will be able to access the Intune portal with the appropriate permissions.
