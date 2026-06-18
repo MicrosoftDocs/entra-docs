@@ -9,8 +9,7 @@ ms.custom: sfi-image-nochange
 
 ---
 
-
-## Configure Harness for automatic user provisioning with Microsoft Entra ID
+# Configure Harness for automatic user provisioning with Microsoft Entra ID
 
 
 This article explains how to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Harness. Automatic provisioning eliminates manual user management by synchronizing user lifecycle changes from your identity provider to Harness.
@@ -51,7 +50,7 @@ Start with a small test group before you roll out provisioning to your entire or
 When you assign a user to Harness, you must select a valid application-specific role (if available) in the **Assignment** dialog box. Users with the *Default Access* role are excluded from provisioning.
 
 
-If you currently have a Harness FirstGen App Integration setup in Microsoft Entra ID and are now trying to set up one for Harness NextGen, ensure that the user information is also included in the FirstGen App Integration before you attempt to log into Harness NextGen through SSO.
+If you currently have a Harness App Integration setup in Microsoft Entra ID and are now trying to set up one for Harness, ensure that the user information is also included in the App Integration before you attempt to log into Harness through SSO.
 
 
 ## Set up Harness for provisioning
@@ -230,4 +229,3 @@ After you start provisioning, monitor the provisioning logs to verify that users
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md)
-
