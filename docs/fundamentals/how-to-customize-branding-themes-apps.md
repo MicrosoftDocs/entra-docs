@@ -66,7 +66,7 @@ Here are some important things to know about how branding themes work.
 
 Here are some of the limits and constraints for branding themes.
 
-- You can create up to 10 branding themes per tenant.
+- You can create up to 5 branding themes per tenant.
 - The live preview capability previews style and layout changes and only shows the Sign in page. Live preview doesn't include any custom text overrides.
 - You can't use the name **Default theme** for your branding theme name. This name is reserved.
 - Custom text changes are currently limited to sign-in page only.
