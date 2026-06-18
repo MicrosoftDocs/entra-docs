@@ -1,8 +1,9 @@
 ---
-title: Bulk upload to add or create members of a group
+title: Bulk add group members by uploading a CSV file
 description: Add group members in bulk by using a comma-separated values (CSV) file.
-ms.date: 12/05/2025
+ms.date: 06/18/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
@@ -16,16 +17,14 @@ You can add multiple members to a group by using a comma-separated values (CSV) 
 
 ## Understand the CSV template
 
-Download and fill in the bulk upload CSV template to successfully add Microsoft Entra group members in bulk. Your CSV template might look like this example:
-
-:::image type="content" source="./media/groups-bulk-import-members/template-with-callouts.png" alt-text="Screenshot that shows the spreadsheet for upload and call-outs explaining the purpose and values for each row and column.":::
+Download and fill in the bulk upload CSV template to successfully add Microsoft Entra group members in bulk. Use the template that you download for the group member import operation. The current group member template starts with the column header, not a `version:v1.0` row.
 
 ### CSV template structure
 
 The rows in a downloaded CSV template are:
 
-- **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. An example is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Some older versions of the template might have slight variations. For group membership changes, you can use either the member object ID or the user principal name (UPN).
-- **Examples row**: The template includes a row of example values (for example, `Example: 9832aad8-e4fe-496b-a604-95c6eF01ae75`). You must remove the examples row and replace it with your own entries.
+- **Column headings**: Preserve the full downloaded column header exactly as-is. The property name in brackets is only one part of the header, so don't replace the full header with only `memberObjectIdOrUpn`. The current group member import header is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. For group membership changes, you can use either the member object ID or the user principal name (UPN) in the rows under this header.
+- **Examples row**: If the template includes a row of example values, such as `Example: 9832aad8-e4fe-496b-a604-95c6eF01ae75`, remove the examples row and replace it with your own entries.
 
 [!INCLUDE [bulk-operations-csv-template-note](~/includes/bulk-operations-csv-template-note.md)]
 
@@ -38,7 +37,7 @@ The rows in a downloaded CSV template are:
 
 ### Example CSV file
 
-Here's an example of a completed CSV file ready for upload, matching the current template format. This example uses user principal names (UPNs):
+Here's an example of a completed CSV file ready for upload, matching the current group member import template format. This example uses user principal names (UPNs):
 
 ```csv
 Member object ID or user principal name [memberObjectIdOrUpn] Required
@@ -75,8 +74,6 @@ Member object ID or user principal name [memberObjectIdOrUpn] Required
     :::image type="content" source="./media/groups-bulk-import-members/import-panel.png" alt-text="Screenshot that shows the Import Members command is on the profile page for the group.":::
 
 1. Open the CSV file and add a line for each group member you want to import into the group. For each member, enter either their **User principal name** (UPN, such as `user@contoso.com`) or their **Object ID** (a GUID like `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`). Enter one member per row. Then save the file.
-
-    :::image type="content" source="./media/groups-bulk-import-members/csv-file.png" alt-text="Screenshot that shows the CSV file contains names and IDs of the members to import.":::
 
 1. On the **Bulk import group members** page, under **Upload your csv file**, browse to the file. When you select the file, validation of the CSV file starts.
 1. When the file contents are validated, the bulk import page displays **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
