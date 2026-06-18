@@ -2,7 +2,7 @@
 title: Restore or permanently remove recently deleted user
 description: How to view restorable users, restore a deleted user, or permanently delete a user with Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 03/05/2025
+ms.date: 06/18/2026
 ms.reviewer: jeffsta
 ms.custom: ge-structured-content-pilot, sfi-image-nochange
 #Customer Intent: As an IT admin, I want to restore or permanently remove recently deleted users so that I can manage user lifecycle in my directory.
@@ -35,7 +35,9 @@ You can see all the users that were deleted less than 30 days ago. These users c
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Entra ID** > **Users** > **Deleted users**.
+1. Browse to **Entra ID** > **Users**, and then select **Deleted users**.
+
+    If you don't see **Deleted users**, use the Microsoft Entra admin center search box to search for and select **Deleted users**.
 
 1. Review the list of users that are available to restore.
 
