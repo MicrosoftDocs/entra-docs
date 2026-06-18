@@ -2,7 +2,7 @@
 title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
 ms.topic: overview
-ms.date: 04/06/2026
+ms.date: 06/18/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
@@ -22,6 +22,7 @@ The admin center brings together the following Microsoft Entra product areas, ea
 - **[Identity Governance](#identity-governance)** — Control access lifecycle with entitlement management, access reviews, and lifecycle workflows.
 - **[Verified ID](#verified-id)** — Issue and manage verifiable credentials.
 - **[Global Secure Access](#global-secure-access)** — Secure access to apps and resources with Private Access and Internet Access.
+- **[Agent ID](#agent-id)** — Create and manage identities for AI agents, with built-in governance, protection, and access controls.
 
 ## Explore the Microsoft Entra admin center
 
@@ -110,6 +111,17 @@ For more information about configuring and managing Global Secure Access solutio
 * [Traffic forwarding](~/global-secure-access/concept-traffic-forwarding.md)
 * [Remote networks](~/global-secure-access/concept-remote-network-connectivity.md)
 * [Logs and monitoring](~/global-secure-access/concept-global-secure-access-logs-monitoring.md)
+
+### Agent ID
+
+**Agent ID** gives administrators access to [Microsoft Entra Agent ID](~/agent-id/what-is-microsoft-entra-agent-id.md) solutions for creating and managing AI agent identities. From this section, administrators can register agent identities, configure agent identity blueprints, assign sponsors, and apply security policies to agents.
+
+For more information about configuring and managing Microsoft Entra Agent ID solutions, see the following documentation:
+
+* [What is Microsoft Entra Agent ID?](~/agent-id/what-is-microsoft-entra-agent-id.md)
+* [What are agent identities?](~/agent-id/what-are-agent-identities.md)
+* [Agent identity platform overview](~/agent-id/what-is-agent-id-platform.md)
+* [Governing agent identities](~/id-governance/agent-id-governance-overview.md)
 
 ## Common admin tasks
 
