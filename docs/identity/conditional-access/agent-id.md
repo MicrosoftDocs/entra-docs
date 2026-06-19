@@ -2,7 +2,7 @@
 title: Conditional Access for Agents in Microsoft Entra
 description: Learn how Conditional Access for agents in Microsoft Entra ID extends Zero Trust principles to AI agents, ensuring secure access and governance.
 ms.topic: concept-article
-ms.date: 06/02/2026
+ms.date: 06/19/2026
 ms.reviewer: yoelhor, kvenkit
 ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
@@ -72,7 +72,7 @@ Agents can access Microsoft Entra-protected resources using one of the following
 The most common access pattern is the on-behalf-of (OBO) flow. In this flow, a user signs in to an agent application, and the agent accesses downstream resources using the user's identity and delegated permissions. For example, when an agent reads your emails, it accesses your mailbox *on your behalf*. For more information about how the OBO flow works for agents, see [Agent OAuth flows: On-behalf-of](../../agent-id/agent-on-behalf-of-oauth-flow.md).
 
 > [!NOTE]
-> The on-behalf-of flow is also known as delegated access. Agents using this type of access are sometimes called interactive agents or assistive agents, as they involve a user interface for human interaction.
+> The on-behalf-of flow is also known as delegated access. "On-behalf-of" describes the authentication flow, not the type of agent. Any agent — regardless of how it's built — can use this flow when it needs to access resources with a user's identity and permissions.
 
 In this flow, the agent can't reuse the user's original token because it was issued for a different audience. Instead, the agent uses the OBO flow to exchange tokens with Microsoft Entra ID, obtaining a new token scoped to the target resource. This token exchange is also evaluated by Conditional Access, letting admins enforce granular controls over which resources agents can access on behalf of the user.
 
@@ -95,11 +95,11 @@ In these scenarios, the agent requests an access token using its own agent ident
 
 ### Agents acting as a user
 
-Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate with its own identity. In certain scenarios, an agent has its own [agent's user account](../../agent-id/agent-users.md). For example, digital workers that function as team members with their own mailboxes, access to chat, and can participate in collaborative workflows as a team member.
+Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate with its own identity. In certain scenarios, an agent has its own [agent's user account](../../agent-id/agent-users.md) that functions as a digital worker — with its own mailbox, access to chat, and the ability to participate in collaborative workflows as a team member.
 
 In this model, an admin creates a user account in the directory and links it to the agent's identity. From there, it's like any other user account. Licenses can be assigned to access Microsoft 365 resources such as a mailbox and calendar. The account can be added to administrative units and security groups just like a human user account.
 
-Agents using this flow are sometimes called "digital worker," or "AI teammate." They're also considered autonomous agents as they don't involve a user interface for human interaction. In this model, the access token is issued to the agent's user account (the token subject), and policy is evaluated against the agent's user account, not the agent identity. For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md). For more information about the agent user OAuth flow, see [Agent user OAuth flow](../../agent-id/agent-user-oauth-flow.md).
+Agents using this flow are also considered autonomous agents as they don't involve a user interface for human interaction. In this model, the access token is issued to the agent's user account (the token subject), and policy is evaluated against the agent's user account, not the agent identity. For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md). For more information about the agent user OAuth flow, see [Agent user OAuth flow](../../agent-id/agent-user-oauth-flow.md).
 
 Agents running on managed endpoints like [Windows 365 Cloud PCs for Agents](/windows-365/agents/introduction-windows-365-for-agents) can also be subject to device compliance and compliant network controls. Use the **Agent execution environments (Preview)** condition to scope these policies to endpoint-based sessions only. For more information, see [Require a compliant device for agents' user accounts](policy-autonomous-agents.md#require-a-compliant-device-for-agents-user-accounts).
 
