@@ -20,7 +20,7 @@ This FAQ references customer identity and access management (CIAM). CIAM is an i
 Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique users with authentication activity within a calendar month. External ID consists of a core offer and premium add-ons. The Microsoft Entra External ID core offering is free for the first 50,000 MAU. For the latest information about usage billing and pricing, see [Billing model for Microsoft Entra External ID](../external-identities-pricing.md).
 
 > [!NOTE]
-> Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We communicate upgrade options once they're available.
+> If you previously subscribed to Azure Active Directory B2C (Azure AD B2C) or to B2B collaboration under an Azure AD External Identities P1/P2 SKU, see the [External ID pricing](../external-identities-pricing.md) page for information about current pricing options and any available upgrade paths.
 
 ### Does the 50,000 MAU free tier apply to add-ons?
 
