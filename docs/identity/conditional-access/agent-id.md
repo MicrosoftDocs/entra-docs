@@ -72,11 +72,11 @@ Agents can access Microsoft Entra-protected resources using one of the following
 The most common access pattern is the on-behalf-of (OBO) flow. In this flow, a user signs in to an agent application, and the agent accesses downstream resources using the user's identity and delegated permissions. For example, when an agent reads your emails, it accesses your mailbox *on your behalf*. For more information about how the OBO flow works for agents, see [Agent OAuth flows: On-behalf-of](../../agent-id/agent-on-behalf-of-oauth-flow.md).
 
 > [!NOTE]
-> The on-behalf-of flow is also known as delegated access. "On-behalf-of" describes the authentication flow, not the type of agent. Any agent — regardless of how it's built — can use this flow when it needs to access resources with a user's identity and permissions.
+> The on-behalf-of flow is also known as delegated access. "On-behalf-of" describes the authentication flow, not the type of agent. These interactive agents involve a user interface for human interaction. Any agent can use this flow when a signed-in user is present and the agent needs to access resources with that user's identity and permissions.
 
 In this flow, the agent can't reuse the user's original token because it was issued for a different audience. Instead, the agent uses the OBO flow to exchange tokens with Microsoft Entra ID, obtaining a new token scoped to the target resource. This token exchange is also evaluated by Conditional Access, letting admins enforce granular controls over which resources agents can access on behalf of the user.
 
-Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities.
+Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities. 
 
 ### Agents acting as an application
 
@@ -95,7 +95,7 @@ In these scenarios, the agent requests an access token using its own agent ident
 
 ### Agents acting as a user
 
-Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate with its own identity. In certain scenarios, an agent has its own [agent's user account](../../agent-id/agent-users.md) that functions as a digital worker — with its own mailbox, access to chat, and the ability to participate in collaborative workflows as a team member.
+Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate with its own identity. In certain scenarios, an agent has its own [agent's user account](../../agent-id/agent-users.md) that functions as a digital worker with its own mailbox, access to chat, and the ability to participate in collaborative workflows as a team member.
 
 In this model, an admin creates a user account in the directory and links it to the agent's identity. From there, it's like any other user account. Licenses can be assigned to access Microsoft 365 resources such as a mailbox and calendar. The account can be added to administrative units and security groups just like a human user account.
 
