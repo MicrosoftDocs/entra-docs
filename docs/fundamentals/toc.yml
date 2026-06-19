@@ -34,7 +34,7 @@ items:
     - name: Create or delete users
       href: how-to-create-delete-users.md
     - name: Assign roles to users
-      href: how-to-assign-roles-to-users.yml
+      href: how-to-assign-roles-to-users.md
     - name: Default user permissions
       href: users-default-permissions.md
     - name: Manage user profile info
