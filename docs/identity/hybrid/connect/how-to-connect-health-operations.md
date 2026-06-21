@@ -97,14 +97,14 @@ When you're deleting a service instance, be aware of the following:
 
 [//]: # (Start of RBAC section)
 ## Manage access with Azure RBAC
-[Azure role-based access control (Azure RBAC)](~/identity/role-based-access-control/permissions-reference.md) for Microsoft Entra Connect Health provides access to users and groups other than Hybrid Identity Administrators. Azure RBAC assigns roles to the intended users and groups, and provides a mechanism to limit the Hybrid Identity Administrators within your directory.
+[Azure role-based access control (Azure RBAC)](~/identity/role-based-access-control/permissions-reference.md) for Microsoft Entra Connect Health provides access to users and groups other than Global Administrators. Azure RBAC assigns roles to the intended users and groups, and provides a mechanism to limit the Global Administrators within your directory.
 
 ### Roles
 Microsoft Entra Connect Health supports the following built-in roles:
 
 | Role | Permissions |
 | --- | --- |
-| Owner |Owners can *manage access* (for example, assign a role to a user or group), *view all information* (for example, view alerts) from the portal, and *change settings* (for example, email notifications) within Microsoft Entra Connect Health. <br>By default, Microsoft Entra Hybrid Identity Administrators are assigned this role, and this can't be changed. |
+| Owner |Owners can *manage access* (for example, assign a role to a user or group), *view all information* (for example, view alerts) from the portal, and *change settings* (for example, email notifications) within Microsoft Entra Connect Health. <br>By default, Microsoft Entra Global Administrators are assigned this role, and this can't be changed. |
 | Contributor |Contributors can *view all information* (for example, view alerts) from the portal, and *change settings* (for example, email notifications) within Microsoft Entra Connect Health. |
 | Reader |Readers can *view all information* (for example, view alerts) from the portal within Microsoft Entra Connect Health. |
 
