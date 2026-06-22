@@ -6,6 +6,7 @@ manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
+#Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
 ms.date: 06/22/2026
 ---
 # Native authentication in Microsoft Entra External ID
