@@ -1040,7 +1040,7 @@ In addition to the [global banned password lists](../identity/authentication/con
 **Service category:** Microsoft Authenticator App  
 **Product capability:** Identity Security & Protection  
 
-Starting February 2026, Microsoft Authenticator will introduce jailbreak/root detection for Microsoft Entra credentials in the Android app. The rollout progresses from warning mode → blocking mode → wipe mode. Users must move to compliant devices to continue using Microsoft Entra accounts in Authenticator.
+Starting February 2026, Microsoft Authenticator will introduce jailbreak/root detection for Microsoft Entra credentials in the Authenticator app. The rollout progresses from warning mode → blocking mode → wipe mode. Users must move to compliant devices to continue using Microsoft Entra accounts in Authenticator.
 
 ---
 
