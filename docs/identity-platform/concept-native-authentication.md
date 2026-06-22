@@ -20,15 +20,6 @@ The standard app sign-in process, which relies on browser-delegated authenticati
 
 While browser-delegated authentication offers benefits such as reduced attack vectors and support for single sign-on (SSO), it offers limited UI customization options.
 
-## Available authentication methods
-
-Currently, native authentication supports local account identity provider for two authentications methods: 
-
-- Email with one-time passcode (OTP) sign-in.
-- Email and password sign-in with support for self-service password reset (SSPR). 
-
-Native authentication doesn't yet support federated identity providers such as social or enterprise identities. 
-
 ## When to use native authentication
 
 When it comes to implementing authentication for mobile and desktop apps on External ID, you have two options: 
