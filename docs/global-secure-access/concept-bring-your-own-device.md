@@ -24,9 +24,9 @@ The Global Secure Access client supports bring your own device (BYOD) scenarios 
 - Only private application traffic is supported. Enable Private Access traffic profiles for these users.
 - If the device isn’t registered or joined, the client registers the device to your tenant during first sign-in.
 - If the device isn’t joined and has multiple registrations, the user selects the tenant at sign-in with Microsoft Entra user of the tenant.
-- Windows support includes an account picker in the sign-in flow to make it easier to sign in with a different account.
+- Supports an account picker in the sign-in flow to make it easier to sign in with a different account.
 - The account picker appears by default on Microsoft Entra-registered devices.
-- To enable the account picker on Microsoft Entra-joined devices, enable the **Sign out** option. For details, see [Hide or unhide menu buttons in the system tray](how-to-install-windows-client.md#hide-or-unhide-system-tray-menu-buttons).
+- To enable the account picker or to switch to another tenant on Microsoft Entra-joined devices, enable the **Sign out** option. For details, see [Hide or unhide menu buttons in the system tray](how-to-install-windows-client.md#hide-or-unhide-system-tray-menu-buttons).
 
 > [!IMPORTANT]
 > On Windows devices that are Microsoft Entra joined or hybrid joined, the client always connects to the joined tenant.
