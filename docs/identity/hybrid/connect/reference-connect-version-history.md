@@ -154,7 +154,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Microsoft Entra Connect no longer automatically switches existing servers from the legacy directory synchronization account to Application-Based Authentication during background sync. New installations continue to configure Application-Based Authentication during setup. To switch an existing server, run the wizard and choose **Configure application-based authentication to Microsoft Entra ID**.
 - PowerShell cmdlets that modify cloud configuration (`Set-ADSyncAADCompanyFeature`, `Set-ADSyncAADPasswordSyncState`) now require explicit `-AADUsername` for interactive admin authentication. The setup wizard uses interactive Microsoft Authentication Library (MSAL) authentication for cloud writes instead of stored service credentials. The uninstall wizard now prompts for admin credentials to clean up cloud configuration; if skipped, local cleanup still proceeds.
 - Removed Password Hash Synchronization (PHS) self-healing. PHS no longer automatically re-enables its cloud feature flag in the background. If the PHS cloud feature flag is disabled, an administrator must explicitly re-enable it.
-- Updated the bundled Microsoft Authentication Library (MSAL) from version 4.64.1 to 4.83.3.
+- Updated the bundled MSAL from version 4.64.1 to 4.83.3.
 - Upgraded the bundled SQL LocalDB from SQL Server 2019 to SQL Server 2022.
 - Upgraded the Visual C++ redistributable from version 12 (2013) to version 14.42.34438 (2015-2022).
 - Removed the Visual C++ 2013 redistributable dependency.
@@ -165,7 +165,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an issue in the Synchronization Service Manager metaverse search.
 - Improved Application-Based Authentication setup on servers with non-conforming TPM firmware by falling back to a software-based certificate when the TPM cannot produce a valid signature.
 - Fixed an issue where Generic SQL (GSQL) connector profile creation failed because required profile parameters were not populated during configuration.
-- Fixed an issue where the Application Proxy cloud name was not correctly resolved in the France Cloud environment, causing Pass-through Authentication registration to fail with an "EnvironmentName attribute is invalid" error.
+- Fixed an issue where the Application Proxy cloud name was not correctly resolved in the France cloud environment, causing Pass-through Authentication registration to fail with an "EnvironmentName attribute is invalid" error.
 - Fixed an issue where the China cloud instance name was not correctly resolved by the Discovery Endpoint API, which could cause cloud instance detection to fail.
 - Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action for Synchronization Rule changes.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies.
