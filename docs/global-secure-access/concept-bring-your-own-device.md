@@ -9,7 +9,7 @@ ms.reviewer: gauthamca
 ai-usage: ai-assisted
 ---
 
-# Bring Your Own Device (Preview)
+# Bring Your Own Device
 
 ## Overview
 
@@ -55,20 +55,12 @@ BYOD support without device enrollment is available through Microsoft Entra devi
 - Install and register the device using the Company Portal (no device enrollment required).
 - Enable private traffic profiles for these users.
 
-## Tenant selection and switching (Preview)
-
-How the Global Secure Access client selects a tenant depends on platform and Microsoft Entra device state.
-
-### Key concepts
-- Microsoft Entra joined or hybrid joined: Windows-only device state that establishes tenant ownership and management.
-- Microsoft Entra registered: User-associated device identity for BYOD and unmanaged devices across platforms.
-
 ### Platform behavior
 
 | Platform/device state | Connection target | Microsoft Entra tunnel | M365 tunnel | Internet tunnel | Private tunnel | Notes |
 |---|---|---|---|---|---|---|
-| Windows Microsoft Entra Joined and Hybrid joined device | Client connects to the tenant to which device joined. | ✅ | ✅ | ✅ | ✅ | Can switch to a registered tenant by enabling the **Sign out** option for the client. Allows user to switch to a resource tenant using external user access(B2B). |
-| Windows Microsoft Entra Registered device | User selects a tenant at first sign-in; remains connected to that tenant. | ❌ | ❌ | ❌ | ✅ | Can switch to other tenant by selecting **Sign out** option for the client. Allows user to switch to a resource tenant using external user access(B2B). |
+| Windows Microsoft Entra Joined and Hybrid joined device | Client connects to the tenant to which device joined. | ✅ | ✅ | ✅ | ✅ | Enable the Sign out option in the client to allow users to sign out and switch to an external tenant. Allows user to switch to a resource tenant using external user access(B2B). |
+| Windows Microsoft Entra Registered device | User selects a tenant at first sign-in; remains connected to that tenant. | ❌ | ❌ | ❌ | ✅ | Can switch to other tenant by selecting **Sign out** option on the client. Allows user to switch to a resource tenant using external user access(B2B). |
 | MacOS Microsoft Entra Registered device with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Uses Company Portal to Microsoft Entra register the device. |
 | Android Microsoft Entra Registered with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. For unmanaged devices, Microsoft Entra registration can be done with Company portal and Authenticator app. |
 | iOS Microsoft Entra Registered with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. For unmanaged devices, Microsoft Entra registration can be done with Authenticator app. |
