@@ -1034,7 +1034,7 @@ In addition to the [global banned password lists](../identity/authentication/con
 
 ---
 
-### Upcoming Changes - Jailbreak Detection in Authenticator App
+### Upcoming Changes – Jailbreak/root Detection in Authenticator App
 
 **Type:** New feature  
 **Service category:** Microsoft Authenticator App  
