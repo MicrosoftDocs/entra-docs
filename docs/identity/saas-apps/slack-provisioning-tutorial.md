@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-** A Slack tenant on a paid plan that supports the SCIM API ([Business+](https://slack.com/pricing) or Enterprise Grid). The gallery application in this article works for both Business+ and Enterprise Grid customers.
+* A Slack tenant on a paid plan that supports the SCIM API ([Business+](https://slack.com/pricing) or Enterprise Grid). The gallery application in this article works for both Business+ and Enterprise Grid customers.
 * A user account in Slack with Team Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
