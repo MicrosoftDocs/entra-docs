@@ -7,10 +7,11 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 11/18/2025
-#Customer intent: As a developer, I want to build an Angular single-page application that uses native authentication's JavaScript SDK so that I can sign up users with email with password or email one-timepasscode authentication menthods
+ai-usage: ai-assisted
+#Customer intent: As a developer, I want to build an Angular single-page application that uses native authentication's JavaScript SDK so that I can sign up users with email and password, email one-time passcode, or a username (alias).
 ---
 
-# Tutorial: Sign up users into an Angular single-page app by using native authentication JavaScript SDK (preview)
+# Tutorial: Sign up users into an Angular single-page app by using native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -31,6 +32,7 @@ In this tutorial, you:
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
 - [Angular CLI](https://angular.dev/tools/cli).
+- If you want to let users sign up with a username (alias), enable the **Username** built-in user attribute in your sign-up user flow. For the steps, see [Enable username in the sign-in identifier policy](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
 
 
 ## Create a React project and install dependencies
@@ -205,6 +207,32 @@ In this section, you define a configuration for native authentication public cli
             }
         ```
         The SDK's instance method, `signUp()` starts the sign-up flow.
+
+        If you want to let users sign up with a username (alias), add a `flatUsername` field to the sign-up component, then include the `flatusername` attribute in the `UserAccountAttributes` you pass to `signUp()`:
+
+        ```typescript
+        flatUsername = "";
+
+        const attributes: UserAccountAttributes = {
+            givenName: this.firstName,
+            surname: this.lastName,
+            jobTitle: this.jobTitle,
+            city: this.city,
+            country: this.country,
+            flatusername: this.flatUsername,
+        };
+        ```
+
+        Add an alias input to *sign-up.component.html* alongside the existing fields:
+
+        ```html
+        <input type="text" [(ngModel)]="flatUsername" name="flatUsername" placeholder="Username (alias)" />
+        ```
+
+        After sign-up, the user can sign in by using either their email or their username (alias). When you handle errors for the username (alias), keep in mind that:
+
+        - `result.error?.isUserAlreadyExists()` covers a duplicate email *or* a duplicate username (alias). Update the message accordingly, for example, *An account with this email or username already exists*.
+        - An invalid username (alias) is surfaced through `result.error?.isAttributesValidationFailed()` rather than `result.error?.isInvalidUsername()`. Branch on this method to show a username-specific message.
 
     - If you want the user to start sign-in flow immediately after sign-up is completed, use this snippet:
 
