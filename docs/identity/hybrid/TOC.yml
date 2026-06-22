@@ -357,6 +357,8 @@
               href: connect/how-to-connect-install-express.md
             - name: Install Microsoft Entra Connect federation or other Custom settings
               href: connect/how-to-connect-install-custom.md
+            - name: Sign in with passwordless authentication
+              href: connect/how-to-connect-passwordless-authentication.md
             - name: Import and export configuration settings
               href: connect/how-to-connect-import-export-config.md
             - name: Install Microsoft Entra Connect with pass-through authentication

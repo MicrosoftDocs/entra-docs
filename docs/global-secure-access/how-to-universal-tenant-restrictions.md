@@ -149,7 +149,7 @@ If you received the "Access denied" error message for the URL `https://entra.mic
 
 ## Related content
 
-- [Enable Global Secure Access signaling for Conditional Access](how-to-source-ip-restoration.md#enable-global-secure-access-signaling-for-conditional-access)
+- [Enable Global Secure Access signaling for Microsoft Entra ID and Microsoft Graph](how-to-source-ip-restoration.md#enable-global-secure-access-signaling-for-microsoft-entra-id-and-microsoft-graph)
 - [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2)
 - [Enable source IP restoration](how-to-source-ip-restoration.md)
 - [Enable compliant network check with Conditional Access](how-to-compliant-network.md)
