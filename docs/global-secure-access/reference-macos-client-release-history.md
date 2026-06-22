@@ -37,6 +37,16 @@ Released for download on February 5, 2026.
 - Memory management improvements.
 - Miscellaneous bug fixes and improvements.
 
+## Version 1.1.26030604
+Released for download on June 05, 2026.
+
+### Functional changes
+- Optimizing acquisition for Teams and OneDrive traffic.
+
+### Other changes
+- Fix for client crash when disabling private access after cleaning the client's cache.
+- Fix for an issue when sharing iPhone hotspot.
+
 ## Version 1.1.25090800
 Released for download on November 24, 2025.
 ### Other changes
