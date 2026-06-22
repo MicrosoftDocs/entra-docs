@@ -26,7 +26,7 @@ Released for download on June 05, 2026.
 - Optimized acquisition for Teams and OneDrive traffic.
 
 ### Other changes
-- Fix for client crash when disabling private access after cleaning the client's cache.
+- Fix for crash when disabling private access after cleaning the client's cache.
 - Fix for an issue when sharing iPhone hotspot.
 
 ## Version 1.1.26030601
