@@ -39,7 +39,7 @@ The ability for administrators to request on behalf of agent identities they own
 
 ### License requirements for requesting on behalf of agent identities (preview)
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
 
 ## Configure an access package policy allowing on behalf of requests
 
