@@ -111,7 +111,7 @@ sections:
       - question: |
           What if I am in a hybrid environment?
         answer: |
-          User risk can be self-remediated using a secure password change (MFA + password change). This flow doesn't require self-service password reset (SSPR) to be enabled. For hybrid users with on-premises or hybrid-joined Windows devices, password hash synchronization must be enabled. Consider enabling [allow on-premises password change to reset user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks) so that on-premises password changes also remediate user risk.
+          User risk can be self-remediated using a secure password change (MFA + password change). This flow doesn't require self-service password reset (SSPR) to be enabled; however, for hybrid users with on-premises or hybrid-joined Windows devices, password hash synchronization must be enabled. Consider enabling [allow on-premises password change to reset user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks) so that on-premises password changes also remediate user risk.
 
           For more information, see [How to remediate risk and unblock users](howto-identity-protection-remediate-unblock.md#considerations-for-cloud-and-hybrid-users).
       - question: |
