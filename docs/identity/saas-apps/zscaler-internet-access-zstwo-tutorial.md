@@ -1,7 +1,6 @@
 ---
 title: Configure Zscaler Internet Access ZSTwo for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSTwo.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
