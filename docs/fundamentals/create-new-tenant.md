@@ -140,7 +140,7 @@ If you're not going to continue to use this tenant, you can delete the tenant us
 
 - To add users, see [Add or delete a new user](./how-to-create-delete-users.md).
 
-- To add groups and members, see [Create a basic group and add members](./how-to-manage-groups.yml).
+- To add groups and members, see [Create a basic group and add members](./how-to-manage-groups.md).
 
 - To learn about access management, see [Azure role-based access control (RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
 

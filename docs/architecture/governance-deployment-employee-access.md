@@ -60,7 +60,7 @@ In the following screenshot see the **Edit policy dialog**, with the **Create au
 
    [ ![Screenshot of the Create auto assignment policy tab on the Edit policy dialog.](media/governance-deployment/edit-policy.png)](media/governance-deployment/edit-policy-expanded.png#lightbox)
 
-For more information, you can learn about [groups and access rights in Microsoft Entra ID](../fundamentals/how-to-manage-groups.yml)
+For more information, you can learn about [groups and access rights in Microsoft Entra ID](../fundamentals/how-to-manage-groups.md)
 
 See the following video to learn more about policy assignment.</br></br>
 

@@ -530,5 +530,5 @@ You can use the following device attributes.
 ## Related content
 
 
-- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
 - [Create or update a dynamic membership group in Microsoft Entra ID](groups-create-rule.md)
