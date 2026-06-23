@@ -2,10 +2,10 @@
 title: Configure Zscaler Private Access (ZPA) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Private Access (ZPA).
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Private Access (ZPA) so that I can control who has access to Zscaler Private Access (ZPA), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
---- 
+---
 
 # Configure Zscaler Private Access (ZPA) for Single sign-on with Microsoft Entra ID
 
@@ -14,6 +14,10 @@ In this article,  you learn how to integrate Zscaler Private Access (ZPA) with M
 * Control in Microsoft Entra ID who has access to Zscaler Private Access (ZPA).
 * Enable your users to be automatically signed-in to Zscaler Private Access (ZPA) with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
+
+Zscaler Private Access (ZPA) is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:

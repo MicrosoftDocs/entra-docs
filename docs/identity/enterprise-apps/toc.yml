@@ -46,8 +46,6 @@ items:
     items: 
     - name: Application gallery
       href: overview-application-gallery.md
-    - name: Request to publish applications
-      href: v2-howto-app-gallery-listing.md
     - name: Application integration
       href: plan-an-application-integration.md
     - name: Application ownership
@@ -58,6 +56,16 @@ items:
       items:
       - name: What is single sign-on?
         href: what-is-single-sign-on.md
+      - name: Onboard your app for SSO - ISV guidance
+        items:
+        - name: Understand the Microsoft SSO model
+          href: understand-microsoft-sso-model.md
+        - name: SAML versus OpenID Connect
+          href: saml-vs-oidc-decision-guide.md
+        - name: Plan SSO integration as an ISV
+          href: plan-sso-integration-isv.md
+        - name: Request to publish applications
+          href: v2-howto-app-gallery-listing.md
       - name: Plan for deployment
         href: plan-sso-deployment.md
     - name: Application security
