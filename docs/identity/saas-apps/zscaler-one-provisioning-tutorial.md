@@ -19,7 +19,7 @@ This article demonstrates the steps to perform in Zscaler One and Microsoft Entr
 
 Zscaler One is available in the following [national cloud deployments](/graph/deployments).
 
-[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 

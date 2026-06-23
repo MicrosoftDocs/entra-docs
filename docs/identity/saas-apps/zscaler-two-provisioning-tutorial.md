@@ -18,7 +18,7 @@ In this article,  you learn how to configure Microsoft Entra ID to automatically
 
 Zscaler Two is available in the following [national cloud deployments](/graph/deployments).
 
-[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 

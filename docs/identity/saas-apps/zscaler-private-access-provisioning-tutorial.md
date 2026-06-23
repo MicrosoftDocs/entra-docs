@@ -19,7 +19,7 @@ The objective of this article is to demonstrate the steps to be performed in Zsc
 
 Zscaler Private Access (ZPA) is available in the following [national cloud deployments](/graph/deployments).
 
-[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 

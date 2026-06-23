@@ -17,7 +17,7 @@ In this article,  you learn how to integrate Zscaler Private Access Administrato
 
 Zscaler Private Access Administrator is available in the following [national cloud deployments](/graph/deployments).
 
-[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
