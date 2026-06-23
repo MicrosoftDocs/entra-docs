@@ -59,6 +59,9 @@ Account Discovery is currently unsupported for the following applications:
 - ServiceNow  
 - Amazon Web Services (AWS)
 - Snowflake
+- Cross-tenant synchronization
+- Cloud sync
+- Group provisioning to AD
 
 ### All other connectors
 
