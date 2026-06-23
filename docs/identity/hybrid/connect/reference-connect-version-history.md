@@ -125,8 +125,8 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
-[!IMPORTANT]
-Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who had installed this version should un-install and install [latest available version (2.6.3.0)](#2630) of Microsoft Entra Connect Sync.
+> [!IMPORTANT]
+> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who had installed this version should un-install and install [latest available version (2.6.3.0)](#2630) of Microsoft Entra Connect Sync.
 
 ## 2.6.3.0
 
