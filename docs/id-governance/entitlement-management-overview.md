@@ -133,7 +133,7 @@ To better understand entitlement management and its documentation, you can refer
 
 ### License requirements for assigning agents to access packages (preview)
 
-[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
+[!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
 ## Next steps
 
