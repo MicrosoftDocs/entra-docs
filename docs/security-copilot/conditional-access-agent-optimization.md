@@ -3,7 +3,7 @@ title: Microsoft Entra Conditional Access Optimization Agent
 description: Learn how the Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot can help secure your organization.
 ms.reviewer: jodah
 
-ms.date: 06/10/2026
+ms.date: 06/23/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -149,6 +149,16 @@ To identify Intune device compliance and app protection policies, the agent must
 Microsoft Entra Internet Access and Microsoft Entra Private Access (collectively known as Global Secure Access) integrate with the Conditional Access Optimization Agent to provide suggestions specific to your organization's network access policies. The suggestion **Turn on new policy to enforce Global Secure Access network access requirements** helps you align your Global Secure Access policies that include network locations and protected applications.
 
 With this integration, the agent identifies users or groups that aren't covered by a Conditional Access policy to require access to corporate resources only through approved Global Secure Access channels. This policy requires users to connect to corporate resources by using the organization's secure Global Secure Access network before accessing corporate apps and data. Users who connect from unmanaged or untrusted networks are prompted to use the Global Secure Access client or web gateway. You can review sign-in logs to verify compliant connections.
+
+### Microsoft Defender integration
+
+Microsoft Defender integrates with the Conditional Access Optimization Agent to help turn recurring identity attack patterns into Conditional Access posture improvements. Instead of reacting to individual incidents, Defender analyzes identity-relevant signals across investigations and alerts, then aggregates them over a fixed time window. This aggregation surfaces repeated techniques and targeted user cohorts reacting to individual incidents.
+ 
+For each consolidated pattern, Defender produces a structured threat insight that gives the agent context to evaluate posture. Defender provides threat context only; it doesn't include remediation logic or decide which Conditional Access policy to change.
+ 
+The agent evaluates each insight against the tenant's existing Conditional Access policies to determine whether posture hardening is warranted. To minimize policy sprawl, the agent can recommend modifying an existing policy or creating a new report-only policy when no suitable policy exists. Recommendations include rationale and affected-user context so admins can review the change before approving it. If existing coverage already addresses the risk, the agent suppresses the recommendation.
+ 
+Recommendations generated from Defender threat insights appear in the list with a **Linked to Defender** alert tag. The recommendation details include a Defender insight section with the context that contributed to it, and depending on your Microsoft Defender permissions, you can navigate to the related alerts or incidents. An admin always reviews and approves Defender-driven recommendations before any policy change takes effect.
 
 ## Agent removal
 
