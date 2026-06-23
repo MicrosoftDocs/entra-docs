@@ -10,7 +10,7 @@ ms.subservice: hybrid-connect
 ---
 # Hardening update to Microsoft Entra Connect Sync
 
-As part of increasing the security posture of Microsoft Entra Connect, Microsoft deployed a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application Id: `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016`) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of on-premises to Microsoft Entra ID synchronization functionality through Entra Connect.
+As part of increasing the security posture of Microsoft Entra Connect, Microsoft deployed a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application Id: `00001111-aaaa-2222-bbbb-3333cccc4444`) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of on-premises to Microsoft Entra ID synchronization functionality through Entra Connect.
 
 We have since released a new version (2.5.79.0) of Microsoft Entra Connect that contains this service change.  All customers are required to upgrade to the minimum versions by September 30, 2026 to avoid service disruptions.
 
@@ -66,4 +66,3 @@ If you aren't yet eligible to move to Cloud Sync, use this table for more inform
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
 - [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 - [Microsoft Entra Connect version history](reference-connect-version-history.md)
-
