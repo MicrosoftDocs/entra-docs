@@ -7,7 +7,7 @@ ms.reviewer: owinfrey
 #Customer Intent: As an IT admin, I want to configure whether requestors can see approver details in the My Access portal so that I can control the visibility of approval information.
 ---
 
-# Configure whether requestors can see approver details (Preview)
+# Configure whether requestors can see approver details
 
 > [!NOTE]
 > This feature will be widely available beginning in September 2025.
@@ -20,7 +20,7 @@ Use this setting to define the default behavior for all access packages in your 
 
 1. In the Microsoft Entra admin center, go to **Identity Governance** > **Entitlement management** > **Control configurations**.
 
-2. Under **My Access settings for end users**, find **Show approver details to members on pending access package requests (preview).**
+2. Under **My Access settings for end users**, find **Show approver details to members on pending access package requests.**
 
 3. Choose the desired behavior:
 
