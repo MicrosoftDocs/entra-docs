@@ -2,10 +2,10 @@
 title: Configure Zscaler Three for automatic user provisioning with Microsoft Entra ID
 description: In this article,  you learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler Three.
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Three so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Three.
---- 
+---
 
 # Configure Zscaler Three for automatic user provisioning with Microsoft Entra ID
 
@@ -13,6 +13,10 @@ In this article,  you learn how to configure Microsoft Entra ID to automatically
 
 > [!NOTE]
 > This article describes a connector that's built on the Microsoft Entra user provisioning service. For important details on what this service does and how it works, and answers to frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+
+Zscaler Three is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 
