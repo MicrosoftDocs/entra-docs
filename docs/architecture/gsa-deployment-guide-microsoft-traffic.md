@@ -37,7 +37,7 @@ At this point, you completed the initiate and plan stages of your Global Secure 
 
 1. Create end user communications to set expectations and provide an escalation path.
 1. Create a roll-back plan that defines the circumstances and procedures for when you remove Global Secure Access client from a user device or disable the traffic forwarding profile.
-1. [Create a Microsoft Entra group](../fundamentals/how-to-manage-groups.yml) that includes your pilot users.
+1. [Create a Microsoft Entra group](../fundamentals/how-to-manage-groups.md) that includes your pilot users.
 1. Send end user communications.
 1. Enable the [Microsoft traffic forwarding profile](../global-secure-access/how-to-manage-microsoft-profile.md) and assign your pilot group to it.
 1. If you plan to maximize your threat hunting success and efficiency, configure [Source IP restoration](../global-secure-access/how-to-source-ip-restoration.md).

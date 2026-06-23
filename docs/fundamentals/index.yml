@@ -52,7 +52,7 @@ landingContent:
           - text: Assign roles to users
             url: how-to-assign-roles-to-users.md
           - text: Manage groups and group membership
-            url: how-to-manage-groups.yml  
+            url: how-to-manage-groups.md  
 
    # Card
   - title: Licensing
