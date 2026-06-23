@@ -87,7 +87,7 @@ Permission requests that contain custom application scopes aren't considered hig
 
 ### Preauthorization
 
-Preauthorization enables a resource application owner to grant permissions to client apps, without requiring users to see a consent prompt for the set of permissions that are preauthorized. For more information about preauthorization, see [Scopes and Permissions](scopes-oidc.md#preauthorization).
+Preauthorization enables a resource application owner to grant permissions to client apps without requiring users to see a consent prompt for the set of permissions that are preauthorized. For more information about preauthorization, see [Scopes and permissions](scopes-oidc.md#preauthorization).
 
 ## Other authorization systems
 
