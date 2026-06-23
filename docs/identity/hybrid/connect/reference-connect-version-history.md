@@ -56,9 +56,6 @@ Manually update the configuration file.
 
 1.	Restart the ADSync service.
 
-
-
-
 ## Looking for the latest versions?
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
@@ -133,9 +130,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 
 ## 2.6.79.0
-
-> [!IMPORTANT]
-> This release includes security fixes. We recommend upgrading to this version as soon as possible.
 
 ### Release status
 
