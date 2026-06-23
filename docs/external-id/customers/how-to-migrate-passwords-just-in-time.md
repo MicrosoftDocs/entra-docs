@@ -813,7 +813,7 @@ The identifier URI uniquely identifies your custom authentication extension API.
 - **Function_URL_Hostname**: The hostname of your Azure Function (e.g., `contoso.azurewebsites.net`)
 - **App_ID**: Your application (client) ID from the app registration **Overview** page
 
-For example: `"api://contoso.azurewebsites.net/12345678-1234-1234-1234-123456789012"`
+For example: `"api://contoso.azurewebsites.net/aaaabbbb-0000-cccc-1111-dddd2222eeee"`
 
 #### 3.1.2 API permissions
 
