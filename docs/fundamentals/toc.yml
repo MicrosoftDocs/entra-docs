@@ -49,7 +49,7 @@ items:
     - name: Learn about groups
       href: concept-learn-about-groups.md
     - name: Manage groups
-      href: how-to-manage-groups.yml
+      href: how-to-manage-groups.md
   - name: Licenses
     expanded: false
     items: 

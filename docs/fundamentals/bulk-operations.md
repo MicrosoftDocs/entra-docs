@@ -243,5 +243,5 @@ To download all active role assignments across all roles, including built-in and
 ## Related content
 
 - [Bulk operations service limitations](bulk-operations-service-limitations.md)
-- [Add or remove group members using Microsoft Entra ID](how-to-manage-groups.yml)
+- [Add or remove group members using Microsoft Entra ID](how-to-manage-groups.md)
 - [Bulk create users in Microsoft Entra ID](../identity/users/users-bulk-add.md)
