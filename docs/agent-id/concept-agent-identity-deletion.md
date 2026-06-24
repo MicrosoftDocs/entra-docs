@@ -2,11 +2,8 @@
 title: Learn how agent identity deletion works
 description: Learn how deleting an agent identity blueprint triggers automatic cleanup of child agent identities in Microsoft Entra, and how to restore deleted objects.
 titleSuffix: Microsoft Entra Agent ID
-author: shlipsey3
-ms.author: sarahlipsey
 ms.topic: concept-article
 ms.date: 05/15/2026
-ms.custom: agent-id
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin or developer, I want to understand what happens when I delete an agent identity blueprint so I can plan for cleanup and restoration.

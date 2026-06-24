@@ -3,9 +3,7 @@ title: Configure Explicit Forward Proxy HTTP Header Session Management
 description: Learn how to configure HTTP header session management for Explicit Forward Proxy.
 ms.topic: concept-article
 ms.date: 04/06/2026
-ms.author: alexpav
-author: idmdev
-ms.reviewer: 
+ms.reviewer: alexpav
 ---
 
 # Configure HTTP header session management

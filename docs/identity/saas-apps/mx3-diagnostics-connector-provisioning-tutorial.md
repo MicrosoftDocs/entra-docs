@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/13/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to MX3 Diagnostics so that I can streamline the user management process and ensure that users have the appropriate access to MX3 Diagnostics.
----
+--- 
 
 # Configure MX3 Diagnostics Connector for automatic user provisioning with Microsoft Entra ID
 

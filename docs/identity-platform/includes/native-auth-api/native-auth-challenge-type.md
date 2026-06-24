@@ -1,11 +1,9 @@
 ---
-author: kengaderdus
 manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: include
 ms.date: 02/20/2026
-ms.author: kengaderdus
 ---
 
 |    Challenge type     | Description                                |

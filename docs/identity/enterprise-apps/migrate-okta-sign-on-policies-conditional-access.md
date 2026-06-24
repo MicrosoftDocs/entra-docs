@@ -1,11 +1,10 @@
 ---
 title: Tutorial to migrate Okta sign-on policies to Microsoft Entra Conditional Access
 description: Learn how to migrate Okta sign-on policies to Microsoft Entra Conditional Access.
-author: gargi-sinha
 manager: martinco
 ms.topic: tutorial
 ms.date: 01/13/2023
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using Okta sign-on policies, I want to migrate to Microsoft Entra Conditional Access, so that I can secure user access in Microsoft Entra ID and connected applications.
 ---

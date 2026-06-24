@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 04/13/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Netpresenter Next so that I can streamline the user management process and ensure that users have the appropriate access to Netpresenter Next.
----
+--- 
 
 # Configure Netpresenter Next for automatic user provisioning with Microsoft Entra ID
 

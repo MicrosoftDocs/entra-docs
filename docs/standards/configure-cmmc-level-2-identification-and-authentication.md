@@ -1,13 +1,14 @@
 ---
 title: Configure CMMC Level 2 Identification and Authentication (IA) controls
 description: Learn how to configure Microsoft Entra ID to meet CMMC Level 2 Identification and authorization requirements.
-author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: standards
 ms.topic: concept-article
 ms.date: 1/3/2023
+author: janicericketts
 ms.author: jricketts
+ms.reviewer: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 

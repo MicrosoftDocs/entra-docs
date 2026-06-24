@@ -230,7 +230,7 @@ This resource role is used for assigning API permissions to a service principal 
 
 For API permissions, resource ownership validation occurs both during onboarding the permissions to an access package and again when adding permissions to an access package. This additional validation helps ensure that only authorized resource owners can introduce or expand access to API Permissions through access packages.
 
-[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
+[!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
 Prior to including API permissions in an access package, ensure that the access package policies are scoped to either all service principals or all agent IDs, as users cannot receive API permissions. Then, select **API Permissions**. Choose the source application that provides the API: Microsoft Graph, another Microsoft feature, or an API your organization uses from one of your organization's own applications. If you choose Microsoft Graph, select whether your agent requires a delegated or an application permission. Then, select the checkboxes for the necessary permission, and select **Update permissions**.
 

@@ -8,7 +8,7 @@ ms.date: 02/25/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Alinto Protect (renamed Cleanmail) so that I can streamline the user management process and ensure that users have the appropriate access to Alinto Protect (renamed Cleanmail).
 
----
+--- 
 
 # Configure Cleanmail for automatic user provisioning with Microsoft Entra ID
 

@@ -1,9 +1,7 @@
 ---
 title: Tutorial-Call Microsoft Graph API from a Express.js web app
 description: Learn how to acquire an access token in a Node/Express.js web to read user's profile detail from Microsoft Graph API 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 01/03/2025

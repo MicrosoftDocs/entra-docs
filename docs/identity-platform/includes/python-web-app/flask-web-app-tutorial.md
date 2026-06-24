@@ -1,10 +1,8 @@
 ---
-author: SHERMANOUKO
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: include
 ms.date: 02/12/2025
-ms.author: shermanouko
 ---
 
 #### [Workforce tenant](#tab/workforce-tenant)

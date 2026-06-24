@@ -2,7 +2,7 @@
 title: Configure SmartFile for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to SmartFile.
 ms.topic: how-to
-ms.date: 04/16/2026
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Smartfile so that I can streamline the user management process and ensure that users have the appropriate access to Smartfile.
 ---
@@ -15,6 +15,10 @@ The objective of this article is to demonstrate the steps to be performed in Sma
 > This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
+SmartFile is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -22,9 +26,6 @@ The scenario outlined in this article assumes that you already have the followin
 * [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A SmartFile tenant](https://www.SmartFile.com/pricing/).
 * A user account in SmartFile with Admin permissions.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 
 ## Assigning users to SmartFile

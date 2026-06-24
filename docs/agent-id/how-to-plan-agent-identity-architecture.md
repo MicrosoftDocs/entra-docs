@@ -2,11 +2,8 @@
 title: Plan your agent identity architecture
 titleSuffix: Microsoft Entra Agent ID
 description: Use this decision guide to choose the right identity type, operation pattern, and blueprint and agent identity structure for your AI agents in Microsoft Entra Agent ID.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.topic: concept-article
 ms.date: 04/03/2026
-ms.custom: agent-id
 ai-usage: ai-assisted
 #customer intent: As a developer or enterprise architect building AI agents, I want to determine which identity type, operation pattern, and blueprint structure to use so that I can design a secure and scalable agent identity architecture for my scenario.
 ---

@@ -3,7 +3,8 @@ title: Configuration management in Tenant Governance (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about configuration management capabilities in Microsoft Entra Tenant Governance, including baselines and drift monitoring
 ms.topic: concept-article
-ms.date: 03/11/2026
+ms.date: 06/05/2026
+ai-usage: ai-assisted
 ---
 
 # Configuration management (preview)
@@ -11,6 +12,9 @@ ms.date: 03/11/2026
 [!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
 
 Configuration management in Microsoft Entra Tenant Governance lets you define configuration baselines, monitor tenants for drift, and generate snapshots of current settings. This article explains the core concepts: resources, baselines, monitors, monitoring results, configuration drifts, and snapshot jobs.
+
+> [!NOTE]
+> Configuration management is built on the Microsoft Graph [Tenant Configuration Management APIs](/graph/unified-tenant-configuration-management-concept-overview), which are generally available. These APIs provide the configuration-as-code capabilities described in this article, including snapshots, baselines, monitors, and drift detection.
 
 ## Resources
 
@@ -22,7 +26,7 @@ For example, a Conditional Access policy in Microsoft Entra ID is represented by
 
 A **baseline** is the JSON representation of the configuration you want to monitor for a given tenant. It consists of a list of resources and the defined values for their associated properties. A baseline can contain multiple instances of a given resource type.
 
-For example, a configuration baseline can define multiple instances of Exchange Online transport rules as part of its definition. To learn more about configuration baselines, see [Configuration baseline](/graph/api/resources/configurationbaseline?view=graph-rest-beta&preserve-view=true).
+For example, a configuration baseline can define multiple instances of Exchange Online transport rules as part of its definition. To learn more about configuration baselines, see [Configuration baseline](/graph/api/resources/configurationbaseline?view=graph-rest-1.0&preserve-view=true).
 
 ## Monitors
 
@@ -31,7 +35,7 @@ For example, a configuration baseline can define multiple instances of Exchange 
 > [!NOTE]
 > The Unified Tenant Configuration Management service principal must have read permissions for the resource types defined in the associated baselines. This requirement applies to both monitors and snapshot jobs. See [Authentication setup](/graph/utcm-authentication-setup) to learn how to grant the required permissions.
 
-To learn more about monitors, see [configurationMonitor](/graph/api/resources/configurationmonitor?view=graph-rest-beta&preserve-view=true).
+To learn more about monitors, see [configurationMonitor](/graph/api/resources/configurationmonitor?view=graph-rest-1.0&preserve-view=true).
 
 ## Monitoring results
 
@@ -39,13 +43,13 @@ Every time a monitor executes based on its specified schedule, it produces a **m
 
 If drifts are detected, the monitoring result reports their presence but doesn't include drift details. To get detailed information about each drift, query the associated configuration drift objects.
 
-To learn more about monitoring results, see [configurationMonitoringResult](/graph/api/configurationmonitoringresult-get?view=graph-rest-beta&preserve-view=true).
+To learn more about monitoring results, see [configurationMonitoringResult](/graph/api/configurationmonitoringresult-get?view=graph-rest-1.0&preserve-view=true).
 
 ## Configuration drifts
 
 When a delta exists between what a configuration baseline defines and the actual settings on a tenant, Tenant Governance reports a **configuration drift**. Configuration drifts are associated with a monitor and contain detailed information about the detected delta. Each drift object identifies the affected resource and lists each property whose current value differs from the baseline definition.
 
-After you remediate a detected drift, the next monitor execution automatically marks the configuration drift object as `fixed`. To learn more about configuration drifts, see [configurationDrift](/graph/api/resources/configurationdrift?view=graph-rest-beta&preserve-view=true).
+After you remediate a detected drift, the next monitor execution automatically marks the configuration drift object as `fixed`. To learn more about configuration drifts, see [configurationDrift](/graph/api/resources/configurationdrift?view=graph-rest-1.0&preserve-view=true).
 
 ## Snapshot jobs
 
@@ -56,4 +60,4 @@ When you initiate a request to generate a snapshot, an asynchronous job collects
 
 The generated snapshot schema matches the schema of configuration baselines. Use a snapshot as-is to create monitors.
 
-To learn more about snapshot jobs, see [configurationSnapshotJob](/graph/api/resources/configurationsnapshotjob?view=graph-rest-beta&preserve-view=true).
+To learn more about snapshot jobs, see [configurationSnapshotJob](/graph/api/resources/configurationsnapshotjob?view=graph-rest-1.0&preserve-view=true).

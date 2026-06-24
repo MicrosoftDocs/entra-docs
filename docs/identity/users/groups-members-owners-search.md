@@ -61,7 +61,7 @@ The group **Overview** page provides member counts for groups. You can see the t
 
 These articles provide additional information on working with groups in Microsoft Entra ID.
 
-- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
 - [Manage rules for dynamic membership groups](groups-create-rule.md)
 - [Manage access to resources using groups](~/fundamentals/concept-learn-about-groups.md)
 - [Manage access to SaaS apps using groups](groups-saasapps.md)

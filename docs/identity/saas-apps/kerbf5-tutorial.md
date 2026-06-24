@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on (SSO) between Microsoft Entra
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
----
+--- 
 
 # Configure F5 Kerberos Constrained Delegation for a Single-Tier SaaS App
 

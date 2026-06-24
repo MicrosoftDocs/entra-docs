@@ -2,14 +2,14 @@
 title: Enable Microsoft Entra passkey on Windows devices
 description: Learn how to enable Microsoft Entra passkey on Windows devices for phishing-resistant multifactor authentication with work or school accounts.
 #customer intent: As an administrator, I want to enable Microsoft Entra passkeys so users with work and school accounts can sign in by using phishing-resistant multifactor authentication.
-author: hanki71
-ms.author: justinha
+ms.reviewer: kimhana
 ms.date: 02/18/2026
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: authentication
 ms.collection: msec-ai-copilot
 ms.custom: msecd-doc-authoring-106
+ai-usage: ai-assisted
 ---
 
 # Enable Microsoft Entra passkey on Windows
@@ -77,6 +77,18 @@ Although both features use Windows Hello, Microsoft Entra passkey on Windows and
 
 Attestation isn't supported for Microsoft Entra passkey on Windows. As a result, if **Enforce attestation** is selected in a passkey profile, passkey registration attempts to Windows Hello will fail.
 
+## Supported Windows Hello passkey Authenticator Attestation GUIDs (AAGUIDs)
+
+During public preview, Windows Hello passkeys are identified and controlled by using the following AAGUIDs. These AAGUIDs must be explicitly allowed in a passkey profile to enable registration.
+
+| Windows Hello authenticator | AAGUID | Description |
+|----|----|----|
+| Windows Hello Hardware Authenticator | 08987058-cadc-4b81-b6e1-30de50dcbe96 | Private key stored in a hardware-based Trusted Platform Module (TPM). |
+| Windows Hello VBS Hardware Authenticator | 9ddd1817-af5a-4672-a2b9-3e3dd95000a9 | Virtualization-based Security (VBS) uses hardware virtualization and the Windows hypervisor to store private keys in the host machine's TPM. |
+| Windows Hello Software Authenticator | 6028b017-b1d4-4c02-b4b3-afcdafc96bb2 | Private key stored in a software-based TPM. |
+
+These AAGUIDs represent Windows Hello passkey providers and are used in passkey profiles to allow or block registration.
+
 ## How to configure passkeys on Windows
 
 To enable registration, you need to meet all of the following prerequisites and configuration requirements.
@@ -92,6 +104,42 @@ To enable registration, you need to meet all of the following prerequisites and 
 - **Passkey types** must include **Device-bound**.
 
 :::image type="content" border="true" source="media/how-to-authentication-entra-passkeys-on-windows/passkey-on-windows-profile.png" alt-text="Screenshot of the Add passkey profile settings showing Enforce attestation cleared and Passkey types set to Device-bound.":::
+
+### Example: Allow Microsoft Authenticator and Windows Hello passkeys
+
+You can target specific AAGUIDs to control which authenticators users can register. In this example, the passkey profile allows passkeys on Windows or Microsoft Authenticator.
+
+To configure this profile:
+
+1. Select **Target specific AAGUIDs**.
+1. Set **Behavior** to **Allow**.
+1. Under **Model/Provider AAGUIDs**, add the AAGUIDs for both Microsoft Authenticator and Windows Hello:
+
+    | Authenticator | AAGUID |
+    |----|----|
+    | Microsoft Authenticator for Android | de1e552d-db1d-4423-a619-566b625cdc84 |
+    | Microsoft Authenticator for iOS | 90a3ccdf-635c-4729-a248-9b709135078f |
+    | Windows Hello Hardware Authenticator | 08987058-cadc-4b81-b6e1-30de50dcbe96 |
+    | Windows Hello VBS Hardware Authenticator | 9ddd1817-af5a-4672-a2b9-3e3dd95000a9 |
+    | Windows Hello Software Authenticator | 6028b017-b1d4-4c02-b4b3-afcdafc96bb2 |
+
+With this configuration, users can register passkeys with Microsoft Authenticator or with Windows Hello on Windows because both sets of AAGUIDs are in the allowed list.
+
+:::image type="content" border="true" source="media/how-to-authentication-entra-passkeys-on-windows/authenticator-windows-passkey-profile.png" alt-text="Screenshot of the Add passkey profile settings with Target specific AAGUIDs selected, Behavior set to Allow, and the Microsoft Authenticator and Windows Hello AAGUIDs added.":::
+
+### Example: Allow only Windows Hello Hardware Authenticators
+
+You can also target specific AAGUIDs to require hardware-backed Windows Hello passkeys. In this example, a high assurance passkey profile allows only Windows Hello Hardware Authenticators and doesn't allow the Windows Hello Software Authenticator.
+
+To configure this restriction:
+
+1. Select **Target specific AAGUIDs**.
+1. Set **Behavior** to **Allow**.
+1. Under **Model/Provider AAGUIDs**, add the AAGUIDs for **Windows Hello Hardware Authenticator** and **Windows Hello VBS Hardware Authenticator**.
+
+With this configuration, users can register passkeys on Windows only when their device supports hardware-backed Windows Hello. Because the Windows Hello Software Authenticator AAGUID isn't in the allowed list, software-only registrations are blocked.
+
+:::image type="content" border="true" source="media/how-to-authentication-entra-passkeys-on-windows/high-assurance-passkey-profile.png" alt-text="Screenshot of the Add passkey profile settings with Target specific AAGUIDs selected, Behavior set to Allow, and the Windows Hello Hardware Authenticator and Windows Hello VBS Hardware Authenticator AAGUIDs added.":::
 
 ## FAQ
 

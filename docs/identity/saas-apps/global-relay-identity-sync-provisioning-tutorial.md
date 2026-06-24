@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 04/08/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Global Relay Identity Sync so that I can streamline the user management process and ensure that users have the appropriate access to Global Relay Identity Sync.
----
+--- 
 
 # Configure Global Relay Identity Sync for automatic user provisioning with Microsoft Entra ID
 

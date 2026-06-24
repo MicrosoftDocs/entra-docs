@@ -1,8 +1,7 @@
 ---
 title: Introduction to Microsoft Entra ID Protection proof-of-concept guidance
 description: Learn, deploy, and test Microsoft Entra ID Protection so that you can detect, investigate, and remediate identity-based risks.
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 10/31/2025
@@ -68,7 +67,7 @@ To kick off a Microsoft Entra ID Protection PoC, you need these prerequisites.
 
   - A test user who isn't an administrator to verify that policies work as expected before you deploy real users. To create a user, follow the steps in [How to create, invite, and delete users](../fundamentals/how-to-create-delete-users.md).
 
-- A group, and the user is a member. To create a group, see [Create a group and add members in Microsoft Entra ID](../fundamentals/how-to-manage-groups.yml).
+- A group, and the user is a member. To create a group, see [Create a group and add members in Microsoft Entra ID](../fundamentals/how-to-manage-groups.md).
 
 ## Identify use cases and plan configuration and testing
 

@@ -5,7 +5,6 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 03/14/2025
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-
 appliesto:
 zone_pivot_groups: identity-mi-service-principals
 ---

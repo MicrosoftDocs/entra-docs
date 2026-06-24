@@ -1,13 +1,11 @@
 ---
 title: Microsoft Entra ID Windows Account Manager API reference
 description: Comprehensive guide for the Microsoft Entra ID Windows Account Manager (WAM) API, detailing its usage, parameters, and integration in Windows applications.
-author: OwenRichards1
 manager: pmwongera
 
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/19/2024
-ms.author: owenrichards
 ms.reviewer: asteen
 ms.custom: 
 #Customer intent: As a customer, I intend to understand the Microsoft Entra ID Windows Account Manager (WAM) API, its parameters, and how to use them in the development of Windows applications that integrate with Microsoft Entra ID or Microsoft accounts.

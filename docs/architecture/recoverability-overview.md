@@ -3,7 +3,6 @@ title: Recoverability best practices in Microsoft Entra ID
 description: Learn the best practices for increasing recoverability.
 ms.topic: best-practice
 ms.date: 11/03/2025
-ms.reviewer: jricketts
 ms.subservice: architecture
 ---
 

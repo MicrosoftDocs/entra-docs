@@ -6,7 +6,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 06/04/2024
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure gulfHR SSO for Single sign-on with Microsoft Entra ID
 

@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ArcGIS Enterprise so that I can control who has access to ArcGIS Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure ArcGIS Enterprise for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ArcGIS Enterprise with Microsoft Entra ID. When you integrate ArcGIS Enterprise with Microsoft Entra ID, you can:

@@ -127,6 +127,10 @@ items:
     href: overview-application-usage-analytics.md
   - name: Shadow AI discovery
     href: concept-shadow-ai-discovery.md
+  - name: AI agent discovery (preview)
+    href: concept-ai-agent-discovery.md
+  - name: Generative AI Insights (preview)
+    href: concept-generative-ai-insights.md
   - name: External user access
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
@@ -319,6 +323,8 @@ items:
         href: how-to-remote-network-health-logs.md
       - name: Traffic logs
         href: how-to-view-traffic-logs.md
+      - name: Generative AI Insights logs (preview)
+        href: how-to-view-generative-ai-insights-logs.md
       - name: MCP traffic logs
         href: how-to-view-model-context-protocol-logging.md
       - name: Deployment logs
@@ -428,6 +434,8 @@ items:
     href: resource-faq.yml
   - name: Connector version history
     href: reference-version-history.md
+  - name: Private Access Sensor version history
+    href: reference-private-access-sensor-release-history.md
   - name: Windows client version history
     href: reference-windows-client-release-history.md
   - name: macOS client version history

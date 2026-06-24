@@ -4,10 +4,10 @@ description: Guidance on achieving NIST authenticator assurance level 2 (AAL2) w
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 09/27/2024
 ms.custom: it-pro
 ---

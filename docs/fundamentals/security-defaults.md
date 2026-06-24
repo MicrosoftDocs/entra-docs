@@ -3,8 +3,6 @@ title: Configure Security Defaults for Microsoft Entra ID
 description: Enable Microsoft Entra ID security defaults to strengthen your organization's security posture with preconfigured MFA requirements and legacy authentication protection.
 ms.topic: how-to
 ms.date: 07/21/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: sama
 ms.custom:
@@ -100,6 +98,8 @@ After registration is finished, the following administrator roles will be requir
 - Authentication Policy Administrator
 - Identity Governance Administrator
 
+*Also available as a [Microsoft-managed Conditional Access policy](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) if you disable security defaults.*
+
 ### Require users to do multifactor authentication when necessary
 
 We tend to think that administrator accounts are the only accounts that need extra layers of authentication. Administrators have broad access to sensitive information and can make changes to subscription-wide settings. But attackers frequently target end users. 
@@ -110,6 +110,8 @@ One common method to improve protection for all users is to require a stronger f
 
 > [!NOTE]
 > In case of [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users, any multifactor authentication requirement from security defaults enabled in resource tenant needs to be satisfied, including multifactor authentication registration by the direct connect user in their home tenant.
+
+*Also available as a [Microsoft-managed Conditional Access policy](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) if you disable security defaults.*
 
 ### Block legacy authentication protocols
 
@@ -126,6 +128,8 @@ After security defaults are enabled in your tenant, all authentication requests 
 > Before you enable security defaults, make sure your administrators aren't using older authentication protocols. For more information, see [How to move away from legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 - [How to set up a multifunction device or application to send email using Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
+
+*Also available as a [Microsoft-managed Conditional Access policy](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) if you disable security defaults.*
 
 ### Block device code flow
 
@@ -162,6 +166,8 @@ This policy applies to all users who are accessing Azure Resource Manager servic
 > [!NOTE]
 > The Microsoft Entra Connect / Microsoft Entra Cloud Sync synchronization accounts (or any security principal assigned to the "Directory Synchronization Accounts" role) are excluded from security defaults and aren't prompted to register for or perform multifactor authentication. Organizations shouldn't be using this account for other purposes.
 
+*Also available as a [Microsoft-managed Conditional Access policy](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) if you disable security defaults.*
+
 ## Deployment considerations
 
 ### Preparing your users
@@ -183,7 +189,7 @@ Any [B2B guest](~/external-id/what-is-b2b.md) users or [B2B direct connect](~/ex
 
 If your organization is a previous user of per-user based multifactor authentication, don't be alarmed to not see users in an **Enabled** or **Enforced** status if you look at the multifactor authentication status page. **Disabled** is the appropriate status for users who are using security defaults or Conditional Access based multifactor authentication.
 
-### Disabling security defaults
+## Disabling security defaults
 
 Organizations that choose to implement Conditional Access policies that replace security defaults must disable security defaults. 
 
@@ -203,14 +209,12 @@ While security defaults are a good baseline to start your security posture from,
 | --- | --- | --- |
 | **Required licenses**| None | At least Microsoft Entra ID P1 |
 | **Customization**| No customization (on or off) | Fully customizable |
-| **Enabled by**| Microsoft or administrator | Administrator |
+| **Enabled by**| Microsoft or administrator | Microsoft or administrator |
 | **Complexity**| Simple to use | Fully customizable based on your requirements |
-
-Recommended steps for moving from security defaults 
 
 Organizations who would like to test out the features of Conditional Access can [sign up for a free trial](get-started-premium.md) to get started.
 
-After administrators disable security defaults, organizations need to immediately enable Conditional Access policies to protect their organization. These policies need to include at least those in the [secure foundations category of Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories). Organizations with Microsoft Entra ID P2 licenses that include Microsoft Entra ID Protection can expand on this list to include [user and sign in risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to further strengthen their posture. 
+After administrators disable security defaults, organizations should immediately enable Conditional Access policies to protect their organization. [Microsoft-managed Conditional Access policies](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) are available to maintain the same protections, covering blocking legacy authentication, requiring MFA for Azure management, requiring MFA for admins, and requiring MFA for all users. Organizations should review these policies and consider enabling more policies from the [secure foundations category of Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories). Organizations with Microsoft Entra ID P2 licenses that include Microsoft Entra ID Protection can expand on this list to include [user and sign in risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to further strengthen their posture. 
 
 [!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 

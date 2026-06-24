@@ -1,8 +1,6 @@
 ---
 title: How to view Model Context Protocol (MCP) traffic logs in Global Secure Access (Preview)
 description: Learn how to monitor and analyze Model Context Protocol (MCP) traffic between AI agents and remote MCP servers using the Global Secure Access Generative AI Insights page.
-author: jenniferf-skc
-ms.author: jfields
 manager: dougeby
 ms.topic: how-to
 ms.date: 03/31/2026

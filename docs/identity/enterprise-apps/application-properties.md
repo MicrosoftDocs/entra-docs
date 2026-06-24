@@ -2,7 +2,6 @@
 title: 'Properties of an enterprise application'
 description: Learn about the properties of an enterprise application in Microsoft Entra ID.
 ms.topic: concept-article
-
 ai-usage: ai-assisted
 ms.date: 01/31/2025
 ms.reviewer: ergreenl

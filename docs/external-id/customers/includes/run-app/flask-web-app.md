@@ -1,8 +1,6 @@
 ---
-author: SHERMANOUKO
 ms.topic: include
 ms.date: 03/21/2024
-ms.author: shermanouko
 ---
 
 1. In your terminal, run the following command:

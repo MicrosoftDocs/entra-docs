@@ -3,7 +3,7 @@ title: Configure Skills Base for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Skills Base.
 
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 06/11/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Skills Base so that I can control who has access to Skills Base, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure Skills Base for Single sign-on with Microsoft Entra ID
@@ -14,6 +14,10 @@ In this article, you will learn how to integrate Skills Base with Microsoft Entr
 * Enable your users to be automatically signed-in to Skills Base with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Skills Base is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
@@ -21,9 +25,6 @@ The scenario outlined in this article assumes that you already have the followin
 * A Skills Base instance with a license that includes the **Single Sign-On Module**.
 * A Skills Base Administrator account (with local login email/password).
 * **Single Sign On** feature is enabled (in **Administration > Modules > Single Sign-On Module**).
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 

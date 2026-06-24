@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 
 ms.topic: how-to
 ms.date: 03/25/2025
----
+--- 
 
 # Configure CyberSolutions MAILBASEΣ\CMSS for Single sign-on in Microsoft Entra ID
 

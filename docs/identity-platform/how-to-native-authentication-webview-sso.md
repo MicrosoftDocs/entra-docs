@@ -1,8 +1,6 @@
 ---
 title: Implement Single Sign-On from Native Apps to Embedded Web Views
 description: Learn how to implement SSO between a native mobile app and a web resource in an embedded web view using Microsoft Entra External ID native authentication.
-author: henrymbuguakiarie
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: how-to

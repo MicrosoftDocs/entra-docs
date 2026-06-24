@@ -17,20 +17,23 @@ Administrators commonly deploy virtual desktop infrastructure (VDI) platforms th
 - Reduce costs through consolidation and centralization of resources.
 - Deliver end-user mobility and the freedom to access virtual desktops anytime, from anywhere, on any device.
 
-There are two primary types of virtual desktops:
+There are two versions of virtual desktops. These names refer to the user session and profile experience, not the lifecycle of the underlying virtual machine (VM).
 
 | Virtual desktop type | Description | Effect on tenant quota |
 | --- | --- | --- |
 | Persistent | Uses a unique desktop image for each user or pool of users. These desktops can be customized and saved for future use. | Devices register once and remain in the directory. Stale devices accumulate only if VMs are periodically reset without cleanup. |
 | Non-persistent | Uses a collection of desktops that users access on an as-needed basis. These desktops revert to their original state after a VM shutdown, restart, or OS reset. | Each reset can trigger a new device registration, which rapidly increases stale device records and consumes tenant quota. |
 
-> [!IMPORTANT]
-> In Azure Virtual Desktop, the terms *persistent* and *non-persistent* describe the user session and profile experience, not the lifecycle of the underlying virtual machines. Session host VMs in both pooled and personal host pools are standard Azure virtual machines that persist by default. Azure Virtual Desktop doesn't automatically delete, reset, or recreate these VMs unless you explicitly implement automation or third-party tooling that results in non-persistent behavior at the device or identity level.
+Persistent versions use a unique desktop image for each user or a pool of users. These unique desktops can be customized and saved for future use. 
+
+Session host VMs in both pooled and personal host pools are standard Azure virtual machines and are persistent by default. Azure Virtual Desktop doesn't automatically delete, reset, or recreate these VMs unless customers explicitly implement automation or third‑party tooling, which can result in non‑persistent behavior at the device or identity level.
+
+Non-persistent versions use a collection of desktops that users can access on an as needed basis. These non-persistent desktops are reverted to their original state when a virtual machine goes through a shutdown/restart/OS reset process.
 
 > [!IMPORTANT]
-> Failure to manage stale devices can increase pressure on your tenant quota and create a potential risk of service interruption if you run out of tenant quota. Use the following guidance when you deploy non-persistent VDI environments to avoid this situation.
+> Stale devices increase your tenant quota usage consumption. To avoid consumption increase from stale devices when you deploy non-persistent VDI environments, see [Non-persistent-vdi](#non-persistent-vdi).
 
-For successful execution of some scenarios, it's important to have unique device names in the directory. You can achieve this by managing stale devices or by using a naming pattern that guarantees device name uniqueness.
+Some scenarios require unique device names in the directory. This can be achieved by proper management of stale devices, or you can guarantee device name uniqueness by using some pattern in device naming.
 
 This article provides guidance for managing device identities in VDI environments. For more information about device identity, see the article [What is a device identity](overview.md).
 

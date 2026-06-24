@@ -1,11 +1,9 @@
 ---
 title: "Microsoft Entra Ignite 2025: Key Announcements and Updates"
 description: Get the latest Microsoft Entra release notes, including updates on authentication, governance, and AI-powered identity protection for modern enterprises.
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.topic: reference
 ms.date: 11/10/2025
-ms.author: joflore
 #Customer Intent: As an IT admin, I want to learn about Microsoft Entra announcements from Ignite 2025 so that I can plan for upcoming features and changes.
 ---
 # What's new at Microsoft Ignite 2025 - Microsoft Entra
@@ -72,7 +70,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Call API: Azure services](../agent-id/call-api-azure-services.md) (New)
 - [Call API: Custom](../agent-id/call-api-custom.md) (New)
 - [Call API: Microsoft Graph](../agent-id/call-api-microsoft-graph.md) (New)
-- [Microsoft Entra SDK for agent identities](../agent-id/microsoft-entra-sdk-for-agent-identities.md) (New)
+- [Microsoft Entra ID Auth SDK (sidecar)](../agent-id/microsoft-entra-sdk-for-agent-identities.md) (New)
 
 ## Security Copilot + Microsoft Entra
 
