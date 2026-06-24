@@ -7,10 +7,11 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 11/18/2025
-#Customer intent: As a developer, I want to build a React single-page application that uses native authentication's JavaScript SDK so that I can sign up users with email with password or email one-timepasscode authentication menthods
+ai-usage: ai-assisted
+#Customer intent: As a developer, I want to build a React single-page application that uses native authentication's JavaScript SDK so that I can sign up users with email and password, email one-time passcode, or a username (alias).
 ---
 
-# Tutorial: Sign up users into a React single-page app by using native authentication JavaScript SDK (preview)
+# Tutorial: Sign up users into a React single-page app by using native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -30,6 +31,7 @@ In this tutorial, you:
 - Complete the steps in [Set up CORS proxy server to manage CORS headers for native authentication](how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md).
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
+- If you want to let users sign up with a username (alias), enable the **Username** built-in user attribute in your sign-up user flow. For the steps, see [Enable username in the sign-in identifier policy](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
 
 
 ## Create a React project and install dependencies
@@ -143,9 +145,9 @@ This app collects user details such as given name, username (email), password, a
 
 1. Create a folder called *src/app/sign-up* in the *src* folder.
 
-1. Create *sign-up/components/InitialForm.tsx* file, then paste the code from [sign-up/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/InitialForm.tsx). This component displays a form that collects user sign-up attributes. 
+1. Create *sign-up/components/InitialForm.tsx* file, then paste the code from [sign-up/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/InitialForm.tsx). This component displays a form that collects user sign-up attributes.
 
-1. Create a *sign-up/components/CodeForm.tsx* file, then paste the code from [sign-up/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/CodeForm.tsx). This component displays a form that collects a one-time passcode sent to the user. You require this form for either email with password or email with one-time passcode authentication method. 
+1. Create a *sign-up/components/CodeForm.tsx* file, then paste the code from [sign-up/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/CodeForm.tsx). This component displays a form that collects a one-time passcode sent to the user. You require this form for either email with password or email with one-time passcode authentication method.
 
 1. If your choice of authentication method is *email with password*, create a *sign-up/components/PasswordForm.tsx* file, then paste the code from [sign-up/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/PasswordForm.tsx). This component displays a password input form. 
 
@@ -331,7 +333,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
     };
     ```
     The SDK's instance method, `signUp()` starts the sign-up flow.
-    
+
 - To handle the one-time passcode submission, use the following code snippet. See a full example at [sign-up/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx) to learn where to place the code snippet:
 
     ```typescript
@@ -399,7 +401,46 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
         return <SignUpResultPage/>;
     }
     ```
-   
+
+## Collect a username (alias) during sign-up
+
+You can let users sign up with a username (alias) in addition to their email. The username (alias) is an alternate sign-in identifier, such as a customer ID, account number, or another value that you choose.
+
+During sign-up, the username (email) is always required as the primary identifier, and the username (alias) doesn't replace it. By default, the username (alias) is optional, though an administrator can configure it as required. Your app always collects the username (email) and collects the alias as an attribute alongside the email. At sign-in, the user can then sign in with either their username (email) or their username (alias). To learn how the **Username** attribute is configured as optional or required, see [Configure the user input types and page layout](../external-id/customers/how-to-define-custom-attributes.md#configure-the-user-input-types-and-page-layout).
+
+To collect a username (alias) during sign-up:
+
+1. Make sure the **Username** built-in user attribute is enabled in your sign-up user flow. For the steps, see [Enable username in the sign-in identifier policy](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
+
+1. Add a `flatUsername` state to the sign-up page, then include the `flatusername` attribute in the `UserAccountAttributes` you pass to `signUp()`:
+
+    ```typescript
+    const [flatUsername, setFlatUsername] = useState("");
+
+    const attributes: UserAccountAttributes = {
+        displayName: `${firstName} ${lastName}`,
+        //...
+        flatusername: flatUsername,
+    };
+    ```
+
+1. Add an alias input to *InitialForm.tsx* to collect the username (alias) value:
+
+    ```tsx
+    <input
+        type="text"
+        placeholder="Username (alias)"
+        value={flatUsername}
+        onChange={(e) => setFlatUsername(e.target.value)}
+        style={styles.input}
+    />
+    ```
+
+1. Handle errors related to the username (alias):
+
+    - `result.error?.isUserAlreadyExists()` covers a duplicate email *or* a duplicate username (alias). Update the message accordingly, for example, *An account with this email or username already exists*.
+    - An invalid username (alias) is surfaced through `result.error?.isAttributesValidationFailed()` rather than `result.error?.isInvalidUsername()`. Branch on this method to show a username-specific message.
+
 ## Handle sign-up errors
 
 During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid email one-time passcode. Make sure you handle errors properly when you:
