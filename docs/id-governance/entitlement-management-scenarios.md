@@ -107,7 +107,7 @@ There are several ways that you can configure entitlement management for your or
 
 ## Govern access for agents (preview)
 
-[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
+[!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
 1. [Create a new access package](entitlement-management-access-package-create.md#start-the-creation-process)
 1. [Add groups or API permissions to access package](entitlement-management-access-package-create.md#select-resource-roles)
