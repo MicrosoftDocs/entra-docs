@@ -36,7 +36,7 @@ At this point, you completed the initiate and plan stages of your Secure Access 
 
 1. Create end user communications to set expectations and provide an escalation path.
 1. Create a roll-back plan that defines the circumstances and procedures for when you remove Global Secure Access client from a user device or disable the traffic forwarding profile.
-1. [Create a Microsoft Entra group](../fundamentals/how-to-manage-groups.yml) that includes your pilot users.
+1. [Create a Microsoft Entra group](../fundamentals/how-to-manage-groups.md) that includes your pilot users.
 1. Enable the [Microsoft Entra Private Access traffic forwarding profile](../global-secure-access/how-to-manage-private-access-profile.md) and assign your pilot group. [Assign users and groups to traffic forwarding profiles](../global-secure-access/how-to-manage-users-groups-assignment.md).
 1. Provision servers or virtual machines that have line of sight access to your applications to function as connectors, providing outbound connectivity to applications for your users. Consider load balancing scenarios and capacity requirements for acceptable performance. [Configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md) on each connector machine.
 1. If you have an inventory of enterprise applications, [configure per-app access using Global Secure Access applications](../global-secure-access/how-to-configure-per-app-access.md). If not, [configure Quick Access for Global Secure Access](../global-secure-access/how-to-configure-quick-access.md).

@@ -39,7 +39,7 @@ You can manage two types of groups in the Microsoft Entra admin center:
   - For more information, see [Learn about Microsoft 365 Groups](https://support.office.com/article/learn-about-office-365-groups-b565caa1-5c40-40ef-9915-60fdb2d97fa2).
 
 > [!NOTE]
-> When nesting an existing security group to another security group, only members in the parent group have access to shared resources and applications. For more info about managing nested groups, see [How to manage groups](how-to-manage-groups.yml#add-a-group-to-another-group).
+> When nesting an existing security group to another security group, only members in the parent group have access to shared resources and applications. For more info about managing nested groups, see [How to manage groups](how-to-manage-groups.md#add-a-group-to-another-group).
 
 ### Membership types
 
@@ -54,7 +54,7 @@ You can manage two types of groups in the Microsoft Entra admin center:
 
 <a name='how-access-management-in-azure-ad-works'></a>
 
-Microsoft Entra ID helps you give access to your organization's resources by providing access rights to a single user or a group. Using groups lets the resource owner or Microsoft Entra directory owner assign a set of access permissions to all members of the group. The resource or directory owner can also grant group management rights to someone such as a department manager or a help desk administrator, which allows that person to add and remove members. For more information about how to manage group owners, see the [Manage groups](how-to-manage-groups.yml) article.
+Microsoft Entra ID helps you give access to your organization's resources by providing access rights to a single user or a group. Using groups lets the resource owner or Microsoft Entra directory owner assign a set of access permissions to all members of the group. The resource or directory owner can also grant group management rights to someone such as a department manager or a help desk administrator, which allows that person to add and remove members. For more information about how to manage group owners, see the [Manage groups](how-to-manage-groups.md) article.
 
 The resources that Microsoft Entra groups can manage access to can be:
 
@@ -72,7 +72,7 @@ After creating a group, you need to decide how to manage its access.
 
 - **Direct assignment**: The resource owner directly assigns the user to the resource.
 
-- **Group assignment.** The resource owner assigns a Microsoft Entra group to the resource, which automatically gives all of the group members access to the resource. Both the group owner and the resource owner manage group membership, letting either owner add or remove members from the group. For more information about managing group membership, see the [Managed groups](how-to-manage-groups.yml) article.
+- **Group assignment.** The resource owner assigns a Microsoft Entra group to the resource, which automatically gives all of the group members access to the resource. Both the group owner and the resource owner manage group membership, letting either owner add or remove members from the group. For more information about managing group membership, see the [Managed groups](how-to-manage-groups.md) article.
 
 - **Rule-based assignment**: The resource owner creates a group and uses a rule to define which users are assigned to a specific resource. The rule is based on attributes that are assigned to individual users. The resource owner manages the rule, determining which attributes and values are required to allow access the resource. For more information, see [Create a dynamic group](..//identity/users/groups-create-rule.md).
 
@@ -103,7 +103,7 @@ The following are best practices for managing groups in the cloud:
   - Provide a centralized way to grant, review, and revoke access across groups and applications
   - For more information, see [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md)
 - **Assign multiple group owners**: Assign at least two owners to a group to ensure continuity and reduce dependencies on a single individual.
-  - For more information, see [Manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
+  - For more information, see [Manage Microsoft Entra groups and group membership](how-to-manage-groups.md)
 - **Use group-based licensing**: Group-based licensing simplifies user provisioning and ensures consistent license assignments.
   - Use dynamic membership groups to automatically manage licensing for users meeting specific criteria.
   - For more information, see [What is group-based licensing in Microsoft Entra ID?](concept-group-based-licensing.md)
@@ -113,6 +113,6 @@ The following are best practices for managing groups in the cloud:
 
 ## Related content
 
-- [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
+- [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.md)
 - [Manage access to SaaS apps using groups](~/identity/users/groups-saasapps.md)
 - [Manage rules for dynamic membership groups](~/identity/users/groups-create-rule.md)

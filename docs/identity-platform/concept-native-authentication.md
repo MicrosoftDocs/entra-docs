@@ -6,9 +6,8 @@ manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 04/10/2026
-
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
+ms.date: 06/22/2026
 ---
 # Native authentication in Microsoft Entra External ID
 
@@ -19,15 +18,6 @@ Microsoft Entra’s native authentication allows you to have full control over t
 The standard app sign-in process, which relies on browser-delegated authentication, often results in a disruptive transition during authentication. Users are temporarily redirected to a system browser for authentication, only to be brought back to the app once the sign-in is complete.
 
 While browser-delegated authentication offers benefits such as reduced attack vectors and support for single sign-on (SSO), it offers limited UI customization options.
-
-## Available authentication methods
-
-Currently, native authentication supports local account identity provider for two authentications methods: 
-
-- Email with one-time passcode (OTP) sign-in.
-- Email and password sign-in with support for self-service password reset (SSPR). 
-
-Native authentication doesn't yet support federated identity providers such as social or enterprise identities. 
 
 ## When to use native authentication
 

@@ -33,7 +33,7 @@ Allowing users to self-remediate using this process significantly reduces the ri
 
 ID Protection analyzes signals about user accounts and calculates a risk score based on the probability that the user is compromised. If a user has risky user sign-in behavior, or their credentials were leaked, ID Protection uses these signals to calculate the user risk level. Administrators can configure risk-based Conditional Access policies to enforce access controls based on user risk, including requirements such as: 
 
-1. Require risk remediation (preview): ID Protection manages the appropriate remediation flow for all authentication methods.
+1. Require risk remediation: ID Protection manages the appropriate remediation flow for all authentication methods.
 1. Require password change: ID Protection blocks access until user completes a secure password change.
 1. Block access: ID Protection blocks the user until risk is addressed.
 

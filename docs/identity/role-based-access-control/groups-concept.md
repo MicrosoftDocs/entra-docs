@@ -81,4 +81,4 @@ Using this feature requires a Microsoft Entra ID P1 license. The Privileged Iden
 
 - [Create a role-assignable group](groups-create-eligible.md)
 - [Assign Microsoft Entra roles](manage-roles-portal.md)
-- [Manage Microsoft Entra groups and group membership](../../fundamentals/how-to-manage-groups.yml)
+- [Manage Microsoft Entra groups and group membership](../../fundamentals/how-to-manage-groups.md)
