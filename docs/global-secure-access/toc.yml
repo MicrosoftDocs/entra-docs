@@ -67,6 +67,8 @@ items:
     href: overview-operations.md
   - name: Common operations (RACI, change, metrics)
     href: how-to-operations-common.md
+  - name: Security operations for network access
+    href: how-to-security-operations.md
   - name: Operate Private Access
     href: how-to-operate-private-access.md
   - name: Operate Internet Access
