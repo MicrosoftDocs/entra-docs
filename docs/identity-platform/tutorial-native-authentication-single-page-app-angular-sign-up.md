@@ -208,32 +208,6 @@ In this section, you define a configuration for native authentication public cli
         ```
         The SDK's instance method, `signUp()` starts the sign-up flow.
 
-        If you want to let users sign up with a username (alias), add a `flatUsername` field to the sign-up component, then include the `flatusername` attribute in the `UserAccountAttributes` you pass to `signUp()`:
-
-        ```typescript
-        flatUsername = "";
-
-        const attributes: UserAccountAttributes = {
-            givenName: this.firstName,
-            surname: this.lastName,
-            jobTitle: this.jobTitle,
-            city: this.city,
-            country: this.country,
-            flatusername: this.flatUsername,
-        };
-        ```
-
-        Add an alias input to *sign-up.component.html* alongside the existing fields:
-
-        ```html
-        <input type="text" [(ngModel)]="flatUsername" name="flatUsername" placeholder="Username (alias)" />
-        ```
-
-        After sign-up, the user can sign in by using either their email or their username (alias). When you handle errors for the username (alias), keep in mind that:
-
-        - `result.error?.isUserAlreadyExists()` covers a duplicate email *or* a duplicate username (alias). Update the message accordingly, for example, *An account with this email or username already exists*.
-        - An invalid username (alias) is surfaced through `result.error?.isAttributesValidationFailed()` rather than `result.error?.isInvalidUsername()`. Branch on this method to show a username-specific message.
-
     - If you want the user to start sign-in flow immediately after sign-up is completed, use this snippet:
 
         ```html
@@ -245,7 +219,44 @@ In this section, you define a configuration for native authentication public cli
 5. Open the *src/app/app.component.scss* file, then add the following [styles file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/app.component.scss).
 
 
-### Automatically sign-in after sign-up (optional)
+## Collect a username (alias) during sign-up
+
+You can let users sign up with a username (alias) in addition to their email. The username (alias) is an alternate sign-in identifier, such as a customer ID, account number, or another value that you choose.
+
+During sign-up, the username (email) is always required as the primary identifier, and the username (alias) doesn't replace it. By default, the username (alias) is optional, though an administrator can configure it as required. Your app always collects the username (email) and collects the alias as an attribute alongside the email. At sign-in, the user can then sign in with either their username (email) or their username (alias). To learn how the **Username** attribute is configured as optional or required, see [Configure the user input types and page layout](../external-id/customers/how-to-define-custom-attributes.md#configure-the-user-input-types-and-page-layout).
+
+To collect a username (alias) during sign-up:
+
+1. Make sure the **Username** built-in user attribute is enabled in your sign-up user flow. For the steps, see [Enable username in the sign-in identifier policy](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
+
+1. Add a `flatUsername` field to the sign-up component, then include the `flatusername` attribute in the `UserAccountAttributes` you pass to `signUp()`:
+
+    ```typescript
+    flatUsername = "";
+
+    const attributes: UserAccountAttributes = {
+        givenName: this.firstName,
+        surname: this.lastName,
+        jobTitle: this.jobTitle,
+        city: this.city,
+        country: this.country,
+        flatusername: this.flatUsername,
+    };
+    ```
+
+1. Add an alias input to *sign-up.component.html* alongside the existing fields:
+
+    ```html
+    <input type="text" [(ngModel)]="flatUsername" name="flatUsername" placeholder="Username (alias)" />
+    ```
+
+1. Handle errors related to the username (alias):
+
+    - `result.error?.isUserAlreadyExists()` covers a duplicate email *or* a duplicate username (alias). Update the message accordingly, for example, *An account with this email or username already exists*.
+    - An invalid username (alias) is surfaced through `result.error?.isAttributesValidationFailed()` rather than `result.error?.isInvalidUsername()`. Branch on this method to show a username-specific message.
+
+
+## Automatically sign-in after sign-up (optional)
 
 You can automatically sign in your users after a successful sign-up without starting a fresh sign-in flow. To do so, use the following code snippet. See a complete example at [sign-up/sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
