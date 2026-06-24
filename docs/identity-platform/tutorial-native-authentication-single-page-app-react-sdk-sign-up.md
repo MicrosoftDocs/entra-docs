@@ -419,11 +419,7 @@ To collect a username (alias) during sign-up:
 
     const attributes: UserAccountAttributes = {
         displayName: `${firstName} ${lastName}`,
-        givenName: firstName,
-        surname: lastName,
-        jobTitle: jobTitle,
-        city: city,
-        country: country,
+        //...
         flatusername: flatUsername,
     };
     ```
