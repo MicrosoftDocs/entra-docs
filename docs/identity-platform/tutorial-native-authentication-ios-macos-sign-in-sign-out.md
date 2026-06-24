@@ -38,6 +38,8 @@ To sign in a user using the **Email one-time passcode** flow, capture the email 
 
 To sign in a user using the **Email with password** flow, capture the email and password. If the username and password are valid, the app signs in the user.
 
+If the **Username** built-in user attribute is enabled in your tenant's sign-up user flow, the `username` parameter in sign-in accepts either the user's email address or their username (alias). No separate sign-in logic is needed to support alias-based sign-in.
+
 To sign in a user, you need to: 
 
 1. Create a user interface (UI) to:
