@@ -5,7 +5,7 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
-  - name: Governing Agent IDs
+  - name: Governing agent identities
     href: agent-ID-governance-overview.md    
 
 

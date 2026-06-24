@@ -143,7 +143,7 @@ items:
     items:
     - name: Assign agents to applications
       href: /entra/identity/enterprise-apps/assign-agent-identities-to-applications?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
-    - name: Maintain agent sponsors and lifecycle
+    - name: Agent identity sponsor tasks in Lifecycle Workflows
       href: /entra/id-governance/agent-sponsor-tasks?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
     - name: Manage agent identities in your organization
       href: manage-agent-identities-admin.md
