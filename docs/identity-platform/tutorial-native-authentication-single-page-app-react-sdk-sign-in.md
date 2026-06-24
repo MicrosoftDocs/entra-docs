@@ -7,7 +7,8 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 11/18/2025
-#Customer intent: As a developer, I want to build a React single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
+ai-usage: ai-assisted
+#Customer intent: As a developer, I want to build a React single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email or alias) and password or email with one-time passcode.
 ---
 
 # Tutorial: Sign in users into a React single-page app by using native authentication JavaScript SDK
@@ -185,6 +186,9 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
 
     The SDK's instance method, `signIn()`, starts the sign-in flow.
 
+    > [!NOTE]
+    > The `username` parameter accepts either the user's email address or their username (alias) when the **Username** built-in user attribute is enabled in your tenant's user flow. The user can input either value to sign in. To enable the attribute, see [Enable username in the sign-in identifier policy](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
+
 - If your choice of authentication flow is email and one-time passcode, submit the one-time passcode by using the following code snippet. See a full example at [sign-in/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx) to learn where to place the code snippet: 
 
 
@@ -270,10 +274,6 @@ One of the errors that can result from the `signIn()` method is `result.error?.i
 ## Run and test your app
 
 Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-your-app) to run your app, then test sign-in flow. 
-
-## Enable sign-in with an alias or username
-
-[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Related content
 
