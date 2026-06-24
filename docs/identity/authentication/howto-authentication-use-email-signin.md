@@ -388,22 +388,22 @@ Within a tenant, a cloud-only user's UPN may take on the same value as another u
 
     ```powershell
     # Get all users
-    $allUsers = Get-MgUser -All
+    $allUsers = Get-MgUser -All -Property "Id, DisplayName, UserPrincipalName, ProxyAddresses, OnPremisesSyncEnabled, OnPremisesImmutableId, UserType"
     
     # Get list of proxy addresses from all synced users
     $syncedProxyAddresses = $allUsers |
-        Where-Object {$_.ImmutableId} |
+        Where-Object { $_.OnPremisesSyncEnabled -eq $true} |
         Select-Object -ExpandProperty ProxyAddresses |
         ForEach-Object {$_ -Replace "smtp:", ""}
     
     # Get list of user principal names from all cloud-only users
     $cloudOnlyUserPrincipalNames = $allUsers |
-        Where-Object {!$_.ImmutableId} |
+        Where-Object { $_.OnPremisesSyncEnabled -ne $true } |
         Select-Object -ExpandProperty UserPrincipalName
     
     # Get intersection of two lists
     $duplicateValues = $syncedProxyAddresses |
-        Where-Object {$cloudOnlyUserPrincipalNames -Contains $_}
+        Where-Object { $cloudOnlyUserPrincipalNames -Contains $_ }
     ``` 
 
 1. To output affected users:
@@ -411,13 +411,13 @@ Within a tenant, a cloud-only user's UPN may take on the same value as another u
     ```powershell
     # Output affected synced users
     $allUsers |
-        Where-Object {$_.ImmutableId -And ($_.ProxyAddresses | Where-Object {($duplicateValues | ForEach-Object {"smtp:$_"}) -Contains $_}).Length -GT 0} |
-        Select-Object ObjectId, DisplayName, UserPrincipalName, ProxyAddresses, ImmutableId, UserType
+        Where-Object { $_.OnPremisesSyncEnabled -eq $true -and ($_.ProxyAddresses | Where-Object { ($duplicateValues | ForEach-Object { "smtp:$_"} ) -contains $_}).Length -GT 0} |
+        Select-Object Id, DisplayName, UserPrincipalName, ProxyAddresses, OnPremisesImmutableId, UserType
     
     # Output affected cloud-only users
     $allUsers |
-        Where-Object {!$_.ImmutableId -And $duplicateValues -Contains $_.UserPrincipalName} |
-        Select-Object ObjectId, DisplayName, UserPrincipalName, ProxyAddresses, ImmutableId, UserType
+        Where-Object { $_.OnPremisesSyncEnabled -ne $true -and $duplicateValues -contains $_.UserPrincipalName } |
+        Select-Object ObjectId, DisplayName, UserPrincipalName, ProxyAddresses, OnPremisesImmutableId, UserType
     ```
 
 1. To output affected users to CSV:
@@ -426,11 +426,11 @@ Within a tenant, a cloud-only user's UPN may take on the same value as another u
     # Output affected users to CSV
     $allUsers |
         Where-Object {
-            ($_.ImmutableId -And ($_.ProxyAddresses | Where-Object {($duplicateValues | ForEach-Object {"smtp:$_"}) -Contains $_}).Length -GT 0) -Or
-            (!$_.ImmutableId -And $duplicateValues -Contains $_.UserPrincipalName)
+            ( ($_.OnPremisesSyncEnabled -eq $true -and ($_.ProxyAddresses | Where-Object { ($duplicateValues | ForEach-Object { "smtp:$_"} ) -contains $_}).Length -GT 0)) -or
+            ($_.OnPremisesSyncEnabled -ne $true -and $duplicateValues -contains $_.UserPrincipalName)
         } |
-        Select-Object ObjectId, DisplayName, UserPrincipalName, @{n="ProxyAddresses"; e={$_.ProxyAddresses -Join ','}}, @{n="IsSyncedUser"; e={$_.ImmutableId.Length -GT 0}}, UserType |
-        Export-Csv -Path .\AffectedUsers.csv -NoTypeInformation
+        Select-Object Id, DisplayName, UserPrincipalName, @{N = "ProxyAddresses"; E = { $_.ProxyAddresses -join ", " }}, @{N="IsSyncedUser"; E = { $_.OnPremisesSyncEnabled -eq $true }}, UserType |
+        Export-Csv -Path ".\AffectedUsers.csv" -NoTypeInformation
     ```
 
 ## Next steps
