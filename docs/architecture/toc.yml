@@ -289,6 +289,8 @@ items:
         href: security-operations-devices.md
       - name: Security operations for Infrastructure
         href: security-operations-infrastructure.md
+      - name: Security operations for network access
+        href: ~/global-secure-access/how-to-security-operations.md?toc=/entra/architecture/toc.json&bc=/entra/architecture/breadcrumb.toc.json
     - name: Protect Microsoft 365 from on-premises attacks 
       href: protect-m365-from-on-premises-attacks.md
     - name: Secure external collaboration
