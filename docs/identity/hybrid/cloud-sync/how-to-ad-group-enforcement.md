@@ -1,14 +1,18 @@
 ---
 title: Configure AD group enforcement in Microsoft Entra Cloud Sync (preview)
-description: Configure the AD group enforcement preview so that synced Active Directory groups can only be modified by the Microsoft Entra Cloud Sync provisioning service. Learn the prerequisites and the domain-wide steps required for production-ready enforcement.
+description: Configure the AD group enforcement preview so that synced Active Directory groups can only be modified by the Microsoft Entra Cloud Sync provisioning service.
 author: omondiatieno
+ms.author: jomondi
 manager: mwongerapk
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
 ms.topic: how-to
-ms.date: 06/24/2026
-ms.author: jomondi
+ms.custom: msecd-doc-authoring-1013
+ms.date: 06/09/2026
 ai-usage: ai-assisted
+
+#customer intent: As a hybrid identity administrator, I want to restrict modifications of synced Active Directory groups to the Microsoft Entra Cloud Sync provisioning service so that on-premises changes can't bypass Microsoft Entra governance.
+
 ---
 
 # Configure AD group enforcement in Microsoft Entra Cloud Sync (preview)
@@ -84,14 +88,11 @@ Do the following:
 1. Restart each domain controller after enablement.
 1. Confirm that `SOA-Policies` exists under `CN=System,DC=<your domain>` (substitute your actual domain name). The container can take 5 to 10 minutes to appear.
 
-    [![Screenshot of ADSI Edit showing the CN=SOA-Policies container under CN=System.](media/how-to-ad-group-enforcement/soa-policies-container.png)](media/how-to-ad-group-enforcement/soa-policies-container.png#lightbox)
-
-> [!WARNING]
-> Don't continue to rely on enforcement until every writable domain controller has been updated and enabled. Any writable domain controller that's left out is a bypass path for unauthorized changes.
+:::image type="content" source="media/how-to-ad-group-enforcement/soa-policies-container.png" alt-text="Screenshot of ADSI Edit showing the CN=SOA-Policies container under CN=System." lightbox="media/how-to-ad-group-enforcement/soa-policies-container.png":::
 
 ## Step 2: Install the policy in Enforced or Audit mode
 
-After the `SOA-Policies` container is in place, install the Cloud Sync provisioning agent and run the PowerShell script that configures the policy mode.
+After the `SOA-Policies` container is in place, install the Cloud Sync provisioning agent and run the PowerShell script that configures the policy mode:
 
 1. Install the Microsoft Entra Cloud Sync provisioning agent. For installation instructions, see [Install the Microsoft Entra Cloud Sync provisioning agent](how-to-install.md).
 1. Download the [`Set-CloudSyncSOAPolicy.ps1`](https://github.com/AzureAD/EntraIDGovernance/blob/main/Set-CloudSyncSOAPolicy.ps1) PowerShell script from the AzureAD/EntraIDGovernance repo on GitHub.
@@ -100,15 +101,15 @@ After the `SOA-Policies` container is in place, install the Cloud Sync provision
 1. Run the script. When prompted, specify `Enforced` as the mode (use `Audit` for a "what-if" rollout):
 
     ```powershell
-    .\Set-CloudSyncSOAPolicy.ps1 -EnforcementMode Enforced -Credential (Get-Credential -Message "Enter Domain Admin credentials (format: DOMAIN\Username)")
-    ```
+   .\Set-CloudSyncSOAPolicy.ps1 -EnforcementMode Enforced -Credential (Get-Credential -Message "Enter Domain Admin credentials (format: DOMAIN\Username)")
+   ```
 1. Confirm that the policy is configured with the keyword **Enforced** (or **Audit**).
 
 ## Step 3: Mark a group for enforcement
 
 Mark a group for enforcement by setting the `msDS-ObjectSoa` attribute to `Cloud` through the Cloud Sync attribute mapping.
 
-1. In your Cloud Sync group provisioning to AD configuration, edit the attribute mappings.
+1. In your group provisioing to AD configuration, edit the attribute mappings.
 1. Add `msDS-ObjectSoa` as a target attribute with the value `Cloud`. Choose one of the following:
     - **Constant mapping** (recommended for most customers): sets the property for all groups in scope of the provisioning job.
     - **Expression mapping**: limits the groups for which the property is set, based on conditional logic.
@@ -126,7 +127,7 @@ Use ADSI Edit on a domain controller to confirm that the policy is applied to th
 1. Navigate to the group, then open **Properties**.
 1. Confirm that the `msDS-ObjectSoa` property is set on the group.
 
-    [![Screenshot of an Active Directory group's Attribute Editor tab in ADSI Edit, showing the msDS-ObjectSoa attribute set.](media/how-to-ad-group-enforcement/verify-msds-objectsoa-attribute.png)](media/how-to-ad-group-enforcement/verify-msds-objectsoa-attribute.png#lightbox)
+:::image type="content" source="media/how-to-ad-group-enforcement/verify-msds-objectsoa-attribute.png" alt-text="Screenshot of an Active Directory group's Attribute Editor tab in ADSI Edit, showing the msDS-ObjectSoa attribute set." lightbox="media/how-to-ad-group-enforcement/verify-msds-objectsoa-attribute.png":::
 
 ## What administrators see when a change is blocked
 
