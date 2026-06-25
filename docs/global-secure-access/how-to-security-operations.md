@@ -1144,6 +1144,7 @@ AuditLogs
 - [Microsoft Entra Security Operations Guide](https://aka.ms/AzureADSecOps)
 - [Enhance threat detection with Global Secure Access in Microsoft Sentinel](/entra/global-secure-access/how-to-sentinel-integration)
 - [Common operations for Microsoft Entra Global Secure Access](how-to-operations-common.md)
+- [Global Secure Access PowerShell samples](powershell-samples.md)
 
 ## Next steps
 
