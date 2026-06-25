@@ -17,7 +17,7 @@ Learn how to recover objects to a previously known-good state by using Microsoft
 Key details:
 
 - A recovery ID identifies the recovery job.
-- Backups are created automatically once per day and retained for up to five days. Only backups within this retention window are available for recovery and for generating difference reports.
+- Backups are created automatically once per day. Only retained backups are available for recovery and for generating difference reports.
 - Only one recovery runs at a time. If another job (recovery job or difference report) is already running, you must wait for it to complete or cancel it before starting a new one.
 - **Recovery History** retains recovery details for 5 days after recovery completion date.
 - Audit logs record all recovery actions.

@@ -52,7 +52,7 @@ You set the scope when you create the report. You can't change it afterward.
 
    :::image type="content" source="media/create-review-difference-reports/create-difference-report-backups-page.png#lightbox" alt-text="Screenshot of the Backups page showing available backups with a Create difference report button in the toolbar.":::
 
-   Backups are created automatically once per day and retained for up to five days. Only backups within this retention window appear for selection. The report compares the selected backup with the current tenant state.
+   Backups are created automatically once per day. Only retained backups appear for selection. The report compares the selected backup with the current tenant state.
 
 1. (Optional) Apply filters to limit the scope of objects included in the report. Choose one of these options:
 

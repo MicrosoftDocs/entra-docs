@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 This article describes how to restore application secrets after accidental or malicious changes, using Microsoft Entra Backup and Recovery.
 
-Backups are created automatically once per day and retained for up to five days. Restore points for applications and service principals are limited to backups within this retention window.
+Backups are created automatically once per day. Restore points for applications and service principals are limited to retained backups.
 
 ## Prerequisites
 

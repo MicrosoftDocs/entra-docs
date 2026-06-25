@@ -17,7 +17,7 @@ Microsoft Entra Backup and Recovery supports recovery for a defined set of tenan
 > [!NOTE]
 > The set of supported objects and properties expands over time. Recovery applies only to supported properties listed in this article and doesn't imply full object rollback.
 
-Backups are created automatically once per day and retained for up to five days. Difference reports compare a selected backup with the current tenant state and show changes to supported properties and links.
+Backups are created automatically once per day. Difference reports compare a selected backup with the current tenant state and show changes to supported properties and links.
 
 ## Recovery scope levels
 

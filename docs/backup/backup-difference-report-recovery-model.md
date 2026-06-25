@@ -26,7 +26,7 @@ Microsoft Entra Backup and Recovery automatically backs up supported tenant obje
 
 For a full list of supported attributes, see [Supported objects and attributes](scope-supported-objects-limitations.md).
 
-Backups are created automatically once per day and retained for up to five days. Select from these retained backups when you create a difference report or start recovery.
+Backups are created automatically once per day. Select from retained backups when you create a difference report or start recovery.
 
 ## Difference reports
 
