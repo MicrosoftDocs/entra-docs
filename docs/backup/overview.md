@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 > [!IMPORTANT]
 > Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-Microsoft Entra Backup and Recovery is a built-in backup and recovery solution that lets you recover critical Microsoft Entra directory objects to a previously known good state after accidental changes or security compromises. Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authentication method policy, and partial authorization policy. The solution also supports Agent ID because it consists of user and service principal objects with distinct types and characteristics.
+Microsoft Entra Backup and Recovery is a built-in backup and recovery solution that lets you recover critical Microsoft Entra directory objects to a previously known good state after accidental changes or security compromises. Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authentication method policy, and selected authorization policy settings. The solution also supports Agent ID because it consists of user and service principal objects with distinct types and characteristics.
 
 ## How backups work
 
@@ -25,8 +25,8 @@ Microsoft creates backups automatically and makes them available to administrato
 Microsoft Entra Backup and Recovery lets you:
 
 - **View available backups**: See a list of backups available in your Microsoft Entra tenant.
-- **Create difference reports**: Before recovering objects to a previous state, compare the current state of your tenant with a backup by creating a difference report.
-- **Recover objects**: Choose to recover all objects or select objects by object type or object ID.
+- **Create difference reports**: Before recovering objects to a previous state, compare the current state of your tenant with a backup and review changed attributes and links.
+- **Recover objects**: Recover all supported objects, selected object types, or specific object IDs.
 - **Review recovery history**: View completed and in-progress recovery operations for your tenant.
 
 > [!TIP]
@@ -54,6 +54,8 @@ To use Microsoft Entra Backup and Recovery, your tenant must meet these requirem
 ## Hybrid identity and broader recoverability
 
 Organizations that use hybrid identity with Microsoft Entra ID can create difference reports to identify changes to objects synchronized from Active Directory Domain Services (AD DS). For certain object types, such as groups, you can move the source of authority from AD DS to the cloud. This makes all Microsoft Entra Backup and Recovery functionality available for those converted objects. Use an alternative solution to back up and recover objects managed in AD DS.
+
+Soft-deleted supported objects can be restored for 30 days through [soft-delete recovery processes](/entra/architecture/recover-from-deletions). Backup and Recovery restores supported object and configuration state from retained backups and complements those processes.
 
 Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation of hard-deleted objects.
 

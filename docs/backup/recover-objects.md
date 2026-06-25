@@ -17,13 +17,14 @@ Learn how to recover objects to a previously known-good state by using Microsoft
 Key details:
 
 - A recovery ID identifies the recovery job.
+- Backups are created automatically once per day and retained for up to five days. Only backups within this retention window are available for recovery and for generating difference reports.
 - Only one recovery runs at a time. If another job (recovery job or difference report) is already running, you must wait for it to complete or cancel it before starting a new one.
 - **Recovery History** retains recovery details for 5 days after recovery completion date.
 - Audit logs record all recovery actions.
 
 ## Prerequisites
 
-To recover objects, you need the **Microsoft Entra Backup Administrator** role.
+The tenant must have **Microsoft Entra ID P1 or P2** licenses. To recover objects, you need the **Microsoft Entra Backup Administrator** role.
 
 ## Recover from a difference report
 
@@ -34,6 +35,8 @@ Use this method when you already created a difference report and reviewed the ch
 1. Go to **Backup and recovery** > **Difference reports**. Select a completed difference report.
 
    :::image type="content" source="media/recover-objects/difference-reports-select.png#lightbox" alt-text="Screenshot of the Difference Reports page showing three completed reports with available backups.":::
+
+   Difference reports compare the selected backup with the current tenant state and show changed attributes and links.
 
 1. After inspecting the objects listed in the difference report, select **Recover** to start recovery.
 
@@ -49,7 +52,7 @@ Use this method when you already created a difference report and reviewed the ch
 
 ## Recover directly from a backup
 
-Creating a difference report lets you preview changes before recovery. To skip this step, recover directly from a backup.
+Creating a difference report lets you preview changes before recovery. To skip this step, recover directly from a backup. Only backups from the last five days are listed on the **Backups** page.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Microsoft Entra Backup Administrator**.
 
@@ -87,6 +90,7 @@ Cancel a recovery job while it's running. Any recovery actions completed before 
    :::image type="content" source="media/recover-objects/cancel-recovery-job.png#lightbox" alt-text="Screenshot of the Recovery History page showing completed and in-progress recovery jobs, with the Cancel button visible in the toolbar.":::
 
 > [!NOTE]
+> - Soft-deleted supported objects can be restored for 30 days through [soft-delete recovery processes](/entra/architecture/recover-from-deletions). Backup and Recovery restores supported backup state from retained backups.
 > - Hard-deleted objects can't be recovered. Use Protected Actions to prevent unwanted hard deletions in your tenant.
 
 ## Related content

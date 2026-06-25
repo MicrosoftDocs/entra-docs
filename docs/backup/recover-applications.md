@@ -4,6 +4,7 @@ description: Learn how to recover application secrets and credentials after acci
 ms.date: 03/09/2026
 ms.service: entra-id
 ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
 # Recover application secrets using Microsoft Entra Backup and Recovery (Preview)
@@ -12,6 +13,12 @@ ms.topic: how-to
 > Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 This article describes how to restore application secrets after accidental or malicious changes, using Microsoft Entra Backup and Recovery.
+
+Backups are created automatically once per day and retained for up to five days. Restore points for applications and service principals are limited to backups within this retention window.
+
+## Prerequisites
+
+To recover application objects and service principals, the tenant must have **Microsoft Entra ID P1 or P2** licenses, and you need the **Microsoft Entra Backup Administrator** role.
 
 ## Prepare for recovery
 
@@ -33,6 +40,7 @@ The first step is to determine if the changes made to applications were accident
 
 After you determine the cause of the changes, validate whether the secrets for applications were impacted. Find changes to application secrets in the audit log. Look for events that indicate the application secret was changed or updated.
 
+Use a difference report to compare the selected backup with the current tenant state for the affected application and service principals before recovery. Difference reports help you identify changed attributes and links before you choose what to restore.
 
 The nature of the change and whether secrets were impacted determine the best path for recovery for your applications. Anytime an application, service principal, or user is recovered from soft-delete, the secret is recovered to the state it was in when the delete action occurred.
 
@@ -40,7 +48,7 @@ The nature of the change and whether secrets were impacted determine the best pa
 
 This includes scenarios where the application was edited or soft-deleted, but the secrets on the application weren't edited.
 
-Using Backup and Recovery, recover the application and service principals to a point in time before the changes occurred. At this point the application should be able to function using the existing secret. If you deleted the application, the recovery restores secrets to their state at the time of deletion.
+Using Backup and Recovery, recover only the affected application and service principals to a point in time before the changes occurred. At this point the application should be able to function using the existing secret. If you deleted the application, the recovery restores secrets to their state at the time of deletion.
 
 If your team uses Azure Key Vault, validate your secrets are functioning correctly using these steps:
 
@@ -64,7 +72,7 @@ If your team uses Azure Key Vault, validate your secrets are functioning correct
 
 ## Recover accidental changes when secrets were altered or deleted
 
-Using Backup and Recovery, recover the applications and service principals to a point in time before the changes occurred.
+Using Backup and Recovery, recover only the affected applications and service principals to a point in time before the changes occurred.
 
 If your team uses Azure Key Vault, you need to roll the secret for your application. Follow the steps in [Recover applications due to a malicious change](#recover-applications-due-to-a-malicious-change) to roll the secret.
 
@@ -134,7 +142,7 @@ For other solutions, you either need to generate and apply a new secret to your 
 
 ### Application and service principal properties not supported by Backup and Recovery
 
-Using Backup and Recovery, recover the applications and service principals to a point in time before the malicious activity occurred. This capability supports recovery of a limited set of properties: *displayName*, *description*, *notes*, *applicationTag*, *appIdentifierUri*, *publicClient*, *publisherDomain*, *isDeviceOnlyAuthSupported*, and *serviceManagementReference*. Additional properties will be supported in the upcoming preview.
+Backup and Recovery supports the [application properties](scope-supported-objects-limitations.md#application) and [service principal properties](scope-supported-objects-limitations.md#service-principal) listed in Supported objects and recoverable properties. Any application setting that isn't listed as supported might need to be saved and manually reapplied.
 
 Review key application settings such as redirect URIs, supported account types, assigned permissions or roles, and exposed API properties to ensure your application functions as expected after recovery:
 

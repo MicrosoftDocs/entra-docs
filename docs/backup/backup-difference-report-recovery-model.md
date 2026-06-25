@@ -26,9 +26,11 @@ Microsoft Entra Backup and Recovery automatically backs up supported tenant obje
 
 For a full list of supported attributes, see [Supported objects and attributes](scope-supported-objects-limitations.md).
 
+Backups are created automatically once per day and retained for up to five days. Select from these retained backups when you create a difference report or start recovery.
+
 ## Difference reports
 
-Create a difference report to compare the current state of your tenant with a backup. Only changed objects appear in the report. Apply filters to view changes for a specific object type or a specific object. If you don't apply a filter, all changed objects are included in the difference report.
+Create a difference report to compare the current state of your tenant with a selected backup. Only changed objects appear in the report, with changed attributes and links shown for review. Apply filters to view changes for a specific object type or a specific object. If you don't apply a filter, all changed objects are included in the difference report.
 
 Changes for users and groups synchronized from on-premises Active Directory appear in the difference report to help you track changed objects. However, you can't recover on-premises synced objects through Backup and Recovery, because the source of authority for these objects is on-premises Active Directory.
 
@@ -54,7 +56,7 @@ Difference calculation depends on the changes that have happened between the bac
 
 When you recover your tenant, apply filters to control which objects to recover:
 
-- **By object type**: Recover only objects of a certain type, such as users, groups, or applications.
+- **By object type**: Recover only objects of a certain type, such as users, groups, applications, service principals, or Conditional Access policies.
 - **By object ID**: Supply the object type and object ID to recover a specific object.
 - **All changes**: Recover all changed objects to the state captured in the selected backup.
 
@@ -81,6 +83,8 @@ Backup and Recovery doesn't create new objects or hard-delete objects from your 
 
 > [!WARNING]
 > Hard-deleted objects can't be recovered. Configure [protected actions](/entra/identity/role-based-access-control/protected-actions-overview) to prevent unwanted hard deletions.
+
+For supported objects that are soft-deleted, you can also use [soft-delete recovery processes](/entra/architecture/recover-from-deletions) within the 30-day soft-delete window.
 
 On-premises synchronized objects can't be recovered through Backup and Recovery, because the source of authority is on-premises Active Directory. Recover these objects in on-premises Active Directory instead. Changes to synced objects still appear in difference reports.
 

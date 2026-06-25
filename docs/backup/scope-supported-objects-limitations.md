@@ -17,6 +17,12 @@ Microsoft Entra Backup and Recovery supports recovery for a defined set of tenan
 > [!NOTE]
 > The set of supported objects and properties expands over time. Recovery applies only to supported properties listed in this article and doesn't imply full object rollback.
 
+Backups are created automatically once per day and retained for up to five days. Difference reports compare a selected backup with the current tenant state and show changes to supported properties and links.
+
+## Recovery scope levels
+
+When you create a difference report or start recovery, you can scope the operation to all supported objects, selected object types, or specific object IDs. Some related objects are grouped for scoping. For example, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
+
 ## User
 
 Recovery for user objects supports these properties:
@@ -235,6 +241,8 @@ After data loading completes, the operation moves into processing. For differenc
 ### Hard-deleted objects
 
 Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation of hard-deleted objects. Only soft-deleted or modified objects can be restored.
+
+Soft-deleted supported objects can be restored for 30 days through [soft-delete recovery processes](/entra/architecture/recover-from-deletions). Backup and Recovery focuses on restoring supported backup state from retained backups and doesn't replace those recovery processes.
 
 ### Objects managed in on-premises Active Directory Domain Services
 
