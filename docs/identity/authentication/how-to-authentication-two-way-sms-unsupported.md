@@ -3,7 +3,6 @@ title: Two-way SMS no longer supported
 description: Explains how to enable another method for users who still use two-way SMS. 
 ms.topic: how-to
 ms.date: 03/04/2025
-author: rhicock
 ms.reviewer: dawoo
 ---
 # Two-way SMS unsupported

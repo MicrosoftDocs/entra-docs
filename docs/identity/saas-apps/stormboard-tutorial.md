@@ -2,11 +2,10 @@
 title: Configure Stormboard for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Stormboard.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Stormboard so that I can control who has access to Stormboard, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Stormboard for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Stormboard with Microsoft Entra ID. When you integrate Stormboard with Microsoft Entra ID, you can:

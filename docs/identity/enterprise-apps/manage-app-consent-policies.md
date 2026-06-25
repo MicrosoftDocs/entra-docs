@@ -17,6 +17,9 @@ App consent policies are a way to manage the permissions that apps have to acces
 
 In this article, you learn how to manage built-in and custom app consent policies to control when consent can be granted. App consent policies can be assigned to specific users or groups using custom roles, or you can set a default app consent policy for end-users in your organization.
 
+> [!NOTE]
+> There are other ways to give a user or service principal the ability to grant consent besides using app consent policies.  Don't use the list of principals assigned roles with consent policies attached as an exhaustive list of what can grant consent in your organization.
+
 
 ## App consent policy segments
 An app consent policy consists of one or more "include" condition sets and zero or more "exclude" condition sets. For an event to be considered in an app consent policy, it must match *at least* one "include" condition set, and must not match *any* "exclude" condition set. The exclusion and inclusions are used to determine whether the actor affected by the given policy can grant consent or not.
@@ -56,11 +59,11 @@ Every tenant comes with a set of app consent policies that are the same across a
 
 ### Microsoft recommended user consent policy
 The setting labeled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT:
-- For Microsoft Graph: `Files.Read.All`, `Files.ReadWrite.All`, `Sites.Read.All`, `Sites.ReadWrite.All`, `Mail.Read`, `Mail.ReadWrite`, `Mail.ReadBasic`, `Mail.Read.Shared`, `Mail.ReadBasic.Shared`, `Mail.ReadWrite.Shared`, `MailboxItem.Read`, `Calendars.Read`, `Calendars.ReadBasic`, `Calendars.ReadWrite`, `Calendars.Read.Shared`,  `Calendars.ReadWrite.Shared`, `Chat.Read`, `Chat.ReadWrite`, `OnlineMeetings.Read`, `OnlineMeetings.ReadWrite`, `MailBoxFolder.Read`, `MailBoxFolder.ReadWrite`, `MailBoxSettings.Read`, `MailBoxSettings.ReadWrite`, `EAS.AccessAsUser.All`, `EWS.AccessAsUser.All`, `IMAP.AccessAsUser.All`, `POP.AccessAsUser.All`.
+- For Microsoft Graph: `Files.Read.All`, `Files.ReadWrite.All`, `Sites.Read.All`, `Sites.ReadWrite.All`, `Mail.Read`, `Mail.ReadWrite`, `Mail.ReadBasic`, `Mail.Read.Shared`, `Mail.ReadBasic.Shared`, `Mail.ReadWrite.Shared`, `MailboxItem.Read`, `Calendars.Read`, `Calendars.ReadBasic`, `Calendars.ReadWrite`, `Calendars.Read.Shared`,  `Calendars.ReadWrite.Shared`, `Chat.Read`, `Chat.ReadWrite`, `OnlineMeetings.Read`, `OnlineMeetings.ReadWrite`, `MailBoxFolder.Read`, `MailBoxFolder.ReadWrite`, `MailBoxSettings.Read`, `MailBoxSettings.ReadWrite`, `Contacts.ReadWrite`, `Contacts.Read.Shared`, `Contacts.ReadWrite.Shared`, `Tasks.Read`, `Tasks.Read.Shared`, `Tasks.ReadWrite`, `Tasks.ReadWrite.Shared`, `People.Read`.
 - For Office 365 Exchange Online: `EAS.AccessAsUser.All`, `EWS.AccessAsUser.All`, `IMAP.AccessAsUser.All`, `POP.AccessAsUser.All`.
 
 ### Mail client policy
-An additional policy is enabled by default is the **microsoft-user-allow-default-consent-apps** policy. This policy allows end-users in your organization to consent for popular mail applications for mail permissions. When this policy is enabled, end users will be able to consent for specific delegated mail permissions (Microsoft Graph and Office 365 Exchange Online permissions: EAS.AccessAsUser.All, EWS.AccessAsUser.All, IMAP.AccessAsUser.All, POP.AccessAsUser.All) for the following applications:
+An additional policy enabled by default is the **microsoft-user-allow-default-consent-apps** policy. This policy allows end-users in your organization to consent for popular mail applications for mail permissions. When this policy is enabled, end users are able to consent for specific delegated mail permissions (All Microsoft Graph and Office 365 Exchange Online permissions listed above) for the following applications:
 - Apple Mail (application ID: f8d98a96-0999-43f5-8af3-69971c7bb423)
 - Spark Email (application ID:b50c1dbd-1855-4e54-b07c-d3c3029e93d3)
 - eM Client (application ID:e9a7fea1-1cc0-4cd9-a31b-9137ca5deedd)
@@ -72,9 +75,11 @@ An additional policy is enabled by default is the **microsoft-user-allow-default
 >The Mail client policy (microsoft-user-allow-default-consent-apps) allows end users to consent only to a limited set of delegated mail-related permissions for specific mail client applications.
 Therefore, even when this policy is enabled, administrator consent may still be required if an application requests permissions that are outside the scope of the Mail client policy.
 
-## Multiple policies
+## Multiple policies or authorization mechanisms to grant consent
 
 A user can have more than one policy that allows them to give consent. Each policy is evaluated separately (as in, an exclusion from one policy does not affect inclusions of another policy) and the user only needs one policy to approve to be allowed to consent for a specific event. For example, an application admin can consent to everything a regular user can (thanks to the default policy applied to all users), and they also have broader permissions through the microsoft-application-admin policy, which lets them approve requests for any API permission—except Microsoft Graph app roles.
+
+Similarly, a user or service principal can be given the ability to grant consent through means other than an app consent policy.  For example: a user that is assigned as 'owner' to a service principal can grant consent for the app roles that service principal exposes, even if that user hasn't been assigned any roles with consent policies attached; an application assigned the `Application.ReadWrite.All` application permission can grant consent for any app role (except those exposed by Microsoft Graph).  The user or service principal only needs one authorization mechanism to approve to be allowed to grant consent for a specific event.
 
 ## Prerequisites
 

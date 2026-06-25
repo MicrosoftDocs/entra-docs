@@ -85,7 +85,7 @@ If your organization shows the following MDM enrollment option, select **No**. S
    :::image type="content" source="media/policy-all-users-windows-app-protection/mdm-enrollment.png" alt-text="Screenshot showing the MDM enrollment window.":::
 
 > [!TIP]
-> Now in public preview, a new property to [disable the device management UX screen](/intune/intune-service/enrollment/windows-enroll) during this flow can be applied that will not display the option to MDM enroll to end users. This can reduce accidental MDM enrollments that block MAM enrollments.
+> Now in preview, a new property to [disable the device management UX screen](/intune/intune-service/enrollment/windows-enroll) during this flow can be applied that will not display the option to MDM enroll to end users. This can reduce accidental MDM enrollments that block MAM enrollments.
 
 ## Troubleshooting
 
@@ -104,9 +104,9 @@ To resolve these possible scenarios:
 
 ### Existing account
 
-There's a known issue where there's a pre-existing, unregistered account, like `user@contoso.com` in Microsoft Edge, or if a user signs in without registering using the Heads Up Page, then the account isn't properly enrolled in MAM. This configuration blocks the user from being properly enrolled in MAM.
+There's a known issue where there's a preexisting, unregistered account, like `user@contoso.com` in Microsoft Edge, or if a user signs in without registering using the Heads Up Page, then the account isn't properly enrolled in MAM. This configuration blocks the user from being properly enrolled in MAM.
 
-## Next steps
+## Related content
 
 - [What is Microsoft Intune app management?](/mem/intune/apps/app-management)
 - [App protection policies overview](/mem/intune/apps/app-protection-policy)

@@ -2,7 +2,6 @@
 title: Configure Atmos for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Atmos.
 
-author: jeevansd
 manager: pmwongera
 
 ms.service: entra-id
@@ -10,10 +9,9 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 02/26/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Atmos so that I can streamline the user management process and ensure that users have the appropriate access to Atmos.
----
+--- 
 
 # Configure Atmos for automatic user provisioning with Microsoft Entra ID
 
@@ -26,6 +24,7 @@ This article describes the steps you need to do in both Atmos and Microsoft Entr
 > * Remove users in Atmos when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Atmos.
 > * Provision groups and group memberships in Atmos.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

@@ -5,7 +5,6 @@ description: Remove support for TLS 1.0 and 1.1 for the Microsoft Entra Device R
 
 ms.topic: reference
 ms.date: 06/27/2025
-
 ms.reviewer: spunukol
 
 ---

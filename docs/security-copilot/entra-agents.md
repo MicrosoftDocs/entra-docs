@@ -2,8 +2,6 @@
 title: Microsoft Entra Agents
 description: Learn about Microsoft Entra agents, AI-powered automation tools that enhance identity and access management operations.
 keywords:
-author: shlipsey3
-ms.author: sarahlipsey
 ms.date: 01/21/2026
 ms.update-cycle: 180-days
 ms.topic: overview
@@ -35,7 +33,7 @@ Administrators can configure the agent to run automatically or trigger the agent
 
 Because each of the agents perform a specific set of tasks, they need a specific set of configurations to operate within the boundaries of that task. The administrator also needs certain Microsoft Entra roles to set up and manage the agent.
 
-- **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-are-agent-identities).
+- **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/what-are-agent-identities).
 - **Roles**: Specific Microsoft Entra built-in roles are needed to turn on, view, and interact with the agent. Not all roles can perform the same tasks with an agent.
 - **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks. These permissions can't be changed or removed.
 - **Role-based access**: The administrator needs specific roles to set up, manage, and use the agent.
@@ -83,7 +81,7 @@ For more information, see [Discover and deploy agents and solutions in Microsoft
 ### Prerequisites
 
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-    - In order to purchase security compute units, you need to have an Azure subscription. [Create your free Azure account](https://azure.microsoft.com/free).
+    - In order to purchase security compute units, you need to have an Azure subscription. [Create your free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Setup process

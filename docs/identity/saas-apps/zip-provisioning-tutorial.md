@@ -1,14 +1,12 @@
 ---
 title: Configure Zip for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zip.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/25/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zip so that I can streamline the user management process and ensure that users have the appropriate access to Zip.
----
+--- 
 
 # Configure Zip for automatic user provisioning with Microsoft Entra ID
 
@@ -22,6 +20,7 @@ This article describes the steps you need to perform in both Zip and Microsoft E
 > * Keep user attributes synchronized between Microsoft Entra ID and Zip
 > * Provision groups and group memberships in Zip
 > * [Single sign-on](zip-tutorial.md) to Zip (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

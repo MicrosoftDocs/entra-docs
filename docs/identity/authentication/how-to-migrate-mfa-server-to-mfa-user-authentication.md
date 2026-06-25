@@ -3,9 +3,7 @@ title: Migrate to Microsoft Entra multifactor authentication and Microsoft Entra
 description: Guidance to move from MFA Server on-premises to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: gasinh
-author: gargi-sinha
-ms.reviewer: michmcla
+ms.reviewer: michmcla, gasinh
 ---
 # Migrate to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 
@@ -132,8 +130,6 @@ To find the group SID, run the following command and replace `GroupName` with yo
 ```powershell
 Get-ADGroup GroupName
 ```
-
-![Microsoft Graph PowerShell command to get the group SID.](media/how-to-migrate-mfa-server-to-mfa-user-authentication/find-the-sid.png)
 
 <a name='setting-the-claims-rules-to-call-azure-ad-mfa'></a>
 

@@ -1,14 +1,15 @@
 ---
 title: Include file
 description: Include file for bulk operations CSV template note
-author: barclayn
+author: kenwith
 manager: pmwongera
 ms.service: entra-id
 ms.topic: include
-ms.date: 12/05/2025
-ms.author: barclayn
+ms.date: 06/18/2026
+ms.author: kenwith
+ai-usage: ai-assisted
 ms.custom: include file
 ---
 
 > [!NOTE]
-> CSV template formats vary by operation. Some templates (like bulk create or delete users) include a `version:v1.0` row as the first row, while others (like group member operations) start directly with the column headers. Always use the template downloaded directly from the portal for your specific operation, and don't modify the first row(s).
+> CSV template formats vary by operation. Some templates, such as bulk create or delete users, include `version:v1.0` as the first row. Other templates, such as group member operations, start with column headers. Download the template for your specific operation from the portal. Don't add a version row or any other row that isn't in the downloaded template. Keep any version row and column header row unchanged.

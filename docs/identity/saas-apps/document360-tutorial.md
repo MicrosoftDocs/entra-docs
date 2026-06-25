@@ -1,12 +1,11 @@
 ---
 title: Configure Document360 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and Document360.
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Document360 so that I can control who has access to Document360, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Document360 for Single sign-on with Microsoft Entra ID
 

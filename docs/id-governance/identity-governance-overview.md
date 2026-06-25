@@ -3,8 +3,9 @@ title: Microsoft Entra ID Governance
 description: Microsoft Entra ID Governance enables you to balance your organization's need for security and end user productivity with the right processes and visibility.
 editor: markwahl-msft
 ms.topic: overview
-ms.date: 04/09/2025
+ms.date: 05/08/2026
 ms.reviewer: markwahl-msft
+#Customer Intent: As an IT admin, I want to understand Microsoft Entra ID Governance so that I can balance security and end user productivity with the right processes and visibility.
 ---
 
 # What is Microsoft Entra ID Governance?
@@ -110,10 +111,17 @@ Once you've started using these identity governance features, you can easily aut
 | Removing guest accounts that have no access package assignments |[Manage the lifecycle of external users](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users) |
 | Provisioning users into on-premises and cloud applications that have their own directories or databases | [Configure automatic user provisioning](../identity/app-provisioning/user-provisioning.md) with user assignments or [scoping filters](../identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) |
 | Other scheduled tasks | [Automate identity governance tasks with Azure Automation](identity-governance-automation.md) and Microsoft Graph via the [Microsoft.Graph.Identity.Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) PowerShell module|
+|Discover orphan or local accounts in your applications|[Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) users in your applications.|
 
 ## Identity governance for agents (preview)
 
-With the addition of the Microsoft agent identity platform, managing agent's identity and access in the same way as people is just as important in the governance lifecycle of your organization. For more information, see [governing agent identities (preview)](agent-id-governance-overview.md).
+With the addition of the Microsoft agent identity platform, managing an agent's identity and access in the same way as people is just as important in the governance lifecycle of your organization. Microsoft Entra Agent ID introduces [agent identities](../agent-id/what-is-microsoft-entra-agent-id.md) — purpose-built identity constructs for AI agents — with governance controls that address the unique challenges of autonomous and semi-autonomous agents operating at enterprise scale.
+
+Every agent identity requires a human [sponsor](../agent-id/agent-owners-sponsors-managers.md) accountable for the agent's purpose, lifecycle decisions, and access reviews. If a sponsor leaves the organization, sponsorship automatically transfers to their manager, ensuring continuous human oversight. [Agent identity blueprints](../agent-id/identity-platform/agent-blueprint.md) serve as centralized templates that enable organizations to apply Conditional Access rules, permissions, and governance controls once and have all current and future agent instances inherit them automatically. This blueprint model allows administrators to govern, disable, or revoke permissions for an entire class of agents in a single operation.
+
+Agent identities are governed through the same [entitlement management](entitlement-management-overview.md) access packages available for human identities, providing time-bound, auditable access with approval workflows. Sponsors receive expiration notifications and can request extensions or let access expire. [Lifecycle Workflows](agent-sponsor-tasks.md) automate sponsor transition notifications when sponsorship changes occur. All agent identities are discoverable, searchable, and queryable through the Microsoft Entra admin center and Microsoft Graph, giving organizations centralized visibility to prevent agent sprawl and shadow AI.
+
+For more information, see [Governing agent identities (preview)](agent-id-governance-overview.md).
 
 ## Next steps
 

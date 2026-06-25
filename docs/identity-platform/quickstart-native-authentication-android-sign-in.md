@@ -2,10 +2,8 @@
 title: Sign in users in Android mobile app by using native authentication.
 description: Learn how to configure a sample Android (Kotlin) sample app to sign in customer users by using Microsoft Entra's native authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: how-to

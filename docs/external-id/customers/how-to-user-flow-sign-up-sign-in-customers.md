@@ -13,7 +13,7 @@ ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!TIP]
-> This article applies to user flows in external tenants. For information about workforce tenants, see [Add a self-service sign-up user flow to an app](../self-service-sign-up-user-flow.yml).
+> User flows are created in the Microsoft Entra admin center the same way for both authentication approaches. The instructions in this article apply whether your app uses **browser-delegated authentication** (Microsoft-hosted sign-in pages) or **native authentication** (sign-in UI built into your app). How your app integrates with the user flow at runtime differs by approach. To learn more, see [Choose an authentication approach](concept-choose-authentication-approach.md).
 
 You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md)) or a custom [OIDC federation](how-to-custom-oidc-federation-customers.md). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
 
@@ -68,6 +68,19 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 1. Select **OK**.
 
 1. Select **Create** to create the user flow.
+
+## Control the 'Stay signed in?' prompt
+
+By default, after a customer signs in to an app that uses your user flow, they see a **Stay signed in?** prompt asking whether to stay signed in across browser sessions. If the user selects **Yes**, a persistent authentication cookie is issued and they remain signed in across browser sessions. If they select **No**, a non-persistent cookie is issued.
+
+This prompt is the default behavior for every user flow. Applying custom branding to the user flow or requiring multifactor authentication doesn't change whether the prompt appears. It's shown in all cases unless you override it with a Conditional Access policy.
+
+The prompt isn't a user flow setting. To change or suppress it, configure the **Persistent browser session** session control in a Conditional Access policy that targets your customers and apps:
+
+- **Always persistent**: The browser session is always persisted. The **Stay signed in?** prompt isn't shown.
+- **Never persistent**: The browser session ends when the browser is closed. The **Stay signed in?** prompt isn't shown.
+
+For details about the session control and how to apply it, see [Conditional Access: Session - Persistent browser session](~/identity/conditional-access/concept-conditional-access-session.md#persistent-browser-session) and [Configure authentication session management](~/identity/conditional-access/concept-session-lifetime.md#persistence-of-browsing-sessions).
 
 ## Next steps
 

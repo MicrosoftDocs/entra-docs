@@ -179,6 +179,8 @@ items:
     items:
     - name: Microsoft Entra deployment plans
       href: deployment-plans.md
+    - name: Identity architecture in Azure (Architecture Center)
+      href: /azure/architecture/identity/identity-start-here
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
     - name: Microsoft Entra External ID deployment architectures
@@ -287,6 +289,8 @@ items:
         href: security-operations-devices.md
       - name: Security operations for Infrastructure
         href: security-operations-infrastructure.md
+      - name: Security operations for network access
+        href: ~/global-secure-access/how-to-security-operations.md?toc=/entra/architecture/toc.json&bc=/entra/architecture/breadcrumb.toc.json
     - name: Protect Microsoft 365 from on-premises attacks 
       href: protect-m365-from-on-premises-attacks.md
     - name: Secure external collaboration

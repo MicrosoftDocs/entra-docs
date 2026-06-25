@@ -2,8 +2,9 @@
 title: Bulk operations in Microsoft Entra ID (Preview)
 description: Learn about the new Microsoft Entra bulk operations experience for managing users, groups, and devices.
 ms.topic: article
-ms.date: 02/24/2026
+ms.date: 06/18/2026
 ms.custom: it-pro
+#Customer Intent: As an IT admin, I want to understand bulk operations in Microsoft Entra ID so that I can perform large-scale user management tasks efficiently.
 ---
 
 # Bulk operations in Microsoft Entra ID (Preview)
@@ -64,9 +65,9 @@ To download all members of a specific group:
 
     :::image type="content" source="Media/bulk-operations/group-members-tab.png" alt-text="Screenshot of a selected group’s Members tab listing users and service principals.":::
 
-3. Select **Bulk operations** > **Download members**.
+3. On the **Members** page command bar, select **Download members**.
 
-    :::image type="content" source="Media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
+    If you see a **Bulk operations** menu instead, select **Bulk operations** > **Download members**.
 
 4. Enter a filename and select **Start bulk operation**.
 
@@ -242,5 +243,5 @@ To download all active role assignments across all roles, including built-in and
 ## Related content
 
 - [Bulk operations service limitations](bulk-operations-service-limitations.md)
-- [Add or remove group members using Microsoft Entra ID](how-to-manage-groups.yml)
+- [Add or remove group members using Microsoft Entra ID](how-to-manage-groups.md)
 - [Bulk create users in Microsoft Entra ID](../identity/users/users-bulk-add.md)

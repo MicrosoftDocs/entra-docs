@@ -2,10 +2,7 @@
 title: Microsoft Entra security for AI overview
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how Microsoft Entra provides identity-based security controls for AI agents, applications, and services through authentication, governance, and Zero Trust policy enforcement.
-author: omondiatieno
-ms.author: jomondi
-ms.date: 03/04/2026
-ms.service: entra-id
+ms.date: 05/08/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 
@@ -24,11 +21,7 @@ This article explains why AI systems need identity-based security, introduces th
 
 Organizations are deploying AI agents for increasingly diverse tasks, and each deployment model presents distinct security challenges:
 
-- **Assistive agents** perform specific tasks on demand, such as analyzing customer data for sales recommendations or answering support questions with escalation to human representatives.
-
-- **Autonomous agents** operate independently, making decisions and taking actions without human intervention, such as monitoring network logs for security operations or managing infrastructure deployments with autoscaling.
-
-- **An agent's user account** functions with human user characteristics, including persistent identities and access to organizational systems. An agent's user account might join teams, access documents, participate in meetings, and require mailbox and calendar access.
+[!INCLUDE [agent-type-definitions](includes/agent-type-definitions.md)]
 
 ### Security challenges
 
@@ -110,6 +103,8 @@ As organizations deploy more AI agents, identity governance becomes critical to 
 - Govern agent identities at scale, from deployment to expiration.
 - Ensure sponsors and owners are assigned and maintained for each agent identity, preventing orphaned agent identities.
 - Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
+- Apply Conditional Access rules, permissions, and governance controls at the [blueprint level](identity-platform/agent-blueprint.md) so all current and future agent instances inherit them automatically, with the ability to disable an entire class of agents in a single operation.
+- Maintain a complete inventory of all agent identities through centralized discovery and management in the Microsoft Entra admin center and [Microsoft Graph](/graph/api/resources/agentidentity), preventing shadow AI and enabling organizations to track agents across the full lifecycle — from registration and credential management through deactivation and decommissioning.
 
 For more information, see [Identity governance for agents](/entra/id-governance/agent-id-governance-overview).
 

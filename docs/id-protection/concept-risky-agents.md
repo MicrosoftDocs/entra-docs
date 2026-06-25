@@ -2,14 +2,13 @@
 title: ID Protection for Agents
 description: Learn about how Microsoft Entra ID Protection identifies risky agents.
 ms.topic: how-to
-ms.date: 11/07/2025
-ms.custom: agent-id-ignite
-ms.reviewer: etbasser
+ms.date: 06/17/2026
+ms.reviewer: etbasser, owinfrey
 ---
 
-# ID Protection for agents (Preview)
+# ID Protection for agents
 
-As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md) platform.
+As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks on agents that have agent identities provided by [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md).
 
 ## Prerequisites
 
@@ -24,24 +23,29 @@ To configure policies that use Agent Risk as a condition, you must have the [Con
 
 ### Licensing
 
-- ID Protection for agents is included with the Microsoft Entra P2 license while in preview.
+Starting soon, ID Protection for agents will require a [Microsoft Agent 365 license](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing) to extend protection to agents through [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md#how-to-get-started).
 
 ## How it works
 
-Because agents can operate autonomously and on behalf of a user, they can display unique sign-in behavior. Agents can take initiative, interact with sensitive data, and operate at scale. Microsoft Entra ID Protection for agents is designed to identify and mitigate risks associated with these capabilities. The system determines a baseline for an agent's normal activity and then continuously monitors it for anomalies in Microsoft Entra ID. Once an agent exhibits suspicious behavior, ID Protection flags the activity and marks it as risky. 
+Because agents can operate autonomously and on behalf of a user, they can display unique sign-in behavior. Agents can take initiative, interact with sensitive data, and operate at scale. Microsoft Entra ID Protection for agents identifies and mitigates risks associated with these capabilities. **Learning Mode** automatically suppresses behavioral alerts for agents that lack sufficient activity history, preventing false positives during onboarding and after periods of inactivity. A separate detection runs in parallel to ensure genuinely malicious early-life behavior is still caught. Once an agent exhibits suspicious behavior, ID Protection flags the activity as risky. 
 
 ## Activities contributing to risk
 
 The following table provides the anomalous activities that can contribute to the agent being flagged for risk. At this time, all risk detections for risky agents are offline.
 
-| Agent risk detection | Detection type | Description | riskEventType |
-|----------|-----|--------|----|
-| Unfamiliar resource access | Offline  | Agent targeted resources that it doesn't usually access. This detection can mean that an attacker is trying to access sensitive resources beyond the agent's intended purpose. | unfamiliarResourceAccess |
-| Sign-in spike | Offline | Agent made a higher number of sign-ins compared to its usual sign-in frequency. This spike can be an indicator that an attacker is using automation or a toolkit. | signInSpike | 
-| Failed access attempt | Offline  | Agent attempted and failed to access resources for which it isn't authorized. This detection can indicate an attacker is attempting to replay an agent's token against an unauthorized resource. | failedAccessAttempt |
-| Sign-in by risky user  | Offline | Agent signed in on behalf of a risky user during a delegated authentication. This detection means that an attacker might be using a compromised user's credentials to exploit an agent. | riskyUserSignIn |
-| Confirmed compromised | Offline | Admin confirmed agent compromised | adminConfirmedAgentCompromised |
-| Microsoft Entra threat intelligence | Offline | Microsoft identified activity that is consistent with known attack patterns based on its internal and external threat intelligence sources. | threatIntelligenceAccount |
+> [!NOTE]
+> In on-behalf-of (OBO) flows, where an agent acts using a user's delegated permissions, risky activity is attributed to the **user** rather than the agent. This approach targets remediation at the compromised user session without disrupting the agent for other users. Unless noted otherwise, risk detections in this table apply only to autonomous agent activity.
+
+| Agent risk detection | Description | riskEventType |
+|---------------------|------------------------------------|----|
+| Confirmed compromised | Admin confirmed agent compromised | adminConfirmedAgentCompromised |
+| Early life malicious activity | Newly created agent immediately exhibited multiple suspicious behavior patterns, acting like an attacker.| earlyLifeMaliciousActivity
+| Entra Directory Reconnaissance | Agent performed suspicious reconnaissance or high-risk directory operations. | entraDirectoryReconnaissance |
+| Failed access attempt | Agent attempted and failed to access resources for which it isn't authorized. This detection can indicate an attacker is attempting to replay an agent's token against an unauthorized resource. | failedAccessAttempt |
+| Microsoft Entra threat intelligence | Microsoft identified activity that is consistent with known attack patterns based on its internal and external threat intelligence sources. | threatIntelligenceAccount |
+| Sign-in spike | Agent made a higher number of sign-ins compared to its usual sign-in frequency. This spike can be an indicator that an attacker is using automation or a toolkit. | signInSpike | 
+| Suspicious credential usage | This detection flags when new credentials are added to agent blueprints and then actually used. | suspiciousCredentialUsage |
+| Unfamiliar resource access | Agent targeted resources that it doesn't usually access. This detection can mean that an attacker is trying to access sensitive resources beyond the agent's intended purpose. | unfamiliarResourceAccess |
 
 ## View the risky agent report
 
@@ -66,17 +70,27 @@ In the risky agent report, select an entry to view the full details including th
 - Risk state and risk level
 - Agent type and sponsors (if specified)
 
-You can also navigate to the **Risk Detections** report and select the **Agent detections** tab to view a full list of the detection risk events from up to the past 90 days. 
+You can also navigate to the **Risk Detections** report and select the **Agent detections** tab to view a full list of the detection risk events from up to the past 90 days. Risk detections are retained for up to 90 days for investigation purposes.
 
 :::image type="content" source="media/concept-risky-agents/risky-agent-details.png" alt-text="Screenshot showing the Risky agent details." lightbox="media/concept-risky-agents/risky-agent-details.png":::
 
 ## Risk-based Conditional Access for agents
 
-You can use [Conditional Access for agents](../identity/conditional-access/agent-id.md) to set risk policies that block risky agents from accessing resources or other agents. Use this [Conditional Access template](https://aka.ms/CreateAgentRiskPolicy) to help administrators deploy this policy in their organization.
+Use [Conditional Access for agents](../identity/conditional-access/agent-id.md) to set risk policies that block risky agents from accessing resources or other agents. Use this [Conditional Access template](https://aka.ms/CreateAgentRiskPolicy) to simplify deploying this policy in your organization.
 
 ## Microsoft Graph
 
-You can also query risky agents [using the Microsoft Graph API](/graph/use-the-api). There are two new collections in the [ID Protection APIs](/graph/api/resources/identityprotection-overview).
+You can also query risky agents [using the Microsoft Graph API](/graph/use-the-api). There are two collections in the [ID Protection APIs](/graph/api/resources/identityprotection-overview).
 
    - `riskyAgents`
    - `agentRiskDetections`
+
+## Export risk data
+
+You can export data by configuring [diagnostic settings in Microsoft Entra ID](howto-export-risk-data.md) to send risk data to a Log Analytics workspace, archive it to a storage account, stream it to an event hub, or send it to a SIEM solution.
+
+## Related content
+
+- [Manage agent identities in your organization](/entra/agent-id/manage-agent-identities-organization) - Overview of agent identity management across the full lifecycle.
+- [Conditional Access for Agent ID](../identity/conditional-access/agent-id.md) - Enforce Zero Trust policies across agent identity token acquisition flows.
+- [Governing Agent Identities](../id-governance/agent-id-governance-overview.md) - Preventive governance approaches including access packages and sponsor oversight.

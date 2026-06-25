@@ -1,14 +1,12 @@
 ---
 title: Configure TravelPerk for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TravelPerk.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/25/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TravelPerk so that I can streamline the user management process and ensure that users have the appropriate access to TravelPerk.
----
+--- 
 
 # Configure TravelPerk for automatic user provisioning with Microsoft Entra ID
 
@@ -17,6 +15,7 @@ This article describes the steps you need to perform in both TravelPerk and Micr
 ## Capabilities supported
 
 > [!div class="checklist"]
+> * Code Auth Grant flow authentication supported.
 >
 > - Create users in TravelPerk
 > - Remove users in TravelPerk when they don't require access anymore

@@ -2,8 +2,6 @@
 title: "Quickstart: Add sign in to a React SPA"
 description: Learn how to run a sample React SPA to sign in users
  
-author: kengaderdus
-ms.author: kengaderdus
  
 ROBOTS: NOINDEX
 ms.topic: concept-article

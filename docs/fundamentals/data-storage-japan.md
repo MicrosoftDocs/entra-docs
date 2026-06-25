@@ -1,14 +1,13 @@
 ---
 title: Customer data storage for Japan customers
 description: Learn about where Microsoft Entra ID stores customer-related data for its Japan customers.
-author: justinha
 manager: dougeby
-ms.author: justinha
 
 ms.topic: concept-article
 ms.date: 01/03/2024
 ms.custom: it-pro, references_regions
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to understand where customer data is stored for Japan customers so that I can meet regional data residency requirements.
 ---
 
 # Customer data storage for Japan customers in Microsoft Entra ID

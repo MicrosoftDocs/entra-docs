@@ -3,13 +3,16 @@ title: View, add, and remove assignments for an access package in entitlement ma
 description: Learn how to view, add, and remove assignments for an access package in entitlement management.
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 06/26/2025
+ms.date: 05/07/2026
 ms.custom: sfi-image-nochange
-#Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
+#Customer Intent: As an IT admin, I want to view, add, and remove assignments for an access package so that I can manage who has access to bundled resources.
 ---
 # View, add, and remove assignments for an access package in entitlement management
 
 In entitlement management, you can see who is assigned to access packages, their policy, status, and identity lifecycle (preview). If an access package has an appropriate policy, you can also directly assign identities to an access package. This article describes how to view, add, and remove assignments for access packages.
+
+> [!NOTE]
+> These Microsoft Entra admin center steps require the signed-in user to be able to access the Microsoft Entra admin center. Entitlement management roles, such as Access package assignment manager, authorize assignment-management actions within entitlement management, but they don't by themselves change tenant-wide access settings for the admin center. If the **Restrict access to Microsoft Entra administration portal** user setting is enabled, verify that the delegated user can access the admin center, or use an authorized programmatic method. For more information about this setting, see [Default user permissions](../fundamentals/users-default-permissions.md).
 
 ## View who has an assignment
 
@@ -113,7 +116,7 @@ In some cases, you might want to directly assign specific identities to an acces
 > [!NOTE]
 > Access package assignment managers will no longer be able to bypass approval settings if the policy requires approval. This means identities can't be directly assigned to the package without necessary approval(s) from the designated approver(s). In the case that you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to identities who need access.
 
-## Directly assign any identity (Preview)
+## Directly assign any identity
 
 Entitlement management also allows you to directly assign external identities to an access package to make collaborating with partners easier. To do this, the access package must have a policy that allows identities not yet in your directory to request access.
 
@@ -130,7 +133,7 @@ Entitlement management also allows you to directly assign external identities to
 
 1. In the **Select policy** list, select a policy that allows that is set to **For users not in your directory**
 
-1. Select **External user (Preview)**. You're able to specify which users you want to assign to this access package.
+1. Select **External user**. You're able to specify which users you want to assign to this access package.
     ![Assignments - Add any user to access package](./media/entitlement-management-access-package-assignments/assignments-add-any-user.png)
 
 1. Enter the identity **Name** (optional) and the identity **Email address** (required).

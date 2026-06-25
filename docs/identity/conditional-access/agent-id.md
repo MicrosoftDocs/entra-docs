@@ -1,217 +1,147 @@
 ---
-title: Conditional Access for Agent Identities in Microsoft Entra
-description: Learn how Conditional Access for Agent IDs in Microsoft Entra ID extends Zero Trust principles to AI agents, ensuring secure access and governance.
+title: Conditional Access for Agents in Microsoft Entra
+description: Learn how Conditional Access for agents in Microsoft Entra ID extends Zero Trust principles to AI agents, ensuring secure access and governance.
 ms.topic: concept-article
-ms.date: 03/24/2026
-ms.custom: agent-id-ignite
-ms.reviewer: kvenkit
+ms.date: 06/02/2026
+ms.reviewer: yoelhor, kvenkit
+ms.custom: msecd-doc-authoring-1012
+ai-usage: ai-assisted
+#customer-intent: As an identity administrator, I want to understand how Conditional Access policies apply to agents in Microsoft Entra ID, so that I can effectively manage and secure access for AI agents in my organization.
 ---
-# Conditional Access for Agent ID (Preview)
 
-## Overview
+# Conditional Access for agents
 
-Conditional Access for Agent ID is a new capability in Microsoft Entra ID that brings Conditional Access evaluation and enforcement to AI agents. This capability extends the same Zero Trust controls that already protect human users and apps to your agents. Conditional Access treats agents as first-class identities and evaluates their access requests the same way it evaluates requests for human users or workload identities, but with agent-specific logic.
+Conditional Access is an intelligent policy engine that helps organizations control how users and agents access corporate resources. It brings together real-time signals such as user's and agent's context, device, location, and session risk information to determine when to allow, block, or limit access, or require more verification steps.
 
-For more information about the types of agents and the identity and access management challenges they present, see [Security for AI with Microsoft Entra agent identity](../../agent-id/security-for-ai-overview.md).
+Conditional Access for agents requires Microsoft Entra ID P1 or P2 and a Microsoft Agent 365 license for each user. Enforcement of Agent 365 licensing is coming soon. Network controls for agents require Microsoft Entra Internet Access. For more information, see [What is Microsoft Entra Agent ID](../../agent-id/what-is-microsoft-entra-agent-id.md#how-to-get-started).
 
-## Agent identity architecture in Microsoft Entra
+Learn about Conditional Access for agents:
 
-To understand how Conditional Access works with agent identities, it's important to understand the fundamentals of Microsoft Entra Agent ID. Agent ID introduces first-class identity constructs for agents. These are modeled as applications (agent identities) and users (agent users).
+- High-level overview of Conditional Access: [What is Conditional Access?](overview.md)
+- Guide to managing agent identities across your organization: [Manage agent identities in your organization](../../agent-id/manage-agent-identities-admin.md).
+- [How to target agent identities in Conditional Access](howto-target-agent-identities.md)
+- [Configure policies for autonomous agent access](policy-autonomous-agents.md)
 
-| Term | Description |
-| --- | --- |
-| Agent blueprint | A logical definition of an agent type. Necessary for agent identity blueprint principal creation in the tenant. |
-| Agent identity blueprint principal | A service principal that represents the agent blueprint in the tenant and executes only creation of agent identities and agent users. |
-| Agent identity | Instantiated agent identity. Performs token acquisitions to access resources. |
-| Agent user | Nonhuman user identity used for agent experiences that require a user account. Performs token acquisitions to access resources. |
-| Agent resource | Agent blueprint or agent identity acting as the resource app (for example, in agent to agent (A2A) flows). |
+## How Conditional Access evaluates agent access requests
 
-For more information, see [Microsoft Entra agent ID security capabilities for AI Agents](../../agent-id/identity-professional/what-is-microsoft-entra-agent-id.md).
+To access a corporate resource such as SharePoint file, MCP servers, or Open API services, a user or agent first requests an access token from Microsoft Entra ID.
+ 
+When a Conditional Access policy applies, Microsoft Entra ID evaluates the configured policy requirements before issuing the token. If the requirements are satisfied, an access token is issued. The token is then presented to the target resource, which validates the token and uses its claims to make authorization decisions.
 
-## Conditional Access capabilities for agent identities and agent users
+The following diagram illustrates this process.
 
-Conditional Access enforces Zero Trust principles across all token acquisition flows initiated by agent identities and agent users.
+:::image type="content" source="media/agent-id/data-access-patterns-diagram.png" alt-text="Diagram showing the data access patterns for agent identities." lightbox="media/agent-id/data-access-patterns-diagram.png":::
 
-Conditional Access applies when: 
+### How subjects and audiences are used
 
-- An agent identity requests a token for any resource (agent identity → resource flow). 
-- An agent user requests a token for any resource (agent user → resource flow).
+Microsoft Entra ID issues an access token to a subject for a specific audience (resource). Each access token has exactly one subject and one audience.
 
-Conditional Access doesn't apply when:
+**Subject**: The identity receiving the token.
 
-- An agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent user.
+- In delegated access scenarios, the token represents the user while also identifying the calling application or agent.
+- In application-only scenarios, the application or autonomous agent is the subject.
+- In agent's user account scenarios, the agent's user account is the subject.
 
-   > [!NOTE]
-   > Agent blueprints have limited functionality. They can't act independently to access resources and are only involved in creating agent identities and agent users. Agentic tasks are always performed by the agent identity.
+**Audience**: The target resource the token is intended for.
 
-- An agent identity blueprint or agent identity performs an intermediate token exchange at the `AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936)`.
+- The resource must be registered in Microsoft Entra ID.
+- If a subject needs to access multiple resources (for example, multiple MCP servers or APIs), it typically requires a separate access token for each resource, each with its own audience and permissions.
 
-   > [!NOTE]
-   > Tokens scoped to the `AAD Token Exchange Endpoint: Public` can't call Microsoft Graph. Agentic flows are protected because Conditional Access protects token acquisition from agent identity or agent user.
+Conditional Access policies are evaluated based on both the subject requesting access and the audience being accessed.
 
-- The Conditional Access policy is scoped to users or workload identities, **not** to agents.
+### How Conditional Access decisions are made
+
+Conditional Access policies operate as if-then statements:
+
+- If the conditions defined in a policy are met, the configured access controls are enforced.
+- If the required controls are satisfied, access is granted.
+- If the required controls are not satisfied, access is denied.
+
+For example, an organization may require multifactor authentication before a user can authorize an agent to access their email. Similarly, an organization may configure a policy to block access from agents identified as high risk.
+
+### When Conditional Access is evaluated
+
+Conditional Access is evaluated whenever Microsoft Entra ID issues or refreshes an access token. Some resources also support Continuous Access Evaluation, which can trigger near-real-time enforcement for specific events.
+
+## Agent access patterns
+
+Agents can access Microsoft Entra-protected resources using one of the following patterns:
+
+### Agents acting on behalf of a user
+
+The most common access pattern is the on-behalf-of (OBO) flow. In this flow, a user signs in to an agent application, and the agent accesses downstream resources using the user's identity and delegated permissions. For example, when an agent reads your emails, it accesses your mailbox *on your behalf*. For more information about how the OBO flow works for agents, see [Agent OAuth flows: On-behalf-of](../../agent-id/agent-on-behalf-of-oauth-flow.md).
+
+> [!NOTE]
+> The on-behalf-of flow is also known as delegated access. Agents using this type of access are sometimes called interactive agents or assistive agents, as they involve a user interface for human interaction.
+
+In this flow, the agent can't reuse the user's original token because it was issued for a different audience. Instead, the agent uses the OBO flow to exchange tokens with Microsoft Entra ID, obtaining a new token scoped to the target resource. This token exchange is also evaluated by Conditional Access, letting admins enforce granular controls over which resources agents can access on behalf of the user.
+
+Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities.
+
+### Agents acting as an application
+
+Agents might access resources without a signed-in user. In this case the agent accesses the resource with its own identity. This flow is also known as client credentials flow, or app only access. All types of agents might use this flow. For more information about how agents authenticate with their own identity, see [Agent OAuth flows: Autonomous apps](../../agent-id/agent-autonomous-app-oauth-flow.md).
+
+This flow applies in the following common scenarios:
+
+- **Autonomous agents that operate independently** run in the background, respond to events, or run on a schedule.
+  - For example, an agent that generates a daily report and sends the result to a group of employees.
+  - In this scenario, there's no user present, and the agent operates on its own.
+- **Interactive agents that use their own identity** don't always access resources on a user's behalf; sometimes they use their own identity.
+  - For example, if an agent calls a backend SMS service that users don't have access to, the OBO flow doesn't apply, and the agent authenticates directly as itself.
+- **Agents published on the web for public use** don't authenticate the user or don't support delegating the user's context to corporate resources.
+
+In these scenarios, the agent requests an access token using its own agent identity and credentials managed through the agent identity blueprint. The token is issued to the agent identity (not the user). Therefore, Conditional Access policies are scoped to the agent identity rather than the user. For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md).
+
+### Agents acting as a user
+
+Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate with its own identity. In certain scenarios, an agent has its own [agent's user account](../../agent-id/agent-users.md). For example, digital workers that function as team members with their own mailboxes, access to chat, and can participate in collaborative workflows as a team member.
+
+In this model, an admin creates a user account in the directory and links it to the agent's identity. From there, it's like any other user account. Licenses can be assigned to access Microsoft 365 resources such as a mailbox and calendar. The account can be added to administrative units and security groups just like a human user account.
+
+Agents using this flow are sometimes called "digital worker," or "AI teammate." They're also considered autonomous agents as they don't involve a user interface for human interaction. In this model, the access token is issued to the agent's user account (the token subject), and policy is evaluated against the agent's user account, not the agent identity. For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md). For more information about the agent user OAuth flow, see [Agent user OAuth flow](../../agent-id/agent-user-oauth-flow.md).
+
+Agents running on managed endpoints like [Windows 365 Cloud PCs for Agents](/windows-365/agents/introduction-windows-365-for-agents) can also be subject to device compliance and compliant network controls. Use the **Agent execution environments (Preview)** condition to scope these policies to endpoint-based sessions only. For more information, see [Require a compliant device for agents' user accounts](policy-autonomous-agents.md#require-a-compliant-device-for-agents-user-accounts).
+
+## Conditional Access policies and agent identity blueprints
+
+In addition to the specific agent access patterns, you can also select [agent identity blueprints](../../agent-id/agent-blueprint.md) to apply Conditional Access policies to a class of agents. Every agent identity is derived from an agent identity blueprint, which defines its configuration and governance model. Applying a policy at the blueprint level automatically covers all agent identities derived from it, including any new ones added in the future. Targeting the agent identity blueprint does not cover agents' user accounts.
+
+The following diagram shows that only agent identities associated with blueprint "A" are granted access; all other agents are excluded and blocked.
+
+:::image type="content" source="media/agent-id/conditional-access-agent-identity-blueprint-diagram.png" alt-text="Diagram showing the Conditional Access flow for agent identity blueprints." lightbox="media/agent-id/conditional-access-agent-identity-blueprint-diagram.png":::
+
+For example, imagine a project where you have several agents, each with its own purpose. Some operate independently, while others collaborate with other agents (A2A) to complete tasks. If they're all created under the same blueprint, a single policy applied to that blueprint enforces consistent access controls across the entire collection.
+
+## Attribute-driven Conditional Access
+
+As the number of agent identities grows, individually managing each one across every policy becomes unsustainable. [Custom security attributes](../../fundamentals/custom-security-attributes-overview.md) let you categorize agent identities and resources with business-specific labels, then target those attributes in Conditional Access policies. Policies automatically apply to every agent with matching attributes, including ones added in the future.
+
+:::image type="content" source="media/agent-id/conditional-access-agent-diagram.png" alt-text="Diagram showing the Conditional Access flow for agent identities." lightbox="media/agent-id/conditional-access-agent-diagram.png":::
+
+For a full walkthrough on creating custom security attributes and using them in a Conditional Access policy, see [Conditional Access for autonomous agents](policy-autonomous-agents.md#allow-only-specific-agents-to-access-resources).
+
+## Conditional Access boundaries and limitations
+
+Conditional Access policies don't apply when:
+
+- An agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent's user account.
+  - Agent blueprints have limited functionality. They can't act independently to access resources and are only involved in creating agent identities and agents' user accounts.
+  - Agent tasks are always performed by the agent identity.
+- An agent identity blueprint or agent identity performs an intermediate token exchange at the `AAD Token Exchange Endpoint: Public` endpoint (Resource ID: `fb60f99c-7a34-4190-8149-302f77469936`).
+  - Tokens scoped to the `AAD Token Exchange Endpoint: Public` can't call Microsoft Graph.
+  - Agent flows are protected because Conditional Access protects token acquisition from the agent identity or agent's user account.
 - [Security defaults](../../fundamentals/security-defaults.md) are enabled.
+- Conditional Access only protects resources secured by Microsoft Entra ID. For example, if an agent accesses resources using an API key, it bypasses the Microsoft Entra ID authentication and token issuance pipeline entirely and Conditional Access policies won't apply to them.
 
-| Authentication flow | Does Conditional Access apply | Details |
-| --- | :---: | --- |
-| Agent identity → Resource | ✅<br>Yes | Governed by agent identity policies. |
-| Agent user → Resource | ✅<br>Yes | Governed by agent user policies. |
-| Agent identity blueprint → Graph (create agent identity (Agent ID)/agent user) | ❌<br>No | Not governed by Conditional Access because this flow involves creation of agent identities and agent users by the blueprint. |
-| Agent identity blueprint or Agent identity (Agent ID) → Token Exchange | ❌<br>No | Not governed by Conditional Access because this flow involves the blueprint or agent identity making an intermediate token exchange call that enables it to perform agentic tasks. This flow does not involve any resource access. |
+The following configurations aren't currently supported:
 
-## Policy configuration
+- Policies targeting all users don't include agent's user accounts.
+- Scoping a Conditional Access policy to include or exclude agent's user account based on their group membership
+- A Conditional Access policy targeting agent identities won't apply to the agent's user account.
+- A Conditional Access policy targeting agent identities using agent identity blueprint covers only the agent identity, not the agent's user account.
 
-Creating a Conditional Access policy for agents involves these four key components: 
+## Next steps
 
-:::image type="content" source="media/agent-id/conditional-access-agent-settings.png" alt-text="Screenshot of Conditional Access interface showing a policy configured to block all high-risk agent identities, with assignments scoped to all agent identities." lightbox="media/agent-id/conditional-access-agent-settings.png":::
-
-1. Assignments
-   1. Scope policies to: 
-      1. All agent identities in the tenant.
-      1. Specific agent identities based on their object ID.
-      1. Agent identities based on custom security attributes preassigned to them.
-      1. Agent identities grouped by their blueprint.
-      1. All agent users in the tenant.
-1. Target resources
-   1. Resource targeting options include: 
-      1. All resources.
-      1. All agent resources (agent blueprints and agent identities).
-      1. Specific resources grouped by custom security attributes preassigned to them.
-      1. Specific resources based on their appId.
-      1. Agent blueprints (targeting the blueprint covers the agent identities parented by the blueprint).
-1. Conditions
-   1. Agent risk (high, medium, low).
-1. Access controls
-   1. Block.
-1. Policies can be toggled On, Off, or set to Report-only for simulation.
-
-## Common business scenarios
-
-There are two key business scenarios where Conditional Access policies can help you manage agents effectively.
-
-In the first scenario, you might want to ensure that only approved agents can access specific resources. You can do this by tagging agents and resources with custom security attributes targeted in your policy, or by manually selecting them using the enhanced object picker.
-
-In the second scenario, Conditional Access uses [signals from Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents) to detect and block agents exhibiting risky behavior from accessing resources.
-
-### Scenario 1: Allow only specific agents to access resources
-
-#### [Using custom security attributes](#tab/custom-security-attributes)
-
-###### Create Conditional Access policy using custom security attributes
-
-The recommended approach for the first scenario is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
-
-###### Create and assign custom attributes
-
-1. Create the custom security attributes:
-   1. Create an **Attribute set** named *AgentAttributes*.
-   1. Create **New attributes** named *AgentApprovalStatus* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**. 
-      1. Add the following predefined values: **New**, **In_Review**, **HR_Approved**, **Finance_Approved**, **IT_Approved**.
-1. Create another attribute set to group resources that your agents are allowed to access.
-   1. Create an **Attribute set** named *ResourceAttributes*.
-   1. Create **New attributes** named *Department* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**.
-      1. Add the following predefined values: **Finance**, **HR**, **IT**, **Marketing**, **Sales**.
-1. Assign the appropriate value to resources that your agent is allowed to access. For example, you might want only agents that are **HR_Approved** to be able to access resources that are tagged **HR**.
-
-###### Create Conditional Access policy
-
-After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agent identities except those reviewed and approved by your organization. 
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Assignment Reader](../role-based-access-control/permissions-reference.md#attribute-assignment-reader).
-1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
-1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
-   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
-      1. Under **Include**, select **All agent identities (Preview)**.
-      1. Under **Exclude**: 
-         1. Select **Select agent identities based on attributes**.
-         1. Set **Configure** to **Yes**. 
-         1. Select the Attribute we created earlier called **AgentApprovalStatus**.
-         1. Set **Operator** to **Contains**.
-         1. Set **Value** to **HR_Approved**.
-         1. Select **Done**.
-1. Under **Target resources**, select the following options: 
-   1. Select what this policy applies to **Resources (formerly cloud apps)**.
-      1. Include **All resources (formerly 'All cloud apps')**
-1. Under **Access controls** > **Grant**: 
-   1. Select **Block**.
-   1. Select **Select**.
-1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create your policy.
-
-[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
-
-#### [Using the enhanced object picker](#tab/enhanced-object-picker)
-
-###### Create Conditional Access policy using the enhanced object picker
-
-Alternatively, organizations can create a Conditional Access policy using the enhanced object picker to block all agent identities except those reviewed and approved by your organization. 
-
-The enhanced object picker replaces the previous flat list experience in both the assignment and target resources sections of policy configuration. The new experience is meant to simplify the selection of items you want to scope in the policy.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
-1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
-   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
-      1. Under **Include**, select **All agent identities (Preview)**.
-      1. Under **Exclude**: 
-         1. Select **Select individual agent identities**.
-         1. Using the enhanced object picker, switch between the tabs **All**, **Agent blueprints**, and **Agent identities** to select the individual agent blueprints and/or agent identities approved for use in your environment.
-         1. Select **Select**.
-1. Under **Target resources**, select the following options: 
-   1. Select what this policy applies to **Resources (formerly cloud apps)**.
-      1. Include **All resources (formerly 'All cloud apps')**
-1. Under **Access controls** > **Grant**: 
-   1. Select **Block**.
-   1. Select **Select**.
-1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create your policy.
-
-[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
-
----
-
-### Scenario 2: Block high-risk agent identities from accessing my organization’s resources
-
-Organizations can create a Conditional Access policy to block high-risk agent identities based on [signals from Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents).
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
-1. Select **New policy**.
-1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
-1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
-   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
-      1. Under **Include**, select **All agent identities (Preview)**.
-1. Under **Target resources**, select the following options: 
-   1. Select what this policy applies to **Resources (formerly cloud apps)**.
-   1. Include, **All resources (formerly 'All cloud apps')**.
-1. Under **Conditions** > **Agent risk (Preview)**, set **Configure** to **Yes**.
-   1. Under **Configure agent risk levels needed for policy to be enforced**, select **High**. This guidance is based on Microsoft recommendations and might be different for each organization.
-1. Under **Access controls** > **Grant**. 
-   1. Select **Block**.
-   1. Select **Select**.
-1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to enable your policy.
-
-[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
-
-## Investigating policy evaluation using sign-in logs
-
-Admins can use the Sign-in logs to investigate why a Conditional Access policy did or didn't apply as explained in [Microsoft Entra sign-in events](troubleshoot-conditional-access.md#microsoft-entra-sign-in-events). For agent-specific entries, filter for **agentType** of **agent user** or **agent identity**. Some of these events appear in the **User sign-ins (non-interactive)** while others appear under **Service principal sign-ins**.
-
-- Agent identities (actor) accessing any resources → Service principal sign-in logs → agent type: agent ID user
-- Agent users accessing any resources → Non-interactive user sign-ins → agentType: agent user
-- Users accessing agents → User sign-ins
-
-## Related content
-
-- [Conditional Access template policies](concept-conditional-access-policy-common.md)
-- [Conditional Access: Users, groups, agents, and workload identities](concept-conditional-access-users-groups.md)
-- [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)
-- [Conditional Access: Conditions](concept-conditional-access-conditions.md)
-- [Conditional Access: Grant](concept-conditional-access-grant.md)
-- [Security for AI with Microsoft Entra agent identity](../../agent-id/security-for-ai-overview.md)
-- [Microsoft Entra ID Protection and agents](/entra/id-protection/concept-risky-agents)
+- [How to target agent identities in Conditional Access](howto-target-agent-identities.md)
+- [Configure policy for autonomous agent access](policy-autonomous-agents.md)

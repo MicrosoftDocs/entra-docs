@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to 
 ms.date: 06/18/2025
 
-#CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
+#Customer Intent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
 ---
 
 
@@ -26,13 +26,20 @@ Instead of conducting numerous ad-hoc training sessions to ensure new hires know
 
 Now, managers are empowered to request access on behalf of new hires who haven't gone through the IT training. This ensures that employees have the tools and resources necessary to start on day one, and increases new hire satisfaction as they don’t need to wait for access or navigate the request process on their own.
 
-## Scenarios for requesting on behalf of agent identities (Preview)
+## Scenarios for requesting on behalf of agent identities
 
-The ability for administrators to request on behalf of agent identities they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent identity, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](../agent-id/identity-platform/manage-agent.md).
+The ability for administrators to request on behalf of agent identities they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent identity, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra](../agent-id/manage-agent.md).
 
 ## Prerequisites
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [active-directory-p2-governance-license.md](~/includes/entra-p2-governance-license.md)]
+
+> [!NOTE]
+> Both the manager (requestor) and the employee (target) must be licensed for Microsoft Entra ID Governance or Microsoft Entra Suite to use the on-behalf-of request feature.
+
+### License requirements for requesting on behalf of agent identities (preview)
+
+[!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
 ## Configure an access package policy allowing on behalf of requests
 
@@ -85,6 +92,9 @@ For access package assignments with policies that support on behalf of requests,
 
 - The ability to see active access package assignment of all of their direct reports.
 - The ability to remove assignments for reports if the policy supports on behalf of requests.
+
+> [!NOTE]
+> This My Access experience is for managers who manage access package assignments for their direct reports when the access package policy and My Access settings support on-behalf-of requests. Administrative assignment-management tasks for delegated entitlement management roles, such as Access package assignment manager, are performed in the Microsoft Entra admin center or by using authorized programmatic methods.
 
 Before managing teams in the My Access Portal, make sure you have the manage team settings configured by doing the following steps:
 

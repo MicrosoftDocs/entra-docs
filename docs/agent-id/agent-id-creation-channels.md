@@ -2,9 +2,7 @@
 title: How are agent identities created?
 description: Learn about the ways to create Microsoft Entra agent identity blueprints, agent identities, and agents' user accounts as well as monitor and control their introduction into your tenant.
 ms.topic: concept-article
-ms.date: 03/26/2026
-author: omondiatieno
-ms.author: jomondi
+ms.date: 04/16/2026
 ms.reviewer: dastrock
 
 #customer intent: As an IAM or security administrator, I want to understand how agent identities are created so that I can monitor and control their introduction into my tenant.
@@ -16,21 +14,25 @@ Administrators who work in identity and access management and security need clea
 
 ## Overview of creation channels
 
-**Agent identity blueprints** can enter your directory through multiple channels. Each channel implies different monitoring and control points:
+**Agent identity blueprints** can enter your tenant through multiple channels. Each channel implies different monitoring and control points:
 
-| Channel | Typical Actors | Who can control it? |
+| Channel | Typical Actors | Can be controlled by |
 |---------|----------------|-----------------|
-| Microsoft Entra admin center / Azure portal | Developers, Administrators | Directory role assignments | 
+| *Microsoft Entra admin center / Azure portal | Developers, Administrators | Role assignments | 
 | Microsoft Graph API | Automation, DevOps pipelines, integration services | Microsoft Graph permission grants |
-| CLI, PowerShell, Infrastructure as Code | DevOps, Administrators | Directory role assignments | 
-| Microsoft product integrations | Users of Microsoft agent platforms | Administrative controls for each product |
-| Microsoft Entra ID consent experience | Employees, members of organization | App consent policies | 
+| CLI, PowerShell, Infrastructure as Code | DevOps, Administrators | Role assignments | 
+| *Microsoft product integrations | Users of Microsoft agent platforms | Administrative controls for each product |
+| *Microsoft Entra ID consent experience | Employees, members of organization | App consent policies | 
 
-When an agent identity blueprint is added to your tenant through one of these channels, an **agent identity blueprint principal** object is created in the tenant. This principal is assigned privileges to create agent identities and agents' user identities in the tenant. In addition to the channels listed in the previous table, any system with an agent identity blueprint principal in your tenant becomes a channel for the agent identity and agent's user account creation:
+* Indicates a managed experience channel
+
+When an agent identity blueprint is added to your tenant through one of the managed experiences, an **agent identity blueprint principal** object is also created in the tenant. This principal is assigned privileges to create agent identities and agents' user accounts in the tenant. If an agent identity blueprint is added through the Microsoft Graph API, CLI, PowerShell, or Infrastructure as Code tools channels, the associated principal must be manually created.
+
+In addition to the channels listed in the previous table, any system with an agent identity blueprint principal in your tenant becomes a channel for the agent identity and agent's user account creation:
 
 | Channel | Typical Actors | Can be controlled by | 
 |---------|----------------|-----------------|
-| Agent identity blueprint principals | Microsoft-built agents and third-party agents added to your tenant | Microsoft Entra application permissions |
+| Agent identity blueprint principals | Microsoft-built agents and non-Microsoft agents added to your tenant | Microsoft Entra application permissions |
 
 The following sections provide more details on each of these channels.
 
@@ -52,25 +54,26 @@ Creating an agent identity blueprint with these tools requires one of the follow
 
 | Scenario | Permissions required |
 | --- | --- |
-| User creates blueprint via Microsoft Entra admin center, CLIs | User must be assigned **Agent ID Developer** or **Agent ID Administrator** directory roles. |
-| Client creates blueprint via Microsoft Graph, using delegated permissions | User must have the directory roles mentioned in the previous row. Client must be granted **AgentIdentityBlueprint.Create** delegated permission. |
+| User creates blueprint via Microsoft Entra admin center, CLIs | User must be assigned **Agent ID Developer** or **Agent ID Administrator** roles. |
+| Client creates blueprint via Microsoft Graph, using delegated permissions | User must have the roles mentioned in the previous row. Client must be granted *at least* the **AgentIdentityBlueprint.Create** delegated permission. |
 | Client creates blueprint via Microsoft Graph, using application permissions | Client must be granted **AgentIdentityBlueprint.Create** application permission. |
 
 Creating an agent identity with these tools requires one of the following permissions:
 
 | Scenario | Permissions required |
 | --- | --- |
-| User creates identity via Microsoft Entra admin center, CLIs | User must be assigned **Agent ID Administrator** directory role. |
-| Client creates identity via Microsoft Graph, using delegated permissions | User must have the directory roles mentioned in the previous row. Client must be granted **AgentIdentity.Create.All** delegated permission. |
-| Client creates agent identity blueprint via Microsoft Graph, using application permissions | Client must be granted **AgentIdentity.Create.All** application permission. |
+| User creates agent identity via Microsoft Entra admin center, Microsoft Graph, or PowerShell/CLI | User must be assigned **Agent ID Developer**, **Agent ID Administrator**, or **AI Administrator** role. |
+| Client creates agent identity via Microsoft Graph, using delegated permissions | User must be assigned **Agent ID Administrator** role. Client must be granted **AgentIdentity.Create.All** or **AgentIdentity.ReadWrite.Al** delegated permission. |
+| Client creates agent identity via Microsoft Graph, using delegated permissions | User must be an **owner** of the agent identity blueprint or agent identity blueprint principal (owners added at any time have this permission). Client must be granted **AgentIdentity.Create.All**, **AgentIdentity.ReadWrite.All**, or **AgentIdentity.ReadWrite.ManagedBy** delegated permission. No Agent ID role is required. |
+| Client creates agent identity via Microsoft Graph, using application permissions | Client must be granted **AgentIdentity.Create.All** application permission. |
 
 Creating an agent's user account with these tools requires one of the following permissions:
 
 | Scenario | Permissions required |
 | --- | --- |
-| User creates identity via Microsoft Entra admin center, CLIs | User must be assigned **Agent ID Administrator** or **User Administrator** directory role. |
-| Client creates identity via Microsoft Graph, using delegated permissions | User must have the directory roles in the previous row. Client must be granted **AgentIdUser.ReadWrite.All** delegated permission. |
-| Client creates agent identity blueprint via Microsoft Graph, using application permissions | Client must be granted **AgentIdUser.ReadWrite.All** application permission. |
+| User creates agent's user account via Microsoft Entra admin center, Microsoft Graph, or PowerShell/CLI | User must be assigned **Agent ID Administrator** or **User Administrator** role. |
+| Client creates agent's user account via Microsoft Graph, using delegated permissions | User must have the roles in the previous row. Client must be granted **AgentIdUser.ReadWrite.All** delegated permission. |
+| Client creates agent's user account via Microsoft Graph, using application permissions | Client must be granted **AgentIdUser.ReadWrite.All** application permission. |
 
 Administrators can control agent identity creation via these channels by constraining which users and clients are assigned the permissions in the previous table. For more information, see [Agent identity permissions reference](authorization-agent-id.md#microsoft-graph-permissions-for-agent-ids).
 
@@ -107,7 +110,7 @@ All agent identity creations are recorded in Microsoft Entra audit logs. Using a
 
 | Objective | How to Implement | Tooling / Source |
 |-----------|------------------|------------------|
-| Detect new agent identity creations | Subscribe to directory audit events filtering on agent identity object type / creation operations | [Microsoft Entra audit logs](sign-in-audit-logs-agents.md) |
+| Detect new agent identity creations | Subscribe to audit events filtering on agent identity object type / creation operations | [Microsoft Entra audit logs](sign-in-audit-logs-agents.md) |
 | Inventory all agent identities | Use Microsoft Graph APIs to query all agent identity objects by object type. | Microsoft Graph docs |
 
 ## Related content

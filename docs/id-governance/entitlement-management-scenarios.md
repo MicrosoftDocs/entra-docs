@@ -6,7 +6,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: mwahl
-#Customer intent: As an administrator, I want the high-level steps that I should follow so that I can quickly start using entitlement management.
+#Customer Intent: As an IT admin, I want to learn about common entitlement management scenarios so that I can apply them to my organization's access governance needs.
 ---
 # Common scenarios in entitlement management
 
@@ -107,7 +107,7 @@ There are several ways that you can configure entitlement management for your or
 
 ## Govern access for agents (preview)
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
 1. [Create a new access package](entitlement-management-access-package-create.md#start-the-creation-process)
 1. [Add groups or API permissions to access package](entitlement-management-access-package-create.md#select-resource-roles)

@@ -2,7 +2,7 @@
 title: Plan Your Microsoft Entra Conditional Access Deployment
 description: Plan your Conditional Access policies to balance security and productivity. Learn how to design and deploy effective policies for your organization.
 ms.topic: how-to
-ms.date: 03/24/2026
+ms.date: 06/01/2026
 manager: martinco
 ms.reviewer: joflore
 ms.custom:
@@ -11,6 +11,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:09/02/2025
   - ai-gen-description
+ai-usage: ai-assisted
 ---
 # Plan a Conditional Access deployment
 
@@ -35,7 +36,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
       - [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
    - Create, modify, or restore soft-deleted Conditional Access policies.
       - [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
-- A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.yml).
+- A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.md).
 - A group that includes the test user. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
 ### Communicate change
@@ -65,7 +66,7 @@ Here are common questions about [assignments and access controls](concept-condit
 - Which users, groups, directory roles, or workload identities are included in or excluded from the policy?
 - What emergency access accounts or groups should you exclude from the policy?
 
-#### Cloud apps or actions
+#### Target resources
 
 Does this policy apply to an application, user action, or authentication context? If so:
 
@@ -154,7 +155,7 @@ Based on our experience with Conditional Access and supporting other customers, 
 
 ### Minimize the number of Conditional Access policies
 
-Creating a policy for each app isn't efficient and makes managing policies difficult. Conditional Access has a limit of 195 policies per tenant. This 195-policy limit includes Conditional Access policies in any state, including report-only mode, on, or off.
+Creating a policy for each app isn't efficient and makes managing policies difficult. Conditional Access has a limit of 240 policies per tenant. This 240-policy limit includes Conditional Access policies in any state, including report-only mode, on, or off.
 
 Analyze your apps and group them by the same resource requirements for the same users. For example, if all Microsoft 365 apps or all HR apps have the same requirements for the same users, create a single policy and include all the apps it applies to.
 
@@ -162,6 +163,17 @@ Conditional Access policies are contained in a JSON file, and that file has a si
 
 - [Use groups or roles to include or exclude users instead of listing each user individually](concept-conditional-access-users-groups.md).
 - [Use filter for applications to include or exclude applications instead of individually specifying them](concept-filter-for-applications.md).
+
+### Govern and manage policies at scale
+
+As your organization grows, managing Conditional Access policies at scale requires deliberate governance practices. Conditional Access has a hard limit of 240 policies per tenant across all policy states (see [Minimize the number of Conditional Access policies](#minimize-the-number-of-conditional-access-policies) and [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md)), so scaling effectively means *consolidating* policies, not adding more. Consider these strategies to maintain control over a large policy set:
+
+- **Establish naming and ownership conventions.** Adopt a consistent [naming convention](#set-naming-standards-for-your-policies) that identifies each policy's purpose, target, and scope at a glance. Because Conditional Access policies don't have a built-in owner attribute, encode ownership in the policy name (for example, a team prefix) and maintain an out-of-band registry that maps each policy to a responsible admin or team.
+- **Audit and consolidate regularly.** Review your policies periodically to remove redundant or conflicting rules. Where it's enabled in your tenant, the [Conditional Access Optimization Agent](../../security-copilot/conditional-access-agent-optimization.md) with Microsoft Security Copilot can analyze your existing policies, identify gaps in coverage, and suggest consolidation opportunities. The agent requires Microsoft Security Copilot with provisioned security compute units (SCUs) and Microsoft Entra ID P1, so it isn't available in every tenant; for details, see the agent [prerequisites](../../security-copilot/conditional-access-agent-optimization.md#prerequisites).
+- **Monitor impact with reporting tools.** Use the [Conditional Access Insights and Reporting workbook](howto-conditional-access-insights-reporting.md) to visualize policy impact across your tenant. Stream sign-in logs to a Log Analytics workspace so you can query trends, identify policy conflicts, and track coverage over time. The workbook requires Microsoft Entra ID P1 and a Log Analytics workspace that's receiving sign-in logs; for details, see the workbook [prerequisites](howto-conditional-access-insights-reporting.md#prerequisites).
+- **Troubleshoot efficiently.** When users report access issues, use the [What If tool](what-if-tool.md) to simulate sign-in scenarios and identify which policies apply. For deeper investigation, review the Conditional Access details on individual sign-in events in the [sign-in logs](troubleshoot-conditional-access.md).
+- **Protect policy changes.** Enable [protected actions](~/identity/role-based-access-control/protected-actions-add.md) to require additional verification before anyone creates, modifies, or deletes Conditional Access policies.
+- **Automate policy management.** Manage Conditional Access policies programmatically with the [Microsoft Graph `conditionalAccessPolicy` API](/graph/api/resources/conditionalaccesspolicy) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/) to bulk-create, version, and audit policies. Adopt a policy-as-code workflow with source control and continuous integration so changes are reviewable, testable, and reversible.
 
 ### Configure report-only mode
 

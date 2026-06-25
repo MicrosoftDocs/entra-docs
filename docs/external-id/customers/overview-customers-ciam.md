@@ -64,7 +64,7 @@ External ID is intended for businesses that want to make applications available 
 
 - **Consent to your terms of use and privacy policies.** You can prompt users to accept your terms and conditions during sign-up. By using customer user attributes, you can add checkboxes to your sign-up form and include links to your terms of use and privacy policies.
 
-Learn more about [adding sign-in and sign-up to your app](concept-planning-your-solution.md) and [customizing the sign-in look and feel](concept-branding-customers.md).
+Learn more about [planning your integration](concept-planning-your-solution.md), [choosing an authentication approach](concept-choose-authentication-approach.md), and [customizing the sign-in look and feel](concept-branding-customers.md).
 
 ## Design user flows for self-service sign-up
 
@@ -120,9 +120,12 @@ The Application user activity  feature under Usage & insights provides data anal
 
 Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in an external tenant.
 
+> [!IMPORTANT]
+> The Application user activity dashboards (User Insights) and the Microsoft Graph `reports/userInsights/*` (beta) endpoints are being retired on **August 31, 2026**. Plan to migrate to Azure Monitor with Log Analytics (primary) or the Microsoft Graph sign-in and audit log APIs. For details, see [Migrate from User Insights](how-to-user-insights.md#migrate-from-user-insights).
+
 ## About Azure AD B2C
 
-Effective May 1, 2025, [Azure AD B2C](/azure/active-directory-b2c/) is no longer available for purchase by new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID is the next-generation CIAM solution from Microsoft, with all new features and capabilities being built on this platform.
+Effective May 1, 2025, [Azure AD B2C](/azure/active-directory-b2c/) is no longer available for purchase by new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID is the next-generation CIAM solution from Microsoft, with all new features and capabilities being built on this platform. If you're an existing Azure AD B2C customer, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) to get started.
 
 ## Next steps
 

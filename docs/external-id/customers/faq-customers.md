@@ -2,7 +2,8 @@
 title: Frequently asked questions
 description: Find answers to frequently asked questions about Microsoft Entra External ID. Learn about pricing, features, and the future of Azure AD B2C and External Identities. 
 ms.topic: faq
-ms.date: 01/06/2026
+ms.date: 05/20/2026
+ai-usage: ai-assisted
 ms.custom: it-pro
 ---
 
@@ -19,7 +20,7 @@ This FAQ references customer identity and access management (CIAM). CIAM is an i
 Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique users with authentication activity within a calendar month. External ID consists of a core offer and premium add-ons. The Microsoft Entra External ID core offering is free for the first 50,000 MAU. For the latest information about usage billing and pricing, see [Billing model for Microsoft Entra External ID](../external-identities-pricing.md).
 
 > [!NOTE]
-> Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We communicate upgrade options once they're available.
+> If you previously subscribed to Azure Active Directory B2C (Azure AD B2C) or to B2B collaboration under an Azure AD External Identities P1/P2 SKU, see the [External ID pricing](../external-identities-pricing.md) page for information about current pricing options and any available upgrade paths.
 
 ### Does the 50,000 MAU free tier apply to add-ons?
 
@@ -78,7 +79,7 @@ Get started with securing your consumer and business customer apps by [creating 
 
 ### What's happening to Azure AD B2C and Azure AD External Identities?
 
-Effective May 1, 2025 Azure AD B2C P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, remains unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, also remain unchanged. We'll continue supporting Azure AD B2C until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
+Effective May 1, 2025 Azure AD B2C P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, remains unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, also remain unchanged. We'll continue supporting Azure AD B2C until at least May 2030. For detailed migration guidance, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md). Contact your account representative for more information and to learn more about Microsoft Entra External ID.
 
 ### What's happening to Azure AD B2B collaboration and B2B direct connect?
 
@@ -142,7 +143,7 @@ You can see example code for each of these steps in our [sample applications](sa
 
 ### Can I build a fully custom authentication sign-in experience?
 
-[Native authentication](concept-native-authentication.md) empowers you to take complete control over the design of the sign-in experience of your mobile applications. It allows you to craft stunning, pixel-perfect authentication screens that are seamlessly integrated into your apps, rather than relying on browser-based solutions. Read more in our [blog](https://devblogs.microsoft.com/identity/native-auth-for-external-id/).
+Yes. Microsoft Entra External ID supports two authentication approaches: **browser-delegated authentication**, which redirects users to a Microsoft-hosted sign-in page, and **native authentication**, which lets you build the sign-in UI directly into your app. Native authentication gives you full control over the sign-in experience for mobile and single-page applications but requires more development effort and shared security responsibility. To compare both approaches and decide which is right for your app, see [Choose an authentication approach](concept-choose-authentication-approach.md).
 
 ### What integrations does External ID support for developers?
 

@@ -4,9 +4,10 @@ description: Secure your resources with Microsoft-managed Conditional Access pol
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 05/28/2026
 ms.reviewer: swethar
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 ---
 # Microsoft-managed Conditional Access policies
 
@@ -97,6 +98,8 @@ This policy blocks device code flow, where a user initiates authentication on on
 
 Device code flow is rarely used by customers, but is frequently used by attackers. Enabling this Microsoft-managed policy for your organization helps remove this attack vector.
 
+If your organization uses Microsoft Teams devices that require device code flow, follow the guidance in [Restrict device code flow for Microsoft Teams devices with Conditional Access](policy-teams-devices-device-code-flow.md) to scope exceptions correctly while continuing to block device code flow for other accounts.
+
 ### Multifactor authentication for admins accessing Microsoft Admin portals
 
 This policy covers [14 admin roles](#what-administrator-roles-are-covered-by-these-policies) that are highly privileged, who access the [Microsoft Admin Portals](policy-old-require-mfa-admin-portals.md), and requires them to perform multifactor authentication.
@@ -151,7 +154,7 @@ This policy targets:
 
 Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
 
-## Security defaults policies
+## Upgrade from security defaults
 
 The following policies are available for when you upgrade from using security defaults.
 
@@ -191,15 +194,19 @@ These accounts must use multifactor authentication to sign in to any application
 
 ### Require multifactor authentication for all users
 
-This policy applies to all users in your organization and requires multifactor authentication for every sign-in. In most cases, sessions persist on devices, so users don't need to complete multifactor authentication when interacting with other applications. 
+This policy applies to all users in your organization and requires multifactor authentication for every sign-in. In most cases, sessions persist on devices, so users don't need to complete multifactor authentication when interacting with other applications.
 
 ## Monitor and review
 
-The managed policy and the sign-in logs are the two places where you can see the effect of these policies on your organization.
+To see the effect of these policies on your organization and investigate changes to the policies, you have a few options.
 
-Review the **Policy impact** tab of the managed policy to see a summary of how the policy affects your environment.
+### Policy impact
+
+Select the **Policy impact** tab of the managed policy from within Conditional Access to see a summary of how the policy affects your environment. Adjust the filter, data format, and more to explore the policy's effect, even on report-only policies.
 
 :::image type="content" source="media/managed-policies/microsoft-managed-policy-impact-on-sign-in.png" alt-text="Screenshot showing the effect of a policy on the organization.":::
+
+### Sign-in logs
 
 Analyze the **Microsoft Entra sign-in logs** to see details about how the policies affect sign-in activity.
 
@@ -213,6 +220,17 @@ Analyze the **Microsoft Entra sign-in logs** to see details about how the polici
 1. Select a specific sign-in event, then select **Conditional Access**.
    - To investigate further, select the **Policy Name** to drill down into the configuration of the policies.
 1. Explore the other tabs to see the **client user** and **device details** that were used for the Conditional Access policy assessment.
+
+### Audit logs
+
+The **Microsoft Entra audit logs** are helpful when investigating changes made to a policy.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
+1. Set the **Service** filter to **Conditional Access**.
+1. If needed, select a specific **Activity** filter.
+
+The **Target(s)** column displays the name of the policy that was updated. Microsoft-managed policy names start with **Microsoft-managed:** so you can easily filter for them.
 
 ## Common questions
 
@@ -250,7 +268,7 @@ Depending on your Certificate-Based Authentication (CBA) configuration, it can f
 
 [Custom controls don't satisfy multifactor authentication claim requirements](controls.md#creating-custom-controls). If your organization uses custom controls you should [migrate to external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), the replacement of custom controls. Your external authentication provider must support external authentication methods and provide the necessary configuration guidance for integration.
 
-### How do I monitor when Microsoft makes a change to these policies or adds a new one?
+### How do I monitor when Microsoft makes a change to these policies, adds a new one, or deletes one?
 
 Administrators with **AuditLog.Read.All** and **Directory.Read** permissions can query the audit log for entries initiated by **Microsoft Managed Policy Manager** in the **Policy** category. For example, use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to find entries with this query string: `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?$filter=initiatedBy/app/displayName eq 'Microsoft Managed Policy Manager' and category eq 'Policy'`.
 

@@ -7,7 +7,7 @@ ms.reviewer: yukarppa
 ms.custom: it-pro
 ---
 
-# Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
+# Configure dynamic membership groups with the memberOf attribute in the Entra Admin Center (preview)
 
 
 ## Overview
@@ -41,6 +41,8 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 - Users included in `memberOf` dynamic membership groups might cause a slower processing time for your tenant, if the tenant has a large number of groups or frequent dynamic membership groups updates.
 - Membership of a memberOf dynamic group doesn't automatically update when a child group is deleted or when members are removed from a child group. The affected users or devices remain members of the memberOf dynamic group until the rule is modified.
 
+
+- Only available in public cloud. 
 
 ## Get started
 

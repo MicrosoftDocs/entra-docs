@@ -3,12 +3,11 @@ title: Configure Microsoft Entra for increased security
 description: Learn how to improve your security posture with Microsoft Entra.
 
 ms.topic: reference
-ms.date: 03/24/2026
+ms.date: 04/30/2026
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to configure Microsoft Entra for increased security so that I can harden my organization's identity infrastructure.
 ---
 # Configure Microsoft Entra for increased security (Preview)
 
@@ -136,7 +135,6 @@ Protect your network perimeter.
 | [Global Secure Access licenses are available in the tenant and assigned to users](zero-trust-protect-networks.md#global-secure-access-licenses-are-available-in-the-tenant-and-assigned-to-users) | Microsoft Entra Internet Access or Microsoft Entra Private Access |
 | [Microsoft 365 traffic is actively flowing through Global Secure Access](zero-trust-protect-networks.md#microsoft-365-traffic-is-actively-flowing-through-global-secure-access) | Microsoft Entra Suite |
 | [Universal tenant restrictions block unauthorized external tenant access](zero-trust-protect-networks.md#universal-tenant-restrictions-block-unauthorized-external-tenant-access) | Microsoft Entra Internet Access |
-| [External collaboration is governed by explicit cross-tenant access policies](zero-trust-protect-networks.md#external-collaboration-is-governed-by-explicit-cross-tenant-access-policies) | Microsoft Entra ID P1 |
 | [Conditional Access policies use compliant network controls](zero-trust-protect-networks.md#conditional-access-policies-use-compliant-network-controls) | Microsoft Entra ID P1 |
 | [Global Secure Access signaling for Conditional Access is enabled](zero-trust-protect-networks.md#global-secure-access-signaling-for-conditional-access-is-enabled) | Microsoft Entra Internet Access |
 | [Network traffic is routed through Global Secure Access for security policy enforcement](zero-trust-protect-networks.md#network-traffic-is-routed-through-global-secure-access-for-security-policy-enforcement) | Microsoft Entra Internet Access or Microsoft Entra Private Access |
@@ -211,6 +209,20 @@ Improve security incident response and incident communications.
 | [Workload Identities are configured with risk-based policies](zero-trust-response-remediation.md#workload-identities-are-configured-with-risk-based-policies) | Microsoft Entra Workload ID |
 | [Restrict high risk sign-ins](zero-trust-response-remediation.md#restrict-high-risk-sign-ins) | Microsoft Entra ID P2 |
 | [Restrict access to high risk users](zero-trust-response-remediation.md#restrict-access-to-high-risk-users) | Microsoft Entra ID P2 |
+
+## AI
+
+Secure AI agents and agent-based workloads with identity controls.
+
+| Check | Minimum required license |
+|---|---|
+| [Require Microsoft Entra ID authentication to interact with agents](zero-trust-ai.md#require-microsoft-entra-id-authentication-to-interact-with-agents) | Microsoft Entra ID P1 |
+| [Conditional Access policies cover both agent identities and agents' user accounts](zero-trust-ai.md#conditional-access-policies-cover-both-agent-identities-and-agents-user-accounts) | Microsoft Entra ID P1 |
+| [Risk-based Conditional Access blocks risky agent identities](zero-trust-ai.md#risk-based-conditional-access-blocks-risky-agent-identities) | Microsoft Entra ID P2 |
+| [Custom security attributes for agent identities are present](zero-trust-ai.md#custom-security-attributes-for-agent-identities-are-present) | None (included with Microsoft Entra ID) |
+| [Identity governance for agent identity sponsors is configured](zero-trust-ai.md#identity-governance-for-agent-identity-sponsors-is-configured) | Microsoft Entra ID P1 |
+| [Agent identities and blueprint principals have assigned technical owners and no disabled agents remain in the directory](zero-trust-ai.md#agent-identities-and-blueprint-principals-have-assigned-technical-owners-and-no-disabled-agents-remain-in-the-directory) | None (included with Microsoft Entra ID) |
+| [AI administrative roles have assigned principals](zero-trust-ai.md#ai-administrative-roles-have-assigned-principals) | None (included with Microsoft Entra ID) |
 
 ## Related content
 

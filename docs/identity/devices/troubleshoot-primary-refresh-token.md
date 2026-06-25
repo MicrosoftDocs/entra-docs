@@ -6,8 +6,6 @@ description: Troubleshoot primary refresh token issues during authentication thr
 ms.topic: troubleshooting
 ms.date: 02/23/2026
 
-ms.author: gudlapreethi
-author: GudlaPreethi
 editor: v-jsitser
 ms.reviewer: gudlapreethi, bemey, filuz, robgarcia, v-leedennis
 ---

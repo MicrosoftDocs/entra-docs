@@ -3,7 +3,6 @@ title: Recoverability best practices in Microsoft Entra ID
 description: Learn the best practices for increasing recoverability.
 ms.topic: best-practice
 ms.date: 11/03/2025
-ms.reviewer: jricketts
 ms.subservice: architecture
 ---
 
@@ -93,7 +92,7 @@ Document the state of your tenant and its objects regularly. Then if a hard dele
 
 - [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations.
 - [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings.
-- [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings.
+- [Tenant Configuration Management APIs in Microsoft Graph](/graph/unified-tenant-configuration-management-concept-overview) let you define configuration baselines, monitor tenants for drift, and generate snapshots of current settings. You can download snapshots as JSON files for reference or to restore many settings to a previous state.
 - [Conditional Access APIs](/graph/api/resources/conditionalaccesspolicy) can be used to manage your Conditional Access policies as code.
 
 In the rare case that an API is not available for a certain configuration setting, screenshot(s) can be taken to enable manual recovery.
@@ -127,7 +126,6 @@ The [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) can p
 
 > [!NOTE]
 > Settings in the legacy multifactor authentication portal for Application Proxy and federation settings might not be exported with the Microsoft Entra Exporter, or with the Microsoft Graph API.
-The [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) module uses Microsoft Graph and PowerShell to retrieve the state of many of the configurations in Microsoft Entra ID. This information can be used as reference information or, by using PowerShell Desired State Configuration scripting, to reapply a known good state.
 
 Use [Conditional Access Graph APIs](/graph/api/resources/conditionalaccesspolicy) to manage policies like code.
  

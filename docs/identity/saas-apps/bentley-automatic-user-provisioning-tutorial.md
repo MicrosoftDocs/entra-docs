@@ -3,15 +3,13 @@ title: Configure Bentley - Automatic User Provisioning for automatic user provis
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Bentley - Automatic User Provisioning.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/24/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bentley - Automatic User Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Bentley - Automatic User Provisioning.
----
+--- 
 
 # Configure Bentley - Automatic User Provisioning for automatic user provisioning with Microsoft Entra ID
 
@@ -24,6 +22,7 @@ This article describes the steps you need to perform in both Bentley - Automatic
 > * Remove users in Bentley - Automatic User Provisioning when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Bentley - Automatic User Provisioning
 > * Provision groups and group memberships in Bentley - Automatic User Provisioning
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

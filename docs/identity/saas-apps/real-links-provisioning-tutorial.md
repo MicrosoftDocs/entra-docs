@@ -1,14 +1,12 @@
 ---
 title: Configure Real Links for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Real Links.
-author: jeevansd
 manager: pmwongera
 ms.topic: how-to
 ms.date: 03/20/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Real Links so that I can streamline the user management process and ensure that users have the appropriate access to Real Links.
----
+--- 
 
 # Configure Real Links for automatic user provisioning with Microsoft Entra ID
 
@@ -21,6 +19,7 @@ This article describes the steps you need to perform in both Real Links and Micr
 > * Remove users in Real Links when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Real Links
 > * [Single sign-on](real-links-tutorial.md) to Real Links (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

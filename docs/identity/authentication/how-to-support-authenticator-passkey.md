@@ -4,7 +4,6 @@ description: Learn how to support passkeys in Microsoft Authenticator in your Mi
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.reviewer: calui, tilarso
-
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users can register a passkey in Microsoft Authenticator.
 

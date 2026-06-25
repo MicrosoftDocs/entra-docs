@@ -1,9 +1,7 @@
 ---
 title: Configure protected web API apps
 description: Learn how to build a protected web API and configure your application's code.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform

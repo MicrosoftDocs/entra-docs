@@ -1,11 +1,9 @@
 ---
 title: Migrate identity management scenarios from SAP IDM to Microsoft Entra
 description: Learn the detailed steps for how to bring identities from SAP SuccessFactors and other sources into Microsoft Entra ID and provision those identities with access to SAP ECC, SAP S/4HANA, and other SAP and non-SAP applications, for organizations that were previously using SAP IDM.
-author: markwahl-msft
 editor: markwahl-msft
 ms.topic: how-to
 ms.date: 08/25/2024
-ms.author: mwahl
 ms.reviewer: mwahl
 ---
 
@@ -99,7 +97,7 @@ Before migrating scenarios to a Microsoft Entra tenant, you should review the st
 
 In SAP IDM, the Identity Store represents identity data through entry types such as `MX_PERSON`, `MX_ROLE`, or `MX_PRIVILEGE`.
 
-* A person is represented in a Microsoft Entra ID tenant as a [User](~/fundamentals/how-to-create-delete-users.yml). If you have existing users who are not yet in Microsoft Entra ID, you can bring them into Microsoft Entra ID. First, if you have attributes on the existing users which are not part of the Microsoft Entra ID schema, then [extend the Microsoft Entra user schema with extension attributes](~/identity/app-provisioning/plan-sap-user-source-and-target.md#update-the-microsoft-entra-id-user-schema) for the additional attributes. Next, perform an upload to [bulk create the users in Microsoft Entra ID](~/identity/users/users-bulk-add.md) from a source, such as a CSV file. Then, [issue credentials to those new users](~/identity/app-provisioning/plan-sap-user-source-and-target.md#distribute-credentials-to-newly-created-microsoft-entra-users-or-windows-server-ad-users) so they can authenticate to Microsoft Entra ID.
+* A person is represented in a Microsoft Entra ID tenant as a [User](~/fundamentals/how-to-create-delete-users.md). If you have existing users who are not yet in Microsoft Entra ID, you can bring them into Microsoft Entra ID. First, if you have attributes on the existing users which are not part of the Microsoft Entra ID schema, then [extend the Microsoft Entra user schema with extension attributes](~/identity/app-provisioning/plan-sap-user-source-and-target.md#update-the-microsoft-entra-id-user-schema) for the additional attributes. Next, perform an upload to [bulk create the users in Microsoft Entra ID](~/identity/users/users-bulk-add.md) from a source, such as a CSV file. Then, [issue credentials to those new users](~/identity/app-provisioning/plan-sap-user-source-and-target.md#distribute-credentials-to-newly-created-microsoft-entra-users-or-windows-server-ad-users) so they can authenticate to Microsoft Entra ID.
 
 * A business role can be represented in Microsoft Entra ID Governance as an [Entitlement Management access package](~/id-governance/entitlement-management-access-package-create.md). You can [govern access to applications by migrating an organizational role model to Microsoft Entra ID Governance](~/id-governance/identity-governance-organizational-roles.md), which results in an access package for each business role. To automate the migration process, you can [use PowerShell to create access packages](~/id-governance/entitlement-management-access-package-create-app.md).
 

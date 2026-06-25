@@ -2,9 +2,11 @@
 title: Quickstart - Access and create new tenant
 description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
 ms.topic: quickstart
-ms.date: 03/12/2026
+ms.date: 06/19/2026
+ai-usage: ai-assisted
 ms.custom: it-pro, fasttrack-edit, mode-other, sfi-image-nochange
 ms.collection: M365-identity-device-management
+#Customer Intent: As an IT admin, I want to create a new Microsoft Entra tenant so that I can set up a directory for my organization or development environment.
 ---
 
 # Quickstart: Create a new tenant in Microsoft Entra ID
@@ -34,7 +36,33 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 
 # [Workforce / B2C](#tab/workforce)
 
-[!INCLUDE [Create](../includes/definitions/create-new-tenant.md)]
+1. Sign in to the [Azure portal](https://portal.azure.com).
+
+1. From the Azure portal menu, select **Microsoft Entra ID**.
+
+1. Navigate to **Entra ID** > **Overview** > **Manage tenants**.
+
+1. Select **Create**.
+
+   :::image type="content" source="media/create-new-tenant/portal.png" alt-text="Screenshot of Microsoft Entra ID - Overview page - Create a tenant.":::
+
+1. On the Basics tab, select the type of tenant you want to create, either **Microsoft Entra ID** or **Microsoft Entra ID (B2C)**.
+
+   Choose **Microsoft Entra ID** to create a workforce tenant for your organization's users and resources. Choose **Microsoft Entra ID (B2C)** only if you need an Azure AD B2C tenant. If **Microsoft Entra ID** is unavailable, review the prerequisites in the previous note, including paid customer requirements, tenant creation settings, and the Tenant Creator role.
+
+1. Select **Next: Configuration** to move to the Configuration tab.
+
+1. On the Configuration tab, enter the following information:
+
+   :::image type="content" source="media/create-new-tenant/create-new-tenant.png" alt-text="Screenshot of Microsoft Entra ID - Create a tenant page - configuration tab.":::
+
+   - Type your desired Organization name (for example *Contoso Organization*) into the **Organization name** box.
+   - Type your desired Initial domain name (for example *Contosoorg*) into the **Initial domain name** box.
+   - Select your desired Country/Region or leave the *United States* option in the **Country or region** box.
+
+1. Select **Next: Review + Create**. Review the information you entered and if the information is correct, select **Create** in the lower left corner.
+
+Your new tenant is created with the domain contoso.onmicrosoft.com.
 
 # [Secure add-on tenant creation (preview)](#tab/governed-workforce)
 
@@ -110,9 +138,9 @@ If you're not going to continue to use this tenant, you can delete the tenant us
 
 - To change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
 
-- To add users, see [Add or delete a new user](./how-to-create-delete-users.yml).
+- To add users, see [Add or delete a new user](./how-to-create-delete-users.md).
 
-- To add groups and members, see [Create a basic group and add members](./how-to-manage-groups.yml).
+- To add groups and members, see [Create a basic group and add members](./how-to-manage-groups.md).
 
 - To learn about access management, see [Azure role-based access control (RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
 

@@ -1,8 +1,6 @@
 ---
 title: Sign in with alias
 description: Learn how to sign in and sign up with alias/username with External ID for customer identity and access management (CIAM). Get detailed steps to enable username as a sign-in identifier and create users with both email address and username. 
-ms.author: godonnell
-author: garrodonnell
 manager: dougeby
 ms.service: entra-external-id 
 ms.subservice: external
@@ -226,6 +224,9 @@ Also, if you configure a custom regex for both the sign-up attribute validation 
 
 Like other attributes, you can customize signup by pre-filling username or assigning it after gathering other user information. To prefill the value, use a custom extension with the [onAttributeCollectionStart](../../identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md) event, and configure how it is presented via Page Layout or [via Microsoft Graph](how-to-define-custom-attributes.md#configure-attribute-visibility-and-editability-with-microsoft-graph). If you need to assign, modify, or validate the username after collecting more details, use the [onAttributeCollectionSubmit](../../identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md) event.
 
+> [!NOTE]
+> If the username field is hidden from the user and the username value is assigned programmatically, make sure that the username value is unique or sign-up will be blocked.
+
 ## Test signing in with the alias or username
 
 You can test signing up and signing in with the email address and username you assigned to the user you created using the [Run user flow](how-to-test-user-flows.md) feature. If you sign in with email address, you'll see email address in `preferred_username` claim.  If you sign in with username, you'll see the username in `preferred_username` claim.
@@ -242,7 +243,7 @@ You can customize the sign-in page to provide a better experience for your users
 You can customize the hint text of identifier field on the sign-in page for all apps via [Custom branding](/entra/external-id/customers/how-to-customize-branding-customers#to-customize-the-sign-in-form).
 
 > [!TIP]
-> You can also customize the hint text for a specific application, or subset of applications, by using [Branding themes](how-to-customize-branding-themes-apps.md#apply-a-theme-to-applications).
+> You can also customize the hint text for a specific application, or subset of applications, by using [Branding themes](~/fundamentals/how-to-customize-branding-themes-apps.md#apply-a-theme-to-applications).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.

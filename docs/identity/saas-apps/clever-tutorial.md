@@ -1,12 +1,11 @@
 ---
 title: Configure Clever for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Clever.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Clever so that I can control who has access to Clever, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Clever for Single sign-on with Microsoft Entra ID
 
@@ -46,7 +45,7 @@ To configure the integration of Clever into Microsoft Entra ID, you need to add 
 <a name='configure-and-test-azure-ad-sso-for-clever'></a>
 
 >[!NOTE]
->For detailed guidance on configuring SAML attributes and claims, see [Single sign-on SAML protocol](https://learn.microsoft.com/entra/identity-platform/single-sign-on-saml-protocol).
+>For detailed guidance on configuring SAML attributes and claims, see [Single sign-on SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md).
 
 ## Configure and test Microsoft Entra SSO for Clever
 

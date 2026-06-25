@@ -3,15 +3,13 @@ title: Configure Clarizen One for automatic user provisioning with Microsoft Ent
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clarizen One.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/04/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clarizen One so that I can streamline the user management process and ensure that users have the appropriate access to Clarizen One.
----
+--- 
 
 # Configure Clarizen One for automatic user provisioning with Microsoft Entra ID
 
@@ -25,6 +23,7 @@ This article describes the steps you need to perform in both Clarizen One and Mi
 > * Keep user attributes synchronized between Microsoft Entra ID and Clarizen One.
 > * Provision groups and group memberships in Clarizen One.
 > * [Single sign-on (SSO)](./clarizen-tutorial.md) to Clarizen One is recommended.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

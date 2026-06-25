@@ -6,7 +6,6 @@ services: active-directory
 ms.topic: how-to
 ms.date: 10/28/2025
 ms.reviewer: kimhana
-
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand... 
 
@@ -73,7 +72,7 @@ This article shows how to register a passkey as an authentication method by usin
 
 ## Next steps
 
-- [Choosing authentication methods for your organization](overview-authentication.md)
-- [Register security keys on behalf of users](how-to-enable-passkey-fido2.md)
+- [Choosing authentication methods for your organization](concept-authentication-methods.md)
+- [Register security keys on behalf of users](how-to-authentication-passkeys-fido2.md)
 
 

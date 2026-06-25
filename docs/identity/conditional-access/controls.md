@@ -2,7 +2,7 @@
 title: Custom controls in Microsoft Entra Conditional Access
 description: Learn how custom controls in Microsoft Entra Conditional Access work.
 ms.topic: concept-article
-ms.date: 04/01/2026
+ms.date: 05/19/2026
 ms.reviewer: gkinasewitz
 ms.custom: sfi-image-nochange
 ---
@@ -13,9 +13,9 @@ ms.custom: sfi-image-nochange
 Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, users are redirected to a compatible service to meet authentication requirements outside of Microsoft Entra ID. To meet this control, a user's browser redirects to the external service, performs any required authentication, and then redirects back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user is successfully authenticated or validated, the user continues in the Conditional Access flow.
 
 > [!IMPORTANT]
-> Custom controls are deprecated and will be retired in the future. External authentication methods are the replacement for custom controls, and they provide several benefits over the custom controls approach. Existing custom controls will continue to function, but new implementations should use external authentication methods. As mentioned in the blog post [Public preview: External authentication methods in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-external-authentication-methods-in-microsoft/ba-p/4078808), start planning your migration now.
+> Custom controls are deprecated. Adding new custom controls and editing existing custom controls will not be allowed starting September 2026. Full retirement is scheduled for early 2027. Start planning your migration now. For more information, see the [External MFA GA announcement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/4488926).
 
-For more information, see [Manage an external authentication method in Microsoft Entra ID (Preview)](../authentication/how-to-authentication-external-method-manage.md).
+For more information, see [Manage external MFA in Microsoft Entra ID](../authentication/how-to-authentication-external-method-manage.md).
 
 ## Creating custom controls
 
@@ -39,13 +39,13 @@ The option to create a custom control is located in the **Manage** section of th
 
 ![Custom controls interface in Conditional Access](./media/controls/custom-controls-conditional-access.png)
 
-Selecting **New custom control** opens a blade with a textbox for the JSON data of your control.  
+Selecting **New custom control** opens a page with a textbox for the JSON data of your control.  
 
 ![New custom control](./media/controls/new-custom-controls-conditional-access.png)
 
 ## Deleting custom controls
 
-To delete a custom control, ensure that it isn't being used in any Conditional Access policy. After that:
+To delete a custom control, ensure that it isn't being used in any Conditional Access policy. Then follow these steps:
 
 1. Go to the Custom controls list.
 1. Select … .
@@ -61,4 +61,7 @@ Custom controls can't be used with Microsoft Entra ID Protection's automation re
 
 ## Related content
 
+- [Migrate from custom controls to external MFA](how-to-migrate-custom-controls-external-mfa.md)
+- [External MFA in Microsoft Entra ID is now generally available](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/4488926)
+- [Manage external MFA in Microsoft Entra ID](../authentication/how-to-authentication-external-method-manage.md)
 - [Upcoming changes to Custom Controls](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/upcoming-changes-to-custom-controls/ba-p/1144696)

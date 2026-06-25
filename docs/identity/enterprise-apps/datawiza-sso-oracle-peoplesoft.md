@@ -1,11 +1,10 @@
 ---
 title: Configure Microsoft Entra multifactor authentication and SSO for Oracle PeopleSoft applications using Datawiza Access Proxy
 description: Enable Microsoft Entra multifactor authentication and SSO for Oracle PeopleSoft application using Datawiza Access Proxy
-author: gargi-sinha
 manager: martinco
 ms.topic: how-to
 ms.date: 01/30/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure Datawiza to enable Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) to Oracle PeopleSoft. My goal is to enhance user sign-in security and provide seamless access to applications.
@@ -48,7 +47,7 @@ Learn more: [Datawiza and Microsoft Entra authentication architecture](./datawiz
 Ensure the following prerequisites are met.
 
 * An Azure subscription
-  * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free)
+  * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * A Microsoft Entra tenant linked to the Azure subscription
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 * Docker and Docker Compose

@@ -5,10 +5,9 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.topic: concept-article
 ms.date: 09/11/2025
 
-ms.author: sarahlipsey
-author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect engineering systems so that I can secure my organization's development infrastructure.
 ---
 # Configure Microsoft Entra for Zero Trust: Protect engineering systems
 

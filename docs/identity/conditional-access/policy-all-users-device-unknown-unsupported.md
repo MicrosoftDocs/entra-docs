@@ -41,7 +41,7 @@ The [device platform condition](concept-conditional-access-conditions.md#device-
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Next steps
+## Related content
 
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 

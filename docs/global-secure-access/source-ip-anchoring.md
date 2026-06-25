@@ -1,9 +1,7 @@
 ---
 title: Source IP anchoring with Global Secure Access
 description: Configure Microsoft Entra Private Access to tunnel specific application traffic through a private network for application's network-based access control policy.
-author: jricketts
-ms.author: jricketts
-ms.reviewer: jebley
+ms.reviewer: jebley, jricketts
 ms.subservice: entra-internet-access 
 ms.topic: how-to
 ms.date: 02/21/2026

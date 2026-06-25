@@ -7,7 +7,7 @@ ms.topic: concept-article
 ms.date: 03/12/2026
 ms.custom: template-concept 
 
-#CustomerIntent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
+#Customer Intent: As an IT administrator, I want to learn about managing users with Lifecycle workflows so that I can use workflows to manage these users in my environment.
 ---
 
 # Managing users synchronized from Active Directory Domain Services to Microsoft Entra ID with Lifecycle workflows

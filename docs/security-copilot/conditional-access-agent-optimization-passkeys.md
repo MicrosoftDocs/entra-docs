@@ -1,11 +1,9 @@
 ---
 title: Deploy passkeys with the Microsoft Entra Conditional Access Optimization Agent
 description: Learn how to use the Conditional Access Optimization Agent to safely deploy a passkey program to roll out phishing-resistant authentication methods.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: jodahl
 manager: pmwongera
-ms.date: 03/18/2026
+ms.date: 05/22/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -16,9 +14,9 @@ ms.collection: msec-ai-copilot
 
 ---
 
-# Deploy passkey adoption campaigns with the Conditional Access Optimization Agent (Preview)
+# Deploy passkey adoption campaigns with the Conditional Access Optimization Agent
 
-The Conditional Access Optimization Agent helps organizations plan and deploy campaigns that guide users toward stronger authentication methods. In public preview, the agent supports deploying passkey adoption campaigns to help organizations roll out phishing-resistant authentication in a structured, intelligent, and automated way.
+The Conditional Access Optimization Agent helps organizations plan and deploy campaigns that guide users toward stronger authentication methods. The agent supports deploying passkey adoption campaigns to help organizations roll out phishing-resistant authentication in a structured, intelligent, and automated way.
 
 The agent is designed to reduce manual effort for large scale campaigns. The agent can:
 
@@ -34,22 +32,15 @@ The agent continuously evaluates progress and advances users through the campaig
 - You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
-- You must have [passkeys enabled in the Authentication methods policy](../identity/authentication/how-to-enable-passkey-fido2.md).
+- You must have [passkeys enabled in the Authentication methods policy](../identity/authentication/how-to-authentication-passkeys-fido2.md).
 - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) is required to manage passkey campaigns.
     - The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role doesn't have sufficient privileges to manage passkey campaigns.
 
-## Enable passkey campaigns in the agent
+## How the agent identifies passkey campaign candidates
 
-You can allow the Conditional Access Optimization Agent to create passkey adoption campaigns from the Microsoft Entra admin center.
+The agent automatically analyzes your tenant to identify eligible privileged administrators and generates a campaign targeting up to 200 users. For the full list of targeted roles, see [Supported admin roles](#supported-admin-roles).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
-
-1. Browse to **Conditional Access Optimization Agent** > **Settings**.
-1. Under **Agent capabilities**, select the **Allow agent to create passkey adoption campaigns** checkbox.
-
-      :::image type="content" source="media/conditional-access-agent-optimization-passkeys/passkey-campaign-setting.png" alt-text="Screenshot of the agent setting to enable passkey campaign suggestions." lightbox="media/conditional-access-agent-optimization-passkeys/passkey-campaign-setting.png":::
-
-After this setting is enabled, the agent begins analyzing your tenant to identify users eligible for a passkey campaign. Currently, the agent targets privileged administrator users by default. For more information, see [Supported admin roles](#supported-admin-roles).
+If you don't want to act on a passkey campaign suggestion, you can dismiss it like any other agent suggestion.
 
 > [!NOTE]
 > Initial analysis can take several minutes. If **Review campaign** doesn't appear, you can select **Run analysis** on the suggestion card or wait for the agent's next scheduled run.

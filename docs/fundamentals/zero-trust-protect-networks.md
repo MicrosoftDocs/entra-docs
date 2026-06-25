@@ -3,12 +3,11 @@ title: Security guidance - Protect networks
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect networks.
 
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 04/30/2026
 
-ms.author: sarahlipsey
-author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to protect networks so that I can implement Zero Trust network security principles.
 ---
 
 # Configure Microsoft Entra for Zero Trust: Protect networks
@@ -85,9 +84,6 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Universal tenant restrictions block unauthorized external tenant access
 [!INCLUDE [25377](../includes/secure-recommendations/25377.md)]
-
-### External collaboration is governed by explicit cross-tenant access policies
-[!INCLUDE [25378](../includes/secure-recommendations/25378.md)]
 
 ### Conditional Access policies use compliant network controls
 [!INCLUDE [25379](../includes/secure-recommendations/25379.md)]

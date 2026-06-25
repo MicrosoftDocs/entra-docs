@@ -1,13 +1,11 @@
 ---
 title: Configure Brivo Onair Identity Connector for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Brivo Onair Identity Connector.
-author: jeevansd
 ms.topic: how-to
 ms.date: 02/27/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Brivo Onair Identity Connector so that I can streamline the user management process and ensure that users have the appropriate access to Brivo Onair Identity Connector.
----
+--- 
 
 # Configure Brivo Onair Identity Connector for automatic user provisioning with Microsoft Entra ID
 
@@ -16,6 +14,13 @@ The objective of this article is to demonstrate the steps to be performed in Bri
 > [!NOTE]
 > This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
+
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Brivo Onair Identity Connector.
+> * Remove users in Brivo Onair Identity Connector when they don't require access anymore.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

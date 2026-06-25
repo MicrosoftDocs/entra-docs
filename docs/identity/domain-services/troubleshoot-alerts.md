@@ -259,7 +259,7 @@ Then follow these steps to retry onboarding the custom attribute in the **Custom
 
 Upon successful onboarding, Domain Services back fills synchronized users and groups with the onboarded custom attribute values. The custom attribute values appear gradually, depending on the size of the tenant. To check the backfill status, go to [Domain Services Health](check-health.md) and verify the **Synchronization with Microsoft Entra ID** monitor timestamp has updated within the last hour.
 
-## AADDS122: Group policy object conflict detected (private preview)
+## AADDS122: Group policy object conflict detected (preview)
 
 ### Alert message
 
@@ -273,6 +273,241 @@ Review the domains GPO settings and fix the entries which have issues. In the ca
 
 >[!WARNING]
 >Automatic resolution may lead to loss of data from a GPO point of view, but is necessary for us to maintain the domain in a healthy state. Make sure the alert is fixed in time to avoid any loss of data.
+
+## AADDS123: Kerberos RC4 usage detected for service ticket issuance
+
+### Alert message
+
+*Microsoft Entra Domain Services detected Kerberos RC4 usage for service ticket issuance that can block security enforcement related to [CVE-2026-20833](https://www.cve.org/CVERecord?id=CVE-2026-20833).*
+
+### Resolution
+
+Windows security updates related to CVE-2026-20833 move Kerberos KDC behavior to AES-first defaults and reduce RC4 usage. If workloads still rely on RC4, authentication failures can occur when enforcement is enabled.
+
+To resolve this alert, complete the following steps:
+
+1. Turn off RC4 from the managed domain's security settings by following [Security settings](secure-your-domain.md). Unless you have workloads, devices, or services that are explicitly dependent on RC4, no need to go to to the next steps.
+2. Turn on security events for the managed domain by following [Enable security and DNS audits for Microsoft Entra Domain Services](security-audit-events.md). Use [Sample query 7](security-audit-events.md#sample-query-7) to identify RC4 dependencies.
+3. Monitor Kerberos ticket event IDs **4768** and **4769** to identify RC4 dependencies that block enforcement.
+1. For service accounts synced from on-premises via Microsoft Entra Connect that temporarily require RC4, explicitly configure the affected service account **msDS-SupportedEncryptionTypes** value in your on-premises Active Directory to include RC4 as documented in [How to manage Kerberos KDC usage of RC4 for service account ticket issuance changes related to CVE-2026-20833](https://support.microsoft.com/en-us/topic/how-to-manage-kerberos-kdc-usage-of-rc4-for-service-account-ticket-issuance-changes-related-to-cve-2026-20833-1ebcda33-720a-4da8-93c1-b0496e1910dc). The updated attribute syncs to the managed domain through Microsoft Entra Connect.
+5. Keep domain-wide Kerberos security hardened by using [Security settings](secure-your-domain.md) and avoid broad RC4 enablement unless no other mitigation is possible.
+6. Continue monitoring Kerberos-related system events and Domain Services health until the alert is removed.
+
+The managed domain's health automatically updates itself within two hours and removes the alert when RC4 dependencies are remediated.
+
+### Self-service RC4 configuration
+
+Members of the *AAD DC Administrators* group can configure RC4 deprecation settings directly on the managed domain. The configuration files are hosted on an encrypted SMB share on each domain controller.
+
+#### Access the configuration files
+
+Connect to the hidden SMB share on your domain controller using the following UNC path:
+
+```
+\\<domain-controller-name>\CustomerExecutionScripts$
+```
+
+Replace `<domain-controller-name>` with the hostname of your managed domain's domain controller. The share requires SMB encryption and grants:
+
+- **Full access** to *Domain Admins*
+- **Change access** to *AAD DC Administrators*
+
+The share contains the following files:
+
+| File | Description |
+|---|---|
+| `rc4-configuration.json` | Customer-editable configuration file. Edit this file to change RC4 settings. |
+| `rc4-status.json` | Auto-generated status file. Don't edit this file. Check it to verify applied changes. |
+| `README.txt` | Usage instructions and reference. |
+
+#### How to use
+
+1. Connect to the `CustomerExecutionScripts$` share on the domain controller.
+1. Edit `rc4-configuration.json` with your desired settings.
+1. Save the file.
+1. Wait for the next evaluation cycle (approximately 10 minutes).
+1. Check `rc4-status.json` for confirmation of applied changes.
+
+> [!NOTE]
+> Don't delete or rename `rc4-configuration.json`, `rc4-status.json`, or `README.txt`. The service depends on these files.
+
+#### Configuration options
+
+| Setting | Value | Description |
+|---|---|---|
+| `rc4DefaultDisablementPhase` | `0` | No change. RC4 is fully permitted, no logging. |
+| `rc4DefaultDisablementPhase` | `1` | Audit mode. Logs warnings when RC4 is used, but continues to allow it. |
+| `rc4DefaultDisablementPhase` | `2` | Enforcement mode. Blocks RC4 for AES-capable accounts. |
+| `defaultDomainSupportedEncTypes` | `24` | AES only (most secure, April 2026 enforcement default). |
+| `defaultDomainSupportedEncTypes` | `36` | RC4 + AES256 (recommended for non-Windows legacy interop). |
+| `defaultDomainSupportedEncTypes` | `56` | AES only with session keys (secure, preferred over 24 for modern clients). |
+| `defaultDomainSupportedEncTypes` | `60` | AES + RC4 with session keys (recommended for transition). |
+| `serviceAccountsRequiringRc4` | Array of strings | List of `sAMAccountName` values for service accounts that need RC4 support added to their `msDS-SupportedEncryptionTypes` attribute. |
+
+Only the values listed in the table are accepted. Invalid values are rejected, and `rc4-status.json` shows validation errors.
+
+#### Configuration examples
+
+Start with audit mode to identify RC4 usage before enforcing (recommended first step):
+
+```json
+{
+    "version": 1,
+    "rc4DefaultDisablementPhase": 1,
+    "defaultDomainSupportedEncTypes": 60,
+    "serviceAccountsRequiringRc4": []
+}
+```
+
+Move to enforcement mode with exceptions for specific service accounts:
+
+```json
+{
+    "version": 1,
+    "rc4DefaultDisablementPhase": 2,
+    "defaultDomainSupportedEncTypes": 24,
+    "serviceAccountsRequiringRc4": ["svc-legacy-app", "svc-old-service"]
+}
+```
+
+#### Verify applied changes
+
+After the evaluation cycle completes, check `rc4-status.json` on the same share to confirm changes are applied. Each setting shows a `status` value:
+
+| Status | Description |
+|---|---|
+| `InSync` | Desired and actual values match. No change needed. |
+| `Applied` | A change was just applied to match the desired value. |
+| `Drift` | A difference exists between desired and actual values before remediation runs. |
+
+Service account statuses in `rc4-status.json`:
+
+| Status | Description |
+|---|---|
+| `Updated` | RC4 flag was successfully added to the account. |
+| `AlreadyCompliant` | Account already had the RC4 flag set. No change needed. |
+| `NotFound` | Account `sAMAccountName` wasn't found in the directory. |
+| `Failed` | An error occurred updating the account. See the `errors` array for details. |
+
+If `configurationValid` is `false` in the status file, the configuration file has a syntax or validation error. Review the `errors` array for details and correct `rc4-configuration.json`.
+
+#### Status examples
+
+All settings in sync, no remediation needed:
+
+```json
+{
+    "lastEvaluated": "2026-05-04T14:30:00Z",
+    "lastRemediated": "2026-05-04T14:30:00Z",
+    "configurationValid": true,
+    "currentState": {
+        "rc4DefaultDisablementPhase": {
+            "desired": 1,
+            "actual": 1,
+            "status": "InSync"
+        },
+        "defaultDomainSupportedEncTypes": {
+            "desired": 60,
+            "actual": 60,
+            "status": "InSync"
+        },
+        "serviceAccounts": []
+    },
+    "errors": []
+}
+```
+
+Changes applied with service account updates:
+
+```json
+{
+    "lastEvaluated": "2026-05-04T14:30:00Z",
+    "lastRemediated": "2026-05-04T14:30:00Z",
+    "configurationValid": true,
+    "currentState": {
+        "rc4DefaultDisablementPhase": {
+            "desired": 2,
+            "actual": 1,
+            "status": "Applied"
+        },
+        "defaultDomainSupportedEncTypes": {
+            "desired": 24,
+            "actual": 60,
+            "status": "Applied"
+        },
+        "serviceAccounts": [
+            {
+                "account": "svc-legacy-app",
+                "status": "Updated",
+                "previousEncTypes": 24,
+                "currentEncTypes": 28
+            },
+            {
+                "account": "svc-old-service",
+                "status": "AlreadyCompliant",
+                "previousEncTypes": 28,
+                "currentEncTypes": 28
+            }
+        ]
+    },
+    "errors": []
+}
+```
+
+Partial failure with service account errors:
+
+```json
+{
+    "lastEvaluated": "2026-05-04T14:30:00Z",
+    "lastRemediated": "2026-05-04T14:30:00Z",
+    "configurationValid": true,
+    "currentState": {
+        "rc4DefaultDisablementPhase": {
+            "desired": 2,
+            "actual": 2,
+            "status": "InSync"
+        },
+        "defaultDomainSupportedEncTypes": {
+            "desired": 24,
+            "actual": 24,
+            "status": "InSync"
+        },
+        "serviceAccounts": [
+            {
+                "account": "svc-legacy-app",
+                "status": "Updated",
+                "previousEncTypes": 24,
+                "currentEncTypes": 28
+            },
+            {
+                "account": "svc-missing",
+                "status": "NotFound",
+                "previousEncTypes": null,
+                "currentEncTypes": null
+            },
+            {
+                "account": "svc-broken",
+                "status": "Failed",
+                "previousEncTypes": null,
+                "currentEncTypes": null
+            }
+        ]
+    },
+    "errors": [
+        "Failed to update service account 'svc-broken': Access is denied."
+    ]
+}
+```
+
+> [!IMPORTANT]
+> This configuration is applied independently on each domain controller (DC) in the managed domain. A KDC service restart is performed automatically when registry values change. To avoid a simultaneous KDC restart on all DCs (which causes a temporary Kerberos authentication outage), space the rollout across DCs. If your domain has multiple replica sets, ensure the configuration is applied to each DC. Monitor `rc4-status.json` on each DC to confirm all controllers have successfully applied the new settings.
+
+> [!WARNING]
+> Windows updates for CVE-2026-20833 enforce RC4 hardening in phases. Plan and complete remediation before full enforcement:
+>
+> * **January 13, 2026 - Initial deployment phase:** Updates introduce audit signals and preparation controls.
+> * **April 2026 - Enforcement phase (manual rollback available):** Default Kerberos KDC behavior shifts to AES-first, and RC4-dependent scenarios can start failing unless explicitly configured.
+> * **July 2026 - Enforcement phase (final):** Updates remove rollback support and keep enforcement enabled.
 
 ## AADDS500: Synchronization has not completed in a while
 

@@ -5,7 +5,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.custom: sfi-image-nochange
-#Customer intent: As an administrator or access package manager, I want detailed information about how I can reprocess assignments for an access package in the event of a partial delivery, so that requestors have all of the resources they need to perform their job.
+#Customer Intent: As an IT admin, I want to reprocess assignments for an access package so that I can resolve failed or incomplete access assignments.
 ---
 # Reprocess assignments for an access package in entitlement management
 
@@ -16,6 +16,9 @@ For example, a user could have been removed from a group manually, thereby causi
 Entitlement Management doesn't block outside updates to the access package’s resources, so the Entitlement Management UI wouldn't accurately display this change. Therefore, the user’s assignment status would be shown as “Delivered” even though the user doesn't have access to the resources anymore. However, if the user’s assignment is reprocessed, they're added to the access package’s resources again. Reprocessing ensures that the access package assignments are up to date, that users have access to necessary resources, and that assignments are accurately reflected in the UI.
 
 This article describes how to reprocess assignments in an existing access package.
+
+> [!NOTE]
+> Reprocessing access package assignments in the Microsoft Entra admin center requires the signed-in user to be able to access the admin center. Entitlement management roles, such as Access package assignment manager, authorize assignment-management actions within entitlement management, but they don't by themselves change tenant-wide access settings for the admin center. If the **Restrict access to Microsoft Entra administration portal** user setting is enabled, verify that the delegated user can access the admin center, or use an authorized programmatic method. For more information about this setting, see [Default user permissions](../fundamentals/users-default-permissions.md).
 
 ## Prerequisites
 

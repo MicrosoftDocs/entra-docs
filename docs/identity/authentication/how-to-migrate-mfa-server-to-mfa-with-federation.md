@@ -4,9 +4,7 @@ description: Step-by-step guidance to move from MFA Server on-premises to Micros
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: gasinh
-author: gargi-sinha
-ms.reviewer: michmcla
+ms.reviewer: michmcla, gasinh
 ---
 # Migrate to Microsoft Entra multifactor authentication with federation
 
@@ -85,8 +83,6 @@ You'll need to have a specific group in which you place users for whom you want 
 To find the group SID, use the following command, with your group name
 
 `Get-ADGroup "GroupName"`
-
-   ![Image of screen shot showing the results of the Get-ADGroup script.](./media/how-to-migrate-mfa-server-to-mfa-user-authentication/find-the-sid.png)
 
 <a name='setting-the-claims-rules-to-call-azure-ad-mfa'></a>
 
@@ -194,13 +190,13 @@ For domains that set the **SupportsMfa** property, these rules determine how **f
 You can check the status of **federatedIdpMfaBehavior** by using [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration?view=graph-powershell-1.0&preserve-view=true&viewFallbackFrom=graph-powershell-beta).
 
 ```powershell
-Get-MgDomainFederationConfiguration –DomainID yourdomain.com
+Get-MgDomainFederationConfiguration –DomainID contoso.com
 ```
 
 You can also check the status of your **SupportsMfa** flag with [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration):
 
 ```powershell
-Get-MgDomainFederationConfiguration –DomainName yourdomain.com
+Get-MgDomainFederationConfiguration –DomainName contoso.com
 ```
 
 The following example shows how to set **federatedIdpMfaBehavior** to `enforceMfaByFederatedIdp` by using Graph PowerShell. 

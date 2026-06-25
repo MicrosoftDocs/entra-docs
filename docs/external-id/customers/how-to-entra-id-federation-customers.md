@@ -3,12 +3,10 @@ title: Add Microsoft Entra ID for customer sign-in
 description: Learn how to configure a Microsoft Entra ID tenant as an OpenID Connect identity provider in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
 ms.topic: how-to
 ms.date: 03/09/2026
-ms.author: godonnell
-author: garrodonnell
-ms.custom: it-pro
+ms.custom: it-pro, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 
-#Customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
+#customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
 ---
 # Add a Microsoft Entra ID tenant as an OpenID Connect identity provider
 
@@ -59,7 +57,7 @@ After you register the external tenant in the Microsoft Entra ID tenant, add it 
 |---------|-------|
 | **Display name** | A name your users see during sign-in, for example *Sign in with Contoso*. |
 | **Well-known endpoint** | `https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration` |
-| **OpenID Issuer URI** | `https://login.microsoftonline.com/<tenant-ID>/v2.0`, where `<tenant-ID>` is the directory (tenant) ID of the Microsoft Entra ID tenant. |
+| **OpenID Issuer URI** | `https://login.microsoftonline.com/<tenant-ID>/v2.0`, where `<tenant-ID>` is the directory (tenant) ID of the Microsoft Entra ID tenant. If using `domain_hint` for IdP acceleration, use the domain-based issuer format `https://login.microsoftonline.com/<domain-name>/v2.0` rather than tenant ID, where `<domain-name>` is the primary domain name of the Microsoft Entra ID tenant. |
 | **Client ID** | The application (client) ID from the app registration you created in the Microsoft Entra ID tenant. |
 | **Client Authentication** | `client_secret` |
 | **Client Secret** | The client secret value you recorded from the app registration. |
@@ -72,6 +70,8 @@ After you set up the identity provider, add it to a user flow so it appears on t
 
 ## Test the user flow
 
+To verify your federation setup, test the user flow:
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow you configured. At least one application with a redirect URI must be associated with this user flow.
@@ -80,9 +80,45 @@ After you set up the identity provider, add it to a user flow so it appears on t
 1. Select the **Run user flow** button, or copy the **Run user flow endpoint** URL and open it in a new browser window.
 1. On the sign-in page, select the Microsoft Entra ID identity provider and sign in with an account from the federated tenant.
 
-## Known limitations
+## Create users in the external tenant
 
-Conditional Access policies that require MFA registration don't work as expected when External ID is federated to Microsoft Entra ID. Users can't register an MFA method and can't complete sign-in. This limitation applies only for External ID to Microsoft Entra ID federation and doesn't affect other external identity provider federations.
+There are multiple ways to create external users in your External ID tenant after you configure federation:
+
+### Sign up through the user flow
+
+An external user can self-register in the External ID tenant by using the sign-up and sign-in user flow. When the user selects the federated Microsoft Entra ID identity provider on the sign-in page and authenticates with their organizational account, a user account is automatically created in the external tenant. For more information, see [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).
+
+### Create the user with Microsoft Graph API
+
+An admin can use the [Microsoft Graph API](/graph/api/user-post-users?tabs=http#example-3-create-a-customer-account-in-external-tenants) to create a user directly in the External ID tenant. This approach is useful for automated provisioning or migration scenarios.
+
+The following example creates a federated user with an identity linked to the source Microsoft Entra ID tenant:
+
+```http
+POST https://graph.microsoft.com/v1.0/users
+Content-type: application/json
+
+{
+  "accountEnabled": true,
+  "displayName": "Test User",
+  "givenName": "Test",
+  "mail": "testuser@contoso.com",
+  "surname": "Test User",
+  "identities": [
+    {
+      "signInType": "federated",
+      "issuer": "https://login.microsoftonline.com/<entra-tenant-id>/v2.0/<entra-external-tenant-id>",
+      "issuerAssignedId": "<entra-tenant-user-object-id>"
+    }
+  ]
+}
+```
+
+Replace the following values:
+
+- `<entra-tenant-id>`: The directory (tenant) ID of the source Microsoft Entra ID tenant.
+- `<entra-external-tenant-id>`: The directory (tenant) ID of the External ID tenant.
+- `<entra-tenant-user-object-id>`: The object ID of the user in the source Microsoft Entra ID tenant.
 
 ## Frequently asked questions
 
@@ -119,7 +155,7 @@ With Microsoft Entra ID federation:
 - Workforce Conditional Access and MFA policies are enforced.
 - The sign-in experience is a full redirect to the home tenant, rather than the mixed-branding experience associated with B2B guest sign-in.
 
-**Do Microsoft Entra ID Conditional Access and MFA policies apply?**
+**Do Microsoft Entra Conditional Access and MFA policies apply?**
 
 Yes. Because all authentication occurs in the user's home Microsoft Entra ID tenant, the following are enforced exactly as they are for native Microsoft Entra ID sign-ins:
 
@@ -128,7 +164,7 @@ Yes. Because all authentication occurs in the user's home Microsoft Entra ID ten
 - Device-based and risk-based controls
 
 > [!NOTE]
-> External ID Conditional Access policies that require MFA registration aren't honored by the home tenant. For details, see [Known limitations](#known-limitations).
+> External ID does not currently trust MFA performed in Microsoft Entra, so users may be prompted to complete MFA again if MFA is required by the External ID tenant.
 
 **Why do I see a domain confirmation dialog when using domain_hint?**
 
@@ -136,11 +172,11 @@ When `domain_hint` is used, a domain confirmation dialog appears to ensure the u
 
 **Can new users be automatically redirected based on their email domain when they enter their email address on the sign-in page?**
 
-There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in.
+There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The `domain_hint` value for Microsoft Entra ID should be the domain name, for example `domain_hint=contoso.onmicrosoft.com`. For more information, see [Issuer Acceleration](./concept-authentication-methods-customers.md#issuer-acceleration).
 
 **Can I hide other identity provider buttons and show only Microsoft Entra ID?**
 
-You can hide identity provider buttons by not including them in the user flow, but new users can only register if `domain_hint` is utilized.
+You can hide identity provider buttons by not including them in the user flow, but new users can only register if `domain_hint` is used.
 
 **Are ID tokens returned as opaque values?**
 

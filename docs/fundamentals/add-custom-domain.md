@@ -2,9 +2,10 @@
 title: Add your custom domain
 description: Instructions about how to add your custom domain name to your tenant.
 ms.topic: how-to
-ms.date: 12/04/2025
+ms.date: 06/18/2026
 ms.reviewer: elkuzmen
 ms.custom: ge-structured-content-pilot, sfi-ga-nochange
+#Customer Intent: As an IT admin, I want to add a custom domain to my Microsoft Entra tenant so that I can use my organization's domain name for user accounts.
 ---
 
 # Add your custom domain name to your tenant
@@ -30,7 +31,7 @@ After you get your domain name, you can create your first directory. Sign in to 
 > [!TIP]
 > If you plan to federate on-premises Windows Server Active Directory with Microsoft Entra ID, then you need to select **I plan to configure this domain for single sign-on with my local Active Directory** when you run the Microsoft Entra Connect tool to synchronize your directories.
 >
-> You also need to register the same domain name you select for federating with your on-premises directory in the **Microsoft Entra Domain** step in the wizard. To see what that setup looks like, see [Verify the domain selected for federation](~/identity/hybrid/connect/how-to-connect-install-custom.md#verify-the-azure-ad-domain-selected-for-federation). If you don't have the Microsoft Entra Connect tool, you can download the latest version from the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under the **Manage** tab of the **Microsoft Entra Connect | Get started** page.
+> You also need to add and verify the same domain name you select for federating with your on-premises directory in the **Microsoft Entra Domain** step in the wizard. To see what that setup looks like, see [Verify the domain selected for federation](~/identity/hybrid/connect/how-to-connect-install-custom.md#verify-the-azure-ad-domain-selected-for-federation). If you don't have the Microsoft Entra Connect tool, you can download the latest version from the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under the **Manage** tab of the **Microsoft Entra Connect | Get started** page.
 
 ## Add your custom domain name
 
@@ -65,11 +66,11 @@ Follow these steps:
 1. Go back to your domain registrar and create a new TXT or MX record for your domain based on your copied DNS information. Set the time to live (TTL) to 3600 seconds (60 minutes), and then save the record.
 
 > [!IMPORTANT]
-> You can register as many domain names as you want. However, each domain gets its own TXT or MX record. Be careful when you enter the information at the domain registrar. If you enter the wrong or duplicate information by mistake, you'll have to wait until the TTL times out (60 minutes) before you can try again.
+> You can add as many custom domain names as you need. However, each domain gets its own TXT or MX record. Be careful when you enter the information at the domain registrar. If you enter the wrong or duplicate information by mistake, you'll have to wait until the TTL times out (60 minutes) before you can try again.
 
 ## Verify your custom domain name
 
-After you register your custom domain name, make sure it's valid in Microsoft Entra. The propagation time can be instantaneous or it can take a few days, depending on your domain registrar.
+After you add the DNS record at your domain registrar, verify your custom domain name in Microsoft Entra. The propagation time can be instantaneous or it can take a few days, depending on your domain registrar.
 
 To verify your custom domain name, follow these steps:
 
@@ -81,7 +82,7 @@ To verify your custom domain name, follow these steps:
 
     :::image type="content" source="media/add-custom-domain/custom-blade-with-contoso-highlighted.png" alt-text="Screenshot of Fabrikam - Custom domain names page, with Contoso highlighted.":::
 
-1. On the **contoso.com** page, select **Verify** to make sure your custom domain is properly registered and is valid.
+1. On the **contoso.com** page, select **Verify** to make sure your custom domain was added properly and is valid.
 
     :::image type="content" source="media/add-custom-domain/contoso-blade-with-dns-info-verify.png" alt-text="Screenshot of Contoso page with DNS entry information and the Verify button.":::
 
@@ -102,5 +103,5 @@ If you can't verify a custom domain name, try the following suggestions:
 ## Related content
 
 - [How to assign roles and administrators](./how-subscriptions-associated-directory.md)
-- [How to add or delete users](./how-to-create-delete-users.yml)
+- [How to add or delete users](./how-to-create-delete-users.md)
 - [Managing custom domain names](~/identity/users/domains-manage.md)

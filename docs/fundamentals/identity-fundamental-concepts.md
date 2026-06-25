@@ -1,17 +1,16 @@
 ---
 title: "Identity and Access Management (IAM): Core Concepts and Benefits"
 description: Learn the core concepts of identity and access management (IAM), including authentication, authorization, and identity providers, to secure resources effectively.
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/31/2025
+ms.date: 06/18/2026
 ms.reviewer: null
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
-  - ai-seo-date:07/31/2025
+  - ai-seo-date:06/18/2026
   - ai-gen-description
+#Customer Intent: As an IT admin, I want to understand identity and access management core concepts so that I can make informed decisions about my organization's identity strategy.
 ---
 # Identity and access management fundamental concepts
 
@@ -45,11 +44,12 @@ A digital identity is a collection of unique identifiers or attributes that repr
 
 Identities are used to authenticate and authorize access to resources, enable communication, facilitate transactions, and serve other purposes.
 
-Identities are categorized into three types:
+Identities are categorized into four types:
 
 - **Human identities** represent people, including employees (internal and frontline workers) and external users (customers, consultants, vendors, and partners).
 - **Workload identities** represent software workloads such as an application, service, script, or container.
 - **Device identities** represent devices, including desktop computers, mobile phones, IoT sensors, and IoT-managed devices. They're distinct from human identities.
+- **Agent identities** represent AI agents that act autonomously or on behalf of users. [Microsoft Entra Agent ID](~/agent-id/what-is-microsoft-entra-agent-id.md) provides purpose-built identity constructs to authenticate, authorize, govern, and protect these identities at enterprise scale.
 
 ## Authentication
 

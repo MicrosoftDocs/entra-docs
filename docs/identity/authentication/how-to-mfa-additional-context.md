@@ -3,7 +3,7 @@ title: Use additional context in Authenticator notifications
 description: Learn how to use additional context in multifactor authentication (MFA) notifications.
 ms.topic: how-to
 ms.date: 03/04/2025
-author: mjsantani
+ms.reviewer: mayurs
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to encourage users to use the Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---

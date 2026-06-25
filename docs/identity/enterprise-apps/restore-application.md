@@ -2,7 +2,6 @@
 title: Restore a soft deleted enterprise application
 description: Restore a soft deleted enterprise application in Microsoft Entra ID.
 ms.topic: how-to
-
 ms.date: 02/28/2025
 ms.reviewer: sureshja
 ms.custom: enterprise-apps, no-azure-ad-ps-ref
@@ -184,3 +183,4 @@ DELETE https://graph.microsoft.com/v1.0/directory/deletedItems/{object-id}
 
 - [Recovery and deletion FAQ](delete-recover-faq.yml)
 - [Applications and service principals](~/identity-platform/app-objects-and-service-principals.md)
+- [Microsoft Entra Agent ID agent identity deletion](../../agent-id/concept-agent-identity-deletion.md)

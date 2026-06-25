@@ -2,7 +2,7 @@
 title: Global Administrator
 description: Global Administrator
 ms.topic: include
-ms.date: 03/24/2026
+ms.date: 06/11/2026
 ms.custom: include file
 ---
 
@@ -27,56 +27,40 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
 > | microsoft.commerce.billing/allEntities/allProperties/allTasks | Manage all aspects of Office 365 billing |
 > | microsoft.commerce.billing/purchases/standard/read | Read purchase services in Microsoft 365 admin center. |
+> | microsoft.commerce.tenantRelationships/customerDelegatedAdminPrivileges/allProperties/allTasks | Manage all aspects of granular delegated admin privileges (GDAP) relationships in a customer tenant. |
 > | microsoft.directory/accessReviews/allProperties/allTasks | Create and delete access reviews, and read and update all properties of access reviews in Microsoft Entra ID |
 > | microsoft.directory/accessReviews/definitions/allProperties/allTasks | Manage access reviews of all reviewable resources in Microsoft Entra ID |
 > | microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks | Manage admin consent request policies in Microsoft Entra ID |
 > | microsoft.directory/administrativeUnits/allProperties/allTasks | Create and manage administrative units (including members) |
-> | microsoft.directory/agentIdentities/appRoleAssignedTo/update | Update agent identity role assignments. |
-> | microsoft.directory/agentIdentities/basic/update | Update basic properties of agent identities. |
-> | microsoft.directory/agentIdentities/create | Create agent identities.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentities/delete | Delete agent identities.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentities/disable | Disable agent identities.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentities/enable | Enable agent identities.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentities/owners/update | Add and remove owners to agent identities. |
-> | microsoft.directory/agentIdentities/tag/update | Update tags for agent identities. |
-> | microsoft.directory/agentIdentityBlueprintPrincipals/appRoleAssignedTo/update | Update agent identity blueprint principal role assignments. |
-> | microsoft.directory/agentIdentityBlueprintPrincipals/basic/update | Update basic properties of agent identity blueprint principals. |
-> | microsoft.directory/agentIdentityBlueprintPrincipals/create | Create agent identity blueprint principals.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentityBlueprintPrincipals/delete |  Delete agent identity blueprint principals.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentityBlueprintPrincipals/disable |  Disable agent identity blueprint principals.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentityBlueprintPrincipals/enable |  Enable agent identity blueprint principals.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentityBlueprintPrincipals/owners/update | Add and remove owners to agent identity blueprint principals. |
-> | microsoft.directory/agentIdentityBlueprintPrincipals/tag/update | Update tags for agent identity blueprint principals. |
-> | microsoft.directory/agentIdentityBlueprints/allProperties/read | Read all properties and settings for agent identity blueprints. |
-> | microsoft.directory/agentIdentityBlueprints/allProperties/update | Update all properties and settings for agent identity blueprints. |
-> | microsoft.directory/agentIdentityBlueprints/appRoles/update | Modify app roles defined on agent identity blueprints. |
-> | microsoft.directory/agentIdentityBlueprints/authentication/update | Update authentication related settings for agent identity blueprints.  |
-> | microsoft.directory/agentIdentityBlueprints/audience/update | Update the sign-in audience setting for agent identity blueprints. |
-> | microsoft.directory/agentIdentityBlueprints/basic/update | Update basic properties of agent identity blueprints. |
-> | microsoft.directory/agentIdentityBlueprints/create | Create agent identity blueprints.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentityBlueprints/credentials/update | Add and remove credentials to agent identity blueprints.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentityBlueprints/delete | Delete agent identity blueprints.<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentIdentityBlueprints/owners/update | Add and remove owners to agent identity blueprints.  |
-> | microsoft.directory/agentIdentityBlueprints/permissions/update | Modify exposed permissions on agent identity blueprints.  |
-> | microsoft.directory/agentIdentityBlueprints/tag/update | Update tags for agent identity blueprints. |
-> | microsoft.directory/agentIdentityBlueprints/verification/update | Update publisher verification setting for agent identity blueprints. |
-> | microsoft.directory/agentUsers/assignLicense | Manage agent user licenses |
-> | microsoft.directory/agentUsers/basic/update | Update basic properties on agent users |
-> | microsoft.directory/agentUsers/create | Add agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentUsers/delete | Delete agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentUsers/disable | Disable agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentUsers/enable | Enable agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentUsers/invalidateAllRefreshTokens | Force sign-out by invalidating agent user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentUsers/lifeCycleInfo/read | Read lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentUsers/lifeCycleInfo/update | Update lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/agentUsers/manager/update | Update manager for agent users |
-> | microsoft.directory/agentUsers/photo/update | Update photo of agent users |
-> | microsoft.directory/agentUsers/reprocessLicenseAssignment | Reprocess license assignments for agent users |
-> | microsoft.directory/agentUsers/restore | Restore deleted agent users |
-> | microsoft.directory/agentUsers/revokeSignInSessions | Revoke sign-in sessions for a agent user |
-> | microsoft.directory/agentUsers/sponsors/update | Update sponsors of agent users |
-> | microsoft.directory/agentUsers/usageLocation/update | Update usage location of agent users |
-> | microsoft.directory/agentUsers/userPrincipalName/update | Update User Principal Name of agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentities/appRoleAssignedTo/update | Update agent identity role assignments |
+> | microsoft.directory/agentIdentities/authentication/update | Update authentication on agent identities |
+> | microsoft.directory/agentIdentities/basic/update | Update basic properties on agent identities |
+> | microsoft.directory/agentIdentities/create | Create agent identities |
+> | microsoft.directory/agentIdentities/delete | Delete agent identities |
+> | microsoft.directory/agentIdentities/disable | Disable agent identities |
+> | microsoft.directory/agentIdentities/enable | Enable agent identities |
+> | microsoft.directory/agentIdentities/owners/update | Update owners on agent identities |
+> | microsoft.directory/agentIdentities/tag/update | Update tags of agent identities |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/appRoleAssignedTo/update | Update agent identity blueprint principal role assignments |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/authentication/update | Update authentication on agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/basic/update | Update basic properties on agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/create | Create agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/delete | Delete agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/disable | Disable agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/enable | Enable agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/owners/update | Update owners on agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/tag/update | Update tags of agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprints/allProperties/update | Update all properties of agent identity blueprints<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprints/appRoles/update | Update appRoles on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/audience/update | Update audience on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/authentication/update | Update authentication on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/basic/update | Update basic properties on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/create | Create agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/credentials/update | Update credentials on agent identity blueprints<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprints/delete | Delete agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/owners/update | Update owners on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/permissions/update | Update exposed permissions and required permissions on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/tag/update | Update tags of agent identity blueprints |
 > | microsoft.directory/appConsent/appConsentRequests/allProperties/read | Read all properties of consent requests for applications registered with Microsoft Entra ID |
 > | microsoft.directory/applications/allProperties/allTasks | Create and delete applications, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/applications/disablement/update | Update whether an application is enabled for users to sign in |
@@ -145,7 +129,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/domains/federationConfiguration/create | Create federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/delete | Delete federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
-> | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management |
+> | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/externalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
 > | microsoft.directory/externalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
 > | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |

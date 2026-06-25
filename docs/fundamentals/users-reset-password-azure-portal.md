@@ -5,6 +5,7 @@ ms.topic: how-to
 ms.date: 08/27/2025
 ms.reviewer: jeffsta
 ms.custom: ge-structured-content-pilot, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to reset a user's password so that I can help users regain access to their accounts.
 ---
 
 # Reset a user's password
@@ -26,7 +27,7 @@ Administrators can reset a user's password if the user forgets the password, if 
 
 ## Prerequisites
 
-You must have at least the following role to reset a user's password.
+You must have at least the [Password Administrator](~/identity/role-based-access-control/permissions-reference.md#password-administrator) role to reset a user's password. Other roles can reset passwords for a limited set of users. For more information, see [Who can reset passwords](~/identity/role-based-access-control/privileged-roles-permissions.md#who-can-reset-passwords).
 
 ## To reset a password
 
@@ -59,6 +60,6 @@ Follow these steps:
 
 ## Related content
 
-- [Add or delete users](./how-to-create-delete-users.yml)
+- [Add or delete users](./how-to-create-delete-users.md)
 - [Assign roles to users](./how-subscriptions-associated-directory.md)
 - [Add or change profile information](./how-to-manage-user-profile-info.md)

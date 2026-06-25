@@ -2,7 +2,8 @@
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
 ms.topic: concept-article
-ms.date: 12/01/2025
+ms.date: 06/18/2026
+#Customer Intent: As an IT admin, I want to understand Microsoft Entra licensing so that I can choose the right license tier for my organization's needs.
 ---
 
 # Microsoft Entra licensing
@@ -35,7 +36,7 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 ## Microsoft Entra Agent ID
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+[!INCLUDE [Microsoft Entra Agent ID](../includes/licensing-agent-id.md)]
 
 ## Microsoft Entra ID Governance
 
@@ -71,7 +72,7 @@ Microsoft Entra [External ID](../external-id/external-identities-overview.md) co
 
 ## Microsoft Entra Internet Access
 
-[Microsoft Entra Internet Access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite.
+[Microsoft Entra Internet Access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite. It's also included in Microsoft 365 E7.
 
 ## Microsoft Entra monitoring and health
 
@@ -79,7 +80,7 @@ Microsoft Entra [External ID](../external-id/external-identities-overview.md) co
 
 ## Microsoft Entra Private Access
 
-[Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite.
+[Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite. It's also included in Microsoft 365 E7.
 
 ## Microsoft Entra Privileged Identity Management
 

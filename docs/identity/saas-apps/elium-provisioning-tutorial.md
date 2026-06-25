@@ -1,13 +1,11 @@
 ---
 title: Configure Elium for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Elium.
-author: jeevansd
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: jeedes
+ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Elium so that I can streamline the user management process and ensure that users have the appropriate access to Elium.
----
+--- 
 
 # Configure Elium for automatic user provisioning with Microsoft Entra ID
 
@@ -18,6 +16,17 @@ This article shows how to configure Elium and Microsoft Entra ID to automaticall
 >
 > This connector is currently in preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
+Elium is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+## Capabilities supported
+
+> [!div class="checklist"]
+> * Create users in Elium.
+> * Remove users in Elium when they don't require access anymore.
+> * [Single sign-on](elium-tutorial.md) to Elium (recommended).
+> * Long lived bearer token authentication supported.
+
 ## Prerequisites
 
 This article assumes that you already have the following prerequisites:
@@ -25,9 +34,6 @@ This article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [An Elium tenant](https://www.elium.com/pricing/)
 * A user account in Elium, with admin permissions
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Assigning users to Elium
 
@@ -96,43 +102,33 @@ To configure automatic user provisioning for Elium in Microsoft Entra ID, follow
 
     ![Provisioning tab in the Enterprise applications blade](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-    ![Automatic setting for Provisioning Mode](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, type **\<tenantURL\>/scim/v2** in the **Tenant URL** field. (The **tenantURL** is the value retrieved earlier from the Elium admin console.) Also type the Elium **Secret token** value in the **Secret Token** field. Finally, select **Test Connection** to verify that Microsoft Entra ID can connect to Elium. If the connection fails, make sure that your Elium account has admin permissions and try again.
+1. In the **Tenant URL** field, enter your Elium Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Elium. If the connection fails, ensure your Elium account has the required admin permissions and try again.
 
-    ![Tenant URL and Secret Token fields in Admin Credentials](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** field, enter the email address of a person or group who receives the provisioning error notifications. Then, select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-    ![Notification Email](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Elium**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Elium in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Elium for update operations. Select **Save** to commit any changes.
+1. Select **Attribute Mapping** in the left panel and select **users**.
+
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Elium in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Elium for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Elium API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     ![Attribute mappings between Microsoft Entra ID and Elium](media/Elium-provisioning-tutorial/userattribute.png)
 
-1. To configure scoping filters, follow the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Elium, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
 
-    ![Provisioning Status set to On](common/provisioning-toggle-on.png)
-
-1. Define the users and groups that you would like to provision to Elium by selecting the values you want in the **Scope** drop-down list box in the **Settings** section.
-
-    ![Provisioning Scope list box](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-    ![Save button for provisioning configuration](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and groups defined in **Scope** in the **Settings** section. This initial sync process takes longer than later syncs. For more information about the time required for provisioning, see [How long will it take to provision users?](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users).
-
-Use the **Current Status** section to monitor progress and follow links to your provisioning activity report. The provisioning activity report describes all actions performed by the Microsoft Entra provisioning service on Elium. For more information, see [Check the status of user provisioning](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). To read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Additional resources
 

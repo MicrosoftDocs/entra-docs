@@ -2,11 +2,10 @@
 title: Configure WalkMe SAML2.0 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and WalkMe SAML2.0.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WalkMe SAML2.0 so that I can control who has access to WalkMe SAML2.0, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure WalkMe SAML2.0 for Single sign-on with Microsoft Entra ID
 

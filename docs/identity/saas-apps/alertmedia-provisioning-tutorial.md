@@ -3,16 +3,14 @@ title: Configure AlertMedia for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to AlertMedia.
 
 
-author: jeevansd
 manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/25/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AlertMedia so that I can streamline the user management process and ensure that users have the appropriate access to AlertMedia.
 
----
+--- 
 
 # Configure AlertMedia for automatic user provisioning with Microsoft Entra ID
 
@@ -26,6 +24,7 @@ This article describes the steps you need to perform in both AlertMedia and Micr
 > * Keep user attributes synchronized between Microsoft Entra ID and AlertMedia
 > * Provision groups and group memberships in AlertMedia
 > * [Single sign-on](./alertmedia-tutorial.md) to AlertMedia (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

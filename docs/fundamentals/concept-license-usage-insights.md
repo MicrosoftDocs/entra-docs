@@ -2,9 +2,10 @@
 title: Microsoft Entra license usage insights
 description: Learn how to use the license usage insights page in the Microsoft Entra admin center to monitor license usage and entitlements.
 ms.topic: concept-article
-ms.date: 03/11/2026
+ms.date: 04/15/2026
 ms.reviewer: jadedsouza
 ai-usage: ai-assisted
+#Customer Intent: As an IT admin, I want to understand license usage insights so that I can monitor and optimize license allocation in my organization.
 ---
 
 # Microsoft Entra license usage insights
@@ -34,7 +35,7 @@ You can also navigate directly to the [License usage](https://entra.microsoft.co
 
 ## License entitlements
 
-The license entitlements section shows how many licenses you've purchased for the current month. Entitlements are calculated by looking at all Microsoft Entra products you've purchased, including:
+The license entitlements section shows how many licenses you've purchased for the current month. Amounts for other months might change based on license agreement renewals, non-renewals, or additional purchases. Entitlements are calculated by looking at all Microsoft Entra products you've purchased, including:
 
 - Microsoft Entra ID P1
 - Microsoft Entra ID P2
@@ -47,30 +48,42 @@ The license entitlements section shows how many licenses you've purchased for th
 The entitlement count reflects the total number of licenses across all products that include each tier of Microsoft Entra ID functionality.
 
 
-## Feature usage metrics
+## Product usage insights
+
+The **Product usage insights** section helps you monitor license usage to maximize your Microsoft Entra plan. Data shows last month's feature usage based on your entitled licenses and might take up to three days to update.
 
 The license usage insights page uses a single representative metric (hero metric) for each license tier to measure usage. This approach simplifies the view by focusing on the most meaningful indicator of paid feature adoption.
 
+The section is organized into two tabs:
+
+- **Entra ID** — Displays usage metrics for Microsoft Entra ID P1 features.
+- **ID Protection** — Displays usage metrics for Microsoft Entra ID P2 features.
+
 ### Microsoft Entra ID P1 usage
 
-For P1 licenses, the hero metric is **Conditional Access users** — the number of unique users with at least one Conditional Access policy evaluated during the measurement period.
-
+In the **Entra ID** tab, the key metric is **Conditional Access users** — the number of unique users with at least one Conditional Access policy evaluated during the measurement period.
 
 ### Microsoft Entra ID P2 usage
 
-For P2 licenses, the hero metric is **Risk-based Conditional Access users** — the number of unique users with at least one risk-based Conditional Access policy evaluated during the measurement period.
+In the **ID Protection** tab, the key metric is **Risk-based Conditional Access users** — the number of unique users with at least one risk-based Conditional Access policy evaluated during the measurement period.
 
+### Feature usage report
+
+Each tab includes a feature usage report that shows your tenant's feature usage for the previous month. The report displays a bar chart that compares your usage against your entitlements for each metric, expressed as a percentage of total licenses.
+
+The chart uses the following indicators:
+
+- **Licenses Used** — The portion of entitlements consumed by active usage.
+- **Licenses Not Used** — The remaining entitlements not consumed.
+- **Usage Spike** — Usage that exceeds your entitled license count.
+
+### Monthly usage patterns
+
+The **Monthly usage patterns** panel shows tenant feature usage over the previous six months. You can switch between **Active users** and **Guest users** views to see trends for each user type. The chart compares feature usage against your entitled license count over time, helping you identify usage trends and plan for future license needs.
 
 ### Active and guest user differentiation
 
 The usage metrics differentiate between active users and guest users. This distinction helps you understand which portion of your license consumption comes from internal users versus external collaborators.
-
-## Understand the usage visualization
-
-The license usage insights page displays a usage bar that compares your current usage against your entitlements:
-
-- **Within entitlement** — The bar shows your usage in one color, indicating you're using fewer licenses than you've purchased.
-- **Over entitlement** — If usage exceeds your entitlement, the bar extends beyond the entitlement boundary, providing a visual indicator that you might need more licenses.
 
 
 ## Related content

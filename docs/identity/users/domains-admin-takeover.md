@@ -2,8 +2,9 @@
 title: Admin takeover of an unmanaged directory
 description: How to take over a DNS domain name in an unmanaged Microsoft Entra organization (shadow tenant).
 ms.topic: how-to
-ms.date: 01/06/2025
+ms.date: 06/18/2026
 ms.reviewer: sumitp
+ai-usage: ai-assisted
 ms.custom: it-pro, no-azure-ad-ps-ref, sfi-ga-nochange
 ---
 # Take over an unmanaged directory as administrator in Microsoft Entra ID
@@ -115,24 +116,23 @@ The key and templates aren't moved over when the unmanaged organization is in a 
 
 Although RMS for individuals is designed to support Microsoft Entra authentication to open protected content, it doesn't prevent users from also protecting content. If users did protect content with the RMS for individuals subscription, and the key and templates weren't moved over, that content isn't accessible after the domain takeover.
 
-### PowerShell cmdlets for the ForceTakeover option
+### PowerShell and Microsoft Graph API steps for external admin takeover
 
-You can see these cmdlets used in [PowerShell example](#powershell-example).
+You can see these commands and API calls used in [PowerShell example](#powershell-example).
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-cmdlet | Usage
+Command or API call | Usage
 ------- | -------
-`connect-mggraph` | When prompted, sign in to your managed organization.
-`get-mgdomain` | Shows your domain names associated with the current organization.
-`new-mgdomain -BodyParameter @{Id="<your domain name>"; IsDefault="False"}` | Adds the domain name to organization as Unverified (no DNS verification has been performed yet).
-`get-mgdomain` | The domain name is now included in the list of domain names associated with your managed organization, but is listed as **Unverified**.
-`Get-MgDomainVerificationDnsRecord` | Provides the information to put into new DNS TXT record for the domain (MS=xxxxx). Verification might not happen immediately because it takes some time for the TXT record to propagate, so wait a few minutes before considering the **-ForceTakeover** option. 
-`confirm-mgdomain –Domainname <domainname>` | - If your domain name is still not verified, you can proceed with the **-ForceTakeover** option. It verifies that the TXT record was created and kicks off the takeover process.<br>- The **-ForceTakeover** option should be added to the cmdlet only when forcing an external admin takeover, such as when the unmanaged organization has Microsoft 365 services blocking the takeover.
-`get-mgdomain` | The domain list now shows the domain name as **Verified**.
+`Connect-MgGraph` | When prompted, sign in to your managed organization with the `Domain.ReadWrite.All` scope. For delegated access, the signed-in user must have a supported Microsoft Entra role. [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator) is the least privileged role supported for domain verification.
+`Get-MgDomain` | Shows your domain names associated with the current organization.
+`New-MgDomain -BodyParameter @{Id="<your domain name>"; IsDefault="False"}` | Adds the domain name to organization as Unverified (no DNS verification has been performed yet).
+`Get-MgDomain` | The domain name is now included in the list of domain names associated with your managed organization, but is listed as **Unverified**.
+`Get-MgDomainVerificationDnsRecord` | Provides the information to put into a new DNS TXT record for the domain (MS=xxxxx). Verification might not happen immediately because it takes some time for the TXT record to propagate.
+`Confirm-MgDomain -DomainId <domain name>` | Verifies ownership for standard domain verification scenarios. The current `Confirm-MgDomain` cmdlet doesn't expose a `-ForceTakeover` parameter.
+`Invoke-MgGraphRequest` | Calls the Microsoft Graph [domain: verify](/graph/api/domain-verify?view=graph-rest-1.0&preserve-view=true) API directly. For external admin takeover of an unmanaged domain, set the API's `forceTakeover` request body parameter to `true` after you add the required TXT record.
+`Get-MgDomain` | The domain list now shows the domain name as **Verified**.
 
 > [!NOTE]
-> The unmanaged Microsoft Entra organization is deleted 10 days after you exercise the external takeover force option.
+> The unmanaged Microsoft Entra organization is deleted 10 days after a successful external admin takeover with the `forceTakeover` option.
 
 ### PowerShell example
 
@@ -140,7 +140,7 @@ cmdlet | Usage
     ```powershell
     Install-Module -Name Microsoft.Graph
       
-    Connect-MgGraph -Scopes "User.ReadWrite.All","Domain.ReadWrite.All"
+    Connect-MgGraph -Scopes "Domain.ReadWrite.All"
     ```
 1. Get a list of domains:
   
@@ -165,7 +165,9 @@ cmdlet | Usage
     MS=ms18939161
     ```
 1. In your public DNS namespace, create a DNS txt record that contains the value that you copied in the previous step. The name for this record is the name of the parent domain, so if you create this resource record by using the DNS role from Windows Server, leave the Record name blank and just paste the value into the Text box.
-1. Run the Confirm-MgDomain cmdlet to verify the challenge:
+1. Choose how to verify the challenge.
+
+    For standard domain verification, run the [Confirm-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/confirm-mgdomain?view=graph-powershell-1.0&preserve-view=true) cmdlet:
   
     ```powershell
     Confirm-MgDomain -DomainId "<your domain name>"
@@ -177,15 +179,40 @@ cmdlet | Usage
     Confirm-MgDomain -DomainId "contoso.com"
     ```
 
-> [!NOTE]
-> The Confirm-MgDomain Cmdlet is being updated. You can monitor the [Confirm-MgDomain Cmdlet](/powershell/module/microsoft.graph.identity.directorymanagement/confirm-mgdomain?view=graph-powershell-1.0&preserve-view=true) article for updates.
+    For external admin takeover of an unmanaged domain, use [Invoke-MgGraphRequest](/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest?view=graph-powershell-1.0&preserve-view=true) to call the Microsoft Graph [domain: verify](/graph/api/domain-verify?view=graph-rest-1.0&preserve-view=true) API with `forceTakeover` set to `true`:
 
-A successful challenge returns you to the prompt without an error.
+    ```powershell
+    $body = @{
+        forceTakeover = $true
+    } | ConvertTo-Json
+
+    Invoke-MgGraphRequest -Method POST `
+        -Uri "https://graph.microsoft.com/v1.0/domains/<your domain name>/verify" `
+        -Body $body `
+        -ContentType "application/json"
+    ```
+
+    For example:
+
+    ```powershell
+    $body = @{
+        forceTakeover = $true
+    } | ConvertTo-Json
+
+    Invoke-MgGraphRequest -Method POST `
+        -Uri "https://graph.microsoft.com/v1.0/domains/contoso.com/verify" `
+        -Body $body `
+        -ContentType "application/json"
+    ```
+
+> [!NOTE]
+> The current `Confirm-MgDomain` cmdlet doesn't expose the `forceTakeover` request body parameter. Use `Invoke-MgGraphRequest` for external admin takeover scenarios that require `forceTakeover`.
+
+A successful verification returns without an error. The `domain: verify` API returns a domain object in the response body.
 
 ## Next steps
 
 * [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md)
-* [How to install and configure Azure PowerShell](/powershell/azure/)
-* [Azure PowerShell](/powershell/azure/)
-* [Azure Cmdlet Reference](/powershell/azure/get-started-azureps)
-* [Find Azure AD PowerShell and MSOnline cmdlets in Microsoft Graph PowerShell](/powershell/microsoftgraph/azuread-msoline-cmdlet-map?view=graph-powershell-1.0&pivots=azure-ad-powershell&preserve-view=true)
+* [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview)
+* [Confirm-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/confirm-mgdomain?view=graph-powershell-1.0&preserve-view=true)
+* [domain: verify](/graph/api/domain-verify?view=graph-rest-1.0&preserve-view=true)

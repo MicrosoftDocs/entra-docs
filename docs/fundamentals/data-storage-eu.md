@@ -1,12 +1,10 @@
 ---
 title: Customer data storage and processing for European customers in Microsoft Entra ID
 description: Learn about where Microsoft Entra ID stores identity-related data for its European customers.
-author: csmulligan
 manager: dougeby
-ms.author: cmulligan
 
 ms.topic: concept-article
-ms.date: 01/07/2025
+ms.date: 04/27/2026
 ms.custom: it-pro, references-regions
 ms.collection: M365-identity-device-management
 

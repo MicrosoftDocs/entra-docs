@@ -1,10 +1,8 @@
 ---
 title: "Tutorial: Call protected web API from your .NET daemon app"
 description: Learn about how to call a protected web API from your .NET client daemon app. In this tutorial, we call Microsoft Graph API. 
-author: SHERMANOUKO
 manager: pmwongera
 
-ms.author: shermanouko
 ms.service: identity-platform
 ms.custom:
 ms.topic: tutorial

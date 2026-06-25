@@ -27,12 +27,16 @@
     href: concept-conditional-access-policy-common.md
   - name: Conditional Access policy components
     href: concept-conditional-access-policies.md
+  - name: Conditional Access for agents
+    href: agent-id.md
   - name: Assignments
     items: 
      - name: Users, groups, and roles
        href: concept-conditional-access-users-groups.md
      - name: Target resources
        href: concept-conditional-access-cloud-apps.md
+     - name: Enforcement for baseline scopes
+       href: concept-enforcement-resource-exclusions.md
      - name: Network
        href: concept-assignment-network.md
      - name: Conditions
@@ -43,8 +47,6 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
-  - name: Protecting agent identities
-    href: agent-id.md
   - name: Analyze impact
     href: concept-conditional-access-report-only.md
   - name: Service dependencies
@@ -88,6 +90,8 @@
   items:
   - name: Plan your Conditional Access deployment
     href: plan-conditional-access.md
+  - name: Build policies for agents
+    href: howto-target-agent-identities.md
   - name: Recommended policies
     items: 
     - name: Block legacy authentication
@@ -112,8 +116,6 @@
       href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
-    - name: Block high-risk agents
-      href: policy-agent-block-high-risk.md
     - name: Applications
       items:
       - name: Require approved app or app protection policy
@@ -134,6 +136,8 @@
         href: policy-all-users-persistent-browser.md
       - name: Require MFA for Intune enrollment
         href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+      - name: Restrict device code flow for Teams devices
+        href: policy-teams-devices-device-code-flow.md
     - name: Multifactor authentication
       items:
       - name: Require MFA for administrators
@@ -144,6 +148,8 @@
         href: policy-old-require-mfa-admin-portals.md
       - name: Require MFA for Azure management
         href: policy-old-require-mfa-azure-mgmt.md
+    - name: Recommended policies for autonomous agent access
+      href: policy-autonomous-agents.md
     - name: Block users with elevated insider risk
       href: policy-risk-based-insider-block.md
     - name: Require terms of use to be accepted
@@ -194,6 +200,8 @@
       href: /graph/api/resources/conditionalaccesstemplate?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
   - name: Custom controls
     href: controls.md
+  - name: Migrate custom controls to external MFA
+    href: how-to-migrate-custom-controls-external-mfa.md
 - name: Resources
   items:
   - name: Azure feedback forum

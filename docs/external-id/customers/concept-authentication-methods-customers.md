@@ -17,6 +17,9 @@ ms.custom: it-pro, seo-july-2024
 
 With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, a Microsoft Entra ID tenant, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
+> [!NOTE]
+> Federated identity providers (Facebook, Google, Apple, Microsoft Entra ID, and custom OIDC or SAML/WS-Fed providers) are available only with **browser-delegated authentication**. **Native authentication** supports local account methods only—email with one-time passcode (OTP) and email with password. If your app requires social or federated sign-in, use browser-delegated authentication. For details, see [Choose an authentication approach](concept-choose-authentication-approach.md).
+
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
 ## Email and password sign-in
@@ -96,7 +99,7 @@ Learn how to [add a Microsoft Entra ID tenant as an OIDC identity provider](how-
 
 ## Custom OIDC identity provider
 
-You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
+You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol. If you're planning to migrate from Azure AD B2C rather than federate, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
 
 Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
 
@@ -126,7 +129,8 @@ You can use the following `domain_hint` values to go directly to the sign-in pag
 - **Google**: `domain_hint=google`.
 - **Apple**: `domain_hint=apple`.
 - **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax such as `"www.linkedin.com"` for LinkedIn.
-
+- **Custom OIDC - Entra ID**: For a custom OIDC Entra identity provider, use domain name of the Entra ID tenant like `domain_hint=contoso.onmicrosoft.com`.
+  
    :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Issuer URI domain segment used for domain_hint in custom OpenID Connect configuration.":::
 
 ## Updating sign-in methods
