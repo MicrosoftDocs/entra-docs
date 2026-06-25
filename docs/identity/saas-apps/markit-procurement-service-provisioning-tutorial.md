@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 04/20/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Markit Procurement Service so that I can streamline the user management process and ensure that users have the appropriate access to Markit Procurement Service.
----
+--- 
 
 # Configure Markit Procurement Service for automatic user provisioning with Microsoft Entra ID
 

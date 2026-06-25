@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 03/02/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Box so that I can streamline the user management process and ensure that users have the appropriate access to Box.
----
+--- 
 # Configure Box for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to show the steps you need to perform in Box and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Box.

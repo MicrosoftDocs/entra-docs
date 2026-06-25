@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Scilife Microsoft Entra SSO so that I can control who has access to Scilife Microsoft Entra SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Scilife Microsoft Entra SSO for Single sign-on with Microsoft Entra ID
 

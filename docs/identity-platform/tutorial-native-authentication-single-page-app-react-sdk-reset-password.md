@@ -2,9 +2,7 @@
 title: Reset Password in a React SPA App by Using Native Authentication JavaScript SDK
 description: Learn how to build a React single-page app that enables users to reset their passwords in a React single-page app into an external tenant by using native authentication JavaScript SDK.
 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

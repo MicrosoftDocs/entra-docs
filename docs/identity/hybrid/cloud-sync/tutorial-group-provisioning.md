@@ -2,7 +2,7 @@
 title: 'Tutorial - Provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync'
 description: This tutorial shows how to set up and configure Microsoft Entra Cloud Sync to provision groups to Active Directory Domain Services (AD DS).
 ms.topic: how-to
-ms.date: 11/26/2025
+ms.date: 06/09/2026
 ms.subservice: hybrid-cloud-sync
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ---
@@ -362,7 +362,14 @@ If you have SOA converted groups in scope and you roll back the SOA converted gr
 
 
 
+## Enforce that AD group changes only come from Microsoft Entra (preview)
+
+After cloud security groups are provisioned to Active Directory, an on-premises administrator can still modify or delete them directly. That bypasses the governance and lifecycle controls you set up in Microsoft Entra and creates a compliance gap. **AD group enforcement (preview)** closes the gap by letting you mark a synced group so that only the Cloud Sync provisioning agent can change it. Active Directory enforces the policy on the domain controller, so out-of-band changes are blocked (**Enforced** mode) or recorded in the Directory Services event log (**Audit** mode).
+
+For setup steps, supported objects, and how to enable Audit logging, see [Enforce that Active Directory group changes only come from Microsoft Entra](how-to-ad-group-enforcement.md). To use enforced groups to govern access to on-premises AD-based apps with Microsoft Entra ID Governance, see [Govern on-premises Active Directory Domain Services based apps (Kerberos) using Microsoft Entra ID Governance](/entra/id-governance/scenarios/provision-entra-to-active-directory-groups).
+
 ## Next steps 
+- [Enforce that Active Directory group changes only come from Microsoft Entra (preview)](how-to-ad-group-enforcement.md)
 - [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Govern on-premises AD DS based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)

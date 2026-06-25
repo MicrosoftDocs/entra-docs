@@ -1,14 +1,16 @@
 ---
 title: How to configure daemon apps that call web APIs
-description: Learn how to configure the code for your daemon application that calls web APIs (app configuration)
+description: Learn how to configure daemon apps that call web APIs using secrets, certificates, or client assertions.
 author: Dickson-Mwendia
 manager: dougeby
 ms.author: dmwendia
-ms.date: 03/25/2025
+ms.date: 06/15/2026
 ms.reviewer: jmprieur
 ms.service: identity-platform
 ms.subservice: workforce
 ms.topic: how-to
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
@@ -28,7 +30,7 @@ The following Microsoft libraries support daemon apps:
 
 Daemon applications use application permissions rather than delegated permissions. So their supported account type can't be an account in any organizational directory or any personal Microsoft account (for example, Skype, Xbox, Outlook.com). There's no tenant admin to grant consent to a daemon application for a Microsoft personal account. You need to choose *accounts in my organization* or *accounts in any organization*.
 
-The authority specified in the application configuration should include ypur tenant ID or a domain name associated with your organization.
+The authority specified in the application configuration should include your tenant ID or a domain name associated with your organization.
 
 Even if you want to provide a multitenant tool, you should use a tenant ID or domain name, and **not** `common` or `organizations` with this flow, because the service can't reliably infer which tenant should be used.
 
@@ -49,7 +51,7 @@ The configuration file defines:
 
 # [.NET](#tab/idweb)
 
-Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
+Here's an example of defining the configuration in an [*appsettings.json* sample configuration file](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json). This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
 
 ```json
 {
@@ -71,6 +73,8 @@ Here's an example of defining the configuration in an [*appsettings.json*](https
 You provide a certificate instead of the client secret, or [workload identity federation](~/workload-id/workload-identity-federation.md) credentials.
 
 # [Java](#tab/java)
+
+The following example shows the Java configuration constants for a daemon app:
 
 ```Java
  private final static String CLIENT_ID = "";
@@ -103,7 +107,7 @@ GRAPH_ENDPOINT=Enter_the_Graph_Endpoint_Here // https://graph.microsoft.com/
 
 # [Python](#tab/python)
 
-When you build a confidential client with client secrets, the [parameters.json](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/1-Call-MsGraph-WithSecret/parameters.json) config file in the [Python daemon](https://github.com/Azure-Samples/ms-identity-python-daemon) sample is as follows:
+When you build a confidential client with client secrets, the [parameters.json sample for the client secret flow](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/1-Call-MsGraph-WithSecret/parameters.json) config file in the [Python daemon](https://github.com/Azure-Samples/ms-identity-python-daemon) sample is as follows:
 
 ```Json
 {
@@ -115,7 +119,7 @@ When you build a confidential client with client secrets, the [parameters.json](
 }
 ```
 
-When you build a confidential client with certificates, the [parameters.json](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/2-Call-MsGraph-WithCertificate/parameters.json) config file in the [Python daemon](https://github.com/Azure-Samples/ms-identity-python-daemon) sample is as follows:
+When you build a confidential client with certificates, the [parameters.json sample for the certificate flow](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/2-Call-MsGraph-WithCertificate/parameters.json) config file in the [Python daemon](https://github.com/Azure-Samples/ms-identity-python-daemon) sample is as follows:
 
 ```Json
 {
@@ -130,7 +134,7 @@ When you build a confidential client with certificates, the [parameters.json](ht
 
 # [.NET (low level)](#tab/dotnet)
 
-Here's an example of defining the configuration in an [*appsettings.json*](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) file. This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
+Here's an example of defining the configuration in an [*appsettings.json* daemon console configuration file](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json). This example is taken from the [.NET console daemon](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) code sample on GitHub.
 
 ```json
 {
@@ -212,6 +216,8 @@ const msal = require('@azure/msal-node');
 
 # [Python](#tab/python)
 
+Import the required MSAL and helper modules in your Python application:
+
 ```python
 import msal
 import json
@@ -237,6 +243,8 @@ IConfidentialClientApplication app;
 Here's the code to instantiate the confidential client application with a client secret:
 
 # [.NET](#tab/idweb)
+
+The following example creates the confidential client application by using a client secret with Microsoft.Identity.Web:
 
 ```csharp
    class Program
@@ -267,6 +275,8 @@ The configuration is read from the *appsettings.json*:
 
 # [Java](#tab/java)
 
+Use the following Java code to create a confidential client application with a client secret:
+
 ```Java
 IClientCredential credential = ClientCredentialFactory.createFromSecret(CLIENT_SECRET);
 
@@ -278,6 +288,8 @@ ConfidentialClientApplication cca =
 ```
 
 # [Node.js](#tab/nodejs)
+
+Use the following Node.js configuration to instantiate a confidential client application with a client secret:
 
 ```JavaScript
 
@@ -318,6 +330,8 @@ app = msal.ConfidentialClientApplication(
 
 # [.NET (low level)](#tab/dotnet)
 
+The following MSAL.NET example creates a confidential client application by using the configured client secret:
+
 ```csharp
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
            .WithClientSecret(config.ClientSecret)
@@ -350,9 +364,9 @@ Here's the code to build an application with a certificate:
 
 # [.NET](#tab/idweb)
 
-The code itself is exactly the same. The certificate is described in the configuration. 
-There are many ways to get the certificate. For details see https://aka.ms/ms-id-web-certificates.
-Here's how you would do to get your certificate from KeyVault. Microsoft identity delegates to Azure Identity's DefaultAzureCredential, and used Managed identity when available to access the certificate from KeyVault. You can debug your application locally as it then uses your developer credentials.
+The application-construction code is the same as the client-secret example. The only difference is that the certificate is described in the configuration instead of a secret. 
+There are many ways to get the certificate. For details, see [Use certificates with Microsoft Identity Web](https://aka.ms/ms-id-web-certificates).
+The following configuration example shows how to retrieve your certificate from Azure Key Vault. Microsoft identity delegates to Azure Identity's DefaultAzureCredential, and used Managed identity when available to access the certificate from KeyVault. You can debug your application locally because DefaultAzureCredential then uses your developer credentials.
 
 ```json
   "ClientCredentials": [
@@ -398,6 +412,8 @@ ConfidentialClientApplication cca =
 
 # [Node.js](#tab/nodejs)
 
+The following Node.js example configures a confidential client application to use a certificate:
+
 ```JavaScript
 
 const config = {
@@ -435,6 +451,8 @@ app = msal.ConfidentialClientApplication(
 
 # [.NET](#tab/dotnet)
 
+Use the following MSAL.NET code to load a certificate and build the confidential client application:
+
 ```csharp
 X509Certificate2 certificate = ReadCertificate(config.CertificateName);
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
@@ -454,6 +472,8 @@ In addition to using a client secret or certificate, confidential client applica
 
 # [Java](#tab/java)
 
+The following Java example creates a confidential client application by using a client assertion:
+
 ```Java
 IClientCredential credential = ClientCredentialFactory.createFromClientAssertion(assertion);
 
@@ -465,6 +485,8 @@ ConfidentialClientApplication cca =
 ```
 
 # [Node.js](#tab/nodejs)
+
+Use the following Node.js configuration to initialize a confidential client application with a client assertion:
 
 ```JavaScript
 const clientConfig = {
@@ -531,7 +553,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
                                           .Build();
 ```
 
-Again, for details, see [Client assertions](/entra/msal/dotnet/acquiring-tokens/msal-net-client-assertions).
+For details, see [Client assertions](/entra/msal/dotnet/acquiring-tokens/msal-net-client-assertions).
 
 ---
 

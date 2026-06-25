@@ -6,7 +6,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TeamAlert SSO so that I can control who has access to TeamAlert SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure TeamAlert SSO for Single sign-on with Microsoft Entra ID
 

@@ -19,6 +19,7 @@ Learn about Conditional Access for agents:
 
 - High-level overview of Conditional Access: [What is Conditional Access?](overview.md)
 - Guide to managing agent identities across your organization: [Manage agent identities in your organization](../../agent-id/manage-agent-identities-admin.md).
+- [How to target agent identities in Conditional Access](howto-target-agent-identities.md)
 - [Configure policies for autonomous agent access](policy-autonomous-agents.md)
 
 ## How Conditional Access evaluates agent access requests
@@ -73,37 +74,24 @@ The most common access pattern is the on-behalf-of (OBO) flow. In this flow, a u
 > [!NOTE]
 > The on-behalf-of flow is also known as delegated access. Agents using this type of access are sometimes called interactive agents or assistive agents, as they involve a user interface for human interaction.
 
-:::image type="content" source="media/agent-id/on-behalf-of-agent-flow-diagram.png" alt-text="Diagram showing the OBO flow for agents accessing resources on behalf of a user." lightbox="media/agent-id/on-behalf-of-agent-flow-diagram-expanded.png":::
-
 In this flow, the agent can't reuse the user's original token because it was issued for a different audience. Instead, the agent uses the OBO flow to exchange tokens with Microsoft Entra ID, obtaining a new token scoped to the target resource. This token exchange is also evaluated by Conditional Access, letting admins enforce granular controls over which resources agents can access on behalf of the user.
 
-Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities. For step-by-step policy configuration, see [Conditional Access for agents operating on-behalf-of a user](policy-on-behalf-of-agents.md).
+Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities.
 
 ### Agents acting as an application
 
 Agents might access resources without a signed-in user. In this case the agent accesses the resource with its own identity. This flow is also known as client credentials flow, or app only access. All types of agents might use this flow. For more information about how agents authenticate with their own identity, see [Agent OAuth flows: Autonomous apps](../../agent-id/agent-autonomous-app-oauth-flow.md).
 
-The following diagram shows the application only access authorization flow.
-
-:::image type="content" source="media/agent-id/application-only-flow-diagram.png" alt-text="Diagram showing the application only access flow for agents accessing resources with their own identity." lightbox="media/agent-id/application-only-flow-diagram-expanded.png":::
-
 This flow applies in the following common scenarios:
 
-- **Autonomous agents that operate independently**:
-  - These agents run in the background, respond to events, or run on a schedule.
-  - For example, an agent that generates a daily report and sends the result to a group of employees. In this scenario, there's no user present, and the agent operates on its own.
-- **Interactive agents that use their own identity**:
-  - These agents don't always access resources on a user's behalf; sometimes they use their own identity.
+- **Autonomous agents that operate independently** run in the background, respond to events, or run on a schedule.
+  - For example, an agent that generates a daily report and sends the result to a group of employees.
+  - In this scenario, there's no user present, and the agent operates on its own.
+- **Interactive agents that use their own identity** don't always access resources on a user's behalf; sometimes they use their own identity.
   - For example, if an agent calls a backend SMS service that users don't have access to, the OBO flow doesn't apply, and the agent authenticates directly as itself.
-- **Agents published on the web for public use**:
-  - These agents either don't authenticate the user or don't support delegating the user's context to corporate resources.
+- **Agents published on the web for public use** don't authenticate the user or don't support delegating the user's context to corporate resources.
 
-In these scenarios, the agent requests an access token using its own agent identity and credentials managed through the agent identity blueprint. The token is issued to the agent identity (not the user). Therefore, Conditional Access policies are scoped to the agent identity rather than the user. You can target agents acting as applications in Conditional Access using the following options:
-
-- **All agent identities**: Targets all agent identities in your directory.
-- **Select agent identities**: Target specific agent identities individually.
-
-For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md).
+In these scenarios, the agent requests an access token using its own agent identity and credentials managed through the agent identity blueprint. The token is issued to the agent identity (not the user). Therefore, Conditional Access policies are scoped to the agent identity rather than the user. For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md).
 
 ### Agents acting as a user
 
@@ -111,22 +99,13 @@ Sometimes it's not enough for an agent to perform tasks on behalf of a user or o
 
 In this model, an admin creates a user account in the directory and links it to the agent's identity. From there, it's like any other user account. Licenses can be assigned to access Microsoft 365 resources such as a mailbox and calendar. The account can be added to administrative units and security groups just like a human user account.
 
-Agents using this flow are sometimes called "digital worker," or "AI teammate." They're also considered autonomous agents as they don't involve a user interface for human interaction. In this model, the access token is issued to the agent's user account (the token subject), and policy is evaluated against the agent's user account, not the agent identity. You can target agent user accounts in Conditional Access using the following options:
-
-- **All agent users (Preview)**: Targets all agent user accounts in your directory.
-- **Select agent users (Preview)**: Target specific agent user accounts individually.
-
-For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md). For more information about the agent user OAuth flow, see [Agent user OAuth flow](../../agent-id/agent-user-oauth-flow.md).
+Agents using this flow are sometimes called "digital worker," or "AI teammate." They're also considered autonomous agents as they don't involve a user interface for human interaction. In this model, the access token is issued to the agent's user account (the token subject), and policy is evaluated against the agent's user account, not the agent identity. For step-by-step policy configuration, see [Conditional Access for autonomous agents](policy-autonomous-agents.md). For more information about the agent user OAuth flow, see [Agent user OAuth flow](../../agent-id/agent-user-oauth-flow.md).
 
 Agents running on managed endpoints like [Windows 365 Cloud PCs for Agents](/windows-365/agents/introduction-windows-365-for-agents) can also be subject to device compliance and compliant network controls. Use the **Agent execution environments (Preview)** condition to scope these policies to endpoint-based sessions only. For more information, see [Require a compliant device for agents' user accounts](policy-autonomous-agents.md#require-a-compliant-device-for-agents-user-accounts).
 
-## Ways to select agents to apply Conditional Access policies
+## Conditional Access policies and agent identity blueprints
 
-In addition to the specific agent access patterns, you can also select agent identity blueprints to apply Conditional Access policies to a class of agents. Custom security attributes can also be used to categorize and target agents for Conditional Access.
-
-### Agent identity blueprints
-
-Another way to apply a Conditional Access policy to multiple agent identities at once is by targeting their parent agent identity blueprint. Every agent identity is derived from an agent identity blueprint, which defines its configuration and governance model. Applying a policy at the blueprint level automatically covers all agent identities derived from it, including any new ones added in the future. Targeting the agent identity blueprint does not cover agents' user accounts.
+In addition to the specific agent access patterns, you can also select [agent identity blueprints](../../agent-id/agent-blueprint.md) to apply Conditional Access policies to a class of agents. Every agent identity is derived from an agent identity blueprint, which defines its configuration and governance model. Applying a policy at the blueprint level automatically covers all agent identities derived from it, including any new ones added in the future. Targeting the agent identity blueprint does not cover agents' user accounts.
 
 The following diagram shows that only agent identities associated with blueprint "A" are granted access; all other agents are excluded and blocked.
 
@@ -134,19 +113,13 @@ The following diagram shows that only agent identities associated with blueprint
 
 For example, imagine a project where you have several agents, each with its own purpose. Some operate independently, while others collaborate with other agents (A2A) to complete tasks. If they're all created under the same blueprint, a single policy applied to that blueprint enforces consistent access controls across the entire collection.
 
-### Attribute-driven Conditional Access
+## Attribute-driven Conditional Access
 
 As the number of agent identities grows, individually managing each one across every policy becomes unsustainable. [Custom security attributes](../../fundamentals/custom-security-attributes-overview.md) let you categorize agent identities and resources with business-specific labels, then target those attributes in Conditional Access policies. Policies automatically apply to every agent with matching attributes, including ones added in the future.
 
 :::image type="content" source="media/agent-id/conditional-access-agent-diagram.png" alt-text="Diagram showing the Conditional Access flow for agent identities." lightbox="media/agent-id/conditional-access-agent-diagram.png":::
 
 For a full walkthrough on creating custom security attributes and using them in a Conditional Access policy, see [Conditional Access for autonomous agents](policy-autonomous-agents.md#allow-only-specific-agents-to-access-resources).
-
-### Target resource considerations
-
-To select a target resource in a Conditional Access policy, the resource must have an enterprise application (service principal) in your Microsoft Entra ID tenant. This requirement applies regardless of the data access pattern or resource type, including Microsoft Graph, MCP servers, Open API tools, and custom tools you build. For more information, see [Targeting resources with Conditional Access](concept-conditional-access-cloud-apps.md).
-
-For custom MCP servers, Open API-based tools, or other custom tool types, register the tool as an application in Microsoft Entra ID and expose its permissions. For more information, see [How to configure an application to expose a web API](../../identity-platform/quickstart-configure-app-expose-web-apis.md).
 
 ## Conditional Access boundaries and limitations
 
@@ -168,10 +141,7 @@ The following configurations aren't currently supported:
 - A Conditional Access policy targeting agent identities won't apply to the agent's user account.
 - A Conditional Access policy targeting agent identities using agent identity blueprint covers only the agent identity, not the agent's user account.
 
-## Investigating policy evaluation using sign-in logs
-
-Use the sign-in logs to investigate why a Conditional Access policy did or didn't apply. Filter for `agentType` to find agent-specific entries. For more information, see [Microsoft Entra Agent ID sign-in and audit logs](../../agent-id/sign-in-audit-logs-agents.md).
-
 ## Next steps
 
+- [How to target agent identities in Conditional Access](howto-target-agent-identities.md)
 - [Configure policy for autonomous agent access](policy-autonomous-agents.md)

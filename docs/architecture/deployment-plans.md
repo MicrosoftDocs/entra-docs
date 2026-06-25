@@ -1,10 +1,9 @@
 ---
 title: Microsoft Entra deployment plans
 description: Guidance on Microsoft Entra deployment, such as authentication, devices, hybrid scenarios, governance, and more.
-author: gargi-sinha
 ms.topic: concept-article
 ms.date: 02/07/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.subservice: architecture
 ---
 

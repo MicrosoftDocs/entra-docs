@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/12/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LinkedIn Sales Navigator so that I can streamline the user management process and ensure that users have the appropriate access to LinkedIn Sales Navigator.
----
+--- 
 
 # Configure LinkedIn Sales Navigator for automatic user provisioning
 

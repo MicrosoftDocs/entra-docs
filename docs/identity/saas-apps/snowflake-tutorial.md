@@ -2,7 +2,7 @@
 title: Configure Snowflake for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Snowflake.
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Snowflake so that I can control who has access to Snowflake, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -14,6 +14,10 @@ In this article,  you learn how to integrate Snowflake with Microsoft Entra ID. 
 * Enable your users to be automatically signed-in to Snowflake with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Snowflake is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 To configure Microsoft Entra integration with Snowflake, you need the following items:
@@ -22,9 +26,6 @@ To configure Microsoft Entra integration with Snowflake, you need the following 
 * Snowflakes single sign-on enabled subscription.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 

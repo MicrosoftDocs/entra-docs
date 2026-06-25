@@ -3,7 +3,7 @@ title: Configure Oracle Human Capital Management (HCM) for automatic user provis
 description: Integrating Oracle Fusion Cloud Human Capital Management (HCM) with Microsoft Entra ID and on-premises Active Directory using the Inbound Provisioning API.
 ms.topic: how-to
 ms.date: 09/13/2024
----
+--- 
 
 # Configure Oracle Human Capital Management (HCM) for automatic user provisioning
 

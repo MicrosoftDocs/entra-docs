@@ -2,11 +2,9 @@
 title: Enable single sign-on for an enterprise application with a relying party security token service
 description: Enable single sign-on for an enterprise application that has a relying party security token service in Microsoft Entra ID.
 
-author: markwahl-msft
 ms.topic: how-to
 ms.date: 02/01/2025
-ms.author: mwahl
-ms.reviewer: ergreenl
+ms.reviewer: ergreenl, mwahl
 ms.custom: mode-other, enterprise-apps
 
 #customer intent: As an IT admin, I want to enable single sign-on for an enterprise application in Microsoft Entra, so that my users can sign in using their Microsoft Entra credentials and have a seamless authentication experience, by connecting the application's relying party STS to Microsoft Entra ID via SAML. 

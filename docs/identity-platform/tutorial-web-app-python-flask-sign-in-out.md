@@ -1,10 +1,8 @@
 ---
 title: 'Tutorial: Sign-in users to a Python Flask web app by using Microsoft identity platform'
 description: Learn how to sign-in users to a Python Flask web app by using Microsoft identity platform
-author: SHERMANOUKO
 manager: pmwongera
 
-ms.author: shermanouko
 ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 02/24/2025

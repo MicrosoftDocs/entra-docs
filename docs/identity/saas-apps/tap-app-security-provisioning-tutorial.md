@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/24/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tap App Security so that I can streamline the user management process and ensure that users have the appropriate access to Tap App Security.
----
+--- 
 
 # Configure TAP App Security for automatic user provisioning with Microsoft Entra ID
 

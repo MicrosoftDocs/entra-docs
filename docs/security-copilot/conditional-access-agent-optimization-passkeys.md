@@ -1,8 +1,6 @@
 ---
 title: Deploy passkeys with the Microsoft Entra Conditional Access Optimization Agent
 description: Learn how to use the Conditional Access Optimization Agent to safely deploy a passkey program to roll out phishing-resistant authentication methods.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: jodahl
 manager: pmwongera
 ms.date: 05/22/2026

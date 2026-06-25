@@ -2,7 +2,7 @@
 title: Configure Workplace from Meta for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps you need to do in both Workplace from Meta and Microsoft Entra ID to configure automatic user provisioning.
 ms.topic: how-to
-ms.date: 04/02/2026
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 ---
 
@@ -19,6 +19,10 @@ This article describes the steps you need to do in both Workplace from Meta and 
 
 >[!VIDEO https://www.youtube.com/embed/oF7I0jjCfrY]
 
+Workplace from Meta is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -29,9 +33,6 @@ The scenario outlined in this article assumes that you already have the followin
 
 > [!NOTE]
 > To test the steps in this article,  we don't recommend using a production environment.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 To test the steps in this article,  you should follow these recommendations:
 

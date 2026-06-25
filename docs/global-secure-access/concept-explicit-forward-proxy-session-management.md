@@ -3,9 +3,7 @@ title: Explicit Forward Proxy Session Management Concepts
 description: Learn about Explicit Forward Proxy session management concepts.
 ms.topic: concept-article
 ms.date: 04/06/2026
-ms.author: alexpav
-author: idmdev
-ms.reviewer: 
+ms.reviewer: alexpav
 ---
 
 # Explicit Forward Proxy (preview) session management

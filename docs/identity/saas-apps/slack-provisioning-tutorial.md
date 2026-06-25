@@ -2,7 +2,6 @@
 title: Automate User provisioning into Slack with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Slack.
 
-manager: jeedes
 ms.topic: how-to
 ms.date: 04/16/2026
 
@@ -26,6 +25,10 @@ The objective of this article is to show you the steps you need to perform in Sl
 > * [Single sign-on](./slack-tutorial.md) to Slack (recommended)
 
 
+Slack is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following items:
@@ -34,9 +37,6 @@ The scenario outlined in this article assumes that you already have the followin
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Slack tenant with the [Business+ plan](https://slack.com/pricing) only. Enteprise Grid customers should follow [Slack's instructions](https://api.slack.com/admins/scim#enterprise-grid) instead.
 * A user account in Slack with Team Admin permissions.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
@@ -140,7 +140,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a few users before deploying more broadly in your organization.
 
 1. When you're ready to provision, select **Start Provisioning** from the **Overview** page. 
 

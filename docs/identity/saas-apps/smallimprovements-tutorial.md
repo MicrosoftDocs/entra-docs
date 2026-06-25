@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 05/24/2024
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Small Improvements so that I can control who has access to Small Improvements, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Small Improvements for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Small Improvements with Microsoft Entra ID. When you integrate Small Improvements with Microsoft Entra ID, you can:

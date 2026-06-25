@@ -1,24 +1,28 @@
 ---
 title: Device identity and desktop virtualization
-description: Learn how VDI and Microsoft Entra device identities can be used together
+description: Learn how to manage Microsoft Entra device identities in virtual desktop infrastructure (VDI) environments to prevent stale devices and tenant quota consumption.
 
 ms.topic: concept-article
-ms.date: 03/04/2026
+ms.date: 06/04/2026
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
 
 ms.reviewer: sandeo
 ---
 # Device identity and desktop virtualization
 
-Administrators commonly deploy virtual desktop infrastructure (VDI) platforms hosting Windows operating systems in their organizations. Administrators deploy VDI to:
+Administrators commonly deploy virtual desktop infrastructure (VDI) platforms that host Windows operating systems in their organizations. VDI helps to:
 
 - Streamline management.
 - Reduce costs through consolidation and centralization of resources.
-- Deliver end-users mobility and the freedom to access virtual desktops anytime, from anywhere, on any device.
+- Deliver end-user mobility and the freedom to access virtual desktops anytime, from anywhere, on any device.
 
 There are two versions of virtual desktops. These names refer to the user session and profile experience, not the lifecycle of the underlying virtual machine (VM).
 
-- Persistent
-- Non-persistent
+| Virtual desktop type | Description | Effect on tenant quota |
+| --- | --- | --- |
+| Persistent | Uses a unique desktop image for each user or pool of users. These desktops can be customized and saved for future use. | Devices register once and remain in the directory. Stale devices accumulate only if VMs are periodically reset without cleanup. |
+| Non-persistent | Uses a collection of desktops that users access on an as-needed basis. These desktops revert to their original state after a VM shutdown, restart, or OS reset. | Each reset can trigger a new device registration, which rapidly increases stale device records and consumes tenant quota. |
 
 Persistent versions use a unique desktop image for each user or a pool of users. These unique desktops can be customized and saved for future use. 
 
@@ -31,11 +35,11 @@ Non-persistent versions use a collection of desktops that users can access on an
 
 Some scenarios require unique device names in the directory. This can be achieved by proper management of stale devices, or you can guarantee device name uniqueness by using some pattern in device naming.
 
-This article covers Microsoft's guidance to administrators on support for device identity and VDI. For more information about device identity, see the article [What is a device identity](overview.md).
+This article provides guidance for managing device identities in VDI environments. For more information about device identity, see the article [What is a device identity](overview.md).
 
 ## Supported scenarios
 
-Before configuring device identities in Microsoft Entra ID for your VDI environment, familiarize yourself with the supported scenarios. The following table illustrates which provisioning scenarios are supported. Provisioning in this context implies that an administrator can configure device identities at scale without requiring any end-user interaction. 
+Before configuring device identities in Microsoft Entra ID for your VDI environment, familiarize yourself with the supported scenarios. The following table illustrates which provisioning scenarios are supported. Provisioning in this context implies that an administrator can configure device identities at scale without requiring any end-user interaction.
 
 **Windows current** devices represent Windows 10 or newer, Windows Server 2016 v1803 or higher, and Windows Server 2019 or higher.
 
@@ -76,7 +80,7 @@ Administrators should reference the following articles, based on their identity 
 
 ### Non-persistent VDI
 
-When administrators deploy non-persistent VDI, Microsoft recommends you implement the following guidance. Failure to do so results in your directory having lots of stale Microsoft Entra hybrid joined devices that were registered from your non-persistent VDI platform. These stale devices result in increased pressure on your tenant quota and risk of service interruption because of running out of tenant quota.
+When you deploy non-persistent VDI, Microsoft recommends the following guidance. Failure to follow these steps results in your directory accumulating stale Microsoft Entra hybrid joined devices from your non-persistent VDI platform.
 
 - If you're relying on the System Preparation Tool (sysprep.exe) and if you're using a pre-Windows 10 1809 image for installation, make sure that image isn't from a device that is already registered with Microsoft Entra ID as Microsoft Entra hybrid joined.
 - If you're relying on a Virtual Machine (VM) snapshot to create more VMs, make sure that snapshot isn't from a VM that is already registered with Microsoft Entra ID as Microsoft Entra hybrid join.
@@ -112,12 +116,12 @@ Roaming of the work account's device certificate is not supported. The certifica
 
 ### Persistent VDI
 
-When administrators deploy persistent VDI, Microsoft recommends you implement the following guidance. Failure to do so results in deployment and authentication issues.
+When you deploy persistent VDI, Microsoft recommends the following guidance. Failure to follow these steps results in deployment and authentication issues.
 
 - If you're relying on the System Preparation Tool (sysprep.exe) and if you're using a pre-Windows 10 1809 image for installation, make sure that image isn't from a device that is already registered with Microsoft Entra ID as Microsoft Entra hybrid joined.
 - If you're relying on a Virtual Machine (VM) snapshot to create more VMs, make sure that snapshot isn't from a VM that is already registered with Microsoft Entra ID as Microsoft Entra hybrid join.
 
-We recommend you to implement process for [managing stale devices](manage-stale-devices.md). This process ensures your directory doesn't get consumed with lots of stale devices if you periodically reset your VMs.
+We recommend you implement a process for [managing stale devices](manage-stale-devices.md). This process ensures your directory doesn't accumulate stale devices if you periodically reset your VMs.
 
 ## Next steps
 

@@ -1,7 +1,6 @@
 ---
 title: Configure ServiceNow for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ServiceNow.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 04/20/2026
 ms.custom: sfi-image-nochange
@@ -17,12 +16,16 @@ For more information on the Microsoft Entra automatic user provisioning service,
 ## Capabilities supported
 
 > [!div class="checklist"]
-> * Basic Authentication authentication supported.
 > - Create users in ServiceNow.
 > - Remove users in ServiceNow when they don't need access anymore.
 > - Keep user attributes synchronized between Microsoft Entra ID and ServiceNow.
 > - Provision groups and group memberships in ServiceNow.
 > - Allow [single sign-on](servicenow-tutorial.md) to ServiceNow (recommended).
+> - Basic Authentication authentication supported.
+
+ServiceNow is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 
@@ -31,9 +34,6 @@ For more information on the Microsoft Entra automatic user provisioning service,
 - A [ServiceNow instance](https://www.servicenow.com) of Calgary or higher.
 - A [ServiceNow Express instance](https://www.servicenow.com) of Helsinki or higher.
 - A user account in ServiceNow with the admin role.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 

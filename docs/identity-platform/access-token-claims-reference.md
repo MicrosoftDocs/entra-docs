@@ -1,9 +1,7 @@
 ---
 title: Access token claims reference
 description: Claims reference with details on the claims included in access tokens issued by the Microsoft identity platform.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom:
 ms.date: 05/26/2023
 ms.service: identity-platform

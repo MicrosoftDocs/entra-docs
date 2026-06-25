@@ -1,8 +1,6 @@
 ---
 title: Global Secure Access Certifications
 description: Global Secure Access maintains a compliance portfolio. This article lists the current, supported certifications.
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.topic: reference
 ms.service: global-secure-access
 ms.date: 03/30/2026

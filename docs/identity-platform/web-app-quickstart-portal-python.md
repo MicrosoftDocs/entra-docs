@@ -2,9 +2,7 @@
 title: "Quickstart: Add sign-in with Microsoft to a Python web app"
 description: In this quickstart, learn how a Python web app can sign in users, get an access token from the Microsoft identity platform, and call the Microsoft Graph API.
 ROBOTS: NOINDEX
-author: Dickson-Mwendia
 manager: dougeby
-ms.author: dmwendia
 ms.custom:
 ms.date: 12/19/2023
 ms.service: identity-platform

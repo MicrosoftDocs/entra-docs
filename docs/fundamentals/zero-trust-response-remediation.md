@@ -5,8 +5,6 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.topic: concept-article
 ms.date: 09/12/2025
 
-ms.author: sarahlipsey
-author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
 #Customer Intent: As an IT admin, I want to understand how to accelerate response and remediation so that I can quickly recover from security incidents.

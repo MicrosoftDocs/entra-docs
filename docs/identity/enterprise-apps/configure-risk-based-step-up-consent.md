@@ -1,7 +1,6 @@
 ---
 title: Configure risk-based step-up consent
 description: Learn how to disable and enable risk-based step-up consent to reduce user exposure to malicious apps that make illicit consent requests.
-
 ms.topic: how-to
 ms.date: 05/21/2025
 ms.reviewer: phsignor

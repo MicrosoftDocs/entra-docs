@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 04/21/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Pingboard so that I can streamline the user management process and ensure that users have the appropriate access to Pingboard.
----
+--- 
 
 # Configure Pingboard for automatic user provisioning in Microsoft Entra ID
 

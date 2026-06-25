@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra authentication overview
 description: Authentication is the process of verifying identity before granting access. Learn about the authentication methods available in Microsoft Entra ID.
-author: tilarso
-ms.author: tilarso
+ms.reviewer: tilarso
 ms.service: entra-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-108

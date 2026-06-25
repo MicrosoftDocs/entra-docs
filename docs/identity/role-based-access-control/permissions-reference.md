@@ -2,7 +2,7 @@
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 ms.topic: reference
-ms.date: 05/21/2026
+ms.date: 06/19/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -117,6 +117,9 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Printer Technician](#printer-technician) | Can register and unregister printers and update printer status. | e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477 |
 > | [Privileged Authentication Administrator](#privileged-authentication-administrator) | Can access to view, set and reset authentication method information for any user (admin or non-admin).<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 7be44c8a-adaf-4e2a-84d6-ab2649e08a13 |
 > | [Privileged Role Administrator](#privileged-role-administrator) | Can manage role assignments in Microsoft Entra ID, and all aspects of Privileged Identity Management.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | e8611ab8-c189-46e8-94e1-60213ab1f814 |
+> | [Purview Workload Content Administrator](#purview-workload-content-administrator) | Manage or purge data from Microsoft 365 when accessing from the Microsoft Purview portal. | 3f04f91a-4ad7-4bd3-bcfa-49882ea1a88a |
+> | [Purview Workload Content Reader](#purview-workload-content-reader) | Read data from Microsoft 365 when accessing from the Microsoft Purview portal. | e07494ad-1654-4dd2-922e-6f81a71bf00f |
+> | [Purview Workload Content Writer](#purview-workload-content-writer) | Read and edit data from Microsoft 365 when accessing from the Microsoft Purview portal. | 02d5655b-c1cf-4e5f-98da-5fb919085bf6 |
 > | [Reports Reader](#reports-reader) | Can read sign-in and audit reports. | 4a5d8f65-41da-4de4-8968-e035b65339cf |
 > | [Search Administrator](#search-administrator) | Can create and manage all aspects of Microsoft Search settings. | 0964bb5e-9bdb-4d7b-ac29-58e794862a40 |
 > | [Search Editor](#search-editor) | Can create and manage the editorial content such as bookmarks, Q and As, locations, floorplan. | 8835291a-918c-4fd7-a9ce-faa49f0cf7d9 |
@@ -541,6 +544,18 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Privileged Role Administrator
 
 [!INCLUDE [privileged-role-administrator](includes/privileged-role-administrator.md)]
+
+## Purview Workload Content Administrator
+
+[!INCLUDE [purview-workload-content-administrator](includes/purview-workload-content-administrator.md)]
+
+## Purview Workload Content Reader
+
+[!INCLUDE [purview-workload-content-reader](includes/purview-workload-content-reader.md)]
+
+## Purview Workload Content Writer
+
+[!INCLUDE [purview-workload-content-writer](includes/purview-workload-content-writer.md)]
 
 ## Reports Reader
 

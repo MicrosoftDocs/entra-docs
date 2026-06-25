@@ -4,7 +4,7 @@ description: Integrating Rippling Human Capital Management (HCM) with Microsoft 
 manager: pmwongera
 ms.topic: how-to
 ms.date: 06/18/2025
----
+--- 
 
 # Configure Rippling Human Capital Management (HCM) for user provisioning
 

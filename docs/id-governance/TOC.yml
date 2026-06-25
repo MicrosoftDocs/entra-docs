@@ -5,7 +5,7 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
-  - name: Governing Agent IDs
+  - name: Governing agent identities
     href: agent-ID-governance-overview.md    
 
 
@@ -429,6 +429,8 @@
           href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
+        - name: Configure execution limits and quarantine
+          href: lifecycle-workflow-execution-limits.md
         - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights

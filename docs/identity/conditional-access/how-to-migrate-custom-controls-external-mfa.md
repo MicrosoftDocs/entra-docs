@@ -3,8 +3,6 @@ title: Migrate from custom controls to external MFA in Conditional Access
 description: Learn how to migrate from custom controls to external multifactor authentication in Microsoft Entra Conditional Access.
 ms.topic: how-to
 ms.date: 05/19/2026
-ms.author: sarahlipsey
-author: shlipsey3
 manager: pmwongera
 ms.reviewer: akuloomba
 ai-usage: ai-assisted

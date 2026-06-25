@@ -1,7 +1,6 @@
 ---
 title: How trusts work for Microsoft Entra Domain Services
 description: Learn how domain and forest trust relationships work in Active Directory and how they apply to Microsoft Entra Domain Services for cross-forest authentication.
-author: justinha
 manager: dougeby
 
 ms.service: entra-id
