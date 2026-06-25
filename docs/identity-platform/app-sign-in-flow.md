@@ -33,6 +33,8 @@ The following sequence diagram summarizes this interaction:
 
 ![web app authentication process](media/authentication-scenarios/web-app-how-it-appears-to-be.png)
 
+"Microsoft" is misspelt in this diagram above
+
 ### How a web app determines if the user is authenticated
 
 Web app developers can indicate whether all or only certain pages require authentication. For example, in ASP.NET/ASP.NET Core, this is done by adding the `[Authorize]` attribute to the controller actions.
