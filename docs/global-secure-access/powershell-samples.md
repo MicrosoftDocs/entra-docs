@@ -1,8 +1,8 @@
 ---
 title: PowerShell samples for Global Secure Access
-description: Use these PowerShell samples to automate common Global Secure Access tasks, including connector registration, client install, traffic forwarding bypasses, break glass scenarios, and TLS certificate creation.
+description: Use these PowerShell samples to automate common Global Secure Access tasks, including connector registration, client install, traffic forwarding bypasses, break glass scenarios, TLS certificate creation, operations monitoring, and recovery.
 ms.topic: sample
-ms.date: 04/27/2026
+ms.date: 06/17/2026
 ms.reviewer: katabish
 ai-usage: ai-assisted
 ---
@@ -48,7 +48,26 @@ The samples are grouped by scenario.
 | [Create and sign TLS certificates using Active Directory Certificate Services](scripts/powershell-active-directory-certificate-service.md) | Generate a certificate signing request through the TLS inspection Graph API, sign it with ADCS, and upload the certificate and chain to TLS inspection settings. |
 | [Create and sign TLS certificates using OpenSSL](scripts/powershell-open-secure-sockets-layer.md) | Generate a certificate signing request through the TLS inspection Graph API, sign it with a self-signed root CA created by OpenSSL, and upload the certificate and chain to TLS inspection settings. |
 
+## Operations monitoring
+
+| Sample | Description |
+|---|---|
+| [Shared helper functions for operations scripts](scripts/powershell-global-secure-access-operations-helpers.md) | Use shared authentication, Log Analytics token, and alert email helper functions for operations automation scripts. |
+| [Verify configuration backup compliance](scripts/powershell-test-backup-compliance.md) | Check recent Azure Automation jobs for your Global Secure Access configuration backup runbook and alert when backups fail or miss a scheduled run. |
+| [Check role assignment reviews](scripts/powershell-test-role-based-access-control-hygiene.md) | Query Global Secure Access-related role assignments and identify administrator accounts that need quarterly review. |
+| [Calculate alert noise ratio](scripts/powershell-test-alert-noise-ratio.md) | Calculate the Microsoft Sentinel alert noise ratio for Global Secure Access detections and identify noisy analytics rules. |
+
+## Recovery
+
+| Sample | Description |
+|---|---|
+| [List Microsoft Entra snapshots](scripts/powershell-get-entra-snapshot.md) | List Microsoft Entra Backup and Recovery snapshots for the tenant and identify the latest available snapshot. |
+| [Preview Microsoft Entra recovery](scripts/powershell-start-entra-recovery-preview.md) | Create a non-destructive recovery preview job scoped to directory objects that affect Global Secure Access. |
+| [Run Microsoft Entra recovery](scripts/powershell-invoke-entra-recovery.md) | Run a Microsoft Entra recovery job after reviewing and approving the matching preview job. |
+
 ## Related content
 
 - [What is Global Secure Access?](overview-what-is-global-secure-access.md)
+- [Global Secure Access operations guide](overview-operations.md)
+- [Security operations for network access](how-to-security-operations.md)
 - [Microsoft Graph Beta PowerShell module installation](/powershell/microsoftgraph/installation)

@@ -23,11 +23,11 @@ These administrative relationships must be configured for each Agent ID object a
 
 ## Owners
 
-Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Individual users (including guest users) and service principals can be set as owners. Groups aren't supported as owners. Service principals as owners enable automated management of agent identities. Owners are optional for agent identity blueprints and agent identities.
+Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Individual users (including guest users) and service principals can be assigned as owners. Groups aren't supported as owners. Service principals as owners enable automated management of agent identities. Owners are optional for all agent identity objects.
 
 ### Owner responsibilities
 
-Owners can modify properties that the sponsor can't, like authentication properties. Owners can also add or update other owners and sponsors for the agent identities. Like sponsors, they can disable and delete agent identities that are no longer needed. Unlike sponsors, owners can re-enable an agent identity that is disabled and restore soft deleted identities.
+Owners can modify properties that the sponsor can't, like authentication properties. Owners can also add or update other owners and sponsors for the agent identities. Like sponsors, they can disable and delete agent identities that are no longer needed. Unlike sponsors, owners can re-enable an agent identity that is disabled, restore soft-deleted identities, or hard-delete identities.
 
 ### Owner access and permissions
 
@@ -43,9 +43,9 @@ Service principals can also be set as owners when some other managing service ne
 
 ## Sponsors
 
-Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent, and they can determine whether an agent is still needed or requires access. Sponsors are required for agent identity blueprints and agent identities, ensuring every agent has a designated business owner.
+Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent, and they can determine whether an agent is still needed or requires access. Sponsors are required for agent identity blueprints and agent identities, ensuring every agent has a designated business owner. 
 
-Sponsorship should be maintained ensuring succession when an employee who's a sponsor moves or leaves. Both users (including guest users) and groups can be assigned as sponsors. When a group is assigned, all members of the group have sponsor rights over the Agent ID object. Not all group types are supported as sponsors. The following group types are allowed:
+Sponsorship should be maintained to ensure succession when an employee who's a sponsor moves or leaves. Users (including guest users) and groups can be assigned as sponsors. When a group is assigned, all members of the group have sponsor rights over the Agent ID object. Not all group types are supported as sponsors. The following group types are allowed:
 
 - Dynamic membership groups (security or Microsoft 365)
 - Assigned membership groups (Microsoft 365)
@@ -61,7 +61,7 @@ Sponsors make decisions about the agent lifecycle, including renewal, extension,
 
 ### Sponsor access and permissions
 
-Sponsors operate under least-privilege with limited administrative permissions. They can't modify application settings on agent blueprints or agent identities. Access is limited to nondestructive lifecycle operations: enabling and disabling agents.
+Sponsors operate under least-privilege with limited administrative permissions. They can't modify application settings on agent blueprints or agent identities. Access is limited to nondestructive lifecycle operations: enabling and disabling agent identities, modifying the identity's sponsors, or soft-deleting.
 
 ### Sponsor typical personas
 

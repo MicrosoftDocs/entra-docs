@@ -59,6 +59,9 @@ Account Discovery is currently unsupported for the following applications:
 - ServiceNow  
 - Amazon Web Services (AWS)
 - Snowflake
+- Cross-tenant synchronization
+- Cloud sync
+- Group provisioning to AD
 
 ### All other connectors
 
@@ -103,6 +106,10 @@ Unassigned users match a Microsoft Entra ID user based on the matching attribute
 ### Assigned users
 
 Assigned users match a Microsoft Entra ID user who is already assigned to the application. These accounts are fully managed by the provisioning service. No action is needed unless you want to review or update their attribute mappings.
+
+### Retrieve results with Microsoft Graph
+
+In addition to reviewing discovered accounts in the Microsoft Entra admin center, you can use Microsoft Graph to programmatically retrieve the account discovery results. For more information, see the [identityCorrelation resource type](/graph/api/resources/identitycorrelation?view=graph-rest-beta) in the Microsoft Graph beta API reference.
 
 ## Filter and search results
 

@@ -13,7 +13,7 @@ ms.custom: include file,licensing
 
 Starting soon, ID Protection for agents will require a [Microsoft Agent 365 license](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing) to extend protection to agents through [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md#how-to-get-started).
 
-| Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 / Microsoft Entra Suite |
+| Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 / Microsoft Entra Suite / Microsoft 365 E7 |
 | --- | --- | --- | --- | --- |
 | Risk policies | Sign-in and user risk policies (via Conditional Access) | No | No | Yes |
 | Security reports | Overview | No | No | Yes |

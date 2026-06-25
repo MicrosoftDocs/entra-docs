@@ -29,12 +29,14 @@ Key details:
 
 You need at least the **Microsoft Entra Backup Reader** role to review difference reports. To review and create difference reports, you need the **Microsoft Entra Backup Administrator** role. The **Global Administrator** role also includes these permissions.
 
+The tenant must meet the [Backup and Recovery prerequisites](overview.md#prerequisites), including **Microsoft Entra ID P1 or P2** licenses.
+
 ## Scope a difference report
 
 When you create a difference report, scope it to control which objects are included in the comparison:
 
 - **All supported objects**: Includes all supported object types in the tenant.
-- **By object type**: Includes only selected object types.
+- **By object type**: Includes only selected object types, such as Conditional Access policies, service principals, or groups.
 - **By object ID**: Includes only specific objects by their object IDs with their object types specified. Specify up to 100 object IDs across supported object types.
 
 You set the scope when you create the report. You can't change it afterward.
@@ -46,6 +48,8 @@ You set the scope when you create the report. You can't change it afterward.
 1. Go to **Backup and recovery** > **Backups**. Select a backup from the list, and then select **Create difference report**.
 
    :::image type="content" source="media/create-review-difference-reports/create-difference-report-backups-page.png#lightbox" alt-text="Screenshot of the Backups page showing available backups with a Create difference report button in the toolbar.":::
+
+   Backups are created automatically once per day. Only retained backups appear for selection. The report compares the selected backup with the current tenant state.
 
 1. (Optional) Apply filters to limit the scope of objects included in the report. Choose one of these options:
 
@@ -88,6 +92,8 @@ Difference reports move through these statuses as they're created and processed:
 | **Canceled** | The difference report was canceled before completion. |
 
 ## Review a difference report
+
+A difference report reflects the current tenant state at the time the report was created and doesn't update automatically. If more changes occur before recovery, create a new difference report.
 
 1. Go to **Backup and recovery** > **Difference reports**. The list shows each report's status, backup details (ID, timestamp, and availability), and scoping criteria. It also shows creation and completion times, and the number of objects and links in the report.
 

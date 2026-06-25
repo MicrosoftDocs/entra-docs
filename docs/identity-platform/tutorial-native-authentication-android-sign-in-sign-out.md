@@ -37,6 +37,8 @@ To sign in a user using the one-time passcode, collect the email and send an ema
 
 To sign in a user using username (email) and password, collect the email and password from the user. If the username and password are valid, the app signs in the user.
 
+If the **Username** built-in user attribute is enabled in your tenant's sign-up user flow, the `username` parameter in sign-in accepts either the user's email address or their username (alias). No separate sign-in logic is needed to support alias-based sign-in.
+
 To sign in a user, you need to: 
 
 1. Create a user interface (UI) to:

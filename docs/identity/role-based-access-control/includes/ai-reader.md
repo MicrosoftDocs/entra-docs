@@ -4,10 +4,12 @@ description: AI Reader
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 04/22/2026
+ms.date: 06/25/2026
 ---
 
-Assign the AI Reader role to users who need to do the following tasks:
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
+
+This is a [privileged role](../privileged-roles-permissions.md). Assign the AI Reader role to users who need to do the following tasks:
 
 - Read all aspects of Microsoft 365 Copilot
 - Read AI-related enterprise services, extensibility, and copilot agents
@@ -22,6 +24,10 @@ Assign the AI Reader role to users who need to do the following tasks:
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.directory/administrativeUnits/members/read | Read members of administrative units |
 > | microsoft.directory/administrativeUnits/standard/read | Read basic properties on administrative units |
+> | microsoft.directory/adminConsentRequestPolicy/allProperties/read | Read all properties of admin consent request policies in Microsoft Entra ID |
+> | microsoft.directory/agentIdentities/allProperties/read | Read all properties of agent identities |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/allProperties/read | Read all properties of agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprints/allProperties/read | Read all properties of agent identity blueprints |
 > | microsoft.directory/agentUsers/lifeCycleInfo/read | Read lifecycle information of agent users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/applicationPolicies/standard/read | Read standard properties of application policies |
 > | microsoft.directory/applications/owners/read | Read owners of applications |

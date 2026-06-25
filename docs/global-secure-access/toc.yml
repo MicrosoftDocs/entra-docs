@@ -67,6 +67,8 @@ items:
     href: overview-operations.md
   - name: Common operations (RACI, change, metrics)
     href: how-to-operations-common.md
+  - name: Security operations for network access
+    href: how-to-security-operations.md
   - name: Operate Private Access
     href: how-to-operate-private-access.md
   - name: Operate Internet Access
@@ -106,6 +108,24 @@ items:
     href: ./scripts/powershell-open-secure-sockets-layer.md
   - name: Install the Windows client as a proof of concept
     href: ./scripts/powershell-windows-client-install-proof-of-concept.md
+  - name: Operations monitoring
+    items:
+    - name: Shared helper functions for operations scripts
+      href: ./scripts/powershell-global-secure-access-operations-helpers.md
+    - name: Verify configuration backup compliance
+      href: ./scripts/powershell-test-backup-compliance.md
+    - name: Check role assignment reviews
+      href: ./scripts/powershell-test-role-based-access-control-hygiene.md
+    - name: Calculate alert noise ratio
+      href: ./scripts/powershell-test-alert-noise-ratio.md
+  - name: Recovery
+    items:
+    - name: List Microsoft Entra snapshots
+      href: ./scripts/powershell-get-entra-snapshot.md
+    - name: Preview Microsoft Entra recovery
+      href: ./scripts/powershell-start-entra-recovery-preview.md
+    - name: Run Microsoft Entra recovery
+      href: ./scripts/powershell-invoke-entra-recovery.md
 - name: Concepts
   expanded: false
   items: 

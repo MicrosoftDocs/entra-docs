@@ -30,6 +30,8 @@ The guide suite groups content by Global Secure Access capability, plus a shared
 | Guide | What it covers |
 | --- | --- |
 | [Common operations](how-to-operations-common.md) | RACI matrix (responsible, accountable, consulted, informed) for roles and responsibilities, change management process, metrics and reporting framework, continuous improvement |
+| [Security operations for network access](how-to-security-operations.md) | Security monitoring, detection patterns, Sentinel analytics rules, and cross-signal investigation guidance for Global Secure Access |
+| [PowerShell samples](powershell-samples.md) | Automation samples for operations monitoring, configuration backup compliance, role assignment reviews, alert noise analysis, and recovery |
 
 ### Capability-specific operations
 
@@ -56,7 +58,7 @@ Each capability guide follows a consistent structure: Alerting and monitoring, M
 If you completed deployment, follow this sequence:
 
 1. **Establish your team**—Assign roles using the [RACI matrix](how-to-operations-common.md#raci-matrix). Ensure at least two people cover each role.
-2. **Configure alerting**—Set up the critical alerts listed in each capability guide: [Private Access](how-to-operate-private-access.md#alerting-and-monitoring), [Internet Access](how-to-operate-internet-access.md#alerting-and-monitoring), [Remote Networks](how-to-operate-remote-networks.md#alerting-and-monitoring), and [Microsoft Traffic](how-to-operate-microsoft-traffic.md#alerting-and-monitoring). Don't rely on dashboards for issue detection.
+2. **Configure alerting**—Set up the critical alerts listed in the [Security operations for network access](how-to-security-operations.md) guide and each capability guide: [Private Access](how-to-operate-private-access.md#alerting-and-monitoring), [Internet Access](how-to-operate-internet-access.md#alerting-and-monitoring), [Remote Networks](how-to-operate-remote-networks.md#alerting-and-monitoring), and [Microsoft Traffic](how-to-operate-microsoft-traffic.md#alerting-and-monitoring). Don't rely on dashboards for issue detection.
 3. **Establish baselines**—Collect a 30-day performance baseline for traffic volume, latency, and usage. Calibrate alert thresholds against this baseline. Each capability guide includes Kusto Query Language (KQL) queries for baseline establishment.
 4. **Set up automation**—Start with configuration backups and alert notifications. Expand to the full automation playbook list over time.
 5. **Schedule recurring checks**—Implement the daily, weekly, and monthly checklists from each capability guide.

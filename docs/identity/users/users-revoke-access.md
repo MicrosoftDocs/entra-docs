@@ -3,7 +3,8 @@ title: Revoke user access in an emergency in Microsoft Entra ID
 description: How to revoke all access for a user in Microsoft Entra ID
 ms.topic: how-to
 ms.reviewer: yukarppa
-ms.date: 04/02/2026
+ms.date: 06/19/2026
+ai-usage: ai-assisted
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
@@ -18,24 +19,24 @@ To mitigate the risks, you must understand how tokens work. There are many kinds
 
 ## Prerequisites
 
-The PowerShell steps in this article require the following:
+Sign in with an account that has the appropriate roles. Different steps require different roles:
 
-- [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true) installed. Install the required modules:
+- Disable user accounts: [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) for non-admin users, or [Privileged Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) for admin accounts.
+- Disable devices: [Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator) at minimum.
 
-    ```PowerShell
-    Install-Module Microsoft.Graph.Users
-    Install-Module Microsoft.Graph.Users.Actions
-    Install-Module Microsoft.Graph.Identity.DirectoryManagement
-    ```
+The PowerShell steps in this article also require the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true). Install the required modules:
 
-- Sign in with an account that has the appropriate roles. Different steps require different roles:
-    - Disable user accounts: [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) for non-admin users, or [Privileged Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) for admin accounts.
-    - Disable devices: [Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator) at minimum.
-- Connect to Microsoft Graph with the required scopes:
+```PowerShell
+Install-Module Microsoft.Graph.Users
+Install-Module Microsoft.Graph.Users.Actions
+Install-Module Microsoft.Graph.Identity.DirectoryManagement
+```
 
-    ```PowerShell
-    Connect-MgGraph -Scopes "User.ReadWrite.All","Directory.AccessAsUser.All"
-    ```
+Connect to Microsoft Graph with the required scopes:
+
+```PowerShell
+Connect-MgGraph -Scopes "User.ReadWrite.All","Directory.AccessAsUser.All"
+```
 
 ## Access tokens and refresh tokens
 
@@ -92,7 +93,19 @@ As an admin in the Active Directory, connect to your on-premises network, open P
 
 ### Microsoft Entra environment
 
-As an administrator in Microsoft Entra ID, open PowerShell, connect to Microsoft Graph with the required scopes (see [Prerequisites](#prerequisites)), and take the following actions:
+For an individual user, you can use the Microsoft Entra admin center to block new sign-ins and revoke refresh tokens.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with an account that has the appropriate role. For more information, see [Prerequisites](#prerequisites).
+
+1. Browse to **Entra ID** > **Users** > **All users**, and then select the user.
+
+1. Under **Account status**, select **Edit**.
+
+1. In **Properties**, clear **Account enabled**, and then select **Save**.
+
+1. On the user **Overview** page, select **Revoke sessions**.
+
+For repeatable response actions, bulk response, or disabling the user's registered devices, open PowerShell, connect to Microsoft Graph with the required scopes (see [Prerequisites](#prerequisites)), and take the following actions:
 
 1. Disable the user in Microsoft Entra ID. Refer to [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser).
 

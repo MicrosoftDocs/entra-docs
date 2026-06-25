@@ -11,7 +11,7 @@ ms.custom: include file,licensing
 
 [!INCLUDE [Active Directory P1 license](~/includes/entra-p1-license.md)]
 
-Microsoft Entra Suite includes all Microsoft Entra Conditional Access features.
+Microsoft Entra Suite includes all Microsoft Entra Conditional Access features. Microsoft 365 E7 also includes Conditional Access features through the Entra Suite.
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features. 
 
