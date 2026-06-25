@@ -2,7 +2,7 @@
 title: AI Administrator
 description: AI Administrator
 ms.topic: include
-ms.date: 06/17/2026
+ms.date: 06/25/2026
 ms.custom: include file
 ---
 
@@ -25,6 +25,40 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the AI A
 > | --- | --- |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks | Manage admin consent request policies in Microsoft Entra ID |
+> | microsoft.directory/agentIdentities/allProperties/read | Read all properties of agent identities |
+> | microsoft.directory/agentIdentities/appRoleAssignedTo/update | Update agent identity role assignments |
+> | microsoft.directory/agentIdentities/authentication/update | Update authentication on agent identities |
+> | microsoft.directory/agentIdentities/basic/update | Update basic properties on agent identities |
+> | microsoft.directory/agentIdentities/create | Create agent identities |
+> | microsoft.directory/agentIdentities/delete | Delete agent identities |
+> | microsoft.directory/agentIdentities/disable | Disable agent identities |
+> | microsoft.directory/agentIdentities/enable | Enable agent identities |
+> | microsoft.directory/agentIdentities/owners/update | Update owners on agent identities |
+> | microsoft.directory/agentIdentities/tag/update | Update tags of agent identities |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/allProperties/read | Read all properties of agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/appRoleAssignedTo/update | Update agent identity blueprint principal role assignments |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/authentication/update | Update authentication on agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/basic/update | Update basic properties on agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/create | Create agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/delete | Delete agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/disable | Disable agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/enable | Enable agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/owners/update | Update owners on agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprintPrincipals/tag/update | Update tags of agent identity blueprint principals |
+> | microsoft.directory/agentIdentityBlueprints/allProperties/read | Read all properties of agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/allProperties/update | Update all properties of agent identity blueprints<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprints/appRoles/update | Update appRoles on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/audience/update | Update audience on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/authentication/update | Update authentication on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/basic/update | Update basic properties on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/create | Create agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/credentials/update | Update credentials on agent identity blueprints<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/agentIdentityBlueprints/delete | Delete agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/owners/update | Update owners on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/permissions/update | Update exposed permissions and required permissions on agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/tag/update | Update tags of agent identity blueprints |
+> | microsoft.directory/agentIdentityBlueprints/verification/update | Update verification on agent identity blueprints |
 > | microsoft.directory/agentUsers/assignLicense | Assign product licenses for agent users |
 > | microsoft.directory/agentUsers/basic/update | Update basic properties on agent users, such display name, user type, and mail nickname |
 > | microsoft.directory/agentUsers/create | Create agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
@@ -42,6 +76,12 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the AI A
 > | microsoft.directory/agentUsers/sponsors/update | Update sponsors of agent users |
 > | microsoft.directory/agentUsers/usageLocation/update | Update usage location of agent users |
 > | microsoft.directory/agentUsers/userPrincipalName/update | Update the user principal name of agent users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/deletedItems.agentIdentities/delete | Permanently delete agent identities, which can no longer be restored |
+> | microsoft.directory/deletedItems.agentIdentities/restore | Restore soft-deleted agent identities to original state |
+> | microsoft.directory/deletedItems.agentIdentityBlueprintPrincipals/delete | Permanently delete agent identity blueprint principals, which can no longer be restored |
+> | microsoft.directory/deletedItems.agentIdentityBlueprintPrincipals/restore | Restore soft-deleted agent identity blueprint principals to original state |
+> | microsoft.directory/deletedItems.agentIdentityBlueprints/delete | Permanently delete agent identity blueprints, which can no longer be restored |
+> | microsoft.directory/deletedItems.agentIdentityBlueprints/restore | Restore soft-deleted agent identity blueprints to original state |
 > | microsoft.directory/entitlementManagement/allProperties/read | Read all properties in Microsoft Entra entitlement management |
 > | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
 > | microsoft.directory/users/allProperties/read | Read all properties of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
