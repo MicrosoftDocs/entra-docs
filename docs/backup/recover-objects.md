@@ -24,7 +24,7 @@ Key details:
 
 ## Prerequisites
 
-The tenant must have **Microsoft Entra ID P1 or P2** licenses. To recover objects, you need the **Microsoft Entra Backup Administrator** role.
+The tenant must meet the [Backup and Recovery prerequisites](overview.md#prerequisites), including **Microsoft Entra ID P1 or P2** licenses. To recover objects, you need the **Microsoft Entra Backup Administrator** role.
 
 ## Recover from a difference report
 
@@ -52,7 +52,7 @@ Use this method when you already created a difference report and reviewed the ch
 
 ## Recover directly from a backup
 
-Creating a difference report lets you preview changes before recovery. To skip this step, recover directly from a backup. Only backups from the last five days are listed on the **Backups** page.
+Creating a difference report lets you preview changes before recovery. To skip this step, recover directly from a backup. Only retained backups are listed on the **Backups** page.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Microsoft Entra Backup Administrator**.
 
@@ -90,7 +90,7 @@ Cancel a recovery job while it's running. Any recovery actions completed before 
    :::image type="content" source="media/recover-objects/cancel-recovery-job.png#lightbox" alt-text="Screenshot of the Recovery History page showing completed and in-progress recovery jobs, with the Cancel button visible in the toolbar.":::
 
 > [!NOTE]
-> - Soft-deleted supported objects can be restored for 30 days through [soft-delete recovery processes](/entra/architecture/recover-from-deletions). Backup and Recovery restores supported backup state from retained backups.
+> - Soft-deleted users, Microsoft 365 Groups, cloud security groups, application registrations, and service principals can be restored for 30 days. For more information, see [Soft deletion in Microsoft Entra Backup and Recovery](soft-deletion.md). Backup and Recovery restores supported properties and links from retained backups.
 > - Hard-deleted objects can't be recovered. Use Protected Actions to prevent unwanted hard deletions in your tenant.
 
 ## Related content

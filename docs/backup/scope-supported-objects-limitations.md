@@ -242,7 +242,7 @@ After data loading completes, the operation moves into processing. For differenc
 
 Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation of hard-deleted objects. Only soft-deleted or modified objects can be restored.
 
-Soft-deleted supported objects can be restored for 30 days through [soft-delete recovery processes](/entra/architecture/recover-from-deletions). Backup and Recovery focuses on restoring supported backup state from retained backups and doesn't replace those recovery processes.
+Soft-deleted users, Microsoft 365 Groups, cloud security groups, application registrations, and service principals can be restored for 30 days. For more information about how soft deletion relates to Backup and Recovery, see [Soft deletion in Microsoft Entra Backup and Recovery](soft-deletion.md). Backup and Recovery focuses on restoring supported properties and links from retained backups and doesn't replace soft-delete recovery.
 
 ### Objects managed in on-premises Active Directory Domain Services
 

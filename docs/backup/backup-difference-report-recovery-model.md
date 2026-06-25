@@ -84,7 +84,7 @@ Backup and Recovery doesn't create new objects or hard-delete objects from your 
 > [!WARNING]
 > Hard-deleted objects can't be recovered. Configure [protected actions](/entra/identity/role-based-access-control/protected-actions-overview) to prevent unwanted hard deletions.
 
-For supported objects that are soft-deleted, you can also use [soft-delete recovery processes](/entra/architecture/recover-from-deletions) within the 30-day soft-delete window.
+For soft-deleted users, Microsoft 365 Groups, cloud security groups, application registrations, and service principals, you can also use [soft deletion](soft-deletion.md) within the 30-day retention window.
 
 On-premises synchronized objects can't be recovered through Backup and Recovery, because the source of authority is on-premises Active Directory. Recover these objects in on-premises Active Directory instead. Changes to synced objects still appear in difference reports.
 

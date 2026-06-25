@@ -32,7 +32,7 @@ Key details:
 
 You need at least the **Microsoft Entra Backup Reader** role to review difference reports. To review and create difference reports, you need the **Microsoft Entra Backup Administrator** role. The **Global Administrator** role also includes these permissions.
 
-The tenant must also have **Microsoft Entra ID P1 or P2** licenses.
+The tenant must meet the [Backup and Recovery prerequisites](overview.md#prerequisites), including **Microsoft Entra ID P1 or P2** licenses.
 
 ## Scope a difference report
 

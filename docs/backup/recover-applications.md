@@ -18,7 +18,7 @@ Backups are created automatically once per day and retained for up to five days.
 
 ## Prerequisites
 
-To recover application objects and service principals, the tenant must have **Microsoft Entra ID P1 or P2** licenses, and you need the **Microsoft Entra Backup Administrator** role.
+The tenant must meet the [Backup and Recovery prerequisites](overview.md#prerequisites), including **Microsoft Entra ID P1 or P2** licenses. To recover application objects and service principals, you need the **Microsoft Entra Backup Administrator** role.
 
 ## Prepare for recovery
 
@@ -48,7 +48,7 @@ The nature of the change and whether secrets were impacted determine the best pa
 
 This includes scenarios where the application was edited or soft-deleted, but the secrets on the application weren't edited.
 
-Using Backup and Recovery, recover only the affected application and service principals to a point in time before the changes occurred. At this point the application should be able to function using the existing secret. If you deleted the application, the recovery restores secrets to their state at the time of deletion.
+Using Backup and Recovery, scope recovery to the affected application and service principals and recover them to a point in time before the changes occurred. At this point the application should be able to function using the existing secret. If you deleted the application, the recovery restores secrets to their state at the time of deletion.
 
 If your team uses Azure Key Vault, validate your secrets are functioning correctly using these steps:
 
@@ -72,7 +72,7 @@ If your team uses Azure Key Vault, validate your secrets are functioning correct
 
 ## Recover accidental changes when secrets were altered or deleted
 
-Using Backup and Recovery, recover only the affected applications and service principals to a point in time before the changes occurred.
+Using Backup and Recovery, scope recovery to the affected applications and service principals and recover them to a point in time before the changes occurred.
 
 If your team uses Azure Key Vault, you need to roll the secret for your application. Follow the steps in [Recover applications due to a malicious change](#recover-applications-due-to-a-malicious-change) to roll the secret.
 
@@ -142,7 +142,7 @@ For other solutions, you either need to generate and apply a new secret to your 
 
 ### Application and service principal properties not supported by Backup and Recovery
 
-Backup and Recovery supports the [application properties](scope-supported-objects-limitations.md#application) and [service principal properties](scope-supported-objects-limitations.md#service-principal) listed in Supported objects and recoverable properties. Any application setting that isn't listed as supported might need to be saved and manually reapplied.
+Not all application and service principal properties are supported by Backup and Recovery. Review the supported [application properties](scope-supported-objects-limitations.md#application) and [service principal properties](scope-supported-objects-limitations.md#service-principal) in Supported objects and recoverable properties. Any application setting that isn't listed as supported might need to be saved and manually reapplied.
 
 Review key application settings such as redirect URIs, supported account types, assigned permissions or roles, and exposed API properties to ensure your application functions as expected after recovery:
 
