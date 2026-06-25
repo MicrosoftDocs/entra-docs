@@ -31,6 +31,7 @@ The guide suite groups content by Global Secure Access capability, plus a shared
 | --- | --- |
 | [Common operations](how-to-operations-common.md) | RACI matrix (responsible, accountable, consulted, informed) for roles and responsibilities, change management process, metrics and reporting framework, continuous improvement |
 | [Security operations for network access](how-to-security-operations.md) | Security monitoring, detection patterns, Sentinel analytics rules, and cross-signal investigation guidance for Global Secure Access |
+| [PowerShell samples](powershell-samples.md) | Automation samples for operations monitoring, configuration backup compliance, role assignment reviews, alert noise analysis, and recovery |
 
 ### Capability-specific operations
 
