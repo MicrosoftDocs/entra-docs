@@ -57,6 +57,10 @@ We recommend the following measures when you enable QR code authentication metho
 - Replace QR codes that are lost or stolen.
 - Enforce [sign-in risk based Conditional Access policy](/entra/id-protection/concept-identity-protection-policies#sign-in-risk-based-conditional-access-policy) to block access.
 
+## Enforce QR code sign-in with a custom authentication strength
+
+To require QR code sign-in for a specific resource, create a custom Conditional Access authentication strength that includes **QR code** under **Single factor authentication**. Then use the custom authentication strength in a Conditional Access policy for the resources and users that need QR code sign-in. For steps, see [Create and manage custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md#create-a-custom-authentication-strength).
+
 ## QR code configurations in the Authentication method policy
 
 Authentication Policy Administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authentication is disabled by default.

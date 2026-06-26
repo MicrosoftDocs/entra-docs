@@ -66,6 +66,7 @@ The following table lists combinations of authentication methods for each built-
 |SMS sign-in | | | |
 |Password | | | |
 |Federated single-factor| | | |
+|QR code| | | |
 
 <sup>1</sup> *Something the user has* refers to one of the following methods: text message, voice, push notification, software OATH token, or hardware OATH token.
 
