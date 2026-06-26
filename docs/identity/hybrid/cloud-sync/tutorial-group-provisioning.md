@@ -16,7 +16,7 @@ This tutorial walks you through how to configure Cloud Sync to sync groups to on
 
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
 
-## Group and User SOA Scenarios
+## Group and user SOA scenarios
 
 Use case | Parent group type | User member group type | Sync Direction | How sync works 
 ----------|--------------------|-------------------------|----------------|----------------
