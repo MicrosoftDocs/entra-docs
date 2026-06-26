@@ -182,7 +182,7 @@ These actions continue to be enforced and audited by Microsoft Entra, ensuring c
 
 For customers leveraging group provisioning to AD, this capability ensures that changes to AD groups remain consistent with those managed in Microsoft Entra. With this preview, you can designate specific AD groups so that modifications to those groups can only be made through the Entra provisioning service. Changes made outside of Entra are blocked, helping prevent drift before it occurs and maintaining alignment between Entra ID and AD groups.
 
-Learn more: aka.ms/ADEnforcementDocumentation
+Learn more: [AD group enforcement documentation](https://aka.ms/ADEnforcementDocumentation)
 
 ---
 
