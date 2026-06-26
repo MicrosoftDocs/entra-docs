@@ -142,7 +142,7 @@ This update applies to iOS devices only. Android support will follow.
 **Service category:** RBAC  
 **Product capability:** Identity Security & Protection
 
-We're introducing a new built-in role in Microsoft Entra—**SOC Identity Responder**—to further improve how security teams execute identity containment actions initiated from Microsoft Defender using a least-privilege access model.
+Starting June 8 we're introducing a new built-in role in Microsoft Entra—**SOC Identity Responder**—to further improve how security teams execute identity containment actions initiated from Microsoft Defender using a least-privilege access model.
 
 Previously, performing these actions required SOC analysts to hold multiple high-privilege Entra roles or depend on identity administrators, creating delays during active investigations.
 
