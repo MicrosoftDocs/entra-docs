@@ -51,7 +51,15 @@ This logic for proxyAddresses is referred to as **ProxyCalc**. ProxyCalc is invo
 - You make a change to proxyAddresses or userPrincipalName.
 
 ProxyCalc process sanitizes an address if ShadowProxyAddresses contains a nonverified domain and the user has one of the following properties configured. 
-- User is licensed with an EXO service type plan enabled (Excluding Microsoft Bookings, MyAnalytics, and Premium Encryption in Office 365)  
+- User is licensed with an EXO service type plan enabled, including the following (or Gov equivalents):  
+	- Exchange Online Deskless (4a82b400-a79f-41a4-b4e2-e94f5787b113)  
+	- Exchange Online Plan 1 (9aaf7827-d63c-4b61-89c3-182f06f82e5c)  
+  - Exchange Online Plan 2 (efb87545-963c-4e0d-99df-69c6916d9eb0)  
+  - Microsoft 365 Audit Platform (f6de4823-28fa-440b-b886-4783fa86ddba)  
+  - Information Barriers (c4801e8a-cb58-4c35-aca6-f2dcc106f287)  
+  - Graph Connectors Search with Index (a6520331-d7d4-4276-95f5-15c0933bc757)  
+  - Microsoft Copilot with Graph-grounded Chat (3f30311c-6b1e-48a4-ab79-725b469da960)  
+  - (Excluding Microsoft Bookings, MyAnalytics, and Premium Encryption in Office 365)
 - User has MSExchRemoteRecipientType set (not null)  
 - User is considered a shared resource
 
