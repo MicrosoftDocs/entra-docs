@@ -3,7 +3,6 @@ title: Configure Freshservice Provisioning for automatic user provisioning with 
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Freshservice Provisioning.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/06/2026

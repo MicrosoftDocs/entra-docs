@@ -3,7 +3,6 @@ title: Configure BIC Cloud Design for automatic user provisioning with Microsoft
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BIC Cloud Design.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/24/2026

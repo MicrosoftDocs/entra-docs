@@ -1,7 +1,6 @@
 ---
 title: Configure Lucid (All Products) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Lucid (All Products).
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/12/2026
 

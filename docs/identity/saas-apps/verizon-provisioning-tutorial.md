@@ -3,7 +3,6 @@ title: Configure Verizon Provisioning for automatic user provisioning with Micro
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Verizon Provisioning.
 
 
-manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps

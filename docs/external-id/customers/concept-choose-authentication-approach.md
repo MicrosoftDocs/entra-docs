@@ -3,7 +3,6 @@ title: Choose an authentication approach
 description: Compare browser-delegated and native authentication in Microsoft Entra External ID and choose the right approach for your customer-facing app.
 ai-usage: ai-assisted
 
-manager: dougeby
 ms.topic: concept-article
 ms.date: 04/16/2026
 

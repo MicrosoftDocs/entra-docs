@@ -1,7 +1,6 @@
 ---
 title: Integrate Darwinbox HR With Microsoft Entra ID
 description: Learn how to integrate Darwinbox HR with Microsoft Entra ID to automate user provisioning, manage lifecycle workflows, and streamline HR-driven processes. 
-manager: pmwongera
 ms.topic: how-to
 ms.date: 06/19/2025
 ms.custom: ai-gen-description

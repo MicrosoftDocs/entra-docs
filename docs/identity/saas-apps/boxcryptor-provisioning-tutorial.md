@@ -3,7 +3,6 @@ title: Configure Boxcryptor for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Boxcryptor.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/02/2026

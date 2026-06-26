@@ -3,7 +3,6 @@ title: Configure Grammarly for automatic user provisioning with Microsoft Entra 
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Grammarly.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/07/2026
