@@ -3,7 +3,6 @@ title: Configure BullseyeTDP for automatic user provisioning with Microsoft Entr
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BullseyeTDP.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/27/2026

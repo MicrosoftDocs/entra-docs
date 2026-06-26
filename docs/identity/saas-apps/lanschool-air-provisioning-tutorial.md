@@ -3,7 +3,6 @@ title: Configure LanSchool Air for automatic user provisioning with Microsoft En
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to LanSchool Air.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/13/2026

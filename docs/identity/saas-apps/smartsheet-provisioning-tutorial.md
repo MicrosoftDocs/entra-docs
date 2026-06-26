@@ -1,7 +1,6 @@
 ---
 title: Configure Smartsheet for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Smartsheet.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/24/2026
 ms.custom: sfi-image-nochange

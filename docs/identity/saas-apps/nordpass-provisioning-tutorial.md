@@ -2,7 +2,6 @@
 title: Configure NordPass for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to NordPass.
 
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/17/2026
 

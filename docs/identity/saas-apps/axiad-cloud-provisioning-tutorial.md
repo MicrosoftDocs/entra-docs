@@ -2,7 +2,6 @@
 title: Configure Axiad Cloud for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Axiad Cloud.
 
-manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -3,7 +3,6 @@ title: Configure embed signage for automatic user provisioning with Microsoft En
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to embed signage.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/09/2026

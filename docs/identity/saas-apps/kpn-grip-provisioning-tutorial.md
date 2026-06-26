@@ -3,7 +3,6 @@ title: Configure KPN Grip for automatic user provisioning with Microsoft Entra I
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to KPN Grip.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/13/2026

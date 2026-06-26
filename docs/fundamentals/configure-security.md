@@ -5,7 +5,6 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.topic: reference
 ms.date: 04/30/2026
 
-manager: dougeby
 ms.reviewer: ramical
 #Customer Intent: As an IT admin, I want to configure Microsoft Entra for increased security so that I can harden my organization's identity infrastructure.
 ---

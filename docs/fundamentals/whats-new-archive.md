@@ -1,7 +1,6 @@
 ---
 title: Archive for Microsoft Entra releases and announcements
 description: The What's new release notes in the Overview section of this content set contain six months of activity. After six months, the items are removed from the main article and put into this archive article.
-manager: dougeby
 ms.topic: whats-new
 ms.date: 03/05/2026
 ms.reviewer: dhanyahk

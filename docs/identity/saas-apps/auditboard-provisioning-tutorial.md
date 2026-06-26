@@ -3,7 +3,6 @@ title: Configure AuditBoard for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to AuditBoard.
 
 
-manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -3,7 +3,6 @@ title: Configure AlertMedia for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to AlertMedia.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/25/2026

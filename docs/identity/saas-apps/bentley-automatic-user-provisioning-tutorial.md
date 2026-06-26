@@ -3,7 +3,6 @@ title: Configure Bentley - Automatic User Provisioning for automatic user provis
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Bentley - Automatic User Provisioning.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/24/2026

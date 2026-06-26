@@ -1,8 +1,6 @@
 ---
 title: Configure execution limits for Lifecycle Workflows
 description: Learn how to set tenant-wide and workflow-specific execution limits and manage quarantined workflows in Lifecycle Workflows to prevent large-scale impact.
-author: owinfreyATL
-ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to

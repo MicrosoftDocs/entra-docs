@@ -1,8 +1,8 @@
 ---
 title: 'Tutorial - Provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync'
 description: This tutorial shows how to set up and configure Microsoft Entra Cloud Sync to provision groups to Active Directory Domain Services (AD DS).
-ms.topic: how-to
-ms.date: 06/09/2026
+ms.topic: tutorial
+ms.date: 06/26/2026
 ms.subservice: hybrid-cloud-sync
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ---
@@ -16,7 +16,7 @@ This tutorial walks you through how to configure Cloud Sync to sync groups to on
 
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
 
-## Group and User SOA Scenarios
+## Group and user SOA scenarios
 
 Use case | Parent group type | User member group type | Sync Direction | How sync works 
 ----------|--------------------|-------------------------|----------------|----------------

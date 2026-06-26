@@ -3,7 +3,6 @@ title: Configure Cisco User Management for Secure Access for automatic user prov
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Cisco User Management for Secure Access.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/31/2026

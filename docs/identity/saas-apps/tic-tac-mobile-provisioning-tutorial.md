@@ -2,7 +2,6 @@
 title: Configure Tic-Tac Mobile for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Tic-Tac Mobile.
 
-manager: pmwongera
 ms.topic: how-to
 ms.date: 04/09/2026
 
