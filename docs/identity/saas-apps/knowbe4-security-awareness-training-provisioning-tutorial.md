@@ -3,7 +3,6 @@ title: Configure KnowBe4 Security Awareness Training for automatic user provisio
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to KnowBe4 Security Awareness Training.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/13/2026

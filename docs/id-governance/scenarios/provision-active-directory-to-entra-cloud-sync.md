@@ -1,7 +1,6 @@
 ---
 title: 'Govern cloud users and groups with provisioning from on-premises and Entra Connect Cloud Sync'
 description: This article a tutorial on how to provision users and groups using cloud sync.
-manager: dougeby
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 04/09/2025

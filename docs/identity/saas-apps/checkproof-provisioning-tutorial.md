@@ -3,7 +3,6 @@ title: Configure CheckProof for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to CheckProof.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/31/2026

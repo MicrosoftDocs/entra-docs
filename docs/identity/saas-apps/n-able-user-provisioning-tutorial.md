@@ -1,7 +1,6 @@
 ---
 title: Configure N-able User Provisioning for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to N-able User Provisioning.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 04/13/2026
 ms.custom: sfi-image-nochange

@@ -3,7 +3,6 @@ title: Configure getAbstract for automatic user provisioning with Microsoft Entr
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to getAbstract.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/25/2025

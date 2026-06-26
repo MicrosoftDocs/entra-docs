@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="Segoe UI, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="720" fill="#f9f9f9"/>
+
+  <!-- Title -->
+  <text x="40" y="45" font-size="24" font-weight="bold" fill="#1a1a1a">Layered architecture for recoverability</text>
+  <text x="40" y="72" font-size="14" fill="#505050">Organizations can maximize coverage across failure modes with a layered approach to tenant recoverability.</text>
+
+  <!-- Group 1: Tenant recovery preparation and execution -->
+  <rect x="30" y="95" width="1140" height="410" rx="8" fill="none" stroke="#c0c0c0" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="50" y="118" font-size="13" font-style="italic" fill="#606060">Tenant recovery preparation and execution</text>
+
+  <!-- Layer 1: BASELINE -->
+  <rect x="50" y="130" width="1100" height="155" rx="6" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <!-- Left accent bar -->
+  <rect x="50" y="130" width="5" height="155" rx="2" fill="#0078d4"/>
+  <!-- Badge removed: TCM + Graph serves both preparation and recovery -->
+  <!-- Title -->
+  <text x="72" y="158" font-size="15" font-weight="bold" fill="#1a1a1a">Microsoft Tenant Configuration Management Snapshots</text>
+  <text x="72" y="178" font-size="12" font-style="italic" fill="#606060">Configuration baseline and monitoring via JSON snapshots</text>
+  <!-- Left column bullets -->
+  <circle cx="82" cy="205" r="4" fill="#0078d4"/>
+  <text x="95" y="209" font-size="12" fill="#333333">Exportable JSON configuration snapshots for offline storage</text>
+  <circle cx="82" cy="230" r="4" fill="#0078d4"/>
+  <text x="95" y="234" font-size="12" fill="#333333">200+ configuration settings across six Microsoft 365 workloads</text>
+  <!-- Right column bullets -->
+  <circle cx="582" cy="205" r="4" fill="#0078d4"/>
+  <text x="595" y="209" font-size="12" fill="#333333">Supplement with direct Microsoft Graph API exports to maximize coverage</text>
+  <circle cx="582" cy="230" r="4" fill="#0078d4"/>
+  <text x="595" y="234" font-size="12" fill="#333333">Microsoft Graph APIs for solution extensibility</text>
+  <!-- Separator line -->
+  <text x="72" y="268" font-size="11" fill="#707070">↳ Enables scripted remediation, redeployment, and hard-deleted object re-creation using version-controlled baselines</text>
+
+  <!-- Layer 2: BUILT-IN -->
+  <rect x="50" y="305" width="1100" height="180" rx="6" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <!-- Left accent bar -->
+  <rect x="50" y="305" width="5" height="180" rx="2" fill="#107c10"/>
+  <!-- Badge removed: Entra Backup serves both preparation and recovery -->
+  <!-- Title -->
+  <text x="72" y="335" font-size="15" font-weight="bold" fill="#1a1a1a">Microsoft Entra Backup &amp; Recovery</text>
+  <text x="72" y="355" font-size="12" font-style="italic" fill="#606060">Built-in, deterministic restore path that builds on foundational 30-day soft-delete protection</text>
+  <!-- Left column bullets -->
+  <circle cx="82" cy="382" r="4" fill="#107c10"/>
+  <text x="95" y="386" font-size="12" fill="#333333">Automatic non-editable backups, stored in Microsoft-managed storage</text>
+  <circle cx="82" cy="407" r="4" fill="#107c10"/>
+  <text x="95" y="411" font-size="12" fill="#333333">Built-in restoration of supported objects and attributes</text>
+  <!-- Right column bullets -->
+  <circle cx="582" cy="382" r="4" fill="#107c10"/>
+  <text x="595" y="386" font-size="12" fill="#333333">Difference reports for tenant state comparison</text>
+  <circle cx="582" cy="407" r="4" fill="#107c10"/>
+  <text x="595" y="411" font-size="12" fill="#333333">Microsoft Graph APIs for solution extensibility</text>
+  <!-- Separator line -->
+  <text x="72" y="445" font-size="11" fill="#707070">↳ Recovery includes restoring, soft-deleting and updating supported Microsoft Entra objects and attributes</text>
+
+  <!-- Group 2: Preventive operational security -->
+  <rect x="30" y="525" width="1140" height="175" rx="8" fill="none" stroke="#c0c0c0" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="50" y="548" font-size="13" font-style="italic" fill="#606060">Preventive operational security</text>
+
+  <!-- Layer 3: PREVENTIVE -->
+  <rect x="50" y="560" width="1100" height="125" rx="6" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <!-- Left accent bar -->
+  <rect x="50" y="560" width="5" height="125" rx="2" fill="#d83b01"/>
+  <!-- Badge removed -->
+  <!-- Title -->
+  <text x="72" y="590" font-size="15" font-weight="bold" fill="#1a1a1a">Operational Guardrails &amp; Blast Radius Reduction</text>
+  <text x="72" y="610" font-size="12" font-style="italic" fill="#606060">Prevent recovery events through defense-in-depth</text>
+  <!-- Left column bullets -->
+  <circle cx="82" cy="637" r="4" fill="#d83b01"/>
+  <text x="95" y="641" font-size="12" fill="#333333">PIM/JIT for privileged roles</text>
+  <circle cx="82" cy="662" r="4" fill="#d83b01"/>
+  <text x="95" y="666" font-size="12" fill="#333333">Protected actions enforcing strong conditional access policy on critical operations</text>
+  <!-- Right column bullets -->
+  <circle cx="582" cy="637" r="4" fill="#d83b01"/>
+  <text x="595" y="641" font-size="12" fill="#333333">Administrative Units for scope isolation</text>
+  <circle cx="582" cy="662" r="4" fill="#d83b01"/>
+  <text x="595" y="666" font-size="12" fill="#333333">Emergency access accounts</text>
+</svg>

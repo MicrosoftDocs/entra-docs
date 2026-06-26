@@ -3,7 +3,6 @@ title: Configure BrowserStack Single Sign-on for automatic user provisioning wit
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BrowserStack Single Sign-on.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/27/2026

@@ -3,7 +3,6 @@ title: Configure Klaxoon SAML for automatic user provisioning with Microsoft Ent
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Klaxoon SAML.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 03/12/2026

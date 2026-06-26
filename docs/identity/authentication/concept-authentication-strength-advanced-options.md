@@ -2,7 +2,7 @@
 title: Create and Manage Custom Conditional Access Authentication Strengths
 description: Learn how admins can create custom authentication strengths with advanced options for passkey (FIDO2) security keys and certificate-based authentication.
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 06/26/2026
 ms.reviewer: inbarc
 ms.custom: sfi-image-nochange
 ---
@@ -27,7 +27,7 @@ An authentication strength is a Microsoft Entra Conditional Access control that 
 
 1. For **Description**, you can provide an optional description.
 
-1. Select the available methods that you want to allow. For example, to create a custom authentication strength for QR code sign-in, expand **Single factor authentication**, and then select **QR code**.
+1. Select the available methods that you want to allow. For example, to create a custom authentication strength that requires QR code sign-in for a group of users such as frontline workers, expand **Single factor authentication**, and then select **QR code**.
 
 1. Select **Next** and review the policy configuration.
 

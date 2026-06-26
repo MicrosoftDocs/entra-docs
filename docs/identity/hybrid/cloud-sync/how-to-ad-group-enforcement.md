@@ -123,8 +123,6 @@ To change the mode, run `Set-CloudSyncSOAPolicy.ps1` again with the new value fo
 .\Set-CloudSyncSOAPolicy.ps1 -EnforcementMode Audit -Credential (Get-Credential -Message "Enter Domain Admin credentials (format: DOMAIN\Username)")
 ```
 
-<!-- TODO PM: Confirm whether re-running the script is the supported way to switch modes, or whether a different parameter or procedure applies. -->
-
 ## Add a break-glass account
 
 You can add the SID of an additional authorized user to the policy so that the user can make changes to enforced groups on-premises.

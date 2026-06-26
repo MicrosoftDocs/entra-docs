@@ -3,7 +3,6 @@ title: Configure directprint.io for automatic user provisioning with Microsoft E
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to directprint.io.
 
 
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 04/06/2026

@@ -1,7 +1,6 @@
 ---
 title: "Identity and Access Management (IAM): Core Concepts and Benefits"
 description: Learn the core concepts of identity and access management (IAM), including authentication, authorization, and identity providers, to secure resources effectively.
-manager: dougeby
 ms.topic: concept-article
 ms.date: 06/18/2026
 ms.reviewer: null

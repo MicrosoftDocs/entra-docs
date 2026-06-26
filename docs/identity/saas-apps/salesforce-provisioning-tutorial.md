@@ -1,7 +1,6 @@
 ---
 title: Configure Salesforce for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/23/2026
 ms.custom: sfi-image-nochange
