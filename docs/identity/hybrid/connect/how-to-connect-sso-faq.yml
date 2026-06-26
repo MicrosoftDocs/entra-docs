@@ -107,6 +107,9 @@ sections:
           
              2. Call `Update-AzureADSSOForest -OnPremCredentials $creds`. This command updates the Kerberos decryption key for the `AZUREADSSO` computer account in this specific AD forest and updates it in Microsoft Entra ID.
              
+             >[!NOTE]
+             >Starting with the July 2026 Windows Server update, the default Kerberos encryption type in AD DS will change from RC4 to AES-256. To help ensure uninterrupted SSO access, Microsoft recommends migrating the AzureADSSOAcc$ account to AES-256. To migrate to AES-256, change the msDS-SupportedEncryptionTypes attribute of the account by ``Set-ADComputer AZUREADSSOACC -Replace @{msDS-SupportedEncryptionTypes=24}``.
+             
              3. Repeat the preceding steps for each AD forest that you’ve set up the feature on.
              
             >[!NOTE]
