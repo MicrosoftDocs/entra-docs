@@ -27,11 +27,11 @@ An authentication strength is a Microsoft Entra Conditional Access control that 
 
 1. For **Description**, you can provide an optional description.
 
-1. Select the available methods that you want to allow, like those under **Phishing-resistant MFA**, **Passwordless MFA**, and **Temporary Access Pass**.
+1. Select the available methods that you want to allow. For example, to create a custom authentication strength for QR code sign-in, expand **Single factor authentication**, and then select **QR code**.
 
 1. Select **Next** and review the policy configuration.
 
-:::image type="content" border="true" source="media/concept-authentication-strengths/authentication-strength-custom.png" alt-text="Screenshot that shows the creation of a custom authentication strength.":::
+:::image type="content" border="true" source="media/concept-authentication-strengths/authentication-strength-custom.png" alt-text="Screenshot that shows a custom authentication strength with QR code selected.":::
 
 ## Update and delete custom authentication strengths
 
