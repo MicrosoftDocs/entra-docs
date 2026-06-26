@@ -38,7 +38,7 @@ This feature allows Entitlement Management admins to directly assign external us
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication
 
-General availability of Microsoft Entra Kerberos key rotation improved reliability particularly for environments using incoming trust referral flows. Previously, authentication failures could occur during Kerberos key rotation if referral tickets were encrypted with a secondary key. The update enhances validation logic to attempt decryption with both primary and secondary Kerberos keys, improving resiliency during key rollover operations and reducing authentication disruption during rotation events.
+General availability of Microsoft Entra Kerberos key rotation improved reliability particularly for environments using incoming trust referral flows. Previously, authentication failures could occur during Kerberos key rotation if referral tickets were encrypted with a secondary key. The update enhances validation logic to attempt decryption with both primary and secondary Kerberos keys, improving resiliency during key rollover operations and reducing authentication disruption during rotation events. For more information, see: [Rotate the Kerberos server key for Microsoft Entra Kerberos](../identity/authentication/kerberos-server-key-rotation.md).
 
 ---
 
@@ -48,7 +48,7 @@ General availability of Microsoft Entra Kerberos key rotation improved reliabili
 **Service category:** BYOD  
 **Product capability:** Network Access
 
-We are excited to announce Bring Your Own Device (BYOD) support for Windows client using Entra-registered devices is now generally available. You can now enable **users and partners** to access corporate resources from their own devices. Administrators can assign the **Private Application** traffic profile to users with internal accounts, including **internal guest users**. This removes the previous requirement for Windows devices to be domain-joined.
+We are excited to announce Bring Your Own Device (BYOD) support for Windows client using Entra-registered devices is now generally available. You can now enable **users and partners** to access corporate resources from their own devices. Administrators can assign the **Private Application** traffic profile to users with internal accounts, including **internal guest users**. This removes the previous requirement for Windows devices to be domain-joined. For more information, see: [Bring Your Own Device](../global-secure-access/concept-bring-your-own-device.md).
 
 ---
 
@@ -75,27 +75,7 @@ Conditional Access now provides broader controls to secure AI agents that have a
 - **Require compliant devices** for agents running on managed endpoints, including **Windows 365 for Agents**, ensuring agents can only operate from devices that meet your organization's compliance requirements.
 - **Apply device platforms, filter for devices and compliant network conditions** to agents running on endpoints, enabling policies based on device state and trusted network locations.
 
-These capabilities extend Zero Trust protections to agent's user accounts while leveraging the familiar Conditional Access policy experience.
-
----
-
-### Private Preview - PIM Only Mode for Azure
-
-**Type:** New feature  
-**Service category:** Privileged Identity Management  
-**Product capability:** Privileged Identity Management
-
-**PIM only mode** is a security control that enforces **all Azure RBAC role assignment management to be performed through Microsoft Entra Privileged Identity Management (PIM)** or an approved set of applications. Any role assignment that is created or updated outside of PIM is **blocked** and **flagged as non-compliant**.
-
-The control is implemented via **Azure Policy** and can be applied at **subscription** or **management group** scope.
-
-Many security guardrails — such as **disallowing permanent eligible or permanent active assignments**, **setting expiration on eligible and active assignments**, **requiring Azure MFA on active assignment**, and **requiring justification on active assignment** — are configured in **PIM policies**. Those guardrails only apply when role assignments flow through PIM. If an admin creates a role assignment directly (for example, via the RBAC blade, Azure CLI, ARM, or scripts), the PIM assignment-settings controls are bypassed.
-
-PIM only mode closes that gap by ensuring:
-
-- All Azure RBAC role assignments — whether new or modified — must be created through PIM or an explicitly approved application.
-- All PIM **assignment-settings** are uniformly applied across the scope.
-- Out-of-band assignments are visible as non-compliant resources in Azure Policy.
+These capabilities extend Zero Trust protections to agent's user accounts while leveraging the familiar Conditional Access policy experience. For more information see: [Target agent identities in Conditional Access policies](../identity/conditional-access/howto-target-agent-identities.md).
 
 ---
 
@@ -115,7 +95,7 @@ Domainless SAML federation with a SAML Identity Provider allows external users t
 **Service category:** Provisioning  
 **Product capability:** Identity Lifecycle Management
 
-SCIM 2.0 APIs are now generally available in the US Gov cloud, giving customers, developers, and partners a standards-based option for managing users and groups in Microsoft Entra using the System for Cross-domain Identity Management (SCIM) 2.0 specification.
+SCIM 2.0 APIs are now generally available in the US Gov cloud, giving customers, developers, and partners a standards-based option for managing users and groups in Microsoft Entra using the System for Cross-domain Identity Management (SCIM) 2.0 specification. For more information, see: [Enable the SCIM Provisioning API in Microsoft Entra ID](../identity/app-provisioning/enable-scim-api.md).
 
 ---
 
@@ -129,7 +109,7 @@ Microsoft Entra Backup and Recovery is a built-in solution to help restore your 
 
 At preview, Entra Backup and Recovery automatically takes daily backup of a tenant's supported directory objects. If a tenant has Microsoft Entra ID P1 or P2 licenses, one backup is taken each day and retained for 7 days. Admins can view available snapshots, generate difference reports to understand what has changed, and run recovery jobs to restore objects to a prior state.
 
-This gives your organization a reliable, built-in safety net helping you recover with confidence, minimize downtime, and protect your tenant from accidental changes, misconfigurations, or security compromises.
+This gives your organization a reliable, built-in safety net helping you recover with confidence, minimize downtime, and protect your tenant from accidental changes, misconfigurations, or security compromises. For more information, see: [Microsoft Entra Backup and Recovery overview (Preview)](../backup/overview.md).
 
 ---
 
