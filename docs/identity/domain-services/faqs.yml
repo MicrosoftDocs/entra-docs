@@ -121,7 +121,13 @@ sections:
           Does Microsoft Entra Domain Services include high availability options?
         answer: |
           Yes. Each Microsoft Entra Domain Services managed domain includes two domain controllers. You don't manage or connect to these domain controllers, they're part of the managed service. If you deploy Microsoft Entra Domain Services into a region that supports Availability Zones, the domain controllers are distributed across zones. In regions that don't support Availability Zones, the domain controllers are distributed across Availability Sets. You have no configuration options or management control over this distribution. For more information, see [Availability options for virtual machines in Azure](/azure/virtual-machines/availability).
+
+      - question: |
+          Can "Microsoft Entra Hybrid Join" be configured in an environment using Microsoft Entra Domain Services?
+        answer: |
+          No, Microsoft Entra Domain Services does not support "Microsoft Entra Hybrid Join".
           
+
   - name: Administration and operations
     questions:
       - question: |
