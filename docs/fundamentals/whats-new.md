@@ -174,7 +174,7 @@ These actions continue to be enforced and audited by Microsoft Entra, ensuring c
 
 ---
 
-### Public Preview - AD enforcement
+### Public Preview - Prevent unauthorized changes to AD groups with AD group enforcement
 
 **Type:** New feature  
 **Service category:** Provisioning  
