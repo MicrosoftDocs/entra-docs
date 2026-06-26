@@ -174,6 +174,16 @@ These actions continue to be enforced and audited by Microsoft Entra, ensuring c
 
 ---
 
+### Public Preview - AD enforcement
+
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Entra Cloud Sync
+
+For customers leveraging group provisioning to AD, this capability ensures that changes to AD groups remain consistent with those managed in Microsoft Entra. With this preview, you can now designate specific AD groups so that any modifications to these groups can only be performed through the Entra provisioning service, providing greater control and alignment between Entra ID and AD groups.
+
+---
+
 ## May 2026
 
 ### Public Preview - Enable soft-delete for Microsoft Entra Device objects
