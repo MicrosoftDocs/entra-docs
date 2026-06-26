@@ -107,6 +107,8 @@ items:
       items:
       - name: Recoverability best practices overview
         href: recoverability-overview.md
+      - name: Tenant recoverability
+        href: recoverability-tenant.md
       - name: Recover from deletions
         href: recover-from-deletions.md
       - name: Recover from misconfigurations

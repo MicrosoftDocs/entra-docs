@@ -24,7 +24,7 @@ Deletions and misconfigurations have different impacts on your tenant.
 
 The impact of deletions depends on the object type.
 
-Users, Microsoft 365 Groups, cloud security groups, and applications can be soft deleted. Soft-deleted items are sent to the Microsoft Entra ID recycle bin. While in the recycle bin, items aren't available for use. However, they retain all their properties and can be restored via a Microsoft Graph API call or in the Azure portal. Items in the soft-delete state that aren't restored within 30 days are permanently, or hard, deleted.
+You can soft delete object types that include Users, Microsoft 365 Groups, cloud security groups, and applications. Soft-deleted items go to the Microsoft Entra ID recycle bin. While in the recycle bin, items aren't available for use, but they retain all their properties. You can restore them with a Microsoft Graph API call or from the Microsoft Entra admin center. If you don't restore items in the soft-delete state within 30 days, Microsoft Entra ID permanently hard-deletes them. [Recover from deletions in Microsoft Entra ID](recover-from-deletions.md#properties-maintained-with-soft-delete) provides a table of objects that support soft deletion.
 
 ![Diagram that shows that users, Microsoft 365 Groups, cloud security groups, and applications are soft deleted and then hard deleted after 30 days.](media/recoverability/overview-deletes.png)
 
@@ -43,6 +43,8 @@ Misconfigurations are configurations of a resource or policy that diverge from y
 * Break dependencies among data, systems, and applications.
 
 For more information on misconfigurations and how to recover from them, see [Recover from misconfigurations](recover-from-misconfigurations.md).
+
+Unlike deletions, misconfigurations modify objects in place rather than moving them to the recycle bin. For supported affected object types, use [Microsoft Entra Backup and Recovery](../backup/overview.md) difference reports to identify changed attributes and link edits. You can then run a recovery job to roll an object back to a previous state. For configurations that Microsoft Entra Backup and Recovery doesn't support, reapply settings from your documented known-good state.
 
 ## Shared responsibility
 
@@ -88,14 +90,15 @@ Create a process of predefined communications to make others aware of the issue 
 
 ## Document known good states
 
-Document the state of your tenant and its objects regularly. Then if a hard delete or misconfiguration occurs, you have a roadmap to recovery. The following tools can help you document your current state:
+Regularly document and maintain the state of your tenant and its objects in an external versioned repository. If a hard delete or misconfiguration occurs, your documentation serves as your roadmap to recovery. 
 
-- [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations.
-- [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings.
-- [Tenant Configuration Management APIs in Microsoft Graph](/graph/unified-tenant-configuration-management-concept-overview) let you define configuration baselines, monitor tenants for drift, and generate snapshots of current settings. You can download snapshots as JSON files for reference or to restore many settings to a previous state.
-- [Conditional Access APIs](/graph/api/resources/conditionalaccesspolicy) can be used to manage your Conditional Access policies as code.
+Select required APIs and export technology based on your deployed resources. Although you can directly call resource-specific Microsoft Graph APIs, other Microsoft and non-Microsoft options can abstract and streamline configuration export and download processes.
 
-In the rare case that an API is not available for a certain configuration setting, screenshot(s) can be taken to enable manual recovery.
+- **Configuration snapshots**—The [snapshot APIs](/graph/api/resources/configurationsnapshotjob) in unified [tenant configuration management (TCM) APIs in Microsoft Graph](/graph/unified-tenant-configuration-management-concept-overview) simplify extracting current configurations across multiple workloads within a tenant (such as Microsoft Entra, Microsoft Intune, and Exchange Online). The tenant stores snapshots for seven days so that you can download them for external retention. The TCM schema supports a subset of Microsoft Entra resources and properties. Review the subset list to determine if TCM provides sufficient coverage rather than directly calling Microsoft Graph APIs.
+- ***Microsoft Graph APIs**—Use Microsoft Graph APIs to regularly export configurations of all critical directory objects that TCM doesn't yet support. To export your configuration settings, use the open-source tool, [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter).
+- **Third‑party solutions**—To export, normalize, and store Microsoft Entra configurations in declarative formats, evaluate non-Microsoft configuration management and infrastructure‑as‑code tools. These solutions might abstract underlying APIs, simplify large‑scale configuration capture, and support repeatable comparison and settings reapplication as part of recovery workflows.
+
+Store configuration baselines in a version-controlled repository (such as Azure DevOps or GitHub) with a sufficient retention period. Logically separate and independently manage configuration extracts that you obtain using different capture mechanisms. For example, while TCM snapshots and direct Microsoft Graph API exports can contribute to an overall known good state, don't combine them, even when they have the same format (such as JSON). The reason is that the TCM snapshot scope limits them to supported resources and properties that you can't rely upon to recreate or reapply configuration outside that supported scope.
 
 ### Commonly used Microsoft Graph APIs
 
@@ -146,13 +149,15 @@ The deletion of some objects can cause a ripple effect because of dependencies. 
 
 The [Microsoft Entra audit log](~/identity/monitoring-health/concept-audit-logs.md) contains information on all delete and configuration operations performed in your tenant. We recommend that you export these logs to a security information and event management tool such as [Microsoft Sentinel](/azure/sentinel/overview). You can also use Microsoft Graph to audit changes and build a custom solution to monitor differences over time. For more information on finding deleted items by using Microsoft Graph, see [List deleted items - Microsoft Graph v1.0](/graph/api/directory-deleteditems-list?tabs=http).
 
+To identify changes for objects that [Microsoft Entra Backup and Recovery](../backup/overview.md) supports, create a difference report. Difference reports complement audit logs and configuration snapshots by showing recoverable additions, attribute edits, link edits, and soft deletes since the last backup. Difference reports don't show hard-deleted objects.
+
 ### Audit logs
 
 The Audit log always records a "Delete \<object\>" event when an object in the tenant is removed from an active state, either from active to soft deleted or active to hard deleted.
 
 :::image type="content" source="media/recoverability/deletions-audit-log.png" alt-text="Screenshot that shows Audit log detail." lightbox="media/recoverability/deletions-audit-log.png":::
 
-A Delete event for applications, service principals, users, Microsoft 365 Groups, and cloud security groups is a soft delete. For any other object type, it's a hard delete.
+A Delete event for [object types that support soft delete](recover-from-deletions.md#properties-maintained-with-soft-delete) (such as applications, service principals, users, Microsoft 365 Groups, and cloud security groups) indicates a soft delete. For other object types, a Delete event is a hard delete.
 
 | Object type | Activity in log| Result |
 | - | - | - |
@@ -185,6 +190,8 @@ The [Sensitive operations report workbook](~/identity/monitoring-health/workbook
 - Modified federation settings.
 
 The [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md)can help you monitor which applications in external tenants your users are accessing and which applications in your tenant external users are accessing. Use this workbook to look for anomalous changes in either inbound or outbound application access across tenants.
+
+[Microsoft Entra Backup and Recovery](../backup/overview.md) is a built-in capability that provides the lowest-effort, highest-fidelity restore path for supported object types and configuration changes within its retention window. Microsoft Entra Backup and Recovery supports a set of tenant [object types](../backup/scope-supported-objects-limitations.md) and recoverable properties. It automatically creates backups of supported objects at Microsoft-defined fixed intervals. You can view available backups, create difference reports, recovery objects, and review recovery history.
 
 ## Operational security
 
