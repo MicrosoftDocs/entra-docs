@@ -5,10 +5,10 @@ description: Identifier map to manage Microsoft Entra ID licensing in the Azure 
 keywords: Azure Active Directory licensing service plans
 ms.topic: reference
 ms.date: 03/16/2026
-ms.reviewer: Nicholak-MS
+ms.reviewer: shegu
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-#Nick Kramer is minding this reference until it can be automated
+#Shelley Gu is minding this reference until it can be automated
 ---
 
 # Product names and service plan identifiers for licensing
