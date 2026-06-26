@@ -2,7 +2,7 @@
 title: QR code authentication method in Microsoft Entra ID 
 description: Learn about using QR code authentication method in Microsoft Entra ID to help improve and secure sign-in events for frontline workers.
 ms.topic: concept-article
-ms.date: 07/24/2025
+ms.date: 06/26/2026
 contributors: minatoruan
 ms.reviewer: anjusingh
 
@@ -59,7 +59,7 @@ We recommend the following measures when you enable QR code authentication metho
 
 ## Enforce QR code sign-in with a custom authentication strength
 
-To require QR code sign-in for a specific resource, create a custom Conditional Access authentication strength that includes **QR code** under **Single factor authentication**. Then use the custom authentication strength in a Conditional Access policy for the resources and users that need QR code sign-in. For steps, see [Create and manage custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md#create-a-custom-authentication-strength).
+To require QR code sign-in for a specific group of users, such as frontline workers, a specific resource, or both, create a custom Conditional Access authentication strength that includes **QR code** under **Single factor authentication**. Then use the custom authentication strength in a Conditional Access policy for the resources and users that need QR code sign-in. For steps, see [Create and manage custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md#create-a-custom-authentication-strength).
 
 ## QR code configurations in the Authentication method policy
 
