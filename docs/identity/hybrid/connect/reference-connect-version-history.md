@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.topic: reference
-ms.date: 06/23/2026
+ms.date: 06/26/2026
 ms.subservice: hybrid-connect
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 
@@ -102,7 +102,9 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
 |[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|
 |[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|
-|[2.6.3.0](#2630)||
+|[2.6.3.0](#2630)|26 Jun 2027 (12 months after release of 2.6.80.0)|
+|[2.6.80.0](#26800)||
+
 
 **All other versions are not supported**
 
@@ -125,8 +127,46 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.6.80.0
+
 > [!IMPORTANT]
-> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who had installed this version should un-install and install [latest available version (2.6.3.0)](#2630) of Microsoft Entra Connect Sync.
+> This release includes security fixes. We recommend upgrading to this version as soon as possible.
+
+### Release status
+
+06/26/2026: Released for download via the Microsoft Entra admin center.
+
+### Added features
+
+- Added support for phishing-resistant authentication methods in the Microsoft Entra Connect setup wizard (preview). Administrators can now sign in using passkeys and FIDO2 security keys through Windows Web Account Manager (WAM) when configuring Microsoft Entra Connect.
+- Added support for the France sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
+
+### Updated features
+
+- Improved the auto-upgrade process to preserve customer modifications to configuration files. Previously, auto-upgrade overwrote the `miiserver.exe.config` file, discarding any manual customizations. The system now merges customer modifications with the new configuration and validates the result before applying.
+- Improved the setup process for Application-Based Authentication to handle Trusted Platform Module (TPM)-backed certificates. The system now tests a certificate's signing capability upfront and handles TPM signature verification correctly.
+- Microsoft Entra Connect setup wizard no longer silently falls back to the legacy directory synchronization account when Application-Based Authentication setup fails. The wizard now stops with an error so the underlying issue can be resolved: "Microsoft Entra Connect could not configure application-based authentication for this server. Setup cannot continue."
+- Microsoft Entra Connect no longer automatically switches existing servers from the legacy directory synchronization account to Application-Based Authentication during background sync. New installations continue to configure Application-Based Authentication during setup. To switch an existing server, run the wizard and choose **Configure application-based authentication to Microsoft Entra ID**.
+- PowerShell cmdlets that modify cloud configuration (`Set-ADSyncAADCompanyFeature`, `Set-ADSyncAADPasswordSyncState`) now require explicit `-AADUsername` for interactive admin authentication. The setup wizard uses interactive Microsoft Authentication Library (MSAL) authentication for cloud writes instead of stored service credentials. The uninstall wizard now prompts for admin credentials to clean up cloud configuration; if skipped, local cleanup still proceeds.
+- Removed Password Hash Synchronization (PHS) self-healing. PHS no longer automatically re-enables its cloud feature flag in the background. If the PHS cloud feature flag is disabled, an administrator must explicitly re-enable it.
+- Updated the bundled MSAL from version 4.64.1 to 4.83.3.
+- Upgraded the bundled SQL LocalDB from SQL Server 2019 to SQL Server 2022.
+- Upgraded the Visual C++ redistributable from version 12 (2013) to version 14.42.34438 (2015-2022).
+- Removed the Visual C++ 2013 redistributable dependency.
+
+### Bug fixes
+
+- Fixed an issue in the PowerShell diagnostic HTML report rendering.
+- Fixed an issue in the Synchronization Service Manager metaverse search.
+- Improved Application-Based Authentication setup on servers with non-conforming TPM firmware by falling back to a software-based certificate when the TPM cannot produce a valid signature.
+- Fixed an issue where Generic SQL (GSQL) connector profile creation failed because required profile parameters were not populated during configuration.
+- Fixed an issue where the Application Proxy cloud name was not correctly resolved in the France cloud environment, causing Pass-through Authentication registration to fail with an "EnvironmentName attribute is invalid" error.
+- Fixed an issue where the China cloud instance name was not correctly resolved by the Discovery Endpoint API, which could cause cloud instance detection to fail.
+- Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action for Synchronization Rule changes.
+- Fixed multiple security vulnerabilities in bundled third-party dependencies.
+
+> [!IMPORTANT]
+> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who had installed this version should un-install and install [latest available version (2.6.80.0)](#26800) of Microsoft Entra Connect Sync.
 
 ## 2.6.3.0
 
