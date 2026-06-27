@@ -13,6 +13,8 @@ This article describes how to create a custom role to manage access to Microsoft
 
 For the basics of custom roles, see the [custom roles overview](custom-overview.md). The role can be assigned either at the directory-level scope or an app registration resource scope only. For information about the maximum number of custom roles that can be created in a Microsoft Entra organization, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
+Custom roles can only include permissions that are enabled for custom use. The available categories are [app registrations](custom-available-permissions.md), [enterprise applications](custom-enterprise-app-permissions.md), [consent](custom-consent-permissions.md), [devices](custom-device-permissions.md), [users](custom-user-permissions.md), and [groups](custom-group-permissions.md).
+
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
@@ -21,9 +23,6 @@ For the basics of custom roles, see the [custom roles overview](custom-overview.
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
-
-> [!IMPORTANT]
-> Custom roles can only include permissions that are enabled for custom use. The available categories are [app registrations](custom-available-permissions.md), [enterprise applications](custom-enterprise-app-permissions.md), [consent](custom-consent-permissions.md), [devices](custom-device-permissions.md), [users](custom-user-permissions.md), and [groups](custom-group-permissions.md).
 
 # [Admin center](#tab/admin-center)
 
