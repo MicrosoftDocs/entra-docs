@@ -3,7 +3,7 @@ title: Microsoft Entra External ID deployment guide for security operations
 description: Learn about edge protection, domains, subscriptions, consumer app security, and fraud tactics in security operations for Microsoft Entra External ID.
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 11/11/2025
+ms.date: 06/27/2026
 ms.reviewer: gasinh
 
 #customer intent: I need to understand subscriptions and billing, consumer app security, and how to prevent fraud tactics in Microsoft Entra External ID. 
@@ -104,8 +104,11 @@ In this section, learn how to protect users from sign-up fraud. The user flow de
 |Reputation email filtering|To mitigate the risk of fraudulent email accounts, implement domain validation. Restrict sign-up from email addresses with poor reputations, or known associations with malicious activity. Microsoft Entra External ID supports custom extensions during sign-up. To evaluate the reputation of the email domain, invoke a REST API during the sign-up flow. Based on the reputation score, the system allows or blocks the sign-up request.|
 |IP email filtering|To reduce the risk of fraudulent account creation, we advise you to restrict sign-ups from anonymous proxies or IP addresses tied to Autonomous System Numbers (ASNs) outside your organization's business regions. This strategy helps reduce exposure to high-risk or untrusted traffic sources.</br> Microsoft Entra External ID supports custom authentication extensions to invoke during the sign-up process. Use these extensions to call a REST API to assess the reputation or geolocation of the IP address initiating the sign-up request. Use this process during email one-time password (OTP) verification.|
 |Excessive OTPs from one IP address or ASN|Implement monitoring and alerting when a high volume of email OTP requests originates from the same IP address, ASN, or location. For example, trigger an alert if email OTPs come from a single IP or similar geo-coordinates in a short time.|
+|Sign-up protection (Security Store)|Use Microsoft-built native integrations with [Arkose Labs](../external-id/customers/how-to-integrate-fraud-protection.md?pivots=arkose) and [HUMAN Security](../external-id/customers/how-to-integrate-fraud-protection.md?pivots=human) to detect and block bot-driven sign-ups and fake account creation. Configured through the Microsoft Security Store in the Microsoft Entra admin center.|
 
-To strengthen defenses, Microsoft Entra External ID has a premium fraud prevention feature with industry-leading non-Microsoft fraud protection providers, such as [Arkose Labs](../external-id/customers/how-to-integrate-fraud-protection.md?pivots=arkose) provider, for advanced bot and [HUMAN](../external-id/customers/how-to-integrate-fraud-protection.md?pivots=human) to help prevent fake account registrations during user sign-up. These providers deliver comprehensive fraud detection and mitigation capabilities and enable organizations to detect and block automated threats, including bot-driven sign-ups, throughout the registration process.
+To strengthen defenses, Microsoft Entra External ID integrates with industry-leading non-Microsoft fraud protection providers through the [Microsoft Security Store](https://securitystore.microsoft.com). Native, Microsoft-built integrations are available for **Arkose Labs** and **HUMAN Security**, which deliver comprehensive bot detection and fake-account-prevention capabilities during the sign-up flow. For configuration steps, see [Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection](../external-id/customers/how-to-integrate-fraud-protection.md).
+
+For native authentication API flows, see [Tutorial: Integrate third-party bot protection with Native API sign-up flows](../external-id/customers/tutorial-third-party-bot-protection-native-api-sign-up.md).
 
 ### International Revenue Share Fraud
 
