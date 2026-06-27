@@ -2,7 +2,7 @@
 title: Create a custom role in Microsoft Entra ID
 description: Learn how to create a custom role to manage access to Microsoft Entra resources using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API
 ms.reviewer: vincesm
-ms.date: 05/19/2025
+ms.date: 06/27/2026
 ms.topic: how-to
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -21,6 +21,9 @@ For the basics of custom roles, see the [custom roles overview](custom-overview.
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+
+> [!IMPORTANT]
+> Custom roles can only include permissions that are enabled for custom use. The available categories are [app registrations](custom-available-permissions.md), [enterprise applications](custom-enterprise-app-permissions.md), [consent](custom-consent-permissions.md), [devices](custom-device-permissions.md), [users](custom-user-permissions.md), and [groups](custom-group-permissions.md).
 
 # [Admin center](#tab/admin-center)
 
