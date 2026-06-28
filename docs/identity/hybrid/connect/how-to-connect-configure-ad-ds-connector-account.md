@@ -41,7 +41,7 @@ Install-WindowsFeature "RSAT-AD-Tools"
 ![Configure](media/how-to-connect-configure-ad-ds-connector-account/configure2.png)
 
 >[!NOTE]
->You can also copy the file **C:\Program Files\Microsoft Entra Connect\AdSyncConfig\ADSyncConfig.psm1** to a Domain Controller which already has RSAT for AD DS installed and use this PowerShell module from there.  Be aware that some of the cmdlets can only be run on the computer that is hosting Microsoft Entra Connect.
+>You can also copy the file **C:\Program Files\Microsoft Azure Active Directory Connect\AdSyncConfig\ADSyncConfig.psm1** to a Domain Controller which already has RSAT for AD DS installed and use this PowerShell module from there.  Be aware that some of the cmdlets can only be run on the computer that is hosting Microsoft Entra Connect.
 
 To start using the ADSyncConfig you need to load the module in a Windows PowerShell window: 
 
