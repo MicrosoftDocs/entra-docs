@@ -3936,6 +3936,8 @@
         href: velpic-provisioning-tutorial.md
       - name: Verizon
         href: verizon-provisioning-tutorial.md
+      - name: Visa
+        href: visa-provisioning-tutorial.md
       - name: Visibly
         href: visibly-provisioning-tutorial.md
       - name: Visitly
