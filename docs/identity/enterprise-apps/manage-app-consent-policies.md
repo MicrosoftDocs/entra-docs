@@ -72,8 +72,8 @@ An additional policy enabled by default is the **microsoft-user-allow-default-co
 - Thunderbird (application ID:9e5f94bc-e8a4-4e73-b8be-63364c29d753)
 
 > [!Note]
->The Mail client policy (microsoft-user-allow-default-consent-apps) allows end users to consent only to a limited set of delegated mail-related permissions for specific mail client applications.
-Therefore, even when this policy is enabled, administrator consent may still be required if an application requests permissions that are outside the scope of the Mail client policy.
+> The Mail client policy (microsoft-user-allow-default-consent-apps) allows end users to consent only to a limited set of delegated mail-related permissions for specific mail client applications.
+> Therefore, even when this policy is enabled, administrator consent may still be required if an application requests permissions that are outside the scope of the Mail client policy.
 
 ## Multiple policies or authorization mechanisms to grant consent
 
