@@ -86,7 +86,7 @@ Ensure below URLs are exempted from TLS interception/inspection so that Platform
 Apple's app-site-association domains are critical for SSO extension functioning. (*) You only need to allow sovereign cloud domains if you rely on those in your environment. (**) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner. 
 
 > [!NOTE] 
-> Platform SSO isn't compatible with the Microsoft Entra ID Tenant Restrictions v2 feature when Tenant Restrictions are deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
+> Tenant restrictions v2 doesn't work with the macOS Platform SSO feature with client signaling via corporate proxy if the corporate proxy uses a certificate trust chain outside Apple system root certificates. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers using untrusted certificates. Apple does not support customers adding their own PKI certificates to the Apple system trusted root certificates store. TLS inspection for tenant restrictions is compatible with PSSO if the system-provided root certificate authorities (CAs) include the issuer of the TLS certificate. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitations)
 
 > [!IMPORTANT]
 > **Note: There has been a recent update to the TLS endpoint used in registration flows. Please verify that your environment’s allowlist reflects the latest URL requirements to avoid disruptions.**
