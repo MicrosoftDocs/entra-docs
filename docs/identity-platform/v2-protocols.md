@@ -2,7 +2,7 @@
 title: OAuth 2.0 and OpenID Connect protocols 
 description: Learn about OAuth 2.0 and OpenID Connect in Microsoft identity platform. Explore authentication flows, endpoints, and secure user authentication.
 manager: pmwongera
-ms.date: 05/14/2025
+ms.date: 06/23/2026
 ms.reviewer: nickludwig
 ms.service: identity-platform
 
@@ -77,6 +77,8 @@ https://login.microsoftonline.com/<issuer>/oauth2/v2.0/token
 To find the endpoints for an application you've registered, in the [Microsoft Entra admin center](https://entra.microsoft.com) navigate to:
 
 **Entra ID** > **App registrations** > \<YOUR-APPLICATION\> > **Endpoints**
+
+For a consolidated reference of every OIDC endpoint (discovery, authorize, token, UserInfo, JWKS, logout), see [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md).
 
 ## Next steps
 
