@@ -28,7 +28,7 @@ Web content filtering also supports two optional rule conditions that enable tra
 - **HTTP method request filtering (preview)**: Block or allow specific HTTP methods, such as GET, POST, PUT, PATCH, and DELETE.
 
 > [!TIP]
-> For file type-based filtering (MIME types) and integration with Microsoft Purview for data loss prevention, see [Create a content policy to filter network file content](how-to-network-content-filtering.md).
+> For network content filtering based on file MIME types or Microsoft Purview inspection of file and text content, see [Create content policies for network content filtering](how-to-network-content-filtering.md).
 
 ## Prerequisites
 
@@ -199,8 +199,8 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
-> [!Note]
-> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), please follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
+> [!NOTE]
+> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md).
 
 ## Enable web content filtering for remote network traffic
 
@@ -334,6 +334,6 @@ The current blocking experience for all browsers includes a plaintext browser er
 
 ## Related content
 
-- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
+- [Create content policies for network content filtering](how-to-network-content-filtering.md)
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)
 - [Known limitations for Global Secure Access](reference-current-known-limitations.md)
