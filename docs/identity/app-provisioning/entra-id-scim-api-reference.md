@@ -41,6 +41,8 @@ The following sections contain examples of API requests and responses currently 
 
 Before you can call the SCIM API endpoints described in this article, you must enable the SCIM Provisioning API feature, configure billing, set up credentials, and obtain an access token. For step-by-step instructions, see [Enable the SCIM Provisioning API in Microsoft Entra ID](enable-scim-api.md).
 
+If you're using the Microsoft Graph endpoint in the US Government cloud, use `https://graph.microsoft.us/rp/scim` as the base URL for SCIM API requests. The examples in this article use `https://graph.microsoft.com` to illustrate the global cloud endpoint.
+
 > [!NOTE]
 > SCIM APIs operate exclusively in application context (app-only token) and do not support delegated, user-on-behalf-of scenarios.
 
