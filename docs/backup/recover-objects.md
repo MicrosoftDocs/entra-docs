@@ -7,10 +7,7 @@ ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# Recover objects using Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Recover objects using Microsoft Entra Backup and Recovery
 
 Learn how to recover objects to a previously known-good state by using Microsoft Entra Backup and Recovery. Recovery includes restoring, soft-deleting, and updating supported objects and attributes.
 
@@ -19,7 +16,7 @@ Key details:
 - A recovery ID identifies the recovery job.
 - Backups are created automatically once per day. Only retained backups are available for recovery and for generating difference reports.
 - Only one recovery runs at a time. If another job (recovery job or difference report) is already running, you must wait for it to complete or cancel it before starting a new one.
-- **Recovery History** retains recovery details for 5 days after recovery completion date.
+- **Recovery History** retains recovery details for seven days after the recovery completion date.
 - Audit logs record all recovery actions.
 
 ## Prerequisites

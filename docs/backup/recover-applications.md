@@ -7,10 +7,7 @@ ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# Recover application secrets using Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Recover application secrets using Microsoft Entra Backup and Recovery
 
 This article describes how to restore application secrets after accidental or malicious changes, using Microsoft Entra Backup and Recovery.
 
@@ -139,6 +136,8 @@ If you use Azure Key Vault, you should point it to the new application and new s
 For other solutions, you either need to generate and apply a new secret to your application, or update the Object ID in your secret management system and then re-add the secret to the newly created application.
 
 ## Appendix
+
+The appendix lists application and service principal properties that Backup and Recovery doesn't restore automatically.
 
 ### Application and service principal properties not supported by Backup and Recovery
 
