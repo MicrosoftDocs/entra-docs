@@ -78,7 +78,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 ### Possible causes
 
-- The object or property isn't supported in the current release.
+- The object or property isn't supported for preview in the current release.
 - The object didn't change between the backup state and the current state.
 - The difference report is processing a large number of objects or changes.
 - Only one difference report or recovery job can run at a time.
