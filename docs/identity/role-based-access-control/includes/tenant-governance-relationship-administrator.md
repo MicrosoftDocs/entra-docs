@@ -2,7 +2,7 @@
 title: Tenant Governance Relationship Administrator
 description: Tenant Governance Relationship Administrator
 ms.topic: include
-ms.date: 03/02/2026
+ms.date: 06/30/2026
 ms.custom: include file
 ---
 

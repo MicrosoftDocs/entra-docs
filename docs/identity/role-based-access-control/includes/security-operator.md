@@ -2,7 +2,7 @@
 title: Security Operator
 description: Security Operator
 ms.topic: include
-ms.date: 01/26/2026
+ms.date: 06/30/2026
 ms.custom: include file
 ---
 
