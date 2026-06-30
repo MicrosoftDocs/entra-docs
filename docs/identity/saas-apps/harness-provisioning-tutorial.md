@@ -63,19 +63,19 @@ You must generate a SCIM API token in Harness before you can configure provision
 1. Sign in to your [Harness Admin Console](https://app.harness.io/auth/#/signin), select your profile at the bottom left corner of the page, and go to **Profile Overview**.
 
 
-   ![Harness Admin Console](media/harness-provisioning-tutorial/admin.png)
+   ![Screenshot of the Harness Admin Console with the profile menu used to open Profile Overview.](media/harness-provisioning-tutorial/admin.png)
 
 
 1. Under **My API Keys**, select **+API Key**. The window to create an API key opens.
 
 
-   ![Harness API Keys link](media/harness-provisioning-tutorial/apikeys.png)
+   ![Screenshot of the Harness Profile Overview page showing the +API Key button under My API Keys.](media/harness-provisioning-tutorial/apikeys.png)
 
 
-1. Specify a **Name** and click **Save**. Harness creates an API key for your account.
+1. Specify a **Name** and select **Save**. Harness creates an API key for your account.
 
 
-   ![Harness Add API Key link](media/harness-provisioning-tutorial/addkey.png)
+   ![Screenshot of the Harness new API key dialog with the Name box and Save button.](media/harness-provisioning-tutorial/addkey.png)
 
 
 1. To create a token for your API key, select **+Token** under your newly created API key.
@@ -90,7 +90,7 @@ You must generate a SCIM API token in Harness before you can configure provision
    c. Click **Close**.
 
 
-   ![Harness Add Api Key pane](media/harness-provisioning-tutorial/api-token.png)
+   ![Screenshot of the Harness token dialog showing the Generate token and Close buttons.](media/harness-provisioning-tutorial/api-token.png)
  
 
 
@@ -116,7 +116,7 @@ You must add the Harness application from the Microsoft Entra application galler
 1. In the search box, enter **Harness**, select **Harness** in the results list, and then select the **Add** button to add the application.
 
 
-   ![Harness in the results list](media/harness-provisioning-tutorial/search-new-app.png)
+   ![Screenshot of the Microsoft Entra gallery search results with Harness selected and the Add button.](media/harness-provisioning-tutorial/search-new-app.png)
 
 
 ## Configure automatic user provisioning to Harness
@@ -155,7 +155,7 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
    ![Provisioning tab](common/provisioning.png)
 
 
-1. Set **+ New configuration**.
+1. Select **+ New configuration**.
 
 
    ![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
@@ -200,7 +200,7 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
 1. Under **Mappings**, select **Synchronize Microsoft Entra groups to Harness**.
 
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Harness in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Harness for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Harness in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Harness for update operations. Select the **Save** button to commit any changes.
 
 
    ![Harness group "Attribute Mappings" pane](media/harness-provisioning-tutorial/groupattributes.png)
@@ -224,7 +224,7 @@ After you start provisioning, monitor the provisioning logs to verify that users
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 
-## Related articles
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
