@@ -4,7 +4,7 @@ description: AI Reader
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 06/25/2026
+ms.date: 06/30/2026
 ---
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)

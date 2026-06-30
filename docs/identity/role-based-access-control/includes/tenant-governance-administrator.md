@@ -38,4 +38,4 @@ Assign the Tenant Governance Administrator role to users who need to do the foll
 > | microsoft.directory/tenantGovernance/requests/standard/read | Read tenant governance requests |
 > | microsoft.directory/tenantGovernance/settings/allProperties/update | Manage Microsoft Entra Tenant Governance settings |
 > | microsoft.directory/tenantGovernance/settings/standard/read | Read tenant governance settings |
-
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |

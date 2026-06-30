@@ -21,4 +21,5 @@ Assign the Tenant Governance Reader role to users who need to do the following t
 > | microsoft.directory/tenantGovernance/relationships/standard/read | Read tenant governance relationships |
 > | microsoft.directory/tenantGovernance/requests/standard/read | Read tenant governance requests |
 > | microsoft.directory/tenantGovernance/settings/standard/read | Read tenant governance settings |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 

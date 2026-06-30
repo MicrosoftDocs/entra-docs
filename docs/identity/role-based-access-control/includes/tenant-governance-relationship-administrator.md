@@ -27,4 +27,5 @@ Assign the Tenant Governance Relationship Administrator role to users who need t
 > | microsoft.directory/tenantGovernance/requests/create | Create tenant governance requests |
 > | microsoft.directory/tenantGovernance/requests/standard/read | Read tenant governance requests |
 > | microsoft.directory/tenantGovernance/settings/standard/read | Read tenant governance settings |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
