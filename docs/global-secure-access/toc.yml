@@ -26,6 +26,19 @@ items:
 - name: Tutorials
   expanded: false
   items:
+  - name: Microsoft traffic labs
+    expanded: false
+    items:
+    - name: Get started
+      href: tutorial-microsoft-traffic-introduction.md
+    - name: Enable the Microsoft traffic profile
+      href: tutorial-microsoft-traffic-enable-profile.md
+    - name: Enable source IP restoration
+      href: tutorial-microsoft-traffic-source-ip-restoration.md
+    - name: Enable the compliant network check
+      href: tutorial-microsoft-traffic-compliant-network.md
+    - name: Configure universal tenant restrictions
+      href: tutorial-microsoft-traffic-tenant-restrictions.md
   - name: Internet Access labs
     expanded: false
     items:
