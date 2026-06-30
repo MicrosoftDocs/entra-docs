@@ -7,10 +7,7 @@ ms.topic: troubleshooting
 ai-usage: ai-assisted
 ---
 
-# Troubleshoot Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Troubleshoot Microsoft Entra Backup and Recovery
 
 This article helps you diagnose and resolve common issues when using Microsoft Entra Backup and Recovery, including backup access, difference report jobs, and recovery jobs.
 
@@ -34,12 +31,12 @@ This issue occurs when the backup list shows fewer backups than expected or disp
 
 ### Symptoms
 
-- Fewer than five days of backups are visible, instead of the expected five days.
+- Fewer than seven days of backups are visible, instead of the expected seven days.
 - Two or more backups appear to have the same timestamp in the backup list.
 
 ### Possible causes
 
-The oldest backup might age out earlier during service initialization, tenant onboarding, or transient backend conditions, temporarily resulting in fewer than five visible days of backups. This condition doesn't indicate data loss or a backup failure.
+The oldest backup might age out earlier during service initialization, tenant onboarding, or transient backend conditions, temporarily resulting in fewer than seven visible days of backups. This condition doesn't indicate data loss or a backup failure.
 
 ### Resolution
 
@@ -81,7 +78,7 @@ This section helps troubleshoot common issues related to difference reports, inc
 
 ### Possible causes
 
-- The object or property isn't supported for preview in the current release.
+- The object or property isn't supported in the current release.
 - The object didn't change between the backup state and the current state.
 - The difference report is processing a large number of objects or changes.
 - Only one difference report or recovery job can run at a time.
@@ -113,7 +110,7 @@ See the [estimated difference report generation time](backup-difference-report-r
 Difference reports are tied to the backup they were created from.
 
 1. Browse to the backup and check the list of difference report jobs associated with it.
-1. If the report isn’t listed, it may no longer be available because difference reports are retained for five days after their completion date.
+1. If the report isn’t listed, it may no longer be available because difference reports are retained for seven days after their completion date.
 
 **If the difference report continues running after cancellation:**
 
@@ -155,7 +152,7 @@ This issue occurs when a previously completed recovery job is no longer visible 
 
 ### Possible causes
 
-- Recovery job details are automatically removed five days after the job completes.
+- Recovery job details are automatically removed seven days after the job completes.
 - Some links aren't supported for recovery in the current release.
 - Certain links depend on other objects or states that no longer exist.
 - The recovery job completed with warnings, indicating partial success.
@@ -166,7 +163,7 @@ This issue occurs when a previously completed recovery job is no longer visible 
 
 1. Find the **backup timestamp** that was used for the recovery.
 1. Review **recovery history** to find **recovery jobs associated with that backup timestamp**.
-1. If the job is no longer listed, it may no longer be available because recovery jobs are retained for five days after their completion date.
+1. If the job is no longer listed, it may no longer be available because recovery jobs are retained for seven days after their completion date.
 
 **If not all links were recovered:**
 
@@ -189,7 +186,7 @@ This issue occurs when a previously completed recovery job is no longer visible 
 
 ## Known limitations
 
-The following known limitations apply to Microsoft Entra Backup and Recovery during preview.
+The following known limitations apply to Microsoft Entra Backup and Recovery in this release.
 
 ### Partial property coverage
 

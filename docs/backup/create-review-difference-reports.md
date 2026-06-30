@@ -7,10 +7,7 @@ ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# Create and review difference reports in Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Create and review difference reports in Microsoft Entra Backup and Recovery
 
 A difference report compares the current state of your tenant with a selected backup and highlights what changed.
 
@@ -23,7 +20,7 @@ Key details:
 
 - A difference report ID identifies the comparison job.
 - Create multiple difference reports from the same backup, but only one report can run at a time.
-- Difference reports are retained for up to five days after completion.
+- Difference reports are retained for up to seven days after completion.
 
 > [!TIP]
 > Create a difference report before starting recovery so you can review and understand the changes in your tenant.
@@ -66,7 +63,7 @@ You set the scope when you create the report. You can't change it afterward.
 
    - **Include only specific objects by their ID**: Limits the report to specific objects by their object IDs. Enter up to 100 object IDs across different object types.
 
-     :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-ids.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the Include only specific objects by ID option selected.":::
+     :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-ids.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the Include only specific objects by ID selected.":::
 
 1. Select **Create difference report** to start the report.
 

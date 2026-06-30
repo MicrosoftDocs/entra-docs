@@ -7,10 +7,7 @@ ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# View available backups in Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# View available backups in Microsoft Entra Backup and Recovery
 
 This article describes how to view available backups for your tenant in Microsoft Entra Backup and Recovery.
 
@@ -19,7 +16,7 @@ Microsoft Entra backups provide a point-in-time view of supported tenant objects
 Key characteristics of Backup and Recovery:
 
 - **One backup per day**: Microsoft Entra automatically creates one backup each day for your tenant.
-- **Retained for five days**: Each backup is available for up to five days from its timestamp.
+- **Retained for seven days**: Each backup is available for up to seven days from its timestamp.
 - **Non-editable**: Backups can't be modified or deleted.
 
 ## Prerequisites
