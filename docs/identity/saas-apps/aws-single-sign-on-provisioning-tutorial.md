@@ -28,7 +28,9 @@ This article describes the steps you need to perform in both AWS IAM Identity Ce
 
 AWS IAM Identity Center is available in the following [national cloud deployments](/graph/deployments).
 
-[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
+| Global service | US Government | China operated by 21Vianet |
+|-----------------|------------------------|----------------------------|
+| :white_check_mark: |     |   |
 
 ## Prerequisites
 

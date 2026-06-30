@@ -2,7 +2,8 @@
 title: OpenID Connect (OIDC) on the Microsoft identity platform
 description: Sign in Microsoft Entra users by using the Microsoft identity platform's implementation of the OpenID Connect extension to OAuth 2.0.
 manager: dougeby
-ms.date: 01/9/2026
+ms.author: dmwendia
+ms.date: 06/30/2026
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
 ms.topic: reference
@@ -12,15 +13,33 @@ ms.custom: sfi-ropc-nochange
 
 # OpenID Connect on the Microsoft identity platform
 
-OpenID Connect (OIDC) extends the OAuth 2.0 authorization protocol for use as another authentication protocol. You can use OIDC to enable single sign-on (SSO) between your OAuth-enabled applications by using a security token called an *ID token*. 
+OpenID Connect (OIDC) extends the OAuth 2.0 authorization protocol for use as another authentication protocol. You can use OIDC to enable single sign-on (SSO) between your OAuth-enabled applications by using a security token called an *ID token*.
+
+> [!TIP]
+> For a map of every supported way to extend OIDC behavior, see [Microsoft identity platform OIDC extensibility reference](reference-oidc-extensibility.md).
 
 The full specification for OIDC is available on the OpenID Foundation's website at [OpenID Connect Core 1.0 specification](https://openid.net/specs/openid-connect-core-1_0.html).
+
+## OIDC endpoint overview
+
+The Microsoft identity platform exposes the following OpenID Connect endpoints. All endpoints (except UserInfo) are served under the tenant-scoped authority `https://login.microsoftonline.com/{tenant}/v2.0`.
+
+| Endpoint | URL path | Method | Purpose | Details |
+|----------|----------|--------|---------|---------|
+| Discovery | `/.well-known/openid-configuration` | GET | Returns the OpenID Provider Configuration Document with endpoint URLs, supported claims, and signing-key metadata. | [Fetch the OpenID configuration document](#fetch-the-openid-configuration-document) |
+| Authorize | `/oauth2/v2.0/authorize` | GET | Authenticates the user and returns an authorization code, ID token, or both. | [Send the sign-in request](#send-the-sign-in-request) |
+| Token | `/oauth2/v2.0/token` | POST | Redeems an authorization code, refresh token, or client credential for tokens. | [OAuth 2.0 auth code flow](v2-oauth2-auth-code-flow.md) |
+| UserInfo | `https://graph.microsoft.com/oidc/userinfo` | GET | Returns claims about the authenticated user (scoped by `openid`, `profile`, `email`). | [UserInfo endpoint](userinfo.md) |
+| JWKS | `/discovery/v2.0/keys` | GET | Returns the public signing keys for token signature validation. | [Validate the ID token](#validate-the-id-token), [Signing key rollover](signing-key-rollover.md) |
+| Logout | `/oauth2/v2.0/logout` | GET, POST | Ends the user's session and triggers front-channel logout. | [Send a sign-out request](#send-a-sign-out-request) |
+
+For a map of every supported way to extend OIDC behavior (custom claims, token issuance events, federated credentials), see [OIDC extensibility reference](reference-oidc-extensibility.md).
 
 ## Protocol flow: Sign-in
 
 The following diagram shows the basic OpenID Connect sign-in flow. The steps in the flow are described in more detail in later sections of the article.
 
-![Swim-lane diagram showing the OpenID Connect protocol's sign-in flow.](./media/v2-protocols-oidc/convergence-scenarios-webapp.svg)
+:::image type="content" source="./media/v2-protocols-oidc/oidc-authorization-flow.svg" alt-text="Swim-lane diagram showing the OpenID Connect authorization flow." lightbox="./media/v2-protocols-oidc/oidc-authorization-flow.svg":::
 
 ## Enable ID tokens
 
