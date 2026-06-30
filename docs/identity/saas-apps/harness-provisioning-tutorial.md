@@ -15,7 +15,6 @@ ms.custom: sfi-image-nochange
 
 This article explains how to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Harness. Automatic provisioning eliminates manual user management by synchronizing user lifecycle changes from your identity provider to Harness.
 
-
 > [!NOTE]
 > This article describes a connector that is built on top of the Microsoft Entra user provisioning service. For information about this service, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
@@ -24,9 +23,7 @@ This article explains how to configure Microsoft Entra ID to automatically provi
 
 ## Prerequisites
 
-
 The scenario outlined in this article assumes that you have the following prerequisites:
-
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Harness tenant](https://harness.io/pricing/)
@@ -81,13 +78,13 @@ You must generate a SCIM API token in Harness before you can configure provision
 1. To create a token for your API key, select **+Token** under your newly created API key.
 
 
-   a. Provide a name and click **Generate token**.
+   a. Provide a name and select **Generate token**.
 
 
-   b. Copy the token value to a safe location. You will need this token to configure the connection in Microsoft Entra ID.
+   b. Copy the token value to a safe location. You'll need this token to configure the connection in Microsoft Entra ID.
 
 
-   c. Click **Close**.
+   c. Select **Close**.
 
 
    ![Screenshot of the Harness token dialog showing the Generate token and Close buttons.](media/harness-provisioning-tutorial/api-token.png)
@@ -185,7 +182,7 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
 1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
 
-  ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
