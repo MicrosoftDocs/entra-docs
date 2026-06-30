@@ -2,7 +2,7 @@
 title: Review suggestions from the Conditional Access Optimization Agent
 description: Learn how to review and apply suggestions provided by the Security Copilot for Microsoft Entra optimization agent.
 ms.reviewer: jodah
-ms.date: 06/23/2026
+ms.date: 06/30/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -130,7 +130,7 @@ Some suggestions are generated from Microsoft Defender threat insights. These su
 
 When you open a Defender-linked suggestion in the Conditional Access Optimization Agent, the details include a **Defender insight** section that explains the Defender context that contributed to the suggestion. Administrators with the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role can navigate directly to the related alerts and incidents in Microsoft Defender. Without those permissions, you can still review and act on the Conditional Access suggestion.
 
-For more information about how Microsoft Defender threat insights are used by the agent, see [Microsoft Defender integration](conditional-access-agent-optimization#microsoft-defender-integration).
+For more information about how Microsoft Defender threat insights are used by the agent, see [Microsoft Defender integration](conditional-access-agent-optimization.md#microsoft-defender-integration).
 
 ## Microsoft Teams agent suggestion notifications
 
