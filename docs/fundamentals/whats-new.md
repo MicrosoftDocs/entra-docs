@@ -5,10 +5,11 @@ featureFlags:
  - clicktale
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.topic: reference
-ms.date: 06/17/2026
+ms.date: 06/26/2026
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to review the latest Microsoft Entra releases and announcements so that I can stay current with product updates.
 ---
 
@@ -17,6 +18,152 @@ ms.collection: M365-identity-device-management
 This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see: [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
 > Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
+
+## June 2026
+
+### General Availability - External users can be directly assigned to Access Packages
+
+**Type:** New feature  
+**Service category:** Entitlement Management  
+**Product capability:** Identity Governance
+
+This feature allows Entitlement Management admins to directly assign external users who are not in the directory to an access package using the user's email. Users are invited into the tenant as Guest users and are governed (as long as Entra ID Governance is configured).
+
+---
+
+### General availability - Microsoft Entra Kerberos key rotation improved reliability for incoming trust referral flows
+
+**Type:** Changed feature  
+**Service category:** Authentications (Logins)  
+**Product capability:** User Authentication
+
+General availability of Microsoft Entra Kerberos key rotation improved reliability particularly for environments using incoming trust referral flows. Previously, authentication failures could occur during Kerberos key rotation if referral tickets were encrypted with a secondary key. The update enhances validation logic to attempt decryption with both primary and secondary Kerberos keys, improving resiliency during key rollover operations and reducing authentication disruption during rotation events. For more information, see: [Rotate the Kerberos server key for Microsoft Entra Kerberos](../identity/authentication/kerberos-server-key-rotation.md).
+
+---
+
+### General Availability - BYOD support for Windows client using Entra registration
+
+**Type:** New feature  
+**Service category:** BYOD  
+**Product capability:** Network Access
+
+We are excited to announce Bring Your Own Device (BYOD) support for Windows client using Entra-registered devices is now generally available. You can now enable **users and partners** to access corporate resources from their own devices. Administrators can assign the **Private Application** traffic profile to users with internal accounts, including **internal guest users**. This removes the previous requirement for Windows devices to be domain-joined. For more information, see: [Bring Your Own Device](../global-secure-access/concept-bring-your-own-device.md).
+
+---
+
+### Generally available - Jailbreak/Root Detection in Authenticator App
+
+**Type:** New feature  
+**Service category:** Microsoft Authenticator App  
+**Product capability:** Identity Security & Protection
+
+Microsoft Authenticator introduced jailbreak/root detection for Microsoft work or school accounts in the Authenticator app. Users with rooted/jailbroken devices will be blocked from adding/using work or school accounts in Authenticator app. Users must move to compliant devices to continue using work or school accounts in Authenticator. This capability is secure by default and does not require any admin configuration or control.
+
+---
+
+### Public Preview - Extended Conditional Access protections for Agent's user accounts
+
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection
+
+Conditional Access now provides broader controls to secure AI agents that have a user account. Administrators can:
+
+- **Target agent's user accounts with greater precision** by including or excluding individual agents or dynamically grouping agents using **Custom Security Attributes**.
+- **Protect against risky agent activity** by applying Conditional Access policies based on **Agent Risk**.
+- **Require compliant devices** for agents running on managed endpoints, including **Windows 365 for Agents**, ensuring agents can only operate from devices that meet your organization's compliance requirements.
+- **Apply device platforms, filter for devices and compliant network conditions** to agents running on endpoints, enabling policies based on device state and trusted network locations.
+
+These capabilities extend Zero Trust protections to agent's user accounts while leveraging the familiar Conditional Access policy experience. For more information see: [Target agent identities in Conditional Access policies](../identity/conditional-access/howto-target-agent-identities.md).
+
+---
+
+### General Availability - Domainless SAML IdP federation for workforce tenants
+
+**Type:** New feature  
+**Service category:** B2B  
+**Product capability:** B2B/B2C
+
+Domainless SAML federation with a SAML Identity Provider allows external users to authenticate into your apps or workforce resources using their IdP-managed credentials, regardless of their email domain. Domainless federation removes the need for domain matching between the user's email and preconfigured IdP domains during sign-in or invitation redemption. Learn more at [Add a SAML/WS-Fed identity provider - Microsoft Entra External ID](/entra/external-id/direct-federation#domainless-saml-idp-federation-preview).
+
+---
+
+### General Availability - SCIM 2.0 APIs for Microsoft Entra ID in US Gov cloud
+
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Identity Lifecycle Management
+
+SCIM 2.0 APIs are now generally available in the US Gov cloud, giving customers, developers, and partners a standards-based option for managing users and groups in Microsoft Entra using the System for Cross-domain Identity Management (SCIM) 2.0 specification. For more information, see: [Enable the SCIM Provisioning API in Microsoft Entra ID](../identity/app-provisioning/enable-scim-api.md).
+
+---
+
+### General Availability - Microsoft Entra Backup and Recovery is now available
+
+**Type:** New feature  
+**Service category:** Entra Backup and Recovery  
+**Product capability:** Entra Backup and Recovery
+
+Microsoft Entra Backup and Recovery is a built-in solution to help restore your tenant after accidental changes or malicious updates. Always on by default, it automatically backs up critical directory objects — including users, groups, applications, service principals, managed identities, Conditional Access policies, named locations, agent IDs, and authentication and authorization policy, so admins can quickly restore them to a previously known good state.
+
+At preview, Entra Backup and Recovery automatically takes daily backup of a tenant's supported directory objects. If a tenant has Microsoft Entra ID P1 or P2 licenses, one backup is taken each day and retained for 7 days. Admins can view available snapshots, generate difference reports to understand what has changed, and run recovery jobs to restore objects to a prior state.
+
+This gives your organization a reliable, built-in safety net helping you recover with confidence, minimize downtime, and protect your tenant from accidental changes, misconfigurations, or security compromises. For more information, see: [Microsoft Entra Backup and Recovery overview (Preview)](../backup/overview.md).
+
+---
+
+### Upcoming change - Improved restore experience for device-bound Authenticator app passkeys on iOS
+
+**Type:** Plan for change  
+**Service category:** Microsoft Authenticator App  
+**Product capability:** Identity Security & Protection
+
+No action is required.
+
+What is changing? Starting August 2026, users will see an improved restore experience for device-bound Authenticator app passkeys for iOS users. No admin or user action is required.
+
+With this update:
+
+- Users who already have iCloud and iCloud Keychain backup enabled for the Authenticator app—and have device-bound Authenticator passkeys on their old device—will automatically benefit from this improved experience.
+- Users restoring their Authenticator app on a new iOS device will experience an updated restore flow.
+
+This change streamlines the restore experience by directing users to the right recovery path based on access to their old device and helping them understand cross-device passkey authentication, resulting in a smoother transition to a new phone.
+
+This update applies to iOS devices only. Android support will follow.
+
+[Learn more](https://support.microsoft.com/account-billing/back-up-account-credentials-in-microsoft-authenticator-bb939936-7a8d-4e88-bc43-49bc1a700a40) about the changes to backup and restore in Authenticator app.
+
+---
+
+### Public Preview - New built-in Entra role for SOC identity response in Microsoft Defender
+
+**Type:** New feature  
+**Service category:** RBAC  
+**Product capability:** Identity Security & Protection
+
+Starting June 8 we're introducing a new built-in role in Microsoft Entra—**SOC Identity Responder**—to further improve how security teams execute identity containment actions initiated from Microsoft Defender using a least-privilege access model.
+
+Previously, performing these actions required SOC analysts to hold multiple high-privilege Entra roles or depend on identity administrators, creating delays during active investigations.
+
+With this update, **SOC analysts can be assigned a dedicated role purpose-built for identity response actions**, allowing them to perform key actions—such as disabling users, revoking sessions, and forcing password resets—without being granted broad directory administrative privileges.
+
+Access to this role supports flexible assignment models, including **role-assignable groups** for managing permissions through group membership and delegated ownership. Optional integration with **Privileged Identity Management (PIM)** enables just-in-time activation and enhanced governance controls.
+
+These actions continue to be enforced and audited by Microsoft Entra, ensuring consistency with existing RBAC and compliance controls.
+
+---
+
+### Public Preview - Prevent unauthorized changes to AD groups with AD group enforcement
+
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Entra Cloud Sync
+
+For customers leveraging group provisioning to AD, this capability ensures that changes to AD groups remain consistent with those managed in Microsoft Entra. With this preview, you can designate specific AD groups so that modifications to those groups can only be made through the Entra provisioning service. Changes made outside of Entra are blocked, helping prevent drift before it occurs and maintaining alignment between Entra ID and AD groups.
+
+Learn more: [AD group enforcement documentation](https://aka.ms/ADEnforcementDocumentation).
+
+---
 
 ## May 2026
 
