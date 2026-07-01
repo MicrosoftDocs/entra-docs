@@ -205,4 +205,4 @@ Get-MgServicePrincipal -Filter "appId eq '<application-id>'" |
 - [Office 365 app in Conditional Access](concept-conditional-access-cloud-apps.md#office-365)
 - [Service dependencies in Conditional Access](service-dependencies.md)
 - [What is Conditional Access?](overview.md)
-- [Verify first-party Microsoft applications in sign-in reports](https://learn.microsoft.com/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in)
+- [Verify first-party Microsoft applications in sign-in reports](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in)
