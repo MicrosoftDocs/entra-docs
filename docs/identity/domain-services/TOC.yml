@@ -95,6 +95,8 @@
       items:
         - name: Secure your managed domain
           href: secure-your-domain.md
+        - name: RC4 deprecation advance dependency test
+          href: rc4-deprecation-advance-dependency-test.md
         - name: TLS 1.2 enforcement
           href: reference-domain-services-tls-enforcement.md
         - name: Configure Kerberos Constrained Delegation
