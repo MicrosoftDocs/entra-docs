@@ -509,6 +509,8 @@ Partial failure with service account errors:
 > * **April 2026 - Enforcement phase (manual rollback available):** Default Kerberos KDC behavior shifts to AES-first, and RC4-dependent scenarios can start failing unless explicitly configured.
 > * **July 2026 - Enforcement phase (final):** Updates remove rollback support and keep enforcement enabled.
 
+Before RC4 is permanently disabled, the Domain Services team runs a controlled advance dependency test to help you identify and remediate RC4 dependencies. For details about the schedule and how to prepare, see [RC4 deprecation advance dependency test](rc4-deprecation-advance-dependency-test.md).
+
 ## AADDS500: Synchronization has not completed in a while
 
 ### Alert message
