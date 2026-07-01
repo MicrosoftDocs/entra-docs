@@ -3,7 +3,7 @@ title: Plan for mandatory Microsoft Entra multifactor authentication (MFA)
 description: Learn about mandatory multifactor authentication (MFA) enforcement for Azure, Microsoft 365, and other admin portals, and how to prepare your tenant.
 ms.topic: concept-article
 ms.date: 04/03/2026
-ms.reviewer: shahjoy
+ms.reviewer: shahjoy, nehakulkarni
 ms.custom: sfi-ga-nochange, msecd-doc-authoring-106
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal so that my organization is prepared before enforcement begins.
 ---
@@ -185,7 +185,7 @@ To prepare for MFA enforcement, configure a [Conditional Access policy](how-to-m
 
 Conditional Access requires a Microsoft Entra ID P1 or P2 license. If you can't use Conditional Access, enable [security defaults](~/fundamentals/security-defaults.md).
 
-You can self-enforce MFA by using built-in definitions in Azure Policy. To learn more and follow a step-by-step overview to apply these policy assignments in your environment, see [Tutorial: Apply MFA self-enforcement through Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement).
+You can self-enforce MFA by using built-in definitions in Azure Policy. To learn more and follow a step-by-step overview to apply these policy assignments in your environment, see [Tutorial: Apply MFA self-enforcement through Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement). Azure Policy supports both an 'Audit mode' (which emits audit events in Azure Activity Log) and 'Deny mode', which provides enforcement.
 
 For the best compatibility experience, ensure users in your tenant are using Azure CLI version 2.76 and Azure PowerShell version 14.3 or later. Otherwise, you can expect to see error messages as explained in these topics: 
 
