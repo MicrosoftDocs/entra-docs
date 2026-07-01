@@ -20,7 +20,7 @@ Use on-demand provisioning to provision a user or group in seconds. Among other 
 ## How to use on-demand provisioning
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least [Application Owner]([url](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/overview-assign-app-owners)) or an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 ::: zone pivot="app-provisioning"
 
