@@ -2,7 +2,7 @@
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 ms.topic: reference
-ms.date: 06/30/2026
+ms.date: 07/01/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -67,7 +67,6 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
 > | [Entra Backup Administrator](#entra-backup-administrator) | Manage all aspects of Microsoft Entra Backup, such as create recovery jobs and manage backup snapshots. | b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb |
 > | [Entra Backup Reader](#entra-backup-reader) | Read all aspects of Microsoft Entra Backup, such as list all preview jobs, recovery jobs, backup snapshots, and create preview jobs. | f42252d9-5400-4d7b-b9ef-cc582dbb8577 |
-> | [Entra Customer Lockbox Approver](#entra-customer-lockbox-approver) | Can approve customer lockbox requests for accessing customer data in Entra ID. | d35481f7-cda1-4fa2-8344-5a21f7f3724d |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
 > | [Exchange Backup Administrator](#exchange-backup-administrator) | Back up and restore content (including granular restore) for Exchange in Microsoft 365 Backup | 49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31 |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
@@ -339,10 +338,6 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 ## Entra Backup Reader
 
 [!INCLUDE [entra-backup-reader](includes/entra-backup-reader.md)]
-
-## Entra Customer Lockbox Approver
-
-[!INCLUDE [entra-customer-lockbox-approver](includes/entra-customer-lockbox-approver.md)]
 
 ## Exchange Administrator
 

@@ -2,7 +2,7 @@
 title: Global Administrator
 description: Global Administrator
 ms.topic: include
-ms.date: 06/30/2026
+ms.date: 07/01/2026
 ms.custom: include file
 ---
 
@@ -145,7 +145,6 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks | Manage hybrid authentication policy in Microsoft Entra ID<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/identityProtection/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Entra ID Protection<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks | Manage all aspects of lifecycle workflows and tasks in Microsoft Entra ID |
-> | microsoft.directory/lockbox/requests/update | Update Customer Lockbox requests for Microsoft Entra resources |
 > | microsoft.directory/loginOrganizationBranding/allProperties/allTasks | Create and delete loginTenantBranding, and read and update all properties |
 > | microsoft.directory/multiTenantOrganization/basic/update | Update basic properties of a multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/create | Create a multi-tenant organization |
