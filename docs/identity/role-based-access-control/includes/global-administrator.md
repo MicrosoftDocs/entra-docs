@@ -2,7 +2,7 @@
 title: Global Administrator
 description: Global Administrator
 ms.topic: include
-ms.date: 06/11/2026
+ms.date: 07/01/2026
 ms.custom: include file
 ---
 

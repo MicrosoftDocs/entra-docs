@@ -2,7 +2,7 @@
 title: Entra Backup Administrator
 description: Entra Backup Administrator
 ms.topic: include
-ms.date: 04/29/2026
+ms.date: 06/30/2026
 ms.custom: include file
 ---
 
