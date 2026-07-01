@@ -137,6 +137,10 @@ Device code flow is an authentication flow that lets users sign in to devices or
 After security defaults are enabled in your tenant, authentication requests that use device code flow are blocked. Applications or devices that depend on device code flow won't be able to complete sign-in while security defaults are enabled.
 If your organization needs granular control and exceptions, you should consider [Conditional Access](/entra/identity/conditional-access/concept-conditional-access-policy-common).
 
+> [!NOTE]
+> Starting July 1, 2026, all new Microsoft Entra tenants block device code flow as part of security defaults. Applications or devices that depend on device code flow won't be able to complete sign-in while security defaults are enabled.
+
+
 ### Protect privileged activities like access to the Azure portal
 
 Organizations use various Azure services managed through the Azure Resource Manager API, including:
