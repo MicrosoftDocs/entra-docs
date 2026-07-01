@@ -67,7 +67,7 @@ Keep in mind the following important details when selecting agent assignments:
 
 ## Target resources
 
-Target resources define which resources the policy protects when agents attempt to access them. To select a target resource in a Conditional Access policy, the resource must have an enterprise application (service principal) in your Microsoft Entra ID tenant. This requirement applies regardless of the data access pattern or resource type, including Microsoft Graph, MCP servers, Open API tools, and custom tools you build. For more information, see [Targeting resources with Conditional Access](concept-conditional-access-cloud-apps.md).
+Target resources define which resources the policy protects when agents attempt to access them. Selecting target resources for agent policies follows the same principles as targeting resources for user policies. The resource must have an enterprise application (service principal) in your Microsoft Entra ID tenant. This requirement applies regardless of the data access pattern or resource type, including Microsoft Graph, MCP servers, Open API tools, and custom tools you build. For more information, see [Targeting resources with Conditional Access](concept-conditional-access-cloud-apps.md).
 
 For custom MCP servers, Open API-based tools, or other custom tool types, register the tool as an application in Microsoft Entra ID and expose its permissions. For more information, see [How to configure an application to expose a web API](../../identity-platform/quickstart-configure-app-expose-web-apis.md).
 

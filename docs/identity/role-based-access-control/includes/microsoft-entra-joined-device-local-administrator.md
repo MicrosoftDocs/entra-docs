@@ -2,7 +2,7 @@
 title: Microsoft Entra Joined Device Local Administrator
 description: Microsoft Entra Joined Device Local Administrator
 ms.topic: include
-ms.date: 06/17/2026
+ms.date: 06/30/2026
 ms.custom: include file
 ---
 
@@ -15,3 +15,4 @@ This role is available for assignment only as an additional local administrator 
 > | --- | --- |
 > | microsoft.directory/groupSettings/standard/read | Read basic properties on group settings |
 > | microsoft.directory/groupSettingTemplates/standard/read | Read basic properties on group setting templates |
+

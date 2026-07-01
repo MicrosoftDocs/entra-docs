@@ -2,7 +2,7 @@
 title: Agent ID Administrator
 description: Agent ID Administrator
 ms.topic: include
-ms.date: 06/11/2026
+ms.date: 06/30/2026
 ms.custom: include file, agent-id-ignite
 ---
 
@@ -81,6 +81,7 @@ Assign the Agent ID Administrator role to users who need to do the following:
 > | microsoft.directory/deletedItems.agentIdentityBlueprints/delete | Permanently delete agent identity blueprints, which can no longer be restored |
 > | microsoft.directory/deletedItems.agentIdentityBlueprints/restore | Restore soft-deleted agent identity blueprints to original state |
 > | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/groups.unified/createAsOwner | Create Microsoft 365 groups, excluding role-assignable groups. Creator is added as the first owner. |
 > | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/organization/standard/read | Read basic properties on an organization |
 > | microsoft.directory/policies/standard/read | Read basic properties on policies |
