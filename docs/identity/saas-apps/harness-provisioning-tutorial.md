@@ -17,8 +17,6 @@ This article explains how to configure Microsoft Entra ID to automatically provi
 
 > [!NOTE]
 > This article describes a connector that is built on top of the Microsoft Entra user provisioning service. For information about this service, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
->
-> This connector is currently in preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 
 ## Prerequisites
