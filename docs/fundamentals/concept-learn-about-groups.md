@@ -106,7 +106,7 @@ The following are best practices for managing groups in the cloud:
   - For more information, see [Manage Microsoft Entra groups and group membership](how-to-manage-groups.md)
 - **Use group-based licensing**: Group-based licensing simplifies user provisioning and ensures consistent license assignments.
   - Use dynamic membership groups to automatically manage licensing for users meeting specific criteria.
-  - For more information, see [What is group-based licensing in Microsoft Entra ID?](concept-group-based-licensing.md)
+  - For more information, see [Assign or unassign licenses to a group in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true)
 - **Enforce Role Based Access Controls (RBAC)**: Assign roles to control who can manage groups.
   - RBAC reduces the risk of privilege misuse and simplifies group management.
   - For more information, see [Overview of role-based access control in Microsoft Entra ID](../identity/role-based-access-control/custom-overview.md)

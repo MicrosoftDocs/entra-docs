@@ -23,8 +23,6 @@
   items:
   - name: Compare default user permissions    
     href: ~/fundamentals/users-default-permissions.md?toc=/entra/identity/users/toc.json7bc=/entra/identity/users/breadcrumb/toc.json
-  - name: Group-based licensing basics    
-    href: ~/fundamentals/concept-group-based-licensing.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Manage access with groups    
     href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Enterprise user management with Microsoft Security Copilot
@@ -148,12 +146,8 @@
       href: groups-sensitivity-labels.md
   - name: Licenses
     items:
-    - name: Assign licenses to users    
+    - name: Assign licenses to users
       href: ~/fundamentals/licensing.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
-    - name: Use Admin center to assign licenses to groups
-      href: licensing-admin-center.md
-    - name: Additional scenarios    
-      href: licensing-group-advanced.md
     - name: Group licensing examples using PowerShell
       href: licensing-powershell-graph-examples.md
     - name: Service plan IDs for licensing
@@ -172,14 +166,10 @@
       href: linkedin-integration.md
     - name: LinkedIn data sharing   
       href: linkedin-user-consent.md
-  - name: Troubleshoot
-    items:
-    - name: Get support for Microsoft Entra ID    
-      href: ~/fundamentals/how-to-get-support.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
-    - name: Troubleshoot groups   
-      href: groups-troubleshooting.md
-    - name: Troubleshoot group licensing    
-      href: licensing-groups-resolve-problems.md
+  - name: Get support for Microsoft Entra ID
+    href: ~/fundamentals/how-to-get-support.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+  - name: Troubleshoot groups
+    href: groups-troubleshooting.md
 - name: Samples
   expanded: false
   items: 
