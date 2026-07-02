@@ -175,6 +175,38 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
 Snowflake-generated SCIM tokens expire in 6 months. Be aware that you need to refresh these tokens before they expire, to allow the provisioning syncs to continue working.
 
+## Just-in-time (JIT) application access with PIM for groups 
+With PIM for Groups, you can provide just-in-time access to groups in Snowflake and reduce the number of users that have permanent access to privileged groups in Snowflake. 
+
+**Configure your enterprise application for SSO and provisioning**
+1. Add Snowflake to your tenant, configure it for provisioning as described in the article above, and start provisioning. 
+1. Configure [single sign-on](snowflake-provisioning-tutorial.md) for Snowflake.
+1. Create a [group](/azure/active-directory/fundamentals/how-to-manage-groups) that provides all users access to the application.
+1. Assign the group to the Snowflake application.
+1. Assign your test user as a direct member of the group created in the previous step, or provide them access to the group through an access package. This group can be used for persistent, non-admin access in Snowflake.
+
+**Enable PIM for groups**
+1. Create a second group in Microsoft Entra ID. This group provides access to admin permissions in Snowflake.
+1. Bring the group under [management in Microsoft Entra PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups).
+1. Assign your test user as [eligible for the group in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner) with the role set to member.
+1. Assign the second group to the Snowflake application.
+1. Use on-demand provisioning to create the group in Snowlake.
+1. Sign-in to Snowflake and assign the second group the necessary permissions to perform admin tasks.  
+
+Now any end user that was made eligible for the group in PIM can get JIT access to the group in Snowflake by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role).
+
+**Key considerations**
+* How long does it take to have a user provisioned to the application? 
+  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
+    * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
+  * When a user activates their group membership in Microsoft Entra ID PIM: 
+    * The group membership is provisioned in 2 – 10 minutes. When there is a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
+    * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
+    * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
+* If the user is unable to access the necessary group in Snowlake, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
+* You can create alerts for failures using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics). 
+* Deactivation is done during the regular incremental cycle. It isn't processed immediately through on-demand provisioning.
+
 ## Troubleshooting tips
 
 The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allow list of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
