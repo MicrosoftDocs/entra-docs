@@ -111,7 +111,7 @@ sections:
       - question: |
           What if I am in a hybrid environment?
         answer: |
-          User risk can be self-remediated using a secure password change if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks).
+          User risk can be self-remediated using a secure password change (MFA + password change). This flow doesn't require self-service password reset (SSPR) to be enabled; however, for hybrid users with on-premises or hybrid-joined Windows devices, password hash synchronization must be enabled. Consider enabling [allow on-premises password change to reset user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks) so that on-premises password changes also remediate user risk.
 
           For more information, see [How to remediate risk and unblock users](howto-identity-protection-remediate-unblock.md#considerations-for-cloud-and-hybrid-users).
       - question: |
@@ -137,7 +137,7 @@ sections:
       - question: |
           What do I do if a B2B collaboration user was blocked due to a risk-based policy in my organization?
         answer: |
-          If a risky B2B user in your directory is blocked by your risk-based policy, the user needs to remediate that risk in their home directory. Users can remediate their risk by performing a secure password change in their home directory. If they don't have self-service password reset enabled in their home directory, they need to contact their own organization's IT Staff to have an administrator manually dismiss their risk or change their password. For more information, see [Remediate user risk](howto-identity-protection-remediate-unblock.md).
+          If a risky B2B user in your directory is blocked by your risk-based policy, the user needs to remediate that risk in their home directory. Users can remediate their risk by performing a secure password change (MFA + password change) in their home directory. This flow doesn't require self-service password reset (SSPR) to be enabled. If the user can't complete a secure password change, they need to contact their own organization's IT Staff to have an administrator manually dismiss their risk or change their password. For more information, see [Remediate user risk](howto-identity-protection-remediate-unblock.md).
       - question: |
           How do I prevent risk-based policies from affecting B2B collaboration users?
         answer: |
