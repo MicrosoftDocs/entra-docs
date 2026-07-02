@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra application management
 description: This article shows the new and updated documentation for the Microsoft Entra application management.
-ms.date: 06/16/2026
+ms.date: 07/02/2026
 ms.topic: whats-new
 
 #customer intent: As an IT admin responsible for managing applications in Microsoft Entra ID, I want to stay updated on new documentation and significant updates, so that I can effectively manage and troubleshoot application-related issues in the platform.
@@ -10,6 +10,20 @@ ms.topic: whats-new
 # What's new in Microsoft Entra application management
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## June 2026
+
+### New articles
+
+- [Plan your SSO integration with Microsoft Entra ID (ISVs)](plan-sso-integration-isv.md)
+- [SAML versus OpenID Connect: Choose the right SSO protocol](saml-vs-oidc-decision-guide.md)
+- [Understand Microsoft's SSO model](understand-microsoft-sso-model.md)
+
+### Updated articles
+
+- [Submit a request to publish your application in Microsoft Entra application gallery](v2-howto-app-gallery-listing.md) - Add SSO onboarding articles for ISV app developers
+- [What is single sign-on in Microsoft Entra ID?](what-is-single-sign-on.md) - Add SSO onboarding articles for ISV app developers
+
 
 ## May 2026
 
@@ -29,9 +43,3 @@ No updates for this month.
     
 - [Submit a request to publish your application in Microsoft Entra application gallery](v2-howto-app-gallery-listing.md) - Added SSO checklist to the app publishing doc
 
-## March 2026
-
-### Updated articles
-
-- [Submit a request to publish your application in Microsoft Entra application gallery](v2-howto-app-gallery-listing.md) - Added SCIM Provisioning Checklist to the App gallery doc
-- [Tutorial: Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Provided guidance to ISVs on SAML certificate rotation

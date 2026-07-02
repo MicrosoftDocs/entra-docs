@@ -3,7 +3,7 @@ title: Configure adaptive session lifetime policies
 description: Learn how to configure adaptive session lifetime policies in Microsoft Entra to manage sign-in frequency and browser session persistence effectively.
 ms.topic: how-to
 ms.date: 04/02/2026
-ms.reviewer: inbarc
+ms.reviewer: inbarc, sreyanthmora
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
