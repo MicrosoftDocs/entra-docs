@@ -93,6 +93,25 @@ If you have legacy risk policies enabled in Microsoft Entra ID Protection, you s
    1. Set **Enforce policy** to **Disabled**.
 1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 
+#### Help and support for migrating risk policies
+
+If you need help migrating your risk policies to Conditional Access, please submit a support request in the Microsoft Entra admin center.
+
+1. Go to **New support request** in the Microsoft Entra admin center.
+1. Describe your issue: **Migrate legacy ID Protection policy**.
+1. Select **Microsoft Entra Sign-in and Multifactor Authentication** > **Next**.
+1. Select **Configuring new or existing policy settings** > **Next**.
+1. Close the solution page.
+1. Select **Create a support request**.
+1. Use the following selections to get your request to the right team:
+    1. Issue type: **Technical**.
+    1. Service type: **Microsoft Entra Sign-in and Multifactor Authentication**.
+    1. Summary: **Migrate legacy ID Protection policy**.
+    1. Problem type: **Identity Protection**.
+    1. Problem subtype: **Configure risk policies**.
+1. Select **Next** and navigate to the **Additional details** tab to fill out your details.
+1. Fill out the required details and submit your request.
+
 ## Related content
 
 - [Enable Microsoft Entra multifactor authentication registration policy](howto-identity-protection-configure-mfa-policy.md)

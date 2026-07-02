@@ -1,12 +1,11 @@
 ---
 title: Configure SilkRoad Life Suite for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SilkRoad Life Suite.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SilkRoad Life Suite so that I can control who has access to SilkRoad Life Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure SilkRoad Life Suite for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SilkRoad Life Suite with Microsoft Entra ID. When you integrate SilkRoad Life Suite with Microsoft Entra ID, you can:

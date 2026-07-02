@@ -2,14 +2,12 @@
 title: Automate User provisioning into SAP Analytics Cloud with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP Analytics Cloud using SAP Cloud Identity Services.
 
-author: jeevansd
 manager: TeeEarls
 ms.topic: how-to
 ms.date: 03/23/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP Analytics Cloud.
----
+--- 
 
 # Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP Analytics Cloud
 

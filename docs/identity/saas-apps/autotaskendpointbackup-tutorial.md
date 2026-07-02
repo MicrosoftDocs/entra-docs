@@ -2,11 +2,10 @@
 title: Configure Autotask Endpoint Backup for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Autotask Endpoint Backup.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Autotask Endpoint Backup so that I can control who has access to Autotask Endpoint Backup, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Autotask Endpoint Backup for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Autotask Endpoint Backup with Microsoft Entra ID. When you integrate Autotask Endpoint Backup with Microsoft Entra ID, you can:

@@ -1,7 +1,6 @@
 ---
 title: 'Prerequisites for integrating with Active Directory'
 description: This article describes the prerequisites required to integrate with Active Directory.
-
 ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 09/29/2025

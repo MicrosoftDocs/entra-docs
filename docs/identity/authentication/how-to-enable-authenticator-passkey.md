@@ -2,7 +2,7 @@
 title: Enable passkeys in Authenticator for Microsoft Entra ID
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 01/27/2026
+ms.date: 06/05/2026
 ms.reviewer: mjsantani
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.
@@ -97,7 +97,7 @@ To configure the policy by using Graph Explorer:
    Request Body:
    {
        "@odata.type": "#microsoft.graph.fido2AuthenticationMethodConfiguration",
-       "isAttestationEnforced": true,
+       "isAttestationEnforced": false,
        "keyRestrictions": {
            "isEnforced": true,
            "enforcementType": "allow",

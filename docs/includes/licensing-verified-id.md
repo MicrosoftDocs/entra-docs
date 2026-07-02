@@ -1,6 +1,6 @@
 ---
-author: barclayn
-ms.author: barclayn
+author: kenwith
+ms.author: kenwith
 ms.date: 03/24/2026
 ms.service: entra-id
 ms.topic: include

@@ -2,9 +2,10 @@
 title: Add sponsors to a guest user in the Microsoft Entra admin center - External ID
 description: Shows how an admin can add sponsors to guest users in Microsoft Entra B2B collaboration.
 ms.topic: how-to
-ms.date: 12/12/2024
+ms.date: 04/24/2026
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: As a B2B organization administrator, I want to track and manage sponsors for guest users, so that I can ensure accountability and proper governance of external partners in my directory.
 ---
 # Sponsors field for B2B users
@@ -20,7 +21,7 @@ This article provides an overview of the sponsor feature and explains how to use
 The **Sponsors** field on the user object refers to the person or group who manages and monitors the lifecycle of the user, ensuring they have access to the right resources.
 Being a sponsor doesn't grant administrative powers for the sponsor user or the group, but it can be used for approval processes in entitlement management. You can also use it for custom solutions, but it doesn't offer any other built-in directory powers.
 
-:::image type="content" source="media/b2b-sponsors/single-sponsor.png" alt-text="Screenshot of the sponsors' name.":::
+:::image type="content" source="media/b2b-sponsors/single-sponsor.png" alt-text="Screenshot of a guest user profile showing one sponsor listed in the Sponsors field.":::
 
 ## Who can be a sponsor?
 
@@ -41,10 +42,10 @@ You can add up to five sponsors when inviting a new guest user. If you don’t s
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Invite external user** from the menu.
-1. Entered the details on the Basics tab and select **Next: Properties**.
+1. Enter the details on the **Basics** tab, and then select **Next: Properties**.
 1. You can add sponsors under  **Job information** on the **Properties** tab.
 
-   :::image type="content" source="media/b2b-sponsors/add-sponsors.png" alt-text="Screenshot showing the Add sponsor option.":::
+   :::image type="content" source="media/b2b-sponsors/add-sponsors.png" alt-text="Screenshot of the invite external user flow showing where to add sponsors under Job information on the Properties tab.":::
 
 1. Select the **Review and invite** button to finalize the process.
 
@@ -55,11 +56,11 @@ You can also add sponsors with the Microsoft Graph API, using invitation manager
 
 ## Edit the Sponsors field in the Microsoft Entra admin center
 
-When you invite a guest user, you became their sponsor by default. If you need to manually change the guest user's sponsor, follow these steps:
+When you invite a guest user, you become their sponsor by default. If you need to manually change the guest user's sponsor, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Entra ID** > **Users**.
-1. In the list, select the user's name to open their user profile
+1. In the list, select the user's name to open their user profile.
 1. Under **Properties** > **Job information** check the **Sponsors** field. If the guest user already has a sponsor, you can select **View** to see the sponsor's name.
 
    :::image type="content" source="media/b2b-sponsors/sponsors-under-properties.png" alt-text="Screenshot of the sponsors field under the job information.":::
@@ -75,7 +76,7 @@ When you invite a guest user, you became their sponsor by default. If you need t
 
    :::image type="content" source="media/b2b-sponsors/add-sponsors-existing-user.png" alt-text="Screenshot of adding a sponsor to an existing user.":::
 
-1. Once you selected sponsor users or groups, save the changes on the **Job Information** tab.
+1. Once you select sponsor users or groups, save the changes on the **Job Information** tab.
 
 ## Edit the Sponsors field with PowerShell
 

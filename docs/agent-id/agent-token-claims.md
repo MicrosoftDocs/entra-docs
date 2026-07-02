@@ -4,7 +4,6 @@ description: Learn about specialized token claims used by agent applications in 
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: reference
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 
 #customer-intent: As a developer or security engineer, I want to understand the token claims structure for Agent Identity tokens, so that I can properly validate and authorize agent applications in my resource servers and implement secure authentication flows.
@@ -71,6 +70,19 @@ You'd notice that the token includes a few claims that aren't previously seen in
 | `xms_sub_fct`     | Subject facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) . |
 | `xms_tnt_fct`     | Tenant facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) .  |
 | `xms_par_app_azp` | Parent application of the authorized party. Learn [more](#xms_par_app_azp) .          |
+
+## idtyp claim values by scenario
+
+The `idtyp` claim identifies the type of entity the token subject represents. The value depends on which agent flow issued the token:
+
+| Agent scenario | `idtyp` value | Subject (`sub`/`oid`) |
+| --- | --- | --- |
+| On-behalf-of flow (interactive agent) | `user` | The human user the agent acts on behalf of |
+| Autonomous app flow (app-only) | `app` | The agent identity service principal |
+| Agent's user account flow | `user` | The agent's own user account |
+
+> [!NOTE]
+> The `idtyp` value alone doesn't distinguish a human user from an agent's user account. Use the `xms_sub_fct` claim (value `13` = agent's user account) to differentiate these scenarios.
 
 ## xms_idrel
 

@@ -2,11 +2,10 @@
 title: Configure Fuse for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fuse.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 3/10/2023
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fuse so that I can control who has access to Fuse, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Fuse for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Fuse with Microsoft Entra ID. Fuse is a learning platform that enables learners within an organization to access the necessary knowledge and expertise they need to improve their skills at work. When you integrate Fuse with Microsoft Entra ID, you can:

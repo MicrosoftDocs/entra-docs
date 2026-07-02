@@ -2,8 +2,6 @@
 title: Microsoft Entra hybrid join using Microsoft Entra Kerberos (preview)
 description: Explains prerequisites and steps to set up Microsoft Entra hybrid join by using Microsoft Entra Kerberos.
 #customer intent: As a hybrid identity administrator, I want to allow users to join devices to Microsoft Entra ID.
-author: nbeesett
-ms.author: justinha
 ms.reviewer: nbeesett
 ms.date: 02/24/2026
 ms.topic: how-to

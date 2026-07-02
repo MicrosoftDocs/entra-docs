@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure F5’s BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID
 

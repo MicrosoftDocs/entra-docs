@@ -2,12 +2,11 @@
 title: Configure NetCloud Manager for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and NetCloud Manager.
 services: active-directory
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 05/06/2024
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure NetCloud Manager for Single sign-on with Microsoft Entra ID
 

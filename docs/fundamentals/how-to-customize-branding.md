@@ -1,11 +1,9 @@
 ---
 title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
-author: shlipsey3
 manager: pmwongera
 ms.topic: how-to
 ms.date: 12/16/2025
-ms.author: sarahlipsey
 ms.reviewer: mkokkalera
 ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
@@ -48,7 +46,7 @@ The branding elements are called out in the following example. Text descriptions
 :::image type="content" source="media/how-to-customize-branding/sign-in-page-map.png" alt-text="Screenshot of the sign-in page, with each of the company branding elements highlighted." lightbox="media/how-to-customize-branding/sign-in-page-map-expanded.png":::
 
 1. **Favicon:** Small icon that appears on the left side of the browser tab.
-1. **Header:** Space across the top of the sign-in page, behind the header log.
+1. **Header:** Space across the top of the sign-in page, behind the header logo.
 1. **Header logo:** Logo that appears in the upper-left corner of the sign-in page.
 1. **Background image:** The entire space behind the sign-in box.
 1. **Page background color:** The entire space behind the sign-in box.
@@ -65,7 +63,7 @@ The branding elements are called out in the following example. Text descriptions
 
 ## How to navigate the company branding process
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
 1. Browse to **Entra ID** > **Custom Branding**.
     - If you currently have a customized sign-in experience, the **Edit** button is available.
@@ -104,7 +102,7 @@ The sign-in experience process is grouped into sections. At the end of each sect
     - View the [CSS template reference guide](reference-company-branding-css-template.md).
     
     > [!IMPORTANT]
-    > Tenants created after January 5, 2026, will not have custom CSS available for company branding in Microsoft Entra ID. Tenants. Tenants created before January 5 can continue to use custom CSS.
+    > Tenants created after January 5, 2026, won't have custom CSS available for company branding in Microsoft Entra ID. Tenants created before January 5, 2026 can continue to use custom CSS.
 
 
 ### Header
@@ -168,7 +166,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
     - Show self-service password reset (SSPR): Select the checkbox to turn on SSPR.
     - Common URL: Enter the destination URL for where your users reset their passwords. This URL appears on the username and password collection screens as text and isn't clickable.
     - Username collection display text: Replace the default text with your own custom username collection text.
-    - Password collection display text: Replace the default text with your own customer password collection text.
+    - Password collection display text: Replace the default text with your own custom password collection text.
 
 ### Review
 
@@ -182,7 +180,7 @@ The time it takes for changes to appear in the sign-in experience vary based on 
 
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements for that browser language. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
 1. Browse to **Entra ID** > **Custom Branding**.
 

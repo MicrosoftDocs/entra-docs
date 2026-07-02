@@ -1,10 +1,8 @@
 ---
-title: Discover identities in target applications with Account Discovery (preview)
+title: Discover identities in target applications with Account Discovery
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
-ms.date: 03/31/2026
-ms.author: jfields
-author: jenniferf-skc
+ms.date: 05/26/2026
 ms.reviewer: arvinh
 ms.service: entra-id
 ms.subservice: app-provisioning
@@ -14,7 +12,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Discover identities in target applications with Account Discovery (preview)
+# Discover identities in target applications with Account Discovery
 
 When organizations adopt Microsoft Entra ID for application provisioning, target applications often already contain user accounts that were created before provisioning was configured. Account Discovery helps you find these existing accounts, match them to Microsoft Entra ID users, and categorize them so you can bring unmanaged identities under governance. After onboarding to provisioning, application administrators can manually create accounts in the application. This report allows organizations to identify local or orphan accounts both during initial onboarding and after they have operationalized provisioning.
 
@@ -25,10 +23,6 @@ Account Discovery retrieves all user accounts from a target application and clas
 - **Assigned users** — Accounts that match a Microsoft Entra ID user who is assigned to the enterprise application. These accounts are fully managed by the provisioning service.
 
 This classification gives you visibility into who has access to your applications and helps you identify accounts that should be governed, reassigned, or removed.
-
-> [!IMPORTANT]
-> The Account Discovery feature is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -43,20 +37,35 @@ Before you can use Account Discovery, the following must be in place:
 
 - Account Discovery requires a **direct matching attribute** for user correlation. Expression-based transformations aren't supported for matching.
 - If multiple matching attributes are configured, only the **first** matching attribute is used.
-- See [Supported applications](#supported-applications) for applications that support Account Discovery. Account Discovery isn't supported for some applications, including:
-  - Workday
-  - SAP SuccessFactors
-  - API-driven provisioning apps
-  - ServiceNow
-  - Amazon Web Services (AWS)
 
-## Supported applications
+## Application support
+For SCIM based connectors, account discovery requires that the application support [RFC 7644, Section 3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).
 
-Account Discovery is validated for the following applications:
+### Connectors with established discovery behavior
 
+Customers using account discovery with the following applications consistently receive complete discovery results:
+
+- Atlassian Cloud  
+- SCIM
+- Salesforce  
 - SAP Cloud Identity Services
-- Salesforce
-- Atlassian
+- ECMA (enables support for on-premises applications through SQL, LDAP, Web Services, and PowerShell connectors)
+- GitHub Enterprise Cloud (see [here](https://docs.github.com/enterprise-cloud@latest/rest/scim/scim?apiVersion=2026-03-10#list-scim-provisioned-identities) for limitations)
+
+### Connectors that do not support discovery
+Account Discovery is currently unsupported for the following applications:
+
+- HR provisioning (Workday, SAP SuccessFactors, API-driven provisioning)
+- ServiceNow  
+- Amazon Web Services (AWS)
+- Snowflake
+- Cross-tenant synchronization
+- Cloud sync
+- Group provisioning to AD
+
+### All other connectors
+
+Account Discovery can be enabled for all other supported connectors. Discovery outcomes may vary depending on whether the target application supports listing users and pagination through its SCIM API. If your discovery report has 0 results, verify that you have configured a single direct matching attribute (no expressions) in your attribute mappings. Next, verify with the application vendor that the application supports pagination in accordance with section [3.4.2.4](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4) of the SCIM standard. 
 
 ## Discover identities in a target application
 
@@ -98,6 +107,10 @@ Unassigned users match a Microsoft Entra ID user based on the matching attribute
 
 Assigned users match a Microsoft Entra ID user who is already assigned to the application. These accounts are fully managed by the provisioning service. No action is needed unless you want to review or update their attribute mappings.
 
+### Retrieve results with Microsoft Graph
+
+In addition to reviewing discovered accounts in the Microsoft Entra admin center, you can use Microsoft Graph to programmatically retrieve the account discovery results. For more information, see the [identityCorrelation resource type](/graph/api/resources/identitycorrelation?view=graph-rest-beta) in the Microsoft Graph beta API reference.
+
 ## Filter and search results
 
 Use the search and filter capabilities to find specific accounts:
@@ -105,6 +118,62 @@ Use the search and filter capabilities to find specific accounts:
 - Search for accounts by name or attribute values.
 - Filter results by category (local, unassigned, or assigned).
 - Manage columns to view the imported attributes from the target application and the correlation status.
+
+## Assign correlated users to your enterprise application and/or access packages
+
+After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to the enterprise application or an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsers.ps1 file and run it in PowerShell 7.x to assign users.
+
+### Optional parameters
+
+| Parameter | Description |
+|---|---|
+| **`-DryRun`** | Shows what *would* happen without making any changes.|
+| **`-SkipAppRoleAssignment`** | Only manage access packages, skip assigning app roles |
+| **Duplicate detection** | Checks for existing assignments before creating new ones |
+| **Client-side status filter** | Verifies API results match expected status (guards against API quirks) |
+| **`-OutputFile`** | Full audit trail as CSV with timestamps, actions, and error details |
+| **Strict mode** | Runs with `Set-StrictMode -Version Latest` and `$ErrorActionPreference = "Stop"` to fail fast on unexpected issues |
+
+### Example scenarios
+
+* Assign all correlated users to the enterprise app:
+   ```powershell
+   pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." 
+   ```
+* Assign all correlated users to a specific access package (example [rules](https://aka.ms/AssignCorrelatedUsersCSV) file):
+
+   ```powershell
+   pwsh -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId '7A22...' -RulesFile '.\access-package-rules-internal.csv' -DryRun -OutputFile '.\results-dryrun.csv'
+   ```
+
+* Assign users to packages based on rules that you define (example rules file):
+
+    ```powershell
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv"
+   ```
+
+* Assign users to access packages with a fallback package for users that don't meet any of the defined rules:
+
+   ```powershell
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" `-AccessPackageId "fallback-pkg-id" -PolicyId "fallback-policy-id" `-FallbackBehavior UseFallback
+   ```
+
+* Assign users to access packages and skip app role assignments:
+ 
+    ```powershell
+   pwsh -ExecutionPolicy Bypass -File '.\Assign-CorrelatedUsers.ps1' -ServicePrincipalId "7A22..." `-RulesFile ".\access-package-rules.csv" -SkipAppRoleAssignment
+   ```
+### Rules file description
+The rules file is a standard [CSV](https://aka.ms/AssignCorrelatedUsersCSV) with these columns:
+
+| Column | Purpose |
+|---|---|
+| `RuleGroup` | Rows sharing the same group number are AND-ed together. Different groups are evaluated independently. |
+| `PropertyName` | Key in the target SCIM property bag (e.g. `userType`, `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department`). The property names can be found in the discovery UX when clicking on view attributes for an individual user or in your provisioning attribute mappings. |
+| `Operator` | `eq`, `ne`, `contains`, `startswith`, `endswith`, `regex` |
+| `Value` | The value to compare against (case-insensitive). |
+| `AccessPackageId` | The access package to assign when the group matches. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |
+| `PolicyId` | The assignment policy for that access package. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |
 
 ## Integrate with Identity Governance
 

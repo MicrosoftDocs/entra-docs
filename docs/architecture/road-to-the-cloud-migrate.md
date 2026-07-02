@@ -2,11 +2,9 @@
 title: Road to the cloud - Move identity and access management from Active Directory Domain Services (AD DS) to a Microsoft Entra migration workstream
 description: Learn to plan your migration workstream of IAM from Active Directory Domain Services (AD DS) to Microsoft Entra ID.
 documentationCenter: ''
-author: justinha
 manager: dougeby
 ms.topic: how-to
 ms.date: 07/30/2025
-ms.author: justinha
 ms.custom: references_regions
 ms.subservice: architecture
 ---

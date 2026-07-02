@@ -7,10 +7,7 @@ ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# Review recovery history in Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Review recovery history in Microsoft Entra Backup and Recovery
 
 Learn how to review past recovery operations in your tenant by using the Recovery History page in Microsoft Entra Backup and Recovery.
 
@@ -21,7 +18,7 @@ Recovery history includes:
 - The start and completion time of the recovery.
 - The number of objects and links modified.
 
-Use recovery history for recent operational review and troubleshooting. Recovery history data is retained for up to 5 days after the recovery completion time.
+Use recovery history for recent operational review and troubleshooting. Recovery history data is retained for up to seven days after the recovery completion time.
 
 ## Prerequisites
 
@@ -31,7 +28,7 @@ To view available recovery history in your tenant, you must sign in with at leas
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Microsoft Entra Backup Reader**.
 
-1. In the left navigation pane, select **Recovery History (Preview)** under **Backup and recovery**.
+1. In the left navigation pane, select **Recovery History** under **Backup and recovery**.
 
    :::image type="content" source="media/review-recovery-history/recovery-history-page.png#lightbox" alt-text="Screenshot of the Recovery History page showing recovery operations with Status, Backup timestamp, Recovery started, and Modified objects columns.":::
 
@@ -47,7 +44,7 @@ To view available recovery history in your tenant, you must sign in with at leas
    :::image type="content" source="media/review-recovery-history/recovery-history-details.png#lightbox" alt-text="Screenshot of the Recovery History page showing multiple recovery operations with status and timestamp details.":::
 
 > [!NOTE]
-> The system automatically removes recovery history 5 days after recovery completes.
+> The system automatically removes recovery history seven days after recovery completes.
 
 ### Recovery statuses
 
@@ -83,4 +80,4 @@ Use failed recovery entries to:
 - View failure details that explain why the recovery didn't succeed.
 
 > [!NOTE]
-> Failed recovery records remain available for 5 days after the recovery completion date.
+> Failed recovery records remain available for seven days after the recovery completion date.

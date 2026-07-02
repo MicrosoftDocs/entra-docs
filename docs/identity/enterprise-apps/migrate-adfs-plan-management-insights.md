@@ -2,7 +2,6 @@
 title: 'Phase 4: Plan management and insights'
 description: This article describes phase 4 of planning migration of applications from AD FS to Microsoft Entra ID
 ms.topic: concept-article
-
 ms.date: 05/30/2023
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management

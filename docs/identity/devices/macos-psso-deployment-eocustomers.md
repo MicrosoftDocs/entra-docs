@@ -3,9 +3,7 @@ title: Configuring macOS Platform SSO (PSSO) to meet NIST SP 800-63 and EO 14028
 description: How to deploy macOS Platform Single Sign On (PSSO) to meet NIST SP 800-63 and EO 14028 Requirements.
 ms.topic: how-to
 ms.date: 05/01/2025
-ms.author: godonnell
 ms.reviewer: jploegert
-author: garrodonnell
 
 #Customer intent: As an IT Admin for a US Government Agency, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices to meet the National Institute of Standards and Technology (NIST) Special Publication (SP) 800-63 Revision 4 and Executive Order (EO) 14028 requirements.
 ---
@@ -78,7 +76,7 @@ Device Compliance Policies in Microsoft Intune allow administrators to ensure th
 
 #### Deleting users from a tenant
 
-See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.yml). 
+See [How to create, invite, and delete users](../../fundamentals/how-to-create-delete-users.md). 
 
 #### Revoke a user's access
 

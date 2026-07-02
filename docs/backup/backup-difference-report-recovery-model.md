@@ -7,10 +7,7 @@ ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
-# Backup, difference report, and recovery model in Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Backup, difference report, and recovery model in Microsoft Entra Backup and Recovery
 
 Microsoft Entra Backup and Recovery automatically backs up supported tenant objects so you can compare changes and recover to a previous state. Supported objects include:
 
@@ -26,9 +23,11 @@ Microsoft Entra Backup and Recovery automatically backs up supported tenant obje
 
 For a full list of supported attributes, see [Supported objects and attributes](scope-supported-objects-limitations.md).
 
+Backups are created automatically once per day. Select from retained backups when you create a difference report or start recovery.
+
 ## Difference reports
 
-Create a difference report to compare the current state of your tenant with a backup. Only changed objects appear in the report. Apply filters to view changes for a specific object type or a specific object. If you don't apply a filter, all changed objects are included in the difference report.
+Create a difference report to compare the current state of your tenant with a selected backup. Only changed objects appear in the report, with changed attributes and links shown for review. Apply filters to view changes for a specific object type or a specific object. If you don't apply a filter, all changed objects are included in the difference report.
 
 Changes for users and groups synchronized from on-premises Active Directory appear in the difference report to help you track changed objects. However, you can't recover on-premises synced objects through Backup and Recovery, because the source of authority for these objects is on-premises Active Directory.
 
@@ -54,7 +53,7 @@ Difference calculation depends on the changes that have happened between the bac
 
 When you recover your tenant, apply filters to control which objects to recover:
 
-- **By object type**: Recover only objects of a certain type, such as users, groups, or applications.
+- **By object type**: Recover only objects of a certain type, such as users, groups, applications, service principals, or Conditional Access policies.
 - **By object ID**: Supply the object type and object ID to recover a specific object.
 - **All changes**: Recover all changed objects to the state captured in the selected backup.
 
@@ -82,9 +81,13 @@ Backup and Recovery doesn't create new objects or hard-delete objects from your 
 > [!WARNING]
 > Hard-deleted objects can't be recovered. Configure [protected actions](/entra/identity/role-based-access-control/protected-actions-overview) to prevent unwanted hard deletions.
 
+For soft-deleted users, Microsoft 365 Groups, cloud security groups, application registrations, and service principals, you can also use [soft deletion](soft-deletion.md) within the 30-day retention window.
+
 On-premises synchronized objects can't be recovered through Backup and Recovery, because the source of authority is on-premises Active Directory. Recover these objects in on-premises Active Directory instead. Changes to synced objects still appear in difference reports.
 
 Microsoft Entra Backup and Recovery is available for workforce tenants only. Microsoft Entra External ID tenants and Azure AD B2C tenants aren't supported.
+
+Microsoft Entra Backup and Recovery backs up and recovers Microsoft Entra directory objects. Microsoft 365 resources, such as mailboxes, OneDrive, or SharePoint sites, and Azure resources aren't backed up by Microsoft Entra Backup and Recovery.
 
 ## Related content
 

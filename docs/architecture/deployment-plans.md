@@ -1,10 +1,9 @@
 ---
 title: Microsoft Entra deployment plans
 description: Guidance on Microsoft Entra deployment, such as authentication, devices, hybrid scenarios, governance, and more.
-author: gargi-sinha
 ms.topic: concept-article
 ms.date: 02/07/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.subservice: architecture
 ---
 
@@ -13,6 +12,14 @@ ms.subservice: architecture
 Azure Active Directory is now [Microsoft Entra ID](~/fundamentals/what-is-entra.md), which can safeguard your organization with cloud identity and access management. The solution connects employees, customers, and partners to their apps, devices, and data.
 
 Use this article's guidance to help build your plan to deploy Microsoft Entra ID. Learn about plan-building basics and then use the following sections for authentication deployment, apps and devices, hybrid scenarios, user identity, and more.
+
+> [!TIP]
+> **Looking for architecture diagrams and reference architectures?** For detailed architecture diagrams, hybrid identity topologies, and design guidance, see:
+> - [Microsoft Entra architecture overview](architecture.md) — service design, scalability, and availability
+> - [Build resilience in your hybrid architecture](resilience-in-hybrid.md) — architecture diagrams for PHS, PTA, and Federation
+> - [Choose the right authentication method](~/identity/hybrid/connect/choose-ad-authn.md) — authentication decision tree
+> - [Identity and access management architecture in Azure](/azure/architecture/identity/identity-start-here) — reference architectures, baseline implementations, and design guidance
+> - [Data residency and sovereign cloud options](~/fundamentals/data-residency.md) — data storage locations and environment constraints
 
 ## Stakeholders and roles
 
@@ -70,6 +77,8 @@ Use the following list to help deploy applications and devices.
   - See, [Plan your Microsoft Entra device deployment](~/identity/devices/plan-device-deployment.md)
 
 ## Hybrid scenarios
+
+For architecture diagrams and resilience patterns for hybrid identity deployments, see [Build resilience in your hybrid architecture](resilience-in-hybrid.md). For full reference architectures with downloadable Visio diagrams, see [Integrate on-premises Active Directory with Microsoft Entra ID](/azure/architecture/reference-architectures/identity/azure-ad).
 
 The following list describes features and services in hybrid scenarios.
 

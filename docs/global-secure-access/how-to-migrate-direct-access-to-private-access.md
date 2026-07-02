@@ -1,8 +1,6 @@
 ---
 title: Migrate from DirectAccess to Microsoft Entra Private Access
 description: Learn how to migrate client devices from DirectAccess to Microsoft Entra Private Access with a phased approach that avoids tunnel conflicts and connectivity failures.
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 03/27/2026

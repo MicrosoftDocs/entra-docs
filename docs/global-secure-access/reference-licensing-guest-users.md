@@ -20,7 +20,7 @@ Under the guest billing model, guests are identified by a `userType` of `Guest` 
 
 Guest users are only billed when they actively sign in to the Global Secure Access client for Private Access.
 
-You can identify sign-ins that are billed to Microsoft Entra Private Access for guests by looking at your sign-in logs. Under **Entra ID** > **Monitoring & health** > **Sign-in logs**, each billable sign-in has these properties:
+You can identify sign-ins that are billed to Microsoft Entra Private Access for guests by looking at your sign-in logs. Under **Microsoft Entra ID** > **Monitoring & health** > **Sign-in logs**, each billable sign-in has these properties:
 
 - **User type**: Guest
 - **Cross tenant access type**: B2B collaboration

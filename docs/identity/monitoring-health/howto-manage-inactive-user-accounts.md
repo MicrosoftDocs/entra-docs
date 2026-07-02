@@ -16,6 +16,9 @@ This article explains a method to handle obsolete user accounts in Microsoft Ent
 > [!NOTE]
 > This article applies only to finding inactive user accounts in Microsoft Entra ID. It doesn't apply to finding inactive accounts in [Azure AD B2C](/azure/active-directory-b2c/overview).
 
+> [!NOTE]
+> For inactive **guest** accounts, see [Monitor and clean up stale guest accounts](../users/clean-up-stale-guest-accounts.md).
+
 ## Prerequisites
 
 - To access the `lastSuccessfulSignInDateTime` property using Microsoft Graph, you need a Microsoft Entra ID P1 or P2 license.

@@ -2,7 +2,7 @@
 title: How to manage local administrators on Microsoft Entra joined devices
 description: Learn how to assign Azure roles to the local administrators group of a Windows device.
 ms.topic: how-to
-ms.date: 04/03/2026
+ms.date: 06/17/2026
 ms.reviewer: 
 ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
@@ -80,6 +80,7 @@ Organizations can use Intune to manage these policies using [Custom OMA-URI Sett
 
 By default, Microsoft Entra ID adds the user performing the Microsoft Entra join to the administrator group on the device. If you want to prevent regular users from becoming local administrators, you have the following options:
 
+- **Device registration policy** - The device registration policy controls whether users who perform Microsoft Entra join become local administrators on the devices they join. This setting affects membership in the local Administrators group on the joined device. It doesn't assign a Microsoft Entra directory role, such as Global Administrator, and it doesn't add the user to the Microsoft Entra Joined Device Local Administrator role. In Microsoft Graph, this setting is represented by the `azureADJoin.localAdmins.registeringUsers` property of the [device registration policy](/graph/api/resources/deviceregistrationpolicy).
 - [Windows Autopilot](/autopilot/windows-autopilot) - Windows Autopilot provides you with an option to prevent primary user performing the join from becoming a local administrator by [creating an Autopilot profile](/autopilot/enrollment-autopilot#create-an-autopilot-deployment-profile).
 - [Bulk enrollment](/mem/intune/enrollment/windows-bulk-enroll) - a Microsoft Entra join that is performed in the context of a bulk enrollment happens in the context of an autocreated user. Users signing in after a device is joined aren't added to the administrators group.
 

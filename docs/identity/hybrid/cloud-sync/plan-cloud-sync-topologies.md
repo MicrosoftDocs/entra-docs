@@ -14,10 +14,6 @@ This article describes various on-premises and Microsoft Entra topologies that u
 > [!IMPORTANT]
 > Microsoft doesn't support modifying or operating Microsoft Entra Cloud Sync outside of the configurations or actions that are formally documented. Any of these configurations or actions might result in an inconsistent or unsupported state of Microsoft Entra Cloud Sync. As a result, Microsoft can't provide technical support for such deployments.
 
-For more information, see the following video.
-
-> [!VIDEO https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d]
-
 ## Things to remember about all scenarios and topologies
 The following information should be kept in mind, when selecting a solution.
 

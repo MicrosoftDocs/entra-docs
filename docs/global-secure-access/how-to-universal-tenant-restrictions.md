@@ -78,13 +78,15 @@ Tenant restrictions aren't enforced when a user (or a guest user) tries to acces
 
 For example, if you configure a tenant restrictions v2 policy in the tenant contoso.com to block all organizations except fabrikam.com, the policy applies according to this table:
 
-| User | Type | Tenant | Tenant restrictions v2 policy processed? |Authenticated access allowed? | Anonymous access allowed? |
-| ---------- | ----------- | ------------ | ----------- | --------------- | ------- |
-|`alice@contoso.com`| Member | contoso.com | No (same tenant) | Yes | No |
-|`alice@fabrikam.com`|Member|fabrikam.com|Yes|Yes (tenant allowed by policy)|No|
-|`bob@northwindtraders.com`|Member|northwindtraders.com|Yes|No (tenant not allowed by policy)|No|
-|`alice@contoso.com`|Member|contoso.com|No (same tenant)|Yes|No|
-|`bob_northwindtraders.com#EXT#@contoso.com`|Guest|contoso.com|No (guest user)|Yes|No|
+| User | Type | Tenant | Tenant restrictions v2 policy processed? |Authenticated access allowed? |
+| ---------- | ----------- | ------------ | ----------- | --------------- |
+|`alice@contoso.com`| Member | contoso.com | No (same tenant) | Yes |
+|`alice@fabrikam.com`|Member|fabrikam.com|Yes|Yes (tenant allowed by policy)|
+|`bob@northwindtraders.com`|Member|northwindtraders.com|Yes|No (tenant not allowed by policy)|
+|`bob_northwindtraders.com#EXT#@contoso.com`|Guest|contoso.com|No (guest user)|Yes|
+
+> [!NOTE]
+> Universal tenant restrictions through Global Secure Access provide authentication plane protection on all platforms and data plane protection for Microsoft Graph only. They don't block anonymous access to resources such as Microsoft Forms, SharePoint Online, or Teams meetings. Blocking anonymous access is data plane protection enforced only through [Windows Group Policy](~/external-id/tenant-restrictions-v2.md#option-3-enable-tenant-restrictions-on-windows-managed-devices-preview).
 
 ### Validate the authentication plane protection
 
@@ -147,7 +149,7 @@ If you received the "Access denied" error message for the URL `https://entra.mic
 
 ## Related content
 
-- [Enable Global Secure Access signaling for Conditional Access](how-to-source-ip-restoration.md#enable-global-secure-access-signaling-for-conditional-access)
+- [Enable Global Secure Access signaling for Microsoft Entra ID and Microsoft Graph](how-to-source-ip-restoration.md#enable-global-secure-access-signaling-for-microsoft-entra-id-and-microsoft-graph)
 - [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2)
 - [Enable source IP restoration](how-to-source-ip-restoration.md)
 - [Enable compliant network check with Conditional Access](how-to-compliant-network.md)

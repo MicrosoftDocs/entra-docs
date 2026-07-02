@@ -18,7 +18,7 @@ Microsoft works with partners to deliver these categories:
 
 - **Partner integration offerings**: These integrations provide a comprehensive solution that deeply and seamlessly embeds advanced partner capabilities directly inside Microsoft's SASE solution, all within the same interface.
 - **Partner coexistence offerings**: These integrations aim to optimize your experience as you deploy Microsoft's SASE solution along with your existing security stacks. 
-- **Partner connectivity offerings**: Partners that demonstrate interoperability between their connectivity capabilities and Microsoft's Security Service Edge (SASE) solution.
+- **Partner connectivity offerings**: Partners that demonstrate interoperability between their connectivity capabilities and Microsoft's Security Service Edge (SSE) solution.
 - **Partner service offerings**: Partners that provide implementation services.
 
 ## Partner integration offerings (Preview)

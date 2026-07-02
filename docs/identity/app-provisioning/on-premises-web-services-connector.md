@@ -350,3 +350,4 @@ For more information, change to the **Troubleshooting & Recommendations** tab.
 - [App provisioning](user-provisioning.md)
 - [ECMA Connector Host generic SQL connector](tutorial-ecma-sql-connector.md)
 - [ECMA Connector Host LDAP connector](on-premises-ldap-connector-configure.md)
+- [Discover identities in target applications with Account Discovery](how-to-account-discovery.md)

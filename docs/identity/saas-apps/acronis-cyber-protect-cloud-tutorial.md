@@ -2,11 +2,10 @@
 title: Configure Acronis Cyber Protect Cloud for Single Sign-On with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Acronis Cyber Protect Cloud.
 services: active-directory
-ms.reviewer: jomondi
 ms.workload: identity
 ms.topic: how-to
 ms.date: 03/25/2025
----
+--- 
 
 # Configure Acronis Cyber Protect Cloud for Single Sign-On with Microsoft Entra ID
 

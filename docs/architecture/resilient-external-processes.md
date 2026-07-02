@@ -2,8 +2,7 @@
 title: Resilient interfaces with external processes using Azure AD B2C
 description: Learn about methods to build resilient interfaces with external processes.
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.date: 05/20/2025
 ms.subservice: architecture
 ---

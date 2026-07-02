@@ -1,10 +1,10 @@
 ---
-title: B2B Invitation Redemption
+title: Microsoft Entra B2B collaboration invitation redemption
 description: Learn how Microsoft Entra B2B invitation redemption works, including guest sign-in, consent process, and privacy terms. Ensure secure access for your organization’s resources.
 ms.topic: concept-article
-ms.date: 12/05/2025
+ms.date: 04/21/2026
 ms.collection: M365-identity-device-management
-ms.custom: seo-july-2024, sfi-image-nochange
+ms.custom: seo-july-2024, sfi-image-nochange, msecd-doc-authoring-1012
 # Customer intent: As a Microsoft Entra B2B administrator, I want to understand the redemption process for guest users, so that I can ensure they can access our resources and complete the consent process smoothly.
 ---
 
@@ -52,7 +52,7 @@ When you add a guest user to your directory by [using the Microsoft Entra admin 
 1. The guest receives an [invitation email](./invitation-email-elements.md) that's from Microsoft Invitations on behalf of `<primary domain> <invites@<primary domain>.onmicrosoft.com>`.
 1. The guest selects **Accept invitation** in the email.
 1. The guest uses their own credentials to sign in to your directory. If the guest doesn't have an account that can be federated to your directory and the [email one-time passcode (OTP)](./one-time-passcode.md) feature isn't enabled, the guest is prompted to create a personal [Microsoft account (MSA)](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create). Refer to the [invitation redemption flow](#invitation-redemption-flow) for details.
-1. The guest is guided through the [consent experience](#consent-experience-for-the-guest) described in the following section.
+1. The guest is guided through the [consent experience](#consent-experience-for-the-guest) described in the Consent experience for the guest section.
 
 ## Invitation redemption flow
 
@@ -64,6 +64,9 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 
 1. If an admin enables [SAML/WS-Fed IdP federation](direct-federation.md), Microsoft Entra ID checks if the user’s domain suffix matches the domain of a configured SAML/WS-Fed identity provider and redirects the user to the preconfigured identity provider.
 
+    > [!NOTE]
+    > Direct SAML/WS-Fed federation between two Microsoft Entra tenants is not a supported or recommended configuration. Even if a SAML trust is technically configured between two Entra tenants, Microsoft Entra still uses the native Entra-to-Entra [B2B collaboration](direct-federation-overview.md) model and not SAML.
+
 1. If an admin enables [Google federation](google-federation.md), Microsoft Entra ID checks if the user’s domain suffix is gmail.com or googlemail.com and redirects the user to Google.
 
 1. The redemption process checks if the user has an existing personal [MSA](microsoft-account.md). If the user already has an existing MSA, they sign in with their existing MSA.
@@ -72,7 +75,7 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 
 1. If no home directory is found and the email one-time passcode feature is *enabled* for guests, a [passcode is sent](./one-time-passcode.md#when-does-a-guest-user-get-a-one-time-passcode) to the user through the invited email. The user retrieves and enters this passcode in the Microsoft Entra sign-in page.
 
-1. If no home directory is found and email one-time passcode for guests is *disabled*, the user is prompted to create a consumer MSA with the invited email. We support creating an MSA with work emails in domains that aren't verified in Microsoft Entra ID.
+1. If no home directory is found and email one-time passcode for guests is *disabled*, the user is prompted to create a consumer MSA with the invited email. Microsoft Entra ID supports creating an MSA with work emails in domains that aren't verified in Microsoft Entra ID.
 
 1. After authenticating to the right identity provider, the user is redirected to Microsoft Entra ID to complete the [consent experience](#consent-experience-for-the-guest).  
 
@@ -112,11 +115,11 @@ You might want to automatically redeem invitations so users don't have to accept
 
 For information about how to automatically redeem invitations, see [cross-tenant access overview](cross-tenant-access-overview.md#automatic-redemption-setting) and [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml).
 
-## Additional Information
+## Additional information
 
-- **Starting July 12, 2021**,  if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won't work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+- **Starting July 12, 2021**, if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won't work until authentications are moved to system web-views. For details, see [Google web-view sign-in deprecation](google-federation.md#deprecation-of-web-view-sign-in-support).
 
-- **Starting September 30, 2021**, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+- **Starting September 30, 2021**, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. For details, see [Google web-view sign-in deprecation](google-federation.md#deprecation-of-web-view-sign-in-support).
 
 - The [email one-time passcode feature](one-time-passcode.md) is now turned on by default for all new tenants and for any existing tenants where you didn't explicitly turn it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
 

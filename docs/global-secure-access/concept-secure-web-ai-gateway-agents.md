@@ -1,8 +1,6 @@
 ---
 title: "Learn about Secure Web and AI Gateway for Microsoft Copilot Studio agents"
 description: "Learn about the features and benefits of our Secure Web and AI Gateway for agents in Global Secure Access."
-author: garrodonnell
-ms.author: godonnell
 ms.reviwer: fgomulka
 ms.topic: concept-article   
 ms.date: 11/03/2025
@@ -11,9 +9,7 @@ ai-usage: ai-assisted
 #Customer intent: As an IT administrator, I want to understand how the Secure Web and AI Gateway for agents works in Global Secure Access so that I can effectively implement and manage it within my organization.
 ---
 
-# Learn about Secure Web And AI Gateway for Microsoft Copilot Studio agents (preview)
-
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+# Learn about Secure Web And AI Gateway for Microsoft Copilot Studio agents
 
 As organizations adopt autonomous and interactive AI agents to perform tasks previously handled by humans, administrators need visibility and control over agent network activity. Global Secure Access for agents provides network security controls for Microsoft Copilot Studio agents, enabling you to apply the same security policies to agents that you use for users.
 
@@ -35,6 +31,10 @@ Once agent traffic is forwarded to Global Secure Access, you can apply security 
 ## Security policies for agents
 
 Security policies for agents are configured using the baseline profile in Global Secure Access. The baseline profile applies security policies at the tenant level, ensuring consistent security controls across all agent traffic.
+
+## How to get started
+
+[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
 ## Next steps
 

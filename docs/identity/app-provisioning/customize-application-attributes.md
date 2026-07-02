@@ -57,6 +57,10 @@ There are four different mapping types supported:
 - **Direct** – the target attribute is populated with the value of an attribute of the linked object in Microsoft Entra ID.
 - **Constant** – the target attribute is populated with a specific string you specified.
 - **Expression** - the target attribute is populated based on the result of a script-like expression. For more information about expressions, see [Writing Expressions for Attribute-Mappings in Microsoft Entra ID](~/identity/app-provisioning/functions-for-customizing-application-data.md).
+
+  > [!NOTE]
+  > The maximum supported length for a single attribute mapping expression is **10,000 characters**.
+
 - **None** - the target attribute is left unmodified. However, if the target attribute is ever empty, it populates with the default value that you specify.
 
 Along with these four basic types, custom attribute-mappings support the concept of an optional **default** value assignment. The default value assignment ensures that a target attribute is populated with a value if there's not a value in Microsoft Entra ID or on the target object. The most common configuration is to leave this blank. For more information about mapping attributes, see [How Application Provisioning works in Microsoft Entra ID](~/identity/app-provisioning/how-provisioning-works.md#mapping-attributes).

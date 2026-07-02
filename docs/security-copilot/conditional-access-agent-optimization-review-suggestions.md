@@ -1,10 +1,8 @@
 ---
 title: Review suggestions from the Conditional Access Optimization Agent
 description: Learn how to review and apply suggestions provided by the Security Copilot for Microsoft Entra optimization agent.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
-ms.date: 03/16/2026
+ms.date: 06/30/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -20,7 +18,7 @@ The Microsoft Entra Conditional Access Optimization Agent provides suggestions t
 This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
 > [!IMPORTANT]
-> The ServiceNow integration, multifactor authentication (MFA) gap analysis, and least-privileged access suggestions for agent identities in the Conditional Access Optimization Agent are currently in PREVIEW.
+> The ServiceNow integration and least-privileged access suggestions for agent identities in the Conditional Access Optimization Agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -31,12 +29,13 @@ This article provides an overview of the logic behind the suggestions and report
 - You must have the appropriate Microsoft Entra role.
    - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
    - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
+   - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role can *view and act on Microsoft Defender* alerts in the Microsoft Defender portal.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 
 ### Limitations
 
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- For policy consolidation, each agent run only looks at four similar policy pairs.
+- For policy consolidation, each agent run looks at 40 similar policy pairs.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
@@ -58,7 +57,7 @@ We want to provide as much information as possible about the logic used to ident
 
 Select **Review suggestion** to review a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy. The options available in the policy suggestion details vary depending on the type of suggestion. For example, new policy suggestions include a **Turn on policy** button while suggestions to modify an existing policy include an **Add accounts** button to add users or groups to exclude from the policy.
 
-### Policy details
+## Policy details
 
 The default view of the suggestion provides the policy details, including a high-level description at the top followed by the details that are used in the policy.
 
@@ -79,13 +78,13 @@ Below the policy suggestion summary, you can take several actions. The options c
 
 The policy suggestions detail page is detailed and provides every option needed to make an informed decision about the suggestion. But if you need more information, you can also view the policy impact and see details about the agent's activity.
 
-### Policy impact
+## Policy impact
 
 From the details panel that opens, select **Policy impact** to see a visualization of the potential impact of the policy.
 
 Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that the policy affects. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](../identity/conditional-access/concept-conditional-access-report-only.md#reviewing-results).
 
-### View agent's full activity
+## View agent's full activity
 
 To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The agent's activity assesses policy drift, or gaps in policy coverage, for users and apps. The agent also looks for policies that can be merged or consolidated.
 
@@ -97,7 +96,7 @@ If the policy suggestion includes adding specific users or applications to the p
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the map. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion.
 
-### Review policy changes
+## Review policy changes
 
 If the agent suggests modifying an existing policy, select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion.
 
@@ -106,13 +105,15 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 
 :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/review-policy-changes.png" alt-text="Screenshot of the policy details with the review policy changes button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/review-policy-changes.png":::
 
-### Deep analysis
+## Deep analysis
 
-Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions—flagging policies that exclude a large portion of users and recommending explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
+Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device code flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions and flags policies that exclude a large portion of users or recommends explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
+
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png" alt-text="Screenshot of a policy suggestion provided by the deep analysis feature." lightbox="media/conditional-access-agent-optimization-review-suggestions/agent-deep-analysis.png":::
 
 Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and the "notes" option to provide context and rationale for your decision-making process.
 
-#### MFA gap analysis (Preview)
+### MFA gap analysis
 
 Deep analysis includes an MFA gap analysis that scans all enabled Conditional Access policies in your tenant and identifies users not covered by any MFA policy. This analysis evaluates the entire tenant configuration, not just the last 24 hours of activity. When the agent finds a coverage gap, it explains why those users aren't covered and recommends a specific fix, such as adding users to an existing policy or creating a new one.
 
@@ -123,9 +124,17 @@ Deep analysis includes an MFA gap analysis that scans all enabled Conditional Ac
 - **Large tenants**: If the agent finds more than 100 uncovered users, it shows a prioritized sample along with the total count.
 - **Repetitive suggestion**: A user might appear in both a deep analysis suggestion and a standard suggestion to add new users to existing MFA policies.
 
-### Microsoft Teams agent suggestion notifications
+## Microsoft Defender-linked suggestions
 
-Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
+Some suggestions are generated from Microsoft Defender threat insights. These suggestions are identified by a **Linked to Defender alert** tag in the suggestions list.
+
+When you open a Defender-linked suggestion in the Conditional Access Optimization Agent, the details include a **Defender insight** section that explains the Defender context that contributed to the suggestion. Administrators with the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role can navigate directly to the related alerts and incidents in Microsoft Defender. Without those permissions, you can still review and act on the Conditional Access suggestion.
+
+For more information about how Microsoft Defender threat insights are used by the agent, see [Microsoft Defender integration](conditional-access-agent-optimization.md#microsoft-defender-integration).
+
+## Microsoft Teams agent suggestion notifications
+
+Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. The Teams integration currently provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
 
 For more information, see the **Notifications** section of [Conditional Access Optimization Agent Settings](conditional-access-agent-optimization-settings.md#notifications).
 

@@ -60,7 +60,7 @@ To configure the home page of an app using PowerShell, you need to:
 
 ### Install the Microsoft Entra PowerShell module
 
-Before you define a custom home page URL by using PowerShell, install the Microsoft Entra PowerShell module. You can download the package from the [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph.Entra), which uses the Graph API endpoint.
+Before you define a custom home page URL by using PowerShell, install the Microsoft Entra PowerShell module. You can download the package from the [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph.Entra), which uses the Graph API endpoint.
 
 To install the package, follow these steps:
 

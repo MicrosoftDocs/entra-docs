@@ -2,8 +2,7 @@
 title: Increase the resilience of authentication for federated applications deployed at sites with colocated users
 description: Resilience guidance for application deployments with orchestration of a relying party security token service to change its identity provider
 ms.topic: how-to
-author: markwahl-msft
-ms.author: mwahl
+ms.reviewer: mwahl
 ms.date: 02/19/2025
 ms.subservice: architecture
 ---

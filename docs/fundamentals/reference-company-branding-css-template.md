@@ -1,11 +1,9 @@
 ---
 title: CSS reference guide for customizing company branding
 description: Reference guide for the CSS template selectors for customizing Microsoft Entra sign-in page company branding.
-author: shlipsey3
 manager: pmwongera
 ms.topic: reference
 ms.date: 12/16/2025
-ms.author: sarahlipsey
 ms.reviewer: almars
 ms.custom: sfi-image-nochange
 #Customer Intent: As an IT admin, I want to reference the CSS template for customizing company branding so that I can style my organization's sign-in pages.

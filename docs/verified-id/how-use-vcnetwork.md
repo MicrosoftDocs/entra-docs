@@ -4,7 +4,6 @@ description: In this article, you learn how to use the Microsoft Entra Verified 
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 04/30/2025
-
 #Customer intent: As a verifiable credentials administrator, I want to configure verifying credentials from another party.
 ---
 

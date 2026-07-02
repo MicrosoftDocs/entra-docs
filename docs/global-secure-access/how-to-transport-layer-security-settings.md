@@ -1,8 +1,6 @@
 ---
 title: Configure Transport Layer Security Inspection Settings
 description: Learn how to configure a Transport Layer Security inspection certificate authority
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: how-to 
 ms.reviewer: teresayao
 ms.date: 12/16/2025
@@ -61,6 +59,8 @@ basicConstraints = critical, CA:true, pathlen:1
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 
 [ signedCA_ext ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
 basicConstraints = critical, CA:true
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 extendedKeyUsage = serverAuth

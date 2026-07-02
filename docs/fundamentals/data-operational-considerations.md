@@ -1,11 +1,9 @@
 ---
 title: Data operational considerations
 description: Learn how
-author: janicericketts
 manager: martinco
 ms.topic: concept-article
 ms.date: 01/31/2023
-ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: "it-pro"
 ms.collection:
@@ -48,7 +46,7 @@ To roll out changes to the service across datacenters, the Microsoft Entra team 
 
 - [Microsoft Service Trust Documents](https://servicetrust.microsoft.com/Documents/TrustDocuments)
 - [Microsoft Azure Trusted Cloud](https://azure.microsoft.com/explore/trusted-cloud/)
-- [Office 365 datacenters](https://social.technet.microsoft.com/wiki/contents/articles/37502.office-365-how-to-change-data-center-regions.aspx#Moving_Office_365_Data_Centers)
+- [Microsoft 365 data locations](/microsoft-365/enterprise/o365-data-locations)
 
 ## Next steps
 

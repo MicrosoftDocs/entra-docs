@@ -2,7 +2,7 @@
 title: Manage devices in Microsoft Entra ID using the Microsoft Entra admin center
 description: This article describes how to use the Microsoft Entra admin center to manage device identities and monitor related event information.
 ms.topic: how-to
-ms.date: 02/03/2026
+ms.date: 06/17/2026
 ms.reviewer: myra-ramdenbourg
 ms.custom: sfi-image-nochange
 ---
@@ -176,7 +176,8 @@ You must be assigned one of the following roles to read or modify device setting
    > [!NOTE]
    > The **Maximum number of devices** setting applies to devices that are either Microsoft Entra joined or Microsoft Entra registered. This setting doesn't apply to Microsoft Entra hybrid joined devices.
 
-- **Manage Additional local administrators on Microsoft Entra joined devices**: This setting allows you to select the users who are granted local administrator rights on a device. These users are added to the Device Administrators role in Microsoft Entra ID. 
+- **Manage Additional local administrators on Microsoft Entra joined devices**: This setting lets you select users who are granted local administrator rights on all Microsoft Entra joined devices in the tenant. These users are assigned to the Microsoft Entra Joined Device Local Administrator role, which applies tenant-wide.
+- **Registering user is added as local administrator on the device during Microsoft Entra join**: This setting controls whether users who perform Microsoft Entra join are added to the local Administrators group on the device they join. This setting affects local device administrator membership only. It doesn't assign a Microsoft Entra directory role, such as Global Administrator, and it doesn't add the user to the Microsoft Entra Joined Device Local Administrator role. To verify the result, check the local Administrators group on the device or use a device management tool. In Microsoft Graph, this setting is represented by the `azureADJoin.localAdmins.registeringUsers` property of the [device registration policy](/graph/api/resources/deviceregistrationpolicy).
 - **Enable Microsoft Entra Local Administrator Password Solution (LAPS) (preview)**: LAPS is the management of local account passwords on Windows devices. LAPS provides a solution to securely manage and retrieve the built-in local admin password. With cloud version of LAPS, customers can enable storing and rotation of local admin passwords for both Microsoft Entra ID and Microsoft Entra hybrid join devices. To learn how to manage LAPS in Microsoft Entra ID, see [the overview article](howto-manage-local-admin-passwords.md).
 
 - **Restrict non-admin users from recovering the BitLocker key(s) for their owned devices**: Admins can block self-service BitLocker key access to the registered owner of the device. Default users without the BitLocker read permission are unable to view or copy their BitLocker key(s) for their owned devices. You must be at least a [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) to update this setting. 

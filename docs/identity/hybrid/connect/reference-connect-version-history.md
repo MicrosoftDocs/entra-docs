@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.topic: reference
-ms.date: 03/10/2026
+ms.date: 06/23/2026
 ms.subservice: hybrid-connect
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 
@@ -55,9 +55,6 @@ Manually update the configuration file.
 1.	Save the file.
 
 1.	Restart the ADSync service.
-
-
-
 
 ## Looking for the latest versions?
 
@@ -128,8 +125,8 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
-
-
+> [!IMPORTANT]
+> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who had installed this version should un-install and install [latest available version (2.6.3.0)](#2630) of Microsoft Entra Connect Sync.
 
 ## 2.6.3.0
 

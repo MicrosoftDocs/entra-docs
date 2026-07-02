@@ -1,8 +1,6 @@
 ---
 title: Learn about Global Secure Access external user access
 description: Learn how Global Secure Access enables secure external user access for partners through the Global Secure Access client and Azure Virtual Desktop.
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: concept-article
 ms.date: 04/09/2026
 ms.reviewer: cagautham
@@ -87,6 +85,9 @@ A: Yes, the client retains the tenant connection after a reboot. Additionally, i
 **Q: Is this feature supported from a windows Entra registered device(BYOD)?**   
 A: Yes, you can use a windows device which is registered to Entra for switching to resource tenant.
 
+**Q: What is the definition of an External User?**    
+A: The definition of an External User is provided in the [Microsoft Product Terms](https://www.microsoft.com/licensing/terms/product/Glossary). Refer to the official Product Terms glossary and search for “External Users” for the most up‑to‑date definition.
+
 ## Traffic logs visibility
 
 On the resource tenant, you can check if traffic originates from an external user. The traffic logs include the following fields for external user sessions:
@@ -110,6 +111,8 @@ You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop ins
 
 :::image type="content" source="media/concept-external-user-access/guest-access-overview.png" alt-text="Diagram showing an overview of external user access in Global Secure Access." lightbox="media/concept-external-user-access/guest-access-overview.png":::
 
+> [!NOTE]
+> In this scenario, the virtual machine is domain joined to the resource tenant. The Global Secure Access client on the VM automatically authenticates the external user to the resource tenant based on the VM's domain membership, eliminating the need for manual tenant switching.
 
 To enable external user access for Windows 365 or Azure Virtual Desktop (AVD) virtual machines (VM) with Global Secure Access, follow these steps:
 

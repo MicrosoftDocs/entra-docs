@@ -2,8 +2,9 @@
 title: Using role-based access control for apps
 description: Learn how to define application roles for your consumer and business customer applications and assign those roles to users and groups in external tenants.
 ms.topic: how-to
-ms.date: 09/16/2025
+ms.date: 04/17/2026
 ms.custom: it-pro, sfi-ga-nochange
+ai-usage: ai-assisted
 ---
 
 # Using role-based access control for applications
@@ -12,7 +13,7 @@ ms.custom: it-pro, sfi-ga-nochange
 
 Role-based access control (RBAC) is a popular mechanism to enforce authorization in applications. When an organization uses RBAC, an application developer defines roles for the application. An administrator can then assign roles to different users and groups to control who has access to content and functionality in the application.
 
-Applications typically receive user role information as claims in a security token. Developers have the flexibility to provide their own implementation for how role claims are to be interpreted as application permissions. This interpretation of permissions can involve using middleware or other options provided by the platform of the applications or related libraries.
+Applications typically receive user role information as claims in a security token. Developers can provide their own implementation for how role claims are interpreted as application permissions. This interpretation can involve using middleware or other options provided by the application platform or related libraries.
 
 ## App roles
 
@@ -28,18 +29,18 @@ Developers can also use security groups to implement RBAC in their applications,
 
 Though you can use app roles or groups for authorization, key differences between them can influence which you decide to use for your scenario.
 
-| App roles| Groups|
+| App roles | Groups |
 | ----- | ----- |
 | They're specific to an application and are defined in the app registration. | They aren't specific to an app, but to an external tenant. |
-| Can't be shared across applications.| Can be used in multiple applications.|
-| App roles are removed when their app registration is removed.| Groups remain intact even if the app is removed.|
-| Provided in the `roles` claim.| Provided in `groups` claim. |
+| Can't be shared across applications. | Can be used in multiple applications. |
+| App roles are removed when their app registration is removed. | Groups remain intact even if the app is removed. |
+| Provided in the `roles` claim. | Provided in `groups` claim. |
 
 ## Create a security group
 
 [!INCLUDE [ciam-security-group](./includes/access-control/add-security-group.md)]
 
-Microsoft Entra External ID can include a user's group membership information in tokens for use within applications. You learn how to add the group claim to tokens in [Assign users and groups to roles](#assign-users-and-groups-to-roles) section.
+Microsoft Entra External ID can include a user's group membership information in tokens for use within applications. You can learn how to add the group claim to tokens in the [Assign users and groups to roles](#assign-users-and-groups-to-roles) section.
 
 ## Declare roles for an application
 
@@ -89,4 +90,4 @@ The following table shows which features are currently available.
 
 ## Next steps
 
-- Learn how to [Use role-based access control in your web application](how-to-web-app-role-based-access-control.md).
+- Learn how to [Use role-based access control in your web application](/entra/identity-platform/how-to-web-app-role-based-access-control?tabs=external-tenant).

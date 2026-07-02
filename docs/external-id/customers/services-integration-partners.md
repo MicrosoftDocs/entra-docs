@@ -35,9 +35,15 @@ Use this page to identify and contact partners based on your migration needs, in
 ### Next steps
 - Contact a partner from the list above to begin your migration
 - Engage your Microsoft account team for alignment and support
-- Review migration guidance for Microsoft Entra External ID.
+- Review migration guidance for Microsoft Entra External ID:
+  - [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md)
+  - [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md)
+  - [Enable External ID High Scale Compatibility (HSC) mode](enable-external-id-high-scale-compatibility-mode.md)
 
 ## Related content
 
 - [Overview of Microsoft Entra External ID in external tenants](overview-customers-ciam.md)
 - [Planning for customer identity and access management](concept-planning-your-solution.md)
+- [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md)
+- [Migrate from Azure AD B2C to Microsoft Entra External ID](migrate-from-b2c-to-external-id.md)
+- [Migrate users and credentials to External ID](how-to-migrate-users.md)

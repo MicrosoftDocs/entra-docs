@@ -1,10 +1,8 @@
 ---
 title: What is Transport Layer Security Inspection?
 description: "This article provides an overview of the Transport Layer Security (TLS) inspection process and how it increases security between two communicating parties."
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: concept-article
-ms.date: 03/23/2026
+ms.date: 06/04/2026
 ms.reviewer: teresayao
 
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
@@ -36,6 +34,9 @@ Traffic logs include four TLS-related metadata fields that help you understand h
 - _TlsStatus_: Success or Failure
 
 To get started with TLS inspection, see [Configure Transport Layer Security Policies](how-to-transport-layer-security.md).
+
+> [!NOTE]
+> TLS inspection is a prerequisite for capturing Generative AI prompt content and Model Context Protocol (MCP) payloads on end-user devices. For more information, see [Generative AI Insights in Global Secure Access](concept-generative-ai-insights.md).
 
 ## Supported ciphers
 |List of supported ciphers  |

@@ -3,8 +3,7 @@ title: Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple de
 description: This article helps to troubleshoot deploying the Microsoft Enterprise SSO plug-in on Apple devices
 ms.topic: troubleshooting
 ms.date: 02/23/2026
-ms.author: miepping
-author: ryschwa-msft
+ms.reviewer: miepping
 ms.custom: devx-track-linux, sfi-image-nochange
 #Customer intent: As an IT admin, I want to learn how to discover and fix issues related to the Microsoft Enterprise SSO plug-in on macOS and iOS.
 ---

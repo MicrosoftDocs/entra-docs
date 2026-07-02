@@ -1,11 +1,10 @@
 ---
 title: Introduction to Microsoft Entra ID Governance deployment guide
 description: Learn how to deploy Microsoft Entra ID Governance.
-author: gargi-sinha
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/25/2025
-ms.author: gasinh
+ms.reviewer: gasinh
 
 #customer intent: I want to deploy and test Microsoft Entra ID Governance in my production or test environment. 
 ---

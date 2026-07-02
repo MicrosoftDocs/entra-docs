@@ -2,7 +2,6 @@
 title: Resources for migrating apps to Microsoft Entra ID
 description: Resources to help you migrate application access and authentication to Microsoft Entra ID.
 ms.topic: how-to
-
 ms.date: 05/27/2024
 ms.reviewer: gasinh
 ms.custom: not-enterprise-apps

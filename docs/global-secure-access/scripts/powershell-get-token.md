@@ -172,7 +172,7 @@ if (Test-Path -Path $folderPath) {
         Set-Location -Path "C:\"
         return
     }
-
+}
 else {
     Write-Host "The required module is not made available at path: $folderPath"
     Write-Host "This could be related to left over state from previous installation of connector on this machine."

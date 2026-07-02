@@ -31,6 +31,7 @@ When you're satisfied with the expression, move it to an attribute mapping. Copy
 
 ## Known limitations
 * Extension attributes aren't available for selection in the expression builder. However, extension attributes can be used in the attribute mapping expression. 
+* The maximum supported length for a single attribute mapping expression is **10,000 characters**.
 
 ## Next steps
 

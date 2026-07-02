@@ -2,9 +2,6 @@
 title: What is Microsoft Entra Tenant Governance? (preview)
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about Microsoft Entra Tenant Governance and how it helps organizations discover, manage, and govern tenants across their environment
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 03/05/2026
 ---

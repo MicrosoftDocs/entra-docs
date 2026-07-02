@@ -2,13 +2,12 @@
 title: Discover Azure resources to manage in PIM
 description: Learn how to discover Azure resources to manage in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 04/23/2026
 ms.reviewer: shaunliu
 ms.custom: sfi-ga-nochange
+#Customer Intent: As an administrator, I want to discover and onboard Azure resources to PIM to protect access to my subscriptions and resource groups.
 ---
-
 # Discover Azure resources to manage in Privileged Identity Management
-
 
 ## Overview
 

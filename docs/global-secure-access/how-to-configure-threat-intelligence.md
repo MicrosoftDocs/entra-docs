@@ -2,7 +2,7 @@
 title: How to configure Global Secure Access threat intelligence
 description: Learn how to configure threat intelligence in Microsoft Entra Internet Access.
 ms.topic: how-to
-ms.date: 05/29/2025
+ms.date: 04/18/2026
 ms.subservice: entra-internet-access
 ---
 
@@ -27,7 +27,7 @@ You can configure a threat intelligence policy to block users from high-severity
 - User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: 
 
 ```powershell
-@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443
+New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443
 ```
 
 - (Optional) [Configure Transport Layer Security (TLS) inspection](how-to-transport-layer-security.md) in order for URL indicators to be evaluated against HTTPS traffic.

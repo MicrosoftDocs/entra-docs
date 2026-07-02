@@ -3,7 +3,7 @@ title: Lifecycle Workflows templates and categories
 description: Conceptual article discussing workflow templates and categories with Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 04/03/2026
+ms.date: 04/25/2026
 ms.custom: template-concept
 #Customer Intent: As an IT admin, I want to understand lifecycle workflow templates and categories so that I can choose the right templates for my workflows.
 ---
@@ -14,7 +14,7 @@ Lifecycle Workflows allows you to automate the lifecycle management process for 
 
 ## Lifecycle Workflows built-in templates
 
-Lifecycle Workflows currently have 12 built-in templates you can use or customize:
+Lifecycle Workflows currently have 14 built-in templates you can use or customize:
 
 :::image type="content" source="media/lifecycle-workflow-templates/templates-list.png" alt-text="Screenshot of a list of lifecycle workflow templates." lightbox="media/lifecycle-workflow-templates/templates-list.png":::
 
@@ -32,6 +32,8 @@ The list of templates is as follows:
 - [Employee job profile change](lifecycle-workflow-templates.md#employee-job-profile-change)
 - [Pre-Offboard inactive users](lifecycle-workflow-templates.md#pre-offboard-inactive-users)
 - [Offboard inactive users](lifecycle-workflow-templates.md#offboard-inactive-users)
+- [Transition agent sponsorships when a sponsor leaves](lifecycle-workflow-templates.md#transition-agent-sponsorships-when-a-sponsor-leaves)
+- [Transition agent sponsorships when a sponsor changes roles](lifecycle-workflow-templates.md#transition-agent-sponsorships-when-a-sponsor-changes-roles)
 
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
 
@@ -261,6 +263,37 @@ The default specific parameters for the **Offboard inactive users** template are
 |Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
 
+
+### Transition agent sponsorships when a sponsor leaves
+
+The **Transition agent sponsorships when a sponsor leaves** template is designed to configure tasks that transition agent sponsorships when a sponsor leaves the organization. This template is available for tenants with the Microsoft Agent 365 license. For more information, see: [Microsoft Agent 365 Documentation](https://aka.ms/entraagent365).
+
+The default specific parameters for the **Transition agent sponsorships when a sponsor leaves** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Leaver       |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change        |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Days from event     | 0        | ✔️        |
+|Event timing     | On        |  ❌       |
+|Event User attribute     | employeeLeaveDateTime        |   ❌      |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Send email to manager about sponsorship changes**, **Send email to co-sponsors about sponsor changes**, **Transfer agent sponsorships to manager**     |  ✔️       |
+
+### Transition agent sponsorships when a sponsor changes roles
+
+The **Transition agent sponsorships when a sponsor changes roles** template is designed to configure tasks that transition agent sponsorships when a sponsor changes roles within the organization. This template is available for tenants with the Microsoft Agent 365 license. For more information, see: [Microsoft Agent 365 Documentation](https://aka.ms/entraagent365).
+
+The default specific parameters for the **Transition agent sponsorships when a sponsor changes roles** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Mover       |  ❌       |
+|Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Scope     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Send email to manager about sponsorship changes**, **Send email to co-sponsors about sponsor changes**, **Transfer agent sponsorships to manager**     |  ✔️       |
 
 ## Next steps
 

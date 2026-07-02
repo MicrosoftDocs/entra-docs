@@ -135,6 +135,8 @@
           href: cloud-sync/tutorial-directory-extension-group-provisioning.md
         - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
           href: cloud-sync/govern-on-premises-groups.md
+        - name: Configure AD group enforcement (preview)
+          href: cloud-sync/how-to-ad-group-enforcement.md
     - name: Migration scenarios for cloud sync
       items:
         - name: Decision guide for migrating from Connect to Cloud Sync
@@ -143,6 +145,8 @@
           href: cloud-sync/tutorial-pilot-aadc-aadccp.md
         - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
           href: cloud-sync/migrate-group-writeback.md
+        - name: Migration FAQ
+          href: cloud-sync/cloud-sync-migration-faq.yml
     - name: More migration scenarios
       items:
         - name: Multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect
@@ -197,6 +201,8 @@
                   href: cloud-sync/custom-attribute-mapping-entra-to-active-directory.md
                 - name: On-demand provisioning - Microsoft Entra ID to AD
                   href: cloud-sync/how-to-on-demand-provision-entra-to-active-directory.md
+                - name: Configure AD group enforcement (preview)
+                  href: cloud-sync/how-to-ad-group-enforcement.md
         - name: Migration
           items:
             - name: Migrate your sync tool
@@ -351,6 +357,8 @@
               href: connect/how-to-connect-install-express.md
             - name: Install Microsoft Entra Connect federation or other Custom settings
               href: connect/how-to-connect-install-custom.md
+            - name: Sign in with passwordless authentication
+              href: connect/how-to-connect-passwordless-authentication.md
             - name: Import and export configuration settings
               href: connect/how-to-connect-import-export-config.md
             - name: Install Microsoft Entra Connect with pass-through authentication

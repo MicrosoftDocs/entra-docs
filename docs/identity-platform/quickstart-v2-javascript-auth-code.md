@@ -2,9 +2,7 @@
 title: "Quickstart: Sign in users in JavaScript single-page apps (SPA) with auth code"
 description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
 ROBOTS: NOINDEX
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.custom:
 ms.date: 02/27/2024
 ms.service: identity-platform

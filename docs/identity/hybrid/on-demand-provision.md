@@ -1,7 +1,6 @@
 ---
 title: 'On-demand provisioning using cloud sync'
 description: This article describes how to use on-demand provisioning with Microsoft Entra Cloud Sync.
-
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025

@@ -355,7 +355,7 @@ If you want to remove an owner from a group, use the `Remove-MgGroupOwnerByRef` 
 
 ## Reserved aliases
 
-When you create a group, users specify a mailNickname or alias that the system uses as part of the email address of the group. The creation of groups with any of the highly privileged email aliases listed is limited to Microsoft Entra Global Administrators. 
+When you create a group, users specify a mailNickname or alias that the system uses as part of the email address of the group. The creation of groups with any of the highly privileged email aliases listed is limited to Microsoft Entra Global Administrators. 
   
 * abuse
 * admin

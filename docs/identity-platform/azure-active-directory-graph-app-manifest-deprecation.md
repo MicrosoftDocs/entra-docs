@@ -1,12 +1,10 @@
 ---
 title: App manifest (Azure AD Graph format) deprecation
 description: Describes the deprecation of the app manifest (Azure AD Graph format) and attribute differences in the new format.
-author: cilwerner
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: concept-article
 ms.date: 09/18/2024
-ms.author: cwerner
 ms.custom:
 ms.reviewer: 
 

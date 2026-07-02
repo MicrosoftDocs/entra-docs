@@ -6,7 +6,6 @@ services: active-directory
 ms.topic: how-to
 ms.date: 11/10/2025
 ms.reviewer: kimhana
-
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how users will sign in with a security key. 
 

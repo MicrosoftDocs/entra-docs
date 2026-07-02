@@ -4,7 +4,6 @@ description: Learn how agent identities operate with user context through an age
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
 ms.date: 10/30/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing agent's user account scenarios, I want to understand the agent's user account impersonation protocol so that I can enable agents to operate with user context and delegated permissions.
 ---

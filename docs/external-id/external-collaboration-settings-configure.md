@@ -2,10 +2,11 @@
 title: Configure external collaboration
 description: Learn how to configure external collaboration settings in Microsoft Entra External ID. Control guest user access, specify who can invite guests, and manage domain restrictions for B2B collaboration.
 ms.topic: how-to
-ms.date: 02/18/2025
+ms.date: 04/24/2026
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 ms.custom: has-azure-ad-ps-ref, sfi-ga-blocked
-#customer intent: As an administrator managing external collaboration settings in Microsoft Entra, I want to configure guest user access, invite settings, self-service sign-up, and collaboration restrictions, so that I can control the level of access and permissions for external users and ensure secure collaboration with other organizations.
+# Customer intent: As an administrator managing external collaboration settings in Microsoft Entra, I want to configure guest user access, invite settings, self-service sign-up, and collaboration restrictions, so that I can control the level of access and permissions for external users and ensure secure collaboration with other organizations.
 ---
 
 # Configure external collaboration settings for B2B in Microsoft Entra External ID
@@ -25,13 +26,13 @@ External collaboration settings let you specify what roles in your organization 
 For B2B collaboration with other Microsoft Entra organizations, you should also review your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml) to ensure your inbound and outbound B2B collaboration and scope access to specific users, groups, and applications.
 
 > [!NOTE]
-> Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025. With this update, guest users will be redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process.  In the following example, the company branding for Woodgrove Groceries appears on the left. The example on the right displays the custom branding for the user's home tenant. 
+> Microsoft began rolling out an update to the guest user sign-in experience for B2B collaboration in July 2025, and the rollout completed by the end of 2025. With this update, guest users are redirected to their own organization's sign-in page to provide credentials. Guest users see the branding and URL endpoint of their home tenant. Following successful authentication in their own organization, guest users are returned to your organization to complete sign-in. In the following example, the company branding for Woodgrove Groceries appears on the left. The example on the right displays the custom branding for the user's home tenant.
 
 :::image type="content" source="./media/external-collaboration-settings-configure/guest-login-flow.png" alt-text="Screenshot showing guest user login flow.":::
 
 ## Configure settings in the portal
 
-In the Microsoft Entra admin center, you must be assigned the Global Administrator role to activate the External Collaboration Settings page and update the settings. When using Microsoft Graph, lesser privileged roles might be available for individual settings; see [Configure settings with Microsoft Graph](#configure-settings-with-microsoft-graph) later in this article.
+In the Microsoft Entra admin center, you need a role that can update external collaboration settings, such as Global Administrator or External Identity Provider Administrator. When using Microsoft Graph, lesser-privileged roles might be available for individual settings. See [Configure settings with Microsoft Graph](#configure-settings-with-microsoft-graph) later in this article.
 
 ### To configure guest user access
 

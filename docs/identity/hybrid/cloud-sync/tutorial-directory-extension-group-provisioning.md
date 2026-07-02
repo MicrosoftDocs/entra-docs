@@ -2,7 +2,7 @@
 title: Scenario - Using directory extensions with group provisioning to Active Directory
 description: This topic describes how to extend the schema of a group with a new attribute. Then use the new attribute to filter groups for provisioning to Active Directory.
 ms.topic: tutorial
-ms.date: 04/09/2025
+ms.date: 06/26/2026
 ms.subservice: hybrid-cloud-sync
 ms.custom: sfi-image-nochange
 ---
@@ -28,31 +28,33 @@ You can use the environment you create in this scenario for testing or for getti
 > For a better experience executing Microsoft Graph PowerShell SDK cmdlets, use Visual Studio Code with `ms-vscode.powershell` extension in [ISE Mode](/powershell/scripting/dev-cross-plat/vscode/how-to-replicate-the-ise-experience-in-vscode).
 
 ## Create two groups in Microsoft Entra ID
+
 To begin, create two groups in Microsoft Entra ID. One group is Sales and the Other is Marketing.
 
 To create two groups, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Entra ID** > **Groups** > **All groups**.
-3. At the top, click **New group**.
+3. At the top, select **New group**.
 4. Make sure the **Group type** is set to **security**.
 5. For the **Group Name** enter **Sales**
 6. For **Membership type** keep it at assigned.
-7. Click **Create**.
+7. Select **Create**.
 8. Repeat this process using **Marketing** as the **Group Name.**
 
 
 ## Add users to the newly created groups
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Entra ID** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
-4. Click on the new **Sales** group.
-5. On the left, click **Members**
-6. At the top, click **Add members**.
+4. Select the new **Sales** group.
+5. On the left, select **Members**.
+6. At the top, select **Add members**.
 7. At the top, in the search box, enter **Britta Simon**.
-8. Put a check next to **Britta Simon** and **Anna Ringdahl** and click **Select**
+8. Put a check next to **Britta Simon** and **Anna Ringdahl** and select **Select**.
 9. It should successfully add her to the group.
-10. On the far left, click **All groups** and repeat this process using the **Marketing** group and adding **Lola Jacobson** and **John Smith** to that group.
+10. On the far left, select **All groups** and repeat this process using the **Marketing** group and adding **Lola Jacobson** and **John Smith** to that group.
 
 >[!NOTE]
 > When adding users to the Marketing group, make note of the group ID on the overview page. This ID is used later to add our newly created property to the group.
@@ -77,7 +79,7 @@ To create two groups, follow these steps.
 ## Create our CloudSyncCustomExtensionApp application and service principal
 
 >[!Important]
-> Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI “api://&LT;tenantId&GT;/CloudSyncCustomExtensionsApp” and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect. 
+> Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI `api://<tenantId>/CloudSyncCustomExtensionsApp` and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect. 
 
 1. Get the Tenant ID:
 
@@ -152,17 +154,17 @@ To create two groups, follow these steps.
 
   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
-5. On the configuration screen, select your domain and whether to enable password hash sync. Click **Create**. 
+5. On the configuration screen, select your domain and whether to enable password hash sync. Select **Create**. 
 
   :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
 6. The **Get started** screen opens. From here, you can continue configuring cloud sync
 
-7. On the left, click **Scoping filters** select **Group scope** - **All groups**
+7. On the left, select **Scoping filters**, then select **Group scope** > **All groups**.
 
-8. Click **Edit attribute mapping** and change the **Target Container** to `OU=Groups,DC=Contoso,DC=com`. Click **Save**.
+8. Select **Edit attribute mapping** and change the **Target Container** to `OU=Groups,DC=Contoso,DC=com`. Select **Save**.
 
-9. Click **Add Attribute scoping filter**
+9. Select **Add Attribute scoping filter**.
 
 10. Type a name for the scoping filter: `Filter groups with Writeback Enabled`
 
@@ -170,10 +172,11 @@ To create two groups, follow these steps.
 
 > [!IMPORTANT]
 > Some of the target attributes displayed in the dropdown list might not be usable as a scoping filter because not all properties can be managed in Entra ID, for example extensionAttribute[1-15], hence the recommendation is to create a custom extension property for this specific purpose.
+
 :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png" alt-text="Screenshot of available attributes." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-4.png":::
 
-13. Under **Operator** select **IS TRUE**
-14. Click **Save**. And click **Save**.
+13. Under **Operator** select **IS TRUE**.
+14. Select **Save**, and then select **Save**.
 15. Leave the configuration disabled and come back to it.
 
 ## Add new extension property to one of our groups
@@ -229,22 +232,21 @@ For this portion, we're going add a value on our newly created property to one o
 You need to make sure that you have consented to `Group.ReadWrite.All`. You can do this by selecting **Modify permissions**.
 
 1. Navigate to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
-2. Sign-in using your tenant administrator account. This may need to be a Hybrid Identity Administrator account. A Hybrid Identity Administrator account was used in creating this scenario. A Hybrid Identity Administrator account may be sufficient.
+2. Sign in using your tenant administrator account. A Hybrid Identity Administrator account was used to create this scenario and might be sufficient.
 3. At the top, change the **GET** to **PATCH**
 4. In the address box enter: `https://graph.microsoft.com/v1.0/groups/<Group Id>`
 5. In the Request body enter:
-   ```
+   ```json
    {
-    extension_<guid>_WritebackEnabled: true
+     "extension_<guid>_WritebackEnabled": true
    }
-  
    ```
-6. Click **Run query**
+6. Select **Run query**.
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-1.png" alt-text="Screenshot of running the graph query." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-1.png":::
 
 7. If done correctly, you see [].
 8. Now at the top, change **PATCH** to **GET** and look at the properties of the marketing group. 
-9. Click **Run query**. You should see the newly created attribute. 
+9. Select **Run query**. You should see the newly created attribute. 
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-2.png" alt-text="Screenshot of group properties." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-2.png":::
 
 
@@ -258,7 +260,7 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
 4. On the left, select **Provision on demand**.
 5. Enter **Marketing** in the **Selected group** box
 6. From the **Selected users** section, select some users to test. Select **Lola Jacobson** and **John Smith**.
-7. Click **Provision**. It should successfully provision.
+7. Select **Provision**. It should successfully provision.
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-5.png" alt-text="Screenshot of successful provision." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-5.png":::
 8. Now try with the **Sales** group and add **Britta Simon** and **Anna Ringdahl**. This shouldn't provision.
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png" alt-text="Screenshot of provisioning being blocked." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png":::

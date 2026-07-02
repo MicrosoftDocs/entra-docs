@@ -59,13 +59,13 @@ The list of policies that don't apply includes the reasons why these policies do
 
 **Has filter** indicates whether the policy has app filters that use custom security attributes.
 
-## Key differences between the What If evaluation API and the legacy experience 
+## Key differences between the What If evaluation API and the legacy experience
 
-The What If Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The What If tool powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is currently in public preview. The API is different from the legacy What If evaluation in a few ways:
+The [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is a Microsoft Graph API that is called by the Conditional Access experience. The API is different from the legacy What If evaluation in a few ways:
 
-1. The What-if API is a public and fully supported API (once the API is generally available). The API can be used through the Conditional Access UX and the MS Graph API.
+1. The What If API is a public and fully supported API. You can use it through the Conditional Access experience and the Microsoft Graph API.
 1. The logic aligns with the authentication logic used during sign-in to provide more accurate policy evaluation.
-1. The What-if API expects all sign-in parameters to be defined for the evaluation to provide the most accurate results. If your tenant has policies with specific conditions and the sign-in details for those conditions aren't provided, the What If API can't evaluate those conditions.
+1. The What If API expects all sign-in parameters to be defined for the evaluation to provide the most accurate results. If your tenant has policies with specific conditions and the sign-in details for those conditions aren't provided, the What If API can't evaluate those conditions.
 
 > [!NOTE]
 > For application specification, provide the App ID. Groups of apps, such as **Office 365** or **Microsoft Admin Portals**, don't result in a match.

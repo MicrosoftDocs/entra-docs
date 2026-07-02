@@ -1,11 +1,9 @@
 ---
 title: Learn about the Microsoft Traffic Profile
 description: Learn about the capabilities and traffic handling in the Microsoft traffic profile
-author: alexpav
-ms.author: alexpav
 ms.topic: concept-article
 ms.date: 10/11/2024
-ms.reviewer: katabish
+ms.reviewer: katabish, alexpav
 ---
 
 # Microsoft traffic profile overview

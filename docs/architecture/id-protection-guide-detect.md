@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra ID Protection to Detect Protected Resource Risks
 description: Learn how identity administrators use real-time risk detection features in Microsoft Entra ID Protection to grant user access to protected resources.
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 10/31/2025

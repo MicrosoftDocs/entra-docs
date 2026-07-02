@@ -4,7 +4,7 @@ description: Learn how continuous access evaluation in Microsoft Entra enhances 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 04/08/2026
 ms.reviewer: sreyanthmora
 ms.custom:
   - has-adal-ref
@@ -106,7 +106,7 @@ Because risk and policy are evaluated in real time, clients that negotiate conti
 
 Token lifetime increases to long-lived, up to 28 hours, in CAE sessions. Critical events and policy evaluation drive revocation, not just an arbitrary time period. This change increases the stability of applications without affecting security posture. 
 
-If you aren't using CAE-capable clients, your default access token lifetime remains 1 hour. The default only changes if you configured your access token lifetime with the [Configurable Token Lifetime (CTL)](~/identity-platform/configurable-token-lifetimes.md) preview feature.
+If you aren't using CAE-capable clients, your default access token lifetime remains 1 hour. The default only changes if you configured your access token lifetime with the [Configurable Token Lifetime (CTL)](~/identity-platform/configurable-token-lifetimes.md) feature.
 
 ## Example flow diagrams
 
