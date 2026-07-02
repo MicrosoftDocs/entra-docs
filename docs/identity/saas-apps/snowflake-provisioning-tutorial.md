@@ -180,7 +180,7 @@ With PIM for Groups, you can provide just-in-time access to groups in Snowflake 
 
 **Configure your enterprise application for SSO and provisioning**
 1. Add Snowflake to your tenant, configure it for provisioning as described in the article above, and start provisioning. 
-1. Configure [single sign-on](snowflake-provisioning-tutorial.md) for Snowflake.
+1. Configure [single sign-on](snowflake-tutorial.md) for Snowflake.
 1. Create a [group](/azure/active-directory/fundamentals/how-to-manage-groups) that provides all users access to the application.
 1. Assign the group to the Snowflake application.
 1. Assign your test user as a direct member of the group created in the previous step, or provide them access to the group through an access package. This group can be used for persistent, non-admin access in Snowflake.
