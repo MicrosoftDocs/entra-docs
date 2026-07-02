@@ -54,6 +54,7 @@ Tests start at 10:00 local time in each region, in three waves across the Americ
 | Japan East (Tokyo) | JST (UTC+9) | 10:00 JST | 01:00 UTC |
 | Japan West (Osaka) | JST (UTC+9) | 10:00 JST | 01:00 UTC |
 | China North 2 (Beijing) | CST (UTC+8) | 10:00 CST | 02:00 UTC |
+| China North 3 (Hebei) | CST (UTC+8) | 10:00 CST | 02:00 UTC |
 | China East 2 (Shanghai) | CST (UTC+8) | 10:00 CST | 02:00 UTC |
 
 ## Prepare for the test
