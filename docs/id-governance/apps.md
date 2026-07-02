@@ -499,7 +499,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Mevisio](../identity/saas-apps/mevisio-tutorial.md) |  | ● |
 | [MIC SAAS Portal](../identity/saas-apps/mic-saas-portal-tutorial.md) |  | ● |
 | [MicroFocus Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [Microsoft 365](../fundamentals/concept-group-based-licensing.md) | ● | ● |
+| [Microsoft 365](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true) | ● | ● |
 | [Microsoft Active Directory Lightweight Directory Server (ADAM) (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Microsoft Azure SQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Microsoft Azure](/azure/role-based-access-control/role-assignments-portal) | ● | ● |

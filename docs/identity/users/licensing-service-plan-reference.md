@@ -1,10 +1,10 @@
 ---
 title: Product names and service plan identifiers for licensing
-description: Identifier map to manage Microsoft Entra ID licensing in the Azure portal, the Microsoft 365 admin center, PowerShell, or Microsoft Graph
+description: Identifier map to manage Microsoft Entra ID licensing in the Microsoft 365 admin center, PowerShell, or Microsoft Graph
 
 keywords: Azure Active Directory licensing service plans
 ms.topic: reference
-ms.date: 03/16/2026
+ms.date: 07/01/2026
 ms.reviewer: shegu
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -16,7 +16,7 @@ ms.collection: M365-identity-device-management
 
 ## Overview
 
-When [managing licenses in the Azure portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/LicensesMenuBlade/Products) or the [Microsoft 365 admin center](https://admin.microsoft.com), you see product names that look something like *Office 365 E3*. When you use PowerShell v1.0 cmdlets, the same product is identified using a specific but less friendly name: *ENTERPRISEPACK*. When using PowerShell v2.0 cmdlets or [Microsoft Graph](/graph/api/resources/subscribedsku), the same product is identified using a GUID value: *6fd2c87f-b296-42f0-b197-1e91e994b900*.
+When managing licenses in the [Microsoft 365 admin center](https://admin.microsoft.com), you see product names that look something like *Office 365 E3*. When you use PowerShell v1.0 cmdlets, the same product is identified using a specific but less friendly name: *ENTERPRISEPACK*. When using PowerShell v2.0 cmdlets or [Microsoft Graph](/graph/api/resources/subscribedsku), the same product is identified using a GUID value: *6fd2c87f-b296-42f0-b197-1e91e994b900*.
 
 The following table lists the most commonly used Microsoft online service products and provides their various ID values. These tables are for reference purposes in Microsoft Entra ID, part of Microsoft Entra, and are accurate only as of the date when this article was last updated. Microsoft will continue to make periodic updates to this document. 
 
@@ -657,7 +657,7 @@ Some products contain service plans that cannot be assigned to the same user at 
 -   Exchange Online (Plan 2) conflicts with Exchange Online (Plan 1).
 
 Also, It is not recommended to assign both SharePoint Online (Plan 1) and SharePoint Online (Plan 2) simultaneously.
-When using group-based licensing, you experience [this error condition](~/fundamentals/licensing-groups-resolve-problems.md#conflicting-service-plans). When using PowerShell, you see the *MutuallyExclusiveViolation* error.
+When using group-based licensing, you experience [this error condition](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors). When using PowerShell, you see the *MutuallyExclusiveViolation* error.
 
 This section lists the most common service plans that are mutually exclusive, grouped by service type. You can use this information to plan your license deployment and avoid assignment errors. These tables are for reference purposes and are accurate only as of the date when this article was last updated. Microsoft does not plan to update them for newly added services periodically.
 
@@ -764,8 +764,6 @@ The following service plans cannot be assigned together:
 
 To learn more about the feature set for license management through groups, see the following:
 
-* [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* [Assign licenses using the Microsoft 365 admin center](licensing-admin-center.md)
-* [Identify and resolve license assignment problems for a group](~/fundamentals/licensing-groups-resolve-problems.md)
-* [Microsoft Entra group-based licensing additional scenarios](licensing-group-advanced.md)
+* [Assign or unassign licenses to a group in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true)
+* [Manage group-based licensing errors](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors)
 * [Licensing PowerShell examples](~/identity/users/licensing-powershell-graph-examples.md)

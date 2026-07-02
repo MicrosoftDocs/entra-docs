@@ -2621,27 +2621,47 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/concept-group-based-licensing.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/licensing-groups-resolve-problems.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#move-users-between-licensed-groups",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-admin-center.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-group-advanced.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {

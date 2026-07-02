@@ -14,7 +14,7 @@ ms.date: 06/18/2026
 This article discusses licensing options for the Microsoft Entra product family. It's intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
 
 > [!NOTE]
->If you're troubleshooting licensing assignment issues, review [Identify and resolve license assignment problems for a group in the Microsoft 365 Admin Portal](licensing-groups-resolve-problems.md).
+>If you're troubleshooting licensing assignment issues, review [Manage group-based licensing errors](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors).
 
 ## Microsoft Entra licensing options
 
