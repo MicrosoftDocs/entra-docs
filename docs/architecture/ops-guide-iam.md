@@ -132,7 +132,7 @@ The current capabilities of the tool include:
 
 ### Group-based licensing for Microsoft cloud services
 
-Microsoft Entra ID streamlines the management of licenses through [group-based licensing](~/fundamentals/concept-group-based-licensing.md) for Microsoft cloud services. This way, IAM provides the group infrastructure and delegated management of those groups to the proper teams in the organizations. There are multiple ways to set up the membership of groups in Microsoft Entra ID, including:
+Microsoft Entra ID streamlines the management of licenses through [group-based licensing](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true) for Microsoft cloud services. This way, IAM provides the group infrastructure and delegated management of those groups to the proper teams in the organizations. There are multiple ways to set up the membership of groups in Microsoft Entra ID, including:
 
 - **Synchronized from on-premises** - Groups can come from on-premises directories, which could be a good fit for organizations who've established group management processes that can be extended to assign licenses in Microsoft 365.
 
@@ -151,13 +151,13 @@ Use the following guidelines to define service plans to users:
 - Optionally, an attribute can be defined to hold the packages for users.
 
 > [!IMPORTANT]
-> Group-based licensing in Microsoft Entra ID introduces the concept of users in a licensing error state. If you notice any licensing errors, then you should immediately [identify and resolve](~/identity/users/licensing-groups-resolve-problems.md) any license assignment problems.
+> Group-based licensing in Microsoft Entra ID introduces the concept of users in a licensing error state. If you notice any licensing errors, then you should immediately [identify and resolve](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors) any license assignment problems.
 
 ![A screenshot of a computer screen Description automatically generated](./media/ops-guide-auth/ops-img2.png)
 
 #### Lifecycle management
 
-If you're currently using a tool, such as [Microsoft Identity Manager](/microsoft-identity-manager/) or third-party system that relies on an on-premises infrastructure, we recommend you offload assignment from the existing tool. Instead, you should implement group-based licensing and define a group lifecycle management based on [dynamic membership groups](~/identity/users/licensing-group-advanced.md).
+If you're currently using a tool, such as [Microsoft Identity Manager](/microsoft-identity-manager/) or third-party system that relies on an on-premises infrastructure, we recommend you offload assignment from the existing tool. Instead, you should implement group-based licensing and define a group lifecycle management based on [dynamic membership groups](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true).
 
 If your existing process doesn't account for new employees or employees that leave the organization, you should deploy group-based licensing based on dynamic membership groups and define their lifecycle. Finally, if group-based licensing is deployed against on-premises groups that lack lifecycle management, consider using cloud groups to enable capabilities such as delegated ownership or attribute-based dynamic membership groups.
 

@@ -89,5 +89,5 @@ The usage metrics differentiate between active users and guest users. This disti
 ## Related content
 
 - [Microsoft Entra licensing](licensing.md)
-- [Group-based licensing in Microsoft Entra](concept-group-based-licensing.md)
+- [Assign or unassign licenses to a group in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true)
 - [Sign up for Microsoft Entra ID P1 or P2](get-started-premium.md)
