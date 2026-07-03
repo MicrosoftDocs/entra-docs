@@ -50,7 +50,7 @@ Most Azure AD Graph app manifest attributes stay the same. However, the followin
 | `logoUrl` | Relocated as a property of the `info` attribute |
 | `logoutUrl` | Relocated as property `logoutUrl` of the `web` attribute |
 | `name` | `displayName` |
-| `oauth2AllowIdTokenImplicitFlow` | Relocated and renamed as property `enableAccessTokenIssuance` of property `enableIdTokenIssuance` in the `web` attribute |
+| `oauth2AllowIdTokenImplicitFlow` | Relocated and renamed as property `enableIdTokenIssuance` of the `implicitGrantSettings` property in the `web` attribute |
 | `oauth2AllowImplicitFlow` | Relocated and renamed as property `enableAccessTokenIssuance` of property `implicitGrantSettings`  in the `web` attribute |
 | `oauth2Permissions` | Relocated and renamed as `oauth2PermissionScopes` property of the `api` attribute |
 | `preAuthorizedApplications` | Relocated as `preAuthorizedApplications` property of the `api` attribute |
