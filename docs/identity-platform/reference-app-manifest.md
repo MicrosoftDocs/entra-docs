@@ -347,6 +347,8 @@ Example:
 
 Specifies whether this web app can request OAuth2.0 implicit flow ID tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. We, however, discourage the use of implicit grant even in SPAs and recommend using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with PKCE.
 
+In the Microsoft Graph app manifest, this attribute is replaced by the `enableIdTokenIssuance` property of the `implicitGrantSettings` property in the `web` attribute.
+
 Example:
 
 ```json

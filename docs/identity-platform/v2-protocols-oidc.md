@@ -54,10 +54,10 @@ ID tokens aren't issued by default for an application registered with the Micros
 1. Under Redirect URIs, add the redirect URI of your application. For example, `https://localhost:8080/`.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
 
-Or:
+Or, in the Microsoft Graph app manifest:
 
 1. Select **Entra ID** > **App registrations** > *\<your application\>* > **Manifest**.
-1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](reference-app-manifest.md).
+1. Set `enableIdTokenIssuance` to `true` within the `implicitGrantSettings` property of the `web` attribute.
 
 If ID tokens aren't enabled for your app and one is requested, the Microsoft identity platform returns an `unsupported_response` error similar to:
 
