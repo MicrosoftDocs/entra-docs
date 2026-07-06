@@ -1,25 +1,18 @@
 ---
-title: Sign in with passkeys in Authenticator for Android and iOS devices 
-description: Learn how to sign in with passkeys for Android and iOS devices with Microsoft Authenticator.
-
-services: active-directory
+title: Sign in with passkeys in Authenticator for Android and iOS devices
+description: Learn how to sign in with passkeys in Microsoft Authenticator for Android and iOS. Use same-device, cross-device, or native app authentication.
 ms.topic: how-to
-ms.date: 10/14/2025
+ms.date: 07/05/2026
 ms.reviewer: mjsantani, calui
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
+# Customer intent: As a user, I want to sign in with a passkey in Microsoft Authenticator so that I can authenticate securely without a password.
 ---
 
 # Sign in with passkeys in Authenticator for Android and iOS devices
 
 This article explains the sign-in experience when you use passkeys in Authenticator with Microsoft Entra ID. For more information about the availability of Microsoft Entra ID passkey (FIDO2) authentication across native applications, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
-
-| Scenario | iOS | Android |
-|------------------|---------------------------------|----------------|
-| Same-device authentication in a browser              | &#x2705;          | &#x2705;<sup>1</sup>       |
-| Same-device authentication in native Microsoft applications            | &#x2705; | &#x2705;    |
-| Cross-device authentication  | &#x2705;  | &#x2705;    |
-
-<sup>1</sup>Support for same-device registration in Microsoft Edge on Android is coming soon.
 
 ## [**iOS**](#tab/iOS)
 
@@ -59,7 +52,7 @@ This sign-in option requires Bluetooth and an internet connection for both devic
 
 1. To begin cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
-1. A QR code should appear on the screen. Now, on your iOS device, open the camera app and scan the QR code.
+1. When a QR code appears on the screen, open the camera app and scan the QR code.
 
    The camera inside the iOS Authenticator app doesn't support scanning a WebAuthn QR code. You need to use the system camera app.
 
@@ -84,16 +77,16 @@ To sign in with a passkey in Authenticator, your Android device needs to run And
 Follow these steps to sign in to Microsoft Entra ID with a passkey in Authenticator on your Android device.
 
 > [!NOTE]
-> Support for same-device registration in Microsoft Edge on Android is coming soon.
+> Support for same-device authentication in Microsoft Edge on Android is coming soon.
 
-1. On your Android device, open your browser and go to the resource you want to access at [My Security info](https://aka.ms/mysecurityinfo).
+1. On your Android device, open your browser and go to the resource you want to access, such as [Office](https://www.office.com).
 
-1. When you're prompted to sign in, you have two options. You can sign in with your username or without using your username.
+1. Enter your username to sign in. If you most recently used a passkey to sign in, you're prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN or security key**.
 
-   1. Enter your username.
-   1. To sign in without using your username, select **Sign-in options**.
-   1. If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
-   If you have more than one passkey saved to your device, you're prompted to choose a passkey.
+   Alternatively, select **Sign-in options** to sign in without entering a username. If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
+
+   > [!NOTE]
+   > If you try to sign in without a username and multiple passkeys are saved to your device, you're prompted to choose which passkey to use for sign-in.
 
 1. To select your passkey, follow the steps in the Android operating system dialog. Verify yourself by scanning your face or fingerprint, or by entering your device PIN or unlock gesture.
 
@@ -113,7 +106,7 @@ This sign-in option requires Bluetooth and an internet connection for both devic
    
 1. To begin cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
-1. A QR code should appear on the screen. Now, on your Android device, open the system camera app and scan the QR code. You can also use the camera in Authenticator. Go to the passkey account tile and tap it. Under **Passkey details**, you can see a button in the lower-right corner to scan the QR code.
+1. When a QR code appears on the screen, open the camera app and scan the QR code. You can also use the camera in Authenticator. Go to the passkey account tile and tap it. Under **Passkey details**, you can see a button in the lower-right corner to scan the QR code.
 
    > [!NOTE]
    > Bluetooth and an internet connection are required for this step and both must be enabled on your mobile and remote device.
@@ -122,8 +115,14 @@ This sign-in option requires Bluetooth and an internet connection for both devic
 
 On your other device, you're now signed in to Microsoft Entra ID.
 
-## Same-device authentication in native Microsoft applications
+### Same-device authentication in native Microsoft applications (Android)
 
 You can use Authenticator on your Android device to seamlessly sign in with a passkey to other Microsoft apps, such as OneDrive, SharePoint, and Outlook.
 
 ---
+
+## Related content
+
+- [Register passkeys in Authenticator](how-to-register-passkey-authenticator.md)
+- [Enable and support passkeys in Authenticator](how-to-enable-authenticator-passkey.md)
+- [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md)
