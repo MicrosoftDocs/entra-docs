@@ -118,14 +118,15 @@ For the exact error messages and error-specific fixes, see [Troubleshoot Invalid
 > [!CAUTION]
 > Don't use hard match as a general repair mechanism for privileged accounts or for accounts that are already mapped to an on-premises object. If the wrong on-premises object is linked to a cloud account, the account can inherit the wrong source of authority. Confirm the intended mapping before you retry synchronization.
 
-Before you intentionally hard match an on-premises user to an existing cloud user, verify the following:
+<a name='recover-from-a-blocked-hard-match'></a>Before you perform a hard match, verify that the target cloud user meets all of the following requirements:
 
-- The cloud user is the correct account for the on-premises object to take over.
-- The cloud user isn't assigned or eligible for a privileged Microsoft Entra role, unless you plan to temporarily remove the role or eligibility first.
-- The cloud user doesn't already have `onPremisesObjectIdentifier` set, unless you plan to clear it before you retry.
-- The source anchor value from the on-premises object matches the cloud user's `onPremisesImmutableId`.
+- It represents the same user as the on-premises object.
 
-<a name='recover-from-a-blocked-hard-match'></a>
+- The on-premises source anchor value exactly matches the user's `onPremisesImmutableId`.
+
+- It isn't assigned or eligible for a privileged Microsoft Entra role. Remove any privileged role assignments or eligibility before proceeding.
+
+- `onPremisesObjectIdentifier` isn't already populated. If it is, clear the value before retrying.
 
 #### Hard match scenarios and recovery paths
 
@@ -214,7 +215,8 @@ Invoke-MgGraphRequest -Method PATCH -Uri $uri -Body $params
 ### Other objects than users
 For mail-enabled groups and contacts, you can soft match based on proxyAddresses. Hard match isn't applicable since you can only update the sourceAnchor/immutableID (using PowerShell) on users. For groups that aren't mail-enabled, there's no support for soft match or hard match.
 
-### Admin role considerations
+### Considerations on soft matching user with Admin role
+
 To protect from untrusted on-premises users, Microsoft Entra ID won't match on-premises users with cloud users that have an admin role. This is the default behavior. To work around it, do the following steps:
 
 1. Remove the directory roles from the cloud-only user object.
