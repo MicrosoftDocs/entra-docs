@@ -175,8 +175,9 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
 Snowflake-generated SCIM tokens expire in 6 months. Be aware that you need to refresh these tokens before they expire, to allow the provisioning syncs to continue working.
 
-## Just-in-time (JIT) application access with PIM for groups 
-With PIM for Groups, you can provide just-in-time access to groups in Snowflake and reduce the number of users that have permanent access to privileged groups in Snowflake. 
+## Just-in-time (JIT) application access with PIM for Groups
+
+With Privileged Identity Management (PIM) for Groups, you can provide just-in-time access to groups in Snowflake and reduce the number of users who have permanent access to privileged groups in Snowflake.
 
 **Configure your enterprise application for SSO and provisioning**
 1. Add Snowflake to your tenant, configure it for provisioning as described in the article above, and start provisioning. 
