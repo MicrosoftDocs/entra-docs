@@ -6,8 +6,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/identity/authentication/how-to-epow-register-sign-in.md",
+      "redirect_url": "/entra/identity/authentication/how-to-register-entra-passkey-windows",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/identity/authentication/how-to-register-passkey-mobile.md",
       "redirect_url": "/entra/identity/authentication/how-to-register-passkey",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/identity/authentication/how-to-support-authenticator-passkey.md",
       "redirect_url": "/entra/identity/authentication/how-to-enable-authenticator-passkey",
       "redirect_document_id": true
