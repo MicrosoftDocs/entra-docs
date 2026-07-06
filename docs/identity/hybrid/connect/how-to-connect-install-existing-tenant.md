@@ -118,7 +118,9 @@ For the exact error messages and error-specific fixes, see [Troubleshoot Invalid
 > [!CAUTION]
 > Don't use hard match as a general repair mechanism for privileged accounts or for accounts that are already mapped to an on-premises object. If the wrong on-premises object is linked to a cloud account, the account can inherit the wrong source of authority. Confirm the intended mapping before you retry synchronization.
 
-<a name='recover-from-a-blocked-hard-match'></a>Before you perform a hard match, verify that the target cloud user meets all of the following requirements:
+<a name='recover-from-a-blocked-hard-match'></a>
+
+Before you perform a hard match, verify that the target cloud user meets all of the following requirements:
 
 - It represents the same user as the on-premises object.
 
