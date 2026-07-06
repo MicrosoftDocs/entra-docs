@@ -187,7 +187,7 @@ To set up persistent, non-admin access in Snowflake, complete these steps:
 1. Configure [single sign-on](snowflake-tutorial.md) for Snowflake.
 1. Create a [group](/entra/fundamentals/how-to-manage-groups) that provides all users access to the application.
 1. Assign the group to the Snowflake application.
-1. Assign your test user as a direct member of the group created in the previous step, or provide them access to the group through an access package. This group can be used for persistent, non-admin access in Snowflake.
+1. Assign your test user as a direct member of the group you created for all-user access, or provide access to the group through an access package. This group provides persistent, non-admin access in Snowflake.
 
 **Enable PIM for Groups**
 
