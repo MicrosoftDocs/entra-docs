@@ -121,9 +121,12 @@ For the exact error messages and error-specific fixes, see [Troubleshoot Invalid
 Before you perform a hard match, verify that the target cloud user meets all of the following requirements:
 
 - It represents the same user as the on-premises object.
+
 - The on-premises source anchor value exactly matches the user's `onPremisesImmutableId`.
+
 - It isn't assigned or eligible for a privileged Microsoft Entra role. Remove any privileged role assignments or eligibility before proceeding.
-- `onPremisesObjectIdentifier` isn't already populated. If it is, clear the value before retrying.
+
+- The cloud account doesn't already have a different `onPremisesObjectIdentifier` populated. Clear the value if necessary before retrying.
 
 <a name='recover-from-a-blocked-hard-match'></a>
 
