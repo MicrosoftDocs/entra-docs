@@ -162,10 +162,10 @@
         href: how-to-authentication-passkeys-fido2.md
       - name: Enable Entra passkey on Windows
         href: how-to-authentication-entra-passkeys-on-windows.md
+      - name: Enable synced passkey
+        href: how-to-synced-passkeys.md
       - name: Register passkey
         href: how-to-register-passkey.md
-      - name: Register passkey with a mobile device
-        href: how-to-register-passkey-mobile.md
       - name: Sign in with passkey
         href: how-to-sign-in-passkey.md
       - name: Passkey FAQ

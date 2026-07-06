@@ -1,50 +1,74 @@
 ---
-title:  Register a Passkey (FIDO2) 
-description: Registration and management of a passkey (FIDO2).
-
-services: active-directory
+title: Register a synced passkey (FIDO2)
+description: Learn how to register a synced passkey (FIDO2) as an authentication method on Windows, iOS, or Android by using a browser for phishing-resistant sign-in.
 ms.topic: how-to
-ms.date: 11/10/2025
-ms.reviewer: kimhana
+ms.date: 07/05/2026
+ms.reviewer: kimhana, calui, tilarso
 ms.collection: M365-identity-device-management
-# Customer intent: As an identity administrator, I want to understand how users will register a passkey using a browser or with a security key. 
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1013
+ai-usage: ai-assisted
+# Customer intent: As an identity administrator, I want to understand how users will register a passkey using a browser on Windows, iOS, or Android.
 
 ---
-# Register a passkey (FIDO2)
+# Register a synced passkey (FIDO2)
 
-This article shows how users can register a passkey (FIDO2) by using the **Passkey** flow. For registration on a mobile device, see [Register a passkey using a mobile device](how-to-register-passkey-mobile.md).
+This article shows how users can register a synced passkey (FIDO2) by using the **Passkey** flow. A synced passkey is stored in a passkey provider (such as iCloud Keychain or Google Password Manager) and syncs across the user's devices. For an overview of synced passkeys, see [Synced passkeys in Microsoft Entra ID](how-to-synced-passkeys.md).
 
->[!NOTE]
->Looking to provide passkeys (FIDO2) on behalf of users? Use our [APIs](https://aka.ms/passkeyprovision).
+> [!NOTE]
+> Looking to provide passkeys (FIDO2) on behalf of users? Use our [APIs](https://aka.ms/passkeyprovision).
 
-For more information about enabling passkeys in Microsoft Authenticator, see [How to enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
+## Prerequisites
 
-## Manual registration 
+You need to configure a password manager on your mobile device to save a synced passkey.
 
-1. Users can register a passkey (FIDO2) as an authentication method by navigating and completing the process from a browser at [Security info](https://aka.ms/mysecurityinfo).
-1. Tap **Add sign-in method** > **Choose a method** > **Passkey** > **Add**.
-1. Sign in with multifactor authentication (MFA) before adding a passkey, then tap **Next**.
-   1. If you don't have at least one MFA method registered, you must add one.
-   1. An Authentication Policy Administrator can also issue a [Temporary Access Pass](howto-authentication-temporary-access-pass.md) to allow a user to strongly authenticate and register a passkey.
- 
-   :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/add-passkey.png" alt-text="Screenshot of the Add a passkey on your iOS or Android device option.":::
+- On your iOS device, you need to set **Set Up Codes In** to **Passwords** to manage synced passkeys. Open **Settings** > **General** > **AutoFill & Passwords**. For **Set Up Codes In**, select **Passwords**.
+- On your Android device, open **Settings** > **Security and privacy** > **More security settings** > **Passwords, passkeys, and autofill**, and then select a provider.
 
-1. A security dialog opens on your device and asks where to save your passkey. 
+## Register a passkey
 
-   > [!NOTE]
-   > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.
+To register a passkey on your device, follow these steps:
 
+1. Open a web browser and sign in to [Security info](https://mysignins.microsoft.com/security-info).
+1. Sign in with multifactor authentication (MFA).
+1. Tap **+ Add sign-in method**.
 
-1. If your organization allows saving a passkey to a security key:
-   1. Choose **Security Key**.
-   1. Follow the guidance and insert or connect your security key when requested.
-   1. You're prompted to create or enter a PIN for your security key, then perform the required gesture for the key.
-   1. Upon completion, review any additional information from the security dialog, then tap Ok or Continue.
+    :::image type="content" source="media/how-to-register-passkey/add-sign-in-method-ios.png" alt-text="Screenshot of the Security info page on iOS showing the Add sign-in method option." border="true" lightbox="media/how-to-register-passkey/add-sign-in-method-ios.png":::
 
-1. After you're redirected to Security info, you can change the default name for the new sign-in method. 
-1. Tap **Done** to finish registering the new method.
+1. Tap **Passkey**.
 
-## Next steps
+    :::image type="content" source="media/how-to-register-passkey/choose-passkey-ios.png" alt-text="Screenshot of the Add a sign-in method page on iOS showing the Passkey option." border="true" lightbox="media/how-to-register-passkey/choose-passkey-ios.png":::
 
-- [Choosing authentication methods for your organization](overview-authentication.md)
+1. Tap **Next**.
+
+    :::image type="content" source="media/how-to-register-passkey/sign-in-faster-ios.png" alt-text="Screenshot of the Sign in faster with your face, fingerprint, or PIN page on iOS showing the Next option." border="true" lightbox="media/how-to-register-passkey/sign-in-faster-ios.png":::
+
+1. On iOS, tap **Next**.
+
+    :::image type="content" source="media/how-to-register-passkey/setting-up-passkey-ios.png" alt-text="Screenshot of the Setting up your passkey page on iOS showing the Next option." border="true" lightbox="media/how-to-register-passkey/setting-up-passkey-ios.png":::
+
+    On Android, tap **Continue**.
+
+    > [!NOTE]
+    > The steps to enable passkey providers on Android might vary based on the make and model of your device. Search for Passkey on your device settings, or consult your device manufacturer for guidance. If your device runs Android 14 and you can't enable Authenticator as a passkey provider, we recommend that you upgrade to Android 15.
+
+    :::image type="content" source="media/how-to-register-passkey/android-complete.png" alt-text="Screenshot of the Create a passkey page on Android showing the account name and Continue option." border="true" lightbox="media/how-to-register-passkey/android-complete.png":::
+
+1. Name your passkey and tap **Next**. 
+
+    :::image type="content" source="media/how-to-register-passkey/name-passkey.png" alt-text="Screenshot of the Let's name your passkey page showing the passkey name field and Next option." border="true" lightbox="media/how-to-register-passkey/name-passkey.png":::
+
+1. After the passkey is created, tap **Done**. 
+
+    :::image type="content" source="media/how-to-register-passkey/passkey-created-ios.png" alt-text="Screenshot of the Passkey created page showing the Done option." border="true" lightbox="media/how-to-register-passkey/passkey-created-ios.png":::
+
+1. You can see your passkey in [Security info](https://mysignins.microsoft.com/security-info). 
+
+    :::image type="content" source="media/how-to-register-passkey/passkey-added-ios.png" alt-text="Screenshot of the Security info page showing the registered passkey." border="true" lightbox="media/how-to-register-passkey/passkey-added-ios.png":::
+
+## Related content
+
+To register a passkey on a different type of authenticator, see:
+
+- [Register passkeys in Microsoft Authenticator](how-to-register-passkey-authenticator.md)
+- [Register a passkey with a FIDO2 security key](how-to-register-passkey-with-security-key.md)
 

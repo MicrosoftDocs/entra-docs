@@ -20,7 +20,7 @@ This document provides a comprehensive guidance for deploying macOS Platform Sin
     * [Federated MFA](/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa)
     * [External Auth Methods](../authentication/how-to-authentication-external-method-manage.md)
 * [Microsoft Intune Company Portal app version 5.2408.0](/mem/intune/apps/apps-company-portal-macos) or later installed. This version is required before users are targeted for PSSO.
-* (Highly recommended) Users are advised to [register a passkey on their mobile devices.](../authentication/how-to-register-passkey-mobile.md)
+* (Highly recommended) Users are advised to [register a passkey on their mobile devices.](../authentication/how-to-register-passkey.md)
 
 
 ## Authentication Method Selection
