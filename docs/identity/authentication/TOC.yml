@@ -178,8 +178,6 @@
       items:
       - name: Enable passkeys in Authenticator
         href: how-to-enable-authenticator-passkey.md
-      - name: Support passkeys in Authenticator
-        href: how-to-support-authenticator-passkey.md
       - name: Register passkeys in Authenticator
         href: how-to-register-passkey-authenticator.md
       - name: Sign in with passkeys in Authenticator
@@ -200,6 +198,8 @@
         href: how-to-register-passkey-with-security-key.md
       - name: Enable security key sign-in to Windows
         href: howto-authentication-passwordless-security-key-windows.md
+      - name: Sign in with a security key
+        href: how-to-security-key-sign-in.md
       - name: SSO to on-premises resources
         href: howto-authentication-passwordless-security-key-on-premises.md
       - name: Hybrid FAQs
