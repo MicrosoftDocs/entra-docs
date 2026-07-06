@@ -190,7 +190,7 @@ With PIM for Groups, you can provide just-in-time access to groups in Snowflake 
 1. Bring the group under [management in Microsoft Entra PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups).
 1. Assign your test user as [eligible for the group in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner) with the role set to member.
 1. Assign the second group to the Snowflake application.
-1. Use on-demand provisioning to create the group in Snowlake.
+1. Use on-demand provisioning to create the group in Snowflake.
 1. Sign in to Snowflake and assign the second group the necessary permissions to perform admin tasks.
 
 Now any end user that was made eligible for the group in PIM can get JIT access to the group in Snowflake by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role).
