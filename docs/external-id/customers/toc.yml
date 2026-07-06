@@ -58,8 +58,8 @@ items:
           href: enable-external-id-high-scale-compatibility-mode.md
         - name: Troubleshoot HSC mode
           href: troubleshoot-high-scale-compatibility-mode.md
-        - name: Services and integration partners
-          href: services-integration-partners.md
+    - name: Migrate from Amazon Cognito
+      href: migrate-from-cognito-to-external-id.md
 - name: Security
   expanded: false
   items:
