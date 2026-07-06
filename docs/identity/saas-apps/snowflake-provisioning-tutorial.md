@@ -197,7 +197,7 @@ Now any end user that was made eligible for the group in PIM can get JIT access 
 
 **Key considerations**
 * How long does it take to have a user provisioned to the application? 
-  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
+  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra Privileged Identity Management (PIM):
     * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
   * When a user activates their group membership in Microsoft Entra ID PIM: 
     * The group membership is provisioned in 2-10 minutes. During periods of high request volume, requests are throttled at a rate of five requests per 10 seconds.
