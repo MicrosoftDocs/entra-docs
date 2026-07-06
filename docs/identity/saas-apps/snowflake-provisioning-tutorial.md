@@ -179,8 +179,11 @@ Snowflake-generated SCIM tokens expire in 6 months. Be aware that you need to re
 
 With Privileged Identity Management (PIM) for Groups, you can provide just-in-time access to groups in Snowflake and reduce the number of users who have permanent access to privileged groups in Snowflake.
 
-**Configure your enterprise application for SSO and provisioning**
-1. Add Snowflake to your tenant, configure it for provisioning as described in the article above, and start provisioning. 
+**Configure your enterprise application for single sign-on (SSO) and provisioning**
+
+To set up persistent, non-admin access in Snowflake, complete these steps:
+
+1. Add Snowflake to your tenant, configure it for provisioning as described in the previous steps of this tutorial, and start provisioning.
 1. Configure [single sign-on](snowflake-tutorial.md) for Snowflake.
 1. Create a [group](/entra/fundamentals/how-to-manage-groups) that provides all users access to the application.
 1. Assign the group to the Snowflake application.
