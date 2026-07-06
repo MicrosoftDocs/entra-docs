@@ -185,7 +185,10 @@ With PIM for Groups, you can provide just-in-time access to groups in Snowflake 
 1. Assign the group to the Snowflake application.
 1. Assign your test user as a direct member of the group created in the previous step, or provide them access to the group through an access package. This group can be used for persistent, non-admin access in Snowflake.
 
-**Enable PIM for groups**
+**Enable PIM for Groups**
+
+To grant just-in-time admin access, complete these steps:
+
 1. Create a second group in Microsoft Entra ID. This group provides access to admin permissions in Snowflake.
 1. Bring the group under [management in Microsoft Entra PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups).
 1. Assign your test user as [eligible for the group in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner) with the role set to member.
