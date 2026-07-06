@@ -200,7 +200,7 @@ Now any end user that was made eligible for the group in PIM can get JIT access 
   * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
     * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
   * When a user activates their group membership in Microsoft Entra ID PIM: 
-    * The group membership is provisioned in 2 – 10 minutes. When there is a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
+    * The group membership is provisioned in 2-10 minutes. During periods of high request volume, requests are throttled at a rate of five requests per 10 seconds.
     * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
     * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
 * If the user is unable to access the necessary group in Snowlake, please review the troubleshooting tips below, PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application has been architected, it may take additional time for the group membership to take effect in the application.
