@@ -111,6 +111,10 @@ The otherMails property is automatically computed in the target tenant. Changes 
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
 
+#### SCIM multi-valued addresses, emails and phone numbers
+
+SCIM multi-valued attributes in `addresses`, `emails` and `phoneNumbers` are currently processed only for supported `type` values. Attribute mappings that reference `addresses[type eq "home"]`, `addresses[type eq "any-other-value"]`, `emails[type eq "home"]` or `phoneNumbers[type eq "home"]` aren't processed. Only `addresses[type eq "work"]`, `emails[type eq "home"]` and `phoneNumbers[type eq "work"]` are processed. All other types are skipped. 
+
 
 ## Service issues 
 
