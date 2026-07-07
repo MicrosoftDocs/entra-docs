@@ -196,6 +196,8 @@
         href: how-to-mfa-additional-context.md
       - name: Use Authenticator Lite
         href: how-to-mfa-authenticator-lite.md
+      - name: Transfer Authenticator to a new phone
+        href: how-to-transfer-authenticator-new-phone.md
     - name: Hybrid
       items:
       - name: Register passkey with a security key
