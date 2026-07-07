@@ -6,8 +6,9 @@ ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 07/03/2026
 ms.subservice: hybrid-connect
+ai-usage: ai-assisted
 ---
 # Microsoft Entra Connect Sync service features
 
@@ -117,6 +118,12 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SoftBlock `
 > [!NOTE]
 > When BlockSoftMatch is enabled, new hybrid-joined devices will encounter an InvalidSoftMatch error during a Soft Match attempt. This occurs when the computer object synchronized from on-premises Active Directory (AD) to Entra is merged with the new device registered in the cloud. To resolve this issue, administrators should temporarily disable BlockSoftMatch to allow the hybrid join to proceed.
 > 
+
+## Allow onPremisesObjectIdentifier updates during hard match enforcement
+
+During hard match security enforcement, Microsoft Entra ID blocks on-premises updates to a cloud user's `onPremisesObjectIdentifier` attribute. If you can't remediate the affected objects before enforcement begins, enable the tenant-level feature flag `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled` to temporarily lift this block. The flag is disabled by default. Enable it only as a temporary bypass during a migration, recovery, or consolidation scenario, and disable it after remediation is complete.
+
+For the enablement steps and guidance on when to use this bypass, see [Temporarily allow onPremisesObjectIdentifier updates](how-to-connect-install-existing-tenant.md#temporarily-allow-onpremisesobjectidentifier-updates).
 
 ## Synchronize userPrincipalName updates
 
