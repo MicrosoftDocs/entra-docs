@@ -32,7 +32,11 @@ You can identify sign-ins that are billed to Microsoft Entra Private Access for 
 
 ## Link your tenant to a subscription
 
-Your tenants must be linked to an Azure subscription for proper billing and access to features. Contact your Microsoft account team for details.
+Global Secure Access external user access licensing is supported through Microsoft Entra External ID subscription linking. The administrator must link the subscription in the resource tenant so guest users can access private resources and usage is billed correctly.
+
+To link the subscription in the resource tenant, follow the steps in [Link a workforce tenant to a subscription](~/external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
+
+If you need help with billing or subscription linking, contact your Microsoft account team for details.
 
 ## Global Secure Access guest user licensing FAQs
 
