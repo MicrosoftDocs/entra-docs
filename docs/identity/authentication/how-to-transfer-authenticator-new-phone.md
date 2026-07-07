@@ -29,8 +29,6 @@ To back up Authenticator on an iOS device, enable iCloud Drive, Keychain, and Ba
 1. Go to **Apple Account** > **iCloud** > **Saved to iCloud** and search for **Authenticator**.
 1. Turn on the **Authenticator** toggle.
 
-   :::image type="content" source="media/how-to-transfer-authenticator-new-phone/authenticator-icloud-backup-toggle.jpg" alt-text="Screenshot showing the Authenticator toggle enabled in iCloud settings.":::
-
 ## Back up Microsoft Authenticator on Android
 
 To back up your Authenticator account entries on an Android device:
