@@ -30,6 +30,7 @@ To enable external user access with the Global Secure Access client, you must ha
     > [!TIP]
     > The home tenant doesn't need to have a Global Secure Access license.
 - Global Secure Access Private Access enabled on the resource tenant. Configure the Private Access traffic forwarding profile on the resource tenant and assign the profile to external user accounts.
+- The resource tenant linked to an Azure subscription through Microsoft Entra External ID subscription linking. The administrator must link the subscription in the resource tenant so external users can access private resources and usage is billed correctly. For more information, see [Global Secure Access licensing for guest users](reference-licensing-guest-users.md#link-your-tenant-to-a-subscription).
 - At least one private application configured and assigned to external user accounts.
 - The external user access feature enabled on the client by setting the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\Software\Microsoft\Global Secure Access Client`
