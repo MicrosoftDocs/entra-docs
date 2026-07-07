@@ -48,6 +48,8 @@ items:
       href: how-to-migrate-passwords-just-in-time.md
     - name: Migrate from Azure AD B2C
       items:
+        - name: Analyze custom policies
+          href: how-to-analyze-azure-ad-b2c-custom-policies.md
         - name: Plan your migration
           href: plan-your-migration-from-b2c-to-external-id.md
         - name: HSC mode limitations
