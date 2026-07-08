@@ -25,10 +25,11 @@ Your Microsoft Entra tenant might contain AI agents with or without a Microsoft 
 
 ## Disabling agent identity considerations
 
-Disabling an agent identity in your tenant might have broader consequences than simply stopping new AI agents from being created or used. Before you proceed, evaluate the following considerations:
+Disabling an agent identity or agent identity blueprint in your tenant might have broader consequences than simply stopping new AI agents from being created or used. Before you proceed, evaluate the following considerations:
 
 - Existing agents running in your organization might begin to fail.
 - Microsoft product experiences that assume agent identity availability (for example, Copilot Studio agents, Security Copilot scenario agents, Microsoft Entra Conditional Access Optimization Agent) might fail or fall back to standard service principals that lack agent-specific tracking and controls.
+- If you globally disable an agent identity blueprint in your tenant which has had principals and child identities created in other tenants, then related agents in those tenants may fail or lose functionality.
 
 ## Monitor for agent identity creation and activity
 
@@ -75,6 +76,12 @@ To disable an agent identity blueprint:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator).
 1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
 1. Select the agent identity blueprint you want to disable then select **Disable**.
+
+To globally disable an agent identity blueprint: 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator).
+1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
+1. Select the agent identity blueprint you want to globally disable then select **Disable globally**.
 
 ## Create Conditional Access policies to disable agent activities
 
