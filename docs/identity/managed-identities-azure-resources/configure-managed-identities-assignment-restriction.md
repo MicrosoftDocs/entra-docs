@@ -1,5 +1,5 @@
 ---
-title: Configure assignment restriction for user-assigned managed identities
+title: Configure assignment restriction for user-assigned managed identities (Preview)
 description: Learn how to configure assignment restriction for a user-assigned managed identity in the Azure portal to scope it to specific resource providers.
 author: kengaderdus
 ms.author: kengaderdus
@@ -14,9 +14,9 @@ ai-usage: ai-assisted
 
 ---
 
-# Configure assignment restriction for user-assigned managed identities
+# Configure assignment restriction for user-assigned managed identities (Preview)
 
-This article describes how to configure assignment restrictions (also referred to as resource restrictions) for a user-assigned managed identity by using the Azure portal.
+This article describes how to configure assignment restrictions (also referred to as resource restrictions) for a user-assigned managed identity by using the Azure portal. This is a feature in public preview.
 
 Assignment restrictions let you explicitly define the resource providers or resource types that a managed identity can be assigned to. Enforcing assignment restrictions keeps managed identities within their intended scope, which strengthens security and operational boundaries. By restricting where a managed identity can be assigned, you limit identity reuse and reduce blast radius.
 
