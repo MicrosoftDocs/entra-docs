@@ -1,5 +1,5 @@
 ---
-title: Assignment restriction for managed identities
+title: Assignment restriction for managed identities (Preview)
 description: Learn how assignment restrictions scope a user-assigned managed identity to one or more resource providers to improve security and resilience.
 author: kengaderdus
 ms.author: kengaderdus
@@ -13,10 +13,39 @@ ai-usage: ai-assisted
 #customer intent: As an Azure administrator, I want to understand assignment restriction for user-assigned managed identities so that I can scope identity usage to one or more resource providers and reduce security and operational risk.
 
 ---
+## Note about supported Resource Providers and Resource Types in the Azure portal
 
-# Assignment restriction for user-assigned managed identities
+The **Select Resource Types** pane in the Azure portal does not display all resource providers and resource types that support managed identities. If the resource you want to configure is not listed, use the Azure CLI to create or update the identity assignment. Refer to the Azure CLI examples below for resources that are not currently available in the **Select Resource Types** list.
 
-Assignment restrictions, also known as resource restrictions, are a security feature for user-assigned managed identities that limit the resource providers an identity can be assigned to. Assignment restrictions let you isolate a managed identity to one or more resource providers so that it can't be reused across unrelated services.
+### Create an identity with resource assignment restrictions
+
+```bash
+az identity create \
+  --name MyIdentity \
+  --resource-group MyResourceGroup \
+  --resource-restriction '{"providers": ["Microsoft.Compute", "Microsoft.Storage/Accounts"]}'
+```
+
+### Update an identity to restrict assignment to specific resources
+
+```bash
+az identity update \
+  --name MyIdentity \
+  --resource-group MyResourceGroup \
+  --resource-restriction '{"providers": ["Microsoft.Compute", "Microsoft.Storage/Accounts"]}'
+```
+
+### List the associated resources for an identity
+
+```bash
+az identity list-resources \
+  --name MyIdentity \
+  --resource-group MyResourceGroup
+```
+
+# Assignment restriction for user-assigned managed identities (Preview)
+
+Assignment restrictions, also known as resource restrictions, are a security feature for user-assigned managed identities that limit the resource providers an identity can be assigned to. It is currently a public preview feature. Assignment restrictions let you isolate a managed identity to one or more resource providers so that it can't be reused across unrelated services.
 
 When you configure assignment restriction, managed identity usage stays tightly scoped. This scoping reduces the blast radius of a compromised or misconfigured identity and helps improve both security and resilience.
 
