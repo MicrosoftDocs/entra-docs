@@ -15,6 +15,11 @@ ai-usage: ai-assisted
 ---
 ## Note about supported Resource Providers and Resource Types in the Azure portal
 
+> [!NOTE]
+> Selecting **None** for resource assignment restrictions leaves the identity unrestricted, allowing it to be assigned to resources from any resource provider that supports managed identities.
+>
+> Configure resource assignment restrictions only when you want to limit identity assignment to specific resource providers. Be aware that the **Select Resource Types** list in the Azure portal may not include all supported resource providers and resource types.
+
 The **Select Resource Types** pane in the Azure portal does not display all resource providers and resource types that support managed identities. If the resource you want to configure is not listed, use the Azure CLI to create or update the identity assignment. Refer to the Azure CLI examples below for resources that are not currently available in the **Select Resource Types** list.
 
 ### Create an identity with resource assignment restrictions
@@ -41,6 +46,24 @@ az identity update \
 az identity list-resources \
   --name MyIdentity \
   --resource-group MyResourceGroup
+```
+
+### Create an unrestricted identity
+
+```bash
+az identity create \
+--name MyIdentity \
+--resource-group MyResourceGroup \
+--resource-restriction '{"providers": []}'
+```
+
+### Remove all resource provider restrictions from an identity
+
+```bash
+az identity update \
+--name MyIdentity \
+--resource-group MyResourceGroup \
+--resource-restriction '{"providers": []}'
 ```
 
 # Assignment restriction for user-assigned managed identities (Preview)
