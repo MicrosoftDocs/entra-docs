@@ -87,6 +87,7 @@ Add on-premises applications to Microsoft Entra ID.
 After creating a new application proxy application, grant admin consent for the **User.Read** delegated permission in the Microsoft Entra admin center or using the Microsoft Graph PowerShell.
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
 2. Browse to **Identity** > **Applications** > **Enterprise applications**.
 3. Select the newly created application proxy application.
@@ -95,6 +96,7 @@ After creating a new application proxy application, grant admin consent for the 
 6. Review the permissions and select **Accept**.
 
 ### [Microsoft Graph PowerShell](#tab/microsoft-graph-powershell)
+
 ```powershell
 # Connect with the required scope
 Connect-MgGraph -Scopes "Application.ReadWrite.All", "DelegatedPermissionGrant.ReadWrite.All"
@@ -116,6 +118,10 @@ New-MgOauth2PermissionGrant -ClientId $sp.Id `
     -ResourceId $graphSp.Id `
     -Scope "User.Read"
 ```
+
+---
+
+
 
 ### Verify the permission was granted
 
