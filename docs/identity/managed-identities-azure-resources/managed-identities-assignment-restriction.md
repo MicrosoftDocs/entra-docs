@@ -44,7 +44,7 @@ This behavior lets services maintain their downstream dependencies while keeping
 
 ## Benefits of assignment restriction
 
-The following benefits make assignment restriction a strong default for production workloads.
+Assignment restriction provides the following security and operational benefits.
 
 ### Reduced security exposure
 
