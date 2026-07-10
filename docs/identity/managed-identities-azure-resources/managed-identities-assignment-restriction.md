@@ -1,8 +1,8 @@
 ---
 title: Assignment restriction for managed identities (Preview)
 description: Learn how assignment restrictions scope a user-assigned managed identity to one or more resource providers to improve security and resilience.
-author: kengaderdus
-ms.author: kengaderdus
+author: mmacy-msft
+ms.author: marshmacy
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: concept-article
