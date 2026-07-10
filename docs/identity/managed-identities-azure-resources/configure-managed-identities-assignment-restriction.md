@@ -1,22 +1,22 @@
 ---
-title: Configure assignment restriction for user-assigned managed identities
+title: Configure assignment restriction for user-assigned managed identities (preview)
 description: Learn how to configure assignment restriction for a user-assigned managed identity in the Azure portal to scope it to specific resource providers.
-author: kengaderdus
-ms.author: kengaderdus
+author: mmacy-msft
+ms.author: marshmacy
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.custom: msecd-doc-authoring-10012
-ms.date: 04/24/2026
+ms.date: 07/10/2026
 ai-usage: ai-assisted
 
 #customer intent: As an Azure administrator, I want to configure assignment restriction for a user-assigned managed identity so that the identity can only be assigned to source resources within an allowed resource provider scope.
 
 ---
 
-# Configure assignment restriction for user-assigned managed identities
+# Configure assignment restriction for user-assigned managed identities (preview)
 
-This article describes how to configure assignment restrictions (also referred to as resource restrictions) for a user-assigned managed identity by using the Azure portal.
+This article describes how to configure assignment restrictions (also referred to as resource restrictions) for a user-assigned managed identity by using the Azure portal. This is a feature in preview.
 
 Assignment restrictions let you explicitly define the resource providers or resource types that a managed identity can be assigned to. Enforcing assignment restrictions keeps managed identities within their intended scope, which strengthens security and operational boundaries. By restricting where a managed identity can be assigned, you limit identity reuse and reduce blast radius.
 
@@ -70,7 +70,59 @@ You can update the isolation scope and assignment restrictions of an existing us
 > [!NOTE]
 > If your update removes a resource provider from the assignment restrictions list, unassign the user-assigned managed identity from the source resource *first*, before you remove the resource provider from the list.
 
+## Supported resource providers and resource types in the Azure portal
+
+> [!NOTE]
+> Selecting **None** for resource assignment restrictions leaves the identity unrestricted, allowing it to be assigned to resources from any resource provider that supports managed identities.
+>
+> Configure resource assignment restrictions only when you want to limit identity assignment to specific resource providers. Be aware that the **Select Resource Types** list in the Azure portal may not include all supported resource providers and resource types.
+
+The **Select Resource Types** pane in the Azure portal does not display all resource providers and resource types that support managed identities. If the resource you want to configure is not listed, use the Azure CLI to create or update the identity assignment. Refer to the Azure CLI examples below for resources that are not currently available in the **Select Resource Types** list.
+
+### Create an identity with resource assignment restrictions
+
+```bash
+az identity create \
+  --name MyIdentity \
+  --resource-group MyResourceGroup \
+  --resource-restriction '{"providers": ["Microsoft.Compute", "Microsoft.Storage/Accounts"]}'
+```
+
+### Update an identity to restrict assignment to specific resources
+
+```bash
+az identity update \
+  --name MyIdentity \
+  --resource-group MyResourceGroup \
+  --resource-restriction '{"providers": ["Microsoft.Compute", "Microsoft.Storage/Accounts"]}'
+```
+
+### List the associated resources for an identity
+
+```bash
+az identity list-resources \
+  --name MyIdentity \
+  --resource-group MyResourceGroup
+```
+
+### Create an unrestricted identity
+
+```bash
+az identity create \
+--name MyIdentity \
+--resource-group MyResourceGroup \
+--resource-restriction '{"providers": []}'
+```
+
+### Remove all resource provider restrictions from an identity
+
+```bash
+az identity update \
+--name MyIdentity \
+--resource-group MyResourceGroup \
+--resource-restriction '{"providers": []}'
+```
+
 ## Related content
 
 - [Assignment restriction for user-assigned managed identities](managed-identities-assignment-restriction.md)
-

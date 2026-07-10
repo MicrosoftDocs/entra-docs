@@ -1,22 +1,22 @@
 ---
-title: Assignment restriction for managed identities
+title: Assignment restriction for managed identities (preview)
 description: Learn how assignment restrictions scope a user-assigned managed identity to one or more resource providers to improve security and resilience.
-author: kengaderdus
-ms.author: kengaderdus
+author: mmacy-msft
+ms.author: marshmacy
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-10012
-ms.date: 04/24/2026
+ms.date: 07/10/2026
 ai-usage: ai-assisted
 
 #customer intent: As an Azure administrator, I want to understand assignment restriction for user-assigned managed identities so that I can scope identity usage to one or more resource providers and reduce security and operational risk.
 
 ---
 
-# Assignment restriction for user-assigned managed identities
+# Assignment restriction for user-assigned managed identities (preview)
 
-Assignment restrictions, also known as resource restrictions, are a security feature for user-assigned managed identities that limit the resource providers an identity can be assigned to. Assignment restrictions let you isolate a managed identity to one or more resource providers so that it can't be reused across unrelated services.
+Assignment restrictions, also known as resource restrictions, are a security feature for user-assigned managed identities that limit the resource providers an identity can be assigned to. Assignment restrictions are currently in preview. They let you isolate a managed identity to one or more resource providers so that it can't be reused across unrelated services.
 
 When you configure assignment restriction, managed identity usage stays tightly scoped. This scoping reduces the blast radius of a compromised or misconfigured identity and helps improve both security and resilience.
 
@@ -44,7 +44,7 @@ This behavior lets services maintain their downstream dependencies while keeping
 
 ## Benefits of assignment restriction
 
-The following benefits make assignment restriction a strong default for production workloads.
+Assignment restriction provides the following security and operational benefits.
 
 ### Reduced security exposure
 
@@ -85,6 +85,15 @@ Consider the following best practices when you plan assignment restriction for u
 - Create separate managed identities per resource provider.
 - Match managed identity scope to the intended source resources only.
 - Avoid reusing managed identities across unrelated workloads for convenience.
+
+## Supported resource providers and resource types in the Azure portal
+
+> [!NOTE]
+> Selecting **None** for resource assignment restrictions leaves the identity unrestricted, allowing it to be assigned to resources from any resource provider that supports managed identities.
+>
+> Configure resource assignment restrictions only when you want to limit identity assignment to specific resource providers. The **Select Resource Types** list in the Azure portal might not include all supported resource providers and resource types.
+
+If the resource provider or resource type you want to configure isn't listed in the **Select Resource Types** pane, use the Azure CLI. For configuration steps and command examples, see [Configure assignment restriction for user-assigned managed identities](configure-managed-identities-assignment-restriction.md).
 
 ## Related content
 
