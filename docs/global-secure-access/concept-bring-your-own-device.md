@@ -48,10 +48,9 @@ The Global Secure Access client supports bring your own device (BYOD) scenarios 
     3. A device-wide VPN profile is created. The Global Secure Access tile is off by default; the user must turn it on to send Private Access traffic.
 - Enable private traffic profiles for these users.
 
-## macOS
+## MacOS
 
-macOS devices must be enrolled through a Mobile Device Management (MDM) solution. BYOD scenarios without device enrollment aren't supported on macOS.
-- Enable private traffic profiles for these users.
+MacOS devices must be enrolled through a Mobile Device Management (MDM) solution. BYOD scenarios without device enrollment aren't supported on macOS.
 
 ### Platform behavior
 
