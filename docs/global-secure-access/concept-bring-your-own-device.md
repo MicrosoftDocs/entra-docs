@@ -50,8 +50,7 @@ The Global Secure Access client supports bring your own device (BYOD) scenarios 
 
 ## macOS
 
-BYOD support without device enrollment is available through Microsoft Entra device registration.
-- Install and register the device using the Company Portal (no device enrollment required).
+macOS devices must be enrolled through a Mobile Device Management (MDM) solution. BYOD scenarios without device enrollment aren't supported on macOS.
 - Enable private traffic profiles for these users.
 
 ### Platform behavior
@@ -60,7 +59,7 @@ BYOD support without device enrollment is available through Microsoft Entra devi
 |---|---|---|---|---|---|---|
 | Windows Microsoft Entra Joined and Hybrid joined device | Client connects to the tenant to which device joined. | ✅ | ✅ | ✅ | ✅ | Enable the Sign out option in the client to allow users to sign out and switch to an external tenant. Allows user to switch to a resource tenant using external user access(B2B). |
 | Windows Microsoft Entra Registered device | User selects a tenant at first sign-in. | ❌ | ❌ | ❌ | ✅ | Can switch to other tenant by selecting **Sign out** option on the client. Allows user to switch to a resource tenant using external user access(B2B). |
-| MacOS Microsoft Entra Registered device with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Uses Company Portal to Microsoft Entra register the device. |
+| macOS Microsoft Entra Registered device with device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Requires device enrollment through an MDM solution. |
 | Android Microsoft Entra Registered with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. For unmanaged devices, Microsoft Entra registration can be done with Company portal and Authenticator app. |
 | iOS Microsoft Entra Registered with and without device enrollment | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | ✅ | ✅ | Applies to enrolled devices with Company Portal. For unmanaged devices, Microsoft Entra registration can be done with Authenticator app. |
 
