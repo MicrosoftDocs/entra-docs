@@ -44,6 +44,10 @@ On managed devices, such as those governed by browser policy or enterprise mobil
 
 For unmanaged devices, you can instruct users to manually enter the PAC file location in browser settings or rely on a network-provided configuration. A network-provided configuration might be Dynamic Host Configuration Protocol (DHCP) or Web Proxy Auto-Discovery (WPAD).
 
+## Next steps
+
+- [Learn how to configure custom proxy automatic configuration file hosting](how-to-custom-proxy-file-hosting.md)
+
 ## Related content
 
 - [Learn how to configure Explicit Forward Proxy](how-to-configure-explicit-forward-proxy.md)
