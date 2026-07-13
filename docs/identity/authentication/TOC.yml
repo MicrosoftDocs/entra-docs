@@ -306,6 +306,8 @@
     items:
     - name: Manage
       href: howto-authentication-sms-signin.md
+    - name: Passkey by default and SMS/Voice retirement
+      href: concept-sms-voice-retirement.md
     - name: Supported apps for SMS-based authentication
       href: how-to-authentication-sms-supported-apps.md
     - name: Two-way SMS unsupported
