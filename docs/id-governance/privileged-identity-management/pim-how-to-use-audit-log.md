@@ -16,7 +16,7 @@ You can use the Microsoft Entra Privileged Identity Management (PIM) Resource au
 
 PIM Resource audit log is a subset of Microsoft Entra audit logs. Use [Microsoft Entra security and activity reports](~/identity/monitoring-health/overview-monitoring-health.md) to view the full audit history of Microsoft Entra ID activity including administrator, end user, and synchronization activity.
 
-If you want to retain audit data for longer than the default retention period, you can use Diagnostic Settings in Azure Monitor to route it to an Azure storage account or Log Analytics. For more information, see [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+If you want to retain audit data for longer than the default retention period, you can use Diagnostic Settings in Azure Monitor to route it to an Azure storage account or Log Analytics. For more information, see [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 Follow these steps to view the audit history for Microsoft Entra roles.
 
