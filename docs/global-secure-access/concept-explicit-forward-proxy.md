@@ -6,7 +6,7 @@ ms.date: 04/06/2026
 ms.reviewer: alexpav
 ---
 
-# Explicit Forward Proxy (preview) overview
+# Explicit Forward Proxy overview
 
 Explicit Forward Proxy is a traffic acquisition mechanism that's useful in scenarios where installation of the Global Secure Access client is difficult or not possible. Explicit Forward Proxy helps protect internet traffic when users use browsers to access resources from:
 
@@ -17,9 +17,6 @@ Explicit Forward Proxy is a traffic acquisition mechanism that's useful in scena
 * Bring-your-own devices with Microsoft Edge and Intune app policies
 
 Explicit Forward Proxy relies on proxy automatic configuration (PAC) files to configure browsers for Microsoft Entra Internet Access connectivity. It uses the HTTP CONNECT protocol to facilitate network communication between the user and the Microsoft Entra Internet Access service. It uses Microsoft Entra ID and Microsoft Entra Conditional Access to authenticate and authorize user access to internet resources.
-
-> [!IMPORTANT]
-> The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Traffic flow
 
