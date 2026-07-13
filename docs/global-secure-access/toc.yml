@@ -343,6 +343,8 @@ items:
         href: how-to-configure-explicit-forward-proxy-headers.md
       - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune mobile application management
         href: how-to-configure-explicit-forward-proxy-intune-policy.md
+      - name: Configure custom proxy automatic configuration file hosting
+        href: how-to-custom-proxy-file-hosting.md    
   - name: Logs and monitoring
     expanded: false
     items:
