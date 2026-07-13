@@ -6,12 +6,9 @@ ms.date: 04/06/2026
 ms.reviewer: alexpav
 ---
 
-# Explicit Forward Proxy (preview) session management
+# Explicit Forward Proxy session management
 
 Explicit Forward Proxy uses Microsoft Entra ID authentication and authorization to validate user access before allowing network traffic. This validation method allows for adaptive policies in Microsoft Entra Conditional Access, modern credentials like passkeys, and Continuous Access Evaluation with session revocation. Classic proxy authorization methods, such as basic, digest, NTLM, or Kerberos, aren't supported.
-
-> [!IMPORTANT]
-> The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Session management settings
 
