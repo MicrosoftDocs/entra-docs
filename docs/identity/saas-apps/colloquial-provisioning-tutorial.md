@@ -10,9 +10,12 @@ ms.date: 03/31/2026
 
 # Configure Colloquial for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both Colloquial and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Colloquial](https://www.colloquial.io) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Colloquial and Microsoft Entra ID to configure automatic user provisioning. Before you begin, review the [prerequisites](#prerequisites) to ensure your environment is ready. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Colloquial](https://www.colloquial.io) using the Microsoft Entra provisioning service. For important details on what the Microsoft Entra provisioning service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Supported capabilities
+
+Colloquial supports the following provisioning and access capabilities:
+
 > [!div class="checklist"]
 > * Create users in Colloquial.
 > * Remove users in Colloquial when they don't require access anymore.
@@ -28,6 +31,9 @@ The scenario outlined in this article assumes that you already have the followin
 * A user account in Colloquial with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
+
+Before you configure provisioning, complete the following planning tasks:
+
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 * Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and Colloquial](~/identity/app-provisioning/customize-application-attributes.md).
@@ -37,9 +43,11 @@ Contact Colloquial support to configure Colloquial to support provisioning with 
 
 ## Step 3: Add Colloquial from the Microsoft Entra application gallery
 
-Add Colloquial from the Microsoft Entra application gallery to start managing provisioning to Colloquial. If you have previously setup Colloquial for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Colloquial from the Microsoft Entra application gallery to start managing provisioning to Colloquial. If you previously set up the Colloquial enterprise application for SSO, you can use that enterprise application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about [adding an application from the gallery](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
+
+Use the following steps to define which users and groups are in scope for provisioning:
 
 [!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
@@ -98,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	|locale|String|||
 	|timezone|String|||
 
-1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in [Define scoping filters for provisioning user accounts](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
@@ -106,9 +114,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ## Step 6: Monitor your deployment
 
+After you enable provisioning, use the following guidance to monitor the deployment:
+
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
-## More resources
+## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

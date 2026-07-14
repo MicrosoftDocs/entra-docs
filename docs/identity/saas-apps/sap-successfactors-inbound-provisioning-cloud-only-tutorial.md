@@ -70,12 +70,12 @@ Configuring Cloud HR driven user provisioning from SuccessFactors to Microsoft E
 * Attribute transformation 
 * Scoping filters
 
-Please refer to the [cloud HR deployment plan](~/identity/app-provisioning/plan-cloud-hr-provision.md) for comprehensive guidelines around these topics. 
+Please refer to the [cloud HR deployment plan](~/identity/app-provisioning/plan-cloud-hr-provision.md) for comprehensive guidelines on matching IDs, attribute mapping, attribute transformation, and scoping filters. 
 Please refer to the [SAP SuccessFactors integration reference](~/identity/app-provisioning/sap-successfactors-integration-reference.md) to learn about the supported entities, processing details and how to customize the integration for different HR scenarios. 
 
 ## Configuring SuccessFactors for the integration
 
-A common requirement of all the SuccessFactors provisioning connectors is that they require credentials of a SuccessFactors account with the right permissions to invoke the SuccessFactors OData APIs. This section describes steps to create the service account in SuccessFactors and grant appropriate permissions. 
+A common requirement of all the SuccessFactors provisioning connectors is that they require credentials of a SuccessFactors account with the right permissions to invoke the SuccessFactors OData APIs. The following procedure describes how to create the service account in SuccessFactors and grant the required permissions. 
 
 * [Create/identify API user account in SuccessFactors](#createidentify-api-user-account-in-successfactors)
 * [Create an API permissions role](#create-an-api-permissions-role)
@@ -139,7 +139,7 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 
 ## Configuring user provisioning from SuccessFactors to Microsoft Entra ID
 
-This section provides steps for user account provisioning from SuccessFactors to Microsoft Entra ID.
+The following procedure provides steps for provisioning user accounts from SuccessFactors to Microsoft Entra ID.
 
 * [Add the provisioning connector app and configure connectivity to SuccessFactors](#part-1-add-the-provisioning-connector-app-and-configure-connectivity-to-successfactors)
 * [Configure attribute mappings](#part-2-configure-attribute-mappings)
@@ -201,7 +201,7 @@ In this section, you configure how user data flows from SuccessFactors to Micros
    > When you're configuring the provisioning app for the first time, you need to test and verify your attribute mappings and expressions to make sure that it's giving you the desired result. Microsoft recommends using the scoping filters under **Source Object Scope** to test your mappings with a few test users from SuccessFactors. Once you've verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
 
    > [!CAUTION] 
-   > The default behavior of the provisioning engine is to disable/delete users that go out of scope. This may not be desirable in your SuccessFactors to Microsoft Entra integration. To override this default behavior refer to the article [Skip deletion of user accounts that go out of scope](~/identity/app-provisioning/skip-out-of-scope-deletions.md)
+   > The default behavior of the provisioning engine is to disable/delete users that go out of scope. This may not be desirable in your SuccessFactors to Microsoft Entra integration. To override the default behavior of disabling or deleting users who go out of scope, refer to the article [Skip deletion of user accounts that go out of scope](~/identity/app-provisioning/skip-out-of-scope-deletions.md)
   
 1. In the **Target Object Actions** field, you can globally filter what actions are performed in Microsoft Entra ID. **Create** and **Update** are most common.
 
@@ -210,7 +210,7 @@ In this section, you configure how user data flows from SuccessFactors to Micros
      >[!NOTE]
      >For the complete list of SuccessFactors attribute supported by the application, please refer to [SuccessFactors Attribute Reference](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
 
-1. Select an existing attribute mapping to update it, or select **Add new mapping** at the bottom of the screen to add new mappings. An individual attribute mapping supports these properties:
+1. Select an existing attribute mapping to update it, or select **Add new mapping** at the bottom of the screen to add new mappings. An individual attribute mapping supports the following properties:
 
       * **Mapping Type**
 
@@ -218,7 +218,7 @@ In this section, you configure how user data flows from SuccessFactors to Micros
 
          * **Constant** - Write a static, constant string value to the Microsoft Entra attribute
 
-         * **Expression** – Allows you to write a custom value to the Microsoft Entra attribute, based on one or more SuccessFactors attributes. [For more info, see this article on expressions](~/identity/app-provisioning/functions-for-customizing-application-data.md).
+         * **Expression** – Allows you to write a custom value to the Microsoft Entra attribute, based on one or more SuccessFactors attributes. For more info, see [Expressions for customizing application data](~/identity/app-provisioning/functions-for-customizing-application-data.md).
 
       * **Source attribute** - The user attribute from SuccessFactors
 
@@ -252,7 +252,7 @@ Once the SuccessFactors provisioning app configurations have been completed, you
 
 2. Select **Save**.
 
-3. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the SuccessFactors tenant. You can check the progress bar to the track the progress of the sync cycle. 
+3. Saving the provisioning status starts the initial sync, which can take a variable number of hours depending on how many users are in the SuccessFactors tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
 4. At any time, check the **Provisioning** tab in the Entra admin center to see what actions the provisioning service has performed. The provisioning logs lists all individual sync events performed by the provisioning service, such as which users are being read out of SuccessFactors and then subsequently added or updated to Microsoft Entra ID. 
 
@@ -263,7 +263,7 @@ Once the SuccessFactors provisioning app configurations have been completed, you
 
 ## Related content
 
-* [Learn more about supported SuccessFactors Attributes for inbound provisioning](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
-* [Learn how to configure email writeback to SuccessFactors](sap-successfactors-writeback-tutorial.md)
-* [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
-* [Learn how to integrate other SaaS applications with Microsoft Entra ID](tutorial-list.md)
+* [Supported SuccessFactors attributes for inbound provisioning](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
+* [Configure email writeback to SuccessFactors](sap-successfactors-writeback-tutorial.md)
+* [Review provisioning logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+* [Integrate SaaS applications with Microsoft Entra ID](tutorial-list.md)
