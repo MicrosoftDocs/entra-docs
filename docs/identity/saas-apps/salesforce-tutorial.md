@@ -19,11 +19,11 @@ In this article, you learn how to integrate Salesforce with Microsoft Entra ID. 
 > **Updated: June 24, 2026** - Starting June 29, 2026, Microsoft Entra ID will automatically include Authentication Method References (`amr`) and Authentication Context References (`acr`) claims in tokens issued for SAML 2.0 and OpenID Connect (OIDC) applications using the Microsoft identity platform v2.0 endpoint. These claims provide additional information about how the user authenticated and the authentication context satisfied during sign-in. No configuration changes are required in Microsoft Entra ID for Salesforce single sign-on. To help satisfy Salesforce [phishing-resistant MFA requirements](https://help.salesforce.com/s/articleView?id=005321563&type=1) for Salesforce admins, customers should apply Microsoft Entra Conditional Access policies that require phishing-resistant authentication methods for Salesforce administrator sign-ins
 
 > [!Note]
->   We are aware that Salesforce has enforced the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy which will enforce MFA is configured to satisfy this requirement. You can read more about this claim [here](~/identity-platform/single-sign-on-saml-protocol.md#authnmethodreferences).
+>   We are aware that Salesforce has enforced the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy which will enforce MFA is configured to satisfy this requirement. You can read more about this claim in [SAML single sign-on protocol AuthnMethodReferences](~/identity-platform/single-sign-on-saml-protocol.md#authnmethodreferences).
 > 
 >   For customers using [OpenID Connect Authentication with Salesforce](https://help.salesforce.com/s/articleView?id=xcloud.sso_provider_microsoft_only.htm&type=5) or if you have configured Salesforce with [custom OpenID Connect provider](https://help.salesforce.com/s/articleView?id=xcloud.sso_provider_plugin_custom.htm&type=5), you can switch back to the Microsoft identity platform v2.0 endpoint. The v2.0 endpoint now sends the `amr` claim in the token as needed by Salesforce based on the user's authentication.
 >
->  For customers using AD FS as the federation provider with Entra ID, please follow the guidance published [here](~/identity/authentication/how-to-mfa-expected-inbound-assertions.md#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
+>  For customers using AD FS as the federation provider with Entra ID, please follow the [MFA expected inbound assertions guidance for SAML 2.0 federated IdPs](~/identity/authentication/how-to-mfa-expected-inbound-assertions.md#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ To configure the integration of Salesforce into Microsoft Entra ID, you need to 
 
 ## Configure and test Microsoft Entra SSO for Salesforce
 
-Configure and test Microsoft Entra SSO with Salesforce using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Salesforce.
+Configure and test Microsoft Entra SSO with Salesforce using a test user called **B.Simon**. For SSO to work, you need to establish a link between the Microsoft Entra test user B.Simon and the corresponding user account in Salesforce.
 
 To configure and test Microsoft Entra SSO with Salesforce, perform the following steps:
 
@@ -154,7 +154,7 @@ Follow these steps to enable Microsoft Entra SSO.
     ![Configure Single Sign-On User Provisioning Enabled](./media/salesforce-tutorial/salesforcexml.png)
 
     > [!NOTE]
-    > If you configured SAML JIT, you must complete an additional step in the **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** section. The Salesforce application expects specific SAML assertions, which requires you to have specific attributes in your SAML token attributes configuration. The following screenshot shows the list of required attributes by Salesforce.
+    > If you configured SAML JIT, you must add the required SAML token attributes in the **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** section. The Salesforce application expects specific SAML assertions, which requires you to have specific attributes in your SAML token attributes configuration. The following screenshot shows the list of required attributes by Salesforce.
     
     ![Screenshot that shows the JIT required attributes pane.](./media/salesforce-tutorial/just-in-time-attributes-required.png)
     
@@ -176,7 +176,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create Salesforce test user
 
-In this section, a user called B.Simon is created in Salesforce. Salesforce supports just-in-time provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Salesforce, a new one is created when you attempt to access Salesforce. Salesforce also supports automatic user provisioning, you can find more details [here](salesforce-provisioning-tutorial.md) on how to configure automatic user provisioning.
+In this section, a user called B.Simon is created in Salesforce. Salesforce supports just-in-time provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Salesforce, a new one is created when you attempt to access Salesforce. Salesforce also supports automatic user provisioning. For more details, see [Configure Salesforce automatic user provisioning](salesforce-provisioning-tutorial.md).
 
 ## Test SSO
 
@@ -189,6 +189,8 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * You can use Microsoft My Apps. When you select the Salesforce tile in the My Apps portal, you should be automatically signed in to the Salesforce for which you set up the SSO. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Test SSO for Salesforce (Mobile)
+
+Perform the following steps to test SSO in the Salesforce mobile app:
 
 1. Open Salesforce mobile application. On the sign-in page, select **Use Custom Domain**.
 
@@ -212,7 +214,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
     ![Salesforce mobile app](media/salesforce-tutorial/mobile-app6.png)
 
 ## Discover existing users in Salesforce
-Prior to integration with Microsoft Entra, your Salesforce account may already have one or more users. Using the account discovery functionality, you can generate a report of all the users in Salesforce, identify which users have matching accounts in Entra, and which users are local to Salesforce with one click. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). This enables you to simplify onboarding to Entra, while also periodically monitoring for unauthorized access. 
+Prior to integration with Microsoft Entra, your Salesforce account may already have one or more users. Using the account discovery functionality, you can generate a report of all the users in Salesforce, identify which users have matching accounts in Entra, and which users are local to Salesforce with one click. Learn more in [How to use account discovery for application provisioning](~/identity/app-provisioning/how-to-account-discovery.md). This enables you to simplify onboarding to Entra, while also periodically monitoring for unauthorized access. 
 
 ## Prevent application access through local accounts
 Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your Conditional Access policies, MFA, etc. is in place to protect sign-ins to Salesforce. 

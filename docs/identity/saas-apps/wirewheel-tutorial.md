@@ -25,7 +25,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
-* WireWheel supports **SP and IDP** initiated SSO.
+* WireWheel supports **service provider (SP) and identity provider (IdP)**-initiated SSO.
 * WireWheel supports **Just In Time** user provisioning.
 
 ## Add WireWheel from the gallery
@@ -37,7 +37,7 @@ To configure the integration of WireWheel into Microsoft Entra ID, you need to a
 1. In the **Add from the gallery** section, type **WireWheel** in the search box.
 1. Select **WireWheel** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Microsoft 365 app configuration wizards](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-wirewheel'></a>
 
@@ -47,7 +47,7 @@ Configure and test Microsoft Entra SSO with WireWheel using a test user called *
 
 To configure and test Microsoft Entra SSO with WireWheel, perform the following steps:
 
-1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
+1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use Microsoft Entra single sign-on.
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure WireWheel SSO](#configure-wirewheel-sso)** - to configure the single sign-on settings on application side.
@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure WireWheel SSO
 
-To configure single sign-on on **WireWheel** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [WireWheel support team](mailto:support@wirewheel.io). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **WireWheel** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [WireWheel support team](mailto:support@wirewheel.io). The WireWheel support team uses these values to configure the SAML SSO connection properly on both sides.
 
 ### Create WireWheel test user
 
@@ -107,13 +107,17 @@ In this section, a user called Britta Simon is created in WireWheel. WireWheel s
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-#### SP initiated:
+### SP initiated:
 
-* Select **Test this application**, this option redirects to WireWheel Sign on URL where you can initiate the login flow.  
+Use either of the following options to test SP-initiated sign-on:
+
+* Select **Test this application**. Selecting **Test this application** redirects you to the WireWheel Sign on URL where you can initiate the login flow.  
 
 * Go to WireWheel Sign-on URL directly and initiate the login flow from there.
 
-#### IDP initiated:
+### IDP initiated:
+
+Use the following option to test IdP-initiated sign-on:
 
 * Select **Test this application**, and you should be automatically signed in to the WireWheel for which you set up the SSO. 
 
