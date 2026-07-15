@@ -81,6 +81,9 @@
 - name: Windows Devices
   expanded: false
   items:
+    - name: Admin SSO Control
+      href: sso-admin-control.md
+      displayName: admin, sso
     - name: Troubleshoot Windows devices
       href: troubleshoot-device-windows-joined.md
     - name: Troubleshoot primary refresh tokens on Windows devices

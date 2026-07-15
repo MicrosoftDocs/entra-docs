@@ -228,7 +228,6 @@ For a tutorial on setting up a workflow that uses the **Employee job profile cha
 
 The **Pre-Offboard inactive users** template is designed to configure tasks that must be completed before offboarding inactive users.
 
-
 :::image type="content" source="media/lifecycle-workflow-templates/begin-off-board-inactive-users-template.png" alt-text="Screenshot of the pre-offboard inactive users template.":::
 
 The default specific parameters for the **Pre-Offboard inactive users** template are as follows:
@@ -240,7 +239,7 @@ The default specific parameters for the **Pre-Offboard inactive users** template
 |Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Days of inactivity     | 90       | ✔️        |
 |Event timing     | Before        |  ❌       |
-|Event User attribute     | LastSignInDateTime        |   ❌      |
+|Event User attribute     | lastSuccessfulSignInDateTime        |   ❌      |
 |Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
 
@@ -259,10 +258,9 @@ The default specific parameters for the **Offboard inactive users** template are
 |Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Days from event     | 120        | ✔️        |
 |Event timing     | After        |  ❌       |
-|Event User attribute     | LastSignInDateTime        |   ❌      |
+|Event User attribute     | lastSuccessfulSignInDateTime        |   ❌      |
 |Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
-
 
 ### Transition agent sponsorships when a sponsor leaves
 
