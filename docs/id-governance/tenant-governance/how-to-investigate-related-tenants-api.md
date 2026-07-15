@@ -14,23 +14,6 @@ Discovery signals for a related tenant are summarized as aggregated, order-of-ma
 
 This article describes the workflow for investigating related tenant signals with Microsoft Graph. For the full request and response schema, see the Microsoft Graph API reference linked in [Related content](#related-content).
 
-## Prerequisites
-
-- A Microsoft Entra Tenant Governance license. For more information, see [Tenant Governance licensing](licensing.md).
-- Related tenants must be enabled for your tenant. If it isn't enabled yet, call the [enableRelatedTenants](/graph/api/tenantgovernanceservices-tenantgovernancesetting-enablerelatedtenants?view=graph-rest-beta&preserve-view=true) action first.
-- An appropriate Microsoft Graph permission:
-
-  | Permission type | Least privileged permission |
-  |---|---|
-  | Delegated (work or school account) | `TenantGovernance-RelatedTenant.Read.All` |
-  | Application | `TenantGovernance-RelatedTenant.Read.All` |
-
-  Personal Microsoft accounts aren't supported.
-
-- For delegated access, the signed-in user must have one of the following Microsoft Entra roles: **Tenant Governance Administrator**, **Global Reader**, or **Tenant Governance Reader**.
-
-The related tenant discovery APIs are available in the Microsoft Graph **beta** endpoint.
-
 ## When to use investigation hints
 
 Investigation hints let you move from an aggregated, order-of-magnitude metric to the specific users or applications behind it. Use them when you want to:
