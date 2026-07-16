@@ -61,7 +61,7 @@ Before configuring the registration campaign, ensure Passkey (FIDO2) is enabled 
 To configure a registration campaign for passkeys:
 
 1. Sign in to the Microsoft Entra admin center as an Authentication Policy Administrator.
-1. Go to **Protection > Authentication methods > Registration campaign**.
+1. Go to **Entra ID > Authentication methods > Registration campaign**.
 1. Set **State** to **Microsoft Managed** and target the security group of SMS and Voice users you created in step 1.
 
 ### 3. Evaluate a telecommunications provider in the Security Store for operational needs
@@ -138,6 +138,10 @@ See [Find users still using SMS or Voice](#1-find-users-enabled-for-sms-or-voice
 ### Which cloud environments are included in this timeline?
 
 This timeline applies to public cloud environments only. Other cloud environments will follow on a later schedule, and we will provide advance communications to help customers prepare for the transition.
+
+### When will passkey support be available for B2B users?
+
+Passkey support for B2B users and internal guest users is planned to be available by the end of calendar year 2026. These users are included in the scope of the retirement of Microsoft-provided SMS and voice authentication.
 
 ### What if I have different plans for my tenant than enabling passkeys for SMS/voice users (such as configuring a customer configured telecom provider or migrating users to another authentication method)?
 
