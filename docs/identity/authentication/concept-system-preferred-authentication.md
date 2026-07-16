@@ -19,7 +19,7 @@ For example, if a user registered both a password and a passkey, system-preferre
 System-preferred authentication is a Microsoft managed setting, which is a [three-state policy](#authentication-method-feature-configuration-properties) (enabled, disabled, or Microsoft managed). If you don't want to enable system-preferred authentication, change the state from **Microsoft managed** to **Disabled**, or exclude users and groups from the policy.
 
 > [!NOTE]
-> The **Microsoft managed** state behavior affects both first-factor and multifactor authentication and is being gradually deployed to tenants through July 2026. If your tenant or users don't experience system-preferred authentication as the first factor when the **State** is **Microsoft managed**, the rollout isn't deployed yet for your tenant.
+> The **Microsoft managed** state behavior affects both first-factor and multifactor authentication and is being gradually deployed to tenants through August 2026. If your tenant or users don't experience system-preferred authentication as the first factor when the **State** is **Microsoft managed**, the rollout isn't deployed yet for your tenant.
 
 After system-preferred authentication is enabled, the authentication system does all the work. Users don't need to set any authentication method as their default because the system always determines and presents the most secure method they registered.
 
@@ -43,6 +43,18 @@ Both **Enabled** and **Microsoft managed** modes allow administrators to include
 
 - When you change the policy for a target group, the change might not take effect on the user's very next sign-in. It applies to all subsequent sign-ins after that.
 - Conditional Access policy is validated only for second-factor authentication and doesn't apply to first-factor authentication. Authentication happens first, and then Conditional Access evaluates authorization. System-preferred authentication doesn't override Conditional Access policies or authentication strength requirements.
+
+### Windows Hello for Business and macOS Platform SSO at first-factor sign-in
+
+Windows Hello for Business and macOS Platform SSO are device-bound passkeys that work only as a first factor. Because the **Microsoft managed** state applies system-preferred authentication at the first factor, these credentials can be offered before the password.
+
+To avoid prompting users for a device-bound credential that they don't use or can't complete on their current device, system-preferred authentication offers Windows Hello for Business or macOS Platform SSO at the first factor only when the user most recently signed in with a passkey. The behavior depends on which passkeys the user registered:
+
+- If the user has a passkey other than Windows Hello for Business or macOS Platform SSO, system-preferred authentication prompts for the passkey at the first factor, just as it already prompts for that passkey at second-factor sign-in.
+- If the user's only registered passkey is Windows Hello for Business or macOS Platform SSO, and the user most recently signed in with a passkey, system-preferred authentication prompts for passkey sign-in at the first factor.
+- If the user's only registered passkey is Windows Hello for Business or macOS Platform SSO, and the user's most recent sign-in wasn't with a passkey, system-preferred authentication skips it at the first factor and prompts the next highest-ranked method in the user's credential order instead.
+
+Users can always select **Sign in another way** to choose a different registered method.
 
 ## Enable system-preferred authentication in the Microsoft Entra admin center
 
@@ -146,6 +158,10 @@ When in the **Microsoft managed** state, the system evaluates available credenti
 ### How does system-preferred authentication affect the NPS extension?
 
 System-preferred authentication doesn't affect users who sign in by using the Network Policy Server (NPS) extension. Those users don't see any change to their sign-in experience.
+
+### How does system-preferred authentication work for federated users?
+
+For federated users, first-factor sign-in is unchanged. System-preferred authentication doesn't apply at the first factor, so federated users continue to be routed to their external identity provider to sign in. System-preferred authentication applies only to second-factor authentication for these users.
 
 ### How does system-preferred authentication affect first-factor sign-in?
 
