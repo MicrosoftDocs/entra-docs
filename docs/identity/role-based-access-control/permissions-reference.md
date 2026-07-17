@@ -2,7 +2,7 @@
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 ms.topic: reference
-ms.date: 07/01/2026
+ms.date: 07/17/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -143,7 +143,7 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 > | [Teams Reader](#teams-reader) | Read everything in the Teams admin center, but not update anything. | 1076ac91-f3d9-41a7-a339-dcdf5f480acc |
 > | [Teams Telephony Administrator](#teams-telephony-administrator) | Manage voice and telephony features and troubleshoot communication issues within the Microsoft Teams service. | aa38014f-0993-46e9-9b45-30501a20909d |
 > | [Tenant Creator](#tenant-creator) | Create new Microsoft Entra or Azure AD B2C tenants. | 112ca1a2-15ad-4102-995e-45b0bc479a6a |
-> | [Tenant Governance Administrator](#tenant-governance-administrator) | Manage all capabilities in the Microsoft Entra Tenant Governance service. | 1981f584-96e9-4a6f-95b0-f522373f8fae |
+> | [Tenant Governance Administrator](#tenant-governance-administrator) | Manage all capabilities in the Microsoft Entra Tenant Governance service.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 1981f584-96e9-4a6f-95b0-f522373f8fae |
 > | [Tenant Governance Reader](#tenant-governance-reader) | Can read all tenant governance data. | e0a4caa6-fe82-443f-b92f-d87341d17b2e |
 > | [Tenant Governance Relationship Administrator](#tenant-governance-relationship-administrator) | Can initiate governance relationships and terminate them. | b8e31d83-1534-480f-9b10-0338ded51b7e |
 > | [Tenant Governance Relationship Reader](#tenant-governance-relationship-reader) | Can read tenant governance relationships and relevant objects. | 124577f8-48ed-456a-839f-13b419002e33 |

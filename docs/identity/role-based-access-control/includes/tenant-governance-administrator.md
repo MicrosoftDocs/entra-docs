@@ -2,9 +2,11 @@
 title: Tenant Governance Administrator
 description: Tenant Governance Administrator
 ms.topic: include
-ms.date: 06/30/2026
+ms.date: 07/17/2026
 ms.custom: include file
 ---
+
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
 Assign the Tenant Governance Administrator role to users who need to do the following tasks:
 
