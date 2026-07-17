@@ -19,7 +19,7 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
 
 > [!NOTE] 
-> To troubleshoot the common device registration issues, use [Device Registration Troubleshooter Tool](/samples/azure-samples/dsregtool/dsregtool/).
+> To troubleshoot the common device registration issues, use [Device Registration Troubleshooter Tool](https://github.com/mzmaili/DSRegTool).
 
 ## Troubleshoot join failures
 
