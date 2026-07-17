@@ -4,6 +4,7 @@ description: Tenant Governance Administrator
 ms.topic: include
 ms.date: 07/17/2026
 ms.custom: include file
+ai-usage: ai-assisted
 ---
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)

@@ -5,6 +5,7 @@ ms.topic: reference
 ms.date: 07/17/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
+ai-usage: ai-assisted
 ---
 
 # Microsoft Entra built-in roles

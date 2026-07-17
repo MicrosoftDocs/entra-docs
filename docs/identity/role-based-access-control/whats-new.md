@@ -3,6 +3,7 @@ title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 ms.topic: whats-new
 ms.date: 07/17/2026
+ai-usage: ai-assisted
 
 ---
 
