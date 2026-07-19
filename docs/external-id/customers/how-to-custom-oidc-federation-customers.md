@@ -118,9 +118,6 @@ By default, an email address is required when users sign up with an external ide
 > [!IMPORTANT]
 > Making email optional is a user flow–level setting. This change applies to sign-ups for **all applications** associated with the user flow.
 
-> [!NOTE]
-> When email isn't collected, email one-time passcode (OTP) can't be used for MFA. Make sure an alternative MFA method (such as SMS) is enabled if your policies require MFA.
-
 > [!TIP]
 > The account picker typically displays the user's email address. When no email address is collected, the display name is shown instead. To help users easily identify their account, map the `name` claim in [Claims mapping](reference-oidc-claims-mapping-customers.md) or collect display name during sign-up.
 
@@ -181,7 +178,6 @@ Conditional Access policies that require MFA registration don't function as expe
 
 - Users can't register an MFA method and can't complete sign-in, and often encounter an error.
 - Users aren't redirected to the MFA registration (sign-up) flow during sign-in as expected.
-- A user created without an email address can't register an email address for use with email one-time passcode (OTP) as an MFA method.
 
 ## Related content
 
