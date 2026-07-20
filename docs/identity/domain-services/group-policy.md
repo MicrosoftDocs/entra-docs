@@ -12,7 +12,7 @@ Group Policy Objects (GPOs) are collections of policy settings that define how c
 
 ## Backup Feature Overview
 
-The Group Policy Backup feature is a capability under Public Preview that enhances the Domain Health Monitor. It automatically creates and manages backups of Group Policy Objects (GPOs) in Active Directory Domain Services. This feature helps ensure business continuity and disaster recovery by maintaining regular backups of critical group policies.
+The Group Policy Backup feature is a capability under Public Preview that enhances the service. It automatically creates and manages backups of Group Policy Objects (GPOs) in Active Directory Domain Services. This feature helps ensure business continuity and disaster recovery by maintaining regular backups of critical group policies.
 
 ## File System Structure
 
