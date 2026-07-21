@@ -9,11 +9,6 @@ ai-usage: ai-assisted
 
 # How to configure Global Secure Access web content filtering
 
-<!-- TEMPORARY NOTICE: Remove this IMPORTANT alert after the erroneous "Deprecating soon" label on Web Content Filtering Policy (V1) is fixed in the Microsoft Entra admin center. Tracking with PM Michael Aldridge / engineering. -->
-
-> [!IMPORTANT]
-> You might see a red **Deprecating soon** label next to **Web Content Filtering Policy (V1)** in the Microsoft Entra admin center. This label is displayed in error. Your existing web content filtering policies aren't affected, continue to work as configured, and no action is required at this time. This article is updated when the display issue is resolved.
-
 ## Overview
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
@@ -24,7 +19,7 @@ The web filtering feature currently supports user- and context-aware Uniform Res
 
 Web content filtering also supports two optional rule conditions that enable traffic-aware policy enforcement:
 
-- **Source traffic type filtering (preview)**: Scope rules to specific traffic types, such as agent, browser, or application.
+- **Source traffic type filtering (preview)**: Scope rules to specific traffic types, either agent or non-agent.
 - **HTTP method request filtering (preview)**: Block or allow specific HTTP methods, such as GET, POST, PUT, PATCH, and DELETE.
 
 > [!TIP]
@@ -78,16 +73,14 @@ The first step is to enable the Internet Access traffic forwarding profile. For 
 
 ## Configure source traffic type filtering (preview)
 
-Source traffic type filtering lets you scope web content filtering rules to specific types of network traffic. You can enforce differentiated policies based on whether traffic originates from an AI agent, a web browser, or an application.
+Source traffic type filtering lets you scope web content filtering rules to specific types of network traffic. You can enforce differentiated policies based on whether traffic originates from an AI agent or a non-agent source.
 
 ### Supported source traffic types
 
 | Source type | Description |
 | --- | --- |
 | Agent | Traffic that originates from AI agents, such as Copilot agents or autonomous AI tools. |
-| Browser | Traffic that originates from web browsers. |
-| Application | Traffic that originates from desktop or mobile applications. |
-| Unknown | Traffic where the source type can't be determined. |
+| Non-agent | Traffic that originates from any source other than an AI agent, such as web browsers and applications. |
 
 ### Configure the source traffic type condition
 
@@ -99,18 +92,18 @@ Source traffic type filtering lets you scope web content filtering rules to spec
 > Source traffic type filtering is available only for client-based Global Secure Access connections. This capability depends on the Global Secure Access client sending task and processor metadata to classify traffic. Remote networks don't support source traffic type rules.
 
 > [!NOTE]
-> When a request's traffic type can't be determined, traffic is classified as **Unknown**. Traffic-type-specific rules don't match unless you explicitly target **Unknown** in a rule.
+> When a request doesn't originate from an AI agent, traffic is classified as **Non-agent**. To match this traffic, explicitly target **Non-agent** in a rule.
 
 ### Example: Block AI agents from accessing social networking sites
 
-To prevent AI agents from accessing social networking websites while allowing browser and application traffic:
+To prevent AI agents from accessing social networking websites while allowing non-agent traffic:
 
 1. Create a web content filtering policy rule.
 1. Select the **SocialNetworking** web category.
 1. Enable **Source type** and select **Agent**.
 1. Set the policy action to **Block**.
 
-This configuration blocks AI agent traffic to social networking sites while allowing browser and application users to access the same sites.
+This configuration blocks AI agent traffic to social networking sites while allowing non-agent traffic to access the same sites.
 
 ## Configure HTTP method request filtering (preview)
 
