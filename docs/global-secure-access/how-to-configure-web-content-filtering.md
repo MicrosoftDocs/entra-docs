@@ -19,7 +19,7 @@ The web filtering feature currently supports user- and context-aware Uniform Res
 
 Web content filtering also supports two optional rule conditions that enable traffic-aware policy enforcement:
 
-- **Source traffic type filtering (preview)**: Scope rules to specific traffic types, either agent or non-agent.
+- **Source traffic type filtering (preview)**: Scope rules to specific traffic types, either agent or user.
 - **HTTP method request filtering (preview)**: Block or allow specific HTTP methods, such as GET, POST, PUT, PATCH, and DELETE.
 
 > [!TIP]
@@ -73,14 +73,14 @@ The first step is to enable the Internet Access traffic forwarding profile. For 
 
 ## Configure source traffic type filtering (preview)
 
-Source traffic type filtering lets you scope web content filtering rules to specific types of network traffic. You can enforce differentiated policies based on whether traffic originates from an AI agent or a non-agent source.
+Source traffic type filtering lets you scope web content filtering rules to specific types of network traffic. You can enforce differentiated policies based on whether traffic originates from an AI agent or a user.
 
 ### Supported source traffic types
 
 | Source type | Description |
 | --- | --- |
 | Agent | Traffic that originates from AI agents, such as Copilot agents or autonomous AI tools. |
-| Non-agent | Traffic that originates from any source other than an AI agent, such as web browsers and applications. |
+| User | Traffic that originates from a user, such as web browsers and applications. |
 
 ### Configure the source traffic type condition
 
@@ -92,18 +92,18 @@ Source traffic type filtering lets you scope web content filtering rules to spec
 > Source traffic type filtering is available only for client-based Global Secure Access connections. This capability depends on the Global Secure Access client sending task and processor metadata to classify traffic. Remote networks don't support source traffic type rules.
 
 > [!NOTE]
-> When a request doesn't originate from an AI agent, traffic is classified as **Non-agent**. To match this traffic, explicitly target **Non-agent** in a rule.
+> When a request doesn't originate from an AI agent, traffic is classified as **User**. To match this traffic, explicitly target **User** in a rule.
 
 ### Example: Block AI agents from accessing social networking sites
 
-To prevent AI agents from accessing social networking websites while allowing non-agent traffic:
+To prevent AI agents from accessing social networking websites while allowing user traffic:
 
 1. Create a web content filtering policy rule.
 1. Select the **SocialNetworking** web category.
 1. Enable **Source type** and select **Agent**.
 1. Set the policy action to **Block**.
 
-This configuration blocks AI agent traffic to social networking sites while allowing non-agent traffic to access the same sites.
+This configuration blocks AI agent traffic to social networking sites while allowing user traffic to access the same sites.
 
 ## Configure HTTP method request filtering (preview)
 
