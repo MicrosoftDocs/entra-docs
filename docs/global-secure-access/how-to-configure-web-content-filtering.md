@@ -9,11 +9,6 @@ ai-usage: ai-assisted
 
 # How to configure Global Secure Access web content filtering
 
-<!-- TEMPORARY NOTICE: Remove this IMPORTANT alert after the erroneous "Deprecating soon" label on Web Content Filtering Policy (V1) is fixed in the Microsoft Entra admin center. Tracking with PM Michael Aldridge / engineering. -->
-
-> [!IMPORTANT]
-> You might see a red **Deprecating soon** label next to **Web Content Filtering Policy (V1)** in the Microsoft Entra admin center. This label is displayed in error. Your existing web content filtering policies aren't affected, continue to work as configured, and no action is required at this time. This article is updated when the display issue is resolved.
-
 ## Overview
 
 Web content filtering empowers you to implement granular Internet access controls for your organization based on website categorization.
