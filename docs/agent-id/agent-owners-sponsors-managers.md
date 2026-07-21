@@ -69,20 +69,20 @@ Sponsors are usually business owners, product managers, team leads, or stakehold
 
 ### Agent identity sponsors vs. agent's user account sponsors
 
-In Microsoft Agent ID, agents can have an [agent's user account](agent-users.md) created in order to access user-oriented services. The user account and the agent's identity, blueprint, and blueprint principal may all have sponsors associated with them. There are differences between the user account sponsors and sponsors of the agent identity, blueprint, or blueprint principal. 
+In Microsoft Agent ID, the agent's identity, blueprint, and blueprint principal may all have sponsors associated with them. In addition, agents can have an [agent's user account](agent-users.md) created in order to access user-oriented services. While the Entra user has a sponsor relationship, there are differences between the user account sponsors and sponsors of the agent identity, blueprint, or blueprint principal.
 
-Agent user account sponsors are the same as normal [user sponsors](../external-id/b2b-sponsors.md). They are not authorized to make any changes to their sponsored users, but they can request access on the user's behalf and may be involved in approval flows. In contrast, sponsors of agent identities, blueprints, and blueprint principals have limited access to manage those identities directly and can also request access or give approvals in lifecycle workflows.
+The sponsor relationship on a user is primarily intended for the [sponsors of B2B guests](../external-id/b2b-sponsors.md). They are not authorized to make any changes to their sponsored users, but they can request access on the user's behalf and may be involved in approval flows. In contrast, sponsors of agent identities, blueprints, and blueprint principals have limited access to manage those identities directly and can also request access or give approvals in lifecycle workflows.
+
+When an agent is represented by both an agent identity object and an agent user account, we recommend maintaining the agent identity sponsor as the primary user or group responsible for the agent.
+
+If you require different access or authorization for an associated user account than from its agent identity, then sponsors for each object can [request access packages](../id-governance/entitlement-management-request-access.md) on behalf of the identity they sponsor. If you need to set a sponsor on an agent's user account, then the same user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for both the agent identity and the agent's user account as needed.
 
 | | Agent user account sponsors | Agent identity, blueprint, blueprint principal sponsors |
 |--|--|--|
 | **Allowed types** | Users (including guests), groups (any) | Users (including guests), select groups (dynamic membership, Microsoft 365). Role-assignable groups not supported. |
 | **Limits** | Maximum 5 sponsors | Maximum 100 sponsors, with no more than 5 groups |
-| **Authorization** | No direct authorization to modify sponsors users | Delete or disable the agent identity and modify its sponsors |
+| **Authorization** | No direct authorization to modify sponsored users | Delete or disable the agent identity and modify its sponsors |
 | **Required** | Not required | Required on create for agent identities and agent blueprints |
-
-When an agent is represented by both an agent identity object and an agent user account, we recommend maintaining the agent identity sponsor as the primary user or group responsible for the agent. 
-
-Different scenarios may require different types of access or authorization for an agent identity and its associated user account. Sponsors for each object can [request access packages](../id-governance/entitlement-management-request-access.md) on behalf of the identity they sponsor. In most cases, the same user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for both the agent identity and the agent's user account as needed.
 
 ## Managers
 
