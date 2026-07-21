@@ -143,6 +143,12 @@ This timeline applies to public cloud environments only. Other cloud environment
 
 Passkey support for B2B users and internal guest users is planned to be available by the end of calendar year 2026. These users are included in the scope of the retirement of Microsoft-provided SMS and voice authentication.
 
+### Are external MFA methods impacted by SMS and voice retirement?
+
+No, only SMS and voice authentication method policies and legacy MFA policies are retired.
+
+On September 1, 2026, users that are enabled for SMS or voice in the authentication method policies or legacy MFA policies are auto-enabled for passkeys and nudged to register. External MFA users aren't in scope unless they're also enabled for SMS or voice.
+
 ### What if I have different plans for my tenant than enabling passkeys for SMS/voice users (such as configuring a customer configured telecom provider or migrating users to another authentication method)?
 
 A temporary opt-out will be available for the September 1, 2026 through February 1, 2027 changes. This allows you to delay passkey and Registration Campaign enablement while you complete transition activities, such as configuring customer-managed telecom providers or migrating to other authentication methods. API support and information for opting out will be available starting August 1, 2026. 
