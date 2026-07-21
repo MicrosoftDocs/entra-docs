@@ -43,7 +43,7 @@ Starting with the security update (as stated above) for Windows 11, version 24H2
 > **Value:** AutoAcceptSsoPermission (DWORD) = 1 
 
 
-![The image displays the registry editor on windows. The first line shows the path of "Computer\HKEY_LOCAL_MACHIEN\SOFTWARE\Policies\Microsoft\AAD. Below that, there is a tree view and a content pane to the right. The treeview shows "Policies", with children of "Adobe", "Google", "Microsoft", and "Microsoft has a child value of "AAD". To the right, we see the registry key that is being created. The name is "AutoAcceptSsoPermission", and to the right a pop up is displayed for creating/editing a new value with ValueName of AutoAcceptSsoPermission, ValueData as 1, and Base has a value of "Hexadecimal".](media/sso-admin-control/sso-admin-control-registry.png)
+![The image displays the registry editor on windows. The first line shows the path of "Computer\HKEY_LOCAL_MACHIEN\SOFTWARE\Policies\Microsoft\AAD. Below that, there is a tree view and a content pane to the right. The treeview shows "Policies", with children of "Adobe", "Google", "Microsoft", and "Microsoft has a child value of "AAD". To the right, we see the registry key that is being created. The name is "AutoAcceptSsoPermission", and to the right a pop up is displayed for creating/editing a new value with ValueName of AutoAcceptSsoPermission, ValueData as 1, and Base has a value of "Hexadecimal".](media/sso-admin-control/sso-admin-control-registry-path.png)
 
 ## Getting started
 
