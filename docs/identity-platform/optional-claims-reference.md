@@ -124,7 +124,11 @@ This `optionalClaims` object causes the ID token returned to the client to inclu
 
 ## AMR values for Microsoft Entra authentication methods
 
-The following table lists the `authnmethodsreferences` values that Microsoft Entra ID sends for each authentication method. Microsoft Entra ID sends the `mfa` value in the `amr` claim when the user completes multifactor authentication.
+The `amr` (authentication method references) claim identifies how the user authenticated. The `amr` claim is sent by default for Salesforce applications, so no configuration change is required for those apps. For all other SAML applications, the application administrator must add the optional `amr` claim with the `include_granular_amr` additional property to the app registration to request AMR claims. The `multipleauthn` and `mfa` values are emitted only when the user has completed MFA.
+
+For SAML, see [authnmethodreferences](single-sign-on-saml-protocol.md#authnmethodreferences) for more details.
+
+For OIDC, see the following table, which lists the `authnmethodsreferences` values that Microsoft Entra ID sends for each authentication method:
 
 | Microsoft Entra authentication method | OIDC v2.0 token claims |
 |---|---|
