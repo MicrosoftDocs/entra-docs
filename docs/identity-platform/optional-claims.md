@@ -3,9 +3,10 @@ title: Configure optional claims
 description: Learn how to configure optional claims and attributes in access tokens issued by Microsoft identity platform; optional claims can add useful user information for your app.
 manager: pmwongera
 ms.custom:
-ms.date: 01/27/2025
+ms.date: 07/22/2026
 ms.reviewer: ludwignick
 ms.service: identity-platform
+ai-usage: ai-assisted
 
 ms.topic: how-to
 #Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
@@ -309,6 +310,12 @@ Configure claims in the manifest:
     ```
 
 1. When you're finished updating the manifest, select **Save** to save the manifest.
+
+## amr claim
+
+The `amr` (authentication method references) claim identifies how the user authenticated. The `amr` claim is sent by default for Salesforce applications, so no configuration change is required for those apps. For all other SAML applications, the application administrator must add the optional `amr` claim with the `include_granular_amr` additional property to the app registration to request AMR claims. The `multipleauthn` and `mfa` values are emitted only when the user has completed MFA.
+
+For SAML, see [authnmethodreferences](single-sign-on-saml-protocol.md#authnmethodreferences) for more details.
 
 ## Limitation
 
