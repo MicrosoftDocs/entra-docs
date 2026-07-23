@@ -29,6 +29,9 @@ Custom PAC files allow you to:
 
 ## Create a custom PAC file
 
+> [!NOTE]
+> While custom PAC file hosting validates basic JavaScript, it does not validate your intent for traffic routing and JavaScript logic that was implemented. We recommend that you approach PAC files as any other custom code artifact and review the code before relying on it in production. One way to achieve this is to use AI tools to review proposed PAC file contents and check it for validity, syntax, and intended logic. Example prompt: "Analyze this custom proxy automatic configuration file for explicit forward proxy. Check for syntax and routing decisions logic. Produce a report that includes details on what conditions influence routing decisions."
+
 1. Sign in to the [Microsoft Entra Admin Center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Session Management**.
 1. Select the **Explicit Forward Proxy** tab.
@@ -39,7 +42,7 @@ Custom PAC files allow you to:
 1. Delete lines that start with "var tenantId" and "var efpEndpoint".
 1. Update the line that starts with "var efpURL" to the following code:
    ```javascript
-   var efpURL = "HTTPS ${GSAEFPP}";
+   var efpURL = "HTTPS ${GSAEFP}";
    ```
 1. Make your modifications to implement your custom PAC file logic. Always use the **${GSAEFP}** variable when you reference the EFP proxy endpoint.
 1. Save the PAC file with a *.pac extension.
