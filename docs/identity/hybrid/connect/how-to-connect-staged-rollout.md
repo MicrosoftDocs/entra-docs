@@ -2,7 +2,8 @@
 title: 'Microsoft Entra Connect: Cloud authentication via Staged Rollout'
 description: This article explains how to migrate from federated authentication, to cloud authentication, by using a Staged Rollout.
 ms.topic: how-to
-ms.date: 10/16/2025
+ms.date: 07/22/2026
+ai-usage: ai-assisted
 ms.subservice: hybrid-connect
 ms.custom: sfi-image-nochange
 ---
@@ -74,7 +75,7 @@ The following scenarios are supported for Staged Rollout. The feature works only
 
 - User sign-in traffic on browsers and *modern authentication* clients. Applications or cloud services that use legacy authentication fall back to federated authentication flows. An example of legacy authentication might be Exchange online with modern authentication turned off, or Outlook 2010, which doesn't support modern authentication.
 
-- Group size is currently limited to 50,000 users.  If you have groups that are larger than 50,000 users, it's recommended to split this group over multiple groups for Staged Rollout. Also, you can use a maximum of 10 groups per feature, 10 groups each for password hash sync, pass-through authentication, and seamless SSO.
+- There's no limit on the number of users in a group. However, you can use a maximum of 10 groups per feature, 10 groups each for password hash sync, pass-through authentication, and seamless SSO.
 
 - Windows 10 Hybrid Join or Microsoft Entra join primary refresh token acquisition without line-of-sight to the federation server for Windows 10 version 1903 and newer, when user's UPN is routable and domain suffix is verified in Microsoft Entra ID.
 
@@ -214,6 +215,34 @@ When a user is added to a Staged Rollout (SR) group or when a group they belong 
 Similarly, when a user is removed from the SR group or when their group is removed from SR, they will continue to use managed authentication until they complete one more interactive sign-in. After that, federation is re-applied and future logins will redirect to the federated identity provider.
 
 This behavior ensures a seamless transition between authentication methods while maintaining user access continuity and security.
+
+### Workaround for newly added Staged Rollout users
+
+When a user is newly added to Staged Rollout, they might be required to perform one additional authentication through the federated identity provider before Staged Rollout takes effect. You can avoid this behavior by using a Temporary Access Pass (TAP) during the user's initial sign-in experience.
+
+#### Recommended workaround
+
+Because Microsoft Entra evaluates a TAP before it redirects a user to the federated identity provider, administrators can issue a TAP to the user immediately after adding them to Staged Rollout.
+
+The recommended flow is:
+
+1. Add the user to the Staged Rollout group.
+1. Generate a Temporary Access Pass (TAP) for the user.
+1. Have the user sign in to Microsoft Entra using the TAP.
+1. After a successful sign-in, the user is recognized as part of Staged Rollout and can:
+    - Register more authentication methods, for example, Microsoft Authenticator or passkeys.
+    - Use any existing Microsoft Entra authentication methods available to them.
+
+#### Benefits
+
+Using a TAP for the initial sign-in provides a smoother onboarding experience by:
+
+- Avoiding the additional federated authentication step.
+- Preventing users from having to fall back to the legacy federated sign-in experience with a password.
+- Reducing friction during migration from federated to managed authentication.
+
+> [!NOTE]
+> This workaround is intended for newly onboarded Staged Rollout users and can be used as part of a migration strategy to provide a seamless transition to Microsoft Entra-managed authentication.
 
 ## Auditing
 
