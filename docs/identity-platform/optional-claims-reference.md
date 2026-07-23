@@ -5,9 +5,10 @@ author: cilwerner
 manager: pmwongera
 ms.author: cwerner
 ms.custom:
-ms.date: 04/10/2024
+ms.date: 07/22/2026
 ms.reviewer: ludwignick
 ms.service: identity-platform
+ai-usage: ai-assisted
 
 ms.topic: reference
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want a list of the different optional claims and their uses, so that I can select the specific claims to include in tokens for my application and customize the behavior of certain claims.
@@ -78,6 +79,7 @@ These claims are always included in v1.0 tokens, but not included in v2.0 tokens
 | `family_name` | Last Name | Provides the last name, surname, or family name of the user as defined in the user object. For example, `"family_name":"Miller"`. | Supported in MSA and Microsoft Entra ID. Requires the `profile` scope. |
 | `given_name` | First name | Provides the first or "given" name of the user, as set on the user object. For example, `"given_name": "Frank"`. | Supported in MSA and Microsoft Entra ID. Requires the `profile` scope. |
 | `upn` | User Principal Name | An identifier for the user that can be used with the `username_hint` parameter. Not a durable identifier for the user and shouldn't be used for authorization or to uniquely identity user information (for example, as a database key). For more information, see [Secure applications and APIs by validating claims](claims-validation.md). Instead, use the user object ID (`oid`) as a database key. Users signing in with an [alternate login ID](~/identity/authentication/howto-authentication-use-email-signin.md) shouldn't be shown their User Principal Name (UPN). Instead, use the following `preferred_username` claim for displaying sign-in state to the user. | Requires the `profile` scope. |
+| `amr` | Authentication Method Reference | Identifies how the subject of the token was authenticated. For the values that Microsoft Entra ID emits for each authentication method, see [AMR values for Microsoft Entra authentication methods](#amr-values-for-microsoft-entra-authentication-methods). | |
 
 ## v1.0-specific optional claims set
 
@@ -119,6 +121,28 @@ Some optional claims can be configured to change the way the claim is returned. 
 ```
 
 This `optionalClaims` object causes the ID token returned to the client to include a `upn` claim with the other home tenant and resource tenant information. The `upn` claim is only changed in the token if the user is a guest in the tenant (that uses a different IDP for authentication).
+
+## AMR values for Microsoft Entra authentication methods
+
+The following table lists the `authnmethodsreferences` values that Microsoft Entra ID sends for each authentication method. Microsoft Entra ID sends the `mfa` value in the `amr` claim when the user completes multifactor authentication.
+
+| Microsoft Entra authentication method | OIDC v2.0 token claims |
+|---|---|
+| Password | `pwd` |
+| Authenticator push | `rsa`, `ngcmfa`, `mfa` |
+| Authenticator TOTP | `totp`, `mfa` |
+| Hardware OATH token | `hotp`, `mfa` |
+| Phone sign-in (passwordless Authenticator app) | `swk`, `rsa`, `mfa` |
+| SMS | `sms`, `mfa` |
+| Phone call | `tel`, `mfa` |
+| Email | `emailotp`, `mfa` |
+| FIDO2 security key (PRMFA) | `fido`, `mfa` |
+| Passkey (device-bound) (PRMFA) | `fido`, `mfa` |
+| Passkey (synced) | `fido`, `mfa` |
+| Windows Hello for Business (PRMFA) | `hwk`, `mfa`, `ngcmfa` |
+| Certificate-based authentication (PRMFA) | `hwk` or `x509`, `mfa`, `rsa` |
+| Temporary Access Pass (TAP) | `otp`, `mfa` |
+| Windows integrated authentication (Kerberos) | `wia` |
 
 ## See also
 
