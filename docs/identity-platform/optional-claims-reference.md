@@ -144,6 +144,8 @@ The following table lists the `authnmethodsreferences` values that Microsoft Ent
 | Temporary Access Pass (TAP) | `otp`, `mfa` |
 | Windows integrated authentication (Kerberos) | `wia` |
 
+Microsoft Entra ID forwards the `amr` values sent from an external MFA provider along with the `amr` values for the authentication methods performed in Microsoft Entra ID. For more information, see [Supported AMR claims](~/identity/authentication/concept-authentication-external-method-provider.md#supported-amr-claims).
+
 ## See also
 
 - [Access token](access-tokens.md)
