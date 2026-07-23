@@ -78,9 +78,11 @@ The SSO extension uses these keys to complete device registration with the Micro
 
 **macOS without Platform SSO**
 
-macOS supports Unregistered PRTs for Microsoft Edge and Registered PRTs when device is workplace joined and broker is present
+macOS supports Unregistered PRTs for Microsoft Edge and Registered PRTs when device is workplace joined and broker is present.
 
 Once registration is successfully completed, macOS initiates a sign in request signed with the Device Signing key. Microsoft Entra ID validates the request, device signing key and associated parameters, and issues PRT response.
+
+However, [Managed devices using Secure Enclave for storing device identity keys will also need to be provisioned with Enterprise SSO or Platform SSO to report device identity to Microsoft Entra ID.](../../identity-platform/apple-sso-plugin.md#device-identity-key-storage)
 
 ### [iOS and Android](#tab/other-prt-issued)
 
