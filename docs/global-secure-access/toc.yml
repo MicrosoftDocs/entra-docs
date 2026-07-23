@@ -455,6 +455,8 @@ items:
     href: reference-current-known-limitations.md
   - name: Points of presence and service addresses
     href: reference-points-of-presence.md
+  - name: Egress IP ranges
+    href: reference-egress-ip-ranges.md
   - name: Data storage and privacy
     href: reference-data-storage-and-privacy.md
   - name: Web content filtering categories
