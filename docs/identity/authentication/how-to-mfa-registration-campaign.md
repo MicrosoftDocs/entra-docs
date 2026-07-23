@@ -335,6 +335,7 @@ For example, if a user has a Windows Hello for Business credential and signs in 
 | iCloud Keychain (including Managed) | — | — | ✔️ | ✔️ | ✔️ | — |
 | Mac Platform single sign-on (SSO) | — | — | ✔️ | ✔️ | — | — |
 | Samsung Pass | — | — | — | — | — | ✔️ |
+| Passkey in Microsoft Authenticator App | — | — | — | — | ✔️ | ✔️ |
 | Any nonplatform provider (such as security keys or authenticator apps) | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 > [!NOTE]
