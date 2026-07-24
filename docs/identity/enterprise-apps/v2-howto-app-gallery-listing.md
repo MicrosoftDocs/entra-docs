@@ -39,7 +39,6 @@ To publish your application in the gallery, you must first read and agree to spe
 - To implement support of SCIM 2.0 Provisioning follow this tutorial: [build a SCIM endpoint and configure user provisioning with Microsoft Entra ID](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
     - If you already support SCIM 2.0 in your application, then you must support client credentials flow for authentication in SCIM. We aren't onboarding applications that use basic authentication, long lived bearer tokens or using code grants for authentication. We recommend you use Client Credentials flow as articulated [here](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#oauth-20-client-credentials-grant-flow)
-    - Make sure that you're testing the SCIM implementation and client credentials authentication flow using SCIM Validator tool. You can learn more about it from here: [Use the SCIM validator tool to validate your SCIM endpoint](~/identity/app-provisioning/scim-validator-tutorial.md)
     - Additionally you also need to test the provisioning implementation using the non-gallery application in Microsoft Entra ID. You can also test the Client Credentials flow using non-gallery application template. You can learn more about it from here: [Test user provisioning with a non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started)
 
 You can sign up for a free, test Development account. It's free for 90 days and you get all of the premium Microsoft Entra features with it. You can also extend the account if you use it for development work: [Join the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program).
@@ -102,8 +101,8 @@ Review this checklist before you submit a request to list your SCIM provisioning
 
 - Support a SCIM 2.0 user and group endpoint (Only User Provisioning is required but User and Group Provisioning both are recommended).
 - Support at least 25 requests per second per tenant to ensure that users and groups are provisioned and deprovisioned without delay (Required).
-- Validate and test your SCIM User and/or Group Provisioning integration with [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial.md) and [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) template (Required).
-- Validate your Client Credentials authentication or any other supported authentication using [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) or using [SCIM Validator](~/identity/app-provisioning/scim-validator-tutorial.md) (Required).
+- Validate and test your SCIM User and/or Group Provisioning integration with [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) template (Required).
+- Validate your Client Credentials authentication or any other supported authentication using [non-gallery application](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#getting-started) (Required).
 - Support either soft delete or hard delete of users. Either one is needed, both are also supported (Required).
 - On querying a nonexistent user your SCIM server shouldn't return bad request, rather success with 0 results (Required).
 - Support Schema Discovery feature on your SCIM endpoint (Required).
@@ -120,6 +119,10 @@ Support OAuth 2.0 Client Credentials flow in SCIM Provisioning authentication (R
     - Client Secret should expire between one year to three years, and then the access token can't be retrieved with expired credentials (Required).
     - Provide the ability to rotate client secrets regularly. ISVs should enable smooth rotation by allowing multiple active secrets and supporting deletion of old secrets. Alternatively, customers can create new client_id and client_secret.
     - Access Token should be only valid for 60 minutes (1 hour) to 6 hours but not less than 60 minutes (Required)
+
+- Workload Identity Federation (Recommended)
+
+    Workload Identity Federation (WIF) is a newer authentication method that lets the Microsoft Entra provisioning service authenticate to your SCIM endpoint without storing any long-lived secrets. Instead of a shared client secret or bearer token, Entra ID presents a signed JWT assertion to your token endpoint using the OAuth 2.0 JWT bearer profile defined in [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523), and receives a short-lived access token in return. Because trust is established through cryptographic verification of Entra-issued tokens rather than stored credentials, there are no secrets to rotate and less risk of credential leakage. To support WIF, your token endpoint must validate the Entra-issued JWT against Microsoft's published JWKS and issue access tokens scoped to your SCIM endpoint. For the full configuration flow, token claims, and ISV implementation requirements, see the [Workload Identity Federation for SCIM provisioning guide](https://github.com/AzureAD/SCIMReferenceCode/blob/master/Workload-Identity-Federation-for-SCIM-Provisioning.md).
 
 ### ISV requirements for SCIM apps
 
