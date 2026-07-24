@@ -1476,6 +1476,7 @@ The SCIM spec doesn't define a SCIM-specific scheme for authentication and autho
 |Username and password (not recommended or supported by Microsoft Entra ID)|Easy to implement|Insecure - [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/your-pa-word-doesn-t-matter/ba-p/731984)|Not supported for new gallery or non-gallery apps.|
 |Long-lived bearer token|Long-lived tokens don't require a user to be present. They're easy for admins to use when setting up provisioning.|Long-lived tokens can be hard to share with an admin without using insecure methods such as email. |Supported for existing apps and non-gallery apps. Not supported for new apps. |
 |OAuth 2.0 client credentials grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have. Provisioning can be automated, and new tokens can be silently requested without user interaction. Publishers can configure SCIM jobs using client credentials regardless of app type. Each customer must provide their own Client ID and Client Secret to authenticate against the SCIM API. |  | Supported for gallery apps and non-gallery apps.|
+|Workload Identity Federation|No secrets are stored in the provisioning configuration. Microsoft Entra ID authenticates by presenting a short-lived, signed JWT assertion (OAuth 2.0 JWT bearer profile, [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523)), which removes the burden of secret storage and rotation and reduces the risk of credential leakage.|Requires the ISV to support JWKS-based validation of the Entra-issued JWT and a token endpoint that issues access tokens for the SCIM endpoint.|Supported for gallery apps and non-gallery apps.|
 
 > [!NOTE]
 > OAuth authorization code grant is retired. New connectors don't support OAuth authorization code grant, and existing connectors should use the OAuth 2.0 client credentials grant.
@@ -1511,6 +1512,39 @@ When using the OAuth 2.0 client credentials grant flow, it's required that you s
 1. Click **Test Connection**.
 
 For more authentication and authorization methods, let us know on [UserVoice](https://aka.ms/appprovisioningfeaturerequest).
+
+### Workload Identity Federation
+
+The provisioning service supports Workload Identity Federation (WIF). With WIF, no long-lived secrets are stored in the provisioning configuration. Instead, Microsoft Entra ID presents a short-lived, signed JWT assertion to your token endpoint using the OAuth 2.0 JWT bearer profile ([RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523)) and receives an access token that's used to call your SCIM endpoint. To support WIF, your service must trust tokens issued by Microsoft Entra ID and validate them against Microsoft's published JWKS. After submitting your request for publishing your app in the gallery, our team will work with you to enable this method.
+
+When you configure WIF, Microsoft Entra ID provides the following values to be copied into your (the ISV's) portal so that your token endpoint can validate the assertion:
+
+- **Issuer (iss):** The customer tenant v2.0 issuer, for example `https://login.microsoftonline.com/<TenantID>/v2.0`.
+- **JWKS URL:** The public signing keys used to verify the assertion, for example `https://login.microsoftonline.com/<TenantID>/discovery/v2.0/keys`.
+- **Subject (sub):** The Sync Fabric workload identity first-party app object ID.
+- **Audience (aud):** The workload identity application ID URI, for example `api://{WorkloadIdentity_appid}/.default`.
+
+In turn, you provide the following values, which the administrator copies into the connectivity page in Microsoft Entra ID:
+
+- **Client Identifier:** A unique identifier for this specific integration on your side.
+- **Token Endpoint:** The endpoint that the provisioning service uses to exchange the Entra-issued assertion for an access token to the SCIM endpoint.
+- **SCIM URL:** The endpoint used for user and group provisioning.
+
+When using Workload Identity Federation, it's required that each customer establishes their own trust relationship (workload identity) when setting up a provisioning instance. A single app-wide credential isn't supported.
+
+#### How to set up Workload Identity Federation
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Browse to **Entra ID** > **Enterprise apps**.
+1. Select your application and go to **Provisioning**.
+1. For **Admin Credentials > Authentication Method**, select **Workload Identity Federation**.
+1. Select **Select Workload Identity**, then register a new workload identity or reuse an existing one that's already configured with the ISV.
+1. Enter your information for the remaining fields:
+    - **Client Identifier**
+    - **Token Endpoint**
+    - **SCIM URL**
+1. Click **Test Connection**.
+
+For the full WIF authentication flow, token claims, and ISV implementation requirements, see the [Workload Identity Federation for SCIM provisioning guide](https://github.com/AzureAD/SCIMReferenceCode/blob/master/Workload-Identity-Federation-for-SCIM-Provisioning.md).
 
 ### Gallery go-to-market launch check list
 To help drive awareness and demand of our joint integration, we recommend you update your existing documentation and amplify the integration in your marketing channels. We recommend you to complete the following checklist to support the launch:
