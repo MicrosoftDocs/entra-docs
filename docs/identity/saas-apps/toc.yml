@@ -2037,6 +2037,8 @@
         href: orgchartnow-tutorial.md
       - name: OrgVitality SSO
         href: orgvitality-sso-tutorial.md  
+      - name: Orgvue
+        href: orgvue-tutorial.md
       - name: Origami
         href: origami-tutorial.md
       - name: Othership Workplace Scheduler
