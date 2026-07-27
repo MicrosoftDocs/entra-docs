@@ -3,7 +3,7 @@ title: Proxy Automatic Configuration (PAC)
 description: Learn about Explicit Forward Proxy PAC file concepts.
 ms.topic: concept-article
 ms.date: 04/06/2026
-ms.reviewer: alexpav
+ms.author: alexpav
 ---
 
 # Introduction to proxy automatic configuration (PAC) files

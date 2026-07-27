@@ -3,7 +3,7 @@ title: Explicit Forward Proxy Overview
 description: Learn about Explicit Forward Proxy concepts.
 ms.topic: concept-article
 ms.date: 04/06/2026
-ms.reviewer: alexpav
+ms.author: alexpav
 ---
 
 # Explicit Forward Proxy overview
