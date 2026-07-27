@@ -3,7 +3,7 @@ title: Configure Explicit Forward Proxy
 description: Learn how to configure Explicit Forward Proxy.
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.reviewer: alexpav
+ms.author: alexpav
 ---
 
 # Configure Explicit Forward Proxy
