@@ -60,7 +60,7 @@ A group Managed Service Account is a managed domain account that provides automa
 - The Active Directory schema in the gMSA domain's forest needs to be updated to Windows Server 2012 or later.
 - [PowerShell RSAT modules](/windows-server/remote/remote-server-administration-tools) on a domain controller.
 - At least one domain controller in the domain must be running Windows Server 2012 or later.
-- A domain-joined server that runs Windows Server 2025 or Windows Server 2022 for the agent installation.
+- A domain-joined server that runs Windows Server 2025, Windows Server 2022, Windows Server 2019, or Windows Server 2016 for the agent installation.
 
 ### Custom gMSA account
 
@@ -92,7 +92,7 @@ Run the [IdFix tool](/microsoft-365/enterprise/set-up-directory-synchronization)
 
 ## In your on-premises environment
 
-1. Identify a domain-joined host server that runs Windows Server 2025 or Windows Server 2022 with a minimum of 4-GB RAM and .NET 4.7.1+ runtime.
+1. Identify a domain-joined host server that runs Windows Server 2025, Windows Server 2022, Windows Server 2019, or Windows Server 2016 with a minimum of 4-GB RAM and .NET 4.7.1+ runtime.
 2. The PowerShell execution policy on the local server must be set to Undefined or RemoteSigned.
 3. If there's a firewall between your servers and Microsoft Entra ID, see [Firewall and proxy requirements](#firewall-and-proxy-requirements).
 
