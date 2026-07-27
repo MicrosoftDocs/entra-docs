@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both Global Relay Identi
 > * Remove users in Global Relay Identity Sync when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Global Relay Identity Sync
 > * Provision groups and group memberships in Global Relay Identity Sync
-> * Client Credentials Authentication authentication supported.
+> * Client Credentials Authentication supported.
 
 
 > [!NOTE]
@@ -83,9 +83,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       ![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, input your Global Relay Identity Sync Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Global Relay Identity Sync. If the connection fails, ensure your Global Relay Identity Sync account has the required admin permissions and try again.
+1. In the **Tenant URL** field, input your Global Relay Identity Sync **Tenant URL, Client identifier, Client secret** and **OAuth token endpoint**. Select **Test connection** to ensure Microsoft Entra ID can connect to Global Relay Identity Sync. If the connection fails, ensure your Global Relay Identity Sync account has the required admin permissions and try again.
 
-   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-button.png)
 
 1. Select **Create** to create your configuration.	
 
