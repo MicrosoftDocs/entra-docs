@@ -1,14 +1,12 @@
 ---
-title: Related tenants in Tenant Governance (preview)
+title: Related tenants in Tenant Governance
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how Microsoft Entra Tenant Governance discovers related tenants through identity, application, and billing signals across your organization
 ms.topic: concept-article
 ms.date: 03/10/2026
 ---
 
-# Related tenants in Tenant Governance (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Related tenants in Tenant Governance
 
 The **related tenants** feature is a Tenant Governance capability that helps organizations gain visibility into Microsoft Entra tenants that interact with their tenant through observable activity. These interactions might involve tenants that are external (partners, vendors, and customers) as well as tenants that were created internally without central oversight, such as employee-created test or development tenants.
 
