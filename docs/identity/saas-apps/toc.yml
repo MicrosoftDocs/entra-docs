@@ -1703,6 +1703,8 @@
         href: logicmonitor-tutorial.md
       - name: LoginRadius
         href: lr-tutorial.md
+      - name: Lovable
+        href: lovable-oidc-tutorial.md
       - name: GoTo
         href: goto-tutorial.md
       - name: Logz.io - Microsoft Entra Integration
