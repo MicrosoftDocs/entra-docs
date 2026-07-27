@@ -2,7 +2,7 @@
 title: Cross-cloud settings
 description: Enable secure cross-cloud B2B collaboration between organizations in different sovereign (national) Microsoft Azure clouds by configuring Microsoft cloud settings.
 ms.topic: how-to
-ms.date: 03/27/2026
+ms.date: 07/27/2026
 ai-usage: ai-assisted
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
@@ -103,6 +103,12 @@ The following scenarios are supported when collaborating with an organization fr
 
 > [!NOTE]
 > Enabling the [SharePoint and OneDrive integration with Microsoft Entra B2B](/sharepoint/sharepoint-azureb2b-integration) will provide the best experience for inviting users from another Microsoft cloud within SharePoint and OneDrive.
+
+## Known behavior with cross-cloud B2B authentication
+
+For cross-cloud B2B guest users, the `login_hint` is populated from the guest object's mail attribute rather than the user's home UPN. This behavior exists because cross-cloud and same-cloud B2B scenarios have different identity boundaries and data availability. In same-cloud B2B scenarios, the service can access the user's home identity information within the same cloud ecosystem and can therefore resolve and use the home sign-in identifier when needed.
+
+In cross-cloud B2B scenarios, however, the resource tenant stores only the guest's immutable home-cloud identifier (PUID) and invited email address. Because the home UPN doesn't persist on the guest object and isn't available when the initial authentication redirect is generated, the `login_hint` is populated from the guest's mail attribute by design. Organizations that require the `login_hint` to match the user's home UPN should align the guest's mail attribute with the desired sign-in identifier, after evaluating any potential impact on existing identity, provisioning, or collaboration workflows.
 
 ## Next steps
 
