@@ -475,22 +475,22 @@ Example of usage within the workflow:
 
 ```
 
-### Update user attributes (Preview)
+### Update user attributes
 
 Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center. 
 
 > [!NOTE]
-> This task does not currently support updating user attribute for synced users. For more information, see: [Update user attributes with Lifecycle Workflows (Preview)](how-to-lifecycle-workflow-update-user-attributes.md).
+> For users synced from on-premises AD, this task supports directory extension attributes only. For more information, see: [Update user attributes with Lifecycle Workflows](how-to-lifecycle-workflow-update-user-attributes.md).
 
 :::image type="content" source="media/lifecycle-workflow-task/update-user-attribute-task.png" alt-text="Screenshot of the update user attribute task.":::
 
 
-For Microsoft Graph, the parameters for the **Update user attributes (Preview)** task are as follows:
+For Microsoft Graph, the parameters for the **Update user attributes** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
 |category    |  joiner, leaver, mover      |
-|displayName     |   Update user attributes (Preview)     |
+|displayName     |   Update user attributes     |
 |description     | Update or clear user attribute values.    |
 |taskDefinitionId     |   2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     |
 |arguments     |  Argument contains the name parameter "attributeUpdates," which is a JSON string specifying up to 10 user attributes to update or clear. The attributes can include built-in, on-premises extensions, directory extensions, and employee org data.   |
