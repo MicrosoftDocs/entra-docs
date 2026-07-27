@@ -75,20 +75,6 @@ The backup location and network share are configured with appropriate Active Dir
 
 ## Usage Examples
 
-### Verifying Backups
-
-```powershell
-# Check backup location
-Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups"
-```
-
-### Manual Cleanup
-
-```powershell
-# The feature handles cleanup automatically, but for manual operations:
-Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups" | Where-Object { $\_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
-```
-
 This section describes how an administrator on a domain-joined computer can discover, access, and restore Group Policy Object (GPO) backups created by this feature. Both GUI (GPMC) and PowerShell workflows are provided.
 
 ### Prerequisites
@@ -97,6 +83,13 @@ This section describes how an administrator on a domain-joined computer can disc
 - Your account is a member of a group with rights to read (AAD DC Admins) or modify (Domain Admins) GPOs.
 - RSAT (Remote Server Administration Tools) Group Policy Management Console (GPMC) installed (for GUI restoration).
 - PowerShell `GroupPolicy` module available (shipped with RSAT / on domain controllers by default).
+
+### Verifying Backups
+
+```powershell
+# Check backup location
+Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups"
+```
 
 ### Determining the PDC Emulator (If Needed)
 
@@ -334,6 +327,14 @@ If a restored GPO introduces issues:
 | GPO links missing after import | Used Import-GPO to new GPO | Re-create links manually with `New-GPLink` |
 | WMI filter missing | Not included / not recreated | Recreate filter in GPMC and reassign |
 | Security filtering ineffective | SID mismatch (cross-domain) | readd groups from target domain |
+
+### Manual Cleanup
+
+
+```powershell
+# The feature handles cleanup automatically, but for manual operations:
+Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups" | Where-Object { $\_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
+```
 
 ### Minimal End-to-End PowerShell Example
 
