@@ -66,16 +66,16 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type the URL:
-    `https://orgvue.us-east-1.concentra.io/auth`
+    `https://orgvue-staging.us-east-1.concentra.io/auth`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://orgvue.us-east-1.concentra.io/saml-callback/<YOUR_DOMAIN>`
+    `https://orgvue-staging.us-east-1.concentra.io/saml-callback/<YOUR_DOMAIN>`
 
-	c. In the **Sign-on URL** text box, type the URL:
-    `https://orgvue.us-east-1.concentra.io`
+	c. In the **Sign-on URL** text box, type a URL using the following pattern:
+    `https://orgvue-staging.us-east-1.concentra.io/app/login-gateway/?domain=<YOUR_DOMAIN>`
 
 	> [!NOTE]
-	> The Reply URL value isn't real. Update the value with the actual Reply URL. Replace the `<YOUR_DOMAIN>` value with your actual domain (e.g., `microsoft.com`) Contact [Orgvue Client support team](mailto:support@orgvue.com) for additional support.
+	> The Reply URL and  Sign-on URL values aren't real. Update these values with the actual URLs. Replace the `<YOUR_DOMAIN>` value with your actual domain (e.g., `microsoft.com`) Contact [Orgvue Client support team](mailto:support@orgvue.com) for additional support.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
