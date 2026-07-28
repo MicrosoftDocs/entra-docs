@@ -191,6 +191,8 @@
                   href: cloud-sync/how-to-sso.md
                 - name: Exchange hybrid
                   href: cloud-sync/exchange-hybrid.md
+                - name: Device sync
+                  href: cloud-sync/device-sync.md
             - name: Provision Microsoft Entra ID to Active Directory
               items:
                 - name: Provision Microsoft Entra ID to AD - Configuration

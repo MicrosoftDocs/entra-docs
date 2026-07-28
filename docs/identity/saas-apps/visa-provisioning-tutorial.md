@@ -31,7 +31,7 @@ This article describes the steps you need to perform in both Visa Spend Clarity 
 > * Keep user attributes synchronized between Microsoft Entra ID and Visa Spend Clarity for Enterprise.
 > * Provision groups and group memberships in Visa Spend Clarity for Enterprise.
 > * Enable [single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Visa Spend Clarity for Enterprise (recommended).
-
+> * Client Credentials Authentication supported.
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -130,9 +130,9 @@ To configure automatic user provisioning in Microsoft Entra ID, follow these ste
 
     ![Screenshot of the Provisioning tab in the Microsoft Entra admin center with the New configuration button highlighted.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, enter your Visa Spend Clarity for Enterprise tenant URL and secret token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Visa Spend Clarity for Enterprise. If the connection fails, ensure your Visa Spend Clarity for Enterprise account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Visa Spend Clarity for Enterprise **Tenant URL, Client identifier, Client secret** and **OAuth token endpoint**. Select **Test connection** to ensure Microsoft Entra ID can connect to Visa Spend Clarity for Enterprise. If the connection fails, ensure your Visa Spend Clarity for Enterprise account has Admin permissions and try again.
     
-    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+    ![Screenshot of Provisioning test connection.](common/provisioning-test-button.png)
 
 1. Select **Create** to create your configuration.  
 

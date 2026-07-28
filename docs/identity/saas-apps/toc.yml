@@ -1703,6 +1703,8 @@
         href: logicmonitor-tutorial.md
       - name: LoginRadius
         href: lr-tutorial.md
+      - name: Lovable
+        href: lovable-oidc-tutorial.md
       - name: GoTo
         href: goto-tutorial.md
       - name: Logz.io - Microsoft Entra Integration
@@ -2035,6 +2037,8 @@
         href: orgchartnow-tutorial.md
       - name: OrgVitality SSO
         href: orgvitality-sso-tutorial.md  
+      - name: Orgvue
+        href: orgvue-tutorial.md
       - name: Origami
         href: origami-tutorial.md
       - name: Othership Workplace Scheduler
