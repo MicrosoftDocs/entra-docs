@@ -422,7 +422,9 @@
         - name: Download workflow history reports
           href: download-workflow-history.md
         - name: Manage inactive users
-          href: lifecycle-workflow-inactive-users.md      
+          href: lifecycle-workflow-inactive-users.md
+        - name: Manage unsponsored guests (Preview)
+          href: how-to-lifecycle-workflow-unsponsored-guest-removal.md
         - name: Check execution user scope
           href: check-workflow-execution-scope.md
         - name: Delegated Workflow Management

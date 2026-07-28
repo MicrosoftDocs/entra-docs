@@ -1372,6 +1372,60 @@ Example of usage within the workflow:
 }
 ```
 
+### Send email about unsponsored guest removal (Preview)
+
+Allows you to send an email notification to specified recipients when unsponsored guests are being removed from your organization. This task is part of the automation for detecting and cleaning up sponsorless guests in Microsoft Entra ID. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+:::image type="content" source="media/lifecycle-workflow-task/send-email-unsponsored-guest-removal-task.png" alt-text="Screenshot of Workflows task: send email about unsponsored guest removal task.":::
+
+> [!NOTE]
+> This task is currently in preview and is only available for leaver workflows.
+
+The Microsoft Entra prerequisites to run the **Send email about unsponsored guest removal (Preview)** task are:
+
+- The guest user account must be identified as unsponsored (having no valid sponsor).
+
+For Microsoft Graph, the parameters for the **Send email about unsponsored guest removal (Preview)** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver      |
+|displayName     | Send email about unsponsored guest removal (Preview)    |
+|description     |  Notify specified recipients about unsponsored guest removal (Customizable by user)        |
+|taskDefinitionId     |   a8e4c7f2-9d1b-4a3e-b5c6-8f2e7a9d4c1b      |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect. Recipients can include Lifecycle Workflows Administrators, Global Administrators, Selected users, Manager, or User.    |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "leaver",
+    "continueOnError": false,
+    "description": "Notify specified recipients about unsponsored guest removal",
+    "displayName": "Send email about unsponsored guest removal (Preview)",
+    "isEnabled": true,
+    "taskDefinitionId": "a8e4c7f2-9d1b-4a3e-b5c6-8f2e7a9d4c1b",
+    "arguments": [
+        {
+            "name": "cc",
+            "value": "ac17d108-60cd-4eb2-a4b4-084cacda33f2"
+        },
+        {
+            "name": "customSubject",
+            "value": "Guest user {{userDisplayName}} removal notification"
+        },
+        {
+            "name": "customBody",
+            "value": "Hello,\n\nThis is a notification that guest user {{userDisplayName}} is being removed from your organization due to no valid sponsor.\n\nIf you believe this action is incorrect, please contact your IT department immediately.\n\nRegards\nYour IT department"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
 ## Next steps
 
 - [Manage lifecycle workflows properties](manage-workflow-properties.md)
