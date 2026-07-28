@@ -1,14 +1,12 @@
 ---
-title: Deploy Microsoft Entra Tenant Governance end to end (preview)
+title: Deploy Microsoft Entra Tenant Governance end to end
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to deploy Microsoft Entra Tenant Governance from setup through tenant discovery, governance, and configuration monitoring
 ms.topic: how-to
 ms.date: 03/17/2026
 ---
 
-# Deploy Microsoft Entra Tenant Governance end to end (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Deploy Microsoft Entra Tenant Governance end to end
 
 This article describes how to deploy Microsoft Entra Tenant Governance across your organization. The deployment follows five phases: verifying prerequisites, discovering related tenants, establishing governance relationships, implementing delegated administration, and setting up configuration monitoring.
 
@@ -18,7 +16,7 @@ Each phase builds on the previous one. Complete the phases in order, but skip op
 
 Before you begin, confirm that your environment meets these requirements:
 
-- A Microsoft Entra tenant with the appropriate license for Tenant Governance. For details, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview).
+- A Microsoft Entra tenant with the appropriate license for Tenant Governance. For details, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance).
 - An account with the Tenant Governance Administrator or Global Administrator role.
 - For configuration management: an account with the Global Administrator or Privileged Role Administrator role.
 - For secure tenant creation: at least Tenant Contributor permissions on a Microsoft Customer Agreement (MCA) subscription. Enterprise Agreement (EA) subscriptions aren't supported.
@@ -240,5 +238,5 @@ For more information, see [Create a governed workforce tenant](how-to-create-ten
 - [Governance policy templates](governance-policy-templates.md)
 - [Cross-tenant delegated administration](cross-tenant-delegated-administration.md)
 - [Configuration management](configuration-management.md)
-- [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview)
+- [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance)
 - [Frequently asked questions](faq.yml)

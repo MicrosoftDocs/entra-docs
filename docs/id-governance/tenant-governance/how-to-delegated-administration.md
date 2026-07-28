@@ -1,14 +1,12 @@
 ---
-title: Use cross-tenant delegated administration (preview)
+title: Use cross-tenant delegated administration
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to use cross-tenant delegated administration to sign in to and manage governed tenants using your governing tenant credentials
 ms.topic: how-to
 ms.date: 03/10/2026
 ---
 
-# Use cross-tenant delegated administration (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Use cross-tenant delegated administration
 
 This article describes how to sign in to a governed tenant as a delegated administrator and manage delegated administration roles.
 
