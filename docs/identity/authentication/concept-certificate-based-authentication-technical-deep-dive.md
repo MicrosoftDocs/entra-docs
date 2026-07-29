@@ -3,8 +3,7 @@ title: Microsoft Entra CBA Technical Concepts
 description: Learn how Microsoft Entra certificate-based authentication (CBA) works and the technical concepts you need to set up and manage CBA.
 ms.topic: concept-article
 ms.date: 03/04/2025
-author: vimrang
-ms.reviewer: vraganathan
+ms.reviewer: vraganathan, vimrang
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
 ---

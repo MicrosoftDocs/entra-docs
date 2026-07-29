@@ -4,6 +4,7 @@ description: Learn about cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: overview
 ms.date: 05/29/2026
 ms.custom: it-pro
+ms.reviewer: hafowler
 ai-usage: ai-assisted
 #customer intent: As a development, DevOps, or IT admin, I want to understand what cross-tenant synchronization is so that I can manage Microsoft Entra B2B collaboration across tenants in my organization.
 ---
@@ -137,9 +138,7 @@ The following table lists the required licenses, depending on your scenario.
 
 #### Within the same cloud, where can I use cross-tenant synchronization?
 
-Cross-tenant synchronization is supported within the commercial cloud and Azure Government.
-
-Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud.
+Cross-tenant synchronization is supported within the commercial cloud, Azure Government, and 21Vianet.
 
 [!INCLUDE [cross-tenant-synchronization-cloud-pairs-include](../../includes/cross-tenant-synchronization-cloud-pairs-include.md)]
 
@@ -284,7 +283,9 @@ If a group exists in the target tenant (created outside cross-tenant synchroniza
   
   For example, if a group is synchronized from tenant A to tenant B and an administrator makes a change to the group in tenant B, that change persists in tenant B. The synchronization engine doesn't detect the change made to the group in the target tenant, so it doesn't override the change.
 
-- If a group is created outside cross-tenant synchronization, it isn't included in cross-tenant synchronization.  
+- If a group is created outside cross-tenant synchronization, it isn't included in cross-tenant synchronization.
+
+- Synchronization performance depends on the total number of objects (users, groups) and references (such as group memberships and manager relationships) being processed by a sync job. As the overall volume of objects and references increases, the time required to evaluate and synchronize changes can also increase. In environments with high scale, this can result in longer synchronization cycles and increased latency for updates to be reflected in the target tenant. To optimize performance, scope synchronization to only the users, groups, and relationships that are necessary.
 
 ### Structure
 

@@ -3,8 +3,6 @@ title: Configure Verizon Provisioning for automatic user provisioning with Micro
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Verizon Provisioning.
 
 
-author: jeevansd
-manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -12,10 +10,9 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 05/20/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Verizon Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Verizon Provisioning.
----
+--- 
 
 # Configure Verizon Provisioning for automatic user provisioning with Microsoft Entra ID
 
@@ -96,9 +93,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot of new configuration Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the Tenant URL field, input your Verizon Tenant URL, Token Endpoint, Client ID, and Client Secret. Select Test Connection to ensure Microsoft Entra ID can connect to Verizon. If the connection fails, ensure your Verizon account has Admin permissions and try again.
+1. In the Tenant URL field, input your Verizon **Tenant URL, Client identifier, Client secret** and **OAuth token endpoint**. Select **Test connection** to ensure Microsoft Entra ID can connect to Verizon. If the connection fails, ensure your Verizon account has Admin permissions and try again.
     
-    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+    ![Screenshot of Provisioning test connection.](common/provisioning-test-button.png)
 
 1. Select **Create** to create your configuration.  
 

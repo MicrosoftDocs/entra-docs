@@ -4,7 +4,6 @@ description: Learn how to do a targeted deployment of Microsoft Entra hybrid joi
 
 ms.topic: how-to
 ms.date: 06/27/2024
-
 ms.reviewer: sandeo
 ---
 # Microsoft Entra hybrid join targeted deployment

@@ -1,8 +1,6 @@
 ---
 title: Microsoft Security Copilot in Microsoft Entra proof-of-concept guide
 description: Learn to harness AI-powered insights and automation and demonstrate the value of Security Copilot in Entra in your environment.
-author: gargi-sinha
-ms.author: gasinh
 ms.topic: best-practice
 ms.reviewer: gasinh
 ms.date: 03/19/2026

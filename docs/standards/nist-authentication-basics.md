@@ -4,10 +4,10 @@ description: This article has terminology definitions, describes Trusted Platfor
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 11/23/2022
 ms.custom: it-pro, sfi-image-nochange
 ---

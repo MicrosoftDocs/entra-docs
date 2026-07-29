@@ -27,6 +27,8 @@
     href: pim-deployment-plan.md
   - name: Start using PIM
     href: pim-getting-started.md
+  - name: Configure custom extensions for role activation (Preview)
+    href: privileged-identity-management-custom-extensions.md
   - name: Bring under management
     items:
     - name: Azure resources

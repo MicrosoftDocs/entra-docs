@@ -20,13 +20,17 @@ Before starting, you need a Microsoft Entra Security group or Microsoft 365 grou
 
 Dynamic groups and groups synchronized from an on-premises environment can't be managed in PIM for Groups.
 
-You need appropriate permissions to bring groups in Microsoft Entra PIM. For role-assignable groups, you need to have at least the Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, or User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
+You need appropriate permissions to bring groups into Microsoft Entra PIM. For role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groupsAssignableToRoles/owners/update` and `microsoft.directory/groupsAssignableToRoles/members/update` permissions, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group. For non-role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groups/owners/update` and `microsoft.directory/groups/members/update` permissions, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group. Role assignments for administrators can be scoped at directory level or administrative unit level. Built-in and custom Microsoft Entra roles are supported.
+
+Privileged Identity Management doesn't support permissions that start with `microsoft.directory/groups.security/` or `microsoft.directory/groups.unified/`. Use permissions that start with `microsoft.directory/groups/` instead.
+
+Privileged Identity Management doesn't support groups in Restricted Management Administrative Units (RMAU).
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
+> Administrators and group owners can manage groups through the Groups experience and other interfaces, overriding changes made in Microsoft Entra PIM.
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with a Microsoft Entra role that has permissions to manage groups as outlined in the previous section.
 
 1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
 

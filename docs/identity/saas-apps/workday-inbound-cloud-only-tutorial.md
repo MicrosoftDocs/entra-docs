@@ -2,13 +2,11 @@
 title: Configure Workday inbound provisioning in Microsoft Entra ID
 description: Learn how to configure inbound provisioning from Workday to Microsoft Entra ID
 
-author: cmmdesai
 ms.topic: how-to
 ms.date: 05/06/2024
-ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Microsoft Entra ID so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Microsoft Entra ID.
----
+--- 
 # Configure Workday to Microsoft Entra user provisioning
 The objective of this article is to show the steps you need to perform to provision worker data from Workday into Microsoft Entra ID. 
 

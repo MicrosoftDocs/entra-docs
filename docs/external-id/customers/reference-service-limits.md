@@ -81,6 +81,7 @@ The following table lists the administrative configuration limits in the Microso
 |Number of event listener policies    |249         |
 |Maximum custom authentication extension timeout    |2,000 ms         |
 |Maximum custom authentication extension retries    |1         |
+|Maximum custom authentication extension requests per second, combined across all extensions in the tenant    |50         |
 
 ## Telephony throttling limits
 

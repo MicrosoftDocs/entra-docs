@@ -1,9 +1,7 @@
 ---
 title: Authorization basics
 description: Learn about the basics of authorization in the Microsoft identity platform.
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.custom:
 ms.date: 08/25/2024
 ms.reviewer:

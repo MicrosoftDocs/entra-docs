@@ -1,12 +1,10 @@
 ---
 title: Quickstart - Sign in users and call a web API in sample app
 description: Quickstart for configuring a sample mobile app to sign in users and call web API with Microsoft identity platform.
-author: henrymbuguakiarie
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 10/30/2024
-ms.author: henrymbugua
 
 #Customer intent: As a developer, I want to configure a sample mobile app so that I can sign in my users and call web API by using Microsoft identity platform.
 ---

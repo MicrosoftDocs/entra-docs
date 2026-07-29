@@ -4,7 +4,6 @@ description: Learn how to sign in to an Azure VM that's running Linux by using M
 
 ms.topic: how-to
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---

@@ -4,10 +4,10 @@ description: Detailed guidance on how to configure Microsoft Entra ID access con
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 05/23/2023
 ms.custom: it-pro
 ---

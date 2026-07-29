@@ -1,4 +1,4 @@
-- name: Microsoft Entra Tenant Governance (preview)
+- name: Microsoft Entra Tenant Governance
   href: index.yml
 
 - name: Overview
@@ -44,6 +44,8 @@
       href: how-to-enable-tenant-discovery.md
     - name: Interpret discovery data
       href: how-to-interpret-discovery-data.md
+    - name: Investigate signals with Microsoft Graph
+      href: how-to-investigate-related-tenants-api.md
   - name: Governance relationships
     items:
     - name: Set up a governance relationship

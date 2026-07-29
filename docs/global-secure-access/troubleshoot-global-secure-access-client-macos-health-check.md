@@ -3,8 +3,6 @@ title: "Troubleshoot the macOS Global Secure Access client: Health check"
 description: Troubleshoot the macOS Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.topic: troubleshooting
 ms.date: 01/16/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: LuisPFlores
 ms.custom: sfi-image-nochange
 
@@ -180,11 +178,17 @@ function FindProxyForURL(url, host) {  
 ```
 
 ### Internet reachable
-This test checks whether the internet is reachable when the client is running. Run the following command in Terminal:
+This test checks whether the internet is reachable when the client is running. Run one of the following commands in Terminal:
 
 ```bash
-curl https://internet.edgediagnostic.globalsecureaccess.microsoft.com:6543/connectivitytest/ping
+curl http://www.msftconnecttest.com/connecttest.txt
 ```
+
+> [!IMPORTANT]
+> Make sure the following URLs are accessible and not blocked by the firewall and VPN providers.
+> http://www.msftconnecttest.com/connecttest.txt
+> http://captive.apple.com/hotspot-detect.html
+> http://connectivitycheck.gstatic.com/generate_204
 
 ### Diagnostic URLs present
 For each channel activated in the forwarding profile, this test checks that the configuration contains a URL to probe the service's health. To view the health status, select the system tray icon. On the **Connections** tab, view the **Status**.

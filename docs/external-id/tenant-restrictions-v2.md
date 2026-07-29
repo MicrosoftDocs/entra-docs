@@ -63,9 +63,9 @@ You can scope tenant restrictions v2 to specific users, groups, organizations, o
 - When you use universal tenant restrictions in Global Secure Access, all browsers and platforms
 - When you use Windows Group Policy, Microsoft Edge and all websites in Microsoft Edge
 - Scenarios with device-based authentication (including custom applications integrated with Microsoft Graph)
-- Tenant Restrictions v2 (TRv2) enforcement over Azure ExpressRoute when the TRv2 header to be present.
-  - TRv2 headers are automatically added when using Universal TRv2 via GSA or Windows Group Policy Objects (GPO) for client-side signaling. This approach supports        both authentication and data plane protection.
-  - For proxy-based signaling, headers are injected only at the authentication plane protection and do not apply to the data plane protection. ExpressRoute operates      at the network layer and does not terminate TLS or inspect HTTP traffic and the header injection requires TLS interception and application-layer processing,          which must occur on a proxy or firewall before traffic enters ExpressRoute. If Trv2 headers are not added on the request, TRv2 will not enforced.
+- Tenant Restrictions v2 (TRv2) enforcement over Azure ExpressRoute when the TRv2 header is present.
+  - TRv2 headers are automatically added for client-side signaling when you use either universal tenant restrictions v2 via Global Secure Access or Windows Group Policy Objects (GPO). Windows GPO signaling supports both authentication and data plane protection. Global Secure Access signaling supports authentication plane protection on all platforms and data plane protection for Microsoft Graph only.
+  - For proxy-based signaling, headers are injected only at the authentication plane protection and do not apply to the data plane protection. ExpressRoute operates at the network layer and does not terminate TLS or inspect HTTP traffic and the header injection requires TLS interception and application-layer processing, which must occur on a proxy or firewall before traffic enters ExpressRoute. If Trv2 headers are not added on the request, TRv2 will not enforced.
   
 ### Unsupported scenarios
 
@@ -370,7 +370,7 @@ After you create a tenant restrictions v2 policy, you can enforce the policy on 
 When you enable tenant restrictions on a Windows device, corporate proxies aren't required for policy enforcement. Devices don't need to be Microsoft Entra ID managed to enforce tenant restrictions v2. Domain-joined devices that are managed with Group Policy are also supported.
 
 > [!IMPORTANT]
-> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices and doesn't protect the .NET stack, Chrome, or Firefox. The Windows GPO solution provides a temporary solution in preview until general availability of data plane support with Universal tenant restrictions in [Microsoft Entra Global Secure Access (preview)](/azure/global-secure-access/overview-what-is-global-secure-access).
+> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices and doesn't protect the .NET stack, Chrome, or Firefox. This is the method for enforcing data plane protection for Microsoft 365 resources, such as SharePoint Online and Exchange Online. Universal tenant restrictions in [Microsoft Entra Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) provide authentication plane protection on all platforms and data plane protection for Microsoft Graph only.
 
 #### Use Group Policy to deploy tenant restrictions
 

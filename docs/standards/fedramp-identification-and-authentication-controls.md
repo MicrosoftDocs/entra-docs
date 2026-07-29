@@ -4,9 +4,9 @@ description: Detailed guidance on how to configure identification and authentica
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
-manager: martinco
+author: janicericketts
+ms.author: jricketts
+manager: martinco, gasinh
 ms.reviewer: martinco
 ms.date: 05/23/2023
 ms.custom: it-pro

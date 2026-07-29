@@ -4,7 +4,6 @@ description: Verify that your users meet mandatory MFA requirements for Azure an
 ms.topic: how-to
 ms.date: 03/12/2026
 ms.custom: msecd-doc-authoring-106
-author: najshahid
 ms.reviewer: nashahid, gkinasewitz
 
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.

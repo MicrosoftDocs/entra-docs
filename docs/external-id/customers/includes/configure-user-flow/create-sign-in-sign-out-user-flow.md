@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 07/12/2023
-ms.author: kengaderdus
 ---
 Follow these steps to create a user flow a customer can use to sign in or sign up for an application.
 

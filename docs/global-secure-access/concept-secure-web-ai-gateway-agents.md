@@ -1,8 +1,6 @@
 ---
 title: "Learn about Secure Web and AI Gateway for Microsoft Copilot Studio agents"
 description: "Learn about the features and benefits of our Secure Web and AI Gateway for agents in Global Secure Access."
-author: garrodonnell
-ms.author: godonnell
 ms.reviwer: fgomulka
 ms.topic: concept-article   
 ms.date: 11/03/2025

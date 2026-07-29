@@ -3,8 +3,6 @@ title: Assign sensitivity labels to Microsoft Entra security groups (preview)
 description: Learn how to apply sensitivity labels to cloud security groups in Microsoft Entra ID for consistent classification and governance.
 ms.topic: how-to
 ms.date: 05/01/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: mbhargav
 ms.custom:
  - msecd-doc-authoring-1012

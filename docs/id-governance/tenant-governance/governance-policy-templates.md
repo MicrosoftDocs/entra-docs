@@ -1,16 +1,15 @@
 ---
-title: Governance policy templates (preview)
+title: Governance policy templates
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about governance policy templates and how to use them to enforce consistent governance across tenants in Microsoft Entra
 ms.topic: concept-article
-ms.date: 03/10/2026
+ms.date: 07/01/2026
+ai-usage: ai-assisted
 ---
 
 <!-- source: Governance policy templates.docx -->
 
-# Governance policy templates (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Governance policy templates
 
 Governance policy templates are a foundational component of the Tenant Governance service, which helps organizations secure Microsoft Entra tenants at scale. Before establishing a governance relationship between tenants, create a governance policy template that defines the relationship behavior. These templates are reusable across distinct governance relationships, enabling consistent and scalable management of cross-tenant access.
 
@@ -55,6 +54,16 @@ The default policy template has these characteristics:
 - **Unique identifier**: Instead of a GUID, the default policy template has an ID of "default."
 
 - **Configuration required**: You must configure the default policy template before you can use it.
+
+## Limitations
+
+The following limitations apply to governance policy templates:
+
+| Limit | Value |
+| --- | --- |
+| Maximum number of multitenant applications per template | 10 |
+| Maximum number of permissions per multitenant application | 100 |
+| Maximum number of role assignments per template | 10 |
 
 ## Related content
 

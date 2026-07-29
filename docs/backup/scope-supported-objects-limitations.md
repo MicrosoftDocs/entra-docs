@@ -7,15 +7,18 @@ ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
-# Supported objects and recoverable properties in Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Supported objects and recoverable properties in Microsoft Entra Backup and Recovery
 
 Microsoft Entra Backup and Recovery supports recovery for a defined set of tenant object types and selected properties on those objects.
 
 > [!NOTE]
 > The set of supported objects and properties expands over time. Recovery applies only to supported properties listed in this article and doesn't imply full object rollback.
+
+Backups are created automatically once per day. Difference reports compare a selected backup with the current tenant state and show changes to supported properties and links.
+
+## Recovery scope levels
+
+When you create a difference report or start recovery, you can scope the operation to all supported objects, selected object types, or specific object IDs. Some related objects are grouped for scoping. For example, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
 
 ## User
 
@@ -235,6 +238,8 @@ After data loading completes, the operation moves into processing. For differenc
 ### Hard-deleted objects
 
 Microsoft Entra Backup and Recovery doesn't support the recovery or re-creation of hard-deleted objects. Only soft-deleted or modified objects can be restored.
+
+Soft-deleted users, Microsoft 365 Groups, cloud security groups, application registrations, and service principals can be restored for 30 days. For more information about how soft deletion relates to Backup and Recovery, see [Soft deletion in Microsoft Entra Backup and Recovery](soft-deletion.md). Backup and Recovery focuses on restoring supported properties and links from retained backups and doesn't replace soft-delete recovery.
 
 ### Objects managed in on-premises Active Directory Domain Services
 

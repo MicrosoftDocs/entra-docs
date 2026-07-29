@@ -1,14 +1,12 @@
 ---
-title: See monitor results and configuration drifts (preview)
+title: See monitor results and configuration drifts
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to view monitor results and detect configuration drifts in Microsoft Entra Tenant Governance using the admin center
 ms.topic: how-to
 ms.date: 03/05/2026
 ---
 
-# See monitor results and configuration drifts (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# See monitor results and configuration drifts
 
 This article describes how to view monitor results and configuration drifts in the [Microsoft Entra admin center](https://entra.microsoft.com). Each time the monitoring service runs (currently every six hours), it publishes run statistics as a monitor result. When the monitoring service detects that a resource's actual state differs from the configuration baseline, it creates a configuration drift.
 

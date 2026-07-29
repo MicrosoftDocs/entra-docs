@@ -5,7 +5,6 @@ ms.topic: quickstart
 ms.date: 01/16/2025
 ms.custom: mode-api, devx-track-azurecli, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
-
 appliesto:
 zone_pivot_groups: identity-mi-scaled-sets
 ---

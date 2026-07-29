@@ -12,7 +12,7 @@ ms.reviewer: jmprieur
 
 Agents (agent identity blueprints) operating on behalf of regular, signed-in users use the standard OAuth 2.0 protocol with all its capabilities. User delegation enables agent identities to operate on behalf of signed-in users using standard OAuth 2.0 On-Behalf-Of flows with agent-specific impersonation. The agent identity is assigned the necessary delegated permissions needed for OBO access. It requires consent from users to access their data.
 
-Agents have the capabilities of Microsoft Entra ID resource (API) applications and support the API attributes required for the (OAuth2Permissions, AppURI). Agents can’t use any OBO flows. Redirect URIs aren't supported.
+Agents have the capabilities of Microsoft Entra ID resource (API) applications and support the API attributes required for the (OAuth2Permissions, AppURI). Agent identity blueprints can't initiate interactive authorization (`/authorize`) flows directly. They must receive a user token from a client application and then perform an OBO token exchange. A web redirect URI can be configured on a blueprint for consent flows only (`response_type=none`), but it has limited functionality compared to a redirect URI on an app registration.
 
 [!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-libraries.md)]
 
@@ -20,7 +20,7 @@ Agents have the capabilities of Microsoft Entra ID resource (API) applications a
 
 ## Protocol steps
 
-Agents aren't supported for OBO (`/authorize`) flows. Supported grant types are `client_credential`, `jwt-bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate, or a managed identity used as Federated Identity Credential (FIC).
+Agents aren't supported for interactive (`/authorize`) flows. Supported grant types are `client_credential`, `jwt-bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate, or a Federated Identity Credential (FIC). When possible, use a managed identity to obtain the FIC.
 
 :::image type="content" source="media/agent-on-behalf-of-oauth-flow/on-behalf-of-flow.png" alt-text="Diagram showing the illustration of on-behalf-of token acquisition flow for agents.":::
 
@@ -43,9 +43,11 @@ Agents aren't supported for OBO (`/authorize`) flows. Supported grant types are 
     &grant_type=client_credentials
     ```
 
+    - `fmi_path`: The client ID (app ID) of the agent identity. This parameter tells Microsoft Entra ID which child agent identity the blueprint is impersonating during the token exchange.
+
     Where TUAMI is the managed identity token for user assigned managed identity (UAMI). This step returns T1.
 
-1. The agent identity, a child of the agent identity blueprint, sends an OBO token exchange request. This request includes both T1 and the user access token Tc.
+1. The agent identity, a child of the agent identity blueprint, sends an OBO token exchange request. This request includes both T1 and the user access token Tc. Note that `client_id` switches from the blueprint (in the previous step) to the **agent identity** here, because the agent identity is the entity performing the OBO exchange.
 
     ```
     POST /oauth2/v2.0/token

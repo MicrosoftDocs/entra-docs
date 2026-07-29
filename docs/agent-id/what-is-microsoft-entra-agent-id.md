@@ -39,7 +39,7 @@ For details on how these capabilities work for agents, see:
 
 ## How to get started
 
-[!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
+[!INCLUDE [licensing-agent-id](../includes/licensing-agent-id.md)]
 
 ## Related content
 

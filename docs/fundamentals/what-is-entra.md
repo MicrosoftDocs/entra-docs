@@ -3,7 +3,7 @@ title: What is Microsoft Entra?
 description: Introduction to the Microsoft Entra product family including links to get started.
 ai-usage: ai-assisted
 ms.topic: overview
-ms.date: 04/09/2026
+ms.date: 06/18/2026
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
 ---
 # What is Microsoft Entra?
@@ -80,9 +80,9 @@ If you're a **Microsoft 365, Azure, or Dynamics CRM Online subscriber**, you're 
 
 #### Microsoft Entra Agent ID
 
-[Microsoft Entra Agent ID](~/agent-id/what-is-microsoft-entra-agent-id.md) is an identity and security framework that extends Microsoft Entra capabilities to AI agents. As organizations deploy assistive, autonomous, and user-like agents, Agent ID provides purpose-built identity constructs to authenticate, authorize, govern, and protect these nonhuman identities at enterprise scale.
+[Microsoft Entra Agent ID](~/agent-id/what-is-microsoft-entra-agent-id.md) is an identity and security framework that extends Microsoft Entra capabilities to AI agents. As organizations deploy assistive, autonomous, and user-like agents, Entra Agent ID provides purpose-built identity constructs to authenticate, authorize, govern, and protect these nonhuman identities at enterprise scale.
 
-> **Scenario:** An organization deploys AI agents that access corporate data on behalf of users. Agent ID provides each agent with a governed identity, enforces least-privilege access, and maintains an audit trail of the agent's actions.
+> **Scenario:** An organization deploys AI agents that access corporate data on behalf of users. Entra Agent ID provides each agent with a governed identity, enforces least-privilege access, and maintains an audit trail of the agent's actions.
 
 ## Prepare your environment
 

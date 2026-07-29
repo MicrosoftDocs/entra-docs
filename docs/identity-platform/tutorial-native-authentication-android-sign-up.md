@@ -1,51 +1,46 @@
 ---
-title: Add sign-up in an Android app using native authentication
-description: Learn how to add sign-up using email one-time passcode or email and password, and collect user attributes in an Android mobile app using native authentication.
-
-author: henrymbuguakiarie
+title: Add sign-up in an Android app by using native authentication
+description: Learn how to sign up users with email one-time passcode or email and password, and collect user attributes including a username (alias), in an Android app by using native authentication.
 manager: pmwongera
-
-ms.author: henrymbugua
 ms.service: identity-platform
-
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 08/01/2024
-ms.custom:
+ms.date: 06/16/2026
 
-#Customer intent: As a dev, devops, I want to add sign-up with email one-time passcode or email and password, and collect user attributes in your Android mobile app using native authentication.
+#Customer intent: As a developer, I want to add sign-up with email one-time passcode or email and password, and collect user attributes including a username (alias), in my Android mobile app by using native authentication so that users can create accounts with flexible identity options.
 ---
 
 # Tutorial: Add sign-up in an Android mobile app using native authentication
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collect user attributes in your Android mobile app using native authentication. 
+This tutorial demonstrates how to sign up a user by using email one-time passcode or username (email) and password in your Android mobile app using native authentication. You also learn how to collect user attributes during sign-up, including a username (alias), and handle errors.
 
 In this tutorial, you: 
-
 
 > [!div class="checklist"]
 >
 > - Sign up a user by using email one-time passcode or username (email) and password.
-> - Collect user attributes during sign-up. 
+> - Collect user attributes during sign-up, including a username (alias). 
 > - Handle sign-up errors.
 
 ## Prerequisites
  
-- Complete the steps in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md) article.
+- Complete the steps in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md).
 - If you want to collect user attributes during sign-up, configure the user attributes when you [create your sign-up and sign-in user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
+- To collect a username (alias) during sign-up, enable the **Username** built-in user attribute in your tenant's sign-up user flow.
  
 ## Sign up a user
 
-To sign up a user using the email one-time passcode or username (email) and password, you collect an email from the user, then send an email containing an email one-time passcode to the user. The user enters a valid email one-time passcode to validate their username.
+To sign up a user by using the email one-time passcode or username (email) and password, you collect an email from the user, then send an email containing an email one-time passcode to the user. The user enters a valid email one-time passcode to validate their username.
 
 To sign up a user, you need to: 
 
 1. Create a user interface (UI) to: 
 
-   - Collect an email from the user. Add validation to your inputs to make sure the user enters a valid emails address.
+   - Collect an email from the user. Add validation to your inputs to make sure the user enters a valid email address.
    - Collect a password if you sign up with username (email) and password.
+   - Collect a username (alias) if your app supports alias-based sign-in.
    - Collect an email one-time passcode from the user.
    - If needed, collect user attributes.
    - Resend one-time passcode (recommended).
@@ -75,15 +70,15 @@ To sign up a user, you need to:
     - Use the SDK's instance method, `signUp(parameters)` to start the sign-up flow.
     - To sign up using username (email address) and password, create an instance of `NativeAuthSignUpParameters` class and assign your username and password. 
     - The sign-up parameter, `username`, is the email address you collect from the user. 
-    - In most common scenario, the `signUp(parameters)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address.
-    - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
-    - The new state gives us access to two new methods: 
+    - In most common scenario, the `signUp(parameters)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's email address.
+    - The `SignUpResult.CodeRequired` object contains a new state reference, which you can retrieve through `actionResult.nextState`.
+    - The new state gives you access to two new methods: 
         - `submitCode()` submits the email one-time passcode that the app collects from the user. 
         - `resendCode()` resends the email one-time passcode if the user doesn't receive the code. 
     - The `submitCode()` returns `SignUpResult.Complete`, which indicates that the flow is complete and the user has been signed up.
     - The `signUp(parameters)` can also return `SignUpError` to denote that an error has occurred. 
 
-### Collect user attributes during sign-up
+## Collect user attributes during sign-up
 
 Whether you sign up a user using email one-time passcode or username (email) and password, you can collect user attributes before a user's account is created:
 
@@ -132,6 +127,53 @@ Whether you sign up a user using email one-time passcode or username (email) and
     }
     ```
 
+## Collect a username (alias) during sign-up
+
+The username (alias) is a special user attribute. Like other attributes such as city or country, you collect it during sign-up. Unlike those attributes, the user can later use the alias to sign in. The alias (for example, "johndoe") gives users a shorter, friendlier way to sign in than their email address.
+
+The username (alias) doesn't replace the username (email). During sign-up, the app must always collect the username (email) as the primary identifier, and it collects the alias as an attribute alongside the email. At sign-in, the user can then choose to sign in with either their username (email) or their username (alias).
+
+When the **Username** built-in user attribute is enabled in your sign-up user flow, the SDK accepts it through the same `UserAttributes` builder used for other attributes, by using the `flatUsername()` method. You can pass the username (alias) directly in the sign-up call so the user doesn't need to go through a separate attributes-required step.
+
+To collect a username (alias), add an input field for the username in your sign-up UI alongside the email field, then pass the alias as an attribute in the sign-up call:
+
+```kotlin
+val email = binding.emailText.text.toString()
+val password = binding.passwordText.text.toString()
+val username = binding.usernameText.text.toString()
+
+val attributes = UserAttributes.Builder()
+    .flatUsername(username)
+    .build()
+
+CoroutineScope(Dispatchers.Main).launch {
+    val actionResult = authClient.signUpUsingPassword(
+        username = email,
+        password = password,
+        attributes = attributes
+    )
+
+    when (actionResult) {
+        is SignUpResult.CodeRequired -> {
+            // Navigate to code verification
+            navigateToCodeVerification(actionResult.nextState)
+        }
+        is SignUpUsingPasswordError -> {
+            handleSignUpError(actionResult)
+        }
+    }
+}
+```
+
+For email one-time passcode flows (without password), use `signUp` instead of `signUpUsingPassword`:
+
+```kotlin
+val actionResult = authClient.signUp(
+    username = email,
+    attributes = attributes
+)
+```
+
 ## Handle sign-up errors
 
 During sign-up, not all actions succeed. For instance, the user might attempt to sign up with an already used email address or submit an invalid email one-time passcode. 
@@ -163,12 +205,12 @@ To handle errors for the `signUp()` method, use the following code snippet:
 
    - `signUp(parameters)` can return `SignUpError`. 
    - `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state.
-   - If  `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further:
-        - The  method `isUserAlreadyExists()` checks whether the username has already been used to create an account.  
-        - `isInvalidAttributes()` checks whether one or more attributes that the app submitted failed validation, such as wrong data type. It contains an `invalidAttributes` parameter,  which is a list of all attributes that the apps submitted, but failed validation. 
-        - `isInvalidPassword()` check the password is invalid, such as when the password doesn't meet all password complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md)  
-        - `isInvalidUsername()` check the username is invalid, such as when the user email is invalid.
-        - `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
+   - If `actionResult is SignUpError`, the Microsoft Authentication Library (MSAL) Android SDK provides utility methods to analyze the specific errors further:
+        - The method `isUserAlreadyExists()` checks whether the username or alias has already been used to create an account.  
+        - `isInvalidAttributes()` checks whether one or more attributes that the app submitted failed validation, such as wrong data type. It contains an `invalidAttributes` parameter, which is a list of all attributes that the app submitted, but failed validation. 
+        - `isInvalidPassword()` checks whether the password is invalid, such as when the password doesn't meet all password complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md)  
+        - `isInvalidUsername()` checks whether the username is invalid, such as when the user email is invalid.
+        - `isBrowserRequired()` checks whether a browser (web fallback) is needed to complete the authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle this scenario.
         - `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* or *password*. Learn more about [challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
    
         Notify the user that the email is already in use or some attributes are invalid by using a friendly message in the app's UI. 
@@ -237,13 +279,13 @@ To handle errors for the  `submitCode()` method, use the following code snippet:
 
 Make sure you include the import statements. Android Studio should include the import statements for you automatically. 
 
-You've completed all the necessary steps to successfully sign up a user into your app. Build and run your application. If all good, you should be able to successfully sign up the user by using email one-time passcode or email and password. 
+You've completed all the necessary steps to sign up a user in your app. Build and run your application. If everything is configured correctly, you should be able to sign up the user by using email one-time passcode or email and password, and collect user attributes including a username (alias). 
 
 ## Optional: Sign in after a sign-up flow
 
-After a successful sign-up flow, you can sign-in a user without initiating a sign-in flow. Learn more in the [Tutorial: Sign in user after sign-up in Android](tutorial-native-authentication-android-sign-in-after-sign-up.md) article.
+After a successful sign-up flow, you can sign in a user without initiating a sign-in flow. If the user signed up with a username (alias), they can sign in by using either their email address or their alias. Learn more in the [Tutorial: Sign in user after sign-up in Android](tutorial-native-authentication-android-sign-in-after-sign-up.md) article.
 
 
 ## Next steps 
 
-[Tutorial: Add sign in and sign out with email one-time passcode in Android app](tutorial-native-authentication-android-sign-in-sign-out.md). 
+[Tutorial: Add sign in and sign out with email one-time passcode in Android app](tutorial-native-authentication-android-sign-in-sign-out.md).

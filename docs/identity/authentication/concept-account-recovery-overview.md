@@ -1,8 +1,7 @@
 ---
 title: Account Recovery Overview in Microsoft Entra ID
 description: Account recovery in Microsoft Entra ID enables users to regain access through identity verification when all authentication methods are lost. Learn how it works.
-author: tilarso
-ms.author: tilarso
+ms.reviewer: tilarso
 ms.service: entra-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-108, msecd-doc-authoring-1012

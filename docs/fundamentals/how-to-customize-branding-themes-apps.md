@@ -1,11 +1,11 @@
 ---
 title: Customize the sign-in experience for your application with branding themes
 description: Learn how to create branding themes and apply them to the sign-in experience for your application in Microsoft Entra ID.
-author: rolyon
-ms.author: rolyon
-ms.date: 04/27/2026
-ms.reviewer: 
+ms.date: 07/21/2026
+ms.reviewer:
 ms.topic: how-to
+ms.custom: msecd-doc-authoring-1015
+ai-usage: ai-assisted
 #Customer intent: As a developer integrating with Microsoft Entra ID, I want to customize the sign-in experience for my application.
 
 ---
@@ -68,7 +68,7 @@ Here are some important things to know about how branding themes work.
 
 Here are some of the limits and constraints for branding themes.
 
-- You can create up to 10 branding themes per tenant.
+- You can create up to 5 branding themes per tenant.
 - The live preview capability previews style and layout changes and only shows the Sign in page. Live preview doesn't include any custom text overrides.
 - You can't use the name **Default theme** for your branding theme name. This name is reserved.
 - Custom text changes are currently limited to sign-in page only.
@@ -81,11 +81,11 @@ Here are some of the limits and constraints for branding themes.
 1. Browse to **Entra ID** > **Custom branding**.
 
 1. On the **Company branding** page, select **Branding themes** and then select the **Themes** tab.
-   
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/create-new-theme.png" alt-text="Screenshot of the Company Branding page and the Themes tab." lightbox="./media/how-to-customize-branding-themes-apps/create-new-theme.png":::
 
 1. Select **Create new theme**.
-   
+
 1. On the **Basics** tab, enter a **Name** for your theme.
 
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/add-application-to-theme.png" alt-text="Screenshot of the Create a theme page and the Basics tab to apply themes to applications." lightbox="./media/how-to-customize-branding-themes-apps/add-application-to-theme.png":::
@@ -97,11 +97,11 @@ Here are some of the limits and constraints for branding themes.
    - **Layout template** – Choose whether the sign-in pane is center-aligned on the page or right-aligned.
    - **Header** – To show an image in a page header, select the checkbox and browse for the image you want to display. Requirements: Transparent PNG, JPG, or JPEG with image size 245x36px and maximum file size 10KB.
    - **Footer** – To show a page footer that includes links to your published privacy and cookies and/or terms of use statements, select the appropriate checkbox, enter the link text, and add the URL for your content.
-     
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/layout-tab.png" alt-text="Screenshot of the Create a theme page and the Layout tab to specify the sign-in experience." lightbox="./media/how-to-customize-branding-themes-apps/layout-tab.png":::
 
 1. Select the **Preview** button to see your changes to the layout.
-   
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/preview-button.png" alt-text="Screenshot of the Preview button to preview a layout." lightbox="./media/how-to-customize-branding-themes-apps/preview-button.png":::
 
 1. On the **Styling** tab, modify any of the background elements.
@@ -113,11 +113,14 @@ Here are some of the limits and constraints for branding themes.
    - **Square logo (light theme)** – Represents user accounts in your tenant.
    - **Square logo (dark theme)** – If the light theme square logo displays poorly on dark backgrounds, you can upload a logo to be used in its place when dark backgrounds are used.
    - **Custom CSS** – Upload your own CSS file to replace default Microsoft styling with your own styling for: color, font, text size, position of elements, and displays for different devices and screen sizes. For more information, see [CSS template reference guide](reference-company-branding-css-template.md).
-     
+
+     > [!IMPORTANT]
+     > As part of the [Microsoft Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative), Microsoft Entra ID is retiring support for custom CSS *positioning properties* in company branding. After July 21, 2026, tenants that don't already use these properties can't configure them. Later, the properties will be deprecated globally and stop functioning. Eventually, custom CSS will be retired entirely. For the full list of deprecated properties and steps to update your CSS, see [CSS template reference guide](reference-company-branding-css-template.md#deprecation-of-custom-css-positioning-properties). For more information, see the blog post [Microsoft Entra ID enhances security of branded sign-ins](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-enhances-security-of-branded-sign-ins/4537471).
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/styling-tab.png" alt-text="Screenshot of the Create a theme page and the Styling tab settings." lightbox="./media/how-to-customize-branding-themes-apps/styling-tab.png":::
 
 1. Select the **Preview** button to see your styling changes.
-   
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in.png" alt-text="Screenshot of the customized Sign in experience." lightbox="./media/how-to-customize-branding-themes-apps/sign-in.png":::
 
 1. On the **Custom text** tab, select the **Default** link for one of the pages, such as the **Sign-in** page.
@@ -132,7 +135,7 @@ Here are some of the limits and constraints for branding themes.
 1. Customize the text for the selected page and then select **Add**.
 
     Custom text set for a theme might impact localized UX as they will not be localized. To ensure full localization of all text, set custom text for each theme language.
-  
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/custom-text-edit.png" alt-text="Screenshot of the Edit custom text page for the Sign-in page." lightbox="./media/how-to-customize-branding-themes-apps/custom-text-edit.png":::
 
     On the **Sign-in** page, you can customize the **Display message box** text. This text appears at the bottom of the Microsoft Entra ID sign-in page and in the Microsoft Entra ID Join experience on Windows. Use this text to convey instructions or tips. Anyone can see your sign-in page, so don't put sensitive info here. It has a maximum of 1024 characters. Use the following syntax to format text including bold, italics, underline, or clickable link:
@@ -155,15 +158,15 @@ In this section, you apply a theme to applications in your tenant.
 1. Select a theme you created to open the overview.
 
 1. Under **Basics**, select the pencil edit icon.
-  
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/edit-theme-overview.png" alt-text="Screenshot of the Overview tab of the edit theme page." lightbox="./media/how-to-customize-branding-themes-apps/edit-theme-overview.png":::
 
 1. Under **Apply theme to**, select **Edit** to edit the list of applications.
-  
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/edit-basics.png" alt-text="Screenshot of the Edit Basics page to edit the list of applications." lightbox="./media/how-to-customize-branding-themes-apps/edit-basics.png":::
 
 1. Search for or browse to your application. Select the check box, and then choose **Select**.
-   
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/select-application.png" alt-text="Screenshot of the Add applications page to select applications." lightbox="./media/how-to-customize-branding-themes-apps/select-application.png":::
 
 ## Edit a theme
@@ -187,15 +190,15 @@ In this section, you add a language to a theme.
 1. On the **Languages** tab, select **Add a language** to customize the language of the theme.
 
     The steps for customizing the language are similar to customizing branding theme.
-  
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/languages-tab.png" alt-text="Screenshot of the Languages tab to add a language." lightbox="./media/how-to-customize-branding-themes-apps/languages-tab.png":::
 
 1. On the **Basics** tab, select a language.
-  
+
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/language-basics-tab.png" alt-text="Screenshot of the Add a language page and Basics tab to select a language." lightbox="./media/how-to-customize-branding-themes-apps/language-basics-tab.png":::
 
     The following languages are supported:
-    
+
     - Arabic (Saudi Arabia)
     - Basque (Basque)
     - Bulgarian (Bulgaria)

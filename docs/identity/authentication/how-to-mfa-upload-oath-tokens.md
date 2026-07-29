@@ -4,8 +4,7 @@ description: Learn how to upload hardware OATH tokens in Microsoft Entra ID by u
 services: active-directory
 ms.topic: how-to
 ms.date: 12/11/2025
-author: efdake
-ms.reviewer: lvandenende
+ms.reviewer: lvandenende, edwardd
 ms.collection: M365-identity-device-management
 ms.custom: sfi-ga-nochange
 # Customer intent: As an identity administrator, I want to understand how to upload hardware OATH tokens in Microsoft Entra ID by using CSV file and Global Administrator role.

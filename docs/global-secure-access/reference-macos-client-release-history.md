@@ -3,8 +3,6 @@ title: Global Secure Access Client for macOS Release Notes
 description: This article tracks the release notes and download instructions for the Global Secure Access client for macOS.
 ms.topic: reference
 ms.date: 04/16/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: lirazbarak
 ai-usage: ai-assisted
 
@@ -20,6 +18,16 @@ You can download the current version of the Global Secure Access client from the
 1. Select the **macOS** tab.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
+
+## Version 1.1.26030604
+Released for download on June 05, 2026.
+
+### Functional changes
+- Optimized acquisition for Teams and OneDrive traffic.
+
+### Other changes
+- Fix for crash when disabling private access after cleaning the client's cache.
+- Fix for an issue when sharing iPhone hotspot.
 
 ## Version 1.1.26030601
 Released for download on April 16, 2026.

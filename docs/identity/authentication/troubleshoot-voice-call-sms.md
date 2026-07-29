@@ -4,7 +4,6 @@ description: Learn how to troubleshoot voice call and SMS problems with MFA, und
 ms.topic: how-to
 ms.date: 04/09/2026
 ms.custom: msecd-doc-authoring-1012
-author: justinha
 ms.reviewer: xueca
 # Customer intent: As an authentication administrator, I want to troubleshoot voice call and SMS problems with multifactor authentication (MFA) for Microsoft Entra ID.
 ---

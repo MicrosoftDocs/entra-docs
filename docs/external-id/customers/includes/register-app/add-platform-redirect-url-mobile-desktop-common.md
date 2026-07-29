@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 05/05/2023
-ms.author: kengaderdus
 ---
 
 To specify your app type to your app registration, follow these steps:

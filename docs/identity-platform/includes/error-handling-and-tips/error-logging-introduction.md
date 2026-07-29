@@ -1,6 +1,4 @@
 ---
-author: cilwerner
-ms.author: cwerner
 ms.date: 12/16/2020
 ms.service: identity-platform
 manager: pmwongera

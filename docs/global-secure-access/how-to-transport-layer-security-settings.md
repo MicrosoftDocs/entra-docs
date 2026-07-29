@@ -1,8 +1,6 @@
 ---
 title: Configure Transport Layer Security Inspection Settings
 description: Learn how to configure a Transport Layer Security inspection certificate authority
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: how-to 
 ms.reviewer: teresayao
 ms.date: 12/16/2025

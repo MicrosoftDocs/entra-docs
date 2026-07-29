@@ -4,8 +4,6 @@ description: 'Compare Microsoft Entra Connect and Cloud Sync technical capabilit
 ms.topic: concept-article
 ms.date: 02/17/2025
 ms.subservice: hybrid-cloud-sync
-author: omondiatieno
-ms.author: jomondi
 ms.custom: customer-intent
 
 #customer-intent: As an IT architect or administrator, I want to evaluate migrating from Microsoft Entra Connect to Cloud Sync so that I can make informed decisions about modernizing my hybrid identity infrastructure.

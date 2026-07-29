@@ -4,16 +4,14 @@ description: Learn how to configure HTTP header session management for Explicit 
 ms.topic: concept-article
 ms.date: 04/06/2026
 ms.author: alexpav
-author: idmdev
-ms.reviewer: 
 ---
 
-# Configure HTTP header session management
+# Configure HTTP header session management (preview)
 
 You can configure Explicit Forward Proxy (preview) to rely on the private IP addresses of devices on your network to associate authenticated users with their devices. To use HTTP header session management with Explicit Forward Proxy, you need to securely communicate the private IP address of the device to the Explicit Forward Proxy feature.
 
 > [!IMPORTANT]
-> The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> The HTTP header session management feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

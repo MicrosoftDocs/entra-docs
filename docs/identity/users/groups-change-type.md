@@ -19,7 +19,7 @@ Creating dynamic membership groups eliminates the management overhead of adding 
 > [!NOTE]
 > When a static group is converted to a dynamic membership group, existing members who meet the membership rule remain. Members who don't are removed. Other users who satisfy the membership rule are added automatically. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
 >
-> Test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Resolve group license problems](/entra/fundamentals/licensing-groups-resolve-problems).
+> Test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Manage group-based licensing errors](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors).
 
 ## Prerequisites
 

@@ -1,8 +1,6 @@
 ---
 title: Transition to Microsoft Entra External ID for CIAM
 description: 'Transition to Microsoft Entra External ID for CIAM: Learn how to migrate your legacy customer identity solutions to enhance security, compliance, and scalability.'
-ms.author: joflore
-author: MicrosoftGuyJFlo
 ms.date: 07/30/2025
 ms.topic: concept-article
 ms.service: entra-external-id

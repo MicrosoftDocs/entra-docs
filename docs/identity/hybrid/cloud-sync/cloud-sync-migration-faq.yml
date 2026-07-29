@@ -2,13 +2,11 @@
 metadata:
   title: Migrate from Microsoft Entra Connect Sync to Cloud Sync FAQ
   description: Frequently asked questions about migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync, including eligibility, timelines, feature parity, and post-migration behavior.
-  author: omondiatieno
   manager: mwongerapk
   ms.service: entra-id
   ms.topic: faq
   ms.date: 05/04/2026
   ms.subservice: hybrid-cloud-sync
-  ms.author: jomondi
   ai-usage: ai-assisted
 
 title: Migrate from Microsoft Entra Connect Sync to Cloud Sync FAQ

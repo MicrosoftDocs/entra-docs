@@ -1,9 +1,7 @@
 ---
 title: Microsoft identity platform accounts & tenant profiles on Android
 description: An overview of the Microsoft identity platform accounts for Android
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 05/14/2025
 ms.reviewer: 
 ms.service: identity-platform

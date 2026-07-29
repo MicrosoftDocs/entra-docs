@@ -1,8 +1,6 @@
 ---
 title: Estimate Cost Savings for Account Recovery in Microsoft Entra ID
 description: Use the cost savings estimator to compare help desk recovery costs against self-service account recovery in Microsoft Entra ID and project potential savings.
-author: tilarso
-ms.author: tilarso
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/02/2026

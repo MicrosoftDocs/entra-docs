@@ -1,9 +1,7 @@
 ---
 title: "Tutorial: Sign in users in .NET MAUI shell app using an external tenant"
 description: This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) and how to run the app on the Android platform.
-author: henrymbuguakiarie
 manager: pmwongera
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial
 ms.custom:
@@ -47,7 +45,7 @@ The next steps will organize our code so that the `main view` is defined.
 1. Select **Add**.
 1. The *MainView.xaml* file will open in a new document tab, displaying all of the XAML markup that represents the UI of the page. Replace the XAML markup with the following markup:
 
-   :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml" :::
+<!--   :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml" ::: -->
 
 1. Save the file.
 
@@ -66,7 +64,7 @@ The next step is to add the code for the button's `Clicked` event.
 
 1. In the **Solution Explorer** pane of Visual Studio, expand the **MainView.xaml** file to reveal its code-behind file **MainView.xaml.cs**. Open the **MainView.xaml.cs** and replace the content of the file with following code:
 
-   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml.cs" :::
+<!--   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/MainView.xaml.cs" ::: -->
 
    The `MainView` class is a content page responsible for displaying the main view of the app. In the constructor, it retrieves the cached user account using the `MSALClientHelper` from the `PublicClientSingleton` instance and enables the sign-in button, if no cached user account is found.
 
@@ -83,7 +81,7 @@ The next steps will organize the code so that `ClaimsView` page is defined. The 
 1. Select **Add**.
 1. The *ClaimsView.xaml* file will open in a new document tab, displaying all of the XAML markup that represents the UI of the page. Replace the XAML markup with the following markup:
 
-   :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml" :::
+<!--   :::code language="xaml" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml" ::: -->
 
    This XAML markup code represents the UI layout for a claim view in a .NET MAUI app. It starts by defining the `ContentPage` with a title and disabling the back button behavior.
 
@@ -97,7 +95,7 @@ The next step is to add the code to handle `ClaimsView` data.
 
 1. In the **Solution Explorer** pane of Visual Studio, expand the **ClaimsView.xaml** file to reveal its code-behind file **ClaimsView.xaml.cs**. Open the **ClaimsView.xaml.cs** and replace the content of the file with following code:
 
-   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml.cs" :::
+<!--   :::code language="csharp" source="~/../ms-identity-ciam-dotnet-tutorial/1-Authentication/2-sign-in-maui/Views/ClaimsView.xaml.cs" ::: -->
 
    The *ClaimsView.xaml.cs* code represents the code-behind for a claim view in a .NET MAUI app. It starts by importing the necessary namespaces and defining the `ClaimsView` class, which extends `ContentPage`. The `IdTokenClaims` property is an enumerable of strings, initially set to a single string indicating no claims found.
 

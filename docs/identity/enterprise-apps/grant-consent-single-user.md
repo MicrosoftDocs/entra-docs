@@ -1,7 +1,6 @@
 ---
 title: Grant Consent on Behalf of a Single User
 description: Learn how to grant consent on behalf of a single user when the user consent is disabled or restricted.
-
 ms.topic: how-to
 ms.date: 12/12/2024
 ms.reviewer: phsignor

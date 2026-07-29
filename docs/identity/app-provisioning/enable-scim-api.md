@@ -1,13 +1,11 @@
 ---
 title: Enable the SCIM Provisioning API in Microsoft Entra ID
 description: Learn how to enable the SCIM Provisioning API feature in the Microsoft Entra admin center and link an Azure subscription for billing.
-author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/31/2026
-ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 
@@ -36,6 +34,9 @@ The SCIM Provisioning API is a paid add-on that requires a subscription and bill
 
 - **Cost:** See [API call pricing](https://aka.ms/EntraSCIMAPIPricing).
 - **Billing:** Monthly, through a linked Azure subscription.
+
+> [!NOTE]
+> Billing for customers in the US Government cloud will be enforced starting August 2026.  
 
 ## Enable the SCIM Provisioning API
 

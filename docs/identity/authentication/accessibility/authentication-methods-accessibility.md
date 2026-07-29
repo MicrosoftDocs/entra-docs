@@ -1,7 +1,6 @@
 ---
 title: Enhance accessibility with multifactor authentication in Microsoft Entra ID
 description: Explains authentication Methods Accessibility
-author: gdaluz1
 ms.topic: concept-article
 ms.date: 03/04/2025
 ---

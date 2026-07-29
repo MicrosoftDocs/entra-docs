@@ -34,6 +34,9 @@ A defense‑in‑depth strategy requires combining multiple control layers:
 
 Each layer addresses a different class of attacks, reducing the likelihood of compromise and limiting the blast radius.
 
+> [!IMPORTANT]
+> Your choice of authentication approach affects your security model. With **browser-delegated authentication**, Microsoft manages the sign-in surface, which reduces your app's exposure to phishing and credential-harvesting attacks. With **native authentication**, your development team shares security responsibility with Microsoft Entra because your app handles credentials directly. Before choosing native authentication, review the [security considerations in Choose an authentication approach](concept-choose-authentication-approach.md#security-considerations).
+
 ### Priority 1: Immediate implementation
 
 These protections are foundational. They're quick to enable and essential for establishing a secure baseline for your external identity flows. Additional protections introduced in Priority 2 address fraud, bots, DDoS, and more advanced attack patterns.

@@ -1,11 +1,9 @@
 ---
 title: Microsoft Entra Conditional Access Optimization Agent
 description: Learn how the Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot can help secure your organization.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
 
-ms.date: 05/22/2026
+ms.date: 06/23/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -27,7 +25,7 @@ The Conditional Access Optimization Agent evaluates policies such as:
 The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one-click remediation.
 
 > [!IMPORTANT]
-> The ServiceNow integration, file upload capability, and activity-based runs in the Conditional Access Optimization Agent are currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> The ServiceNow integration and activity-based runs in the Conditional Access Optimization Agent are currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -81,9 +79,10 @@ The policy suggestions from the agent include:
 - **Risky users**: The agent suggests a policy to require secure password change for high-risk users. Requires a Microsoft Entra ID P2 license.
 - **Risky sign-ins**: The agent suggests a policy to require multifactor authentication for high-risk sign-ins. Requires a Microsoft Entra ID P2 license.
 - **Risky agents**: The agent suggests a policy to block authentication for high-risk sign-ins. Requires a Microsoft Entra ID P2 license.
+- **Agent-assisted flows (preview)**: The agent suggests a policy to block high-risk agent-assisted flows. Requires a Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 - **Deep analysis**: The agent evaluates policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout).
-- **Deep analysis MFA gap analysis**: The agent scans all enabled Conditional Access policies in your tenant to identify users not covered by any MFA policy. This scan includes users excluded from baseline policies, missed in group membership, or falling through gaps between overlapping policies. Unlike standard scans, this analysis evaluates the entire tenant configuration and isn't limited to the last 24 hours.
+- **Deep analysis MFA gap analysis**: This analysis identifies users who aren't protected by any Conditional Access policy that requires MFA or authentication strengths. The agent evaluates both enabled and report-only policies across your entire tenant to calculate how many users fall outside MFA coverage. Common causes include users excluded from policies, missing from required groups, or falling through gaps between overlapping policies. The analysis also provides a sample of impacted users, prioritized by recent sign-in activity, so you can investigate the highest-risk gaps first.
 - **Least-privileged access for agent identities (preview)**: The agent identifies agent identities with unused or overprivileged Microsoft Graph permissions. It then recommends least-privilege enforcement, such as removing unused permissions or replacing broad permissions with more specific ones.
 
 > [!IMPORTANT]
@@ -150,6 +149,16 @@ To identify Intune device compliance and app protection policies, the agent must
 Microsoft Entra Internet Access and Microsoft Entra Private Access (collectively known as Global Secure Access) integrate with the Conditional Access Optimization Agent to provide suggestions specific to your organization's network access policies. The suggestion **Turn on new policy to enforce Global Secure Access network access requirements** helps you align your Global Secure Access policies that include network locations and protected applications.
 
 With this integration, the agent identifies users or groups that aren't covered by a Conditional Access policy to require access to corporate resources only through approved Global Secure Access channels. This policy requires users to connect to corporate resources by using the organization's secure Global Secure Access network before accessing corporate apps and data. Users who connect from unmanaged or untrusted networks are prompted to use the Global Secure Access client or web gateway. You can review sign-in logs to verify compliant connections.
+
+### Microsoft Defender integration
+
+Microsoft Defender integrates with the Conditional Access Optimization Agent to help turn recurring identity attack patterns into Conditional Access posture improvements. Instead of reacting to individual incidents, Defender analyzes identity-relevant signals across investigations and alerts, then aggregates them over a fixed time window. This aggregation surfaces repeated techniques and targeted user cohorts reacting to individual incidents.
+ 
+For each consolidated pattern, Defender produces a structured threat insight that gives the agent context to evaluate posture. Defender provides threat context only; it doesn't include remediation logic or decide which Conditional Access policy to change.
+ 
+The agent evaluates each insight against the tenant's existing Conditional Access policies to determine whether posture hardening is warranted. To minimize policy sprawl, the agent can recommend modifying an existing policy or creating a new report-only policy when no suitable policy exists. Recommendations include rationale and affected-user context so admins can review the change before approving it. If existing coverage already addresses the risk, the agent suppresses the recommendation.
+ 
+Recommendations generated from Defender threat insights appear in the list with a **Linked to Defender** alert tag. The recommendation details include a Defender insight section with the context that contributed to it, and depending on your Microsoft Defender permissions, you can navigate to the related alerts or incidents. An admin always reviews and approves Defender-driven recommendations before any policy change takes effect.
 
 ## Agent removal
 

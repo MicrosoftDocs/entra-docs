@@ -2,13 +2,11 @@
 title: Configure Snowflake for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Snowflake.
 
-author: jeevansd
 ms.topic: how-to
-ms.date: 03/24/2026
-ms.author: jeedes
+ms.date: 07/02/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Snowflake so that I can streamline the user management process and ensure that users have the appropriate access to Snowflake.
----
+--- 
 
 # Configure Snowflake for automatic user provisioning with Microsoft Entra ID
 
@@ -176,6 +174,45 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 ## Connector limitations
 
 Snowflake-generated SCIM tokens expire in 6 months. Be aware that you need to refresh these tokens before they expire, to allow the provisioning syncs to continue working.
+
+## Just-in-time (JIT) application access with PIM for Groups
+
+With Privileged Identity Management (PIM) for Groups, you can provide just-in-time access to groups in Snowflake and reduce the number of users who have permanent access to privileged groups in Snowflake.
+
+**Configure your enterprise application for single sign-on (SSO) and provisioning**
+
+To set up persistent, non-admin access in Snowflake, complete these steps:
+
+1. Add Snowflake to your tenant, configure it for provisioning as described in the previous steps of this tutorial, and start provisioning.
+1. Configure [single sign-on](snowflake-tutorial.md) for Snowflake.
+1. Create a [group](/entra/fundamentals/how-to-manage-groups) that provides all users access to the application.
+1. Assign the group to the Snowflake application.
+1. Assign your test user as a direct member of the group you created for all-user access, or provide access to the group through an access package. This group provides persistent, non-admin access in Snowflake.
+
+**Enable PIM for Groups**
+
+To grant just-in-time admin access, complete these steps:
+
+1. Create a second group in Microsoft Entra ID. This group provides access to admin permissions in Snowflake.
+1. Bring the group under [management in Microsoft Entra PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups).
+1. Assign your test user as [eligible for the group in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner) with the role set to member.
+1. Assign the second group to the Snowflake application.
+1. Use on-demand provisioning to create the group in Snowflake.
+1. Sign in to Snowflake and assign the second group the necessary permissions to perform admin tasks.
+
+Now any end user that was made eligible for the group in PIM can get JIT access to the group in Snowflake by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role).
+
+**Key considerations**
+* How long does it take to have a user provisioned to the application? 
+  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra Privileged Identity Management (PIM):
+    * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
+  * When a user activates their group membership in Microsoft Entra ID PIM: 
+    * The group membership is provisioned in 2-10 minutes. During periods of high request volume, requests are throttled at a rate of five requests per 10 seconds.
+    * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
+    * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
+* If the user can't access the necessary group in Snowflake, review the [Troubleshooting tips](#troubleshooting-tips) section, PIM logs, and provisioning logs to confirm that the group membership updated successfully. Depending on how the target application is architected, it might take extra time for the group membership to take effect in the application.
+* You can create alerts for failures using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics). 
+* Deactivation is done during the regular incremental cycle. It isn't processed immediately through on-demand provisioning.
 
 ## Troubleshooting tips
 

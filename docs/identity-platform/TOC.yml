@@ -941,32 +941,32 @@
         - name: OAuth 2.0 application types
           displayName: App types, OAuth
           href: v2-app-types.md
-        - name: OAuth 2.0 and OpenID Connect (OIDC)
+        - name: Token grant flows
           items:
-            - name: Token grant flows
-              items:
-                - name: OAuth 2.0 auth code grant
-                  href: v2-oauth2-auth-code-flow.md
-                - name: OAuth 2.0 client credentials grant
-                  href: v2-oauth2-client-creds-grant-flow.md
-                - name: OAuth 2.0 device code flow
-                  href: v2-oauth2-device-code.md
-                - name: OAuth 2.0 on-behalf-of flow
-                  displayName: OBO
-                  href: v2-oauth2-on-behalf-of-flow.md
-                - name: OAuth 2.0 implicit grant flow
-                  href: v2-oauth2-implicit-grant-flow.md
-                - name: OAuth 2.0 resource owner password credentials grant
-                  displayName: ROPC
-                  href: v2-oauth-ropc.md
-                - name: OpenID Connect
-                  href: v2-protocols-oidc.md
-            - name: Certificate credentials
-              href: certificate-credentials.md
-            - name: Signing key rollover
-              href: signing-key-rollover.md
-            - name: UserInfo endpoint (OIDC)
-              href: userinfo.md            
+            - name: OAuth 2.0 auth code grant
+              href: v2-oauth2-auth-code-flow.md
+            - name: OAuth 2.0 client credentials grant
+              href: v2-oauth2-client-creds-grant-flow.md
+            - name: OAuth 2.0 device code flow
+              href: v2-oauth2-device-code.md
+            - name: OAuth 2.0 on-behalf-of flow
+              displayName: OBO
+              href: v2-oauth2-on-behalf-of-flow.md
+            - name: OAuth 2.0 implicit grant flow
+              href: v2-oauth2-implicit-grant-flow.md
+            - name: OAuth 2.0 resource owner password credentials grant
+              displayName: ROPC
+              href: v2-oauth-ropc.md
+            - name: OpenID Connect (OIDC)
+              href: v2-protocols-oidc.md
+            - name: OIDC extensibility reference
+              href: reference-oidc-extensibility.md
+        - name: Certificate credentials
+          href: certificate-credentials.md
+        - name: Signing key rollover
+          href: signing-key-rollover.md
+        - name: UserInfo endpoint (OIDC)
+          href: userinfo.md            
         - name: SAML 2.0
           items:
             - name: How Microsoft Entra ID uses the SAML protocol

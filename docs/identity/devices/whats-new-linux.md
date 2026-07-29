@@ -2,8 +2,7 @@
 title: What's new in Microsoft single sign-on for Linux
 description: Discusses new feature releases of Microsoft single sign-on for Linux
 ai-usage: ai-assisted
-author: ploegert
-ms.author: jploegert
+ms.reviewer: jploegert
 ms.topic: whats-new
 ms.date: 04/02/2026
 ms.custom: linux-related-content

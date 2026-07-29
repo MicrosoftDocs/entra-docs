@@ -3,8 +3,6 @@ title: Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra I
 description: How administrators can set up macOS Platform Single Sign-on to support Kerberos authentication to on-premises Active Directory and Microsoft Entra ID kerberos-integrated resources.
 ms.topic: tutorial
 ms.date: 05/13/2024
-ms.author: cwerner
-author: cilwerner
 manager: pmwongera
 ms.reviewer: brianmel
 ms.custom: sfi-image-nochange

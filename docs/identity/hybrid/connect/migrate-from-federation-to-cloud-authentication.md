@@ -4,7 +4,6 @@ description: This article has information about moving your hybrid identity envi
 ms.subservice: hybrid-connect
 ms.topic: upgrade-and-migration-article
 ms.date: 04/09/2025
-author: gargi-sinha
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Migrate from federation to cloud authentication  

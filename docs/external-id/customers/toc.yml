@@ -48,6 +48,8 @@ items:
       href: how-to-migrate-passwords-just-in-time.md
     - name: Migrate from Azure AD B2C
       items:
+        - name: Analyze custom policies
+          href: how-to-analyze-azure-ad-b2c-custom-policies.md
         - name: Plan your migration
           href: plan-your-migration-from-b2c-to-external-id.md
         - name: HSC mode limitations
@@ -58,8 +60,8 @@ items:
           href: enable-external-id-high-scale-compatibility-mode.md
         - name: Troubleshoot HSC mode
           href: troubleshoot-high-scale-compatibility-mode.md
-        - name: Services and integration partners
-          href: services-integration-partners.md
+    - name: Migrate from Amazon Cognito
+      href: migrate-from-cognito-to-external-id.md
 - name: Security
   expanded: false
   items:

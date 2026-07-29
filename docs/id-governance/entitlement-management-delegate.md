@@ -120,6 +120,9 @@ The following table lists the tasks that the entitlement management roles can do
 To determine the least privileged role for a task, you can also reference [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md#entitlement-management-least-privileged-roles).
 
 > [!NOTE]
+> Entitlement management roles authorize actions within entitlement management, but they don't by themselves change tenant-wide access settings for the Microsoft Entra admin center. If the **Restrict access to Microsoft Entra administration portal** user setting is enabled, a delegated user might need to be allowed to access the Microsoft Entra admin center before they can complete admin center tasks such as viewing, adding, removing, or reprocessing access package assignments. For more information about this setting, see [Default user permissions](../fundamentals/users-default-permissions.md).
+
+> [!NOTE]
 > Identities that have been assigned the Access package assignment manager role will no longer be able to bypass approval settings when directly assigning an identity if the access package policy requires approval. If you have a scenario in which you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to identities who need access.
 
 ## Required roles to add resources to a catalog

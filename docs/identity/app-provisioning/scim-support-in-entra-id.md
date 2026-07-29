@@ -4,10 +4,8 @@ description: Learn how Microsoft Entra ID supports the SCIM standard both as a p
 ms.topic: article
 ms.service: entra-id
 ms.subservice: app-provisioning
-author: jenniferf-skc
 manager: pmwongera
 ms.date: 03/31/2026
-ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 

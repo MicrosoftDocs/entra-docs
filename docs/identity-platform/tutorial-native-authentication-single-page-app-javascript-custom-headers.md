@@ -1,9 +1,7 @@
 ---
 title: Add custom headers to native authentication requests in JavaScript SPAs
 description: Learn how to attach custom x-* headers to native authentication requests in a React or Angular SPA to integrate fraud-detection SDKs with Microsoft Entra External ID.
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

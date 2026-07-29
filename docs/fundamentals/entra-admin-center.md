@@ -2,7 +2,7 @@
 title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
 ms.topic: overview
-ms.date: 04/06/2026
+ms.date: 06/18/2026
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
@@ -19,7 +19,7 @@ The admin center brings together the following Microsoft Entra product areas, ea
 
 - **[Entra ID](#entra-id)** — Manage users, groups, devices, applications, roles, and authentication methods.
 - **[ID Protection](#id-protection)** — Monitor and respond to identity-based risks with risk policies and reports.
-- **[Identity Governance](#identity-governance)** — Control access lifecycle with entitlement management, access reviews, and lifecycle workflows.
+- **[ID Governance](#id-governance)** — Control access lifecycle with entitlement management, access reviews, and lifecycle workflows.
 - **[Verified ID](#verified-id)** — Issue and manage verifiable credentials.
 - **[Global Secure Access](#global-secure-access)** — Secure access to apps and resources with Private Access and Internet Access.
 
@@ -48,6 +48,7 @@ For more information about configuring and managing Microsoft Entra ID solutions
 
 * [Users and groups](~/identity/users/directory-overview-user-model.md)
 * [Devices](~/identity/devices/overview.md)
+* [Agents](~/agent-id/what-is-microsoft-entra-agent-id.md)
 * [Enterprise applications](~/identity/enterprise-apps/what-is-application-management.md)
 * [App registrations](~/identity-platform/application-model.md)
 * [Roles and admins](~/identity/role-based-access-control/custom-overview.md)
@@ -72,9 +73,9 @@ For more information about configuring and managing Microsoft Entra ID Protectio
 * [Risky users](~/id-protection/howto-identity-protection-investigate-risk.md)
 * [Risky workload identities](~/id-protection/concept-workload-identity-risk.md)
 
-### Identity governance
+### ID Governance
 
-**Identity Governance** gives administrators and developers access to [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) solutions, including entitlement management, access reviews, and lifecycle workflows.
+**ID Governance** gives administrators and developers access to [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) solutions, including entitlement management, access reviews, and lifecycle workflows.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-identity-governance.png" alt-text="Screenshot of the Microsoft Entra admin center Identity governance menu.":::
 
@@ -118,7 +119,7 @@ The following table lists common administrative tasks you can perform from the M
 | Task | Description | Learn more |
 |------|-------------|------------|
 | Create or delete users | Add new members or guests to your organization, or remove existing users. | [Create or delete users](./how-to-create-delete-users.md) |
-| Manage groups | Create and manage groups to organize users for access management and licensing. | [Manage groups and group membership](./how-to-manage-groups.yml) |
+| Manage groups | Create and manage groups to organize users for access management and licensing. | [Manage groups and group membership](./how-to-manage-groups.md) |
 | Assign roles | Delegate administrative responsibilities using built-in or custom roles. | [Overview of role-based access control](~/identity/role-based-access-control/custom-overview.md) |
 | Manage applications | Register and configure applications for single sign-on and API access. | [What is application management?](~/identity/enterprise-apps/what-is-application-management.md) |
 | Create a Conditional Access policy | Define access controls based on conditions such as user, device, location, and risk. | [What is Conditional Access?](~/identity/conditional-access/overview.md) |
@@ -139,7 +140,7 @@ The following table lists common administrative tasks you can perform from the M
 
 * [What is Microsoft Entra?](./what-is-entra.md)
 * [Create or delete users](./how-to-create-delete-users.md)
-* [Manage groups and group membership](./how-to-manage-groups.yml)
+* [Manage groups and group membership](./how-to-manage-groups.md)
 * [Overview of role-based access control](~/identity/role-based-access-control/custom-overview.md)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [What is Identity Secure Score?](~/identity/monitoring-health/concept-identity-secure-score.md)

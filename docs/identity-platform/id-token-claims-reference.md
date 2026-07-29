@@ -1,9 +1,7 @@
 ---
 title: ID token claims reference
 description: Learn the details of the claims included in ID tokens issued by the Microsoft identity platform.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom:
 ms.date: 05/30/2023
 ms.service: identity-platform

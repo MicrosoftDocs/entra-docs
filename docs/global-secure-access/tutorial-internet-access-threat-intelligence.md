@@ -143,7 +143,7 @@ In this tutorial, you accomplished the following tasks:
 │ Layer 2: Threat intelligence                            │
 │   • Blocks known malicious destinations.                │
 ├─────────────────────────────────────────────────────────┤
-│ Layer 3: File controls                                  │
+│ Layer 3: Content policies                               │
 │   • Prevents data exfiltration via file uploads.        │
 ├─────────────────────────────────────────────────────────┤
 │ Layer 4: Microsoft Defender for Endpoint                │

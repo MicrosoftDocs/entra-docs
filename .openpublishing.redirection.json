@@ -6,6 +6,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/identity/authentication/how-to-epow-register-sign-in.md",
+      "redirect_url": "/entra/identity/authentication/how-to-register-entra-passkey-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-register-passkey-mobile.md",
+      "redirect_url": "/entra/identity/authentication/how-to-register-passkey",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-support-authenticator-passkey.md",
+      "redirect_url": "/entra/identity/authentication/how-to-enable-authenticator-passkey",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/global-secure-access/tutorial-internet-access-file-controls.md",
       "redirect_url": "/entra/global-secure-access/tutorial-internet-access-content-policies",
       "redirect_document_id": true
@@ -2621,27 +2636,47 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/concept-group-based-licensing.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/licensing-groups-resolve-problems.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#move-users-between-licensed-groups",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-admin-center.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-group-advanced.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {
@@ -3606,7 +3641,17 @@
     },
     {
       "source_path": "docs/identity/conditional-access/policy-agent-user-account.md",
-      "redirect_url": "/entra/identity/conditional-access/agent-id",
+      "redirect_url": "/entra/identity/conditional-access/policy-autonomous-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/conditional-access/policy-agent-block-high-risk.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-autonomous-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/conditional-access/policy-on-behalf-of-agents.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-autonomous-agents",
       "redirect_document_id": false
     }
   ]

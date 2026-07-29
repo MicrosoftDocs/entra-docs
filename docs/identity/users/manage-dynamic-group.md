@@ -4,6 +4,7 @@ description: Learn how dynamic group management works.
 ms.topic: concept-article
 ms.date: 04/08/2025
 ms.reviewer: mbhargava
+ai-usage: ai-assisted
 ---
 
 # Understand and manage dynamic group processing in Microsoft Entra ID
@@ -27,7 +28,10 @@ The three biggest factors that influence processing and can cause membership upd
 
 - **Number of object changes**: A high volume of user or device changes can create a long processing queue and extend the processing time. Examples include changes to extension attributes, device additions or removals, and bulk user updates.
 
-- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.  
+- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.
+
+> [!NOTE]
+> Stale devices and inactive user accounts can remain in scope for dynamic membership rules and can be added to groups when they satisfy the rule conditions. Review and clean up [stale devices](/entra/identity/devices/manage-stale-devices) and [inactive users](/entra/identity/monitoring-health/howto-manage-inactive-user-accounts) so your dynamic groups include only the objects you intend to manage.
 
 ## Best practices for dynamic membership groups in your tenant
 

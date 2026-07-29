@@ -1,7 +1,6 @@
 ---
 title: Viewing apps using your tenant for identity management
 description: Understand how to view all applications using your Microsoft Entra tenant for identity management.
-
 ms.topic: reference
 ms.date: 07/14/2023
 ms.reviewer: alamaral

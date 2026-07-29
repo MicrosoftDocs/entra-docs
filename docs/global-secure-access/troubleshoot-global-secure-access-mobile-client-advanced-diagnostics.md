@@ -4,8 +4,6 @@ description: Discover how to use advanced diagnostics to resolve issues with the
 ms.topic: troubleshooting
 ms.service: global-secure-access
 ms.date: 03/09/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: cagautham
 ai-usage: ai-assisted
 

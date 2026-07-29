@@ -1,8 +1,6 @@
 ---
-author: cilwerner
 ms.topic: include
 ms.date: 08/28/2023
-ms.author: cwerner
 ---
 
 If you've a client secret already in place for your application, you need to delete it to avoid a malicious application for impersonating your application:

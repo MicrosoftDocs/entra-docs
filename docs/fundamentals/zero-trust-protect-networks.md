@@ -5,8 +5,6 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.topic: concept-article
 ms.date: 04/30/2026
 
-ms.author: sarahlipsey
-author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
 #Customer Intent: As an IT admin, I want to understand how to protect networks so that I can implement Zero Trust network security principles.

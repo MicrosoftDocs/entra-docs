@@ -2,13 +2,11 @@
 title: Configure Genesys Cloud for Azure for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Genesys Cloud for Azure.
 
-author: jeevansd
 ms.topic: how-to
-ms.date: 03/20/2026
-ms.author: jeedes
+ms.date: 06/09/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Genesys Cloud for Azure so that I can streamline the user management process and ensure that users have the appropriate access to Genesys Cloud for Azure.
----
+--- 
 
 # Configure Genesys Cloud for Azure for automatic user provisioning with Microsoft Entra ID
 
@@ -24,6 +22,10 @@ This article describes the steps you need to perform in both Genesys Cloud for A
 > * [Single sign-on](./purecloud-by-genesys-tutorial.md) to Genesys Cloud for Azure (recommended)
 > * Long lived bearer token authentication supported.
 
+Genesys Cloud for Azure is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -31,9 +33,6 @@ The scenario outlined in this article assumes that you already have the followin
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A PureCloud [organization](https://help.mypurecloud.com/?p=81984).
 * A User with [permissions](https://help.mypurecloud.com/?p=24360) to create an Oauth Client.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).

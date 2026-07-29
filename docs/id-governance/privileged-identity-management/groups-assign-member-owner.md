@@ -21,13 +21,27 @@ When a membership or ownership is assigned, the assignment:
 > [!NOTE]
 > Every user who is eligible for membership in or ownership of a PIM for Groups must have a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. For more information, see [License requirements to use Privileged Identity Management](~/id-governance/licensing-fundamentals.md).
 
+## Permissions
+
+You need appropriate permissions to manage group membership or ownership in Microsoft Entra PIM.
+
+- To manage ownership of a role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groupsAssignableToRoles/owners/update` permission, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group.
+- To manage membership in a role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groupsAssignableToRoles/members/update` permission, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group.
+- To manage ownership of a non-role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groups/owners/update` permission, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group.
+- To manage membership in a non-role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groups/members/update` permission, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group.
+
+Role assignments for administrators can be scoped at directory level or administrative unit level. Built-in and custom Microsoft Entra roles are supported.
+
+Privileged Identity Management doesn't support permissions that start with `microsoft.directory/groups.security/` or `microsoft.directory/groups.unified/`. Use permissions that start with `microsoft.directory/groups/` instead.
+
+Privileged Identity Management doesn't support groups in Restricted Management Administrative Units (RMAU).
+
 ## Assign an owner or member of a group
 
-
-Follow these steps to make a user an eligible member or owner of a group. You need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator or be an Owner of the group. For non-role-assignable groups, you need to be at least a Directory Writer, Groups Administrator, Identity Governance Administrator, or User Administrator, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
+Follow these steps to make a user an eligible member or owner of a group.
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
+> Administrators and group owners can manage groups through the Groups experience and other interfaces, overriding changes made in Microsoft Entra PIM.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -69,13 +83,12 @@ Follow these steps to make a user an eligible member or owner of a group. You ne
 
 ## Update or remove an existing role assignment
 
-
-Follow these steps to update or remove an existing role assignment. You need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator or be an Owner of the group. For non-role-assignable groups, you need to have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, or User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
+Follow these steps to update or remove an existing role assignment.
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
+> Administrators and group owners can manage groups through the Groups experience and other interfaces, overriding changes made in Microsoft Entra PIM.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with a role that has the [required permissions](#permissions).
 
 1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**. 
 

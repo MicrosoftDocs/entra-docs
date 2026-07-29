@@ -4,8 +4,9 @@ description: Privileged roles and permissions in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: concept-article
-ms.date: 10/15/2024
+ms.date: 06/05/2026
 ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Privileged roles and permissions in Microsoft Entra ID (preview)
@@ -403,6 +404,12 @@ Here are some best practices for using privileged roles.
 
 For more information, see [Best practices for Microsoft Entra roles](best-practices.md).
 
+### Isolate privileged intermediaries as control plane assets
+
+Any system that can manage or broker access to privileged roles is part of the control plane and must be protected at that level. Examples include privileged access management (PAM) solutions, jump hosts and session hosts, automation runbooks, and service principals or applications that hold highly privileged roles.
+
+In the [Enterprise access model](/security/privileged-access-workstations/privileged-access-access-model), Tier 0 expands to become the control plane, which must be isolated from the management and data/workload planes so that control of higher planes can't be obtained from lower ones. If a lower-tier system can administer a control plane asset, an attacker who compromises that system can escalate privilege. Treat these intermediaries as control plane (Tier 0) assets and administer them only from equally trusted control plane systems.
+
 ## Privileged permissions versus protected actions
 
 Privileged permissions and protected actions are security-related capabilities that have different purposes. Permissions that have the **PRIVILEGED** label help you identify permissions that can lead to elevation of privilege if not used in a secure and intended manner. Protected actions are role permissions that have been assigned Conditional Access policies for added security, such as requiring multi-factor authentication. Conditional Access requirements are enforced when a user performs the protected action. Protected actions are currently in Preview. For more information, see [What are protected actions in Microsoft Entra ID?](./protected-actions-overview.md).
@@ -474,6 +481,8 @@ The following table is for roles assigned at the scope of a tenant. For roles as
 | Usage Summary Reports Reader | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | All other built-in and custom roles |  |  |  |  | :white_check_mark: | :white_check_mark: |
 
+Security Operator and Entra SOC Identity Responder are limited to non-administrative user accounts and can't perform actions on privileged accounts.
+
 > [!IMPORTANT]
 > The [Partner Tier2 Support](permissions-reference.md#partner-tier2-support) role can reset passwords and invalidate refresh tokens for all non-administrators and administrators (including Global Administrators). The [Partner Tier1 Support](permissions-reference.md#partner-tier1-support) role can reset passwords and invalidate refresh tokens for only non-administrators. These roles should not be used because they are deprecated.
 
@@ -521,6 +530,8 @@ The following table is for roles assigned at the scope of a tenant. For roles as
 | User Experience Success Manager | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Usage Summary Reports Reader | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | All other built-in and custom roles |  |  | :white_check_mark: | :white_check_mark: |
+
+Security Operator and Entra SOC Identity Responder are limited to non-administrative user accounts and can't perform actions on privileged accounts.
 
 ## Next steps
 

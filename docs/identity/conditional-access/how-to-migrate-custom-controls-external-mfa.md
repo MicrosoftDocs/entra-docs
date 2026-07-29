@@ -3,8 +3,6 @@ title: Migrate from custom controls to external MFA in Conditional Access
 description: Learn how to migrate from custom controls to external multifactor authentication in Microsoft Entra Conditional Access.
 ms.topic: how-to
 ms.date: 05/19/2026
-ms.author: sarahlipsey
-author: shlipsey3
 manager: pmwongera
 ms.reviewer: akuloomba
 ai-usage: ai-assisted
@@ -318,14 +316,6 @@ Have each test user (or a representative sample) perform the following steps:
    - **Conditional Access**: The new policy evaluated and granted access
    - **MFA requirement satisfied by**: External authentication method (not custom control)
 
-### Validate downstream integrations
-
-If applicable, verify that these scenarios work correctly with external MFA:
-
-- **Self-Service Password Reset (SSPR)**: User can reset password using external MFA.
-- **PIM role activation**: User can activate privileged roles with external MFA.
-- **Risk-based policies**: Sign-in risk and user risk policies correctly interact with external MFA.
-- **Intune device enrollment**: Device registration completes with external MFA.
 
 ## Full rollout
 

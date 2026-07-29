@@ -3,8 +3,6 @@ title: Discover identities in target applications with Account Discovery
 description: Learn how to use Account Discovery to find and categorize existing user accounts in target applications, match them to Microsoft Entra ID users, and prepare for provisioning governance.
 ms.topic: how-to
 ms.date: 05/26/2026
-ms.author: jfields
-author: jenniferf-skc
 ms.reviewer: arvinh
 ms.service: entra-id
 ms.subservice: app-provisioning
@@ -61,6 +59,9 @@ Account Discovery is currently unsupported for the following applications:
 - ServiceNow  
 - Amazon Web Services (AWS)
 - Snowflake
+- Cross-tenant synchronization
+- Cloud sync
+- Group provisioning to AD
 
 ### All other connectors
 
@@ -106,6 +107,10 @@ Unassigned users match a Microsoft Entra ID user based on the matching attribute
 
 Assigned users match a Microsoft Entra ID user who is already assigned to the application. These accounts are fully managed by the provisioning service. No action is needed unless you want to review or update their attribute mappings.
 
+### Retrieve results with Microsoft Graph
+
+In addition to reviewing discovered accounts in the Microsoft Entra admin center, you can use Microsoft Graph to programmatically retrieve the account discovery results. For more information, see the [identityCorrelation resource type](/graph/api/resources/identitycorrelation?view=graph-rest-beta) in the Microsoft Graph beta API reference.
+
 ## Filter and search results
 
 Use the search and filter capabilities to find specific accounts:
@@ -115,7 +120,8 @@ Use the search and filter capabilities to find specific accounts:
 - Manage columns to view the imported attributes from the target application and the correlation status.
 
 ## Assign correlated users to your enterprise application and/or access packages
-After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to the enterprise application or an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsersWithRules.ps1 file and run the PowerShell commandlet to assign users. The scripts should be run in PowerShell 7.X. 
+
+After [discovering](~/identity/app-provisioning/how-to-account-discovery.md) users in your application, you can easily assign those users to the enterprise application or an access package. [Download](https://aka.ms/AssignCorrelatedUsersPowerShell) the Assign-CorrelatedUsers.ps1 file and run it in PowerShell 7.x to assign users.
 
 ### Optional parameters
 
@@ -164,7 +170,7 @@ The rules file is a standard [CSV](https://aka.ms/AssignCorrelatedUsersCSV) with
 |---|---|
 | `RuleGroup` | Rows sharing the same group number are AND-ed together. Different groups are evaluated independently. |
 | `PropertyName` | Key in the target SCIM property bag (e.g. `userType`, `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department`). The property names can be found in the discovery UX when clicking on view attributes for an individual user or in your provisioning attribute mappings. |
-| `Operator` | `eq` \| `ne` \| `contains` \| `startswith` \| `endswith` \| `regex` |
+| `Operator` | `eq`, `ne`, `contains`, `startswith`, `endswith`, `regex` |
 | `Value` | The value to compare against (case-insensitive). |
 | `AccessPackageId` | The access package to assign when the group matches. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |
 | `PolicyId` | The assignment policy for that access package. This can be found in the URL when navigating to the access package in the Microsoft Entra admin center. |

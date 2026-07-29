@@ -4,7 +4,6 @@ description: Learn how device identity management can help you to manage devices
 
 ms.topic: concept-article
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo
 ---
 

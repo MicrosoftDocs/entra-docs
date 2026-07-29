@@ -2,8 +2,6 @@
 title: Create an agent identity blueprint
 description: Learn how to create an agent identity blueprint that serves as a template for multiple agent identities using Microsoft Graph APIs and PowerShell.
 titleSuffix: Microsoft Entra Agent ID
-author: omondiatieno
-ms.author: jomondi
 ms.topic: how-to
 ms.date: 04/27/2026
 ms.reviewer: dastrock
@@ -136,13 +134,14 @@ Write-Host "Sponsor user: $($user.DisplayName) ($($user.Id))"
 $body = @{
     "@odata.type" = "Microsoft.Graph.AgentIdentityBlueprint"
     "displayName" = "My Agent Identity Blueprint"
-    "sponsors@odata.bind" = @("https://microsoft.graph.microsoft.com/v1.0/users/$($user.Id)")
-    "owners@odata.bind" = @("https://microsoft.graph.microsoft.com/v1.0/users/$($user.Id)")
+    "sponsors@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$($user.Id)")
+    "owners@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$($user.Id)")
 } | ConvertTo-Json -Depth 5
 
 $response = Invoke-MgGraphRequest `
     -Method POST `
     -Uri "https://graph.microsoft.com/v1.0/applications/microsoft.graph.agentIdentityBlueprint" `
+    -Headers @{ "OData-Version" = "4.0" } `
     -Body $body `
     -ContentType "application/json"
 

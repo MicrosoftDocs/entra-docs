@@ -1,8 +1,6 @@
 ---
 title: Microsoft Entra Conditional Access Optimization Agent settings
 description: Explore the settings available for the Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
 
 ms.date: 05/22/2026
@@ -21,7 +19,7 @@ The Conditional Access Optimization Agent helps organizations improve their secu
 The agent settings described in this article cover standard options like triggers, notifications, and scope. But the settings also include advanced options like custom instructions, Intune integrations, and permissions.
 
 > [!IMPORTANT]
-> The ServiceNow integration, file upload capability, and activity-based runs in the Conditional Access Optimization Agent are currently in PREVIEW.
+> The ServiceNow integration and activity-based runs in the Conditional Access Optimization Agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## How to configure agent settings
@@ -119,7 +117,7 @@ At this time, the agent's communication is one direction, so you can receive not
 
 The Conditional Access Optimization Agent can pull from two different knowledge sources to make suggestions that are tailored to your organization's unique setup.
 
-### Files (Preview)
+### Files
 
 The Conditional Access Optimization Agent includes a mechanism to provide specific instructions about your organization. These instructions can include information such as Conditional Access policy naming conventions, unique procedures, and organizational structure so the agent suggestions are even more relevant to your environment. These uploaded files make up the knowledge base for the agent. For more information, see [Conditional Access Optimization Agent knowledge base](conditional-access-agent-optimization-knowledge-base.md).
 

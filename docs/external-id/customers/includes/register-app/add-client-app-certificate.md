@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 07/12/2023
-ms.author: kengaderdus
 ---
 
 To use your client app certificate, you need to associate the app you registered in the Microsoft Entra admin center with the certificate:

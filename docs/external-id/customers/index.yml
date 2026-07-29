@@ -31,6 +31,8 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
+          - text: Choose an authentication approach
+            url: concept-choose-authentication-approach.md
           - text: Sign-in methods
             url: concept-authentication-methods-customers.md
           - text: Sign-in with native authentication

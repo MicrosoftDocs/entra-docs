@@ -2,7 +2,8 @@
 title: Governing Agent Identities
 description: This article describes governing agent identities.
 ms.topic: concept-article #Required; leave this attribute/value as-is.
-ms.date: 10/25/2025
+ms.date: 06/05/2026
+ai-usage: ai-assisted
 
 #Customer Intent: As an Identity Governance administrator, I want to learn how to use Microsoft Entra to manage lifecycle and access to resources for agent identities within my organization.
 ---
@@ -15,7 +16,7 @@ This allows agent identities to be governed with Microsoft Entra features in the
 
 ## License requirements
 
-[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
+[!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
 ## Agent identities basics
 
@@ -65,6 +66,12 @@ After submission, the access request is routed to designated approvers based on 
 When the agent identity has received an access package assignment with an expiry date, and if a sponsor is set on the agent identity, as the expiry date approaches, the sponsor receives notifications about the pending expiration. The sponsor then has two options: they can request an extension of the access package (if permitted by policy), or they can allow the access package assignment to expire. If the sponsor requests an extension, this request can trigger a new approval cycle, where approvers again confirm whether continued access is appropriate. If the sponsor takes no action, the access package assignment automatically expires on its end date, and the agent identity loses access to the target resources.
 
 For a guide on creating an access package for agents, see: [access packages for agent identities in Microsoft Entra Agent ID](../agent-id/agent-access-packages.md). For a guide on assigning identities to an existing access package, see: [View, add, and remove assignments for an access package in entitlement management](entitlement-management-access-package-assignments.md).
+
+## Conditional Access for agent identities
+
+Entitlement management controls which resources an agent identity can be assigned. To also control the conditions under which an agent identity can access those resources, you can apply Conditional Access to agent identities. Conditional Access policies evaluate agent context and risk—including agent identity risk from Microsoft Entra ID Protection—before granting access. You can apply these policies at the agent identity blueprint level so that all agent identities created from a blueprint inherit them.
+
+For more information, see [Conditional Access for agents](../identity/conditional-access/agent-id.md) and [Identity Protection for agents](../id-protection/concept-risky-agents.md).
 
 ## Management of agents
 

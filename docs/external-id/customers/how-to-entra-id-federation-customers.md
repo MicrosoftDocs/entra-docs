@@ -3,14 +3,12 @@ title: Add Microsoft Entra ID for customer sign-in
 description: Learn how to configure a Microsoft Entra ID tenant as an OpenID Connect identity provider in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
 ms.topic: how-to
 ms.date: 03/09/2026
-ms.author: godonnell
-author: garrodonnell
 ms.custom: it-pro, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 
 #customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
 ---
-# Add a Microsoft Entra ID tenant as an OpenID Connect identity provider (Preview)
+# Add a Microsoft Entra ID tenant as an OpenID Connect identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -166,7 +164,7 @@ Yes. Because all authentication occurs in the user's home Microsoft Entra ID ten
 - Device-based and risk-based controls
 
 > [!NOTE]
-> External ID Conditional Access policies that require MFA registration aren't honored by the home tenant. For details, see [Known limitations](how-to-custom-oidc-federation-customers.md#known-limitations) in the custom OIDC federation article.
+> External ID does not currently trust MFA performed in Microsoft Entra, so users may be prompted to complete MFA again if MFA is required by the External ID tenant.
 
 **Why do I see a domain confirmation dialog when using domain_hint?**
 

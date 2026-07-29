@@ -3,7 +3,6 @@ title: How to enable passkeys (FIDO2) in Microsoft Entra ID
 description: Learn how to enable passkeys (FIDO2) in Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 03/08/2026
-author: hanki71
 ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable passkeys (FIDO2) in Microsoft Entra ID.
@@ -279,7 +278,7 @@ After you enable passkey profiles, share end-user registration and sign-in guida
 
 - **Synced passkeys** — [Register a passkey (FIDO2)](how-to-register-passkey.md) | [Sign in with a passkey (FIDO2)](how-to-sign-in-passkey.md)
 - **Passkeys in Microsoft Authenticator** — [Enable passkeys in Authenticator](how-to-enable-authenticator-passkey.md) | [Register a passkey in Authenticator](how-to-register-passkey-authenticator.md) | [Sign in with passkeys in Authenticator](how-to-sign-in-passkey-authenticator.md)
-- **Microsoft Entra passkeys on Windows (preview)** — [Enable passkeys on Windows](how-to-authentication-entra-passkeys-on-windows.md)
+- **Microsoft Entra passkeys on Windows** — [Enable passkeys on Windows](how-to-authentication-entra-passkeys-on-windows.md)
 - **FIDO2 security keys** — [Register a passkey with a security key](how-to-register-passkey-with-security-key.md)
 - [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md)
 - [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md)

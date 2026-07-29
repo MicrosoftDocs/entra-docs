@@ -11,6 +11,9 @@ ms.custom: include file,licensing, sfi-ga-nochange
 
 The following table lists features that are available for authentication in the various versions of Microsoft Entra ID. Plan out your needs for securing user sign-in, then determine which approach meets those requirements. For example, although Microsoft Entra ID Free provides security defaults with multifactor authentication, only Microsoft Authenticator can be used for the authentication prompt, including text and voice calls. This approach might be a limitation if you can't make sure that Authenticator is installed on a user's personal device.
 
+> [!NOTE]
+> Microsoft 365 E7 includes the Microsoft Entra Suite, which provides all Microsoft Entra ID P2 authentication features listed in this table.
+
 | Feature | Microsoft Entra ID Free - Security defaults (enabled for all users) | Microsoft Entra ID Free - Global Administrators only | Office 365 | Microsoft Entra ID P1 | Microsoft Entra ID P2 |
 | --- |:---:|:---:|:---:|:---:|:---:|
 | Protect Microsoft Entra tenant admin accounts with MFA | :white_check_mark: | :white_check_mark: (*Microsoft Entra Global Administrator* accounts only) | :white_check_mark: | :white_check_mark: | :white_check_mark: |

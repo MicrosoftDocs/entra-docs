@@ -1,8 +1,6 @@
 ---
 title: Perform Account Recovery in Microsoft Entra ID
 description: Learn how end users can recover their Microsoft Entra ID accounts through identity verification when all authentication methods are lost. Follow the step-by-step recovery process.
-author: tilarso
-ms.author: tilarso
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/02/2026

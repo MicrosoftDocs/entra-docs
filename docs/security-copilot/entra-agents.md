@@ -2,8 +2,6 @@
 title: Microsoft Entra Agents
 description: Learn about Microsoft Entra agents, AI-powered automation tools that enhance identity and access management operations.
 keywords:
-author: shlipsey3
-ms.author: sarahlipsey
 ms.date: 01/21/2026
 ms.update-cycle: 180-days
 ms.topic: overview
