@@ -76,11 +76,6 @@ sections:
         answer: |
           Yes. Use [PIM for Groups](/entra/id-governance/privileged-identity-management/concept-pim-for-groups) so that admins activate group membership in the governing tenant before using GDAP access configured in the relationship to manage other tenants. PIM policies configured in the governed tenant and applied to a governing tenant administrator aren't supported.
 
-      - question: |
-          Does Tenant Governance support multiple relationships between tenants?
-        answer: |
-          Multiple tenants can govern a single tenant, and a single tenant can govern multiple tenants. Multiple active relationships between the same two tenants aren't supported.
-
   - name: Configuration management
     questions:
       - question: |
