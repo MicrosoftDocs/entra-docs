@@ -157,10 +157,10 @@ Administrators can review policy impact in report-only mode, exclude emergency a
 
 ### Require remediation for high-risk users
 
-This policy requires users identified as high risk by Microsoft Entra ID Protection to remediate their risk before continuing to access organizational resources. Instead of blocking access entirely, this policy uses [adaptive risk remediation](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience) to guide users through the appropriate recovery flow based on their authentication method and the type of threat detected. For more information about the remediation experience, see [User self-remediation with Microsoft Entra ID Protection](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-user-experience).
+This policy requires users identified as high risk by Microsoft Entra ID Protection to remediate their risk before continuing to access organizational resources. Instead of blocking access entirely, this policy uses [adaptive risk remediation](https://learn.microsoft.com/entra/id-protection/concept-identity-protection-user-experience) to guide users through the appropriate recovery flow based on their authentication method and the type of threat detected. For more information about the remediation experience, see [User self-remediation with Microsoft Entra ID Protection](https://learn.microsoft.com/entra/id-protection/concept-identity-protection-user-experience).
 
 > [!NOTE]
-> **Hybrid tenants:** Eligible tenants have password hash sync enabled, so affected users can self-remediate through a secure password change after completing MFA. Ensure your users are registered for MFA. For more information, see [Considerations for cloud and hybrid users](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-remediate-unblock#considerations-for-cloud-and-hybrid-users).
+> **Hybrid tenants:** Eligible tenants have password hash sync enabled, so affected users can self-remediate through a secure password change after completing MFA. Ensure your users are registered for MFA. For more information, see [Considerations for cloud and hybrid users](https://learn.microsoft.com/entra/id-protection/howto-identity-protection-remediate-unblock#considerations-for-cloud-and-hybrid-users).
 
 This policy targets:
 
