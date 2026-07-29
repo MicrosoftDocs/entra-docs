@@ -35,7 +35,7 @@ By selecting Microsoft Entra built-in roles and assigning them to a group in the
 
 - Manage the governed tenant without needing a local or business-to-business (B2B) account in that tenant.
 
-Each group can have multiple role assignments, and each policy template can have multiple groups defined. When you create the governance relationship, Tenant Governance creates [granular delegated admin privileges (GDAP)](/partner-center/customers/gdap-introduction) role assignments in the governed tenant.
+Each group can have multiple role assignments, and each policy template can have multiple groups defined. When you create the governance relationship, Tenant Governance creates [granular delegated admin privileges (GDAP)](cross-tenant-delegated-administration.md) role assignments in the governed tenant.
 
 ## Multitenant application configuration
 

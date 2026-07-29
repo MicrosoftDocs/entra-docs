@@ -1,70 +1,94 @@
 ---
 title: Cross-tenant delegated administration
 titleSuffix: Microsoft Entra ID Governance
-description: Learn about cross-tenant delegated administration and how it enables centralized management across tenants in Microsoft Entra
+description: Learn about cross-tenant delegated administration and the GDAP-based permission model for managing tenants in Microsoft Entra.
 ms.topic: concept-article
-ms.date: 03/10/2026
+ms.date: 07/27/2026
+ai-usage: ai-assisted
 ---
 
-<!-- source: Cross-tenant delegated administration.docx -->
+<!-- source: Cross-tenant delegated administration - GDAP documentation draft.md -->
 
 # Cross-tenant delegated administration
 
-Cross-tenant delegated administration is a capability within Tenant Governance that enables administrators to monitor and manage multiple tenants using accounts from a central governing tenant. Administrators don't need to create local accounts or business-to-business (B2B) guest accounts in every governed tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide secure, least-privileged access across tenant boundaries.
+Cross-tenant delegated administration is a capability in Tenant Governance that enables administrators in one tenant to manage another tenant by using their home tenant credentials. Administrators don't need local accounts or business-to-business (B2B) guest accounts in every tenant. This capability uses granular delegated admin privileges (GDAP) technology to provide delegated, least-privileged administration and access across tenant boundaries.
 
-Before you can use cross-tenant delegated administration, you must first create a governance relationship between the governing tenant and each governed tenant. The governance relationship establishes the trust boundary. It also defines the delegated administration policies that control which roles and permissions are available to governing tenant administrators.
+This article explains the GDAP-based permission model that Tenant Governance and other Microsoft services use. It serves as the central reference for customers, partners, and Microsoft workloads that expose delegated administration capabilities through their own products and services.
 
-Cross-tenant delegated administration also gives governed tenants full visibility into governing tenant admin activity within their environment. The governed tenant's sign-in and audit logs capture all actions that delegated administrators perform, ensuring that governed tenant stakeholders can independently monitor, review, and audit administrative operations.
+## How the permission model works
 
-## How cross-tenant delegated administration works
+Cross-tenant delegated administration has two permission layers:
 
-Cross-tenant delegated administration uses GDAP technology, the same technology that Partner Center uses to enable partners to administer customer tenants. With this capability:
+- **Relationship-level permissions** establish the delegated administration relationship between tenants.
 
-- Administrators sign in with their governing tenant credentials to access governed tenants.
+- **Workload-specific permissions** are the additional permissions that individual Microsoft services might require when they use their own role-based access control (RBAC) systems.
 
-- No local or B2B accounts are required in the governed tenants.
+### Relationship-level permissions
 
-- Access and permissions are managed centrally from the governing tenant.
+Before delegated administrators can access a governed tenant, a [governance relationship](governance-relationships.md) (or GDAP relationship) is established between the governing tenant and the governed tenant. This relationship establishes the trust boundary and defines the delegated administration policies: the roles and permissions available to administrators from the governing tenant.
 
-- Role assignments follow the principle of least privilege.
+In Tenant Governance, delegated administration roles are defined in a [governance policy template](governance-policy-templates.md). The template identifies the Microsoft Entra built-in roles that are enabled for administration and maps those roles to security groups in the governing tenant. When the relationship is established, remote tenant groups (or group proxies) are created in the governed tenant. Each group proxy maps back to a security group in the governing tenant, so you manage membership in the governing tenant while access is represented in the governed tenant. The roles assigned to these group proxies, as defined in the relationship, are GDAP role assignments.
 
-When you establish a governance relationship with delegated administration configured, Tenant Governance creates GDAP role assignments in the governed tenant. These role assignments allow designated users from the governing tenant to perform administrative tasks based on the roles that the governance policy template defines.
+For more information about relationship-level permissions in Partner Center, see [Granular delegated admin privileges (GDAP)](/partner-center/customers/gdap-introduction).
 
-## Key components
+### Workload-specific permissions
 
-Cross-tenant delegated administration relies on these components.
+Microsoft workloads might have RBAC systems in addition to Microsoft Entra roles. The delegated administration relationship establishes the trust and identity foundation, but a workload might require additional role assignments in the governed tenant before administrators can manage that workload's resources.
 
-### Governance policy template
+A workload-specific role assignment that you make after the relationship is established might target a remote tenant group (or group proxy) that maps back to a security group in the governing tenant. This mapping allows the governing tenant to manage membership in its own security group, while the governed tenant assigns workload permissions to the corresponding proxy. Assign additional workload permissions to remote tenant groups only when those permissions are required for the partner or governing tenant to perform agreed-upon administrative work. Partners should be aware that workload-specific permissions might be assigned in the customer tenant after the relationship is established.
 
-The governance policy template defines which Microsoft Entra built-in roles are enabled for delegated administration. When you create a template:
+## Expected behavior by permission type
 
-- Select one or more Microsoft Entra built-in roles to assign.
+The following table summarizes how each permission type is configured and controlled.
 
-- Assign each role to a security group in the governing tenant.
+| Permission type | Where configured | Who approves or assigns | What it controls |
+|---|---|---|---|
+| Microsoft Entra built-in roles (from the delegated administration relationship) | During governance or GDAP relationship setup | The governed (customer) tenant reviews and accepts the request | Baseline delegated administration access for Microsoft Entra roles |
+| Azure RBAC roles | In the governed (customer) tenant, after the relationship exists | An admin in the governed (customer) tenant | Access to Azure resources governed by Azure RBAC |
+| Defender RBAC or Unified RBAC roles | In the governed (customer) tenant, after the relationship exists | An admin in the governed (customer) tenant | Access to Defender or related workload permissions |
+| Security group membership | In the governing (partner) tenant | The governing (partner) tenant | Which partner users receive the delegated access that the group represents |
 
-Each group can have multiple role assignments, and each policy template can have multiple groups defined.
+For more information about delegated administration in Microsoft Defender, see [Configure delegated access with governance relationships for multitenant organizations](/unified-secops/governance-relationships).
 
-### GDAP role assignments
+## Recommended practices for customers
 
-GDAP role assignments are cross-tenant role assignments that allow users from the governing tenant to sign in and manage a governed tenant. The system automatically creates these assignments in the governed tenant when you establish a governance relationship with delegated administration.
+### Review the requested relationship before accepting
 
-## Benefits
+Before you accept a delegated administration relationship through Tenant Governance or Partner Center, carefully review the request. Check which roles are included, and confirm that you recognize the organization or tenant that sent the request.
 
-Cross-tenant delegated administration provides several advantages for organizations managing multiple tenants:
+If a request comes from an organization or tenant that you don't recognize, don't accept it. When you accept a governance (GDAP) request, you grant administrators from the governing tenant access to your tenant through the approved roles. The relationship defines the delegated administration baseline and determines which administrators from the governing tenant can access your tenant. Accept a request only when you expect the relationship and trust the requesting organization.
 
-- Centralized access management: Manage permissions and access from a single governing tenant rather than configuring access in each individual tenant.
+### Assign workload-specific permissions only when needed
 
-- Reduced account sprawl: Eliminate the need for local or B2B accounts across multiple tenants.
+If a governing tenant admin asks you to assign permissions to a remote tenant group, confirm that the assignment is required for an agreed-upon service or administration scenario. Don't assign additional Azure or Defender permissions unless you understand why the partner or governing tenant needs that access.
 
-- Least privilege access: Define specific roles and permissions for delegated administrators.
+### Monitor delegated administrator activity
 
-- Scalability: Manage hundreds or thousands of tenants using the same technology that powers Partner Center.
+Use the governed tenant's sign-in logs and audit logs to monitor administrator activity. A governed tenant can track governing tenant administrator activity in its sign-in and audit logs. For more information, see [Monitor governing tenant admin activity in a governed tenant](how-to-monitor-governing-activity.md).
 
-- Audit trail: Track governing tenant admin activity in governed tenant sign-in and audit logs.
+### Use preventive controls where available
+
+For Azure role assignments, consider using [Azure Policy](/azure/governance/policy/overview) to restrict assignments to remote tenant groups if your organization doesn't want tenant administrators to grant those permissions.
+
+## Recommended practices for partners and governing tenants
+
+### Communicate required permissions
+
+Tell customers which workload-specific roles you need them to configure. Clear communication helps avoid cases where a customer grants broader access than intended.
+
+### Manage access through security groups
+
+Assign named security groups to delegated administration roles, and manage technician membership from the governing (partner) tenant. Assign a security group in your tenant to an approved role in the customer tenant. Then manage membership in that security group so that it includes only the technicians who help that customer.
+
+### Monitor for unexpected workload assignments
+
+Establish a process to detect and review workload-specific role assignments to remote tenant groups, such as Azure and Defender role assignments. Consider aggregating Azure logs and Microsoft 365 logs through [Log Analytics](/azure/azure-monitor/logs/log-analytics-overview). To find Azure and Defender role assignments in your audit logs, see [Microsoft Defender XDR auditing](/defender-xdr/microsoft-xdr-auditing).
 
 ## Related content
 
+- [Governance relationships](governance-relationships.md)
 - [Set up a governance relationship](how-to-set-up-governance-relationship.md)
 - [Use delegated administration](how-to-delegated-administration.md)
 - [Monitor governing tenant admin activity](how-to-monitor-governing-activity.md)
 - [Governance policy templates](governance-policy-templates.md)
+- [Manage delegated access through the Microsoft Defender portal](/unified-secops/governance-relationships)
