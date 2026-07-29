@@ -65,7 +65,7 @@ For a step by step guide on this process, see: [Customize emails sent out by wor
 
 ### Dynamic attributes within email
 
-With customized emails, you're able to include dynamic attributes within the subject and body to personalize these emails. You can include built-in user attributes, custom security attributes, directory extensions, and on-premises extension attributes. The list of dynamic attributes that can be included are as follows:
+With customized emails, you're able to include dynamic attributes within the subject and body to personalize these emails. You can include built-in user attributes, custom security attributes, directory extensions, and on-premises extension attributes. The following tables show examples of available dynamic attributes:
 
 **User attributes**
 
@@ -101,6 +101,9 @@ With customized emails, you're able to include dynamic attributes within the sub
 
 > [!NOTE]
 > When adding these attributes to a customized email, or subject, they must be properly formatted using `{{user.graphPropertyName}}` syntax. For a step by step guide on doing this, see: [Format attributes within customized emails](customize-workflow-email.md).
+
+> [!IMPORTANT]
+> The new `{{user.graphPropertyName}}` attribute format applies to new custom email tasks. Existing customized email tasks on workflows that were configured before this change are not affected and continue to work with their existing attribute formatting.
 
 ## Task details
 

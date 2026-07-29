@@ -111,6 +111,9 @@ The following table shows examples of the dynamic attributes available within em
 
 For a full list of dynamic attributes that you can use with customized emails, see [Dynamic attributes within email](lifecycle-workflow-tasks.md#dynamic-attributes-within-email).
 
+> [!IMPORTANT]
+> The `{{user.graphPropertyName}}` attribute format applies to new custom email tasks. Existing customized email tasks on workflows that were configured before this change are not affected and continue to work with their existing attribute formatting.
+
 ## Use custom branding and domain in emails sent via workflows
 
 You can customize emails that you send via lifecycle workflows to have your own company branding and to use your company domain. When you opt in to using custom branding and a custom domain, every email that you send by using lifecycle workflows reflects these settings.
