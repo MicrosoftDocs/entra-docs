@@ -55,7 +55,7 @@ These Microsoft-managed policies allow administrators to make simple modificatio
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
 - [Block access for high-risk users](#block-access-for-high-risk-users)
-- [Require remediation for high-risk users](#require-remediation-for-risky-users)
+- [Require remediation for high-risk users](#require-remediation-for-high-risk-users)
 - [Require phishing resistant authentication for admins](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) (Baseline security mode policy)
 
 ## How to access and manage Microsoft-managed policies
