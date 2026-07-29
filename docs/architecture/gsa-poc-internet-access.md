@@ -108,8 +108,6 @@ After you enable the Microsoft traffic profile, follow these steps to implement 
 
 1. Sign in to your test device and use a private browser window to sign in to any application that is protected by Entra ID in a different tenant, using member account credentials from that tenant.
 
-1. [Validate Universal Tenant Restrictions enforcement](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-tenant-restrictions-enforcement).
-
 ## Troubleshoot
 
 If you have problems with your PoC, these articles can help you with troubleshooting, logging, and monitoring:

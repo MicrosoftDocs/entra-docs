@@ -2,66 +2,37 @@
 title: Global Secure Access and Universal Tenant Restrictions
 description: Learn about how Global Secure Access helps secure access to your corporate network by restricting access to external tenants.
 ms.topic: how-to
-ms.date: 04/03/2026
+ms.date: 07/29/2026
 ms.author: alexpav
 ms.reviewer: dhruvinrshah
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
-# Turn on universal tenant restrictions
+# Turn on Universal Tenant Restrictions
 
 ## Overview
 
-Universal tenant restrictions enhance the functionality of [tenant restrictions v2](https://aka.ms/tenant-restrictions-enforcement). They use Global Secure Access to tag all traffic no matter the operating system, browser, or device form factor. They allow support for both client and remote network connectivity.
+Universal Tenant Restrictions (UTR) enhance the functionality of [tenant restrictions v2 (TRv2)](https://aka.ms/tenant-restrictions-enforcement). UTR applies tenant restrictions policies to any devices with the GSA client or on the GSA Remote Network, without having to steer network traffic through company-managed proxy service.
 
-Administrators no longer have to manage proxy server configurations or complex network configurations. They can apply tenant restrictions v2 on any platform by using the Global Secure Access client or remote networks.
-
-When you enable universal tenant restrictions, Global Secure Access adds policy information for tenant restrictions v2 to the authentication plane's network traffic. This traffic is from Microsoft Entra ID and Microsoft Graph. As a result, users who use devices and networks in your organization must use only authorized external tenants. This restriction helps prevent data exfiltration for any application integrated with your Microsoft Entra ID tenant through single sign-on (SSO).
-
-The following diagram shows the steps that an example organization takes to help protect against malicious users by using tenant restrictions v2.
-
-:::image type="content" source="./media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png" alt-text="Diagram that shows how tenant restrictions v2 helps protect against malicious users." lightbox="media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png":::
-
-| Step | Description |
-| --- | --- |
-| **1** | Contoso configures a tenant restrictions v2 policy in its cross-tenant access settings to block all external accounts and external apps. Contoso enforces the policy by using Global Secure Access and universal tenant restrictions. |
-| **2** | A user with a Contoso-managed device tries to access a Microsoft Entra-integrated app with an unsanctioned external identity. |
-| **3** | *Authentication plane protection:* With Microsoft Entra ID, Contoso's policy blocks unsanctioned external accounts from accessing external tenants. Additionally, if a Microsoft Graph token is obtained through another device and is brought into the environment within its lifetime, this token can't be replayed from the devices that have the Global Secure Access client or through remote networks. |
-| **4** | *Data plane protection:* If a Microsoft Graph token is obtained through another device and is brought into the environment within its lifetime, this token can't be replayed from the devices that have the Global Secure Access client or through remote networks. |
-
-Universal tenant restrictions help prevent data exfiltration across browsers, devices, and networks in the following ways:
-
-- They enable Microsoft Entra ID, Microsoft accounts, and Microsoft applications to look up and enforce the associated tenant restrictions v2 policy. This lookup enables consistent policy application.
-- They work with all Microsoft Entra-integrated third-party apps at the authentication plane during sign-in.
-- They help protect Microsoft Graph.
-
-## Supported scenarios
-
-### Microsoft Entra ID
-
-Enforcement of tenant restrictions happens at the time of Microsoft Entra ID or Microsoft account authentication. When the user is connected with the Global Secure Access client or via remote network connectivity, the tenant restrictions v2 policy is checked to determine if authentication should be allowed. If the user is signing in to the organization's tenant, the tenant restrictions v2 policy isn't applied. If the user is signing in to a different tenant, the policy is enforced. This works for any application that uses the Entra ID (Work/School account) or Microsoft Account as its identity provider.
-
-### Microsoft Graph
-
-Tenant restrictions for Microsoft Graph ensures that tokens obtained on other devices can't be replayed from your organization's devices to exfiltrate data. If the malicious user signs in to their own tenant from their personal computer while connected to the public internet, extracts the access token for Microsoft Graph, and copies this token to their work device, tenant restrictions will block access with that token, since the token was not acquired from a trusted GSA network.
+When you enable UTR, Microsoft Entra ID tenant restrictions policy is applied to all applications protected by Entra ID. Users on your devices with GSA or GSA Remote Networks can only sign in to tenants and applications authorized in your TRv2 policy.
 
 ## Prerequisites
 
 - Administrators who interact with Global Secure Access features must have the [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) to manage those features.
-- Global Secure Access requires a license. For details, see [Licensing overview](overview-what-is-global-secure-access.md#licensing-overview). If you don't already have one, you can [purchase a license or get a trial license](https://aka.ms/azureadlicense).
-- You must enable a [Microsoft traffic profile](concept-microsoft-traffic-profile.md). Fully qualified domain names (FQDNs) and IP addresses of services that have universal tenant restrictions must be set to tunnel mode.
+- Global Secure Access requires a license. For details, see [Licensing overview](overview-what-is-global-secure-access.md#licensing-overview).
+- You must enable a [Microsoft traffic profile](concept-microsoft-traffic-profile.md). Fully qualified domain names (FQDNs) and IP addresses of Entra ID services must be configured to 'Tunnel'.
 - You must deploy [Global Secure Access clients](concept-clients.md) or configure [remote network connectivity](concept-remote-network-connectivity.md).
 
-## Configure the tenant restrictions v2 policy
+## Configure the TRv2 policy
 
-Before you can use universal tenant restrictions, you must configure both the default tenant restrictions and tenant restrictions for any specific partners.
+Before you can use UTR, you must configure both the default tenant restrictions and tenant restrictions for any specific partners.
 
 For more information about configuring these policies, see [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2).
 
 ## Enable Universal Tenant Restrictions
 
-After you create the tenant restriction v2 policies, you can use Global Secure Access to apply tagging for tenant restrictions v2. An administrator who has both the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) and [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) roles must take the following steps to enable enforcement with Global Secure Access:
+After you create the TRv2 policies, you can use Global Secure Access to apply tagging for TRv2. An administrator who has both the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) and [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) roles must take the following steps to enable enforcement with Global Secure Access:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
@@ -82,17 +53,6 @@ For example, if you configure a tenant restrictions v2 policy in the tenant cont
 |`bob@northwindtraders.com`|Member|northwindtraders.com|Yes|No (tenant not allowed by policy)|
 |`bob_northwindtraders.com#EXT#@contoso.com`|Guest|contoso.com|No (guest user)|Yes|
 
-### Validate tenant restrictions enforcement
-
-1. Turn on universal tenant restrictions in the Microsoft Entra Admin Center. 
-    1. Go to **Global Secure Access** > **Settings** > **Session Management**.
-    1. On the **Universal Tenant Restrictions** tab, turn on the **Enable Tenant Restrictions for Microsoft Entra ID and Microsoft Graph** toggle.
-
-1. Sign out of the My Apps portal and restart your browser.
-
-1. With the Global Secure Access client enabled and connected, go to the [My Apps portal](https://myapps.microsoft.com/) by using the same identity (in the preceding example, the Fabrikam user in the Fabrikam tenant).
-
-   You're blocked from authenticating to the My Apps portal. An error message like this one appears: "Access is blocked. The Contoso IT department has restricted which organizations can be accessed. Contact the Contoso IT department to gain access."
 
 ## Known limitations
 
@@ -106,7 +66,6 @@ If you received the "Access denied" error message for the URL `https://entra.mic
 
 ## Related content
 
-- [Enable Global Secure Access signaling for Microsoft Entra ID and Microsoft Graph](how-to-source-ip-restoration.md#enable-global-secure-access-signaling-for-microsoft-entra-id-and-microsoft-graph)
 - [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2)
 - [Enable source IP restoration](how-to-source-ip-restoration.md)
 - [Enable compliant network check with Conditional Access](how-to-compliant-network.md)
