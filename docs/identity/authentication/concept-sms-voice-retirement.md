@@ -2,7 +2,7 @@
 title: Passkeys by default and retirement of Microsoft-provided SMS and voice authentication
 description: Learn how to prepare for the retirement of Microsoft provided SMS and Voice authentication in Microsoft Entra ID and migrate users to passkeys.
 ms.topic: how-to
-ms.date: 06/10/2026
+ms.date: 07/29/2026
 author: marinasanchezz1
 ms.author: marisanchez
 ai-usage: ai-assisted
@@ -151,7 +151,24 @@ On September 1, 2026, users that are enabled for SMS or voice in the authenticat
 
 ### What if I have different plans for my tenant than enabling passkeys for SMS/voice users (such as configuring a customer configured telecom provider or migrating users to another authentication method)?
 
-A temporary opt-out will be available for the September 1, 2026 through February 1, 2027 changes. This allows you to delay passkey and Registration Campaign enablement while you complete transition activities, such as configuring customer-managed telecom providers or migrating to other authentication methods. API support and information for opting out will be available starting August 1, 2026. 
+A temporary opt-out will be available for the September 1, 2026 through February 1, 2027 changes. This allows you to delay passkey and Registration Campaign enablement while you complete transition activities, such as configuring customer-managed telecom providers or migrating to other authentication methods.
+
+To opt out, update your authentication methods policy using Microsoft Graph and set the `passkeyDynamicMigration` property to `true`.
+
+**Request**
+
+```http
+PATCH https://graph.microsoft.com/beta/policies/authenticationmethodspolicy
+Content-Type: application/json
+
+{
+   "optOutSettings": {
+     "passkeyDynamicMigration": true
+   }
+}
+```
+
+After this setting is applied, your tenant will be excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines will apply regardless of this setting. 
 
 However, if your tenant still has users enabled for Microsoft-managed SMS or voice on February 1, 2027, and you have not configured a customer-managed telecom provider through the Security Store, those users will no longer be able to use SMS or voice to satisfy MFA requirements and continue signing in. 
 
