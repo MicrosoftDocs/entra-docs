@@ -75,7 +75,7 @@ Emails sent by workflows can have their text customized to personalize, or stres
 
 ### Format attributes within customized emails
 
-In the message body, you can customize the email text to personalize it for each recipient. You can optionally include built-in user attributes, custom security attributes, directory extensions, and on-premises extension attributes (for example, `{{user.onPremisesExtensionAttributes/extensionAttribute1}}`) by embedding them in the text. Before the email is sent, the placeholders are replaced with the actual user information.
+In the message body, you can customize the email text to personalize it for each recipient. You can optionally include built-in user attributes, custom security attributes, directory extensions, and on-premises extension attributes by embedding them in the text. Before the email is sent, the placeholders are replaced with the actual user information.
 
 To use dynamic attributes within your customized emails, you must follow formatting rules. The proper format for user attributes is:
 
