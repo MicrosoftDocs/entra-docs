@@ -65,24 +65,41 @@ For a step by step guide on this process, see: [Customize emails sent out by wor
 
 ### Dynamic attributes within email
 
-With customized emails, you're able to include dynamic attributes within the subject and body to personalize these emails. The list of dynamic attributes that can be included are as follows:
+With customized emails, you're able to include dynamic attributes within the subject and body to personalize these emails. You can include built-in user attributes, custom security attributes, directory extensions, and on-premises extension attributes. The list of dynamic attributes that can be included are as follows:
 
+**User attributes**
 
 |Attribute  |Definition  |
 |---------|---------|
-|userDisplayName     | The user’s display name.        |
-|userEmployeeHireDate     | The user’s employee hire date.        |
-|userEmployeeLeaveDateTime     | The user’s employee leave date and time.        |
-|managerDisplayName     |  The display name of the user’s manager.        |
-|temporaryAccessPass     |  The generated Temporary Access Pass. Only available with the **Generate TAP And Send Email** task.       |
-|userPrincipalName     |  The user’s userPrincipalName.       |
-|managerEmail     |  The manager’s email.        |
-|userSurname     |  User’s family name.       |
-|userGivenName     | User’s first name.        |
+|`{{user.displayName}}`     | The user's display name.        |
+|`{{user.userPrincipalName}}`     | The user's user principal name.        |
+|`{{user.employeeHireDate}}`     | The user's employee hire date.        |
+|`{{user.employeeLeaveDateTime}}`     | The user's employee leave date and time.        |
+|`{{user.createdDateTime}}`     | The date and time the user was created.        |
+|`{{user.employeeType}}`     | The user's employee type.        |
+|`{{user.department}}`     | The user's department.        |
+|`{{user.companyName}}`     | The user's company name.        |
+|`{{user.jobTitle}}`     | The user's job title.        |
+|`{{temporaryAccessPass}}`     | The generated Temporary Access Pass. Only available with the **Generate TAP And Send Email** task.        |
 
+**Manager attributes**
+
+|Attribute  |Definition  |
+|---------|---------|
+|`{{managerDisplayName}}`     | The display name of the user's manager.        |
+|`{{managerEmail}}`     | The manager's email.        |
+
+**Extension and custom attributes**
+
+|Attribute  |Definition  |
+|---------|---------|
+|`{{user.employeeOrgData/costCenter}}`     | The user's cost center from employee organization data.        |
+|`{{user.employeeOrgData/division}}`     | The user's division from employee organization data.        |
+|`{{user.customSecurityAttributes/attributeSet/attributeName}}`     | A custom security attribute value. Replace `attributeSet` and `attributeName` with your attribute set and attribute names.        |
+|`{{user.onPremisesExtensionAttributes/extensionAttribute1}}`     | An on-premises extension attribute. Replace `extensionAttribute1` with the desired attribute number (1-15).        |
 
 > [!NOTE]
-> When adding these attributes to a customized email, or subject, they must be properly embedded. For a step by step guide on doing this, see: [Format attributes within customized emails](customize-workflow-email.md).
+> When adding these attributes to a customized email, or subject, they must be properly formatted using `{{user.graphPropertyName}}` syntax. For a step by step guide on doing this, see: [Format attributes within customized emails](customize-workflow-email.md).
 
 ## Task details
 
