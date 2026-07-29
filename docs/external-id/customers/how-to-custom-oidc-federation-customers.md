@@ -2,7 +2,7 @@
 title: Add OIDC for customer sign-in
 description: Learn how to set up OpenID Connect as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
 ms.topic: how-to
-ms.date: 06/11/2026
+ms.date: 07/29/2026
 ms.reviewer: brozbab
 ms.custom: it-pro, msecd-doc-authoring-1012
 ai-usage: ai-assisted
@@ -174,10 +174,16 @@ To make the email attribute optional in your user flow, use the Microsoft Graph 
 
 ## Known limitations
 
-Conditional Access policies that require MFA registration don't function as expected when an external tenant is federated with an external identity provider (IdP). This limitation can result in one of the following behaviors:
+### Issuer URI updates
 
-- Users can't register an MFA method and can't complete sign-in, and often encounter an error.
-- Users aren't redirected to the MFA registration (sign-up) flow during sign-in as expected.
+When you update the Issuer URI for an existing OIDC identity provider (IdP), the updated configuration might not automatically take effect in user flows. As a result, the IdP sign-in option might not appear on the sign-in page.
+
+To apply the change:
+
+1. Disable the IdP in the user flow.
+1. Save the user flow.
+1. Re-enable the IdP.
+1. Save the user flow again.
 
 ## Related content
 
