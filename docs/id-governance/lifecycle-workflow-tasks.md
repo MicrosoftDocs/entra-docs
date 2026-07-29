@@ -72,6 +72,7 @@ With customized emails, you're able to include dynamic attributes within the sub
 |Attribute  |Definition  |
 |---------|---------|
 |`{{user.displayName}}`     | The user's display name.        |
+|`{{user.givenName}}`     | The user's first name.        |
 |`{{user.userPrincipalName}}`     | The user's user principal name.        |
 |`{{user.employeeHireDate}}`     | The user's employee hire date.        |
 |`{{user.employeeLeaveDateTime}}`     | The user's employee leave date and time.        |
