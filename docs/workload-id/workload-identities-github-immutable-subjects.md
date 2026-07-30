@@ -72,6 +72,45 @@ az ad app federated-credential create \
 
 Replace `<application-object-id>` with the object ID of your app registration. Create one credential for each subject the workflow presents, such as a different branch or environment.
 
+### Add required claims to a flexible federated identity credential
+
+For GitHub, a flexible federated identity credential must match the `sub` claim and one or both of the following additional claims:
+
+- `repository_id` identifies the repository where the workflow runs.
+- `repository_owner_id` identifies the repository owner.
+
+These additional claims are required regardless of whether `sub` uses a name-based, customized, or immutable format. Include the claims that represent the intended trust boundary.
+
+The following credential matches an immutable subject and separately verifies the repository:
+
+```json
+{
+  "name": "github-repository-immutable",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "claimsMatchingExpression": {
+    "value": "claims['sub'] matches 'repo:octo-org@123456/octo-repo@456789:*' and claims['repository_id'] eq '456789'",
+    "languageVersion": 1
+  },
+  "audiences": ["api://AzureADTokenExchange"]
+}
+```
+
+To require the repository to remain with a specific owner, also match `repository_owner_id`:
+
+```json
+{
+  "name": "github-repository-owner-immutable",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "claimsMatchingExpression": {
+    "value": "claims['sub'] matches 'repo:octo-org@123456/octo-repo@456789:*' and claims['repository_id'] eq '456789' and claims['repository_owner_id'] eq '123456'",
+    "languageVersion": 1
+  },
+  "audiences": ["api://AzureADTokenExchange"]
+}
+```
+
+Replace the example values with the IDs from the GitHub OIDC token. GitHub provides `repository_id` and `repository_owner_id` as separate claims in the token.
+
 ## Enable immutable subjects in GitHub
 
 Opt the repository into the immutable subject format from the repository or organization OIDC settings. GitHub provides both UI and API controls, and a preview endpoint that shows the subject a workflow emits, so that you can confirm the value before you rely on it. For the current steps, see the [GitHub OpenID Connect reference](https://docs.github.com/en/actions/reference/security/oidc).
