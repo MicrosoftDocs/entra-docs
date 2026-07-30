@@ -105,6 +105,45 @@ After a project presents the immutable subject, anchor your Microsoft Entra trus
   "audiences": ["api://AzureADTokenExchange"]
 }
 ```
+### GitLab: add required immutable claims to a flexible federated identity credential
+
+For GitLab, a flexible federated identity credential must match the `sub` claim and one or more of the following additional claims:
+
+- `project_id` identifies the project that runs the job.
+- `namespace_id` identifies the project's namespace.
+- `user_id` identifies the user who runs the job.
+
+These additional claims are required regardless of whether `sub` starts with `project_path` or `project_id`. Include the claims that represent the intended trust boundary.
+
+The following credential matches an immutable project subject and separately verifies the project and namespace:
+
+```json
+{
+  "name": "gitlab-billing-service-immutable",
+  "issuer": "https://gitlab.com",
+  "claimsMatchingExpression": {
+    "value": "claims['sub'] matches 'project_id:57382910:*' and claims['project_id'] eq '57382910' and claims['namespace_id'] eq '<namespace-id>'",
+    "languageVersion": 1
+  },
+  "audiences": ["api://AzureADTokenExchange"]
+}
+```
+
+To restrict trust to jobs run by a specific user, also match `user_id`:
+
+```json
+{
+  "name": "gitlab-billing-service-user",
+  "issuer": "https://gitlab.com",
+  "claimsMatchingExpression": {
+    "value": "claims['sub'] matches 'project_id:57382910:*' and claims['project_id'] eq '57382910' and claims['namespace_id'] eq '<namespace-id>' and claims['user_id'] eq '<user-id>'",
+    "languageVersion": 1
+  },
+  "audiences": ["api://AzureADTokenExchange"]
+}
+```
+
+Replace the placeholder values with the IDs from the GitLab ID token. GitLab includes `project_id`, `namespace_id`, and `user_id` in every ID token.
 
 ### Create a flexible federated identity credential with the Azure CLI
 
