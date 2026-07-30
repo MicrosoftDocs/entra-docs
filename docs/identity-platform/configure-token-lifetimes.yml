@@ -107,6 +107,41 @@ procedureSection:
         ```http
         DELETE https://graph.microsoft.com/v1.0/servicePrincipals/00001111-aaaa-2222-bbbb-3333cccc4444/tokenLifetimePolicies/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/$ref
         ```
+    code: |
+      ```powershell
+      Install-Module Microsoft.Graph
+
+      Connect-MgGraph -Scopes  "Policy.ReadWrite.ApplicationConfiguration","Policy.Read.All","Application.ReadWrite.All"
+
+      # Create a token lifetime policy
+      $params = @{
+        Definition = @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"08:00:00"}}')
+        DisplayName = "WebPolicyScenario"
+        IsOrganizationDefault = $false
+      }
+      $tokenLifetimePolicyId=(New-MgPolicyTokenLifetimePolicy -BodyParameter $params).Id
+
+      # Display the policy
+      Get-MgPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId
+
+      # Assign the token lifetime policy to a service principal
+      $params = @{
+        "@odata.id" = "https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/$tokenLifetimePolicyId"
+      }
+
+      $spId = (Get-MgServicePrincipal -Filter "appId eq 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb'").Id
+
+      New-MgServicePrincipalTokenLifetimePolicyByRef -ServicePrincipalId $spId -BodyParameter $params
+
+      # List the token lifetime policy on the service principal
+      Get-MgServicePrincipalTokenLifetimePolicy -ServicePrincipalId $spId
+
+      # Remove the policy from the service principal
+      Remove-MgServicePrincipalTokenLifetimePolicyByRef -ServicePrincipalId $spId -TokenLifetimePolicyId $tokenLifetimePolicyId
+
+      # Delete the policy
+      Remove-MgPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId
+      ```
   - title: |
       View existing policies in a tenant
     summary: |
