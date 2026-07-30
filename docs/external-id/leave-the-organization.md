@@ -30,14 +30,10 @@ If you're a user looking for information about how to manage and leave an organi
 1. To view the organizations you belong to, first open your **My Account** page. You either have a work or school account created by an organization or a personal account such as for Xbox, Hotmail, or Outlook.com.
 
    - If you're using a work or school account, go to <https://myaccount.microsoft.com> and sign in.
-   - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
+   - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your resoruce tenant name.
    For example:
 
-      `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
-    
-      -or-
-    
-      `https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee`
+         Use https://myaccount.microsoft.com/contoso.onmicrosoft.com
     
       You might need to open this URL in a private browser session.
 
