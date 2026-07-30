@@ -105,7 +105,7 @@ After a project presents the immutable subject, anchor your Microsoft Entra trus
   "audiences": ["api://AzureADTokenExchange"]
 }
 ```
-### Add required immutable claims to a flexible federated identity credential
+### GitLab: add required immutable claims to a flexible federated identity credential
 
 For GitLab, a flexible federated identity credential must match the `sub` claim and one or more of the following additional claims:
 
