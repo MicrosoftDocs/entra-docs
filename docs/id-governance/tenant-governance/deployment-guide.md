@@ -21,7 +21,7 @@ Before you begin, confirm that your environment meets these requirements:
 - A Microsoft Entra tenant with the appropriate license for Tenant Governance. For details, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance).
 - An account with the Tenant Governance Administrator or Global Administrator role.
 - For configuration management: an account with the Global Administrator or Privileged Role Administrator role.
-- For secure tenant creation: a paid Azure subscription associated with an [Enterprise Agreement (EA)](/azure/cost-management-billing/manage/understand-ea-roles) or [pay-as-you-go](https://azure.microsoft.com/pricing/offers/ms-azr-0003p?cid=msft_learn) billing account. Legacy and modern billing experiences are supported. You also need the required permissions for the selected subscription through the Tenant Contributor or Subscription Owner/Creator role. To identify your billing account type, see [View your billing accounts in the Azure portal](/azure/cost-management-billing/manage/view-all-accounts).
+- For secure tenant creation: a paid Azure subscription associated with an [Enterprise Agreement (EA)](/azure/cost-management-billing/manage/understand-ea-roles) or [pay-as-you-go](https://azure.microsoft.com/pricing/offers/ms-azr-0003p?cid=msft_learn) billing account. Legacy and modern billing experiences are supported. You also need the required Azure Resource Manager (ARM) permissions for the selected subscription through the Tenant Contributor or Subscription Owner/Creator role. To identify your billing account type, see [View your billing accounts in the Azure portal](/azure/cost-management-billing/manage/view-all-accounts).
 
 ## Phase 1: Enable related tenant discovery
 
