@@ -5,9 +5,10 @@ description: Include file
 author: kenwith
 ms.service: entra-id
 ms.topic: include
-ms.date: 03/26/2026
+ms.date: 07/29/2026
 ms.author: kenwith
-ms.custom: include file
+ms.custom: include file, msecd-doc-authoring-1018
+ai-usage: ai-assisted
 ---
 Here are the usage constraints and other service limits for the Microsoft Entra service.
 
@@ -28,6 +29,7 @@ Here are the usage constraints and other service limits for the Microsoft Entra 
 |Conditional Access Policies|A maximum of 240 policies can be created in a single Microsoft Entra organization (tenant).|
 |Terms of use|You can add no more than 40 terms to a single Microsoft Entra organization (tenant).|
 | Multitenant organizations | <ul><li>A maximum of 100 active tenants, including the owner tenant. The owner tenant can add more than 100 pending tenants, but they won't be able to join the multitenant organization if the limit is exceeded. This limit is applied at the time a pending tenant joins a multitenant organization.</li>This limit is specific to the number of tenants in a multitenant organization. It doesn't apply to cross-tenant synchronization by itself.</ul> |
+| Microsoft Entra Tenant Governance | <ul><li><b>Configuration management:</b><ul><li>Monitoring: 800 resource instances daily.</li><li>Monitoring schedule: Every 6 hours.</li><li>Maximum number of monitors per tenant: 30.</li><li>Snapshots: 20,000 resource instances monthly.</li><li>Snapshot retention: 7 days.</li><li>Maximum number of snapshots per tenant: 13.</li><li>For each Microsoft 365 E7, Microsoft Entra ID Governance, or Microsoft Entra Suite license in a tenant, the monitoring limit increases by 10 resource instances daily, and the snapshot limit increases by 35 resource instances monthly.</li></ul></li><li><b>Related tenants:</b><ul><li>You can refresh related tenant discovery at most once every 6 hours per tenant.</li><li>Discovery signals are aggregated once per day. Changes can take up to 36 hours to appear.</li><li>The related tenants API returns up to 1,000 results per page by default. Use <code>$top</code> to request a smaller page size and <code>@odata.nextLink</code> to page through results.</li></ul></li><li><b>Governance relationships:</b> Governance policy templates support a maximum of 10 multitenant applications per template, 100 permissions per multitenant application, and 10 role assignments per template. For more information, see [Governance policy template limitations](~/id-governance/tenant-governance/governance-policy-templates.md#limitations).</li><li><b>Tenant creation:</b> The 200-tenant legacy limit in the <b>Tenants</b> category also applies to new secure tenant creation.</li></ul> |
 |Agent Identity Blueprints |<ul><li>Non-admin users are restricted to creating a maximum of 250 Agent Identity Blueprints. Both active and soft-deleted Blueprints contribute to this quota. This quota is shared with other Microsoft Entra resources.</li><li>Blueprints can take up no more than 95% of the tenant's overall resource quota (see **Resources**).</li></ul> |
 |Agent Identities |<ul><li>In a tenant, each Agent Blueprint managed by a platform not owned by Microsoft is limited to a maximum of 250 Agent Identities. This restriction does not apply to Blueprints managed by Microsoft-owned platforms, such as Foundry and Copilot Studio.</li><li>For non-admin users, the creation of Agent Identities is also capped at 250 per Agent Blueprint. Both active and soft-deleted Agent Identities are counted toward this limit. This quota is shared with other Entra resources.</li><li>Agent Identities can take up no more than 95% of the tenant's overall resource quota (see **Resources**).</li></ul> |
 | B2B Invitations | <ul><li><b>Workforce tenants with paid licenses</b><ul><li>Tenants less than or equal to 30 days old: 200 invitations per day</li><li>Tenants more than 30 days old: Capped by the Microsoft Entra service quotas</li></ul></li><li><b>Workforce tenants without paid licenses</b><ul><li>Tenants less than or equal to 30 days old: 10 invitations per day</li><li>Tenants more than 30 days old: 100 invitations per day</li></ul></li></ul> |
