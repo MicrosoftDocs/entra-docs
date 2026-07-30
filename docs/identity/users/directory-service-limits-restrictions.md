@@ -1,6 +1,6 @@
 ---
 title: Service limits and restrictions
-description: Review Microsoft Entra service limits and restrictions for tenants, resources, applications, Tenant Governance, and other directory features.
+description: Usage constraints and other service limits for the Microsoft Entra service
 ms.topic: reference
 ms.date: 07/29/2026
 ms.custom: aaddev;it-pro, msecd-doc-authoring-1018
