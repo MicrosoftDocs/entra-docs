@@ -139,6 +139,10 @@ See [Find users still using SMS or Voice](#1-find-users-enabled-for-sms-or-voice
 
 This timeline applies to public cloud environments only. Other cloud environments will follow on a later schedule, and we will provide advance communications to help customers prepare for the transition.
 
+### Will Azure AD B2C or Microsoft Entra External ID tenants be impacted by this announcement?
+
+Azure AD B2C is out of scope and isn't affected. For Microsoft Entra External ID, this change comes next year, and a separate announcement will follow. So there's no change for either Azure AD B2C or Microsoft Entra External ID tenants with this announcement.
+
 ### When will passkey support be available for B2B users?
 
 Passkey support for B2B users and internal guest users is planned to be available by the end of calendar year 2026. These users are included in the scope of the retirement of Microsoft-provided SMS and voice authentication.
