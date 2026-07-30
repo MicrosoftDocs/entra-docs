@@ -260,7 +260,21 @@ After creating the app consent policy, you need to assign it to a custom role in
 > Deleted app consent policies can't be restored. If you accidentally delete a custom app consent policy, you need to re-create the policy.
 
 
+## Permission grant policy limits
 
+A Microsoft Entra tenant enforces limits on the number of IDs that can be defined within the collections of all permissionGrantConditionSet objects.
+For each collection type listed below, the combined total number of values across all permission grant policies and condition sets in the tenant cannot exceed 100 entries.
+
+A tenant can contain multiple permission grant policies and multiple condition sets within each policy. However, the combined number of entries for a specific collection type cannot exceed 100.
+
+For example:
+
+Policy A contains 40 permission IDs in the permissions collection.
+Policy B contains 35 permission IDs in the permissions collection.
+Policy C contains 25 permission IDs in the permissions collection.
+
+The total number of permission IDs across all policies is 100.
+Adding another permission ID to any permissions collection in the tenant would exceed the supported limit and fail.
 
 ## Next steps
 
