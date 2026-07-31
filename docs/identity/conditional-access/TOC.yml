@@ -92,6 +92,12 @@
     href: plan-conditional-access.md
   - name: Build policies for agents
     href: howto-target-agent-identities.md
+  - name: Secure agents
+    items:
+    - name: Secure autonomous agents
+      href: policy-autonomous-agents.md
+    - name: Secure agents that act as users
+      href: policy-agent-user.md
   - name: Recommended policies
     items: 
     - name: Block legacy authentication
@@ -148,8 +154,6 @@
         href: policy-old-require-mfa-admin-portals.md
       - name: Require MFA for Azure management
         href: policy-old-require-mfa-azure-mgmt.md
-    - name: Recommended policies for autonomous agent access
-      href: policy-autonomous-agents.md
     - name: Block users with elevated insider risk
       href: policy-risk-based-insider-block.md
     - name: Require terms of use to be accepted
