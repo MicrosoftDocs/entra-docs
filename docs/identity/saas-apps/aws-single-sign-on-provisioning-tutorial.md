@@ -30,7 +30,7 @@ AWS IAM Identity Center is available in the following [national cloud deployment
 
 | Global service | US Government | China operated by 21Vianet |
 |-----------------|------------------------|----------------------------|
-| :white_check_mark: |     |   |
+| :white_check_mark: |     | :white_check_mark:  |
 
 ## Prerequisites
 
