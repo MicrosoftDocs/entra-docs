@@ -3,7 +3,7 @@ title: Manage unsponsored guests using Lifecycle Workflows (Preview)
 description: Learn how to manage unsponsored guest removal in your organization using Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 07/27/2026
+ms.date: 07/31/2026
 ms.custom: template-how-to
 ai-usage: ai-assisted
 
@@ -19,6 +19,9 @@ This article walks you through managing unsponsored guests using the **Unsponsor
 ## Prerequisites
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+
+> [!IMPORTANT]
+> This functionality is subject to the guest billing model. For details, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md).
 
 ## Manage unsponsored guests using the Microsoft Entra admin center
 
