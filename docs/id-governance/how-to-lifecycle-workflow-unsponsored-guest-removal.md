@@ -3,7 +3,7 @@ title: Manage unsponsored guests using Lifecycle Workflows (Preview)
 description: Learn how to manage unsponsored guest removal in your organization using Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 07/27/2026
+ms.date: 07/31/2026
 ms.custom: template-how-to
 ai-usage: ai-assisted
 
@@ -15,6 +15,9 @@ ai-usage: ai-assisted
 Unsponsored guests—guest users without a valid sponsor assigned—represent a security and compliance risk in your organization. Lifecycle Workflows help you automate the management and removal of unsponsored guests. Microsoft Entra ID Governance includes a built-in **Unsponsored guest cleanup (Preview)** workflow template that automates the detection and management of unsponsored guests.
 
 This article walks you through managing unsponsored guests using the **Unsponsored guest cleanup (Preview)** workflow template.
+
+> [!IMPORTANT]
+> This functionality is subject to the guest billing model. For details, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md).
 
 ## Prerequisites
 
