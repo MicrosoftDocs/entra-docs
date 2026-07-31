@@ -16,12 +16,12 @@ Unsponsored guests—guest users without a valid sponsor assigned—represent a 
 
 This article walks you through managing unsponsored guests using the **Unsponsored guest cleanup (Preview)** workflow template.
 
-> [!IMPORTANT]
-> This functionality is subject to the guest billing model. For details, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md).
-
 ## Prerequisites
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+
+> [!IMPORTANT]
+> This functionality is subject to the guest billing model. For details, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md).
 
 ## Manage unsponsored guests using the Microsoft Entra admin center
 
