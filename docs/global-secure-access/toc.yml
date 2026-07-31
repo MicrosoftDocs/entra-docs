@@ -463,6 +463,8 @@ items:
     href: reference-web-content-filtering-categories.md
   - name: Threat intelligence threat types
     href: reference-threat-intelligence-threat-types.md
+  - name: Microsoft Defender for Cloud Apps coexistence
+    href: reference-microsoft-defender-cloud-apps-coexistence.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: Ciphers for Microsoft Entra Private Access
