@@ -1,5 +1,5 @@
 ---
-title: FIDO2 security key sign-in to Windows
+title: FIDO2 Security Key Sign-in to Windows
 description: Learn how to enable passwordless security key sign-in to Windows with Microsoft Entra ID using FIDO2 security keys. Find out about the requirements for your devices.
 ms.topic: how-to
 ms.date: 07/05/2026
