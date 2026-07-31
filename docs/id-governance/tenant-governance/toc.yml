@@ -62,13 +62,15 @@
       href: how-to-create-tenant.md
   - name: Configuration management
     items:
-    - name: Set up permissions
+    - name: Configure service permissions
       href: how-to-set-up-permissions-tenant-monitoring.md
-    - name: Create or update a monitor
+    - name: Create configuration snapshots
+      href: how-to-create-snapshots.md
+    - name: Create a configuration monitor
       href: how-to-create-monitor.md
     - name: Update or delete a monitor
       href: how-to-update-delete-monitor.md
-    - name: View monitor results
+    - name: View monitor results and manage monitors
       href: how-to-see-monitor-results.md
 
 - name: Reference

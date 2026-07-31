@@ -1,69 +1,64 @@
 ---
-title: Set up permissions for tenant monitoring
+title: Configure configuration management service permissions
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how to set up the required application permissions and roles for tenant monitoring in Microsoft Entra Tenant Governance
+description: Learn how to assign or remove the application permissions and roles that the Tenant Configuration Management service uses to create snapshots and run monitors
 ms.topic: how-to
-ms.date: 03/05/2026
+ms.date: 07/28/2026
 ---
 
-# Set up permissions for tenant monitoring
+<!-- source: Tenant Governance - Configure configuration management service permissions how-to.docx -->
 
-This article describes how to manage the permissions that the configuration management service needs to access resources identified in a monitor. An administrator must assign these permissions manually. Two types of permissions can be managed in the Microsoft Entra admin center: application permissions and Microsoft Entra roles.
+# Configure configuration management service permissions
 
-The permission type you assign depends on the services you need to monitor:
+Use the **Configuration management permissions** page to assign or remove permissions for the Tenant Configuration Management service. The service uses these permissions to create snapshots and run monitors.
 
-- **Microsoft Entra ID and Intune**: Assign application permissions. This approach is the least-privileged way to enable monitoring. For example, to monitor conditional access policies, the configuration management service needs the `Policy.Read.All` application permission. If your policies reference other resource types, you might also need permissions like `User.Read.All` or `RoleManagement.Read.All`.
-- **Teams**: Assign the Teams Reader role. Teams doesn't have granular application permissions, so assigning the configuration management service to the Teams Reader role is the least-privileged way to enable monitoring.
-- **Exchange, Security, and Compliance (Purview and Defender)**: Assign permissions locally within the admin experiences for those services. Built-in Microsoft Entra roles grant more permissions than needed for these monitoring scenarios.
+Configure service permissions before you create snapshots or monitors that include the corresponding workload resources. Missing service permissions can cause a snapshot to be incomplete or a monitor run to fail.
 
-> [!NOTE]
-> Monitoring Exchange also requires that you assign the `Exchange.ManageAsApp` permission to the configuration management service, which enables a service principal to authenticate to Exchange APIs. This assignment is independent of any permissions you assign locally to the configuration management service.
+When you create a monitor or snapshot, the **Permissions** step shows whether the service has the least-privilege permissions for the resource types you selected. This step is read-only. If the wizard shows that required least-privilege permissions are missing, use the **Configuration management permissions** page to add them.
 
 ## Prerequisites
 
-- Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+- A Microsoft Entra role that can assign or remove app-only permissions for service principals in your tenant, such as [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator). To see which roles can perform this task, see the [Microsoft Entra built-in roles reference](~/identity/role-based-access-control/permissions-reference.md).
 
-## Browse to configuration management permissions
+## Open Configuration management permissions
+
+To open the permissions page, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Tenant Governance** > **Configuration management permissions**.
 
-## Manage application permissions
+## Assign permissions
 
-To manage application permissions that the configuration management service uses to access resources:
+Assign permissions based on the workloads that contain the resources you want to snapshot or monitor:
 
-- Select the **Application permissions** tab at the top of the page.
+- **Microsoft Entra ID or Intune resources**: On the **Application permissions** tab, add the app-only permissions for the relevant Microsoft Graph resources.
 
-### Add application permissions
+  - For the permissions required to snapshot or monitor Microsoft Entra resources, see [Supported Microsoft Entra resources for Tenant Configuration Management](/graph/utcm-entra-resources).
+  - For the permissions required to snapshot or monitor Intune resources, see [Supported Microsoft Intune resources for Tenant Configuration Management](/graph/utcm-intune-resources).
 
-1. Select **Add permissions** in the command bar.
-1. Search for and select the application permissions that the configuration management service needs to access the resources you want to monitor.
-1. Select **Save** at the bottom of the context pane.
+- **Teams resources**: On the **Entra roles** tab, assign the **Teams Reader** Microsoft Entra role.
 
-### Remove application permissions
+- **Exchange Online resources**: On the **Application permissions** tab, assign **Exchange.ManageAsApp**. Then use Exchange Online PowerShell to assign Exchange roles to the Tenant Configuration Management service principal. For the steps, see [App-only authentication in Exchange Online PowerShell and Security & Compliance PowerShell](/powershell/exchange/app-only-auth-powershell-v2#step-2-assign-api-permissions-to-the-application).
 
-1. Select the checkbox next to the permission name, then select the **Delete** button in the command bar. Alternatively, hover over the permission and select the delete icon that appears.
-1. In the confirmation dialog, select **Remove**.
+  For the permissions required to snapshot or monitor Exchange resources, see [Supported Microsoft Exchange resources for Tenant Configuration Management](/graph/utcm-exchange-resources).
 
-## Manage Microsoft Entra roles
+- **Defender or Purview resources**: On the **Application permissions** tab, assign **Exchange.ManageAsApp**. Then use Security & Compliance PowerShell to assign Security and Compliance (Defender and Purview) roles to the Tenant Configuration Management service principal. For the steps, see [Connect to Security & Compliance PowerShell](/powershell/exchange/connect-to-scc-powershell).
 
-To manage Microsoft Entra roles assigned to the configuration management service:
+  For the permissions required to snapshot or monitor Defender or Purview resources, see [Supported Microsoft Security and Compliance resources for Tenant Configuration Management](/graph/utcm-securityandcompliance-resources).
 
-- Select the **Entra roles** tab at the top of the page.
+> [!NOTE]
+> The **Configuration management permissions** page doesn't show workload permissions that are assigned to the service within Exchange Online, Defender, or Purview. Use Exchange Online PowerShell or Security & Compliance PowerShell to assign and remove those permissions.
 
-### Add a Microsoft Entra role
+## Remove permissions
 
-1. Select **Add Entra role** in the command bar.
-1. Select the Microsoft Entra role that the configuration management service needs.
-1. Select **Save** at the bottom of the context pane.
-
-### Remove a Microsoft Entra role
-
-1. Select the checkbox next to the role name, then select the **Delete** button in the command bar. Alternatively, hover over the role and select the delete icon that appears.
-1. In the confirmation dialog, select **Remove**.
+To remove a permission or a Microsoft Entra role, select the checkbox next to its name, and then select **Remove** in the command bar.
 
 ## Related content
 
-- [Create a monitor](how-to-create-monitor.md)
-- [See monitor results and configuration drifts](how-to-see-monitor-results.md)
 - [Configuration management](configuration-management.md)
+- [Set up authentication for Tenant Configuration Management APIs](/graph/utcm-authentication-setup)
+- [Exchange Online RBAC for applications](/exchange/permissions-exo/application-rbac)
+- [Microsoft Defender unified role-based access control (RBAC)](/defender-xdr/manage-rbac)
+- [Microsoft Purview permissions](/purview/purview-permissions)
+- [Use Microsoft Teams administrator roles to manage Teams](/microsoftteams/using-admin-roles)
+- [Role-based access control (RBAC) with Microsoft Intune](/intune/fundamentals/role-based-access-control/overview)
