@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra built-in roles
-description: Describes the Microsoft Entra built-in roles and permissions.
+description: Learn what each Microsoft Entra built-in role can do, from Global Administrator to Reports Reader. Find role descriptions, permissions, and template IDs.
 ms.topic: reference
 ms.date: 07/17/2026
 ms.reviewer: abhijeetsinha
