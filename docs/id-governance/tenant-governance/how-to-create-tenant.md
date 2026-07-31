@@ -3,7 +3,7 @@ title: Create a governed workforce tenant
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to securely create a governed Microsoft Entra workforce tenant and establish governance from your home tenant.
 author: tafra00
-ms.author: tafra00
+ms.author: tazkiaafra
 ms.topic: how-to
 ms.date: 07/29/2026
 ai-usage: ai-assisted
