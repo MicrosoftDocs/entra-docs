@@ -187,6 +187,8 @@ items:
       href: provision-user-with-expression-builder.md
     - name: Function reference for writing expressions for attribute mappings
       href: functions-for-customizing-application-data.md
+    - name: Extend attribute mappings with LCW extensibility
+      href: extend-application-attributes.md
     - name: Microsoft Entra ID SCIM API schema 
       href: entra-id-scim-api-schema-documentation.md
     - name: Microsoft Entra ID SCIM API
