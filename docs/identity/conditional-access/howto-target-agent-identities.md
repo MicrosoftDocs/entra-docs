@@ -24,8 +24,7 @@ Each section builds on the previous one to form a complete policy.
 
 ## Prerequisites
 
-- A Microsoft Entra ID P1 or P2 license
-- Agent 365 license will soon be required
+- An Agent 365 license
 - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and manage Conditional Access policies
 - At least one agent identity registered in your tenant
 
