@@ -51,6 +51,8 @@ If you are new to Azure Logic Apps, you may read more [here](https://learn.micro
 
 Before creating an extensibility workflow, you need a custom extension that you can link to your extensibility workflow. As mentioned previously, you can think of the custom extension as a wrapper for the  Azure Logic App where your custom logic resides. When the extensibility workflow triggers the custom extension, the Azure Logic App will run.
 
+### In the Microsoft Entra admin center
+
 1. Using your browser, sign in to your Entra ID tenant via the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Navigate to **Lifecycle workflows > Custom extensions > Add a custom extension**.
 
@@ -66,10 +68,82 @@ Before creating an extensibility workflow, you need a custom extension that you 
 
 You now have a custom extension that is ready to link to an extensibility workflow as a task. Now let’s work on creating an extensibility workflow.
 
+## Using Microsoft Graph
+
+1. Start the [Microsoft Graph Explorer tool](https://aka.ms/ge).
+1. Sign in to your tenant.
+1. Select **Modify permissions**.
+1. Consent to the following required permissions: `LifecycleWorkflows-CustomExt.ReadWrite.All`
+1. Use the [Create customTaskExtensions API](https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-customtaskextensions) to create a custom extension.
+
+**Example request**
+
+```http
+POST /identityGovernance/lifecycleWorkflows/customTaskExtensions
+Content-Type: application/json
+
+{
+	"displayName": "test1",
+	"description": "test1",
+	"endpointConfiguration": {
+		"@odata.type": "#microsoft.graph.logicAppTriggerEndpointConfiguration",
+		"subscriptionId": "00000000-0000-0000-0000-000000000000",
+		"resourceGroupName": "lcw-synthetics",
+		"logicAppWorkflowName": "masonReply"
+	},
+	"callbackConfiguration": null,
+	"authenticationConfiguration": {
+		"@odata.type": "#microsoft.graph.azureAdPopTokenAuthentication"
+	},
+	"id": "",
+	"clientConfiguration": {
+		"timeoutInMilliseconds": 1000,
+		"maximumRetries": 1
+	},
+	"replyMode": "response"
+}
+```
+
+**Example response**
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#identityGovernance/lifecycleWorkflows/customTaskExtensions/$entity",
+  "id": "902ca666-6b67-4d45-839c-8836d7f205f9",
+  "displayName": "test1",
+  "description": "test1",
+  "createdDateTime": "2026-04-20T19:56:27.0723563Z",
+  "lastModifiedDateTime": "2026-04-20T19:56:27.0723657Z",
+  "replyMode": "response",
+  "callbackConfiguration": null,
+  "endpointConfiguration": {
+		"@odata.type": "#microsoft.graph.logicAppTriggerEndpointConfiguration",
+		"subscriptionId": "00000000-0000-0000-0000-000000000000",
+		"resourceGroupName": "lcw-synthetics",
+		"logicAppWorkflowName": "masonReply",
+		"url": "https://prod-05.southcentralus.logic.azure.com:443/workflows/c070dc95455e4e5a98da954feeb7e756/triggers/manual/paths/invoke?api-version=2016-10-01"
+  },
+	"authenticationConfiguration": {
+		"@odata.type": "#microsoft.graph.azureAdPopTokenAuthentication"
+	},
+	"clientConfiguration": {
+		"maximumRetries": 1,
+		"timeoutInMilliseconds": 1000
+	}
+}
+```
+
+You now have a custom extension that is ready to link to an extensibility workflow as a task. Now let’s work on creating an extensibility workflow.
+
 
 ## Step 2: Create an extensibility workflow
 
 Once you’ve created a custom extension, you can now create an extensibility workflow whose task is to trigger the custom extension.
+
+### In the Microsoft Entra admin center
 
 1. Using your browser, sign in to your Entra ID tenant via the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Navigate to **Identity Governance > Lifecycle Workflows > Create workflow**.
@@ -88,12 +162,97 @@ Once you’ve created a custom extension, you can now create an extensibility wo
 
 You now have an extensibility workflow that can trigger an Azure Logic App that contains your custom logic. Now let’s work on mapping the extensibility workflow to a target attribute.
 
+### Using Microsoft Graph
+
+1. Start the [Microsoft Graph Explorer tool](https://aka.ms/ge).
+1. Sign in to your tenant.
+1. Select **Modify permissions**.
+1. Consent to the following required permissions: `LifecycleWorkflows-Workflow.ReadWrite.All`
+1. Use the [Create workflow API](https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows) to create an LCW extensibility workflow.
+
+**Example request**
+
+```http
+POST /identityGovernance/lifecycleWorkflows/workflows
+Content-Type: application/json
+
+{
+	"category": "extensibility",
+	"displayName": "Real-time Provisioning extensibility (Preview)",
+	"description": "Execute real-time extensibility tasks for performing attribute mapping extensions",
+	"tasks": [
+		{
+      "arguments": [
+        {
+          "name": "customTaskExtensionID",
+					"value": "f740553f-a6a2-4dc8-82df-148336dcd920"
+				}
+			],
+			"description": "Run a Custom Task Extension and pass data from the workflow as input",
+			"displayName": "Run a Data driven Custom Task Extension (Preview)",
+			"isEnabled": true,
+			"id": "77bb973f-3150-4a0f-b49b-24d1baa677f6",
+			"continueOnError": false,
+			"taskDefinitionId": "09303719-609e-4348-8bbc-d3ee45a2657e",
+			"category": "extensibility"
+		}
+	],
+	"executionConditions": {
+		"@odata.type": "#microsoft.graph.identityGovernance.provisioningAttributeMapping"
+ 	},
+	"isEnabled": true,
+	"isSchedulingEnabled": false,
+	"targetSubjectType": "provisioningObject"
+}
+```
+
+**Example response**
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+	"@odata.context": "https://graph.microsoft.com/beta/$metadata#identityGovernance/lifecycleWorkflows/workflows/$entity",
+	"category": "extensibility",
+	"description": "Execute real-time extensibility tasks for performing attribute mapping extensions",
+	"displayName": "Real-time Provisioning extensibility (Preview)",
+	"isEnabled": true,
+	"isSchedulingEnabled": false,
+	"lastModifiedDateTime": "2026-04-20T19:58:42.4447369Z",
+	"targetSubjectType": "provisioningObject",
+	"createdDateTime": "2026-04-20T19:58:42.444727Z",
+	"deletedDateTime": null,
+	"id": "e41388b5-446e-4cf1-9bce-92cd09f828e5",
+	"nextScheduleRunDateTime": null,
+	"version": 1,
+	"executionConditions": {
+		"@odata.type": "#microsoft.graph.identityGovernance.provisioningAttributeMapping"
+	},
+	"quarantineDetails": {
+		"quarantinedDateTime": null,
+		"quarantineType": "notQuarantined",
+		"quarantineReason": null
+	},
+	"settings": {
+		"quarantineConfiguration": {
+			"matchMode": "any",
+			"conditions": []
+		}
+	}
+}
+```
+
+You now have an extensibility workflow that can trigger an Azure Logic App that contains your custom logic. Now let’s work on mapping the extensibility workflow to a target attribute.
+
 
 ## Step 3: Mapping an extensibility workflow to a target attribute
 
 Now that you’ve created an extensibility workflow, it’s time to map it to an attribute in a provisioning job. This is so that when a provisioning job is in-progress, the extensibility workflow will generate a value for that attribute for every object in the scope of the provisioning job.
 
 For example, if you map an extensibility workflow to the **userPrincipalName** target attribute and there are five users in scope of your provisioning job, the workflow will generate a value for the **userPrincipalName** attribute for all five users.
+
+### In the Microsoft Entra admin center
 
 1. Using your browser, sign in to your Entra ID tenant via the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Navigate to **Enterprise apps > All applications**.
@@ -113,6 +272,91 @@ For example, if you map an extensibility workflow to the **userPrincipalName** t
 1.	Select the **Edit** button at the bottom of the **Edit Attribute Mapping** blade.
 
 If the extensibility workflow was successfully mapped to the target attribute, the **Attribute mapping** page will update so that the **Mapping Type** column shows “LCW extensibility workflow” for that given attribute.
+
+Once you’re done configuring the settings of your provisioning job, you can now start a provisioning job as normal. The LCW extensibility workflow wil now run for all objects in scope.
+
+### Using Microsoft Graph
+
+1. Using your browser, sign in to your Entra ID tenant via the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Navigate to **Enterprise apps > All applications**.
+1. Select the application that you would like to modify the attribute mappings for.
+1. Navigate to **Provisioning > Attribute mapping** and select **Advanced options > Edit schema**.
+
+    > [!IMPORTANT]
+    > Before you make any changes, we recommend that you save a copy of your existing schema. This allows you to easily revert to a stable/unmodified version of your schema.
+
+1. Search for the target attribute that you wish to edit so that it maps to the LCW extensibility workflow. These are the fields that you will need to modify for that attribute:
+
+    | Name of field | Description |
+    |-----|-----|
+    | `flowType` |  Must be `ObjectAddOnly`, since LCW extensibility workflows [can only be run during create events](#limitations) |
+    | `matchingPriority` | Must be `0`, since target attributes that are mapped to an LCW extensibility workflow cannot be used as matching attributes |
+    | `expression` | This will be the GUID of the LCW extensibility workflow |
+    | `name` | Same as `expression`; this will be GUID of the LCW extensibility workflow |
+    | `type` | Must be `LifecycleWorkflow` |
+    | `parameters` | Here, you will configure the source attributes that you would like to pass as inputs into the Azure Logic App. `key` is the alias for a given input (this allows developers to use a friendly name with referencing an input in the Azure Logic App, which is helpful for situations where a source attribute may be long or complicated). `expression` and `name` will be a source attribute. |
+    
+    **Example of a new attribute mapping that uses LCW extensibility workflows**
+    
+    In the example below, we are updating the `userPrincipalName` target attribute.
+    
+    ```http
+    {
+    	"defaultValue": null,
+    	"exportMissingReferences": false,
+    	"flowBehavior": "FlowWhenChanged",
+    	"flowType": "ObjectAddOnly",
+    	"matchingPriority": 0,
+    	"targetAttributeName": "userPrincipalName",
+    	"source": {
+    		"expression": "2b19441a-9ff0-449d-ba74-3e4226eff132",
+    		"name": "2b19441a-9ff0-449d-ba74-3e4226eff132",
+    		"type": "LifecycleWorkflow",
+    		"parameters": [
+    			{
+    				"key": "firstname",
+    				"value": {
+    					"expression": "[name.givenName]",
+    					"name": "name.givenName",
+    					"type": "Attribute",
+    					"parameters": []
+    				}
+    			},
+    			{
+    				"key": "lastname",
+    				"value": {
+    					"expression": "[name.familyName]",
+    					"name": "name.familyName",
+    					"type": "Attribute",
+    					"parameters": []
+    				}
+    			}
+    		]
+    	}
+    }
+    ```
+
+1. Save the **entire** edited schema object, not just the part you edited (consider doing so in a separate file). You will need to provide the entire schema object in the request body of the Microsoft Graph Explorer tool later.
+1. Start the [Microsoft Graph Explorer tool](https://aka.ms/ge).
+1. Sign in to your tenant.
+1. Select **Modify permissions**.
+1. Consent to the following required permissions: `Synchronization.ReadWrite.All`
+1. Copy/paste the edited schema object into the **Request body** section of the Microsoft Graph Explorer tool, and use the [Update synchronizationSchema API](https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update) to update the attribute mappings for a given provisioning job.
+
+**Example request**
+
+```http
+PUT /servicePrincipals/{id}/synchronization/jobs/{jobId}/schema
+Content-Type: application/json
+
+// In your request body, paste the entire schema object
+```
+
+**Example response**
+
+```http
+HTTP/1.1 204 No Content
+```
 
 Once you’re done configuring the settings of your provisioning job, you can now start a provisioning job as normal. The LCW extensibility workflow wil now run for all objects in scope.
 
