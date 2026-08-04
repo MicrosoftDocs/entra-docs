@@ -1,21 +1,24 @@
 ---
-title: Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
+title: Configure dynamic membership groups with the memberOf operator in the Entra Admin Center (preview)
 description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 01/27/2026
-ms.reviewer: yukarppa
+ms.date: 08/04/2026
+ms.reviewer: mbhargav
 ms.custom: it-pro
 ---
 
-# Configure dynamic membership groups with the memberOf attribute in the Entra Admin Center (preview)
+# Configure dynamic membership groups with the memberOf operator in the Entra Admin Center (preview)
 
 
 ## Overview
 
 This feature preview in Microsoft Entra ID enables admins to create dynamic membership groups and administrative units that populate by adding members of other groups using the `memberOf` attribute. Apps that couldn't read group-based membership previously in Microsoft Entra ID can now read the entire membership of these new `memberOf` groups. Not only can these groups be used for apps but they can also be used for licensing assignments.
 
-> [!WARNING]
-> This is a preview feature and isn't intended for production use. The use of this feature comes with limitations that can affect dynamic group processing in the tenant. Review the [Preview limitations](#preview-limitations) section before using this feature.
+> [!IMPORTANT]
+> The public preview of the `memberOf` rule operator is ending. After **November 3, 2026**, dynamic membership groups, dynamic administrative units, and entitlement management auto-assignment policies that use the `memberOf` operator stop updating and remain in their last known state. This can lead to stale access and enforcement gaps, including outdated Teams and SharePoint access, Conditional Access targeting, group-based licensing, and access package assignments.
+>
+> Before November 3, 2026, review all uses of the `memberOf` operator and remove or replace those configurations. See [Migrate before the preview ends](#migrate-before-the-preview-ends). This is a preview feature that isn't intended for production use; review the [Preview limitations](#preview-limitations). 
+
 
 The following diagram illustrates how you could create Dynamic-Group-A with members of Security-Group-X and Security-Group-Y. Members of the groups inside Security-Group-X and Security-Group-Y don't become members of Dynamic-Group-A.
 
@@ -75,3 +78,29 @@ This feature is available in the Azure portal, Microsoft Graph, and PowerShell. 
 
 1. Select **OK**.
 1. Select **Create group**.
+
+## Migrate before the preview ends
+
+As Microsoft continues to improve the scale and reliability of dynamic membership processing, the `memberOf` preview is ending. During preview, we observed that using `memberOf` can slow dynamic membership processing for all groups in a tenant. `memberOf` is a preview operator and isn't recommended for production use.
+
+We recognize the importance of the customer scenarios that `memberOf` addresses, and we're continuing to develop an alternative solution that meets these needs with the right level of scalability and reliability.
+In the interim, identify and replace every configuration that uses the `memberOf` operator before November 3, 2026. After that date, configurations that still use `memberOf` stop updating and stay in their last known state, which can leave access stale and enforcement gaps in place.
+
+**Dynamic membership groups**
+
+- Export dynamic membership groups from the Microsoft Entra admin center and identify rules that contain `memberOf`.
+- Replace `memberOf` with [supported rule operators](~/identity/users/groups-dynamic-rule-more-efficient.md), or convert the group to assigned membership.
+- Validate group membership after making changes. If the group is no longer needed, pause or delete it.
+
+**Dynamic administrative units**
+
+- Use Microsoft Graph PowerShell to identify [dynamic administrative units](~/identity/role-based-access-control/admin-units-members-dynamic.md) that use `memberOf` rules.
+- Replace `memberOf`-based rules with supported logic, or convert the administrative unit to assigned membership.
+- Validate both membership and administrative scope. If the administrative unit is no longer needed, delete it.
+
+**Entitlement management auto-assignment policies**
+
+- Use Microsoft Graph PowerShell to identify [auto-assignment policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md) that use `memberOf`.
+- Replace `memberOf`-based logic with supported attribute-based operators where possible. If no equivalent rule is available, plan an alternative assignment method before retirement.
+- Validate access package assignments after making changes.
+
