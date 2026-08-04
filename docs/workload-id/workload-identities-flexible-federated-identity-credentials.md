@@ -82,7 +82,14 @@ Supported issuer URLs: `https://token.actions.githubusercontent.com`
 Supported claims and operators per claim: 
 
 - Claim `sub` supports operators `eq` and `matches` 
-- Claim `job_workflow_ref` supports operators `eq` and `matches` 
+- Claim `job_workflow_ref` supports operators `eq` and `matches`
+- Claim `repository_id` supports operators `eq`
+- Claim `repository_owner_id` supports operators `eq`
+
+> [!NOTE]
+>
+> Starting July 15, 2026, GitHub applies the immutable format automatically to repositories that are created, renamed, or transferred.
+> See [Migrate GitHub Actions federated credentials to immutable subjects](./workload-identities-github-immutable-subjects.md) for more information.
 
 ### [GitLab](#tab/gitlab)
 
