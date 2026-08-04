@@ -4,8 +4,9 @@ description: Learn how to configure automatic assignments based on rules for an 
 author: markwahl-msft
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 06/26/2024
+ms.date: 07/28/2026
 ms.reviewer: mwahl
+ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to configure automatic assignment policies for an access package so that I can automatically assign access based on rules.
 ---
 # Configure an automatic assignment policy for an access package in entitlement management
@@ -14,6 +15,9 @@ You can use rules to determine access package assignment based on identity prope
 
    > [!NOTE]
    > It is suggested to only use one automatic assignment policy per access package. Configuring more than one auto-assignment policy is supported ONLY if you ensure there is no overlap with users in scope for each policy. If a user matches more than one automatic assignment policy, this is not supported and there may be subsequent problems losing access should a user fall out of scope of one policy but not the other.
+
+> [!IMPORTANT]
+> The preview of the `memberOf` rule operator is ending. Starting October 27, 2026, automatic assignment policies whose membership rule uses `memberOf` are quarantined. The policies remain, but assignment processing stops, and no assignments are added or removed until you remove `memberOf` from the rule. Before October 27, 2026, [identify the policies that use the memberOf attribute](#find-automatic-assignment-policies-that-use-the-memberof-attribute) and rebuild each rule with a supported attribute-based operator. If no equivalent rule covers your scenario, plan an alternative assignment method before you remove the policy that contains the rule, so that assignments aren't dropped. Automatic assignment policies that don't use `memberOf` aren't affected. For more information, see [Configure dynamic membership groups with the memberOf attribute](../identity/users/groups-dynamic-rule-member-of.md).
 
 This article describes how to create an access package automatic assignment policy for an existing access package.
 
@@ -106,6 +110,66 @@ $pparams = @{
 New-MgEntitlementManagementAssignmentPolicy -BodyParameter $pparams
 ```
 
+## Find automatic assignment policies that use the memberOf attribute
+
+Because support for the `memberOf` rule operator ends on October 27, 2026, you need to find the automatic assignment policies in your tenant whose membership rule includes `memberOf`, so that you can rebuild those rules or plan an alternative assignment method.
+
+You can find those policies in PowerShell with the [Microsoft Graph PowerShell](https://www.powershellgallery.com/packages/Microsoft.Graph.Authentication/) `Microsoft.Graph.Authentication` module. An identity in an appropriate role with the delegated `EntitlementManagement.Read.All` permission can run the following script. The script is read only, so it doesn't change any policy.
+
+The script lists every access package assignment policy in the tenant, selects only the automatic assignment policies and ignores the other policy types, and then checks each of those policies' membership rules for `memberOf`. It always creates the CSV file, even when no policy matches, so that you have a record of the result of the scan. If no policy matches, the file contains only the column headings.
+
+```powershell
+Connect-MgGraph -Scopes "EntitlementManagement.Read.All"
+
+$outputPath = ".\memberof-auto-assignment-policies.csv"
+$columns = 'AccessPackageName','AccessPackageId','CatalogId','PolicyName','PolicyId','MembershipRule'
+
+$results = New-Object System.Collections.Generic.List[object]
+$uri = 'https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentPolicies?$expand=accessPackage&$top=50'
+
+while ($uri) {
+    $page = Invoke-MgGraphRequest -Method GET -Uri $uri
+
+    foreach ($policy in $page.value) {
+        # Automatic assignment policies are the policies that have automaticRequestSettings.
+        if (-not $policy.automaticRequestSettings) { continue }
+
+        foreach ($target in @($policy.specificAllowedTargets)) {
+            if ([string]$target.'@odata.type' -notlike '*attributeRuleMembers*') { continue }
+
+            $rule = [string]$target.membershipRule
+            if ($rule -match '(?i)memberof') {
+                $results.Add([pscustomobject]@{
+                    AccessPackageName = $policy.accessPackage.displayName
+                    AccessPackageId   = $policy.accessPackage.id
+                    CatalogId         = $policy.accessPackage.catalogId
+                    PolicyName        = $policy.displayName
+                    PolicyId          = $policy.id
+                    MembershipRule    = $rule
+                })
+            }
+        }
+    }
+
+    $uri = $page.'@odata.nextLink'
+}
+
+if ($results.Count -eq 0) {
+    # Write a headings-only file so that there's always a report of the scan result.
+    $columns -join ',' | Set-Content -Path $outputPath -Encoding UTF8
+    Write-Output "No automatic assignment policies use the memberOf attribute. Created an empty report at $outputPath."
+} else {
+    $sorted = $results | Sort-Object AccessPackageName
+    $sorted | Select-Object $columns |
+        Export-Csv -Path $outputPath -NoTypeInformation -Encoding UTF8
+    Write-Output "Found $($results.Count) automatic assignment policies that use the memberOf attribute. Created a report at $outputPath."
+    $sorted | Format-Table AccessPackageName, PolicyName, MembershipRule
+}
+```
+
+For each policy that the script returns, determine whether you can rebuild the membership rule with a supported attribute-based operator. If you can, update the policy with the new rule in the Microsoft Entra admin center or with Microsoft Graph PowerShell. If no supported operator gives you an equivalent rule, plan an alternative assignment method before you remove the policy that contains the rule, so that identities don't lose their assignments. After you update a policy, confirm that the access package assignments are correct.
+
 ## Next steps
 
 - [View assignments for an access package](entitlement-management-access-package-assignments.md)
+- [Configure dynamic membership groups with the memberOf attribute](../identity/users/groups-dynamic-rule-member-of.md)
