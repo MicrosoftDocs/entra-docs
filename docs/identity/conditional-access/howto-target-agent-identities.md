@@ -24,7 +24,9 @@ Each section builds on the previous one to form a complete policy.
 
 ## Prerequisites
 
-- An Agent 365 license
+- One of the following license plans:
+	- **Microsoft 365 E7**, which includes Agent 365 and Microsoft Entra Suite, to provide governance of user and agent identities.
+	- **Microsoft Agent 365** license paired with at least Microsoft Entra P1 or Microsoft 365 E3.
 - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and manage Conditional Access policies
 - At least one agent identity registered in your tenant
 
