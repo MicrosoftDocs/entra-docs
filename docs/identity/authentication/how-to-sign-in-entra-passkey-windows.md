@@ -1,5 +1,5 @@
 ---
-title: Sign in with a Microsoft Entra passkey on Windows (preview)
+title: Sign in with a Microsoft Entra passkey on Windows
 description: Learn how to sign in with a Microsoft Entra passkey on Windows by using Windows Hello as a FIDO2 passkey provider for phishing-resistant authentication.
 ms.topic: how-to
 ms.date: 07/05/2026
