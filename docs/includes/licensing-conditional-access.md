@@ -17,7 +17,9 @@ Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescr
 
 Risk-based policies require access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), which is a Microsoft Entra ID P2 feature.
 
-Conditional Access for agents requires a [Microsoft Agent 365 license](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing) to apply policies to agents through [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md#how-to-get-started).
+Conditional Access for agents requires a [Microsoft Agent 365 license](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing) to apply policies to agents through [Microsoft Entra Agent ID](../agent-id/what-is-microsoft-entra-agent-id.md#how-to-get-started). This can be with one of the following license plans:
+	- **Microsoft 365 E7**, which includes Agent 365 and Microsoft Entra Suite, to provide governance of user and agent identities.
+	- **Microsoft Agent 365** license paired with at least Microsoft Entra P1 or Microsoft 365 E3.
 
 Other products and features that could interact with Conditional Access policies require appropriate licensing for those products and features.
 
