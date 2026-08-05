@@ -1,15 +1,15 @@
 ### YamlMime:FAQ
 metadata:
   title: Frequently asked questions about telephony providers in Microsoft Entra ID
-  description: Find answers to common questions about selecting, configuring, evaluating, and supporting customer-managed telephony providers for Microsoft Entra ID.
+  description: Find answers to common questions about selecting, configuring, evaluating, and supporting Choose Your Own Telephony Provider for Microsoft Entra ID.
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 08/04/2026
+  ms.date: 08/05/2026
   ai-usage: ai-assisted
 title: Frequently asked questions about telephony providers in Microsoft Entra ID
 
 summary: |
-  The following are frequently asked questions about customer-managed telephony providers in Microsoft Entra ID. For questions not answered here, ask the community on the [Microsoft Q&A question page for Microsoft Entra ID](/answers/topics/azure-active-directory.html).
+  The following are frequently asked questions about Choose Your Own Telephony Provider in Microsoft Entra ID. For questions not answered here, ask the community on the [Microsoft Q&A question page for Microsoft Entra ID](/answers/topics/azure-active-directory.html).
 
   This FAQ covers:
 
@@ -22,58 +22,66 @@ sections:
 - name: Provider selection and availability
   questions:
     - question: |
+        When will Choose Your Own Telephony Provider be available?
+      answer: |
+        Information about supported telephony providers will be available starting September 18, 2026. The configuration experience will become available starting October 30, 2026.
+
+        Until the feature is available, you can review the supported provider options and begin planning your migration from Microsoft-managed SMS and voice authentication.
+    - question: |
         Can I use my existing SMS provider?
       answer: |
-        Yes, if your provider is available through the Microsoft Security Store. If your organization already has a relationship with a supported telephony provider, you can continue using that provider. If your preferred provider isn't currently available, choose one of the supported providers to continue using SMS or voice authentication.
+        Yes, you can use your existing provider if it's one of the supported telephony providers. Information about supported providers and their offerings will be available starting September 18, 2026. If your current provider isn't supported, you will need to select a supported provider to continue using SMS or voice authentication after Microsoft-managed telephony is retired.
     - question: |
-        Can I use customer-owned telecom to keep SMS sign-in as a primary authentication method?
+        Can I use Choose Your Own Telephony Provider to keep SMS sign-in as a primary authentication method?
       answer: |
-        No. Customer-owned telecom won't support SMS sign-in as a primary authentication method. The retirement of SMS sign-in as a primary authentication method applies even when you use customer-owned telecom. If your organization currently uses SMS sign-in for primary authentication, migrate users to supported alternatives based on their scenarios. Alternatives include passkeys, QR code authentication, FIDO2 security keys, and other authentication methods supported by Microsoft Entra ID.
+        No. The feature doesn't support SMS sign-in as a primary authentication method. The retirement of SMS sign-in as a primary authentication method applies even when you use Choose Your Own Telephony Provider. If your organization currently uses SMS sign-in for primary authentication, migrate users to supported alternatives based on their scenarios. Alternatives include passkeys, QR code authentication, FIDO2 security keys, and other authentication methods supported by Microsoft Entra ID.
     - question: |
         Does this work with Microsoft Entra ID, Microsoft Entra External ID, and Azure AD B2C?
       answer: |
-        The current release scope for Choose Your Own Telephony Provider includes Microsoft Entra ID. Microsoft Entra External ID and Azure AD B2C aren't included.
+        Choose Your Own Telephony Provider is currently available only for Microsoft Entra ID. Microsoft Entra External ID and Azure AD B2C aren't included.
     - question: |
         Can I configure multiple telephony providers?
       answer: |
-        At general availability (GA), you can configure one telephony provider per channel: one provider for SMS and one provider for voice.
+        Starting October 30, 2026, you can configure one telephony provider per channel: one provider for SMS and one provider for voice.
 
 - name: Costs and billing
   questions:
     - question: |
         How much does Choose Your Own Telephony Provider cost?
       answer: |
-        The primary cost is the amount your telephony provider charges for SMS and voice messages, based on its pricing and your usage.
+        The primary cost is what your selected telephony provider charges for SMS and voice messages, based on the provider's pricing and your usage. The feature uses a routing function deployed in your Azure subscription to securely connect Microsoft Entra ID with your selected telephony provider. Standard Azure consumption charges apply to the routing function, but these costs are expected to be minimal for most customers compared to telephony provider charges.
 
-        If you use the Microsoft-provided routing solution, standard Azure consumption charges apply to the Azure resources deployed in your subscription. For most customers, these Azure costs are minimal compared to telephony provider charges.
+        More detailed provider pricing information will be available when supported providers become available on September 18, 2026.
 
 - name: Migration and evaluation
   questions:
     - question: |
         How do I migrate?
       answer: |
-        At general availability (GA), you can start the **Configure telephony provider** experience in the Microsoft Entra admin center under **Entra ID** > **Authentication methods** > **Policies**.
+        Choose Your Own Telephony Provider will be available starting October 30, 2026. When it becomes available, you will configure the feature from the Microsoft Entra admin center.
 
         Migration typically involves the following steps:
 
-        1. Select and subscribe to a supported telephony provider through the Microsoft Security Store.
-        1. Deploy the routing function in your Azure subscription and connect it to your telephony provider.
-        1. Create policies for SMS, voice, or both channels, and specify the target users or groups.
-        1. Validate the configuration in **Evaluation mode** without affecting production authentication traffic.
-        1. Enable the policy and gradually increase the production rollout percentage, starting as low as 1%, until all targeted users are migrated.
+        1. Select a supported telephony provider and establish an account with that provider.
+        1. Deploy a routing function in your Azure subscription. The routing function securely sends authentication requests from Microsoft Entra ID to your provider.
+        1. Select the users or groups that will use the provider for SMS, voice, or both.
+        1. Evaluate the integration before it affects users.
+        1. Gradually enable the provider for production authentication traffic.
 
-        Complete your migration well before the February 1, 2027 retirement of Microsoft-managed telephony to allow sufficient time for testing and a phased production rollout.
+        Detailed configuration and deployment instructions will be available when the feature is released. Complete your migration before the February 1, 2027 retirement of Microsoft-managed telephony to allow sufficient time for testing and a phased production rollout.
     - question: |
         Can I evaluate before switching my users to a new provider?
       answer: |
-        Yes. Use **Evaluation mode** to send real requests to your provider without delivering messages to users. This mode lets you confirm that your provider setup processes requests successfully. After you verify the configuration, turn on **Production mode** to go live.
+        Yes. Evaluation mode lets you validate that authentication requests are successfully routed to your telephony provider without changing the authentication experience for your users.
+
+        Your users continue to receive authentication messages through the currently active delivery method while you review the evaluation results. After you confirm that the integration is working as expected, you can enable the provider for production traffic and gradually expand the rollout.
 
 - name: Support and troubleshooting
   questions:
     - question: |
         What is the support model?
       answer: |
-        Microsoft provides support for the Microsoft Entra ID platform, including the Choose Your Own Telephony Provider configuration experience, authentication workflows, and Microsoft-managed components.
+        Microsoft provides support for the Microsoft Entra ID platform, including the telephony provider configuration experience, authentication workflows, and the routing between Microsoft Entra ID and your telephony provider.
 
         Your organization is responsible for managing its selected telephony provider relationship, including provider account configuration, service availability, message delivery, and issues related to SMS or voice delivery. For provider or message delivery issues, contact your provider's support team.
 
