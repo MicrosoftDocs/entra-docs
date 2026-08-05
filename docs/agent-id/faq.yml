@@ -71,8 +71,8 @@ sections:
       - question: |
           Can I use dynamic groups to manage an agent's user account?
         answer: |
-          Dynamic group membership rules don't support targeting an agent's user account. Use assigned groups to manage an agent's user account's group memberships.
-
+          An agent's user account can be added to Microsoft Entra groups, including dynamic groups, enabling it to inherit access granted to those group.
+          
   - name: Authentication and consent
     questions:
       - question: |
