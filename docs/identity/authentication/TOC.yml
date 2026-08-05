@@ -55,11 +55,11 @@
       href: concept-authentication-security-questions.md
     - name: Remove passwords from Microsoft Entra ID
       href: how-to-plan-password-scramble-phishing-resistant-passwordless-authentication.md
-  - name: Phone providers
+  - name: Telephony providers
     items:
-    - name: Phone providers overview
+    - name: Telephony providers overview
       href: concept-phone-providers.md
-    - name: Phone providers FAQ
+    - name: Telephony providers FAQ
       href: phone-providers-faq.yml
   - name: Conditional Access authentication strength
     items:
