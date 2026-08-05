@@ -33,8 +33,6 @@ Before you select a provider:
 - Confirm that a phishing-resistant method doesn't meet the requirement.
 - Compare provider availability, geographic coverage, supported delivery channels, pricing, support, security, and compliance capabilities.
 - Review procurement, privacy, and regulatory requirements with the appropriate teams in your organization.
-- Plan a pilot with a limited group before you expand deployment.
-- Prepare a fallback authentication method and support process for delivery interruptions.
 
 ## Next steps
 
