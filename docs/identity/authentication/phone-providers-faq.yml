@@ -26,9 +26,9 @@ sections:
       answer: |
         Yes, if your provider is available through the Microsoft Security Store. If your organization already has a relationship with a supported telephony provider, you can continue using that provider. If your preferred provider isn't currently available, choose one of the supported providers to continue using SMS or voice authentication.
     - question: |
-        Can I use customer-owned telecom to keep SMS sign-in as a primary authentication method?
+        Can I use customer-owned telephony to keep SMS sign-in as a primary authentication method?
       answer: |
-        No. Customer-owned telecom won't support SMS sign-in as a primary authentication method. The retirement of SMS sign-in as a primary authentication method applies even when you use customer-owned telecom. If your organization currently uses SMS sign-in for primary authentication, migrate users to supported alternatives based on their scenarios. Alternatives include passkeys, QR code authentication, FIDO2 security keys, and other authentication methods supported by Microsoft Entra ID.
+        No. Customer-owned telephony won't support SMS sign-in as a primary authentication method. The retirement of SMS sign-in as a primary authentication method applies even when you use customer-owned telephony. If your organization currently uses SMS sign-in for primary authentication, migrate users to supported alternatives based on their scenarios. Alternatives include passkeys, QR code authentication, FIDO2 security keys, and other authentication methods supported by Microsoft Entra ID.
     - question: |
         Does this work with Microsoft Entra ID, Microsoft Entra External ID, and Azure AD B2C?
       answer: |

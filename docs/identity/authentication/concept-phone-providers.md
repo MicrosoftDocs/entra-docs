@@ -10,7 +10,7 @@ ai-usage: ai-generated
 
 # Choose a telephony provider for SMS and voice authentication
 
-Microsoft Entra ID will support customer-managed telephony providers for organizations that need to continue using SMS or voice authentication. You select a telecommunications provider through the Microsoft Security Store and manage the provider relationship for your organization.
+Microsoft Entra ID will support customer-managed telephony providers for organizations that need to continue using SMS or voice authentication. You select a telephony provider through the Microsoft Security Store and manage the provider relationship for your organization.
 
 Microsoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2.md), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.
 
