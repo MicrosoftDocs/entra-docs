@@ -2,7 +2,7 @@
 title: Understand how expression builder works with Application Provisioning in Microsoft Entra ID
 description: Understand how expression builder works with Application Provisioning in Microsoft Entra ID.
 ms.topic: concept-article
-ms.date: 03/04/2025
+ms.date: 08/06/2026
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -17,9 +17,7 @@ For reference on building expressions, see [Reference for writing expressions fo
 
 ## Finding the expression builder
 
-In application provisioning, you use expressions for attribute mappings. You access Expression Builder on the attribute mapping page by selecting the **Advanced Options** dropdown and then selecting **Expression builder**.
-
-:::image type="content" source="media/expression-builder/accessing-expression-builder.png" alt-text="The checkbox to show advanced settings is selected and a link is shown that says expression builder" lightbox="media/expression-builder/accessing-expression-builder.png":::
+In application provisioning, you use expressions for attribute mappings. You access Expression Builder on the attribute mapping page by selecting the **Expression builder** from the left navigation menu.
 
 ## Using expression builder
 
