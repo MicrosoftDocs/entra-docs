@@ -27,7 +27,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
 - Support for passwordless authentication methods and password-based authentication depending on your security requirements and Windows Server version.
 
 > [!IMPORTANT]
-> After you enable this capability, your Arc-enabled machine will be Microsoft Entra joined. This scenario is for machines that are planned to not be joined to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension and instead use the [Entra hybrid join](./concept-hybrid-join) solution. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension. Conditional Access isn't supported with Windows Server with Microsoft Entra join extension in Azure Arc-enabled servers.
+> After you enable this capability, your Arc-enabled machine will be Microsoft Entra joined. This scenario is for machines that are planned to not be joined to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension and instead use the [Entra hybrid join](/concept-hybrid-join) solution. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension. Conditional Access isn't supported with Windows Server with Microsoft Entra join extension in Azure Arc-enabled servers.
 
 ## Requirements
 
