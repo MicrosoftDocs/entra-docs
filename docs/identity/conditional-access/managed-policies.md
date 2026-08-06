@@ -33,10 +33,10 @@ Microsoft-managed policies are preconfigured Conditional Access policies that ar
 - The policy includes preconfigured conditions and recommended controls, such as requiring multifactor authentication. 
 - Administrators don't need to manually create these policies. Microsoft manages the policy template, configuration, and updates to ensure it aligns with current security guidance.
 
-Microsoft enables these policies no less than 45 days after they're introduced in your tenant if they're left in the **Report-only** state. You can turn on these policies sooner, or opt out by setting the policy state to **Off**. Customers are notified through emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
+Microsoft enables these policies no less than 30 days after they're introduced in your tenant if they're left in the **Report-only** state. You can turn on these policies sooner, or opt out by setting the policy state to **Off**. Customers are notified through emails and [Message center](/microsoft-365/admin/manage/message-center) posts 2 weeks before the policies are enabled. 
 
 > [!NOTE]
-> In some cases, policies might be enabled faster than 45 days. If this change applies to your tenant:
+> In some cases, policies might be enabled faster than 30 days. If this change applies to your tenant:
 > 
 > - It's mentioned in emails and Microsoft 365 message center posts you receive about Microsoft-managed policies. 
 > - It's mentioned in the policy details in the Microsoft Entra admin center.
