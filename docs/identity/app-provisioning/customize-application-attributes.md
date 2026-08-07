@@ -2,7 +2,7 @@
 title: Tutorial - Customize Microsoft Entra attribute mappings in Application Provisioning
 description: Learn about attribute mappings for Software as a Service (SaaS) apps in Microsoft Entra Application Provisioning. Learn what attributes are and how you can modify them to address your business needs.
 ms.topic: tutorial
-ms.date: 03/04/2025
+ms.date: 08/06/2026
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -25,29 +25,18 @@ You can customize the default attribute-mappings according to your business need
 ## Editing user attribute-mappings
 
 
-Follow these steps to access the **Mappings** feature of user provisioning:
+Follow these steps to access the **Attribute Mapping** feature of user provisioning:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select any app to load its app management pane, where you can view reports and manage app settings.
 1. Select **Provisioning** to manage user account provisioning settings for the selected app.
-1. Expand **Mappings** to view and edit the user attributes that flow between Microsoft Entra ID and the target application. If the target application supports it, this section lets you optionally configure provisioning of groups and user accounts.
+1. Under **Manage**, select **Attribute Mapping**. The attribute mapping page displays a table of current mappings organized by object type (**Users** and **Groups**). The table shows the **Source Attribute**, **Target Attribute**, **Mapping Type**, and **Matching Precedence** for each mapping.
 
-   ![Use Mappings to view and edit user attributes](./media/customize-application-attributes/21.png)
+1. To edit an existing mapping, select the pencil icon to the right of the mapping row. The **Edit Attribute** screen opens, where you can modify the user attributes that flow between Microsoft Entra ID and the target application.
 
-1. Select a **Mappings** configuration to open the related **Attribute Mapping** screen. SaaS applications require certain attribute-mappings to function correctly. For required attributes, the **Delete** feature is unavailable.
-
-   ![Use Attribute Mapping to configure attribute mappings for apps](./media/customize-application-attributes/22.png)
-
-   In this screenshot, you can see that the **Username** attribute of a managed object in Salesforce is populated with the **userPrincipalName** value of the linked Microsoft Entra Object.
-   
-   > [!NOTE]
-   > Clearing **Create** doesn't affect existing users. If **Create** isn't selected, you can't create new users.   
-
-1. Select an existing **Attribute Mapping** to open the **Edit Attribute** screen. Here you can edit the user attributes that flow between Microsoft Entra ID and the target application.
-
-   ![Use Edit Attribute to edit user attributes](./media/customize-application-attributes/23.png)
+2. To delete a mapping, select the trash can icon to the right of the mapping row. For required attributes, the **Delete** option is unavailable.
 
 ### Understanding attribute-mapping types
 
@@ -95,9 +84,7 @@ The Microsoft Entra provisioning service can be deployed in both "green field" s
 
 A selected number of applications, such as ServiceNow, Box, and G Suite, support the ability to provision group and user objects. Group objects can contain group properties such as display names and email aliases, along with group members.
 
-![Example shows ServiceNow with provisioned Group and User objects](./media/customize-application-attributes/24.png)
-
-Group provisioning can be optionally enabled or disabled by selecting the group mapping under **Mappings**, and setting **Enabled** to the option you want in the **Attribute Mapping** screen.
+For apps that support group sync, enable or disable group sync by navigating to the **Scoping filters** page. 
 
 The attributes provisioned as part of Group objects can be customized in the same manner as User objects, described previously. 
 
@@ -108,7 +95,7 @@ The attributes provisioned as part of Group objects can be customized in the sam
 
 The user attributes supported for a given application are preconfigured. Most application's user management APIs don't support schema discovery. So, the Microsoft Entra provisioning service isn't able to dynamically generate the list of supported attributes by making calls to the application.
 
-However, some applications support custom attributes, and the Microsoft Entra provisioning service can read and write to custom attributes. To enter their definitions into the Microsoft Entra admin center, select the **Show advanced options** check box at the bottom of the **Attribute Mapping** screen, and then select **Edit attribute list for** your app.
+However, some applications support custom attributes, and the Microsoft Entra provisioning service can read and write to custom attributes. To enter their definitions into the Microsoft Entra admin center, select the **Advanced Options** dropdown menu at the top of the **Attribute Mapping** page, and then select **Edit target User attributes**.
 
 Applications and systems that support customization of the attribute list include:
 
@@ -122,7 +109,7 @@ Applications and systems that support customization of the attribute list includ
 
 
 > [!NOTE]
-> Editing the list of supported attributes is only recommended for administrators who have customized the schema of their applications and systems, and have first-hand knowledge of how their custom attributes have been defined or if a source attribute isn't automatically displayed in the Microsoft Entra admin center UI. This sometimes requires familiarity with the APIs and developer tools provided by an application or system. The ability to edit the list of supported attributes is locked down by default, but customers can enable the capability by navigating to the following URL: https://portal.azure.com/?Microsoft_AAD_Connect_Provisioning_forceSchemaEditorEnabled=true . You can then navigate to your application to view the [attribute list](#editing-the-list-of-supported-attributes). 
+> Editing the list of supported attributes is only recommended for administrators who have customized the schema of their applications and systems, and have first-hand knowledge of how their custom attributes have been defined or if a source attribute isn't automatically displayed in the Microsoft Entra admin center UI. This sometimes requires familiarity with the APIs and developer tools provided by an application or system. The ability to edit the list of supported attributes is locked down by default, but customers can enable the capability by navigating to the following URL: https://portal.azure.com/?Microsoft_AAD_Connect_Provisioning_forceSchemaEditorEnabled=true . You can then navigate to your application to view the [attribute list](#editing-the-list-of-supported-attributes). The **Advanced Options** dropdown on the **Attribute Mapping** page provides access to **Edit target User attributes** and **Edit schema**.
 
 > [!NOTE]
 > When a directory extension attribute in Microsoft Entra ID doesn't show up automatically in your attribute mapping drop-down, you can manually add it to the "Microsoft Entra attribute list".  When manually adding Microsoft Entra directory extension attributes to your provisioning app, note that directory extension attribute names are case-sensitive. For example: If you have a directory extension attribute named `extension_53c9e2c0exxxxxxxxxxxxxxxx_acmeCostCenter`, make sure you enter it in the same format as defined in the directory. Provisioning multi-valued directory extension attributes is not supported.    
@@ -147,19 +134,18 @@ When you're editing the list of supported attributes, the following properties a
 #### Provisioning a custom extension attribute to a SCIM compliant application
 
 The SCIM Request for Comments (RFC) defines a core user and group schema, while also allowing for extensions to the schema to meet your application's needs. To add a custom attribute to a SCIM application:
-  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator). 
   1. Browse to **Entra ID** > **Enterprise apps**.
   1. Select your application, and then select **Provisioning**.
-  1. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.
-  1. At the bottom of the page, select **Show advanced options**.
-  1. Select **Edit attribute list for AppName**.
+  1. Under **Manage**, select **Attribute Mapping**, and then select the object type (**Users** or **Groups**) for which you'd like to add a custom attribute.
+  1. Select the **Advanced Options** dropdown and then select **Edit target User attributes**.
 
       > [!NOTE]
       > If the **Edit attribute list for AppName** option doesn't appear, navigate to your application using the URL `https://portal.azure.com/?Microsoft_AAD_Connect_Provisioning_forceSchemaEditorEnabled=true` to enable the schema editor.
-
+   
   1. At the bottom of the attribute list, enter information about the custom attribute in the fields provided. Then select **Add Attribute**.
 
-For SCIM applications, the attribute name must follow the pattern shown in the example. The "CustomExtensionName" and "CustomAttribute" can be customized per your application's requirements, for example: urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User:CustomAttribute 
+For SCIM applications, the attribute name must follow the pattern shown in the example. The ```CustomExtensionName``` and ```CustomAttribute``` can be customized per your application's requirements, for example: ```urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User:CustomAttribute```. 
 
 These instructions are only applicable to SCIM-enabled applications. Applications such as ServiceNow and Salesforce aren't integrated with Microsoft Entra ID using SCIM, and therefore they don't require this specific namespace when adding a custom attribute.
 
@@ -462,7 +448,7 @@ Certain attributes such as phoneNumbers and emails are multi-value attributes wh
 
 ## Restoring the default attributes and attribute-mappings
 
-Should you need to start over and reset your existing mappings back to their default state, you can select the **Restore default mappings** check box and save the configuration. Doing so sets all mappings and scoping filters as if the application was added to your Microsoft Entra tenant from the application gallery.
+If you need to reset your mapping settings back to their default state, select **Attribute mapping** > **Restore default mappings** to restore and save the configuration. Doing so sets all mappings and scoping filters as if the application was added to your Microsoft Entra tenant from the application gallery. This will also restart synchronization.
 
 Selecting this option forces a resynchronization of all users while the provisioning service is running.
 

@@ -71,8 +71,8 @@ sections:
       - question: |
           Can I use dynamic groups to manage an agent's user account?
         answer: |
-          Yes, agent's user account can be added to dynamic groups, enabling it to inherit access granted to the group.
-
+          An agent's user account can be added to Microsoft Entra groups, including dynamic groups, enabling it to inherit access granted to those group.
+          
   - name: Authentication and consent
     questions:
       - question: |

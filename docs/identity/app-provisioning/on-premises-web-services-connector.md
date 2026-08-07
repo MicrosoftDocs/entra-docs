@@ -249,7 +249,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
 
      ![Screenshot that shows provisioning a user.](~/includes/media\app-provisioning-sql\configure-10.png)
 
- 5. To confirm that the schema of your application is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed. If not, then wait several minutes for the schema to refresh, and then reload the page. Once you see the attributes listed, then cancel from this page to return to the mappings list.
+ 5. To confirm that the schema of your application is available in Microsoft Entra ID, select the **Advanced Options** dropdown and select **Edit target User attributes**. Ensure that all the attributes selected in the configuration wizard are listed. If not, then wait several minutes for the schema to refresh, and then reload the page. Once you see the attributes listed, then cancel from this page to return to the mappings list.
  6. Now, select on the **userPrincipalName** PLACEHOLDER mapping. This mapping is added by default when you first configure on-premises provisioning.  
  
 :::image type="content" source="~/includes/media/app-provisioning-sql/configure-11.png" alt-text="Screenshot of placeholder." lightbox="~/includes/media/app-provisioning-sql/configure-11.png":::
