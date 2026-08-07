@@ -84,9 +84,7 @@ The Microsoft Entra provisioning service can be deployed in both "green field" s
 
 A selected number of applications, such as ServiceNow, Box, and G Suite, support the ability to provision group and user objects. Group objects can contain group properties such as display names and email aliases, along with group members.
 
-![Example shows ServiceNow with provisioned Group and User objects](./media/customize-application-attributes/24.png)
-
-Group provisioning can be optionally enabled or disabled by selecting the group mapping under **Attribute Mapping**, and setting **Enabled** to the option you want. For apps that support group sync, enable or disable group sync by navigating to the **Scoping filters** page. 
+For apps that support group sync, enable or disable group sync by navigating to the **Scoping filters** page. 
 
 The attributes provisioned as part of Group objects can be customized in the same manner as User objects, described previously. 
 
