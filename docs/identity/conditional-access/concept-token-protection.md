@@ -78,6 +78,7 @@ Select the guide for your target platform:
 
 - **Windows**: [Token Protection deployment guide - Windows](deployment-guide-token-protection-windows.md)
 - **iOS, iPadOS, and macOS**: [Token Protection deployment guide - Apple](deployment-guide-token-protection-apple.md)
+- **Web apps that access Azure Resource Manager (Preview)**: [Token Protection deployment guide - Web apps](deployment-guide-token-protection-web-apps.md)
 
 ## Related content 
 
