@@ -179,6 +179,9 @@ This PATCH request requires the `User-OnPremisesSyncBehavior.ReadWrite.All` Micr
 Alternatively, to clear `onPremisesObjectIdentifier` with ADSyncTools version 2.5.0 or later, run the following commands:
 
 ```powershell
+# Import ADSyncTools module
+Import-Module ADSyncTools
+
 # Provide the user's identity.
 $userId = "<userId>"
 
@@ -199,16 +202,18 @@ After you clear the value, rerun synchronization.
 If you can't remediate affected objects before enforcement, enable the tenant-level feature flag `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled`. This flag is disabled by default. Leave the flag disabled unless you need a temporary bypass while you complete remediation.
 
 ```powershell
-$baseUri = "https://graph.microsoft.com/beta"
-$onPremSync = Get-MgDirectoryOnPremiseSynchronization
-$uri = "$baseUri/directory/onPremisesSynchronization/$($onPremSync.Id)"
-$params = @{
-    features = @{
-        allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled = $true
-    }
-}
-Invoke-MgGraphRequest -Method PATCH -Uri $uri -Body $params
-(Get-MgDirectoryOnPremiseSynchronization).Features | fl
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+# Temporary Disable allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled = $true # To re-enable hard match protection, set it $false
+Update-MgDirectoryOnPremiseSynchronization -Features $DirectorySync.Features -OnPremisesDirectorySynchronizationId $DirectorySync.Id
+
+# Get AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled value
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled
+
 ```
 
 > [!WARNING]
