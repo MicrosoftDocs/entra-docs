@@ -81,9 +81,7 @@ After submission, the access request is routed to designated approvers based on 
 
 Once an approver accepts the access package assignment request, the agent identity receives time-bound access to the specified resources. The access is granted according to the resource roles defined in the access package. This establishes a clear start and end date for the access the agent might need.
 
-If the assignment is to an agent identity, and a sponsor is set on the agent identity, as the expiry date approaches, the sponsor receives notifications about the pending expiration. The sponsor then has two options: they can request an extension of the access package (if permitted by policy), or they can allow the access package assignment to expire.
-
-If the sponsor requests an extension, this request can trigger a new approval cycle, where approvers again confirm whether continued access is appropriate. If the sponsor takes no action, the access package assignment automatically expires on its end date, and the agent identity loses access to the target resources.
+If the assignment is to an agent identity, and a sponsor is set on the agent identity, as the expiry date approaches, the access package (if permitted by policy) can be extended, else the access package assignment automatically expires on its end date, and the agent identity loses access to the target resources.
 
 ## Related content
 
