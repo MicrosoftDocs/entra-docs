@@ -179,9 +179,6 @@ This PATCH request requires the `User-OnPremisesSyncBehavior.ReadWrite.All` Micr
 Alternatively, to clear `onPremisesObjectIdentifier` with ADSyncTools version 2.5.0 or later, run the following commands:
 
 ```powershell
-# Import ADSyncTools module
-Import-Module ADSyncTools
-
 # Provide the user's identity.
 $userId = "<userId>"
 
