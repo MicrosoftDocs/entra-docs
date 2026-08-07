@@ -74,7 +74,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 ::: zone pivot="cross-tenant-synchronization"
 
-2. Browse to **Entra ID** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**.
+2. Browse to **Entra ID** > **Cross-tenant Synchronization** > **Configurations**.
 
 3. Select your configuration.
 
