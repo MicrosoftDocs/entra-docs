@@ -202,18 +202,31 @@ After you clear the value, rerun synchronization.
 If you can't remediate affected objects before enforcement, enable the tenant-level feature flag `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled`. This flag is disabled by default. Leave the flag disabled unless you need a temporary bypass while you complete remediation.
 
 ```powershell
-# Connect to Microsoft Graph
+# Connect to Microsoft Graph.
 Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
 
-# Temporary Disable allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled
-$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
-$DirectorySync.Features.AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled = $true # To re-enable hard match protection, set it $false
-Update-MgDirectoryOnPremiseSynchronization -Features $DirectorySync.Features -OnPremisesDirectorySynchronizationId $DirectorySync.Id
+# Enable the temporary bypass.
+$OnPremSync = Get-MgDirectoryOnPremiseSynchronization
+$OnPremSync.Features.AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled = $true
 
-# Get AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled value
-$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
-$DirectorySync.Features.AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled
+Update-MgDirectoryOnPremiseSynchronization `
+    -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
+    -Features $OnPremSync.Features
 
+# Verify the current value.
+$OnPremSync = Get-MgDirectoryOnPremiseSynchronization
+$OnPremSync.Features.AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled
+```
+
+To re-enable hard match protection after remediation, set the flag back to `$false`:
+
+```powershell
+$OnPremSync = Get-MgDirectoryOnPremiseSynchronization
+$OnPremSync.Features.AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled = $false
+
+Update-MgDirectoryOnPremiseSynchronization `
+    -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
+    -Features $OnPremSync.Features
 ```
 
 > [!WARNING]
