@@ -4,7 +4,7 @@ description: Protect your resources with token protection in Conditional Access 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 08/10/2026
 ms.reviewer: sgrandhi
 ms.custom:
   - sfi-image-nochange
@@ -26,18 +26,18 @@ When a user registers a supported device with Microsoft Entra, a PRT is issued a
 
 ## Platform availability
 
-| Platform | Status |
-|----------|--------|
-| Windows | Generally Available |
-| iOS / iPadOS | Preview |
-| macOS | Preview |
+| Platform | Native applications | Browser-based applications |
+|----------|---------------------|----------------------------|
+| Windows | Generally Available | Preview for supported web apps that access Azure Resource Manager |
+| iOS / iPadOS | Preview | Not supported |
+| macOS | Preview | Preview for supported web apps that access Azure Resource Manager |
 
 > [!NOTE]
-> Token Protection currently supports native applications only. Browser-based applications are not supported.
+> Browser-based application support is currently limited to selected web apps, browsers, and device configurations that access Azure Resource Manager. For requirements and the list of supported applications, see [Token Protection deployment guide - Web apps](deployment-guide-token-protection-web-apps.md).
 
 ## Supported resources
 
-Token Protection policy can be enforced on the following cloud resources:
+For native applications, Token Protection policy can be enforced on the following cloud resources:
 - Exchange Online
 - SharePoint Online
 - Microsoft Teams
@@ -45,6 +45,8 @@ Token Protection policy can be enforced on the following cloud resources:
 On Windows, enforcement is also supported for:
 - Azure Virtual Desktop
 - Windows 365
+
+For browser-based applications in preview, enforcement is supported for Azure Resource Manager, configured in Conditional Access as the **Windows Azure Service Management API** resource. Only selected web applications that access Azure Resource Manager are supported. For details, see [Token Protection deployment guide - Web apps](deployment-guide-token-protection-web-apps.md).
 
 :::image type="content" source="media/concept-token-protection/complete-policy-components-session.png" alt-text="Screenshot of a Conditional Access policy that requires token protection as the session control.":::
 
@@ -54,11 +56,13 @@ On Windows, enforcement is also supported for:
 - Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the known limitations section in the appropriate deployment guide for unsupported device types.  
 - Windows Server 2019 or newer that are hybrid Microsoft Entra joined.
 - For detailed steps on how to register your device, see [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
+- Browser-based application support (Preview) has additional operating system, browser, extension, and configuration requirements. See [Token Protection deployment guide - Web apps](deployment-guide-token-protection-web-apps.md).
 
 **Apple (Preview)**:
 - macOS 14.0 or later. Requires the Microsoft Enterprise single sign-on (SSO) plug-in. Alternatively, you can also use Platform SSO. Only MDM-managed devices are supported.
 - iOS / iPadOS 16.0 or later. Requires the Microsoft Enterprise SSO plug-in. Only MDM-managed devices are supported.
 - For detailed steps on how to set up, see [Enabling Microsoft Enterprise SSO plug-in](../../identity-platform/apple-sso-plugin.md) and configuring [Platform SSO for macOS](/intune/intune-service/configuration/platform-sso-macos).
+- Browser-based application support (Preview) on macOS has additional browser, extension, and configuration requirements. See [Token Protection deployment guide - Web apps](deployment-guide-token-protection-web-apps.md).
 
 ## Deployment
 
