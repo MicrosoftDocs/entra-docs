@@ -48,8 +48,6 @@ On Windows, enforcement is also supported for:
 
 For browser-based applications in preview, enforcement is supported for Azure Resource Manager, configured in Conditional Access as the **Windows Azure Service Management API** resource. Only selected web applications that access Azure Resource Manager are supported. For details, see [Token Protection deployment guide - Web apps](deployment-guide-token-protection-web-apps.md).
 
-:::image type="content" source="media/concept-token-protection/complete-policy-components-session.png" alt-text="Screenshot of a Conditional Access policy that requires token protection as the session control.":::
-
 ### Supported devices
 
 **Windows**:
