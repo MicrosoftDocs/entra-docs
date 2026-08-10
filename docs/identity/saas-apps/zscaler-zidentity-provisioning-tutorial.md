@@ -29,6 +29,7 @@ This article describes the steps you need to perform in both Zscaler User Provis
 > * Keep user attributes synchronized between Microsoft Entra ID and Zscaler Provisioning
 > * Provision groups and group memberships in Zscaler.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Zscaler (recommended).
+> * Client Credentials Authentication supported.
 
 ## Prerequisites
 
