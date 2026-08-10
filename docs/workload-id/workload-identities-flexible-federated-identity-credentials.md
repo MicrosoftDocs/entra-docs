@@ -117,6 +117,8 @@ az rest --method post \
 ## Related content
 
 - [Implement a flexible federated identity credential](./workload-identity-federation-create-trust.md#set-up-a-flexible-federated-identity-credential-preview)
+- [Mutable subjects in federated identity credentials](./workload-identities-federated-credential-mutable-subjects.md)
+- [Migrate GitHub Actions federated credentials to immutable subjects](./workload-identities-github-immutable-subjects.md)
 - [Configure a user-assigned managed identity to trust an external identity provider](./workload-identity-federation-create-trust-user-assigned-managed-identity.md)
 - How to create, delete, get, or update [federated identity credentials](./workload-identity-federation-create-trust.md) on an app registration.
 - Read the [GitHub Actions documentation](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-azure) to learn more about configuring your GitHub Actions workflow to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
