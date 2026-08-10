@@ -127,4 +127,6 @@ This example shows how to set up a Flexible Federated identity credential for Gi
 ## Related content
 
 - [Flexible federated identity credentials](./workload-identities-flexible-federated-identity-credentials.md)
+- [Mutable subjects in federated identity credentials](./workload-identities-federated-credential-mutable-subjects.md)
+- [Migrate GitHub Actions federated credentials to immutable subjects](./workload-identities-github-immutable-subjects.md)
 - [Configure a user-assigned managed identity to trust an external identity provider](./workload-identity-federation-create-trust-user-assigned-managed-identity.md)
