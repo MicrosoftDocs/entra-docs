@@ -1,5 +1,5 @@
 ---
-title: Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
+title: Include custom data provided resource in the catalog for catalog user Access Reviews
 ms.reviewer: jgangadhar
 description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create user Access Reviews for disconnected applications.
 ms.subservice: access-reviews
@@ -118,6 +118,9 @@ After copying both the access review object and access review instance object ID
     > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload.
 
+> [!NOTE]
+> Another option to automatically upload files when a review starts is through the use of a logic app. [logic app template](https://github.com/Azure/azure-quickstart-templates/blob/master/application-workloads/identity-governance/byod-logic-app/README.md).
+
 ## Custom data for access CSV fields
 
 When uploading CSVs to be included in the access data, the following parameters are included in the template:
@@ -125,7 +128,7 @@ When uploading CSVs to be included in the access data, the following parameters 
 > [!NOTE]
 > All columns are mandatory.
 
-|Parameter  |Description  |
+|Parameter  | Description  |
 |---------|---------|
 |PrincipalId     |    The **Microsoft Entra ID User ID** of the user whose access needs to be reviewed. This value must match a valid Microsoft Entra user.     |
 |PrincipalType     |   Specifies the type of principal. For access reviews this will always be **EntraIdUser**.      |
@@ -133,9 +136,18 @@ When uploading CSVs to be included in the access data, the following parameters 
 |PermissionName     |   The display name of the permission that the user has in the application. Example: Read, Write, and Admin.     |
 |PermissionDescription     |   A brief explanation of what this permission allows within the application. This provides reviewers with context when deciding whether access should be continued.     |
 |PermissionType     |   Indicates the category of permission.      |
+|ScopeId | A unique identifier for the application. |
+|ScopeDisplayName | The display name of the application. |
+|EntitlementOwners_Users | A comma separated list of the **Microsoft Entra ID User ID** owners of the permission.  |
+|EntitlementOwners_Groups | A comma separated list of the **Microsoft Entra ID Group ID** group owners of the permission. |
+|CustomData | Any additional information that could provide more context to a reviewer when making a decision. |
 
+> [!NOTE]
+> For resource owner reviews, the resource owners are determined from the **EntitlementOwners_Users** and/or **EntitlementOwners_Groups** columns and must be specified.
 
 You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta&preserve-view=true).
+
+
 
 ## Active review state
 

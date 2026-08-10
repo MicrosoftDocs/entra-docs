@@ -1,5 +1,5 @@
 ---
-title: Catalog Access Reviews (Preview)
+title: Catalog Access Reviews
 description: This article describes what Catalog Access Reviews are, how to create one, and how to complete a review for one.
 ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
@@ -38,6 +38,8 @@ To enable access reviews across multiple resources in a single reviewer experien
 1. To enable the review to also include data from custom data providers, select **Custom Data Provided Resource (Preview)**, and provide the name and description of the resource. For more information, see [custom data provided resource](custom-data-resource-access-reviews.md).
 
 For more information on creating a catalog and adding resources, see [Create and manage a catalog of resources](entitlement-management-catalog-create.md).
+    > [!NOTE]
+    > Changes made within 12 hours before an access review starts such as adding users or resources may not be reflected in that review .
 
 ## Create a catalog access review
 
