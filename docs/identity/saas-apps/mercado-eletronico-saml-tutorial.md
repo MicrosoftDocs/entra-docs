@@ -1,23 +1,14 @@
 ---
-title: Microsoft Entra SSO integration with Mercado Eletronico SAML
+title: Configure Mercado Eletronico SAML for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mercado Eletronico SAML.
 services: active-directory
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.workload: identity
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mercado Eletronico SAML so that I can control who has access to Mercado Eletronico SAML, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with Mercado Eletronico SAML
+# Configure Mercado Eletronico SAML for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Mercado Eletronico SAML with Microsoft Entra ID. When you integrate Mercado Eletronico SAML with Microsoft Entra ID, you can:
 

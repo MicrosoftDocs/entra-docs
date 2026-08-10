@@ -1,16 +1,11 @@
 ---
 title: Skip deletion of out of scope users in Microsoft Entra Application Provisioning
 description: Learn how to override the default behavior of deprovisioning out of scope users in Microsoft Entra ID.
-
-author: kenwith
-manager: femila
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: kenwith
 ms.reviewer: arvinh
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Skip deletion of user accounts that go out of scope in Microsoft Entra ID
 
@@ -38,6 +33,8 @@ Because this configuration is widely used with the *Workday to Active Directory 
     ![Screenshot of Microsoft Graph Explorer Sign-in.](./media/skip-out-of-scope-deletions/wd_export_02.png)
 
 1. Upon successful sign-in, the user account details appear in the left-hand pane.
+
+1. Select the **Modify permissions** tab and consent to the `Synchronization.ReadWrite.All` permission. This permission is required for the Graph API queries in the following steps.
 
 ## Step 3: Get existing app credentials and connectivity details
 

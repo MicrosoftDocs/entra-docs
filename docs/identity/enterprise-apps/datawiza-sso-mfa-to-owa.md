@@ -1,15 +1,11 @@
 ---
-title: Configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access 
+title: Configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access
 description: Learn how to configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access
-author: gargi-sinha
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 07/02/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure Datawiza Access Proxy (DAP) to enable single sign-on (SSO) and Microsoft Entra multifactor authentication (MFA) for Outlook Web Access (OWA). My goal is to enhance application security and solve issues with legacy-app and modern-SSO integration.
 ---
 
@@ -79,7 +75,7 @@ The following diagram illustrates the user flow from user browser to OWA.
 You need the following components. Prior DAP experience isn't necessary.
 
 -   An Azure account
-    -   If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+    -   If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 -   A Microsoft Entra tenant linked to the Azure account
     -   See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 -   Docker and Docker Compose are required to run DAP

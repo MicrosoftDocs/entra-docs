@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with Digital Pigeon
+title: Configure Digital Pigeon for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Digital Pigeon.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Digital Pigeon so that I can control who has access to Digital Pigeon, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with Digital Pigeon
+# Configure Digital Pigeon for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Digital Pigeon with Microsoft Entra ID. Digital Pigeon helps creative people deliver their work, beautifully and quickly.  Whatever your needs, Digital Pigeon makes sending and receiving large files seamless. When you integrate Digital Pigeon with Microsoft Entra ID, you can:
 
@@ -30,9 +21,9 @@ You'll configure and test Microsoft Entra single sign-on for Digital Pigeon in a
 
 To integrate Microsoft Entra ID with Digital Pigeon, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Digital Pigeon single sign-on (SSO) enabled subscription (that is, Business or Enterprise plans)
 * Digital Pigeon account owner access to the above subscription
 

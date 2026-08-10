@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with Coverity Static Application Security Testing
+title: Configure Coverity Static Application Security Testing for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Coverity Static Application Security Testing.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Coverity Static Application Security Testing so that I can control who has access to Coverity Static Application Security Testing, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with Coverity Static Application Security Testing
+# Configure Coverity Static Application Security Testing for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Coverity Static Application Security Testing with Microsoft Entra ID. When you integrate Coverity Static Application Security Testing with Microsoft Entra ID, you can:
 

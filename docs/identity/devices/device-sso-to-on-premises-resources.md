@@ -2,14 +2,8 @@
 title: How SSO to on-premises resources works on Microsoft Entra joined devices
 description: Extend the SSO experience by configuring Microsoft Entra hybrid joined devices.
 
-ms.service: entra-id
-ms.subservice: devices
-ms.topic: conceptual
-ms.date: 05/29/2024
-
-ms.author: owinfrey
-author: owinfreyATL
-manager: femila
+ms.topic: concept-article
+ms.date: 06/27/2025
 ms.reviewer: 
 ---
 # How SSO to on-premises resources works on Microsoft Entra joined devices

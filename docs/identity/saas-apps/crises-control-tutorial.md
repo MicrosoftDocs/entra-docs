@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Crises Control
+title: Configure Crises Control for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Crises Control.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Crises Control so that I can control who has access to Crises Control, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra single sign-on (SSO) integration with Crises Control
+# Configure Crises Control for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Crises Control with Microsoft Entra ID. When you integrate Crises Control with Microsoft Entra ID, you can:
 

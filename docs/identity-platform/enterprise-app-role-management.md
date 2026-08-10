@@ -1,12 +1,10 @@
 ---
 title: Configure the role claim
 description: Learn how to configure the role claim issued in the SAML token for enterprise applications in Microsoft Entra ID.
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
+manager: pmwongera
 ms.custom: 
 ms.date: 06/09/2023
-ms.reviewer: jeedes
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to

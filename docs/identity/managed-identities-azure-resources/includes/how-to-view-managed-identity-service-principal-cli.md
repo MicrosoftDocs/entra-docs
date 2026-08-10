@@ -1,10 +1,6 @@
 ---
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 03/14/2025
 ms.topic: include
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.custom:
   - devx-track-azurecli
 ---

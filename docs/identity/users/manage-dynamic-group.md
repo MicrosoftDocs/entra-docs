@@ -1,17 +1,16 @@
 ---
-title: Understand and Manage Dynamic Group Processing in Microsoft Entra ID
+title: Understand and manage dynamic group processing in Microsoft Entra ID
 description: Learn how dynamic group management works. 
-author: barclayn
-manager: femila
-ms.service: entra-id
-ms.subservice: users
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/08/2025
-ms.author: barclayn
 ms.reviewer: mbhargava
+ai-usage: ai-assisted
 ---
 
 # Understand and manage dynamic group processing in Microsoft Entra ID
+
+
+## Overview
 
 Dynamic membership groups in Microsoft Entra ID are a powerful feature that enables administrators to automate the management of group memberships. Changes to memberships are typically processed within a few hours.
 
@@ -29,9 +28,12 @@ The three biggest factors that influence processing and can cause membership upd
 
 - **Number of object changes**: A high volume of user or device changes can create a long processing queue and extend the processing time. Examples include changes to extension attributes, device additions or removals, and bulk user updates.
 
-- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.  
+- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.
 
-## Best practices for managing dynamic membership groups in your tenant
+> [!NOTE]
+> Stale devices and inactive user accounts can remain in scope for dynamic membership rules and can be added to groups when they satisfy the rule conditions. Review and clean up [stale devices](/entra/identity/devices/manage-stale-devices) and [inactive users](/entra/identity/monitoring-health/howto-manage-inactive-user-accounts) so your dynamic groups include only the objects you intend to manage.
+
+## Best practices for dynamic membership groups in your tenant
 
 To help ensure efficient processing and minimize delays, consider the following best practices.
 
@@ -48,7 +50,7 @@ You can pause nonessential groups to improve processing performance. You might c
 
 To temporarily halt processing, use the **Pause All Groups** script. Allow the service to recover before resuming.
 
-Don't unpause the groups immediately. We recommend waiting a minimum of 24 hours to allow group processing to catch up. Then, check your audit logs to see if they're back to baseline. If necessary, unpause groups in phases rather than all at once.
+Don't unpause the groups immediately. Wait a minimum of 24 hours to allow group processing to catch up. Then, check your audit logs to see if they're back to baseline. If necessary, unpause groups in phases rather than all at once.
 
 ### Optimize rule efficiency
 

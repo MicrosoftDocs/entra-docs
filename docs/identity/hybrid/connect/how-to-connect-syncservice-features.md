@@ -2,18 +2,13 @@
 title: Microsoft Entra Connect Sync service features and configuration
 description: Describes service side features for Microsoft Entra Connect Sync service.
 
-author: billmath
-manager: femila
 ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 07/03/2026
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ai-usage: ai-assisted
 ---
 # Microsoft Entra Connect Sync service features
 
@@ -54,7 +49,9 @@ SynchronizeUpnForManagedUsersEnabled             : False
 UnifiedGroupWritebackEnabled                     : True
 UserForcePasswordChangeOnLogonEnabled            : False
 UserWritebackEnabled                             : True
-AdditionalProperties                             : {}
+AdditionalProperties                             : {
+       allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled : False
+}
 ```
 
 > [!NOTE]
@@ -124,6 +121,14 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SoftBlock `
 > When BlockSoftMatch is enabled, new hybrid-joined devices will encounter an InvalidSoftMatch error during a Soft Match attempt. This occurs when the computer object synchronized from on-premises Active Directory (AD) to Entra is merged with the new device registered in the cloud. To resolve this issue, administrators should temporarily disable BlockSoftMatch to allow the hybrid join to proceed.
 > 
 
+## Allow onPremisesObjectIdentifier updates during hard match enforcement
+
+Due to hard-match security enforcement, Microsoft Entra ID blocks a hard match when the target cloud user's `onPremisesObjectIdentifier` value differs from the incoming value from the on-premises object. To remediate the issue, clear the existing cloud user's `onPremisesObjectIdentifier` value and retry the hard match.
+
+If remediation isn't possible, temporarily enable the tenant-level feature flag `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled` to allow the update. The flag is disabled by default and should be used only as a temporary bypass during migration, recovery, or consolidation scenarios. Disable the flag after remediation is complete.
+
+For the enablement steps and guidance on when to use this bypass, see [Temporarily allow onPremisesObjectIdentifier updates](how-to-connect-install-existing-tenant.md#temporarily-allow-onpremisesobjectidentifier-updates).
+
 ## Synchronize userPrincipalName updates
 
 Historically, updates to the UserPrincipalName attribute using the sync service from on-premises was blocked, unless both of these conditions were true:
@@ -157,6 +162,44 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SyncUpnManagedUsers `
 ```
 
 After enabling this feature, existing userPrincipalName values remain as-is. On next change of the userPrincipalName attribute on-premises, the normal delta sync on users updates the UPN. Once this feature is enabled, it's not possible to disable it.
+
+## Password Hash Sync
+
+This feature allows the sync engine to use password hash synchronization and is automatically enabled by the sync client.
+
+You can see if this feature is enabled for you by running:  
+
+```powershell
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
+
+
+# Retrieve DirSync service features
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.PasswordSyncEnabled
+```
+
+
+If password hash sync is no longer needed, for example, after decommissioning synchronization from on-premises Active Directory, you can disable it using:
+
+```powershell
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+# Disable Password Hash Sync
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.PasswordSyncEnabled = $false
+Update-MgDirectoryOnPremiseSynchronization -Features $DirectorySync.Features -OnPremisesDirectorySynchronizationId $DirectorySync.Id
+
+```
+
+## Password Writeback
+
+This property indicates whether password writeback from Microsoft Entra ID to on-premises Active Directory is enabled.
+
+> [!IMPORTANT] 
+> This property is no longer in use, and updating it is not supported.
+
 
 ## See also
 

@@ -1,17 +1,8 @@
 ---
-title: Microsoft Entra feature availability in Azure Government
-description: Learn which Microsoft Entra features are available in Azure Government. 
-
-
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/04/2025
-
-
-ms.author: justinha
-author: justinha
-manager: femila
+title: Microsoft Entra feature availability in Azure for US Government
+description: Learn which Microsoft Entra features are available in Azure for US Government. 
+ms.topic: reference
+ms.date: 01/15/2026
 ms.reviewer: mattsmith
 ---
 
@@ -19,7 +10,7 @@ ms.reviewer: mattsmith
 
 <!---Jeremy said there are additional features that don't fit nicely in this list that we need to add later--->
 
-This following tables list Microsoft Entra feature availability in Azure Government.
+This following tables list Microsoft Entra feature availability in Azure for US Government.
 
 <a name='azure-active-directory'></a>
 
@@ -43,9 +34,9 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 || Conditional Access  | &#x2705; | 
 || SharePoint limited access | &#x2705; | 
 || Session lifetime management | &#x2705; | 
-|| ID Protection (vulnerabilities and risky accounts) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
-|| ID Protection (risk events investigation, SIEM connectivity) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
+|| ID Protection (vulnerabilities, risky accounts, risk event investigation, SIEM connectivity) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection). | 
 |**Administration and hybrid identity**|User and group management | &#x2705; | 
+|| Group Source of Authority (SOA) | &#x2705; | 
 || Advanced group management (Dynamic groups, naming policies, expiration, default classification) | &#x2705; | 
 || Directory synchronization—Microsoft Entra Connect (sync and cloud sync) | &#x2705; | 
 || Microsoft Entra Connect Health reporting | &#x2705; | 
@@ -82,7 +73,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 
 | Risk Detection | Availability |
 |----------------|:--------------------:|
-|Leaked credentials (MACE) | &#x2705; |
+|Leaked credentials (Microsoft Account Compromise Exchange) | &#x2705; |
 |Microsoft Entra threat intelligence | &#10060; |
 |Anonymous IP address | &#x2705; | 
 |Atypical travel | &#x2705; |
@@ -110,9 +101,9 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 |Workday Writeback | &#x2705; |
 |SuccessFactors to Microsoft Entra user provisioning | &#x2705; | 
 |SuccessFactors to Writeback | &#x2705; |
-|API-driven inbound provisioning | &#10060; |
-|Provisioning agent configuration and registration with Gov cloud tenant| Works with special undocumented command-line invocation:<br> `AADConnectProvisioningAgent.Installer.exe ENVIRONMENTNAME=AzureUSGovernment` |
+|API-driven inbound provisioning | &#x2705; |
+|Provisioning agent configuration and registration with Azure for US Government tenant| &#x2705; |
 
 ## Other Microsoft Entra products
 
-[Microsoft Entra ID Governance](~/id-governance/licensing-fundamentals.md) is available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments. [Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-id-premium-plan-available-on-azure-government-clouds) is available in the US government clouds. [Microsoft Entra Permissions Management](~/permissions-management/faqs.md#is-permissions-management-available-in-government-cloud) is not available in the US government or US national clouds.
+[Microsoft Entra ID Governance](~/id-governance/licensing-fundamentals.md) is available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments. [Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-id-premium-plan-available-on-azure-government-clouds) is available in Azure for US government.

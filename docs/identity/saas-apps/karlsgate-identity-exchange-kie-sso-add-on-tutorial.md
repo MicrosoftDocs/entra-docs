@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with Karlsgate Identity Exchange (KIE) SSO Add-on
+title: Configure Karlsgate Identity Exchange (KIE) SSO Add-on for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Karlsgate Identity Exchange (KIE) SSO Add-on.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 04/15/2024
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Karlsgate Identity Exchange (KIE) SSO Add-on so that I can control who has access to Karlsgate Identity Exchange (KIE) SSO Add-on, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with Karlsgate Identity Exchange (KIE) SSO Add-on
+# Configure Karlsgate Identity Exchange (KIE) SSO Add-on for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate the Karlsgate Identity Exchange (KIE) SSO Add-on with Microsoft Entra ID. Karlsgate provides Privacy Enhancing Technology for protecting data at rest, in transit, & in use. Karlsgate’s zero-trust approach allows the free flow of insights while maintaining custody of sensitive data. When you integrate Karlsgate Identity Exchange (KIE) SSO Add-on with Microsoft Entra ID, you can:
 
@@ -33,9 +24,9 @@ You'll configure and test Microsoft Entra single sign-on for Karlsgate Identity 
 
 To integrate Microsoft Entra ID with Karlsgate Identity Exchange (KIE) SSO Add-on, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * An existing Karlsgate Identity Exchange (KIE) SSO Add-on single sign-on (SSO) eligible account.
 
 * At least one (1) user created in your Karlsgate Identity Exchange (KIE) SSO Add-on account.

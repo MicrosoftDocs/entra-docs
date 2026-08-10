@@ -1,20 +1,12 @@
 ---
-title: Microsoft Entra SSO integration with Canvas
+title: Configure Canvas for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Canvas.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Canvas Lms so that I can control who has access to Canvas Lms, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
-# Microsoft Entra SSO integration with Canvas
+--- 
+# Configure Canvas for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Canvas with Microsoft Entra ID. When you integrate Canvas with Microsoft Entra ID, you can:
 
@@ -83,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<tenant-name>.instructure.com/saml2`
 
     > [!NOTE]
-    > These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [Canvas Client support team](https://community.canvaslms.com/community/help) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact Canvas Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 

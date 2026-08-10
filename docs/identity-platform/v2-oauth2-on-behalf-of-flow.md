@@ -1,14 +1,12 @@
 ---
 title: Microsoft identity platform and OAuth2.0 On-Behalf-Of flow
 description: This article describes how to use HTTP messages to implement service to service authentication using the OAuth2.0 On-Behalf-Of flow.
-author: OwenRichards1
-manager: CelesteDG
-ms.author: owenrichards
+manager: pmwongera
 ms.date: 01/04/2025
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
 ms.topic: reference
-ms.custom: sfi-ropc-nochange
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As a developer building a web API, I want to understand how to implement the OAuth 2.0 On-Behalf-Of flow, so that I can securely pass a user's identity and permissions to another web API.
 ---
 
@@ -82,7 +80,7 @@ Content-Type: application/x-www-form-urlencoded
     
 grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444
-&client_secret=sampleCredentia1s
+&client_secret=A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u
 &assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiIyO{a lot of characters here}
 &scope=https://graph.microsoft.com/user.read+offline_access
 &requested_token_use=on_behalf_of
@@ -146,7 +144,7 @@ The following example shows a success response to a request for an access token 
     "scope": "https://graph.microsoft.com/user.read",
     "expires_in": 3269,
     "ext_expires_in": 0,
-    "access_token": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFCbmZpRy1tQTZOVGFlN0NkV1c3UWZkQ0NDYy0tY0hGa18wZE50MVEtc2loVzRMd2RwQVZISGpnTVdQZ0tQeVJIaGlDbUN2NkdyMEpmYmRfY1RmMUFxU21TcFJkVXVydVJqX3Nqd0JoN211eHlBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiejAzOXpkc0Z1aXpwQmZCVksxVG4yNVFIWU8wIiwia2lkIjoiejAzOXpkc0Z1aXpwQmZCVksxVG4yNVFIWU8wIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNDkzOTMwMzA1LCJuYmYiOjE0OTM5MzAzMDUsImV4cCI6MTQ5MzkzMzg3NSwiYWNyIjoiMCIsImFpbyI6IkFTUUEyLzhEQUFBQU9KYnFFWlRNTnEyZFcxYXpKN1RZMDlYeDdOT29EMkJEUlRWMXJ3b2ZRc1k9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJUb2RvRG90bmV0T2JvIiwiYXBwaWQiOiIyODQ2ZjcxYi1hN2E0LTQ5ODctYmFiMy03NjAwMzViMmYzODkiLCJhcHBpZGFjciI6IjEiLCJmYW1pbHlfbmFtZSI6IkNhbnVtYWxsYSIsImdpdmVuX25hbWUiOiJOYXZ5YSIsImlwYWRkciI6IjE2Ny4yMjAuMC4xOTkiLCJuYW1lIjoiTmF2eWEgQ2FudW1hbGxhIiwib2lkIjoiZDVlOTc5YzctM2QyZC00MmFmLThmMzAtNzI3ZGQ0YzJkMzgzIiwib25wcmVtX3NpZCI6IlMtMS01LTIxLTIxMjc1MjExODQtMTYwNDAxMjkyMC0xODg3OTI3NTI3LTI2MTE4NDg0IiwicGxhdGYiOiIxNCIsInB1aWQiOiIxMDAzM0ZGRkEwNkQxN0M5Iiwic2NwIjoiVXNlci5SZWFkIiwic3ViIjoibWtMMHBiLXlpMXQ1ckRGd2JTZ1JvTWxrZE52b3UzSjNWNm84UFE3alVCRSIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInVuaXF1ZV9uYW1lIjoibmFjYW51bWFAbWljcm9zb2Z0LmNvbSIsInVwbiI6Im5hY2FudW1hQG1pY3Jvc29mdC5jb20iLCJ1dGkiOiJWR1ItdmtEZlBFQ2M1dWFDaENRSkFBIiwidmVyIjoiMS4wIn0.cubh1L2VtruiiwF8ut1m9uNBmnUJeYx4x0G30F7CqSpzHj1Sv5DCgNZXyUz3pEiz77G8IfOF0_U5A_02k-xzwdYvtJUYGH3bFISzdqymiEGmdfCIRKl9KMeoo2llGv0ScCniIhr2U1yxTIkIpp092xcdaDt-2_2q_ql1Ha_HtjvTV1f9XR3t7_Id9bR5BqwVX5zPO7JMYDVhUZRx08eqZcC-F3wi0xd_5ND_mavMuxe2wrpF-EZviO3yg0QVRr59tE3AoWl8lSGpVc97vvRCnp4WVRk26jJhYXFPsdk4yWqOKZqzr3IFGyD08WizD_vPSrXcCPbZP3XWaoTUKZSNJg",
+    "access_token": "eyJhbGciO...",
     "refresh_token": "OAQABAAAAAABnfiG-mA6NTae7CdWW7QfdAALzDWjw6qSn4GUDfxWzJDZ6lk9qRw4An{a lot of characters here}"
 }
 ```
@@ -250,6 +248,12 @@ When triggering a consent screen using known client applications and `.default`,
 The resource service (API) identified in the request should be the API for which the client application is requesting an access token as a result of the user's sign-in. For example, `scope=openid https://middle-tier-api.example.com/.default` (to request an access token for the middle tier API), or `scope=openid offline_access .default` (when a resource isn't identified, it defaults to Microsoft Graph).
 
 Regardless of which API is identified in the authorization request, the consent prompt is combined with all required permissions configured for the client app. All required permissions configured for each middle tier API listed in the client's required permissions list, which identified the client as a known client application, are also included. 
+
+> [!IMPORTANT]
+> While it's valid to use `scope=openid https://resource/.default` in combined consent flows involving [known client applications](reference-app-manifest.md#knownclientapplications-attribute), you must **not** combine `.default` with other delegated scopes like `User.Read`, `Mail.Read`, `profile`, or `User.ReadWrite.All` in the same request. This will result in `AADSTS70011` errors because `.default` represents pre-consented static permissions, while the others require dynamic user consent at runtime.
+>
+> `offline_access` is sometimes accepted with `.default` to enable refresh tokens, but should not be combined with any additional delegated scopes. When in doubt, split the token requests to avoid scope-type conflicts.
+
 
 ### Preauthorized applications
 

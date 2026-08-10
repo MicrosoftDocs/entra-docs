@@ -1,19 +1,11 @@
 ---
 title: Review and take action on admin consent requests
 description: Learn how to review and take action on admin consent requests that were created after you were designated as a reviewer.
-
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 04/08/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: enterprise-apps
 ai-usage: ai-assisted
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As a designated reviewer, I want to review and take action on admin consent requests, so that I can approve, deny, or block access to applications based on the requests.
 ---
 # Review and take action on admin consent requests
@@ -28,11 +20,14 @@ When reviewing admin consent requests, you have several options to choose from:
 
 For instance, if an application is found to be non-compliant with company policies, an administrator might choose to 'Block' it. Conversely, if an application is legitimate but requires further review, the administrator may opt to 'Deny' the request temporarily while seeking more information.
 
+>[!NOTE]
+>The "My Pending" tab is where actions can be taken on admin consent requests. The "All (Preview)" tab is to view the history of the admin consent request only.
+
 ## Prerequisites
 
 To review and take action on admin consent requests, you need:
 
-- An Azure account. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An administrator role or a designated reviewer with the appropriate role to [review admin consent requests](grant-admin-consent.md#prerequisites).
 
 ## Review and take action on admin consent requests
@@ -52,6 +47,7 @@ To review the admin consent requests and take action:
    - **Approve the request**. To approve a request, grant admin consent to the application. Once a request is approved, all requestors are notified that their request for access is granted. Approving a request allows all users in your tenant to access the application unless otherwise restricted with user assignment. 
    - **Deny the request**. To deny a request, you must provide a justification that is provided to all requestors. Once a request is denied, all requestors are notified that their request for access is denied. Denying a request won't prevent users from requesting admin consent to the application again in the future. 
    - **Block the request**. To block a request, you must provide a justification that is provided to all requestors. Once a request is blocked, all requestors are notified that their request to access the application is denied. Blocking a request creates a service principal object for the application in your tenant in a disabled state. Users won't be able to request admin consent to the application in the future.
+
 
 ## Review admin consent requests using Microsoft Graph
 

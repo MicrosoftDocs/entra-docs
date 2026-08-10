@@ -1,21 +1,13 @@
 ---
-title: Integrate Adaptive Insights with Microsoft Entra ID
+title: Configure Adaptive Insights for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Adaptive Insights.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/09/2025
-ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adaptive Insights so that I can control who has access to Adaptive Insights, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Integrate Adaptive Insights with Microsoft Entra ID
+# Configure Adaptive Insights for automatic user provisioning with Microsoft Entra ID
 
 In this article,  you learn how to integrate Adaptive Insights with Microsoft Entra ID. When you integrate Adaptive Insights with Microsoft Entra ID, you can:
 
@@ -27,7 +19,7 @@ In this article,  you learn how to integrate Adaptive Insights with Microsoft En
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Adaptive Insights single sign-on (SSO) enabled subscription.
 
 ## Scenario description

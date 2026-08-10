@@ -1,16 +1,11 @@
 ---
 title: 'Automate employee mover tasks when they change jobs using the Microsoft Entra admin center'
 description: Tutorial for moving users that change jobs using Lifecycle workflows with the Microsoft Entra admin center.
-author: owinfreyATL
-manager: femila
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 08/13/2024
-ms.author: owinfrey
-ms.custom: template-tutorial
-
-#CustomerIntent: As an administrator, I want to automate group and team memberships when an employee changes jobs so that their access to resources are always valid for them .
+ms.date: 03/12/2026
+ms.custom: template-tutorial, sfi-image-nochange
+#Customer Intent: As an administrator, I want to automate group and team memberships when an employee changes jobs so that their access to resources are always valid for them .
 ---
 
 # Automate employee mover tasks when they change jobs using the Microsoft Entra admin center
@@ -21,7 +16,7 @@ This tutorial provides a step-by-step guide on how to automate mover tasks with 
 This Mover scenario runs a scheduled workflow and accomplishes the following tasks:
  
 1. Sends email to notify manager of user move
-1. Add users to groups
+1. Adds user to groups
 
 ## Prerequisites
 
@@ -29,7 +24,7 @@ This Mover scenario runs a scheduled workflow and accomplishes the following tas
 
 ##  Before you begin
 
-To complete this tutorial, you must satisfy the prerequisites listed in this section before starting the tutorial as they won't be included in the actual tutorial. Two accounts are required, one account for the user becoming a full-time employee(job profile change), and another account that acts as it's manager. The user account must have the following attributes set:
+To complete this tutorial, you must satisfy the prerequisites listed in this section before starting the tutorial as they won't be included in the actual tutorial. Two accounts are required, one account for the user becoming a full-time employee (job profile change), and another account that acts as its manager. The user account must have the following attributes set:
 
 - An existing user you want to run the workflow on with a manager attribute set, and the manager account should have a mailbox to receive an email.
 - A security group named *Sales* within your tenant.
@@ -38,8 +33,8 @@ Detailed breakdown of the relevant attributes:
 
  | Attribute | Description |Set on|
  |:--- |:---:|-----|
- |mail|Used to notify manager of the new employees temporary access pass|Both|
- |manager|This attribute that is used by the lifecycle workflow|Employee|
+ |mail|Used to notify manager of the new employee's temporary access pass|Both|
+ |manager|This attribute is used by the lifecycle workflow|Employee|
  |department|Used to provide the scope for the workflow|Employee|
 
 The mover scenario can be broken down into the following steps:
@@ -47,7 +42,7 @@ The mover scenario can be broken down into the following steps:
   - **Prerequisite:** Create a group to add the user to
   - **Prerequisite:** Edit the attributes required for this scenario in the admin center
   - **Prerequisite:** Edit the attributes for this scenario using Microsoft Graph Explorer
-  - Create the  workflow
+  - Create the workflow
   - Trigger the workflow
   - Verify the workflow was successfully executed
 
@@ -62,7 +57,7 @@ Use the following steps to create a mover workflow for a user making a job chang
 
 1. From the templates, select **Employee job profile change**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template.png" alt-text="Screenshot of selecting the employee job profile change template.":::
-1. Next, you configure the basic information about the workflow. This information includes a name and description. You're also able to choose the **Trigger type** of the workflow, which in this case is the **Attribute changes** trigger. For **Trigger attribute** you're able to define what attribute being changed will trigger the workflow, which in this case is **department**. After the trigger is set, select **Configure scope**.
+1. Next, you configure the basic information about the workflow. This information includes a name, description, and [administrative scope](manage-delegate-workflow.md). You're also able to choose the **Trigger type** of the workflow, which in this case is the **Attribute changes** trigger. For **Trigger attribute** you're able to define what attribute being changed will trigger the workflow, which in this case is **department**. After the trigger is set, select **Configure scope**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-basics.png" alt-text="Screenshot of setting attribute change membership trigger in template.":::
 1. On the next screen you configure the scope. The scope determines which users this workflow runs against.  In this case, it is on all users added to the Sales department. On the configure scope screen, under **Rule** add the following settings, and then select **Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/group-scope.png" alt-text="Screenshot of setting attribute change scope.":::
@@ -78,11 +73,11 @@ Now that the workflow is created, go to the user you want to run the workflow fo
 
 ## Check workflow status and tasks
 
-After setting the attribute for the user, you can check the status of the workflow, who meets its scope, and its tasks. As a reminder, there are three different data pivots: users runs, and tasks that are currently available. You can learn more in the how-to guide [Check the status of a workflow](check-status-workflow.md). In the course of this tutorial, we look at the status using the user focused reports.
+After setting the attribute for the user, you can check the status of the workflow, who meets its scope, and its tasks. As a reminder, there are three different data pivots: users, runs, and tasks that are currently available. You can learn more in the how-to guide [Check the status of a workflow](check-status-workflow.md). In this tutorial, you check the status using the user-focused reports.
 
 1. On the workflow you created, select **Execution conditions** and navigate to the **Execution User Scope** section.
 
-1. On the **Execution User Scope** page you're presented with users who currently meet the execution user scope to have the workflow ran on them at it's next execution time. 
+1. On the **Execution User Scope** page you're presented with users who currently meet the execution user scope to have the workflow run on them at its next execution time. 
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-execution-scope.png" alt-text="Screenshot of execution user scope.":::
 1. After the workflow runs for the user, select the **Workflow history** tab to view the user summary and associated workflow tasks and statuses. 
 

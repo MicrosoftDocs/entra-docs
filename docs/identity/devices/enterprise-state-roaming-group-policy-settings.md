@@ -2,14 +2,8 @@
 title: Group Policy and MDM settings for ESR
 description: Management settings for Enterprise State Roaming
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: reference
-ms.date: 08/01/2024
-
-ms.author: owinfrey
-author: owinfreyATL
-manager: femila
+ms.date: 06/27/2025
 ms.reviewer: sempofu, micrider
 ---
 # Group Policy and MDM settings
@@ -24,7 +18,7 @@ The following tables describe the policy settings available.
 
 ## MDM settings
 
-The MDM policy settings apply to Windows 10 or newer. Refer to [Devices and endpoints](enterprise-state-roaming-windows-settings-reference.md) for details on what devices are supported for Microsoft Entra ID-based syncing.
+The MDM policy settings apply to Windows 10 or newer. Refer to [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr) for details on what devices are supported for Microsoft Entra ID-based syncing.
 
 | Name | Description |
 | --- | --- |

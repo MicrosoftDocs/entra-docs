@@ -1,11 +1,6 @@
 ---
 title: "Tutorial: Govern and monitor applications"
 description: Learn how to govern and monitor an application in Microsoft Entra ID, including access reviews and integrating logs with Azure Monitor.
-author: omondiatieno
-manager: CelesteDG
-ms.author: jomondi
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 12/04/2024
 ms.reviewer: saibandaru
@@ -28,7 +23,7 @@ Using the information in this tutorial, an administrator of the application lear
 
 ## Prerequisites
 
-- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Identity Governance Administrator, Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
 - An enterprise application that has been configured in your Microsoft Entra tenant.
 

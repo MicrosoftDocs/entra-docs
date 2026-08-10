@@ -1,15 +1,10 @@
 ---
 title: List Microsoft Entra role assignments
 description: Learn how to list Microsoft Entra role assignments using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
-author: rolyon
-manager: femila
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 01/03/2025
-ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # List Microsoft Entra role assignments
@@ -89,7 +84,7 @@ Bulk operations can only run for up to 1 hour and has limitations in large tenan
 
     :::image type="content" source="./media/view-assignments/download-role-assignments-all.png" alt-text="Screenshot of pane to download all role assignments." lightbox="./media/view-assignments/download-role-assignments-all.png":::
 
-1. Specify a file name and select **Start download**.
+1. Specify a file name and select **Start bulk operation**.
 
     A CSV file that lists assignments at all scopes for all roles is downloaded.
 

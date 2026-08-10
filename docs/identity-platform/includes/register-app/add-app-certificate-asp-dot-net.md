@@ -1,7 +1,5 @@
 ---
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
+manager: pmwongera
 ms.date: 11/06/2024
 ms.reviewer:
 ms.service: identity-platform

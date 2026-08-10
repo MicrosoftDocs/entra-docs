@@ -1,13 +1,9 @@
 ---
 title: University multilateral federation decision tree
 description: Use this decision tree to help design a multilateral federation solution for universities.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/01/2023
-ms.author: jricketts
+ms.subservice: architecture
 ---
 
 # Decision tree

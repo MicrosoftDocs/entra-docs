@@ -1,16 +1,11 @@
 ---
 title: Retrieve pronoun information from Workday
 description: Learn how to retrieve pronoun information from Workday
-
-author: kenwith
-manager: femila
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 03/04/2025
-ms.author: kenwith
 ms.reviewer: arvinh, chmutali
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Configure Microsoft Entra provisioning to retrieve pronoun information from Workday
@@ -69,7 +64,7 @@ To retrieve pronouns from Workday, update your Microsoft Entra provisioning app 
      >[!div class="mx-imgBorder"] 
      >![Screenshot of Microsoft Entra admin center provisioning app with Workday version.](./media/workday-pronoun-data/update-workday-version.png)
 
-1. Open the **Attribute mappings** blade. Scroll down and click **Show advanced options**. Click on **Edit attribute list for Workday**.
+1. Open the **Attribute Mapping** page. Select the **Advanced Options** dropdown and then select **Edit target User attributes**.
 1. If your provisioning app is configured to use the default WWS API version v21.1, then [reference this article to review and update the XPATHs for each attribute](workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30).
 1. Add a new attribute called **PreferredPronoun** with XPATH 
 

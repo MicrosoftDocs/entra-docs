@@ -1,13 +1,12 @@
 ---
 title: Configure optional claims
 description: Learn how to configure optional claims and attributes in access tokens issued by Microsoft identity platform; optional claims can add useful user information for your app.
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
-ms.custom: curation-claims
-ms.date: 01/27/2025
+manager: pmwongera
+ms.custom:
+ms.date: 07/22/2026
 ms.reviewer: ludwignick
 ms.service: identity-platform
+ai-usage: ai-assisted
 
 ms.topic: how-to
 #Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
@@ -21,7 +20,7 @@ You can configure optional claims for your application through the Microsoft Ent
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Completion of [Quickstart: Register an application](quickstart-register-app.md)
 
 ## Configure optional claims in your application
@@ -311,6 +310,12 @@ Configure claims in the manifest:
     ```
 
 1. When you're finished updating the manifest, select **Save** to save the manifest.
+
+## amr claim
+
+The `amr` (authentication method references) claim identifies how the user authenticated. The `amr` claim is sent by default for Salesforce applications, so no configuration change is required for those apps. For all other SAML applications, the application administrator must add the optional `amr` claim with the `include_granular_amr` additional property to the app registration to request AMR claims. The `multipleauthn` and `mfa` values are emitted only when the user has completed MFA.
+
+For SAML, see [authnmethodreferences](single-sign-on-saml-protocol.md#authnmethodreferences) for more details.
 
 ## Limitation
 

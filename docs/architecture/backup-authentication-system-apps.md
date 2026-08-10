@@ -1,15 +1,17 @@
 ---
-title: Application requirements for the backup authentication system
-description: How to configure your application to allow for backup authentication system support.
-ms.service: entra
+title: 'Backup Authentication System: Application Guidelines'
+description: Learn how to configure your application to support the Microsoft Entra backup authentication system for enhanced resilience and security.
+ms.topic: concept-article
+ms.date: 07/22/2025
+manager: dougeby
+ms.reviewer: ludwignick
+ms.custom:
+  - sfi-ropc-nochange
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/22/2025
+  - ai-gen-description
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 05/29/2024
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
-ms.reviewer: joroja
-ms.custom: sfi-ropc-nochange
 ---
 # Application requirements for the backup authentication system
 

@@ -1,14 +1,11 @@
 ---
 title: Share link to request an access package in entitlement management
 description: Learn how to share link to request an access package in entitlement management.
-author: owinfreyatl
-manager: femila
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
-ms.author: owinfrey
-#Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
+ms.date: 06/25/2025
+ms.custom: sfi-image-nochange
+#Customer Intent: As an IT admin, I want to share a link to request an access package so that users can easily request access to resources.
 ---
 # Share link to request an access package in entitlement management
 

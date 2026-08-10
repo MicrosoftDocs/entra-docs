@@ -2,7 +2,7 @@
 title: Include file for privileged role needed for feature
 description: include file
 author: justinha
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.topic: include
 ms.date: 10/03/2024

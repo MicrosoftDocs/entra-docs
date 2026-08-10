@@ -1,21 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with Akamai
+title: Configure Akamai for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Akamai.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Akamai so that I can control who has access to Akamai, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with Akamai
+# Configure Akamai for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Akamai with Microsoft Entra ID. When you integrate Akamai with Microsoft Entra ID, you can:
 
@@ -29,7 +21,7 @@ The following image describes, where Akamai EAA fits into the broader Hybrid Sec
 
 ![Akamai EAA fits into the broader Hybrid Secure Access scenario](./media/header-akamai-tutorial/introduction-1.png)
 
-### Key Authentication Scenarios
+## Key Authentication Scenarios
 
 Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, Akamai EAA extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (such as password-less access) to these applications. This includes:
 
@@ -42,9 +34,9 @@ Apart from Microsoft Entra native integration support for modern authentication 
 * NTLM authentication apps (protection with dual prompts for the user)
 * Forms-Based Application (protection with dual prompts for the user)
 
-### Integration Scenarios
+## Integration Scenarios
 
-Microsoft and Akamai EAA partnership allows the flexibility to meet your business requirements by supporting multiple integration scenarios based on your business requirement. These could be used to provide zero-day coverage across all applications and gradually classify and configure appropriate policy classifications.
+Microsoft and Akamai EAA partnership allows the flexibility to meet your business requirements by supporting multiple integration scenarios based on your business requirement. These integration scenarios could be used to provide zero-day coverage across all applications and gradually classify and configure appropriate policy classifications.
 
 #### Integration Scenario 1
 
@@ -92,9 +84,8 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 
 - Akamai supports IDP initiated SSO.
 
-#### Important
-
-All the setup listed below are same for the **Integration Scenario 1** and **Scenario 2**. For the **Integration scenario 2** you have to set up Individual IDP in the Akamai EAA and the URL property needs to be modified to point to the application URL.
+> [!IMPORTANT]
+> All the setup steps in the following procedure are the same for **Integration Scenario 1** and **Scenario 2**. For the **Integration scenario 2** you have to set up Individual IDP in the Akamai EAA and the Authentication configuration URL property needs to be modified to point to the application URL.
 
 ![Screenshot of the General tab for AZURESSO-SP in Akamai Enterprise Application Access. The Authentication configuration URL field is highlighted.](./media/header-akamai-tutorial/important.png)
 
@@ -182,7 +173,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     b. Choose **Third Party SAML** and select **Create Identity Provider and Configure**.
 
-### General Settings
+### Configure Akamai general settings
 
 In the **General** tab, enter the following information:
 
@@ -194,7 +185,9 @@ In the **General** tab, enter the following information:
 1. **Akamai Cloud Zone** - Select the Appropriate cloud zone.
 1. **Certificate Validation** - Check Akamai Documentation (optional).
 
-### Authentication Configuration
+### Configure Akamai authentication settings
+
+In the **Authentication Configuration** section, configure the following SAML settings:
 
 1. URL – Specify the URL same as your identity intercept ( this is where users are redirect after authentication).
 2. Logout URL : Update the logout URL.
@@ -203,25 +196,27 @@ In the **General** tab, enter the following information:
 
     ![Screenshot of the Akamai EAA console Authentication configuration showing settings for URL, Logout URL, Sign SAML Request, and IDP Metadata File.](./media/header-akamai-tutorial/configure-4.png)
 
-### Session Settings
+### Configure Akamai session settings
 
 Leave the settings as default.
 
 ![Screenshot of the Akamai EAA console Session settings dialog.](./media/header-akamai-tutorial/session-settings.png)
 
-### Directories
+### Configure directories in Akamai
 
 In the **Directories** tab, skip the directory configuration.
 
-### Customization UI
+### Customize the Akamai sign-in UI
 
 You could add customization to IDP. In the **Customization** tab, there are settings for **Customize UI**, **Language settings**, and **Themes**.
 
-### Advanced Settings
+### Configure advanced Akamai SSO settings
 
-In the **Advanced settings** tab, accept the default values. Refer Akamai documentation for more details.
+In the **Advanced settings** tab, accept the default values. Refer to the [Akamai EAA documentation](https://techdocs.akamai.com/eaa) for more details.
 
-### Deployment
+### Deploy the Akamai configuration
+
+Deploy the identity provider after you finish configuring the previous settings.
 
 1. In the **Deployment** tab, select Deploy Identity Provider.
 
@@ -259,6 +254,8 @@ Select Save and Go to Authentication.
 
 #### Advanced Settings
 
+In Advanced Settings, configure the custom header mapping and then continue to deployment.
+
 1. Under the **Customer HTTP Headers**, specify the **CustomerHeader** and **SAML Attribute**.
 
     ![Screenshot of the Akamai EAA console Advanced Settings tab showing the SSO Logged URL field highlighted under Authentication.](./media/header-akamai-tutorial/configure-12.png)
@@ -268,6 +265,8 @@ Select Save and Go to Authentication.
     ![Screenshot of the Akamai EAA console Advanced Settings tab showing the Save and go to Deployment button in the bottom right corner.](./media/header-akamai-tutorial/configure-13.png)
 
 #### Deploy the Application
+
+When configuration is complete, deploy the application.
 
 1. Select **Deploy Application** button.
 
@@ -290,6 +289,8 @@ Select Save and Go to Authentication.
     ![Screenshot of an Applications screen showing an icon for the MyHeaderApp.](./media/header-akamai-tutorial/conditional-access-2.png)
 
 #### Remote Desktop
+
+To configure a Remote Desktop application in Akamai EAA, perform the following steps:
 
 1. Choose **RDP** from the ADD Applications Wizard.
 
@@ -340,6 +341,8 @@ Select **Save and go to Advanced Settings**.
 
 #### SSH
 
+To configure SSH access through Akamai EAA, complete the following steps:
+
 1. Go to Add Applications, Choose **SSH**.
 
     ![Screenshot of the Akamai EAA console Add Applications wizard showing SSH listed among the apps in the Access Apps section.](./media/header-akamai-tutorial/configure-25.png)
@@ -378,6 +381,8 @@ Select Save and to go Deployment.
 
 #### Deployment
 
+After you finish configuring the SSH application, deploy it.
+
 1. Select **Deploy application**.
 
     ![Screenshot of the Akamai EAA console Deployment tab for SSH-SECURE showing the Deploy application button.](./media/header-akamai-tutorial/configure-32.png)
@@ -404,6 +409,8 @@ In the following example we publish an internal web server at `http://frp-app1.s
 
 #### General Tab
 
+The following screenshot shows the General tab settings for the Kerberos application.
+
 ![Screenshot of the Akamai EAA console General tab for MYKERBOROSAPP.](./media/header-akamai-tutorial/general-tab.png)
 
 #### Authentication Tab
@@ -412,20 +419,28 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Services Tab
 
+The following screenshot shows the Services tab configuration for the Kerberos application.
+
 ![Screenshot of the Akamai EAA console Services tab for MYKERBOROSAPP.](./media/header-akamai-tutorial/services-tab.png)
 
 #### Advanced Settings
 
+Review the Advanced Settings values shown in the following example.
+
 ![Screenshot of the Akamai EAA console Advanced Settings tab for MYKERBOROSAPP showing settings for Related Applications and Authentication.](./media/header-akamai-tutorial/advance-settings-2.png)
 
 > [!NOTE]
-> The SPN for the Web Server has been  in SPN@Domain Format ex: `HTTP/frp-app1.superdemo.live@SUPERDEMO.LIVE` for this demo. Leave rest of the settings to default.
+> The Service Principal Name (SPN) for the Web Server has been set in SPN@Domain format, for example: `HTTP/frp-app1.superdemo.live@SUPERDEMO.LIVE` for this demo. Leave rest of the settings to default.
 
 #### Deployment Tab
+
+The following screenshot shows the Deployment tab for the Kerberos application.
 
 ![Screenshot of the Akamai EAA console Deployment tab for MYKERBOROSAPP showing the Deploy application button.](./media/header-akamai-tutorial/deployment-tab.png)
 
 #### Adding Directory
+
+To add an Active Directory source, complete the following steps:
 
 1. Select **AD** from the dropdown.
 
@@ -443,7 +458,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
     ![Screenshot of the settings for the directory superdemo.live. The icon that you select for adding Groups or OUs is highlighted.](./media/header-akamai-tutorial/add-group.png)
 
-1. In the below the Group is called EAAGroup and has 1 Member.
+1. In this example, the group is called EAAGroup and has one member.
 
     ![Screenshot of the Akamai EAA console GROUPS ON SUPERDEMOLIVE DIRECTORY window. The EAAGroup with 1 User is listed under Groups.](./media/header-akamai-tutorial/eaagroup.png)
 
@@ -453,16 +468,20 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Step 1: Create an Account 
 
+Create the delegation account in Active Directory as follows:
+
 1. In the example, we use an account called **EAADelegation**. You can perform this using the **Active Directory users and computer** Snappin.
 
     > [!NOTE]
-    > The user name has to be in a specific format based on the **Identity Intercept Name**. From the figure 1 we see it's **corpapps.login.go.akamai-access.com**
+    > The user name has to be in a specific format based on the **Identity Intercept Name**. In this example, the Identity Intercept Name is **corpapps.login.go.akamai-access.com**
 
 1. User logon Name is:`HTTP/corpapps.login.go.akamai-access.com`
 
     ![Screenshot showing EAADelegation Properties with First name set to "EAADelegation" and User logon name set to HTTP/corpapps.login.go.akamai-access.com.](./media/header-akamai-tutorial/eaadelegation.png)
 
-#### Step 2: Configure the SPN for this account
+#### Step 2: Configure the Service Principal Name (SPN) for this account
+
+Use the following command to register the SPN for the delegation account:
 
 1. Based on this sample the SPN is as below.
 
@@ -472,6 +491,8 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Step 3: Configure Delegation
 
+Next, configure delegation settings for the EAADelegation account.
+
 1. For the EAADelegation account select the Delegation tab.
 
     ![Screenshot of an Administrator Command Prompt showing the command for configuring the SPN.](./media/header-akamai-tutorial/delegation.png)
@@ -480,6 +501,8 @@ In the **Authentication** tab, assign the Identity Provider.
     * Select Add and Add the App Pool Account for the Kerberos Website. It should automatically resolve to correct SPN if configured correctly.
 
 #### Step 4: Create a Keytab File for AKAMAI EAA
+
+Use the ktpass command to create a keytab file for Akamai EAA.
 
 1. Here's the generic Syntax.
 
@@ -501,6 +524,8 @@ In the **Authentication** tab, assign the Identity Provider.
     ![Screenshot of an Administrator Command Prompt showing the results of the command for creating a Keytab File for AKAMAI EAA.](./media/header-akamai-tutorial/administrator.png)
 
 #### Step 5: Import Keytab in the AKAMAI EAA Console
+
+After you create the keytab file, import it into the Akamai EAA console.
 
 1. Select **System** > **Keytabs**.
 

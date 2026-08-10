@@ -2,16 +2,13 @@
 title: 'Microsoft Entra Connect: Troubleshoot errors during synchronization'
 description: This article explains how to troubleshoot errors that occur during synchronization with Microsoft Entra Connect.
 
-author: billmath
-manager: femila
 ms.assetid: 2209d5ce-0a64-447b-be3a-6f06d47995f8
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 04/09/2025
+ms.date: 07/01/2026
 ms.subservice: hybrid-connect
-ms.author: billmath
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ai-usage: ai-assisted
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, msecd-doc-authoring-1015
 ---
 # Understanding errors during Microsoft Entra synchronization
 
@@ -43,16 +40,45 @@ This section discusses data mismatch errors.
 
 ### InvalidHardMatch
 
-#### Description
+An `InvalidHardMatch` error occurs when Microsoft Entra ID blocks a [hard match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) operation because the target cloud user is protected from takeover or reassociation. This protection helps prevent an on-premises Active Directory object from taking over a cloud account when the target account is privileged or already mapped to an on-premises object.
 
-An InvalidHardMatch error occurs during synchronization when there’s an attempt to [hard match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match) objects present in Microsoft Entra ID with a new incoming object that have the same sourceAnchor value, but *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled on the tenant.
+#### Symptoms
+
+You might see one of the following errors during export or synchronization:
+
+| Scenario | Error code or family | Error message |
+|---|---|---|
+| Privileged cloud account takeover | `InvalidHardMatch` / `103` | `The cloud user with privileged roles is not allowed to be taken over.` |
+| Existing on-premises object mapping | `AttributeUpdateNotAllowed` / `96` | `Unable to update this object because the following attributes associated with this object are not allowed to be updated by your on-premises directory: [OnPremisesObjectIdentifier cannot be changed unless its current value is null.]` |
+| Hard match security hardening | Hard match security hardening | `Hard match operation blocked due to security hardening. Review OnPremisesObjectIdentifier mapping.` |
+
+> [!NOTE]
+> Older sync clients might show less specific wording, but the cloud-side enforcement decision is the same.
+
+#### Causes
+
+Beginning July 1, 2026, Microsoft Entra ID enforces hard match security hardening automatically. It blocks the hard match when the target cloud account meets one or more of these conditions:
+
+- The target cloud user has `onPremisesObjectIdentifier` set.
+- The target cloud user is assigned a privileged Microsoft Entra role.
+- The target cloud user is eligible for a privileged Microsoft Entra role.
+
+A hard match is also blocked when the `BlockCloudObjectTakeoverThroughHardMatchEnabled` feature is enabled on the tenant, which prevents a hard match from taking over an existing cloud object.
+
+Cloud-managed accounts with writeback enabled are excluded from the security hardening enforcement. These protections reduce the risk of account takeover through manipulated synchronization matching attributes.
 
 #### Example scenarios for an InvalidHardMatch error
 
-* DirSync is re-enabled on the tenant and objects with the same sourceAnchor are synchronized again, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match to occur.
+The following scenarios can trigger an InvalidHardMatch error:
+
+* DirSync is re-enabled on the tenant and objects with the same sourceAnchor are synchronized again, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match from occurring.
 * User was excluded from sync scope and restored from Microsoft Entra ID Recycle Bin. Later, the user is re-added to sync scope and tries to take over the object already present in Microsoft Entra ID based on the same sourceAnchor value, however *BlockCloudObjectTakeoverThroughHardMatchEnabled* feature is enabled and prevents the hard match from occurring.
+* A soft-deleted synced Microsoft Entra user with privileged roles assigned is blocked from hard match during restore operations to prevent security risks.
+* An on-premises Active Directory user attempts to hard match with an existing Microsoft Entra user that has administrative roles assigned and an OnPremisesImmutableId value.
 
 #### Example case
+
+The following example illustrates how an InvalidHardMatch error occurs:
 
 1. Bob Smith is a synced user in Microsoft Entra ID from the on-premises Active Directory of contoso.com.
 1. By default, the SourceAnchor value of **"abcdefghijklmnopqrstuv=="** is calculated by Microsoft Entra Connect by using Bob Smith's **MsDs-ConsistencyGUID** attribute (or ObjectGUID depending on the configuration) from on-premises Active Directory. This attribute value is the **immutableId** for Bob Smith in Microsoft Entra ID.
@@ -61,11 +87,34 @@ An InvalidHardMatch error occurs during synchronization when there’s an attemp
 1. Admin re-adds Bob Smith into sync scope and Microsoft Entra Connect re-synchronizes the object.
 1. Normally, a hard match takes over the object present in Microsoft Entra ID based on the same SourceAnchor and switches DirSyncEnabled attribute back to 'True’, however, when *BlockCloudObjectTakeoverThroughHardMatchEnabled* is enabled, this operation isn't allowed and an InvalidHardMatch is thrown.
 
-#### Fix the InvalidHardMatch error
+#### Choose the right fix
 
-We advise customers to enable *BlockCloudObjectTakeoverThroughHardMatchEnabled* unless they need it to take over existent accounts in Microsoft Entra ID.
+Use the following table to choose a recovery path based on the block reason.
 
-If you need to clear an **InvalidHardMatch** error and match the account successfully, you can enable hard match again as described in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
+| If the block reason is | Do this |
+|---|---|
+| Privileged role assigned | Temporarily remove the privileged role, complete the hard match, then reassign the role. |
+| Privileged role eligible | Temporarily remove the role eligibility, complete the hard match, then restore the eligibility. |
+| User is soft-deleted | Restore the user first if needed, then apply the privileged-role recovery. |
+| `onPremisesObjectIdentifier` already set | Clear `onPremisesObjectIdentifier` to `null`, then rerun synchronization. |
+| You can't remediate before enforcement | Temporarily enable `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled` while you complete remediation. |
+| `BlockCloudObjectTakeoverThroughHardMatchEnabled` is enabled and you need an intentional takeover | Temporarily disable the feature to allow the hard match, then re-enable it. See [Block hard match in Microsoft Entra ID](./how-to-connect-install-existing-tenant.md#block-hard-match-in-microsoft-entra-id). |
+
+To clear `onPremisesObjectIdentifier` with Microsoft Graph or ADSyncTools, or to use the temporary bypass feature flag, see [Recover from a blocked hard match](./how-to-connect-install-existing-tenant.md#recover-from-a-blocked-hard-match).
+
+#### Validate recovery
+
+After you complete the recovery action:
+
+1. Rerun synchronization.
+1. Confirm that the affected object no longer shows an export failure.
+1. Confirm that the cloud user is linked to the intended on-premises object.
+1. If you temporarily removed privileged roles or eligibility, restore them after the hard match succeeds.
+1. If you enabled `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled`, disable the bypass after remediation is complete.
+
+#### When to contact support
+
+If you see an error that ends with `Contact Technical Support`, first follow the recovery steps in this article. Open a support request only if the error continues after you validate the intended object mapping, clear `onPremisesObjectIdentifier` where appropriate, and rerun synchronization.
 
 ### InvalidSoftMatch
 

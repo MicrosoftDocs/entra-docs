@@ -1,20 +1,12 @@
 ---
-title: Microsoft Entra integration with Fuse
+title: Configure Fuse for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fuse.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 3/10/2023
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fuse so that I can control who has access to Fuse, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
-# Microsoft Entra integration with Fuse
+--- 
+# Configure Fuse for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Fuse with Microsoft Entra ID. Fuse is a learning platform that enables learners within an organization to access the necessary knowledge and expertise they need to improve their skills at work. When you integrate Fuse with Microsoft Entra ID, you can:
 
@@ -32,9 +24,9 @@ You'll configure and test Microsoft Entra single sign-on for Fuse in a test envi
 
 To integrate Microsoft Entra ID with Fuse, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-- A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+- A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - Fuse single sign-on (SSO) enabled subscription.
 
 ## Add application and assign a test user

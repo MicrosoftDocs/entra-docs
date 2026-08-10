@@ -1,16 +1,11 @@
 ---
 title: 'Exchange hybrid writeback with cloud sync'
 description: This article describes how to enable exchange hybrid writeback scenarios.
-
-author: billmath
-manager: femila
-ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 

@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with Deem Mobile
+title: Configure Deem Mobile for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Deem Mobile.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Deem Mobile so that I can control who has access to Deem Mobile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with Deem Mobile
+# Configure Deem Mobile for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Deem Mobile with Microsoft Entra ID. Deem Mobile is designed for anyone who wants business travel to be fast and easy.  With full functionality to book flights, hotels, rental cars, and even Uber for Business. When you integrate Deem Mobile with Microsoft Entra ID, you can:
 
@@ -30,9 +21,9 @@ You'll configure and test Microsoft Entra single sign-on for Deem Mobile in a te
 
 To integrate Microsoft Entra ID with Deem Mobile, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Deem Mobile single sign-on (SSO) enabled subscription.
 
 ## Add application and assign a test user

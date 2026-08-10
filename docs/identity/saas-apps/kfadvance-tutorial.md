@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with KFAdvance
+title: Configure KFAdvance for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and KFAdvance.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and KFAdvance so that I can control who has access to KFAdvance, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra single sign-on (SSO) integration with KFAdvance
+# Configure KFAdvance for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate KFAdvance with Microsoft Entra ID. When you integrate KFAdvance with Microsoft Entra ID, you can:
 
