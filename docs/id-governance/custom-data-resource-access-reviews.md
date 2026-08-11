@@ -132,7 +132,7 @@ After copying both the access review object and access review instance object ID
 
 ## Manually apply results
 
-When a review is complete, remediation can be set for any decision items for the custom data provided resource.
+When a review is complete, remediation can be set for any decision items for the custom data provided resource that do not have an **Approve** outcome.
 
 1. Browse to **ID Governance** > **Access Reviews**.
 
@@ -142,7 +142,7 @@ When a review is complete, remediation can be set for any decision items for the
 
 1. On results page, you can select one or more decisions to remediate.
 
-**<InsertImage>**
+    :::image type="content" source="media/custom-data-resource-access-reviews/apply-results.png" alt-text="Screenshot of selecting decisions to remediate.":::
 
 1. Select the **Apply results** to set the apply result to **Applied successfully**.
 
