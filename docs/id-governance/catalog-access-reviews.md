@@ -10,7 +10,7 @@ ms.date: 03/12/2026
 
 # Catalog Access Reviews
 
-Catalog access reviews in Microsoft Entra ID Governance enable organizations to simplify how managers can review user access to multiple resource types, such as groups, applications, and custom disconnected resources at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
+Catalog access reviews in Microsoft Entra ID Governance enable organizations to simplify how reviewers can review user access to multiple resource types, such as groups, applications, and custom disconnected resources at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
 
 ## License requirements
 
@@ -43,7 +43,7 @@ For more information on creating a catalog and adding resources, see [Create and
 
 ## Create a catalog access review
 
-Once you add resources to a catalog, you can create a catalog access review so that managers can review access across all of these resources at once for the users they manage. To create a catalog access review, do the following steps:
+Once you add resources to a catalog, you can create a catalog access review so that reviewers can review access across all of these resources at once for the users they manage. To create a catalog access review, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -55,7 +55,7 @@ Once you add resources to a catalog, you can create a catalog access review so t
 
 1. On the **resources** tab, select the catalog where you added the resources and select **Next**.
 
-1. On the **Reviewers and schedule** tab, choose reviewers. Currently, managers of the users are the primary reviewers.
+1. On the **Reviewers and schedule** tab, choose reviewers.
 
 1. Optionally, you can configure [multi-stage reviews](using-multi-stage-reviews.md), where the resource owners (group or application owners) serve as secondary reviewers.
 
@@ -67,15 +67,15 @@ You can also create an access review programmatically using Microsoft Graph. For
 
 ## Upload data from custom data resources
 
-If you have added custom data provided resources to the catalog, then you must upload the data while the review instance is initializing. For more information, see [logic app integration](custom-data-resource-access-reviews.md#logic-app-integration).
+If you have added custom data provided resources to the catalog, then you must upload the data while the review instance is initializing. For more information, see [custom data resource access review](custom-data-resource-access-reviews.md).
 
 ## Completing a catalog access review
 
-When the catalog access review is created, managers receive an email notification that directs them to the myaccess portal. They can also directly navigate to the My Access portal where they can view their direct report's access to all resources in the catalog.
+When the catalog access review is created, reviewers receive an email notification that directs them to the myaccess portal. They can also directly navigate to the My Access portal where they can view their direct report's access to all resources in the catalog.
 
 To complete a catalog access review, follow these steps:
 
-1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com) as the manager of the users you want to complete the catalog access review for. 
+1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com) as the reviewer of the users you want to complete the catalog access review for. 
 
 1. In the left menu, select **Access reviews** to see a list of access reviews pending approval. 
 
@@ -89,6 +89,5 @@ On the review end date, all decisions, except those for custom disconnected reso
 
 ## Related content
 
-- [Create an access review of groups and applications in Microsoft Entra ID](create-access-review.md)
-
+- [Create an access review of custom data provided resources in Microsoft Entra ID](custom-data-resource-access-reviews.d)
 
