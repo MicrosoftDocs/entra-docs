@@ -88,7 +88,7 @@ With a catalog created, you can add custom data provided resources to it by doin
 
 You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
-## Logic app notifications
+## Logic app integration
 
 :::image type="content" source="media/custom-data-resource-access-reviews/logic-app-trigger.png" alt-text="Screenshot of the logic app trigger history.":::
 
@@ -111,8 +111,6 @@ After creating the catalog access review, but before uploading your custom data,
 
 After copying both the access review object and access review instance object IDs, note that the status of the access review shows as **Initializing**.
     :::image type="content" source="media/custom-data-resource-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
-
-## Upload custom data 
 
 1. Return to the catalog you created, and select **Resources**.
 

@@ -67,7 +67,7 @@ You can also create an access review programmatically using Microsoft Graph. For
 
 ## Upload data from custom data resources
 
-If you have added custom data provided resources to the catalog, then you must upload the data while the review instance is initializing. For more information, see [get access review object and instance ID](custom-data-resource-access-reviews.md#get-access-review-object-and-instance-id).
+If you have added custom data provided resources to the catalog, then you must upload the data while the review instance is initializing. For more information, see [logic app integration](custom-data-resource-access-reviews.md#logic-app-integration).
 
 ## Completing a catalog access review
 
