@@ -9,7 +9,7 @@ ms.date: 03/12/2026
 #Customer Intent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews.
 ---
 
-# Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
+# Include custom data provided resource in the catalog for catalog user Access Reviews
 
 Organizations often have applications that aren’t yet integrated with Microsoft Entra but still need to be governed. Using custom data provided resources, you can include these disconnected applications in Microsoft Entra ID access reviews by uploading their access data directly into a catalog.
 
@@ -239,6 +239,6 @@ As reviewers take actions, the review progresses through several states:
 
 
 
-- [Catalog Access Reviews (Preview)](catalog-access-reviews.md)
+- [Catalog Access Reviews](catalog-access-reviews.md)
 - [Create and manage a catalog of resources in entitlement management](entitlement-management-catalog-create.md)
 

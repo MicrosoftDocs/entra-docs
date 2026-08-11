@@ -8,7 +8,7 @@ ms.date: 03/12/2026
 #Customer Intent: As an ID administrator, I want to create catalog access reviews so that I can set up access reviews for multiple resources within a catalog at once.
 ---
 
-# Catalog Access Reviews (preview)
+# Catalog Access Reviews
 
 Catalog access reviews in Microsoft Entra ID Governance enable organizations to simplify how managers can review user access to multiple resource types, such as groups, applications, and custom disconnected resources at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
 
@@ -35,7 +35,7 @@ To enable access reviews across multiple resources in a single reviewer experien
     > [!NOTE]
     > In catalog access reviews, only groups, applications, and [custom data provided resources](custom-data-resource-access-reviews.md) are supported.
 1. With the resources selected, select **Add** to save them in the catalog.
-1. To enable the review to also include data from custom data providers, select **Custom Data Provided Resource (Preview)**, and provide the name and description of the resource. For more information, see [custom data provided resource](custom-data-resource-access-reviews.md).
+1. To enable the review to also include data from custom data providers, select **Custom Data Provided Resource**, and provide the name and description of the resource. For more information, see [custom data provided resource](custom-data-resource-access-reviews.md).
 
 For more information on creating a catalog and adding resources, see [Create and manage a catalog of resources](entitlement-management-catalog-create.md).
     > [!NOTE]
