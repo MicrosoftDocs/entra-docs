@@ -38,11 +38,14 @@ Custom PAC files allow you to:
 1. In the **Internet Access** section, select the link to download the default PAC file for your tenant.
 :::image type="content" source="media/how-to-custom-proxy-autoconfiguration-files/download-template.png" alt-text="Screenshot of the Explicit Forward Proxy configuration page." lightbox="media/how-to-custom-proxy-autoconfiguration-files/download-template.png":::
 
+> [!IMPORTANT]
+> PAC files use JavaScript syntax, which is a case-sensitive language. When you use variables in the PAC file script, ensure that the casing of the variables is consistent. This means that the variable named **efpURL** is different than the variable named **efpUrl**. Always validate JavaScript syntax when working with custom PAC files.
+
 1. Open the downloaded PAC file in a text editor.
 1. Delete lines that start with "var tenantId" and "var efpEndpoint".
-1. Update the line that starts with "var efpURL" to the following code:
+1. Update the line that starts with "var efpUrl" to the following code:
    ```javascript
-   var efpURL = "HTTPS ${GSAEFP}";
+   var efpUrl = "HTTPS ${GSAEFP}";
    ```
 1. Make your modifications to implement your custom PAC file logic. Always use the **${GSAEFP}** variable when you reference the EFP proxy endpoint.
 1. Save the PAC file with a *.pac extension.
