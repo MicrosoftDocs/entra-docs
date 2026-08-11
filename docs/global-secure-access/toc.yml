@@ -168,6 +168,8 @@ items:
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
+  - name: Web filtering (V2)
+    href: concept-web-filtering.md
   - name: Explicit Forward Proxy
     expanded: false
     items:
