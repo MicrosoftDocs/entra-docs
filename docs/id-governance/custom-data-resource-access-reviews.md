@@ -53,16 +53,22 @@ With a catalog created, you can add custom data provided resources to it by doin
 1. Select **Add resources**.
 
 1. Select the resource type:  **custom data provided resource**.
-    :::image type="content" source="media/custom-data-resource-access-reviews/custom-data-provided-information.png" alt-text="Screenshot of adding custom access resource data extension information.":::
-1. On the resource page, enter:
-   - **Resource name** – A name for the resource. 
+    :::image type="content" source="media/custom-data-resource-access-reviews/catalog-resources.png" alt-text="Screenshot of adding resources to a catalog.":::
+1. On the **Basics** tab, enter:
+    :::image type="content" source="media/custom-data-resource-access-reviews/custom-resource-basic-information.png" alt-text="Screenshot of entering basic information for the custom data provided resource.":::
+   - **Name** – A name for the resource. 
    - **Description** – A description for the resource.  
-1. Select **Save**.
+1. Select **Next:Details**.
+1. On the **Details** tab, enter:
+    :::image type="content" source="media/custom-data-resource-access-reviews/custom-resource-details-information.png" alt-text="Screenshot of entering the details for the logic app as part of the custom data provided resource.":::
+   - **Subscription** - Select the subscription.
+   - **Resource group** - Select the resource group.
+   - **Logic app name** - A name for the logic app.
+1. Select **Create a logic app** to deploy the new logic app.
+1. Select **Save**
+1. Select **Add**
 
 ## Create a User Access Review
-
-> [!IMPORTANT]
-> Custom data resource reviews currently support **single-stage reviews** where **managers** are the only available reviewers.
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
@@ -82,7 +88,13 @@ With a catalog created, you can add custom data provided resources to it by doin
 
 You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
-## Get Access Review Object and Instance ID
+## Logic app notifications
+
+:::image type="content" source="media/custom-data-resource-access-reviews/logic-app-trigger.png" alt-text="Screenshot of the logic app trigger history.":::
+
+The Logic App will receive a notification when the access review is initiated and can be configured to automatically upload custom data for the review. The Logic App will also receive a notification when the review completes and can be configured to set the apply result on the not reviewed or deny decisions. For more information, see [Configuring logic app for uploading and remediating decisions](https://github.com/Azure/azure-quickstart-templates/blob/master/application-workloads/identity-governance/byod-logic-app/README.md).
+
+## Manually upload custom data
 
 After creating the catalog access review, but before uploading your custom data, you must get both the Access Review object ID, and the Access Review instance object ID. To get this information, you'd do the following:
 
@@ -97,13 +109,10 @@ After creating the catalog access review, but before uploading your custom data,
 1. On the access review instance screen, save the instance **Object ID**.
     :::image type="content" source="media/custom-data-resource-access-reviews/access-review-instance-object-id.png" alt-text="Screenshot of finding the access review instance object ID.":::
 
-
-
-## Upload custom data
-
 After copying both the access review object and access review instance object IDs, note that the status of the access review shows as **Initializing**.
     :::image type="content" source="media/custom-data-resource-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
 
+## Upload custom data 
 
 1. Return to the catalog you created, and select **Resources**.
 
@@ -120,6 +129,25 @@ After copying both the access review object and access review instance object ID
 
 > [!NOTE]
 > Another option to automatically upload files when a review starts is through the use of a logic app. [logic app template](https://github.com/Azure/azure-quickstart-templates/blob/master/application-workloads/identity-governance/byod-logic-app/README.md).
+
+## Manually apply results
+
+When a review is complete, remediation can be set for any decision items for the custom data provided resource.
+
+1. Browse to **ID Governance** > **Access Reviews**.
+
+1. Select the catalog access review you created.
+
+1. Select the current instance of the access review on the access review overview screen.
+
+1. On results page, you can select one or more decisions to remediate.
+
+**<InsertImage>**
+
+1. Select the **Apply results** to set the apply result to **Applied successfully**.
+
+> [!NOTE]
+> Remediation can only be done for decisions that are for a custom data provided resource and where the outcome is not **Approve**.
 
 ## Custom data for access CSV fields
 
