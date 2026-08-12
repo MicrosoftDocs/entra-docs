@@ -29,6 +29,7 @@ This article describes the steps you need to perform in both Zscaler User Provis
 > * Keep user attributes synchronized between Microsoft Entra ID and Zscaler Provisioning
 > * Provision groups and group memberships in Zscaler.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Zscaler (recommended).
+> * Client Credentials Authentication supported.
 
 ## Prerequisites
 
@@ -102,9 +103,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, enter your Zscaler Tenant URL and Secret Token. Select Test Connection to ensure Microsoft Entra ID can connect to Zscaler. If the connection fails, ensure your Zscaler account has Admin permissions and try again.
-    
-    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+1. 1. In the **Tenant URL** field, input your Zscaler **Tenant URL, Client identifier, Client secret** and **OAuth token endpoint**. Select **Test connection** to ensure Microsoft Entra ID can connect to Zscaler. If the connection fails, ensure your Zscaler account has the required admin permissions and try again.
+ 
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-button.png)
 
 1. Select **Create** to create your configuration.  
 
@@ -122,6 +123,32 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |---|---|---|---|
     |displayName|String|&check;|&check;
     |primaryEmail|String||&check;
+    |active|Boolean|
+    |title|String|
+    |emails[type eq "work"].value|String|
+    |preferredLanguage|String|
+    |userName|String|
+    |name.givenName|String|
+    |name.familyName|String|
+    |name.formatted|String|
+    |addresses[type eq "work"].formatted|String|
+    |addresses[type eq "work"].streetAddress|String|
+    |addresses[type eq "work"].locality|String|
+    |addresses[type eq "work"].region|String|
+    |addresses[type eq "work"].postalCode|String|
+    |addresses[type eq "work"].country|String|
+    |phoneNumbers[type eq "work"].value|String|
+    |phoneNumbers[type eq "mobile"].value|String|
+    |externalId|String|
+    |nickName|String|
+    |userType|String|
+    |timezone|String|
+    |emails[type eq "home"].value|String|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|
     
 1. Select **groups**.
 
