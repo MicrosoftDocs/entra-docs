@@ -72,17 +72,16 @@ Exchange RBAC (Role-Based Access Control) lets administrators delegate permissio
 
 Teams Resource-Specific Consent (RSC) enables granular permission assignments for agents within Microsoft Teams. RSC allows you to grant permissions to an app or agent on a per-team basis, rather than at the tenant level. This approach is especially useful when you want to limit access to only the resources and data within specific teams. Such data includes channels, messages, or roster information, without granting broader organizational permissions. For more information, see [Resource-specific consent for your Teams app](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
 
-### Permissions for Teams Agents Working Across M365 Channels
+### Permissions for agent communication across Microsoft 365 channels
 
-Agents in Teams utilizing Agent ID can function across M365 surfaces. In doing so, additional permissions must be added to the agent and granted by organizational admins. Below is a table of the permissions a Teams agent needs to function across M365 surfaces: 
+An agent with its own identity (Agent ID) can communicate across Microsoft 365 surfaces, including sending and receiving Outlook email, receiving and responding to comments in OneDrive and SharePoint files, and sending and receiving messages from Teams chats and channels. Each surface the agent communicates in requires specific permissions, which you declare in the agent identity blueprint's required resource access, and which a tenant admin must consent to before the agent can send or receive anything there.
 
-
-| Hub Name | Hub Display Name | Inbound (Hub → Agent)<br>Agent receives events | Outbound (Agent → Hub)<br>Agent sends responses |
-|-------------------|------------------------|--------------------------------------------------------------------|-------------------------------------------------------------|
-| email | Outlook | Mail.Read<br> OR Mail.ReadWrite | Mail.Send<br> OR Mail.ReadWrite |
-| spo.files.comments| OneDrive / SharePoint | Files.Read.All<br> OR Files.ReadWrite.All | Files.ReadWrite.All |
-| teams-chat | Teams Chats | Chat.Read<br> OR Chat.ReadWrite | Chat.ReadWrite<br> OR ChatMessage.Send |
-| teams-channel | Teams Channels | ChannelMessage.Read.All | ChannelMessage.Send
+| Channel | Displayed as | Inbound (channel → agent)<br>Receiving events | Outbound (agent → channel)<br>Sending responses |
+|---|---|---|---|
+| `email` | Outlook | `Mail.Read` or `Mail.ReadWrite` | `Mail.Send` or `Mail.ReadWrite` |
+| `spo.files.comments` | OneDrive and SharePoint | `Files.Read.All` or `Files.ReadWrite.All` | `Files.ReadWrite.All` |
+| `teams-chat` | Teams chats | `Chat.Read` or `Chat.ReadWrite` | `Chat.ReadWrite` or `ChatMessage.Send` |
+| `teams-channel` | Teams channels | `ChannelMessage.Read.All` | `ChannelMessage.Send` |
 
 ### Custom (third‑party) APIs
 
