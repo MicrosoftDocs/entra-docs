@@ -89,5 +89,5 @@ On the review end date, all decisions, except those for custom disconnected reso
 
 ## Related content
 
-- [Create an access review of custom data provided resources in Microsoft Entra ID](custom-data-resource-access-reviews.d)
+- [Create an access review of custom data provided resources in Microsoft Entra ID](custom-data-resource-access-reviews.md)
 
