@@ -218,7 +218,7 @@ To configure Staged Rollout, follow these steps:
 
 1. **Microsoft Entra ID Protection remediation events.** Certain account recovery and [Microsoft Entra ID Protection remediation actions](~/id-protection/howto-identity-protection-remediate-unblock.md#how-risk-remediation-works), including self-service password reset (SSPR), risk remediation, and risk dismissal, can reset the user's Staged Rollout state. As a result, the user might be redirected to the federated identity provider on their next sign-in. The user must complete one additional interactive sign-in using their existing federated authentication method. After this sign-in, Microsoft Entra reestablishes managed authentication for subsequent sign-ins.
 
-### Workaround for newly added Staged Rollout users
+### Workaround to avoid one additional federated sign-in
 
 When a user is newly added to Staged Rollout, they might be required to perform one additional authentication through the federated identity provider before Staged Rollout takes effect. You can avoid this behavior by using a Temporary Access Pass (TAP) during the user's initial sign-in experience.
 
