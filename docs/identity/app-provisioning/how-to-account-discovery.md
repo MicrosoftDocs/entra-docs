@@ -201,7 +201,7 @@ For API details, see the following resources:
 
 ## Investigate account discovery with the Microsoft MCP Server for Enterprise (preview)
 
-You can use the [Microsoft MCP Server for Enterprise](/graph/mcp-server/overview) to investigate account discovery reports by asking questions in natural language. The MCP server translates the question into a read-only Microsoft Graph request, enforces the signed-in user's privileges and the permissions granted to the MCP client, and returns a natural-language summary of the results.
+You can use the [Microsoft MCP Server for Enterprise](https://github.com/mcp/microsoft/EnterpriseMCP) to investigate account discovery reports by asking questions in natural language. The MCP server translates the question into a read-only Microsoft Graph request, enforces the signed-in user's privileges and the permissions granted to the MCP client, and returns a natural-language summary of the results.
 
 This option is useful for administrators who want to explore account discovery results without constructing Microsoft Graph requests manually. The MCP client also displays the underlying request so that you can review and audit the operation.
 
@@ -209,7 +209,7 @@ This option is useful for administrators who want to explore account discovery r
 
 Before using the MCP server with account discovery:
 
-- [Provision Microsoft MCP Server for Enterprise and connect an MCP client](/graph/mcp-server/get-started).
+- [Provision Microsoft MCP Server for Enterprise and connect an MCP client](https://github.com/mcp/microsoft/EnterpriseMCP).
 - Grant the MCP client the `MCP.ProvisioningLog.Read.All` delegated permission.
 - Sign in with a work or school account that has a supported Microsoft Entra role. Supported roles include Application Administrator, Cloud Application Administrator, Hybrid Identity Administrator, Global Reader, Reports Reader, Security Administrator, Security Operator, and Security Reader.
 - Use the global Microsoft cloud. Microsoft MCP Server for Enterprise and the identity correlation APIs aren't currently available in sovereign clouds.
