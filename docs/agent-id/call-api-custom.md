@@ -437,7 +437,7 @@ After determining what works for you, proceed to call your custom web API.
     - For `WithAgentIdentity`, you either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
     
         - For app only token scenario, use `CreateAuthorizationHeaderForAppAsync` method.
-        - For OBO token scenario, use `CreateAuthorizationHeaderForUserAsync` method 
+        - For the on-behalf-of (OBO) token scenario, use `CreateAuthorizationHeaderForUserAsync` method 
     
         ```csharp
         using Microsoft.Identity.Abstractions;
