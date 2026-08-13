@@ -94,13 +94,18 @@ With a catalog created, you can add custom data provided resources to it by doin
 
 You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http&preserve-view=true#example-6-create-a-single-stage-access-review-on-a-catalog).
 
-## Logic app integration
+## Choose how to manage custom access data
+
+You can upload and remediate custom access data in either of the following ways:
+
+### Option 1: Automate using a Logic App
 
 :::image type="content" source="media/custom-data-resource-access-reviews/logic-app-trigger.png" alt-text="Screenshot of the logic app trigger history.":::
 
-The Logic App will receive a notification when the access review is initiated and can be configured to automatically upload custom data for the review. The Logic App will also receive a notification when the review completes and can be configured to set the apply result on the not reviewed or deny decisions. For more information, see [Configuring logic app for uploading and remediating decisions](https://github.com/Azure/azure-quickstart-templates/blob/master/application-workloads/identity-governance/byod-logic-app/README.md).
+Use the Logic App template to automate the process.
+The Logic App receives a notification when the access review starts and can upload the custom access data automatically. After the review is completed, the Logic App receives another notification and can process the review decisions and update their remediation status. For more information, see [Configuring logic app for uploading and remediating decisions](https://github.com/Azure/azure-quickstart-templates/blob/master/application-workloads/identity-governance/byod-logic-app/README.md).
 
-## Manually upload custom data
+### Option 2: Manually upload custom data
 
 After creating the catalog access review, but before uploading your custom data, you must get both the Access Review object ID, and the Access Review instance object ID. To get this information, you'd do the following:
 
@@ -137,16 +142,21 @@ After creating the catalog access review, but before uploading your custom data,
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-access-data-files.png" alt-text="Screenshot of uploading files to custom access data.":::
    
     > [!NOTE]
-    > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
+    > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md) or by reviwing the upload history on the custom data resource.
+
+    :::image type="content" source="media/custom-data-resource-access-reviews/upload-history.png" alt-text="Screenshot of viewing files uploaded for an access review.":::
     
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload.
 
-> [!NOTE]
-> Another option to automatically upload files when a review starts is through the use of a logic app: [logic app template](https://github.com/Azure/azure-quickstart-templates/blob/master/application-workloads/identity-governance/byod-logic-app/README.md).
+## Apply review results
 
-## Manually apply results
+After the review is completed, remediate the denied or not-reviewed access in your external system. You can then update the remediation status in either of the following ways:
 
-When a review is complete, remediation can be set for any decision items for the custom data provided resource that do not have an **Approve** outcome.
+### Option 1 : Remedidate decisions through a Logic App
+
+A Logic App can automatically process the decisions and update their remediation status. For more information, see [Configuring logic app for remediating decisions](https://github.com/Azure/azure-quickstart-templates/blob/master/application-workloads/identity-governance/byod-logic-app/README.md).
+
+### Option 2 : Manually remediate decisions
 
 1. Browse to **ID Governance** > **Access Reviews**.
 
@@ -168,16 +178,16 @@ When a review is complete, remediation can be set for any decision items for the
 When uploading CSVs to be included in the access data, the following parameters are included in the template:
 
 > [!NOTE]
-> All columns are mandatory.
+> The CSV file must follow the required template schema. The highlighted columns are mandatory.
 
 |Parameter  | Description  |
 |---------|---------|
-|PrincipalId     |    The **Microsoft Entra ID User ID** of the user whose access needs to be reviewed. This value must match a valid Microsoft Entra user.     |
-|PrincipalType     |   Specifies the type of principal. For access reviews this will always be **EntraIdUser**.      |
-|PermissionId     |   A unique identifier for the permission in the application that will be reviewed. This helps distinguish between different permissions within the same app.      |
-|PermissionName     |   The display name of the permission that the user has in the application. Example: Read, Write, and Admin.     |
-|PermissionDescription     |   A brief explanation of what this permission allows within the application. This provides reviewers with context when deciding whether access should be continued.     |
-|PermissionType     |   Indicates the category of permission.      |
+|**PrincipalId**     |    The **Microsoft Entra ID User ID** of the user whose access needs to be reviewed. This value must match a valid Microsoft Entra user.     |
+|**PrincipalType**     |   Specifies the type of principal. For access reviews this will always be **EntraIdUser**.      |
+|**PermissionId**     |   A unique identifier for the permission in the application that will be reviewed. This helps distinguish between different permissions within the same app.      |
+|**PermissionName**     |   The display name of the permission that the user has in the application. Example: Read, Write, and Admin.     |
+|**PermissionDescription**     |   A brief explanation of what this permission allows within the application. This provides reviewers with context when deciding whether access should be continued.     |
+|**PermissionType**     |   Indicates the category of permission.      |
 |ScopeId | A unique identifier for the application. |
 |ScopeDisplayName | The display name of the application. |
 |EntitlementOwners_Users | A comma separated list of the **Microsoft Entra ID User ID** owners of the permission.  |
