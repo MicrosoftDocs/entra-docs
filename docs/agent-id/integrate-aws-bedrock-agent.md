@@ -54,7 +54,7 @@ The request flows through these steps:
 1. The Flask app sends the query to AWS Bedrock (Claude) via the LangGraph ReAct agent.
 1. When Claude decides it needs weather data, it calls the `get_weather` tool.
 1. The tool asks the sidecar for an authorization header by calling `GET /AuthorizationHeader?AgentIdentity={agentId}`.
-1. The sidecar authenticates to Microsoft Entra ID using OAuth 2.0 (client credentials or OBO exchange).
+1. The sidecar authenticates to Microsoft Entra ID using OAuth 2.0 (client credentials or on-behalf-of (OBO) exchange).
 1. Microsoft Entra ID returns the requested token (TR) to the sidecar.
 1. The agent calls the weather API with `Authorization: Bearer TR`.
 1. The weather API validates TR and returns the weather JSON response.
