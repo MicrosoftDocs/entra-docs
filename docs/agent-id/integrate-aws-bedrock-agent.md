@@ -40,7 +40,7 @@ Before you begin, make sure you have:
 
 The Microsoft Entra Auth SDK (sidecar) sits between your agent and Microsoft Entra ID. The agent never talks to Microsoft Entra ID directly and never manages credentials. It asks the sidecar for an `Authorization` header to call a downstream API. Amazon Bedrock handles LLM inference separately, without having to worry about identity.
 
-:::image type="content" source="media/integrate-aws-bedrock-agent/bedrock-sidecar-token-flow.png" alt-text="Diagram showing the token flow between the Bedrock agent, sidecar, Entra ID, and Weather API." lightbox="media/integrate-aws-bedrock-agent/bedrock-sidecar-token-flow.png":::
+:::image type="content" source="media/integrate-aws-bedrock-agent/bedrock-sidecar-token-flow.png" alt-text="Diagram showing the token flow between the Bedrock agent, sidecar, Microsoft Entra ID, and Weather API." lightbox="media/integrate-aws-bedrock-agent/bedrock-sidecar-token-flow.png":::
 
 The sample runs three containers on a Docker bridge network:
 
@@ -109,7 +109,7 @@ Other supported models:
 
 Override the default by setting `BEDROCK_MODEL_ID` in your `.env` file. You must enable each model in the **AWS Bedrock console** > **Model access** before it can be invoked.
 
-## Create the Entra objects (first-time setup)
+## Create the Microsoft Entra objects (first-time setup)
 
 If you already have a `.env` file from a previous run with `BLUEPRINT_APP_ID` populated, skip to [Configure environment variables](#configure-environment-variables).
 
@@ -117,7 +117,7 @@ Run the following commands once per tenant to create the Blueprint app, Agent ID
 
 1. Create the Blueprint app and Agent ID for the autonomous flow by following the PowerShell workflow in [Create an agent identity blueprint](create-blueprint.md) and [Create agent identities](create-delete-agent-identities.md). At the end you have:
 
-   - **`TENANT_ID`:** Your Entra tenant.
+   - **`TENANT_ID`:** Your Microsoft Entra tenant.
    - **`BLUEPRINT_APP_ID`:** Blueprint app registration.
    - **`BLUEPRINT_CLIENT_SECRET`:** Client secret for the Blueprint.
    - **`AGENT_CLIENT_ID`:** The Agent ID created from the Blueprint.
@@ -171,7 +171,7 @@ The sidecar supports multiple credential types through the `AzureAd__ClientCrede
 
 1. Set the following variables in your `.env` file:
 
-   - **`TENANT_ID`:** Your Entra tenant ID.
+   - **`TENANT_ID`:** Your Microsoft Entra tenant ID.
    - **`BLUEPRINT_APP_ID`:** Blueprint app registration. The sidecar authenticates as this app.
    - **`BLUEPRINT_CLIENT_SECRET`:** Blueprint client secret (local development only).
    - **`AGENT_CLIENT_ID`:** Your Agent ID. Appears as the `AgentIdentity` query parameter.

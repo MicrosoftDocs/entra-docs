@@ -62,5 +62,5 @@ The Microsoft Entra ID Auth SDK (sidecar) is a containerized web service that ha
 ## Related content
 
 - [What is an agent ID?](what-are-agent-identities.md)
-- [Microsoft Entra Agent ID oauth protocols](agent-oauth-protocols.md)
+- [Microsoft Entra Agent ID OAuth protocols](agent-oauth-protocols.md)
 - [Inheritable permissions](concept-inheritable-permissions.md)
