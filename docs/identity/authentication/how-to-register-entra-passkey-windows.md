@@ -1,5 +1,5 @@
 ---
-title: Register a Microsoft Entra passkey on Windows (preview)
+title: Register a Microsoft Entra passkey on Windows
 description: Learn how to register a Microsoft Entra passkey on Windows by using Windows Hello as a FIDO2 passkey provider for phishing-resistant sign-in.
 ms.topic: how-to
 ms.date: 07/05/2026
@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1013
 # Customer intent: As a user, I want to register a Microsoft Entra passkey on Windows so I can use phishing-resistant authentication on my Windows device.
 ---
-# Register a Microsoft Entra passkey on Windows (preview)
+# Register a Microsoft Entra passkey on Windows
 
 This article shows how to register a Microsoft Entra passkey on Windows. A Microsoft Entra passkey on Windows is a device-bound passkey stored in the local Windows Hello container. Unlike synced passkeys, a passkey on Windows doesn't sync across devices — each device requires a separate passkey registration. This approach enables phishing-resistant sign-in with a Windows Hello biometric or PIN, without requiring the device to be Microsoft Entra joined or registered.
 

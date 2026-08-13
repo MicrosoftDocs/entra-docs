@@ -2,8 +2,8 @@
 title: Manage rules for dynamic membership groups in Microsoft Entra ID
 description: Learn how to manage rules for dynamic membership groups to automatically populate group members and rule references.
 ms.topic: how-to
-ms.date: 03/05/2026
-ms.reviewer: yukarppa
+ms.date: 08/13/2026
+ms.reviewer: mbhargav
 ms.custom: it-pro
 ai-usage: ai-assisted
 ---
@@ -16,6 +16,10 @@ ai-usage: ai-assisted
 You can create user-based or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID. You can add and remove dynamic membership groups automatically by using membership rules based on member attributes. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
 This article details the properties and syntax to create rules for dynamic membership groups based on users or devices.
+
+An agent's user account is a subtype of user identity within Microsoft Entra. An agent's user account is evaluated by user-based membership rules and can be included in a dynamic user group when it satisfies the rule.
+
+By default, an agent's user account isn't distinguished from other user identities. To exclude these accounts, include a condition in the membership rule. You can also create rules that include only agents' user accounts or target accounts associated with a specific agent identity blueprint. Agent identities, which are service principals, aren't supported as members of dynamic membership groups.
 
 > [!NOTE]
 > Security groups can include either devices or users, but Microsoft 365 groups can include only users.

@@ -103,11 +103,11 @@ Smooth agent deployments require alignment between developers building agents an
 
 - **Use supported creation channels.** Build agents through [Copilot Studio, Graph APIs, or the Agent 365 CLI](agent-id-creation-channels.md) rather than manual Graph calls that might miss required properties. These tools handle blueprint creation, credential binding, and instance setup automatically.
 
-- **Establish a production handshake process.** When a new agent moves to production, have an identity admin verify its Entra Agent ID settings: confirm the blueprint and sponsor are correct, required permissions are consented, Conditional Access policies apply, and the agent is in appropriate groups or administrative units.
+- **Establish a production handshake process.** When a new agent moves to production, have an identity admin verify its Microsoft Entra Agent ID settings: confirm the blueprint and sponsor are correct, required permissions are consented, Conditional Access policies apply, and the agent is in appropriate groups or administrative units.
 
 - **Test in nonproduction environments.** Use a separate development tenant or sandbox to validate agent authentication flows, Conditional Access policies, and permission configurations before deploying to production.
 
-- **Treat agent configurations as code.** Check blueprint definitions, permission configurations, and setup scripts into source control. This prevents configuration drift, enables peer review, and provides institutional memory for how agents are integrated with Entra ID.
+- **Treat agent configurations as code.** Check blueprint definitions, permission configurations, and setup scripts into source control. This prevents configuration drift, enables peer review, and provides institutional memory for how agents are integrated with Microsoft Entra ID.
 
 ## Related content
 
