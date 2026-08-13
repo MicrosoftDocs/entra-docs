@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 # Validate agent identity tokens in a downstream API
 
-When an AI agent calls your API through the Microsoft Entra SDK auth sidecar, the request includes a `Bearer` token. Your API validates this token to confirm the request comes from an authenticated agent with the correct permissions. If validation fails, your API returns HTTP 401 with a reason.
+When an AI agent calls your API through the Microsoft Entra ID Auth SDK (sidecar), the request includes a `Bearer` token. Your API validates this token to confirm the request comes from an authenticated agent with the correct permissions. If validation fails, your API returns HTTP 401 with a reason.
 
 This article explains the validation checks and shows how to configure and run a sample weather API that validates agent identity tokens end-to-end.
 

@@ -1,7 +1,7 @@
 ---
 title: Secure an Amazon Bedrock agent with Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to use the Microsoft Entra Auth SDK (sidecar) to secure an Amazon Bedrock AI agent with its own identity for calling downstream APIs.
+description: Learn how to use the Microsoft Entra ID Auth SDK (sidecar) to secure an Amazon Bedrock AI agent with its own identity for calling downstream APIs.
 ms.topic: how-to
 ms.date: 04/30/2026
 ms.reviewer: razi.rais
@@ -12,7 +12,7 @@ ms.custom: msecd-doc-authoring-1012
 
 # Secure an Amazon Bedrock agent with Microsoft Entra Agent ID
 
-This guide shows you how to secure an [Amazon Bedrock](https://aws.amazon.com/bedrock/) agent by using the Microsoft Entra Auth SDK (sidecar) to authenticate to downstream APIs. The sidecar runs as a separate container and handles all credential management and token exchange with Microsoft Entra ID. Your agent requests an authorization header from the sidecar, and the sidecar handles the OAuth 2.0 exchange with Microsoft Entra ID.
+This guide shows you how to secure an [Amazon Bedrock](https://aws.amazon.com/bedrock/) agent by using the Microsoft Entra ID Auth SDK (sidecar) to authenticate to downstream APIs. The sidecar runs as a separate container and handles all credential management and token exchange with Microsoft Entra ID. Your agent requests an authorization header from the sidecar, and the sidecar handles the OAuth 2.0 exchange with Microsoft Entra ID.
 
 ## Prerequisites
 
@@ -38,14 +38,14 @@ Before you begin, make sure you have:
 
 ## Architecture
 
-The Microsoft Entra Auth SDK (sidecar) sits between your agent and Microsoft Entra ID. The agent never talks to Microsoft Entra ID directly and never manages credentials. It asks the sidecar for an `Authorization` header to call a downstream API. Amazon Bedrock handles LLM inference separately, without having to worry about identity.
+The Microsoft Entra ID Auth SDK (sidecar) sits between your agent and Microsoft Entra ID. The agent never talks to Microsoft Entra ID directly and never manages credentials. It asks the sidecar for an `Authorization` header to call a downstream API. Amazon Bedrock handles LLM inference separately, without having to worry about identity.
 
 :::image type="content" source="media/integrate-aws-bedrock-agent/bedrock-sidecar-token-flow.png" alt-text="Diagram showing the token flow between the Bedrock agent, sidecar, Microsoft Entra ID, and Weather API." lightbox="media/integrate-aws-bedrock-agent/bedrock-sidecar-token-flow.png":::
 
 The sample runs three containers on a Docker bridge network:
 
 - **`llm-agent-aws`:** Flask app with a chat UI and a LangGraph ReAct agent that calls Amazon Bedrock (Claude) for reasoning. Exposed on port 3001.
-- **`agent-id-sidecar-aws`:** The official Microsoft Entra Auth SDK container. Acquires and caches tokens. No host port, reachable only from within the Docker network.
+- **`agent-id-sidecar-aws`:** The official Microsoft Entra ID Auth SDK (sidecar) container. Acquires and caches tokens. No host port, reachable only from within the Docker network.
 - **`weather-api-aws`:** A downstream API that validates the agent's JWT (signature, issuer, expiry, audience) on every request and returns weather data.
 
 The request flows through these steps:
@@ -270,6 +270,6 @@ docker compose down -v --rmi all
 
 ## Related content
 
-- [Authentication with Microsoft Entra Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md)
+- [Authentication with Microsoft Entra ID Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md)
 - [Integrate third-party agents with Microsoft Entra Agent ID](configure-third-party-agents.md)
-- [Microsoft Entra Auth SDK sidecar container image](https://mcr.microsoft.com/en-us/artifact/mar/entra-sdk/auth-sidecar)
+- [Microsoft Entra ID Auth SDK (sidecar) container image](https://mcr.microsoft.com/en-us/artifact/mar/entra-sdk/auth-sidecar)
