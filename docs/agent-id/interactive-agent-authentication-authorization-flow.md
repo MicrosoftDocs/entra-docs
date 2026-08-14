@@ -78,7 +78,7 @@ Authorization: Bearer <token>
 Use Microsoft Graph PowerShell to update the agent identity blueprint with the redirect URI.
 
 ```powershell
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.ReadWrite.All" -TenantId <your-test-tenant>
+Connect-MgGraph -Scopes "AgentIdentityBlueprint.ReadWrite.All" -TenantId <your-tenant-id>
 
 $applicationId = "<agent-blueprint-id>"
 $web = @{
@@ -159,7 +159,7 @@ After consent is granted, the client app (such as a frontend or mobile app) init
 1. Redirect the user to the Microsoft Entra ID authorization endpoint with the following parameters:
 
     ```http
-    GET https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/authorize?client_id=<client-app-id>
+    GET https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/authorize?client_id=<client-app-id>
     &response_type=code
     &redirect_uri=<redirect_uri>
     &response_mode=query
@@ -170,7 +170,7 @@ After consent is granted, the client app (such as a frontend or mobile app) init
 1. After the user signs in, your app receives an authorization code at the redirect URI. Exchange the authorization code for an access token:
 
     ```http
-    POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
+    POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
     Content-Type: application/x-www-form-urlencoded
     
     client_id=<client-app-id>
@@ -219,7 +219,7 @@ The web API must validate the incoming access token before the agent can act. Al
     ```json
     "AzureAd": {
         "Instance": "https://login.microsoftonline.com/",
-        "TenantId": "<my-test-tenant>",
+        "TenantId": "<your-tenant-id>",
         "ClientId": "<agent-blueprint-id>",
         "Audience": "<agent-blueprint-id>",
         "ClientCredentials": [

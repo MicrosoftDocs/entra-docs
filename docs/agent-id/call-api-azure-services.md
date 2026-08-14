@@ -61,7 +61,7 @@ This article guides you on how to call Azure services from your agent. To authen
     {
       "AzureAd": {
         "Instance": "https://login.microsoftonline.com/",
-        "TenantId": "<your-tenant>",
+        "TenantId": "<your-tenant-id>",
         "ClientId": "<agent-blueprint-id>",
     
        // Other client creedentials available. See <https://aka.ms/ms-id-web/client-credentials>
