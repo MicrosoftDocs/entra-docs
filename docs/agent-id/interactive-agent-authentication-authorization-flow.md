@@ -199,6 +199,7 @@ The web API must validate the incoming access token before the agent can act. Al
 
     ```csharp
     // Program.cs
+    using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.Identity.Web;
     
     var builder = WebApplication.CreateBuilder(args);
