@@ -150,6 +150,6 @@ sections:
 
           Microsoft.Identity.Web provides higher-level APIs for acquiring tokens for agent identities in .NET applications. Use the [Microsoft.Identity.Web.AgentIdentities](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.AgentIdentities/README.AgentIdentities.md) package to simplify managing agent identities.
 
-          The Microsoft Entra SDK container wraps Microsoft.Identity.Web as a web service deployed as a sidecar container. Use this option when your agent runs on Kubernetes and/or isn't built in .NET. For more information, see [Microsoft Entra ID Auth SDK (sidecar)](/entra/msidweb/agent-id-sdk/overview).
+          The Microsoft Entra ID Auth SDK (sidecar) provides Microsoft Entra authentication and token-management capabilities as a containerized web service that runs alongside your application. Use it when your agent runs in a containerized environment (such as Kubernetes, Docker, or Azure container services), or when the agent isn't built in .NET and you want a language-agnostic HTTP interface. For .NET applications, Microsoft.Identity.Web provides the equivalent in-process integration. For more information, see [Microsoft Entra ID Auth SDK (sidecar)](/entra/msidweb/agent-id-sdk/overview).
 
           Microsoft Graph APIs provide agent identity management when the other options don't fit your scenario. For more information, see [Microsoft Graph API for agent identity blueprints](/graph/api/resources/agentidentityblueprint).
