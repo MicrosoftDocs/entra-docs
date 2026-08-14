@@ -71,7 +71,7 @@ Metadata: True
 After you obtain a token for the managed identity, request a token for the agent identity blueprint:
 
 ```
-POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
+POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=<agent-blueprint-id>
@@ -131,7 +131,7 @@ To use *Microsoft.Identity.Web* to execute the Microsoft Graph API request to cr
 {
   "AzureAd": {
 	"Instance": "https://login.microsoftonline.com/",
-	"TenantId": "<my-test-tenant>",
+	"TenantId": "<your-tenant-id>",
 	"ClientId": "<my-agent-blueprint-id>",
 	"Scopes": "access_agent",
 	"ClientCredentials": [
@@ -156,16 +156,17 @@ To use *Microsoft.Identity.Web* to execute the Microsoft Graph API request to cr
 The code for the ASP.NET Core app (*Program.cs*) is the following example:
 
 ```csharp
+using System.Text.Json.Serialization;
 using Microsoft.Identity.Abstractions;
+using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.Resource;
 using Microsoft.IdentityModel.S2S.Extensions.AspNetCore;
-using MyAgent;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
-	.EnableTokenAcquisitionToCallDownstreamApi();
+    .EnableTokenAcquisitionToCallDownstreamApi();
 builder.Services.AddInMemoryTokenCaches();
 var app = builder.Build();
 
@@ -173,54 +174,54 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-public class AgentIdentity
-{
-	[JsonPropertyName("@odata.type")]
-	public string @odata_type { get; set; } = "#Microsoft.Graph.AgentIdentity";
-
-	[JsonPropertyName("displayName")]
-	public string? displayName { get; set; }
-
-	[JsonPropertyName("agentIdentityBlueprintId")]
-	public string? agentIdentityBlueprintId { get; set; }
-
-	[JsonPropertyName("id")]
-	public string? id { get; set; }
-
-  [JsonPropertyName("sponsors@odata.bind")]
-	public string[]? sponsorsOdataBind { get; set; }
-
-  [JsonPropertyName("owners@odata.bind")]
-	public string[]? ownersOdataBind { get; set; }
-}
-
 // Create an Agent identity
 app.MapGet("/create-agent-identity", async (HttpContext httpContext) =>
 {
-	try
-	{
-		// Get the service to call the downstream API (preconfigured in the appsettings.json file)
-		IDownstreamApi downstreamApi = httpContext.RequestServices.GetRequiredService<IDownstreamApi>();
+    try
+    {
+        // Get the service to call the downstream API (preconfigured in the appsettings.json file)
+        IDownstreamApi downstreamApi = httpContext.RequestServices.GetRequiredService<IDownstreamApi>();
 
-		// Call the downstream API with a POST request to create an Agent Identity
-		var jsonResult = await downstreamApi.PostForAppAsync<AgentIdentity, AgentIdentity>(
-			"agent-identity",
-			new AgentIdentity {
-				displayName = "My agent identity",
-				agentIdentityBlueprintId = "<my-agent-blueprint-id>",
-		  sponsorsOdataBind = new [] { "https://graph.microsoft.com/v1.0/users/<id>" }
-			}
-		  );
-		return jsonResult?.id;
-	}
-	catch (Exception ex)
-	{
-		return ex.Message;
-	}
-
-})
+        // Call the downstream API with a POST request to create an Agent Identity
+        var jsonResult = await downstreamApi.PostForAppAsync<AgentIdentity, AgentIdentity>(
+            "agent-identity",
+            new AgentIdentity
+            {
+                displayName = "My agent identity",
+                agentIdentityBlueprintId = "<my-agent-blueprint-id>",
+                sponsorsOdataBind = new[] { "https://graph.microsoft.com/v1.0/users/<id>" }
+            });
+        return jsonResult?.id;
+    }
+    catch (Exception ex)
+    {
+        return ex.Message;
+    }
+});
 
 app.Run();
+
+// Type declarations must follow the top-level statements.
+public class AgentIdentity
+{
+    [JsonPropertyName("@odata.type")]
+    public string @odata_type { get; set; } = "#Microsoft.Graph.AgentIdentity";
+
+    [JsonPropertyName("displayName")]
+    public string? displayName { get; set; }
+
+    [JsonPropertyName("agentIdentityBlueprintId")]
+    public string? agentIdentityBlueprintId { get; set; }
+
+    [JsonPropertyName("id")]
+    public string? id { get; set; }
+
+    [JsonPropertyName("sponsors@odata.bind")]
+    public string[]? sponsorsOdataBind { get; set; }
+
+    [JsonPropertyName("owners@odata.bind")]
+    public string[]? ownersOdataBind { get; set; }
+}
 ```
 
 ---
@@ -256,7 +257,7 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 			options.RelativePath += $"/{id}"; // Specify the ID of the agent identity to delete
 		});
 	return jsonResult;
-})
+});
 ```
 
 ---
