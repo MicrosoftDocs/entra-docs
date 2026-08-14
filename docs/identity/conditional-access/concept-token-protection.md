@@ -4,7 +4,7 @@ description: Protect your resources with token protection in Conditional Access 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 08/10/2026
+ms.date: 08/14/2026
 ms.reviewer: sgrandhi
 ms.custom:
   - sfi-image-nochange
@@ -29,8 +29,8 @@ When a user registers a supported device with Microsoft Entra, a PRT is issued a
 | Platform | Native applications | Browser-based applications |
 |----------|---------------------|----------------------------|
 | Windows | Generally Available | Preview for supported web apps that access Azure Resource Manager |
-| iOS / iPadOS | Preview | Not supported |
-| macOS | Preview | Preview for supported web apps that access Azure Resource Manager |
+| iOS / iPadOS | Generally Available | Not supported |
+| macOS | Generally Available | Preview for supported web apps that access Azure Resource Manager |
 
 > [!NOTE]
 > Browser-based application support is currently limited to selected web apps, browsers, and device configurations that access Azure Resource Manager. For requirements and the list of supported applications, see [Token Protection deployment guide - Web apps](deployment-guide-token-protection-web-apps.md).
