@@ -50,6 +50,21 @@ sections:
           There are no built-in notification mechanisms for agent identity blueprint approval. When a tenant admin creates or approves an agent identity blueprint for your agent, you aren't notified through Microsoft Entra or Microsoft Graph.
           
           To check whether your blueprint has been approved in a specific tenant, query the Microsoft Graph API for blueprint principal objects associated with your application. If an admin hasn't approved the blueprint yet, the query returns no results for that tenant.
+
+      - question: |
+          Can I delete or restore agent identity objects in the Microsoft Entra admin center?
+        answer: |
+          No. Deleting and restoring agent identity objects isn't supported in the Microsoft Entra admin center. Use the Microsoft Graph API or Microsoft Entra PowerShell instead.
+
+      - question: |
+          Can I recover a permanently deleted agent identity?
+        answer: |
+          No. Permanently deleted objects can't be restored. Soft-deleted objects can be restored within the 30-day retention period; after that window, permanent deletion happens automatically and is irreversible.
+
+      - question: |
+          Can I permanently delete an agent identity blueprint principal to free quota immediately?
+        answer: |
+          No. Permanent deletion of an agent identity blueprint principal is blocked. To free the quota it uses, wait for the 30-day retention period to expire.
           
   - name: Roles, permissions, and groups
     questions:
@@ -72,6 +87,11 @@ sections:
           Can I use dynamic groups to manage an agent's user account?
         answer: |
           An agent's user account can be added to Microsoft Entra groups, including dynamic groups, enabling it to inherit access granted to those group.
+
+      - question: |
+          Which Microsoft Entra roles and groups can't be assigned to an agent identity?
+        answer: |
+          Highly privileged directory roles are blocked for agent identities, including Global Administrator, Privileged Role Administrator, and User Administrator. Only lower-privileged roles, such as reader roles, can be assigned. You also can't assign custom roles to an agent identity, and agent identities can't be members of role-assignable groups.
           
   - name: Authentication and consent
     questions:
@@ -89,6 +109,11 @@ sections:
           What should I do if a user consent is blocked by risk-based step-up?
         answer: |
           Risk-based step-up is enforced for agent identity consent flows. If a user's consent is blocked, there's no workaround. The user must resolve the flagged risk before consent can proceed.
+
+      - question: |
+          Can an administrator consent to high-privilege Microsoft Graph permissions for an agent?
+        answer: |
+          No. A set of high-risk Microsoft Graph permissions — including `Application.ReadWrite.All`, `RoleManagement.ReadWrite.All`, `User.ReadWrite.All`, and `Directory.AccessAsUser.All` — is blocked for agents and can't be granted through Microsoft Graph or the Microsoft Entra admin center. Requests for these permissions are rejected. Agents can still receive lower-privilege, scoped permissions that a user or administrator consents to.
 
   - name: Monitoring and logs
     questions:
@@ -125,6 +150,6 @@ sections:
 
           Microsoft.Identity.Web provides higher-level APIs for acquiring tokens for agent identities in .NET applications. Use the [Microsoft.Identity.Web.AgentIdentities](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.AgentIdentities/README.AgentIdentities.md) package to simplify managing agent identities.
 
-          The Microsoft Entra SDK container wraps Microsoft.Identity.Web as a web service deployed as a sidecar container. Use this option when your agent runs on Kubernetes and/or isn't built in .NET. For more information, see [Microsoft Entra ID Auth SDK (sidecar)](/entra/msidweb/agent-id-sdk/overview).
+          The Microsoft Entra ID Auth SDK (sidecar) provides Microsoft Entra authentication and token-management capabilities as a containerized web service that runs alongside your application. Use it when your agent runs in a containerized environment (such as Kubernetes, Docker, or Azure container services), or when the agent isn't built in .NET and you want a language-agnostic HTTP interface. For .NET applications, Microsoft.Identity.Web provides the equivalent in-process integration. For more information, see [Microsoft Entra ID Auth SDK (sidecar)](/entra/msidweb/agent-id-sdk/overview).
 
           Microsoft Graph APIs provide agent identity management when the other options don't fit your scenario. For more information, see [Microsoft Graph API for agent identity blueprints](/graph/api/resources/agentidentityblueprint).
