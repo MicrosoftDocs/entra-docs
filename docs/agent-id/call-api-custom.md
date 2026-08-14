@@ -105,6 +105,7 @@ After determining what works for you, proceed to call your custom web API.
 1. Configure your services to add downstream API support:
 
     ```csharp
+    using Microsoft.AspNetCore.Authentication.OpenIdConnect;
     using Microsoft.Identity.Web;
     
     var builder = WebApplication.CreateBuilder(args);
@@ -238,6 +239,7 @@ After determining what works for you, proceed to call your custom web API.
 1. Configure your services to add authentication with agent identities and register HttpClient with `MicrosoftIdentityMessageHandler`:
 
     ```csharp
+    using Microsoft.AspNetCore.Authentication.OpenIdConnect;
     using Microsoft.Identity.Web;
     using Microsoft.Identity.Abstractions;
     
@@ -298,7 +300,6 @@ After determining what works for you, proceed to call your custom web API.
             public async Task<string> CallApiWithAgentIdentity(string agentIdentity)
             {
                 // Create request with agent identity authentication
-                string agentIdentity = "<your-agent-identity>";
                 var request = new HttpRequestMessage(HttpMethod.Get, "/api/data")
                     .WithAuthenticationOptions(options => 
                     {
@@ -328,7 +329,6 @@ After determining what works for you, proceed to call your custom web API.
             public async Task<string> CallApiWithAgentIdentity(string agentIdentity)
             {
                 // Create request with agent identity authentication
-                string agentIdentity = "<your-agent-identity>";
                 var request = new HttpRequestMessage(HttpMethod.Get, "/api/data")
                     .WithAuthenticationOptions(options =>
                     {
@@ -347,10 +347,8 @@ After determining what works for you, proceed to call your custom web API.
     
         ```csharp
         // Create request with agent's user account identity authentication with UPN
-        public async Task<string> CallApiWithAgentUserIdentity(string agentIdentity, string userUpn)
+        public async Task<string> CallApiWithAgentUserIdentityByUpn(string agentIdentity, string userUpn)
         {
-            string agentIdentity = "<your-agent-identity>";
-            string userUpn = "<your-user-upn>";
         
             var request = new HttpRequestMessage(HttpMethod.Get, "/api/userdata")
                 .WithAuthenticationOptions(options => 
@@ -365,10 +363,8 @@ After determining what works for you, proceed to call your custom web API.
         }
         
         // Create request with agent's user account identity authentication with OID
-        public async Task<string> CallApiWithAgentUserIdentity(string agentIdentity, string userUpn)
+        public async Task<string> CallApiWithAgentUserIdentityByOid(string agentIdentity, string userOid)
         {
-            string agentIdentity = "<your-agent-identity>";
-            string userOid = "<your-user-oid>";
         
             var request = new HttpRequestMessage(HttpMethod.Get, "/api/userdata")
                 .WithAuthenticationOptions(options => 
@@ -447,8 +443,7 @@ After determining what works for you, proceed to call your custom web API.
         {
             private readonly IAuthorizationHeaderProvider _headerProvider;
             
-            public CustomApiController(
-                IAuthorizationHeaderProvider headerProvider,
+            public CustomApiController(IAuthorizationHeaderProvider headerProvider)
             {
                 _headerProvider = headerProvider;
             }
@@ -476,7 +471,7 @@ After determining what works for you, proceed to call your custom web API.
             }
         
             // On-behalf of user token scenario for agent identity
-            public async Task<IActionResult> GetBackgroundData()
+            public async Task<IActionResult> GetUserData()
             {
                 // Configure options for the agent identity
                 string agentIdentity = "agent-identity-guid";
@@ -542,7 +537,7 @@ After determining what works for you, proceed to call your custom web API.
             }
         
             // On-behalf of user token scenario for agent identity
-            public async Task<IActionResult> GetBackgroundData()
+            public async Task<IActionResult> GetUserData()
             {
                 // Configure options for the agent identity
                 string agentIdentity = "agent-identity-guid";
