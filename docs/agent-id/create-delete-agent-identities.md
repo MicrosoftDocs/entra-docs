@@ -71,7 +71,7 @@ Metadata: True
 After you obtain a token for the managed identity, request a token for the agent identity blueprint:
 
 ```
-POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
+POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=<agent-blueprint-id>
@@ -131,7 +131,7 @@ To use *Microsoft.Identity.Web* to execute the Microsoft Graph API request to cr
 {
   "AzureAd": {
 	"Instance": "https://login.microsoftonline.com/",
-	"TenantId": "<my-test-tenant>",
+	"TenantId": "<your-tenant-id>",
 	"ClientId": "<my-agent-blueprint-id>",
 	"Scopes": "access_agent",
 	"ClientCredentials": [

@@ -56,7 +56,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
     {
       "AzureAd": {
         "Instance": "https://login.microsoftonline.com/",
-        "TenantId": "<my-test-tenant>",
+        "TenantId": "<your-tenant-id>",
         "ClientId": "<agent-blueprint-client-id>",
         "ClientCredentials": [
           {
