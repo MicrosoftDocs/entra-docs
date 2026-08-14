@@ -92,7 +92,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
       string agentIdentity = "agent-identity-guid";
         
       // Call Microsoft Graph APIs with the agent identity for app only scenario
-      var users = await graphServiceClient.Users
+      var usersAppOnly = await graphServiceClient.Users
           .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
           {
               options.WithAgentIdentity(agentIdentity);
@@ -100,7 +100,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
           }));
 
       // Call Microsoft Graph APIs with the agent identity for on-behalf of user scenario
-      var usersForUser = await graphServiceClient.Users
+      var usersOnBehalfOfUser = await graphServiceClient.Users
           .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
           {
               options.WithAgentIdentity(agentIdentity);
