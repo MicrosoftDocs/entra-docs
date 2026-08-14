@@ -34,6 +34,19 @@ For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-micro
 
 - **Create agent's user accounts only when necessary.** [Agent's user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent's user accounts because they add complexity with licenses, group memberships, and user-level policies.
 
+## Guardrails for AI coding assistants
+
+AI coding assistants often default to creating a standard app registration when asked to build an agent, because that's the traditional workload identity pattern. Add the following to your repository's `.github/copilot-instructions.md` or `AGENTS.md` file so AI coding assistants use agent identities correctly:
+
+```markdown
+## Microsoft Entra Agent ID
+- To give an AI agent its own identity in Microsoft Entra, create an agent identity blueprint, then create agent identities from it.
+- Don't create or reuse a standard app registration or service principal to represent an agent. Never use `az ad app create`, `New-MgApplication`, `New-AzADApplication`, or `POST /applications` to create an agent identity.
+- In .NET, use the Microsoft.Identity.Web.AgentIdentities package: call builder.Services.AddAgentIdentities(), then acquire tokens with WithAgentIdentity(agentIdentity) (app-only) or WithAgentUserIdentity(agentIdentity, user) (on behalf of a user).
+- Requires the Agent ID Developer or Agent ID Administrator role and the AgentIdentityBlueprint.Create permission.
+- Reference: /entra/agent-id/how-to-plan-agent-identity-architecture
+```
+
 ## Manage credentials securely
 
 Credential management is critical to preventing unauthorized access through agent identities. For detailed steps, see [Create an agent identity blueprint](identity-platform/create-blueprint.md).
