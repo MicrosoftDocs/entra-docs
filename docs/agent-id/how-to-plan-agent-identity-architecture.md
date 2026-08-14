@@ -76,7 +76,7 @@ Choose **interactive** when your agent:
 Some agents need both. For example, an agent might run a nightly background sync using the autonomous pattern and also respond to user chat messages using the interactive pattern. In this case, implement both OAuth flows and select the appropriate token based on the operation.
 
 - For autonomous agents, see [Request agent tokens for autonomous agents](identity-platform/autonomous-agent-request-tokens.md).
-- For interactive agents, see [Authenticate users in interactive agents](identity-platform/interactive-agent-authenticate-user.md).
+- For interactive agents, see [Authenticate users in interactive agents](interactive-agent-authentication-authorization-flow.md).
 
 ## Step 3: Decide how many agent identity blueprints
 
