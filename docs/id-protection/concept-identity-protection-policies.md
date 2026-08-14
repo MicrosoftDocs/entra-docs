@@ -45,7 +45,7 @@ This control uses adaptive risk remediation to let you author a Conditional Acce
 
 - **Password authentication**: Risky user has an active risk detection, such as a leaked credential, password spray, or session history involving a compromised password. The user is prompted to perform a secure password change and when completed, their previous sessions are revoked. 
 - **Passwordless authentication**: Risky user has an active risk detection, but it doesn't involve a compromised password. Possible risk detections include anomalous token, impossible travel, or unfamiliar sign-in properties. The user's sessions are revoked and they're prompted to sign in again.
-- **Attacker-added device**: Risky user is flagged by Microsoft's threat intelligence as having a device added by an attacker. The Entra device object is disabled, blocking new token issuance and revoking existing device-bound refresh tokens. The user's sessions are revoked, and they're prompted to sign-in again. 
+- **Attacker-added device**: Risky user is flagged by Microsoft's threat intelligence as having a device added by an attacker. The Entra device object is disabled, blocking new token issuance. The user's sessions are revoked, and they're prompted to sign-in again. 
 
 #### Special considerations
 
