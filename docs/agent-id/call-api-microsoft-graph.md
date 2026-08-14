@@ -26,6 +26,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
 1. Add the support for Microsoft Graph and agent identities in your service collection.
 
     ```csharp
+    using Microsoft.AspNetCore.Authentication.OpenIdConnect;
     using Microsoft.Identity.Web;
     
     var builder = WebApplication.CreateBuilder(args);
@@ -93,7 +94,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
           }));
 
       // Call Microsoft Graph APIs with the agent identity for on-behalf of user scenario
-      var applications = await graphServiceClient.Applications
+      var applicationsForUser = await graphServiceClient.Applications
           .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
           {
               options.WithAgentIdentity(agentIdentity);
@@ -117,7 +118,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
         
         // Or using OID
         string userOid = "user-object-id";
-        var me = await graphServiceClient.Me
+        var meByOid = await graphServiceClient.Me
             .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
                 options.WithAgentUserIdentity(agentIdentity, userOid)));
         ```
