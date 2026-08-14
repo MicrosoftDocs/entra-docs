@@ -355,6 +355,7 @@ To use `Microsoft.Identity.Web` to create an agent's user account, follow these 
 
     ```csharp
     using Microsoft.Identity.Abstractions;
+    using Microsoft.Identity.Web;
     using Microsoft.Identity.Web.Resource;
     using Microsoft.IdentityModel.S2S.Extensions.AspNetCore;
 
