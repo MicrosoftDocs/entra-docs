@@ -322,6 +322,8 @@ items:
             href: faq-transport-layer-security.yml
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Migrate web content filtering policies to V2
+        href: how-to-migrate-web-content-filtering-policies.md
       - name: Check URL category
         href: how-to-check-web-content-filtering-categories.md
       - name: Configure threat intelligence

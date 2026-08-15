@@ -135,4 +135,5 @@ In short, a V2 policy can add blocks that override V1, but it can't force-allow 
 
 ## Next steps
 
+- [Migrate web content filtering policies from V1 to V2](how-to-migrate-web-content-filtering-policies.md)
 - [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md)
