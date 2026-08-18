@@ -91,7 +91,7 @@ Complete the following steps for *each* platform you're deploying to. These step
 1. Install the Microsoft Company Portal or deploy it via your MDM solution. Company Portal serves as the authentication broker for Microsoft Entra sign-ins.
 1. Enable hardware-backed registration using one of the following options:
    - Option A: Enable the [Microsoft Enterprise SSO plug-in for Apple Devices](../../identity-platform/apple-sso-plugin.md).
-   - Option B: Configure **Platform SSO for macOS**. Platform SSO uses hardware-backed storage by default. For setup instructions, see [Configure Platform SSO for macOS devices in Microsoft Intune](/intune/intune-service/configuration/platform-sso-macos).
+   - Option B: Configure **Platform SSO for macOS**. For setup instructions, see [Configure Platform SSO for macOS devices in Microsoft Intune](/intune/intune-service/configuration/platform-sso-macos).
 
 ---
 
