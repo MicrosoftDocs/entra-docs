@@ -1,103 +1,160 @@
 ---
 title: Configure Cosgrid Networks for Single sign-on with Microsoft Entra ID
-description: Learn how to configure single sign-on between Microsoft Entra ID and Cosgrid Networks.
-
+description: Learn how to configure single sign-on between Microsoft Entra ID and Cosgrid Networks using SAML.
 ms.topic: how-to
-ms.date: 03/25/2025
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cosgrid Networks so that I can control who has access to Cosgrid Networks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
---- 
+ms.date: 08/18/2026
+---
 
 # Configure Cosgrid Networks for Single sign-on with Microsoft Entra ID
 
-In this article, you learn how to integrate Cosgrid Networks with Microsoft Entra ID. Cosgrid Networks offers secure and efficient enterprise connections through SD-WAN and SASE solutions. Our flexible architecture transforms your network infrastructure for seamless operations. When you integrate Cosgrid Networks with Microsoft Entra ID, you can:
+In this article, you learn how to configure single sign-on (SSO) between Cosgrid Networks and Microsoft Entra ID using Security Assertion Markup Language (SAML). The integration allows users to sign in to Cosgrid Networks using their Microsoft Entra ID credentials.
 
-* Control in Microsoft Entra ID who has access to Cosgrid Networks.
-* Enable your users to be automatically signed-in to Cosgrid Networks with their Microsoft Entra accounts.
-* Manage your accounts in one central location.
+This article covers:
 
-You configure and test Microsoft Entra single sign-on for Cosgrid Networks in a test environment. Cosgrid Networks supports **SP** initiated single sign-on.
-
-> [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+- Configure SAML SSO in Cosgrid Networks
+- Configure Cosgrid Networks in Microsoft Entra ID
+- Configure SAML claims
+- Assign users to the application
+- Test SSO
 
 ## Prerequisites
 
 To integrate Microsoft Entra ID with Cosgrid Networks, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
-* Cosgrid Networks single sign-on (SSO) enabled subscription.
+- A Microsoft Entra ID tenant.
+- One of the following roles: [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or [Application Owner](~/fundamentals/users-default-permissions.md#owned-enterprise-applications).
+- A Cosgrid Networks tenant.
+- Administrator access to Cosgrid Networks.
+- A test user account in Microsoft Entra ID.
 
-## Add application and assign a test user
+## Configure SAML SSO in Cosgrid Networks
 
-Before you begin the process of configuring single sign-on, you need to add the Cosgrid Networks application from the Microsoft Entra gallery. You need a test user account to assign to the application and test the single sign-on configuration.
+1. Sign in to your Cosgrid Networks administrator portal.
+1. Navigate to **Single Sign-On**.
+1. Select **SAML**.
+1. The **Set up SAML SSO** page is displayed.
 
-<a name='add-cosgrid-networks-from-the-azure-ad-gallery'></a>
+    [![Screenshot shows the Set up SAML SSO page in Cosgrid Networks with the Metadata URL and Enter details manually options.](media/cosgrid-networks-tutorial/saml-step-1.png "Set up SAML SSO")](media/cosgrid-networks-tutorial/saml-step-1.png)
 
-### Add Cosgrid Networks from the Microsoft Entra gallery
+    Cosgrid Networks provides two options for configuring the identity provider:
 
-Add Cosgrid Networks from the Microsoft Entra application gallery to configure single sign-on with Cosgrid Networks. For more information on how to add application from the gallery, see the [Quickstart: Add application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
+    - **Metadata URL**: Automatically retrieves the identity provider configuration, including the entity ID, sign-in URL, sign-out URL, and signing certificate.
+    - **Enter details manually**: Allows you to enter the identity provider details and signing certificate manually.
 
-<a name='create-and-assign-azure-ad-test-user'></a>
+    The **Metadata URL** option is recommended.
 
-### Create and assign Microsoft Entra test user
+1. Select **Metadata URL**, then select **Continue**.
+1. The **Read from your identity provider** page is displayed.
 
-Follow the guidelines in the [create and assign a user account](~/identity/enterprise-apps/add-application-portal-assign-users.md) article to create a test user account called B.Simon.
+    [![Screenshot shows the Read from your identity provider page with a field to paste the metadata URL.](media/cosgrid-networks-tutorial/saml-step-2.png "Read from your identity provider")](media/cosgrid-networks-tutorial/saml-step-2.png)
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, and assign roles. The wizard also provides a link to the single sign-on configuration pane. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides). 
+1. Enter the SAML metadata URL provided by Microsoft Entra ID in the **Metadata URL** field.
+1. Select **Continue**.
 
-<a name='configure-azure-ad-sso'></a>
+Cosgrid Networks retrieves the identity provider configuration from the metadata URL. The metadata URL provides identity provider information such as:
 
-## Configure Microsoft Entra SSO
+- Entity ID
+- Sign-in URL
+- Sign-out URL
+- Signing certificate
 
-Complete the following steps to enable Microsoft Entra single sign-on.
+### Manual configuration
+
+If you don't use a metadata URL, select **Enter details manually** on the SAML configuration page and enter the identity provider details provided by Microsoft Entra ID.
+
+| Setting | Value |
+| ----- | ----- |
+| Entity ID | Microsoft Entra ID Entity ID |
+| Sign-in URL | Microsoft Entra login URL |
+| Sign-out URL | Microsoft Entra logout URL |
+| Signing certificate | Microsoft Entra SAML certificate |
+
+> [!NOTE]
+> The exact fields displayed may depend on the configuration supported by the Cosgrid Networks tenant.
+
+## Add Cosgrid Networks to Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **Cosgrid Networks** > **Single sign-on**.
-1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. Browse to **Entra ID** > **Enterprise applications** > **New application**.
+1. Search for **Cosgrid Networks**.
+1. Select the **Cosgrid Networks** application and add it to your tenant.
 
-   ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
+If Cosgrid Networks is already configured in your tenant, open the existing enterprise application instead.
 
-1. On the **Basic SAML Configuration** section, perform the following steps:
+## Configure SAML
 
-    a. In the **Identifier** textbox, type the URL:
-    `https://cosgridnetworks.in/api/v1/auth/acs/`
+1. In the Cosgrid Networks enterprise application, select **Single sign-on**.
+1. Select **SAML**.
+1. In **Basic SAML Configuration**, enter the values provided by Cosgrid Networks.
 
-    b. In the **Reply URL** textbox, type the URL:
-    `https://cosgridnetworks.in/api/v1/auth/acs/`
+    | Microsoft Entra setting | Value |
+    | ----- | ----- |
+    | Identifier (Entity ID) | `https://cosgridnetworks.in/api/v1/auth/acs/` |
+    | Reply URL (ACS URL) | `https://cosgridnetworks.in/api/v1/auth/acs/` |
+    | Sign-on URL | `https://cosgrid.net/auth/login` |
 
-    c. In the **Sign on URL** textbox, type the URL:
-    `https://www.cosgrid.net/auth/login`
+1. Save the configuration.
+1. Under **SAML Certificates**, locate the certificate used to sign SAML responses.
+1. Download or copy the certificate information required by Cosgrid Networks.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
+> [!NOTE]
+> Use the exact values displayed by your Cosgrid Networks tenant. Don't use the placeholder values shown in this article.
 
-    ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
+## Configure user attributes
 
-## Configure Cosgrid Networks SSO
+Configure the claims that Cosgrid Networks uses to identify users. For example:
 
-To configure single sign-on on **Cosgrid Networks** side, you need to send the **App Federation Metadata Url** to [Cosgrid Networks support team](mailto:contact@cosgrid.com). They set this setting to have the SAML SSO connection set properly on both sides.
+| Claim | Source attribute |
+| ----- | ----- |
+| Email | `user.mail` |
+| First name | `user.givenname` |
+| Last name | `user.surname` |
+| Username | `user.userprincipalname` |
+| Groups | Microsoft Entra group attribute |
 
-### Create Cosgrid Networks test user
+> [!NOTE]
+> The exact claims and source attributes must match the attribute mappings supported and configured by Cosgrid Networks.
 
-In this section, you create a user called Britta Simon at Cosgrid Networks. Work with [Cosgrid Networks support team](mailto:contact@cosgrid.com) to add the users in the Cosgrid Networks platform. Users must be created and activated before you use single sign-on.
+Save the claim configuration.
 
-## Test SSO 
+## Assign users
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options. 
+1. In the Cosgrid Networks enterprise application, select **Users and groups**.
+1. Select **Add user/group**.
+1. Select the test user.
+1. Assign the user to the application.
 
-* Select **Test this application**, this option redirects to Cosgrid Networks Sign-on URL where you can initiate the login flow. 
+Only users assigned to the enterprise application can access the application when user assignment is required.
 
-* Go to Cosgrid Networks Sign-on URL directly and initiate the login flow from there.
+## Test SSO
 
-* You can use Microsoft My Apps. When you select the Cosgrid Networks tile in the My Apps, this option redirects to Cosgrid Networks Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+1. Sign in to the Cosgrid Networks portal.
+1. Select the SSO option.
+1. Sign in using the assigned Microsoft Entra ID account.
+1. Complete the Microsoft Entra authentication process.
+1. Verify that you're redirected to Cosgrid Networks.
+1. Verify that the user is successfully signed in.
+1. Verify that the user's attributes are populated correctly.
 
-## Additional resources
+If the test succeeds, SAML SSO is configured.
 
-* [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
-* [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
+## Troubleshooting
 
-## Related content
+If SAML SSO doesn't work, verify the following:
 
-Once you configure Cosgrid Networks you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
+**Metadata URL**: Make sure the metadata URL entered in Cosgrid Networks is correct and accessible.
+
+**Entity ID**: Verify that the Identifier (Entity ID) configured in Microsoft Entra ID matches the service provider Entity ID expected by Cosgrid Networks.
+
+**Reply URL**: Verify that the Reply URL (ACS URL) exactly matches the ACS URL provided by Cosgrid Networks.
+
+**User assignment**: Verify that the test user is assigned to the Cosgrid Networks enterprise application.
+
+**Claims**: Verify that the claims sent by Microsoft Entra ID match the attributes expected by Cosgrid Networks.
+
+**Certificate**: Verify that the SAML signing certificate configured in Cosgrid Networks matches the certificate currently used by Microsoft Entra ID.
+
+## Next steps
+
+- [Configure OIDC single sign-on with Cosgrid Networks](cosgrid-networks-oidc-tutorial.md)
+- [Configure automatic user provisioning with SCIM](cosgrid-networks-provisioning-tutorial.md)
