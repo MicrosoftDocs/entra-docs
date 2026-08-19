@@ -466,7 +466,7 @@ Selecting this option forces a resynchronization of all users while the provisio
   - The user is out of scope due to not meeting a scoping filter. 
   - The user is soft deleted in Microsoft Entra ID. 
   - The property `AccountEnabled` is set to false on the user. Try to keep the `IsSoftDeleted` attribute in your attribute mappings.
-- The Microsoft Entra provisioning service doesn't support provisioning null values.
+- By default, the Microsoft Entra provisioning service doesn't send null values to target systems. Clearing attribute values is available in preview only for API-driven inbound provisioning apps. It isn't currently supported for other application provisioning scenarios or for inbound provisioning from Workday or SAP SuccessFactors. To enable this feature for API-driven inbound provisioning apps, see [Clear attribute values (Preview)](clear-attribute-values.md).
 - They primary key, typically `ID`, shouldn't be included as a target attribute in your attribute mappings. 
 - The role attribute typically needs to be mapped using an expression, rather than a direct mapping. For more information about role mapping, see [Provisioning a role to a SCIM app](#provisioning-a-role-to-a-scim-app). 
 - While you can disable groups from your mappings, disabling users isn't supported. 

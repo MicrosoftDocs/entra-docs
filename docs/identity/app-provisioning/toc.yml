@@ -137,7 +137,7 @@ items:
       items:
       - name: Retrieve pronoun information
         href: workday-retrieve-pronoun-information.md
-      - name: Configure Workday termination lookahead (Preview)
+      - name: Configure Workday termination lookahead
         href: configure-workday-termination-lookahead.md
     - name: Troubleshoot application provisioning
       items:
@@ -177,10 +177,14 @@ items:
       items: 
       - name: Inbound provisioning API issues
         href: inbound-provisioning-api-issues.md
-    - name: Enable accidental deletions prevention
-      href: accidental-deletions.md
-    - name: Automate configuration using MS Graph
-      href: application-provisioning-configuration-api.md
+    - name: Manage provisioning configuration
+      items:
+      - name: Clear attribute values (Preview)
+        href: clear-attribute-values.md
+      - name: Enable accidental deletions prevention
+        href: accidental-deletions.md
+      - name: Automate configuration using MS Graph
+        href: application-provisioning-configuration-api.md
   - name: Reference
     items: 
     - name: Provision a user with Expression Builder
