@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Learn about requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID.
-ms.date: 08/18/2026
+ms.date: 08/20/2026
 ms.reviewer: kimhana
 ms.topic: concept-article
 ---
@@ -87,8 +87,8 @@ eWBM eFA310 FIDO2 Authenticator|95442b2e-f15e-4def-b270-efb106facb4e|&#x2705;|&#
 eWBM eFA320 FIDO2 Authenticator|87dbc5a1-4c94-4dc8-8a47-97d800fd1f3c|&#x2705;|&#10060;|&#10060;|&#10060;
 eWBM eFPA FIDO2 Authenticator|61250591-b2bc-4456-b719-0b17be90bb30|&#x2705;|&#10060;|&#10060;|&#10060;
 Excelsecu eSecu FIDO2 Fingerprint Key|6002f033-3c07-ce3e-d0f7-0ffe5ed42543|&#x2705;|&#x2705;|&#10060;|&#10060;
-Excelsecu eSecu FIDO2 Fingerprint Security Key|d384db22-4d50-ebde-2eac-5765cf1e2a44|&#x2705;|&#x2705;|&#10060;|&#10060;
 Excelsecu eSecu FIDO2 Fingerprint Security Key|20f0be98-9af9-986a-4b42-8eca4acb28e4|&#x2705;|&#x2705;|&#10060;|&#10060;
+Excelsecu eSecu FIDO2 Fingerprint Security Key|d384db22-4d50-ebde-2eac-5765cf1e2a44|&#x2705;|&#x2705;|&#10060;|&#10060;
 Excelsecu eSecu FIDO2 NFC Security Key|fbefdf68-fe86-0106-213e-4d5fa24cbe2e|&#10060;|&#x2705;|&#x2705;|&#10060;
 Excelsecu eSecu FIDO2 NFC Security Key|a3975549-b191-fd67-b8fb-017e2917fdb3|&#10060;|&#x2705;|&#x2705;|&#10060;
 Excelsecu eSecu FIDO2 Pro Security Key|0d9b2e56-566b-c393-2940-f821b7f15d6d|&#10060;|&#x2705;|&#x2705;|&#x2705;
@@ -97,16 +97,16 @@ Excelsecu eSecu FIDO2 Security Key|cdbdaea2-c415-5073-50f7-c04e968640b6|&#10060;
 Feitian AllinOne FIDO2 Authenticator|12ded745-4bed-47d4-abaa-e713f51d6393|&#x2705;|&#x2705;|&#x2705;|&#x2705;
 Feitian BioPass FIDO2 Authenticator|77010bd7-212a-4fc9-b236-d2ca5e9d4084|&#x2705;|&#x2705;|&#10060;|&#10060;
 Feitian BioPass FIDO2 Plus (Enterprise Profile)|a02140b7-0cbd-42e1-a9b5-a39da2545114|&#x2705;|&#x2705;|&#10060;|&#10060;
-Feitian BioPass FIDO2 Plus Authenticator|b6ede29c-3772-412c-8a78-539c1f4c62d2|&#x2705;|&#x2705;|&#10060;|&#10060;
 Feitian BioPass FIDO2 Plus Authenticator|42df17de-06ba-4177-a2bb-6701be1380d6|&#x2705;|&#x2705;|&#10060;|&#10060;
+Feitian BioPass FIDO2 Plus Authenticator|b6ede29c-3772-412c-8a78-539c1f4c62d2|&#x2705;|&#x2705;|&#10060;|&#10060;
 Feitian BioPass FIDO2 Pro (Enterprise Profile)|2bff89f2-323a-48fc-b7c8-9ff7fe87c07e|&#x2705;|&#x2705;|&#10060;|&#10060;
 Feitian BioPass FIDO2 Pro Authenticator|4c0cf95d-2f40-43b5-ba42-4c83a11c04ba|&#x2705;|&#x2705;|&#10060;|&#10060;
 Feitian ePass FIDO Authenticator (CTAP2.1, CTAP2.0, U2F)|12755c32-8ad1-46eb-881c-e0b38d848b09|&#10060;|&#x2705;|&#10060;|&#10060;
+Feitian ePass FIDO-NFC (Enterprise Profile) (CTAP2.1, CTAP2.0, U2F)|39589099-9a75-49fc-afaa-801ca211c62a|&#10060;|&#x2705;|&#x2705;|&#10060;
+Feitian ePass FIDO-NFC(CTAP2.1, CTAP2.0, U2F)|78ba3993-d784-4f44-8d6e-cc0a8ad5230e|&#10060;|&#x2705;|&#x2705;|&#10060;
 Feitian ePass FIDO2 Authenticator|833b721a-ff5f-4d00-bb2e-bdda3ec01e29|&#10060;|&#x2705;|&#10060;|&#10060;
 Feitian ePass FIDO2-NFC Authenticator|ee041bce-25e5-4cdb-8f86-897fd6418464|&#10060;|&#x2705;|&#x2705;|&#10060;
 Feitian ePass FIDO2-NFC Series (CTAP2.1, CTAP2.0, U2F)|234cd403-35a2-4cc2-8015-77ea280c77f5|&#10060;|&#x2705;|&#x2705;|&#10060;
-Feitian ePass FIDO-NFC (Enterprise Profile) (CTAP2.1, CTAP2.0, U2F)|39589099-9a75-49fc-afaa-801ca211c62a|&#10060;|&#x2705;|&#x2705;|&#10060;
-Feitian ePass FIDO-NFC(CTAP2.1, CTAP2.0, U2F)|78ba3993-d784-4f44-8d6e-cc0a8ad5230e|&#10060;|&#x2705;|&#x2705;|&#10060;
 Feitian iePass FIDO Authenticator|3e22415d-7fdf-4ea4-8a0c-dd60c4249b9d|&#10060;|&#x2705;|&#10060;|&#10060;
 FIDO KeyPass S3|f4c63eff-d26c-4248-801c-3736c7eaa93a|&#10060;|&#x2705;|&#10060;|&#10060;
 Foongtone FIDO Authenticator|46544d5d-8f5d-4db4-89ac-ea8977073fff|&#10060;|&#10060;|&#x2705;|&#10060;
@@ -130,8 +130,8 @@ HID Crescendo Enabled|54d9fee8-e621-4291-8b18-7157b99c5bec|&#10060;|&#10060;|&#x
 HID Crescendo Fusion|c4ddaf11-3032-4e77-b3b9-3a340369b9ad|&#10060;|&#10060;|&#x2705;|&#10060;
 HID Crescendo Key|692db549-7ae5-44d5-a1e5-dd20a493b723|&#10060;|&#x2705;|&#x2705;|&#10060;
 HID Crescendo Key V2|2d3bec26-15ee-4f5d-88b2-53622490270b|&#10060;|&#x2705;|&#x2705;|&#10060;
-HID Crescendo Key V3|87c13177-85d6-40ac-8c61-fe7ab3de9dfb|&#10060;|&#x2705;|&#x2705;|&#10060;
 HID Crescendo Key V3|7991798a-a7f3-487f-98c0-3faf7a458a04|&#10060;|&#x2705;|&#x2705;|&#10060;
+HID Crescendo Key V3|87c13177-85d6-40ac-8c61-fe7ab3de9dfb|&#10060;|&#x2705;|&#x2705;|&#10060;
 HID Crescendo Key V3 - Enterprise Edition|13ac47cf-1d78-4fd5-9060-aedaabacf826|&#10060;|&#x2705;|&#x2705;|&#10060;
 Hideez Key 4 FIDO2 SDK|4e768f2c-5fab-48b3-b300-220eb487752b|&#10060;|&#x2705;|&#x2705;|&#x2705;
 Hyper FIDO Bio Security Key|d821a7d4-e97c-4cb6-bd82-4237731fd4be|&#x2705;|&#x2705;|&#10060;|&#10060;
@@ -139,6 +139,9 @@ Hyper FIDO Pro|9f77e279-a6e2-4d58-b700-31e5943c6a98|&#10060;|&#x2705;|&#10060;|&
 Hyper FIDO Pro (CTAP2.1, CTAP2.0, U2F)|6999180d-630c-442d-b8f7-424b90a43fae|&#10060;|&#x2705;|&#10060;|&#10060;
 Hyper FIDO Pro NFC|23195a52-62d9-40fa-8ee5-23b173f4fb52|&#10060;|&#x2705;|&#x2705;|&#10060;
 HYPR FIDO2 Authenticator|0076631b-d4a0-427f-5773-0ec71c9e0279|&#x2705;|&#10060;|&#10060;|&#10060;
+ID-One Card|bb405265-40cf-4115-93e5-a332c1968d8c|&#10060;|&#10060;|&#x2705;|&#10060;
+ID-One Key|82b0a720-127a-4788-b56d-d1d4b2d82eac|&#10060;|&#x2705;|&#x2705;|&#10060;
+ID-One Key|f2145e86-211e-4931-b874-e22bba7d01cc|&#10060;|&#x2705;|&#x2705;|&#10060;
 IDCore 3121 Fido|e86addcd-7711-47e5-b42a-c18257b0bf61|&#10060;|&#10060;|&#x2705;|&#10060;
 IDEMIA ID-ONE Card|8d1b1fcb-3c76-49a9-9129-5515b346aa02|&#10060;|&#x2705;|&#x2705;|&#10060;
 IDEMIA SOLVO Fly 80 R3 FIDO Card c|dda9aa35-aaf1-4d3c-b6db-7902fd7dbbbf|&#10060;|&#10060;|&#x2705;|&#10060;
@@ -146,9 +149,6 @@ IDEMIA SOLVO Fly 80 R3 FIDO Card e|def8ab1a-9f91-44f1-a103-088d8dc7d681|&#10060;
 IDEX CTAP2.1 Biometrics|49a15c1c-3f63-3f51-23a7-b9e00096edd1|&#x2705;|&#x2705;|&#x2705;|&#10060;
 IDmelon Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|&#x2705;|&#x2705;|&#10060;|&#x2705;
 IDmelon Key|39a5647e-1853-446c-a1f6-a79bae9f5bc7|&#x2705;|&#x2705;|&#x2705;|&#10060;
-ID-One Card|bb405265-40cf-4115-93e5-a332c1968d8c|&#10060;|&#10060;|&#x2705;|&#10060;
-ID-One Key|82b0a720-127a-4788-b56d-d1d4b2d82eac|&#10060;|&#x2705;|&#x2705;|&#10060;
-ID-One Key|f2145e86-211e-4931-b874-e22bba7d01cc|&#10060;|&#x2705;|&#x2705;|&#10060;
 IDPrime 3930 FIDO|ca4cff1b-5a81-4404-8194-59aabcf1660b|&#10060;|&#10060;|&#x2705;|&#10060;
 IDPrime 3940 FIDO|b50d5e0a-7f81-4959-9b12-f45407407503|&#10060;|&#10060;|&#x2705;|&#10060;
 IDPrime 931 Fido|2194b428-9397-4046-8f39-007a1605a482|&#10060;|&#10060;|&#x2705;|&#10060;
@@ -172,8 +172,8 @@ Nymi FIDO2 Authenticator|0acf3011-bc60-f375-fb53-6f05f43154e0|&#x2705;|&#10060;|
 OCTATCO EzFinger2 FIDO2 AUTHENTICATOR|a1f52be5-dfab-4364-b51c-2bd496b14a56|&#x2705;|&#10060;|&#10060;|&#10060;
 OneKey FIDO2 Bluetooth Authenticator|70e7c36f-f2f6-9e0d-07a6-bcc243262e6b|&#10060;|&#x2705;|&#10060;|&#x2705;
 OneSpan DIGIPASS FX1 BIO|30b5035e-d297-4ff1-b00b-addc96ba6a98|&#x2705;|&#x2705;|&#10060;|&#x2705;
-OneSpan DIGIPASS FX1a|30b5035e-d297-4ff1-010b-addc96ba6a98|&#x2705;|&#x2705;|&#x2705;|&#10060;
 OneSpan DIGIPASS FX1-C|30b5035e-d297-4ff1-020b-addc96ba6a98|&#10060;|&#x2705;|&#x2705;|&#10060;
+OneSpan DIGIPASS FX1a|30b5035e-d297-4ff1-010b-addc96ba6a98|&#x2705;|&#x2705;|&#x2705;|&#10060;
 OneSpan DIGIPASS FX2-A|30b5035e-d297-4ff2-010b-addc96ba6a98|&#x2705;|&#x2705;|&#x2705;|&#x2705;
 OneSpan DIGIPASS FX7|30b5035e-d297-4ff7-020b-addc96ba6a98|&#10060;|&#x2705;|&#10060;|&#10060;
 OneSpan DIGIPASS FX7|30b5035e-d297-4ff7-b00b-addc96ba6a98|&#10060;|&#x2705;|&#10060;|&#10060;
@@ -195,12 +195,12 @@ SECORA ID V2 by Infineon Pay Edition|3e9db280-256a-4e17-b08e-19d79e9be166|&#1006
 SECORA ID V2 by Infineon Pay Edition M|005b20e1-f146-4b87-8f3a-36848ff60ea6|&#10060;|&#10060;|&#x2705;|&#10060;
 SECORA ID V2 FIDO2.1 L1|4e2ddbc2-2687-4709-8551-cb66c9776bfe|&#10060;|&#10060;|&#x2705;|&#10060;
 Securitag Assembly Group FIDO Authenticator NFC|5df66f62-5b47-43d3-aa1d-a6e31c8dbeb5|&#10060;|&#x2705;|&#x2705;|&#10060;
-Security Key by Yubico|f8a011f3-8c0a-4d15-8006-17111f9edc7d|&#10060;|&#x2705;|&#10060;|&#10060;
 Security Key by Yubico|b92c3f9a-c014-4056-887f-140a2501163b|&#10060;|&#x2705;|&#10060;|&#10060;
+Security Key by Yubico|f8a011f3-8c0a-4d15-8006-17111f9edc7d|&#10060;|&#x2705;|&#10060;|&#10060;
 Security Key by Yubico with NFC|149a2021-8ef6-4133-96b8-81f8d5b7f1f5|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key by Yubico with NFC|6d44ba9b-f6ec-2e49-b930-0c8fe920cb73|&#10060;|&#x2705;|&#x2705;|&#10060;
-Security Key NFC by Yubico|b7d3f68e-88a6-471e-9ecf-2df26d041ede|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico|a4e9fc6d-4cbe-4758-b8ba-37598bb5bbaa|&#10060;|&#x2705;|&#x2705;|&#10060;
+Security Key NFC by Yubico|b7d3f68e-88a6-471e-9ecf-2df26d041ede|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico|e77e3c64-05e3-428b-8824-0cbeb04b829d|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition|47ab2fb4-66ac-4184-9ae1-86be814012d5|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition|ed042a3a-4b22-4455-bb69-a267b652ae7e|&#10060;|&#x2705;|&#x2705;|&#10060;
@@ -251,8 +251,8 @@ YubiKey 5 CCN Series with NFC|3aa78eb1-ddd8-46a8-a821-8f8ec57a7bd5|&#10060;|&#x2
 YubiKey 5 CCN Series with NFC (Consumer Profile)|eb7ef748-cbe0-4b40-b8f6-07bd2d592d35|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 CCN Series with NFC (Enterprise Profile)|3ec9c8d3-a5a7-415b-a7b5-f1d606368d3f|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 CCN Series with NFC (Enterprise Profile)|4fc84f16-2545-4e53-b8fc-7bf4d7282a10|&#10060;|&#x2705;|&#x2705;|&#10060;
-YubiKey 5 FIPS Series|73bb0cd4-e502-49b8-9c6f-b59445bf720b|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 FIPS Series|57f7de54-c807-4eab-b1c6-1c9be7984e92|&#10060;|&#x2705;|&#10060;|&#10060;
+YubiKey 5 FIPS Series|73bb0cd4-e502-49b8-9c6f-b59445bf720b|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 FIPS Series (Enterprise Profile)|905b4cb4-ed6f-4da9-92fc-45e0d4e9b5c7|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 FIPS Series with Lightning|85203421-48f9-4355-9bc8-8a53846e5083|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 FIPS Series with Lightning|7b96457d-e3cd-432b-9ceb-c9fdd7ef7432|&#10060;|&#x2705;|&#10060;|&#10060;
