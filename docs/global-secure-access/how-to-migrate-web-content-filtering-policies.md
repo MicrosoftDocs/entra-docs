@@ -56,9 +56,9 @@ Selecting the migration action migrates all eligible profiles in a single operat
 
 For each eligible security profile, migration performs the following actions:
 
-- Creates a single new, enabled V2 web filtering policy.
-- Adds each linked V1 policy as a rule under that V2 policy, preserving its destinations, action, and priority.
-- Links the new V2 policy to the security profile and removes the V1 policy links, so there's no gap in enforcement.
+1. Creates a single new, enabled V2 web filtering policy.
+1. Adds each linked V1 policy as a rule under that V2 policy, preserving its destinations, action, and priority.
+1. Links the new V2 policy to the security profile and removes the V1 policy links, so there's no gap in enforcement.
 
 ### Naming applied to migrated objects
 
@@ -150,8 +150,8 @@ If a profile can't be migrated, the experience surfaces a message describing why
 
 Migration is delivered in two phases:
 
-- **Self-service migration**: You migrate your own eligible security profiles by using the guided experience.
-- **Microsoft-managed migration**: After V1 deprecation is announced and a timeline is published, Microsoft migrates any remaining profiles on your behalf, including attached and unattached V1 policies, so all tenants are transitioned to V2 with no loss of policy data and no interruption to enforcement.
+1. **Self-service migration**: You migrate your own eligible security profiles by using the guided experience.
+1. **Microsoft-managed migration**: After V1 deprecation is announced and a timeline is published, Microsoft migrates any remaining profiles on your behalf, including attached and unattached V1 policies, so all tenants are transitioned to V2 with no loss of policy data and no interruption to enforcement.
 
 ## Next steps
 
