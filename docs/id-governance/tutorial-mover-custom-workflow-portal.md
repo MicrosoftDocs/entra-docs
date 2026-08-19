@@ -16,6 +16,7 @@ This tutorial provides a step-by-step guide on how to automate mover tasks with 
 This Mover scenario runs a scheduled workflow and accomplishes the following tasks:
  
 1. Sends email to notify manager of user move
+1. Removes all access package assignments for the user (scheduled removal defaulting to 15 days)
 1. Adds user to groups
 
 ## Prerequisites
@@ -61,7 +62,7 @@ Use the following steps to create a mover workflow for a user making a job chang
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-basics.png" alt-text="Screenshot of setting attribute change membership trigger in template.":::
 1. On the next screen you configure the scope. The scope determines which users this workflow runs against.  In this case, it is on all users added to the Sales department. On the configure scope screen, under **Rule** add the following settings, and then select **Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/group-scope.png" alt-text="Screenshot of setting attribute change scope.":::
-1. On the **Review tasks** screen, you're able to add, edit, or remove tasks. From the default tasks, remove **Remove user from selected groups**, **Remove user from Selected Teams**, and **Request user access package assignment** from the list and add **Add user to groups** from the add task screen. Edit the **Add user to groups** task so that the Sales group is selected. Once complete, select **Review + create**. 
+1. On the **Review tasks** screen, you're able to add, edit, or remove tasks. From the default tasks, remove **Remove user from selected groups**, **Remove user from Selected Teams**, and **Request user access package assignment** from the list and add **Add user to groups** from the add task screen. Keep the **Remove all access package assignments for user** task, which is included by default with scheduled removal set to 15 days. Edit the **Add user to groups** task so that the Sales group is selected. Once complete, select **Review + create**. 
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-tasks.png" alt-text="Screenshot of job change template tasks.":::
 
 1. On the review screen, verify the information is correct, and choose to enable the schedule of the workflow. After reviewing, select **Create**.
