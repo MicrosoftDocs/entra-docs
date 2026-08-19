@@ -89,8 +89,8 @@ eWBM eFPA FIDO2 Authenticator|61250591-b2bc-4456-b719-0b17be90bb30|&#x2705;|&#10
 Excelsecu eSecu FIDO2 Fingerprint Key|6002f033-3c07-ce3e-d0f7-0ffe5ed42543|&#x2705;|&#x2705;|&#10060;|&#10060;
 Excelsecu eSecu FIDO2 Fingerprint Security Key|20f0be98-9af9-986a-4b42-8eca4acb28e4|&#x2705;|&#x2705;|&#10060;|&#10060;
 Excelsecu eSecu FIDO2 Fingerprint Security Key|d384db22-4d50-ebde-2eac-5765cf1e2a44|&#x2705;|&#x2705;|&#10060;|&#10060;
-Excelsecu eSecu FIDO2 NFC Security Key|fbefdf68-fe86-0106-213e-4d5fa24cbe2e|&#10060;|&#x2705;|&#x2705;|&#10060;
 Excelsecu eSecu FIDO2 NFC Security Key|a3975549-b191-fd67-b8fb-017e2917fdb3|&#10060;|&#x2705;|&#x2705;|&#10060;
+Excelsecu eSecu FIDO2 NFC Security Key|fbefdf68-fe86-0106-213e-4d5fa24cbe2e|&#10060;|&#x2705;|&#x2705;|&#10060;
 Excelsecu eSecu FIDO2 Pro Security Key|0d9b2e56-566b-c393-2940-f821b7f15d6d|&#10060;|&#x2705;|&#x2705;|&#x2705;
 Excelsecu eSecu FIDO2 PRO Security Key|bbf4b6a7-679d-f6fc-c4f2-8ac0ddf9015a|&#10060;|&#x2705;|&#x2705;|&#x2705;
 Excelsecu eSecu FIDO2 Security Key|cdbdaea2-c415-5073-50f7-c04e968640b6|&#10060;|&#x2705;|&#10060;|&#10060;
@@ -117,7 +117,7 @@ Google Titan Security Key v2|42b4fb4a-2866-43b2-9bf7-6c6669c2e5d3|&#10060;|&#x27
 GoTrust Cyber Key|6d4aa745-dad5-40c4-b9b4-6a252fcee70f|&#10060;|&#x2705;|&#x2705;|&#10060;
 GoTrust Idem Card|9f0d8150-baa5-4c00-9299-ad62c8bb4e87|&#10060;|&#10060;|&#10060;|&#10060;
 GoTrust Idem Key|3b1adb99-0dfe-46fd-90b8-7f7614a4de2a|&#10060;|&#x2705;|&#x2705;|&#10060;
-GoTrust Idem Key |c611b55c-77b2-4527-8082-590e931b2f08|&#10060;|&#x2705;|&#x2705;|&#10060;
+GoTrust Idem Key|c611b55c-77b2-4527-8082-590e931b2f08|&#10060;|&#x2705;|&#x2705;|&#10060;
 GoTrust Idem Key mini|72a2b5b1-95a5-4df9-a881-4192aff4f72e|&#10060;|&#x2705;|&#10060;|&#10060;
 GSTAG OAK FIDO2 Authenticator|773c30d9-5919-4e96-a4f5-db65e95cf890|&#10060;|&#10060;|&#x2705;|&#10060;
 HID Crescendo 4000|0b8b05a4-ebd4-4b0b-8f5f-33d7b6e606ab|&#10060;|&#10060;|&#x2705;|&#10060;
@@ -202,11 +202,11 @@ Security Key by Yubico with NFC|6d44ba9b-f6ec-2e49-b930-0c8fe920cb73|&#10060;|&#
 Security Key NFC by Yubico|a4e9fc6d-4cbe-4758-b8ba-37598bb5bbaa|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico|b7d3f68e-88a6-471e-9ecf-2df26d041ede|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico|e77e3c64-05e3-428b-8824-0cbeb04b829d|&#10060;|&#x2705;|&#x2705;|&#10060;
+Security Key NFC by Yubico - Enterprise Edition|0bb43545-fd2c-4185-87dd-feb0b2916ace|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition|47ab2fb4-66ac-4184-9ae1-86be814012d5|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition|ed042a3a-4b22-4455-bb69-a267b652ae7e|&#10060;|&#x2705;|&#x2705;|&#10060;
-Security Key NFC by Yubico - Enterprise Edition|0bb43545-fd2c-4185-87dd-feb0b2916ace|&#10060;|&#x2705;|&#x2705;|&#10060;
-Security Key NFC by Yubico - Enterprise Edition (Enterprise Profile)|9ff4cc65-6154-4fff-ba09-9e2af7882ad2|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition (Enterprise Profile)|72c6b72d-8512-4c66-8359-9d3d10d9222f|&#10060;|&#x2705;|&#x2705;|&#10060;
+Security Key NFC by Yubico - Enterprise Edition (Enterprise Profile)|9ff4cc65-6154-4fff-ba09-9e2af7882ad2|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key Series with NFC (Consumer Profile)|0f083f18-4105-43a8-ad69-24e812e38141|&#10060;|&#x2705;|&#x2705;|&#10060;
 Sentry Enterprises CTAP2 Authenticator|89b19028-256b-4025-8872-255358d950e4|&#x2705;|&#x2705;|&#10060;|&#x2705;
 SHALO AUTH|57235694-51a5-4a4d-a81a-f42185df6502|&#10060;|&#x2705;|&#10060;|&#10060;
@@ -254,11 +254,11 @@ YubiKey 5 CCN Series with NFC (Enterprise Profile)|4fc84f16-2545-4e53-b8fc-7bf4d
 YubiKey 5 FIPS Series|57f7de54-c807-4eab-b1c6-1c9be7984e92|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 FIPS Series|73bb0cd4-e502-49b8-9c6f-b59445bf720b|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 FIPS Series (Enterprise Profile)|905b4cb4-ed6f-4da9-92fc-45e0d4e9b5c7|&#10060;|&#x2705;|&#10060;|&#10060;
-YubiKey 5 FIPS Series with Lightning|85203421-48f9-4355-9bc8-8a53846e5083|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 FIPS Series with Lightning|7b96457d-e3cd-432b-9ceb-c9fdd7ef7432|&#10060;|&#x2705;|&#10060;|&#10060;
+YubiKey 5 FIPS Series with Lightning|85203421-48f9-4355-9bc8-8a53846e5083|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 FIPS Series with Lightning (Enterprise Profile)|3a662962-c6d4-4023-bebb-98ae92e78e20|&#10060;|&#x2705;|&#10060;|&#10060;
-YubiKey 5 FIPS Series with NFC|fcc0118f-cd45-435b-8da1-9782b2da0715|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 FIPS Series with NFC|c1f9a0bc-1dd2-404a-b27f-8e29047a43fd|&#10060;|&#x2705;|&#x2705;|&#10060;
+YubiKey 5 FIPS Series with NFC|fcc0118f-cd45-435b-8da1-9782b2da0715|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 FIPS Series with NFC (Enterprise Profile)|79f3c8ba-9e35-484b-8f47-53a5a0f5c630|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series|19083c3d-8383-4b18-bc03-8f1c9ab2fd1b|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 Series|cb69481e-8ff7-4039-93ec-0a2729a154a8|&#10060;|&#x2705;|&#10060;|&#10060;
@@ -277,14 +277,14 @@ YubiKey 5 Series with Lightning (Enterprise Profile)|3b24bf49-1d45-4484-a917-131
 YubiKey 5 Series with Lightning (Enterprise Profile)|c3479970-e58a-4f70-836f-853bf42fb063|&#10060;|&#x2705;|&#10060;|&#10060;
 YubiKey 5 Series with NFC|fa2b99dc-9e39-4257-8f92-4a30d23c4118|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC|2fc0579f-8113-47ea-b116-bb5a8db9202a|&#10060;|&#x2705;|&#x2705;|&#10060;
-YubiKey 5 Series with NFC|d7781e5d-e353-46aa-afe2-3ca49f13332a|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC|a25342c0-3cdc-4414-8e46-f4807fca511c|&#10060;|&#x2705;|&#x2705;|&#10060;
+YubiKey 5 Series with NFC|d7781e5d-e353-46aa-afe2-3ca49f13332a|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC - Enhanced PIN|662ef48a-95e2-4aaa-a6c1-5b9c40375824|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC - Enhanced PIN (Enterprise Profile)|b2c1a50b-dad8-4dc7-ba4d-0ce9597904bc|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC (Consumer Profile)|f4ce5fc0-57d3-46f5-a736-efb7d5bc63b5|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC (Consumer Profile) KVZR57-2|7dab85a5-d16d-4eaf-a7ef-4c1385b151c5|&#10060;|&#x2705;|&#x2705;|&#10060;
-YubiKey 5 Series with NFC (Enterprise Profile)|41e39911-c669-4811-b860-c6ad0b411b96|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC (Enterprise Profile)|1ac71f64-468d-4fe0-bef1-0e5f2f551f18|&#10060;|&#x2705;|&#x2705;|&#10060;
+YubiKey 5 Series with NFC (Enterprise Profile)|41e39911-c669-4811-b860-c6ad0b411b96|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC (Enterprise Profile)|6ab56fad-881f-4a43-acb2-0be065924522|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC Enhanced PIN (Consumer Profile)|0ebd9f2c-f685-441c-8c3e-a02a234a840a|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC Enhanced PIN (Enterprise Profile)|9a3f2abd-a73d-439c-9ee7-1b53a857eaa7|&#10060;|&#x2705;|&#x2705;|&#10060;
@@ -294,20 +294,19 @@ YubiKey Bio Fido Edition (Enterprise Profile)|add92433-0d69-4026-8166-29b25bce64
 YubiKey Bio Multi-protocol Edition (Consumer Profile)|ba0a9266-40d8-4048-9786-d710b5474752|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Multi-protocol Edition (Consumer Profile) 1VDJSN-2|9806a2c8-c0da-478e-b4ca-620005d34182|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Multi-protocol Edition (Enterprise Profile)|dc5e949d-f939-43b3-9877-a85c7186b753|&#x2705;|&#x2705;|&#10060;|&#10060;
+YubiKey Bio Series - FIDO Edition|7409272d-1ff9-4e10-9fc9-ac0019c124fd|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - FIDO Edition|d8522d9f-575b-4866-88a9-ba99fa02f35b|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - FIDO Edition|dd86a2da-86a0-4cbe-b462-4bd31f57bc6f|&#x2705;|&#x2705;|&#10060;|&#10060;
-YubiKey Bio Series - FIDO Edition|7409272d-1ff9-4e10-9fc9-ac0019c124fd|&#x2705;|&#x2705;|&#10060;|&#10060;
-YubiKey Bio Series - FIDO Edition (Enterprise Profile)|ad08c78a-4e41-49b9-86a2-ac15b06899e2|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - FIDO Edition (Enterprise Profile)|8c39ee86-7f9a-4a95-9ba3-f6b097e5c2ee|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - FIDO Edition (Enterprise Profile)|83c47309-aabb-4108-8470-8be838b573cb|&#x2705;|&#x2705;|&#10060;|&#10060;
-YubiKey Bio Series - Multi-protocol Edition|90636e1f-ef82-43bf-bdcf-5255f139d12f|&#x2705;|&#x2705;|&#10060;|&#10060;
+YubiKey Bio Series - FIDO Edition (Enterprise Profile)|ad08c78a-4e41-49b9-86a2-ac15b06899e2|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - Multi-protocol Edition|34744913-4f57-4e6e-a527-e9ec3c4b94e6|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - Multi-protocol Edition|7d1351a6-e097-4852-b8bf-c9ac5c9ce4a3|&#x2705;|&#x2705;|&#10060;|&#10060;
+YubiKey Bio Series - Multi-protocol Edition|90636e1f-ef82-43bf-bdcf-5255f139d12f|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - Multi-protocol Edition (Enterprise Profile)|6ec5cff2-a0f9-4169-945b-f33b563f7b99|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - Multi-protocol Edition (Enterprise Profile)|97e6a830-c952-4740-95fc-7c78dc97ce47|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - Multi-protocol Edition 1VDJSN|58276709-bb4b-4bb3-baf1-60eea99282a7|&#x2705;|&#x2705;|&#10060;|&#10060;
 ZTPass SmartAuth|b415094c-49d3-4c8b-b3fe-7d0ad28a6bc4|&#10060;|&#x2705;|&#x2705;|&#10060;
-
 
 ## Related content
 
