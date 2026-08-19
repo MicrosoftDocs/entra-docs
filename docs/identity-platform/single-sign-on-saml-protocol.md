@@ -366,9 +366,9 @@ The following table lists the `authnmethodsreferences` values that Microsoft Ent
 | Passkey - synced | `fido`, `multipleauthn` | A synced passkey. |
 | Windows Hello for Business (phishing-resistant MFA) | `hwk`, `multipleauthn` | Windows Hello for Business, reported as a hardware-bound key. |
 | Certificate-based authentication (phishing-resistant MFA) | `x509`, plus `multipleauthn` (default for multifactor CBA, or when MFA is completed with another factor for single-factor CBA) | Certificate-based authentication. |
+| Device based X509 authentication | `x509` | The device presents a certificate to authenticate the user or device. |
 | Temporary Access Pass (TAP) | `otp`, `multipleauthn` | A Temporary Access Pass. |
 | Windows Integrated Authentication (Kerberos) | `wia` | Windows Integrated Authentication. |
-| Federated IdP (pass-through) | Existing rules apply | The value passes through from the federated identity provider. |
 
 > [!NOTE]
 > The `amr` claim is sent by default for Salesforce applications, so no configuration change is required for those apps. For all other SAML applications, the application administrator must add the optional `amr` claim with the `include_granular_amr` additional property to the app registration to request AMR claims. The `multipleauthn` and `mfa` values are emitted only when the user has completed MFA.

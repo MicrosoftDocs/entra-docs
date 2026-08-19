@@ -143,6 +143,7 @@ For OIDC, see the following table, which lists the `authnmethodsreferences` valu
 | Passkey (synced) | `fido`, `mfa` |
 | Windows Hello for Business (PRMFA) | `hwk`, `mfa`, `ngcmfa` |
 | Certificate-based authentication (PRMFA) | `hwk` or `x509`, `mfa`, `rsa` |
+| Device based X509 authentication | `x509` |
 | Temporary Access Pass (TAP) | `otp`, `mfa` |
 | Windows integrated authentication (Kerberos) | `wia` |
 
