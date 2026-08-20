@@ -114,6 +114,16 @@ Here's how the provisioning job associated with the /bulkUpload API endpoint pro
 
 To make sure that the right users get updated in Microsoft Entra ID, make sure you define the right matching attribute pair in your mapping which uniquely identifies users in your source and Microsoft Entra ID.
 
+## Can we clear an existing user attribute using the provisioning /bulkUpload API endpoint?
+
+Yes, you can clear an existing user attribute using API-driven inbound provisioning. For supported scenarios and configuration steps, see [Clear attribute values (Preview)](clear-attribute-values.md).
+
+## Can we delete users using the provisioning /bulkUpload API endpoint?
+
+No, API-driven provisioning /bulkUpload API endpoint does not support user object deletion. 
+To automate user object deletion "X" days after termination or account disable operation, we recommend using [Entra ID Governance Lifecycle Workflows delete user task](../../id-governance/lifecycle-workflow-tasks.md#delete-user). 
+
+
 ## Can we create more than one app that supports API-driven inbound provisioning?
 
 Yes, you can. Here are some scenarios that may require more than one provisioning app:
