@@ -145,13 +145,13 @@ TBD: Confirm the release date, Microsoft Entra admin center availability, and au
 
 - Passwordless authentication in the Microsoft Entra Connect setup wizard is now generally available and enabled by default. The Windows Web Account Manager prompt supports passkeys, FIDO2 security keys, and passwords, reuses the signed-in session across Microsoft Entra services, and preserves Seamless Single Sign-On Kerberos key rotation. [Learn more](how-to-connect-passwordless-authentication.md).
 - Cloud configuration cmdlets no longer require an explicit `-AADUserName`. When you omit the parameter, Microsoft Entra Connect derives a sign-in hint from the connector configuration and opens an interactive sign-in prompt. This behavior applies to `Set-ADSyncAADCompanyFeature`, `Set-ADSyncAADPasswordSyncState`, `Enable-ADSyncExportDeletionThreshold`, `Set-ADSyncScheduler`, and `Set-ADSyncDirSyncConfiguration`.
-- The **Select Containers** dialog in Synchronization Service Manager is now read-only by default. To restore the legacy editable behavior, set the `HKLM\SYSTEM\CurrentControlSet\services\ADSync\Parameters\ContainerPickerReadOnly` DWORD value to `0`.
+- The **Select Containers** dialog in Synchronization Service Manager is now read-only.
 - The Generic LDAP connector wizard now validates the TLS server certificate chain and server name. Connections that use an untrusted certificate or a certificate whose name doesn't match the configured server are rejected.
 - Updated the bundled SQL Server 2022 LocalDB from version 16.0.4250.1 to 16.0.4262.2.
 
 ### Bug fixes
 
-- Fixed installation and upgrade failures with error `0xE0474352` when you use `/useexistingdatabase`.
+- Fixed an issue where installing or upgrading Microsoft Entra Connect with an existing ADSync database could fail with error `0xE0474352`.
 - Fixed an issue where upgrading Microsoft Entra Connect didn't update an installed Microsoft Visual C++ 2015-2022 Redistributable version earlier than 14.41.
 - Fixed an issue where the Microsoft Entra Connect wizard could close during startup when the Windows PowerShell Transcription policy contained an invalid output directory.
 - Fixed an Application-Based Authentication certificate rotation issue that could remove the last usable application key during directory replica delays.
@@ -196,6 +196,11 @@ TBD: Confirm the release date, Microsoft Entra admin center availability, and au
 - Fixed an issue where the China cloud instance name was not correctly resolved by the Discovery Endpoint API, which could cause cloud instance detection to fail.
 - Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action for Synchronization Rule changes.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies.
+
+### Known issues
+
+- Installing or upgrading to Microsoft Entra Connect version 2.6.84.0 with an existing ADSync database might fail with error `0xE0474352`. To install or upgrade with an existing database, use [version TBD](#tbd) or later.
+- Synchronization Service Manager might close unexpectedly when you open **Connector Properties** and list directory partitions. This issue is fixed in [version TBD](#tbd).
 
 > [!IMPORTANT]
 > Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the [latest available version (TBD)](#TBD) of Microsoft Entra Connect Sync.
