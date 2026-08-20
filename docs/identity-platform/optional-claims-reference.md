@@ -140,9 +140,9 @@ For OIDC, see the following table, which lists the `authnmethodsreferences` valu
 | Email | `emailotp`, `mfa` |
 | FIDO2 security key (PRMFA) | `fido`, `mfa` |
 | Passkey (device-bound) (PRMFA) | `fido`, `mfa` |
-| Passkey (synced) | `fido`, `mfa` |
+| Passkey (synced)  (PRMFA) | `fido`, `mfa` |
 | Windows Hello for Business (PRMFA) | `hwk`, `mfa`, `ngcmfa` |
-| Certificate-based authentication (PRMFA) | `hwk` (Multi-factor CBA) or `x509` (Single factor CBA), `mfa`, `rsa` |
+| Certificate-based authentication (PRMFA for Multi-factor CBA) | `hwk` (Multi-factor CBA) or `x509` (Single factor CBA), `mfa`, `rsa` |
 | Temporary Access Pass (TAP) | `otp`, `mfa` |
 | Windows integrated authentication (Kerberos) | `wia` |
 | Device based X509 authentication | `x509` |
