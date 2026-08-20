@@ -288,7 +288,7 @@ The result of the preceding scenarios is an IdentityDataValidationFailed or Data
 
 #### Fix the IdentityDataValidationFailed and DataValidationFailed errors
 
-Ensure that the **userPrincipalName** attribute has supported characters and the required format. If the **DataValidationFailed** error occurs during a hard match operation, use one of the **Hard match scenarios and recovery paths** described in [Configure Microsoft Entra Connect for an existing tenant](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-existing-tenant#hard-match-scenarios-and-recovery-paths)
+Ensure that the **userPrincipalName** attribute has supported characters and the required format. If the **DataValidationFailed** error occurs during a hard match operation, use one of the **Hard match scenarios and recovery paths** described in [Configure Microsoft Entra Connect for an existing tenant](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-existing-tenant#hard-match-scenarios-and-recovery-paths)
 
 
 #### Related article
