@@ -3,7 +3,7 @@ title: CSS reference guide for customizing company branding
 description: Reference guide for the CSS template selectors for customizing Microsoft Entra sign-in page company branding.
 manager: pmwongera
 ms.topic: reference
-ms.date: 07/21/2026
+ms.date: 08/18/2026
 ms.reviewer: almars
 ms.custom: sfi-image-nochange, msecd-doc-authoring-1015
 ai-usage: ai-assisted
@@ -15,13 +15,15 @@ ai-usage: ai-assisted
 Configuring your company branding for the user sign-in process provides a seamless experience in your applications that use Microsoft Entra ID as the identity and access management service. Use this CSS reference guide if you're using the [CSS template](https://download.microsoft.com/download/7/2/7/727f287a-125d-4368-a673-a785907ac5ab/custom-styles-template-013023.css) as part of the [customize company branding](reference-company-branding-css-template.md) process.
 
 > [!IMPORTANT]
-> Tenants created after January 5, 2026 don't have custom CSS available for company branding in Microsoft Entra ID. Tenants created before January 5, 2026, can continue to use custom CSS.
+> Tenants created after January 5, 2026, don't have custom CSS available for company branding in Microsoft Entra ID. After July 21, 2026, tenants created before January 6, 2026, that don't already use custom CSS can't configure custom CSS.
 >
 > Microsoft Entra External ID tenants aren't affected.
 
-## Deprecation of custom CSS positioning properties
+<a name='deprecation-of-custom-css-positioning-properties'></a>
 
-As part of the [Microsoft Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative), Microsoft Entra ID is retiring support for custom CSS *positioning properties* in company branding. These properties control where elements appear on the sign-in page and how they're layered, sized, and displayed. For example, they can move, overlap, resize, or hide page content. Retiring them keeps sign-in page layouts consistent and predictable across Microsoft Entra ID.
+## Deprecation of custom CSS layout and positioning properties
+
+To align with the [Microsoft Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative) and its focus on identity security and phishing resistance, Microsoft Entra ID is retiring support for custom CSS *layout and positioning properties* in company branding. These properties control where elements appear on the sign-in page and how they're layered, sized, and displayed. For example, they can move, overlap, resize, or hide page content. Retiring them keeps sign-in page layouts consistent and predictable in Microsoft Entra ID.
 
 This change is the first step toward retiring the custom CSS feature entirely. Microsoft plans to provide advance notice, recommended migration paths, and future advanced customization options before that retirement.
 
@@ -29,13 +31,13 @@ For more information, see the blog post [Microsoft Entra ID enhances security of
 
 ### Timeline
 
-- **After July 21, 2026**: Tenants that don't already use the affected positioning properties can't configure them.
-- **Later**: The affected positioning properties will be deprecated globally. After deprecation, these properties are blocked and no longer function.
+- **After July 21, 2026**: Tenants created before January 6, 2026, that don't already use custom CSS can't configure custom CSS.
+- **Later**: The affected layout and positioning properties will be deprecated globally. After deprecation, these properties are blocked and no longer function.
 - **Eventually**: Custom CSS will be fully retired. Microsoft will share more guidance, including recommended migration paths, before retirement.
 
 ### Who's affected
 
-This change affects organizations whose Microsoft Entra ID tenant uses any of the deprecated positioning properties in their custom CSS. Microsoft Entra External ID tenants aren't affected. Tenants that don't already use these properties aren't affected, because they can't configure the properties after July 21, 2026.
+This change affects organizations whose Microsoft Entra ID tenant uses any of the deprecated layout and positioning properties in their custom CSS. Microsoft Entra External ID tenants aren't affected. After July 21, 2026, tenants created before January 6, 2026, that don't already use custom CSS can't configure custom CSS.
 
 Microsoft notifies affected customers directly in advance.
 
@@ -46,17 +48,58 @@ If your custom CSS uses any of the following properties, remove them from your c
 - `position` (including `top`, `right`, `bottom`, `left`, and `z-index`)
 - `margin` (including `margin-top`, `margin-bottom`, `margin-left`, and `margin-right`)
 - `transform`
-- `translate`
 - `opacity`
 - `overflow`
 - `filter`
 - `pointer-events`
 - `clip-path`
 - `mix-blend-mode`
+- `translate`
+- `-webkit-transform`
+- `-moz-transform`
+- `-ms-transform`
+- `-o-transform`
+- `scale`
+- `rotate`
+- `perspective`
+- `display`
+- `visibility`
+- `inset`
+- `zoom`
+- `offset`
+- `offset-path`
+- `offset-distance`
+- `margin-block`
+- `margin-block-start`
+- `margin-block-end`
+- `margin-inline`
+- `margin-inline-start`
+- `margin-inline-end`
+- `order`
+- `grid-area`
+- `grid-column`
+- `grid-column-start`
+- `grid-column-end`
+- `grid-row`
+- `grid-row-start`
+- `grid-row-end`
+- `isolation`
+- `overflow-x`
+- `overflow-y`
+- `overflow-block`
+- `overflow-inline`
+- `content-visibility`
+- `clip`
+- `mask`
+- `mask-image`
+- `-webkit-mask`
+- `-webkit-mask-image`
 
 ### Check and update your custom CSS
 
-To check whether your custom CSS uses any deprecated properties, use Microsoft Graph to export your current company branding configuration, and then check it with the tenant branding inspector tool. You need a Global Administrator or Branding Administrator account.
+To inspect your current CSS file, on the **Custom branding** page in the Microsoft Entra admin center at <https://entra.microsoft.com>, select **Edit**. On the **Layout** tab, under **Custom CSS**, select **Download**. Review the downloaded file for the properties listed in [Deprecated properties](#deprecated-properties).
+
+To check all company branding localizations, use Microsoft Graph to export your current company branding configuration, and then check it with the tenant branding inspector tool. You need a Global Administrator or Branding Administrator account.
 
 1. Go to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), and then sign in to your tenant.
 1. If you don't already know your tenant ID, send a `GET` request to the following URL, and then copy the `id` value from the response:
@@ -75,7 +118,7 @@ To check whether your custom CSS uses any deprecated properties, use Microsoft G
 1. Go to the [tenant branding inspector tool](https://entra-branding-tools.github.io/tenant-branding-inspector/).
 1. Paste the copied response, or upload the exported JSON file, into the tool. The tool lists each locale and the deprecated properties that it uses.
 
-To remove the deprecated properties, edit your CSS file, upload it on the **Company Branding** page in the [Microsoft Entra admin center](https://entra.microsoft.com), and then save your changes. To validate the visual impact before you update production, apply the changes in a test tenant first.
+To remove the deprecated properties, edit the downloaded CSS file, upload it to the **Company Branding** page in the [Microsoft Entra admin center](https://entra.microsoft.com), and then save your changes. To validate the visual impact before you update production, apply the changes in a test tenant first.
 
 ## HTML selectors
 
