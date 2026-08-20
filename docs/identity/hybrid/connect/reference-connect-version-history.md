@@ -198,7 +198,7 @@ TBD: Confirm the release date, Microsoft Entra admin center availability, and au
 - Fixed multiple security vulnerabilities in bundled third-party dependencies.
 
 > [!IMPORTANT]
-> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the latest available version of Microsoft Entra Connect Sync.
+> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the [latest available version (TBD)](#TBD) of Microsoft Entra Connect Sync.
 
 ## 2.6.3.0
 
