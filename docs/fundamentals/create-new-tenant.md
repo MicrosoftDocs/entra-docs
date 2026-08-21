@@ -64,10 +64,7 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 
 Your new tenant is created with the domain contoso.onmicrosoft.com.
 
-# [Secure add-on tenant creation (preview)](#tab/governed-workforce)
-
-> [!IMPORTANT]
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+# [Secure add-on tenant creation](#tab/governed-workforce)
 
 Use the secure add-on tenant creation flow to create a new Governed Workforce tenant. This process creates the tenant and automatically establishes a [governance relationship](~/id-governance/tenant-governance/governance-relationships.md) with your home tenant.
 
