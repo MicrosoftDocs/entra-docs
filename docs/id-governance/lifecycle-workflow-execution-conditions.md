@@ -64,7 +64,7 @@ Configure the following trigger timing details:
 |Trigger detail|Description|
 |---|---|
 |Operator|Select **Exactly**, **Between**, or **Less than or equal to**.|
-|Days from event|Enter an offset from 0 through 180 days. When you select **Between**, also enter an offset from 0 through 180 days in **Days to event**.|
+|Days from event|Enter an offset from 0 through 365 days. When you select **Between**, also enter an offset from 0 through 365 days in **Days to event**.|
 |Event timing|Select **Before** or **After** the event attribute date. To use the standard time-based behavior on the attribute date, select **Exactly**, enter 0 days, and select **On**.|
 |Event attribute|Select any user attribute supported by the time-based trigger, including `employeeHireDate`, `employeeLeaveDateTime`, and `createdDateTime`.|
 
