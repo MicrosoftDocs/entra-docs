@@ -996,6 +996,8 @@
           href: supported-accounts-validation.md
     - name: Native authentication API reference
       href: reference-native-authentication-api.md
+    - name: Credential management API reference
+      href: reference-credential-management-api.md
     - name: Endpoint reference
       items: 
         - name: Admin consent URI
