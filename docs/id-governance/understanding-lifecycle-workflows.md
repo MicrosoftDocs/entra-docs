@@ -130,24 +130,8 @@ The supported scheduled triggers are:
 
 The type of workflow you choose determines which trigger you use.
 
-### Relative time-based triggers
-
 > [!IMPORTANT]
-> Relative time-based triggers are in public preview. For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-
-A time-based trigger can process users on a specific day relative to a date attribute, such as seven days before `employeeHireDate`. The **Time based attribute V2 (Preview)** trigger can also process users whose attribute value falls within a relative period. This option helps cover scenarios in which an attribute is populated or updated after the exact trigger date.
-
-Relative time-based triggers support the following comparisons:
-
-|Comparison|Description|
-|---|---|
-|Exactly|Matches users at one specified offset from the event attribute date.|
-|Less than or equal to|Matches users from the event attribute date through the specified offset.|
-|Between|Matches users between two specified offsets from the event attribute date.|
-
-Offsets can range from 0 through 180 days in either direction from the attribute date. Select **Before** or **After** to set the direction. To match the existing time-based trigger on the attribute date, select **Exactly**, enter 0 days, and select **On**. All user attributes available with the existing time-based trigger are supported, including `employeeHireDate`, `employeeLeaveDateTime`, and `createdDateTime`.
-
-Workflow evaluation, scheduling, and processing work the same as they do for the existing time-based trigger, except the V2 trigger doesn't have a three-day catch-up window. The workflow and its schedule must both be enabled for the trigger to be evaluated. Workflows created during preview transition to general availability without reconfiguration. Microsoft communicates any schema changes in advance.
+> Relative time-based comparisons expand the time-based attribute trigger and are in public preview. During public preview, the Microsoft Entra admin center temporarily shows **Time based attribute** and **Time based attribute V2 (Preview)** as separate choices. Both choices represent the same time-based trigger capability, and the V2 choice can also reproduce the standard time-based behavior. At general availability, customers will see only one time-based trigger choice that includes relative comparisons. For supported comparisons and configuration details, see [Time based attribute trigger](lifecycle-workflow-execution-conditions.md#time-based-attribute-trigger). For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Scope
 
@@ -171,7 +155,7 @@ Once scheduling is enabled, the workflow is evaluated based on the interval that
  [![Workflow template schedule.](media/understanding-lifecycle-workflows/workflow-10.png)](media/understanding-lifecycle-workflows/workflow-10.png#lightbox)
 
 >[!NOTE]
-> The existing time based attribute trigger processes a user at a specific point in time based on the workflow configuration (e.g., seven days before the user’s hire date) and user account configuration. For reliable workflow execution, the user account must be configured with all relevant details (e.g., trigger and scoping attributes) in advance of the scheduled workflow execution. Once the designated time arrives, the next scheduled workflow run will process the user if it meets the execution conditions. If the workflow or user account is configured after the intended processing time (e.g., due to a delay in the HR system), Lifecycle Workflows will still attempt to process the user—provided the necessary setup is completed within three days of the original processing time. This catch-up behavior doesn't apply to the **Time based attribute V2 (Preview)** trigger.
+> The standard time based attribute choice processes a user at a specific point in time based on the workflow configuration (e.g., seven days before the user’s hire date) and user account configuration. For reliable workflow execution, the user account must be configured with all relevant details (e.g., trigger and scoping attributes) in advance of the scheduled workflow execution. Once the designated time arrives, the next scheduled workflow run will process the user if it meets the execution conditions. If the workflow or user account is configured after the intended processing time (e.g., due to a delay in the HR system), Lifecycle Workflows will still attempt to process the user—provided the necessary setup is completed within three days of the original processing time. This catch-up behavior doesn't apply when you select **Time based attribute V2 (Preview)** during public preview.
 
 To view a detailed guide on  customizing the schedule of a workflow, see: [Customize the schedule of workflows](customize-workflow-schedule.md).
 

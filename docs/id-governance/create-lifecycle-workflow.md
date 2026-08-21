@@ -21,39 +21,6 @@ In the Microsoft Entra admin center, you can create and customize workflows for 
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
-## Configure a relative time-based trigger in the Microsoft Entra admin center
-
-> [!IMPORTANT]
-> Relative time-based triggers are in public preview. For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-
-To configure a relative time-based trigger for a new or existing workflow:
-
-1. Sign in to the [Microsoft Entra admin center](https://aka.ms/LCWRelativeTimeBasedTrigger) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
-
-1. Select **Create workflow**, or open an existing workflow.
-
-1. Under **Trigger details**, select **Time based attribute V2 (Preview)** as the trigger type.
-
-1. In the trigger timing section, configure the following values:
-
-    - **Operator**: Select **Exactly**, **Between**, or **Less than or equal to**.
-    - **Days from event**: Enter the offset in days, from 0 through 180. When you select **Between**, also enter the end of the range in **Days to event**.
-    - **Event timing**: Select **Before** or **After** the attribute date. To match the existing time-based trigger on the attribute date, select **Exactly** and enter 0 days. Then select **On**, which is available for this configuration.
-    - **Event attribute**: Select the user attribute that the trigger evaluates. Supported attributes include `employeeHireDate`, `employeeLeaveDateTime`, and `createdDateTime`.
-
-1. Select **Next: Configure scope**, and define which users the workflow applies to.
-
-1. Select **Next: Review tasks**, and adjust the tasks for your scenario if needed.
-
-1. Select **Next: Review + create**.
-
-1. To start testing the workflow after creation, select **Enable schedule**.
-
-    > [!NOTE]
-    > The workflow and its schedule must both be enabled for time-based triggers to be evaluated.
-
-1. Select **Create**.
-
 ## Create a lifecycle workflow by cloning an existing workflow in the Microsoft Entra admin center
 
 You can use an existing workflow as the starting point for a new workflow. The clone option is available only in the Microsoft Entra admin center.
