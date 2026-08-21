@@ -19,7 +19,7 @@ When you create a tenant using the **Governed Workforce** option in the Microsof
 
 - Creates the new workforce tenant
 - Establishes a [governance relationship](governance-relationships.md) between your home tenant and the new tenant based on your [governance policy template](governance-policy-templates.md)
-- Provisions a Microsoft Entra ID Free [billing asset](signals-metrics.md) under your selected Azure subscription and resource group
+- Provisions a [Microsoft Entra ID Free billing asset](/azure/cost-management-billing/manage/microsoft-entra-id-free) under your selected Azure subscription and resource group
 
 This article doesn't cover creating an external tenant configuration for consumer-facing apps. For customer identity and access management scenarios, see [Microsoft Entra External ID for customers](~/external-id/customers/overview-customers-ciam.md).
 
@@ -43,7 +43,7 @@ After the system creates the tenant:
 
 1. A governance relationship forms between your home tenant and the new tenant, using the [default governance policy template](governance-policy-templates.md).
 1. The policy template provisions resources including cross-tenant access settings, granular delegated admin privileges (GDAP) assignments, and service principals.
-1. A Microsoft Entra ID Free billing asset appears in your Azure subscription under the resource group you selected.
+1. A [Microsoft Entra ID Free billing asset](/azure/cost-management-billing/manage/microsoft-entra-id-free) appears in your Azure subscription under the resource group you selected.
 1. The new tenant appears in your [related tenants](related-tenants.md) inventory.
 
 To learn more about governance relationships and policy templates, see [Governance relationships](governance-relationships.md) and [Governance policy templates](governance-policy-templates.md).
