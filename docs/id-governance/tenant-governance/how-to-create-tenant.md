@@ -23,6 +23,8 @@ When you create a tenant using the **Governed Workforce** option in the Microsof
 
 This article doesn't cover creating an external tenant configuration for consumer-facing apps. For customer identity and access management scenarios, see [Microsoft Entra External ID for customers](~/external-id/customers/overview-customers-ciam.md).
 
+This article doesn't cover creating an external tenant configuration for consumer-facing apps. For customer identity and access management scenarios, see [Microsoft Entra External ID for customers](~/external-id/customers/overview-customers-ciam.md).
+
 ## Prerequisites
 
 Before you create a governed workforce tenant, review the following requirements:

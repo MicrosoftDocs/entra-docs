@@ -4113,6 +4113,10 @@
   "EnterpriseAppIDMCPServer": "e8c77dc2-69b3-43f4-bc51-3213c9d915b4",
   "OpenSpecsWindowsProtocolsMSWCCE": "e563cff8-1af6-4e6f-a655-7571ca482e71",
   "AzureAISearchSensitivityLabelMetaData": "8b2071cd-015a-4025-8052-1c0dba2d3f64",
-  "AzureAISearchMicrosoftRightsMgmntService": "7347eb49-7a1a-43c5-8eac-a5cd1d1c7cf0"
-  
+  "AzureAISearchMicrosoftRightsMgmntService": "7347eb49-7a1a-43c5-8eac-a5cd1d1c7cf0",
+  "Windows365AppId": "0af06dc6-e4b5-4f28-818e-e78e62d137a5",
+  "Microsoft-ServiceFabricETW": "cbd93bc2-71e5-4566-b3a7-595d8eeca6e8",
+  "EntraIdAuthenticationFirstPartyResourceExample": "89d10474-74af-4874-99a7-c23c2f643083",
+  "IAppHostPathMapper2MapPathMethod": "0f80e901-8f4c-449a-bf90-13d5d082f187",
+  "MicrosoftEntraSecurityGroupEnableMIPLabels": "d209f6fa-3839-4d70-b83f-60b1c64d0e8f"
 }

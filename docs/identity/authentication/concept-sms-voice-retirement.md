@@ -2,7 +2,7 @@
 title: Passkeys by default and retirement of Microsoft-provided SMS and voice authentication
 description: Learn how to prepare for the retirement of Microsoft provided SMS and Voice authentication in Microsoft Entra ID and migrate users to passkeys.
 ms.topic: how-to
-ms.date: 07/29/2026
+ms.date: 08/10/2026
 author: marinasanchezz1
 ms.author: marisanchez
 ai-usage: ai-assisted
@@ -99,61 +99,11 @@ After this date, users whose only available MFA method is SMS or voice will be r
 
 To avoid sign-in disruption, make sure users register a passkey or move to another phishing-resistant authentication method before February 1, 2027. If your organization has a valid business, regulatory, or operational need to keep using SMS or voice, configure a customer-managed telecom provider before this date.
 
-## Frequently asked questions
+## Temporarily opt out of the automatic passkey enablement
 
-### Why is Microsoft provided telecom delivery for SMS and Voice ending?
+A temporary opt-out is available for the September 1, 2026 through February 1, 2027 changes. This lets you delay passkey and Registration Campaign enablement while you complete transition activities, such as configuring customer-managed telecom providers or migrating to other authentication methods.
 
-The primary driver is security. As the industry moves toward phishing-resistant authentication, Microsoft Entra ID is making passkeys the default authentication experience. SMS and voice are among the most vulnerable authentication methods available today and provide significantly weaker protection against phishing and account compromise than passkeys.
-
-Organizations that still require SMS or voice will continue to have that option through customer-managed telecom providers when there is a legitimate business, regulatory, or technical need. This change is intended to modernize authentication while preserving flexibility for those scenarios.
-
-Beginning September 1, 2026, passkeys will be automatically enabled for users currently enabled for SMS or voice. Beginning February 1, 2027, tenants that have not configured a customer-managed telecom provider through the Microsoft Security Store will no longer be able to use SMS or voice for MFA. Users whose only MFA method is SMS or voice will be required to register a passkey during sign-in before they can continue accessing their account. Tenants that have configured a customer-managed telecom provider can continue using SMS or voice according to their organization's policies.
-
-### Will there be costs associated with using a telecom provider through the Security Store?
-
-Yes. Pricing varies by telecom provider and region. Costs are typically per-message and depend on your volume, geographic distribution, and selected provider. You'll need to evaluate providers in the Microsoft Security Store for specific pricing.
-
-However, migrating Microsoft provided SMS and voice users to Passkeys incur no additional cost.
-
-### Will my users be auto-migrated, or do I have to do it?
-
-On September 1, 2026, users enabled for SMS or Voice in the Entra Authentication Methods Policy (AMP) will be auto-enabled for passkeys in AMP. Your Registration Campaign settings will also be updated to Microsoft managed state, and will automatically bring these users into scope.
-
-When these users next sign-in and complete MFA, the registration campaign will nudge them to register a passkey. By default, users will have unlimited snoozes of the nudge prompt. If you do not want this to occur, move users out of SMS or Voice AMP before September 1st.
-
-### What about SSPR (self-service password reset)?
-
-The retirement of native SMS and voice applies across Entra, including SSPR. However, users can still use SMS and voice telecommunications provider through the Security Store.
-
-Microsoft is also planning to introduce support to change password for users who authenticate with passwordless sign in. More details to come.
-
-### What's the Security Store exactly?
-
-Instead of Microsoft provided SMS or voice, you can contract directly with one of the Microsoft Telecoms providers through the Security Store. You get regional control and the ability to pick a carrier that meets your local security and compliance requirements. This is a new option for customers who have a regulated or operational requirement for a telecoms channel. Options and terms will be published on September 18, 2026 available through the Microsoft Security Store. 
-
-### Where can I see if my tenant is in scope?
-
-See [Find users still using SMS or Voice](#1-find-users-enabled-for-sms-or-voice) above. Any non-zero result means you're in scope.
-
-### Which cloud environments are included in this timeline?
-
-This timeline applies to public cloud environments only. Other cloud environments will follow on a later schedule, and we will provide advance communications to help customers prepare for the transition.
-
-### When will passkey support be available for B2B users?
-
-Passkey support for B2B users and internal guest users is planned to be available by the end of calendar year 2026. These users are included in the scope of the retirement of Microsoft-provided SMS and voice authentication.
-
-### Are external MFA methods impacted by SMS and voice retirement?
-
-No, only SMS and voice authentication method policies and legacy MFA policies are retired.
-
-On September 1, 2026, users that are enabled for SMS or voice in the authentication method policies or legacy MFA policies are auto-enabled for passkeys and nudged to register. External MFA users aren't in scope unless they're also enabled for SMS or voice.
-
-### What if I have different plans for my tenant than enabling passkeys for SMS/voice users (such as configuring a customer configured telecom provider or migrating users to another authentication method)?
-
-A temporary opt-out will be available for the September 1, 2026 through February 1, 2027 changes. This allows you to delay passkey and Registration Campaign enablement while you complete transition activities, such as configuring customer-managed telecom providers or migrating to other authentication methods.
-
-To opt out, update your authentication methods policy using Microsoft Graph and set the `passkeyDynamicMigration` property to `true`.
+To opt out, you need the Microsoft Graph `Policy.ReadWrite.AuthenticationMethod` permission. Update your authentication methods policy using Microsoft Graph and set the `passkeyDynamicMigration` property to `true`.
 
 **Request**
 
@@ -168,17 +118,15 @@ Content-Type: application/json
 }
 ```
 
-After this setting is applied, your tenant will be excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines will apply regardless of this setting. 
+After this setting is applied, your tenant is excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines apply regardless of this setting.
 
-However, if your tenant still has users enabled for Microsoft-managed SMS or voice on February 1, 2027, and you have not configured a customer-managed telecom provider through the Security Store, those users will no longer be able to use SMS or voice to satisfy MFA requirements and continue signing in. 
+If your tenant still has users enabled for Microsoft-managed SMS or voice on February 1, 2027, and you haven't configured a customer-managed telecom provider through the Security Store, those users can no longer use SMS or voice to satisfy MFA requirements and continue signing in.
 
-After February 1, 2027, users whose only available MFA method is SMS or voice will be required to register a passkey during sign-in to continue accessing their account. 
+**There is no opt out for the February 1, 2027 enforcement. This requirement applies to all tenants.**
 
-There is no opt out for the February 1, 2027 enforcement. This requirement applies to all tenants.
+## Frequently asked questions
 
-### Are customers going to get locked out of their accounts on February 1, 2027?
-
-No. If customers do not configure a telecom provider by February 1 2027, users who still use SMS and voice will receive a blocking registration prompt to register a passkey. They will no longer be able to skip this prompt and will need to complete passkey registration before they can continue to sign in. Organizations that need SMS or voice after retirement can choose a telecom provider through the Microsoft Security Store.
+For answers to common questions about the SMS and voice retirement, telecom providers, opt-out options, and passkey migration, see [Frequently asked questions about SMS and voice retirement](concept-sms-voice-retirement-faq.yml).
 
 ## Related links
 

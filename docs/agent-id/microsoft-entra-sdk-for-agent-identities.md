@@ -49,30 +49,30 @@ These are the steps to acquire tokens using the Microsoft Entra ID Auth SDK (sid
     - Autonomous agent's user account: Agents operating on their own behalf using user principals created specifically for agents (for instance agents having their own mailbox).
     - Interactive agents: Agents operating on behalf of human users.
 
-    Specify the downstream API by including its name in the request URL based on your Entra ID Auth SDK (sidecar) configuration. The authorization header endpoint takes the format `/AuthorizationHeader/{serviceName}` where `serviceName` is the name of the downstream API configured in the SDK settings.
+    Specify the downstream API by including its name in the request URL based on your Microsoft Entra ID Auth SDK (sidecar) configuration. The authorization header endpoint takes the format `/AuthorizationHeader/{serviceName}` where `serviceName` is the name of the downstream API configured in the SDK settings.
 
-1. To acquire an app only token for an autonomous agent, you provide the agent identity client ID in the request.
+1. To acquire an app-only (client credentials) token for an autonomous agent, you provide the agent identity client ID in the request.
 
     ```bash
-    GET /AuthorizationHeader/Graph?AgentIdentity=<agent-id-client-ID>
+    GET /AuthorizationHeader/Graph?AgentIdentity=<agent-identity-client-id>
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
     ```
 
 1. To acquire token for an autonomous agent's user account, provide either the user object ID or User Principal Name but not both. This means providing either `AgentUsername` or `AgentUserId`. Providing both causes a validation error. You must also provide the `AgentIdentity` to specify which agent identity to use for token acquisition. If the agent identity parameter is missing, the request fails with a validation error.
 
     ```bash
-    GET /AuthorizationHeader/Graph?AgentIdentity=<agent-id-client-id>&AgentUserId=<agent-user-object-id>
+    GET /AuthorizationHeader/Graph?AgentIdentity=<agent-identity-client-id>&AgentUserId=<agent-user-object-id>
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
     ```
 
     ```bash
-    GET /AuthorizationHeader/Graph?AgentIdentity=<agent-id-client-id>&AgentUsername=<agent-user-principal-name>
+    GET /AuthorizationHeader/Graph?AgentIdentity=<agent-identity-client-id>&AgentUsername=<agent-user-principal-name>
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
     ```
 
-1. For interactive agents, use the on-behalf of flow. The agent first validates the user token granted to it before acquiring the resource token to call the downstream API.
+1. For interactive agents, use the on-behalf-of (OBO) flow. The agent first validates the user token granted to it before acquiring the resource token to call the downstream API.
 
-    Agent web API receives user token from the calling application and validates the token via the Entra ID Auth SDK (sidecar) `/Validate` endpoint
+    Agent web API receives user token from the calling application and validates the token via the Microsoft Entra ID Auth SDK (sidecar) `/Validate` endpoint
     Acquire token for downstream APIs by calling `/AuthorizationHeader` with only the `AgentIdentity` and the incoming authorization header
     
     ```bash
@@ -81,7 +81,7 @@ These are the steps to acquire tokens using the Microsoft Entra ID Auth SDK (sid
     Authorization: Bearer <user-token>
     
     # Step 2: Get authorization header on behalf of the user
-    GET /AuthorizationHeader/Graph?AgentIdentity=<agent-client-id>
+    GET /AuthorizationHeader/Graph?AgentIdentity=<agent-identity-client-id>
     Authorization: Bearer <user-token>
     ```
 
