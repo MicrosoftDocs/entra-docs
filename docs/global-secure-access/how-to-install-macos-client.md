@@ -51,7 +51,7 @@ The client uses system extensions and a transparent application proxy that you n
 To deploy the Global Secure Access client's .pkg file through Microsoft Intune as a managed app:
 
 > [!IMPORTANT]
-> Beginning with version **1.1.26060207**, the app package includes the `com.microsoft.autoupdate2` application to support future use cases. Remove `com.microsoft.autoupdate2` from the Intune detection rules when deploying the app.
+> Beginning with version **1.1.26060207**, the app package includes the `com.microsoft.autoupdate2` application to support future use cases. You can remove `com.microsoft.autoupdate2` from the Intune detection rules when deploying the app.
 
 1. Download the `GlobalSecureAccessClient.pkg` file from the Microsoft Entra admin center.
 
@@ -65,7 +65,7 @@ To deploy the Global Secure Access client's .pkg file through Microsoft Intune a
 
 1. On the **Requirements** tab, set the minimum operating system to **macOS 14.0** and then select **Next**.
 
-1. On the **Detection rules** tab, review the **Included apps** list to verify that the Global Secure Access client app is detected correctly. Then select **Next**.
+1. On the **Detection rules** tab, review the **Included apps** list to verify that the Global Secure Access client app is detected correctly. Optionally, remove the `com.microsoft.autoupdate2` app from the list. Then select **Next**.
 
 1. On the **Assignments** tab, assign the app to the appropriate device or user groups. Then select **Next**.
 
