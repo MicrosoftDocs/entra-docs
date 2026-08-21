@@ -34,7 +34,7 @@ Released for download on August 21, 2026.
 - Improved internet connectivity checks.
 - Added support for Secure DNS bypass.
 - Addressed MSAL sign-in issues.
-- The app package now includes the `com.microsoft.autoupdate2` application to support future use cases. Remove `com.microsoft.autoupdate2` from the Intune detection rules when deploying the app.
+- The app package now includes the `com.microsoft.autoupdate2` application. You can optionally remove `com.microsoft.autoupdate2` from the Intune detection rules when deploying the app.
 - Fixed an issue that prevented policies from being cleared during a cache reset.
 - Fixed a crash during client restarts.
 - Fixed a partial connection issue with the macOS 27 beta build.
