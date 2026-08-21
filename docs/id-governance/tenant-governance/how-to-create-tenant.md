@@ -25,13 +25,13 @@ This article doesn't cover creating an external tenant configuration for consume
 
 ## Prerequisites
 
-Before you create a governed workforce tenant, confirm that you meet all the following requirements:
+Before you create a governed workforce tenant, review the following requirements:
 
 - Your home tenant has at least one paid, license-based Microsoft product (for example, Microsoft Entra ID P1 or P2, Microsoft 365, or Windows Enterprise E3). Free and trial licenses don't qualify.
 - You have either a paid [Enterprise Agreement (EA)](/azure/cost-management-billing/manage/understand-ea-roles) or [Pay-As-You-Go](https://azure.microsoft.com/pricing/offers/ms-azr-0003p?cid=msft_learn) subscription. Both [Microsoft Online Subscription Agreement (MOSA)](/azure/cost-management-billing/manage/view-all-accounts#microsoft-online-services-program) and [Microsoft Customer Agreement (MCA)](/azure/cost-management-billing/manage/view-all-accounts#microsoft-customer-agreement) billing accounts are supported. To identify your billing account type, see [View your billing accounts in the Azure portal](/azure/cost-management-billing/manage/view-all-accounts).
 - Your Microsoft Entra tenant allows member users to create add-on tenants. If [**Restrict non-admin users from creating tenants**](~/fundamentals/users-default-permissions.md#restrict-member-users-default-permissions) is set to **Yes**, your account needs the [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator) role.
 - You have the required Azure Resource Manager (ARM) permissions for the selected subscription through the **Tenant Contributor** or **Subscription Owner/Creator** role.
-- The governing tenant has a configured **default** [governance policy template](governance-policy-templates.md). The tenant creation service uses only the default template (ID: `default`). If the default template isn't defined, the secure add-on tenant creation flow doesn't establish a governance relationship, even if other templates exist.
+- (Optional) The governing tenant has a configured **default** [governance policy template](governance-policy-templates.md). The tenant creation service uses only the default template (ID: `default`). If the default template isn't defined, the secure add-on tenant creation flow doesn't establish a governance relationship, even if other templates exist.
 
 ## Create the tenant
 
