@@ -2,9 +2,9 @@
 title: Install the Global Secure Access Client for macOS
 description: The Global Secure Access client helps secure network traffic at the user device. This article describes how to download and install the macOS client.
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 08/21/2026
 ms.reviewer: lirazbarak
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1024
 # Customer intent: As an IT admin, I want to deploy the Global Secure Access client on macOS devices so that my organization's network traffic is protected.
 
 ---
@@ -49,6 +49,9 @@ The client uses system extensions and a transparent application proxy that you n
 ### Deploy by using Microsoft Intune
 
 To deploy the Global Secure Access client's .pkg file through Microsoft Intune as a managed app:
+
+> [!IMPORTANT]
+> Beginning with version **1.1.26060207**, the app package includes the `com.microsoft.autoupdate2` application to support future use cases. Remove `com.microsoft.autoupdate2` from the Intune detection rules when deploying the app.
 
 1. Download the `GlobalSecureAccessClient.pkg` file from the Microsoft Entra admin center.
 
