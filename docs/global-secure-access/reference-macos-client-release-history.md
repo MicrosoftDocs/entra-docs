@@ -2,10 +2,11 @@
 title: Global Secure Access Client for macOS Release Notes
 description: This article tracks the release notes and download instructions for the Global Secure Access client for macOS.
 ms.topic: reference
-ms.date: 04/16/2026
+ms.date: 08/21/2026
 ms.reviewer: lirazbarak
+ms.custom: msecd-doc-authoring-1024
 ai-usage: ai-assisted
-
+# customer intent: As an IT admin, I want to review Global Secure Access client changes for macOS so that I can plan client deployments and upgrades.
 ---
 # Global Secure Access client for macOS release notes
 This article lists the released versions of the Global Secure Access client for macOS and the changes in each version.   
@@ -18,6 +19,26 @@ You can download the current version of the Global Secure Access client from the
 1. Select the **macOS** tab.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
+
+## Version 1.1.26060207
+Released for download on August 21, 2026.
+
+### Functional changes
+
+- Added support for controlling traffic to the Home Network.
+- Added a new **Connections** page.
+- Added agentic detection support, which enables security policies on agent traffic.
+
+### Other changes
+
+- Improved internet connectivity checks.
+- Added support for Secure DNS bypass.
+- Addressed MSAL sign-in issues.
+- The app package now includes the `com.microsoft.autoupdate2` application. You can optionally remove `com.microsoft.autoupdate2` from the Intune detection rules when deploying the app.
+- Fixed an issue that prevented policies from being cleared during a cache reset.
+- Fixed a crash during client restarts.
+- Fixed a partial connection issue with the macOS 27 beta build.
+- Fixed an issue that prevented the tunnel from being established when a device woke or was unlocked.
 
 ## Version 1.1.26030604
 Released for download on June 05, 2026.
