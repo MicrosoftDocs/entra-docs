@@ -21,7 +21,7 @@ You can download the current version of the Global Secure Access client from the
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
 
 ## Version 1.1.26060207
-Released for download on August 21, 2026.
+Released for download on August 24, 2026.
 
 ### Functional changes
 
