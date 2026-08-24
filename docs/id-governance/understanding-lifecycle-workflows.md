@@ -3,7 +3,7 @@ title: 'Understanding lifecycle workflows'
 description: Describes an overview of Lifecycle workflows and the various parts.
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 03/12/2026
+ms.date: 08/21/2026
 ms.custom: sfi-image-nochange
 #Customer Intent: As an IT admin, I want to understand lifecycle workflows and their components so that I can effectively use them to automate identity lifecycle processes.
 ---
@@ -122,12 +122,16 @@ On the Workflow basics screen you also get to set the first detail, the trigger,
 The trigger of a workflow defines when a scheduled workflow runs for users in scope for the workflow. The trigger of a workflow depends on the type of workflow you want to run. 
 
 The supported scheduled triggers are:
-- Attribute Changes
-- Group Membership change
+
+- Attribute changes
+- Group membership change
 - Time based
 - Sign-in inactivity
 
 The type of workflow you choose determines which trigger you use.
+
+> [!IMPORTANT]
+> Relative time-based comparisons expand the time-based attribute trigger and are in public preview. During public preview, the Microsoft Entra admin center temporarily shows **Time based attribute** and **Time based attribute V2 (Preview)** as separate choices. Both choices represent the same time-based trigger capability, and the V2 choice can also reproduce the standard time-based behavior. At general availability, customers will see only one time-based trigger choice that includes relative comparisons. For supported comparisons and configuration details, see [Time based attribute trigger](lifecycle-workflow-execution-conditions.md#time-based-attribute-trigger). For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Scope
 
@@ -137,7 +141,7 @@ The scope depends on the trigger that you use.
 
 - For **Attribute changes**, the trigger is rule based and triggered when the attribute you defined is changed for a user.
 - For **Group membership change**, the trigger is group-based and triggered if a user is added or removed from a specific group.
-- For **Time based attribute**, the trigger is rule based and triggered when the time value you defined is met by a user.
+- For **Time based attribute**, the trigger is rule based and triggered when a user's date attribute meets the configured point-in-time or relative comparison.
 - For **sign-in inactivity**, the trigger is rule-based and triggered when a user has not signed in over a specific time period.
 
 For a detailed guide on setting the execution conditions for a workflow, see: [Create a lifecycle workflow.](create-lifecycle-workflow.md)
@@ -151,7 +155,7 @@ Once scheduling is enabled, the workflow is evaluated based on the interval that
  [![Workflow template schedule.](media/understanding-lifecycle-workflows/workflow-10.png)](media/understanding-lifecycle-workflows/workflow-10.png#lightbox)
 
 >[!NOTE]
-> The time based attribute trigger processes a user at a specific point in time based on the workflow configuration (e.g., seven days before the user’s hire date) and user account configuration. For reliable workflow execution, the user account must be configured with all relevant details (e.g., trigger and scoping attributes) in advance of the scheduled workflow execution. Once the designated time arrives, the next scheduled workflow run will process the user if it meets the execution conditions. If the workflow or user account is configured after the intended processing time (e.g., due to a delay in the HR system), Lifecycle Workflows will still attempt to process the user—provided the necessary setup is completed within three days of the original processing time.
+> The standard time based attribute choice processes a user at a specific point in time based on the workflow configuration (e.g., seven days before the user’s hire date) and user account configuration. For reliable workflow execution, the user account must be configured with all relevant details (e.g., trigger and scoping attributes) in advance of the scheduled workflow execution. Once the designated time arrives, the next scheduled workflow run will process the user if it meets the execution conditions. If the workflow or user account is configured after the intended processing time (e.g., due to a delay in the HR system), Lifecycle Workflows will still attempt to process the user—provided the necessary setup is completed within three days of the original processing time. This catch-up behavior doesn't apply when you select **Time based attribute V2 (Preview)** during public preview.
 
 To view a detailed guide on  customizing the schedule of a workflow, see: [Customize the schedule of workflows](customize-workflow-schedule.md).
 
