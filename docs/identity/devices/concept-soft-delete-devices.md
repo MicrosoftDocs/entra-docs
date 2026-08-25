@@ -1,8 +1,6 @@
 ---
 title: Device soft delete in Microsoft Entra ID (preview)
 description: Learn about device soft delete (preview) in Microsoft Entra ID, which moves deleted devices to a recoverable state instead of permanently removing them.
-author: Justinha
-ms.author: justinha
 ms.service: entra-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-108
@@ -40,11 +38,11 @@ After 30 days in the soft-deleted state, the device is automatically hard delete
 During the preview, device soft delete is supported for the following device types:
 
 - **Microsoft Entra joined devices** &mdash; Enterprise-managed devices directly joined to Microsoft Entra ID.
+- **Microsoft Entra hybrid joined devices** &mdash; Enterprise-managed devices joined to your on-premises Active Directory domain and registered with Microsoft Entra ID.
 - **Microsoft Entra registered devices** &mdash; Personal or BYOD devices registered with a work or school account.
 
 The following device types aren't currently supported for soft delete and are hard deleted immediately when removed:
 
-- Microsoft Entra hybrid joined devices <!-- TODO: Confirm whether hybrid-joined device soft delete support is available at public preview. -->
 - Devices without a recognized trust type, such as those created directly via Microsoft Graph API
 - Certain specialty device types, including secure VMs with managed identities, non-persistent VDI instances, and printers
 

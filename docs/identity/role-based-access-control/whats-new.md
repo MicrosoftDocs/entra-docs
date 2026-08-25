@@ -2,7 +2,8 @@
 title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 ms.topic: whats-new
-ms.date: 05/21/2026
+ms.date: 07/17/2026
+ai-usage: ai-assisted
 
 ---
 
@@ -14,6 +15,9 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| July 2026 | Roles | Updated [Tenant Governance Administrator](permissions-reference.md#tenant-governance-administrator) role to a privileged role. |
+| June 2026 | Roles | Updated [AI Administrator](permissions-reference.md#ai-administrator) role and [AI Reader](permissions-reference.md#ai-reader) roles.|
+| June 2026 | Roles | Updated [Agent ID Administrator](permissions-reference.md#agent-id-administrator) and [Agent ID Developer](permissions-reference.md#agent-id-developer) roles. |
 | May 2026 | Roles | Updated [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator) role to a privileged role. |
 | April 2026 | Roles | Added [AI Reader](permissions-reference.md#ai-reader) and [Customer Delegated Admin Relationship Administrator](permissions-reference.md#customer-delegated-admin-relationship-administrator) roles. |
 | March 2026 | Roles | Added [Teams External Collaboration Administrator](permissions-reference.md#teams-external-collaboration-administrator) role. |

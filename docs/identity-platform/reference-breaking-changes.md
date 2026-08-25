@@ -1,9 +1,7 @@
 ---
 title: Updates and breaking changes
 description: Learn about changes to the Microsoft identity platform that can impact your application.
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform

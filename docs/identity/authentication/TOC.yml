@@ -55,6 +55,12 @@
       href: concept-authentication-security-questions.md
     - name: Remove passwords from Microsoft Entra ID
       href: how-to-plan-password-scramble-phishing-resistant-passwordless-authentication.md
+  - name: Telephony providers
+    items:
+    - name: Telephony providers overview
+      href: concept-phone-providers.md
+    - name: Telephony providers FAQ
+      href: phone-providers-faq.yml
   - name: Conditional Access authentication strength
     items:
     - name: Overview
@@ -162,10 +168,14 @@
         href: how-to-authentication-passkeys-fido2.md
       - name: Enable Entra passkey on Windows
         href: how-to-authentication-entra-passkeys-on-windows.md
+      - name: Register Entra passkey on Windows
+        href: how-to-register-entra-passkey-windows.md
+      - name: Sign in with Entra passkey on Windows
+        href: how-to-sign-in-entra-passkey-windows.md
+      - name: Enable synced passkey
+        href: how-to-synced-passkeys.md
       - name: Register passkey
         href: how-to-register-passkey.md
-      - name: Register passkey with a mobile device
-        href: how-to-register-passkey-mobile.md
       - name: Sign in with passkey
         href: how-to-sign-in-passkey.md
       - name: Passkey FAQ
@@ -178,8 +188,6 @@
       items:
       - name: Enable passkeys in Authenticator
         href: how-to-enable-authenticator-passkey.md
-      - name: Support passkeys in Authenticator
-        href: how-to-support-authenticator-passkey.md
       - name: Register passkeys in Authenticator
         href: how-to-register-passkey-authenticator.md
       - name: Sign in with passkeys in Authenticator
@@ -194,12 +202,16 @@
         href: how-to-mfa-additional-context.md
       - name: Use Authenticator Lite
         href: how-to-mfa-authenticator-lite.md
+      - name: Transfer Authenticator to a new phone
+        href: how-to-transfer-authenticator-new-phone.md
     - name: Hybrid
       items:
       - name: Register passkey with a security key
         href: how-to-register-passkey-with-security-key.md
       - name: Enable security key sign-in to Windows
         href: howto-authentication-passwordless-security-key-windows.md
+      - name: Sign in with a security key
+        href: how-to-security-key-sign-in.md
       - name: SSO to on-premises resources
         href: howto-authentication-passwordless-security-key-on-premises.md
       - name: Hybrid FAQs
@@ -300,6 +312,11 @@
     items:
     - name: Manage
       href: howto-authentication-sms-signin.md
+    - name: Passkey by default and SMS/Voice retirement
+      href: concept-sms-voice-retirement.md
+      items:
+      - name: SMS/Voice retirement FAQ
+        href: concept-sms-voice-retirement-faq.yml
     - name: Supported apps for SMS-based authentication
       href: how-to-authentication-sms-supported-apps.md
     - name: Two-way SMS unsupported

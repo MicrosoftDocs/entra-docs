@@ -2,11 +2,10 @@
 title: Configure Samsara for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Samsara.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Samsara so that I can control who has access to Samsara, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Samsara for Single sign-on with Microsoft Entra ID
 

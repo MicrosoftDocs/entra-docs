@@ -1,9 +1,7 @@
 ---
 title: "How to add a redirect URI to your application"
 description: Learn how to add a redirect URI to your application in Microsoft Entra to securely handle authentication tokens and enhance app security.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom:
 ms.date: 05/14/2026
 ms.service: identity-platform

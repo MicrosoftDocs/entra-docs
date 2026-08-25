@@ -1,64 +1,115 @@
 ---
-title: What is single sign-on?
-description: Learn about single sign-on for enterprise applications in Microsoft Entra ID.
+title: What is single sign-on (SSO) in Microsoft Entra ID?
+description: Learn about single sign-on for enterprise applications in Microsoft Entra ID, including SAML and OpenID Connect protocols.
+
+author: omondiatieno
+manager: mwongerapk
+ms.service: entra-id
+ms.subservice: enterprise-apps
 
 ms.topic: overview
-ms.date: 09/30/2024
+ms.date: 06/04/2026
+ms.author: jomondi
 ms.reviewer: alamaral
-ms.custom: enterprise-apps-article
+ms.custom: enterprise-apps-article, msecd-doc-authoring-1013
+ai-usage: ai-assisted
 
-# Customer intent: As an IT admin responsible for managing user access to applications, I want to understand the different single sign-on (SSO) options available in Microsoft Entra ID, so that I can plan and deploy SSO for our organization's applications efficiently.
+# Customer intent: As an ISV application developer or IT administrator, I want to understand what single sign-on is, its benefits, and available options in Microsoft Entra ID, so I can implement or manage SSO effectively for my application or organization.
 ---
 
 # What is single sign-on in Microsoft Entra ID?
 
-This article provides you with information about the single sign-on (SSO) options that are available to you. It also outlines an introduction to planning a single sign-on deployment when using Microsoft Entra ID. Single sign-on is an authentication method that allows users to sign in using one set of credentials to multiple independent software systems. Using SSO means a user doesn't have to sign in to every application they use. With SSO, users can access all needed applications without being required to authenticate using different credentials. For a brief introduction, see [Microsoft Entra single sign-on](https://azure.microsoft.com/services/active-directory/sso/#overview).
+Single sign-on (SSO) lets users sign in once and reach many applications. This article explains what SSO is, why it helps ISVs and organizations, the SSO options in Microsoft Entra ID, and how the sign-in process works.
 
-Many applications already exist in Microsoft Entra ID that you can use with SSO. You have several options for SSO depending on the needs of the application and how it's implemented. Take time to plan your SSO deployment before you create applications in Microsoft Entra ID. The management of applications can be made easier by using the My Apps portal.
+With SSO, users sign in with one set of credentials. They can then open every assigned application without signing in again.
+
+SSO matters to two audiences. **Independent software vendors (ISVs)** build applications for enterprise customers. **Organizations** manage application access for their users. You might be a developer who integrates an app with Microsoft Entra ID, or an admin who plans an SSO rollout. In both roles, SSO basics help you improve security and the user experience.
+
+When Microsoft Entra ID is the identity provider, users sign in once with their work credentials. Microsoft Entra ID verifies each user and confirms their identity to the app. Apps no longer manage separate usernames and passwords.
+
+## Why use single sign-on?
+
+SSO offers clear benefits for two groups: ISVs and the people who use and manage apps.
+
+### For ISV application providers
+
+For ISVs, SSO makes an application easier to sell and support:
+
+- **Enterprise readiness**: SSO makes your app a fit for enterprise customers.
+- **Faster onboarding**: Customers deploy your app without managing extra credentials.
+- **Competitive advantage**: Enterprise buyers often require SSO.
+- **Simpler user management**: Your app relies on the customer's identity system instead of its own user database.
+
+### For end users and organizations
+
+For users and admins, SSO improves daily access and security:
+
+- **Better user experience**: Users keep fewer credentials and sign in less often.
+- **Stronger security**: Central sign-in limits credential exposure and applies consistent policies.
+- **Easier access management**: Admins control access from one identity provider.
+- **Less support overhead**: Fewer password resets and account tasks reach the help desk.
 
 ## Single sign-on options
 
-Choosing an SSO method depends on how the application is configured for authentication. Cloud applications can use federation-based options, such as OpenID Connect, and SAML. The application can also use password-based SSO, linked-based SSO, or SSO can be disabled.
+The right SSO method depends on how an app authenticates and where it runs. Microsoft Entra ID supports several approaches.
 
-- **Federation** - When you set up SSO to work between multiple identity providers, it's called federation. An SSO implementation based on federation protocols improves security, reliability, end-user experiences, and implementation. 
+### Federation-based SSO
 
-    With federated single sign-on, Microsoft Entra authenticates the user to the application by using their Microsoft Entra account. This method is supported for [SAML 2.0](~/identity-platform/single-sign-on-saml-protocol.md), WS-Federation, or [OpenID Connect](~/identity-platform/v2-protocols-oidc.md) applications. Federated SSO is the richest mode of SSO. Use federated SSO with Microsoft Entra ID when an application supports it, instead of password-based SSO and Active Directory Federation Services (AD FS).
+Federation-based SSO gives the richest integration. Microsoft Entra ID authenticates users and sends identity information to apps through standard protocols.
 
-    There are some scenarios where the SSO option isn't present for an enterprise application. If the application was registered using **App registrations** in the portal, then the single sign-on capability is configured to use OpenID Connect. In this case, the single sign-on option doesn't appear in the navigation under enterprise applications.  OpenID Connect is an authentication protocol built on top of OAuth 2.0, which is an authorization protocol. OpenID Connect uses OAuth 2.0 to handle the authorization part of the process. When a user tries to log in, OpenID Connect verifies their identity based on the authentication performed by an authorization server. Once the user is authenticated, OAuth 2.0 is used to grant the application access to the user's resources without exposing their credentials.
+**Security Assertion Markup Language (SAML) 2.0**: A mature, XML-based standard used widely in enterprises. SAML suits traditional web apps and cases that need detailed user attributes.
 
-    Single sign-on isn't available when an application is hosted in another tenant. Single sign-on is also not available if your account doesn't have the required permissions (Cloud Application Administrator, Application Administrator, or owner of the service principal). Permissions can also cause a scenario where you can open single sign-on but might not be able to save.
+**OpenID Connect (OIDC)**: A modern protocol built on OAuth 2.0 that uses JSON-based tokens. OIDC suits modern web apps, mobile apps, and APIs that need both authentication and authorization.
 
-    > [!VIDEO https://www.youtube.com/embed/CjarTgjKcX8]
+**Protocol considerations**:
+- **For ISV developers**: OIDC is usually simpler to build with modern frameworks. SAML offers broader enterprise compatibility.
+- **For administrators**: Both protocols work with your identity infrastructure, though SAML might fit established enterprise systems better.
 
-- **Password** - On-premises applications can use a password-based method for SSO. This choice works when applications are configured for Application Proxy.
+### Password-based SSO
 
-    With password-based SSO, users sign in to the application with a username and password the first time they access it. After the first sign-on, Microsoft Entra ID provides the username and password to the application. Password-based SSO enables secure application password storage and replay using a web browser extension or mobile app. This option uses the existing sign-in process provided by the application, enables an administrator to manage the passwords, and doesn't require the user to know the password. For more information, see [Add password-based single sign-on to an application](configure-password-single-sign-on-non-gallery-applications.md).
+Password-based SSO works with apps that use username and password sign-in. Microsoft Entra ID securely stores the credentials and replays them to the app. This method helps with apps that don't support federation protocols, especially on-premises apps that use Application Proxy. Application Proxy publishes on-premises apps for secure remote access.
 
-- **Linked** - Linked sign-on can provide a consistent user experience while you migrate applications over a period of time. If you're migrating applications to Microsoft Entra ID, you can use linked-based SSO to quickly publish links to all the applications you intend to migrate. Users can find all the links in the My Apps or Microsoft 365 portals.
+### Linked SSO
 
-    After a user has authenticated with a linked application, an account needs to be created before the user is provided single sign-on access. Provisioning this account can either occur automatically, or it can occur manually by an administrator. You can't apply Conditional Access policies or multifactor authentication to a linked application because a linked application doesn't provide single sign-on capabilities through Microsoft Entra ID. When you configure a linked application, you're simply adding a link that appears for launching the application. For more information, see [Add linked single sign-on to an application](configure-linked-sign-on.md).
+Linked SSO keeps a consistent experience while you migrate apps. It adds app links in user portals, but it doesn't provide true single sign-on. Use it for phased migrations, where full SSO comes later.
 
-- **Disabled** - When SSO is disabled, it isn't available for the application. When single sign-on is disabled, users might need to authenticate twice. First, users authenticate to Microsoft Entra ID, and then they sign in to the application.
+### Disabled SSO
 
-  Disable SSO when:
-  - You're not ready to integrate this application with Microsoft Entra single sign-on
-  - You're testing other aspects of the application
-  - An on-premises application doesn't require users to authenticate, but you want them to. With SSO disabled, the user needs to authenticate.
+When SSO is disabled, users sign in to each app separately. Use this setting during testing, or for apps that don't need integrated sign-in.
 
-    If you configured the application for SP-initiated SAML-based SSO and you change the SSO mode to disabled, it doesn't stop users from signing in to the application outside the MyApps portal. To stop users from signing in from outside My apps portal, you need to disable the ability for users to sign in.
+## How SSO works with Microsoft Entra ID
 
-## Plan SSO deployment
+The SSO process has three parts: the user, the app, and Microsoft Entra ID as the identity provider.
 
-Web applications are hosted by various companies and made available as a service. Some popular examples of web applications include Microsoft 365, GitHub, and Salesforce. There are thousands of others. People access web applications using a web browser on their computer. Single sign-on makes it possible for people to navigate between the various web applications without having to sign in multiple times. For more information, see [Plan a single sign-on deployment](plan-sso-deployment.md).
+1. **User requests access**: A user opens an app.
+2. **Redirect to sign-in**: The app sends the user to Microsoft Entra ID.
+3. **Identity check**: Microsoft Entra ID verifies the user's work credentials.
+4. **Access granted**: Microsoft Entra ID confirms the user's identity, and the app grants access.
 
-How you implement SSO depends on where the application is hosted. Hosting matters because of the way network traffic is routed to access the application. Users don't need to use the Internet to access on-premises applications (hosted on a local network). If the application is hosted in the cloud, users need the Internet to use it. Cloud hosted applications are also called Software as a Service (SaaS) applications.
+This four-step process happens automatically, so apps don't manage user credentials directly.
 
-For cloud applications, federation protocols are used. You can also use single sign-on for on-premises applications. You can use Application Proxy to configure access for your on-premises application. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](/entra/identity/app-proxy).
+## Planning SSO deployment
 
-## My Apps
+A successful SSO rollout depends on app hosting, user needs, and integration options. Apps can run on-premises, in the cloud as software as a service (SaaS), or in hybrid environments. Each hosting model shapes your SSO approach.
 
-If you're a user of an application, you likely don't care much about SSO details. You just want to use the applications that make you productive without having to type your password so much. You can find and manage your applications at the My Apps portal. For more information, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+- **Cloud apps** usually use federation protocols like SAML or OpenID Connect.
+- **On-premises apps** can use federation protocols or password-based SSO through Application Proxy.
+- **Hybrid scenarios** might combine approaches, based on each app's needs.
 
-## Next steps
+For comprehensive planning guidance, see [Plan a single sign-on deployment](plan-sso-deployment.md) for organizations and [Plan SSO integration for ISV applications](plan-sso-integration-isv.md) for application developers.
 
-- [Plan for single sign-on deployment](plan-sso-deployment.md)
+## User experience: My Apps portal
+
+End users access their SSO-enabled applications through the My Apps portal, which provides a centralized location for all assigned applications. Users can find and launch applications without remembering multiple credentials. For more information, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+
+## Related content
+
+Choose your next step based on your role.
+
+**For ISV application developers**: Learn how SAML and OpenID Connect differ, so you can pick the right protocol for your app and your customers.
+
+- [SAML vs OpenID Connect: Choose the right protocol](saml-vs-oidc-decision-guide.md) - Compare the protocols and decide.
+
+**For IT administrators and identity professionals**: Plan how to deploy SSO across your organization's apps. You review your app portfolio, choose integration approaches, and set a rollout strategy.
+
+- [Plan a single sign-on deployment](plan-sso-deployment.md) - Get end-to-end guidance for organizational SSO planning.

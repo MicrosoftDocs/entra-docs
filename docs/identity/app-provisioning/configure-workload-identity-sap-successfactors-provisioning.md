@@ -1,8 +1,6 @@
 ---
 title: Configure workload identity-based authentication for SAP SuccessFactors provisioning (Preview)
 description: Learn how to replace basic authentication with short-lived, federated OpenID Connect tokens for Microsoft Entra provisioning to SAP SuccessFactors.
-author: jenniferf-skc
-ms.author: jfields
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
@@ -19,16 +17,13 @@ This article shows you how to configure workload identity-based authentication f
 > [!NOTE]
 > We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
-This change helps customers transition to a more secure authentication model in preparation for SAP's plan to [deprecate basic authentication for SuccessFactors APIs by November 20, 2026](https://help.sap.com/docs/successfactors-release-information/8e0d540f96474717bbf18df51e54e522/fcc05a902b4140e585d968c2fe4a96bc.html).
+This change helps customers transition to a more secure authentication model in preparation for SAP's plan to [deprecate basic authentication for SuccessFactors APIs](https://help.sap.com/docs/successfactors-release-information/8e0d540f96474717bbf18df51e54e522/fcc05a902b4140e585d968c2fe4a96bc.html).
 
 Applies to the following provisioning integrations:
 
 - SuccessFactors to on-premises Active Directory user provisioning
 - SuccessFactors to Microsoft Entra ID user provisioning
 - SuccessFactors Writeback
-
-> [!NOTE]
-> Workload identity authentication is currently enabled for the **SuccessFactors Writeback** and **SuccessFactors to Microsoft Entra ID user provisioning** scenarios. Support for the **SuccessFactors to on-premises Active Directory user provisioning** scenario will be enabled soon.
 
 ## Why workload identity-based authentication
 

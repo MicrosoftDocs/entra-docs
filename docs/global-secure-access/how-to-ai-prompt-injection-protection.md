@@ -3,8 +3,6 @@ title: Protect enterprise generative AI apps with prompt injection protection
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway prompt injection protection."
 ms.topic: how-to
 ms.date: 04/27/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: KaTabish
 ms.custom: sfi-image-nochange
 ai-usage: ai-assisted
@@ -115,6 +113,6 @@ You can protect any custom JSON-based LLM or GenAI app by configuring a custom t
 ## Related content
 
 - [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md)
-- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
+- [Create content policies for network content filtering](how-to-network-content-filtering.md)
 - [Apply Conditional Access policies to Global Secure Access traffic](how-to-target-resource-microsoft-profile.md)
 - [Azure AI Content Safety](/azure/ai-services/content-safety/concepts/jailbreak-detection)

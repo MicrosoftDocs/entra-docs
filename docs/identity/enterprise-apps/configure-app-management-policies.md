@@ -2,13 +2,9 @@
 title: Configure restrictions on how applications can be configured
 
 description: Configure app management policies in Microsoft Entra ID to set restrictions on how apps and service principals in your tenant can be configured. Secure your environment with step‑by‑step guidance.
-
-author: arcrowe
 manager: CelesteDG
-
 ms.topic: how-to
 ms.date: 07/23/2025
-ms.author: arcrowe
 ms.reviewer: arcrowe
 ms.custom: enterprise-apps
 #zone_pivot_groups: enterprise-apps-minus-ps

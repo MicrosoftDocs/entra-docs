@@ -88,6 +88,8 @@
         href: adstream-tutorial.md
       - name: AfterShip
         href: aftership-tutorial.md
+      - name: AgileWorks
+        href: agileworks-tutorial.md
       - name: Agile Provisioning
         href: agile-provisioning-tutorial.md
       - name: Agiloft Contract Management Suite
@@ -1701,6 +1703,8 @@
         href: logicmonitor-tutorial.md
       - name: LoginRadius
         href: lr-tutorial.md
+      - name: Lovable
+        href: lovable-oidc-tutorial.md
       - name: GoTo
         href: goto-tutorial.md
       - name: Logz.io - Microsoft Entra Integration
@@ -2033,6 +2037,8 @@
         href: orgchartnow-tutorial.md
       - name: OrgVitality SSO
         href: orgvitality-sso-tutorial.md  
+      - name: Orgvue
+        href: orgvue-tutorial.md
       - name: Origami
         href: origami-tutorial.md
       - name: Othership Workplace Scheduler
@@ -3327,7 +3333,7 @@
       - name: Autodesk SSO
         href: autodesk-sso-provisioning-tutorial.md
       - name: Azure Databricks SCIM Connector
-        href: /azure/databricks/administration-guide/users-groups/scim/aad?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+        href: azure-databricks-provisioning-tutorial.md
       - name: Azure Databricks with Private Link Workspace
         href: azure-databricks-with-private-link-workspace-provisioning-tutorial.md
       - name: AWS IAM Identity Center
@@ -3766,8 +3772,6 @@
         href: rollbar-provisioning-tutorial.md
       - name: Rootly
         href: rootly-provisioning-tutorial.md
-      - name: Rouse Sales
-        href: rouse-sales-provisioning-tutorial.md
       - name: SafeGuard Cyber
         href: safeguard-cyber-provisioning-tutorial.md        
       - name: Salesforce
@@ -3934,6 +3938,8 @@
         href: velpic-provisioning-tutorial.md
       - name: Verizon
         href: verizon-provisioning-tutorial.md
+      - name: Visa
+        href: visa-provisioning-tutorial.md
       - name: Visibly
         href: visibly-provisioning-tutorial.md
       - name: Visitly
@@ -4004,5 +4010,7 @@
         href: zscaler-two-provisioning-tutorial.md
       - name: Zscaler Three
         href: zscaler-three-provisioning-tutorial.md
+      - name: Zscaler Zidentity
+        href: zscaler-zidentity-provisioning-tutorial.md
       - name: Zscaler ZSCloud
         href: zscaler-zscloud-provisioning-tutorial.md

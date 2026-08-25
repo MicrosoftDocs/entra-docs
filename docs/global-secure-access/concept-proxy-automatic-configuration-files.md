@@ -4,8 +4,6 @@ description: Learn about Explicit Forward Proxy PAC file concepts.
 ms.topic: concept-article
 ms.date: 04/06/2026
 ms.author: alexpav
-author: idmdev
-ms.reviewer: 
 ---
 
 # Introduction to proxy automatic configuration (PAC) files
@@ -45,6 +43,10 @@ The mechanism for applying PAC file settings varies depending on device manageme
 On managed devices, such as those governed by browser policy or enterprise mobility management, you can distribute PAC file URLs or content through centralized configuration tools.
 
 For unmanaged devices, you can instruct users to manually enter the PAC file location in browser settings or rely on a network-provided configuration. A network-provided configuration might be Dynamic Host Configuration Protocol (DHCP) or Web Proxy Auto-Discovery (WPAD).
+
+## Next steps
+
+- [Learn how to configure custom proxy automatic configuration file hosting](how-to-custom-proxy-file-hosting.md)
 
 ## Related content
 

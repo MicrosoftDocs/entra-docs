@@ -2,11 +2,8 @@
 title: Delete and restore agent identity objects
 description: Learn how to delete an agent identity blueprint and restore soft-deleted agent identity objects in Microsoft Entra.
 titleSuffix: Microsoft Entra Agent ID
-author: shlipsey3
-ms.author: sarahlipsey
 ms.topic: how-to
 ms.date: 04/29/2026
-ms.custom: agent-id
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin or developer, I want to delete an agent identity blueprint and restore soft-deleted agent identity objects so I can manage the lifecycle of my agents.
@@ -171,8 +168,6 @@ Remove-EntraDeletedDirectoryObject -DirectoryObjectId <blueprint-app-object-id>
 ---
 
 ## Agents' user accounts
-
-<!-- TODO: Confirm with engineering whether the cascade cleanup automatically includes agents' user accounts, and whether deleting an individual agent identity also deletes its associated agent's user account. Update or remove this section accordingly. -->
 
 Agents' user accounts are paired 1:1 with agent identities. If agents' user accounts aren't automatically cleaned up as part of cascade deletion, delete them manually.
 

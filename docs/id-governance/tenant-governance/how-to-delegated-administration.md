@@ -1,14 +1,13 @@
 ---
-title: Use cross-tenant delegated administration (preview)
+title: Use cross-tenant delegated administration
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to use cross-tenant delegated administration to sign in to and manage governed tenants using your governing tenant credentials
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 07/27/2026
+ai-usage: ai-assisted
 ---
 
-# Use cross-tenant delegated administration (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Use cross-tenant delegated administration
 
 This article describes how to sign in to a governed tenant as a delegated administrator and manage delegated administration roles.
 
@@ -22,22 +21,49 @@ Cross-tenant delegated administration enables administrators in a governing tena
 
 ## Sign in to a governed tenant as a delegated administrator
 
-After the governance relationship is active and GDAP role assignments are in place, members of the configured security group can sign in to the governed tenant.
+After the governance relationship is active and GDAP role assignments are in place, members of the configured security group can sign in to the governed tenant. Confirm that your account is a member of a security group in the governing tenant that's assigned roles in the governance policy template.
 
-1. Confirm that your account is a member of a security group in the governing tenant that is assigned roles in the governance policy template.
+You can sign in to a governed tenant in two ways:
+
+- From the **Governed tenants** page in the Microsoft Entra admin center.
+- By opening a supported admin portal URL directly.
+
+### Sign in from the Microsoft Entra admin center
+
+Use the **Governed tenants** page to sign in to a governed tenant and choose which admin portal to open.
+
+1. In the governing tenant, go to the **Governed tenants** page in the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+1. Select the governed tenant that you want to sign in to.
+
+1. On the command bar, select **Sign in to tenant**. A side pane opens that shows:
+
+    - Whether you can sign in to the governed tenant.
+    - The roles that you'll have in the governed tenant.
+
+1. If your group membership is configured with Privileged Identity Management (PIM) and your membership is eligible, the side pane shows an **Activate** button. Select **Activate** to activate your eligible group membership before you sign in.
+
+1. In the side pane, select the admin portal that you want to open. A new tab opens and prompts you to authenticate.
+
+1. Sign in with your governing tenant credentials to access the governed tenant.
+
+> [!NOTE]
+> If there are multiple active relationships between the same pair of tenants, the side pane might not show all the roles that you get when you sign in to the tenant. The side pane shows only the roles that are in the scope of the selected relationship.
+
+### Sign in by using an admin portal URL
 
 1. Open a supported admin portal URL and append the domain or tenant ID of the governed tenant. For a list of supported portals and workloads, see [GDAP supported workloads](/partner-center/customers/gdap-supported-workloads). For example:
 
-   `https://entra.microsoft.com/{governed-tenant-domain-or-id}`
+    `https://entra.microsoft.com/{governed-tenant-domain-or-id}`
 
 1. Sign in with your governing tenant credentials.
 
 1. After successful sign-in, perform administrative tasks in the governed tenant based on the roles assigned to your security group.
 
-   > [!IMPORTANT]
-   > Your user information appears different from a regular user:
-   > - Your display name appears as `user_{your user object ID in the governing tenant without dashes}`.
-   > - Sign-in logs and audit logs in the governed tenant show your display name as `{Governing tenant name} Technician`.
+    > [!IMPORTANT]
+    > Your user information appears different from a regular user:
+    > - Your display name appears as `user_{your user object ID in the governing tenant without dashes}`.
+    > - Sign-in logs and audit logs in the governed tenant show your display name as `{Governing tenant name} Technician`.
 
 ## Update delegated administration roles
 

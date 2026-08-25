@@ -1,9 +1,9 @@
 ---
-author: Dickson-Mwendia
+ 
 ms.service: entra
 ms.topic: include
 ms.date: 04/20/2026
-ms.author: dmwendia
+ 
 ms.custom: include file, agent-id
 ---
 

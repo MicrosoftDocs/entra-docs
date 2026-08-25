@@ -26,6 +26,19 @@ items:
 - name: Tutorials
   expanded: false
   items:
+  - name: Microsoft traffic labs
+    expanded: false
+    items:
+    - name: Get started
+      href: tutorial-microsoft-traffic-introduction.md
+    - name: Enable the Microsoft traffic profile
+      href: tutorial-microsoft-traffic-enable-profile.md
+    - name: Enable source IP restoration
+      href: tutorial-microsoft-traffic-source-ip-restoration.md
+    - name: Enable the compliant network check
+      href: tutorial-microsoft-traffic-compliant-network.md
+    - name: Configure universal tenant restrictions
+      href: tutorial-microsoft-traffic-tenant-restrictions.md
   - name: Internet Access labs
     expanded: false
     items:
@@ -67,6 +80,8 @@ items:
     href: overview-operations.md
   - name: Common operations (RACI, change, metrics)
     href: how-to-operations-common.md
+  - name: Security operations for network access
+    href: how-to-security-operations.md
   - name: Operate Private Access
     href: how-to-operate-private-access.md
   - name: Operate Internet Access
@@ -106,6 +121,24 @@ items:
     href: ./scripts/powershell-open-secure-sockets-layer.md
   - name: Install the Windows client as a proof of concept
     href: ./scripts/powershell-windows-client-install-proof-of-concept.md
+  - name: Operations monitoring
+    items:
+    - name: Shared helper functions for operations scripts
+      href: ./scripts/powershell-global-secure-access-operations-helpers.md
+    - name: Verify configuration backup compliance
+      href: ./scripts/powershell-test-backup-compliance.md
+    - name: Check role assignment reviews
+      href: ./scripts/powershell-test-role-based-access-control-hygiene.md
+    - name: Calculate alert noise ratio
+      href: ./scripts/powershell-test-alert-noise-ratio.md
+  - name: Recovery
+    items:
+    - name: List Microsoft Entra snapshots
+      href: ./scripts/powershell-get-entra-snapshot.md
+    - name: Preview Microsoft Entra recovery
+      href: ./scripts/powershell-start-entra-recovery-preview.md
+    - name: Run Microsoft Entra recovery
+      href: ./scripts/powershell-invoke-entra-recovery.md
 - name: Concepts
   expanded: false
   items: 
@@ -127,10 +160,16 @@ items:
     href: overview-application-usage-analytics.md
   - name: Shadow AI discovery
     href: concept-shadow-ai-discovery.md
+  - name: AI agent discovery (preview)
+    href: concept-ai-agent-discovery.md
+  - name: Generative AI Insights (preview)
+    href: concept-generative-ai-insights.md
   - name: External user access
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
+  - name: Web filtering (V2)
+    href: concept-web-filtering.md
   - name: Explicit Forward Proxy
     expanded: false
     items:
@@ -177,6 +216,8 @@ items:
         href: how-to-assign-traffic-profile-to-remote-network.md
       - name: Apply security policies to remote network traffic
         href: how-to-apply-security-policies-remote-network.md
+      - name: Connect a remote network when your CPE is behind a NAT device
+        href: how-to-create-remote-network-cpe-behind-nat.md
       - name: Simulate remote network connectivity using Azure Virtual Network Gateway (VNG)
         href: how-to-simulate-remote-network.md
       - name: Simulate remote network connectivity using Azure vWAN
@@ -237,6 +278,8 @@ items:
             href: how-to-configure-quick-access.md
           - name: Application Discovery
             href: how-to-application-discovery.md
+          - name: Private Access segmentation strategies
+            href: how-to-private-access-segmentation-strategies.md
           - name: Configure Private Access with Privileged Identity Management (PIM)
             href: how-to-configure-global-access-with-pim.md
       - name: Networking and SSO
@@ -279,6 +322,8 @@ items:
             href: faq-transport-layer-security.yml
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Migrate web content filtering policies to V2
+        href: how-to-migrate-web-content-filtering-policies.md
       - name: Check URL category
         href: how-to-check-web-content-filtering-categories.md
       - name: Configure threat intelligence
@@ -291,6 +336,8 @@ items:
         href: how-to-network-content-filtering.md
       - name: Configure the AI Gateway prompt injection protection
         href: how-to-ai-prompt-injection-protection.md
+      - name: Configure MCP firewall (Preview)
+        href: how-to-configure-mcp-firewall.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
   - name: Explicit Forward Proxy
@@ -304,6 +351,8 @@ items:
         href: how-to-configure-explicit-forward-proxy-headers.md
       - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune mobile application management
         href: how-to-configure-explicit-forward-proxy-intune-policy.md
+      - name: Configure custom proxy automatic configuration file hosting
+        href: how-to-custom-proxy-file-hosting.md    
   - name: Logs and monitoring
     expanded: false
     items:
@@ -317,6 +366,8 @@ items:
         href: how-to-remote-network-health-logs.md
       - name: Traffic logs
         href: how-to-view-traffic-logs.md
+      - name: Generative AI Insights logs (preview)
+        href: how-to-view-generative-ai-insights-logs.md
       - name: MCP traffic logs
         href: how-to-view-model-context-protocol-logging.md
       - name: Deployment logs
@@ -412,12 +463,16 @@ items:
     href: reference-current-known-limitations.md
   - name: Points of presence and service addresses
     href: reference-points-of-presence.md
+  - name: Egress IP ranges
+    href: reference-egress-ip-ranges.md
   - name: Data storage and privacy
     href: reference-data-storage-and-privacy.md
   - name: Web content filtering categories
     href: reference-web-content-filtering-categories.md
   - name: Threat intelligence threat types
     href: reference-threat-intelligence-threat-types.md
+  - name: Microsoft Defender for Cloud Apps coexistence
+    href: reference-microsoft-defender-cloud-apps-coexistence.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: Ciphers for Microsoft Entra Private Access
@@ -426,6 +481,8 @@ items:
     href: resource-faq.yml
   - name: Connector version history
     href: reference-version-history.md
+  - name: Private Access Sensor version history
+    href: reference-private-access-sensor-release-history.md
   - name: Windows client version history
     href: reference-windows-client-release-history.md
   - name: macOS client version history

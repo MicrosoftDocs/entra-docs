@@ -1,10 +1,8 @@
 ---
 title: Add email strong authentication method registration to your iOS/macOS app by using native authentication
 description: Learn how to register an email strong authentication method for MFA-enabled users in an iOS or macOS app by using native authentication.
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

@@ -1,8 +1,7 @@
 ---
 title: Debug SAML-based single sign-on to applications
 description: Debug SAML-based single sign-on to applications in Microsoft Entra ID.
-ms.author: alamaral
-author: AllisonAm
+ms.reviewer: alamaral
 ms.topic: troubleshooting
 ms.date: 06/20/2025
 ms.custom: enterprise-apps, sfi-image-nochange

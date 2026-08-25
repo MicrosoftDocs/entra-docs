@@ -1,9 +1,7 @@
 ---
 title: Tutorial - Access Storage from a Web App with managed identities
 description: Learn how to access Azure Storage from a web app in Azure App Service using managed identities. Simplify security and avoid managing secrets.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 05/12/2025
 ms.reviewer: stsoneff
 ms.service: identity-platform

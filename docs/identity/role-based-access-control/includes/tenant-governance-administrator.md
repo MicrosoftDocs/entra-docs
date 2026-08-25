@@ -2,9 +2,12 @@
 title: Tenant Governance Administrator
 description: Tenant Governance Administrator
 ms.topic: include
-ms.date: 03/02/2026
+ms.date: 07/17/2026
 ms.custom: include file
+ai-usage: ai-assisted
 ---
+
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
 Assign the Tenant Governance Administrator role to users who need to do the following tasks:
 
@@ -38,4 +41,4 @@ Assign the Tenant Governance Administrator role to users who need to do the foll
 > | microsoft.directory/tenantGovernance/requests/standard/read | Read tenant governance requests |
 > | microsoft.directory/tenantGovernance/settings/allProperties/update | Manage Microsoft Entra Tenant Governance settings |
 > | microsoft.directory/tenantGovernance/settings/standard/read | Read tenant governance settings |
-
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |

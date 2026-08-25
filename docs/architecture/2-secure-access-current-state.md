@@ -1,10 +1,9 @@
 ---
 title: Discover the current state of external collaboration in your organization
 description: Discover the current state of an organization's collaboration with audit logs, reporting, allowlist, blocklist, and more.
-author: gargi-sinha
+ms.reviewer: gasinh
 ms.topic: how-to
 ms.date: 02/23/2023
-ms.author: gasinh
 
 ms.subservice: architecture
 ---

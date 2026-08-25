@@ -1,9 +1,6 @@
 ---
 title: Agent Registry convergence with Microsoft Agent 365
 description: Learn how agent registry experiences are converging under Microsoft Agent 365, what the change means for Microsoft Entra Agent ID, and how to view all agents in your organization.
-author: shlipsey3
-ms.author: sarahlipsey
-ms.service: entra
 ms.topic: concept-article
 ms.date: 04/05/2026
 ms.reviewer: paparth

@@ -204,7 +204,7 @@ Validate each prerequisite before testing prompt injection enforcement. If any p
 | # | Prerequisite | How to validate | Pass criteria | If it fails |
 | --- | --- | --- | --- | --- |
 | 1 | TLS inspection applies to target AI sites | On the test device, navigate to the target AI site. Select the lock icon in the browser address bar and inspect the certificate. | The certificate is the Global Secure Access inspection certificate (not the site's native certificate). | Verify the prompt policy rules include the correct endpoint and conversation scheme. For logged-out users, confirm the correct backend URL is configured (for example, `https://chatgpt.com/backend-anon/f/conversation` for ChatGPT). See [TLS inspection certificate lifecycle](#tls-inspection-certificate-lifecycle). |
-| 2 | TLS inspection works for other policy types | Test a different policy type that relies on TLS inspection, such as web content filtering or a file policy (for example, blocking file downloads). | The expected block page or error appears. | Confirm the correct root certificate is installed in the **Trusted Root Certification Authorities** store on the client device. Review the [TLS inspection tutorial](tutorial-internet-access-tls-inspection.md) to enable TLS inspection. |
+| 2 | TLS inspection works for other policy types | Test a different policy type that relies on TLS inspection, such as web content filtering or a content policy (for example, blocking file downloads). | The expected block page or error appears. | Confirm the correct root certificate is installed in the **Trusted Root Certification Authorities** store on the client device. Review the [TLS inspection tutorial](tutorial-internet-access-tls-inspection.md) to enable TLS inspection. |
 | 3 | QUIC is disabled | Check the browser flag at `edge://flags/#enable-quic` (or equivalent for Chrome). Also verify the registry: `HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge` → `QuicAllowed` = `0`. | QUIC is set to **Disabled** via Group Policy or registry. | Disable QUIC persistently using Group Policy or registry—browser settings can reset after updates. See [QUIC enforcement](#quic-enforcement) for all methods. |
 | 4 | Device health check passes | Open the **Global Secure Access client Health Check** on the test device. | All checks pass: device is Microsoft Entra joined, tunneling/engine/policy retriever services running, driver running, policy server reachable, forwarding profile registry exists. | Address each failing check individually. Focus on connectivity and service status before retesting prompt injection. |
 
@@ -241,7 +241,7 @@ After confirming all prerequisites pass:
 ### TLS inspection certificate lifecycle
 
 > [!CAUTION]
-> An expired TLS inspection certificate disables **all** TLS inspection capabilities across the tenant—web content filtering, prompt injection detection, and file policies all stop working. Treat certificate expiry as a **Severity 1** preventable incident.
+> An expired TLS inspection certificate disables **all** TLS inspection capabilities across the tenant—web content filtering, prompt injection detection, and content policies all stop working. Treat certificate expiry as a **Severity 1** preventable incident.
 
 Microsoft recommends certificates with a validity period of at least **6 months**. Begin the renewal process at least **90 days** before expiration.
 

@@ -1,8 +1,6 @@
 ---
 title: Install the Microsoft Entra Connect Health agents in Microsoft Entra ID
 description: Learn how to install the Microsoft Entra Connect Health agents for Active Directory Federation Services (AD FS) and for sync.
-author: omondiatieno
-ms.author: jomondi
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.date: 05/26/2026
@@ -43,7 +41,7 @@ The following table lists requirements for using Microsoft Entra Connect Health:
 > If you have a highly locked-down and restricted environment, you need to add more URLs than the URLs the table lists for Internet Explorer enhanced security. Also add URLs that are listed in the table in the next section.
 
 >[!IMPORTANT]
->Microsoft Entra Connect Health now supports installation using the Hybrid Identity Administrator role. If you installed Microsoft Entra Connect Sync with a Hybrid Identity Administrator account, the Microsoft Entra Connect Health agent is automatically active and you don't need to reinstall it with a Global Administrator account.
+>Microsoft Entra Connect Health now supports installation using the Hybrid Identity Administrator role. If you installed Microsoft Entra Connect Sync with a Hybrid Identity Administrator account, the Microsoft Entra Connect Health agent is automatically active and you don't need to reinstall it with a Global Administrator account. This capability is currently available only in the Azure public cloud and isn't supported in sovereign clouds, such as Azure Government.
 
 ### New versions of the agent and auto-upgrade
 
@@ -70,12 +68,12 @@ To download and install the Microsoft Entra Connect Health agent:
 
 - Make sure that you satisfy the [prerequisites](#prerequisites) to install Microsoft Entra Connect Health.
 - Get started using Microsoft Entra Connect Health for AD FS:
-  - [Download the Microsoft Entra Connect Health agent for AD FS](https://www.microsoft.com/en-us/download/details.aspx?id=108565).
+  - [Download the Microsoft Entra Connect Health agent for AD FS](https://www.microsoft.com/en-us/download/details.aspx?id=108777).
   - See the [installation instructions](#install-the-agent-for-ad-fs).
 - Get started using Microsoft Entra Connect Health for sync:
   - [Download and install the latest version of Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). The health agent for sync is installed as part of the Microsoft Entra Connect installation [version 2.5.79.0 or higher](reference-connect-version-history.md).
 - Get started using Microsoft Entra Connect Health for AD Domain Services:
-  - [Download the Microsoft Entra Connect Health agent for AD Domain Services](https://www.microsoft.com/en-us/download/details.aspx?id=108565).
+  - [Download the Microsoft Entra Connect Health agent for AD Domain Services](https://www.microsoft.com/en-us/download/details.aspx?id=108777).
   - See the [installation instructions](#install-the-agent-for-azure-ad-ds).
 
 ## Install the agent for AD FS

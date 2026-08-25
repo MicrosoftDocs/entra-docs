@@ -1,8 +1,6 @@
 ---
 title: Migrate from Azure AD B2C to Microsoft Entra External ID
 description: Migrate users, credentials, and applications from Azure AD B2C to Microsoft Entra External ID using the standard migration approach.
-author: garrodonnell
-ms.author: godonnell
 ms.topic: how-to
 ms.date: 03/13/2026
 ai-usage: ai-assisted

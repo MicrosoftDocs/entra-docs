@@ -2,8 +2,6 @@
 title: "Quickstart: Add sign in to a Node.js/Express web app"
 description: Learn how to run a sample Node.js/Express web app to sign in users
  
-author: kengaderdus
-ms.author: kengaderdus
  
 ms.custom: devx-track-js
 ROBOTS: NOINDEX

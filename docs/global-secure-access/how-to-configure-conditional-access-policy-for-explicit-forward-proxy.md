@@ -3,17 +3,11 @@ title: Configure a Conditional Access Policy for Explicit Forward Proxy
 description: Learn how to configure a Conditional Access policy for Explicit Forward Proxy.
 ms.topic: how-to
 ms.date: 04/06/2026
-ms.author: alexpav
-author: idmdev
-ms.reviewer: 
+ms.reviewer: alexpav
 ---
 
-# Configure a Microsoft Entra Conditional Access policy for Explicit Forward Proxy (preview)
-
+# Configure a Microsoft Entra Conditional Access policy for Explicit Forward Proxy
 Explicit Forward Proxy for Microsoft Entra Internet Access relies on IP affinity, among other mechanisms, for session management. Although a Conditional Access policy isn't required, we recommend that you configure one that restricts the use of Explicit Forward Proxy to networks that your organization trusts. Additionally, you use Conditional Access policies to assign the Microsoft Entra Internet Access security profiles to users.
-
-> [!IMPORTANT]
-> The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

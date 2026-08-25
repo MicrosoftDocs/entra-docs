@@ -61,7 +61,6 @@ You'd notice that the token includes a few claims that aren't previously seen in
 | `sub`             | Subject (the user, service principal, or agent identity being authenticated)         |
 | `oid`             | Object ID of the subject. User object ID for user delegation scenarios. Agent ID service principal OID for app-only scenarios. Agent's user account OID for user impersonation scenarios.          |
 | `idtyp`           | Type of entity the subject is. Values are `user`, `app`.                               |
-| `tid`             | Tenant ID of the customer tenant where the agent identity is registered.              |
 | `xms_idrel`       | Relationship between the subject and the resource tenant. Learn [more](#xms_idrel).   |
 | `aud`             | Audience (the API that the agent is trying to access)                                 |
 | `azp` or `appid`  | Authorized party / actor. The application ID of the agent identity. Enables proper client attribution in audit logs.     |
@@ -70,6 +69,19 @@ You'd notice that the token includes a few claims that aren't previously seen in
 | `xms_sub_fct`     | Subject facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) . |
 | `xms_tnt_fct`     | Tenant facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) .  |
 | `xms_par_app_azp` | Parent application of the authorized party. Learn [more](#xms_par_app_azp) .          |
+
+## idtyp claim values by scenario
+
+The `idtyp` claim identifies the type of entity the token subject represents. The value depends on which agent flow issued the token:
+
+| Agent scenario | `idtyp` value | Subject (`sub`/`oid`) |
+| --- | --- | --- |
+| On-behalf-of flow (interactive agent) | `user` | The human user the agent acts on behalf of |
+| Autonomous app flow (app-only) | `app` | The agent identity service principal |
+| Agent's user account flow | `user` | The agent's own user account |
+
+> [!NOTE]
+> The `idtyp` value alone doesn't distinguish a human user from an agent's user account. Use the `xms_sub_fct` claim (value `13` = agent's user account) to differentiate these scenarios.
 
 ## xms_idrel
 

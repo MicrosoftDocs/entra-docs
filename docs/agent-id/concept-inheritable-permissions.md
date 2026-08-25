@@ -1,10 +1,7 @@
 ---
 title: Inheritable permissions for Microsoft Entra Agent ID
 description: Understand the difference between required resource access declarations and inheritable permissions for agent identity blueprints in Microsoft Entra Agent ID.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: sarahlipsey
-ms.service: entra-agent-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-1012
 ms.date: 04/30/2026
@@ -126,8 +123,6 @@ When you configure required resource access and inheritable permissions for agen
 - **Keep governance simple and predictable.** Explicitly defining which permissions are required and which might be requested later helps organizations maintain clear access control and avoid unexpected permission escalations.
 
 - **Review security implications.** Ensure that inheritable permissions don't grant excessive access or expose sensitive resources beyond what's necessary. Regularly audit permission lists to maintain compliance and minimize risk.
-
-<!-- TODO: Confirm with engineering whether the enumerated scopes pattern (mentioned in manage-agent-identities-admin.md) is still a supported inheritance pattern or has been removed in favor of allAllowed/none only. -->
 
 ## Example scenarios
 

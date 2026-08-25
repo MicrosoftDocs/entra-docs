@@ -4,10 +4,10 @@ description: Guidance on achieving NIST authenticator assurance level 1 (AAL1) w
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 12/8/2022
 ms.custom: it-pro
 ---

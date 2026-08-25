@@ -2,7 +2,6 @@
 title: View and filter agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
 description: Access Microsoft Entra admin center to view and filter agent identities. Streamline tenant oversight with search, filters, and column customization.
-ms.subservice: 
 ms.topic: how-to
 ms.date: 05/01/2026
 ms.reviewer: alamaral

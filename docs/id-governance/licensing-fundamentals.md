@@ -1,18 +1,21 @@
 ---
 title: 'Microsoft Entra ID Governance licensing fundamentals'
-description: This article describes shows the licensing requirements for Microsoft Entra ID Governance features.
-author: owinfreyATL
-manager: dougeby
+description: Learn about Microsoft Entra ID Governance license types, prerequisites, feature requirements, trials, and licensing for employees, guests, and agents.
+author: tafra00
+ms.author: tafra00
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/27/2026
-#Customer Intent: As an IT admin, I want to understand the licensing requirements for Microsoft Entra ID Governance features so that I can ensure my organization has the correct licenses.
+ms.date: 07/29/2026
+ms.custom: msecd-doc-authoring-1018
+ai-usage: ai-assisted
+
+#customer intent: As an IT admin, I want to understand the licensing requirements for Microsoft Entra ID Governance features so that I can ensure my organization has the correct licenses.
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals
-This following document discusses Microsoft Entra ID Governance licensing for employees. It's intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations.
+This article discusses Microsoft Entra ID Governance licensing for employees. It's intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations.
 
-For licensing governance for guest users, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md). For the preview for agents, see [governing agent identities (preview)](agent-id-governance-overview.md#license-requirements).
+For governance licensing for guest users, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md). For agent identity licensing requirements in preview, see [Governing agent identities (preview)](agent-id-governance-overview.md#license-requirements). For licensing that applies to Tenant Governance administrators and features, see [Licensing for Microsoft Entra Tenant Governance](tenant-governance/licensing.md).
 
 ## Types of licenses
 

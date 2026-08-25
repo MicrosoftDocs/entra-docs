@@ -1,9 +1,7 @@
 ---
 title: Native authentication API reference documentation
 description: Find out how to use native authentication APIs to authenticate users into your customer-facing apps with the external tenant. 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference

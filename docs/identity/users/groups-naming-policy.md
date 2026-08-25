@@ -286,5 +286,5 @@ Microsoft 365 admin center | Microsoft 365 admin center is compliant with a nami
 For more information on Microsoft Entra groups, see:
 
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
-- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
 - [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

@@ -1,10 +1,9 @@
 ---
 title: Introduction to delegated administration and isolated environments
 description: Introduction to delegated administration and isolated environments in Microsoft Entra ID.
-author: gargi-sinha
 ms.topic: concept-article
 ms.date: 10/08/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.custom: sfi-image-nochange
 ms.subservice: architecture
 ---

@@ -2,7 +2,7 @@
 title: Enforcement for baseline scopes in Conditional Access
 description: Learn about the Conditional Access enforcement behavior for baseline scopes when targeting all resources with resource exclusions.
 ms.topic: concept-article
-ms.date: 05/27/2026
+ms.date: 06/19/2026
 ms.reviewer: kvenkit
 ai-usage: ai-assisted
 ---
@@ -40,8 +40,10 @@ The exact challenges depend on the access controls configured in your policies t
 
 ## What isn't changing
 
-- When an application (public or confidential) requests any scope beyond the baseline scopes (for example, `Mail.Read`), the application is already subject to Conditional Access enforcement. This behavior doesn't change.
-- For confidential client applications that are excluded from All resources policies and request only OIDC scopes, no change is expected.
+The following scenarios aren't affected by the enforcement change. If an application already matches one of these scenarios, or you can update it to do so, the new enforcement doesn't change how the application behaves. These scenarios give you a way to keep an application working as it does today without retaining the legacy behavior.
+
+- **Applications that request a scope beyond the baseline scopes.** When an application (public or confidential) requests any scope beyond the baseline scopes (for example, `Mail.Read`), the application is already subject to Conditional Access enforcement, so this behavior doesn't change. For a public client application, requesting a baseline scope *and* at least one other scope means the application continues to work the same way under the enforcement change.
+- **Confidential client applications that request only OIDC scopes.** For confidential client applications that are excluded from All resources policies and request only OIDC scopes (like `openid` and `profile`), no change is expected. If a confidential client application currently requests baseline directory scopes (like `User.Read`), work with your application developers to assess whether it can request OIDC scopes instead. OIDC scopes are already considered secure, so making this change keeps the application working without affecting how it behaves.
 
 ## Who is affected
 

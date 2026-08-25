@@ -59,17 +59,18 @@ Every tenant comes with a set of app consent policies that are the same across a
 
 ### Microsoft recommended user consent policy
 The setting labeled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT:
-- For Microsoft Graph: `Files.Read.All`, `Files.ReadWrite.All`, `Sites.Read.All`, `Sites.ReadWrite.All`, `Mail.Read`, `Mail.ReadWrite`, `Mail.ReadBasic`, `Mail.Read.Shared`, `Mail.ReadBasic.Shared`, `Mail.ReadWrite.Shared`, `MailboxItem.Read`, `Calendars.Read`, `Calendars.ReadBasic`, `Calendars.ReadWrite`, `Calendars.Read.Shared`,  `Calendars.ReadWrite.Shared`, `Chat.Read`, `Chat.ReadWrite`, `OnlineMeetings.Read`, `OnlineMeetings.ReadWrite`, `MailBoxFolder.Read`, `MailBoxFolder.ReadWrite`, `MailBoxSettings.Read`, `MailBoxSettings.ReadWrite`, `EAS.AccessAsUser.All`, `EWS.AccessAsUser.All`, `IMAP.AccessAsUser.All`, `POP.AccessAsUser.All`.
+- For Microsoft Graph: `Files.Read.All`, `Files.ReadWrite.All`, `Sites.Read.All`, `Sites.ReadWrite.All`, `Mail.Read`, `Mail.ReadWrite`, `Mail.ReadBasic`, `Mail.Read.Shared`, `Mail.ReadBasic.Shared`, `Mail.ReadWrite.Shared`, `MailboxItem.Read`, `Calendars.Read`, `Calendars.ReadBasic`, `Calendars.ReadWrite`, `Calendars.Read.Shared`,  `Calendars.ReadWrite.Shared`, `Chat.Read`, `Chat.ReadWrite`, `OnlineMeetings.Read`, `OnlineMeetings.ReadWrite`, `MailBoxFolder.Read`, `MailBoxFolder.ReadWrite`, `MailBoxSettings.Read`, `MailBoxSettings.ReadWrite`, `Contacts.ReadWrite`, `Contacts.Read.Shared`, `Contacts.ReadWrite.Shared`, `Tasks.Read`, `Tasks.Read.Shared`, `Tasks.ReadWrite`, `Tasks.ReadWrite.Shared`, `People.Read`.
 - For Office 365 Exchange Online: `EAS.AccessAsUser.All`, `EWS.AccessAsUser.All`, `IMAP.AccessAsUser.All`, `POP.AccessAsUser.All`.
 
 ### Mail client policy
-An additional policy is enabled by default is the **microsoft-user-allow-default-consent-apps** policy. This policy allows end-users in your organization to consent for popular mail applications for mail permissions. When this policy is enabled, end users will be able to consent for specific delegated mail permissions (Microsoft Graph and Office 365 Exchange Online permissions: EAS.AccessAsUser.All, EWS.AccessAsUser.All, IMAP.AccessAsUser.All, POP.AccessAsUser.All) for the following applications:
-- Apple Mail (application ID: 00001111-aaaa-2222-bbbb-3333cccc4444)
-- Spark Email (application ID:11112222-bbbb-3333-cccc-4444dddd5555)
-- eM Client (application ID:22223333-cccc-4444-dddd-5555eeee6666)
-- Android-Samsung (application ID:33334444-dddd-5555-eeee-6666ffff7777)
-- Android-Mail (application ID:44445555-eeee-6666-ffff-7777aaaa8888)
-- Thunderbird (application ID:55556666-ffff-7777-aaaa-8888bbbb9999)
+
+An additional policy enabled by default is the **microsoft-user-allow-default-consent-apps** policy. This policy allows end-users in your organization to consent for popular mail applications for mail permissions. When this policy is enabled, end users are able to consent for specific delegated mail permissions (All Microsoft Graph and Office 365 Exchange Online permissions listed above) for the following applications:
+- Apple Mail (application ID: f8d98a96-0999-43f5-8af3-69971c7bb423)
+- Spark Email (application ID:b50c1dbd-1855-4e54-b07c-d3c3029e93d3)
+- eM Client (application ID:e9a7fea1-1cc0-4cd9-a31b-9137ca5deedd)
+- Android-Samsung (application ID:8acd33ea-7197-4a96-bc33-d7cc7101262f)
+- Android-Mail (application ID:2cee05de-2b8f-45a2-8289-2a06ca32c4c8)
+- Thunderbird (application ID:9e5f94bc-e8a4-4e73-b8be-63364c29d753)
 
 ## Multiple policies or authorization mechanisms to grant consent
 

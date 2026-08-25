@@ -3,7 +3,7 @@ title: Microsoft Entra ID Governance licensing for guest users
 description: Learn how Microsoft Entra ID is licensed for guest users.
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 04/27/2026
+ms.date: 07/09/2026
 ms.reviewer: jercon
 #Customer Intent: As an IT admin, I want to understand how Microsoft Entra ID Governance is licensed for guest users so that I can ensure proper licensing for external collaborators.
 ---
@@ -47,6 +47,7 @@ The following table contains a list of currently billable actions for **guest us
 | Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Bill on workflow execution.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/{workflowId}/activate  | Workflow execution started for user.  |
 | Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill when guest user is included in review. <br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings are enabled in a group review. | Decision item summary.  |
 | Access Reviews    | [Access Review – inactive users](../identity/users/clean-up-stale-guest-accounts.md#monitor-guest-accounts-at-scale-with-inactive-guest-insights) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Decision item summary.  |
+| Access Reviews    | [Access Review – Catalog Access Reviews](catalog-access-reviews.md) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/unified/definitions/  | Decision item summary.  |
 
 
 ## Guest billing in multitenant organizations

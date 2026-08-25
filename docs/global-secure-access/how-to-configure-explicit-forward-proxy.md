@@ -4,16 +4,11 @@ description: Learn how to configure Explicit Forward Proxy.
 ms.topic: how-to
 ms.date: 04/06/2026
 ms.author: alexpav
-author: idmdev
-ms.reviewer: 
 ---
 
-# Configure Explicit Forward Proxy (preview)
+# Configure Explicit Forward Proxy
 
 With Explicit Forward Proxy, you can use the secure web and AI gateway capabilities of Microsoft Entra Internet Access without installing the Global Secure Access client. Explicit Forward Proxy works with any browser that supports proxy automatic configuration (PAC).
-
-> [!IMPORTANT]
-> The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

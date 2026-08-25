@@ -1,7 +1,6 @@
 ---
 title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
-
 ms.topic: how-to
 ms.date: 03/03/2025
 ms.reviewer: phsignor, jawoods

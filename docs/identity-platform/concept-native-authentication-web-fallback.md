@@ -1,13 +1,11 @@
 ---
 title: Native authentication web fallback
 description: Learn how you can use web fallback to improve the resilience of your customer apps that use native authentication. 
-author: kengaderdus
 manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
 ms.date:  08/08/2025
-ms.author: kengaderdus
 
 #Customer intent: As a developer, devops, I want to learn more native authentication web fallback, so that I can enable it in my client apps.
 ---

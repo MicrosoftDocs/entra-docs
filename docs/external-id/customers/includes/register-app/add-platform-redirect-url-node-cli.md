@@ -1,8 +1,6 @@
 ---
-author: Dickson-Mwendia
 ms.topic: include
 ms.date: 11/22/2023
-ms.author: dmwendia
 ---
 
 To specify your app type to your app registration, follow these steps:

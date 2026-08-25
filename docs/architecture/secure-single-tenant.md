@@ -1,11 +1,9 @@
 ---
 title: Secure resource isolation in a single tenant in Microsoft Entra ID
 description: Introduction to resource isolation in a single tenant in Microsoft Entra ID.
-author: gargi-sinha
 ms.topic: concept-article
 ms.date: 10/08/2024
-ms.author: gasinh
-ms.reviewer: justinha
+ms.reviewer: gasinh
 ms.subservice: architecture
 ---
 

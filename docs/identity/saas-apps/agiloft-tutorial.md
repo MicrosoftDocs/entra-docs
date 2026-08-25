@@ -1,12 +1,11 @@
 ---
 title: Configure Agiloft Contract Management Suite for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Agiloft Contract Management Suite.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Agiloft Contract Management Suite so that I can control who has access to Agiloft Contract Management Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Agiloft Contract Management Suite for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Agiloft Contract Management Suite with Microsoft Entra ID. When you integrate Agiloft Contract Management Suite with Microsoft Entra ID, you can:

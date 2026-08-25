@@ -23,11 +23,11 @@ These administrative relationships must be configured for each Agent ID object a
 
 ## Owners
 
-Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Individual users (including guest users) and service principals can be set as owners. Groups aren't supported as owners. Service principals as owners enable automated management of agent identities. Owners are optional for agent identity blueprints and agent identities.
+Owners usually serve as technical administrators for agents, handling operational and configuration aspects. Individual users (including guest users) and service principals can be assigned as owners. Groups aren't supported as owners. Service principals as owners enable automated management of agent identities. Owners are optional for all agent identity objects.
 
 ### Owner responsibilities
 
-Owners can modify properties that the sponsor can't, like authentication properties. Owners can also add or update other owners and sponsors for the agent identities. Like sponsors, they can disable and delete agent identities that are no longer needed. Unlike sponsors, owners can re-enable an agent identity that is disabled and restore soft deleted identities.
+Owners can modify properties that the sponsor can't, like authentication properties. Owners can also add or update other owners and sponsors for the agent identities. Like sponsors, they can disable and delete agent identities that are no longer needed. Unlike sponsors, owners can re-enable an agent identity that is disabled, restore soft-deleted identities, or hard-delete identities.
 
 ### Owner access and permissions
 
@@ -43,9 +43,9 @@ Service principals can also be set as owners when some other managing service ne
 
 ## Sponsors
 
-Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent, and they can determine whether an agent is still needed or requires access. Sponsors are required for agent identity blueprints and agent identities, ensuring every agent has a designated business owner.
+Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent, and they can determine whether an agent is still needed or requires access. Sponsors are required for agent identity blueprints and agent identities, ensuring every agent has a designated business owner. 
 
-Sponsorship should be maintained ensuring succession when an employee who's a sponsor moves or leaves. Both users (including guest users) and groups can be assigned as sponsors. When a group is assigned, all members of the group have sponsor rights over the Agent ID object. Not all group types are supported as sponsors. The following group types are allowed:
+Sponsorship should be maintained to ensure succession when an employee who's a sponsor moves or leaves. Users (including guest users) and groups can be assigned as sponsors. When a group is assigned, all members of the group have sponsor rights over the Agent ID object. Not all group types are supported as sponsors. The following group types are allowed:
 
 - Dynamic membership groups (security or Microsoft 365)
 - Assigned membership groups (Microsoft 365)
@@ -61,7 +61,7 @@ Sponsors make decisions about the agent lifecycle, including renewal, extension,
 
 ### Sponsor access and permissions
 
-Sponsors operate under least-privilege with limited administrative permissions. They can't modify application settings on agent blueprints or agent identities. Access is limited to nondestructive lifecycle operations: enabling and disabling agents.
+Sponsors operate under least-privilege with limited administrative permissions. They can't modify application settings on agent blueprints or agent identities. Access is limited to nondestructive lifecycle operations: enabling and disabling agent identities, modifying the identity's sponsors, or soft-deleting.
 
 ### Sponsor typical personas
 
@@ -69,20 +69,20 @@ Sponsors are usually business owners, product managers, team leads, or stakehold
 
 ### Agent identity sponsors vs. agent's user account sponsors
 
-In Microsoft Agent ID, agents can have an [agent's user account](agent-users.md) created in order to access user-oriented services. The user account and the agent's identity, blueprint, and blueprint principal may all have sponsors associated with them. There are differences between the user account sponsors and sponsors of the agent identity, blueprint, or blueprint principal. 
+In Microsoft Agent ID, the agent's identity, blueprint, and blueprint principal may all have sponsors associated with them. In addition, agents can have an [agent's user account](agent-users.md) created in order to access user-oriented services. While the Entra user has a sponsor relationship, there are differences between the user account sponsors and sponsors of the agent identity, blueprint, or blueprint principal.
 
-Agent user account sponsors are the same as normal [user sponsors](../external-id/b2b-sponsors.md). They are not authorized to make any changes to their sponsored users, but they can request access on the user's behalf and may be involved in approval flows. In contrast, sponsors of agent identities, blueprints, and blueprint principals have limited access to manage those identities directly and can also request access or give approvals in lifecycle workflows.
+The sponsor relationship on a user is primarily intended for the [sponsors of B2B guests](../external-id/b2b-sponsors.md). They are not authorized to make any changes to their sponsored users, but they can request access on the user's behalf and may be involved in approval flows. In contrast, sponsors of agent identities, blueprints, and blueprint principals have limited access to manage those identities directly and can also request access or give approvals in lifecycle workflows.
+
+When an agent is represented by both an agent identity object and an agent user account, we recommend maintaining the agent identity sponsor as the primary user or group responsible for the agent.
+
+If you require different access or authorization for an associated user account than from its agent identity, then sponsors for each object can [request access packages](../id-governance/entitlement-management-request-access.md) on behalf of the identity they sponsor. If you need to set a sponsor on an agent's user account, then the same user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for both the agent identity and the agent's user account as needed.
 
 | | Agent user account sponsors | Agent identity, blueprint, blueprint principal sponsors |
 |--|--|--|
 | **Allowed types** | Users (including guests), groups (any) | Users (including guests), select groups (dynamic membership, Microsoft 365). Role-assignable groups not supported. |
 | **Limits** | Maximum 5 sponsors | Maximum 100 sponsors, with no more than 5 groups |
-| **Authorization** | No direct authorization to modify sponsors users | Delete or disable the agent identity and modify its sponsors |
+| **Authorization** | No direct authorization to modify sponsored users | Delete or disable the agent identity and modify its sponsors |
 | **Required** | Not required | Required on create for agent identities and agent blueprints |
-
-When an agent is represented by both an agent identity object and an agent user account, we recommend maintaining the agent identity sponsor as the primary user or group responsible for the agent. 
-
-Different scenarios may require different types of access or authorization for an agent identity and its associated user account. Sponsors for each object can [request access packages](../id-governance/entitlement-management-request-access.md) on behalf of the identity they sponsor. In most cases, the same user or group should be set as the sponsor on both objects to ensure they can request the appropriate access for both the agent identity and the agent's user account as needed.
 
 ## Managers
 

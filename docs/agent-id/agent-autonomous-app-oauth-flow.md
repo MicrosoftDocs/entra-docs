@@ -40,7 +40,9 @@ The following are the protocol steps.
     &grant_type=client_credentials
     ```
 
-    Where TUAMI is the managed identity token for user assigned managed identity (UAMI). This step returns T1. Where T1 is the token-exchange token for FIC. 
+    - `fmi_path`: The client ID (app ID) of the agent identity. This parameter tells Microsoft Entra ID which child agent identity the blueprint is impersonating during the token exchange.
+
+    Where TUAMI is the managed identity token for user assigned managed identity (UAMI). This step returns T1. Where T1 is the token-exchange token for FIC.
 
 1. Agent identity sends a token exchange request to Microsoft Entra ID. The request includes the token T1.
 

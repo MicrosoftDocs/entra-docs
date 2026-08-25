@@ -53,6 +53,9 @@
       href: synchronization.md
     - name: How password hash synchronization works
       href: /entra/identity/hybrid/connect/how-to-connect-password-hash-synchronization?toc=/entra/identity/domain-services/toc.json&bc=/entra/identity/domain-services/breadcrumb/toc.json
+    - name: Security account name
+      href: security-account-name.md
+      displayName: SAM Account Name
     - name: Custom attributes
       href: concepts-custom-attributes.md
     - name: Virtual network considerations
@@ -95,6 +98,8 @@
       items:
         - name: Secure your managed domain
           href: secure-your-domain.md
+        - name: RC4 deprecation advance dependency test
+          href: rc4-deprecation-advance-dependency-test.md
         - name: TLS 1.2 enforcement
           href: reference-domain-services-tls-enforcement.md
         - name: Configure Kerberos Constrained Delegation

@@ -4,7 +4,6 @@ description: Learn how to register your website ID for did:web.
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 12/18/2024
-
 #Customer intent: As an administrator, I'm looking for information to help me register my website ID.
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: Configure user Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to transfer user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
-author: owinfreyATL
-ms.author: owinfrey
 ms.subservice: hybrid
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 04/15/2026

@@ -2,7 +2,7 @@
 title: How to configure Global Secure Access web content filtering
 description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
-ms.date: 05/29/2026
+ms.date: 06/01/2026
 ms.subservice: entra-internet-access 
 ai-usage: ai-assisted
 ---
@@ -19,11 +19,11 @@ The web filtering feature currently supports user- and context-aware Uniform Res
 
 Web content filtering also supports two optional rule conditions that enable traffic-aware policy enforcement:
 
-- **Source traffic type filtering (preview)**: Scope rules to specific traffic types, such as agent, browser, or application.
+- **Source traffic type filtering (preview)**: Scope rules to specific traffic types, either agent or user.
 - **HTTP method request filtering (preview)**: Block or allow specific HTTP methods, such as GET, POST, PUT, PATCH, and DELETE.
 
 > [!TIP]
-> For file type-based filtering (MIME types) and integration with Microsoft Purview for data loss prevention, see [Create a content policy to filter network file content](how-to-network-content-filtering.md).
+> For network content filtering based on file MIME types or Microsoft Purview inspection of file and text content, see [Create content policies for network content filtering](how-to-network-content-filtering.md).
 
 ## Prerequisites
 
@@ -73,16 +73,14 @@ The first step is to enable the Internet Access traffic forwarding profile. For 
 
 ## Configure source traffic type filtering (preview)
 
-Source traffic type filtering lets you scope web content filtering rules to specific types of network traffic. You can enforce differentiated policies based on whether traffic originates from an AI agent, a web browser, or an application.
+Source traffic type filtering lets you scope web content filtering rules to specific types of network traffic. You can enforce differentiated policies based on whether traffic originates from an AI agent or a user.
 
 ### Supported source traffic types
 
 | Source type | Description |
 | --- | --- |
 | Agent | Traffic that originates from AI agents, such as Copilot agents or autonomous AI tools. |
-| Browser | Traffic that originates from web browsers. |
-| Application | Traffic that originates from desktop or mobile applications. |
-| Unknown | Traffic where the source type can't be determined. |
+| User | Traffic that originates from a user, such as web browsers and applications. |
 
 ### Configure the source traffic type condition
 
@@ -94,18 +92,18 @@ Source traffic type filtering lets you scope web content filtering rules to spec
 > Source traffic type filtering is available only for client-based Global Secure Access connections. This capability depends on the Global Secure Access client sending task and processor metadata to classify traffic. Remote networks don't support source traffic type rules.
 
 > [!NOTE]
-> When a request's traffic type can't be determined, traffic is classified as **Unknown**. Traffic-type-specific rules don't match unless you explicitly target **Unknown** in a rule.
+> When a request doesn't originate from an AI agent, traffic is classified as **User**. To match this traffic, explicitly target **User** in a rule.
 
 ### Example: Block AI agents from accessing social networking sites
 
-To prevent AI agents from accessing social networking websites while allowing browser and application traffic:
+To prevent AI agents from accessing social networking websites while allowing user traffic:
 
 1. Create a web content filtering policy rule.
 1. Select the **SocialNetworking** web category.
 1. Enable **Source type** and select **Agent**.
 1. Set the policy action to **Block**.
 
-This configuration blocks AI agent traffic to social networking sites while allowing browser and application users to access the same sites.
+This configuration blocks AI agent traffic to social networking sites while allowing user traffic to access the same sites.
 
 ## Configure HTTP method request filtering (preview)
 
@@ -194,8 +192,8 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
-> [!Note]
-> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), please follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md)
+> [!NOTE]
+> Explicit Forward Proxy (EFP) preview is not currently included in the **All internet resources with Global Secure Access** group. If your users use Explicit Forward Proxy (preview), follow [How to configure EFP Conditional Access Policies](how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md).
 
 ## Enable web content filtering for remote network traffic
 
@@ -329,6 +327,6 @@ The current blocking experience for all browsers includes a plaintext browser er
 
 ## Related content
 
-- [Create a content policy to filter network file content](how-to-network-content-filtering.md)
+- [Create content policies for network content filtering](how-to-network-content-filtering.md)
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)
 - [Known limitations for Global Secure Access](reference-current-known-limitations.md)

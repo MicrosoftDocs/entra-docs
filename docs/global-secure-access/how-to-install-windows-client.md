@@ -3,8 +3,6 @@ title: Install the Global Secure Access Client for Windows
 description: The Global Secure Access client helps secure network traffic at the user device. This article describes how to download and install the Windows client.
 ms.topic: how-to
 ms.date: 02/02/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: lirazbarak
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

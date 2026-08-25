@@ -1,13 +1,11 @@
 ---
 title: Configure Netskope User Authentication for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Netskope User Authentication.
-author: jeevansd
 ms.topic: how-to
-ms.date: 04/13/2026
-ms.author: jeedes
+ms.date: 06/29/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Netskope User Authentication so that I can streamline the user management process and ensure that users have the appropriate access to Netskope User Authentication.
----
+--- 
 
 # Configure Netskope User Authentication for automatic user provisioning with Microsoft Entra ID
 
@@ -106,6 +104,16 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the **Tenant URL** field, enter your Netskope User Authentication Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Netskope User Authentication. If the connection fails, ensure your Netskope User Authentication account has the required admin permissions and try again.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+
+7. Select **OAuth2 Client Credentials Grant** as the Authentication Method.
+
+   a. Enter the **Client ID** and **Client Secret** retrieved from Netskope.
+
+   b. Select **Test Connection** to ensure Microsoft Entra ID can connect to Netskope User Authentication.
+   
+   c. If the connection fails, ensure your Netskope User Authentication account has Admin permissions and try again.
+
+      ![Screenshot of Token.](./media/netskope-administrator-console-provisioning-tutorial/oauth2-entra-configuration.png)
 
 1. Select **Create** to create your configuration.
 

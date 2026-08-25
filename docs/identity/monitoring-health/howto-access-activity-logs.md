@@ -2,8 +2,10 @@
 title: Access activity logs in Microsoft Entra ID
 description: How to choose the right method for accessing and integrating the activity logs in Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 11/11/2024
+ms.date: 06/24/2026
 ms.reviewer: egreenberg
+ms.custom: msecd-doc-authoring-1016
+ai-usage: ai-assisted
 
 # Customer intent: As an IT admin, I want to learn about the different ways to access activity logs in Microsoft Entra ID so that I can choose the right method for my scenario and organization.
 
@@ -216,6 +218,18 @@ Use the following basic steps to archive or download your activity logs.
     - [Learn more about how to download logs](howto-download-logs.md).
 
 ---
+
+## Troubleshoot empty results or HTTP 429 errors when retrieving activity logs
+
+You might not see any results when you query activity logs (sign-in, audit, or provisioning) in the Microsoft Entra admin center or through the Microsoft Graph API. If you capture a network trace, the underlying API calls return HTTP 429 (Too Many Requests) responses. Throttling depends on current system demand rather than on tenant size, so the same query that worked earlier might return no results later. Use the following workarounds if you see no results in the admin center or HTTP 429 responses in a trace.
+
+### Reduce the query date range
+
+Break the query into smaller date-range chunks and repeat the query for each chunk until you cover the time period you need. The date range that succeeds varies by tenant and by current system demand, so reduce the range incrementally until results return.
+
+### Stream logs to a Log Analytics workspace
+
+To avoid the request throttling that affects admin center and Microsoft Graph queries, stream activity logs to a Log Analytics workspace and query the data there. Log Analytics supports richer query capabilities through Kusto Query Language (KQL). For setup instructions, see [Integrate logs with Azure Monitor logs](#integrate-logs-with-azure-monitor-logs).
 
 ## Next steps
 

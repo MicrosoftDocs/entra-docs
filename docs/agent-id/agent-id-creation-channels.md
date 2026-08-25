@@ -3,8 +3,6 @@ title: How are agent identities created?
 description: Learn about the ways to create Microsoft Entra agent identity blueprints, agent identities, and agents' user accounts as well as monitor and control their introduction into your tenant.
 ms.topic: concept-article
 ms.date: 04/16/2026
-author: omondiatieno
-ms.author: jomondi
 ms.reviewer: dastrock
 
 #customer intent: As an IAM or security administrator, I want to understand how agent identities are created so that I can monitor and control their introduction into my tenant.

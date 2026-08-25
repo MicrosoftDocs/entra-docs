@@ -3,14 +3,12 @@ title: Add Microsoft Entra ID for customer sign-in
 description: Learn how to configure a Microsoft Entra ID tenant as an OpenID Connect identity provider in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
 ms.topic: how-to
 ms.date: 03/09/2026
-ms.author: godonnell
-author: garrodonnell
 ms.custom: it-pro, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 
 #customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
 ---
-# Add a Microsoft Entra ID tenant as an OpenID Connect identity provider (Preview)
+# Add a Microsoft Entra ID tenant as an OpenID Connect identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

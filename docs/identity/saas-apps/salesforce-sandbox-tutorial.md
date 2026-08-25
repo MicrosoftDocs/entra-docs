@@ -1,13 +1,11 @@
 ---
 title: Configure Salesforce Sandbox for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Salesforce Sandbox.
-ms.reviewer: celested
 ms.topic: how-to
-ms.date: 05/20/2025
-ms.author: jeedes
+ms.date: 06/24/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce Sandbox so that I can control who has access to Salesforce Sandbox, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Salesforce Sandbox for Single sign-on with Microsoft Entra ID
 
@@ -18,11 +16,11 @@ In this article,  you learn how to integrate Salesforce Sandbox with Microsoft E
 * Manage your accounts in one central location.
 
 > [!Note]
->   We are aware that Salesforce will enforce the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy which will enforce MFA is configured to satisfy this requirement. You can read more about this claim [here](~/identity-platform/single-sign-on-saml-protocol.md#authnmethodreferences).
+> **Updated: July 24, 2026** - Starting June 29, 2026, Microsoft Entra ID will automatically include Authentication Method References (`amr`) and Authentication Context References (`acr`) claims in tokens issued for SAML 2.0 and OpenID Connect (OIDC) applications using the Microsoft identity platform v2.0 token. **If you have configured External MFA Provider with Entra ID and if that provider is sending AMR signals then Entra ID will forward that AMR signal to Salesforce or other 3P applications as needed.** These claims provide additional information about how the user authenticated and the authentication context satisfied during sign-in. No configuration changes are required in Microsoft Entra ID for Salesforce Sandbox single sign-on. To help satisfy Salesforce [phishing-resistant MFA requirements](https://help.salesforce.com/s/articleView?id=005321563&type=1) for Salesforce admins, and [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) customers should apply Microsoft Entra Conditional Access policies that require phishing-resistant authentication methods for Salesforce administrator sign-ins.
 >
->   For customers using [OpenID Connect Authentication with Salesforce](https://help.salesforce.com/s/articleView?id=xcloud.sso_provider_microsoft_only.htm&type=5) or if you have configured Salesforce with [custom OpenID Connect provider](https://help.salesforce.com/s/articleView?id=xcloud.sso_provider_plugin_custom.htm&type=5) then please ensure that you are using Entra ID V1 endpoint only as the V1 endpoint can provide the AMR claim in the token to Salesforce. V2 endpoint support will come soon but till that time please use V1 endpoint only. 
+> For customers using AD FS as the federation provider with Entra ID, please follow the [MFA expected inbound assertions guidance for SAML 2.0 federated IdPs](~/identity/authentication/how-to-mfa-expected-inbound-assertions.md#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
 >
->  For customers using AD FS as the federation provider with Entra ID, please follow the guidance published [here](~/identity/authentication/how-to-mfa-expected-inbound-assertions.md#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
+> If you are using any other federation provider then we are still working on standardizing the AMR and ACR signals first and will provide the update soon.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -208,7 +206,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot that shows the "Authentication Configuration" section, with the "Edit" button selected.](./media/salesforce-sandbox-tutorial/sf-edit-auth-config.png)
 
-23. In the **Authentication Configuration** section, as **Authentication Service**, select the name of the SAML Single Sign-On Setting which you have set during SSO configuration in Salesforce Sandbox and select **Save**.
+23. In the **Authentication Configuration** section, as **Authentication Service**, select the name of the SAML single sign-on setting which you have set during SSO configuration in Salesforce Sandbox and select **Save**.
 
     ![Configure Single Sign-On](./media/salesforce-sandbox-tutorial/configure2.png)
 
@@ -230,8 +228,8 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Select **Test this application**, and you should be automatically signed in to the Salesforce Sandbox for which you set up the SSO 
 
-You can also use Microsoft My Apps to test the application in any mode. When you select the Salesforce Sandbox tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Salesforce Sandbox for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Salesforce Sandbox tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Salesforce Sandbox for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
-Once you configure the Salesforce Sandbox you can enforce session controls, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+Once you configure the Salesforce Sandbox you can enforce session controls, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

@@ -1,7 +1,6 @@
 ---
 title: Manage assignment of agent identities to an application
 description: Discover how to configure agent identities for enterprise applications in Microsoft Entra ID. Assign roles, manage permissions, and streamline app interactions.
-
 ms.topic: how-to
 ms.date: 11/19/2025
 ms.reviewer: mwahl

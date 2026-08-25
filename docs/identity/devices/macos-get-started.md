@@ -4,7 +4,6 @@ description: Learn how to add your work or school account to a macOS device for 
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 01/22/2026
 
-
 ---
 
 

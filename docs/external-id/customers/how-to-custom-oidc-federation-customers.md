@@ -2,9 +2,10 @@
 title: Add OIDC for customer sign-in
 description: Learn how to set up OpenID Connect as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 07/29/2026
 ms.reviewer: brozbab
 ms.custom: it-pro, msecd-doc-authoring-1012
+ai-usage: ai-assisted
 
 #customer intent: As a developer, devops, or it administrator, I want to learn how to add an OpenID Connect identity provider for my external tenant.
 ---
@@ -53,7 +54,7 @@ To configure OpenID Connect federation with your identity provider in Microsoft 
   - Name
   - Given name
   - Family name
-  - Email (required)
+  - Email (required by default; can be [made optional](#make-email-optional-for-external-identity-provider-sign-up))
   - Email_verified
   - Phone number
   - Phone_number_verified
@@ -83,8 +84,8 @@ After you configure your identity provider, complete this step to configure a ne
    > [!NOTE]
    > To federate with a Microsoft Entra ID tenant, see [Add a Microsoft Entra ID tenant as an OpenID Connect identity provider](how-to-entra-id-federation-customers.md). OIDC federation also isn't compatible with the [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) feature.
 
-   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Provide a client secret if you select `client_secret` authentication. If you select `private_key_jwt`, the public key needs to be provided in the OpenID provider metadata (well-known endpoint), retrievable via the property `jwks_uri`.
-   - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post`, `client_secret_jwt`, and `private_key_jwt` authentication methods are supported.
+   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Provide a client secret when you select a `client_secret`-based authentication method.
+   - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post` and `client_secret_jwt` authentication methods are supported. Although the admin center UI might display `private_key_jwt` as an option, this method isn't currently supported and shouldn't be selected.
 
    > [!NOTE]
    > Due to possible security problems, the `client_secret_basic` client authentication method isn't supported.
@@ -109,6 +110,80 @@ At this point, you set up the OIDC identity provider in your Microsoft Entra ID,
    :::image type="content" source="media/how-to-custom-oidc-federation-customers/custom-oidc-provider.png" alt-text="Screenshot of the custom OIDC provider in the IdP list.":::
 
 1. Select **Save**.
+
+## Make email optional for external identity provider sign-up
+
+By default, an email address is required when users sign up with an external identity provider (IdP). If your external IdP doesn't send an email claim, users encounter the error `AADSTS901011: No email address was obtained from the external oidc identity provider` during sign-up. To avoid this error, configure your user flow to make the email attribute optional. Users can then complete sign-up with only their external IdP identity, without providing an email address.
+
+> [!IMPORTANT]
+> Making email optional is a user flow–level setting. This change applies to sign-ups for **all applications** associated with the user flow.
+
+> [!TIP]
+> The account picker typically displays the user's email address. When no email address is collected, the display name is shown instead. To help users easily identify their account, map the `name` claim in [Claims mapping](reference-oidc-claims-mapping-customers.md) or collect display name during sign-up.
+
+### Update the user flow to make email optional
+
+To make the email attribute optional in your user flow, use the Microsoft Graph API to update the `onAttributeCollection` property of the user flow.
+
+1. Find the ID of the user flow you want to update. One way to do this is to use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to list all your user flows:
+
+   ```http
+   GET https://graph.microsoft.com/v1.0/identity/authenticationEventsFlows
+   ```
+
+   Locate the `id` of the user flow and the `onAttributeCollection` property in the response.
+
+1. Copy the `onAttributeCollection` property from the response, and use it to update the user flow with a `PATCH` request. The only change you need to make is to set the `required` property on the email attribute to `false`:
+
+   ```http
+   PATCH https://graph.microsoft.com/v1.0/identity/authenticationEventsFlows/{user-flow-id}
+   Content-Type: application/json
+
+   {
+       "@odata.type": "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow",
+       "onAttributeCollection": {
+           "@odata.type": "#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp",
+           "attributeCollectionPage": {
+               "views": [
+                   {
+                       "title": null,
+                       "description": null,
+                       "inputs": [
+                           {
+                               "attribute": "email",
+                               "label": "Email Address",
+                               "inputType": "text",
+                               "defaultValue": null,
+                               "hidden": false,
+                               "editable": true,
+                               "writeToDirectory": true,
+                               "required": false,
+                               "validationRegEx": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$",
+                               "options": []
+                           }
+                       ]
+                   }
+               ]
+           }
+       }
+   }
+   ```
+
+   > [!NOTE]
+   > Include all the attribute inputs from your existing user flow in the `PATCH` request, not just the email attribute. The preceding example shows only the email input, but your user flow might include additional attributes. For the full schema, see [authenticationAttributeCollectionPage resource type](/graph/api/resources/authenticationattributecollectionpage).
+
+## Known limitations
+
+### Issuer URI updates
+
+When you update the Issuer URI for an existing OIDC identity provider (IdP), the updated configuration might not automatically take effect in user flows. As a result, the IdP sign-in option might not appear on the sign-in page.
+
+To apply the change:
+
+1. Disable the IdP in the user flow.
+1. Save the user flow.
+1. Re-enable the IdP.
+1. Save the user flow again.
 
 ## Related content
 

@@ -27,7 +27,7 @@ Administrators can reset a user's password if the user forgets the password, if 
 
 ## Prerequisites
 
-You must have at least the following role to reset a user's password.
+You must have at least the [Password Administrator](~/identity/role-based-access-control/permissions-reference.md#password-administrator) role to reset a user's password. Other roles can reset passwords for a limited set of users. For more information, see [Who can reset passwords](~/identity/role-based-access-control/privileged-roles-permissions.md#who-can-reset-passwords).
 
 ## To reset a password
 

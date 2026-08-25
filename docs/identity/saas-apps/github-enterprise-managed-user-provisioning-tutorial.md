@@ -2,15 +2,12 @@
 title: Configure GitHub Enterprise Managed User for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub Enterprise Managed User.
 
-author: jeevansd
-manager: pmwongera
 
 ms.topic: how-to
-ms.date: 03/09/2026
-ms.author: jeedes
+ms.date: 05/26/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub Enterprise Managed User so that I can streamline the user management process and ensure that users have the appropriate access to GitHub Enterprise Managed User.
----
+--- 
 
 # Configure GitHub Enterprise Managed User for automatic user provisioning with Microsoft Entra ID
 
@@ -29,6 +26,10 @@ This article describes the steps you need to perform in both GitHub Enterprise M
 > * Long lived bearer token authentication supported.
 
 
+GitHub Enterprise Managed User is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -36,9 +37,6 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md)
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * Enterprise Managed Users enabled GitHub Enterprise and configured to log in with SAML SSO through your Microsoft Entra tenant.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
@@ -51,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Identify your Tenant URL. This is the value that you enter in the Tenant URL field in the Provisioning tab of your GitHub Enterprise Managed User application.
 
-   * For an enterprise on GitHub.com, the Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`.
+   * For an enterprise on GitHub.com, the Tenant URL is `https://api.github.com/scim/v2/enterprises/{enterprise}`, where `{enterprise}` is your enterprise slug (account name).
    * For an enterprise on GHE.com, the Tenant URL is `https://api.{subdomain}.ghe.com/scim/v2/enterprises/{subdomain}`
 
 2. Ensure you have created a token with the **scim:enterprise** scope for your enterprise's setup user. This value is entered in the Secret Token field in the Provisioning tab of your GitHub Enterprise Managed User application. See [Getting started with Enterprise Managed Users](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/getting-started-with-enterprise-managed-users#create-a-personal-access-token) on GitHub Docs.

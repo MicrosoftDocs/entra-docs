@@ -3,7 +3,6 @@ title: Create an enterprise application from a multitenant application
 description: Create an enterprise application using the client ID for a multitenant application.
 manager: CelesteD
 ms.topic: how-to
-
 ms.date: 07/10/2025
 ms.reviewer: karavar
 ms.custom: mode-other, devx-track-azurecli

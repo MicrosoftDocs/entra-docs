@@ -2,8 +2,6 @@
 title: What are agent identities?
 titleSuffix: Microsoft Entra Agent ID
 description: Learn about agent identities, specialized identity constructs that enable secure authentication and authorization for AI agents in enterprise environments.
-author: omondiatieno
-ms.author: jomondi
 ms.topic: concept-article
 ms.date: 11/06/2025
 ms.reviewer: dastrock

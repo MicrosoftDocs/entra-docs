@@ -2,11 +2,10 @@
 title: Configure In Case of Crisis - Mobile for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Mobile.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 04/15/2024
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Mobile so that I can control who has access to In Case of Crisis - Mobile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure In Case of Crisis - Mobile for Single sign-on with Microsoft Entra ID
 
