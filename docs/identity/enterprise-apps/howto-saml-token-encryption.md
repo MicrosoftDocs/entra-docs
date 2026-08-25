@@ -1,13 +1,8 @@
 ---
 title: Configure Microsoft Entra SAML token encryption
 description: Learn how to configure Microsoft Entra SAML token encryption.
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 03/06/2025
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
@@ -35,7 +30,7 @@ Microsoft Entra ID uses AES-256 to encrypt the SAML assertion data.
 
 To configure SAML token encryption, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: 
   - Cloud Application Administrator
   - Application Administrator

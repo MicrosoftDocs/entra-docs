@@ -1,9 +1,7 @@
 ---
 title: Call an ASP.NET Core web API with cURL
 description: Learn how to call a protected ASP.NET Core web API using the Microsoft identity platform with cURL.
-author: henrymbuguakiarie
-manager: CelesteDG
-ms.author: henrymbugua
+manager: pmwongera
 ms.date: 03/06/2025
 ms.service: identity-platform
 ms.topic: how-to
@@ -30,7 +28,7 @@ This article shows you how to call a protected ASP.NET Core web API using Client
 
 ::: zone pivot="no-api"
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). 
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn). 
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   - Application Administrator 
   - Application Developer 
@@ -42,7 +40,7 @@ This article shows you how to call a protected ASP.NET Core web API using Client
 
 ::: zone pivot="api"
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). 
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn). 
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   - Application Administrator 
   - Application Developer 

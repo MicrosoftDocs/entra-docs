@@ -1,9 +1,7 @@
 ---
 title: "How to configure an application to expose a web API"
 description: In this how-to guide, register a web API with the Microsoft identity platform and configure its scopes, exposing it to clients for permissions-based access to the API's resources.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 05/14/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
@@ -18,7 +16,7 @@ In this how-to guide, you'll register a web API with the Microsoft identity plat
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * An application registered in the [Microsoft Entra admin center](https://entra.microsoft.com/). If you don't have one, [register an application](quickstart-register-app.md#register-an-application) now.
 
 ## Register the web API

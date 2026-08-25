@@ -1,24 +1,29 @@
 ---
 title: Configure PIM for Groups settings
 description: Learn how to configure PIM for Groups settings.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: privileged-identity-management
-ms.date: 04/30/2025
-ms.author: barclayn
+ms.date: 04/23/2026
+ms.reviewer: tamimsangrar
 ms.custom: pim, sfi-image-nochange
+ai-usage: ai-assisted
+#Customer Intent: As an administrator, I want to configure role settings for PIM groups including approval requirements, MFA, and activation duration to enforce security policies.
 ---
-
 # Configure PIM for Groups settings
+
+## Overview
 
 In Privileged Identity Management (PIM) for groups in Microsoft Entra ID, role settings define membership or ownership assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
-You need group management permissions to manage settings. For role-assignable groups, you must have at least the Privileged Role Administrator role or be an owner of the group. For non-role assignable groups, you must have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, or User Administrator role or be an owner of the group. Role assignments for administrators should be scoped at directory level (not at the administrative unit level).
+To manage PIM policies, you need the following permissions. For role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groupsAssignableToRoles/owners/update` and `microsoft.directory/groupsAssignableToRoles/members/update` permissions, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group. For non-role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groups/owners/update` and `microsoft.directory/groups/members/update` permissions, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group. Role assignments for administrators can be scoped at directory level or administrative unit level. Built-in and custom Microsoft Entra roles are supported.
+
+To read PIM policies, you need the following permissions. For role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groupsAssignableToRoles/owners/update` or `microsoft.directory/groupsAssignableToRoles/members/update` permissions, such as Privileged Role Administrator or Global Administrator, or be an active or eligible owner of the group, or be an active or eligible member of the group. For non-role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groups/owners/update` and `microsoft.directory/groups/members/update` permissions, such as Groups Administrator or Identity Governance Administrator, or be an active or eligible owner of the group, or be an active or eligible member of the group. Role assignments for administrators can be scoped at directory level or administrative unit level. Built-in and custom Microsoft Entra roles are supported.
+
+Privileged Identity Management doesn't support permissions that start with `microsoft.directory/groups.security/` or `microsoft.directory/groups.unified/`. Use permissions that start with `microsoft.directory/groups/` instead.
+
+Privileged Identity Management doesn't support groups in Restricted Management Administrative Units (RMAU).
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at the administrative unit level can manage groups through the Groups API/UX and override changes made in Microsoft Entra Privileged Identity Management.
+> Administrators and group owners can manage groups through the Groups experience and other interfaces, overriding changes made in Microsoft Entra PIM.
 
 Role settings are defined per role per group. All assignments for the same role (member or owner) for the same group follow the same role settings. Role settings of one group are independent from the role settings of another group. Role settings for one role (member) are independent from role settings for another role (owner).
 
@@ -36,7 +41,7 @@ To open the settings for a group role:
 
 1. Select the role for which you need to configure role settings. The options are **Member** or **Owner**.
 
-   :::image type="content" source="media/pim-for-groups/pim-group-17.png" alt-text="Screenshot that shows where to select the role for which you need to configure role settings." lightbox="media/pim-for-groups/pim-group-17.png":::
+    :::image type="content" source="media/pim-for-groups/pim-group-17.png" alt-text="Screenshot that shows where to select the role for which you need to configure role settings." lightbox="media/pim-for-groups/pim-group-17.png":::
 
 1. Review current role settings.
 
@@ -64,7 +69,7 @@ Users are required to authenticate during activation by using methods different 
 
 After the user provides passwordless sign-in with Microsoft Authenticator once in this example, they're able to do their next activation in this session without another authentication. Passwordless sign-in with Microsoft Authenticator is already part of their token.
 
-We recommend that you enable the multifactor authentication feature in Microsoft Entra ID for all users. For more information, see [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
+Enable the multifactor authentication feature in Microsoft Entra ID for all users. For more information, see [Plan a Microsoft Entra multifactor authentication deployment](~/identity/authentication/howto-mfa-getstarted.md).
 
 <a name='on-activation-require-azure-ad-conditional-access-authentication-context'></a>
 
@@ -80,15 +85,25 @@ To enforce this requirement, you create Conditional Access authentication contex
 
 1. Configure authentication context in PIM settings for the role.
 
-   :::image type="content" source="media/pim-for-groups/pim-group-21.png" alt-text="Screenshot that shows the Edit role setting - Member page." lightbox="media/pim-for-groups/pim-group-21.png":::
+    :::image type="content" source="media/pim-for-groups/pim-group-21.png" alt-text="Screenshot that shows the Edit role setting - Member page." lightbox="media/pim-for-groups/pim-group-21.png":::
 
 If PIM settings have **On activation, require Microsoft Entra Conditional Access authentication context** configured, Conditional Access policies define what conditions users must meet to satisfy the access requirements.
 
 This means that security principals with permissions to manage Conditional Access policies, such as Conditional Access Administrators or Security Administrators, can change requirements, remove them, or block eligible users from activating their group membership/ownership. Security principals that can manage Conditional Access policies should be considered highly privileged and protected accordingly.
 
-We recommend that you create and enable a Conditional Access policy for the authentication context before the authentication context is configured in PIM settings. As a backup protection mechanism, if there are no Conditional Access policies in the tenant that target authentication context configured in PIM settings, during group membership/ownership activation, the multifactor authentication feature in Microsoft Entra ID is required as the [On activation, require multifactor authentication](groups-role-settings.md#on-activation-require-multifactor-authentication) setting would be set.
+Create and enable a Conditional Access policy for the authentication context before the authentication context is configured in PIM settings. As a backup protection mechanism, if there are no Conditional Access policies in the tenant that target authentication context configured in PIM settings, during group membership/ownership activation, the multifactor authentication feature in Microsoft Entra ID is required as the [On activation, require multifactor authentication](groups-role-settings.md#on-activation-require-multifactor-authentication) setting would be set.
 
 This backup protection mechanism is designed to solely protect from a scenario when PIM settings were updated before the Conditional Access policy was created because of a configuration mistake. This backup protection mechanism isn't triggered if the Conditional Access policy is turned off, is in report-only mode, or has eligible users excluded from the policy.
+
+To enforce reauthentication on every group membership or ownership activation, configure the Conditional Access policy targeting your authentication context with sign-in frequency set to **Every time** under **Session controls**. This ensures users must reauthenticate each time they activate group membership or ownership, even if they have an active session.
+
+:::image type="content" source="media/pim-for-groups/role-settings-conditional-access-authentication-context.png" alt-text="Screenshot that shows the Edit role setting page with the Microsoft Entra Conditional Access authentication context option selected." lightbox="media/pim-for-groups/role-settings-conditional-access-authentication-context.png":::
+
+When a user reauthenticates for one activation, a 10-minute window applies. If the user activates another eligible membership or ownership within this window, they aren't prompted to reauthenticate again. The 10-minute window applies across Microsoft Entra roles, Azure resource roles, and PIM for Groups.
+
+When a user activates eligible group membership or ownership configured with an authentication context, they see the message: "A Conditional Access policy is enabled and may require additional verification. Click to continue." The user is then redirected to complete reauthentication as defined by the Conditional Access policy.
+
+:::image type="content" source="media/pim-for-groups/activate-role-conditional-access-verification-banner.png" alt-text="Screenshot that shows the Activate role page with a Conditional Access policy banner requiring additional verification." lightbox="media/pim-for-groups/activate-role-conditional-access-verification-banner.png":::
 
 The **On activation, require Microsoft Entra Conditional Access authentication context** setting defines the authentication context requirements that users must satisfy when they activate group membership/ownership. After group membership/ownership is activated, users aren't prevented from using another browsing session, device, or location to use group membership/ownership.
 
@@ -108,7 +123,7 @@ You can require users to enter a support ticket when they activate the eligible 
 
 ### Require approval to activate
 
-You can require approval for activation of an eligible assignment. The approver doesn't have to be a group member or owner. When you use this option, you must select at least one approver. We recommend that you select at least two approvers. There are no default approvers.
+You can require approval for activation of an eligible assignment. The approver doesn't have to be a group member or owner. When you use this option, you must select at least one approver. Select at least two approvers for redundancy. There are no default approvers.
 
 To learn more about approvals, see [Approve activation requests for PIM for Groups members and owners](groups-approval-workflow.md).
 
@@ -149,8 +164,8 @@ On the **Notifications** tab on the **Role settings** page, Privileged Identity 
 - **Send emails to both default recipients and more recipients**: You can send emails to both the default recipient and another recipient. Select the default recipient checkbox and add email addresses for other recipients.
 - **Critical emails only**: For each type of email, you can select the checkbox to receive critical emails only. Privileged Identity Management continues to send emails to the specified recipients only when the email requires immediate action. For example, emails that ask users to extend their role assignment aren't triggered. Emails that require admins to approve an extension request are triggered.
 
->[!NOTE]
->One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This does not prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
+> [!NOTE]
+> One event in Privileged Identity Management can generate email notifications to multiple recipients—assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000, only the first 1000 recipients receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
 ## Manage role settings by using Microsoft Graph
 

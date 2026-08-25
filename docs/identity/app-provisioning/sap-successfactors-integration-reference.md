@@ -1,14 +1,8 @@
 ---
 title: Microsoft Entra ID and SAP SuccessFactors integration reference
 description: Technical deep dive into SAP SuccessFactors-HR driven provisioning for Microsoft Entra ID.
-
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 03/04/2025
-ms.author: jfields
+ms.date: 12/15/2025
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 ---
@@ -150,9 +144,8 @@ When Microsoft Entra provisioning service queries SuccessFactors, it retrieves a
 
 To retrieve more attributes, follow the steps listed:
     
-1. Browse to **Enterprise Applications** > **SuccessFactors App** > **Provisioning** > **Edit Provisioning** > **attribute-mapping page**.
-1. Scroll down and click **Show advanced options**.
-1. Click on **Edit attribute list for SuccessFactors**. 
+1. Browse to **Enterprise Applications** > **SuccessFactors App** > **Provisioning** > **Edit Provisioning** > **Attribute Mapping** page.
+1. Select the **Advanced Options** dropdown and then select **Edit target User attributes**.
 
    > [!NOTE] 
    > If the **Edit attribute list for SuccessFactors** option doesn't show in the Microsoft Entra admin center, use the URL *https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true* to access the page. 
@@ -173,16 +166,29 @@ JSONPath is a query language for JSON that is similar to XPath for XML. Like XPa
 By using JSONPath transformation, you can customize the behavior of the Microsoft Entra provisioning app to retrieve custom attributes and handle scenarios such as rehiring, worker conversion and global assignment. 
 
 This section covers how you can customize the provisioning app for the following HR scenarios: 
-* [Retrieving more attributes](#retrieving-more-attributes)
-* [Retrieving custom attributes](#retrieving-custom-attributes)
-* [Mapping employment status to account status](#mapping-employment-status-to-account-status)
-* [Handling worker conversion and rehiring scenarios](#handling-worker-conversion-and-rehiring-scenarios)
-* [Retrieving current active employment record](#retrieving-current-active-employment-record)
-* [Handling global assignment scenario](#handling-global-assignment-scenario)
-* [Handling concurrent jobs scenario](#handling-concurrent-jobs-scenario)
-* [Retrieving position details](#retrieving-position-details)
-* [Provisioning users in the Onboarding module](#provisioning-users-in-the-onboarding-module)
-* [Enabling OData API Audit logs in SuccessFactors](#enabling-odata-api-audit-logs-in-successfactors)
+- [How Microsoft Entra provisioning integrates with SAP SuccessFactors](#how-microsoft-entra-provisioning-integrates-with-sap-successfactors)
+  - [Establishing connectivity](#establishing-connectivity)
+  - [Supported entities](#supported-entities)
+  - [How full sync works](#how-full-sync-works)
+  - [How incremental sync works](#how-incremental-sync-works)
+  - [How pre-hire processing works](#how-pre-hire-processing-works)
+  - [Reading attribute data](#reading-attribute-data)
+  - [Handling different HR scenarios](#handling-different-hr-scenarios)
+    - [Retrieving more attributes](#retrieving-more-attributes)
+    - [Retrieving custom attributes](#retrieving-custom-attributes)
+    - [Mapping employment status to account status](#mapping-employment-status-to-account-status)
+    - [Handling worker conversion and rehiring scenarios](#handling-worker-conversion-and-rehiring-scenarios)
+    - [Retrieving current active employment record](#retrieving-current-active-employment-record)
+    - [Handling global assignment scenario](#handling-global-assignment-scenario)
+    - [Handling concurrent jobs scenario](#handling-concurrent-jobs-scenario)
+    - [Retrieving position details](#retrieving-position-details)
+    - [Provisioning users in the Onboarding module](#provisioning-users-in-the-onboarding-module)
+    - [Enabling OData API Audit logs in SuccessFactors](#enabling-odata-api-audit-logs-in-successfactors)
+  - [Writeback scenarios](#writeback-scenarios)
+    - [Supported scenarios for phone and email write-back](#supported-scenarios-for-phone-and-email-write-back)
+    - [Enabling writeback with UserID](#enabling-writeback-with-userid)
+    - [Unsupported scenarios for phone and email write-back](#unsupported-scenarios-for-phone-and-email-write-back)
+  - [Next steps](#next-steps)
 
 ### Retrieving more attributes
 
@@ -253,8 +259,8 @@ If you're running into any of these issues or prefer mapping employment status t
 
 Use the steps to update your mapping to retrieve these codes. 
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Under **Show advanced options**, click on **Edit SuccessFactors attribute list**. 
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Under the **Advanced Options** dropdown, select **Edit target User attributes**. 
 1. Find the attribute `emplStatus` and update the JSONPath to `$.employmentNav.results[0].jobInfoNav.results[0].emplStatusNav.externalCode`. The update makes the connector retrieve the employment status codes in the table. 
 1. Save the changes. 
 1. In the attribute mapping blade, update the expression mapping for the account status flag. 
@@ -282,9 +288,8 @@ If your HR process uses Option 2, then Employee Central adds a new *EmpEmploymen
 
 You can handle both scenarios so that the new employment data shows up when a conversion or rehire occurs. Bulk update the provisioning app schema using the steps listed:  
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on the link **Review your schema here** to open the schema editor. 
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Select the **Advanced Options** dropdown and then select **Edit schema** to open the schema editor. 
 
    >![Screenshot shows the Review your schema here link that opens the schema editor.](media/sap-successfactors-integration-reference/review-schema.png#lightbox)
 
@@ -312,9 +317,8 @@ Using the JSONPath root of `$.employmentNav.results[0]` or `$.employmentNav.resu
 
 This section describes how you can update the JSONPath settings to definitely retrieve the current active employment record of the user. It also handles worker conversion and rehiring scenarios. 
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on the link **Review your schema here** to open the schema editor. 
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Select the **Advanced Options** dropdown and then select **Edit schema** to open the schema editor. 
 1. Click on the **Download** link to save a copy of the schema before editing. 
 1. In the schema editor, press Ctrl-H key to open the find-replace control.
 1. Perform the following find replace operations. Ensure there's no leading or trailing space when performing the find-replace operations. If you're using `[-1:]` index instead of `[0]`, then update the *string-to-find* field accordingly. 
@@ -327,7 +331,7 @@ This section describes how you can update the JSONPath settings to definitely re
 
 1. Save the schema.
 1. The above process updates all JSONPath expressions. 
-1. For prehire processing to work, the JSONPath associated with `startDate` attribute must use either `[0]` or `[-1:]` index. Under **Show advanced options**, click on **Edit SuccessFactors attribute list**. Find the attribute `startDate` and set it to the value `$.employmentNav.results[-1:].startDate`
+1. For prehire processing to work, the JSONPath associated with `startDate` attribute must use either `[0]` or `[-1:]` index. Under the **Advanced Options** dropdown, select **Edit target User attributes**. Find the attribute `startDate` and set it to the value `$.employmentNav.results[-1:].startDate`
 1. Save the schema.
 1. To ensure that terminations are processed as expected, you can use one of the following settings in the attribute mapping section.
  
@@ -349,9 +353,8 @@ When a user in Employee Central is processed for global assignment, SuccessFacto
 
 To fetch attributes belonging to the standard assignment and global assignment user profile, use the steps listed: 
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on the link **Review your schema here** to open the schema editor.   
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Select the **Advanced Options** dropdown and then select **Edit schema** to open the schema editor.   
 1. Click on the **Download** link to save a copy of the schema before editing.   
 1. In the schema editor, press Ctrl-H key to open the find-replace control.
 1. In the find text box, copy, and paste the value `$.employmentNav.results[0]`
@@ -361,10 +364,9 @@ To fetch attributes belonging to the standard assignment and global assignment u
 1. The above process updates all JSONPath expressions as follows: 
    * Old JSONPath: `$.employmentNav.results[0].jobInfoNav.results[0].departmentNav.name_localized`
    * New JSONPath: `$.employmentNav.results[?(@.assignmentClass == 'ST')].jobInfoNav.results[0].departmentNav.name_localized`
-1. Reload the attribute-mapping blade of the app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on **Edit attribute list for SuccessFactors**.
-1. Add new attributes to fetch global assignment data. For example: if you want to fetch the department name associated with a global assignment profile, you can add the attribute *globalAssignmentDepartment* with the JSONPath expression set to `$.employmentNav.results[?(@.assignmentClass == 'GA')].jobInfoNav.results[0].departmentNav.name_localized`. 
+1. Reload the attribute mapping page of the app. 
+1. Select the **Advanced Options** dropdown and then select **Edit target User attributes**.
+1. Add new attributes to fetch global assignment data.For example: if you want to fetch the department name associated with a global assignment profile, you can add the attribute *globalAssignmentDepartment* with the JSONPath expression set to `$.employmentNav.results[?(@.assignmentClass == 'GA')].jobInfoNav.results[0].departmentNav.name_localized`. 
 1. You can now either flow both department values to Active Directory attributes or selectively flow a value using expression mapping. Example: the expression sets the value of AD *department* attribute to *globalAssignmentDepartment* if present, else it sets the value to *department* associated with standard assignment. 
    * `IIF(IsPresent([globalAssignmentDepartment]),[globalAssignmentDepartment],[department])`
 
@@ -378,10 +380,9 @@ To fetch attributes belonging to the standard assignment and global assignment u
 When a user in Employee Central has concurrent/multiple jobs, there are two *EmpEmployment* and *User* entities with *assignmentClass* set to "ST". 
 To fetch attributes belonging to both jobs, use the steps listed: 
 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app. 
-1. Scroll down and click **Show advanced options**.
-1. Click on **Edit attribute list for SuccessFactors**.
-1. Let's say you want to pull the department associated with job 1 and job 2. The predefined attribute *department* already fetches the value of department for the first job. You can define a new attribute called *secondJobDepartment* and set the JSONPath expression to `$.employmentNav.results[1].jobInfoNav.results[0].departmentNav.name_localized`
+1. Open the attribute mapping page of your SuccessFactors provisioning app. 
+1. Select the **Advanced Options** dropdown and then select **Edit target User attributes**.
+1. Let's say you want to pull the department associated with job 1 and job 2.The predefined attribute *department* already fetches the value of department for the first job. You can define a new attribute called *secondJobDepartment* and set the JSONPath expression to `$.employmentNav.results[1].jobInfoNav.results[0].departmentNav.name_localized`
 1. You can now either flow both department values to Active Directory attributes or selectively flow a value using expression mapping. 
 1. Save the mapping. 
 1. Test the configuration using [provision on demand](provision-on-demand.md). 
@@ -404,12 +405,15 @@ Inbound user provisioning from SAP SuccessFactors to on premises Active Director
 The default behavior of the provisioning service is to process prehires in the Onboarding module. 
 
 If you want to exclude processing of prehires in the Onboarding module, update your provisioning job configuration as follows: 
-1. Open the attribute-mapping blade of your SuccessFactors provisioning app.
-1. Under show advanced options, edit the SuccessFactors attribute list to add a new attribute called `userStatus`.
+1. Open the attribute mapping page of your SuccessFactors provisioning app.
+1. Under the **Advanced Options** dropdown, select **Edit target User attributes** to add a new attribute called `userStatus`.
 1. Set the JSONPath API expression for this attribute as: `$.employmentNav.results[0].userNav.status`
-1. Save the schema to return back to the attribute mapping blade. 
-1. Edit the Source Object scope to apply a scoping filter `userStatus NOT EQUALS`
+1. Save the schema to return back to the attribute mapping page. 
+1. Select **Scoping filters** and apply a scoping filter `userStatus NOT EQUALS`.
 1. Save the mapping and validate that the scoping filter works using provisioning on demand. 
+
+> [!NOTE]
+> The connector currently doesn't support retrieving Onboarding users who are in an inactive_external_suite state. These user states occur when new hires initially begin onboarding but later rescind their offer, requiring the cancellation of the onboarding process. There is no workaround for this scenario; it requires out-of-band handling to deactivate users whose onboarding is cancelled.
 
 ### Enabling OData API Audit logs in SuccessFactors
 The Microsoft Entra SuccessFactors connector uses SuccessFactors OData API to retrieve changes and provision users. If you observe issues with the provisioning service and want to confirm what data was retrieved from SuccessFactors, you can enable OData API Audit logs in SuccessFactors. Retrieve the request payload sent by Microsoft Entra ID from the audit logs. To troubleshoot, you can copy this request payload in a tool like cURL or Graph Explorer, set it up to use the same API user that is used by the connector and see if it returns the desired changes from SuccessFactors. 
@@ -421,11 +425,11 @@ This section covers different write-back scenarios. It recommends configuration 
 
 | \# | Scenario requirement | Email primary <br> flag value | Business phone <br> primary flag value | Cell phone <br> primary flag value | Business phone <br> mapping | Cell phone <br> mapping |
 |--|--|--|--|--|--|--|
-| 1 | * Only set business email as primary. <br> * Don't set phone numbers. | true | true | false | \[Not Set\] | \[Not Set\] | 
+| 1 | * Only set business email as primary. <br> * Don't set phone numbers. | true | true | false | [Not Set] | [Not Set] | 
 | 2 | * In SuccessFactors, business email and business phone is primary <br> * Always flow Microsoft Entra telephone number to business phone and mobile to cell phone. | true | true | false | telephoneNumber | mobile | 
 | 3 | * In SuccessFactors, business email and cell phone is primary <br> * Always flow Microsoft Entra telephone number to business phone and mobile to cell phone | true | false | true |  telephoneNumber | mobile | 
 | 4 | * In SuccessFactors business email is primary. <br> * In Microsoft Entra ID, check if work telephone number is present, if present, then check if mobile number is also present. Mark work telephone number as primary only if mobile number isn't present. | true | Use expression mapping: `IIF(IsPresent([telephoneNumber]), IIF(IsPresent([mobile]),"false", "true"), "false")` | Use expression mapping: `IIF(IsPresent([mobile]),"false", "true")` | telephoneNumber | mobile | 
-| 5 | * In SuccessFactors business email and business phone is primary. <br> * In Microsoft Entra ID, if mobile is available, then set it as the business phone, else use telephoneNumber. | true | true | false | `IIF(IsPresent([mobile]), [mobile], [telephoneNumber])` | \[Not Set\] | 
+| 5 | * In SuccessFactors business email and business phone is primary. <br> * In Microsoft Entra ID, if mobile is available, then set it as the business phone, else use telephoneNumber. | true | true | false | `IIF(IsPresent([mobile]), [mobile], [telephoneNumber])` | [Not Set] | 
 
 * If there's no mapping for phone number in the write-back attribute-mapping, then only email is included in the write-back.
 * During new hire onboarding in Employee Central, business email and phone number may not be available. If setting business email and business phone as primary is mandatory during onboarding, you can set a dummy value for business phone and email during new hire creation. After some time, the write-back app updates the value.
@@ -462,7 +466,8 @@ Usually the *personIdExternal* attribute value in SuccessFactors matches the *us
 ### Unsupported scenarios for phone and email write-back
 * In Employee Central, during onboarding personal email and personal phone is set as primary. The write-back app can't switch this setting and set business email and business phone as primary.
 * In Employee Central, business phone is set as primary. The write-back app can't change this and set cell phone as primary.
-* The write-back app can't read the current primary flag settings and use the same values for the write operation. The flag values configured in the attribute-mapping are always be used. 
+* The write-back app can't read the current primary flag settings and use the same values for the write operation. The flag values configured in the attribute-mapping are always be used.
+* The SuccessFactors provisioning connectors, including the write-back connector, are not supported in Microsoft tenants operated by 21Vianet (China).
 
 ## Next steps
 * [Learn how to configure SuccessFactors to Active Directory provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)

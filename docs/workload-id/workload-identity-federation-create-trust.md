@@ -1,12 +1,8 @@
 ---
 title: Create a trust relationship between an app and an external identity provider
 description: Set up a trust relationship between an app in Microsoft Entra ID and an external identity provider. This allows a software workload outside of Azure to access Microsoft Entra protected resources without using secrets or certificates.
-author: SHERMANOUKO
-manager: CelesteDG
-ms.service: entra-workload-id
 ms.topic: how-to
 ms.date: 12/13/2024
-ms.author: shermanouko
 ms.reviewer: shkhalid, udayh, vakarand
 zone_pivot_groups: identity-wif-apps-methods
 ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell, sfi-image-nochange
@@ -181,7 +177,7 @@ To delete a federated identity credential, select the **Delete** icon for the cr
 
 ## Prerequisites
 
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you continue.
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 

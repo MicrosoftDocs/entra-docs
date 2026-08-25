@@ -1,15 +1,11 @@
 ---
 title: Microsoft Entra Connect Health Version History
 description: This document describes the releases for Microsoft Entra Connect Health and what has been included in those releases.
-author: zhiweiwangmsft
-manager: mwongerapk
 ms.assetid: 8dd4e998-747b-4c52-b8d3-3900fe77d88f
-ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: reference
-ms.date: 04/09/2025
-ms.author: jomondi
+ms.date: 02/25/2026
 ms.custom: sfi-ga-nochange
 ---
 # Microsoft Entra Connect Health: Version Release History
@@ -22,7 +18,28 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect Health with n
 Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Connect installation. Read more about [Microsoft Entra Connect release history](./reference-connect-version-history.md).
 
 For feature feedback, vote at [Connect Health User Voice channel](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
+## August 2026
+**Agent Updates**
 
+Microsoft Entra Connect Health (version 4.5.2614.0)
+  - Improved agent credential security and key-rotation support.
+  - Improved cloud compatibility and telemetry upload resilience.
+  - Installation, registration, reliability, and quality improvements.
+    
+## February 2026
+**Agent Updates**
+
+Microsoft Entra Connect Health (version 4.5.2549.0)
+  - Security update: Support for TLS 1.0 and TLS 1.1 has been discontinued. The service now supports TLS 1.2 exclusively.
+  - Quality improvements.
+
+## September 2025
+**Agent Updates**
+
+Microsoft Entra Connect Health (version 4.5.2528.0)
+  - Updated installer to default to US Government cloud for US Government cloud users
+  - Quality improvements & bug fixes
+    
 ## March 2025
 **Agent Updates**
 

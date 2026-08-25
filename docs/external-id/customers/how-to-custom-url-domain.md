@@ -1,11 +1,6 @@
 ---
 title: How to enable custom URL domains for External ID
 description: Learn how to set up custom URL domains to personalize the authentication sign-in endpoints for the external customers and consumers of your app.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 12/03/2024
 ms.custom: it-pro, sfi-image-nochange

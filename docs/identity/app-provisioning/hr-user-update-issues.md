@@ -1,13 +1,9 @@
 ---
 title: Troubleshoot user update issues with HR provisioning
 description: Learn how to troubleshoot user update issues with HR provisioning
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/26/2025
-ms.author: jfields
+ai-usage: ai-assisted
+ms.date: 05/18/2026
 ms.reviewer: chmutali
 ---
 
@@ -78,7 +74,7 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 **Applies to:**
 * Workday to Microsoft Entra user provisioning
 * SAP SuccessFactors to Microsoft Entra user provisioning
-* API-driven provisioning Microsoft Entra ID 
+* API-driven provisioning to Microsoft Entra ID 
 
 | Troubleshooting | Details |
 |-- | -- |
@@ -114,18 +110,43 @@ Use this field in the attribute mapping logic for the accountDisabled flag.
 | -- | -- |
 | **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions. |
 | **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently doesn't implement specialized query to process termination records specific to a time zone. |
-| **Resolution** | There are two possible workarounds: |
+| **Resolution** | Use the termination lookahead query feature. For setup and configuration steps, see [Configure Workday termination lookahead query](configure-workday-termination-lookahead.md). |
 
-1. Use provisioning on demand to process termination event of a specific user.  
+## SuccessFactors termination processing delay
 
-2. In Workday, create a provisioning group called **Terminated Workers**. Update the termination business process in Workday to assign users to this group when termination happens. In the Microsoft Entra provisioning job, add a Workday XPATH attribute to fetch this group assignment.  
-- Example:  
-``` `TerminatedWorkers = 
-wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assignment_Data[wd:Status='Assigned' and wd:Provisioning_Group="Terminated Workers"]/wd:Provisioning_Group/text()` ```
+**Applies to:**
+* SuccessFactors to on-premises Active Directory user provisioning
+* SuccessFactors to Microsoft Entra ID user provisioning
 
-Use this field in the attribute mapping logic for the accountDisabled flag.  
-- Example:  
-  ``` `Switch([TerminatedWorkers], Switch([Active], , "1", "False", "0", "True"), "Terminated Workers", "True")` ```
+| Troubleshooting | Details |
+|-- | -- |
+| **Issue** | In certain scenarios, there might be delays in propagation of terminated employment status as an "account disable" operation. This isn't due to a lack of user-disable capability in Microsoft Entra, but rather how real-time identity lifecycle changes are detected during HR-driven provisioning. |
+| **Cause** | Microsoft Entra's provisioning service operates as a stateless change-detection system. It relies on the source system (for example, SAP SuccessFactors) to emit a time-based change event—such as a termination becoming effective—at the point when the change should take effect. Provisioning cycles then detect and act on those events during incremental sync. In scenarios where termination is effective *as of the current day*, SuccessFactors might not emit an incremental change event at the exact time the user's employment status changes (for example, at end of business day). As a result, Microsoft Entra provisioning doesn't receive a detectable change during its polling cycle and the "disable" action might be delayed until a subsequent update occurs in the source system. |
+| **Resolution** | To support deterministic, policy-driven offboarding, use [Microsoft Entra ID Governance Lifecycle Workflows](../../id-governance/what-are-lifecycle-workflows.md). This model is based on state, rather than time-based events. [Synchronize the employee's `endDate`](../../id-governance/how-to-lifecycle-workflow-sync-attributes.md) from SuccessFactors into Microsoft Entra (for example, via the `employeeLeaveDateTime` attribute). Organizations can then trigger automated offboarding workflows directly from directory state—ensuring accounts are disabled exactly when the employment end date is reached, independent of incremental change detection in the HR system. |
+
+This approach enables:
+- Timely and predictable user offboarding.
+- Policy-based automation aligned to HR intent.
+- Reduced reliance on custom scripts or manual intervention.
+- Centralized lifecycle governance across hybrid and cloud identities.
+
+[Lifecycle Workflows](../../id-governance/what-are-lifecycle-workflows.md) are part of Microsoft Entra ID Governance and are designed specifically for enforcing joiner-mover-leaver policies based on authoritative identity state in the directory.
+
+## Redundant updates for certain attribute types
+
+**Applies to:**
+* Workday to on-premises Active Directory user provisioning
+* Workday to Microsoft Entra user provisioning
+* SAP SuccessFactors to on-premises Active Directory user provisioning
+* SAP SuccessFactors to Microsoft Entra user provisioning
+* API-driven provisioning to on-premises Active Directory
+* API-driven provisioning to Microsoft Entra ID 
+
+| Troubleshooting | Details |
+|-- | -- |
+| **Issue** | Provisioning logs show repeated update operations for certain attributes, even when there are no meaningful changes in source data. This behavior is commonly observed with multi-valued attributes, custom security attributes, and derived account status attributes such as `accountEnabled` or `accountDisabled`. |
+| **Cause** | For certain attribute types, the provisioning engine evaluates values at runtime instead of performing a stable comparison with the previously provisioned state. Because of this runtime evaluation model, these attributes might be reprocessed or written again during sync cycles, which can generate redundant update entries in provisioning logs. |
+| **Resolution** | No resolution is currently available. This behavior is a known limitation. |
 
 ## Next steps
 

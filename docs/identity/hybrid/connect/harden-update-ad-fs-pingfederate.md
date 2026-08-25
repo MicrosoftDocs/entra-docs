@@ -1,13 +1,9 @@
 ---
 title: Hardening updates for Microsoft Entra Connect Sync
 description: Learn how to upgrade Microsoft Entra Connect Sync to meet the minimum version requirements and prevent synchronization failures after September 30, 2026.
-author: omondiatieno
-ms.author: jomondi
-manager: mwongerapk
 ms.reviewer: sharonrutto
 ms.date: 09/19/2025
 ms.topic: concept-article
-ms.service: entra-id
 ms.subservice: hybrid-connect
 
 #customer intent: As an IT admin, I want to know the minimum version requirements for Microsoft Entra Connect Sync so that I can ensure compliance.
@@ -47,7 +43,7 @@ For [auto upgrade to work](/entra/identity/hybrid/connect/security-updates-pks)
 
 ## Consider moving to Microsoft Entra Cloud Sync
 
-If you're eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we're introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
+If you're eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we're introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the [supported sync scenarios comparison](../common-scenarios.md) to see if Cloud Sync is the right sync client for you. 
 
 See the following video to understand how Cloud sync provides value to your business.
 

@@ -1,13 +1,8 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 09/03/2025
-ms.service: entra-external-id
+ms.date: 02/03/2026
 ms.topic: whats-new
-
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 
 # Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
@@ -18,54 +13,55 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 # [External ID in external tenants](#tab/external-tenants)
 
-## August 2025
+## January 2026
 
 ### Updated articles
 
-- [Regional opt-in for MFA telephony verification with external tenants (preview)](customers/how-to-region-code-opt-in.md) - Rest API updates
+- [Configure Akamai with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md) - Editorial updates
+- [Just-In-Time Password Migration to Microsoft Entra External ID (Preview)](customers/how-to-migrate-passwords-just-in-time.md) - Added `encryptedPasswordContext` field updates
+- [Microsoft Entra External ID frequently asked questions](customers/faq-customers.md) - Added FedRAMP and DoD information
 
-## July 2025
+## December 2025
+
+### Updated articles
+
+- [Configure a new OpenID Connect identity provider in the admin center](customers/how-to-custom-oidc-federation-customers.md) - Client secret updates
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added Akamai and Cloudflare WAF information
+- [Configure Akamai with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md) - Editorial updates
+- [Configure Cloudflare with Microsoft Entra External ID](customers/how-to-configure-waf-integration.md) - Editorial updates
+
+## November 2025
 
 ### New article
 
-- [Supported features in workforce and external tenants](customers/how-to-add-enterprise-application.md)
+- [Configure Akamai WAF with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md)
 
 ### Updated articles
 
-- [Register a SAML app in your external tenant](customers/how-to-register-saml-app.md) - Enterprise applications and SAML SSO are generally available
-- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added enterprise applications update
-
-## June 2025
-
-### Updated articles
-
-- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added activity logs and reports
-- [Microsoft Entra External ID training, live demo, and videos](customers/reference-training-videos.md) - Added video on configuring OpenID Connect identity providers
-
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added Security Store features
+- [Configure Cloudflare Web Application Firewall with Microsoft Entra External ID](customers/how-to-configure-waf-integration.md) - Updated Cloudflare integration steps
+- [Set up Azure Monitor in external tenants](customers/how-to-azure-monitor.md) - Updated Azure Monitor setup steps
+- [Multifactor authentication in external tenants](customers/concept-multifactor-authentication-customers.md) - Added MFA with Conditional Access authentication context
 
 # [External ID in workforce tenants](#tab/workforce-tenants)
 
-## August 2025
+## January 2026
 
 ### Updated articles
 
-- [Microsoft Entra B2B in government and national clouds](b2b-government-national-clouds.md) - Cross-cloud synchronization update
-- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Cross-cloud synchronization update
+- [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated Monthly active users (MAU) billing model
 
-## July 2025
-
-### Updated articles
-
-- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Updated authentication experience for guest users
-
-## March 2025
+## December 2025
 
 ### Updated articles
 
-- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated important considerations
-- [Authentication flow for non-Microsoft Entra ID external users](authentication-conditional-access.md) - Replaced retired MSOnline references 
-- [Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](bulk-invite-powershell.md) - Editorial updates
-- [B2B collaboration invitation redemption](redemption-experience.md) - Editorial updates
+- [B2B invitation email layout and language settings](invitation-email-elements.md) - Invitation email updates
+- [B2B collaboration invitation redemption](redemption-experience.md) - Invitation email updates
 
+## September 2025
+
+### Updated articles
+
+- [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Added cross-cloud limitations and tenant restrictions
 
 ---

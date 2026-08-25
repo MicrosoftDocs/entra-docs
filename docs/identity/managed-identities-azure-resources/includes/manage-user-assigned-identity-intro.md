@@ -1,10 +1,6 @@
 ---
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 09/09/2025
 ms.topic: include
-ms.service: entra-id
-ms.subservice: managed-identities
 ---
 
 Managed identities for Azure resources eliminate the need to manage credentials in code. You can use them to get a Microsoft Entra token for your applications. The applications can use the token when accessing resources that support Microsoft Entra authentication. Azure manages the identity so you don't have to.

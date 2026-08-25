@@ -1,9 +1,7 @@
 ---
 title: Call web APIs from a desktop app
 description: Learn how to build a desktop app that calls web APIs
-author: OwenRichards1
-manager: CelesteDG
-ms.author: owenrichards
+manager: pmwongera
 ms.custom: 
 ms.date: 10/30/2019
 ms.reviewer: jmprieur

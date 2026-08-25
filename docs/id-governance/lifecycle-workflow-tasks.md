@@ -1,14 +1,11 @@
 ---
 title: Lifecycle Workflows tasks and definitions
 description: This article guides a user on Workflow task definitions and task parameters.
-author: OWinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: article
-ms.date: 06/25/2025
+ms.topic: concept-article
+ms.date: 04/25/2026
 ms.custom: sfi-image-nochange
+#Customer Intent: As an IT admin, I want to understand lifecycle workflow task definitions and parameters so that I can configure workflow tasks correctly.
 ---
 
 # Lifecycle Workflow built-in tasks
@@ -42,7 +39,7 @@ Common task parameters are the non-unique parameters contained in every task. Wh
 
 ## Common email task parameters
 
-Along with all of the basic task parameters, under **Basics** email tasks also include the ability to configure who are the recipients of the email:
+Along with all of the basic task parameters, under **Basics** email tasks also include the ability to configure who the recipients of the email are:
 
 :::image type="content" source="media/lifecycle-workflow-task/email-tasks-basics.png" alt-text="Screenshot of basics email task customization.":::
 
@@ -68,24 +65,45 @@ For a step by step guide on this process, see: [Customize emails sent out by wor
 
 ### Dynamic attributes within email
 
-With customized emails, you're able to include dynamic attributes within the subject and body to personalize these emails. The list of dynamic attributes that can be included are as follows:
+With customized emails, you're able to include dynamic attributes within the subject and body to personalize these emails. You can include built-in user attributes, custom security attributes, directory extensions, and on-premises extension attributes. The following tables show examples of available dynamic attributes:
 
+**User attributes**
 
 |Attribute  |Definition  |
 |---------|---------|
-|userDisplayName     | The user’s display name.        |
-|userEmployeeHireDate     | The user’s employee hire date.        |
-|userEmployeeLeaveDateTime     | The user’s employee leave date time.        |
-|managerDisplayName     |  The display name of the user’s manager.        |
-|temporaryAccessPass     |  The generated Temporary Access Pass. Only available with the **Generate TAP And Send Email** task.       |
-|userPrincipalName     |  The user’s userPrincipalName.       |
-|managerEmail     |  The manager’s email.        |
-|userSurname     |  User’s family name.       |
-|userGivenName     | User’s first name.        |
+|`{{user.displayName}}`     | The user's display name.        |
+|`{{user.givenName}}`     | The user's first name.        |
+|`{{user.userPrincipalName}}`     | The user's user principal name.        |
+|`{{user.employeeHireDate}}`     | The user's employee hire date.        |
+|`{{user.employeeLeaveDateTime}}`     | The user's employee leave date and time.        |
+|`{{user.createdDateTime}}`     | The date and time the user was created.        |
+|`{{user.employeeType}}`     | The user's employee type.        |
+|`{{user.department}}`     | The user's department.        |
+|`{{user.companyName}}`     | The user's company name.        |
+|`{{user.jobTitle}}`     | The user's job title.        |
+|`{{temporaryAccessPass}}`     | The generated Temporary Access Pass. Only available with the **Generate TAP And Send Email** task.        |
 
+**Manager attributes**
+
+|Attribute  |Definition  |
+|---------|---------|
+|`{{managerDisplayName}}`     | The display name of the user's manager.        |
+|`{{managerEmail}}`     | The manager's email.        |
+
+**Extension and custom attributes**
+
+|Attribute  |Definition  |
+|---------|---------|
+|`{{user.employeeOrgData/costCenter}}`     | The user's cost center from employee organization data.        |
+|`{{user.employeeOrgData/division}}`     | The user's division from employee organization data.        |
+|`{{user.customSecurityAttributes/attributeSet/attributeName}}`     | A custom security attribute value. Replace `attributeSet` and `attributeName` with your attribute set and attribute names.        |
+|`{{user.onPremisesExtensionAttributes/extensionAttribute1}}`     | An on-premises extension attribute. Replace `extensionAttribute1` with the desired attribute number (1-15).        |
 
 > [!NOTE]
-> When adding these attributes to a customized email, or subject, they must be properly embedded. For a step by step guide on doing this, see: [Format attributes within customized emails](customize-workflow-email.md).
+> When adding these attributes to a customized email, or subject, they must be properly formatted using `{{user.graphPropertyName}}` syntax. For a step by step guide on doing this, see: [Format attributes within customized emails](customize-workflow-email.md).
+
+> [!IMPORTANT]
+> The new `{{user.graphPropertyName}}` attribute format applies to new custom email tasks. Existing customized email tasks on workflows that were configured before this change are not affected and continue to work with their existing attribute formatting.
 
 ## Task details
 
@@ -112,7 +130,7 @@ For Microsoft Graph, the parameters for the **Send welcome email to new hire** t
 |displayName     | Send Welcome Email (Customizable by user)        |
 |description     | Send welcome email to new hire (Customizable by user)      |
 |taskDefinitionId     |   70b29d51-b59a-4773-9280-8841dfd3f2ea     |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 
 Example of usage within the workflow:
@@ -167,7 +185,7 @@ For Microsoft Graph, the parameters for the **Send onboarding reminder email** t
 |displayName     | Send onboarding reminder email (Customizable by user)        |
 |description     | Send onboarding reminder email to user’s manager (Customizable by user)      |
 |taskDefinitionId     |   3C860712-2D37-42A4-928F-5C93935D26A1     |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -230,7 +248,7 @@ For Microsoft Graph, the parameters for the **Generate Temporary Access Pass and
 |displayName     | GenerateTAPAndSendEmail (Customizable by user)      |
 |description     | Generate Temporary Access Pass and send via email to user's manager (Customizable by user)       |
 |taskDefinitionId     |   1b555e50-7f65-41d5-b514-5894a026d10d     |
-|arguments     |  Argument contains the name parameter "tapLifetimeInMinutes," which is the lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days). The argument also contains the tapIsUsableOnce parameter, which determines whether the passcode is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime. Additionally, the optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  Argument contains the name parameter "tapLifetimeInMinutes," which is the lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days). The argument also contains the tapIsUsableOnce parameter, which determines whether the passcode is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime. Additionally, the optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -290,7 +308,7 @@ For Microsoft Graph the parameters for the **Send email to notify manager of use
 |displayName     |  Send email to notify manager of user move (Customizable by user)       |
 |description     |  Send email to notify user’s manager of user move (Customizable by user)        |
 |taskDefinitionId     |   aab41899-9972-422a-9d97-f626014578b7      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -338,7 +356,7 @@ For Microsoft Graph, the parameters for the **Request user access package assign
 |displayName     |  Request user access package assignment (Customizable by user)        |
 |description     |  Request user assignment to selected access package (Customizable by user)       |
 |taskDefinitionId     |   c1ec1e76-f374-4375-aaa6-0bb6bd4c60be      |
-|arguments     |  Argument contains two name parameter that is the "assignmentPolicyId," and "accessPackageId".    |
+|arguments     |  Argument contains two name parameters: "assignmentPolicyId" and "accessPackageId".    |
 
 Example of usage within the workflow:
 
@@ -380,7 +398,7 @@ Allows Licenses to be assigned to users. For a license to be assigned to the use
 
 Example of usage within the workflow:
 
-```Example for usage within the workflow
+```json
 {
             "category": "joiner,mover",
             "continueOnError": false,
@@ -419,7 +437,9 @@ For Microsoft Graph, the parameters for the **Add user to groups** task are as f
 |arguments     |  Argument contains a name parameter that is the "groupID", and a value parameter that is the group ID of the group you're adding the user to.    |
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "description": "Add user to groups",
@@ -456,7 +476,9 @@ For Microsoft Graph, the parameters for the **Add user to teams** task are as fo
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "description": "Add user to team",
@@ -472,6 +494,46 @@ For Microsoft Graph, the parameters for the **Add user to teams** task are as fo
             ]
 }
 
+```
+
+### Update user attributes
+
+Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center. 
+
+> [!NOTE]
+> For users synced from on-premises AD, this task supports directory extension attributes only. For more information, see: [Update user attributes with Lifecycle Workflows](how-to-lifecycle-workflow-update-user-attributes.md).
+
+:::image type="content" source="media/lifecycle-workflow-task/update-user-attribute-task.png" alt-text="Screenshot of the update user attribute task.":::
+
+
+For Microsoft Graph, the parameters for the **Update user attributes** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  joiner, leaver, mover      |
+|displayName     |   Update user attributes     |
+|description     | Update or clear user attribute values.    |
+|taskDefinitionId     |   2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     |
+|arguments     |  Argument contains the name parameter "attributeUpdates," which is a JSON string specifying up to 10 user attributes to update or clear. The attributes can include built-in, on-premises extensions, directory extensions, and employee org data.   |
+
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "joiner",
+    "continueOnError": false,
+    "description": "Update or clear user attribute values including custom attributes",
+    "displayName": "Update user attributes",
+    "isEnabled": true,
+    "taskDefinitionId": "2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b",
+    "arguments": [
+        {
+            "name": "attributeUpdates",
+            "value": "[{\"attribute\":\"department\",\"value\":\"Sales\"},{\"attribute\":\"jobTitle\",\"value\":\"Account Executive\"}]"
+        }
+    ]
+}
 ```
 
 ### Enable user account
@@ -493,7 +555,9 @@ For Microsoft Graph, the parameters for the **Enable user account** task are as 
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
  {
             "category": "joiner,leaver",
             "description": "Enable user account",
@@ -534,7 +598,9 @@ For Microsoft Graph, the parameters for the **Run a Custom Task Extension** task
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "description": "Run a Custom Task Extension to call-out to an external system.",
@@ -572,7 +638,9 @@ For Microsoft Graph, the parameters for the **Disable user account** task are as
 |arguments     |  Can contain the optional *disableOnPremisesAccount* argument. The value is a boolean value of either *true*, if you want the task to run for synced on-premises users, or *false*, if you don't want it to run for synced on-premises users.   |
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "description": "Disable user account",
@@ -612,7 +680,9 @@ For Microsoft Graph, the parameters for the **Remove user from selected groups**
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "displayName": "Remove user from selected groups",
@@ -651,7 +721,9 @@ For Microsoft Graph, the parameters for the **Remove users from all groups** tas
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "continueOnError": true,
@@ -664,7 +736,7 @@ For Microsoft Graph, the parameters for the **Remove users from all groups** tas
 
 ```
 
-### Remove User from Teams
+### Remove User from selected Teams
 
 Allows a user to be removed from one or multiple static teams. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/remove-user-team-task.png" alt-text="Screenshot of Workflows task: remove user from teams.":::
@@ -680,7 +752,9 @@ For Microsoft Graph, the parameters for the **Remove User from Teams** task are 
 |arguments     |  Argument contains a name parameter that is the "teamID", and a value parameter that is the Teams ID of the Teams you're removing the user from.   |
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "joiner,leaver",
             "continueOnError": true,
@@ -714,7 +788,9 @@ For Microsoft Graph, the parameters for the **Remove users from all teams** task
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "continueOnError": true,
@@ -745,7 +821,9 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 |arguments     |  Argument contains a name parameter that is the "accessPackageId".   |
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
     "category": "leaver, mover",
     "continueOnError": false,
@@ -766,18 +844,18 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 
 Allows you to remove all access package assignments for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
-You're able to customize the task name, description, and whether or not access package assignments are removed immediately, or after a certain amount of days  for this task in the Microsoft Entra admin center.
+You're able to customize the task name, description, and whether access package assignments are removed immediately or after a certain number of days for this task in the Microsoft Entra admin center. When used in mover workflow templates, the default option is scheduled removal set to 15 days.
 :::image type="content" source="media/lifecycle-workflow-task/remove-all-access-package-assignment-user-task.png" alt-text="Screenshot of the remove all user access package assignment task.":::
 
 For Microsoft Graph, the parameters for the **Remove all access package assignments for user** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  leaver      |
+|category    |  leaver, mover      |
 |displayName     |  Remove all access package assignments for user (Customizable by user)        |
-|description     |  Remove all access packages assigned to the user (Customizable by user)        |
+|description     |  Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate. (Customizable by user)        |
 |taskDefinitionId     |   42ae2956-193d-4f39-be06-691b8ac4fa1d      |
-|arguments     |  Argument contains a name parameter that is the "daysUntilExpiration", and a value parameter that is the days until expiration of all access package assignments for the user.   |
+|arguments     |  Argument contains a required name parameter that is the "daysUntilExpiration", and a value parameter that is the days until expiration of all access package assignments for the user. For mover templates, this defaults to 15 days.   |
 
 Example of usage within the workflow:
 
@@ -785,13 +863,13 @@ Example of usage within the workflow:
 {
     "category": "leaver",
     "continueOnError": false,
-    "description": "Remove all access packages assigned to the user",
+    "description": "Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate.",
     "displayName": "Remove all access package assignments for user",
     "isEnabled": true,
     "taskDefinitionId": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
     "arguments": [
         {
-             "description": "Remove all access packages assigned to the user",
+             "description": "Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate.",
             "displayName": "Remove all access package assignments for user",
             "id": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
             "version": 1,
@@ -857,7 +935,7 @@ For Microsoft Graph, the parameters for the **Remove selected license assignment
 
 Example of usage within the workflow:
 
-```Example for usage within the workflow 
+```json
 {
             "category": "leaver, mover",
             "description": "Remove selected licenses assigned to the user",
@@ -893,7 +971,9 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
     "category": "leaver, mover",
     "continueOnError": false,
@@ -901,6 +981,136 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
     "displayName": "Revoke all refresh tokens for user",
     "isEnabled": true,
     "taskDefinitionId": "509589a4-0466-4471-829e-49c5e502bdee",
+    "arguments": []
+}
+```
+
+### Send email to manager about sponsorship changes
+
+Allows an email to be sent to the manager of an employee that has moved or left. This email notifies the manager that the employee, who moved or left, was the sponsor of one or more agent IDs. This allows the manager to decide if the agent ID should have a different employee as their sponsor.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/send-email-manager-sponsor-change.png" alt-text="Screenshot of the send email to manager about sponsorship transfer task.":::
+
+For Microsoft Graph, the parameters for the **Send email to manager about sponsorship changes** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Send email to manager about sponsorship changes     |
+|description     |  Notify sponsor's manager about agent identity sponsorship transfer.        |
+|taskDefinitionId     |  b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f      |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
+
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "mover",
+    "continueOnError": false,
+    "description": "Notify sponsor's manager about agent identity sponsorship transfer.",
+    "displayName": "Send email to manager about sponsorship transfer",
+    "isEnabled": true,
+    "taskDefinitionId": "b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f  ",
+    "arguments": [
+        {
+            "name": "cc",
+            "value": "ac17d108-60cd-4eb2-a4b4-084cacda33f2,7d3ee937-edcc-46b0-9e2c-f832e01231ea"
+        },
+        {
+            "name": "customSubject",
+            "value": "{{userDisplayName}} has moved"
+        },
+        {
+            "name": "customBody",
+            "value": "Hello {{managerDisplayName}}\n\nwe are reaching out to let you know {{userDisplayName}} has moved in the organization and you have taken over their agent ID sponsorships.\n\nRegards\nYour IT department"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
+### Send email to co-sponsors about sponsor changes
+
+Allows an email to be sent to co-sponsors of an agent ID when a user, who was also a sponsor of the agent ID, has moved or left. This notifies cosponsors of changes happening to sponsorship of their agent ID.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/send-cosponsors-email.png" alt-text="Send email to cosponsors about a change.":::
+
+For Microsoft Graph, the parameters for the **Send email to co-sponsors about sponsor changes** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Send email to co-sponsors about sponsor changes  |
+|description     |  Notify co-sponsors about agent identity sponsorship changes.       |
+|taskDefinitionId     |  ad3b85cd-75b1-43e7-b4b9-0e52faba3944      |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "mover",
+    "continueOnError": false,
+    "description": "Notify co-sponsors about agent identity sponsorship changes.",
+    "displayName": "Send email to co-sponsors about sponsor changes",
+    "isEnabled": true,
+    "taskDefinitionId": "ad3b85cd-75b1-43e7-b4b9-0e52faba3944",
+    "arguments": [
+        {
+            "name": "cc",
+            "value": "ac17d108-60cd-4eb2-a4b4-084cacda33f2,7d3ee937-edcc-46b0-9e2c-f832e01231ea"
+        },
+        {
+            "name": "customSubject",
+            "value": "{{userDisplayName}} has moved"
+        },
+        {
+            "name": "customBody",
+            "value": "Hello \n\nwe are reaching out to let you know {{userDisplayName}} has moved in the organization and will no longer have sponsorship authority over agent IDs they previously sponsored with you.\n\nRegards\nYour IT department"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
+### Transfer agent identity sponsorships to manager
+
+Allows all agent identity sponsorships to be transferred from a user to their manager. Accomplishes the task by retrieving the user's manager, determining each of the agent identities they sponsor, adding their manager as a sponsor, and removing the user as a sponsor.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/transfer-agent-identity-sponsorships-manager-task.png" alt-text="Screenshot of Workflows task: transfer agent identity sponsorships to manager.":::
+The Microsoft Entra prerequisites to run the **Transfer agent identity sponsorships to manager** task are:
+
+- A populated manager attribute for the user.
+
+For Microsoft Graph, the parameters for the **Transfer agent identity sponsorships to manager** task are as follows:
+
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Transfer agent identity sponsorships to manager  |
+|description     |  Transfer all agent identities sponsored by user to manager.       |
+|taskDefinitionId     |  b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a      |
+
+
+
+```Example of usage within the workflow
+{
+    "category": "mover",
+    "continueOnError": false,
+    "description": "Transfer all agent identities sponsored by user to manager.",
+    "displayName": "Transfer agent identity sponsorships to manager",
+    "isEnabled": true,
+    "taskDefinitionId": "b8f4c3d5-9e7a-4b1c-8f2d-6a5e8b9c7f4a",
     "arguments": []
 }
 ```
@@ -923,7 +1133,9 @@ For Microsoft Graph, the parameters for the **Remove all license assignment from
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "continueOnError": true,
@@ -954,7 +1166,9 @@ For Microsoft Graph, the parameters for the **Delete User** task are as follows:
 
 
 
-```Example for usage within the workflow
+Example of usage within the workflow:
+
+```json
 {
             "category": "leaver",
             "continueOnError": true,
@@ -991,7 +1205,7 @@ For Microsoft Graph the parameters for the **Send email before user's last day**
 |displayName     |  Send email before user’s last day (Customizable by user)       |
 |description     |  Send offboarding email to user’s manager before the last day of work (Customizable by user)        |
 |taskDefinitionId     |   52853a3e-f4e5-4eb8-bb24-1ac09a1da935      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -1042,7 +1256,7 @@ For Microsoft Graph, the parameters for the **Send email on user last day** task
 |displayName     |  Send email on user’s last day (Customizable by user)       |
 |description     |  Send offboarding email to user’s manager on the last day of work (Customizable by user)        |
 |taskDefinitionId     |   9c0a1eaf-5bda-4392-9d9e-6e155bb57411      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -1094,7 +1308,7 @@ For Microsoft Graph, the parameters for the **Send email to user's manager after
 |displayName     |  Send email to user's manager after their last day      |
 |description     |  Send offboarding email to user’s manager after the last day of work (Customizable by user)        |
 |taskDefinitionId     |   6f22ddd4-b3a5-47a4-a846-0d7c201a49ce      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -1127,26 +1341,26 @@ Example of usage within the workflow:
 }
 ```
 
-### Send email about user inactivity (Preview)
+### Send email about user inactivity
 
 Allows an email containing information about an inactive user to be sent to the user's manager after a specified number of days as their last sign-in. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/send-email-user-inactivity-task.png" alt-text="Screenshot of Workflows task: send inactivity email.":::
 
-The Microsoft Entra prerequisites to run the **Send email about user inactivity (Preview)** task are:
+The Microsoft Entra prerequisites to run the **Send email about user inactivity** task are:
 
 - A populated manager attribute for the user.
 - A populated manager's mail attribute for the user.
 
 
-For Microsoft Graph, the parameters for the **Send email about user inactivity (Preview)** task are as follows:
+For Microsoft Graph, the parameters for the **Send email about user inactivity** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver      |
-|displayName     | Send email about user inactivity (Preview)     |
+|displayName     | Send email about user inactivity    |
 |description     |  Notify manager that user has been inactive (Customizable by user)        |
 |taskDefinitionId     |   92f74cb4-f1b6-4ec0-b766-96210f56edc2      |
-|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect.    |
 
 Example of usage within the workflow:
 
@@ -1155,7 +1369,7 @@ Example of usage within the workflow:
     "category": "leaver",
     "continueOnError": false,
     "description": " Notify manager that user has been inactive",
-    "displayName": "Send email about user inactivity (Preview)",
+    "displayName": "Send email about user inactivity",
     "isEnabled": true,
     "taskDefinitionId": "92f74cb4-f1b6-4ec0-b766-96210f56edc2",
     "arguments": [
@@ -1170,6 +1384,60 @@ Example of usage within the workflow:
         {
             "name": "customBody",
             "value": "We’re notifying you that a recent sign-in for [UserDisplayName]’s user account has not been detected, and the account is considered inactive. The last sign in was [LastSigninDate]. To maintain a secure environment, your organization may have already started the process to disable or delete this user account.\n\nPlease check your organization’s policies and take appropriate action if this user account is still needed.\n\nRegards\nYour IT department"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
+### Send email about unsponsored guest removal (Preview)
+
+Allows you to send an email notification to specified recipients when unsponsored guests are being removed from your organization. This task is part of the automation for detecting and cleaning up sponsorless guests in Microsoft Entra ID. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+:::image type="content" source="media/lifecycle-workflow-task/send-email-unsponsored-guest-removal-task.png" alt-text="Screenshot of Workflows task: send email about unsponsored guest removal task.":::
+
+> [!NOTE]
+> This task is currently in preview and is only available for leaver workflows.
+
+The Microsoft Entra prerequisites to run the **Send email about unsponsored guest removal (Preview)** task are:
+
+- The guest user account must be identified as unsponsored (having no valid sponsor).
+
+For Microsoft Graph, the parameters for the **Send email about unsponsored guest removal (Preview)** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver      |
+|displayName     | Send email about unsponsored guest removal (Preview)    |
+|description     |  Notify specified recipients about unsponsored guest removal (Customizable by user)        |
+|taskDefinitionId     |   a8e4c7f2-9d1b-4a3e-b5c6-8f2e7a9d4c1b      |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect. Recipients can include Lifecycle Workflows Administrators, Global Administrators, Selected users, Manager, or User.    |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "leaver",
+    "continueOnError": false,
+    "description": "Notify specified recipients about unsponsored guest removal",
+    "displayName": "Send email about unsponsored guest removal (Preview)",
+    "isEnabled": true,
+    "taskDefinitionId": "a8e4c7f2-9d1b-4a3e-b5c6-8f2e7a9d4c1b",
+    "arguments": [
+        {
+            "name": "cc",
+            "value": "ac17d108-60cd-4eb2-a4b4-084cacda33f2"
+        },
+        {
+            "name": "customSubject",
+            "value": "Guest user {{userDisplayName}} removal notification"
+        },
+        {
+            "name": "customBody",
+            "value": "Hello,\n\nThis is a notification that guest user {{userDisplayName}} is being removed from your organization due to no valid sponsor.\n\nIf you believe this action is incorrect, please contact your IT department immediately.\n\nRegards\nYour IT department"
         },
         {
             "name": "locale",

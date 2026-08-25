@@ -1,9 +1,7 @@
 ---
 title: "Tutorial: Call a web API from your Node.js daemon application"
 description: Learn about how to prepare your Node.js client daemon app, then configure it to acquire an access token for calling a web API.
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 08/27/2024

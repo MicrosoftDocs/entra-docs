@@ -1,11 +1,6 @@
 ---
 title: Register a SAML app
 description: Learn how to create and register a SAML app with External ID for customer identity and access management (CIAM). Choose your app type and get detailed steps. 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id 
-ms.subservice: external
 ms.topic: how-to
 ms.date: 06/26/2025
 ms.custom: it-pro
@@ -20,14 +15,9 @@ In external tenants, you can register applications that use the OpenID Connect (
 
 This article describes how to register your own SAML application in your external tenant by creating a *non-gallery* app in **Enterprise applications**.
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovebanking.com/)
-> 
-> To try out SAML app with External ID for customer identity and access management (CIAM), go to the Woodgrove live demo and select the sign-in option.
-
 ## Prerequisites
 
-- An Azure account that has an active subscription. <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">Create an account for free</a>.
+- An Azure account that has an active subscription. <a href="https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn" target="_blank">Create an account for free</a>.
 - A Microsoft Entra [external tenant](how-to-create-external-tenant-portal.md).
 - [A sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 

@@ -1,16 +1,9 @@
 ---
 title: Targeting Resources in Conditional Access Policies
 description: Learn how to configure Conditional Access policies to target specific resources, actions, and authentication contexts in Microsoft Entra ID.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/22/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
-ms.reviewer: lhuangnorth
+ms.date: 03/24/2026
+ms.reviewer: kvenkit
 ms.custom:
   - has-azure-ad-ps-ref
   - ai-gen-docs-bap
@@ -19,6 +12,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Conditional Access: Target resources
+
+## Overview
 
 Target resources (formerly cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies let admins assign controls to specific applications, services, actions, or authentication context.
 
@@ -31,21 +26,21 @@ Target resources (formerly cloud apps, actions, and authentication context) are 
 
 ## Microsoft cloud applications
 
-Admins can assign a Conditional Access policy to Microsoft cloud apps if the service principal appears in their tenant, except for Microsoft Graph. Microsoft Graph functions as an umbrella resource. Use [Audience Reporting](troubleshoot-conditional-access.md#audience-reporting) to see the underlying services and target those services in your policies. Some apps like [Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new Microsoft cloud applications are created, they appear in the app picker list as soon as the service principal is created in the tenant. 
+Admins can assign a Conditional Access policy to Microsoft cloud apps if the service principal appears in their tenant, except for Microsoft Graph. Microsoft Graph functions as an umbrella resource. Use [Audience Reporting](troubleshoot-conditional-access.md#audience-reporting) to see the underlying services and target those services in your policies. Some apps like [Microsoft 365/Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new Microsoft cloud applications are created, they appear in the app picker list as soon as the service principal is created in the tenant. 
 
-### Office 365
+## Office 365
 
-Microsoft 365 offers cloud-based productivity and collaboration services like Exchange, SharePoint, and Microsoft Teams. Microsoft 365 cloud services are deeply integrated to ensure smooth and collaborative experiences. This integration might cause confusion when creating policies because some apps, like Microsoft Teams, depend on others, like SharePoint or Exchange.
+Microsoft 365 offers cloud-based productivity and collaboration services like Exchange, SharePoint, and Microsoft Teams. In Conditional Access, the Microsoft 365 suite of applications appears under 'Office 365'. Microsoft 365 cloud services are deeply integrated to ensure smooth and collaborative experiences. This integration might cause confusion when creating policies because some apps, like Microsoft Teams, depend on others, like SharePoint or Exchange.
 
-The Office 365 app grouping makes it possible to target these services all at once. We recommend using the Office 365 grouping, instead of targeting individual cloud apps to avoid issues with [service dependencies](service-dependencies.md).
+The Office 365 app grouping in Conditional Access makes it possible to target these services all at once. Use the Microsoft 365 grouping, instead of targeting individual cloud apps, to avoid issues with [service dependencies](service-dependencies.md).
 
-Targeting this group of applications helps to avoid issues that might arise because of inconsistent policies and dependencies. For example: The Exchange Online app is tied to traditional Exchange Online data like mail, calendar, and contact information. Related metadata might be exposed through different resources like search. To ensure that all metadata is protected by as intended, admins should assign policies to the Office 365 app.
+Targeting this group of applications helps to avoid issues that might arise because of inconsistent policies and dependencies. For example: The Exchange Online app is tied to traditional Exchange Online data like mail, calendar, and contact information. Related metadata might be exposed through different resources like search. To ensure that all metadata is protected as intended, admins should assign policies to the Microsoft 365 app.
 
-Admins can exclude the entire Office 365 suite or specific Office 365 cloud apps from Conditional Access policies.
+Admins can exclude the entire Microsoft 365 suite or specific Microsoft 365 cloud apps from Conditional Access policies.
 
-A complete list of all services included can be found in the article [Apps included in Conditional Access Office 365 app suite](reference-office-365-application-contents.md).
+For a complete list of all included services, see [Apps included in Conditional Access Microsoft 365 app suite](reference-office-365-application-contents.md).
 
-### Windows Azure Service Management API
+## Windows Azure Service Management API
 
 When you target the Windows Azure Service Management API application, policy is enforced for tokens issued to a set of services closely bound to the portal. This grouping includes the application IDs of:
 
@@ -59,7 +54,6 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 - Azure CLI
 - Azure Data Factory portal
-- Azure DevOps
 - Azure Event Hubs
 - Azure PowerShell
 - Azure Service Bus
@@ -68,31 +62,36 @@ Because the policy is applied to the Azure management portal and API, any servic
 - Classic deployment model APIs
 - Microsoft 365 admin center
 - Microsoft IoT Central
+- Microsoft Defender Multitenant management
 - SQL Managed Instance
 - Visual Studio subscriptions administrator portal
+  
+
+> [!CAUTION]
+> Conditional Access policies associated with the Windows Azure Service Management API [no longer cover Azure DevOps](/azure/devops/organizations/accounts/conditional-access-policies#azure-resource-manager-audience).
 
 > [!NOTE]
 > The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It doesn't apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
-
-For more information on how to set up a sample policy for Windows Azure Service Management API, see [Conditional Access: Require MFA for Azure management](policy-old-require-mfa-azure-mgmt.md).
-
-> [!TIP]
+>
 > For Azure Government, you should target the Azure Government Cloud Management API application.
 
-### Microsoft Admin Portals
+## Microsoft Admin Portals
 
-When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to application IDs of the following Microsoft administrative portals:
+When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to specific underlying resource application IDs associated with Microsoft admin portals. The app grouping doesn't include the backend services that those portals might call or depend on. To identify service dependencies of the admin portals, use the [Conditional Access audience reporting in sign-in logs](troubleshoot-conditional-access.md#audience-reporting).
 
-- Azure portal
-- Exchange admin center
-- Microsoft 365 admin center
-- Microsoft 365 Defender portal
-- Microsoft Entra admin center
-- Microsoft Intune admin center
-- Microsoft Purview compliance portal
-- Microsoft Teams admin center
+The following applications comprise the Microsoft Admin Portals:
 
-We're continually adding more administrative portals to the list.
+- Exchange Admin Center app ID: 497effe9-df71-4043-a8bb-14cf78c4b63b
+- Azure portal app ID: c44b4083-3bb0-49c1-b47d-974e53cbdf3c
+- Microsoft Office 365 Portal app ID: 00000006-0000-0ff1-ce00-000000000000
+- Microsoft 365 Security And Compliance Center (Protection Center) app ID: 80ccca67-54bd-44ab-8625-4b79c4dc7775
+
+The Admin Portal grouping is primarily intended for include scenarios, for a simplified way to target one or more admin portals with Conditional Access policies (for example, enforcing MFA). This grouping is used in the [MFA for admins Microsoft-managed policy](managed-policies.md#multifactor-authentication-for-admins-accessing-microsoft-admin-portals) to streamline policy creation.
+ 
+This option isn't intended to function as a bulk exclusion mechanism for all backend services associated with the underlying application IDs.
+
+> [!NOTE]
+> Block policies that target the Microsoft Admin Portals will block end users from accessing the Microsoft 365 self-install page, as this page is currently located in the Microsoft 365 admin center. For information on alternative deployment options, see [Plan your enterprise deployment of Microsoft 365 Apps](/microsoft-365-apps/deploy/plan-microsoft-365-apps).
 
 ### Other applications
 
@@ -105,11 +104,11 @@ Admins can add any Microsoft Entra registered application to Conditional Access 
 - Applications that use [password based single sign-on](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md)
 
 > [!NOTE]
-> Since Conditional Access policy sets the requirements for accessing a service, you aren't able to apply it to a client (public/native) application. In other words, the policy isn't set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications aren't available for selection in the app picker and Conditional Access option isn't available in the application settings for the client (public/native) application registered in your tenant.
+> Because Conditional Access policy sets the requirements for accessing a service, you aren't able to apply it to a client (public/native) application. In other words, the policy isn't set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications aren't available for selection in the app picker and Conditional Access option isn't available in the application settings for the client (public/native) application registered in your tenant.
 
 Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')** or add the missing service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) PowerShell cmdlet or by using the [Microsoft Graph API](/graph/api/serviceprincipal-post-serviceprincipals).
 
-#### Understanding Conditional Access for different client types
+### Conditional Access for different client types
 
 Conditional Access applies to resources not clients, except when the client is a confidential client requesting an ID token.
 
@@ -131,18 +130,21 @@ For more information, see the article [Public client and confidential client app
 
 <a name='all-cloud-apps'></a>
 
-### All resources
+## Conditional Access for ALL resources
 
-Applying a Conditional Access policy to **All resources (formerly 'All cloud apps')** without any app exclusions enforces the policy for all token requests from websites and services, including [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding). This option includes applications that aren't individually targetable in Conditional Access policy, such as `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000).
+Applying a Conditional Access policy to **All resources (formerly 'All cloud apps')** without any resource exclusions enforces the policy for all token requests from websites and services, including [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding). This option includes applications that aren't individually targetable in Conditional Access policy, such as `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000).
 
 > [!IMPORTANT]
-> Microsoft recommends creating a baseline multifactor authentication policy targeting all users and all resources (without any app exclusions), like the one explained in [Require multifactor authentication for all users](policy-all-users-mfa-strength.md).
+> Microsoft recommends creating a baseline multifactor authentication policy targeting all users and all resources (without any resource exclusions), like the one explained in [Require multifactor authentication for all users](policy-all-users-mfa-strength.md).
 
-#### Conditional Access behavior when an all resources policy has an app exclusion
+### Legacy Conditional Access behavior when an ALL resources policy has a resource exclusion
 
-If any app is excluded from the policy, in order to not inadvertently block user access, certain low privilege scopes are excluded from policy enforcement. These scopes allow calls to the underlying Graph APIs, like `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000) and `Microsoft Graph` (00000003-0000-0000-c000-000000000000), to access user profile and group membership information commonly used by applications as part of authentication. For example: when Outlook requests a token for Exchange, it also asks for the `User.Read` scope to be able to display the basic account information of the current user.
+> [!WARNING]
+> [The following Conditional Access behavior is changing](https://aka.ms/CAAllResourcesWithExclusionsChange). Those low privileged scopes that were previously excluded from policy enforcement will **no longer be excluded**. This change means that users who were previously able to access the application without any Conditional Access enforcement might now receive Conditional Access challenges. The change is rolling out in phases starting in March, 2026. For more information see [Enforcement for baseline scopes](concept-enforcement-resource-exclusions.md).
 
-Most apps have a similar dependency, which is why these low privilege scopes are automatically excluded whenever there's an app exclusion in an **All resources** policy. These low privilege scope exclusions don't allow data access beyond basic user profile and group information. The excluded scopes are listed as follows, consent is still required for apps to use these permissions.
+If any app is excluded from the policy, to avoid inadvertently blocking user access, certain low privilege scopes were *previously* excluded from policy enforcement. These scopes allowed calls to the underlying Graph APIs, like `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000) and `Microsoft Graph` (00000003-0000-0000-c000-000000000000), to access user profile and group membership information commonly used by applications as part of authentication. For example: when Outlook requests a token for Exchange, it also asks for the `User.Read` scope to be able to display the basic account information of the current user.
+
+Most apps have a similar dependency, which is why these low privilege scopes were automatically excluded in **All resources** policies. The *previously* excluded scopes are listed as follows, consent is still required for apps to use these permissions.
 
 - Native clients and Single page applications (SPAs) have access to the following low privilege scopes:  
    - Azure AD Graph: `email`, `offline_access`, `openid`, `profile`, `User.Read`
@@ -151,11 +153,23 @@ Most apps have a similar dependency, which is why these low privilege scopes are
    - Azure AD Graph: `email`, `offline_access`, `openid`, `profile`, `User.Read`, `User.Read.All`,`User.ReadBasic.All`
    - Microsoft Graph: `email`, `offline_access`, `openid`, `profile`, `User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`
 
-For more information on the scopes mentioned, see [Microsoft Graph permissions reference](/graph/permissions-reference#peopleread) and [Scopes and permissions in the Microsoft identity platform](/entra/identity-platform/scopes-oidc#openid-connect-scopes).
+### New Conditional Access behavior when an ALL resources policy has a resource exclusion
 
-#### Protecting directory information
+The scopes listed in the previous section are now evaluated as directory access and mapped to Azure AD Graph (resource: Windows Azure Active Directory, ID: 00000002-0000-0000-c000-000000000000) for Conditional Access evaluation purposes. 
 
-If the [recommended baseline MFA policy without app exclusions](policy-all-users-mfa-strength.md) can't be configured because of business reasons, and your organization's security policy must include directory-related low privilege scopes (`User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`), create a separate Conditional Access policy targeting `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000). Windows Azure Active Directory (also called Azure AD Graph) is a resource representing data stored in the directory such as users, groups, and applications. The Windows Azure Active Directory resource is included in **All resources** but can be individually targeted in Conditional Access policies by using the following steps:
+Conditional Access policies that target All resources with one or more resource exclusions, or policies that explicitly target Azure AD Graph, are enforced in user sign-in flows where the client application requests only these scopes. There is no change in behavior when an application requests any additional scope beyond those listed above.
+
+For guidance on assessing impact, identifying affected applications, and retaining legacy behavior, see [Improved enforcement for policies with resource exclusions](concept-enforcement-resource-exclusions.md).
+
+> [!NOTE]
+> The [Azure AD Graph retirement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/important-update-azure-ad-graph-retirement/4364990) does not affect the Azure AD Graph (Windows Azure Active Directory) resource registered in your tenant.
+
+### Protect directory information
+
+> [!NOTE]
+> The following section applies until the rollout of the low-privilege scope enforcement change is complete.
+
+If the [recommended baseline MFA policy without resource exclusions](policy-all-users-mfa-strength.md) can't be configured because of business reasons, and your organization's security policy must include directory-related low privilege scopes (`User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`), create a separate Conditional Access policy targeting `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000). Windows Azure Active Directory (also called Azure AD Graph) is a resource representing data stored in the directory such as users, groups, and applications. The Windows Azure Active Directory resource is included in **All resources** but can be individually targeted in Conditional Access policies by using the following steps:
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Definition Administrator](/entra/identity/role-based-access-control/permissions-reference#attribute-definition-administrator) and [Attribute Assignment Administrator](/entra/identity/role-based-access-control/permissions-reference#attribute-assignment-administrator).
 1. Browse to **Entra ID** > **Custom security attributes**.
@@ -168,10 +182,12 @@ If the [recommended baseline MFA policy without app exclusions](policy-all-users
 1. Create or modify an existing policy.
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select > **Select resources** > **Edit filter**.  
 1. Adjust the filter to include your attribute set and definition from earlier.
-1. Save the policy
+1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, then select **Select**.
+1. Confirm your settings and set **Enable policy** to **Report-only**.
+1. Select **Create** to enable your policy.
 
 > [!NOTE]
-> Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining app exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.
+> Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining resource exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.
 
 <a name='traffic-forwarding-profiles'></a>
 
@@ -182,6 +198,10 @@ The **All internet resources with Global Secure Access** option allows admins to
 These profiles in Global Secure Access enable admins to define and control how traffic is routed through Microsoft Entra Internet Access and Microsoft Entra Private Access. Traffic forwarding profiles can be assigned to devices and remote networks. For an example of how to apply a Conditional Access policy to these traffic profiles, see the article [How to apply Conditional Access policies to the Microsoft 365 traffic profile](/entra/global-secure-access/how-to-target-resource-microsoft-365-profile).
 
 For more information about these profiles, see the article [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding).
+
+#### All agent resources (Preview)
+
+Applying a Conditional Access policy to All agent resources enforces the policy for all token requests to agent identity blueprint principals and agent identities.
 
 ## User actions
 
@@ -202,9 +222,9 @@ User actions are tasks that a user performs. Conditional Access supports two use
 
 ## Authentication context
 
-Authentication context secures data and actions in applications, including custom applications, line-of-business (LOB) applications, SharePoint, and applications protected by Microsoft Defender for Cloud Apps.
+Authentication context secures data and actions in applications. These applications include custom applications, line-of-business (LOB) applications, SharePoint, or applications protected by Microsoft Defender for Cloud Apps. It can also be used with Microsoft Entra Privileged Identity Management (PIM) to enforce Conditional Access policies during role activation.
 
-For example, an organization might store files in SharePoint sites, such as a lunch menu or a secret BBQ sauce recipe. Everyone can access the lunch menu site, but users accessing the secret BBQ sauce recipe site might need to use a managed device and agree to specific terms of use.
+For example, an organization might store files in SharePoint sites like a lunch menu or a secret BBQ sauce recipe. Everyone might access the lunch menu site, but users accessing the secret BBQ sauce recipe site might need to use a managed device and agree to specific terms of use. Similarly, an administrator activating a privileged role through PIM might be required to perform multifactor authentication or use a compliant device.
 
 Authentication context works with users or [workload identities](workload-identity.md), but not in the same Conditional Access policy.
 
@@ -216,14 +236,14 @@ Manage authentication contexts by going to **Entra ID** > **Conditional Access**
 
 Select **New authentication context** to create an authentication context definition. Organizations can create up to 99 authentication context definitions (**c1-c99**). Configure these attributes:
 
-- **Display name** is the name that is used to identify the authentication context in Microsoft Entra ID and across applications that consume authentication contexts. We recommend names that can be used across resources, like *trusted devices*, to reduce the number of authentication contexts needed. Having a reduced set limits the number of redirects and provides a better end to end-user experience.
+- **Display name** is the name that is used to identify the authentication context in Microsoft Entra ID and across applications that consume authentication contexts. Use names that can be used across resources, like *trusted devices*, to reduce the number of authentication contexts needed. Having a reduced set limits the number of redirects and provides a better end to end-user experience.
 - **Description** provides more information about the policies. This information is used by admins and those applying authentication contexts to resources.
 - **Publish to apps** checkbox, when selected, advertises the authentication context to apps and makes it available to be assigned. If not selected, the authentication context is unavailable to downstream resources.
 - **ID** is read-only and used in tokens and apps for request-specific authentication context definitions. Listed here for troubleshooting and development use cases.
 
 #### Add to Conditional Access policy
 
-Admins can select published authentication contexts in Conditional Access policies by going to **Assignments** > **Cloud apps or actions** and selecting **Authentication context** from the **Select what this policy applies to** menu.
+Admins can select published authentication contexts in Conditional Access policies by going to **Assignments** > **Target resources** and selecting **Authentication context** from the **Select what this policy applies to** menu.
 
 :::image type="content" source="media/concept-conditional-access-cloud-apps/conditional-access-authentication-context-in-policy.png" alt-text="Screenshot showing how to add a Conditional Access authentication context to a policy":::
 
@@ -235,11 +255,12 @@ To delete an authentication context, ensure it has no assigned Conditional Acces
 
 ### Tag resources with authentication contexts
 
-Learn more about using authentication contexts in applications in these articles.
+To learn more about using authentication contexts, see the following articles.
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Microsoft Defender for Cloud Apps](/defender-cloud-apps/session-policy-aad?branch=pr-en-us-2082#require-step-up-authentication-authentication-context)
 - [Custom applications](~/identity-platform/developer-guide-conditional-access-authentication-context.md)
+- [Privileged Identity Management - On activation, require Microsoft Entra Conditional Access authentication context](/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings#on-activation-require-microsoft-entra-conditional-access-authentication-context)
 
 ## Related content
 

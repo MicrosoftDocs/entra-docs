@@ -1,9 +1,7 @@
 ---
 title: Microsoft Entra authentication & national clouds
 description: Learn about app registration and authentication endpoints for national clouds.
-author: henrymbuguakiarie
-manager: CelesteDG
-ms.author: henrymbugua
+manager: pmwongera
 ms.custom: references_regions
 ms.date: 01/15/2025
 ms.reviewer: negoe

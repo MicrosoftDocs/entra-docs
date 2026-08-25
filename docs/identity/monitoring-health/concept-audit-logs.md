@@ -1,15 +1,10 @@
 ---
 title: Learn about the audit logs in Microsoft Entra ID
 description: Learn about the types of activities and events that are captured in Microsoft Entra audit logs and how you can use the logs for troubleshooting.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
-ms.topic: troubleshooting-general
-ms.subservice: monitoring-health
-ms.date: 06/30/2025
-ms.author: sarahlipsey
+ms.topic: concept-article
+ms.date: 06/05/2026
 ms.reviewer: egreenberg14
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange,agent-id-ignite
 # Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra audit logs so I know what to look for when I need to troubleshoot an issue.
 ---
 
@@ -45,6 +40,7 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 
 - What applications were, updated, or removed?
 - Has a service principal for an application changed?
+- Who or what created a service principal, and why was it created?
 - Have the names of applications been changed?
 
 **Custom security attributes:**
@@ -52,6 +48,12 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 - What changes were made to [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) definitions or assignments?
 - What updates were made to attribute sets?
 - What custom attribute values were assigned to a user?
+
+**Agents:**
+
+- What operations were performed by a specific agent?
+- What changes were made to an agent service principal?
+- What details of an agent ID were changed?
 
 > [!NOTE]
 > Entries in the audit logs are system generated and can't be changed or deleted.
@@ -91,5 +93,6 @@ Most standalone or bundled Microsoft 365 subscriptions have back-end dependencie
 ## Related content
 
 - [Audit activity reference](reference-audit-activities.md)
+- [Understand why a service principal was created in your tenant](understand-service-principal-creation-with-new-audit-log-properties.md)
 - [Access activity logs](howto-access-activity-logs.md)
 - [Customize and filter activity logs](howto-customize-filter-logs.md)

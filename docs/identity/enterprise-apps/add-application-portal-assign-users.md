@@ -1,13 +1,8 @@
 ---
 title: 'Quickstart: Create and assign a user account'
 description: Create a user account and assign it to an enterprise application in your Microsoft Entra tenant. Begin managing access efficiently today
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: quickstart
 ms.date: 03/21/2025
-ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: mode-other, enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin managing user accounts in Microsoft Entra, I want to create a new user account and assign it to an enterprise application, so that I can provide access to the application for the user.
@@ -23,7 +18,7 @@ We recommend that you use a nonproduction environment to test the steps in this 
 
 To create a user account and assign it to an enterprise application, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, or owner of the service principal. You need the User Administrator role to manage users.
 - Completion of the steps in [Quickstart: Add an enterprise application](add-application-portal.md).
 

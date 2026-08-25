@@ -1,14 +1,8 @@
 ---
 title: Provisioning users into SQL based applications using the ECMA Connector host
 description: Provisioning users into SQL based applications using the ECMA Connector host
-
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: jfields
 ms.reviewer: arvinh
 ---
 
@@ -22,3 +16,4 @@ The following documentation provides configuration and tutorial information demo
 
 - [App provisioning](user-provisioning.md)
 - [Tutorial: ECMA Connector Host generic SQL connector](tutorial-ecma-sql-connector.md)
+- [Discover identities in target applications with Account Discovery](how-to-account-discovery.md)

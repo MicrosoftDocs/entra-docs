@@ -2,14 +2,9 @@
 title: OATH tokens authentication method
 description: Learn about using OATH tokens in Microsoft Entra ID to help improve and secure sign-in events.
 services: active-directory
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
 ms.reviewer: lvandenende
-manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use OATH tokens in Microsoft Entra ID to improve and secure user sign-in events.
@@ -91,4 +86,4 @@ Users can add and manage OATH tokens at [Security info](https://aka.ms/mysecurit
 ## Related content
 
 Learn more about [how to manage OATH tokens](how-to-mfa-manage-oath-tokens.md).
-Learn about [FIDO2 security key providers](concept-authentication-passwordless.md) that are compatible with passwordless authentication.
+Learn about [FIDO2 security key providers](concept-authentication-passkeys-fido2.md) that are compatible with passwordless authentication.

@@ -1,17 +1,10 @@
 ---
 title: QR code authentication method in Microsoft Entra ID 
 description: Learn about using QR code authentication method in Microsoft Entra ID to help improve and secure sign-in events for frontline workers.
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 07/24/2025
-
-ms.author: justinha
-author: aanjusingh
+ms.date: 06/26/2026
 contributors: minatoruan
 ms.reviewer: anjusingh
-manager: dougeby
 
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -63,6 +56,10 @@ We recommend the following measures when you enable QR code authentication metho
 - Enforce phishing-resistant authentication or MFA when users access resources from outside of the store or workplace network.
 - Replace QR codes that are lost or stolen.
 - Enforce [sign-in risk based Conditional Access policy](/entra/id-protection/concept-identity-protection-policies#sign-in-risk-based-conditional-access-policy) to block access.
+
+## Enforce QR code sign-in with a custom authentication strength
+
+To require QR code sign-in for a specific group of users, such as frontline workers, a specific resource, or both, create a custom Conditional Access authentication strength that includes **QR code** under **Single factor authentication**. Then use the custom authentication strength in a Conditional Access policy for the resources and users that need QR code sign-in. For steps, see [Create and manage custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md#create-a-custom-authentication-strength).
 
 ## QR code configurations in the Authentication method policy
 
@@ -139,7 +136,7 @@ For more information about how to optimize the sign-in experience or suppress ca
 - Custom tenant endpoint for sign in 
 - Configurable PIN protection policies that define account lockout threshold, duration, or PIN complexity
 
-## Known issue
+## Known limitation
 
 If you enable QR code authentication for a user, they need to sign-in with an existing authentication method before they can sign in with a QR code for the first time, or they see an **Incorrect QR code** error. 
 
@@ -156,4 +153,4 @@ The user needs to sign in with another method because the cached user authentica
 - [How to enable the QR code authentication method in Microsoft Entra ID](how-to-authentication-qr-code.md)
 - [Best practices to protect frontline workers](~/identity-platform/security-best-practices-for-frontline-workers.md)
 - [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
-- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)

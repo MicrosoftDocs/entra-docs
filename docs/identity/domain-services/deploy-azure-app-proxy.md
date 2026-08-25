@@ -1,14 +1,9 @@
 ---
 title: Deploy Microsoft Entra application proxy for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to provide secure access to internal applications for remote workers by deploying and configuring Microsoft Entra application proxy in a Microsoft Entra Domain Services managed domain
-author: justinha
-manager: dougeby
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 01/21/2025
-ms.author: justinha
 ms.custom: sfi-image-nochange
 ---
 # Deploy Microsoft Entra application proxy for secure access to internal applications in a Microsoft Entra Domain Services managed domain
@@ -24,7 +19,7 @@ This article shows you how to create and configure a Microsoft Entra private net
 To complete this article, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
     * A **Microsoft Entra ID P1 or P2 license** is required to use the Microsoft Entra application proxy.

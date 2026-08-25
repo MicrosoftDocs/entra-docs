@@ -1,19 +1,13 @@
 ---
 title: Add OIDC for customer sign-in
 description: Learn how to set up OpenID Connect as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
- 
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: how-to
-ms.date: 09/15/2025
-ms.author: cmulligan
+ms.date: 07/29/2026
 ms.reviewer: brozbab
-ms.custom: it-pro
+ms.custom: it-pro, msecd-doc-authoring-1012
+ai-usage: ai-assisted
 
-#Customer intent: As a developer, devops, or it administrator, I want to learn how to add an OpenID Connect identity provider for my external tenant.
+#customer intent: As a developer, devops, or it administrator, I want to learn how to add an OpenID Connect identity provider for my external tenant.
 ---
 # Add OpenID Connect as an external identity provider
 
@@ -31,9 +25,9 @@ When you add an OIDC identity provider to your user flow's sign-in options, user
 
 ## Set up your OpenID Connect identity provider
 
-To be able to federate users to your identity provider, you first need to prepare your identity provider to accept federation requests from your external tenant. To do that, you need to populate your redirect URIs and register to your identity provider to be recognized.
+To federate users to your identity provider, first prepare your identity provider to accept federation requests from your external tenant. To do this preparation, add your redirect URIs and register your identity provider to be recognized.
 
-Before moving to next step, populate your redirect URIs as follows:
+Before moving to the next step, add your redirect URIs as follows:
 
 `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
 
@@ -46,7 +40,7 @@ Register the application using your populated redirect URIs. Save the details of
 
 ### Federation settings
 
-To configure OpenID connect federation with your identity provider in Microsoft Entra External ID, you need to have the following settings:
+To configure OpenID Connect federation with your identity provider in Microsoft Entra External ID, you need the following settings:
 
 - **Well-known endpoint**
 - **Issuer URI**
@@ -60,7 +54,7 @@ To configure OpenID connect federation with your identity provider in Microsoft 
   - Name
   - Given name
   - Family name
-  - Email (required)
+  - Email (required by default; can be [made optional](#make-email-optional-for-external-identity-provider-sign-up))
   - Email_verified
   - Phone number
   - Phone_number_verified
@@ -70,9 +64,9 @@ To configure OpenID connect federation with your identity provider in Microsoft 
   - Postal code
   - Country
 
-## Configure a new OpenID connect identity provider in the admin center
+## Configure a new OpenID Connect identity provider in the admin center
 
-After you configured your identity provider, in this step you'll configure a new OpenID connect federation in the Microsoft Entra admin center. 
+After you configure your identity provider, complete this step to configure a new OpenID Connect federation in the Microsoft Entra admin center. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
@@ -82,40 +76,117 @@ After you configured your identity provider, in this step you'll configure a new
 
 1. Enter the following details for your identity provider:
 
-   - **Display name**: The name of your identity provider that will be displayed to your users during the sign-in and sign-up flows. For example, *Sign in with IdP name* or *Sign up with IdP name*.
-   - **Well-known endpoint** (also known as metadata URI) is the OIDC discovery URI to [obtain the configuration information](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) for your identity provider. The response to be retrieved from a well-known location is a JSON document, including its OAuth 2.0 endpoint locations. The metadata document should, at a minimum, contain the following properties: `issuer`, `authorization_endpoint`, `token_endpoint`, `token_endpoint_auth_methods_supported`, `response_types_supported`, `subject_types_supported`, and `jwks_uri`. See [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) specifications for more details.
+   - **Display name**: The name of your identity provider that you display to your users during the sign-in and sign-up flows. For example, *Sign in with IdP name* or *Sign up with IdP name*.
+   - **Well-known endpoint** (also known as metadata URI) is the OIDC discovery URI to [obtain the configuration information](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) for your identity provider. The response is a JSON document that includes OAuth 2.0 endpoint locations. At a minimum, the metadata document must contain the following properties: `issuer`, `authorization_endpoint`, `token_endpoint`, `token_endpoint_auth_methods_supported`, `response_types_supported`, `subject_types_supported`, and `jwks_uri`. For more details, see [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) specifications.
 
-   - **OpenID Issuer URI**: The entity of your identity provider that issues access tokens for your application. An example, if you use OpenID Connect to [federate with your Azure AD B2C](how-to-b2c-federation-customers.md), your issuer URI can be taken from your discovery URI with the "issuer" tag and will look like: `https://login.b2clogin.com/{tenant}/v2.0/`. Issuer URI is a case-sensitive URL using https scheme contains scheme, host, and optionally, port number and path components and no query or fragment components.
+   - **OpenID Issuer URI**: The entity of your identity provider that issues access tokens for your application. For example, if you use OpenID Connect to [federate with your Azure AD B2C](how-to-b2c-federation-customers.md), your issuer URI looks like: `https://login.b2clogin.com/{tenant}/v2.0/`. The issuer URI is a case-sensitive URL that uses the https scheme. It contains scheme, host, and optionally port number and path components, but no query or fragment components.
+   
    > [!NOTE]
-   > Configuring other Microsoft Entra tenants as an external identity provider is currently not supported. So, the `microsoftonline.com` domain in the issuer URI isn't accepted.
+   > To federate with a Microsoft Entra ID tenant, see [Add a Microsoft Entra ID tenant as an OpenID Connect identity provider](how-to-entra-id-federation-customers.md). OIDC federation also isn't compatible with the [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) feature.
 
-   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Client secret needs to be provided if client_secret authentication is selected. If private_key_jwt is selected, private key needs to be provided in the OpenID provider metadata (well-known endpoint), retrievable via the property jwks_uri.
-   - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post`, `client_secret_jwt`, and `private_key_jwt` authentication methods are supported.
+   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Provide a client secret when you select a `client_secret`-based authentication method.
+   - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post` and `client_secret_jwt` authentication methods are supported. Although the admin center UI might display `private_key_jwt` as an option, this method isn't currently supported and shouldn't be selected.
+
    > [!NOTE]
-   > Due to possible security issues, client_secret_basic client authentication method isn't supported.
-   - **Scope** defines the information and permissions you're looking to gather from your identity provider, for example `openid profile`. OpenID Connect requests must contain the `openid` scope value in scope in order to receive the ID token from your identity provider. Other scopes can be appended separated by spaces. Refer to the [OpenID Connect documentation](https://openid.net/specs/openid-connect-core-1_0.html) to see what other scopes may be available such as `profile`, `email`, etc.
-   - **Response type** describes what kind of information is sent back in the initial call to the `authorization_endpoint` of your identity provider. Currently, only the `code` response type is supported. `id_token` and `token` aren't supported at the moment.
+   > Due to possible security problems, the `client_secret_basic` client authentication method isn't supported.
+   - **Scope** defines the information and permissions you're looking to gather from your identity provider, for example `openid profile`. OpenID Connect requests must contain the `openid` scope value to receive the ID token from your identity provider. Other scopes can be appended separated by spaces. See the [OpenID Connect documentation](https://openid.net/specs/openid-connect-core-1_0.html) for other available scopes such as `profile`, `email`, and more.
+   - **Response type** describes what kind of information is sent back in the initial call to the `authorization_endpoint` of your identity provider. Currently, only the `code` response type is supported. `id_token` and `token` aren't supported.
   
-1. You can select **Next: Claims mapping** to configure [claims mapping](reference-oidc-claims-mapping-customers.md) or **Review + create** to add your identity provider.
+1. Select **Next: Claims mapping** to configure [claims mapping](reference-oidc-claims-mapping-customers.md) or **Review + create** to add your identity provider.
 
 > [!NOTE]
 > Microsoft recommends you do *not* use the [implicit grant flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow#security-concerns-with-implicit-grant-flow) or the [ROPC flow](/entra/identity-platform/v2-oauth-ropc). 
-Therefore, OpenID connect external identity provider configuration doesn't support these flows. The recommended way of supporting SPAs is [OAuth 2.0 Authorization code flow (with PKCE)](/entra/identity-platform/v2-oauth2-auth-code-flow#applications-that-support-the-auth-code-flow) which is supported by OIDC federation configuration.
+Therefore, OpenID Connect external identity provider configuration doesn't support these flows. The recommended way of supporting SPAs is [OAuth 2.0 Authorization code flow (with PKCE)](/entra/identity-platform/v2-oauth2-auth-code-flow#applications-that-support-the-auth-code-flow) which is supported by OIDC federation configuration.
 
 ## Add OIDC identity provider to a user flow
 
-At this point, the OIDC identity provider has been set up in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the OIDC identity provider to a user flow:
+At this point, you set up the OIDC identity provider in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the OIDC identity provider to a user flow:
 
 1. In your external tenant, browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the OIDC identity provider.
-1. Under Settings, select **Identity providers.**
+1. Under Settings, select **Identity providers**.
 1. Under **Other Identity Providers**, select **OIDC identity provider**.
 
    :::image type="content" source="media/how-to-custom-oidc-federation-customers/custom-oidc-provider.png" alt-text="Screenshot of the custom OIDC provider in the IdP list.":::
 
 1. Select **Save**.
 
+## Make email optional for external identity provider sign-up
+
+By default, an email address is required when users sign up with an external identity provider (IdP). If your external IdP doesn't send an email claim, users encounter the error `AADSTS901011: No email address was obtained from the external oidc identity provider` during sign-up. To avoid this error, configure your user flow to make the email attribute optional. Users can then complete sign-up with only their external IdP identity, without providing an email address.
+
+> [!IMPORTANT]
+> Making email optional is a user flow–level setting. This change applies to sign-ups for **all applications** associated with the user flow.
+
+> [!TIP]
+> The account picker typically displays the user's email address. When no email address is collected, the display name is shown instead. To help users easily identify their account, map the `name` claim in [Claims mapping](reference-oidc-claims-mapping-customers.md) or collect display name during sign-up.
+
+### Update the user flow to make email optional
+
+To make the email attribute optional in your user flow, use the Microsoft Graph API to update the `onAttributeCollection` property of the user flow.
+
+1. Find the ID of the user flow you want to update. One way to do this is to use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to list all your user flows:
+
+   ```http
+   GET https://graph.microsoft.com/v1.0/identity/authenticationEventsFlows
+   ```
+
+   Locate the `id` of the user flow and the `onAttributeCollection` property in the response.
+
+1. Copy the `onAttributeCollection` property from the response, and use it to update the user flow with a `PATCH` request. The only change you need to make is to set the `required` property on the email attribute to `false`:
+
+   ```http
+   PATCH https://graph.microsoft.com/v1.0/identity/authenticationEventsFlows/{user-flow-id}
+   Content-Type: application/json
+
+   {
+       "@odata.type": "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow",
+       "onAttributeCollection": {
+           "@odata.type": "#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp",
+           "attributeCollectionPage": {
+               "views": [
+                   {
+                       "title": null,
+                       "description": null,
+                       "inputs": [
+                           {
+                               "attribute": "email",
+                               "label": "Email Address",
+                               "inputType": "text",
+                               "defaultValue": null,
+                               "hidden": false,
+                               "editable": true,
+                               "writeToDirectory": true,
+                               "required": false,
+                               "validationRegEx": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$",
+                               "options": []
+                           }
+                       ]
+                   }
+               ]
+           }
+       }
+   }
+   ```
+
+   > [!NOTE]
+   > Include all the attribute inputs from your existing user flow in the `PATCH` request, not just the email attribute. The preceding example shows only the email input, but your user flow might include additional attributes. For the full schema, see [authenticationAttributeCollectionPage resource type](/graph/api/resources/authenticationattributecollectionpage).
+
+## Known limitations
+
+### Issuer URI updates
+
+When you update the Issuer URI for an existing OIDC identity provider (IdP), the updated configuration might not automatically take effect in user flows. As a result, the IdP sign-in option might not appear on the sign-in page.
+
+To apply the change:
+
+1. Disable the IdP in the user flow.
+1. Save the user flow.
+1. Re-enable the IdP.
+1. Save the user flow again.
+
 ## Related content
 
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

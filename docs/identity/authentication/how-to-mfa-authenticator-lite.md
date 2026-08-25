@@ -1,14 +1,9 @@
 ---
 title: Enable Authenticator Lite for Outlook mobile
 description: Learn about how you can set up Authenticator Lite for Outlook mobile to help users validate their identity.
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
 ms.reviewer: guptashi
-manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---
@@ -29,7 +24,7 @@ Users receive a notification in Outlook mobile to approve or deny sign-in, or yo
 - Your organization needs to enable Authenticator (second factor) push notifications for all users or select groups. We recommend that you enable Authenticator by using the modern [Authentication methods policy](concept-authentication-methods-manage.md#authentication-methods-policy). You can edit the Authentication methods policy by using the Microsoft Entra admin center or Microsoft Graph API. Authenticator Lite isn't eligible for on-premises user accounts or organizations with an active MFA server.
 
   > [!TIP]
-  > We recommend that you also enable [system-preferred MFA](concept-system-preferred-multifactor-authentication.md) when you enable Authenticator Lite. With system-preferred MFA enabled, users try to sign in with Authenticator Lite before they try less secure telephony methods like SMS or voice call.
+  > We recommend that you also enable [system-preferred authentication](concept-system-preferred-authentication.md) when you enable Authenticator Lite. With system-preferred authentication enabled, users try to sign in with Authenticator Lite before they try less secure telephony methods like SMS or voice call.
 
 - If your organization is using the Active Directory Federation Services (AD FS) adapter or Network Policy Server (NPS) extensions, upgrade to the latest versions for a consistent experience.
 - Users enabled for shared device mode on Outlook mobile aren't eligible for Authenticator Lite.

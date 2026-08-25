@@ -1,9 +1,7 @@
 ---
 title: Quickstart - Sign in users in a sample Node.js CLI app
 description: Learn how to authenticate users in a sample Node.js Command Line Interface (CLI) application in your external tenant 
-author: Dickson-Mwendia
 manager: dougeby
-ms.author: dmwendia
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/20/2024

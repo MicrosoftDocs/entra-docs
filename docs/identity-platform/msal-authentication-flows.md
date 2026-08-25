@@ -1,9 +1,7 @@
 ---
 title: Authentication flow support in MSAL
 description: Learn about the authentication flows supported by MSAL, such as authorization code, client credentials, and device code, to secure your apps effectively.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 03/21/2025
 ms.reviewer: 
 ms.service: identity-platform

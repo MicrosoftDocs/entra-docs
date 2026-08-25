@@ -2,14 +2,11 @@
 title: Road to the cloud - Move identity and access management from Active Directory Domain Services (AD DS) to a Microsoft Entra migration workstream
 description: Learn to plan your migration workstream of IAM from Active Directory Domain Services (AD DS) to Microsoft Entra ID.
 documentationCenter: ''
-author: justinha
 manager: dougeby
-ms.service: entra
 ms.topic: how-to
-ms.subservice: architecture
 ms.date: 07/30/2025
-ms.author: justinha
 ms.custom: references_regions
+ms.subservice: architecture
 ---
 # Transition to the cloud
 
@@ -29,9 +26,9 @@ A typical migration workstream has the following stages:
 
 ### Enable password self-service
 
-We recommend a [passwordless environment](~/identity/authentication/concept-authentication-passwordless.md). Until then, you can migrate password self-service workflows from on-premises systems to Microsoft Entra ID to simplify your environment. Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) gives users the ability to change or reset their password, with no administrator or help desk involvement.
+We recommend a [passwordless environment](~/identity/authentication/concept-authentication-passkeys-fido2.md). Until then, you can migrate password self-service workflows from on-premises systems to Microsoft Entra ID to simplify your environment. Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) gives users the ability to change or reset their password, with no administrator or help desk involvement.
 
-To enable self-service capabilities, choose the appropriate [authentication methods](~/identity/authentication/concept-authentication-methods.md) for your organization. After the authentication methods are updated, you can enable user self-service password capability for your Microsoft Entra authentication environment. For deployment guidance, see [Deployment considerations for Microsoft Entra self-service password reset](~/identity/authentication/howto-sspr-deployment.md).
+To enable self-service capabilities, choose the appropriate [authentication methods](~/identity/authentication/overview-authentication.md) for your organization. After the authentication methods are updated, you can enable user self-service password capability for your Microsoft Entra authentication environment. For deployment guidance, see [Deployment considerations for Microsoft Entra self-service password reset](~/identity/authentication/howto-sspr-deployment.md).
 
 Additional considerations include:
 

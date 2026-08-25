@@ -1,20 +1,18 @@
 ---
 title: Control security information registration with Conditional Access
 description: Create a custom Conditional Access policy for security info registration.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
 # Protect security info registration with Conditional Access policy
 
+## Overview
+
 Securing when and how users register for Microsoft Entra multifactor authentication and self-service password reset is possible with user actions in a Conditional Access policy. This feature is available to organizations who enable [combined registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md). This functionality allows organizations to treat the registration process like any application in a Conditional Access policy and use the full power of Conditional Access to secure the experience. Users signing in to the Microsoft Authenticator app or enabling passwordless phone sign-in are subject to this policy.
+
+> [!IMPORTANT]
+> Starting **July 6, 2026**, Conditional Access policies that target **Register security information** will apply during Windows Hello for Business and macOS Platform SSO credential registration. Today, these registration flows don't evaluate registration-targeting Conditional Access policies. However, MFA is still required by default to register passwordless credentials — regardless of whether a Conditional Access policy is configured. After enforcement, users registering Windows Hello for Business or macOS Platform SSO credentials must also satisfy your policy's Grant controls — such as authentication strength, trusted locations, or a specific MFA method — before completing enrollment. Review your policies scoped to **Register security information** and test with report-only mode before enforcement begins.
 
 Some organizations in the past might have used trusted network location or device compliance as a means to secure the registration experience. With the addition of [Temporary Access Pass](~/identity/authentication/howto-authentication-temporary-access-pass.md) in Microsoft Entra ID, administrators can provide time-limited credentials to their users that allow them to register from any device or location. Temporary Access Pass credentials satisfy Conditional Access requirements for multifactor authentication.
 
@@ -56,7 +54,7 @@ The following policy applies to the selected users, who attempt to register usin
    1. Select **Require authentication strength**, then select the appropriate built-in or custom authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -83,7 +81,7 @@ For [guest users](~/external-id/what-is-b2b.md) who need to register for multifa
    1. Select **Block access**.
    1. Then choose **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

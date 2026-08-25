@@ -1,17 +1,11 @@
 ---
 title: Configure Salesforce for Single sign-on in Microsoft Entra ID
 description: Learn how to configure the single sign-on between Microsoft Entra ID and Salesforce.
-author: nguhiu
-manager: mwongerapk
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: gideonkiratu
+ms.date: 06/24/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce so that I can control who has access to Salesforce, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Salesforce for Single sign-on in Microsoft Entra ID
 
@@ -20,6 +14,13 @@ In this article, you learn how to integrate Salesforce with Microsoft Entra ID. 
 * Control in Microsoft Entra ID who has access to Salesforce.
 * Enable your users to be automatically signed-in to Salesforce with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
+
+> [!Note]
+> **Updated: July 24, 2026** - Starting June 29, 2026, Microsoft Entra ID will automatically include Authentication Method References (`amr`) and Authentication Context References (`acr`) claims in tokens issued for SAML 2.0 and OpenID Connect (OIDC) applications using the Microsoft identity platform v2.0 token. **If you have configured External MFA Provider with Entra ID and if that provider is sending AMR signals then Entra ID will forward that AMR signal to Salesforce or other 3P applications as needed.** These claims provide additional information about how the user authenticated and the authentication context satisfied during sign-in. No configuration changes are required in Microsoft Entra ID for Salesforce single sign-on. To help satisfy Salesforce [phishing-resistant MFA requirements](https://help.salesforce.com/s/articleView?id=005321563&type=1) for Salesforce admins, and [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) customers should apply Microsoft Entra Conditional Access policies that require phishing-resistant authentication methods for Salesforce administrator sign-ins.
+>
+> For customers using AD FS as the federation provider with Entra ID, please follow the [MFA expected inbound assertions guidance for SAML 2.0 federated IdPs](~/identity/authentication/how-to-mfa-expected-inbound-assertions.md#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
+>
+> If you are using any other federation provider then we are still working on standardizing the AMR and ACR signals first and will provide the update soon.
 
 ## Prerequisites
 
@@ -55,7 +56,7 @@ To configure the integration of Salesforce into Microsoft Entra ID, you need to 
 
 ## Configure and test Microsoft Entra SSO for Salesforce
 
-Configure and test Microsoft Entra SSO with Salesforce using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Salesforce.
+Configure and test Microsoft Entra SSO with Salesforce using a test user called **B.Simon**. For SSO to work, you need to establish a link between the Microsoft Entra test user B.Simon and the corresponding user account in Salesforce.
 
 To configure and test Microsoft Entra SSO with Salesforce, perform the following steps:
 
@@ -100,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
     Developer account: `https://<subdomain>-dev-ed.my.salesforce.com`
 
     > [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Salesforce Client support team](https://help.salesforce.com/support) to get these values.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Contact [Salesforce Client support team](https://help.salesforce.com/support) to get these values.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -150,7 +151,7 @@ Follow these steps to enable Microsoft Entra SSO.
     ![Configure Single Sign-On User Provisioning Enabled](./media/salesforce-tutorial/salesforcexml.png)
 
     > [!NOTE]
-    > If you configured SAML JIT, you must complete an additional step in the **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** section. The Salesforce application expects specific SAML assertions, which requires you to have specific attributes in your SAML token attributes configuration. The following screenshot shows the list of required attributes by Salesforce.
+    > If you configured SAML JIT, you must add the required SAML token attributes in the **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** section. The Salesforce application expects specific SAML assertions, which requires you to have specific attributes in your SAML token attributes configuration. The following screenshot shows the list of required attributes by Salesforce.
     
     ![Screenshot that shows the JIT required attributes pane.](./media/salesforce-tutorial/just-in-time-attributes-required.png)
     
@@ -172,7 +173,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create Salesforce test user
 
-In this section, a user called B.Simon is created in Salesforce. Salesforce supports just-in-time provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Salesforce, a new one is created when you attempt to access Salesforce. Salesforce also supports automatic user provisioning, you can find more details [here](salesforce-provisioning-tutorial.md) on how to configure automatic user provisioning.
+In this section, a user called B.Simon is created in Salesforce. Salesforce supports just-in-time provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Salesforce, a new one is created when you attempt to access Salesforce. Salesforce also supports automatic user provisioning. For more details, see [Configure Salesforce automatic user provisioning](salesforce-provisioning-tutorial.md).
 
 ## Test SSO
 
@@ -185,6 +186,8 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * You can use Microsoft My Apps. When you select the Salesforce tile in the My Apps portal, you should be automatically signed in to the Salesforce for which you set up the SSO. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Test SSO for Salesforce (Mobile)
+
+Perform the following steps to test SSO in the Salesforce mobile app:
 
 1. Open Salesforce mobile application. On the sign-in page, select **Use Custom Domain**.
 
@@ -207,9 +210,12 @@ In this section, you test your Microsoft Entra single sign-on configuration with
     ![Salesforce mobile app homepage](media/salesforce-tutorial/mobile-app5.png)
     ![Salesforce mobile app](media/salesforce-tutorial/mobile-app6.png)
 
+## Discover existing users in Salesforce
+Prior to integration with Microsoft Entra, your Salesforce account may already have one or more users. Using the account discovery functionality, you can generate a report of all the users in Salesforce, identify which users have matching accounts in Entra, and which users are local to Salesforce with one click. Learn more in [How to use account discovery for application provisioning](~/identity/app-provisioning/how-to-account-discovery.md). This enables you to simplify onboarding to Entra, while also periodically monitoring for unauthorized access. 
 
 ## Prevent application access through local accounts
 Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your Conditional Access policies, MFA, etc. is in place to protect sign-ins to Salesforce. 
+
 
 
 ## Related content

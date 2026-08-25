@@ -2,13 +2,9 @@
 title: 'Microsoft Entra provisioning agent: Version release history'
 description: This article lists all releases of Microsoft Entra provisioning agent and describes new features and fixed issues
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: reference
 ms.date: 09/23/2025
 ms.subservice: app-provisioning
-ms.author: jomondi
 ---
 
 # Microsoft Entra provisioning Agent: Version release history

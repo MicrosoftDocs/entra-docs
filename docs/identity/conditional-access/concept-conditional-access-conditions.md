@@ -1,18 +1,14 @@
 ---
 title: How to Use Conditions in Conditional Access Policies
-description: Explore Conditional Access conditions, including user risk, sign-in risk, and insider risk, to secure your organization's resources with tailored policies.
-
-ms.service: entra-id
-ms.subservice: conditional-access
+description: Explore Conditional Access conditions, including risk, device, network, and agent execution environment signals, to secure your organization's resources with tailored policies.
 ms.topic: concept-article
-ms.date: 09/22/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 06/02/2026
 ms.reviewer: lhuangnorth, sandeo
+ai-usage: ai-assisted
 ---
 # Conditional Access: Conditions
+
+## Overview
 
 In a Conditional Access policy, admins use one or more signals to improve policy decisions.
 
@@ -22,9 +18,14 @@ Admins combine multiple conditions to create specific, fine-grained Conditional 
 
 When users access a sensitive application, admins might consider multiple conditions in their access decisions, such as:
 
-- Sign-in risk information from Microsoft Entra ID Protection
+- Risk information from Microsoft Entra ID Protection
+- Agent execution environment
 - Network location
 - Device information
+
+## Agent risk (Preview)
+
+Admins with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate agent risk as part of a Conditional Access policy. Agent risk shows the likelihood that an agent is compromised.
 
 ## User risk 
 
@@ -48,9 +49,17 @@ This functionality incorporates parameters that specifically address potential r
 
 For more information, see [configure and enable an insider risk-based policy](policy-risk-based-insider-block.md).
 
+## Agent execution environments (Preview)
+
+Use the **Agent execution environments** condition to scope a Conditional Access policy to agents' user account sessions initiated from endpoints. This condition helps you avoid applying endpoint-dependent controls to agents that run directly in the cloud and don't have a device to evaluate.
+
+When a policy uses this condition, agents that aren't running on a device are excluded from evaluation. Use this condition with other endpoint-based conditions, such as **Device platforms**, **Filter for devices**, and **Network**, when you want to enforce controls only for agents running on managed endpoints.
+
 ## Device platforms
 
 Conditional Access identifies the device platform using information provided by the device, such as user agent strings. Because user agent strings can be modified, this information isn't verified. Use device platform with Microsoft Intune device compliance policies or as part of a block statement. By default, it applies to all device platforms.
+
+For agents' user accounts, this condition applies only when the agent session is initiated from an endpoint. Use it with the **Agent execution environments** condition to avoid targeting agents that run directly in cloud infrastructure.
 
 Conditional Access supports these device platforms:
 
@@ -70,6 +79,8 @@ Selecting macOS or Linux device platforms isn't supported when you select **Requ
 ## Locations
 
 [The locations condition has moved.](concept-assignment-network.md)
+
+For agents' user accounts, the **Network** condition applies only to agents running on endpoints that provide the required network signal, such as a device with a [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) client.
 
 ## Client apps
 
@@ -95,7 +106,7 @@ When policy blocks the use of Exchange ActiveSync, the affected user receives a 
       - Admins can apply policy only to supported platforms (such as iOS, Android, and Windows) through the Conditional Access Microsoft Graph API.
    - Other clients
       - This option includes clients that use basic/legacy authentication protocols that don’t support modern authentication.
-         - SMTP - Used by POP and IMAP client's to send email messages.
+         - SMTP - Used by POP and IMAP clients to send email messages.
          - Autodiscover - Used by Outlook and EAS clients to find and connect to mailboxes in Exchange Online.
          - Exchange Online PowerShell - Used to connect to Exchange Online with remote PowerShell. If you block Basic authentication for Exchange Online PowerShell, you need to use the Exchange Online PowerShell Module to connect. For instructions, see [Connect to Exchange Online PowerShell using multifactor authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
          - Exchange Web Services (EWS) - A programming interface used by Outlook, Outlook for Mac, and non-Microsoft apps.
@@ -120,11 +131,12 @@ This setting works with all browsers. However, to satisfy a device policy, like 
 | Operating Systems | Browsers |
 | :-- | :-- |
 | Windows 10 + | Microsoft Edge, [Chrome](#chrome-support), [Firefox 91+](https://support.mozilla.org/kb/windows-sso) |
+| Windows Server 2025 | Microsoft Edge, [Chrome](#chrome-support) |
 | Windows Server 2022 | Microsoft Edge, [Chrome](#chrome-support) |
 | Windows Server 2019 | Microsoft Edge, [Chrome](#chrome-support) |
 | iOS | Microsoft Edge, Safari (see the notes) |
 | Android | Microsoft Edge, Chrome |
-| macOS | Microsoft Edge, Chrome, [Firefox 133+](https://support.mozilla.org/kb/firefox-enterprise-133-release-notes), Safari |
+| macOS | Microsoft Edge, [Chrome](#chrome-support), [Firefox 133+](https://support.mozilla.org/kb/firefox-enterprise-133-release-notes), Safari |
 | Linux Desktop|Microsoft Edge|
 
 These browsers support device authentication, allowing the device to be identified and validated against a policy. The device check fails if the browser is running in private mode or if cookies are disabled. 
@@ -139,13 +151,11 @@ These browsers support device authentication, allowing the device to be identifi
 >
 > [Chrome 111+](https://chromeenterprise.google/policies/#CloudAPAuthEnabled) is supported for device-based Conditional Access, but "CloudApAuthEnabled" needs to be enabled.
 >
-> macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device-based Conditional Access in Google Chrome.
-> 
 > macOS devices using the Firefox browser must be running macOS version 10.15 or newer and have the [Microsoft Enterprise SSO plug-in installed](/mem/intune-service/user-help/enroll-your-device-in-intune-macos-cp) and [configured appropriately](/entra/identity-platform/apple-sso-plugin#microsoft-intune-configuration).
 
 #### Why do I see a certificate prompt in the browser
 
-On Windows 7, iOS, Android, and macOS devices are identified using a client certificate. This certificate is provisioned when the device is registered. When a user first signs in through the browser the user is prompted to select the certificate. The user must select this certificate before using the browser.
+On iOS, Android, and macOS devices are identified using a client certificate. This certificate is provisioned when the device is registered. When a user first signs in through the browser the user is prompted to select the certificate. The user must select this certificate before using the browser.
 
 #### Chrome support
 
@@ -155,7 +165,7 @@ For Chrome support in **Windows 10 Creators Update (version 1703)** or later, in
 
 To automatically enable the CloudAPAuthEnabled policy in Chrome, create the following registry key:
 
- - Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome`
+- Path: `HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome`
  - Name: `CloudAPAuthEnabled` 
  - Value: `0x00000001`
  - PropertyType: `DWORD`
@@ -166,13 +176,6 @@ To automatically deploy the Microsoft Single Sign On extension to Chrome browser
 - Name: `1`
 - Type: `REG_SZ (String)`
 - Data: `ppnbnpeolgkicgegkbkbjmhlideopiji;https://clients2.google.com/service/update2/crx`
-
-For Chrome support in **Windows 8.1 and 7**, create the following registry key:
-
-- Path: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls`
-- Name: `1`
-- Type: `REG_SZ (String)`
-- Data: `{"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}}`
 
 ##### macOS
 
@@ -188,11 +191,10 @@ This setting has an effect on access attempts made from the following mobile app
 
 | Client apps | Target Service | Platform |
 | --- | --- | --- |
-| Dynamics CRM app | Dynamics CRM | Windows 10, Windows 8.1, iOS, and Android |
+| Dynamics CRM app | Dynamics CRM | Windows 10, iOS, and Android |
 | Mail/Calendar/People app, Outlook 2016, Outlook 2013 (with modern authentication)| Exchange Online | Windows 10 |
 | MFA and location policy for apps. Device-based policies aren’t supported.| Any My Apps app service | Android and iOS |
-| Microsoft Teams Services - this client app controls all services that support Microsoft Teams and all its Client Apps - Windows Desktop, iOS, Android, WP, and web client | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android, and macOS |
-| Office 2016 apps, Office 2013 (with modern authentication), [OneDrive sync client](/sharepoint/enable-conditional-access) | SharePoint | Windows 8.1, Windows 7 |
+| Microsoft Teams Services - this client app controls all services that support Microsoft Teams and all its Client Apps - Windows Desktop, iOS, Android, WP, and web client | Microsoft Teams | Windows 10, iOS, Android, and macOS |
 | Office 2016 apps, Universal Office apps, Office 2013 (with modern authentication), [OneDrive sync client](/sharepoint/enable-conditional-access) | SharePoint Online | Windows 10 |
 | Office 2016 (Word, Excel, PowerPoint, OneNote only). | SharePoint | macOS |
 | Office 2019| SharePoint | Windows 10, macOS |
@@ -200,11 +202,13 @@ This setting has an effect on access attempts made from the following mobile app
 | Office Yammer app | Yammer | Windows 10, iOS, Android |
 | Outlook 2019 | SharePoint | Windows 10, macOS |
 | Outlook 2016 (Office for macOS) | Exchange Online | macOS |
-| Outlook 2016, Outlook 2013 (with modern authentication), Skype for Business (with modern authentication) | Exchange Online | Windows 8.1, Windows 7 |
 | Outlook mobile app | Exchange Online | Android, iOS |
-| Power BI app | Power BI service | Windows 10, Windows 8.1, Windows 7, Android, and iOS |
-| Skype for Business | Exchange Online| Android, iOS |
-| Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) app | Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) | Windows 10, Windows 8.1, Windows 7, iOS, and Android |
+| Power BI app | Power BI service | Windows 10, Android, and iOS |
+| Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) app | Azure DevOps Services (formerly Visual Studio Team Services, or VSTS) | Windows 10, iOS, and Android |
+
+> [!NOTE]
+> For Apple devices, as Microsoft Entra ID transitions the storage of device identity keys from Apple Keychain to Apple Secure Enclave, the Microsoft Enterprise SSO plug‑in for Apple devices must be enabled for applications that do not use the Microsoft Authentication Library (MSAL), including Safari. Enabling the Enterprise SSO plug‑in ensures that these applications can participate in device-based authentication required by Conditional Access policies, such as Require device to be marked as compliant and Filter for devices condition. For more information about this transition to Apple Secure Enclave, see [Microsoft Enterprise SSO plug‑in for Apple devices – Microsoft identity platform on Microsoft Learn](/entra/identity-platform/apple-sso-plugin#device-identity-key-storage)
+
 
 ### Exchange ActiveSync clients
 
@@ -216,7 +220,7 @@ If the access control assigned to the policy uses **Require approved client app*
 
 For more information, see the following articles:
 
-- [Block legacy authentication with Conditional Access](block-legacy-authentication.md)
+- [Block legacy authentication with Conditional Access](policy-block-legacy-authentication.md)
 - [Requiring approved client apps with Conditional Access](./policy-all-users-device-compliance.md)
 
 ### Other clients
@@ -233,6 +237,8 @@ By selecting **Other clients**, you can specify a condition that affects apps th
 ## Filter for devices
 
 When admins configure filter for devices as a condition, they can include or exclude devices based on a filter using a rule expression on device properties. You can author the rule expression for filter for devices using the rule builder or rule syntax. This process is similar to the one used for rules for dynamic membership groups. For more information, see [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
+
+For agents' user accounts, this condition applies only when the agent session is initiated from an endpoint. Use it with the **Agent execution environments** condition when you need to target specific approved devices for agents running on endpoints.
 
 ## Authentication flows (preview)
 

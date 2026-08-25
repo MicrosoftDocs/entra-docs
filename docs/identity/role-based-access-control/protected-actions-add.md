@@ -1,12 +1,6 @@
 ---
 title: Add, test, or remove protected actions in Microsoft Entra ID
 description: Learn how to add, test, or remove protected actions in Microsoft Entra ID.
-
-author: barclayn
-manager: pmwongera
-ms.author: barclayn
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 03/30/2025
 ---
@@ -165,7 +159,7 @@ The user hasn't been assigned to the Conditional Access policies used for protec
 
 **Solution 1**
 
-Use Conditional Access [What If](~/identity/conditional-access/troubleshoot-conditional-access-what-if.md) tool to check if the user has been assigned policy. When using the tool, select the user and the authentication context that was used with the protected action. Select What If and verify the expected policy is listed in the **Policies that will apply** table. If the policy doesn't apply, check the policy user assignment condition, and add the user.
+Use Conditional Access [What If](~/identity/conditional-access/what-if-tool.md) tool to check if the user has been assigned policy. When using the tool, select the user and the authentication context that was used with the protected action. Select What If and verify the expected policy is listed in the **Policies that will apply** table. If the policy doesn't apply, check the policy user assignment condition, and add the user.
 
 **Cause 2**
 

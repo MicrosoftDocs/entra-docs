@@ -1,13 +1,8 @@
 ---
 title: Combined registration for SSPR and Microsoft Entra multifactor authentication
 description: Learn about the combined registration experience for Microsoft Entra ID to let users register for both Microsoft Entra multifactor authentication and self-service password reset
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: tilarso
 ms.custom: sfi-image-nochange
 ---
@@ -119,9 +114,18 @@ Users can go to [Security info](https://aka.ms/mysecurityinfo), or they can sele
 
 
 ### Session controls for Combined Registration
-By default Combined registration enforces all MFA capable users to strongly authenticate prior to registering or managing their security info. If a user is currently signed in, and previously completed MFA as part of a valid session, no additional MFA is required by default, unless a user is attempting to add or modify a passkey (FIDO2) method. Adding or modifying a passkey (FIDO2) method requires users to have strongly authenticated within the past 5 minutes. If MFA hasn't been completed in the past 5 minutes, the user is asked to sign-in and complete fresh MFA. Organizations can modify the authentication requirements by defining [Conditional Access policies for securing security info registration.](~/identity/conditional-access/policy-all-users-security-info-registration.md).
+By default, Combined registration enforces all MFA-capable users to strongly authenticate prior to registering or managing their security info.
 
-Combined registration sessions are only valid for 15 minutes. If a user's registration or management actions take longer than this time period, the session expires and the user is asked to sign back in to continue. 
+- Adding or modifying a passkey (FIDO2) method requires users to have strongly authenticated within the past 5 minutes. If MFA hasn't been completed in the past 5 minutes, the user is asked to sign in and complete fresh MFA.
+- Starting August 25, 2025, as announced in MC1135479, users are required to complete multifactor authentication (MFA) when managing credentials or accessing My Sign-ins if they haven't done so within the last 10 minutes of their current session.
+Enforcing authentication strengths for security info registration can conflict with both of these requirements. Users might experience the error message *"Let’s try something else. Another sign-in method is required to access this resource. Close your browser and try again, but choose another way to sign-in"*.
+
+You can make changes at either the tenant level or the user level:
+
+- At the tenant level, enforce **Sign-in frequency: Every time** for the **Register security info** user action, or enable passkeys for Windows Hello for Business users.
+- At the user level, ensure that users authenticate with a session that's no more than 10 minutes old, or ensure that they authenticate with a combination of methods included in the enforced authentication strength.
+Organizations can modify the authentication requirements by defining [Conditional Access policies for securing security info registration](~/identity/conditional-access/policy-all-users-security-info-registration.md).
+
 
 ## Key usage scenarios
 
@@ -193,4 +197,4 @@ To get started, see the tutorials to [enable self-service password reset](tutori
 
 Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml).
 
-You can also review the [available methods for Microsoft Entra multifactor authentication and SSPR](concept-authentication-methods.md).
+You can also review the [available methods for Microsoft Entra multifactor authentication and SSPR](overview-authentication.md).

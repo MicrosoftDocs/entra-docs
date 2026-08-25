@@ -1,13 +1,7 @@
 ---
 title: Isolation Scope For User Assigned Managed Identities
 description: Learn about isolation scope for user-assigned managed identities and how it improves security and resilience.
-
-author: SHERMANOUKO
-manager: pmwongera
-ms.author: shermanouko
 ms.reviewer: arluca
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: concept-article
 ms.date: 07/16/2025
 ---

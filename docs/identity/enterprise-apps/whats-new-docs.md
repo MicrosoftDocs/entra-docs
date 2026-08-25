@@ -1,41 +1,45 @@
 ---
 title: What's new in Microsoft Entra application management
 description: This article shows the new and updated documentation for the Microsoft Entra application management.
-ms.date: 09/03/2025
-ms.service: entra-id
-ms.subservice: enterprise-apps
+ms.date: 07/02/2026
 ms.topic: whats-new
-ms.author: jomondi
-author: omondiatieno
-manager: mwongerapk
 
 #customer intent: As an IT admin responsible for managing applications in Microsoft Entra ID, I want to stay updated on new documentation and significant updates, so that I can effectively manage and troubleshoot application-related issues in the platform.
 ---
 
-# Microsoft Entra application management: What's new
+# What's new in Microsoft Entra application management
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## August 2025
+## June 2026
 
+### New articles
 
-### Updated articles
-
-- [Manage app consent policies](manage-app-consent-policies.md) - Revised for technical accuracy
-
-
-## July 2025
+- [Plan your SSO integration with Microsoft Entra ID (ISVs)](plan-sso-integration-isv.md)
+- [SAML versus OpenID Connect: Choose the right SSO protocol](saml-vs-oidc-decision-guide.md)
+- [Understand Microsoft's SSO model](understand-microsoft-sso-model.md)
 
 ### Updated articles
 
-- [Configure OIDC SSO for gallery and custom applications](add-application-portal-setup-oidc-sso.md) - Updates to add guidance for configuring OIDC SSO for a custom application
+- [Submit a request to publish your application in Microsoft Entra application gallery](v2-howto-app-gallery-listing.md) - Add SSO onboarding articles for ISV app developers
+- [What is single sign-on in Microsoft Entra ID?](what-is-single-sign-on.md) - Add SSO onboarding articles for ISV app developers
 
 
-## June 2025
+## May 2026
+
+No updates for this month.
+
+## April 2026
 
 ### Updated articles
 
-- [AD FS application migration to move AD FS apps to Microsoft Entra ID](migrate-ad-fs-application-howto.md) - Revised for clarity and conciseness
-- [Configure how users consent to applications](configure-user-consent.md) - Added clarity on authorization policies and app consent policies
+- Performed copy edit pass to improve clarity and readability on the following articles:
 
+    - [Grant consent on behalf of a single user by using PowerShell](grant-consent-single-user.md)
+    - [Home Realm Discovery for an application](home-realm-discovery-policy.md)
+    - [Overview of admin consent workflow](admin-consent-workflow-overview.md)
+    - [Overview of enterprise application ownership in Microsoft Entra ID](overview-assign-app-owners.md)
+    - [Unexpected error when performing consent to an application](application-sign-in-unexpected-user-consent-error.md)
+    
+- [Submit a request to publish your application in Microsoft Entra application gallery](v2-howto-app-gallery-listing.md) - Added SSO checklist to the app publishing doc
 

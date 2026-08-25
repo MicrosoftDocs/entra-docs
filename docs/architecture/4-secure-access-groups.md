@@ -1,14 +1,10 @@
 ---
 title: Secure external access with groups in Microsoft Entra ID and Microsoft 365
 description: Microsoft Entra ID and Microsoft 365 Groups can be used to increase security when external users access your resources.
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 02/09/2023
-ms.author: jricketts
 ms.custom: sfi-image-nochange
+ms.subservice: architecture
 ---
 
 # Secure external access with groups in Microsoft Entra ID and Microsoft 365
@@ -115,7 +111,7 @@ Use Microsoft Entra security groups to assign:
   - Microsoft 365
   - Dynamics 365
   - Enterprise Mobility + Security
-  - See, [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
+  - See, [Assign or unassign licenses to a group in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true)
 - Elevated permissions
   - See, [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
 

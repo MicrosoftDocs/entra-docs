@@ -2,13 +2,9 @@
 title: 'Introduction to Microsoft Entra Connect V2'
 description: Learn about the next version of Microsoft Entra Connect.
 
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.collection: has-adal-ref
 ---
 
@@ -25,7 +21,7 @@ To address this issue, we've bundled as many of these newer components into a ne
 
 ## Consider moving to Microsoft Entra Cloud Sync
 
-Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we are introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
+Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we are introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the [supported sync scenarios comparison](../common-scenarios.md) to see if Cloud Sync is the right sync client for you. 
 
 View the following video to understand how Cloud sync provides value to your business.
 

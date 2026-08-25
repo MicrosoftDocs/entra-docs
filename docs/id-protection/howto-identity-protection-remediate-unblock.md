@@ -1,12 +1,8 @@
 ---
 title: Remediate risks and unblock users
 description: Learn how to configure user self-remediation and manually remediate risky users in Microsoft Entra ID Protection.
-ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 06/12/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera
+ms.date: 05/15/2026
 ms.reviewer: ebasseri
 
 # Customer intent: As an IT admin, I want to learn how to remediate risks and unblock users in Microsoft Entra ID Protection.
@@ -25,6 +21,13 @@ This article provides several options for automatically and manually remediating
 - The [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) role is the least privileged role required to **dismiss user risk**.
 - The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **create or edit risk-based policies**.
 - The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role is the least privileged role required to **create or edit Conditional Access policies**.
+
+## Password change vs. self-service password reset (SSPR)
+
+This article distinguishes between two different password change flows:
+
+- **Password change (risk remediation)**: The user knows their current password, authenticates with multifactor authentication (MFA), and then changes their password. This is the mechanism used by risk-based Conditional Access policies, including the **Require password change** and **Require risk remediation** grant controls. This flow doesn't use self-service password reset (SSPR).
+- **Password reset (SSPR / recovery)**: The user doesn't know their password and uses self-service password reset (SSPR) or an admin-initiated reset to recover access. This flow is intended for account recovery. A password reset through SSPR also remediates user risk.
 
 ## How risk remediation works
 
@@ -54,14 +57,17 @@ Sign-in risks that aren't remediated impact the user risk, so having risk-based 
 
 ### Self-remediation of user risk
 
-If a user is prompted to use self-service password reset (SSPR) to remediate user risk, they are prompted to update their password as shown in the [Microsoft Entra ID Protection user experience](concept-identity-protection-user-experience.md) article. Once they update their password, the user risk is remediated. The user can then proceed to sign in with their new password. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
+When a user risk policy with the **Require password change** grant control is configured, the user is prompted to perform a secure password change as shown in the [Microsoft Entra ID Protection user experience](concept-identity-protection-user-experience.md) article. The user must first complete multifactor authentication and then change their password. This process doesn't use the self-service password reset (SSPR) flow. Once the password is changed, the user risk is remediated and the user can proceed to sign in with their new password. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
 
 - Risk state: "At risk" -> "Remediated"
 - Risk detail: "-" -> "User performed secured password reset"
 
+> [!NOTE]
+> The risk detail value "User performed secured password reset" is a system-reported label. Despite the name, this value indicates the user completed a secure password change (MFA + password change), not a self-service password reset flow.
+
 #### Considerations for cloud and hybrid users
 
-- Both cloud and hybrid users can complete a secure password change with SSPR only if they can perform MFA. For users that aren't registered, this option isn't available.
+- Both cloud and hybrid users can complete a secure password change only if they can perform MFA. For users that aren't registered, this option isn't available.
 - Hybrid users can complete a password change from an on-premises or hybrid joined Windows device, when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting is enabled.
 
 ## System-based remediation 
@@ -71,17 +77,21 @@ In some cases, Microsoft Entra ID Protection can also automatically dismiss a us
 - **Risk state**: "At risk" -> "Dismissed"
 - **Risk detail**: "-" -> "Microsoft Entra ID Protection assessed sign-in safe"
 
+### Threat-informed remediation by Microsoft
+
+In limited cases, Microsoft Threat Intelligence identifies accounts, sessions, or resources being actively used in attack campaigns targeting Microsoft Entra tenants. When Microsoft has high-confidence evidence of compromise that poses an active risk to your organization, Microsoft might take remediation action on your behalf to help contain the threat.
+
+These actions are recorded in the Microsoft Entra audit logs with *Microsoft* listed as the initiator. Administrators retain full control of their tenant and can reverse any action taken through this process after completing their own investigation.
+
 ## Administrator manual remediation
 
 Some situations require an IT administrator to manually remediate sign-in or user risk. If you don't have risk-based policies configured, if the risk level doesn't meet the criteria for self-remediation, or if time is of the essence, you might need to take one of the following actions:
 
 - Generate a temporary password for the user.
-- Require the user to reset their password.
+- Require the user to change their password.
 - Dismiss the user's risk.
 - Confirm the user is compromised and take action to secure the account.
 - Unblock the user.
-
-You can also [remediate in Microsoft Defender for Identity](/defender-for-identity/remediation-actions).
 
 ### Generate a temporary password
 
@@ -123,9 +133,9 @@ Pay attention to the following considerations when generating a temporary passwo
    - Enable [Self-service password reset](../identity/authentication/tutorial-enable-sspr.md).
    - In Active Directory, only select the option **User must change password at next logon** after you enable everything in the previous bullets.
 
-### Require a password reset
+### Require a password change
 
-You can require risky users to reset their password to remediate their risk. Because these users aren't prompted to change their password through a risk-based policy, you must contact them to reset their password. How the password is reset depends on the type of user:
+You can require risky users to change their password to remediate their risk. Because these users aren't prompted to change their password through a risk-based policy, you must contact them to change their password. How the password is changed depends on the type of user:
 
 - **Cloud users and hybrid users with Microsoft Entra-joined devices**: Perform a secure password change after a successful MFA sign-in. Users must already be registered for MFA.
 - **Hybrid users with on-premises or hybrid-joined Windows devices**: Perform a secure password change through the Ctrl-Alt-Delete screen on their Windows device.
@@ -158,7 +168,7 @@ If after investigation, you confirm that the sign-in or user *is* at risk, you c
 
 1. Select the event or user in the **Risky sign-ins** or **Risky users** reports and choose **Confirm compromised**.
 1. If a risk-based policy wasn't triggered, and the risk wasn't self-remediated using one of the methods described in this article, then take one or more of the following actions:
-   1. [Request a password reset](#require-a-password-reset).
+   1. [Request a password change](#require-a-password-change).
    1. Block the user if you suspect the attacker can reset the password or do multifactor authentication for the user.
    1. [Revoke refresh tokens](/entra/identity/users/users-revoke-access).
    1. [Disable any devices](../identity/devices/manage-device-identities.md) that are considered compromised.
@@ -224,6 +234,30 @@ To configure this setting:
 ## Deleted users
 
 If a user was deleted from the directory that had a risk present, that user still appears in the risk report even though the account was deleted. Administrators can't dismiss risk for users who were deleted from the directory. To remove deleted users, open a Microsoft support case.
+
+## Token theft related detections
+
+With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Verified threat actor IP detection triggers during sign-in.
+
+The following ID Protection detections that identify suspicious token activity or the Verified threat actor IP detection are no longer auto-remediated:
+
+- Microsoft Entra threat intelligence 
+- Anomalous token
+- Attacker in the Middle
+- Verified threat actor IP
+- Token issuer anomaly 
+
+ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user-level risk details provides valuable information to assist with investigation. This information includes:
+
+- Token Issuer type
+- Sign-in time
+- IP address
+- Sign-in location
+- Sign-in client
+- Sign-in request ID
+- Sign-in correlation ID
+
+If you have user risk-based Conditional Access policies configured and one of these detections that denotes suspicious token activity is fired on a user, the end user is required to perform secure password change and reauthenticate their account with multifactor authentication to clear the risk.
 
 ## PowerShell preview
 

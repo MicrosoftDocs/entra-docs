@@ -2,14 +2,13 @@
 title: Sign In Users in Angular SPA by Using Native Authentication JavaScript SDK
 description: Learn how to build Angular single-page app that signs in users into an external tenant by using native authentication JavaScript SDK.
 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 07/30/2025
-#Customer intent: As a developer, I want to build an Angular single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
+ms.date: 11/18/2025
+ai-usage: ai-assisted
+#Customer intent: As a developer, I want to build an Angular single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email or alias) and password or email with one-time passcode.
 ---
 
 # Tutorial: Sign in users in Angular SPA by using native authentication JavaScript SDK
@@ -60,6 +59,9 @@ In this tutorial, you:
         ```
         - The SDK's instance method, `signIn()` starts the sign-in flow.
 
+        > [!NOTE]
+        > The `username` parameter accepts either the user's email address or their username (alias) when the **Username** built-in user attribute is enabled in your tenant's user flow. The user can input either value to sign in. To enable the attribute, see [Enable username in the sign-in identifier policy](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
+
         - In the *sign-in.component.html* file:
 
         ```html
@@ -73,7 +75,7 @@ In this tutorial, you:
         </form>
         ```
 
-4. Open the *sign-in/sign-in.component.scss* file and add the content from [sign-in.component.scss](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.scss).
+
 
 ## Update the routing module
 
@@ -105,6 +107,7 @@ export const routes: Routes = [
 1. Open a web browser and navigate to `http://localhost:4200/sign-in`. A sign-in form appears.
 
 1. To sign in into an existing account, input your details, select the Sign In button, then follow the prompts.
+
 
 ## Next step
 

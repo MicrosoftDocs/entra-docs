@@ -1,9 +1,7 @@
 ---
 title: "Tutorial: Call Microsoft Graph in a Node.js console daemon app"
 description: In this tutorial, you build a console daemon app for calling Microsoft Graph.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 04/09/2024
 ms.service: identity-platform
 ms.subservice: workforce

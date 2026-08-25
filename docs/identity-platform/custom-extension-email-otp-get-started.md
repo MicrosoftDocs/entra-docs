@@ -1,9 +1,7 @@
 ---
 title: Configure a custom email provider for one time passcode send events
 description: Learn how to configure and set up a custom email provider with the One Time Passcode Send event type.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.reviewer: 
 ms.date: 06/25/2025
 ms.service: identity-platform
@@ -26,7 +24,7 @@ Watch this video to learn how to customize verification emails with Microsoft En
 ## Prerequisites
 
 - A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
-- An Azure subscription. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- An Azure subscription. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID [external tenant](../external-id/customers/quickstart-tenant-setup.md).
 - A mail relay service provider:
 

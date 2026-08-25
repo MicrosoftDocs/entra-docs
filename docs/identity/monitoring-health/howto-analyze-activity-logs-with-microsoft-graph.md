@@ -1,13 +1,8 @@
 ---
 title: How to analyze activity logs with Microsoft Graph
 description: Learn how to access and analyze Microsoft Entra sign-in and audit logs with the Microsoft Graph reporting APIs.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 06/30/2025
-ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to be able to view and analyze sign-in and audit logs with the Microsoft Graph API so I can monitor and troubleshoot user activity in my organization programmatically.
@@ -99,16 +94,16 @@ Try using the following queries for sign-up activity in your [external tenant](.
    > Error code 1002013 indicates an expected (and successful) interrupt of the sign-up flow. [Learn more](howto-troubleshoot-sign-up-errors.md#sign-up-error-codes)
 
 - For sign-ups during a date range:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z)`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z)`
 
 - For sign-ups for a specific application:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=appId eq 'AppId'`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=appId eq 'AppId'`
 
 - For local account sign-ups:
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq 'Email OTP' or signUpIdentityProvider eq 'Email Password'`
 
 - For social account sign-ups (Google in this example):
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq ‘Google'`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq 'Google'`
 
 - To see entries for a specific user, for example `user@contoso.com`:
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentity/signUpIdentifier eq 'user@contoso.com'`

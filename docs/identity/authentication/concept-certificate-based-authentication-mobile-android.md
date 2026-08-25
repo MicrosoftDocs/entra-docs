@@ -1,15 +1,8 @@
 ---
 title: Microsoft Entra certificate-based authentication on Android devices
 description: Learn about Microsoft Entra certificate-based authentication on Android devices
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: vimrang
-manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
@@ -98,6 +91,9 @@ Certain Exchange ActiveSync applications on Android 5.0 (Lollipop) or later are 
 |Yammer	 |  &#x2705; |
 |Edge browser with profile login	 |  &#x2705; |
 |Managed Home Screen	 |  &#x2705; |
+
+>[!NOTE]
+>When using Microsoft Entra certificate-based authentication on Android devices in kiosk mode (common in Shared Device Mode), customers should allow list com.android.systemui as a required package to ensure they are presented with the appropriate UI to complete their authentication. 
 
 ### Browsers
 

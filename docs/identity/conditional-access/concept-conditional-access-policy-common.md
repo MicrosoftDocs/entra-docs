@@ -1,13 +1,8 @@
 ---
 title: 'Conditional Access Templates: Simplify Security'
 description: Learn how Conditional Access templates provide preconfigured policies to secure your environment, aligned with Microsoft recommendations.
-ms.service: entra-id
-ms.subservice: conditional-access
-ms.topic: article
-ms.date: 07/22/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.topic: concept-article
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ms.custom:
   - sfi-image-nochange
@@ -17,6 +12,8 @@ ms.custom:
   - ai-gen-description
 ---
 # Conditional Access policy templates
+
+## Overview
 
 Conditional Access templates provide a convenient method to deploy new policies aligned with Microsoft recommendations. These templates are designed to provide maximum protection aligned with commonly used policies across various customer types and locations. 
 
@@ -92,6 +89,14 @@ Policies in this category provide new ways to protect against compromise.
 
 - [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md)
 
+# [AI Agents](#tab/ai-agents)
+
+Policies in this category provide ways to control agents in your environment.
+
+- [Block high-risk agent identities](policy-agent-block-high-risk.md)
+- [Configure policy for autonomous agent access](policy-autonomous-agents.md)
+- [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)
+
 ---
 
 Find these templates in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Conditional Access** > **Create new policy from templates**. Select **Show more** to view all policy templates in each category.
@@ -99,9 +104,9 @@ Find these templates in the [Microsoft Entra admin center](https://entra.microso
 :::image type="content" source="media/concept-conditional-access-policy-common/create-policy-from-template-identity.png" alt-text="Screenshot that shows how to create a Conditional Access policy from a preconfigured template in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-policy-common/create-policy-from-template-identity.png":::
 
 > [!IMPORTANT]
-> Conditional Access template policies exclude only the user creating the policy from the template. If your organization needs to [exclude other accounts](~/identity/role-based-access-control/security-emergency-access.md), modify the policy after it's created. You can find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Conditional Access** > **Policies**. Select a policy to open the editor and modify the excluded users and groups to select accounts you want to exclude.
+> Conditional Access template policies targeting users exclude only the user creating the policy from the template. If your organization needs to [exclude other accounts](~/identity/role-based-access-control/security-emergency-access.md), modify the policy after it's created. You can find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Conditional Access** > **Policies**. Select a policy to open the editor and modify the excluded users and groups to select accounts you want to exclude.
 
-By default, each policy is created in [report-only mode](concept-conditional-access-report-only.md). We recommend organizations test and monitor usage to ensure the intended result before turning on each policy.
+By default, each policy is created in [report-only mode](concept-conditional-access-report-only.md). Test and monitor usage to ensure the intended result before turning on each policy.
 
 Organizations can select individual policy templates and:
 
@@ -119,7 +124,24 @@ Organizations can select individual policy templates and:
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
+## Migrate from classic policies
+
+Classic Conditional Access policies are deprecated and stopped enforcing controls after July 10, 2024. They depend on the retired Azure AD Graph service and can't protect your resources. If your tenant still has classic policies, migrate their settings to modern Conditional Access policies.
+
+> [!WARNING]
+> After you disable a classic policy, you can't re-enable it. Document the policy's settings before you disable it.
+
+To migrate a classic policy:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Classic policies**.
+1. Select a classic policy and document its configuration settings.
+1. Recreate the settings by using a template or custom policy described earlier in this article. Test the new policy in [report-only mode](concept-conditional-access-report-only.md) before you turn it on.
+1. Return to the classic policy and select **Disable**.
+
+The [What If tool](what-if-tool.md) indicates whether classic policies still exist in your environment.
+
 ## Next steps
 
-- [Simulate sign in behavior using the Conditional Access What If tool.](troubleshoot-conditional-access-what-if.md)
+- [Simulate sign in behavior using the Conditional Access What If tool.](what-if-tool.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

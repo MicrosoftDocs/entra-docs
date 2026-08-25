@@ -1,13 +1,10 @@
 ---
 title: Microsoft Entra ID Governance operations reference guide
 description: This operations reference guide describes the checks and actions you should take to secure governance management
-author: martincoetzer
-manager: travisgr
-ms.service: entra
-ms.topic: article
-ms.subservice: architecture
+ms.topic: best-practice
 ms.date: 08/25/2024
-ms.author: martinco
+ms.reviewer: martinco
+ms.subservice: architecture
 ---
 
 # Microsoft Entra ID Governance operations reference guide
@@ -57,7 +54,7 @@ There are changes that require special considerations when testing, from simple 
 |Rolling out a new feature|If the feature supports rollout to a target set of users, identify pilot users and build out. For example, self-service password reset and multifactor authentication can target specific users or groups.|
 |Move to an application from an on-premises Identity provider (IdP), for example, Active Directory, to Microsoft Entra ID|If the application supports multiple IdP configurations, for example, Salesforce, configure both and test Microsoft Entra ID during a change window (in case the application introduces a page). If the application doesn't support multiple IdPs, schedule the testing during a change control window and program downtime.|
 |Update rules for dynamic membership groups|Create a parallel dynamic group with the new rule. Compare against the calculated outcome, for example, run PowerShell with the same condition.<br>If test pass, swap the places where the old group was used (if feasible).|
-|Migrate product licenses|Refer to [Change the license for a single user in a licensed group in Microsoft Entra ID](~/identity/users/licensing-groups-change-licenses.md).|
+|Migrate product licenses|Refer to [Assign or unassign licenses to a group in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true).|
 |Change AD FS rules such as Authorization, Issuance, MFA|Use group claim to target subset of users.|
 |Change AD FS authentication experience or similar farm-wide changes |Create a parallel farm with same host name, implement config changes, test from clients using HOSTS file, NLB routing rules, or similar routing.<br> If the target platform doesn't support HOSTS files (for example mobile devices), control change.|
 

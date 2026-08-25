@@ -1,14 +1,9 @@
 ---
 title: Secure on-premises computer accounts with Active Directory
 description: A guide to help secure on-premises computer accounts, or LocalSystem accounts, with Active Directory
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 02/03/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # Secure on-premises computer accounts with Active Directory

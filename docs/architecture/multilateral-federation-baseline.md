@@ -1,13 +1,9 @@
 ---
 title: University multilateral federation baseline design
 description: Learn about a baseline design for a multilateral federation solution for universities.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 04/01/2023
-ms.author: jricketts
+ms.subservice: architecture
 ---
 
 # Baseline architecture overview

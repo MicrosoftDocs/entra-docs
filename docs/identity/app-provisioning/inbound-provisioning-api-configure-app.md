@@ -1,13 +1,8 @@
 ---
 title: Configure API-driven inbound provisioning app
 description: Learn how to configure API-driven inbound provisioning app.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: jfields
 ms.reviewer: cmmdesai
 ms.custom: sfi-image-nochange
 ---
@@ -105,5 +100,6 @@ Depending on the app you selected, use one of the following sections to complete
 
 ## Next steps
 - [Grant access to the inbound provisioning API](inbound-provisioning-api-grant-access.md)
+- [Clear attribute values (Preview)](clear-attribute-values.md)
 - [Frequently asked questions about API-driven inbound provisioning](inbound-provisioning-api-faqs.md)
 - [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](user-provisioning.md)

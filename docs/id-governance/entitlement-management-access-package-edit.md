@@ -1,14 +1,10 @@
 ---
 title: Hide or delete access package in entitlement management
 description: Learn how to hide or delete an access package in Microsoft Entra entitlement management.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
-ms.author: owinfrey
-#Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
+#Customer Intent: As an IT admin, I want to hide or delete an access package so that I can manage the availability of access packages in my organization.
 ---
 # Hide or delete an access package in entitlement management
 

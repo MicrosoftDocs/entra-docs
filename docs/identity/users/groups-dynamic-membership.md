@@ -1,23 +1,25 @@
 ---
-title: Manage Rules for Dynamic Membership Groups in Microsoft Entra ID
+title: Manage rules for dynamic membership groups in Microsoft Entra ID
 description: Learn how to manage rules for dynamic membership groups to automatically populate group members and rule references.
-
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
-ms.date: 12/19/2024
-ms.author: barclayn
-ms.reviewer: krbain
+ms.date: 08/13/2026
+ms.reviewer: mbhargav
 ms.custom: it-pro
+ai-usage: ai-assisted
 ---
 
 # Manage rules for dynamic membership groups in Microsoft Entra ID
 
+
+## Overview
+
 You can create user-based or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID. You can add and remove dynamic membership groups automatically by using membership rules based on member attributes. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
 This article details the properties and syntax to create rules for dynamic membership groups based on users or devices.
+
+An agent's user account is a subtype of user identity within Microsoft Entra. An agent's user account is evaluated by user-based membership rules and can be included in a dynamic user group when it satisfies the rule.
+
+By default, an agent's user account isn't distinguished from other user identities. To exclude these accounts, include a condition in the membership rule. You can also create rules that include only agents' user accounts or target accounts associated with a specific agent identity blueprint. Agent identities, which are service principals, aren't supported as members of dynamic membership groups.
 
 > [!NOTE]
 > Security groups can include either devices or users, but Microsoft 365 groups can include only users.
@@ -28,8 +30,22 @@ When the attributes of a user or a device change, the system evaluates all rules
 
 Also keep these limitations in mind:
 
-- You can create a dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
+- You can create dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
 - You can't create a device membership group based on the user attributes of the device owner. Device membership rules can reference only device attributes.
+
+### Security consideration: Evaluate attribute write permissions before using them in dynamic group rules
+
+When you create a dynamic membership rule, the security of that group's membership depends on who can modify the attributes referenced in the rule. Before selecting an attribute, review the write permissions for that attribute—both in Microsoft Entra ID and in any connected source directories.
+
+This is especially important for:
+
+- **Attributes synced from on-premises Active Directory.** Some on-premises attributes might be configured with permissions that allow users to modify their own values (SELF write).
+- **Groups used for access control.** If a dynamic group controls access to sensitive resources, applications, or Conditional Access policies, the security of that access is only as strong as the write controls on the attributes in the rule.
+
+As a best practice, audit the write permissions for all entity types and their attributes you plan to use in a dynamic membership rule, both in Microsoft Entra ID and at the source (such as on-premises Active Directory). Restrict self-service write access to attributes used in security-sensitive groups.
+
+> [!NOTE]
+> Role-assignable groups already prevent this risk by requiring assigned (not dynamic) membership.
 
 ### License requirements
 
@@ -73,7 +89,7 @@ user.department -eq "Sales"
 
 Parentheses are optional for a single expression. The total length of the body of your membership rule can't exceed 3,072 characters.
 
-### Constructing the body of a membership rule
+### Construct the body of a membership rule
 
 A membership rule that automatically populates a group with users or devices is a binary expression that results in a true or false outcome. The three parts of a simple rule are:
 
@@ -122,7 +138,6 @@ You can use the following user properties to create a single expression.
 | `jobTitle` |Any string value or `null` | ```user.jobTitle -eq "value"``` |
 | `mail` |Any string value or `null` (SMTP address of the user) | ```user.mail -eq "value"```<br><br>```user.mail -notEndsWith "@Contoso.com"``` |
 | `mailNickName` |Any string value (mail alias of the user) | ```user.mailNickName -eq "value"```<br><br>```user.mailNickname -endsWith "-vendor"``` |
-| `memberOf` | Any string value (valid group object ID) | ```user.memberOf -any (group.objectId -in ['value'])``` |
 | `mobile` |Any string value or `null` | ```user.mobile -eq "value"```|
 | `objectId` |GUID of the user object | ```user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"```|
 | `onPremisesDistinguishedName` | Any string value or `null` | ```user.onPremisesDistinguishedName -eq "value"```|
@@ -144,8 +159,9 @@ You can use the following user properties to create a single expression.
 
 | Property | Allowed values | Examples |
 | --- | --- | --- |
-| `otherMails` |Any string value | ```user.otherMails -startsWith "alias@domain"```<br><br>```user.otherMails -endsWith"@contoso.com"``` |
-| `proxyAddresses` |`SMTP: alias@domain`, `smtp: alias@domain` | ```user.proxyAddresses -startsWith "SMTP: alias@domain"```<br><br>```user.proxyAddresses -notEndsWith "@outlook.com"``` |
+| `memberOf` (preview) | Collection of strings (group object IDs) | ```user.memberOf -any (group.objectId -in ['value'])``` |
+| `otherMails` |Any string value | ```(user.otherMails -any (_ -startsWith "alias@domain"))```<br><br>```(user.otherMails -any (_ -endsWith "@contoso.com"))``` |
+| `proxyAddresses` |`SMTP: alias@domain`, `smtp: alias@domain` | ```(user.proxyAddresses -any (_ -startsWith "SMTP: alias@domain"))```<br><br>```(user.proxyAddresses -any (_ -notEndsWith "@outlook.com"))``` |
 
 For the properties used for device rules, see [Rules for devices](#rules-for-devices).
 
@@ -171,7 +187,7 @@ The following table lists all the supported operators and their syntax for a sin
 | `In` | `-in` |
 | `Not In` | `-notIn` |
 
-#### Using the -in and -notIn operators
+#### Use the -in and -notIn operators
 
 If you want to compare the value of a user attribute against multiple values, you can use the `-in` or `-notIn` operator. Use the bracket symbols (`[` and `]`) to begin and end the list of values.
 
@@ -181,7 +197,7 @@ In the following example, the expression evaluates to `true` if the value of `us
    user.department -in ["50001","50002","50003","50005","50006","50007","50008","50016","50020","50024","50038","50039","51100"]
 ```
 
-#### Using the -le and -ge operators
+#### Use the -le and -ge operators
 
 You can use the less than (`-le`) or greater than (`-ge`) operator when you're using the `employeeHireDate` attribute in rules for dynamic membership groups.
 
@@ -194,7 +210,7 @@ user.employeehiredate -le 2020-06-10T18:13:20Z
 
 ```
 
-#### Using the -match operator
+#### Use the -match operator
 
 You can use the `-match` operator for matching any regular expression.
 
@@ -224,7 +240,7 @@ When you specify a value within an expression, it's important to use the correct
 - Double quotation marks are optional unless the value is a string.
 - Regex and string operations aren't case sensitive.
 - Ensure that property names are correctly formatted as shown, because they're case sensitive.
-- When a string value contains double quotation marks, you should escape both quotation marks by using the backslash (`\`) character. For example, *user.department -eq \`"Sales\`"* is the proper syntax when `Sales` is the value. Escape single quotation marks by using two single quotation marks instead of one each time.
+- When a string value contains double quotation marks, you should escape both quotation marks by using the backtick (\`\) character. For example, *user.department -eq \`"Sales\`"* is the proper syntax when `Sales` is the value. Escape single quotation marks by using two single quotation marks instead of one each time.
 - You can also perform null checks by using `null` as a value; for example, `user.department -eq null`.
 
 #### Use of null values
@@ -293,7 +309,7 @@ Multi-value properties are collections of objects of the same type. You can use 
 | `assignedPlans` | Each object in the collection exposes the following string properties: `capabilityStatus`, `service`, `servicePlanId` | ```user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled")```|
 | `proxyAddresses` | `SMTP: alias@domain`, `smtp: alias@domain` | ```(user.proxyAddresses -any (\_ -startsWith "contoso"))``` |
 
-#### Using the -any and -all operators
+#### Use the -any and -all operators
 
 You can use the following operators to apply a condition to one or all of the items in the collection:
 
@@ -302,11 +318,25 @@ You can use the following operators to apply a condition to one or all of the it
 
 ##### Example 1
 
-`assignedPlans` is a multi-value property that lists all service plans assigned to the user. The following expression selects users who have the Exchange Online (Plan 2) service plan (as a GUID value) that's also in an `Enabled` state:
+`assignedPlans` is a multi-value property that lists all service plans assigned to the user. Service plans aren't the same as licenses or products. For more information, see [Product names and service plan identifiers for licensing](/entra/identity/users/licensing-service-plan-reference).
+
+To find the service plan IDs assigned to a user, use Microsoft Graph PowerShell with the `User.Read.All` permission:
+
+```powershell
+Connect-MgGraph -Scopes 'User.Read.All'
+
+Get-MgUser -UserId user@contoso.com -Property assignedPlans |
+  Select-Object -ExpandProperty assignedPlans |
+  Select-Object service, servicePlanId, capabilityStatus | Format-List
+```
+
+The following expression selects users who have the Exchange Online (Plan 2) service plan, as a GUID value, that's also in an `Enabled` state:
 
 ```
 user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled")
 ```
+
+Include `assignedPlan.capabilityStatus -eq "Enabled"` when you want the rule to match only users whose service plan is enabled.
 
 You can use a rule like this one to group all users for whom a Microsoft 365 or other Microsoft Online Services capability is enabled. You could then apply the rule with a set of policies to the group.
 
@@ -320,13 +350,23 @@ user.assignedPlans -any (assignedPlan.service -eq "SCO" -and assignedPlan.capabi
 
 ##### Example 3
 
+The following expression selects all users who have no enabled service plan that's associated with the Intune service (identified by the service name `SCO`):
+
+```
+user.assignedPlans -all (assignedPlan.service -ne "SCO" -or assignedPlan.capabilityStatus -ne "Enabled")
+```
+
+This rule also includes users who have no assigned service plans. If you want to exclude users with no service plans, combine this rule with another condition.
+
+##### Example 4
+
 The following expression selects all users who have no assigned service plan:
 
 ```
 user.assignedPlans -all (assignedPlan.servicePlanId -eq null)
 ```
 
-#### Using the underscore (\_) syntax
+#### Use the underscore (\_) syntax
 
 The underscore (`_`) syntax matches occurrences of a specific value in one of the multi-value string collection properties to add users or devices to a dynamic membership group. You use it with the `-any` or `-all` operator.
 
@@ -338,11 +378,13 @@ Here's an example of using the underscore in a rule to add members based on `use
 
 ### Other properties and common rules
 
+The following sections describe other common rule patterns for dynamic membership groups.
+
 #### Create a rule for direct reports
 
 You can create a group that contains all direct reports of a manager. When the manager's direct reports change in the future, the group's membership is adjusted automatically.
 
->[!NOTE]
+> [!NOTE]
 > The manager is also added to a direct reports dynamic group.
 
 You construct the direct reports rule by using the following syntax:
@@ -425,7 +467,7 @@ For more information, see [Use the attributes in dynamic membership groups](~/id
 
 ## Rules for devices
 
-You can create a rule that selects device objects for membership in a group. You can't have both users and devices as group members.
+You can create a rule that selects device objects for membership in a group. You can't have both users and devices as group members. For Intune app and policy assignments, use assignment filters when they meet the targeting need. Filters include or exclude managed devices or apps within an assigned group. Use dynamic groups for non-Intune or cross-workload scenarios, such as Conditional Access, licensing, or Autopilot profile assignment. For more information, see [Create assignment filters in Microsoft Intune](/intune/fundamentals/filters/overview).
 
 > [!NOTE]
 > The `organizationalUnit` attribute is no longer listed, and you shouldn't use it. Intune sets this string in specific cases, but Microsoft Entra ID doesn't recognize it. No devices are added to groups based on this attribute.
@@ -474,7 +516,7 @@ You can use the following device attributes.
  | `extensionAttribute15` | Any string value | `device.extensionAttribute15 -eq "some string value"` |
  | `isRooted` | `true`, `false` | `device.isRooted -eq true` |
  | `managementType` | Mobile device management (for mobile devices) | `device.managementType -eq "MDM"` |
- | `memberOf` | Any string value (valid group object ID) | `device.memberOf -any (group.objectId -in ['value'])` |
+ | `memberOf` (preview) | Collection of strings (group object IDs) | `device.memberOf -any (group.objectId -in ['value'])` |
  | `objectId` | A valid Microsoft Entra object ID | `device.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"` |
  | `profileType` | A valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | `device.profileType -eq "RegisteredDevice"` |
  | `systemLabels`<sup>4</sup> | A read-only string that matches the Intune device property for tagging Modern Workplace devices | `device.systemLabels -startsWith "M365Managed" SystemLabels` |
@@ -487,10 +529,10 @@ You can use the following device attributes.
 
 <sup>3</sup> When you use `extensionAttribute1-15` to create dynamic membership groups for devices, you need to set the value for `extensionAttribute1-15` on the device. [Learn more about how to write `extensionAttributes` on a Microsoft Entra device object](/graph/api/device-update?view=graph-rest-1.0&tabs=http&preserve-view=true#example-2--write-extensionattributes-on-a-device).
 
-<sup>4</sup> When you use `systemLabels`, a read-only attribute that's used in various contexts (such as device management and sensitivity labeling) is not editable through Intune.
+<sup>4</sup> When you use `systemLabels`, a read-only attribute that's used in various contexts (such as device management and sensitivity labeling) isn't editable through Intune.
 
 ## Related content
 
 
-- [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
 - [Create or update a dynamic membership group in Microsoft Entra ID](groups-create-rule.md)

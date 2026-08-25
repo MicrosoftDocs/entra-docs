@@ -2,11 +2,8 @@
 title: User self-remediation with Microsoft Entra ID Protection
 description: How can users self-remediate risk when administrators allow it? What is the experience when they don't?
 ms.service: entra-id-protection
-ms.topic: article
-ms.date: 06/12/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera
+ms.topic: concept-article
+ms.date: 10/30/2025
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---
@@ -18,7 +15,7 @@ With Microsoft Entra ID Protection and Conditional Access, you can:
 * Automate remediation of risky sign-ins and compromised users
 * Block users in specific cases.
 
-Conditional Access policies that integrate user and sign-in risk affect the sign in experience for users. Allowing users to use tools like Microsoft Entra multifactor authentication and self-service password reset can lessen the impact. These tools, along with the appropriate policy choices, give users a self-remediation option when they need it while still enforcing strong security controls.
+Conditional Access policies that integrate user and sign-in risk affect the sign in experience for users. Allowing users to use tools like Microsoft Entra multifactor authentication + secure password change or self service password reset (SSPR) can lessen the impact. These tools, along with the appropriate policy choices, give users a self-remediation option when they need it while still enforcing strong security controls.
 
 ## Multifactor authentication registration
 
@@ -43,6 +40,12 @@ If the user completes multifactor authentication, their risk is remediated and t
 If the user is at risk, not just the sign-in, administrators can configure a user risk policy in Conditional Access to require a password change in addition to multifactor authentication. In that case, the user sees the following extra screen.
 
 :::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-password-change-prompt.png" alt-text="A screenshot showing the password change is required prompt when user risk is detected." lightbox="media/concept-identity-protection-user-experience/conditional-access-password-change-prompt.png":::
+
+### Adaptive risk remediation
+
+The adaptive risk remediation policy accommodates all authentication methods, including password-based and passwordless. The grant controls for this policy automatically include **Require authentication strength** and **Sign-in frequency - Every time** to ensure that users are prompted to reauthenticate after their sessions are revoked. For more information, see [concept-identity-protection-policies#require-risk-remediation-control-preview].
+
+When a user is required to remediate risk with this policy turned on, users must sign in immediately after their sessions are revoked. If the user just signed in but they're at risk, they'll be prompted to sign in again. The risk is remediated after the user successfully signed in the second time.  
 
 ### Risky sign-in administrator unblock
 

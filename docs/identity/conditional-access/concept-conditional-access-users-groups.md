@@ -1,20 +1,15 @@
 ---
-title: "Conditional Access Setup: Users, Groups, and Workload Identities"
+title: "Conditional Access Setup: Users, Groups, Agents, and Workload Identities"
 description: Learn how to include or exclude users, groups, and workload identities in Conditional Access policies for secure and flexible access management.
-
-ms.service: entra-id
-ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/22/2025
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: dougeby
+ms.date: 03/24/2026
 ms.reviewer: lhuangnorth
 ---
-# Conditional Access: Users, groups, and workload identities
+# Conditional Access: Users, groups, agents, and workload identities
 
-A Conditional Access policy includes a user, group, or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access. 
+## Overview
+
+A Conditional Access policy includes a user, group, agent, or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access. 
 
 ## Include users
 
@@ -82,7 +77,7 @@ The following options are available for exclusion when creating a Conditional Ac
 
 To prevent admin lockout, when creating a policy applied to **All users** and **All apps**, the following warning appears.
 
-> Don't lock yourself out! We recommend applying a policy to a small set of users first to verify it behaves as expected. We also recommend excluding at least one admin from this policy. This ensures that you still have access and can update a policy if a change is required. Please review the affected users and apps.
+> Don't lock yourself out! Apply a policy to a small set of users first to verify it behaves as expected. Also exclude at least one admin from this policy. This ensures that you still have access and can update a policy if a change is required. Review the affected users and apps.
 
 By default, the policy provides an option to exclude the current user, but an admin can override it as shown in the following image. 
 
@@ -94,9 +89,20 @@ If you find yourself locked out, see [What to do if you're locked out?](troubles
 
 Conditional Access policies that target external users might interfere with service provider access, such as granular delegated admin privileges. Learn more in [Introduction to granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction). For policies that are intended to target service provider tenants, use the **Service provider user** external user type available in the **Guest or external users** selection options.
 
+## Agents (Preview)
+
+Agents are first-class accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. Conditional Access policies targeting these objects have specific recommendations addressed in the article [Conditional Access and agent identities](agent-id.md)
+
+Policy can be scoped to:
+
+- All agent identities
+- Select agents acting as users
+- Select agent identities based on [attributes](../../fundamentals/custom-security-attributes-overview.md)
+- Select individual agent identities
+
 ## Workload identities 
 
-A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user. Conditional Access policies can be applied to single tenant service principals registered in your tenant. Non-Microsoft SaaS and multi-tenanted apps are out of scope. Managed identities aren't covered by policy.
+A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user. Conditional Access policies can be applied to single tenant service principals registered in your tenant. Microsoft and third-party SaaS applications, including multitenant apps, are not covered by these policies. Managed identities aren't covered by policy.
 
 Organizations can target specific workload identities to be included or excluded from policy.
 
@@ -104,5 +110,5 @@ For more information, see the article [Conditional Access for workload identitie
 
 ## Next steps
 
-- [Conditional Access: Cloud apps or actions](concept-conditional-access-cloud-apps.md)
+- [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)

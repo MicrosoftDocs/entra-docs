@@ -2,17 +2,11 @@
 title: Configure Cofense Recipient Sync for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Cofense Recipient Sync.
 
-author: twimmers
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cofense Recipient Sync so that I can streamline the user management process and ensure that users have the appropriate access to Cofense Recipient Sync.
----
+--- 
 
 # Configure Cofense Recipient Sync for automatic user provisioning with Microsoft Entra ID
 
@@ -24,6 +18,7 @@ This article describes the steps you need to perform in both Cofense Recipient S
 > * Create users in Cofense Recipient Sync
 > * Remove users in Cofense Recipient Sync when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cofense Recipient Sync
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

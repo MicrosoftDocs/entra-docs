@@ -1,15 +1,12 @@
 ---
 title: Flexible federated identity credentials (preview)
-description: Learn about Microsoft Entra Workload ID Flexible federated identity credentials and its capabilities.
-author: cilwerner
-manager: CelesteDG
-ms.service: entra-workload-id
+description: Learn how Microsoft Entra Workload ID flexible federated identity credentials match token claims and reduce credential management overhead.
 ms.topic: concept-article
-ms.date: 08/28/2024
-ms.author: cwerner
-ms.custom: 
+ms.date: 08/14/2026
+ms.custom: msecd-doc-authoring-1018
 ms.reviewer: ludwignick
-#Customer intent: I want to know about Microsoft Entra Workload ID Flexible federated identity credentials.
+ai-usage: ai-assisted
+#customer intent: As an application administrator, I want to understand flexible federated identity credentials so that I can manage trust for external workloads.
 ---
 
 # Flexible federated identity credentials (preview)
@@ -48,10 +45,10 @@ A flexible federated identity credentials expression is made up of three parts, 
 | Operator | The operator portion must be just the operator name, separated from the claim lookup and comparand by a single space | `matches` |
 | Comparand | The comparand contains what you intend to compare the claim specified in the lookup against – it must be contained within single quotes | `'repo:contoso/contoso-repo:ref:refs/heads/*'` |
 
-Put together, an example flexible federated identity credentials expression would look like the following JSON object:
+Put together, an example GitHub flexible federated identity credential expression looks like the following JSON object. GitHub expressions must match `sub` and at least one immutable claim:
 
 ```json
-"claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'."
+"claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*' and claims['repository_id'] eq '456789'"
 ```
 
 ## Set up federated identity credentials through Microsoft Graph
@@ -70,9 +67,9 @@ Flexible federated identity credentials currently support the use of a few opera
 
 | Operator | Description | Example |
 | --- | --- | --- |
-| `matches` | Enables the use of single-character (denoted by `?`) and multi-character (denoted by `*`) wildcard matching for the specified claim  | &#8226; `"claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'"` <br/>&#8226; `"claims['sub'] matches 'repo:contoso/contoso-repo-*:ref:refs/heads/????'"` |
-| `eq` | Used for explicitly matching against a specified claim | &#8226; `"claims['sub'] eq 'repo:contoso/contoso-repo:ref:refs/heads/main'"`  |
-| `and` | Boolean operator for combining expressions against multiple claims | &#8226; `"claims['sub'] eq 'repo:contoso/contoso-repo:ref:refs/heads/main' and claims['job_workflow_ref'] matches 'foo-org/bar-repo /.github/workflows/*@refs/heads/main'"` |
+| `matches` | Enables the use of single-character (denoted by `?`) and multi-character (denoted by `*`) wildcard matching for the specified claim  | &#8226; `"claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*' and claims['repository_id'] eq '456789'"` <br/>&#8226; `"claims['sub'] matches 'repo:contoso/contoso-repo-*:ref:refs/heads/????' and claims['repository_owner_id'] eq '123456'"` |
+| `eq` | Used for explicitly matching against a specified claim | &#8226; `"claims['sub'] eq 'repo:contoso/contoso-repo:ref:refs/heads/main' and claims['repository_id'] eq '456789'"`  |
+| `and` | Boolean operator for combining expressions against multiple claims | &#8226; `"claims['sub'] eq 'repo:contoso/contoso-repo:ref:refs/heads/main' and claims['repository_id'] eq '456789' and claims['job_workflow_ref'] matches 'foo-org/bar-repo/.github/workflows/*@refs/heads/main'"` |
 
 
 ## Issuer URLs, supported claims, and operators by platform
@@ -83,10 +80,19 @@ Depending on the platform you're using, you need to implement different issuer U
 
 Supported issuer URLs: `https://token.actions.githubusercontent.com` 
 
+For GitHub, a flexible federated identity credential must match the `sub` claim and one or both of the following immutable claims:
+
+- `repository_id` identifies the repository where the workflow runs.
+- `repository_owner_id` identifies the repository owner.
+
+These claims are required regardless of whether `sub` uses a name-based, customized, or immutable format. Use `repository_id` to bind the credential to a repository. Also match `repository_owner_id` when the repository must remain with a specific owner.
+
 Supported claims and operators per claim: 
 
-- Claim `sub` supports operators `eq` and `matches` 
-- Claim `job_workflow_ref` supports operators `eq` and `matches` 
+- Claim `sub` supports operators `eq` and `matches`.
+- Claim `job_workflow_ref` supports operators `eq` and `matches`.
+- Claim `repository_id` supports operator `eq`.
+- Claim `repository_owner_id` supports operator `eq`.
 
 ### [GitLab](#tab/gitlab)
 
@@ -115,12 +121,14 @@ You can use Azure CLI's `az rest` method to make REST API requests for flexible 
 ```bash
 az rest --method post \
     --url https://graph.microsoft.com/beta/applications/{objectId}/federatedIdentityCredentials
-    --body "{'name': 'FlexFic1', 'issuer': 'https://token.actions.githubusercontent.com', 'audiences': ['api://AzureADTokenExchange'], 'claimsMatchingExpression': {'value': 'claims[\'sub\'] matches \'repo:contoso/contoso-org:ref:refs/heads/*\'', 'languageVersion': 1}}"
+    --body "{'name': 'FlexFic1', 'issuer': 'https://token.actions.githubusercontent.com', 'audiences': ['api://AzureADTokenExchange'], 'claimsMatchingExpression': {'value': 'claims[\'sub\'] matches \'repo:contoso/contoso-repo:ref:refs/heads/*\' and claims[\'repository_id\'] eq \'456789\'', 'languageVersion': 1}}"
 ```
 
 ## Related content
 
 - [Implement a flexible federated identity credential](./workload-identity-federation-create-trust.md#set-up-a-flexible-federated-identity-credential-preview)
+- [Mutable subjects in federated identity credentials](./workload-identities-federated-credential-mutable-subjects.md)
+- [Migrate GitHub Actions federated credentials to immutable subjects](./workload-identities-github-immutable-subjects.md)
 - [Configure a user-assigned managed identity to trust an external identity provider](./workload-identity-federation-create-trust-user-assigned-managed-identity.md)
 - How to create, delete, get, or update [federated identity credentials](./workload-identity-federation-create-trust.md) on an app registration.
 - Read the [GitHub Actions documentation](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-azure) to learn more about configuring your GitHub Actions workflow to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.

@@ -1,14 +1,8 @@
 ---
 title: Use Azure portal to grant a managed identity access to a resource
 description: Step-by-step instructions on using Azure portal to assign a managed identity access to an Azure resource or another resource.
-author: SHERMANOUKO
-manager: CelesteDG
-
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 09/09/2025
-ms.author: shermanouko
 ---
 
 # Use Azure portal to grant a managed identity access to a resource
@@ -18,7 +12,7 @@ This article shows you how to use the Azure portal to give a managed identity ac
 ## Prerequisites
 
 - Be sure you've enabled managed identity on an Azure resource, such as an [Azure virtual machine](how-to-configure-managed-identities.md). 
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Use Azure RBAC to assign a managed identity access to another resource using the Azure portal
 

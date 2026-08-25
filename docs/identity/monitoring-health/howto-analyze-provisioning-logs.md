@@ -1,13 +1,8 @@
 ---
 title: How to analyze the Microsoft Entra provisioning logs
-description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
+description: Learn how to view, download, and analyze Microsoft Entra provisioning logs by using the admin center, Microsoft Graph, and Microsoft MCP Server for Enterprise.
 ms.topic: how-to
-ms.subservice: monitoring-health
-ms.date: 07/10/2025
-ms.author: sarahlipsey
+ms.date: 08/03/2026
 ms.reviewer: arvinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
@@ -17,7 +12,7 @@ ms.custom: sfi-image-nochange
 
 The Microsoft Entra provisioning logs provide details about the provisioning events that occur in your tenant. You can use the information captured in the provisioning logs to help troubleshoot issues with a provisioned user.
 
-This article describes the options for downloading the provisioning logs from the Microsoft Entra admin center and how to analyze the logs. Error codes and special considerations are also included.
+This article describes how to view and download the provisioning logs, analyze the logs by using Microsoft Graph or Microsoft MCP Server for Enterprise, and troubleshoot common errors.
 
 ## Prerequisites
 
@@ -34,6 +29,7 @@ There are several ways to view or analyze the Provisioning logs:
 - Stream logs to [Azure Monitor](../app-provisioning/application-provisioning-log-analytics.md) through diagnostic settings.
 - Analyze logs through [Workbook](howto-use-workbooks.md) templates.
 - Access logs programmatically through the [Microsoft Graph API](/graph/api/resources/provisioningobjectsummary).
+- Ask natural-language questions about the logs by using [Microsoft MCP Server for Enterprise](/graph/mcp-server/overview).
 - [Download the logs](howto-download-logs.md) as a CSV or JSON file.
 
 To access the logs in the Microsoft Entra admin center:
@@ -110,6 +106,67 @@ Here are some tips and considerations for analyzing the provisioning logs:
 
 - Some error codes contain `AzureActiveDirectory` in the name. These error codes refer to Microsoft Entra ID, but could not be rebranded from Azure Active Directory.
 
+## Analyze provisioning logs with Microsoft MCP Server for Enterprise (Preview)
+
+Microsoft MCP Server for Enterprise lets you use natural-language prompts to analyze provisioning logs in an MCP-enabled AI client. The server translates a prompt into a read-only Microsoft Graph request, runs the request with your delegated permissions, and summarizes the response.
+
+> [!IMPORTANT]
+> Microsoft MCP Server for Enterprise is in preview. It's currently available only in the global service and supports read-only operations. Review [Overview of Microsoft MCP Server for Enterprise](https://github.com/mcp/microsoft/EnterpriseMCP) for current availability and limitations.
+
+### Prerequisites
+
+In addition to the prerequisites for this article:
+
+- An administrator must [provision Microsoft MCP Server for Enterprise and configure an MCP client](https://github.com/mcp/microsoft/EnterpriseMCP).
+- The MCP client must be granted the `MCP.ProvisioningLog.Read.All` delegated permission.
+- You must sign in to the MCP client with a work or school account that has a supported Microsoft Entra role. Reports Reader is the least privileged supported role.
+
+Microsoft MCP Server for Enterprise supports delegated, user-interactive access only. It doesn't support application-only access.
+
+### Ask questions about provisioning activity
+
+Open your configured MCP client, select its agent mode if required, and ask a specific question about the provisioning activity that you want to investigate. For example:
+
+| Scenario | Example prompt |
+| --- | --- |
+| Review recent failures | `Show me recent provisioning errors.` |
+| Review a user's history | `Show recent provisioning events for the user with ID <user-id>.` |
+| Review successful creates | `Show me recent successful provisioning create operations.` |
+| Review successful deletes | `Were any users successfully deleted by the provisioning service?` |
+| Review successful disables | `Were any users successfully disabled by the provisioning service?` |
+
+Use an object ID instead of a display name when possible. You can also include a time range, application name, status, or provisioning action to make the request more specific.
+
+The AI agent can use the MCP server's query-suggestion tool to select an appropriate Microsoft Graph request and then run the request with the read-only Microsoft Graph tool. For example, the prompt `Show me recent provisioning errors` can result in this request:
+
+```http
+GET https://graph.microsoft.com/v1.0/auditLogs/provisioning?$filter=provisioningStatusInfo/status eq 'failure'&$orderby=activityDateTime desc&$top=5
+```
+
+The prompt `Show recent provisioning events for the user with ID <user-id>` can result in this request:
+
+```http
+GET https://graph.microsoft.com/v1.0/auditLogs/provisioning?$filter=sourceIdentity/id eq '<user-id>'&$orderby=activityDateTime desc&$top=5
+```
+
+The provisioning logs API supports `$filter`, `$orderby`, `$top`, and `$skiptoken`. Filters are case-sensitive. For supported properties and query behavior, see [List provisioningObjectSummary](/graph/api/provisioningobjectsummary-list).
+
+> [!TIP]
+> Review the Microsoft Graph request shown by the AI agent before relying on its summary. Confirm that filters, object IDs, status values, actions, and time ranges match your investigation. Ask a follow-up question if you need more records or details from `provisioningSteps`, `modifiedProperties`, or `provisioningStatusInfo`.
+
+### What you should know
+
+- The MCP server can't restart a job, provision an object, or change a provisioning configuration. Use the Microsoft Entra admin center, Microsoft Graph, or PowerShell for write operations.
+
+- Microsoft MCP Server for Enterprise queries the same Microsoft Graph provisioning log data and is subject to the same provisioning log retention period.
+
+- MCP requests are subject to Microsoft Graph throttling and the MCP server limits.
+
+- The MCP server honors the signed-in user's role and the delegated scopes granted to the MCP client. It doesn't expand the user's access to provisioning data.
+
+- Natural-language responses are generated summaries. For investigations and support cases, verify the underlying Microsoft Graph request and use identifiers such as `changeId`, `jobId`, and object IDs from the response.
+
+
 ## Error codes
 
 Use the following table to better understand how to resolve errors that you find in the provisioning logs.
@@ -156,9 +213,14 @@ Use the following table to better understand how to resolve errors that you find
 | InvitationCreation<br/>FailureAmbiguousUser| The invited user has a proxy address that matches an internal user in the target tenant. The proxy address must be unique. | To resolve this error, delete the existing internal user in the target tenant or remove this user from sync scope.|
 | AzureActiveDirectory<br/>CannotUpdateObjects<br/>MasteredOnPremises| If the user in the target tenant was originally synchronized from AD to Microsoft Entra ID and converted to an external user, the source of authority is still on-premises and the user can't be updated.| The user can't be updated with cross-tenant synchronization. |
 | EntityTypeNotSupported|Groups can be used to determine what users are in scope for provisioning. Groups objects cannot be synchronized. | No customer action is required. This is a skipped event. If you are using the provisioning on-demand, ensure that you choose a user rather than a group to provision.|
+| AzureActiveDirectoryConflictEncountered|There is a conflicting object in the target tenant. | Check if there is a contact in the target tenant with the same mail. Delete the contact from the target tenant to ensure that the B2B user can be updated. Take care to migrate any group memberships from the contact to the B2B user as needed.|
 
 ## Related content
 
 - [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)
 - [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/troubleshoot.md)
 - [Graph API for provisioning logs](/graph/api/resources/provisioningobjectsummary)
+- [Overview of Microsoft MCP Server for Enterprise](/graph/mcp-server/overview)
+- [Get started with Microsoft MCP Server for Enterprise](/graph/mcp-server/get-started)
+- [Sample prompts for Microsoft MCP Server for Enterprise](/graph/mcp-server/mcp-server-sample-prompts)
+- [List provisioningObjectSummary](/graph/api/provisioningobjectsummary-list)

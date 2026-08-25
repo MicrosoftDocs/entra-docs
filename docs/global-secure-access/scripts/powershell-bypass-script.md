@@ -1,17 +1,14 @@
 ---
 title: PowerShell sample - Add a custom bypass rule to internet access forwarding profile
 description: PowerShell example that bypasses a certain fqdn or IP from being acquired by the Global Secure Access Client in the Internet Access forwarding profile.
-author: fgomulka
-manager: ashishj
-ms.service: global-secure-access
 ms.topic: sample
 ms.date: 06/06/2025
-ms.author: frankgomulka
 ai-usage: ai-assisted
-ms.reviewer: frankgomulka
 ---
 
 # Add a custom bypass rule to Global Secure Access Internet Access
+
+## Overview
 
 This PowerShell script demonstrates how to programmatically add a custom bypass rule to the Microsoft Entra Internet Access forwarding policy. The script finds the "Custom Bypass" forwarding policy and adds a sample rule to bypass specified domains.
 

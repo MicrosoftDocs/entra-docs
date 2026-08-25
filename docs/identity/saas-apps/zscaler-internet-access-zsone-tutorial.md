@@ -1,14 +1,8 @@
 ---
 title: Configure Zscaler Internet Access ZSOne for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSOne.
-author: nguhiu
-manager: mwongerapk
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 04/10/2024
-ms.author: gideonkiratu
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSOne so that I can control who has access to Zscaler Internet Access ZSOne, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -21,11 +15,15 @@ In this article,  you learn how to integrate Zscaler Internet Access ZSOne with 
 * Enable your users to be automatically signed-in to Zscaler Internet Access ZSOne with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Zscaler Internet Access ZSOne is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
+
 ## Prerequisites
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Zscaler Internet Access ZSOne single sign-on (SSO) enabled subscription.
 
 ## Scenario description

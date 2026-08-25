@@ -1,13 +1,8 @@
 ---
 title: Certificate signing options in a SAML token
 description: Learn how to use advanced certificate signing options in the SAML token for preintegrated apps in Microsoft Entra ID
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: concept-article
 ms.date: 07/10/2025
-ms.author: jomondi
 ms.reviewer: saumadan
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps, sfi-image-nochange
@@ -44,7 +39,7 @@ Microsoft Entra ID supports two signing algorithms, or secure hash algorithms (S
 
 To change an application's SAML certificate signing options and the certificate signing algorithm, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, Application Administrator.
 
 

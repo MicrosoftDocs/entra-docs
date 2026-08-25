@@ -1,14 +1,11 @@
 ---
 title: Customize emails sent from workflow tasks
 description: Get a step-by-step guide for customizing emails that you send by using tasks within lifecycle workflows.
-author: owinfreyATL
-ms.author: owinfrey
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 09/22/2025
+ms.date: 03/12/2026
 ms.custom: template-how-to
+#Customer Intent: As an IT admin, I want to customize the emails sent from lifecycle workflow tasks so that I can tailor notifications to my organization's needs.
 ---
 
 # Customize emails sent from workflow tasks
@@ -45,7 +42,7 @@ When you're customizing an email sent via lifecycle workflows, you can choose to
 
 1. On the pane that lists tasks, select the task for which you want to customize the email.
 
-1. On the pane for the specific task under **Basics**, you can  edit the task name or description, along with configuring which recipient or recipients you want to send the email to outside the default audience. You can set the To recipient to the user, their manager, their sponsor, or specific users, and Cc additional users as needed. If the user is the recipient, you can select which of their available email addresses to use from the mail, otherMails, directoryExtensions, or custom security attributes fields.
+1. On the pane for the specific task under **Basics**, you can edit the task name or description, along with configuring which recipient or recipients you want to send the email to outside the default audience. You can set the To recipient to the user, their manager, their sponsor, or specific users, and Cc additional users as needed. If the user is the recipient, you can select which of their available email addresses to use from the mail, otherMails, directoryExtensions, or custom security attributes fields.
 
    :::image type="content" source="media/customize-workflow-email/email-recipient-list-new.png" alt-text="Screenshot of the recipient list for an email customization task.":::
    
@@ -69,7 +66,7 @@ Emails sent by workflows can have their text customized to personalize, or stres
 
 - **Bold**: Text within emails can be bolded by placing the desired text within `<b></b>` brackets.
 - **Italics**: Text within emails can be italicized by placing the desired text within `<i></i>` brackets.
-- **Underlined**: Text within emails can be italicized by placing the desired text within `<u></u>` brackets.
+- **Underlined**: Text within emails can be underlined by placing the desired text within `<u></u>` brackets.
 - **Links**: Hyperlinks can be added to text by placing the desired link within `<a href=> </a>` brackets.
 
     > [!NOTE]
@@ -78,11 +75,11 @@ Emails sent by workflows can have their text customized to personalize, or stres
 
 ### Format attributes within customized emails
 
-To further personalize customized emails, you can take advantage of dynamic attributes. By placing dynamic attributes in specific attributes, you can specifically call out values such as a user's name, their generated Temporary Access Pass, or even their manager's email.
+In the message body, you can customize the email text to personalize it for each recipient. You can optionally include built-in user attributes, custom security attributes, directory extensions, and on-premises extension attributes by embedding them in the text. Before the email is sent, the placeholders are replaced with the actual user information.
 
-To use dynamic attributes within your customized emails, you must follow formatting rules. The proper format is:
+To use dynamic attributes within your customized emails, you must follow formatting rules. The proper format for user attributes is:
 
-`{{dynamic attribute}}`
+`{{user.graphPropertyName}}`
 
 The following screenshot is an example of the proper format for dynamic attributes within a customized email:
 
@@ -91,7 +88,7 @@ The following screenshot is an example of the proper format for dynamic attribut
 When you're typing a dynamic attribute, the email is written in the following way:
 
 ```html
-Welcome to the team, {{userGivenName}}
+Welcome to the team, {{user.givenName}}
 
 We're excited to have you join our growing team and look forward to a successful and memorable journey together.
 
@@ -101,7 +98,21 @@ For more information and next steps, please contact your manager, {{managerDispl
 
 ```
 
+The following table shows examples of the dynamic attributes available within emails:
+
+| Attribute type | Examples |
+|---|---|
+| Built-in user attributes | `{{user.displayName}}`, `{{user.userPrincipalName}}`, `{{user.employeeHireDate}}`, `{{user.employeeLeaveDateTime}}`, `{{user.createdDateTime}}`, `{{user.employeeType}}`, `{{user.department}}`, `{{user.companyName}}`, `{{user.jobTitle}}` |
+| Temporary Access Pass | `{{temporaryAccessPass}}` |
+| Employee organizational data | `{{user.employeeOrgData/costCenter}}`, `{{user.employeeOrgData/division}}` |
+| Custom security attributes | `{{user.customSecurityAttributes/attributeSet/attribute}}` |
+| On-premises extension attributes | `{{user.onPremisesExtensionAttributes/extensionAttribute1}}` |
+| Manager attributes | `{{managerDisplayName}}`, `{{managerEmail}}` |
+
 For a full list of dynamic attributes that you can use with customized emails, see [Dynamic attributes within email](lifecycle-workflow-tasks.md#dynamic-attributes-within-email).
+
+> [!IMPORTANT]
+> The `{{user.graphPropertyName}}` attribute format applies to new custom email tasks. Existing customized email tasks on workflows that were configured before this change are not affected and continue to work with their existing attribute formatting.
 
 ## Use custom branding and domain in emails sent via workflows
 

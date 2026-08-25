@@ -2,18 +2,10 @@
 title: Configure GitHub Enterprise Server for Single Sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Server.
 
-author: nguhiu
-manager: mwongerapk
-ms.reviewer: jomondi
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: gideonkiratu
-
+ms.date: 02/13/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Server so that I can control who has access to GitHub Enterprise Server, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure GitHub Enterprise Server for Single sign-on with Microsoft Entra ID
 
@@ -27,7 +19,7 @@ In this article, you learn how to integrate GitHub Enterprise Server with Micros
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * GitHub Enterprise Server, ready for [initialization](https://docs.github.com/enterprise-server/admin/overview/about-github-enterprise-server).
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
@@ -39,6 +31,9 @@ In this article, you configure and test Microsoft Entra SSO in a test environmen
 * GitHub Enterprise Server supports **SP** and **IDP** initiated SSO.
 * GitHub Enterprise Server supports **Just In Time** user provisioning.
 * GitHub Enterprise Server supports [Automated user provisioning](./github-enterprise-server-provisioning-tutorial.md).
+
+> [!NOTE]
+> The GitHub Enterprise Server application currently doesn't support SCIM provisioning in government cloud platforms. This limitation is due to GitHub Enterprise Server requiring the `User-Agent` header, which isn't included in provisioning requests sent from government cloud environments.
 
 ## Add GitHub Enterprise Server from the gallery
 
