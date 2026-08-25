@@ -1,14 +1,8 @@
 ---
 title: Understand how expression builder works with Application Provisioning in Microsoft Entra ID
 description: Understand how expression builder works with Application Provisioning in Microsoft Entra ID.
-
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: concept-article
-ms.date: 03/04/2025
-ms.author: jfields
+ms.date: 08/06/2026
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -23,9 +17,7 @@ For reference on building expressions, see [Reference for writing expressions fo
 
 ## Finding the expression builder
 
-In application provisioning, you use expressions for attribute mappings. You access Express Builder on the attribute-mapping page by selecting **Show advanced options** and then select **Expression builder**.
-
-:::image type="content" source="media/expression-builder/accessing-expression-builder.png" alt-text="The checkbox to show advanced settings is selected and a link is shown that says expression builder" lightbox="media/expression-builder/accessing-expression-builder.png":::
+In application provisioning, you use expressions for attribute mappings. You access Expression Builder on the attribute mapping page by selecting the **Expression builder** from the left navigation menu.
 
 ## Using expression builder
 
@@ -37,6 +29,7 @@ When you're satisfied with the expression, move it to an attribute mapping. Copy
 
 ## Known limitations
 * Extension attributes aren't available for selection in the expression builder. However, extension attributes can be used in the attribute mapping expression. 
+* The maximum supported length for a single attribute mapping expression is **10,000 characters**.
 
 ## Next steps
 

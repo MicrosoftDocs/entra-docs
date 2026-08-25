@@ -1,14 +1,8 @@
 ---
 title: Plan cloud HR application to Microsoft Entra user provisioning
 description: This article describes the deployment process of integrating cloud HR systems, such as Workday and SuccessFactors, with Microsoft Entra ID. Integrating Microsoft Entra ID with your cloud HR system results in a complete identity lifecycle management system.
-
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 07/24/2025
-ms.author: jfields
 ms.reviewer: arvinh
 ---
 
@@ -360,7 +354,7 @@ When you initiate the Joiners process, gather the following requirements:
 - Do you plan to use the cloud HR app to Microsoft Entra user provisioning to manage both employees and contingent workers?
 - Do you plan to roll out the cloud HR app to Microsoft Entra user provisioning only for a subset of the cloud HR app users? An example might be employees only.
 
-Depending on your requirements, when you configure attribute mappings, you can set the **Source Object Scope** field to select which sets of users in the cloud HR app should be in scope for provisioning to Active Directory. For more information, see the cloud HR app tutorial for commonly used scoping filters.
+Depending on your requirements, when you configure attribute mappings, you can use scoping filters to select which sets of users in the cloud HR app should be in scope for provisioning to Active Directory. For more information, see the cloud HR app tutorial for commonly used scoping filters.
 
 ### Determine matching attributes
 

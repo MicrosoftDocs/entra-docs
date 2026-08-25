@@ -2,18 +2,11 @@
 title: 'Microsoft Entra Connect Sync: Understand and customize synchronization'
 description: Explains how Microsoft Entra Connect Sync works and how to customize.
 
-author: omondiatieno
-manager: mwongerapk
-
 ms.assetid: ee4bf802-045b-4da0-986e-90aba2de58d6
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Microsoft Entra Connect Sync: Understand and customize synchronization
 The Microsoft Entra Connect synchronization services (Microsoft Entra Connect Sync) is a main component of Microsoft Entra Connect. It takes care of all the operations that are related to synchronize identity data between your on-premises environment and Microsoft Entra ID. Microsoft Entra Connect Sync is the successor of DirSync and Azure AD Sync.
@@ -33,7 +26,7 @@ The sync service consists of two components, the on-premises **Microsoft Entra C
 
 <a name='azure-ad-connect-sync-topics'></a>
 
-## Microsoft Entra Connect Sync topics
+## Feature and configuration reference
 | Topic | What it covers and when to read |
 | --- | --- |
 | **Microsoft Entra Connect Sync fundamentals** | |

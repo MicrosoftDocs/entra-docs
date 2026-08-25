@@ -1,15 +1,11 @@
 ---
 title: Overview of Microsoft Entra role-based access control (RBAC)
 description: Learn how to understand the parts of a role assignment and restricted scope in Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: overview
-ms.date: 03/30/2025
-ms.author: barclayn
+ms.date: 06/01/2026
 ms.reviewer: abhijeetsinha
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Overview of role-based access control in Microsoft Entra ID
@@ -100,6 +96,36 @@ Microsoft Entra ID provides multiple options for assigning roles:
 - You can assign roles to users directly, which is the default way to assign roles. Both built-in and custom Microsoft Entra roles can be assigned to users, based on access requirements. For more information, see [Assign Microsoft Entra roles](manage-roles-portal.md).
 - With Microsoft Entra ID P1, you can create role-assignable groups and assign roles to these groups. Assigning roles to a group instead of individuals allows for easy addition or removal of users from a role and creates consistent permissions for all members of the group. For more information, see [Assign Microsoft Entra roles](manage-roles-portal.md).
 - With Microsoft Entra ID P2, you can use Microsoft Entra Privileged Identity Management (Microsoft Entra PIM) to provide just-in-time access to roles. This feature allows you to grant time-limited access to a role to users who require it, rather than granting permanent access. It also provides detailed reporting and auditing capabilities. For more information, see [Assign Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
+
+## Understand who has access to what
+
+Listing role assignments is one part of answering the broader question: "who has access to what in my organization?" Microsoft Entra ID provides several tools that, when used together, give you visibility into access across your tenant.
+
+- **Role assignments.** Use the procedures in [List Microsoft Entra role assignments](view-assignments.md) to list who holds Microsoft Entra roles at the tenant, application, or administrative unit scope. You can [download role assignments](view-assignments.md#download-role-assignments) as a CSV for offline analysis, or query them programmatically with the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) Microsoft Graph API.
+- **App role assignments and consent grants.** Use [Assign users and groups to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to see which users and groups can access a given enterprise application. Use [Review permissions granted to applications](~/identity/enterprise-apps/manage-application-permissions.md) to inspect the delegated and application permissions that users or administrators have consented to.
+- **Custom security attributes.** Use [custom security attributes](~/fundamentals/custom-security-attributes-overview.md) to tag users and service principals with business-specific attributes that you define for your tenant. You can then filter and query the directory by attribute to build a business-attribute view of access that complements role-based queries.
+- **Access reviews.** Use [access reviews](~/id-governance/access-reviews-overview.md) to periodically verify that users still need their current group memberships and assignments to enterprise applications. Use [Privileged Identity Management (PIM) access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) to review users and service principals assigned to Microsoft Entra or Azure resource roles. Reviewers approve or deny continued access for each user. Access reviews require Microsoft Entra ID Governance or Microsoft Entra Suite; some capabilities operate with Microsoft Entra ID P2. For details, see [License requirements](~/id-governance/access-reviews-overview.md#license-requirements). Reviewing service principals via PIM additionally requires Microsoft Entra Workload ID Premium.
+- **Entitlement management.** Use [entitlement management](~/id-governance/entitlement-management-overview.md) to see which users have been granted access through access packages. Access packages are organized into catalogs, which are containers of related resources and access packages that you can use to delegate and govern access. Entitlement management requires Microsoft Entra ID Governance or Microsoft Entra Suite; some capabilities operate with Microsoft Entra ID P2. For details, see [License requirements](~/id-governance/entitlement-management-overview.md#license-requirements).
+- **Sign-in and audit logs.** Use [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) to see who has been actively accessing resources and under what conditions. Use [audit logs](~/identity/monitoring-health/concept-audit-logs.md) to track changes to role assignments, group memberships, and other directory objects over time. Audit logs record configuration changes, while sign-in logs record sign-in events — together they help you distinguish between granted access and exercised access. For richer tracing of Microsoft Graph API calls, see [Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview).
+
+> [!TIP]
+> For large tenants, stream logs to a [Log Analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) so you can query and analyze access patterns across thousands of users and roles.
+
+## Govern access for workload identities
+
+A complete authorization-at-scale strategy must cover workload identities — applications, service principals, and managed identities — not just users. Microsoft Entra supports several methods for establishing machine identities, each suited to a different scenario:
+
+- **[App registration](~/identity-platform/quickstart-register-app.md).** Register an [application object](~/identity-platform/app-objects-and-service-principals.md) to create a service principal that authenticates with a client secret, certificate, or federated credential. Use for traditional applications and platform integrations.
+- **[Managed identities](~/identity/managed-identities-azure-resources/overview.md).** Use system-assigned or user-assigned managed identities for workloads running in Azure. Azure manages the credentials for you, so no secrets are stored in code or configuration.
+- **[Workload identity federation](~/workload-id/workload-identity-federation.md).** Configure trust between Microsoft Entra and an external identity provider so workloads outside Azure — or workloads in Azure that authenticate as app registrations — can access Microsoft Entra protected resources without storing secrets.
+- **[Flexible federated identity credentials (preview)](~/workload-id/workload-identities-flexible-federated-identity-credentials.md).** Extend the secretless pattern for app registrations to scenarios that require wildcard or claims-based matching against tokens issued by GitHub, GitLab, or Terraform Cloud.
+
+Govern these identities at scale with the same layered controls you apply to users:
+
+- Apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md) to restrict where and when a service principal can authenticate. This capability requires Workload Identities Premium licenses and applies only to single-tenant service principals registered in your tenant — managed identities and multitenant or third-party SaaS apps aren't in scope.
+- Run [access reviews of groups and applications](~/id-governance/create-access-review.md) to confirm that users assigned to those resources still need their access, and use [PIM access reviews](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) to review service principals assigned to Microsoft Entra and Azure resource roles. Reviews of groups and applications require Microsoft Entra ID Governance or Microsoft Entra Suite (some capabilities are available with Microsoft Entra ID P2); for details, see [License requirements](~/id-governance/access-reviews-overview.md#license-requirements). Reviews of service principals additionally require Microsoft Entra Workload ID Premium.
+- Tag service principals for your registered applications with [custom security attributes](~/fundamentals/custom-security-attributes-overview.md) so you can build a filterable inventory and drive [Azure ABAC](/azure/role-based-access-control/conditions-custom-security-attributes) decisions from business attributes.
+- Enable [app instance property lock](~/identity-platform/howto-configure-app-instance-property-locks.md) on multitenant apps to prevent unauthorized modification of sensitive properties on the service principal after the app is provisioned in another tenant.
 
 ## License requirements
 

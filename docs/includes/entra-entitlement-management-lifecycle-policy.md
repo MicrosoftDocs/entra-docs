@@ -3,7 +3,6 @@ title: include file
 description: include file
 
 author: owinfreyATL
-manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 02/27/2023
@@ -13,7 +12,7 @@ ms.custom: include file
 
 ## Specify a lifecycle
 
-On the **Lifecycle** tab, you specify when a user's assignment to the access package expires. You can also specify whether users can extend their assignments.
+On the **Lifecycle** tab, you specify when an identity's assignment to the access package expires. You can also specify whether identities can extend their assignments.
 
 1. In the **Expiration** section, set **Access package assignments expire** to **On date**, **Number of days**, **Number of hours**, or **Never**.
 

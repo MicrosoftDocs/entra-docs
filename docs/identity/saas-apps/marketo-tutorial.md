@@ -1,17 +1,11 @@
 ---
 title: Configure Marketo for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Marketo.
-author: nguhiu
-manager: mwongerapk
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Marketo so that I can control who has access to Marketo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Marketo for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Marketo with Microsoft Entra ID.
@@ -31,7 +25,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Marketo supports **IDP** initiated SSO.
+* Marketo supports **identity provider (IdP)**-initiated SSO.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -108,8 +102,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Marketo SSO
 
-
-
+Follow these steps to configure SSO settings in Marketo and collect the values needed for Microsoft Entra ID.
 
 1. In a different web browser window, sign in to your Marketo company site as an administrator
 
@@ -129,7 +122,7 @@ Follow these steps to enable Microsoft Entra SSO.
    
     ![Configure Single Sign-On3](./media/marketo-tutorial/tutorial_marketo_12.png) 
 
-2. To configure the SSO in the application, follow the below steps:
+2. To configure the SSO in the application, follow these steps:
    
     a. Log in to Marketo app using admin credentials.
    
@@ -156,7 +149,7 @@ Follow these steps to enable Microsoft Entra SSO.
     ![Configure Single Sign-On7](./media/marketo-tutorial/tutorial_marketo_09.png)
    
     > [!NOTE]
-    > If your User Identifier isn't UPN value then change the value in the Attribute tab.
+    > If your User Identifier isn't a UPN value, change it on the **Attribute** tab in the Marketo Single Sign-On settings.
    
     i. Upload the certificate, which you have downloaded from Microsoft Entra configuration wizard. **Save** the settings.
    

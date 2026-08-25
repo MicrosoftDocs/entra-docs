@@ -14,6 +14,8 @@
       href: managed-identity-best-practice-recommendations.md
     - name: Isolation scope for user-assigned managed identities
       href: managed-identities-isolation-scope.md
+    - name: Assignment restriction
+      href: managed-identities-assignment-restriction.md
 - name: How-to guides
   items:
     - name: Manage user-assigned managed identities
@@ -54,6 +56,8 @@
       href: how-to-view-managed-identity-activity.md
     - name: Configure isolation scope
       href: configure-managed-identities-isolation-scope.md
+    - name: Configure assignment restriction
+      href: configure-managed-identities-assignment-restriction.md
     - name: Assign managed identities using Azure Policy (preview)
       href: how-to-assign-managed-identity-via-azure-policy.md
     - name: Relocate a managed identity to another region

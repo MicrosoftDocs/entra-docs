@@ -1,10 +1,8 @@
 ---
 title: Access tokens in the Microsoft identity platform
 description: Learn about access tokens used in the Microsoft identity platform.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 05/14/2025
 ms.service: identity-platform
 
@@ -14,9 +12,9 @@ ms.topic: concept-article
 
 # Access tokens in the Microsoft identity platform
 
-Access tokens are a type of security token designed for authorization, granting access to specific resources on behalf on an authenticated user. Information in access tokens determines whether a user has the right to access a particular resource, similar to keys unlocking specific doors in a building. These individual pieces of information that make up tokens are called claims. Therefore, they are sensitive credentials and pose a security risk if not handled correctly. Access tokens differ from [ID tokens](./id-tokens.md) which serve as proof of authentication.
+Access tokens are a type of security token designed for authorization, granting access to specific resources on behalf of an authenticated user. Information in access tokens determines whether a user has the right to access a particular resource, similar to keys unlocking specific doors in a building. These individual pieces of information that make up tokens are called claims. Therefore, they are sensitive credentials and pose a security risk if not handled correctly. Access tokens differ from [ID tokens](./id-tokens.md) which serve as proof of authentication.
 
-Access tokens enable clients to securely call protected web APIs. Although client applications can receive and use access tokens, they should be treated as opaque strings. The client application shouldn't attempt to validate access tokens. The resource server should validate the access token before accepting it as proof of authorization. The contents of the token are intended only for the API, which means that access tokens must be treated as opaque strings. For validation and debugging purposes *only*, developers can decode JWTs using a site like [jwt.ms](https://jwt.ms). Tokens that a Microsoft API receives might not always be a JWT that can be decoded.
+Access tokens enable clients to securely call protected web APIs. Although client applications can receive and use access tokens, they should treat them as opaque strings. The client application shouldn't attempt to validate access tokens. The resource server should validate the access token before accepting it as proof of authorization. The contents of the token are intended only for the API, which means that access tokens must be treated as opaque strings. For validation and debugging purposes *only*, developers can decode JWTs using a site like [jwt.ms](https://jwt.ms). Tokens that a Microsoft API receives might not always be a JWT that can be decoded.
 
 Clients should use the token response data that's returned with the access token for details on what's inside it. When the client requests an access token, the Microsoft identity platform also returns some metadata about the access token for the consumption of the application. This information includes the expiry time of the access token and the scopes for which it's valid. This data allows the application to do intelligent caching of access tokens without having to parse the access token itself. This article explains essential information about access tokens, including formats, ownership, lifetimes and how APIs can validate and use the claims inside an access token.  
 
@@ -41,13 +39,13 @@ Web APIs have one of the following versions selected as a default during registr
     eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSJ9.eyJhdWQiOiI2ZTc0MTcyYi1iZTU2LTQ4NDMtOWZmNC1lNjZhMzliYjEyZTMiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3L3YyLjAiLCJpYXQiOjE1MzcyMzEwNDgsIm5iZiI6MTUzNzIzMTA0OCwiZXhwIjoxNTM3MjM0OTQ4LCJhaW8iOiJBWFFBaS84SUFBQUF0QWFaTG8zQ2hNaWY2S09udHRSQjdlQnE0L0RjY1F6amNKR3hQWXkvQzNqRGFOR3hYZDZ3TklJVkdSZ2hOUm53SjFsT2NBbk5aY2p2a295ckZ4Q3R0djMzMTQwUmlvT0ZKNGJDQ0dWdW9DYWcxdU9UVDIyMjIyZ0h3TFBZUS91Zjc5UVgrMEtJaWpkcm1wNjlSY3R6bVE9PSIsImF6cCI6IjZlNzQxNzJiLWJlNTYtNDg0My05ZmY0LWU2NmEzOWJiMTJlMyIsImF6cGFjciI6IjAiLCJuYW1lIjoiQWJlIExpbmNvbG4iLCJvaWQiOiI2OTAyMjJiZS1mZjFhLTRkNTYtYWJkMS03ZTRmN2QzOGU0NzQiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhYmVsaUBtaWNyb3NvZnQuY29tIiwicmgiOiJJIiwic2NwIjoiYWNjZXNzX2FzX3VzZXIiLCJzdWIiOiJIS1pwZmFIeVdhZGVPb3VZbGl0anJJLUtmZlRtMjIyWDVyclYzeERxZktRIiwidGlkIjoiNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3IiwidXRpIjoiZnFpQnFYTFBqMGVRYTgyUy1JWUZBQSIsInZlciI6IjIuMCJ9.pj4N-w_3Us9DrBLfpCt
     ```
 
-Set the version for applications by providing the appropriate value to the `accessTokenAcceptedVersion` setting in the [app manifest](reference-app-manifest.md#manifest-reference). The values of `null` and `1` result in v1.0 tokens, and the value of `2` results in v2.0 tokens.
+Set the version for applications by providing the appropriate value to the `requestedAccessTokenVersion` setting in the [app manifest](reference-app-manifest.md#manifest-reference). The values of `null` and `1` result in v1.0 tokens, and the value of `2` results in v2.0 tokens.
 
 ## Token ownership
 
 An access token request involves two parties: the client, who requests the token, and the resource (Web API) that accepts the token. The resource that the token is intended for (its *audience*) is defined in the `aud` claim in a token. Clients use the token but shouldn't understand or attempt to parse it. Resources accept the token.  
 
-The Microsoft identity platform supports issuing any token version from any version endpoint. For example, when the value of `accessTokenAcceptedVersion` is `2`, a client calling the v1.0 endpoint to get a token for that resource receives a v2.0 access token.
+The Microsoft identity platform supports issuing any token version from any version endpoint. For example, when the value of `requestedAccessTokenVersion` is `2`, a client calling the v1.0 endpoint to get a token for that resource receives a v2.0 access token.
 
 Resources always own their tokens using the `aud` claim and are the only applications that can change their token details.
 

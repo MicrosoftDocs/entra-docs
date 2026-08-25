@@ -1,13 +1,7 @@
 ---
 title: Configure Isolation Scope For User Assigned Managed Identities
 description: Learn how to configure isolation scope for user-assigned managed identities to improve security and resilience.
-
-author: SHERMANOUKO
-manager: pmwongera
-ms.author: shermanouko
 ms.reviewer: arluca
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 07/17/2025
 ---
@@ -20,7 +14,7 @@ This article shows you how to configure isolation scope for user-assigned manage
 
 Before you begin, ensure you have the following:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 - Read the [Isolation scope for user-assigned managed identities](managed-identities-isolation-scope.md) concept article to understand the benefits and implications.
 

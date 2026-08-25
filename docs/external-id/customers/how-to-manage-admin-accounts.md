@@ -1,16 +1,10 @@
 ---
 title: Add and manage admin accounts
 description: Learn how to add and manage admin accounts in your external tenant with Microsoft Entra External ID.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: how-to
-ms.date: 03/10/2025
+ms.date: 04/17/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 
 ---
 # Add and manage admin accounts
@@ -31,7 +25,7 @@ See also [Manage user accounts for consumers and business customers](how-to-mana
 
 ## Add an admin account
 
-Use the following steps to create a new user account and to grant admin permissions to the account by adding a Microsoft Entra role. (Only required steps are described here. For a complete description of all properties, see the Microsoft Entra ID article [How to create users](~/fundamentals/how-to-create-delete-users.yml#create-a-new-user).)
+Use the following steps to create a new user account and to grant admin permissions to the account by adding a Microsoft Entra role. (Only required steps are described here. For a complete description of all properties, see the Microsoft Entra ID article [How to create users](~/fundamentals/how-to-create-delete-users.md#create-a-new-user).)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
@@ -81,6 +75,9 @@ You can also invite a new guest user to manage your tenant. To invite a new gues
 
 An invitation email is sent to the user. The user needs to accept the invitation to be able to sign in.
 
+> [!NOTE]
+> You can invite external users for administrative purposes only. You can’t use this feature to invite customers to sign in to your apps. [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) isn’t compatible with customer identity and access management (CIAM) user flows.
+
 ## Change or add a role assignment
 
 You can assign a role when you create a user or invite a guest user. You can add a role, change the role, or remove a role for a user:
@@ -108,13 +105,13 @@ As part of an auditing process, you typically review which users are assigned to
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Entra ID** > **Roles & admins**.
-2. Select a role, such as **User Administrator**. The **Assignments** page lists the users with that role.
+1. Select a role, such as **User Administrator**. The **Assignments** page lists the users with that role.
 
 ## Delete an administrator account
 
 To delete an existing user, you must have at least the [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role assignment. [Privileged Authentication Administrators](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) can delete any user, including other admins. *User Administrators* can delete any non-admin user.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Authentication Administrators](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Entra ID** > **Users**.
 1. Select the user you want to delete.
@@ -124,6 +121,6 @@ The user is deleted and no longer appears on the **All users** page. The user ca
 
 ## Protect administrative accounts
 
-We recommended that you protect all administrator accounts with multifactor authentication (MFA) for more security. MFA is an identity verification process during sign in that prompts the user for a one-time passcode.
+We recommend that you protect all administrator accounts with multifactor authentication (MFA). MFA is an identity verification process during sign-in that prompts the user for a one-time passcode.
 
 [!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]

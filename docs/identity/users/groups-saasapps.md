@@ -1,17 +1,15 @@
 ---
 title: Use a group to manage access to SaaS apps
 description: Learn how to use groups in Microsoft Entra ID to assign access to SaaS applications that are integrated with Microsoft Entra ID.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: users
 ms.topic: how-to
 ms.date: 12/13/2024
-ms.author: barclayn
-ms.reviewer: krbain
+ms.reviewer: yukarppa
 ms.custom: it-pro, sfi-image-nochange
 ---
 # Use a group to manage access to SaaS applications
+
+
+## Overview
 
 When you use Microsoft Entra ID with a Microsoft Entra ID P1 or P2 license plan, you can use groups to assign access to software as a service (SaaS) applications integrated with Microsoft Entra ID.
 
@@ -32,12 +30,12 @@ With Microsoft Entra ID, you can save time by managing the membership of the mar
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Go to **Applications** > **Enterprise applications** to open **All applications** in the Application Gallery.
 
-   :::image type="content" source="./media/domains-manage/enterprise-apps.png" alt-text="Screenshot that shows the Application Gallery.":::
+    :::image type="content" source="./media/domains-manage/enterprise-apps.png" alt-text="Screenshot that shows the Application Gallery.":::
 
 1. Select an application that you added from the Application Gallery to open it.
 1. On the left pane, select **Users and groups**, and then select **Add user/group**.
 1. On **Add Assignment**, select **Users and groups** to open the **Users and groups** selection list.
-1. Select as many groups or users as you want, and then select or tap **Select** to add them to the **Add Assignment** list. You can also assign a role to a user at this stage.
+1. Select as many groups or users as you want, and then select **Select** to add them to the **Add Assignment** list. You can also assign a role to a user at this stage.
 1. Select **Assign** to assign the users or groups to the selected enterprise application.
 
 ## Next steps

@@ -2,12 +2,8 @@
 title: Establish applications in the Microsoft Entra ID ecosystem
 description: Use Microsoft Entra ID to help establish identity for applications to request tokens and for APIs to access resources.
 customer-intent: As an independent software developer, I want to learn how to use Microsoft Entra ID to establish identity so my apps request tokens and my APIs access resources.
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.topic: article
+ms.topic: concept-article
 ms.date: 03/14/2024
-ms.author: jricketts
 ---
 # Establish applications in the Microsoft Entra ID ecosystem 
 

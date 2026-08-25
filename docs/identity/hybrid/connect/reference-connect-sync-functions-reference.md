@@ -2,18 +2,11 @@
 title: 'Microsoft Entra Connect Sync: Functions Reference'
 description: Reference of declarative provisioning expressions in Microsoft Entra Connect Sync.
 
-author: omondiatieno
-manager: mwongerapk
-
 ms.assetid: 4f525ca0-be0e-4a2e-8da1-09b6b567ed5f
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # Microsoft Entra Connect Sync: Functions Reference
 In Microsoft Entra Connect, functions are used to manipulate an attribute value during synchronization.  

@@ -1,19 +1,17 @@
 ---
-title: Troubleshoot Kerberos Constrained Delegation
+title: Troubleshoot Kerberos constrained delegation
 description: Learn how to troubleshoot a Kerberos constrained delegation (KCD) configuration in Microsoft Entra application proxy.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 05/01/2025
-ms.author: kenwith
-ms.reviewer: asteen, ashishj
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot Kerberos constrained delegation
+
+
+## Overview
 
 Single sign-on (SSO) methods vary between applications. Microsoft Entra application proxy provides Kerberos constrained delegation (KCD) by default. In application proxy, a user authenticates to a private application by using Kerberos.
 
@@ -102,7 +100,7 @@ To troubleshoot an application issue:
 
 1. Ensure the application is accessible. Sign in directly from the browser on the connector host using the internal URL defined in the Azure portal. If the sign-in succeeds, the application is accessible.
 
-1. Check if the browser and application are using Kerberos for authentication. From the connector host, use Internet Explorer's DevTools (press **F12**) or [Fiddler](https://blogs.msdn.microsoft.com/crminthefield/2012/10/10/using-fiddler-to-check-for-kerberos-auth/) to access the application via the internal URL. Look for "Negotiate" or "Kerberos" in the web authorization headers in the application's response.
+1. Check if the browser and application are using Kerberos for authentication. From the connector host, use Internet Explorer's DevTools (press **F12**) or Fiddler to access the application via the internal URL. Look for "Negotiate" or "Kerberos" in the web authorization headers in the application's response.
 
    The browser response to the application includes a Kerberos blob that starts with `YII`, confirming that Kerberos is running. In contrast, a response from Microsoft NT LAN Manager (NTLM) always begins with `TlRMTVNTUAAB`. When decoded from Base64, this response reads NTLM Security Support Provider (NTLMSSP). If the blobs start with `TlRMTVNTUAAB`, Kerberos isn't available. If it doesn't, Kerberos is likely available.
 

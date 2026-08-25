@@ -1,16 +1,8 @@
 ---
-title: Configure how users consent to applications
-
+title: Configure How Users Consent to Applications
 description: Configure user consent settings in Microsoft Entra ID to control when and how users grant permissions to your organization's data. Secure your environment with step‑by‑step guidance.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 06/15/2025
-ms.author: jomondi
 ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
@@ -34,7 +26,7 @@ To reduce the risk of malicious applications attempting to trick users into gran
 
 To configure user consent, you need:
 
-- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
 - A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role is only required when using the Microsoft Entra admin center.
 
@@ -56,7 +48,7 @@ To configure user consent settings through the Microsoft Entra admin center:
 
 1. Select **Save** to save your settings.
 
-:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Screenshot of the 'User consent settings' pane.":::
+    :::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Screenshot of the User consent settings pane.":::
 
 :::zone-end
 

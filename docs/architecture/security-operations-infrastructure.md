@@ -1,13 +1,9 @@
 ---
 title: Microsoft Entra security operations for infrastructure
 description: Learn how to monitor and alert on infrastructure components to identify security threats.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
-ms.topic: article
+ms.topic: concept-article
 ms.date: 09/06/2022
-ms.author: jricketts
+ms.subservice: architecture
 ---
 
 # Security operations for infrastructure

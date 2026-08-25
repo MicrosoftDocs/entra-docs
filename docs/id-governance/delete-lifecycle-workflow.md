@@ -1,21 +1,18 @@
 ---
 title: Delete a lifecycle workflow
 description: Learn how to delete a lifecycle workflow.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/25/2025
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: krbain
+#Customer Intent: As an IT admin, I want to delete a lifecycle workflow so that I can remove workflows that are no longer needed.
 ---
 
 # Delete a lifecycle workflow
 
 You can remove workflows that you no longer need. Deleting these workflows helps keep your lifecycle strategy up to date.
 
-When a workflow is deleted, it enters a soft-delete state. During this period, you can still view it in the list of deleted workflows and restore it if needed. A workflow is permanently removed 30 days after it  enters a soft-delete state. If you don't want to wait 30 days for a workflow to be permanently deleted, you can manually delete it.
+When a workflow is deleted, it enters a soft-delete state. During this period, you can still view it in the list of deleted workflows and restore it if needed. A workflow is permanently removed 30 days after it enters a soft-delete state. If you don't want to wait 30 days for a workflow to be permanently deleted, you can manually delete it.
 
 ## Prerequisites
 

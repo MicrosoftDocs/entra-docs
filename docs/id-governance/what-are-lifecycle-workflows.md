@@ -1,13 +1,10 @@
 ---
 title: What are lifecycle workflows?
 description: Get an overview of the lifecycle workflow feature of Microsoft Entra ID.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: overview
-ms.date: 06/25/2024
-ms.author: owinfrey
+ms.date: 03/12/2026
+#Customer Intent: As an IT admin, I want to understand what lifecycle workflows are so that I can evaluate how to automate identity lifecycle management in my organization.
 ---
 
 # What are lifecycle workflows?
@@ -49,6 +46,7 @@ Key reasons to use lifecycle workflows include:
 - Manage user lifecycle at scale. As your organization grows, the need for other resources to manage user lifecycle decreases.
 - Reduce or remove manual tasks.
 - Apply logic apps to extend workflows for more complex scenarios with your existing logic apps.
+- Use [Microsoft Security Copilot to create and manage lifecycle workflows](../security-copilot/entra-lifecycle-workflows.md) using natural language.
 
 Those capabilities can help ensure a holistic experience by allowing you to remove other dependencies and applications to achieve the same result. You can then increase efficiency in new employee orientation and in removal of former employees from the system.
 
@@ -64,7 +62,7 @@ You can use lifecycle workflows to address any of the following conditions:
   - Lifecycle workflows can perform actions on the group, not just the membership.
 - **Workflow history and auditing**: Use lifecycle workflows when you need to create an audit trail of user lifecycle processes. By using the Microsoft Entra admin center, you can view history and audits for orientation and departure scenarios.
 - **Automating user account management**: A key part of the identity lifecycle process is making sure that users who are leaving have their access to resources revoked. You can use lifecycle workflows to automate the disabling and removal of user accounts.
-- **Automating Access Package Assignment**: Lifecycle workflows can be used to automate Assigning, and removing, Access packages for users.
+- **Automating Access Package Assignment**: Lifecycle workflows can be used to automate assigning, and removing, access packages for users.
 - **Integrating with logic apps**: You can apply logic apps to extend workflows for more complex scenarios.
 
 ## License requirements
@@ -82,3 +80,4 @@ With Lifecycle Workflows, you can:
 
 - [Create a custom workflow by using the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md)
 - [Create a lifecycle workflow](create-lifecycle-workflow.md)
+- [Manage lifecycle workflows with Microsoft Security Copilot](../security-copilot/entra-lifecycle-workflows.md)

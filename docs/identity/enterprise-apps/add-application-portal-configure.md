@@ -1,15 +1,9 @@
 ---
 title: Configure enterprise application properties
 description: Learn how to configure the properties of an enterprise to how users access and interact with the application.
-
-author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 06/10/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps
@@ -26,7 +20,7 @@ This article shows you where you can configure the properties of an enterprise a
 
 To configure the properties of an enterprise application, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: 
     - Cloud Application Administrator
     - Application Administrator, or owner of the service principal.

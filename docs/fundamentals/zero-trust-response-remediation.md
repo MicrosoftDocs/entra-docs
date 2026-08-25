@@ -2,17 +2,14 @@
 title: Security guidance | accelerate response and remediation
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to accelerate response and remediation.
 
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: concept-article
 ms.date: 09/12/2025
 
-ms.author: sarahlipsey
-author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
+#Customer Intent: As an IT admin, I want to understand how to accelerate response and remediation so that I can quickly recover from security incidents.
 ---
-# Accelerate response and remediation with the Zero Trust Assessment
+# Configure Microsoft Entra for Zero Trust: Accelerate response and remediation
 
 The ability to rapidly detect, respond to, and remediate security threats is critical in today's evolving threat landscape. As one of the pillars of the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars), accelerating response and remediation encourages organizations to minimize the time between threat detection and containment.
 
@@ -20,7 +17,7 @@ This pillar emphasizes automated, risk-based responses that reduce manual interv
 
 ## Zero Trust security recommendations
 
-### Workload identities based on risk policies are configured
+### Workload Identities are configured with risk-based policies
 [!INCLUDE [21883](../includes/secure-recommendations/21883.md)]
 
 ### Restrict high risk sign-ins

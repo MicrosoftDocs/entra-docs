@@ -1,12 +1,8 @@
 ---
 title: Microsoft Entra ID Protection overview
 description: Learn how the Microsoft Entra ID Protection overview dashboard provides a view into security posture.
-ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 06/05/2025
-author: shlipsey3
-ms.author: sarahlipsey
-manager: pmwongera
+ms.date: 03/20/2026
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---
@@ -16,7 +12,7 @@ Microsoft Entra ID Protection prevents identity compromises by detecting identit
 
 Our dashboard helps customers better analyze their security posture, understand how well they're protected, identify vulnerabilities, and perform recommended actions. 
 
-[![Screenshot showing the Microsoft Entra ID Protection overview dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard.png)
+:::image type="content" source="media/id-protection-dashboard/full-dashboard.png" alt-text="Screenshot showing the Microsoft Entra ID Protection overview dashboard." lightbox="media/id-protection-dashboard/full-dashboard-expanded.png":::
 
 This dashboard empowers organizations with rich insights and actionable recommendations tailored to your tenant. This information provides a better view into your organization’s security posture and lets you enable effective protections accordingly. You have access to key metrics, attack graphics, a map highlighting risky locations, top recommendations to enhance security posture, and recent activities.
 
@@ -62,7 +58,7 @@ To help you better understand your risk exposure, our attack graphic displays co
 
 [![Screenshot showing the attack graphic in the dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-attack-graphic.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-attack-graphic.png)
 
-#### What is considered an attack in Microsoft Entra ID Protection?
+#### What is considered as an attack in Microsoft Entra ID Protection?
 
 An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-risk-detection-types.md) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
 
@@ -136,6 +132,12 @@ Recent Activity provides a summary of recent risk-related activities in your ten
 1. New High-Risk Users 
 
 [![Screenshot showing recent activities in the dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-recent-activities.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-recent-activities.png)
+
+## Unified risk signals
+
+Microsoft Entra ID Protection provides unified risk signals that aggregate correlated risk signals from Microsoft Entra ID Protection, Microsoft Defender, and other Microsoft security products. Instead of evaluating alerts in isolation, this capability correlates identity-related signals across products and evaluates them together within the same time window to calculate a compounded user risk score.
+
+This requires Microsoft Defender for Identity to be configured. For full details on how unified risk works, how to enable it, and how to troubleshoot common issues, see [Unified risk signals in Microsoft Entra ID Protection](concept-identity-protection-unified-risk.md).
 
 ## Known issues
 

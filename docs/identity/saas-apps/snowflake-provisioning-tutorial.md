@@ -2,17 +2,11 @@
 title: Configure Snowflake for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Snowflake.
 
-author: jeevansd
-manager: mwongerapk
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 05/20/2025
-ms.author: jeedes
+ms.date: 07/02/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Snowflake so that I can streamline the user management process and ensure that users have the appropriate access to Snowflake.
----
+--- 
 
 # Configure Snowflake for automatic user provisioning with Microsoft Entra ID
 
@@ -27,6 +21,7 @@ This article demonstrates the steps that you perform in Snowflake and Microsoft 
 > * Keep user attributes synchronized between Microsoft Entra ID and Snowflake
 > * Provision groups and group memberships in Snowflake
 > * Allow [single sign-on](./snowflake-tutorial.md) to Snowflake (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 
@@ -110,25 +105,27 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
    ![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
-1. Set **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-    ![Screenshot of the Provisioning Mode drop-down list with the Automatic option called out.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
 1. In the **Admin Credentials** section, enter the SCIM 2.0 base URL and authentication token that you retrieved earlier in the **Tenant URL** and **Secret Token** boxes, respectively.
     >[!NOTE]
     >The Snowflake SCIM endpoint consists of the Snowflake account URL appended with `/scim/v2/`. For example, if your Snowflake account name is `acme` and your Snowflake account is in the `east-us-2` Azure region, the **Tenant URL** value is `https://acme.east-us-2.azure.snowflakecomputing.com/scim/v2`.
 
-   Select **Test Connection** to ensure that Microsoft Entra ID can connect to Snowflake. If the connection fails, ensure that your Snowflake account has admin permissions and try again.
+1. Select **Test Connection** to ensure Microsoft Entra ID can connect to Snowflake. If the connection fails, ensure your Snowflake account has the required admin permissions and try again.
 
-    ![Screenshot that shows boxes for tenant URL and secret token, along with the Test Connection button.](common/provisioning-testconnection-tenanturltoken.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
-1. In the **Notification Email** box, enter the email address of a person or group who should receive the provisioning error notifications. Then select the **Send an email notification when a failure occurs** check box.
+1. Select **Create** to create your configuration.
 
-    ![Screenshot that shows boxes for notification email.](common/provisioning-notification-email.png)
+1. Select **Properties** on the **Overview** page.
 
-1. Select **Save**.
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Snowflake**.
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Snowflake in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Snowflake for update operations. Select the **Save** button to commit any changes.
 
@@ -155,7 +152,7 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
     > How to set up Snowflake custom extension attributes in Microsoft Entra SCIM user provisioning is explained [here](https://community.snowflake.com/s/article/HowTo-How-to-Set-up-Snowflake-Custom-Attributes-in-Azure-AD-SCIM-for-Default-Roles-and-Default-Warehouses).
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra groups to Snowflake**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Snowflake in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Snowflake for update operations. Select the **Save** button to commit any changes.
 
@@ -164,23 +161,11 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
     |displayName|String|
     |members|Reference|
 
-1. To configure scoping filters, see the instructions in the      [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Snowflake, change **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-    ![Screenshot that shows Provisioning Status switched on.](common/provisioning-toggle-on.png)
-
-1. Define the users and groups that you want to provision to Snowflake by choosing the desired values in **Scope** in the **Settings** section. 
-
-    If this option isn't available, configure the required fields under **Admin Credentials**, select **Save**, and refresh the page. 
-
-    ![Screenshot that shows choices for provisioning scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-    ![Screenshot of the button for saving a provisioning configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization of all users and groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs. Subsequent syncs occur about every 40 minutes, as long as the Microsoft Entra provisioning service is running.
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
@@ -190,9 +175,48 @@ This operation starts the initial synchronization of all users and groups define
 
 Snowflake-generated SCIM tokens expire in 6 months. Be aware that you need to refresh these tokens before they expire, to allow the provisioning syncs to continue working.
 
+## Just-in-time (JIT) application access with PIM for Groups
+
+With Privileged Identity Management (PIM) for Groups, you can provide just-in-time access to groups in Snowflake and reduce the number of users who have permanent access to privileged groups in Snowflake.
+
+**Configure your enterprise application for single sign-on (SSO) and provisioning**
+
+To set up persistent, non-admin access in Snowflake, complete these steps:
+
+1. Add Snowflake to your tenant, configure it for provisioning as described in the previous steps of this tutorial, and start provisioning.
+1. Configure [single sign-on](snowflake-tutorial.md) for Snowflake.
+1. Create a [group](/entra/fundamentals/how-to-manage-groups) that provides all users access to the application.
+1. Assign the group to the Snowflake application.
+1. Assign your test user as a direct member of the group you created for all-user access, or provide access to the group through an access package. This group provides persistent, non-admin access in Snowflake.
+
+**Enable PIM for Groups**
+
+To grant just-in-time admin access, complete these steps:
+
+1. Create a second group in Microsoft Entra ID. This group provides access to admin permissions in Snowflake.
+1. Bring the group under [management in Microsoft Entra PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups).
+1. Assign your test user as [eligible for the group in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner) with the role set to member.
+1. Assign the second group to the Snowflake application.
+1. Use on-demand provisioning to create the group in Snowflake.
+1. Sign in to Snowflake and assign the second group the necessary permissions to perform admin tasks.
+
+Now any end user that was made eligible for the group in PIM can get JIT access to the group in Snowflake by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role).
+
+**Key considerations**
+* How long does it take to have a user provisioned to the application? 
+  * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra Privileged Identity Management (PIM):
+    * The group membership is provisioned in the application during the next synchronization cycle. The synchronization cycle runs every 40 minutes. 
+  * When a user activates their group membership in Microsoft Entra ID PIM: 
+    * The group membership is provisioned in 2-10 minutes. During periods of high request volume, requests are throttled at a rate of five requests per 10 seconds.
+    * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
+    * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
+* If the user can't access the necessary group in Snowflake, review the [Troubleshooting tips](#troubleshooting-tips) section, PIM logs, and provisioning logs to confirm that the group membership updated successfully. Depending on how the target application is architected, it might take extra time for the group membership to take effect in the application.
+* You can create alerts for failures using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics). 
+* Deactivation is done during the regular incremental cycle. It isn't processed immediately through on-demand provisioning.
+
 ## Troubleshooting tips
 
-The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allowlist of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
+The Microsoft Entra provisioning service currently operates under particular [IP ranges](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). If necessary, you can restrict other IP ranges and add these particular IP ranges to the allow list of your application. That technique will allow traffic flow from the Microsoft Entra provisioning service to your application.
 
 ## Change log
 

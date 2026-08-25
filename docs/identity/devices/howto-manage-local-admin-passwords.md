@@ -2,14 +2,9 @@
 title: Use Windows Local Administrator Password Solution (LAPS) with Microsoft Entra ID
 description: Manage your device's local administrator password with Microsoft Entra LAPS.
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 01/16/2024
-
-ms.author: sandeo
-author: sandeo-MSFT
-ms.reviewer: joflore
+ms.reviewer: joflore, sandeo
 ms.custom: references_regions
 ---
 # Windows Local Administrator Password Solution in Microsoft Entra ID

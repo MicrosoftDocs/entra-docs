@@ -1,14 +1,9 @@
 ---
 title: Combined password policy and check for weak passwords in Microsoft Entra ID
 description: Learn about the combined password policy and check for weak passwords in Microsoft Entra ID
-ms.service: entra-id
-ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
-ms.topic: article
+ms.topic: concept-article
 ms.date: 03/04/2025
-ms.author: justinha
-author: justinha
-manager: dougeby
 ms.reviewer: tilarso
 ---
 # Combined password policy and check for weak passwords in Microsoft Entra ID
@@ -22,15 +17,15 @@ This article explains details about the password policy criteria checked by Micr
 
 A password policy is applied to all user and admin accounts that are created and managed directly in Microsoft Entra ID. You can [ban weak passwords](concept-password-ban-bad.md) and define parameters to [lock out an account](howto-password-smart-lockout.md) after repeated bad password attempts. Other password policy settings can't be modified.
 
-The Microsoft Entra password policy doesn't apply to user accounts synchronized from an on-premises AD DS environment using Microsoft Entra Connect unless you enable EnforceCloudPasswordPolicyForPasswordSyncedUsers. If EnforceCloudPasswordPolicyForPasswordSyncedUsers and password writeback are enabled, Microsoft Entra password expiration policy applies, but the on-premises password policy takes precedence for length, complexity, and so on.
+The Microsoft Entra password policy doesn't apply to user accounts synchronized from an on-premises AD DS environment using Microsoft Entra Connect unless you enable CloudPasswordPolicyForPasswordSyncedUsersEnabled. If CloudPasswordPolicyForPasswordSyncedUsersEnabled and password writeback are enabled, Microsoft Entra password expiration policy applies, but the on-premises password policy takes precedence for length, complexity, and so on.
 
 The following Microsoft Entra password policy requirements apply for all passwords that are created, changed, or reset in Microsoft Entra ID. Requirements are applied during user provisioning, password change, and password reset flows. You can't change these settings except as noted.
 
 | Property | Requirements |
 | --- | --- |
 | Characters allowed |Uppercase characters (A - Z)<br>Lowercase characters (a - z)<br>Numbers (0 - 9)<br>Symbols:<br>- @ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ' , . ? / \` ~ " ( ) ; < ><br>- blank space |
-| Characters not allowed | Unicode characters |
-| Password length |Passwords require<br>- A minimum of eight characters<br>- A maximum of 256 characters</li> |
+| Characters not allowed | Unicode characters.<br> Note: For Microsoft Entra External ID tenants, Unicode characters are allowed if the user is created by using Microsoft Graph API or Self-Service Sign-Up. |
+| Password length |Passwords require<br>- A minimum of 8 characters<br>- A maximum of 256 characters</li> |
 | Password complexity |Passwords require three out of four of the following categories:<br>- Uppercase characters<br>- Lowercase characters<br>- Numbers <br>- Symbols<br> Note: Password complexity check isn't required for Education tenants. |
 | Password not recently used | When a user changes their password, the new password shouldn't be the same as the current password. |
 | Password isn't banned by [Microsoft Entra Password Protection](concept-password-ban-bad.md) | The password can't be on the global list of banned passwords for Microsoft Entra Password Protection, or on the customizable list of banned passwords specific to your organization. |

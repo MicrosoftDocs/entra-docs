@@ -1,9 +1,7 @@
 ---
 title: Consent experience for applications in Microsoft Entra ID
 description: Learn more about the Microsoft Entra consent experiences to see how you can use it when managing and developing applications on Microsoft Entra ID
-author: omondiatieno
-manager: CelesteDG
-ms.author: jomondi
+manager: pmwongera
 ms.date: 02/27/2025
 ms.reviewer: jawoods
 ms.service: identity-platform

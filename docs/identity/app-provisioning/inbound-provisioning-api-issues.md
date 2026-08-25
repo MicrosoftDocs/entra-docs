@@ -1,14 +1,10 @@
 ---
 title: Troubleshoot issues with inbound provisioning API
 description: This article provides potential issues and resolutions that guide you in how to troubleshoot issues with the inbound provisioning API.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/04/2025
-ms.author: jfields
+ms.date: 07/07/2026
 ms.reviewer: chmutali
+ai-usage: ai-assisted
 ---
 
 # Troubleshoot inbound provisioning API issues
@@ -67,6 +63,26 @@ The bulkUpload API endpoint enforces the following throttling limits and returns
 
 - 6,000 API calls over a 24-hour period – if the number of calls go beyond this limit, then the client gets a 429 response. One way to prevent this is to make sure that your SCIM bulk payload is optimized to use the max 50 records per API call. With this approach, you can send 300K records every 24 hours. 
 
+### Bucket full 500 response code
+
+**Issue description**
+* The SCIM client gets HTTP 500 (Internal Server Error) with the message: "The bucket that stores the ingested data is full, please wait for the synchronization service to process the ingested data and retry this request."
+* You might see this error during initial sync or full sync cycles when large HR datasets are sent to the provisioning `/bulkUpload` endpoint.
+
+**Why this error occurs**
+* The "bucket" is the temporary ingestion queue used by the provisioning service to buffer incoming `/bulkUpload` payloads before they are processed.
+* Each API-driven provisioning job has a dedicated ingestion queue.
+* The provisioning service continuously processes queued payloads and then deletes processed data. If this process-and-delete cycle falls behind or stops, queued data can build up until the bucket is full.
+
+**Probable causes and resolution**
+
+| Cause | Resolution |
+| --- | --- |
+| Payload processing fails due to incorrect mappings (for example, trying to update Microsoft Entra ID attributes managed by on-premises Active Directory) or invalid data. Failed payloads remain in the queue, which can eventually fill the bucket. | Review the provisioning logs to identify failed request processing, fix mapping or data issues, restart the provisioning job, and resend the requests. |
+| The API-driven provisioning job is in **Paused** or **Stopped** state. Requests continue to queue, but processing doesn't run. | Resume the provisioning job so it can process and clear queued requests. |
+| The API-driven provisioning job remains in **Quarantined** state for a long period. Requests continue to queue, but processing doesn't run. | Restart the provisioning job to clear quarantine. During restart, existing queued data is cleared, which might take time. Wait about 40 minutes, then resend SCIM `/bulkUpload` requests. |
+| Source systems send SCIM data faster than the provisioning job can process it. | Pace request submission. After each bulk upload, check the HTTP status code. If you get HTTP 500 with the bucket-full message, pause the client (for example, 5 to 10 minutes) before retrying. |
+
 
 ### Unauthorized 401 response code
 
@@ -114,6 +130,18 @@ There's a user provisioning failure. The provisioning logs displays an error mes
 ```Join("", Replace([userName], , "(?<Suffix>@(.)*)", "Suffix", "", , ), RandomString(3, 3, 0, 0, 0, ), "@", DefaultDomain())```
 
 This expression fixes the issue by appending a default domain to the UPN value accepted by Microsoft Entra ID. 
+
+### Known limitation: multi-valued addresses, emails and phone numbers
+
+**Issue description**
+* API-driven provisioning does not currently process SCIM multi-valued attributes in `addresses`, `emails` and `phoneNumbers` when the `type` value is `home` or any other non-`work` value.
+* This limitation applies to expressions such as `addresses[type eq "home"]`, `addresses[type eq "any-other-value"]`, and `phoneNumbers[type eq "home"]`.
+
+**Current behavior**
+* Only `addresses[type eq "work"]`, `emails[type eq "work"]` and `phoneNumbers[type eq "work"]` values are processed.
+
+**Workaround**
+* Send supported values using the `work` type when you need the attribute to be processed by API-driven provisioning.
 
 ## Next steps
 

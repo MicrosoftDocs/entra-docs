@@ -1,15 +1,11 @@
 ---
 title: Best practices for Microsoft Entra roles
 description: Best practices for using Microsoft Entra roles.
-author: barclayn
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: best-practice
-ms.date: 03/30/2025
-ms.author: barclayn
+ms.date: 06/01/2026
 ms.reviewer: vincesm
 ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Best practices for Microsoft Entra roles
@@ -99,6 +95,29 @@ In this case, you should use [Privileged Identity Management (PIM) for Groups](~
 ## 9. Use cloud native accounts for Microsoft Entra roles
 
 Avoid using on-premises synced accounts for Microsoft Entra role assignments. If your on-premises account is compromised, it can compromise your Microsoft Entra resources as well.
+
+## 10. Use layered controls for fine-grained access governance
+
+Microsoft Entra ID provides several complementary capabilities that work together to help you enforce least-privilege access at a granular level. No single feature covers every authorization scenario, so combine these controls in layers based on your organization's requirements:
+
+| Control | What it does | When to use it |
+|---|---|---|
+| [Administrative units](administrative-units.md) | Scope role assignments to a specific subset of users, groups, or devices. | Delegate administration to regional or departmental admins without granting tenant-wide permissions. |
+| [Custom roles](custom-create.md) | Define roles with only the permissions a job function requires. | Built-in roles are too broad or too narrow for a specific responsibility. |
+| [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) | Grant just-in-time, time-bound, approval-based role activation. | Eliminate standing privileged access for users in privileged roles, including administrators and developers. |
+| [Conditional Access](~/identity/conditional-access/overview.md) | Evaluate real-time signals (user risk, device compliance, location, application) to enforce or block access. | Apply context-based access decisions that adapt to changing risk conditions. |
+| [Entitlement management](~/id-governance/entitlement-management-overview.md) | Bundle resources into access packages with automated request, approval, and expiration workflows. | Govern access for projects, teams, or cross-organization collaboration at scale. |
+| [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) | Re-evaluate access during an active session in two scenarios: critical event evaluation (such as account disable, password reset, or admin token revocation) and Conditional Access policy evaluation (such as network location change). | Enforce policy changes in near-real-time instead of waiting for token expiration. |
+| [Custom security attributes](~/fundamentals/custom-security-attributes-overview.md) with [Azure attribute-based access control (ABAC)](/azure/role-based-access-control/conditions-custom-security-attributes) | Tag users and service principals with business attributes, then gate access to supported Azure resources (currently Azure Blob Storage and Azure Queue Storage data actions) by attribute condition on a role assignment. | Replace large numbers of explicit role assignments with a single attribute-conditional assignment, and categorize hundreds of apps for inventory and reporting. |
+
+**Example layered approach:** Assign a custom role scoped to an administrative unit so a regional helpdesk admin can only reset passwords for users in their region. Require PIM activation so the role is time-bound and approval-based. Apply a Conditional Access policy that requires a compliant device and multifactor authentication when the admin activates the role. Use access reviews in entitlement management to periodically validate that the admin still needs the assignment.
+
+> [!NOTE]
+> Availability of the controls in the preceding table depends on your Microsoft Entra license tier. For example, custom roles and Conditional Access require Microsoft Entra ID P1, and administrative units require Microsoft Entra ID P1 for administrators scoped to an administrative unit (creation and basic membership are available with Microsoft Entra ID Free). Privileged Identity Management requires Microsoft Entra ID P2 or Microsoft Entra ID Governance, while entitlement management and access reviews require Microsoft Entra ID Governance or Microsoft Entra Suite (some capabilities operate with Microsoft Entra ID P2). Continuous Access Evaluation's critical event evaluation is available in all tenants; the Conditional Access policy evaluation portion depends on Conditional Access, which requires Microsoft Entra ID P1. To compare what's included in each tier, see [Microsoft Entra plans and pricing](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing).
+
+To audit what these layered controls have granted, see [Understand who has access to what](custom-overview.md#understand-who-has-access-to-what).
+
+For more information about designing a least-privilege access strategy, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
 
 ## Next steps
 

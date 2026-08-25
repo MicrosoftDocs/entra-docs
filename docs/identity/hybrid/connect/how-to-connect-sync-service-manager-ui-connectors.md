@@ -1,15 +1,11 @@
 ---
 title: Connectors in the Microsoft Entra Connect Sync Service Manager UI'
 description: Understand the Connectors tab in the Service Manager for Microsoft Entra Connect Sync.
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 60f1d979-8e6d-4460-aaab-747fffedfc1e
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: H1Hack27Feb2017, sfi-image-nochange
 ---
 # Using connectors with the Microsoft Entra Connect Sync Service Manager
@@ -23,7 +19,7 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 | --- | --- |
 | Create |Not supported. For connecting additional AD forests, use the configuration wizard. |
 | Properties |Read-only. Connector properties for connectivity, domain and OU filtering and attribute selection and anchors. |
-| Delete |Not supported. For removing AD forests, reinstall the Microsoft Entra Connect product.|
+| Delete <br> (connector or connector space) |Not supported. For removing AD forests, reinstall the Microsoft Entra Connect product.|
 | [Configure Run Profiles](#configure-run-profiles) |Read-only. Connector run profiles.|
 | Run |Starts a one-off connector run profile.|
 | Stop |Stops a connector run profile.|
@@ -33,6 +29,9 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 | Refresh Schema |Not supported. Use the "Refresh directory schema" task in the configuration wizard which also updates sync rules.|
 | [Search Connector Space](#search-connector-space) |Finds objects and shows object data across the Metaverse and other connected sources.|
 
+
+> [!WARNING]
+> Deleting a connector or connector space is **not supported** and can have serious consequences for your hybrid identity environment. Don't use these actions as a troubleshooting step.
 
 
 ### Configure Run Profiles

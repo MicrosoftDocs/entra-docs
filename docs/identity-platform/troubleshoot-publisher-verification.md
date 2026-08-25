@@ -2,8 +2,6 @@
 title: Troubleshoot publisher verification
 description: Describes how to troubleshoot publisher verification for the Microsoft identity platform by calling Microsoft Graph APIs.
 manager: dougeby
-author: garrodonnell
-ms.author: godonnell
 ms.date: 07/19/2024
 ms.service: identity-platform
 ms.topic: troubleshooting
@@ -306,7 +304,7 @@ Error: "You're unable to add a verified publisher to this application. Contact y
 When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, the above error is returned. Investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
 
 **Remediation Steps**
-> [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users-report)
+> [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md)
 > 
 > [Remediate risk/unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 > 

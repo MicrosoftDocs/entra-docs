@@ -2,15 +2,11 @@
 title: 'Microsoft Entra Connect: Seamless Single Sign-On - How it works'
 description: This article describes how the Microsoft Entra seamless single sign-on feature works.
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-author: omondiatieno
-manager: mwongerapk
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 
@@ -37,8 +33,12 @@ Seamless SSO is enabled using Microsoft Entra Connect as shown [here](how-to-con
 >[!IMPORTANT]
 > The `AZUREADSSOACC` computer account needs to be strongly protected for security reasons. Only Domain Admins should be able to manage the computer account. Ensure that Kerberos delegation on the computer account is disabled, and that no other account in Active Directory has delegation permissions on the `AZUREADSSOACC` computer account.. Store the computer account in an Organization Unit (OU) where they are safe from accidental deletions and where only Domain Admins have access. The Kerberos decryption key on the computer account should also be treated as sensitive. We highly recommend that you [roll over the Kerberos decryption key](how-to-connect-sso-faq.yml) of the `AZUREADSSOACC` computer account at least every 30 days.
 
->[!IMPORTANT]
-> Seamless SSO supports the `AES256_HMAC_SHA1`, `AES128_HMAC_SHA1` and `RC4_HMAC_MD5` encryption types for Kerberos. It is recommended that the encryption type for the `AzureADSSOAcc$` account is set to `AES256_HMAC_SHA1`, or one of the AES types vs. RC4 for added security. The encryption type is stored on the `msDS-SupportedEncryptionTypes` attribute of the account in your Active Directory.  If the `AzureADSSOAcc$` account encryption type is set to `RC4_HMAC_MD5`, and you want to change it to one of the AES encryption types, please make sure that you first roll over the Kerberos decryption key of the `AzureADSSOAcc$` account as explained in the [FAQ document](how-to-connect-sso-faq.yml) under the relevant question, otherwise Seamless SSO will not happen.
+> [!IMPORTANT]
+> Seamless SSO supports the following Kerberos encryption types: `AES256_HMAC_SHA1`, `AES128_HMAC_SHA1`, and `RC4_HMAC_MD5`. For enhanced security, Microsoft recommends configuring the `AzureADSSOAcc$` account to use `AES256_HMAC_SHA1` or another AES-based encryption type instead of RC4. The configured encryption type is stored in the `msDS-SupportedEncryptionTypes` attribute of the account in Active Directory Domain Services (AD DS).
+>
+> Starting with the July 2026 Windows Server update, the default Kerberos encryption type in AD DS will change from RC4 to AES-256. Organizations that continue to use RC4 may experience authentication or Seamless SSO issues after this update is applied. To help ensure uninterrupted SSO access, Microsoft recommends migrating the `AzureADSSOAcc$` account to AES-256 as soon as possible.
+>
+> If the `AzureADSSOAcc$` account is currently configured to use `RC4_HMAC_MD5` and you plan to switch to an AES-based encryption type, you must first roll over the Kerberos decryption key for the `AzureADSSOAcc$` account, as described in the [FAQ documentation](how-to-connect-sso-faq.yml). Failing to roll over the key before changing the encryption type can prevent Seamless SSO from functioning correctly.
 
 Once the set-up is complete, Seamless SSO works the same way as any other sign-in that uses integrated Windows authentication (IWA).
 

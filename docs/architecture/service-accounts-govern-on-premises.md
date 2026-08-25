@@ -1,14 +1,9 @@
 ---
 title: Govern on-premises service accounts
 description: Learn to create and run an account lifecycle process for on-premises service accounts
-author: jricketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
 ms.date: 02/10/2023
-ms.author: jricketts
-
+ms.subservice: architecture
 ---
 
 # Govern on-premises service accounts

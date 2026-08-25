@@ -1,8 +1,7 @@
 ---
 title: Retirement of service principal-less authentication
 description: Learn about the mitigation steps tenant administrators should perform for the retirement of service principal-less authentication.
-author: shirlingxu
-ms.author: xushirling
+ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/30/2025
 ---

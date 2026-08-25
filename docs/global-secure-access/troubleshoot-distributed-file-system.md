@@ -1,12 +1,8 @@
 ---
 title: Learn how to solve an issue where Global Secure Access fails with a Distributed File System
 description: A troubleshooting article that includes a workaround for a case where a Distributed File System (DFS) doesn't operate correctly with Global Secure Access.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: troubleshooting
-ms.date: 02/21/2025
-ms.service: global-secure-access
+ms.date: 03/13/2026
 ms.subservice: entra-private-access 
 ms.reviewer: nbeesetti
 ai-usage: ai-assisted
@@ -14,6 +10,8 @@ ai-usage: ai-assisted
 ---
 
 # Troubleshoot Distributed File System issue with Global Secure Access
+## Overview
+
 This document presents a case where a Distributed File System (DFS) doesn't operate correctly with Global Secure Access and offers a temporary workaround. 
 
 The scenario involves accessing a file-share location. For instance, consider a DFS path: `\\foo.internal\share\bar`. The `bar` folder is set up as shown in the table: 
@@ -41,7 +39,7 @@ IP-based network Access Control Lists (ACL) don't work with Global Secure Access
 ## Workaround
 The proposed workaround for the above-mentioned scenario is as follows. 
 
-As a workaround, we suggest moving this employee-to-fileshare mapping to the employee computer (as a Domain Name System (DNS) search suffix), so the traffic would be: 
+As a workaround, move this employee-to-fileshare mapping to the employee computer (as a Domain Name System (DNS) search suffix), so the traffic would be: 
 
 
 :::image type="content" source="media/troubleshoot-distributed-file-system/dfs-2.png" alt-text="Diagram showing the connector.":::

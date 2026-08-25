@@ -1,13 +1,8 @@
 ---
 title: Manage user-assigned managed identities using Azure Resource Manager
 description: Manage user-assigned managed identities using Azure Resource Manager.
-author: SHERMANOUKO
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 09/09/2025
-ms.author: shermanouko
 ---
 
 # Manage user-assigned managed identities using Azure Resource Manager
@@ -19,7 +14,7 @@ In this article, you create a user-assigned managed identity by using Azure Reso
 ## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md). *Be sure to review the [difference between a system-assigned and user-assigned managed identity](overview.md#managed-identity-types)*.
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you continue.
 
 ## Template creation and editing
 

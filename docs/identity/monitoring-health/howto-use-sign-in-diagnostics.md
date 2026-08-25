@@ -1,13 +1,9 @@
 ---
 title: How to use Microsoft Entra Sign-in diagnostics
 description: How to use the Sign-in diagnostic in tool Microsoft Entra ID to troubleshoot sign-in related scenarios.
-author: shlipsey3
-manager: pmwongera
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
-ms.date: 02/26/2025
-ms.author: sarahlipsey
+ms.date: 04/02/2026
+ai-usage: ai-assisted
 ms.reviewer: egreenberg
 ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
@@ -90,6 +86,31 @@ You can start the Sign-in diagnostic from a specific sign-in event in the Sign-i
     ![Screenshot showing how to launch sign-in diagnostics from Microsoft Entra ID.](media/howto-use-sign-in-diagnostics/sign-in-logs-link.png)
 
 1. Explore the results and take action as necessary.
+
+#### Investigate a sign-in log with Copilot (preview)
+
+Sign-in logs include a Copilot skill (in preview) that provides an AI-enhanced diagnostic for failed and interrupted sign-ins. Unlike the standard sign-in diagnostic, this method uses AI to analyze the sign-in event and provide contextual remediation steps.
+
+> [!NOTE]
+> During preview, both the existing sign-in diagnostic and the AI-based investigation skill are available so you can transition to the new experience.
+
+> [!NOTE]
+> Running this skill doesn't consume Security Copilot compute units (SCUs). You can use this skill without a Security Copilot license.
+
+To use the single log investigator:
+
+1. Browse to **Microsoft Entra ID** > **Monitoring & health** > **Sign-in logs** and select a sign-in event with a **Failure** status.
+
+1. From the **Activity Details** window, select the **Investigate with Copilot** button to launch the single log investigator.
+
+    [![Screenshot showing the Investigate with Copilot button in the Activity Details pane of a sign-in event.](media/howto-use-sign-in-diagnostics/investigate-with-copilot-button.png)](media/howto-use-sign-in-diagnostics/investigate-with-copilot-button.png#lightbox)
+
+1. Review the analysis, which provides:
+    - A summary of why the sign-in failed.
+    - The root cause of the failure.
+    - Recommended remediation steps to resolve the issue.
+
+1. Follow the recommended actions to address the sign-in failure.
 
 ### [From a support request](#tab/from-a-support-request)
 

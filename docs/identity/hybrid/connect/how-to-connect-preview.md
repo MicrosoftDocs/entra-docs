@@ -2,18 +2,11 @@
 title: 'Microsoft Entra Connect: Features in preview'
 description: This topic describes in more detail features which are in preview in Microsoft Entra Connect.
 
-author: omondiatieno
-manager: mwongerapk
-
 ms.assetid: c75cd8cf-3eff-4619-bbca-66276757cc07
-ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: jomondi
-
-
 ---
 # More details about features in preview
 This topic describes how to use features currently in preview.

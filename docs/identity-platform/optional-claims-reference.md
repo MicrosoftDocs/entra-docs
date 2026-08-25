@@ -1,13 +1,12 @@
 ---
 title: Optional claims reference
 description: Claims reference with details on the optional claims that can be included in tokens in the Microsoft identity platform.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
-ms.custom: curation-claims
-ms.date: 04/10/2024
+ms.custom:
+ms.date: 07/22/2026
 ms.reviewer: ludwignick
 ms.service: identity-platform
+ai-usage: ai-assisted
 
 ms.topic: reference
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want a list of the different optional claims and their uses, so that I can select the specific claims to include in tokens for my application and customize the behavior of certain claims.
@@ -43,7 +42,7 @@ The following table lists the v1.0 and v2.0 optional claim set.
 | `acrs` | Auth Context IDs | JWT | Microsoft Entra ID | Indicates the Auth Context IDs of the operations that the bearer is eligible to perform. Auth Context IDs can be used to trigger a demand for step-up authentication from within your application and services. Often used along with the `xms_cc` claim. |
 | `auth_time` | Time when the user last authenticated. | JWT | | |
 | `ctry` | User's country/region | JWT |  | This claim is returned if it's present and the value of the field is a standard two-letter country/region code, such as FR, JP, SZ, and so on. |
-| `email` | The reported email address for this user | JWT, SAML | MSA, Microsoft Entra ID | This value is included by default if the user is a guest in the tenant. For managed users (the users inside the tenant), it must be requested through this optional claim or, on v2.0 only, with the OpenID scope. This value isn't guaranteed to be correct, and is mutable over time - never use it for authorization or to save data for a user. For more information, see [Validate the user has permission to access this data](access-tokens.md). If you're using the email claim for authorization, we recommend [performing a migration to move to a more secure claim](./migrate-off-email-claim-authorization.md). If you require an addressable email address in your app, request this data from the user directly, using this claim as a suggestion or prefill in your UX. |
+| `email` | The reported email address for this user | JWT, SAML | MSA, Microsoft Entra ID | This value is included by default if the user is a guest in the tenant. For managed users (the users inside the tenant), it must be requested through this optional claim or, on v2.0 only, with the OpenID scope. This value isn't guaranteed to be correct, and is mutable over time - never use it for authorization or to save data for a user. For more information, see [Validate the user has permission to access this data](access-tokens.md). If you require an addressable email address in your app, request this data from the user directly, using this claim as a suggestion or prefill in your UX. |
 | `fwd` | IP address | JWT | | Adds the original address of the requesting client (when inside a VNET). |
 | `groups` | Optional formatting for group claims | JWT, SAML | | The `groups` claim is used with the GroupMembershipClaims setting in the [application manifest](reference-app-manifest.md), which must be set as well. |
 | `idtyp` | Token type | JWT access tokens | Special: only in app-only access tokens | The value is `app` when the token is an app-only token. This claim is the most accurate way for an API to determine if a token is an app token or an app+user token. |
@@ -78,6 +77,7 @@ These claims are always included in v1.0 tokens, but not included in v2.0 tokens
 | `family_name` | Last Name | Provides the last name, surname, or family name of the user as defined in the user object. For example, `"family_name":"Miller"`. | Supported in MSA and Microsoft Entra ID. Requires the `profile` scope. |
 | `given_name` | First name | Provides the first or "given" name of the user, as set on the user object. For example, `"given_name": "Frank"`. | Supported in MSA and Microsoft Entra ID. Requires the `profile` scope. |
 | `upn` | User Principal Name | An identifier for the user that can be used with the `username_hint` parameter. Not a durable identifier for the user and shouldn't be used for authorization or to uniquely identity user information (for example, as a database key). For more information, see [Secure applications and APIs by validating claims](claims-validation.md). Instead, use the user object ID (`oid`) as a database key. Users signing in with an [alternate login ID](~/identity/authentication/howto-authentication-use-email-signin.md) shouldn't be shown their User Principal Name (UPN). Instead, use the following `preferred_username` claim for displaying sign-in state to the user. | Requires the `profile` scope. |
+| `amr` | Authentication Method Reference | Identifies how the subject of the token was authenticated. For the values that Microsoft Entra ID emits for each authentication method, see [AMR values for Microsoft Entra authentication methods](#amr-values-for-microsoft-entra-authentication-methods). | |
 
 ## v1.0-specific optional claims set
 
@@ -119,6 +119,35 @@ Some optional claims can be configured to change the way the claim is returned. 
 ```
 
 This `optionalClaims` object causes the ID token returned to the client to include a `upn` claim with the other home tenant and resource tenant information. The `upn` claim is only changed in the token if the user is a guest in the tenant (that uses a different IDP for authentication).
+
+## AMR values for Microsoft Entra authentication methods
+
+The `amr` (authentication method references) claim identifies how the user authenticated. The `amr` claim is sent by default for Salesforce applications, so no configuration change is required for those apps. For all other SAML applications, the application administrator must add the optional `amr` claim with the `include_granular_amr` additional property to the app registration to request AMR claims. The `multipleauthn` and `mfa` values are emitted only when the user has completed MFA.
+
+For SAML, see [authnmethodreferences](single-sign-on-saml-protocol.md#authnmethodreferences) for more details.
+
+For OIDC, see the following table, which lists the `authnmethodsreferences` values that Microsoft Entra ID sends for each authentication method:
+
+| Microsoft Entra authentication method | OIDC v2.0 token claims |
+|---|---|
+| Password | `pwd` |
+| Authenticator push | `rsa`, `ngcmfa`, `mfa` |
+| Authenticator TOTP | `totp`, `mfa` |
+| Hardware OATH token | `hotp`, `mfa` |
+| Phone sign-in (passwordless Authenticator app) | `swk`, `rsa`, `mfa` |
+| SMS | `sms`, `mfa` |
+| Phone call | `tel`, `mfa` |
+| Email | `emailotp`, `mfa` |
+| FIDO2 security key (PRMFA) | `fido`, `mfa` |
+| Passkey (device-bound) (PRMFA) | `fido`, `mfa` |
+| Passkey (synced)  (PRMFA) | `fido`, `mfa` |
+| Windows Hello for Business (PRMFA) | `hwk`, `mfa`, `ngcmfa` |
+| Certificate-based authentication (PRMFA for Multi-factor CBA) | `hwk` (Multi-factor CBA) or `x509` (Single factor CBA), `mfa`, `rsa` |
+| Temporary Access Pass (TAP) | `otp`, `mfa` |
+| Windows integrated authentication (Kerberos) | `wia` |
+| Device based X509 authentication | `x509` |
+
+Microsoft includes `x509` in the `amr` claim for both single-factor Certificate-Based Authentication (CBA) and device-based X.509 authentication. However, the presence of x509 alone does not qualify as phishing-resistant MFA (PRMFA). To meet PRMFA requirements, the user must also complete an additional MFA factor, which will be reflected by other authentication method indicators in the authentication context. Microsoft Entra ID forwards the `amr` values sent from an external MFA provider along with the `amr` values for the authentication methods performed in Microsoft Entra ID. For more information, see [Supported AMR claims](~/identity/authentication/concept-authentication-external-method-provider.md#supported-amr-claims).
 
 ## See also
 

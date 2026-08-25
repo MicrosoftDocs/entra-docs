@@ -1,15 +1,12 @@
 ---
 title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
-author: shlipsey3
 manager: pmwongera
-ms.service: entra
-ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 06/26/2025
-ms.author: sarahlipsey
+ms.date: 08/18/2026
 ms.reviewer: mkokkalera
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1015
+ai-usage: ai-assisted
 # Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
 ---
 
@@ -39,7 +36,7 @@ The **Organizational Branding Administrator** role is the minimum role required 
 
 **External URLs aren't supported in the sign-in experience.** For example, if you add an external URL for your internal help desk to the footer, that URL is displayed explicitly but isn't clickable. Users must copy the URL and navigate to it directly.
 
-**The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding.md) in the Azure AD B2C documentation.
+**The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding) in the Azure AD B2C documentation.
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
@@ -49,25 +46,25 @@ The branding elements are called out in the following example. Text descriptions
 
 :::image type="content" source="media/how-to-customize-branding/sign-in-page-map.png" alt-text="Screenshot of the sign-in page, with each of the company branding elements highlighted." lightbox="media/how-to-customize-branding/sign-in-page-map-expanded.png":::
 
-1. **Favicon:** Small icon that appears on the left side of the browser tab.
-1. **Header:** Space across the top of the sign-in page, behind the header log.
-1. **Header logo:** Logo that appears in the upper-left corner of the sign-in page.
-1. **Background image:** The entire space behind the sign-in box.
-1. **Page background color:** The entire space behind the sign-in box.
-1. **Banner logo:** Logo that appears at the top of the sign-in box
-1. **Sign-in page title:** Larger text that appears below the banner logo.
-1. **Sign-in page description:** Text to describe the sign-in page.
-1. **Username hint and text:** The text that appears before a user enters their information.
-1. **Self-service password reset:** A link you can add below the sign-in page text for password resets.
-1. **Sign-in page text:** Text you can add below the username field.
-1. **Footer link: Privacy & Cookies:** Link you can add to the lower-right corner for privacy information.
-1. **Footer: Terms of Use:** Text in the lower-right corner of the page where you can add Terms of use information.
-1. **Footer:** Space across the bottom of the page for privacy and Terms of Use information.
-1. **Template:** The layout of the page and sign-in boxes.
+1. **Favicon**: Small icon that appears on the left side of the browser tab.
+1. **Header**: Space across the top of the sign-in page, behind the header logo.
+1. **Header logo**: Logo that appears in the upper-left corner of the sign-in page.
+1. **Background image**: The entire space behind the sign-in box.
+1. **Page background color**: The entire space behind the sign-in box.
+1. **Banner logo**: Logo that appears at the top of the sign-in box
+1. **Sign-in page title**: Larger text that appears below the banner logo.
+1. **Sign-in page description**: Text to describe the sign-in page.
+1. **Username hint and text**: The text that appears before a user enters their information.
+1. **Self-service password reset**: A link you can add below the sign-in page text for password resets.
+1. **Sign-in page text**: Text you can add below the username field.
+1. **Footer link: Privacy & Cookies**: Link you can add to the lower-right corner for privacy information.
+1. **Footer: Terms of Use**: Text in the lower-right corner of the page where you can add Terms of use information.
+1. **Footer**: Space across the bottom of the page for privacy and Terms of Use information.
+1. **Template**: The layout of the page and sign-in boxes.
 
 ## How to navigate the company branding process
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
 1. Browse to **Entra ID** > **Custom Branding**.
     - If you currently have a customized sign-in experience, the **Edit** button is available.
@@ -80,30 +77,35 @@ The sign-in experience process is grouped into sections. At the end of each sect
 
 ### Basics
 
-- **Favicon:** Select a PNG or JPG of your logo that appears in the web browser tab.
+- **Favicon**: Select a PNG or JPG of your logo that appears in the web browser tab.
   - Image size: 32x32 px
   - Max file size: 5 KB
 
    :::image type="content" source="media/how-to-customize-branding/favicon-example.png" alt-text="Screenshot of sample favicons in a web browser.":::
 
-- **Background image:** Select a PNG or JPG to display as the main image on your sign-in page. This image scales and crops according to the window size, but the sign-in prompt might partially block it.
+- **Background image**: Select a PNG or JPG to display as the main image on your sign-in page. This image scales and crops according to the window size, but the sign-in prompt might partially block it.
   - Image size: 1920x1080 px
   - Max file size: 300 KB
 
-- **Page background color:** If the background image isn't able to load because of a slower connection, your selected background color appears instead.
+- **Page background color**: If the background image isn't able to load because of a slower connection, your selected background color appears instead.
 
 ### Layout
 
-- **Visual Templates:** Customize the layout of your sign-in page using templates or a custom CSS file.
+- **Visual Templates**: Customize the layout of your sign-in page using templates or a custom CSS file.
 
     - Choose one of two **Templates**: Full-screen or partial-screen background. The full-screen background could obscure your background image, so choose the partial-screen background if your background image is important.
     - The details of the **Header** and **Footer** options are set on the next two sections of the process.
 
    :::image type="content" source="media/how-to-customize-branding/layout-visual-templates.png" alt-text="Screenshot of the Layout tab for customizing branding.":::
 
-- **Custom CSS:** Upload a custom CSS file to replace the Microsoft default style of the page.
+- **Custom CSS**: Upload a custom CSS file to replace the Microsoft default style of the page.
     - [Download the CSS template](https://download.microsoft.com/download/7/2/7/727f287a-125d-4368-a673-a785907ac5ab/custom-styles-template-013023.css).
     - View the [CSS template reference guide](reference-company-branding-css-template.md).
+
+    > [!IMPORTANT]
+    > Tenants created after January 5, 2026, don't have custom CSS available for company branding in Microsoft Entra ID. After July 21, 2026, tenants created before January 6, 2026, that don't already use custom CSS can't configure custom CSS.
+    >
+    > To align with the [Microsoft Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative) and its focus on identity security and phishing resistance, Microsoft Entra ID is retiring support for custom CSS *layout and positioning properties* (such as `position`, `margin`, `transform`, and `overflow`). Later, the properties will be deprecated globally and stop functioning. Eventually, custom CSS will be retired entirely. If your custom CSS uses these properties, remove them from your configuration. For the full list of deprecated properties and steps to update your CSS, see [CSS template reference guide](reference-company-branding-css-template.md#deprecation-of-custom-css-positioning-properties). For more information, see the blog post [Microsoft Entra ID enhances security of branded sign-ins](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-enhances-security-of-branded-sign-ins/4537471).
 
 ### Header
 
@@ -118,13 +120,13 @@ If you haven't enabled the header, go to the **Layout** section and select **Sho
 
 If you haven't enabled the footer, go to the **Layout** section and select **Show footer**. Once enabled, adjust the following settings.
 
-- **Show 'Privacy & Cookies':** This option is selected by default and displays the [Microsoft 'Privacy & Cookies'](https://privacy.microsoft.com/privacystatement) link.
+- **Show 'Privacy & Cookies'**: This option is selected by default and displays the [Microsoft 'Privacy & Cookies'](https://privacy.microsoft.com/privacystatement) link.
 
   - Uncheck this option to hide the default Microsoft link.
   - Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to privacy and cookies.
   - Custom URLs are displayed as text and aren't clickable.
 
-- **Show 'Terms of Use':** This option is also selected by default and displays the [Microsoft 'Terms of Use'](https://www.microsoft.com/servicesagreement/) link.
+- **Show 'Terms of Use'**: This option is also selected by default and displays the [Microsoft 'Terms of Use'](https://www.microsoft.com/servicesagreement/) link.
 
   - Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**.
   - The text and links don't have to be related to your terms of use.
@@ -136,21 +138,21 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 ### Sign-in form
 
-- **Banner logo:** Select a PNG or JPG image file of a banner-sized logo (short and wide) to appear on the sign-in pages.
+- **Banner logo**: Select a PNG or JPG image file of a banner-sized logo (short and wide) to appear on the sign-in pages.
   - Image size: 245x36 px
   - Max file size: 50 KB
 
-- **Square logo (light theme):** Select a square PNG or JPG image file of your logo to be used in browsers that are using a light color theme. This logo is used to represent your organization on the Microsoft Entra web interface and in Windows.
+- **Square logo (light theme)**: Select a square PNG or JPG image file of your logo to be used in browsers that are using a light color theme. This logo is used to represent your organization on the Microsoft Entra web interface and in Windows.
   - Image size: 240x240 px
   - Max file size: 50 KB
 
-- **Square logo (dark theme)** Select a square PNG or JPG image file of your logo to be used in browsers that are using a dark color theme. This logo is used to represent your organization on the Microsoft Entra web interface and in Windows. If your logo looks good on light and dark backgrounds, there's no need to add a dark theme logo.
+- **Square logo (dark theme)**: Select a square PNG or JPG image file of your logo to be used in browsers that are using a dark color theme. This logo is used to represent your organization on the Microsoft Entra web interface and in Windows. If your logo looks good on light and dark backgrounds, there's no need to add a dark theme logo.
   - Image size: 240x240 px
   - Max file size: 50 KB
 
-- **Username hint text:** Enter hint text for the username input field on the sign-in page. If guests use the same sign-in page, we don't recommend using hint text here.
+- **Username hint text**: Enter hint text for the username input field on the sign-in page. If guests use the same sign-in page, we don't recommend using hint text here.
 
-- **Sign-in page text:** Enter text that appears on the bottom of the sign-in page. You can use this text to communicate additional information, such as the phone number to your help desk or a legal statement. This page is public, so don't provide sensitive information here. This text must be Unicode and can't exceed 1,024 characters.
+- **Sign-in page text**: Enter text that appears on the bottom of the sign-in page. You can use this text to communicate additional information, such as the phone number to your help desk or a legal statement. This page is public, so don't provide sensitive information here. This text must be Unicode and can't exceed 1,024 characters.
 
     To begin a new paragraph, press the Enter key twice. You can also change text formatting to include bold, italics, an underline, or clickable link. Use the following syntax to add formatting to text:
 
@@ -166,7 +168,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
     - Show self-service password reset (SSPR): Select the checkbox to turn on SSPR.
     - Common URL: Enter the destination URL for where your users reset their passwords. This URL appears on the username and password collection screens as text and isn't clickable.
     - Username collection display text: Replace the default text with your own custom username collection text.
-    - Password collection display text: Replace the default text with your own customer password collection text.
+    - Password collection display text: Replace the default text with your own custom password collection text.
 
 ### Review
 
@@ -180,7 +182,7 @@ The time it takes for changes to appear in the sign-in experience vary based on 
 
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements for that browser language. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
 1. Browse to **Entra ID** > **Custom Branding**.
 

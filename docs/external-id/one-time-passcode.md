@@ -1,14 +1,10 @@
 ---
 title: Email one-time passcode authentication
 description: Learn how to enable and use email one-time passcode authentication for B2B guest users in Microsoft Entra External ID. This feature provides a seamless fallback authentication method for sign-in.
-
-ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 10/21/2024
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
+ms.date: 03/27/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.
 ---
@@ -27,7 +23,7 @@ The email one-time passcode feature is a way to authenticate B2B collaboration u
 
 > [!NOTE]
 > 
-> Currently you cannot apply authentication strength policies via Conditional Access to email one-time passcode accounts. Use the Conditional Access grant control 'Require MFA' instead. For more information, see the [Authentication strength policies for external users](authentication-conditional-access.md#authentication-strength-policies-for-external-users) section of the [Authentication and Conditional Access for External ID](authentication-conditional-access.md) page.
+> Currently you can't apply authentication strength policies via Conditional Access to email one-time passcode accounts. Use the Conditional Access grant control 'Require MFA' instead. For more information, see the [Authentication strength policies for external users](authentication-conditional-access.md#authentication-strength-policies-for-external-users) section of the [Authentication and Conditional Access for External ID](authentication-conditional-access.md) page.
 
 ## Sign-in endpoints
 
@@ -39,7 +35,7 @@ Email one-time passcode guest users can also use application endpoints that incl
   * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
   * `https://portal.azure.com/<your tenant ID>`
 
-You can also give email one-time passcode guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
+You can also give email one-time passcode guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID>?tenantId=<your tenant ID>`.
 
 > [!NOTE]
 > Email one-time passcode guest users can sign in to Microsoft Teams directly from the common endpoint without choosing **Sign-in options**. During the sign-in process to Microsoft Teams, the guest user can select a link to send a one-time passcode.
@@ -50,16 +46,16 @@ When the email one-time passcode feature is enabled, newly invited users [who me
 
 With one-time passcode authentication, the guest user can redeem your invitation by clicking a direct link or by using the invitation email. In either case, a message in the browser indicates that a code will be sent to the guest user's email address. The guest user selects **Send code**:
 
-   ![Screenshot showing the Send code button.](media/one-time-passcode/otp-send-code.png)
+   :::image type="content" source="media/one-time-passcode/otp-send-code.png" alt-text="Screenshot showing the Send code button.":::
 
 A passcode is sent to the user’s email address. The user retrieves the passcode from the email and enters it in the browser window:
 
-   ![Screenshot showing the Enter code page.](media/one-time-passcode/otp-enter-code.png)
+   :::image type="content" source="media/one-time-passcode/otp-enter-code.png" alt-text="Screenshot showing the Enter code page.":::
 
 The guest user is now authenticated, and they can see the shared resource or continue signing in.
 
 > [!NOTE]
-> One-time passcodes are valid for 30 minutes. After 30 minutes, that specific one-time passcode is no longer valid, and the user must request a new one. User sessions expire after 24 hours. After that time, the guest user receives a new passcode when they access the resource. Session expiration provides added security, especially when a guest user leaves their company or no longer needs access.
+> One-time passcodes are valid for 30 minutes. After 30 minutes, that specific one-time passcode is no longer valid, and the user must request a new one. User sessions expire after 24 hours. After that time, the guest user receives a new passcode when they access the resource. Session expiration provides added security, especially when a guest user leaves their company, or no longer needs access.
 
 ## When does a guest user get a one-time passcode?
 
@@ -73,9 +69,8 @@ When a guest user redeems an invitation or uses a link to a resource that has be
 
 At the time of invitation, there's no indication that the user you're inviting will use one-time passcode authentication. But when the guest user signs in, one-time passcode authentication will be the fallback method if no other authentication methods can be used.
 
-
 > [!NOTE]
-> When a user redeems a one-time passcode and later obtains an MSA, Microsoft Entra account, or other federated account, they'll continue to be authenticated using a one-time passcode. If you want to update the user's authentication method, you can [reset their redemption status](reset-redemption-status.md).
+> If you redeem a one-time passcode and later get an MSA, Microsoft Entra account, or another federated account, you’ll still use a one-time passcode for authentication. The system continues to authenticate you with a one-time passcode even after you obtain another account type. If you want to update the user's authentication method, you can [reset their redemption status](reset-redemption-status.md).
 
 ### Example
 
@@ -88,7 +83,7 @@ The email one-time passcode feature is now turned on by default for all new tena
 > [!NOTE]
 >
 > - Email one-time passcode settings can also be configured with the [emailAuthenticationMethodConfiguration](/graph/api/resources/emailauthenticationmethodconfiguration) resource type in the Microsoft Graph API.
-> - If the email one-time passcode feature has been enabled in your tenant and you turn it off, any guest users who have redeemed a one-time passcode will not be able to sign in. You can [reset their redemption status](reset-redemption-status.md) so they can sign in again using another authentication method.
+> - If the email one-time passcode feature has been enabled in your tenant and you turn it off, any guest users who have redeemed a one-time passcode won't be able to sign in. You can [reset their redemption status](reset-redemption-status.md) so they can sign in again using another authentication method.
 
 ### To enable or disable email one-time passcodes
 
@@ -102,10 +97,10 @@ The email one-time passcode feature is now turned on by default for all new tena
 1. Under **Email one-time passcode for guests**, select one of the following:
    - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned off. To enable the feature, make sure **Yes** is selected.
    - **No**: If you want to disable the email one-time passcode feature, select **No**.
- 
-:::image type="content" source="media/one-time-passcode/email-one-time-passcode-toggle.png" alt-text="Screenshots showing the Email one-time passcode toggle.":::
 
-6. Select **Save**.
+   :::image type="content" source="media/one-time-passcode/email-one-time-passcode-toggle.png" alt-text="Screenshot showing the Email one-time passcode toggle.":::
+
+1. Select **Save**.
 
 ## Frequently asked questions
 

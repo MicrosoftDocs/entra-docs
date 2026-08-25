@@ -1,14 +1,8 @@
 ---
 title: API connector code samples for user flows
 description: Code samples for API connectors in self-service sign-up flows for Microsoft Entra External ID.
- 
-ms.service: entra-external-id
 ms.topic: sample
 ms.date: 04/14/2025
-
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 #customer intent: As a developer implementing self-service sign-up user flows, I want code samples for applying web APIs using API connectors, so that I can integrate identity verification services like IDology and Experian into my application.

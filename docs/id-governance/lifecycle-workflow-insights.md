@@ -1,21 +1,17 @@
 ---
 title: Lifecycle Workflow Insights
 description: Conceptual article about Lifecycle Workflows reporting and history capabilities.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/25/2025
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: krbain
 
-#CustomerIntent: As a system administrator, I want to learn what workflow insights can view across my environment so that I know which workflows, or tasks, are being used the most.
+#Customer Intent: As a system administrator, I want to learn what workflow insights can view across my environment so that I know which workflows, or tasks, are being used the most.
 ---
 
 # Workflow Insights
 
-Workflows created using Lifecycle Workflows allow for the automation of lifecycle task for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. With Lifecycle workflow's Workflow Insights feature, you're able to see aggregate information about all workflows across your tenant.
+Workflows created using Lifecycle Workflows allow for the automation of lifecycle tasks for users no matter where they fall in the Joiner-Mover-Leaver (JML) model of their identity lifecycle in your organization. Making sure workflows are processed correctly is an important part of an organization's lifecycle management process. With the Lifecycle Workflows Workflow Insights feature, you're able to see aggregate information about all workflows across your tenant.
 
 :::image type="content" source="media/lifecycle-workflow-insights/workflow-insights-view.png" alt-text="Screenshot of the Workflow Insights page.":::
 
@@ -35,7 +31,7 @@ The Workflow Insights summary provides a numerical view of successful workflows,
 
 :::image type="content" source="media/lifecycle-workflow-insights/workflow-insights-summary.png" alt-text="Screenshot of a workflow insights summary.":::
 
-This summary can be filtered to show information from either the past, 7, 14, or 30 days.
+This summary can be filtered to show information from the past 7, 14, or 30 days.
 
 ## Top Workflow Insights summary
 
@@ -50,8 +46,8 @@ When you view the top workflow insights summary, the following information is sh
 |---------|---------|
 |Workflow     | The name of the workflow.        |
 |Total Processed     |  The total runs of the workflow.       |
-|Successful     |  The successful runs for the workflow       |
-|Failed     |   The failed runs for the workflow      |
+|Successful     |  The successful runs for the workflow.       |
+|Failed     |   The failed runs for the workflow.      |
 |Category     | The workflow's category.        |
 |Total Users     |  The total number of users processed by the workflow.       |
 |Successful Users     |  The number of successful users processed by the workflow.       |
@@ -73,7 +69,7 @@ When you view the top tasks insights summary, the following information is shown
 |---------|---------|
 |Task     | The name of the task.        |
 |Total Processed     |  The total runs of the task.       |
-|Successful     |  The successful runs for the task       |
+|Successful     |  The successful runs for the task.       |
 |Failed     |   The failed runs for the task.      |
 |Total Users     |  The total number of users processed by the task.       |
 |Successful Users     |  The number of successful users processed by the task.       |
@@ -91,7 +87,7 @@ When you view the workflows run by category insights summary, the following info
 |Detail  |Information  |
 |---------|---------|
 |Joiner     | The percentage of workflows that have the category of *Joiner*. If the filter is set as successful, the percentage of Joiner is the number of Joiner workflows by percentage that were successful during the filtered time span.      |
-|Mover        |  The percentage of workflows that have the category of *Mover*. If the filer is set as total, the percentage of Mover is the number of mover workflows by percentage that were processed during the filtered time span.      |
+|Mover        |  The percentage of workflows that have the category of *Mover*. If the filter is set as total, the percentage of Mover is the number of mover workflows by percentage that were processed during the filtered time span.      |
 |Leaver     |   The percentage of workflows that have the category of *Leaver*. If the filter is set as failed, the percentage of Leaver is the number of Leaver workflows by percentage that failed during the filtered time span.      |
 
 

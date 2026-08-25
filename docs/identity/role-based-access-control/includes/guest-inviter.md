@@ -1,10 +1,8 @@
 ---
 title: Guest Inviter
 description: Guest Inviter
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
 ---
 
@@ -30,6 +28,7 @@ Users in this role can manage Microsoft Entra B2B guest user invitations when th
 > | microsoft.directory/users/photo/read | Read photo of users |
 > | microsoft.directory/users/registeredDevices/read | Read registered devices of users |
 > | microsoft.directory/users/scopedRoleMemberOf/read | Read user's membership of a Microsoft Entra role, that is scoped to an administrative unit |
+> | microsoft.directory/users/sponsorOf/read | Read all the agents or applications the user is sponsor of |
 > | microsoft.directory/users/sponsors/read | Read sponsors of users |
 > | microsoft.directory/users/standard/read | Read basic properties on users |
 

@@ -1,14 +1,11 @@
 ---
 title: Understand the app manifest (Microsoft Graph format)
 description: Describes the Microsoft Entra app manifest (Microsoft Graph format), which represents an application's identity configuration in a Microsoft Entra tenant.
-author: cilwerner
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: reference
-ms.workload: identity
 ms.date: 02/03/2025
-ms.author: cwerner
-ms.custom: aaddev
+ms.custom:
 ms.reviewer: 
 
 # Customer intent: As an application developer, I want to learn how to configure an application manifest (Microsoft Graph Format) in the Microsoft Entra admin center or programmatically, so that I can update the application object and define permissions and roles for the app.
