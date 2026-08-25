@@ -1,20 +1,22 @@
 ---
 title: Backup, difference report, and recovery model in Microsoft Entra Backup and Recovery
 description: Understand how Microsoft Entra Backup and Recovery creates backups, generates difference reports, and recovers tenant objects to a previous state
-ms.date: 03/02/2026
+ms.date: 08/25/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1023
+#customer intent: As an identity administrator, I want to understand how backups, difference reports, and recovery work so that I can compare tenant changes and recover supported objects.
 ---
 
 # Backup, difference report, and recovery model in Microsoft Entra Backup and Recovery
 
 Microsoft Entra Backup and Recovery automatically backs up supported tenant objects so you can compare changes and recover to a previous state. Supported objects include:
 
-- Users
+- Users, including agents' user accounts
 - Groups
-- Applications
-- Service principals
+- Applications, including agent identity blueprints
+- Service principals, including agent identities and agent identity blueprint principals
 - Conditional access policies
 - Named location policies
 - Authentication method policy
