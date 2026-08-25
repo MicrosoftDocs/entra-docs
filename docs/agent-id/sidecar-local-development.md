@@ -1,19 +1,19 @@
 ---
-title: Run the Microsoft Entra Auth SDK (sidecar) for local development
+title: Run the Microsoft Entra ID Auth SDK (sidecar) for local development
 titleSuffix: Microsoft Entra Agent ID
-description: Run the Microsoft Entra SDK auth sidecar on your laptop with Docker Compose and Ollama to see autonomous and on-behalf-of agent authentication working end-to-end.
+description: Run the Microsoft Entra ID Auth SDK (sidecar) on your laptop with Docker Compose and Ollama to see autonomous and on-behalf-of agent authentication working end-to-end.
 ms.topic: how-to
 ms.date: 06/15/2026
 ms.custom: msecd-doc-authoring-1013
 ai-usage: ai-assisted
 
-#customer intent: As a developer building AI agents, I want to run the Microsoft Entra SDK auth sidecar locally so that I can see agent authentication working end-to-end before deploying to production.
+#customer intent: As a developer building AI agents, I want to run the Microsoft Entra ID Auth SDK (sidecar) locally so that I can see agent authentication working end-to-end before deploying to production.
 
 ---
 
 # Run the sidecar for local development
 
-This article shows how to run the [Microsoft Entra Auth SDK sidecar](https://mcr.microsoft.com/en-us/product/entra-sdk/auth-sidecar/about) in your local environment by using Docker Compose. You start a four-container stack - chat agent, sidecar, downstream weather API, and a local large language model (LLM) such as ([Ollama](https://ollama.com)). Then you send a query through the chat UI and observe the full token flow from agent to API. Before you begin, review the [Prerequisites](#prerequisites) for required tools, Microsoft Entra tenant objects, and local environment setup.
+This article shows how to run the [Microsoft Entra ID Auth SDK (sidecar)](https://mcr.microsoft.com/en-us/product/entra-sdk/auth-sidecar/about) in your local environment by using Docker Compose. You start a four-container stack - chat agent, sidecar, downstream weather API, and a local large language model (LLM) such as ([Ollama](https://ollama.com)). Then you send a query through the chat UI and observe the full token flow from agent to API. Before you begin, review the [Prerequisites](#prerequisites) for required tools, Microsoft Entra tenant objects, and local environment setup.
 
 The sample demonstrates two execution modes and two identity flows:
 
@@ -54,7 +54,7 @@ cd entra-agentid-samples/sidecar/dev
 <a name="architecture"></a>
 ## Sidecar local development architecture
 
-The stack runs four containers on an internal Docker network: `llm-agent-dev` (Flask chat UI, exposed on port 3003), `agent-id-sidecar-dev` (Microsoft Entra SDK auth sidecar), `weather-api-dev` (downstream API that validates agent tokens), and `ollama-dev` (local LLM). Only the chat UI is exposed to your host; the sidecar and weather API are reachable only from within the Docker network.
+The stack runs four containers on an internal Docker network: `llm-agent-dev` (Flask chat UI, exposed on port 3003), `agent-id-sidecar-dev` (the Microsoft Entra ID Auth SDK sidecar), `weather-api-dev` (downstream API that validates agent tokens), and `ollama-dev` (local LLM). Only the chat UI is exposed to your host; the sidecar and weather API are reachable only from within the Docker network.
 
 :::image type="content" source="media/sidecar-local-development/sidecar-request-flow.png" alt-text="Diagram showing the sidecar architecture: Microsoft Entra ID issues a TR token to the sidecar, the agent asks the sidecar for an authorization header, then calls the weather API with Bearer TR, which validates the token and returns data." lightbox="media/sidecar-local-development/sidecar-request-flow.png":::
 

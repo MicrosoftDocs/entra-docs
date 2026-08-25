@@ -4,7 +4,7 @@ description: Conceptual article about Lifecycle workflows execution conditions.
 ms.subservice: lifecycle-workflows
 ms.workload: identity
 ms.topic: concept-article
-ms.date: 03/12/2026
+ms.date: 08/21/2026
 ms.custom: template-concept 
 #Customer Intent: As an IT admin, I want to understand lifecycle workflow execution conditions and scheduling so that I can configure when and how workflows run.
 ---
@@ -45,12 +45,32 @@ When setting a workflow where the trigger type is **Time based attribute**, the 
 |---------|---------|
 |Days from Event     |  The days from the event user attribute for when the workflow is triggered. Value can be from 0-180.     |
 |Event timing     |   Defines when the *Days from Event*  detail for a workflow is triggered. For example, a workflow that is scheduled to run for a user before they start working would have an event timing value of **Before**, while a workflow scheduled to run for a user after they leave your organization would have an event timing value of **After**. If selecting a template for a workflow that runs on the same day as the event user attribute, the value is **On**.      |
-|Event user attribute     | The attribute defining the change that triggers the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*" or "*LastSignInDateTime*". For a list of templates, and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md). You are also able to set custom attribute triggers. For more information, see [Use Custom Attribute Triggers in Lifecycle Workflows (Preview)](workflow-custom-triggers.md).       |
+|Event user attribute     | The attribute defining the change that triggers the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*". For a list of templates, and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md). You are also able to set custom attribute triggers. For more information, see [Use Custom Attribute Triggers in Lifecycle Workflows (Preview)](workflow-custom-triggers.md).       |
 
 
 
 > [!NOTE]
 > The event user attribute must be set within Microsoft Entra ID for users. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
+
+### Relative time-based comparisons (preview)
+
+> [!IMPORTANT]
+> Relative time-based comparisons are in public preview. During public preview, the Microsoft Entra admin center temporarily shows **Time based attribute** and **Time based attribute V2 (Preview)** as separate choices. Both choices represent the time-based attribute trigger. When this capability becomes generally available, customers will see only one time-based trigger choice that includes relative comparisons. For more information about previews, see [Universal License Terms for Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+
+The preview experience expands the time-based attribute trigger with relative comparisons. It includes the functionality of the standard time-based option and can also match users across a relative period. To configure these comparisons in a new or existing workflow, open [Lifecycle Workflows in the Microsoft Entra admin center](https://aka.ms/LCWRelativeTimeBasedTrigger), and then select **Time based attribute V2 (Preview)** under **Trigger details**.
+
+Configure the following trigger timing details:
+
+|Trigger detail|Description|
+|---|---|
+|Operator|Select **Exactly**, **Between**, or **Less than or equal to**.|
+|Days from event|Enter an offset from 0 through 365 days. When you select **Between**, also enter an offset from 0 through 365 days in **Days to event**.|
+|Event timing|Select **Before** or **After** the event attribute date. To use the standard time-based behavior on the attribute date, select **Exactly**, enter 0 days, and select **On**.|
+|Event attribute|Select any user attribute supported by the time-based trigger, including `employeeHireDate`, `employeeLeaveDateTime`, and `createdDateTime`.|
+
+After configuring the trigger, continue through **Configure scope**, **Review tasks**, and **Review + create**. The workflow and its schedule must both be enabled for the trigger to be evaluated.
+
+Workflow evaluation, scheduling, and processing work the same for both preview choices, except the **Time based attribute V2 (Preview)** choice doesn't have a three-day catch-up window. Workflows created during preview transition to the unified generally available experience without reconfiguration. Microsoft communicates any schema changes in advance.
 
 ### Time based attribute scope
 

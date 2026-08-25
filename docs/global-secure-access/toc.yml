@@ -168,6 +168,8 @@ items:
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
+  - name: Web filtering (V2)
+    href: concept-web-filtering.md
   - name: Explicit Forward Proxy
     expanded: false
     items:
@@ -320,6 +322,8 @@ items:
             href: faq-transport-layer-security.yml
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Migrate web content filtering policies to V2
+        href: how-to-migrate-web-content-filtering-policies.md
       - name: Check URL category
         href: how-to-check-web-content-filtering-categories.md
       - name: Configure threat intelligence
@@ -332,6 +336,8 @@ items:
         href: how-to-network-content-filtering.md
       - name: Configure the AI Gateway prompt injection protection
         href: how-to-ai-prompt-injection-protection.md
+      - name: Configure MCP firewall (Preview)
+        href: how-to-configure-mcp-firewall.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
   - name: Explicit Forward Proxy

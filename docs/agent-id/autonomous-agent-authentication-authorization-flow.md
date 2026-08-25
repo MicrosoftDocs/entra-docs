@@ -64,7 +64,7 @@ Configure *Microsoft.Identity.Web* to authenticate your agent identity blueprint
   "AzureAd": {
     "Instance": "https://login.microsoftonline.com/",
     "TenantId": "<your-tenant-id>",
-    "ClientId": "<agent-blueprint-clientid>",
+    "ClientId": "<agent-blueprint-client-id>",
     "ClientCredentials": [
       {
         "SourceType": "SignedAssertionFromManagedIdentity",
@@ -82,7 +82,7 @@ For local development and testing only, you can use a client secret instead:
   "AzureAd": {
     "Instance": "https://login.microsoftonline.com/",
     "TenantId": "<your-tenant-id>",
-    "ClientId": "<agent-blueprint-clientid>",
+    "ClientId": "<agent-blueprint-client-id>",
     "ClientCredentials": [
       {
         "SourceType": "ClientSecret",
@@ -106,7 +106,7 @@ When using a client secret during local development, provide the `client_secret`
 Use the following token request to obtain a token for the agent identity blueprint:
 
 ```http
-POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
+POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=<agent-blueprint-client-id>
@@ -134,7 +134,7 @@ dotnet add package Microsoft.Identity.Web.AgentIdentities
 Once you have the agent identity blueprint token (T1), use it to request the agent identity token.
 
 ```http
-POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
+POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=<agent-identity-client-id>
@@ -230,7 +230,7 @@ Use the following steps to get an app role assignment.
     #### [Microsoft Graph PowerShell](#tab/microsoft-graph-powershell)
     
     ```powershell
-    Connect-MgGraph -Scopes "Application.Read.All AppRoleAssignment.ReadWrite.All" -TenantId <your-test-tenant>
+    Connect-MgGraph -Scopes "Application.Read.All AppRoleAssignment.ReadWrite.All" -TenantId <your-tenant-id>
     
     # Get the service principal for Microsoft Graph (well-known app ID)
     $graphSp = Get-MgServicePrincipal -Filter "appId eq '00000003-0000-0000-c000-000000000000'"
@@ -322,7 +322,7 @@ To use `Microsoft.Identity.Web` to create an agent's user account, follow these 
     {
       "AzureAd": {
         "Instance": "https://login.microsoftonline.com/",
-        "TenantId": "<my-test-tenant>",
+        "TenantId": "<your-tenant-id>",
         "ClientId": "<my-agent-blueprint-id>",
         "Scopes": "access_agent",
         "ClientCredentials": [
@@ -355,6 +355,7 @@ To use `Microsoft.Identity.Web` to create an agent's user account, follow these 
 
     ```csharp
     using Microsoft.Identity.Abstractions;
+    using Microsoft.Identity.Web;
     using Microsoft.Identity.Web.Resource;
     using Microsoft.IdentityModel.S2S.Extensions.AspNetCore;
 
@@ -434,7 +435,7 @@ Content-Type: application/json
 For Microsoft Graph PowerShell, use the following script:
 
 ```powershell
-Connect-MgGraph -Scopes "DelegatedPermissionGrant.ReadWrite.All" -TenantId <your-test-tenant>
+Connect-MgGraph -Scopes "DelegatedPermissionGrant.ReadWrite.All" -TenantId <your-tenant-id>
 
 # Get the service principal for Microsoft Graph
 $graphSp = Get-MgServicePrincipal -Filter "appId eq '00000003-0000-0000-c000-000000000000'"
@@ -465,7 +466,7 @@ To authenticate an agent's user account, you need to follow a three-step process
 First, request a token as the agent identity blueprint, as described in [Request a token for the agent identity blueprint](#request-a-token-for-the-agent-identity-blueprint). Once you have the agent identity blueprint token, use the agent identity blueprint token to request a Federated Identity Credential (FIC) for your agent identity:
 
 ```http
-POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
+POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=<agent-identity-id>
@@ -478,7 +479,7 @@ client_id=<agent-identity-id>
 This returns an exchange token (T2) for the agent identity. Use it in the next request to obtain a delegated token for the agent's user account:
 
 ```http
-POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
+POST https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=<agent-identity-id>
