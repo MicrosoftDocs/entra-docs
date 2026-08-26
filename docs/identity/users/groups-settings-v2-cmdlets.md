@@ -274,7 +274,7 @@ The value returned is a list of groups of which this user is a member. You can a
 
 ## Disable group creation by your users
 
-You can prevent standard users from creating security groups. The default behavior in Microsoft Online Directory Services (MSODS) is to allow standard users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting controls behavior only in the My Groups portal.
+You can prevent standard users from creating security groups. The default behavior is to allow standard users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting controls behavior only in the My Groups portal.
 
 To disable group creation for standard users:
 
