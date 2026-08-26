@@ -283,3 +283,4 @@ Known limitations for Explicit Forward Proxy (preview) include:
 - On MacOS, coexistence of GSA client and EFP settings are not supported due to client certificate issues.
 - Microsoft Office 365 traffic should not be tunneled to EFP. EFP-hosted PAC file excludes Office 365 destinations. Office 365 traffic is defined in the [Microsoft 365 IP and FQDN list](https://aka.ms/m365iplist)
 - EFP supports Microsoft Entra Internet Access traffic type. Private Access and Microsoft Traffic are not supported when users configure EFP.
+
