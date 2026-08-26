@@ -5,7 +5,7 @@ description: Learn how to securely create a governed Microsoft Entra workforce t
 author: tafra00
 ms.author: tazkiaafra
 ms.topic: how-to
-ms.date: 07/29/2026
+ms.date: 08/26/2026
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1018
 #customer intent: As an IT administrator, I want to create a governed workforce tenant so that my organization can manage it through a governance relationship.
@@ -18,10 +18,8 @@ This article is for IT administrators who need to create an add-on tenant that i
 When you create a tenant using the **Governed Workforce** option in the Microsoft Entra admin center, the secure add-on tenant creation flow automatically:
 
 - Creates the new workforce tenant
-- Establishes a [governance relationship](governance-relationships.md) between your home tenant and the new tenant based on your [governance policy template](governance-policy-templates.md)
+- Establishes a [governance relationship](governance-relationships.md) between your home tenant and the new tenant if your home tenant has a default [governance policy template](governance-policy-templates.md)
 - Provisions a [Microsoft Entra ID Free billing asset](/azure/cost-management-billing/manage/microsoft-entra-id-free) under your selected Azure subscription and resource group
-
-This article doesn't cover creating an external tenant configuration for consumer-facing apps. For customer identity and access management scenarios, see [Microsoft Entra External ID for customers](~/external-id/customers/overview-customers-ciam.md).
 
 This article doesn't cover creating an external tenant configuration for consumer-facing apps. For customer identity and access management scenarios, see [Microsoft Entra External ID for customers](~/external-id/customers/overview-customers-ciam.md).
 
@@ -43,8 +41,7 @@ For step-by-step instructions on creating a governed workforce tenant, see the *
 
 After the system creates the tenant:
 
-1. A governance relationship forms between your home tenant and the new tenant, using the [default governance policy template](governance-policy-templates.md).
-1. The policy template provisions resources including cross-tenant access settings, granular delegated admin privileges (GDAP) assignments, and service principals.
+1. If your home tenant has a [default governance policy template](governance-policy-templates.md), a governance relationship forms between your home tenant and the new tenant. The template provisions resources, including cross-tenant access settings, granular delegated admin privileges (GDAP) assignments, and service principals.
 1. A [Microsoft Entra ID Free billing asset](/azure/cost-management-billing/manage/microsoft-entra-id-free) appears in your Azure subscription under the resource group you selected.
 1. The new tenant appears in your [related tenants](related-tenants.md) inventory.
 
