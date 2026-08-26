@@ -66,6 +66,10 @@ items:
     items:
     - name: Prerequisites to validate and publish your app
       href: v2-howto-app-gallery-listing.md
+    - name: SSO requirements for App Gallery
+      href: app-gallery-sso-requirements.md
+    - name: User provisioning requirements for App Gallery
+      href: app-gallery-user-provisioning-requirements.md
     - name: Validate an OIDC multitenant app
       href: validate-oidc-multitenant-app-gallery.md
     - name: Validate a SAML single sign-on app
