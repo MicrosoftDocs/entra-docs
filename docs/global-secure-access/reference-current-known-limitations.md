@@ -271,7 +271,7 @@ Known limitations for Internet Access include:
 - The Global Secure Access client doesn't support multi-session Azure Virtual Desktop.
 
 ## Global Secure Access In Government Cloud limitations
-Global Secure Access is available in GCC, not yet supported in (GCC-H), Department of Defense cloud and other Govt/Sovereign cloud environments.
+Global Secure Access is available in the US Government Community Cloud (GCC), but isn't yet supported in the US Government Community Cloud High (GCC-H), Department of Defense cloud, or other government or sovereign cloud environments.
 
 ## Explicit Forward Proxy (preview) limitations
 Known limitations for Explicit Forward Proxy (preview) include:
