@@ -27,7 +27,7 @@ Always use the role with the fewest permissions available to accomplish the requ
 
 | Persona | Roles | Microsoft Entra role (if necessary) |
 | ------- | ----- | --------------------------- |
-| Help desk admin | Tier 1 support view the sign-in logs to resolve issues.  | None |
+| Help desk admin | Tier 1 support view the sign-in logs to resolve issues. | None |
 | Identity admin | Configure and debug when issues involve Microsoft Entra ID | Cloud Application Administrator |
 | Application admin | User attestation in application, configuration on users with permissions | None |
 | Infrastructure admins | Certificate rollover owner | Cloud Application Administrator |

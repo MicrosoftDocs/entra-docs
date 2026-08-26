@@ -1,5 +1,5 @@
 ---
-title: What is single sign-on (SSO) in Microsoft Entra ID?
+title: What is single sign-on in Microsoft Entra ID?
 description: Learn about single sign-on for enterprise applications in Microsoft Entra ID, including SAML and OpenID Connect protocols.
 
 author: omondiatieno
