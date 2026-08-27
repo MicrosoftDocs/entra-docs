@@ -23,7 +23,9 @@ Before you start, review the licensing, role, agent-user, device, and network re
 
 ## Prerequisites
 
-- A Microsoft Entra ID P1 or P2 license.
+- One of the following license plans:
+	- Microsoft 365 E7, which includes Agent 365 and Microsoft Entra Suite, to provide governance of user and agent identities.
+	- Microsoft Agent 365 license paired with at least Microsoft Entra P1 or Microsoft 365 E3.
 - At least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
 - An [agent user account](../../agent-id/agent-users.md) linked to an agent identity.
 - For device compliance, an agent that runs on an Intune-managed Windows 365 Cloud PC for Agents.
