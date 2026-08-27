@@ -402,7 +402,7 @@ To request an access token from the SAP system using Microsoft Entra ID (formerl
 ### Step 4: Request Access Token
 
 > [!TIP]
-> Consider using Azure API Management to streamline the SAP Principal Propagation process for all client apps in Azure, Power Platform, Microsoft 365 and more, in a single place including smart token caching, secure token handling and governance options like request throttling. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=aaaabbbb-0000-cccc-1111-dddd2222eeee). In case SAP Business Technology Platform is preferred, see [this article](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/integrating-low-code-solutions-with-microsoft-using-sap-integration-suite/ba-p/13789298).
+> Consider using Azure API Management to streamline the SAP Principal Propagation process for all client apps in Azure, Power Platform, Microsoft 365 and more, in a single place including smart token caching, secure token handling and governance options like request throttling. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0). In case SAP Business Technology Platform is preferred, see [this article](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/integrating-low-code-solutions-with-microsoft-using-sap-integration-suite/ba-p/13789298).
 
 1. **Prepare the token request**:
    - Construct a token request using the following details:
@@ -445,4 +445,4 @@ A typical setup defaults to SAML2 for SSO and OAuth2 for API access.
 ## Related content
 
 - Configure Microsoft Entra SAP NetWeaver to enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
-- Configure SAP Principal Propagation (OAuth2) using Azure API Management to govern and secure access to SAP systems from client apps in Azure, Power Platform, Microsoft 365 and others. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=aaaabbbb-0000-cccc-1111-dddd2222eeee).
+- Configure SAP Principal Propagation (OAuth2) using Azure API Management to govern and secure access to SAP systems from client apps in Azure, Power Platform, Microsoft 365 and others. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0).
