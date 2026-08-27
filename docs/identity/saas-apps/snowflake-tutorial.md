@@ -23,16 +23,18 @@ Snowflake is available in the following [national cloud deployments](/graph/depl
 To configure Microsoft Entra integration with Snowflake, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
-* Snowflakes single sign-on enabled subscription.
-* Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
+* A Snowflake account and administrator role in that account.
+* An administrator role in Microsoft Entra. Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
 ## Scenario description
 
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Snowflake supports **SP and IDP** initiated SSO.
+* Snowflake supports **SP and IDP** initiated SAML SSO.
+* Snowflake also has an OpenID Connect (OIDC) integration, but that is not discussed in this article. For more information, see [Configuring OpenID Connect (OIDC) federated authentication](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-oidc).
 * Snowflake supports [automated user provisioning and deprovisioning](snowflake-provisioning-tutorial.md) (recommended).
+* Snowflake also supports Workload Identity Federation and OAuth for applications and agents using Microsoft Entra.
 
 ## Add Snowflake from the gallery
 
@@ -90,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/logout`
 
     > [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL, Sign-on URL, and sign out URL. Contact [Snowflake Client support team](https://support.snowflake.net/s/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, Sign-on URL, and sign out URL. For more information, see [Configuring SAML 2.0 federated authentication](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-security-integration). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
@@ -189,7 +191,7 @@ To enable Microsoft Entra users to sign in to Snowflake, they must be provisione
 
 ## Test SSO 
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options. 
+In this section, you test your Microsoft Entra single sign-on configuration with following options. For more information on SAML error codes returned by Snowflake, see [Federated authentication and SSO troubleshooting](https://docs.snowflake.com/en/user-guide/errors-saml).
 
 #### SP initiated:
 

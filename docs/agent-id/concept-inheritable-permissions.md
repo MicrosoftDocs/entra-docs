@@ -124,8 +124,6 @@ When you configure required resource access and inheritable permissions for agen
 
 - **Review security implications.** Ensure that inheritable permissions don't grant excessive access or expose sensitive resources beyond what's necessary. Regularly audit permission lists to maintain compliance and minimize risk.
 
-<!-- TODO: Confirm with engineering whether the enumerated scopes pattern (mentioned in manage-agent-identities-admin.md) is still a supported inheritance pattern or has been removed in favor of allAllowed/none only. -->
-
 ## Example scenarios
 
 The following scenarios illustrate how different permission configurations serve different deployment needs.

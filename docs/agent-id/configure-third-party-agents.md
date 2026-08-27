@@ -13,7 +13,7 @@ ms.custom: msecd-doc-authoring-1012
 
 # Integrate third-party agents with Microsoft Entra Agent ID
 
-Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra Auth SDK (sidecar) and federation - for platforms such as Amazon Web Service (AWS) Bedrock and n8n.
+Microsoft Entra Agent ID enables AI agents from third-party platforms to authenticate and access your APIs securely without handling credentials directly. This article covers two integration patterns - the Microsoft Entra ID Auth SDK (sidecar) and federation - for platforms such as Amazon Web Service (AWS) Bedrock and n8n.
 
 ## Prerequisites
 
@@ -46,15 +46,15 @@ Microsoft Entra Agent ID provides a centralized, secure identity service that th
 - Remove the need for agents to handle credentials directly.
 - Use workload identity federation for agents running outside Azure.
 - Support multiple authentication patterns, including client credentials, federated identity, and on-behalf-of.
-- Integrate with third-party agent platforms by using the Microsoft Entra Auth SDK (sidecar).
+- Integrate with third-party agent platforms by using the Microsoft Entra ID Auth SDK (sidecar).
 
 ## Integration patterns for third-party agents
 
 To integrate third-party agents with Microsoft Entra Agent ID, choose from the following patterns:
 
-### Use the Microsoft Entra Auth SDK (sidecar)
+### Use the Microsoft Entra ID Auth SDK (sidecar)
 
-The **sidecar pattern** runs the Microsoft Entra Auth SDK as a companion container alongside your agent. The agent calls the sidecar to request tokens for API calls. The agent never handles credentials directly; instead, it delegates token acquisition to the sidecar.
+The **sidecar pattern** runs the Microsoft Entra ID Auth SDK (sidecar) as a companion container alongside your agent. The agent calls the sidecar to request tokens for API calls. The agent never handles credentials directly; instead, it delegates token acquisition to the sidecar.
 
 **Best for:**
 
@@ -182,7 +182,7 @@ When you integrate third-party agents, follow these security principles:
 - **Validate token audience and issuer.** Always verify that tokens come from your Microsoft Entra tenant.
 - **Rotate credentials regularly.** If you use client secrets, rotate them on a schedule. Consider federated credentials instead.
 - **Monitor token usage.** Use Microsoft Entra logs to track which agents access which APIs.
-- **Keep the Microsoft Entra SDK updated.** Security and compatibility updates are released regularly.
+- **Keep the Microsoft Entra ID Auth SDK (sidecar) updated.** Security and compatibility updates are released regularly.
 
 ## Troubleshoot common issues
 
@@ -197,7 +197,7 @@ If you run into problems during integration, use the following guidance to ident
 
 ## Related content
 
-- [Configure Entra ID Auth SDK (sidecar) for agent identities](microsoft-entra-sdk-for-agent-identities.md)
+- [Configure Microsoft Entra ID Auth SDK (sidecar) for agent identities](microsoft-entra-sdk-for-agent-identities.md)
 - [Call Microsoft Graph API](call-api-microsoft-graph.md)
 - [Call custom APIs](call-api-custom.md)
 - [Call Azure services](call-api-azure-services.md)

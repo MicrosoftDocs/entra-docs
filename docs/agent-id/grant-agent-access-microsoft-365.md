@@ -72,6 +72,17 @@ Exchange RBAC (Role-Based Access Control) lets administrators delegate permissio
 
 Teams Resource-Specific Consent (RSC) enables granular permission assignments for agents within Microsoft Teams. RSC allows you to grant permissions to an app or agent on a per-team basis, rather than at the tenant level. This approach is especially useful when you want to limit access to only the resources and data within specific teams. Such data includes channels, messages, or roster information, without granting broader organizational permissions. For more information, see [Resource-specific consent for your Teams app](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
 
+### Permissions for agent communication across Microsoft 365 channels
+
+An agent with its own identity (Agent ID) can communicate across Microsoft 365 surfaces, including sending and receiving Outlook email, receiving and responding to comments in OneDrive and SharePoint files, and sending and receiving messages from Teams chats and channels. Each surface the agent communicates in requires specific permissions, which you declare in the agent identity blueprint's required resource access, and which a tenant admin must consent to before the agent can send or receive anything there.
+
+| Channel | Displayed as | Inbound (channel → agent)<br>Receiving events | Outbound (agent → channel)<br>Sending responses |
+|---|---|---|---|
+| `email` | Outlook | `Mail.Read` or `Mail.ReadWrite` | `Mail.Send` or `Mail.ReadWrite` |
+| `spo.files.comments` | OneDrive and SharePoint | `Files.Read.All` or `Files.ReadWrite.All` | `Files.ReadWrite.All` |
+| `teams-chat` | Teams chats | `Chat.Read` or `Chat.ReadWrite` | `Chat.ReadWrite` or `ChatMessage.Send` |
+| `teams-channel` | Teams channels | `ChannelMessage.Read.All` | `ChannelMessage.Send` |
+
 ### Custom (third‑party) APIs
 
 Agents can call other OAuth‑protected APIs. Ensure the resource application and its service principal exist in the tenant, define required scopes/app roles, and follow the same delegated or app‑permission flows. For more information, see Microsoft's guide to permissions and consent in the Microsoft identity platform.

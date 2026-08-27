@@ -5,7 +5,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 04/07/2026
+ms.date: 08/12/2026
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 
@@ -158,11 +158,11 @@ Response is truncated for readability.
       "schemaExtensions": [
         {
           "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
-          "required": true
+          "required": false
         },
         {
           "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User",
-          "required": true
+          "required": false
         }
       ],
       "meta": {
@@ -217,7 +217,7 @@ Response is truncated for readability.
   "schemaExtensions": [
     {
       "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
-      "required": true
+      "required": false
     }
   ],
   "meta": {
@@ -735,7 +735,8 @@ The following attributes are required for successful user creation:
 
 - `displayName`
 
-- urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname
+> [!NOTE]
+> The `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname` attribute is optional when you create a user. If you omit it, set it to `null`, or provide an empty value, Microsoft Entra ID derives `mailNickname` from `userName`. It uses the characters before the first `@`. If `userName` doesn't contain `@`, it uses the complete value. For example, `abc123@contoso.com` produces a `mailNickname` value of `abc123`.
 
 #### Example 1 – Create a new user
 
@@ -750,8 +751,7 @@ Content-Type: application/scim+json
 ```json
 {
   "schemas": [
-    "urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User"
+    "urn:ietf:params:scim:schemas:core:2.0:User"
   ],
   "active": true,
   "displayName": "Example User",
@@ -760,9 +760,6 @@ Content-Type: application/scim+json
   "name": {
     "familyName": "Example familyName",
     "givenName": "Example givenName"
-  },
-  "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User": {
-    "mailNickname": "abc123"
   }
 }
 ```
@@ -770,6 +767,8 @@ Content-Type: application/scim+json
 **Response (201 Created):**
 
 Returns the SCIM representation of the user created.
+
+In this example, Microsoft Entra ID derives the `mailNickname` value `abc123` from `userName`.
 
 ## Update a user
 
@@ -794,7 +793,7 @@ Upon success, the API returns HTTP Status 204.
 
 - For PATCH operations, while updating complex multi-valued attributes like addresses, the path property only supports “[type eq \" work\"]" filter.
 
-- Mandatory attribute `mailNickname` can't be removed using PATCH operation.
+- After a user is created, the `mailNickname` attribute can't be removed by using a PATCH operation.
 
 #### Example 1 – Update an attribute value
 

@@ -3,7 +3,7 @@ title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
 manager: pmwongera
 ms.topic: how-to
-ms.date: 07/21/2026
+ms.date: 08/18/2026
 ms.reviewer: mkokkalera
 ms.custom: sfi-image-nochange, msecd-doc-authoring-1015
 ai-usage: ai-assisted
@@ -103,9 +103,9 @@ The sign-in experience process is grouped into sections. At the end of each sect
     - View the [CSS template reference guide](reference-company-branding-css-template.md).
 
     > [!IMPORTANT]
-    > Tenants created after January 5, 2026, won't have custom CSS available for company branding in Microsoft Entra ID. Tenants created before January 5, 2026, can continue to use custom CSS.
+    > Tenants created after January 5, 2026, don't have custom CSS available for company branding in Microsoft Entra ID. After July 21, 2026, tenants created before January 6, 2026, that don't already use custom CSS can't configure custom CSS.
     >
-    > As part of the [Microsoft Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative), Microsoft Entra ID is retiring support for custom CSS *positioning properties* (such as `position`, `margin`, `transform`, and `overflow`). After July 21, 2026, tenants that don't already use these properties can't configure them. Later, the properties will be deprecated globally and stop functioning. Eventually, custom CSS will be retired entirely. If your custom CSS uses these properties, remove them from your configuration. For the full list of deprecated properties and steps to update your CSS, see [CSS template reference guide](reference-company-branding-css-template.md#deprecation-of-custom-css-positioning-properties). For more information, see the blog post [Microsoft Entra ID enhances security of branded sign-ins](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-enhances-security-of-branded-sign-ins/4537471).
+    > To align with the [Microsoft Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative) and its focus on identity security and phishing resistance, Microsoft Entra ID is retiring support for custom CSS *layout and positioning properties* (such as `position`, `margin`, `transform`, and `overflow`). Later, the properties will be deprecated globally and stop functioning. Eventually, custom CSS will be retired entirely. If your custom CSS uses these properties, remove them from your configuration. For the full list of deprecated properties and steps to update your CSS, see [CSS template reference guide](reference-company-branding-css-template.md#deprecation-of-custom-css-positioning-properties). For more information, see the blog post [Microsoft Entra ID enhances security of branded sign-ins](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-enhances-security-of-branded-sign-ins/4537471).
 
 ### Header
 

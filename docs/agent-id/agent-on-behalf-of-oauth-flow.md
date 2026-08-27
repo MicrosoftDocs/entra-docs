@@ -14,6 +14,9 @@ Agents (agent identity blueprints) operating on behalf of regular, signed-in use
 
 Agents have the capabilities of Microsoft Entra ID resource (API) applications and support the API attributes required for the (OAuth2Permissions, AppURI). Agent identity blueprints can't initiate interactive authorization (`/authorize`) flows directly. They must receive a user token from a client application and then perform an OBO token exchange. A web redirect URI can be configured on a blueprint for consent flows only (`response_type=none`), but it has limited functionality compared to a redirect URI on an app registration.
 
+> [!IMPORTANT]
+> Like their parent blueprints, child agent identities can't initiate interactive `/authorize` flows. Consequently, users can't grant them consent interactively (attempting this on the child identity returns the error `AADSTS82014`). Instead, you must preauthorize the required delegated permissions by configuring inheritable permissions on the parent agent identity blueprint. Ensure an administrator has actually granted consent for these permissions on the blueprint. The child agent identities will then inherit these scopes without triggering an interactive consent prompt. For step-by-step guidance, see [Configure inheritable permissions for agent identity blueprints](./configure-inheritable-permissions-blueprints.md).
+
 [!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-libraries.md)]
 
 [!INCLUDE [Managed identities support](./includes/managed-identities-preferred.md)]
@@ -62,10 +65,10 @@ Agents aren't supported for interactive (`/authorize`) flows. Supported grant ty
     &requested_token_use=on_behalf_of
     ```
 
-1. Microsoft Entra ID returns the resource token after validating both the T1 and Tc. The OBO protocol requires token audience to match the client ID:
+1. Microsoft Entra ID returns the resource token after validating both T1 and Tc. The following audience and linkage requirements apply:
 
-    - T1 (aud) == Agent identity Parent app == Agent identity blueprint client ID
-    - Tc (aud) == Agent identity blueprint client ID
+    - Tc (aud) == agent identity blueprint client ID. The user assertion must be audienced to the blueprint; a token audienced to another resource (for example, Microsoft Graph) is rejected with `AADSTS50013`.
+    - T1 is obtained with `scope=api://AzureADTokenExchange/.default`, so its `aud` is the token-exchange resource rather than the blueprint. Microsoft Entra ID validates that T1 is bound to the blueprint (its `azp` is the blueprint) and that T1's `sub` (the FMI path) resolves to the child agent identity performing the exchange.
 
 ### Sequence diagram
 
@@ -98,3 +101,4 @@ Agent identities can inherit delegated permissions from their parent agent ident
 - [Oauth2.0 flows for agents](./agent-oauth-protocols.md)
 - [Autonomous app flow in agents](./agent-autonomous-app-oauth-flow.md)
 - [Agent's user account flow in agents](./agent-user-oauth-flow.md)
+- [Configure inheritable permissions for agent identity blueprints](./configure-inheritable-permissions-blueprints.md)

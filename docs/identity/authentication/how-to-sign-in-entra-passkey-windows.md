@@ -1,5 +1,5 @@
 ---
-title: Sign in with a Microsoft Entra passkey on Windows (preview)
+title: Sign in with a Microsoft Entra passkey on Windows
 description: Learn how to sign in with a Microsoft Entra passkey on Windows by using Windows Hello as a FIDO2 passkey provider for phishing-resistant authentication.
 ms.topic: how-to
 ms.date: 07/05/2026
@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1013
 # Customer intent: As a user, I want to sign in with a Microsoft Entra passkey on Windows so I can use phishing-resistant authentication on my Windows device.
 ---
-# Sign in with a Microsoft Entra passkey on Windows (preview)
+# Sign in with a Microsoft Entra passkey on Windows
 
 This article covers how to sign in to Microsoft Entra ID with a Microsoft Entra passkey on Windows. A Microsoft Entra passkey on Windows is a device-bound passkey stored in the local Windows Hello container. For an overview of Microsoft Entra passkey on Windows and how it compares with Windows Hello for Business, see [Microsoft Entra passkey on Windows](how-to-authentication-entra-passkeys-on-windows.md).
 

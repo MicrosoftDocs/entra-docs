@@ -1,5 +1,5 @@
 ---
-title: Plan your SSO integration with Microsoft Entra (ISVs)
+title: Plan your SSO integration with Microsoft Entra ID (ISVs)
 description: High-level planning and decision guide for Independent Software Vendors (ISVs) preparing to integrate single sign-on (SSO) with Microsoft Entra ID.
 
 author: omondiatieno
@@ -153,7 +153,7 @@ Use the following tables to confirm you're ready for validation and gallery publ
 Confirm these application design choices before validation.
 
 | Readiness item | Why it matters |
-|---|---|
+| --- | --- |
 | Multitenant model confirmed | The Microsoft Entra app gallery only accepts multitenant applications. |
 | Application architecture defined (web, SPA, mobile, or API) | Architecture determines which authentication flows apply. |
 | Authentication flows identified and aligned with architecture | Misaligned flows cause validation failures. |
@@ -163,7 +163,7 @@ Confirm these application design choices before validation.
 Confirm your protocol choice and its implications.
 
 | Readiness item | Why it matters |
-|---|---|
+| --- | --- |
 | OIDC default confirmed *or* business reason documented for SAML | OIDC is the recommended default; deviations need justification. |
 | Protocol choice aligns with application architecture | SPAs and mobile apps require OIDC. |
 | Protocol-specific implications understood for your application type | Avoids late-stage redesign during validation. |
@@ -173,7 +173,7 @@ Confirm your protocol choice and its implications.
 Review the onboarding and configuration experience for customers.
 
 | Readiness item | Why it matters |
-|---|---|
+| --- | --- |
 | Configuration values categorized as fixed or customer-specific | Drives onboarding instructions and tenant model. |
 | Onboarding process designed to minimize customer complexity | Lower friction improves tenant admin adoption. |
 | Claims and identity data requirements defined and tested | Prevents authorization mismatches at runtime. |
@@ -183,7 +183,7 @@ Review the onboarding and configuration experience for customers.
 Confirm validation and publishing readiness.
 
 | Readiness item | Why it matters |
-|---|---|
+| --- | --- |
 | Gallery publishing requirements reviewed early in development | Avoids rework before submission. |
 | Validation impact of design decisions considered | Some decisions block validation entirely. |
 | Sign-out and session management approach planned | Required for compliance and a clean user experience. |
@@ -194,7 +194,7 @@ Confirm validation and publishing readiness.
 Complete this final check before you start validation.
 
 | Readiness item | Why it matters |
-|---|---|
+| --- | --- |
 | All critical decisions documented and justified | Speeds support handoffs and reduces rework. |
 | Test ID validation pathway confirmed | Required before entering the publishing flow. |
 | Rework risk assessed and minimized | Final go / no-go gate before validation. |

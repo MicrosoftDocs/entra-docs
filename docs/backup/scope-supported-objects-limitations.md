@@ -1,10 +1,12 @@
 ---
 title: Supported objects and recoverable properties in Microsoft Entra Backup and Recovery
 description: Learn which Microsoft Entra Backup and Recovery object types and properties are supported, and understand current limitations
-ms.date: 03/05/2026
+ms.date: 08/25/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1023
+#customer intent: As an identity administrator, I want to understand which tenant objects and properties Microsoft Entra Backup and Recovery supports so that I can plan backup and recovery operations.
 ---
 
 # Supported objects and recoverable properties in Microsoft Entra Backup and Recovery
@@ -19,6 +21,9 @@ Backups are created automatically once per day. Difference reports compare a sel
 ## Recovery scope levels
 
 When you create a difference report or start recovery, you can scope the operation to all supported objects, selected object types, or specific object IDs. Some related objects are grouped for scoping. For example, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
+
+> [!NOTE]
+> Microsoft Entra Backup and Recovery covers Microsoft Entra Agent ID objects through their underlying directory object types. An agent's user account is a user object. An agent identity blueprint is an application object. Agent identities and agent identity blueprint principals are service principal objects. Only the supported properties listed for each object type are included in backup, difference reports, and recovery.
 
 ## User
 

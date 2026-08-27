@@ -2,7 +2,7 @@
 title: Configure cross-tenant synchronization
 description: "Configure cross-tenant synchronization using the Microsoft Entra admin center. Step-by-step guide covering trust settings, provisioning scope, attribute mappings, and testing."
 ms.topic: how-to
-ms.date: 05/27/2026
+ms.date: 08/06/2026
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
 zone_pivot_groups: same-cloud-cross-cloud-synchronization
@@ -89,7 +89,7 @@ By the end of this article, you'll be able to:
 
 1. Learn about [how the provisioning service works](../app-provisioning/how-provisioning-works.md).
 
-1. Determine who will be in [Scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+1. Determine who will be in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 1. Determine what data to [map between tenants](../app-provisioning/customize-application-attributes.md).
 ::: zone-end
@@ -224,7 +224,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **Cross-tenant synchronization**.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png" alt-text="Screenshot that shows the Cross-tenant synchronization navigation in the Microsoft Entra admin center." lightbox="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png":::
 
@@ -268,27 +268,21 @@ In this step, you automatically redeem invitations in the source tenant.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-select.png" alt-text="Screenshot that shows the Cross-tenant synchronization Configurations page and a new configuration." lightbox="./media/cross-tenant-synchronization-configure/configuration-select.png":::
 
-1. Select **Get started**.
+1. Select **New configuration** to create a new provisioning configuration.
 
-1. Set the **Provisioning Mode** to **Automatic**.
-
-1. Under the **Admin Credentials** section, change the **Authentication Method** to **Cross Tenant Synchronization Policy**.
+1. Under the **Admin credentials** section, in the **Tenant Id** box, enter the tenant ID of the target tenant.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-policy.png" alt-text="Screenshot that shows the Provisioning page with the Cross-tenant Synchronization Policy selected." lightbox="./media/cross-tenant-synchronization-configure/provisioning-policy.png":::
 
-1. In the **Tenant Id** box, enter the tenant ID of the target tenant.
-
-1. Select **Test Connection** to test the connection.
+1. Select **Test connection** to test the connection.
 
     You should see a message that the supplied credentials are authorized to enable provisioning. If the test connection fails, see [Troubleshoot common cross-tenant synchronization scenarios](#troubleshoot-common-cross-tenant-synchronization-scenarios) later in this article.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-success.png" alt-text="Screenshot that shows a testing connection notification." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-success.png":::
 
-1. Select **Save**.
+1. Select **Create**.
 
-    Mappings and Settings sections appear.
-
-1. Close the **Provisioning** page.
+    It can take a few seconds to create the new provisioning configuration.
 
 ## Step 7: Define who is in scope for provisioning
 
@@ -301,19 +295,23 @@ The Microsoft Entra provisioning service allows you to define who will be provis
 
 Start small. Test with a small set of users before rolling out to everyone. When the scope for provisioning is set to assigned users and groups, you can control it by assigning one or two users to the configuration. You can further refine who is in scope for provisioning by creating attribute-based scoping filters, described in the [next step](#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
 
-1. In the source tenant, select **Provisioning** and expand the **Settings** section.
+1. In the source tenant, on the **Overview** page, select the **Properties** tab.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-settings.png" alt-text="Screenshot of the Overview page that shows the Properties tab." lightbox="./media/cross-tenant-synchronization-configure/provisioning-settings.png":::
+
+1. Next to the **Basics** heading, select the pencil icon to open the **Basics** pane.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-settings-edit.png" alt-text="Screenshot of the Provisioning page that shows the Settings section with the Scope and Provisioning Status options." lightbox="./media/cross-tenant-synchronization-configure/provisioning-settings-edit.png":::
 
 1. In the **Scope** list, select whether to synchronize all users in the source tenant or only users assigned to the configuration.
 
-    It's recommended that you select **Sync only assigned users and groups** instead of **Sync all users**. Reducing the number of users in scope improves performance. 
+    It's recommended that you select **Sync only assigned users** instead of **Sync all users**. Reducing the number of users in scope improves performance.
 
     ::: zone pivot="same-cloud-synchronization"
     If you want to synchronize groups, you must select **Sync only assigned users and groups**.
     ::: zone-end
 
-1. If you made any changes, select **Save**.
+1. If you made any changes, select **Apply**.
 
 1. On the configuration page, select **Users and groups**.
 
@@ -381,23 +379,21 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 Attribute mappings allow you to define how data should flow between the source tenant and target tenant. For information on how to customize the default attribute mappings, see [Tutorial - Customize user provisioning attribute-mappings for SaaS applications in Microsoft Entra ID](../app-provisioning/customize-application-attributes.md).
 
-1. In the source tenant, select **Provisioning** and expand the **Mappings** section.
+1. In the source tenant, select **Attribute mapping**.
 
-1. Select **Provision Microsoft Entra ID Users**.
+1. On the **Attribute mapping** page, scroll down to review the user attributes that are synchronized between tenants.
 
-1. On the **Attribute Mapping** page, scroll down to review the user attributes that are synchronized between tenants in the **Attribute Mappings** section.
-
-    The first attribute, alternativeSecurityIdentifier, is an internal attribute used to uniquely identify the user across tenants, match users in the source tenant with existing users in the target tenant, and ensure that each user only has one account. The matching attribute can't be changed. Attempting to change the matching attribute or adding additional matching attributes will result in a `schemaInvalid` error.
+    The **AltSecIdFromNetId([netId]) (alternativeSecurityIds)** is an internal attribute used to uniquely identify the user across tenants, match users in the source tenant with existing users in the target tenant, and ensure that each user only has one account. The matching attribute can't be changed. Attempting to change the matching attribute or adding additional matching attributes will result in a `schemaInvalid` error.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping.png" alt-text="Screenshot of the Attribute Mapping page that shows the list of Microsoft Entra attributes." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping.png":::
 
-1. Select the **Member (userType)** attribute to open the **Edit Attribute** page.
+1. For the **Member (userType)** attribute, select the pencil icon to open the **Edit Attribute Mapping** page.
 
-1. Review the **Constant Value** setting for the **userType** attribute.
+1. Review the **Constant attribute** setting, which by default is set to **Member**.
 
     This setting defines the type of user that will be created in the target tenant and can be one of the values in the following table. By default, users will be created as external member (B2B collaboration users). For more information, see [Properties of a Microsoft Entra B2B collaboration user](../../external-id/user-properties.md).
 
-    | Constant Value | Description |
+    | Constant attribute | Description |
     | --- | --- |
     | **Member** | Default. Users will be created as external member (B2B collaboration users) in the target tenant. Users will be able to function as any internal member of the target tenant. |
     | **Guest** | Users will be created as external guests (B2B collaboration users) in the target tenant. |
@@ -411,7 +407,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png" alt-text="Screenshot of the Edit Attribute page that shows the Member attribute." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png":::
 
-1. If you want to define any transformations, on the **Attribute Mapping** page, select the attribute you want to transform, such as **displayName**.
+1. If you want to define any transformations, on the **Attribute mapping** page, select the pencil icon for the attribute you want to transform, such as **displayName**.
 
 1. Set the **Mapping type** to **Expression**.
 
@@ -437,13 +433,13 @@ Attribute mappings allow you to define how data should flow between the source t
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-1. In the source tenant, select **Provisioning** and expand the **Settings** section.
+1. In the source tenant, on the **Overview** page, select the **Properties** tab.
+
+1. Next to the **Basics** heading, select the pencil icon to open the **Basics** pane.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-settings-edit.png" alt-text="Screenshot of the Provisioning page that shows the Settings section with the Scope and Provisioning Status options." lightbox="./media/cross-tenant-synchronization-configure/provisioning-settings-edit.png":::
 
-1. Select the **Send an email notification when a failure occurs** checkbox.
-
-1. In the **Notification Email** box, enter the email address of a person or group who should receive provisioning error notifications.
+1. In the **Notification email** box, enter the email address of a person or group who should receive provisioning error notifications.
 
     Email notifications are sent within 24 hours of the job entering quarantine state. For custom alerts, see [Understand how provisioning integrates with Azure Monitor logs](../app-provisioning/application-provisioning-log-analytics.md).
 
@@ -451,7 +447,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
     For more information, see [Enable accidental deletions prevention in the Microsoft Entra provisioning service](../app-provisioning/accidental-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
-1. Select **Save** to save any changes.
+1. Select **Apply** to save any changes.
 
 ## Step 11: Test provision on demand
 
@@ -459,7 +455,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 Now that you have a configuration, you can test on-demand provisioning with one of your users.
 
-1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -497,7 +493,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 
 The provisioning job starts the initial synchronization cycle of all users defined in **Scope** of the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
-1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 

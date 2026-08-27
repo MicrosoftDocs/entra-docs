@@ -3,9 +3,10 @@ title: 'Exchange hybrid writeback with cloud sync'
 description: This article describes how to enable exchange hybrid writeback scenarios.
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 04/09/2025
+ms.date: 08/25/2026
 ms.subservice: hybrid-cloud-sync
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 
@@ -46,7 +47,16 @@ Exchange Hybrid Writeback is disabled by default.
  >If the checkbox for **Exchange hybrid writeback** is disabled, it means that the schema has not been detected.  Verify that the prerequisites are met and that you have re-started the provisioning agent.
 
 ## Attributes synchronized
-Cloud sync writes Exchange On-line attributes back to users in order to enable Exchange hybrid scenarios.  The following table is a list of the attributes and the mappings.
+Cloud sync writes Exchange Online attributes back to users in order to enable Exchange hybrid scenarios.
+
+### Entra2ADExchangeOnlineAttributeWriteback (LES Writeback)
+For the Exchange Online-authoritative attribute writeback (LES Writeback) scenario, see [Cloud-based management of Exchange attributes for Remote Mailboxes in hybrid environments](/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management).
+
+In this scenario, Exchange Online is the source of truth for specific Exchange-related user attributes, and cloud sync writes those cloud-managed attributes back to your on-premises Active Directory.
+
+This differs from **Exchange hybrid writeback** (AAD2ADExchangeHybridWriteback), which follows the hybrid writeback template used in preview scenarios.
+
+The following table lists the supported attributes and the mappings for LES Writeback.
 
 |Microsoft Entra attribute|AD attribute|Object Class|Mapping Type|
 |-----|-----|-----|-----|

@@ -3772,8 +3772,6 @@
         href: rollbar-provisioning-tutorial.md
       - name: Rootly
         href: rootly-provisioning-tutorial.md
-      - name: Rouse Sales
-        href: rouse-sales-provisioning-tutorial.md
       - name: SafeGuard Cyber
         href: safeguard-cyber-provisioning-tutorial.md        
       - name: Salesforce
@@ -4012,5 +4010,7 @@
         href: zscaler-two-provisioning-tutorial.md
       - name: Zscaler Three
         href: zscaler-three-provisioning-tutorial.md
+      - name: Zscaler Zidentity
+        href: zscaler-zidentity-provisioning-tutorial.md
       - name: Zscaler ZSCloud
         href: zscaler-zscloud-provisioning-tutorial.md

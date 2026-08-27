@@ -844,18 +844,18 @@ Example of usage within the workflow:
 
 Allows you to remove all access package assignments for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
-You're able to customize the task name, description, and whether access package assignments are removed immediately or after a certain number of days for this task in the Microsoft Entra admin center.
+You're able to customize the task name, description, and whether access package assignments are removed immediately or after a certain number of days for this task in the Microsoft Entra admin center. When used in mover workflow templates, the default option is scheduled removal set to 15 days.
 :::image type="content" source="media/lifecycle-workflow-task/remove-all-access-package-assignment-user-task.png" alt-text="Screenshot of the remove all user access package assignment task.":::
 
 For Microsoft Graph, the parameters for the **Remove all access package assignments for user** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  leaver      |
+|category    |  leaver, mover      |
 |displayName     |  Remove all access package assignments for user (Customizable by user)        |
-|description     |  Remove all access packages assigned to the user (Customizable by user)        |
+|description     |  Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate. (Customizable by user)        |
 |taskDefinitionId     |   42ae2956-193d-4f39-be06-691b8ac4fa1d      |
-|arguments     |  Argument contains a name parameter that is the "daysUntilExpiration", and a value parameter that is the days until expiration of all access package assignments for the user.   |
+|arguments     |  Argument contains a required name parameter that is the "daysUntilExpiration", and a value parameter that is the days until expiration of all access package assignments for the user. For mover templates, this defaults to 15 days.   |
 
 Example of usage within the workflow:
 
@@ -863,13 +863,13 @@ Example of usage within the workflow:
 {
     "category": "leaver",
     "continueOnError": false,
-    "description": "Remove all access packages assigned to the user",
+    "description": "Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate.",
     "displayName": "Remove all access package assignments for user",
     "isEnabled": true,
     "taskDefinitionId": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
     "arguments": [
         {
-             "description": "Remove all access packages assigned to the user",
+             "description": "Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate.",
             "displayName": "Remove all access package assignments for user",
             "id": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
             "version": 1,

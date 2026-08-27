@@ -1,16 +1,16 @@
 ---
-title: Token Protection Deployment Guide - Apple Platforms (Preview)
+title: Token Protection Deployment Guide - Apple Platforms
 description: Deploy Token Protection with Microsoft Entra Conditional Access for macOS, iOS, and iPadOS
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/24/2026
+ms.date: 08/14/2026
 ms.reviewer: sgrandhi
 ---
-# Token Protection Deployment Guide - Apple Platforms (Preview)
+# Token Protection Deployment Guide - Apple Platforms
 ## Overview
 
-This guide covers the steps required to deploy and enforce Token Protection for sign-in session tokens on Apple platforms (iOS, iPadOS, and macOS). Token Protection on Apple platforms is currently in Preview.
+This guide covers the steps required to deploy and enforce Token Protection for sign-in session tokens on Apple platforms (iOS, iPadOS, and macOS).
 
 Before using this deployment guide, review [Token Protection in Microsoft Entra Conditional Access](concept-token-protection.md) for an overview of the feature and supported platforms.
 
@@ -33,9 +33,10 @@ Token Protection can be applied to the following applications.
 |---|---|---|
 | Intune Company Portal | ✅ | ✅ |
 | Microsoft Authenticator | ✅ |  |
-| Microsoft Edge (support for sign-in to Edge profile only)* | ✅ | ✅ |
+| Microsoft Edge (support for sign-in to Edge profile only) | ✅ | ✅ |
 | Microsoft Loop | ✅ |   |
 | Microsoft OneNote | ✅ | ✅ |
+| Microsoft Scout |  | ✅ |
 | Microsoft SharePoint | ✅ |  |
 | Microsoft Teams | ✅ | ✅ |
 | Microsoft To Do | ✅ | ✅ |
@@ -43,8 +44,6 @@ Token Protection can be applied to the following applications.
 | Outlook | ✅ | ✅ |
 | Visual Studio Code |  | ✅ |
 | Word, Excel, PowerPoint | ✅ | ✅ |
-
-*Token Protection currently supports native applications only. Browser-based applications are not supported.
 
 ### Supported Resources
 
@@ -86,20 +85,13 @@ Complete the following steps for *each* platform you're deploying to. These step
 
 1. Install Microsoft Authenticator from the Apple App Store, or deploy it via your MDM solution. Authenticator serves as the authentication broker for Microsoft Entra sign-ins.
 1. Enable hardware-backed registration using the [Microsoft Enterprise SSO plug-in for Apple Devices](../../identity-platform/apple-sso-plugin.md).
-1. Set the `use_most_secure_storage` flag.
-   - The flag applies only to new device registrations made after the flag is configured.
-   - For Intune-enrolled devices, the flag also applies to registrations made through the Intune Company Portal app, even before the device becomes MDM-managed.
-   - For all other registrations, the flag takes effect only after the device is MDM-managed and the Microsoft Enterprise SSO plug-in profile is active.
 
 ### [macOS](#tab/macos)
 
 1. Install the Microsoft Company Portal or deploy it via your MDM solution. Company Portal serves as the authentication broker for Microsoft Entra sign-ins.
 1. Enable hardware-backed registration using one of the following options:
-   - Option A: Enable the **Microsoft Enterprise SSO plug-in** with the `use_most_secure_storage` flag.
-      - The flag applies only to new device registrations made after the flag is configured.
-      - For Intune-enrolled devices, the flag also applies to registrations made through the Intune Company Portal app, even before the device becomes MDM-managed.
-      - For all other registrations, the flag takes effect only after the device is MDM-managed and the Microsoft Enterprise SSO plug-in profile is active.
-   - Option B: Configure **Platform SSO for macOS**. Platform SSO uses hardware-backed storage by default and requires no extra flag configuration. For setup instructions, see [Configure Platform SSO for macOS devices in Microsoft Intune](/intune/intune-service/configuration/platform-sso-macos).
+   - Option A: Enable the [Microsoft Enterprise SSO plug-in for Apple Devices](../../identity-platform/apple-sso-plugin.md).
+   - Option B: Configure **Platform SSO for macOS**. For setup instructions, see [Configure Platform SSO for macOS devices in Microsoft Intune](/intune/intune-service/configuration/platform-sso-macos).
 
 ---
 
