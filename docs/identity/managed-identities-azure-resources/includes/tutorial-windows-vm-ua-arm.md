@@ -136,7 +136,7 @@ For the remainder of the tutorial, you work from the VM that you created earlier
 1. Using the PowerShell `Invoke-WebRequest` cmdlet, make a request to the local managed identities for Azure resources endpoint to get an access token for Azure Resource Manager. The `client_id` value is the value returned when you created the user-assigned managed identity.
 
     ```azurepowershell
-    $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
+    $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
     $content = $response.Content | ConvertFrom-Json
     $ArmToken = $content.access_token
     ```
