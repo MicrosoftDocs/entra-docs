@@ -121,10 +121,13 @@ Follow these steps to create a custom app consent policy:
 1. Create a new empty app consent policy.
 
    ```powershell
-   New-MgPolicyPermissionGrantPolicy `
-       -Id "my-custom-policy" `
-       -DisplayName "My first custom consent policy" `
-       -Description "This is a sample custom app consent policy."
+   $params = @{
+    Id          = "my-custom-policy"
+    DisplayName = "My first custom consent policy"
+    Description = "This is a sample custom app consent policy."
+   }
+     
+   New-MgPolicyPermissionGrantPolicy @params
    ```
 
 1. Add "include" condition sets.
@@ -136,6 +139,14 @@ Follow these steps to create a custom app consent policy:
        -PermissionType "delegated" `
        -PermissionClassification "low" `
        -ClientApplicationsFromVerifiedPublisherOnly
+   $params = @{
+     PermissionGrantPolicyId                     = "my-custom-policy"
+     PermissionType                               = "delegated"
+     PermissionClassification                     = "low"
+     ClientApplicationsFromVerifiedPublisherOnly  = $true
+   }
+
+   New-MgPolicyPermissionGrantPolicyInclude @params
    ```
 
    Repeat this step to add more "include" condition sets.
@@ -151,6 +162,13 @@ Follow these steps to create a custom app consent policy:
        -PermissionGrantPolicyId "my-custom-policy" `
        -PermissionType "delegated" `
        -ResourceApplication $azureApi.AppId
+   $params = @{
+    PermissionGrantPolicyId = "my-custom-policy"
+    PermissionType           = "delegated"
+    ResourceApplication      = $azureApi.AppId
+   }
+
+   New-MgPolicyPermissionGrantPolicyExclude @params
    ```
 
    Repeat this step to add more "exclude" condition sets.
