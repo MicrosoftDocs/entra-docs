@@ -3,13 +3,9 @@ title: Troubleshoot primary refresh token issues on Windows devices
 description: Troubleshoot primary refresh token issues during authentication through Microsoft Entra credentials on Microsoft Entra joined Windows devices.
 
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 8/1/2023
+ms.date: 02/23/2026
 
-ms.author: gudlapreethi
-author: GudlaPreethi
 editor: v-jsitser
 ms.reviewer: gudlapreethi, bemey, filuz, robgarcia, v-leedennis
 ---
@@ -409,7 +405,7 @@ Common general network-related issues.
 
 #### Regular logs
 
-1. Download the [Auth script archive](https://aka.ms/authscripts), and extract the scripts into a local directory. If it's necessary, review the usage instructions in [KB&nbsp;4487175](https://aka.ms/howto-authscripts).
+1. Download the [Auth script archive](https://aka.ms/authscripts), and extract the scripts into a local directory.
 1. Open an administrative PowerShell session, and change the current directory to the directory in which you saved the Auth scripts.
 1. To begin the error tracing session, enter the following command:
 

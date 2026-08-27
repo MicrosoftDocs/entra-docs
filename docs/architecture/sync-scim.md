@@ -1,15 +1,9 @@
 ---
 title: SCIM synchronization with Microsoft Entra ID
 description: Architectural guidance on achieving SCIM synchronization with Microsoft Entra ID.
-author: janicericketts
-manager: martinco
-
-ms.service: entra
-ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/10/2023
-ms.author: jricketts
-ms.reviewer: ajburnle
+ms.subservice: architecture
 ---
 
 # SCIM synchronization with Microsoft Entra ID

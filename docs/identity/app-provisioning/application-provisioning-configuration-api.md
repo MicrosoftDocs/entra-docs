@@ -1,14 +1,8 @@
 ---
 title: Configure provisioning using Microsoft Graph APIs
 description: Learn how to save time by using the Microsoft Graph APIs to automate the configuration of automatic provisioning.
-
-author: kenwith
-manager: femila
-ms.service: entra-id
-ms.subservice: app-provisioning
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: kenwith
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -366,7 +360,7 @@ Content-type: application/json
                 "displayName": "AWS Contoso",
                 "details": {
                     "ApplicationId": "00001111-aaaa-2222-bbbb-3333cccc4444",
-                    "ServicePrincipalId": "chc46a42-966b-47d7-9774-576b1c8bd0b8",
+                    "ServicePrincipalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
                     "ServicePrincipalDisplayName": "AWS Contoso"
                 }
             },

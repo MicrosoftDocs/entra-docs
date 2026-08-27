@@ -1,16 +1,15 @@
 ---
 title: Resilient interfaces with external processes using Azure AD B2C
 description: Learn about methods to build resilient interfaces with external processes.
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
-manager: martinco
-ms.date: 06/28/2024
+ms.reviewer: gasinh
+ms.date: 05/20/2025
+ms.subservice: architecture
 ---
 
 # Resilient interfaces with external processes using Azure AD B2C
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 In this article, find guidance on how to plan for and implement the RESTful APIs to make your application more resilient to API failures.
 

@@ -1,18 +1,11 @@
 ---
 title: Authentication and Conditional Access for B2B users
 description: Learn how to enforce multifactor authentication policies for Microsoft Entra B2B users.
-
- 
-ms.service: entra-external-id
-ms.custom: no-azure-ad-ps-ref
 ms.topic: concept-article
-ms.date: 05/15/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-
+ms.date: 03/27/2026
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: As an IT admin managing external user access to resources in my organization, I want to understand the authentication flow and Conditional Access policies for external users, so that I can ensure secure access and compliance with our organization's policies.
 ---
 
@@ -23,7 +16,7 @@ ms.collection: M365-identity-device-management
 > [!TIP]
 > This article applies to B2B collaboration and B2B direct connect in workforce tenants. For information about external tenants, see [Security and governance in Microsoft Entra External ID](customers/concept-security-customers.md).
 
-When an external user accesses resources in your organization, the authentication flow is determined by the collaboration method (B2B collaboration or B2B direct connect), user's identity provider (an external Microsoft Entra tenant, social identity provider, and so on), Conditional Access policies, and the [cross-tenant access settings](cross-tenant-access-overview.md) configured both in the user's home tenant and the tenant hosting resources.
+When an external user accesses resources in your organization, the authentication flow is determined by the collaboration method (B2B collaboration or B2B direct connect), user's identity provider (for example, an external Microsoft Entra tenant or social identity provider), Conditional Access policies, and the [cross-tenant access settings](cross-tenant-access-overview.md) configured both in the user's home tenant and the tenant hosting resources.
 
 This article describes the authentication flow for external users who are accessing resources in your organization. Organizations can enforce multiple Conditional Access policies for their external users, which can be enforced at the tenant, app, or individual user level in the same way that they're enabled for full-time employees and members of the organization.
 
@@ -33,7 +26,7 @@ This article describes the authentication flow for external users who are access
 
 The following diagram illustrates the authentication flow when a Microsoft Entra organization shares resources with users from other Microsoft Entra organizations. This diagram shows how cross-tenant access settings work with Conditional Access policies, such as multifactor authentication, to determine if the user can access resources. This flow applies to both B2B collaboration and B2B direct connect, except as noted in step 6.
 
-[ ![Diagram showing the cross-tenant authentication process.](media/authentication-conditional-access/cross-tenant-auth.png) ](media/authentication-conditional-access/cross-tenant-auth.png#lightbox)
+[![Diagram showing the cross-tenant authentication process.](media/authentication-conditional-access/cross-tenant-auth.png)](media/authentication-conditional-access/cross-tenant-auth.png#lightbox)
 
 |Step  |Description  |
 |---------|---------|
@@ -54,26 +47,26 @@ When a Microsoft Entra organization shares resources with external users with an
 
 The following diagram illustrates the authentication flow when an external user signs in with an account from a non-Microsoft Entra ID identity provider, such as Google, Facebook, or a federated SAML/WS-Fed identity provider.
 
-[ ![Diagram showing the Authentication flow for B2B guest users from an external directory.](media/authentication-conditional-access/authentication-flow-b2b-guests.png) ](media/authentication-conditional-access/authentication-flow-b2b-guests.png#lightbox)
+[![Diagram showing the Authentication flow for B2B guest users from an external directory.](media/authentication-conditional-access/authentication-flow-b2b-guests.png)](media/authentication-conditional-access/authentication-flow-b2b-guests.png#lightbox)
 
 | Step | Description |
 |--------------|-----------------------|
 | **1** | The B2B guest user requests access to a resource. The resource redirects the user to its resource tenant,  a trusted IdP.|
-| **2** | The resource tenant identifies the user as external and redirects the user to the B2B guest user’s IdP. The user performs primary authentication in the IdP.
-| **3** | Authorization policies are evaluated in the B2B guest user's IdP. If the user satisfies these policies, the B2B guest user's IdP issues a token to the user. The user is redirected back to the resource tenant with the token. The resource tenant validates the token and then evaluates the user against its Conditional Access policies. For example, the resource tenant could require the user to perform Microsoft Entra multifactor authentication.
-| **4** | Inbound cross-tenant access settings and Conditional Access policies are evaluated. If all policies are satisfied, the resource tenant issues its own token and redirects the user to its resource.
+| **2** | The resource tenant identifies the user as external and redirects the user to the B2B guest user’s IdP. The user performs primary authentication in the IdP. |
+| **3** | Authorization policies are evaluated in the B2B guest user's IdP. If the user satisfies these policies, the B2B guest user's IdP issues a token to the user. The user is redirected back to the resource tenant with the token. The resource tenant validates the token and then evaluates the user against its Conditional Access policies. For example, the resource tenant could require the user to perform Microsoft Entra multifactor authentication. |
+| **4** | Inbound cross-tenant access settings and Conditional Access policies are evaluated. If all policies are satisfied, the resource tenant issues its own token and redirects the user to its resource. |
 
 ### Example 2: Authentication flow and token for one-time passcode user
 
 The following diagram illustrates the flow when email one-time passcode authentication is enabled and the external user isn't authenticated through other means, such as Microsoft Entra ID, Microsoft account (MSA), or social identity provider.
 
-[ ![Diagram showing the Authentication flow for B2B guest users with one-time passcode.](media/authentication-conditional-access/authentication-flow-b2b-guests-otp.png) ](media/authentication-conditional-access/authentication-flow-b2b-guests-otp.png#lightbox)
+[![Diagram showing the Authentication flow for B2B guest users with one-time passcode.](media/authentication-conditional-access/authentication-flow-b2b-guests-otp.png)](media/authentication-conditional-access/authentication-flow-b2b-guests-otp.png#lightbox)
 
 | Step | Description |
 |--------------|-----------------------|
 | **1** |The user requests access to a resource in another tenant. The resource redirects the user to its resource tenant, a trusted IdP.|
 | **2** | The resource tenant identifies the user as an external email one-time passcode (OTP) user and sends an email with the OTP to the user.|
-| **3** | The user retrieves the OTP and submits the code. The resource tenant evaluates the user against its Conditional Access policies.
+| **3** | The user retrieves the OTP and submits the code. The resource tenant evaluates the user against its Conditional Access policies. |
 | **4** | Once all Conditional Access policies are satisfied, the resource tenant issues a token and redirects the user to its resource. |
 
 ## Conditional Access for external users
@@ -81,9 +74,9 @@ The following diagram illustrates the flow when email one-time passcode authenti
 Organizations can enforce Conditional Access policies for external B2B collaboration and B2B direct connect users in the same way that they’re enabled for full-time employees and members of the organization. With the introduction of cross-tenant access settings, you can also trust MFA and device claims from external Microsoft Entra organizations. This section describes important considerations for applying Conditional Access to users outside of your organization. 
 
 > [!NOTE]
-> Custom Controls with Conditional Access are not support for cross-tenant trusts. 
+> Custom Controls with Conditional Access are not supported for cross-tenant trusts.
 
-### Assigning Conditional Access policies to external user types
+### Assign Conditional Access policies to external user types
 
 When configuring a Conditional Access policy, you have granular control over the types of external users you want to apply the policy to. External users are categorized based on how they authenticate (internally or externally) and their relationship to your organization (guest or member).
 
@@ -95,11 +88,11 @@ When configuring a Conditional Access policy, you have granular control over the
 - **Other external users** - Applies to any users who don't fall into these categories, but who aren't considered internal members of your organization, meaning they don't authenticate internally via Microsoft Entra ID, and the user object created in the resource Microsoft Entra directory doesn't have a UserType of Member.
 
 >[!NOTE]
-> The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Conditional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX does not have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specific types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
+> The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Conditional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX doesn't have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specific types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
 
 Learn more about [Conditional Access user assignments](~/identity/conditional-access/concept-conditional-access-users-groups.md).
 
-### Comparing External ID Conditional Access policies
+### Compare External ID Conditional Access policies
 
 The following table gives a detailed comparison of the security policy and compliance options in Microsoft Entra External ID. Security policy and compliance are managed by the host/inviting organization under Conditional Access policies.
 
@@ -163,13 +156,13 @@ The following PowerShell cmdlets are available to *proof up* or request MFA regi
    Connect-Entra -Scopes 'User.Read.All'
    ```
 
-2. Get all users with proof up methods:
+1. Get all users with proof up methods:
 
    ```powershell
    Get-EntraUser | where { $_.StrongAuthenticationMethods} | select userPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
    ```
 
-3. Reset the Microsoft Entra multifactor authentication method for a specific user to require the user to set proof up methods again, for example:
+1. Reset the Microsoft Entra multifactor authentication method for a specific user to require the user to set proof up methods again, for example:
 
    ```powershell
    Connect-Entra -Scopes 'UserAuthenticationMethod.ReadWrite.All'
@@ -180,7 +173,7 @@ The following PowerShell cmdlets are available to *proof up* or request MFA regi
 
 Authentication strength is a Conditional Access control that lets you define a specific combination of multifactor authentication methods that an external user must complete accessing your resources. This control is especially useful for restricting external access to sensitive apps in your organization because you can enforce specific authentication methods, such as a phishing-resistant method, for external users.
 
-You also have the ability to apply authentication strength to the different types of [guest or external users](#assigning-conditional-access-policies-to-external-user-types) that you collaborate or connect with. This means you can enforce authentication strength requirements that are unique to your B2B collaboration, B2B direct connect, and other external access scenarios.
+You also have the ability to apply authentication strength to the different types of [guest or external users](#assign-conditional-access-policies-to-external-user-types) that you collaborate or connect with. This means you can enforce authentication strength requirements that are unique to your B2B collaboration, B2B direct connect, and other external access scenarios.
 
 Microsoft Entra ID provides three [built-in authentication strengths](https://aka.ms/b2b-auth-strengths):
 

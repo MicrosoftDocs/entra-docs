@@ -1,13 +1,8 @@
 ---
 title: How to archive activity logs to a storage account
 description: Learn how to archive Microsoft Entra activity logs to a storage account through Diagnostic settings.
-author: shlipsey3
-manager: femila
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 11/08/2024
-ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT administrator, I want to learn how to archive Microsoft Entra logs to an Azure storage account so I can retain it for longer than the default retention period.
@@ -20,7 +15,7 @@ If you need to store Microsoft Entra activity logs for longer than the [default 
 
 To use this feature, you need:
 
-* An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+* An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * An Azure storage account you have `ListKeys` permissions for. Learn how to [create a storage account](/azure/storage/common/storage-account-create).
 * A user who's a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) for the Microsoft Entra tenant.
 

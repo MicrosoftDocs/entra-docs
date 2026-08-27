@@ -1,16 +1,15 @@
 ---
 title: Resilience through developer best practices using Azure AD B2C
 description: Resilience through developer best practices in Customer Identity and Access Management using Azure AD B2C
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
-manager: martinco
-ms.date: 07/02/2024
+ms.reviewer: gasinh
+ms.date: 05/20/2025
+ms.subservice: architecture
 ---
 
 # Resilience through developer best practices
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 In this article, you can benefit from our experience working with large customers. You can consider these recommendations for the design and implementation of your services.
 

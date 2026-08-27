@@ -1,9 +1,7 @@
 ---
 title: Understanding the app manifest (Azure AD Graph format)
 description: Describes the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+manager: pmwongera
 ms.custom:
 ms.date: 04/15/2025
 ms.reviewer: sureshja
@@ -27,7 +25,7 @@ You can configure an app's attributes through the Microsoft Entra admin center o
 To configure the application manifest:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the app you want to configure.
 1. From the app's **Manage** section, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** to edit the manifest locally, and then use **Upload** to reapply it to your application.
 
@@ -348,6 +346,8 @@ Example:
 | oauth2AllowIdTokenImplicitFlow | Boolean |
 
 Specifies whether this web app can request OAuth2.0 implicit flow ID tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. We, however, discourage the use of implicit grant even in SPAs and recommend using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with PKCE.
+
+In the Microsoft Graph app manifest, this attribute is replaced by the `enableIdTokenIssuance` property of the `implicitGrantSettings` property in the `web` attribute.
 
 Example:
 

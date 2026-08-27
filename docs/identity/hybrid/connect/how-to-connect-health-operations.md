@@ -1,18 +1,12 @@
 ---
 title: Microsoft Entra Connect Health operations
 description: This article describes additional operations that can be performed after you have deployed Microsoft Entra Connect Health.
-
-author: billmath
-manager: femila
 ms.assetid: 86cc3840-60fb-43f9-8b2a-8598a9df5c94
-ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: billmath
-
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Microsoft Entra Connect Health operations
 This topic describes the various operations you can perform by using Microsoft Entra Connect Health.
@@ -33,7 +27,7 @@ You can configure the Microsoft Entra Connect Health service to send email notif
 2. Select **Sync errors**
 3. Select **Notification Settings**.
 5. At the email notification switch, select **ON**.
-6. Select the check box if you want all Hybrid Identity Administrators to receive email notifications.
+6. Select the check box if you want all Global Administrators to receive email notifications.
 7. If you want to receive email notifications at any other email addresses, specify them in the **Additional Email Recipients** box. To remove an email address from this list, right-select the entry and select **Delete**.
 8. To finalize the changes, select **Save**. Changes take effect only after you save.
 

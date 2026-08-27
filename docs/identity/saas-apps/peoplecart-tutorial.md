@@ -1,20 +1,12 @@
 ---
-title: Microsoft Entra SSO integration with Peoplecart
+title: Configure Peoplecart for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Peoplecart.
 
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: gideonkiratu
-
+ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Peoplecart so that I can control who has access to Peoplecart, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
-# Microsoft Entra SSO integration with Peoplecart
+--- 
+# Configure Peoplecart for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Peoplecart with Microsoft Entra ID. When you integrate Peoplecart with Microsoft Entra ID, you can:
 
@@ -26,7 +18,7 @@ In this article,  you learn how to integrate Peoplecart with Microsoft Entra ID.
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Peoplecart single sign-on (SSO) enabled subscription.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
@@ -42,7 +34,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Peoplecart into Microsoft Entra ID, you need to add Peoplecart from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Peoplecart** in the search box.
 1. Select **Peoplecart** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -70,7 +62,7 @@ To configure and test Microsoft Entra SSO with Peoplecart, perform the following
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Peoplecart** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Peoplecart** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -85,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<tenantname>.peoplecart.com/SignIn.aspx`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [Peoplecart Client support team](https://peoplecart.com/ContactUs.aspx) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact the Peoplecart Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -101,11 +93,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Peoplecart SSO
 
-To configure single sign-on on **Peoplecart** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Peoplecart support team](https://peoplecart.com/ContactUs.aspx). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Peoplecart** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to the Peoplecart support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Peoplecart test user
 
-In this section, you create a user called Britta Simon in Peoplecart. Work with [Peoplecart support team](https://peoplecart.com/ContactUs.aspx) to add the users in the Peoplecart platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Peoplecart. Work with the Peoplecart support team to add the users in the Peoplecart platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

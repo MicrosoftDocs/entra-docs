@@ -1,13 +1,9 @@
 ---
 title: Introduction to Microsoft Global Secure Access Proof-of-Concept Guidance
 description: Learn how to deploy and test Microsoft Global Secure Access as a proof of concept with Microsoft Entra Internet Access, Microsoft Entra Private Access, and the Microsoft traffic profile.
-author: jricketts
-manager: martinco
 ms.service: global-secure-access
 ms.topic: concept-article
 ms.date: 01/22/2025
-ms.author: jricketts
-
 #customer intent: As a Microsoft partner, I want to deploy and test Microsoft Global Secure Access as a proof of concept with Microsoft Entra Private Access, Microsoft Entra Internet Access, and the Microsoft traffic profile in my production or test environment.
 ---
 
@@ -69,7 +65,7 @@ Consider the following questions as you map out your Microsoft Entra Private Acc
 
 ### Microsoft Entra Internet Access use cases
 
-You can test several Microsoft Entra Internet Access and Microsoft Entra Internet Access for Microsoft Services scenarios in your PoC. Consider testing coexistence with other solutions, as the [Learn about Security Service Edge (SSE) coexistence with Microsoft and Cisco](../global-secure-access/concept-cisco-coexistence.md) article describes.
+You can test several Microsoft Entra Internet Access and Microsoft Entra Internet Access for Microsoft Services scenarios in your PoC. Consider testing coexistence with other solutions, as the [Learn about Security Service Edge (SSE) coexistence with Microsoft and Cisco](../global-secure-access/how-to-cisco-coexistence.md) article describes.
 
 - **Do you need to block or allow certain fully qualified domain names (FQDNs) or web categories from access by all users when they're using a managed device?** If you plan to block or allow most of your user base's access to specific FQDNs or web categories, consider testing the [Create a baseline policy that applies to all internet access traffic routed through the service](gsa-poc-internet-access.md#create-a-baseline-profile-that-applies-to-all-internet-traffic-routed-through-the-service) use case. You can create and apply the baseline policy to all users without needing to create Conditional Access policies. If necessary, you can override it for subsets of users.
 
@@ -78,8 +74,7 @@ You can test several Microsoft Entra Internet Access and Microsoft Entra Interne
 - **Do you need to override broad block or allow policies for certain users or specific circumstances?** If you want to allow specific users or groups to access a blocked website, consider testing the [Allow a user to access a blocked website](gsa-poc-internet-access.md#allow-a-user-to-access-a-blocked-website) use case.
 
 - **Do you need to manage or control access to your Microsoft data?** You can use the Microsoft traffic profile to enable Global Secure Access to acquire and route SharePoint Online, Exchange Online, and other Microsoft traffic through the Global Secure Access cloud services. Test this scenario with the [Enable and manage the Microsoft traffic forwarding profile](../global-secure-access/how-to-manage-microsoft-profile.md) use case.
-
-- **Do you need to control whether your users can use your managed devices to access Microsoft data in other tenants?** If you need to prevent users from accessing Microsoft data in other tenants (to which they have valid credentials) when they're using your managed devices, consider testing the [Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) use case.
+- **Do you need to control whether your users can use your organization's managed devices to sign in to other Entra ID tenants?** Consider testing [Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md).
 
 ## Scope and define success criteria
 

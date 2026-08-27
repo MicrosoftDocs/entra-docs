@@ -24,7 +24,9 @@ items:
     - name: Govern and monitor
       href: tutorial-govern-monitor.md
     - name: Manage certificates
-      href: tutorial-manage-certificates-for-federated-single-sign-on.md 
+      href: tutorial-manage-certificates-for-federated-single-sign-on.md
+    - name: Enforce app secrets standards
+      href: tutorial-enforce-secret-standards.md
   - name: Samples
     items: 
     - name: Overview of App Management samples
@@ -44,38 +46,58 @@ items:
     items: 
     - name: Application gallery
       href: overview-application-gallery.md
-    - name: Request to publish applications
-      href: v2-howto-app-gallery-listing.md
     - name: Application integration
       href: plan-an-application-integration.md
     - name: Application ownership
       href: overview-assign-app-owners.md
     - name: Application properties
       href: application-properties.md
-    - name: Single sign-on
-      items:
-      - name: What is single sign-on?
-        href: what-is-single-sign-on.md
-      - name: Plan for deployment
-        href: plan-sso-deployment.md
-    - name: Application security
-      items:
-      - name: Migrate away from secret-based authentication
-        href: migrate-applications-from-secrets.md
-      - name: App access options
-        href: what-is-access-management.md
-      - name: Certificate signing options
-        href: certificate-signing-options.md
-      - name: Tenant restrictions
-        href: tenant-restrictions.md
-      - name: Enforce signed SAML authentication requests
-        href: howto-enforce-signed-saml-authentication.md
-      - name: Configure SAML token encryption
-        href: howto-saml-token-encryption.md
-      - name: End-user portals
-        href: end-user-experiences.md
-      - name: Cloud app visibility and control
-        href: cloud-app-security.md
+  - name: Single sign-on
+    items:
+    - name: What is single sign-on?
+      href: what-is-single-sign-on.md
+    - name: SAML versus OpenID Connect
+      href: saml-vs-oidc-decision-guide.md
+    - name: Understand the Microsoft SSO model
+      href: understand-microsoft-sso-model.md
+    - name: Plan SSO integration as an ISV
+      href: plan-sso-integration-isv.md
+  - name: Validate and publish your app to Microsoft Entra App Gallery
+    items:
+    - name: Prerequisites to validate and publish your app
+      href: v2-howto-app-gallery-listing.md
+    - name: SSO requirements for App Gallery
+      href: app-gallery-sso-requirements.md
+    - name: User provisioning requirements for App Gallery
+      href: app-gallery-user-provisioning-requirements.md
+    - name: Validate an OIDC multitenant app
+      href: validate-oidc-multitenant-app-gallery.md
+    - name: Validate a SAML single sign-on app
+      href: validate-saml-single-sign-on-app-gallery.md
+    - name: Plan for deployment
+      href: plan-sso-deployment.md
+    - name: Publish your app to Microsoft Entra App Gallery
+      href: publish-app-gallery.md
+    - name: Update or remove your app
+      href: update-or-remove-app-gallery.md
+  - name: Application security
+    items:
+    - name: Migrate away from secret-based authentication
+      href: migrate-applications-from-secrets.md
+    - name: App access options
+      href: what-is-access-management.md
+    - name: Certificate signing options
+      href: certificate-signing-options.md
+    - name: Tenant restrictions
+      href: tenant-restrictions.md
+    - name: Enforce signed SAML authentication requests
+      href: howto-enforce-signed-saml-authentication.md
+    - name: Configure SAML token encryption
+      href: howto-saml-token-encryption.md
+    - name: End-user portals
+      href: end-user-experiences.md
+    - name: Cloud app visibility and control
+      href: cloud-app-security.md
     - name: Home realm discovery policy
       href: home-realm-discovery-policy.md
     - name: My Apps overview
@@ -125,6 +147,8 @@ items:
       href: add-application-portal-configure.md
     - name: Add enterprise app for multi-tenant app
       href: create-service-principal-cross-tenant.md
+    - name: Configure app management policies
+      href: configure-app-management-policies.md
     - name: Configure Single sign-on
       items:
       - name: Enable Single sign-on with SAML
@@ -167,6 +191,8 @@ items:
           href: app-perms-audit-logs.md
       - name: Manage user assignment
         href: assign-user-or-group-access-portal.md
+      - name: Assign agent identities to applications
+        href: assign-agent-identities-to-applications.md
       - name: Assign custom security attributes
         href: custom-security-attributes-apps.md
       - name: Disable user sign-in
@@ -285,6 +311,8 @@ items:
         href: application-sign-in-problem-first-party-microsoft.md
     - name: Delete and restore apps
       items:
+      - name: Deactivate an app registration
+        href: deactivate-app-registration.md
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application
@@ -307,6 +335,8 @@ items:
       href: ways-users-get-assigned-to-applications.md
     - name: Methods of removing user access to an app
       href: methods-for-removing-user-access.md
+    - name: Restrict password addition to apps
+      href: block-password-addition.md
   - name: Resources
     items:
         - name: Migration resources

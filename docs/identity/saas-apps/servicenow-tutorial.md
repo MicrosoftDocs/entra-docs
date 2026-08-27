@@ -1,21 +1,13 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with ServiceNow | Microsoft Docs
+title: Configure ServiceNow for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ServiceNow.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: gideonkiratu
-
+ms.date: 06/11/2026
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ServiceNow so that I can control who has access to ServiceNow, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with ServiceNow
+# Configure ServiceNow for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ServiceNow with Microsoft Entra ID. When you integrate ServiceNow with Microsoft Entra ID, you can:
 
@@ -25,8 +17,13 @@ In this article,  you learn how to integrate ServiceNow with Microsoft Entra ID.
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=497330f1-661a-4719-9156-e44708fe9401]
 
+ServiceNow is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A ServiceNow single sign-on (SSO) enabled subscription.
 * For ServiceNow, an instance or tenant of ServiceNow supports Calgary, Kingston, London, Madrid, New York, Orlando, Paris and San Diego versions or later.
@@ -34,9 +31,6 @@ The scenario outlined in this article assumes that you already have the followin
 * The ServiceNow tenant must have the [Multiple Provider Single Sign On Plugin](https://docs.servicenow.com/bundle/washingtondc-platform-security/page/integrate/single-sign-on/concept/c_MultipleProviderSingleSignOn.html) enabled.
 * For automatic configuration, enable the multi-provider plugin for ServiceNow.
 * To install the ServiceNow Agent (Mobile) application, go to the appropriate store, and search for the ServiceNow Agent application. Then download it.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 
@@ -53,7 +47,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of ServiceNow into Microsoft Entra ID, you need to add ServiceNow from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, enter **ServiceNow** in the search box.
 1. Select **ServiceNow** from results panel, and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -84,7 +78,7 @@ To configure and test Microsoft Entra SSO with ServiceNow, perform the following
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ServiceNow** application integration page, find the **Manage** section. Select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ServiceNow** application integration page, find the **Manage** section. Select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pen icon for **Basic SAML Configuration** to edit the settings.
 
@@ -144,7 +138,7 @@ Follow these steps to enable Microsoft Entra SSO.
 ### Configure Microsoft Entra SSO for ServiceNow Express
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ServiceNow** application integration page, select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ServiceNow** application integration page, select **single sign-on**.
 
     ![Screenshot of ServiceNow application integration page, with Single sign-on highlighted](common/select-sso.png)
 

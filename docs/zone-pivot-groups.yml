@@ -1,6 +1,6 @@
 ### YamlMime:ZonePivotGroups
 groups:
-# Owner: barclayn, rolyon
+# Owner: kenwith, rolyon
 ## Zone pivot with Azure portal, Azure AD PowerShell, Microsoft Graph PowerShell, Microsoft Graph
 - id: identity-pivot-portal-aadpowershell-mspowershell-msgraph
   title: Manage identity
@@ -14,7 +14,7 @@ groups:
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
-# Owner: barclayn, rolyon
+# Owner: kenwith, rolyon
 ## Zone pivot with Azure portal, Microsoft Graph PowerShell, Microsoft Graph
 - id: identity-pivot-portal-mspowershell-msgraph
   title: Manage identity
@@ -44,6 +44,15 @@ groups:
     title: Application provisioning
   - id: cross-tenant-synchronization
     title: Cross-tenant synchronization
+# Owner: rolyon
+- id: same-cloud-cross-cloud-synchronization
+  title: Same cloud synchronization or cross-cloud synchronization
+  prompt: Choose cloud type
+  pivots:
+  - id: same-cloud-synchronization
+    title: Same cloud synchronization
+  - id: cross-cloud-synchronization
+    title: Cross-cloud synchronization
 ########### BEGIN MICROSOFT IDENTITY PLATFORM
 # Referenced by: /entra/identity-platform/*
 # Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner, kengaderdus
@@ -93,6 +102,15 @@ groups:
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
+## template with only graph-powershell, ms-graph
+- id: enterprise-app-graph-ps-ms-graph
+  title: Manage Enterprise apps policy
+  prompt: Choose an option
+  pivots:
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
 ## Template without portal
 - id: enterprise-apps-minus-portal
   title: Manage Enterprise apps
@@ -104,7 +122,7 @@ groups:
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
-## Template without portal and Azure AD Graph
+## Template without portal and Azure AD PowerShell
 - id: enterprise-apps-minus-portal-aad
   title: Manage Enterprise apps
   prompt: Choose an option
@@ -150,7 +168,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: msgraph-powershell
-    title: Microsoft graph PowerShell
+    title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
   - id: azure-cli
@@ -163,7 +181,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: msgraph-powershell
-    title: Microsoft graph PowerShell
+    title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
 ## revoke permissions
@@ -176,7 +194,7 @@ groups:
   - id: app-perms
     title: App-only permissions
 ########### END APPLICATION MANAGEMENT
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-mi-methods
   title: Managed identities methods
   prompt: Choose an option
@@ -191,7 +209,7 @@ groups:
     title: Resource Manager
   - id: identity-mi-methods-rest
     title: REST
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-configure-mi-methods
   title: Configure managed identities
   prompt: Choose an option
@@ -208,7 +226,7 @@ groups:
     title: REST
   - id: qs-configure-sdk-windows-vm
     title: SDK
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-mi-scaled-sets
   title: Managed identities methods
   prompt: Choose an option
@@ -223,7 +241,7 @@ groups:
     title: Resource Manager
   - id: identity-mi-methods-rest
     title: REST
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-windows-vm-access
   title: Managed identities with VMs
   prompt: Choose an option
@@ -232,7 +250,7 @@ groups:
     title: Windows
   - id: windows-vm-access-lvm
     title: Linux
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-mi-azure-resource
   title: Managed identities Azure resource
   prompt: Choose an option
@@ -243,7 +261,7 @@ groups:
     title: CLI
   - id: identity-mi-access-powershell
     title: PowerShell
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-mi-service-principals
   title: Managed identity service principals
   prompt: Choose an option
@@ -254,7 +272,7 @@ groups:
     title: CLI
   - id: identity-mi-service-principal-powershell
     title: PowerShell
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-windows-mi-vm-access
   title: Use managed identity on a Windows VM/VMSS
   prompt: Choose an Azure service
@@ -273,7 +291,7 @@ groups:
     title: System ARM
   - id: identity-windows-mi-vm-ua-arm
     title: User ARM
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-linux-vm-access
   title: Use managed identity on a Linux VM/VMSS
   prompt: Choose an Azure service
@@ -292,7 +310,7 @@ groups:
     title: System ARM
   - id: identity-linux-mi-vm-user-arm
     title: User ARM
-# Owner: barclayn
+# Owner: kenwith
 - id: identity-mi-app-role
   title: Managed identity application roles
   prompt: Choose an option
@@ -354,3 +372,32 @@ groups:
     title: Onboard
   - id: identity-governance-guest-offboard
     title: Offboard
+# Owner: sidandrews
+- id: interface-portal-cli-powershell
+  title: Azure interface
+  prompt: Choose an Azure interface
+  pivots:
+  - id: interface-cli
+    title: Azure CLI
+  - id: interface-portal
+    title: Azure portal
+  - id: interface-shell
+    title: Azure PowerShell
+# Owner owinfrey
+- id: identity-extension-windows-environment
+  title: Azure Virtual Machine extensions and extensions for Arc-enabled Windows Server.
+  prompt: Select how your device is connected to Azure.
+  pivots:
+  - id: identity-extension-vm
+    title: Virtual Machine
+  - id: identity-extension-hybrid
+    title: Arc-enabled Server
+# Owner: cmulligan
+- id: fraud-protection-integration
+  title: Fraud protection integration in external tenants
+  prompt: Choose an option
+  pivots:
+  - id: arkose
+    title: Arkose
+  - id: human
+    title: HUMAN    

@@ -2,17 +2,12 @@
 title: Automate User provisioning into SAP BTP with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP BTP using SAP Cloud Identity Services.
 
-author: ZollnerdMSFT
 manager: TeeEarls
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 10/01/2024
-ms.author: zollnerd
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP BTP.
----
+--- 
 
 # Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP BTP
 

@@ -2,11 +2,9 @@
 title: Prepare your Android mobile app for native authentication 
 description: Learn how to add Microsoft Authentication Library (MSAL) native auth SDK framework to your Android app.
 
-author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
-ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
@@ -60,7 +58,7 @@ In this tutorial, you:
     //...
     
     dependencies { 
-        implementation 'com.microsoft.identity.client:msal:5.+'
+        implementation 'com.microsoft.identity.client:msal:6.+'
         //...
     }
     ```

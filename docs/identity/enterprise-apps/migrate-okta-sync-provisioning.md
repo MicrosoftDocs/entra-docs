@@ -1,15 +1,11 @@
 ---
 title: Tutorial to migrate Okta sync provisioning to Microsoft Entra Connect-based synchronization
 description: Migrate user provisioning from Okta to Microsoft Entra ID. See how to use Microsoft Entra Connect server or Microsoft Entra cloud provisioning.
-author: gargi-sinha
 manager: martinco
-ms.service: entra-id
 ms.topic: tutorial
 ms.date: 12/04/2024
-ms.author: gasinh
-ms.subservice: enterprise-apps
-ms.custom: kr2b-contr-experiment, not-enterprise-apps, no-azure-ad-ps-ref
-
+ms.reviewer: gasinh
+ms.custom: kr2b-contr-experiment, not-enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: I'm an IT admin using Okta for user provisioning. I want to migrate user provisioning to Microsoft Entra Connect synchronization, so I can add users into Microsoft Entra ID and Office 365.
 ---
 
@@ -24,7 +20,7 @@ In this tutorial, learn to migrate user provisioning from Okta to Microsoft Entr
 
 When you switch from Okta provisioning to Microsoft Entra ID, there are two choices. Use a Microsoft Entra Connect server or Microsoft Entra cloud provisioning. 
 
-Learn more: [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md#comparison-between-azure-ad-connect-and-cloud-sync).
+Learn more: [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync).
 
 Microsoft Entra cloud provisioning is the most familiar migration path for Okta customers who use Universal Sync or User Sync. The cloud provisioning agents are lightweight. You can install them on, or near, domain controllers like the Okta directory sync agents. Don't install them on the same server.
 
@@ -207,7 +203,7 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agent can synchronize objects.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**. 
+2. Browse to **Entra ID** > **Entra Connect** > **Connect Sync**. 
 3. Select **Configuration** profile.
 4. Select **Enable**.
 5. Return to the provisioning menu and select **Logs**.

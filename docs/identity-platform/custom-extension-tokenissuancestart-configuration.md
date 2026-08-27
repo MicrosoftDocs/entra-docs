@@ -1,15 +1,12 @@
 ---
 title: "Custom claims provider: Configure a token issuance event"
 description: Learn how to configure a custom claims provider for a token issuance start event in Microsoft Entra ID. You can add custom claims to a token before it's issued.
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
-ms.custom: 
-ms.date: 04/10/2024
+manager: pmwongera
+ms.date: 05/04/2025
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I want to configure a custom claims provider token issuance event in the Azure portal, so that I can add custom claims to a token before it is issued.
 ---
 
@@ -17,9 +14,13 @@ ms.topic: how-to
 
 This article describes how to configure a custom claims provider for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using an existing Azure Functions REST API, you'll register a custom authentication extension and add attributes that you expect it to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
 
+This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+
+> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
+
 ## Prerequisites
 
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - An HTTP trigger function configured for a token issuance event deployed to Azure Functions. If you don't have one, follow the steps in [create a REST API for a token issuance start event in Azure Functions](./custom-extension-tokenissuancestart-setup.md).
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.

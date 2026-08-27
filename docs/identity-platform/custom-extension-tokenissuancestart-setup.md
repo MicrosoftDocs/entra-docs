@@ -1,11 +1,9 @@
 ---
 title: Create a REST API for a token issuance event in Azure Functions
 description: Learn how to use the Authentication events trigger for Azure Functions library to create a trigger function that uses the token issuance start event.  
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
+manager: pmwongera
 ms.custom: 
-ms.date: 03/14/2024
+ms.date: 05/04/2025
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
@@ -20,10 +18,15 @@ zone_pivot_groups: custom-auth-extension
 
 This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using Azure Functions in the Azure portal. You create an Azure Function app and an HTTP trigger function which can return extra claims for your token. 
 
+
+This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+
+> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
+
 ## Prerequisites
 
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
 
 ::: zone-end
@@ -35,7 +38,7 @@ This article describes how to create a REST API for a [token issuance start even
 ## Prerequisites
 
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
-- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
+- An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
 - One of the following IDEs and configurations:
     - Visual Studio with [Azure Development workload for Visual Studio](/dotnet/azure/configure-visual-studio) configured.

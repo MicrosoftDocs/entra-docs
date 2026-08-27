@@ -1,21 +1,18 @@
 ---
 title: Best practices to secure with Microsoft Entra ID
 description: Best practices we recommend you follow to secure your isolated environments in Microsoft Entra ID.
-author: gargi-sinha
-manager: martinco
-ms.service: entra
+ms.topic: best-practice
+ms.date: 05/21/2025
+ms.reviewer: gasinh
+ms.custom: sfi-ga-nochange
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 7/5/2022
-ms.author: gasinh
-ms.reviewer: ajburnle
 ---
 
 # Best practices for all isolation architectures
 
 The following are design considerations for all isolation configurations. Throughout this content, there are many links. We link to content, rather than duplicate it here, so you'll always have access to the most up-to-date information.
 
-For general guidance on how to configure Microsoft Entra tenants (isolated or not), refer to the [Microsoft Entra feature deployment guide](~/fundamentals/concept-secure-remote-workers.md).
+For general guidance on how to configure Microsoft Entra tenants (isolated or not), refer to the [Microsoft Entra feature deployment guide](~/fundamentals/configure-security.md).
 
 >[!NOTE]
 >For all isolated tenants we suggest you use clear and differentiated branding to help avoid human error of working in the wrong tenant.
@@ -26,7 +23,7 @@ When designing isolated environments, it's important to consider the following p
 
 * **Use only modern authentication** - Applications deployed in isolated environments must use claims-based modern authentication (for example, SAML, * Auth, OAuth2, and OpenID Connect) to use capabilities such as federation, Microsoft Entra B2B collaboration, delegation, and the consent framework. This way, legacy applications that have dependency on legacy authentication methods such as NT LAN Manager (NTLM) won't carry forward in isolated environments.
 
-* **Enforce strong authentication** - Strong authentication must always be used when accessing the isolated environment services and infrastructure. Whenever possible, [passwordless authentication](~/identity/authentication/concept-authentication-passwordless.md) such as [Windows for Business Hello](/windows/security/identity-protection/hello-for-business/hello-overview) or a [FIDO2 security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) should be used.
+* **Enforce strong authentication** - Strong authentication must always be used when accessing the isolated environment services and infrastructure. Whenever possible, [passwordless authentication](~/identity/authentication/concept-authentication-passkeys-fido2.md) such as [Windows for Business Hello](/windows/security/identity-protection/hello-for-business/hello-overview) or a [FIDO2 security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) should be used.
 
 * **Deploy secure workstations** - [Secure workstations](/security/privileged-access-workstations/privileged-access-devices) provide the mechanism to ensure that the platform and the identity that platform represents is properly attested and secured against exploitation. Two other approaches to consider are:
 
@@ -101,7 +98,7 @@ All human identities (local accounts and external identities provisioned through
 
 #### Passwordless credentials
 
-A [passwordless solution](~/identity/authentication/concept-authentication-passwordless.md) is the best solution for ensuring the most convenient and secure method of authentication. Passwordless credentials such as [FIDO security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) and [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) are recommended for human identities with privileged roles.
+A [passwordless solution](~/identity/authentication/concept-authentication-passkeys-fido2.md) is the best solution for ensuring the most convenient and secure method of authentication. Passwordless credentials such as [FIDO security keys](~/identity/authentication/howto-authentication-passwordless-security-key.md) and [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) are recommended for human identities with privileged roles.
 
 #### Password protection
 
@@ -209,6 +206,8 @@ Some approaches you can use for [using secure devices as part of your privileged
 * Regular review of the Microsoft Entra tenants in the billing plane needs to be implemented to detect and discover tenant creation outside the governed process. Refer to the *Inventory and Visibility* section of this document for further details.
 
 * Azure AD B2C tenant creation can be controlled using Azure Policy. The policy executes when an Azure subscription is associated to the B2C tenant (a pre-requisite for billing). Customers can limit the creation of Azure AD B2C tenants to specific management groups.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 * There are no technical controls to subordinate the creation of tenants to an organization. However, the activity is recorded in the Audit log. The onboarding to the billing plane is a compensating control at the gate. This needs to be complemented with monitoring and alerts instead.
 

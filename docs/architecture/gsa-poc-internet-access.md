@@ -1,13 +1,9 @@
 ---
 title: Microsoft Global Secure Access Proof-of-Concept Guidance - Configure Microsoft Entra Internet Access
 description: Learn how to deploy and test Microsoft Global Secure Access as a proof of concept with Microsoft Entra Internet Access.
-author: jricketts
-manager: martinco
 ms.service: global-secure-access
 ms.topic: concept-article
-ms.date: 01/22/2025
-ms.author: jricketts
-
+ms.date: 02/20/2026
 #customer intent: As a Microsoft partner, I want to deploy and test Microsoft Global Secure Access for Microsoft Entra Internet Access as a proof of concept in my production or test environment.
 ---
 
@@ -35,9 +31,6 @@ To configure Microsoft Entra Internet Access, see [How to configure Global Secur
 ## Configure use cases
 
 Configure and test Microsoft Entra Internet Access use cases with web content filtering policies, security profiles, and Conditional Access policies. The following sections provide example use cases with specific guidance.
-
-> [!NOTE]
-> Microsoft doesn't currently support blocking and allowing URLs because it requires Transport Layer Security (TLS) inspection, which isn't yet available.
 
 ### Create a baseline profile that applies to all internet traffic routed through the service
 
@@ -89,7 +82,7 @@ Perform the following steps to use a [baseline profile](../global-secure-access/
 
 ### Enable and manage the Microsoft traffic forwarding profile
 
-The ability to help secure Microsoft traffic is a key feature of Microsoft Entra Internet Access. You can quickly deploy an automatically configured [Microsoft traffic profile](../global-secure-access/concept-microsoft-traffic-profile.md) that includes traffic forwarding rules. You can then use these rules to help secure and monitor Microsoft traffic (such as SharePoint Online and Exchange Online) and authentication traffic for any application that's integrated with Microsoft Entra ID. There are [known limitations](../global-secure-access/reference-current-known-limitations.md#access-controls-limitations).
+A key feature of Microsoft Entra Internet Access is its ability to help secure Microsoft traffic. You can quickly deploy an automatically configured [Microsoft traffic profile](../global-secure-access/concept-microsoft-traffic-profile.md) that includes traffic forwarding rules. Use these rules to help secure and monitor Microsoft traffic (such as SharePoint Online and Exchange Online) and authentication traffic for any application that's integrated with Microsoft Entra ID. There are [known limitations](../global-secure-access/reference-current-known-limitations.md#access-controls-limitations).
 
 1. [Enable the Microsoft traffic profile](../global-secure-access/how-to-manage-microsoft-profile.md).
 
@@ -103,21 +96,17 @@ The ability to help secure Microsoft traffic is a key feature of Microsoft Entra
 
 ### Implement universal tenant restrictions
 
-[Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) enable you to control access to external tenants by unmanaged identities on company-managed devices and networks. You can enforce this restriction at the authentication plane with tenant restrictions v1, by either blocking or allowing all traffic to an external tenant.
+[Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) enable you to control access to external tenants by unmanaged identities on company-managed devices and networks. You can enforce this restriction with Entra ID Tenant Restrictions, by either blocking or allowing all traffic to an external tenant.
 
-This scenario usually requires hair-pinning traffic to a corporate network proxy. With universal tenant restrictions, organizations can restrict access on a per-application level, extend protection to the data plane (in addition to the authentication plane), and eliminate the need to hair-pin traffic to reduce network latency.
+This scenario usually requires that you send all of your traffic through a corporate network proxy. With Universal Tenant Restrictions, organizations can apply tenant restrictions policies to users on any device with the Global Secure Access client, without the need to implement VPN and send traffic through a specific proxy, reducing network latency.
 
 After you enable the Microsoft traffic profile, follow these steps to implement universal tenant restrictions:
 
 1. [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2). If your organization currently uses tenant restrictions v1, review the [guide for migrating to tenant restrictions v2](https://aka.ms/trv2migration).
 
-1. [Enable Global Secure Access signaling for tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#enable-global-secure-access-signaling-for-tenant-restrictions).
+1. [Enable Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#enable-universal-tenant-restrictions).
 
-1. Sign in to your test device and try to access a different tenant's SharePoint Online or Exchange Online resource for which you have valid credentials.
-
-1. [Validate authentication plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-authentication-plane-protection).
-
-1. [Validate data plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-data-plane-protection).
+1. Sign in to your test device and use a private browser window to sign in to any application that is protected by Entra ID in a different tenant, using member account credentials from that tenant.
 
 ## Troubleshoot
 

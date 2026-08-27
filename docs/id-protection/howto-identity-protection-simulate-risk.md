@@ -2,15 +2,10 @@
 title: Simulate Risk Detections in Microsoft Entra ID Protection for Enhanced Security
 description: Learn how to simulate risk detections in Microsoft Entra ID Protection to enhance security. Test risk-based policies effectively.
 
-ms.service: entra-id-protection
-
 ms.topic: how-to
-ms.date: 02/28/2025
-
-author: shlipsey3
-ms.author: sarahlipsey
-manager: femila
+ms.date: 05/27/2026
 ms.reviewer: chuqiaoshi
+ai-usage: ai-assisted
 ---
 # Simulate Risk Detections in Microsoft Entra ID Protection
 
@@ -43,18 +38,18 @@ The sign-in shows up on the report within 10 - 15 minutes.
 
 ## Simulate Unfamiliar Sign-In Properties
 
-To simulate unfamiliar locations, you must use a location and device your test account hasn't used before.
+To simulate unfamiliar locations, your sign-in needs to be different from your normal sign-ins. This detection requires more than just signing in with a VPN.
 
 The following procedure uses a newly created:
 
-- A VPN connection, to simulate new location
-- A virtual machine, to simulate a new device
+- A different operating system (OS) from what you normally use.
+- An IP address from a different provider or location from where you normally sign in. 
 
 Completing the following procedure requires you to use a user account that has at least 30-days of sign-in history and usable multifactor authentication methods.
 
 **To simulate a sign-in from an unfamiliar location, perform the following steps**:
 
-1. Using your new VPN, navigate to [https://myapps.microsoft.com](https://myapps.microsoft.com) and enter the credentials of your test account.
+1. Using your new OS or IP, navigate to [https://myapps.microsoft.com](https://myapps.microsoft.com) and enter the credentials of your test account.
 2. When signing in with your test account, fail the multifactor authentication challenge by not passing the MFA challenge.
 
 The sign-in shows up on the report within 10 - 15 minutes.
@@ -80,7 +75,7 @@ This risk detection indicates that the application's valid credentials are leake
 ### Simulate Leaked Credentials in GitHub for Workload Identities
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration** to register a new application or reuse an existing stale application.
 1. Select **Certificates & Secrets** > **New client Secret** , add a description of your client secret and set an expiration for the secret or specify a custom lifetime and select **Add**. Record the secret's value for later use for your GitHub Commit.
 
@@ -88,7 +83,7 @@ This risk detection indicates that the application's valid credentials are leake
    > **You can not retrieve the secret again after you leave this page**.
    
 1. Get the TenantID and Application(Client)ID in the **Overview** page.
-1. Ensure you disable the application via **Identity** > **Applications** > **Enterprise Application** > **Properties** > Set **Enabled for users to sign-in** to **No**.
+1. Ensure you disable the application via **Entra ID** > **Enterprise apps** > **Properties** > Set **Enabled for users to sign-in** to **No**.
 1. Create a **public** GitHub Repository, add the following config and commit the change as a file with the .txt extension.
    ```GitHub file
      "AadClientId": "XXXX-2dd4-4645-98c2-960cf76a4357",
@@ -96,7 +91,29 @@ This risk detection indicates that the application's valid credentials are leake
      "AadTenantDomain": "XXXX.onmicrosoft.com",
      "AadTenantId": "99d4947b-XXX-XXXX-9ace-abceab54bcd4",
    ```
-1. In about 8 hours, you're able to view a leaked credential detection under **Protection** > **Identity Protection** > **Risk Detection** > **Workload identity detections** where other info contains the URL of your GitHub commit.
+1. In about 8 hours, you're able to view a leaked credential detection under **ID Protection** > **Dashboard** > **Risk Detections** > **Workload identity detections** where other info contains the URL of your GitHub commit.
+
+## Confirm compromise using Microsoft Graph
+
+You can also use Microsoft Graph to manually set a user's risk state to "confirmed compromised" for testing purposes. This approach is useful when you need to trigger a user risk policy without waiting for a detection to fire.
+
+Use the [confirmCompromised](/graph/api/riskyuser-confirmcompromised) API to mark one or more users as compromised:
+
+```http
+POST https://graph.microsoft.com/v1.0/identityProtection/riskyUsers/confirmCompromised
+
+{
+  "userIds": [
+    "userid1",
+    "userid2"
+  ]
+}
+```
+
+After calling this API, the user's risk level is set to **high** and the risk state changes to **confirmedCompromised**. This change is reflected in the risk reports and triggers any Conditional Access policies configured for high user risk.
+
+> [!NOTE]
+> Using `confirmCompromised` permanently sets the user's risk to high until it's remediated through a password reset or an admin dismisses the risk. Use this method only in test environments or when you've confirmed a true compromise.
 
 ## Testing risk policies
 

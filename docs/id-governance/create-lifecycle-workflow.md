@@ -1,14 +1,11 @@
 ---
 title: Create a lifecycle workflow - Microsoft Entra ID
 description: This article guides you in creating a lifecycle workflow.
-author: OWinfreyATL
-ms.author: owinfrey
-manager: femila
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 08/21/2026
 ms.custom: template-how-to
+#Customer Intent: As an IT admin, I want to create a lifecycle workflow so that I can automate identity lifecycle processes in my organization.
 ---
 
 # Create a lifecycle workflow
@@ -16,30 +13,57 @@ ms.custom: template-how-to
 Lifecycle workflows allow for tasks associated with the lifecycle process to be run automatically for users as they move through their lifecycle in your organization. Workflows consist of:
 
 - **Tasks**: Actions taken when a workflow is triggered.
-- **Execution conditions**: The who and when of a workflow. These conditions define which users (scope) this workflow should run against, and when (trigger) the workflow should run.
+- **Execution conditions**: The who and when of a workflow. These conditions define which users this workflow should run against, and when (trigger) the workflow should run.
 
-You can create and customize workflows for common scenarios by using templates, or you can build a workflow from scratch without using a template. Currently, if you use the Microsoft Entra admin center, any workflow that you create must be based on a template. If you want to create a workflow without using a template, use Microsoft Graph.
+In the Microsoft Entra admin center, you can create and customize workflows for common scenarios by using built-in templates or by cloning an existing workflow. To build a workflow from scratch without using a template or an existing workflow, use Microsoft Graph.
 
 ## Prerequisites
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
+## Create a lifecycle workflow by cloning an existing workflow in the Microsoft Entra admin center
+
+You can use an existing workflow as the starting point for a new workflow. The clone option is available only in the Microsoft Entra admin center.
+
+To start cloning from the workflow list:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
+
+1. Select the workflow that you want to clone, and then select **Clone**.
+
+    :::image type="content" source="media/create-lifecycle-workflow/clone-workflow-list.png" alt-text="Screenshot of a selected workflow and the Clone option on the Lifecycle workflows page." lightbox="media/create-lifecycle-workflow/clone-workflow-list.png":::
+
+You can also start cloning from the workflow creation experience:
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create workflow**.
+
+1. On the **Choose a workflow** page, find the **Clone an existing workflow** card, and then select **Browse workflows**.
+
+    :::image type="content" source="media/create-lifecycle-workflow/clone-workflow-template-card.png" alt-text="Screenshot of the Clone an existing workflow card on the Choose a workflow page." lightbox="media/create-lifecycle-workflow/clone-workflow-template-card.png":::
+
+1. Select the workflow that you want to clone.
+
+After you select a workflow to clone, the **Review + create** tab opens directly. Review the workflow settings, and then select **Create** to create the workflow without making changes.
+
+To customize the workflow before you create it, select the other tabs and update the workflow details or configuration. When you're finished, return to the **Review + create** tab and select **Create**.
 
 ## Create a lifecycle workflow by using a template in the Microsoft Entra admin center
 
 
-If you're using the Microsoft Entra admin center to create a workflow, you can customize existing templates to meet your organization's needs. These templates include one for pre-hire common scenarios.
+If you're using the Microsoft Entra admin center to create a workflow, you can customize existing templates to meet your organization's needs. These templates include one for common pre-hire scenarios.
 
 To create a workflow based on a template:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Create a workflow**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create a workflow**.
 
 1. On the **Choose a workflow** page, select the workflow template that you want to use.
 
     :::image type="content" source="media/create-lifecycle-workflow/templates-list.png" alt-text="Screenshot of a list of lifecycle workflow templates." lightbox="media/create-lifecycle-workflow/templates-list.png":::
-1. On the **Basics** tab, enter a unique display name and description for the workflow, and then select **Next**.
+1. On the **Basics** tab, enter a unique display name, description, and [administrative scope](manage-delegate-workflow.md) for the workflow, and then select **Next**.
 
     :::image type="content" source="media/create-lifecycle-workflow/template-basics.png" alt-text="Screenshot of basic information about a workflow template.":::
 

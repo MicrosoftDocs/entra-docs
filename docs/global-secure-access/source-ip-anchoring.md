@@ -1,19 +1,18 @@
 ---
 title: Source IP anchoring with Global Secure Access
 description: Configure Microsoft Entra Private Access to tunnel specific application traffic through a private network for application's network-based access control policy.
-author: jricketts
-manager: martinco
-ms.author: jricketts
-ms.reviewer: jebley
-ms.service: global-secure-access
+ms.reviewer: jebley, jricketts
 ms.subservice: entra-internet-access 
-ms.topic: conceptual
-ms.date: 10/29/2024
+ms.topic: how-to
+ms.date: 02/21/2026
 ---
 
 # Source IP anchoring with Global Secure Access
 
 Organizations with Software-as-a-Service (SaaS) or Line-of-Business (LOB) applications might enforce specific network locations before allowing access. One approach is to use Microsoft Entra Private Access to route specific web application traffic with a privately controlled network. This approach allows you to enforce specific egress IPs that only your organization uses. This article describes how to configure Microsoft Entra Private Access to tunnel specific application traffic through a private network to satisfy an application's network-based access control policy.
+
+> [!TIP]
+> **Source IP anchoring** and **source IP restoration** are different features. Source IP anchoring (this article) routes application traffic through your private network connector so that a SaaS app sees your known egress IP address. [Source IP restoration](how-to-source-ip-restoration.md) preserves the user's original public IP address in Microsoft Entra sign-in logs when traffic flows through Global Secure Access. Choose the feature that matches your scenario.
 
 ## Configure source IP anchoring to route traffic from a dedicated IP address
 
@@ -45,8 +44,6 @@ When you meet the prerequisites, perform the following steps to deploy private n
 
 1. [Install a private network connector](how-to-configure-connectors.md) in a private network that has outbound connectivity to the destination web application. A good option is to host the connector in an Azure Virtual Network where you control the outbound egress IP. We recommend that you install two or more connectors for resiliency and high availability.
 1. Provide the public IP address of the connectors to the SaaS app so that your users can connect to the app.
-
-Placement and use of a forward proxy between the private network connector and the destination web application isn't supported.
 
 ## Configure source IP anchoring
 

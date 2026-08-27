@@ -1,21 +1,13 @@
 ---
-title: Microsoft Entra integration with Zscaler Private Access (ZPA)
+title: Configure Zscaler Private Access (ZPA) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Private Access (ZPA).
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: gideonkiratu
-
+ms.date: 06/11/2026
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Private Access (ZPA) so that I can control who has access to Zscaler Private Access (ZPA), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Zscaler Private Access (ZPA) with Microsoft Entra ID
+# Configure Zscaler Private Access (ZPA) for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Zscaler Private Access (ZPA) with Microsoft Entra ID. When you integrate Zscaler Private Access (ZPA) with Microsoft Entra ID, you can:
 
@@ -23,8 +15,13 @@ In this article,  you learn how to integrate Zscaler Private Access (ZPA) with M
 * Enable your users to be automatically signed-in to Zscaler Private Access (ZPA) with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Zscaler Private Access (ZPA) is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Zscaler Private Access (ZPA) single sign-on (SSO) enabled subscription.
 
@@ -45,7 +42,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Zscaler Private Access (ZPA) into Microsoft Entra ID, you need to add Zscaler Private Access (ZPA) from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Zscaler Private Access (ZPA)** in the search box.
 1. Select **Zscaler Private Access (ZPA)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -73,7 +70,7 @@ To configure and test Microsoft Entra SSO with Zscaler Private Access (ZPA), per
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Private Access (ZPA)** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Private Access (ZPA)** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

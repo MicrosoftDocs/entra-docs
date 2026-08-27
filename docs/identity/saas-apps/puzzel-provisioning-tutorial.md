@@ -1,18 +1,13 @@
 ---
 title: Configure Puzzel for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Puzzel.
-author: thomasakelo
-manager: jeedes
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: thomasakelo
+ms.date: 08/10/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Puzzel so that I can streamline the user management process and ensure that users have the appropriate access to Puzzel.
----
+--- 
 
-# Configure Puzzel for automatic user provisioning
+# Configure Puzzel for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Puzzel and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Puzzel](https://www.puzzel.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -23,6 +18,7 @@ This article describes the steps you need to perform in both Puzzel and Microsof
 > * Remove users in Puzzel when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Puzzel.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Puzzel (recommended).
+> * OAuth2 Client Credentials Grant authentication is supported.
 
 ## Prerequisites
 
@@ -51,10 +47,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 <a name='to-configure-automatic-user-provisioning-for-Puzzel-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Puzzel in Microsoft Entra ID:
+### Configure automatic user provisioning for Puzzel in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -66,20 +62,48 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** and then select Authorize, make sure that you enter your Puzzel account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Puzzel. If the connection fails, ensure your Puzzel account has Admin permissions and try again.
+1. Before you configure provisioning in Microsoft Entra ID, create an OIDC client in the Puzzel portal and generate a client credentials. Microsoft Entra ID uses these credentials when you set up the connection in the Provisioning tab.
+To acquire the client credentials:
+   1. Sign in to the `https://app.puzzel.com/settings`. Locate **OIDC Clients** and select **Configure**.
 
- 	![Screenshot of Token.](media/puzzel-provisioning-tutorial/test-connection.png)
-1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+      ![Screenshot of showing OIDC Clients.](./media/puzzel-provisioning-tutorial/configure.png)
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+   2. On the **OIDC Client Configuration** page, select **+ Add** in the upper-right corner.
+   3. Configure the new client as follows:
+      1. In **Client Name**, enter a descriptive name (for example, `Microsoft Entra provisioning`).
+      1. For the grant type, select **Client Credentials**, then select **Save**.
+      1. Open the **Lifetimes** tab and set both the **Access Token Lifetime** and the **Refresh Token Lifetime** to `3600`. Select **Save**.
 
-1. Select **Save**.
+         ![Screenshot of showing Lifetimes tab.](./media/puzzel-provisioning-tutorial/lifetime.png)
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Puzzel**.
+   4. Generate a shared secret for the client:
+      1. On the **OIDC Client Configuration** page, select the configured client name, then select the first icon **(Secrets)** in its row.
+
+         ![Screenshot of showing OIDC Client Configuration page.](./media/puzzel-provisioning-tutorial/secret.png)
+
+      1. Select **Add > Shared Secret**.
+
+         ![Screenshot of showing the shared secret.](./media/puzzel-provisioning-tutorial/shared-secret.png)
+
+      1. Select **Generate Secret**, copy the generated secret value, and store it in a secure location. Select **Save**.
+
+1. In Authorization Method, select **OAuth2 Client Credentials Grant** as the **Authentication Method**. In the **Tenant URL** field, input your Puzzel **Tenant URL** and enter the **Client ID**, **Client Secret** and **Token Endpoint** retrieved from Puzzel portal.
+
+      ![Screenshot of OAuth2 Client Credentials Grant.](./media/puzzel-provisioning-tutorial/test-connection-new.png)
+
+1. Select **Create** to create your configuration.
+
+1. Select **Properties** on the **Overview** page.
+
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Select **Apply** to save the changes.
+
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Puzzel in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Puzzel for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Puzzel API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -111,9 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |phoneNumbers[type eq "pager"].value|String||
    |roles|String|||
 
-   
-
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Puzzel**.
+1. Select **Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Puzzel in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Puzzel for update operations. Select the **Save** button to commit any changes.
 
@@ -123,21 +145,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String||
       |members|Reference||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Puzzel, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users that you would like to provision to Puzzel by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 5: Monitor your deployment
 

@@ -1,15 +1,12 @@
 ---
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
-
-author: shlipsey3
-manager: femila
-ms.service: entra-id
 ms.topic: reference
-ms.subservice: monitoring-health
-ms.date: 10/04/2024
-ms.author: sarahlipsey
+ms.date: 03/25/2025
 ms.reviewer: dhanyahk
+
+#customer-intent: As a Microsoft Entra administrator, I want to understand all available audit log activities and categories so I can effectively monitor and track changes within my tenant.
+
 ---
 # Microsoft Entra audit log categories and activities
 
@@ -20,7 +17,7 @@ This article provides a comprehensive list of the audit categories and their rel
 Audit log activities and categories change periodically. The tables are updated regularly, but might not be in sync with what is available in Microsoft Entra ID. Provide us with feedback if you think there's a missing audit category or activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
 1. Adjust the filters accordingly.
 1. To view the details, select a row from the resulting table.
 
@@ -120,6 +117,7 @@ Configuration changes for application provisioning, HR provisioning, cross-tenan
 |ProvisioningManagement|Disable/pause provisioning configuration|The provisioning job has been disabled / paused.|
 |ProvisioningManagement|Enable/restart provisioning configuration|The provisioning job as been restarted.|
 |ProvisioningManagement|Enable/start provisioning configuration|The provisioning job has been started.|
+|ProvisioningManagement|Execution|The provisioning job is executing. There are various events that can be emitted including ProvisioningJobStartedInitialSync, ProvisioningJobStartedIncrementalSync, ProvisioningJobComplete and ProvisioningJobDisabled.
 |ProvisioningManagement|Export|The provisioning job has exported a change to the target system (ex: create a user).|
 |ProvisioningManagement|Import|The provisioning job imported the object from the source system (ex: import the user properties in Entra before provisioning the account into Salesforce).|
 |ProvisioningManagement|Other||
@@ -132,7 +130,7 @@ Configuration changes for application provisioning, HR provisioning, cross-tenan
 
 ## Application proxy
 
-If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/identity/app-proxy/application-proxy-connector-groups.md).
+If you're utilizing [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) to provide your users with remote access to internal apps, the Application Proxy audit logs can help you keep track of changes to available applications or [Connector groups](~/global-secure-access/concept-connector-groups.md).
 
 |Audit Category|Activity|
 |---|---|
@@ -184,7 +182,6 @@ The Audit logs for Authentication Methods can be used to make sure that your use
 |ApplicationManagement|PATCH UserAuthMethod.PatchSignInPreferencesAsync|
 |ApplicationManagement|PATCH UserAuthMethod.ResetQRPinAsync|
 |ApplicationManagement|PATCH UserAuthMethod.UpdateQRPinAsync|
-|ApplicationManagement|POST UserAuthMethod.SecurityInfoRegistrationCallback|
 |ApplicationManagement|POST UserAuthMethod.SoftwareOathProofupRegistration|
 |ApplicationManagement|Update Hardware Oath Token|
 |DirectoryManagement|DELETE Subscription.DeleteProviders|
@@ -204,6 +201,7 @@ The Audit logs for Authentication Methods can be used to make sure that your use
 |DirectoryManagement|POST Tenant.GenerateNewActivationCredentials|
 |DirectoryManagement|POST Tenant.RemoveBlockedUser|
 |DirectoryManagement|POST Tenant.RemoveBypassedUser|
+|PolicyManagement|POST UserAuthMethod.SecurityInfoRegistrationCallback|
 |UserManagement|Admin deleted security info|
 |UserManagement|Admin registered security info|
 |UserManagement|Admin started password reset|

@@ -4,10 +4,10 @@ description: Guidance on achieving NIST authenticator assurance level 2 (AAL2) w
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 09/27/2024
 ms.custom: it-pro
 ---
@@ -29,7 +29,7 @@ The following table has authenticator types permitted for AAL2:
 
 | Microsoft Entra authentication method| Phishing Resistant | NIST authenticator type |
 | - | - | - |
-| **Recommended methods** |   |
+| **Recommended methods** |   |   |
 | Multi-factor software certificate <br> Windows Hello for Business with software Trusted Platform Module (TPM)| Yes | Multi-factor crypto software |
 | Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator | Yes |  Multi-factor crypto hardware |
 | **Additional methods** |  
@@ -74,7 +74,7 @@ For Microsoft Authenticator app (iOS/Android) FIPS 140 compliance information, S
 
 For OATH hardware tokens and smartcards we recommend you consult with your provider for current FIPS validation status.
 
-FIDO 2 security key providers are in various stages of FIPS certification. We recommend you review the list of [supported FIDO 2 key vendors](~/identity/authentication/concept-authentication-passwordless.md). Consult with your provider for current FIPS validation status.
+FIDO 2 security key providers are in various stages of FIPS certification. We recommend you review the list of [supported FIDO 2 key vendors](~/identity/authentication/concept-authentication-passkeys-fido2.md). Consult with your provider for current FIPS validation status.
 
 Platform SSO for macOS is FIPS 140 compliant. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). 
 

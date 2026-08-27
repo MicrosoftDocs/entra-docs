@@ -1,10 +1,9 @@
 ---
-author: kengaderdus
-ms.service: entra-external-id
+manager: dougeby
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: include
 ms.date: 03/19/2024
-ms.author: kengaderdus
 ---
 
 > [!NOTE]

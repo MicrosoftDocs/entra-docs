@@ -1,14 +1,8 @@
 ---
 title: Use tenant restrictions to manage access to SaaS apps
 description: How to use tenant restrictions to manage which users can access apps based on their Microsoft Entra tenant.
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: concept-article
 ms.date: 11/29/2024
-ms.author: jomondi
 ms.reviewer: vranganathan
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps-article
@@ -79,14 +73,14 @@ For each outgoing request to `login.microsoftonline.com`, `login.microsoft.com`,
 
 The headers should include the following elements:
 
-- For *Restrict-Access-To-Tenants*, use a value of \<permitted tenant list\>, which is a comma-separated list of tenants you want to allow users to access. Any domain that is registered with a tenant can be used to identify the tenant in this list, and the directory ID itself. For an example of all three ways of describing a tenant, the name/value pair to allow Contoso, Fabrikam, and Microsoft looks like: `Restrict-Access-To-Tenants: contoso.com,fabrikam.onmicrosoft.com,aaaabbbb-0000-cccc-1111-dddd2222eeee`
+- For *Restrict-Access-To-Tenants*, use a value of \<permitted tenant list\>, which is a comma-separated list of tenants you want to allow users to access. Any domain that is registered with a tenant can be used to identify the tenant in this list, and the directory ID itself. Do not include white spaces in the comma-separated list. For an example of all three ways of describing a tenant, the name/value pair to allow Contoso, Fabrikam, and Microsoft looks like: `Restrict-Access-To-Tenants: contoso.com,fabrikam.onmicrosoft.com,aaaabbbb-0000-cccc-1111-dddd2222eeee`
 
 - For *Restrict-Access-Context*, use a value of a single directory ID, declaring which tenant is setting the tenant restrictions. For example, to declare Contoso as the tenant that set the tenant restrictions policy, the name/value pair looks like: `Restrict-Access-Context: bbbbcccc-1111-dddd-2222-eeee3333ffff`. You *must* use your own directory ID here to get logs for these authentications. If you use any directory ID other than your own, the sign-in logs *appear in someone else's tenant, with all personal information removed. For more information, see [Admin experience](#admin-experience).
 
 To find your directory ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Identity** > **Overview** > **Overview**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 1. Copy the **Tenant ID** value.
 
 To validate that a directory ID or domain name refer to the same tenant, use that ID or domain in place of \<tenant\> in this URL: `https://login.microsoftonline.com/<tenant>/v2.0/.well-known/openid-configuration`. If the results with the domain and the ID are the same, they refer to the same tenant.
@@ -110,7 +104,7 @@ An example user is on the Contoso network, but is trying to access the Fabrikam 
 While configuration of tenant restrictions is done on the corporate proxy infrastructure, admins can access the tenant restrictions reports in the Microsoft Entra admin center directly. To view the reports:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Identity** > **Overview** > **Tenant restrictions**.
+1. Browse to **Entra ID** > **Overview** > **Tenant restrictions**.
 
 The admin for the tenant specified as the Restricted-Access-Context tenant can use this report to see sign-ins blocked because of the tenant restrictions policy, including the identity used and the target directory ID. Sign-ins are included if the tenant setting the restriction is either the user tenant or resource tenant for the sign-in.
 

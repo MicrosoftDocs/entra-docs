@@ -1,21 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with Bynder.
+title: Configure Bynder. for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Bynder.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 04/05/2024
-ms.author: gideonkiratu
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Bynder so that I can control who has access to Bynder, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Integrate Bynder with Microsoft Entra ID
+# Configure Bynder. for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Bynder with Microsoft Entra ID. When you integrate Bynder with Microsoft Entra ID, you can:
 
@@ -24,7 +16,9 @@ In this article,  you learn how to integrate Bynder with Microsoft Entra ID. Whe
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Bynder single sign-on (SSO) enabled subscription.
 
@@ -35,16 +29,24 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 * Bynder supports **SP and IDP** initiated SSO.
 * Bynder supports **Just In Time** user provisioning.
 
-## Add Bynder from the gallery
+## Add an application for Bynder
 
-To configure the integration of Bynder into Microsoft Entra ID, you need to add Bynder from the gallery to your list of managed SaaS apps.
+To configure the integration of Bynder into Microsoft Entra ID, you can take two different approaches:
+
+1. Create a custom application for Bynder.
+2. Add the Bynder app from the gallery.
+
+> [!IMPORTANT]
+> We strongly recommend creating a custom application. Bynder now supports SCIM provisioning, which is available only for custom applications. Using the Bynder application from the gallery will limit the availability of this functionality for your integration.
+
+To create a custom application, you can use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration. [Learn more about Microsoft 365 wizards](/microsoft-365/admin/misc/azure-ad-setup-guides).
+
+If you do not plan to use SCIM provisioning and prefer to use the Bynder app from the gallery, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Bynder** in the search box.
-1. Select **Bynder** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+2. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+3. In the **Add from the gallery** section, type **Bynder** in the search box.
+4. Select **Bynder** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
 <a name='configure-and-test-azure-ad-sso'></a>
 
@@ -70,13 +72,13 @@ First you need to log in to your Bynder account and follow [these](https://suppo
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Bynder** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Bynder** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows to Edit Basic SAML Configuration.](common/edit-urls.png)
 
-   > [!NOTE]
+    > [!NOTE]
 	> For BYNDER_CONFIG_ID use an identifier value you got from **Сreate New Bynder Configuration** section.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:

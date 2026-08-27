@@ -1,14 +1,9 @@
 ---
 title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
-
-author: rolyon
-manager: femila
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: whats-new
-ms.date: 03/31/2025
-ms.author: rolyon
+ms.date: 07/17/2026
+ai-usage: ai-assisted
 
 ---
 
@@ -16,10 +11,34 @@ ms.author: rolyon
 
 This article provides information about new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 
+## 2026
+
+| Date | Area | Description |
+| --- | --- | --- |
+| July 2026 | Roles | Updated [Tenant Governance Administrator](permissions-reference.md#tenant-governance-administrator) role to a privileged role. |
+| June 2026 | Roles | Updated [AI Administrator](permissions-reference.md#ai-administrator) role and [AI Reader](permissions-reference.md#ai-reader) roles.|
+| June 2026 | Roles | Updated [Agent ID Administrator](permissions-reference.md#agent-id-administrator) and [Agent ID Developer](permissions-reference.md#agent-id-developer) roles. |
+| May 2026 | Roles | Updated [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator) role to a privileged role. |
+| April 2026 | Roles | Added [AI Reader](permissions-reference.md#ai-reader) and [Customer Delegated Admin Relationship Administrator](permissions-reference.md#customer-delegated-admin-relationship-administrator) roles. |
+| March 2026 | Roles | Added [Teams External Collaboration Administrator](permissions-reference.md#teams-external-collaboration-administrator) role. |
+| March 2026 | Roles | Added [Entra Backup Administrator](permissions-reference.md#entra-backup-administrator) and [Entra Backup Reader](permissions-reference.md#entra-backup-reader) roles. |
+| March 2026 | Roles | Added [Tenant Governance Administrator](permissions-reference.md#tenant-governance-administrator), [Tenant Governance Reader](permissions-reference.md#tenant-governance-reader), [Tenant Governance Relationship Administrator](permissions-reference.md#tenant-governance-relationship-administrator), and [Tenant Governance Relationship Reader](permissions-reference.md#tenant-governance-relationship-reader) roles. |
+| March 2026 | Roles | Added [Authentication Extensibility Password Administrator](permissions-reference.md#authentication-extensibility-password-administrator) role. |
+
 ## 2025
 
 | Date | Area | Description |
 | --- | --- | --- |
+| December 2025 | Roles | Added [Microsoft 365 Support Engineer](permissions-reference.md#microsoft-365-support-engineer) role. |
+| November 2025 | Roles | Added [SharePoint Advanced Management Administrator](permissions-reference.md#sharepoint-advanced-management-administrator) role. |
+| November 2025 | Roles | Updated [Exchange Backup Administrator](permissions-reference.md#exchange-backup-administrator) role. |
+| November 2025 | Roles | Updated [SharePoint Backup Administrator](permissions-reference.md#sharepoint-backup-administrator) role. |
+| October 2025 | Roles | Added [Dragon Administrator](permissions-reference.md#dragon-administrator) role. |
+| August 2025 | Roles | Added [Teams Reader](permissions-reference.md#teams-reader) role. |
+| June 2025 | Roles | Added [Organizational Data Source Administrator](permissions-reference.md#organizational-data-source-administrator) role. |
+| June 2025 | Administrative units | General availability of restricted management administrative units. See [Restricted management administrative units in Microsoft Entra ID](admin-units-restricted-management.md). |
+| May 2025 | Roles | Updated permissions for multiple roles. See [Microsoft Entra built-in roles](permissions-reference.md). |
+| May 2025 | Roles | Added [Microsoft Graph Data Connect Administrator](permissions-reference.md#microsoft-graph-data-connect-administrator) role. |
 | March 2025 | Roles | Added [Viva Glint Tenant Administrator](permissions-reference.md#viva-glint-tenant-administrator) role. |
 | March 2025 | Roles | Added [IoT Device Administrator](permissions-reference.md#iot-device-administrator) role. |
 | March 2025 | Roles | Added [People Administrator](permissions-reference.md#people-administrator) role. |

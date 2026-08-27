@@ -1,19 +1,14 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Labelbox
+title: Configure Labelbox for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Labelbox.
 services: active-directory
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/28/2024
-ms.author: gideonkiratu
----
+ms.custom: sfi-image-nochange
+--- 
 
-# Microsoft Entra single sign-on (SSO) integration with Labelbox
+# Configure Labelbox for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Labelbox with Microsoft Entra ID. When you integrate Labelbox with Microsoft Entra ID, you can:
 
@@ -23,6 +18,7 @@ Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Labelbox single sign-on (SSO) enabled subscription.
 
@@ -32,7 +28,7 @@ To configure the integration of Labelbox into Microsoft Entra ID, you need to ad
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **Labelbox** in the search box.
 
@@ -44,7 +40,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Labelbox** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Labelbox** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 

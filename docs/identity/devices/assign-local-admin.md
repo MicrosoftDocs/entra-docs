@@ -1,17 +1,10 @@
 ---
 title: How to manage local administrators on Microsoft Entra joined devices
 description: Learn how to assign Azure roles to the local administrators group of a Windows device.
-
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/27/2024
-
-ms.author: owinfrey
-author: owinfreyATL
-manager: femila
-ms.reviewer:
-
+ms.date: 06/17/2026
+ms.reviewer: 
+ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
 ---
 # How to manage the local administrators group on Microsoft Entra joined devices
@@ -44,7 +37,7 @@ To view and update the membership of an [administrator role](../role-based-acces
 You can manage the [Microsoft Entra Joined Device Local Administrator](~/identity/role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) role from **Device settings**.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
-1. Browse to **Identity** > **Devices** > **All devices** > **Device settings**.
+1. Browse to **Entra ID** > **Devices** > **All devices** > **Device settings**.
 1. Select **Manage Additional local administrators on all Microsoft Entra joined devices**.
 1. Select **Add assignments** then choose the other administrators you want to add and select **Add**.
 
@@ -81,12 +74,13 @@ Organizations can use Intune to manage these policies using [Custom OMA-URI Sett
 - Microsoft Entra groups deployed to a device with this policy don't apply to remote desktop connections. To control remote desktop permissions for Microsoft Entra joined devices, you need to add the individual user's SID to the appropriate group.
 
 > [!IMPORTANT]
-> Windows sign-in with Microsoft Entra ID supports evaluation of up to 20 groups for administrator rights. We recommend having no more than 20 Microsoft Entra groups on each device to ensure that administrator rights are correctly assigned. This limitation also applies to nested groups.
+> Windows sign-in with Microsoft Entra ID supports evaluation of up to 20 groups for administrator rights. We recommend having no more than 20 Microsoft Entra groups on each device, and having a user as a member in no more than 20 groups, to ensure that administrator rights are correctly assigned. This limitation also applies to nested groups.
 
 ## Manage regular users
 
 By default, Microsoft Entra ID adds the user performing the Microsoft Entra join to the administrator group on the device. If you want to prevent regular users from becoming local administrators, you have the following options:
 
+- **Device registration policy** - The device registration policy controls whether users who perform Microsoft Entra join become local administrators on the devices they join. This setting affects membership in the local Administrators group on the joined device. It doesn't assign a Microsoft Entra directory role, such as Global Administrator, and it doesn't add the user to the Microsoft Entra Joined Device Local Administrator role. In Microsoft Graph, this setting is represented by the `azureADJoin.localAdmins.registeringUsers` property of the [device registration policy](/graph/api/resources/deviceregistrationpolicy).
 - [Windows Autopilot](/autopilot/windows-autopilot) - Windows Autopilot provides you with an option to prevent primary user performing the join from becoming a local administrator by [creating an Autopilot profile](/autopilot/enrollment-autopilot#create-an-autopilot-deployment-profile).
 - [Bulk enrollment](/mem/intune/enrollment/windows-bulk-enroll) - a Microsoft Entra join that is performed in the context of a bulk enrollment happens in the context of an autocreated user. Users signing in after a device is joined aren't added to the administrators group.
 
@@ -94,12 +88,12 @@ By default, Microsoft Entra ID adds the user performing the Microsoft Entra join
 
 In addition to using the Microsoft Entra join process, you can also manually elevate a regular user to become a local administrator on one specific device. This step requires you to already be a member of the local administrators group.
 
-Starting with the **Windows 10 1709** release, you can perform this task from **Settings -> Accounts -> Other users**. Select **Add a work or school user**, enter the user's user principal name (UPN) under **User account** and select *Administrator* under **Account type**
+Starting with the **Windows 10 1709** release, you can perform this task from **Settings** > **Accounts** > **Other users**. Select **Add a work or school user**, enter the user's user principal name (UPN) under **User account** and select *Administrator* under **Account type**
 
 Additionally, you can also add users using the command prompt:
 
-- If your tenant users are synchronized from on-premises Active Directory, use `net localgroup administrators /add "Contoso\username"`.
-- If your tenant users are created in Microsoft Entra ID, use `net localgroup administrators /add "AzureAD\UserUpn"`
+- If your tenant users are synchronized from on-premises Active Directory, use `net localgroup administrators /add "<domain>\<username>"`, where `<domain>` is your on-premises Active Directory domain name and `<username>` is the user's SAM account name.
+- If your tenant users are created in Microsoft Entra ID, use `net localgroup administrators /add "AzureAD\<UserUPN>"`, where `<UserUPN>` is the user's User Principal Name.
 
 ## Considerations
 

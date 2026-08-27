@@ -4,10 +4,10 @@ description: Learn how to meet authorization requirements outlined in OMB memora
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 02/10/2025
 ms.custom: it-pro
 ---
@@ -24,8 +24,8 @@ A memorandum 22-09 requirement is at least one device-based signal for authoriza
 
 | Signal| Signal retrieval |
 | - | - |
-| Device is managed| Integration with Intune or another mobile device management (MDM) solution supporting integration. 
-Microsoft Entra hybrid joined| Active Directory manages the device, and it qualifies. 
+| Device is managed| Integration with Intune or another mobile device management (MDM) solution supporting integration. |
+| Microsoft Entra hybrid joined| Active Directory manages the device, and it qualifies. |
 | Device is compliant| Integration with Intune or another MDM solution supporting the integration. See, [Create a compliance policy in Microsoft Intune](/mem/intune/protect/device-compliance-get-started). |
 | Threat signals| Microsoft Defender for Endpoint and other endpoint detection and response (EDR) tools have Microsoft Entra ID and Intune integrations that send threat signals to deny access. Threat signals support the compliant status signal. |
 | Cross-tenant access policies (public preview)| Trust device signals from devices in other organizations. |

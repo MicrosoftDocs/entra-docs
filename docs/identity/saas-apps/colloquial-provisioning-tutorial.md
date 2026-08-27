@@ -2,23 +2,20 @@
 title: Configure Colloquial for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Colloquial.
 
-author: thomasakelo
-manager: jeedes
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.date: 03/31/2026
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Colloquial so that I can streamline the user management process and ensure that users have the appropriate access to Colloquial.
----
+--- 
 
-# Configure Colloquial for automatic user provisioning
+# Configure Colloquial for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both Colloquial and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Colloquial](https://www.colloquial.io) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Colloquial and Microsoft Entra ID to configure automatic user provisioning. Before you begin, review the [prerequisites](#prerequisites) to ensure your environment is ready. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Colloquial](https://www.colloquial.io) using the Microsoft Entra provisioning service. For important details on what the Microsoft Entra provisioning service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Supported capabilities
+
+Colloquial supports the following provisioning and access capabilities:
+
 > [!div class="checklist"]
 > * Create users in Colloquial.
 > * Remove users in Colloquial when they don't require access anymore.
@@ -34,6 +31,9 @@ The scenario outlined in this article assumes that you already have the followin
 * A user account in Colloquial with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
+
+Before you configure provisioning, complete the following planning tasks:
+
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 * Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and Colloquial](~/identity/app-provisioning/customize-application-attributes.md).
@@ -43,9 +43,11 @@ Contact Colloquial support to configure Colloquial to support provisioning with 
 
 ## Step 3: Add Colloquial from the Microsoft Entra application gallery
 
-Add Colloquial from the Microsoft Entra application gallery to start managing provisioning to Colloquial. If you have previously setup Colloquial for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Colloquial from the Microsoft Entra application gallery to start managing provisioning to Colloquial. If you previously set up the Colloquial enterprise application for SSO, you can use that enterprise application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about [adding an application from the gallery](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
+
+Use the following steps to define which users and groups are in scope for provisioning:
 
 [!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
@@ -58,7 +60,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Colloquial in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -70,57 +72,53 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Set the **Provisioning Mode** to **Automatic**.
+1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, input your Colloquial Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Colloquial. If the connection fails, ensure your Colloquial account has Admin permissions and try again.
+1. In the **Tenant URL** field, input your Colloquial Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Colloquial. If the connection fails, ensure your Colloquial account has the required admin permissions and try again.
 
- 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
+	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+
+1. Select **Create** to create your configuration.
+
+1. Select **Properties** on the **Overview** page.
+
+1. Select the **Edit** icon to edit the properties. Enable notification emails and provide an email to receive quarantine notifications. Enable **Accidental deletions prevention**. Select **Apply** to save the changes.
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
+	![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Save**.
-
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Colloquial**.
+1. Select **Attribute Mapping** in the left panel and select **users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Colloquial in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Colloquial for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Colloquial API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
 	|Attribute|Type|Supported for filtering|Required by Colloquial|
 	|---|---|---|---|
-	|userName|String|&check;|&check;
-	|active|Boolean||&check;
-	|emails[type eq "work"].value|String||&check;
-	|preferredLanguage|String||
-	|name.givenName|String||&check;
-	|name.familyName|String||&check;
-	|externalId|String||
-	|locale|String||
-	|timezone|String||
+	|userName|String|&check;|&check;|
+	|active|Boolean||&check;|
+	|emails[type eq "work"].value|String||&check;|
+	|preferredLanguage|String|||
+	|name.givenName|String||&check;|
+	|name.familyName|String||&check;|
+	|externalId|String|||
+	|locale|String|||
+	|timezone|String|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions provided in [Define scoping filters for provisioning user accounts](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for Colloquial, change the **Provisioning Status** to **On** in the **Settings** section.
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization. 
 
-	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
-
-1. Define the users that you would like to provision to Colloquial by choosing the desired values in **Scope** in the **Settings** section.
-
-	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
-
-1. When you're ready to provision, select **Save**.
-
-	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
-
-This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
+1. When you're ready to provision, select **Start Provisioning** from the **Overview** page.
 
 ## Step 6: Monitor your deployment
 
+After you enable provisioning, use the following guidance to monitor the deployment:
+
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
-## More resources
+## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

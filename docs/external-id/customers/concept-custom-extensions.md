@@ -1,15 +1,8 @@
 ---
 title: Custom authentication extensions
 description: Learn how to use custom authentication extensions in Microsoft Entra External ID. Integrate with external systems, add custom logic to authentication flows, and enhance user experiences.
- 
-author: msmimart
-manager: celestedg
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/10/2025
-ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to know 
@@ -20,6 +13,9 @@ ms.custom: it-pro
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Microsoft Entra External ID user flows are designed for flexibility. Within a sign-up and sign-in user flow, there are built-in authentication events. You can also add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. For example, you could add an [attribute collection](#attribute-collection-start-and-submit-events) workflow to validate the attributes a user enters during sign-up, or you could use a [custom claims provider](#token-issuance-start-event) to add external user data to the token before the token is issued.
+
+> [!NOTE]
+> Token-issuance extensions (the **OnTokenIssuanceStart** event) apply to both browser-delegated and native authentication, because the extension runs server-side just before the token is issued. Attribute-collection extensions (the **OnAttributeCollectionStart** and **OnAttributeCollectionSubmit** events) apply only to **browser-delegated authentication**, because they fire on the Microsoft-hosted attribute collection page. For help choosing an approach, see [Choose an authentication approach](concept-choose-authentication-approach.md).
 
 There are two components you need to configure: a custom authentication extension and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. You can create custom authentication extensions at the following points in the authentication flow:
 
