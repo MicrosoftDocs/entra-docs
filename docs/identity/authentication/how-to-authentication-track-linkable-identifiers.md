@@ -401,4 +401,3 @@ By analyzing the log files with linkable identifiers, tenant administrators and 
 - [Teams audit logs](/purview/audit-teams-audit-log-events)
 - [SharePoint Online audit logs](/purview/audit-log-sharing#tabs=microsoft-purview-portal)
 - [Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview)
-
