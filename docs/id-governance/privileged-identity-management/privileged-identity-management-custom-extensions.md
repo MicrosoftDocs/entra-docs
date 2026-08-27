@@ -191,7 +191,7 @@ After the app is created, configure an Application ID URI. The host name in the 
 
 1. Open the app registration and go to **Expose an API**.
 1. Select **Set** next to **Application ID URI**.
-1. Enter a value that represents your API. The URI must end with the Application (client) ID of the app registration. For example, if your custom extension endpoint is `https://api.contoso.com/webhooks/entra-role-assignments` and the Application (client) ID is `aaaabbbb-0000-cccc-1111-dddd2222eeee`, set the Application ID URI to: `api://api.contoso.com/aaaabbbb-0000-cccc-1111-dddd2222eeee`
+1. Enter a value that represents your API. The URI must end with the Application (client) ID of the app registration. For example, if your custom extension endpoint is `https://api.contoso.com/webhooks/entra-role-assignments` and the Application (client) ID is `00001111-aaaa-2222-bbbb-3333cccc4444`, set the Application ID URI to: `api://api.contoso.com/00001111-aaaa-2222-bbbb-3333cccc4444`
 
 1. Select **Save**.
     :::image type="content" source="media/privileged-identity-management-custom-extensions/app-registration-expose-api.png" alt-text="Screenshot of the app registration to expose API page." lightbox="media/privileged-identity-management-custom-extensions/app-registration-expose-api.png":::
@@ -235,7 +235,7 @@ The following example creates a custom extension for PIM for Groups:
   },
   "authenticationConfiguration": {
     "@odata.type": "#microsoft.graph.azureAdTokenAuthentication",
-    "resourceId": "api://api.contoso.com/aaaabbbb-0000-cccc-1111-dddd2222eeee"
+    "resourceId": "api://api.contoso.com/a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
   },
   "resourceType": "entraGroups",
   "customAttributes": []
