@@ -1484,7 +1484,7 @@ For more authentication and authorization methods, let us know on [UserVoice](ht
 
 ### OAuth 2.0 client credentials grant flow
 
-The provisioning service supports the OAuth 2.0 client credentials grant. Customers provide the following information when they configure provisioning, so make each value available to them in your admin experience:
+The provisioning service supports the [OAuth 2.0 client credentials grant](/entra/identity-platform/v2-oauth2-client-creds-grant-flow). Customers provide the following information when they configure provisioning, so make each value available to them in your admin experience:
 
 - **Tenant URL:** This is the SCIM API endpoint URL provided by your service provider. For example, it could be something like https://example.test/scim.
 - **Token Endpoint:** This is the OAuth2 Token URL. It's the endpoint that the provisioning service will use to exchange client credentials for an access token. For example, it could be something like https://example.test/oauth2/token.
