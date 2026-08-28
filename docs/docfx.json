@@ -198,6 +198,8 @@
         "fundamentals/**/*.yml": "entra",
         "global-secure-access/**/*.md": "global-secure-access",
         "global-secure-access/**/*.yml": "global-secure-access",
+		"identity-platform/**/*.md": "identity-platform",
+        "identity-platform/**/*.yml": "identity-platform",
         "id-governance/**/*.md": "entra-id-governance",
         "id-governance/**/*.yml": "entra-id-governance",
         "id-protection/**/*.md": "entra-id-protection",
