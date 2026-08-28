@@ -69,6 +69,10 @@ As an independent software vendor (ISV), you must meet these requirements:
 
 Review [Known issues for application provisioning](~/identity/app-provisioning/known-issues.md?pivots=app-provisioning) before submitting your integration.
 
+## Validate your integration
+
+After your SCIM endpoint meets these requirements, validate it against the Microsoft Entra provisioning service and submit the results with your gallery submission. For instructions, see [Validate user provisioning for Microsoft Entra App Gallery](validate-user-provisioning-app-gallery.md).
+
 ## Prepare customer documentation
 
 Publish documentation that includes at least the following information:
