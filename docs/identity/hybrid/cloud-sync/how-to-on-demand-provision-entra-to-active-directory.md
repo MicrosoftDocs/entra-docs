@@ -2,19 +2,21 @@
 title: 'On-demand provisioning - Microsoft Entra ID to Active Directory'
 description: This article describes how to use on-demand provisioning when provisioning from Microsoft Entra ID to Active Directory.
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 08/24/2026
 ms.subservice: hybrid-cloud-sync
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1023
+ai-usage: ai-assisted
 ---
 
 
 
 # On-demand provisioning - Microsoft Entra ID to Active Directory
-Microsoft Entra Connect cloud sync allows you to test configuration changes, by applying these changes to a group. 
 
-You can use this test to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID. 
+Microsoft Entra Cloud Sync lets you test configuration changes by applying them to a single user or group before you enable the configuration for all in-scope objects.
 
-The following document guides you through on-demand provisioning with Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID. If you're looking for information on provisioning from Microsoft Entra ID to AD, see [ On-demand provisioning - Active Directory to Microsoft Entra ID](how-to-on-demand-provision-entra-to-active-directory.md)
+Use this test to validate and verify that the changes you made to the configuration were applied properly and that objects are correctly synchronized to Active Directory.
+
+This article covers on-demand provisioning for configurations that provision from Microsoft Entra ID to Active Directory. If you're looking for information about provisioning from Active Directory to Microsoft Entra ID, see [On-demand provisioning - Active Directory to Microsoft Entra ID](how-to-on-demand-provision.md).
 
 The following is true for on-demand group provisioning:
 - On-demand provisioning of groups supports updating up to five members at a time.
@@ -23,30 +25,62 @@ The following is true for on-demand group provisioning:
 - The on-demand provisioning request API can only accept a single group with up to five members at a time.
 
 
-## Verify a group
-To use on-demand provisioning, follow these steps:
+<a name='verify-a-group'></a>
 
->[!NOTE]
->When using on-demand provisioning, members aren't automatically provisioned. You need to select which members you wish to test on and there's a five member limit.
+## Verify a user or group
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
- 5. Enter the name of the group in the **Selected group** box
- 6. From the **Selected users** section, select some users to test.
- 
-   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-10.png" alt-text="Screenshot of adding members." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-10.png":::
+ 5. Select the **Users** or **Groups** tab, depending on which object type you want to test.
 
- 7. Select **Provision**.
- 8. You should see the group provisioned.
- 
-   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png":::
+    :::image type="content" source="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-users-tab.png" alt-text="Screenshot of the Provision on demand page with the Users and Groups tabs." lightbox="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-users-tab.png":::
 
+Then follow the steps for the object type you selected.
 
-For more information, see [on-demand provisioning](how-to-on-demand-provision.md).
+# [Users](#tab/users)
 
-## Next steps 
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+1. In **Select a user**, search for the user by name, and then select the user.
+
+   :::image type="content" source="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-select-user.png" alt-text="Screenshot of a user selected on the Users tab of the Provision on demand page." lightbox="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-select-user.png":::
+
+1. Select **Provision**.
+
+# [Groups](#tab/groups)
+
+1. In **Selected group**, search for the group by name, and then select the group.
+1. Under **Selected users**, select **View members only** to choose from the group's current members, or **View all users** to search the whole directory. Then select the members you want to test.
+
+   > [!NOTE]
+   > Members aren't provisioned automatically. Select the members you want to test, up to five at a time.
+
+   :::image type="content" source="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-select-group.png" alt-text="Screenshot of a group selected on the Groups tab, with the options for choosing which members to test." lightbox="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-select-group.png":::
+
+1. Select **Provision**.
+
+---
+
+## Review the result
+
+The result lists four steps: importing the object, evaluating it against your scoping filters, matching it against the target system, and performing the action in Active Directory. Select **View details** on any step to see what was evaluated.
+
+A step reports **Success** when it completes, or **Skipped** when there was nothing to do, such as when the object in Active Directory already matches. To run the same test again, select **Retry**. To test a different object, select **Provision another object**.
+
+# [Users](#tab/users)
+
+:::image type="content" source="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-user-result.png" alt-text="Screenshot of the on-demand provisioning result for a user, showing the four steps and their status." lightbox="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-user-result.png":::
+
+# [Groups](#tab/groups)
+
+:::image type="content" source="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-group-result.png" alt-text="Screenshot of the on-demand provisioning result for a group, showing the four steps and their status." lightbox="media/how-to-on-demand-provision-entra-to-active-directory/provision-on-demand-group-result.png":::
+
+---
+
+## Related content
+
+- [Configure Microsoft Entra ID to Active Directory provisioning](how-to-configure-entra-to-active-directory.md)
+- [Test and enable provisioning to Active Directory](how-to-test-and-enable-provisioning-entra-to-active-directory.md)
+- [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)

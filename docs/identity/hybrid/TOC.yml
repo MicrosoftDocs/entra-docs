@@ -101,6 +101,8 @@
             href: concept-group-source-of-authority-how-it-works.md
           - name: Guidance for using Group SOA
             href: concept-group-source-of-authority-guidance.md
+          - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+            href: cloud-sync/govern-on-premises-groups.md
         - name: How to guides
           items:
           - name: Configure Group SOA
@@ -129,14 +131,34 @@
               href: user-source-of-authority-audit-monitor.md
     - name: Provision Microsoft Entra ID to Active Directory
       items:
-        - name: Provision groups to Active Directory
-          href: cloud-sync/tutorial-group-provisioning.md
-        - name: Using directory extensions with provisioning groups to AD
-          href: cloud-sync/tutorial-directory-extension-group-provisioning.md
-        - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
-          href: cloud-sync/govern-on-premises-groups.md
-        - name: Configure AD group enforcement (preview)
-          href: cloud-sync/how-to-ad-group-enforcement.md
+        - name: Overview
+          href: cloud-sync/overview-provision-entra-id-to-active-directory.md
+        - name: Deployment options (preview)
+          href: cloud-sync/concept-deployment-options-provision-to-active-directory.md
+        - name: How provisioning to AD works (preview)
+          href: cloud-sync/how-provisioning-to-active-directory-works.md
+        - name: Prerequisites (preview)
+          href: cloud-sync/how-to-prerequisites-provision-entra-to-active-directory.md
+        - name: Configure provisioning to AD (preview)
+          items:
+            - name: Configure scoping filters and attribute mapping (preview)
+              href: cloud-sync/how-to-configure-entra-to-active-directory.md
+            - name: Scoping filter and Attribute mapping - Microsoft Entra ID to AD
+              href: cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md
+            - name: Preserve a group's organizational unit (preview)
+              href: cloud-sync/how-to-preserve-group-organizational-unit-entra-to-active-directory.md
+            - name: Directory extensions and custom attributes - Microsoft Entra ID to AD
+              href: cloud-sync/custom-attribute-mapping-entra-to-active-directory.md
+            - name: Using directory extensions when provisioning to AD
+              href: cloud-sync/tutorial-directory-extension-group-provisioning.md
+            - name: Test and enable provisioning (preview)
+              href: cloud-sync/how-to-test-and-enable-provisioning-entra-to-active-directory.md
+            - name: On-demand provisioning - Microsoft Entra ID to AD
+              href: cloud-sync/how-to-on-demand-provision-entra-to-active-directory.md
+            - name: "Tutorial: Provision users and groups walkthrough (preview)"
+              href: cloud-sync/tutorial-users-groups-provisioning-walkthrough.md
+        - name: Configure AD user and group enforcement (preview)
+          href: cloud-sync/how-to-active-directory-object-enforcement.md
     - name: Migration scenarios for cloud sync
       items:
         - name: Decision guide for migrating from Connect to Cloud Sync
@@ -195,16 +217,34 @@
                   href: cloud-sync/device-sync.md
             - name: Provision Microsoft Entra ID to Active Directory
               items:
-                - name: Provision Microsoft Entra ID to AD - Configuration
-                  href: cloud-sync/how-to-configure-entra-to-active-directory.md
-                - name: Scoping filter and Attribute mapping - Microsoft Entra ID to AD
-                  href: cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md
-                - name: Directory extensions and custom attributes - Microsoft Entra ID to AD
-                  href: cloud-sync/custom-attribute-mapping-entra-to-active-directory.md
-                - name: On-demand provisioning - Microsoft Entra ID to AD
-                  href: cloud-sync/how-to-on-demand-provision-entra-to-active-directory.md
-                - name: Configure AD group enforcement (preview)
-                  href: cloud-sync/how-to-ad-group-enforcement.md
+                - name: Overview
+                  href: cloud-sync/overview-provision-entra-id-to-active-directory.md
+                - name: Deployment options
+                  href: cloud-sync/concept-deployment-options-provision-to-active-directory.md
+                - name: How provisioning to AD works
+                  href: cloud-sync/how-provisioning-to-active-directory-works.md
+                - name: Prerequisites
+                  href: cloud-sync/how-to-prerequisites-provision-entra-to-active-directory.md
+                - name: Configure provisioning to AD
+                  items:
+                    - name: Configure scoping filters and attribute mapping
+                      href: cloud-sync/how-to-configure-entra-to-active-directory.md
+                    - name: Scoping filter and Attribute mapping - Microsoft Entra ID to AD
+                      href: cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md
+                    - name: Preserve a group's organizational unit
+                      href: cloud-sync/how-to-preserve-group-organizational-unit-entra-to-active-directory.md
+                    - name: Directory extensions and custom attributes - Microsoft Entra ID to AD
+                      href: cloud-sync/custom-attribute-mapping-entra-to-active-directory.md
+                    - name: Using directory extensions when provisioning to AD
+                      href: cloud-sync/tutorial-directory-extension-group-provisioning.md
+                    - name: Test and enable provisioning
+                      href: cloud-sync/how-to-test-and-enable-provisioning-entra-to-active-directory.md
+                    - name: On-demand provisioning - Microsoft Entra ID to AD
+                      href: cloud-sync/how-to-on-demand-provision-entra-to-active-directory.md
+                    - name: "Tutorial: Provision users and groups walkthrough"
+                      href: cloud-sync/tutorial-users-groups-provisioning-walkthrough.md
+                - name: Configure AD user and group enforcement (preview)
+                  href: cloud-sync/how-to-active-directory-object-enforcement.md
         - name: Migration
           items:
             - name: Migrate your sync tool
@@ -625,5 +665,3 @@
           href: connect/reference-connect-version-history-archive.md
         - name: How to use BypassDirSyncOverrides
           href: connect/how-to-bypassdirsyncoverrides.md
-
-
