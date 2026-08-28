@@ -1,7 +1,7 @@
 ---
 title: Set up the validation Logic App in the Azure portal (preview)
 description: Create the ISV Onboarding app and deploy the Azure Logic Apps validation template to test your SCIM provisioning integration for Microsoft Entra App Gallery.
-author: hsaini
+author: himanshusainig
 manager: msteele
 ms.service: entra-id
 ms.subservice: enterprise-apps

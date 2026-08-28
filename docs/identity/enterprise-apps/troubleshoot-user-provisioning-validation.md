@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot user provisioning validation for Microsoft Entra App Gallery (preview)
 description: Diagnose failed tests in the Azure Logic Apps validation template and fix common SCIM endpoint issues before you submit your gallery submission.
-author: hsaini
+author: himanshusainig
 manager: msteele
 ms.service: entra-id
 ms.subservice: enterprise-apps
