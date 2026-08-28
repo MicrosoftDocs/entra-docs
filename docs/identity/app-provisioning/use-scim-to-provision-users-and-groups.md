@@ -2,7 +2,7 @@
 title: Tutorial - Develop a SCIM endpoint for user provisioning to apps from Microsoft Entra ID
 description: System for Cross-domain Identity Management (SCIM) standardizes automatic user provisioning. In this tutorial, you learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and start automating provisioning users and groups into your cloud applications.
 ms.topic: tutorial
-ms.date: 10/06/2025
+ms.date: 08/28/2026
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -1452,21 +1452,17 @@ Once the initial cycle has started, you can select **Provisioning logs** in the 
 
 ## Publish your application to the Microsoft Entra application gallery
 
-If you're building an application used by more than one tenant, make it available in the Microsoft Entra application gallery. It's easy for organizations to discover the application and configure provisioning. Publishing your app in the Microsoft Entra gallery and making provisioning available to others is easy. Check out the steps [here](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md). Microsoft works with you to integrate your application into the gallery, test your endpoint, and release onboarding [documentation](~/identity/saas-apps/tutorial-list.md) for customers.
+If you're building an application used by more than one tenant, make it available in the Microsoft Entra application gallery so that organizations can discover it and configure provisioning.
 
-### Gallery onboarding checklist
-Use the checklist to onboard your application quickly and customers have a smooth deployment experience. The information is gathered from you when onboarding to the gallery. 
-> [!div class="checklist"]
-> * Support a [SCIM 2.0](#understand-the-azure-ad-scim-implementation) user and group endpoint (Only one is required but both are recommended)
-> * Support at least 25 requests per second per tenant to ensure that users and groups are provisioned and deprovisioned without delay (Required)
-> * Establish engineering and support contacts to guide customers post gallery onboarding (Required)
-> * 3 Non-expiring test credentials for your application (Required)
-> * Support the [OAuth 2.0 client credentials grant](../../identity-platform/v2-oauth2-client-creds-grant-flow.md) (Required)
-> * OIDC apps must have at least 1 role (custom or default) defined
-> * Establish an engineering and support point of contact to support customers post gallery onboarding (Required)
-> * [Support schema discovery (required)](https://tools.ietf.org/html/rfc7643#section-6)
-> * Support updating multiple group memberships with a single PATCH
-> * Document your SCIM endpoint publicly
+Publishing is a self-service process. You validate your own SCIM integration against the Microsoft Entra provisioning service, then submit the results with your gallery submission. To get started, see [Prerequisites to validate and publish your app](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
+
+### Gallery onboarding requirements
+
+Your SCIM endpoint must meet a set of API, authentication, and publisher requirements before you submit it. For the current list, see [User provisioning requirements for Microsoft Entra App Gallery](~/identity/enterprise-apps/app-gallery-user-provisioning-requirements.md).
+
+After your endpoint meets those requirements, validate it and submit the results. For instructions, see [Validate user provisioning for Microsoft Entra App Gallery](~/identity/enterprise-apps/validate-user-provisioning-app-gallery.md).
+
+The rest of this section describes the authentication methods you implement in your endpoint to satisfy those requirements.
 
 ### Authorization to provisioning connectors in the application gallery
 The SCIM spec doesn't define a SCIM-specific scheme for authentication and authorization and relies on the use of existing industry standards.
@@ -1488,7 +1484,7 @@ For more authentication and authorization methods, let us know on [UserVoice](ht
 
 ### OAuth 2.0 client credentials grant flow
 
-The provisioning service supports the OAuth 2.0 client credentials grant. After submitting your request for publishing your app in the gallery, our team will work with you to collect the following information:
+The provisioning service supports the [OAuth 2.0 client credentials grant](/entra/identity-platform/v2-oauth2-client-creds-grant-flow). Customers provide the following information when they configure provisioning, so make each value available to them in your admin experience:
 
 - **Tenant URL:** This is the SCIM API endpoint URL provided by your service provider. For example, it could be something like https://example.test/scim.
 - **Token Endpoint:** This is the OAuth2 Token URL. It's the endpoint that the provisioning service will use to exchange client credentials for an access token. For example, it could be something like https://example.test/oauth2/token.
@@ -1515,7 +1511,7 @@ For more authentication and authorization methods, let us know on [UserVoice](ht
 
 ### Workload Identity Federation
 
-The provisioning service supports Workload Identity Federation (WIF). With WIF, no long-lived secrets are stored in the provisioning configuration. Instead, Microsoft Entra ID presents a short-lived, signed JWT assertion to your token endpoint using the OAuth 2.0 JWT bearer profile ([RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523)) and receives an access token that's used to call your SCIM endpoint. To learn more about how the trust relationship works, see the [Workload Identity Federation for SCIM provisioning guide](https://github.com/AzureAD/SCIMReferenceCode/blob/master/Workload-Identity-Federation-for-SCIM-Provisioning.md). To support WIF, your service must trust tokens issued by Microsoft Entra ID and validate them against Microsoft's published JWKS. After submitting your request for publishing your app in the gallery, our team will work with you to enable this method.
+The provisioning service supports Workload Identity Federation (WIF). With WIF, no long-lived secrets are stored in the provisioning configuration. Instead, Microsoft Entra ID presents a short-lived, signed JWT assertion to your token endpoint using the OAuth 2.0 JWT bearer profile ([RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523)) and receives an access token that's used to call your SCIM endpoint. To learn more about how the trust relationship works, see the [Workload Identity Federation for SCIM provisioning guide](https://github.com/AzureAD/SCIMReferenceCode/blob/master/Workload-Identity-Federation-for-SCIM-Provisioning.md). To support WIF, your service must trust tokens issued by Microsoft Entra ID and validate them against Microsoft's published JWKS.
 
 When you configure WIF, Microsoft Entra ID provides the following values to be copied into your (the ISV's) portal so that your token endpoint can validate the assertion:
 

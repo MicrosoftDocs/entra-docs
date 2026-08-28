@@ -1,7 +1,7 @@
 ---
 title: Validate user provisioning for Microsoft Entra App Gallery (preview)
 description: Validate your SCIM provisioning integration with the Azure Logic Apps template, then submit the results for Microsoft Entra App Gallery onboarding.
-author: hsaini
+author: himanshusainig
 manager: msteele
 ms.service: entra-id
 ms.subservice: enterprise-apps
