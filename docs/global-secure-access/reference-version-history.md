@@ -241,9 +241,9 @@ This version is only available for install via the download page.
 - Added debug traces for WebSocket communications. 
 - Resolved preserving the SameSite attribute when set on backend application cookies.
 
-## Earlier versions
+## Unsupported versions
 
-If you're using a private network connector version 1.5.612.0 or earlier, immediately update to the latest version to ensure you have the latest fully supported features.
+If you're using a private network connector version 1.5.612.0 or earlier, immediately update to a newer version to ensure you have the latest fully supported features.
 
 ## Version 1.5.612.0 (Deprecated)
 
