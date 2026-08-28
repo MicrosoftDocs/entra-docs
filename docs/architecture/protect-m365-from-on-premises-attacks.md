@@ -116,7 +116,7 @@ We recommend the following provisioning methods:
 Cloud groups allow you to decouple your collaboration and access from your on-premises infrastructure.
 
 - **Collaboration**. Use Microsoft 365 Groups and Microsoft Teams for modern collaboration. Decommission on-premises distribution lists and [upgrade distribution lists to Microsoft 365 Groups in Outlook](/microsoft-365/admin/create-groups/office-365-groups).
-- **Access**. Use Microsoft Entra security groups or Microsoft 365 Groups to authorize access to applications in Microsoft Entra ID. To control access to on-premises applications, consider [provisioning groups to Active Directory using Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/tutorial-group-provisioning.md).
+- **Access**. Use Microsoft Entra security groups or Microsoft 365 Groups to authorize access to applications in Microsoft Entra ID. To control access to on-premises applications, consider [provisioning groups to Active Directory using Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 - **Licensing**. Use group-based licensing to provision to Microsoft services by using cloud-only groups. This method decouples control of group membership from on-premises infrastructure.
 
 Consider owners of groups used for access as privileged identities to avoid membership takeover in an on-premises compromise. Takeovers include direct on-premises group membership manipulation or on-premises attribute manipulation that can affect Microsoft 365 dynamic group membership.
