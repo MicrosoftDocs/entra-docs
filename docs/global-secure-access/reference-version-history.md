@@ -241,7 +241,11 @@ This version is only available for install via the download page.
 - Added debug traces for WebSocket communications. 
 - Resolved preserving the SameSite attribute when set on backend application cookies.
 
-## Version 1.5.612.0
+## Earlier versions
+
+If you're using a private network connector version 1.5.612.0 or earlier, immediately update to the latest version to ensure you have the latest fully supported features.
+
+## Version 1.5.612.0 (Deprecated)
 
 ### Release status
 
@@ -259,7 +263,7 @@ September 20, 2018: Released for download.
 - A bug that caused memory leaks in the connector was fixed.
 - Azure Service Bus version updated, which includes a bug fix for connector timeout issues.
 
-## Version 1.5.402.0
+## Version 1.5.402.0 (Deprecated)
 
 ### Release status
 
@@ -269,7 +273,7 @@ January 19, 2018: Released for download.
 
 - Added support for custom domains that need domain translation in the cookie.
 
-## Version 1.5.132.0
+## Version 1.5.132.0 (Deprecated)
 
 ### Release status 
 
@@ -279,7 +283,7 @@ May 25, 2017: Released for download.
 
 Improved control over connectors' outbound connection limits. 
 
-## Version 1.5.36.0
+## Version 1.5.36.0 (Deprecated)
 
 ### Release status
 
@@ -291,9 +295,6 @@ April 15, 2017: Released for download.
 - If supported by your external proxy or firewall, you can now open your network by DNS instead of IP range. Application proxy services require connections to `*.msappproxy.net` and `*.servicebus.windows.net` only.
 
 
-## Earlier versions
-
-If you're using a private network connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
 - [What is application proxy?](../identity/app-proxy/overview-what-is-app-proxy.md)
