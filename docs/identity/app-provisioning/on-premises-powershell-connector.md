@@ -35,7 +35,7 @@ The connector provides a bridge between the capabilities of the ECMA Connector H
 ### Cloud requirements
 
  - A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5).   [!INCLUDE [active-directory-p1-license.md](~/includes/entra-p1-license.md)]
- - The Hybrid Identity Administrator role for configuring the provisioning agent and for configuring provisioning in the Azure portal.
+ - The Hybrid Identity Administrator role for configuring either the provisioning agent or provisioning in the Azure portal.
  - The Microsoft Entra users, to be provisioned, must already be populated with any attributes required by the schema.
 
 
