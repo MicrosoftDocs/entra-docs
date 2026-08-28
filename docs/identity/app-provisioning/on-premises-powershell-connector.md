@@ -35,7 +35,7 @@ The connector provides a bridge between the capabilities of the ECMA Connector H
 ### Cloud requirements
 
  - A Microsoft Entra tenant with Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5).   [!INCLUDE [active-directory-p1-license.md](~/includes/entra-p1-license.md)]
- - The Hybrid Identity Administrator role for configuring the provisioning agent and the Application Administrator or Cloud Application Administrator roles for configuring provisioning in the Azure portal.
+ - The Hybrid Identity Administrator role for configuring either the provisioning agent or provisioning in the Azure portal.
  - The Microsoft Entra users, to be provisioned, must already be populated with any attributes required by the schema.
 
 
@@ -64,7 +64,7 @@ If you've downloaded the provisioning agent and configured it for another on-pre
 ## Configure the On-premises ECMA app
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**. 
 1. Select **New application**.
 1. Search for the **On-premises ECMA app** application, give the app a name, and select **Create** to add it to your tenant.
@@ -264,7 +264,7 @@ Follow these steps to confirm the connector host is started and has identified a
    > [!NOTE]
    > If the window had timed out, then you need to re-select the agent.
    
-   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
    1. Browse to **Entra ID** > **Enterprise apps**.
    1. Select the **On-premises ECMA app** application.
    1. Select **Provisioning**.
@@ -291,7 +291,7 @@ Return to the web browser window where you were configuring the application prov
 > [!NOTE]
 > If the window had timed out, then you need to re-select the agent.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
@@ -317,7 +317,7 @@ Now you need to map attributes between the representation of the user in Microso
 
 You'll use the Azure portal to configure the mapping between the Microsoft Entra user's attributes and the attributes that you previously selected in the ECMA Host configuration wizard.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
