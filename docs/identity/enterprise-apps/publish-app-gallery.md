@@ -33,14 +33,14 @@ The publishing experience enables independent software vendors (ISVs) to:
 
 Before starting the publishing process, make sure that you have:
 
-1. Completed the applicable SAML, OpenID Connect, or user provisioning validation.
-1. A passed Test result from validating your app.
-1. A Microsoft Partner Network ID associated with your organization.
-1. A Microsoft Entra tenant.
-1. Customer-facing configuration documentation.
-1. The required application logos.
-1. Accurate application, privacy, terms-of-use, and customer support information.
-1. An application that is ready for customer use.
+- Completed the applicable SAML, OpenID Connect, or user provisioning validation.
+- A passed Test result from validating your app.
+- A Microsoft Partner Network ID associated with your organization.
+- A Microsoft Entra tenant.
+- Customer-facing configuration documentation.
+- The required application logos.
+- Accurate application, privacy, terms-of-use, and customer support information.
+- An application that is ready for customer use.
 
 If your application supports both single sign-on and user provisioning, complete the validation requirements for both capabilities.
 
@@ -56,36 +56,36 @@ You can access the self-service publishing experience in three ways.
 Use this option to start from the Gallery browsing experience.
 
 1. Sign in to the Microsoft Entra admin center.
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. Select **Browse Microsoft Entra App Gallery**.
-1. Select **Publish your application to gallery**.
+2. Browse to **Identity** > **Applications** > **Enterprise applications**.
+3. Select **Browse Microsoft Entra App Gallery**.
+4. Select **Publish your application to gallery**.
 
 ### Option 2: When creating an enterprise application
 
 Use this option when you start from the enterprise applications area.
 
 1. Sign in to the Microsoft Entra admin center.
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. Select **New application**.
-1. In the Microsoft Entra App Gallery, select **Publish your application to gallery**.
+2. Browse to **Identity** > **Applications** > **Enterprise applications**.
+3. Select **New application**.
+4. In the Microsoft Entra App Gallery, select **Publish your application to gallery**.
 
 ### Option 3: Resume an existing draft submission
 
 Use this option if you previously created and saved a Gallery submission.
 
 1. Open the self-service publishing experience.
-1. Select **Your published applications**.
-1. Select the draft application.
-1. Continue the submission.
+2. Select **Your published applications**.
+3. Select the draft application.
+4. Continue the submission.
 
 ## Create a Gallery submission
 
 To create a submission:
 
 1. Open the self-service publishing experience.
-1. Enter your application name.
-1. Enter your Microsoft Partner Network ID.
-1. Save the submission.
+2. Enter your application name.
+3. Enter your Microsoft Partner Network ID.
+4. Save the submission.
 
 When you save the submission, the publishing experience creates a Submission ID.
 
@@ -100,17 +100,17 @@ Choose the identity capabilities that you want to include in the Gallery listing
 
 The available options are:
 
-1. Single Sign-On
-1. Single Sign-On + User Provisioning
+- Single Sign-On
+- Single Sign-On + User Provisioning
 
 If your application supports single sign-on and user provisioning, select **Single Sign-On + User Provisioning**.
 
 Only include capabilities that:
 
-1. Have been implemented and tested.
-1. Have completed the applicable self-service validation.
-1. Are documented for customers.
-1. Are ready for customer use.
+- Have been implemented and tested.
+- Have completed the applicable self-service validation.
+- Are documented for customers.
+- Are ready for customer use.
 
 ## Provide validation results
 
@@ -121,8 +121,8 @@ The publishing experience uses results from the applicable self-service validati
 If your submission includes single sign-on:
 
 1. Associate the applicable SAML or OIDC validation results with the Gallery submission.
-1. Confirm that the validated configuration represents the integration you intend to publish.
-1. Resolve any blocking issues displayed in the publishing experience.
+2. Confirm that the validated configuration represents the integration you intend to publish.
+3. Resolve any blocking issues displayed in the publishing experience.
 
 For instructions, see:
 - [Validate an OIDC multitenant application for the Microsoft Entra App Gallery](validate-oidc-multitenant-app-gallery.md)
@@ -133,10 +133,10 @@ For instructions, see:
 If your submission includes user provisioning:
 
 1. Provide the requested developer tenant information.
-1. Confirm that the publishing experience displays the applicable provisioning validation results.
-1. Resolve any blocking issues displayed in the publishing experience.
+2. Confirm that the publishing experience displays the applicable provisioning validation results.
+3. Resolve any blocking issues displayed in the publishing experience.
 
-For validation instructions, see Validate user provisioning for the Microsoft Entra App Gallery.
+For validation instructions, see [Validate user provisioning for Microsoft Entra App Gallery](validate-user-provisioning-app-gallery.md).
 
 If the application supports single sign-on and user provisioning, provide the required validation results for both capabilities. The publishing experience retrieves and displays provisioning validation results during review.
 
@@ -144,8 +144,8 @@ If the application supports single sign-on and user provisioning, provide the re
 
 The publishing experience prefills some application and publisher information from:
 
-1. Information associated with your Microsoft Partner Network ID.
-1. Application information and results from completed self-service validations.
+- Information associated with your Microsoft Partner Network ID.
+- Application information and results from completed self-service validations.
 
 Review the prefilled information and complete any remaining required fields. This information can include application and publisher details, supported capabilities, application URLs, privacy and terms-of-use information, and customer support information.
 
@@ -173,16 +173,16 @@ Upload the required application logos in PNG format.
 
 Provide:
 
-1. A square application logo that is 215 by 215 pixels.
-1. A rectangular application logo that is 150 by 122 pixels.
+- A square application logo that is 215 by 215 pixels.
+- A rectangular application logo that is 150 by 122 pixels.
 
 Make sure that each logo:
 
-1. Has a transparent background.
-1. Doesn't have a white background.
-1. Uses a high-quality source image.
-1. Has the required dimensions.
-1. Clearly represents the application.
+- Has a transparent background.
+- Doesn't have a white background.
+- Uses a high-quality source image.
+- Has the required dimensions.
+- Clearly represents the application.
 
 Preview the logos and verify that they display correctly.
 
@@ -190,13 +190,13 @@ Preview the logos and verify that they display correctly.
 
 Before submitting the application, confirm that:
 
-1. The application and publisher information is accurate.
-1. The correct capabilities are selected.
-1. The applicable validation results are present and represent the integrations being published.
-1. Customer-facing documentation has been approved.
-1. The required application logos have been uploaded.
-1. All required fields are complete.
-1. All blocking issues are resolved.
+- The application and publisher information is accurate.
+- The correct capabilities are selected.
+- The applicable validation results are present and represent the integrations being published.
+- Customer-facing documentation has been approved.
+- The required application logos have been uploaded.
+- All required fields are complete.
+- All blocking issues are resolved.
 
 Open the submission summary, accept the applicable terms and conditions, and select **Submit**.
 
@@ -210,9 +210,9 @@ After submission, the application moves from Draft to Submitted and enters the M
 To monitor the application and review feedback:
 
 1. Open the self-service publishing experience.
-1. Select **Your published applications**.
-1. Select the application.
-1. Review its status and any required actions.
+2. Select **Your published applications**.
+3. Select the application.
+4. Review its status and any required actions.
 
 If Microsoft requests changes, update the affected application information, documentation, logos, or integration. Repeat validation if the integration changed, and resubmit the affected content for review.
 
@@ -241,11 +241,11 @@ If you encounter an issue during publishing, use the Microsoft Entra App Gallery
 
 When requesting help, provide:
 
-1. The application name.
-1. The Submission ID.
-1. The capabilities included in the submission.
-1. The step where the issue occurred.
-1. The expected and actual results.
-1. Relevant error messages.
-1. Screenshots that don't expose credentials, secrets, or personal information.
+- The application name.
+- The Submission ID.
+- The capabilities included in the submission.
+- The step where the issue occurred.
+- The expected and actual results.
+- Relevant error messages.
+- Screenshots that don't expose credentials, secrets, or personal information.
 

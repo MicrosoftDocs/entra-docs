@@ -74,6 +74,12 @@ items:
       href: validate-oidc-multitenant-app-gallery.md
     - name: Validate a SAML single sign-on app
       href: validate-saml-single-sign-on-app-gallery.md
+    - name: Validate user provisioning (Preview)
+      href: validate-user-provisioning-app-gallery.md
+    - name: Set up the validation Logic App in the Azure portal (Preview)
+      href: validate-user-provisioning-logic-app.md
+    - name: Troubleshoot user provisioning validation (Preview)
+      href: troubleshoot-user-provisioning-validation.md
     - name: Plan for deployment
       href: plan-sso-deployment.md
     - name: Publish your app to Microsoft Entra App Gallery

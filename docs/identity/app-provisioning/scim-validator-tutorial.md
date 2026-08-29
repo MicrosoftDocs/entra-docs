@@ -3,7 +3,7 @@ title: Tutorial - Test your SCIM endpoint for compatibility with the Microsoft E
 description: This tutorial describes how to use the Microsoft Entra SCIM Validator to validate that your provisioning server is compatible with the Azure SCIM client.
 ms.topic: tutorial
 ms.date: 10/06/2025
-ms.custom: template-tutorial, sfi-image-nochange
+ms.custom: template-tutorial, sfi-image-nochange, msecd-doc-authoring-1023
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -12,6 +12,9 @@ ai-usage: ai-assisted
 # Tutorial: Validate a SCIM endpoint
 
 This tutorial describes how to use the Microsoft Entra SCIM Validator to validate that your provisioning server is compatible with the Azure SCIM client. The tutorial is intended for developers who want to build a SCIM compatible server to manage their identities with the Microsoft Entra provisioning service.
+
+> [!NOTE]
+> Use the Microsoft Entra SCIM Validator to test your endpoint while you build it. It isn't the validation that Microsoft Entra App Gallery onboarding requires. To publish a user provisioning integration to the gallery, run the Azure Logic Apps validation template and submit the results. For more information, see [Validate user provisioning for Microsoft Entra App Gallery](~/identity/enterprise-apps/validate-user-provisioning-app-gallery.md).
 
 In this tutorial, you learn how to:
 
