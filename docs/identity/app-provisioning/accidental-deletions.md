@@ -42,9 +42,9 @@ To enable accidental deletion prevention:
     If the deletion threshold is met, an email is sent.
 1. Select **Save** to save the changes.
 
+::: zone pivot="app-provisioning"
 ## Configure accidental deletion prevention by using Microsoft Graph
 
-::: zone pivot="app-provisioning"
 You can also configure the deletion threshold without using the admin center, by writing the `SyncNotificationSettings` synchronization secret.
 
 ```http
@@ -66,9 +66,9 @@ Content-type: application/json
 `DeleteThresholdEnabled` corresponds to the **Prevent accidental deletions** check box, and `DeleteThresholdValue` to the **Accidental deletion threshold**.
 
 > [!IMPORTANT]
-> This request replaces the entire secrets collection. Any key you omit is removed, and its setting reverts to the service default. Include every key the job needs, such as `BaseAddress`, `SecretToken`, and `SyncAll`, in the same request.
+> This request replaces the entire secrets collection. Any key you omit is removed, and its setting reverts to the service default. The preceding example sets only the keys it needs to show. Include every other key the job already uses, such as `SyncAll` for the sync scope, in the same request.
 
-Synchronization secrets can't be read back through Microsoft Graph, so there's no way to verify the resulting configuration through the API. To confirm what was applied, view **Provisioning** > **Settings** in the admin center.
+Synchronization secrets can't be read back through Microsoft Graph, so there's no way to verify the resulting configuration through the API. To confirm what was applied, view **Provisioning** > **Settings** in the Microsoft Entra admin center.
 ::: zone-end
 
 When the deletion threshold is met, the job goes into quarantine, and a notification email is sent. The quarantined job can then be allowed or rejected. To learn more about quarantine behavior, see [Application provisioning in quarantine status](application-provisioning-quarantine-status.md).
