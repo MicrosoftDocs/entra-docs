@@ -35,7 +35,7 @@ If you plan to provision a converted SOA security group (not mail-enabled) back 
 1. Convert the Source of Authority (SOA) when ready. 
 1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
 
-For more information, see [How provisioning from Microsoft Entra ID to Active Directory works](cloud-sync/how-provisioning-to-active-directory-works.md).
+For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/tutorial-group-provisioning.md).
 
 ### Transition group management
 
@@ -62,7 +62,7 @@ Let's look at an example where you provision a security group named *CloudGroupB
 
 Then you start to manage group memberships in Microsoft Entra ID for the converted *CloudGroupB*. You provision it as a nested group within the on-premises group *OnPremGroupA*. If *OnPremGroupA* remains in-scope for sync, when the AD DS to Microsoft Entra ID sync configuration runs for *OnPremGroupA*, the membership reference for *CloudGroupB* doesn't sync. By design, the sync client doesn't recognize the cloud group membership references.
 
-For more information about how group sync works with SOA in similar use cases, see [Nested group membership behavior](cloud-sync/how-provisioning-to-active-directory-works.md#nested-group-membership-behavior).
+For more information about how group sync works with SOA in similar use cases, see [Nested Groups and membership references handling](cloud-sync/tutorial-group-provisioning.md#nested-groups-and-membership-references-handling).
 
 ### How SOA applies to nested groups
 
