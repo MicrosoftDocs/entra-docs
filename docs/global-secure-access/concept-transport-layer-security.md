@@ -2,7 +2,7 @@
 title: What is Transport Layer Security Inspection?
 description: "This article provides an overview of the Transport Layer Security (TLS) inspection process and how it increases security between two communicating parties."
 ms.topic: concept-article
-ms.date: 06/04/2026
+ms.date: 08/28/2026
 ms.reviewer: teresayao
 
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
@@ -69,5 +69,6 @@ TLS inspection has the following known limitations:
 
 ## Related content
 - [Configure Transport Layer Security Policies](how-to-transport-layer-security.md)
-- [Configure Transport Layer Security Settings](how-to-transport-layer-security-settings.md)
+- [Configure TLS inspection with a Microsoft-managed certificate](how-to-transport-layer-security-settings-managed-certificate.md)
+- [Configure TLS inspection with your own certificate](how-to-transport-layer-security-settings.md)
 - [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
