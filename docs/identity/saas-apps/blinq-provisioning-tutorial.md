@@ -2,14 +2,11 @@
 title: Configure Blinq for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Blinq.
 
-author: jeevansd
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/02/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Blinq so that I can streamline the user management process and ensure that users have the appropriate access to Blinq.
----
+--- 
 
 # Configure Blinq for automatic user provisioning with Microsoft Entra ID
 
@@ -21,6 +18,7 @@ This article describes the steps you need to do in both Blinq and Microsoft Entr
 > * Create users in Blinq.
 > * Remove users in Blinq when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Blinq.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

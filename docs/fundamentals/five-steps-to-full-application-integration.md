@@ -1,8 +1,6 @@
 ---
 title: Five steps to integrate your apps with Microsoft Entra ID
 description: Learn to integrate your applications with Microsoft Entra ID by adding apps, discovery, and integration methods.
-author: jricketts
-ms.author: jricketts
 ms.topic: how-to
 ms.date: 03/01/2023
 # Customer intent: As an IT admin responsible for application integration, I want to learn how to integrate my company's applications with Microsoft Entra ID, so that I can improve security, reduce costs, increase productivity, and enable compliance through centralized Identity and Access Management.
@@ -70,7 +68,7 @@ Learn more:
 
 In addition, use the Active Directory Federation Services (AD FS) in the Azure portal to discover AD FS apps in your organization. Discover unique users that signed in to the apps, and see information about integration compatibility.
 
-See: [Review the application activity report](~/identity/enterprise-apps/migrate-adfs-application-activity.md)
+See: [Discover and scope AD FS applications](~/identity/enterprise-apps/migrate-adfs-discover-scope-apps.md)
 
 ### Application migration
 

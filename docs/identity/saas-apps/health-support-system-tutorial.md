@@ -2,11 +2,10 @@
 title: Configure Health Support System for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Health Support System.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Health Support System so that I can control who has access to Health Support System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Health Support System for Single sign-on with Microsoft Entra ID
 

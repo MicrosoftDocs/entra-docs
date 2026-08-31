@@ -3,7 +3,6 @@ title: Enable security notifications for audit log events
 description: Create an Azure Logic App that monitors Microsoft Entra audit logs and sends a security email notification to users based on different audit log events.
 ms.topic: tutorial
 ms.date: 03/04/2025
-author: camilasinelli
 ms.reviewer: jupetter
 ms.custom: sfi-image-nochange
 ---

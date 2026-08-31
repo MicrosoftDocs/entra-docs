@@ -3,7 +3,6 @@ title: How to postpone enforcement for a tenant where users are unable to sign i
 description: A script to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory MFA requirement for the Azure portal, Microsoft Entra admin center, or Microsoft Intune admin center
 ms.topic: how-to
 ms.date: 04/19/2025
-author: najshahid
 ms.reviewer: nashahid
 
 # Customer intent: As an identity administrator, I want to unlock users who are locked out by mandatory MFA.

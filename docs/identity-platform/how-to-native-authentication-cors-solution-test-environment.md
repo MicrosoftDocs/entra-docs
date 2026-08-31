@@ -1,9 +1,7 @@
 ---
 title: Set up a reverse proxy for SPA by using Azure Function App
 description: Learn how to set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App.
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: how-to

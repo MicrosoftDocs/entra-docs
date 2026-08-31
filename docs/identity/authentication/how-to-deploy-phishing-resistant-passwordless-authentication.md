@@ -3,8 +3,7 @@ title: Plan a phishing-resistant passwordless authentication deployment in Micro
 description: Detailed guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 3/26/2026
-author: sipower
-ms.reviewer: justinha
+ms.reviewer: sipower
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID
@@ -60,7 +59,7 @@ In the table below you will find the different types of credentials and the asso
 Credentials | Description | Benefits | Authentication Methods|
 ------------|-------------|----------|---------|
 **Portable** | Can be used [across devices](how-to-sign-in-passkey-authenticator.md). You can use **portable** credentials to sign in to another device, or to register credentials on other devices. | The most important type of credential to register for most users, as they can be used across devices, and provide phishing-resistant authentication in many scenarios.| <li>Synced passkeys</li><li>Passkey in Authenticator</li><li> FIDO2 security keys</li> <li> Certificate based authentication (Smart Card)</li>
-**Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate using the device's own unlock gesture like Face ID or Windows Hello for Business face/fingerprint/PIN.|<li>Windows Hello For Business</li><li>Microsoft Entra passkey on Windows (preview)</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
+**Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate using the device's own unlock gesture like Face ID or Windows Hello for Business face/fingerprint/PIN.|<li>Windows Hello For Business</li><li>Microsoft Entra passkey on Windows</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
 
 
 - For *new users*, the registration and bootstrapping process takes them with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforcement-of-phishing-resistance-on-resources).
@@ -90,7 +89,7 @@ Refer to the following links for licensing details for Microsoft Entra Verified 
 - [Face Check with Microsoft Entra Verified ID pricing](~/verified-id/verified-id-pricing.md)
 - [Microsoft Entra Plans and Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
 
-Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-authentication-passkeys-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
 ### Step 2: Bootstrap a portable credential
 
@@ -107,15 +106,15 @@ User Persona | Recommended portable credential | Alternative portable credential
 Admins and highly regulated users| FIDO2 security keys | Passkey for Microsoft Authenticator, Certificate-based authentication (Smart Card)|
 Any other user | Synced passkey | FIDO2 security key, Passkeys for Microsoft Authenticator App|
 
-The passkey authentication credential can be scoped to specific user groups using [passkey profiles](how-to-authentication-passkey-profiles.md). A passkey profile should be set up for each persona with the recommended portable credential selected.
+The passkey authentication credential can be scoped to specific user groups using [passkey profiles](how-to-authentication-passkeys-fido2.md). A passkey profile should be set up for each persona with the recommended portable credential selected.
 
 Use the following guidance to enable recommended and alternative portable credentials for the relevant user personas for your organization:
 
 Method | Guidance
 -------|---------
-FIDO2 security keys | <li>FIDO2 security keys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md).<li>Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
-Synced passkey| <li>Synced passkeys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md)</li><li>Users can use synced passkeys managed by Apple Keychain and Google cloud or 3rd party passkey managers</li>|
-Passkey in Microsoft Authenticator | <li>Passkey in Microsoft Authenticator must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md)</li><li>Users sign in to Microsoft Authenticator App directly to bootstrap a passkey in the app.<li>Users can use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device. [Register passkeys in Authenticator on Android or iOS devices](how-to-register-passkey-authenticator.md).
+FIDO2 security keys | <li>FIDO2 security keys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-authentication-passkeys-fido2.md).<li>Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API](how-to-authentication-passkeys-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+Synced passkey| <li>Synced passkeys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-authentication-passkeys-fido2.md)</li><li>Users can use synced passkeys managed by Apple Keychain and Google cloud or 3rd party passkey managers</li>|
+Passkey in Microsoft Authenticator | <li>Passkey in Microsoft Authenticator must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-authentication-passkeys-fido2.md)</li><li>Users sign in to Microsoft Authenticator App directly to bootstrap a passkey in the app.<li>Users can use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device. [Register passkeys in Authenticator on Android or iOS devices](how-to-register-passkey-authenticator.md).
 Smart card/certificate-based authentication (CBA) | <li>Certificate-based authentication is more complicated to configure than passkeys or other methods. Consider only using it if necessary.<li>[How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).<li>Make sure to configure your on-premises PKI and Microsoft Entra ID CBA policies so that users truly complete multifactor authentication to sign in. The configuration generally requires the smart card Policy Object Identifier (OID) and the necessary affinity binding settings. For more advanced CBA configurations, see [Understanding the authentication binding policy](concept-certificate-based-authentication-technical-deep-dive.md#authentication-binding-policy).
 
 
@@ -126,21 +125,21 @@ It is recommended that each device that the user regularly works on has a locall
 Once the user has obtained their portable credential, it can be used to bootstrap their local credential which enables the user to use phishing-resistant credentials natively across other devices they may own.
 
 > [!Note]
-> Users who  share devices should only use Microsoft Entra passkey on Windows (preview) or portable credentials.
+> Users who  share devices should only use Microsoft Entra passkey on Windows or portable credentials.
 
 Use the below table to determine which type of local credential is preferred for each user persona:
 
 User persona | Recommended local credential - Windows | Recommended local credential - macOS | Recommended local credential - iOS | Recommended local credential - Android | Recommended Local Credential - Linux
 -------------|----------------------------------|-----------------------------|--------------------------------|--------------------------------|----------------------
-Admins and Highly Regulated workers | Windows Hello for Business, Microsoft Entra passkey on Windows (preview), or CBA | Platform SSO Secure Enclave Key or CBA | Passkey in Microsoft Authenticator or CBA | Passkey in Microsoft Authenticator or CBA | N/A (use smart card instead) 
-Non-admins | Windows Hello for Business or Microsoft Entra passkey on Windows (preview) | Platform Single Sign-on (SSO) Secure Enclave Key | Synced passkey | Synced passkey | N/A (use portable credential instead)
+Admins and Highly Regulated workers | Windows Hello for Business, Microsoft Entra passkey on Windows, or CBA | Platform SSO Secure Enclave Key or CBA | Passkey in Microsoft Authenticator or CBA | Passkey in Microsoft Authenticator or CBA | N/A (use smart card instead) 
+Non-admins | Windows Hello for Business or Microsoft Entra passkey on Windows | Platform Single Sign-on (SSO) Secure Enclave Key | Synced passkey | Synced passkey | N/A (use portable credential instead)
 
 Use the following guidance to enable the recommended local credentials in your environment for the relevant user personas for your organization:
 
 Method | Guidance
 -------|---------
 Windows Hello for Business | <li>Use the Cloud Kerberos Trust method to deploy Windows Hello for Business. For more information, see the [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune). The Cloud Kerberos Trust method applies to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It helps synced users on PCs that are either Microsoft Entra joined or Microsoft Entra hybrid joined.<li>Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves. It shouldn't be used on kiosk devices that use a shared user account.<li>Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users, then use a portable credential instead, such as security keys.<li>Biometric is optional, but recommended. For more information, see [Prepare users to provision and use Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/prepare-users).
-Microsoft Entra passkey on Windows (preview) | <li>Users will authenticate with Windows Hello (face, fingerprint, or PIN)</li><li>Users can use Microsoft Entra passkey on Windows (preview) on devices that are not Microsoft Entra joined or registered</li><li>Users can sign in to multiple Microsoft Entra accounts on the same Windows device, with each account registering its own passkey.</li><li>Microsoft Entra passkey on Windows (preview) are device-bound and do not sync across devices; each device requires separate registration per Microsoft Entra account.</li>
+Microsoft Entra passkey on Windows | <li>Users will authenticate with Windows Hello (face, fingerprint, or PIN)</li><li>Users can use Microsoft Entra passkey on Windows on devices that are not Microsoft Entra joined or registered</li><li>Users can sign in to multiple Microsoft Entra accounts on the same Windows device, with each account registering its own passkey.</li><li>Microsoft Entra passkey on Windows are device-bound and do not sync across devices; each device requires separate registration per Microsoft Entra account.</li>
 Platform Credential for macOS | <li>Platform Credential for macOS supports 3 different user authentication methods (Secure Enclave key, smart card, and password). Deploy the Secure Enclave key method to mirror your Windows Hello for Business on your Macs.<li>Platform Credential for macOS requires that Macs are enrolled in Mobile Device Management (MDM). For specific instructions for Intune, see [Configure Platform Credential for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos).<li>Refer to your MDM vendor’s documentation if you use another MDM service on your Macs.
 Passkey in Microsoft Authenticator | <li>Use same device registration option to bootstrap passkeys in Microsoft Authenticator. <li>Users should use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<li>Passkeys need to be enabled in Microsoft Entra ID, in the Authentication methods policy. For more information, see [Enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md). <li>Register passkeys in Microsoft Authenticator App on Android or iOS devices.
 

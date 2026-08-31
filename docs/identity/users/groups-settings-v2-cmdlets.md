@@ -274,7 +274,7 @@ The value returned is a list of groups of which this user is a member. You can a
 
 ## Disable group creation by your users
 
-You can prevent standard users from creating security groups. The default behavior in Microsoft Online Directory Services (MSODS) is to allow standard users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting controls behavior only in the My Groups portal.
+You can prevent standard users from creating security groups. The default behavior is to allow standard users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting controls behavior only in the My Groups portal.
 
 To disable group creation for standard users:
 
@@ -355,7 +355,7 @@ If you want to remove an owner from a group, use the `Remove-MgGroupOwnerByRef` 
 
 ## Reserved aliases
 
-When you create a group, users specify a mailNickname or alias that the system uses as part of the email address of the group. The creation of groups with any of the highly privileged email aliases listed is limited to Microsoft Entra Global Administrators. 
+When you create a group, users specify a mailNickname or alias that the system uses as part of the email address of the group. The creation of groups with any of the highly privileged email aliases listed is limited to Microsoft Entra Global Administrators. 
   
 * abuse
 * admin

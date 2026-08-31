@@ -1,10 +1,8 @@
 ---
 title: Configure an application to trust a managed identity
 description: Learn how to configure an application to trust a managed identity in Microsoft Entra ID.
-author: cilwerner
 ms.topic: how-to
 ms.date: 06/06/2025
-ms.author: cwerner
 ms.reviewer: hosamsh
 ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to configure my application to trust a managed identity so that I can access Microsoft Entra protected resources without needing to use or manage application secrets or certificates.
@@ -113,7 +111,7 @@ Open a PowerShell terminal in your preferred IDE and run the following command t
 The audience value must be set to one of the following values:<br/> &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/>
 
 ```Powershell
-New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api://AzureADTokenExchange -Issuer 'https://login.microsoftonline.com/{tenantID}/v2.0' -Name 'MyMsiFic' -Subject 'aaaabbbb-0000-cccc-1111-dddd2222eeee'
+New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api://AzureADTokenExchange -Issuer 'https://login.microsoftonline.com/{tenantID}/v2.0' -Name 'MyMsiFic' -Subject 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb'
 ```
 
 

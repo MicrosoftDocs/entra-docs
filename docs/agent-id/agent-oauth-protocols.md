@@ -1,10 +1,9 @@
 ---
 title: Authentication protocols in agents
-description: Learn about OAuth 2.0 protocols and token exchange patterns for agents in Microsoft Entra ID. Key concepts
+description: Learn about OAuth 2.0 protocols and token exchange patterns for agents in Microsoft Entra ID.
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
  
 #customer-intent: As a developer or identity architect, I want to understand the OAuth 2.0 authentication protocols and token flows for agents, so that I can implement secure authentication patterns for Agent identity blueprints and Agent Identities in my applications.
@@ -12,7 +11,7 @@ ms.reviewer: jmprieur
  
 # Authentication protocols in agents
  
-Agents use OAuth 2.0 protocols with specialized token exchange patterns enabled by Federated Identity Credentials (FIC). All agent auth flows involve multi-stage token exchanges where the agent identity blueprint impersonates the agent identity to perform operations. This article explains the authentication protocols and token flows used by agents. It covers delegation scenarios, autonomous operations, and federated identity credential patterns. Microsoft recommends that you use our SDKs like [Microsoft Entra SDK for Agent ID](https://aka.ms/entra/sdk/agentid) since implementing these protocol steps isn't easy.
+Agents use OAuth 2.0 protocols with specialized token exchange patterns enabled by Federated Identity Credentials (FIC). All agent auth flows involve multi-stage token exchanges where the agent identity blueprint impersonates the agent identity to perform operations. This article explains the authentication protocols and token flows used by agents. It covers delegation scenarios, autonomous operations, and federated identity credential patterns. Microsoft recommends that you use our SDKs like [Microsoft Entra ID Auth SDK (sidecar)](https://aka.ms/entra/sdk/agentid) since implementing these protocol steps isn't easy.
  
 All agent entities are confidential clients that can also serve as APIs for On-Behalf-Of scenarios. Interactive flows aren't supported for any agent entity type, ensuring that all authentication occurs through programmatic token exchanges rather than user interaction flows.
  
@@ -39,9 +38,9 @@ Agent identities use `client_credentials` for app-only autonomous operations, en
  
 ### Unsupported flows
 
-The agent application model explicitly excludes certain authentication patterns to maintain security boundaries. OBO flows using the `/authorize` endpoint aren't supported for any agent entity, ensuring all authentication occurs programmatically.
- 
-Public client capabilities aren't available, requiring all agents to operate as confidential clients. Redirect URLs aren't supported.
+- The agent application model explicitly excludes certain authentication patterns to maintain security boundaries. Agents aren't supported for interactive (`/authorize`) flows, ensuring all authentication occurs programmatically.
+- Public client capabilities aren't available, requiring all agents to operate as confidential clients.
+- A web redirect URI can be configured on a blueprint for consent flows only (`response_type=none`), but can't be used for interactive token acquisition. Full redirect URI functionality is configured on the client application.
 
 ## Core protocol patterns
  
@@ -64,3 +63,8 @@ There are three agent oauth flows:
 - [Agent on-behalf of flow](./agent-on-behalf-of-oauth-flow.md): Agents operating on behalf of regular users (interactive agents).
 - [Autonomous app flow](./agent-autonomous-app-oauth-flow.md): App-only operations enable agent identities to act autonomously without user context.
 - [Agent's user account flow](./agent-user-oauth-flow.md): Agents operating on their own behalf using user principals created specifically for agents.
+
+## Related content
+
+- [Grant agents access to Microsoft 365 resources](grant-agent-access-microsoft-365.md) - admin-focused guidance on consent, manual authorization, and other authorization systems.
+- [Agent identity token claims](agent-token-claims.md) - claims reference for tokens issued to agents.

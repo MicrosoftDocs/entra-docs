@@ -1,10 +1,9 @@
 ---
 title: OpenID Connect (OIDC) on the Microsoft identity platform
 description: Sign in Microsoft Entra users by using the Microsoft identity platform's implementation of the OpenID Connect extension to OAuth 2.0.
-author: Dickson-Mwendia
 manager: dougeby
 ms.author: dmwendia
-ms.date: 01/9/2026
+ms.date: 06/30/2026
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
 ms.topic: reference
@@ -14,15 +13,33 @@ ms.custom: sfi-ropc-nochange
 
 # OpenID Connect on the Microsoft identity platform
 
-OpenID Connect (OIDC) extends the OAuth 2.0 authorization protocol for use as another authentication protocol. You can use OIDC to enable single sign-on (SSO) between your OAuth-enabled applications by using a security token called an *ID token*. 
+OpenID Connect (OIDC) extends the OAuth 2.0 authorization protocol for use as another authentication protocol. You can use OIDC to enable single sign-on (SSO) between your OAuth-enabled applications by using a security token called an *ID token*.
+
+> [!TIP]
+> For a map of every supported way to extend OIDC behavior, see [Microsoft identity platform OIDC extensibility reference](reference-oidc-extensibility.md).
 
 The full specification for OIDC is available on the OpenID Foundation's website at [OpenID Connect Core 1.0 specification](https://openid.net/specs/openid-connect-core-1_0.html).
+
+## OIDC endpoint overview
+
+The Microsoft identity platform exposes the following OpenID Connect endpoints. All endpoints (except UserInfo) are served under the tenant-scoped authority `https://login.microsoftonline.com/{tenant}/v2.0`.
+
+| Endpoint | URL path | Method | Purpose | Details |
+|----------|----------|--------|---------|---------|
+| Discovery | `/.well-known/openid-configuration` | GET | Returns the OpenID Provider Configuration Document with endpoint URLs, supported claims, and signing-key metadata. | [Fetch the OpenID configuration document](#fetch-the-openid-configuration-document) |
+| Authorize | `/oauth2/v2.0/authorize` | GET | Authenticates the user and returns an authorization code, ID token, or both. | [Send the sign-in request](#send-the-sign-in-request) |
+| Token | `/oauth2/v2.0/token` | POST | Redeems an authorization code, refresh token, or client credential for tokens. | [OAuth 2.0 auth code flow](v2-oauth2-auth-code-flow.md) |
+| UserInfo | `https://graph.microsoft.com/oidc/userinfo` | GET | Returns claims about the authenticated user (scoped by `openid`, `profile`, `email`). | [UserInfo endpoint](userinfo.md) |
+| JWKS | `/discovery/v2.0/keys` | GET | Returns the public signing keys for token signature validation. | [Validate the ID token](#validate-the-id-token), [Signing key rollover](signing-key-rollover.md) |
+| Logout | `/oauth2/v2.0/logout` | GET, POST | Ends the user's session and triggers front-channel logout. | [Send a sign-out request](#send-a-sign-out-request) |
+
+For a map of every supported way to extend OIDC behavior (custom claims, token issuance events, federated credentials), see [OIDC extensibility reference](reference-oidc-extensibility.md).
 
 ## Protocol flow: Sign-in
 
 The following diagram shows the basic OpenID Connect sign-in flow. The steps in the flow are described in more detail in later sections of the article.
 
-![Swim-lane diagram showing the OpenID Connect protocol's sign-in flow.](./media/v2-protocols-oidc/convergence-scenarios-webapp.svg)
+:::image type="content" source="./media/v2-protocols-oidc/oidc-authorization-flow.svg" alt-text="Swim-lane diagram showing the OpenID Connect authorization flow." lightbox="./media/v2-protocols-oidc/oidc-authorization-flow.svg":::
 
 ## Enable ID tokens
 
@@ -37,10 +54,10 @@ ID tokens aren't issued by default for an application registered with the Micros
 1. Under Redirect URIs, add the redirect URI of your application. For example, `https://localhost:8080/`.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
 
-Or:
+Or, in the Microsoft Graph app manifest:
 
 1. Select **Entra ID** > **App registrations** > *\<your application\>* > **Manifest**.
-1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](reference-app-manifest.md).
+1. Set `enableIdTokenIssuance` to `true` within the `implicitGrantSettings` property of the `web` attribute.
 
 If ID tokens aren't enabled for your app and one is requested, the Microsoft identity platform returns an `unsupported_response` error similar to:
 
@@ -140,7 +157,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `redirect_uri` | Recommended | The redirect URI of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect URIs you registered in the portal, except that it must be URL-encoded. If not present, the endpoint picks one registered `redirect_uri` at random to send the user back to. |
 | `scope` | Required | A space-separated list of scopes. For OpenID Connect, it must include the scope `openid`, which translates to the **Sign you in** permission in the consent UI. You might also include other scopes in this request for requesting consent. |
 | `nonce` | Required | A value generated and sent by your app in its request for an ID token. The same `nonce` value is included in the ID token returned to your app by the Microsoft identity platform. To mitigate token replay attacks, your app should verify the `nonce` value in the ID token is the same value it sent when requesting the token. The value is typically a unique, random string. |
-| `response_mode` | Recommended | Specifies the method that should be used to send the resulting authorization code back to your app. Can be `form_post` or `fragment`. For web applications, we recommend using `response_mode=form_post`, to ensure the most secure transfer of tokens to your application. |
+| `response_mode` | Recommended | Specifies the method that should be used to send the resulting authorization code back to your app. Can be `form_post` or `fragment`. For web applications, we recommend using `response_mode=form_post`, to ensure the most secure transfer of tokens to your application. <br><br> Using `form_post` is also recommended for reliability. When you use `fragment`, the response is returned in the URL, which is subject to a 2,048-character length limit. If the token payload exceeds this limit, the response can be truncated, causing authentication failures. Using `form_post` avoids this limitation because tokens are sent in the HTTP request body instead of the URL. |
 | `state` | Recommended | A value included in the request that is also returned in the token response. It can be a string of any content you want. A randomly generated unique value typically is used to [prevent cross-site request forgery attacks](https://tools.ietf.org/html/rfc6749#section-10.12). The state also is used to encode information about the user's state in the app before the authentication request occurred, such as the page or view the user was on. |
 | `prompt` | Optional | Indicates the type of user interaction that is required. The only valid values at this time are `login`, `none`, `consent`, and `select_account`. The `prompt=login` claim forces the user to enter their credentials on that request, which negates single sign-on. The `prompt=none` parameter is the opposite, and should be paired with a `login_hint` to indicate which user must be signed in. These parameters ensure that the user isn't presented with any interactive prompt at all. If the request can't be completed silently via single sign-on, the Microsoft identity platform returns an error. Causes include no signed-in user, the hinted user isn't signed in, or multiple users are signed in but no hint was provided. The `prompt=consent` claim triggers the OAuth consent dialog after the user signs in. The dialog asks the user to grant permissions to the app. Finally, `select_account` shows the user an account selector, negating single sign-out but allowing the user to pick which account they intend to sign in with, without requiring credential entry. You can't use both `login_hint` and `select_account`.|
 | `login_hint` | Optional | You can use this parameter to prefill the username and email address field of the sign-in page for the user, if you know the username ahead of time. Often, apps use this parameter during reauthentication, after already extracting the `login_hint` [optional claim](./optional-claims.md) from an earlier sign-in. |
@@ -244,7 +261,7 @@ GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444        // Your app registration's Application (client) ID
 &response_type=id_token%20token                       // Requests both an ID token and access token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F       // Your application's redirect URI (URL-encoded)
-&response_mode=form_post                              // 'form_post' or 'fragment'
+&response_mode=form_post                              // 'form_post' (recommended) or 'fragment'. form_post avoids URL length limits.
 &scope=openid+profile+email                           // 'openid' is required; 'profile' and 'email' provide information in the UserInfo endpoint as they do in an ID token. 
 &state=12345                                          // Any value - provided by your app
 &nonce=678910                                         // Any value - provided by your app

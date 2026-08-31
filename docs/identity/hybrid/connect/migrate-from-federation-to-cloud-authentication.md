@@ -4,7 +4,6 @@ description: This article has information about moving your hybrid identity envi
 ms.subservice: hybrid-connect
 ms.topic: upgrade-and-migration-article
 ms.date: 04/09/2025
-author: gargi-sinha
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Migrate from federation to cloud authentication  
@@ -46,7 +45,7 @@ Install [Microsoft Entra Connect](https://www.microsoft.com/download/details.asp
 To find your current federation settings, run [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration?view=graph-powershell-1.0&viewFallbackFrom=graph-powershell-beta&preserve-view=true).
 
 ```powershell
-Get-MgDomainFederationConfiguration -DomainID yourdomain.com
+Get-MgDomainFederationConfiguration -DomainID contoso.com
 ```
 
 Verify any settings that might have been customized for your federation design and deployment documentation. Specifically, look for customizations in **PreferredAuthenticationProtocol**, **federatedIdpMfaBehavior**, **SupportsMfa** (if **federatedIdpMfaBehavior** isn't set), and **PromptLoginBehavior**.
@@ -142,7 +141,7 @@ For domains that have already set the **SupportsMfa** property, these rules dete
 You can check the status of protection by running [Get-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomainfederationconfiguration?viewFallbackFrom=graph-powershell-beta&preserve-view=true&view=graph-powershell-1.0):
 
 ```powershell
-Get-MgDomainFederationConfiguration -DomainId yourdomain.com
+Get-MgDomainFederationConfiguration -DomainId contoso.com
 ```
 
 ## Plan for implementation
@@ -350,7 +349,7 @@ On your Microsoft Entra Connect server, follow the steps 1- 5 in [Option A](#opt
 
 4. Verify that the domain has been converted to managed by running the command below.  The Authentication type should be set to managed.
     ```powershell
-    Get-MgDomain -DomainId yourdomain.com
+    Get-MgDomain -DomainId contoso.com
     ```
 To ensure that Microsoft Entra Connect recognizes pass-through authentication as enabled after converting your domain to managed authentication, update the sign-in method settings in Microsoft Entra Connect to reflect the changes. Refer to [Microsoft Entra pass-through authentication documentation](how-to-connect-pta.md) for additional details. 
 

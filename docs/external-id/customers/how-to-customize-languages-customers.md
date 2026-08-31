@@ -2,10 +2,11 @@
 title: Customize the browser language
 description: Learn about how to customize the browser language for your app's authentication experience to provide a personalized sign-in.
 ms.topic: how-to
-ms.date: 09/16/2025
+ms.date: 04/24/2026
 ms.custom: it-pro
+ai-usage: ai-assisted
 
-#Customer intent: As a dev, devops, or it admin, I want to learn about how to add customized browser languages to my app's authentication experience.
+# Customer intent: As a developer, DevOps engineer, or IT admin, I want to add customized browser languages to my app's authentication experience.
 ---
 # Customize browser language for authentication experience
 
@@ -29,11 +30,11 @@ This article explains how to customize the browser language for your app's authe
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
 1. Browse to **Company branding** > **Browser language customizations** > **Add browser language**. 
 
-   :::image type="content" source="media/how-to-customize-languages-customers/company-branding-add-browser-language.png" alt-text="Screenshot of the browser language customizations tab." lightbox="media/how-to-customize-languages-customers/company-branding-add-browser-language.png":::
+   :::image type="content" source="media/how-to-customize-languages-customers/company-branding-add-browser-language.png" alt-text="Screenshot of Company branding with Browser language customizations and the Add browser language action." lightbox="media/how-to-customize-languages-customers/company-branding-add-browser-language.png":::
 
-4. On the **Basics** tab, under **Language specific UI Customization**, select the browser language you want to customize from the menu. 
+1. On the **Basics** tab, under **Language specific UI Customization**, select the browser language you want to customize from the menu.
 
-   :::image type="content" source="media/how-to-customize-languages-customers/language-selection.png" alt-text="Screenshot of selecting a language." lightbox="media/how-to-customize-languages-customers/language-selection.png":::
+   :::image type="content" source="media/how-to-customize-languages-customers/language-selection.png" alt-text="Screenshot of the language selector on the Basics tab for browser language customization." lightbox="media/how-to-customize-languages-customers/language-selection.png":::
 
 The following languages are supported in the external tenant: 
 
@@ -77,21 +78,21 @@ The following languages are supported in the external tenant:
    - Turkish (Türkiye)
    - Ukrainian (Ukraine)
    
-6. Customize the elements on the **Basics**, **Layout**, **Header**, **Footer**, **Sign-in form**, and **Text** tabs. For detailed instructions, see [Customize the branding and end-user experience](how-to-customize-branding-customers.md).
-7. When you’re finished, select the **Review** tab and go over all of your language customizations. Then select **Add** if you would like to save your changes or **Previous** if you would like to continue editing.
+1. Customize the elements on the **Basics**, **Layout**, **Header**, **Footer**, **Sign-in form**, and **Text** tabs. For detailed instructions, see [Customize the branding and end-user experience](how-to-customize-branding-customers.md).
+1. When you're finished, select the **Review** tab and go over all your language customizations. Then select **Add** to save your changes, or **Previous** to continue editing.
 
 ## Add language customization to a user flow
 
-Language customization in the external tenant lets your user flow accommodate different languages to suit your customer's needs.  You can use languages to modify the strings displayed to your customers as part of the attribute collection process during sign-up.
+Language customization in the external tenant lets your user flow accommodate different languages to suit your customer's needs. You can use languages to modify the strings displayed to your customers as part of the attribute collection process during sign-up.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).  
-2. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-3. Browse to **Entra ID** > **External Identities** > **User flows**.
-4. Select the user flow that you want to enable for translations.
-5. Select **Languages**.
-6. On the **Languages** page for the user flow, select the language that you want to customize.
-7. Expand **Sign up and sign in**.
-8. Select **Download defaults** (or **Download overrides** if you have previously edited this language).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
+1. Select the user flow that you want to enable for translations.
+1. Select **Languages**.
+1. On the **Languages** page for the user flow, select the language that you want to customize.
+1. Expand **Sign up and sign in**.
+1. Select **Download defaults** (or **Download overrides** if you have previously edited this language).
 
    :::image type="content" source="media/how-to-customize-languages-customers/language-customization-flow.png" alt-text="Screenshot that shows how to add languages under a user flow." lightbox="media/how-to-customize-languages-customers/language-customization-flow.png":::
 

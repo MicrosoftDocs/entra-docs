@@ -4,7 +4,6 @@ description: Learn about specialized token claims used by agent applications in 
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: reference
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 
 #customer-intent: As a developer or security engineer, I want to understand the token claims structure for Agent Identity tokens, so that I can properly validate and authorize agent applications in my resource servers and implement secure authentication flows.
@@ -22,20 +21,20 @@ Tokens issued for identities used for resource access include claims that you'd 
 
 ```json
 {
-  "aud": "f2510d34-8dca-4ab8-a0bc-aaec4d3a3e36",
+  "aud": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "iss": "https://sts.windows.net/00000001-0000-0ff1-ce00-000000000000/",
   "iat": 1753392285,
   "nbf": 1753392285,
   "exp": 1753421385,
   "aio": "Y2JgYGhn1nzmErKqi0vc4Fr6H22/C5/4FP+xZbZYpik8nRkp+gEA",
-  "appid": "aaaaaaaa-1111-2222-3333-444444444444",
+  "appid": "11112222-bbbb-3333-cccc-4444dddd5555",
   "appidacr": "2",
   "idp": "https://sts.windows.net/00000001-0000-0ff1-ce00-000000000000/",
   "idtyp": "app",
-  "oid": "bbbbbbbb-1111-2222-3333-444444444444",
+  "oid": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
   "rh": "1.AAAAAQAAAAAA8Q_OAAAAAAAAADQNUfLKjbhKoLyq7E06PjYAAAAAAA.",
-  "sub": "cccccccc-1111-2222-3333-444444444444",
-  "tid": "00000001-0000-0ff1-ce00-000000000000",
+  "sub": "bbbbbbbb-1111-2222-3333-cccccccccccc",
+  "tid": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
   "uti": "m5RaaRnoFUyp2TbSCAAAAA",
   "ver": "1.0",
   "xms_act_fct": "3 9 11",
@@ -62,7 +61,6 @@ You'd notice that the token includes a few claims that aren't previously seen in
 | `sub`             | Subject (the user, service principal, or agent identity being authenticated)         |
 | `oid`             | Object ID of the subject. User object ID for user delegation scenarios. Agent ID service principal OID for app-only scenarios. Agent's user account OID for user impersonation scenarios.          |
 | `idtyp`           | Type of entity the subject is. Values are `user`, `app`.                               |
-| `tid`             | Tenant ID of the customer tenant where the agent identity is registered.              |
 | `xms_idrel`       | Relationship between the subject and the resource tenant. Learn [more](#xms_idrel).   |
 | `aud`             | Audience (the API that the agent is trying to access)                                 |
 | `azp` or `appid`  | Authorized party / actor. The application ID of the agent identity. Enables proper client attribution in audit logs.     |
@@ -71,6 +69,19 @@ You'd notice that the token includes a few claims that aren't previously seen in
 | `xms_sub_fct`     | Subject facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) . |
 | `xms_tnt_fct`     | Tenant facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) .  |
 | `xms_par_app_azp` | Parent application of the authorized party. Learn [more](#xms_par_app_azp) .          |
+
+## idtyp claim values by scenario
+
+The `idtyp` claim identifies the type of entity the token subject represents. The value depends on which agent flow issued the token:
+
+| Agent scenario | `idtyp` value | Subject (`sub`/`oid`) |
+| --- | --- | --- |
+| On-behalf-of flow (interactive agent) | `user` | The human user the agent acts on behalf of |
+| Autonomous app flow (app-only) | `app` | The agent identity service principal |
+| Agent's user account flow | `user` | The agent's own user account |
+
+> [!NOTE]
+> The `idtyp` value alone doesn't distinguish a human user from an agent's user account. Use the `xms_sub_fct` claim (value `13` = agent's user account) to differentiate these scenarios.
 
 ## xms_idrel
 

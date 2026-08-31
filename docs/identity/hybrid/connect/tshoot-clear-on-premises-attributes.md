@@ -104,7 +104,7 @@ This operation requires Microsoft Graph PowerShell SDK, preauthenticated with `C
 #### By Identity
  
  ``` powershell
-  Get-ADSyncToolsOnPremisesAttribute [-Identity] <String> [[-Property] <String[]>] [<CommonParameters>] 
+  Get-ADSyncToolsOnPremisesAttribute [-Id] <String> [[-Property] <String[]>] [<CommonParameters>] 
  ```
 #### By IncludeSyncedUsers
  
@@ -241,24 +241,25 @@ This function can be used to set any of the following on-premises attributes:
 - onPremisesObjectIdentifier *
 - sonPremisesSamAccountName 
 - onPremisesSecurityIdentifier **
-- onPremisesUserPrincipalName 
+- onPremisesUserPrincipalName
 
    \* System-generated attribute. Clearing it is supported, but setting a specific value can fail depending on service behavior.
+
    \** Must have the correct Security Identifier format, for example: "S-1-5-21-1234567890-0987654321-1234567890-1111"
 
 
 ### SYNTAX 
 
 ``` powershell
-Set-ADSyncToolsOnPremisesAttribute [-Identity] <String> [[-onPremisesDistinguishedName] <String>] [[-onPremisesDomainName] <String>] [[-onPremisesImmutableId] <String>] [[-onPremisesSamAccountName] <String>] [[-onPremisesSecurityIdentifier] <String>] [[-onPremisesUserPrincipalName] <String>] [<CommonParameters>] 
+Set-ADSyncToolsOnPremisesAttribute [-Id] <String> [[-onPremisesDistinguishedName] <String>] [[-onPremisesDomainName] <String>] [[-onPremisesImmutableId] <String>] [[-onPremisesSamAccountName] <String>] [[-onPremisesSecurityIdentifier] <String>] [[-onPremisesUserPrincipalName] <String>] [<CommonParameters>] 
 ```
 
 #### By BodyParameter
 
 ``` powershell
-Set-ADSyncToolsOnPremisesAttribute [-Identity] <String> [-BodyParameter] <String> [<CommonParameters>] 
+Set-ADSyncToolsOnPremisesAttribute [-Id] <String> [-BodyParameter] <String> [<CommonParameters>] 
 ```
- 
+
 ### EXAMPLES 
 
 #### Example 1
@@ -284,7 +285,7 @@ $jsonBody = @'
   "onPremisesUserPrincipalName": "User1@Contoso.com" 
 }
 '@
-Set-ADSyncToolsOnPremisesAttribute -Identity '98765432-6f08-40b2-8b66-123456789012' -BodyParameter $jsonBody
+Set-ADSyncToolsOnPremisesAttribute -Id '11111111-2222-3333-4444-555555555555' -BodyParameter $jsonBody
 ```
 
 >[!Note]

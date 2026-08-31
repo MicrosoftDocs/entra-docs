@@ -16,3 +16,4 @@ The following documentation provides configuration and tutorial information demo
 
 - [App provisioning](user-provisioning.md)
 - [Tutorial: ECMA Connector Host generic SQL connector](tutorial-ecma-sql-connector.md)
+- [Discover identities in target applications with Account Discovery](how-to-account-discovery.md)

@@ -1,10 +1,34 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md",
+      "redirect_url": "/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-epow-register-sign-in.md",
+      "redirect_url": "/entra/identity/authentication/how-to-register-entra-passkey-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-register-passkey-mobile.md",
+      "redirect_url": "/entra/identity/authentication/how-to-register-passkey",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/how-to-support-authenticator-passkey.md",
+      "redirect_url": "/entra/identity/authentication/how-to-enable-authenticator-passkey",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/global-secure-access/tutorial-internet-access-file-controls.md",
       "redirect_url": "/entra/global-secure-access/tutorial-internet-access-content-policies",
       "redirect_document_id": true
     },
+    {
+      "source_path": "docs/identity/authentication/concept-system-preferred-multifactor-authentication.md",
+      "redirect_url": "/entra/identity/authentication/concept-system-preferred-authentication",
+      "redirect_document_id": false    },
     {
       "source_path": "docs/security-copilot/access-review-agent.md",
       "redirect_url": "/entra/id-governance/access-reviews-overview",
@@ -2196,6 +2220,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/rouse-sales-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/quickstart-v2-uwp.md",
       "redirect_url": "/entra/identity-platform/quickstart-desktop-app-wpf-sign-in",
       "redirect_document_id": false
@@ -2612,27 +2641,47 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/concept-group-based-licensing.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/licensing-groups-resolve-problems.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#move-users-between-licensed-groups",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
-      "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-admin-center.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-group-advanced.md",
+      "redirect_url": "/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
       "redirect_document_id": false
     },
     {
@@ -3106,6 +3155,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/external-id/customers/how-to-customize-branding-themes-apps.md",
+      "redirect_url": "/entra/fundamentals/how-to-customize-branding-themes-apps",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/agent-id/identity-platform/agent-id-setup-instructions.md",
       "redirect_url": "https://github.com/microsoft/skills/blob/main/.github/skills/entra-agent-id",
       "redirect_document_id": false
@@ -3153,6 +3207,11 @@
     {
       "source_path": "docs/global-secure-access/concept-continuous-access-evaluation.md",
       "redirect_url": "/entra/identity/app-proxy/concept-continuous-access-evaluation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/synced-passkey-faq.yml",
+      "redirect_url": "/entra/identity/authentication/passkey-faq",
       "redirect_document_id": true
     },
     {
@@ -3341,6 +3400,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/global-secure-access/how-to-efp-conditional-access.md",
+      "redirect_url": "/entra/global-secure-access/how-to-configure-conditional-access-policy-for-explicit-forward-proxy",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/agent-id/identity-platform/agent-autonomous-app-oauth-flow.md",
       "redirect_url": "/entra/agent-id/agent-autonomous-app-oauth-flow",
       "redirect_document_id": true
@@ -3397,8 +3461,13 @@
     },
     {
       "source_path": "docs/agent-id/identity-platform/agent-registry-manage-collections.md",
-      "redirect_url": "/entra/agent-id/agent-registry-manage-collections",
-      "redirect_document_id": true
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry?view=o365-worldwide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/agent-registry-manage-collections.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
     },
     {
       "source_path": "docs/agent-id/identity-platform/agent-service-principals.md",
@@ -3482,7 +3551,12 @@
     },
     {
       "source_path": "docs/agent-id/identity-platform/preview-known-issues.md",
-      "redirect_url": "/entra/agent-id/preview-known-issues",
+      "redirect_url": "/entra/agent-id/faq",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/preview-known-issues.md",
+      "redirect_url": "/entra/agent-id/faq",
       "redirect_document_id": true
     },
     {
@@ -3524,6 +3598,66 @@
       "source_path": "docs/external-id/customers/enable-external-id-hsc-mode.md",
       "redirect_url": "/entra/external-id/customers/enable-external-id-high-scale-compatibility-mode",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity/authentication/passkey-authenticator-faq.yml",
+      "redirect_url": "/entra/identity/authentication/passkey-faq",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/agent-metadata-discoverability.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/agent-registry-collections.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/publish-agents-to-registry.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/registry-agent-to-agent-protocol.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/what-is-agent-registry.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/agent-id/reference-registry-roles.md",
+      "redirect_url": "/microsoft-365/admin/manage/agent-registry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/global-secure-access/concept-edr-antivirus-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-edr-antivirus-coexistence",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/saas-apps/openforms-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/forms-workflow-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/conditional-access/policy-agent-user-account.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-autonomous-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/conditional-access/policy-agent-block-high-risk.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-autonomous-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/conditional-access/policy-on-behalf-of-agents.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-autonomous-agents",
+      "redirect_document_id": false
     }
   ]
 }

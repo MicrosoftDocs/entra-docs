@@ -5,7 +5,7 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
-  - name: Governing Agent IDs (Preview)
+  - name: Governing agent identities
     href: agent-ID-governance-overview.md    
 
 
@@ -280,7 +280,9 @@
       - name: Delegate to access package managers
         href: entitlement-management-delegate-managers.md
       - name: Set up group writeback
-        href: entitlement-management-group-writeback.md  
+        href: entitlement-management-group-writeback.md
+      - name: Assign Azure Role-based access control (RBAC) Roles (Preview)
+        href: entitlement-management-azure-role-assignments.md      
     - name: Access package managers and Access package assignment managers
       items:
       - name: Create a new access package
@@ -327,7 +329,7 @@
         href: entitlement-management-request-approve.md
       - name: Review access of an access package
         href: entitlement-management-access-reviews-review-access.md  
-      - name: Delegate approvers (Preview)
+      - name: Delegate approvals and access reviews
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
         href: entitlement-management-access-reviews-self-review.md   
@@ -369,6 +371,8 @@
         href: review-your-access.md
       - name: Complete an access review
         href: complete-access-review.md
+      - name: Delegate approvals and access reviews
+        href: delegate-approvals-my-access.md
     - name: Microsoft Entra roles and Azure resource roles
       items:
       - name: Create an access review
@@ -394,7 +398,9 @@
       - name: Manage
         items:
         - name: Synchronize attributes
-          href: how-to-lifecycle-workflow-sync-attributes.md  
+          href: how-to-lifecycle-workflow-sync-attributes.md
+        - name: Update user attributes
+          href: how-to-lifecycle-workflow-update-user-attributes.md
         - name: Manage workflow properties
           href: manage-workflow-properties.md
         - name: Manage workflow versions
@@ -405,7 +411,7 @@
           href: manage-workflow-custom-security-attribute.md    
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
-        - name: Workflow What-if tool (Preview)
+        - name: Workflow What-if tool
           href: simulate-workflow-execution.md  
         - name: Customize emails
           href: customize-workflow-email.md
@@ -413,25 +419,29 @@
           href: check-status-workflow.md
         - name: Reprocess workflows
           href: reprocess-workflow.md
-        - name: Cancel workflow runs (Preview)
+        - name: Cancel workflow runs
           href: cancel-workflow-runs.md
         - name: Download workflow history reports
           href: download-workflow-history.md
         - name: Manage inactive users
-          href: lifecycle-workflow-inactive-users.md      
+          href: lifecycle-workflow-inactive-users.md
+        - name: Manage unsponsored guests (Preview)
+          href: how-to-lifecycle-workflow-unsponsored-guest-removal.md
         - name: Check execution user scope
           href: check-workflow-execution-scope.md
         - name: Delegated Workflow Management
           href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
+        - name: Configure execution limits and quarantine
+          href: lifecycle-workflow-execution-limits.md
         - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
           href: manage-workflow-insights.md
         - name: Sensitivity Labels in Lifecycle Workflows
           href: workflow-sensitivity-labels.md 
-        - name: Agent Identity Sponsor Tasks (Preview)
+        - name: Agent Identity Sponsor Tasks
           href: agent-sponsor-tasks.md       
       - name: Delete
         items: 

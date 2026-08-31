@@ -1,9 +1,7 @@
 ---
 title: Third-party fraud protection for native authentication with SMS MFA
 description: Learn how third-party fraud protection integrates with native authentication flows to assess risk and protect SMS-based multifactor authentication.
-author: henrymbuguakiarie
 manager: pmwongera
-ms.author: henrymbugua
 ms.date: 03/03/2026
 ms.service: identity-platform
 ms.topic: concept-article

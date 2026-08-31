@@ -1,8 +1,6 @@
 ---
 title: Discover and deploy agents and solutions in Microsoft Entra
 description: Learn how to use Security Store in Microsoft Entra to discover, purchase, and deploy AI agents and security solutions for identity and access management.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.date: 03/17/2026
 ms.update-cycle: 180-days
 ms.topic: how-to

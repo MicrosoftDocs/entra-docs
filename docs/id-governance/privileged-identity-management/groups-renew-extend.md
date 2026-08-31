@@ -3,12 +3,11 @@ title: Extend or renew PIM for groups assignments
 description: Learn how to extend or renew PIM for groups assignments.
 ms.reviewer: markwahl-msft
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 04/23/2026
 ms.custom: pim, sfi-image-nochange
+#Customer Intent: As an administrator or group member, I want to extend or renew time-bound group membership or ownership assignments before they expire to maintain necessary access.
 ---
-
 # Extend or renew PIM for groups assignments
-
 
 ## Overview
 
@@ -16,12 +15,21 @@ Privileged Identity Management (PIM) in Microsoft Entra ID provides controls to 
 
 ## Who can extend and renew
 
-Only users with permissions to manage groups can extend or renew group membership or ownership time-bound assignments. The affected user or group can request to extend assignments that are about to expire and request to renew assignments that are already expired.
+Only users with permissions to manage groups can extend or renew time-bound group membership or ownership assignments. The assignee can request to extend assignments that are about to expire and request to renew assignments that are already expired.
 
-Role-assignable groups can be managed by at least the Privileged Role Administrator or Owner of the group. Non-role-assignable groups can be managed by at least the Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator, or Owner of the group. Role assignments for administrators should be scoped at directory level (not Administrative Unit level). 
+- To manage ownership of a role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groupsAssignableToRoles/owners/update` permission, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group.
+- To manage membership in a role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groupsAssignableToRoles/members/update` permission, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group.
+- To manage ownership of a non-role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groups/owners/update` permission, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group.
+- To manage membership in a non-role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groups/members/update` permission, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group.
+
+Role assignments for administrators can be scoped at directory level or administrative unit level. Built-in and custom Microsoft Entra roles are supported.
+
+Privileged Identity Management doesn't support permissions that start with `microsoft.directory/groups.security/` or `microsoft.directory/groups.unified/`. Use permissions that start with `microsoft.directory/groups/` instead.
+
+Privileged Identity Management doesn't support groups in Restricted Management Administrative Units (RMAU).
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable M365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
+> Administrators and group owners can manage groups through the Groups experience and other interfaces, overriding changes made in Microsoft Entra PIM.
 
 ## When notifications are sent
 

@@ -3,8 +3,9 @@ title: Simulate Risk Detections in Microsoft Entra ID Protection for Enhanced Se
 description: Learn how to simulate risk detections in Microsoft Entra ID Protection to enhance security. Test risk-based policies effectively.
 
 ms.topic: how-to
-ms.date: 02/28/2025
+ms.date: 05/27/2026
 ms.reviewer: chuqiaoshi
+ai-usage: ai-assisted
 ---
 # Simulate Risk Detections in Microsoft Entra ID Protection
 
@@ -91,6 +92,28 @@ This risk detection indicates that the application's valid credentials are leake
      "AadTenantId": "99d4947b-XXX-XXXX-9ace-abceab54bcd4",
    ```
 1. In about 8 hours, you're able to view a leaked credential detection under **ID Protection** > **Dashboard** > **Risk Detections** > **Workload identity detections** where other info contains the URL of your GitHub commit.
+
+## Confirm compromise using Microsoft Graph
+
+You can also use Microsoft Graph to manually set a user's risk state to "confirmed compromised" for testing purposes. This approach is useful when you need to trigger a user risk policy without waiting for a detection to fire.
+
+Use the [confirmCompromised](/graph/api/riskyuser-confirmcompromised) API to mark one or more users as compromised:
+
+```http
+POST https://graph.microsoft.com/v1.0/identityProtection/riskyUsers/confirmCompromised
+
+{
+  "userIds": [
+    "userid1",
+    "userid2"
+  ]
+}
+```
+
+After calling this API, the user's risk level is set to **high** and the risk state changes to **confirmedCompromised**. This change is reflected in the risk reports and triggers any Conditional Access policies configured for high user risk.
+
+> [!NOTE]
+> Using `confirmCompromised` permanently sets the user's risk to high until it's remediated through a password reset or an admin dismisses the risk. Use this method only in test environments or when you've confirmed a true compromise.
 
 ## Testing risk policies
 

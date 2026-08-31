@@ -1,16 +1,11 @@
 ### YamlMime:FAQ
 metadata:
-  title: Frequently asked questions for Microsoft Entra Tenant Governance (preview)
+  title: Frequently asked questions for Microsoft Entra Tenant Governance
   description: Find answers to common questions about Microsoft Entra Tenant Governance, including discovery, governance relationships, and monitoring
-  author: barclayn
-  ms.author: barclayn
-  ms.service: entra-id-governance
   ms.topic: faq
   ms.date: 03/17/2026
-title: Frequently asked questions for Microsoft Entra Tenant Governance (preview)
+title: Frequently asked questions for Microsoft Entra Tenant Governance
 summary: |
-  [!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
-
   This article answers frequently asked questions about Microsoft Entra Tenant Governance.
 
 sections:
@@ -24,7 +19,7 @@ sections:
       - question: |
           Are licenses required to use Tenant Governance?
         answer: |
-          Tenant Governance offers free, basic, and premium capabilities. For a comprehensive list of license requirements per capability, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview).
+          Tenant Governance offers free, basic, and premium capabilities. For a comprehensive list of license requirements per capability, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance).
 
       - question: |
           How does Microsoft Entra Tenant Governance compare to the multitenant organization feature?
@@ -80,11 +75,6 @@ sections:
           Do governance relationships support PIM?
         answer: |
           Yes. Use [PIM for Groups](/entra/id-governance/privileged-identity-management/concept-pim-for-groups) so that admins activate group membership in the governing tenant before using GDAP access configured in the relationship to manage other tenants. PIM policies configured in the governed tenant and applied to a governing tenant administrator aren't supported.
-
-      - question: |
-          Does Tenant Governance support multiple relationships between tenants?
-        answer: |
-          Multiple tenants can govern a single tenant, and a single tenant can govern multiple tenants. Multiple active relationships between the same two tenants aren't supported.
 
   - name: Configuration management
     questions:

@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Learn how to call Microsoft Graph API from an agent using agent identities or agents' user accounts, including authentication configuration and implementation steps.
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 #Customer intent: As a developer building AI agents, I want to call Microsoft Graph API from my agent using agent identities so that the agent can access organizational data and resources securely.
 ---
@@ -27,6 +26,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
 1. Add the support for Microsoft Graph and agent identities in your service collection.
 
     ```csharp
+    using Microsoft.AspNetCore.Authentication.OpenIdConnect;
     using Microsoft.Identity.Web;
     
     var builder = WebApplication.CreateBuilder(args);
@@ -57,7 +57,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
     {
       "AzureAd": {
         "Instance": "https://login.microsoftonline.com/",
-        "TenantId": "<my-test-tenant>",
+        "TenantId": "<your-tenant-id>",
         "ClientId": "<agent-blueprint-client-id>",
         "ClientCredentials": [
           {
@@ -75,18 +75,24 @@ This article explains how to call a Microsoft Graph API from an agent using agen
     }
     ```
 
+    > [!NOTE]
+    > Configure only the Microsoft Graph permissions your agent needs, and make sure the `Scopes` you set match the Graph resources your code calls. These examples use `User.Read` and `User.ReadBasic.All`; calling other resources requires their corresponding permissions.
+
 1. You can now get the `GraphServiceClient` injecting it in your service or from the service provider and call Microsoft Graph.
 
   - For agent identities, you can acquire either an app only token (autonomous agents) or an on-behalf of user token (interactive agents) by using the `WithAgentIdentity` method. For app only tokens, set the `RequestAppToken` property to `true`. For delegated on-behalf of user tokens, don't set the `RequestAppToken` property or explicitly set it to `false`.
 
       ```csharp
+      using Microsoft.Graph;
+      using Microsoft.Identity.Web;
+
       // Get the GraphServiceClient
       GraphServiceClient graphServiceClient = serviceProvider.GetRequiredService<GraphServiceClient>();
         
       string agentIdentity = "agent-identity-guid";
         
       // Call Microsoft Graph APIs with the agent identity for app only scenario
-      var applications = await graphServiceClient.Applications
+      var usersAppOnly = await graphServiceClient.Users
           .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
           {
               options.WithAgentIdentity(agentIdentity);
@@ -94,7 +100,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
           }));
 
       // Call Microsoft Graph APIs with the agent identity for on-behalf of user scenario
-      var applications = await graphServiceClient.Applications
+      var usersOnBehalfOfUser = await graphServiceClient.Users
           .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
           {
               options.WithAgentIdentity(agentIdentity);
@@ -105,6 +111,9 @@ This article explains how to call a Microsoft Graph API from an agent using agen
     - For agent's user account identities, you can specify either User Principal Name (UPN) or Object Identity (OID) to identify the agent's user account by using the `WithAgentUserIdentity` method.
 
         ```csharp
+        using Microsoft.Graph;
+        using Microsoft.Identity.Web;
+
         // Get the GraphServiceClient
         GraphServiceClient graphServiceClient = serviceProvider.GetRequiredService<GraphServiceClient>();
         
@@ -118,7 +127,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
         
         // Or using OID
         string userOid = "user-object-id";
-        var me = await graphServiceClient.Me
+        var meByOid = await graphServiceClient.Me
             .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
                 options.WithAgentUserIdentity(agentIdentity, userOid)));
         ```

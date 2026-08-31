@@ -1,8 +1,6 @@
 ---
-author: SHERMANOUKO
 ms.topic: include
 ms.date: 07/26/2023
-ms.author: shermanouko
 ---
 
 To specify your app type to your app registration, follow these steps:

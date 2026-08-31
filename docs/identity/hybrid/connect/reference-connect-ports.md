@@ -109,4 +109,4 @@ The latest Microsoft Entra Connect Health agent versions only require port 443.
 <a name='7b---endpoints-for-azure-ad-connect-health-agent-for-ad-fssync-and-azure-ad'></a>
 
 ### 7b - Endpoints for Microsoft Entra Connect Health agent for (AD FS/Sync) and Microsoft Entra ID
-For a list of endpoints, see [the Requirements section for the Microsoft Entra Connect Health agent](how-to-connect-health-agent-install.md#requirements).
+For a list of endpoints, see [the Prerequisites section for the Microsoft Entra Connect Health agent](how-to-connect-health-agent-install.md#prerequisites).

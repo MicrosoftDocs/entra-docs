@@ -2,11 +2,9 @@
 title: Install the Global Secure Access Client for macOS
 description: The Global Secure Access client helps secure network traffic at the user device. This article describes how to download and install the macOS client.
 ms.topic: how-to
-ms.date: 03/30/2026
-ms.author: jayrusso
-author: HULKsmashGithub
+ms.date: 08/21/2026
 ms.reviewer: lirazbarak
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1024
 # Customer intent: As an IT admin, I want to deploy the Global Secure Access client on macOS devices so that my organization's network traffic is protected.
 
 ---
@@ -52,6 +50,9 @@ The client uses system extensions and a transparent application proxy that you n
 
 To deploy the Global Secure Access client's .pkg file through Microsoft Intune as a managed app:
 
+> [!IMPORTANT]
+> Beginning with version **1.1.26060207**, the app package includes the `com.microsoft.autoupdate2` application to support future use cases. If `com.microsoft.autoupdate2` is already installed, including it in the Intune detection rules might cause a conflict. You can optionally remove `com.microsoft.autoupdate2` from the detection rules when deploying the app.
+
 1. Download the `GlobalSecureAccessClient.pkg` file from the Microsoft Entra admin center.
 
 1. In the [Microsoft Intune admin center](https://intune.microsoft.com), select **Apps** > **All Apps** > **Create**.
@@ -64,7 +65,7 @@ To deploy the Global Secure Access client's .pkg file through Microsoft Intune a
 
 1. On the **Requirements** tab, set the minimum operating system to **macOS 14.0** and then select **Next**.
 
-1. On the **Detection rules** tab, review the **Included apps** list to verify that the Global Secure Access client app is detected correctly. Then select **Next**.
+1. On the **Detection rules** tab, review the **Included apps** list to verify that the Global Secure Access client app is detected correctly. Optionally, remove the `com.microsoft.autoupdate2` app from the list. Then select **Next**.
 
 1. On the **Assignments** tab, assign the app to the appropriate device or user groups. Then select **Next**.
 

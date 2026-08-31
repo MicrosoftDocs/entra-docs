@@ -2,8 +2,7 @@
 title: Resilient end-user experience using Azure AD B2C
 description: Learn methods to build resilience in end-user experience with Azure AD B2C
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.date: 05/20/2025
 ms.subservice: architecture
 ---

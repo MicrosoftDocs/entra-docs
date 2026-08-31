@@ -2,7 +2,6 @@
 title: Add linked single sign-on to an application
 description: Add linked single sign-on to an application in Microsoft Entra ID.
 ms.topic: how-to
-
 ms.date: 06/20/2025
 ms.reviewer: alamaral
 ms.custom: enterprise-apps

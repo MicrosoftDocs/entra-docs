@@ -1,8 +1,6 @@
 ---
 title: "Global Secure Access: Advanced Threat Protection"
 description: "Learn how to protect your organization with Global Secure Access Advanced Threat Protection (ATP) and Data Loss Prevention (DLP) policies powered by Netskope."
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: how-to   
 ms.date: 11/07/2025
 ms.reviewer: abhijeetsinha
@@ -288,11 +286,11 @@ This sample shows an event triggered by an ATP policy with blocked content. Chec
     "sessionId": "",
     "sourceIp": "clipped",
     "sourcePort": "00000",
-    "tenantId": "44445555-eeee-6666-ffff-7777aaaa8888",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "trafficType": "Internet",
     "transactionId": "55556666-ffff-7777-aaaa-8888bbbb9999",
     "transportProtocol": "TCP",
-    "userId": "66667777-aaaa-8888-bbbb-9999cccc0000",
+    "userId": "ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0",
     "userPrincipalName": "user@contoso.com",
     "vendorNames": "Netskope"
 }

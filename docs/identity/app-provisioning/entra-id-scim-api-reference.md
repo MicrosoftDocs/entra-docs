@@ -1,13 +1,11 @@
 ---
 title: Microsoft Entra ID SCIM API 
 description: Build custom integrations to provision users and groups to Microsoft Entra ID using the System for Cross-domain Identity Management (SCIM) v2.0 protocol.
-author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 04/07/2026
-ms.author: jfields
+ms.date: 08/12/2026
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 
@@ -42,6 +40,8 @@ The following sections contain examples of API requests and responses currently 
 ## Invoking the SCIM APIs
 
 Before you can call the SCIM API endpoints described in this article, you must enable the SCIM Provisioning API feature, configure billing, set up credentials, and obtain an access token. For step-by-step instructions, see [Enable the SCIM Provisioning API in Microsoft Entra ID](enable-scim-api.md).
+
+If you're using the Microsoft Graph endpoint in the US Government cloud, use `https://graph.microsoft.us/rp/scim` as the base URL for SCIM API requests. The examples in this article use `https://graph.microsoft.com` to illustrate the global cloud endpoint.
 
 > [!NOTE]
 > SCIM APIs operate exclusively in application context (app-only token) and do not support delegated, user-on-behalf-of scenarios.
@@ -158,11 +158,11 @@ Response is truncated for readability.
       "schemaExtensions": [
         {
           "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
-          "required": true
+          "required": false
         },
         {
           "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User",
-          "required": true
+          "required": false
         }
       ],
       "meta": {
@@ -217,7 +217,7 @@ Response is truncated for readability.
   "schemaExtensions": [
     {
       "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
-      "required": true
+      "required": false
     }
   ],
   "meta": {
@@ -396,8 +396,8 @@ The following SCIM query parameters can be used with this API endpoint:
 The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - When multiple pages are involved in the result:
-  - The default page size of 10 entries per page.
-  - The max page size is 100 entries per page.
+  - The default page size of 100 entries per page.
+  - The max page size is 1000 entries per page.
 
 - In the “filter” query parameter, only the “and” logic operator is supported. The following user attributes are allowed for “eq” compare operator:
   - `username`
@@ -735,7 +735,8 @@ The following attributes are required for successful user creation:
 
 - `displayName`
 
-- urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname
+> [!NOTE]
+> The `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname` attribute is optional when you create a user. If you omit it, set it to `null`, or provide an empty value, Microsoft Entra ID derives `mailNickname` from `userName`. It uses the characters before the first `@`. If `userName` doesn't contain `@`, it uses the complete value. For example, `abc123@contoso.com` produces a `mailNickname` value of `abc123`.
 
 #### Example 1 – Create a new user
 
@@ -750,8 +751,7 @@ Content-Type: application/scim+json
 ```json
 {
   "schemas": [
-    "urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User"
+    "urn:ietf:params:scim:schemas:core:2.0:User"
   ],
   "active": true,
   "displayName": "Example User",
@@ -760,9 +760,6 @@ Content-Type: application/scim+json
   "name": {
     "familyName": "Example familyName",
     "givenName": "Example givenName"
-  },
-  "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User": {
-    "mailNickname": "abc123"
   }
 }
 ```
@@ -770,6 +767,8 @@ Content-Type: application/scim+json
 **Response (201 Created):**
 
 Returns the SCIM representation of the user created.
+
+In this example, Microsoft Entra ID derives the `mailNickname` value `abc123` from `userName`.
 
 ## Update a user
 
@@ -794,7 +793,7 @@ Upon success, the API returns HTTP Status 204.
 
 - For PATCH operations, while updating complex multi-valued attributes like addresses, the path property only supports “[type eq \" work\"]" filter.
 
-- Mandatory attribute `mailNickname` can't be removed using PATCH operation.
+- After a user is created, the `mailNickname` attribute can't be removed by using a PATCH operation.
 
 #### Example 1 – Update an attribute value
 
@@ -1041,9 +1040,9 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - When multiple pages are involved in the result:
 
-  - The default page size of 10 entries per page.
+  - The default page size of 100 entries per page.
 
-  - The max page size is 100 entries per page.
+  - The max page size is 1000 entries per page.
 
 - In the `filter` query parameter, only the “and” logic operator is supported. The following group attributes are allowed for “eq” compare operator.  
 
@@ -1344,7 +1343,7 @@ The `/groups` endpoint allows a PATCH request to be made for updating an existin
 
 PATCH `https://graph.microsoft.com/rp/scim/groups/{id}`
 
-Upon success, the API returns HTTP Status 200.
+Upon success, the API returns HTTP Status 204.
 
 ### Permissions
 

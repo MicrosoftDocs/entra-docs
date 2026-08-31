@@ -2,9 +2,12 @@
 title: Service limits and restrictions
 description: Usage constraints and other service limits for the Microsoft Entra service
 ms.topic: reference
-ms.date: 01/31/2025
-ms.custom: aaddev;it-pro
+ms.date: 07/29/2026
+ms.custom: aaddev;it-pro, msecd-doc-authoring-1018
 ms.reviewer: vincesm
+ai-usage: ai-assisted
+
+#customer intent: As an IT administrator, I want to review Microsoft Entra service limits so that I can plan and manage directory resources within supported limits.
 
 ---
 # Microsoft Entra service limits and restrictions
@@ -19,5 +22,4 @@ This article contains the usage constraints and other service limits for Microso
 ## Related content
 
 * [Configure group claims for applications by using Microsoft Entra ID](../hybrid/connect/how-to-connect-fed-group-claims.md)
-* [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md)
 * [How Azure subscriptions are associated with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md)

@@ -2,10 +2,8 @@
 title: Known Limitations for Global Secure Access
 ms.reviewer: teresayao
 description: Discover the known limitations of Global Secure Access, including platform-specific issues and mitigations, to ensure seamless deployment and management.
-author: HULKsmashGithub
 ms.topic: reference
-ms.author: jayrusso
-ms.date: 04/15/2026
+ms.date: 05/29/2026
 ms.custom: agent-id-ignite
 
 
@@ -263,16 +261,26 @@ Known limitations for Internet Access include:
 - The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic and transfers IPv6 traffic directly to the network. To make sure that all traffic routes to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
 - UDP isn't supported on this platform yet.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
+- Source traffic type filtering (preview) is supported only for client-based Global Secure Access connections. Remote networks don't support source traffic type rules.
+- HTTP method request filtering (preview) enforcement requires TLS inspection for HTTPS traffic. Without TLS inspection, HTTP method headers aren't visible, and only Server Name Indication (SNI)-based web content filtering rules apply.
+- When the Global Secure Access client can't determine task or processor information, source traffic type is classified as **Unknown**.
+- Source traffic type classification accuracy depends on the Global Secure Access client's ability to inspect process metadata on the endpoint device.
 
 ## B2B guest access (preview) limitations
 <a name="b2b-guest-access-limitations"></a>
 - The Global Secure Access client doesn't support multi-session Azure Virtual Desktop.
 
 ## Global Secure Access In Government Cloud limitations
-Global Secure Access is not available in the US Government community cloud High (GCC-H), Department of Defense cloud and other Govt/Sovereign cloud environments.
+Global Secure Access is available in the US Government Community Cloud (GCC), but isn't yet supported in the US Government Community Cloud High (GCC-H), Department of Defense cloud, or other government or sovereign cloud environments.
 
-For usage in US Government community (GCC) cloud, known limitations/disclaimers include:
-
-- Non Federal Information Processing Standard (FIPS) 140-2 certified: Note that while the GSA service is FedRAMP High accredited, it is not yet FIPS 140-2 certified. Microsoft is actively working toward achieving FIPS accreditation/certification, and this process is currently underway. Customers should consider this status when evaluating compliance requirements. FIPS 140-2 is a US government standard that defines FedRAMP minimum security requirements for cryptographic modules in products and systems. For more information, see [Federal Information Processing Standard (FIPS) 140](/azure/compliance/offerings/offering-fips-140-2).
-- Data Residency Requirements: Customers should carefully consider data residency requirements when evaluating the GSA solution for their needs. When using GSA, there is a possibility that your data (up to and including customer content) may be Transport Layer Security (TLS) terminated and processed outside the United States esp. in cases where the users access GSA while traveling outside of the USA and its territories. Additionally, data may also be TLS terminated and processed outside of the USA when GSA routes traffic through the nearest available edge location, which may be outside USA borders depending on several factors. Factors for TLS termination and processing outside the US may include but not limited to: user’s physical location, proximity to edge locations, network latency, service availability, performance considerations, customer configurations and so on. As an example, a user near a USA border with a non-USA region may connect to a non-USA edge, where data inspection and policy enforcement take place.    
+## Explicit Forward Proxy (preview) limitations
+Known limitations for Explicit Forward Proxy (preview) include:
+- TLS inspection is mandatory for EFP. TLSi bypass policies are ignored when user is connecting using the EFP network channel.
+- EFP PAC file hosting is limited to EFP-generated default recommended PAC file.
+- You must use EFP PAC file hosting to apply user-aware policies. If you host your own PAC files, baseline security profile will apply.
+- **All internet apps with Global Secure Access** resource in Conditional Access does not include **GSA-ExplicitForwardProxy** resource. If you use the **All internet apps with Global Secure Access** for security profile assignment, you must create a separate policy targeting **GSA-ExplicitForwardProxy** as the resource and specifying the Global Secure Access profile to be used on the **Session** tab of Conditional Access policy.
+- If you apply Conditional Access Policy requiring Compliant Network to be satisfied for All Apps, you must exclude the **GSA-ExplicitForwardProxy** resource from that policy. EFP requires Entra ID authentication prior to the connection - Entra ID traffic must always be excluded from proxy automatic configuration (PAC) files. Because Entra ID traffic is not going through EFP, Compliant Network check will fail, unless the **GSA-ExplicitForwardProxy** principal is excluded from the policy.
+- On MacOS, coexistence of GSA client and EFP settings are not supported due to client certificate issues.
+- Microsoft Office 365 traffic should not be tunneled to EFP. EFP-hosted PAC file excludes Office 365 destinations. Office 365 traffic is defined in the [Microsoft 365 IP and FQDN list](https://aka.ms/m365iplist)
+- EFP supports Microsoft Entra Internet Access traffic type. Private Access and Microsoft Traffic are not supported when users configure EFP.
 

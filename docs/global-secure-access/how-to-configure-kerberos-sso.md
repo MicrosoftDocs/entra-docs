@@ -3,7 +3,7 @@ title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access
 description: "Enable single sign-on to on-premises resources published through Microsoft Entra Private Access using Kerberos authentication. Optionally integrate Windows Hello for Business cloud Kerberos trust."
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 05/26/2026
 ai-usage: ai-assisted
 ---
 
@@ -40,7 +40,7 @@ Extra configuration beyond this guide is required for Windows Hello for Business
 
 Deployment of Hybrid Cloud Kerberos Trust with Microsoft Entra ID is recommended. Devices using cloud Kerberos trust get a TGT ticket that is used for single sign-on. For more information about cloud Kerberos trust, see [Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#use-sso-to-sign-in-to-on-premises-resources-by-using-fido2-keys). 
 
-To deploy Windows Hello for Business cloud Kerberos trust with on-premises Active Directory.
+To deploy Windows Hello for Business cloud Kerberos trust with on-premises Active Directory, complete the following steps:
 1. Create the Microsoft Entra ID Kerberos server object. For more information about creating the object, see [Install the AzureADHybridAuthenticationManagement module](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
 1. Enable WHfB Cloud Trust on your devices using Intune or Group Policies. For more information about enabling WHfB, see [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune#configure-windows-hello-for-business-policy).
 
@@ -107,26 +107,34 @@ Microsoft Entra ID joined devices using password authentication rely on attribut
 
 If these values aren't present, check your Microsoft Entra ID Connect synchronization settings and validate these attributes are being synchronized. For more information about attribute synchronization, see [Microsoft Entra Connect Sync: Attributes synchronized to Microsoft Entra ID](../identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md).
 
-If using Windows Hello for Business to sign in, run the commands from a nonelevated command prompt.
-`dsregcmd /status`
+If using Windows Hello for Business to sign in, complete the following verification steps from a nonelevated command prompt:
 
-Verify the attributes have `YES` as values.
- 
-`PRT` should be present. For more information about `PRT`, see [Troubleshoot primary refresh token issues on Windows devices](../identity/devices/troubleshoot-primary-refresh-token.md).
+1. Run the `dsregcmd /status` command.
 
-`OnPremTgt` : *YES* indicates Entra Kerberos is correctly configured and the user has been issued a partial TGT for SSO to on-premises resources. For more information about configuring cloud Kerberos trust, see [Passwordless security key sign-in to on-premises resources](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
+   ```cmd
+   dsregcmd /status
+   ```
 
-Run the `klist` command.
+   Verify the attributes have `YES` as values:
 
-`klist cloud_debug`
+   - `PRT` should be present. For more information about `PRT`, see [Troubleshoot primary refresh token issues on Windows devices](../identity/devices/troubleshoot-primary-refresh-token.md).
+   - `OnPremTgt`: *YES* indicates Entra Kerberos is correctly configured and the user has been issued a partial TGT for SSO to on-premises resources. For more information about configuring cloud Kerberos trust, see [Passwordless security key sign-in to on-premises resources](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
 
-Verify the `Cloud Primary (Hybrid logon) TGT available:` field has a value of 1.
+1. Run the `klist cloud_debug` command.
 
-Run the `nltest` command.
+   ```cmd
+   klist cloud_debug
+   ```
 
-`nltest /dsgetdc:contoso /keylist /kdc`
+   Verify the `Cloud Primary (Hybrid logon) TGT available:` field has a value of `1`.
 
-Verify the DC locator returns a Domain Controller that is a participant of cloud Kerberos trust operations. The returned DC should have the `KEYLIST` flag.
+1. Run the `nltest /dsgetdc:contoso /keylist /kdc` command.
+
+   ```cmd
+   nltest /dsgetdc:contoso /keylist /kdc
+   ```
+
+   Verify the DC locator returns a Domain Controller that is a participant of cloud Kerberos trust operations. The returned DC should have the `KEYLIST` flag.
 
 ### How to avoid Kerberos Negative Caching on Windows Machines
 Kerberos is the preferred authentication method for services in Windows that verify user or host identities. Kerberos negative caching causes a delay in Kerberos tickets.

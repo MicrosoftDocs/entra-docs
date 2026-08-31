@@ -1,8 +1,6 @@
 ---
 title: Enable External ID High Scale Compatibility (HSC) mode
 description: Enable HSC mode on your Azure AD B2C tenant to adopt Microsoft Entra External ID endpoints while keeping existing users and credentials in place.
-author: garrodonnell
-ms.author: godonnell
 ms.topic: how-to
 ms.date: 03/13/2026
 ai-usage: ai-assisted
@@ -25,6 +23,9 @@ In this article, you’ll learn how to:
 ## Prerequisites
 
 This article assumes you've already chosen the **High Scale Compatibility (HSC) mode migration approach**. If you still need to decide between approaches (standard vs. HSC mode), start with [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md).
+
+> [!IMPORTANT]
+> Enabling HSC mode is a significant tenant-level change and can only be reversed by contacting Microsoft support. Before you call the enable API, confirm you've reviewed the [HSC mode limitations](plan-your-migration-from-b2c-to-external-id.md#hsc-mode-limitations) — including gaps for social identity providers, passkeys, age gating, admin portal experience, and Conditional Access — and validated that your scenarios are supported.
 
 Before you begin, contact your Microsoft account team or raise a support ticket to request allowlisting for HSC mode. This process can take a few days to complete. You can't proceed to Stage 1 until your tenant is allowlisted.
 

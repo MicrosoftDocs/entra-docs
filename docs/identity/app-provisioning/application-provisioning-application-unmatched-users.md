@@ -234,9 +234,9 @@ After making updates to Microsoft Entra users, users in the application, or the 
 
 * If you are using SAP Cloud Identity Services, then follow the [SAP Cloud Identity Services provisioning tutorial](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md#ensure-existing-sap-cloud-identity-services-users-have-the-necessary-matching-attributes) starting at the step to ensure existing SAP Cloud Identity Services users have the necessary matching attributes. In that tutorial, you export a list of users from SAP Cloud Identity Services to a CSV file, and then use PowerShell to match those users to users in Microsoft Entra ID.
 
-* If your application is using an LDAP directory, then follow the [LDAP directory provisioning tutorial](~/identity/app-provisioning/on-premises-ldap-connector-configure.md#collect-existing-users-from-the-ldap-directory) starting at the step to collect existing users from the LDAP directory.
+* If your application is using an LDAP directory, then follow the [LDAP directory provisioning tutorial](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
 
-* For other applications, including those applications with a SQL database or that have provisioning support in the application gallery, follow the tutorial to [govern an application's existing users](~/id-governance/identity-governance-applications-existing-users.md#collect-existing-users-from-an-application) starting at the step to collect existing users from the application.
+* For other applications, including those applications with a SQL database or that have provisioning support in the application gallery, follow the tutorial to [govern an application's existing users](~/id-governance/identity-governance-applications-existing-users.md).
 
 ## Assign users to application roles and enable provisioning
 

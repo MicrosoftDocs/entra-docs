@@ -62,9 +62,6 @@ When someone wants access, they request it from the [My Groups portal](https://m
 
     :::image type="content" source="./media/groups-self-service-management/groups-settings-general.png" alt-text="Screenshot that shows Microsoft Entra groups General settings." lightbox="./media/groups-self-service-management/groups-settings-general.png":::
 
-    > [!NOTE]
-    > Changes regarding the Self Service Group Management setting are currently under review and won't take place as originally planned. A deprecation date will be announced in the future.
-
 1. Set **Owners can manage group membership requests in the Access Panel** to **Yes**.
 1. Set **Restrict user ability to access groups features in the Access Panel** to **No**.
 1. Set **Users can create security groups in Azure portals, API or PowerShell** to **Yes** or **No**.

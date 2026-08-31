@@ -3,7 +3,7 @@ title: Microsoft Entra ID Governance licensing for guest users
 description: Learn how Microsoft Entra ID is licensed for guest users.
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 07/09/2026
 ms.reviewer: jercon
 #Customer Intent: As an IT admin, I want to understand how Microsoft Entra ID Governance is licensed for guest users so that I can ensure proper licensing for external collaborators.
 ---
@@ -47,6 +47,7 @@ The following table contains a list of currently billable actions for **guest us
 | Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Bill on workflow execution.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/{workflowId}/activate  | Workflow execution started for user.  |
 | Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill when guest user is included in review. <br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings are enabled in a group review. | Decision item summary.  |
 | Access Reviews    | [Access Review – inactive users](../identity/users/clean-up-stale-guest-accounts.md#monitor-guest-accounts-at-scale-with-inactive-guest-insights) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Decision item summary.  |
+| Access Reviews    | [Access Review – Catalog Access Reviews](catalog-access-reviews.md) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/unified/definitions/  | Decision item summary.  |
 
 
 ## Guest billing in multitenant organizations
@@ -98,7 +99,7 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 **May**:
 
 - Tailspin Toys creates an inactive guest access review for 200 users. 
-- Tailspin creates a second access review for a security group with 300 guest users with the user-to-group affiliation feature enabled. 
+- Tailspin creates a second access review for a security group with a different set of 300 guest users with the user-to-group affiliation feature enabled. 
 - Billing: For May, Tailspin is billed for 500 users – 200 for the inactive guest access review and 300 for the review with user-to-group affiliation. 
 
 **June**:
@@ -153,6 +154,10 @@ billed to the governance guest add-on. Only governance features that are exclusi
 **Does Governance guest billing apply to all guest users, including those within the first 50,000 Monthly Active Users (MAU)?**
 
 Yes, there's no free tier for governance billing. Governance guest billing applies to all guest users, even those within the first 50,000 MAU.
+
+**How can I estimate or understand my guest usage for Microsoft Entra ID Governance billing?**
+
+You can use the EIG Guest Usage Monitoring Workbook to understand the guest usage trend within your tenant. This report shows past usage that would have been billed, but future usage may differ. To provide feedback about the EIG Guest Usage Monitoring Workbook, visit this [form](https://forms.office.com/r/N4dYnQcXTN).
 
 
 ## Guest Governance Features Unavailable Without the Microsoft Entra ID Governance for Guests Add-on 

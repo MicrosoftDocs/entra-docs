@@ -1,7 +1,6 @@
 ---
 title: Manage app consent policies for group owners  
 description: Learn how to manage built-in and custom app consent policies for group owner to control when consent can be granted.
-
 ms.topic: how-to
 ms.date: 05/16/2025
 ms.reviewer: phsignor, yuhko

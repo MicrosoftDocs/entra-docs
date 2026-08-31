@@ -1,12 +1,10 @@
 ---
 title: Starter code for authentication events trigger for Azure Functions client library in C#
 description: Code snippet for a custom authentication extension using the Azure Functions client library in C#.
-author: cilwerner
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: include
 ms.date: 04/10/2024
-ms.author: cwerner
 ms.reviewer: stsoneff
 ms.custom:
 ---

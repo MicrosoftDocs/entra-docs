@@ -1,12 +1,10 @@
 ---
 title: Control user access to agents
 description: Learn how to control user and agent access to applications using app roles and the assignmentRequired property for secure access management.
-author: omondiatieno
+ 
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.author: jomondi
 ms.reviewer: ergreenl
-
 #Customer intent: As an IT administrator managing agent identities, I want to control user and agent access to applications using app roles and assignment requirements, so that I can enforce least privilege access and prevent unauthorized usage of agents.
 ---
 

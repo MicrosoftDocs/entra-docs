@@ -210,6 +210,8 @@
                     href: tutorial-native-authentication-single-page-app-react-enable-mfa.md
                   - name: Add social sign-in
                     href: tutorial-native-authentication-single-page-app-react-social-sign-in.md
+                  - name: Add custom headers to network requests
+                    href: tutorial-native-authentication-single-page-app-javascript-custom-headers.md
         - name: Angular
           items:
             - name: Browser-delegated authentication
@@ -236,6 +238,8 @@
                 href: tutorial-native-authentication-single-page-app-angular-enable-mfa.md
               - name: Add social sign-in
                 href: tutorial-native-authentication-single-page-app-angular-social-sign-in.md
+              - name: Add custom headers to network requests
+                href: tutorial-native-authentication-single-page-app-javascript-custom-headers.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -527,6 +531,8 @@
                   href: tutorial-native-authentication-android-self-service-password-reset.md
                 - name: Support web fallback
                   href: tutorial-native-authentication-android-support-web-fallback.md
+                - name: Add custom headers to network requests
+                  href: tutorial-native-authentication-android-custom-headers.md
                 - name: Call an API
                   href: tutorial-native-authentication-android-sign-in-call-api.md
                   displayName: multiple access token
@@ -568,6 +574,8 @@
                   href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
                 - name: Support web fallback
                   href: tutorial-native-authentication-ios-macos-support-web-fallback.md
+                - name: Add custom headers to network requests
+                  href: tutorial-native-authentication-ios-swift-custom-headers.md
                 - name: Call an API
                   href: tutorial-native-authentication-ios-sign-in-call-api.md
     - name: Samples
@@ -604,6 +612,8 @@
               href: /entra/msal/objc/single-sign-on-macos-ios
             - name: Calling a web API
               href: scenario-mobile-call-api.md
+        - name: Implement WebView SSO with native authentication
+          href: how-to-native-authentication-webview-sso.md
 - name: Service, daemon, script
   items:
     - name: Service/daemon authentication
@@ -722,6 +732,10 @@
                   href: custom-extension-email-otp-get-started.md
                 - name: On email OTP send event reference
                   href: custom-extension-email-otp-send-data.md
+            - name: Account Recovery (additional claim validation)
+              items:
+                - name: Create a custom authentication extension for account recovery
+                  href: tutorial-custom-authentication-extension-account-recovery.md
             - name: Troubleshoot your custom authentication extension
               href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
@@ -927,32 +941,32 @@
         - name: OAuth 2.0 application types
           displayName: App types, OAuth
           href: v2-app-types.md
-        - name: OAuth 2.0 and OpenID Connect (OIDC)
+        - name: Token grant flows
           items:
-            - name: Token grant flows
-              items:
-                - name: OAuth 2.0 auth code grant
-                  href: v2-oauth2-auth-code-flow.md
-                - name: OAuth 2.0 client credentials grant
-                  href: v2-oauth2-client-creds-grant-flow.md
-                - name: OAuth 2.0 device code flow
-                  href: v2-oauth2-device-code.md
-                - name: OAuth 2.0 on-behalf-of flow
-                  displayName: OBO
-                  href: v2-oauth2-on-behalf-of-flow.md
-                - name: OAuth 2.0 implicit grant flow
-                  href: v2-oauth2-implicit-grant-flow.md
-                - name: OAuth 2.0 resource owner password credentials grant
-                  displayName: ROPC
-                  href: v2-oauth-ropc.md
-                - name: OpenID Connect
-                  href: v2-protocols-oidc.md
-            - name: Certificate credentials
-              href: certificate-credentials.md
-            - name: Signing key rollover
-              href: signing-key-rollover.md
-            - name: UserInfo endpoint (OIDC)
-              href: userinfo.md            
+            - name: OAuth 2.0 auth code grant
+              href: v2-oauth2-auth-code-flow.md
+            - name: OAuth 2.0 client credentials grant
+              href: v2-oauth2-client-creds-grant-flow.md
+            - name: OAuth 2.0 device code flow
+              href: v2-oauth2-device-code.md
+            - name: OAuth 2.0 on-behalf-of flow
+              displayName: OBO
+              href: v2-oauth2-on-behalf-of-flow.md
+            - name: OAuth 2.0 implicit grant flow
+              href: v2-oauth2-implicit-grant-flow.md
+            - name: OAuth 2.0 resource owner password credentials grant
+              displayName: ROPC
+              href: v2-oauth-ropc.md
+            - name: OpenID Connect (OIDC)
+              href: v2-protocols-oidc.md
+            - name: OIDC extensibility reference
+              href: reference-oidc-extensibility.md
+        - name: Certificate credentials
+          href: certificate-credentials.md
+        - name: Signing key rollover
+          href: signing-key-rollover.md
+        - name: UserInfo endpoint (OIDC)
+          href: userinfo.md            
         - name: SAML 2.0
           items:
             - name: How Microsoft Entra ID uses the SAML protocol
@@ -982,6 +996,8 @@
           href: supported-accounts-validation.md
     - name: Native authentication API reference
       href: reference-native-authentication-api.md
+    - name: Credential management API reference
+      href: reference-credential-management-api.md
     - name: Endpoint reference
       items: 
         - name: Admin consent URI

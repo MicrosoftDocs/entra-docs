@@ -5,7 +5,7 @@ author: nguhiu
 manager: mwongerapk
 ms.reviewer: celested
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Progress ShareFile so that I can control who has access to Progress ShareFile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -17,14 +17,15 @@ In this article, you learn how to integrate Progress ShareFile with Microsoft En
 * Enable your users to be automatically signed-in to Progress ShareFile with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Citrix ShareFile is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Progress ShareFile single sign-on (SSO) enabled subscription.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 

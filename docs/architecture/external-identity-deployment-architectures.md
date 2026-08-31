@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra External ID deployment architectures with Microsoft Entra
 description: Learn to securely deploy and operate Microsoft Entra External ID architectures with Microsoft Entra. 
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.topic: concept-article
 ms.date: 10/24/2024
 

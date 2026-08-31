@@ -66,4 +66,3 @@ If you aren't yet eligible to move to Cloud Sync, use this table for more inform
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
 - [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 - [Microsoft Entra Connect version history](reference-connect-version-history.md)
-

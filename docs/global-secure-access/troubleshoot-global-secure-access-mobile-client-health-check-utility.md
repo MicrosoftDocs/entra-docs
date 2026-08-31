@@ -2,9 +2,7 @@
 title: Troubleshoot the Global Secure Access mobile client with Health check utility
 description: Learn if a device can communicate with the Global Secure Access service and tunnel traffic, by using the health check utility.
 ms.topic: troubleshooting
-ms.author: matursca
-author: jricketts
-ms.reviewer: gauthamca
+ms.reviewer: gauthamca, matursca, jricketts
 ms.date: 03/20/2026
 
 # Customer intent: I want a single view for device compliance, local network configuration, and policy-service readiness signals that report a healthy state and traffic forwarding. 

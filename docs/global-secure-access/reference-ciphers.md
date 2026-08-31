@@ -1,8 +1,6 @@
 ---
 title: Ciphers for Microsoft Entra Private Access  
 description: Learn about the supported cryptographic algorithms, or ciphers, used for Microsoft Entra Private Access.
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.topic: reference
 ms.service: global-secure-access
 ms.date: 03/09/2026

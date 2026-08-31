@@ -1,7 +1,6 @@
 ---
 title: 'Install your synchronization tool'
 description: This article describes the steps required to install either cloud sync or Microsoft Entra Connect.
-
 ms.topic: install-set-up-deploy
 ms.tgt_pltfrm: na
 ms.date: 09/18/2025
