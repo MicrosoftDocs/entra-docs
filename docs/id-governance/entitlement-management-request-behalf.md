@@ -61,7 +61,7 @@ Follow these steps to edit the policies, allowing on behalf of requests, for an 
 1. Select the policy you wish to edit or create a new policy. 
 
 1. On the **Requests** tab, set **Enable new requests** to Yes. This should show you the option **Allow managers to request on behalf of employees**. Set that option to Yes.  
-    :::image type="content" source="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" lightbox="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" alt-text="Screenshot of editing an access package;s request on behalf of policy.":::
+    :::image type="content" source="media/entitlement-management-request-behalf/configure-request-policy-for-anyone.png" lightbox="media/entitlement-management-request-behalf/configure-request-policy-for-anyone.png" alt-text="Screenshot of editing an access package's request on behalf of policy.":::
 1. Save your policy. 
 
 ## Request an access package on behalf of an employee
