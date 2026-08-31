@@ -326,12 +326,14 @@ items:
         href: how-to-migrate-web-content-filtering-policies.md
       - name: Check URL category
         href: how-to-check-web-content-filtering-categories.md
+      - name: Customize the block page
+        href: how-to-customize-block-page.md
+      - name: Add custom headers for tenant restrictions in SaaS applications
+        href: how-to-configure-custom-headers.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
       - name: Configure cloud firewall
-        href: how-to-configure-cloud-firewall.md
-      - name: Customize the block page
-        href: how-to-customize-block-page.md
+        href: how-to-configure-cloud-firewall.md  
       - name: Configure network content filtering
         href: how-to-network-content-filtering.md
       - name: Configure the AI Gateway prompt injection protection
