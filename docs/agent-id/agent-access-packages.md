@@ -77,6 +77,24 @@ Agents can then be assigned access packages through three different request path
 
 After submission, the access request is routed to designated approvers based on the access package policy configuration.
 
+## Request an access package on behalf of another user
+
+Users with the appropriate permissions can request access packages on behalf of another user in their organization.
+
+1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com/). For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
+
+1. On the My Access Portal page, select **Access packages**.
+
+1. On the Access packages page, locate the access package you want to request for a direct report and select **Request**.
+
+1. On the Request pane under **Request details**, select requesting for **Others**.
+
+1. Select **Anyone in your organization** and search for the user you want to submit the request for.
+
+   [![Screenshot of selecting Anyone in your organization when requesting an access package on behalf of another user.](../id-governance/media/entitlement-management-request-behalf/request-access-package-for-anyone.png)](../id-governance/media/entitlement-management-request-behalf/request-access-package-for-anyone.png#lightbox)
+
+1. Continue with the remaining request steps to complete the access package request on behalf of the user.
+
 ## Access assignment lifecycle
 
 Once an approver accepts the access package assignment request, the agent identity receives time-bound access to the specified resources. The access is granted according to the resource roles defined in the access package. This establishes a clear start and end date for the access the agent might need.
