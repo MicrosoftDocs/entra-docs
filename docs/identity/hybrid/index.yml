@@ -7,12 +7,10 @@ metadata:
   description: Integrate your on-premises directories with Microsoft Entra ID. This allows you to provide a common identity for your users for Microsoft 365, Azure, and SaaS applications integrated with Microsoft Entra ID.
   manager: mwongerapk
   ms.collection: na
-  ms.date: 08/10/2026
+  ms.date: 05/01/2023
   ms.service: entra-id
   ms.subservice: hybrid
   ms.topic: landing-page
-  ai-usage: ai-assisted
-  ms.custom: msecd-doc-authoring-1023
   
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
@@ -97,11 +95,11 @@ landingContent:
           url: cloud-sync/govern-on-premises-groups.md
         - text: Supported topologies - Microsoft Entra ID to AD
           url: cloud-sync/plan-cloud-sync-topologies.md
-        - text: Configuration - Microsoft Entra ID to AD (preview)
+        - text: Configuration - Microsoft Entra ID to AD
           url: cloud-sync/how-to-configure-entra-to-active-directory.md
-        - text: Scenario - Provisioning users and groups to AD (preview)
-          url: cloud-sync/tutorial-users-groups-provisioning-walkthrough.md
-        - text: Using directory extensions when provisioning to AD
+        - text: Scenario - Provisioning groups to AD
+          url: cloud-sync/tutorial-group-provisioning.md
+        - text: Scenario - Using directory extensions with group provisioning to AD
           url: cloud-sync/tutorial-directory-extension-group-provisioning.md
         - text: Provisioning to Active Directory FAQ
           url: cloud-sync/reference-provision-to-active-directory-faq.yml

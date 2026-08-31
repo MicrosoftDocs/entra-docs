@@ -17,7 +17,7 @@ The following prerequisites are required to implement provisioning groups to Act
 
  - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises AD DS schema with the *msDS-ExternalDirectoryObjectId* attribute, which is available in Windows Server 2016 and later.  
- - Provisioning agent with build version [1.1.2334.0](../cloud-sync/reference-version-history.md#1123340) or later.
+ - Provisioning agent with build version [1.1.1373.0](../cloud-sync/reference-version-history.md#1113730) or later.
 
  > [!NOTE]
  > The permissions to the service account are assigned during clean install only. If you're upgrading from the previous version, then permissions need to be assigned manually by using PowerShell: 
@@ -112,10 +112,10 @@ The following table is a list of App Role IDs for Clouds:
 
 Here are more points to consider when you provision groups to AD DS.
 
-- Group membership written to AD DS includes only members that have an AD DS account. Those members can be on-premises synchronized users, cloud-managed users that Cloud Sync provisions to AD DS because they're in scope of user provisioning, or other cloud-created security groups. A cloud-managed user that has no AD DS account is skipped.
-- On-premises synchronized users must have the *onPremisesObjectIdentifier* attribute set on their account.
+- Groups provisioned to AD DS using Cloud Sync can only contain on-premises synchronized users or other cloud-created security groups.
+- These users must have the *onPremisesObjectIdentifier* attribute set on their account.
 - The *onPremisesObjectIdentifier* must match a corresponding *objectGUID* in the target AD DS environment. 
 - An on-premises user *objectGUID* attribute can be synchronized to a cloud user *onPremisesObjectIdentifier* attribute by using either sync client.
 - Only global Microsoft Entra ID tenants can provision from Microsoft Entra ID to AD DS. Tenants such as B2C aren't supported.
-- The provisioning job is scheduled to run every 20 minutes.
+- The group provisioning job is scheduled to run every 20 minutes.
 

@@ -41,7 +41,7 @@ Applying Group SOA to a group that synchronizes from AD DS converts the group to
 
 - Concert Group SOA of on-premises groups. Provision the groups back to AD DS. In this model, you don’t need to change the app or create new groups. For more information, see [Govern on-premises Active Directory Domain Services based apps (Kerberos) using Microsoft Entra ID Governance](/entra/id-governance/scenarios/provision-entra-to-active-directory-groups).
 
-- To replicate the groups in AD DS, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD DS as Universal groups. In this model, you can change the app to use the new group security identifiers. If you use the "Account > Global > Domain Local" permission model, nest the newly provisioned group under the existing group. For more information, see [Tutorial: Govern access to an on-premises app from Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/tutorial-users-groups-provisioning-walkthrough).
+- To replicate the groups in AD DS, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD DS as Universal groups. In this model, you can change the app to use the new group security identifiers. If you use the "Account > Global > Domain Local" permission model, nest the newly provisioned group under the existing group. For more information, see [Tutorial - Provision groups to Active Directory Domain Services using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning).
 
 
 ### AD DS Minimization

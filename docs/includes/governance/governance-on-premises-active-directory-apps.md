@@ -61,9 +61,9 @@ Cloud Sync recognizes the converted group because both groups share the same sec
 
 Before you convert the SOA, consider the following recommended steps:
 
-1. Move the groups you plan to convert the SOA for to specific organizational units if possible. If you can't move the groups, set the OU path for each group to the original OU path before you convert SOA of the groups. For more information about how to set the original OU path, see [Provision users and groups from Microsoft Entra ID to Active Directory](../../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+1. Move the groups you plan to convert the SOA for to specific organizational units if possible. If you can't move the groups, set the OU path for each group to the original OU path before you convert SOA of the groups. For more information about how to set the original OU path, see [Provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync](../../identity/hybrid/cloud-sync/tutorial-group-provisioning.md).
 1. Make the SOA change.
-1. When provisioning the groups to AD DS, set the attribute mapping as explained in [Provision users and groups from Microsoft Entra ID to Active Directory](../../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+1. When provisioning the groups to AD DS, set the attribute mapping as explained in [Provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync](../../identity/hybrid/cloud-sync/tutorial-group-provisioning.md).
 1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups. 
 
 For more information about how to configure the target location for groups that are provisioned to AD DS, see [Scope filter target container](/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
@@ -164,3 +164,4 @@ A user in the new AD DS group who signs in to a domain-joined device might have 
 ## Existing Microsoft Entra Connect group writeback v2 customers
 
 If you use Microsoft Entra Connect group writeback v2, you need to move to Cloud Sync provisioning to AD DS before you can take advantage of Cloud Sync group provisioning. For more information, see [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md).
+

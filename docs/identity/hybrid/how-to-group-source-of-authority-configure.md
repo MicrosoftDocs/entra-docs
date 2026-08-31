@@ -74,7 +74,7 @@ If you want to provision the group back to AD DS, plan to complete the following
 1. Convert the Source of Authority (SOA) when ready. 
 1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
 
-For more information, see [How provisioning from Microsoft Entra ID to Active Directory works](cloud-sync/how-provisioning-to-active-directory-works.md).
+For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/tutorial-group-provisioning.md).
 
 ## Convert SOA for a test group
 
@@ -565,5 +565,5 @@ To scope a group for Source of Authority operations within an Administrative Uni
 ## Related content
 
 - [Group SOA overview](concept-source-of-authority-overview.md)
-- [Tutorial: Govern access to an on-premises app from Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/tutorial-users-groups-provisioning-walkthrough)
+- [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning)
 - [onPremisesSyncBehavior Microsoft Graph API](/graph/api/resources/onpremisessyncbehavior)
