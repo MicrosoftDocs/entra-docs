@@ -33,7 +33,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 
 ## Create Workiva SSO Configuration
 
-To access the Security Panel where the SSO configuration can be found, an assigned **Organization Security Admin** will need to: 
+To access the Authentication Panel where the SSO configuration can be found, an assigned **Organization Security Admin** will need to: 
 
 Log in **Workiva** > **Person Icon** > **Admin** > **Organization Admin**.
 
@@ -41,7 +41,7 @@ Log in **Workiva** > **Person Icon** > **Admin** > **Organization Admin**.
 
 Once the new browser tab loads, browse to:
 
-**Security** > **Single Sign-On** > **SSO configuration** > **+ Create SSO Configuration:**
+**Identity & access management** > **Authentication** > **SSO configuration** > **+ Create SSO Configuration:**
 	
 ![Find SSO Config](./media/wdesk-tutorial/account.png)
 
@@ -49,15 +49,15 @@ To create an SSO configuration the assigned Org Security Admin will need to:
 
 **Name** this specific SSO configuration > select Azure as the **Identity Provider (IdP)** > then **Create Configuration**.
 	
-![SSO Config Name and IdP Identifier](./media/wdesk-tutorial/ConfigurationName.png)
+Insert new config screenshot of + create config
 
 Under Step 1 Workiva Metadata, the Org Security Admin will be able to obtain the **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** endpoints. There is also an option to download the actual Workiva .XML Metadata file for the Azure import option.
 	
-![Find Workiva SSO URL Endpoints](./media/wdesk-tutorial/WorkivaMetadata.png)
+Screenshot workiva endpoints with Azure names
 
 The **Advanced options** toggle will display additional **Login URL** and the **Logout URL** if required for configuration.
 
-![Extra SSO Endpoints](./media/wdesk-tutorial/LoginURL.png)
+Screenshot workiva 4 endpoints with Azure names
 
 ## Add Workiva from the Azure Entra ID Gallery
 
@@ -96,20 +96,19 @@ On the **Select a single sign-on method** page, select **SAML**.
 On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings. 
 
 Azure can either:
-* **Import** the Workiva metadata file to parse out the Workiva details
+* **Import** the Workiva metadata file to parse out the Workiva details.
 * **Manually enter** the Workiva endpoint information.
 
 ![How to Edit SAML Config in Azure](./media/wdesk-tutorial/EditSAML.png)
 
 If manually, The **Org Security Admin** can follow the endpoint mapping below:
-* The **Workiva Metadata URL** will go into the **Azure Identifier (EntityID)**
-* The **Workiva Consumer URL** will go into the **Azure Reply URL**
-* The **Workiva Login URL** will go into the **Azure Sign on URL**
+* The **Workiva Identifier (Entity ID)** will go into the **Azure Identifier (EntityID)**
+* The **Workiva Reply URL** will go into the **Azure Reply URL**
+* The **Workiva Sign on URL** will go into the **Azure Sign on URL**
 * Leave the **Relay State** Blank
 * The **Workiva Logout URL** will go into the **Azure Logout URL (optional)**
 
 ![Where Workiva Endpoints go in Azure Config](./media/wdesk-tutorial/WorkivaEndpointsAzure.png)
-
 
 
 Once the configuration is saved with the SSO endpoints, click on **Edit** by step 2 to adjust the Attribute and Claims.
@@ -123,7 +122,9 @@ The preferred setup is to **match** the **Workiva Username** (case-insensitive) 
 
 ![Azure Unique User Identifier / Primary NameID](./media/wdesk-tutorial/AzureNameID.png)
 
-On the **Set up Single Sign-On with SAML** page, in the **SAML Certificates** section, select **Download** to download the **Federation Metadata XML** or copy the **App Federation Metadata URL** for the Workiva SSO configuration. 
+On the **Set up Single Sign-On with SAML** page, in the **SAML Certificates** section you can either:
+* Select **Download** to retrieve the **Federation Metadata XML** to import into Workiva.
+* Copy the **App Federation Metadata URL** for the Workiva SSO configuration. 
 
 Then under the **Set up Wdesk** section, copy the appropriate URL(s) as per your requirement.
 	
@@ -132,9 +133,9 @@ Then under the **Set up Wdesk** section, copy the appropriate URL(s) as per your
 ## Configuring Workiva Identity Provider (IdP) Settings
 
 Once the Workiva Org Security Admin has the Azure Entra ID Metadata, they can access the SSO Configuration to import it in 3 different ways.
-***Federation metadata URL**
-***Metadata XML file**
-***Manual entry**
+* **Federation metadata URL**
+* **Metadata XML file**
+* **Manual entry**
 
 ![Workiva Metadata Import Azure IdP Details](./media/wdesk-tutorial/WorkivaMetadataImport.png)
 
@@ -173,6 +174,18 @@ This method will have you download a template with 2 columns. The first column i
 If you only need to adjust a single or small set of users you can use the Search Users field to find the user(s) by a string to manually map their SSO ID. 
 
 ![Workiva Change Single SSO ID](./media/wdesk-tutorial/SSOIDSingle.png)
+
+## Assign Users and Groups in Entra ID
+
+If the Entra ID team has enabled **assignment required**, then users or groups will need to be assigned the Workiva application before they can access Workiva with SSO. 
+
+## Activate the Workiva SSO Configuration
+
+Once the SSO Configuration is complete and has been saved the Org Security Admin can **Activate** the SSO configuration to begin validation. 
+> [!Note]
+> This will not disable Workiva local authentication and users can continue to access with Workiva password and SSO until the SSO requirement setting is enabled.
+
+insert the activate sso screenshot
 
 ## Workiva SSO Exception List
 Add users to the **SSO Exceptions List** if they need to sign in with their Workiva username and password instead of SSO (ex: external auditors, legal counsel, etc.) By default, these users will use Workiva local authentication with email OTP to authenticate. [Here](https://support.workiva.com/hc/en-us/articles/360036006091-Configure-sign-in-and-session-options) is more information on Workiva non-SSO sign-in criteria. 
