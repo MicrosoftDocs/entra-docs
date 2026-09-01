@@ -30,7 +30,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 * Workiva supports **SP** and **IDP** initiated SSO.
 * Workiva can leverage **hybrid authentication** for easier integration.
 * Workiva contains an **SSO Exception List** for external third party users.
-* Workiva supports **Dual SSO Signing Certificates** for a smooth tranision
+* Workiva supports **Dual SSO Signing Certificates** for a smooth transition.
 
 ## Create Workiva SSO Configuration
 
@@ -53,8 +53,8 @@ To create an SSO configuration the assigned Org Security Admin will need to:
 ![Workiva SSO Config Info](./media/wdesk-tutorial/ConfigurationName.png)
 
 Then **Step 1 Workiva Metadata** will appear. The Org Security Admin will be able to obtain the **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** endpoints. There is also an option to download the actual Workiva .XML Metadata file for the Azure import option.
-	
-![Workiva Metadata Entpoints](./media/wdesk-tutorial/WorkivaMetadata.png)
+
+Insert Workiva metadata screenshot
 
 The **Advanced options** toggle will display additional **Login URL** and the **Logout URL** if required for configuration.
 
@@ -186,7 +186,13 @@ Once the SSO Configuration is complete and has been saved, select **Activate** t
 > [!Note]
 > This will not disable Workiva local authentication and users can continue to access with Workiva password and SSO until the SSO requirement setting is enabled.
 
-insert activity log screenshot
+
+Workiva has a built in SAML activity log to help Org Security Admins troubleshoot any SSO issues. 
+More information on how to resolve SAML errors can be found [here.](https://support.workiva.com/hc/en-us/articles/49026571296404-Resolve-common-SAML-single-sign-on-issues)
+
+![Workiva SAML Activity Log](./media/wdesk-tutorial/Workiva_ActivityLog.png)
+
+
 
 
 ![Workiva Activate SSO](./media/wdesk-tutorial/Workiva_SSO_Activate.png)
