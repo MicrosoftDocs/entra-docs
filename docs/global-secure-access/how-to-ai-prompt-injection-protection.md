@@ -2,7 +2,7 @@
 title: Protect enterprise generative AI apps with prompt injection protection
 description: "Protect your enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway prompt injection protection."
 ms.topic: how-to
-ms.date: 04/27/2026
+ms.date: 08/28/2026
 ms.reviewer: KaTabish
 ms.custom: sfi-image-nochange
 ai-usage: ai-assisted
@@ -37,7 +37,7 @@ To complete the steps in this process, you must have the following prerequisites
 
 To configure Prompt Injection Protection for your organization, complete the following steps:
 1. [Enable the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md#enable-the-internet-access-traffic-forwarding-profile) and configure the appropriate user assignments.
-1. Configure [Transport Layer Security (TLS) inspection settings](how-to-transport-layer-security-settings.md) and [TLS Inspection policies](how-to-transport-layer-security.md).
+1. Configure TLS inspection with either a [Microsoft-managed certificate](how-to-transport-layer-security-settings-managed-certificate.md) or [your own certificate](how-to-transport-layer-security-settings.md), and then configure [TLS inspection policies](how-to-transport-layer-security.md).
 1. Install and configure the Global Secure Access client on user devices. Follow the steps in [Install the Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md).
     > [!IMPORTANT]
     > Before you continue, test and ensure your client’s internet traffic is routed through the Global Secure Access service.

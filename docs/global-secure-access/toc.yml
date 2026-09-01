@@ -314,7 +314,9 @@ items:
         items:
           - name: What is Transport Layer Security inspection?
             href: concept-transport-layer-security.md
-          - name: Configure Transport Layer Security inspection settings
+          - name: Configure TLS inspection with a Microsoft-managed certificate (Preview)
+            href: how-to-transport-layer-security-settings-managed-certificate.md
+          - name: Configure TLS inspection with your own certificate
             href: how-to-transport-layer-security-settings.md
           - name: Configure Transport Layer Security inspection policies
             href: how-to-transport-layer-security.md
