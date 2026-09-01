@@ -92,12 +92,12 @@ Custom headers works with any service that supports header-based tenant restrict
 | Service | FQDNs | Header name | Header value (where to find it) |
 |---|---|---|---|
 | ChatGPT | `*.chatgpt.com`, `chatgpt.com` | `ChatGPT-Allowed-Workspace-Id` | The ID of your ChatGPT Enterprise or Team workspace, found in the workspace admin settings. |
-| Claude | `claude.ai`, `*.claude.ai`, `claude.com`, `*.claude.com`,`anthropic.com`,`*.anthropic.com`, `api.anthropic.com`,`*.api.anthropic.com` | `anthropic-allowed-org-ids` | The ID of your approved Anthropic organization, found in the Anthropic Console organization settings. |
-| GitHub | `github.com`,`*.github.com`,`api.github.com`,`*.api.github.com`,`*.githubcopilot.com`,`.githubcopilot.com` | `sec-GitHub-allowed-enterprise` | The ID (slug) of your approved GitHub enterprise, found in your GitHub enterprise account settings. |
+| Claude | `claude.ai`, `*.claude.ai`, `claude.com`, `*.claude.com`, `anthropic.com`, `*.anthropic.com`, `api.anthropic.com`, `*.api.anthropic.com` | `anthropic-allowed-org-ids` | The ID of your approved Anthropic organization, found in the Anthropic Console organization settings. |
+| GitHub | `github.com`, `*.github.com`, `api.github.com`, `*.api.github.com`, `*.githubcopilot.com`, `.githubcopilot.com` | `sec-GitHub-allowed-enterprise` | The ID (slug) of your approved GitHub enterprise, found in your GitHub enterprise account settings. |
 | Google Workspace | `*.google.com` | `X-GoogApps-Allowed-Domains` | A comma-separated list of the domains that you allow, defined in your Google Workspace configuration. |
-| Slack | `*.slack.com`,`.slack.com` | `X-Slack-Allowed-Workspaces-Requester` | The ID of your approved Slack workspace or enterprise, found in your Slack organization settings. |
-| Dropbox | `*.dropbox.com`,`dropbox.com` | `X-Dropbox-allowed-Team-Ids` | The team ID of your approved Dropbox Business team, found in the Dropbox admin console. |
-| YouTube | `*.youtube.com`,`.youtube.com` | `YouTube-Restrict` | `Strict` or `Moderate` to set the YouTube content restriction level. |
+| Slack | `*.slack.com`, `.slack.com` | `X-Slack-Allowed-Workspaces-Requester` | The ID of your approved Slack workspace or enterprise, found in your Slack organization settings. |
+| Dropbox | `*.dropbox.com`, `dropbox.com` | `X-Dropbox-allowed-Team-Ids` | The team ID of your approved Dropbox Business team, found in the Dropbox admin console. |
+| YouTube | `*.youtube.com`, `.youtube.com` | `YouTube-Restrict` | `Strict` or `Moderate` to set the YouTube content restriction level. |
 
 > [!IMPORTANT]
 > To restrict access to Microsoft Entra tenants, use [universal tenant restrictions](how-to-universal-tenant-restrictions.md) instead of custom headers.
