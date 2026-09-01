@@ -329,7 +329,7 @@ For additional troubleshooting, use Microsoft Entra sign-in logs and the SAML tr
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Submit your validation results](#review-and-submit-validation-results)
+> [Publish your app to Microsoft Entra App Gallery](publish-app-gallery.md)
 
 ## Related content
 

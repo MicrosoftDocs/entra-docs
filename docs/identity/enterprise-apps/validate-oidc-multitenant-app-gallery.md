@@ -166,7 +166,7 @@ With validation complete and a Test ID generated, you're ready to proceed with p
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Submit your validation results](#submit-validation-and-obtain-a-test-id)
+> [Publish your app to Microsoft Entra App Gallery](publish-app-gallery.md)
 
 ## Related content
 
