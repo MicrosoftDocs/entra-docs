@@ -58,11 +58,11 @@ Before you start validation, create your Microsoft Entra gallery submission and 
 1. In the Microsoft Entra admin center, start the process to publish your application to the Microsoft Entra gallery.
 1. Select **Publish your application**. If you already have a draft submission, select **Your published applications**.
 
-   :::image type="content" source="media/validate-oidc-multitenant-app-gallery/publish-your-application-gallery.png" alt-text="Screenshot of the Browse Microsoft Entra App Gallery page with the Publish to the app gallery option highlighted and Your published applications shown below it.":::
+    :::image type="content" source="media/validate-oidc-multitenant-app-gallery/publish-your-application-gallery.png" alt-text="Screenshot of the Browse Microsoft Entra App Gallery page with the Publish to the app gallery option highlighted and Your published applications shown below it." lightbox="media/validate-oidc-multitenant-app-gallery/publish-your-application-gallery.png":::
 
 1. Go to the **Integration type** step.
 
-   :::image type="content" source="media/validate-oidc-multitenant-app-gallery/integration-type-step-gallery.png" alt-text="Screenshot of the Publish Application to Gallery workflow on the Integration type step, with the Your Submission ID field highlighted.":::
+    :::image type="content" source="media/validate-oidc-multitenant-app-gallery/integration-type-step-gallery.png" alt-text="Screenshot of the Publish Application to Gallery workflow on the Integration type step, with the Your Submission ID field highlighted." lightbox="media/validate-oidc-multitenant-app-gallery/integration-type-step-gallery.png":::
 
 1. Copy the value shown under **Your Submission ID**.
 
@@ -140,7 +140,7 @@ Choose the sign-in flows that your application supports:
 - SP-initiated
 - Both
 
-:::image type="content" source="media/validate-saml-single-sign-on-app-gallery/validate-a-saml-app.png" alt-text="Screenshot showing the Entra App Validator beside a Microsoft Entra enterprise application. The validator asks which SAML sign-in flows the application supports, with IdP sign-in and SP sign-in selected.":::
+:::image type="content" source="media/validate-saml-single-sign-on-app-gallery/validate-a-saml-app.png" alt-text="Screenshot showing the Entra App Validator beside a Microsoft Entra enterprise application. The validator asks which SAML sign-in flows the application supports, with IdP sign-in and SP sign-in selected." lightbox="media/validate-saml-single-sign-on-app-gallery/validate-a-saml-app.png":::
 
 Only the flows that you declare are offered as validation scenarios. If you later remove a flow that already has captured runs, the validator deletes those runs because they no longer match the capabilities that you declared.
 
@@ -160,7 +160,7 @@ Only the working-certificate and expired-certificate scenarios count toward SAML
 
 IdP-initiated sign-on starts from Microsoft Entra ID. The user selects the application tile in My Apps, and Microsoft Entra ID posts an unsolicited SAML response to the application's ACS URL.
 
-:::image type="content" source="media/validate-saml-single-sign-on-app-gallery/run-idp-initiated-validation.png" alt-text="Screenshot of the Entra App Validator Test tab for SAML 2.0. The IdP sign-in My Apps scenario is expanded and shows required Working certificate and Expired certificate scenarios, plus an optional Single Logout scenario.":::
+:::image type="content" source="media/validate-saml-single-sign-on-app-gallery/run-idp-initiated-validation.png" alt-text="Screenshot of the Entra App Validator Test tab for SAML 2.0. The IdP sign-in My Apps scenario is expanded and shows required Working certificate and Expired certificate scenarios, plus an optional Single Logout scenario." lightbox="media/validate-saml-single-sign-on-app-gallery/run-idp-initiated-validation.png":::
 
 1. In the validator, select an **IdP-initiated working-certificate** scenario.
 1. Select your application from the My Apps tiles displayed by the validator.
@@ -179,7 +179,7 @@ Expected observations include the application tile, an unsolicited SAML response
 
 SP-initiated SSO starts from your application. Your application redirects the browser to Microsoft Entra ID with a SAML request. After the user authenticates, Microsoft Entra ID posts a SAML response to the ACS URL.
 
-:::image type="content" source="media/validate-saml-single-sign-on-app-gallery/run-sp-initiated-validation.png" alt-text="Screenshot of the Entra App Validator Test tab for SAML 2.0. The SP sign-in your app's login page scenario is expanded and shows required Working certificate and Expired certificate scenarios, plus an optional Single Logout scenario.":::
+:::image type="content" source="media/validate-saml-single-sign-on-app-gallery/run-sp-initiated-validation.png" alt-text="Screenshot of the Entra App Validator Test tab for SAML 2.0. The SP sign-in your app's login page scenario is expanded and shows required Working certificate and Expired certificate scenarios, plus an optional Single Logout scenario." lightbox="media/validate-saml-single-sign-on-app-gallery/run-sp-initiated-validation.png":::
 
 1. In the validator, select an **SP-initiated working-certificate** scenario.
 1. Identify the application.
@@ -264,7 +264,7 @@ $cert | Format-List `
 Wait 5–10 minutes after uploading and activating the expired certificate to allow the change to propagate before running the scenario. This helps ensure the run captures the newly activated certificate rather than the previous one.
 If the expired certificate does not propagate after 5–10 minutes, delete the non-expired certificate before running the scenario.
 
-:::image type="content" source="media/validate-saml-single-sign-on-app-gallery/expired-certificate-signature.png" alt-text="Screenshot of SAML signature details in the Entra App Validator. The Cert valid to value is marked EXPIRED.":::
+:::image type="content" source="media/validate-saml-single-sign-on-app-gallery/expired-certificate-signature.png" alt-text="Screenshot of SAML signature details in the Entra App Validator. The Cert valid to value is marked EXPIRED." lightbox="media/validate-saml-single-sign-on-app-gallery/expired-certificate-signature.png":::
 
 > [!NOTE]
 > Use a dedicated test certificate and test application. Do not use a production signing certificate for this scenario.
@@ -325,6 +325,11 @@ Review the validator's inline diagnosis first.
 | `AADSTS700016` | Application not found. | Confirm that the Identifier (Entity ID) matches an application in the tenant. |
 
 For additional troubleshooting, use Microsoft Entra sign-in logs and the SAML troubleshooting guidance.
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Submit your validation results](#review-and-submit-validation-results)
 
 ## Related content
 
