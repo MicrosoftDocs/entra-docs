@@ -54,7 +54,7 @@ To create an SSO configuration the assigned Org Security Admin will need to:
 
 Then **Step 1 Workiva Metadata** will appear. The Org Security Admin will be able to obtain the **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** endpoints. There is also an option to download the actual Workiva .XML Metadata file for the Azure import option.
 
-Insert Workiva metadata screenshot
+![Workiva Metadata Entpoints](./media/wdesk-tutorial/WorkivaMetadata.png)
 
 The **Advanced options** toggle will display additional **Login URL** and the **Logout URL** if required for configuration.
 
@@ -182,20 +182,18 @@ If the Entra ID team has enabled **assignment required**, then users or groups w
 
 ## Activate the Workiva SSO Configuration
 
-Once the SSO Configuration is complete and has been saved, select **Activate** the SSO configuration to begin validation. 
+Once the SSO Configuration is complete and has been saved, select **Activate** to enable the SSO configuration to begin validation. 
 > [!Note]
 > This will not disable Workiva local authentication and users can continue to access with Workiva password and SSO until the SSO requirement setting is enabled.
 
+![Workiva Activate SSO](./media/wdesk-tutorial/Workiva_SSO_Activate.png)
+
 
 Workiva has a built in SAML activity log to help Org Security Admins troubleshoot any SSO issues. 
-More information on how to resolve SAML errors can be found [here.](https://support.workiva.com/hc/en-us/articles/49026571296404-Resolve-common-SAML-single-sign-on-issues)
+More information on how to resolve those SAML errors can be found [here.](https://support.workiva.com/hc/en-us/articles/49026571296404-Resolve-common-SAML-single-sign-on-issues)
 
 ![Workiva SAML Activity Log](./media/wdesk-tutorial/Workiva_ActivityLog.png)
 
-
-
-
-![Workiva Activate SSO](./media/wdesk-tutorial/Workiva_SSO_Activate.png)
 
 ## Workiva SSO Exception List
 Add users to the **SSO Exceptions List** if they need to sign in with their Workiva username and password instead of SSO (ex: external auditors, legal counsel, etc.) By default, these users will use Workiva local authentication with email OTP to authenticate. [Here](https://support.workiva.com/hc/en-us/articles/360036006091-Configure-sign-in-and-session-options) is more information on Workiva non-SSO sign-in criteria. 
