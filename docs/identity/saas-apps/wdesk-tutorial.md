@@ -197,8 +197,6 @@ More information on how to resolve those SAML errors can be found [here.](https:
 
 ## Workiva SSO Exception List
 Add users to the **SSO Exceptions List** if they need to sign in with their Workiva username and password instead of SSO (ex: external auditors, legal counsel, etc.) By default, these users will use Workiva local authentication with email OTP to authenticate. [Here](https://support.workiva.com/hc/en-us/articles/360036006091-Configure-sign-in-and-session-options) is more information on Workiva non-SSO sign-in criteria. 
-> [!Caution]
-> Please make sure bypass users are on this list before requiring SSO on the account to avoid user lockout
 
 This view will let you **Search users** to see who is currently on the **SSO Exception List**. 
 
@@ -219,10 +217,13 @@ To add users to the SSO exception list you can click on Add users and choose to:
 ![Workiva Search SSO Exception Review](./media/wdesk-tutorial/ExceptionReview.png)
 
 ## Workiva SSO Requirement Settings
-You can require users to sign in the organization using SSO. If certain users (ex: external auditors) still need to sign in using their username and password, add them to the SSO exception list.
+You can require users to sign in the Workiva application using SSO. If certain users (ex: external auditors) still need to sign in using their username and password, add them to the **SSO Exception List**. 
+> [!Caution]
+> Please make sure bypass users are on the SSO Exception List before requiring SSO on the account to avoid user lockout
 
 **Force users to sign in using SSO**
 Check this on will force users to access with SSO except Org Security Admin (break glass) and anyone listed on the SSO Exception List. 
+
 
 ![Workiva First Requirement Setting](./media/wdesk-tutorial/RequireSSO.png)
 
