@@ -173,7 +173,7 @@ You submit the run ID of a run in which all applicable tests passed.
 
 Submitting makes your results available to Microsoft and links them to your gallery submission. This step is required whether you used the agent or set up the Logic App in the Azure portal.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/?feature.enableSelfServiceOnboardingDeveloperPortal=true&feature.enableSupportabilityAssistant=true&feature.consoletelemetry=true&feature.enableInitialContextHandoff=true&Microsoft_AAD_DXP=stagepreview&dxpEndpoint=TIP#view/Microsoft_AAD_IAM/EntraLanding.ReactView).
 
 1. Browse to **Enterprise applications** > **All applications**, and then select the application you validated. The agent creates this application for you, or you created it in the Microsoft Entra admin center.
 
