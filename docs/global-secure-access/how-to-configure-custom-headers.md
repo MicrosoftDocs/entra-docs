@@ -9,7 +9,10 @@ ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---
 
-# How to configure custom headers
+# How to configure custom headers (preview)
+
+> [!NOTE]
+> This feature is being rolled out with the expected completion date of September 10, 2026. 
 
 Custom headers in Global Secure Access (GSA) lets you add custom HTTP headers to outbound web requests for specific destinations. You configure headers as part of a web filtering policy rule, so the headers are added only to traffic that matches the fully qualified domain names (FQDNs) that you select.
 
