@@ -34,7 +34,7 @@ Before you submit an application, complete these prerequisites:
 - Establish engineering and support contacts for onboarding and post-onboarding support.
 - Prepare public customer documentation for each capability that you plan to publish.
 - Create a test tenant and test accounts. You can join the [Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program) to get a renewable development subscription with Microsoft Entra features.
-- [Associate your organization with the Microsoft AI Cloud Partner Program](https://partner.microsoft.com/partnership).
+- Associate your organization with the [Microsoft AI Cloud Partner Program](https://partner.microsoft.com/partnership).
 - Provide a **Partner One ID (formerly Microsoft Partner Network (MPN) ID)** associated with your organization. This identifier is used during the Microsoft Entra App Gallery onboarding and publishing process.
 
 ## Partner One ID
