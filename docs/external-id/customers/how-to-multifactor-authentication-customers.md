@@ -1,9 +1,10 @@
 ---
 title: Add multifactor authentication (MFA) to a customer app
-description: Learn how to add multifactor authentication (MFA) to your consumer and business customer (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
+description: Learn how to add multifactor authentication (MFA) methods, including email one-time passcode, SMS, and time-based one-time password (TOTP), to a customer app.
 ms.topic: how-to
-ms.date: 09/16/2025
+ms.date: 09/02/2026
 ms.custom: it-pro, sfi-image-nochange
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
 ---
 
@@ -15,6 +16,7 @@ Multifactor authentication (MFA) adds a layer of security to your applications b
 
 - **Email one-time passcode**: After the user signs in with their email and password, they are prompted for a passcode that is sent to their email. To allow the use of email one-time passcodes for MFA, set your local account authentication method to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in won't be able to use it for MFA secondary verification.
 - **SMS-based authentication**: While SMS isn't an option for first factor authentication, it's available as a second factor for MFA. Users who sign in with email and password, email and one-time passcode, or social identities like Google, Facebook or Apple, are prompted for second verification using SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA to confirm they're not a robot before sending the SMS code for verification. It also provides safeguards against [telephony fraud](how-to-region-code-opt-in.md). SMS is an add-on feature. Your tenant must be [linked](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription) to an active, valid subscription. [Learn more](concept-multifactor-authentication-customers.md#sms-based-authentication)
+- **Time-based one-time password (TOTP)**: Users register Microsoft Authenticator or a supported third-party authenticator app. When MFA is required, they enter the temporary verification code from the app.
 - **Passkey (FIDO2)**: Passkeys provide phishing-resistant, passwordless authentication that satisfies MFA in a single gesture (face, fingerprint, PIN, or security key). Users can also use a passkey as a primary, passwordless sign-in method. For setup, see [Sign in with passkeys](how-to-sign-in-with-passkey.md).
 
 This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
@@ -88,6 +90,32 @@ Enable the email one-time passcode authentication method in your external tenant
    :::image type="content" source="media/how-to-multifactor-authentication-customers/enable-eotp.png" alt-text="Screenshot of enabling email one-time passcode." lightbox="media/how-to-multifactor-authentication-customers/enable-eotp.png":::
 
 1. Select **Save**.
+
+## Enable TOTP as an MFA method
+
+Enable the authentication method policies that apply to the authenticator apps your customers use.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
+
+1. Browse to **Entra ID** > **Authentication methods**.
+
+1. To allow TOTP from Microsoft Authenticator:
+
+    1. In the **Method** list, select **Microsoft Authenticator**.
+
+    1. Under **Enable and Target**, turn the **Enable** toggle on and include the users who can use the method.
+
+    1. Under **Configure**, set **Allow use of Microsoft Authenticator OTP** to **Yes**.
+
+    1. Select **Save**.
+
+1. To allow TOTP from supported third-party authenticator apps:
+
+    1. In the **Method** list, select **Third-party software OATH tokens**.
+
+    1. Under **Enable and Target**, turn the **Enable** toggle on and include the users who can use the method.
+
+    1. Select **Save**.
 
 ## Enable SMS as an MFA method
 
