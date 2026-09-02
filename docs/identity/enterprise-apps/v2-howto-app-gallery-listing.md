@@ -2,8 +2,8 @@
 title: Prerequisites to validate and publish your app
 description: Review the shared prerequisites for validating and publishing an application in Microsoft Entra App Gallery.
 ms.topic: how-to
-ms.date: 08/26/2026
-ms.reviewer: jeedes
+ms.date: 09/02/2026
+ms.reviewer: hkinyunyu
 ms.custom: kr2b-contr-experiment, enterprise-apps-article
 ai-usage: ai-assisted
 
@@ -34,7 +34,15 @@ Before you submit an application, complete these prerequisites:
 - Establish engineering and support contacts for onboarding and post-onboarding support.
 - Prepare public customer documentation for each capability that you plan to publish.
 - Create a test tenant and test accounts. You can join the [Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program) to get a renewable development subscription with Microsoft Entra features.
-- Associate your organization with the Microsoft AI Cloud Partner Program.
+- [Associate your organization with the Microsoft AI Cloud Partner Program](https://partner.microsoft.com/partnership).
+- Provide a **Partner One ID (formerly Microsoft Partner Network (MPN) ID)** associated with your organization. This identifier is used during the Microsoft Entra App Gallery onboarding and publishing process.
+
+## Partner One ID
+
+A Partner One ID identifies your organization in the Microsoft AI Cloud Partner Program. Provide the Partner One ID associated with the organization that will be listed as the application's publisher in Microsoft Entra App Gallery.
+
+> [!NOTE]
+> If you don't know your Partner One ID, contact your organization's Microsoft AI Cloud Partner Program administrator. For information about Partner One IDs and partner accounts, see [Partner Center documentation](/partner-center/).
 
 ## Prepare customer documentation
 
