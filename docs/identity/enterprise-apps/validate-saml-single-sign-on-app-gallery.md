@@ -217,7 +217,7 @@ Note: For testing purposes, you can generate a self-signed certificate with an e
 Generate an expired self-signed certificate
 To generate an expired self-signed certificate for testing, open Windows PowerShell and run the following script.
 
-Password: ExpiredCert-TestOnly-123 
+Password: ExpiredCert-TestOnly-123!
 
 ```powershell
 # Test-only PFX password
