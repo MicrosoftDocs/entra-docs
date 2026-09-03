@@ -481,7 +481,7 @@ The following table is for roles assigned at the scope of a tenant. For roles as
 | Usage Summary Reports Reader | &nbsp; | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | All other built-in and custom roles |  |  |  |  | :white_check_mark: | :white_check_mark: |
 
-Security Operator and Entra SOC Identity Responder are limited to non-administrative user accounts and can't perform actions on privileged accounts.
+Security Administrator, Security Operator, and Entra SOC Identity Responder are limited to non-administrative user accounts and can't perform actions on privileged accounts.
 
 > [!IMPORTANT]
 > The [Partner Tier2 Support](permissions-reference.md#partner-tier2-support) role can reset passwords and invalidate refresh tokens for all non-administrators and administrators (including Global Administrators). The [Partner Tier1 Support](permissions-reference.md#partner-tier1-support) role can reset passwords and invalidate refresh tokens for only non-administrators. These roles should not be used because they are deprecated.
@@ -531,7 +531,7 @@ The following table is for roles assigned at the scope of a tenant. For roles as
 | Usage Summary Reports Reader | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | All other built-in and custom roles |  |  | :white_check_mark: | :white_check_mark: |
 
-Security Operator and Entra SOC Identity Responder are limited to non-administrative user accounts and can't perform actions on privileged accounts.
+Security Administrator, Security Operator, and Entra SOC Identity Responder are limited to non-administrative user accounts and can't perform actions on privileged accounts.
 
 ## Next steps
 
