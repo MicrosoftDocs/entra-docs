@@ -15,6 +15,9 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| June 2026 | Roles | Added [Entra SOC Identity Responder](permissions-reference.md#entra-soc-identity-responder) role. |
+| June 2026 | Roles | Updated [Security Operator](permissions-reference.md#security-operator) role. |
+| June 2026 | Roles | Updated [AI Administrator](permissions-reference.md#ai-administrator) role. |
 | July 2026 | Roles | Updated [Tenant Governance Administrator](permissions-reference.md#tenant-governance-administrator) role to a privileged role. |
 | June 2026 | Roles | Updated [AI Administrator](permissions-reference.md#ai-administrator) role and [AI Reader](permissions-reference.md#ai-reader) roles.|
 | June 2026 | Roles | Updated [Agent ID Administrator](permissions-reference.md#agent-id-administrator) and [Agent ID Developer](permissions-reference.md#agent-id-developer) roles. |

@@ -37,9 +37,7 @@ The Manage Agents feature in Microsoft Entra lets you view and control, [agent i
 
 1. To disable an agent, select it from the list and choose **Disable agent**. This blocks users from being able to access it and prevents it from being issued tokens. This has the same effect as disabling the agent from the admin center.
 
-1. To re-enable, select the agent that is disabled and choose **Enable agent**. This allows users to access it, and allows it to be issued tokens.
-
-
+1. To re-enable, select the agent that is disabled and choose **Enable agent**. This allows users to access it, and allows it to be issued tokens. Note that sponsors can't re-enable agents. They will need an owner or admin's help if one of their agents needs to be re-enabled.
 
 [!INCLUDE [entitlement-management-request-behalf-agent](../includes/governance/entitlement-management-request-behalf-agent.md)]
 
