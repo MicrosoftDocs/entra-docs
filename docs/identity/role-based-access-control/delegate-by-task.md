@@ -2,7 +2,7 @@
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
 ms.topic: reference
-ms.date: 06/20/2025
+ms.date: 06/17/2026
 ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
@@ -451,6 +451,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Dismiss all events | [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Perform identity containment actions for SOC incident response | [Entra SOC Identity Responder](permissions-reference.md#entra-soc-identity-responder) |  |
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read users flagged for risk | [Security Reader](permissions-reference.md#security-reader) |  |
 
