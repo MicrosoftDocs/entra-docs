@@ -492,7 +492,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Create user | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Delete users | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Invalidate refresh tokens of limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
-> | Invalidate refresh tokens of non-admins | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Invalidate refresh tokens of non-admins | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) |  [User Administrator](permissions-reference.md#user-administrator) <br/> [Security Administrator](permissions-reference.md#security-administrator) |
 > | Invalidate refresh tokens of privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Read basic configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Reset password for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
