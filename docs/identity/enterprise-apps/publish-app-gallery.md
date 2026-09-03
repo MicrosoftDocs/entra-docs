@@ -205,6 +205,30 @@ After submission, the application moves from Draft to Submitted and enters the M
 > [!NOTE]
 > Submitting the application doesn't make it immediately available in the Gallery. Microsoft reviews the application before publication.
 
+## Publishing workflow
+
+A submission progresses through the following states:
+
+1. **Draft** - You create and prepare your submission.
+1. **Under Review** - Microsoft validates the submission, configuration, and required information.
+1. **Approved** - The submission has successfully passed validation.
+1. **In Preview** - The integration is available as a preview offering in the Microsoft Entra App Gallery.
+1. **Published** - The integration is publicly available in the Microsoft Entra App Gallery.
+
+> [!NOTE]
+> Publishing timelines are measured in business days. Actual processing times can vary depending on submission completeness, validation outcomes, and whether additional information is required from the publisher.
+
+### Timeline example
+
+The following example shows a typical progression through the publishing process:
+
+- A submission enters **Under Review** and is reviewed within **5 business days**.
+- After approval, the integration can become available in **Preview** within **10 business days**.
+- Once all publishing requirements are met, the integration can become **Publicly available** within **7 business days**.
+
+> [!TIP]
+> To help avoid delays, ensure that all required metadata, testing information, and validation requirements are completed before submitting your integration for review.
+
 ## Track your submission
 
 To monitor the application and review feedback:
