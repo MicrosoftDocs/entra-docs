@@ -35,7 +35,7 @@ Before starting the publishing process, make sure that you have:
 
 - Completed the applicable SAML, OpenID Connect, or user provisioning validation.
 - A passed Test result from validating your app.
-- A Microsoft Partner Network ID associated with your organization.
+- A Partner One ID (formerly Microsoft Partner Network (MPN) ID) associated with your organization.
 - A Microsoft Entra tenant.
 - Customer-facing configuration documentation.
 - The required application logos.
