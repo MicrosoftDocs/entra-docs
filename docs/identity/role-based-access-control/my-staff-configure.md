@@ -2,9 +2,10 @@
 title: Use My Staff to delegate user management
 description: Delegate user management using My Staff and administrative units
 ms.topic: how-to
-ms.date: 02/12/2025
+ms.date: 09/04/2026
 ms.reviewer: lenalepa
 ms.custom: oldportal;it-pro;, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 # Manage your users with My Staff
 
@@ -33,21 +34,14 @@ To complete the steps in this article, you need the following resources and priv
   * [Microsoft 365 F1 or F3](https://www.microsoft.com/licensing/news/m365-firstline-workers)
   * [Enterprise Mobility + Security (EMS) E3 or E5](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing) or [Microsoft 365 E3 or E5](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans)
 
-## How to enable My Staff
+<a name="how-to-enable-my-staff"></a>
 
+## Who can access My Staff
 
-After configuring administrative units, you can apply this scope to your users who access My Staff. Only users who are assigned an administrative role can access My Staff. To enable My Staff, complete the following steps:
+Access to My Staff is determined by administrative role assignment. Only users who are assigned an administrative role can access My Staff, and the administrative unit scope of that role assignment determines which users they can manage. After you configure administrative units and assign roles, those users can sign in to My Staff at [https://mystaff.microsoft.com](https://mystaff.microsoft.com).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) or [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-
-1. Browse to **Entra ID** > **Users** > **User settings**.
-
-1. Under **User feature**, select **Manage user feature settings**.
-
-1. Under **Administrators can access My Staff**, you can choose to enable for all users, selected users, or no user access.
-
-> [!Note]
-> Only users who've been assigned an admin role can access My Staff. If you enable My Staff for a user who is not assigned an admin role, they won't be able to access My Staff.
+> [!NOTE]
+> The legacy My Apps and My Staff experience settings, such as **Administrators can access My Staff** under **Manage user feature settings**, are no longer used by the service and don't affect user behavior. These settings are being removed from the Microsoft Entra admin center. No administrator action is required.
 
 ## Conditional Access
 
@@ -63,7 +57,7 @@ You'll see the service principal when you create a Conditional Access policy tha
 
 When a user selects My Staff, they are shown the names of the [administrative units](administrative-units.md) over which they have administrative permissions. In the [My Staff user documentation](https://support.microsoft.com/account-billing/manage-front-line-users-with-my-staff-c65b9673-7e1c-4ad6-812b-1a31ce4460bd), we use the term "location" to refer to administrative units. If an administrator's permissions don't have an administrative unit scope, then the permissions apply across the organization. 
 
-After My Staff has been enabled, the users who are enabled and have been assigned an administrative role can access it through [https://mystaff.microsoft.com](https://mystaff.microsoft.com). They can select an administrative unit to view the users in that unit, and select a user to open their profile.
+Users who are assigned an administrative role can access My Staff through [https://mystaff.microsoft.com](https://mystaff.microsoft.com). They can select an administrative unit to view the users in that unit, and select a user to open their profile.
 
 ### Limitations
 My Staff shows up to 999 users per administrative unit.
