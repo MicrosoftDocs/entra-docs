@@ -1,15 +1,8 @@
 ---
 title: External Tenant Overview
 description: Learn how Microsoft Entra External ID provides to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: overview
-ms.date:  03/12/2025
+ms.date: 01/30/2026
 ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
@@ -23,8 +16,6 @@ Microsoft Entra External ID includes Microsoft's customer identity and access ma
 
 :::image type="content" source="media/overview-customers-ciam/overview-ciam.png" alt-text="Diagram showing an overview customer identity and access management." border="true":::
 
- 
-
 ## Create a dedicated external tenant
 
 When getting started with External ID for your consumer and business customer apps, you first create a tenant for your apps, resources, and directory of customer accounts.
@@ -33,17 +24,17 @@ If you've worked with Microsoft Entra ID, you're already familiar with using a M
 
 - **A directory**: The directory stores your customers' credentials and profile data. When a consumer or business customer signs up for your app, a local account is created for them in your external tenant.
 
-- **Application registrations**: Microsoft Entra ID performs identity and access management only for registered applications. Registering your app establishes a trust relationship and allows you to integrate your app with Microsoft Entra ID.
+- **Application registrations**: Microsoft Entra ID performs identity and access management only for registered applications. Registering your app establishes a trust relationship and allows you to integrate your app with Microsoft Entra ID. In external tenants, you can register apps that use either the OpenID Connect (OIDC) or Security Assertion Markup Language (SAML) protocol for authentication and single sign-on (SSO). The [app registration](/entra/identity-platform/quickstart-register-app) process is optimized for OIDC-based apps. To [register a SAML app](/entra/external-id/customers/how-to-register-saml-app), use the Enterprise applications feature instead.
 
 - **User flows**: The external tenant contains the self-service sign-up, sign-in, and password reset experiences you want to enable for your customers.
 
 - **Extensions**: If you need to add user attributes and data from external systems, you can create custom authentication extensions for your user flows.
 
-- **Sign-in methods**: You can enable various options for signing in to your app, including username and password, one-time passcode, and Google, Facebook, Apple or custom OIDC identities.
+- **Sign-in methods**: You can enable various options for signing in to your app, including username and password, one-time passcode, and Google, Facebook, Apple, Microsoft Entra ID, or custom OIDC identities.
 
 - **Encryption keys**: Add and manage encryption keys for signing and validating tokens, client secrets, certificates, and passwords.
 
-Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) and [OIDC](how-to-custom-oidc-federation-customers.md) federation.
+Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md), [Microsoft Entra ID](how-to-entra-id-federation-customers.md), and [OIDC](how-to-custom-oidc-federation-customers.md) federation.
 
 There are two types of user accounts you can manage in your external tenant:
 
@@ -73,11 +64,11 @@ External ID is intended for businesses that want to make applications available 
 
 - **Consent to your terms of use and privacy policies.** You can prompt users to accept your terms and conditions during sign-up. By using customer user attributes, you can add checkboxes to your sign-up form and include links to your terms of use and privacy policies.
 
-Learn more about [adding sign-in and sign-up to your app](concept-planning-your-solution.md) and [customizing the sign-in look and feel](concept-branding-customers.md).
+Learn more about [planning your integration](concept-planning-your-solution.md), [choosing an authentication approach](concept-choose-authentication-approach.md), and [customizing the sign-in look and feel](concept-branding-customers.md).
 
 ## Design user flows for self-service sign-up
 
-You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md) or [Apple](how-to-apple-federation-customers.md), as well as [custom OIDC](how-to-custom-oidc-federation-customers.md) identity providers). You can also collect information from customers during sign-up by selecting from a series of user built-in attributes or adding your own custom attributes.
+You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), or [Apple](how-to-apple-federation-customers.md), [Microsoft Entra ID](how-to-entra-id-federation-customers.md) federation, as well as [custom OIDC](how-to-custom-oidc-federation-customers.md) identity providers). You can also collect information from customers during sign-up by selecting from a series of user built-in attributes or adding your own custom attributes.
 
 Several user flow settings let you control how the customer signs up for the application, including:
 
@@ -97,11 +88,31 @@ Learn more about [adding your own business logic](concept-custom-extensions.md) 
 
 External ID represents the convergence of business-to-consumer (B2C) features into the Microsoft Entra platform. You benefit from platform features like enhanced security, compliance with regulations, and the ability to scale your identity and access management processes.
 
-- **Microsoft Entra security.** Get all the security and data privacy benefits of Microsoft Entra, including Conditional Access, multifactor authentication, and governance. Protect access to your apps using strong authentication and risk-based adaptive access policies. Because customers are managed in a separate tenant, you can tailor your access policies to users who typically use personal and shared devices instead of managed ones.
+### Conditional Access
 
-- **Microsoft Entra reliability and scalability**. Create highly customized sign-in experiences and manage customer accounts at a large scale. Ensure a good customer experience by taking advantage of Microsoft Entra performance, resiliency, business continuity, low-latency, and high throughput.
+Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce security policies. Conditional Access policies at their simplest are if-then statements; **if** a user wants to access your application, **then** they must complete an action.
 
-Learn more about the [security and governance](concept-security-customers.md) features that are available in an external tenant.
+Conditional Access policies are enforced after the user has completed first-factor authentication. For example, if a user's sign-in risk level is high, they must perform MFA to gain access. Alternatively, the most restrictive approach is to block access to the application.
+
+### Multifactor authentication (MFA)
+
+Microsoft Entra MFA helps safeguard access to data and applications while maintaining simplicity for your users. Microsoft Entra External ID integrates directly with Microsoft Entra MFA so you can add security to your sign-up and sign-in experiences by requiring a second form of authentication. You can fine-tune MFA depending on the extent of security you want to apply to your apps. Consider the following scenarios:
+
+- You offer a single app to customers and you want to enable MFA for an extra layer of security. You can enable MFA in a Conditional Access policy that's targeted to all users and your app.
+
+- You offer multiple apps to your customers, but you don't require MFA for every application. For example, the customer can sign into an auto insurance application with a social or local account, but must verify the phone number before accessing the home insurance application registered in the same directory. In your Conditional Access policy, you can target all users but just those apps for which you want to enforce MFA.
+
+Learn more about [MFA in external tenants](concept-multifactor-authentication-customers.md) or see [how to enable multifactor authentication](how-to-multifactor-authentication-customers.md).
+
+### Machine-to-machine authentication (M2M)
+
+Machine-to-machine (M2M) authentication uses the [OAuth 2.0 client credentials flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow) to let an application authenticate directly with Microsoft Entra ID. This flow is intended for scenarios without user interaction, where backend services need to securely request access tokens and call APIs on their own behalf.
+
+For Microsoft Entra External ID applications, you can configure M2M authentication by using the client credentials flow with either a client secret or a certificate. This approach allows your application to authenticate as itself when accessing APIs. To enable M2M authentication, you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization’s premium add‑on usage policy to understand cost implications and ensure compliance with internal governance and licensing requirements.
+
+### Microsoft Entra reliability and scalability
+
+Create highly customized sign-in experiences and manage customer accounts at a large scale. Ensure a good customer experience by taking advantage of Microsoft Entra performance, resiliency, business continuity, low-latency, and high throughput.
 
 ## Analyze user activity and engagement
 
@@ -109,9 +120,12 @@ The Application user activity  feature under Usage & insights provides data anal
 
 Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in an external tenant.
 
+> [!IMPORTANT]
+> The Application user activity dashboards (User Insights) and the Microsoft Graph `reports/userInsights/*` (beta) endpoints are being retired on **August 31, 2026**. Plan to migrate to Azure Monitor with Log Analytics (primary) or the Microsoft Graph sign-in and audit log APIs. For details, see [Migrate from User Insights](how-to-user-insights.md#migrate-from-user-insights).
+
 ## About Azure AD B2C
 
-If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID. Effective May 1, 2025, Azure AD B2C will no longer be available to purchase for new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID represents the future of CIAM for Microsoft, and new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture.
+Effective May 1, 2025, [Azure AD B2C](/azure/active-directory-b2c/) is no longer available for purchase by new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID is the next-generation CIAM solution from Microsoft, with all new features and capabilities being built on this platform. If you're an existing Azure AD B2C customer, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md) to get started.
 
 ## Next steps
 

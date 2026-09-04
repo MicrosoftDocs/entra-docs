@@ -1,14 +1,10 @@
 ---
 title: Microsoft Entra Cloud Sync troubleshooting
 description: This article describes how to troubleshoot problems that might arise with the cloud provisioning agent.
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 04/09/2025
+ms.date: 08/21/2026
 ms.topic: troubleshooting
-ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
-ms.custom: sfi-ga-nochange, sfi-image-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1024
 ---
 
 # Cloud sync troubleshooting
@@ -238,27 +234,26 @@ Use the following request:
  
   `POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart`
 
-## Repair the cloud sync service account
+## Directory service authorization failures
 
-If you need to repair the cloud sync service account, you can use the `Repair-AADCloudSyncToolsAccount` command.
+If you encounter the **AzureDirectoryServiceAuthorizationFailed** quarantine error code, the most likely cause is that you don't have a service principal for the directory synchronization service application in your tenant. You can check this by querying Microsoft Graph API as in the following example:
 
-   1. [Install the AADCloudSyncTools PowerShell module](reference-powershell.md#install-the-aadcloudsynctools-powershell-module).
+```http
+GET /servicePrincipals?$filter=displayName eq 'Microsoft Entra AD Synchronization Service'
+```
 
-   1. From a PowerShell session with administrative privileges, type, or copy and paste, the following:
+If no matching service principal is found, you can trigger creation of a new service principal by enabling synchronization (even it it's already enabled) with the following Microsoft Graph API request:
 
-      ```powershell
-      Connect-AADCloudSyncTools
-      ```
+```http
+PATCH /organization/<your tenant ID>
 
-   1. Enter your Microsoft Entra Global Administrator credentials.
+Request body:
 
-   1. Type, or copy and paste, the following:
+{ "onPremisesSyncEnabled": true }
+```
 
-      ```powershell
-      Repair-AADCloudSyncToolsAccount
-      ```
+If you run the first query again, you should see that the service principal has been restored in your tenant. After this, it may take up to 24 hours for the authorization errors to go away completely and for synchronization to resume as normal. If the errors persist beyond that point, reach out to support for further assistance.
 
-   1. After this completes, it should say that the account was repaired successfully.
 
 ## Password writeback
 

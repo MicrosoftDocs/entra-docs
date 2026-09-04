@@ -1,13 +1,10 @@
 ---
 title: 'Parallel and combined identity infrastructure options'
 description: This article describes the various options available for organizations to run multiple tenants and multicloud scenarios
-author: martincoetzer
-manager: travisgr
-ms.service: entra
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/17/2022
+ms.reviewer: martinco
 ms.subservice: architecture
-ms.author: martinco
 ---
 
 # Parallel and combined identity infrastructure options

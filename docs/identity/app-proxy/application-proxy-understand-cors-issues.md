@@ -1,20 +1,18 @@
 ---
-title: Resolve Cross-Origin Resource Sharing Issues
+title: Resolve cross-origin resource sharing issues
 description: Learn how to identify and resolve cross-origin resource sharing (CORS) issues in Microsoft Entra application proxy.
-author: kenwith
-manager: dougeby 
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 05/01/2025
-ms.author: kenwith
-ms.reviewer: ashishj
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Resolve cross-origin resource sharing issues in Microsoft Entra application proxy
 
-[Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
+
+## Overview
+
+[Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
 
 Browser security usually prevents a webpage from making requests to another domain. This restriction is called the *same-origin policy*. The policy prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that directs a server to allow some cross-origin requests and reject others.
 
@@ -40,7 +38,7 @@ You can identify CORS issues by using browser debug tools:
 1. Select the **F12** key to open the debug console in DevTools.
 1. Try to reproduce the transaction, and review the console message. A CORS violation produces a console error about origin.
 
-In the following screenshot, selecting the **Try It** button caused a CORS error message that `https://corswebclient-contoso.msappproxy.net` wasn't found in the `Access-Control-Allow-Origin` header.
+In the following screenshot, selecting the **Try It** button caused a CORS error message that `https://corswebclient-contoso.msappproxy.net` wasn't found in the `Access-Control-Allow-Origin` header.
 
 ![Screenshot that shows an example of a CORS issue.](./media/application-proxy-understand-cors-issues/image3.png)
 

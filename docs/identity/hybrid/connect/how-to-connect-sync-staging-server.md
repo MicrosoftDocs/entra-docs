@@ -1,15 +1,11 @@
 ---
 title: 'Microsoft Entra Connect Sync: Operational tasks and considerations'
 description: This topic describes operational tasks for Microsoft Entra Connect Sync and how to prepare for operating this component.
-author: billmath
-manager: femila
 ms.assetid: b29c1790-37a3-470f-ab69-3cee824d220d
-ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
 ms.custom: sfi-image-nochange
 ---
 
@@ -21,20 +17,18 @@ With a server in staging mode, you can make changes to the configuration and pre
 
 Staging mode can be used for several scenarios, including:
 
-* High availability.
+* Fault tolerance.
 * Test and deploy new configuration changes.
 * Introduce a new server and decommission the old.
 
-During installation, you can select the server to be in **staging mode**. This action makes the server active for import and synchronization, but it doesn't run any exports. A server in staging mode isn't running password sync or password writeback, even if you selected these features during installation. When you disable staging mode, the server starts exporting, enables password sync, and enables password writeback.
+During installation or via the wizard, you can select the server to be in **staging mode**. This action makes the server active for import and synchronization, but it doesn't run any exports. A server in staging mode isn't running password sync or password writeback, even if you selected these features during installation. When you disable staging mode, the server starts exporting, enables password sync, and enables password writeback.
 
-> [!NOTE]
-> Suppose you have a Microsoft Entra Connect with Password Hash Synchronization feature enabled. When you enable staging mode, the server stops synchronizing password changes from on-premises AD. When you disable staging mode, the server resumes synchronizing password changes from where it last left off. If the server is left in staging mode for an extended period of time, it can take a while for the server to synchronize all password changes that had occurred during the time period.
->
->
+When staging mode is disabled, password sync resumes from the last recorded watermark. If the server was left in staging mode for an extended period of time, password sync might need a long catch-up period (possibly many hours or longer in large environments) to process all the password changes that occurred while it was in staging mode. During catch-up, newly changed passwords don't work in Microsoft Entra ID immediately because they are processed only after the backlog is completed. If business impact is high (for example, in a case of a failover), consider from time to time promoting the staging server to active temporarily and keeping it active until password sync catch-up completes (preferably during off-peak hours), so that future role switches have a smaller backlog of password changes to process. To confirm that password sync is progressing during catch-up, monitor the server’s application event logs for ongoing activity (for example, Event IDs 654/656 indicating batch processing). You may also see per-user success events (for example, Event ID 657) that can help you validate that password changes are being processed.
 
-You can still force an export by using the synchronization service manager.
-
-A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure.
+> [!WARNING]
+> Password sync catch-up can take an extended period of time after disabling staging mode. **Do not restart the sync services during catch-up** — stopping the service can cause PHS to resume from an earlier watermark when it starts again, which increases the time to become current.
+> 
+A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure. In staging mode, you can still force an export by using the synchronization service manager.
 
 For those of you with knowledge of older sync technologies, the staging mode is different since the server has its own SQL database. This architecture allows the staging mode server to be located in a different datacenter.
 
@@ -88,7 +82,7 @@ Most of the file is self-explanatory. Some abbreviations to understand the conte
 The export.csv file contains all changes that are about to be exported. Each row corresponds to a change for an object in the connector space and the object is identified by the DN attribute. The DN attribute is a unique identifier assigned to an object in the connector space. When you have many rows/changes in the export.csv to analyze, it may be difficult for you to figure out which objects the changes are for based on the DN attribute alone. To simplify the process of analyzing the changes, use the `csanalyzer.ps1` PowerShell script. The script retrieves common identifiers (for example, displayName, userPrincipalName) of the objects. To use the script:
 1. Copy the PowerShell script from the section [CSAnalyzer](#appendix-csanalyzer) to a file named `csanalyzer.ps1`.
 2. Open a PowerShell window and browse to the folder where you created the PowerShell script.
-1. Run: `.\csanalyzer.ps1 -Path %temp%\export.xml`.
+1. Run: `.\csanalyzer.ps1 -xmltoimport %temp%\export.xml`.
 1. You now have a file or multiple files named `processedbatch[n].csv` (where `[n]` is the number of the batch, for example `processedbatch1.csv`) that can be examined in Microsoft Excel. Note that the file provides a mapping from the DN attribute to common identifiers (for example, displayName and userPrincipalName). It currently doesn't include the actual attribute changes that are about to be exported.
 
 #### Switch active server
@@ -270,11 +264,11 @@ write-host "Importing XML" -ForegroundColor Yellow
 $resolvedXMLtoimport=Resolve-Path -Path ([Environment]::ExpandEnvironmentVariables($xmltoimport))
 
 #use an XmlReader to deal with even large files
-$result=$reader = [System.Xml.XmlReader]::Create($resolvedXMLtoimport) 
+$result=$reader=[System.Xml.XmlReader]::Create($resolvedXMLtoimport)
 $result=$reader.ReadToDescendant('cs-object')
 if($result)
 {
- do 
+ do
  {
   #create the object placeholder
   #adding them up here means we can enforce consistency

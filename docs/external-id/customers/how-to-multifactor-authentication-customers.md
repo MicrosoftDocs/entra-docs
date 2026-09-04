@@ -1,13 +1,8 @@
 ---
 title: Add multifactor authentication (MFA) to a customer app
 description: Learn how to add multifactor authentication (MFA) to your consumer and business customer (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
-ms.date: 11/20/2024
+ms.date: 09/16/2025
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
 ---
@@ -16,17 +11,13 @@ ms.custom: it-pro, sfi-image-nochange
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Multifactor authentication (MFA) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
+Multifactor authentication (MFA) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support the following methods for authentication as a second factor:
 
 - **Email one-time passcode**: After the user signs in with their email and password, they are prompted for a passcode that is sent to their email. To allow the use of email one-time passcodes for MFA, set your local account authentication method to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in won't be able to use it for MFA secondary verification.
 - **SMS-based authentication**: While SMS isn't an option for first factor authentication, it's available as a second factor for MFA. Users who sign in with email and password, email and one-time passcode, or social identities like Google, Facebook or Apple, are prompted for second verification using SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA to confirm they're not a robot before sending the SMS code for verification. It also provides safeguards against [telephony fraud](how-to-region-code-opt-in.md). SMS is an add-on feature. Your tenant must be [linked](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription) to an active, valid subscription. [Learn more](concept-multifactor-authentication-customers.md#sms-based-authentication)
+- **Passkey (FIDO2)**: Passkeys provide phishing-resistant, passwordless authentication that satisfies MFA in a single gesture (face, fingerprint, PIN, or security key). Users can also use a passkey as a primary, passwordless sign-in method. For setup, see [Sign in with passkeys](how-to-sign-in-with-passkey.md).
 
 This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=MFA)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “[Multi-factor authentication](https://woodgrovedemo.com/#usecase=MFA)” use case.
 
 ## Prerequisites
 

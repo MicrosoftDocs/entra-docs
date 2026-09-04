@@ -1,12 +1,8 @@
 ---
 title: What is Global Secure Access?
 description: Learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access, provides network access control and visibility to users and devices inside and outside a traditional office.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
 ms.topic: overview
-ms.date: 04/30/2025
-ms.service: global-secure-access
+ms.date: 04/15/2026
 ms.custom: references_regions
 ai-usage: ai-assisted
 
@@ -14,6 +10,8 @@ ai-usage: ai-assisted
 ---
 
 # What is Global Secure Access?
+
+## Overview
 
 The way people work changed. Instead of working in traditional offices, people now work from nearly anywhere. As applications and data move to the cloud, the modern workforce needs an identity-aware, cloud-delivered network perimeter. This new network security category is called Security Service Edge (SSE).
 
@@ -23,9 +21,9 @@ Microsoft Entra Internet Access and Microsoft Entra Private Access comprise Micr
 
 ## Microsoft's Security Service Edge (SSE) solution
 
-Microsoft Entra Internet Access and Microsoft Entra Private Access - coupled with Microsoft Defender for Cloud Apps, our SaaS-security focused Cloud Access Security Broker (CASB) - are uniquely built as a solution that converges network, identity, and endpoint access controls so you can secure access to any app or resource, from anywhere. With the addition of these Global Secure Access products, Microsoft Entra ID simplifies access policy management and enables access orchestration for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes.
+Microsoft Entra Internet Access and Microsoft Entra Private Access - coupled with Microsoft Defender for Cloud Apps, Microsoft's SaaS-security focused Cloud Access Security Broker (CASB) - are uniquely built as a solution that converges network, identity, and endpoint access controls so you can secure access to any app or resource, from anywhere. With the addition of these Global Secure Access products, Microsoft Entra ID simplifies access policy management and enables access orchestration for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes.
 
-The Global Secure Access features streamline the roll-out and management of the access control capabilities with a unified portal. These features are delivered from Microsoft's Wide Area Network, spanning 140+ regions and 190+ network edge locations. This private network, which is one of the largest in the world, enables organizations to optimally connect users and devices to public and private resources seamlessly and securely. For a list of the current points of presence, see [Global Secure Access points of presence article](reference-points-of-presence.md).
+The Global Secure Access features streamline the roll-out and management of the access control capabilities with a unified portal. These features are delivered from Microsoft's Wide Area Network, spanning 70 regions and 190+ network edge locations. This private network, which is one of the largest in the world, enables organizations to optimally connect users and devices to public and private resources seamlessly and securely. For a list of the current points of presence, see [Global Secure Access points of presence article](reference-points-of-presence.md).
 
 ## Microsoft Entra Internet Access
 
@@ -33,7 +31,7 @@ Microsoft Entra Internet Access protects access to internet and SaaS apps with a
 
 ### Key features
 
-- Acquire network traffic using the user aware internet traffic forwarding profile, either from the desktop client or from a remote network, such as a branch location. 
+- Acquire network traffic by using the user aware internet traffic forwarding profile, either from the desktop client or from a remote network, such as a branch location. 
 - Detailed network traffic logs for internet traffic (including enforced policy details). Dashboards such as relationship maps between users, devices and endpoints, cross tenant access, and top network destination in use.
 - Use rich context awareness (user, device, location, risk, and compliance policy) while applying network security policies through integration with Conditional Access. Protect user access to the public internet while using Microsoft's cloud-delivered, identity-aware SWG solution.
 - Enable web content filtering to regulate access to internet destinations based on their web-content categories and/or FQDN-domain names.
@@ -42,13 +40,13 @@ Microsoft Entra Internet Access protects access to internet and SaaS apps with a
 ## Microsoft Entra Internet Access for Microsoft Services
 Microsoft Entra Internet Access for Microsoft services enhances Microsoft Entra ID capabilities with direct connectivity to supported Microsoft services, improving security, performance, and resilience.
 
-### Key Features 
+### Key features 
 
-- Connect to Microsoft services directly using the prepopulated Microsoft traffic forwarding profile, either from the desktop client or from a remote network, such as a branch location.
+- Connect to Microsoft services directly by using the prepopulated Microsoft traffic forwarding profile, either from the desktop client or from a remote network, such as a branch location.
 - Simplify Conditional Access policy configurations by requiring Compliant Network check for any Microsoft Entra ID integrated application with Microsoft Entra ID Conditional Access. 
 - Apply Universal Tenant Restrictions to reduce the risk of data exfiltration to unauthorized foreign tenants or personal accounts.
 - Increase the accuracy of threat detections with source IP restoration for the Microsoft Entra ID sign in logs.
-- Detailed network traffic logs for Microsoft traffic (including enforced policy details). Dashboards such as relationship maps between users, devices and endpoints, cross tenant access, and top network destination in use.
+- Access detailed network traffic logs for Microsoft traffic, including enforced policy details. View dashboards that show relationship maps between users, devices and endpoints, cross tenant access, and top network destinations in use.
 
 ## Microsoft Entra Private Access
 
@@ -70,49 +68,54 @@ Microsoft Entra Internet Access, Microsoft Entra Internet Access for Microsoft s
 - Microsoft Entra Private Access capabilities are included in the Microsoft Entra Suite license and standalone. Microsoft Entra Private Access elevates network security with a Zero Trust Network Access (ZTNA) solution. 
 - Microsoft Entra Internet Access for Microsoft services capabilities are included in a Microsoft Entra ID P1 or Microsoft Entra ID P2 license. Microsoft Entra Internet Access for Microsoft services enhances Microsoft Entra ID capabilities with direct connectivity to supported Microsoft services, improving security, performance, and resilience.
 
-Prerequisite to use Microsoft Entra Private Access and Microsoft Entra Internet Access is Microsoft Entra ID P1 or Microsoft Entra ID P2.
+To use Microsoft Entra Private Access and Microsoft Entra Internet Access, users need a Microsoft Entra ID P1 or Microsoft Entra ID P2 license.
 
-To learn more about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about purchasing individual license, see the Microsoft Entra Suite standalone products tab of the licensing page.
-
-> [!IMPORTANT]
-> Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. Enforcement follows a 90-day trial period that began with General Availability on July 1, 2024.
-
+Most Global Secure Access services operate on a per-user license model unless otherwise stated. For more information about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). For more information about purchasing individual licenses, see the Microsoft Entra Suite standalone products tab of the licensing page. For information about guest user licensing, see [Global Secure Access licensing for guest users](reference-licensing-guest-users.md).
 
 ### Feature comparison table
 
-| Feature                          | Entra P1/P2 License - Microsoft traffic profile | Internet Access License* - Internet Access profile | Private Access License* - Private Access profile |
+| Feature                          | Entra P1/P2 License - Microsoft traffic profile | Internet Access License¹ - Internet Access profile | Private Access License¹ - Private Access profile |
 |----------------------------------|:----------------------------------------------:|:-------------------------------------------------:|:-----------------------------------------------:|
-| Windows client                   | ✅                                              | ✅                                               | ✅                                              |
-| macOS client                     | ✅                                              | ✅                                               | ✅                                              |
-| Mobile client (iOS, Android)     | ✅                                              | ✅                                               | ✅                                              |
-| Traffic logs                     | ✅                                              | ✅                                               | ✅                                              |
-| Remote network (branch connectivity) | ✅                                          | ✅                                               |                                                  |
-| Universal Tenant Restrictions    | ✅                                              |                                                   |                                                  |
-| Compliant network check          | ✅                                              |                                                   |                                                  |
-| Source IP restoration            | ✅                                              |                                                   |                                                  |
-| Microsoft 365 Enriched logs      | ✅                                              |                                                   |                                                  |
-| Universal Conditional Access (CA)| ✅                                              | ✅                                               |                                                  |
-| Context-aware network security   |                                                  | ✅                                               |                                                  |
-| Web category filtering           |                                                  | ✅                                               |                                                  |
-| Fully qualified domain name (FQDN) filtering |                                      | ✅                                               |                                                  |
-| Universal Continuous Access Evaluation (CAE) | ✅                                   | ✅                                               | ✅                                              |
-| VPN replacement with an identity-centric ZTNA |                                     |                                                   | ✅                                              |
-| Quick Access                     |                                                  |                                                   | ✅                                              |
-| App Discovery                    |                                                  |                                                   | ✅                                              |
-| Private Domain Name System (DNS) |                                                  |                                                   | ✅                                              |
-| Single sign-on across all private apps |                                            |                                                   | ✅                                              |
-| Marketplace availability         |                                                  |                                                   | ✅                                              |
-| Private network connector multicloud support |                                     |                                                   | ✅                                              |
+| [Windows client](how-to-install-windows-client.md)                   | ✅                                              | ✅                                               | ✅                                              |
+| [macOS client](how-to-install-macos-client.md)                     | ✅                                              | ✅                                               | ✅                                              |
+| Mobile client ([iOS](how-to-install-ios-client.md), [Android](how-to-install-android-client.md))     | ✅                                              | ✅                                               | ✅                                              |
+| [Traffic logs (Preview)](how-to-view-traffic-logs.md)           | ✅                                              | ✅                                               | ✅                                              |
+| [Remote network (branch connectivity)](concept-remote-network-connectivity.md) | ✅                                          | ✅                                               |                                                  |
+| [Direct Microsoft services connectivity](how-to-manage-microsoft-profile.md) | ✅                                              |                                                   |                                                  |
+| [Universal Tenant Restrictions](how-to-universal-tenant-restrictions.md)    | ✅                                              |                                                   |                                                  |
+| [Compliant network check](how-to-compliant-network.md)          | ✅                                              |                                                   |                                                  |
+| [Source IP restoration](how-to-source-ip-restoration.md)            | ✅                                              |                                                   |                                                  |
+| [Microsoft 365 Enriched logs](how-to-view-enriched-logs.md)      | ✅                                              |                                                   |                                                  |
+| [Universal Conditional Access (CA)](concept-universal-conditional-access.md)| ✅                                              | ✅                                               |                                                  |
+| [Context-aware network security](concept-internet-access.md)   |                                                  | ✅                                               |                                                  |
+| [Web category filtering](how-to-configure-web-content-filtering.md)           |                                                  | ✅                                               |                                                  |
+| [Fully qualified domain name (FQDN) filtering](how-to-configure-web-content-filtering.md) |                                      | ✅                                               |                                                  |
+| [TLS inspection](tutorial-internet-access-tls-inspection.md) |                                                          | ✅                                               |                                                  |
+| [Threat intelligence](how-to-configure-threat-intelligence.md) |                                                  | ✅                                               |                                                  |
+| [Prompt injection protection](how-to-ai-prompt-injection-protection.md) |                                                  | ✅                                               |                                                  |
+| [Data Loss Prevention](how-to-network-content-filtering.md) |                                                  | ✅                                               |                                                  |
+| [Universal Continuous Access Evaluation (CAE)](concept-universal-continuous-access-evaluation.md) | ✅                                   | ✅                                               | ✅                                              |
+| [VPN replacement with an identity-centric ZTNA](tutorial-private-access-vpn-replacement.md) |                                     |                                                   | ✅                                              |
+| [Quick Access](how-to-configure-quick-access.md)                     |                                                  |                                                   | ✅                                              |
+| [Per-app access (TCP/UDP)](how-to-configure-per-app-access.md) |                                                       |                                                   | ✅                                              |
+| [App Discovery](how-to-application-discovery.md)                    |                                                  |                                                   | ✅                                              |
+| [Shadow AI discovery](concept-shadow-ai-discovery.md) |                                                  | ✅                                               |                                                  |
+| [Private Domain Name System (DNS)](concept-private-name-resolution.md) |                                                  |                                                   | ✅                                              |
+| [Single sign-on across all private apps](how-to-configure-kerberos-sso.md) |                                            |                                                   | ✅                                              |
+| [Marketplace availability (Preview)](how-to-configure-connectors.md) |                                              |                                                   | ✅                                              |
+| [Private network connector multicloud support (Preview)](how-to-configure-connectors.md) |                            |                                                   | ✅                                              |
+| [Network controls for agents²](how-to-secure-web-ai-gateway-agents.md) |                                              | ✅                                               |                                                  |
 
-*Included in Microsoft Entra Suite
+¹ Included in [Microsoft Entra Suite](~/fundamentals/try-microsoft-entra-suite.md#what-is-the-microsoft-entra-suite).
+
+² Network controls for agents requires a [Microsoft Agent 365](/microsoft-agent-365/overview) license.
 
 **Remote Network licensing**
 
-The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable  remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-will-be-allocated-per-tenant). To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
-
+The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable  remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#what-is-the-bandwidth-allocation-for-each-tenant). For more information about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md). 
 
 ## Related content
 
 - [Video: 425 Show "Is Global Secure Access Right for You?"](https://youtu.be/2OSbu7d8IOU)
-- [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md)
+- [Get started with Global Secure Access](quickstart-access-admin-center.md)
 - [Stay in the loop with the latest Microsoft Entra ID updates](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/bg-p/Identity)

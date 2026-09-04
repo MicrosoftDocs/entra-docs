@@ -1,13 +1,8 @@
 ---
 title: Troubleshoot Microsoft Entra hybrid joined devices
 description: This article helps you troubleshoot Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 11/25/2024
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
+ms.date: 09/01/2026
 ms.reviewer: mozmaili
 ms.custom: has-adal-ref, sfi-ropc-nochange, sfi-image-nochange
 ---
@@ -445,7 +440,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 | Error code | Reason | Resolution |
 | --- | --- | --- |
 | **AADSTS50155: Device authentication failed** | <li>Microsoft Entra ID is unable to authenticate the device to issue a PRT.<li>Confirm that the device isn't deleted or disabled. For more information about this issue, see [Microsoft Entra device management FAQ](faq.yml#why-do-my-users-see-an-error-message-saying--your-organization-has-deleted-the-device--or--your-organization-has-disabled-the-device--on-their-windows-10-11-devices). | Follow the instructions for this issue in [Microsoft Entra device management FAQ](faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-registered--what-should-i-do) to re-register the device based on the device join type. |
-| **AADSTS50034: The user account `Account` does not exist in the `tenant id` directory** | Microsoft Entra ID is unable to find the user account in the tenant. | <li>Ensure that the user is typing the correct UPN.<li>Ensure that the on-premises user account is being synced with Microsoft Entra ID.<li>Event 1144 (Microsoft Entra analytics logs) contains the UPN provided. |
+| **AADSTS50034: The user account `Account` does not exist in the `tenant id` directory** | Microsoft Entra ID is unable to find the user account in the tenant. | <li>Ensure that the user is typing the correct UPN.<li>Ensure that the on-premises user account is being synced with Microsoft Entra ID.<li>Event 1144 (Microsoft Entra analytics logs) contains the UPN provided. This error can sometimes be mapped to STATUS_ACCOUNT_DISABLED on a Windows client. However, the account is not actually disabled. This usually happens when the Windows client sends a SAM account name to Entra STS instead of a properly formatted UPN. This issue is usually accompanied by a lack of communication with an on-prem Active Directory domain controller in Hybrid deployments. Entra-native deployments do not encounter this issue. |
 | **AADSTS50126: Error validating credentials due to invalid username or password.** | <li>The username and password entered by the user in the Windows LoginUI are incorrect.<li>If the tenant has password hash sync enabled, the device is hybrid-joined, and the user just changed the password, it's likely that the new password hasn't synced with Microsoft Entra ID. | To acquire a fresh PRT with the new credentials, wait for the Microsoft Entra password sync to finish. |
 
 #### Common network error codes

@@ -88,6 +88,8 @@
         href: adstream-tutorial.md
       - name: AfterShip
         href: aftership-tutorial.md
+      - name: AgileWorks
+        href: agileworks-tutorial.md
       - name: Agile Provisioning
         href: agile-provisioning-tutorial.md
       - name: Agiloft Contract Management Suite
@@ -576,8 +578,6 @@
         href: cloudbees-ci-tutorial.md
       - name: CloudCords
         href: cloudcords-tutorial.md
-      - name: CloudKnox Permissions Management Platform
-        href: cloudknox-permissions-management-platform-tutorial.md
       - name: Cloudmore
         href: cloudmore-tutorial.md
       - name: CloudPassage
@@ -888,6 +888,8 @@
         href: ecfreight2-tutorial.md  
       - name: EchoSpan
         href: echospan-tutorial.md
+      - name: EcoOnline Info Exchange
+        href: ecoonline-info-tutorial.md
       - name: eCornell
         href: ecornell-tutorial.md
       - name: E-days
@@ -1043,7 +1045,7 @@
         href: field-id-tutorial.md
       - name: Fidelity PlanViewer
         href: fidelity-planviewer-tutorial.md
-      - name: Fieldglass
+      - name: SAP Fieldglass
         href: fieldglass-tutorial.md
       - name: FigBytes
         href: figbytes-tutorial.md
@@ -1168,7 +1170,7 @@
       - name: GitHub
         href: github-tutorial.md
       - name: GitHub Enterprise Server
-        href: github-ae-tutorial.md
+        href: github-enterprise-server-tutorial.md
       - name: GitHub Enterprise Cloud - Enterprise Account
         href: github-enterprise-cloud-enterprise-account-tutorial.md  
       - name: GitHub Enterprise Managed User
@@ -1271,6 +1273,8 @@
         href: heroku-tutorial.md
       - name: HeyBuddy
         href: heybuddy-tutorial.md
+      - name: HiBob to Active Directory 
+        href: hibob-to-active-directory-user-provisioning-tutorial.md
       - name: HighGear
         href: highgear-tutorial.md
       - name: HighGround
@@ -1379,8 +1383,6 @@
         href: ihasco-training-tutorial.md
       - name: Illusive Networks
         href: illusive-networks-tutorial.md
-      - name: Illumio SSO
-        href: illumio-sso-tutorial.md
       - name: iLMS
         href: ilms-tutorial.md
       - name: iLOGON_MHA
@@ -1601,8 +1603,6 @@
         href: knowledge-work-tutorial.md
       - name: Kofax TotalAgility
         href: kofax-totalagility-tutorial.md
-      - name: Kontiki
-        href: kontiki-tutorial.md
       - name: Korn Ferry 360
         href: korn-ferry-360-tutorial.md
       - name: Korn Ferry ALP
@@ -1705,6 +1705,8 @@
         href: logicmonitor-tutorial.md
       - name: LoginRadius
         href: lr-tutorial.md
+      - name: Lovable
+        href: lovable-oidc-tutorial.md
       - name: GoTo
         href: goto-tutorial.md
       - name: Logz.io - Microsoft Entra Integration
@@ -1729,6 +1731,10 @@
         href: lynda-tutorial.md
       - name: Lyve Cloud
         href: lyve-cloud-tutorial.md
+      - name: Lexmark cloud services
+        href: lexmark-cloud-services-tutorial.md
+      - name: Lexmark cloud services oidc
+        href: lexmark-cloud-services-oidc-tutorial.md
       - name: M-Files
         href: m-files-tutorial.md
       - name: Mail Luck!
@@ -1940,9 +1946,7 @@
       - name: Nimblex
         href: nimblex-tutorial.md
       - name: Nimbus
-        href: nimbus-tutorial.md 
-      - name: Nintex Promapp
-        href: promapp-tutorial.md
+        href: nimbus-tutorial.md
       - name: Nitro Productivity Suite
         href: nitro-productivity-suite-tutorial.md
       - name: Nodetrax Project
@@ -2035,6 +2039,8 @@
         href: orgchartnow-tutorial.md
       - name: OrgVitality SSO
         href: orgvitality-sso-tutorial.md  
+      - name: Orgvue
+        href: orgvue-tutorial.md
       - name: Origami
         href: origami-tutorial.md
       - name: Othership Workplace Scheduler
@@ -2141,8 +2147,8 @@
         href: pinpoint-tutorial.md
       - name: Pipedrive
         href: pipedrive-tutorial.md
-      - name: PKSHA Chatbot
-        href: pksha-chatbot-tutorial.md
+      - name: PKSHA ChatAgent
+        href: pksha-chatagent-tutorial.md
       - name: PlanGrid
         href: plangrid-tutorial.md
       - name: PlanMyLeave
@@ -2650,9 +2656,7 @@
       - name: Softeon WMS
         href: softeon-tutorial.md
       - name: Software AG Cloud
-        href: software-ag-cloud-tutorial.md
-      - name: SolarWinds Orion
-        href: solarwinds-orion-tutorial.md  
+        href: software-ag-cloud-tutorial.md 
       - name: SolarWinds Service Desk
         href: samanage-tutorial.md  
       - name: Soloinsight-CloudGate SSO
@@ -2695,6 +2699,8 @@
         href: sso-for-jama-connect-tutorial.md
       - name: Stackby
         href: stackby-tutorial.md
+      - name: STACKIT Cloud
+        href: stackit-cloud-tutorial.md
       - name: Stage and Screen
         href: stage-and-screen-tutorial.md
       - name: Standard for Success Accreditation
@@ -2710,7 +2716,9 @@
       - name: Stonebranch Universal Automation Center (SaaS Cloud)
         href: stonebranch-universal-automation-center-saas-cloud-tutorial.md
       - name: Stormboard
-        href: stormboard-tutorial.md
+        href: stormboard-tutorial.md    
+      - name: Stormshield Network Security (SNS)
+        href: stormshield-network-security-tutorial.md
       - name: Striim Cloud
         href: striim-cloud-tutorial.md
       - name: Striim Platform
@@ -3097,8 +3105,6 @@
         href: web-cargo-air-tutorial.md    
       - name: WebCE
         href: webce-tutorial.md
-      - name: webMethods Integration Suite
-        href: webmethods-integration-cloud-tutorial.md
       - name: WebSphere Liberty
         href: websphere-liberty-tutorial.md
       - name: WebTMA
@@ -3329,7 +3335,7 @@
       - name: Autodesk SSO
         href: autodesk-sso-provisioning-tutorial.md
       - name: Azure Databricks SCIM Connector
-        href: /azure/databricks/administration-guide/users-groups/scim/aad?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+        href: azure-databricks-provisioning-tutorial.md
       - name: Azure Databricks with Private Link Workspace
         href: azure-databricks-with-private-link-workspace-provisioning-tutorial.md
       - name: AWS IAM Identity Center
@@ -3432,6 +3438,8 @@
         href: cybsafe-provisioning-tutorial.md
       - name: Dagster Cloud
         href: dagster-cloud-provisioning-tutorial.md
+      - name: Darwinbox to Microsoft Entra ID
+        href: darwinbox-entra-integration-tutorial.md
       - name: Datadog
         href: datadog-provisioning-tutorial.md
       - name: Documo
@@ -3490,7 +3498,7 @@
         href: funnel-leasing-provisioning-tutorial.md
     - name: G - M
       items:        
-      - name: Google Cloud / G Suite Connector by Microsoft
+      - name: Google Cloud / Google Workspace
         href: g-suite-provisioning-tutorial.md
       - name: Genesys Cloud for Azure
         href: purecloud-by-genesys-provisioning-tutorial.md
@@ -3498,8 +3506,8 @@
         href: getabstract-provisioning-tutorial.md
       - name: GitHub
         href: github-provisioning-tutorial.md
-      - name: GitHub AE
-        href: github-ae-provisioning-tutorial.md
+      - name: GitHub Enterprise Server
+        href: github-enterprise-server-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User
         href: github-enterprise-managed-user-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User (OIDC)
@@ -3604,6 +3612,10 @@
         href: lawvu-provisioning-tutorial.md
       - name: LDAP directory
         href: ~/identity/app-provisioning/on-premises-ldap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+      - name: Lexmark Cloud Services (SAML) 
+        href: lexmark-cloud-services-provisioning-saml-tutorial.md
+      - name: Lexmark Cloud Services (OIDC)
+        href: lexmark-cloud-services-provisioning-oidc-tutorial.md
       - name: Lexonis TalentScape
         href: lexonis-talentscape-provisioning-tutorial.md
       - name: LimbleCMMS
@@ -3612,6 +3624,8 @@
         href: linkedinelevate-provisioning-tutorial.md
       - name: LinkedIn Sales Navigator
         href: linkedinsalesnavigator-provisioning-tutorial.md
+      - name: Linux
+        href: ~/identity/app-provisioning/on-premises-ldap-connector-linux.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Litmos
         href: litmos-provisioning-tutorial.md
       - name: Lucid (All Products)
@@ -3640,6 +3654,10 @@
         href: merchlogix-provisioning-tutorial.md
       - name: Meta Networks Connector
         href: meta-networks-connector-provisioning-tutorial.md
+      - name: Microsoft Active Directory Lightweight Directory Services
+        href: ~/identity/app-provisioning/on-premises-ldap-connector-prepare-directory.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+      - name: Microsoft Active Directory Domain Services
+        href: ~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Mixpanel
         href: mixpanel-provisioning-tutorial.md
       - name: Mindtickle
@@ -3682,8 +3700,8 @@
         href: olfeo-saas-provisioning-tutorial.md
       - name: Oneflow
         href: oneflow-provisioning-tutorial.md
-      - name: OpenForms
-        href: openforms-provisioning-tutorial.md
+      - name: Forms and Workflow
+        href: forms-workflow-provisioning-tutorial.md
       - name: OpenText Directory Services
         href: open-text-directory-services-provisioning-tutorial.md
       - name: Oracle Cloud Infrastructure Console
@@ -3748,14 +3766,14 @@
         href: rhombus-systems-provisioning-tutorial.md
       - name: RingCentral
         href: ringcentral-provisioning-tutorial.md
+      - name: Rippling HCM to Active Directory
+        href: rippling-hcm-microsoft-entra-id-integration-tutorial.md
       - name: Robin
         href: robin-provisioning-tutorial.md
       - name: Rollbar
         href: rollbar-provisioning-tutorial.md
       - name: Rootly
         href: rootly-provisioning-tutorial.md
-      - name: Rouse Sales
-        href: rouse-sales-provisioning-tutorial.md
       - name: SafeGuard Cyber
         href: safeguard-cyber-provisioning-tutorial.md        
       - name: Salesforce
@@ -3770,6 +3788,8 @@
         href: sap-ariba-spend-management-solutions-provisioning-tutorial.md
       - name: SAP BTP
         href: sap-btp-provisioning-tutorial.md
+      - name: SAP Cloud Identity Access Governance
+        href: ~/id-governance/entitlement-management-sap-integration.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SAP Cloud Identity Services
         href: sap-cloud-platform-identity-authentication-provisioning-tutorial.md
       - name: SAP Concur
@@ -3778,6 +3798,8 @@
         href: ~/identity/app-provisioning/on-premises-sap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SAP HANA
         href: sap-hana-provisioning-tutorial.md
+      - name: SAP HCM to Microsoft Entra ID
+        href: sap-hcm-microsoft-entra-identity-provisioning.md
       - name: SAP S/4HANA
         href: sap-s4hana-provisioning-tutorial.md
       - name: SAP SuccessFactors Learning
@@ -3828,7 +3850,7 @@
         href: smallstep-ssh-provisioning-tutorial.md
       - name: Snowflake
         href: snowflake-provisioning-tutorial.md
-      - name: SOAP and REST
+      - name: SOAP and REST web services
         href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Soloinsight-CloudGate SSO
         href: soloinsight-cloudgate-sso-provisioning-tutorial.md
@@ -3900,6 +3922,8 @@
         href: twingate-provisioning-tutorial.md
       - name: Uber
         href: uber-provisioning-tutorial.md
+      - name: UiPath
+        href: uipath-provisioning-tutorial.md
       - name: UNIFI
         href: unifi-provisioning-tutorial.md
       - name: uniFLOW Online
@@ -3914,8 +3938,10 @@
         href: v-client-provisioning-tutorial.md
       - name: Velpic
         href: velpic-provisioning-tutorial.md
-      - name: Veritas Enterprise Vault.cloud SSO-SCIM
-        href: veritas-provisioning-tutorial.md
+      - name: Verizon
+        href: verizon-provisioning-tutorial.md
+      - name: Visa
+        href: visa-provisioning-tutorial.md
       - name: Visibly
         href: visibly-provisioning-tutorial.md
       - name: Visitly
@@ -3986,5 +4012,7 @@
         href: zscaler-two-provisioning-tutorial.md
       - name: Zscaler Three
         href: zscaler-three-provisioning-tutorial.md
+      - name: Zscaler Zidentity
+        href: zscaler-zidentity-provisioning-tutorial.md
       - name: Zscaler ZSCloud
         href: zscaler-zscloud-provisioning-tutorial.md

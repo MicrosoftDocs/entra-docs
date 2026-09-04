@@ -2,14 +2,8 @@
 title: Group Policy and MDM settings for ESR
 description: Management settings for Enterprise State Roaming
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: reference
-ms.date: 08/01/2024
-
-ms.author: owinfrey
-author: owinfreyATL
-manager: dougeby
+ms.date: 06/27/2025
 ms.reviewer: sempofu, micrider
 ---
 # Group Policy and MDM settings

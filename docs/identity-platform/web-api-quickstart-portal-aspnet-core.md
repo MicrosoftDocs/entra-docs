@@ -2,9 +2,7 @@
 title: "Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform"
 description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET Core web API by using the Microsoft identity platform for authorization.
 ROBOTS: NOINDEX
-author: Dickson-Mwendia
 manager: dougeby
-ms.author: dmwendia
 ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform
@@ -29,7 +27,7 @@ ms.topic: quickstart
 > 
 > ## Prerequisites
 > 
-> - Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> - Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 > - [Microsoft Entra tenant](quickstart-create-new-tenant.md)
 > - A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/)
 > - [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)

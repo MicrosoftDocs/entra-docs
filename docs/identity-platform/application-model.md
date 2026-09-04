@@ -1,9 +1,7 @@
 ---
 title: Application model
 description: Learn about the process of registering your application so it can integrate with the Microsoft identity platform.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+manager: pmwongera
 ms.custom:
 ms.date: 04/26/2024
 ms.reviewer: jmprieur, sureshja, ludwignick

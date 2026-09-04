@@ -1,23 +1,41 @@
 ---
 title: Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos Resources in Platform SSO
 description: How administrators can set up macOS Platform Single Sign-on to support Kerberos authentication to on-premises Active Directory and Microsoft Entra ID kerberos-integrated resources.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: tutorial
 ms.date: 05/13/2024
-ms.author: cwerner
-author: cilwerner
-manager: 
+manager: pmwongera
 ms.reviewer: brianmel
 ms.custom: sfi-image-nochange
-#Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference between setting up with secure enclave, smart card or password based authentication methods.
+#Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO). I want to know the difference between setting up with secure enclave, smart card or password based authentication methods.
 ---
 
 # Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources in Platform SSO
 
-Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card, or their Microsoft Entra ID password.
+The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). Platform SSO enables users to Entra join their macOS devices and sign in using a hardware-bound key, smart card, or their Microsoft Entra ID password through a PSSO Primary Refresh Token (PRT). 
 
-This tutorial shows you how to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. Kerberos SSO is an optional capability within Platform SSO, but it's recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
+In addition to the PSSO PRT, Microsoft Entra also issues both on-premises and cloud-based Kerberos Ticket Granting Tickets (TGTs) which are then shared with the native Kerberos stack in macOS via TGT mapping in PSSO. Customers have the flexibility to determine how these TGTs are utilized in their environment and can configure either the Kerberos SSO extension file accordingly. The Kerberos SSO extension, owned and maintained by Apple, is designed to provide seamless single sign-on for Kerberos-based resources on macOS. For any help needed with Kerberos SSO extension configuration, please engage with Apple.
+
+This tutorial illustrates how to leverage Platform SSO TGT to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. Kerberos SSO is an optional capability within Platform SSO, but it's recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
+
+## Customize Kerberos TGT setting
+
+Customers can customize the TGT mapping setting using the below key/value in the extension data dictionary in SSO extension configuration. This option is **only enabled in Company portal version 2508 and above.**
+
+- **Key**: `custom_tgt_setting`  
+- **Type**: `Integer`
+
+| Value | Description                                                                                                         |
+|--------|--------------------------------------------------------------------------------------------------------------------|
+| `0`    | **Both On-Prem and Cloud TGTs** – Maps both on-premises and cloud TGTs. This is the default configuration.         |
+| `1`    | **On-Prem TGT Only** – Maps only the on-premises TGT.                                                              |
+| `2`    | **Cloud TGT Only** – Maps only the cloud-based TGT.                                                                |
+| `3`    | **No TGTs** – Disables TGT mapping entirely.                                                                       |
+
+
+Configuration example:
+
+:::image type="content" source="media/device-join-macos-platform-single-sign-on-kerberos-configuration/customize-tgt-setting.png" alt-text="Screenshot of customizing Kerberos TGT SSO setting.":::
+
 
 ## Prerequisites
 
@@ -33,14 +51,14 @@ Refer to the [Microsoft Entra ID macOS Platform SSO documentation](./macos-psso.
 
 ## Kerberos SSO MDM profile configuration for on-premises Active Directory
 
-You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. It's recommended to deploy on-premises Active Directory profile before the Microsoft Entra ID Cloud Kerberos profile.
+You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. If you don't plan to use the Microsoft Entra Cloud Kerberos TGT, then you only need to configure the on-premises Kerberos SSO profile.
 
 Use the following settings to configure the on-premises Active Directory profile, ensuring that you replace all references to **contoso.com** and **Contoso** with the proper values for your environment:
 
 | Configuration Key     | Recommended Value               | Note                                                                                                                               |
 |-----------------------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `Hosts`               | `<string>.contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name                                                                   |
-| `Hosts`               | `<string>contoso.com</string>`  | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `.` characters before your domain/forest name |
+| `Hosts`               | `<string>.contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `.` character before your domain/forest name                                                                 |
+| `Hosts`               | `<string>contoso.com</string>`  | Replace **contoso.com** with your on-premises domain/forest name |
 | `Realm`               | `<string>CONTOSO.COM</string>`  | Replace **CONTOSO.COM** with your on-premises realm name. The value should be all capitalized.                                     |
 | `PayloadOrganization` | `<string>Contoso</string>`      | Replace **Contoso** with the name of your organization                                                                             |
 
@@ -78,6 +96,8 @@ Use the following settings to configure the on-premises Active Directory profile
             <string>CONTOSO.COM</string>
             <key>PayloadDisplayName</key>
             <string>Single Sign-On Extensions Payload for On-Premises</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.extensiblesso.1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5</string>
             <key>PayloadType</key>
             <string>com.apple.extensiblesso</string>
             <key>PayloadUUID</key>
@@ -124,7 +144,9 @@ Use the following settings to configure the Microsoft Entra ID Cloud Kerberos pr
 |-----------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `preferredKDCs`       | `<string>kkdcp://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/kerberos</string>` | Replace the **aaaabbbb-0000-cccc-1111-dddd2222eeee** value with the Tenant ID of your tenant, which can be found on the Overview page of the [Microsoft Entra Admin Center](https://entra.microsoft.com) |
 | `PayloadOrganization` | `<string>Contoso</string>`                                                                         | Replace **Contoso** with the name of your organization                                                                                                                                             |
-
+| `Hosts`               | `<string>.windows.net</string>` |                                                                    |
+| `Hosts`               | `<string>windows.net</string>`  | |
+| `Realm`               | `<string>KERBEROS.MICROSOFTONLINE.COM</string>`  | The value should be all capitalized.                                     |
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -155,6 +177,8 @@ Use the following settings to configure the Microsoft Entra ID Cloud Kerberos pr
             <string>KERBEROS.MICROSOFTONLINE.COM</string>
             <key>PayloadDisplayName</key>
             <string>Single Sign-On Extensions Payload for Microsoft Entra ID Cloud Kerberos</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.extensiblesso.00aa00aa-bb11-cc22-dd33-44ee44ee44ee</string>
             <key>PayloadType</key>
             <string>com.apple.extensiblesso</string>
             <key>PayloadUUID</key>
@@ -199,7 +223,7 @@ Save the configuration using a text editor with the *mobileconfig* file extensio
 
 ## Intune configuration steps
 
-If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#Kerberos SSO MDM profile configuration for on-premises Active Directory) about replacing **contoso.com** values with the proper values for your organization.
+If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [Previous instructions](#kerberos-sso-mdm-profile-configuration-for-microsoft-entra-id-cloud-kerberos) about replacing **contoso.com** values with the proper values for your organization.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Devices** > **Configuration** > **Create** > **New policy**.
@@ -240,10 +264,19 @@ You should have two Kerberos tickets, one for your on-premises AD with the ticke
 Validate your configuration is working by testing with appropriate Kerberos-capable resources:
 
 - Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari. The user should be able to access the file share without being challenged for interactive credentials.
-- Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
+- Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials.
 
 > [!NOTE]
 > Note that Microsoft's Platform SSO implementation is responsible for issuing the Kerberos TGTs and delivering them to macOS so that macOS can import them. If you see TGTs when running `app-sso platform -s`, then the TGTs have been successfully imported. If you experience any ongoing Kerberos issues, such as issues accessing on-premises resources via Kerberos, then it's recommended to reach out to Apple for support with further configuration of your Kerberos MDM profiles. The Kerberos implementation in macOS uses native Apple-provided Kerberos capabilities.
+
+## Use Cloud Kerberos TGT to access Azure File Storage
+
+Cloud TGT issued through Platform SSO enable seamless access to Azure file shares without prompting users for interactive credentials. Please note that access to Azure file shares using the PSSO Kerberos TGT feature is currently in limited preview. If you're interested in trying it out, reach out to azurefiles@microsoft.com for onboarding support.
+If you need guidance on configuring a cloud file share in Azure Files, please refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable).
+
+> [!NOTE]
+> When mounting the file share via SMB, ensure that the manifest file associated with the app registration for Azure File Share includes the `cifs` mapping in **lowercase**. If this value is set to uppercase `CIFS`, it may lead to issues during the mounting process.
+
 
 ## Known Issues
 
@@ -272,6 +305,6 @@ Some browsers require additional configuration to enable Kerberos SSO support, i
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID using Company Portal](./device-join-microsoft-entra-company-portal.md)
-- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)

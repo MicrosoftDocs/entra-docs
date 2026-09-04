@@ -1,13 +1,10 @@
 ---
 title: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication
 description: Learn how to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications by using F5 BIG-IP advanced configuration.
-author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 04/18/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm a IT administrator, and I want to configure F5 BIG-IP Access Policy Manager for Kerberos authentication. My goal is to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications. I want to improve governance and security for my organization.
@@ -64,7 +61,7 @@ The following image illustrates the SAML SP-initiated flow for this scenario, bu
 
 Prior BIG-IP experience isn't necessary. You need:
 
-* An [Azure free account](https://azure.microsoft.com/free/active-directory/), or a higher-tier subscription.
+* An [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn/), or a higher-tier subscription.
 * A BIG-IP, or [deploy BIG-IP Virtual Edition in Azure](~/identity/enterprise-apps/f5-bigip-deployment-guide.md).
 * Any of the following F5 BIG-IP licenses:
   * F5 BIG-IP Best bundle

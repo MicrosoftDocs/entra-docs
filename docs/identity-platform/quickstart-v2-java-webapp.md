@@ -2,9 +2,7 @@
 title: "Quickstart: Add sign-in with Microsoft to a Java web app"
 description: In this quickstart, you'll learn how to add sign-in with Microsoft to a Java web application by using OpenID Connect.
 ROBOTS: NOINDEX
-author: Dickson-Mwendia
 manager: dougeby
-ms.author: dmwendia
 ms.date: 11/22/2023
 ms.service: identity-platform
 ms.topic: quickstart
@@ -182,7 +180,7 @@ ms.custom: sfi-ropc-nochange
 > 
 > ## Next steps
 > 
-> For a more in-depth discussion of building web apps that sign in users on the Microsoft identity platform, see the multipart scenario series:
+> For a more in-depth discussion of building web apps that call APIs on the Microsoft identity platform, see the multipart scenario series:
 > 
 > > [!div class="nextstepaction"]
-> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md?tabs=java)
+> > [Scenario: Web app that calls an API](scenario-web-app-call-api-app-configuration.md?tabs=java)

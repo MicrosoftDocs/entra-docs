@@ -1,14 +1,8 @@
 ---
 title: Replica sets concepts for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn what replica sets are in Microsoft Entra Domain Services and how they provide redundancy to applications that require identity services.
-author: justinha
-manager: dougeby
-
-ms.service: entra-id
-ms.subservice: domain-services
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/21/2025
-ms.author: justinha
 ---
 
 # Replica sets concepts and features for Microsoft Entra Domain Services
@@ -27,6 +21,9 @@ When you create a managed domain, such as *contosocloud.com*, an initial replica
 You create each replica set in a virtual network. Each virtual network must be peered to every other virtual network that hosts a managed domain's replica set. This configuration creates a mesh network topology that supports directory replication. A virtual network can support multiple replica sets, provided that each replica set is in a different virtual subnet.
 
 All replica sets are placed in the same Active Directory site. As the result, all changes are propagated using intrasite replication for quick convergence.
+
+> [!IMPORTANT]
+> Microsoft Entra Domain Services replica sets require network connectivity between all virtual networks hosting replica sets. Replica sets are deployed within a single Active Directory site and rely on a fully meshed virtual network topology to support directory replication. Network architectures that don't provide direct connectivity between replica-set virtual networks can cause authentication, domain controller communication, and Netlogon-related issues for applications and services that depend on Microsoft Entra Domain Services. Review replica-set networking requirements before deploying workloads across multiple regions.
 
 > [!NOTE]
 > It's not possible to define separate sites and define replication settings between replica sets.

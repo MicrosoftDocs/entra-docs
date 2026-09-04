@@ -1,13 +1,14 @@
 ---
 title: Configure identity access controls to meet CMMC Level 2
 description: Learn how to configure Microsoft Entra identities to meet CMMC Level 2 requirements.
-author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: standards
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 1/3/2023
+author: janicericketts
 ms.author: jricketts
+ms.reviewer: jricketts
 ms.custom: it-pro
 ---
 
@@ -107,3 +108,4 @@ The following table provides a list of practice statement and objectives, and Mi
 * [Conditional Access require managed device - Require device to be marked as compliant](~/identity/conditional-access/concept-conditional-access-grant.md)
 * [What is Microsoft Intune?](/mem/intune/fundamentals/what-is-intune)
 * [Co-management for Windows 10 devices](/mem/configmgr/comanage/overview)
+

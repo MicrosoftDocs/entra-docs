@@ -1,11 +1,9 @@
 ---
 title: Custom authentication extensions overview 
 description: Use Microsoft Entra custom authentication extensions to customize your user's sign-in experience by using REST APIs or outbound webhooks.
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
+manager: pmwongera
 ms.custom: 
-ms.date: 05/04/2025
+ms.date: 06/25/2025
 ms.reviewer: jasuri
 ms.service: identity-platform
 
@@ -17,7 +15,7 @@ titleSuffix: Microsoft identity platform
 
 # Custom authentication extensions overview
 
-The Microsoft Entra ID authentication pipeline consists of several built-in authentication events, like the validation of user credentials, conditional access policies, multifactor authentication, self-service password reset, and more.
+The Microsoft Entra ID authentication pipeline consists of several built-in authentication events, like the validation of user credentials, Conditional Access policies, multifactor authentication, self-service password reset, and more.
 
 Microsoft Entra custom authentication extensions allow you to extend authentication flows with your own business logic at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. 
 
@@ -66,6 +64,10 @@ Your REST API must handle:
 - Auditing and logging.
 - Availability, performance, and security controls.
 
+Watch this video to learn how to create an authentication extensions REST API endpoint with Azure Logic Apps, without writing code. Azure Logic App empowers users to build workflows using a visual designer. The video covers customizing verification emails, and it applies to all types of custom authentication extensions, including custom claims providers.
+
+> [!VIDEO https://www.youtube.com/embed/2ZzX6_W93Sk?si=P9URBkKVnXPZ6Kfc]
+
 ### Request payload
 
 The request to the REST API includes a JSON payload containing details about the event, user profile, authentication request data, and other context information. The attributes within the JSON payload can be used to perform logic by your API.
@@ -104,48 +106,37 @@ This section lists the custom authentication extensions events available in Micr
 | [Attribute collection start](#attribute-collection-start)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 | [Attribute collection submit](#attribute-collection-submit)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 | [One time passcode send](#one-time-passcode-send)||:::image type="icon" source="./media/common/yes.png" border="false":::|
+| [Account Recovery (additional claim validation)](#account-recovery-additional-claim-validation)  | :::image type="icon" source="./media/common/yes.png" border="false"::: | |
 
 ### Token issuance start
 
 The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a [custom claims provider](custom-claims-provider-overview.md). The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
-
 ### Attribute collection start 
 
 [Attribute collection start](./custom-extension-attribute-collection.md) events can be used with custom authentication extensions to add logic before attributes are collected from a user. The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. 
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
 
 ### Attribute collection submit
 
 [Attribute collection submit](./custom-extension-attribute-collection.md) events can be used with custom authentication extensions to add logic after attributes are collected from a user. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
-
 ### One time passcode send
  
-The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up, reset their password, or sign-in with email and one-time passcode.
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up with email address, sign in with email one-time passcode (Email OTP), reset their password using Email OTP, or use Email OTP for multifactor authentication (MFA).
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
 
-> [!TIP]
-> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmail)
->
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
+### Account Recovery (additional claim validation)
 
+The **OnVerifiedIdClaimValidation** event is triggered during [account recovery](~/identity/authentication/concept-account-recovery-overview.md) when a user presents Verified ID claims to re-establish their identity. The primary reason to use a custom authentication extension for account recovery is to confirm that the person requesting recovery is an actual employee, not just a valid human. When a user presents their Verified ID, Microsoft Entra passes the claims from the credential to your custom authentication extension. Your REST API can then compare those claims against an authoritative data source, such as an HR system or employee records database, and return a pass or fail decision.
+
+When you move an account recovery profile from Eval mode to Production mode, we highly recommend using a custom authentication extension. The built-in first name and last name matching isn't reliable enough for larger user groups and should only be used for a very small set of users.
+
+For more information, see [Create a custom authentication extension for account recovery claim validation](./tutorial-custom-authentication-extension-account-recovery.md). Only one custom authentication extension per tenant is allowed for this event type.
 
 ## Related content
 
 - Learn more about [custom claims providers](custom-claims-provider-overview.md)
 - [Create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application
 - [Configure a custom email provider for one time passcode send events](custom-extension-email-otp-get-started.md)
+- [Create a custom authentication extension for account recovery claim validation](tutorial-custom-authentication-extension-account-recovery.md)

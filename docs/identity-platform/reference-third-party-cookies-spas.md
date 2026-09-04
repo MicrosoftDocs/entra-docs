@@ -1,9 +1,7 @@
 ---
 title: How to handle third-party cookie blocking in browsers
 description: Single-page app (SPA) authentication when third-party cookies are no longer allowed.
-author: OwenRichards1
-manager: CelesteDG
-ms.author: owenrichards
+manager: pmwongera
 ms.date: 03/14/2022
 ms.reviewer: ludwignick; emilylauber
 ms.service: identity-platform

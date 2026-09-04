@@ -1,26 +1,21 @@
 ---
 title: Add custom attributes
 description: Learn how to add custom attributes to self-service sign-up flows in Microsoft Entra External ID. Extend the set of attributes stored on a guest account and customize the user experience.
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-
-ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 04/17/2026
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 
-#customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
+# Customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
 ---
 
-# Define custom attributes to self-service sign-up flows in Microsoft Entra External ID
+# Collect custom user attributes during B2B collaboration sign-up
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 > [!TIP]
-> This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Collect user attributes during sign-up](customers/how-to-define-custom-attributes.md).
+> This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Collect custom user attributes during external tenant sign-up](customers/how-to-define-custom-attributes.md).
 
 For each application, you might have different requirements for the information you want to collect during sign-up. Microsoft Entra External ID comes with a built-in set of information stored in attributes, such as Given Name, Surname, City, and Postal Code. With Microsoft Entra External ID, you can extend the set of attributes stored on a guest account when the external user signs up through a user flow.
 
@@ -36,10 +31,10 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Entra ID** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External identities** > **Overview**.
 1. Select **Custom user attributes**. The available user attributes are listed.
 
-   :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of selecting custom user attributes for sign-up." lightbox="media/user-flow-add-custom-attributes/user-attributes.png":::
+   :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of the External identities overview page in the Microsoft Entra admin center, with Custom user attributes selected." lightbox="media/user-flow-add-custom-attributes/user-attributes.png":::
 
 
 1. To add an attribute, select **Add**.
@@ -49,7 +44,7 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
    - **Data Type** - Choose a data type (**String**, **Boolean**, or **Int**).
    - **Description** - Optionally, enter a description of the custom attribute for internal use. This description isn't visible to the user.
 
-   :::image type="content" source="media/user-flow-add-custom-attributes/add-an-attribute.png" alt-text="Screenshot of adding a custom attribute.":::
+   :::image type="content" source="media/user-flow-add-custom-attributes/add-an-attribute.png" alt-text="Screenshot of the Add an attribute pane showing Name, Data Type, and Description fields before creating a custom user attribute.":::
 
 1. Select **Create**.
 

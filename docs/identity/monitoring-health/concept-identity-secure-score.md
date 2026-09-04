@@ -2,14 +2,8 @@
 title: What is the Identity Secure Score?
 description: Learn how to use the Identity Secure Score to improve the security posture of your Microsoft Entra tenant.
 
-ms.service: entra-id
-ms.subservice: monitoring-health
-ms.topic: conceptual
-ms.date: 06/02/2025
-
-ms.author: sarahlipsey
-author: shlipsey3
-manager: pmwongera 
+ms.topic: how-to
+ms.date: 02/09/2026
 ms.reviewer: jadedsouza
 
 # Customer intent: As an IT admin, I want to know how to use the Identity Secure Score and related recommendations to improve the security posture of my Microsoft Entra tenant.
@@ -19,7 +13,19 @@ ms.reviewer: jadedsouza
 
 The Identity Secure Score is shown as a percentage that functions as an indicator for how aligned you are with Microsoft's recommendations for security. Each improvement action in Identity Secure Score is tailored to your configuration. You can access the score and view individual recommendations related to your score in Microsoft Entra recommendations. You can also see how your score changes over time. 
 
-![Screenshot of the Recommendations page with the Secure Score details highlighted.](./media/concept-identity-secure-score/secure-score-overview.png)
+:::image type="content" source="media/concept-identity-secure-score/secure-score-overview.png" alt-text="Screenshot of the Recommendations page with the Secure Score details highlighted." lightbox="media/concept-identity-secure-score/secure-score-overview.png":::
+
+## Prerequisites
+
+- Identity Secure Score is available to free and paid customers.
+- Some recommendations require a paid license to view and act on. For more information, see [What are Microsoft Entra recommendations](overview-recommendations.md).
+- To *view* the improvement action but not update, you need at least the [Service Support Administrator](../role-based-access-control/permissions-reference.md#service-support-administrator) role.
+- To *update* the status of an improvement action, you need at least the [SharePoint Administrator](../role-based-access-control/permissions-reference.md#sharepoint-administrator) role. 
+- For a full list of roles, see [Least privileged roles by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---recommendations-least-privileged-roles).
+
+## How does the Identity Secure Score benefit me?
+
+This score helps to objectively measure your identity security posture, help you plan identity security improvements, and review the success of your improvements. By following the improvement actions in the Microsoft Entra recommendations, you can take advantage the features available to your organization as part of your identity investments.
 
 The following recommendations are included in the Identity Secure Score:
 
@@ -47,42 +53,22 @@ The following recommendations are included in the Identity Secure Score:
 - Stop weak cipher usage
 - Use least privileged administrative roles
 
-## How does the Identity Secure Score benefit me?
-
-This score helps to:
-
-- Objectively measure your identity security posture
-- Plan identity security improvements
-- Review the success of your improvements
-
-By following the improvement actions in the Microsoft Entra recommendations, you can:
-
-- Improve your security posture and your score
-- Take advantage the features available to your organization as part of your identity investments
-
 ## How does it work?
 
 Every 24 hours, we look at your security configuration and compare your settings with the recommended best practices. Based on the outcome of this evaluation, a new score is calculated for your directory. It’s possible that your security configuration isn’t fully aligned with the best practice guidance and the improvement actions are only partially met. In these scenarios, you're awarded a portion of the max score available for the control.
-
-## Prerequisites
-
-- Identity Secure Score is available to free and paid customers.
-- Some recommendations require a paid license to view and act on. For more information, see [What are Microsoft Entra recommendations](overview-recommendations.md).
-- To update the status of an improvement action, you need to have [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator), [Exchange Administrator](../role-based-access-control/permissions-reference.md#exchange-administrator), or [SharePoint Administrator](../role-based-access-control/permissions-reference.md#sharepoint-administrator) permissions.
-- To view the improvement action but not update, you need to have [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator), [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator), [Service Support Administrator](../role-based-access-control/permissions-reference.md#service-support-administrator), [Security Reader](../role-based-access-control/permissions-reference.md#security-reader), [Security Operator](../role-based-access-control/permissions-reference.md#security-operator), or [Global Reader](../role-based-access-control/permissions-reference.md#global-reader) permissions.
 
 ## How do I use the Identity Secure Score?
 
 To access the Identity Secure Score:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Entra ID** > **Identity Secure Score** to view the dashboard.
+1. Browse to **Entra ID** > **Identity Secure Score** to view the dashboard or **Entra ID** > **Overview** > **Recommendations**. Select the **Security** filter option to see only those recommendations that are included in the Identity Secure Score.
 
-The score and related recommendations are also found at **Entra ID** > **Overview** > **Recommendations**.
+:::image type="content" source="media/concept-identity-secure-score/recommendations-secure-score.png" alt-text="Screenshot of the Entra recommendations with the Secure Score filter highlighted." lightbox="media/concept-identity-secure-score/recommendations-secure-score.png":::
 
 Each recommendation is measured based on your configuration. If you're using non-Microsoft products to enable a best practice recommendation, you can indicate this configuration in the settings of an improvement action. You might set recommendations to be ignored if they don't apply to your environment. An ignored recommendation doesn't contribute to the calculation of your score.
 
-![Screenshot of the improvement action panel.](./media/concept-identity-secure-score/identity-secure-score-ignore-or-non-microsoft-recommendations.png)
+:::image type="content" source="media/concept-identity-secure-score/identity-secure-score-ignore-or-non-microsoft-recommendations.png" alt-text="Screenshot of the improvement action panel." lightbox="media/concept-identity-secure-score/identity-secure-score-ignore-or-non-microsoft-recommendations.png":::
 
 - **To address** - You recognize that the improvement action is necessary and plan to address it at some point in the future. This state also applies to actions that are detected as partially, but not fully completed.
 - **Risk accepted** - Security should always be balanced with usability, and not every recommendation works for everyone. When that is the case, you can choose to accept the risk, or the remaining risk, and not enact the improvement action. You aren't awarded any points, and the action isn't visible in the list of improvement actions. You can view this action in history or undo it at any time.

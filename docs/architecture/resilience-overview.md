@@ -1,17 +1,12 @@
 ---
 title: Resilience in identity and access management with Microsoft Entra ID
 description: Learn how to build resilience into identity and access management. Resilience helps endure disruption to system components and recover with minimal effort.
-author: janicericketts
-manager: martinco
-
-ms.service: entra
-ms.subservice: architecture
 ms.topic: overview
 ms.date: 08/26/2022
-ms.author: jricketts
 ms.custom:
   - it-pro
   - kr2b-contr-experiment
+ms.subservice: architecture
 ---
 
 # Building resilience into identity and access management with Microsoft Entra ID
@@ -37,3 +32,9 @@ To build more resilience in your systems, review the following articles:
 * [Build resilience in your IAM infrastructure](resilience-in-infrastructure.md)
 * [Build IAM resilience in your applications](resilience-app-development-overview.md)
 * [Build resilience in your Customer Identity and Access Management (CIAM) systems](resilience-b2c.md)
+
+## Related resources
+
+* [Microsoft Entra deployment plans](deployment-plans.md) — deployment guidance including hybrid scenarios, authentication, and governance
+* [Build resilience in your hybrid architecture](resilience-in-hybrid.md) — architecture diagrams for PHS, PTA, and Federation topologies
+* [Identity and access management architecture in Azure](/azure/architecture/identity/identity-start-here) — reference architectures and design guidance

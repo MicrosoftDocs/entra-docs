@@ -1,10 +1,8 @@
 ---
 title: Directory extension attributes in claims
 description: Describes directory extension attributes that are used for sending user data to applications in token claims.
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
-ms.custom: curation-claims
+manager: pmwongera
+ms.custom:
 ms.date: 05/26/2023
 ms.reviewer: ludwignick, alamaral
 ms.service: identity-platform

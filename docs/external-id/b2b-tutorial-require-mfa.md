@@ -1,13 +1,10 @@
 ---
-title: 'Tutorial - multifactor authentication for B2B'
+title: 'Tutorial: Multifactor authentication for B2B'
 description: In this tutorial, learn how to require multifactor authentication when you use Microsoft Entra B2B to collaborate with external users and partner organizations.
-ms.service: entra-external-id
 ms.topic: tutorial
-ms.date: 04/28/2025
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
+ms.date: 04/24/2026
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing external B2B guest users, I want to enforce multifactor authentication for access to cloud or on-premises applications, so that I can ensure the security of our resources and protect against unauthorized access.
 ---
@@ -28,8 +25,8 @@ Example:
 1. The user is asked to complete an MFA challenge. 
 1. The user sets up MFA with Company A and chooses their MFA option. The user is allowed access to the application.
 
->[!NOTE]
->Microsoft Entra multifactor authentication is done at resource tenancy to ensure predictability. When the guest user signs in, they see the resource tenant sign-in page displayed in the background, and their own home tenant sign-in page and company logo in the foreground.
+> [!NOTE]
+> Microsoft Entra multifactor authentication is performed by the resource tenant to ensure predictability. When the guest user signs in, they see the resource tenant sign-in page displayed in the background, and their own home tenant sign-in page and company logo in the foreground.
 
 In this tutorial, you will:
 
@@ -41,7 +38,7 @@ In this tutorial, you will:
 > - Test your Conditional Access policy.
 > - Clean up the test user and policy.
 
-If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) to get started.
+If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) to get started.
 
 ## Prerequisites
 
@@ -75,14 +72,14 @@ To complete the scenario in this tutorial, you need:
 1. Access the Microsoft Entra admin center using only your sign-in credentials. No other authentication is required.
 1. Sign out of the Microsoft Entra admin center.
 
-## Create a conditional access policy that requires MFA
+## Create a Conditional Access policy that requires MFA
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Name your policy, like **Require MFA for B2B portal access**. Create a meaningful standard for naming policies.
 1. Under **Assignments**, select **Users or workload identities**.
-   1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**. You can assign the policy to different [external user types](authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types), built-in directory roles, or users and groups. 
+   1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**. You can assign the policy to different [external user types](authentication-conditional-access.md#assign-conditional-access-policies-to-external-user-types), built-in directory roles, or users and groups. 
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-user-access.png" alt-text="Screenshot showing selecting all guest users.":::
 
@@ -101,7 +98,7 @@ To complete the scenario in this tutorial, you need:
 
 The **Conditional Access What If policy tool** helps you understand the effects of Conditional Access policies in your environment. Instead of manually testing your policies with multiple sign-ins, you can use this tool to simulate a user's sign-in. The simulation predicts how this sign-in will affect your policies and generates a report. For more information, see [Use the What If tool to understand Conditional Access policies](/entra/identity/conditional-access/what-if-tool).
 
-## Test your conditional access policy
+## Test your Conditional Access policy
 
 1. Use your test user name and password to sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. You should see a request for more authentication methods. It can take some time for the policy to take effect.

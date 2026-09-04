@@ -1,12 +1,6 @@
 ---
 title: User default permissions in external tenants
 description: Learn about the default permissions for users in an external tenant. 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: reference
 ms.date: 03/10/2025
 ms.custom: it-pro
@@ -20,11 +14,11 @@ A Microsoft Entra tenant in an *external* configuration is used exclusively for 
 
 To better understand the typical use cases for users in an external tenant, we can categorize them as follows:
 
-- **External users** are consumers and business customers who use the apps registered in your external tenant. They typically retain default user permissions, meaning you don't assign them administrative roles. These users are usually created through self-service sign-up, but you can create them with the [Create new external user](~/fundamentals/how-to-create-delete-users.yml#create-a-new-external-user) option in the Microsoft Entra admin center or with Microsoft Graph. 
+- **External users** are consumers and business customers who use the apps registered in your external tenant. They typically retain default user permissions, meaning you don't assign them administrative roles. These users are usually created through self-service sign-up, but you can create them with the [Create new external user](~/fundamentals/how-to-create-delete-users.md#create-a-new-external-user) option in the Microsoft Entra admin center or with Microsoft Graph. 
 
-- **Internal users** are usually admins to whom you assign [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md). You can create internal users and assign roles using the [Create new user](~/fundamentals/how-to-create-delete-users.yml#create-a-new-user) option in the admin center or with Microsoft Graph.
+- **Internal users** are usually admins to whom you assign [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md). You can create internal users and assign roles using the [Create new user](~/fundamentals/how-to-create-delete-users.md#create-a-new-user) option in the admin center or with Microsoft Graph.
 
-- **Invited users** are usually admins you invite to the external tenant and to whom you assign [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md). If they're not assigned a role, they have default user permissions. You can invite users and assign roles using the [Invite external user](~/fundamentals/how-to-create-delete-users.yml#invite-an-external-user) option in the admin center or with Microsoft Graph.
+- **Invited users** are usually admins you invite to the external tenant and to whom you assign [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md). If they're not assigned a role, they have default user permissions. You can invite users and assign roles using the [Invite external user](~/fundamentals/how-to-create-delete-users.md#invite-an-external-user) option in the admin center or with Microsoft Graph.
 
 When users are created in an external tenant, they all start with default permissions. However, you can assign [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md) to those users who need to perform administrative tasks within the external tenant.
 

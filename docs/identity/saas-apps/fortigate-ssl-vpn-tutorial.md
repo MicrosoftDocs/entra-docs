@@ -1,17 +1,11 @@
 ---
 title: Configure FortiGate SSL VPN for Single sign-on with Microsoft Entra ID
 description: Learn the steps you need to perform to integrate FortiGate SSL VPN with Microsoft Entra ID.
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FortiGate SSL VPN so that I can control who has access to FortiGate SSL VPN, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure FortiGate SSL VPN for Single sign-on with Microsoft Entra ID
 
@@ -25,7 +19,7 @@ In this article,  you learn how to integrate FortiGate SSL VPN with Microsoft En
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A FortiGate SSL VPN with single sign-on (SSO) enabled.
 
 ## Article description
@@ -86,7 +80,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
     `https://<FortiGate IP or FQDN address>:<Custom SSL VPN port>/remote/saml/login`.
 
     d. In the **Logout URL** box, enter a URL in the pattern
-    `https://<FortiGate IP or FQDN address>:<Custom SSL VPN port><FQDN>/remote/saml/logout`.
+    `https://<FortiGate IP or FQDN address>:<Custom SSL VPN port>/remote/saml/logout`.
 
     > [!NOTE]
     > These values are just patterns. You need to use the actual **Sign on URL**, **Identifier**, **Reply URL**, and **Logout URL** that's configured on the FortiGate. FortiGate support needs to supply the correct values for the environment.

@@ -1,15 +1,11 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Seamless Single Sign-On'
 description: This topic describes how to troubleshoot Microsoft Entra seamless single sign-on
-author: billmath
 ms.reviewer: swkrish
-manager: femila
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: entra-id
 ms.topic: troubleshooting
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
 ms.custom: sfi-image-nochange
 ---
 
@@ -102,7 +98,7 @@ If troubleshooting didn't help, you can manually reset the feature on your tenan
 
 ### Step 1: Import the Seamless SSO PowerShell module
 
-1. First, download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
+1. Ensure Microsoft Entra Connect is installed. Download it from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted).
 2. Browse to the `%programfiles%\Microsoft Azure Active Directory Connect` folder.
 3. Import the Seamless SSO PowerShell module by using this command: `Import-Module .\AzureADSSO.psd1`.
 

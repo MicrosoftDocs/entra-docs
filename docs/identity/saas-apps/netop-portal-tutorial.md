@@ -2,18 +2,10 @@
 title: Configure Netop Portal for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Netop Portal.
 
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: gideonkiratu
-
+ms.date: 06/09/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Netop Portal so that I can control who has access to Netop Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Netop Portal for Single sign-on with Microsoft Entra ID
 
@@ -23,14 +15,15 @@ In this article,  you learn how to integrate Netop Portal with Microsoft Entra I
 * Enable your users to be automatically signed-in to Netop Portal with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Netop Portal is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Netop Portal single sign-on (SSO) enabled subscription.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 
@@ -112,11 +105,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Netop Portal SSO
 
-To configure single sign-on on **Netop Portal** side, you need to the downloaded **Federation Metadata XML** and the Login URL from Azure portal. Follow the instructions in Step 3 of the documentation [here](https://support.netop.com/hc/en-us/articles/35623530508435-ADFS-and-Azure-AD-Integration) to configure NetOp Portal for Microsoft Entra authentication.
+To configure single sign-on on **Netop Portal** side, you need to the downloaded **Federation Metadata XML** and the Login URL from Azure portal. Follow the instructions in Step 3 of the documentation [here](https://support.netop.com/support/solutions/articles/205000041622-adfs-and-azure-ad-integration) to configure NetOp Portal for Microsoft Entra authentication.
 
 ### Create Netop Portal test user
 
-In this section, you create a user called Britta Simon in Netop Portal. Work with [Netop Portal support team](mailto:casemanager@netop.com) to add the users in the Netop Portal platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Netop Portal. Work with [Netop Portal support team](mailto:support@netop.com) to add the users in the Netop Portal platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

@@ -1,13 +1,11 @@
 ---
 title: 'Sign in users in a Node.js/Express web app by using Microsoft identity platform'
 description: Set up node web app project that signs in users into customer facing app by in an external tenant or employees in a workforce tenant
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 01/03/2025
 #Customer intent: As a developer, devops, I want to learn about how to build a Node.js/Express web app that signs in users into customer facing app by in an external tenant or employees in a workforce tenant by using Microsoft identity platform'
+ms.date: 02/25/2025
 ---
 
 # Tutorial: Set up a Node.js web app to sign in users by using Microsoft identity platform
@@ -156,7 +154,7 @@ npm install express dotenv hbs express-session axios cookie-parser http-errors m
                 <link rel='stylesheet' href='/stylesheets/style.css' />
             </head>            
             <body>
-                {{{content}}}
+                {{{body}}}
             </body>        
         </html>
     ```

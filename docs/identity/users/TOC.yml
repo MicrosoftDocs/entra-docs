@@ -9,7 +9,7 @@
 - name: Quickstarts
   items:
   - name: Add users to Microsoft Entra ID
-    href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+    href: ~/fundamentals/how-to-create-delete-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Set groups expiration    
     href: groups-quickstart-expiration.md
   - name: Set groups naming policy    
@@ -23,23 +23,23 @@
   items:
   - name: Compare default user permissions    
     href: ~/fundamentals/users-default-permissions.md?toc=/entra/identity/users/toc.json7bc=/entra/identity/users/breadcrumb/toc.json
-  - name: Group-based licensing basics    
-    href: ~/fundamentals/concept-group-based-licensing.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Manage access with groups    
     href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+  - name: Enterprise user management with Microsoft Security Copilot
+    href: ~/security-copilot/entra-enterprise-user-management.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
 - name: How-to guides
   expanded: true
   items:
   - name: Users
     items: 
     - name: Create a user 
-      href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-create-delete-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Create users in bulk
       href: users-bulk-add.md
     - name: Convert external users to internal
       href: convert-external-users-internal.md        
     - name: Manage user profiles
-      href: ~/fundamentals/how-to-manage-user-profile-info.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-manage-user-profile-info.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Add custom data using extensions - Microsoft Graph
       href: /graph/extensibility-overview?context=/entra/identity/users/context/ugr-context.json
     - name: Assign custom security attributes
@@ -55,7 +55,7 @@
     - name: Delete users in bulk
       href: users-bulk-delete.md
     - name: Restore a deleted user    
-      href: ~/fundamentals/users-restore.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/users-restore.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Restore users in bulk
       href: users-bulk-restore.md
     - name: Revoke a user's access
@@ -70,14 +70,18 @@
       href: clean-up-unmanaged-accounts.md 
     - name: Clean up stale guest accounts
       href: clean-up-stale-guest-accounts.md
+    - name: Get signed-in user identity
+      href: how-to-get-signed-in-identity.md
     - name: Dynamic groups and guests   
       href: ~/external-id/use-dynamic-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Organization (tenant)
     items:
     - name: Microsoft Entra tenant organizations    
-      href: ~/fundamentals/whatis.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/what-is-entra.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Delete a tenant    
       href: directory-delete-howto.md
+    - name: Strengthen federated sign-in security
+      href: strengthen-federated-sign-in-security.md
     - name: Multiple tenants    
       href: licensing-directory-independence.md
     - name: Take over a tenant
@@ -138,16 +142,14 @@
       href: groups-lifecycle.md
     - name: Set up group self-service    
       href: groups-self-service-management.md
-    - name: Assign sensitivity labels
+    - name: Assign sensitivity labels to Microsoft 365 groups
       href: groups-assign-sensitivity-labels.md
+    - name: Assign sensitivity labels to security groups
+      href: groups-sensitivity-labels.md
   - name: Licenses
     items:
-    - name: Assign licenses to users    
-      href: ~/fundamentals/license-users-groups.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
-    - name: Use Admin center to assign licenses to groups
-      href: licensing-admin-center.md
-    - name: Additional scenarios    
-      href: licensing-group-advanced.md
+    - name: Assign licenses to users
+      href: ~/fundamentals/licensing.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Group licensing examples using PowerShell
       href: licensing-powershell-graph-examples.md
     - name: Service plan IDs for licensing
@@ -166,18 +168,29 @@
       href: linkedin-integration.md
     - name: LinkedIn data sharing   
       href: linkedin-user-consent.md
-  - name: Troubleshoot
-    items:
-    - name: Get support for Microsoft Entra ID    
-      href: ~/fundamentals/how-to-get-support.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
-    - name: Troubleshoot groups   
-      href: groups-troubleshooting.md
-    - name: Troubleshoot group licensing    
-      href: licensing-groups-resolve-problems.md
+  - name: Get support for Microsoft Entra ID
+    href: ~/fundamentals/how-to-get-support.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+  - name: Troubleshoot groups
+    href: groups-troubleshooting.md
+- name: Samples
+  expanded: false
+  items: 
+  - name: PowerShell samples for dynamic membership processing
+    href: groups-dynamic-membership-powershell-samples.md
+  - name: Pause all groups and administrative units
+    href: ./scripts/powershell-pause-all-dynamic-membership.md
+  - name: Pause specific groups and administrative units
+    href: ./scripts/powershell-pause-specific-dynamic-membership.md
+  - name: Pause all except specified groups and administrative units
+    href: ./scripts/powershell-pause-all-except-dynamic-membership.md
+  - name: Resume specific critical groups and administrative units
+    href: ./scripts/powershell-resume-specific-critical-dynamic-membership.md
+  - name: Resume noncritical groups and administrative units in batches
+    href: ./scripts/powershell-resume-noncritical-dynamic-membership.md
 - name: Reference
   items:
   - name: Microsoft Graph API  
-    href: /graph/api/resources/azure-ad-overview
+    href: /graph/api/resources/identity-network-access-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
   - name: Microsoft Entra service limits

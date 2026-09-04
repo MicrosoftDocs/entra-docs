@@ -1,12 +1,10 @@
 ---
 title: Microsoft Entra External ID deployment guide for tenant design
 description: Learn how to design a tenant, manage data residency, and understand compliance requirements in Microsoft Entra External ID.
-author: gargi-sinha
-manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 05/22/2025
-ms.author: gasinh
+ms.reviewer: gasinh
 
 #customer intent: I need to design a tenant, manage data residency, and know compliance requirements in Microsoft Entra External ID.
 ---
@@ -45,7 +43,7 @@ When you define the extension attribute, the name stored in the directory follow
 
    [ ![Diagram of the B2C extension attributes.](media/deployment-external/b2c-extensions-app.png)](media/deployment-external/b2c-extensions-app-expanded.png#lightbox)
 
-**GET**: [Extension properties](https://graph.microsoft.com/v1.0/applications/d29c324a-ede6-48d4-bc6a-e11d7748f1be/extensionProperties)
+**GET**: `https://graph.microsoft.com/v1.0/applications/{application-id}/extensionProperties`
 
 ```Kusto
   "value": [</br> 
@@ -126,7 +124,7 @@ Directory data includes the objects stored in the directory such as users, appli
 
 The directory creates some values during object creation, such as object and application IDs. They can't be duplicated or re-created with the same values. 
 
-You can [restore or permanently remove recently deleted users](../fundamentals/users-restore.yml). 
+You can [restore or permanently remove recently deleted users](../fundamentals/users-restore.md). 
 
 For objects relevant to external identities, such as users, groups and service principals, see [recover from deletions in Microsoft Entra ID](recover-from-deletions.md). 
 

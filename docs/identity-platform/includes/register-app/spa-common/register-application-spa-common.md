@@ -1,8 +1,6 @@
 ---
 title: "Include file - Register a single-page application in the Microsoft identity platform"
-author: OwenRichards1
-manager: CelesteDG
-ms.author: owenrichards
+manager: pmwongera
 ms.date: 01/02/2024
 ms.reviewer: 
 ms.service: identity-platform

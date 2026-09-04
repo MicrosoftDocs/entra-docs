@@ -2,18 +2,12 @@
 title: Configure Onyxia for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Onyxia.
 services: active-directory
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 03/27/2024
-ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Onyxia so that I can control who has access to Onyxia, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Onyxia for Single sign-on with Microsoft Entra ID
 

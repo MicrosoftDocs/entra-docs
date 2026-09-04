@@ -1,15 +1,16 @@
 ---
-title: Providing a default level of security in Microsoft Entra ID
-description: Get protected from common identity threats using Microsoft Entra security defaults.
-ms.service: entra
-ms.subservice: fundamentals
-ms.topic: conceptual
-ms.date: 04/15/2024
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+title: Configure Security Defaults for Microsoft Entra ID
+description: Enable Microsoft Entra ID security defaults to strengthen your organization's security posture with preconfigured MFA requirements and legacy authentication protection.
+ms.topic: how-to
+ms.date: 07/21/2025
 ms.reviewer: sama
-ms.custom: sfi-ga-nochange, sfi-image-nochange
+ms.custom:
+  - sfi-ga-nochange, sfi-image-nochange
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/21/2025
+  - ai-gen-description
+#Customer Intent: As an IT admin, I want to configure security defaults for Microsoft Entra ID so that I can protect my organization with baseline security settings.
 ---
 # Security defaults in Microsoft Entra ID
 
@@ -23,6 +24,7 @@ These basic controls include:
 - [Requiring administrators to do multifactor authentication](#require-administrators-to-do-multifactor-authentication)
 - [Requiring users to do multifactor authentication when necessary](#require-users-to-do-multifactor-authentication-when-necessary)
 - [Blocking legacy authentication protocols](#block-legacy-authentication-protocols)
+- [Blocking device code flow](#block-device-code-flow)
 - [Protecting privileged activities like access to the Azure portal](#protect-privileged-activities-like-access-to-the-azure-portal)
 
 ## Who's it for?
@@ -38,6 +40,8 @@ These basic controls include:
 ## Enabling security defaults
 
 If your tenant was created on or after October 22, 2019, security defaults might be enabled in your tenant. To protect all of our users, security defaults are being rolled out to all new tenants at creation. 
+
+While security defaults is enabled on all new tenants by default, there is a 24‑hour grace period before protections are enforced. This allows customers to access and provision their tenant before MFA is required.
 
 To help protect organizations, we're always working to improve the security of Microsoft account services. As part of this protection, customers are periodically notified for the automatic enablement of the security defaults if they: 
 
@@ -63,7 +67,7 @@ To enable security defaults:
 
 ### Revoking active tokens
 
-As part of enabling security defaults, administrators should revoke all existing tokens to require all users to register for multifactor authentication. This revocation event forces previously authenticated users to authenticate and register for multifactor authentication. This task can be accomplished using the [Revoke-AzureADUserAllRefreshToken](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) PowerShell cmdlet.
+As part of enabling security defaults, administrators should revoke all existing tokens to require all users to register for multifactor authentication. This revocation event forces previously authenticated users to authenticate and register for multifactor authentication. This task can be accomplished using the [Revoke-MgUserSignInSession](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession) cmdlet in the Microsoft Graph PowerShell SDK.
 
 ## Enforced security policies
 
@@ -72,7 +76,7 @@ As part of enabling security defaults, administrators should revoke all existing
 ### Require all users to register for Microsoft Entra multifactor authentication
 
 > [!NOTE]
-> Starting July 29, 2024, new tenants and existing tenants had the 14-day grace period for users to register for MFA removed. We are making this change to help reduce the risk of account compromise during the 14-day window, as MFA can block over 99.2% of identity-based attacks. 
+> Starting July 29, 2024, new tenants and existing tenants have the 14-day grace period for users to register for MFA removed. We made this change to help reduce the risk of account compromise during the 14-day window, as MFA can block over 99.2% of identity-based attacks. 
 
 When users sign in and are prompted to perform multifactor authentication, they see a screen providing them with a number to enter in the Microsoft Authenticator app. This measure helps prevent users from falling for MFA fatigue attacks.
 
@@ -80,7 +84,7 @@ When users sign in and are prompted to perform multifactor authentication, they 
 
 ### Require administrators to do multifactor authentication
 
-Administrators have increased access to your environment. Because of the power these highly privileged accounts have, you should treat them with special care. One common method to improve the protection of privileged accounts is to require a stronger form of account verification for sign-in, like requiring multifactor authentication. 
+Administrators have more access to your environment. Because of the power these highly privileged accounts have, treat them with special care. One common method to improve the protection of privileged accounts is to require a stronger form of account verification for sign-in, like requiring multifactor authentication. 
 
 > [!TIP]
 > Recommendations for your admins:
@@ -93,6 +97,8 @@ After registration is finished, the following administrator roles will be requir
 - Authentication Policy Administrator
 - Identity Governance Administrator
 
+*Also available as a [Microsoft-managed Conditional Access policy](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) if you disable security defaults.*
+
 ### Require users to do multifactor authentication when necessary
 
 We tend to think that administrator accounts are the only accounts that need extra layers of authentication. Administrators have broad access to sensitive information and can make changes to subscription-wide settings. But attackers frequently target end users. 
@@ -102,7 +108,9 @@ After these attackers gain access, they can request access to privileged informa
 One common method to improve protection for all users is to require a stronger form of account verification, such as multifactor authentication, for everyone. After users complete registration, they'll be prompted for another authentication whenever necessary. Microsoft decides when a user is prompted for multifactor authentication, based on factors such as location, device, role, and task. This functionality protects all registered applications, including SaaS applications.
 
 > [!NOTE]
-> In case of [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users, any multifactor authentication requirement from security defaults enabled in resource tenant will need to be satisfied, including multifactor authentication registration by the direct connect user in their home tenant.
+> In case of [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users, any multifactor authentication requirement from security defaults enabled in resource tenant needs to be satisfied, including multifactor authentication registration by the direct connect user in their home tenant.
+
+*Also available as a [Microsoft-managed Conditional Access policy](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) if you disable security defaults.*
 
 ### Block legacy authentication protocols
 
@@ -119,6 +127,19 @@ After security defaults are enabled in your tenant, all authentication requests 
 > Before you enable security defaults, make sure your administrators aren't using older authentication protocols. For more information, see [How to move away from legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 - [How to set up a multifunction device or application to send email using Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
+
+*Also available as a [Microsoft-managed Conditional Access policy](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) if you disable security defaults.*
+
+### Block device code flow
+
+Device code flow is an authentication flow that lets users sign in to devices or applications that have limited input capabilities, such as devices without a browser or keyboard. Attackers can abuse device code flow in phishing attacks by tricking users into entering a code on another device.
+
+After security defaults are enabled in your tenant, authentication requests that use device code flow are blocked. Applications or devices that depend on device code flow won't be able to complete sign-in while security defaults are enabled.
+If your organization needs granular control and exceptions, you should consider [Conditional Access](/entra/identity/conditional-access/concept-conditional-access-policy-common).
+
+> [!NOTE]
+> Starting July 1, 2026, all new Microsoft Entra tenants block device code flow as part of security defaults. Applications or devices that depend on device code flow won't be able to complete sign-in while security defaults are enabled.
+
 
 ### Protect privileged activities like access to the Azure portal
 
@@ -143,10 +164,12 @@ After you enable security defaults in your tenant, any user accessing the follow
 This policy applies to all users who are accessing Azure Resource Manager services, whether they're an administrator or a user. This policy applies to Azure Resource Manager APIs such as accessing your subscription, VMs, storage accounts, and so on. This policy doesn't include Microsoft Entra ID or Microsoft Graph.
 
 > [!NOTE]
-> Pre-2017 Exchange Online tenants have modern authentication disabled by default. In order to avoid the possibility of a login loop while authenticating through these tenants, you must [enable modern authentication](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
+> Exchange Online tenants created before 2017 have modern authentication disabled by default. In order to avoid the possibility of a login loop while authenticating through these tenants, you must [enable modern authentication](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
 
 > [!NOTE]
-> The Microsoft Entra Connect / Microsoft Entra Cloud Sync synchronization accounts (or any security principal assigned to the "Directory Synchronization Accounts" role) are excluded from security defaults and will not be prompted to register for or perform multifactor authentication. Organizations should not be using this account for other purposes.
+> The Microsoft Entra Connect / Microsoft Entra Cloud Sync synchronization accounts (or any security principal assigned to the "Directory Synchronization Accounts" role) are excluded from security defaults and aren't prompted to register for or perform multifactor authentication. Organizations shouldn't be using this account for other purposes.
+
+*Also available as a [Microsoft-managed Conditional Access policy](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) if you disable security defaults.*
 
 ## Deployment considerations
 
@@ -156,10 +179,10 @@ It's critical to inform users about upcoming changes, registration requirements,
 
 ### Authentication methods
 
-Security defaults users are required to register for and use multifactor authentication using the [Microsoft Authenticator app using notifications](~/identity/authentication/concept-authentication-authenticator-app.md). Users might use verification codes from the Microsoft Authenticator app but can only register using the notification option. Users can also use any third party application using [OATH TOTP](~/identity/authentication/concept-authentication-oath-tokens.md) to generate codes.
+Security defaults users are required to register for and use multifactor authentication using the [Microsoft Authenticator app using notifications](~/identity/authentication/concept-authentication-authenticator-app.md). Users might use verification codes from the Microsoft Authenticator app but can only register using the notification option. Users can also use any non-Microsoft application using [OATH TOTP](~/identity/authentication/concept-authentication-oath-tokens.md) to generate codes.
 
 > [!WARNING]
-> Do not disable methods for your organization if you are using security defaults. Disabling methods may lead to locking yourself out of your tenant. Leave all **Methods available to users** enabled in the [MFA service settings portal](~/identity/authentication/howto-mfa-getstarted.md#choose-authentication-methods-for-mfa).
+> Don't disable methods for your organization if you're using security defaults. Disabling methods might lead to locking yourself out of your tenant. Leave all **Methods available to users** enabled in the [MFA service settings portal](~/identity/authentication/howto-mfa-getstarted.md#choose-authentication-methods-for-mfa).
 
 ### B2B users
 
@@ -169,11 +192,11 @@ Any [B2B guest](~/external-id/what-is-b2b.md) users or [B2B direct connect](~/ex
 
 If your organization is a previous user of per-user based multifactor authentication, don't be alarmed to not see users in an **Enabled** or **Enforced** status if you look at the multifactor authentication status page. **Disabled** is the appropriate status for users who are using security defaults or Conditional Access based multifactor authentication.
 
-### Disabling security defaults
+## Disabling security defaults
 
 Organizations that choose to implement Conditional Access policies that replace security defaults must disable security defaults. 
 
-To disable security defaults in your directory:
+Disable security defaults in your directory:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Entra ID** > **Overview** > **Properties**.
@@ -189,14 +212,12 @@ While security defaults are a good baseline to start your security posture from,
 | --- | --- | --- |
 | **Required licenses**| None | At least Microsoft Entra ID P1 |
 | **Customization**| No customization (on or off) | Fully customizable |
-| **Enabled by**| Microsoft or administrator | Administrator |
+| **Enabled by**| Microsoft or administrator | Microsoft or administrator |
 | **Complexity**| Simple to use | Fully customizable based on your requirements |
-
-Recommended steps when moving from security defaults 
 
 Organizations who would like to test out the features of Conditional Access can [sign up for a free trial](get-started-premium.md) to get started.
 
-After administrators disable security defaults, organizations should immediately enable Conditional Access policies to protect their organization. These policies should include at least those policies in the [secure foundations category of Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories). Organizations with Microsoft Entra ID P2 licenses that include Microsoft Entra ID Protection can expand on this list to include [user and sign in risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to further strengthen their posture. 
+After administrators disable security defaults, organizations should immediately enable Conditional Access policies to protect their organization. [Microsoft-managed Conditional Access policies](~/identity/conditional-access/managed-policies.md#upgrade-from-security-defaults) are available to maintain the same protections, covering blocking legacy authentication, requiring MFA for Azure management, requiring MFA for admins, and requiring MFA for all users. Organizations should review these policies and consider enabling more policies from the [secure foundations category of Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories). Organizations with Microsoft Entra ID P2 licenses that include Microsoft Entra ID Protection can expand on this list to include [user and sign in risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to further strengthen their posture. 
 
 [!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 

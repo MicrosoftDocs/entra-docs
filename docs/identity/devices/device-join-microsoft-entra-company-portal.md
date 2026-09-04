@@ -1,19 +1,15 @@
 ---
-title: Join a Mac device with Microsoft Entra ID using Company Portal (preview)
+title: Join a Mac device with Microsoft Entra ID using Company Portal
 description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/19/2024
-ms.author: cwerner
-author: cilwerner
-manager: CelesteDG
-ms.reviewer: brianmel
+manager: pmwongera
+ms.reviewer: jploegert
 ms.custom: sfi-image-nochange
 # Customer intent: As a user, I want to register my Mac device with macOS Platform single sign-on using Company Portal. I need to know the differences between the three methods of registration, secure enclave, smart card, and password, and how to register my device with each method.
 ---
 
-# Join a Mac device with Microsoft Entra ID using Company Portal (preview)
+# Join a Mac device with Microsoft Entra ID using Company Portal
 
 In this tutorial, you learn how to register a Mac device with macOS Platform Single Sign-on (PSSO) using Company Portal and the Intune MDM enrollment with Microsoft Entra Join. There are three methods in which you can register a Mac device with PSSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however it's important to note that this method will be preset by your company administrator using Microsoft Intune.
 
@@ -26,6 +22,7 @@ In this tutorial, you learn how to register a Mac device with macOS Platform Sin
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 - For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
 - Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#insufficient-permissions).
+- If you have network proxy filtering or TLS inspection enabled in your environment, be sure to review the suggested settings documented in the [Platform Single Sign-On troubleshooting guide](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#tls-inspection-urls-to-be-excluded-for-platform-sso)
 
 ## Intune MDM and Microsoft Entra Join using Company Portal
 
@@ -58,6 +55,16 @@ To register a Mac device with PSSO, you must first enroll your device in Microso
 ## Platform SSO registration
 
 Now that the device is in compliance with Company Portal, you need to register your device with PSSO. A **Registration Required** popup appears at the top right of the screen following successful completion of [Intune MDM and Microsoft Entra Join using Company Portal](#intune-mdm-and-microsoft-entra-join-using-company-portal). Use the tabs to register your device with PSSO using secure enclave, smart card, or password.
+
+> [!TIP]
+> If the **Registration Required** popup doesn't appear or disappears before you can interact with it:
+>
+> - **Wait approximately 10 minutes** — the popup automatically reappears after a failed or missed registration attempt.
+> - **Sign out and sign back in** to your Mac — this retriggers the registration notification.
+> - **Repair the registration** (macOS 14+) — go to **Settings** > **Users & Groups** > **Network Account Server** > **Edit** > **Repair** to restart the registration flow.
+> - If you closed the SSO authentication prompt during registration, signing out and back in restores the notification.
+>
+> For more troubleshooting steps, see [Platform SSO known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md).
 
 ### [Secure Enclave](#tab/secure-enclave)
 
@@ -154,6 +161,6 @@ Although it's recommended to do it immediately, you can choose to select this an
 ## See also
 
 - [Join a Mac device with Microsoft Entra ID during the out of box experience](./device-join-macos-platform-single-sign-on.md)
-- [Passwordless authentication options for Microsoft Entra ID](../authentication/concept-authentication-passwordless.md)
+- [Passkeys (FIDO2) authentication method in Microsoft Entra ID](../authentication/concept-authentication-passkeys-fido2.md)
 - [Plan a passwordless authentication deployment in Microsoft Entra ID](../authentication/howto-authentication-passwordless-deployment.md)
 - [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)

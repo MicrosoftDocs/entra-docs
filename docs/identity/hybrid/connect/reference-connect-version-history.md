@@ -1,15 +1,14 @@
 ---
 title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
-author: billmath
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
-ms.service: entra-id
-manager: femila
 ms.topic: reference
-ms.date: 04/09/2025
+ms.date: 07/07/2026
 ms.subservice: hybrid-connect
-ms.author: billmath
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
+ai-usage: ai-assisted
+
+#customer-intent: As a Microsoft Entra administrator, I want to learn about the latest version of Microsoft Entra Connect, so that I can keep my environment up to date.
 ---
 
 # Microsoft Entra Connect: Version release history
@@ -18,23 +17,51 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have released and the changes in those versions.
 
-### Breaking Change on Entra Connect Sync
-
 >[!IMPORTANT]
-> New Microsoft Entra Connect Sync Versions are only available via the Microsoft Entra admin center 
+>**Mandatory Upgrade Required**: All synchronization services in Microsoft Entra Connect Sync will stop working on **September 30, 2026** if you're not on at least version 2.5.79.0. In May 2025, we released this version with a back-end service change that hardens our services. Upgrade before this deadline to avoid any service disruption.
 >
-> Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
+>If you're unable to upgrade before the deadline, all synchronization services will fail until you upgrade to the latest version. The Microsoft Entra Connect Sync .msi installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
+
+## Known issue: Synchronization fails after upgrade if miiserver.exe.config was previously modified
+Applies to
+- Microsoft Entra Connect 2.5.190.0
+-	Microsoft Entra Connect 2.6.1.0
+### Issue
+After upgrading Microsoft Entra Connect, synchronization may fail if the `miiserver.exe.config` file was previously modified.
+
+### Symptom
 
 
+`Synchronization fails after upgrade with the following error: System.IO.FileLoadException: Could not load file or assembly 'System.Diagnostics.DiagnosticSource, Version=6.0.0.1'
+or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)`
 
-> [!WARNING]
-> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) will impact the Microsoft Entra Connect Sync wizard in April 2025. You must upgrade your Connect Sync version **by 30 April 2025** to maintain Connect Sync wizard capabilities such as schema refresh, configuration of staging mode, and user-sign in changes. The minimum supported versions are [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or any newer version. No action is required if your Microsoft Entra Connect Sync server is within the recommended version range. [Learn More](harden-update-ad-fs-pingfederate.md)
+
+### Cause
+
+During upgrade, Microsoft Entra Connect detects that `miiserver.exe.config` has been modified and does not update the file. This results in a missing dependency binding required for synchronization.
+This scenario has been observed when the file was modified based on earlier guidance to support Password Hash Synchronization (PHS) in FIPS enabled environments as
+Workaround
+Manually update the configuration file.
+
+1.	Go to: %programfiles%\Microsoft Azure AD Sync\Bin
+
+1.	Back up `miiserver.exe.config`.
+
+1.	Open `miiserver.exe.config` and add the following entry inside the assemblyBinding section:
+`<dependentAssembly>
+  <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+  <bindingRedirect oldVersion="0.0.0.0-8.0.0.0" newVersion="8.0.0.0" /> 
+</dependentAssembly>`
+
+1.	Save the file.
+
+1.	Restart the ADSync service.
 
 ## Looking for the latest versions?
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
-You can download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under **Manage**.
+You can download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under the **Manage** tab of the **Microsoft Entra Connect | Get started** page.
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
@@ -60,8 +87,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 > 
 > For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version before the retirement of your current version.
 
-|Version|End of support date|
-|-----|-----|
+|Version |End of support date |
+|--------|--------------------|
 |[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
@@ -70,11 +97,16 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
-|[2.4.131.0](#241310)|26 May 2026|(12 months after release of 2.5.3.0)|
-|[2.5.3.0](#2530)||
+|[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
+|[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
+|[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
+|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
+|[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|
+|[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|
+|[2.6.3.0](#2630)|07 Jul 2027 (12 months after release of 2.6.84.0)|
+|[2.6.84.0](#26840)||
 
 **All other versions are not supported**
-
 
 If you run a retired version of Microsoft Entra Connect, it might unexpectedly stop working. You also might not have the latest security fixes, performance improvements, troubleshooting and diagnostic tools, and service enhancements. If you require support, we might not be able to provide you with the level of service your organization needs.
 
@@ -95,8 +127,152 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.6.84.0
+
+> [!IMPORTANT]
+> This release includes security fixes. We recommend upgrading to this version as soon as possible.
+
+### Release status
+
+07/07/2026: Released for download via the Microsoft Entra admin center.
+
+### Added features
+
+- Added support for phishing-resistant authentication methods in the Microsoft Entra Connect setup wizard (preview). Administrators can now sign in using passkeys and FIDO2 security keys through Windows Web Account Manager (WAM) when configuring Microsoft Entra Connect. [Learn more](how-to-connect-passwordless-authentication.md).
+- Added support for the France sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
+
+### Updated features
+
+- Improved the auto-upgrade process to preserve customer modifications to configuration files. Previously, auto-upgrade overwrote the `miiserver.exe.config` file, discarding any manual customizations. The system now merges customer modifications with the new configuration and validates the result before applying.
+- Improved the setup process for Application-Based Authentication to handle Trusted Platform Module (TPM)-backed certificates. The system now tests a certificate's signing capability upfront and handles TPM signature verification correctly.
+- Microsoft Entra Connect setup wizard no longer silently falls back to the legacy directory synchronization account when Application-Based Authentication setup fails. The wizard now stops with an error so the underlying issue can be resolved: "Microsoft Entra Connect could not configure application-based authentication for this server. Setup cannot continue."
+- Microsoft Entra Connect no longer automatically switches existing servers from the legacy directory synchronization account to Application-Based Authentication during background sync. New installations continue to configure Application-Based Authentication during setup. To switch an existing server, run the wizard and choose **Configure application-based authentication to Microsoft Entra ID**.
+- PowerShell cmdlets that modify cloud configuration (`Set-ADSyncAADCompanyFeature`, `Set-ADSyncAADPasswordSyncState`) now require explicit `-AADUsername` for interactive admin authentication. The setup wizard uses interactive Microsoft Authentication Library (MSAL) authentication for cloud writes instead of stored service credentials. The uninstall wizard now prompts for admin credentials to clean up cloud configuration; if skipped, local cleanup still proceeds.
+- Removed Password Hash Synchronization (PHS) self-healing. PHS no longer automatically re-enables its cloud feature flag in the background. If the PHS cloud feature flag is disabled, an administrator must explicitly re-enable it.
+- Updated the bundled MSAL from version 4.64.1 to 4.83.3.
+- Upgraded the bundled SQL LocalDB from SQL Server 2019 to SQL Server 2022.
+- Upgraded the Visual C++ redistributable from version 12 (2013) to version 14.42.34438 (2015-2022).
+- Removed the Visual C++ 2013 redistributable dependency.
+
+### Bug fixes
+
+- Fixed an issue in the PowerShell diagnostic HTML report rendering.
+- Fixed an issue in the Synchronization Service Manager metaverse search.
+- Improved Application-Based Authentication setup on servers with non-conforming TPM firmware by falling back to a software-based certificate when the TPM cannot produce a valid signature.
+- Fixed an issue where Generic SQL (GSQL) connector profile creation failed because required profile parameters were not populated during configuration.
+- Fixed an issue where the Application Proxy cloud name was not correctly resolved in the France cloud environment, causing Pass-through Authentication registration to fail with an "EnvironmentName attribute is invalid" error.
+- Fixed an issue where the China cloud instance name was not correctly resolved by the Discovery Endpoint API, which could cause cloud instance detection to fail.
+- Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action for Synchronization Rule changes.
+- Fixed multiple security vulnerabilities in bundled third-party dependencies.
+
+> [!IMPORTANT]
+> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who had installed this version should un-install and install [latest available version (2.6.84.0)](#26840) of Microsoft Entra Connect Sync.
+
+## 2.6.3.0
+
+### Release status
+
+03/10/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release. Auto-upgrade will upgrade your existing installations to this build starting March 11th, 2026, and will complete in multiple phases.
+
+### Bug Fixes
+
+- Fixed a [known issue](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified) where auto-upgrade could stop your Microsoft Entra Connect server unexpectedly. Auto-upgrade now detects modifications to the `miiserver.exe.config` and `miisclient.exe.config` configuration files and skips automatic upgrade on those servers. If you manually upgrade and previously modified these configuration files, you might encounter installation failures. To resolve the issue, see the [known issues section](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified).
+
+## 2.6.1.0
+
+### Release status
+
+02/02/2026: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting February 9th, 2026, and will be done in multiple phases.
+
+### Bug Fixes
+
+- Fixed an issue where using the Synchronization Service Manager UI to modify the Microsoft Entra ID Connector configuration deleted Application-Based Authentication parameters, causing Wizard and certificate rotation failures. We recommend not using the Synchronization Service Manager UI in older versions.
+- Fixed an issue where Staging Mode configuration failed when the Password Writeback Service is disabled or deleted from the Entra ID tenant.
+- The default certificate lifetime for certificates managed by Microsoft Entra Connect is now 90 days. The certificate renewal threshold has been updated to use percentage-based lifetime consumption (70%) instead of a fixed 30-day window. The certificate renewal process will now attempt to renew after 70% of the lifetime has elapsed instead of fixed 30 day intervals.
+- Enhanced Application-Based Authentication logging in Windows Event logs and trace logs to help diagnose authentication failures.
+- Fixed an accessibility issue in the Connect wizard where help icons were announced incorrectly by screen readers, causing the full multi-line help text to be read as the control name. The help control now exposes the correct name and role, providing a better experience.
+- Fixed a keyboard accessibility issue where a hyperlink inside a help popup was not reachable using keyboard navigation. The link is now accessible using the keyboard alone.
+
+### Known issues
+
+See: [Synchronization fails after upgrade if miiserver.exe.config was previously modified](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified)
+
+
+## 2.5.190.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
+
+### Release status
+
+11/19/2025: Released for download via the Microsoft Entra admin center.
+
+### Known issues
+
+See: [Synchronization fails after upgrade if miiserver.exe.config was previously modified](#known-issue-synchronization-fails-after-upgrade-if-miiserverexeconfig-was-previously-modified)
+
+### Added features
+
+- **AAD Connector V2 API Enforcement**: The default connector API version is now V2. Using the previous V1 connector API is no longer supported.
+
+### Bug fixes
+
+- Fixed an issue where Application-Based Authentication failed with Trusted Platform Module (TPM) and Microsoft Authentication Library (MSAL). The fix ensures compatibility with MSAL's default signing method.
+- Fixed issue in the configuration wizard that resulted in "Directory synchronization for this directory currently has a mismatch in sync enabled and sync status" error when DirSync Status is in "Other".
+- The certificate renewal threshold for Application-based Authentication has been updated to 30 days. Entra-managed certificates will now automatically renew when their expiration date is 30 days or less.
+- Fixed issue with cloud management of Exchange attributes that raised export errors labelled `ExchangeManagedAttributesUpdateNotAllowed`.
+
+## 2.5.79.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
+
+### Release status
+
+09/01/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting September 4, 2025 and will be done in multiple phases.  
+
+
+### Added Features 
+
+- Improved the setup process for Application-Based Authentication to handle TPM-backed certificates (certificates protected by a Trusted Platform Module, see [What is a TPM?](/windows/security/information-protection/tpm/trusted-platform-module-overview)). The system now tests a certificate’s signing capability upfront and automatically falls back to software-based certificates if TPM signature fails. 
+- Implemented automatic removal of certificates if an Application-Based Authentication configuration fails after a certificate is created. This prevents unused certificates from lingering on the server in failure scenarios, improving security by avoiding accumulation of orphaned certificates. 
+
+### Bug fixes
+
+- Resolved an issue on FIPS-enabled servers that was causing setup failures. Application-Based Authentication now works correctly on servers with FIPS mode enabled by using FIPS-compliant cryptographic algorithms. 
+  > [!TIP]
+  > FIPS (Federal Information Processing Standards) mode is a Windows security setting that enforces the use of cryptographic algorithms for sensitive data. When FIPS mode is enabled, only FIPS-compliant algorithms can be used, which is why this fix ensures compatibility for environments requiring strict security standards.
+- Fixed an issue where certificate auto-rotation was incorrectly reported as active when the scheduler was suspended. The auto-rotation logic now checks the scheduler’s state before indicating status, ensuring the *View or export current configuration wizard* accurately reflects whether auto-rotation is enabled. 
+- Removed an inappropriate admin audit event that was being logged for automatic certificate operations. These background certificate actions no longer generate administrative audit log entries, resulting in a cleaner audit trail (only actual administrator-initiated changes will appear in the Entra Connect Sync audit logs). 
+
+## 2.5.76.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
+
+### Release status
+
+07/31/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting August 14th, 2025, and will be done in multiple phases.  
+
+
+### Added Features 
+
+- Application based authentication to Microsoft Entra ID is now generally available and will be the default option. See [Authenticate to Microsoft Entra ID by Using Application Identity](authenticate-application-id.md). 
+- Administrator action logging is now generally available, providing Windows audit events for all administrative changes made on Microsoft Entra Connect. See [Auditing administrator events in Microsoft Entra Connect Sync](admin-audit-logging.md). 
+- Group Source of Authority conversion feature allowing administrators to transfer on-premises Active Directory groups to become cloud only groups managed through Microsoft Entra ID (Public Preview). See [Group Source of Authority overview](../concept-source-of-authority-overview.md). 
+
+### Bug fixes
+
+- The issue in selecting and de-selecting child OUs, affecting Active Directory multi-domain scenarios in the Connect Sync wizard, is fixed.  
+- The issue where users were prompted to set up Azure MFA instead of on-premises ADFS MFA, due to federated domain settings and MFA flag resets during updates, has been resolved. 
+- Resolved an issue that prevented some Microsoft Entra Connect Sync instances from auto-upgrading by ensuring the agent identifier is correctly sourced when missing.
+- Fixed issue in the configuration wizard that resulted in **Directory synchronization for this directory currently has a mismatch in sync enabled and sync status** error when DirSync Status is in **PendingEnabled**
+
 
 ## 2.5.3.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
 
 ### Release status
 
@@ -131,7 +307,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 01/15/2025: Released for download and autoupgrade
 
 ### Added Features
-- Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
+- Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Microsoft Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
 
 ### Bug fixes
 - Fixed the removal of the SSPR configuration when changes are made on the Azure AD Connector and saved in the Sync Service manager UI
@@ -590,8 +766,6 @@ We fixed a bug that occurred when you synced a large number of Password Hash Syn
 
 This release addresses a vulnerability as documented in [this CVE](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36949). For more information about this vulnerability, see the CVE.
 
-To download the latest version of Microsoft Entra Connect 2.0, see the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594).
-
 ### Release status
 
 8/10/2021: Released for download only, not available for autoupgrade
@@ -816,22 +990,6 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
 - Fresh Microsoft Entra Connect installations use the Export Deletion Threshold stored in the cloud if there's one available and if there isn't a different one passed in.
 - We fixed an issue where Microsoft Entra Connect wouldn't read Active Directory displayName changes of hybrid-joined devices.
 
-## 1.5.45.0
-
-### Release status
-
-07/29/2020: Released for download
-
-### Functional changes
-
-This is a bug fix release. There are no functional changes in this release.
-
-### Fixed issues
-
-- We fixed an issue where admin can't enable seamless single sign-on if the AZUREADSSOACC computer account is already present in Active Directory.
-- We fixed an issue that caused a staging error during V2 API delta import for a conflicting object that was repaired via the Health portal.
-- We fixed an issue in the import/export configuration where a disabled custom rule was imported as enabled.
-
-## Next steps
+## Related content
 
 Learn more about how to [integrate your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).

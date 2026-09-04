@@ -1,12 +1,8 @@
 ---
 title: "Troubleshoot the Global Secure Access Client: Disabled by Your Organization"
 description: This document provides troubleshooting guidance for the Global Secure Access client when it shows the "disabled by your organization" error message.
-ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 03/10/2025
-ms.author: jayrusso
-author: HULKsmashGithub
-manager: dougeby
+ms.date: 03/23/2026
 ms.reviewer: lirazbarak
 
 
@@ -24,15 +20,15 @@ The **Global Secure Access client - disabled by your organization** error messag
 
 The warning message also appears when the client receives an empty policy (that is, no traffic forwarding profiles from Microsoft, Private Access, or Internet Access).
 The empty policy happens in the following cases:     
-- All traffic forwarding profiles are disabled in the portal. 
-- Some traffic forwarding profiles are enabled, but the user isn't assigned to any of them (in the **User and group assignments** section of each profile). 
-- The user didn't sign in to Windows with a Microsoft Entra user. 
-- Authentication to get the policy requires user interaction (such as if multifactor authentication (MFA) or terms of use (ToU) are enabled).    
+1. All traffic forwarding profiles are disabled in the portal. 
+1. Some traffic forwarding profiles are enabled, but the user isn't assigned to any of them (in the **User and group assignments** section of each profile). 
+1. The user didn't sign in to Windows with a Microsoft Entra user. 
+1. Authentication to get the policy requires user interaction (such as if multifactor authentication (MFA) or terms of use (ToU) are enabled).    
 
 In cases **3** and **4**, only traffic profiles that are assigned to the entire tenant (**Assign to all users** in the user and group assignment section is set to **Yes**) take effect. Traffic profiles assigned to specific users and groups aren't applied since the user identity isn't used to get the policy. In these cases, only the device identity is available to the policy service.   
 
 To view the Global Secure Access traffic profile configuration:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 1. Navigate to **Global Secure Access** > **Connect** > **Traffic forwarding**.   
 :::image type="content" source="media/troubleshoot-global-secure-access-client-disabled/traffic-forwarding.png" alt-text="Screenshot of the Traffic forwarding profiles screen." lightbox="media/troubleshoot-global-secure-access-client-disabled/traffic-forwarding-expanded.png":::
 
@@ -45,7 +41,7 @@ To view the Global Secure Access traffic profile configuration:
     1. Run the command `dsregcmd /status` and check the **AzureAdPrt** field.   
 :::image type="content" source="media/troubleshoot-global-secure-access-client-disabled/token-state.png" alt-text="Screenshot of the command line, showing the AzureAdPrt status of YES.":::
 
-1. Check if a conditional access policy is blocking the user. Network blocks can arise from conditional access settings, an unmanaged or noncompliant device, or unfulfilled MFA or ToU policies. To confirm that the Global Secure Access Client authenticated successfully to the policy service, check the list of non-interactive user sign-ins.   
+1. Check if a Conditional Access policy is blocking the user. Network blocks can arise from Conditional Access settings, an unmanaged or noncompliant device, or unfulfilled MFA or ToU policies. To confirm that the Global Secure Access Client authenticated successfully to the policy service, check the list of non-interactive user sign-ins.   
 :::image type="content" source="media/troubleshoot-global-secure-access-client-disabled/sign-in-logs.png" alt-text="Screenshot of the Sign-in logs screen, showing the list of non-interactive user sign-ins.":::
 
 > [!NOTE]

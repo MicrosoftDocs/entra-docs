@@ -1,15 +1,14 @@
 ---  
 title: Microsoft Entra Private DNS - Configure Secure Internal Name Resolution  
 description: Learn how to configure Microsoft Entra Private DNS for secure and efficient internal DNS query resolution, replacing legacy VPNs with granular access.  
-author: Justinha  
 contributors:  
-ms.topic: conceptual  
-ms.date: 04/18/2025  
-ms.author: justinha  
-ms.reviewer: justinha  
+ms.topic: how-to
+ms.date: 03/25/2026  
 ---  
 
 # Understand Microsoft Entra Private DNS
+
+## Private DNS overview
 
 Microsoft Entra Private Access provides a quick and easy way to replace legacy VPNs. It provides granular and secure access to internal resources without exposing your full network. DNS plays a vital role by enabling name resolution for critical internal resources, and remote users don't need to know the configuration of internal DNS systems. Microsoft Entra Private DNS with Quick Access offers a simple setup that uses Connector local resolvers to respond to DNS queries for internal resources.
 
@@ -31,7 +30,7 @@ A high-level Private DNS flow for Windows clients is shown in the following diag
 
 1. User requests a DNS query for `app.contoso.com`. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge. 
 1. DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access.  
-1.The connector server sends the DNS query to the DNS servers configured at operating system level. 
+1. The connector server sends the DNS query to the DNS servers configured at operating system level. 
 1. DNS proxy responds back to the client with the internal IP. The client stores the internal IP address and returns a synthetic IP to the application.
 
 
@@ -45,7 +44,7 @@ When a DNS suffix is configured in Quick Access, all DNS queries for a fully qua
 The Private DNS provides name resolution for SLD without a domain suffix. An NRPT entry is created to send GSA suffix `globalsecureaccess.local.` to DNS proxy when Private DNS is configured.  The client machine appends the `<appid>.globalsecureaccess.local.` suffix to the SLD and sends the DNS request to the DNS proxy. DNS proxy strips away the search suffix before sending the DNS query to the connector. The connector then uses its local search suffixes to resolve the SLD query. Resolved IP address for the resource is returned to the DNS proxy and passed along to the client.
 
 > [!NOTE]  
-> For some applications such as Kerberos authentication, it is important to have the correct SPN. GSA synthetic suffix may break Kerberos flow, so it's recommended to use FQDN for applications that require Kerberos authentication.
+> For some applications such as Kerberos authentication, it is important to have the correct SPN. GSA synthetic suffix might break Kerberos flow, so it's recommended to use FQDN for applications that require Kerberos authentication.
 
 ## Related content 
 

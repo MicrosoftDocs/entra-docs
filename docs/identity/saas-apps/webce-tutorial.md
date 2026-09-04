@@ -2,19 +2,10 @@
 title: Configure WebCE for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and WebCE.
 
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WebCE so that I can control who has access to WebCE, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure WebCE for Single sign-on with Microsoft Entra ID
 
@@ -30,9 +21,9 @@ You'll configure and test Microsoft Entra single sign-on for WebCE in a test env
 
 To integrate Microsoft Entra ID with WebCE, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * WebCE single sign-on (SSO) enabled subscription.
 
 ## Add application and assign a test user
@@ -78,7 +69,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://www.webce.com/<RootPortalFolder>/login`
 
     > [!Note]
-    > These values aren't the real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [WebCE Client support team](mailto:CustomerService@WebCE.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't the real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [WebCE Client support team](mailto:corporatesales@webce.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
@@ -90,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure WebCE SSO
 
-To configure single sign-on on **WebCE** side, you need to send **Thumbprint Value** and appropriate copied URLs from the application configuration to [WebCE support team](mailto:CustomerService@WebCE.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **WebCE** side, you need to send **Thumbprint Value** and appropriate copied URLs from the application configuration to [WebCE support team](mailto:corporatesales@webce.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create WebCE test user
 

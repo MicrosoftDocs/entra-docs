@@ -2,14 +2,8 @@
 title: Review permissions granted to enterprise applications
 description: Learn how to review and revoke permissions, and invalidate refresh tokens for an application in Microsoft Entra ID.
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/03/2025
-ms.author: jomondi
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-all
 ms.collection: M365-identity-device-management
@@ -28,7 +22,7 @@ The steps in this article apply to all applications that were added to your Micr
 
 To review permissions granted to applications, you need:
 
-- A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles:
   - Cloud Application Administrator
   - Application Administrator.

@@ -1,24 +1,21 @@
 ---
 title: Set up a Flexible Federated identity credential (preview)
-description: Learn how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer.
-author: cilwerner
-manager: CelesteDG
-ms.service: entra-workload-id
+description: Learn how to configure a Microsoft Entra Workload ID flexible federated identity credential by using the Azure portal or Microsoft Graph.
 ms.topic: how-to
-ms.date: 08/28/2024
-ms.author: cwerner
-ms.custom: 
+ms.date: 08/14/2026
+ms.custom: msecd-doc-authoring-1018
 ms.reviewer: ludwignick
-#Customer intent: I want to know how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer.
+ai-usage: ai-assisted
+#customer intent: As an application administrator, I want to configure a flexible federated identity credential so that external workloads can authenticate with Microsoft Entra ID.
 ---
 
 # Set up a Flexible Federated identity credential (preview)
 
-This article provides a guide on how to set up a [Flexible Federated identity credential](workload-identities-flexible-federated-identity-credentials.md) in the Azure portal or Microsoft Graph Explorer. Flexible federated identity credentials are an advanced feature of Microsoft Entra Workload ID that enhances the existing federated identity credential model.
+This article shows how to configure a [flexible federated identity credential](workload-identities-flexible-federated-identity-credentials.md) for an application in the Azure portal or Microsoft Graph Explorer. Use the issuer-specific examples to create a credential for GitHub, GitLab, or Terraform Cloud.
 
 ## Prerequisites
 
-- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - [Create an app registration](~/identity-platform/quickstart-register-app.md). Grant your app access to the Azure resources targeted by your external software workload.
 
 > [!NOTE]
@@ -37,23 +34,34 @@ To accommodate the flexible federated identity credential functionality, the `fe
 
 ## Set up a Flexible Federated identity credential
 
+For GitHub, a flexible federated identity credential must match the `sub` claim and one or both of the following immutable claims:
+
+- `repository_id` identifies the repository where the workflow runs.
+- `repository_owner_id` identifies the repository owner.
+
+These claims are required regardless of whether `sub` uses a name-based, customized, or immutable format.
+
 ### [Azure portal](#tab/azure-portal)
+
+To create the credential in the Azure portal:
 
 1. Navigate to Microsoft Entra ID and select the application where you want to configure the federated identity credential.
 1. In the left-hand navigation pane, select **Certificates & secrets**.
 1. Under the **Federated credentials** tab, select **+ Add credential**.
 1. In the **Add a credential** window that appears, from the dropdown menu next to **Federated credential scenario**, select **Other issuer**.
-1. Under **Connect your account** enter the ***Issuer** URL of the external identity provider. For example;
+1. Under **Connect your account**, enter the **Issuer** URL of the external identity provider. For example:
     - GitHub: `https://token.actions.githubusercontent.com`
     - GitLab: `https://gitlab.example.com`
     - Terraform Cloud: `https://app.terraform.io`
-1. In **Value** enter the claim matching expression you want to use, for example `claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'`
+1. In **Value**, enter the claim matching expression you want to use. For example, for GitHub, enter `claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*' and claims['repository_id'] eq '456789'`.
 1. Select **Add** to save the credential.
 
 ### [Microsoft Graph Explorer](#tab/graph-explorer)
 
+To create the credential by using Microsoft Graph Explorer:
+
 1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. In the **Request** section, enter the following URL that corresponds to the application; `https://graph.microsoft.com/beta/applications/{objectId}/federatedIdentityCredentials`.
+1. In the **Request** section, enter the URL that corresponds to the application: `https://graph.microsoft.com/beta/applications/{objectId}/federatedIdentityCredentials`.
 1. Add the following request body:
 
     ```json
@@ -64,7 +72,7 @@ To accommodate the flexible federated identity credential functionality, the `fe
       "issuer": "https://token.actions.githubusercontent.com",
       "name": "MyFlexibleFIC",
       "claimsMatchingExpression": {
-        "value": "claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'",
+        "value": "claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*' and claims['repository_id'] eq '456789'",
         "languageVersion": 1
       }
     }
@@ -79,7 +87,7 @@ Flexible federated identity credentials can use different issuers, such as GitHu
 
 ### [GitHub](#tab/github)
 
-This example shows how to set up a Flexible Federated identity credential for GitHub with an expression for the `job_workflow_ref` claim. Use 
+This example shows how to set up a flexible federated identity credential for GitHub with an expression for the `job_workflow_ref` claim. Get the numeric `repository_id` and `repository_owner_id` values from the GitHub OpenID Connect (OIDC) token. Use `repository_id` to bind the credential to a repository.
 
 ```json
 {
@@ -89,7 +97,23 @@ This example shows how to set up a Flexible Federated identity credential for Gi
   "name": "MyGitHubFlexibleFIC",
   "issuer": "https://token.actions.githubusercontent.com",
   "claimsMatchingExpression": {
-    "value": "claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*' and claims['job_workflow_ref'] matches 'contoso/contoso-prod/.github/workflows/*.yml@refs/heads/main'",
+    "value": "claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*' and claims['repository_id'] eq '456789' and claims['job_workflow_ref'] matches 'contoso/contoso-prod/.github/workflows/*.yml@refs/heads/main'",
+    "languageVersion": 1
+  }
+}
+```
+
+To require the repository to remain with a specific owner, also match `repository_owner_id`:
+
+```json
+{
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ],
+  "name": "MyGitHubOwnerFlexibleFIC",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "claimsMatchingExpression": {
+    "value": "claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*' and claims['repository_id'] eq '456789' and claims['repository_owner_id'] eq '123456' and claims['job_workflow_ref'] matches 'contoso/contoso-prod/.github/workflows/*.yml@refs/heads/main'",
     "languageVersion": 1
   }
 }
@@ -131,4 +155,6 @@ This example shows how to set up a Flexible Federated identity credential for Gi
 ## Related content
 
 - [Flexible federated identity credentials](./workload-identities-flexible-federated-identity-credentials.md)
+- [Mutable subjects in federated identity credentials](./workload-identities-federated-credential-mutable-subjects.md)
+- [Migrate GitHub Actions federated credentials to immutable subjects](./workload-identities-github-immutable-subjects.md)
 - [Configure a user-assigned managed identity to trust an external identity provider](./workload-identity-federation-create-trust-user-assigned-managed-identity.md)

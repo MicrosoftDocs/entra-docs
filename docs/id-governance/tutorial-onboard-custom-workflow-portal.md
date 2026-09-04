@@ -1,22 +1,19 @@
 ---
 title: 'Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center'
 description: Tutorial for onboarding users to an organization using Lifecycle workflows with the Microsoft Entra admin center.
-author: owinfreyATL
-manager: dougeby
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 04/08/2024
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: krbain
 ms.custom: template-tutorial, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to automate employee onboarding tasks before their first day of work so that I can ensure new employees have the access they need from day one.
 ---
 
 # Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center
 
 This tutorial provides a step-by-step guide on how to automate prehire tasks with Lifecycle workflows using the Microsoft Entra admin center. 
 
-This prehire scenario generates a temporary access pass for our new employee and sends it via email to the user's new manager.  
+This prehire scenario generates a temporary access pass for the new employee and sends it via email to the user's new manager.  
 
 :::image type="content" source="media/tutorial-lifecycle-workflows/arch-2.png" alt-text="Screenshot of the lifecycle workflow scenario." lightbox="media/tutorial-lifecycle-workflows/arch-2.png":::
 
@@ -39,8 +36,8 @@ Detailed breakdown of the relevant attributes:
 
  | Attribute | Description |Set on|
  |:--- |:---:|-----|
- |mail|Used to notify manager of the new employees temporary access pass|Both|
- |manager|This attribute that is used by the lifecycle workflow|Employee|
+ |mail|Used to notify manager of the new employee's temporary access pass|Both|
+ |manager|This attribute is used by the lifecycle workflow|Employee|
  |employeeHireDate|Used to trigger the workflow|Employee|
  |department|Used to provide the scope for the workflow|Employee|
 
@@ -53,9 +50,9 @@ The pre-hire scenario can be broken down into the following sections:
   - Triggering the workflow
   - Verifying the workflow was successfully executed
 
-## Create a workflow using prehire template
+## Create a workflow using the prehire template
 
-Use the following steps to create a pre-hire workflow that generates a TAP and send it via email to the user's manager using the Microsoft Entra admin center.
+Use the following steps to create a pre-hire workflow that generates a TAP and sends it via email to the user's manager using the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 1. Select **ID Governance**.
@@ -81,23 +78,23 @@ Use the following steps to create a pre-hire workflow that generates a TAP and s
     :::image type="content" source="media/tutorial-lifecycle-workflows/onboard-create.png" alt-text="Screenshot of creating an onboard workflow." lightbox="media/tutorial-lifecycle-workflows/onboard-create.png":::
 
 ## Run the workflow 
-Now that the workflow is created, it automatically runs every 3 hours. This means lifecycle workflows check every 3 hours for users in the associated execution condition, and executes the configured tasks for those users. However, for the tutorial, we would like to run it immediately. To run a workflow immediately, we can use the on-demand feature.
+Now that the workflow is created, it automatically runs every 3 hours. This means lifecycle workflows check every 3 hours for users in the associated execution condition, and execute the configured tasks for those users. However, for this tutorial, you run it immediately. To run a workflow immediately, you can use the on-demand feature.
 
 >[!NOTE]
 >Be aware that you currently cannot run a workflow on-demand if it is set to disabled.  You need to set the workflow to enabled to use the on-demand feature.
 
-To run a workflow on-demand, for users using the Microsoft Entra admin center, do the following steps:
+To run a workflow on-demand for users using the Microsoft Entra admin center, complete the following steps:
 
  1. On the workflow screen, select the specific workflow you want to run.
  1. Select **Run on demand**.
- 1. On the **select users** tab, select **add users**.
+ 1. On the **select users** tab, select **Add users**.
  1. Add a user.
  1. Select **Run workflow**.
 
 
 ## Check tasks and workflow status
 
-At any time, you can monitor the status of the workflows and the tasks. As a reminder, there are three different data pivots, users runs, and tasks that are currently available. You can learn more in the how-to guide [Check the status of a workflow](check-status-workflow.md). In the course of this tutorial, we look at the status using the user focused reports.
+At any time, you can monitor the status of the workflows and the tasks. As a reminder, there are three different data pivots: users, runs, and tasks that are currently available. You can learn more in the how-to guide [Check the status of a workflow](check-status-workflow.md). In this tutorial, you check the status using the user-focused reports.
 
  1. To begin, select the **Workflow history** tab to view the user summary and associated workflow tasks and statuses.  
  :::image type="content" source="media/tutorial-lifecycle-workflows/workflow-history.png" alt-text="Screenshot of workflow History status." lightbox="media/tutorial-lifecycle-workflows/workflow-history.png":::

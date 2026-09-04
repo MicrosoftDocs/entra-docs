@@ -1,10 +1,8 @@
 ---
 title: Sign in with Microsoft branding guidelines
 description: Learn about application branding guidelines for Microsoft identity platform.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
-ms.custom: signin_art
+manager: pmwongera
+ms.custom:
 ms.date: 12/15/2023
 ms.reviewer: 
 ms.service: identity-platform

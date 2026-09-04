@@ -1,13 +1,8 @@
 ---
 title: How to configure Microsoft Entra diagnostic settings
 description: Learn how to configure Microsoft Entra diagnostic settings to integrate activity logs with SIEM tools.
-author: shlipsey3
-manager: femila
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
-ms.date: 02/26/2025
-ms.author: sarahlipsey
+ms.date: 06/16/2025
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to learn how to configure diagnostic settings so I can stream Microsoft Entra activity logs to the endpoint I need.
@@ -23,7 +18,7 @@ This article provides the steps to configure Microsoft Entra diagnostic settings
 
 To configure diagnostic settings, you need:
 
-- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access to create general diagnostic settings for the Microsoft Entra tenant.
 - [Attribute Log Administrator](../role-based-access-control/permissions-reference.md#attribute-log-administrator) access to create diagnostic settings for [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) logs.
 - A destination that is already set up. For example, if you want to stream logs to an event hub, you need to create the event hub before you can configure the diagnostic settings.
@@ -83,6 +78,9 @@ For details on configuring diagnostic settings for a specific destination, see t
 
 The basic steps for configuring diagnostics settings are as follows:
 
+> [!NOTE]
+> It might take up to three days for the logs to start appearing in the destination.
+
 1. To create a new diagnostic setting, select **Add diagnostic setting**.
 1. Provide a name.
 1. Select the logs you want to include.
@@ -90,6 +88,3 @@ The basic steps for configuring diagnostics settings are as follows:
 1. Select the **Save** button.
 
     ![Screenshot of the create diagnostic settings page, with several logs selected to go to a Log Analytics workspace.](media/howto-configure-diagnostic-settings/diagnostic-settings-save.png)
-
-> [!NOTE]
-> It might take up to three days for the logs to start appearing in the destination.
