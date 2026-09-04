@@ -153,11 +153,11 @@ Command or API call | Usage
     ```
 1. Run the Get-MgDomainVerificationDnsRecord cmdlet to view the DNS challenge:
     ```powershell
-    (Get-MgDomainVerificationDnsRecord -DomainId "<your domain name>" | ?{$_.recordtype -eq "Txt"}).AdditionalProperties.text
+    (Get-MgDomainVerificationDnsRecord -DomainId "<your domain name>" | Where-Object {$_.recordtype -eq "Txt"}).AdditionalProperties.text
     ```
     For example:
     ```powershell
-    (Get-MgDomainVerificationDnsRecord -DomainId "contoso.com" | ?{$_.recordtype -eq "Txt"}).AdditionalProperties.text
+    (Get-MgDomainVerificationDnsRecord -DomainId "contoso.com" | Where-Object {$_.recordtype -eq "Txt"}).AdditionalProperties.text
     ```
 
 1. Copy the value (the challenge) that is returned from this command. For example:
@@ -186,10 +186,13 @@ Command or API call | Usage
         forceTakeover = $true
     } | ConvertTo-Json
 
-    Invoke-MgGraphRequest -Method POST `
-        -Uri "https://graph.microsoft.com/v1.0/domains/<your domain name>/verify" `
-        -Body $body `
-        -ContentType "application/json"
+    $params = @{
+    Method      = 'POST'
+    Uri         = "https://graph.microsoft.com/v1.0/domains/$domainName/verify"
+    Body        = $body
+    ContentType = 'application/json'
+    }
+    Invoke-MgGraphRequest @params
     ```
 
     For example:
@@ -199,10 +202,13 @@ Command or API call | Usage
         forceTakeover = $true
     } | ConvertTo-Json
 
-    Invoke-MgGraphRequest -Method POST `
-        -Uri "https://graph.microsoft.com/v1.0/domains/contoso.com/verify" `
-        -Body $body `
-        -ContentType "application/json"
+    $params = @{
+        Method      = 'POST'
+        Uri         = 'https://graph.microsoft.com/v1.0/domains/contoso.com/verify'
+        Body        = $body
+        ContentType = 'application/json'
+    }
+    Invoke-MgGraphRequest @params
     ```
 
 > [!NOTE]
