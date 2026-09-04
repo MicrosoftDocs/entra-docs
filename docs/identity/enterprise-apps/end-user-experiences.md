@@ -2,9 +2,10 @@
 title: End-user experiences for applications
 description: Learn about the customizable ways to deploy applications to end users in your organization with Microsoft Entra ID.
 ms.topic: concept-article
-ms.date: 04/29/2025
+ms.date: 09/04/2026
 ms.reviewer: lenalepa
 ms.custom: enterprise-apps
+ai-usage: ai-assisted
 
 #customer intent: As an IT admin with Microsoft Entra ID, I want to deploy applications to end users in my organization, so that they can access the applications through the app launchers such as My Apps and Microsoft 365.
 
@@ -64,18 +65,16 @@ When an authorized user selects one of these application-specific links, they fi
 These links use the same access control mechanisms as My Apps and Microsoft 365. Only those users or groups who are assigned to the application in the Microsoft Entra admin center are able to successfully authenticate. However, any user who is unauthorized see's a message explaining that they aren't granted access. The unauthorized user is given a link to load My Apps to view available applications that they do have access to.
 
 
-## Manage preview settings
+<a name="manage-preview-settings"></a>
 
-As an admin, you can choose to try out new app launcher features while they are in preview. Enabling a preview feature means that the feature is turned on for your organization. The preview feature is also reflected in the My Apps portal and other app launchers for all your users.
+## Legacy My Apps experience settings
 
-To enable or disable previews for your app launchers:
+The legacy My Apps preview settings, such as **Users can use preview features for My Apps**, are no longer used by the My Apps portal or other app launchers. These settings don't affect what your users see or how the app launchers behave.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**.
-1. On the left menu, select **App launchers**, then select **Settings**.
-1. Under **Preview settings**, toggle the checkboxes for the previews you want to enable or disable. To opt into a preview, toggle the associated checkbox to the checked state. To opt out of a preview, toggle the associated checkbox to the unchecked state.
-1. Select **Save**. Wait a few minutes for the changes to take effect.
-Navigate to the My Apps portal and verify that the preview you enabled or disabled is reflected.
+> [!NOTE]
+> The legacy My Apps and My Staff experience settings are no longer used by the service and don't affect user behavior. These settings are being removed from the Microsoft Entra admin center. No administrator action is required.
+
+To control what your users see in My Apps, assign users and groups to applications and organize applications with collections. For more information, see [Create collections on the My Apps portal](access-panel-collections.md).
 
 ## Related content
 
