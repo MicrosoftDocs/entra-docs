@@ -1273,6 +1273,8 @@
         href: heroku-tutorial.md
       - name: HeyBuddy
         href: heybuddy-tutorial.md
+      - name: HiBob to Active Directory 
+        href: hibob-to-active-directory-user-provisioning-tutorial.md
       - name: HighGear
         href: highgear-tutorial.md
       - name: HighGround
