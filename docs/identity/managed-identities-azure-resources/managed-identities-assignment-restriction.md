@@ -95,6 +95,11 @@ Consider the following best practices when you plan assignment restriction for u
 
 If the resource provider or resource type you want to configure isn't listed in the **Select Resource Types** pane, use the Azure CLI. For configuration steps and command examples, see [Configure assignment restriction for user-assigned managed identities](configure-managed-identities-assignment-restriction.md).
 
+> [!WARNING]
+> In Azure CLI commands and infrastructure-as-code (IaC) templates, specify the resource provider namespace on its own, for example `Microsoft.Storage`. Don't use `Microsoft.Storage/*`.
+>
+> The **Select Resource Types** pane in the Azure portal displays a provider-wide selection as `Microsoft.Storage/*`. The `/*` suffix is a portal display convention and isn't part of the value that the API accepts. Even when the portal shows `Microsoft.Storage/*`, use `Microsoft.Storage` in Azure CLI commands and IaC templates. To restrict the identity to a single resource type instead of the whole provider, specify the full resource type, for example `Microsoft.Storage/storageAccounts`.
+
 ## Related content
 
 - [Configure assignment restriction for user-assigned managed identities](configure-managed-identities-assignment-restriction.md)
