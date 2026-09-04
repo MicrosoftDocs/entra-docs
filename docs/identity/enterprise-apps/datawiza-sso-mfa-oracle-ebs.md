@@ -1,16 +1,12 @@
 ---
 title: Configure Datawiza for Microsoft Entra multifactor authentication and single sign-on to Oracle EBS
 description: Learn how to enable Microsoft Entra multifactor authentication and SSO for an Oracle E-Business Suite application via Datawiza.
-author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 01/31/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT administrator responsible for securing access to Oracle EBS. I want to configure Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) with Datawiza. My goal is to provide secure and seamless access for device users and to apps from any location.
 ---
 
@@ -42,7 +38,7 @@ The solution has the following components:
 
 To complete the steps in this article, you need:
 
-* An Azure subscription. If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/).
+* An Azure subscription. If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant linked to the Azure subscription.
 * A [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 * Docker and Docker Compose, to run DAP. For more information, see [Get Docker](https://docs.docker.com/get-docker/) and [Docker Compose Overview](https://docs.docker.com/compose/install/).

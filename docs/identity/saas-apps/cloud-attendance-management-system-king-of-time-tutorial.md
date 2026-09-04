@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME
+title: Configure CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME so that I can control who has access to CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME
+# Configure CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME with Microsoft Entra ID. CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME is No.1 in the attendance management system market share "KING OF TIME" reached 2.77 million active users as of April 2023. It's a cloud attendance management system with high satisfaction, recognition, and the No. 1 market share.  From offices and stores to teleworking and telecommuting in an emergency. Efficient attendance management that has become complicated by paper time cards and Excel is automatically aggregated. When you integrate CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME with Microsoft Entra ID, you can:
 
@@ -33,9 +24,9 @@ You'll configure and test Microsoft Entra single sign-on for CLOUD ATTENDANCE MA
 
 To integrate Microsoft Entra ID with CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME, you need:
 
-* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME single sign-on (SSO) enabled subscription.
 
 ## Add application and assign a test user

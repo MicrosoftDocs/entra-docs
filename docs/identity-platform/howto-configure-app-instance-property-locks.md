@@ -1,14 +1,12 @@
 ---
 title: "How to configure app instance property lock in your applications"
 description: How to increase app security by configuring property modification locks for sensitive properties of the application.
-author: henrymbuguakiarie
-manager: CelesteDG
-ms.author: henrymbugua
+manager: pmwongera
 ms.date: 10/26/2023
-ms.reviewer:
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to protect properties of my application instance of being modified.
 ---
 

@@ -1,14 +1,10 @@
 ---
 title: Microsoft identity platform accounts & tenant profiles on Android
 description: An overview of the Microsoft identity platform accounts for Android
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
+manager: pmwongera
 ms.date: 05/14/2025
-ms.devlang: java
-ms.reviewer: shoatman
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: concept-article
 #Customer intent: As an Android developer, I want to understand the concept of accounts in the Microsoft identity platform when using MSAL for Android so that I can properly manage and authenticate users across multiple organizations and systems of record.
 ---

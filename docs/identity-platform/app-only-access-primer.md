@@ -1,12 +1,11 @@
 ---
 title: Microsoft identity platform app-only access scenario
 description: Learn about when and how to use app-only access in the Microsoft identity platform endpoint.
-author: omondiatieno
-manager: celesteDG
-ms.author: jomondi
+manager: pmwongera
 ms.date: 05/21/2025
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
+ms.subservice: workforce
 
 ms.topic: concept-article
 
@@ -14,6 +13,8 @@ ms.topic: concept-article
 ---
 
 # Microsoft identity platform app-only access scenario
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 When an application directly accesses a resource, like Microsoft Graph, its access isn't limited to the files or operations available to any single user. The app calls APIs directly using its own identity, and a user or app with admin rights must authorize it to access the resources. This scenario is application-only access.
 

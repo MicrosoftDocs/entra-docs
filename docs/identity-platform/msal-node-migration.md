@@ -1,9 +1,7 @@
 ---
 title: "Migrate your Node.js application from ADAL to MSAL"
 description: How to update your existing Node.js application to use the Microsoft Authentication Library (MSAL) for authentication and authorization instead of the Active Directory Authentication Library (ADAL).
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
+manager: pmwongera
 ms.date: 04/26/2021
 ms.service: identity-platform
 ms.topic: how-to
@@ -374,7 +372,7 @@ cca.acquireTokenByRefreshToken(refreshTokenRequest).then((response) => {
 });
 ```
 
-For more information, please refer to the [ADAL Node to MSAL Node migration sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/refresh-token).
+For more information, please refer to the [MSAL Node samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples).
 
 > [!NOTE]
 > We recommend you to destroy the older ADAL Node token cache once you utilize the still valid refresh tokens to get a new set of tokens using the MSAL Node's `acquireTokenByRefreshToken` method as shown above.

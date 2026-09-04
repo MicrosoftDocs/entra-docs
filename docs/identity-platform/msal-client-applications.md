@@ -1,11 +1,9 @@
 ---
 title: Public and confidential client apps (MSAL)
 description: Learn about public client and confidential client applications in the Microsoft Authentication Library (MSAL).
-author: OwenRichards1
-manager: CelesteDG
-ms.author: owenrichards
+manager: pmwongera
 ms.date: 05/14/2025
-ms.reviewer: iambmelt
+ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
 ms.custom: sfi-ga-nochange, sfi-ropc-nochange

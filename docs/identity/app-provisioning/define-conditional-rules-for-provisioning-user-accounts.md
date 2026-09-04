@@ -1,14 +1,8 @@
 ---
 title: Scoping users or groups to be provisioned with scoping filters in Microsoft Entra ID
 description: Learn how to use scoping filters to define attribute-based rules that determine which users or groups are provisioned in Microsoft Entra ID.
-
-author: kenwith
-manager: femila
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/04/2025
-ms.author: kenwith
+ms.date: 08/06/2026
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ai-usage: ai-assisted
@@ -63,10 +57,10 @@ According to this scoping filter, users must satisfy the following criteria to b
 * Their job title must not be null or empty.
 
 ## Create scoping filters
+
 Scoping filters are configured as part of the attribute mappings for each Microsoft Entra user provisioning connector. The following procedure assumes that you already set up automatic provisioning for [one of the supported applications](~/identity/saas-apps/tutorial-list.md) and are adding a scoping filter to it.
 
 ### Create a scoping filter
-
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
@@ -74,13 +68,13 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 
-3. Select the application for which you have configured automatic provisioning: for example, "ServiceNow".
+3. Select the application for which you have configured automatic provisioning: for example, **ServiceNow**.
 
 ::: zone-end
 
 ::: zone pivot="cross-tenant-synchronization"
 
-2. Browse to **Entra ID** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
+2. Browse to **Entra ID** > **Cross-tenant Synchronization** > **Configurations**.
 
 3. Select your configuration.
 
@@ -88,35 +82,36 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 4. Select the **Provisioning** tab.
 
-::: zone pivot="app-provisioning"
+5. Under **Manage**, select **Scoping filters**.
+The scoping filters page displays two tabs: **Users** and **Groups**. Select the tab for the object type you want to scope.
 
-5. In the **Mappings** section, select the mapping that you want to configure a scoping filter for: for example, "Synchronize Microsoft Entra users to ServiceNow".
+6. Select the pencil icon to edit. The **Configure Scoping Filters** wizard opens and walks you through the following steps:
 
-::: zone-end
-
-::: zone pivot="cross-tenant-synchronization"
-
-5. In the **Mappings** section, select the mapping that you want to configure a scoping filter for: for example, "Provision Microsoft Entra users".
-
-::: zone-end
-
-6. Select the **Source object scope** menu.
-7. Select **Add scoping filter**.
-8. Define a clause by selecting a source **Attribute Name**, an **Operator**, and an **Attribute Value** to match against. The following operators are supported:
-
-   a. **&**. Clause returns "true" if the evaluated attribute exists in the input string value. 
-
-   b. **!&**. Clause returns "true" if the evaluated attribute does not exist in the input string value. 
+   a. **Scope Settings** — Configure which objects are enabled for provisioning.
    
+   b. **Scope by assignment** — Choose whether to scope users and groups by assignment (recommended).
+   
+   c. **Users and groups** — Select the users and groups to include in scope. This option determines which users are assigned to the app. This is the same list of users and groups used for single sign-on. For more information, see [Assign users and groups to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
+   
+   d. **Scope by attribute** — Define attribute-based scoping clauses. Select a source **Attribute Name**, an **Operator**, and an **Attribute Value** to match against.
+   
+   e. **Review** — Review your scoping filter configuration and confirm changes.
+
+8. In the **Scope by attribute** step, define clauses to filter users based on attribute values. The following operators are supported:
+
+   a. **&**. Clause returns "true" if the evaluated attribute exists in the input string value.
+
+   b. **!&**. Clause returns "true" if the evaluated attribute does not exist in the input string value.
+
    c. **ENDS_WITH**. Clause returns "true" if the evaluated attribute ends with the input string value.
 
    d. **EQUALS**. Clause returns "true" if the evaluated attribute matches the input string value exactly (case sensitive).
 
-   e. **Greater_Than.** Clause returns "true" if the evaluated attribute is greater than the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...]. 
- 
-   f. **Greater_Than_OR_EQUALS.** Clause returns "true" if the evaluated attribute is greater than or equal to the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...]. 
-   
-   g. **Includes.** Clause returns "true" if the evaluated attribute contains the string value (case sensitive) as described [here](/dotnet/api/system.string.contains). 
+   e. **Greater_Than.** Clause returns "true" if the evaluated attribute is greater than the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...].
+
+   f. **Greater_Than_OR_EQUALS.** Clause returns "true" if the evaluated attribute is greater than or equal to the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...].
+
+   g. **Includes.** Clause returns "true" if the evaluated attribute contains the string value (case sensitive) as described [here](/dotnet/api/system.string.contains).
 
    h. **IS FALSE**. Clause returns "true" if the evaluated attribute contains a Boolean value of false.
 
@@ -130,25 +125,19 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
    m. **NOT REGEX MATCH**. Clause returns "true" if the evaluated attribute doesn't match a regular expression pattern. It returns "false" if the attribute is null / empty.
 
-   n. **REGEX MATCH**. Clause returns "true" if the evaluated attribute matches a regular expression pattern. For example: `([1-9][0-9])` matches any number between 10 and 99 (case sensitive).   
+   n. **REGEX MATCH**. Clause returns "true" if the evaluated attribute matches a regular expression pattern. For example: `([1-9][0-9])` matches any number between 10 and 99 (case sensitive).
 
->[!IMPORTANT] 
-> - The IsMemberOf filter is not supported currently.
-> - The members attribute on a group is not supported currently.
-> - Filtering is not supported for multi-valued attributes.
-> - Scoping filters will return "false" if the value is null / empty.
+   > [!IMPORTANT]
+   > - The IsMemberOf filter is not supported currently.
+   > - The members attribute on a group is not supported currently.
+   > - Filtering is not supported for multi-valued attributes.
+   > - Scoping filters will return "false" if the value is null / empty.
 
-9. Optionally, repeat steps 7-8 to add more scoping clauses.
+9. Add more scoping clauses as needed within the **Scope by attribute** step.
 
-10. In **Scoping Filter Title**, add a name for your scoping filter.
+10. On the **Review** step, verify your scoping filter configuration and select **Save**.
 
-11. Select **OK**.
-
-12. Select **OK** again on the **Scoping Filters** screen. Optionally, repeat steps 6-11 to add another scoping filter.
-
-13. Select **Save** on the **Attribute Mapping** screen. 
-
->[!IMPORTANT] 
+> [!IMPORTANT]
 > Saving a new scoping filter triggers a new full sync for the application, where all users in the source system are evaluated again against the new scoping filter. If a user in the application was previously in scope for provisioning, but falls out of scope, their account is disabled or deprovisioned in the application. To override this default behavior, refer to [Skip deletion for user accounts that go out of scope](~/identity/app-provisioning/skip-out-of-scope-deletions.md).
 
 ## Common scoping filters

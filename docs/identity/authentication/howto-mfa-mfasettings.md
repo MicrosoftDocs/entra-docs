@@ -1,17 +1,10 @@
 ---
 title: Configure Microsoft Entra multifactor authentication
 description: Learn how to configure settings for Microsoft Entra multifactor authentication
-
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/21/2025
-
-ms.author: justinha
-author: justinha
-manager: femila
-ms.reviewer: jupetter
+ms.date: 02/27/2026
+ms.reviewer: lhuangnorth
+ms.custom: sfi-image-nochange
 ---
 # Configure Microsoft Entra multifactor authentication settings
 
@@ -129,22 +122,25 @@ The following table lists more numbers for different countries/regions.
 |:---------------------|:----------------|
 | Austria              | +43 6703062076  |
 | Bangladesh           | +880 9604606026 |
-| China                | +44 1235619418, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 1235619535, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930|
+| Belgium              | +32 480298502   |
+| China                | +44 1235619418, +44 1235619535, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930, +86 1052026902, +86 1052026905, +86 1052026907, +86 2157007919, +86 2157007923, +86 2157007926|
 | Croatia              | +385 15507766   |
 | Ecuador              | +593 964256042  |
 | Estonia              | +372 6712726    |
-| France               | +33 744081468   |
+| France               | +33 744081468, +33 939370036 |
 | Ghana                | +233 308250245  |
 | Greece               | +30 2119902739  |
 | Guatemala            | +502 23055056   |
 | Hong Kong SAR        | +852 25716964   |
-| India                | +91 3371568300, +91 1205089400, +91 4471566601, +91 2271897557, +91 1203524400, +91 3335105700, +91 2235544120, +91 4435279600|
+| India                | +91 1203524400, +91 1205089400, +91 2235543727, +91 2235543728, +91 2235543729, +91 2235543730, +91 2235544120, +91 2271897557, +91 3335105700, +91 3371568300, +91 4435279600, +91 4471566601|
 | Jordan               | +962 797639442  |
 | Kenya                | +254 709605276  |
-| Netherlands          | +31 202490048   |
+| Netherlands          | +31 202490048, +31 635230021 |
+| New Zealand          | +64 95585975    |
 | Nigeria              | +234 7080627886 |
 | Pakistan             | +92 4232618686, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930  |
 | Poland               | +48 699740036   |
+| Russian Federation   | +7 9300653362   |
 | Saudi Arabia         | +966 115122726  |
 | South Africa         | +27 872405062   |
 | Spain                | +34 913305144   |
@@ -152,7 +148,7 @@ The following table lists more numbers for different countries/regions.
 | Sweden               | +46 701924176   |
 | Taiwan               | +886 277515260, +886 255686508  |
 | Türkiye              | +90 8505404893  |
-| Ukraine              | +380 443332393  |
+| Ukraine              | +380 443332000, +380 443332393  |
 | United Arab Emirates | +971 44015046   |
 | Vietnam              | +84 2039990161  |
 
@@ -169,6 +165,9 @@ To configure your own caller ID number, complete the following steps:
 > When Microsoft Entra multifactor authentication calls are placed through the public telephone network, sometimes the calls are routed through a carrier that doesn't support caller ID. Because of this, caller ID isn't guaranteed, even though Microsoft Entra multifactor authentication always sends it. This applies both to phone calls and text messages provided by Microsoft Entra multifactor authentication. If you need to validate that a text message is from Microsoft Entra multifactor authentication, see [What short codes are used for sending messages?](multi-factor-authentication-faq.yml#what-short-codes-are-used-for-sending-text-messages-to-my-users-).
 
 ### Custom voice messages
+
+> [!NOTE]
+> Custom voice messages in Microsoft Entra voice call authentication will be retired on February 28, 2026. After retirement, all voice call greetings will use standard recordings from Microsoft by default.
 
 You can use your own recordings or greetings for Microsoft Entra multifactor authentication. These messages can be used in addition to the default Microsoft recordings or to replace them.
 
@@ -195,24 +194,29 @@ For example, if there's only one custom message, and it's in German:
 
 ### Custom voice message defaults
 
-You can use the following sample scripts to create your own custom messages. These phrases are the defaults if you don't configure your own custom messages.
+You can use the following sample scripts to create your own custom messages. These phrases are used by default if you don't configure your own custom messages.
 
-| Message name | Script |
-| --- | --- |
-| Authentication successful | Your sign-in was successfully verified. Goodbye. |
-| Extension prompt | Thank you for using Microsoft's sign-in verification system. Please press the pound key to continue. |
-| Activation | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Authentication denied retry | Verification denied. |
-| Retry (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Greeting (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Retry (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Extension prompt after digits | If already at this extension, press the pound key to continue. |
-| Authentication denied | I'm sorry, we cannot sign you in at this time. Please try again later. |
-| Activation greeting (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Activation retry (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Activation greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Extension prompt before digits | Thank you for using Microsoft's sign-in verification system. Please transfer this call to extension \<extension>. |
+Message name | Script
+-------------|--------
+Authentication successful | Your sign-in was successful.
+Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
+Fraud confirmation | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
+Fraud reported | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+Activation | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Authentication denied retry | I'm sorry we can't sign you in at this time. Please try again later.
+Retry (Standard) | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Greeting (Standard) | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
+Greeting (PIN) | This is Microsoft. If you are trying to sign in, enter your PIN to finish signing in.
+Fraud greeting (PIN) | This is Microsoft. If you are trying to sign in, enter your PIN to finish signing in. If you are not trying to sign in, press 0 and #.
+Retry (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the # key to finish your verification.
+Extension prompt after digits | If already at this extension, press the # key to continue.
+Authentication denied | I'm sorry we can't sign you in at this time. Please try again later.
+Activation greeting (Standard) | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Activation retry (Standard)| Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Activation greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the # key to finish your verification.
+Extension prompt before digits | Thank you for using Microsoft's sign-in verification system. Please transfer this call to extension {0}.
+
 
 ### Set up a custom message
 
@@ -334,7 +338,7 @@ The following verification methods are available:
 | Notification through mobile app |Sends a push notification to the user's phone or registered device. The user views the notification and selects **Verify** to complete verification. The Microsoft Authenticator app is available for [Windows Phone](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6), [Android](https://go.microsoft.com/fwlink/?Linkid=825072), and [iOS](https://go.microsoft.com/fwlink/?Linkid=825073). |
 | Verification code from mobile app or hardware token |The Microsoft Authenticator app generates a new OATH verification code every 30 seconds. The user enters the verification code into the sign-in interface. The Microsoft Authenticator app is available for [Windows Phone](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6), [Android](https://go.microsoft.com/fwlink/?Linkid=825072), and [iOS](https://go.microsoft.com/fwlink/?Linkid=825073). |
 
-For more information, see [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md).
+For more information, see [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md).
 
 #### Enable and disable verification methods
 
@@ -354,7 +358,7 @@ To enable or disable verification methods, complete the following steps:
  The **remember multifactor authentication** feature lets users bypass subsequent verifications for a specified number of days, after they've successfully signed in to a device by using MFA. To enhance usability and minimize the number of times a user has to perform MFA on a given device, select a duration of 90 days or less.
 
 > [!IMPORTANT]
-> If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke MFA Sessions](howto-mfa-userdevicesettings.yml).
+> If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke sessions](howto-mfa-userdevicesettings.yml).
 >
 > The revoke action revokes the trusted status from all devices, and the user is required to perform multifactor authentication again. You can also instruct your users to restore the original MFA status on their own devices as noted in [Manage your settings for multifactor authentication](https://support.microsoft.com/account-billing/change-your-two-step-verification-method-and-settings-c801d5ad-e0fc-4711-94d5-33ad5d4630f7#turn-on-two-factor-verification-prompts-on-a-trusted-device).
 
@@ -395,4 +399,4 @@ After you enable the **remember multifactor authentication** feature, users can 
 
 ## Next steps
 
-To learn more, see [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+To learn more, see [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)

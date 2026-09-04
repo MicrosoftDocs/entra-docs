@@ -4,10 +4,10 @@ description: Learn PCI-DSS defined approach requirements for regular testing of 
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: jricketts
-ms.author: jricketts
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, jricketts
 ms.date: 04/18/2023
 ms.custom: it-pro
 ms.collection:
@@ -71,7 +71,7 @@ ms.collection:
 
 ## Next steps
 
-PCI-DSS requirements **3**, **4**, **9**, and **12** aren't applicable to Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf).
+PCI-DSS requirements **3**, **4**, **9**, and **12** aren't applicable to Microsoft Entra ID, therefore there are no corresponding articles. To see all requirements, go to pcisecuritystandards.org: [Official PCI Security Standards Council Site](https://www.pcisecuritystandards.org/document_library/).
 
 To configure Microsoft Entra ID to comply with PCI-DSS, see the following articles. 
 

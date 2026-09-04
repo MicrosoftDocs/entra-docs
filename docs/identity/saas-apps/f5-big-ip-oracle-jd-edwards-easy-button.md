@@ -1,19 +1,12 @@
 ---
 title: Configure F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID
 description: Learn to implement SHA with header-based single sign-on to Oracle JD Edwards using F5’s BIG-IP Easy Button guided configuration
-
-author: nguhiu
-manager: CelesteDG
 ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure F5’s BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID
 
@@ -39,7 +32,7 @@ Having a BIG-IP in front of the app enables us to overlay the service with Micro
 
 ## Scenario architecture
 
-The SHA solution for this scenario is made up of several components:
+The secure hybrid access (SHA) solution for this scenario is made up of several components:
 
 **Oracle JDE Application:** BIG-IP published service to be protected by Microsoft Entra SHA.
 
@@ -93,7 +86,7 @@ There are many methods to configure BIG-IP for this scenario, including two temp
 >[!NOTE] 
 > All example strings or values referenced throughout this guide should be replaced with those for your actual environment.
 
-## Register Easy Button
+## Register the F5 BIG-IP Easy Button in Microsoft Entra ID
 
 Before a client or service can access Microsoft Graph, it must be trusted by the [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md)
 
@@ -130,7 +123,7 @@ This first step creates a tenant app registration that's used to authorize the *
 
 10. Go to **Overview**, note the **Client ID** and **Tenant ID**
 
-## Configure Easy Button
+## Configure the F5 BIG-IP Easy Button settings
 
 Initiate the APM's **Guided Configuration** to launch the **Easy Button** Template.
 
@@ -141,7 +134,7 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 3. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
 
-### Configuration Properties
+### Configure Easy Button configuration properties
 
 The **Configuration Properties** tab creates a BIG-IP application config and SSO object. Consider the **Azure Service Account Details** section to represent the client you registered in your Microsoft Entra tenant earlier, as an application. These settings allow a BIG-IP's OAuth client to individually register a SAML SP directly in your tenant, along with the SSO properties you would normally configure manually. Easy Button does this for every BIG-IP service being published and enabled for SHA.
 
@@ -157,7 +150,7 @@ Some of these are global settings can be reused for publishing more applications
 
    ![Screenshot for Configuration General and Service Account properties](./media/f5-big-ip-easy-button-oracle-jde/configuration-general-and-service-account-properties.png)
    
-### Service Provider
+### Configure service provider settings
 
 The Service Provider settings define the properties for the SAML SP instance of the application protected through SHA.
 
@@ -189,13 +182,13 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 <a name='azure-active-directory'></a>
 
-### Microsoft Entra ID
+### Configure Microsoft Entra ID settings
 
-This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP and generic SHA template for any other apps. 
+The Microsoft Entra ID configuration defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP and generic SHA template for any other apps. 
 
 For this scenario, in the **Azure Configuration** page, select **JD Edwards Protected by F5 BIG-IP** > **Add**.
 
-#### Azure Configuration
+#### Configure Azure application settings
 
 1. Enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users see on MyApps portal
 
@@ -215,7 +208,7 @@ For this scenario, in the **Azure Configuration** page, select **JD Edwards Prot
 
     ![Screenshot for Azure configuration - Add users and groups](./media/f5-big-ip-easy-button-oracle-jde/azure-configuration-add-user-groups.png)
 
-#### User Attributes & Claims
+#### Configure user attributes and claims
 
 When a user successfully authenticates, Microsoft Entra ID issues a SAML token with a default set of claims and attributes uniquely identifying the user. The **User Attributes & Claims** tab shows the default claims to issue for the new application. It also lets you configure more claims.
 
@@ -223,7 +216,7 @@ When a user successfully authenticates, Microsoft Entra ID issues a SAML token w
 
 You can include additional Microsoft Entra attributes if necessary, but the Oracle JDE scenario only requires the default attributes.
 
-#### Additional User Attributes
+#### Configure additional user attributes
 
 The **Additional User Attributes** tab can support a variety of distributed systems requiring attributes stored in other directories for session augmentation. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, and so on. 
 
@@ -232,7 +225,7 @@ The **Additional User Attributes** tab can support a variety of distributed syst
 >[!NOTE] 
 >This feature has no correlation to Microsoft Entra ID but is another source of attributes.
 
-#### Conditional Access Policy
+#### Configure a Conditional Access policy
 
 Conditional Access policies are enforced post Microsoft Entra pre-authentication, to control access based on device, application, location, and risk signals.
 
@@ -253,7 +246,7 @@ To select a policy to be applied to the application being published:
 > [!NOTE]
 > The policy list is enumerated only once when first switching to this tab. A refresh button is available to manually force the wizard to query your tenant, but this button is displayed only when the application has been deployed.
 
-### Virtual Server Properties
+### Configure virtual server properties
 
 A virtual server is a BIG-IP data plane object represented by a virtual IP address listening for client requests to the application. Any received traffic is processed and evaluated against the APM profile associated with the virtual server, before being directed according to the policy results and settings.
 
@@ -267,7 +260,7 @@ A virtual server is a BIG-IP data plane object represented by a virtual IP addre
 
    ![Screenshot for Virtual server](./media/f5-big-ip-easy-button-oracle-jde/virtual-server.png)
 
-### Pool Properties
+### Configure pool properties
 
 The **Application Pool tab** details the services behind a BIG-IP, represented as a pool containing one or more application servers.
 
@@ -279,7 +272,7 @@ The **Application Pool tab** details the services behind a BIG-IP, represented a
 
    ![Screenshot for Application pool](./media/f5-big-ip-easy-button-oracle-jde/application-pool.png)
 
-#### Single sign-on & HTTP Headers
+#### Configure single sign-on and HTTP headers
 
 The **Easy Button wizard** supports Kerberos, OAuth Bearer, and HTTP authorization headers for SSO to published applications. As the Oracle JDE application expects headers, enable **HTTP Headers** and enter the following properties.
 
@@ -292,8 +285,8 @@ The **Easy Button wizard** supports Kerberos, OAuth Bearer, and HTTP authorizati
 >[!NOTE] 
 >APM session variables defined within curly brackets are CASE sensitive. For example, if you enter OrclGUID when the Microsoft Entra attribute name is being defined as orclguid, it causes an attribute mapping failure
 
-### Session Management
-The BIG-IPs session management settings are used to define the conditions under which user sessions are terminated or allowed to continue, limits for users and IP addresses, and corresponding user info. Refer to [F5's docs](https://support.f5.com/csp/article/K18390492) for details on these settings.
+### Configure session management settings
+The BIG-IPs session management settings are used to define the conditions under which user sessions are terminated or allowed to continue, limits for users and IP addresses, and corresponding user info. Refer to [F5 BIG-IP APM session management settings](https://support.f5.com/csp/article/K18390492) for details on these settings.
 
 What isn’t covered here however is Single Log-Out (SLO) functionality, which ensures all sessions between the IdP, the BIG-IP, and the user agent are terminated as users sign off. When the Easy Button instantiates a SAML application in your Microsoft Entra tenant, it also populates the Logout Url with the APM’s SLO endpoint. That way IdP initiated sign-outs from the Microsoft Entra My Apps portal also terminate the session between the BIG-IP and a client.
 
@@ -305,7 +298,7 @@ If making a change to the app is a no go, then consider having the BIG-IP listen
 
 ## Summary
 
-This last step provides a breakdown of your configurations. Select **Deploy** to commit all settings and verify that the application now exists in your tenants list of Enterprise applications.
+The Review and Deploy step provides a breakdown of your configurations. Select **Deploy** to commit all settings and verify that the application now exists in your tenants list of Enterprise applications.
 
 ## Related content
 
@@ -313,7 +306,7 @@ From a browser, connect to the **Oracle JDE application’s external URL** or se
 
 For increased security, organizations using this pattern could also consider blocking all direct access to the application, thereby forcing a strict path through the BIG-IP.
 
-## Advanced deployment
+## Configure advanced deployment options
 
 There may be cases where the Guided Configuration templates lack the flexibility to achieve more specific requirements. For those scenarios, see [Advanced Configuration for headers-based SSO](~/identity/enterprise-apps/f5-big-ip-header-advanced.md). Alternatively, the BIG-IP gives the option to disable **Guided Configuration’s strict management mode**. This allows you to manually tweak your configurations, even though bulk of your configurations are automated through the wizard-based templates.
 
@@ -321,14 +314,14 @@ You can navigate to **Access > Guided Configuration** and select the **small pad
 
 ![Screenshot for Configure Easy Button - Strict Management](./media/f5-big-ip-easy-button-oracle-jde/strict-mode-padlock.png)
 
-At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application is unlocked for direct management.
+After you select the padlock icon to disable strict management mode, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application are unlocked for direct management.
 
 > [!NOTE] 
 > Re-enabling strict mode and deploying a configuration overwrites any settings performed outside of the Guided Configuration UI, therefore we recommend the advanced configuration method for production services.
 
 ## Troubleshooting
 
-Failure to access a SHA protected application can be due to any number of factors. BIG-IP logging can help quickly isolate all sorts of issues with connectivity, SSO, policy violations, or misconfigured variable mappings. Start troubleshooting by increasing the log verbosity level.
+Failure to access a secure hybrid access (SHA) protected application can be due to any number of factors. BIG-IP logging can help quickly isolate all sorts of issues with connectivity, SSO, policy violations, or misconfigured variable mappings. Start troubleshooting by increasing the log verbosity level.
 
 1. Navigate to **Access Policy > Overview > Event Logs > Settings**
 

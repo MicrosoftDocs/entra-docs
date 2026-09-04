@@ -1,12 +1,10 @@
 ---
 title: Custom claims provider reference
 description: Reference documentation for custom claims providers
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
+manager: pmwongera
 ms.custom: 
 ms.date: 05/25/2025
-ms.reviewer: jassuri
+ms.reviewer: jasuri
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -149,6 +147,23 @@ In the HTTP response, provide the following JSON document, where the claims `Dat
                         "Writer",
                         "Editor"
                     ]
+                }
+            }
+        ]
+    }
+}
+```
+
+If no additional claim have to be returned, provide an empty `claims` object:
+
+```json
+{
+    "data": {
+        "@odata.type": "microsoft.graph.onTokenIssuanceStartResponseData",
+        "actions": [
+            {
+                "@odata.type": "microsoft.graph.tokenIssuanceStart.provideClaimsForToken",
+                "claims": {
                 }
             }
         ]

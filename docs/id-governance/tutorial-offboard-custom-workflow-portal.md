@@ -1,15 +1,12 @@
 ---
 title: Execute employee termination tasks by using lifecycle workflows
 description: Learn how to remove users from an organization in real time on their last day of work by using lifecycle workflows in the Microsoft Entra admin center.
-author: owinfreyATL
-manager: femila
-ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 04/08/2024
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: krbain
-ms.custom: template-tutorial
+ms.custom: template-tutorial, sfi-image-nochange
+#Customer Intent: As an IT admin, I want to execute employee termination tasks using lifecycle workflows so that I can automate offboarding on an employee's last day of work.
 ---
 
 # Execute employee termination tasks by using lifecycle workflows
@@ -56,7 +53,7 @@ Use the following steps to create a leaver on-demand workflow that executes a re
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/select-template.png" alt-text="Screenshot of selecting a workflow template for real-time employee termination." lightbox="media/tutorial-lifecycle-workflows/select-template.png":::
 
-6. Configure basic information about the workflow, and then select **Next: Review tasks**.
+6. Configure basic information about the workflow like name, description, and [administrative scope](manage-delegate-workflow.md), then select **Next: Review tasks**.
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/real-time-leaver.png" alt-text="Screenshot of the tab for basic workflow information." lightbox="media/tutorial-lifecycle-workflows/real-time-leaver.png":::
 
@@ -86,7 +83,7 @@ Use the following steps to create a leaver on-demand workflow that executes a re
 
 ## Run the workflow
 
-After the workflow is created, it runs automatically every three hours. Lifecycle workflows check every three hours for users in the associated execution condition, and executes the configured tasks for those users.
+After the workflow is created, it runs automatically every three hours. Lifecycle workflows check every three hours for users in the associated execution condition, and execute the configured tasks for those users.
 
 To run the workflow immediately, you can use the on-demand feature.
 
@@ -103,7 +100,7 @@ To run a workflow on demand for users by using the Microsoft Entra admin center:
 
 ## Check tasks and workflow status
 
-At any time, you can monitor the status of workflows and tasks. Three data pivots, users runs, and tasks are currently available. You can learn more in the how-to guide [Check the status of a workflow](check-status-workflow.md). In this tutorial, you check the status by using the user-focused reports.
+At any time, you can monitor the status of workflows and tasks. Three data pivots, users, runs, and tasks are currently available. You can learn more in the how-to guide [Check the status of a workflow](check-status-workflow.md). In this tutorial, you check the status by using the user-focused reports.
 
 1. On the **Overview** page for the workflow, select **Workflow history**.  
 

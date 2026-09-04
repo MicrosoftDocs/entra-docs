@@ -1,10 +1,8 @@
 ---
 title: Scopes and permissions in the Microsoft identity platform
 description: Learn about openID connect scopes and permissions in the Microsoft identity platform endpoint.
-author: omondiatieno
-manager: CelesteDG
-ms.author: jomondi
-ms.date: 01/03/2025
+manager: pmwongera
+ms.date: 07/24/2025
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
 ms.topic: concept-article
@@ -42,7 +40,7 @@ Permissions in the Microsoft identity platform can be set to admin restricted. F
 
 - `User.Read.All`: Read all user's full profiles
 - `Directory.ReadWrite.All`: Write data to an organization's directory
-- `Groups.Read.All`: Read all groups in an organization's directory
+- `Group.Read.All`: Read all groups in an organization's directory
 
 > [!NOTE]
 > In requests to the authorization, token or consent endpoints for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `scope=User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
@@ -81,7 +79,7 @@ For a complete list of the `profile` claims available in the `id_tokens` paramet
 
 The [`offline_access` scope](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess) gives your app access to resources on behalf of the user for an extended time. On the consent page, this scope appears as the **Maintain access to data you have given it access to** permission.
 
-If any of the requested delegated permissions from the `scope` parameter (excluding `openid`, `profile`, `email`) are granted, this is sufficient for the app to request a refresh token using `offline_access`. For example, if `User.Read` for Microsoft is granted, the app will only receive an access token. That said, if the app were to subsequently request a refresh token, the fact that `User.Read` had been granted is sufficient for a refresh token to be provided. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
+If any delegated permission is granted, offline_access is implicitly granted. You can assume that the application has offline_access if there are any delegated permissions granted. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
 
 > [!NOTE]
 > This permission currently appears on all consent pages, even for flows that don't provide a refresh token (such as the [implicit flow](v2-oauth2-implicit-grant-flow.md)). This setup addresses scenarios where a client can begin within the implicit flow and then move to the code flow where a refresh token is expected.
@@ -172,6 +170,22 @@ Some resource URIs have a trailing forward slash, for example, `https://contoso.
 In this case, a trailing slash on the resource URI means the slash must be present when the token is requested.  So when you request a token for `https://management.azure.com/` and use `.default`, you must request `https://management.azure.com//.default` (notice the double slash!).
 
 In general, if you verify that the token is being issued, and if the token is being rejected by the API that should accept it, consider adding a second forward slash and trying again.
+
+## Preauthorization
+
+Preauthorization enables a resource application owner to grant permissions to client apps without requiring users to see a consent prompt for the set of permissions that are preauthorized. Resource owners can preauthorize client apps in the Azure portal or by using PowerShell and APIs like Microsoft Graph.
+
+In most cases, customer-facing applications in Microsoft Entra External ID require preauthorization because they're intended for users outside the organization who can't consent to the permissions the application requests. Preauthorization ensures these users can access the application without being prompted for consent.
+
+Preauthorized permissions always appear in the relevant token claims. Not all preauthorized permissions can be granted in all tenants.
+
+### Internal permissions between Microsoft services
+
+Microsoft services calling other Microsoft services on your behalf or in your tenant might be authorized using preauthorization. Preauthorized permissions appear in token claims, similar to permissions granted through other methods like consent.
+
+In some cases, these requests use preauthorized permissions that are created specifically for service-to-service requests and aren't available to external developers. These permissions might also grant access to internal business data or other sensitive content that isn't exposed in public APIs. Following internal naming conventions, some of these service-to-service permissions might have claim values like `MS-{permissionName}` or `_A.AA`.
+
+Customers who see such values in token claims should know that this is expected behavior and represents normal access between Microsoft services, as described in our Terms of Service.
 
 ## See also
 

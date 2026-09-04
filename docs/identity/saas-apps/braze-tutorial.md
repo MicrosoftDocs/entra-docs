@@ -1,21 +1,18 @@
 ---
-title: Microsoft Entra SSO integration with Braze
+title: Configure Braze for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Braze.
 
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Braze so that I can control who has access to Braze, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with Braze
+# Configure Braze for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Braze with Microsoft Entra ID. When you integrate Braze with Microsoft Entra ID, you can:
 
@@ -82,6 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.braze.com/auth/saml/callback`
+1. Configure RelayState by entering your Relay State API key generated from Braze into the **Relay State** field.
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

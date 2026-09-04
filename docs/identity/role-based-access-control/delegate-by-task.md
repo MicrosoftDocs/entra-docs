@@ -1,13 +1,8 @@
 ---
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
-author: rolyon
-manager: femila
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 05/25/2025
-ms.author: rolyon
+ms.date: 06/17/2026
 ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
@@ -124,7 +119,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 
 ## Custom domain names least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [custom domain names](../../fundamentals/add-custom-domain.yml) in Microsoft Entra ID.
+Here are the least privileged roles you should use when performing tasks for [custom domain names](../../fundamentals/add-custom-domain.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -181,6 +176,9 @@ Here are the least privileged roles you should use when performing tasks for [ap
 > | Update single sign-on properties | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 > | Create and modify custom authentication extensions | [Authentication Extensibility Administrator](permissions-reference.md#authentication-extensibility-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 
+> [!NOTE]
+> In practice, consenting to Microsoft Graph application permissions typically requires the Global Administrator role. Privileged Role Administrator may not be sufficient depending on tenant consent policies, permission scopes, or Graph protection requirements.
+
 ## Entitlement management least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [entitlement management](../../id-governance/entitlement-management-overview.md) in Microsoft Entra ID Governance.
@@ -192,7 +190,7 @@ Here are the least privileged roles you should use when performing tasks for [en
 
 ## Groups least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [groups](../../fundamentals/how-to-manage-groups.yml) in Microsoft Entra ID.
+Here are the least privileged roles you should use when performing tasks for [groups](../../fundamentals/how-to-manage-groups.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -240,7 +238,8 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | View scenario monitoring signals | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br>[Security Operator](permissions-reference.md#security-operator)<br>[Security Administrator](permissions-reference.md#security-administrator)<br>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br>[Global Reader](permissions-reference.md#global-reader)<br>|
+> | View scenario monitoring signals and alert configurations | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br>[Security Operator](permissions-reference.md#security-operator)<br>[Security Administrator](permissions-reference.md#security-administrator)<br>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br>[Global Reader](permissions-reference.md#global-reader)<br>|
+> | Update alerts and alert email configurations | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) |  |
 
 <a name='identity-protection'></a>
 
@@ -278,7 +277,7 @@ Here are the least privileged roles you should use when performing tasks for [Mi
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Read provisioning logs | [Reports Reader](permissions-reference.md#reports-reader) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Security Reader](permissions-reference.md#security-reader) |
+> | Read provisioning logs | [Reports Reader](permissions-reference.md#reports-reader) | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership)<br/>[Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Security Reader](permissions-reference.md#security-reader) |
 
 ## Monitoring and health - Recommendations least privileged roles
 
@@ -289,6 +288,8 @@ Here are the least privileged roles you should use when performing tasks for [Mi
 > | ---- | --------------------- | ---------------- |
 > | Read recommendations | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Global Reader](permissions-reference.md#global-reader)<br/>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Service Support Administrator](permissions-reference.md#service-support-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 > | Update recommendations | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Authentication Administrator](permissions-reference.md#authentication-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Conditional Access Administrator](permissions-reference.md#conditional-access-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Identity Governance Administrator](permissions-reference.md#identity-governance-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator) |
+> | Read Identity Secure Score improvement action | [Service Support Administrator](../role-based-access-control/permissions-reference.md#service-support-administrator) | [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)<br/>[Exchange Administrator](../role-based-access-control/permissions-reference.md#exchange-administrator) |
+> | Update Identity Secure Score improvement action | [SharePoint Administrator](../role-based-access-control/permissions-reference.md#sharepoint-administrator) | [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator)<br/>[User Administrator](../role-based-access-control/permissions-reference.md#user-administrator)<br/>[Security Reader](../role-based-access-control/permissions-reference.md#security-reader)<br/>[Security Operator](../role-based-access-control/permissions-reference.md#security-operator)<br/>[Global Reader](../role-based-access-control/permissions-reference.md#global-reader) |
 
 ## Monitoring and health - Sign-in diagnostic tool
 
@@ -359,18 +360,6 @@ Here are the least privileged roles you should use when performing tasks for [pa
 > | Configure registration | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | Read all configuration | [Security Administrator](permissions-reference.md#security-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
-## Permissions management least privileged roles
-
-Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Permissions Management](../../permissions-management/overview.md).
-
-> [!div class="mx-tableFixed"]
-> | Task | Least privileged role | Additional roles |
-> | ---- | --------------------- | ---------------- |
-> | Tenant onboarding | [Permissions Management Administrator](permissions-reference.md#permissions-management-administrator) |  |
-> | Onboard cloud environments | [Permissions Management Administrator](permissions-reference.md#permissions-management-administrator) |  |
-> | Assign permissions in Microsoft Entra Permissions Management | [Permissions Management Administrator](permissions-reference.md#permissions-management-administrator) |  |
-> | Start trial and buy Microsoft Entra Permissions Management licenses | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
-
 ## Privileged Identity Management least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [Microsoft Entra Privileged Identity Management](../../id-governance/privileged-identity-management/pim-configure.md) in Microsoft Entra ID Governance.
@@ -396,7 +385,7 @@ Here are the least privileged roles you should use when performing tasks for [ro
 
 ## Security - Authentication methods least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [authentication methods](../authentication/concept-authentication-methods.md) in Microsoft Entra ID.
+Here are the least privileged roles you should use when performing tasks for [authentication methods](../authentication/overview-authentication.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -421,6 +410,7 @@ Here are the least privileged roles you should use when performing tasks for [Co
 > | Create terms of use | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Create VPN connectivity certificate | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Delete classic policy | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
+> | Restore a soft-deleted policy | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Delete terms of use | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Delete VPN connectivity certificate | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Disable classic policy | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
@@ -461,6 +451,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Dismiss all events | [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Perform identity containment actions for SOC incident response | [Entra SOC Identity Responder](permissions-reference.md#entra-soc-identity-responder) |  |
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read users flagged for risk | [Security Reader](permissions-reference.md#security-reader) |  |
 
@@ -485,11 +476,11 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | ---- | --------------------- | ---------------- |
 > | Create Microsoft Entra ID or Azure AD B2C Tenant | [Tenant Creator](permissions-reference.md#tenant-creator) |  |
 > | Update Microsoft Entra tenant properties | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
-> | [Manage privacy statement and contact](../../fundamentals/properties-area.yml) | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
+> | [Manage privacy statement and contact](../../fundamentals/properties-area.md) | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
 ## Users least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [users](../../fundamentals/how-to-create-delete-users.yml) in Microsoft Entra ID.
+Here are the least privileged roles you should use when performing tasks for [users](../../fundamentals/how-to-create-delete-users.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -502,7 +493,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Create user | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Delete users | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Invalidate refresh tokens of limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
-> | Invalidate refresh tokens of non-admins | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Invalidate refresh tokens of non-admins | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) |  [User Administrator](permissions-reference.md#user-administrator) <br/> [Security Administrator](permissions-reference.md#security-administrator) |
 > | Invalidate refresh tokens of privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Read basic configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Reset password for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |

@@ -1,18 +1,11 @@
 ---
 title: Configure SAP SuccessFactors writeback in Microsoft Entra ID
 description: Learn how to configure attribute write-back to SAP SuccessFactors from Microsoft Entra ID
-
-author: cmmdesai
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
-
 ms.date: 05/06/2024
-ms.author: chmutali
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors Writeback so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors Writeback.
----
+--- 
 # Configure attribute write-back from Microsoft Entra ID to SAP SuccessFactors
 The objective of this article is to show the steps to write-back attributes from Microsoft Entra ID to SAP SuccessFactors Employee Central. 
 
@@ -42,7 +35,7 @@ This SuccessFactors Writeback user provisioning solution is ideally suited for:
 
 ## Configuring SuccessFactors for the integration
 
-All SuccessFactors provisioning connectors require credentials of a SuccessFactors account with the right permissions to invoke the Employee Central OData APIs. This section describes steps to create the service account in SuccessFactors and grant appropriate permissions. 
+All SuccessFactors provisioning connectors require credentials of a SuccessFactors account with the right permissions to invoke the Employee Central OData APIs. The following procedure describes how to create the service account in SuccessFactors and grant the required permissions. 
 
 * [Create/identify API user account in SuccessFactors](#createidentify-api-user-account-in-successfactors)
 * [Create an API permissions role](#create-an-api-permissions-role)
@@ -53,6 +46,8 @@ All SuccessFactors provisioning connectors require credentials of a SuccessFacto
 Work with your SuccessFactors admin team or implementation partner to create or identify a user account in SuccessFactors to invoke the OData APIs. The username and password credentials of this account are required when configuring the provisioning apps in Microsoft Entra ID. 
 
 ### Create an API permissions role
+
+Perform the following steps to create an API permissions role in SuccessFactors:
 
 1. Log in to SAP SuccessFactors with a user account that has access to the Admin Center.
 1. Search for *Manage Permission Roles*, then select **Manage Permission Roles** from the search results.
@@ -79,6 +74,8 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 
 ### Create a Permission Group for the API user
 
+Perform the following steps to create a permission group for the API user:
+
 1. In the SuccessFactors Admin Center, search for *Manage Permission Groups*, then select **Manage Permission Groups** from the search results.
 
    > [!div class="mx-imgBorder"]
@@ -103,6 +100,8 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 
 ### Grant Permission Role to the Permission Group
 
+Perform the following steps to grant the permission role to the permission group:
+
 1. In SuccessFactors Admin Center, search for *Manage Permission Roles*, then select **Manage Permission Roles** from the search results.
 1. From the **Permission Role List**, select the role that you created for API usage permissions.
 1. Under **Grant this role to...**, select **Add...** Button.
@@ -112,14 +111,14 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 
 ## Preparing for SuccessFactors Writeback
 
-The SuccessFactors Writeback provisioning app uses certain *code* values for setting email and phone numbers in Employee Central. These *code* values are set as constant values in the attribute-mapping table and are different for each SuccessFactors instance. This section provides steps to capture these *code* values.
+The SuccessFactors Writeback provisioning app uses certain *code* values for setting email and phone numbers in Employee Central. These *code* values are set as constant values in the attribute-mapping table and are different for each SuccessFactors instance. The following procedure explains how to capture these *code* values for use in the attribute-mapping table.
 
    > [!NOTE]
    > Please involve your SuccessFactors Admin to complete the steps in this section. 
 
 ### Identify Email and Phone Number picklist names 
 
-In SAP SuccessFactors, a *picklist* is a configurable set of options from which a user can make a selection. The different types of email and phone number (such as business, personal, and other) are represented using a picklist. In this step, we identify the picklists configured in your SuccessFactors tenant to store email and phone number values. 
+In SAP SuccessFactors, a *picklist* is a configurable set of options from which a user can make a selection. The different types of email and phone number (such as business, personal, and other) are represented using a picklist. The following procedure identifies the picklists configured in your SuccessFactors tenant to store email and phone number values. 
  
 1. In SuccessFactors Admin Center, search for *Manage business configuration*. 
 
@@ -148,8 +147,10 @@ In SAP SuccessFactors, a *picklist* is a configurable set of options from which 
 
 ### Retrieve constant value for emailType
 
+Perform the following steps to retrieve the constant value for emailType:
+
 1. In SuccessFactors Admin Center, search and open *Picklist Center*. 
-1. Use the name of the email picklist captured from the previous section (such as ecEmailType) to find the email picklist.
+1. Use the name of the email picklist captured in [Identify Email and Phone Number picklist names](#identify-email-and-phone-number-picklist-names) (such as ecEmailType) to find the email picklist.
 
    > [!div class="mx-imgBorder"]
    > ![Find email type picklist](./media/sap-successfactors-inbound-provisioning/find-email-type-picklist.png)
@@ -174,8 +175,10 @@ In SAP SuccessFactors, a *picklist* is a configurable set of options from which 
 
 ### Retrieve constant value for phoneType
 
+Perform the following steps to retrieve the constant value for phoneType:
+
 1. In SuccessFactors Admin Center, search and open *Picklist Center*. 
-1. Use the name of the phone picklist captured from the previous section to find the phone picklist. 
+1. Use the name of the phone picklist captured in [Identify Email and Phone Number picklist names](#identify-email-and-phone-number-picklist-names) to find the phone picklist. 
 
    > [!div class="mx-imgBorder"]
    > ![Find phone type picklist](./media/sap-successfactors-inbound-provisioning/find-phone-type-picklist.png)
@@ -206,7 +209,7 @@ In SAP SuccessFactors, a *picklist* is a configurable set of options from which 
 
 ## Configuring SuccessFactors Writeback App
 
-This section provides steps for 
+To configure the SuccessFactors Writeback app, complete the following procedures:
 
 * [Add the provisioning connector app and configure connectivity to SuccessFactors](#part-1-add-the-provisioning-connector-app-and-configure-connectivity-to-successfactors)
 * [Configure attribute mappings](#part-2-configure-attribute-mappings)
@@ -235,7 +238,7 @@ This section provides steps for
 
    * **Notification Email –** Enter your email address, and check the "send email if failure occurs" checkbox.
     > [!NOTE]
-    > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
+    > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [provisioning quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
    * Select the **Test Connection** button. If the connection test succeeds, select the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
  
@@ -243,7 +246,7 @@ This section provides steps for
 
 ### Part 2: Configure attribute mappings
 
-In this section, you configure how user data flows from SuccessFactors to Active Directory.
+Configure how user data flows from Microsoft Entra ID to SAP SuccessFactors by defining attribute mappings.
 
 1. On the Provisioning tab under **Mappings**, select **Provision Microsoft Entra users**.
 
@@ -263,7 +266,7 @@ In this section, you configure how user data flows from SuccessFactors to Active
    | 4 | true | emailIsPrimary | Use this attribute to set business email as primary in SuccessFactors. If business email isn't primary, set this flag to false. |
    | 5 | userPrincipalName | [custom01 – custom15] | Using **Add New Mapping**, you can optionally write userPrincipalName or any Microsoft Entra attribute to a custom attribute available in the SuccessFactors User object.  |
    | 6 | On Prem SamAccountName | username | Using **Add New Mapping**, you can optionally map on-premises samAccountName to SuccessFactors username attribute. Use [Microsoft Entra Connect Sync: Directory extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md) to sync samAccountName to Microsoft Entra ID. This appears in the source drop down as *extension_yourTenantGUID_samAccountName* |
-   | 7 | SSO | loginMethod | If SuccessFactors tenant is setup for [partial SSO](https://userapps.support.sap.com/sap/support/knowledge/2320766), then using Add New Mapping, you can optionally set loginMethod to a    constant value of "SSO" or "PWD". |
+   | 7 | SSO | loginMethod | If SuccessFactors tenant is setup for partial SSO, then using Add New Mapping, you can optionally set loginMethod to a    constant value of "SSO" or "PWD". |
    | 8 | telephoneNumber | businessPhoneNumber | Use this mapping to flow *telephoneNumber* from Microsoft Entra ID to SuccessFactors business / work phone number. |
    | 9 | 10605 | businessPhoneType | This constant value is the SuccessFactors ID value associated with business phone. Update this value to match your SuccessFactors environment. See the section [Retrieve constant value for phoneType](#retrieve-constant-value-for-phonetype) for steps to set this value. |
    | 10 | true | businessPhoneIsPrimary | Use this attribute to set the primary flag for business phone number. Valid values are true or false. |
@@ -273,7 +276,7 @@ In this section, you configure how user data flows from SuccessFactors to Active
    | 14 | [extensionAttribute1-15] | userId | Use this mapping to ensure that the active record in SuccessFactors is updated when there are multiple employment records for the same user. For more details refer to [Enabling writeback with UserID](~/identity/app-provisioning/sap-successfactors-integration-reference.md#enabling-writeback-with-userid) |
  
 1. Validate and review your attribute mappings.
-1. Select **Save** to save the mappings. Next, we update the JSON Path API expressions to use the phoneType codes in your SuccessFactors instance. 
+1. Select **Save** to save the mappings. Next, update the JSON Path API expressions to use the phoneType codes in your SuccessFactors instance. 
 1. Select **Show advanced options**. 
 1. Select **Edit attribute list for SuccessFactors**. 
 

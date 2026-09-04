@@ -1,6 +1,4 @@
 ---
-author: SHERMANOUKO
-ms.author: shermanouko
 ms.date: 05/27/2024
 ms.topic: include
 ms.custom:
@@ -12,7 +10,7 @@ In this article, you learn how to perform the following managed identities for A
 - Enable and disable the system-assigned managed identity on an Azure virtual machine scale set
 - Add and remove a user-assigned managed identity on an Azure virtual machine scale set
 
-If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Prerequisites
 
@@ -102,7 +100,7 @@ This section walks you through creation of a virtual machine scale set and assig
    ```json
    {
         "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
-        "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>/credentials?tid=5678&oid=9012&aid=00001111-aaaa-2222-bbbb-3333cccc4444",
+        "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>/credentials?tid=5678&oid=9012&aid=aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
         "id": "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>",
         "location": "westcentralus",
         "name": "<USER ASSIGNED IDENTITY NAME>",

@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with FENCE-Mobile RemoteManager SSO
+title: Configure FENCE-Mobile RemoteManager SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and FENCE-Mobile RemoteManager SSO.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FENCE-Mobile RemoteManager SSO so that I can control who has access to FENCE-Mobile RemoteManager SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with FENCE-Mobile RemoteManager SSO
+# Configure FENCE-Mobile RemoteManager SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate FENCE-Mobile RemoteManager SSO with Microsoft Entra ID. When you integrate FENCE-Mobile RemoteManager SSO with Microsoft Entra ID, you can:
 

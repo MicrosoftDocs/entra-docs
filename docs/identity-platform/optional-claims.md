@@ -1,13 +1,12 @@
 ---
 title: Configure optional claims
 description: Learn how to configure optional claims and attributes in access tokens issued by Microsoft identity platform; optional claims can add useful user information for your app.
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
-ms.custom: curation-claims
-ms.date: 01/27/2025
+manager: pmwongera
+ms.custom:
+ms.date: 08/11/2026
 ms.reviewer: ludwignick
 ms.service: identity-platform
+ai-usage: ai-assisted
 
 ms.topic: how-to
 #Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
@@ -21,7 +20,7 @@ You can configure optional claims for your application through the Microsoft Ent
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Completion of [Quickstart: Register an application](quickstart-register-app.md)
 
 ## Configure optional claims in your application
@@ -311,6 +310,81 @@ Configure claims in the manifest:
     ```
 
 1. When you're finished updating the manifest, select **Save** to save the manifest.
+
+## AMR claim
+
+The `amr` (authentication method references) claim identifies how the user authenticated. The `amr` claim is sent by default for Salesforce applications, so no configuration change is required for those apps. For all other SAML applications, the application administrator must add the optional `amr` claim with the `include_granular_amr` additional property to the app registration to request AMR claims. The `multipleauthn` and `mfa` values are emitted only when the user has completed MFA.
+
+### Configure granular AMR values for a SAML application
+
+The Microsoft Entra admin center doesn't currently provide a UI option for `include_granular_amr`. Configure this property in the application manifest or by using Microsoft Graph. The `include_granular_amr` property modifies the `amr` claim to emit granular authentication method values in SAML tokens.
+
+To configure the application manifest:
+
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Entra ID** > **App registrations**.
+1. Select the app registration.
+1. Under **Manage**, select **Manifest**.
+1. Add or update the `optionalClaims` property with the following configuration. Preserve any existing optional claims that your application requires.
+
+    ```json
+    "optionalClaims": {
+        "saml2Token": [
+            {
+                "name": "amr",
+                "essential": false,
+                "additionalProperties": [
+                    "include_granular_amr"
+                ]
+            }
+        ]
+    }
+    ```
+
+1. Select **Save**.
+
+Alternatively, use the Microsoft Graph [Update application](/graph/api/application-update) API. Replace `{applicationObjectId}` with the object ID of the application registration. Include any existing optional claim configuration that you want to retain in the request body.
+
+```http
+PATCH https://graph.microsoft.com/v1.0/applications/{applicationObjectId}
+Content-Type: application/json
+
+{
+    "optionalClaims": {
+        "saml2Token": [
+            {
+                "name": "amr",
+                "essential": false,
+                "additionalProperties": [
+                    "include_granular_amr"
+                ]
+            }
+        ]
+    }
+}
+```
+
+For more information about the SAML claim, see [authnmethodreferences](single-sign-on-saml-protocol.md#authnmethodreferences).
+
+### Configure the AMR claim for an OIDC application
+
+For an OpenID Connect (OIDC) v2.0 application, add the `amr` optional claim to the token types that your application requires. The `include_granular_amr` property applies only to SAML applications and isn't required for OIDC applications. The following application manifest requests the `amr` claim in both ID and access tokens:
+
+```json
+"optionalClaims": {
+    "idToken": [
+        {
+            "name": "amr",
+            "essential": false
+        }
+    ],
+    "accessToken": [
+        {
+            "name": "amr",
+            "essential": false
+        }
+    ]
+}
+```
 
 ## Limitation
 

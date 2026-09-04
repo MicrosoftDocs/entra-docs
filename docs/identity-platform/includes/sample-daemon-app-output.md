@@ -1,7 +1,5 @@
 ---
-author: kengaderdus
-manager: mwongerapk
-ms.author: kengaderdus
+manager: dougeby
 ms.date: 11/06/2024
 ms.reviewer:
 ms.service: identity-platform

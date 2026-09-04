@@ -1,14 +1,9 @@
 ---
 title: Join a Windows Server VM to a Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, learn how to join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain.
-author: justinha
-manager: femila
-
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: tutorial
 ms.date: 02/05/2025
-ms.author: justinha
+ms.custom: sfi-image-nochange
 #Customer intent: As a server administrator, I want to learn how to join a Windows Server VM to a Microsoft Entra Domain Services managed domain to provide centralized identity and policy.
 ---
 # Tutorial: Join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain
@@ -22,14 +17,14 @@ In this tutorial, you learn how to:
 > * Connect the Windows Server VM to an Azure virtual network
 > * Join the VM to the managed domain
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 
 To complete this tutorial, you need the following resources:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.

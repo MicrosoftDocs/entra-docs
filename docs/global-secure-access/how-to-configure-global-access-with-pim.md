@@ -1,24 +1,23 @@
 ---
-title: Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
-description: Learn how to secure highly valued private application access with Privileged Identity Management (PIM) and Global Secure Access
-author: kenwith
-manager: femila
-ms.service: entra-id
-ms.subservice: app-proxy
-ms.topic: conceptual
-ms.date: 02/21/2025
-ms.author: kenwith
+title: Secure private application access with Privileged Identity Management and Global Secure Access
+description: "Add just-in-time privileged access for critical servers and applications using Privileged Identity Management (PIM) with Microsoft Entra Private Access."
+ms.subservice: entra-private-access
+ms.topic: how-to
+ms.date: 03/25/2026
 ms.reviewer: katabish
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
+
+## Overview
 
 Microsoft Entra Private Access provides secure access to private applications. Private Access includes built-in capabilities for maintaining a secure environment. Microsoft Entra Private Access does this by controlling access to private apps and preventing unauthorized or compromised devices from accessing critical resources. For general corporate access, see [Microsoft Entra Private Access](concept-private-access.md).
 
 For the scenario where you need to control access to specific *critical* resources, such as highly valued servers and applications, Microsoft recommends that you add an extra security layer by enforcing just-in-time privileged access on top of their already secured private access. 
 
-This article discusses how to use Microsoft Entra Private Access to enable Privileged Identity Management (PIM) with Global Secure Access. For details about enabling (PIM), see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure). <br /><br />
+This article discusses how to use Microsoft Entra Private Access to enable Privileged Identity Management (PIM) with Global Secure Access. For details about enabling (PIM), see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure). 
 
 > [!VIDEO https://www.youtube.com/embed/Wb6Bh2PbHaM]
 
@@ -32,7 +31,7 @@ Customers should consider configuring PIM using Global Secure Access to enable:
 
 ## Prerequisites 
 
-- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/whatis.md)
+- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/licensing.md)
 - [Microsoft Entra Private Access](concept-private-access.md)
 
 ## Secure private access 
@@ -44,17 +43,17 @@ To successfully implement secure private access, you must complete these three s
 
 ## Step 1: Configure and assign groups
 
-To begin, we configure and assign groups by creating a Microsoft Entra ID group, onboard it as a PIM managed group, update group assignments with eligible membership, and specify access for user and devices.
+To begin, configure and assign groups by creating a Microsoft Entra ID group, onboard it as a PIM managed group, update group assignments with eligible membership, and specify access for user and devices.
 
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
-1. Browse to **Entra ID** > **Groups** > **All groups**. 
+1. Browse to **Microsoft Entra ID** > **Groups** > **All groups**. 
  
    :::image type="content" border="true" source="./media/pim-global-secure-access/all-groups.png" alt-text="Screenshot of the All groups screen." lightbox="./media/pim-global-secure-access/all-groups.png":::
 
 1. Select **New group**.
 1. In the **Group type**, select **Security**.
 1. Provide a group name; for example, `FinReport-SeniorAnalyst-SecureAccess`.
-   - This group name example indicates the application (FinReport), the role (SeniorAnalyst), and the nature of the group (SecureAccess), We recommend choosing a name that reflects the group's function or the assets it protects.
+   - This group name example indicates the application (FinReport), the role (SeniorAnalyst), and the nature of the group (SecureAccess), Choose a name that reflects the group's function or the assets it protects.
 1. In the **Membership type** option, select **Assigned**.
 1. Select **Create**. 
 
@@ -104,7 +103,7 @@ Even if a user and their device meet security requirements, attempting to access
 
 Next, we activate group membership using the Microsoft Entra admin center, and then attempt to connect with the new role activated.
 
-1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/).
 1. Browse to  **ID Governance** > **Privileged Identity Management**. 
 1. Select **My roles** > **Groups** to see all eligible assignments.
 
@@ -128,7 +127,7 @@ Browse any of the published resources, as you should be able to successfully con
 
 If the work is completed ahead of the time you allocated, you can choose to deactivate the role. This action terminates the role membership. 
 
-1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/).
 1. Browse to  **ID Governance** > **Privileged Identity Management**.
 1. Select **My roles**, then **Groups**. 
 1. Select **Deactivate**. 

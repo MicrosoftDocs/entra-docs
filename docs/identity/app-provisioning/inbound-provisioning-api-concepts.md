@@ -1,14 +1,8 @@
 ---
 title: API-driven inbound provisioning concepts
 description: An overview of API-driven inbound provisioning.
-
-author: jenniferf-skc
-manager: femila
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 03/04/2025
-ms.author: jfields
+ms.date: 07/24/2025
 ms.reviewer: chmutali
 ---
 
@@ -63,10 +57,14 @@ In all of the above scenarios, integration is simplified as the Microsoft Entra 
 ### Key features of API-driven inbound user provisioning
 
 - Available as a provisioning app that exposes an *asynchronous* Microsoft Graph provisioning [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint accessed using valid OAuth token.
-- Tenant admins must grant API clients interacting with this provisioning app the Graph permission `SynchronizationData-User.Upload`. 
+- Tenant admins must grant API clients interacting with this provisioning app the Graph permissions `SynchronizationData-User.Upload`, `SynchronizationData-User.Upload.OwnedBy` (for ISVs), and `ProvisioningLog.Read.All`. 
 - The Graph API endpoint accepts valid bulk request payloads using SCIM schema constructs.
-- With SCIM schema extensions, you can send any attribute in the bulk request payload. 
-- The rate limit for the inbound provisioning API is 40 bulk upload requests per second. Each bulk request can contain a maximum of 50 user records, thereby supporting an upload rate of 2000 records per second. 
+- With SCIM schema extensions, you can send any attribute in the bulk request payload.
+- You can configure provisioning to [clear attribute values (Preview)](clear-attribute-values.md) when the request payload includes null or empty values. 
+- Include a complete user record in every bulk request, for both full and delta sync. When [clear attribute values (Preview)](clear-attribute-values.md) is enabled, null or empty values for mapped attributes will clear the corresponding values in the target system. The clearing can also happen if you omit an attribute for which null flow is enabled. An incomplete payload might therefore unintentionally clear existing attribute values. Use an explicit JSON `null` or empty string to perform deterministic clearing.
+- The `/bulkUpload` API endpoint enforces the following throttling limits:
+    - There is a limit of 40 API calls within any 5-second window. If this threshold is exceeded, the service returns an HTTP 429 (Too Many Requests) response. To avoid throttling, implement pacing logic in the client to space out requests - such as adding delays or rate-limit handling between submissions.
+    - There is a tenant-level limit of 2,000 API calls per 24-hour period under the Entra ID P1/P2 license, and 6,000 API calls under the Entra ID Governance license. Exceeding these limits results in an HTTP 429 (Too Many Requests) response. To stay within the quota, ensure that your SCIM bulk payloads are optimized to include up to 50 operations per API call.
 - Each API endpoint is associated with a specific provisioning app in Microsoft Entra ID. You can integrate multiple data sources by creating a provisioning app for each data source. 
 - Incoming bulk request payloads are processed in near real-time.
 - Admins can check provisioning progress by viewing the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md). 
@@ -87,8 +85,8 @@ The `/bulkUpload` API endpoint expands the number of ways that you can manage us
 | *The resulting user is first created in...* | Microsoft Entra ID | On-premises Active Directory or Microsoft Entra ID | Microsoft Entra ID | Microsoft Entra ID |
 | *The resulting user authenticates to...* | Microsoft Entra ID, with the password you supply | On-premises Active Directory of Microsoft Entra ID, with a [Temporary Access Pass provided by Entra Lifecycle workflows](https://go.microsoft.com/fwlink/?linkid=2261542) | Home tenant or other identity provider | Home tenant or other identity provider | 
 | *Subsequent updates to the user can be done via* | Graph API or Microsoft Entra admin center | Graph API or HR inbound bulk API or Microsoft Entra admin center | Graph API or Microsoft Entra admin center | Graph API or Microsoft Entra admin center |
-| *The lifecycle of user when their employment starts, is determined by...* | Manual processes | [Entra onboarding Lifecycle workflows](~/id-governance/tutorial-onboard-custom-workflow-portal.md) that trigger based on the ```employeeHireDate``` attribute | Entitlement management | [Automatic assignment](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md) using Entitlement management access packages |
-| *The lifecycle of user when their employment is terminated is determined by...* | Manual processes | [Entra offboarding lifecycle workflows](~/id-governance/tutorial-scheduled-leaver-portal.md) that trigger based on the ```employeeLeaveDateTime``` attribute | Access reviews | Entitlement management when the user loses their last access package assignment, they're removed |
+| *The lifecycle of user when their employment starts, is determined by...* | Manual processes | [Entra onboarding Lifecycle workflows](~/id-governance/tutorial-onboard-custom-workflow-portal.md) that trigger based on the `employeeHireDate` attribute | Entitlement management | [Automatic assignment](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md) using Entitlement management access packages |
+| *The lifecycle of user when their employment is terminated is determined by...* | Manual processes | [Entra offboarding lifecycle workflows](~/id-governance/tutorial-scheduled-leaver-portal.md) that trigger based on the `employeeLeaveDateTime` attribute | Access reviews | Entitlement management when the user loses their last access package assignment, they're removed |
 
 
 ### Recommended learning path
@@ -100,8 +98,9 @@ The `/bulkUpload` API endpoint expands the number of ways that you can manage us
 | 3. | As an *Admin user*, you want to quickly test the inbound provisioning API. | * Create [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md) <br> * [Test API using Graph Explorer](inbound-provisioning-api-graph-explorer.md) |
 | 4. | With a service account or managed identity, you want to quickly test the inbound provisioning API. | * Create [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md) <br> * Grant [API permissions](inbound-provisioning-api-grant-access.md) <br> * [Test API using cURL](inbound-provisioning-api-curl-tutorial.md) |
 | 5. | You want to extend the API-driven provisioning app to process more custom attributes. | Refer to the tutorial [Extend API-driven provisioning to sync custom attributes](inbound-provisioning-api-custom-attributes.md) |
-| 6. | You want to automate data upload from your system of record to the inbound provisioning API endpoint. | Refer to the tutorials <br> * [Quick start with PowerShell](inbound-provisioning-api-powershell.md) <br> * [Quick start with Azure Logic Apps](inbound-provisioning-api-logic-apps.md) |
-| 7. | You want to troubleshoot inbound provisioning API issues | Refer to the [Troubleshooting guide](inbound-provisioning-api-issues.md). | 
+| 6. | You want to clear existing target attributes when the source no longer has a value. | Refer to [Clear attribute values (Preview)](clear-attribute-values.md). |
+| 7. | You want to automate data upload from your system of record to the inbound provisioning API endpoint. | Refer to the tutorials <br> * [Quick start with PowerShell](inbound-provisioning-api-powershell.md) <br> * [Quick start with Azure Logic Apps](inbound-provisioning-api-logic-apps.md) |
+| 8. | You want to troubleshoot inbound provisioning API issues. | Refer to the [Troubleshooting guide](inbound-provisioning-api-issues.md). |
 
 ### External learning resources
 
@@ -114,6 +113,7 @@ The following content, created by our partners and Microsoft MVPs, offers extra 
      - Microsoft partner [IdentityXP 4-part series on API-driven provisioning](https://www.youtube.com/watch?v=7ZPDnhwKz_w)
 
 - Blog posts, presentations, and other useful links
+     - Microsoft MVP Christian Frohn explains how to [use API-driven provisioning with Azure SQL database as source of truth](https://www.christianfrohn.dk/2024/05/15/using-api-driven-user-provisioning-with-an-azure-sql-database-as-source-of-truth/)
      - Microsoft MVP Pim Jacob's article explaining [how to perform Bamboo HR API-driven provisioning to on-premises Active Directory](https://identity-man.eu/2023/10/25/using-the-brand-new-entra-inbound-provisioning-api-for-identity-lifecycle-management/)
      - Microsoft MVP Pim Jacob's presentation on [how to configure the joiner and leaver process using API-driven provisioning and lifecycle workflows](https://github.com/IdentityMan/presentations/blob/main/DutchMicrosoftSecurityMeetup/Dutch%20SecMeetup%20-%20Securing%20Joiner%20&%20Leaver%20process%20with%20Inbound%20Provisioning%20and%20LCW.pdf)
      - Microsoft MVP Marius Solbakken's article explaining [how to source Excel data using PowerShell script and API-driven provisioning](https://goodworkaround.com/2023/08/01/testing-out-the-entra-id-inbound-provisioning-api/)

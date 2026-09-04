@@ -1,20 +1,12 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Gradle Enterprise
+title: Configure Gradle Enterprise for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Gradle Enterprise.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: gideonkiratu
+--- 
 
----
-
-# Microsoft Entra single sign-on (SSO) integration with Gradle Enterprise
+# Configure Gradle Enterprise for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Gradle Enterprise with Microsoft Entra ID. When you integrate Gradle Enterprise with Microsoft Entra ID, you can:
 

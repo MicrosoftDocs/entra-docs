@@ -1,12 +1,10 @@
 ---
 title: Quickstart - Call a web API in a sample daemon app
 description: A daemon app code sample quickstart that shows how to acquire an access token to call a protected web API by using Microsoft identity platform
-author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/20/2024
-ms.author: kengaderdus
 zone_pivot_groups: entra-tenants
 
 #Customer intent: As a developer, I want to configure a sample daemon to acquire an access token so thar it can call a web API by using Microsoft identity platform.
@@ -26,7 +24,7 @@ The sample app you use in this quickstart acquires an access token to call Micro
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
@@ -305,11 +303,11 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 #### [Python](#tab/python-workforce)
 
-* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-registration.md)
+* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-configuration.md)
 
 #### [Java](#tab/java-workforce)
 
-* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-registration.md)
+* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-configuration.md)
 ---
 
 
@@ -320,7 +318,7 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer

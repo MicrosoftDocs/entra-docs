@@ -1,9 +1,7 @@
 ---
 title: 'Tutorial: Add add sign-in in your Node/Express.js web app by using Microsoft identity platform'
 description: Learn how to add sign-in in your Node.js web app with an external tenant or workforce tenant by using Microsoft identity platform. 
-author: kengaderdus
-manager: mwongerapk
-ms.author: kengaderdus
+manager: dougeby
 ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 01/03/2025
@@ -242,7 +240,7 @@ The `/` route is the entry point to the application. It renders the *views/index
     
                 /**
                  * By default, MSAL Node will add OIDC scopes to the auth code url request. For more information, visit:
-                 * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+                 * https://learn.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
                  */
                 scopes: [],
             };
@@ -252,7 +250,7 @@ The `/` route is the entry point to the application. It renders the *views/index
     
                 /**
                  * By default, MSAL Node will add OIDC scopes to the auth code request. For more information, visit:
-                 * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+                 * https://learn.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
                  */
                 scopes: [],
             };
@@ -309,7 +307,7 @@ The `/` route is the entry point to the application. It renders the *views/index
             /**
              * Construct a logout URI and redirect the user to end the
              * session with Microsoft Entra ID. For more information, visit:
-             * https://docs.microsoft.com/azure/active-directory/develop/v2-protocols-oidc#send-a-sign-out-request
+             * https://learn.microsoft.com/azure/active-directory/develop/v2-protocols-oidc#send-a-sign-out-request
              */
             //For external tenant
             //const logoutUri = `${this.config.msalConfig.auth.authority}${TENANT_SUBDOMAIN}.onmicrosoft.com/oauth2/v2.0/logout?post_logout_redirect_uri=${this.config.postLogoutRedirectUri}`;
@@ -464,7 +462,7 @@ The `/` route is the entry point to the application. It renders the *views/index
         /**
          * Construct a logout URI and redirect the user to end the
             * session with Azure AD. For more information, visit:
-            * https://docs.microsoft.com/azure/active-directory/develop/v2-protocols-oidc#send-a-sign-out-request
+            * https://learn.microsoft.com/azure/active-directory/develop/v2-protocols-oidc#send-a-sign-out-request
             */
         const logoutUri = `${this.config.msalConfig.auth.authority}${TENANT_SUBDOMAIN}.onmicrosoft.com/oauth2/v2.0/logout?post_logout_redirect_uri=${this.config.postLogoutRedirectUri}`;
 

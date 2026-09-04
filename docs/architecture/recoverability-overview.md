@@ -1,14 +1,9 @@
 ---
 title: Recoverability best practices in Microsoft Entra ID
 description: Learn the best practices for increasing recoverability.
-author: janicericketts
-manager: martinco
-ms.service: entra
+ms.topic: best-practice
+ms.date: 11/03/2025
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 08/26/2022
-ms.author: jricketts
-ms.reviewer: jricketts
 ---
 
 # Recoverability best practices
@@ -29,9 +24,9 @@ Deletions and misconfigurations have different impacts on your tenant.
 
 The impact of deletions depends on the object type.
 
-Users, Microsoft 365 Groups, and applications can be soft deleted. Soft-deleted items are sent to the Microsoft Entra ID recycle bin. While in the recycle bin, items aren't available for use. However, they retain all their properties and can be restored via a Microsoft Graph API call or in the Azure portal. Items in the soft-delete state that aren't restored within 30 days are permanently, or hard, deleted.
+You can soft delete object types that include Users, Microsoft 365 Groups, cloud security groups, and applications. Soft-deleted items go to the Microsoft Entra ID recycle bin. While in the recycle bin, items aren't available for use, but they retain all their properties. You can restore them with a Microsoft Graph API call or from the Microsoft Entra admin center. If you don't restore items in the soft-delete state within 30 days, Microsoft Entra ID permanently hard-deletes them. [Recover from deletions in Microsoft Entra ID](recover-from-deletions.md#properties-maintained-with-soft-delete) provides a table of objects that support soft deletion.
 
-![Diagram that shows that users, Microsoft 365 Groups, and applications are soft deleted and then hard deleted after 30 days.](media/recoverability/overview-deletes.png)
+![Diagram that shows that users, Microsoft 365 Groups, cloud security groups, and applications are soft deleted and then hard deleted after 30 days.](media/recoverability/overview-deletes.png)
 
 > [!IMPORTANT]
 > All other object types are hard deleted immediately when they're selected for deletion. When an object is hard deleted, it can't be recovered. It must be re-created and reconfigured.
@@ -48,6 +43,8 @@ Misconfigurations are configurations of a resource or policy that diverge from y
 * Break dependencies among data, systems, and applications.
 
 For more information on misconfigurations and how to recover from them, see [Recover from misconfigurations](recover-from-misconfigurations.md).
+
+Unlike deletions, misconfigurations modify objects in place rather than moving them to the recycle bin. For supported affected object types, use [Microsoft Entra Backup and Recovery](../backup/overview.md) difference reports to identify changed attributes and link edits. You can then run a recovery job to roll an object back to a previous state. For configurations that Microsoft Entra Backup and Recovery doesn't support, reapply settings from your documented known-good state.
 
 ## Shared responsibility
 
@@ -93,14 +90,15 @@ Create a process of predefined communications to make others aware of the issue 
 
 ## Document known good states
 
-Document the state of your tenant and its objects regularly. Then if a hard delete or misconfiguration occurs, you have a roadmap to recovery. The following tools can help you document your current state:
+Regularly document and maintain the state of your tenant and its objects in an external versioned repository. If a hard delete or misconfiguration occurs, your documentation serves as your roadmap to recovery. 
 
-- [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations.
-- [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings.
-- [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings.
-- [Conditional Access APIs](https://github.com/Azure-Samples/azure-ad-conditional-access-apis) can be used to manage your Conditional Access policies as code.
+Select required APIs and export technology based on your deployed resources. Although you can directly call resource-specific Microsoft Graph APIs, other Microsoft and non-Microsoft options can abstract and streamline configuration export and download processes.
 
-In the rare case that an API is not available for a certain configuration setting, screenshot(s) can be taken to enable manual recovery.
+- **Configuration snapshots**—The [snapshot APIs](/graph/api/resources/configurationsnapshotjob) in unified [tenant configuration management (TCM) APIs in Microsoft Graph](/graph/unified-tenant-configuration-management-concept-overview) simplify extracting current configurations across multiple workloads within a tenant (such as Microsoft Entra, Microsoft Intune, and Exchange Online). The tenant stores snapshots for seven days so that you can download them for external retention. The TCM schema supports a subset of Microsoft Entra resources and properties. Review the subset list to determine if TCM provides sufficient coverage rather than directly calling Microsoft Graph APIs.
+- ***Microsoft Graph APIs**—Use Microsoft Graph APIs to regularly export configurations of all critical directory objects that TCM doesn't yet support. To export your configuration settings, use the open-source tool, [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter).
+- **Third‑party solutions**—To export, normalize, and store Microsoft Entra configurations in declarative formats, evaluate non-Microsoft configuration management and infrastructure‑as‑code tools. These solutions might abstract underlying APIs, simplify large‑scale configuration capture, and support repeatable comparison and settings reapplication as part of recovery workflows.
+
+Store configuration baselines in a version-controlled repository (such as Azure DevOps or GitHub) with a sufficient retention period. Logically separate and independently manage configuration extracts that you obtain using different capture mechanisms. For example, while TCM snapshots and direct Microsoft Graph API exports can contribute to an overall known good state, don't combine them, even when they have the same format (such as JSON). The reason is that the TCM snapshot scope limits them to supported resources and properties that you can't rely upon to recreate or reapply configuration outside that supported scope.
 
 ### Commonly used Microsoft Graph APIs
 
@@ -131,13 +129,12 @@ The [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) can p
 
 > [!NOTE]
 > Settings in the legacy multifactor authentication portal for Application Proxy and federation settings might not be exported with the Microsoft Entra Exporter, or with the Microsoft Graph API.
-The [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) module uses Microsoft Graph and PowerShell to retrieve the state of many of the configurations in Microsoft Entra ID. This information can be used as reference information or, by using PowerShell Desired State Configuration scripting, to reapply a known good state.
 
- Use [Conditional Access Graph APIs](https://github.com/Azure-Samples/azure-ad-conditional-access-apis) to manage policies like code. Automate approvals to promote policies from preproduction environments, backup and restore, monitor change, and plan ahead for emergencies.
-
+Use [Conditional Access Graph APIs](/graph/api/resources/conditionalaccesspolicy) to manage policies like code.
+ 
 ### Map the dependencies among objects
 
-The deletion of some objects can cause a ripple effect because of dependencies. For example, deletion of a security group used for application assignment would result in users who were members of that group being unable to access the applications to which the group was assigned.
+The deletion of some objects can cause a ripple effect because of dependencies. For example, deletion of a cloud security group used for application assignment would result in users who were members of that group being unable to access the applications to which the group was assigned.
 
 #### Common dependencies
 
@@ -146,11 +143,13 @@ The deletion of some objects can cause a ripple effect because of dependencies. 
 | Application object| Service principal (enterprise application).  <br>Groups assigned to the application. <br>Conditional Access policies affecting the application. |
 | Service principals| Application object. |
 | Conditional Access policies| Users assigned to the policy.<br>Groups assigned to the policy.<br>Service principal (enterprise application) targeted by the policy. |
-| Groups other than Microsoft 365 Groups| Users assigned to the group.<br>Conditional Access policies to which the group is assigned.<br>Applications to which the group is assigned access. |
+| Groups other than Microsoft 365 Groups and cloud security groups| Users assigned to the group.<br>Conditional Access policies to which the group is assigned.<br>Applications to which the group is assigned access. |
 
 ## Monitoring and data retention
 
 The [Microsoft Entra audit log](~/identity/monitoring-health/concept-audit-logs.md) contains information on all delete and configuration operations performed in your tenant. We recommend that you export these logs to a security information and event management tool such as [Microsoft Sentinel](/azure/sentinel/overview). You can also use Microsoft Graph to audit changes and build a custom solution to monitor differences over time. For more information on finding deleted items by using Microsoft Graph, see [List deleted items - Microsoft Graph v1.0](/graph/api/directory-deleteditems-list?tabs=http).
+
+To identify changes for objects that [Microsoft Entra Backup and Recovery](../backup/overview.md) supports, create a difference report. Difference reports complement audit logs and configuration snapshots by showing recoverable additions, attribute edits, link edits, and soft deletes since the last backup. Difference reports don't show hard-deleted objects.
 
 ### Audit logs
 
@@ -158,7 +157,7 @@ The Audit log always records a "Delete \<object\>" event when an object in the t
 
 :::image type="content" source="media/recoverability/deletions-audit-log.png" alt-text="Screenshot that shows Audit log detail." lightbox="media/recoverability/deletions-audit-log.png":::
 
-A Delete event for applications, service principals, users, and Microsoft 365 Groups is a soft delete. For any other object type, it's a hard delete.
+A Delete event for [object types that support soft delete](recover-from-deletions.md#properties-maintained-with-soft-delete) (such as applications, service principals, users, Microsoft 365 Groups, and cloud security groups) indicates a soft delete. For other object types, a Delete event is a hard delete.
 
 | Object type | Activity in log| Result |
 | - | - | - |
@@ -170,10 +169,12 @@ A Delete event for applications, service principals, users, and Microsoft 365 Gr
 | User| Hard delete user| Hard deleted |
 | Microsoft 365 Groups| Delete group| Soft deleted |
 | Microsoft 365 Groups| Hard delete group| Hard deleted |
-| All other objects| Delete “objectType”| Hard deleted |
+| Security groups| Delete group| Soft deleted |
+| Security groups| Hard delete group| Hard deleted |
+| All other objects| Delete "objectType"| Hard deleted |
 
 > [!NOTE]
-> The Audit log doesn't distinguish the group type of a deleted group. Only Microsoft 365 Groups are soft deleted. If you see a Delete group entry, it might be the soft delete of a Microsoft 365 Group or the hard delete of another type of group. Your documentation of your known good state should include the group type for each group in your organization.
+> The Audit log doesn't distinguish the group type of a deleted group. Microsoft 365 Groups and cloud security groups are soft deleted. If you see a Delete group entry, it might be the soft delete of a Microsoft 365 Group or cloud security group, or the hard delete of another type of group. Your documentation of your known good state should include the group type for each group in your organization.
 
 For information on monitoring configuration changes, see [Recover from misconfigurations](recover-from-misconfigurations.md).
 
@@ -190,6 +191,8 @@ The [Sensitive operations report workbook](~/identity/monitoring-health/workbook
 
 The [Cross-tenant access activity workbook](~/identity/monitoring-health/workbook-cross-tenant-access-activity.md)can help you monitor which applications in external tenants your users are accessing and which applications in your tenant external users are accessing. Use this workbook to look for anomalous changes in either inbound or outbound application access across tenants.
 
+[Microsoft Entra Backup and Recovery](../backup/overview.md) is a built-in capability that provides the lowest-effort, highest-fidelity restore path for supported object types and configuration changes within its retention window. Microsoft Entra Backup and Recovery supports a set of tenant [object types](../backup/scope-supported-objects-limitations.md) and recoverable properties. It automatically creates backups of supported objects at Microsoft-defined fixed intervals. You can view available backups, create difference reports, recovery objects, and review recovery history.
+
 ## Operational security
 
 Preventing unwanted changes is far less difficult than needing to re-create and reconfigure objects. Include the following tasks in your change management processes to minimize accidents:
@@ -197,6 +200,7 @@ Preventing unwanted changes is far less difficult than needing to re-create and 
 - Use a least privilege model. Ensure that each member of your team has the least privileges necessary to complete their usual tasks. Require a process to escalate privileges for more unusual tasks.
 - Administrative control of an object enables configuration and deletion. Use less privileged roles, like [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader), for tasks that don't require operations to create, update, or delete (CRUD). When CRUD operations are required, use object-specific roles when possible. For example, User Administrators can delete only users, and Application Administrators can delete only applications. Use these more limited roles whenever possible.
 - [Use Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md). PIM enables just-in-time escalation of privileges to perform tasks like hard deletion. You can configure PIM to have notifications or approvals for the privilege escalation.
+- Use [protected actions in Microsoft Entra ID](../identity/role-based-access-control/protected-actions-overview.md) to enforce an additional layer of Conditional Access policy protection, independent of the role being used or how the user was given the permission. Protected actions should be applied to sensitive operations such as hard deletion, authentication context changes and Conditional Access changes.
 
 ## Next steps
 

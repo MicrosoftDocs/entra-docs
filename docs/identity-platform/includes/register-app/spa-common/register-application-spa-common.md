@@ -1,14 +1,11 @@
 ---
 title: "Include file - Register a single-page application in the Microsoft identity platform"
-author: OwenRichards1
-manager: CelesteDG
-ms.author: owenrichards
-ms.custom:
+manager: pmwongera
 ms.date: 01/02/2024
-ms.reviewer:
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: include
+ms.custom: sfi-image-nochange
 #Customer intent:
 ---
 

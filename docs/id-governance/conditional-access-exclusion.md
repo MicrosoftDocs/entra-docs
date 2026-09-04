@@ -1,15 +1,12 @@
 ---
 title: Manage users excluded from Conditional Access policies
 description: Learn how to use access reviews to manage users that have been excluded from Conditional Access policies
-author: owinfreyATL
-manager: femila
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
-ms.topic: conceptual
-ms.date: 07/15/2024
-ms.author: owinfrey
+ms.topic: how-to
+ms.date: 06/18/2025
 ms.reviewer: mwahl
+#Customer Intent: As an IT admin, I want to manage users excluded from Conditional Access policies so that I can ensure exclusions are reviewed and remain appropriate.
 ---
 
 # Use access reviews to manage users excluded from Conditional Access policies
@@ -17,7 +14,7 @@ ms.reviewer: mwahl
 In an ideal world, all users follow the access policies to secure access to your organization's resources. However, sometimes there are business cases that require you to make exceptions. This article goes over some examples of situations where exclusions could be necessary. You, as the IT administrator, can manage this task, avoid oversight of policy exceptions, and provide auditors with proof that these exceptions are reviewed regularly using Microsoft Entra access reviews.
 
 >[!NOTE]
-> A valid Microsoft Entra ID P2 or Microsoft Entra ID Governance, Enterprise Mobility + Security E5 paid, or trial license is required to use Microsoft Entra access reviews. For more information, see [Microsoft Entra editions](../fundamentals/whatis.md).
+> A valid Microsoft Entra ID P2 or Microsoft Entra ID Governance, Enterprise Mobility + Security E5 paid, or trial license is required to use Microsoft Entra access reviews. For more information, see [Microsoft Entra editions](../fundamentals/licensing.md).
 
 ## Why would you exclude users from policies?
 

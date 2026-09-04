@@ -1,15 +1,10 @@
 ---
 title: Customize and filter activity logs in Microsoft Entra ID
 description: Learn how to customize the columns and filter of the Microsoft Entra activity logs so you can analyze the results.
-author: shlipsey3
-manager: femila
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
-ms.date: 11/08/2024
-ms.author: sarahlipsey
+ms.date: 11/07/2025
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange,agent-id-ignite
 # Customer intent: As an IT admin, I want to learn how to customize my view of the logs so I can more effectively filter the results.
 ---
 
@@ -29,7 +24,6 @@ This article shows you how to customize the columns and then filter the logs to 
 ## How to access the activity logs in the Microsoft Entra admin center
 
 You can always access your own sign-in history at [https://mysignins.microsoft.com](https://mysignins.microsoft.com). You can also access the sign-in logs from **Users** and **Enterprise applications** in Microsoft Entra ID.
-
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
@@ -121,6 +115,8 @@ You can filter on several details. The following table describes some commonly u
 | Resource | The name of the service used for the sign-in |
 | IP address | The IP address of the client used for the sign-in |
 | Conditional Access | Options are *Not applied*, *Success*, and *Failure* |
+| Is Agent | Choose *Yes* for sign-ins performed by an agent and *No* for sign-ins performed by a user. |
+| Agent type | Options are *Agent ID user*, *Agent Identity*, *Agent Identity Blueprint*, *Agentic App Builder*, and *Not Agentic*. |
 
 Now that your sign-in logs table is formatted for your needs, you can more effectively analyze the data. Further analysis and retention of sign-in data can be accomplished by exporting the logs to other tools.
 

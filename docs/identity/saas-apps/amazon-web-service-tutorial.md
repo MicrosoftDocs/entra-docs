@@ -1,21 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with AWS Single-Account Access
+title: Configure AWS Single-Account Access for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: gideonkiratu
-
+ms.date: 06/15/2026
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access so that I can control who has access to AWS Single-Account Access, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with AWS Single-Account Access
+# Configure AWS Single-Account Access for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate AWS Single-Account Access with Microsoft Entra ID. When you integrate AWS Single-Account Access with Microsoft Entra ID, you can:
 
@@ -70,7 +62,7 @@ We recommend this approach for the following reasons:
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * An AWS IAM IdP enabled subscription.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
@@ -127,7 +119,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Screenshot showing Edit Basic SAML Configuration.](common/edit-urls.png)
 
-1. In the **Basic SAML Configuration** section, update both **Identifier (Entity ID)** and **Reply URL** with the same default value: `https://signin.aws.amazon.com/saml`. You must select **Save** to save the configuration changes.
+1. In the **Basic SAML Configuration** section, update both **Identifier (Entity ID)** and **Reply URL** with correct values. You must select **Save** to save the configuration changes.
+
+> [!Note]
+> If configuring multiple instances of the AWS applications, do not append suffixes such as **#1** or **#2** to the **Reply URL** value. Consult AWS documentation for the correct **Reply URL** value. 
 
 1. AWS application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

@@ -1,15 +1,10 @@
 ---
 title: Sign-in logs in Microsoft Entra ID
 description: Learn about the different types of sign-in logs that are available in Microsoft Entra monitoring and health.
-author: shlipsey3
-manager: femila
-ms.service: entra-id
-ms.topic: conceptual
-ms.subservice: monitoring-health
-ms.date: 11/08/2024
-ms.author: sarahlipsey
+ms.topic: concept-article
+ms.date: 11/07/2025
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange,agent-id-ignite
 # Customer intent: As an IT admin, I need to know what information is available in the sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
 ---
 # What are Microsoft Entra sign-in logs?
@@ -18,9 +13,10 @@ Microsoft Entra logs all sign-ins into a Microsoft Entra tenant, which includes 
 
 Reviewing sign-in errors and patterns provides valuable insight into how your users access applications and services. The sign-in logs provided by Microsoft Entra ID are a powerful type of [activity log](overview-monitoring-health.md) that you can analyze. This article describes several key aspects of the sign-in logs.
 
-Two other activity logs are also available to help monitor the health of your tenant:
+Three other activity logs are also available to help monitor the health of your tenant:
 
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant, such as users and group management or updates applied to your tenant’s resources.
+- **[Sign-ups (preview)](concept-sign-ups.md)** - For [external tenants](../../external-id/tenant-configurations.md) only, information about all self-service sign-up attempts, including successful sign-ups and failed attempts.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by a provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
 ## What can you do with sign-in logs?
@@ -37,6 +33,9 @@ You can also describe the activity associated with a sign-in request by identify
 - **Who** – The identity (User) performing the sign-in.
 - **How** – The client (Application) used for the sign-in.  
 - **What** – The target (Resource) accessed by the identity.
+
+> [!NOTE]
+> Entries in the sign-in logs are system generated and can't be changed or deleted.
 
 ## How do you access the sign-in logs?
 
@@ -58,10 +57,11 @@ There are four types of logs in the sign-in logs preview:
 - [Service principal sign-ins](concept-service-principal-sign-ins.md)
 - [Managed identity sign-ins](concept-managed-identity-sign-ins.md)
 
-The classic sign-in logs only include interactive user sign-ins.
+The legacy sign-in logs experience only includes interactive user sign-ins.
 
-> [!NOTE]
-> Entries in the sign-in logs are system generated and can't be changed or deleted.
+### Agent logs
+
+Agent activity logs are a new log type in our audit and sign-in logs to help you monitor agent related activities. IT administrators can view and manage agent activity directly in the Microsoft Entra admin center and using the Microsoft Graph API. For more information, see [Microsoft Entra Agent ID logs](../../agent-id/identity-professional/sign-in-audit-logs-agents.md).
 
 ## Sign-in data used by other services
 

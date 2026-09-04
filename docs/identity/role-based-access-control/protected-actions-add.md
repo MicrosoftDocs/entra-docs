@@ -1,12 +1,6 @@
 ---
 title: Add, test, or remove protected actions in Microsoft Entra ID
 description: Learn how to add, test, or remove protected actions in Microsoft Entra ID.
-
-author: rolyon
-manager: femila
-ms.author: rolyon
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 03/30/2025
 ---
@@ -29,7 +23,7 @@ To add or remove protected actions, you must have:
 
 Protected actions use a Conditional Access authentication context, so you must configure an authentication context and add it to a Conditional Access policy. If you already have a policy with an authentication context, you can skip to the next section.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
 1. Select **Entra ID** > **Conditional Access** > **Authentication context** > **Authentication context**.
 
@@ -165,7 +159,7 @@ The user hasn't been assigned to the Conditional Access policies used for protec
 
 **Solution 1**
 
-Use Conditional Access [What If](~/identity/conditional-access/troubleshoot-conditional-access-what-if.md) tool to check if the user has been assigned policy. When using the tool, select the user and the authentication context that was used with the protected action. Select What If and verify the expected policy is listed in the **Policies that will apply** table. If the policy doesn't apply, check the policy user assignment condition, and add the user.
+Use Conditional Access [What If](~/identity/conditional-access/what-if-tool.md) tool to check if the user has been assigned policy. When using the tool, select the user and the authentication context that was used with the protected action. Select What If and verify the expected policy is listed in the **Policies that will apply** table. If the policy doesn't apply, check the policy user assignment condition, and add the user.
 
 **Cause 2**
 

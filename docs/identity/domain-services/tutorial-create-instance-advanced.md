@@ -1,15 +1,9 @@
 ---
 title: Tutorial - Create a customized Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, you learn how to create and configure a customized Microsoft Entra Domain Services managed domain and specify advanced configuration options using the Microsoft Entra admin center.
-author: justinha
-manager: femila
-
-ms.service: entra-id
-ms.subservice: domain-services
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: tutorial
 ms.date: 02/19/2025
-ms.author: justinha
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services managed domain and define advanced configuration options so that I can synchronize identity information with my Microsoft Entra tenant and provide Domain Services connectivity to virtual machines and applications in Azure.
 ---
 
@@ -27,14 +21,14 @@ In this tutorial, you learn how to:
 > * Add administrative users to domain management
 > * Enable password hash synchronization
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 
 To complete this tutorial, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * You need [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to enable Domain Services.

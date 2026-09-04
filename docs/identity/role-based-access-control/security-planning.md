@@ -2,13 +2,8 @@
 title: Secure access practices for administrators in Microsoft Entra ID
 description: Ensure that your organization's administrative access and administrator accounts are secure. For system architects and IT pros who configure Microsoft Entra ID, Azure, and Microsoft Online Services.
 keywords: 
-author: rolyon
-manager: femila
-ms.author: rolyon
 ms.date: 11/21/2024
-ms.topic: conceptual
-ms.service: entra-id
-ms.subservice: role-based-access-control
+ms.topic: how-to
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.reviewer: "martincoetzer; MarkMorow"
 ---

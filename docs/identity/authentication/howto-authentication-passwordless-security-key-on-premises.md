@@ -1,13 +1,8 @@
 ---
 title: Passwordless security key sign-in to on-premises resources
 description: Learn how to enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/16/2025
-ms.author: justinha
-author: justinha
-manager: femila
+ms.date: 07/13/2025
 ms.reviewer: calui
 ms.custom: sfi-ga-nochange
 ---
@@ -127,8 +122,9 @@ To then **set** the desired cloud environment, run the following:
 _(Example: For US Government Cloud)_
 
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
-   > [!Tip]
-   > For Additional information comparing Azure commercial and sovereign clouds, See: [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
+
+> [!Tip]
+> For more information about how Azure Commercial compares sovereign clouds, see [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 
@@ -305,7 +301,7 @@ We are working on this capability for the general availability (GA) release of t
 
 ### Where can I go to find compliant security keys?
 
-For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md).
+For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passkeys-fido2.md).
 
 ### What can I do if I lose my security key?
 
@@ -331,10 +327,13 @@ Make sure that enough DCs are patched to respond in time to service your resourc
  
 Yes, you can have up to 1,010 groups per token.
 
+### How do I resolve `Failed to read secrets` error when running `AzureADHybridAuthenticationManagement` module commands? 
+Temporarily disable [FIPS Policy](/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing). FIPS policy can be re-enabled after performing the steps with the `AzureADHybridAuthenticationManagement` module. If error persists after disabling FIPS policy, ensure account being used has default administrative permissions.
+
 ### Do FIDO2 security keys work in a Windows login with RODC present in the hybrid environment?
 
 An FIDO2 Windows login looks for a writable DC to exchange the user TGT. As long as you have at least one writable DC per site, the login works fine. 
 
 ## Next steps
 
-[Learn more about passwordless authentication](concept-authentication-passwordless.md)
+[Learn more about passwordless authentication](concept-authentication-passkeys-fido2.md)

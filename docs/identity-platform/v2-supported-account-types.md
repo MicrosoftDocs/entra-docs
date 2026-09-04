@@ -1,11 +1,9 @@
 ---
 title: Supported account types
 description: Conceptual documentation about audiences and supported account types in in the Microsoft identity platform
-author: henrymbuguakiarie
-manager: CelesteDG
-ms.author: henrymbugua
+manager: pmwongera
 ms.date: 04/24/2024
-ms.reviewer: saeeda, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
 ms.topic: concept-article
 ms.custom: sfi-ropc-nochange

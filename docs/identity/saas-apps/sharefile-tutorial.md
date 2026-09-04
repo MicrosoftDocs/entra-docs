@@ -1,20 +1,12 @@
 ---
-title: Microsoft Entra SSO integration with Citrix ShareFile
+title: Configure Citrix ShareFile for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Citrix ShareFile.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: celested
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 05/20/2025
-ms.author: gideonkiratu
-
+ms.date: 06/11/2026
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Citrix ShareFile so that I can control who has access to Citrix ShareFile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Citrix ShareFile
+# Configure Citrix ShareFile for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Citrix ShareFile with Microsoft Entra ID. When you integrate Citrix ShareFile with Microsoft Entra ID, you can:
 
@@ -22,14 +14,15 @@ In this article,  you learn how to integrate Citrix ShareFile with Microsoft Ent
 * Enable your users to be automatically signed-in to Citrix ShareFile with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Citrix ShareFile is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Citrix ShareFile single sign-on (SSO) enabled subscription.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 
@@ -42,7 +35,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Citrix ShareFile into Microsoft Entra ID, you need to add Citrix ShareFile from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Citrix ShareFile** in the search box.
 1. Select **Citrix ShareFile** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
