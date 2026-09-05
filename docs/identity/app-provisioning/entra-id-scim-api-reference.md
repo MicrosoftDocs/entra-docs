@@ -5,7 +5,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 08/12/2026
+ms.date: 09/04/2026
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 
@@ -48,7 +48,7 @@ If you're using the Microsoft Graph endpoint in the US Government cloud, use `ht
 
 ## Mapping to Graph User and Group properties
 
-To learn how Microsoft Graph user and group properties map to SCIM user and group attributes, refer to [Microsoft Entra ID SCIM API schema reference](entra-id-scim-api-reference.md).
+To learn how Microsoft Graph user and group properties map to SCIM user and group attributes, refer to [Microsoft Entra ID SCIM API schema reference](entra-id-scim-api-schema-documentation.md).
 
 ## Throttling
 
@@ -387,7 +387,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 - **excludedAttributes** – to specify which user attributes should be excluded by the server.
 
-- **count** – to specify number of results to retrieve (default value is 100)
+- **count** – to specify the number of results to retrieve. The default value is 100. Larger projected requests support a value of up to 999, subject to the constraints in the next section.
 
 - **cursor** – to advance to the next result page
 
@@ -395,22 +395,24 @@ The following SCIM query parameters can be used with this API endpoint:
 
 The Microsoft Entra ID SCIM implementation has the following constraints:
 
-- When multiple pages are involved in the result:
-  - The default page size of 100 entries per page.
-  - The max page size is 1000 entries per page.
+- The default page size is 100 entries per page.
+- To request between 101 and 999 users per page, specify `attributes` and don't include `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager` in the projection.
+- If the `attributes` projection includes `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager`, the service ignores a `count` value greater than 100 and uses the default page size of 100.
 
-- In the “filter” query parameter, only the “and” logic operator is supported. The following user attributes are allowed for “eq” compare operator:
-  - `username`
+- The following user attributes are allowed for the `eq` comparison operator:
+  - `active`. Boolean values are case-insensitive, including `true`, `false`, `TRUE`, and `FALSE`.
+  - `userName`
   - `externalId`
   - `id`
   - `groups.value`
   - `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname`
+  - `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:ownedGroups.value`
 
-- The following user attributes are allowed for "ew" (endsWith) compare operator. 
-  - username  
+- The following user attributes are allowed for the `ew` (ends with) comparison operator:
+  - `userName`
   - `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname`
 
-- In the `filter` query parameter, only the *and* logical operator is supported for combining filters.
+- Use the `not` operator to negate an `ew` comparison on `userName` or `mailNickname`. Use the `and` logical operator to combine supported filters.
 
 - Any whitespaces encoded or unencoded in the query string around the "=" leads to rejecting the request with a “BadRequest” error. This applies to all query params - filter, attributes, excludedAttributes, count and cursor.
 
@@ -489,16 +491,16 @@ Accept: application/json
 
 #### Example 1C – Using count parameter to control users returned
 
-You can use the `count` parameter to retrieve a certain number of users.
+You can request up to 999 users per page when you specify an `attributes` projection that doesn't include the  `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager` attribute.
 
 ```http
-GET https://graph.microsoft.com/rp/scim/users?count=1000
+GET https://graph.microsoft.com/rp/scim/users?filter=active eq true&count=999&attributes=userName,id,displayName
 Authorization: Bearer {token}
 Accept: application/json
 ```
 
 ```http
-GET https://graph.microsoft.com/rp/scim/users?count=1000&cursor=RFNwdAIAAQAAAB06MTAyMDE4QHhmcDFiLm9ubWljcm9zb2Z0LmNvbS...
+GET https://graph.microsoft.com/rp/scim/users?filter=active eq true&count=999&attributes=userName,id,displayName&cursor=RFNwdAIAAQAAAB06MTAyMDE4QHhmcDFiLm9ubWljcm9zb2Z0LmNvbS...
 Authorization: Bearer {token}
 Accept: application/json
 ```
@@ -578,13 +580,36 @@ GET https://graph.microsoft.com/rp/scim/users?filter=userName eq "AdeleV@contoso
 Authorization: Bearer {token}
 ```
 
-#### Example 7 – Get user by user ID and group ID
+#### Example 7 – Get active users
+
+The `active` Boolean filter is case-insensitive.
 
 **Request:**
-Use the Entra `group objectId` for the `groups.value` property and the `user objectId` for the `id` property to check if a user belongs to a specific group.
 
 ```http
-GET https://graph.microsoft.com/rp/scim/users?filter=filter=groups.value eq "dddddddd-3333-4444-5555-eeeeeeeeeeee" and id eq "19134e88-95eb-4616-89af-189f0a4e2abf"&attributes=displayName
+GET https://graph.microsoft.com/rp/scim/users?filter=active eq true
+Authorization: Bearer {token}
+```
+
+#### Example 8 – Exclude users by mailNickname suffix and filter by userName suffix
+
+Use `not` to negate supported `ew` comparisons and `and` to combine the filters.
+
+**Request:**
+
+```http
+GET https://graph.microsoft.com/rp/scim/users?filter=not(urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname ew "-admin") and not(urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname ew "-ga") and userName ew "@contoso.com"
+Authorization: Bearer {token}
+```
+
+#### Example 9 – Get users by group ID
+
+**Request:**
+
+Use the Microsoft Entra group object ID for the `groups.value` property to retrieve the direct members of a group. Use this query instead of requesting the `members` attribute from `GET /groups/{id}`.
+
+```http
+GET https://graph.microsoft.com/rp/scim/users?filter=groups.value eq "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3"&attributes=displayName
 Authorization: Bearer {token}
 ```
 
@@ -603,7 +628,7 @@ Response truncated for readability.
         "urn:ietf:params:scim:schemas:core:2.0:User"
       ],
       "id": "d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
-      "displayName": "Tanya Clifton",
+      "displayName": "Ellen Reckert",
       "meta": {
         "location": "/users/d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4",
         "resourceType": "user"
@@ -613,7 +638,18 @@ Response truncated for readability.
 }
 ```
 
-#### Example 8 - Retrieve specific custom security attributes for a user
+#### Example 10 – Get users who own a group
+
+Although `ownedGroups` isn't returned in user response bodies, you can use its `value` subattribute as a filter target. Specify the full Microsoft Entra user extension namespace.
+
+**Request:**
+
+```http
+GET https://graph.microsoft.com/rp/scim/users?filter=urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:ownedGroups.value eq "c2c2c2c2-dddd-eeee-ffff-a3a3a3a3a3a3"
+Authorization: Bearer {token}
+```
+
+#### Example 11 - Retrieve specific custom security attributes for a user
 
 ```http
 GET https://graph.microsoft.com/rp/scim/users?filter=userName eq "AdeleV@contoso.com"&attributes=urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:CustomSecurityAttributes:Project
@@ -1044,11 +1080,14 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
   - The max page size is 1000 entries per page.
 
-- In the `filter` query parameter, only the “and” logic operator is supported. The following group attributes are allowed for “eq” compare operator.  
+- In the `filter` query parameter, only the `and` logical operator is supported for combining filters. The following group attributes are allowed for the `eq` comparison operator:
 
   - `displayName`: Set this attribute to a valid Microsoft Entra group display name.
   - `id`: Set this attribute to a valid Microsoft Entra group object ID (GUID) in your tenant.
   - `members.value`: Set this attribute to a valid Microsoft Entra user object ID (GUID) in your tenant.
+  - `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:securityEnabled`: Set this attribute to a case-insensitive Boolean value, including `true`, `false`, `TRUE`, or `FALSE`.
+  - `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:mailEnabled`: Set this attribute to a case-insensitive Boolean value, including `true`, `false`, `TRUE`, or `FALSE`.
+  - `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:owners.value`: Set this attribute to a valid Microsoft Entra user object ID (GUID) in your tenant.
 
 - The following group attributes are allowed for "ew" (endsWith) compare operator
   - displayName
@@ -1198,6 +1237,35 @@ Authorization: Bearer {token}
 
 The response includes both assigned and dynamic groups where the user is a member.
 
+#### Example 6 – Get security-enabled groups
+
+**Request:**
+
+```http
+GET https://graph.microsoft.com/rp/scim/groups?filter=urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:securityEnabled eq true
+Authorization: Bearer {token}
+```
+
+#### Example 7 – Get mail-enabled groups
+
+**Request:**
+
+```http
+GET https://graph.microsoft.com/rp/scim/groups?filter=urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:mailEnabled eq true
+Authorization: Bearer {token}
+```
+
+#### Example 8 – Get groups owned by a user
+
+Although `owners` isn't returned in group response bodies, you can use its `value` subattribute as a filter target. Specify the full Microsoft Entra group extension namespace.
+
+**Request:**
+
+```http
+GET https://graph.microsoft.com/rp/scim/groups?filter=urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:owners.value eq "d3d3d3d3-eeee-ffff-aaaa-b4b4b4b4b4b4"
+Authorization: Bearer {token}
+```
+
 ## Get group by ID
 
 Existing groups are retrieved by making a GET request to the /groups endpoint with a group ID.
@@ -1216,7 +1284,7 @@ Upon success, the API returns HTTP Status 200.
 
 ### Constraints for Get group by ID
 
-- Group members are not returned by this API call. Use GET `/groups` with members.value filter to retrieve groups where user is a member.
+- Group members aren't returned by this API call. Attribute-level pagination isn't supported by the cursor-based pagination specification, so the API can't use it to return large member collections. To retrieve the direct members of a group, use `GET /users?filter=groups.value eq "{groupId}"`.
 
 ### Query parameters for Get group by ID
 
