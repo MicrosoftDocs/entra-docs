@@ -372,10 +372,12 @@ If the response contains multiple pages, use [cursor-based pagination](https://d
 
 | Permission type | Permissions (least to most privileged) |
 |---|---|
-| Application | `User.Read.All`, `User.ReadWrite.All` |
+| Application | `User.ReadBasic.All`, `User.Read.All`, `User.ReadWrite.All` |
 
 > [!NOTE]
 > To read Custom Security Attributes on users, the app also requires `CustomSecAttributeAssignment.Read.All` or `CustomSecAttributeAssignment.ReadWrite.All`.
+>
+> [`User.ReadBasic.All`](/graph/permissions-reference#userreadbasicall) limits responses to basic profile properties and supports filtering only on properties in the basic profile. Of the filters supported by this endpoint, `id` and `userName` meet this requirement. To use filters on `active`, `externalId`, `groups.value`, `mailNickname`, or `ownedGroups.value`, grant `User.Read.All` or `User.ReadWrite.All`.
 
 ### Query parameters for List users
 
@@ -701,7 +703,10 @@ Upon success, the API returns HTTP Status 200.
 
 | Permission type | Permissions (least to most privileged) |
 |---|---|
-| Application | `User.Read.All`, `User.ReadWrite.All` |
+| Application | `User.ReadBasic.All`, `User.Read.All`, `User.ReadWrite.All` |
+
+> [!NOTE]
+> [`User.ReadBasic.All`](/graph/permissions-reference#userreadbasicall) limits responses to basic profile properties. To retrieve other user properties, grant `User.Read.All` or `User.ReadWrite.All`.
 
 ### Query parameters for Get user by ID
 
@@ -753,7 +758,7 @@ Upon success, the API returns HTTP Status 201.
 
 | Permission type | Permissions (least to most privileged) |
 |---|---|
-| Application | `User.ReadWrite.All` |
+| Application | `User.Create` or `User.ReadWrite.All` |
 
 ### Required attributes for Create a user
 
@@ -820,10 +825,10 @@ Upon success, the API returns HTTP Status 204.
 
 | Permission type | Permissions (least to most privileged) |
 |---|---|
-| Application | `User.ReadWrite.All` |
+| Application | `User.ReadUpdate.All` or `User.ReadWrite.All` |
 
 > [!NOTE]
-> To update Custom Security Attributes on users, the app also requires `CustomSecAttributeAssignment.ReadWrite.All`. To update lifecycle attributes such as employeeLeaveDateTime, the app also requires `User-LifeCycleInfo.ReadWrite.All`.
+> To update `emails[type eq "other"].value`, the app also requires `User-Mail.ReadWrite.All`. To update `phoneNumbers[type eq "mobile"].value` or `phoneNumbers[type eq "work"].value`, the app also requires `User-Phone.ReadWrite.All`. To update `active`, the app also requires `User.EnableDisableAccount.All`. To update Custom Security Attributes, the app also requires `CustomSecAttributeAssignment.ReadWrite.All`. To update lifecycle attributes such as `employeeLeaveDateTime`, the app also requires `User-LifeCycleInfo.ReadWrite.All`.
 
 ### Constraints for Update a user
 
@@ -1344,7 +1349,7 @@ Upon success, the API returns HTTP Status 201.
 
 | Permission type | Permissions (least to most privileged) |
 |---|---|
-| Application | `Group.ReadWrite.All` |
+| Application | `Group.Create` or `Group.ReadWrite.All` |
 
 ### Required attributes for Create a group
 
@@ -1417,7 +1422,10 @@ Upon success, the API returns HTTP Status 204.
 
 | Permission type | Permissions (least to most privileged) |
 |---|---|
-| Application | `Group.ReadWrite.All` |
+| Application | `GroupMember.ReadWrite.All` or `Group.ReadWrite.All` for membership changes; `Group.ReadWrite.All` for group property changes. |
+
+> [!NOTE]
+> `GroupMember.ReadWrite.All` supports only requests that add or remove members. To update group properties such as `displayName` or `description`, grant `Group.ReadWrite.All`.
 
 ### Constraints for Update a group
 
