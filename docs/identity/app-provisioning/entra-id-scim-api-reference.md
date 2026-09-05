@@ -828,7 +828,7 @@ Upon success, the API returns HTTP Status 204.
 | Application | `User.ReadUpdate.All` or `User.ReadWrite.All` |
 
 > [!NOTE]
-> To update `emails[type eq "other"].value`, the app also requires `User-Mail.ReadWrite.All`. To update `phoneNumbers[type eq "mobile"].value` or `phoneNumbers[type eq "work"].value`, the app also requires `User-Phone.ReadWrite.All`. To update `active`, the app also requires `User.EnableDisableAccount.All`. To update Custom Security Attributes, the app also requires `CustomSecAttributeAssignment.ReadWrite.All`. To update lifecycle attributes such as `employeeLeaveDateTime`, the app also requires `User-LifeCycleInfo.ReadWrite.All`.
+> If your app only needs to update specific user attributes, use the least-privileged permission for those attributes. For details, see the [SCIM API application permissions](enable-scim-api.md#option-1-register-an-application-client-credentials-flow).
 
 ### Constraints for Update a user
 

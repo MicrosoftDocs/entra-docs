@@ -74,24 +74,27 @@ Register an application in your Microsoft Entra tenant, grant the required appli
 
 1. Under **API permissions**, select **Microsoft Graph** > **Application permissions** and grant one or more of the following permissions depending on how you plan to use the SCIM APIs:
 
-   | Permission | Description |
-   |---|---|
-    | [`User.ReadBasic.All`](/graph/permissions-reference#userreadbasicall) | Least privileged read-only access to users' basic profile properties. Filtering is limited to properties in the basic profile. |
+    | Permission | Description |
+    |---|---|
+    | `User.ReadBasic.All` | Least privileged read-only access to users' basic profile properties. Filtering is limited to properties in the basic profile. |
     | `User.Read.All` | Read-only access to all user properties supported by the SCIM API. |
-    | [`User.Create`](/graph/permissions-reference#usercreate) | Create users without permission to update existing users. |
-    | [`User.ReadUpdate.All`](/graph/permissions-reference#userreadupdateall) | Read and update users without permission to create or delete users. |
-   | `User.ReadWrite.All` | Read and write access to users. |
+    | `User.Create` | Create users without permission to update existing users. |
+    | `User.ReadUpdate.All` | Read and update users without permission to create or delete users. |
+    | `User.ReadWrite.All` | Read and write access to users. |
     | `User-Mail.ReadWrite.All` | Least privileged permission to update **emails[type eq "other"].value**, which maps to the *otherMails* user property. |
     | `User-Phone.ReadWrite.All` | Least privileged permission to update **phoneNumbers[type eq "mobile"].value** and **phoneNumbers[type eq "work"].value**, which map to the *mobilePhone* and *businessPhones* user properties, respectively. |
     | `User.EnableDisableAccount.All` | Least privileged permission to update the **active** SCIM attribute, which maps to the *accountEnabled* user property. |
-   | `Group.Read.All` | Read-only access to groups. |
-    | [`Group.Create`](/graph/permissions-reference#groupcreate) | Create groups without permission to update existing groups. |
-    | [`GroupMember.ReadWrite.All`](/graph/permissions-reference#groupmemberreadwriteall) | Read and update group memberships without permission to update group properties. |
-   | `Group.ReadWrite.All` | Read and write access to groups. |
-   | `CustomSecAttributeAssignment.Read.All` | Read-only access to Custom Security Attributes on users. |
-   | `CustomSecAttributeAssignment.ReadWrite.All` | Read and write access to Custom Security Attributes on users. |
-   | `CustomSecAttributeDefinition.Read.All` | Read access to Custom Security Attributes schema. |
-   | `User-LifeCycleInfo.ReadWrite.All` | Update lifecycle attributes like `employeeLeaveDateTime`. |
+    | `Group.Read.All` | Read-only access to groups. |
+    | `Group.Create` | Create groups without permission to update existing groups. |
+    | `GroupMember.ReadWrite.All` | Read and update group memberships without permission to update group properties. |
+    | `Group.ReadWrite.All` | Read and write access to groups. |
+    | `CustomSecAttributeAssignment.Read.All` | Read-only access to Custom Security Attributes on users. |
+    | `CustomSecAttributeAssignment.ReadWrite.All` | Read and write access to Custom Security Attributes on users. |
+    | `CustomSecAttributeDefinition.Read.All` | Read access to Custom Security Attributes schema. |
+    | `User-LifeCycleInfo.ReadWrite.All` | Update lifecycle attributes like `employeeLeaveDateTime`. |
+
+    > [!NOTE]
+    > For more information about these permissions, see the [Microsoft Graph permissions reference](/graph/permissions-reference).
 
 1. Grant **Admin consent** for all assigned permissions.
 
