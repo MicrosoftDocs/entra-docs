@@ -91,7 +91,7 @@ For more information (in Dutch) also read: [`Implementatie SCIM koppeling`](http
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Admin Credentials** section, input the **SCIM 2.0 base URL and Permanent Token** values retrieved earlier in the **Tenant URL** and add /scim/ to it. Also add the  **Secret Token**. You can generate a secret token in Zenya by using the **permanent token** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zenya. If the connection fails, ensure your Zenya account has Admin permissions and try again. 
+1. In the **Admin Credentials** section, fill in the **Tenant URL** and **Secret Token**. Use the **Service Adress** and **permanent token** that you retrieved earlier. Add /scim/ to the **Tenant URL** and test the connection.
 
 	![Screenshot showing the Test connection page and fields for Tenant URL and Token.](common/provisioning-testconnection-tenanturltoken.png)
 
