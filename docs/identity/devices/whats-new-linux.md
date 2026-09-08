@@ -29,15 +29,16 @@ Microsoft uses the following package repositories to distribute Microsoft Identi
 |stable|Production workloads|3.0.x|Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
 |insiders-fast|Testing prerelease packages|3.0.x|No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)</br>[RHEL10](https://packages.microsoft.com/rhel/10/insiders-fast/)|
 
-> [!NOTE]
-> The current production version of the `microsoft-identity-broker` is `3.0.1`. 
-
 The `insiders-fast` channel in `packages.microsoft.com` lets you test prerelease packages. Don't use it for production workloads. It might contain breaking changes or incomplete features.
 
 ### Important notes for version 2.0.2 and later
 
-> [!WARNING]
-> Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation. If you're upgrading from a previous version (prod: 2.0.1 or earlier, insiders-fast: 2.0.4 or earlier), users will need to re-register and re-enroll their devices after performing an upgrade of the previous version.
+> [!IMPORTANT]
+> Starting with version 2.0.2, Microsoft Single Sign-on for Linux uses `Microsoft Entra join` instead of `Microsoft Entra registration` for device trust.
+> - Existing devices upgraded from earlier versions must be re-joined and re-enrolled.
+> - Before deploying version 2.0.2 or later, administrators must ensure that users are permitted by the `Users may join devices to Microsoft Entra` setting in Microsoft Entra admin center > Devices > Device settings. The `Users may register their devices with Microsoft Entra` setting is no longer sufficient.
+> - For more information, see [Manage Device Identities](manage-device-identities.md) in Microsoft Entra ID.
+
 
 ## Instructions to add package repositories
 
@@ -466,7 +467,7 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 **Java to C++ Broker Migration (2.0.1 → 2.0.2+):**
 - Symptom: Authentication failures after upgrade
 - Solution: Complete uninstall and clean reinstall required
-- Steps: Remove all broker state, reinstall new version, re-register device
+- Steps: Remove all broker state, reinstall new version, re-join device
 
 **Package Installation Issues:**
 - Verify repository configuration matches your Ubuntu/RHEL version

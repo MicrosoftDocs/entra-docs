@@ -1273,6 +1273,8 @@
         href: heroku-tutorial.md
       - name: HeyBuddy
         href: heybuddy-tutorial.md
+      - name: HiBob to Active Directory 
+        href: hibob-to-active-directory-user-provisioning-tutorial.md
       - name: HighGear
         href: highgear-tutorial.md
       - name: HighGround
@@ -3772,8 +3774,6 @@
         href: rollbar-provisioning-tutorial.md
       - name: Rootly
         href: rootly-provisioning-tutorial.md
-      - name: Rouse Sales
-        href: rouse-sales-provisioning-tutorial.md
       - name: SafeGuard Cyber
         href: safeguard-cyber-provisioning-tutorial.md        
       - name: Salesforce

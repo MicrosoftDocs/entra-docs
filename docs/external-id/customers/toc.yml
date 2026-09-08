@@ -482,6 +482,8 @@ items:
       href: concept-user-attributes.md
     - name: Adding your own business logic
       href: concept-custom-extensions.md
+    - name: Use Microsoft Entra Verified ID
+      href: verified-id-setup-issuance-presentation.md
     - name: Custom authentication extensions
       items:
         - name: Custom claims provider

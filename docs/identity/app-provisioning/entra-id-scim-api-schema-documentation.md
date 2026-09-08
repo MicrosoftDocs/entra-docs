@@ -5,7 +5,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 09/04/2026
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 
@@ -97,12 +97,16 @@ Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:e
 | onPremisesSecurityIdentifier | onPremisesSecurityIdentifier |
 | onPremisesSyncEnabled | onPremisesSyncEnabled |
 | onPremisesUserPrincipalName | onPremisesUserPrincipalName |
+| ownedGroups.value | ownedObjects (groups only) |
 | passwordForceChangeOnNextSignIn | passwordProfile.forceChangePasswordNextSignIn |
 | passwordForceChangeOnNextSignInWithMFA | passwordProfile.forceChangePasswordNextSignInWithMFA |
 | preferredDataLocation | preferredDataLocation |
 | proxyAddresses | proxyAddresses (all values) |
 | usageLocation | usageLocation |
 | userType | userType |
+
+> [!NOTE]
+> `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:ownedGroups` is a read-only, multi-valued complex attribute. Its `value` sub attribute contains a group ID. The attribute has a `returned` value of `never`, so it isn't included in user response bodies. You can use the fully qualified `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:ownedGroups.value` path as a filter target to find users who own a specific group.
 
 > [!NOTE] 
 > The Microsoft Entra extension namespace doesn't include Microsoft Entra ID Directory Extensions of the form `extension_{appId-without-hyphens}_{extensionProperty-name}`. The SCIM APIs don't support retrieving these attributes on the user profile.
@@ -112,7 +116,7 @@ Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:e
 | SCIM Attribute | Microsoft Entra ID Attribute | Notes / Restrictions |
 |----|----|----|
 | displayName | displayName |  |
-| members.value | *See Notes column* | Read only. The group’s members. This attribute is never returned in the JSON body of a user and is only usable for filter queries. |
+| members.value | *See Notes column* | Read only. The group’s members. This attribute is never returned in the JSON body of a group and is only usable for filter queries. |
 
 ## Group – Microsoft Entra Extension
 
@@ -128,9 +132,13 @@ Attributes in this table are part of namespace ```urn:ietf:params:scim:schemas:e
 | onPremisesSAMAccountName     | onPremisesSAMAccountName     |
 | onPremisesSecurityIdentifier | onPremisesSecurityIdentifier |
 | onPremisesSyncEnabled        | onPremisesSyncEnabled        |
+| owners.value                 | owners                       |
 | proxyAddresses               | proxyAddresses (all values)  |
 | securityEnabled              | securityEnabled              |
 | securityIdentifier           | securityIdentifier           |
+
+> [!NOTE]
+> `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:owners` is a read-only, multi-valued complex attribute. Its `value` sub attribute contains a user ID. The attribute has a `returned` value of `never`, so it isn't included in group response bodies. You can use the fully qualified `urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:owners.value` path as a filter target to find groups owned by a specific user.
 
 ## Custom Security Attributes namespace
 

@@ -1,57 +1,135 @@
-### YamlMime:Landing
+### YamlMime:Hub
 
 title: Microsoft Entra Verified ID documentation
-summary: Verifiable credentials help you build solutions that empower customers to manage their own data.
+summary: >
+  Explore guidance for IT admins, developers, partners, and end users who set up, build with, integrate, or use Microsoft Entra Verified ID.
+brand: azure
 
-metadata: 
-  description: "Learn how to incorporate verifiable credentials into your solutions empowering customers to control information about themselves"
-  ms.collection: na
-  ms.date: 04/30/2025
-  ms.topic: landing-page  
+metadata:
+  title: Microsoft Entra Verified ID documentation
+  description: Learn how to set up Microsoft Entra Verified ID, build issuer and verifier solutions, integrate partner services, and use verifiable credentials.
+  author: CelesteDG
+  ms.author: celested
+  ms.service: entra-verified-id
+  ms.topic: hub-page
+  ms.date: 08/28/2026
+  ai-usage: ai-assisted
+  ms.custom: msecd-doc-authoring-1023
 
-# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | reference | tutorial | video | whats-new
+highlightedContent:
+  items:
+    - title: Introduction to Microsoft Entra Verified ID
+      itemType: overview
+      url: ./decentralized-identifier-overview.md
+    - title: Issue a credential for directory-based claims
+      itemType: tutorial
+      url: ./how-to-use-quickstart-verifiedemployee.md
+    - title: Microsoft Entra Verified ID architecture
+      itemType: architecture
+      url: ./introduction-to-verifiable-credentials-architecture.md
+    - title: Microsoft Entra Verified ID pricing
+      itemType: overview
+      url: https://azure.microsoft.com/en-us/pricing/details/microsoft-entra-verified-id/?msockid=3c2f5dfa1b84682d126a4af31ae069c2
+    - title: Use Face Check
+      itemType: tutorial
+      url: ./using-facecheck.md
+    - title: What's new
+      itemType: whats-new
+      url: ./whats-new.md
 
-landingContent: 
-  # Card
-  - title: Key Concepts
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Introduction to Microsoft Entra Verified ID
-            url: decentralized-identifier-overview.md
-      - linkListType: overview
-        links:
-          - text: Guiding Principles for Decentralized Identities
-            url: https://www.microsoft.com/security/blog/2021/10/06/microsofts-5-guiding-principles-for-decentralized-identities/ 
-      - linkListType: video
-        links:
-          - text: Govern access to your resources
-            url: https://www.youtube.com/watch?v=r20hCF9NbTo
-
-  # Card
-  - title: Learn about the Microsoft Entra Verified ID Service
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Get started with verifiable credentials
-            url: verifiable-credentials-configure-tenant.md
-      - linkListType: tutorial
-        links:
-          - text: Issue verifiable credentials
-            url: verifiable-credentials-configure-issuer.md
-
-  # Card
-  - title: Build Verifiable Credentials Solutions
-    linkLists:
-        - linkListType: concept
+conceptualContent:
+  sections:
+    - title: Configure and build
+      summary: Find setup and development guidance that matches what you want to do.
+      items:
+        - title: IT admin
           links:
-            - text: Plan your architecture
-              url: introduction-to-verifiable-credentials-architecture.md
-        - linkListType: how-to-guide
+            - text: Set up Microsoft Entra Verified ID
+              itemType: tutorial
+              url: ./verifiable-credentials-configure-tenant-quick.md
+            - text: Configure advanced setup
+              itemType: tutorial
+              url: ./verifiable-credentials-configure-tenant.md
+            - text: Register your decentralized ID
+              itemType: how-to-guide
+              url: ./how-to-register-didwebsite.md
+            - text: Verify domain ownership
+              itemType: how-to-guide
+              url: ./how-to-dnsbind.md
+            - text: Rotate signing keys
+              itemType: how-to-guide
+              url: ./how-to-rotate-keys.md
+        - title: Developer
           links:
-            - text: The Request Service API for issuers
-              url: issuance-request-api.md
-        - linkListType: how-to-guide
+            - text: Get started with the Request API
+              itemType: how-to-guide
+              url: ./get-started-request-api.md
+            - text: Issue credentials from an application
+              itemType: tutorial
+              url: ./verifiable-credentials-configure-issuer.md
+            - text: Verify credentials from an application
+              itemType: tutorial
+              url: ./verifiable-credentials-configure-verifier.md
+            - text: Get started with the Admin API
+              itemType: reference
+              url: ./admin-api.md
+    - title: Integrate and use
+      summary: Find partner integration and credential usage guidance.
+      items:
+        - title: Partner
           links:
-            - text: Request Service API for Verifiers
-              url: presentation-request-api.md
+            - text: Use the Verified ID Network API
+              itemType: reference
+              url: ./vc-network-api.md
+            - text: Explore identity verification partners
+              itemType: reference
+              url: ./idv-partners.md
+            - text: Explore services partners
+              itemType: reference
+              url: ./services-partners.md
+            - text: Use the Verified ID Network
+              itemType: how-to-guide
+              url: ./how-use-vcnetwork.md
+        - title: End user
+          links:
+            - text: Use Verified ID with Microsoft Authenticator
+              itemType: tutorial
+              url: ./using-authenticator.md
+            - text: Review frequently asked questions
+              itemType: reference
+              url: ./verifiable-credentials-faq.md
+
+additionalContent:
+  sections:
+    - title: Browse scenario categories
+      summary: Explore common scenarios for employee lifecycles, external identities, application development, security, and partner integrations.
+      items:
+        - title: Employee lifecycle
+          summary: Use Verified ID for remote onboarding and identity verification for employee support and account recovery.
+          url: ./remote-onboarding-new-employees-id-verification.md
+        - title: Consumer and external user
+          summary: Secure onboarding, identity verification, and account recovery for consumers and external users.
+          url: ~/id-governance/entitlement-management-verified-id-settings.md
+        - title: Developer platform
+          summary: Understand communication between an identity provider and an issuer service.
+          url: ./issuer-openid.md
+        - title: Security and compliance
+          summary: Upgrade signing keys to support FIPS-compliant signing.
+          url: ./signing-key-upgrade.md
+        - title: Partner ecosystem
+          summary: Integrate Verified APIs into your applications and services.
+          url: ./integration-guidance.md
+    - title: Plan and manage your solution
+      items:
+        - title: Plan credential issuance
+          summary: Design an issuance solution for the credentials your organization provides.
+          url: ./plan-issuance-solution.md
+        - title: Review supported standards
+          summary: Learn about the standards that Microsoft Entra Verified ID supports.
+          url: ./verifiable-credentials-standards.md
+        - title: Customize credentials
+          summary: Define the claims and visual presentation of a Verified ID credential.
+          url: ./credential-design.md
+        - title: Review API reference
+          summary: Find specifications for issuance, presentation, administration, and the Verified ID Network.
+          url: ./issuance-request-api.md

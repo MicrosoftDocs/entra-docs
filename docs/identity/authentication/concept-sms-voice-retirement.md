@@ -2,7 +2,7 @@
 title: Passkeys by default and retirement of Microsoft-provided SMS and voice authentication
 description: Learn how to prepare for the retirement of Microsoft provided SMS and Voice authentication in Microsoft Entra ID and migrate users to passkeys.
 ms.topic: how-to
-ms.date: 07/29/2026
+ms.date: 08/10/2026
 author: marinasanchezz1
 ms.author: marisanchez
 ai-usage: ai-assisted
@@ -103,7 +103,7 @@ To avoid sign-in disruption, make sure users register a passkey or move to anoth
 
 A temporary opt-out is available for the September 1, 2026 through February 1, 2027 changes. This lets you delay passkey and Registration Campaign enablement while you complete transition activities, such as configuring customer-managed telecom providers or migrating to other authentication methods.
 
-To opt out, update your authentication methods policy using Microsoft Graph and set the `passkeyDynamicMigration` property to `true`.
+To opt out, you need the Microsoft Graph `Policy.ReadWrite.AuthenticationMethod` permission. Update your authentication methods policy using Microsoft Graph and set the `passkeyDynamicMigration` property to `true`.
 
 **Request**
 

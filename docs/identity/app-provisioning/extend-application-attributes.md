@@ -89,7 +89,7 @@ Content-Type: application/json
 		"@odata.type": "#microsoft.graph.logicAppTriggerEndpointConfiguration",
 		"subscriptionId": "00000000-0000-0000-0000-000000000000",
 		"resourceGroupName": "lcw-synthetics",
-		"logicAppWorkflowName": "masonReply"
+		"logicAppWorkflowName": "testReply"
 	},
 	"callbackConfiguration": null,
 	"authenticationConfiguration": {
@@ -123,7 +123,7 @@ Content-Type: application/json
 		"@odata.type": "#microsoft.graph.logicAppTriggerEndpointConfiguration",
 		"subscriptionId": "00000000-0000-0000-0000-000000000000",
 		"resourceGroupName": "lcw-synthetics",
-		"logicAppWorkflowName": "masonReply",
+		"logicAppWorkflowName": "testReply",
 		"url": "https://prod-05.southcentralus.logic.azure.com:443/workflows/c070dc95455e4e5a98da954feeb7e756/triggers/manual/paths/invoke?api-version=2016-10-01"
   },
 	"authenticationConfiguration": {
@@ -290,7 +290,7 @@ Once you’re done configuring the settings of your provisioning job, you can no
     | Name of field | Description |
     |-----|-----|
     | `flowType` |  Must be `ObjectAddOnly`, since LCW extensibility workflows [can only be run during create events](#limitations) |
-    | `matchingPriority` | Must be `0`, since target attributes that are mapped to an LCW extensibility workflow cannot be used as matching attributes |
+    | `matchingPriority` | Must be `0`, since target attributes that are mapped to an LCW extensibility workflow [cannot be used as matching attributes](#limitations) |
     | `expression` | This will be the GUID of the LCW extensibility workflow |
     | `name` | Same as `expression`; this will be GUID of the LCW extensibility workflow |
     | `type` | Must be `LifecycleWorkflow` |

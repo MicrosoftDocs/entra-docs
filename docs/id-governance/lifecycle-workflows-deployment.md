@@ -215,7 +215,7 @@ Now that you've determined the scenario and the who and when, you should conside
 |Send onboarding reminder email|Send onboarding reminder email to user’s manager| Joiner|
 |Request user access package assignment|Request user assignment to selected access packages|Joiner - Mover|
 |Remove access package assignment for user|Remove user assignment from selected access packages| Leaver - Mover|
-|Remove all access package assignments for user|Remove all access packages assigned to the user|Leaver|
+|Remove all access package assignments for user|Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate.|Leaver - Mover|
 |Remove selected license assignments from user|Remove select license assignment from user|Leaver - Mover| 
 |Cancel all pending access package assignment requests for users|Cancel all pending access package assignment requests for users|Leaver|
 

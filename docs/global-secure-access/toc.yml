@@ -168,6 +168,8 @@ items:
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
+  - name: Web filtering (V2)
+    href: concept-web-filtering.md
   - name: Explicit Forward Proxy
     expanded: false
     items:
@@ -312,7 +314,9 @@ items:
         items:
           - name: What is Transport Layer Security inspection?
             href: concept-transport-layer-security.md
-          - name: Configure Transport Layer Security inspection settings
+          - name: Configure TLS inspection with a Microsoft-managed certificate (Preview)
+            href: how-to-transport-layer-security-settings-managed-certificate.md
+          - name: Configure TLS inspection with your own certificate
             href: how-to-transport-layer-security-settings.md
           - name: Configure Transport Layer Security inspection policies
             href: how-to-transport-layer-security.md
@@ -320,18 +324,24 @@ items:
             href: faq-transport-layer-security.yml
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Migrate web content filtering policies to V2
+        href: how-to-migrate-web-content-filtering-policies.md
       - name: Check URL category
         href: how-to-check-web-content-filtering-categories.md
+      - name: Customize the block page
+        href: how-to-customize-block-page.md
+      - name: Add custom headers for tenant restrictions in SaaS applications
+        href: how-to-configure-custom-headers.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
       - name: Configure cloud firewall
-        href: how-to-configure-cloud-firewall.md
-      - name: Customize the block page
-        href: how-to-customize-block-page.md
+        href: how-to-configure-cloud-firewall.md  
       - name: Configure network content filtering
         href: how-to-network-content-filtering.md
       - name: Configure the AI Gateway prompt injection protection
         href: how-to-ai-prompt-injection-protection.md
+      - name: Configure MCP firewall (Preview)
+        href: how-to-configure-mcp-firewall.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
   - name: Explicit Forward Proxy

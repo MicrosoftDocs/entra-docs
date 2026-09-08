@@ -151,6 +151,8 @@
         href: entitlement-management-group-licenses.md
       - name: Create an access package for an application - PowerShell
         href: entitlement-management-access-package-create-app.md
+      - name: Integrating Entitlement Management with ServiceNow
+        href: entitlement-management-servicenow-integration.md
       - name: Automated ServiceNow Ticket Creation Integration
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
@@ -329,7 +331,7 @@
         href: entitlement-management-request-approve.md
       - name: Review access of an access package
         href: entitlement-management-access-reviews-review-access.md  
-      - name: Delegate approvers (Preview)
+      - name: Delegate approvals and access reviews
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
         href: entitlement-management-access-reviews-self-review.md   
@@ -371,6 +373,8 @@
         href: review-your-access.md
       - name: Complete an access review
         href: complete-access-review.md
+      - name: Delegate approvals and access reviews
+        href: delegate-approvals-my-access.md
     - name: Microsoft Entra roles and Azure resource roles
       items:
       - name: Create an access review

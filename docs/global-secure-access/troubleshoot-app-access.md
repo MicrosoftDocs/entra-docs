@@ -129,3 +129,5 @@ To prevent session disruption:
 
 > [!NOTE]
 > After creating a new app definition, allow approximately 5–10 minutes for the configuration to propagate and appear on the client.
+
+- Option 3: After confirming the application works through a single connector, enable session persistence. This consistently routes requests from the same user and device through the same connector during the       session.See [Configure traffic routing for the app](how-to-configure-per-app-access.md#configure-traffic-routing-for-the-app).

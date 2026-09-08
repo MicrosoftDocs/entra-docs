@@ -93,7 +93,7 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
-1. From the **Remove network assignments** section, select the **View** link for the profile.
+1. From the **Remote network assignments** section, select the **View** link for the profile.
 1. Select a remote network from the list and select **Add**.
 
 ## User and group assignments

@@ -111,7 +111,7 @@ The default specific parameters for the **Real-time employee change** template a
 |---------|---------|---------|
 |Category     |  Mover       |  ❌       |
 |Trigger Type     | On-demand        |  ❌       |
-|Tasks     | **Run a Custom Task Extension**    |  ✔️       |
+|Tasks     | **Run a Custom Task Extension**, **Remove all access package assignments for user** (scheduled removal defaulting to 15 days)    |  ✔️       |
 
 > [!NOTE]
 > As this template is designed to run on-demand, no execution condition is present.
@@ -204,7 +204,7 @@ The default specific parameters for the **Employee group membership changes** te
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Scope     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.       | ✔️        |
-|Tasks     | **Remove access package assignment for user**, **Remove user from selected Teams**, **Send email to notify manager of user move**     |  ✔️       |
+|Tasks     | **Remove all access package assignments for user** (scheduled removal defaulting to 15 days), **Remove user from selected Teams**, **Send email to notify manager of user move**     |  ✔️       |
 
 ### Employee job profile change
 
@@ -220,7 +220,7 @@ The default specific parameters for the **Employee job profile change** template
 |Trigger Type     | Attribute changes, Group Membership change        |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Scope     | Depends on trigger. <br> **Rule based**: Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
-|Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
+|Tasks     | **Send email to notify manager of user move**, **Remove all access package assignments for user** (scheduled removal defaulting to 15 days), **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
 For a tutorial on setting up a workflow that uses the **Employee job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
 

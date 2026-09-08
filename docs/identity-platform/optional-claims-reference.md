@@ -140,13 +140,14 @@ For OIDC, see the following table, which lists the `authnmethodsreferences` valu
 | Email | `emailotp`, `mfa` |
 | FIDO2 security key (PRMFA) | `fido`, `mfa` |
 | Passkey (device-bound) (PRMFA) | `fido`, `mfa` |
-| Passkey (synced) | `fido`, `mfa` |
+| Passkey (synced)  (PRMFA) | `fido`, `mfa` |
 | Windows Hello for Business (PRMFA) | `hwk`, `mfa`, `ngcmfa` |
-| Certificate-based authentication (PRMFA) | `hwk` or `x509`, `mfa`, `rsa` |
+| Certificate-based authentication (PRMFA for Multi-factor CBA) | `hwk` (Multi-factor CBA) or `x509` (Single factor CBA), `mfa`, `rsa` |
 | Temporary Access Pass (TAP) | `otp`, `mfa` |
 | Windows integrated authentication (Kerberos) | `wia` |
+| Device based X509 authentication | `x509` |
 
-Microsoft Entra ID forwards the `amr` values sent from an external MFA provider along with the `amr` values for the authentication methods performed in Microsoft Entra ID. For more information, see [Supported AMR claims](~/identity/authentication/concept-authentication-external-method-provider.md#supported-amr-claims).
+Microsoft includes `x509` in the `amr` claim for both single-factor Certificate-Based Authentication (CBA) and device-based X.509 authentication. However, the presence of x509 alone does not qualify as phishing-resistant MFA (PRMFA). To meet PRMFA requirements, the user must also complete an additional MFA factor, which will be reflected by other authentication method indicators in the authentication context. Microsoft Entra ID forwards the `amr` values sent from an external MFA provider along with the `amr` values for the authentication methods performed in Microsoft Entra ID. For more information, see [Supported AMR claims](~/identity/authentication/concept-authentication-external-method-provider.md#supported-amr-claims).
 
 ## See also
 

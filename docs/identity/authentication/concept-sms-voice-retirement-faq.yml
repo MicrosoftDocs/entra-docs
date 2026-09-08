@@ -3,7 +3,7 @@ metadata:
   title: FAQ for Microsoft-provided SMS and voice retirement
   description: Frequently asked questions about the retirement of Microsoft-provided SMS and voice authentication in Microsoft Entra ID and the move to passkeys.
   ms.topic: faq
-  ms.date: 07/30/2026
+  ms.date: 09/04/2026
   author: marinasanchezz1
   ms.author: marisanchez
   ai-usage: ai-assisted
@@ -94,6 +94,12 @@ sections:
           After February 1, 2027, users whose only available MFA method is SMS or voice will be required to register a passkey during sign-in to continue accessing their account.
 
           There is no opt out for the February 1, 2027 enforcement. This requirement applies to all tenants.
+      - question: |
+          Will users receive a blocking passkey registration prompt on February 1, 2027 if we configure a customer-managed telecom provider?
+        answer: |
+          No. If you configure a customer-managed telecom provider through the Microsoft Security Store and migrate all users who need SMS or voice before February 1, 2027, those users won't receive the blocking passkey registration prompt as part of the SMS and voice retirement enforcement.
+
+          Customer-managed telecom is intended for organizations that have a business, regulatory, or technical need to continue using SMS or voice. Make sure that the provider is configured and that all affected users are migrated before February 1, 2027. Users who remain enabled for Microsoft-provided SMS or voice are still subject to the passkey registration requirement.
       - question: |
           Are customers going to get locked out of their accounts on February 1, 2027?
         answer: |

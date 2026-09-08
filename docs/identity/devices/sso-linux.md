@@ -13,7 +13,7 @@ Microsoft single sign-on (SSO) for Linux is powered by the Microsoft Identity Br
 
 ## Features
 
-This feature empowers users on Linux desktop clients to register their devices with Microsoft Entra ID, enroll into Intune management, and satisfy device-based Conditional Access policies when accessing their corporate resources.
+This feature empowers users on Linux desktop clients to join their devices with Microsoft Entra ID, enroll into Intune management, and satisfy device-based Conditional Access policies when accessing their corporate resources.
 
 - Provides Microsoft Entra ID registration & enrollment of Linux desktops
 - Provides SSO capabilities for native and web applications (for example, Azure CLI, Microsoft Edge, Teams PWA) to access Microsoft 365 and Azure protected resources
@@ -46,6 +46,16 @@ Microsoft single sign-on for Linux is supported on the following operating syste
 - Microsoft Entra ID tenant
 - User accounts synchronized with or created in Microsoft Entra ID
 - Appropriate licensing for conditional access policies (if applicable)
+- `Device settings` in the Entra portal must have `Users may join devices to Microsoft Entra` configured for the target users.
+
+![Screenshot of the device settings pane in the Entra portal focusing on the required setting for users may join devices using Microsoft Entra.](./media/sso-linux/device-settings-entra-join.png)
+
+> [!IMPORTANT]
+>Microsoft Single Sign-on for Linux version 2.0.2 and later uses Microsoft Entra join for device trust. Earlier versions used Microsoft Entra registration.
+>
+>- As a result, organizations upgrading to version 2.0.2 or later must ensure that affected users are allowed by the `Users may join devices to Microsoft Entra` setting in Microsoft Entra admin center > Devices > Device settings. The `Users may register their devices with Microsoft Entra` setting is no longer sufficient for these devices.
+>
+> - For more information, see [Manage Device Identities](manage-device-identities.md) in Microsoft Entra ID.
 
 ## Single Sign-on (SSO) experience
 
@@ -271,15 +281,15 @@ Run the following commands to uninstall the Microsoft Identity Broker and remove
 ---
 
 > [!WARNING]
-> Note that uninstalling the Microsoft Identity Broker doesn't automatically unregister your device from Microsoft Entra ID, nor unenroll your device from Intune management. To remove the device registration, you can either use the [dsregcmd tool](troubleshoot-device-registration-tool-linux.md) or remove the device from the Microsoft Entra ID portal.
+> Note that uninstalling the Microsoft Identity Broker doesn't automatically unjoin your device from Microsoft Entra ID, nor unenroll your device from Intune management. To remove the device registration, you can either use the [dsregcmd tool](troubleshoot-device-registration-tool-linux.md) or remove the device from the Microsoft Entra ID portal.
 
 ---
 
-## Unregister device using dsregc
+## Unjoin device using dsregc
 
 With the release of 2.5.x of the `microsoft-identity-broker`, we've included a new utility called the `dsreg` tool that allows you to manage your device's registration with Microsoft Entra ID. 
 
-To unregister your device from Microsoft Entra ID using the `dsreg` tool, run the following command in your terminal, replacing `<tenant-guid>` with your Microsoft Entra ID tenant GUID:
+To unjoin your device from Microsoft Entra ID using the `dsreg` tool, run the following command in your terminal, replacing `<tenant-guid>` with your Microsoft Entra ID tenant GUID:
 
 ```bash
 sudo dsreg --tenant-id <tenant-guid> --unregister
@@ -287,7 +297,7 @@ sudo dsreg --tenant-id <tenant-guid> --unregister
 
 If your system gets into a bad state and you want to clean all local registration data and key material, you can use the `--cleanup` option with the `dsreg` tool. This utility mode is useful in scenarios where you want to ensure that all local traces of the Microsoft Identity Broker are removed from the device, such as when troubleshooting or preparing the device for a new user.
 
-To unregister and remove any key material using the dsreg tool, run the following command in your terminal:
+To unjoin and remove any key material using the dsreg tool, run the following command in your terminal:
 
 ```bash
 # Clean broker state including certificates (requires sudo)
@@ -371,6 +381,16 @@ The following steps configure a reference example of using the YubiKey/Edge brid
 
 ---
 
+
+> [!IMPORTANT] 
+> Microsoft supports application integration with `Microsoft Single Sign-on for Linux` through supported versions of the Microsoft Authentication Library (MSAL).
+>
+>Applications that bypass MSAL and communicate directly with broker implementation interfaces or internal communication channels aren't supported. These interfaces are implementation details and can change between releases without notice.
+>
+>For more information, see [Microsoft Authentication Library (MSAL) overview](/azure/active-directory/develop/msal-overview).
+
+
+---
 
 ## Related Content
 
