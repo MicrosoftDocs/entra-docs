@@ -46,38 +46,64 @@ items:
     items: 
     - name: Application gallery
       href: overview-application-gallery.md
-    - name: Request to publish applications
-      href: v2-howto-app-gallery-listing.md
     - name: Application integration
       href: plan-an-application-integration.md
     - name: Application ownership
       href: overview-assign-app-owners.md
     - name: Application properties
       href: application-properties.md
-    - name: Single sign-on
-      items:
-      - name: What is single sign-on?
-        href: what-is-single-sign-on.md
-      - name: Plan for deployment
-        href: plan-sso-deployment.md
-    - name: Application security
-      items:
-      - name: Migrate away from secret-based authentication
-        href: migrate-applications-from-secrets.md
-      - name: App access options
-        href: what-is-access-management.md
-      - name: Certificate signing options
-        href: certificate-signing-options.md
-      - name: Tenant restrictions
-        href: tenant-restrictions.md
-      - name: Enforce signed SAML authentication requests
-        href: howto-enforce-signed-saml-authentication.md
-      - name: Configure SAML token encryption
-        href: howto-saml-token-encryption.md
-      - name: End-user portals
-        href: end-user-experiences.md
-      - name: Cloud app visibility and control
-        href: cloud-app-security.md
+  - name: Single sign-on
+    items:
+    - name: What is single sign-on?
+      href: what-is-single-sign-on.md
+    - name: SAML versus OpenID Connect
+      href: saml-vs-oidc-decision-guide.md
+    - name: Understand the Microsoft SSO model
+      href: understand-microsoft-sso-model.md
+    - name: Plan SSO integration as an ISV
+      href: plan-sso-integration-isv.md
+  - name: Validate and publish your app to Microsoft Entra App Gallery
+    items:
+    - name: Prerequisites to validate and publish your app
+      href: v2-howto-app-gallery-listing.md
+    - name: SSO requirements for App Gallery
+      href: app-gallery-sso-requirements.md
+    - name: User provisioning requirements for App Gallery
+      href: app-gallery-user-provisioning-requirements.md
+    - name: Validate an OIDC multitenant app
+      href: validate-oidc-multitenant-app-gallery.md
+    - name: Validate a SAML single sign-on app
+      href: validate-saml-single-sign-on-app-gallery.md
+    - name: Validate user provisioning (Preview)
+      href: validate-user-provisioning-app-gallery.md
+    - name: Set up the validation Logic App in the Azure portal (Preview)
+      href: validate-user-provisioning-logic-app.md
+    - name: Troubleshoot user provisioning validation (Preview)
+      href: troubleshoot-user-provisioning-validation.md
+    - name: Plan for deployment
+      href: plan-sso-deployment.md
+    - name: Publish your app to Microsoft Entra App Gallery
+      href: publish-app-gallery.md
+    - name: Update or remove your app
+      href: update-or-remove-app-gallery.md
+  - name: Application security
+    items:
+    - name: Migrate away from secret-based authentication
+      href: migrate-applications-from-secrets.md
+    - name: App access options
+      href: what-is-access-management.md
+    - name: Certificate signing options
+      href: certificate-signing-options.md
+    - name: Tenant restrictions
+      href: tenant-restrictions.md
+    - name: Enforce signed SAML authentication requests
+      href: howto-enforce-signed-saml-authentication.md
+    - name: Configure SAML token encryption
+      href: howto-saml-token-encryption.md
+    - name: End-user portals
+      href: end-user-experiences.md
+    - name: Cloud app visibility and control
+      href: cloud-app-security.md
     - name: Home realm discovery policy
       href: home-realm-discovery-policy.md
     - name: My Apps overview

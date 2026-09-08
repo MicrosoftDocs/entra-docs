@@ -4,7 +4,6 @@ description: Learn how agent identities operate autonomously without user contex
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing autonomous agent scenarios, I want to understand the app-only protocol so that I can enable agents to act independently using client credentials flows.
 ---
@@ -41,7 +40,9 @@ The following are the protocol steps.
     &grant_type=client_credentials
     ```
 
-    Where TUAMI is the managed identity token for user assigned managed identity (UAMI). This step returns T1. Where T1 is the token-exchange token for FIC. 
+    - `fmi_path`: The client ID (app ID) of the agent identity. This parameter tells Microsoft Entra ID which child agent identity the blueprint is impersonating during the token exchange.
+
+    Where TUAMI is the managed identity token for user assigned managed identity (UAMI). This step returns T1. Where T1 is the token-exchange token for FIC.
 
 1. Agent identity sends a token exchange request to Microsoft Entra ID. The request includes the token T1.
 

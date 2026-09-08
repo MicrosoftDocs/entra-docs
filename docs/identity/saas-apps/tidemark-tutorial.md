@@ -2,11 +2,10 @@
 title: Configure Tidemark for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tidemark.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tidemark so that I can control who has access to Tidemark, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Tidemark for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Tidemark with Microsoft Entra ID. When you integrate Tidemark with Microsoft Entra ID, you can:

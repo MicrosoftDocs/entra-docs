@@ -29,20 +29,31 @@ In this tutorial, you learn how to:
 
 Before you try this tutorial, consider the following items:
 
- - Ensure that you're familiar with the basics of Microsoft Entra Cloud Sync.
- - Ensure that you're running Microsoft Entra Connect Sync version 1.4.32.0 or later and that you configured the sync rules as documented.
- - Ensure that for a pilot that you remove a test organizational unit (OU) or group from Microsoft Entra Connect Sync scope. Moving objects out of scope leads to deletion of those objects in Microsoft Entra ID.
+- Ensure that you're familiar with the basics of Microsoft Entra Cloud Sync.
 
-    - User objects in Microsoft Entra ID are soft-deleted, so you can restore them.
-    - Group objects in Microsoft Entra ID are hard-deleted, so you can't restore them.
- 
-     Microsoft Entra Connect Sync introduces a new link type, which prevents the deletion in a piloting scenario.
+- Ensure that you're running Microsoft Entra Connect Sync version 1.4.32.0 or later and that you configured the sync rules as documented.
 
- - Ensure that the objects in the pilot scope have `ms-ds-consistencyGUID` populated so that Microsoft Entra Cloud Sync hard matches the objects.
+- During the pilot or coexistence phase, don't remove the pilot organizational unit (OU), group, domain, or any related referenced objects from Microsoft Entra Connect Sync scope. Keep the objects in scope and use the custom `cloudNoFlow` inbound rule and `JoinNoFlow` outbound rule described in this tutorial to prevent Microsoft Entra Connect Sync from exporting object adds, object deletes, and non-reference attribute updates.
 
-   Microsoft Entra Connect Sync doesn't populate `ms-ds-consistencyGUID` by default for group objects.
+  Removing objects from Microsoft Entra Connect Sync scope removes them from the Active Directory connector space, metaverse, and Microsoft Entra connector space. This removal can remove references in the connector space and cause reference deletes, such as group membership removals, to be exported to Microsoft Entra ID.
+
+- Ensure that the objects in the pilot scope have `ms-ds-consistencyGUID` populated so that Microsoft Entra Cloud Sync hard matches the objects.
+
+  Microsoft Entra Connect Sync doesn't populate `ms-ds-consistencyGUID` by default for group objects.
 
 - Follow the steps in this tutorial precisely. This configuration is for advanced scenarios.
+
+### Plan scope removal from Microsoft Entra Connect Sync
+
+Don't remove OUs, groups, or domains from Microsoft Entra Connect Sync scope during the coexistence or pilot phase. Do this only after migration for that scope is complete and you've verified that Cloud Sync is authoritative for the objects and their references.
+
+Before you remove a scope from Microsoft Entra Connect Sync, verify that:
+
+- All objects in that scope are included in the appropriate Cloud Sync configuration.
+- Related referenced objects, such as group members and managers, are also migrated or no longer depend on Microsoft Entra Connect Sync for reference maintenance.
+- There are no remaining cross-scope or cross-domain references that Microsoft Entra Connect Sync might delete from its connector space and export as reference removals.
+
+Remove a domain from Microsoft Entra Connect Sync only after migration for that domain is complete and you're certain there are no remaining cross-domain references.
 
 ## Prerequisites
 
@@ -80,29 +91,31 @@ Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises 
 
 ## Create a custom user inbound rule
 
-In the Microsoft Entra Connect Synchronization Rules Editor, you need to create an inbound sync rule that filters out users in the OU that you identified previously. The inbound sync rule is a join rule with a target attribute of `cloudNoFlow`. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrate to Microsoft Entra Cloud Sync](migrate-azure-ad-connect-to-cloud-sync.md) before you attempt to migrate your production environment.
-
+In the Microsoft Entra Connect Synchronization Rules Editor, create an inbound sync rule that sets the `cloudNoFlow` attribute to `True` for users in the OU or group that you identified for the pilot. This attribute is used with the `JoinNoFlow` outbound rule later in this tutorial to prevent Microsoft Entra Connect Sync from exporting object adds, object deletes, and non-reference attribute updates for these users. Reference attribute updates, such as `member` and `manager`, can still flow for reference resolution.
+> [!IMPORTANT]
+> The `cloudNoFlow` attribute doesn't place objects in a full read-only or staging mode. When it's used with a `JoinNoFlow` outbound rule, Microsoft Entra Connect Sync prevents object adds, object deletes, and non-reference attribute updates from being exported. However, reference attribute updates, such as `member` and `manager`, can still flow. This behavior supports reference resolution during migration.
+>
+> To avoid unintended reference deletes such as group membership removals, keep both sides of a reference in Microsoft Entra Connect Sync scope while `cloudNoFlow` and `JoinNoFlow` are active. For example, if a group remains in Microsoft Entra Connect Sync and its members are migrated to Microsoft Entra Cloud Sync, keep both the group and member objects in Microsoft Entra Connect Sync scope until the migration for that scope is complete.
 1. Open the Synchronization Rules Editor from the application menu on the desktop.
 
     ![Screenshot that shows the Synchronization Rules Editor menu.](media/tutorial-migrate-aadc-aadccp/user-8.png)
-
 1. Under **Direction**, select **Inbound** from the dropdown list. Then select **Add new rule**.
 
     ![Screenshot that shows the View and manage your synchronization rules window with Inbound and the Add new rule button selected.](media/tutorial-migrate-aadc-aadccp/user-1.png)
-
+   
 1. On the **Description** page, enter the following values and select **Next**:
 
     - **Name**: Give the rule a meaningful name.
     - **Description**: Add a meaningful description.
-        - **Connected System**: Choose the Microsoft Entra connector for which you're writing the custom sync rule.
-        - **Connected System Object Type**: Select **user**.
-        - **Metaverse Object Type**: Select **person**.
-        - **Link Type**: Select **Join**.
-        - **Precedence**: Provide a value that's unique in the system.
-        - **Tag**: Leave this field empty.
+    - **Connected System**: Choose the Microsoft Entra connector for which you're writing the custom sync rule.
+    - **Connected System Object Type**: Select **user**.
+    - **Metaverse Object Type**: Select **person**.
+    - **Link Type**: Select **Join**.
+    - **Precedence**: Provide a value that's unique in the system.
+    - **Tag**: Leave this field empty.
 
     ![Screenshot that shows the Create inbound synchronization rule - Description page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
-  
+   
 1. On the **Scoping filter** page, enter the OU or security group on which you want to base the pilot. To filter on OU, add the OU portion of the distinguished name. This rule applies to all users who are in that OU. So, if the distinguished name (DN) ends with `OU=CPUsers,DC=contoso,DC=com`, you add this filter. Then select **Next**.
 
     |Rule|Attribute|Operator|Value|
@@ -110,41 +123,43 @@ In the Microsoft Entra Connect Synchronization Rules Editor, you need to create 
     |Scoping OU|`DN`|`ENDSWITH`|Distinguished name of the OU.|
     |Scoping group||`ISMEMBEROF`|Distinguished name of the security group.|
 
-    ![Screenshot that shows the sync rule scoping filters.](media/tutorial-migrate-aadc-aadccp/user-3.png)
 
- 5. On the **Join** rules page, select **Next**.
- 6. On the **Transformations** page, add a Constant transformation: Source value of True for the cloudNoFlow attribute. Select **Add**.
+   ![Screenshot that shows the sync rule scoping filters.](media/tutorial-migrate-aadc-aadccp/user-3.png)
+
+1. On the **Join** rules page, select **Next**.
+1. On the **Transformations** page, add a Constant transformation: Source value of True for the cloudNoFlow attribute. Select **Add**.
 
 
-    ![Screenshot that shows the sync rule transformations.](media/tutorial-migrate-aadc-aadccp/user-4.png)
-
+   ![Screenshot that shows the sync rule transformations.](media/tutorial-migrate-aadc-aadccp/user-4.png)
+   
 Follow the same steps for all object types (user, group, and contact). Repeat the steps according to the configured Active Directory connector or Active Directory forest.
 
 ## Create a custom user outbound rule
 
-You need an outbound sync rule with a link type of `JoinNoFlow` and the scoping filter that has the `cloudNoFlow` attribute set to `True`. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrate to Microsoft Entra Cloud Sync](migrate-azure-ad-connect-to-cloud-sync.md) before you attempt to migrate your production environment.
+You need an outbound sync rule with a link type of `JoinNoFlow` and the scoping filter that has the `cloudNoFlow` attribute set to `True`. This rule tells Microsoft Entra Connect Sync not to export object adds, object deletes, or non-reference attribute updates for these users. Reference attribute updates, such as `member` and `manager`, can still flow for reference resolution.
+
 
 1. Under **Direction**, select **Outbound** from the dropdown list. Then select **Add rule**.
 
     ![Screenshot that shows the Outbound sync rules.](media/tutorial-migrate-aadc-aadccp/user-5.png)
-
+   
 1. On the **Description** page, enter the following values and select **Next**:
 
     - **Name**: Give the rule a meaningful name.
     - **Description**: Add a meaningful description.
-        - **Connected System**: Choose the Microsoft Entra connector for which you're writing the custom sync rule.
-        - **Connected System Object Type**: Select **user**.
-        - **Metaverse Object Type**: Select **person**.
-        - **Link Type**: Select **JoinNoFlow**.
-        - **Precedence**: Provide a value that's unique in the system.
-        - **Tag**: Leave this field empty.
+    - **Connected System**: Choose the Microsoft Entra connector for which you're writing the custom sync rule.
+    - **Connected System Object Type**: Select **user**.
+    - **Metaverse Object Type**: Select **person**.
+    - **Link Type**: Select **JoinNoFlow**.
+    - **Precedence**: Provide a value that's unique in the system.
+    - **Tag**: Leave this field empty.
 
     ![Screenshot that shows the sync rule description.](media/tutorial-migrate-aadc-aadccp/user-6.png)
-  
+   
 1. On the **Scoping filter** page, for the **Attribute**, select **cloudNoFlow**. For **Value**, select **True**. Then select **Next**.
 
     ![Screenshot that shows a custom rule.](media/tutorial-migrate-aadc-aadccp/user-7.png)
-
+   
 1. On the **Join rules** page, select **Next**.
 
 1. On the **Transformations** page, select **Add**.
@@ -173,7 +188,6 @@ To configure provisioning, follow these steps:
 
 3. Select **New configuration**.
 
-
     :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot that shows adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
 
 4. On the configuration screen, select your domain and whether to enable password hash sync. Then select **Create**.
@@ -187,6 +201,7 @@ To configure provisioning, follow these steps:
 6. Select the scoping filter. For this tutorial, select **Selected organizational units**. This filter scopes the configuration to apply to specific OUs.
 
 7. In the box, enter **OU=CPUsers,DC=contoso,DC=com**.
+
     :::image type="content" source="media/tutorial-migrate-aadc-aadccp/configure-1.png" alt-text="Screenshot that shows the scoping filter." lightbox="media/tutorial-migrate-aadc-aadccp/configure-1.png":::
 
 8. Select **Add** > **Save**.
@@ -202,7 +217,10 @@ Microsoft Entra Connect Sync synchronizes changes that occur in your on-premises
 > [!NOTE]
 > If you're running your own custom scheduler for Microsoft Entra Connect Sync, reenable the custom sync scheduler.
 
-After the scheduler is enabled, Microsoft Entra Connect stops exporting any changes on objects with `cloudNoFlow=true` in the metaverse, unless any reference attribute (such as `manager`) is being updated. If there's any reference attribute update on the object, Microsoft Entra Connect ignores the `cloudNoFlow` signal and exports all updates on the object.
+After the scheduler is enabled, Microsoft Entra Connect Sync stops exporting object adds, object deletes, and non-reference attribute updates for objects where `cloudNoFlow=true` in the metaverse and the outbound rule uses `JoinNoFlow`. Reference attributes are handled differently. Updates to reference attributes, such as `member` and `manager`, can still be exported for reference resolution.
+
+If an object is removed from Microsoft Entra Connect Sync scope, its connector space and metaverse objects are removed. Any references to or from that object can be dropped in the Microsoft Entra connector space and exported as reference deletes. This behavior can cause group membership removals or other reference changes in Microsoft Entra ID.
+
 
 ## Troubleshooting
 
@@ -210,6 +228,13 @@ If the pilot doesn't work as expected, go back to the Microsoft Entra Connect Sy
 
 1. Disable provisioning configuration in the portal.
 1. Use the Sync Rule Editor tool to disable all the custom sync rules that you created for cloud provisioning. Disabling causes a full sync on all the connectors.
+
+### Removed group memberships or manager references
+
+This issue can happen if objects are removed from Microsoft Entra Connect Sync scope while related groups, users, contacts, or other referenced objects are still in coexistence. When objects are removed from scope, Microsoft Entra Connect Sync removes the corresponding connector space and metaverse objects. This removal can drop references in the Microsoft Entra connector space and export reference deletes to Microsoft Entra ID.
+
+To recover, readd the affected objects to Microsoft Entra Connect Sync scope and run a full synchronization to rebuild the connector space and metaverse references. Before you attempt to remove the scope again, verify that Microsoft Entra Cloud Sync is provisioning all affected objects and that references, such as group memberships and manager relationships, remain intact after a Cloud Sync provisioning cycle.
+
 
 ## Related content
 

@@ -2,8 +2,7 @@
 title: Resilience through monitoring and analytics using Azure AD B2C
 description: Resilience through monitoring and analytics using Azure AD B2C
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.date: 05/20/2025
 ms.subservice: architecture
 ---

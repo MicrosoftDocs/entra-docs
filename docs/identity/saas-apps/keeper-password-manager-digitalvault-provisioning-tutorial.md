@@ -1,13 +1,11 @@
 ---
 title: Configure Keeper Password Manager & Digital Vault for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Keeper Password Manager & Digital Vault.
-author: jeevansd
 ms.topic: how-to
 ms.date: 04/08/2026
-ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Keeper Password Manager & Digital Vault so that I can streamline the user management process and ensure that users have the appropriate access to Keeper Password Manager & Digital Vault.
----
+--- 
 
 # Configure Keeper Password Manager & Digital Vault for automatic user provisioning with Microsoft Entra ID
 

@@ -2,8 +2,6 @@
 title: "Quickstart: Add sign in to a Python Django web app"
 description: Learn how to run a sample Python Django web app to sign in users
  
-author: SHERMANOUKO
-ms.author: shermanouko
  
 ms.custom: devx-track-python
 ROBOTS: NOINDEX

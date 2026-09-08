@@ -1,10 +1,9 @@
 ---
 title: Fundamentals of securing with Microsoft Entra ID
 description: Fundamentals of securing your tenants in Microsoft Entra ID.
-author: gargi-sinha
 ms.topic: concept-article
 ms.date: 08/25/2024
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.custom: sfi-ga-nochange
 ms.subservice: architecture
 ---

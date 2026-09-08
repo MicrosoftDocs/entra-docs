@@ -6,7 +6,6 @@ ms.date: 01/03/2025
 ms.reviewer: vincesm
 ms.custom: it-pro, no-azure-ad-ps-ref
 
-
 ---
 
 # Create a role-assignable group in Microsoft Entra ID

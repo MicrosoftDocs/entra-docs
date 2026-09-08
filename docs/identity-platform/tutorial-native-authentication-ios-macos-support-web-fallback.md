@@ -2,10 +2,8 @@
 title: Support web fallback
 description: Learn how to implement web fallback in an iOS/macOS application by using native authentication to ensure stability in authentication flow.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external

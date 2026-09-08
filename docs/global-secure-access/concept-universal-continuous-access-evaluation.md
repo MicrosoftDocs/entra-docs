@@ -3,9 +3,7 @@ title: Learn about Universal Continuous Evaluation
 description: Learn about Universal Continuous Evaluation concepts
 ms.topic: concept-article
 ms.date: 02/02/2026
-ms.author: alexpav
-author: idmdev
-ms.reviewer: dhruvinshah
+ms.reviewer: alexpav
 ---
 # Universal Continuous Access Evaluation
 

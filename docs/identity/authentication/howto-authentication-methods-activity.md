@@ -3,7 +3,6 @@ title: Authentication Methods Activity
 description: Overview of the authentication methods that users register to sign in and reset passwords.
 ms.topic: how-to
 ms.date: 10/22/2025
-author: sopand
 ms.reviewer: dawoo
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---

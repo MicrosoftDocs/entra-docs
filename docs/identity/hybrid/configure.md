@@ -1,7 +1,6 @@
 ---
 title: 'Configure your integration with Active Directory'
 description: This article describes how you can configure the synchronization tools with Active Directory.
-
 ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025

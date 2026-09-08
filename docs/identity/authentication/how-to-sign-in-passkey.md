@@ -1,82 +1,95 @@
 ---
-title:  Sign in with a passkey (FIDO2) for your work or school account
-description: Learn how to sign in with a passkey (FIDO2) for your work or school account.
-
-services: active-directory
+title: Sign in with a synced passkey (FIDO2)
+description: Learn how to sign in to Microsoft Entra ID with a synced passkey (FIDO2) for your work or school account by using a browser on Windows, iOS, or Android.
 ms.topic: how-to
-ms.date: 11/10/2025
+ms.date: 07/05/2026
 ms.reviewer: kimhana
-
 ms.collection: M365-identity-device-management
-# Customer intent: As an identity administrator, I want to understand how users will sign in with a security key. 
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
+# Customer intent: As an identity administrator, I want to understand how users will sign in with a passkey.
 
 ---
-# Sign in with a passkey (FIDO2) for your work or school account 
+# Sign in with a synced passkey (FIDO2)
 
-This article covers different ways that users can sign in to Microsoft Entra ID with a passkey. 
+This article describes how to sign in to your work or school account with a synced passkey.
 
-- [Sign in with a passkey (FIDO2) saved on the same device](#sign-in-with-a-passkey-fido2-saved-on-the-same-device)
-- [Sign in with a passkey (FIDO2) saved on another device](#sign-in-with-a-passkey-fido2-saved-on-another-device)
-- [Sign in with a passkey (FIDO2) saved on a security key](#sign-in-with-a-passkey-fido2-saved-on-a-security-key)
+Your passkey can be synced to the same device where you want to sign in, or it can be synced to another device.
 
-For more information about how to sign in with a passkey in Microsoft Authenticator, see [Sign in with passkeys in Authenticator for Android and iOS devices](~/identity/authentication/how-to-sign-in-passkey-authenticator.md).
+- [Use a passkey from the same device](#use-a-passkey-from-the-same-device)
+- [Use a passkey from another device](#use-a-passkey-from-another-device)
 
-For more information about the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
+## Use a passkey from the same device
 
-## Sign in with a passkey (FIDO2) saved on the same device
+1. Select **Sign in** for a Microsoft application or website such as the [Azure portal](https://ms.portal.azure.com/).
 
-1. Open your browser and go to the resource you're trying to access, such as [Office](https://www.office.com).
+1. If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Choose your account.
 
-1. You can enter your username to sign in. If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN, or security key**. 
+    :::image type="content" source="media/how-to-sign-in-passkey/choose-synced-passkey-account.png" alt-text="Screenshot that shows the Pick an account dialog with a work or school account." lightbox="media/how-to-sign-in-passkey/choose-synced-passkey-account.png":::
 
-   Alternatively, click **Sign-in options** to sign in more conveniently without having to enter a username. If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to next step.
-   
-1. Your device opens a security window. To use your security key, follow the steps in the operating system or browser dialog. Verify that it's you by scanning your fingerprint or entering your PIN.
+    Otherwise, you can enter your username and select **Next** to sign in.
 
-## Sign in with a passkey (FIDO2) saved on another device  
+    :::image type="content" source="media/how-to-sign-in-passkey/sign-in-options-name.png" alt-text="Screenshot that shows the Sign in dialog with a username entered and the Next button." lightbox="media/how-to-sign-in-passkey/sign-in-options-name.png":::
 
-1. Open your browser and go to the resource you're trying to access, such as [Office](https://www.office.com).
-1. You can enter your username to sign in. If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN, or security key**.
+1. Complete multifactor authentication (MFA).
 
-   Alternatively, select **Sign-in options** to sign in more conveniently without having to enter a username. If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to the next step.
+1. You're signed in with your work or school account.
 
-1. Your device opens a security window. To begin cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select iPhone, iPad, or Android device.
-1. A QR code should appear on the screen. Now, on your mobile device, open the camera app and scan the QR code.
-1. Select **Sign in with passkey** when the option appears.
-1. Bluetooth and an internet connection are required for this step and must both be enabled on your mobile and remote device.
-1. To select your passkey, follow the steps in the iOS operating system dialog. Verify yourself by using face, fingerprint or device PIN.
-1. You’re now signed in to Microsoft Entra ID.
+## Use a passkey from another device
 
+1. Select **Sign in** for a Microsoft application or website such as the [Azure portal](https://ms.portal.azure.com/).
 
-## Sign in with a passkey (FIDO2) saved on a security key
+1. In Microsoft Edge, right-click where you enter your name, select **Use passkey from another device** > **Use a phone, tablet or security key**.
 
-1. Open your browser and go to the resource you're trying to access, such as [Office](https://www.office.com).
-1. You can enter your username to sign in. If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN, or security key**.
+    :::image type="content" source="media/how-to-sign-in-passkey/use-passkey-from-another-device-edge.png" alt-text="Screenshots that show the Use passkey from another device option in Microsoft Edge and the Use a phone, tablet or security key option in the Sign in using a saved passkey dialog." lightbox="media/how-to-sign-in-passkey/use-passkey-from-another-device-edge.png":::
 
-   Alternatively, select **Sign-in options** to sign in more conveniently without having to enter a username. If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to the next step.
+    In Google Chrome, select where you enter your name, then select **Use passkey from another device**.
 
-1. Your device opens a security window. To use your security key, follow the steps in the operating system or browser dialog. Scan your fingerprint or enter your PIN to verify that it's you.
-1. Once you're signed in, your device displays a screen similar to this one:
+    :::image type="content" source="media/how-to-sign-in-passkey/use-passkey-on-another-device-chrome.png" alt-text="Screenshot that shows the Use passkey from another device option in the Chrome account list." lightbox="media/how-to-sign-in-passkey/use-passkey-on-another-device-chrome.png":::
 
-   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/welcome.png" alt-text="Screenshot of Microsoft Welcome page.":::
+    You can also click **Sign in**, select **Sign-in options** > **Face, fingerprint, PIN or security key**.
+
+    :::image type="content" source="media/how-to-sign-in-passkey/sign-in-options-combined.png" alt-text="Screenshots that show the Sign-in options button and the Face, fingerprint, PIN or security key option.":::
+
+1. Select **iPhone, iPad, or Android device**. The other sign-in options that are shown vary depending on your account and device.
+
+    :::image type="content" source="media/how-to-sign-in-passkey/sign-in-options-device.png" alt-text="Screenshot that shows the iPhone, iPad, or Android device option in the Choose a passkey dialog." lightbox="media/how-to-sign-in-passkey/sign-in-options-device.png":::
+
+1. The device where you want to sign in shows a QR code. Scan the QR code with the other device that has your passkey.
+
+    :::image type="content" source="media/how-to-sign-in-passkey/scan-code-no-name.png" alt-text="Screenshot that shows the Sign in with a passkey dialog with a QR code to scan." border="true" lightbox="media/how-to-sign-in-passkey/scan-code-no-name.png":::
+
+1. On iOS, select **Sign in with passkey**. On Android, select **Use passkey to sign in**.
+
+1. Bluetooth and an internet connection are required for this step and must be enabled on both devices. The device where you want to sign in shows this screen:
+
+    :::image type="content" source="media/how-to-sign-in-passkey/device-connected.png" alt-text="Screenshot that shows the Sign in with a passkey dialog with a Device connected message." border="true" lightbox="media/how-to-sign-in-passkey/device-connected.png":::
+
+1. Complete multifactor authentication (MFA).
+
+1. You're signed in with the synced passkey for your work or school account.
 
 ## Known issues
 
-Review the following known issues to avoid problems with passkey (FIDO2) sign-in.
+Review the following known issues to avoid problems with synced passkey sign-in.
 
 ### Bluetooth must be enabled on both devices for cross-device authentication
 
-If you’re signing-in using a different mobile device, Bluetooth must be enabled on the device you are trying to sign-in on and the mobile device with the passkey.
+If you're signing in by using a different mobile device, Bluetooth must be enabled on the device you're trying to sign in on and the mobile device with the passkey.
+
+Some organizations restrict Bluetooth usage, which includes the use of passkeys. In such cases, organizations can allow passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=intune#passkeys-in-bluetooth-restricted-environments).
 
 ### Orphaned passkey
 
-An orphaned passkey occurs when a passkey remains on a user’s device but is no longer registered with Microsoft Entra ID. This typically happens if the passkey was deleted from a user's Security info or removed due to policy changes, but the local credential was not cleaned up.
+An orphaned passkey occurs when a passkey remains on a user's device but is no longer registered with Microsoft Entra ID. This typically happens if the passkey was deleted from a user's Security info or removed due to policy changes, but the local credential wasn't cleaned up.
 
 If you're blocked from sign-in by an orphaned passkey:
 
-1. Remove the orphaned passkey from the device or passkey authenticator.
+1. Remove the orphaned passkey from the device or passkey provider.
 1. Re-register a new passkey after cleanup.
 
-## Next steps
+## Related content
 
+- [Register a synced passkey (FIDO2)](how-to-register-passkey.md)
+- [Synced passkeys in Microsoft Entra ID](how-to-synced-passkeys.md)
 - [Support for passkey (FIDO2) authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md)

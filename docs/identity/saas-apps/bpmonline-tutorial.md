@@ -2,11 +2,10 @@
 title: Configure Creatio for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Creatio.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Creatio so that I can control who has access to Creatio, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Creatio for Single sign-on with Microsoft Entra ID
 
@@ -74,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     | Identifier |
     |-------------|
-    | `https://<SUBDOMAIN>.creatio.com/` |
+    | `https://<SUBDOMAIN>.creatio.com` |
 
     b. In the **Reply URL** text box, type a URL using one of the following patterns:
 

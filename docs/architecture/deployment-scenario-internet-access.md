@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra Suite deployment scenario - Secure internet access
 description: Configure Microsoft Entra Suite products for strict default internet access policies to control internet access according to business requirements.
-ms.author: gasinh
-author: gargi-sinha
+ms.reviewer: gasinh
 ms.topic: concept-article
 ms.date: 06/13/2024
 ms.custom: sfi-ga-nochange

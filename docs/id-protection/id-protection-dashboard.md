@@ -133,13 +133,11 @@ Recent Activity provides a summary of recent risk-related activities in your ten
 
 [![Screenshot showing recent activities in the dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-recent-activities.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-recent-activities.png)
 
-## Unified risk signals for ID Protection user risk (Preview)
+## Unified risk signals
 
-Microsoft Entra ID Protection now provides unified risk signals for user risk detections. This feature, currently in preview, uses signals from Microsoft Defender and even non-Microsoft signals for an enhanced risk detection experience. This new identity fabric provides comprehensive signals to calculate the Identity Risk Score. When the Identity Risk Score is raised, the Microsoft Entra score is also raised using the unified risk signals, which can automatically trigger your risk-based Conditional Access policies.
+Microsoft Entra ID Protection provides unified risk signals that aggregate correlated risk signals from Microsoft Entra ID Protection, Microsoft Defender, and other Microsoft security products. Instead of evaluating alerts in isolation, this capability correlates identity-related signals across products and evaluates them together within the same time window to calculate a compounded user risk score.
 
-To configure this new capability, browse to the **Identity Protection Dashboard** > **Settings**. Select the option to either enable unified risk for all users or select users and groups. Once enabled, the Identity Risk Score and the details associated with the unified risk appear in the [Risky user report](concept-risky-user-report.md).
-
-:::image type="content" source="media/id-protection-dashboard/unified-risk-settings.png" alt-text="Screenshot of the unified risk settings options." lightbox="media/id-protection-dashboard/unified-risk-settings.png":::
+This requires Microsoft Defender for Identity to be configured. For full details on how unified risk works, how to enable it, and how to troubleshoot common issues, see [Unified risk signals in Microsoft Entra ID Protection](concept-identity-protection-unified-risk.md).
 
 ## Known issues
 

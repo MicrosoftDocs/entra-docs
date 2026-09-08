@@ -4,7 +4,6 @@ description: Explains the steps that are required to implement Microsoft Entra h
 
 ms.topic: concept-article
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo
 ---
 

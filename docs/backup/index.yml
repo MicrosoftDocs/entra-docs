@@ -6,9 +6,6 @@ summary: Learn how to use Microsoft Entra Backup and Recovery to protect your te
 metadata:
   title: Microsoft Entra Backup and Recovery documentation
   description: Microsoft Entra Backup and Recovery enables you to recover critical directory objects such as users, groups, apps, and policies to a previously known good state.
-  author: barclayn
-  manager: dougeby
-  ms.author: barclayn
   ms.date: 03/02/2026
   ms.service: entra-id
   ms.topic: landing-page

@@ -1,13 +1,13 @@
 ---
-title: Tutorial - Use Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
-description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
+title: Tutorial - Use Face Check with Microsoft Entra Verified ID
+description: Learn how to set up and use Face Check with Microsoft Entra Verified ID for high-assurance facial matching verifications that protect user privacy at enterprise scale.
 ms.topic: tutorial
-ms.date: 04/30/2025
-ms.custom: sfi-image-nochange
+ms.date: 05/07/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1012
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 ---
 
-# Use Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
+# Use Face Check with Microsoft Entra Verified ID
 
 
 ## Overview
@@ -18,7 +18,7 @@ Face Check is a privacy-respecting facial matching. It allows enterprises to per
 
 ## Prerequisites
 
-Face Check is a premium feature within Verified ID. You need to enable the Face Check Add-on in your Microsoft Entra Verified ID setup before doing Face Check verifications.
+Face Check is a premium feature within Verified ID. If you're a Microsoft Entra Suite customer, Face Check is included as part of the Suite. If you're not using Microsoft Entra Suite, you need to enable the Face Check Add-on in your Microsoft Entra Verified ID setup before doing Face Check verifications.
 
 - Make sure Microsoft Entra Verified ID is [set up in your tenant](verifiable-credentials-configure-tenant-quick.md) before using Face Check.
 - [Associate or add an Azure subscription to your Microsoft Entra tenant](/entra/fundamentals/how-subscriptions-associated-directory)
@@ -29,9 +29,12 @@ Face Check is a premium feature within Verified ID. You need to enable the Face 
 The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you're going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level, and the configuration applies to all authorities within that tenant. For any other licenses, you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
 
 > [!NOTE]
-> The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
+> The ARM Rest API for Microsoft Entra Verified ID is currently in preview.
 
 ### Set up Face Check with Microsoft Entra Verified ID in the Admin Center
+
+To enable the Face Check add-on from the admin center, follow these steps:
+
 1. In the Verified ID overview page, scroll down to the new Add-ons section and **Enable** the Face Check add-on.
 
     :::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of Microsoft Entra Verified ID overview page showing Face Check add-on in Add-ons section with Enable button.":::
@@ -49,7 +52,7 @@ Now you can start using Face Check in your enterprise applications.
 ### Set up Face Check with Microsoft Entra Verified ID using the Azure Resource Manager (ARM) Rest API
 
 > [!NOTE]
-> The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
+> The ARM Rest API for Microsoft Entra Verified ID is currently in preview.
 
 To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. This mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly.
 
@@ -80,7 +83,7 @@ You can easily get started using Face Check by using [MyAccount](https://myaccou
 1. Go to [MyAccount](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials), sign in as the test user and issue a `VerifiedEmployee` credential for the user.
 1. Use the [public test app](https://aka.ms/vcempver) to present your `VerifiedEmployee` credential using Face Check.
 
-When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user selects on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You can review the results on the Test app.
+When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user selects that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You can review the results on the Test app.
 
 > [!NOTE]
 > MyAccount uses the Microsoft Entra ID user profile photo when issuing the VerifiedEmployee credential. You can retrieve your photo via Microsoft Graph API `https://graph.microsoft.com/v1.0/me/photos/240x240/$value`
@@ -128,7 +131,7 @@ The claim containing the photo must be named and you might optionally specify yo
   "requestedCredentials": [
     {
       "type": "VerifiedEmployee",
-      "acceptedIssuers": [ "did:web:yourdomain.com" ],
+      "acceptedIssuers": [ "did:web:woodgrove.com" ],
       "configuration": {
         "validation": {
           "allowRevoked": false,
@@ -147,7 +150,7 @@ The JSON payload for the `presentation_verified` has more data in the response w
 ```json
   "verifiedCredentialsData": [ 
     { 
-      "issuer": "did:web:yourdomain.com", 
+      "issuer": "did:web:woodgrove.com", 
       "type": [ "VerifiableCredential", "VerifiedEmployee" ], 
       "claims": { 
         ... 
@@ -226,7 +229,7 @@ Face Check with Microsoft Entra Verified ID is a premium feature within Verified
 
 ### What is the difference between Face Check and Face ID?
 
-Face ID is a vision based biometric security option offer on Apple products for unlocking a device to access to a mobile app. Face Check is a Microsoft Entra Verified ID feature that also uses vision based AI technology, but compares the user to the presented Verified ID. Face Check determines the user identity across a wide range of online scenarios where high-assurance access is required. Some examples of that are high value business processes or access to sensitive company information. Both mechanisms require a user to face a camera in the process but operate in different ways.
+Face ID is a vision-based biometric security option offered on Apple products for unlocking a device to access to a mobile app. Face Check is a Microsoft Entra Verified ID feature that also uses vision based AI technology, but compares the user to the presented Verified ID. Face Check determines the user identity across a wide range of online scenarios where high-assurance access is required. Some examples of that are high value business processes or access to sensitive company information. Both mechanisms require a user to face a camera in the process but operate in different ways.
 
 ### Is the Face Check biometric vision check performed on the mobile device?
 
@@ -238,10 +241,76 @@ Face Check with Microsoft Entra Verified ID uses Azure AI Vision Face API livene
 
 ### What happens to the liveness data taken?
 
-When the camera is turned on the mobile device, live footage is captured on the mobile device. This footage is then passed to Verified ID who uses it to invoke services of Azure AI services.
+When the camera is turned on the mobile device, live footage is captured on the mobile device. This footage is then passed to Verified ID, which uses it to invoke Azure AI services.
 
 Data isn't stored by or kept by any of the services Microsoft Authenticator, Verified ID, or Azure AI. Furthermore, the footage isn't shared with the verifier application either. The verifier application only gets the confidence score in return. In an AI based system, the confidence score is the probability percentage answer for a query to the system. For this scenario, the confidence score is the likelihood the Verified ID user photo matches user capture on the mobile device.
 For more information, see [Data and privacy for Azure AI Services](/legal/cognitive-services/face/data-privacy-security).
+
+### What device security requirements are needed to support Verified ID Face Check?
+
+Verified ID Face Check requires devices that meet platform-specific OS and device integrity requirements. These checks ensure Face Check results are generated on trusted devices and protect against spoofing, tampering, or replay attacks.
+
+Both Android and iOS require secure, unmodified devices running supported OS versions, though enforcement mechanisms differ by platform.
+
+#### Android device requirements
+
+Verified ID Face Check on Android requires both a supported Android version and strong device integrity validation via Google.
+
+**Android version**
+
+Devices must run Android API level 26 or higher. This aligns with the minimum requirements of the Azure Face client used by Face Check.
+
+For more information, see [Azure AI Vision Face UI – Android requirements](/azure/ai-services/computer-vision/overview-identity).
+
+**Device integrity (Google Play Integrity)**
+
+The device must pass Google Play Integrity checks and return a `MEETS_STRONG_INTEGRITY` verdict.
+
+This indicates that:
+
+- The device isn't rooted.
+- The device passes Google-certified system integrity checks.
+- The device is running with acceptable security patch levels.
+
+Face Check results from devices that don't meet this integrity level are rejected for security reasons, even if the Android OS version is supported.
+
+For more information, see [Google Play Integrity API – optional device integrity labels](https://developer.android.com/google/play/integrity).
+
+**Authenticator installation**
+
+Microsoft Authenticator must be installed via the Google Play Store, ensuring:
+
+- The app itself is trusted.
+- Play Integrity enforcement can be applied correctly.
+
+#### iOS device requirements
+
+Verified ID Face Check on iOS relies on Apple's device trust and platform security guarantees.
+
+**iOS version**
+
+Devices must run a supported version of iOS (iOS 11 or later).
+
+**Device trust**
+
+iOS devices are expected to:
+
+- Be unmodified (not jailbroken).
+- Use Apple-provided device security and trust mechanisms.
+
+Apple doesn't provide granular, customer-visible integrity verdicts like Android. However, similar device trust checks are enforced internally to protect Face Check flows.
+
+For more information, see [Apple DeviceCheck documentation](https://developer.apple.com/documentation/devicecheck).
+
+#### Why these requirements exist
+
+Verified ID Face Check is designed for high-assurance identity verification scenarios. Device security requirements help ensure that:
+
+- Camera input can't be tampered with.
+- Biometric signals originate from trusted hardware and OS components.
+- Results can't be replayed or manipulated on compromised devices.
+
+Without these controls, Face Check results could be spoofed or reused, weakening the security guarantees of Verified ID.
 
 ### How much does Face Check cost?
 For the latest information about usage billing and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
@@ -255,14 +324,14 @@ A subscription exists, but it isn't associated with your directory yet. You can 
 
 No subscription exists. In the Link a subscription pane, you can create a subscription by selecting the link if you don't already have a subscription you might create one here. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for linking it to your tenant.
 
-## Frequently asked questions for Face Check Developers 
-### Does Face Check Require MS Authenticator?
+## Frequently asked questions for Face Check developers
+### Does Face Check require Microsoft Authenticator?
 
-Yes. Face Check is limited to Verified ID usage with MS Authenticator. This limitation is in place to prevent injection attack on Face Check. For non-Face Check scenarios, a Wallet SDK is available other Verified ID solutions. For more information, see [Using the Wallet Library](decentralized-identifier-overview.md).
+Yes. Face Check is limited to Verified ID usage with Microsoft Authenticator. This limitation is in place to prevent injection attacks on Face Check. For non-Face Check scenarios, a Wallet SDK is available for other Verified ID solutions. For more information, see [Using the Wallet Library](decentralized-identifier-overview.md).
 
 ### What is the confidence percentage match and what does confidence mean?
 
-Organizations can choose their confidence score threshold for their application to accept a Face Check verification. A higher threshold means that it's less likely for an impersonator to be falsely accepted. At the default confidence score of 50%, the chance that the person in the live selfie isn't the rightful credential owner is one in 100,000. The required level depends on the specific scenario, how public the entry point is and the planned users. At a 90% confidence score, that false positive user chance is one in a billion. A higher threshold results in the increased potential for an authorized user being rejected due to the higher sensitivity of the application. It's important to find the right balance between setting a high confidence score threshold that secures your application while not making it so high that it often rejects authorized users due to slight changes in appearance or the visual conditions of their surroundings such as lighting.
+Organizations can choose their confidence score threshold for their application to accept a Face Check verification. A higher threshold means that it's less likely for an impersonator to be falsely accepted. At the minimum confidence score of 50%, the chance that the person in the live selfie isn't the rightful credential owner is one in 100,000. The required level depends on the specific scenario, how public the entry point is and the planned users. At a 90% confidence score, that false positive user chance is one in a billion. A higher threshold results in the increased potential for an authorized user being rejected due to the higher sensitivity of the application. It's important to find the right balance between setting a high confidence score threshold that secures your application while not making it so high that it often rejects authorized users due to slight changes in appearance or the visual conditions of their surroundings such as lighting.
 
 Learn more about [Azure Face API](/legal/cognitive-services/face/characteristics-and-limitations).  
 
@@ -272,7 +341,7 @@ Azure AI is a suite of cloud services on the Azure Platform. The Azure AI Vision
 
 ### How fair is Azure AI Vision Face API?
 
-Microsoft has conducted fairness testing of the Face API. The Azure AI services team is continuously striving to ensure responsible and inclusive use of AI. The Face API Fairness report is available [here](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information).
+Microsoft has conducted fairness testing of the Face API. The Azure AI services team is continuously striving to ensure responsible and inclusive use of AI. The [Face API Fairness report](https://visionstudio-dev-8.azurewebsites.net/responsibleAI/face-fairness/information) is available for review.
 
 ### Are you iBeta Level 2 conformant?
 

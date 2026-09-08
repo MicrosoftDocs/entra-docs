@@ -2,10 +2,7 @@
 title: Best practices for Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Learn operational best practices for designing, securing, and governing AI agent identities with Microsoft Entra Agent ID, including blueprint design, credential management, access controls, and monitoring strategies.
-author: omondiatieno
-ms.author: jomondi
 ms.date: 03/27/2026
-ms.service: entra-id
 ms.topic: best-practice
 ai-usage: ai-assisted
 ms.reviewer: kylemar
@@ -18,8 +15,6 @@ ms.reviewer: kylemar
 This article provides operational best practices for designing, securing, and governing AI agent identities with Microsoft Entra Agent ID. These recommendations help you make informed decisions when planning agent deployments, managing credentials, enforcing access policies, and monitoring agent activity.
 
 For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md) and [Key concepts](identity-platform/key-concepts.md).
-
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
 ## Design agent identity blueprints
 
@@ -37,7 +32,20 @@ For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-micro
 
 - **Use the Agent ID framework for all agents.** Don't create AI agents as plain app registrations or service principals outside the Agent ID framework. Always use the supported [creation channels](agent-id-creation-channels.md) so agents are tracked as agent identities with built-in sponsor accountability and lifecycle controls.
 
-- **Create agent user accounts only when necessary.** [Agent user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent user accounts because they add complexity with licenses, group memberships, and user-level policies.
+- **Create agent's user accounts only when necessary.** [Agent's user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent's user accounts because they add complexity with licenses, group memberships, and user-level policies.
+
+## Guardrails for AI coding assistants
+
+AI coding assistants often default to creating a standard app registration when asked to build an agent, because that's the traditional workload identity pattern. Add the following to your repository's `.github/copilot-instructions.md` or `AGENTS.md` file so AI coding assistants use agent identities correctly:
+
+```markdown
+## Microsoft Entra Agent ID
+- To give an AI agent its own identity in Microsoft Entra, create an agent identity blueprint, then create agent identities from it.
+- Don't create or reuse a standard app registration or service principal to represent an agent. Never use `az ad app create`, `New-MgApplication`, `New-AzADApplication`, or `POST /applications` to create an agent identity.
+- In .NET, use the Microsoft.Identity.Web.AgentIdentities package: call builder.Services.AddAgentIdentities(), then acquire tokens with WithAgentIdentity(agentIdentity) (app-only) or WithAgentUserIdentity(agentIdentity, user) (on behalf of a user).
+- Requires the Agent ID Developer or Agent ID Administrator role and the AgentIdentityBlueprint.Create permission.
+- Reference: /entra/agent-id/how-to-plan-agent-identity-architecture
+```
 
 ## Manage credentials securely
 
@@ -108,11 +116,11 @@ Smooth agent deployments require alignment between developers building agents an
 
 - **Use supported creation channels.** Build agents through [Copilot Studio, Graph APIs, or the Agent 365 CLI](agent-id-creation-channels.md) rather than manual Graph calls that might miss required properties. These tools handle blueprint creation, credential binding, and instance setup automatically.
 
-- **Establish a production handshake process.** When a new agent moves to production, have an identity admin verify its Entra Agent ID settings: confirm the blueprint and sponsor are correct, required permissions are consented, Conditional Access policies apply, and the agent is in appropriate groups or administrative units.
+- **Establish a production handshake process.** When a new agent moves to production, have an identity admin verify its Microsoft Entra Agent ID settings: confirm the blueprint and sponsor are correct, required permissions are consented, Conditional Access policies apply, and the agent is in appropriate groups or administrative units.
 
 - **Test in nonproduction environments.** Use a separate development tenant or sandbox to validate agent authentication flows, Conditional Access policies, and permission configurations before deploying to production.
 
-- **Treat agent configurations as code.** Check blueprint definitions, permission configurations, and setup scripts into source control. This prevents configuration drift, enables peer review, and provides institutional memory for how agents are integrated with Entra ID.
+- **Treat agent configurations as code.** Check blueprint definitions, permission configurations, and setup scripts into source control. This prevents configuration drift, enables peer review, and provides institutional memory for how agents are integrated with Microsoft Entra ID.
 
 ## Related content
 

@@ -3,9 +3,7 @@ title: Migrate to Microsoft Entra multifactor authentication and Microsoft Entra
 description: Guidance to move from MFA Server on-premises to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: gasinh
-author: gargi-sinha
-ms.reviewer: michmcla
+ms.reviewer: michmcla, gasinh
 ---
 # Migrate to Microsoft Entra multifactor authentication and Microsoft Entra user authentication
 

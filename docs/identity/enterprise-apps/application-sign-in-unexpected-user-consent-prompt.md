@@ -1,7 +1,6 @@
 ---
 title: Unexpected consent prompt when signing in to an application
 description: How to troubleshoot when a user sees a consent prompt for an application you've integrated with Microsoft Entra ID that you didn't expect
-
 ms.topic: troubleshooting
 ms.date: 09/07/2022
 ms.reviewer: phsignor, yuhko

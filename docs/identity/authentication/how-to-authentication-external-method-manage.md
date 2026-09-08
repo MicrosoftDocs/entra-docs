@@ -3,7 +3,6 @@ title: How to manage external MFA in Microsoft Entra ID
 description: Learn how to manage external MFA methods for Microsoft Entra multifactor authentication
 ms.topic: how-to
 ms.date: 02/24/2026
-author: aloom3
 ms.reviewer: akulloomba
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an authentication administrator, I want to learn how to manage an external multifactor authentication method for Microsoft Entra ID.
@@ -91,7 +90,7 @@ To manage the Authentication methods policy by using Microsoft Graph, you need t
 
 Users who are enabled for external MFA can use it when they sign-in and multifactor authentication is required. 
 
-If the user has other ways to sign in and [system-preferred authentication](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select external MFA. For example, if the user has Authenticator enabled as another method, they get prompted for [number matching](/entra/identity/authentication/how-to-mfa-number-match).
+If the user has other ways to sign in and [system-preferred authentication](/entra/identity/authentication/concept-system-preferred-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select external MFA. For example, if the user has Authenticator enabled as another method, they get prompted for [number matching](/entra/identity/authentication/how-to-mfa-number-match).
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an external MFA when system-preferred authentication is enabled.":::
 

@@ -4,7 +4,6 @@ description: Discover how to set up Microsoft Entra join on a Windows 11 device 
 
 ms.topic: tutorial
 ms.date: 01/08/2026
-
 ms.reviewer: 
 ---
 # Microsoft Entra join a new Windows device during the out of box experience

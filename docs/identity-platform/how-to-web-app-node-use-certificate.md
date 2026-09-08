@@ -1,9 +1,7 @@
 ---
 title: Use client certificate for authentication in your Node.js web app
 description: Learn how to use client certificate instead of secrets for authentication in your Node.js web app
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025

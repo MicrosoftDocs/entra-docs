@@ -4,10 +4,10 @@ description: Guidance on meeting payment card industry (PCI) compliance with Mic
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: jricketts
-ms.author: jricketts
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, jricketts
 ms.date: 04/18/2023
 ms.custom: it-pro
 ms.collection:

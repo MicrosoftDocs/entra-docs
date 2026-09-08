@@ -6,7 +6,6 @@ ms.date: 05/25/2025
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
-
 ---
 
 # Remove Microsoft Entra role assignments

@@ -2,11 +2,8 @@
 title: Microsoft Entra Agent ID design patterns
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to map your AI agent architecture to Microsoft Entra Agent ID, including blueprints, agent identities, and an agent's user account.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.topic: concept-article
 ms.date: 04/03/2026
-ms.custom: agent-id
 ai-usage: ai-assisted
 #customer intent: As an enterprise architect or developer, I want to understand how real-world agent deployment patterns map to Microsoft Entra Agent ID constructs so that I can design a secure, auditable, and scalable identity architecture for my AI agents.
 ---
@@ -15,11 +12,9 @@ ai-usage: ai-assisted
 
 Microsoft Entra Agent ID introduces new identity constructs as well as new ways of thinking about existing authentication and authorization patterns. To better understand how these constructs fit together, it's helpful to look at common AI agent deployment patterns and how they map to Microsoft Entra Agent ID.
 
-This article describes common AI agent deployment patterns and how they map to Microsoft Entra Agent ID. The article starts with a review of key identity concepts, describes permisssions and trust boundaries, and then walks through common deployment patterns.
+This article describes common AI agent deployment patterns and how they map to Microsoft Entra Agent ID. The article starts with a review of key identity concepts, describes permissions and trust boundaries, and then walks through common deployment patterns.
 
 For step-by-step decision guidance on how many blueprints and agent identities to create, see [Plan your agent identity architecture](how-to-plan-agent-identity-architecture.md).
-
-[!INCLUDE [entra-agent-id-preview-note](../includes/entra-agent-id-preview-note.md)]
 
 ## Key concepts
 

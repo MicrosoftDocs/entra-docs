@@ -2,7 +2,7 @@
 title: Set up claims mapping for OIDC
 description: Learn how to configure the standard OpenID Connect claims with the claims your identity provider provides in your external tenant.
 ms.topic: how-to
-ms.date: 04/17/2026
+ms.date: 06/11/2026
 ms.reviewer: brozbab
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
@@ -29,8 +29,8 @@ Use the following table to map standard OpenID Connect claims to corresponding u
 |name|Display Name|Full name in displayable form including all name parts, possibly including titles and suffixes, ordered according to the end-user's locale and preferences.|
 |given_name|First Name|Given name(s) or first name(s) of the end-user.|
 |family_name|Last Name|Surname(s) or family name of the end-user.|
-|email (required)|Email|Preferred e-mail address.|
-|email_verified|N/A|In the received ID token, the value of this claim is true if the end-user's e-mail address has been verified by the identity provider; otherwise, false. When this claim value is true, this means that your identity provider took affirmative steps to ensure that this e-mail address was controlled by the end-user at the time the verification was performed. If this claim value is false or not mapped to any claim from the identity provider, the user will not be able to create an account. A verified email address is required for account creation. If the email is missing or unverified, an error message appears.|
+|email (required by default)|Email|Preferred email address. You can [make it optional](how-to-custom-oidc-federation-customers.md#make-email-optional-for-external-identity-provider-sign-up) for external IdP sign-up scenarios.|
+|email_verified|N/A|Indicates whether the identity provider verified the end-user's email address. `true` means the identity provider took affirmative steps to ensure the email address was controlled by the end-user at the time the verification was performed. If the email claim is present, a value of `true` is required for account creation. If the email claim isn't present and [email is configured as optional](how-to-custom-oidc-federation-customers.md#make-email-optional-for-external-identity-provider-sign-up), account creation proceeds without an email address.|
 |phone_number|Phone number|The claim provides the phone number for the user.|
 |phone_number_verified|N/A|In the received ID token, the value of this claim is true if the end-user's phone number has been verified; otherwise, false. When this claim value is true, this means that your identity provider took affirmative steps to verify the phone number.|
 |street_address|Street Address|Full mailing address, formatted for display or use on a mailing label. In the token response, this field MAY contain multiple lines, separated by newlines. Newlines can be represented either as a carriage return/line feed pair ("\r\n") or as a single line feed character ("\n").|

@@ -1,7 +1,6 @@
 ---
 title: View associated resources for a user-assigned managed identity
 description: Step-by-step instructions for viewing the Azure resources that are associated with a user-assigned managed identity
-
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 03/15/2025

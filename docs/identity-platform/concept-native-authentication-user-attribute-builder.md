@@ -1,9 +1,7 @@
 ---
 title: Native authentication SDK attribute builder
 description: Learn how to use native authentication Android and iOS SDK attribute builders to prepare built-in and custom attributes. 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article

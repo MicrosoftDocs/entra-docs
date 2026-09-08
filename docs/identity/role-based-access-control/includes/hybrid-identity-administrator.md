@@ -24,6 +24,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users in this r
 > | microsoft.directory/applications/basic/update | Update basic properties for applications |
 > | microsoft.directory/applications/create | Create all types of applications |
 > | microsoft.directory/applications/delete | Delete all types of applications |
+> | microsoft.directory/applications/disablement/update | Update whether an application is enabled for users to sign in |
 > | microsoft.directory/applications/notes/update | Update notes of applications |
 > | microsoft.directory/applications/owners/update | Update owners of applications |
 > | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |

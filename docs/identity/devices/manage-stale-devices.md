@@ -5,7 +5,6 @@ description: Learn how to remove stale devices from your database of registered 
 
 ms.topic: how-to
 ms.date: 06/27/2025
-
 ms.reviewer:
 
 #Customer intent: As an IT admin, I want to understand how I can get rid of stale devices, so that I can I can cleanup my device registration data.
@@ -55,6 +54,16 @@ You have two options to retrieve the value of the activity timestamp:
 ## Plan the cleanup of your stale devices
 
 To efficiently cleanup stale devices in your environment, you should define a related policy. This policy helps you to ensure that you capture all considerations that are related to stale devices. The following sections provide you with examples for common policy considerations. 
+
+### Understand device lifecycle context
+
+Before you clean up stale devices, confirm where each device is in its identity lifecycle. A device identity can move through provisioning, registration, trust establishment, management attachment, steady-state use, recovery, retirement, and transition to another join model. Stale Microsoft Entra device objects can appear when a device is rebuilt or recovered, when Microsoft Entra hybrid join trust is broken, or when registration doesn't complete.
+
+Common signs include:
+
+- Duplicate device objects after an OS reinstall, reimage, or recovery.
+- Device objects in the **Pending** state that require re-registration.
+- Devices with no recent Microsoft Entra activity that still exist in on-premises AD or device management tools.
 
 > [!CAUTION]
 > If your organization uses BitLocker drive encryption, you should ensure that BitLocker recovery keys are either backed up or no longer needed before deleting devices. Failure to do this may cause loss of data.

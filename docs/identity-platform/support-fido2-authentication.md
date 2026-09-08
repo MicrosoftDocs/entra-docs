@@ -1,8 +1,6 @@
 ---
 title: Support passwordless authentication with FIDO2 keys in apps you develop
 description: This deployment guide explains how to support passwordless authentication with FIDO2 security keys in the applications you develop
-author: henrymbuguakiarie
-ms.author: henrymbugua
 ms.date: 1/29/2021
 ms.reviewer:
 ms.service: identity-platform

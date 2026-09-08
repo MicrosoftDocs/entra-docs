@@ -2,8 +2,9 @@
 title: Add an existing Azure subscription to your tenant
 description: Instructions about how to add an existing Azure subscription to your Microsoft Entra tenant.
 ms.topic: how-to
-ms.date: 04/02/2025
+ms.date: 06/19/2026
 ms.reviewer: jeffsta
+ai-usage: ai-assisted
 ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
 #Customer Intent: As an IT admin, I want to add an existing Azure subscription to my tenant so that I can manage resources under my organization's directory.
 ---
@@ -15,6 +16,8 @@ ms.custom: ge-structured-content-pilot, sfi-ga-nochange, sfi-image-nochange
 ## Overview
 
 All Azure subscriptions have a trust relationship with a Microsoft Entra tenant. Subscriptions rely on this tenant (directory) to authenticate and authorize security principals and devices. When a subscription expires, the trusted instance remains, but the security principals lose access to Azure resources. Subscriptions can only trust a single directory while one Microsoft Entra tenant might be trusted by multiple subscriptions.
+
+Think of the subscription as the scope where Azure resources and Azure role assignments are managed, and the tenant as the directory that contains the identities used to sign in and receive access. Azure roles control access to Azure resources in the subscription. Microsoft Entra roles control access to directory resources, such as users, groups, and domains. Changing a subscription's directory changes which tenant supplies identities for Azure role-based access control (Azure RBAC), but it doesn't make the subscription owner a Global Administrator in the tenant.
 
 [!INCLUDE [tenant-installation-account](../includes/definitions/tenant-installation-account.md)] However, when an owner of a subscription joins their subscription to an existing tenant, the owner isn't assigned to the Global Administrator role.
 
@@ -75,6 +78,8 @@ Changing the subscription directory is a service-level operation, so it doesn't 
 ## Post-association steps
 
 After you associate a subscription with a different directory, you might need to do the following tasks to resume operations:
+
+1. Reassign Azure roles in the new directory for users, groups, or service principals that need access to Azure resources. Role assignments from the previous directory aren't transferred.
 
 1. If you have any key vaults, you must change the key vault tenant ID. For more information, see [Change a key vault tenant ID after a subscription move](/azure/key-vault/general/move-subscription).
 

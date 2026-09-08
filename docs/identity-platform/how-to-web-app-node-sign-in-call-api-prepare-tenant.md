@@ -1,9 +1,7 @@
 ---
 title: Prepare external tenant to call an API in a Node.js web app
 description: Learn how to prepare your external tenant to sign in users and call an API in your Node.js web application. 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025

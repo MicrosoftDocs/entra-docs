@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 11/22/2024
-ms.author: kengaderdus
 ---
 
 Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:

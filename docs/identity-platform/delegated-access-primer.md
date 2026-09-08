@@ -1,9 +1,7 @@
 ---
 title: Microsoft identity platform delegated access scenario
 description: Learn about when and how to use delegated access in the Microsoft identity platform endpoint.
-author: omondiatieno
 manager: pmwongera
-ms.author: jomondi
 ms.date: 11/07/2024
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform

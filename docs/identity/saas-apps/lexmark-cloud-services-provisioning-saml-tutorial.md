@@ -2,12 +2,11 @@
 title: Configure Lexmark Cloud Services (SAML) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Lexmark Cloud Services (SAML).
 
-manager: pmwongera
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lexmark Cloud Services (SAML) so that I can streamline the user management process and ensure that users have the appropriate access to Lexmark Cloud Services (SAML).
 
----
+--- 
 
 # Configure Lexmark Cloud Services (SAML) for automatic user provisioning with Microsoft Entra ID
 

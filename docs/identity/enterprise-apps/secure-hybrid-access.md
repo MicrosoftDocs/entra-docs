@@ -2,12 +2,11 @@
 title: Secure hybrid access, protect legacy apps with Microsoft Entra ID
 description: Find partner solutions to integrate your legacy on-premises, public cloud, or private cloud applications with Microsoft Entra ID.
 
-author: gargi-sinha
 manager: martinco
 ms.topic: how-to
 
 ms.date: 01/17/2023
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 

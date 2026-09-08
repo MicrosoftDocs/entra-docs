@@ -5,7 +5,6 @@ description: Learn how to use the Microsoft Entra Verified ID Network API
 documentationCenter: ''
 ms.topic: reference
 ms.date: 01/30/2025
-
 #Customer intent: As a verifiable credentials developer, I want to configure verifying credentials from another party 
 ---
 

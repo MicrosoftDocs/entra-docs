@@ -64,7 +64,7 @@ External ID is intended for businesses that want to make applications available 
 
 - **Consent to your terms of use and privacy policies.** You can prompt users to accept your terms and conditions during sign-up. By using customer user attributes, you can add checkboxes to your sign-up form and include links to your terms of use and privacy policies.
 
-Learn more about [adding sign-in and sign-up to your app](concept-planning-your-solution.md) and [customizing the sign-in look and feel](concept-branding-customers.md).
+Learn more about [planning your integration](concept-planning-your-solution.md), [choosing an authentication approach](concept-choose-authentication-approach.md), and [customizing the sign-in look and feel](concept-branding-customers.md).
 
 ## Design user flows for self-service sign-up
 
@@ -119,6 +119,9 @@ Create highly customized sign-in experiences and manage customer accounts at a l
 The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
 Learn more about the [application user activity dashboards](how-to-user-insights.md) that are available in an external tenant.
+
+> [!IMPORTANT]
+> The Application user activity dashboards (User Insights) and the Microsoft Graph `reports/userInsights/*` (beta) endpoints are being retired on **August 31, 2026**. Plan to migrate to Azure Monitor with Log Analytics (primary) or the Microsoft Graph sign-in and audit log APIs. For details, see [Migrate from User Insights](how-to-user-insights.md#migrate-from-user-insights).
 
 ## About Azure AD B2C
 

@@ -1,17 +1,14 @@
 ---
-title: Deploy Microsoft Entra Tenant Governance end to end (preview)
+title: Deploy Microsoft Entra Tenant Governance end to end
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to deploy Microsoft Entra Tenant Governance from setup through tenant discovery, governance, and configuration monitoring
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 03/17/2026
+ms.date: 07/29/2026
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1018
 ---
 
-# Deploy Microsoft Entra Tenant Governance end to end (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Deploy Microsoft Entra Tenant Governance end to end
 
 This article describes how to deploy Microsoft Entra Tenant Governance across your organization. The deployment follows five phases: verifying prerequisites, discovering related tenants, establishing governance relationships, implementing delegated administration, and setting up configuration monitoring.
 
@@ -21,10 +18,10 @@ Each phase builds on the previous one. Complete the phases in order, but skip op
 
 Before you begin, confirm that your environment meets these requirements:
 
-- A Microsoft Entra tenant with the appropriate license for Tenant Governance. For details, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview).
+- A Microsoft Entra tenant with the appropriate license for Tenant Governance. For details, see [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance).
 - An account with the Tenant Governance Administrator or Global Administrator role.
 - For configuration management: an account with the Global Administrator or Privileged Role Administrator role.
-- For secure tenant creation: at least Tenant Contributor permissions on a Microsoft Customer Agreement (MCA) subscription. Enterprise Agreement (EA) subscriptions aren't supported.
+- For secure tenant creation: either a paid [Enterprise Agreement (EA)](/azure/cost-management-billing/manage/understand-ea-roles) or [Pay-As-You-Go](https://azure.microsoft.com/pricing/offers/ms-azr-0003p?cid=msft_learn) subscription. Both [Microsoft Online Subscription Agreement (MOSA)](/azure/cost-management-billing/manage/view-all-accounts#microsoft-online-services-program) and [Microsoft Customer Agreement (MCA)](/azure/cost-management-billing/manage/view-all-accounts#microsoft-customer-agreement) billing accounts are supported. You also need the required Azure Resource Manager (ARM) permissions for the selected subscription through the Tenant Contributor or Subscription Owner/Creator role. To identify your billing account type, see [View your billing accounts in the Azure portal](/azure/cost-management-billing/manage/view-all-accounts).
 
 ## Phase 1: Enable related tenant discovery
 
@@ -224,7 +221,7 @@ For more information, see [See monitor results and configuration drifts](how-to-
 
 Use the secure add-on tenant creation feature to create new tenants that are immediately governed.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least Tenant Contributor permissions on a Microsoft Customer Agreement subscription.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the Tenant Contributor or Subscription Owner/Creator role for the selected subscription.
 1. Create a new tenant using the **Governed Workforce** option.
 1. Select the Azure subscription and resource group for the Microsoft Entra ID Free billing asset.
 
@@ -243,5 +240,5 @@ For more information, see [Create a governed workforce tenant](how-to-create-ten
 - [Governance policy templates](governance-policy-templates.md)
 - [Cross-tenant delegated administration](cross-tenant-delegated-administration.md)
 - [Configuration management](configuration-management.md)
-- [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance-preview)
+- [Microsoft Entra licensing](~/fundamentals/licensing.md#microsoft-entra-tenant-governance)
 - [Frequently asked questions](faq.yml)

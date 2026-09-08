@@ -111,7 +111,7 @@ Use Microsoft Entra security groups to assign:
   - Microsoft 365
   - Dynamics 365
   - Enterprise Mobility + Security
-  - See, [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
+  - See, [Assign or unassign licenses to a group in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true)
 - Elevated permissions
   - See, [Use Microsoft Entra groups to manage role assignments](~/identity/role-based-access-control/groups-concept.md)
 

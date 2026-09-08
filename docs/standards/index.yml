@@ -7,7 +7,9 @@ metadata:
   title: Implement identity standards with Microsoft Entra ID
   description: "Azure and Microsoft Entra ID offer compliance certifications. Learn to configure your environment to meet governmental and industry standards."
   manager: martinco
+  author: janicericketts
   ms.author: jricketts
+  ms.reviewer: jricketts
   ms.date: 06/28/2023
   ms.service: entra
   ms.subservice: standards

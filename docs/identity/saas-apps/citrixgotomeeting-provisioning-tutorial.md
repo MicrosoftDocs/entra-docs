@@ -4,10 +4,9 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 
 ms.topic: how-to
 ms.date: 03/04/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GoToMeeting so that I can streamline the user management process and ensure that users have the appropriate access to GoToMeeting.
----
+--- 
 # Configure GoToMeeting for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to show you the steps you need to perform in GoToMeeting and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to GoToMeeting.

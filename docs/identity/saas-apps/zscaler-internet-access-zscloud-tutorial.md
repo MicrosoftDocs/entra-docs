@@ -1,9 +1,8 @@
 ---
 title: Configure Zscaler Internet Access ZSCloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSCloud.
-ms.reviewer: celested
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSCloud so that I can control who has access to Zscaler Internet Access ZSCloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -15,6 +14,10 @@ In this article,  you learn how to integrate Zscaler Internet Access ZSCloud wit
 * Control in Microsoft Entra ID who has access to Zscaler Internet Access ZSCloud.
 * Enable your users to be automatically signed-in to Zscaler Internet Access ZSCloud with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
+
+Zscaler Internet Access ZSCloud is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-china](~/identity/saas-apps/includes/national-clouds-global-and-china.md)]
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:

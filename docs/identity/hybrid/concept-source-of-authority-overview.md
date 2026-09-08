@@ -1,9 +1,7 @@
 ---
 title: Embrace cloud-first posture and convert Group Source of Authority (SOA) to the cloud
 description: Learn about Source of Authority (SOA), including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
-author: justinha
 ms.date: 08/19/2025
-ms.author: justinha
 ms.reviewer: dhanyahk
 ms.topic: concept-article
 ---

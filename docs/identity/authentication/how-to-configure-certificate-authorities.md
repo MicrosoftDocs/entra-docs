@@ -3,7 +3,6 @@ title: How to configure certificate authorities for Microsoft Entra certificate-
 description: Topic that shows how to configure certificate authorities for Microsoft Entra certificate-based authentication.
 ms.topic: how-to
 ms.date: 07/02/2025
-author: vimrang
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
 ---

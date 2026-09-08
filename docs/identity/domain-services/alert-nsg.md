@@ -1,7 +1,6 @@
 ---
 title: Resolve network security group alerts in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot and resolve network security group configuration alerts for Microsoft Entra Domain Services
-
 ms.assetid: 95f970a7-5867-4108-a87e-471fa0910b8c
 ms.topic: troubleshooting
 ms.date: 01/21/2025

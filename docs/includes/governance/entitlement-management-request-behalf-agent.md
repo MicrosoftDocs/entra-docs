@@ -9,7 +9,7 @@ ms.author: mwahl
 # Used by articles entra governance
 ---
 
-## Request an access package on behalf of an agent identity (Preview)
+## Request an access package on behalf of an agent identity
 
 As the owner or sponsor of an agent identity, you can request an access package for that agent identity by doing the following steps:
 

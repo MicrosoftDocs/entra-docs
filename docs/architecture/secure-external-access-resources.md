@@ -1,10 +1,9 @@
 ---
 title: Plan a Microsoft Entra B2B collaboration deployment
 description: A guide for architects and IT administrators on securing and governing external access to internal resources
-author: gargi-sinha
 ms.topic: concept-article
 ms.date: 4/28/2023
-ms.author: gasinh
+ms.reviewer: gasinh
 
 ms.subservice: architecture
 ---

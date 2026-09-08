@@ -4,7 +4,6 @@ description: Learn how Microsoft Entra registered devices provide your users wit
 
 ms.topic: concept-article
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo
 ---
 

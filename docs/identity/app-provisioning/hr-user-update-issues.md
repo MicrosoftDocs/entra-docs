@@ -3,7 +3,7 @@ title: Troubleshoot user update issues with HR provisioning
 description: Learn how to troubleshoot user update issues with HR provisioning
 ms.topic: troubleshooting
 ai-usage: ai-assisted
-ms.date: 04/07/2026
+ms.date: 05/18/2026
 ms.reviewer: chmutali
 ---
 
@@ -74,7 +74,7 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 **Applies to:**
 * Workday to Microsoft Entra user provisioning
 * SAP SuccessFactors to Microsoft Entra user provisioning
-* API-driven provisioning Microsoft Entra ID 
+* API-driven provisioning to Microsoft Entra ID 
 
 | Troubleshooting | Details |
 |-- | -- |
@@ -110,18 +110,7 @@ Use this field in the attribute mapping logic for the accountDisabled flag.
 | -- | -- |
 | **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions. |
 | **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently doesn't implement specialized query to process termination records specific to a time zone. |
-| **Resolution** | There are two possible workarounds: |
-
-1. Use provisioning on demand to process termination event of a specific user.  
-
-2. In Workday, create a provisioning group called **Terminated Workers**. Update the termination business process in Workday to assign users to this group when termination happens. In the Microsoft Entra provisioning job, add a Workday XPATH attribute to fetch this group assignment.  
-- Example:  
-``` `TerminatedWorkers = 
-wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assignment_Data[wd:Status='Assigned' and wd:Provisioning_Group="Terminated Workers"]/wd:Provisioning_Group/text()` ```
-
-Use this field in the attribute mapping logic for the accountDisabled flag.  
-- Example:  
-  ``` `Switch([TerminatedWorkers], Switch([Active], , "1", "False", "0", "True"), "Terminated Workers", "True")` ```
+| **Resolution** | Use the termination lookahead query feature. For setup and configuration steps, see [Configure Workday termination lookahead query](configure-workday-termination-lookahead.md). |
 
 ## SuccessFactors termination processing delay
 
@@ -142,6 +131,22 @@ This approach enables:
 - Centralized lifecycle governance across hybrid and cloud identities.
 
 [Lifecycle Workflows](../../id-governance/what-are-lifecycle-workflows.md) are part of Microsoft Entra ID Governance and are designed specifically for enforcing joiner-mover-leaver policies based on authoritative identity state in the directory.
+
+## Redundant updates for certain attribute types
+
+**Applies to:**
+* Workday to on-premises Active Directory user provisioning
+* Workday to Microsoft Entra user provisioning
+* SAP SuccessFactors to on-premises Active Directory user provisioning
+* SAP SuccessFactors to Microsoft Entra user provisioning
+* API-driven provisioning to on-premises Active Directory
+* API-driven provisioning to Microsoft Entra ID 
+
+| Troubleshooting | Details |
+|-- | -- |
+| **Issue** | Provisioning logs show repeated update operations for certain attributes, even when there are no meaningful changes in source data. This behavior is commonly observed with multi-valued attributes, custom security attributes, and derived account status attributes such as `accountEnabled` or `accountDisabled`. |
+| **Cause** | For certain attribute types, the provisioning engine evaluates values at runtime instead of performing a stable comparison with the previously provisioned state. Because of this runtime evaluation model, these attributes might be reprocessed or written again during sync cycles, which can generate redundant update entries in provisioning logs. |
+| **Resolution** | No resolution is currently available. This behavior is a known limitation. |
 
 ## Next steps
 

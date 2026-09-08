@@ -3,15 +3,12 @@ title: Configure BullseyeTDP for automatic user provisioning with Microsoft Entr
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BullseyeTDP.
 
 
-author: jeevansd
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/27/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BullseyeTDP so that I can streamline the user management process and ensure that users have the appropriate access to BullseyeTDP.
----
+--- 
 
 # Configure BullseyeTDP for automatic user provisioning with Microsoft Entra ID
 
@@ -24,6 +21,7 @@ This article describes the steps you need to perform in both BullseyeTDP and Mic
 > * Remove users in BullseyeTDP when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and BullseyeTDP.
 > * [Single sign-on](bullseyetdp-tutorial.md) to BullseyeTDP.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

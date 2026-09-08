@@ -2,7 +2,6 @@
 title: Common steps for public client migration to MSAL
 description: Include file that explains the common steps you need to take for all public client apps when it comes to migration from ADAL to MSAL.
 
-author: cilwerner
 manager: pmwongera
 
 ms.service: identity-platform
@@ -10,7 +9,6 @@ ms.service: identity-platform
 
 ms.topic: include
 ms.date: 09/08/2021
-ms.author: cwerner
 ms.reviewer: jmprieur
 ms.custom: 
 ---

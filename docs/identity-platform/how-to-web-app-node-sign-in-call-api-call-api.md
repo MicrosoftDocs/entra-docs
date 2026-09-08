@@ -1,9 +1,7 @@
 ---
 title: Call an API in a Node.js web application
 description: Learn how to call a protected API in your Node.js web application using access tokens from Microsoft Entra External ID.
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025

@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot password-based single sign-on
 description: Troubleshoot issues with a Microsoft Entra app configured for password-based single sign-on.
-
 ms.topic: troubleshooting
 ms.date: 09/15/2025
 ms.reviewer: alamaral

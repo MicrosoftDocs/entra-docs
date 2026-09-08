@@ -1,19 +1,14 @@
 ---
-title: Governance relationships in Tenant Governance (preview)
+title: Governance relationships in Tenant Governance
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about governance relationships and how they enable centralized management of tenants in Microsoft Entra Tenant Governance
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 03/10/2026
 ---
 
 <!-- source: Governance relationships.docx -->
 
-# Governance relationships (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Governance relationships
 
 A governance relationship establishes a directional connection between two Microsoft Entra tenants. One tenant (the *governing* tenant) governs another tenant (the *governed* tenant). These relationships enable organizations to securely manage multiple tenants at scale from a central location.
 

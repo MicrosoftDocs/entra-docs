@@ -2,11 +2,10 @@
 title: Configure Trend Micro Web Security (TMWS) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Trend Micro Web Security (TMWS).
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Trend Micro Web Security(TMWS) so that I can control who has access to Trend Micro Web Security(TMWS), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Trend Micro Web Security (TMWS) for Single sign-on with Microsoft Entra ID
 

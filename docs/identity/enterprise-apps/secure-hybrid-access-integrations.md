@@ -2,12 +2,11 @@
 title: Secure hybrid access with Microsoft Entra integration
 description: Help customers discover and migrate SaaS applications into Microsoft Entra ID and connect apps that use legacy authentication methods with Microsoft Entra ID.
 
-author: gargi-sinha
 manager: martinco
 ms.topic: how-to
 
 ms.date: 01/19/2023
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 

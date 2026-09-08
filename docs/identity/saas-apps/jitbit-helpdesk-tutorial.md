@@ -1,12 +1,11 @@
 ---
 title: Configure Jitbit Helpdesk for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jitbit Helpdesk.
-ms.reviewer: celested
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 06/04/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jitbit Helpdesk so that I can control who has access to Jitbit Helpdesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Jitbit Helpdesk for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Jitbit Helpdesk with Microsoft Entra ID. When you integrate Jitbit Helpdesk with Microsoft Entra ID, you can:
@@ -15,14 +14,15 @@ In this article,  you learn how to integrate Jitbit Helpdesk with Microsoft Entr
 * Enable your users to be automatically signed-in to Jitbit Helpdesk with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Jitbit Helpdesk is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Jitbit Helpdesk single sign-on (SSO) enabled subscription.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 

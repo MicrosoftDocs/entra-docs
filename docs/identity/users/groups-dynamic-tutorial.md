@@ -70,13 +70,12 @@ First, you create a group for your guest users who all are from a single partner
 
 Now that you have your new group, you can apply the licenses that these partner users need.
 
-1. In the Microsoft Entra admin center browse to **Billing** > **Licenses** > **All products**, select one or more licenses, and then select **Licensed groups**.
-
-    :::image type="content" source="./media/groups-dynamic-tutorial/add-licensed-group.png" alt-text="Screenshot of Assign licenses to a new group.":::
-
-1. Search for the group name that you want to add, and then select **Assign**.
-1. **Assignment options** allow you to turn on or off the service plans included the licenses that you selected. When you make a change, be sure to select **OK** to save your changes.
-1. To complete the assignment, on the **Assign license** pane, select **Assign** at the bottom of the pane.
+1. In the [Microsoft 365 admin center](https://admin.microsoft.com/), go to **Billing** > **Licenses**.
+1. On the **Subscriptions** tab, select the product that you want to assign.
+1. On the **Licenses** page, select the **Groups** tab, and then select **Assign licenses**.
+1. Search for the group name that you want to add, and then select the group from the suggested groups list.
+1. To assign or remove access to specific items, select **Turn apps and services on or off**.
+1. When you're finished, select **Assign**, and then select **Close**.
 
 ## Remove guests from All users group
 
@@ -101,4 +100,4 @@ When you're finished with the tutorial, clean up the resources you created.
 
 ## Next steps
 
-[Group licensing basics](~/fundamentals/concept-group-based-licensing.md)
+[Assign or unassign licenses to a group in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true)

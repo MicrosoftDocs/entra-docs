@@ -1,7 +1,6 @@
 ---
 title: Identity protection risk analysis workbook
 description: Learn how to use the identity protection risk analysis workbook in Microsoft Entra ID to explore trends and gaps in your risk policies.
-
 ms.topic: how-to
 ms.date: 11/04/2024
 ms.reviewer: chuqiaoshi

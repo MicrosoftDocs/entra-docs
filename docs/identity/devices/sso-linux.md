@@ -1,8 +1,7 @@
 ---
 title: Microsoft single sign-on for Linux
 description: Overview of Microsoft single sign-on for Linux that enables Microsoft Entra ID integration and seamless authentication.
-author: ploegert
-ms.author: jploegert
+ms.reviewer: jploegert
 ms.topic: overview
 ms.date:     02/03/2026
 ms.custom: linux-related-content
@@ -14,7 +13,7 @@ Microsoft single sign-on (SSO) for Linux is powered by the Microsoft Identity Br
 
 ## Features
 
-This feature empowers users on Linux desktop clients to register their devices with Microsoft Entra ID, enroll into Intune management, and satisfy device-based Conditional Access policies when accessing their corporate resources.
+This feature empowers users on Linux desktop clients to join their devices with Microsoft Entra ID, enroll into Intune management, and satisfy device-based Conditional Access policies when accessing their corporate resources.
 
 - Provides Microsoft Entra ID registration & enrollment of Linux desktops
 - Provides SSO capabilities for native and web applications (for example, Azure CLI, Microsoft Edge, Teams PWA) to access Microsoft 365 and Azure protected resources
@@ -31,10 +30,10 @@ The Teams web application and a Progressive Web App (PWA) for Linux use Conditio
 
 Microsoft single sign-on for Linux is supported on the following operating systems (physical or Hyper-V machines with x86/64 CPUs):
 
+- Ubuntu Desktop 26.04 LTS (Long Term Support)
 - Ubuntu Desktop 24.04 LTS (Long Term Support)
-- Ubuntu Desktop 22.04 LTS (Long Term Support) 
-- Red Hat Enterprise Linux 8 (Long Term Support)
 - Red Hat Enterprise Linux 9 (Long Term Support)
+- Red Hat Enterprise Linux 10 (Long Term Support)
 
 ### System Requirements
 
@@ -47,8 +46,18 @@ Microsoft single sign-on for Linux is supported on the following operating syste
 - Microsoft Entra ID tenant
 - User accounts synchronized with or created in Microsoft Entra ID
 - Appropriate licensing for conditional access policies (if applicable)
+- `Device settings` in the Entra portal must have `Users may join devices to Microsoft Entra` configured for the target users.
 
-## SSO experience
+![Screenshot of the device settings pane in the Entra portal focusing on the required setting for users may join devices using Microsoft Entra.](./media/sso-linux/device-settings-entra-join.png)
+
+> [!IMPORTANT]
+>Microsoft Single Sign-on for Linux version 2.0.2 and later uses Microsoft Entra join for device trust. Earlier versions used Microsoft Entra registration.
+>
+>- As a result, organizations upgrading to version 2.0.2 or later must ensure that affected users are allowed by the `Users may join devices to Microsoft Entra` setting in Microsoft Entra admin center > Devices > Device settings. The `Users may register their devices with Microsoft Entra` setting is no longer sufficient for these devices.
+>
+> - For more information, see [Manage Device Identities](manage-device-identities.md) in Microsoft Entra ID.
+
+## Single Sign-on (SSO) experience
 
 The following animation shows the sign-in experience for brokered flows on Linux.
 
@@ -67,10 +76,13 @@ Using PRMFA auth via SmartCard on Linux provides a seamless sign-in experience, 
 ---
 
 > [!NOTE]
-> `microsoft-identity-broker` version 2.0.1 and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
-
+> `microsoft-identity-broker` version 3.0.x and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
 
 ## Installation
+
+The Microsoft Single Sign-on for Linux app package is available at https://packages.microsoft.com/. For more information about how to use, install, and configure Linux software packages for Microsoft products, see [Linux Software Repository](/windows-server/administration/linux-package-repository-for-microsoft-software) for Microsoft Products.
+
+A sample script to install the Microsoft Single Sign-On for Linux & Intune app and its dependencies on your device is available on [GitHub](https://go.microsoft.com/fwlink/?linkid=2358529). Review the instructions carefully before installing.
 
 Run the following commands in a command line to manually install the Microsoft single sign-on (microsoft-identity-broker) and its dependencies on your device.  
 
@@ -85,9 +97,17 @@ Run the following commands in a command line to manually install the Microsoft s
 2. Install the Microsoft package signing key.  
 
     ```bash
-    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-    sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings
-    rm microsoft.gpg
+    # Ubuntu 26.04+ repos are signed with a newer Microsoft GPG key
+    if dpkg --compare-versions "$RELEASE" ge "26.04"; then
+        MS_GPG_KEY_URL="https://packages.microsoft.com/keys/microsoft-2025.asc"
+    else
+        MS_GPG_KEY_URL="https://packages.microsoft.com/keys/microsoft.asc"
+    fi
+
+    # Import Microsoft GPG key (always refresh to pick up key rotations)
+    curl -fsSL "$MS_GPG_KEY_URL" | gpg --dearmor > "$HOME/microsoft.gpg"
+    sudo install -o root -g root -m 644 "$HOME/microsoft.gpg" /usr/share/keyrings/
+    rm -f "$HOME/microsoft.gpg"
     ```
 
 3. Add and update Microsoft Linux Repository to the system repository list.
@@ -261,15 +281,15 @@ Run the following commands to uninstall the Microsoft Identity Broker and remove
 ---
 
 > [!WARNING]
-> Note that uninstalling the Microsoft Identity Broker doesn't automatically unregister your device from Microsoft Entra ID, nor unenroll your device from Intune management. To remove the device registration, you can either use the [dsregcmd tool](troubleshoot-device-registration-tool-linux.md) or remove the device from the Microsoft Entra ID portal.
+> Note that uninstalling the Microsoft Identity Broker doesn't automatically unjoin your device from Microsoft Entra ID, nor unenroll your device from Intune management. To remove the device registration, you can either use the [dsregcmd tool](troubleshoot-device-registration-tool-linux.md) or remove the device from the Microsoft Entra ID portal.
 
 ---
 
-## Unregister device using dsregc
+## Unjoin device using dsregc
 
 With the release of 2.5.x of the `microsoft-identity-broker`, we've included a new utility called the `dsreg` tool that allows you to manage your device's registration with Microsoft Entra ID. 
 
-To unregister your device from Microsoft Entra ID using the `dsreg` tool, run the following command in your terminal, replacing `<tenant-guid>` with your Microsoft Entra ID tenant GUID:
+To unjoin your device from Microsoft Entra ID using the `dsreg` tool, run the following command in your terminal, replacing `<tenant-guid>` with your Microsoft Entra ID tenant GUID:
 
 ```bash
 sudo dsreg --tenant-id <tenant-guid> --unregister
@@ -277,7 +297,7 @@ sudo dsreg --tenant-id <tenant-guid> --unregister
 
 If your system gets into a bad state and you want to clean all local registration data and key material, you can use the `--cleanup` option with the `dsreg` tool. This utility mode is useful in scenarios where you want to ensure that all local traces of the Microsoft Identity Broker are removed from the device, such as when troubleshooting or preparing the device for a new user.
 
-To unregister and remove any key material using the dsreg tool, run the following command in your terminal:
+To unjoin and remove any key material using the dsreg tool, run the following command in your terminal:
 
 ```bash
 # Clean broker state including certificates (requires sudo)
@@ -361,6 +381,16 @@ The following steps configure a reference example of using the YubiKey/Edge brid
 
 ---
 
+
+> [!IMPORTANT] 
+> Microsoft supports application integration with `Microsoft Single Sign-on for Linux` through supported versions of the Microsoft Authentication Library (MSAL).
+>
+>Applications that bypass MSAL and communicate directly with broker implementation interfaces or internal communication channels aren't supported. These interfaces are implementation details and can change between releases without notice.
+>
+>For more information, see [Microsoft Authentication Library (MSAL) overview](/azure/active-directory/develop/msal-overview).
+
+
+---
 
 ## Related Content
 

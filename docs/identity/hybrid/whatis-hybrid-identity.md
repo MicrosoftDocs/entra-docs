@@ -2,7 +2,6 @@
 title: What is hybrid identity with Microsoft Entra ID?
 description: Hybrid identity is having a common user identity for authentication and authorization both on-premises and in the cloud.
 keywords: introduction to Azure AD Connect, Azure AD Connect overview, what is Azure AD Connect, install active directory
-
 ms.assetid: 59bd209e-30d7-4a89-ae7a-e415969825ea
 ms.topic: overview
 ms.date: 04/09/2025

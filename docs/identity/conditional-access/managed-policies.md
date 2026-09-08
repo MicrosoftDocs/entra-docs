@@ -4,9 +4,10 @@ description: Secure your resources with Microsoft-managed Conditional Access pol
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 05/28/2026
 ms.reviewer: swethar
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 ---
 # Microsoft-managed Conditional Access policies
 
@@ -32,10 +33,10 @@ Microsoft-managed policies are preconfigured Conditional Access policies that ar
 - The policy includes preconfigured conditions and recommended controls, such as requiring multifactor authentication. 
 - Administrators don't need to manually create these policies. Microsoft manages the policy template, configuration, and updates to ensure it aligns with current security guidance.
 
-Microsoft enables these policies no less than 45 days after they're introduced in your tenant if they're left in the **Report-only** state. You can turn on these policies sooner, or opt out by setting the policy state to **Off**. Customers are notified through emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
+Microsoft enables these policies no less than 30 days after they're introduced in your tenant if they're left in the **Report-only** state. You can turn on these policies sooner, or opt out by setting the policy state to **Off**. Customers are notified through emails and [Message center](/microsoft-365/admin/manage/message-center) posts 2 weeks before the policies are enabled. 
 
 > [!NOTE]
-> In some cases, policies might be enabled faster than 45 days. If this change applies to your tenant:
+> In some cases, policies might be enabled faster than 30 days. If this change applies to your tenant:
 > 
 > - It's mentioned in emails and Microsoft 365 message center posts you receive about Microsoft-managed policies. 
 > - It's mentioned in the policy details in the Microsoft Entra admin center.
@@ -54,6 +55,7 @@ These Microsoft-managed policies allow administrators to make simple modificatio
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
 - [Block access for high-risk users](#block-access-for-high-risk-users)
+- [Require remediation for high-risk users](#require-remediation-for-high-risk-users)
 - [Require phishing resistant authentication for admins](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) (Baseline security mode policy)
 
 ## How to access and manage Microsoft-managed policies
@@ -96,6 +98,8 @@ Based on Microsoft's analysis, more than 99 percent of password spray attacks us
 This policy blocks device code flow, where a user initiates authentication on one device, completes on another, and their token is sent back to the original device. This type of authentication is common where users can't enter their credentials, like smart TVs, Microsoft Teams Room devices, IoT devices, or printers.
 
 Device code flow is rarely used by customers, but is frequently used by attackers. Enabling this Microsoft-managed policy for your organization helps remove this attack vector.
+
+If your organization uses Microsoft Teams devices that require device code flow, follow the guidance in [Restrict device code flow for Microsoft Teams devices with Conditional Access](policy-teams-devices-device-code-flow.md) to scope exceptions correctly while continuing to block device code flow for other accounts.
 
 ### Multifactor authentication for admins accessing Microsoft Admin portals
 
@@ -151,7 +155,27 @@ This policy targets:
 
 Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
 
-## Security defaults policies
+### Require remediation for high-risk users
+
+This policy requires users identified as high risk by Microsoft Entra ID Protection to remediate their risk before continuing to access organizational resources. A new security group is created alongside this policy to scope the affected users. Instead of blocking access entirely, this policy uses [adaptive risk remediation](/entra/id-protection/concept-identity-protection-user-experience) to guide users through the appropriate recovery flow based on their authentication method and the type of threat detected. For more information about the remediation experience, see [User self-remediation with Microsoft Entra ID Protection](/entra/id-protection/concept-identity-protection-user-experience).
+
+> [!NOTE]
+> **Hybrid tenants:** Eligible tenants have password hash sync enabled, so affected users can self-remediate through a secure password change after completing MFA. Ensure your users are registered for MFA. For more information, see [Considerations for cloud and hybrid users](/entra/id-protection/howto-identity-protection-remediate-unblock#considerations-for-cloud-and-hybrid-users).
+
+This policy targets:
+
+- Organizations with Microsoft Entra ID P2 licenses
+
+Key considerations:
+
+- This policy remediates user risk, not sign-in risk.
+- If a user is assigned to multiple risk policies, precedence applies: Require risk remediation overrides Require password change, and Block overrides all others.
+- Authentication strength and sign-in frequency (every time) are automatically applied to ensure users reauthenticate with the required strength after session revocation.
+- This policy isn't supported for external and guest users.
+  
+Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
+
+## Upgrade from security defaults
 
 The following policies are available for when you upgrade from using security defaults.
 
@@ -191,15 +215,19 @@ These accounts must use multifactor authentication to sign in to any application
 
 ### Require multifactor authentication for all users
 
-This policy applies to all users in your organization and requires multifactor authentication for every sign-in. In most cases, sessions persist on devices, so users don't need to complete multifactor authentication when interacting with other applications. 
+This policy applies to all users in your organization and requires multifactor authentication for every sign-in. In most cases, sessions persist on devices, so users don't need to complete multifactor authentication when interacting with other applications.
 
 ## Monitor and review
 
-The managed policy and the sign-in logs are the two places where you can see the effect of these policies on your organization.
+To see the effect of these policies on your organization and investigate changes to the policies, you have a few options.
 
-Review the **Policy impact** tab of the managed policy to see a summary of how the policy affects your environment.
+### Policy impact
+
+Select the **Policy impact** tab of the managed policy from within Conditional Access to see a summary of how the policy affects your environment. Adjust the filter, data format, and more to explore the policy's effect, even on report-only policies.
 
 :::image type="content" source="media/managed-policies/microsoft-managed-policy-impact-on-sign-in.png" alt-text="Screenshot showing the effect of a policy on the organization.":::
+
+### Sign-in logs
 
 Analyze the **Microsoft Entra sign-in logs** to see details about how the policies affect sign-in activity.
 
@@ -213,6 +241,17 @@ Analyze the **Microsoft Entra sign-in logs** to see details about how the polici
 1. Select a specific sign-in event, then select **Conditional Access**.
    - To investigate further, select the **Policy Name** to drill down into the configuration of the policies.
 1. Explore the other tabs to see the **client user** and **device details** that were used for the Conditional Access policy assessment.
+
+### Audit logs
+
+The **Microsoft Entra audit logs** are helpful when investigating changes made to a policy.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
+1. Set the **Service** filter to **Conditional Access**.
+1. If needed, select a specific **Activity** filter.
+
+The **Target(s)** column displays the name of the policy that was updated. Microsoft-managed policy names start with **Microsoft-managed:** so you can easily filter for them.
 
 ## Common questions
 

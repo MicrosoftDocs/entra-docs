@@ -1,8 +1,6 @@
 ---
 title: Learn about Global Secure Access external user access
 description: Learn how Global Secure Access enables secure external user access for partners through the Global Secure Access client and Azure Virtual Desktop.
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: concept-article
 ms.date: 04/09/2026
 ms.reviewer: cagautham
@@ -32,6 +30,7 @@ To enable external user access with the Global Secure Access client, you must ha
     > [!TIP]
     > The home tenant doesn't need to have a Global Secure Access license.
 - Global Secure Access Private Access enabled on the resource tenant. Configure the Private Access traffic forwarding profile on the resource tenant and assign the profile to external user accounts.
+- The resource tenant linked to an Azure subscription through Microsoft Entra External ID subscription linking. The administrator must link the subscription in the resource tenant so external users can access private resources and usage is billed correctly. For more information, see [Global Secure Access licensing for guest users](reference-licensing-guest-users.md#link-your-tenant-to-a-subscription).
 - At least one private application configured and assigned to external user accounts.
 - The external user access feature enabled on the client by setting the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\Software\Microsoft\Global Secure Access Client`
@@ -113,6 +112,8 @@ You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop ins
 
 :::image type="content" source="media/concept-external-user-access/guest-access-overview.png" alt-text="Diagram showing an overview of external user access in Global Secure Access." lightbox="media/concept-external-user-access/guest-access-overview.png":::
 
+> [!NOTE]
+> In this scenario, the virtual machine is domain joined to the resource tenant. The Global Secure Access client on the VM automatically authenticates the external user to the resource tenant based on the VM's domain membership, eliminating the need for manual tenant switching.
 
 To enable external user access for Windows 365 or Azure Virtual Desktop (AVD) virtual machines (VM) with Global Secure Access, follow these steps:
 

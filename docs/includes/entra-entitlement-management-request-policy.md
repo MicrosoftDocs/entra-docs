@@ -4,7 +4,7 @@ description: include file
 author: owinfreyATL
 ms.service: entra-id
 ms.topic: include
-ms.date: 02/27/2023
+ms.date: 04/29/2026
 ms.author: owinfrey
 ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 ---
@@ -26,12 +26,12 @@ Use the following steps if you want to allow identities in your directory to be 
     | **Specific users and groups** | Choose this option if you want only the users and groups in your directory that you specify to be able to request this access package. |
     | **All members (excluding guests)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
     | **All users (including guests)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
-    | **All Service principals (preview)** | Choose this option if you want all service principals in your directory to be able to request this access package. |
-    | **All agents (preview)** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
+    | **All Service principals** | Choose this option if you want all service principals in your directory to be able to request this access package. |
+    | **All agents** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
 
     Guest users are external identities who have been invited into your directory via [Microsoft Entra B2B](~/external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
 
-    The **All Service principals** and **All agents** preview require Microsoft Entra Agent ID. For more information, see [Governing agent identities (preview)](~/id-governance/agent-id-governance-overview.md).
+    The **All Service principals** and **All agents** options require Microsoft Entra Agent ID. For more information, see [Governing agent identities](~/id-governance/agent-id-governance-overview.md).
 
 1. If you selected **Specific users and groups**, select **Add users and groups**.
 
@@ -65,7 +65,7 @@ Follow these steps if you want to allow identities not in your directory to requ
     | --- | --- |
     | **Specific connected organizations** | Choose this option if you want to select from a list of organizations that your administrator previously added. All users from the selected organizations can request this access package. |
     | **All connected organizations** | Choose this option if all users from all your configured connected organizations can request this access package. |
-    | **All users (All connected organizations + any new external users)** | Choose this option if any users can request this access package and the B2B allowlist or blocklist settings should take precedence for any new external user. |
+    | **All users (All connected organizations + any new external users)** | Choose this option if any users can request this access package and the B2B allow list or block list settings should take precedence for any new external user. |
 
     A connected organization is an external Microsoft Entra directory or domain that you have a relationship with.
 
@@ -83,7 +83,7 @@ Follow these steps if you want to allow identities not in your directory to requ
 
 1. After you select all your connected organizations, choose **Select**.
 
-    All users from the selected connected organizations will be able to request this access package. This includes users in Microsoft Entra ID from all subdomains associated with the organization, unless the Azure B2B allowlist or blocklist blocks those domains. If you specify a social identity provider domain, such as **live.com**, then any user from the social identity provider will be able to request this access package. For more information, see [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md).
+    All users from the selected connected organizations will be able to request this access package. This includes users in Microsoft Entra ID from all subdomains associated with the organization, unless the Azure B2B allow list or block list blocks those domains. If you specify a social identity provider domain, such as **live.com**, then any user from the social identity provider will be able to request this access package. For more information, see [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md).
 
 1. Skip down to the [Specify approval settings](#specify-approval-settings) section.
 

@@ -18,6 +18,13 @@ This scenario is only supported for:
 - Cloud-created [security groups](../../../fundamentals/concept-learn-about-groups.md#group-types).
 - Groups written back to Active Directory with the scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
 
+> [!IMPORTANT]
+> During migration, don't remove written-back groups, the Group Writeback target OU, or related referenced objects from Microsoft Entra Connect Sync scope until Microsoft Entra Cloud Sync is configured and validated to provision those groups to Active Directory.
+>
+> The supported coexistence model is to keep Microsoft Entra Connect Sync aware of the existing written-back groups and use the `cloudNoFlow` and `JoinNoFlow` rules in this article to preserve the join relationship while Microsoft Entra Cloud Sync takes over group provisioning.
+>
+> `JoinNoFlow` isn't a full staging (read-only) mode. It prevents object adds, object deletes, and non-reference attribute updates. However, reference attribute updates, such as group membership references, can still flow for reference resolution. Removing groups or referenced objects from Microsoft Entra Connect Sync scope before cutover can cause Microsoft Entra Connect Sync to drop references or deprovision on-premises group objects unexpectedly.
+
 Mail-enabled groups and distribution lists written back to Active Directory continue to work with Microsoft Entra Connect Group Writeback but revert to the behavior of Group Writeback v1. In this scenario, after you disable Group Writeback v2, all Microsoft 365 groups are written back to Active Directory independently of the **Writeback Enabled** setting in the Microsoft Entra admin center. For more information, see [Provision to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
 
 ## Prerequisites
@@ -138,9 +145,10 @@ $groups | select displayName, adminDescription, 'msDS-ExternalDirectoryObjectID'
 
 ## Step 3: Create a custom group inbound rule
 
-In the Microsoft Entra Connect Synchronization Rules Editor, create an inbound sync rule that targets cloud-created groups that are currently mastered in Microsoft Entra ID and have a `NULL` mail attribute. This inbound sync rule is a join rule that sets the `cloudNoFlow` attribute to True.
+In the Microsoft Entra Connect Synchronization Rules Editor, create an inbound sync rule that targets cloud-created groups that are currently mastered in Microsoft Entra ID and have a `NULL` mail attribute. This inbound sync rule is a join rule that sets the `cloudNoFlow` attribute to `True`.
 
-The purpose of this rule is to flag these groups so that Microsoft Entra Connect continues to recognize them as joined objects after Group Writeback is disabled, preventing them from being treated as out-of-scope objects. This rule is required to preserve existing on-premises group objects during the transition from Group Writeback in Microsoft Entra Connect Sync to group provisioning using Microsoft Entra Cloud Sync.
+The purpose of this rule is to flag these groups so Microsoft Entra Connect Sync continues to recognize them as joined objects after Group Writeback is disabled. This prevents the existing on-premises group objects from being treated as out of scope during the transition from Group Writeback in Microsoft Entra Connect Sync to group provisioning in Microsoft Entra Cloud Sync.
+
 You can create this sync rule by using either the user interface or PowerShell with the provided script.
 
 ### Create a custom group inbound rule in the user interface
@@ -242,11 +250,11 @@ You can create this sync rule by using either the user interface or PowerShell w
 
 ## Step 4: Create a custom group outbound rule
 
-You also need an outbound sync rule with a Link Type of `JoinNoFlow` and a scoping filter that selects groups where `cloudNoFlow` is set to `True`.
-This outbound rule ensures that, after Group Writeback is disabled in Microsoft Entra Connect, it maintains the join relationship without flowing changes or triggering deprovisioning.
+You also need an outbound sync rule with a link type of `JoinNoFlow` and a scoping filter that selects groups where `cloudNoFlow` is set to `True`. 
+This outbound rule maintains the join relationship after Group Writeback is disabled in Microsoft Entra Connect Sync, and prevents object adds, object deletes, and non-reference attribute updates from being exported for those groups.
 
-Without this rule, previously written-back groups would be interpreted as no longer in scope and deleted from on-premises Active Directory during the next sync cycle.
-This rule is required to safely retire Group Writeback v2 while allowing Microsoft Entra Cloud Sync to take over group provisioning responsibilities.
+Without this rule, previously written-back groups might be interpreted as no longer in scope and deleted from on-premises Active Directory during the next sync cycle. This rule is required to safely retire Group Writeback v2 while allowing Microsoft Entra Cloud Sync to take over group provisioning responsibilities.
+
 You can create this sync rule by using either the user interface or PowerShell with the provided script.
 
 ### Create a custom group outbound rule in the user interface
@@ -379,7 +387,9 @@ You can create this sync rule by using either the user interface or PowerShell w
 
 ## Step 7: Configure Microsoft Entra Cloud Sync
 
-Now that the groups are removed from the synchronization scope of Microsoft Entra Connect Sync, you can set up and configure Microsoft Entra Cloud Sync to take over synchronization of the security groups. For more information, see [Provision groups to Active Directory by using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md).
+Now that Microsoft Entra Connect Sync has the no-flow rules configured for the existing written-back groups, set up and configure Microsoft Entra Cloud Sync to take over provisioning of the security groups to Active Directory. For more information, see [Provision groups to Active Directory by using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md).
+
+Before you decommission Microsoft Entra Connect Sync Group Writeback, verify that Microsoft Entra Cloud Sync provisions the groups and maintains their memberships in Active Directory.
 
 ## Related content
 

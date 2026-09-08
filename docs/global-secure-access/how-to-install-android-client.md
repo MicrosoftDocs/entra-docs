@@ -4,8 +4,6 @@ description: The Global Secure Access client helps secure network traffic at the
 #customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
 ms.topic: how-to
 ms.date: 02/21/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
 
@@ -88,7 +86,7 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 
     | Configuration key                | Value    | Details   |
     |----------------------------------|----------|-----------|
-    | `Global Secure Access`             | No value | Global Secure Access isn't enabled and the tile isn't visible. |
+    | `Global Secure Access`           | No value | Global Secure Access defaults to value 1 behavior. |
     |                                  | `0`      | Global Secure Access isn't enabled and the tile isn't visible. |
     |                                  | `1`      | The tile is visible and defaults to `false` (disabled state). The user can enable or disable Global Secure Access by using the toggle in the app. |
     |                                  | `2`      | The tile is visible and defaults to `true` (enabled state). The user can override Global Secure Access. The user can enable or disable Global Secure Access by using the toggle in the app. |

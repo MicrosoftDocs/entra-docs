@@ -2,10 +2,10 @@
 title: Track and investigate identity activities with linkable identifiers in Microsoft Entra
 description: Discover how linkable identifiers like session IDs and unique token identifiers in Microsoft Entra help track and investigate identity-related activities, enhancing security and transparency.
 ms.topic: how-to
-ms.date: 05/27/2025
+ms.date: 09/02/2026
+ai-usage: ai-assisted
 ms.subservice: hybrid
 ms.custom: msecd-doc-authoring-106
-author: vimrang
 ms.reviewer: vranganathan
 #customer intent: As a security analyst, I want to use linkable identifiers in Microsoft Entra tokens so that I can trace and investigate identity-related activities across Microsoft 365 services.
 ---
@@ -50,9 +50,10 @@ This table describes all the linkable identifier claims in the Entra tokens.
 
 ## Log availability for linkable identifiers
 
-Currently, linkable identifiers are recorded in the following log sources:
+Currently, one or more linkable identifiers are recorded in the following log sources:
 
 - Microsoft Entra sign-in logs
+- Microsoft Entra audit logs
 - Microsoft Exchange Online audit logs
 - Microsoft Graph activity logs
 - Microsoft SharePoint Online audit logs
@@ -86,6 +87,65 @@ To view the sign-in logs from the Microsoft Entra admin center:
 :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/log-entry-linkable-identifiers.png" alt-text="Screenshot of sign-in log entry with linkable identifiers.":::
 
 Start with the User ID attribute in Microsoft Entra sign-in logs, then search the workload audit logs to track all activities using a specific access token. Similarly, use the Session ID attribute to search the workload audit logs and track all activities within a session.
+
+## Linkable identifiers in Microsoft Entra audit logs
+
+[Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md) provide visibility into administrative and directory operations in a tenant. These logs capture activities such as user and group management, application and service principal changes, role assignments, policy updates, and device lifecycle events.
+
+For supported audit events, the logs include the directory user session identifier (DUSI). DUSI enables security analysts to correlate an administrative operation with the authenticated user session from which the operation originated.
+
+### Investigation scenarios using DUSI
+
+For scenarios involving administrative activity, you can:
+
+- Start with DUSI from a Microsoft Entra sign-in log.
+- Use the identifier to find events from the same authenticated session in Microsoft Entra audit logs.
+- Correlate sign-in activity with subsequent administrative operations.
+- Trace configuration changes performed during a specific authenticated session.
+- Investigate privileged operations associated with a suspicious or compromised account.
+
+This correlation establishes an audit trail from authentication through subsequent administrative actions.
+
+### Linkable identifier mapping
+
+The following table maps linkable identifier claims to their attribute names in Microsoft Entra audit logs.
+
+| **Claim** | **Microsoft Entra audit log attribute name** | **Description** |
+|-----------|----------------------------------------------|-----------------|
+| oid       | Object ID                                    | The immutable identifier of the user or service principal that initiated the operation. |
+| tid       | Tenant ID                                    | The identifier of the tenant where the operation was recorded. |
+| sid       | Session ID                                   | The identifier that links the operation to the authenticated user session. |
+| deviceid  | Device ID                                    | The identifier of the device associated with the session, when available. |
+| uti       | Unique Token Identifier                      | The unique, case-sensitive identifier of the token or request associated with the operation. |
+| iat       | Issued at datetime                           | The date and time when the token associated with the operation was issued. |
+
+### Correlate sign-in activity with audit logs
+
+Use the same DUSI value to correlate Microsoft Entra sign-in logs with Microsoft Entra audit logs:
+
+1. Identify a suspicious sign-in in Microsoft Entra sign-in logs.
+1. Capture the associated DUSI value.
+1. Search Microsoft Entra audit logs for the same DUSI value.
+1. Review the administrative and directory operations associated with the authenticated session.
+
+This approach helps you determine whether a sign-in resulted in changes to users, groups, applications, devices, policies, or role assignments.
+
+:::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/entra-audit-log-linkable-identifier.png" alt-text="Screenshot of Microsoft Entra audit log details showing a session ID and synthetic example values." lightbox="media/how-to-authentication-track-linkable-identifiers/entra-audit-log-linkable-identifier.png":::
+
+### Example: Investigate administrative activity from a compromised session
+
+Suppose an administrator account is suspected of being compromised after a suspicious sign-in. By using the DUSI captured from Microsoft Entra sign-in logs, you can:
+
+- Identify Microsoft Entra audit log events associated with the session.
+- Review role assignment changes.
+- Investigate Conditional Access policy updates.
+- Examine application and service principal modifications.
+- Determine the overall impact of the session.
+
+Using DUSI across Microsoft Entra sign-in and audit logs helps security teams trace administrative activity back to the originating authenticated session.
+
+> [!NOTE]
+> DUSI is intended for investigation and correlation scenarios. A session identifier is available only when the audit event includes authenticated user-session context. Some service-generated, background, or otherwise unsupported audit events might not include a DUSI value.
 
 ## Linkable identifiers in Microsoft Exchange Online logs
 
@@ -214,7 +274,7 @@ These capabilities enable security analysts to correlate authentication events w
 
 ```kql
 MicrosoftGraphActivityLogs
-| where TimeGenerated > ago(4d) and UserId == '4624cd8c-6c94-4593-b0d8-a4983d797ccb'
+| where TimeGenerated > ago(4d) and UserId == '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 | join kind=leftouter (union
 SigninLogs,
 AADNonInteractiveUserSignInLogs,
@@ -402,4 +462,3 @@ By analyzing the log files with linkable identifiers, tenant administrators and 
 - [Teams audit logs](/purview/audit-teams-audit-log-events)
 - [SharePoint Online audit logs](/purview/audit-log-sharing#tabs=microsoft-purview-portal)
 - [Microsoft Graph activity logs](/graph/microsoft-graph-activity-logs-overview)
-

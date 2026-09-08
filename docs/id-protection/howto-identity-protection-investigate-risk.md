@@ -2,8 +2,9 @@
 title: Investigate risk with Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
 ms.topic: how-to
-ms.date: 03/17/2026
+ms.date: 05/27/2026
 ms.reviewer: lvandenende
+ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 # How to investigate risk
@@ -67,7 +68,7 @@ Once the risk is contained, more investigation might be required to mark the ris
       - Device
       - Location
       - IP address
-1. Depending on the results of the investigation, mark the user or sign-in as confirmed compromised, confirmed safe, or dismiss the risk.
+1. Depending on the results of the investigation, mark the user or sign-in as confirmed compromised, confirmed safe, or dismiss the risk. You can confirm compromise in the Microsoft Entra admin center or [programmatically using Microsoft Graph](howto-identity-protection-simulate-risk.md#confirm-compromise-using-microsoft-graph).
 1. [Set up risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#enable-policies) to prevent similar attacks or to address any gaps in coverage.
 
 ## Investigate specific detections

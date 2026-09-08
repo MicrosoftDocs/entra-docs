@@ -28,11 +28,12 @@ The table lists the deployment status for the APAC region.
 | South India            | Chennai, India              | ✅ | ✅ |
 | Australia Southeast    | Melbourne, Australia        | ✅ | ✅ |
 | Japan West             | Osaka, Japan                | ✅ | ✅ |
-| Central India          | Pune, India                 | ✅ |    |
+| Australia West         | Perth, Australia            | ✅ |     |
+| Central India          | Pune, India                 | ✅ | ✅ |
 | Korea Central          | Seoul, South Korea          | ✅ | ✅ |
-| Southeast Asia         | Singapore, Singapore        | ✅ |    |
+| Southeast Asia         | Singapore, Singapore        | ✅ | ✅ |
 | Australia East         | Sydney, Australia           | ✅ | ✅ |
-| Taiwan North           | Taipei, Taiwan              | ✅ |    |
+| Taiwan North           | Taipei, Taiwan              | ✅ | ✅ |
 | Japan East             | Tokyo, Japan                | ✅ | ✅ |
 
 
@@ -50,7 +51,7 @@ The table lists the deployment status for the EMEA region.
 | Sweden Central          | Gavle, Sweden                | ✅ | ✅ | 
 | South Africa North      | Johannesburg, South Africa   | ✅ | ✅ | 
 | UK South                | London, UK                   | ✅ | ✅ |
-| Spain Central           | Madrid, Spain                | ✅ |    | 
+| Spain Central           | Madrid, Spain                | ✅ | ✅ | 
 | Italy North             | Milan, Italy                 | ✅ | ✅ |
 | France South            | Marseille, France            | ✅ | ✅ |
 | France Central          | Paris, France                | ✅ | ✅ |
@@ -65,8 +66,9 @@ The table lists the deployment status for the LATAM region.
 
 |Azure Region            | Physical Location         | Global Secure Access service deployed | Remote network connectivity gateways | 
 | ---                 | ---                         | --- | --- | 
-| Brazil South        | Campinas, Brazil             | ✅ |   | 
+| Brazil South        | Campinas, Brazil             | ✅ | ✅ | 
 | Brazil Southeast    | Rio de Janeiro, Brazil       | ✅ |   | 
+| Chile Central       | Santiago, Chile              | ✅ |   | 
 
 
 ### North America (NA)
@@ -81,7 +83,7 @@ The table lists the deployment status for the NA region.
 | East US 2                | Manassas, Virginia, USA      | ✅ | ✅ | 
 | Canada East              | Montreal, Quebec, Canada     | ✅ | ✅ | 
 | West US 3                | Phoenix, Arizona, USA        | ✅ | ✅ | 
-| Mexico Central           | Queretaro, Mexico            | ✅ |    | 
+| Mexico Central           | Queretaro, Mexico            | ✅ | ✅ | 
 | West US 2                | Quincy, Washington, USA      | ✅ | ✅ | 
 | South Central US         | San Antonio, Texas, USA      | ✅ | ✅ | 
 | West US                  | San Jose, California, USA    | ✅ | ✅ | 

@@ -1,9 +1,7 @@
 ---
-author: henrymbuguakiarie
 ms.service: identity-platform
 ms.topic: include
 ms.date: 09/25/2023
-ms.author: henrymbugua
 manager: pmwongera 
 ---
 

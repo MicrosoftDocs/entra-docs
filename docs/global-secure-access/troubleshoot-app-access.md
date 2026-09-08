@@ -1,11 +1,9 @@
 ---
 title: Troubleshoot application access
 description: Learn how to troubleshoot application access problems with the Global Secure Access Windows client.
-author: jricketts
-ms.author: jricketts
 ms.topic: troubleshooting-general
 ms.date: 12/03/2025
-ms.reviewer: andresc
+ms.reviewer: andresc, jricketts
 
 #CustomerIntent: As an IT admin, I want troubleshoot application access for the Global Secure Access Windows client so that I can ensure its proper operation.
 
@@ -131,3 +129,5 @@ To prevent session disruption:
 
 > [!NOTE]
 > After creating a new app definition, allow approximately 5–10 minutes for the configuration to propagate and appear on the client.
+
+- Option 3: After confirming the application works through a single connector, enable session persistence. This consistently routes requests from the same user and device through the same connector during the       session.See [Configure traffic routing for the app](how-to-configure-per-app-access.md#configure-traffic-routing-for-the-app).

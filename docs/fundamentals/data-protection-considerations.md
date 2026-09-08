@@ -1,11 +1,9 @@
 ---
 title: Data protection considerations
 description: Learn how services store and retrieve Microsoft Entra object data through an RBAC authorization layer.
-author: janicericketts
 manager: martinco
 ms.topic: concept-article
 ms.date: 01/31/2023
-ms.author: jricketts
 ms.reviewer: jricketts
 ms.collection: 
 ms.custom: it-pro, sfi-image-nochange

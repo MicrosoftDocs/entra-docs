@@ -2,7 +2,6 @@
 title: My Apps portal overview
 description: Learn about how to manage applications in the My Apps portal.
 ms.topic: concept-article
-
 ms.date: 10/31/2024
 ms.reviewer: saibandaru
 ms.custom: enterprise-apps

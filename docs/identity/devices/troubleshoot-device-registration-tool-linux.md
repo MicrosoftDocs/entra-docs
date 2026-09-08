@@ -1,8 +1,7 @@
 ---
 title: Troubleshoot Device Registration Command Tool on Linux
 description: This article covers how to use the output from the Device Registration command tool on Linux to understand the state of devices in Microsoft Entra ID.
-author: ploegert
-ms.author: jploegert
+ms.reviewer: jploegert
 ms.topic: troubleshooting
 ms.date:     01/07/2026
 ms.custom: linux-related-content
@@ -51,7 +50,7 @@ sudo yum install microsoft-identity-broker
 ---
 
 > [!NOTE]
->  Once you install the `microsoft-identity-broker`, the dsregcmd tool is available system-wide.
+>  Once you install the `microsoft-identity-broker`, the dsreg tool is available system-wide.
 
 ```bash
 dsreg --help
@@ -133,7 +132,7 @@ Device State
 -----------------------------------------------------------------
 Device Registration Status   : Registered
 Device ID                    : a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6
-Tenant ID                    : 12345678-90ab-cdef-1234-567890abcdef
+Tenant ID                    : aaaabbbb-0000-cccc-1111-dddd2222eeee
 Tenant Name                  : contoso.com
 
 Primary Refresh Token

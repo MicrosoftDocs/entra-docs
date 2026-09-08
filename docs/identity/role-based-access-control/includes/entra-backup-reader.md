@@ -2,7 +2,7 @@
 title: Entra Backup Reader
 description: Entra Backup Reader
 ms.topic: include
-ms.date: 03/23/2026
+ms.date: 04/29/2026
 ms.custom: include file
 ---
 
@@ -24,3 +24,4 @@ Assign the Entra Backup Reader role to users who need to do the following tasks:
 > | microsoft.directory/backup/preview/cancel | Cancel a Microsoft Entra backup operation to compare a backup snapshot with the current state. |
 > | microsoft.directory/backup/preview/create | Create a Microsoft Entra backup operation that allows a user to compare a backup snapshot with the current state. |
 > | microsoft.directory/backup/standard/read | List Microsoft Entra backups (for example, backup IDs and timestamps), view difference reports, and list recovery jobs and their associated properties. |
+

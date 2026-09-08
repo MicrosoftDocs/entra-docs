@@ -43,6 +43,8 @@ Under the `/beta/privilegedRoles` endpoint, Microsoft had a classic version of t
 
 Under the `/beta/privilegedAccess` endpoint, Microsoft supported both `/aadRoles` and `/azureResources` segments for managing Microsoft Entra roles and Azure resource roles, respectively. This endpoint is deprecated and will stop returning data on October 28, 2026. Microsoft recommends against starting any new development with these APIs.
 
+Additionally, we are currently in the process of migrating the UI to Iteration 3 APIs.
+
 <a name='iteration-3-current--pim-for-azure-ad-roles-groups-in-microsoft-graph-api-and-for-azure-resources-in-arm-api-'></a>
 
 ### Iteration 3 (Current) – PIM for Microsoft Entra roles, groups in Microsoft Graph API, and for Azure resources in Azure Resource Manager API 

@@ -1,12 +1,12 @@
 ---
 title: Configure Brocade SANnav Management Portal for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Management Portal.
-ms.reviewer: jomondi
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.custom: sfi-image-nochange
+ms.date: 05/20/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1012
+ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Management Portal so that I can control who has access to Brocade SANnav Management Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Brocade SANnav Management Portal for Single sign-on with Microsoft Entra ID
 
@@ -60,7 +60,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **Brocade SANnav Management Portal** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -81,17 +81,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows user attributes and claims with default values.](common/default-attributes.png "Claims")
 
-1. In addition, Brocade SANnav Management Portal application expects a few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 
-	| Name |  Source Attribute|
-	| ---------------|  --------- |
-	| groups | user.groups |
-	| username | user.displayname |
-
-	> [!Note]
-	> Please refer [this](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration) link on how to add the groups attribute in the Attributes & Claims section.
-
-1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 

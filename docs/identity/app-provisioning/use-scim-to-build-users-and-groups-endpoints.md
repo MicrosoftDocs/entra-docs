@@ -2,7 +2,7 @@
 title: Build a SCIM endpoint for user provisioning to apps from Microsoft Entra ID
 description: Learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and automatically provision users and groups into your cloud applications.
 ms.topic: tutorial
-ms.date: 03/04/2025
+ms.date: 04/27/2026
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -10,6 +10,9 @@ ai-usage: ai-assisted
 # Tutorial: Develop a sample SCIM endpoint in Microsoft Entra ID
 
 This tutorial describes how to deploy the SCIM [reference code](https://aka.ms/scimreferencecode) with  [Azure App Service](/azure/app-service/). Then, test the code by using a tool like cURL or by integrating with the Microsoft Entra provisioning service. The tutorial is intended for developers who want to get started with SCIM, or anyone interested in testing a [SCIM endpoint](./use-scim-to-provision-users-and-groups.md). 
+
+> [!IMPORTANT]
+> The .NET reference code linked from this tutorial targets .NET Core 3.1, which is [no longer supported by Microsoft](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). The upstream repository provides the sample "as is" with no guarantee of active maintenance ([SCIM Reference Code README](https://github.com/AzureAD/SCIMReferenceCode#readme)). To build or modify the sample against a currently supported .NET runtime, you might need to upgrade the target framework and dependencies. For known issues and feature requests, see the [open issues on the upstream repository](https://github.com/AzureAD/SCIMReferenceCode/issues).
 
 In this tutorial, you learn how to:
 

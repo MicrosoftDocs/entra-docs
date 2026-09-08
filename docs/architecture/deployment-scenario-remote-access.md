@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra Suite deployment scenario - Modernize remote access
 description: Configure Microsoft Entra Suite products for upgrading existing VPN solution to a scalable cloud-based solution and move towards Secure Access Service Edge (SASE).
-ms.author: gasinh
-author: gargi-sinha
+ms.reviewer: gasinh
 ms.topic: concept-article
 ms.date: 06/13/2024
 ms.custom: sfi-ga-nochange, sfi-image-nochange

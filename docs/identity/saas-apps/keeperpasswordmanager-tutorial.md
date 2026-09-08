@@ -2,11 +2,10 @@
 title: Configure Keeper Password Manager for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Keeper Password Manager.
 
-ms.reviewer: celested
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 06/04/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Keeper Password Manager so that I can control who has access to Keeper Password Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Keeper Password Manager for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Keeper Password Manager with Microsoft Entra ID. When you integrate Keeper Password Manager with Microsoft Entra ID, you can:
@@ -15,14 +14,15 @@ In this article,  you learn how to integrate Keeper Password Manager with Micros
 * Enable your users to be automatically signed-in to Keeper Password Manager with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Keeper Password Manager is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Keeper Password Manager single sign-on (SSO) enabled subscription.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 
@@ -120,7 +120,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Keeper Password Manager SSO
 
-To configure SSO for the app, see the guidelines in the [Keeper support guide](https://docs.keeper.io/sso-connect-guide/).
+To configure SSO for the app, see the guidelines in the [Keeper support guide](https://docs.keeper.io/sso-connect-cloud/identity-provider-setup/azure-o365-keeper).
 
 ### Create a Keeper Password Manager test user
 

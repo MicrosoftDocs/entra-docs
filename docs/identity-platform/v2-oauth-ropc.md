@@ -1,9 +1,7 @@
 ---
 title: Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials
 description: Support browser-less authentication flows using the resource owner password credential (ROPC) grant.
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.date: 01/04/2025
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick

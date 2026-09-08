@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 07/29/2024
-ms.author: kengaderdus
 ---
 
 1. From the **App registrations** page, select the application that you created, such as *ciam-client-app*.

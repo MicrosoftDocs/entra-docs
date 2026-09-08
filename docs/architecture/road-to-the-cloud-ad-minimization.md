@@ -2,11 +2,10 @@
 title: Road to the cloud - Case studies to reduce your dependency on traditional on-premises Active Directory services
 description: Learn about case studies to reduce your dependency on traditional on-premises Active Directory services.
 documentationCenter: ''
-author: rolyon
 manager: pmwongera
 ms.topic: how-to
 ms.date: 01/04/2026
-ms.author: rolyon
+
 ms.custom: references_regions
 ms.subservice: architecture
 ---

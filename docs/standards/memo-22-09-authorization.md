@@ -4,10 +4,10 @@ description: Learn how to meet authorization requirements outlined in OMB memora
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 02/10/2025
 ms.custom: it-pro
 ---

@@ -4,7 +4,6 @@ description: Rules and Display Definition Reference
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 01/31/2025
-
 #Customer intent: As an administrator, I am looking for information to help me disable 
 ---
 

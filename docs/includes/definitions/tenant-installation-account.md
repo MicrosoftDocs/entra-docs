@@ -1,9 +1,9 @@
 ---
-author: barclayn
+author: kenwith
 ms.service: entra-id
 ms.topic: include
 ms.date: 01/24/2025
-ms.author: barclayn
+ms.author: kenwith
 ms.custom: Identity-Managed-Definition, sfi-ga-nochange
 #Inline of fundamentals/add-custom-domain.md, fundamentals/faq.yml, fundamentals/how-subscriptions-associated-directory.md, fundamentals/users-default-permissions.md, 
 ---

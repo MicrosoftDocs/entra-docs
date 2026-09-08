@@ -4,7 +4,6 @@ description: This article covers how to use the output from the dsregcmd command
 
 ms.topic: troubleshooting
 ms.date: 06/27/2025
-
 ms.reviewer: jploegert
 ---
 # Troubleshoot devices by using the dsregcmd command

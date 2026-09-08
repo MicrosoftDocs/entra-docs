@@ -2,8 +2,9 @@
 title: Quickstart - Access and create new tenant
 description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
 ms.topic: quickstart
-ms.date: 03/12/2026
-ms.custom: it-pro, fasttrack-edit, mode-other, sfi-image-nochange
+ms.date: 07/29/2026
+ai-usage: ai-assisted
+ms.custom: it-pro, fasttrack-edit, mode-other, sfi-image-nochange, msecd-doc-authoring-1018
 ms.collection: M365-identity-device-management
 #Customer Intent: As an IT admin, I want to create a new Microsoft Entra tenant so that I can set up a directory for my organization or development environment.
 ---
@@ -29,18 +30,41 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 >
 > - If you're unable to create a Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If it isn't enabled you must be assigned at least the [Tenant Creator](../identity/role-based-access-control/permissions-reference.md#tenant-creator) role.
 > - This article doesn't cover creating an *external* tenant configuration for consumer-facing apps; learn more about using [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) for your customer identity and access management (CIAM) scenarios.
-> - If you're unable to create a Governed Workforce tenant, verify your billing account permissions. You must have at least Tenant Contributor permissions on at least one Microsoft Customer Agreement (MCA) subscription. Enterprise Agreement (EA) subscriptions aren't currently supported for this scenario.
+> - If you're unable to create a Governed Workforce tenant, verify that you have either an [Enterprise Agreement (EA)](/azure/cost-management-billing/manage/understand-ea-roles) or [Pay-As-You-Go](https://azure.microsoft.com/pricing/offers/ms-azr-0003p?cid=msft_learn) subscription. Both [Microsoft Online Subscription Agreement (MOSA)](/azure/cost-management-billing/manage/view-all-accounts#microsoft-online-services-program) and [Microsoft Customer Agreement (MCA)](/azure/cost-management-billing/manage/view-all-accounts#microsoft-customer-agreement) billing accounts are supported. You also need the required Azure Resource Manager (ARM) permissions for the selected subscription through the Tenant Contributor or Subscription Owner/Creator role. To identify your billing account type, see [View your billing accounts in the Azure portal](/azure/cost-management-billing/manage/view-all-accounts).
 
 ### To create a new tenant
 
 # [Workforce / B2C](#tab/workforce)
 
-[!INCLUDE [Create](../includes/definitions/create-new-tenant.md)]
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
-# [Secure add-on tenant creation (preview)](#tab/governed-workforce)
+1. From the Azure portal menu, select **Microsoft Entra ID**.
 
-> [!IMPORTANT]
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+1. Navigate to **Entra ID** > **Overview** > **Manage tenants**.
+
+1. Select **Create**.
+
+   :::image type="content" source="media/create-new-tenant/portal.png" alt-text="Screenshot of Microsoft Entra ID - Overview page - Create a tenant.":::
+
+1. On the Basics tab, select the type of tenant you want to create, either **Microsoft Entra ID** or **Microsoft Entra ID (B2C)**.
+
+   Choose **Microsoft Entra ID** to create a workforce tenant for your organization's users and resources. Choose **Microsoft Entra ID (B2C)** only if you need an Azure AD B2C tenant. If **Microsoft Entra ID** is unavailable, review the prerequisites in the previous note, including paid customer requirements, tenant creation settings, and the Tenant Creator role.
+
+1. Select **Next: Configuration** to move to the Configuration tab.
+
+1. On the Configuration tab, enter the following information:
+
+   :::image type="content" source="media/create-new-tenant/create-new-tenant.png" alt-text="Screenshot of Microsoft Entra ID - Create a tenant page - configuration tab.":::
+
+   - Type your desired Organization name (for example *Contoso Organization*) into the **Organization name** box.
+   - Type your desired Initial domain name (for example *Contosoorg*) into the **Initial domain name** box.
+   - Select your desired Country/Region or leave the *United States* option in the **Country or region** box.
+
+1. Select **Next: Review + Create**. Review the information you entered and if the information is correct, select **Create** in the lower left corner.
+
+Your new tenant is created with the domain contoso.onmicrosoft.com.
+
+# [Secure add-on tenant creation](#tab/governed-workforce)
 
 Use the secure add-on tenant creation flow to create a new Governed Workforce tenant. This process creates the tenant and automatically establishes a [governance relationship](~/id-governance/tenant-governance/governance-relationships.md) with your home tenant.
 
@@ -78,7 +102,7 @@ In order to automatically establish governance relationships with add-on tenants
    - Select your desired cloud subscription and resource group for storing the Microsoft Entra ID Free billing asset for your new tenant.
 
    > [!NOTE]
-   > The subscription must be a Microsoft Customer Agreement (MCA) subscription. Other subscription types aren't currently supported.
+   > Use either an [Enterprise Agreement (EA)](/azure/cost-management-billing/manage/understand-ea-roles) or [Pay-As-You-Go](https://azure.microsoft.com/pricing/offers/ms-azr-0003p?cid=msft_learn) subscription. Both [Microsoft Online Subscription Agreement (MOSA)](/azure/cost-management-billing/manage/view-all-accounts#microsoft-online-services-program) and [Microsoft Customer Agreement (MCA)](/azure/cost-management-billing/manage/view-all-accounts#microsoft-customer-agreement) billing accounts are supported. You also need the required Azure Resource Manager (ARM) permissions for the selected subscription through the Tenant Contributor or Subscription Owner/Creator role. To identify your billing account type, see [View your billing accounts in the Azure portal](/azure/cost-management-billing/manage/view-all-accounts).
 
 1. Select **Next: Review + Create**. Review the information you entered and if the information is correct, select **Create** in the lower left corner.
 
@@ -111,9 +135,9 @@ If you're not going to continue to use this tenant, you can delete the tenant us
 
 - To change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
 
-- To add users, see [Add or delete a new user](./how-to-create-delete-users.yml).
+- To add users, see [Add or delete a new user](./how-to-create-delete-users.md).
 
-- To add groups and members, see [Create a basic group and add members](./how-to-manage-groups.yml).
+- To add groups and members, see [Create a basic group and add members](./how-to-manage-groups.md).
 
 - To learn about access management, see [Azure role-based access control (RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
 

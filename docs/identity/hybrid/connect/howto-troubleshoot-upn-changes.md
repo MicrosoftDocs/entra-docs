@@ -4,8 +4,6 @@ description: Understand known issues and mitigations for User Principal Name (UP
 ms.subservice: hybrid-connect
 ms.topic: troubleshooting
 ms.date: 04/29/2024
-ms.author: gasinh
-author: gargi-sinha
 manager: martinco
 ms.reviewer: jsimmons, andresc
 

@@ -19,7 +19,7 @@ Some of the popular integrations include the applications in the following table
 | :--- | :--- |
 | HR | [SuccessFactors - User Provisioning](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
 | HR | [Workday - User Provisioning](../identity/saas-apps/workday-inbound-cloud-only-tutorial.md)|
-| HR | [API-driven connector from any HR source](../identity/app-provisioning/inbound-provisioning-api-concepts.md)<br>[Rippling HCM integration with Microsoft Entra ID/Active Directory](../identity/saas-apps/rippling-hcm-microsoft-entra-id-integration-tutorial.md)<br>[Oracle HCM API-driven connector](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)<br>[Darwinbox to Microsoft Entra ID](../identity/saas-apps/darwinbox-entra-integration-tutorial.md)<br>[SAP HCM to Microsoft Entra ID](../identity/saas-apps/sap-hcm-microsoft-entra-identity-provisioning.md) |
+| HR | [API-driven connector from any HR source](../identity/app-provisioning/inbound-provisioning-api-concepts.md)<br>[Rippling HCM to Microsoft Entra ID/Active Directory provisioning](../identity/saas-apps/rippling-hcm-microsoft-entra-id-integration-tutorial.md)<br>[HiBob to Microsoft Entra ID/Active Directory provisioning](../identity/saas-apps/hibob-to-active-directory-user-provisioning-tutorial.md)<br>[Oracle HCM API-driven connector](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)<br>[Darwinbox to Microsoft Entra ID](../identity/saas-apps/darwinbox-entra-integration-tutorial.md)<br>[SAP HCM to Microsoft Entra ID](../identity/saas-apps/sap-hcm-microsoft-entra-identity-provisioning.md) |
 | HR | Student information systems via [School Data Sync](/schooldatasync/school-data-sync-overview) |
 |[LDAP directory](../identity/app-provisioning/on-premises-ldap-connector-configure.md)| OpenLDAP<br>Microsoft Active Directory Lightweight Directory Services<br>389 Directory Server<br>Apache Directory Server<br>IBM Tivoli DS<br>Isode Directory<br>NetIQ eDirectory<br>Novell eDirectory<br>Open DJ<br>Open DS<br>Oracle (previously Sun ONE) Directory Server Enterprise Edition<br>RadiantOne Virtual Directory Server (VDS) |
 | [SQL database](../identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x<br>MySQL 8.x<br>Postgres|
@@ -317,6 +317,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Foodee](../identity/saas-apps/foodee-provisioning-tutorial.md) | ● | ● |
 | [Forcepoint Cloud Security Gateway - User Authentication](../identity/saas-apps/forcepoint-cloud-security-gateway-provisioning-tutorial.md) | ● | ● |
 | [ForeSee CX Suite](../identity/saas-apps/foreseecxsuite-tutorial.md) |  | ● |
+| [Forms and Workflow](../identity/saas-apps/forms-workflow-provisioning-tutorial.md) | ● |  |
 | [Fortes Change Cloud](../identity/saas-apps/fortes-change-cloud-provisioning-tutorial.md) | ● | ● |
 | [FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md) |  | ● |
 | [FortiSASE](../identity/saas-apps/fortisase-sia-tutorial.md) |  | ● |
@@ -498,7 +499,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Mevisio](../identity/saas-apps/mevisio-tutorial.md) |  | ● |
 | [MIC SAAS Portal](../identity/saas-apps/mic-saas-portal-tutorial.md) |  | ● |
 | [MicroFocus Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
-| [Microsoft 365](../fundamentals/concept-group-based-licensing.md) | ● | ● |
+| [Microsoft 365](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true) | ● | ● |
 | [Microsoft Active Directory Lightweight Directory Server (ADAM) (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Microsoft Azure SQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Microsoft Azure](/azure/role-based-access-control/role-assignments-portal) | ● | ● |
@@ -557,7 +558,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Open DJ (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
 | [Open DS (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md)  | ● |  |
 | [OpenAthens](../identity/saas-apps/openathens-tutorial.md) |  | ● |
-| [OpenForms](../identity/saas-apps/openforms-provisioning-tutorial.md) | ● |  |
 | [OpenLDAP](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [OpenText Directory Services](../identity/saas-apps/open-text-directory-services-provisioning-tutorial.md) | ● | ● |
 | [OptiTurn](../identity/saas-apps/optiturn-tutorial.md) |  | ● |

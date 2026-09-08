@@ -2,12 +2,11 @@
 title: Configure ClearCo or Single Sign-On with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ClearCompany.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 04/27/2026
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ClearCo so that I can control who has access to ClearCo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+#Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ClearCo so that I can control who has access to ClearCo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Configure ClearCo for Single Sign-On with Microsoft Entra ID
+# Configure ClearCo for single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ClearCo with Microsoft Entra ID. When you integrate ClearCo with Microsoft Entra ID, you can:
 

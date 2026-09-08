@@ -1,9 +1,7 @@
 ---
 title: Custom claims provider overview
 description: Conceptual article describing the custom claims provider as part of the custom authentication extension framework.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom: 
 ms.date: 09/16/2025
 ms.reviewer: jasuri

@@ -5,7 +5,6 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 06/10/2024
 ms.custom: devx-track-arm-template, devx-track-azurecli, linux-related-content
-
 appliesto:
 zone_pivot_groups: identity-linux-vm-access
 ---

@@ -1,13 +1,14 @@
 ---
 title: Configure CMMC Level 2 Access Control (AC) controls
 description: Learn how to configure Microsoft Entra identities to meet CMMC Level 2 Access Control (AC) requirements.
-author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: standards
 ms.topic: concept-article
 ms.date: 1/3/2023
+author: janicericketts
 ms.author: jricketts
+ms.reviewer: jricketts
 ms.custom: it-pro
 ---
 

@@ -19,7 +19,7 @@ Microsoft Entra Verified ID includes the Request Service REST API that allows yo
 
 ## Error object
 
-During public preview, the Request Service API returned errors in the following format.
+During preview, the Request Service API returned errors in the following format.
 
 ```json
 {

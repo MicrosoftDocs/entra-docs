@@ -14,10 +14,16 @@ ai-usage: ai-assisted
 
 In Privileged Identity Management (PIM) for groups in Microsoft Entra ID, role settings define membership or ownership assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
-You need group management permissions to manage settings. For role-assignable groups, you must have at least the Privileged Role Administrator role or be an owner of the group. For non-role assignable groups, you must have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, or User Administrator role or be an owner of the group. Role assignments for administrators should be scoped at directory level (not at the administrative unit level).
+To manage PIM policies, you need the following permissions. For role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groupsAssignableToRoles/owners/update` and `microsoft.directory/groupsAssignableToRoles/members/update` permissions, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group. For non-role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groups/owners/update` and `microsoft.directory/groups/members/update` permissions, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group. Role assignments for administrators can be scoped at directory level or administrative unit level. Built-in and custom Microsoft Entra roles are supported.
+
+To read PIM policies, you need the following permissions. For role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groupsAssignableToRoles/owners/update` or `microsoft.directory/groupsAssignableToRoles/members/update` permissions, such as Privileged Role Administrator or Global Administrator, or be an active or eligible owner of the group, or be an active or eligible member of the group. For non-role-assignable groups, you need a Microsoft Entra role with `microsoft.directory/groups/owners/update` and `microsoft.directory/groups/members/update` permissions, such as Groups Administrator or Identity Governance Administrator, or be an active or eligible owner of the group, or be an active or eligible member of the group. Role assignments for administrators can be scoped at directory level or administrative unit level. Built-in and custom Microsoft Entra roles are supported.
+
+Privileged Identity Management doesn't support permissions that start with `microsoft.directory/groups.security/` or `microsoft.directory/groups.unified/`. Use permissions that start with `microsoft.directory/groups/` instead.
+
+Privileged Identity Management doesn't support groups in Restricted Management Administrative Units (RMAU).
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at the administrative unit level can manage groups through the Groups API/UX and override changes made in Microsoft Entra Privileged Identity Management.
+> Administrators and group owners can manage groups through the Groups experience and other interfaces, overriding changes made in Microsoft Entra PIM.
 
 Role settings are defined per role per group. All assignments for the same role (member or owner) for the same group follow the same role settings. Role settings of one group are independent from the role settings of another group. Role settings for one role (member) are independent from role settings for another role (owner).
 
@@ -117,7 +123,7 @@ You can require users to enter a support ticket when they activate the eligible 
 
 ### Require approval to activate
 
-You can require approval for activation of an eligible assignment. The approver doesn't have to be a group member or owner. When you use this option, you must select at least one approver. We recommend that you select at least two approvers. There are no default approvers.
+You can require approval for activation of an eligible assignment. The approver doesn't have to be a group member or owner. When you use this option, you must select at least one approver. Select at least two approvers for redundancy. There are no default approvers.
 
 To learn more about approvals, see [Approve activation requests for PIM for Groups members and owners](groups-approval-workflow.md).
 
@@ -159,7 +165,7 @@ On the **Notifications** tab on the **Role settings** page, Privileged Identity 
 - **Critical emails only**: For each type of email, you can select the checkbox to receive critical emails only. Privileged Identity Management continues to send emails to the specified recipients only when the email requires immediate action. For example, emails that ask users to extend their role assignment aren't triggered. Emails that require admins to approve an extension request are triggered.
 
 > [!NOTE]
-> One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
+> One event in Privileged Identity Management can generate email notifications to multiple recipients—assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000, only the first 1000 recipients receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
 ## Manage role settings by using Microsoft Graph
 

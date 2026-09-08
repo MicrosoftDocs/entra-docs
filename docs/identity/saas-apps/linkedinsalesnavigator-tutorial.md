@@ -1,12 +1,11 @@
 ---
 title: Configure LinkedIn Sales Navigator for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and LinkedIn Sales Navigator.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LinkedIn Sales Navigator so that I can control who has access to LinkedIn Sales Navigator, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure LinkedIn Sales Navigator for Single sign-on with Microsoft Entra ID
 

@@ -1,9 +1,7 @@
 ---
 title: Retrieve and return data from an OnAttributeCollectionSubmit event
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionSubmit event for External ID customer configurations.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 09/16/2025
 ms.service: identity-platform
 

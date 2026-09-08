@@ -2,11 +2,10 @@
 title: Configure Lenses.io for Single sign-on with Microsoft Entra ID
 description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and Lenses.io.
 
-ms.reviewer: celested
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 06/04/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lenses.io so that I can control who has access to Lenses.io, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Lenses.io for Single sign-on with Microsoft Entra ID
 
@@ -16,15 +15,16 @@ In this article,  you learn how to integrate the [Lenses.io](https://lenses.io/)
 * Enable your users to be automatically signed-in to Lenses with their Microsoft Entra accounts.
 * Manage your accounts in one central location: the Azure portal.
 
+Lenses.io is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An instance of a Lenses portal. You can choose from a number of [deployment options](https://lenses.io/product/deployment/).
 * A Lenses.io [license](https://lenses.io/product/pricing/) that supports single sign-on (SSO).
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 

@@ -2,11 +2,10 @@
 title: Configure eLearnPOSH for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and eLearnPOSH.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and eLearnPOSH so that I can control who has access to eLearnPOSH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure eLearnPOSH for Single sign-on with Microsoft Entra ID
 

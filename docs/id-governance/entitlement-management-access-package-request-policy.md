@@ -79,12 +79,12 @@ Follow these steps if you want to allow identities in your directory to be able 
     | **Specific users and groups** | Choose this option if you want only the users and groups in your directory that you specify to be able to request this access package. |
     | **All members (excluding guests)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
     | **All users (including guests)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
-    | **All Service principals (preview)** | Choose this option if you want all service principals in your directory to be able to request this access package. |
-    | **All agents (preview)** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
+    | **All Service principals** | Choose this option if you want all service principals in your directory to be able to request this access package. |
+    | **All agents** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
 
     Guest users refer to external users that have been invited into your directory with [Microsoft Entra B2B](../external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](../fundamentals/users-default-permissions.md).
 
-    The **All Service principals** and **All agents** preview require Microsoft Entra Agent ID. For more information, see [Governing agent identities (preview)](agent-id-governance-overview.md).
+    The **All Service principals** and **All agents** options require Microsoft Entra Agent ID. For more information, see [Governing agent identities](agent-id-governance-overview.md).
 
 1. If you selected **Specific users and groups**, select **Add users and groups**.
 

@@ -3,8 +3,7 @@ title: How Conditional Access Authentication Strengths Work for External Users
 description: Learn how admins can use authentication strength requirements for external users in Microsoft Entra ID.
 ms.topic: concept-article
 ms.date: 03/04/2025
-author: inbarckms
-ms.reviewer: namkedia
+ms.reviewer: namkedia, inbarc
 ---
 # How Conditional Access authentication strengths work for external users
 

@@ -25,6 +25,9 @@ Because subdomains inherit the authentication type of the root domain by default
 
 ## Add the subdomain
 
+> [!NOTE]
+> The following examples use `<your-root-domain>` as a placeholder. Replace it with your own verified root domain name (for example, `contoso.com`).
+
 1. Use PowerShell to add the new subdomain, which has its root domain's default authentication type. The Microsoft Entra ID and Microsoft 365 admin centers don't yet support this operation.
 
     ```powershell
@@ -34,7 +37,7 @@ Because subdomains inherit the authentication type of the root domain by default
     
     # Define the parameters for the new domain
     $domainParams = @{
-        Id = "child6.mydomain.com"
+        Id = "child6.<your-root-domain>"
         AuthenticationType = "Federated"
     }
     
@@ -61,7 +64,7 @@ Because subdomains inherit the authentication type of the root domain by default
           "isInitial": false,
           "isRoot": false,          <---------------- Not a root domain, so it inherits parent domain's authentication type (federated)
           "isVerified": true,
-          "name": "child.mydomain.com",
+          "name": "child.<your-root-domain>",
           "supportedServices": [],
           "forceDeleteState": null,
           "state": null,
@@ -113,7 +116,7 @@ Invoking API with a federated verified subdomain with user references | POST | 4
           "isInitial": false,
           "isRoot": true,   <------------------------------ Also a root domain, so not inheriting from parent domain any longer
           "isVerified": true,
-          "name": "child.mydomain.com",
+          "name": "child.<your-root-domain>",
           "supportedServices": [
               "Email",
               "OfficeCommunicationsOnline",

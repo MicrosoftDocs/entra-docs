@@ -1,9 +1,7 @@
 ---
 title: Tokens and claims overview
 description: Learn how Microsoft Entra tenants publish metadata for authentication and authorization endpoints, scopes, and claims.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 03/21/2025
 ms.reviewer: jmprieur, ludwignick
 ms.service: identity-platform

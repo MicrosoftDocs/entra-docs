@@ -1,14 +1,13 @@
 ---
-title: Configure ServiceNow | Microsoft Docs for Single sign-on with Microsoft Entra ID
+title: Configure ServiceNow for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ServiceNow.
-ms.reviewer: celested
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 06/11/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ServiceNow so that I can control who has access to ServiceNow, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Configure ServiceNow | Microsoft Docs for Single sign-on with Microsoft Entra ID
+# Configure ServiceNow for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ServiceNow with Microsoft Entra ID. When you integrate ServiceNow with Microsoft Entra ID, you can:
 
@@ -17,6 +16,10 @@ In this article,  you learn how to integrate ServiceNow with Microsoft Entra ID.
 * Manage your accounts in one central location: the Azure portal.
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=497330f1-661a-4719-9156-e44708fe9401]
+
+ServiceNow is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -28,9 +31,6 @@ The scenario outlined in this article assumes that you already have the followin
 * The ServiceNow tenant must have the [Multiple Provider Single Sign On Plugin](https://docs.servicenow.com/bundle/washingtondc-platform-security/page/integrate/single-sign-on/concept/c_MultipleProviderSingleSignOn.html) enabled.
 * For automatic configuration, enable the multi-provider plugin for ServiceNow.
 * To install the ServiceNow Agent (Mobile) application, go to the appropriate store, and search for the ServiceNow Agent application. Then download it.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 

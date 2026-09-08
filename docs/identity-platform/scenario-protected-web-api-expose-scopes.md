@@ -1,9 +1,7 @@
 ---
 title: Expose scopes in a protected web API 
 description: Learn how to expose scopes in a protected web API.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom: 
 ms.date: 05/28/2024
 ms.reviewer: jmprieur

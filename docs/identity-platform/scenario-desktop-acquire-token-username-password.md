@@ -1,13 +1,15 @@
 ---
 title: Acquire a token to call a web API using username and password (desktop app)
-description: Learn how to build a desktop app that calls web APIs to acquire a token for the app using username and password.
+description: Understand how the username and password (ROPC) flow works in desktop apps, why it is deprecated, and how to migrate to more secure authentication flows.
 author: Dickson-Mwendia
 manager: dougeby
 ms.author: dmwendia
-ms.date: 01/15/2024
+ms.date: 06/15/2026
 ms.service: identity-platform
 ms.subservice: workforce
 ms.topic: how-to
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -18,7 +20,7 @@ ms.topic: how-to
 In your desktop applications, you can use the username and password flow, also known as Resource Owner Password Credentials (ROPC), to acquire a token silently.
 
 >[!WARNING]
-> The username and password flow has been deprecated due to security risks. Microsoft recommends using a more secure authentication flow. Follow the guidance on how to [Migrate from ROPC](https://aka.ms/msal-ropc-migration).. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
+> The username and password flow has been deprecated due to security risks. Microsoft recommends using a more secure authentication flow. Follow the guidance on how to [Migrate away from the resource owner password credentials (ROPC) flow](https://aka.ms/msal-ropc-migration).. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
 
 Additionally, by using a username and password, developers give up a number of things, including:
 
@@ -32,9 +34,9 @@ The username and password flow also has the following constraints:
 - It only works for work and school accounts, not personal Microsoft Accounts.
 - The flow is available on .NET desktop and .NET, but not on UWP.
 
-Using a username and password is useful in some cases, such as DevOps scenarios. However, if you want to use a username and password in interactive scenarios where you provide your own UI, consider moving away from it.
+Using a username and password is useful in some cases, such as DevOps scenarios. However, if you want to use a username and password in interactive scenarios where you provide your own UI, consider moving away from the username and password flow.
 
-The preferred flow for acquiring a token silently on Windows is using the [Windows authentication broker](scenario-desktop-acquire-token-wam.md). Alternatively, developers can also use the [Device code flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/device-code-flow) on devices without access to the web browser.
+For desktop apps on Windows, the preferred alternative to ROPC for silent token acquisition is the [Windows authentication broker](scenario-desktop-acquire-token-wam.md). As an alternative to ROPC or the Windows authentication broker, developers can use the [Device code flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/device-code-flow) on devices without access to a web browser.
 
 If you're building a desktop application that signs in users with social identities using the Resource Owner Password Credentials (ROPC) flow, see [how to sign in users with social identities by using Azure AD B2C](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/social-identities)
 
@@ -323,7 +325,7 @@ The ROPC flow isn't supported on MSAL for macOS.
 
 # [Node.js](#tab/nodejs)
 
-This extract is from the [MSAL Node dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/username-password). In the following code snippet, the username and password are hardcoded for illustration purposes only. This should be avoided in production. Instead, a basic UI prompting the user to enter her username/password would be recommended.
+The following code example is from the [MSAL Node dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/username-password). In the following code snippet, the username and password are hardcoded for illustration purposes only. This should be avoided in production. Instead, a basic UI prompting the user to enter her username/password would be recommended.
 
 ```javascript
 const msal = require("@azure/msal-node");
@@ -354,7 +356,7 @@ pca.acquireTokenByUsernamePassword(usernamePasswordRequest).then((response) => {
 
 # [Python](#tab/python)
 
-This extract is from the [MSAL Python dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/dev/sample/).
+The following code example is from the [MSAL Python dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/dev/sample/).
 
 ```python
 # Create a preferably long-lived app instance which maintains a token cache.
@@ -386,5 +388,4 @@ if not result:
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Call a web API from the desktop app](scenario-desktop-call-api.md).
+For the next step in the desktop app scenario, see [Call a web API from the desktop app](scenario-desktop-call-api.md).

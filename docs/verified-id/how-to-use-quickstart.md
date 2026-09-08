@@ -4,7 +4,6 @@ description: In this article, you learn how to use a quickstart to create a cust
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 01/31/2025
-
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for the ID token hint scenario. 
 ---
 

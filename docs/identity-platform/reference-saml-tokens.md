@@ -1,9 +1,7 @@
 ---
 title: SAML 2.0 token claims reference
 description: Claims reference with details on the claims included in SAML 2.0 tokens issued by the Microsoft identity platform, including their JWT equivalents.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom: 
 ms.date: 01/19/2023
 ms.reviewer: alamaral

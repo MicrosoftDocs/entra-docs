@@ -1,11 +1,10 @@
 ---
 title: Configure Citrix ADC (header-based authentication) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and Citrix ADC by using header-based authentication.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom: sfi-image-nochange
----
+--- 
 
 # Configure Citrix ADC (header-based authentication) for Single sign-on with Microsoft Entra ID
 

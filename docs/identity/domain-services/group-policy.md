@@ -1,19 +1,18 @@
 ---
 title: Restore group policy objects from backups in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to restore group policy objects in a Microsoft Entra Domain Services managed domain.
-author: JamesNyamu
-ms.author: janyamu
+ms.reviewer: janyamu
 ms.topic: how-to
 ms.date: 10/07/2025
 ---
 
-# Group Policy (Preview)
+# Group Policy - Public Preview
 
-Group Policy Objects (GPOs) are collections of policy settings that define how computer systems and user accounts behave within a Windows Active Directory domain environment. GPOs serve as the primary mechanism for centralized configuration management, security enforcement, and administrative control across Windows networks.
+Group Policy Objects (GPOs) are collections of policy settings that define how computer systems and user accounts behave within a Windows Active Directory domain environment. GPOs serve as the primary mechanism for centralized configuration management, security enforcement, and administrative control across Windows networks. 
 
 ## Backup Feature Overview
 
-The Group Policy Backup feature is a new capability added to the Domain Health Monitor that automatically creates and manages backups of Group Policy Objects (GPOs) in Active Directory Domain Services. This feature helps ensure business continuity and disaster recovery by maintaining regular backups of critical group policies.
+The Group Policy Backup feature is a capability under Public Preview that enhances the service. It automatically creates and manages backups of Group Policy Objects (GPOs) in Active Directory Domain Services. This feature helps ensure business continuity and disaster recovery by maintaining regular backups of critical group policies.
 
 ## File System Structure
 
@@ -76,20 +75,6 @@ The backup location and network share are configured with appropriate Active Dir
 
 ## Usage Examples
 
-### Verifying Backups
-
-```powershell
-# Check backup location
-Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups"
-```
-
-### Manual Cleanup
-
-```powershell
-# The feature handles cleanup automatically, but for manual operations:
-Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups" | Where-Object { $\_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
-```
-
 This section describes how an administrator on a domain-joined computer can discover, access, and restore Group Policy Object (GPO) backups created by this feature. Both GUI (GPMC) and PowerShell workflows are provided.
 
 ### Prerequisites
@@ -98,6 +83,13 @@ This section describes how an administrator on a domain-joined computer can disc
 - Your account is a member of a group with rights to read (AAD DC Admins) or modify (Domain Admins) GPOs.
 - RSAT (Remote Server Administration Tools) Group Policy Management Console (GPMC) installed (for GUI restoration).
 - PowerShell `GroupPolicy` module available (shipped with RSAT / on domain controllers by default).
+
+### Verifying Backups
+
+```powershell
+# Check backup location
+Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups"
+```
 
 ### Determining the PDC Emulator (If Needed)
 
@@ -335,6 +327,14 @@ If a restored GPO introduces issues:
 | GPO links missing after import | Used Import-GPO to new GPO | Re-create links manually with `New-GPLink` |
 | WMI filter missing | Not included / not recreated | Recreate filter in GPMC and reassign |
 | Security filtering ineffective | SID mismatch (cross-domain) | readd groups from target domain |
+
+### Manual Cleanup
+
+
+```powershell
+# The feature handles cleanup automatically, but for manual operations:
+Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups" | Where-Object { $\_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
+```
 
 ### Minimal End-to-End PowerShell Example
 

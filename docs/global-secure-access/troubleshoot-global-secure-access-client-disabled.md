@@ -3,8 +3,6 @@ title: "Troubleshoot the Global Secure Access Client: Disabled by Your Organizat
 description: This document provides troubleshooting guidance for the Global Secure Access client when it shows the "disabled by your organization" error message.
 ms.topic: troubleshooting
 ms.date: 03/23/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: lirazbarak
 
 

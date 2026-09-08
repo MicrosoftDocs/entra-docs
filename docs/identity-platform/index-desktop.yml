@@ -6,9 +6,7 @@ summary: >
   our quickstarts, tutorials, and in-depth how-to guides.
 
 metadata:
-  author: Dickson-Mwendia
   manager: dougeby
-  ms.author: dmwendia
   ms.date: 02/11/2025
   ms.service: identity-platform  
   ms.topic: landing-page

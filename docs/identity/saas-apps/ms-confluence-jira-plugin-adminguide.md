@@ -2,14 +2,12 @@
 title: Configure Atlassian Jira/Confluence for Single sign-on in Microsoft Entra ID
 description: Admin guide to use Atlassian Jira and Confluence with Microsoft Entra ID..
 
-author: dhivyagana
-ms.reviewer: celested
+ms.reviewer: celested, dhivyag
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: dhivyag
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Atlassian Jira and Confluence so that I can control who has access to Atlassian Jira and Confluence, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure Atlassian Jira/Confluence for Single sign-on in Microsoft Entra ID
 
 ## Overview

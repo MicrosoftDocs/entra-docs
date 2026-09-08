@@ -2,7 +2,9 @@
 title: Management concepts for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about how to administer a Microsoft Entra Domain Services managed domain and the behavior of user accounts and passwords
 ms.topic: concept-article
-ms.date: 01/21/2025
+ms.date: 06/22/2026
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1013
 ---
 
 # Management concepts for user accounts, passwords, and administration in Microsoft Entra Domain Services
@@ -13,16 +15,14 @@ This conceptual article details how to administer a managed domain and the diffe
 
 ## Domain management
 
-A managed domain is a DNS namespace and matching directory. In a managed domain, the domain controllers (DCs) that contain all the resources like users and groups, credentials, and policies are part of the managed service. For redundancy, two DCs are created as part of a managed domain. You can't sign in to these DCs to perform management tasks. Instead, you create a management VM that's joined to the managed domain, then install your regular AD DS management tools. You can use the Active Directory Administrative Center or Microsoft Management Console (MMC) snap-ins like DNS or Group Policy objects, for example.
+A managed domain is a DNS namespace and matching directory. In a managed domain, the domain controllers (DCs) that contain all the resources like users and groups, credentials, and policies are part of the managed service. For redundancy, two DCs are created as part of a managed domain. You can't sign in to these DCs to perform management tasks. Instead, you create a management virtual machine (VM) that's joined to the managed domain, then install your regular AD DS management tools. You can use the Active Directory Administrative Center or Microsoft Management Console (MMC) snap-ins like DNS or Group Policy objects, for example.
 
 ## User account creation
 
 User accounts can be created in a managed domain in multiple ways. Most user accounts are synchronized in from Microsoft Entra ID, which can also include user account synchronized from an on-premises AD DS environment. You can also manually create accounts directly in the managed domain. Some features, like initial password synchronization or password policy, behave differently depending on how and where user accounts are created.
 
-* The user account can be synchronized in from Microsoft Entra ID. This includes cloud-only user accounts created directly in Microsoft Entra ID, and hybrid user accounts synchronized from an on-premises AD DS environment using Microsoft Entra Connect.
-    * The majority of user accounts in a managed domain are created through the synchronization process from Microsoft Entra ID.
-* The user account can be manually created in a managed domain, and doesn't exist in Microsoft Entra ID.
-    * If you need to create service accounts for applications that only run in the managed domain, you can manually create them in the managed domain. As synchronization is one way from Microsoft Entra ID, user accounts created in the managed domain aren't synchronized back to Microsoft Entra ID.
+* The user account can be synchronized in from Microsoft Entra ID. It can be created directly in Microsoft Entra ID synchronized from an on-premises AD DS environment by using Microsoft Entra Connect.
+* The user account can be manually created in a managed domain, and not exist in Microsoft Entra ID. If you need to create service accounts for applications that only run in the managed domain, you can manually create them in the managed domain. Synchronization is only one-way from Microsoft Entra ID, so user accounts that you create in the managed domain aren't synchronized back to Microsoft Entra ID.
 
 ## Password policy
 
@@ -34,7 +34,7 @@ For more information on the differences in how password policies are applied dep
 
 ## Password hashes
 
-To authenticate users on the managed domain, Domain Services needs password hashes in a format that's suitable for NT LAN Manager (NTLM) and Kerberos authentication. Microsoft Entra ID doesn't generate or store password hashes in the format that's required for NTLM or Kerberos authentication until you enable Domain Services for your tenant. For security reasons, Microsoft Entra ID also doesn't store any password credentials in clear-text form. Therefore, Microsoft Entra ID can't automatically generate these NTLM or Kerberos password hashes based on users' existing credentials.
+To authenticate users on the managed domain, Domain Services needs password hashes in a format that's suitable for NT LAN Manager (NTLM) and Kerberos authentication. Microsoft Entra ID doesn't generate or store password hashes in the format that NTLM or Kerberos authentication require until you enable Domain Services for your tenant. For security reasons, Microsoft Entra ID also doesn't store any password credentials in clear-text form. Therefore, Microsoft Entra ID can't automatically generate these NTLM or Kerberos password hashes based on users' existing credentials.
 
 For cloud-only user accounts, users must change their passwords before they can use the managed domain. This password change process causes the password hashes for Kerberos and NTLM authentication to be generated and stored in Microsoft Entra ID. The account isn't synchronized from Microsoft Entra ID to Domain Services until the password is changed.
 
@@ -43,12 +43,12 @@ For users synchronized from an on-premises AD DS environment using Microsoft Ent
 > [!IMPORTANT]
 > Microsoft Entra Connect only synchronizes legacy password hashes when you enable Domain Services for your Microsoft Entra tenant. Legacy password hashes aren't used if you only use Microsoft Entra Connect to synchronize an on-premises AD DS environment with Microsoft Entra ID.
 >
-> If your legacy applications don't use NTLM authentication or LDAP simple binds, we recommend that you disable NTLM password hash synchronization for Domain Services. For more information, see [Disable weak cipher suites and NTLM credential hash synchronization][secure-domain].
+> If your legacy applications don't use NTLM authentication or Lightweight Directory Access Protocol (LDAP) simple binds, we recommend that you disable NTLM password hash synchronization for Domain Services. For more information, see [Disable weak cipher suites and NTLM credential hash synchronization][secure-domain].
 
-Once appropriately configured, the usable password hashes are stored in the managed domain. If you delete the managed domain, any password hashes stored at that point are also deleted. Synchronized credential information in Microsoft Entra ID can't be reused if you later create another managed domain - you must reconfigure the password hash synchronization to store the password hashes again. Previously domain-joined VMs or users won't be able to immediately authenticate - Microsoft Entra ID needs to generate and store the password hashes in the new managed domain. For more information, see [Password hash sync process for Domain Services and Microsoft Entra Connect][azure-ad-password-sync].
+Once appropriately configured, the usable password hashes are stored in the managed domain. If you delete the managed domain, any password hashes stored at that point are also deleted. Synchronized credential information in Microsoft Entra ID can't be reused if you later create another managed domain - you must reconfigure the password hash synchronization to store the password hashes again. Previously domain-joined VMs or users can't immediately authenticate - Microsoft Entra ID needs to generate and store the password hashes in the new managed domain. For more information, see [Password hash sync process for Domain Services and Microsoft Entra Connect][azure-ad-password-sync].
 
 > [!IMPORTANT]
-> Microsoft Entra Connect should only be installed and configured for synchronization with on-premises AD DS environments. It's not supported to install Microsoft Entra Connect in a managed domain to synchronize objects back to Microsoft Entra ID.
+> Microsoft Entra Connect should only be installed and configured for synchronization with on-premises AD DS environments. Microsoft Entra Connect installation in a managed domain for synchronization with Microsoft Entra ID isn't supported.
 
 ## Forests and trusts
 
@@ -70,39 +70,42 @@ In Domain Services, you can also create a forest *trust* with another domain to 
 
 ## Domain Services SKUs
 
-In Domain Services, the available performance and features are based on the SKU. You select a SKU when you create the managed domain, and you can switch SKUs as your business requirements change after the managed domain has been deployed. The following table outlines the available SKUs and the differences between them:
+In Domain Services, the available performance and features are based on the stock keeping unit (SKU). You select a SKU when you create the managed domain, and you can switch SKUs as your business requirements change after the managed domain is created. The following table outlines the available SKUs and the differences between them:
 
-| SKU name   | Maximum object count | Backup frequency | 
-|------------|----------------------|------------------|
-| Standard   | Unlimited            | Every 5 days     |
-| Enterprise | Unlimited            | Every 3 days     | 
-| Premium    | Unlimited            | Daily            | 
+| SKU        | Recommended object count | Recommended authentication volume | Backup frequency |
+|------------|--------------------------|-----------------------------------|------------------|
+| Standard   | Up to 25,000 objects     | Up to 3,000 authentications/hour  | Every five days  |
+| Enterprise | 25,001–100,000 objects   | 3,001–10,000 authentications/hour | Every three days |
+| Premium    | 100,001–500,000 objects  | 10,001–70,000 authentications/hour | Daily; backups retained seven days, with every third backup retained 30 days |
 
-Before these Domain Services SKUs, a billing model based on the number of objects (user and computer accounts) in the managed domain was used. There is no longer variable pricing based on the number of objects in the managed domain.
+> [!NOTE]
+> The values shown are recommended capacity guidance rather than enforced limits. As the SKU level increases, more compute resources are allocated to the managed domain, which can improve performance, synchronization operations, and authentication throughput. Select a SKU based on workload size, authentication volume, performance requirements, and recovery objectives.
+
+Before these Domain Services SKUs, a billing model based on the number of objects (user and computer accounts) in the managed domain was used. There's no longer variable pricing based on the number of objects in the managed domain.
 
 For more information, see the [Domain Services pricing page][pricing].
 
 ### Managed domain performance
 
-Domain performance varies based on how authentication is implemented for an application. Additional compute resources may help improve query response time and reduce time spent in sync operations. As the SKU level increases, the compute resources available to the managed domain is increased. Monitor the performance of your applications and plan for the required resources.
+Domain performance varies based on how authentication is implemented for an application. More compute resources may help improve query response time and reduce sync time. As the SKU level increases, more compute resources are available to the managed domain. Monitor the performance of your applications and plan for the required resources.
 
-If your business or application demands change and you need additional compute power for your managed domain, you can switch to a different SKU.
+If your business or application demands change and you need more compute power for your managed domain, you can switch to a different SKU.
 
 ### Backup frequency
 
-The backup frequency determines how often a snapshot of the managed domain is taken. Backups are an automated process managed by the Azure platform. In the event of an issue with your managed domain, Azure support can assist you in restoring from backup. As synchronization only occurs one way *from* Microsoft Entra ID, any issues in a managed domain won't impact Microsoft Entra ID or on-premises AD DS environments and functionality.
+The backup frequency determines how often a snapshot of the managed domain is taken. Backups are an automated process managed by the Microsoft Entra platform. If there's an issue with your managed domain, Microsoft Entra support can assist you in restoring from backup. As synchronization only occurs one way *from* Microsoft Entra ID, any issues in a managed domain don't impact Microsoft Entra ID or on-premises AD DS environments and functionality.
 
 As the SKU level increases, the frequency of those backup snapshots increases. Review your business requirements and recovery point objective (RPO) to determine the required backup frequency for your managed domain. If your business or application requirements change and you need more frequent backups, you can switch to a different SKU.
 
 Domain Services provides the following guidance for recovery timespans for different types of issues:
 
-- Recovery point objective (RPO) is the maximum timespan in which there is a potential data or transaction loss from an incident.
+- Recovery point objective (RPO) is the maximum timespan in which there's a potential data or transaction loss from an incident.
 - Recovery time object (RTO) is the targeted timespan that occurs before service levels return to operational after an incident.   
 
 | Issues | RPO | RTO |
 |--------|-----|-----|
 | Issues caused by data loss or corruption to Domain Services domain controllers, dependent services, an exploit that compromised the domain, or other incident that requires restoring a domain controller.  | Five days before the occurrence of the event | Two hours to four days, depending on tenant size |
-| Issues identified by our domain diagnostics. | Zero (0 minutes) | Two hours to four days, depending on tenant size |
+| Issues identified by Microsoft Support domain diagnostics. | Zero (0 minutes) | Two hours to four days, depending on tenant size |
 
 
 ## Next steps

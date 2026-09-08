@@ -62,11 +62,6 @@ To read more about securing your Active Directory environment, see [Best practic
 Microsoft Entra Connect must be installed on a domain-joined server.
 We recommend using Windows Server 2025 or Windows Server 2022. You can also deploy Microsoft Entra Connect on older Windows Server versions that are in extended support; however, support for this configuration may require [a paid support program](/lifecycle/policies/fixed#extended-support).
 
-> [!IMPORTANT]
-> There is a [known issue](/windows/release-health/resolved-issues-windows-server-2025#directory-synchronization-fails-for-ad-groups-exceeding-10-000-members) on Windows Server 2025 that can cause Microsoft Entra Connect Sync to encounter synchronization problems. If you upgraded to Windows Server 2025, make sure you have installed [October 20, 2025 - KB5070773](https://support.microsoft.com/topic/october-20-2025-kb5070773-os-build-26100-6901-out-of-band-f8effaa1-1c73-41e5-bcb3-e58a46c7601e) update, or later. After installing this update, restart the server for the changes to take effect. 
-  
-  
-  
   
 - The minimum .NET Framework version required is 4.6.2, and newer versions of .NET are also supported. The .NET version 4.8 and greater offers the best accessibility compliance.
 - Microsoft Entra Connect can't be installed on Small Business Server or Windows Server Essentials before 2019 (Windows Server Essentials 2019 is supported). The server must be using Windows Server standard or better. 
@@ -256,8 +251,7 @@ The following table shows the minimum requirements for the Microsoft Entra Conne
 | 300,000–600,000 |1.6 GHz |32 GB |450 GB |
 | More than 600,000 |1.6 GHz |32 GB |500 GB |
 
-The specifications listed above represent combined hardware requirements for the Microsoft Entra Connect server hosting both the synchronization application and the SQL Server database (either the built-in SQL Express or a full SQL Server instance installed locally).
-If the SQL Server database is hosted remotely on a separate server, the Entra Connect application server may require fewer resources, while the SQL Server will need its own compute, memory, and storage capacity according to SQL Server sizing best practices.
+
 
 The minimum requirements for computers running AD FS or Web Application Proxy servers are:
 

@@ -253,7 +253,7 @@ sections:
       - question: |
          Is the Remote Desktop Web Client (HTML5) supported?
         answer: |
-              Yes, this scenario is currently in public preview. Refer to [Publish Remote Desktop with Microsoft Entra application proxy](./application-proxy-integrate-with-remote-desktop-services.md).
+              Yes, this scenario is currently in preview. Refer to [Publish Remote Desktop with Microsoft Entra application proxy](./application-proxy-integrate-with-remote-desktop-services.md).
           
       - question: |
           After I configured the preauthentication scenario, I realized that the user has to authenticate twice: first on the Microsoft Entra sign-in form, and then on the RDWeb sign-in form. Is this expected? How can I reduce this to one sign-in?

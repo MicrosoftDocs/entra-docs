@@ -1,13 +1,11 @@
 ---
 title: include file
 description: include file
-author: OwenRichards1
 manager: pmwongera
 editor: ''
 ms.service: identity-platform
 ms.topic: include
 ms.date: 04/10/2019
-ms.author: owenrichards
 ms.reviewer: jmprieur
 ms.custom: include file, sfi-image-nochange
 ---

@@ -1,10 +1,8 @@
 ---
-author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: include
 ms.date: 05/07/2024
-ms.author: kengaderdus
 ---
 
 You specify the information you want to collect from the user by configuring the user flow settings in the Microsoft Entra admin center. Use the [Collect custom user attributes during sign-up](../../../external-id/customers/how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.

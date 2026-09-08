@@ -4,7 +4,6 @@ titleSuffix: Microsoft Entra External ID
 description: As a B2B collaboration user, learn how to leave an organization if you no longer need guest user access to apps. If you're an admin, see how to allow external users to leave.
 ms.topic: how-to
 ms.date: 04/24/2026
-
 ms.collection: M365-identity-device-management
 ai-usage: ai-assisted
 adobe-target: true

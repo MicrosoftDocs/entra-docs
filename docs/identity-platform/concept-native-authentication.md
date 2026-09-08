@@ -2,15 +2,12 @@
 title: Native authentication
 description: Learn how to set up native authentication in Microsoft Entra External ID. Customize the user interface for mobile and desktop apps, and provide a seamless sign-in experience.
 
-author: csmulligan
 manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 04/10/2026
-ms.author: cmulligan
-
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
+ms.date: 06/22/2026
 ---
 # Native authentication in Microsoft Entra External ID
 
@@ -22,15 +19,6 @@ The standard app sign-in process, which relies on browser-delegated authenticati
 
 While browser-delegated authentication offers benefits such as reduced attack vectors and support for single sign-on (SSO), it offers limited UI customization options.
 
-## Available authentication methods
-
-Currently, native authentication supports local account identity provider for two authentications methods: 
-
-- Email with one-time passcode (OTP) sign-in.
-- Email and password sign-in with support for self-service password reset (SSPR). 
-
-Native authentication doesn't yet support federated identity providers such as social or enterprise identities. 
-
 ## When to use native authentication
 
 When it comes to implementing authentication for mobile and desktop apps on External ID, you have two options: 
@@ -38,38 +26,9 @@ When it comes to implementing authentication for mobile and desktop apps on Exte
 - Microsoft-hosted browser-delegated authentication.
 - Fully custom SDK based native authentication. 
 
-The approach you choose depends on your app’s specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra External ID supports both of them.
+The approach you choose depends on your app's specific requirements. While each app has unique authentication needs, there are some common considerations to keep in mind. Whether you choose native authentication or browser-delegated authentication, Microsoft Entra External ID supports both of them.
 
-The following table compares the two authentication methods to help you decide then right option for your app.
-
-|   | Browser-delegated authentication | Native authentication | 
-| ---- | --- |  --- |
-| **User authentication experience** | Users are taken to a system browser or embedded browser for authentication only to be redirected back to the app when the sign-in is complete. This method is recommended if the redirection doesn't negatively affect the end user experience. | Users have a rich, native sign-up and sign-in journey without ever leaving the app. |
-| **Customization experience** |Managed [branding and customization options](/entra/external-id/customers/how-to-customize-branding-customers) are available as an out-of-the-box feature.  | This API-centric approach offers a high level of customization, providing extensive flexibility in design and the ability to create tailored interactions and flows. |
-| **Applicability**  | Suitable for workforce, B2B, and B2C apps, it can be used for native apps, single-page applications, and web apps. | For customer first-party apps, when the same entity operates the authorization server and the app and the user perceives them both as the same entity.|
-| **Go live effort** |  Low. Use it straight out of the box.  |High. The developer builds, owns, and maintains the authentication experience. |
-| **Maintenance effort** | Low. |High. For each feature that Microsoft releases, you need to update the SDK to use it.  |
-| **Security** | Most secure option. |Security responsibility is shared with developers, and best practices need to be followed. It's prone to phishing attacks. |
-| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular) </li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md).  |
-
-
-## Feature availability
-
-The following table shows the availability of features for browser-delegated and native authentication. 
-
-|   | Browser-delegated authentication | Native authentication |
-| ---- | --- |  --- |
-| **Sign up and sign in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Sign up and sign in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Sign in with email and password can use username (alias) and password** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Self-service password reset (SSPR)**  | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
-| **Multifactor authentication with SMS one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
-| **Social identity provider sign-in (Apple, Facebook and Google with browser-delegated)** | :heavy_check_mark:  | :heavy_check_mark: |
-| **Single sign-on (SSO)**<sup>1</sup> | :heavy_check_mark:  | :heavy_check_mark:  |
-
-<sup>1</sup> Native authentication supports SSO for embedded web views only. Cross-app SSO through system browsers isn't available with native authentication. For information, see [SSO](#single-sign-on-sso).
+For a side-by-side comparison of the two approaches, including feature availability, supported languages and frameworks, user experience, customization, and security trade-offs, see [Choose an authentication approach](/entra/external-id/customers/concept-choose-authentication-approach).
 
 ## How to enable native authentication
 
@@ -80,7 +39,7 @@ If your team determines that native authentication is necessary for your applica
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **App registrations** and select the app registration for which you want to enable public client and native authentication flows.
 1. Under **Manage**, select **Authentication**.
-1. Under **Advanced settings**, allow public client flows: 
+1. On the **Redirect URI configuration** tab, allow public client flows: 
     1. For **Enable the following mobile and desktop flows** select **Yes**.
     1. For **Enable native authentication**, select **Yes**.
 1. Select the **Save** button.

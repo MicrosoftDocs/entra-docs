@@ -1,11 +1,9 @@
 ---
 title: Microsoft Entra general operations guide reference
 description: This operations reference guide describes the checks and actions you should take to secure general operations
-author: martincoetzer
-manager: travisgr
 ms.topic: best-practice
 ms.date: 08/17/2022
-ms.author: martinco
+ms.reviewer: martinco
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ms.subservice: architecture
 ---

@@ -4,7 +4,6 @@ description: Learn how to revoke an issued verifiable credential.
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 06/25/2025
-
 #Customer intent: As an administrator, I'm trying to learn the process of revoking verifiable credentials that I've issued.
 ---
 

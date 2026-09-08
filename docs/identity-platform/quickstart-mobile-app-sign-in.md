@@ -1,12 +1,10 @@
 ---
 title: Quickstart - Sign in users in a sample mobile app
 description: Quickstart for configuring a sample mobile app to sign in employees or customers with Microsoft identity platform.
-author: henrymbuguakiarie
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 10/30/2024
-ms.author: henrymbugua
 zone_pivot_groups: entra-tenants
 
 #Customer intent: As a developer, I want to configure a sample mobile app so that I can sign in my employees or customers by using Microsoft identity platform.

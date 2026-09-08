@@ -5,10 +5,8 @@ description: Choose the Microsoft Entra device integration strategies that meet 
 
 ms.topic: how-to
 ms.date: 11/25/2024
-ms.author: gasinh
-author: gargi-sinha
 manager: martinco
-ms.reviewer: sandeo
+ms.reviewer: sandeo, gasinh
 
 #Customer intent: As an IT admin, I want to choose the best device integration methods for my organization.
 

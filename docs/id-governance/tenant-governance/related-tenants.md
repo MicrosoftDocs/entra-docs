@@ -1,17 +1,12 @@
 ---
-title: Related tenants in Tenant Governance (preview)
+title: Related tenants in Tenant Governance
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how Microsoft Entra Tenant Governance discovers related tenants through identity, application, and billing signals across your organization
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/10/2026
+ms.date: 07/14/2026
 ---
 
-# Related tenants in Tenant Governance (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Related tenants in Tenant Governance
 
 The **related tenants** feature is a Tenant Governance capability that helps organizations gain visibility into Microsoft Entra tenants that interact with their tenant through observable activity. These interactions might involve tenants that are external (partners, vendors, and customers) as well as tenants that were created internally without central oversight, such as employee-created test or development tenants.
 
@@ -42,6 +37,14 @@ Tenant Governance discovers related tenants. You don't manually declare them. Di
 - The activity and discovery metrics associated with those signals, such as identity interactions, application usage, or billing associations
 
 These metrics describe how tenants are connected. They don't assign qualitative scores or imply that every related tenant must be governed. Instead, they provide the evidence needed to determine whether governance action is warranted.
+
+## Microsoft-managed tenants
+
+Some discovered related tenants are Microsoft-owned infrastructure tenants rather than tenants that belong to your organization or your partners. Tenant Governance identifies these tenants and flags them as **Microsoft managed**.
+
+Microsoft-managed tenants appear because routine Microsoft cloud operations create observable cross-tenant activity. They're expected and generally require no governance action. The **Microsoft managed** indicator helps you quickly recognize and set aside this class of related tenant so you can focus on tenants that need attention.
+
+The Microsoft managed indicator is available to administrators who have a Tenant Governance license and permission to read related tenants.
 
 ## Why related tenants matter
 

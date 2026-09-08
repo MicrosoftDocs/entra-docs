@@ -1,9 +1,7 @@
 ---
 title: Acquire and cache tokens with Microsoft Authentication Library (MSAL)
 description: Learn about acquiring and caching tokens using MSAL.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 05/14/2025
 ms.reviewer: 
 ms.service: identity-platform

@@ -4,8 +4,6 @@ description: The Global Secure Access client helps secure network traffic at the
 #customer intent: As an IT admin, I want to set up and deploy the Global Secure Access client for iOS devices so that I can secure network traffic for my organization.
 ms.topic: how-to
 ms.date: 10/13/2025
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
 
@@ -105,7 +103,7 @@ The iOS device (phone or tablet) must meet the following requirements:
 
       |Key |Value |Details |
       |---------|---------|---------|
-      |`EnableGSA` |No value | Global Secure Access isn't enabled and the tile isn't visible. |
+      |`EnableGSA` |No value | Global Secure Access defaults to value 1 behavior. |
       |  |`0` | Global Secure Access isn't enabled and the tile isn't visible.|
       |  |`1` | Global Secure Access tile is visible and defaults to a disabled state. The user can enable or disable the tile by using the toggle.|
       |  |`2` | Global Secure Access tile is visible and defaults to an enabled state. The user can enable or disable the tile by using the toggle from the app. |

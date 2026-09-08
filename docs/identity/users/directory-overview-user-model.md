@@ -33,7 +33,7 @@ You can use [dynamic membership groups](groups-create-rule.md) in Microsoft Entr
 
 Managing user license assignments individually is time consuming and error prone. If you [assign licenses to groups](~/fundamentals/licensing.md?context=azure/active-directory/users-groups-roles/context/ugr-context) instead, you experience easier large-scale license management.
 
-Microsoft Entra users who join a licensed group are automatically assigned the appropriate licenses. When users leave the group, Microsoft Entra ID removes their license assignments. Without Microsoft Entra groups, you'd have to write a PowerShell script or use Graph API to bulk add or remove user licenses for users joining or leaving the organization. For more information about group bulk operations, see [Bulk upload to add or create members of a group](~/identity/users/groups-bulk-import-members.md).
+Microsoft Entra users who join a licensed group are automatically assigned the appropriate licenses. When users leave the group, Microsoft Entra ID removes their license assignments. Without Microsoft Entra groups, you'd have to write a PowerShell script or use Graph API to bulk add or remove user licenses for users joining or leaving the organization. For more information about group bulk operations, see [Bulk add group members by uploading a CSV file](~/identity/users/groups-bulk-import-members.md).
 
 If there aren't enough licenses available, or an issue occurs like service plans that can't be assigned at the same time, you can see the status of any licensing issue for the group in the Azure portal.
 

@@ -93,7 +93,9 @@ Policies in this category provide new ways to protect against compromise.
 
 Policies in this category provide ways to control agents in your environment.
 
-- [Block high-risk agent identities from accessing resources](policy-agent-block-high-risk.md) **Requires Microsoft Entra ID P2**
+- [Block high-risk agent identities](policy-agent-block-high-risk.md)
+- [Configure policy for autonomous agent access](policy-autonomous-agents.md)
+- [Configure policy for on-behalf-of agent access](policy-on-behalf-of-agents.md)
 
 ---
 
@@ -121,6 +123,23 @@ Organizations can select individual policy templates and:
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
+
+## Migrate from classic policies
+
+Classic Conditional Access policies are deprecated and stopped enforcing controls after July 10, 2024. They depend on the retired Azure AD Graph service and can't protect your resources. If your tenant still has classic policies, migrate their settings to modern Conditional Access policies.
+
+> [!WARNING]
+> After you disable a classic policy, you can't re-enable it. Document the policy's settings before you disable it.
+
+To migrate a classic policy:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Classic policies**.
+1. Select a classic policy and document its configuration settings.
+1. Recreate the settings by using a template or custom policy described earlier in this article. Test the new policy in [report-only mode](concept-conditional-access-report-only.md) before you turn it on.
+1. Return to the classic policy and select **Disable**.
+
+The [What If tool](what-if-tool.md) indicates whether classic policies still exist in your environment.
 
 ## Next steps
 

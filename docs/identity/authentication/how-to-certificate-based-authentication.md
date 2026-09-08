@@ -3,7 +3,6 @@ title: Set Up Microsoft Entra CBA
 description: Learn how to configure Microsoft Entra certificate-based authentication (CBA) in Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 03/04/2025
-author: vimrang
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---

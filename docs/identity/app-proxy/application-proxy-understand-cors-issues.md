@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 ## Overview
 
-[Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
+[Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
 
 Browser security usually prevents a webpage from making requests to another domain. This restriction is called the *same-origin policy*. The policy prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that directs a server to allow some cross-origin requests and reject others.
 
@@ -38,7 +38,7 @@ You can identify CORS issues by using browser debug tools:
 1. Select the **F12** key to open the debug console in DevTools.
 1. Try to reproduce the transaction, and review the console message. A CORS violation produces a console error about origin.
 
-In the following screenshot, selecting the **Try It** button caused a CORS error message that `https://corswebclient-contoso.msappproxy.net` wasn't found in the `Access-Control-Allow-Origin` header.
+In the following screenshot, selecting the **Try It** button caused a CORS error message that `https://corswebclient-contoso.msappproxy.net` wasn't found in the `Access-Control-Allow-Origin` header.
 
 ![Screenshot that shows an example of a CORS issue.](./media/application-proxy-understand-cors-issues/image3.png)
 

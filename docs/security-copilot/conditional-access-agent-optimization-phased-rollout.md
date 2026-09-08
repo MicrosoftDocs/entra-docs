@@ -1,10 +1,8 @@
 ---
 title: Conditional Access Optimization Agent phased rollout
 description: Learn about the phased rollout capability for the Security Copilot for Microsoft Entra optimization agent.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
-ms.date: 03/02/2026
+ms.date: 05/22/2026
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -41,14 +39,19 @@ You can review the groups included in each phase and make changes before and dur
 
 ## Agent identifies a report-only policy for phased rollout
 
-The agent can suggest a phased rollout plan when it creates new policies or to existing report-only policies that target all users. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
+The agent can suggest a phased rollout plan when it creates new policies or to existing any report-only policy that targets all users. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups. There are a few ways to find the phased rollout suggestions in the Microsoft Entra admin center:
 
 - For agent-created policies, look for **Suggested phased rollout** in the **Actions taken by agent** column in the list of suggestions.
 
     :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
 
-- For existing report-only policies, look for **Phased rollout available (preview)** in the **Conditional Access - Policies** page.
-    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list.png" alt-text="Screenshot of policy list with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list-expanded.png":::
+- For existing report-only policies, browse to the **Phased rollout** tab on the **Conditional Access - Policies** page. This dedicated tab provides a full lifecycle view of your phased rollout process.
+
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-menu-option.png" alt-text="Screenshot of the Conditional Access policies page with the Phased rollout menu highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-menu-option.png":::
+
+- Use the **Show policies eligible for phased rollout** filter button on the Conditional Access policies list to find policies that qualify for a phased rollout.
+
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list.png" alt-text="Screenshot of policy list with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-policy-list.png":::
 
 ### Administrator reviews, edits, and accepts the rollout plan
 
@@ -84,15 +87,24 @@ You're provided several options to manage the phased rollout during deployment. 
 - Select **Roll back to previous phase** to cancel the current phase and return to the previous phase.
 - Select **Mark rollout as complete** to apply the new policy to all groups and complete the deployment.
 
-- Select **Move to next phase** to advance each phase of the rollout.
-- Select **Roll back to previous phase** to cancel the current phase and return to the previous phase.
-- Select **Mark rollout as complete** to apply the new policy to all groups and complete the deployment.
-
 :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-manual-details.png" alt-text="Screenshot of a phased rollout plan in manual execution mode." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-manual-details.png":::
 
 ## Built-in safeguards
 
-Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified so the details can be reviewed and potentially modified.
+Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified and troubleshooting guidance is provided, which includes a report showing why sign-ins failed. This guidance always appears when a rollback is recommended, helping administrators quickly identify and resolve issues before resuming the rollout.
+
+## Signals used for phased rollout group recommendations
+
+To ensure a safe and effective rollout of Conditional Access policies, the Conditional Access Optimization Agent analyzes several key signals to recommend the best groups for each stage of deployment. This approach helps minimize disruption while maximizing security coverage.
+
+- **Group size and reach**: The agent considers the size of each group relative to your total user base. Starting with smaller, representative groups allows for safer testing before expanding to broader populations.
+- **Historical policy performance**: The agent analyzes how users in a group have interacted with existing policies over time.
+    - High success rates indicate users are already meeting security requirements.
+    - High block rates might indicate potential friction points that need addressing before a strict rollout.
+    - The agent also looks at how often policies apply to the group's sign-ins.
+- **Usage patterns**: The agent assesses the volume of activity for each group. Groups with high activity levels provide more data points for validation, while low-activity groups might not generate enough signals for a confident pilot.
+- **Existing security controls**: The agent identifies which types of controls are already effective for the group to effectively suggest new policy types, reducing the likelihood of user confusion or lockout.
+- **Recent administrative context**: The agent considers groups that have been recently involved in policy changes or administrative actions, to ensure suggestions are current and reflect the latest organizational changes, rather than relying solely on static group definitions.
 
 ## Frequently asked questions
 

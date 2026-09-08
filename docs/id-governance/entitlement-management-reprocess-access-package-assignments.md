@@ -17,6 +17,9 @@ Entitlement Management doesn't block outside updates to the access package’s r
 
 This article describes how to reprocess assignments in an existing access package.
 
+> [!NOTE]
+> Reprocessing access package assignments in the Microsoft Entra admin center requires the signed-in user to be able to access the admin center. Entitlement management roles, such as Access package assignment manager, authorize assignment-management actions within entitlement management, but they don't by themselves change tenant-wide access settings for the admin center. If the **Restrict access to Microsoft Entra administration portal** user setting is enabled, verify that the delegated user can access the admin center, or use an authorized programmatic method. For more information about this setting, see [Default user permissions](../fundamentals/users-default-permissions.md).
+
 ## Prerequisites
 
 To use entitlement management and assign users to access packages, you must have one of the following licenses:

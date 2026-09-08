@@ -2,10 +2,8 @@
 title: Add SMS one-time passcode MFA to an iOS and macOS app using native authentication
 description: Learn how to add multifactor authentication (MFA) with SMS one-time passcode (OTP) to an iOS or macOS app using native authentication, including enforcing MFA with authentication context and handling MFA errors.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

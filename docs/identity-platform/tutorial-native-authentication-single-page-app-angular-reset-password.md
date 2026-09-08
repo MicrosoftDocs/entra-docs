@@ -2,9 +2,7 @@
 title: Reset Password in Angular SPA App by Using Native Authentication JavaScript SDK
 description: Learn how to build an Angular single-page app that enables users to reset their passwords by using native authentication JavaScript SDK.
 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

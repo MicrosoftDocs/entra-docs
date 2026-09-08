@@ -4,10 +4,10 @@ description: Guidance on how to configure Microsoft Entra HIPAA additional contr
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
+manager: martinco
 author: janicericketts
 ms.author: jricketts
-manager: martinco
-ms.reviewer: martinco
+ms.reviewer: martinco, jricketts
 ms.date: 04/13/2023
 ms.custom: it-pro
 ---

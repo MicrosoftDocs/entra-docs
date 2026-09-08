@@ -18,7 +18,7 @@ The following Windows components play a key role in requesting and using a Prima
 
 | **Term** | **Description** |
 | :--- | --- |
-| **broker** | An identity broker is a service that acts as an intermediary between an identity providers (IdPs) and service providers (SPs), simplifying authentication and authorization . Web Account Manager is an example of an identity broker.|
+| **broker** | An identity broker is a service that acts as an intermediary between identity providers (IdPs) and service providers (SPs), simplifying authentication and authorization. Web Account Manager is an example of an identity broker.|
 | **Cloud Authentication Provider (CloudAP)**| CloudAP is the modern authentication provider for Windows sign in, that verifies users logging to a Windows 10 or newer device. CloudAP provides a plugin framework that identity providers can build on to enable authentication to Windows using that identity provider's credentials. |
 | **Web Account Manager (WAM)**| WAM is the default token broker on Windows 10 or newer devices. WAM also provides a plugin framework that identity providers can build on and enable SSO to their applications relying on that identity provider.|
 | **Microsoft Entra CloudAP plugin**| A Microsoft Entra specific plugin built on the CloudAP framework that verifies user credentials with Microsoft Entra ID during Windows sign in.|
@@ -141,7 +141,8 @@ The list of supported browsers is available here: [Supported Browsers](../condit
 A PRT is used by two key components in Windows:
 
 - **Microsoft Entra CloudAP plugin:** During Windows sign in, the Microsoft Entra CloudAP plugin requests a PRT from Microsoft Entra ID using the credentials provided by the user. It also caches the PRT to enable cached sign in when the user doesn't have access to an internet connection.
-- **Microsoft Entra WAM plugin:** When users try to access applications, the Microsoft Entra WAM plugin uses the PRT to enable SSO on Windows 10 or newer. Microsoft Entra WAM plugin uses the PRT to request refresh and access tokens for applications that rely on WAM for token requests. It also enables SSO on browsers by injecting the PRT into browser requests. Browser SSO in Windows 10 or newer is supported on Microsoft Edge (natively), Chrome (via the [Windows 10 Accounts](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji?hl=en) extension) and Mozilla Firefox v91+ (Firefox [Windows SSO setting](https://support.mozilla.org/kb/windows-sso)).
+- **Microsoft Entra WAM plugin:** When users try to access applications, the Microsoft Entra WAM plugin uses the PRT to enable SSO on Windows 10 or newer. Microsoft Entra WAM plugin uses the PRT to request refresh and access tokens for applications that rely on WAM for token requests. It also enables SSO on browsers by injecting the PRT into browser requests. Browser SSO in Windows 10 or newer is supported on Microsoft Edge (natively), Chrome (via the [Microsoft Single Sign On
+](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji?hl=en) extension) and Mozilla Firefox v91+ (Firefox [Windows SSO setting](https://support.mozilla.org/kb/windows-sso)).
   > [!NOTE]
   >  In instances where a user has two accounts from the same Microsoft Entra tenant signed in to a browser application, the device authentication provided by the PRT of the primary account is automatically applied to the second account as well. As a result, the second account also satisfies any device-based Conditional Access policy on the tenant.
 

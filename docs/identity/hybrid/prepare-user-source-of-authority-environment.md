@@ -1,11 +1,9 @@
 ---
 title: Prepare Your Environment for User SOA
 description: Learn the steps to prepare your environment to use Source of Authority (SOA) for users.
-author: owinfreyATL
 ms.topic: how-to
 ms.subservice: hybrid
 ms.date: 08/14/2025
-ms.author: owinfrey
 ms.reviewer: dhanyak
 
 #CustomerIntent: As an IT administrator, I want to prepare my environment so that I can minimize my on-premises footprint using user SOA.

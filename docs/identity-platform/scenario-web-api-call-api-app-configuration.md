@@ -1,9 +1,7 @@
 ---
 title: Configure a web API that calls web APIs
 description: Learn how to build a web API that calls web APIs (app's code configuration)
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom: 
 ms.date: 07/19/2024
 ms.reviewer: jmprieur

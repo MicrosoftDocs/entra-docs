@@ -1,17 +1,12 @@
 ---
-title: What is Microsoft Entra Tenant Governance? (preview)
+title: What is Microsoft Entra Tenant Governance?
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about Microsoft Entra Tenant Governance and how it helps organizations discover, manage, and govern tenants across their environment
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: overview
 ms.date: 03/05/2026
 ---
 
-# What is Microsoft Entra Tenant Governance? (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# What is Microsoft Entra Tenant Governance?
 
 Most large organizations operate Microsoft services in multiple tenants because of mergers and acquisitions, requirements for partitioning security or privacy-sensitive workloads, test environments, and other reasons. Most organizations also have user-created "shadow IT" tenants that central IT doesn't administer and often doesn't know about. In many environments, it's not easy to verify that each of these tenants is configured properly, especially if you don't know that some tenants even exist. This creates risk for your organization's security and compliance objectives.
 
@@ -80,8 +75,6 @@ To begin using Tenant Governance features, sign in to the [Microsoft Entra admin
 ## Licensing and support
 
 Tenant Governance is available at two service levels: Tenant Governance Basic and Tenant Governance Premium. To see which Tenant Governance features are available at each service level, see [Microsoft Entra licensing](~/fundamentals/licensing.md).
-
-Tenant configuration management APIs are generally available. Other Tenant Governance experiences are in preview. All Tenant Governance capabilities are supported by Microsoft Customer Support for use in production environments.
 
 ## Next steps
 

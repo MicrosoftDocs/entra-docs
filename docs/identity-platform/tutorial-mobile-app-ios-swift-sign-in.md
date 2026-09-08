@@ -2,10 +2,8 @@
 title: Sign in users in iOS (Swift) app for authentication
 description: The tutorials provide a step-by-step guide on how to sign in users in iOS (Swift) app for authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.topic: tutorial

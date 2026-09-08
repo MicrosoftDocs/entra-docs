@@ -14,7 +14,7 @@ This article shows you how to configure isolation scope for user-assigned manage
 
 Before you begin, ensure you have the following:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 - Read the [Isolation scope for user-assigned managed identities](managed-identities-isolation-scope.md) concept article to understand the benefits and implications.
 

@@ -2,14 +2,12 @@
 title: Configure Agile Provisioning for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Agile Provisioning.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: jeedes
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Agile Provisioning so that I can control who has access to Agile Provisioning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Agile Provisioning for automatic user provisioning with Microsoft Entra ID
 

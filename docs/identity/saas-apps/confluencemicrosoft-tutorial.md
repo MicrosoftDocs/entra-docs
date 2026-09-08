@@ -1,18 +1,18 @@
 ---
 title: Configure Confluence SAML SSO by Microsoft for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft.
-author: dhivyagana
-ms.reviewer: celested
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: dhivyag
+ms.date: 05/26/2026
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft so that I can control who has access to Confluence SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Confluence SAML SSO by Microsoft for Single sign-on with Microsoft Entra ID
 
-In this article,  you learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
+> [!WARNING]
+> **Deprecation notice:** This plugin was deprecated on May 1, 2026. To continue setting up single sign-on for Confluence, use a supported Atlassian SAML integration [here](https://support.atlassian.com/opsgenie/docs/configure-saml-based-sso/) or move to Atlassian Cloud and you can get started [here](https://www.atlassian.com/migration/assess/journey-to-cloud).
+
+In this article,you learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Confluence SAML SSO by Microsoft.
 * Enable your users to be automatically signed-in to Confluence SAML SSO by Microsoft with their Microsoft Entra accounts.
@@ -22,6 +22,10 @@ In this article,  you learn how to integrate Confluence SAML SSO by Microsoft wi
 ## Description:
 
 Use your Microsoft Entra account with Atlassian Confluence server to enable single sign-on. This way all your organization users can use the Microsoft Entra credentials to sign in into the Confluence application. This plugin uses SAML 2.0 for federation.
+
+Confluence is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
 
 ## Prerequisites
 
@@ -38,9 +42,6 @@ The scenario outlined in this article assumes that you already have the followin
 
 > [!NOTE]
 > To test the steps in this article,  we don't recommend using a production environment of Confluence. Test the integration first in development or staging environment of the application and then use the production environment.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 To get started, you need the following items:
 

@@ -6,8 +6,9 @@ ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 07/03/2026
 ms.subservice: hybrid-connect
+ai-usage: ai-assisted
 ---
 # Microsoft Entra Connect Sync service features
 
@@ -48,7 +49,9 @@ SynchronizeUpnForManagedUsersEnabled             : False
 UnifiedGroupWritebackEnabled                     : True
 UserForcePasswordChangeOnLogonEnabled            : False
 UserWritebackEnabled                             : True
-AdditionalProperties                             : {}
+AdditionalProperties                             : {
+       allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled : False
+}
 ```
 
 > [!NOTE]
@@ -117,6 +120,14 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SoftBlock `
 > [!NOTE]
 > When BlockSoftMatch is enabled, new hybrid-joined devices will encounter an InvalidSoftMatch error during a Soft Match attempt. This occurs when the computer object synchronized from on-premises Active Directory (AD) to Entra is merged with the new device registered in the cloud. To resolve this issue, administrators should temporarily disable BlockSoftMatch to allow the hybrid join to proceed.
 > 
+
+## Allow onPremisesObjectIdentifier updates during hard match enforcement
+
+Due to hard-match security enforcement, Microsoft Entra ID blocks a hard match when the target cloud user's `onPremisesObjectIdentifier` value differs from the incoming value from the on-premises object. To remediate the issue, clear the existing cloud user's `onPremisesObjectIdentifier` value and retry the hard match.
+
+If remediation isn't possible, temporarily enable the tenant-level feature flag `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled` to allow the update. The flag is disabled by default and should be used only as a temporary bypass during migration, recovery, or consolidation scenarios. Disable the flag after remediation is complete.
+
+For the enablement steps and guidance on when to use this bypass, see [Temporarily allow onPremisesObjectIdentifier updates](how-to-connect-install-existing-tenant.md#temporarily-allow-onpremisesobjectidentifier-updates).
 
 ## Synchronize userPrincipalName updates
 

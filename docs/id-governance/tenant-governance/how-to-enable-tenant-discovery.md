@@ -1,19 +1,14 @@
 ---
-title: Enable tenant discovery (preview)
+title: Enable tenant discovery
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to enable tenant discovery in Microsoft Entra Tenant Governance to identify related tenants across your organization
-author: barclayn
-ms.author: barclayn
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 03/10/2026
 ---
 
 <!-- source: [How-to] Enable tenant discovery.docx -->
 
-# Enable tenant discovery (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Enable tenant discovery
 
 Related tenants help administrators discover other Microsoft Entra tenants that have observable relationships with their tenant. Microsoft Entra infers these relationships from activity signals such as B2B collaboration, multitenant application consent, and shared billing accounts. A related tenant doesn't imply ownership or administrative control. It indicates an observed association across Microsoft services.
 

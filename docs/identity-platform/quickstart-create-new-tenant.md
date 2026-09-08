@@ -1,9 +1,7 @@
 ---
 title: "Create a Microsoft Entra tenant"
 description: In this quickstart, you learn how to create a Microsoft Entra tenant for use in developing applications that use the Microsoft identity platform for authentication and authorization.
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.custom:
 ms.date: 04/16/2025
 ms.reviewer: jmprieur

@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra ID Protection scenario for mastering risk analysis for effective remediation
 description: Learn about improving risk analysis to identify risky users, discern risk event types, and examine risk levels for access and identity decisions.
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 10/31/2025
@@ -47,12 +46,14 @@ With insights, reference tables, and more, you can investigate and remediate ide
 
 Learn more in the [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs).
 
-In Microsoft Entra ID Protection, there are four risk tables to query risk events, risky users, and risky [Service Principals](/azure/databricks/admin/users-groups/service-principals). 
+In Microsoft Entra ID Protection, there are six risk tables to query risk events, risky users, risky [Service Principals](/azure/databricks/admin/users-groups/service-principals), and risky agents. 
 
 * AADUserRiskEvents 
 * AADRiskyUsers 
 * AADServicePrincipalRiskEvents 
 * AADRiskyServicePrincipals 
+* AADAgentRiskEvents
+* AADRiskyAgents
 
 In this article, the focus is the **AADUserRiskEvents** table. To understand more about discerning risks to your organization, see the following video. 
 
@@ -87,6 +88,8 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 * UserRiskEvents
 * RiskyServicePrincipals
 * ServicePrincipalRiskEvents
+* RiskyAgents
+* AgentRiskEvents
 
 3. To view the Queries hub, got to the Log Analytics workspace.
 4. Select **Logs**.
@@ -172,7 +175,7 @@ In the following screenshot, there are many total detections, but only three are
 
    ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/three-high.png)
 
-Learn more about access control decisions: [What is Conditional Access?](/azure/data-explorer/security-conditional-access)
+Learn more about access control decisions: [What is Conditional Access?](../identity/conditional-access/overview.md)
 
 ## Get started with Azure Monitor Logs reference tables
 
@@ -182,6 +185,8 @@ To get started, explore the Azure Monitor log reference tables for Microsoft Ent
 * [AADRiskyUsers](/azure/azure-monitor/reference/tables/aadriskyusers)
 * [AADServicePrincipalRiskEvents](/azure/azure-monitor/reference/tables/aadserviceprincipalriskevents)
 * [AADRiskyServicePrincipals](/azure/azure-monitor/reference/tables/aadriskyserviceprincipals)
+* [AADAgentRiskEvents](/azure/azure-monitor/reference/tables/aadagentriskevents)
+* [AADRiskyAgents](/azure/azure-monitor/reference/tables/aadriskyagents)
 
 ## Next steps
 
