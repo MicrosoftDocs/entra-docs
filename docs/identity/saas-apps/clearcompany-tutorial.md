@@ -52,8 +52,8 @@ To configure and test Microsoft Entra SSO with ClearCo, perform the following st
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure ClearCo SSO](#configure-clearcompany-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create ClearCo test user](#create-clearcompany-test-user)** - to have a counterpart of B.Simon in ClearCo, that's linked to the Microsoft Entra representation of user.
+1. **[Configure ClearCo SSO](#configure-clearco-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create ClearCo test user](#create-clearco-test-user)** - to have a counterpart of B.Simon in ClearCo, that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SHORTNAME>.clearcompany.com`
 
     > [!NOTE]
-    > The Sign-on URL value isn't real. Update the value with the actual Sign-on URL. Contact [ClearCo Client support team](support@clearcompany.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > The Sign-on URL value isn't real. Update the value with the actual Sign-on URL. Contact [ClearCo Client support team](mailto:support@clearcompany.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 7. On the **Set up Single Sign-On with SAML** page, go to the **SAML Signing Certificate** section, and then select **Download** to download the **Certificate (Base64)** and save it to your computer. Also download the **Federation Metadata XML**, as you'll need it later.
 
@@ -103,11 +103,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure ClearCo SSO
 
-To configure single sign-on on **ClearCo** side, you need to send the downloaded **Certificate (Base64)**, the **Federation Metadata XML** and the appropriate copied URLs from the application configuration to [ClearCo support team](support@clearcompany.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **ClearCo** side, you need to send the downloaded **Certificate (Base64)**, the **Federation Metadata XML** and the appropriate copied URLs from the application configuration to [ClearCo support team](mailto:support@clearcompany.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create ClearCo test user
 
-In this section, you create a user called Britta Simon in ClearCo. Work with [ClearCo support team](support@clearcompany.com) to add the users in the ClearCo platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in ClearCo. Work with [ClearCo support team](mailto:support@clearcompany.com) to add the users in the ClearCo platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
