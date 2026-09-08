@@ -26,7 +26,9 @@ Learn about Conditional Access for agents:
 - [Secure agent users with Microsoft Entra Conditional Access](policy-agent-user.md)
 ## Requirements and licensing
 
-Conditional Access for agents requires Microsoft Entra ID P1 or P2 and a Microsoft Agent 365 license for each user. Enforcement of Agent 365 licensing is coming soon. Network controls for agents require Microsoft Entra Internet Access.
+Conditional Access for agents requires one of the following license plans:
+	- **Microsoft 365 E7**, which includes Agent 365 and Microsoft Entra Suite, to provide governance of user and agent identities.
+	- **Microsoft Agent 365** license paired with at least Microsoft Entra P1 or Microsoft 365 E3.
 
 For more information, see [What is Microsoft Entra Agent ID](../../agent-id/what-is-microsoft-entra-agent-id.md#how-to-get-started).
 
