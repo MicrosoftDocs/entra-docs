@@ -22,7 +22,7 @@ September 14, 2026: released for download
 
 ### New or changed functionality
 
-- Added support for AzureChinaCloud and AzureBleuCloud.
+- Added support for AzureChinaCloud.
 - The Provisioning Agent configuration wizard no longer requests Domain Admin credentials and grants Active Directory permissions to the gMSA when a customer-provided gMSA is selected. Administrators are responsible for ensuring that the custom gMSA has the right permissions, documented in [gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md).
 - Removed the Repair-AADCloudSyncToolsAccount cmdlet from the AADCloudSyncTools PowerShell module.
 - The Provisioning Agent no longer synchronizes password hashes for privileged on-premises Active Directory accounts. This applies to any account with a non-zero adminCount attribute — for example, members of protected groups such as Domain Admins, Enterprise Admins, Administrators, Account Operators, and other Active Directory protected groups. The accounts will continue to be synchronized to Entra, only the password hash will not be synchronized. Any on-premises password change made to one of these accounts after the behavior takes effect will not be reflected in Entra. It is recommended to use dedicated cloud-only accounts for Microsoft Entra administration and keep privileged on-premises accounts for on-premises use. This aligns with Microsoft's guidance for privileged access and avoids relying on synchronized on-premises credentials for cloud administration.
