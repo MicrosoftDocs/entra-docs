@@ -139,7 +139,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Added features
 
-- Added a guided migration workflow from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. The workflow includes configuration assessment, provisioning agent setup, staged activation, validation, and rollback. This feature is available only in the Azure public cloud.
+- Added a guided migration workflow from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. The workflow includes configuration assessment, provisioning agent setup, staged activation, and validation. This feature is available only in the Azure public cloud.
 - Added support for the Delos sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
 
 ### Updated features
