@@ -147,7 +147,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Passwordless authentication in the Microsoft Entra Connect setup wizard is now generally available and enabled by default. The Windows Web Account Manager prompt supports passkeys, FIDO2 security keys, and passwords, reuses the signed-in session across Microsoft Entra services, and preserves Seamless Single Sign-On Kerberos key rotation. [Learn more](how-to-connect-passwordless-authentication.md).
 - Cloud configuration cmdlets no longer require an explicit `-AADUserName`. When you omit the parameter, Microsoft Entra Connect derives a sign-in hint from the connector configuration and opens an interactive sign-in prompt. This behavior applies to `Set-ADSyncAADCompanyFeature`, `Set-ADSyncAADPasswordSyncState`, `Enable-ADSyncExportDeletionThreshold`, `Set-ADSyncScheduler`, and `Set-ADSyncDirSyncConfiguration`.
 - The Select Containers dialog in Synchronization Service Manager is now read-only. You can still use the dialog to view the current selections. To make changes, use Customize synchronization options in the Microsoft Entra Connect wizard. [Learn more](how-to-connect-installation-wizard.md#customize-synchronization-options).
-- The Generic LDAP connector wizard now validates the TLS server certificate chain and server name.
 - Updated the bundled SQL Server 2022 LocalDB from version 16.0.4250.1 to 16.0.4262.2.
 
 ### Bug fixes
