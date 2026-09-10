@@ -216,9 +216,23 @@ Here are some workarounds:
   - Targeted resource: **All resources (formerly 'All cloud apps')**
   - Grant control: **Require approved client app**, or **Require app protection policy**, or **Require device to be marked as compliant**
 
-- You can grant users a temporary exemption from the Conditional Access policy. Consider using one or more compensating controls:
-  - Allow the exemption for only a limited period of time. Communicate to the user when they're allowed to register a passkey. Remove the exemption after the time period. Then direct users to call the help desk if they missed their time.
-  - Use another Conditional Access policy to require that users register only from a specific network location or a compliant device.
+You can exclude the "Microsoft Authenticator Credential registration" resource by following the steps below. 
+> [!NOTE]
+> Before you can exclude the resource from a Conditional Access policy, the Microsoft Authenticator Credential Registration enterprise application must be provisioned in your tenant.
+> 
+
+As a Cloud Application Administrator or Application Administrator:
+1. Manually provision the **Microsoft Authenticator Credential Registration** app using one of the [supported methods for creating an enterprise application from a multitenant app](https://learn.microsoft.com/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=ms-graph).
+  1. Required details:
+    1. **App ID**: 6aa00308-ea33-4caa-90d6-ae905d8cb51b
+    2. **Required role**: Cloud Application Administrator or Application Administrator
+    3. **Example**: Using Microsoft Graph Explorer  
+  3. Make a **POST** request to "https://graph.microsoft.com/v1.0/servicePrincipals" with the following body:
+   `{
+   `"appId": "6aa00308-ea33-4caa-90d6-ae905d8cb51b" 
+  `}
+2. Once provisioned, **Microsoft Authenticator Credential Registration** will appear in the Entra ID Conditional Access portal. Exclude it from any CA policies scoped to **All cloud apps** to unblock passkey registration in Microsoft Authenticator.
+
 
 > [!NOTE]
 > With any proposed workaround, users must also satisfy any Conditional Access policy that targets **Register security info** or they can't register the passkey. If you have other conditions set up with the **All resources** policies, they also must be met before users can register a passkey.
