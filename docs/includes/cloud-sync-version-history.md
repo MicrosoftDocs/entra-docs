@@ -23,17 +23,17 @@ September 14, 2026: released for download
 ### New or changed functionality
 
 - Added support for AzureChinaCloud.
-- The Provisioning Agent configuration wizard no longer requests Domain Admin credentials and grants Active Directory permissions to the gMSA when a customer-provided gMSA is selected. Administrators are responsible for ensuring that the custom gMSA has the right permissions, documented in [gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md).
+- The Provisioning Agent configuration wizard no longer needs Domain Admin credentials when a customer-provided gMSA is selected. Administrators are responsible for ensuring that the custom gMSA has the right permissions, documented in [gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md).
 - Removed the Repair-AADCloudSyncToolsAccount cmdlet from the AADCloudSyncTools PowerShell module.
 - The Provisioning Agent no longer synchronizes password hashes for privileged on-premises Active Directory accounts. This applies to any account with a non-zero adminCount attribute — for example, members of protected groups such as Domain Admins, Enterprise Admins, Administrators, Account Operators, and other Active Directory protected groups. The accounts will continue to be synchronized to Entra, only the password hash will not be synchronized. Any on-premises password change made to one of these accounts after the behavior takes effect will not be reflected in Entra. It is recommended to use dedicated cloud-only accounts for Microsoft Entra administration and keep privileged on-premises accounts for on-premises use. This aligns with Microsoft's guidance for privileged access and avoids relying on synchronized on-premises credentials for cloud administration.
 
 ### Fixed issues
 
-- Various bug fixes and security hardening improvements.
 - Fixed an issue with cloud discovery for AzureUSGoverment tenants.
-- Fixed an issue that could cause initial synchronization scoped to selected security groups to fail due to formatting-only differences with AD when processing groups with many members, causing a restart as a full synchronization.
-- Fixed an issue where an unresolved cross-domain directory reference could place an Active Directory-to-Microsoft Entra ID provisioning job in quarantine. The job now continues and preserves the existing value in Microsoft Entra ID. No customer-facing warning is currently shown when a reference is skipped.
+- Fixed an issue that could cause initial synchronization scoped to selected security groups to fail due to formatting-only differences with AD when processing groups with many members.
+- Fixed an issue where an unresolved cross-domain directory reference could place an AD2AADProvisioning job in quarantine. The job will now produce an object level error in this situation.
 - Fixed an issue with domain controller affinity when paging nested organizational units or containers.
+- -Miscellaneous security hardening improvements.
 
 ## 1.1.2334.0
 
