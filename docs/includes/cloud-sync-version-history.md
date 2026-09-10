@@ -29,7 +29,7 @@ September 14, 2026: released for download
 
 ### Fixed issues
 
-- Fixed an issue with cloud discovery for AzureUSGoverment tenants.
+- Provisioning Agent now correctly discovers the cloud instance for AzureUSGoverment tenants of all domain suffixes.
 - Fixed an issue that could cause initial synchronization scoped to selected security groups to fail due to formatting-only differences with AD when processing groups with many members.
 - Fixed an issue where an unresolved cross-domain directory reference could place an AD2AADProvisioning job in quarantine. The job will now produce an object level error in this situation.
 - Fixed an issue with domain controller affinity when paging nested organizational units or containers.
