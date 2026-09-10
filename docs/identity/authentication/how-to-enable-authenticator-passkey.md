@@ -222,7 +222,7 @@ You can exclude the "Microsoft Authenticator Credential registration" resource b
 > 
 
 As a Cloud Application Administrator or Application Administrator:
-1. Manually provision the **Microsoft Authenticator Credential Registration** app using one of the [supported methods for creating an enterprise application from a multitenant app](https://learn.microsoft.com/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=ms-graph).
+1. Manually provision the **Microsoft Authenticator Credential Registration** app using one of the [supported methods for creating an enterprise application from a multitenant app](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=ms-graph).
   1. Required details:
     1. **App ID**: 6aa00308-ea33-4caa-90d6-ae905d8cb51b
     2. **Required role**: Cloud Application Administrator or Application Administrator
