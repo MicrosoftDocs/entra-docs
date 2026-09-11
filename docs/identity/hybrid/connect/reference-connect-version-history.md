@@ -105,7 +105,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|
 |[2.6.3.0](#2630)|07 Jul 2027 (12 months after release of 2.6.84.0)|
 |[2.6.84.0](#26840)|15 Sep 2027 (12 months after release of 2.6.91.0)|
-|[2.6.91.0](#26910)||
+|[2.6.91.0](#26900)||
 
 **All other versions are not supported**
 
@@ -199,11 +199,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Known issues
 
-- Installing or upgrading to Microsoft Entra Connect version 2.6.84.0 with an existing ADSync database might fail with error `0xE0474352`. To install or upgrade with an existing database, use [version 2.6.91.0](#26910) or later.
-- Synchronization Service Manager might close unexpectedly when you open **Connector Properties** and list directory partitions. This issue is fixed in [version 2.6.91.0](#26910).
+- Installing or upgrading to Microsoft Entra Connect version 2.6.84.0 with an existing ADSync database might fail with error `0xE0474352`. To install or upgrade with an existing database, use [version 2.6.91.0](#26900) or later.
+- Synchronization Service Manager might close unexpectedly when you open **Connector Properties** and list directory partitions. This issue is fixed in [version 2.6.91.0](#26900).
 
 > [!IMPORTANT]
-> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the [latest available version (2.6.91.0)](#26910) of Microsoft Entra Connect Sync.
+> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the [latest available version (2.6.91.0)](#26900) of Microsoft Entra Connect Sync.
 
 ## 2.6.3.0
 
