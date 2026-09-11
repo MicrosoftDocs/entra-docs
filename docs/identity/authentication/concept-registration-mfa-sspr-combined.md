@@ -2,8 +2,9 @@
 title: Combined registration for SSPR and Microsoft Entra multifactor authentication
 description: Learn about the combined registration experience for Microsoft Entra ID to let users register for both Microsoft Entra multifactor authentication and self-service password reset
 ms.topic: concept-article
-ms.date: 03/04/2025
+ms.date: 09/11/2026
 ms.reviewer: tilarso
+ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 ---
 # Combined security information registration for Microsoft Entra overview
@@ -129,8 +130,13 @@ Organizations can modify the authentication requirements by defining [Conditiona
 
 ## Key usage scenarios
 
-### Change a password in MySignIns
-A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can change their password. If the user authenticates with a password and a multifactor authentication method, they're able to use the enhanced user experience to change their password without entering their existing password. When finished, the user has the new password updated on the Security info page. Authentication methods such as Temporary Access Pass (TAP) aren't supported for password change unless the user knows their existing password.
+### Change a password in My Sign-Ins
+
+A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can change their password. If the user authenticates with a password and a multifactor authentication method, they can change their password without entering their existing password.
+
+An organization can also allow users to change their cloud password after they authenticate with a registered passkey (FIDO2) or Windows Hello for Business credential. Users don't need to know their current password or be registered for SSPR. For administrator configuration, user steps, and limitations, see [Change a password with passwordless authentication](concept-sspr-howitworks.md#tab/passwordless).
+
+Authentication methods such as Temporary Access Pass (TAP) aren't supported for password change unless the user knows their existing password.
 
 >[!NOTE]
 >If you have any links that point to the legacy change password experience, update them to the following forward link to direct users to the new **My Sign Ins Change Password** experience: [https://go.microsoft.com/fwlink/?linkid=2224198](https://go.microsoft.com/fwlink/?linkid=2224198). 

@@ -2,9 +2,10 @@
 title: Self-service password reset deep dive
 description: How does self-service password reset work
 ms.topic: concept-article
-ms.date: 03/04/2025
+ms.date: 09/11/2026
 ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 # How it works: Microsoft Entra self-service password reset
 
@@ -15,7 +16,7 @@ Microsoft Entra self-service password reset (SSPR) gives users the ability to ch
 >
 > If your IT team hasn't enabled the ability to reset your own password, reach out to your helpdesk for additional assistance.
 
-## How does the password reset process work?
+## [**Self-service password reset**](#tab/sspr)
 
 A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). Also to highlight SSPR for Administrators isn't enabled on the tenant by default as SSPR is only for the end users.  They must first register their desired authentication methods. When a user accesses the SSPR portal, the Microsoft Entra platform considers the following factors:
 
@@ -56,6 +57,39 @@ To get started with SSPR, complete the following tutorial:
 > [!div class="nextstepaction"]
 > [Tutorial: Enable self-service password reset (SSPR)](tutorial-enable-sspr.md)
 
+## [**Passwordless authentication**](#tab/passwordless)
+
+Passwordless users can change their cloud password from **Security info** without entering their current password. They authenticate with a registered passkey (FIDO2) or Windows Hello for Business credential before they create a new password. This experience helps users who primarily sign in without a password but still need a password for legacy applications.
+
+This password change experience is separate from SSPR. Users don't need to be registered for SSPR, and the number of authentication methods required by the SSPR policy doesn't apply.
+
+### Enable password changes with passwordless authentication
+
+By default, passwordless users can't change their password without entering their current password. To enable the experience, you need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
+1. Select **Password**, and then select **Configure**.
+1. Enable **Allow passwordless password change in My Sign-ins**.
+1. Select **Save**.
+
+The setting applies to all users in the tenant. You can't target or exclude individual users or groups.
+
+### Change a password
+
+To change their password, an eligible user completes these steps:
+
+1. Go to [Security info](https://aka.ms/mysecurityinfo).
+1. Sign in with a passkey (FIDO2) or Windows Hello for Business.
+1. Select **Change** next to **Password**.
+1. Enter and confirm a new password, and then select **Submit**.
+
+The user isn't asked for their current password. If the setting isn't enabled or the user doesn't have a supported passwordless method registered, they must use another available password change or reset option.
+
+> [!IMPORTANT]
+> Password changes with passwordless authentication apply only to passwords managed in Microsoft Entra ID. This experience doesn't support password writeback to an on-premises directory. Hybrid users must use SSPR with password writeback or another process supported by their organization.
+
+---
 
 ## Require users to register when they sign in
 
