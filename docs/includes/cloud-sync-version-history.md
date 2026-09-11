@@ -18,22 +18,25 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 ## 1.1.2502.0
 
-September 14, 2026: released for download
+**Release date:** September 14, 2026
 
-### New or changed functionality
+### New features and improvements
 
-- Added support for AzureChinaCloud.
-- The Provisioning Agent configuration wizard no longer needs Domain Admin credentials when a customer-provided gMSA is selected. Administrators are responsible for ensuring that the custom gMSA has the right permissions, documented in [gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md).
-- Removed the Repair-AADCloudSyncToolsAccount cmdlet from the AADCloudSyncTools PowerShell module.
-- The Provisioning Agent no longer synchronizes password hashes for privileged on-premises Active Directory accounts. This applies to any account with a non-zero adminCount attribute — for example, members of protected groups such as Domain Admins, Enterprise Admins, Administrators, Account Operators, and other Active Directory protected groups. The accounts will continue to be synchronized to Entra, only the password hash will not be synchronized. Any on-premises password change made to one of these accounts after the behavior takes effect will not be reflected in Entra. It is recommended to use dedicated cloud-only accounts for Microsoft Entra administration and keep privileged on-premises accounts for on-premises use. This aligns with Microsoft's guidance for privileged access and avoids relying on synchronized on-premises credentials for cloud administration.
+- Added download functionality support for Azure China Cloud.
+- Simplified Provisioning Agent configuration by eliminating the requirement for Domain Admin credentials when customers provide a gMSA and select custom gMSA permissions. This enhancement supports hybrid cloud synchronization scenarios and aligns with the gMSA PowerShell cmdlets experience.
+- Streamlined the AADCloudSyncTools PowerShell module by removing the Repair-AADCloudSyncToolsAccount cmdlet, aligning the module with the updated Provisioning Agent configuration experience.
+- **Enhanced protection for privileged Active Directory accounts in hybrid identity environments.** The Provisioning Agent now applies additional safeguards to Active Directory accounts protected by the administrative protection model (accounts with a non-zero adminCount attribute). To support Microsoft's privileged access guidance and strengthen cloud security boundaries, password hash synchronization is not performed for these protected accounts. Organizations are encouraged to use dedicated cloud-only administrative accounts in Microsoft Entra ID, reducing reliance on synchronized privileged credentials and improving security posture.
 
-### Fixed issues
+### Fixes
 
-- Provisioning Agent now correctly discovers the cloud instance for AzureUSGoverment tenants of all domain suffixes.
-- Fixed an issue that could cause initial synchronization scoped to selected security groups to fail due to formatting-only differences with AD when processing groups with many members.
-- Fixed an issue where an unresolved cross-domain directory reference could place an AD2AADProvisioning job in quarantine. The job will now produce an object level error in this situation.
-- Fixed an issue with domain controller affinity when paging nested organizational units or containers.
-- -Miscellaneous security hardening improvements.
+- Improved cloud environment discovery for Azure Government tenants that use domain suffixes.
+- Resolved formatting inconsistencies affecting security groups during initial synchronization.
+- Fixed an issue that could result in unresolved cross-domain directory references causing object-level quarantine errors in AD2AADProvisioning jobs.
+- Fixed domain controller affinity paging issues when processing nested organizational units and containers.
+
+### Security hardening
+
+- Implemented additional security hardening improvements to further strengthen the reliability and protection of hybrid identity synchronization deployments.
 
 ## 1.1.2334.0
 
