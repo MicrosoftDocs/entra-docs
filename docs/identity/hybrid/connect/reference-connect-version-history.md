@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.topic: reference
-ms.date: 09/10/2026
+ms.date: 09/11/2026
 ms.subservice: hybrid-connect
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ai-usage: ai-assisted
@@ -157,6 +157,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an Application-Based Authentication certificate rotation issue that could remove the last usable application key during directory replica delays.
 - Fixed an issue where Synchronization Service Manager could close unexpectedly when you opened Connector Properties and listed directory partitions.
 - Fixed an issue where Change Credentials didn't open for connector rows outside the visible area on configurations with many Active Directory connectors.
+- Fixed an issue where expanding a previously deselected domain on the Domain and OU filtering page could reselect the domain and enable synchronization for the entire domain after the wizard completed.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies and hardened local temporary-file permissions and SharePoint connector profile-image downloads.
 
 ## 2.6.84.0
@@ -201,6 +202,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 - Installing or upgrading to Microsoft Entra Connect version 2.6.84.0 with an existing ADSync database might fail with error `0xE0474352`. To install or upgrade with an existing database, use [version 2.6.91.0](#26910) or later.
 - Synchronization Service Manager might close unexpectedly when you open **Connector Properties** and list directory partitions. This issue is fixed in [version 2.6.91.0](#26910).
+- When you reopen the Microsoft Entra Connect wizard and expand a domain that was completely deselected on the Domain and OU filtering page, the wizard might select the domain again. If you complete the wizard, synchronization might be enabled for the entire domain. This issue is fixed in [version 2.6.91.0](#26910).
 
 > [!IMPORTANT]
 > Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the [latest available version (2.6.91.0)](#26910) of Microsoft Entra Connect Sync.
