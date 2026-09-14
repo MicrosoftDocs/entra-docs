@@ -54,7 +54,12 @@ Follow the steps from the [Microsoft Entra admin center](https://entra.microsoft
 From the [Microsoft Entra admin center](https://entra.microsoft.com), take a few steps to identify specific fixable scenarios:  
 1. In Microsoft Entra Connect Health, select **Sync errors**, and then select the **Duplicate Attribute** category.
 1. Find the affected object. Expand the row to review its details.
-1. Select **Fix this error** to open the **Fix Synchronization Error** panel. This action is available only for supported duplicate-attribute errors.
+1. Select **Fix this error** to open **Error Details**. This action is available only for supported duplicate-attribute errors.
+1. Compare the conflicting and existing objects, and then select **Troubleshoot** to open the **Fix Synchronization Error** diagnostic wizard.
+
+The wizard provides a directory query to help verify the affected user, asks diagnostic questions, and provides expandable guidance before you continue to a proposed resolution.
+
+![Connect Health Fix Synchronization Error wizard, with callouts for the suggested directory query, diagnostic answer choices, and guidance.](media/how-to-connect-health-diagnose-sync-errors/connect-health-sync-diagnostic-wizard.png)
 
 The panel can show the following statuses:
 
