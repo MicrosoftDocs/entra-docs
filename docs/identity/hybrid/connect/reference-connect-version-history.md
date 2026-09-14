@@ -87,25 +87,25 @@ Required permissions | For permissions required to apply an update, see [Microso
 > 
 > For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version before the retirement of your current version.
 
-|Version |End of support date |
-|--------|--------------------|
-|[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.20.0](#23200)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
-|[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
-|[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
-|[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
-|[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
-|[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
-|[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
-|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
-|[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|
-|[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|
-|[2.6.3.0](#2630)|07 Jul 2027 (12 months after release of 2.6.84.0)|
-|[2.6.84.0](#26840)|15 Sep 2027 (12 months after release of 2.6.91.0)|
-|[2.6.91.0](#26910)||
+|Version |End of support date |Release date |
+|--------|--------------------|-------------|
+|[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|12 Dec 2023|
+|[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|21 Feb 2024|
+|[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|1 Apr 2024|
+|[2.3.20.0](#23200)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|15 Jul 2024|
+|[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|7 Oct 2024|
+|[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|9 Oct 2024|
+|[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|14 Nov 2024|
+|[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|15 Jan 2025|
+|[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|27 Mar 2025|
+|[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|27 May 2025|
+|[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|31 Jul 2025|
+|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|1 Sep 2025|
+|[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|19 Nov 2025|
+|[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|2 Feb 2026|
+|[2.6.3.0](#2630)|07 Jul 2027 (12 months after release of 2.6.84.0)|10 Mar 2026|
+|[2.6.84.0](#26840)|15 Sep 2027 (12 months after release of 2.6.91.0)|7 Jul 2026|
+|[2.6.91.0](#26910)||15 Sep 2026|
 
 **All other versions are not supported**
 
