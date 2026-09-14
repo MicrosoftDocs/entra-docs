@@ -246,11 +246,17 @@ Microsoft Entra Connect Health Usage Analytics analyzes the authentication traff
 Select **View Usage Details** to open a detailed panel and change the displayed time range.
 
 ## Performance Monitoring for AD FS
-The **Performance Monitoring** section shows token requests per second for federation servers over the past 24 hours. Select **View detailed monitoring** to open a panel where you can change the time range and select the servers to compare.
+The **Performance Monitoring** section shows token requests per second for federation servers alongside application visit volume from the past 24 hours. Use the charts together to compare federation traffic with the applications generating that traffic. Select **View detailed monitoring** below either visualization to change the time range and refine the displayed data.
+
+![Connect Health AD FS performance and usage monitoring, with callouts for token-request throughput, application visits, and detailed monitoring.](media/how-to-connect-health-adfs/connect-health-adfs-performance-and-usage.png)
+
+## Security reports for AD FS
+
+The **Security Reporting** section provides entry points to bad-password and risky-IP reports. Use the summary cards to review recent activity, and then open a report for detailed trends, affected users or IP addresses, notification settings, and export actions.
 
 ![Connect Health AD FS security reporting cards, with callouts for bad-password trends and risky IP activity.](media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-security-reports.png)
 
-## Top 50 Users with failed Username/Password logins
+### Top 50 users with failed username/password logins
 One of the common reasons for a failed authentication request on an AD FS server is a request with invalid credentials, that is, a wrong username or password. Usually happens to users due to complex passwords, forgotten passwords, or typos.
 
 But there are other reasons that can result in an unexpected number of requests being handled by your AD FS servers, such as: An application that caches user credentials and the credentials expire or a malicious user attempting to sign into an account with a series of well-known passwords. These two examples are valid reasons that could lead to a surge in requests.
