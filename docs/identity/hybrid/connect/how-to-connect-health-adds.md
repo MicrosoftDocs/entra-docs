@@ -38,7 +38,9 @@ On the service page, select **View replication details** to view the replication
 Select a replication error to open the **Replication Error Details** panel. The panel includes the source and target domain controllers, naming context, site, domain, last attempted and successful synchronization times, recommended fix, and related troubleshooting link when available.
 
 ## Monitoring
-The service page shows 24-hour graphical trends for three default performance counters: LDAP successful binds, NTLM authentications, and Kerberos authentications. Select a chart to open a detailed panel.
+The service page shows 24-hour graphical trends for three default performance counters: LDAP successful binds, NTLM authentications, and Kerberos authentications. Compare the charts to identify authentication-volume changes, and then select **View detailed monitoring** for a metric to open a larger view and change the time range.
+
+![Connect Health AD DS monitoring, with callouts for comparing LDAP, NTLM, and Kerberos trends and opening detailed monitoring.](media/how-to-connect-health-adds/connect-health-adds-performance-monitoring.png)
 
 Select **View all Performance Metrics** to open the full collection. Use **Manage counters** to select the metrics you want to display, drag charts to reorder them, and select a chart to compare data for monitored domain controllers over the available time ranges.
 
