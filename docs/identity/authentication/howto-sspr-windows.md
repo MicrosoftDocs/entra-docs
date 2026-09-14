@@ -61,27 +61,26 @@ To configure a Windows 11 or Windows 10 device for SSPR on the sign-in screen, r
     - Microsoft Entra joined.
     - Microsoft Entra hybrid joined.
 
-### Enable for Windows 11 and Windows 10 by using Intune
+### Enable for Windows 11 and Windows 10 by using Microsoft Intune
 
 Deploying the configuration change to enable SSPR from the Windows sign-in screen by using Intune is the most flexible method. With Intune, you can deploy the configuration change to a specific group of machines that you define. This method requires Intune enrollment of the device.
 
-#### Create a device configuration policy in Intune
+#### Create a Settings Catalog policy in Microsoft Intune
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
-1. Create a new device configuration profile by going to **Device configuration** > **Profiles** and then selecting **+ Create Profile**:
+1. Create a new device configuration profile by going to **Configuration** > and then selecting **+ Create** and choosing **New Policy**:
    - For **Platform**, choose **Windows 10 and later**.
-   - For **Profile type**, choose **Templates** and then select the **Custom** template.
+   - For **Profile type**, choose **Settings Catalog**
 1. Select **Create**, and then provide a meaningful name for the profile, such as **Windows 11 sign-in screen SSPR**.
 
     Optionally, provide a meaningful description of the profile, and then select **Next**.
 1. Under **Configuration settings**, select **Add** and provide the following OMA-URI setting to enable the reset password link:
       - Enter a meaningful name to explain what the setting is doing, such as **Add SSPR link**.
       - Optionally, enter a meaningful description of the setting.
-      - Set **OMA-URI** to `./Device/Vendor/MSFT/Policy/Config/Authentication/AllowAadPasswordReset`.
-      - Set **Data type** to **Integer**.
-      - Set **Value** to **1**.
+      - Browse to **Authentication** and select **Allow Aad Password Reset**.
+      - Set the toggle to **Allow**.
 
-    Select **Add**, and then select **Next**.
+    Select **Next**.
 1. You can assign the policy to specific users, devices, or groups. Assign the profile that you want for your environment. Best practice is to assign it to a test group of devices first, and then select **Next**.
 
     For more information, see [Assign user and device profiles in Microsoft Intune](/mem/intune/configuration/device-profile-assign).
