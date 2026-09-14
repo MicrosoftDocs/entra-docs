@@ -92,8 +92,11 @@ To change their password, an eligible user completes these steps:
 
 The user isn't asked for their current password. If the setting isn't enabled or a supported passwordless method isn't available to the user, they must use another available password change or reset option.
 
-> [!IMPORTANT]
-> In a hybrid environment, password changes made with passwordless authentication can be written back to an on-premises directory when password writeback is configured.
+Where the new password is stored depends on the identity environment:
+
+* **Cloud-only tenant:** The password is updated in Microsoft Entra ID.
+* **Hybrid tenant with password writeback enabled:** The password is updated in Microsoft Entra ID and written back to Active Directory.
+* **On-premises-only environment:** My Sign-Ins can't manage identities that don't exist in Microsoft Entra ID.
 
 ---
 
