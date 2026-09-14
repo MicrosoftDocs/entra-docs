@@ -41,6 +41,19 @@ Before starting validation, ensure the following are already true:
 > [!IMPORTANT]
 > Validation fails if these prerequisites aren't met. Complete and test your OIDC implementation before attempting validation.
 
+## Microsoft identity platform v1 endpoints aren't supported
+
+Self-service Microsoft Entra App Gallery onboarding supports applications that use Microsoft identity platform v2 OpenID Connect (OIDC) endpoints.
+
+Applications that use Microsoft identity platform v1 endpoints can't be validated through the self-service onboarding experience. Microsoft recommends migrating to v2 endpoints to take advantage of self-service validation, publishing, and lifecycle management capabilities.
+
+The v2 endpoint uses a scope-based authorization model, including standard OIDC scopes such as `openid`, `profile`, and `email`, and provides a consistent authorization and token model that can be validated through the self-service experience. It also supports capabilities such as incremental consent, allowing applications to request delegated permissions as needed.
+
+Microsoft identity platform v1.0 and v2.0 ID tokens differ in the claims and token semantics they expose. For more information, see [ID token claims reference](~/identity-platform/id-token-claims-reference.md).
+
+> [!NOTE]
+> Applications configured to use Microsoft identity platform v1 endpoints can't be validated through the self-service onboarding experience. Migrate to v2 endpoints before starting validation.
+
 ## Your gallery submission ID
 
 Before you start validation, create your Microsoft Entra gallery submission and copy its Submission ID. You will need this ID to submit your validation results.
