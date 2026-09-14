@@ -168,9 +168,9 @@ The menu includes the following options:
 
 * **Quick start**: View what's new, download the agents and Microsoft Entra Connect, open documentation, or provide feedback.
 * **Sync errors**: Review synchronization error categories and individual error details. For supported duplicate-attribute scenarios, you can start the guided **Fix Synchronization Error** experience.
-* **Sync services**: View monitored Microsoft Entra Connect Sync service instances. Select a service to review its servers, alerts, synchronization errors, and settings.
-* **AD FS services**: View monitored AD FS farms. Select a service to review its servers, properties, alerts, performance monitoring, usage analytics, and security reports.
-* **AD DS services**: View monitored AD DS forests. Select a service to review its domain controllers, replication status, alerts, and performance monitoring.
+* **Sync services**: View monitored Microsoft Entra Connect Sync service instances. Select a service to review its servers, alerts, synchronization errors, and settings. For details, see [Use Microsoft Entra Connect Health for Sync](how-to-connect-health-sync.md).
+* **AD FS services**: View monitored AD FS farms. Select a service to review its servers, properties, alerts, performance monitoring, usage analytics, and security reports. For details, see [Use Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md).
+* **AD DS services**: View monitored AD DS forests. Select a service to review its domain controllers, replication status, alerts, and performance monitoring. For details, see [Use Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).
 * **Settings**: Configure tenant-level Microsoft Entra Connect Health settings.
 * **Role based access control (IAM)**: Manage access to Microsoft Entra Connect Health data.
 * **Troubleshoot** and **New support request**: Diagnose issues or contact Microsoft support.
