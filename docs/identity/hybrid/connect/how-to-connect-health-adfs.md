@@ -230,7 +230,7 @@ The `Role` parameter currently takes the following values:
 
 Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), select **AD FS services**, and then select a service. The service page provides federation server status, alerts, performance and usage charts, and security reports.
 
-![Connect Health AD FS service overview, with callouts for server details, Quick Start, service properties, and alerts.](media/how-to-connect-health-adfs/connect-health-adfs-overview.png)
+![Connect Health AD FS service overview, with callouts for server details, Quick Start, service properties, and alerts.](media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-overview.png)
 
 ## Alerts for AD FS
 The **Alerts** page lists active and resolved alerts. Use the time-range control to include older resolved alerts, and use search to filter the list. Select an alert row to open the details panel, which contains alert metadata, affected servers, resolution guidance, related documentation, and a feedback option.
@@ -248,7 +248,7 @@ Select **View Usage Details** to open a detailed panel and change the displayed 
 ## Performance Monitoring for AD FS
 The **Performance Monitoring** section shows token requests per second for federation servers over the past 24 hours. Select **View detailed monitoring** to open a panel where you can change the time range and select the servers to compare.
 
-![Connect Health AD FS security reporting cards, with callouts for bad-password trends and risky IP activity.](media/how-to-connect-health-adfs/connect-health-adfs-security-reports.png)
+![Connect Health AD FS security reporting cards, with callouts for bad-password trends and risky IP activity.](media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-security-reports.png)
 
 ## Top 50 Users with failed Username/Password logins
 One of the common reasons for a failed authentication request on an AD FS server is a request with invalid credentials, that is, a wrong username or password. Usually happens to users due to complex passwords, forgotten passwords, or typos.

@@ -55,7 +55,7 @@ Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), select *
 > [!IMPORTANT]
 > The Risky IP report is being deprecated. The page provides a link to the newer [Risky IP report workbook](how-to-connect-health-adfs-risky-ip-workbook.md), which supports customizable queries and expanded visualizations.
 
-![Connect Health bad IP addresses report, with callouts for the workbook migration notice, report actions, and results table.](media/how-to-connect-health-adfs-risky-ip/connect-health-adfs-bad-ip-addresses.png)
+![Connect Health bad IP addresses report, with callouts for the workbook migration notice, report actions, and results table.](media/how-to-connect-health-adfs-risky-ip/connect-health-bad-internet-protocol-addresses.png)
 
 ## Load balancer IP addresses in the list
 
