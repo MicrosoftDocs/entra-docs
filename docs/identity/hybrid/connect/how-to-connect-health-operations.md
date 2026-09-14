@@ -49,6 +49,10 @@ When you're deleting a server, be aware of the following:
 * This action doesn't delete the data already collected from this server. That data is deleted in accordance with the Azure data retention policy.
 * After performing this action, if you want to start monitoring the same server again, you must uninstall and reinstall the Health Agent on this server.
 
+The service overview separates the two deletion paths. Select a server to open its details before deleting only that server. Use **Delete** on the service-level command bar only when you intend to delete the entire monitored service instance.
+
+![Connect Health service overview, with callouts for selecting an individual server and using the service-level Delete action.](media/how-to-connect-health-operations/connect-health-delete-server-or-service.png)
+
 <a name='delete-a-server-from-the-azure-ad-connect-health-service'></a>
 
 ### Delete a server from the Microsoft Entra Connect Health service
@@ -125,8 +129,12 @@ To allow a user access at the *all service instances* level, open [Microsoft Ent
 
 To manage access for an individual service instance, open the service and select **Access Control** where available.
 
+The IAM page lets you check existing access, review role assignments and roles, or create an assignment at the selected Connect Health scope.
+
+![Connect Health role-based access control page, with callouts for adding an assignment, reviewing role information, and granting access at the current scope.](media/how-to-connect-health-operations/connect-health-role-based-access-control.png)
+
 #### Step 2: Add users and groups, and assign roles
-1. Select **Add**.
+1. Select **Add**, and then select **Add role assignment**.
 1. Select a role, such as **Owner**, **Contributor**, or **Reader**.
 1. Search for and select one or more users or groups.
 1. Confirm the role assignment.
