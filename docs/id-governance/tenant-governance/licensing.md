@@ -91,15 +91,10 @@ Secure add-on tenant creation is available with Microsoft Entra Free for paid Mi
 
 For more information about the general tenant creation requirements, see [Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md).
 
-## Licensing for related services
-
-Tenant Governance capabilities can also be used with Microsoft Agent 365 and Microsoft Defender. Review the licensing and service-specific requirements for each product:
-
-- [Microsoft Agent 365 Licensing FAQs](https://www.microsoft.com/licensing/faqs/122)
-- [Configure delegated access with governance relationships for multitenant organizations](/unified-secops/governance-relationships)
-
 ## Related content
 
 - [What is Microsoft Entra Tenant Governance?](overview.md)
 - [Governance relationships](governance-relationships.md)
 - [Microsoft Entra licensing](~/fundamentals/licensing.md)
+- [Microsoft Agent 365 Licensing FAQs](https://www.microsoft.com/licensing/faqs/122)
+- [Configure delegated access with governance relationships for multitenant organizations](/unified-secops/governance-relationships)
