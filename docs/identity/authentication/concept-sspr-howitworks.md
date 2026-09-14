@@ -93,7 +93,7 @@ To change their password, an eligible user completes these steps:
 The user isn't asked for their current password. If the setting isn't enabled or a supported passwordless method isn't available to the user, they must use another available password change or reset option.
 
 > [!IMPORTANT]
-> Password changes with passwordless authentication apply only to passwords managed in Microsoft Entra ID. This experience doesn't support password writeback to an on-premises directory. Hybrid users must use SSPR with password writeback or another process supported by their organization.
+> In a hybrid environment, password changes made with passwordless authentication can be written back to an on-premises directory when password writeback is configured.
 
 ---
 
