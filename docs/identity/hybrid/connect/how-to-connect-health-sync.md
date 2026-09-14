@@ -20,6 +20,10 @@ Before you use Microsoft Entra Connect Health for sync, install the Microsoft En
 > Microsoft Entra Connect Health for Sync requires Microsoft Entra Connect Sync V2. If you're still using Azure AD Connect V1, you must upgrade to the latest version. 
 > Azure AD Connect V1 was retired on August 31, 2022. Microsoft Entra Connect Health for Sync stopped working with Azure AD Connect V1 in December 2022.
 > 
+Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), select **Sync services**, and then select a service. The overview brings together server health, active and recently resolved alerts, synchronization errors, and data freshness status. Select a server, alert summary, or sync error card to open the corresponding details.
+
+![Connect Health Sync service overview, with callouts for monitored servers, alert summary, and synchronization error status.](media/how-to-connect-health-sync/connect-health-sync-service-overview.png)
+
 <a name='alerts-for-azure-ad-connect-health-for-sync'></a>
 
 ## Alerts for Microsoft Entra Connect Health for sync

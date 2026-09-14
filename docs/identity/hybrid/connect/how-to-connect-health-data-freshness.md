@@ -21,6 +21,8 @@ The service gets the data from agents that are running on the on-premises machin
 ## Understanding the alert
 
 Select the alert row to open the alert details panel. The panel shows when the alert was raised and last detected, the affected servers, resolution guidance, and related documentation. A background process that runs every two hours generates and re-evaluates the alert.
+
+![Connect Health data freshness alert details, with callouts for the issue, recommended fix, and affected servers.](media/how-to-connect-health-data-freshness/connect-health-data-freshness-alert-details.png)
  
 The following table maps service types to corresponding required data types:
 
