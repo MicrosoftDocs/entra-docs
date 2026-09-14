@@ -134,7 +134,7 @@ Organizations can modify the authentication requirements by defining [Conditiona
 
 A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can change their password. If the user authenticates with a password and a multifactor authentication method, they can change their password without entering their existing password.
 
-An organization can also allow users to change their cloud password after they sign in with Microsoft Entra certificate-based authentication (CBA), a passkey (FIDO2), or a Microsoft Authenticator passwordless phone sign-in notification. Users don't need to know or enter their current password, and they don't need to be registered for SSPR. For administrator configuration, user steps, and limitations, see [Change a password with passwordless authentication](concept-sspr-howitworks.md#tab/passwordless).
+An organization can also allow users to change their cloud password after they sign in with Microsoft Entra certificate-based authentication (CBA), a passkey (FIDO2), or a Microsoft Authenticator passwordless phone sign-in notification. Users don't need to know or enter their current password, and they don't need to be registered for SSPR. For administrator configuration, user steps, and limitations, see [Change a password with passwordless authentication](https://review.learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks?branch=pr-en-us-14357&tabs=passwordless#tab/passwordless).
 
 Authentication methods such as Temporary Access Pass (TAP) aren't supported for password change unless the user knows their existing password.
 
