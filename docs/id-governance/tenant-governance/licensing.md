@@ -6,7 +6,7 @@ author: tafra00
 ms.author: tafra00
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 07/29/2026
+ms.date: 09/14/2026
 ms.custom: msecd-doc-authoring-1018
 ai-usage: ai-assisted
 
@@ -90,6 +90,13 @@ One administrator enables Related tenants discovery for the tenant. After discov
 Secure add-on tenant creation is available with Microsoft Entra Free for paid Microsoft customers. A premium Microsoft Entra license isn't required, but the customer's existing tenant must be associated with a paid Microsoft cloud subscription. Customers who use only a free tenant or trial subscription can't create more tenants from the Microsoft Entra admin center.
 
 For more information about the general tenant creation requirements, see [Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md).
+
+## Licensing for related services
+
+Tenant Governance capabilities can also be used with Microsoft Agent 365 and Microsoft Defender. Review the licensing and service-specific requirements for each product:
+
+- [Microsoft Agent 365 Licensing FAQs](https://www.microsoft.com/licensing/faqs/122)
+- [Configure delegated access with governance relationships for multitenant organizations](/unified-secops/governance-relationships)
 
 ## Related content
 
