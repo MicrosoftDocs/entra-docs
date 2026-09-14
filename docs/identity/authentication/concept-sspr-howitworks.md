@@ -59,7 +59,13 @@ To get started with SSPR, complete the following tutorial:
 
 ## [**Passwordless authentication**](#tab/passwordless)
 
-Passwordless users can change their cloud password from **Security info** without entering their current password. They authenticate with a registered passkey (FIDO2) or Windows Hello for Business credential before they create a new password. This experience helps users who primarily sign in without a password but still need a password for legacy applications.
+Passwordless users can change their cloud password from **Security info** without knowing or entering their current password. Before they create a new password, they sign in with one of the following passwordless methods:
+
+* Microsoft Entra certificate-based authentication (CBA).
+* A passkey (FIDO2).
+* A Microsoft Authenticator passwordless phone sign-in notification.
+
+This experience helps users who primarily sign in without a password but still need a password for legacy applications.
 
 This password change experience is separate from SSPR. Users don't need to be registered for SSPR, and the number of authentication methods required by the SSPR policy doesn't apply.
 
@@ -80,11 +86,11 @@ The setting applies to all users in the tenant. You can't target or exclude indi
 To change their password, an eligible user completes these steps:
 
 1. Go to [Security info](https://aka.ms/mysecurityinfo).
-1. Sign in with a passkey (FIDO2) or Windows Hello for Business.
+1. Sign in with Microsoft Entra CBA, a passkey (FIDO2), or a Microsoft Authenticator passwordless phone sign-in notification.
 1. Select **Change** next to **Password**.
 1. Enter and confirm a new password, and then select **Submit**.
 
-The user isn't asked for their current password. If the setting isn't enabled or the user doesn't have a supported passwordless method registered, they must use another available password change or reset option.
+The user isn't asked for their current password. If the setting isn't enabled or a supported passwordless method isn't available to the user, they must use another available password change or reset option.
 
 > [!IMPORTANT]
 > Password changes with passwordless authentication apply only to passwords managed in Microsoft Entra ID. This experience doesn't support password writeback to an on-premises directory. Hybrid users must use SSPR with password writeback or another process supported by their organization.
