@@ -2,7 +2,7 @@
 title: 'Microsoft Entra Connect: Cloud authentication via Staged Rollout'
 description: This article explains how to migrate from federated authentication, to cloud authentication, by using a Staged Rollout.
 ms.topic: how-to
-ms.date: 08/11/2026
+ms.date: 09/15/2026
 ai-usage: ai-assisted
 ms.subservice: hybrid-connect
 ms.custom: sfi-image-nochange
@@ -147,31 +147,39 @@ We recommend enabling *seamless SSO* irrespective of the sign-in method (*passwo
 
 ## Prework for seamless SSO
 
-Enable *seamless SSO* on the Active Directory forests by using PowerShell. If you have more than one Active Directory forest, enable it for each forest individually. *Seamless SSO* is triggered only for users who are selected for Staged Rollout. It doesn't affect your existing federation setup.
+Enable *seamless SSO* on the Active Directory forests by using PowerShell. If you have more than one Active Directory forest, enable it for each forest individually. *Seamless SSO* is triggered only for users who are selected for Staged Rollout. It doesn't affect your existing federation setup.
 
 Enable *seamless SSO* by doing the following tasks:
 
-1. Sign in to Microsoft Entra Connect Server.
+1. Sign in to the Microsoft Entra Connect server.
 
-2. Go to the *%programfiles%\\Microsoft Entra Connect* folder.
+1. Go to the `%ProgramFiles%\Microsoft Azure Active Directory Connect` folder.
 
-3. Import the *seamless SSO* PowerShell module by running the following command: 
+1. Import the ADSync PowerShell module:
 
-   `Import-Module .\AzureADSSO.psd1`
+   ```powershell
+   Import-Module "$env:ProgramFiles\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1"
+   ```
 
-4. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command opens a pane where you can enter your tenant's Hybrid Identity Administrator credentials.
+1. Import the *seamless SSO* PowerShell module:
 
-5. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command displays a list of Active Directory forests (see the "Domains" list) on which this feature has been enabled. By default, it's set to false at the tenant level.
+   ```powershell
+   Import-Module .\AzureADSSO.psd1
+   ```
+
+1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command opens a pane where you can enter your tenant's Hybrid Identity Administrator credentials.
+
+1. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command displays a list of Active Directory forests (see the "Domains" list) on which this feature has been enabled. By default, it's set to false at the tenant level.
 
    ![Example of the PowerShell output](./media/how-to-connect-staged-rollout/staged-3.png)
 
-6. Call `$creds = Get-Credential`. At the prompt, enter the domain administrator credentials for the intended Active Directory forest.
+1. Call `$creds = Get-Credential`. At the prompt, enter the domain administrator credentials for the intended Active Directory forest.
 
-7. Call `Enable-AzureADSSOForest -OnPremCredentials $creds`. This command creates the AZUREADSSOACC computer account from the on-premises domain controller for the Active Directory forest that's required for *seamless SSO*.
+1. Call `Enable-AzureADSSOForest -OnPremCredentials $creds`. This command creates the AZUREADSSOACC computer account from the on-premises domain controller for the Active Directory forest that's required for *seamless SSO*.
 
-8. *Seamless SSO* requires URLs to be in the intranet zone. To deploy those URLs by using group policies, see [Quickstart: Microsoft Entra seamless single sign-on](how-to-connect-sso-quick-start.md#step-3-roll-out-the-feature).
+1. *Seamless SSO* requires URLs to be in the intranet zone. To deploy those URLs by using group policies, see [Quickstart: Microsoft Entra seamless single sign-on](how-to-connect-sso-quick-start.md#step-3-roll-out-the-feature).
 
-9. For a complete walkthrough, you can also download our [deployment plans](https://aka.ms/SeamlessSSODPDownload) for *seamless SSO*.
+1. For a complete walkthrough, you can also download our [deployment plans](https://aka.ms/SeamlessSSODPDownload) for *seamless SSO*.
 
 ## Enable Staged Rollout
 
