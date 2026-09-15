@@ -2,7 +2,7 @@
 title: Clear attribute values (Preview)
 description: Learn how to clear target attribute values when a source attribute has a null or empty value in Microsoft Entra provisioning.
 ms.topic: how-to
-ms.date: 08/19/2026
+ms.date: 08/20/2026
 ms.reviewer: cmmdesai
 ai-usage: ai-assisted
 ---
@@ -18,14 +18,13 @@ The configuration for clearing attribute values is consistent across supported p
 
 ## Preview scope and limitations
 
-- Clearing attribute values is available in preview for API-driven inbound provisioning to:
-  - Microsoft Entra ID.
-  - On-premises Active Directory.
+- Clearing attribute values is available in preview for:
+  - API-driven inbound provisioning to Microsoft Entra ID and on-premises Active Directory.
+  - Workday inbound user provisioning to Microsoft Entra ID and on-premises Active Directory.
+  - SAP SuccessFactors inbound user provisioning to Microsoft Entra ID and on-premises Active Directory.
 - Clearing attribute values is only supported for single-valued attributes. 
 - This feature can be enabled for [custom security attribute provisioning](provision-custom-security-attributes.md).
-- Clearing attribute values isn't currently supported for:
-  - Outbound application provisioning scenarios.
-  - Inbound provisioning from Workday or SAP SuccessFactors.
+- Clearing attribute values isn't currently supported for outbound application provisioning scenarios, including Workday Writeback and SAP SuccessFactors Writeback.
 - Clearing multi-valued attributes is not supported. 
 
 ## How attribute values are cleared
@@ -52,6 +51,13 @@ Before you begin, make sure that:
 - The source attribute exists in the provisioning application schema and has a target attribute mapping. To learn more, see [Customize Microsoft Entra attribute mappings](customize-application-attributes.md).
 
 For API-driven inbound provisioning to on-premises Active Directory, review the additional [role and server prerequisites](inbound-provisioning-api-configure-app.md#prerequisites), and then [configure the provisioning agent and Active Directory connection](inbound-provisioning-api-configure-app.md#configure-api-driven-inbound-provisioning-to-on-premises-ad).
+
+For HR-driven provisioning, first configure one of the supported inbound provisioning apps:
+
+- [Workday to on-premises Active Directory](~/identity/saas-apps/workday-inbound-tutorial.md).
+- [Workday to Microsoft Entra ID](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md).
+- [SAP SuccessFactors to on-premises Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md).
+- [SAP SuccessFactors to Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md).
 
 ## Enable null value flow for the source attribute
 
@@ -141,9 +147,27 @@ Use the source attribute names from your provisioning app schema. Make sure that
 
 For instructions to submit the request, see [Quickstart API-driven inbound provisioning with Graph Explorer](inbound-provisioning-api-graph-explorer.md) or [Quickstart for API-driven inbound provisioning with cURL](inbound-provisioning-api-curl-tutorial.md).
 
+## Workday and SAP SuccessFactors provisioning
+
+For Workday and SAP SuccessFactors inbound provisioning, the connector retrieves attribute values directly from the HR system during a provisioning cycle. You don't submit a `/bulkUpload` request to clear an attribute value.
+
+1. Follow the steps in [Enable null value flow for the source attribute](#enable-null-value-flow-for-the-source-attribute).
+1. Under **Advanced options**, select **Edit attribute list for Workday** or **Edit attribute list for SuccessFactors**, as appropriate.
+1. Select **Flow null values** only for each source attribute whose null or empty value should remove the mapped target value.
+1. Follow the steps in [Enable null value flow in the target mapping](#enable-null-value-flow-in-the-target-mapping) for each corresponding target attribute.
+1. Clear the value in Workday or SAP SuccessFactors.
+1. Allow the next provisioning cycle to process the source change, or use [provision on demand](provision-on-demand.md) to test a specific user.
+
+Workday uses XPath expressions and SAP SuccessFactors uses JSONPath expressions to retrieve source attributes. The attribute must be present in the provisioning app schema and retrieved by the connector before the provisioning service can evaluate its null or empty value.
+
+> [!NOTE]
+> During incremental sync, Workday only returns changes recorded in its transaction log. If a source attribute change isn't detected, see [Some Workday attribute updates are missing](hr-user-update-issues.md#some-workday-attribute-updates-are-missing).
+
+If a null or empty value should populate a fallback value or preserve the existing target value instead of clearing it, see [Troubleshoot HR user update issues](hr-user-update-issues.md#null-and-empty-values-not-processed-as-expected).
+
 ## Verify the attribute was cleared
 
-After the provisioning service processes the request, verify the result in the provisioning logs and the target directory.
+After the provisioning service processes the source update, verify the result in the provisioning logs and the target directory.
 
 1. In your provisioning app, select **Provisioning logs**.
 1. Open the provisioning event for the user.
@@ -168,6 +192,7 @@ Use the following guidance if the target attribute isn't cleared.
 | The source uses a placeholder value instead of null. | Configure the source integration to return a null or empty value instead of a placeholder, or transform the placeholder before provisioning. |
 | An API-driven provisioning request doesn't clear the attribute. | Use an explicit JSON `null` or empty string value. If you rely on omission for a child attribute, confirm that its containing complex object or collection element remains in the payload. Also confirm that the payload matching attribute identifies the existing target user. |
 | An API-driven provisioning request unexpectedly clears an attribute. | Confirm that the attribute wasn't omitted from the payload. Include its current non-empty value whenever you want to preserve the existing target value. |
+| A Workday or SAP SuccessFactors change doesn't clear the attribute. | Confirm that the HR connector retrieved the source change. Use provision on demand to test the user, and review the provisioning logs for the source value that the connector returned. |
 
 ## Next steps
 
@@ -175,3 +200,7 @@ Use the following guidance if the target attribute isn't cleared.
 - [API-driven inbound provisioning concepts](inbound-provisioning-api-concepts.md)
 - [Frequently asked questions about API-driven inbound provisioning](inbound-provisioning-api-faqs.md)
 - [Troubleshoot API-driven inbound provisioning](inbound-provisioning-api-issues.md)
+- [Microsoft Entra ID and Workday integration reference](workday-integration-reference.md)
+- [Microsoft Entra ID and SAP SuccessFactors integration reference](sap-successfactors-integration-reference.md)
+- [Troubleshoot HR user creation issues](hr-user-creation-issues.md)
+- [Troubleshoot HR user update issues](hr-user-update-issues.md)

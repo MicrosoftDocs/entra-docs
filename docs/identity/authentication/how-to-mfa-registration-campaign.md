@@ -2,7 +2,7 @@
 title: Run a Registration Campaign to Set Up a Passkey or Microsoft Authenticator
 description: Learn how to run a registration campaign in Microsoft Entra ID to nudge users toward passkeys or Microsoft Authenticator for stronger sign-in security.
 ms.topic: how-to
-ms.date: 09/02/2026
+ms.date: 09/15/2026
 ms.reviewer: marisanchez
 ai-usage: ai-assisted
 ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1012
@@ -36,12 +36,14 @@ Optionally, determine the number of users who registered each authentication met
 
 A registration campaign prompts users to set up a stronger authentication method—a passkey (FIDO2) or Microsoft Authenticator—after they complete multifactor authentication (MFA).
 
-The following conditions apply:
+The MFA requirement depends on the campaign state and targeted authentication method:
 
-| Targeted authentication method | When the user is prompted |
-|---|---|
-| Microsoft Authenticator | After the user successfully completes MFA by using SMS or voice call. |
-| Passkey (FIDO2) | After the user successfully completes MFA by using any method. |
+| Campaign state | Targeted authentication method | MFA requirement |
+|---|---|---|
+| Microsoft managed | Microsoft Authenticator | The user completes MFA by using SMS or voice call. |
+| Microsoft managed | Passkey (FIDO2) | The user completes MFA by using any method. |
+| Enabled | Microsoft Authenticator | The user completes MFA by using any method. |
+| Enabled | Passkey (FIDO2) | The user completes MFA by using any method. |
 
 For either campaign, a user is prompted only if they're eligible. A user's eligibility depends on the campaign state and the targeted authentication method.
 
@@ -114,7 +116,7 @@ The following table shows the configuration and eligibility for each method.
 |---|---|---|
 | Days allowed to snooze | 0–14 | 0–14 |
 | Limited number of snoozes | Enabled or disabled | Enabled or disabled |
-| Eligible users | Users who meet **all** of the following:<br>• Sign in by using voice call or text message (SMS)<br>• Are enabled for Authenticator push notifications in the authentication methods policy<br>• Don't already have Authenticator push set up | Users who meet **all** of the following:<br>• Sign in by using any MFA method<br>• Are in **any** passkey profile configuration |
+| Eligible users | Users who meet **all** of the following:<br>• Sign in by using any MFA method<br>• Are enabled for Authenticator push notifications in the authentication methods policy<br>• Don't already have Authenticator push set up | Users who meet **all** of the following:<br>• Sign in by using any MFA method<br>• Are in **any** passkey profile configuration |
 
 The **Enabled** state doesn't apply the Microsoft managed passkey-profile eligibility check. For example, use the Enabled state to deploy synced passkeys with AAGUID restrictions that aren't in scope for the Microsoft managed state.
 
