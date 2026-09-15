@@ -4,7 +4,7 @@ ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.custom: has-azure-ad-ps-ref
 ms.topic: include
-ms.date: 10/16/2019
+ms.date: 09/15/2026
 ms.author: billmath
 # Used by articles that require an SSO workaround.
 ---
@@ -20,13 +20,24 @@ Cloud provisioning works with Single Sign-on (SSO). Currently there isn't an opt
 3. Run the following command:  `msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
 4. Change filepath and `extractfolder` to match your file path and the name of your extraction folder. The contents should now be in the extraction folder.
 
-### Step 2: Import the Seamless SSO PowerShell module
+### Step 2: Import the ADSync and Seamless SSO PowerShell modules
 
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
-2. Browse to the `Microsoft Azure Active Directory Connect` folder which should be in the extraction folder from Step 1.
-3. Import the Seamless SSO PowerShell module by using this command: `Import-Module .\AzureADSSO.psd1`.
+1. Ensure that Microsoft Entra Connect Sync is installed on the server where you run these commands. The ADSync module must be loaded from the installed product.
+1. Import the ADSync PowerShell module:
+
+   ```powershell
+   Import-Module "$env:ProgramFiles\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1"
+   ```
+
+1. Browse to the `Microsoft Azure Active Directory Connect` folder in the extraction folder from Step 1.
+1. Import the Seamless SSO PowerShell module:
+
+   ```powershell
+   Import-Module .\AzureADSSO.psd1
+   ```
 
 ### Step 3: Get the list of Active Directory forests on which Seamless SSO has been enabled
 

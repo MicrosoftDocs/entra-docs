@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.topic: reference
-ms.date: 09/14/2026
+ms.date: 09/15/2026
 ms.subservice: hybrid-connect
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ai-usage: ai-assisted
@@ -145,6 +145,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Updated features
 
 - Phishing-resistant authentication in the Microsoft Entra Connect setup wizard is now generally available and enabled by default. The Windows Web Account Manager prompt supports passkeys, FIDO2 security keys, and passwords, reuses the signed-in session across Microsoft Entra services, and preserves Seamless Single Sign-On Kerberos key rotation. [Learn more](how-to-connect-passwordless-authentication.md).
+- When you configure Seamless Single Sign-On by using the standalone PowerShell module, you must import `ADSync.psd1` before `AzureADSSO.psd1`. For the updated module import sequence, see [How to use single sign-on with cloud sync](../cloud-sync/how-to-sso.md).
 - Cloud configuration cmdlets no longer require an explicit `-AADUserName`. When you omit the parameter, Microsoft Entra Connect derives a sign-in hint from the connector configuration and opens an interactive sign-in prompt. This behavior applies to `Set-ADSyncAADCompanyFeature`, `Set-ADSyncAADPasswordSyncState`, `Enable-ADSyncExportDeletionThreshold`, `Set-ADSyncScheduler`, and `Set-ADSyncDirSyncConfiguration`.
 - The Select Containers dialog in Synchronization Service Manager is now read-only. You can still use the dialog to view the current selections. To make changes, use Customize synchronization options in the Microsoft Entra Connect wizard. [Learn more](how-to-connect-installation-wizard.md#customize-synchronization-options).
 - Updated the bundled SQL Server 2022 LocalDB from version 16.0.4250.1 to 16.0.4262.2.
