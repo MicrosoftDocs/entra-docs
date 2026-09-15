@@ -69,6 +69,8 @@ This experience helps users who primarily sign in without a password but still n
 
 This password change experience is separate from SSPR. Users don't need to be registered for SSPR, and the number of authentication methods required by the SSPR policy doesn't apply.
 
+To use this feature, users need a Microsoft Entra ID P1 or P2 license.
+
 ### Enable password changes with passwordless authentication
 
 By default, passwordless users can't change their password without entering their current password. To enable the experience, you need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
