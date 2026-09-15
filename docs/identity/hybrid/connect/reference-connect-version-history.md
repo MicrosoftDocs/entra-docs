@@ -161,6 +161,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an issue where expanding a previously deselected domain on the Domain and OU filtering page could reselect the domain and enable synchronization for the entire domain after the wizard completed.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies and hardened local temporary-file permissions and SharePoint connector profile-image downloads.
 
+> [!IMPORTANT]
+> Microsoft Graph permissions have been added to Microsoft Entra Connect. If you use app-scoped Conditional Access policies, review policies targeting Microsoft.Azure.SyncFabric or Microsoft 365 Reporting Service.
+
 ## 2.6.84.0
 
 > [!IMPORTANT]
