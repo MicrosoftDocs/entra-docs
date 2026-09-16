@@ -4,7 +4,7 @@ description: This document provides an overview of the installation options and 
 
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/10/2026
 ms.subservice: hybrid-connect
 ---
 
@@ -132,10 +132,10 @@ To get started with Microsoft Entra Connect Health, use the following steps:
 
 1. [Get Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md) or [start a trial](https://azure.microsoft.com/trial/get-started-active-directory/).
 2. [Download and install Microsoft Entra Connect Health Agents](#download-and-install-azure-ad-connect-health-agent) on your identity servers.
-3. View the Microsoft Entra Connect Health dashboard at [https://aka.ms/aadconnecthealth](https://aka.ms/aadconnecthealth).
+3. Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth) in the Microsoft Entra admin center.
 
 > [!NOTE]
-> Remember that before you see data in your Microsoft Entra Connect Health dashboard, you need to install the Microsoft Entra Connect Health Agents on your targeted servers.
+> Before monitoring data appears in Microsoft Entra Connect Health, install the Microsoft Entra Connect Health agents on the targeted servers.
 >
 >
 
@@ -155,21 +155,25 @@ To get started with Microsoft Entra Connect Health, use the following steps:
 
 <a name='azure-ad-connect-health-portal'></a>
 
-## Microsoft Entra Connect Health portal
-The Microsoft Entra Connect Health portal shows views of alerts, performance monitoring, and usage analytics. The  https://aka.ms/aadconnecthealth URL takes you to the main blade of Microsoft Entra Connect Health. You can think of a blade as a window. On The main blade, you see **Quick Start**, services within Microsoft Entra Connect Health, and additional configuration options. See the following screenshot and brief explanations that follow the screenshot. After you deploy the agents, the health service automatically identifies the services that Microsoft Entra Connect Health is monitoring.
+## Microsoft Entra Connect Health in the Microsoft Entra admin center
+
+The [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth) experience provides a left menu for monitoring Microsoft Entra Connect Sync, AD FS, and AD DS. After you deploy the agents, the service automatically identifies the monitored service instances.
 
 > [!NOTE]
 > For licensing information, see the [Microsoft Entra Connect Health FAQ](reference-connect-health-faq.yml) or the [Microsoft Entra pricing page](https://aka.ms/aadpricing).
-    
-![Microsoft Entra Connect Health Portal](./media/whatis-hybrid-identity-health/portalsidebar.png)
 
-* **Quick Start**: When you select this option, the **Quick Start** blade opens. You can download the Microsoft Entra Connect Health Agent by selecting **Get Tools**. You can also access documentation and provide feedback.
-* **Microsoft Entra Connect (sync)**: This option shows your Microsoft Entra Connect servers that Microsoft Entra Connect Health is currently monitoring. **Sync errors** entry shows basic sync errors of your first onboarded sync service  by categories. When you select the **Sync services** entry, the blade that opens shows information about your Microsoft Entra Connect servers. Read more about the capabilities at [Using Microsoft Entra Connect Health for sync](how-to-connect-health-sync.md).
-* **Active Directory Federation Services**: This option shows all the AD FS services that Microsoft Entra Connect Health is currently monitoring. When you select an instance, the blade that opens shows information about that service instance. This information includes an overview, properties, alerts, monitoring, and usage analytics. Read more about the capabilities at [Using Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md).
-* **Active Directory Domain Services**: This option shows all the AD DS forests that Microsoft Entra Connect Health is currently monitoring. When you select a forest, the blade that opens shows information about that forest. This information includes an overview of essential information, the Domain Controllers dashboard, the Replication Status dashboard, alerts, and monitoring. Read more about the capabilities at [Using Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).
-* **Configure**: This section includes options to turn the following on or off:
-   - **Access to data** from the Microsoft Entra directory integrity by Microsoft only for troubleshooting purposes: if this option is enabled, Microsoft can access the same data viewed by the user. This information can be useful for troubleshooting and to provide the necessary assistance. This option is disabled by default
-* **Role based access control (IAM)** is the section to manage the access to Connect Health data in role base. 
+:::image type="content" source="media/how-to-connect-install-roadmap/connect-health-navigation.png" alt-text="Screenshot of Microsoft Entra Connect Health navigation with callouts for service areas, Quick start resources, and configuration options." lightbox="media/how-to-connect-install-roadmap/connect-health-navigation.png":::
+
+The menu includes the following options:
+
+* **Quick start**: View what's new, download the agents and Microsoft Entra Connect, open documentation, or provide feedback.
+* **Sync errors**: Review synchronization error categories and individual error details. For supported duplicate-attribute scenarios, you can start the guided **Fix Synchronization Error** experience.
+* **Sync services**: View monitored Microsoft Entra Connect Sync service instances. Select a service to review its servers, alerts, synchronization errors, and settings. For details, see [Use Microsoft Entra Connect Health for Sync](how-to-connect-health-sync.md).
+* **AD FS services**: View monitored AD FS farms. Select a service to review its servers, properties, alerts, performance monitoring, usage analytics, and security reports. For details, see [Use Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md).
+* **AD DS services**: View monitored AD DS forests. Select a service to review its domain controllers, replication status, alerts, and performance monitoring. For details, see [Use Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).
+* **Settings**: Configure tenant-level Microsoft Entra Connect Health settings.
+* **Role based access control (IAM)**: Manage access to Microsoft Entra Connect Health data.
+* **Troubleshoot** and **New support request**: Diagnose issues or contact Microsoft support.
 
 ## Next Steps
 
