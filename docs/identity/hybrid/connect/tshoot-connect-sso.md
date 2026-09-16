@@ -4,7 +4,7 @@ description: This topic describes how to troubleshoot Microsoft Entra seamless s
 ms.reviewer: swkrish
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.topic: troubleshooting
-ms.date: 04/09/2025
+ms.date: 09/15/2026
 ms.subservice: hybrid-connect
 ms.custom: sfi-image-nochange
 ---
@@ -96,11 +96,21 @@ If you enable success auditing on your domain controller, then every time a user
 
 If troubleshooting didn't help, you can manually reset the feature on your tenant. Follow these steps on the on-premises server where you're running Microsoft Entra Connect.
 
-### Step 1: Import the Seamless SSO PowerShell module
+### Step 1: Import the ADSync and Seamless SSO PowerShell modules
 
 1. Ensure Microsoft Entra Connect is installed. Download it from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted).
-2. Browse to the `%programfiles%\Microsoft Azure Active Directory Connect` folder.
-3. Import the Seamless SSO PowerShell module by using this command: `Import-Module .\AzureADSSO.psd1`.
+1. Import the ADSync PowerShell module:
+
+   ```powershell
+   Import-Module "$env:ProgramFiles\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1"
+   ```
+
+1. Browse to the `%ProgramFiles%\Microsoft Azure Active Directory Connect` folder.
+1. Import the Seamless SSO PowerShell module:
+
+   ```powershell
+   Import-Module .\AzureADSSO.psd1
+   ```
 
 ### Step 2: Get the list of Active Directory forests on which Seamless SSO has been enabled
 
