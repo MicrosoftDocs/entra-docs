@@ -38,25 +38,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Set up Netskope User Authentication for provisioning
 
-1. Sign in to your [Netskope User Authentication Admin Console](https://netskope.goskope.com/). Navigate to **Home > Settings**.
+1. Sign in to your [Netskope User Authentication Admin Console](https://netskope.goskope.com/).
+1. Navigate to **Home -> Settings -> Administration ->Administrators** and **Roles -> Service 
+Account**.
+1. Input the required details, select **OAuth2** as the type, and set the validity period (in 
+days).
+1. Click **Create**, then copy the generated **Client ID** and **Client Secret** you will 
+need them later.
 
-	![Netskope User Authentication Admin Console](media/netskope-administrator-console-provisioning-tutorial/admin.png)
-
-1.	Navigate to **Tools**. Under the **Tools** menu navigate to **Directory Tools > SCIM INTEGRATION**.
-
-	![Netskope User Authentication tools](media/netskope-administrator-console-provisioning-tutorial/tools.png)
-
-	![Netskope User Authentication Add SCIM](media/netskope-administrator-console-provisioning-tutorial/directory.png)
-
-1. Scroll down and select **Add Token** button. In the **Add OAuth Client Name** dialog box provide a **CLIENT NAME** and select the **Save** button.
-
-	![Netskope User Authentication Add Token](media/netskope-administrator-console-provisioning-tutorial/add.png)
-
-	![Netskope User Authentication CLient Name](media/netskope-administrator-console-provisioning-tutorial/clientname.png)
-
-1.	Copy the **SCIM Server URL** and the **TOKEN**. These values are entered in the Tenant URL and Secret Token fields respectively in the Provisioning tab of your Netskope User Authentication application.
-
-	![Netskope User Authentication Create Token](media/netskope-administrator-console-provisioning-tutorial/token.png)
+	![Screenshot showing Oauth configuration.](./media/netskope-administrator-console-provisioning-tutorial/token.png)
 
 ## Add Netskope User Authentication from the gallery
 
@@ -101,11 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the **Tenant URL** field, enter your Netskope User Authentication Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Netskope User Authentication. If the connection fails, ensure your Netskope User Authentication account has the required admin permissions and try again.
-
-	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
-
-7. Select **OAuth2 Client Credentials Grant** as the Authentication Method.
+1. Select **OAuth2 Client Credentials Grant** as the Authentication Method.
 
    a. Enter the **Client ID** and **Client Secret** retrieved from Netskope.
 
