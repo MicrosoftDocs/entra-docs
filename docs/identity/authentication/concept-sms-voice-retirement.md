@@ -16,7 +16,7 @@ To help enterprises adopt AI at scale, it is imperative for users to use secure 
 
 Starting September 1, 2026, passkeys become the default authentication experience and will be automatically enabled for users enabled for SMS or voice. From February 1, 2027, Microsoft-provided telecom delivery for SMS and voice will be retired for all users except Global Administrators and external users. For Global Administrators and external users, Microsoft-provided SMS and voice authentication will be retired on July 1, 2027. Customers who still require these methods should configure customer-managed providers through the Microsoft Security Store. More information on customer-managed telecoms coming September 18th, 2026.
 
-Users who already sign in with passkeys, Windows Hello for Business, or another phishing-resistant method can continue using those methods. However, users who remain enabled for SMS or voice might still receive prompts to register passkeys on eligible devices. The July 1, 2027 retirement date applies to Global Administrators and to external users only. Internal guest users still follow the February 1, 2027 retirement date. To check who in your tenant still uses SMS or Voice, see [Find active SMS or Voice users in your tenant](#1-find-users-enabled-for-sms-or-voice).
+Users who already sign in with passkeys, Windows Hello for Business, or another phishing-resistant method can continue using those methods. However, users who remain enabled for SMS or voice might still receive prompts to register passkeys on eligible devices. The July 1, 2027 retirement date applies to Global Administrators and external users. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. To check who in your tenant still uses SMS or Voice, see [Find active SMS or Voice users in your tenant](#1-find-users-enabled-for-sms-or-voice).
 
 ## Retirement timeline
 
@@ -25,7 +25,7 @@ Users who already sign in with passkeys, Windows Hello for Business, or another 
 | September 1, 2026 | Tenants with users enabled for SMS or voice, those users are auto-enabled and nudged for Passkey registration upon MFA sign-in. | Notify end users of the changes happening. Use the [passkey deployment guide](how-to-deploy-phishing-resistant-passwordless-authentication.md) to prepare your environment for passkey use. |
 | February 1, 2027 | Microsoft-provided SMS and voice authentication is retired for all users except Global Administrators and external users. Internal guest users remain in scope for the February 1 retirement. | Make sure users in scope for the February 1 retirement are on a phishing-resistant method (passkeys, Windows Hello, or FIDO2) before this date, or they might experience sign-in disruption. |
 | After February 1, 2027 | Users in scope for the February 1 retirement whose **only available MFA method is SMS or voice** are required to register a passkey during sign-in to continue accessing their account. This prompt is **blocking**. Users must **register a passkey before they can continue to sign in** to their account.<br>**There is no opt out from this February 1 behavior for users in scope of the February 1 retirement.** | Migrate users in scope for the February 1 retirement to a phishing-resistant method or choose a telecom provider to continue using SMS or voice. |
-| July 1, 2027 | Microsoft-provided SMS and voice authentication is retired for Global Administrators and external users. This July 1 exception applies only to external users. Internal guest users still follow the February 1, 2027 retirement date. | Make sure Global Administrators and external users are on a phishing-resistant method before this date, or they might experience sign-in disruption. |
+| July 1, 2027 | Microsoft-provided SMS and voice authentication is retired for Global Administrators and external users. Internal guest users aren't included in this July 1 group and still follow the February 1, 2027 retirement date. | Make sure Global Administrators and external users are on a phishing-resistant method before this date, or they might experience sign-in disruption. |
 | After July 1, 2027 | Global Administrators and external users whose **only available MFA method is SMS or voice** are required to register a passkey during sign-in to continue accessing their account. This prompt is **blocking**. Users must **register a passkey before they can continue to sign in** to their account.<br>**There is no opt out from this July 1 behavior for Global Administrators and external users.** | Migrate Global Administrators and external users to a phishing-resistant method or choose a telecom provider to continue using SMS or voice. |
 
 ## Prepare for transition to passkeys
@@ -99,7 +99,7 @@ After this date, users in scope for the February 1, 2027 retirement whose only a
 
 **There is no opt out from this February 1 behavior for users in scope of the February 1 retirement.**
 
-Beginning July 1, 2027, Microsoft-provided SMS and voice delivery will be retired for Global Administrators and external users. This July 1 exception applies only to external users. Internal guest users still follow the February 1, 2027 retirement date.
+Beginning July 1, 2027, Microsoft-provided SMS and voice delivery will be retired for Global Administrators and external users. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date.
 
 After this date, Global Administrators and external users whose only available MFA method is SMS or voice are required to register a passkey during sign-in to continue accessing their account. This prompt is blocking. Users must register a passkey before they can continue signing in to their account.
 
@@ -126,7 +126,7 @@ Content-Type: application/json
 }
 ```
 
-After this setting is applied, your tenant is excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines apply regardless of this setting for users in scope of the February 1 retirement. Global Administrators and external users follow the July 1, 2027 retirement date instead.
+After this setting is applied, your tenant is excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines apply regardless of this setting for users in scope of the February 1 retirement. Global Administrators and external users instead follow the July 1, 2027 retirement date. Internal guest users remain on the February 1, 2027 retirement date.
 
 If your tenant still has users enabled for Microsoft-managed SMS or voice on their applicable retirement date, and you haven't configured a customer-managed telecom provider through the Security Store, those users can no longer use SMS or voice to satisfy MFA requirements and continue signing in.
 
