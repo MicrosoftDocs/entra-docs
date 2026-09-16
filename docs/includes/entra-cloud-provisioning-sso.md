@@ -26,18 +26,9 @@ Cloud provisioning works with Single Sign-on (SSO). Currently there isn't an opt
 
 1. Download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
 1. Ensure that Microsoft Entra Connect Sync is installed on the server where you run these commands. The ADSync module must be loaded from the installed product.
-1. Import the ADSync PowerShell module:
-
-   ```powershell
-   Import-Module "$env:ProgramFiles\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1"
-   ```
-
-1. Browse to the `Microsoft Azure Active Directory Connect` folder in the extraction folder from Step 1.
-1. Import the Seamless SSO PowerShell module:
-
-   ```powershell
-   Import-Module .\AzureADSSO.psd1
-   ```
+1. Import the ADSync PowerShell module by using this command: `Import-Module "$env:ProgramFiles\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1"`.
+1. Browse to the `Microsoft Azure Active Directory Connect` folder which should be in the extraction folder from Step 1.
+1. Import the Seamless SSO PowerShell module by using this command: `Import-Module .\AzureADSSO.psd1`.
 
 ### Step 3: Get the list of Active Directory forests on which Seamless SSO has been enabled
 
