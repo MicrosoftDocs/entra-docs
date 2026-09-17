@@ -1,8 +1,8 @@
 ---
 title: Web filtering in Global Secure Access (V2)
-description: "Learn how the V2 web filtering object model works in Microsoft Entra Internet Access, including policies, rules, destination matching, and V1 coexistence."
+description: "Learn how the V2 web filtering object model works in Microsoft Entra Internet Access, including policies, rules, evaluation across security profiles, destination matching, and V1 coexistence."
 ms.topic: concept-article
-ms.date: 08/18/2026
+ms.date: 09/17/2026
 ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---
@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 Web filtering in Microsoft Entra Internet Access lets you control internet access for your organization based on website categorization, Uniform Resource Locators (URLs), and fully qualified domain names (FQDNs). The V2 object model aligns web filtering with the same policy structure used by other Global Secure Access security features, giving you a single, consistent way to author and manage filtering rules.
 
-This article explains what changes in the V2 model, how policies and rules are structured, how destination matching works, and how V2 coexists with the earlier V1 (web content filtering) model. To configure web filtering, see [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md).
+This article explains what changes in the V2 model, how policies and rules are structured, how policies can be evaluated across security profiles, how destination matching works, and how V2 coexists with the earlier V1 (web content filtering) model. To configure web filtering, see [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md).
 
 ## Overview
 
@@ -35,14 +35,14 @@ This structure mirrors the structure used by other V2 security features, so the 
 The two models also differ in where the action lives and in how they behave when no rule matches:
 
 - In V1, a policy has no default action. It acts only when one of its rules matches, and the action is defined on the policy while its rules carry destinations only.
-- In V2, each rule carries its own action, and the policy defines a default action that applies when no rule matches. As a result, a V2 policy always produces an outcome, whereas a V1 policy takes effect only on a match.
+- In V2, each rule carries its own action, and the policy defines a default action for traffic that doesn't match a rule. **Allow** and **Block** produce an outcome. The preview **Continue Evaluation** action passes evaluation to the web filtering policy in the next applicable security profile.
 
 The following table compares how policies are structured in each model.
 
 | Aspect | V1 (web content filtering) | V2 (web filtering) |
 | --- | --- | --- |
 | Policies per security profile | Multiple policies can be linked. | Exactly one policy. |
-| Default action | None. The policy acts only if a rule matches. | Yes. Applied when no rule matches. |
+| Default action | None. The policy acts only if a rule matches. | Yes. Applied when no rule matches. **Allow** and **Block** are terminal. **Continue Evaluation** is nonterminal and available in preview. |
 | Where the action is defined | On the policy. Rules carry destinations only. | On each rule, plus a policy default action. |
 
 ### FQDN destinations are handled as URLs
@@ -62,7 +62,7 @@ The following table summarizes the destination match types available in each mod
 Understanding how the V2 objects relate helps you plan your filtering configuration.
 
 - **Rule**: The unit that defines a destination (web category or URL) and the action to take (**Allow** or **Block**). Rules are evaluated in priority order within a policy.
-- **Policy**: A single web filtering policy contains one or more rules once configured. In V2, a security profile contains one web filtering policy. Each policy also defines a default action, which is the behavior applied when no rule in the policy matches.
+- **Policy**: A single web filtering policy contains one or more rules once configured. In V2, a security profile contains one web filtering policy. Each policy also defines a default action for traffic that doesn't match a rule. The action can produce an **Allow** or **Block** outcome or continue evaluation with another applicable security profile.
 - **Security profile**: A grouping of filtering policies that you link to a Microsoft Entra Conditional Access policy to make enforcement user-aware and context-aware. For more information, see [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md).
 
 Conditional Access remains the delivery mechanism for user and context awareness. Security profiles are referenced by profile identifier (GUID) in Conditional Access session controls, and those references remain valid across the transition to V2.
@@ -74,8 +74,11 @@ V2 web filtering rules don't currently support user or group targeting. Apply us
 You create a web filtering policy in the Microsoft Entra admin center by browsing to **Global Secure Access** > **Secure** > **Web Filtering Policies (V2)** and selecting **Create policy**. The create experience is organized into **Basics**, **Policy settings**, and **Review** tabs.
 
 - On the **Basics** tab, you provide a name and description for the policy. The page also shows the policy evaluation order across Global Secure Access security modules.
-- On the **Policy settings** tab, you set the **Default action**, which is the predefined behavior applied when no rules in the policy match. You can set the default action to **Allow** or **Block**.
+- On the **Policy settings** tab, you set the **Default action**, which is the predefined behavior applied when no rules in the policy match. You can set the default action to **Allow**, **Block**, or **Continue Evaluation**.
 - On the **Review** tab, you confirm the policy configuration before you create it.
+
+> [!NOTE]
+> **Continue Evaluation** is available in preview. When no rule matches, it evaluates the web filtering policy in the next applicable security profile in profile-priority order. You can't use **Continue Evaluation** for the Baseline Profile because the Baseline Profile evaluates last and must produce an **Allow** or **Block** outcome.
 
 > [!NOTE]
 > A new policy is created without any rules. After you create the policy, add rules to define the destinations and actions it enforces.
@@ -105,7 +108,7 @@ Web category matching is unchanged between V1 and V2. URL matching behavior is i
 
 ## How V2 coexists with V1
 
-V1 and V2 can run side by side during the transition. However, they use different evaluation models, and migrating a policy can change the effective enforcement for users who match multiple security profiles.
+V1 and V2 can run side by side during the transition. However, they use different evaluation models, so review the configured default actions when you migrate policies for users who match multiple security profiles.
 
 - **Higher priority for V2**: V2 web filtering policies are evaluated at a higher priority than V1 web content filtering policies.
 - **Evaluation in series**: When both a V1 and a V2 policy apply, both modules run in series until you remove the V1 policy. For how a match in one module affects the other, see [How evaluation works across V1 and V2](#how-evaluation-works-across-v1-and-v2).
@@ -116,10 +119,11 @@ V1 and V2 can run side by side during the transition. However, they use differen
 Review how your security profiles combine policy enforcement before you migrate:
 
 - **V1 can compose enforcement across profiles**: The V1 module evaluates policies from all applicable security profiles in priority order.
-- **V2 uses one applicable policy**: The V2 module evaluates the policy in the first applicable security profile that contains a V2 web filtering policy. It doesn't continue to another profile to compose an outcome from a second V2 web filtering policy.
+- **V2 can compose enforcement across profiles**: Set the default action to **Continue Evaluation** on a non-Baseline policy to pass unmatched traffic to the web filtering policy in the next applicable security profile. A matching rule or an **Allow** or **Block** default action stops V2 web filtering evaluation.
+- **The Baseline Profile is terminal**: The Baseline Profile evaluates last and must use **Allow** or **Block** as its default action.
 - **V2 rules don't support user or group targeting**: You can't replace profile-level targeting by assigning users or groups to individual rules.
 
-Where possible, consolidate your intended outcomes into one V2 policy with ordered rules and an appropriate default action. If your design relies on composing web filtering enforcement from multiple security profiles, remain on V1 until V2 supports your scenario.
+Use **Continue Evaluation** when independently managed V2 policies need to contribute in profile-priority order. You can also consolidate intended outcomes into one V2 policy with ordered rules when separate profile assignments aren't required.
 
 > [!IMPORTANT]
 > A like-for-like migration of individual policies might not produce like-for-like enforcement. Before you migrate, identify users who match multiple security profiles, compare their effective V1 policy with the proposed V2 policy, and test both allowed and blocked destinations.
@@ -128,7 +132,7 @@ Where possible, consolidate your intended outcomes into one V2 policy with order
 
 When a user has both V1 and V2 policies applied, Global Secure Access evaluates them as two separate modules that run in sequence, not as one merged policy set:
 
-1. The V2 module runs first. It finds the first security profile applicable to the user that contains a V2 web filtering policy and produces an outcome: either a matched rule's action or, if no rule matches, the policy's default action. A V2 policy always produces an outcome, so the module doesn't evaluate V2 web filtering policies in other applicable profiles.
+1. The V2 module runs first. It evaluates applicable security profiles in profile-priority order and skips profiles that don't contain a V2 web filtering policy. In each policy, a matched rule or an **Allow** or **Block** default action stops V2 evaluation. If no rule matches and the default action is **Continue Evaluation**, the module evaluates the web filtering policy in the next applicable security profile. The Baseline Profile evaluates last and produces a terminal outcome.
 1. The V1 module runs second, only if V2 didn't block. If the V2 outcome is **Block**, the request is blocked and evaluation stops. If the V2 outcome is **Allow**, evaluation falls through to the V1 module, which evaluates all V1 policies linked to the user's profiles in priority order and applies the final action.
 
 The key consequence is that **Block** and **Allow** aren't symmetric across the two modules:
@@ -139,7 +143,7 @@ The key consequence is that **Block** and **Allow** aren't symmetric across the 
 In short, a V2 policy can add blocks that override V1, but it can't force-allow traffic that a V1 policy blocks.
 
 > [!IMPORTANT]
-> Profile priority determines which applicable V2 web filtering policy is selected, but the V2 module skips profiles that don't contain a V2 web filtering policy. As a result, a V2 **Block** on a lower-priority profile can override a V1 **Allow** on a higher-priority profile. Review the following examples before you run a mixed V1/V2 configuration.
+> Profile priority determines the order in which applicable V2 web filtering policies are evaluated, and the V2 module skips profiles that don't contain a V2 web filtering policy. A matching rule or terminal default action can stop evaluation before later V2 profiles. As a result, a V2 **Block** on a lower-priority profile can override a V1 **Allow** on a higher-priority profile. Review the following examples before you run a mixed V1/V2 configuration.
 
 **Example 1: A V2 Block overrides a higher-priority V1 Allow.** Profile 1 (priority 100) has a V1 policy that allows `espn.com` and no V2 policy. Profile 2 (priority 200) has a V2 policy that blocks the Sports category. The V2 module skips Profile 1 (no V2 policy), evaluates Profile 2's V2 **Block**, and blocks the request to `espn.com`. Profile 1's higher priority doesn't apply, because the V2 module runs first and **Block** is terminal.
 
@@ -152,11 +156,11 @@ In short, a V2 policy can add blocks that override V1, but it can't force-allow 
 
 ### What if I rely on multiple security profiles?
 
-Remain on V1 if users rely on web filtering enforcement composed from multiple security profiles. V2 evaluates the web filtering policy from only the first applicable profile that contains one.
+Use the preview **Continue Evaluation** default action on non-Baseline V2 policies that need to pass unmatched traffic to another applicable security profile. Keep an **Allow** or **Block** default action on the Baseline Profile so evaluation always ends with a terminal outcome.
 
 ### How do I create equivalent behavior in V2?
 
-Consolidate the required destinations and actions into one V2 policy and use rule priority to control evaluation order. If the scenario requires different user or group assignments on individual rules, you can't model it equivalently in V2 today.
+Use **Continue Evaluation** to keep policies in separate security profiles and evaluate them in profile-priority order, or consolidate the required destinations and actions into one V2 policy and use rule priority to control evaluation order. V2 rules don't support individual user or group assignments, so apply those assignments to security profiles through Conditional Access.
 
 ### Can I return to V1?
 
