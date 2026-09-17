@@ -16,16 +16,15 @@ From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micros
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
-## 1.1.2502.0
+## 1.1.2505.0
 
-**Release date:** September 14, 2026
+**Release date:** September 16, 2026
 
 ### New features and improvements
 
 - Added download functionality support for Azure China Cloud.
 - Simplified Provisioning Agent configuration by eliminating the requirement for Domain Admin credentials when customers provide a gMSA and select custom gMSA permissions. This enhancement supports hybrid cloud synchronization scenarios and aligns with the gMSA PowerShell cmdlets experience.
 - Streamlined the AADCloudSyncTools PowerShell module by removing the Repair-AADCloudSyncToolsAccount cmdlet, aligning the module with the updated Provisioning Agent configuration experience.
-- **Enhanced protection for privileged Active Directory accounts in hybrid identity environments.** The Provisioning Agent now applies additional safeguards to Active Directory accounts protected by the administrative protection model (accounts with a non-zero adminCount attribute). To support Microsoft's privileged access guidance and strengthen cloud security boundaries, password hash synchronization is not performed for these protected accounts. Organizations are encouraged to use dedicated cloud-only administrative accounts in Microsoft Entra ID, reducing reliance on synchronized privileged credentials and improving security posture.
 
 ### Fixes
 
