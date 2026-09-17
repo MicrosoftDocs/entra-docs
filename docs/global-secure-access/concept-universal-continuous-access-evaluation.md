@@ -2,8 +2,8 @@
 title: Learn about Universal Continuous Evaluation
 description: Learn about Universal Continuous Evaluation concepts
 ms.topic: concept-article
-ms.date: 02/02/2026
-ms.reviewer: alexpav
+ms.date: 09/16/2026
+ms.author: alexpav
 ---
 # Universal Continuous Access Evaluation
 
@@ -29,7 +29,7 @@ With Universal CAE, changes to user identity are communicated to Global Secure A
 
 ## Microsoft Entra ID signals that trigger Universal CAE reauthentication
 
-Global Secure Access is enabled to receive signals from Entra ID in near real-time for the following events:
+Universal CAE supports the following user-based signals:
 
 * User account is deleted or disabled
 * Password for a user is changed or reset
@@ -37,7 +37,17 @@ Global Secure Access is enabled to receive signals from Entra ID in near real-ti
 * Administrator explicitly revokes all refresh tokens for a user
 * High user risk detected by Microsoft Entra ID Protection
 
-When Global Secure Access receives the security event, the client prompts the user to reauthenticate. If the user successfully reauthenticates, the user's network connectivity to resources protected by Global Secure Access is restored.
+Universal CAE supports the following device-based signals (preview):
+
+* Device from which GSA access is being performed is deleted or disabled
+* Device from which GSA access is being performed is detected to be in the non-compliant state
+
+When Global Secure Access receives the security event, the user is required to re-authenticate via a notification toast in the GSA client. If the user is not re-authenticated within 2 minutes, all GSA tunnels are disconnected and network connectivity to applications is dropped. Connectivity is restored upon successful re-authentication.
+
+>[!IMPORTANT]
+> Device Compliance and User Risk signals are intended to be used together with the corresponding Entra Conditional Access policy. When used without the corresponding Conditional Access policy, re-authentication is silent and there is no mechanism to act on the CAE event. Policy examples are:
+> * All users -> All internet resources with Global Secure Access -> Require Compliant Device
+> * All users -> All resources -> User Risk = High -> Require risk remediation
 
 ## Strict Enforcement mode
 With the Strict Enforcement mode, Universal CAE immediately stops access if the IP address detected by the resource provider isn't allowed by Conditional Access policy. This option is the highest security modality of CAE location enforcement, and requires that administrators understand the routing of authentication and access requests in their network environment. When strict enforcement is enabled, access to the Global Secure Access services is only possible when your users connect to the Global Secure Access service from IP address ranges authorized by your organization.
