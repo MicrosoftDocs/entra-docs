@@ -18,7 +18,7 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 ## 1.1.2505.0
 
-**Release date:** September 16, 2026
+**Release date:** September 21, 2026
 
 ### New features and improvements
 
