@@ -2,7 +2,7 @@
 title: Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 description: Web browser and native app support for FIDO2 passwordless authentication using Microsoft Entra ID.
 ms.topic: reference
-ms.date: 04/16/2026
+ms.date: 09/17/2026
 ms.reviewer: kimhana
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID
@@ -107,10 +107,13 @@ If the user has yet to install an authentication broker, they can still sign in 
 ### Third-party IdP support 
 
 > [!NOTE]
-> Passkey authentication with a third-party IdP isn't supported in third-party apps using authentication broker, or Microsoft apps on Android, iOS, or macOS at this time.
+> The support matrices in this article describe passkey authentication where Microsoft Entra ID validates the passkey. For passkeys or FIDO2 credentials issued and validated by an external federated IdP, see [Passkey and security key browser authentication for third-party federated identity providers on Android, iOS, and macOS](concept-passkey-browser-authentication-federated-identity-provider.md).
 
-Microsoft Entra ID doesn't support passkey authentication with a third-party IdP on iOS/macOS. 
-As a workaround, third-party IdPs can implement their own single sign-on (SSO) extension on iOS/macOS devices if they're managed by Mobile Device Management (MDM).
+Microsoft Entra ID supports browser authentication for external federated IdPs in supported brokered scenarios on Android, iOS, and managed macOS. When a tenant admin enables the feature for a WS-Fed or SAML 2.0 federated domain, the broker can hand the external IdP authentication step to the system browser. In the system browser, users can complete the external IdP's passkey, FIDO2 security key, or WebAuthn experience and return to the originating app flow.
+
+This capability doesn't mean the Microsoft identity broker directly supports third-party FIDO2 security keys. Support depends on the platform, required browser, broker or component version, federated protocol, tenant configuration, and app scenario described in [browser authentication for external identity providers](concept-passkey-browser-authentication-federated-identity-provider.md). Linux, unmanaged macOS, OAuth2/OIDC social IdPs, direct sign-in to Android Company Portal, and scenarios outside the supported browser-authentication matrix aren't supported.
+
+For iOS or macOS scenarios that aren't covered by Microsoft-supported brokered browser authentication, third-party IdPs can implement their own single sign-on (SSO) extension on iOS/macOS devices if they're managed by Mobile Device Management (MDM).
 
 Apple's extensible SSO framework on MDM-managed devices enables identity providers to intercept network requests directed to their URLs. 
 When the SSO extension of the identity provider intercepts a network request, they can implement a custom authentication handshake. 
