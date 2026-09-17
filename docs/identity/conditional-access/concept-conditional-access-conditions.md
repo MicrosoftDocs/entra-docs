@@ -57,7 +57,8 @@ When a policy uses this condition, agents that aren't running on a device are ex
 
 ## Device platforms
 
-Conditional Access identifies the device platform using information provided by the device, such as user agent strings. Because user agent strings can be modified, this information isn't verified. Use device platform with Microsoft Intune device compliance policies or as part of a block statement. By default, it applies to all device platforms.
+> [!WARNING]
+> Conditional Access identifies the device platform using information provided by the device, such as user agent strings. Because user agent strings can be modified, this information isn't verified. Use device platform with Microsoft Intune device compliance policies or as part of a block statement. By default, it applies to all device platforms. Conditional Access policies using this condition should be used with another policy, like one requiring device compliance or app protection policies, to mitigate the risk of user agent spoofing.
 
 For agents' user accounts, this condition applies only when the agent session is initiated from an endpoint. Use it with the **Agent execution environments** condition to avoid targeting agents that run directly in cloud infrastructure.
 
