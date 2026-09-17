@@ -2,7 +2,7 @@
 title: How to configure Global Secure Access web content filtering
 description: "Control internet access based on website categories, URLs, and FQDNs. Configure granular, user-aware filtering policies using security profiles and Conditional Access."
 ms.topic: how-to
-ms.date: 06/01/2026
+ms.date: 09/16/2026
 ms.subservice: entra-internet-access 
 ai-usage: ai-assisted
 ---
@@ -19,8 +19,8 @@ The web filtering feature currently supports user- and context-aware Uniform Res
 
 Web content filtering also supports two optional rule conditions that enable traffic-aware policy enforcement:
 
-- **Source traffic type filtering (preview)**: Scope rules to specific traffic types, either agent or user.
-- **HTTP method request filtering (preview)**: Block or allow specific HTTP methods, such as GET, POST, PUT, PATCH, and DELETE.
+- **Source traffic type filtering**: Scope rules to specific traffic types, either agent or user.
+- **HTTP method request filtering**: Block or allow specific HTTP methods, such as GET, POST, PUT, PATCH, and DELETE.
 
 > [!TIP]
 > For network content filtering based on file MIME types or Microsoft Purview inspection of file and text content, see [Create content policies for network content filtering](how-to-network-content-filtering.md).
@@ -67,11 +67,11 @@ The first step is to enable the Internet Access traffic forwarding profile. For 
      - To match all subdomains of a domain, use the wildcard format `*.domain.com`. Note that the wildcard `*.domain.com` matches subdomains like `www.domain.com` but doesn't match the root domain `domain.com` itself. To cover both the domain and all its subdomains, include both entries as a comma-separated list (for example, `*.contoso.com,contoso.com`).
      - When entering multiple FQDNs in a comma-separated list, don't include spaces between entries (for example, `contoso.com,fabrikam.com,*.example.com`).
      - Note, the URL filtering Preview supports a maximum of 1,000 URLs per tenant.
-1. (Optional) Configure the **Source type** condition (preview). For more information, see [Configure source traffic type filtering (preview)](#configure-source-traffic-type-filtering-preview).
-1. (Optional) Configure the **HTTP method request** condition (preview). For more information, see [Configure HTTP method request filtering (preview)](#configure-http-method-request-filtering-preview).
+1. (Optional) Configure the **Source type** condition. For more information, see [Configure source traffic type filtering](#configure-source-traffic-type-filtering).
+1. (Optional) Configure the **HTTP method request** condition. For more information, see [Configure HTTP method request filtering](#configure-http-method-request-filtering).
 1. Select **Next** to review the policy and then select **Create policy**.
 
-## Configure source traffic type filtering (preview)
+## Configure source traffic type filtering
 
 Source traffic type filtering lets you scope web content filtering rules to specific types of network traffic. You can enforce differentiated policies based on whether traffic originates from an AI agent or a user.
 
@@ -105,7 +105,7 @@ To prevent AI agents from accessing social networking websites while allowing us
 
 This configuration blocks AI agent traffic to social networking sites while allowing user traffic to access the same sites.
 
-## Configure HTTP method request filtering (preview)
+## Configure HTTP method request filtering
 
 HTTP method request filtering lets you block or allow specific HTTP methods for matching traffic. You can enforce least-privilege access by restricting write operations while permitting read-only access.
 
