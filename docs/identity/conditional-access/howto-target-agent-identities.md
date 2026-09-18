@@ -61,7 +61,7 @@ Keep in mind the following important details when selecting agent assignments:
 - Policies targeting all users don't include agent's user accounts.
 - The **agent users** option targets agents' user accounts. This option is currently in Preview.
 - Agent-based policies apply when agents access resources using their own identity, not on behalf of a user.
-- Targeting a blueprint automatically covers all agent identities derived from it, including ones added in the future. For more information, see [Agent identity blueprints](agent-id.md#agent-identity-blueprints).
+- Targeting a blueprint automatically covers all agent identities derived from it, including ones added in the future. For more information, see [Agent identity blueprints](agent-id.md#conditional-access-policies-and-agent-identity-blueprints).
 
 ## Target resources
 
