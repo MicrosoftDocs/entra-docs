@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 # Conditional Access for agents
 
-Conditional Access for agents is an extension of the Conditional Access policy engine that controls how agents access resources protected by Microsoft Entra ID. It brings together real-time signals such as user's and agent's context, device, location, and session risk information to determine when to allow, block, or limit access, or require more verification steps.
+Conditional Access for agents is an extension of the Conditional Access policy engine that controls how agents access resources protected by Microsoft Entra ID. It brings together real-time signals such as user's and agent's context, device, location, and risk information to determine when to allow, block, or limit access, or require more verification steps.
 
 Understanding the agent's access pattern helps you target the correct identity. An agent can act on behalf of a signed-in user, use its own agent identity, or use its own agent user account.
 
