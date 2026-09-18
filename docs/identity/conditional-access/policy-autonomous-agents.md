@@ -65,6 +65,8 @@ The enhanced object picker replaces the previous flat list experience in both th
 
 For more information about assignment options and the object picker, see [Target agent identities in Conditional Access policies](howto-target-agent-identities.md).
 
+<a name='use-custom-security-attributes'></a>
+
 ### [Use custom security attributes](#tab/use-custom-security-attributes)
 
 ### Create Conditional Access policy using custom security attributes
