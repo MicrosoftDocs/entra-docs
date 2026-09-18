@@ -4,8 +4,7 @@ description: This page describes how to retrieve data from Microsoft Entra Conne
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
-ms.custom: sfi-image-nochange
+ms.date: 09/10/2026
 ---
 
 
@@ -15,31 +14,23 @@ This document describes how to use Microsoft Entra Connect to retrieve data from
 
 [!INCLUDE [active-directory-app-provisioning.md](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
-## Retrieve all email addresses for users configured for health alerts.
+## Retrieve email addresses configured for health alerts
 
 To retrieve the email addresses for all of your users that are configured in Microsoft Entra Connect Health to receive alerts, use the following steps.
 
-1. Start at the Microsoft Entra Connect Health blade and select **Sync Services** from the left-hand navigation bar.
- ![Sync Services](./media/how-to-connect-health-data-retrieval/retrieve1.png)
-
-2. Select on the **Alerts** tile.</br>
- ![Alert](./media/how-to-connect-health-data-retrieval/retrieve3.png)
-
-3. Select on **Notification Settings**.
- ![Notification](./media/how-to-connect-health-data-retrieval/retrieve4.png)
-
-4. On the **Notification Setting** blade, find the list of email addresses that are enabled as recipients for health Alert notifications.
- ![Emails](./media/how-to-connect-health-data-retrieval/retrieve5a.png)
+1. Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth).
+2. Select **Sync errors**.
+3. Select **Notification settings** on the command bar.
+4. In the notification settings panel, review whether Global Administrators receive notifications and the addresses listed under the custom email recipients section.
  
+:::image type="content" source="media/how-to-connect-health-data-retrieval/connect-health-notification-settings.png" alt-text="Screenshot of the Connect Health notification settings panel with callouts for enabling email, choosing recipients, and saving changes." lightbox="media/how-to-connect-health-data-retrieval/connect-health-notification-settings.png":::
+
 ## Retrieve all sync errors
 
 To retrieve a list of all sync errors, use the following steps.
 
-1. Starting on the Microsoft Entra Health blade, select **Sync Errors**.
- ![Sync errors](./media/how-to-connect-health-data-retrieval/retrieve6.png)
-
-2. In the **Sync Errors** blade, select on **Export**. This exports a list of the recorded sync errors.
- ![Export](./media/how-to-connect-health-data-retrieval/retrieve7.png)
+1. Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), and then select **Sync errors**.
+2. Select **Export** on the command bar. The browser downloads a CSV file that contains the recorded sync errors.
 
 ## Next Steps
 * [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md)
