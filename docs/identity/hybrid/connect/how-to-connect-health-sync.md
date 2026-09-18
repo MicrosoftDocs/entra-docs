@@ -5,8 +5,8 @@ ms.assetid: 1dfbeaba-bda2-4f68-ac89-1dbfaf5b4015
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 05/26/2026
-ms.custom: H1Hack27Feb2017, sfi-image-nochange, msecd-doc-authoring-1012
+ms.date: 09/10/2026
+ms.custom: H1Hack27Feb2017, msecd-doc-authoring-1012
 #customer intent: As an identity administrator, I want to monitor my Microsoft Entra Connect Sync deployment with Microsoft Entra Connect Health so that I can identify and resolve synchronization alerts and errors.
 ---
 # Monitor Microsoft Entra Connect Sync with Microsoft Entra Connect Health
@@ -16,32 +16,28 @@ The following documentation is specific to monitoring Microsoft Entra Connect (S
 
 Before you use Microsoft Entra Connect Health for sync, install the Microsoft Entra Connect Health agent on each Microsoft Entra Connect Sync server. The agent is supported on Windows Server 2016, 2019, 2022, and 2025. For installation steps, requirements, and the full list of supported Windows Server versions, see [Install the Microsoft Entra Connect Health agents](how-to-connect-health-agent-install.md).
 
-![Screenshot of the Microsoft Entra Connect Health for Sync page.](./media/how-to-connect-health-sync/syncsnapshot.png)
-
 > [!IMPORTANT]
 > Microsoft Entra Connect Health for Sync requires Microsoft Entra Connect Sync V2. If you're still using Azure AD Connect V1, you must upgrade to the latest version. 
 > Azure AD Connect V1 was retired on August 31, 2022. Microsoft Entra Connect Health for Sync stopped working with Azure AD Connect V1 in December 2022.
 > 
+Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), select **Sync services**, and then select a service. The overview brings together server health, active and recently resolved alerts, synchronization errors, and data freshness status. Select a server, alert summary, or sync error card to open the corresponding details.
+
+:::image type="content" source="media/how-to-connect-health-sync/connect-health-sync-service-overview.png" alt-text="Screenshot of the Connect Health Sync service overview with callouts for monitored servers, alert summary, and synchronization error status." lightbox="media/how-to-connect-health-sync/connect-health-sync-service-overview.png":::
+
 <a name='alerts-for-azure-ad-connect-health-for-sync'></a>
 
 ## Alerts for Microsoft Entra Connect Health for sync
-The Microsoft Entra Connect Health Alerts for sync section provides the list of active alerts. Each alert includes relevant information, resolution steps, and links to related documentation. By selecting an active or resolved alert you see a new blade with additional information and the steps you can take to resolve the alert, and links to additional documentation. You can also view historical data on alerts that were resolved in the past.
-
-![Microsoft Entra Connect Sync error](./media/how-to-connect-health-sync/alert.png)
+The **Alerts** page lists active and resolved alerts. Use the time-range control to include older resolved alerts, and use search to filter the list. Select an alert row to open the details panel, which contains alert metadata, affected servers, resolution guidance, related documentation, and a feedback option.
 
 ### Limited Evaluation of Alerts
 If Microsoft Entra Connect is NOT using the default configuration (for example, if Attribute Filtering is changed from the default configuration to a custom configuration), then the Microsoft Entra Connect Health agent won't upload the error events related to Microsoft Entra Connect.
 
 This limits the evaluation of alerts by the service. You'll see a banner that indicates this condition in the [Microsoft Entra admin center](https://entra.microsoft.com) under your service.
 
-![Screenshot of the alert banner that says Alert evaluation is limited. Update your settings to enable all alerts.](./media/how-to-connect-health-sync/banner.png)
-
-You can change this by selecting "Settings" and allowing Microsoft Entra Connect Health agent to upload all error logs.
-
-![Screenshot of the Settings option called out and the Settings section with the Save option and the ON option called out.](./media/how-to-connect-health-sync/banner2.png)
+To change this setting, open the sync service, select **Settings** on the command bar, enable monitoring in the settings panel, and select **Save**.
 
 ## Sync Insight
-Admins Frequently want to know about the time it takes to sync changes to Microsoft Entra ID and the amount of changes taking place. This feature provides an easy way to visualize this using the below graphs:   
+Admins frequently want to know how long it takes to synchronize changes to Microsoft Entra ID and how many changes occur. The server health page provides the following performance charts:
 
 * Latency of sync operations
 * Object Change trend
@@ -49,14 +45,12 @@ Admins Frequently want to know about the time it takes to sync changes to Micros
 ### Sync Latency
 This feature provides a graphical trend of latency of the sync operations (such as import and export) for connectors. This provides a quick and easy way to understand the latency of your operations. The latency is larger if you have a large set of changes occurring. Additionally, it provides a way to detect anomalies in the latency that may require further investigation.
 
-![Screenshot of the Run Profile Latency from past 3 days graph.](./media/how-to-connect-health-sync/synclatency02.png)
-
-By default, only the latency of the 'Export' operation for the Microsoft Entra connector is shown. To see more operations on the connector or to view operations from other connectors, right-select on the chart,  select Edit Chart or select on the "Edit Latency Chart" button and choose the specific operation and connectors.
+Select **View detailed monitoring** on the **Run profile latency** chart to open a larger view and change the displayed time range.
 
 ### Sync Object Changes
 This feature provides a graphical trend of the number of changes that are being evaluated and exported to Microsoft Entra ID. Today, trying to gather this information from the sync logs is difficult. The chart gives you, not only a simpler way of monitoring the number of changes that are occurring in your environment, but also a visual view of the failures that are occurring.
 
-![Screenshot of the Export Statistics to Microsoft Entra ID from past 3 days graph.](./media/how-to-connect-health-sync/syncobjectchanges02.png)
+Select **View detailed monitoring** on the **Export statistics** chart to open a larger view and change the displayed time range.
 
 ## Object Level Synchronization Error Report
 This feature provides a report about synchronization errors that can occur when identity data is synchronized between Windows Server AD and Microsoft Entra ID using Microsoft Entra Connect.
@@ -71,7 +65,9 @@ This feature provides a report about synchronization errors that can occur when 
   * List of objects with error per category
   * All the data about the errors at one place
   * Side by side comparison of Objects with error due to a conflict
-  * Download the error report as a CVS
+  * Download the error report as a CSV file
+
+:::image type="content" source="media/how-to-connect-health-sync/connect-health-sync-errors.png" alt-text="Screenshot of the Connect Health Sync errors page with callouts for command bar actions, error categories, and the error list." lightbox="media/how-to-connect-health-sync/connect-health-sync-errors.png":::
 
 ### Categorization of Errors
 The report categorizes the existing synchronization errors in the following categories:
@@ -85,12 +81,8 @@ The report categorizes the existing synchronization errors in the following cate
 | Large Attribute |Errors when one or more attributes are larger than the allowed size, length or count. |
 | Other |All other errors that don't fit in the above categories. Based on feedback, this category splits into sub categories. |
 
-![Sync Error Report Summary](./media/how-to-connect-health-sync/errorreport01.png)
-![Sync Error Report Categories](./media/how-to-connect-health-sync/SyncErrorByTypes.PNG)
-
 ### List of objects with error per category
-Drilling into each category provides the list of objects having the error in that category.
-![Sync Error Report List](./media/how-to-connect-health-sync/errorreport03.png)
+Select a category tile to filter the error list. You can also search the selected category, sort supported columns, expand a row for more details, and change the number of results displayed per page.
 
 ### Error Details
 Following data is available in the detailed view for each error
@@ -100,14 +92,11 @@ Following data is available in the detailed view for each error
 * Identifiers for the *Microsoft Entra Object* involved (as applicable)
 * Error description and how to fix
 
-![Sync Error Report Details](./media/how-to-connect-health-sync/duplicateAttributeSyncError.png)
-
 ### Download the error report as CSV
-By selecting the "Export" button you can download a CSV file with all the details about all the errors.
+Select **Export** on the command bar to download a CSV file that contains the recorded sync errors.
 
 ### Diagnose and remediate sync errors 
-For specific duplicated attribute sync error scenario involving user Source Anchor update, you can fix them directly from the portal. 
-Read more about [Diagnose and remediate duplicated attribute sync errors](how-to-connect-health-diagnose-sync-errors.md)
+For supported duplicate-attribute sync error scenarios that involve a user source anchor update, select **Fix this error** for an item to start the guided **Fix Synchronization Error** experience. For more information, see [Diagnose and remediate duplicated attribute sync errors](how-to-connect-health-diagnose-sync-errors.md).
 
 ## Related content
 * [Troubleshooting Errors during synchronization](tshoot-connect-sync-errors.md)
