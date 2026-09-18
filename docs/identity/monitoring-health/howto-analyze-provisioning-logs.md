@@ -111,13 +111,13 @@ Here are some tips and considerations for analyzing the provisioning logs:
 Microsoft MCP Server for Enterprise lets you use natural-language prompts to analyze provisioning logs in an MCP-enabled AI client. The server translates a prompt into a read-only Microsoft Graph request, runs the request with your delegated permissions, and summarizes the response.
 
 > [!IMPORTANT]
-> Microsoft MCP Server for Enterprise is in preview. It's currently available only in the global service and supports read-only operations. Review [Overview of Microsoft MCP Server for Enterprise](/graph/mcp-server/overview) for current availability and limitations.
+> Microsoft MCP Server for Enterprise is in preview. It's currently available only in the global service and supports read-only operations. Review [Overview of Microsoft MCP Server for Enterprise](https://github.com/mcp/microsoft/EnterpriseMCP) for current availability and limitations.
 
 ### Prerequisites
 
 In addition to the prerequisites for this article:
 
-- An administrator must [provision Microsoft MCP Server for Enterprise and configure an MCP client](/graph/mcp-server/get-started).
+- An administrator must [provision Microsoft MCP Server for Enterprise and configure an MCP client](https://github.com/mcp/microsoft/EnterpriseMCP).
 - The MCP client must be granted the `MCP.ProvisioningLog.Read.All` delegated permission.
 - You must sign in to the MCP client with a work or school account that has a supported Microsoft Entra role. Reports Reader is the least privileged supported role.
 

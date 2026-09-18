@@ -94,7 +94,7 @@ Microsoft Cloud Security solutions provide a broad set of technical controls to 
 
 ### Regulatory requirements
 
-Microsoft Entra provides technical controls to help customers meet regulatory requirements within a single tenant. A common consideration across regulations is data residency at rest. Microsoft Entra determines [directory data residency](../fundamentals/data-residency.md) at tenant creation. [Microsoft 365 Multi-Geo](/microsoft-365/enterprise/microsoft-365-multi-geo) enables management and storage of in-scope data at a user level for core services such as Exchange Online, SharePoint/OneDrive, Microsoft Teams, and Microsoft 365 Copilot.
+Microsoft Entra provides technical controls to help customers meet regulatory requirements within a single tenant. A common consideration across regulations is data residency at rest. Microsoft Entra determines [directory data residency](../fundamentals/data-residency.md) at tenant creation. [Microsoft 365 Multi-Geo](/microsoft-365/enterprise/microsoft-365-multi-geo) enables management and storage of in-scope data at a user level for core services such as Exchange Online, SharePoint/OneDrive, Microsoft Teams, and Microsoft Copilot.
 
 Regulations often call out Identity and Access Management (IAM) controls such as authentication methods, access lifecycle management, and reporting. [Implement identity standards with Microsoft Entra ID](../standards/index.yml) provides detailed guidance on specific standards.
 

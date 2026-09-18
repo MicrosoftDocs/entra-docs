@@ -2,7 +2,7 @@
 title: 'Microsoft Entra Connect: Cloud authentication via Staged Rollout'
 description: This article explains how to migrate from federated authentication, to cloud authentication, by using a Staged Rollout.
 ms.topic: how-to
-ms.date: 07/22/2026
+ms.date: 09/15/2026
 ai-usage: ai-assisted
 ms.subservice: hybrid-connect
 ms.custom: sfi-image-nochange
@@ -147,31 +147,39 @@ We recommend enabling *seamless SSO* irrespective of the sign-in method (*passwo
 
 ## Prework for seamless SSO
 
-Enable *seamless SSO* on the Active Directory forests by using PowerShell. If you have more than one Active Directory forest, enable it for each forest individually. *Seamless SSO* is triggered only for users who are selected for Staged Rollout. It doesn't affect your existing federation setup.
+Enable *seamless SSO* on the Active Directory forests by using PowerShell. If you have more than one Active Directory forest, enable it for each forest individually. *Seamless SSO* is triggered only for users who are selected for Staged Rollout. It doesn't affect your existing federation setup.
 
 Enable *seamless SSO* by doing the following tasks:
 
-1. Sign in to Microsoft Entra Connect Server.
+1. Sign in to the Microsoft Entra Connect server.
 
-2. Go to the *%programfiles%\\Microsoft Entra Connect* folder.
+1. Go to the `%ProgramFiles%\Microsoft Azure Active Directory Connect` folder.
 
-3. Import the *seamless SSO* PowerShell module by running the following command: 
+1. Import the ADSync PowerShell module:
 
-   `Import-Module .\AzureADSSO.psd1`
+   ```powershell
+   Import-Module "$env:ProgramFiles\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1"
+   ```
 
-4. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command opens a pane where you can enter your tenant's Hybrid Identity Administrator credentials.
+1. Import the *seamless SSO* PowerShell module:
 
-5. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command displays a list of Active Directory forests (see the "Domains" list) on which this feature has been enabled. By default, it's set to false at the tenant level.
+   ```powershell
+   Import-Module .\AzureADSSO.psd1
+   ```
+
+1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command opens a pane where you can enter your tenant's Hybrid Identity Administrator credentials.
+
+1. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command displays a list of Active Directory forests (see the "Domains" list) on which this feature has been enabled. By default, it's set to false at the tenant level.
 
    ![Example of the PowerShell output](./media/how-to-connect-staged-rollout/staged-3.png)
 
-6. Call `$creds = Get-Credential`. At the prompt, enter the domain administrator credentials for the intended Active Directory forest.
+1. Call `$creds = Get-Credential`. At the prompt, enter the domain administrator credentials for the intended Active Directory forest.
 
-7. Call `Enable-AzureADSSOForest -OnPremCredentials $creds`. This command creates the AZUREADSSOACC computer account from the on-premises domain controller for the Active Directory forest that's required for *seamless SSO*.
+1. Call `Enable-AzureADSSOForest -OnPremCredentials $creds`. This command creates the AZUREADSSOACC computer account from the on-premises domain controller for the Active Directory forest that's required for *seamless SSO*.
 
-8. *Seamless SSO* requires URLs to be in the intranet zone. To deploy those URLs by using group policies, see [Quickstart: Microsoft Entra seamless single sign-on](how-to-connect-sso-quick-start.md#step-3-roll-out-the-feature).
+1. *Seamless SSO* requires URLs to be in the intranet zone. To deploy those URLs by using group policies, see [Quickstart: Microsoft Entra seamless single sign-on](how-to-connect-sso-quick-start.md#step-3-roll-out-the-feature).
 
-9. For a complete walkthrough, you can also download our [deployment plans](https://aka.ms/SeamlessSSODPDownload) for *seamless SSO*.
+1. For a complete walkthrough, you can also download our [deployment plans](https://aka.ms/SeamlessSSODPDownload) for *seamless SSO*.
 
 ## Enable Staged Rollout
 
@@ -208,15 +216,17 @@ To configure Staged Rollout, follow these steps:
    >Editing a group (adding or removing users), it can take up to 24 hours for changes to take effect.
    >Seamless SSO will apply only if users are in the Seamless SSO group and also in either a PTA or PHS group.
 
-## User Authentication Behavior During Staged Rollout Transitions
+## User authentication behavior during Staged Rollout transitions
 
-When a user is added to a Staged Rollout (SR) group or when a group they belong to is added to SR, their authentication method will transition from federated to managed. This change takes effect after the user completes one more interactive sign-in using their existing federated login. After this sign-in, Microsoft Entra applies the managed authentication experience for subsequent logins.
+### Scenarios that require an additional federated or managed sign-in
 
-Similarly, when a user is removed from the SR group or when their group is removed from SR, they will continue to use managed authentication until they complete one more interactive sign-in. After that, federation is re-applied and future logins will redirect to the federated identity provider.
+1. **User added to Staged Rollout.** When a user is added to a Staged Rollout group, or when a group they belong to is enabled for Staged Rollout, the authentication experience doesn't switch from federated to managed immediately. The user must complete one additional interactive sign-in using their existing federated authentication method. After this sign-in, Microsoft Entra updates the user's state and applies managed authentication for subsequent sign-ins.
 
-This behavior ensures a seamless transition between authentication methods while maintaining user access continuity and security.
+1. **User removed from Staged Rollout.** When a user is removed from a Staged Rollout group, or when their group is removed from Staged Rollout, the user continues to use managed authentication. The user must complete one additional interactive sign-in through Microsoft Entra. After this sign-in, Microsoft Entra switches the user back to federated authentication, and subsequent sign-ins redirect to the federated identity provider.
 
-### Workaround for newly added Staged Rollout users
+1. **Microsoft Entra ID Protection remediation events.** Certain account recovery and [Microsoft Entra ID Protection remediation actions](~/id-protection/howto-identity-protection-remediate-unblock.md#how-risk-remediation-works), including self-service password reset (SSPR), risk remediation, and risk dismissal, can reset the user's Staged Rollout state. As a result, the user might be redirected to the federated identity provider on their next sign-in. The user must complete one additional interactive sign-in using their existing federated authentication method. After this sign-in, Microsoft Entra reestablishes managed authentication for subsequent sign-ins.
+
+### Workaround to avoid one additional federated sign-in
 
 When a user is newly added to Staged Rollout, they might be required to perform one additional authentication through the federated identity provider before Staged Rollout takes effect. You can avoid this behavior by using a Temporary Access Pass (TAP) during the user's initial sign-in experience.
 

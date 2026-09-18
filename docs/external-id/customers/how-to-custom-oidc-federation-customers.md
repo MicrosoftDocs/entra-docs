@@ -13,9 +13,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up federation with a custom-configured OpenID Connect (OIDC) identity provider, you enable users to sign up and sign in to your applications using their existing accounts from the federated external provider. This OIDC federation allows authentication with various providers that adhere to the OpenID Connect protocol. 
-
-When you add an OIDC identity provider to your user flow's sign-in options, users can sign up and sign in to the registered applications defined in that user flow. They can do this using their credentials from the OIDC identity provider. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+By setting up federation with a custom-configured OpenID Connect (OIDC) identity provider, you enable users to sign in to your applications using their existing accounts from the federated external provider. This OIDC federation allows authentication with various providers that adhere to the OpenID Connect protocol. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 ## Prerequisites
 
@@ -98,18 +96,9 @@ After you configure your identity provider, complete this step to configure a ne
 > Microsoft recommends you do *not* use the [implicit grant flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow#security-concerns-with-implicit-grant-flow) or the [ROPC flow](/entra/identity-platform/v2-oauth-ropc). 
 Therefore, OpenID Connect external identity provider configuration doesn't support these flows. The recommended way of supporting SPAs is [OAuth 2.0 Authorization code flow (with PKCE)](/entra/identity-platform/v2-oauth2-auth-code-flow#applications-that-support-the-auth-code-flow) which is supported by OIDC federation configuration.
 
-## Add OIDC identity provider to a user flow
+## Enable users to sign in and sign up with the identity provider
 
-At this point, you set up the OIDC identity provider in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the OIDC identity provider to a user flow:
-
-1. In your external tenant, browse to **Entra ID** > **External Identities** > **User flows**.
-1. Select the user flow where you want to add the OIDC identity provider.
-1. Under Settings, select **Identity providers**.
-1. Under **Other Identity Providers**, select **OIDC identity provider**.
-
-   :::image type="content" source="media/how-to-custom-oidc-federation-customers/custom-oidc-provider.png" alt-text="Screenshot of the custom OIDC provider in the IdP list.":::
-
-1. Select **Save**.
+After you configure the OIDC identity provider, add it to a user flow to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md).
 
 ## Make email optional for external identity provider sign-up
 
@@ -188,5 +177,4 @@ To apply the change:
 ## Related content
 
 - [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
-- [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

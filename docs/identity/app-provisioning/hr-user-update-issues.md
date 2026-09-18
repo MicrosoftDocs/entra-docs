@@ -3,7 +3,7 @@ title: Troubleshoot user update issues with HR provisioning
 description: Learn how to troubleshoot user update issues with HR provisioning
 ms.topic: troubleshooting
 ai-usage: ai-assisted
-ms.date: 05/18/2026
+ms.date: 08/20/2026
 ms.reviewer: chmutali
 ---
 
@@ -18,21 +18,18 @@ ms.reviewer: chmutali
 
 | Troubleshooting | Details |
 |-- | -- |
-| **Issue** | You successfully configured the inbound provisioning app. You're getting null or empty value from the HR app. You expect the provisioning service to clear the corresponding target attribute value in on-premises Active Directory / Microsoft Entra ID. But the operation fails with the error message: `InvalidAttributeSyntax-LdapErr: The syntax is invalid. The parameter is incorrect. Error in attribute conversion operation, data 0, v3839` |
-| **Cause** | The provisioning service doesn't have a default logic for null value processing. When the provisioning service gets an empty string from the source app, it tries to flow the value "as-is" to the target app. In this case, on-premises Active Directory provisioning connector currently doesn't support setting empty string values and hence you see the previously mentioned error. |
-| **Resolution** | Check the provisioning logs. Identify attributes in the target Active Directory that are receiving null or empty string values. Update the attribute mapping for such attributes to use an expression mapping. See recommended resolutions. |
+| **Issue** | You successfully configured the inbound provisioning app. The HR app returns a null or empty value, but the target attribute isn't cleared, or the operation fails with the error message: `InvalidAttributeSyntax-LdapErr: The syntax is invalid. The parameter is incorrect. Error in attribute conversion operation, data 0, v3839`. |
+| **Cause** | Attribute value clearing is disabled by default. The provisioning service clears a target attribute only when **Flow null values** is enabled for both the source attribute and target mapping. Without both settings, the null or empty value might be ignored or passed to a target that doesn't accept an empty string. |
+| **Resolution** | Check the provisioning logs to confirm the value returned by the HR connector. Then configure the source attribute and target mapping based on the intended behavior. |
 
 **Recommended resolutions**
 
-  Let's say the attribute `BusinessTitle` mapped to AD attribute `jobTitle` may be null or empty in Workday. 
-  * Option 1: Use the function [Switch](https://go.microsoft.com/fwlink/?linkid=2259244) to check for empty or null values and pass a non-blank literal value.
+Let's say the Workday attribute `BusinessTitle`, which maps to the Active Directory attribute `jobTitle`, can be null or empty.
 
-Switch([BusinessTitle],[BusinessTitle],"","N/A")
+- To clear the existing target value, [enable attribute value clearing](clear-attribute-values.md) for both the source attribute and target mapping.
+- To replace a null or empty value with a nonblank fallback value, use the [Switch](functions-for-customizing-application-data.md#switch) function. For example, `Switch([BusinessTitle],[BusinessTitle],"","N/A")`.
 
-
-  * Option 2: Use the function [IgnoreFlowIfNullOrEmpty](functions-for-customizing-application-data.md#ignoreflowifnullorempty) to drop empty or null attributes in the payload sent to on-premises Active Directory / Microsoft Entra ID. 
-  
-     `IgnoreFlowIfNullOrEmpty([BusinessTitle])` 
+- To preserve the existing target value, use the [IgnoreFlowIfNullOrEmpty](functions-for-customizing-application-data.md#ignoreflowifnullorempty) function. For example, `IgnoreFlowIfNullOrEmpty([BusinessTitle])`.
 
 ## Some Workday attribute updates are missing
 **Applies to:**
@@ -151,4 +148,5 @@ This approach enables:
 ## Next steps
 
 * [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](workday-integration-reference.md)
+* [Learn more about Microsoft Entra ID and SAP SuccessFactors integration scenarios](sap-successfactors-integration-reference.md)
 * [Learn how to review logs and get reports on provisioning activity](check-status-user-account-provisioning.md)

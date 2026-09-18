@@ -169,8 +169,6 @@ Remove-EntraDeletedDirectoryObject -DirectoryObjectId <blueprint-app-object-id>
 
 ## Agents' user accounts
 
-<!-- TODO: Confirm with engineering whether the cascade cleanup automatically includes agents' user accounts, and whether deleting an individual agent identity also deletes its associated agent's user account. Update or remove this section accordingly. -->
-
 Agents' user accounts are paired 1:1 with agent identities. If agents' user accounts aren't automatically cleaned up as part of cascade deletion, delete them manually.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)

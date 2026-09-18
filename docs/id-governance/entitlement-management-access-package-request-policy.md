@@ -147,7 +147,7 @@ Follow these steps if you want to bypass access requests and allow administrator
 
     ![Screenshot of an access package for the selection "None administrator direct assignments only".](./media/entitlement-management-access-package-request-policy/none-admin-direct-assignments-only.png)
 
-    After you create the access package, you can directly assign specific internal and external users to the access package. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md).
+    After you create the access package, you can directly assign specific users, including guest users who are already in the directory. However, if **Who can get access** is set to **None (administrator direct assignments only)**, an external user who isn't yet in your directory can't be invited through the assignment. To invite an external user through an access package assignment, use a policy that allows users not in your directory. The external user must be within the scope of the policy, such as being part of a configured connected organization in scope or being allowed by **All users (All connected organizations + any external user)**. If you don't want external users to request the access package, leave all options under **Who can request access** unchecked except for **Admin**. For information about directly assigning a user, see [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md).
 
 1. Skip to the [Who can request access](#who-can-request-access) section.
 

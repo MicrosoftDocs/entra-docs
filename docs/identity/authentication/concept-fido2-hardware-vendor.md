@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Learn about requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID.
-ms.date: 06/11/2026
+ms.date: 08/20/2026
 ms.reviewer: kimhana
 ms.topic: concept-article
 ---
@@ -44,7 +44,7 @@ Microsoft ingests the latest version of the FIDO Alliance MDS every month. There
 
 ## FIDO2 security keys eligible for attestation with Microsoft Entra ID
 
-The following table includes each FIDO2 security key model listed in MDS version 258 that's eligible for attestation with Microsoft Entra ID. For each model, the table shows its Authenticator Attestation Globally Unique Identifier (AAGUID) and feature capabilities. 
+The following table includes each FIDO2 security key model listed in MDS version 275 that's eligible for attestation with Microsoft Entra ID. For each model, the table shows its Authenticator Attestation Globally Unique Identifier (AAGUID) and feature capabilities. 
 
 Description|AAGUID|Bio|USB|NFC|BLE
 -----------|------|---------|-----|----|------
@@ -229,10 +229,12 @@ Taglio CTAP2.1 CS|092277e5-8437-46b5-b911-ea64b294acb7|&#10060;|&#10060;|&#x2705
 Taglio CTAP2.1 EP|7d2afadd-bf6b-44a2-a66b-e831fceb8eff|&#10060;|&#10060;|&#x2705;|&#10060;
 Thales IDPrime FIDO Bio|4d41190c-7beb-4a84-8018-adf265a6352d|&#x2705;|&#10060;|&#x2705;|&#10060;
 Thales PAY GFCX13 authenticator|04a8fcf2-19c1-457b-911e-69219f17583f|&#10060;|&#10060;|&#x2705;|&#10060;
+Thetis Pro FIDO2 Key|1f8e43df-71ff-e11d-bea3-c4ee7003b232|&#10060;|&#x2705;|&#x2705;|&#10060;
 Token Ring 3 FIDO2 Authenticator|c62100de-759b-4bf8-b22b-63b3e3a80401|&#x2705;|&#10060;|&#x2705;|&#10060;
 Token Ring FIDO2 Authenticator|91ad6b93-264b-4987-8737-3a690cad6917|&#x2705;|&#10060;|&#x2705;|&#10060;
 TOKEN2 FIDO2 Security Key|ab32f0c6-2239-afbb-c470-d2ef4e254db7|&#10060;|&#10060;|&#10060;|&#10060;
 TOKEN2 PIN Plus Security Key Series|eabb46cc-e241-80bf-ae9e-96fa6d2975cf|&#10060;|&#x2705;|&#x2705;|&#10060;
+TruU FIDO2 Authenticator|bb878d7b-cf54-4784-b390-357030497043|&#10060;|&#10060;|&#10060;|&#10060;
 uTrust FIDO2 Security Key|73402251-f2a8-4f03-873e-3cb6db604b03|&#10060;|&#x2705;|&#x2705;|&#10060;
 VALMIDO PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|&#x2705;|&#10060;|&#10060;|&#x2705;
 VeridiumID Passkey Android SDK|8d4378b0-725d-4432-b3c2-01fcdaf46286|&#x2705;|&#10060;|&#10060;|&#x2705;

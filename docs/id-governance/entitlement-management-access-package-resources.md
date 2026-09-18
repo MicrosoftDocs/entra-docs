@@ -190,6 +190,8 @@ Microsoft Entra ID can automatically assign identities access to a SharePoint On
 
     ![Access package - Add resource role for a SharePoint Online site](./media/entitlement-management-access-package-resources/sharepoint-site-role.png)
 
+    For SharePoint Online sites with a large number of roles, use the search box to find the role you want to add to the access package. Search returns matching SharePoint roles even when all available roles aren't initially displayed in the list.
+
 1. Select **Add**.
 
     Any identities with existing assignments to the access package will automatically be given access to this SharePoint Online site when it's added. For more information, see [when changes are applied](#when-changes-are-applied).

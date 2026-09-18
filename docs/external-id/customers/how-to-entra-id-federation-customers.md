@@ -12,9 +12,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign up and sign in to your applications using their existing organizational accounts. This approach uses the custom OIDC identity provider feature to federate with a Microsoft Entra ID tenant.
-
-When you add a Microsoft Entra ID identity provider to your user flow's sign-in options, users can sign up and sign in to the registered applications defined in that user flow using their Microsoft Entra ID credentials. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+By setting up OpenID Connect (OIDC) federation with a Microsoft Entra ID tenant, you enable users from that tenant to sign in to your applications using their existing organizational accounts. This approach uses the custom OIDC identity provider feature to federate with a Microsoft Entra ID tenant. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 ## Prerequisites
 
@@ -64,29 +62,13 @@ After you register the external tenant in the Microsoft Entra ID tenant, add it 
 | **Scope** | `openid profile` |
 | **Response type** | `code` |
 
-## Add the identity provider to a user flow
+## Enable users to sign in and sign up with the identity provider
 
-After you set up the identity provider, add it to a user flow so it appears on the sign-in page. Follow the steps in [Add OIDC identity provider to a user flow](how-to-custom-oidc-federation-customers.md#add-oidc-identity-provider-to-a-user-flow), selecting the Microsoft Entra ID OIDC identity provider you configured.
+After you configure the Microsoft Entra ID identity provider, there are multiple ways to enable users to sign in and sign up:
 
-## Test the user flow
+### Add the identity provider to a user flow
 
-To verify your federation setup, test the user flow:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Browse to **Entra ID** > **External Identities** > **User flows**.
-1. Select the user flow you configured. At least one application with a redirect URI must be associated with this user flow.
-1. Select **Run user flow**.
-1. In the **Run user flow** pane, for **Application**, select the application you want to test. The remaining fields, including **Reply URL** and **Response type**, are auto-populated from the application registration.
-1. Select the **Run user flow** button, or copy the **Run user flow endpoint** URL and open it in a new browser window.
-1. On the sign-in page, select the Microsoft Entra ID identity provider and sign in with an account from the federated tenant.
-
-## Create users in the external tenant
-
-There are multiple ways to create external users in your External ID tenant after you configure federation:
-
-### Sign up through the user flow
-
-An external user can self-register in the External ID tenant by using the sign-up and sign-in user flow. When the user selects the federated Microsoft Entra ID identity provider on the sign-in page and authenticates with their organizational account, a user account is automatically created in the external tenant. For more information, see [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).
+Add the identity provider to a [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md). An external user can then self-register in the External ID tenant. When the user selects the federated Microsoft Entra ID identity provider on the sign-in page and authenticates with their organizational account, a user account is automatically created in the external tenant.
 
 ### Create the user with Microsoft Graph API
 

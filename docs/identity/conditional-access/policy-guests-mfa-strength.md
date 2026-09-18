@@ -22,7 +22,7 @@ You can use one of the built-in strengths or create a [custom authentication str
 In external user scenarios, the MFA authentication methods that a resource tenant can accept vary depending on whether the user is completing MFA in their home tenant or in the resource tenant. For details, see [Authentication strength for external users](/entra/identity/authentication/concept-authentication-strength-external-users).
 
 > [!NOTE]
-> Currently, you can only apply authentication strength policies to external users who authenticate with Microsoft Entra ID. For email one-time passcode, SAML/WS-Fed, and Google federation users, use the [MFA grant control](concept-conditional-access-grant.md#require-multifactor-authentication) to require MFA.
+> Currently, you can only apply authentication strength policies to external users who authenticate with Microsoft Entra ID. For email one-time passcode, SAML/WS-Fed, Google federation, and Microsoft personal (MSA) users, use the [MFA grant control](concept-conditional-access-grant.md#require-multifactor-authentication) to require MFA.
 
 ## Configure cross-tenant access settings to trust MFA
 

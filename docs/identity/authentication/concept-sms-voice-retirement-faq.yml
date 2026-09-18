@@ -3,7 +3,7 @@ metadata:
   title: FAQ for Microsoft-provided SMS and voice retirement
   description: Frequently asked questions about the retirement of Microsoft-provided SMS and voice authentication in Microsoft Entra ID and the move to passkeys.
   ms.topic: faq
-  ms.date: 07/30/2026
+  ms.date: 09/16/2026
   author: marinasanchezz1
   ms.author: marisanchez
   ai-usage: ai-assisted
@@ -22,7 +22,13 @@ sections:
 
           Organizations that still require SMS or voice will continue to have that option through customer-managed telecom providers when there is a legitimate business, regulatory, or technical need. This change is intended to modernize authentication while preserving flexibility for those scenarios.
 
-          Beginning September 1, 2026, passkeys will be automatically enabled for users currently enabled for SMS or voice. Beginning February 1, 2027, tenants that have not configured a customer-managed telecom provider through the Microsoft Security Store will no longer be able to use SMS or voice for MFA. Users whose only MFA method is SMS or voice will be required to register a passkey during sign-in before they can continue accessing their account. Tenants that have configured a customer-managed telecom provider can continue using SMS or voice according to their organization's policies.
+          Beginning September 1, 2026, passkeys will be automatically enabled for users currently enabled for SMS or voice. Beginning February 1, 2027, the retirement applies to all users except Global Administrators and external users. If you haven't configured a customer-managed telecom provider through the Microsoft Security Store, users in scope of the February 1 retirement can no longer use SMS or voice for MFA. Users in scope of that retirement whose only MFA method is SMS or voice will be required to register a passkey during sign-in before they can continue accessing their account. Global Administrators and external users follow a later retirement date of July 1, 2027. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. Tenants that have configured a customer-managed telecom provider can continue using SMS or voice according to their organization's policies.
+      - question: |
+          Do Global Administrators and external users have a different retirement date?
+        answer: |
+          Yes. Microsoft-provided SMS and voice authentication will be retired on July 1, 2027 for Global Administrators and external users.
+
+          Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date.
       - question: |
           Will there be costs associated with using a telecom provider through the Security Store?
         answer: |
@@ -61,6 +67,8 @@ sections:
           When will passkey support be available for B2B users?
         answer: |
           Passkey support for B2B users and internal guest users is planned to be available by the end of calendar year 2026. These users are included in the scope of the retirement of Microsoft-provided SMS and voice authentication.
+
+          External users follow the July 1, 2027 retirement date. Internal guest users still follow the February 1, 2027 retirement date.
       - question: |
           Are external MFA methods impacted by SMS and voice retirement?
         answer: |
@@ -87,17 +95,23 @@ sections:
           }
           ```
 
-          After this setting is applied, your tenant will be excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines will apply regardless of this setting.
+          After this setting is applied, your tenant will be excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines will apply regardless of this setting for users in scope of the February 1 retirement. Global Administrators and external users instead follow the July 1, 2027 retirement date. Internal guest users remain on the February 1, 2027 retirement date.
 
-          However, if your tenant still has users enabled for Microsoft-managed SMS or voice on February 1, 2027, and you have not configured a customer-managed telecom provider through the Security Store, those users will no longer be able to use SMS or voice to satisfy MFA requirements and continue signing in.
+          However, if your tenant still has users enabled for Microsoft-managed SMS or voice on their applicable retirement date, and you haven't configured a customer-managed telecom provider through the Security Store, those users will no longer be able to use SMS or voice to satisfy MFA requirements and continue signing in.
 
-          After February 1, 2027, users whose only available MFA method is SMS or voice will be required to register a passkey during sign-in to continue accessing their account.
+          After the applicable retirement date, users whose only available MFA method is SMS or voice will be required to register a passkey during sign-in to continue accessing their account.
 
-          There is no opt out for the February 1, 2027 enforcement. This requirement applies to all tenants.
+          There is no opt out for enforcement. This requirement applies to all tenants on the applicable retirement date for each user population.
       - question: |
-          Are customers going to get locked out of their accounts on February 1, 2027?
+          Will users receive a blocking passkey registration prompt if we configure a customer-managed telecom provider?
         answer: |
-          No. If customers do not configure a telecom provider by February 1 2027, users who still use SMS and voice will receive a blocking registration prompt to register a passkey. They will no longer be able to skip this prompt and will need to complete passkey registration before they can continue to sign in. Organizations that need SMS or voice after retirement can choose a telecom provider through the Microsoft Security Store.
+          No. If you configure a customer-managed telecom provider through the Microsoft Security Store and migrate all users who need SMS or voice before their applicable retirement date, those users won't receive the blocking passkey registration prompt as part of the SMS and voice retirement enforcement.
+
+          Customer-managed telecom is intended for organizations that have a business, regulatory, or technical need to continue using SMS or voice. Make sure that the provider is configured and that all affected users are migrated before their applicable retirement date. Global Administrators and external users follow the July 1, 2027 retirement date. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. Users who remain enabled for Microsoft-provided SMS or voice are still subject to the passkey registration requirement.
+      - question: |
+          Are customers going to get locked out of their accounts on the retirement date?
+        answer: |
+          No. If customers do not configure a telecom provider by the applicable retirement date, users who still use SMS and voice will receive a blocking registration prompt to register a passkey. They will no longer be able to skip this prompt and will need to complete passkey registration before they can continue to sign in. Global Administrators and external users follow the July 1, 2027 retirement date. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. Organizations that need SMS or voice after retirement can choose a telecom provider through the Microsoft Security Store.
 
 additionalContent: |
   ## Related content

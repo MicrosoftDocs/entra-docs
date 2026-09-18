@@ -3532,6 +3532,8 @@
         href: headspace-provisioning-tutorial.md
       - name: HelloID
         href: helloid-provisioning-tutorial.md
+      - name: HiBob to Active Directory 
+        href: hibob-to-active-directory-user-provisioning-tutorial.md
       - name: ContractS CLM
         href: holmes-cloud-provisioning-tutorial.md
       - name: Hootsuite
@@ -3772,8 +3774,6 @@
         href: rollbar-provisioning-tutorial.md
       - name: Rootly
         href: rootly-provisioning-tutorial.md
-      - name: Rouse Sales
-        href: rouse-sales-provisioning-tutorial.md
       - name: SafeGuard Cyber
         href: safeguard-cyber-provisioning-tutorial.md        
       - name: Salesforce

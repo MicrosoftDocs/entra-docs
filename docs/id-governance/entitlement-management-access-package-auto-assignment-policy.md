@@ -4,7 +4,7 @@ description: Learn how to configure automatic assignments based on rules for an 
 author: markwahl-msft
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/28/2026
+ms.date: 08/05/2026
 ms.reviewer: mwahl
 ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to configure automatic assignment policies for an access package so that I can automatically assign access based on rules.
@@ -17,7 +17,7 @@ You can use rules to determine access package assignment based on identity prope
    > It is suggested to only use one automatic assignment policy per access package. Configuring more than one auto-assignment policy is supported ONLY if you ensure there is no overlap with users in scope for each policy. If a user matches more than one automatic assignment policy, this is not supported and there may be subsequent problems losing access should a user fall out of scope of one policy but not the other.
 
 > [!IMPORTANT]
-> The preview of the `memberOf` rule operator is ending. Starting October 27, 2026, automatic assignment policies whose membership rule uses `memberOf` are quarantined. The policies remain, but assignment processing stops, and no assignments are added or removed until you remove `memberOf` from the rule. Before October 27, 2026, [identify the policies that use the memberOf attribute](#find-automatic-assignment-policies-that-use-the-memberof-attribute) and rebuild each rule with a supported attribute-based operator. If no equivalent rule covers your scenario, plan an alternative assignment method before you remove the policy that contains the rule, so that assignments aren't dropped. Automatic assignment policies that don't use `memberOf` aren't affected. For more information, see [Configure dynamic membership groups with the memberOf attribute](../identity/users/groups-dynamic-rule-member-of.md).
+> The preview of the `memberOf` rule operator is ending. Starting November 3, 2026, automatic assignment policies whose membership rule uses `memberOf` are quarantined. The policies remain, but assignment processing stops, and no assignments are added or removed until you remove `memberOf` from the rule. Before November 3, 2026, [identify the policies that use the memberOf attribute](#find-automatic-assignment-policies-that-use-the-memberof-attribute) and rebuild each rule with a supported attribute-based operator. If no equivalent rule covers your scenario, plan an alternative assignment method before you remove the policy that contains the rule, so that assignments aren't dropped. Automatic assignment policies that don't use `memberOf` aren't affected. For more information, see [Configure dynamic membership groups with the memberOf attribute](../identity/users/groups-dynamic-rule-member-of.md).
 
 This article describes how to create an access package automatic assignment policy for an existing access package.
 
@@ -112,7 +112,7 @@ New-MgEntitlementManagementAssignmentPolicy -BodyParameter $pparams
 
 ## Find automatic assignment policies that use the memberOf attribute
 
-Because support for the `memberOf` rule operator ends on October 27, 2026, you need to find the automatic assignment policies in your tenant whose membership rule includes `memberOf`, so that you can rebuild those rules or plan an alternative assignment method.
+Because support for the `memberOf` rule operator ends on November 3, 2026, you need to find the automatic assignment policies in your tenant whose membership rule includes `memberOf`, so that you can rebuild those rules or plan an alternative assignment method.
 
 You can find those policies in PowerShell with the [Microsoft Graph PowerShell](https://www.powershellgallery.com/packages/Microsoft.Graph.Authentication/) `Microsoft.Graph.Authentication` module. An identity in an appropriate role with the delegated `EntitlementManagement.Read.All` permission can run the following script. The script is read only, so it doesn't change any policy.
 

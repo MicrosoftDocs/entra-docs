@@ -100,5 +100,6 @@ Depending on the app you selected, use one of the following sections to complete
 
 ## Next steps
 - [Grant access to the inbound provisioning API](inbound-provisioning-api-grant-access.md)
+- [Clear attribute values (Preview)](clear-attribute-values.md)
 - [Frequently asked questions about API-driven inbound provisioning](inbound-provisioning-api-faqs.md)
 - [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](user-provisioning.md)

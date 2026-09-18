@@ -4118,5 +4118,6 @@
   "Microsoft-ServiceFabricETW": "cbd93bc2-71e5-4566-b3a7-595d8eeca6e8",
   "EntraIdAuthenticationFirstPartyResourceExample": "89d10474-74af-4874-99a7-c23c2f643083",
   "IAppHostPathMapper2MapPathMethod": "0f80e901-8f4c-449a-bf90-13d5d082f187",
-  "MicrosoftEntraSecurityGroupEnableMIPLabels": "d209f6fa-3839-4d70-b83f-60b1c64d0e8f"
+  "MicrosoftEntraSecurityGroupEnableMIPLabels": "d209f6fa-3839-4d70-b83f-60b1c64d0e8f",
+  "Microsoft.AzureStackHCI Provider": "1412d89f-b8a8-4111-b4fd-e82905cbd85d"
 }

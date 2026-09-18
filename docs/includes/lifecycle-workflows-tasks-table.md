@@ -29,7 +29,7 @@ Lifecycle Workflows currently support the following tasks:
 | [Remove user from selected teams](../id-governance/lifecycle-workflow-tasks.md#remove-user-from-selected-teams)    |    06aa7acb-01af-4824-8899-b14e5ed788d6     | Leaver        | 
 | [Remove user from all teams](../id-governance/lifecycle-workflow-tasks.md#remove-users-from-all-teams)     |    81f7b200-2816-4b3b-8c5d-dc556f07b024     | Leaver        | 
 | [Remove access package assignment for user](../id-governance/lifecycle-workflow-tasks.md#remove-access-package-assignment-for-user)     |    4a0b64f2-c7ec-46ba-b117-18f262946c50     | Leaver, Mover        | 
-| [Remove all access package assignments for user](../id-governance/lifecycle-workflow-tasks.md#remove-all-access-package-assignments-for-user)     |    42ae2956-193d-4f39-be06-691b8ac4fa1d     | Leaver        | 
+| [Remove all access package assignments for user](../id-governance/lifecycle-workflow-tasks.md#remove-all-access-package-assignments-for-user)     |    42ae2956-193d-4f39-be06-691b8ac4fa1d     | Leaver, Mover        | 
 | [Cancel all pending access package assignment requests for user](../id-governance/lifecycle-workflow-tasks.md#cancel-all-pending-access-package-assignment-requests-for-user)     |    498770d9-bab7-4e4c-b73d-5ded82a1d0b3    | Leaver        |
 | [Remove selected license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-selected-license-assignments-from-user)     | 5fc402a8-daaf-4b7b-9203-da868b05fc5f         | Leaver, Mover |
 | [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user)     | 509589a4-0466-4471-829e-49c5e502bdee         | Leaver, Mover |

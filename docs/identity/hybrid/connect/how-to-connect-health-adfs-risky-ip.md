@@ -5,8 +5,8 @@ ms.reviewer: zhiweiwangmsft
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
-ms.custom: H1Hack27Feb2017, sfi-image-nochange
+ms.date: 09/10/2026
+ms.custom: H1Hack27Feb2017
 ---
 
 # The Risky IP report 
@@ -36,8 +36,6 @@ The failed sign-in activity client IP addresses are aggregated through Web Appli
 
 The report provides the following information:
 
- :::image type="content" source="media/how-to-connect-health-adfs/report4a.png" alt-text="Screenshot that shows a Risky IP report with column headings highlighted." lightbox="media/how-to-connect-health-adfs/report4a.png":::
-
 | Report&nbsp;item | Description |
 | ------- | ----------- |
 | Time Stamp | The time stamp that's based on [Microsoft Entra admin center](https://entra.microsoft.com) local time when the detection time window starts.<br> All daily events are generated at midnight UTC time. <br>Hourly events have the time stamp rounded to the beginning of the hour. You can find the first activity start time from “firstAuditTimestamp” in the exported file. |
@@ -47,17 +45,17 @@ The report provides the following information:
 | Extranet Lockout Error Count | The count of extranet lockout errors that occur from the IP address during the detection time window. The extranet lockout errors can happen multiple times to certain users. This count is displayed only if Extranet Lockout is configured in AD FS (versions 2012R2 and later). **Note**: We strongly recommend enabling this feature if you allow extranet logins that use passwords. |
 | Unique Users Attempted | The count of unique user accounts that are attempted from the IP address during the detection time window. Differentiates between a single user attack pattern and a multi-user attack pattern. |
 
-For example, the following report item indicates that during the 6 PM to 7 PM window on February 28, 2018, the IP address *104.2XX.2XX.9* had no bad password errors and 284 extranet lockout errors. Fourteen unique users were affected within the criteria. The activity event exceeded the designated report's hourly threshold. 
-
-
- :::image type="content" source="media/how-to-connect-health-adfs/report4b.png" alt-text="Screenshot that shows an example of a Risky IP report entry." lightbox="media/how-to-connect-health-adfs/report4b.png":::
-
 > [!NOTE]
 > - Only activities that exceed the designated threshold are displayed in the report list. 
 > - This report tracks the past 30 days at most.
 > - This alert report doesn't show Exchange IP addresses or private IP addresses. They are still included in the export list. 
 
- :::image type="content" source="media/how-to-connect-health-adfs/report4c.png" alt-text="Screenshot that shows the Risky IP report with the Download, Notification Settings, and Threshold Settings buttons highlighted." lightbox="media/how-to-connect-health-adfs/report4c.png":::
+Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), select **AD FS services**, select a service, and then select the **Risky IP Addresses** report. The command bar provides **Refresh**, **Download Manager**, **Notification Settings**, and **Threshold Settings**.
+
+> [!IMPORTANT]
+> The Risky IP report is being deprecated. The page provides a link to the newer [Risky IP report workbook](how-to-connect-health-adfs-risky-ip-workbook.md), which supports customizable queries and expanded visualizations.
+
+:::image type="content" source="media/how-to-connect-health-adfs-risky-ip/connect-health-bad-internet-protocol-addresses.png" alt-text="Screenshot of the Connect Health bad IP addresses report with callouts for the workbook migration notice, report actions, and results table." lightbox="media/how-to-connect-health-adfs-risky-ip/connect-health-bad-internet-protocol-addresses.png":::
 
 ## Load balancer IP addresses in the list
 
@@ -65,7 +63,7 @@ Your load balancer aggregate might have failed, causing it to hit the alert thre
 
 ## Download the Risky IP report 
 
-Using the **Download** functionality, the whole risky IP address list in the past 30 days can be exported from the Connect Health Portal. The export result will include all the failed AD FS sign-in activities in each detection time window, so you can customize the filtering after the export. Besides the highlighted aggregations in the portal, the export result also shows more details about failed sign-in activities per IP address:
+Select **Download Manager** to review the three most recent export requests or request **Download latest report**. Export requests are limited to one per hour. A completed request provides a link to the risky IP address list from the past 30 days. The export includes all failed AD FS sign-in activities in each detection time window so that you can customize filtering offline. It also includes the following details:
 
 | Report Item | Description | 
 | ------- | ----------- | 
@@ -76,17 +74,15 @@ Using the **Download** functionality, the whole risky IP address list in the pas
 
 ## Configure notification settings
 
-You can update the report's administrator contacts through the **Notification Settings**. By default, the risky IP alert email notification is in an *off* state. You can enable the notification by toggling the button under **Get email notifications for IP addresses exceeding failed activity threshold report**.
+Select **Notification Settings** to update the report's administrator contacts. By default, the risky IP alert email notification is in an *off* state. You can enable **Get email notifications for IP addresses exceeding failed activity threshold report**.
 
-Like generic alert notification settings in Connect Health, it allows you to customize the designated notification recipient list about the Risky IP report from here. You can also notify all Hybrid Identity Administrators while you're making the change. 
+The panel also lets you enable notifications for new service alerts, notify all Global Administrators, and manage custom email recipients.
 
 ## Configure threshold settings
 
-You can update the alerting threshold in **Threshold Settings**. The system threshold is set with default values, which are shown in the following screenshot and described in the table. 
+Select **Threshold Settings** to update the alerting thresholds. The system default values are described in the following table.
 
 The risk IP report threshold settings are separated into four categories.
-
-![Screenshot of the Microsoft Entra Connect Health Portal that shows the four categories of threshold settings and their default values.](./media/how-to-connect-health-adfs/report4d.png)
 
 | Threshold setting | Description |
 | --- | --- |

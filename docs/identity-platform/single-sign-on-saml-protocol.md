@@ -326,12 +326,12 @@ The `AuthnContextClassRef` value reflects the method the user used to authentica
 | Email | `MobileOneFactorUnregistered`, or `MobileTwoFactorContract` when another factor is also completed | One-time passcode delivered by email. |
 | FIDO2 security key (phishing-resistant MFA) | `SmartcardPKI` | A FIDO2 security key, reported as a smartcard-backed certificate with a private key and PIN. |
 | Passkey - device-bound (phishing-resistant MFA) | `SmartcardPKI` | A device-bound passkey. |
-| Passkey - synced | `SoftwarePKI` | A synced passkey, reported as a software-based PKI credential. |
+| Passkey - synced (phishing-resistant MFA)| `SoftwarePKI` | A synced passkey, reported as a software-based PKI credential. |
 | Windows Hello for Business (phishing-resistant MFA) | `SmartcardPKI` | Windows Hello for Business. |
-| Certificate-based authentication (phishing-resistant MFA) | `SmartcardPKI` when used as MFA; `X509` for single-factor CBA | Certificate-based authentication (CBA). |
+| Certificate-based authentication (phishing-resistant MFA for multi-factor CBA) | `SmartcardPKI` when used as MFA; `X509` for single-factor CBA | Certificate-based authentication (CBA). |
 | Temporary Access Pass (TAP) | `Unspecified` | A Temporary Access Pass. |
 | Windows Integrated Authentication (Kerberos) | `Kerberos` | Windows Integrated Authentication. |
-| Federated IdP (pass-through) | Existing rules apply | The value passes through from the federated identity provider. |
+| Device based X509 authentication | `X509` | A certificate on the device proves the device's identity |
 
 #### authnmethodreferences
 
@@ -363,12 +363,14 @@ The following table lists the `authnmethodsreferences` values that Microsoft Ent
 | Email | `otp`, plus `multipleauthn` when MFA is completed with another factor | One-time passcode delivered by email. |
 | FIDO2 security key (phishing-resistant MFA) | `fido`, `multipleauthn` | A FIDO2 security key. |
 | Passkey - device-bound (phishing-resistant MFA) | `fido`, `multipleauthn` | A device-bound passkey. |
-| Passkey - synced | `fido`, `multipleauthn` | A synced passkey. |
+| Passkey - synced (phishing-resistant MFA)| `fido`, `multipleauthn` | A synced passkey. |
 | Windows Hello for Business (phishing-resistant MFA) | `hwk`, `multipleauthn` | Windows Hello for Business, reported as a hardware-bound key. |
-| Certificate-based authentication (phishing-resistant MFA) | `x509`, plus `multipleauthn` (default for multifactor CBA, or when MFA is completed with another factor for single-factor CBA) | Certificate-based authentication. |
+| Certificate-based authentication (phishing-resistant MFA for multi-factor CBA) | `x509`, plus `multipleauthn` (default for multifactor CBA, or when MFA is completed with another factor for single-factor CBA) | Certificate-based authentication. |
 | Temporary Access Pass (TAP) | `otp`, `multipleauthn` | A Temporary Access Pass. |
 | Windows Integrated Authentication (Kerberos) | `wia` | Windows Integrated Authentication. |
-| Federated IdP (pass-through) | Existing rules apply | The value passes through from the federated identity provider. |
+| Device based X509 authentication | `x509` | A certificate on the device proves the device's identity |
+
+Microsoft includes `x509` in the `amr` claim for both single-factor Certificate-Based Authentication (CBA) and device-based X.509 authentication. However, the presence of x509 alone does not qualify as phishing-resistant MFA (PRMFA). To meet PRMFA requirements, the user must also complete an additional MFA factor, which will be reflected by other authentication method indicators in the authentication context.
 
 > [!NOTE]
 > The `amr` claim is sent by default for Salesforce applications, so no configuration change is required for those apps. For all other SAML applications, the application administrator must add the optional `amr` claim with the `include_granular_amr` additional property to the app registration to request AMR claims. The `multipleauthn` and `mfa` values are emitted only when the user has completed MFA.

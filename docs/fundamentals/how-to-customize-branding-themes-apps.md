@@ -1,7 +1,7 @@
 ---
 title: Customize the sign-in experience for your application with branding themes
 description: Learn how to create branding themes and apply them to the sign-in experience for your application in Microsoft Entra ID.
-ms.date: 07/21/2026
+ms.date: 08/18/2026
 ms.reviewer:
 ms.topic: how-to
 ms.custom: msecd-doc-authoring-1015
@@ -115,7 +115,7 @@ Here are some of the limits and constraints for branding themes.
    - **Custom CSS** – Upload your own CSS file to replace default Microsoft styling with your own styling for: color, font, text size, position of elements, and displays for different devices and screen sizes. For more information, see [CSS template reference guide](reference-company-branding-css-template.md).
 
      > [!IMPORTANT]
-     > As part of the [Microsoft Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative), Microsoft Entra ID is retiring support for custom CSS *positioning properties* in company branding. After July 21, 2026, tenants that don't already use these properties can't configure them. Later, the properties will be deprecated globally and stop functioning. Eventually, custom CSS will be retired entirely. For the full list of deprecated properties and steps to update your CSS, see [CSS template reference guide](reference-company-branding-css-template.md#deprecation-of-custom-css-positioning-properties). For more information, see the blog post [Microsoft Entra ID enhances security of branded sign-ins](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-enhances-security-of-branded-sign-ins/4537471).
+     > To align with the [Microsoft Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative) and its focus on identity security and phishing resistance, Microsoft Entra ID is retiring support for custom CSS *layout and positioning properties* in company branding. After July 21, 2026, tenants created before January 6, 2026, that don't already use custom CSS can't configure custom CSS. Later, the properties will be deprecated globally and stop functioning. Eventually, custom CSS will be retired entirely. For the full list of deprecated properties and steps to update your CSS, see [CSS template reference guide](reference-company-branding-css-template.md#deprecation-of-custom-css-positioning-properties). For more information, see the blog post [Microsoft Entra ID enhances security of branded sign-ins](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-enhances-security-of-branded-sign-ins/4537471).
 
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/styling-tab.png" alt-text="Screenshot of the Create a theme page and the Styling tab settings." lightbox="./media/how-to-customize-branding-themes-apps/styling-tab.png":::
 

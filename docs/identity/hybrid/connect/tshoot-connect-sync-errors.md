@@ -272,7 +272,7 @@ The most common reason for the AttributeValueMustBeUnique error is that two obje
 
 This section discusses data validation failures.
 
-### IdentityDataValidationFailed
+### IdentityDataValidationFailed or DataValidationFailed
 
 #### Description
 
@@ -282,12 +282,14 @@ Microsoft Entra ID enforces various restrictions on the data itself before allow
 
 - The **userPrincipalName** attribute value has invalid or unsupported characters.
 - The **userPrincipalName** attribute doesn't follow the required format.
+- The **onPremisesObjectIdentifier** attribute changed as a result of the hard match operation.
 
-The result of the preceding scenarios is an IdentityDataValidationFailed error.
+The result of the preceding scenarios is an IdentityDataValidationFailed or DataValidationFailed error.
 
-#### Fix the IdentityDataValidationFailed error
+#### Fix the IdentityDataValidationFailed and DataValidationFailed errors
 
-Ensure that the **userPrincipalName** attribute has supported characters and the required format.
+Ensure that the **userPrincipalName** attribute has supported characters and the required format. If the **DataValidationFailed** error occurs during a hard match operation, use one of the **Hard match scenarios and recovery paths** described in [Configure Microsoft Entra Connect for an existing tenant](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-existing-tenant#hard-match-scenarios-and-recovery-paths)
+
 
 #### Related article
 

@@ -5,16 +5,14 @@ ms.assetid: 86cc3840-60fb-43f9-8b2a-8598a9df5c94
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
-ms.custom: sfi-ga-nochange, sfi-image-nochange
+ms.date: 09/10/2026
+ms.custom: sfi-ga-nochange
 ---
 # Microsoft Entra Connect Health operations
 This topic describes the various operations you can perform by using Microsoft Entra Connect Health.
 
 ## Enable email notifications
 You can configure the Microsoft Entra Connect Health service to send email notifications when alerts indicate that your identity infrastructure isn't healthy. This occurs when an alert is generated, and when it is resolved.
-
-![Screenshot of Microsoft Entra Connect Health email notification settings](./media/how-to-connect-health-operations/email_noti_discover.png)
 
 > [!NOTE]
 > Email notifications are enabled by default.
@@ -23,13 +21,14 @@ You can configure the Microsoft Entra Connect Health service to send email notif
 <a name='to-enable-azure-ad-connect-health-email-notifications'></a>
 
 ### To enable Microsoft Entra Connect Health email notifications
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com), search for Microsoft Entra Connect Health
-2. Select **Sync errors**
-3. Select **Notification Settings**.
-5. At the email notification switch, select **ON**.
-6. Select the check box if you want all Global Administrators to receive email notifications.
-7. If you want to receive email notifications at any other email addresses, specify them in the **Additional Email Recipients** box. To remove an email address from this list, right-select the entry and select **Delete**.
-8. To finalize the changes, select **Save**. Changes take effect only after you save.
+1. Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), and then select **Sync errors**.
+1. Select **Notification settings** on the command bar.
+1. For **Get email notification for alerts**, select **Yes**.
+1. Under **Recipients**, select **All global administrators** if you want all Global Administrators to receive notifications.
+1. Under **Custom notification emails**, add any other email addresses that should receive notifications. Use **Remove email** to remove an address.
+1. Select **Save**. Changes take effect only after you save them.
+
+:::image type="content" source="media/how-to-connect-health-operations/connect-health-notification-settings.png" alt-text="Screenshot of the Connect Health notification settings panel with callouts for enabling email, choosing recipients, and saving changes." lightbox="media/how-to-connect-health-operations/connect-health-notification-settings.png":::
 
 >[!NOTE] 
 > When there are issues processing synchronization requests in our backend service, this service sends a notification email with the details of the error to the administrative contact email address(es) of your tenant. We heard feedback from customers that in certain cases the volume of these messages is prohibitively large so we are changing the way we send these messages. 
@@ -50,6 +49,10 @@ When you're deleting a server, be aware of the following:
 * This action doesn't delete the data already collected from this server. That data is deleted in accordance with the Azure data retention policy.
 * After performing this action, if you want to start monitoring the same server again, you must uninstall and reinstall the Health Agent on this server.
 
+The service overview separates the two deletion paths. Select a server to open its details before deleting only that server. Use **Delete** on the service-level command bar only when you intend to delete the entire monitored service instance.
+
+:::image type="content" source="media/how-to-connect-health-operations/connect-health-delete-server-or-service.png" alt-text="Screenshot of the Connect Health service overview with callouts for selecting an individual server and using the service-level Delete action." lightbox="media/how-to-connect-health-operations/connect-health-delete-server-or-service.png":::
+
 <a name='delete-a-server-from-the-azure-ad-connect-health-service'></a>
 
 ### Delete a server from the Microsoft Entra Connect Health service
@@ -59,11 +62,11 @@ When you're deleting a server, be aware of the following:
 
 Microsoft Entra Connect Health for Active Directory Federation Services (AD FS) and Microsoft Entra Connect (Sync):
 
-1. Open the **Server** blade from the **Server List** blade by selecting the server name to be removed.
-2. On the **Server** blade, from the action bar, select **Delete**.
-![Screenshot of Microsoft Entra Connect Health delete server](./media/how-to-connect-health-operations/DeleteServer2.png)
-3. Confirm by typing the server name in the confirmation box.
-4. Select **Delete**.
+1. Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), select the applicable service type, and then select the service.
+1. In the servers section, select the server that you want to remove. For AD FS, select **View all servers** first.
+1. Select **Delete** on the command bar.
+1. Confirm by typing the server name in the confirmation box.
+1. Select **Delete**.
 
 Microsoft Entra Connect Health for AD Domain Services:
 
@@ -88,12 +91,11 @@ When you're deleting a service instance, be aware of the following:
 <a name='to-delete-a-service-instance-from-the-azure-ad-connect-health-service'></a>
 
 #### To delete a service instance from the Microsoft Entra Connect Health service
-1. Open the **Service** blade from the **Service List** blade by selecting the service identifier (farm name) that you want to remove. 
-2. On the **Service** blade, from the action bar, select **Delete**. 
-![Screenshot of Microsoft Entra Connect Health delete service](./media/how-to-connect-health-operations/DeleteServer.png)
-3. Confirm by typing the service name in the confirmation box (for example: sts.contoso.com).
-4. Select **Delete**.
-   <br><br>
+1. Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), and select the applicable service type.
+1. Select the service identifier, such as the farm name, that you want to remove.
+1. Select **Delete** on the command bar.
+1. Confirm by typing the service name in the confirmation box, such as `sts.contoso.com`.
+1. Select **Delete**.
 
 [//]: # (Start of RBAC section)
 ## Manage access with Azure RBAC
@@ -123,19 +125,20 @@ Permission is granted if an end user has access either at the directory or servi
 ### Allow users or groups access to Microsoft Entra Connect Health
 The following steps show how to allow access.
 #### Step 1: Select the appropriate access scope
-To allow a user access at the *all service instances* level within Microsoft Entra Connect Health, open the main blade in Microsoft Entra Connect Health.<br>
+To allow a user access at the *all service instances* level, open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), and then select **Role based access control (IAM)**.
+
+To manage access for an individual service instance, open the service and select **Access Control** where available.
+
+The IAM page lets you check existing access, review role assignments and roles, or create an assignment at the selected Connect Health scope.
+
+:::image type="content" source="media/how-to-connect-health-operations/connect-health-role-based-access-control.png" alt-text="Screenshot of the Connect Health role-based access control page with callouts for adding an assignment, reviewing role information, and granting access at the current scope." lightbox="media/how-to-connect-health-operations/connect-health-role-based-access-control.png":::
 
 #### Step 2: Add users and groups, and assign roles
-1. From the **Configure** section, select **Users**.<br>
-   ![Screenshot of Microsoft Entra Connect Health resource sidebar](./media/how-to-connect-health-operations/startRBAC.png)
-2. Select **Add**.
-3. In the **Select a role** pane, select a role (for example, **Owner**).<br>
-   ![Screenshot of Microsoft Entra Connect Health and Azure RBAC configure menu](./media/how-to-connect-health-operations/RBAC_add.png)
-4. Type the name or identifier of the targeted user or group. You can select one or more users or groups at the same time. Select **Select**.
-   ![Screenshot of Microsoft Entra Connect Health and Azure role list](./media/how-to-connect-health-operations/RBAC_select_users.png)
-5. Select **OK**.<br>
-6. After the role assignment is complete, the users and groups appear in the list.<br>
-   ![Screenshot of Microsoft Entra Connect Health and Azure RBAC and new users highlighted](./media/how-to-connect-health-operations/RBAC_user_list.png)
+1. Select **Add**, and then select **Add role assignment**.
+1. Select a role, such as **Owner**, **Contributor**, or **Reader**.
+1. Search for and select one or more users or groups.
+1. Confirm the role assignment.
+1. After the assignment is complete, the users and groups appear in the role assignments list.
 
 Now the listed users and groups have access, according to their assigned roles.
 
@@ -145,19 +148,11 @@ Now the listed users and groups have access, according to their assigned roles.
 >
 >
 
-#### Step 3: Share the blade location with users or groups
-1. After you assign permissions, a user can access Microsoft Entra Connect Health by going [here](https://aka.ms/aadconnecthealth).
-2. On the blade, the user can pin the blade, or different parts of it, to the dashboard. Select the **Pin to dashboard** icon.<br>
-   ![Screenshot of Microsoft Entra Connect Health and Azure RBAC pin blade, with pin icon highlighted](./media/how-to-connect-health-operations/RBAC_pin_blade.png)
-
-> [!NOTE]
-> A user with the Reader role assigned isn't able to get Microsoft Entra Connect Health extension from the Azure Marketplace. The user can't perform the necessary "create" operation to do so. The user can still get to the blade by going to the preceding link. For subsequent usage, the user can pin the blade to the dashboard.
->
->
+#### Step 3: Share the Connect Health location
+After you assign permissions, share the [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth) link with the users or groups.
 
 ### Remove users or groups
-You can remove a user or a group added to Microsoft Entra Connect Health and Azure RBAC. Simply right-select the user or group, and select **Remove**.<br>
-![Screenshot of Microsoft Entra Connect Health and Azure RBAC with Remove highlighted](./media/how-to-connect-health-operations/RBAC_remove.png)
+To remove access, select the user or group in the role assignments list, and then select **Remove**.
 
 [//]: # (End of RBAC section)
 
