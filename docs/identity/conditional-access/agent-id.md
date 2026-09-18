@@ -141,7 +141,7 @@ As the number of agent identities grows, individually managing each one across e
 
 :::image type="content" source="media/agent-id/conditional-access-agent-diagram.png" alt-text="Diagram showing the Conditional Access flow for agent identities." lightbox="media/agent-id/conditional-access-agent-diagram.png":::
 
-For a policy example, see [Allow approved agents by using custom security attributes](policy-autonomous-agents.md#allow-approved-agents-by-using-custom-security-attributes).
+For a policy example, see [Allow approved agents by using custom security attributes](policy-autonomous-agents.md#tab/use-custom-security-attributes).
 
 ## Boundaries and limitations
 
