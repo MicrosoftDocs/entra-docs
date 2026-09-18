@@ -30,7 +30,7 @@ Microsoft Entra ID Conditional Access for agents requires one of the following l
 - **Microsoft 365 E7**, which includes Agent 365 and Microsoft Entra Suite.
 - **Microsoft Agent 365** license paired with at least Microsoft Entra P1 or Microsoft 365 E3.
 
-For more information, see [What is Microsoft Entra Agent ID](../../agent-id/what-is-microsoft-entra-agent-id.md#how-to-get-started).
+For more information, see [Microsoft Agent 365 plans and pricing](https://www.microsoft.com/microsoft-agent-365#plans-and-pricing).
 
 <a name='how-conditional-access-evaluates-agent-access-requests'></a>
 
