@@ -4,7 +4,7 @@ metadata:
   description: Find answers to common questions about selecting, configuring, evaluating, and supporting Choose Your Own Telephony Provider for Microsoft Entra ID.
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 08/05/2026
+  ms.date: 09/18/2026
   ai-usage: ai-assisted
 title: Frequently asked questions about telephony providers in Microsoft Entra ID
 
@@ -24,13 +24,19 @@ sections:
     - question: |
         When will Choose Your Own Telephony Provider be available?
       answer: |
-        Information about supported telephony providers will be available starting September 18, 2026. The configuration experience will become available starting October 30, 2026.
+        Information about the telephony providers participating in the private preview is now available. The configuration experience will become available starting October 30, 2026.
 
-        Until the feature is available, you can review the supported provider options and begin planning your migration from Microsoft-managed SMS and voice authentication.
+        Until the configuration experience is available, review the supported provider options and begin planning your migration from Microsoft-managed SMS and voice authentication.
+    - question: |
+        Which telephony providers are available during the private preview?
+      answer: |
+        Soprano and Telesign are the initial telephony providers available during the private preview. More providers will become available by general availability.
+
+        Pricing and other commercial details for each provider will be available in Microsoft Security Store.
     - question: |
         Can I use my existing SMS provider?
       answer: |
-        Yes, you can use your existing provider if it's one of the supported telephony providers. Information about supported providers and their offerings will be available starting September 18, 2026. If your current provider isn't supported, you will need to select a supported provider to continue using SMS or voice authentication after Microsoft-managed telephony is retired.
+        Yes, you can use your existing provider if it's one of the supported telephony providers. If your current provider isn't supported, you will need to select a supported provider to continue using SMS or voice authentication after Microsoft-managed telephony is retired.
     - question: |
         Can I use Choose Your Own Telephony Provider to keep SMS sign-in as a primary authentication method?
       answer: |
@@ -51,7 +57,7 @@ sections:
       answer: |
         The primary cost is what your selected telephony provider charges for SMS and voice messages, based on the provider's pricing and your usage. The feature uses a routing function deployed in your Azure subscription to securely connect Microsoft Entra ID with your selected telephony provider. Standard Azure consumption charges apply to the routing function, but these costs are expected to be minimal for most customers compared to telephony provider charges.
 
-        More detailed provider pricing information will be available when supported providers become available on September 18, 2026.
+        Provider pricing and other commercial details will be available in Microsoft Security Store.
 
 - name: Migration and evaluation
   questions:
