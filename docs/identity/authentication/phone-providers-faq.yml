@@ -60,7 +60,7 @@ sections:
         Review pricing and other commercial details for the available provider offers:
 
         - Soprano: [Per-user offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_user) or [per-transaction offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_transaction) in Microsoft Security Store.
-        - Telesign: [Telesign Verify for Microsoft Entra](https://azuremarketplace.microsoft.com/marketplace/apps/telesigncorporation1779799505747.telesign-verify-cyot?tab=overview&flightCodes=accessazure) in Microsoft Marketplace.
+        - Telesign: [Telesign Verify for Microsoft Entra](https://securitystore.microsoft.com/solutions/telesigncorporation1779799505747.telesign-verify-cyot-azure) in Microsoft Security Store.
 
 - name: Migration and evaluation
   questions:
