@@ -4,7 +4,7 @@ metadata:
   description: Find answers to common questions about selecting, configuring, evaluating, and supporting Choose Your Own Telephony Provider for Microsoft Entra ID.
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 09/18/2026
+  ms.date: 09/20/2026
   ai-usage: ai-assisted
 title: Frequently asked questions about telephony providers in Microsoft Entra ID
 
@@ -32,7 +32,7 @@ sections:
       answer: |
         Soprano and Telesign are the initial telephony providers available during the private preview. More providers will become available by general availability.
 
-        Pricing and other commercial details for each provider will be available in Microsoft Security Store.
+        Pricing and other commercial details for these providers are available in Microsoft Security Store.
     - question: |
         Can I use my existing SMS provider?
       answer: |
@@ -57,7 +57,10 @@ sections:
       answer: |
         The primary cost is what your selected telephony provider charges for SMS and voice messages, based on the provider's pricing and your usage. The feature uses a routing function deployed in your Azure subscription to securely connect Microsoft Entra ID with your selected telephony provider. Standard Azure consumption charges apply to the routing function, but these costs are expected to be minimal for most customers compared to telephony provider charges.
 
-        Provider pricing and other commercial details will be available in Microsoft Security Store.
+        Review pricing and other commercial details for the available provider offers:
+
+        - Soprano: [Per-user offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_user) or [per-transaction offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_transaction) in Microsoft Security Store.
+        - Telesign: [Telesign Verify for Microsoft Entra](https://azuremarketplace.microsoft.com/marketplace/apps/telesigncorporation1779799505747.telesign-verify-cyot?tab=overview&flightCodes=accessazure) in Microsoft Marketplace.
 
 - name: Migration and evaluation
   questions:
