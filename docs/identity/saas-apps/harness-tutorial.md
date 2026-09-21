@@ -131,19 +131,19 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
     ![Screenshot that shows the "Account Settings" menu and "Security and Governance" tab and "Authentication Settings" selected.](./media/harness-tutorial/authentication.png)
 
-1. In **Authentication**, select **+ SAML Provider**. The **Add SAML ProvideR** page opens. Specify a name and select **Azure** as the SAML Provider. 
+1. In **Authentication**, select **+ SAML Provider**. The **Add SAML Provider** page opens. Specify a name and select **Azure** as the SAML Provider.
 
-    ![Screenshot that shows the "Azure" as the selected "S A M L Provider".](./media/harness-tutorial/providers.png)
+    ![Screenshot that shows the "Azure" as the selected SAML Provider.](./media/harness-tutorial/providers.png)
 
 1. On the **SAML Provider** pop-up, follow these steps:
 
-    ![Screenshot that shows the "Add S A M L Provider" pop-up with the "SAML Endpoint U R L" field highlighted.](./media/harness-tutorial/endpoint-url.png)
+    ![Screenshot that shows the "Add SAML Provider" pop-up with the "SAML Endpoint URL" field highlighted.](./media/harness-tutorial/endpoint-url.png)
 
     a. Copy the URL under **Enter this SAML Endpoint URL as your Harness application's ACS URL**, and paste it in the **Reply URL** in your Azure app.
 
     b. Select **Upload** to upload the Identity Provider Metadata XML file that you downloaded from Microsoft Entra ID.
 
-    c. Click **Add**.
+    c. Select **Add**.
 
 ### Create Harness test user
 
@@ -165,7 +165,7 @@ To provision a user account, follow these steps:
 
     a. In the **Users (name or email)** text box, enter the user's email address, as `B.simon@contoso.com`.
 
-    b. In the **User Group(s)** filed, click **Select User Group(s)**. Create a user group or select an existing user group. Click **Apply Selected**. 
+    b. In the **User Group(s)** field, select **Select User Group(s)**. Create a user group or select an existing user group. Select **Apply Selected**.
 
     c. Select **Save**.
 
