@@ -136,7 +136,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-09/18/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release.
+09/18/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release. Auto-upgrade will upgrade your existing installations to this build, and will complete in multiple phases.
 
 ### Bug fixes
 
