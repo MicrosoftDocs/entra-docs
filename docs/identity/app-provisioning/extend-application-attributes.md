@@ -1,13 +1,15 @@
 ---
 title: Reference for extending attribute mappings with custom call-outs using LCW extensibility workflows
 description: Learn how to use LCW extensibility workflows to invoke an Azure Logic App that generates a value for a target attribute using custom business logic
+author: Tejaswik350
+ms.author: tejaswik
 ms.topic: reference
 ms.date: 07/31/2026
 ms.reviewer: addimitu
 ai-usage: ai-assisted
 ---
 
-# Reference for extending Microsoft Entra attribute mappings with custom call-outs using LCW extensibility workflows (preview)
+# Reference for extending Microsoft Entra attribute mappings with custom call-outs using LCW extensibility workflows
 
 When you configure provisioning, one of the types of attribute mappings that you can specify is the Lifecycle Workflows (LCW) extensibility workflow mapping type. This mapping type allows you to extend attribute mappings beyond the basic transformations that are supported by the [expression mapping type](~/identity/app-provisioning/functions-for-customizing-application-data.md), enabling you to fulfill scenarios where custom business logic may be required.
 
@@ -18,7 +20,7 @@ To configure the LCW extensibility workflow mapping type, you will leverage the 
 
 To create an Azure Logic App, ensure you have:
 - An [Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account) (required for creating and using an Azure Logic App)
-- At least a [Logic App Contributor](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) role
+- At least a [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) role
 
 To create an LCW extensibility workflow to trigger the Azure Logic App, ensure you have:
 - An [Entra ID Governance license](~/id-governance/licensing-fundamentals.md)
@@ -45,7 +47,7 @@ This makes extensibility workflows useful in pre-provisioning (also referred to 
 
 You will need to create a consumption-based Azure Logic App that outputs a single value that will be applied to a target attribute.
 
-If you are new to Azure Logic Apps, you may read more [here](https://learn.microsoft.com/azure/logic-apps/logic-apps-overview). Additionally, you can find instructions on how to create your first consumption-based Azure Logic App in this [tutorial](https://learn.microsoft.com/azure/logic-apps/quickstart-create-example-consumption-workflow).
+If you are new to Azure Logic Apps, you may read more [here](/azure/logic-apps/logic-apps-overview). Additionally, you can find instructions on how to create your first consumption-based Azure Logic App in this [tutorial](/azure/logic-apps/quickstart-create-example-consumption-workflow).
 
 ## Step 1: Create a custom extension
 
@@ -74,7 +76,7 @@ You now have a custom extension that is ready to link to an extensibility workfl
 1. Sign in to your tenant.
 1. Select **Modify permissions**.
 1. Consent to the following required permissions: `LifecycleWorkflows-CustomExt.ReadWrite.All`
-1. Use the [Create customTaskExtensions API](https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-customtaskextensions) to create a custom extension.
+1. Use the [Create customTaskExtensions API](/graph/api/identitygovernance-lifecycleworkflowscontainer-post-customtaskextensions) to create a custom extension.
 
 **Example request**
 
@@ -168,7 +170,7 @@ You now have an extensibility workflow that can trigger an Azure Logic App that 
 1. Sign in to your tenant.
 1. Select **Modify permissions**.
 1. Consent to the following required permissions: `LifecycleWorkflows-Workflow.ReadWrite.All`
-1. Use the [Create workflow API](https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows) to create an LCW extensibility workflow.
+1. Use the [Create workflow API](/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows) to create an LCW extensibility workflow.
 
 **Example request**
 
@@ -341,7 +343,7 @@ Once you’re done configuring the settings of your provisioning job, you can no
 1. Sign in to your tenant.
 1. Select **Modify permissions**.
 1. Consent to the following required permissions: `Synchronization.ReadWrite.All`
-1. Copy/paste the edited schema object into the **Request body** section of the Microsoft Graph Explorer tool, and use the [Update synchronizationSchema API](https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update) to update the attribute mappings for a given provisioning job.
+1. Copy/paste the edited schema object into the **Request body** section of the Microsoft Graph Explorer tool, and use the [Update synchronizationSchema API](/graph/api/synchronization-synchronizationschema-update) to update the attribute mappings for a given provisioning job.
 
 **Example request**
 
