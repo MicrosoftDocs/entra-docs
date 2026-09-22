@@ -46,7 +46,7 @@ Each access token has one subject and one audience:
 
 - **Subject**: The identity that receives the token. 
 	- In delegated access, the token represents the user while also identifying the calling application or agent.
-	- In application-only access, the application or autonomous agent is the subject. 
+	- In application-only access, the agent identity is the subject. 
 	- In agent-user access, the agent's user account is the subject.
 - **Audience**: The target resource that the token is for, which must be registered in Entra ID. If a subject accesses multiple resources, it typically needs a separate token for each resource.
 
