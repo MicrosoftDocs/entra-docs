@@ -13,12 +13,10 @@ ai-usage: ai-assisted
 
 # Create content policies for network content filtering
 
-Global Secure Access supports network content filtering through content policies. This feature helps you safeguard against unintended data exposure and prevents inline data leaks to generative AI applications and internet destinations. By extending data protection capabilities to the network layer through Global Secure Access, network content filtering enables your organization to enforce data policies on network traffic in real time. You can discover and protect files and text content shared with unsanctioned destinations, such as generative AI and unmanaged cloud apps, from managed endpoints through browsers, applications, add-ins, APIs, and more.
+Microsoft Entra Global Secure Access content policies provide real-time control over what users and agents share with generative AI applications, unmanaged cloud apps, and other internet destinations. These controls apply to content shared from managed endpoints through browsers, applications, add-ins, APIs, and more.
+**Basic content filtering** lets you block specific content types from being shared with selected destinations.
+**Scan with Purview** enables network data security by combining Microsoft Purview's data classification with identity-centric Global Secure Access policies. It inspects files and text for sensitive information and helps prevent data loss by blocking its sharing based on your Purview policies. By combining content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
 
-The network content filtering solution brings together Microsoft Purview's data classification service and the identity-centric network security policies in Global Secure Access. This combination creates an advanced network-layer data security solution, Data Loss Prevention (DLP), that's identity-centric and policy-driven. By combining content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
-
-> [!NOTE]
-> Basic content policy (block or allow by file MIME type) is generally available. The **Scan with Purview** action in content policies is currently in preview and supports inspection for selected file and text content types. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ### High-level architecture
 :::image type="content" source="media/how-to-network-content-filtering/network-content-filtering-architecture.png" alt-text="Diagram showing the architecture of network content filtering with Global Secure Access and Microsoft Purview." lightbox="media/how-to-network-content-filtering/network-content-filtering-architecture.png":::
