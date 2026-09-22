@@ -58,7 +58,7 @@ Before configuring Netskope User Authentication for automatic user provisioning 
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Netskope User Authentication**, select **Netskope User Authentication** in the search box.
 1. Select **Netskope User Authentication** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-	![Netskope User Authentication in the results list](common/search-new-app.png)
+	![Screenshot of Netskope User Authentication in the results list.](./media//netskope-administrator-console-provisioning-tutorial/search-icon.png)
 
 ## Configuring automatic user provisioning to Netskope User Authentication 
 
