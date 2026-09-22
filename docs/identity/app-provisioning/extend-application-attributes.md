@@ -1,6 +1,8 @@
 ---
 title: Reference for extending attribute mappings with custom call-outs using LCW extensibility workflows
 description: Learn how to use LCW extensibility workflows to invoke an Azure Logic App that generates a value for a target attribute using custom business logic
+author: Tejaswik350
+ms.author: tejaswik
 ms.topic: reference
 ms.date: 07/31/2026
 ms.reviewer: addimitu
