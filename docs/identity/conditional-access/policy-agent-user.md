@@ -28,11 +28,11 @@ Before you start, review the licensing, role, agent-user, device, and network re
 	- Microsoft Agent 365 license paired with at least Microsoft Entra P1 or Microsoft 365 E3.
 - At least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
 - An [agent user account](../../agent-id/agent-users.md) linked to an agent identity.
-- For device compliance, an agent that runs on an Intune-managed Windows 365 Cloud PC for Agents.
-- For compliant network policies, a Global Secure Access client installed on the endpoint.
+- For device compliance, an agent that runs on an Intune-managed [Windows 365 Cloud PC for Agents.](https://learn.microsoft.com/en-us/windows-365/agents/introduction-windows-365-for-agents)
+- For compliant network policies, an agent that runs on an Intune-managed Windows 365 Cloud PC for Agents with [Global Secure Access](https://learn.microsoft.com/en-us/windows-365/agents/network-security-globalsecureaccess) client installed.
 
 > [!IMPORTANT]
-> Agent user targeting is in Preview. Policies that target all users don't include agent user accounts. Group-based inclusion and exclusion also aren't supported for agent user accounts. Target all agent users, select individual agent users, or use custom security attributes.
+> Agent user targeting is in Preview. Policies that target all users don't include agent user accounts. Group-based inclusion and exclusion also aren't supported for agent user accounts. Target "all agent users," select individual agent users, or use custom security attributes.
 
 A policy that targets an agent identity doesn't apply to the agent's user account. If the agent also uses its own agent identity, create a separate policy for that access pattern. For more information, see [Secure autonomous agents with Conditional Access](policy-autonomous-agents.md).
 
@@ -45,13 +45,13 @@ Conditional Access extends policy enforcement to these user-like autonomous agen
 - Apply agent risk conditions to block risky agents
 - Use the agent execution environments condition to scope policies to agents running on endpoints
 - Enforce device compliance for agents running on managed endpoints (Windows 365 Cloud PCs)
-- Enforce compliant network locations for agents with a Global Secure Access client
+- Enforce compliant network locations for agents running on managed endpoints (Windows 365 Cloud PCs) with a Global Secure Access client
 
-To create a Conditional Access policy for agents operating with their own identity, use the following settings:
+To create a Conditional Access policy for agent users, use the following settings:
 
-- **Assignments**: In an agent access flow, the access token is issued to the agent identity (the token subject), so you assign the policy to agents or their agent identity blueprint.
+- **Assignments**: In an agent access flow, the access token is issued to the agent users (the token subject), so you assign the policy to agents or their agent identity blueprint.
 - **Target resources**: Select the resources the agent needs to access.
-- **Conditions**: Configure whether the agent is at risk. For more information, see [ID Protection for agents](../../id-protection/concept-risky-agents.md).
+- **Conditions**: Configure whether you want the policy to apply when the agent is at a particular risk level. For example, a restrictive policy for agents that are high-risk. For more information, see [ID Protection for agents](../../id-protection/concept-risky-agents.md).
 - **Access control**: Because this agent accesses resources with its own identity, there's no remediation and the only available option is blocking access.
 
 
@@ -104,7 +104,7 @@ Note that not all agents run on endpoints. Agents running directly in Microsoft 
 
 ## Require a compliant network
 
-Use this policy to require agents running on endpoints to connect through a compliant network using [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access). The client provides the network location signal that Conditional Access evaluates.
+Use this policy to require agents running on endpoints to connect through a compliant network using [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access). The client provides the network location signal that Conditional Access evaluates. This applies to agents that run on a managed endpoint, such as a Windows 365 Cloud PC for Agents.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a Conditional Access Administrator.
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
