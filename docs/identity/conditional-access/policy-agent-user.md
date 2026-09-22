@@ -28,8 +28,8 @@ Before you start, review the licensing, role, agent-user, device, and network re
 	- Microsoft Agent 365 license paired with at least Microsoft Entra P1 or Microsoft 365 E3.
 - At least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
 - An [agent user account](../../agent-id/agent-users.md) linked to an agent identity.
-- For device compliance, an agent that runs on an Intune-managed [Windows 365 Cloud PC for Agents.](https://learn.microsoft.com/en-us/windows-365/agents/introduction-windows-365-for-agents)
-- For compliant network policies, an agent that runs on an Intune-managed Windows 365 Cloud PC for Agents with [Global Secure Access](https://learn.microsoft.com/en-us/windows-365/agents/network-security-globalsecureaccess) client installed.
+- For device compliance, an agent that runs on an Intune-managed [Windows 365 Cloud PC for Agents](/windows-365/agents/introduction-windows-365-for-agents).
+- For compliant network policies, an agent that runs on an Intune-managed Windows 365 Cloud PC for Agents with [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) client installed.
 
 > [!IMPORTANT]
 > Agent user targeting is in Preview. Policies that target all users don't include agent user accounts. Group-based inclusion and exclusion also aren't supported for agent user accounts. Target "all agent users," select individual agent users, or use custom security attributes.
