@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.topic: reference
-ms.date: 09/17/2026
+ms.date: 09/23/2026
 ms.subservice: hybrid-connect
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ai-usage: ai-assisted
@@ -105,8 +105,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|2 Feb 2026|
 |[2.6.3.0](#2630)|07 Jul 2027 (12 months after release of 2.6.84.0)|10 Mar 2026|
 |[2.6.84.0](#26840)|16 Sep 2027 (12 months after release of 2.6.91.0)|7 Jul 2026|
-|[2.6.91.0](#26910)|18 Sep 2027 (12 months after release of 2.6.92.0)|16 Sep 2026|
-|[2.6.92.0](#26920)||18 Sep 2026|
+|[2.6.91.0](#26910)|23 Sep 2027 (12 months after release of 2.6.92.0)|16 Sep 2026|
+|[2.6.92.0](#26920)||23 Sep 2026|
 
 **All other versions are not supported**
 
@@ -136,7 +136,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-09/18/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release. Auto-upgrade will upgrade your existing installations to this build, and will complete in multiple phases.
+09/23/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release. Auto-upgrade will upgrade your existing installations to this build, and will complete in multiple phases.
 
 ### Bug fixes
 
