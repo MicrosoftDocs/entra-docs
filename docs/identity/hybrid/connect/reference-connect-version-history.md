@@ -136,13 +136,16 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-09/23/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release. Auto-upgrade will upgrade your existing installations to this build, and will complete in multiple phases.
+09/23/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release. 
 
 ### Bug fixes
 
 - Fixed an issue in version 2.6.91.0 where enabling Pass-through Authentication through the Microsoft Entra Connect wizard could fail while registering the locally installed Microsoft Entra Connect Authentication Agent.
 
 ## 2.6.91.0
+
+> [!IMPORTANT]
+> Microsoft Graph permissions have been added to Microsoft Entra Connect. If you use app-scoped Conditional Access policies, review policies targeting Microsoft.Azure.SyncFabric or Microsoft 365 Reporting Service.
 
 ### Release status
 
@@ -172,8 +175,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an issue where expanding a previously deselected domain on the Domain and OU filtering page could reselect the domain and enable synchronization for the entire domain after the wizard completed.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies and hardened local temporary-file permissions and SharePoint connector profile-image downloads.
 
-> [!IMPORTANT]
-> Microsoft Graph permissions have been added to Microsoft Entra Connect. If you use app-scoped Conditional Access policies, review policies targeting Microsoft.Azure.SyncFabric or Microsoft 365 Reporting Service.
 
 ### Known issues
 
