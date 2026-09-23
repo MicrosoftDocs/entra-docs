@@ -7,7 +7,7 @@ ms.reviewer: addimitu
 ai-usage: ai-assisted
 ---
 
-# Reference for extending Microsoft Entra attribute mappings with custom call-outs using LCW extensibility workflows (preview)
+# Reference for extending Microsoft Entra attribute mappings with custom call-outs using LCW extensibility workflows
 
 When you configure provisioning, one of the types of attribute mappings that you can specify is the Lifecycle Workflows (LCW) extensibility workflow mapping type. This mapping type allows you to extend attribute mappings beyond the basic transformations that are supported by the [expression mapping type](~/identity/app-provisioning/functions-for-customizing-application-data.md), enabling you to fulfill scenarios where custom business logic may be required.
 
