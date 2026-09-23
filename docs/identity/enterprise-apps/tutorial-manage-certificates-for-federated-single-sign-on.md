@@ -110,8 +110,9 @@ You can add up to five email addresses to the Notification list (including the e
 You receive the notification email from azure-noreply@microsoft.com. To avoid the email going to your spam location, add this email to your contacts.
 
 > [!NOTE]
-> If notification email address configuration is completed programmatically using Microsoft Graph or PowerShell, administrators should open the single sign-on blade for the application in the Microsoft Entra admin center to ensure expiration notifications are enabled.
-> Failure to initialize SAML settings in the admin center may result in certificate expiration notification emails not being sent.
+> If notification email address configuration is completed programmatically using Microsoft Graph or PowerShell, administrators should also save the notification email settings in the Microsoft Entra admin center. 
+> Go to **Enterprise applications** > **[Application]** > **Single sign-on** > **SAML**, select **Edit** in the **SAML Certificates** and under **Notification email** section, re-confirm the notification email address, and then select **Save**.
+> If the SAML settings aren’t re-saved in the admin center, certificate expiration notification emails might not be sent.
 
 
 ## Renew a certificate that is set to expire soon
