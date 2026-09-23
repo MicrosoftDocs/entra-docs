@@ -3,8 +3,9 @@ title: Microsoft Entra ID Governance licensing for guest users
 description: Learn how Microsoft Entra ID is licensed for guest users.
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 04/27/2026
+ms.date: 09/23/2026
 ms.reviewer: jercon
+ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to understand how Microsoft Entra ID Governance is licensed for guest users so that I can ensure proper licensing for external collaborators.
 ---
 
@@ -45,6 +46,10 @@ The following table contains a list of currently billable actions for **guest us
 | Entitlement Management  | [Directly assign any identity](entitlement-management-access-package-assignments.md#directly-assign-an-identity)  | Bill on successful request creation when using directly assigning an access package to a user not yet in the directory.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when using requestType "*AdminAdd*" for a user who doesn’t exist in the directory.  | Entitlement Management invites external user.  |
 | Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Bill on conversion to governed user.<br><br>**API**<br> https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/subjects where *"subjectLifecycle"* is set to "governed".  | Update access package user lifecycle. |
 | Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Bill on workflow execution.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/{workflowId}/activate  | Workflow execution started for user.  |
+| Lifecycle Workflows | Guest is disabled by a Guest Lifecycle Policy | N/A | Guest user disabled by lifecycle policy |
+| Lifecycle Workflows | Guest is deleted by a Guest Lifecycle Policy | N/A | Guest user deleted by lifecycle policy |
+| Lifecycle Workflows | Sponsor attests to a guest user (extends sponsorship) | POST /beta/users/{guestUserId}/microsoft.graph.identityGovernance.attest | Attest guest user |
+| Lifecycle Workflows | User sponsors a new guest user | POST /beta/users/{guestUserId}/microsoft.graph.identityGovernance.addSelfAsSponsor | Sponsor guest user |
 | Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill when guest user is included in review. <br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings are enabled in a group review. | Decision item summary.  |
 | Access Reviews    | [Access Review – inactive users](../identity/users/clean-up-stale-guest-accounts.md#monitor-guest-accounts-at-scale-with-inactive-guest-insights) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Decision item summary.  |
 
