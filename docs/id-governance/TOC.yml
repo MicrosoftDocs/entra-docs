@@ -151,6 +151,8 @@
         href: entitlement-management-group-licenses.md
       - name: Create an access package for an application - PowerShell
         href: entitlement-management-access-package-create-app.md
+      - name: Integrating Entitlement Management with ServiceNow
+        href: entitlement-management-servicenow-integration.md
       - name: Automated ServiceNow Ticket Creation Integration
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
@@ -192,6 +194,8 @@
     items:
     - name: What is entitlement management?
       href: entitlement-management-overview.md
+    - name: Reconciliation overview
+      href: reconciliation-overview.md
     - name: Delegation and roles
       href: entitlement-management-delegate.md
     - name: Request process and emails
@@ -329,7 +333,7 @@
         href: entitlement-management-request-approve.md
       - name: Review access of an access package
         href: entitlement-management-access-reviews-review-access.md  
-      - name: Delegate approvers (Preview)
+      - name: Delegate approvals and access reviews
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
         href: entitlement-management-access-reviews-self-review.md   
@@ -371,6 +375,8 @@
         href: review-your-access.md
       - name: Complete an access review
         href: complete-access-review.md
+      - name: Delegate approvals and access reviews
+        href: delegate-approvals-my-access.md
     - name: Microsoft Entra roles and Azure resource roles
       items:
       - name: Create an access review
@@ -409,7 +415,7 @@
           href: manage-workflow-custom-security-attribute.md    
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
-        - name: Workflow What-if tool (Preview)
+        - name: Workflow What-if tool
           href: simulate-workflow-execution.md  
         - name: Customize emails
           href: customize-workflow-email.md
@@ -417,12 +423,14 @@
           href: check-status-workflow.md
         - name: Reprocess workflows
           href: reprocess-workflow.md
-        - name: Cancel workflow runs (Preview)
+        - name: Cancel workflow runs
           href: cancel-workflow-runs.md
         - name: Download workflow history reports
           href: download-workflow-history.md
         - name: Manage inactive users
-          href: lifecycle-workflow-inactive-users.md      
+          href: lifecycle-workflow-inactive-users.md
+        - name: Manage unsponsored guests (Preview)
+          href: how-to-lifecycle-workflow-unsponsored-guest-removal.md
         - name: Check execution user scope
           href: check-workflow-execution-scope.md
         - name: Delegated Workflow Management

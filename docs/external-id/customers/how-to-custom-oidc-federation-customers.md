@@ -2,7 +2,7 @@
 title: Add OIDC for customer sign-in
 description: Learn how to set up OpenID Connect as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
 ms.topic: how-to
-ms.date: 06/11/2026
+ms.date: 07/29/2026
 ms.reviewer: brozbab
 ms.custom: it-pro, msecd-doc-authoring-1012
 ai-usage: ai-assisted
@@ -13,9 +13,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up federation with a custom-configured OpenID Connect (OIDC) identity provider, you enable users to sign up and sign in to your applications using their existing accounts from the federated external provider. This OIDC federation allows authentication with various providers that adhere to the OpenID Connect protocol. 
-
-When you add an OIDC identity provider to your user flow's sign-in options, users can sign up and sign in to the registered applications defined in that user flow. They can do this using their credentials from the OIDC identity provider. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+By setting up federation with a custom-configured OpenID Connect (OIDC) identity provider, you enable users to sign in to your applications using their existing accounts from the federated external provider. This OIDC federation allows authentication with various providers that adhere to the OpenID Connect protocol. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 ## Prerequisites
 
@@ -98,18 +96,9 @@ After you configure your identity provider, complete this step to configure a ne
 > Microsoft recommends you do *not* use the [implicit grant flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow#security-concerns-with-implicit-grant-flow) or the [ROPC flow](/entra/identity-platform/v2-oauth-ropc). 
 Therefore, OpenID Connect external identity provider configuration doesn't support these flows. The recommended way of supporting SPAs is [OAuth 2.0 Authorization code flow (with PKCE)](/entra/identity-platform/v2-oauth2-auth-code-flow#applications-that-support-the-auth-code-flow) which is supported by OIDC federation configuration.
 
-## Add OIDC identity provider to a user flow
+## Enable users to sign in and sign up with the identity provider
 
-At this point, you set up the OIDC identity provider in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the OIDC identity provider to a user flow:
-
-1. In your external tenant, browse to **Entra ID** > **External Identities** > **User flows**.
-1. Select the user flow where you want to add the OIDC identity provider.
-1. Under Settings, select **Identity providers**.
-1. Under **Other Identity Providers**, select **OIDC identity provider**.
-
-   :::image type="content" source="media/how-to-custom-oidc-federation-customers/custom-oidc-provider.png" alt-text="Screenshot of the custom OIDC provider in the IdP list.":::
-
-1. Select **Save**.
+After you configure the OIDC identity provider, add it to a user flow to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md).
 
 ## Make email optional for external identity provider sign-up
 
@@ -117,9 +106,6 @@ By default, an email address is required when users sign up with an external ide
 
 > [!IMPORTANT]
 > Making email optional is a user flow–level setting. This change applies to sign-ups for **all applications** associated with the user flow.
-
-> [!NOTE]
-> When email isn't collected, email one-time passcode (OTP) can't be used for MFA. Make sure an alternative MFA method (such as SMS) is enabled if your policies require MFA.
 
 > [!TIP]
 > The account picker typically displays the user's email address. When no email address is collected, the display name is shown instead. To help users easily identify their account, map the `name` claim in [Claims mapping](reference-oidc-claims-mapping-customers.md) or collect display name during sign-up.
@@ -177,14 +163,18 @@ To make the email attribute optional in your user flow, use the Microsoft Graph 
 
 ## Known limitations
 
-Conditional Access policies that require MFA registration don't function as expected when an external tenant is federated with an external identity provider (IdP). This limitation can result in one of the following behaviors:
+### Issuer URI updates
 
-- Users can't register an MFA method and can't complete sign-in, and often encounter an error.
-- Users aren't redirected to the MFA registration (sign-up) flow during sign-in as expected.
-- A user created without an email address can't register an email address for use with email one-time passcode (OTP) as an MFA method.
+When you update the Issuer URI for an existing OIDC identity provider (IdP), the updated configuration might not automatically take effect in user flows. As a result, the IdP sign-in option might not appear on the sign-in page.
+
+To apply the change:
+
+1. Disable the IdP in the user flow.
+1. Save the user flow.
+1. Re-enable the IdP.
+1. Save the user flow again.
 
 ## Related content
 
 - [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
-- [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

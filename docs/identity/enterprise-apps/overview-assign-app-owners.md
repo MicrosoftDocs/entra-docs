@@ -19,7 +19,7 @@ In all other scenarios, ownership is not assigned by default to an enterprise ap
 
 As an owner of an enterprise application in Microsoft Entra ID, a user can manage the organization-specific configuration of the application. This configuration includes single sign-on, provisioning, and user assignment. An owner can also add or remove other owners.
 
-Unlike privileged role administrators, owners can manage only the enterprise applications that they own. Owners have the same permissions as application administrators, scoped to an individual application. To learn more about the permissions that an owner of an application has, see [Ownership permissions](~/fundamentals/users-default-permissions.md#owned-enterprise-applications).
+Unlike application administrators, owners can manage only the enterprise applications that they own. Owners have the same permissions as application administrators, scoped to an individual application. To learn more about the permissions that an owner of an application has, see [Ownership permissions](~/fundamentals/users-default-permissions.md#owned-enterprise-applications).
 
 > [!NOTE]
 > The application might have more permissions than the owner. This situation is an elevation of privilege over what the owner can access as a user. In that case, an application owner can create or update users or other objects while impersonating the application. The elevation of privilege to owners can raise a security concern in some cases, depending on the application's permissions.

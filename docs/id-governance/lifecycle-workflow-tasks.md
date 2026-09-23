@@ -65,24 +65,45 @@ For a step by step guide on this process, see: [Customize emails sent out by wor
 
 ### Dynamic attributes within email
 
-With customized emails, you're able to include dynamic attributes within the subject and body to personalize these emails. The list of dynamic attributes that can be included are as follows:
+With customized emails, you're able to include dynamic attributes within the subject and body to personalize these emails. You can include built-in user attributes, custom security attributes, directory extensions, and on-premises extension attributes. The following tables show examples of available dynamic attributes:
 
+**User attributes**
 
 |Attribute  |Definition  |
 |---------|---------|
-|userDisplayName     | The user’s display name.        |
-|userEmployeeHireDate     | The user’s employee hire date.        |
-|userEmployeeLeaveDateTime     | The user’s employee leave date and time.        |
-|managerDisplayName     |  The display name of the user’s manager.        |
-|temporaryAccessPass     |  The generated Temporary Access Pass. Only available with the **Generate TAP And Send Email** task.       |
-|userPrincipalName     |  The user’s userPrincipalName.       |
-|managerEmail     |  The manager’s email.        |
-|userSurname     |  User’s family name.       |
-|userGivenName     | User’s first name.        |
+|`{{user.displayName}}`     | The user's display name.        |
+|`{{user.givenName}}`     | The user's first name.        |
+|`{{user.userPrincipalName}}`     | The user's user principal name.        |
+|`{{user.employeeHireDate}}`     | The user's employee hire date.        |
+|`{{user.employeeLeaveDateTime}}`     | The user's employee leave date and time.        |
+|`{{user.createdDateTime}}`     | The date and time the user was created.        |
+|`{{user.employeeType}}`     | The user's employee type.        |
+|`{{user.department}}`     | The user's department.        |
+|`{{user.companyName}}`     | The user's company name.        |
+|`{{user.jobTitle}}`     | The user's job title.        |
+|`{{temporaryAccessPass}}`     | The generated Temporary Access Pass. Only available with the **Generate TAP And Send Email** task.        |
 
+**Manager attributes**
+
+|Attribute  |Definition  |
+|---------|---------|
+|`{{managerDisplayName}}`     | The display name of the user's manager.        |
+|`{{managerEmail}}`     | The manager's email.        |
+
+**Extension and custom attributes**
+
+|Attribute  |Definition  |
+|---------|---------|
+|`{{user.employeeOrgData/costCenter}}`     | The user's cost center from employee organization data.        |
+|`{{user.employeeOrgData/division}}`     | The user's division from employee organization data.        |
+|`{{user.customSecurityAttributes/attributeSet/attributeName}}`     | A custom security attribute value. Replace `attributeSet` and `attributeName` with your attribute set and attribute names.        |
+|`{{user.onPremisesExtensionAttributes/extensionAttribute1}}`     | An on-premises extension attribute. Replace `extensionAttribute1` with the desired attribute number (1-15).        |
 
 > [!NOTE]
-> When adding these attributes to a customized email, or subject, they must be properly embedded. For a step by step guide on doing this, see: [Format attributes within customized emails](customize-workflow-email.md).
+> When adding these attributes to a customized email, or subject, they must be properly formatted using `{{user.graphPropertyName}}` syntax. For a step by step guide on doing this, see: [Format attributes within customized emails](customize-workflow-email.md).
+
+> [!IMPORTANT]
+> The new `{{user.graphPropertyName}}` attribute format applies to new custom email tasks. Existing customized email tasks on workflows that were configured before this change are not affected and continue to work with their existing attribute formatting.
 
 ## Task details
 
@@ -475,22 +496,22 @@ Example of usage within the workflow:
 
 ```
 
-### Update user attributes (Preview)
+### Update user attributes
 
 Lifecycle Workflows allow you to automate the updating of user attributes for users in your organization. You're able to customize the task name and description for this task in the Microsoft Entra admin center. 
 
 > [!NOTE]
-> This task does not currently support updating user attribute for synced users. For more information, see: [Update user attributes with Lifecycle Workflows (Preview)](how-to-lifecycle-workflow-update-user-attributes.md).
+> For users synced from on-premises AD, this task supports directory extension attributes only. For more information, see: [Update user attributes with Lifecycle Workflows](how-to-lifecycle-workflow-update-user-attributes.md).
 
 :::image type="content" source="media/lifecycle-workflow-task/update-user-attribute-task.png" alt-text="Screenshot of the update user attribute task.":::
 
 
-For Microsoft Graph, the parameters for the **Update user attributes (Preview)** task are as follows:
+For Microsoft Graph, the parameters for the **Update user attributes** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
 |category    |  joiner, leaver, mover      |
-|displayName     |   Update user attributes (Preview)     |
+|displayName     |   Update user attributes     |
 |description     | Update or clear user attribute values.    |
 |taskDefinitionId     |   2c8f4a1b-7d3e-4f9c-8a5b-6e1d2c3f4a5b     |
 |arguments     |  Argument contains the name parameter "attributeUpdates," which is a JSON string specifying up to 10 user attributes to update or clear. The attributes can include built-in, on-premises extensions, directory extensions, and employee org data.   |
@@ -823,18 +844,18 @@ Example of usage within the workflow:
 
 Allows you to remove all access package assignments for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
-You're able to customize the task name, description, and whether access package assignments are removed immediately or after a certain number of days for this task in the Microsoft Entra admin center.
+You're able to customize the task name, description, and whether access package assignments are removed immediately or after a certain number of days for this task in the Microsoft Entra admin center. When used in mover workflow templates, the default option is scheduled removal set to 15 days.
 :::image type="content" source="media/lifecycle-workflow-task/remove-all-access-package-assignment-user-task.png" alt-text="Screenshot of the remove all user access package assignment task.":::
 
 For Microsoft Graph, the parameters for the **Remove all access package assignments for user** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  leaver      |
+|category    |  leaver, mover      |
 |displayName     |  Remove all access package assignments for user (Customizable by user)        |
-|description     |  Remove all access packages assigned to the user (Customizable by user)        |
+|description     |  Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate. (Customizable by user)        |
 |taskDefinitionId     |   42ae2956-193d-4f39-be06-691b8ac4fa1d      |
-|arguments     |  Argument contains a name parameter that is the "daysUntilExpiration", and a value parameter that is the days until expiration of all access package assignments for the user.   |
+|arguments     |  Argument contains a required name parameter that is the "daysUntilExpiration", and a value parameter that is the days until expiration of all access package assignments for the user. For mover templates, this defaults to 15 days.   |
 
 Example of usage within the workflow:
 
@@ -842,13 +863,13 @@ Example of usage within the workflow:
 {
     "category": "leaver",
     "continueOnError": false,
-    "description": "Remove all access packages assigned to the user",
+    "description": "Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate.",
     "displayName": "Remove all access package assignments for user",
     "isEnabled": true,
     "taskDefinitionId": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
     "arguments": [
         {
-             "description": "Remove all access packages assigned to the user",
+             "description": "Remove all access package assignments for the user. When daysUntilExpiration is set, removal is scheduled rather than immediate.",
             "displayName": "Remove all access package assignments for user",
             "id": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
             "version": 1,
@@ -1363,6 +1384,60 @@ Example of usage within the workflow:
         {
             "name": "customBody",
             "value": "We’re notifying you that a recent sign-in for [UserDisplayName]’s user account has not been detected, and the account is considered inactive. The last sign in was [LastSigninDate]. To maintain a secure environment, your organization may have already started the process to disable or delete this user account.\n\nPlease check your organization’s policies and take appropriate action if this user account is still needed.\n\nRegards\nYour IT department"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
+### Send email about unsponsored guest removal (Preview)
+
+Allows you to send an email notification to specified recipients when unsponsored guests are being removed from your organization. This task is part of the automation for detecting and cleaning up sponsorless guests in Microsoft Entra ID. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+:::image type="content" source="media/lifecycle-workflow-task/send-email-unsponsored-guest-removal-task.png" alt-text="Screenshot of Workflows task: send email about unsponsored guest removal task.":::
+
+> [!NOTE]
+> This task is currently in preview and is only available for leaver workflows.
+
+The Microsoft Entra prerequisites to run the **Send email about unsponsored guest removal (Preview)** task are:
+
+- The guest user account must be identified as unsponsored (having no valid sponsor).
+
+For Microsoft Graph, the parameters for the **Send email about unsponsored guest removal (Preview)** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver      |
+|displayName     | Send email about unsponsored guest removal (Preview)    |
+|description     |  Notify specified recipients about unsponsored guest removal (Customizable by user)        |
+|taskDefinitionId     |   a8e4c7f2-9d1b-4a3e-b5c6-8f2e7a9d4c1b      |
+|arguments     |  The optional [common email task parameters](#common-email-task-parameters) can be specified; if they aren't included, the default behavior takes effect. Recipients can include Lifecycle Workflows Administrators, Global Administrators, Selected users, Manager, or User.    |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "leaver",
+    "continueOnError": false,
+    "description": "Notify specified recipients about unsponsored guest removal",
+    "displayName": "Send email about unsponsored guest removal (Preview)",
+    "isEnabled": true,
+    "taskDefinitionId": "a8e4c7f2-9d1b-4a3e-b5c6-8f2e7a9d4c1b",
+    "arguments": [
+        {
+            "name": "cc",
+            "value": "ac17d108-60cd-4eb2-a4b4-084cacda33f2"
+        },
+        {
+            "name": "customSubject",
+            "value": "Guest user {{userDisplayName}} removal notification"
+        },
+        {
+            "name": "customBody",
+            "value": "Hello,\n\nThis is a notification that guest user {{userDisplayName}} is being removed from your organization due to no valid sponsor.\n\nIf you believe this action is incorrect, please contact your IT department immediately.\n\nRegards\nYour IT department"
         },
         {
             "name": "locale",

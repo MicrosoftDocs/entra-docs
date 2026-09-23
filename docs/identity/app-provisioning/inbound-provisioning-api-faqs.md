@@ -98,7 +98,7 @@ Refer to the tutorial [Extend API-driven provisioning to sync custom attributes]
 
 You may have a scenario where you want to send all users to the API endpoint, but only include certain users in the provisioning flow and exclude the rest.
 
-You can achieve this using the **Scoping filter**. In the provisioning app configuration, you can define a source object scope and exclude certain users from processing either using an "inclusion rule" (for example, only process users where department EQUALS **Sales**) or an "exclusion rule" (for example, exclude users belonging to Sales, department NOT EQUALS **Sales**).
+You can achieve this using a **scoping filter**. In the provisioning app configuration, you can define scoping filter rules to exclude certain users from processing either using an "inclusion rule" (for example, only process users where department EQUALS **Sales**) or an "exclusion rule" (for example, exclude users belonging to Sales, department NOT EQUALS **Sales**).
  
  See [Scoping users or groups to be provisioned with scoping filters](define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -113,6 +113,16 @@ Here's how the provisioning job associated with the /bulkUpload API endpoint pro
 1. If the job determines that some values have changed, then it updates the corresponding user record in the directory.
 
 To make sure that the right users get updated in Microsoft Entra ID, make sure you define the right matching attribute pair in your mapping which uniquely identifies users in your source and Microsoft Entra ID.
+
+## Can we clear an existing user attribute using the provisioning /bulkUpload API endpoint?
+
+Yes, you can clear an existing user attribute using API-driven inbound provisioning. For supported scenarios and configuration steps, see [Clear attribute values (Preview)](clear-attribute-values.md).
+
+## Can we delete users using the provisioning /bulkUpload API endpoint?
+
+No, API-driven provisioning /bulkUpload API endpoint does not support user object deletion. 
+To automate user object deletion "X" days after termination or account disable operation, we recommend using [Entra ID Governance Lifecycle Workflows delete user task](../../id-governance/lifecycle-workflow-tasks.md#delete-user). 
+
 
 ## Can we create more than one app that supports API-driven inbound provisioning?
 

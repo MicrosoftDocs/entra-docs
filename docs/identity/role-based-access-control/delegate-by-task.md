@@ -2,7 +2,7 @@
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
 ms.topic: reference
-ms.date: 06/20/2025
+ms.date: 06/17/2026
 ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
@@ -451,6 +451,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Dismiss all events | [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Perform identity containment actions for SOC incident response | [Entra SOC Identity Responder](permissions-reference.md#entra-soc-identity-responder) |  |
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read users flagged for risk | [Security Reader](permissions-reference.md#security-reader) |  |
 
@@ -492,7 +493,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Create user | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Delete users | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Invalidate refresh tokens of limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
-> | Invalidate refresh tokens of non-admins | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Invalidate refresh tokens of non-admins | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) |  [User Administrator](permissions-reference.md#user-administrator) <br/> [Security Administrator](permissions-reference.md#security-administrator) |
 > | Invalidate refresh tokens of privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Read basic configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Reset password for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |

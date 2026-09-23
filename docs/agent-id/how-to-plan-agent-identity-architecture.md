@@ -50,6 +50,22 @@ Don't use a regular Microsoft Entra user account for an AI agent. User accounts 
 - **Identity governance** processes such as joiner-mover-leaver workflows, access packages, and access reviews aren't designed for agent lifecycle patterns and might incorrectly remove agent access.
 - Your agents would appear in the Global Address List, Teams, and SharePoint alongside human employees, making it harder to distinguish AI agents from people.
 
+### Don't register an app for your agent
+
+If you're used to creating workload identities, your instinct might be to create an app registration or service principal for your agent — for example, by running `az ad app create`, `New-MgApplication`, `New-AzADApplication`, or a `POST /applications` Microsoft Graph request. Don't do this for AI agents. An identity created this way is a standard application: it has no sponsor, no agent-specific audit entries, and no blueprint-managed lifecycle. Microsoft Entra doesn't govern it as an agent, and labeling it an "agent identity" doesn't make it one.
+
+Instead, create an agent identity blueprint and then create agent identities from it. Agent identities are a distinct Microsoft Entra object type (`#Microsoft.Graph.AgentIdentity`) created through the blueprint, not through the application registration APIs.
+
+| Instead of this (standard app registration) | Do this (agent identity) |
+|---|---|
+| `az ad app create` | Create an [agent identity blueprint](create-blueprint.md), then create agent identities from it |
+| `New-MgApplication` or `New-AzADApplication` | Use a supported [creation channel](agent-id-creation-channels.md) with the **Agent ID Developer** or **Agent ID Administrator** role |
+| `POST https://graph.microsoft.com/v1.0/applications` | Grant `AgentIdentityBlueprint.Create`, then [create the blueprint and agent identities](create-delete-agent-identities.md) |
+
+In .NET, use the `Microsoft.Identity.Web.AgentIdentities` package: call `builder.Services.AddAgentIdentities()`, then acquire tokens with `WithAgentIdentity(...)`. See [Call custom APIs from an agent](call-api-custom.md).
+
+For a full comparison, see [Agent identities, service principals, and applications](agent-service-principals.md).
+
 ## Step 2: Choose an operation pattern
 
 An agent's operation pattern determines how it acquires tokens and what context it acts in. Microsoft Entra Agent ID supports two primary patterns: autonomous and interactive.
@@ -76,7 +92,7 @@ Choose **interactive** when your agent:
 Some agents need both. For example, an agent might run a nightly background sync using the autonomous pattern and also respond to user chat messages using the interactive pattern. In this case, implement both OAuth flows and select the appropriate token based on the operation.
 
 - For autonomous agents, see [Request agent tokens for autonomous agents](identity-platform/autonomous-agent-request-tokens.md).
-- For interactive agents, see [Authenticate users in interactive agents](identity-platform/interactive-agent-authenticate-user.md).
+- For interactive agents, see [Authenticate users in interactive agents](interactive-agent-authentication-authorization-flow.md).
 
 ## Step 3: Decide how many agent identity blueprints
 

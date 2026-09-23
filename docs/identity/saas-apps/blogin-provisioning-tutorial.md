@@ -22,6 +22,7 @@ This article describes the steps you need to perform in both BlogIn and Microsof
 > * Keep user attributes synchronized between Microsoft Entra ID and BlogIn
 > * Provision groups and group memberships in BlogIn
 > * [Single sign-on](./blogin-tutorial.md) to BlogIn (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

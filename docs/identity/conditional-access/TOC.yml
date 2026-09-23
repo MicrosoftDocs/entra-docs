@@ -61,6 +61,8 @@
       href: deployment-guide-token-protection-windows.md
     - name: Deploy token protection for Apple platforms
       href: deployment-guide-token-protection-apple.md
+    - name: Deploy token protection for web apps (Preview)
+      href: deployment-guide-token-protection-web-apps.md
   - name: Authentication flows
     href: concept-authentication-flows.md    
   - name: Resilience defaults
@@ -170,6 +172,8 @@
     href: deployment-guide-token-protection-windows.md
   - name: Deploy Token Protection for Apple platforms
     href: deployment-guide-token-protection-apple.md
+  - name: Deploy Token Protection for web apps (Preview)
+    href: deployment-guide-token-protection-web-apps.md
   - name: Troubleshooting
     items:
     - name: Troubleshoot policy changes

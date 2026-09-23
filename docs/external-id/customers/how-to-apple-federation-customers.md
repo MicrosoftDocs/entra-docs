@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up federation with Apple, you can let customers sign in to your applications by using their own Apple accounts. After you add Apple as one of your application's sign-in options, customers can sign in to Microsoft Entra External ID with an Apple account. Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).
+By setting up federation with Apple, you can let customers sign in to your applications by using their own Apple accounts. Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).
 
 ## Create an Apple application
 
@@ -89,15 +89,9 @@ After you create the Apple app, in this step you set the Apple app details in Mi
 
     :::image type="content" source="media/how-to-apple-federation-customers/configured-apple-identity-provider.png" alt-text="Screenshot of the All identity providers list showing Apple as a configured built-in identity provider.":::
 
-## Add Apple identity provider to a user flow
+## Enable users to sign in and sign up with the identity provider
 
-At this point, the Apple identity provider is set up in your external tenant, but it isn't yet available on sign-in pages. To add the Apple identity provider to a user flow:
-
-1. In your customer tenant, browse to **Entra ID** > **External identities** > **User flows**.
-1. Select the user flow where you want to add the Apple identity provider.
-1. Under Settings, select **Identity providers**.
-1. Under **Other Identity Providers**, select **Apple**.
-1. Select **Save**.
+After you configure Apple as an identity provider, add it to a user flow to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md).
 
 ## Related content
 

@@ -33,10 +33,10 @@ Microsoft-managed policies are preconfigured Conditional Access policies that ar
 - The policy includes preconfigured conditions and recommended controls, such as requiring multifactor authentication. 
 - Administrators don't need to manually create these policies. Microsoft manages the policy template, configuration, and updates to ensure it aligns with current security guidance.
 
-Microsoft enables these policies no less than 45 days after they're introduced in your tenant if they're left in the **Report-only** state. You can turn on these policies sooner, or opt out by setting the policy state to **Off**. Customers are notified through emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
+Microsoft enables these policies no less than 30 days after they're introduced in your tenant if they're left in the **Report-only** state. You can turn on these policies sooner, or opt out by setting the policy state to **Off**. Customers are notified through emails and [Message center](/microsoft-365/admin/manage/message-center) posts 2 weeks before the policies are enabled. 
 
 > [!NOTE]
-> In some cases, policies might be enabled faster than 45 days. If this change applies to your tenant:
+> In some cases, policies might be enabled faster than 30 days. If this change applies to your tenant:
 > 
 > - It's mentioned in emails and Microsoft 365 message center posts you receive about Microsoft-managed policies. 
 > - It's mentioned in the policy details in the Microsoft Entra admin center.
@@ -55,6 +55,7 @@ These Microsoft-managed policies allow administrators to make simple modificatio
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
 - [Block access for high-risk users](#block-access-for-high-risk-users)
+- [Require remediation for high-risk users](#require-remediation-for-high-risk-users)
 - [Require phishing resistant authentication for admins](/microsoft-365/baseline-security-mode/baseline-security-mode-settings) (Baseline security mode policy)
 
 ## How to access and manage Microsoft-managed policies
@@ -152,6 +153,26 @@ This policy targets:
 - Organizations with Microsoft Entra ID P2 licenses
 - Organizations where security defaults aren't enabled
 
+Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
+
+### Require remediation for high-risk users
+
+This policy requires users identified as high risk by Microsoft Entra ID Protection to remediate their risk before continuing to access organizational resources. A new security group is created alongside this policy to scope the affected users. Instead of blocking access entirely, this policy uses [adaptive risk remediation](/entra/id-protection/concept-identity-protection-user-experience) to guide users through the appropriate recovery flow based on their authentication method and the type of threat detected. For more information about the remediation experience, see [User self-remediation with Microsoft Entra ID Protection](/entra/id-protection/concept-identity-protection-user-experience).
+
+> [!NOTE]
+> **Hybrid tenants:** Eligible tenants have password hash sync enabled, so affected users can self-remediate through a secure password change after completing MFA. Ensure your users are registered for MFA. For more information, see [Considerations for cloud and hybrid users](/entra/id-protection/howto-identity-protection-remediate-unblock#considerations-for-cloud-and-hybrid-users).
+
+This policy targets:
+
+- Organizations with Microsoft Entra ID P2 licenses
+
+Key considerations:
+
+- This policy remediates user risk, not sign-in risk.
+- If a user is assigned to multiple risk policies, precedence applies: Require risk remediation overrides Require password change, and Block overrides all others.
+- Authentication strength and sign-in frequency (every time) are automatically applied to ensure users reauthenticate with the required strength after session revocation.
+- This policy isn't supported for external and guest users.
+  
 Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
 
 ## Upgrade from security defaults

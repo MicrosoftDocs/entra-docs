@@ -20,6 +20,7 @@ This article describes the steps you need to do in both Cleanmail and Microsoft 
 > * Remove users in Cleanmail when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cleanmail
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Cleanmail (recommended).
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

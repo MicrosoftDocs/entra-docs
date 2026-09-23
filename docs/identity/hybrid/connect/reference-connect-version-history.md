@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.topic: reference
-ms.date: 07/07/2026
+ms.date: 09/16/2026
 ms.subservice: hybrid-connect
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ai-usage: ai-assisted
@@ -87,24 +87,25 @@ Required permissions | For permissions required to apply an update, see [Microso
 > 
 > For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version before the retirement of your current version.
 
-|Version |End of support date |
-|--------|--------------------|
-|[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.20.0](#23200)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
-|[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
-|[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
-|[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
-|[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
-|[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
-|[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
-|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
-|[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|
-|[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|
-|[2.6.3.0](#2630)|07 Jul 2027 (12 months after release of 2.6.84.0)|
-|[2.6.84.0](#26840)||
+|Version |End of support date |Release date |
+|--------|--------------------|-------------|
+|[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|12 Dec 2023|
+|[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|21 Feb 2024|
+|[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|1 Apr 2024|
+|[2.3.20.0](#23200)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|15 Jul 2024|
+|[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|7 Oct 2024|
+|[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|9 Oct 2024|
+|[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|14 Nov 2024|
+|[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|15 Jan 2025|
+|[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|27 Mar 2025|
+|[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|27 May 2025|
+|[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|31 Jul 2025|
+|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|1 Sep 2025|
+|[2.5.190.0](#251900)|02 Feb 2027 (12 months after release of 2.6.1.0)|19 Nov 2025|
+|[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|2 Feb 2026|
+|[2.6.3.0](#2630)|07 Jul 2027 (12 months after release of 2.6.84.0)|10 Mar 2026|
+|[2.6.84.0](#26840)|16 Sep 2027 (12 months after release of 2.6.91.0)|7 Jul 2026|
+|[2.6.91.0](#26910)||16 Sep 2026|
 
 **All other versions are not supported**
 
@@ -127,6 +128,42 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.6.91.0
+
+> [!IMPORTANT]
+> This release includes security fixes. We recommend upgrading to this version as soon as possible.
+
+### Release status
+
+09/16/2026: Released for download via the Microsoft Entra admin center.
+
+### Added features
+
+- Added a guided migration workflow from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. The workflow includes configuration assessment, provisioning agent setup, staged activation, and validation. This feature is available only in the Azure public cloud.
+- Added support for an additional sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
+
+### Updated features
+
+- Phishing-resistant authentication in the Microsoft Entra Connect setup wizard is now generally available and enabled by default. The Windows Web Account Manager prompt supports passkeys, FIDO2 security keys, and passwords, reuses the signed-in session across Microsoft Entra services, and preserves Seamless Single Sign-On Kerberos key rotation. 
+- When you configure Seamless Single Sign-On by using the standalone PowerShell module, you must import `ADSync.psd1` before `AzureADSSO.psd1`. [Learn more](../cloud-sync/how-to-sso.md).
+- Cloud configuration cmdlets no longer require an explicit `-AADUserName`. When you omit the parameter, Microsoft Entra Connect derives a sign-in hint from the connector configuration and opens an interactive sign-in prompt. This behavior applies to `Set-ADSyncAADCompanyFeature`, `Set-ADSyncAADPasswordSyncState`, `Enable-ADSyncExportDeletionThreshold`, `Set-ADSyncScheduler`, and `Set-ADSyncDirSyncConfiguration`.
+- The Select Containers dialog in Synchronization Service Manager is now read-only. You can still use the dialog to view the current selections. To make changes, use Customize synchronization options in the Microsoft Entra Connect wizard. [Learn more](how-to-connect-installation-wizard.md#customize-synchronization-options).
+- Updated the bundled SQL Server 2022 LocalDB from version 16.0.4250.1 to 16.0.4262.2.
+
+### Bug fixes
+
+- Fixed an issue where installing or upgrading Microsoft Entra Connect with an existing ADSync database could fail with error `0xE0474352`.
+- Fixed an issue where upgrading Microsoft Entra Connect didn't update an installed Microsoft Visual C++ 2015-2022 Redistributable version earlier than 14.41.
+- Fixed an issue where the Microsoft Entra Connect wizard could close during startup when the Windows PowerShell Transcription policy contained an invalid output directory.
+- Fixed an Application-Based Authentication certificate rotation issue that could remove the last usable application key during directory replica delays.
+- Fixed an issue where Synchronization Service Manager could close unexpectedly when you opened Connector Properties and listed directory partitions.
+- Fixed an issue where Change Credentials didn't open for connector rows outside the visible area on configurations with many Active Directory connectors.
+- Fixed an issue where expanding a previously deselected domain on the Domain and OU filtering page could reselect the domain and enable synchronization for the entire domain after the wizard completed.
+- Fixed multiple security vulnerabilities in bundled third-party dependencies and hardened local temporary-file permissions and SharePoint connector profile-image downloads.
+
+> [!IMPORTANT]
+> Microsoft Graph permissions have been added to Microsoft Entra Connect. If you use app-scoped Conditional Access policies, review policies targeting Microsoft.Azure.SyncFabric or Microsoft 365 Reporting Service.
+
 ## 2.6.84.0
 
 > [!IMPORTANT]
@@ -138,7 +175,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Added features
 
-- Added support for phishing-resistant authentication methods in the Microsoft Entra Connect setup wizard (preview). Administrators can now sign in using passkeys and FIDO2 security keys through Windows Web Account Manager (WAM) when configuring Microsoft Entra Connect. [Learn more](how-to-connect-passwordless-authentication.md).
+- Added support for phishing-resistant authentication methods in the Microsoft Entra Connect setup wizard (preview). Administrators can now sign in using passkeys and FIDO2 security keys through Windows Web Account Manager (WAM) when configuring Microsoft Entra Connect. 
 - Added support for the France sovereign cloud environment, including Pass-through Authentication, Seamless Single Sign-On, password writeback, and Health Agent monitoring.
 
 ### Updated features
@@ -165,8 +202,14 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an issue where admin actions audit logging captured the service account identity instead of the actual administrator performing the action for Synchronization Rule changes.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies.
 
+### Known issues
+
+- Installing or upgrading to Microsoft Entra Connect version 2.6.84.0 with an existing ADSync database might fail with error `0xE0474352`. To install or upgrade with an existing database, use [version 2.6.91.0](#26910) or later.
+- Synchronization Service Manager might close unexpectedly when you open **Connector Properties** and list directory partitions. This issue is fixed in [version 2.6.91.0](#26910).
+- When you reopen the Microsoft Entra Connect wizard and expand a domain that was completely deselected on the Domain and OU filtering page, the wizard might select the domain again. If you complete the wizard, synchronization might be enabled for the entire domain. This issue is fixed in [version 2.6.91.0](#26910).
+
 > [!IMPORTANT]
-> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who had installed this version should un-install and install [latest available version (2.6.84.0)](#26840) of Microsoft Entra Connect Sync.
+> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the [latest available version (2.6.91.0)](#26910) of Microsoft Entra Connect Sync.
 
 ## 2.6.3.0
 

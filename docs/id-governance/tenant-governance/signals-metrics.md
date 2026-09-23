@@ -1,5 +1,5 @@
 ---
-title: Signals and metrics for tenant discovery (preview)
+title: Signals and metrics for tenant discovery
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about the signals and metrics used in Microsoft Entra Tenant Governance to identify and evaluate related tenants
 ms.topic: concept-article
@@ -8,9 +8,7 @@ ms.date: 03/20/2026
 
 <!-- source: [Concept] Related tenants signals and metrics.docx -->
 
-# Signals and metrics for tenant discovery (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Signals and metrics for tenant discovery
 
 **Tenant discovery** is a core capability within the Tenant Governance pillar that helps organizations identify **related tenants**, which are tenants that have a discoverable relationship with your tenant.
 

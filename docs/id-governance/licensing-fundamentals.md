@@ -1,16 +1,19 @@
 ---
 title: 'Microsoft Entra ID Governance licensing fundamentals'
-description: This article describes shows the licensing requirements for Microsoft Entra ID Governance features.
+description: Learn about Microsoft Entra ID Governance license types, prerequisites, feature requirements, trials, and licensing for employees, guests, and agents.
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/27/2026
-#Customer Intent: As an IT admin, I want to understand the licensing requirements for Microsoft Entra ID Governance features so that I can ensure my organization has the correct licenses.
+ms.date: 07/29/2026
+ms.custom: msecd-doc-authoring-1018
+ai-usage: ai-assisted
+
+#customer intent: As an IT admin, I want to understand the licensing requirements for Microsoft Entra ID Governance features so that I can ensure my organization has the correct licenses.
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals
-This following document discusses Microsoft Entra ID Governance licensing for employees. It's intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations.
+This article discusses Microsoft Entra ID Governance licensing for employees. It's intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations.
 
-For licensing governance for guest users, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md). For the preview for agents, see [governing agent identities (preview)](agent-id-governance-overview.md#license-requirements).
+For governance licensing for guest users, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md). For agent identity licensing requirements in preview, see [Governing agent identities (preview)](agent-id-governance-overview.md#license-requirements). For licensing that applies to Tenant Governance administrators and features, see [Licensing for Microsoft Entra Tenant Governance](tenant-governance/licensing.md).
 
 ## Types of licenses
 
@@ -85,16 +88,17 @@ A Global Administrator in a commercial tenant that has an appropriate prerequisi
 
 This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID Governance subscriptions. A subscription license is required with enough seats for every identity that is sourced using the [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API and provisioned to either on-premises Active Directory or Microsoft Entra ID.
 
-## Account Discovery
-
-Account Discovery requires the Microsoft Entra ID Governance add-on or Microsoft Entra Suite. This feature allows administrators to discover existing user accounts in target applications and identify which users have matching Entra accounts or are orphan accounts. For more information, see [Discover identities in target applications with Account Discovery](../identity/app-provisioning/how-to-account-discovery.md).
-
 ### License scenarios
 
 |Customer License  |Usage limits enforced at tenant level for API-driven provisioning  |
 |---------|---------|
 |Microsoft Entra ID P1 or P2      |   Daily usage quota (number of user records that can be uploaded over 24-hour period): **100K user records (2000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 2<br>o Max 2 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 2 apps for API-driven provisioning to Microsoft Entra ID.      |
 |Microsoft Entra ID Governance alongside Microsoft Entra ID P1 or P2     | Daily usage quota (number of user records that can be uploaded over 24-hour period): **300K user records  (6000 /bulkUpload API calls with each request containing max of 50 records)**.<br><br>Max number of API-driven provisioning jobs for each flow: 20<br>o Max 20 apps for API-driven provisioning to on-premises Active Directory.<br>o Max 20 apps for API-driven provisioning to Microsoft Entra ID.        |
+
+## Account Discovery
+
+Account Discovery requires the Microsoft Entra ID Governance add-on or Microsoft Entra Suite. This feature allows administrators to discover existing user accounts in target applications and identify which users have matching Entra accounts or are orphan accounts. For more information, see [Discover identities in target applications with Account Discovery](../identity/app-provisioning/how-to-account-discovery.md).
+
 
 ## Licensing FAQs
 

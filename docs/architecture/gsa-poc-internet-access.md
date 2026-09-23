@@ -104,11 +104,9 @@ After you enable the Microsoft traffic profile, follow these steps to implement 
 
 1. [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2). If your organization currently uses tenant restrictions v1, review the [guide for migrating to tenant restrictions v2](https://aka.ms/trv2migration).
 
-1. [Enable Global Secure Access signaling for tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#enable-global-secure-access-signaling-for-tenant-restrictions).
+1. [Enable Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#enable-universal-tenant-restrictions).
 
 1. Sign in to your test device and use a private browser window to sign in to any application that is protected by Entra ID in a different tenant, using member account credentials from that tenant.
-
-1. [Validate Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-authentication-plane-protection).
 
 ## Troubleshoot
 

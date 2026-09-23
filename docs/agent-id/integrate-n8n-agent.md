@@ -18,7 +18,7 @@ ai-usage: ai-assisted
 
 This guide shows how to deploy [n8n](https://n8n.io/) on Azure Container Apps with Microsoft Entra Agent ID integration. The deployment uses the Azure Developer CLI (`azd`) to provision infrastructure, create Microsoft Entra identity objects, and configure n8n workflows automatically.
 
-Unlike the [Authentication with Microsoft Entra Auth SDK sidecar](authentication-with-auth-sdk-sidecar.md) pattern used for custom agents, the n8n integration uses the [n8n-nodes-entraagentid](https://www.npmjs.com/package/@astaykov/n8n-nodes-entraagentid) community node to manage token acquisition directly within n8n workflows. The deployed workflows demonstrate both autonomous (app-only) and on-behalf-of (OBO) token flows, with access to Microsoft Graph and the Microsoft Graph MCP Server for Enterprise, `https://mcp.svc.cloud.microsoft/enterprise`.
+Unlike the [Authentication with Microsoft Entra ID Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md) pattern used for custom agents, the n8n integration uses the [n8n-nodes-entraagentid](https://www.npmjs.com/package/@astaykov/n8n-nodes-entraagentid) community node to manage token acquisition directly within n8n workflows. The deployed workflows demonstrate both autonomous (app-only) and on-behalf-of (OBO) token flows, with access to Microsoft Graph and the Microsoft Graph MCP Server for Enterprise, `https://mcp.svc.cloud.microsoft/enterprise`.
 
 > [!NOTE]
 > This sample demonstrates the use of the `n8n-nodes-entraagentid` community node within n8n. It isn't guidance for deploying n8n on Azure in production.
@@ -225,6 +225,6 @@ azd down --purge
 ## Related content
 
 - [Integrate third-party agents with Microsoft Entra Agent ID](configure-third-party-agents.md)
-- [Authentication with Microsoft Entra Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md)
+- [Authentication with Microsoft Entra ID Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md)
 - [n8n-nodes-entraagentid community node](https://www.npmjs.com/package/@astaykov/n8n-nodes-entraagentid)
 - [Azure Developer CLI overview](/azure/developer/azure-developer-cli/overview)

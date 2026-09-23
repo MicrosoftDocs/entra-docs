@@ -21,6 +21,7 @@ This article describes the steps you need to perform in both BLDNG APP and Micro
 > * Keep user attributes synchronized between Microsoft Entra ID and BLDNG.AI
 > * Provision groups and group memberships in BLDNG.AI
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to BLDNG.AI (recommended).
+> * Long lived bearer token authentication supported.
 
 
 ## Prerequisites

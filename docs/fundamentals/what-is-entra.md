@@ -74,7 +74,7 @@ If you're a **Microsoft 365, Azure, or Dynamics CRM Online subscriber**, you're 
 
 [Microsoft Entra Workload ID](~/workload-id/workload-identities-overview.md) is the identity and access management solution for workload identities — applications, services, and containers that require authentication and authorization policies. It lets organizations secure access to resources using adaptive policies and custom security attributes.
 
-**For example**, GitHub Actions need a workload identity to access Azure subscriptions to automate, customize, and execute software development workflows.
+**For example**, GitHub Actions needs a workload identity to access Azure subscriptions to automate, customize, and execute software development workflows.
 
 ### Secure access for AI agents
 

@@ -11,7 +11,7 @@ ms.date: 06/30/2026
 
 This is a [privileged role](../privileged-roles-permissions.md). Assign the AI Reader role to users who need to do the following tasks:
 
-- Read all aspects of Microsoft 365 Copilot
+- Read all aspects of Microsoft Copilot
 - Read AI-related enterprise services, extensibility, and copilot agents
 - Read information for directory objects including applications, users, groups, agent identities, agent identity blueprints, agent identity blueprint principals, and agent users
 - Read and configure Azure and Microsoft 365 service health dashboards
@@ -61,7 +61,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the AI R
 > | microsoft.directory/servicePrincipals/standard/read | Read basic properties of service principals |
 > | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
 > | microsoft.directory/users/allProperties/read | Read all properties of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.office365.copilot/allEntities/allProperties/read | Read all settings for Microsoft 365 Copilot |
+> | microsoft.office365.copilot/allEntities/allProperties/read | Read all settings for Microsoft Copilot |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |

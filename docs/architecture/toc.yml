@@ -199,6 +199,22 @@ items:
         href: deployment-scenario-internet-access.md
       - name: Workshop delivery guide
         href: entra-delivery-guide.md
+    - name: Microsoft Entra tenant estate guidance
+      items:
+      - name: Introduction
+        href: tenant-estate-guide.md
+      - name: Primary production tenants
+        href: tenant-estate-primary.md
+      - name: Collaborating production tenants
+        href: tenant-estate-collaborating.md
+      - name: Nonproduction environments
+        href: tenant-estate-nonproduction.md
+      - name: Critical production systems
+        href: tenant-estate-critical-production.md
+      - name: Business partner access
+        href: tenant-estate-business-partner.md
+      - name: Hybrid identity and isolation
+        href: tenant-estate-hybrid-identity.md
     - name: Microsoft Global Secure Access deployment guides
       items:
       - name: Introduction

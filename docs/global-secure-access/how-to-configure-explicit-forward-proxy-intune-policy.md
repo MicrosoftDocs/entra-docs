@@ -4,15 +4,12 @@ description: Learn how to configure a Microsoft Intune app management policy for
 ms.topic: how-to
 ms.date: 04/22/2026
 ms.subservice: entra-internet-access
-ms.reviewer: alexpav
+ms.author: alexpav
 ---
 
-# Configure Microsoft Edge with Explicit Forward Proxy (preview) by using an Intune application management policy
+# Configure Microsoft Edge with Explicit Forward Proxy by using an Intune application management policy
 
 You can automatically deliver proxy settings and certificate authority trust settings in Microsoft Edge by using an Intune mobile application management (MAM) policy. The policy can take advantage of the Explicit Forward Proxy feature of Global Secure Access.
-
-> [!IMPORTANT]
-> The Explicit Forward Proxy feature is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

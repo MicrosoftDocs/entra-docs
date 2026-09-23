@@ -60,7 +60,7 @@ Each Generative AI Insights event includes the following fields:
 
 Prompt logging supports the following Generative AI applications:
 
-- Microsoft 365 Copilot
+- Microsoft Copilot
 - Copilot (public)
 - ChatGPT
 - Claude

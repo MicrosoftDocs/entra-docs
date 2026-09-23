@@ -52,6 +52,7 @@ The following table contains a list of currently billable actions for **guest us
 | Lifecycle Workflows | User sponsors a new guest user | POST /beta/users/{guestUserId}/microsoft.graph.identityGovernance.addSelfAsSponsor | Sponsor guest user |
 | Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill when guest user is included in review. <br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings are enabled in a group review. | Decision item summary.  |
 | Access Reviews    | [Access Review – inactive users](../identity/users/clean-up-stale-guest-accounts.md#monitor-guest-accounts-at-scale-with-inactive-guest-insights) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Decision item summary.  |
+| Access Reviews    | [Access Review – Catalog Access Reviews](catalog-access-reviews.md) | Bill when guest user is included in review.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/unified/definitions/  | Decision item summary.  |
 
 
 ## Guest billing in multitenant organizations

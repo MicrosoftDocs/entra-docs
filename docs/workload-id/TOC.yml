@@ -27,6 +27,8 @@
         href: /graph/api/resources/federatedidentitycredentials-overview?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
       - name: Flexible federated identity credentials
         href: workload-identities-flexible-federated-identity-credentials.md      
+      - name: Mutable subjects in federated identity credentials
+        href: workload-identities-federated-credential-mutable-subjects.md
 - name: How-to guides
   items:
   - name: Connect workloads without managing secrets
@@ -41,6 +43,12 @@
         href: workload-identity-federation-block-using-azure-policy.md
       - name: Set up a Flexible Federated identity credential
         href: workload-identities-set-up-flexible-federated-identity-credential.md
+      - name: Migrate GitHub Actions credentials to immutable subjects
+        href: workload-identities-github-immutable-subjects.md
+      - name: Federate a SPIFFE/SPIRE workload
+        href: workload-identity-federation-spiffe-spire.md
+      - name: Federate a Google Cloud workload
+        href: workload-identity-federation-google-cloud.md
   - name: Create an access review
     href: ~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
   - name: Manage custom security attributes for an app

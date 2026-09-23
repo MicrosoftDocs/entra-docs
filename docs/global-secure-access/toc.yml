@@ -168,6 +168,8 @@ items:
     href: concept-external-user-access.md
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
     href: concept-secure-web-ai-gateway-agents.md
+  - name: Web filtering (V2)
+    href: concept-web-filtering.md
   - name: Explicit Forward Proxy
     expanded: false
     items:
@@ -214,6 +216,8 @@ items:
         href: how-to-assign-traffic-profile-to-remote-network.md
       - name: Apply security policies to remote network traffic
         href: how-to-apply-security-policies-remote-network.md
+      - name: Connect a remote network when your CPE is behind a NAT device
+        href: how-to-create-remote-network-cpe-behind-nat.md
       - name: Simulate remote network connectivity using Azure Virtual Network Gateway (VNG)
         href: how-to-simulate-remote-network.md
       - name: Simulate remote network connectivity using Azure vWAN
@@ -243,14 +247,18 @@ items:
         href: concept-traffic-forwarding.md
       - name: Understand the Microsoft traffic profile
         href: concept-microsoft-traffic-profile.md
+      - name: Create a Private Access profile
+        href: how-to-create-traffic-forwarding-profile.md
       - name: Manage the Microsoft profile
         href: how-to-manage-microsoft-profile.md
-      - name: Manage the Private Access profile
+      - name: Manage Private Access profiles
         href: how-to-manage-private-access-profile.md
       - name: Manage the Internet Access profile
         href: how-to-manage-internet-access-profile.md
-      - name: Assign users and groups to a profile
+      - name: Assign users and devices to a profile
         href: how-to-manage-users-groups-assignment.md
+      - name: Delete a Private Access profile
+        href: how-to-delete-traffic-forwarding-profile.md
   - name: Private Access
     expanded: false
     items:
@@ -310,7 +318,9 @@ items:
         items:
           - name: What is Transport Layer Security inspection?
             href: concept-transport-layer-security.md
-          - name: Configure Transport Layer Security inspection settings
+          - name: Configure TLS inspection with a Microsoft-managed certificate (Preview)
+            href: how-to-transport-layer-security-settings-managed-certificate.md
+          - name: Configure TLS inspection with your own certificate
             href: how-to-transport-layer-security-settings.md
           - name: Configure Transport Layer Security inspection policies
             href: how-to-transport-layer-security.md
@@ -318,18 +328,24 @@ items:
             href: faq-transport-layer-security.yml
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Migrate web content filtering policies to V2
+        href: how-to-migrate-web-content-filtering-policies.md
       - name: Check URL category
         href: how-to-check-web-content-filtering-categories.md
+      - name: Customize the block page
+        href: how-to-customize-block-page.md
+      - name: Add custom headers for tenant restrictions in SaaS applications
+        href: how-to-configure-custom-headers.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
       - name: Configure cloud firewall
-        href: how-to-configure-cloud-firewall.md
-      - name: Customize the block page
-        href: how-to-customize-block-page.md
+        href: how-to-configure-cloud-firewall.md  
       - name: Configure network content filtering
         href: how-to-network-content-filtering.md
       - name: Configure the AI Gateway prompt injection protection
         href: how-to-ai-prompt-injection-protection.md
+      - name: Configure MCP firewall (Preview)
+        href: how-to-configure-mcp-firewall.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
   - name: Explicit Forward Proxy
@@ -343,6 +359,8 @@ items:
         href: how-to-configure-explicit-forward-proxy-headers.md
       - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune mobile application management
         href: how-to-configure-explicit-forward-proxy-intune-policy.md
+      - name: Configure custom proxy automatic configuration file hosting
+        href: how-to-custom-proxy-file-hosting.md    
   - name: Logs and monitoring
     expanded: false
     items:
@@ -453,12 +471,16 @@ items:
     href: reference-current-known-limitations.md
   - name: Points of presence and service addresses
     href: reference-points-of-presence.md
+  - name: Egress IP ranges
+    href: reference-egress-ip-ranges.md
   - name: Data storage and privacy
     href: reference-data-storage-and-privacy.md
   - name: Web content filtering categories
     href: reference-web-content-filtering-categories.md
   - name: Threat intelligence threat types
     href: reference-threat-intelligence-threat-types.md
+  - name: Microsoft Defender for Cloud Apps coexistence
+    href: reference-microsoft-defender-cloud-apps-coexistence.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: Ciphers for Microsoft Entra Private Access

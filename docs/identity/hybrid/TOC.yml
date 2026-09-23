@@ -141,6 +141,8 @@
       items:
         - name: Decision guide for migrating from Connect to Cloud Sync
           href: cloud-sync/connect-to-cloud-sync-decision-guide.md
+        - name: Migrate with the guided migration tool
+          href: cloud-sync/migrate-connect-sync-cloud-sync-tool.md
         - name: Migrate to Microsoft Entra Cloud Sync from Connect sync
           href: cloud-sync/tutorial-pilot-aadc-aadccp.md
         - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
@@ -191,6 +193,8 @@
                   href: cloud-sync/how-to-sso.md
                 - name: Exchange hybrid
                   href: cloud-sync/exchange-hybrid.md
+                - name: Device sync
+                  href: cloud-sync/device-sync.md
             - name: Provision Microsoft Entra ID to Active Directory
               items:
                 - name: Provision Microsoft Entra ID to AD - Configuration

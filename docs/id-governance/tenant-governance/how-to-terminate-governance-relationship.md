@@ -1,5 +1,5 @@
 ---
-title: Terminate a governance relationship (preview)
+title: Terminate a governance relationship
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to terminate a governance relationship between tenants in Microsoft Entra Tenant Governance and understand what resources are removed
 ms.topic: how-to
@@ -8,9 +8,7 @@ ms.date: 03/10/2026
 
 <!-- source: How to terminate a governance relationship.docx -->
 
-# Terminate a governance relationship (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Terminate a governance relationship
 
 This article describes how to terminate a governance relationship between a governing tenant and a governed tenant. When you terminate a governance relationship, Tenant Governance deletes all relationship-related resources from the governed tenant, including granular delegated admin privileges (GDAP) role assignments, service principals, and their permissions.
 

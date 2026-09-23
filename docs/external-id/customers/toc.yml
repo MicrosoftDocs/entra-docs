@@ -440,8 +440,8 @@ items:
           href: ../direct-federation-overview.md
         - name: Configure SAML/WS-Fed IdP federation
           href: ../direct-federation.md
-        - name: Self-service sign-up for federated users
-          href: how-to-saml-ws-federation-self-service-sign-up.md
+        - name: Add an identity provider to a user flow
+          href: how-to-add-identity-provider-to-user-flow-customers.md
     - name: Integrate apps 
       items:
         - name: Web app
@@ -482,6 +482,8 @@ items:
       href: concept-user-attributes.md
     - name: Adding your own business logic
       href: concept-custom-extensions.md
+    - name: Use Microsoft Entra Verified ID
+      href: verified-id-setup-issuance-presentation.md
     - name: Custom authentication extensions
       items:
         - name: Custom claims provider

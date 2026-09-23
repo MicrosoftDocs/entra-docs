@@ -1,5 +1,5 @@
 ---
-title: Automatic formation of governance relationships (preview)
+title: Automatic formation of governance relationships
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how Microsoft Entra Tenant Governance automatically establishes governance relationships when you create add-on tenants using secure tenant creation.
 ms.topic: concept-article
@@ -7,9 +7,7 @@ ms.date: 03/26/2026
 ai-usage: ai-assisted
 ---
 
-# Automatic formation of governance relationships (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Automatic formation of governance relationships
 
 When a permissioned user in your organization creates a new tenant using the secure add-on tenant creation feature, Microsoft Entra can automatically establish a governance relationship to the newly created tenant on your behalf.
 
@@ -19,7 +17,7 @@ If roles and permissions haven't been defined in the default governance policy t
 
 ## Microsoft Entra ID Free billing asset
 
-When you create a new Microsoft Entra tenant using the secure add-on tenant creation feature, you're prompted to select an existing [Microsoft Customer Agreement (MCA) subscription](/azure/cost-management-billing/manage/create-subscription) and resource group from your billing account. When you create your new tenant, Microsoft generates a new billing asset called **Entra ID Free** under that subscription and resource group, which links to the newly created tenant.
+When you create a new Microsoft Entra tenant using the secure add-on tenant creation feature, you're prompted to select an existing subscription and resource group from your billing account. When you create your new tenant, Microsoft generates a new billing asset called **Entra ID Free** under that subscription and resource group, which links to the newly created tenant.
 
 The subscription tracks new tenants created with the same billing account, allowing you to maintain an inventory of all new tenants. The subscription also helps prove tenant ownership and helps regain administrative access if you ever lose it. To learn more, see [Microsoft Entra ID Free](/azure/cost-management-billing/manage/microsoft-entra-id-free).
 

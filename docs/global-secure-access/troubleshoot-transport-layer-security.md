@@ -3,7 +3,7 @@ title: Troubleshoot Transport Layer Security inspection errors
 description: "Learn how to troubleshoot and resolve Transport Layer Security (TLS) inspection errors in Global Secure Access."
 ms.topic: troubleshooting-known-issue
 ms.reviewer: teresayao
-ms.date: 11/07/2025
+ms.date: 08/28/2026
 ai-usage: ai-assisted
 
 #customer intent: As an IT admin, I want to troubleshoot Transport Layer Security (TLS) inspection errors.
@@ -133,6 +133,7 @@ To resolve this issue:
 ## Related content
 
 - [Configure Transport Layer Security inspection policies](how-to-transport-layer-security.md)
-- [Configure Transport Layer Security inspection settings](how-to-transport-layer-security-settings.md)
+- [Configure TLS inspection with a Microsoft-managed certificate](how-to-transport-layer-security-settings-managed-certificate.md)
+- [Configure TLS inspection with your own certificate](how-to-transport-layer-security-settings.md)
 - [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
 - [What is Transport Layer Security inspection?](concept-transport-layer-security.md)

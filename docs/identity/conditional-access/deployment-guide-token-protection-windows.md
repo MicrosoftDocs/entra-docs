@@ -28,7 +28,7 @@ Before enforcing the policy, ensure users are running supported and up-to-date c
 Token Protection can be applied to the following applications:
 
 - Exchange PowerShell module
-- Microsoft 365 Copilot
+- Microsoft Copilot
 - Microsoft Edge (support for sign-in to Edge profile only)*
 - Microsoft Graph PowerShell with [EnableLoginByWAM](/powershell/module/microsoft.graph.authentication/set-mggraphoption#example-1-set-web-account-manager-support) option
 - Microsoft Loop

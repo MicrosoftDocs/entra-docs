@@ -93,9 +93,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot of new configuration Provisioning tab automatic.](common/application-provisioning.png)
 
-1. In the Tenant URL field, input your Verizon Tenant URL, Token Endpoint, Client ID, and Client Secret. Select Test Connection to ensure Microsoft Entra ID can connect to Verizon. If the connection fails, ensure your Verizon account has Admin permissions and try again.
+1. In the Tenant URL field, input your Verizon **Tenant URL, Client identifier, Client secret** and **OAuth token endpoint**. Select **Test connection** to ensure Microsoft Entra ID can connect to Verizon. If the connection fails, ensure your Verizon account has Admin permissions and try again.
     
-    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+    ![Screenshot of Provisioning test connection.](common/provisioning-test-button.png)
 
 1. Select **Create** to create your configuration.  
 

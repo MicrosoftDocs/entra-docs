@@ -18,6 +18,7 @@ This article describes the steps you need to do in both Blinq and Microsoft Entr
 > * Create users in Blinq.
 > * Remove users in Blinq when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Blinq.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

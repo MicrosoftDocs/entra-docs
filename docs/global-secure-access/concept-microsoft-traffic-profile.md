@@ -3,7 +3,7 @@ title: Learn about the Microsoft Traffic Profile
 description: Learn about the capabilities and traffic handling in the Microsoft traffic profile
 ms.topic: concept-article
 ms.date: 10/11/2024
-ms.reviewer: katabish, alexpav
+ms.author: alexpav
 ---
 
 # Microsoft traffic profile overview

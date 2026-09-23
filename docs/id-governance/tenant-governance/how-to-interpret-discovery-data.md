@@ -1,14 +1,12 @@
 ---
-title: Interpret tenant discovery data (preview)
+title: Interpret tenant discovery data
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to interpret tenant discovery data, signals, and metrics in Microsoft Entra Tenant Governance to assess related tenants
 ms.topic: how-to
-ms.date: 03/05/2026
+ms.date: 07/14/2026
 ---
 
-# Interpret tenant discovery data (preview)
-
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# Interpret tenant discovery data
 
 This article helps administrators and security teams analyze related tenants discovered through Microsoft Entra Tenant Governance. It explains how to interpret related tenant signals and metrics to decide when to:
 
@@ -39,6 +37,7 @@ Key things to look for initially:
 - **How many related tenants exist**
 - **Which signals caused discovery**
 - **Whether the tenant appears active or historical**
+- **Whether the tenant is Microsoft managed** (a Microsoft-owned infrastructure tenant)
 
 This step establishes scope, not judgment.
 
@@ -72,7 +71,30 @@ You can sort metrics from increasing to decreasing use. Use these comparisons to
 
 A tenant with recent, increasing activity typically warrants closer scrutiny than one with only historical, initial signals. For example, a tenant with active B2B guest users, active administrative sign-ins, and a shared billing account represents a stronger operational relationship. Compare this to a tenant surfaced only through historical B2B guest user presence captured at the time of discovery.
 
-## Step 4: Classify the related tenant
+## Step 4: Drill into a signal to see the underlying entities
+
+Discovery metrics are aggregated to orders of magnitude. For example, a returned value of 100 represents an actual value between 100 and 999. To move from a high-level count to specific evidence, drill into a signal to see the underlying users or applications that contribute to it.
+
+In the admin center, select a metric for a related tenant to open a details panel. The panel lists the underlying entities, retrieved live from your tenant:
+
+| Signal | What the drill-down shows |
+|---|---|
+| B2B registration | Guest users from the related tenant |
+| B2B sign-ins | Users or applications with cross-tenant sign-in activity |
+| Admin app sign-ins | Users or applications that signed in to administrative applications |
+| Multitenant applications | Applications (service principals) owned by the related tenant |
+
+Keep these considerations in mind when you interpret drill-down results:
+
+- **Live versus aggregated data.** The details are retrieved live and can differ from the aggregated metric on the card. The aggregated metric refreshes only when activity crosses into a new order of magnitude.
+- **Sign-in signals are a proxy.** B2B and admin app sign-in details come from sign-in logs and are limited by your tenant's log retention period, so the details can differ from the displayed metric.
+- **Privacy.** Unlike aggregated metrics, drilling in surfaces user-level and application-level identifiers. This information is available only to authorized administrators.
+
+Use drilling in to confirm a judgment before you classify a tenant. For example, drill into admin app sign-ins to see exactly which administrative applications were used and by whom.
+
+To retrieve the same underlying data programmatically, see [Investigate related tenant signals by using Microsoft Graph](how-to-investigate-related-tenants-api.md).
+
+## Step 5: Classify the related tenant
 
 Based on signals and metrics, classify each related tenant into one of three practical categories.
 
@@ -81,6 +103,7 @@ Based on signals and metrics, classify each related tenant into one of three pra
 **Characteristics:**
 
 - Clearly identifiable partner, vendor, or customer (naming, domains, users)
+- Flagged as **Microsoft managed** (a Microsoft-owned infrastructure tenant)
 - Expected B2B or application activity
 - Activity levels align with business context
 
@@ -127,5 +150,6 @@ Base the quarantine decision on related tenant signals, not on isolated analysis
 
 - [Related tenants in Tenant Governance](related-tenants.md)
 - [Signals and metrics for tenant discovery](signals-metrics.md)
+- [Investigate related tenant signals by using Microsoft Graph](how-to-investigate-related-tenants-api.md)
 - [Enable tenant discovery](how-to-enable-tenant-discovery.md)
 - [Set up a governance relationship](how-to-set-up-governance-relationship.md)

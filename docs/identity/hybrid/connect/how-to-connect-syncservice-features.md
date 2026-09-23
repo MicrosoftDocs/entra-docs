@@ -49,7 +49,9 @@ SynchronizeUpnForManagedUsersEnabled             : False
 UnifiedGroupWritebackEnabled                     : True
 UserForcePasswordChangeOnLogonEnabled            : False
 UserWritebackEnabled                             : True
-AdditionalProperties                             : {}
+AdditionalProperties                             : {
+       allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled : False
+}
 ```
 
 > [!NOTE]
@@ -121,7 +123,9 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SoftBlock `
 
 ## Allow onPremisesObjectIdentifier updates during hard match enforcement
 
-During hard match security enforcement, Microsoft Entra ID blocks on-premises updates to a cloud user's `onPremisesObjectIdentifier` attribute. If you can't remediate the affected objects before enforcement begins, enable the tenant-level feature flag `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled` to temporarily lift this block. The flag is disabled by default. Enable it only as a temporary bypass during a migration, recovery, or consolidation scenario, and disable it after remediation is complete.
+Due to hard-match security enforcement, Microsoft Entra ID blocks a hard match when the target cloud user's `onPremisesObjectIdentifier` value differs from the incoming value from the on-premises object. To remediate the issue, clear the existing cloud user's `onPremisesObjectIdentifier` value and retry the hard match.
+
+If remediation isn't possible, temporarily enable the tenant-level feature flag `allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled` to allow the update. The flag is disabled by default and should be used only as a temporary bypass during migration, recovery, or consolidation scenarios. Disable the flag after remediation is complete.
 
 For the enablement steps and guidance on when to use this bypass, see [Temporarily allow onPremisesObjectIdentifier updates](how-to-connect-install-existing-tenant.md#temporarily-allow-onpremisesobjectidentifier-updates).
 
