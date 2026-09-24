@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.topic: reference
-ms.date: 09/16/2026
+ms.date: 09/23/2026
 ms.subservice: hybrid-connect
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ai-usage: ai-assisted
@@ -105,7 +105,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.6.1.0](#2610)|10 Mar 2027 (12 months after release of 2.6.3.0)|2 Feb 2026|
 |[2.6.3.0](#2630)|07 Jul 2027 (12 months after release of 2.6.84.0)|10 Mar 2026|
 |[2.6.84.0](#26840)|16 Sep 2027 (12 months after release of 2.6.91.0)|7 Jul 2026|
-|[2.6.91.0](#26910)||16 Sep 2026|
+|[2.6.91.0](#26910)|23 Sep 2027 (12 months after release of 2.6.92.0)|16 Sep 2026|
+|[2.6.92.0](#26920)||23 Sep 2026|
 
 **All other versions are not supported**
 
@@ -128,10 +129,23 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
-## 2.6.91.0
+## 2.6.92.0
 
 > [!IMPORTANT]
 > This release includes security fixes. We recommend upgrading to this version as soon as possible.
+
+### Release status
+
+09/23/2026: Released for download via the Microsoft Entra admin center. This is a hotfix release. 
+
+### Bug fixes
+
+- Fixed an issue in version 2.6.91.0 where enabling Pass-through Authentication through the Microsoft Entra Connect wizard could fail while registering the locally installed Microsoft Entra Connect Authentication Agent.
+
+## 2.6.91.0
+
+> [!IMPORTANT]
+> Microsoft Graph permissions have been added to Microsoft Entra Connect. If you use app-scoped Conditional Access policies, review policies targeting Microsoft.Azure.SyncFabric or Microsoft 365 Reporting Service.
 
 ### Release status
 
@@ -161,8 +175,10 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an issue where expanding a previously deselected domain on the Domain and OU filtering page could reselect the domain and enable synchronization for the entire domain after the wizard completed.
 - Fixed multiple security vulnerabilities in bundled third-party dependencies and hardened local temporary-file permissions and SharePoint connector profile-image downloads.
 
-> [!IMPORTANT]
-> Microsoft Graph permissions have been added to Microsoft Entra Connect. If you use app-scoped Conditional Access policies, review policies targeting Microsoft.Azure.SyncFabric or Microsoft 365 Reporting Service.
+
+### Known issues
+
+- Enabling Pass-through Authentication through the Microsoft Entra Connect wizard might fail while registering the locally installed Microsoft Entra Connect Authentication Agent. This issue is fixed in [version 2.6.92.0](#26920).
 
 ## 2.6.84.0
 
@@ -209,7 +225,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - When you reopen the Microsoft Entra Connect wizard and expand a domain that was completely deselected on the Domain and OU filtering page, the wizard might select the domain again. If you complete the wizard, synchronization might be enabled for the entire domain. This issue is fixed in [version 2.6.91.0](#26910).
 
 > [!IMPORTANT]
-> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the [latest available version (2.6.91.0)](#26910) of Microsoft Entra Connect Sync.
+> Version 2.6.79.0 is no longer available for download. An issue was identified after release and the installer was recalled. Customers who installed this version should uninstall it and install the [latest available version (2.6.92.0)](#26920) of Microsoft Entra Connect Sync.
 
 ## 2.6.3.0
 
