@@ -35,7 +35,7 @@ The simplest topology is a single on-premises forest, with one or multiple domai
 
 
 ### Multi-forest, single Microsoft Entra tenant
-![Topology for a multi-forest and a single tenant](media/plan-cloud-provisioning-topologies/multi-forest-2.png)
+![Diagram that shows a multi-forest topology with a single Microsoft Entra tenant.](media/plan-cloud-provisioning-topologies/multi-forest-2.png)
 
 Multiple AD forests are a common topology, with one or multiple domains, and a single Microsoft Entra tenant.  
 
@@ -50,7 +50,7 @@ This scenario topology is similar to the multi-forest scenario. However, this on
 
 ### Piloting Microsoft Entra Cloud Sync in an existing hybrid AD forest
 
-![Topology for a single forest and a single tenant](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
+![Diagram that shows a single-forest topology with a single Microsoft Entra tenant.](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
 
 The piloting scenario involves the existence of both Microsoft Entra Connect and Microsoft Entra Cloud Sync in the same forest and scoping the users and groups accordingly. NOTE: An object should be in scope in only one of the tools. 
 
@@ -60,7 +60,7 @@ For an example of this scenario see [Tutorial: Pilot Microsoft Entra Cloud Sync 
 
 #### (Public Preview)
 
-![Diagram for merging objects from disconnected sources](media/plan-cloud-provisioning-topologies/attributes-multiple-sources.png)
+![Diagram that shows attributes of a single user being merged from two disconnected Active Directory forests.](media/plan-cloud-provisioning-topologies/attributes-multiple-sources.png)
 
 In this scenario, the attributes of a user are contributed to by two disconnected Active Directory forests. 
 
@@ -89,7 +89,7 @@ The following topologies are supported for provisioning from Microsoft Entra ID 
 
 :::image type="content" source="media/plan-cloud-provisioning-topologies/single-forest-group-writeback.png" alt-text="Conceptual diagram of single forest writeback." lightbox="media/plan-cloud-provisioning-topologies/single-forest-group-writeback.png":::
  
- The simplest group provisioning topology is a single on-premises forest, with one or multiple domains, and a single Microsoft Entra tenant.  For an example of this scenario see [Provision groups to Active Directory](tutorial-group-provisioning.md)
+ The simplest group provisioning topology is a single on-premises forest, with one or multiple domains, and a single Microsoft Entra tenant. For an example of this scenario, see [Provision users and groups from Microsoft Entra ID to Active Directory](how-to-configure-entra-to-active-directory.md).
 
 ### Multi-forest group provisioning to Active Directory
 
@@ -99,8 +99,8 @@ The following topologies are supported for provisioning from Microsoft Entra ID 
 
  This configuration is advanced and there are a few things to remember with this topology: 
 
- - Groups provisioned to AD using cloud sync can only contain on-premises synchronized users and / or additional cloud created security groups.
- - All of these users must have the onPremisesObjectIdentifier attribute set on their account.
+ - Group membership provisioned to AD includes only members that have an AD account. Those members can be on-premises synchronized users, cloud-managed users that Cloud Sync provisions to AD because they're in scope of user provisioning, or other cloud created security groups.
+ - On-premises synchronized users must have the onPremisesObjectIdentifier attribute set on their account.
  - The onPremisesObjectIdentifier must match a corresponding objectGUID in the target AD environment.
  - An on-premises users objectGUID attribute to a cloud users onPremisesObjectIdentifier attribute can be synchronized using either Microsoft Entra Cloud Sync ([1.1.1370.0](../cloud-sync/reference-version-history.md#1113700)) or Microsoft Entra Connect Sync ([2.2.8.0](../connect/reference-connect-version-history.md#2280))
  - Inside your tenant you may share a common group that contains users from both forests.
