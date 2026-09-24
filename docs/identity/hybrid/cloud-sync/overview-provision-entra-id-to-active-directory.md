@@ -92,7 +92,7 @@ The following scenarios aren't supported:
 - Provisioning **custom security attributes (CSA)** to AD.
 - Provisioning **Exchange attributes** to AD. Because user SOA is in the cloud, Exchange-related information isn't needed in AD. For managing Exchange recipients without an on-premises Exchange Server, see [Decommission the last Exchange Server after transferring SOA to cloud](/exchange/hybrid-deployment/decommission-last-exchange-server) and [Manage recipients in Exchange hybrid environments using management tools](/exchange/manage-hybrid-exchange-recipients-with-management-tools).
 - **Mail-enabled groups and distribution groups.** Only security groups are supported.
-- **Password writeback**, which LDAP and password-based apps need. Cloud-managed users have no AD DS password to present, so use passwordless authentication for Kerberos-based applications instead.
+- **Password writeback**, which password-based apps, including apps that authentiate users via LDAP, need. Cloud-managed users have no AD DS password to present, so the apps must be updated to Kerberos so those users can use passwordless authentication for Kerberos-based applications instead. For more information, see [How cloud-managed users sign in to the application](tutorial-users-groups-provisioning-walkthrough.md#how-cloud-managed-users-sign-in-to-the-application).
 - Complex **multi-domain hybrid identity architectures**. Provisioning to AD is designed for single-domain identity continuity.
 
 ## License requirements
