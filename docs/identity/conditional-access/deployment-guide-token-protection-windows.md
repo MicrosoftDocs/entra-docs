@@ -4,7 +4,7 @@ description: Deploy Token Protection with Microsoft Entra Conditional Access for
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/24/2026
+ms.date: 09/21/2026
 ms.reviewer: sgrandhi
 ---
 # Token Protection Deployment Guide - Windows
@@ -276,7 +276,11 @@ AADNonInteractiveUserSignInLogs
 
 A user that registered or enrolled their supported device doesn't experience any differences in the sign in experience on a token protection supported application when the token protection requirement is enabled.
 
-A user who hasn't registered or enrolled their device and if the token protection policy is enabled sees the following screenshot after authenticating.
+A user who hasn't registered or enrolled their device and if the token protection policy is enabled will be prompted to register the device.
+
+:::image type="content" source="media/deployment-guide-token-protection-windows/token-protection-register-prompt.png" alt-text="Screenshot of the token protection register in line screen.":::
+
+For users who have not yet updated to the latest September 2026 Windows update will continue to see the below message:
 
 :::image type="content" source="media/deployment-guide-token-protection-windows/token-protection-register-or-enroll-device.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
 
