@@ -13,7 +13,7 @@ To minimize your on-premises infrastructure size and complexity, adopt a cloud-f
 
 One AD DS minimization approach is to convert the Group Source of Authority (SOA) to Microsoft Entra ID. This approach lets you directly manage those groups in the cloud. You can delete AD DS groups that you no longer need on-premises. If you need to keep a group on-premises, you can configure security group provisioning from Microsoft Entra ID to AD DS. Then you can make changes to the group in Microsoft Entra ID and have those changes reflected in the on-premises group.
 
-This article describes how Group SOA can help IT administrators transition group management from AD DS to the cloud. You can also enable advanced scenarios like access governance with Microsoft Entra ID Governance. For a guide on using group SOA for IT architects, see: [Cloud-First identity management: Guidance for IT architects](guidance-it-architects-source-of-authority.md)
+This article describes how Group SOA can help IT administrators transition group management from AD DS to the cloud. You can also enable advanced scenarios like access governance with Microsoft Entra ID Governance. For a guide on using group SOA for IT architects, see [Microsoft Entra cloud-first identity guidance](guidance-it-architects-source-of-authority.md).
 
 ## Video: Microsoft Entra Group Source of Authority 
 
@@ -41,7 +41,7 @@ Applying Group SOA to a group that synchronizes from AD DS converts the group to
 
 - Concert Group SOA of on-premises groups. Provision the groups back to AD DS. In this model, you don’t need to change the app or create new groups. For more information, see [Govern on-premises Active Directory Domain Services based apps (Kerberos) using Microsoft Entra ID Governance](/entra/id-governance/scenarios/provision-entra-to-active-directory-groups).
 
-- To replicate the groups in AD DS, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD DS as Universal groups. In this model, you can change the app to use the new group security identifiers. If you use the "Account > Global > Domain Local" permission model, nest the newly provisioned group under the existing group. For more information, see [Tutorial - Provision groups to Active Directory Domain Services using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning).
+- To replicate the groups in AD DS, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD DS as Universal groups. In this model, you can change the app to use the new group security identifiers. If you use the "Account > Global > Domain Local" permission model, nest the newly provisioned group under the existing group. For more information, see [Provision users and groups from Microsoft Entra ID to Active Directory](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory).
 
 
 ### AD DS Minimization
