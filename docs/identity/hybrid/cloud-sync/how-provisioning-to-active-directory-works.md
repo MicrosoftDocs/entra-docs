@@ -152,7 +152,7 @@ Delete behavior depends on the object type and lifecycle event. AD user accounts
 
 ## Password writeback
 
-Password writeback, which synchronizes password changes in Microsoft Entra ID to the matched AD account, isn't available. Users access Kerberos-based applications through passwordless authentication using the AD account that provisioning creates.
+Password writeback, which synchronizes password changes in Microsoft Entra ID to the matched AD account, isn't available for cloud-managed users. These users can access Kerberos-based applications through passwordless authentication with the AD account that provisioning creates. For more information, see [How cloud-managed users sign in to the application](tutorial-users-groups-provisioning-walkthrough.md#how-cloud-managed-users-sign-in-to-the-application).
 
 ## Sync frequency
 

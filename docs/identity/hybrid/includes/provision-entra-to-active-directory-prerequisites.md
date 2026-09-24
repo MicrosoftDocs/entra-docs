@@ -46,6 +46,12 @@ The provisioning agent and the sync client also have their own requirements:
   - Required to support on-premises user membership synchronized using Microsoft Entra Connect Sync.
   - Required to synchronize `AD DS:user:objectGUID` to `AAD DS:user:onPremisesObjectIdentifier`.
 
+## User provisioning prerequisites (preview)
+
+If you provision users to AD DS, ensure that the applications they use support Kerberos. Applications that collect the user's password and perform an LDAP bind aren't supported for cloud-managed users because there's no AD DS password to present.
+
+To give cloud-managed users passwordless access to on-premises Kerberos resources, configure the passwordless method your organization uses. For Windows Hello for Business, configure [cloud Kerberos trust](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust). For FIDO2 security keys, follow [Passwordless security key sign-in to on-premises resources](/entra/identity/authentication/howto-authentication-passwordless-security-key-on-premises). Microsoft Entra ID issues a partial TGT that the client exchanges with an on-premises domain controller for a full AD TGT.
+
 ## More information
 
 Consider the following points when you provision to AD DS:
