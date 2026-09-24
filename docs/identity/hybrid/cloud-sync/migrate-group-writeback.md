@@ -67,7 +67,7 @@ If you want Microsoft Entra Cloud Sync to use the same default format as Microso
 |Cloud sync default expression by using `DisplayName`|`Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12))`|The default expression used by Microsoft Entra Cloud Sync (that is, the new format).|
 |Cloud sync new expression without using `DisplayName`|`Append("Group_", [objectId])`|The new expression to use the default format from Microsoft Entra Connect Sync.|
 
-For more information, see [Add an attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-active-directory).
+For more information, see [Change other attribute mappings as needed](how-to-configure-entra-to-active-directory.md#change-other-attribute-mappings-as-needed).
 
 ## Step 1: Copy adminDescription to msDS-ExternalDirectoryObjectID
 
