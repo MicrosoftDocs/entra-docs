@@ -3,11 +3,12 @@ title: Validation differences by supported account types
 description: Learn about the validation differences of various properties for different supported account types when registering your app with the Microsoft identity platform.
 manager: pmwongera
 ms.custom: 
-ms.date: 03/24/2023
+ms.date: 09/25/2026
 ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: reference
+ai-usage: ai-assisted
 #Customer intent: As a developer registering an application with the Microsoft identity platform, I want to understand the validation differences between supported account types, so that I can ensure that the properties of my application are configured correctly.
 ---
 
@@ -38,13 +39,13 @@ See the following table for the validation differences of various properties for
 | Client secrets (`passwordCredentials`)      | No limit\*                | No limit\*               | Maximum of two client secrets  |
 | Redirect URIs (`replyURLs`)                 | See [Redirect URI/reply URL restrictions and limitations](reply-url.md) for more info.  |  |   |
 | API permissions (`requiredResourceAccess`)  | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 400 permissions total across all APIs.  | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 400 permissions total across all APIs. | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 200 permissions total across all APIs. Maximum of 30 permissions per resource (for example, Microsoft Graph).   |
-| Scopes defined by this API (`oauth2Permissions`)             | Maximum scope name length of 120 characters <br><br> No set limit\* on the number of scopes defined       | Maximum scope name length of 120 characters <br><br> No set limit\* on the number of scopes defined    | Maximum scope name length of 40 characters <br><br> Maximum of 100 scopes defined     |
+| Scopes defined by this API (`oauth2Permissions`)             | Maximum scope name length of 120 characters <br><br> Default limit of 700 permission definitions, shared with app roles. See [App role limits](howto-add-app-roles-in-apps.md#app-role-limits). | Maximum scope name length of 120 characters <br><br> Default limit of 700 permission definitions, shared with app roles. See [App role limits](howto-add-app-roles-in-apps.md#app-role-limits). | Maximum scope name length of 40 characters <br><br> Maximum of 100 scopes defined, also subject to the shared [app role limit](howto-add-app-roles-in-apps.md#app-role-limits). |
 | Authorized client applications (`preAuthorizedApplications`) | No set limit\*  | No set limit\*    | Total maximum of 500 <br><br> Maximum of 100 client apps defined <br><br> Maximum of 30 scopes defined per client  |
-| appRoles      | Supported <br> No limit\*   | Supported <br> No limit\* | `PersonalMicrosoftAccount`: Not supported <br><br> `AzureADandPersonalMicrosoftAccount`: Supported <br> No limit\* <br> App roles are not supported for consumer (MSA) users of the application at runtime |
+| appRoles      | Supported <br> Default limit of 700 permission definitions, shared with exposed delegated permission scopes. See [App role limits](howto-add-app-roles-in-apps.md#app-role-limits). | Supported <br> Default limit of 700 permission definitions, shared with exposed delegated permission scopes. See [App role limits](howto-add-app-roles-in-apps.md#app-role-limits). | `PersonalMicrosoftAccount`: Not supported <br><br> `AzureADandPersonalMicrosoftAccount`: Supported, subject to the shared [app role limit](howto-add-app-roles-in-apps.md#app-role-limits). <br> App roles are not supported for consumer (MSA) users of the application at runtime |
 | Front-channel logout URL      | `https://localhost` is allowed <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters  | `https://localhost` is allowed <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters  | `https://localhost` is allowed, `http://localhost` fails <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters <br><br>   |
 | Display name    | Maximum length of 120 characters  | Maximum length of 120 characters  | Maximum length of 90 characters  |
 
-\* There's a global limit of about 1000 items across all the collection properties on the app object.
+\* There's an aggregate limit of 1,200 entries across the collection properties in the application manifest. Individual collection limits also apply. See [Manifest limits](reference-microsoft-graph-app-manifest.md#manifest-limits).
 
 ## Next steps
 
