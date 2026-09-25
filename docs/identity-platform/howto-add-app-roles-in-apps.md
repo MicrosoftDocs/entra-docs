@@ -2,11 +2,12 @@
 title: Add app roles and get them from a token
 description: Learn how to add app roles to an application registered in Microsoft Entra ID. Assign users and groups to these roles, and receive them in the 'roles' claim in the token.
 manager: pmwongera
-ms.date: 11/13/2024
+ms.date: 09/25/2026
 ms.reviewer: jmprieur
 ms.service: identity-platform
 ms.topic: how-to
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 #Customer intent: As a developer, I want to add app roles to my application using RBAC, so I can assign users and groups to those roles.
 ---
 
@@ -26,7 +27,7 @@ Currently, if you add a service principal to a group, and then assign an app rol
 
 App roles are declared using App roles UI in the Microsoft Entra admin center:
 
-The number of roles you add counts toward application manifest limits enforced by Microsoft Entra ID. For information about these limits, see the [Manifest limits](./reference-app-manifest.md#manifest-limits) section of [Microsoft Entra app manifest reference](reference-app-manifest.md).
+App roles are subject to a default limit of 700 permission definitions per application or service principal, shared with exposed delegated permission scopes. They also count toward the separate 1,200-entry application manifest limit. For counting rules and guidance for existing objects, see [App role limits](#app-role-limits).
 
 ### App roles UI
 
@@ -57,6 +58,37 @@ To create an app role by using the Microsoft Entra admin center's user interface
 When the app role is set to **Enabled**, any users, applications, or groups who are assigned have the app role included in their tokens. These can be access tokens when your app is the API being called by an app or ID tokens when your app is signing in a user. 
 
 When the app role is set to **Disabled**, it becomes inactive and no longer assignable. However, the current app role assignments to users, groups and applications will remain, and the app role will continue to pass in the token(s). Remove the app role from the user, group or application to ensure the app role is also removed from the token(s).
+
+## App role limits
+
+Microsoft Entra ID enforces a default limit of 700 permission definitions on each [application](/graph/api/resources/application) and [service principal](/graph/api/resources/serviceprincipal). App roles (`appRoles`) and exposed delegated permission scopes (`api.oauth2PermissionScopes` on an application, or `oauth2PermissionScopes` on a service principal) share this limit because they're stored in the same underlying `Entitlement` collection.
+
+The following counting rules apply:
+
+- The limit counts permission definitions, not the users, groups, or applications assigned to a role. App role assignments have [separate limits](../identity/users/directory-service-limits-restrictions.md).
+- Enabled and disabled definitions both count. Setting `isEnabled` to `false` doesn't free capacity.
+- Each distinct permission ID in the combined role and scope collection counts once. A role and a scope that share an ID and have matching shared properties are stored as one definition.
+- The count applies to each object's resulting collection, not just the entries added in a request. For a service principal, it includes definitions inherited from the application and definitions added directly to the service principal.
+
+For example, 650 app roles and 50 exposed delegated permission scopes with distinct IDs use all 700 entries. The separate [1,200-entry application manifest limit](reference-microsoft-graph-app-manifest.md#manifest-limits) doesn't allow you to exceed this limit.
+
+### Existing objects above the limit
+
+Existing objects can have more than 700 permission definitions. The count check allows updates that keep the number of definitions unchanged or reduce it, even when the result remains above the applicable limit. Other validation rules still apply. An update that increases the count above the applicable limit is rejected.
+
+Some existing objects have a higher service-assigned limit. Don't assume that a higher limit on one object applies to another object or tenant. You can't configure this limit through the application manifest.
+
+When the 700-value limit rejects an update, the error can identify the underlying property rather than `appRoles`:
+
+```text
+The total count of values: 701 exceeds the set maxValuesCount limit: 700 for property: Entitlement
+```
+
+### Design within the limit
+
+Use app roles for stable authorization categories, such as `Reader`, `Writer`, and `Administrator`, rather than defining a role for every resource, customer, or individual action. Keep finer-grained resource permissions in your application's authorization data and enforce them in the application.
+
+Remove obsolete roles and scopes to free capacity. Before deleting an app role, disable it and review its assignments and the application behavior that depends on it. Assigning groups to existing app roles can simplify assignment management, but doesn't increase the number of role definitions you can store.
 
 ## Assign application owner 
 
