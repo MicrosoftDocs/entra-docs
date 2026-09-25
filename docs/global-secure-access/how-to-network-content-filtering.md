@@ -38,9 +38,6 @@ Network content filtering supports the following key scenarios and outcomes for 
     - The user's risk level
 - When you use **Scan with Purview**, you can generate Data Loss Prevention (DLP) admin alerts for rule matches.
 
-> [!IMPORTANT]
-> We recommend you to inspect text sent to or received from cloud or AI apps using **Scan with Purview** and configure the matching text activities in Microsoft Purview.
-
 ## Prerequisites
 
 To use the content policy feature, you need the following prerequisites:
@@ -105,7 +102,7 @@ To configure a content policy in Global Secure Access, complete the following st
             - (Optional) You can choose text type as well, but exercise caution as you should not end up blocking HTML or JSON text type that blocks your web traffic.
         - For **Scan with Purview**, select the file content types and text content types that you want Microsoft Purview to inspect. File content type selection is optional for text-only scenarios.
         :::image type="content" source="media/how-to-network-content-filtering/content-rule-content-types.png" alt-text="Screenshot of the Add Content Rule page showing the Matching conditions section with Activities set to Upload, and the Content types dropdown expanded with PDF selected." lightbox="media/how-to-network-content-filtering/content-rule-content-types.png":::
-    1. (Optional) Configure the **Source type** condition (preview) to scope the rule by traffic origin. Select **Agent** to match traffic classified as AI agent traffic. Traffic that is not classified as agent traffic is treated as **User** traffic. If not configured, the rule applies to all traffic.
+    1. (Optional) Configure the **Session type** condition to scope the rule by traffic origin. Select **Agent** to match traffic classified as AI agent traffic. Traffic that is not classified as agent traffic is treated as **User** traffic. If not configured, the rule applies to all traffic.
     1. Select **+ Add destination** and configure the destinations.
         - For application-specific control, you can add the exact URLs and related FQDNs that the app uses. Use browser developer tools or network traffic analysis to identify the endpoints used during file upload, text submission, or other protected traffic.
         - You can also select web categories as a destination. If you select web categories, you must also configure a [web content filtering policy](how-to-configure-web-content-filtering.md).
@@ -273,21 +270,24 @@ For more information about Purview DLP policies for network traffic, see [Learn 
 
 ## Known limitations
 
+### Known internet access limitations
+For more information, see [Current known limitations](/reference-current-known-limitations.md#internet-access-limitations)
+
+### Known GSA network content filtering limitations
 - Network content filtering is supported with the Internet access profile only
-- Network content filtering doesn't support User Datagram Protocol (UDP) traffic, including QUIC.
 - When using web categories as destinations within Content rules, you must have a web filtering policy in place applied to one or more web categories (allow or block).
 - When using wildcards (*) in Content rule destinations, they cannot be used for top-level domains (TLD) or second-level domains (SLD). For example, *.contoso.com is supported, however *.com and contoso.* are not supported.
 - File detection is limited to files transferred as request/response bodies unencoded and with multipart encoding. Certain file transfer methods may prevent inspection, such as if an application encodes a file within a JSON, or the file is broken up into multiple encrypted requests.
-- WebSocket traffic bypasses content-type filtering in Content policy rules. When destination and activity conditions are met, the rule is evaluated regardless of the configured content type.
-- Requests are subject to rate limiting based on usage. When limits are exceeded, traffic is automatically blocked (fail-closed).
+- WebSocket traffic bypasses file-type filtering in Content policy rules. Text content type is still evaluated within web sockets.
+- Requests are subject to API rate limiting based on usage. When limits are exceeded, traffic is automatically blocked (fail-closed).
 
 
-### Known limitations for Scan with Purview include:
+### Known Purview DLP limitations
 
-- The maximum supported content size for Scan with Purview is 3 MB for both file and text content types.
+- The maximum supported content size for **Scan with Purview** is 3 MB for both file and text content types.
 - OCR is not yet supported for traffic sent to Purview.
 - Scan with Purview only applies to traffic associated with an Entra user identity. Traffic that cannot be mapped to an Entra user identity is not sent to Purview for inspection.
-- In scenarios where Purview inspection is unable to complete, such as a payload that is too large to inspect, an unsupported codec, or an internal error, the traffic is allowed (fail-open). Transactions that have skipped inspection can be identified in Traffic logs using **PurviewStatus** field.
+- In scenarios where Purview inspection is unable to complete, such as a payload that is too large to inspect, or an internal error, the traffic is allowed (fail-open). Transactions that have skipped inspection can be identified in Traffic logs using **PurviewStatus** field.
 
 
 ## Monitoring and logging
