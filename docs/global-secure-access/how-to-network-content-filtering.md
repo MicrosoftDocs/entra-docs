@@ -3,7 +3,7 @@ title: Create content policies for network content filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies for files and text content in real time."
 ms.topic: how-to
 ms.date: 06/30/2026
-ms.reviewer: buzaher,shkhalid
+ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 ai-usage: ai-assisted
 
@@ -13,12 +13,9 @@ ai-usage: ai-assisted
 
 # Create content policies for network content filtering
 
-Global Secure Access supports network content filtering through content policies. This feature helps you safeguard against unintended data exposure and prevents inline data leaks to generative AI applications and internet destinations. By extending data protection capabilities to the network layer through Global Secure Access, network content filtering enables your organization to enforce data policies on network traffic in real time. You can discover and protect files and text content shared with unsanctioned destinations, such as generative AI and unmanaged cloud apps, from managed endpoints through browsers, applications, add-ins, APIs, and more.
-
-The network content filtering solution brings together Microsoft Purview's data classification service and the identity-centric network security policies in Global Secure Access. This combination creates an advanced network-layer data security solution, Data Loss Prevention (DLP), that's identity-centric and policy-driven. By combining content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
-
-> [!NOTE]
-> Basic content policy (block or allow by file MIME type) is generally available. The **Scan with Purview** action in content policies is currently in preview and supports inspection for selected file and text content types. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+Microsoft Entra Global Secure Access content policies provide real-time control over what users and agents share with generative AI applications, unmanaged cloud apps, and other internet destinations. These controls apply to content shared from managed endpoints through browsers, applications, add-ins, APIs, and more.
+**Basic content filtering** lets you block specific content types from being shared with selected destinations.
+**Scan with Purview** enables network data security by combining Microsoft Purview's data loss prevention (DLP) with identity-centric Global Secure Access policies. It inspects files and text for sensitive information and helps prevent data loss by blocking its sharing based on your *Purview DLP policies*. By combining content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
 
 ### High-level architecture
 :::image type="content" source="media/how-to-network-content-filtering/network-content-filtering-architecture.png" alt-text="Diagram showing the architecture of network content filtering with Global Secure Access and Microsoft Purview." lightbox="media/how-to-network-content-filtering/network-content-filtering-architecture.png":::
@@ -26,20 +23,20 @@ The network content filtering solution brings together Microsoft Purview's data 
 This article explains how to create a content policy to filter internet traffic flowing through Global Secure Access.
 
 > [!NOTE]
-> Basic content policy detects the file MIME type and enforces the **Allow** or **Block** action in Global Secure Access. Microsoft Purview is only involved when you choose **Scan with Purview**. Text content type inspection requires **Scan with Purview** and a corresponding Microsoft Purview DLP policy.
+> Basic content policy detects the file MIME type and text type in payload and enforces the **Allow** or **Block** action in Global Secure Access. Microsoft Purview is only involved when you choose **Scan with Purview**.
+
+> [!CAUTION]
+> Use the **Block** action for HTML or JSON text types with caution. Web requests and responses commonly use HTML or JSON payloads, so blocking these text types can unintentionally block normal web and API traffic, including GET, POST, and PUT operations.
 
 ## Supported scenarios
 
-Network content filtering supports the following key scenarios and outcomes for HTTP/1.1 traffic:
-- Using **Basic content policy**, you can block files based on supported file MIME types.
-- Using the **Scan with Purview** action (preview) in content policy, you can audit and block selected file and text content based on:
+Network content filtering supports the following key scenarios and outcomes for HTTP/S traffic:
+- **Basic content filtering** is modeled in Content rule with action = **Allow** or **Block**. It lets you allow or block upload or download of files based on supported file MIME types. The same can be done for supported text types as well. This does not need Purview.
+- **Scan with Purview** is modeled in Content rule with action = **Scan with purview**. Using this, you can audit and block selected file and text content based on:
     - Microsoft Purview sensitivity labels
     - Sensitive content in files or text
     - The user's risk level
 - When you use **Scan with Purview**, you can generate Data Loss Prevention (DLP) admin alerts for rule matches.
-
-> [!IMPORTANT]
-> Basic content policy doesn't inspect text. To inspect text sent to or received from cloud or AI apps, use **Scan with Purview** and configure the matching text activities in Microsoft Purview.
 
 ## Prerequisites
 
@@ -48,12 +45,11 @@ To use the content policy feature, you need the following prerequisites:
 - Licensing for the product. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
     - A valid Microsoft Entra Internet Access license.
     - A valid Microsoft Purview license, required for **Scan with Purview** inspection.
-        - Network data security requires Microsoft Purview pay-as-you-go billing to be configured before you create Purview collection or DLP policies. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
-        - You can use basic content policy without a Purview license.
+    - You can use basic content filtering without a Purview license.
 - A user with the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to configure Global Secure Access settings.
 - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role to configure Conditional Access policies.
 - The Global Secure Access client requires a device (or virtual machine) that is either Microsoft Entra ID joined or Microsoft Entra ID Hybrid joined.
-- To use **web categories** as a content policy destination, you must also configure a [web content filtering policy](how-to-configure-web-content-filtering.md).
+- To use **web categories** as a content policy destination, you must also configure any [web content filtering policy](how-to-configure-web-content-filtering.md).
 - User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443:
 
     ```powershell
@@ -98,14 +94,15 @@ To configure a content policy in Global Secure Access, complete the following st
     1. Add a new rule.
     1. Enter the **Rule name**, **Description**, **Priority**, and **Status** as appropriate.
     1. Select the appropriate option for the **Action** menu:
-        - To configure a basic data policy, select **Allow** or **Block**.
-        - To use data policies configured in Microsoft Purview, select **Scan with Purview** (preview).
+        - To configure a basic content filtering, select **Allow** or **Block**.
+        - To use data policies configured in Microsoft Purview, select **Scan with Purview**.
             :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the content rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **Content types**.
-        - For basic content policy, select the file content types to allow or block.
+        - For basic **content filtering**, select the file content types to allow or block.
+            - (Optional) You can choose text type as well, but exercise caution as you should not end up blocking HTML or JSON text type that blocks your web traffic.
         - For **Scan with Purview**, select the file content types and text content types that you want Microsoft Purview to inspect. File content type selection is optional for text-only scenarios.
         :::image type="content" source="media/how-to-network-content-filtering/content-rule-content-types.png" alt-text="Screenshot of the Add Content Rule page showing the Matching conditions section with Activities set to Upload, and the Content types dropdown expanded with PDF selected." lightbox="media/how-to-network-content-filtering/content-rule-content-types.png":::
-    1. (Optional) Configure the **Source type** condition (preview) to scope the rule by traffic origin. Select **Agent** to match traffic classified as AI agent traffic. Traffic that is not classified as agent traffic is treated as **User** traffic. If not configured, the rule applies to all traffic.
+    1. (Optional) Configure the **Session type** condition to scope the rule by traffic origin. Select **Agent** to match traffic classified as AI agent traffic. Traffic that is not classified as agent traffic is treated as **User** traffic. If not configured, the rule applies to all traffic.
     1. Select **+ Add destination** and configure the destinations.
         - For application-specific control, you can add the exact URLs and related FQDNs that the app uses. Use browser developer tools or network traffic analysis to identify the endpoints used during file upload, text submission, or other protected traffic.
         - You can also select web categories as a destination. If you select web categories, you must also configure a [web content filtering policy](how-to-configure-web-content-filtering.md).
@@ -125,7 +122,7 @@ To configure a content policy in Global Secure Access, complete the following st
 1. Configure the link content policy:
     1. Select **+ Link a policy** > **Existing Content policy**.
     1. From the **Policy name** menu, select the content policy you created.
-    1. Keep the default values for **Position** and **State**.
+    1. Keep the default values for **State**.
     1. Select **Add**.
 1. Close the security profile. 
 
@@ -151,14 +148,6 @@ The content policy is successfully configured.
 
 If you selected the **Scan with Purview** action in your content policy, you must configure a corresponding data loss prevention (DLP) policy in Microsoft Purview. The DLP policy defines how Purview classifies and acts on file and text content that Global Secure Access routes for inspection.
 
-> [!IMPORTANT]
-> The **Scan with Purview** integration for Global Secure Access is currently in preview.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
-### Prerequisites for Purview integration
-
-- Microsoft Purview pay-as-you-go billing configured for your tenant. You must configure pay-as-you-go billing before you set up Microsoft Purview collection or DLP policies for network data security. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
-
 > [!NOTE]
 > If you don't see **Data loss prevention** in Microsoft Purview, your account might not have the required permissions or your tenant might not have the required licensing. You need a role such as **DLP Compliance Management** or **Information Protection Admin**, and a Microsoft 365 E5/A5 subscription or a Microsoft Purview DLP add-on. For more information, see [Permissions in the Microsoft Purview portal](/purview/purview-permissions).
 
@@ -175,7 +164,7 @@ If you selected the **Scan with Purview** action in your content policy, you mus
     1. On the **Adaptive app scopes** tab, choose the app categories you want to protect against (for example, **All unmanaged AI apps**).
     1. Select **Add**.
 1. Select **Next**.
-1. On the **Choose where to enforce the policy** page, ensure **Network and non-Microsoft secure browsers** is enabled, then select **Next**. You can only select network enforcement when pay-as-you-go billing is set up. For more information, see [Learn about Microsoft Purview billing models](/purview/purview-billing-models).
+1. On the **Choose where to enforce the policy** page, ensure **Network and non-Microsoft secure browsers** is enabled, then select **Next**.
 1. Select **Create or customize advanced DLP rules** and select **Next**.
 1. Select **+ Create rule** and configure the rule:
     1. Enter a **Name** and optional description.
@@ -198,7 +187,7 @@ If you selected the **Scan with Purview** action in your content policy, you mus
 
 For a detailed walkthrough with example configurations, see [Use Network Data Security to help prevent sharing sensitive information with unmanaged AI](/purview/dlp-create-policy-ai-network-data-security).
 
-## Test the content policy
+## Test the network content filtering with Purview
 Test the configuration by attempting to upload or download files, or send text content, that matches the content policy conditions. Verify that the policy settings audit or block the actions.
 
 ### Example: Block sensitive text sent through Gmail
@@ -209,7 +198,7 @@ This example walks through an end-to-end test scenario that blocks text containi
 
 When you create or edit your content policy rule, configure the following settings:
 
-- **Action**: Select **Scan with Purview** (preview).
+- **Action**: Select **Scan with Purview**.
 - **Activities**: Select **Upload**.
 - **Text content types**: Select the text content types that you want Microsoft Purview to inspect.
 - **Destination**: Add `mail.google.com` as an FQDN.
@@ -268,7 +257,7 @@ If you select **Scan with Purview** as the content policy action, you must also 
 For more information about Purview DLP policies for network traffic, see [Learn about Microsoft Purview Network Data Security](/purview/dlp-network-data-security-learn).
 
 > [!NOTE]
-> Network DLP with Global Secure Access integration is currently in preview. Global Secure Access forwards matching upload traffic to Microsoft Purview for content inspection. Purview evaluates the content against your DLP policy and returns a decision based on your DLP rule action. Global Secure Access then enforces the result.
+> Global Secure Access forwards matching upload traffic to Microsoft Purview for content inspection. Purview evaluates the content against your DLP policy and returns a decision based on your DLP rule action. Global Secure Access then enforces the result.
 
 #### Step 3: Validate the policy
 
@@ -281,12 +270,25 @@ For more information about Purview DLP policies for network traffic, see [Learn 
 
 ## Known limitations
 
-- Basic content policy doesn't inspect text. Text content type inspection requires **Scan with Purview** and a matching Purview DLP policy.
-- Network content filtering doesn't support User Datagram Protocol (UDP) traffic, including QUIC.
-- Compressed content is detected in ZIP format. The content isn't decompressed.
-- True file type detection might not be 100% accurate.
-- Top-level and second-level domains don't support wildcards (like `*`, `*.com`, `*contoso.com`) while configuring FQDNs.
-- Microsoft Purview network data security policies don't apply to B2B guest users.
+### Known internet access limitations
+For more information, see [Current known limitations](/reference-current-known-limitations.md#internet-access-limitations)
+
+### Known GSA network content filtering limitations
+- Network content filtering is supported with the Internet access profile only
+- When using web categories as destinations within Content rules, you must have a web filtering policy in place applied to one or more web categories (allow or block).
+- When using wildcards (*) in Content rule destinations, they cannot be used for top-level domains (TLD) or second-level domains (SLD). For example, *.contoso.com is supported, however *.com and contoso.* are not supported.
+- File detection is limited to files transferred as request/response bodies unencoded and with multipart encoding. Certain file transfer methods may prevent inspection, such as if an application encodes a file within a JSON, or the file is broken up into multiple encrypted requests.
+- WebSocket traffic bypasses file-type filtering in Content policy rules. Text content type is still evaluated within web sockets.
+- Requests are subject to API rate limiting based on usage. When limits are exceeded, traffic is automatically blocked (fail-closed).
+
+
+### Known Purview DLP limitations
+
+- The maximum supported content size for **Scan with Purview** is 3 MB for both file and text content types.
+- OCR is not yet supported for traffic sent to Purview.
+- Scan with Purview only applies to traffic associated with an Entra user identity. Traffic that cannot be mapped to an Entra user identity is not sent to Purview for inspection.
+- In scenarios where Purview inspection is unable to complete, such as a payload that is too large to inspect, or an internal error, the traffic is allowed (fail-open). Transactions that have skipped inspection can be identified in Traffic logs using **PurviewStatus** field.
+
 
 ## Monitoring and logging
 
