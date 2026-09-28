@@ -2,8 +2,9 @@
 title: Introduction to Microsoft Entra Kerberos
 description: Get an overview of the Microsoft Entra Kerberos protocol.
 ms.topic: concept-article
-ms.date: 11/18/2025
+ms.date: 09/28/2026
 ms.reviewer: Vimala
+ai-usage: ai-assisted
 ---
 
 
@@ -195,6 +196,14 @@ For client access to cloud resources:
 | Verification tool (Windows) | `klist cloud_debug` | `klist get krbtgt` |
 
 ## Scenarios
+
+Microsoft Entra Kerberos serves as a foundation for several authentication scenarios that provide access to Active Directory resources by using modern authentication methods. These scenarios include Windows Hello for Business cloud Kerberos trust, FIDO2 security key sign-in, Azure Files authentication, Azure Virtual Desktop profile access, and Platform SSO on macOS.
+
+### Windows Hello for Business cloud Kerberos trust
+
+Windows Hello for Business cloud Kerberos trust uses Microsoft Entra Kerberos to provide passwordless access to Active Directory resources. After a user signs in with Windows Hello for Business, Microsoft Entra ID issues a cloud-based Kerberos ticket that enables the user to obtain Kerberos service tickets for resources protected by Active Directory, such as file shares and line-of-business applications. This deployment model simplifies passwordless adoption by removing the requirement for certificate deployment or public key infrastructure (PKI).
+
+For more information, see the [Windows Hello for Business cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune).
 
 ### Use Microsoft Entra Kerberos for Windows authentication access to Azure SQL Managed Instance
 
