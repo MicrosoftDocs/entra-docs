@@ -3155,8 +3155,6 @@
         href: workhub-tutorial.md
       - name: Workpath
         href: workpath-tutorial.md
-      - name: Workplace by Meta
-        href: workplacebyfacebook-tutorial.md
       - name: Workrite
         href: workrite-tutorial.md
       - name: Workshop
@@ -3968,8 +3966,6 @@
         href: workday-writeback-tutorial.md
       - name: Workteam
         href: workteam-provisioning-tutorial.md
-      - name: Workplace from Meta 
-        href: workplace-from-meta-provisioning-tutorial.md
       - name: Workgrid
         href: workgrid-provisioning-tutorial.md
       - name: Wrike

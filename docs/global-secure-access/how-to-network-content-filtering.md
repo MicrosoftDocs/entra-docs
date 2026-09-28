@@ -14,8 +14,8 @@ ai-usage: ai-assisted
 # Create content policies for network content filtering
 
 Microsoft Entra Global Secure Access content policies provide real-time control over what users and agents share with generative AI applications, unmanaged cloud apps, and other internet destinations. These controls apply to content shared from managed endpoints through browsers, applications, add-ins, APIs, and more.
-**Basic content filtering** lets you block specific content types from being shared with selected destinations.
-**Scan with Purview** enables network data security by combining Microsoft Purview's data loss prevention (DLP) with identity-centric Global Secure Access policies. It inspects files and text for sensitive information and helps prevent data loss by blocking its sharing based on your *Purview DLP policies*. By combining content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
+- **Basic content filtering** lets you block specific content types from being shared with selected destinations.
+- **Scan with Purview** enables network data security by combining Microsoft Purview's data loss prevention (DLP) with identity-centric Global Secure Access policies. It inspects files and text for sensitive information and helps prevent data loss by blocking its sharing based on your *Purview DLP policies*. By combining content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
 
 ### High-level architecture
 :::image type="content" source="media/how-to-network-content-filtering/network-content-filtering-architecture.png" alt-text="Diagram showing the architecture of network content filtering with Global Secure Access and Microsoft Purview." lightbox="media/how-to-network-content-filtering/network-content-filtering-architecture.png":::
@@ -32,7 +32,7 @@ This article explains how to create a content policy to filter internet traffic 
 
 Network content filtering supports the following key scenarios and outcomes for HTTP/S traffic:
 - **Basic content filtering** is modeled in Content rule with action = **Allow** or **Block**. It lets you allow or block upload or download of files based on supported file MIME types. The same can be done for supported text types as well. This does not need Purview.
-- **Scan with Purview** is modeled in Content rule with action = **Scan with purview**. Using this, you can audit and block selected file and text content based on:
+- **Scan with Purview** is modeled in Content rule with action = **Scan with purview**. Using this, you can audit and block selected file and text content based on conditions such as:
     - Microsoft Purview sensitivity labels
     - Sensitive content in files or text
     - The user's risk level
