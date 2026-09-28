@@ -203,6 +203,11 @@ Microsoft Entra Kerberos serves as a foundation for several authentication scena
 
 Windows Hello for Business cloud Kerberos trust uses Microsoft Entra Kerberos to provide passwordless access to Active Directory resources. After a user signs in with Windows Hello for Business, Microsoft Entra ID issues a cloud-based Kerberos ticket that enables the user to obtain Kerberos service tickets for resources protected by Active Directory, such as file shares and line-of-business applications. This deployment model simplifies passwordless adoption by removing the requirement for certificate deployment or public key infrastructure (PKI).
 
+> [!IMPORTANT]
+> To access resources protected by Active Directory, the user must have a corresponding account in Active Directory. For cloud-managed users, use [Microsoft Entra ID to Active Directory provisioning](~/identity/hybrid/cloud-sync/overview-provision-entra-id-to-active-directory.md) to provision the user account. A cloud-only user who doesn't have an Active Directory account can't obtain an Active Directory TGT or access resources authorized by Active Directory.
+>
+> Microsoft Entra ID authenticates the user and issues a partial Kerberos TGT. The client exchanges that ticket with an Active Directory domain controller, which uses the provisioned Active Directory account and its group memberships to perform authorization and issue a full TGT and service tickets. Cloud Kerberos trust doesn't require the user's Windows Hello for Business key to be synchronized to Active Directory.
+
 For more information, see the [Windows Hello for Business cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune).
 
 ### Access Active Directory resources with cloud-managed identities
