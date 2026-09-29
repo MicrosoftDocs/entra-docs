@@ -117,6 +117,8 @@ The following is the list of [Microsoft Entra roles](../identity/role-based-acce
 - Windows Update Deployment Administrator
 - Yammer Administrator
 
+Custom roles can be assigned to agents.
+
 ## Microsoft Graph permissions for agent IDs
 
 For OAuth2 permissions, agent IDs (specifically, agent identity blueprints and agent identity blueprint principals) can use the same Microsoft Graph permission model as other apps. Agents can request delegated permissions (acting on behalf of a user via consent) or application permissions (app-only privileges granted by an administrator).
