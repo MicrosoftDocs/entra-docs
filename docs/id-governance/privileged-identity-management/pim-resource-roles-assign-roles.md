@@ -2,7 +2,7 @@
 title: Assign Azure resource roles in Privileged Identity Management
 description: Learn how to assign Azure resource roles in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 04/23/2026
+ms.date: 08/06/2026
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer Intent: As an Azure resource administrator, I want to assign Azure resource roles using PIM to provide just-in-time access to subscriptions, resource groups, and other Azure resources.
 ---
@@ -126,6 +126,9 @@ PUT https://management.azure.com/providers/Microsoft.Subscription/subscriptions/
   }
 }
 ````
+
+> [!NOTE]
+> The `duration` field (value `P365D` in this example) sets the eligible assignment to expire after 365 days. To create permanent eligibility, configure the role management policy at the target scope to allow it.
 
 ### Response
 
