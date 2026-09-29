@@ -18,7 +18,7 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 This article helps you keep track of the versions that have released and the changes in those versions.
 
 >[!IMPORTANT]
->**Mandatory upgrade required:** Upgrade Microsoft Entra Connect Sync to version 2.5.79.0 or later and configure application-based authentication by April 7, 2027. Legacy authentication is being retired, and synchronization services will stop working after this date if these requirements aren't met.
+>**Mandatory upgrade required:** Upgrade Microsoft Entra Connect Sync to version 2.6.84.0 or later and configure application-based authentication by April 7, 2027. Legacy authentication is being retired, and synchronization services will stop working after this date if these requirements aren't met.
 >
 >If synchronization stops, upgrade to the latest version and configure application-based authentication to restore service. The Microsoft Entra Connect Sync .msi installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
 

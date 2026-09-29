@@ -25,7 +25,7 @@ The following table provides information on the features and impact to services,
 ## Minimum versions
 To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 30, 2026**. To avoid any service impact, you should be using the following minimum versions:
 
-- Microsoft Entra Connect: [2.5.79.0](reference-connect-version-history.md#25790) or higher
+- Microsoft Entra Connect: [2.6.84.0](reference-connect-version-history.md#26840) or higher
 - Microsoft Entra Connect Health 
      - Connect Sync agent: [4.5.2466.0](https://aka.ms/connecthealth-download) or higher 
      - AD DS agent: version: [4.5.2466.0](https://aka.ms/connecthealth-adds-download) or higher 
@@ -36,7 +36,7 @@ To upgrade to the latest version.
 > [Install Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 
 >[!IMPORTANT]
->**Mandatory upgrade required:** Upgrade Microsoft Entra Connect Sync to version 2.5.79.0 or later and configure application-based authentication by April 7, 2027. Legacy authentication is being retired, and synchronization services will stop working after this date if these requirements aren't met.
+>**Mandatory upgrade required:** Upgrade Microsoft Entra Connect Sync to version 2.6.84.0 or later and configure application-based authentication by April 7, 2027. Legacy authentication is being retired, and synchronization services will stop working after this date if these requirements aren't met.
 >
 >If synchronization stops, upgrade to the latest version and configure application-based authentication to restore service. The Microsoft Entra Connect Sync .msi installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
 
