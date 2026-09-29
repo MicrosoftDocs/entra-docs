@@ -96,9 +96,6 @@ Supported claims and operators per claim:
 
 > [!NOTE]
 > Starting July 15, 2026, GitHub applies the immutable format automatically to repositories that are created, renamed, or transferred. Existing repositories keep the name-based format until you opt in. For details, see [Immutable subject claims for GitHub Actions OIDC tokens](https://github.blog/changelog/2026-04-23-immutable-subject-claims-for-github-actions-oidc-tokens/) in the GitHub Changelog.
->
-> Starting July 15, 2026, GitHub applies the immutable format automatically to repositories that are created, renamed, or transferred.
-> See [Migrate GitHub Actions federated credentials to immutable subjects](./workload-identities-github-immutable-subjects.md) for more information.
 
 ### [GitLab](#tab/gitlab)
 
