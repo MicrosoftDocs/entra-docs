@@ -131,7 +131,7 @@ az rest --method POST --uri 'https://graph.microsoft.com/applications/{app_regis
 This example shows how to use Bicep to create a FIC to make your app trust the assigned managed identity. Replace the placeholders with the appropriate values.
 
 ```Bicep
-extension 'br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:0.1.8-preview'
+extension 'br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:1.0.0'
 
 param myWorkloadManagedIdentity string = '[MANAGED-IDENTITY-NAME]'
 param applicationDisplayName string = '[APPLICATION-DISPLAYNAME]'
