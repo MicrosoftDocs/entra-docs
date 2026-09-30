@@ -43,23 +43,23 @@ Organizations can create a Conditional Access policy using the enhanced object p
 The enhanced object picker replaces the previous flat list experience in both the assignment and target resources sections of policy configuration. The new experience is meant to simplify the selection of items you want to scope in the policy.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-2. Browse to **Entra ID** > **Conditional Access** > **Policies**.
-3. Select **New policy**.
-4. Give your policy a name. Create a meaningful standard for the names of your policies.
-5. Under **Assignments**, select **Users, agents or workload identities**. 
-   6. Under **What does this policy apply to?**, select **Agents**.
-      1. Under **Include**, select **All agent identities**.
-      2. Under **Exclude**: 
-         1. Select **Select individual agent identities**.
-         2. Using the enhanced object picker, switch between the tabs **All**, **Agent blueprint principals**, and **Agent identities** to select the individual agent blueprints and/or agent identities approved for use in your environment.
-         3. Select **Select**.
-7. Under **Target resources**:
-   8. Under **Include**, select **All resources (formerly 'All cloud apps')**.
-9. Under **Access controls** > **Grant**: 
-   10. Select **Block**.
-   11. Select **Select**.
-12. Confirm your settings and set **Enable policy** to **Report-only**.
-13. Select **Create** to create your policy.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
+1. Under **Assignments**, select **Users, agents or workload identities**.
+    1. Under **What does this policy apply to?**, select **Agents**.
+        1. Under **Include**, select **All agent identities**.
+        1. Under **Exclude**:
+            1. Select **Select individual agent identities**.
+            1. Using the enhanced object picker, switch between the **All**, **Agent blueprint principals**, and **Agent identities** tabs to select the individual agent blueprints, agent identities, or both that you want to exclude.
+            1. Select **Select**.
+1. Under **Target resources**:
+    1. Under **Include**, select **All resources (formerly 'All cloud apps')**.
+1. Under **Access controls** > **Grant**:
+    1. Select **Block**.
+    1. Select **Select**.
+1. Confirm your settings, and set **Enable policy** to **Report-only**.
+1. Select **Create** to create your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
@@ -76,40 +76,42 @@ The recommended approach for creating this policy is to create and assign custom
 #### Create and assign custom attributes
 
 1. Create the custom security attributes:
-   2. Create an **Attribute set** named *AgentAttributes*.
-   3. Create **New attributes** named *AgentApprovalStatus* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**. 
-      1. Add the following predefined values: **New**, **In_Review**, **HR_Approved**, **Finance_Approved**, **IT_Approved**.
-4. Create another attribute set to group resources that your agents are allowed to access.
-   5. Create an **Attribute set** named *ResourceAttributes*.
-   6. Create **New attributes** named *Department* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**.
-      1. Add the following predefined values: **Finance**, **HR**, **IT**, **Marketing**, **Sales**.
-7. Assign the appropriate value to resources that your agent is allowed to access. For example, you might want only agents that are **HR_Approved** to be able to access resources that are tagged **HR**.
+    1. Create an **Attribute set** named *AgentAttributes*.
+    1. Create a **New attribute** named *AgentApprovalStatus* that has **Allow multiple values to be assigned** and **Only allow predefined values to be assigned** selected.
+        1. Add the following predefined values: **New**, **In_Review**, **HR_Approved**, **Finance_Approved**, and **IT_Approved**.
+1. Create another attribute set to group resources that your agents are allowed to access:
+    1. Create an **Attribute set** named *ResourceAttributes*.
+    1. Create a **New attribute** named *Department* that has **Allow multiple values to be assigned** and **Only allow predefined values to be assigned** selected.
+        1. Add the following predefined values: **Finance**, **HR**, **IT**, **Marketing**, and **Sales**.
+1. Assign the appropriate value to resources that your agent is allowed to access. For example, you might want only agents that are **HR_Approved** to access resources tagged **HR**.
 
 #### Create Conditional Access policy
 
 After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agents except those reviewed and approved by your organization. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Assignment Reader](../role-based-access-control/permissions-reference.md#attribute-assignment-reader).
-2. Browse to **Entra ID** > **Conditional Access** > **Policies**.
-3. Select **New policy**.
-4. Give your policy a name. Create a meaningful standard for the names of your policies.
-5. Under **Assignments**, select **Users, agents or workload identities**. 
-   6. Under **What does this policy apply to?**, select **Agents**.
-      1. Under **Include**, select **All agent identities**.
-      2. Under **Exclude**: 
-         1. Select **Select agent identities based on attributes**.
-         2. Set **Configure** to **Yes**. 
-         3. Select the Attribute we created earlier called **AgentApprovalStatus**.
-         4. Set **Operator** to **Contains**.
-         5. Set **Value** to **HR_Approved**.
-         6. Select **Done**.
-7. Under **Target resources**:
-   8. Under **Include**, select **All resources (formerly 'All cloud apps')**.
-9. Under **Access controls** > **Grant**: 
-   10. Select **Block**.
-   11. Select **Select**.
-12. Confirm your settings and set **Enable policy** to **Report-only**.
-13. Select **Create** to create your policy.
+After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agents except those reviewed and approved by your organization.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
+1. Give your policy a name. Create a meaningful standard for the names of your policies.
+1. Under **Assignments**, select **Users, agents or workload identities**.
+    1. Under **What does this policy apply to?**, select **Agents**.
+        1. Under **Include**, select **All agent identities**.
+        1. Under **Exclude**:
+            1. Select **Select agent identities based on attributes**.
+            1. Set **Configure** to **Yes**.
+            1. Select the attribute you created earlier, **AgentApprovalStatus**.
+            1. Set **Operator** to **Contains**.
+            1. Set **Value** to **HR_Approved**.
+            1. Select **Done**.
+1. Under **Target resources**:
+    1. Under **Include**, select **All resources (formerly 'All cloud apps')**.
+1. Under **Access controls** > **Grant**:
+    1. Select **Block**.
+    1. Select **Select**.
+1. Confirm your settings and set **Enable policy** to **Report-only**.
+1. Select **Create** to create your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
