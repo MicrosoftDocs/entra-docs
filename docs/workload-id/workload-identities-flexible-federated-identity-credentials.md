@@ -83,10 +83,13 @@ These claims are required regardless of whether `sub` uses a name-based, customi
 
 Supported claims and operators per claim: 
 
-- Claim `sub` supports operators `eq` and `matches`.
-- Claim `job_workflow_ref` supports operators `eq` and `matches`.
-- Claim `repository_id` supports operator `eq`.
-- Claim `repository_owner_id` supports operator `eq`.
+- Claim `sub` supports operators `eq` and `matches` 
+- Claim `job_workflow_ref` supports operators `eq` and `matches`
+- Claim `repository_id` supports operators `eq`
+- Claim `repository_owner_id` supports operators `eq`
+
+> [!NOTE]
+> Starting July 15, 2026, GitHub applies the immutable format automatically to repositories that are created, renamed, or transferred. Existing repositories keep the name-based format until you opt in. For details, see [Immutable subject claims for GitHub Actions OIDC tokens](https://github.blog/changelog/2026-04-23-immutable-subject-claims-for-github-actions-oidc-tokens/) in the GitHub Changelog.
 
 ### [GitLab](#tab/gitlab)
 
