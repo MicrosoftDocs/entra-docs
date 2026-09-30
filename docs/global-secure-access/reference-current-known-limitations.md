@@ -3,11 +3,12 @@ title: Known Limitations for Global Secure Access
 ms.reviewer: teresayao
 description: Discover the known limitations of Global Secure Access, including platform-specific issues and mitigations, to ensure seamless deployment and management.
 ms.topic: reference
-ms.date: 05/29/2026
-ms.custom: agent-id-ignite
+ms.date: 09/29/2026
+ms.custom: agent-id-ignite, msecd-doc-authoring-1026
+ai-usage: ai-assisted
 
 
-# Customer intent: As an administrator, I want to access the known limitations for Global Secure Access in one place. This article gathers all known issues and limitations into a single reference point. Global Secure Access articles with a "known limitations" section point to this article. 
+#customer intent: As an administrator, I want to review Global Secure Access limitations so that I can plan deployments and mitigate known issues.
 ---
 
 # Known limitations for Global Secure Access
@@ -173,7 +174,7 @@ When the Global Secure Access client for Windows is enabled on the host machine,
 Known limitations for the Global Secure Access client for macOS include:
 
 #### Secure Domain Name System (DNS)
-If Secure DNS is enabled on the browser or in macOS and the DNS server supports Secure DNS, then the client doesn't tunnel traffic set to be acquired by FQDN. (Network traffic that's acquired by IP isn't affected and is tunneled according to the forwarding profile.) To mitigate the Secure DNS issue, disable Secure DNS, set a DNS server that doesn't support Secure DNS, or create rules based on IP.
+The Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). The client for macOS bypasses Secure DNS to enforce fully qualified domain name (FQDN)-based tunneling through the traffic forwarding policy. You don't need to disable Secure DNS in the browser or macOS.
 
 #### Connection fallback
 If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
@@ -288,4 +289,3 @@ Known limitations for Explicit Forward Proxy (preview) include:
 - On MacOS, coexistence of GSA client and EFP settings are not supported due to client certificate issues.
 - Microsoft Office 365 traffic should not be tunneled to EFP. EFP-hosted PAC file excludes Office 365 destinations. Office 365 traffic is defined in the [Microsoft 365 IP and FQDN list](https://aka.ms/m365iplist)
 - EFP supports Microsoft Entra Internet Access traffic type. Private Access and Microsoft Traffic are not supported when users configure EFP.
-
