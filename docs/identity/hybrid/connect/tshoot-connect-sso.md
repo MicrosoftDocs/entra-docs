@@ -1,17 +1,12 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Seamless Single Sign-On'
 description: This topic describes how to troubleshoot Microsoft Entra seamless single sign-on
-
-author: billmath
 ms.reviewer: swkrish
-manager: femila
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
-ms.service: entra-id
 ms.topic: troubleshooting
-ms.date: 04/09/2025
+ms.date: 09/15/2026
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot Microsoft Entra seamless single sign-on
@@ -37,7 +32,7 @@ This article helps you find troubleshooting information about common problems re
 
 ## Check status of feature
 
-Ensure that the Seamless SSO feature is still **Enabled** on your tenant. You can check the status by going to the **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync** pane in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/).
+Ensure that the Seamless SSO feature is still **Enabled** on your tenant. You can check the status by going to the **Entra ID** > **Entra Connect** > **Connect Sync** pane in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/).
 
 ![Screenshot of the Microsoft Entra admin center: Microsoft Entra Connect pane.](./media/tshoot-connect-sso/sso10.png)
 
@@ -51,7 +46,7 @@ If your tenant has a Microsoft Entra ID P1 or P2 license associated with it, you
 
 ![Screenshot of the Microsoft Entra admin center: Sign-ins report.](media/tshoot-connect-sso/sso9.png)
 
-Browse to **Identity** > **Monitoring & health** > **Sign-ins** in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/), and then select a specific user's sign-in activity. Look for the **SIGN-IN ERROR CODE** field. Map the value of that field to a failure reason and resolution by using the following table:
+Browse to **Entra ID** > **Monitoring & health** > **Sign-ins** in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/), and then select a specific user's sign-in activity. Look for the **SIGN-IN ERROR CODE** field. Map the value of that field to a failure reason and resolution by using the following table:
 
 |Sign-in error code|Sign-in failure reason|Resolution
 | --- | --- | ---
@@ -101,11 +96,21 @@ If you enable success auditing on your domain controller, then every time a user
 
 If troubleshooting didn't help, you can manually reset the feature on your tenant. Follow these steps on the on-premises server where you're running Microsoft Entra Connect.
 
-### Step 1: Import the Seamless SSO PowerShell module
+### Step 1: Import the ADSync and Seamless SSO PowerShell modules
 
-1. First, download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
-2. Browse to the `%programfiles%\Microsoft Azure Active Directory Connect` folder.
-3. Import the Seamless SSO PowerShell module by using this command: `Import-Module .\AzureADSSO.psd1`.
+1. Ensure Microsoft Entra Connect is installed. Download it from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted).
+1. Import the ADSync PowerShell module:
+
+   ```powershell
+   Import-Module "$env:ProgramFiles\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1"
+   ```
+
+1. Browse to the `%ProgramFiles%\Microsoft Azure Active Directory Connect` folder.
+1. Import the Seamless SSO PowerShell module:
+
+   ```powershell
+   Import-Module .\AzureADSSO.psd1
+   ```
 
 ### Step 2: Get the list of Active Directory forests on which Seamless SSO has been enabled
 

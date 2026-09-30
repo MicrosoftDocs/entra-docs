@@ -1,18 +1,17 @@
 ---
 title: Learn about Universal Conditional Access Through Global Secure Access
 description: Learn about how Microsoft Entra Internet Access and Microsoft Entra Private Access secures access to your resources through Conditional Access.
-ms.service: global-secure-access
-ms.topic: conceptual
-ms.date: 02/21/2025
-ms.author: kenwith
-author: kenwith
-manager: femila
+ms.topic: concept-article
+ms.date: 03/12/2026
 ms.reviewer: smistry
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Universal Conditional Access through Global Secure Access
 
-In addition to sending traffic to Global Secure Access, administrators can use Conditional Access policies to secure traffic profiles. They can mix and match controls as needed like requiring multifactor authentication, requiring a compliant device, or defining an acceptable sign-in risk. Applying these controls to network traffic not just cloud applications allows for what we call universal Conditional Access.
+## Overview
+
+In addition to sending traffic to Global Secure Access, administrators can use Conditional Access policies to secure traffic profiles. They can mix and match controls as needed like requiring multifactor authentication, requiring a compliant device, or defining an acceptable sign-in risk. Applying these controls to network traffic not just cloud applications allows for universal Conditional Access.
 
 Conditional Access on traffic profiles provides administrators with enormous control over their security posture. Administrators can enforce [Zero Trust principles](/security/zero-trust/) using policy to manage access to the network. Using traffic profiles allows consistent application of policy. For example, applications that don't support modern authentication can now be protected behind a traffic profile.
 
@@ -41,7 +40,7 @@ With Conditional Access, you can enable access controls and security policies fo
 
 - Create a policy that targets all [Microsoft traffic](how-to-target-resource-microsoft-profile.md).
 - Apply Conditional Access policies to your [Private Access apps](how-to-target-resource-private-access-apps.md), such as Quick Access.
-- Enable [Global Secure Access signaling in Conditional Access](how-to-source-ip-restoration.md) so the source IP address is visible in the appropriate logs and reports.
+- Enable [Global Secure Access source IP restoration](how-to-source-ip-restoration.md) so the source IP address is visible in the appropriate logs and reports.
 
 ## Internet Access flow diagram
 

@@ -2,14 +2,9 @@
 title: 'Microsoft Entra Connect Sync V2 endpoint'
 description: This document covers updates to the Microsoft Entra Connect Sync v2 endpoints API.
 
-author: billmath
-manager: femila
-ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
 ---
 
 # Microsoft Entra Connect Sync V2 endpoint API 

@@ -1,15 +1,13 @@
 ---
 title: Add app roles and get them from a token
 description: Learn how to add app roles to an application registered in Microsoft Entra ID. Assign users and groups to these roles, and receive them in the 'roles' claim in the token.
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
-ms.custom:
-ms.date: 11/13/2024
+manager: pmwongera
+ms.date: 09/25/2026
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 #Customer intent: As a developer, I want to add app roles to my application using RBAC, so I can assign users and groups to those roles.
 ---
 
@@ -29,7 +27,7 @@ Currently, if you add a service principal to a group, and then assign an app rol
 
 App roles are declared using App roles UI in the Microsoft Entra admin center:
 
-The number of roles you add counts toward application manifest limits enforced by Microsoft Entra ID. For information about these limits, see the [Manifest limits](./reference-app-manifest.md#manifest-limits) section of [Microsoft Entra app manifest reference](reference-app-manifest.md).
+App roles are subject to a default limit of 700 permission definitions per application or service principal, shared with exposed delegated permission scopes. They also count toward the separate 1,200-entry application manifest limit. For counting rules and guidance for existing objects, see [App role limits](#app-role-limits).
 
 ### App roles UI
 
@@ -38,7 +36,7 @@ To create an app role by using the Microsoft Entra admin center's user interface
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations** and then select the application you want to define app roles in.
+1. Browse to **Entra ID** > **App registrations** and then select the application you want to define app roles in.
 1. Under manage select **App roles**, and then select **Create app role**.
 
    :::image type="content" source="media/howto-add-app-roles-in-apps/app-roles-overview-pane.png" alt-text="An app registration's app roles pane in the Azure portal":::
@@ -61,6 +59,37 @@ When the app role is set to **Enabled**, any users, applications, or groups who 
 
 When the app role is set to **Disabled**, it becomes inactive and no longer assignable. However, the current app role assignments to users, groups and applications will remain, and the app role will continue to pass in the token(s). Remove the app role from the user, group or application to ensure the app role is also removed from the token(s).
 
+## App role limits
+
+Microsoft Entra ID enforces a default limit of 700 permission definitions on each [application](/graph/api/resources/application) and [service principal](/graph/api/resources/serviceprincipal). App roles (`appRoles`) and exposed delegated permission scopes (`api.oauth2PermissionScopes` on an application, or `oauth2PermissionScopes` on a service principal) share this limit because they're stored in the same underlying `Entitlement` collection.
+
+The following counting rules apply:
+
+- The limit counts permission definitions, not the users, groups, or applications assigned to a role. App role assignments have [separate limits](../identity/users/directory-service-limits-restrictions.md).
+- Enabled and disabled definitions both count. Setting `isEnabled` to `false` doesn't free capacity.
+- Each distinct permission ID in the combined role and scope collection counts once. A role and a scope that share an ID and have matching shared properties are stored as one definition.
+- The count applies to each object's resulting collection, not just the entries added in a request. For a service principal, it includes definitions inherited from the application and definitions added directly to the service principal.
+
+For example, 650 app roles and 50 exposed delegated permission scopes with distinct IDs use all 700 entries. The separate [1,200-entry application manifest limit](reference-microsoft-graph-app-manifest.md#manifest-limits) doesn't allow you to exceed this limit.
+
+### Existing objects above the limit
+
+Existing objects can have more than 700 permission definitions. The count check allows updates that keep the number of definitions unchanged or reduce it, even when the result remains above the applicable limit. Other validation rules still apply. An update that increases the count above the applicable limit is rejected.
+
+Some existing objects have a higher service-assigned limit. Don't assume that a higher limit on one object applies to another object or tenant. You can't configure this limit through the application manifest.
+
+When the 700-value limit rejects an update, the error can identify the underlying property rather than `appRoles`:
+
+```text
+The total count of values: 701 exceeds the set maxValuesCount limit: 700 for property: Entitlement
+```
+
+### Design within the limit
+
+Use app roles for stable authorization categories, such as `Reader`, `Writer`, and `Administrator`, rather than defining a role for every resource, customer, or individual action. Keep finer-grained resource permissions in your application's authorization data and enforce them in the application.
+
+Remove obsolete roles and scopes to free capacity. Before deleting an app role, disable it and review its assignments and the application behavior that depends on it. Assigning groups to existing app roles can simplify assignment management, but doesn't increase the number of role definitions you can store.
+
 ## Assign application owner 
 
 Before you can assign app roles to applications, you need to assign yourself as the application owner.
@@ -74,14 +103,14 @@ Before you can assign app roles to applications, you need to assign yourself as 
 
 ## Assign app roles to applications
 
-After adding app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0&tabs=http). Assigning an app role to an application shouldn't be confused with [assigning roles to users](../identity/role-based-access-control/manage-roles-portal.md).
+After adding app roles in your application, you can assign an app role to a client app by using the Microsoft Entra admin center or programmatically by using [Microsoft Graph](/graph/api/serviceprincipal-post-approleassignments?tabs=http). Assigning an app role to an application shouldn't be confused with [assigning roles to users](../identity/role-based-access-control/manage-roles-portal.md).
 
 When you assign app roles to an application, you create *application permissions*. Application permissions are typically used by daemon apps or back-end services that need to authenticate and make authorized API call as themselves, without the interaction of a user.
 
 To assign app roles to an application by using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **App registrations** and then select **All applications**.
+1. Browse to **Entra ID** > **App registrations** and then select **All applications**.
 1. Select **All applications** to view a list of all your applications. If your application doesn't appear in the list, use the filters at the top of the **All applications** list to restrict the list, or scroll down the list to locate your application.
 1. Select the application to which you want to assign an app role.
 1. Select **API permissions** > **Add a permission**.
@@ -131,7 +160,7 @@ To assign users and groups to roles by using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **All applications** to view a list of all your applications. If your application doesn't appear in the list, use the filters at the top of the **All applications** list to restrict the list, or scroll down the list to locate your application.
 1. Select the application in which you want to assign users or security group to roles.
 1. Under **Manage**, select **Users and groups**.

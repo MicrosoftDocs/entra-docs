@@ -2,17 +2,12 @@
 title: Configure Workday writeback in Microsoft Entra ID
 description: Learn how to configure attribute writeback from Microsoft Entra ID to Workday
 
-author: cmmdesai
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
 ms.topic: how-to
 
 ms.date: 05/06/2024
-ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday Writeback so that I can streamline the user management process and ensure that users have the appropriate access to Workday Writeback.
----
+--- 
 # Configure attribute writeback from Microsoft Entra ID to Workday
 The objective of this article is to show the steps you need to perform to writeback attributes from Microsoft Entra ID to Workday. The Workday writeback provisioning app supports assigning values to the following Workday attributes:
 * Work Email 
@@ -51,7 +46,7 @@ Follow these instructions to configure writeback of user email addresses and use
 **To configure Workday Writeback connector:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Search for **Workday Writeback**, and add that app from the gallery.
 1. After the app is added and the app details screen is shown, select **Provisioning**.
 1. Change the **Provisioning** **Mode** to **Automatic**.
@@ -294,7 +289,7 @@ Once the Workday provisioning app configurations are complete, you can turn on t
 
 1. In the **Provisioning** tab, set the **Provisioning Status** to **On**.
 
-1. In the **Scope** dropdown, select **Sync all users and groups**. With this option, the Writeback app writes back mapped attributes of all users from Microsoft Entra ID to Workday, subject to the scoping rules defined under **Mappings** -> **Source Object Scope**. 
+1. In the **Scope** dropdown, select **Sync all users and groups**. With this option, the Writeback app writes back mapped attributes of all users from Microsoft Entra ID to Workday, subject to the scoping rules defined under **Mappings** > **Source Object Scope**. 
 
    > [!div class="mx-imgBorder"]
    > ![Select Writeback scope](./media/sap-successfactors-inbound-provisioning/select-writeback-scope.png)

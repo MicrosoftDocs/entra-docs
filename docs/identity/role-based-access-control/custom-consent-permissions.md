@@ -1,14 +1,8 @@
 ---
 title: App consent permissions for custom roles in Microsoft Entra ID
 description: App consent permissions for custom Microsoft Entra roles in the Microsoft Entra admin center, PowerShell, or Graph API.
-
-author: rolyon
-manager: femila
-ms.service: entra-id
-ms.subservice: role-based-access-control
 ms.topic: overview
 ms.date: 03/30/2025
-ms.author: rolyon
 ms.reviewer: psignoret
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---

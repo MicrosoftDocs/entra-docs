@@ -3,14 +3,10 @@ title: Plan your Microsoft Entra device deployment
 description: Choose the Microsoft Entra device integration strategies that meet your organizational needs.
 
 
-ms.service: entra-id
-ms.subservice: devices
 ms.topic: how-to
 ms.date: 11/25/2024
-ms.author: gasinh
-author: gargi-sinha
 manager: martinco
-ms.reviewer: sandeo
+ms.reviewer: sandeo, gasinh
 
 #Customer intent: As an IT admin, I want to choose the best device integration methods for my organization.
 
@@ -29,6 +25,7 @@ There are multiple methods to integrate your devices into Microsoft Entra ID. Th
 * [Join devices](concept-directory-join.md) to Microsoft Entra ID (cloud-only).
 * [Microsoft Entra hybrid join](concept-hybrid-join.md) devices to your on-premises Active Directory domain and Microsoft Entra ID. 
 
+
 ## Learn
 
 Before you begin, make sure that you're familiar with the [device identity management overview](overview.md).
@@ -39,7 +36,7 @@ The key benefits of giving your devices a Microsoft Entra identity:
 
 * Increase productivity – Users can do [seamless sign-on (SSO)](./device-sso-to-on-premises-resources.md) to your on-premises and cloud resources, enabling productivity wherever they are.
 
-* Increase security – Apply [Conditional Access policies](~/identity/conditional-access/overview.md) to resources based on the identity of the device or user. Joining a device to Microsoft Entra ID is a prerequisite for increasing your security with a [Passwordless](~/identity/authentication/concept-authentication-passwordless.md) strategy.
+* Increase security – Apply [Conditional Access policies](~/identity/conditional-access/overview.md) to resources based on the identity of the device or user. Joining a device to Microsoft Entra ID is a prerequisite for increasing your security with a [Passwordless](~/identity/authentication/concept-authentication-passkeys-fido2.md) strategy.
 
    > [!VIDEO https://www.youtube-nocookie.com/embed/NcONUf-jeS4]
 
@@ -76,6 +73,22 @@ You might want to do a [targeted deployment of Microsoft Entra hybrid join](hybr
 
 > [!WARNING]
 > Organizations should include a sample of users from varying roles and profiles in their pilot group. A targeted rollout will help identify any issues your plan may not have addressed before you enable for the entire organization.
+
+### Network Requirements for Device Registration with Microsoft Entra
+
+The following sites must be exempted if using TLS interception or network proxy filtering to ensure registration works as intended:
+
+- `enterpriseregistration.windows.net`
+- `certauth.enterpriseregistration.windows.net`
+- `enterpriseregistration.partner.microsoftonline.cn` (**)
+- `certauth.enterpriseregistration.partner.microsoftonline.cn`(**)
+- `enterpriseregistration.microsoftonline.us`(**)
+- `certauth.enterpriseregistration.microsoftonline.us`(**)
+
+( ** ) You only need to allow sovereign cloud domains if you rely on those in your environment.
+
+> [!NOTE]
+> Failure to exempt these endpoints may result in failure of device registration flows.
 
 ## Choose your integration methods
 
@@ -117,6 +130,7 @@ iOS and Android devices are only Microsoft Entra registered. The following table
 | Self-service password reset from the Windows login screen | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | Windows Hello PIN reset | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 
+
 <a name='azure-ad-registration-'></a>
 
 ## Microsoft Entra Registration 
@@ -143,6 +157,7 @@ If registering your devices is the best option for your organization, see the fo
 * This end-user documentation on [Register your personal device on your organization’s network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
 
 <a name='azure-ad-join'></a>
+
 
 ## Microsoft Entra join
 

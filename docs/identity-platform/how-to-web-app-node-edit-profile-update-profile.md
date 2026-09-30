@@ -1,9 +1,7 @@
 ---
 title: Edit profile in a Node.js web app
 description: Learn how to edit profile with multifactor authentication protection in your external-facing Node.js web app
-manager: mwongerapz
-author: kengaderdus
-ms.author: kengaderdus
+manager: dougeby
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/14/2025
@@ -311,7 +309,7 @@ In this section, you add the identity related code for the mid-tier app (EditPro
     
     const GRAPH_API_ENDPOINT = process.env.GRAPH_API_ENDPOINT || "graph_end_point";
     // Refers to the user that is single user singed in.
-    // https://learn.microsoft.com/en-us/graph/api/user-update?tabs=http
+    // https://learn.microsoft.com/graph/api/user-update?tabs=http
     const GRAPH_ME_ENDPOINT = GRAPH_API_ENDPOINT + "v1.0/me";
     
     module.exports = {

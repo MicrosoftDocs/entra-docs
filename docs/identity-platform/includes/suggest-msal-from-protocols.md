@@ -2,15 +2,13 @@
 title: Prefer MSAL
 description: Include file indicating that it's best to use MSAL. 
 
-author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 
 ms.service: identity-platform
 
 
 ms.topic: include
 ms.date: 11/17/2020
-ms.author: henrymbugua
 ms.reviewer: ludwignick
 ms.custom: 
 ---

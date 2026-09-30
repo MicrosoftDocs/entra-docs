@@ -1,10 +1,7 @@
 ---
 title: Updates and breaking changes
 description: Learn about changes to the Microsoft identity platform that can impact your application.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
-ms.custom: has-adal-ref
+manager: pmwongera
 ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
@@ -190,7 +187,7 @@ You can review the current text of the 50105 error and more on the error lookup 
 **Change**
 
 For single tenant applications, adding or updating the AppId URI validates that the domain in the HTTPS scheme URI is listed in the verified domain list in the customer tenant or that the value uses the default scheme (`api://{appId}`) provided by Microsoft Entra ID. This could prevent applications from adding an AppId URI if the domain isn't in the verified domain list or the value doesn't use the default scheme.
-To find more information on verified domains, refer to the [custom domains documentation](~/fundamentals/add-custom-domain.yml).
+To find more information on verified domains, refer to the [custom domains documentation](~/fundamentals/add-custom-domain.md).
 
 The change doesn't affect existing applications using unverified domains in their AppID URI. It validates only new applications or when an existing application updates an identifier URI or adds a new one to the identifierUri collection. The new restrictions apply only to URIs added to an app's identifierUris collection after October 15, 2021. AppId URIs already in an application's identifierUris collection when the restriction takes effect on October 15, 2021 will continue to function even if you add new URIs to that collection.
 
@@ -412,7 +409,7 @@ Starting on November 15, 2018, Microsoft Entra ID will stop accepting previously
 
 If your app reuses authorization codes to get tokens for multiple resources, we recommend that you use the code to get a refresh token, and then use that refresh token to acquire additional tokens for other resources. Authorization codes can only be used once, but refresh tokens can be used multiple times across multiple resources. Any new app that attempts to reuse an authentication code during the OAuth code flow will get an invalid_grant error.
 
-For more information about refresh tokens, see [Refreshing the access tokens](v2-oauth2-auth-code-flow.md#refresh-the-access-token). If using ADAL or MSAL, this is handled for you by the library - replace the second instance of `AcquireTokenByAuthorizationCodeAsync` with `AcquireTokenSilentAsync`.
+For more information about refresh tokens, see [Refreshing the access tokens](v2-oauth2-auth-code-flow.md#refresh-the-access-token). If using MSAL, this is handled for you by the library - replace the second instance of `AcquireTokenByAuthorizationCodeAsync` with `AcquireTokenSilentAsync`.
 
 ## May 2018
 

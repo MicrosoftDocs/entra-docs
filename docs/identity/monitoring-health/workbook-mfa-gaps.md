@@ -1,14 +1,8 @@
 ---
 title: Multifactor Authentication Gaps workbook
 description: Learn how to use the MFA Gaps workbook in Microsoft Entra ID to identify apps and users who aren't protected by MFA.
-
-author: shlipsey3
-manager: femila
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 11/04/2024
-ms.author: sarahlipsey
 ms.reviewer: sarbar
 
 #Customer intent: As an IT admin, I need to use the MFA Gaps workbook to identify apps and users who aren't protected by MFA so I can ensure that my MFA policies are working as expected.
@@ -33,7 +27,7 @@ This article gives you an overview of the **Multifactor authentication gaps** wo
 The **MFA gaps** workbook is currently not available as a template, but you can import it from the Microsoft Entra workbooks GitHub repository.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 1. Select **+ New**.
 1. Select the **Advanced Editor** button from the top of the page. A JSON editor opens.
 

@@ -1,15 +1,9 @@
 ---
 title: Join a SLE VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a SUSE Linux Enterprise virtual machine to a Microsoft Entra Domain Services managed domain.
-author: justinha
-manager: femila
-
-ms.service: entra-id
-ms.subservice: domain-services
-ms.custom: devx-track-linux, linux-related-content
+ms.custom: devx-track-linux, linux-related-content, sfi-image-nochange
 ms.topic: how-to
 ms.date: 03/18/2025
-ms.author: justinha
 ---
 # Join a SUSE Linux Enterprise virtual machine to a Microsoft Entra Domain Services managed domain
 
@@ -22,7 +16,7 @@ This article shows you how to join a SUSE Linux Enterprise (SLE) VM to a managed
 To complete this tutorial, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.

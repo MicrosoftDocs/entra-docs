@@ -1,29 +1,35 @@
 ---
 title: Extend or renew PIM for groups assignments
 description: Learn how to extend or renew PIM for groups assignments.
-author: barclayn
-manager: femila
 ms.reviewer: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: how-to
-ms.subservice: privileged-identity-management
-ms.date: 12/16/2024
-ms.author: barclayn
-ms.custom: pim
+ms.date: 04/23/2026
+ms.custom: pim, sfi-image-nochange
+#Customer Intent: As an administrator or group member, I want to extend or renew time-bound group membership or ownership assignments before they expire to maintain necessary access.
 ---
+# Extend or renew PIM for groups assignments
 
-# Extend or renew PIM for groups assignments 
+## Overview
 
 Privileged Identity Management (PIM) in Microsoft Entra ID provides controls to manage the access and assignment lifecycle for group membership and ownership. Administrators can assign start and end date-time properties for group membership and ownership. When the assignment end approaches, Privileged Identity Management sends email notifications to the affected users or groups. It also sends email notifications to administrators of the resource to ensure that appropriate access is maintained. Assignments might be renewed and remain visible in an expired state for up to 30 days, even if access isn't extended.
 
 ## Who can extend and renew
 
-Only users with permissions to manage groups can extend or renew group membership or ownership time-bound assignments. The affected user or group can request to extend assignments that are about to expire and request to renew assignments that are already expired.
+Only users with permissions to manage groups can extend or renew time-bound group membership or ownership assignments. The assignee can request to extend assignments that are about to expire and request to renew assignments that are already expired.
 
-Role-assignable groups can be managed by at least the Privileged Role Administrator or Owner of the group. Non-role-assignable groups can be managed by at least the Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator, or Owner of the group. Role assignments for administrators should be scoped at directory level (not Administrative Unit level). 
+- To manage ownership of a role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groupsAssignableToRoles/owners/update` permission, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group.
+- To manage membership in a role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groupsAssignableToRoles/members/update` permission, such as Privileged Role Administrator or Global Administrator, or be an active owner of the group.
+- To manage ownership of a non-role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groups/owners/update` permission, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group.
+- To manage membership in a non-role-assignable group, you need a Microsoft Entra role with the `microsoft.directory/groups/members/update` permission, such as Groups Administrator or Identity Governance Administrator, or be an active owner of the group.
+
+Role assignments for administrators can be scoped at directory level or administrative unit level. Built-in and custom Microsoft Entra roles are supported.
+
+Privileged Identity Management doesn't support permissions that start with `microsoft.directory/groups.security/` or `microsoft.directory/groups.unified/`. Use permissions that start with `microsoft.directory/groups/` instead.
+
+Privileged Identity Management doesn't support groups in Restricted Management Administrative Units (RMAU).
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable M365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
+> Administrators and group owners can manage groups through the Groups experience and other interfaces, overriding changes made in Microsoft Entra PIM.
 
 ## When notifications are sent
 
@@ -49,8 +55,8 @@ When the assignment end date-time is within 14 days, the **Extend** command is a
 
 :::image type="content" source="media/pim-for-groups/pim-group-12.png" alt-text="Screenshot of where to extend group assignment pane with a Reason box and details." lightbox="media/pim-for-groups/pim-group-12.png":::
 
->[!NOTE]
->We recommend including the details of why the extension is necessary, and for how long the extension should be granted (if you have this information).
+> [!NOTE]
+> Include the details of why the extension is necessary, and for how long the extension should be granted (if you have this information).
 
 Administrators receive an email notification requesting that they review the extension request. If a request to extend has already been submitted, an Azure notification appears in the portal.
 
@@ -62,11 +68,11 @@ To view the status of or cancel your request, open the **Pending requests** page
 
 When a user or group submits a request to extend a group assignment, administrators receive an email notification that contains the details of the original assignment and the reason for the request. The notification includes a direct link to the request for the administrator to approve or deny.
 
-In addition to using following the link from email, administrators can approve or deny requests by going to the Privileged Identity Management administration portal and selecting **Approve requests** in the left pane.
+In addition to following the link from the email, administrators can approve or deny requests by going to the Privileged Identity Management administration portal and selecting **Approve requests** in the left pane.
 
-:::image type="content" source="media/pim-for-groups/pim-group-14.png" alt-text="Screenshot of the **Approve requests** page listing requests and links to approve or deny." lightbox="media/pim-for-groups/pim-group-14.png":::
+:::image type="content" source="media/pim-for-groups/pim-group-14.png" alt-text="Screenshot of the Approve requests page listing requests and links to approve or deny." lightbox="media/pim-for-groups/pim-group-14.png":::
 
-When an Administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
+When an administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
 
 :::image type="content" source="media/pim-for-groups/pim-group-15.png" alt-text="Screenshot of where to approve group assignment request with requestor reason, assignment type, start time, end time, and reason." lightbox="media/pim-for-groups/pim-group-15.png":::
 

@@ -1,12 +1,10 @@
 ---
 title: Claims customization
 description: Learn about the custom claims policy and claims mapping policy types, which are used to modify the claims emitted in tokens in the Microsoft identity platform.
-author: cilwerner
-manager: CelesteDG
-ms.author: cwerner
-ms.custom: curation-claims
+manager: pmwongera
+ms.custom:
 ms.date: 06/02/2023
-ms.reviewer: ludwignick, jeedes, rahulnagraj
+ms.reviewer: ludwignick
 ms.service: identity-platform
 ms.topic: reference
 #Customer intent: As an admin managing policies for enterprise apps, I want to understand how claims management works using policies and the different claim sets which are available, so that I can customize the claims included in token.
@@ -448,7 +446,7 @@ Based on the method chosen, a set of inputs and outputs is expected. Define the 
 
 ### Exceptions and restrictions
 
-**SAML NameID and UPN** - The attributes from which you source the NameID and UPN values, and the claims transformations that are permitted, are limited.
+**SAML NameID and UPN** - The attributes from which you source the NameID and UPN values, and the claims transformations that are permitted, are limited. Custom claim provider attributes cannot be used as NameID source in Microsoft Entra ID SAML SSO. 
 
 | Source | ID | Description |
 |--------|----|-------------|

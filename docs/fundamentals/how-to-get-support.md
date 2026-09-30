@@ -1,19 +1,17 @@
 ---
-title: Find help and get support for Microsoft Entra ID
-description: Instructions about how to get help, find community support, and open a support request for Microsoft Entra ID.
-author: shlipsey3
-manager: femila
-ms.service: entra
+title: Find help and get support for Microsoft Entra
+description: Instructions about how to get help, find community support, and open a support request for Microsoft Entra.
+manager: pmwongera
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.date: 03/17/2025
-ms.author: sarahlipsey
-ms.reviewer: jeffsta
+ms.date: 03/09/2026
+ms.reviewer: tychusnyanga
+#Customer Intent: As an IT admin, I want to find help and get support for Microsoft Entra so that I can resolve issues with my identity and access services.
 ---
 
-# Find help and get support for Microsoft Entra ID
+# Find help and get support for Microsoft Entra
 
-Microsoft documentation and learning content provide quality support and troubleshooting information, but if you have a problem not covered in our content, there are several options to get help and support for Microsoft Entra ID.
+Microsoft documentation and learning content provide quality support and troubleshooting information, but if you have a problem not covered in our content, there are several options to get help and support for Microsoft Entra.
 
 This article provides the options to find support from the Microsoft community and how to submit a support request with Microsoft.
 
@@ -60,7 +58,18 @@ Search for or select **Diagnose and solve problems** from the navigation menu.
 
 Some of the diagnostic tools require specific roles to use the tool. For example, you need to be at least a **Billing administrator** to use the sign-in diagnostic tool. Contact your local administrator for assistance or to get the necessary permissions.
 
-## Open a support request
+### Use Microsoft Entra Self-Service Support
+
+Self-Service Support is an AI-powered tool that can help you troubleshoot identity and access issues and find solutions before creating a support request. It uses Microsoft documentation from [learn.microsoft.com](https://learn.microsoft.com) and generative AI to analyze your problem and provide relevant guidance.
+
+1. From **Diagnose and solve problems**, select **Self-Service Support**.
+1. Describe your issue in the chat interface or select one of the prebuilt options.
+1. Continue with the follow-up questions as needed.
+1. After the third follow-up question, select **Create a support request** if your issue wasn't resolved and you still need support.
+
+For more information, see [How to use Microsoft Entra Self-Service Support](how-to-entra-self-service-support.md).
+
+### Open a support request
 
 If you're unable to find answers by using the previously mentioned resources, you can open an online support request.
 
@@ -78,7 +87,7 @@ Online support requests can be created from several places in the admin center:
 
     ![Screenshot of the new support request button in the help icon.](media/how-to-get-support/help-icon-support-request.png)
 
-### Tips for creating online support requests
+#### Tips for creating online support requests
 
 - **Open a support request for only a single problem**
     - We try to connect you to the support engineers who are subject matter experts for your problem.
@@ -91,16 +100,16 @@ Online support requests can be created from several places in the admin center:
     - If you prefer not to share this information, select **No**. For more information about the types of files we might collect, see [Advanced diagnostic information logs](/azure/azure-portal/supportability/how-to-create-azure-support-request#advanced-diagnostic-information-logs).
 - **Support is available online and by phone for Microsoft paid and trial subscriptions**
     - Support is provided for global technical, presales, billing, and subscription issues.
-    - Phone support and online billing support are available in additional languages.
+    - Phone support and online billing support are available in more languages.
 - Explore the [support options and choose the plan](https://azure.microsoft.com/support/plans) that best fits your scenario.
 - Microsoft customers can create and manage support requests in the Azure portal and the Microsoft Entra admin center.
 
 > [!NOTE]
 >
 > - If you're using Microsoft Entra External ID in an external tenant, the support request feature is currently unavailable for external tenant technical issues. Instead, use the **Give Feedback** link on the **New support request** page. Or, switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
-> - If you're using Azure AD B2C, open a support ticket by first switching to a Microsoft Entra tenant that has an Azure subscription associated with it. Typically, this is your employee tenant or the default tenant created for you when you signed up for an Azure subscription. To learn more, see [how an Azure subscription is related to Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
+> - If you're using Azure AD B2C, open a support ticket by first switching to a Microsoft Entra tenant that has an Azure subscription associated with it. Typically, this is your employee tenant or the default tenant created for you when you signed up for an Azure subscription. To learn more, see [how an Azure subscription is related to Microsoft Entra](./how-subscriptions-associated-directory.md).
 
-### To open a support request in Microsoft Entra ID:
+### To open a support request in Microsoft Entra:
 
 The steps to open a support request represent the high-level process. The actual steps vary based on your scenario and the values you select.
 
@@ -126,18 +135,18 @@ If you're not an Azure customer, you can open a support request with [Microsoft 
 
 ## Microsoft Security Copilot
 
-The Microsoft Security Copilot is a platform that brings together the power of AI and human expertise to help you and your teams respond to threats faster and more effectively. The capabilities of this powerful feature are under continuous development, with several features available today. These features can also be used for some troubleshooting and support scenarios. For more information, see [Copilot in Microsoft Entra](copilot-security-entra.md)
+The Microsoft Security Copilot is a platform that brings together the power of AI and human expertise to help you and your teams respond to threats faster and more effectively. The capabilities of this powerful feature are under continuous development, with several features available today. These features can also be used for some troubleshooting and support scenarios. For more information, see [Copilot in Microsoft Entra](../security-copilot/security-copilot-in-entra.md)
 
 ## Get Microsoft 365 admin center support
 
-Support for Microsoft Entra ID in the [Microsoft 365 admin center](https://admin.microsoft.com) is offered for administrators through the admin center. Review the [support for Microsoft 365 for business article](/microsoft-365/admin/).
+Support for Microsoft Entra in the [Microsoft 365 admin center](https://admin.microsoft.com) is offered for administrators through the admin center. Review the [support for Microsoft 365 for business article](/microsoft-365/admin/).
 
 ## Stay informed
 
 Things can change quickly. The following resources provide updates and information on the latest releases.
 
-- [What's new in Microsoft Entra ID](whats-new.md): Get to know what's new in Microsoft Entra ID including the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
-- [Microsoft Entra identity blog](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bg-p/Identity): Get news and information about Microsoft Entra ID.
+- [What's new in Microsoft Entra](whats-new.md): Get to know what's new in Microsoft Entra including the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
+- [Microsoft Entra identity blog](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bg-p/Identity): Get news and information about Microsoft Entra.
 - [Azure updates](https://azure.microsoft.com/updates/?category=identity): Learn about important product updates, roadmap, and announcements.
 
 ## Related content

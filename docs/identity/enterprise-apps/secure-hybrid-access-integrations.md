@@ -2,14 +2,11 @@
 title: Secure hybrid access with Microsoft Entra integration
 description: Help customers discover and migrate SaaS applications into Microsoft Entra ID and connect apps that use legacy authentication methods with Microsoft Entra ID.
 
-author: gargi-sinha
 manager: martinco
-ms.service: entra-id
-ms.subservice: enterprise-apps
 ms.topic: how-to
 
 ms.date: 01/19/2023
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps
 
@@ -113,7 +110,7 @@ The following diagram illustrates the user authentication flow:
 
 ### Users sign in to the applications
 
-When users sign in to applications, they use OIDC or SAML. If the applications need to interact with Microsoft Graph or Microsoft Entra protected API, we recommend you configure them to use OICD. This configuration ensures the JWT is applied to interact with Microsoft Graph. If there's no need for applications to interact with Microsoft Graph, or Microsoft Entra protected APIs, then use SAML.
+When users sign in to applications, they use OIDC or SAML. If the applications need to interact with Microsoft Graph or Microsoft Entra protected API, we recommend you configure them to use OIDC. This configuration ensures the JWT is applied to interact with Microsoft Graph. If there's no need for applications to interact with Microsoft Graph, or Microsoft Entra protected APIs, then use SAML.
 
 The following diagram shows user authentication flow:
 

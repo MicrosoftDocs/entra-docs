@@ -1,6 +1,4 @@
 ---
-author: rwike77
-ms.author: ryanwi
 ms.date: 04/24/2024
 ms.topic: include
 ms.custom:
@@ -12,7 +10,7 @@ In this article, using the Azure Resource Manager deployment template, you learn
 ## Prerequisites
 
 - If you're unfamiliar with using Azure Resource Manager deployment template, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). **Be sure to review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types)**.
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Azure Resource Manager templates
 

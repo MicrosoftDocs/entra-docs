@@ -1,18 +1,11 @@
 ---
-
-title: Leave an Organization
+title: Leave an organization
 titleSuffix: Microsoft Entra External ID
 description: As a B2B collaboration user, learn how to leave an organization if you no longer need guest user access to apps. If you're an admin, see how to allow external users to leave.
-
-ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 12/16/2024
-
-ms.author: cmulligan 
-author: csmulligan 
-manager: celestedg
-
+ms.date: 04/24/2026
 ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
 adobe-target: true
 
 # Customer intent: As a Microsoft Entra B2B collaboration or B2B direct connect user, I want to leave an organization, so that I can stop using apps from that organization and end any association with it.
@@ -28,31 +21,31 @@ As a Microsoft Entra B2B collaboration or B2B direct connect user, you can leave
 
 You can usually leave an organization on your own without having to contact an administrator. However, in some cases this option won't be available and you'll need to contact your tenant admin, who can delete your account in the external organization.
 
-This article is intended for administrators.
+This article includes guidance for users who want to leave an organization and for administrators who manage external user leave settings.
 
-If you're a user looking for information about how to manage and leave an organization, see the [Manage organizations article.](https://support.microsoft.com/account-billing/manage-organizations-for-a-work-or-school-account-in-the-my-account-portal-a9b65a70-fec5-4a1a-8e00-09f99ebdea17)
+If you're a user looking for information about how to manage and leave an organization, see [Manage organizations for your work or school account in the My Account portal](https://support.microsoft.com/account-billing/manage-organizations-for-a-work-or-school-account-in-the-my-account-portal-a9b65a70-fec5-4a1a-8e00-09f99ebdea17).
 
 ## What organizations do I belong to?
 
-1. To view the organizations you belong to, first open your **My Account** page. You either have a work or school account  created by an organization or a personal account such as for Xbox, Hotmail, or Outlook.com.  
+1. To view the organizations you belong to, first open your **My Account** page. You either have a work or school account created by an organization or a personal account such as for Xbox, Hotmail, or Outlook.com.
 
-   - If you're using a work or school account, go to https://myaccount.microsoft.com and sign in.
+   - If you're using a work or school account, go to <https://myaccount.microsoft.com> and sign in.
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
    For example:
 
-   `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
-
-   -or-
-
-   `https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee`
-
-   You might need to open this URL in a private browser session.
+      `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
+    
+      -or-
+    
+      `https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee`
+    
+      You might need to open this URL in a private browser session.
 
 1. Select **Organizations** from the left navigation pane or select the **Manage organizations** link from the **Organizations** block.
 
 1. The **Organizations** page appears, where you can view and manage the organizations you belong to.
 
-   ![Screenshot showing the list of organizations you belong to.](media/leave-the-organization/organization-list.png)
+   :::image type="content" source="media/leave-the-organization/organization-list.png" alt-text="Screenshot showing the list of organizations you belong to." lightbox="media/leave-the-organization/organization-list.png":::
 
    - **Home organization**: Your home organization is listed first. This organization owns your work or school account. Because your account is managed by your administrator, you're not allowed to leave your home organization. You'll see there's no link to **Leave**. If you don't have an assigned home organization, you'll just see a single heading that says **Organizations** with the list of your associated organizations.
 
@@ -90,11 +83,11 @@ In these cases, you can select **Leave**, but then you'll see a message saying y
 Administrators can use the **External user leave settings** to control whether external users can remove themselves from their organization. If you disallow the ability for external users to remove themselves from your organization, external users will need to contact your admin, or privacy contact to be removed.
 
 > [!IMPORTANT]
-> You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.yml) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable. We recommend adding your privacy information to allow external users to review your policies and email your privacy contact when necessary.
+> You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.md) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable. We recommend adding your privacy information to allow external users to review your policies and email your privacy contact when necessary.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **External user leave** settings, choose whether to allow external users to leave your organization themselves:
 
@@ -109,9 +102,9 @@ When a B2B collaboration user leaves an organization, the user's account is "sof
 
 If desired, a tenant administrator can permanently delete the account at any time during the soft-deleted period with the following steps. This action is irrevocable.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 
-1. Browse to **Identity** > **Users** > **All users**
+1. Browse to **Entra ID** > **Users**
 
 1. Select **Deleted users**.
 

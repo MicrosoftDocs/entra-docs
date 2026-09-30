@@ -1,15 +1,9 @@
 ---
 title: Frequently asked questions
 description: Find answers to frequently asked questions about Microsoft Entra External ID. Learn about pricing, features, and the future of Azure AD B2C and External Identities. 
- 
-author: msmimart
-manager: celestedg
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: faq
-ms.date: 02/21/2025
-ms.author: mimart
+ms.date: 05/20/2026
+ai-usage: ai-assisted
 ms.custom: it-pro
 ---
 
@@ -26,23 +20,23 @@ This FAQ references customer identity and access management (CIAM). CIAM is an i
 Microsoft Entra External ID pricing is based on monthly active users (MAU), which is the count of unique users with authentication activity within a calendar month. External ID consists of a core offer and premium add-ons. The Microsoft Entra External ID core offering is free for the first 50,000 MAU. For the latest information about usage billing and pricing, see [Billing model for Microsoft Entra External ID](../external-identities-pricing.md).
 
 > [!NOTE]
-> Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available.
+> If you previously subscribed to Azure Active Directory B2C (Azure AD B2C) or to B2B collaboration under an Azure AD External Identities P1/P2 SKU, see the [External ID pricing](../external-identities-pricing.md) page for information about current pricing options and any available upgrade paths.
 
 ### Does the 50,000 MAU free tier apply to add-ons?
 
-No, External ID add-ons don't have a free tier. However, the ID Governance premium feature for External ID is in preview, so currently there's no charge for this add-on.
+No, External ID add-ons don't have a free tier. To learn more about pricing visit the [External ID pricing page](/entra/external-id/external-identities-pricing).
 
 ### Does External ID have phone authentication via SMS?
 
-Yes, this feature is now available in workforce and [external](concept-multifactor-authentication-customers.md) configurations.
+Currently, SMS isn't available for first-factor authentication or self-service password reset in external tenants. However, SMS is now available for second-factor verification in external tenants at additional cost. [Learn more](concept-multifactor-authentication-customers.md#sms-based-authentication)
 
 ### I linked my external tenant to a subscription, but the license status still shows "free"
 
-After you link your external tenant to a subscription, you can view it on your external tenant home page (**Home** > **Billing**). However, the license on your external tenant overview page (**Home** > **Tenant overview** > **Overview**) will still show **Microsoft Entra ID Free**. This is a known issue that we’re working to resolve.
+After you link your external tenant to a subscription, you can view it on your external tenant home page (**Home** > **Billing**). However, the license on your external tenant overview page (**Home** > **Tenant overview** > **Overview**) still shows **Microsoft Entra ID Free**. We're working to resolve this known issue.
 
 ### Why does my Azure AD External Identities bill show phone charges named "Microsoft Entra External ID?"
 
-Following the new [billing model](https://azure.microsoft.com/pricing/details/active-directory-b2c/) for Azure AD External Identities SMS Phone Authentication, you may notice a new name for Phone MFA on your bill. Now you’ll see the following names based on your [country or region pricing tier](https://aka.ms/ExternalIDSMSCountries):
+Following the new [billing model](https://azure.microsoft.com/pricing/details/active-directory-b2c/) for Azure AD External Identities SMS Phone Authentication, you might notice a new name for Phone MFA on your bill. Now you see the following names based on your [country or region pricing tier](https://aka.ms/ExternalIDSMSCountries):
 
 - Microsoft Entra External ID - Phone Authentication Low Cost 1 Transaction
 - Microsoft Entra External ID - Phone Authentication Mid Low Cost 1 Transaction
@@ -74,6 +68,9 @@ Yes, we rebranded some items in the admin center and in our messaging to best ma
 |Azure AD B2B direct connect  | External ID B2B direct connect          |
 |Customer tenant              | External tenant                         |
 
+> [!NOTE]
+> A Microsoft Entra tenant can be created in either a workforce tenant configuration or an external tenant configuration. [Learn more about tenant configurations](../tenant-configurations.md).
+
 ### How can I get started with External ID?
 
 Get started with securing your consumer and business customer apps by [creating an external tenant](quickstart-tenant-setup.md) in the Microsoft Entra admin center.
@@ -82,7 +79,7 @@ Get started with securing your consumer and business customer apps by [creating 
 
 ### What's happening to Azure AD B2C and Azure AD External Identities?
 
-Effective May 1, 2025 Azure AD External Identities P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, will remain unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, will also remain unchanged. We'll continue supporting Azure AD B2C until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
+Effective May 1, 2025 Azure AD B2C P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, remains unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, also remain unchanged. We'll continue supporting Azure AD B2C until at least May 2030. For detailed migration guidance, see [Plan your migration from Azure AD B2C to External ID](plan-your-migration-from-b2c-to-external-id.md). Contact your account representative for more information and to learn more about Microsoft Entra External ID.
 
 ### What's happening to Azure AD B2B collaboration and B2B direct connect?
 
@@ -104,7 +101,7 @@ Our next-generation CIAM platform is designed to accommodate equivalent capabili
 
 ### What identity providers does External ID support?
 
- External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, Apple, custom OIDC, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
+ External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, Apple, Microsoft Entra ID federation, custom OIDC, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
 
 ### Where can I find a list of External ID features?
 
@@ -115,7 +112,7 @@ For a detailed list of the External ID features and capabilities, see [Supported
 -->
 ### Will External ID support Microsoft Entra US Government Cloud?
 
-Currently, External ID supports public clouds only.
+External ID currently supports public clouds only. External ID in the public cloud is accredited for [Federal Risk and Authorization Management Program](/azure/compliance/offerings/offering-fedramp) (FedRAMP) High and [Department of Defense (DoD) Impact Level 2 (IL2)](/azure/compliance/offerings/offering-dod-il2).
 
 ## Developer Experiences
 
@@ -146,12 +143,12 @@ You can see example code for each of these steps in our [sample applications](sa
 
 ### Can I build a fully custom authentication sign-in experience?
 
-[Native authentication](concept-native-authentication.md) empowers you to take complete control over the design of the sign-in experience of your mobile applications. It allows you to craft stunning, pixel-perfect authentication screens that are seamlessly integrated into your apps, rather than relying on browser-based solutions. Read more in our [blog](https://devblogs.microsoft.com/identity/native-auth-for-external-id/).
+Yes. Microsoft Entra External ID supports two authentication approaches: **browser-delegated authentication**, which redirects users to a Microsoft-hosted sign-in page, and **native authentication**, which lets you build the sign-in UI directly into your app. Native authentication gives you full control over the sign-in experience for mobile and single-page applications but requires more development effort and shared security responsibility. To compare both approaches and decide which is right for your app, see [Choose an authentication approach](concept-choose-authentication-approach.md).
 
 ### What integrations does External ID support for developers?
 
 External ID supports server-side integrations with external systems via [custom authentication extensions](~/identity-platform/custom-extension-overview.md). This capability allows developers to implement their own logic and invoke it via real-time API calls during sign-in/up flows.
 
-## Next steps
+## Related content
 
 [Learn more about Microsoft Entra External ID](../index.yml).

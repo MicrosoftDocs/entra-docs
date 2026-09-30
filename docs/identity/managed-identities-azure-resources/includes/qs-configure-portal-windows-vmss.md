@@ -1,14 +1,13 @@
 ---
-author: rwike77
-ms.author: ryanwi
 ms.date: 01/16/2025
 ms.topic: include
+ms.custom: sfi-image-nochange
 ---
 
 In this article, using the Azure portal, you learn how to perform the following managed identities for Azure resources operations on a virtual machine scale set:
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 - To perform the management operations in this article, your account needs the following Azure role assignments:
 
     > [!NOTE]
@@ -80,4 +79,4 @@ Navigate to the desired virtual machine scale set and click **Identity**, **User
 
 ## Next steps
 
-- Using the Azure portal, give an Azure virtual machine scale set managed identity [access to another Azure resource](~/identity/managed-identities-azure-resources/howto-assign-access-portal.md).
+- Using the Azure portal, give an Azure virtual machine scale set managed identity [access to another Azure resource](~/identity/managed-identities-azure-resources/grant-managed-identity-resource-access-azure-portal.md).

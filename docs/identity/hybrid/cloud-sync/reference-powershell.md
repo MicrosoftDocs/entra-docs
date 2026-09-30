@@ -2,15 +2,10 @@
 title: 'AADCloudSyncTools PowerShell module for Microsoft Entra Cloud Sync'
 description: This article describes how to install the Microsoft Entra Connect cloud provisioning agent.
 
-author: billmath
-manager: femila
-ms.service: entra-id
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, msecd-doc-authoring-1024
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 08/21/2026
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
-
 ---
 
 # AADCloudSyncTools PowerShell module for Microsoft Entra Cloud Sync
@@ -116,10 +111,6 @@ This cmdlet checks for the presence of PowerShellGet v2.2.4.1 or later, the Micr
 ### Invoke-AADCloudSyncToolsGraphQuery
 
 This cmdlet invokes a web request for the URI, method, and body specified as parameters.
-
-### Repair-AADCloudSyncToolsAccount
-
-This cmdlet uses Microsoft Graph PowerShell to delete the current account (if present). It then resets the sync account authentication with a new sync account in Microsoft Entra ID.
 
 ### Restart-AADCloudSyncToolsJob
 

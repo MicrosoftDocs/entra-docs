@@ -1,17 +1,10 @@
 ---
 title: How to use the MFA Server Migration Utility to migrate to Microsoft Entra multifactor authentication
 description: Step-by-step guidance to migrate MFA server settings to Microsoft Entra ID using the MFA Server Migration Utility.
-
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: justinha
-manager: femila
 ms.reviewer: jpettere
+ms.custom: sfi-image-nochange
 ---
 # MFA Server migration 
 
@@ -116,7 +109,7 @@ Open MFA Server, select **Company Settings**:
 |OATH Token tab|Not applicable; Microsoft Entra multifactor authentication uses a default message for OATH tokens|
 |Reports|[Microsoft Entra authentication Methods Activity reports](howto-authentication-methods-activity.md)|
 
-<sup>*</sup>When a PIN is used to provide proof-of-presence functionality, the functional equivalent is provided above. PINs that aren't cryptographically tied to a device don't sufficiently protect against scenarios where a device has been compromised. To protect against these scenarios, including [SIM swap attacks](https://wikipedia.org/wiki/SIM_swap_scam), move users to more secure methods according to Microsoft authentication methods [best practices](concept-authentication-methods.md).
+<sup>*</sup>When a PIN is used to provide proof-of-presence functionality, the functional equivalent is provided above. PINs that aren't cryptographically tied to a device don't sufficiently protect against scenarios where a device has been compromised. To protect against these scenarios, including [SIM swap attacks](https://wikipedia.org/wiki/SIM_swap_scam), move users to more secure methods according to Microsoft authentication methods [best practices](overview-authentication.md).
 
 <sup>**</sup>The default Text MFA experience in Microsoft Entra multifactor authentication sends users a code, which they're required to enter in the login window as part of authentication. The requirement to roundtrip the code provides proof-of-presence functionality.
 
@@ -285,7 +278,7 @@ You can use Audit logs or Log Analytics to view details of MFA Server to Microso
 To access the Audit logs in the Microsoft Entra admin center to view details of MFA Server to Microsoft Entra multifactor authentication user migrations, follow these steps: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**. To filter the logs, select **Add filters**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**. To filter the logs, select **Add filters**.
 
    :::image type="content" border="true" source="./media/how-to-mfa-server-migration-utility/add-filter.png" alt-text="Screenshot of how to add filters.":::
 

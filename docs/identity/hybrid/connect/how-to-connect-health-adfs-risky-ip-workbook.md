@@ -1,17 +1,13 @@
 ---
 title: Microsoft Entra Connect Health with AD FS risky IP report workbook
 description: Describes the Microsoft Entra Connect Health AD FS risky IP report with Azure Monitor Workbooks.
-
-author: billmath
-manager: femila
-ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
-ms.author: billmath
-ms.custom:
-ms.collection:
+ms.date: 05/15/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1012
+ms.collection: 
+#customer intent: As an identity administrator, I want to use the Risky IP report workbook in Microsoft Entra Connect Health so that I can detect and respond to password spray or brute-force attacks against my AD FS endpoints.
 ---
 
 
@@ -27,9 +23,9 @@ Additionally, it's possible for a single IP address to attempt multiple logins a
 - Supports enabling alerts through Azure Alerts
 - Customizable threshold settings that match with the security policy of an organization
 - Customizable queries and expanded visualizations for further analysis
-- Expanded functionality from the previous Risky IP report, which will be deprecated after January 24, 2022.
+- Expanded functionality from the previous Risky IP report, which was deprecated after January 24, 2022.
 
-## Requirements
+## Prerequisites
 1. Connect Health for AD FS installed and updated to the latest agent.
 2. A Log Analytics Workspace with the "ADFSSignInLogs" stream enabled.
 3. Permissions to use the Microsoft Entra ID Monitor Workbooks. To use Workbooks, you need:
@@ -69,7 +65,7 @@ Filter the report by IP address or user name to see an expanded view of sign-ins
 To access the workbook:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > ***Monitoring and health** > **Workbooks**. 
+2. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**. 
 3. Select the Risky IP report workbook. 
 
 ## Load balancer IP addresses in the list
@@ -128,6 +124,6 @@ You should add identified malicious IP address to the firewall or block in Excha
 - Ensure no "Health service isn't up to date" alert active in your AD FS server list. Read more about [how to troubleshoot this alert](how-to-connect-health-data-freshness.md)
 - Audits isn't enabled in AD FS farms.
 
-## Next steps
+## Related content
 * [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md)
 * [Microsoft Entra Connect Health Agent Installation](how-to-connect-health-agent-install.md)

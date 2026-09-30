@@ -2,15 +2,9 @@
 title: 'PowerShell sample: Export apps with secrets and certificates expiring beyond the required date'
 description: PowerShell example that exports all apps with secrets and certificates expiring beyond the required date for the specified apps in your Microsoft Entra tenant.
 
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.custom: no-azure-ad-ps-ref
 ms.topic: sample
 ms.date: 01/23/2025
-ms.author: jomondi
 ms.reviewer: mifarca
 ---
 

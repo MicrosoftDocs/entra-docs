@@ -4,10 +4,10 @@ description: Explanations of how Microsoft Entra authentication methods align wi
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 11/23/2022
 ms.custom: it-pro
 ---
@@ -21,7 +21,7 @@ The authentication process begins when a claimant asserts its control of one of 
 |Memorized secret <br> (something you know)|  Password <br> QR Code (PIN)|
 |Look-up secret <br> (something you have)| None|
 |Single-factor out-of-band <br>(something you have)| Microsoft Authenticator app (Push Notification) <br> Microsoft Authenticator Lite (Push Notification) <br> Phone (SMS): Not recommended |
-Multi-factor Out-of-band <br> (something you have + something you know/are) | Microsoft Authenticator app (Phone Sign-In) |
+| Multi-factor Out-of-band <br> (something you have + something you know/are) | Microsoft Authenticator app (Phone Sign-In) |
 |Single-factor one-time password (OTP) <br> (something you have)| Microsoft Authenticator app (OTP) <br> Microsoft Authenticator Lite (OTP) <br> Single-factor hardware/software OTP<sup>1</sup>|
 |Multi-factor OTP <br> (something you have + something you know/are)| Treated as single-factor OTP| 
 |Single-factor crypto software <br> (something you have)|Single-factor software certificate <br> Microsoft Entra joined <sup>2</sup> with software TPM <br> Microsoft Entra hybrid joined <sup>2</sup> with software TPM  <br> Compliant mobile device<sup>2</sup> |

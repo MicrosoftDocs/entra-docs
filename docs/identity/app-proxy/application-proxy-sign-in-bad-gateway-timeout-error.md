@@ -1,18 +1,16 @@
 ---
 title: "Resolve a 'Corporate app can't be accessed' error"
 description: Learn how to resolve common access issues with Microsoft Entra application proxy applications.
-author: kenwith
-manager: femila
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/21/2025
-ms.author: kenwith
-ms.reviewer: asteen
+ms.date: 03/11/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
 ---
 
 # Troubleshoot "corporate app can't be accessed" error in application proxy
+
+
+## Overview
 
 This article helps you troubleshoot common issues for the `This corporate app can't be accessed` error in a Microsoft Entra application proxy application.
 
@@ -32,7 +30,7 @@ A *gateway time-out* error occurs when the service tries to reach the connector 
 
 ## "Bad gateway" errors
 
-A *bad gateway* error indicates that the connector is can't reach the back-end application. Common mistakes that cause this error are:
+A *bad gateway* error indicates that the connector can't reach the back-end application. Common mistakes that cause this error are:
 
 - A typo or mistake is in the internal URL.
 - The root of the application isn't published. An example is publishing `http://expenses/reimbursement` but trying to access `http://expenses`.
@@ -43,7 +41,7 @@ A *bad gateway* error indicates that the connector is can't reach the back-end a
 
 If you see a *forbidden* error, the user isn't assigned to the application. This error might be either in Microsoft Entra ID or on the back-end application.
 
-To learn how to assign users to the application in Azure, see the [Test the configuration](application-proxy-add-on-premises-application.md#test-the-application).
+For more information about assigning users to the application in Azure, see the [Test the configuration](application-proxy-add-on-premises-application.md#test-the-application).
 
 ## Check the application's internal URL
 
@@ -63,7 +61,7 @@ Verify that all required ports are open. For required ports, see the open ports 
 
 Look for issues or errors with the connector itself. For more information about common errors, see [Application proxy troubleshooting](application-proxy-troubleshoot.md).
 
-Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, view the [private network connectors](application-proxy-connectors.md).
+Look directly at the connector logs to identify any errors. Many of the error messages share specific recommendations for fixes. To view the logs, view the [private network connectors](~/global-secure-access/concept-connectors.md).
 
 ## Common solutions
 
@@ -71,8 +69,8 @@ If your application is configured to use integrated Windows authentication (IWA)
 
 Next, open a browser and try again to access the application. You should be prompted for authentication and be able to sign in the application. If you can authenticate, the problem is with the KCD configuration that enables SSO.
 
-If you continue to see the error, go to the computer where the connector is installed, open a browser, and attempt to reach the internal URL that's used for the application. The connector acts like another client from the same computer. If you can't reach the application, investigate why that machine can't reach the application, or use a connector on a server that can access the application.
+If the error persists, use the computer where the connector is installed to open a browser and try accessing the application's internal URL. If the application can't be reached, check why that machine can't connect, or use a connector on a server that can.
 
 ## Related content
 
-- [Understand Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)
+- [Microsoft Entra private network connectors](../../global-secure-access/concept-connectors.md)

@@ -1,11 +1,10 @@
 ---
 title: Governance and cross-tenant synchronization
 description: Learn to govern and manage identity and access lifecycles across multitenant organizations.
-ms.service: entra
-ms.topic: conceptual
-ms.date: 08/25/2024
-ms.author: gasinh
-author: gargi-sinha
+ms.service: entra-id
+ms.topic: concept-article
+ms.date: 03/18/2026
+ms.reviewer: gasinh
 manager: martinco
 ms.custom: it-pro
 #customer intent: I'm an IT admin and I need to manage user identity lifecycles across multiple tenants. My goal is to provision, synchronize, and deprovision users with automation.

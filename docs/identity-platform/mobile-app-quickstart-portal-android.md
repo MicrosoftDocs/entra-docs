@@ -2,9 +2,7 @@
 title: "Quickstart: Sign in users and call Microsoft Graph from an Android app"
 description: In this quickstart, learn how Android applications can call an API that requires access tokens issued by the Microsoft identity platform.
 ROBOTS: NOINDEX
-author: henrymbuguakiarie
-manager: CelesteDG
-ms.author: henrymbugua
+manager: pmwongera
 ms.custom:
 ms.date: 04/09/2024
 ms.service: identity-platform
@@ -32,7 +30,7 @@ ms.topic: concept-article
 > 
 > ## Prerequisites
 > 
-> * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 > * Android Studio
 > * Android 16+
 > 

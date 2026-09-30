@@ -1,9 +1,7 @@
 ---
-author: rwike77
-ms.author: ryanwi
 ms.date: 03/04/2021
 ms.service: identity-platform
-manager: CelesteDG
+manager: pmwongera
 ms.topic: include
 # Purpose:
 # Ingested by Microsoft identity platform Windows quickstarts to near the download links

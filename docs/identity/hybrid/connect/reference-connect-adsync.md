@@ -1,12 +1,8 @@
 ---
 title: 'Microsoft Entra Connect: ADSync PowerShell Reference'
 description: This document provides reference information for the ADSync.psm1 PowerShell module.
-author: billmath
-manager: femila
-ms.service: entra-id
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
 ms.topic: reference
 ---
 

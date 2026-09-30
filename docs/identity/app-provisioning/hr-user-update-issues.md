@@ -1,13 +1,9 @@
 ---
 title: Troubleshoot user update issues with HR provisioning
 description: Learn how to troubleshoot user update issues with HR provisioning
-author: jenniferf-skc
-manager: femila
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/26/2025
-ms.author: jfields
+ai-usage: ai-assisted
+ms.date: 08/20/2026
 ms.reviewer: chmutali
 ---
 
@@ -22,21 +18,18 @@ ms.reviewer: chmutali
 
 | Troubleshooting | Details |
 |-- | -- |
-| **Issue** | You successfully configured the inbound provisioning app. You're getting null or empty value from the HR app. You expect the provisioning service to clear the corresponding target attribute value in on-premises Active Directory / Microsoft Entra ID. But the operation fails with the error message: `InvalidAttributeSyntax-LdapErr: The syntax is invalid. The parameter is incorrect. Error in attribute conversion operation, data 0, v3839` |
-| **Cause** | The provisioning service doesn't have a default logic for null value processing. When the provisioning service gets an empty string from the source app, it tries to flow the value "as-is" to the target app. In this case, on-premises Active Directory provisioning connector currently doesn't support setting empty string values and hence you see the previously mentioned error. |
-| **Resolution** | Check the provisioning logs. Identify attributes in the target Active Directory that are receiving null or empty string values. Update the attribute mapping for such attributes to use an expression mapping. See recommended resolutions. |
+| **Issue** | You successfully configured the inbound provisioning app. The HR app returns a null or empty value, but the target attribute isn't cleared, or the operation fails with the error message: `InvalidAttributeSyntax-LdapErr: The syntax is invalid. The parameter is incorrect. Error in attribute conversion operation, data 0, v3839`. |
+| **Cause** | Attribute value clearing is disabled by default. The provisioning service clears a target attribute only when **Flow null values** is enabled for both the source attribute and target mapping. Without both settings, the null or empty value might be ignored or passed to a target that doesn't accept an empty string. |
+| **Resolution** | Check the provisioning logs to confirm the value returned by the HR connector. Then configure the source attribute and target mapping based on the intended behavior. |
 
 **Recommended resolutions**
 
-  Let's say the attribute `BusinessTitle` mapped to AD attribute `jobTitle` may be null or empty in Workday. 
-  * Option 1: Use the function [Switch](https://go.microsoft.com/fwlink/?linkid=2259244) to check for empty or null values and pass a non-blank literal value.
+Let's say the Workday attribute `BusinessTitle`, which maps to the Active Directory attribute `jobTitle`, can be null or empty.
 
-Switch([BusinessTitle],[BusinessTitle],"","N/A")
+- To clear the existing target value, [enable attribute value clearing](clear-attribute-values.md) for both the source attribute and target mapping.
+- To replace a null or empty value with a nonblank fallback value, use the [Switch](functions-for-customizing-application-data.md#switch) function. For example, `Switch([BusinessTitle],[BusinessTitle],"","N/A")`.
 
-
-  * Option 2: Use the function [IgnoreFlowIfNullOrEmpty](functions-for-customizing-application-data.md#ignoreflowifnullorempty) to drop empty or null attributes in the payload sent to on-premises Active Directory / Microsoft Entra ID. 
-  
-     `IgnoreFlowIfNullOrEmpty([BusinessTitle])` 
+- To preserve the existing target value, use the [IgnoreFlowIfNullOrEmpty](functions-for-customizing-application-data.md#ignoreflowifnullorempty) function. For example, `IgnoreFlowIfNullOrEmpty([BusinessTitle])`.
 
 ## Some Workday attribute updates are missing
 **Applies to:**
@@ -78,7 +71,7 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 **Applies to:**
 * Workday to Microsoft Entra user provisioning
 * SAP SuccessFactors to Microsoft Entra user provisioning
-* API-driven provisioning Microsoft Entra ID 
+* API-driven provisioning to Microsoft Entra ID 
 
 | Troubleshooting | Details |
 |-- | -- |
@@ -111,23 +104,49 @@ Use this field in the attribute mapping logic for the accountDisabled flag.
 * Workday to Microsoft Entra user provisioning
 
 | Troubleshooting | Details |
+| -- | -- |
+| **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions. |
+| **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently doesn't implement specialized query to process termination records specific to a time zone. |
+| **Resolution** | Use the termination lookahead query feature. For setup and configuration steps, see [Configure Workday termination lookahead query](configure-workday-termination-lookahead.md). |
+
+## SuccessFactors termination processing delay
+
+**Applies to:**
+* SuccessFactors to on-premises Active Directory user provisioning
+* SuccessFactors to Microsoft Entra ID user provisioning
+
+| Troubleshooting | Details |
 |-- | -- |
-| **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions.  |
-| **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently doesn't implement specialized query to process termination records specific to a time zone.  |
-| **Resolution** | There are two possible workarounds:  
+| **Issue** | In certain scenarios, there might be delays in propagation of terminated employment status as an "account disable" operation. This isn't due to a lack of user-disable capability in Microsoft Entra, but rather how real-time identity lifecycle changes are detected during HR-driven provisioning. |
+| **Cause** | Microsoft Entra's provisioning service operates as a stateless change-detection system. It relies on the source system (for example, SAP SuccessFactors) to emit a time-based change event—such as a termination becoming effective—at the point when the change should take effect. Provisioning cycles then detect and act on those events during incremental sync. In scenarios where termination is effective *as of the current day*, SuccessFactors might not emit an incremental change event at the exact time the user's employment status changes (for example, at end of business day). As a result, Microsoft Entra provisioning doesn't receive a detectable change during its polling cycle and the "disable" action might be delayed until a subsequent update occurs in the source system. |
+| **Resolution** | To support deterministic, policy-driven offboarding, use [Microsoft Entra ID Governance Lifecycle Workflows](../../id-governance/what-are-lifecycle-workflows.md). This model is based on state, rather than time-based events. [Synchronize the employee's `endDate`](../../id-governance/how-to-lifecycle-workflow-sync-attributes.md) from SuccessFactors into Microsoft Entra (for example, via the `employeeLeaveDateTime` attribute). Organizations can then trigger automated offboarding workflows directly from directory state—ensuring accounts are disabled exactly when the employment end date is reached, independent of incremental change detection in the HR system. |
 
-1. Use provisioning on demand to process termination event of a specific user.  
+This approach enables:
+- Timely and predictable user offboarding.
+- Policy-based automation aligned to HR intent.
+- Reduced reliance on custom scripts or manual intervention.
+- Centralized lifecycle governance across hybrid and cloud identities.
 
-2. In Workday, create a provisioning group called **Terminated Workers**. Update the termination business process in Workday to assign users to this group when termination happens. In the Microsoft Entra provisioning job, add a Workday XPATH attribute to fetch this group assignment.  
-- Example:  
-``` `TerminatedWorkers = 
-wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assignment_Data[wd:Status='Assigned' and wd:Provisioning_Group="Terminated Workers"]/wd:Provisioning_Group/text()` ```
+[Lifecycle Workflows](../../id-governance/what-are-lifecycle-workflows.md) are part of Microsoft Entra ID Governance and are designed specifically for enforcing joiner-mover-leaver policies based on authoritative identity state in the directory.
 
-Use this field in the attribute mapping logic for the accountDisabled flag.  
-- Example:  
-  ``` `Switch([TerminatedWorkers], Switch([Active], , "1", "False", "0", "True"), "Terminated Workers", "True")` ```
+## Redundant updates for certain attribute types
+
+**Applies to:**
+* Workday to on-premises Active Directory user provisioning
+* Workday to Microsoft Entra user provisioning
+* SAP SuccessFactors to on-premises Active Directory user provisioning
+* SAP SuccessFactors to Microsoft Entra user provisioning
+* API-driven provisioning to on-premises Active Directory
+* API-driven provisioning to Microsoft Entra ID 
+
+| Troubleshooting | Details |
+|-- | -- |
+| **Issue** | Provisioning logs show repeated update operations for certain attributes, even when there are no meaningful changes in source data. This behavior is commonly observed with multi-valued attributes, custom security attributes, and derived account status attributes such as `accountEnabled` or `accountDisabled`. |
+| **Cause** | For certain attribute types, the provisioning engine evaluates values at runtime instead of performing a stable comparison with the previously provisioned state. Because of this runtime evaluation model, these attributes might be reprocessed or written again during sync cycles, which can generate redundant update entries in provisioning logs. |
+| **Resolution** | No resolution is currently available. This behavior is a known limitation. |
 
 ## Next steps
 
 * [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](workday-integration-reference.md)
+* [Learn more about Microsoft Entra ID and SAP SuccessFactors integration scenarios](sap-successfactors-integration-reference.md)
 * [Learn how to review logs and get reports on provisioning activity](check-status-user-account-provisioning.md)

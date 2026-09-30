@@ -148,6 +148,8 @@ The generic SQL connector requires a Data Source Name (DSN) file to connect to t
 
  12. Select **OK** twice. Close the ODBC Data Source Administrator. The DSN connection file is saved by default to your **Documents** folder.
 
+     >[!NOTE]
+     >The SQL Connector expects the DSN connection file to be encoded in UTF-8. If the file isn't encoded in UTF-8, use Notepad to save the file with UTF-8 encoding.
 
 <a name='3-install-and-configure-the-azure-ad-connect-provisioning-agent'></a>
 
@@ -276,6 +278,7 @@ After having provided credentials, the ECMA Connector Host will be ready to retr
      |Delta Strategy|For IBM DB2, select `None` |
      | Water Mark Query |For IBM DB2, type `SELECT CURRENT TIMESTAMP FROM SYSIBM.SYSDUMMY1;` |
      |Data Source Date Time Format|For SQL Server, `yyyy-MM-dd HH:mm:ss` and for IBM DB2, `YYYY-MM-DD`|
+
 10. On the **Partitions** page, select **Next**.
 
      [![Screenshot that shows the Partitions page.](.\media\app-provisioning-sql\conn-8.png)](.\media\app-provisioning-sql\conn-8.png#lightbox)

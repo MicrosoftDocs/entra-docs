@@ -1,19 +1,14 @@
 ---
 title: Microsoft Entra Connect Health agents for AD FS
 description: This is the Microsoft Entra Connect Health page how to monitor your on-premises AD FS infrastructure.
-
 ms.reviewer: zhiweiwangmsft
-author: billmath
-manager: femila
 ms.assetid: dc0e53d8-403e-462a-9543-164eaa7dd8b3
-ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
-ms.author: billmath
-ms.custom: H1Hack27Feb2017
-
+ms.date: 09/10/2026
+ms.custom: H1Hack27Feb2017, sfi-ga-nochange, msecd-doc-authoring-1012
+#customer intent: As an identity administrator, I want to install the Microsoft Entra Connect Health agent on my AD FS and Web Application Proxy servers so that I can monitor my federation infrastructure from the Microsoft Entra admin center.
 ---
 
 # Microsoft Entra Connect Health agents for AD FS
@@ -25,15 +20,16 @@ Learn how to [download the agents](how-to-connect-install-roadmap.md#download-an
 > [!NOTE]
 > Microsoft Entra Connect Health is not available in the China sovereign cloud.
 
-## Requirements
+## Prerequisites
 
 The following table lists requirements for using Microsoft Entra Connect Health:
 
 | Requirement | Description |
 | --- | --- |
 | You have a Microsoft Entra ID P1 or P2 subscription. |Microsoft Entra Connect Health is a feature of Microsoft Entra ID P1 or P2. For more information, see [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md). <br /><br />To start a free 30-day trial, see [Start a trial](https://azure.microsoft.com/trial/get-started-active-directory/). |
-| You're a Global Administrator in Microsoft Entra ID. |Currently, only Global Administrator accounts can install and configure health agents. For more information, see [Administering your Microsoft Entra directory](~/fundamentals/whatis.md). <br /><br /> By using Azure role-based access control (Azure RBAC), you can allow other users in your organization to access Microsoft Entra Connect Health. For more information, see [Azure RBAC for Microsoft Entra Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac). <br /><br />**Important**: Use a work or school account to install the agents. You can't use a Microsoft account to install the agents. For more information, see [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md). |
+| You're a Global Administrator in Microsoft Entra ID. |Currently, only Global Administrator accounts can install and configure health agents. <br /><br /> By using Azure role-based access control (Azure RBAC), you can allow other users in your organization to access Microsoft Entra Connect Health. For more information, see [Azure RBAC for Microsoft Entra Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac). <br /><br />**Important**: Use a work or school account to install the agents. You can't use a Microsoft account to install the agents. For more information, see [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md). |
 | The Microsoft Entra Connect Health agent is installed on each targeted server. | Health agents must be installed and configured on targeted servers so that they can receive data and provide monitoring and analytics capabilities. <br /><br />For example, to get data from your Active Directory Federation Services (AD FS) infrastructure, you must install the agent on the AD FS server and on the Web Application Proxy server. Similarly, to get data from your on-premises AD Domain Services infrastructure, you must install the agent on the domain controllers. |
+| The agent is installed on a supported Windows Server version. | The Microsoft Entra Connect Health agent for AD FS is supported on Windows Server 2016, 2019, 2022, and 2025. |
 | The Azure service endpoints have outbound connectivity. | During installation and runtime, the agent requires connectivity to Microsoft Entra Connect Health service endpoints. If firewalls block outbound connectivity, add the [outbound connectivity endpoints](how-to-connect-health-agent-install.md#outbound-connectivity-to-azure-service-endpoints) to an allowlist. |
 |Outbound connectivity is based on IP addresses. | For information about firewall filtering based on IP addresses, see [Azure IP ranges](https://www.microsoft.com/download/details.aspx?id=56519).|
 | TLS inspection for outbound traffic is filtered or disabled. | The agent registration step or data upload operations might fail if there's TLS inspection or termination for outbound traffic at the network layer. For more information, see [Set up TLS inspection](/previous-versions/tn-archive/ee796230(v=technet.10)). |
@@ -70,15 +66,14 @@ These URLs allow communication with Microsoft Entra Connect Health service endpo
 
 To download and install the Microsoft Entra Connect Health agent:
 
-- Make sure that you satisfy the [requirements](how-to-connect-health-agent-install.md#requirements) to install Microsoft Entra Connect Health.
+- Make sure that you satisfy the [prerequisites](how-to-connect-health-agent-install.md#prerequisites) to install Microsoft Entra Connect Health.
 - Get started using Microsoft Entra Connect Health for AD FS:
   - [Download the Microsoft Entra Connect Health agent for AD FS](https://go.microsoft.com/fwlink/?LinkID=518973).
   - See the [installation instructions](#install-the-agent-for-ad-fs).
 - Get started using Microsoft Entra Connect Health for sync:
-  - [Download and install the latest version of Microsoft Entra Connect](https://go.microsoft.com/fwlink/?linkid=615771). The health agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or later).
+  - [Download and install the latest version of Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). The health agent for sync is installed as part of the Microsoft Entra Connect installation [version 2.5.79.0 or higher](reference-connect-version-history.md).
 - Get started using Microsoft Entra Connect Health for AD Domain Services:
   - [Download the Microsoft Entra Connect Health agent for AD Domain Services](https://go.microsoft.com/fwlink/?LinkID=820540).
- 
 
 ## Install the agent for AD FS
 
@@ -87,7 +82,7 @@ To download and install the Microsoft Entra Connect Health agent:
 >
 
 > [!NOTE]
-> The health agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or later).  If you attempt to install an earlier version of the health agent for AD FS on the Microsoft Entra Connect server, you will get an error.  If you need to install the health agent for AD FS on the machine, you should [download the latest version](https://go.microsoft.com/fwlink/?LinkID=518973) and then uninstall the version that was installed during the Microsoft Entra Connect installation.
+> The health agent for sync is installed as part of the Microsoft Entra Connect installation ([version 2.5.79.0 or higher](reference-connect-version-history.md)).  If you attempt to install an earlier version of the health agent for AD FS on the Microsoft Entra Connect server, you will get an error.  If you need to install the health agent for AD FS on the machine, you should [download the latest version](https://go.microsoft.com/fwlink/?LinkID=518973) and then uninstall the version that was installed during the Microsoft Entra Connect installation.
 
 
 Before you install the agent, make sure your AD FS server host name is unique and isn't present in the AD FS service.
@@ -145,9 +140,9 @@ The Usage Analytics feature needs to gather and analyze data, so the Microsoft E
 >[!IMPORTANT]
 >This step is required only for primary AD FS servers.
 
-1. Open a PowerShell window and run the following command:
+Open a PowerShell window, and then run the following command:
 
-   `Set-AdfsProperties -AuditLevel Verbose`
+`Set-AdfsProperties -AuditLevel Verbose`
 
 The "basic" audit level is enabled by default. For more information, see [AD FS audit enhancement in Windows Server 2016](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server).
 
@@ -229,102 +224,71 @@ The `Role` parameter currently takes the following values:
 - `ADDS`
 
 > [!NOTE]
-> To use the connectivity tool, you must first register the agent. If you can't complete the agent registration, make sure that you meet all the [requirements](how-to-connect-health-agent-install.md#requirements) for Microsoft Entra Connect Health. Connectivity is tested by default during agent registration.
+> To use the connectivity tool, you must first register the agent. If you can't complete the agent registration, make sure that you meet all the [prerequisites](how-to-connect-health-agent-install.md#prerequisites) for Microsoft Entra Connect Health. Connectivity is tested by default during agent registration.
 
 ## Monitor AD FS using Microsoft Entra Connect Health
 
+Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), select **AD FS services**, and then select a service. The service page provides federation server status, alerts, performance and usage charts, and security reports.
+
+:::image type="content" source="media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-overview.png" alt-text="Screenshot of the Connect Health AD FS service overview with callouts for server details, Quick Start, service properties, and alerts." lightbox="media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-overview.png":::
 
 ## Alerts for AD FS
-The Microsoft Entra Connect Health Alerts section provides you the list of active alerts. Each alert includes relevant information, resolution steps, and links to related documentation.
-
-You can double-click an active or resolved alert, to open a new blade with additional information, steps you can take to resolve the alert, and links to relevant documentation. You can also view historical data on alerts that were resolved in the past.
-
-![Screenshot that shows the Microsoft Entra Connect Health "Alerts" page with an alert selected, and the "Alert Details" window displayed.](./media/how-to-connect-health-adfs/alert2.png)
+The **Alerts** page lists active and resolved alerts. Use the time-range control to include older resolved alerts, and use search to filter the list. Select an alert row to open the details panel, which contains alert metadata, affected servers, resolution guidance, related documentation, and a feedback option.
 
 ## Usage Analytics for AD FS
-Microsoft Entra Connect Health Usage Analytics analyzes the authentication traffic of your federation servers. You can double-click the usage analytics box, to open the usage analytics blade, which shows you several metrics and groupings.
+Microsoft Entra Connect Health Usage Analytics analyzes the authentication traffic of your federation servers. The service page shows application visits from the past 24 hours, including total visits, total applications, and the top applications by traffic.
 
 > [!NOTE]
 > To use Usage Analytics with AD FS, you must ensure that AD FS auditing is enabled. For more information, see [Enable Auditing for AD FS](#enable-auditing-for-ad-fs).
 >
 >
 
-![Screenshot that shows the Microsoft Entra Connect Health "Usage Analytics" page.](./media/how-to-connect-health-adfs/report1.png)
-
-To select additional metrics, specify a time range, or to change the grouping, right-click on the usage analytics chart and select Edit Chart. Then you can specify the time range, select a different metric, and change the grouping. You can view the distribution of the authentication traffic based on different "metrics" and group each metric using relevant "group by" parameters described in the following section:
-
-**Metric : Total Requests** - Total number of requests processed by AD FS servers.
-
-|Group By | What the grouping means and why it's useful? |
-| --- | --- |
-| All | Shows the count of total number of requests processed by all AD FS servers.|
-| Application | Groups the total requests based on the targeted relying party. This grouping is useful to understand which application is receiving how much percentage of the total traffic. |
-|  Server |Groups the total requests based on the server that processed the request. This grouping is useful to understand the load distribution of the total traffic.
-| Workplace Join |Groups the total requests based on whether they are coming from devices that are workplace joined (known). This grouping is useful to understand if your resources are accessed using devices that are unknown to the identity infrastructure. |
-|  Authentication Method | Groups the total requests based on the authentication method used for authentication. This grouping is useful to understand the common authentication method that gets used for authentication. Following are the possible authentication methods <ol> <li>Windows Integrated Authentication (Windows)</li> <li>Forms Based Authentication (Forms)</li> <li>SSO (Single Sign On)</li> <li>X509 Certificate Authentication (Certificate)</li> <br>If the federation servers receive the request with an SSO Cookie, that request is counted as SSO (Single Sign On). In such cases, if the cookie is valid, the user is not asked to provide credentials and gets seamless access to the application. This behavior is common if you have multiple relying parties protected by the federation servers. |
-| Network Location | Groups the total requests based on the network location of the user. It can be either intranet or extranet. This grouping is useful to know what percentage of the traffic is coming from the intranet versus extranet. |
-
-
-**Metric: Total Failed Request** - The total number failed requests processed by the federation service. (This metric is only available on AD FS for Windows Server 2012 R2)
-
-|Group By | What the grouping means and why it's useful? |
-| --- | --- |
-| Error Type | Shows the number of errors based on predefined error types. This grouping is useful to understand the common types of errors. <ul><li>Incorrect Username or Password: Errors due to incorrect username or password.</li> <li>"Extranet Lockout": Failures due to the requests received from a user that was locked out from extranet </li><li> "Expired Password": Failures due to users logging in with an expired password.</li><li>"Disabled Account": Failures due to users logging with a disabled account.</li><li>"Device Authentication": Failures due to users failing to authenticate using Device Authentication.</li><li>"User Certificate Authentication": Failures due to users failing to authenticate because of an invalid certificate.</li><li>"MFA": Failures due to user failing to authenticate using multifactor authentication.</li><li>"Other Credential": "Issuance Authorization": Failures due to authorization failures.</li><li>"Issuance Delegation": Failures due to issuance delegation errors.</li><li>"Token Acceptance": Failures due to ADFS rejecting the token from a third-party Identity Provider.</li><li>"Protocol": Failure due to protocol errors.</li><li>"Unknown": Catch all. Any other failures that do not fit into the defined categories.</li> |
-| Server | Groups the errors based on the server. This grouping is useful to understand the error distribution across servers. Uneven distribution could be an indicator of a server in a faulty state. |
-| Network Location | Groups the errors based on the network location of the requests (intranet vs extranet). This grouping is useful to understand the type of requests that are failing. |
-|  Application | Groups the failures based on the targeted application (relying party). This grouping is useful to understand which targeted application is seeing most number of errors. |
-
-**Metric : User Count** - Average number of unique users actively authenticating using AD FS
-
-|Group By | What the grouping means and why it's useful? |
-| --- | --- |
-|All |This metric provides a count of average number of users using the federation service in the selected time slice. The users are not grouped. <br>The average depends on the time slice selected. |
-| Application |Groups the average number of users based on the targeted application (relying party). This grouping is useful to understand how many users are using which application. |
+Select **View Usage Details** to open a detailed panel and change the displayed time range.
 
 ## Performance Monitoring for AD FS
-Microsoft Entra Connect Health Performance Monitoring provides monitoring information on metrics. Selecting the Monitoring box, opens a new blade with detailed information on the metrics.
+The **Performance Monitoring** section shows token requests per second for federation servers alongside application visit volume from the past 24 hours. Use the charts together to compare federation traffic with the applications generating that traffic. Select **View detailed monitoring** below either visualization to change the time range and refine the displayed data.
 
-![Screenshot that shows the Microsoft Entra Connect Health Performance "Monitoring" page.](./media/how-to-connect-health-adfs/perf1.png)
+:::image type="content" source="media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-performance-and-usage.png" alt-text="Screenshot of Connect Health AD FS performance and usage monitoring with callouts for token-request throughput, application visits, and detailed monitoring." lightbox="media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-performance-and-usage.png":::
 
-By selecting the Filter option at the top of the blade, you can filter by server to see an individual server’s metrics. To change metric, right-click on the monitoring chart under the monitoring blade and select Edit Chart (or select the Edit Chart button). From the new blade that opens up, you can select additional metrics from the drop-down and specify a time range for viewing the performance data.
+## Security reports for AD FS
 
-## Top 50 Users with failed Username/Password logins
+The **Security Reporting** section provides entry points to bad-password and risky-IP reports. Use the summary cards to review recent activity, and then open a report for detailed trends, affected users or IP addresses, notification settings, and export actions.
+
+:::image type="content" source="media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-security-reports.png" alt-text="Screenshot of Connect Health AD FS security reporting cards with callouts for bad-password trends and risky IP activity." lightbox="media/how-to-connect-health-adfs/connect-health-active-directory-federation-services-security-reports.png":::
+
+### Top 50 users with failed username/password logins
 One of the common reasons for a failed authentication request on an AD FS server is a request with invalid credentials, that is, a wrong username or password. Usually happens to users due to complex passwords, forgotten passwords, or typos.
 
 But there are other reasons that can result in an unexpected number of requests being handled by your AD FS servers, such as: An application that caches user credentials and the credentials expire or a malicious user attempting to sign into an account with a series of well-known passwords. These two examples are valid reasons that could lead to a surge in requests.
 
-Microsoft Entra Connect Health for ADFS provides a report about top 50 Users with failed login attempts due to invalid username or password. This report is achieved by processing the audit events generated by all the AD FS servers in the farms.
-
-![Screenshot that shows the "Reports" section with the number of bad password attempts from the last 30 days.](./media/how-to-connect-health-adfs/report1a.png)
+Microsoft Entra Connect Health for AD FS provides a report about the top 50 users with failed sign-in attempts due to invalid usernames or passwords. The report is generated by processing audit events from all AD FS servers in the farm.
 
 Within this report you have easy access to the following pieces of information:
 
-* Total # of failed requests with wrong username/password in the last 30 days
-* Average # of users that failed with a bad username/password login per day.
+* Total number of failed requests with a wrong username or password in the last 30 days.
+* Daily number of users that failed with a bad username/password sign-in.
 
-Clicking this part takes you to the main report blade that provides additional details. This blade includes a graph with trending information to help establish a baseline about requests with wrong username or password. Additionally, it provides the list of top 50 users with the number of failed attempts during the past week. Notice top 50 users from the past week could help identify bad password spikes.  
+On the service page, select the **Bad Password Attempts** report. The report includes a 30-day trend chart and a table of the top 50 users with the most bad-password attempts.
 
 The graph provides the following information:
 
-* The total # of failed logins due to a bad username/password on a per-day basis.
-* The total # of unique users that failed logins on a per-day basis.
-* Client IP address of for last request
-
-![Microsoft Entra Connect Health Portal](./media/how-to-connect-health-adfs/report3a.png)
+* The total number of failed sign-ins due to a bad username or password each day.
+* The total number of unique users with failed sign-ins each day.
+* The client IP address for the last request.
 
 The report provides the following information:
 
 | Report Item | Description |
 | --- | --- |
 | User ID |Shows the user ID that was used. This value is what the user typed, which in some cases is the wrong user ID being used. |
-| Failed Attempts |Shows the total # of failed attempts for that specific user ID. The table is sorted with the most number of failed attempts in descending order. |
+| Failed Attempts |Shows the total number of failed attempts for that specific user ID. The table is sorted by the number of failed attempts in descending order. |
 | Last Failure |Shows the time stamp when the last failure occurred. |
 | Last Failure IP |Shows the Client IP address from the latest bad request. If you see more than one IP addresses in this value, it may include forward client IP together with user's last attempt request IP.  |
 
 > [!NOTE]
 > This report is automatically updated after every 12 hours with the new information collected within that time. As a result, login attempts within the last 12 hours may not be included in the report.
 
-## Related links
+## Related content
 * [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md)
 * [Microsoft Entra Connect Health Agent Installation](how-to-connect-health-agent-install.md)
 * [Risky IP report](how-to-connect-health-adfs-risky-ip.md)

@@ -1,19 +1,11 @@
 ---
 title: Manage custom security attributes for an application
 description: Assign, update, list, or remove custom security attributes for an application that is registered with your Microsoft Entra tenant.
-
-author: omondiatieno
-manager: CelesteDG
-ms.service: entra-id
-ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/05/2025
-ms.author: jomondi
 ms.reviewer: rolyon
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin troubleshooting issues with user access to Microsoft applications, I want to understand and troubleshoot errors that occur during the process of consenting to an application, so that I can successfully grant the necessary permissions and access the application.
 ---
 
@@ -25,7 +17,7 @@ ms.custom: not-enterprise-apps
 
 To assign or remove custom security attributes for an application in your Microsoft Entra tenant, you need:
 
-- A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role.
 - Make sure you have existing custom security attributes. To learn how to create a security attribute, see [Add or deactivate custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md).
 
@@ -44,7 +36,7 @@ Undertake the following steps to assign custom security attributes through the M
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. Find and select the application you want to add a custom security attribute to.
 
@@ -70,7 +62,7 @@ Undertake the following steps to assign custom security attributes through the M
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. Find and select the application that has a custom security attribute assignment value you want to update.
 
@@ -90,7 +82,7 @@ You can filter the list of custom security attributes assigned to applications o
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. Select **Add filters** to open the Pick a field pane.
 
@@ -110,7 +102,7 @@ You can filter the list of custom security attributes assigned to applications o
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. Find and select the application that has the custom security attribute assignments you want to remove.
 

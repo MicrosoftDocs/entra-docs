@@ -1,15 +1,10 @@
 ---
 title: 'Microsoft Entra Cloud Sync new agent configuration'
 description: This article describes how to install cloud sync.
-
-author: billmath
-manager: femila
-ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 03/30/2026
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Provision Active Directory to Microsoft Entra ID - Configuration
@@ -50,10 +45,6 @@ To configure provisioning, follow these steps.
 |3. [Test](#on-demand-provisioning)|Test your configuration before deploying it|
 |4. View [default properties](#accidental-deletions-and-email-notifications)|View the default setting prior to enabling them and make changes where appropriate|
 |5. Enable [your configuration](#enable-your-configuration)|Once ready, enable the configuration and users/groups will begin synchronizing|
-
- >[!NOTE]
- >  During the configuration process the synchronization service account will be created with the format **ADToAADSyncServiceAccount@[TenantID].onmicrosoft.com** and you may get an error if multi-factor authentication is enabled for the synchronization service account, or other interactive authentication policies are accidentally enabled for the synchronization account. Removing multi-factor authentication or any interactive authentication policies for the synchronization service account should resolve the error and you can complete the configuration smoothly.
-
 
 ## Scope provisioning to specific users and groups
 By default the provisioning agent will synchronize a subset of the users and groups from your Active Directory. You can further scope the agent to synchronize specific users and groups by using on-premises Active Directory groups or organizational units. 
@@ -166,6 +157,17 @@ To delete a configuration, follow these steps.
 >[!IMPORTANT]
 >There's no confirmation prior to deleting a configuration. Make sure this is the action you want to take before you select **Delete**.
 
+## Agent removal from the portal after uninstall
+
+When you [uninstall](how-to-automatic-upgrade.md#uninstall-the-agent) or stop a Microsoft Entra Cloud Sync agent, the agent isn't removed from the Microsoft Entra admin center immediately. The following timeline describes the agent removal process:
+
+| Timeframe | Portal behavior |
+| --- | --- |
+| After approximately 1 hour | The agent shows as **Inactive** in the portal. |
+| After approximately 10 days | The agent is soft-deleted and no longer appears in the portal. |
+| When the agent certificate expires | The agent is permanently removed and can no longer interact with Microsoft services. |
+
+If you don't want to wait for automatic cleanup, you can manually remove the agent configuration from the portal by deleting the configuration associated with the agent.
 
 ## Next steps 
 

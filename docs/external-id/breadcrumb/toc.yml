@@ -21,3 +21,6 @@ items:
   - name: External ID
     tocHref: /azure/app-service/
     topicHref: /entra/external-id/index
+  - name: External ID
+    tocHref: /entra/identity/monitoring-health/
+    topicHref: /entra/external-id/index

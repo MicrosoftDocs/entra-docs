@@ -1,19 +1,20 @@
 ---
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
-author: barclayn
-manager: femila
-ms.service: entra
-ms.topic: conceptual
-ms.date: 03/05/2025
-ms.subservice: fundamentals
-ms.author: barclayn
+ms.topic: concept-article
+ms.date: 06/18/2026
+#Customer Intent: As an IT admin, I want to understand Microsoft Entra licensing so that I can choose the right license tier for my organization's needs.
 ---
 
 # Microsoft Entra licensing
 
+
+## Overview
+
 This article discusses licensing options for the Microsoft Entra product family. It's intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
 
+> [!NOTE]
+>If you're troubleshooting licensing assignment issues, review [Manage group-based licensing errors](/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#manage-group-based-licensing-errors).
 
 ## Microsoft Entra licensing options
 
@@ -33,9 +34,17 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 [!INCLUDE [Managed identities](../includes/licensing-managed-identities.md)]
 
+## Microsoft Entra Agent ID
+
+[!INCLUDE [Microsoft Entra Agent ID](../includes/licensing-agent-id.md)]
+
 ## Microsoft Entra ID Governance
 
 [!INCLUDE [Microsoft Entra ID Governance](../includes/licensing-governance.md)]
+
+## Microsoft Entra Tenant Governance
+
+[!INCLUDE [Microsoft Entra Tenant Governance](../includes/licensing-tenant-governance.md)]
 
 ## Microsoft Entra Connect
 
@@ -49,13 +58,13 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 [!INCLUDE [Microsoft Entra Conditional Access](../includes/licensing-conditional-access.md)]
 
-## Microsoft Entra Domain services
+## Microsoft Entra Domain Services
 
-Microsoft Entra [Domain Services](../identity/domain-services/overview.md) usage is charged per hour, based on the [SKU](https://azure.microsoft.com/pricing/details/microsoft-entra-ds/) selected by the tenant owner.
+Microsoft Entra [Domain Services](../identity/domain-services/overview.md) charges accrue per hour based on the [SKU](https://azure.microsoft.com/pricing/details/microsoft-entra-ds/) the tenant owner selects.
 
 ## Microsoft External ID
 
-Microsoft Entra [External ID](../external-id/external-identities-overview.md) core features are free for your first 50,000 monthly active users. More licensing information is available at the [External ID FAQ](https://aka.ms/ExternalIDPricing)
+Microsoft Entra [External ID](../external-id/external-identities-overview.md) core features are free for your first 50,000 monthly active users. More licensing information is available at the [External ID FAQ](https://aka.ms/ExternalIDPricing).
 
 ## Microsoft Entra ID Protection
 
@@ -63,19 +72,15 @@ Microsoft Entra [External ID](../external-id/external-identities-overview.md) co
 
 ## Microsoft Entra Internet Access
 
-[Microsoft Entra Internet Access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite.
+[Microsoft Entra Internet Access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite. It's also included in Microsoft 365 E7.
 
 ## Microsoft Entra monitoring and health
 
 [!INCLUDE [Microsoft Entra monitoring and health](../includes/licensing-monitoring-health.md)]
 
-## Microsoft Entra Permissions management
-
-Permissions Management supports all resources across Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform but only requires licenses for [billable resources](../permissions-management/product-data-billable-resources.md).
-
 ## Microsoft Entra Private Access
 
-[Microsoft Entra Private access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite.
+[Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md) is available on its own or as part of the Microsoft Entra Suite. It's also included in Microsoft 365 E7.
 
 ## Microsoft Entra Privileged Identity Management
 
@@ -87,7 +92,7 @@ Permissions Management supports all resources across Amazon Web Services (AWS), 
 
 ## Microsoft Entra Workload ID
 
-Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) supports application identities and service principles in Azure, requiring licenses per workload identity per month.
+Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) supports application identities and service principals in Azure, requiring licenses per workload identity per month.
 
 ## Multitenant organizations
 
@@ -105,7 +110,6 @@ Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) su
 
 [!INCLUDE [features-preview](../includes/licensing-features-preview.md)]
 
-## Next steps
+## Related content
 
 - [Microsoft Entra pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
-- [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)

@@ -1,16 +1,11 @@
 ---
 title: 'Microsoft Entra Connect: ADSync service account'
 description: This topic describes the ADSync service account and provides best practices regarding the account.
-
-author: billmath
-manager: femila
-ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # ADSync service account
@@ -24,8 +19,8 @@ The sync service can run under different accounts. It can run under a Virtual Se
 |Type of account|Installation option|Description| 
 |-----|------|-----|
 |Virtual Service Account|Express and custom, 2017 April and later| A Virtual Service Account is used for all express installations, except for installations on a Domain Controller. When using custom installation, it's the default option unless another option is used.| 
-|Managed Service Account|Custom, 2017 April and later|If you use a remote SQL Server, then we recommend using a group managed service account. |
-|Managed Service Account|Express and custom, 2021 March and later|A standalone Managed Service Account prefixed with ADSyncMSA_ is created during installation for express installations when installed on a Domain Controller. When using custom installation, it's the default option unless another option is used.|
+|Group Managed Service Account (gMSA)|Custom, 2017 April and later|If you use a remote SQL Server, then we recommend using a group Managed Service Account. |
+|Standalone Managed Service Account (sMSA)|Express and custom, 2021 March and later|A standalone Managed Service Account prefixed with ADSyncMSA_ is created during installation for express installations when installed on a Domain Controller. When using custom installation, it's the default option unless another option is used.|
 |User Account|Express and custom, 2017 April to 2021 March|A User Account prefixed with AAD_ is created during installation for express installations when installed on a Domain Controller. When using custom installation, it's the default option unless another option is used.|
 |User Account|Express and custom, 2017 March and earlier|A User Account prefixed with AAD_ is created during installation for express installations. When using custom installation, another account can be specified.| 
 

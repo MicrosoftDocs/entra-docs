@@ -4,7 +4,6 @@ author: MicrosoftGuyJFlo
 ms.service: entra-id
 ms.topic: include
 ms.date: 01/24/2025
-ms.author: joflore
 ms.custom: Identity-Managed-Definition
 # Common include file for referencing highly privileged roles accounts.
 ---

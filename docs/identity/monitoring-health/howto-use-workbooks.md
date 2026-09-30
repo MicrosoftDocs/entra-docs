@@ -1,14 +1,8 @@
 ---
 title: How to use Microsoft Entra workbooks
 description: Learn how to use Azure Monitor workbooks for Microsoft Entra ID, for analyzing identity related activity, trends, and gaps.
-
-author: shlipsey3
-manager: femila
-ms.service: entra-id
 ms.topic: how-to
-ms.subservice: monitoring-health
 ms.date: 10/02/2024
-ms.author: sarahlipsey
 ms.reviewer: sarbar
 
 # Customer intent: As an IT admin, I want to visualize different types of identity data so I can view trends in activity, identity security gaps, and improve the health of my tenant.
@@ -32,7 +26,7 @@ When using workbooks, you can either start with an empty workbook, or use an exi
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
     - **Workbooks**: All workbooks created in your tenant
     - **Public Templates**: Prebuilt workbooks for common or high priority scenarios
     - **My Templates**: Templates you created
@@ -48,7 +42,7 @@ Workbooks can be created from scratch or from a template. When creating a new wo
 
 To create a new workbook from scratch:
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 1. Select **+ New**.
 1. Select an element from the **+ Add** menu.
 
@@ -58,7 +52,7 @@ To create a new workbook from scratch:
 
 To create a new workbook from a template:
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 1. Select a workbook template from the Gallery.
 1. Select **Edit** from the top of the page.
     - Each element of the workbook has its own **Edit** button.

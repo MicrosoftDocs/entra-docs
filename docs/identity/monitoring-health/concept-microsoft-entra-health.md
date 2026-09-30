@@ -1,13 +1,8 @@
 ---
 title: Learn about Microsoft Entra Health monitoring
 description: Monitor the health of your tenant through several identity scenarios and authentication availability rates with Microsoft Entra Health
-author: shlipsey3
-manager: femila
-ms.service: entra-id
-ms.topic: conceptual
-ms.subservice: monitoring-health
-ms.date: 02/19/2025
-ms.author: sarahlipsey
+ms.topic: how-to
+ms.date: 02/09/2026
 ms.reviewer: sarbar
 ---
 
@@ -26,11 +21,9 @@ When these metrics and signals are paired together, you get a comprehensive view
 Scenario monitoring and SLA Attainment are available in the Microsoft Entra Health area of the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Health**.
-
-The page opens to the SLA Attainment page.
-
-:::image type="content" source="media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png" alt-text="Screenshot of the Microsoft Entra Health landing page." lightbox="media/concept-microsoft-entra-health/identity-health-landing-page-attainment-expanded.png":::
+1. Browse to **Entra ID** > **Monitoring & health** > **Health**.
+    - The **Health Monitoring** tab contains a summary of the signals and alerts on the available health scenarios.
+    - The **SLA Attainment** tab displays the user authentication availability for Microsoft Entra ID per month. For more informtion, see [SLA performance for Microsoft Entra ID](reference-sla-performance.md).
 
 ## How Microsoft Entra Health monitoring (preview) works
 
@@ -74,6 +67,7 @@ The service provides alerts for the following scenarios:
 - [Sign-ins requiring a Conditional Access compliant device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring a Conditional Access managed device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
+- [Conditional Access block policy](scenario-health-conditional-access-block-policy.md)
 
 ## Related content
 

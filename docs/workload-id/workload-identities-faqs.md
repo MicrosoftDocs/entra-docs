@@ -1,12 +1,10 @@
 ---
 title: Frequently asked questions about Microsoft Entra Workload ID
 description: Learn about Microsoft Entra Workload ID license plans, features, and capabilities.
-author: gargi-sinha
 manager: martinco
-ms.service: entra-workload-id
 ms.topic: faq
 ms.date: 03/18/2025
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.custom: aaddev
 #Customer intent: I want to know about Microsoft Entra Workload ID licensing plans.
 ---
@@ -80,7 +78,7 @@ Yes. You can get a [90-day free trial](https://entra.microsoft.com/#view/Microso
 
 ## Is the Workload ID Premium plan available on Azure Government clouds? 
 
-Yes. For Azure Government cloud customers, contact your account manager to proceed with the trial.
+Yes. For Azure Government cloud customers, contact your account manager.
 
 <a name='is-it-possible-to-have-a-mix-of-azure-ad-premium-p1-azure-ad-premium-p2-and-workload-identities-premium-licenses-in-one-tenant'></a>
 
@@ -91,3 +89,4 @@ Yes, customers can have a mix of licenses in one tenant.
 ## Next steps
 
 Learn more about [workload identities](workload-identities-overview.md).
+

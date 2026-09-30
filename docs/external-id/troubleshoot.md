@@ -1,13 +1,9 @@
 ---
 title: Troubleshoot B2B issues
 description: Learn how to troubleshoot common issues with Microsoft Entra B2B collaboration. Resolve guest sign-in errors, direct connect access problems, policy update failures, and encrypted email access issues.
- 
-ms.service: entra-external-id
 ms.topic: troubleshooting
 ms.date: 02/19/2025
 tags: active-directory
-ms.author: cmulligan
-author: csmulligan
 ms.custom: it-pro, no-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 
@@ -217,7 +213,7 @@ When you try to log in to your tenant, you might see this error message: "Your n
 
 ## Users get in a loop when they try to add passkey in Authenticator
 
-Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All resources (formerly 'All cloud apps')** can run into a looping issue when users attempt to add a passkey to Microsoft Authenticator. For more information and possible workarounds, see [Workarounds for an authentication strength Conditional Access policy loop](~/identity/authentication/how-to-support-authenticator-passkey.md#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
+Organizations that are deploying passkeys and have Conditional Access policies that require phishing-resistant authentication when accessing **All resources (formerly 'All cloud apps')** can run into a looping issue when users attempt to add a passkey to Microsoft Authenticator. For more information and possible workarounds, see [Workarounds for an authentication strength Conditional Access policy loop](~/identity/authentication/how-to-enable-authenticator-passkey.md#workarounds-for-an-authentication-strength-conditional-access-policy-loop).
 
 ## Invitation is blocked due missing cross-tenant access settings 
 

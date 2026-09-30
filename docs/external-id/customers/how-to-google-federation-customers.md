@@ -1,29 +1,18 @@
 ---
 title: Add Google as an identity provider
 description: Learn how to add Google as an identity provider for your external tenant.
- 
-author: msmimart
-manager: celestedg
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: how-to
-ms.date: 03/06/2025
-ms.author: mimart
-ms.custom: it-pro, has-azure-ad-ps-ref
-#Customer intent: As a dev, devops, or it admin, I want to
+ms.date: 03/27/2026
+ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
+ai-usage: ai-assisted
+#Customer intent: As a dev, devops, or it admin, I want to add Google as an identity provider for my external tenant so that customers can sign in with their Google accounts.
 ---
 
 # Add Google as an identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. After you add Google as one of your user flow's sign-in options, customers can sign up and sign in to your application with a Google account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Social)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Sign-in with a social account” use case.
+By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 ## Prerequisites
 
@@ -32,9 +21,9 @@ By setting up federation with Google, you allow customers to sign in to your app
 
 ## Create a Google application
 
-To enable sign-in for customers with a Google account, you need to create an application in [Google Developers Console](https://console.developers.google.com/). For more information, see [Setting up OAuth 2.0](https://support.google.com/googleapi/answer/6158849). If you don't already have a Google account, you can sign up at [`https://accounts.google.com/signup`](https://accounts.google.com/signup).
+To enable sign-in for customers with a Google account, you need to create an application in [Google Cloud console](https://console.cloud.google.com/). For more information, see [Manage OAuth clients](https://support.google.com/cloud/answer/15549257). If you don't already have a Google account, you can sign up at [`https://accounts.google.com/signup`](https://accounts.google.com/signup).
 
-1. Sign in to the [Google Developers Console](https://console.developers.google.com/) with your Google account credentials.
+1. Sign in to the [Google Cloud console](https://console.cloud.google.com/) with your Google account credentials.
 1. Accept the terms of service if you're prompted to do so.
 1. In the upper-left corner of the page, select the project list, and then select **New Project**.
 1. Enter a **Project Name**, select **Create**.
@@ -64,7 +53,7 @@ To enable sign-in for customers with a Google account, you need to create an app
 1. Record the values of **Client ID** and **Client secret**. You need both values to configure Google as an identity provider in your tenant.
 
 > [!NOTE]
-> In some cases, your app might require verification by Google (for example, if you update the application logo). For more information, check out the [Google's verification status guid](https://support.google.com/cloud/answer/10311615#verification-status).
+> In some cases, your app might require verification by Google (for example, if you update the application logo). For more information, check out the [Google's verification status guide](https://support.google.com/cloud/answer/10311615#verification-status).
 
 <a name='configure-google-federation-in-azure-ad-for-customers'></a>
 
@@ -73,7 +62,7 @@ To enable sign-in for customers with a Google account, you need to create an app
 After you create the Google application, in this step you set the Google client ID and client secret in Microsoft Entra ID. You can use the Microsoft Entra admin center or PowerShell to do so. To configure Google federation in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. On the **Built-in** tab, next to **Google**, select **Configure**.
 
    <!-- ![Screenshot that shows how to add Google identity provider in Microsoft Entra ID.](./media/sign-in-with-google/configure-google-idp.png)-->
@@ -105,23 +94,12 @@ To configure Google federation by using PowerShell, follow these steps:
 Use the client ID and client secret from the app you created in [Create a Google application](#create-a-google-application) step.
 
 
-## Add Google identity provider to a user flow
+## Enable users to sign in and sign up with the identity provider
 
-At this point, the Google identity provider has been set up in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the Google identity provider to a user flow:
-
-1. In your external tenant, browse to **Identity** > **External Identities** > **User flows**.
-1. Select the user flow where you want to add the Google identity provider.
-
-1. Under Settings, select **Identity providers.**
-
-1. Under **Other Identity Providers**, select **Google**.
-
-   <!-- ![Screenshot that shows how to add Google identity provider a user flow.](./media/sign-in-with-google/add-google-idp-to-user-flow.png)-->
-
-1. Select **Save**.
+After you configure Google as an identity provider, add it to a user flow to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md).
 
 ## Related content
 
-- [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

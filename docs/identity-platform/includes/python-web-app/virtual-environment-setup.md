@@ -1,8 +1,6 @@
 ---
 title: "Include file - Create a virtual environment"
-author: Dickson-Mwendia
-manager: CelesteDG
-ms.author: dmwendia
+manager: dougeby
 ms.custom:
 ms.date: 04/18/2024
 ms.service: identity-platform

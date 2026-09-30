@@ -2,9 +2,7 @@
 title: "Quickstart: Get token & call Microsoft Graph in a console app"
 description: In this quickstart, you learn how a .NET sample app can use the client credentials flow to get a token and call Microsoft Graph.
 ROBOTS: NOINDEX
-author: OwenRichards1
-manager: CelesteDG
-ms.author: owenrichards
+manager: pmwongera
 ms.custom:
 ms.date: 09/24/2024
 ms.reviewer: jmprieur
@@ -148,4 +146,4 @@ ms.topic: concept-article
 > To learn more about daemon applications, see the scenario overview:
 > 
 > > [!div class="nextstepaction"]
-> > [Daemon application that calls web APIs](scenario-daemon-app-registration.md)
+> > [Daemon application that calls web APIs](scenario-daemon-app-configuration.md)

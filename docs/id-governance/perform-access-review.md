@@ -1,27 +1,28 @@
 ---
 title: Review access to groups & applications in access reviews
 description: Learn how to review access of group members or application access in Microsoft Entra access reviews.
-author: owinfreyATL
-manager: femila
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/15/2024
-ms.author: owinfrey
+ms.date: 03/12/2026
 ms.reviewer: mwahl
+ms.custom: sfi-image-nochange
+#Customer Intent: As a reviewer, I want to review access to groups and applications so that I can make informed access decisions during an access review.
 ---
 
 # Review access to groups and applications in access reviews
 
 Microsoft Entra ID simplifies how enterprises manage access to groups and applications in Microsoft Entra ID and other Microsoft web services with a feature called access reviews. This article covers how a designated reviewer performs an access review for members of a group or users with access to an application. If you want to review access to an access package, read [Review access of an access package in entitlement management](entitlement-management-access-reviews-review-access.md).
 
-## Perform access review by using My Access
-You can review access to groups and applications via My Access. My Access is a user-friendly portal for granting, approving, and reviewing access needs.
+> [!NOTE]
+> If you're looking to delegate **access package approval requests** to someone else, see [Delegate approvals in My Access](delegate-approvals-my-access.md).
+
+## Perform access review by using the My Access portal
+The [My Access portal](https://myaccess.microsoft.com/) is a user-friendly portal for granting, approving, and reviewing access needs.
 
 ### Use email to go to My Access
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft asking you to review access. Here's an example email message:
@@ -54,7 +55,7 @@ Select the name of an access review to get started.
 After it opens, you'll see the list of users in scope for the access review.
 
 > [!NOTE]
-> If the request is to review your own access, the page will look different. For more information, see [Review access for yourself to groups or applications](review-your-access.md).
+> If the request is to review your own access, the page looks different. For more information, see [Review access for yourself to groups or applications](review-your-access.md).
 
 There are two ways that you can approve or deny access:
 
@@ -77,15 +78,15 @@ There are two ways that you can approve or deny access:
 
 1. Select **Submit**.
 
-   You can change your response at any time until the access review has ended. If you want to change your response, select the row and update the response. For example, you can approve a previously denied user or deny a previously approved user.
+   You can change your response at any time until the access review ends. If you want to change your response, select the row and update the response. For example, you can approve a previously denied user or deny a previously approved user.
 
  > [!IMPORTANT]
- > - If a user is denied access, they aren't removed immediately. The user is removed when the review period has ended or when an administrator stops the review.
+ > - If a user is denied access, they aren't removed immediately. The user is removed when the review period ends or when an administrator stops the review.
  > - If there are multiple reviewers, the last submitted response is recorded. Consider an example where an administrator designates two reviewers: Alice and Bob. Alice opens the access review first and approves a user's access request. Before the review period ends, Bob opens the access review and denies access on the same request previously approved by Alice. The last decision denying the access is the response that gets recorded.
 
 ### Review access based on recommendations
 
-To make access reviews easier and faster for you, we also provide recommendations that you can accept with a single selection. There are two ways that the system generates recommendations for the reviewer. One method is by the user's sign-in activity. If a user has been inactive for 30 days or more, the system recommends that the reviewer deny access. 
+To make access reviews easier and faster for you, there are also recommendations that you can accept with a single selection. There are two ways that the system generates recommendations for the reviewer. One method is by the user's sign-in activity. If a user has been inactive for 30 days or more, the system recommends that the reviewer deny access. 
 
 The other method is based on the access that the user's peers have. If the user doesn't have the same access as their peers, the system recommends that the reviewer deny that user access.
 
@@ -115,7 +116,7 @@ If you're the second-stage or third-stage reviewer, you'll also see the decision
 Approve or deny access as outlined in [Review access for one or more users](#review-access-for-one-or-more-users).
 
 > [!NOTE]
-> The next stage of the review won't become active until the duration specified during the access review setup has passed. If the administrator believes a stage is done but the review duration for this stage has not expired yet, they can use the **Stop current stage** button in the overview of the access review in the Microsoft Entra admin center. This action will close the active stage and start the next stage.
+> The next stage of the review won't become active until the duration specified during the access review setup has passed. If the administrator believes a stage is done but the review duration for this stage hasn't expired yet, they can use the **Stop current stage** button in the overview of the access review in the Microsoft Entra admin center. This action will close the active stage and start the next stage.
 
 ### Review access for B2B direct connect users in Teams shared channels and Microsoft 365 groups (preview)
 
@@ -126,7 +127,7 @@ To review access of B2B direct connect users, use the following instructions:
 1. Follow the instructions in [Review access for one or more users](#review-access-for-one-or-more-users) to make decisions to approve or deny the users access to the teams.
 
 > [!NOTE]
-> Unlike internal users and B2B collaboration users, B2B direct connect users and teams *don't* have recommendations based on last sign-in activity to make decisions when you perform the review.
+> Unlike internal users and B2B collaboration users, B2B direct connect users and teams *don't* have recommendations based on last sign-in activity when you perform the review.
 
 If a team you review shares channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](../external-id/b2b-direct-connect-overview.md).
 

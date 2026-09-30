@@ -1,16 +1,15 @@
 ---
 title: Resilience through monitoring and analytics using Azure AD B2C
 description: Resilience through monitoring and analytics using Azure AD B2C
-ms.service: entra
-ms.subservice: architecture
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
-manager: martinco
-ms.date: 06/26/2024
+ms.reviewer: gasinh
+ms.date: 05/20/2025
+ms.subservice: architecture
 ---
 
 # Resilience through monitoring and analytics
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 Monitoring maximizes the availability and performance of your applications and services. It delivers a comprehensive solution for collecting, analyzing, and acting on telemetry from your infrastructure and applications. Alerts notify you when issues are found with your service or applications. You can identify and address issues before the end users of your service notice them. [Microsoft Entra ID Log Analytics](https://azure.microsoft.com/services/monitor/?OCID=AID2100131_SEM_6d16332c03501fc9c1f46c94726d2264:G:s&ef_id=6d16332c03501fc9c1f46c94726d2264:G:s&msclkid=6d16332c03501fc9c1f46c94726d2264#features) helps you analyze, search the audit logs and sign-in logs, and build custom views.
 

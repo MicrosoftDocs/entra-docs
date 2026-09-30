@@ -1,14 +1,8 @@
 ---
 title: Secure remote VM access in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to secure remote access to VMs using Network Policy Server (NPS) and Microsoft Entra multifactor authentication with a Remote Desktop Services deployment in a Microsoft Entra Domain Services managed domain.
-author: justinha
-manager: femila
-
-ms.service: entra-id
-ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 02/05/2025
-ms.author: justinha
 ---
 # Secure remote access to virtual machines in Microsoft Entra Domain Services
 
@@ -30,7 +24,7 @@ This article shows you how to configure RDS in Domain Services and optionally us
 To complete this article, you need the following resources:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.

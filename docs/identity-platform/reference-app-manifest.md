@@ -1,9 +1,7 @@
 ---
 title: Understanding the app manifest (Azure AD Graph format)
 description: Describes the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+manager: pmwongera
 ms.custom:
 ms.date: 04/15/2025
 ms.reviewer: sureshja
@@ -27,7 +25,7 @@ You can configure an app's attributes through the Microsoft Entra admin center o
 To configure the application manifest:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the app you want to configure.
 1. From the app's **Manage** section, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** to edit the manifest locally, and then use **Upload** to reapply it to your application.
 
@@ -148,6 +146,8 @@ Example:
 | appRoles | Collection |
 
 Specifies the collection of roles that an app may declare. These roles can be assigned to users, groups, or service principals. For more examples and info, see [Add app roles in your application and receive them in the token](./howto-add-app-roles-in-apps.md).
+
+App roles and exposed delegated permission scopes share a default limit of 700 permission definitions per application or service principal. Disabled definitions also count. See [App role limits](howto-add-app-roles-in-apps.md#app-role-limits) for counting rules and behavior for existing objects above the limit.
 
 Example:
 
@@ -348,6 +348,8 @@ Example:
 | oauth2AllowIdTokenImplicitFlow | Boolean |
 
 Specifies whether this web app can request OAuth2.0 implicit flow ID tokens. The default is false. This flag is used for browser-based apps, like JavaScript single-page apps. We, however, discourage the use of implicit grant even in SPAs and recommend using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with PKCE.
+
+In the Microsoft Graph app manifest, this attribute is replaced by the `enableIdTokenIssuance` property of the `implicitGrantSettings` property in the `web` attribute.
 
 Example:
 
@@ -590,6 +592,8 @@ Example:
 ## Common issues
 
 ### Manifest limits
+
+Individual collections also have limits. App roles and exposed delegated permission scopes share a default limit of 700 permission definitions, separate from the aggregate manifest limit. See [App role limits](howto-add-app-roles-in-apps.md#app-role-limits).
 
 An application manifest has multiple attributes that are referred to as collections; for example, appRoles, keyCredentials, knownClientApplications, identifierUris, redirectUris, requiredResourceAccess, and oauth2Permissions. Within the complete application manifest for any application, the total number of entries in all the collections combined has been capped at 1200. If you previously specify 100 redirect URIs in the application manifest, then you're only left with 1,100 remaining entries to use across all other collections combined that make up the manifest.
 

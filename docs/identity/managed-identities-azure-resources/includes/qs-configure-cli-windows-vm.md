@@ -1,6 +1,4 @@
 ---
-author: rwike77
-ms.author: ryanwi
 ms.date: 04/24/2024
 ms.topic: include
 ms.custom:
@@ -12,7 +10,7 @@ In this article, using the Azure CLI, you learn how to perform the following man
 - Enable and disable the system-assigned managed identity on an Azure VM
 - Add and remove a user-assigned managed identity on an Azure VM
 
-If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Prerequisites
 

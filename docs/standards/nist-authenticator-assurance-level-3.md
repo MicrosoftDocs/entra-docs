@@ -4,10 +4,10 @@ description: This article provides guidance on achieving NIST authenticator assu
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 09/13/2022
 ms.custom: it-pro
 ---

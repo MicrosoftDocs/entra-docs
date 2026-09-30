@@ -1,17 +1,11 @@
 ---
 title: Deployment considerations for Microsoft Entra self-service password reset
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra self-service password reset
-
-ms.service: entra-id
-ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/04/2025
-
-ms.author: justinha
-author: gargi-sinha
-manager: martinco
-ms.reviewer: tilarso
+ms.reviewer: tilarso, gasinh
 adobe-target: true
+ms.custom: sfi-image-nochange
 ---
 # Plan a Microsoft Entra self-service password reset deployment
 
@@ -64,7 +58,7 @@ For more information about pricing, see [Microsoft Entra pricing](https://www.mi
 
 ### Prerequisites
 
-* A working Microsoft Entra tenant with at least a trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A working Microsoft Entra tenant with at least a trial license enabled. If needed, [create one for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 * You must be assigned at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 
@@ -76,14 +70,13 @@ For a guided walkthrough of many of the recommendations in this article, see the
 
 | Resources| Link and Description |
 | - | - |
-| Videos| [Empower your users with better IT scalability](https://youtu.be/g9RpRnylxS8) 
+| Videos| [Empower your users with better IT scalability](https://youtu.be/g9RpRnylxS8)|
 | |[What is self-service password reset?](https://youtu.be/hc97Yx5PJiM)|
 | |[Deploying self-service password reset](https://www.youtube.com/watch?v=Pa0eyqjEjvQ&index=18&list=PLLasX02E8BPBm1xNMRdvP6GtA6otQUqp0)|
 | |[How to enable and configure SSPR in Microsoft Entra ID](https://www.youtube.com/watch?v=rA8TvhNcCvQ)|
-| |[How to configure self-service password reset for users in Microsoft Entra ID?](https://azure.microsoft.com/resources/videos/self-service-password-reset-azure-ad/) |
 | |[How to [prepare users to] register [their] security information for Microsoft Entra ID](https://youtu.be/gXuh0XS18wA) |
 | Online courses|[Managing Identities in Microsoft Entra ID](https://www.pluralsight.com/courses/microsoft-azure-active-directory-managing-identities) Use SSPR to give your users a modern, protected experience. See especially the "[`Managing Microsoft Entra Users and Groups`](https://app.pluralsight.com/library/courses/microsoft-azure-active-directory-managing-identities/table-of-contents)" module. |
-| |[Getting Started with the Microsoft Enterprise Mobility Suite](https://www.pluralsight.com/courses/microsoft-enterprise-mobility-suite-getting-started) Learn the best practices for extending on-premises assets to the cloud in a manner that allows for authentication, authorization, encryption, and a secured mobile experience. See especially the "Configuring Advanced Features of Microsoft Entra ID P1 or P2" module.
+| |[Getting Started with the Microsoft Enterprise Mobility Suite](https://www.pluralsight.com/courses/microsoft-enterprise-mobility-suite-getting-started) Learn the best practices for extending on-premises assets to the cloud in a manner that allows for authentication, authorization, encryption, and a secured mobile experience. See especially the "Configuring Advanced Features of Microsoft Entra ID P1 or P2" module.|
 |Tutorials |[Complete a Microsoft Entra self-service password reset pilot roll out](./tutorial-enable-sspr.md) |
 | |[Enabling password writeback](./tutorial-enable-sspr-writeback.md) |
 | |[Microsoft Entra password reset from the login screen for Windows 10](./howto-sspr-windows.md) |
@@ -170,7 +163,7 @@ When enabling SSPR, choose an appropriate security group in the pilot environmen
 
 ### Authentication methods
 
-When SSPR is enabled, users can only reset their password if they have data present in the authentication methods that the administrator has enabled. Methods include phone, Authenticator app notification, security questions, and so on. For more information, see [What are authentication methods?](./concept-authentication-methods.md).
+When SSPR is enabled, users can only reset their password if they have data present in the authentication methods that the administrator has enabled. Methods include phone, Authenticator app notification, security questions, and so on. For more information, see [What are authentication methods?](overview-authentication.md).
 
 We recommend the following authentication method settings:
 
@@ -234,7 +227,7 @@ At each stage of your deployment from initial pilot groups through organization-
 
 ### Plan testing
 
-To ensure that your deployment works as expected, plan a set of test cases to validate the implementation. To assess the test cases, you need a non-administrator test user with a password. If you need to create a user, see [Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
+To ensure that your deployment works as expected, plan a set of test cases to validate the implementation. To assess the test cases, you need a non-administrator test user with a password. If you need to create a user, see [Add new users to Microsoft Entra ID](~/fundamentals/how-to-create-delete-users.md).
 
 The following table includes useful test scenarios you can use to document your organizations expected results based on your policies.
 <br>
@@ -293,7 +286,7 @@ Before deploying, ensure that you have done the following:
 
 See [Enable self-service password reset](./tutorial-enable-sspr.md#enable-self-service-password-reset) for complete step-by-step directions on configuring the following areas.
 
-1. [Authentication methods](./concept-authentication-methods.md)
+1. [Authentication methods](overview-authentication.md)
 
 1. [Registration settings](./concept-registration-mfa-sspr-combined.md)
 
@@ -333,7 +326,7 @@ Audit logs for registration and password reset are available for 30 days. If sec
 
 ### Helpful documentation
 
-* [What are authentication methods?](./concept-authentication-methods.md)
+* [What are authentication methods?](overview-authentication.md)
 
 * [How it works: Microsoft Entra self-service password reset?](./concept-sspr-howitworks.md)
 

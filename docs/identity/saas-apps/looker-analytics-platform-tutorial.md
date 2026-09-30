@@ -1,22 +1,13 @@
 ---
-title: Microsoft Entra SSO integration with Looker Analytics Platform
+title: Configure Looker Analytics Platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Looker Analytics Platform.
-
-author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
-ms.service: entra-id
-ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
-ms.author: gideonkiratu
-
-
+ms.date: 06/09/2026
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Looker Analytics Platform so that I can control who has access to Looker Analytics Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
-# Microsoft Entra SSO integration with Looker Analytics Platform
+# Configure Looker Analytics Platform for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Looker Analytics Platform with Microsoft Entra ID. When you integrate Looker Analytics Platform with Microsoft Entra ID, you can:
 
@@ -24,13 +15,15 @@ In this article,  you learn how to integrate Looker Analytics Platform with Micr
 * Enable your users to be automatically signed-in to Looker Analytics Platform with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+Looker Analytics Platform is available in the following [national cloud deployments](/graph/deployments).
+
+[!INCLUDE [national-clouds-global-and-usgov](~/identity/saas-apps/includes/national-clouds-global-and-usgov.md)]
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Looker Analytics Platform single sign-on (SSO) enabled subscription.
-
-> [!NOTE]
-> This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
 ## Scenario description
 
@@ -45,7 +38,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Looker Analytics Platform into Microsoft Entra ID, you need to add Looker Analytics Platform from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Looker Analytics Platform** in the search box.
 1. Select **Looker Analytics Platform** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -74,7 +67,7 @@ To configure and test Microsoft Entra SSO with Looker Analytics Platform, perfor
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Looker Analytics Platform** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Looker Analytics Platform** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
@@ -111,7 +104,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign into Looker Analytics Platform website as an administrator.
 
-1. Go to the **Admin** -> **Authentication** -> **SAML**
+1. Go to the **Admin** > **Authentication** > **SAML**
 
     ![screenshot for SAML option](./media/looker-analytics-platform-tutorial/admin.png)
 

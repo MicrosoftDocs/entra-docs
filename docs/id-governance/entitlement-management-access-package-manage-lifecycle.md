@@ -1,14 +1,11 @@
 ---
 title: Convert guest user lifecycle in entitlement management - Microsoft Entra
 description: Learn how to convert guest user access package assignments for an access package in entitlement management.
-author: owinfreyATL
-manager: femila
-ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
-ms.author: owinfrey
-#Customer intent: As an administrator, I want detailed information about how I can convert an ungoverned guest user access package assignment so that requestors have the resources they need to perform their job.
+ms.date: 06/25/2025
+ms.custom: sfi-image-nochange
+#Customer Intent: As an IT admin, I want to convert guest user lifecycle in entitlement management so that I can manage how guest access package assignments are handled.
 ---
 
 # Manage guest user lifecycle
@@ -24,6 +21,9 @@ Entitlement management allows you to gain visibility into the state of a guest u
 
 Guest users that already existed in your tenant by being invited are ungoverned. After an ungoverned guest that requests access packages lose their last access package assignment, they'll remain in the tenant indefinitely. If there are guests that have an access package assignment, and only need access from that access package, and there's no other need for them to remain in the tenant, you can convert them to be governed during the time they have that access package assignment. You can directly convert those ungoverned users to be governed by using the **Mark Guests as Governed** functionality in the top menu bar of an access package.
 
+> [!NOTE]
+> Managing guest user lifecycle from access package assignments in the Microsoft Entra admin center requires the signed-in user to be able to access the admin center. Entitlement management roles, such as Access package assignment manager, authorize assignment-management actions within entitlement management, but they don't by themselves change tenant-wide access settings for the admin center. If the **Restrict access to Microsoft Entra administration portal** user setting is enabled, verify that the delegated user can access the admin center, or use an authorized programmatic method. For more information about this setting, see [Default user permissions](../fundamentals/users-default-permissions.md).
+
 ## Manage guest user lifecycle in the Microsoft Entra admin center
 
 
@@ -32,7 +32,7 @@ To manage user lifecycle, you'd follow these steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, the Access package manager, and the Access package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package you want to manage guest user lifecycle of.
 

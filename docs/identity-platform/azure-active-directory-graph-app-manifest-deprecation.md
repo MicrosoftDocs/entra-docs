@@ -1,16 +1,12 @@
 ---
 title: App manifest (Azure AD Graph format) deprecation
 description: Describes the deprecation of the app manifest (Azure AD Graph format) and attribute differences in the new format.
-services: active-directory
-author: rwike77
-manager: CelesteDG
+manager: pmwongera
 ms.service: identity-platform
 ms.topic: concept-article
-ms.workload: identity
 ms.date: 09/18/2024
-ms.author: ryanwi
-ms.custom: aaddev
-ms.reviewer: youazhou
+ms.custom:
+ms.reviewer: 
 
 # Customer intent: As an application developer, I want to learn about the new app manifest format, so that I can update the application object and define permissions and roles for the app.
 ---
@@ -54,7 +50,7 @@ Most Azure AD Graph app manifest attributes stay the same. However, the followin
 | `logoUrl` | Relocated as a property of the `info` attribute |
 | `logoutUrl` | Relocated as property `logoutUrl` of the `web` attribute |
 | `name` | `displayName` |
-| `oauth2AllowIdTokenImplicitFlow` | Relocated and renamed as property `enableAccessTokenIssuance` of property `enableIdTokenIssuance` in the `web` attribute |
+| `oauth2AllowIdTokenImplicitFlow` | Relocated and renamed as property `enableIdTokenIssuance` of the `implicitGrantSettings` property in the `web` attribute |
 | `oauth2AllowImplicitFlow` | Relocated and renamed as property `enableAccessTokenIssuance` of property `implicitGrantSettings`  in the `web` attribute |
 | `oauth2Permissions` | Relocated and renamed as `oauth2PermissionScopes` property of the `api` attribute |
 | `preAuthorizedApplications` | Relocated as `preAuthorizedApplications` property of the `api` attribute |
@@ -78,7 +74,7 @@ Between June 13 2024 and January 7 2025, you can follow the steps below and use 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an [Application Developer](/entra/identity/role-based-access-control/permissions-reference#application-developer). 
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. Select **New registration** and create a new app registration.
 
@@ -92,7 +88,7 @@ Between June 13 2024 and January 7 2025, you can follow the steps below and use 
 
 Starting January 7 2025, the Microsoft Entra admin center will no longer support app manifests in Azure AD Graph format. However, you can perform the conversion manually.
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. Select **New registration** and create a new app registration.
 

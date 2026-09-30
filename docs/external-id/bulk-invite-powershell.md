@@ -1,16 +1,10 @@
 ---
 title: Tutorial for bulk inviting B2B collaboration users
 description: In this tutorial, you learn how to use PowerShell and a CSV file to send bulk invitations to external Microsoft Entra B2B collaboration guest users.
-ms.service: entra-external-id
 ms.topic: tutorial
 ms.date: 03/13/2025
-
-ms.author: cmulligan
-author: csmulligan
-manager: CelesteDG
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing external partners in Microsoft Entra B2B collaboration, I want to use PowerShell to send bulk invitations to guest users, so that I can efficiently add multiple users to my organization and streamline the onboarding process.
 ---
 
@@ -25,7 +19,7 @@ If you use Microsoft Entra B2B collaboration to work with external partners, you
 > * Run a PowerShell script to send invitations
 > * Verify the users are added to the directory
 
-If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin. 
+If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin. 
 
 ## Prerequisites
 
@@ -99,7 +93,7 @@ $messageInfo = New-Object Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvite
 $messageInfo.customizedMessageBody = "Hello. You are invited to the Contoso organization."
 
 foreach ($email in $invitations) {
-	New-MgInvitation 
+	New-MgInvitation ` 
       -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
 		-InvitedUserDisplayName $email.Name `
 		-InviteRedirectUrl https://myapplications.microsoft.com/?tenantid=aaaabbbb-0000-cccc-1111-dddd2222eeee `

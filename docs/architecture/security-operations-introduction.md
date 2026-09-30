@@ -1,16 +1,12 @@
 ---
 title: Microsoft Entra security operations guide
 description: Learn to monitor, identify, and alert on security issues with accounts, applications, devices, and infrastructure in Microsoft Entra ID.
-author: janicericketts
-manager: martinco
-ms.service: entra
-ms.subservice: architecture
 ms.topic: overview
 ms.date: 09/06/2022
-ms.author: jricketts
 ms.custom:
   - it-pro
   - kr2b-contr-experiment
+ms.subservice: architecture
 ---
 
 # Microsoft Entra security operations guide
@@ -142,7 +138,7 @@ As part of an Azure hybrid environment, the following items should be baselined 
 
 * **PTA Agent** - The pass-through authentication agent is used to enable pass-through authentication and is installed on-premises. See [Microsoft Entra pass-through authentication agent: Version release history](~/identity/hybrid/connect/reference-connect-pta-version-history.md) for information on verifying your agent version and next steps.
 
-* **AD FS/WAP** - Active Directory Federation Services (Azure AD FS) and Web Application Proxy (WAP) enable secure sharing of digital identity and entitlement rights across your security and enterprise boundaries. For information on security best practices, see [Best practices for securing Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs).
+* **AD FS/WAP** - Active Directory Federation Services (AD FS) and Web Application Proxy (WAP) enable secure sharing of digital identity and entitlement rights across your security and enterprise boundaries. For information on security best practices, see [Best practices for securing Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs).
 
 * **Microsoft Entra Connect Health Agent** - The agent used to provide a communications link for Microsoft Entra Connect Health. For information on installing the agent, see [Microsoft Entra Connect Health agent installation](~/identity/hybrid/connect/how-to-connect-health-agent-install.md).
 
@@ -154,13 +150,13 @@ As part of an Azure hybrid environment, the following items should be baselined 
 
 * **Password writeback Agent** - Password writeback is a feature enabled with [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) that allows password changes in the cloud to be written back to an existing on-premises directory in real time. For more information on this feature, see [How does self-service password reset writeback work in Microsoft Entra ID](~/identity/authentication/concept-sspr-writeback.md).
 
-* **Microsoft Entra private network connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra private network connectors](~/identity/app-proxy/application-proxy-connectors.md).
+* **Microsoft Entra private network connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Microsoft Entra private network connectors](~/global-secure-access/concept-connectors.md).
 
 ## Components of cloud-based authentication
 
 As part of an Azure cloud-based environment, the following items should be baselined and included in your monitoring and alerting strategy.
 
-* **Microsoft Entra application proxy** - This cloud service provides secure remote access to on-premises web applications. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-connectors.md).
+* **Microsoft Entra application proxy** - This cloud service provides secure remote access to on-premises web applications. For more information, see [Remote access to on-premises applications through Microsoft Entra application proxy](~/global-secure-access/concept-connectors.md).
 
 * **Microsoft Entra Connect** - Services used for a Microsoft Entra Connect solution. For more information, see [What is Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md).
 

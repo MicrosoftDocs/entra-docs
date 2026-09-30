@@ -1,14 +1,8 @@
 ---
 title: Learn about the monitoring and health activity log schemas
 description: Learn how to interpret the details found in the Microsoft Entra audit and sign-in and logs schema.
-
-author: shlipsey3
-manager: femila
-ms.service: entra-id
-ms.topic: conceptual
-ms.subservice: monitoring-health
-ms.date: 09/30/2024
-ms.author: sarahlipsey
+ms.topic: concept-article
+ms.date: 05/27/2025
 ms.reviewer: egreenberg
 
 # Customer intent: As an IT admin, I want to understand the schema of the Microsoft Entra audit and sign-in logs so that I can interpret the data in the logs and use it to monitor and troubleshoot my organization's identity and access management.
@@ -35,7 +29,7 @@ Microsoft Graph is the primary way to access Microsoft Entra logs programmatical
 
 There are two endpoints for the Microsoft Graph API. The V1.0 endpoint is the most stable and is commonly used for production environments. The beta version often contains more properties, but they're subject to change. For this reason, we don't recommend using the beta version of the schema in production environments.
 
-Microsoft Entra customer can configure activity log streams to be sent to Azure Monitor storage accounts. This integration enables Security Information and Event Management (SIEM) connectivity, long-term storage, and improved querying capabilities with Log Analytics. The log schemas for Azure Monitor might differ from the Microsoft Graph schemas.
+Microsoft Entra customers can configure activity log streams to be sent to a Log Analytics workspace. This integration enables Security Information and Event Management (SIEM) connectivity, long-term storage, and improved querying capabilities with Log Analytics. The log schemas for Azure Monitor might differ from the Microsoft Graph schemas.
 
 For full details on these schemas, see the following articles:
 
@@ -65,6 +59,7 @@ Some values are common across all log schemas.
 - `category`: Indicates which resource category that's targeted by the activity. For example: `UserManagement`, `GroupManagement`, `ApplicationManagement`, `RoleManagement`. For more information, see [Audit log activities](reference-audit-activities.md).
 - `initiatedBy`: Indicates information about the user or app that initiated the activity.
 - `targetResources`: Provides information on which resource was changed. Possible values include `User`, `Device`, `Directory`, `App`, `Role`, `Group`, `Policy` or `Other`.
+- `ipAddress`: Found in the `initiatedBy` section, this is the OAuth client's IP address. The IP address is the peer (directly connected client) of the service's endpoint.
 
 ### Sign-in logs
 

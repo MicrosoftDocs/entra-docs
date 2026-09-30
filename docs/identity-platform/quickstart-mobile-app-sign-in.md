@@ -1,13 +1,10 @@
 ---
 title: Quickstart - Sign in users in a sample mobile app
 description: Quickstart for configuring a sample mobile app to sign in employees or customers with Microsoft identity platform.
-services: identity-platform
-author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 10/30/2024
-ms.author: henrymbugua
 zone_pivot_groups: entra-tenants
 
 #Customer intent: As a developer, I want to configure a sample mobile app so that I can sign in my employees or customers by using Microsoft identity platform.
@@ -37,7 +34,7 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
@@ -267,7 +264,7 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer

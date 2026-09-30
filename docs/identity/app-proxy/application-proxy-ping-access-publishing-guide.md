@@ -1,18 +1,17 @@
 ---
-title: Header based authentication with PingAccess for Microsoft Entra application proxy
+title: Header-based authentication with PingAccess for Microsoft Entra application proxy
 description: Support header-based authentication with PingAccess and Microsoft Entra application proxy.
-author: kenwith
-manager: femila
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
-ms.author: kenwith
-ms.reviewer: ashishj
+ms.date: 03/25/2026
+ms.reviewer: KaTabish
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
-# Header based authentication for single sign-on with application proxy and PingAccess
+# Header-based authentication for single sign-on with application proxy and PingAccess
+
+
+## Overview
 
 Microsoft partnered with PingAccess to provide more access applications. PingAccess provides another option beyond integrated [header-based single sign-on](application-proxy-configure-single-sign-on-with-headers.md).
 
@@ -26,7 +25,7 @@ Users don't notice anything different when they sign in to use corporate applica
 
 You need a license for PingAccess and Microsoft Entra ID. However, Microsoft Entra ID P1 or P2 subscriptions include a basic PingAccess license that covers up to 20 applications. If you need to publish more than 20 header-based applications, you can purchase more licenses from PingAccess.
 
-For more information, see [Microsoft Entra editions](~/fundamentals/whatis.md).
+For more information, see [Microsoft Entra editions](~/fundamentals/licensing.md).
 
 ## Publish your application in Microsoft Entra
 
@@ -40,7 +39,7 @@ This article outlines the steps to publish an application for the first time. Th
 The private network connector is a Windows Server service that directs traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 1. Select **Download connector service**.
 1. Follow the installation instructions.
 
@@ -61,10 +60,10 @@ First, publish your application. This action involves:
 
 To publish your own on-premises application:
 
-1. Sign in to the [Microsoft Entra admin center](https://portal.azure.com) as an Application Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Application Administrator.
 1. Browse to **Enterprise applications** > **New application** > **Add an on-premises application**. The **Add your own on-premises application** page appears.
 
-   ![Add your own on-premises application](./media/application-proxy-configure-single-sign-on-with-ping-access/add-your-own-on-premises-application.png)
+   ![Application configuration form with fields for name, internal URL, and external URL settings.](./media/application-proxy-configure-single-sign-on-with-ping-access/add-your-own-on-premises-application.png)
 1. Fill in the required fields with information about your new application. Use the guidance for the settings.
 
    > [!NOTE]
@@ -79,7 +78,7 @@ To publish your own on-premises application:
    1. **Translate URL in Headers**: Choose **No**.
 
    > [!NOTE]
-   > If this is your first application, use port 3000 to start and come back to update this setting if you change your PingAccess configuration. For subsequent applications, the port will need to match the Listener you've configured in PingAccess.
+   > For the first application, use port 3000 to start and come back to update this setting if you change your PingAccess configuration. For subsequent applications, the port needs to match the Listener configured in PingAccess.
 
 1. Select **Add**. The overview page for the new application appears.
 
@@ -87,22 +86,22 @@ Now assign a user for application testing and choose header-based single sign-on
 
 1. From the application sidebar, select **Users and groups** > **Add user** > **Users and groups (\<Number> Selected)**. A list of users and groups appears for you to choose from.
 
-   ![Shows the list of users and groups](./media/application-proxy-configure-single-sign-on-with-ping-access/users-and-groups.png)
+   ![Users and groups assignment page for the application.](./media/application-proxy-configure-single-sign-on-with-ping-access/users-and-groups.png)
 
-1. Select a user for application testing, and select **Select**. Make sure this test account has access to the on-premises application.
+1. Select a user for application testing, and select **Select**. Make sure the test account has access to the on-premises application.
 1. Select **Assign**.
 1. From the application sidebar, select **Single sign-on** > **Header-based**.
 
    > [!TIP]
-   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
+   > Install PingAccess the first time you use header-based single sign-on. To make sure your Microsoft Entra subscription is automatically associated with your PingAccess installation, use the link on the single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
 
-   ![Shows header-based sign-on screen and PingAccess](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
+   ![Header-based sign-on configuration page with PingAccess download link.](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
 
 1. Select **Save**.
 
 Then make sure your redirect URL is set to your external URL:
 
-1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
+1. Browse to **Entra ID** > **App registrations** and select your application.
 1. Select the link next to **Redirect URIs**. The link shows the amount of redirect Uniform Resource Identifiers (URIs) setup for web and public clients. The **\<application name> - Authentication** page appears.
 1. Check whether the external URL that you assigned to your application earlier is in the **Redirect URIs** list. If it isn't, add the external URL now, using a redirect URI type of **Web**, and select **Save**.
 
@@ -115,7 +114,7 @@ Finally, set up the on-premises application so that users have `read` access and
 
 1. From the **App registrations** sidebar for your application, select **API permissions** > **Add a permission** > **Microsoft APIs** > **Microsoft Graph**. The **Request API permissions** page for **Microsoft Graph** appears, which contains the permissions for Microsoft Graph.
 
-   ![Shows the Request API permissions page](./media/application-proxy-configure-single-sign-on-with-ping-access/required-permissions.png)
+   ![Request API permissions page for Microsoft Graph API selection.](./media/application-proxy-configure-single-sign-on-with-ping-access/required-permissions.png)
 
 1. Select **Delegated permissions** > **User** > **User.Read**.
 1. Select **Application permissions** > **Application** > **Application.ReadWrite.All**.
@@ -134,12 +133,12 @@ Collect three Globally Unique Identifiers (GUIDs). Use the GUIDs to set up your 
 
 To collect this information:
 
-1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
+1. Browse to **Entra ID** > **App registrations** and select your application.
 1. Next to the **Application (client) ID** value, select the **Copy to clipboard** icon, then copy and save it. You specify this value later as PingAccess's client ID.
 1. Next the **Directory (tenant) ID** value, also select **Copy to clipboard**, then copy and save it. You specify this value later as PingAccess's issuer.
 1. From the sidebar of the **App registrations** for your application, select **Certificates and secrets** > **New client secret**. The **Add a client secret** page appears.
 
-   ![Shows the Add a client secret page](./media/application-proxy-configure-single-sign-on-with-ping-access/add-a-client-secret.png)
+   ![Client secret creation form with expiration settings.](./media/application-proxy-configure-single-sign-on-with-ping-access/add-a-client-secret.png)
 
 1. In **Description**, type `PingAccess key`.
 1. Under **Expires**, choose how to set the PingAccess key: **In 1 year**, **In 2 years**, or **Never**.
@@ -150,7 +149,7 @@ To collect this information:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
-1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
+1. Browse to **Entra ID** > **App registrations** and select your application.
 1. From the sidebar of the **App registrations** page for your application, select **Manifest**. The manifest JSON code for your application's registration appears.
 1. Search for the `acceptMappedClaims` field, and change the value to `True`.
 1. Select **Save**.
@@ -186,7 +185,9 @@ To use a custom claim and include more fields in your application. [Created a cu
 > [!NOTE]
 > To use a custom claim, you must also have a custom policy defined and assigned to the application. The policy should include all required custom attributes.
 >
-> You can do policy definition and assignment through PowerShell or Microsoft Graph. If you're doing them in PowerShell, you may need to first use `New-AzureADPolicy` and then assign it to the application with `Add-AzureADServicePrincipalPolicy`. For more information, see [Claims mapping policy assignment](~/identity-platform/saml-claims-customization.md).
+> You can do policy definition and assignment through PowerShell or Microsoft Graph. If you're doing them in PowerShell, you need to first use `New-AzureADPolicy` and then assign it to the application with `Add-AzureADServicePrincipalPolicy`. For more information, see [Claims mapping policy assignment](~/identity-platform/saml-claims-customization.md).
+
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 Example:
 ```powershell

@@ -6,9 +6,7 @@ summary: >
   our quickstarts, tutorials, and in-depth how-to guides.
 
 metadata:
-  author: Dickson-Mwendia
-  manager: CelesteDG
-  ms.author: dmwendia
+  manager: dougeby
   ms.date: 02/11/2025
   ms.service: identity-platform  
   ms.topic: landing-page
@@ -39,7 +37,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Mobile application that calls a web API
-            url: scenario-mobile-app-registration.md
+            url: scenario-mobile-app-configuration.md
 ## ROW 2 ################################################### ROW 2 ##
   # - title: $CARD_TITLE
   #   linkLists:
