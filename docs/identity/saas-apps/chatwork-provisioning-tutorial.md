@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 This article describes the steps you need to perform in both Chatwork and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Chatwork](https://corp.chatwork.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 > [!WARNING]
-> ChatWork will discontinue support for SCIM-based provisioning effective October 1, 2026. As a result, the ChatWork provisioning integration in the Microsoft Entra Enterprise App Gallery will be retired. Existing customers using the integration will no longer be able to provision users to ChatWork after this date. SSO functionality for ChatWork will remain available.
+> Chatwork will discontinue support for SCIM-based provisioning effective October 1, 2026. As a result, the Chatwork provisioning integration in the Microsoft Entra Enterprise App Gallery will be retired. Existing customers using the integration will no longer be able to provision users to Chatwork after this date. SSO functionality for Chatwork will remain available.
 
 ## Capabilities Supported
 > [!div class="checklist"]
