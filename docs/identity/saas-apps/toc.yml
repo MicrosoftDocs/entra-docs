@@ -4008,7 +4008,7 @@
         href: zscaler-two-provisioning-tutorial.md
       - name: Zscaler Three
         href: zscaler-three-provisioning-tutorial.md
-      - name: Zscaler Zidentity
+      - name: Zscaler Authentication Service
         href: zscaler-zidentity-provisioning-tutorial.md
       - name: Zscaler ZSCloud
         href: zscaler-zscloud-provisioning-tutorial.md
