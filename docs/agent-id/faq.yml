@@ -69,11 +69,6 @@ sections:
   - name: Roles, permissions, and groups
     questions:
       - question: |
-          Can I use custom roles to manage agent identities?
-        answer: |
-          Custom role definitions don't support actions for managing agent identities. Use the built-in *Agent ID Administrator* and *Agent ID Developer* roles for all agent identity management.
-
-      - question: |
           Can I add agent identities to administrative units?
         answer: |
           Agent identities, agent identity blueprints, and agent identity blueprint principals can't be added to administrative units. Use the `owners` property of agent identities to limit which users can manage specific objects.
