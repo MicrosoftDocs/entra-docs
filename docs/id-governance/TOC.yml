@@ -447,6 +447,10 @@
           href: workflow-sensitivity-labels.md 
         - name: Agent Identity Sponsor Tasks
           href: agent-sponsor-tasks.md       
+      - name: Guest Lifecycle Policies
+        href: guest-lifecycle-policies.md
+      - name: Manage sponsored guests in My Access
+        href: manage-sponsored-guests-my-access.md
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
