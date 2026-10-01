@@ -24,7 +24,7 @@ For this reason, Microsoft Entra ID limits what agent identities can do. For exa
 
 From an authorization standpoint, an agent identity behaves somewhat like an application or a user with extra safeguards. Each agent identity has a service principal or a user in Microsoft Entra ID, and it can be assigned certain Microsoft Entra roles.
 
-For example, an agent's identity can be assigned a Microsoft Entra role to give it administrator privileges, but many highly privileged directory roles are blocked for agents. Roles such as Global Administrator, Privileged Role Administrator, or User Administrator can't be assigned to agent identities. Only lower privileged roles (such as a reader role) can be assigned to an agent. You can't assign any custom roles to agent identities. Also, agent identities can't be members of role-assignable groups.
+For example, an agent's identity can be assigned a Microsoft Entra role to give it administrator privileges, but many highly privileged directory roles are blocked for agents. Roles such as Global Administrator, Privileged Role Administrator, or User Administrator can't be assigned to agent identities. Only lower privileged roles (such as a reader role) can be assigned to an agent. Agent identities can't be members of role-assignable groups.
 
 Microsoft has created the Agent ID Administrator and Agent ID Developer roles for managing and creating agents themselves.
 
