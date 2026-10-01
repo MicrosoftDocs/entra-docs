@@ -91,7 +91,7 @@ sections:
       - question: |
           Which Microsoft Entra roles and groups can't be assigned to an agent identity?
         answer: |
-          Highly privileged directory roles are blocked for agent identities, including Global Administrator, Privileged Role Administrator, and User Administrator. Only lower-privileged roles, such as reader roles, can be assigned. You also can't assign custom roles to an agent identity, and agent identities can't be members of role-assignable groups.
+          Highly privileged directory roles are blocked for agent identities, including Global Administrator, Privileged Role Administrator, and User Administrator. Only lower-privileged roles, such as reader roles, can be assigned. Agent identities can't be members of role-assignable groups.
           
   - name: Authentication and consent
     questions:
