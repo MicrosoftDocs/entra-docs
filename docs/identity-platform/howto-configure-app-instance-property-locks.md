@@ -2,17 +2,18 @@
 title: "How to configure app instance property lock in your applications"
 description: How to increase app security by configuring property modification locks for sensitive properties of the application.
 manager: pmwongera
-ms.date: 10/26/2023
+ms.date: 10/01/2026
 ms.reviewer: 
 ms.service: identity-platform
 ms.topic: how-to
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 #Customer intent: As an application developer, I want to learn how to protect properties of my application instance of being modified.
 ---
 
 # How to configure app instance property lock for your applications
 
-Application instance lock is a feature in Microsoft Entra ID that allows sensitive properties of a multitenant application object to be locked for modification after the application is provisioned in another tenant.
+Application instance lock is a feature in Microsoft Entra ID that allows sensitive properties of an application's service principal to be locked for modification. It applies to both single-tenant and multitenant applications.
 This feature provides application developers with the ability to lock certain properties if the application doesn't support scenarios that require configuring those properties.
 
 ## What are sensitive properties?
@@ -24,7 +25,7 @@ The following property usage scenarios are considered as sensitive:
 - `TokenEncryptionKeyId` which specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key to which this property points. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
 
 > [!NOTE]
-> App instance lock is enabled by default for all new applications created using the Microsoft Entra admin center.
+> Since June 2026, the **Enable property lock** setting is **Enabled** by default for new applications (Message Center message MC1300584). Review the lock settings to ensure they protect the sensitive properties your application uses.
 
 ## Configure an app instance lock
 
@@ -55,4 +56,4 @@ To configure an app instance lock:
 
 ## Configure app instance lock using Microsoft Graph
 
-You manage the app instance lock feature through the **servicePrincipalLockConfiguration** property of the [application](/graph/api/resources/application) object of the multitenant app. For more information, see [Lock sensitive properties for service principals](/graph/tutorial-applications-basics#lock-sensitive-properties-for-service-principals).
+You manage the app instance lock feature through the **servicePrincipalLockConfiguration** property of the [application](/graph/api/resources/application) object. For more information, see [Lock sensitive properties for service principals](/graph/tutorial-applications-basics#lock-sensitive-properties-for-service-principals).
