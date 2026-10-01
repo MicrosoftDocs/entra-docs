@@ -5,11 +5,11 @@ author: kenwith
 manager: pmwongera
 ms.service: entra-id
 ms.topic: include
-ms.date: 06/18/2026
+ms.date: 09/25/2026
 ms.author: kenwith
 ai-usage: ai-assisted
-ms.custom: include file
+ms.custom: include file, msecd-doc-authoring-1026
 ---
 
 > [!NOTE]
-> CSV template formats vary by operation. Some templates, such as bulk create or delete users, include `version:v1.0` as the first row. Other templates, such as group member operations, start with column headers. Download the template for your specific operation from the portal. Don't add a version row or any other row that isn't in the downloaded template. Keep any version row and column header row unchanged.
+> CSV template formats vary by operation and can change. Download the latest template for your operation from the Microsoft Entra admin center. Preserve the column headers exactly as downloaded. If the template includes a version row, preserve it. If the template doesn't include a version row, don't add one. Follow the operation-specific instructions for handling the examples row.
