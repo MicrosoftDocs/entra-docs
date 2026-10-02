@@ -25,7 +25,7 @@ The following property usage scenarios are considered as sensitive:
 - `TokenEncryptionKeyId` which specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key to which this property points. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
 
 > [!NOTE]
-> Since June 2026, the **Enable property lock** setting is **Enabled** by default for new applications (Message Center message MC1300584). Review the lock settings to ensure they protect the sensitive properties your application uses.
+> Since June 2026, the **Enable property lock** setting is **Enabled** by default for new applications. Review the lock settings to ensure they protect the sensitive properties your application uses.
 
 ## Configure an app instance lock
 
