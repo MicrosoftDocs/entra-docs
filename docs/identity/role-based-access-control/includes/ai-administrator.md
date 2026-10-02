@@ -10,7 +10,7 @@ ms.custom: include file
 
 This is a [privileged role](../privileged-roles-permissions.md). Assign the AI Administrator role to users who need to do the following tasks:
 
-- Manage all aspects of Microsoft 365 Copilot
+- Manage all aspects of Microsoft Copilot
 - Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center
 - Manage admin consent request policies in Microsoft Entra ID
 - Approve and publish line-of-business copilot agents
@@ -87,7 +87,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the AI A
 > | microsoft.directory/entitlementManagement/allProperties/read | Read all properties in Microsoft Entra entitlement management |
 > | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
 > | microsoft.directory/users/allProperties/read | Read all properties of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft 365 Copilot |
+> | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft Copilot |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.search/content/manage | Create and delete content, and read and update all properties in Microsoft Search |

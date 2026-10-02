@@ -1,66 +1,53 @@
 ---
-title: Enable Enterprise State Roaming in Microsoft Entra ID
-description: Frequently asked questions about Enterprise State Roaming settings in Windows devices.
+title: Migrate Microsoft Entra Enterprise State Roaming
+description: Learn how to migrate Enterprise State Roaming management from Microsoft Entra ID to Windows settings backup and restore policies.
 ms.topic: how-to
-ms.date: 08/28/2025
+ms.date: 09/14/2026
 ms.reviewer: sempofu, micrider
-ms.custom: references_regions, sfi-ga-blocked
+ms.custom: references_regions, sfi-ga-blocked, msecd-doc-authoring-1028
+ai-usage: ai-assisted
+#customer intent: As an IT administrator, I want to migrate Enterprise State Roaming management so that users can continue to sync supported Windows settings across devices.
 ---
-# Enable Enterprise State Roaming in Microsoft Entra ID
+# Migrate Enterprise State Roaming from Microsoft Entra ID
 
-Enterprise State Roaming provides users with a unified experience across their Windows devices and reduces the time needed for configuring a new device. Enterprise State Roaming operates similar to the standard [consumer settings sync](https://go.microsoft.com/fwlink/?linkid=2015135) that was first introduced in Windows 8. Enterprise State Roaming is available to any organization with a Microsoft Entra ID P1 or P2 or Enterprise Mobility + Security (EMS) license. For more information on how to get a Microsoft Entra subscription, see the [Microsoft Entra product page](https://azure.microsoft.com/services/active-directory).
+Enterprise State Roaming (ESR) lets users sync supported Windows settings across devices associated with their Microsoft Entra ID account. ESR management moved from the Microsoft Entra admin center to Windows settings backup and restore in July 2026. IT administrators now configure backup policies by using Microsoft Intune, another mobile device management (MDM) provider, or Group Policy.
+
+The set of ESR settings remains unchanged. Only the management experience has changed. For the current list of supported settings, see the [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr).
+
+ESR is separate from [consumer settings sync](https://go.microsoft.com/fwlink/?linkid=2015135), which uses a personal Microsoft account. Before July 2026, a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) could configure ESR through [device settings](./manage-device-identities.md) in the [Microsoft Entra admin center](https://entra.microsoft.com). That portal management option is no longer available.
+
+> [!IMPORTANT]
+> You can no longer manage ESR through the Microsoft Entra admin center. Configure Windows settings backup and restore policies to continue roaming supported settings. If you take no action, Windows honors existing ESR and Group Policy or MDM roaming controls for one year and prioritizes Group Policy or MDM. After that period, ESR no longer works until you configure Windows settings backup and restore policies.
+
+<a name='to-enable-enterprise-state-roaming'></a>
+
+## Migrate Enterprise State Roaming management
+
+To migrate ESR management, follow these steps:
+
+1. Review your current use of ESR and identify the users and devices that need settings backup and roaming.
+1. Confirm that your devices meet the backup requirements and that users have an eligible license. For current requirements and licensing information, see [Windows settings backup and restore](/windows/configuration/windows-backup/), the [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr), and the [Microsoft Entra product page](https://azure.microsoft.com/services/active-directory).
+1. Configure the **Enable Windows Backup** policy by using Microsoft Intune, the Policy configuration service provider (CSP), or Group Policy.
+1. Assign the policy to the users or devices that need settings backup and roaming.
+1. Verify that the policy applies successfully.
 
 > [!NOTE]
-> This article applies to the Microsoft Edge Legacy HTML-based browser launched with Windows 10 in July 2015. The article doesn't apply to the new Microsoft Edge Chromium-based browser released on January 15, 2020. For more information on the Sync behavior for the new Microsoft Edge, see the article [Microsoft Edge Sync](/deployedge/microsoft-edge-enterprise-sync).
+> Configure Windows settings backup and restore by using either Group Policy or CSP. Don't combine both policy sources because conflicting settings can cause unexpected results.
 
-## To enable Enterprise State Roaming
+For information about the legacy controls that limit which settings sync, see [Group Policy and MDM settings for settings sync](enterprise-state-roaming-group-policy-settings.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Entra ID** > **Devices** > **Overview** > **Enterprise State Roaming**.
-1. Select **Users may sync settings and app data across devices**. For more information, see [how to configure device settings](./manage-device-identities.md).
+Backup is supported for eligible Microsoft Entra joined and [Microsoft Entra hybrid joined](./hybrid-join-plan.md) devices. For current operating system versions and build requirements, see [Windows settings backup and restore system requirements](/windows/configuration/windows-backup/#system-requirements).
 
-For a Windows 11 or Windows 10, version 21H2 or newer device to use the Enterprise State Roaming service, the device must authenticate using a Microsoft Entra identity. For devices that are joined to Microsoft Entra ID, the user’s primary sign-in identity is their Microsoft Entra identity, so no other configuration is required. For devices that use on-premises Active Directory, the IT admin must [Configure Microsoft Entra hybrid joined devices](./hybrid-join-plan.md).
+Microsoft Edge sync is managed separately from ESR. For more information, see [Microsoft Edge Sync](/deployedge/microsoft-edge-enterprise-sync). For legacy ESR diagnostics, see [Troubleshoot Enterprise State Roaming](enterprise-state-roaming-troubleshooting.md).
 
-## Data storage
+## Data storage and retention
 
-Enterprise State Roaming data is hosted in one or more [Azure regions](https://azure.microsoft.com/regions/) that best align with the country/region value set in the Microsoft Entra instance. Enterprise State Roaming data is partitioned based on three major geographic regions: North America, EMEA, and APAC. Enterprise State Roaming data for the tenant is locally located with the geographical region, and isn't replicated across regions. For example:
+Windows settings backup and restore treats user-specific settings as personal data and stores the data in the tenant's region. In the public cloud, the country or region selected when the tenant is created maps to a geographic location in Exchange Online.
 
-| Country/region value | has their data hosted in |
-| -------------------- | ------------------------ |
-| An EMEA country/region such as France or Zambia | One or more of the Azure regions within Europe |
-| A North American country/region such as United States or Canada | One or more of the Azure regions within the US |
-| An APAC country/region such as Australia or New Zealand | One or more of the Azure regions within Asia |
-| South American and Antarctica regions | One or more Azure regions within the US |
+By default, data is retained while it's associated with an active account and device. For current information about storage, encryption, compliance, and retention, see the [Windows settings backup and restore FAQ](/windows/configuration/windows-backup/faq#data-storage-and-retention). For legacy ESR-specific questions, see the [Settings and data roaming FAQ](enterprise-state-roaming-faqs.yml). For general information about cloud locations, see [Azure regions](https://azure.microsoft.com/regions/). If you need help determining a data location, review [Azure support options](https://azure.microsoft.com/support/options/) or contact [Azure support](https://azure.microsoft.com/support/).
 
-The country/region value is set as part of the Microsoft Entra directory creation process and can’t be modified later. If you need more details on your data storage location, file a ticket with [Azure support](https://azure.microsoft.com/support/options/).
+## Related content
 
-## Data retention
-
-Data synced to the Microsoft cloud using Enterprise State Roaming is retained until manually deleted or the data is determined to be stale.
-
-### Explicit deletion
-
-Explicit deletion is when an administrator deletes a user, directory, or requests explicitly that data is to be deleted.
-
-* **User deletion**: When a user is deleted in Microsoft Entra ID, the user account roaming data is deleted after 90 to 180 days.
-* **Directory deletion**: Deleting an entire directory in Microsoft Entra ID is an immediate operation. All the settings data associated with that directory is deleted after 90 to 180 days.
-* **On request deletion**: If the Microsoft Entra admin wants to manually delete a specific user’s data or settings data, the admin can file a ticket with [Azure support](https://azure.microsoft.com/support/).
-
-### Stale data deletion
-
-Data that isn't accessed for one year ("the retention period") is treated as stale and might be deleted from the Microsoft cloud. The retention period is subject to change but isn't less than 90 days. The stale data might be a specific set of Windows/application settings or all settings for a user. For example:
-
-* If no devices access a particular settings collection like language, then that collection becomes stale after the retention period and might be deleted.
-* If a user turned off settings sync on all their devices, then none of the settings data is accessed. All the settings data for that user will become stale and might be deleted after the retention period.
-* If the Microsoft Entra directory admin turns off Enterprise State Roaming for the entire directory, then all users in that directory stop syncing settings. All settings data for all users will become stale and might be deleted after the retention period.
-
-### Deleted data recovery
-
-The data retention policy isn't configurable. Once the data is permanently deleted, it isn't recoverable. However, The settings data is deleted only from the Microsoft cloud, not from the end-user device. If any device later reconnects to the Enterprise State Roaming service, the settings are again synced and stored in the Microsoft cloud.
-
-## Next steps
-
-* [Settings and data roaming FAQ](enterprise-state-roaming-faqs.yml)
-* [Group Policy and MDM settings for settings sync](enterprise-state-roaming-group-policy-settings.md)
+* [Configure Windows settings backup and restore](/windows/configuration/windows-backup/)
+* [Windows settings backup and restore policy settings](/windows/configuration/windows-backup/policy-settings)
 * [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr)
-* [Troubleshooting](enterprise-state-roaming-troubleshooting.md)

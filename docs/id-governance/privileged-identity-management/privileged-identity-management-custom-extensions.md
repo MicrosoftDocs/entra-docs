@@ -202,7 +202,7 @@ Save the Application ID URI. You provide this value as the `resourceId` when you
 
 When PIM calls your custom extension REST API, it sends an HTTP Authorization header with a bearer token issued by Microsoft Entra ID. Implement the following token validation checks in your API:
 
-- **Calling application claim** - Validate that the `appid` claim (for V1 tokens) or `azp` claim (for V2 tokens) contains the value `1c67c054-65c8-4f7f-92a1-eb7ba6e48627`. This value identifies Microsoft Entra Privileged Identity Management as the caller.
+- **Calling application claim** - Validate that the `appid` claim (for V1 tokens) or `azp` claim (for V2 tokens) contains the value `00001111-aaaa-2222-bbbb-3333cccc4444`. This value identifies Microsoft Entra Privileged Identity Management as the caller.
 - **Audience claim** -  Validate that the `aud` claim contains the Application ID URI you configured for your app registration.
 - **Issuer claim** - Validate that the `iss` claim contains the Microsoft Entra issuer URL for your tenant: `https://login.microsoftonline.com/{tenantId}/v2.0`.
 
@@ -235,7 +235,7 @@ The following example creates a custom extension for PIM for Groups:
   },
   "authenticationConfiguration": {
     "@odata.type": "#microsoft.graph.azureAdTokenAuthentication",
-    "resourceId": "api://api.contoso.com/00001111-aaaa-2222-bbbb-3333cccc4444"
+    "resourceId": "api://api.contoso.com/a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
   },
   "resourceType": "entraGroups",
   "customAttributes": []

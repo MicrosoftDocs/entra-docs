@@ -5,9 +5,9 @@ ms.service: entra-external-id
 ms.topic: how-to
 author: mmacy-msft
 ms.author: marshmacy
-ms.date: 07/23/2026
+ms.date: 10/02/2026
 ai-usage: ai-assisted
-ms.custom: it-pro, msecd-doc-authoring-1017
+ms.custom: it-pro, msecd-doc-authoring-1030
 #Customer intent: As a developer or IT admin, I want to enable passkey (FIDO2) sign-in for my external tenant so that customers can use phishing-resistant, passwordless authentication.
 ---
 
@@ -76,7 +76,7 @@ To configure a profile:
 
 ## Step 3: Build a passkey management experience for your application
 
-Your application needs a credential management experience so signed-in customers can register and manage their own passkeys. Use the preview [credential management API](../../identity-platform/reference-credential-management-api.md) to build this experience with low-privilege delegated permissions.
+Your application needs a credential management experience so signed-in customers can register and manage their own passkeys. Use the [credential management API](../../identity-platform/reference-credential-management-api.md) to build this experience with low-privilege delegated permissions.
 
 The credential management experience should enable customers to:
 
@@ -211,7 +211,7 @@ No. Registration requires the customer's physical presence and local biometric o
 
 ### Are there low-privilege APIs for building a credential management experience?
 
-Yes. Use the preview [credential management API](../../identity-platform/reference-credential-management-api.md) to let signed-in customers list, register, and delete their own passkeys with delegated permissions.
+Yes. Use the [credential management API](../../identity-platform/reference-credential-management-api.md) to let signed-in customers list and register their own passkeys with delegated permissions.
 
 ### Can I use the same passkey across multiple domains (related origins)?
 
@@ -223,7 +223,7 @@ No. Passkeys aren't currently supported through native authentication APIs. Supp
 
 ### Is there an out-of-box passkey registration experience?
 
-No. Microsoft doesn't currently provide a built-in passkey registration experience for external tenants. Build a credential management experience in your application by using the preview [credential management API](../../identity-platform/reference-credential-management-api.md).
+No. Microsoft doesn't currently provide a built-in passkey registration experience for external tenants. Build a credential management experience in your application by using the [credential management API](../../identity-platform/reference-credential-management-api.md).
 
 ## Related content
 

@@ -16,6 +16,27 @@ From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micros
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
+## 1.1.2505.0
+
+**Release date:** September 21, 2026
+
+### New features and improvements
+
+- Added download functionality support for Azure China Cloud.
+- Simplified Provisioning Agent configuration by eliminating the requirement for Domain Admin credentials when customers provide a gMSA and select custom gMSA permissions. This enhancement supports hybrid cloud synchronization scenarios and aligns with the gMSA PowerShell cmdlets experience.
+- Streamlined the AADCloudSyncTools PowerShell module by removing the Repair-AADCloudSyncToolsAccount cmdlet, aligning the module with the updated Provisioning Agent configuration experience.
+
+### Fixes
+
+- Improved cloud environment discovery for Azure Government tenants that use domain suffixes.
+- Resolved formatting inconsistencies affecting security groups during initial synchronization.
+- Fixed an issue that could result in unresolved cross-domain directory references causing object-level quarantine errors in AD2AADProvisioning jobs.
+- Fixed domain controller affinity paging issues when processing nested organizational units and containers.
+
+### Security hardening
+
+- Implemented additional security hardening improvements to further strengthen the reliability and protection of hybrid identity synchronization deployments.
+
 ## 1.1.2334.0
 
 April 14, 2026: released for download

@@ -27,7 +27,7 @@ The following table outlines when an authentication method can be used for prima
 | [External MFA](how-to-authentication-external-method-manage.md) | No | MFA | No |
 | [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview) | No | MFA | SSPR |
 | [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md#passwordless-sign-in-via-notifications) | Yes | No | No |
-| [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app) | Yes | MFA | SSPR |
+| [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app) | No | MFA | SSPR |
 | [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md) | Yes | MFA | No |
 | [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app.md) | Yes | MFA | No |
 | Password | Yes | No | No |

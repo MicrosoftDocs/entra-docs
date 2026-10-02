@@ -3,7 +3,7 @@ title: Configure Transport Layer Security Inspection Policies
 description: Learn how to configure a Transport Layer Security inspection policy and assign it to users in your organization.
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 04/18/2026
+ms.date: 08/28/2026
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -15,7 +15,7 @@ This article explains how to create a context-aware Transport Layer Security ins
 
 ## Prerequisites   
 To complete the steps in this process, you must have the following prerequisites in place:      
-- Completed TLS inspection settings with an active, enabled certificate authority.   
+- An active, enabled certificate authority. Configure either a [Microsoft-managed certificate](how-to-transport-layer-security-settings-managed-certificate.md) or [your own certificate](how-to-transport-layer-security-settings.md).
 - Test devices or virtual machines running Windows that are either Microsoft Entra joined or hybrid joined to your organization's Microsoft Entra ID.  
 - A trial license for Microsoft Entra Internet Access.  
 - [Global Secure Access prerequisites](how-to-configure-web-content-filtering.md) 
@@ -89,7 +89,8 @@ To disable TLS inspection:
     1. Select **Delete**.      
 
 ## Related content
-* [Configure TLS inspection settings](how-to-transport-layer-security-settings.md) 
+- [Configure TLS inspection with a Microsoft-managed certificate](how-to-transport-layer-security-settings-managed-certificate.md)
+- [Configure TLS inspection with your own certificate](how-to-transport-layer-security-settings.md)
 * [Create a TLS certificates using ADCS](scripts/powershell-active-directory-certificate-service.md)
 * [Create a TLS certificate using OpenSSL](scripts/powershell-open-secure-sockets-layer.md) 
 * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)

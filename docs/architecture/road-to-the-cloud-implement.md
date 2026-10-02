@@ -45,7 +45,7 @@ These links provide more information on this topic but aren't specific to changi
 - [Attribute-based application provisioning with scoping filters](/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts) or [What is Microsoft Entra entitlement management](/entra/id-governance/entitlement-management-overview) (for application access)
 
 ## Groups
-A cloud-first approach for groups involves creating new groups in the cloud. If you need them on-premises, [provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning). Convert the Group Source of Authority (SOA) of existing on-premises groups to manage them from Microsoft Entra. 
+A cloud-first approach for groups involves creating new groups in the cloud. If you need them on-premises, [provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory). Convert the Group Source of Authority (SOA) of existing on-premises groups to manage them from Microsoft Entra.
 
 These links provide more information about groups:
 

@@ -1,27 +1,27 @@
 ---
 title: Microsoft Entra External ID credential management API reference
-description: Use the Microsoft Entra External ID credential management API to let signed-in customers list, register, and delete their passkeys.
+description: Use the Microsoft Entra External ID credential management API to let signed-in customers list and register their passkeys.
 author: mmacy-msft
 manager: dougeby
 ms.author: marshmacy
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
-ms.date: 07/23/2026
+ms.date: 10/02/2026
 ai-usage: ai-assisted
-ms.custom: msecd-doc-authoring-1017
-#Customer intent: As an identity developer, I want to learn how to integrate the credential management API into my customer-facing app so that customers can list, register, and delete their own credential methods.
+ms.custom: msecd-doc-authoring-1030
+#Customer intent: As an identity developer, I want to learn how to integrate the credential management API into my customer-facing app so that customers can list and register their own credential methods.
 ---
 
 # Microsoft Entra External ID credential management API reference
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-The Microsoft Entra External ID credential management API lets your application give signed-in customers a self-service flow for listing, registering, and deleting passkeys. Your application owns the client experience and calls the API on the customer's behalf.
+The Microsoft Entra External ID credential management API lets your application give signed-in customers a self-service flow for listing and registering passkeys. Your application owns the client experience and calls the API on the customer's behalf.
 
 The credential management API complements Microsoft Entra [native authentication](concept-native-authentication.md), where your application hosts the sign-in experience instead of delegating it to a browser. Use the credential management API after a customer signs in.
 
-Successful resource responses use HAL+JSON (`application/hal+json`). Activation requests use JSON (`application/json`), delete success responses have no body, and errors use JSON.
+Successful resource responses use HAL+JSON (`application/hal+json`). Activation requests and errors use JSON (`application/json`).
 
 ## Prerequisites
 
@@ -87,8 +87,8 @@ All permissions are delegated permissions exposed by the credential management A
 
 | Operation | Accepted delegated permissions (least privileged first) |
 |-----------|---------------------------------------------------------|
-| Read (for example, listing the customer's passkeys) | `Me.User.Read`, `Me.UserAuthenticationMethod.Passkey.Read`, `Me.UserAuthenticationMethod.Read`, `Me.UserAuthenticationMethod.Passkey.ReadWrite`, `Me.UserAuthenticationMethod.ReadWrite` |
-| Write (for example, registering or deleting a passkey) | `Me.UserAuthenticationMethod.Passkey.ReadWrite`, `Me.UserAuthenticationMethod.ReadWrite` |
+| Read (for example, listing the customer's passkeys) | `Me.UserAuthenticationMethod.Passkey.Read`, `Me.UserAuthenticationMethod.Read`, `Me.UserAuthenticationMethod.Passkey.ReadWrite`, `Me.UserAuthenticationMethod.ReadWrite` |
+| Write (for example, registering a passkey) | `Me.UserAuthenticationMethod.Passkey.ReadWrite`, `Me.UserAuthenticationMethod.ReadWrite` |
 
 Application-only access (the client credentials flow) isn't supported.
 
@@ -231,7 +231,7 @@ Content-Type: application/hal+json
 }
 ```
 
-Follow the returned HAL links instead of constructing operation URLs from identifiers.
+Follow the returned HAL links for listing and registration instead of constructing operation URLs from identifiers.
 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
@@ -256,7 +256,7 @@ Authenticator-specific properties can vary or be absent. For example, a nonattes
 | `model` | string | No | Authenticator model. |
 | `passkeyType` | string | No | Passkey classification reported by the service. |
 | `displayName` | string | No | Customer-provided passkey name. |
-| `_links` | object | Yes | `self` and `delete` links for the registered passkey. |
+| `_links` | object | Yes | `self` and `delete` links for the registered passkey. For deletion, use [Microsoft Graph](#delete-a-credential-method) instead of the returned `delete` link. |
 
 This endpoint can return `400`, `401`, or `403`. For the shared envelope and caller actions, see [Error responses](#error-responses).
 
@@ -518,63 +518,18 @@ The activation response has the following properties:
 | `attestationLevel` | string | No | Attestation level reported for the authenticator. |
 | `model` | string | No | Authenticator model. |
 | `passkeyType` | string | No | Passkey classification reported by the service. |
-| `_links` | object | Yes | `self` and `delete` links for the registered passkey. |
+| `_links` | object | Yes | `self` and `delete` links for the registered passkey. For deletion, use [Microsoft Graph](#delete-a-credential-method) instead of the returned `delete` link. |
 
 Authenticator-specific properties can vary or be absent. The activation endpoint can return `400`, `401`, or `403`. For the shared envelope and caller actions, see [Error responses](#error-responses).
 
 ## Delete a credential method
 
-Permanently deletes one of the signed-in customer's registered passkeys. Use this endpoint after [listing the customer's credential methods](#list-user-credential-methods) and when the customer chooses to remove a passkey in your application's credential-management flow. Deletion is immediate and can't be undone. A replacement passkey is a new credential with no relation to the deleted passkey.
+Support for passkey deletion in the credential management API is coming soon. Until then, use the Microsoft Graph [Delete fido2AuthenticationMethod API (beta)](/graph/api/fido2authenticationmethod-delete?view=graph-rest-beta&preserve-view=true&tabs=http) to delete a customer's registered passkey.
 
-The following sequence diagram shows the delete flow.
+> [!NOTE]
+> The list and activation responses include `_links.delete` for registered passkeys. These links aren't supported yet; use Microsoft Graph to delete passkeys instead.
 
-:::image type="content" source="media/reference-credential-management-api/delete-credential-method.png" alt-text="Sequence diagram that shows your app calling the delete endpoint with the customer's access token and Microsoft Entra External ID removing the passkey and returning 204 No Content." lightbox="media/reference-credential-management-api/delete-credential-method.png":::
-
-See [Authentication and authorization](#authentication-and-authorization) for the access token your application needs to call this endpoint. This endpoint requires a write permission, `Me.UserAuthenticationMethod.Passkey.ReadWrite` or `Me.UserAuthenticationMethod.ReadWrite` (see [Required permissions](#required-permissions)).
-
-### HTTP request
-
-```http
-DELETE https://{tenant-subdomain}.ciamlogin.com/{tenant-id}/api/v1.0/me/methods/{type}/{id}
-```
-
-`{tenant-subdomain}` in the URL is your external tenant's subdomain, for example *contoso* in *contoso.ciamlogin.com*.
-
-Sample request:
-
-```http
-DELETE https://contoso.ciamlogin.com/8f1c8e2a-1234-4abc-9876-1f1e1d1c1b1a/api/v1.0/me/methods/fido/{id} HTTP/1.1
-Host: contoso.ciamlogin.com
-Authorization: Bearer <access_token>
-```
-
-### Request parameters
-
-Path parameters:
-
-| Name | Required | Description |
-|------|----------|-------------|
-| `tenant-id` | Yes | Your external tenant identifier, either the tenant ID (GUID) or a verified domain. Use a tenant-specific value, not `common`, `client`, `organizations`, or `consumers`. A GUID value must match the tenant in the access token. |
-| `type` | Yes | The credential method type to delete. Currently only `fido` (passkey) is supported. |
-| `id` | Yes | The identifier of the registered passkey to delete. Use the `id` (or follow the `delete` link) from [List user credential methods](#list-user-credential-methods), the source of truth for the customer's registered methods. |
-
-Request headers:
-
-| Name | Required | Value |
-|------|----------|-------|
-| `Authorization` | Yes | `Bearer <access_token>` |
-
-This endpoint doesn't take a request body. The passkey to delete is identified entirely by the URL.
-
-### Success response
-
-A successful delete returns an empty response:
-
-```http
-HTTP/1.1 204 No Content
-```
-
-This endpoint can return `400`, `401`, or `403`. For the shared envelope and caller actions, see [Error responses](#error-responses).
+Follow the Microsoft Graph reference for the authentication requirements, permissions, request format, and responses for this operation.
 
 ## Error responses
 

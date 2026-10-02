@@ -79,13 +79,18 @@ You can update the isolation scope and assignment restrictions of an existing us
 
 The **Select Resource Types** pane in the Azure portal does not display all resource providers and resource types that support managed identities. If the resource you want to configure is not listed, use the Azure CLI to create or update the identity assignment. Refer to the Azure CLI examples below for resources that are not currently available in the **Select Resource Types** list.
 
+> [!WARNING]
+> In Azure CLI commands and infrastructure-as-code (IaC) templates, specify the resource provider namespace on its own, for example `Microsoft.Storage`. Don't use `Microsoft.Storage/*`.
+>
+> The **Select Resource Types** pane in the Azure portal displays a provider-wide selection as `Microsoft.Storage/*`. The `/*` suffix is a portal display convention and isn't part of the value that the API accepts. Even when the portal shows `Microsoft.Storage/*`, use `Microsoft.Storage` in Azure CLI commands and IaC templates. To restrict the identity to a single resource type instead of the whole provider, specify the full resource type, for example `Microsoft.Storage/storageAccounts`.
+
 ### Create an identity with resource assignment restrictions
 
 ```bash
 az identity create \
   --name MyIdentity \
   --resource-group MyResourceGroup \
-  --resource-restriction '{"providers": ["Microsoft.Compute", "Microsoft.Storage/Accounts"]}'
+  --resource-restriction '{"providers": ["Microsoft.Compute", "Microsoft.Storage"]}'
 ```
 
 ### Update an identity to restrict assignment to specific resources
@@ -94,7 +99,7 @@ az identity create \
 az identity update \
   --name MyIdentity \
   --resource-group MyResourceGroup \
-  --resource-restriction '{"providers": ["Microsoft.Compute", "Microsoft.Storage/Accounts"]}'
+  --resource-restriction '{"providers": ["Microsoft.Compute", "Microsoft.Storage"]}'
 ```
 
 ### List the associated resources for an identity

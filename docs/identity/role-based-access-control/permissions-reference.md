@@ -26,8 +26,8 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 > | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent identity blueprint principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | db506228-d27e-4b7d-95e5-295956d6615f |
 > | [Agent ID Developer](#agent-id-developer) | Create an agent identity blueprint and its agent identity blueprint principal in a tenant. User will be added as an owner of the created agent identity blueprint and its agent identity blueprint principal. | adb2368d-a9be-41b5-8667-d96778e081b0 |
 > | [Agent Registry Administrator](#agent-registry-administrator) | Manage all aspects of the Agent Registry service in Microsoft Entra ID | 6b942400-691f-4bf0-9d12-d8a254a2baf5 |
-> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d2562ede-74db-457e-a7b6-544e236ebb61 |
-> | [AI Reader](#ai-reader) | Read all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 1fe13547-53f6-408d-ac04-7f8eed167b38 |
+> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d2562ede-74db-457e-a7b6-544e236ebb61 |
+> | [AI Reader](#ai-reader) | Read all aspects of Microsoft Copilot and AI-related enterprise services in Microsoft 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 1fe13547-53f6-408d-ac04-7f8eed167b38 |
 > | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
 > | [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | cf1c38e5-3621-4004-a7cb-879624dced7c |
 > | [Attack Payload Author](#attack-payload-author) | Can create attack payloads that an administrator can initiate later. | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f |
@@ -68,6 +68,7 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
 > | [Entra Backup Administrator](#entra-backup-administrator) | Manage all aspects of Microsoft Entra Backup, such as create recovery jobs and manage backup snapshots. | b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb |
 > | [Entra Backup Reader](#entra-backup-reader) | Read all aspects of Microsoft Entra Backup, such as list all preview jobs, recovery jobs, backup snapshots, and create preview jobs. | f42252d9-5400-4d7b-b9ef-cc582dbb8577 |
+> | [Entra SOC Identity Responder](#entra-soc-identity-responder) | Perform identity containment actions for SOC incident response, including disabling users, revoking active sign-in sessions, and resetting passwords.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 58f930cc-fcf4-4152-852c-1d7dbf502139 |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
 > | [Exchange Backup Administrator](#exchange-backup-administrator) | Back up and restore content (including granular restore) for Exchange in Microsoft 365 Backup | 49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31 |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
@@ -339,6 +340,10 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 ## Entra Backup Reader
 
 [!INCLUDE [entra-backup-reader](includes/entra-backup-reader.md)]
+
+## Entra SOC Identity Responder
+
+[!INCLUDE [entra-soc-identity-responder](includes/entra-soc-identity-responder.md)]
 
 ## Exchange Administrator
 

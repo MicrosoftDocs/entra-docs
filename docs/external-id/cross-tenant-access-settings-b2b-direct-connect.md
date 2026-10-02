@@ -2,7 +2,7 @@
 title: Set up B2B direct connect
 description: Learn how to configure B2B direct connect with other Microsoft Entra organizations, using cross-tenant access settings to manage outbound and inbound access.
 ms.topic: how-to
-ms.date: 04/24/2026
+ms.date: 09/08/2026
 ms.collection: M365-identity-device-management
 ai-usage: ai-assisted
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
@@ -176,7 +176,14 @@ With inbound settings, you select which external users and groups can access the
 
    - **Trust multi-factor authentication from Microsoft Entra tenants**: Select this checkbox if your Conditional Access policies require multifactor authentication (MFA). This setting allows your Conditional Access policies to trust MFA claims from external organizations. During authentication, Microsoft Entra ID checks a user's credentials for a claim that the user completed MFA. If not, an MFA challenge is initiated in the user's home tenant.  
 
-   - **Trust compliant devices**: Allows your Conditional Access policies to trust compliant device claims from an external organization when their users access your resources.
+   - **Trust compliant devices**: Allows Microsoft Entra ID to trust compliant device claims from an external Microsoft Entra organization when their users access your resources. When you enable this setting, external users can satisfy Conditional Access policies that require a compliant device by using the compliance status evaluated by their home organization.
+
+     When an external user signs in, Microsoft Entra ID can receive a device compliance claim from the user's home tenant. If **Trust compliant devices** is enabled, Microsoft Entra ID accepts the claim. Conditional Access policies that require a compliant device can then evaluate successfully based on the compliance assessment performed by the external organization.
+
+     Enable this setting only for organizations whose device compliance policies you trust. Your tenant relies on the compliance evaluation performed by the external organization's device management and compliance solution.
+
+     > [!IMPORTANT]
+     > If **Trust compliant devices** isn't enabled, Microsoft Entra ID doesn't trust compliant-device claims from the external user's home tenant. As a result, external users might fail Conditional Access policies that require a compliant device, even if their device is compliant in their home organization. For example, a guest user accessing your resources from a compliant iOS, Android, Windows, or macOS device might be blocked if your Conditional Access policies require device compliance and **Trust compliant devices** isn't enabled for the user's home tenant.
 
    - **Trust Microsoft Entra hybrid joined devices**: Allows your Conditional Access policies to trust Microsoft Entra hybrid joined device claims from an external organization when their users access your resources.
 

@@ -72,6 +72,8 @@
           items:
             - name: Troubleshoot Microsoft Entra hybrid joined Windows devices
               href: troubleshoot-hybrid-join-windows-current.md
+            - name: Troubleshoot intermittent STATUS_ACCOUNT_DISABLED errors
+              href: troubleshoot-intermittent-status-account-disabled.md
             - name: Troubleshoot pending device state
               href: /troubleshoot/azure/active-directory/pending-devices?context=/entra/identity/devices/context/devices-context.json
             - name: Troubleshoot using dsregcmd

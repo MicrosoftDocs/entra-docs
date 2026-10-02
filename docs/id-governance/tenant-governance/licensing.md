@@ -3,10 +3,10 @@ title: Licensing for Microsoft Entra Tenant Governance
 titleSuffix: Microsoft Entra ID Governance
 description: Learn which Microsoft Entra Tenant Governance features are available with each license tier, including P1, P2, and ID Governance
 author: tafra00
-ms.author: tafra00
+ms.author: tazkiaafra
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 07/29/2026
+ms.date: 09/14/2026
 ms.custom: msecd-doc-authoring-1018
 ai-usage: ai-assisted
 
@@ -96,3 +96,5 @@ For more information about the general tenant creation requirements, see [Create
 - [What is Microsoft Entra Tenant Governance?](overview.md)
 - [Governance relationships](governance-relationships.md)
 - [Microsoft Entra licensing](~/fundamentals/licensing.md)
+- [Microsoft Agent 365 Licensing FAQs](https://www.microsoft.com/licensing/faqs/122)
+- [Configure delegated access with governance relationships for multitenant organizations](/unified-secops/governance-relationships)

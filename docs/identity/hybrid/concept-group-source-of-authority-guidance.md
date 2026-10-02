@@ -1,10 +1,13 @@
 ---
 title: Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID
 description: Discover how to manage and transition Active Directory groups to Microsoft Entra ID using Group Source of Authority (SOA). Learn best practices for group management, provisioning, restoring, and rolling back changes in hybrid and cloud environments.
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.topic: concept-article
-ms.date: 10/09/2025
-ms.reviewer: dahnyahk
+ms.date: 08/10/2026
+ms.reviewer: dhanyahk
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1023
+#customer intent: As a hybrid identity administrator, I want guidance for transitioning group management to Microsoft Entra ID so that I can manage groups securely across hybrid and cloud environments.
 ---
 
 # Guidance for using Group Source of Authority (SOA)
@@ -35,7 +38,7 @@ If you plan to provision a converted SOA security group (not mail-enabled) back 
 1. Convert the Source of Authority (SOA) when ready. 
 1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
 
-For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/tutorial-group-provisioning.md).
+For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 ### Transition group management
 
@@ -62,7 +65,7 @@ Let's look at an example where you provision a security group named *CloudGroupB
 
 Then you start to manage group memberships in Microsoft Entra ID for the converted *CloudGroupB*. You provision it as a nested group within the on-premises group *OnPremGroupA*. If *OnPremGroupA* remains in-scope for sync, when the AD DS to Microsoft Entra ID sync configuration runs for *OnPremGroupA*, the membership reference for *CloudGroupB* doesn't sync. By design, the sync client doesn't recognize the cloud group membership references.
 
-For more information about how group sync works with SOA in similar use cases, see [Nested Groups and membership references handling](cloud-sync/tutorial-group-provisioning.md#nested-groups-and-membership-references-handling).
+For more information, see [How provisioning to Active Directory works](cloud-sync/how-provisioning-to-active-directory-works.md#nested-group-membership-behavior).
 
 ### How SOA applies to nested groups
 

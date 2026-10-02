@@ -55,14 +55,24 @@ Integrating risk data with Log Analytics provides robust data analysis and visua
 
 You need to configure a Log Analytics workspace before you can export and then query the data. Once you configured a Log Analytics workspace and exported the data with diagnostic settings, go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Monitoring & health** > **Log Analytics**. Then, with Log Analytics, you can query data using built-in or custom Kusto queries.
 
-The following tables are of most interest to Microsoft Entra ID Protection administrators:
+> [!IMPORTANT]
+> The names you select in **diagnostic settings** are not the same as the **table names** you use in Kusto (KQL) queries.
+> - **Diagnostic setting category** = what you enable for export
+> - **Log Analytics table name** = what you query (usually prefixed with `AAD`)
 
-- RiskyUsers - Provides data like the **Risky users** report.
-- UserRiskEvents - Provides data like the **Risk detections** report.
-- RiskyServicePrincipals - Provides data like the **Risky workload identities** report.
-- ServicePrincipalRiskEvents - Provides data like the **Workload identity detections** report.
-- RiskyAgents - Provides data like the **Risky agents** report.
-- AgentRiskEvents - Provides data like the **Agent identity detections** report.
+### Diagnostic setting categories vs Log Analytics table names
+
+Use this mapping when you enable export and when you write queries:
+
+| Report / signal | Diagnostic setting category (enable export) | Log Analytics table name (use in queries) | Table reference |
+| --- | --- | --- | --- |
+| Risky users | `RiskyUsers` | `AADRiskyUsers` | [AADRiskyUsers](/azure/azure-monitor/reference/tables/aadriskyusers) |
+| Risk detections (users) | `UserRiskEvents` | `AADUserRiskEvents` | [AADUserRiskEvents](/azure/azure-monitor/reference/tables/aaduserriskevents) |
+| Risky workload identities | `RiskyServicePrincipals` | `AADRiskyServicePrincipals` | [AADRiskyServicePrincipals](/azure/azure-monitor/reference/tables/aadriskyserviceprincipals) |
+| Workload identity detections | `ServicePrincipalRiskEvents` | `AADServicePrincipalRiskEvents` | [AADServicePrincipalRiskEvents](/azure/azure-monitor/reference/tables/aadserviceprincipalriskevents) |
+| Risky agents | `RiskyAgents` | `AADRiskyAgents` | [AADRiskyAgents](/azure/azure-monitor/reference/tables/aadriskyagents) |
+| Agent identity detections | `AgentRiskEvents` | `AADAgentRiskEvents` | [AADAgentRiskEvents](/azure/azure-monitor/reference/tables/aadagentriskevents) |
+
 
 > [!NOTE]
 > Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID don't appear.

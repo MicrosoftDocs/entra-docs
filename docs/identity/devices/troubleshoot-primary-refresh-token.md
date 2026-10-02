@@ -410,7 +410,7 @@ Common general network-related issues.
 1. To begin the error tracing session, enter the following command:
 
    ```powershell
-   .\Start-auth.ps1 -v -acceptEULA
+   .\Start-auth.ps1 -vAuth -acceptEULA
    ```
 
 1. Switch the Windows user account to go to your problem user's session.

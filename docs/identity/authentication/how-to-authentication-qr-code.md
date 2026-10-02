@@ -32,7 +32,7 @@ Before you enable QR code authentication method, review the best practices for u
 - Shared device mode enabled on the shared devices (optional but highly recommended). 
 - A printer to print 2" x 2" QR codes. 
 - To access QR code authentication on Teams, Teams app installed on the shared device would require these versions: Android version 1.0.0.2024143204 or later, and iOS version 1.0.0.77.2024132501 or later.
-- [Enable and setup My Staff portal](~/identity/role-based-access-control/my-staff-configure.md#how-to-enable-my-staff) if you plan for frontline managers to use My Staff to provision, manage, and reset QR code and PINs. 
+- [Set up the My Staff portal](~/identity/role-based-access-control/my-staff-configure.md) if you plan for frontline managers to use My Staff to provision, manage, and reset QR code and PINs. 
 
 ## Enable QR code authentication method
 

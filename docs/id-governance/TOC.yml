@@ -151,6 +151,8 @@
         href: entitlement-management-group-licenses.md
       - name: Create an access package for an application - PowerShell
         href: entitlement-management-access-package-create-app.md
+      - name: Integrating Entitlement Management with ServiceNow
+        href: entitlement-management-servicenow-integration.md
       - name: Automated ServiceNow Ticket Creation Integration
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
@@ -192,6 +194,8 @@
     items:
     - name: What is entitlement management?
       href: entitlement-management-overview.md
+    - name: Reconciliation overview
+      href: reconciliation-overview.md
     - name: Delegation and roles
       href: entitlement-management-delegate.md
     - name: Request process and emails
@@ -443,6 +447,10 @@
           href: workflow-sensitivity-labels.md 
         - name: Agent Identity Sponsor Tasks
           href: agent-sponsor-tasks.md       
+      - name: Guest Lifecycle Policies
+        href: guest-lifecycle-policies.md
+      - name: Manage sponsored guests in My Access
+        href: manage-sponsored-guests-my-access.md
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow

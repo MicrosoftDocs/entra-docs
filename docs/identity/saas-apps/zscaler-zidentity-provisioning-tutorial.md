@@ -1,34 +1,30 @@
 ---
-title: Configure Zscaler Provisioning for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zscaler Provisioning.
+title: Configure Zscaler Authentication Service Provisioning for automatic user provisioning with Microsoft Entra ID
+description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zscaler Authentication Service Provisioning.
 
-
-author: jeevansd
 manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps
 
-
 ms.topic: how-to
-ms.date: 05/04/2026
-ms.author: jeedes
+ms.date: 09/30/2026
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Provisioning.
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Authentication Service Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Authentication Service Provisioning.
 ---
 
-# Configure Zscaler Provisioning for automatic user provisioning with Microsoft Entra ID
+# Configure Zscaler Authentication Service Provisioning for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both Zscaler User Provisioning and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Zscaler User Provisioning](https://www.zscaler.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).  
+This article describes the steps you need to perform in both Zscaler Authentication Service User Provisioning and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Zscaler Authentication Service User Provisioning](https://www.zscaler.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).  
 
 
 ## Capabilities supported
 > [!div class="checklist"]
-> * Create users in Zscaler Provisioning
-> * Remove users in Zscaler Provisioning when they don't require access anymore
-> * Keep user attributes synchronized between Microsoft Entra ID and Zscaler Provisioning
-> * Provision groups and group memberships in Zscaler.
-> * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Zscaler (recommended).
+> * Create users in Zscaler Authentication Service Provisioning
+> * Remove users in Zscaler Authentication Service Provisioning when they don't require access anymore
+> * Keep user attributes synchronized between Microsoft Entra ID and Zscaler Authentication Service Provisioning
+> * Provision groups and group memberships in Zscaler Authentication Service.
+> * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Zscaler Authentication Service (recommended).
 > * Client Credentials Authentication supported.
 
 ## Prerequisites
@@ -37,22 +33,22 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A user account in Zscaler User Provisioning with Admin permissions.
-* You need to create and assign the app role to the users and groups for Zscaler Zidentity, which is explained later in the tutorial.
+* A user account in Zscaler Authentication Service User Provisioning with Admin permissions.
+* You need to create and assign the app role to the users and groups for Zscaler Authentication Service, which is explained later in the tutorial.
 
 > [!NOTE] 
-> If the Zscaler Zidentity is already installed and configured through app registration, complete [this prerequisite step](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/main/samples/Scripts/AppRoleMove.ps1) before enabling SCIM provisioning. Customers performing the integration for both Authentication and SCIM for the first time do not need to execute [this script](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/main/samples/Scripts/AppRoleMove.ps1) and can proceed directly to Step 3.
+> If the Zscaler Authentication Service is already installed and configured through app registration, complete [this prerequisite step](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/main/samples/Scripts/AppRoleMove.ps1) before enabling SCIM provisioning. Customers performing the integration for both Authentication and SCIM for the first time do not need to execute [this script](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/main/samples/Scripts/AppRoleMove.ps1) and can proceed directly to Step 3.
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 * Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-* Determine what data to [map between Microsoft Entra ID and Zscaler User Provisioning](~/identity/app-provisioning/customize-application-attributes.md).
+* Determine what data to [map between Microsoft Entra ID and Zscaler Authentication Service User Provisioning](~/identity/app-provisioning/customize-application-attributes.md).
 
-<a name='step-2-configure-zscaler-provisioning-to-support-provisioning-with-azure-ad'></a>
+<a name='step-2-configure-zscaler-authentication-service-provisioning-to-support-provisioning-with-azure-ad'></a>
 
-## Step 2: Configure Zscaler Provisioning to support provisioning with Microsoft Entra ID
+## Step 2: Configure Zscaler Authentication Service Provisioning to support provisioning with Microsoft Entra ID
 
-1. Sign in into the Zscaler with admin credentials. Go to **Administration -> Identity -> IDP Configuration -> External Identities** as shown below.
+1. Sign in into the Zscaler Authentication Service with admin credentials. Go to **Administration -> Identity -> IDP Configuration -> External Identities** as shown below.
 
     [![Screenshot for external identities.](./media/zscaler-zidentity-provisioning-tutorial/admin.png)](./media/zscaler-zidentity-provisioning-tutorial/admin.png#lightbox)
 
@@ -68,32 +64,32 @@ The scenario outlined in this article assumes that you already have the followin
 
     d. Select **Expires On** from the dropdown.
 
-<a name='step-3-add-zscaler-provisioning-from-the-azure-ad-application-gallery'></a>
+<a name='step-3-add-zscaler-authentication-service-provisioning-from-the-azure-ad-application-gallery'></a>
 
-## Step 3: Add Zscaler Provisioning from the Microsoft Entra application gallery
+## Step 3: Add Zscaler Authentication Service Provisioning from the Microsoft Entra application gallery
 
-Add Zscaler from the Microsoft Entra application gallery to start managing provisioning to Zscaler. If you have previously setup Zscaler for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about [adding an application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
+Add Zscaler Authentication Service from the Microsoft Entra application gallery to start managing provisioning to Zscaler Authentication Service. If you have previously setup Zscaler Authentication Service for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about [adding an application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning 
 
 [!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
-## Step 5: Configure automatic user provisioning to Zscaler Provisioning 
+## Step 5: Configure automatic user provisioning to Zscaler Authentication Service Provisioning 
 
-This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Zscaler Provisioning based on user assignments in Microsoft Entra ID.
+This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Zscaler Authentication Service Provisioning based on user assignments in Microsoft Entra ID.
 
-<a name='to-configure-automatic-user-provisioning-for-zscaler-provisioning-in-azure-ad'></a>
+<a name='to-configure-automatic-user-provisioning-for-zscaler-authentication-service-provisioning-in-azure-ad'></a>
 
-### To configure automatic user provisioning for Zscaler Provisioning in Microsoft Entra ID
+### To configure automatic user provisioning for Zscaler Authentication Service Provisioning in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an app owner or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
     ![Screenshot shows the enterprise applications blade.](common/enterprise-applications.png "Enterprise application")
 
-1. In the applications list, select **Zscaler**.
+1. In the applications list, select **Zscaler Authentication Service**.
 
-    ![Screenshot shows the Zscaler link in the Applications list.](common/all-applications.png "Application List")
+    ![Screenshot shows the Zscaler Authentication Service link in the Applications list.](common/all-applications.png "Application List")
 
 1. Select the **Provisioning** tab.
 
@@ -103,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
 
-1. 1. In the **Tenant URL** field, input your Zscaler **Tenant URL, Client identifier, Client secret** and **OAuth token endpoint**. Select **Test connection** to ensure Microsoft Entra ID can connect to Zscaler. If the connection fails, ensure your Zscaler account has the required admin permissions and try again.
+1. 1. In the **Tenant URL** field, input your Zscaler Authentication Service **Tenant URL, Client identifier, Client secret** and **OAuth token endpoint**. Select **Test connection** to ensure Microsoft Entra ID can connect to Zscaler Authentication Service. If the connection fails, ensure your Zscaler Authentication Service account has the required admin permissions and try again.
  
    ![Screenshot of Provisioning test connection.](common/provisioning-test-button.png)
 
@@ -117,9 +113,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Zscaler API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler Authentication Service in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler Authentication Service for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Zscaler Authentication Service API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-    |Attribute|Type|Supported for filtering|Required by Zscaler|
+    |Attribute|Type|Supported for filtering|Required by Zscaler Authentication Service|
     |---|---|---|---|
     |displayName|String|&check;|&check;
     |primaryEmail|String||&check;
@@ -152,9 +148,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
     
 1. Select **groups**.
 
-1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler Authentication Service in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler Authentication Service for update operations. Select the **Save** button to commit any changes.
 
-    |Attribute|Type|Supported for filtering|Required by Zscaler|
+    |Attribute|Type|Supported for filtering|Required by Zscaler Authentication Service|
    |---|---|---|---|
    |displayName|String|&check;|&check;
    |members|Reference||

@@ -113,6 +113,8 @@ Example:
 
 Specifies the collection of roles that an app may declare. These roles can be assigned to users, groups, or service principals. For more examples and info, see [Add app roles in your application and receive them in the token](./howto-add-app-roles-in-apps.md).
 
+App roles and exposed delegated permission scopes share a default limit of 700 permission definitions per application or service principal. Disabled definitions also count. See [App role limits](howto-add-app-roles-in-apps.md#app-role-limits) for counting rules and behavior for existing objects above the limit.
+
 Example:
 
 ```json
@@ -557,6 +559,8 @@ Example:
 ## Common issues
 
 ### Manifest limits
+
+Individual collections also have limits. App roles and exposed delegated permission scopes share a default limit of 700 permission definitions, separate from the aggregate manifest limit. See [App role limits](howto-add-app-roles-in-apps.md#app-role-limits).
 
 An application manifest has multiple attributes that are referred to as collections; for example, appRoles, keyCredentials, knownClientApplications, identifierUris, redirectUris, requiredResourceAccess, and oauth2PermissionScopes. Within the complete application manifest for any application, the total number of entries in all the collections combined has been capped at 1200. If you previously specify 100 appRoles in the application manifest, then you're only left with 1,100 remaining entries to use across all other collections combined that make up the manifest.
 

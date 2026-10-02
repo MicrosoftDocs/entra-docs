@@ -41,6 +41,19 @@ Before starting validation, ensure the following are already true:
 > [!IMPORTANT]
 > Validation fails if these prerequisites aren't met. Complete and test your OIDC implementation before attempting validation.
 
+## Microsoft identity platform v1 endpoints aren't supported
+
+Self-service Microsoft Entra App Gallery onboarding supports applications that use Microsoft identity platform v2 OpenID Connect (OIDC) endpoints.
+
+Applications that use Microsoft identity platform v1 endpoints can't be validated through the self-service onboarding experience. Microsoft recommends migrating to v2 endpoints to take advantage of self-service validation, publishing, and lifecycle management capabilities.
+
+The v2 endpoint uses a scope-based authorization model, including standard OIDC scopes such as `openid`, `profile`, and `email`, and provides a consistent authorization and token model that can be validated through the self-service experience. It also supports capabilities such as incremental consent, allowing applications to request delegated permissions as needed.
+
+Microsoft identity platform v1.0 and v2.0 ID tokens differ in the claims and token semantics they expose. For more information, see [ID token claims reference](~/identity-platform/id-token-claims-reference.md).
+
+> [!NOTE]
+> Applications configured to use Microsoft identity platform v1 endpoints can't be validated through the self-service onboarding experience. Migrate to v2 endpoints before starting validation.
+
 ## Your gallery submission ID
 
 Before you start validation, create your Microsoft Entra gallery submission and copy its Submission ID. You will need this ID to submit your validation results.
@@ -80,7 +93,7 @@ The Microsoft Entra App Validator browser extension is required to perform valid
 1. When prompted, select **Add extension**.
 1. Verify that **Entra App Validator** appears in the Extensions list and is enabled.
 
-:::image type="content" source="media/validate-oidc-multitenant-app-gallery/extension-installed-toolbar.png" alt-text="Screenshot of Microsoft Edge showing the Microsoft Entra App Validator extension installed and pinned to the toolbar.":::
+:::image type="content" source="media/validate-oidc-multitenant-app-gallery/extension-installed-toolbar.png" alt-text="Screenshot of Microsoft Edge showing the Microsoft Entra App Validator extension installed and pinned to the toolbar." lightbox="media/validate-oidc-multitenant-app-gallery/extension-installed-toolbar.png":::
 
 ## Start a new validation session
 
@@ -95,7 +108,7 @@ Start a validation session by signing in to the extension and confirming your ap
 
 The extension initializes the validation session and lists the checks it performs.
 
-:::image type="content" source="media/validate-oidc-multitenant-app-gallery/start-test-initialization.png" alt-text="Screenshot of the Microsoft Entra App Validator extension showing the Start test button and test initialization screen.":::
+:::image type="content" source="media/validate-oidc-multitenant-app-gallery/start-test-initialization.png" alt-text="Screenshot of the Microsoft Entra App Validator extension showing the Start test button and test initialization screen." lightbox="media/validate-oidc-multitenant-app-gallery/start-test-initialization.png":::
 
 ## Run the OIDC authentication flow
 
@@ -128,7 +141,7 @@ After authentication completes:
    - **Authentication data captured** – Details from the OIDC flow
    - **Recommendations** – Guidance for resolving issues
 
-:::image type="content" source="media/validate-oidc-multitenant-app-gallery/oidc-report-summary.png" alt-text="Screenshot of the Microsoft Entra App Validator report showing tests executed, tests passed, issues identified, and recommendations sections.":::
+:::image type="content" source="media/validate-oidc-multitenant-app-gallery/oidc-report-summary.png" alt-text="Screenshot of the Microsoft Entra App Validator report showing tests executed, tests passed, issues identified, and recommendations sections." lightbox="media/validate-oidc-multitenant-app-gallery/oidc-report-summary.png":::
 
 If the report shows blocking issues, resolve them in your app and rerun validation until all required checks pass.
 
@@ -159,12 +172,16 @@ Test IDs are time-bound and expire after two weeks.
 > [!IMPORTANT]
 > Without a valid Test ID, you can't proceed with Microsoft Entra app gallery publishing.
 
-:::image type="content" source="media/validate-oidc-multitenant-app-gallery/submission-confirmation-test-id.png" alt-text="Screenshot of the validation submission confirmation displaying the generated Test ID.":::
+:::image type="content" source="media/validate-oidc-multitenant-app-gallery/submission-confirmation-test-id.png" alt-text="Screenshot of the validation submission confirmation displaying the generated Test ID." lightbox="media/validate-oidc-multitenant-app-gallery/submission-confirmation-test-id.png":::
 
 With validation complete and a Test ID generated, you're ready to proceed with publishing your app to the Microsoft Entra app gallery. If validation fails, review the report, resolve blocking issues, and rerun validation before continuing.
 
+## Next step
+
+> [!div class="nextstepaction"]
+> [Publish your app to Microsoft Entra App Gallery](publish-app-gallery.md)
+
 ## Related content
 
-- [Request to publish your app to the Microsoft Entra app gallery](v2-howto-app-gallery-listing.md)
 - [Security best practices for application registration](/security/zero-trust/develop/app-registration)
 - [Create a security plan for external access to resources](/entra/architecture/3-secure-access-plan)

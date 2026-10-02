@@ -61,7 +61,9 @@ Sponsors make decisions about the agent lifecycle, including renewal, extension,
 
 ### Sponsor access and permissions
 
-Sponsors operate under least-privilege with limited administrative permissions. They can't modify application settings on agent blueprints or agent identities. Access is limited to nondestructive lifecycle operations: enabling and disabling agent identities, modifying the identity's sponsors, or soft-deleting.
+Sponsors operate under least-privilege with limited administrative permissions. They can't modify application settings on agent blueprints or agent identities. Access is limited to nondestructive lifecycle operations: disabling agent identities, modifying the identity's sponsors, or soft-deleting.
+
+Sponsors can't re-enable or restore agent blueprints or identities. If a sponsor disables or deletes a resource by mistake, they should contact a resource owner or an admin to recover it.
 
 ### Sponsor typical personas
 

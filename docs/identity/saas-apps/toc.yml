@@ -3155,8 +3155,6 @@
         href: workhub-tutorial.md
       - name: Workpath
         href: workpath-tutorial.md
-      - name: Workplace by Meta
-        href: workplacebyfacebook-tutorial.md
       - name: Workrite
         href: workrite-tutorial.md
       - name: Workshop
@@ -3532,6 +3530,8 @@
         href: headspace-provisioning-tutorial.md
       - name: HelloID
         href: helloid-provisioning-tutorial.md
+      - name: HiBob to Active Directory 
+        href: hibob-to-active-directory-user-provisioning-tutorial.md
       - name: ContractS CLM
         href: holmes-cloud-provisioning-tutorial.md
       - name: Hootsuite
@@ -3966,8 +3966,6 @@
         href: workday-writeback-tutorial.md
       - name: Workteam
         href: workteam-provisioning-tutorial.md
-      - name: Workplace from Meta 
-        href: workplace-from-meta-provisioning-tutorial.md
       - name: Workgrid
         href: workgrid-provisioning-tutorial.md
       - name: Wrike
@@ -3998,7 +3996,7 @@
         href: zoom-provisioning-tutorial.md
       - name: Zoho One
         href: zoho-one-provisioning-tutorial.md
-      - name: Zscaler
+      - name: Zscaler ZNet
         href: zscaler-provisioning-tutorial.md
       - name: Zscaler Beta
         href: zscaler-beta-provisioning-tutorial.md
@@ -4010,7 +4008,7 @@
         href: zscaler-two-provisioning-tutorial.md
       - name: Zscaler Three
         href: zscaler-three-provisioning-tutorial.md
-      - name: Zscaler Zidentity
+      - name: Zscaler Authentication Service
         href: zscaler-zidentity-provisioning-tutorial.md
       - name: Zscaler ZSCloud
         href: zscaler-zscloud-provisioning-tutorial.md

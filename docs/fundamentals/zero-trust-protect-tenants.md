@@ -3,7 +3,7 @@ title: Security guidance - Protect tenants and isolate production systems
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect tenants and isolate production systems.
 
 ms.topic: concept-article
-ms.date: 09/11/2025
+ms.date: 10/01/2026
 
 manager: pmwongera
 ms.reviewer: ramical
@@ -38,7 +38,7 @@ Even smaller organizations can protect their environments by implementing strict
 ### Guests have restricted access to directory objects
 [!INCLUDE [21792](../includes/secure-recommendations/21792.md)]
 
-### App instance property lock is configured for all multitenant applications
+### App instance property lock is configured for all applications
 [!INCLUDE [21777](../includes/secure-recommendations/21777.md)]
 
 ### Guests don't have long lived sign-in sessions

@@ -74,7 +74,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the **Tenant URL** field, enter your Rootly Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Rootly. If the connection fails, ensure your Rootly account has the required admin permissions and try again.
 
    > [!NOTE]
-   > Enter `https://docs.rootly.com/integrations/scim` in the **Tenant URL**.
+   > Enter `https://rootly.com/scim` in the **Tenant URL**.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

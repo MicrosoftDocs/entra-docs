@@ -83,7 +83,7 @@ Create one policy that blocks device code flow by default.
         - Select **Users and groups** and choose your organization's emergency access or break-glass accounts and your approved device code flow exception groups. Audit this exclusion list regularly.
 1. Under **Target resources** > **Resources (formerly cloud apps)**:
     1. Under **Include**, select **All resources (formerly 'All cloud apps')** unless your organization validated a narrower resource scope for the scenario.
-    1. Under **Exclude**, select **Select excluded cloud apps** and add **Device Registration Service**. This exclusion is required so device registration through device code flow isn't blocked by your policy. For more information, see [Enforcement of Authentication Flows policies on Device Registration Service resource](concept-authentication-flows.md#enforcement-of-authentication-flows-policies-on-device-registration-service-resource).
+    1. Under **Exclude**, select **Select resources** then select **Select specific resources** and add **Device Registration Service**. This exclusion is required so device registration through device code flow isn't blocked by your policy. For more information, see [Enforcement of Authentication Flows policies on Device Registration Service resource](concept-authentication-flows.md#enforcement-of-authentication-flows-policies-on-device-registration-service-resource).
 1. Under **Conditions** > **Authentication Flows**, set **Configure** to **Yes**.
     1. Select **Device code flow**.
     1. Select **Done**.
