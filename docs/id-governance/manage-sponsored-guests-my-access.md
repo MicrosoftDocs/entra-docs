@@ -1,6 +1,6 @@
 ---
-title: Manage sponsored guests in My Access
-description: Learn how sponsors can review, extend, end, and establish sponsorship for Microsoft Entra guest users in My Access.
+title: Manage sponsored guests in My Account
+description: Learn how sponsors can review, extend, end, and establish sponsorship for Microsoft Entra guest users in My Account.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 09/30/2026
@@ -8,14 +8,14 @@ ai-usage: ai-assisted
 #Customer Intent: As a guest sponsor, I want to manage the guests I sponsor so that their access aligns with their continued business need.
 ---
 
-# Manage sponsored guests in My Access (preview)
+# Manage sponsored guests in My Account (preview)
 
 > [!IMPORTANT]
-> Sponsored guest management in My Access is currently in preview. Preview features are provided without a service-level agreement and aren't recommended for production workloads. Certain features might not be supported or might have limited capabilities.
+> Sponsored guest management in My Account is currently in preview. Preview features are provided without a service-level agreement and aren't recommended for production workloads. Certain features might not be supported or might have limited capabilities.
 
 A sponsor helps manage a Microsoft Entra guest user's lifecycle and continued access to organizational resources. Sponsors are typically familiar with why a guest collaborates with the organization and whether that access is still needed.
 
-In My Access, you can review the guests you sponsor, use activity and access information to assess continued need, extend sponsorship, end your sponsorship, and sponsor an eligible unsponsored guest. Your tenant's guest lifecycle policy determines how often sponsorship must be extended, which notifications and grace periods apply, and what enforcement can occur when policy requirements aren't met.
+In My Account, you can review the guests you sponsor, use activity and access information to assess continued need, extend sponsorship, end your sponsorship, and sponsor an eligible unsponsored guest. Your tenant's guest lifecycle policy determines how often sponsorship must be extended, which notifications and grace periods apply, and what enforcement can occur when policy requirements aren't met.
 
 ## Key capabilities
 
@@ -35,14 +35,14 @@ In My Access, you can review the guests you sponsor, use activity and access inf
 
 ### Understand policy-driven behavior
 
-My Access is the sponsor-facing experience. Administrators configure guest lifecycle policies, including how often guest access must be extended, activity requirements, minimum sponsor count, notifications, grace periods, and enforcement actions. You can't change these guest policy settings in My Access.
+My Account is the sponsor-facing experience. Administrators configure guest lifecycle policies, including how often guest access must be extended, activity requirements, minimum sponsor count, notifications, grace periods, and enforcement actions. You can't change these guest policy settings in My Account.
 
 Extending sponsorship records your attestation that the guest still has a business need for access. It doesn't guarantee continued access or confirm that the guest satisfies every other lifecycle policy rule.
 
 ## Open Sponsored guests
 
-1. Sign in to [My Access](https://myaccess.microsoft.com).
-1. Go to **People & Agents** > **Sponsored guests**.
+1. Sign in to [My Account](https://myaccount.microsoft.com).
+1. In the left navigation, select **Sponsored guests**.
 1. Use the available views and search to find a guest by display name or email address.
 
 The page shows the guests you sponsor. Information can include the guest's name, email address, attestation status, and last sign-in.
@@ -63,7 +63,7 @@ Use this action when you confirm that the guest still requires access for an ong
 1. On the **Sponsored guests** page, find the guest.
 1. Open the guest's overflow menu or the guest details page.
 1. Select **Extend sponsorship**.
-1. Confirm that My Access shows the updated attestation status or date.
+1. Confirm that My Account shows the updated attestation status or date.
 
 If **Extend sponsorship** isn't available, the guest might not yet require an extension, the tenant policy might not permit the action, or the guest's current state might limit the available options. Review the guest details for status information. If the reason remains unclear, contact your organization's Microsoft Entra administrator or identity governance support team.
 
@@ -107,7 +107,7 @@ If the change doesn't appear, wait briefly and refresh the page again before you
 
 ## Recommended practices
 
-- Review guests promptly when My Access or your organization sends an extension reminder.
+- Review guests promptly when My Account or your organization sends an extension reminder.
 - Use last sign-in, access package assignments, and your knowledge of the business relationship together. Don't rely on one signal alone.
 - End sponsorship when you no longer have enough context to attest continued need.
 - If another employee owns the relationship, coordinate sponsorship coverage before you end yours.
