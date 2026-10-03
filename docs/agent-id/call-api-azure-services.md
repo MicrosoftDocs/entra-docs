@@ -30,7 +30,7 @@ This article guides you on how to call Azure services from your agent. To authen
     ```
 
 1. Configure your services to add Azure token credential support:
- 
+
     ```csharp
     using Microsoft.AspNetCore.Authentication.OpenIdConnect;
     using Microsoft.Identity.Web;
@@ -64,53 +64,53 @@ This article guides you on how to call Azure services from your agent. To authen
         "Instance": "https://login.microsoftonline.com/",
         "TenantId": "<your-tenant-id>",
         "ClientId": "<agent-blueprint-id>",
-    
-       // Other client creedentials available. See <https://aka.ms/ms-id-web/client-credentials>
+
+       // Other client credentials available. See <https://aka.ms/ms-id-web/client-credentials>
         "ClientCredentials": [
           {
             "SourceType": "ClientSecret",
             "ClientSecret": "your-client-secret"
           }
-        ]   
+        ]
       }
     }
     ```
 
-1. Acquire a token credential from the service provider and use it with Azure SDK clients. 
+1. Acquire a token credential from the service provider and use it with Azure SDK clients.
 
     1. For agent identities, you can acquire either an app only token (autonomous agents) or an on-behalf of user token (interactive agents) by using the `WithAgentIdentity` method. For app only tokens, set the `RequestAppToken` property to `true`. For delegated on-behalf of user tokens, don't set the `RequestAppToken` property or explicitly set it to `false`.
 
         ```csharp
         using Microsoft.Identity.Web;
-        
+
         public class AgentService
         {
             private readonly MicrosoftIdentityTokenCredential _credential;
-            
+
             public AgentService(MicrosoftIdentityTokenCredential credential)
             {
                 _credential = credential;
             }
-            
+
             // Call Azure service with the agent identity for app only scenario
             public async Task<List<string>> ListBlobsForAgentAppOnlyAsync(string agentIdentity)
             {
                 // Configure for agent identity
                 _credential.Options.WithAgentIdentity(agentIdentity);
                 _credential.Options.RequestAppToken = true;
-                
+
                 var blobClient = new BlobServiceClient(
                     new Uri("https://myaccount.blob.core.windows.net"),
                     _credential);
-                
+
                 var container = blobClient.GetBlobContainerClient("agent-data");
                 var blobs = new List<string>();
-                
+
                 await foreach (var blob in container.GetBlobsAsync())
                 {
                     blobs.Add(blob.Name);
                 }
-                
+
                 return blobs;
             }
 
@@ -124,15 +124,15 @@ This article guides you on how to call Azure services from your agent. To authen
                 var blobClient = new BlobServiceClient(
                     new Uri("https://myaccount.blob.core.windows.net"),
                     _credential);
-                
+
                 var container = blobClient.GetBlobContainerClient("agent-data");
                 var blobs = new List<string>();
-                
+
                 await foreach (var blob in container.GetBlobsAsync())
                 {
                     blobs.Add(blob.Name);
                 }
-                
+
                 return blobs;
             }
         }
@@ -142,38 +142,38 @@ This article guides you on how to call Azure services from your agent. To authen
     1. You can also acquire a token for an agent's user account. To do this, you can use either User Principal Name (UPN) or Object Identity (OID) to identify the agent's user account.
 
         For object ID:
-        
+
         ```csharp
         using Microsoft.Identity.Web;
-        
+
         public class AgentService
         {
             private readonly MicrosoftIdentityTokenCredential _credential;
-            
+
             public AgentService(MicrosoftIdentityTokenCredential credential)
             {
                 _credential = credential;
             }
-            
+
             // Use object ID to identify the agent's user account
             public async Task<List<string>> ListBlobsForAgentUserByOidAsync(string agentIdentity)
             {
                 // Configure for agent identity
                 string userOid = "user-object-id";
                 _credential.Options.WithAgentUserIdentity(agentIdentity, userOid);
-        
+
                 var blobClient = new BlobServiceClient(
                     new Uri("https://myaccount.blob.core.windows.net"),
                     _credential);
-                
+
                 var container = blobClient.GetBlobContainerClient("agent-data");
                 var blobs = new List<string>();
-                
+
                 await foreach (var blob in container.GetBlobsAsync())
                 {
                     blobs.Add(blob.Name);
                 }
-                
+
                 return blobs;
             }
 
@@ -182,21 +182,21 @@ This article guides you on how to call Azure services from your agent. To authen
             {
                 // Configure for agent identity
                 string userUpn = "user@contoso.com";
-        
+
                 _credential.Options.WithAgentUserIdentity(agentIdentity, userUpn);
-        
+
                 var blobClient = new BlobServiceClient(
                     new Uri("https://myaccount.blob.core.windows.net"),
                     _credential);
-        
+
                 var container = blobClient.GetBlobContainerClient("agent-data");
                 var blobs = new List<string>();
-        
+
                 await foreach (var blob in container.GetBlobsAsync())
                 {
                     blobs.Add(blob.Name);
                 }
-        
+
                 return blobs;
             }
         }

@@ -21,7 +21,7 @@ To trigger a step-up authentication from within your applications and services u
 
 ## Problem statement
 
-The IT administrators and regulators often struggle to balance prompting users with extra factors of authenticationand achieving adequate security and policy adherence for applications. It can be a choice between a strong policy that impacts users' productivity or a policy that isn't strong enough for sensitive resources.
+The IT administrators and regulators often struggle to balance prompting users with extra factors of authentication and achieving adequate security and policy adherence for applications. It can be a choice between a strong policy that impacts users' productivity or a policy that isn't strong enough for sensitive resources.
 
 So, what if apps were able to mix both? Functioning with a lower level of security and fewer prompts for most scenarios. Then conditionally stepping up the security requirements when more sensitive data is being accessed?
 

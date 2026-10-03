@@ -1,11 +1,11 @@
 ---
-ms.date: 06/06/2024 
+ms.date: 06/06/2024
 ms.topic: include
 ---
 
 ## Use a Windows VM system-assigned managed identity to access Azure SQL Database
 
-This tutorial shows you how to use a system-assigned identity for a Windows virtual machine (VM) to access Azure SQL Database. Managed Service Identities are automatically managed by Azure and enable you to authenticate to services that support Microsoft Entra authentication, without needing to insert credentials into your code. 
+This tutorial shows you how to use a system-assigned identity for a Windows virtual machine (VM) to access Azure SQL Database. Managed Service Identities are automatically managed by Azure and enable you to authenticate to services that support Microsoft Entra authentication, without needing to insert credentials into your code.
 
 You'll learn how to:
 
@@ -65,7 +65,7 @@ SQL databases require unique Microsoft Entra ID display names. With this, Micros
 1. In the query window, enter the following line, and select **Execute** in the toolbar:
 
     > [!NOTE]
-    > `VMName` in the following command is the name of the VM that you enabled system assigned identity on in the prerequsites section.
+    > `VMName` in the following command is the name of the VM that you enabled system assigned identity on in the prerequisites section.
 
     ```sql
     CREATE USER [VMName] FROM EXTERNAL PROVIDER
@@ -77,7 +77,7 @@ SQL databases require unique Microsoft Entra ID display names. With this, Micros
 
     > [!NOTE]
     > `VMName` in the following command is the name of the VM that you enabled system assigned identity on in the prerequisites section.
-    > 
+    >
     > If you encounter the error "Principal `VMName` has a duplicate display name", append the CREATE USER statement with WITH OBJECT_ID='xxx'.
 
     ```sql
@@ -92,7 +92,7 @@ Code running in the VM can now get a token using its system-assigned managed ide
 
 This section shows you how to get an access token using the VM's system-assigned managed identity and use it to call Azure SQL. Azure SQL natively supports Microsoft Entra authentication, so it can directly accept access tokens obtained using managed identities for Azure resources. This method doesn't require supplying credentials on the connection string.
 
-Here's a .NET code example of opening a connection to SQL using Active Directory Managed Identity authentication. The code must run on the VM to be able to access the VM's system-assigned managed identity's endpoint. 
+Here's a .NET code example of opening a connection to SQL using Active Directory Managed Identity authentication. The code must run on the VM to be able to access the VM's system-assigned managed identity's endpoint.
 
 **.NET Framework 4.6.2** or higher or **.NET Core 3.1** or higher is required to use this method. Replace the values of AZURE-SQL-SERVERNAME and DATABASE accordingly and add a NuGet reference to the Microsoft.Data.SqlClient library.
 
