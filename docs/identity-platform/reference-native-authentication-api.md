@@ -1,6 +1,6 @@
 ---
 title: Native authentication API reference documentation
-description: Find out how to use native authentication APIs to authenticate users into your customer-facing apps with the external tenant. 
+description: Find out how to use native authentication APIs to authenticate users into your customer-facing apps with the external tenant.
 manager: dougeby
 ms.service: identity-platform
 ms.subservice: external
@@ -35,7 +35,7 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
     * Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
     * [Grant admin consent](quickstart-register-app.md#grant-admin-consent-external-tenants-only) to the application.
-    * [Enable public client and native authentication flows](quickstart-native-authentication-android-sign-in.md#enable-public-client-and-native-authentication-flows). 
+    * [Enable public client and native authentication flows](quickstart-native-authentication-android-sign-in.md#enable-public-client-and-native-authentication-flows).
 
 1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). When you create the user flow, take note of the user attributes you configure as required as these attributes are the ones that Microsoft Entra expects your app to submit.
 
@@ -43,11 +43,11 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the flow. Alternatively, you can get this test user after you run the sign-up flow.
 
-1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method. 
+1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method.
 
 1. If you want to allow users who sign in with an email address and password to also sign in with a username and password, use the steps in [Sign in with an alias or username](../external-id/customers/how-to-sign-in-alias.md) article:
     1. [Enable username in sign-in](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
-    1. [Create users with username in the admin center](../external-id/customers/how-to-sign-in-alias.md#create-and-update-users-with-username) or [update existing users to by adding a username](../external-id/customers/how-to-sign-in-alias.md#create-and-update-users-with-username). Alternatively, you can also [automate user creation and updating in your app by using the Microsoft Graph API](../external-id/customers/how-to-sign-in-alias.md#create-and-update-users-with-username). 
+    1. [Create users with username in the admin center](../external-id/customers/how-to-sign-in-alias.md#create-and-update-users-with-username) or [update existing users to by adding a username](../external-id/customers/how-to-sign-in-alias.md#create-and-update-users-with-username). Alternatively, you can also [automate user creation and updating in your app by using the Microsoft Graph API](../external-id/customers/how-to-sign-in-alias.md#create-and-update-users-with-username).
 
 1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add MFA to your sign-in flow. Native authentication supports email one-time passcode and SMS as a second factor for MFA.
 
@@ -78,7 +78,7 @@ Learn more about challenge types in the [native authentication challenge types](
 
 The sequence diagram demonstrates the flow of the sign-up process.
 
-:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native authentication a sign-up flow."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native authentication a sign-up flow.":::
 
 This diagram indicates that the app collects username (email), password (for email with password authentication flow), and attributes from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email), password and all the required, and optional attribute values in the same screen, then submit all of them to the `/signup/v1.0/start` endpoint. If the app submits all the required information to the `/signup/v1.0/start` endpoint, the app doesn't need to make calls and handle responses in the optional steps.
 
@@ -97,7 +97,7 @@ POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com
 Content-Type: application/x-www-form-urlencoded
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
-&username=contoso-consumer@contoso.com 
+&username=contoso-consumer@contoso.com
 ```
 
 Example 2 (include user attributes and password in the request):
@@ -109,7 +109,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &password={secure_password}
 &attributes={"displayName": "{given_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "postalCode": "{user_postal_code}"}
-&username=contoso-consumer@contoso.com 
+&username=contoso-consumer@contoso.com
 ```
 
 |    Parameter     | Required                     |           Description        |
@@ -134,7 +134,7 @@ Content-Type: application/json
 ```json
 {
     "continuation_token": "AQABAAEAAA…",
-} 
+}
 ```
 
 |    Property     | Description        |
@@ -152,9 +152,9 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-   "challenge_type": "redirect" 
-} 
+{
+   "challenge_type": "redirect"
+}
 ```
 
 |    Property     | Description        |
@@ -174,20 +174,20 @@ Content-Type: application/json
 
 ```json
 {
-    "error": "user_already_exists", 
-    "error_description": "AADSTS1003037: It looks like you may already have an account.... .\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...", 
-    "error_codes": [ 
-        1003037 
+    "error": "user_already_exists",
+    "error_description": "AADSTS1003037: It looks like you may already have an account.... .\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
+    "error_codes": [
+        1003037
     ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-|`error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+|`error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -203,7 +203,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`invalid_request`  |Request parameter validation failed such as when the challenge_type parameter value contains an unsupported authentication method or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|
 |`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` property to learn the exact cause of the error.|
 |`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the external tenant or is incorrect. |
-|`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.| 
+|`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 |`user_already_exists` |  User already exists.  |
 |`invalid_grant`| The password that the app submits doesn't meet all the complexity requirements, such as the password is too short. Use the `suberror` property to learn the exact cause of the error. <br> **This parameter is only applicable for email with password authentication method**.|
 
@@ -226,7 +226,7 @@ If the error parameter has a value of *invalid_client*, Microsoft Entra includes
 |`nativeauthapi_disabled`| The client ID for an app that isn't enable for native authentication.|
 
 > [!NOTE]
-> If you submit all the required attributes via `/signup/v1.0/start` endpoint, but not all optional attributes, you won't be able to submit any additional optional attributes later via the  `/signup/v1.0/continue` endpoint. Microsoft Entra doesn't explicitly request for optional attributes as they aren't mandatory for the sign-up flow to complete. See the table in the [Submitting user attributes to endpoints](#submitting-user-attributes-to-endpoints) section to learn the user attributes you can submit to the `/signup/v1.0/start` and `/signup/v1.0/continue` endpoints. 
+> If you submit all the required attributes via `/signup/v1.0/start` endpoint, but not all optional attributes, you won't be able to submit any additional optional attributes later via the  `/signup/v1.0/continue` endpoint. Microsoft Entra doesn't explicitly request for optional attributes as they aren't mandatory for the sign-up flow to complete. See the table in the [Submitting user attributes to endpoints](#submitting-user-attributes-to-endpoints) section to learn the user attributes you can submit to the `/signup/v1.0/start` and `/signup/v1.0/continue` endpoints.
 
 ### Step 2: Select an authentication method
 
@@ -267,7 +267,7 @@ Content-Type: application/json
     "challenge_channel": "email",
     "challenge_target_label": "c***r@co**o**o.com",
     "code_length": 8
-} 
+}
 ```
 
 |    Property     | Description        |
@@ -297,7 +297,7 @@ Content-Type: application/json
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -311,21 +311,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        901007 
-    ], 
+    "error_codes": [
+        901007
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -351,8 +351,8 @@ Here's an example of the request (we present the example request in multiple lin
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
-&grant_type=oob 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&grant_type=oob
 &oob={otp_code}
 ```
 
@@ -391,12 +391,12 @@ Content-Type: application/json
     "trace_id": "d6966055-...-80500",
     "correlation_id": "3944-...-60d6",
     "continuation_token": "AQABEQEAAAA..."
-} 
+}
 ```
-    
+
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |  
+| `error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -410,7 +410,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 |`credential_required`|Authentication is required for account creation, so you have to make a call to the `/signup/v1.0/challenge` endpoint to determine the credential the user is required to provide.|
-|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled email OTP for all tenant users.   |  
+|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled email OTP for all tenant users.   |
 |`invalid_grant`|The grant type included in the request isn't valid or supported, or OTP value is incorrect.|
 |`expired_token`|The continuation token included in the request is expired. |
 
@@ -470,14 +470,14 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-    "challenge_type": "redirect" 
-} 
+{
+    "challenge_type": "redirect"
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -491,8 +491,8 @@ Here's an example of the request (we present the example request in multiple lin
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
 continuation_token=uY29tL2F1dGhlbnRpY...
-&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
-&grant_type=password 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&grant_type=password
 &password={secure_password}
 ```
 
@@ -559,7 +559,7 @@ Content-Type: application/json
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  | This attribute is set if Microsoft Entra can't create the user account because an attribute needs to be verified or submitted.  |  
+| `error`  | This attribute is set if Microsoft Entra can't create the user account because an attribute needs to be verified or submitted.  |
 |`error_description` | A specific error message that can help you to identify the cause of the error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -572,12 +572,12 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid.|  
+| `invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid.|
 |`invalid_grant`| The grant type included in the request isn't valid or supported. The possible values for the `grant_type` are *oob*, *password*, *attributes* |
 |`expired_token`| The continuation token included in the request is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
 
-#### Redirect response 
+#### Redirect response
 
 If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
@@ -587,14 +587,14 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-   "challenge_type": "redirect" 
-} 
+{
+   "challenge_type": "redirect"
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -613,9 +613,9 @@ Content-Type: application/json
     "error_description": "New password is too weak",
     "error_codes": [
         399246
-    ], 
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd",
     "suberror": "password_too_weak"
 }
@@ -623,7 +623,7 @@ Content-Type: application/json
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -635,7 +635,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |  
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type.   |
 |`invalid_grant`| The grant submitted is invalid, such as the password submitted is too short. Use the `suberror` property to learn the exact cause of the error.|
 |`expired_token`|The continuation token is expired. |
 |`attributes_required`  |  One or more of user attributes is required.   |
@@ -661,8 +661,8 @@ Here's an example of the request (we present the example request in multiple lin
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
-&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
-&grant_type=attributes 
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&grant_type=attributes
 &attributes={"displayName": "{given_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "postalCode": "{postal_code}"}
 &continuation_token=AQABAAEAAAAtn...
 ```
@@ -685,14 +685,14 @@ Content-Type: application/json
 ```
 
 ```json
-{  
+{
     "continuation_token": "AQABAAEAAAYn..."
-} 
+}
 ```
 
 |    Property   |   Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns.|  
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns.|
 
 #### Redirect response
 
@@ -704,14 +704,14 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-   "challenge_type": "redirect" 
-} 
+{
+   "challenge_type": "redirect"
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -727,19 +727,19 @@ Content-Type: application/json
 ```json
 {
     "error": "expired_token",
-    "error_description": "AADSTS901007: The continuation_token is expired.  .\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...", 
+    "error_description": "AADSTS901007: The continuation_token is expired.  .\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [
         552003
-    ], 
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
-    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd" 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 }
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -756,7 +756,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |    Error value     | Description        |
 |----------------------|------------------------|
 | `invalid_request`  |Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid.|
-|`invalid_grant`|The grant type provided isn't valid or supported or failed validation, such as attributes validation failed. Use the `suberror` property to learn the exact cause of the error.| 
+|`invalid_grant`|The grant type provided isn't valid or supported or failed validation, such as attributes validation failed. Use the `suberror` property to learn the exact cause of the error.|
 |`expired_token`|The continuation token included in the request is expired.|
 |`attributes_required`  |  One or more of user attributes is required.   |
 
@@ -801,7 +801,7 @@ To request for security tokens, your app interacts with three endpoints, `oauth/
 
 The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
 
-For a given authentication method, the challenge type values an app sends to Microsoft Entra during sign-up flow are same to when the app signs in. For example, the email with password authentication method uses *oob*, *password* and *redirect* challenge type values for both sign-up and sign-in flows.  
+For a given authentication method, the challenge type values an app sends to Microsoft Entra during sign-up flow are same to when the app signs in. For example, the email with password authentication method uses *oob*, *password* and *redirect* challenge type values for both sign-up and sign-in flows.
 
 Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md) article.
 
@@ -811,36 +811,36 @@ The sequence diagram demonstrates the flow of the sign in process. The sign-in f
 
 # [Email one-time passcode](#tab/emailOtp)
 
-:::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of native authentication sign-in with email one-time passcode."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-otp.png" alt-text="Diagram of native authentication sign-in with email one-time passcode.":::
 
 After the app verifies the user's email with OTP, it receives security tokens. If the delivery of the one-time passcode delays or is never delivered to the user's email, the user can request to be sent another one-time passcode. Microsoft Entra resends another one-time passcode if the previous one hasn't been verified. When Microsoft Entra resends a one-time passcode, it invalidates the previously sent code.
 
 # [Email with password](#tab/emailPassword)
 
-:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password.png" alt-text="Diagram of native auth sign in with email and password option."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password.png" alt-text="Diagram of native auth sign in with email and password option.":::
 
-- This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the two values in the same screen. 
+- This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the two values in the same screen.
 - If you collect the username (email) and password in the same screen, steps **two** and **three** gets merged with steps **eight** and **nine**. In this case, the app holds the password, then submits it in step **ten** where it's required.
 
 If a tenant administrator enables MFA for the tenant users, the response from the `/oauth2/v2.0/token` endpoint  depends on whether the user already has a registered strong authentication method:
 
-- If the user has a registered strong authentication method, then they complete an MFA challenge flow. 
-- If the user has no registered strong authentication method, then they complete a [register for a strong authentication method](#register-a-strong-authentication-method-api-reference) flow. 
+- If the user has a registered strong authentication method, then they complete an MFA challenge flow.
+- If the user has no registered strong authentication method, then they complete a [register for a strong authentication method](#register-a-strong-authentication-method-api-reference) flow.
 
 This sequence diagram shows the MFA path. It covers both cases: (1) the user already has a registered strong authentication method, or (2) the user has none and must register one just‑in‑time. The flow begins after the app has collected a correct password from the user and calls /oauth2/v2.0/token, which then responds indicating whether the user needs to complete MFA or register a strong authentication method.
 
-:::image type="content" source="media/reference-native-auth-api/call-token-endpoint-register-authentication-method-complete-mfa.png" alt-text="Diagram of native auth call token endpoint register authentication method or complete MFA."::: 
+:::image type="content" source="media/reference-native-auth-api/call-token-endpoint-register-authentication-method-complete-mfa.png" alt-text="Diagram of native auth call token endpoint register authentication method or complete MFA.":::
 
 <!--
 The following are more flows you can expect when you enforce MFA for your users:
 
 - The app calls the `/challenge` endpoint to invoke default MFA, but after the app prompts the user for the code, the user selects to complete MFA challenge using a different method. See the following sequence diagram.
 
-:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-default-mfa-select-another-MFA.png" alt-text="Diagram of native auth sign in with email and password option where user selects another MFA method."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-default-mfa-select-another-MFA.png" alt-text="Diagram of native auth sign in with email and password option where user selects another MFA method.":::
 
 - The app calls the `/challenge` endpoint, but the endpoint can't determine the default MFA method. In this case, the client app needs to call the `/introspect` endpoint to, so the user selects a specific MFA method. See the following sequence diagram.
 
-:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-no-default-MFA.png" alt-text="Diagram of native auth sign in with email and password option with no default MFA method."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-no-default-MFA.png" alt-text="Diagram of native auth sign in with email and password option with no default MFA method.":::
 
 -->
 
@@ -888,7 +888,7 @@ Content-Type: application/json
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |  
+| `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 
 #### Redirect response
 
@@ -901,14 +901,14 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-   "challenge_type": "redirect" 
-} 
+{
+   "challenge_type": "redirect"
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -922,21 +922,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        901007 
-    ], 
+    "error_codes": [
+        901007
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -947,7 +947,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|  
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.|
 |`unauthorized_client`| The client ID used in the request has a valid client ID format, but doesn't exist in the external tenant or is incorrect. |
 |`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` property to learn the exact cause of the error.|
 |`user_not_found`|The username doesn't exist.|
@@ -969,8 +969,8 @@ Here's an example of the request (we present the example request in multiple lin
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge
 Content-Type: application/x-www-form-urlencoded
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
-&challenge_type=password redirect 
-&continuation_token=uY29tL2F1dGhlbnRpY... 
+&challenge_type=password redirect
+&continuation_token=uY29tL2F1dGhlbnRpY...
 ```
 
 |    Parameter     | Required                     |           Description        |
@@ -998,11 +998,11 @@ Content-Type: application/json
 {
     "continuation_token": "uY29tL2F1dGhlbnRpY...",
     "challenge_type": "oob",
-    "binding_method": "prompt ", 
+    "binding_method": "prompt ",
     "challenge_channel": "email",
     "challenge_target_label ": "c***r@co**o**o.com ",
     "code_length": 8
-} 
+}
 ```
 
 |    Property     | Description        |
@@ -1029,15 +1029,15 @@ Content-Type: application/json
 ```
 
 ```json
-{   
-   "continuation_token": "uY29tL2F1dGhlbnRpY",   
-   "challenge_type": "password" 
-} 
+{
+   "continuation_token": "uY29tL2F1dGhlbnRpY",
+   "challenge_type": "password"
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |  
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`|Microsoft Entra returns the supported challenge type configured for the user in the Microsoft Entra admin center. In this case the values is expected to be *password*.|
 
 
@@ -1054,11 +1054,11 @@ Content-Type: application/json
 {
     "continuation_token": "uY29tL2F1dGhlbnRpY...",
     "challenge_type": "oob",
-    "binding_method": "prompt ", 
+    "binding_method": "prompt ",
     "challenge_channel": "email",
     "challenge_target_label ": "c***r@co**o**o.com ",
     "code_length": 8
-} 
+}
 ```
 
 |    Property     | Description        |
@@ -1068,7 +1068,7 @@ Content-Type: application/json
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the one-time passcode. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the MFA challenge channel through which the one-time passcode was sent. Supported values: *email, sms*. |
 |`challenge_target_label` |An obfuscated email where the one-time passcode was sent.|
-|`code_length`|The length of the one-time passcode that Microsoft Entra generates. | 
+|`code_length`|The length of the one-time passcode that Microsoft Entra generates. |
 
 ---
 
@@ -1087,14 +1087,14 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-   "challenge_type": "redirect" 
-} 
+{
+   "challenge_type": "redirect"
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -1108,21 +1108,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        901007 
-    ], 
+    "error_codes": [
+        901007
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -1133,12 +1133,12 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |--------------------|--------------------|
-|`invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. |  
+|`invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type. |
 |`invalid_grant`|The continuation token included in the request isn't valid.  |
 |`expired_token`|The continuation token included in the request is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type. |
 
-<!--If the request to the `/challenge` endpoint is to complete an MFA challenge, but the user doesn't have a default MFA method, the error response includes a `suberror` property for an *invalid_request* error:  
+<!--If the request to the `/challenge` endpoint is to complete an MFA challenge, but the user doesn't have a default MFA method, the error response includes a `suberror` property for an *invalid_request* error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
@@ -1146,7 +1146,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ### Step 3: Request for security tokens
 
-The app makes a POST request to the `oauth2/v2.0/token` endpoint and provides the user’s credentials chosen in the previous step to acquire security tokens.  
+The app makes a POST request to the `oauth2/v2.0/token` endpoint and provides the user’s credentials chosen in the previous step to acquire security tokens.
 
 [!INCLUDE [request-security-tokens](./includes/native-auth-api/native-authentication-common-token-endpoint.md)]
 
@@ -1188,10 +1188,10 @@ Content-Type: application/json
             "challenge_channel":"email",
             "login_hint":"c***r@co**o**o.com"
         },
-        {   
-          "id": "1b1b1b1b-2222-cccc-3333-4d4d4d4d4d4d",   
-          "challenge_type": "oob",   
-          "challenge_channel": "sms",   
+        {  
+          "id": "1b1b1b1b-2222-cccc-3333-4d4d4d4d4d4d",  
+          "challenge_type": "oob",  
+          "challenge_channel": "sms",  
           "login_hint": "+1********6"
         }
     ]
@@ -1223,9 +1223,9 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-   "challenge_type": "redirect" 
-} 
+{
+   "challenge_type": "redirect"
+}
 ```
 
 #### Error response
@@ -1238,21 +1238,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS901007: The continuation_token provided is not valid for this endpoint.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        50126 
-    ], 
+    "error_codes": [
+        50126
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -1263,7 +1263,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed. To understand what happened, use the message in the error description.   |  
+| `invalid_request`  |  Request parameter validation failed. To understand what happened, use the message in the error description.   |
 |`invalid_client`| The client ID included in the request isn't for a public client. |
 |`expired_token`| The continuation token included in the request is expired. |
 |`server_error`| Something went wrong with the request. |
@@ -1271,41 +1271,41 @@ Here are the possible errors you can encounter (possible values of the `error` p
 After the client app successfully retrieves a list of strong authentication methods registered for the user, the user selects a method they wish to use to complete the MFA challenge. The flow then proceed as follows:
 
 1. The client app calls the `/oauth2/v2.0/challenge` and includes the continuation token obtained from the `/oauth2/v2.0/introspect` and the `id` of the MFA method of choice:
-    
+
     ```http
     POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge
-    Content-Type: application/x-www-form-urlencoded    
+    Content-Type: application/x-www-form-urlencoded
     client_id=00001111-aaaa-2222-bbbb-3333cccc4444
-    &id=0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c 
-    &continuation_token=uY29tL2F1dGhlbnRpY... 
+    &id=0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c
+    &continuation_token=uY29tL2F1dGhlbnRpY...
     ```
 
 1. Microsoft Entra sends a challenge code to the user's challenge channel, such as email, and then responds back to the client app with a continuation token and the MFA challenge details:
-    
+
     ```http
     HTTP/1.1 200 OK
     Content-Type: application/json
     ```
-    
+
     ```json
     {
         "continuation_token": "uY29tL2F1dGhlbnRpY...",
         "challenge_type": "oob",
-        "binding_method": "prompt ", 
+        "binding_method": "prompt ",
         "challenge_channel": "email",
         "challenge_target_label ": "c***r@co**o**o.com ",
         "code_length": 8
-    } 
+    }
     ```
 
 1. The app can now make a POST request to the `/oauth2/v2.0/token` endpoint and includes a continuation token, correct grant type, and corresponding grant type values to get security tokens. See expected response in [Request for security tokens](#step-3-request-for-security-tokens):
 
     ```http
     POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token
-    Content-Type: application/x-www-form-urlencoded    
-    client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
-    &continuation_token=uY29tL2F1dGhlbnRpY...   
-    &grant_type=mfa_oob  
+    Content-Type: application/x-www-form-urlencoded
+    client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+    &continuation_token=uY29tL2F1dGhlbnRpY...
+    &grant_type=mfa_oob
     &oob={otp_code}
     &scope=openid offline_access
     ```
@@ -1322,7 +1322,7 @@ Microsoft Entra determines the default MFA method for the user by priority as fo
 
 ## Register a strong authentication method API reference
 
-Native authentication supports registration of strong authentication method. When the app calls the [/oauth2/v2.0/token](#step-3-request-for-security-tokens) endpoint and MFA is required but the user has no registered strong method, the response, *registeration_required*, tells the app to have the user register one before tokens can be issued.
+Native authentication supports registration of strong authentication method. When the app calls the [/oauth2/v2.0/token](#step-3-request-for-security-tokens) endpoint and MFA is required but the user has no registered strong method, the response, *registration_required*, tells the app to have the user register one before tokens can be issued.
 
 After the client app completes the flow to register a strong authentication method, it calls the `/oauth2/v2.0/token` endpoint to request for security tokens.
 
@@ -1346,8 +1346,8 @@ Here's an example of the request (we present the example request in multiple lin
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/introspect
 Content-Type: application/x-www-form-urlencoded
-?continuation_token=uY29tL2F1dGhlbnRpY... 
-&client_id=00001111-aaaa-2222-bbbb-3333cccc4444  
+?continuation_token=uY29tL2F1dGhlbnRpY...
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 ```
 
 |    Parameter     | Required                     |           Description        |
@@ -1374,9 +1374,9 @@ Content-Type: application/json
             "challenge_channel":"email",
             "login_hint":"caseyjensen@contoso.com"
         },
-        {   
-          "id": "sms",   
-          "challenge_type": "oob",   
+        {  
+          "id": "sms",  
+          "challenge_type": "oob",  
           "challenge_channel": "sms"
         }
     ]
@@ -1408,21 +1408,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS901007: The continuation_token provided is not valid for this endpoint.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        50126 
-    ], 
+    "error_codes": [
+        50126
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-|`error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |  
+|`error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -1433,7 +1433,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled email OTP for all tenant users.   |  
+|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled email OTP for all tenant users.   |
 |`expired_token`|The continuation token included in the request is expired. |
 
 ### Step 2: Select strong authentication method
@@ -1443,13 +1443,13 @@ In this step, submit the strong authentication method that the user wishes to re
 Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
-POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/challenge 
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/challenge
 
-?continuation_token=uY29tL2F1dGhlbnRpY... 
-&client_id=00001111-aaaa-2222-bbbb-3333cccc4444  
-&challenge_type=oob  
-&challenge_channel=email 
-&challenge_target=contoso-consumer@contoso.com 
+?continuation_token=uY29tL2F1dGhlbnRpY...
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&challenge_type=oob
+&challenge_channel=email
+&challenge_target=contoso-consumer@contoso.com
 ```
 
 
@@ -1475,14 +1475,14 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-  "continuation_token": "uY29tL2F1dGhlbnRpY...", 
-  "challenge_type": "oob", 
-  "binding_method": "prompt", 
-  "challenge_target": "contoso-consumer@contoso.com", 
-  "challenge_channel": "email", 
-  "code_length": 8 
-} 
+{
+  "continuation_token": "uY29tL2F1dGhlbnRpY...",
+  "challenge_type": "oob",
+  "binding_method": "prompt",
+  "challenge_target": "contoso-consumer@contoso.com",
+  "challenge_channel": "email",
+  "code_length": 8
+}
 ```
 
 Example 2:
@@ -1495,9 +1495,9 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
+{
   "continuation_token": "uY29tL2F1dGhlbnRpY...",
-  "challenge_type": "preverified" 
+  "challenge_type": "preverified"
 }
 ```
 
@@ -1539,11 +1539,11 @@ In this step, make a call to the `/register/v1.0/continue` endpoint to complete 
 Here's an example of the request (we present the example request in multiple lines for readability):
 
 ```http
-POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/continue 
+POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/continue
 
-?continuation_token=uY29tL2F1dGhlbnRpY... 
-&client_id=00001111-aaaa-2222-bbbb-3333cccc4444  
-&grant_type=oob  
+?continuation_token=uY29tL2F1dGhlbnRpY...
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&grant_type=oob
 &oob={otp_code}
 ```
 
@@ -1565,9 +1565,9 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
+{
   "continuation_token": "uY29tL2F1dGhlbnRpY..."
-} 
+}
 ```
 
 |    Property     | Description        |
@@ -1585,21 +1585,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS55200: The continuation_token is invalid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        55200 
-    ], 
+    "error_codes": [
+        55200
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 }
 ```
-   
+
 |    Property     | Description        |
 |----------------------|------------------------|
-|`error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |  
+|`error`  |  An error code string that can be used to classify types of errors, and to react to errors.   |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -1610,7 +1610,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled email OTP for all tenant users.   |  
+|`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled email OTP for all tenant users.   |
 |`invalid_grant`|The grant type included in the request isn't valid or supported, or OTP value is incorrect.|
 |`expired_token`|The continuation token included in the request is expired. |
 
@@ -1625,7 +1625,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 
 **For users whose primary authentication method is email with password**, use the self-service password reset (SSPR) API to enable customer users to reset their password. You can use this API for forgot password or change password scenarios.
 
-### API endpoints for self-service password reset 
+### API endpoints for self-service password reset
 
 To use this API, the app uses the endpoint shown in the following table:
 
@@ -1642,7 +1642,7 @@ To use this API, the app uses the endpoint shown in the following table:
 
 The API allows the app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in its requests. This parameter holds predefined values, which represent different authentication methods.
 
-For the SSPR flow, the challenge type values are *oob*, and *redirect*.  
+For the SSPR flow, the challenge type values are *oob*, and *redirect*.
 
 Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
 
@@ -1651,7 +1651,7 @@ Learn more about challenge types in the [native authentication challenge types](
 
 The sequence diagram demonstrates the flow for the password reset process.
 
-:::image type="content" source="media/reference-native-auth-api/self-service-password-reset.png" alt-text="Diagram of native auth self-service password reset flow."::: 
+:::image type="content" source="media/reference-native-auth-api/self-service-password-reset.png" alt-text="Diagram of native auth self-service password reset flow.":::
 
 This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email) and new password on the same screen. In this case, the app holds the password, then submits it via the `/resetpassword/v1.0/submit` endpoint where it's required.
 
@@ -1664,9 +1664,9 @@ Here's an example of the request (we present the example request in multiple lin
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/start
 Content-Type: application/x-www-form-urlencoded
-client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
-&challenge_type=oob redirect 
-&username=contoso-consumer@contoso.com 
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&challenge_type=oob redirect
+&username=contoso-consumer@contoso.com
 ```
 
 |    Parameter     | Required                     |           Description        |
@@ -1696,7 +1696,7 @@ Content-Type: application/json
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |
 
-#### Redirect response 
+#### Redirect response
 
 If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
@@ -1706,14 +1706,14 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-   "challenge_type": "redirect" 
-} 
+{
+   "challenge_type": "redirect"
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -1727,21 +1727,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        901007 
-    ], 
+    "error_codes": [
+        901007
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -1752,7 +1752,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.   |  
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or the request didn't include `client_id` parameter the client ID value is empty or invalid. Use the `error_description` parameter to learn the exact cause of the error.   |
 |`user_not_found`|The username doesn't exist.|
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 |`invalid_client`| The client ID that the app includes in the request is for an app that lacks native authentication configuration, such as it isn't a public client or isn't enabled for native authentication. Use the `suberror` property to learn the exact cause of the error.|
@@ -1776,7 +1776,7 @@ POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com
 Content-Type: application/x-www-form-urlencoded
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
-&continuation_token=uY29tL2F1dGhlbnRpY... 
+&continuation_token=uY29tL2F1dGhlbnRpY...
 ```
 
 |    Parameter     | Required                     |           Description        |
@@ -1799,11 +1799,11 @@ Content-Type: application/json
 {
     "continuation_token": "uY29tL2F1dGhlbnRpY...",
     "challenge_type": "oob",
-    "binding_method": "prompt ", 
+    "binding_method": "prompt ",
     "challenge_channel": "email",
     "challenge_target_label ": "c***r@co**o**o.com ",
     "code_length": 8
-} 
+}
 ```
 
 |    Property     | Description        |
@@ -1825,14 +1825,14 @@ Content-Type: application/json
 ```
 
 ```json
-{     
-   "challenge_type": "redirect" 
-} 
+{
+   "challenge_type": "redirect"
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
+| `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
@@ -1846,21 +1846,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        901007 
-    ], 
+    "error_codes": [
+        901007
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -1871,7 +1871,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or *continuation token* validation failed.   |  
+| `invalid_request`  |  Request parameter validation failed such as when the `challenge_type` parameter includes an invalid challenge type or *continuation token* validation failed.   |
 |`expired_token`|The continuation token is expired.  |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type.|
 
@@ -1884,9 +1884,9 @@ Here's an example of the request (we present the example request in multiple lin
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
-continuation_token=uY29tL2F1dGhlbnRpY... 
-&client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
-&grant_type=oob 
+continuation_token=uY29tL2F1dGhlbnRpY...
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
+&grant_type=oob
 &oob={otp_code}
 ```
 
@@ -1908,10 +1908,10 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
+{
     "expires_in": 600,
     "continuation_token": "czZCaGRSa3F0MzpnW...",
-} 
+}
 ```
 
 |    Property     | Description        |
@@ -1929,21 +1929,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS55200: The continuation_token is invalid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        55200 
-    ], 
+    "error_codes": [
+        55200
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -2019,21 +2019,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "invalid_request", 
+{
+    "error": "invalid_request",
     "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        901007 
-    ], 
+    "error_codes": [
+        901007
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
@@ -2062,7 +2062,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 
 ### Step 5: Poll for password reset status
 
-Lastly, since updating of the user’s configuration with the new password incurs some delay, the app can use the `/resetpassword/v1.0/poll_completion` endpoint to poll Microsoft Entra for password reset status. The minimum amount of time in seconds that the app should wait between polling requests is returned from the `/resetpassword/v1.0/submit` endpoint in the `poll_interval` parameter.  
+Lastly, since updating of the user’s configuration with the new password incurs some delay, the app can use the `/resetpassword/v1.0/poll_completion` endpoint to poll Microsoft Entra for password reset status. The minimum amount of time in seconds that the app should wait between polling requests is returned from the `/resetpassword/v1.0/submit` endpoint in the `poll_interval` parameter.
 
 Here's an example (we present the example request in multiple lines for readability):
 
@@ -2070,7 +2070,7 @@ Here's an example (we present the example request in multiple lines for readabil
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/poll_completion
 Content-Type: application/x-www-form-urlencoded
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
-&continuation_token=czZCaGRSa3F0... 
+&continuation_token=czZCaGRSa3F0...
 ```
 
 |    Parameter     | Required | Description        |
@@ -2092,7 +2092,7 @@ Content-Type: application/json
 {
     "status": "succeeded",
     "continuation_token":"czZCaGRSa3F0..."
-} 
+}
 ```
 
 |    Property     | Description        |
@@ -2119,21 +2119,21 @@ Content-Type: application/json
 ```
 
 ```json
-{ 
-    "error": "expired_token", 
+{
+    "error": "expired_token",
     "error_description": "AADSTS901007: The continuation_token is expired.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
-    "error_codes": [ 
-        552003 
-    ], 
+    "error_codes": [
+        552003
+    ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
     "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
-} 
+}
 ```
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |  
+| `error`  |   An error code string that can be used to classify types of errors, and to react to errors.  |
 |`error_description` | A specific error message that can help you to identify the cause of an authentication error. |
 |`error_codes`| A list of Microsoft Entra-specific error codes that can help you to diagnose errors.  |
 |`timestamp`|The time when the error occurred.|
