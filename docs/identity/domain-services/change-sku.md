@@ -24,6 +24,8 @@ To complete this article, you need the following resources and privileges:
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.
     * If needed, complete the tutorial to [create and configure a managed domain][create-azure-ad-ds-instance].
+* You need [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) and [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to change the SKU for a managed domain.
+* You need [Domain Services Contributor](/azure/role-based-access-control/built-in-roles#domain-services-contributor) Azure role to change the SKU for a managed domain.
 
 ## SKU change limitations
 
