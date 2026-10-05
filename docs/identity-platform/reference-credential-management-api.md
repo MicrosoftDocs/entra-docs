@@ -7,7 +7,7 @@ ms.author: marshmacy
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
-ms.date: 10/02/2026
+ms.date: 10/05/2026
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1030
 #Customer intent: As an identity developer, I want to learn how to integrate the credential management API into my customer-facing app so that customers can list and register their own credential methods.
@@ -20,6 +20,11 @@ ms.custom: msecd-doc-authoring-1030
 The Microsoft Entra External ID credential management API lets your application give signed-in customers a self-service flow for listing and registering passkeys. Your application owns the client experience and calls the API on the customer's behalf.
 
 The credential management API complements Microsoft Entra [native authentication](concept-native-authentication.md), where your application hosts the sign-in experience instead of delegating it to a browser. Use the credential management API after a customer signs in.
+
+To support passkey management in your app, use the [passkey credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample demonstrates the listing and registration flows in this article by using delegated permissions. Follow the sample's README to configure and run the app.
+
+> [!IMPORTANT]
+> The sample's deletion flow still uses Microsoft Graph with high-privilege application permissions and a client secret in browser code. Run the sample only in a test tenant. Don't deploy it to production.
 
 Successful resource responses use HAL+JSON (`application/hal+json`). Activation requests and errors use JSON (`application/json`).
 
