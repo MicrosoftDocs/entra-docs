@@ -3996,7 +3996,7 @@
         href: zoom-provisioning-tutorial.md
       - name: Zoho One
         href: zoho-one-provisioning-tutorial.md
-      - name: Zscaler ZNet
+      - name: Zscaler ZSNet
         href: zscaler-provisioning-tutorial.md
       - name: Zscaler Beta
         href: zscaler-beta-provisioning-tutorial.md
@@ -4008,7 +4008,7 @@
         href: zscaler-two-provisioning-tutorial.md
       - name: Zscaler Three
         href: zscaler-three-provisioning-tutorial.md
-      - name: Zscaler Authentication Service
+      - name: Zscaler
         href: zscaler-zidentity-provisioning-tutorial.md
       - name: Zscaler ZSCloud
         href: zscaler-zscloud-provisioning-tutorial.md
