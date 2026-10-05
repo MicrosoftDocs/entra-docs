@@ -158,10 +158,12 @@ Conditional Access policies don't apply when:
 
 The following configurations aren't currently supported:
 
-- Policies targeting all users don't include agent's user accounts.
-- Scoping a Conditional Access policy to include or exclude agent's user account based on their group membership
+- Policies scoped through the "Users" assignment don't apply to agent user accounts. This boundary applies whether the policy targets all users, selected users, groups, directory roles, or external users. To protect agent user accounts, create a policy that targets "Agent Users."
+- Scoping a Conditional Access policy to include or exclude agent's user account based on their group membership. 
 - A Conditional Access policy targeting agent identities won't apply to the agent's user account.
 - A Conditional Access policy targeting agent identities using agent identity blueprint covers only the agent identity, not the agent's user account.
+
+Instead, to scope policies to agent users, under **Assignments** > **Users, agents, or workload identities**, select **Agents**, and then target all agent users or specific agent users.
 
 ## Related content
 
