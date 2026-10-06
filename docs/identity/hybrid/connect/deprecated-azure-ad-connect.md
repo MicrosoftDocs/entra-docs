@@ -1,10 +1,13 @@
 ---
 title: 'Using a deprecated version of Microsoft Entra Connect'
-description: This article describes what to do if you find that you're running a deprecated version.
+description: Learn what to do when Microsoft Entra Connect is deprecated, how to check your version, and whether Microsoft Entra Cloud Sync meets your synchronization needs.
 
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 10/06/2026
+ms.custom: msecd-doc-authoring-1023
+ai-usage: ai-assisted
 ms.subservice: hybrid-connect
+#customer intent: As an IT administrator running Microsoft Entra Connect, I want to check whether my version is deprecated so that I can choose a supported upgrade or migration path.
 ---
 
 
@@ -25,13 +28,13 @@ We regularly update Microsoft Entra Connect with [newer versions](reference-conn
 
 If you're still using a deprecated and unsupported version of Microsoft Entra Connect, here's what you should do:
 
- 1. Verify which version you should install. Most customers no longer need Microsoft Entra Connect and can now use [Microsoft Entra Connect cloud sync](/azure/active-directory/cloud-sync/what-is-cloud-sync). Cloud sync is the next generation of sync tools to provision users and groups from AD into Microsoft Entra ID. It features a lightweight agent and is fully managed from the cloud – and it upgrades to newer versions automatically, so you never have to worry about upgrading again! 
+ 1. Check which version to install. Many organizations can use [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync) instead of Microsoft Entra Connect. Cloud Sync synchronizes users, groups, and contacts from Active Directory to Microsoft Entra ID. When device sync is enabled, it can also synchronize computer objects for Microsoft Entra hybrid join. For device setup, see [Configure device sync with Microsoft Entra Cloud Sync](../cloud-sync/device-sync.md). Cloud Sync uses a lightweight agent, is managed from the cloud, and updates automatically.
 
- 2. If you're not yet eligible for Microsoft Entra Connect cloud sync, please follow this [link to download](https://www.microsoft.com/download/details.aspx?id=47594) and install the latest version of Microsoft Entra Connect. In most cases, upgrading to the latest version will only take a few moments. For more information, see [Upgrading Microsoft Entra Connect from a previous version.](how-to-upgrade-previous-version.md).
+ 2. If you're not yet eligible for Microsoft Entra Cloud Sync, [download Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) and install the latest version. For more information, see [Upgrade Microsoft Entra Connect from a previous version](how-to-upgrade-previous-version.md).
 
 
 ## Next steps
 
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
-- [Microsoft Entra Connect cloud sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
+- [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 - [Microsoft Entra Connect version history](reference-connect-version-history.md)

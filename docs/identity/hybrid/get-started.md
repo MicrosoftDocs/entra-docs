@@ -1,31 +1,32 @@
 ---
 title: 'Get started integrating with Microsoft Entra ID'
-description: This article describes the steps required to integrate with Active Directory.
+description: Start integrating on-premises Active Directory with Microsoft Entra ID by choosing and configuring Cloud Sync or Connect Sync for users, groups, and devices.
 
 ms.topic: get-started
 ms.tgt_pltfrm: na
-ms.date: 04/09/2025
-ms.subservice: hybrid
+ms.date: 10/06/2026
+ms.custom: msecd-doc-authoring-1023
+ai-usage: ai-assisted
+#customer intent: As a hybrid identity administrator, I want to choose and configure a synchronization tool so that Active Directory users, groups, and devices can access Microsoft Entra ID.
 ---
 
 # Steps to start integrating with Microsoft Entra ID
 
-If you're new to hybrid identity, then this documentation is the place that you want to start. If you haven't done so, familiarize yourself with the [What is hybrid identity?](whatis-hybrid-identity.md) documentation before jumping in.  
+Use this guide to integrate on-premises Active Directory with Microsoft Entra ID. It explains how to choose between Microsoft Entra Cloud Sync and Microsoft Entra Connect Sync and configure synchronization for users, groups, and devices.
 
-This document provides the steps that are required to integrate your on-premises Active Directory with Microsoft Entra ID. Integrating with Active Directory is the process of setting up synchronization for users and groups with Microsoft Entra ID.  These steps differ slightly depending on which tool you use.
+First, use [Choose the right sync tool](common-scenarios.md) to select a synchronization tool. Then follow the section for that tool.
 
-Use the [Choosing the right sync tool](common-scenarios.md) first, to determine which one is right for you. Use the next section, for the tool that was recommended for you.
-
-## Cloud sync
-Use these tasks if you're deploying cloud sync to integrate with Active Directory.
+## Cloud Sync
+Use these tasks to deploy Cloud Sync and integrate Active Directory with Microsoft Entra ID.
 
 |Task|Description|
 |-----|-----|
-|[Determine which sync tool is correct for you](common-scenarios.md) |Use the wizard to determine whether cloud sync or Microsoft Entra Connect is the right tool for you.|
-|[Review the cloud sync prerequisites](cloud-sync/how-to-prerequisites.md)|Review the necessary prerequisites before getting started.|
+|[Choose the right sync tool](common-scenarios.md) |Use the wizard to determine whether Cloud Sync or Connect Sync is right for you.|
+|[Review Cloud Sync prerequisites](cloud-sync/how-to-prerequisites.md)|Review the prerequisites before you begin.|
 |[Download and install the provisioning agent](cloud-sync/how-to-install.md)|Download and install the Microsoft Entra provisioning agent. |
-|[Configure cloud sync](cloud-sync/how-to-configure.md)|Configure and tailor synchronization for your organization.|
-|[Verify users are synchronizing](cloud-sync/tutorial-single-forest.md#verify-users-are-created-and-synchronization-is-occurring)|Make sure it's working.|
+|[Configure Cloud Sync](cloud-sync/how-to-configure.md)|Configure synchronization for your organization.|
+|[Configure device sync](cloud-sync/device-sync.md)|Synchronize Active Directory computer objects to Microsoft Entra ID for Microsoft Entra hybrid join.|
+|[Verify that users synchronize](cloud-sync/tutorial-single-forest.md#verify-users-are-created-and-synchronization-is-occurring)|Confirm that synchronization is working.|
 
 
 <a name='azure-ad-connect'></a>
@@ -35,7 +36,7 @@ Use these tasks if you're deploying Microsoft Entra Connect to integrate with Ac
 
 |Task|Description|
 |-----|-----|
-|[Determine which sync tool is correct for you](common-scenarios.md) |Use the wizard to determine whether cloud sync or Microsoft Entra Connect is the right tool for you.|
+|[Choose the right sync tool](common-scenarios.md) |Use the wizard to determine whether Cloud Sync or Connect Sync is right for you.|
 |[Review the Microsoft Entra Connect prerequisites](connect/how-to-connect-install-prerequisites.md)|Review the necessary prerequisites before getting started.|
 |[Review and choose an installation type](connect/how-to-connect-install-select-installation.md)|Determine whether you'll use express or custom installation.|
 |[Download Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)|Download Microsoft Entra Connect.|
