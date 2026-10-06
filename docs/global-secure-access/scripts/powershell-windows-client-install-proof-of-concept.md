@@ -177,7 +177,7 @@ $nonBrowserSettings = $RegistrySettings | Where-Object {
 foreach ($rk in $nonBrowserSettings) {
     Ensure-RegistryValue -Key $rk.Key -Name $rk.Name -Type $rk.Type -Value $rk.Value
 }
-# 2) Detect browsers via registry only 
+# 2) Detect browsers via registry only
 $edgeFound    = Get-InstalledApp -Name 'Microsoft Edge'
 $chromeFound  = Get-InstalledApp -Name 'Google Chrome'
 $firefoxFound = Get-InstalledApp -Name 'Firefox'  # also catches "Mozilla Firefox"
@@ -302,7 +302,7 @@ try {
 $PromptForReboot = (-not $WasIpv4PreferredAlreadyCorrect) -and $NowIpv4PreferredCorrect
 if ($PromptForReboot) {
     # Prompt for reboot at the end ONLY if the DisabledComponents value was changed by this script
-    $choice = Read-Host "Change of the IPv4Preffered registry key won't take effect until device reboot. Do you want to reboot now? (Y/N)"
+    $choice = Read-Host "Change of the IPv4Preferred registry key won't take effect until device reboot. Do you want to reboot now? (Y/N)"
     if ($choice -match '^[Yy]$') {
         Write-Host "Rebooting system..."
         Restart-Computer -Force

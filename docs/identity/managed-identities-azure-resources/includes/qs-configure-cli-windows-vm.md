@@ -28,13 +28,13 @@ To create an Azure VM with the system-assigned managed identity enabled, your ac
 
 1. Create a [resource group](/azure/azure-resource-manager/management/overview#terminology) for containment and deployment of your VM and its related resources, using [az group create](/cli/azure/group/#az-group-create). You can skip this step if you already have resource group you would like to use instead:
 
-   ```azurecli-interactive 
+   ```azurecli-interactive
    az group create --name myResourceGroup --location westus
    ```
 
-1. Create a VM using [az vm create](/cli/azure/vm/#az-vm-create). The following example creates a VM named *myVM* with a system-assigned managed identity, as requested by the `--assign-identity` parameter, with the specified `--role` and `--scope`. The `--admin-username` and `--admin-password` parameters specify the administrative user name and password account for virtual machine sign-in. Update these values as appropriate for your environment: 
+1. Create a VM using [az vm create](/cli/azure/vm/#az-vm-create). The following example creates a VM named *myVM* with a system-assigned managed identity, as requested by the `--assign-identity` parameter, with the specified `--role` and `--scope`. The `--admin-username` and `--admin-password` parameters specify the administrative user name and password account for virtual machine sign-in. Update these values as appropriate for your environment:
 
-   ```azurecli-interactive 
+   ```azurecli-interactive
    az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --generate-ssh-keys --assign-identity --role contributor --scope /Subscriptions/mySubscriptionId/resourceGroups/myResourceGroup --admin-username azureuser --admin-password myPassword12
    ```
 
@@ -61,13 +61,13 @@ To disable system-assigned managed identity on a VM, your account needs the [Vir
 If you have a Virtual Machine that no longer needs the system-assigned identity, but still needs user-assigned identities, use the following command:
 
 ```azurecli-interactive
-az vm update -n myVM -g myResourceGroup --set identity.type='UserAssigned' 
+az vm update -n myVM -g myResourceGroup --set identity.type='UserAssigned'
 ```
 
 If you have a virtual machine that no longer needs system-assigned identity and it has no user-assigned identities, use the following command:
 
 > [!NOTE]
-> The value `none` is case sensitive. It must be lowercase. 
+> The value `none` is case sensitive. It must be lowercase.
 
 ```azurecli-interactive
 az vm update -n myVM -g myResourceGroup --set identity.type="none"
@@ -78,7 +78,7 @@ az vm update -n myVM -g myResourceGroup --set identity.type="none"
 
 In this section, you will learn how to add and remove a user-assigned managed identity from an Azure VM using Azure CLI. If you create your user-assigned managed identity in a different RG than your VM. You'll have to use the URL of your managed identity to assign it to your VM. For example:
 
-`--identities "/subscriptions/<SUBID>/resourcegroups/<RESROURCEGROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER_ASSIGNED_ID_NAME>"`
+`--identities "/subscriptions/<SUBID>/resourcegroups/<RESOURCEGROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER_ASSIGNED_ID_NAME>"`
 
 ### Assign a user-assigned managed identity during the creation of an Azure VM
 
@@ -86,12 +86,12 @@ To assign a user-assigned identity to a VM during its creation, your account nee
 
 1. You can skip this step if you already have a resource group you would like to use. Create a [resource group](/azure/azure-resource-manager/management/overview#terminology) for containment and deployment of your user-assigned managed identity, using [az group create](/cli/azure/group#az-group-create). Be sure to replace the `<RESOURCE GROUP>` and `<LOCATION>` parameter values with your own values. :
 
-   ```azurecli-interactive 
+   ```azurecli-interactive
    az group create --name <RESOURCE GROUP> --location <LOCATION>
    ```
 
-2. Create a user-assigned managed identity using [az identity create](/cli/azure/identity#az-identity-create).  The `-g` parameter specifies the resource group where the user-assigned managed identity is created, and the `-n` parameter specifies its name.    
-    
+2. Create a user-assigned managed identity using [az identity create](/cli/azure/identity#az-identity-create).  The `-g` parameter specifies the resource group where the user-assigned managed identity is created, and the `-n` parameter specifies its name.
+
    [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
    ```azurecli-interactive
@@ -110,14 +110,14 @@ To assign a user-assigned identity to a VM during its creation, your account nee
        "resourceGroup": "<RESOURCE GROUP>",
        "tags": {},
        "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
-       "type": "Microsoft.ManagedIdentity/userAssignedIdentities"    
+       "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
    }
    ```
 
-3. Create a VM using [az vm create](/cli/azure/vm#az-vm-create). The following example creates a VM associated with the new user-assigned identity, as specified by the `--assign-identity` parameter, with the specified `--role` and `--scope`. Be sure to replace the `<RESOURCE GROUP>`, `<VM NAME>`, `<USER NAME>`, `<PASSWORD>`, `<USER ASSIGNED IDENTITY NAME>`, `<ROLE>`, and `<SUBSCRIPTION>` parameter values with your own values. 
+3. Create a VM using [az vm create](/cli/azure/vm#az-vm-create). The following example creates a VM associated with the new user-assigned identity, as specified by the `--assign-identity` parameter, with the specified `--role` and `--scope`. Be sure to replace the `<RESOURCE GROUP>`, `<VM NAME>`, `<USER NAME>`, `<PASSWORD>`, `<USER ASSIGNED IDENTITY NAME>`, `<ROLE>`, and `<SUBSCRIPTION>` parameter values with your own values.
 
-   ```azurecli-interactive 
-   az vm create --resource-group <RESOURCE GROUP> --name <VM NAME> --image <SKU linux image>  --admin-username <USER NAME> --admin-password <PASSWORD> --assign-identity <USER ASSIGNED IDENTITY NAME> --role <ROLE> --scope <SUBSCRIPTION> 
+   ```azurecli-interactive
+   az vm create --resource-group <RESOURCE GROUP> --name <VM NAME> --image <SKU linux image>  --admin-username <USER NAME> --admin-password <PASSWORD> --assign-identity <USER ASSIGNED IDENTITY NAME> --role <ROLE> --scope <SUBSCRIPTION>
    ```
 
 ### Assign a user-assigned managed identity to an existing Azure VM
@@ -133,7 +133,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
    az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
    ```
 
-   The response contains details for the user-assigned managed identity created, similar to the following. 
+   The response contains details for the user-assigned managed identity created, similar to the following.
 
    ```json
    {
@@ -146,7 +146,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
      "resourceGroup": "<RESOURCE GROUP>",
      "tags": {},
      "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
-     "type": "Microsoft.ManagedIdentity/userAssignedIdentities"    
+     "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
    }
    ```
 
@@ -158,7 +158,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 
 ### Remove a user-assigned managed identity from an Azure VM
 
-To remove a user-assigned identity to a VM, your account needs the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) role assignment. 
+To remove a user-assigned identity to a VM, your account needs the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) role assignment.
 
 If this is the only user-assigned managed identity assigned to the virtual machine, `UserAssigned` will be removed from the identity type value.  Be sure to replace the `<RESOURCE GROUP>` and `<VM NAME>` parameter values with your own values. The `<USER ASSIGNED IDENTITY>` will be the user-assigned identity's `name` property, which can be found in the identity section of the virtual machine using `az vm identity show`:
 
@@ -178,11 +178,11 @@ az vm update -n myVM -g myResourceGroup --set identity.type="none" identity.user
 If your VM has both system-assigned and user-assigned identities, you can remove all the user-assigned identities by switching to use only system-assigned. Use the following command:
 
 ```azurecli-interactive
-az vm update -n myVM -g myResourceGroup --set identity.type='SystemAssigned' identity.userAssignedIdentities=null 
+az vm update -n myVM -g myResourceGroup --set identity.type='SystemAssigned' identity.userAssignedIdentities=null
 ```
 
 ## Next steps
 - [Managed identities for Azure resources overview](~/identity/managed-identities-azure-resources/overview.md)
-- For the full Azure VM creation Quickstarts, see: 
-  - [Create a Windows virtual machine with CLI](/azure/virtual-machines/windows/quick-create-cli)  
+- For the full Azure VM creation Quickstarts, see:
+  - [Create a Windows virtual machine with CLI](/azure/virtual-machines/windows/quick-create-cli)
   - [Create a Linux virtual machine with CLI](/azure/virtual-machines/linux/quick-create-cli)
