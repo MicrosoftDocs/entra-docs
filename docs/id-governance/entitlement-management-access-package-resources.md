@@ -228,13 +228,18 @@ To add a Microsoft Entra role programmatically, see: [Add a Microsoft Entra role
 
 ## Add an API permission
 
-This resource role is used for assigning API permissions to a service principal or agent ID, as part of Microsoft Entra Agent ID.
+This resource role is used for assigning API permissions to an AI agent's service principal or agent ID, as part of Microsoft Entra Agent ID.
 
 For API permissions, resource ownership validation occurs both during onboarding the permissions to an access package and again when adding permissions to an access package. This additional validation helps ensure that only authorized resource owners can introduce or expand access to API Permissions through access packages.
 
 [!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
-Prior to including API permissions in an access package, ensure that the access package policies are scoped to either all service principals or all agent IDs, as users cannot receive API permissions. Then, select **API Permissions**. Choose the source application that provides the API: Microsoft Graph, another Microsoft feature, or an API your organization uses from one of your organization's own applications. If you choose Microsoft Graph, select whether your agent requires a delegated or an application permission. Then, select the checkboxes for the necessary permission, and select **Update permissions**.
+1. Prior to including API permissions in an access package, ensure that the access package's policies are scoped to either all service principals or all agent IDs, as users cannot receive API permissions.
+1. In the Resource roles tab, select **API Permissions**.
+1. Choose the source application that provides the API: Microsoft Graph, another Microsoft feature, or an API your organization uses from one of your organization's own applications.
+1. Select whether the agent's identity requires a delegated or an application permission.
+1. Select the checkboxes for the necessary permissions.
+1. Select **Update permissions**.
 
 :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
 
