@@ -1,4 +1,4 @@
-This article lists the versions and features of Microsoft Entra provisioning agent releases. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. 
+This article lists the versions and features of Microsoft Entra provisioning agent releases. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality.
 
 > [!NOTE]
 > All new Provisioning Agent releases are made available for download through the Microsoft Entra admin center and only specific releases are pushed for auto upgrade.
@@ -6,7 +6,7 @@ This article lists the versions and features of Microsoft Entra provisioning age
 >[!NOTE]
 > Microsoft Entra provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
 >
-> Products governed by the Modern Policy follow a [continuous support and servicing model](/lifecycle/overview/product-end-of-support-overview). Customers must take the latest update to remain supported. 
+> Products governed by the Modern Policy follow a [continuous support and servicing model](/lifecycle/overview/product-end-of-support-overview). Customers must take the latest update to remain supported.
 >
 > For products and services governed by the Modern Lifecycle Policy, Microsoft's policy is to provide a minimum 30 days' notification when customers are required to take action in order to avoid significant degradation to the normal use of the product or service.
 
@@ -53,11 +53,11 @@ May 5, 2026: released for auto upgrade
 - Fixed an issue where the Provisioning Agent service could fail to shut down cleanly, affecting restarts and upgrades.
 
 ## 1.1.2108.0
- 
+
 December 4, 2025: released for download only
- 
+
 ### Fixed Issues
- 
+
 Fixed the known issue that causes failure when writing back passwords using Microsoft Entra provisioning agent in AzureUSGovernment cloud with version 1.1.2102.0.
 
 
@@ -81,8 +81,8 @@ Sept 22, 2025: released for download only
   `HKLM\Software\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent\UserPasswordLength`
 
 ### Known issues
- 
-- If you are an AzueUSGovernment customer and have enabled writing back passwords with Microsoft Entra provisioning agent, the operation may fail. Please upgrade the agent to version 1.1.2108.0 to address this issue.
+
+- If you are an AzureUSGovernment customer and have enabled writing back passwords with Microsoft Entra provisioning agent, the operation may fail. Please upgrade the agent to version 1.1.2108.0 to address this issue.
 
 
 
@@ -91,7 +91,7 @@ Sept 22, 2025: released for download only
 May 13, 2024: released for download only
 
 ### Fixed issues
- 
+
  - Miscellaneous supportability improvements.
  - Improved handling of Active Directory Provider initialization issues.
  - Fixed a bug with removing attributes.
@@ -154,7 +154,7 @@ September 8, 2023: released for download only
 December 16, 2022: released for download only
 
 ### New or changed functionality
--	Added support for [on-premises application provisioning](/azure/active-directory/app-provisioning/on-premises-application-provisioning-architecture) (SCIM, SQL, LDAP) 
+-	Added support for [on-premises application provisioning](/azure/active-directory/app-provisioning/on-premises-application-provisioning-architecture) (SCIM, SQL, LDAP)
 
 
 
@@ -166,7 +166,7 @@ September 23, 2022: released for download only
 ### New or changed functionality
  - Added support for [cloud sync Self Service Password Reset](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md) General Availability.
  - Added support for password writeback in disconnected forests.
- 
+
 ### Fixed issues
 
  - Fixed various bug fixes to support SSPR with cloud sync
@@ -182,10 +182,10 @@ August 8, 2022: released for download only
 
  - Added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Microsoft Entra Connect cloud sync](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
  - More info is now returned from 'Get-AADCloudSyncDomains' cmdlet
- - Updated new cmdlets of CloudSync PowerShell module in the unattended agent install script. 
- - Added support for the installation of the provisioning agent using the commandline. 
+ - Updated new cmdlets of CloudSync PowerShell module in the unattended agent install script.
+ - Added support for the installation of the provisioning agent using the commandline.
  - Added support for EX and RX environments.
-  
+
 ### Fixed issues
 
  - Remove the app.config file on upgrade of the agent. After the Newtonsoft.Json upgrade, AADConnectProvisioningAgent.exe.config isn't updated after install, which results in a failure of sync.
@@ -227,7 +227,7 @@ New features and improvements
 
 
 
-## 1.1.584.0 
+## 1.1.584.0
 
 August 20, 2021: released for download only
 
@@ -242,8 +242,8 @@ August 20, 2021: released for download only
 
 August 8, 2021: released for download only
 
->[!NOTE] 
->This is a security update release of Azure AD Connect. 
+>[!NOTE]
+>This is a security update release of Azure AD Connect.
 >This release addresses a vulnerability as documented in [this CVE](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36949). For more information about this vulnerability, see the CVE.
 
 
@@ -274,7 +274,7 @@ January 20, 2021: released for download only
 - Added support for GMSA setup with [PowerShell cmdlets](../identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md)
 - Added support for [CLI](../identity/hybrid/cloud-sync/how-to-install-pshell.md) agent install (silent installation)
 - Added more diagnostics for agent source quarantine issues
-- Reduced memory usage of OU scoping filters, running PHS only for in-scope users, handling of nested objects in OU when using OU scoping etc. 
+- Reduced memory usage of OU scoping filters, running PHS only for in-scope users, handling of nested objects in OU when using OU scoping etc.
 
 
 ### Fixed issues
@@ -309,8 +309,8 @@ November 23, 2020: released for download only
 * Added support for PHS filtering only for objects in scope (Originally, we were syncing password hashes for all objects)
 * Fixed a memory leak issue in the agent
 * Added improvements in provisioning logs
-* Added support for configuring [LDAP connection timeout](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
-* Added support for configuring [referral chasing](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
+* Added support for configuring [LDAP connection timeout](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout)
+* Added support for configuring [referral chasing](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing)
 
 
 
@@ -357,5 +357,5 @@ January 23, 2019: Released for download
 
 ### New features and improvements
 
-* Revamped the Provisioning Agent and connector architecture for better performance, stability, and reliability 
+* Revamped the Provisioning Agent and connector architecture for better performance, stability, and reliability
 * Simplified the Provisioning Agent configuration using UI-driven installation wizard

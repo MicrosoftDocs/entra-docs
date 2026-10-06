@@ -11,7 +11,7 @@ ms.date: 02/27/2025
 
 ### How can you find resources that have a managed identity?
 
-You can find the list of resources that have a system-assigned managed identity by using the following Azure CLI Command: 
+You can find the list of resources that have a system-assigned managed identity by using the following Azure CLI Command:
 
 ```azurecli-interactive
 az resource list --query "[?identity.type=='SystemAssigned'].{Name:name, principalId:identity.principalId}" --output table
@@ -32,7 +32,7 @@ You can keep your users from creating user-assigned managed identities using [Az
 2. Choose **Definitions**
 3. Select **+ Policy definition** and enter the necessary information.
 4. In the policy rule section, paste:
-    
+
     ```json
     {
       "mode": "All",
@@ -47,7 +47,7 @@ You can keep your users from creating user-assigned managed identities using [Az
       },
       "parameters": {}
     }
-    
+
     ```
 
 After creating the policy, assign it to the resource group that you would like to use.
@@ -109,12 +109,12 @@ The security boundary of the identity is the resource to which it's attached. Fo
 
 No, if you move a subscription to another directory, you have to manually re-create them and grant Azure role assignments again.
 
-- For system assigned managed identities: disable and re-enable. 
+- For system assigned managed identities: disable and re-enable.
 - For user assigned managed identities: delete, re-create, and attach them again to the necessary resources (for example, virtual machines)
 
 ### Can I use a managed identity to access a resource in a different directory/tenant?
 
-No, managed identities don't currently support cross-directory scenarios. 
+No, managed identities don't currently support cross-directory scenarios.
 
 ### Are there any rate limits that apply to managed identities?
 
@@ -133,7 +133,7 @@ Moving a user-assigned managed identity to a different resource group isn't supp
 
 Managed identity tokens are cached by the underlying Azure infrastructure for performance and resiliency purposes: the back-end services for managed identities maintain a cache per resource URI for around 24 hours. It can take several hours for changes to a managed identity's permissions to take effect, for example. Today, it isn't possible to force a managed identity's token to be refreshed before its expiry. For more information, see [Limitation of using managed identities for authorization](managed-identity-best-practice-recommendations.md#limitation-of-using-managed-identities-for-authorization).
 
-### Are managed identities soft deleted? 
+### Are managed identities soft deleted?
 
 Yes, Managed Identities are soft deleted for 30 days. You can view the soft deleted managed identity service principal, but you can't restore or permanently delete it.
 
@@ -179,7 +179,7 @@ When managed identity creation is blocked, you receive an error similar to the f
 > The directory object quota limit for the Tenant has been reached. Creation of new managed identities is blocked. Please ask your administrator to increase the directory quota limit or delete objects to reduce the used quota.
 
 > [!IMPORTANT]
-> Soft-deleted objects count torwards the overall quota usage.
+> Soft-deleted objects count towards the overall quota usage.
 
 ### Resolve a blocked managed identity operation
 

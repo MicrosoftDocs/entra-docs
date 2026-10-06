@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Governance licensing for guest users 
+title: Microsoft Entra ID Governance licensing for guest users
 description: Learn how Microsoft Entra ID is licensed for guest users.
 ms.subservice: entitlement-management
 ms.topic: reference
@@ -77,7 +77,7 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 
 **April**: 
 
-- The 500 guest users who were auto-assigned an access package in March retain their assignments but aren't billed since there wasn't an explicit action taken on these users in April. 
+- The 500 guest users who were auto-assigned an access package in March retain their assignments but aren't billed since there wasn't an explicit action taken on these users in April.
 
 - Additionally, Contoso IT runs an inactive access review on 100 guests.
 
@@ -91,7 +91,7 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 
 - They also perform an access review for inactive users, targeting 100 of the same guests as before, plus a different set of 200 guests.
 
-- Billing: For March, Fabrikam is billed for 300 users for the lifecycle workflow and 200 users for the inactive access review. Since 100 of the guest users already incurred a charge for the lifecycle workflow, they didn't incur any additional charge for the inactive user review, since each guest user will only be charged once for one or more governance actions in the month. 
+- Billing: For March, Fabrikam is billed for 300 users for the lifecycle workflow and 200 users for the inactive access review. Since 100 of the guest users already incurred a charge for the lifecycle workflow, they didn't incur any additional charge for the inactive user review, since each guest user will only be charged once for one or more governance actions in the month.
 
 **April**:
 
@@ -99,50 +99,50 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 
 - Billing: For April, Fabrikam is billed for 200 users. Although these users had both an inactive access review and an access‑package auto‑assignment in April, each guest is charged only once for the month.
 
-### Scenario 3: Access Reviews for inactive users and user-to-group affiliation 
+### Scenario 3: Access Reviews for inactive users and user-to-group affiliation
 
 **May**:
 
-- Tailspin Toys creates an inactive guest access review for 200 users. 
-- Tailspin creates a second access review for a security group with a different set of 300 guest users with the user-to-group affiliation feature enabled. 
-- Billing: For May, Tailspin is billed for 500 users – 200 for the inactive guest access review and 300 for the review with user-to-group affiliation. 
+- Tailspin Toys creates an inactive guest access review for 200 users.
+- Tailspin creates a second access review for a security group with a different set of 300 guest users with the user-to-group affiliation feature enabled.
+- Billing: For May, Tailspin is billed for 500 users – 200 for the inactive guest access review and 300 for the review with user-to-group affiliation.
 
 **June**:
 
-- Contoso has 10,000 guest accounts in their tenant and they want to perform an access review on those guests who are inactive. 
+- Contoso has 10,000 guest accounts in their tenant and they want to perform an access review on those guests who are inactive.
 - Contoso creates an Access Review scoped to Guests only and to Inactive Users only. The Access Review scans all 10,000 guest users and identifies 240 that are considered inactive.  The campaign includes those 240 guest users only.
-- There are no other governance-releated events that take place on any of the 10,000 guest users.
+- There are no other governance-related events that take place on any of the 10,000 guest users.
 - Billing: For June, Contoso is billed for 240 users – only those inactive guests who had an Access Review performed on them.
 
 
 ### Link your tenant to a subscription
- 
+
 Your tenants must be linked to an Azure subscription for proper billing and access to features. To link your tenant to a subscription, follow these steps.
- 
+
 1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that has at least the Owner role within the subscription or a resource group within the subscription.
- 
+
 2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings \| Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
- 
+
 3.  Browse to **Entra ID** > **ID Governance** > **Dashboard**.
- 
+
 4.  On the governance dashboard, locate the guest governance panel and select **Get Started**.
- 
+
 5.  In the **Link a subscription** pane, select a **Subscription** and a **Resource group**. Then select **Turn on**.
- 
+
 After you complete these steps, your Azure subscription is billed based on your Azure Direct or Enterprise Agreement details, if applicable.
- 
+
 ## What if I can't find a subscription?
- 
+
 If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
- 
+
 - You don't have the appropriate permissions. Be sure to sign in with an Azure account that has at least the Owner role within the subscription or a resource group within the subscription.
- 
+
 - A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](../fundamentals/how-subscriptions-associated-directory.md) and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
- 
+
 - No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
- 
+
 ## Turn off guest billing
- 
+
 You can turn off governance guest billing by returning to the governance dashboard and selecting **Edit** on the guest governance panel. In the Edit Guest Access panel, select "Turn Off" to disable billing and Microsoft Entra ID Governance features for your guest users.
 
 ## Guest user licensing FAQs
@@ -165,7 +165,7 @@ Yes, there's no free tier for governance billing. Governance guest billing appli
 You can use the EIG Guest Usage Monitoring Workbook to understand the guest usage trend within your tenant. This report shows past usage that would have been billed, but future usage may differ. To provide feedback about the EIG Guest Usage Monitoring Workbook, visit this [form](https://forms.office.com/r/N4dYnQcXTN).
 
 
-## Guest Governance Features Unavailable Without the Microsoft Entra ID Governance for Guests Add-on 
+## Guest Governance Features Unavailable Without the Microsoft Entra ID Governance for Guests Add-on
 
 To use Microsoft Entra ID Governance features for guest users, your tenant must be linked to an Azure subscription with the Microsoft Entra ID Governance for guests add-on. If the guest billing meter isn't enabled, the following behavior applies:
 
@@ -174,24 +174,24 @@ To use Microsoft Entra ID Governance features for guest users, your tenant must 
 
 ### Access Reviews
 
-- You won't be able to create new access reviews scoped to guest users if any of the following features are selected: 
+- You won't be able to create new access reviews scoped to guest users if any of the following features are selected:
     - Inactive user access review
     - User-to-group affiliation recommendation helper
-    
+
 ### Entitlement Management
 
 - You won't be able to create policies with guests in scope (“*For all users in your directory including guests*” or “*For users not in your directory*”) and the Microsoft Entra ID Governance features listed in this documentation (For example, sponsor approvers, custom extensions, and Verified ID).
 - You won't be able to create new auto-assignment policies where a configured rule includes `userType=Guest`
 - You won't be able to update existing entitlement management policies that add these features.
-- You won't be able to perform these operations: 
+- You won't be able to perform these operations:
     -	Mark guest as governed
-    -	Directly assign any guest user 
+    -	Directly assign any guest user
 
 
 
 ### Lifecycle Workflows
 
-- You won't be able to create new workflows if the workflow scope includes guest users: 
+- You won't be able to create new workflows if the workflow scope includes guest users:
     - The configured rule includes `userType=Guest`
 - You won't be able to update existing workflows where the execution conditions include a scope with `userType=Guest`.
 

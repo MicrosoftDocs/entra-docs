@@ -78,7 +78,7 @@ Creating a difference report lets you preview changes before recovery. To skip t
 
 ## Cancel a recovery
 
-Cancel a recovery job while it's running. Any recovery actions completed before cancelation remain in effect.
+Cancel a recovery job while it's running. Any recovery actions completed before cancellation remain in effect.
 
 1. Go to **Backup and recovery** > **Recovery History**.
 
