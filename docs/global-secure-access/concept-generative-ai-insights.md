@@ -1,8 +1,6 @@
 ---
 title: Generative AI Insights in Global Secure Access (preview)
 description: Learn how Generative AI Insights in Global Secure Access provides unified network telemetry for Generative AI prompt requests and Model Context Protocol (MCP) traffic.
-author: jenniferf-skc
-ms.author: jfields
 ms.topic: concept-article
 ms.date: 06/04/2026
 ms.reviewer: kerenSemel

@@ -5,9 +5,6 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.topic: concept-article
 ms.date: 05/18/2026
 
-ms.author: sarahlipsey
-author: shlipsey3
-manager: pmwongera
 ms.reviewer: ramical
 ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to understand how to secure AI agents and workloads so that I can prevent unauthorized access and enforce governance over autonomous identities.
