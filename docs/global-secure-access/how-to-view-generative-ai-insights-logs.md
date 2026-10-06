@@ -1,8 +1,6 @@
 ---
 title: View Generative AI Insights logs in Global Secure Access (preview)
 description: Learn how to view, filter, and export Generative AI Insights logs in Microsoft Entra Global Secure Access to monitor GenAI prompts and Model Context Protocol traffic.
-author: jenniferf-skc
-ms.author: jfields
 ms.topic: how-to
 ms.date: 06/04/2026
 ms.reviewer: kerenSemel

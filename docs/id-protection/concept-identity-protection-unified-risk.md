@@ -3,8 +3,6 @@ title: Unified risk signals in Microsoft Entra ID Protection
 description: Learn how unified risk signals correlate identity risk across Microsoft Entra ID Protection and Microsoft Defender to calculate compounded user risk.
 ms.topic: concept-article
 ms.date: 06/30/2026
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: sandeo
 ms.custom: msecd-doc-authoring-scenarios
 ai-usage: ai-assisted

@@ -2,14 +2,11 @@
 title: Understand Microsoft's SSO model
 description: Learn how Microsoft Entra ID implements single sign-on (SSO) as a centralized identity platform for both SAML and OpenID Connect protocols.
 
-author: omondiatieno
-manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
 ms.date: 06/04/2026
-ms.author: jomondi
 ms.reviewer: hkinyunyu
 ms.custom: enterprise-apps-article, msecd-doc-authoring-1013
 ai-usage: ai-assisted

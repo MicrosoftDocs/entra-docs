@@ -2,14 +2,11 @@
 title: "SAML versus OpenID Connect: Choose the right SSO protocol"
 description: Compare SAML 2.0 and OpenID Connect (OIDC) protocols to choose the right approach for your application's SSO integration with Microsoft Entra ID.
 
-author: omondiatieno
-manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
 ms.date: 06/22/2026
-ms.author: jomondi
 ms.reviewer: hkinyunyu
 ms.custom: enterprise-apps-article, msecd-doc-authoring-1013
 ai-usage: ai-assisted

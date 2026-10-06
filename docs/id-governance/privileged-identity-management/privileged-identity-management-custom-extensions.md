@@ -3,8 +3,6 @@ title: Configure custom extensions for PIM role activation (Preview)
 description: Learn how to configure custom extensions in Microsoft Entra Privileged Identity Management (PIM) to integrate custom business logic into role activation workflows.
 ms.topic: how-to
 ms.date: 06/02/2026
-author: owinfreyATL
-ms.author: owinfrey
 ms.custom: pim, msecd-doc-authoring-1012
 ai-usage: ai-assisted
 

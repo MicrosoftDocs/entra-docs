@@ -1,9 +1,6 @@
 ---
 title: How to configure daemon apps that call web APIs
 description: Learn how to configure daemon apps that call web APIs using secrets, certificates, or client assertions.
-author: Dickson-Mwendia
-manager: dougeby
-ms.author: dmwendia
 ms.date: 06/15/2026
 ms.reviewer: jmprieur
 ms.service: identity-platform

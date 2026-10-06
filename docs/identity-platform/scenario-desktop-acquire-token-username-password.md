@@ -1,9 +1,6 @@
 ---
 title: Acquire a token to call a web API using username and password (desktop app)
 description: Understand how the username and password (ROPC) flow works in desktop apps, why it is deprecated, and how to migrate to more secure authentication flows.
-author: Dickson-Mwendia
-manager: dougeby
-ms.author: dmwendia
 ms.date: 06/15/2026
 ms.service: identity-platform
 ms.subservice: workforce
