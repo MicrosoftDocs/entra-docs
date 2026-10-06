@@ -81,7 +81,7 @@ To include resources in an access package, the resources must exist in a catalog
 
 * [Catalog access reviews (preview)](catalog-access-reviews.md) also allow [custom data provided resources](custom-data-resource-access-reviews.md) to be included in a catalog.
 
-**Prerequisite roles:**See [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
+**Prerequisite roles:** See [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
 To add resources to a catalog:
 
