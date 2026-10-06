@@ -92,7 +92,7 @@ The most common access pattern is the on-behalf-of (OBO) flow. In the OBO flow, 
 
 In this flow, the agent can't reuse the user's original token because it was issued for a different audience. Instead, the agent uses the OBO flow to exchange tokens with Microsoft Entra ID, obtaining a new token scoped to the target resource. This token exchange is also evaluated by Conditional Access, letting admins enforce granular controls over which resources agents can access on behalf of the user.
 
-Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities. Policies that target agent identities don't apply to OBO traffic. Use user-targeted policies to provide the Conditional Access guardrails for resources the agent accesses on the user's behalf.
+Because the signed-in user is the token subject in this flow, Conditional Access evaluates policies assigned to that **user**, whether the user is targeted directly, through a group, or through another supported user-targeting mechanism. Selecting an agent identity as the policy subject doesn't cover agent requests made on behalf of the user.
 
 <a name='agents-acting-as-an-application'></a>
 
