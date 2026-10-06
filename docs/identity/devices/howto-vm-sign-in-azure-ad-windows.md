@@ -28,7 +28,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
 MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!IMPORTANT]
-> After you enable this capability, your Azure virtual machine will be Microsoft Entra joined. If you are using Entra Connect V2, you do not need to also use the Entra extension. If you install the extension on a workgroup machine and would then like to join a domain instead, like on-premises Active Directory or Microsoft Entra Domain Services, disconnect the device from Microsoft Entra by uninstalling the extension. Device configuration details as part of Conditional Access policy for Entra are not available for Windows Server operating systems.
+> After you enable this capability, your Arc-enabled machine will be Microsoft Entra joined. This scenario is for machines that are planned to not be joined to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension and instead use the [Entra hybrid join](./concept-hybrid-join.md) solution. Device configuration details as part of Conditional Access policy for Entra are not available for Windows Server operating systems.
 
 ## Requirements
 
