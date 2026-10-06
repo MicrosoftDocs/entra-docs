@@ -56,7 +56,7 @@ Learn more about the [authenticationEventListener resource type](/graph/api/reso
    >[!NOTE]
    >The list in the previous article grows as we add more resource types.
 
-Microsoft provides a [NuGet package for .NET developers]() building [Azure Functions](/azure/azure-functions/) apps. This solution handles the back-end processing for incoming HTTP requests for Microsoft Entra authentication events. Find token validation to secure the API call, object model, type with IDE IntelliSense. Also find inbound and outbound validation of the API request and response schemas.
+Microsoft provides a [NuGet package for .NET developers](/dotnet/api/overview/azure/functions) building [Azure Functions](/azure/azure-functions/) apps. This solution handles the back-end processing for incoming HTTP requests for Microsoft Entra authentication events. Find token validation to secure the API call, object model, type with IDE IntelliSense. Also find inbound and outbound validation of the API request and response schemas.
 
 Authentication extensions are executed in-line with sign-in and sign-up flows. Ensure the scenario is highly performant, robust, and secure. Azure Functions offers secure infrastructure, including libraries, [Azure Key Vault](/azure/key-vault/general/basic-concepts) for secret storage, caching, autoscaling, and monitoring. There are more recommendations in [Security operations](deployment-external-operations.md).
 
