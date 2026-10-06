@@ -1,5 +1,8 @@
 This article lists the versions and features of Microsoft Entra provisioning agent releases. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality.
 
+> [!WARNING]
+> Microsoft Entra Provisioning Agent version 1.1.2505.0 may fail to install on localized Windows Server installations, including Polish, German, and Dutch versions. For more information, see [Known issues](#known-issues).
+
 > [!NOTE]
 > All new Provisioning Agent releases are made available for download through the Microsoft Entra admin center and only specific releases are pushed for auto upgrade.
 
@@ -36,6 +39,10 @@ Get notified about when to revisit this page for updates by copying and pasting 
 ### Security hardening
 
 - Implemented additional security hardening improvements to further strengthen the reliability and protection of hybrid identity synchronization deployments.
+
+### Known issues
+
+- If you are installing the agent on a localized Windows Server installation, including but not limited to Polish, German and Dutch languages, the operation may fail with error `0x80070643` and rollback.
 
 ## 1.1.2334.0
 
