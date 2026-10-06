@@ -42,7 +42,7 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 ### Known issues
 
-- Installation can fail on localized Windows Server installations, including Polish, German, and Dutch versions. The installer returns error `0x80070643` and rolls back the installation.
+- If you are installing the agent on a localized Windows Server installation, including but not limited to Polish, German and Dutch languages, the operation may fail with error '0x80070643' and rollback.
 
 ## 1.1.2334.0
 
