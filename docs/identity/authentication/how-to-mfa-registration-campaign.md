@@ -205,42 +205,65 @@ To enable a registration campaign in the Microsoft Entra admin center, follow th
 
    :::image type="content" source="./media/how-to-mfa-registration-campaign/enabled-passkey-campaign.png" alt-text="Screenshot that shows the Registration campaign page in the Microsoft Entra admin center showing an enabled passkey campaign with authentication method, snooze settings, and include/exclude targets." lightbox="./media/how-to-mfa-registration-campaign/enabled-passkey-campaign.png" border="true":::
 
-## Passkey nudge evaluation by platform
+<a id="passkey-nudge-evaluation-by-platform"></a>
 
-After a user is deemed eligible to enroll a passkey based on the registration campaign settings, the campaign performs a further evaluation before nudging them. The campaign checks whether the user already has a local passkey for their current OS and browser combination (platform).
+## How passkey registration nudges are evaluated
 
-The following table shows which platform passkey types suppress the nudge on each OS and browser combination. **A user needs at least one matching passkey type on an OS and browser combination for the nudge to be suppressed**. Otherwise, if all other campaign requirements are met, they're nudged to register a compatible passkey type.
+After a user meets the registration campaign’s eligibility requirements, their passkey profile determines whether existing credentials suppress the nudge across all platforms or only for the current operating system and browser combination (platform). **Start with the profile table. Use the platform table only when platform-specific evaluation applies.**
 
+These rules apply to passkey campaigns in both the **Enabled** and **Microsoft managed** states. They are separate from the Microsoft managed profile eligibility check, which determines whether a user is eligible for the campaign.
 
-| Available passkey type | Windows + Chrome | Windows + other browsers | macOS + Chrome | macOS + other browsers | iOS | Android |
-|---|---|---|---|---|---|---|
-| Windows Hello for Business | ✔️ | ✔️ | — | — | — | — |
-| Microsoft Entra passkey on Windows | ✔️ | ✔️ | — | — | — | — |
-| Google Password Manager | ✔️ | — | ✔️ | — | — | ✔️ |
-| iCloud Keychain (including Managed) | — | — | ✔️ | ✔️ | ✔️ | — |
-| macOS Platform SSO | — | — | ✔️ | ✔️ | — | — |
-| Samsung Pass | — | — | — | — | — | ✔️ |
-| Passkey in Microsoft Authenticator | — | — | — | — | ✔️ | ✔️ |
-| Any cross-platform provider, such as a security key | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+<a id="how-the-passkey-profile-affects-the-nudge-evaluation"></a>
 
-✔️  Nudge is suppressed in this combination
+### Step 1: Determine how the passkey profile affects the nudge
 
-For example, if a user has a Windows Hello for Business credential and signs in on Windows with Chrome, the nudge is suppressed. But if the same user signs in on a Mac with Chrome browser, they're nudged because that credential is not available to be used on this OS and browser combination.
+Some passkey profiles evaluate credentials separately for each OS and browser combination. Other profiles suppress nudges across platforms after the user registers an eligible passkey.
+
+| Passkey profile configuration | Does platform-specific evaluation apply? | When is the nudge suppressed? |
+| --- | --- | --- |
+| **Unrestricted** | Yes | When the user has a qualifying credential available for the current OS and browser combination. See the platform table below. |
+| **Synced-only** | Yes | When the user has a qualifying local **synced** passkey available for the current platform. Otherwise, the user is nudged on platforms where a compatible synced passkey can be registered. |
+| **Device-bound-only** | Yes | When the user has a qualifying local **device-bound** passkey available for the current platform. Otherwise, the user is nudged on platforms where a compatible device-bound passkey can be registered. |
+| **AAGUID-restricted** | No | After the user registers **one eligible passkey**, the nudge is suppressed across OS and browser combinations under this profile’s rule. |
+| **Device-bound with attestation enforced** | No | After the user registers **one eligible passkey**, the nudge is suppressed across OS and browser combinations under this profile’s rule. |
+
+An **eligible passkey** must meet the applicable profile requirements. Registering a passkey that doesn’t meet those requirements doesn’t satisfy the profile’s nudge-suppression condition.
+
+### Step 2: Evaluate the platform, when required
+
+For **unrestricted, synced-only, and device-bound-only profiles**, the campaign evaluates whether a qualifying credential is available for the user’s current OS and browser combination.
+
+A credential registered on the account doesn’t necessarily suppress the nudge on every platform. It must qualify under the applicable profile and satisfy the platform-specific rule.
+
+The following table shows which available credential types suppress the nudge on each platform.
+
+| Available credential type | Windows + Chrome | Windows + other browsers | macOS + Chrome | macOS + other browsers | iOS | Android |
+| --- | --- | --- | --- | --- | --- | --- |
+| Windows Hello for Business | ✓ | ✓ | — | — | — | — |
+| Microsoft Entra passkey on Windows | ✓ | ✓ | — | — | — | — |
+| Google Password Manager | ✓ | — | ✓ | — | — | ✓ |
+| iCloud Keychain, including Managed | — | — | ✓ | ✓ | ✓ | — |
+| macOS Platform SSO | — | — | ✓ | ✓ | — | — |
+| Samsung Pass | — | — | — | — | — | ✓ |
+| Passkey in Microsoft Authenticator | — | — | — | — | ✓ | ✓ |
+| Any cross-platform provider, such as a security key | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+**✓** The available credential suppresses the platform-specific nudge, subject to the applicable profile requirements.
+
+**—** The credential doesn’t suppress the nudge under this platform-specific rule. This symbol is **not** a statement about whether the credential can be used to authenticate on that platform.
 
 > [!NOTE]
-> Linux users aren't nudged by passkey registration campaigns.
+> Linux users aren’t nudged by passkey registration campaigns.
 
-### How the passkey profile affects the nudge evaluation
+### Examples
 
-The passkey nudge evaluation by platform applies when the campaign is in either the Enabled or Microsoft managed state. The evaluation also depends on the passkey profiles configured for the user. The following table describes the behavior for each passkey profile type the user is in scope for.
+The following examples assume that all other campaign requirements are met and that the user is scoped only to the profile described.
 
-| Passkey profile configuration | How the nudge is evaluated |
-|---|---|
-| Unrestricted | Suppressed per OS and browser according to the preceding table, once the user has a qualifying local passkey for that platform. |
-| Synced-only | The user is nudged to register a local **synced** passkey on each platform where one is possible. The nudge is suppressed on a platform after the user has a qualifying local synced passkey available. |
-| Device-bound-only | The user is nudged to register a local **device-bound** passkey on each platform where one is possible. The nudge is suppressed on a platform after the user has a qualifying local device-bound passkey available. |
-| AAGUID-restricted | The per-platform evaluation doesn't apply. After the user registers **one eligible** passkey, the nudge stops on all OS and browser combinations. |
-| Device-bound with attestation enforced | The per-platform evaluation doesn't apply. After the user registers **one eligible** passkey, the nudge stops on all OS and browser combinations. |
+| Scenario | Expected nudge behavior |
+| --- | --- |
+| A user has an unrestricted profile and Windows Hello for Business available on Windows with Chrome. | The nudge is suppressed for that platform. |
+| The same user signs in on macOS with Chrome and has no qualifying credential available there. | The user is nudged to register a compatible passkey. Their Windows Hello for Business credential doesn’t suppress the macOS nudge. |
+| A user has an AAGUID-restricted profile and has registered a passkey that meets its requirements. | The nudge is suppressed across OS and browser combinations under that profile’s rule; the platform table isn’t used. |
 
 ## Enable the registration campaign policy by using Graph Explorer
 
