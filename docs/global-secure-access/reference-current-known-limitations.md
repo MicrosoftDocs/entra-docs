@@ -266,6 +266,7 @@ Known limitations for Internet Access include:
 - HTTP method request filtering (preview) enforcement requires TLS inspection for HTTPS traffic. Without TLS inspection, HTTP method headers aren't visible, and only Server Name Indication (SNI)-based web content filtering rules apply.
 - When the Global Secure Access client can't determine task or processor information, source traffic type is classified as **Unknown**.
 - Source traffic type classification accuracy depends on the Global Secure Access client's ability to inspect process metadata on the endpoint device.
+- FQDN rules and synthetic IPs: When a hostname matches any FQDN rule in the forwarding profile, including Custom Bypass and Default Acquire rules, the Global Secure Access client returns a synthetic IP (6.6.0.0/16) to the application, even if the traffic is ultimately bypassed. Applications that compare the server's real address with the address they connected to might fail. For example, passive-mode FTP clients built on WinINet reject the server's PASV response and don't open the data connection. As a workaround, connect by IP address or resolve the hostname locally (for example, with a hosts file entry).
 
 ## B2B guest access (preview) limitations
 <a name="b2b-guest-access-limitations"></a>
