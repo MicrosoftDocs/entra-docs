@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Learn about requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID.
-ms.date: 09/17/2026
+ms.date: 10/06/2026
 ms.reviewer: kimhana
 ms.topic: concept-article
 ---
@@ -44,7 +44,7 @@ Microsoft ingests the latest version of the FIDO Alliance MDS every month. There
 
 ## FIDO2 security keys eligible for attestation with Microsoft Entra ID
 
-The following table includes each FIDO2 security key model listed in MDS version 279 that's eligible for attestation with Microsoft Entra ID. For each model, the table shows its Authenticator Attestation Globally Unique Identifier (AAGUID) and feature capabilities. 
+The following table includes each FIDO2 security key model listed in MDS version 285 that's eligible for attestation with Microsoft Entra ID. For each model, the table shows its Authenticator Attestation Globally Unique Identifier (AAGUID) and feature capabilities. 
 
 Description|AAGUID|Bio|USB|NFC|BLE
 -----------|------|---------|-----|----|------
@@ -134,6 +134,7 @@ HID Crescendo Key V2|2d3bec26-15ee-4f5d-88b2-53622490270b|&#10060;|&#x2705;|&#x2
 HID Crescendo Key V3|7991798a-a7f3-487f-98c0-3faf7a458a04|&#10060;|&#x2705;|&#x2705;|&#10060;
 HID Crescendo Key V3|87c13177-85d6-40ac-8c61-fe7ab3de9dfb|&#10060;|&#x2705;|&#x2705;|&#10060;
 HID Crescendo Key V3 - Enterprise Edition|13ac47cf-1d78-4fd5-9060-aedaabacf826|&#10060;|&#x2705;|&#x2705;|&#10060;
+HID Crescendo Key V3 FIPS|19bca99b-7c09-44fe-a969-8cba45764542|&#10060;|&#x2705;|&#x2705;|&#10060;
 Hideez Key 4 FIDO2 SDK|4e768f2c-5fab-48b3-b300-220eb487752b|&#10060;|&#x2705;|&#x2705;|&#x2705;
 Hyper FIDO Bio Security Key|d821a7d4-e97c-4cb6-bd82-4237731fd4be|&#x2705;|&#x2705;|&#10060;|&#10060;
 Hyper FIDO Pro|9f77e279-a6e2-4d58-b700-31e5943c6a98|&#10060;|&#x2705;|&#10060;|&#10060;
@@ -147,6 +148,7 @@ IDCore 3121 Fido|e86addcd-7711-47e5-b42a-c18257b0bf61|&#10060;|&#10060;|&#x2705;
 IDEMIA ID-ONE Card|8d1b1fcb-3c76-49a9-9129-5515b346aa02|&#10060;|&#x2705;|&#x2705;|&#10060;
 IDEMIA SOLVO Fly 80 R3 FIDO Card c|dda9aa35-aaf1-4d3c-b6db-7902fd7dbbbf|&#10060;|&#10060;|&#x2705;|&#10060;
 IDEMIA SOLVO Fly 80 R3 FIDO Card e|def8ab1a-9f91-44f1-a103-088d8dc7d681|&#10060;|&#10060;|&#x2705;|&#10060;
+IDEMIA SOLVO Fly 80 R3 FIDO Card for j|b68c4b8d-65cb-42ae-b4f6-8606dfba3c22|&#10060;|&#10060;|&#x2705;|&#10060;
 IDEX CTAP2.1 Biometrics|49a15c1c-3f63-3f51-23a7-b9e00096edd1|&#x2705;|&#x2705;|&#x2705;|&#10060;
 IDmelon Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|&#x2705;|&#x2705;|&#10060;|&#x2705;
 IDmelon Key|39a5647e-1853-446c-a1f6-a79bae9f5bc7|&#x2705;|&#x2705;|&#x2705;|&#10060;
@@ -230,12 +232,15 @@ Taglio CTAP2.1 CS|092277e5-8437-46b5-b911-ea64b294acb7|&#10060;|&#10060;|&#x2705
 Taglio CTAP2.1 EP|7d2afadd-bf6b-44a2-a66b-e831fceb8eff|&#10060;|&#10060;|&#x2705;|&#10060;
 Thales IDPrime FIDO Bio|4d41190c-7beb-4a84-8018-adf265a6352d|&#x2705;|&#10060;|&#x2705;|&#10060;
 Thales PAY GFCX13 authenticator|04a8fcf2-19c1-457b-911e-69219f17583f|&#10060;|&#10060;|&#x2705;|&#10060;
+Thales PAY GFCX19 authenticator|0fbb74b5-f1ac-4f14-a0f1-ec39b5edfdae|&#10060;|&#10060;|&#x2705;|&#10060;
+Thales PAY GFCX20.1 authenticator|11544c3c-3693-40ba-9dbb-3b8d2b977988|&#10060;|&#10060;|&#x2705;|&#10060;
 Thetis Pro FIDO2 Key|1f8e43df-71ff-e11d-bea3-c4ee7003b232|&#10060;|&#x2705;|&#x2705;|&#10060;
 Token Ring 3 FIDO2 Authenticator|c62100de-759b-4bf8-b22b-63b3e3a80401|&#x2705;|&#10060;|&#x2705;|&#10060;
 Token Ring FIDO2 Authenticator|91ad6b93-264b-4987-8737-3a690cad6917|&#x2705;|&#10060;|&#x2705;|&#10060;
 TOKEN2 FIDO2 Security Key|ab32f0c6-2239-afbb-c470-d2ef4e254db7|&#10060;|&#10060;|&#10060;|&#10060;
 TOKEN2 PIN Plus Security Key Series|eabb46cc-e241-80bf-ae9e-96fa6d2975cf|&#10060;|&#x2705;|&#x2705;|&#10060;
 TruU FIDO2 Authenticator|bb878d7b-cf54-4784-b390-357030497043|&#10060;|&#10060;|&#10060;|&#10060;
+USB GoldKey Security Token|39502df1-646d-4e31-81a1-2ef68b324678|&#10060;|&#x2705;|&#x2705;|&#10060;
 uTrust FIDO2 Security Key|73402251-f2a8-4f03-873e-3cb6db604b03|&#10060;|&#x2705;|&#x2705;|&#10060;
 VALMIDO PRO FIDO|5626bed4-e756-430b-a7ff-ca78c8b12738|&#x2705;|&#10060;|&#10060;|&#x2705;
 VeridiumID Passkey Android SDK|8d4378b0-725d-4432-b3c2-01fcdaf46286|&#x2705;|&#10060;|&#10060;|&#x2705;
