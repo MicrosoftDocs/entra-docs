@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://app.colossyan.com/`
 
 	> [!NOTE]
-	> These Reply URL value is just a format reference. Update the value with the actual Reply URL containing the company name. Contact [Colossyan SAML support team](mailto:info@colossyan.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> This Reply URL value is just a format reference. Update the value with the actual Reply URL containing the company name. Contact [Colossyan SAML support team](mailto:info@colossyan.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
 
