@@ -78,7 +78,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     b. In the **Reply URL** text box, type the URL using the following pattern:
     `https://idp.colossyan.com/realms/colossyan-prod/broker/<company name>/endpoint`
    
-   **note:** replace the company name with the actual value received from Colossyan Support
+   > [!NOTE]
+   > Replace the company name with the actual value received from Colossyan Support.
 
     c. In the **Sign on URL** text box, type the URL:
     `https://app.colossyan.com/`
