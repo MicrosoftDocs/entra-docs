@@ -22,7 +22,7 @@ Before you start, review the licensing, role, and agent setup requirements.
 ## Prerequisites
 
 - One of the following license plans:
-	- Microsoft 365 E7, which includes Agent 365 and Microsoft Entra Suite, to provide governance of user and agent identities.
+    - Microsoft 365 E7, which includes Agent 365 and Microsoft Entra Suite, to protect access for both users and agents.
 	- Microsoft Agent 365 license paired with at least Microsoft Entra P1 or Microsoft 365 E3.
 - At least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
 - At least one agent identity registered in your tenant.
