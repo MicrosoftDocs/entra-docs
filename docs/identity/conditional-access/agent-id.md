@@ -92,7 +92,7 @@ The most common access pattern is the on-behalf-of (OBO) flow. In the OBO flow, 
 
 In this flow, the agent can't reuse the user's original token because it was issued for a different audience. Instead, the agent uses the OBO flow to exchange tokens with Microsoft Entra ID, obtaining a new token scoped to the target resource. This token exchange is also evaluated by Conditional Access, letting admins enforce granular controls over which resources agents can access on behalf of the user.
 
-Because the user is the subject in this flow, Conditional Access policies target **users and groups**, not agent identities. 
+Because the signed-in user is the token subject in this flow, Conditional Access evaluates policies assigned to that **user**, whether the user is targeted directly, through a group, or through another supported user-targeting mechanism. Selecting an agent identity as the policy subject doesn't cover agent requests made on behalf of the user.
 
 <a name='agents-acting-as-an-application'></a>
 
@@ -158,10 +158,12 @@ Conditional Access policies don't apply when:
 
 The following configurations aren't currently supported:
 
-- Policies targeting all users don't include agent's user accounts.
-- Scoping a Conditional Access policy to include or exclude agent's user account based on their group membership
+- Policies scoped through the "Users" assignment don't apply to agent user accounts. This boundary applies whether the policy targets all users, selected users, groups, directory roles, or external users. To protect agent user accounts, create a policy that targets "Agent Users."
+- Scoping a Conditional Access policy to include or exclude agent's user account based on their group membership. 
 - A Conditional Access policy targeting agent identities won't apply to the agent's user account.
 - A Conditional Access policy targeting agent identities using agent identity blueprint covers only the agent identity, not the agent's user account.
+
+Instead, to scope policies to agent users, under **Assignments** > **Users, agents, or workload identities**, select **Agents**, and then target all agent users or specific agent users.
 
 ## Related content
 
