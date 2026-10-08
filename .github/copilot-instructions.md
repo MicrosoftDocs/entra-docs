@@ -68,3 +68,35 @@ Below are instructions specific to this repository. These may be updated by repo
 - Sublists under numbered steps need 4-space indentation to render correctly
 - Single-step procedures should use a bullet (`-`), not a numbered list (`1.`)
 - When a verb phrase is used in a filename (e.g., "set up"), hyphenate it: `how-to-set-up-*`
+
+### Repository architecture
+
+This is a Microsoft Learn (OPS/OpenPublishing) documentation repo for the Microsoft Entra product family. There is no application code to build — content is Markdown (`.md`) and structured YAML (`.yml`) published to <https://learn.microsoft.com/entra>.
+
+- All published content lives under `docs/`. Top-level folders map to product areas: `identity/` (with per-feature subfolders like `authentication`, `conditional-access`, `enterprise-apps`, `saas-apps`, `users`), plus `external-id`, `fundamentals`, `global-secure-access`, `id-governance`, `id-protection`, `identity-platform`, `permissions-management`, `verified-id`, `workload-id`, `agent-id`, `architecture`, `standards`, and `security-copilot`.
+- Each content folder owns a `toc.yml` (left-nav) and colocated `media/` (images) and `includes/` (reusable snippets) subfolders.
+- `docs/reusable-content`, `azure-docs-pr`, `microsoft-graph`, and several sample repos are pulled in as dependent repositories (see `.openpublishing.publish.config.json`) — they aren't present locally but resolve at build time.
+
+### Metadata is applied by folder, not per file
+
+`docs/docfx.json` `fileMetadata` auto-assigns `author`, `ms.author`, `manager`, `ms.service`, `ms.subservice`, and `titleSuffix` based on the file's folder path. Do **not** hardcode these in front matter just to match a folder default — rely on the folder mapping and only set them in front matter to intentionally override. When you add a new folder, add its mappings to `docs/docfx.json`.
+
+Front matter you typically author per article: `title`, `description`, `ms.topic`, `ms.date` (format `MM/DD/YYYY`, bump on substantive edits), an `ai-usage` value when AI-assisted, and a `# Customer intent:` comment. `ms.reviewer` and `ms.custom` are set per article as needed.
+
+### Linking and includes
+
+- Use `~/` for root-relative links into `docs/` (e.g., `~/identity/domain-services/overview.md`); use plain relative paths within the same folder. Always link to the `.md` source, not the published URL, and strip `https://learn.microsoft.com/en-us` from Learn links.
+- Reuse content with `[!INCLUDE [label](~/includes/.../file.md)]`. Files under any `includes/` folder are excluded from standalone build (see `docfx.json` and `.docutune`).
+
+### Redirects instead of broken links
+
+When you rename, move, or delete an article, add an entry to `.openpublishing.redirection.json` (`source_path`, `redirect_url`, `redirect_document_id`) rather than leaving the old path to 404. Update every `toc.yml` and inbound link that referenced the old path.
+
+### Validation (no local build)
+
+There is no compile/test step. Content is validated by the OPS build plus:
+- **markdownlint** (`.markdownlint.json`) — note `MD044` enforces casing of proper nouns (`.NET`, `ASP.NET`, `JavaScript`, `NuGet`, `PowerShell`, `macOS`, `C#`, `CLI`).
+- **Acrolinx** (`.acrolinx-config.edn`) for editorial/terminology scoring.
+- **docutune** and the What's New automation configs under `.whatsnew/`.
+
+Branches must match `main` or `release-*` (`.docutune`). PRs target `main`.

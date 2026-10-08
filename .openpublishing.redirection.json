@@ -50,6 +50,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/identity/authentication/kerberos-server-key-rotation.md",
+      "redirect_url": "/entra/identity/authentication/configure-microsoft-entra-kerberos-trust",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/global-secure-access/tutorial-internet-access-file-controls.md",
       "redirect_url": "/entra/global-secure-access/tutorial-internet-access-content-policies",
       "redirect_document_id": true
