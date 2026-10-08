@@ -37,7 +37,7 @@ This feature allows Entitlement Management admins to directly assign external us
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication
 
-General availability of Microsoft Entra Kerberos key rotation improved reliability particularly for environments using incoming trust referral flows. Previously, authentication failures could occur during Kerberos key rotation if referral tickets were encrypted with a secondary key. The update enhances validation logic to attempt decryption with both primary and secondary Kerberos keys, improving resiliency during key rollover operations and reducing authentication disruption during rotation events. For more information, see: [Rotate the Kerberos server key for Microsoft Entra Kerberos](../identity/authentication/kerberos-server-key-rotation.md).
+General availability of Microsoft Entra Kerberos key rotation improved reliability particularly for environments using incoming trust referral flows. Previously, authentication failures could occur during Kerberos key rotation if referral tickets were encrypted with a secondary key. The update enhances validation logic to attempt decryption with both primary and secondary Kerberos keys, improving resiliency during key rollover operations and reducing authentication disruption during rotation events. For more information, see: [Rotate the Kerberos server key for Microsoft Entra Kerberos](../identity/authentication/configure-microsoft-entra-kerberos-trust.md).
 
 ---
 
