@@ -3,8 +3,7 @@ title: Mapping to the certificateUserIds attribute in Microsoft Entra ID
 description: Learn about certificate user IDs for Microsoft Entra certificate-based authentication without federation
 ms.topic: how-to
 ms.date: 03/04/2025
-author: vimrang
-ms.reviewer: vranganathan
+ms.reviewer: vranganathan, vimrang
 ms.custom: has-adal-ref, sfi-image-nochange
 ---
 

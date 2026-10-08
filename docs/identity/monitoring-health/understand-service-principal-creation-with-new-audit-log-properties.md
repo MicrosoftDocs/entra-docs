@@ -2,10 +2,8 @@
 title: Understand why a service principal was created in your tenant
 description: Learn why a Microsoft Entra service principal was created in your tenant and who or what triggered the event through new properties that have been added audit log activity. 
 
-author: jenniferf-skc
 ms.topic: reference
 ms.date: 01/26/2026
-ms.author: jfields
 ms.reviewer: arishorr1
 ai-usage: ai-assisted
 

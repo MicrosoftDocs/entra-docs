@@ -1,7 +1,6 @@
 ---
 title: Learn about the monitoring and health activity log schemas
 description: Learn how to interpret the details found in the Microsoft Entra audit and sign-in and logs schema.
-
 ms.topic: concept-article
 ms.date: 05/27/2025
 ms.reviewer: egreenberg

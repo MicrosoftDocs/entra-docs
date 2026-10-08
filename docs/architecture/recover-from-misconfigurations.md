@@ -3,7 +3,6 @@ title: Recover from misconfigurations in Microsoft Entra ID
 description: Learn how to recover from misconfigurations.
 ms.topic: concept-article
 ms.date: 08/26/2022
-ms.reviewer: jricketts
 ms.custom: sfi-image-nochange
 ms.subservice: architecture
 ---

@@ -414,7 +414,7 @@ When you use the Microsoft Entra provisioning service to [discover](~/identity/a
 1. Assign all discovered users to a specific access package:
 
    ```powershell
-   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." `-AccessPackageId "6e809820-1f6a-4ff8-adc9-991f9f3151bd" `-PolicyId "8de7482f-ff17-4310-a8f5-3f35bcf02cca"
+   .\Assign-CorrelatedUsersWithRules.ps1 -ServicePrincipalId "7A22..." `-AccessPackageId "aaaaaaaa-bbbb-cccc-1111-222222222222" `-PolicyId "bbbbbbbb-cccc-dddd-2222-333333333333"
    ```
 
 1. Assign users to packages based on rules that you define (example rules file):

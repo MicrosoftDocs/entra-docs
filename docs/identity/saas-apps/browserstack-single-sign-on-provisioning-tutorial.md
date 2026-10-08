@@ -3,15 +3,12 @@ title: Configure BrowserStack Single Sign-on for automatic user provisioning wit
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BrowserStack Single Sign-on.
 
 
-author: jeevansd
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/27/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BrowserStack Single Sign-on so that I can streamline the user management process and ensure that users have the appropriate access to BrowserStack Single Sign-on.
----
+--- 
 
 # Configure BrowserStack Single Sign-on for automatic user provisioning with Microsoft Entra ID
 
@@ -24,6 +21,7 @@ This article describes the steps you need to perform in both BrowserStack Single
 > * Remove users in BrowserStack Single Sign-on when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and BrowserStack Single Sign-on
 > * [Single sign-on](./browserstack-single-sign-on-tutorial.md) to BrowserStack Single Sign-on (recommended)
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

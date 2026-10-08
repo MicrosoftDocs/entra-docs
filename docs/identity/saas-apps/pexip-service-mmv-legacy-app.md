@@ -5,7 +5,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
----
+--- 
 # Configure Pexip Service for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Pexip Service with Microsoft Entra ID. When you integrate Pexip Service with Microsoft Entra ID, you can:

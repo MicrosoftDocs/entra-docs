@@ -2,7 +2,7 @@
 title: Microsoft Entra private network connector version release notes
 description: This article lists all releases of Microsoft Entra private network connector and describes new features and fixed issues.
 ms.topic: reference
-ms.date: 03/13/2026
+ms.date: 06/08/2026
 ai-usage: ai-assisted
 ---
 
@@ -23,6 +23,20 @@ Here's a list of related resources:
 | How to enable application proxy                  | Prerequisites for enabling application proxy and installing and registering a connector are described in this [tutorial](../identity/app-proxy/application-proxy-add-on-premises-application.md). |
 | Understand Microsoft Entra private network connectors | Find out more about [connector management](~/global-secure-access/concept-connectors.md) and how connectors [autoupgrade](~/global-secure-access/concept-connectors.md#connector-updates). |
 | Microsoft Entra private network connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
+
+## Version 1.5.4892.0
+ 
+### Release status
+ 
+June 8, 2026: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center.
+ 
+### New features and improvements
+
+- Diagnostics tool added to system tray: New interactive diagnostics experience that validates endpoint connectivity (including customer-configured outbound proxies), checks service health, and collects logs from Windows Event Viewer.
+- Improved connector logging and observability: Connector logs available in Windows Event Viewer; Audit events include agent identity information; and a remote feature flag allows log verbosity control without a connector update.
+- Improved DNS resolution reliability: Invalid DNS response records are now filtered out, preventing spurious resolution failures in certain network environments.
+- Fixed WebSocket connection leaks that could cause port exhaustion. Connections to unresponsive backends are now properly closed with a configurable timeout instead of lingering indefinitely.
+- Fixed an issue where the connector's control channel listener could fail to initialize when specific features were disabled, causing the connector to not start.
 
 ## Version 1.5.4594.0
  
@@ -227,7 +241,11 @@ This version is only available for install via the download page.
 - Added debug traces for WebSocket communications. 
 - Resolved preserving the SameSite attribute when set on backend application cookies.
 
-## Version 1.5.612.0
+## Unsupported versions
+
+If you're using a private network connector version 1.5.612.0 or earlier, immediately update to a newer version to ensure you have the latest fully supported features.
+
+## Version 1.5.612.0 (Deprecated)
 
 ### Release status
 
@@ -245,7 +263,7 @@ September 20, 2018: Released for download.
 - A bug that caused memory leaks in the connector was fixed.
 - Azure Service Bus version updated, which includes a bug fix for connector timeout issues.
 
-## Version 1.5.402.0
+## Version 1.5.402.0 (Deprecated)
 
 ### Release status
 
@@ -255,7 +273,7 @@ January 19, 2018: Released for download.
 
 - Added support for custom domains that need domain translation in the cookie.
 
-## Version 1.5.132.0
+## Version 1.5.132.0 (Deprecated)
 
 ### Release status 
 
@@ -265,7 +283,7 @@ May 25, 2017: Released for download.
 
 Improved control over connectors' outbound connection limits. 
 
-## Version 1.5.36.0
+## Version 1.5.36.0 (Deprecated)
 
 ### Release status
 
@@ -277,9 +295,6 @@ April 15, 2017: Released for download.
 - If supported by your external proxy or firewall, you can now open your network by DNS instead of IP range. Application proxy services require connections to `*.msappproxy.net` and `*.servicebus.windows.net` only.
 
 
-## Earlier versions
-
-If you're using a private network connector version earlier than 1.5.36.0, update to the latest version to ensure you have the latest fully supported features.
 
 ## Next steps
 - [What is application proxy?](../identity/app-proxy/overview-what-is-app-proxy.md)

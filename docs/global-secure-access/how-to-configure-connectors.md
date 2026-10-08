@@ -2,7 +2,7 @@
 title: How to configure connectors for Microsoft Entra Private Access
 description: "Set up private network connectors that enable outbound connections from your private network to Global Secure Access. Includes installation, connector groups, and high availability."
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 05/26/2026
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -44,10 +44,12 @@ The Microsoft Entra private network connector requires a server running Windows 
 > "EnableDefaultHTTP2"=dword:00000000
 > ```
 >
-> The key can be set via PowerShell with the following command:
+> The key can be set via PowerShell. The `WinHttp` registry key isn't present by default on freshly installed servers, so the script tests for it and creates it first if needed:
 >
 > ```powershell
-> Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\' -Name EnableDefaultHTTP2 -Value 0
+> $key = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp'
+> if (-not (Test-Path $key)) { New-Item -Path $key -Force | Out-Null }
+> Set-ItemProperty -Path $key -Name 'EnableDefaultHTTP2' -Value 0 -Type DWord
 > ```
 
 > [!WARNING]
@@ -110,7 +112,7 @@ To enable TLS 1.2:
 
 - Optimize performance between the connector and the application. Physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 - Make sure the connector server and the web application servers are in the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is required for single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, use resource-based delegation for single sign-on.
-- Consider [performance and scalability](concept-connectors.md#performance-and-scalability) of your connector deployment, including [extending the TCP and UDP ephemeral ports](concept-connectors.md#expanding-ephemeral-port-range) on your connector server. See [Understand the Microsoft Entra private network connector](concept-connectors.md) for more information.
+- Consider [performance and scalability](concept-connectors.md#performance-and-scalability) of your connector deployment, including [configuring dynamic and AutoReuse TCP port ranges](concept-connectors.md#configure-dynamic-and-autoreuse-tcp-port-ranges) on your connector server. See [Understand the Microsoft Entra private network connector](concept-connectors.md) for more information.
 - Consider creating a [performance baseline](/troubleshoot/windows-server/performance/troubleshoot-performance-problems-in-windows) for your private network connectors.
 
 ### Prepare your on-premises environment

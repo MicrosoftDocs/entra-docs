@@ -1,9 +1,7 @@
 ---
 title: Configurable Token Lifetimes
 description: Learn how to configure token lifetimes for access, SAML, and ID tokens in Microsoft Identity Platform to enhance security.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom: 
 ms.date: 04/08/2026
 ms.reviewer: sreyanthmora

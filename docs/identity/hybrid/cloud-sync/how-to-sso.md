@@ -3,8 +3,9 @@ title: 'How to use single sign-on with cloud sync'
 description: This article describes how to install and use single sign-on with cloud sync.
 
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/15/2026
 ms.subservice: hybrid-cloud-sync
+ai-usage: ai-assisted
 ---
 
 # Using single sign-on with cloud sync

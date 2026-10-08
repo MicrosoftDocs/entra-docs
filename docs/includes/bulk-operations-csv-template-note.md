@@ -1,14 +1,15 @@
 ---
 title: Include file
 description: Include file for bulk operations CSV template note
-author: barclayn
+author: kenwith
 manager: pmwongera
 ms.service: entra-id
 ms.topic: include
-ms.date: 12/05/2025
-ms.author: barclayn
-ms.custom: include file
+ms.date: 09/25/2026
+ms.author: kenwith
+ai-usage: ai-assisted
+ms.custom: include file, msecd-doc-authoring-1026
 ---
 
 > [!NOTE]
-> CSV template formats vary by operation. Some templates (like bulk create or delete users) include a `version:v1.0` row as the first row, while others (like group member operations) start directly with the column headers. Always use the template downloaded directly from the portal for your specific operation, and don't modify the first row(s).
+> CSV template formats vary by operation and can change. Download the latest template for your operation from the Microsoft Entra admin center. Preserve the column headers exactly as downloaded. If the template includes a version row, preserve it. If the template doesn't include a version row, don't add one. Follow the operation-specific instructions for handling the examples row.

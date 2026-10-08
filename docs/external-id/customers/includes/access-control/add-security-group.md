@@ -1,8 +1,6 @@
 ---
-author: henrymbuguakiarie
 ms.topic: include
 ms.date: 09/06/2024
-ms.author: henrymbugua
 ---
 
 Security groups manage user and computer access to shared resources. You can create a security group so that all group members have the same set of security permissions.

@@ -2,10 +2,8 @@
 title: Self-service password reset in Android app using native authentication
 description: Learn how to implement self-service password reset (SSPR) to my Android app using native authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external

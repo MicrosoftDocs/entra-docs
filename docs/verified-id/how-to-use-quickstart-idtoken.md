@@ -4,7 +4,6 @@ description: Learn how to use a quickstart to create custom credentials for ID t
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 01/17/2025
-
 #Customer intent: As an administrator, I am looking for information to help me create verifiable credentials for ID tokens. 
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Frequently asked questions about the admin consent workflow
 description: Find answers to frequently asked questions (FAQs) about the admin consent workflow.
-
 ms.topic: faq
 ms.date: 05/27/2022
 ms.reviewer: ergreenl

@@ -1,54 +1,72 @@
 ---
-title: See monitor results and configuration drifts (preview)
+title: View monitor results and manage monitors
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how to view monitor results and detect configuration drifts in Microsoft Entra Tenant Governance using the admin center
+description: Learn how to view monitor results and configuration drifts and manage configuration monitors in Microsoft Entra Tenant Governance
 ms.topic: how-to
-ms.date: 03/05/2026
+ms.date: 07/28/2026
 ---
 
-# See monitor results and configuration drifts (preview)
+<!-- source: Tenant Governance - View monitor results and manage monitors how-to.docx -->
 
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+# View monitor results and manage monitors
 
-This article describes how to view monitor results and configuration drifts in the [Microsoft Entra admin center](https://entra.microsoft.com). Each time the monitoring service runs (currently every six hours), it publishes run statistics as a monitor result. When the monitoring service detects that a resource's actual state differs from the configuration baseline, it creates a configuration drift.
+Use the monitor experience to review monitor definitions, monitor run results, configuration drifts, baseline details, permissions readiness, settings, and audit logs. This article describes how to use the monitor pages after a monitor is created.
 
 ## Prerequisites
 
-- Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-- Your tenant must have a license for Microsoft Entra Tenant Governance.
-- At least one configuration monitor must exist in your tenant and must have run at least once.
+- At least one configuration monitor exists in the tenant.
+- You can sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with a role that can view Tenant Governance monitor data.
+- The Tenant Configuration Management service has the permissions required to run the monitor. If a monitor run fails because of missing service permissions, [update the service permissions](how-to-set-up-permissions-tenant-monitoring.md) before you rely on later run results.
 
-## Browse to monitors
+## View monitors
+
+To view the configuration monitors in your tenant, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Tenant Governance** > **Configuration management** > **Monitors**.
+1. Browse to **Tenant Governance** > **Monitors**.
+1. On the **Monitors** tab, review monitor definitions, create a monitor, refresh the list, or select a monitor to open its details.
 
 ## View monitor results
 
-1. Select the **Monitor results** tab at the top of the page. All monitor results for all monitors in your tenant appear.
-1. Use the filter control to narrow the list by monitor name, start time, or completion time.
-1. If a monitor has associated configuration drifts, select the numeric value in the **Drifts detected** column to see the drifts for that monitor.
+To review the results of monitor runs, follow these steps:
+
+1. Select the **Monitor results** tab.
+1. Review the monitor name, monitor ID, start time, completion time, run status, and number of detected drifts.
+
+A monitor result summarizes a single monitor run. Use this page to identify failed or partially successful runs, and to find runs that detected configuration drift.
 
 ## View configuration drifts
 
-1. Select the **Configuration drifts** tab at the top of the page. All configuration drifts for all monitors in your tenant appear.
-1. Use the filter control to narrow the list by monitor, resource type, resource name, or the time the drift was first detected.
-1. To see drift details, select the value in the **Drifted properties** column. A context pane opens with all properties of the configuration drift.
+To review the configuration drifts a monitor detected, follow these steps:
 
-The bottom of the context pane lists each drifted property along with its actual and expected values. When a resource defined in the configuration baseline is entirely absent from the tenant, the **Ensure** property displays a value of **Absent** instead of **Present**.
+1. Select the **Configuration drifts** tab.
+1. Review the monitor, resource name, resource type, drifted properties, and first detection time.
 
-## Address a configuration drift
+A drift record identifies the resource and property that differ from the baseline. Use this page when you need to decide which workload administration experience to use for remediation.
 
-To fix a configuration drift, use the administration tool of your choice to update the resource so it matches the value defined in the monitor's configuration baseline. For example:
+## Manage a monitor
 
-- For a conditional access policy drift, use the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
-- For an Exchange transport rule drift, use Exchange Admin Center or Exchange PowerShell.
+To review and manage an individual monitor, follow these steps:
 
-Alternatively, if the actual state of the resource is acceptable, update the configuration baseline for the monitor to reflect the current resource state.
+1. Select a monitor from the monitor list.
+1. On **Overview**, review the **Details**, **Monitoring**, and **Audit** cards. **Details** shows the display name, description, creation date, and the services whose resources are monitored. The **Monitoring** card shows the last monitor run time, resource type, count, and configuration drifts. The **Audit** card shows audit events, such as monitor creation and update events, from the last 30 days, and the date of the last audit event.
+1. On **Monitor results**, review the run history for the selected monitor.
+1. On **Configuration drifts**, review the drift records for the selected monitor.
+1. On **Baseline**, view, edit, or download the monitor baseline JSON.
+1. On **Permissions**, review the service authorization readiness.
+1. On **Settings**, view and manage the display name and description for the monitor.
+1. On **Audit logs**, review the create and update events for the monitor.
+
+## Correct configuration drift
+
+Tenant Governance reports drift, but remediation happens in the administration experience that owns the drifted resource. For example, use the Microsoft Entra admin center or Microsoft Graph PowerShell to update a Conditional Access policy, or use the Exchange admin center or Exchange Online PowerShell to update an Exchange transport rule.
+
+After you remediate drift, the next monitor run evaluates the tenant again and confirms that the actual resource state matches the baseline.
 
 ## Related content
 
-- [Create a monitor](how-to-create-monitor.md)
-- [Update or delete a monitor](how-to-update-delete-monitor.md)
-- [Set up permissions for tenant monitoring](how-to-set-up-permissions-tenant-monitoring.md)
 - [Configuration management](configuration-management.md)
+- [configurationMonitor](/graph/api/resources/configurationmonitor?view=graph-rest-1.0&preserve-view=true)
+- [configurationMonitoringResult](/graph/api/resources/configurationmonitoringresult?view=graph-rest-1.0&preserve-view=true)
+- [configurationDrift](/graph/api/resources/configurationdrift?view=graph-rest-1.0&preserve-view=true)
+- [Create a configuration monitor](how-to-create-monitor.md)

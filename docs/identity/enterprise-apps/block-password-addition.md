@@ -1,8 +1,7 @@
 ---  
 title: Restrict password usage on Microsoft Entra apps  
 description: Block the addition of passwords on Microsoft Entra apps to improve security 
-author: arcrowe
-ms.author: arcrowe
+ms.reviewer: arcrowe
 ms.date: 08/19/2025
 ms.topic: how-to
 ms.localizationpriority: medium

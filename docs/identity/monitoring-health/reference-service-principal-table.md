@@ -1,7 +1,6 @@
 ---
 title: First party app service principal reference table
 description: Reference table that maps application IDs to applications and their service principal usage from the sign-in logs.
-
 ms.topic: reference
 ms.date: 05/06/2025
 ms.reviewer: egreenberg

@@ -1,7 +1,6 @@
 ---
 title: Application consent management and evaluation of consent requests
 description: Understand consent request evaluation and tenant-wide admin consent in Microsoft Entra ID. Essential guidance for administrators managing application permissions and security.
-
 ms.topic: concept-article
 ms.date: 07/20/2025
 ms.reviewer: phsignor

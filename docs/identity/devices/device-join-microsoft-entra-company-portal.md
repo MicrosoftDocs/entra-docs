@@ -3,8 +3,6 @@ title: Join a Mac device with Microsoft Entra ID using Company Portal
 description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
 ms.topic: tutorial
 ms.date: 12/19/2024
-ms.author: cwerner
-author: cilwerner
 manager: pmwongera
 ms.reviewer: jploegert
 ms.custom: sfi-image-nochange

@@ -3,8 +3,8 @@ title: Microsoft Entra ID Protection risk-based access policies
 description: Identifying risk-based Conditional Access policies
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 03/20/2026
-ms.reviewer: cokoopma
+ms.date: 05/15/2026
+ms.reviewer: ebasseri
 ms.custom: sfi-image-nochange
 ---
 # Risk-based access policies
@@ -33,7 +33,7 @@ Allowing users to self-remediate using this process significantly reduces the ri
 
 ID Protection analyzes signals about user accounts and calculates a risk score based on the probability that the user is compromised. If a user has risky user sign-in behavior, or their credentials were leaked, ID Protection uses these signals to calculate the user risk level. Administrators can configure risk-based Conditional Access policies to enforce access controls based on user risk, including requirements such as: 
 
-1. Require risk remediation (preview): ID Protection manages the appropriate remediation flow for all authentication methods.
+1. Require risk remediation: ID Protection manages the appropriate remediation flow for all authentication methods.
 1. Require password change: ID Protection blocks access until user completes a secure password change.
 1. Block access: ID Protection blocks the user until risk is addressed.
 
@@ -45,6 +45,7 @@ This control uses adaptive risk remediation to let you author a Conditional Acce
 
 - **Password authentication**: Risky user has an active risk detection, such as a leaked credential, password spray, or session history involving a compromised password. The user is prompted to perform a secure password change and when completed, their previous sessions are revoked. 
 - **Passwordless authentication**: Risky user has an active risk detection, but it doesn't involve a compromised password. Possible risk detections include anomalous token, impossible travel, or unfamiliar sign-in properties. The user's sessions are revoked and they're prompted to sign in again.
+- **Attacker-added device**: Risky user is flagged by Microsoft's threat intelligence as having a device added by an attacker. The Entra device object is disabled, blocking new token issuance. The user's sessions are revoked, and they're prompted to sign-in again. 
 
 #### Special considerations
 
@@ -53,7 +54,7 @@ This control uses adaptive risk remediation to let you author a Conditional Acce
 - **Require authentication strength** and **Sign-in frequency - Every time** are automatically applied to the policy to ensure that after session revocation, end users are immediately prompted to reauthenticate with the specified authentication strength.
 - **Require risk remediation** is not supported for external and guest users because Microsoft Entra ID doesn't support session revocation for those users.
 - During risk remediation, Microsoft Entra ID uses a dedicated, secure flow to perform actions such as session revocation. To ensure remediation is not blocked, this flow is allowed to proceed without being impacted by other Conditional Access policies.
-  - `AppId`: Public cloud = `93625bc8-bfe2-437a-97e0-3d0060024faa`, Azure for US Government = `2e5ecfc8-ea79-48bd-8140-c19324acb278`
+  - `AppId`: Public cloud = `93625bc8-bfe2-437a-97e0-3d0060024faa`, Azure for US Government = `00001111-aaaa-2222-bbbb-3333cccc4444`
   - `ResourceId`: `00000003-0000-0000-c000-000000000000`
 
 ## Sign-in risk-based Conditional Access policy

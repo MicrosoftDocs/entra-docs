@@ -1,22 +1,25 @@
 ---
 title: External ID Pricing
-description: Learn about the pricing structure for Microsoft Entra External ID, along with steps for linking an external tenant to an Azure subscription.
+description: Learn about the pricing and billing structure for Microsoft Entra External ID, along with steps for linking an external tenant to an Azure subscription.
 ms.topic: concept-article
-ms.date: 02/24/2026
+ms.date: 06/22/2026
+ai-usage: ai-assisted
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra tenant administrator, I want to link my tenant to an Azure subscription so that I can take advantage of the monthly active users (MAU) billing model and activate MAU billing for guest user collaboration.
 ---
 
-# Pricing structure and billing model for Microsoft Entra External ID
+# Microsoft Entra External ID pricing and billing overview
 
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
-This article outlines the pricing structure for Microsoft Entra External ID. It also describes how to link your tenant to an Azure subscription to ensure correct billing and feature access.
+This article outlines the pricing and billing structure for Microsoft Entra External ID. External ID uses a basic monthly active users (MAU) billing model with optional premium add-ons for advanced scenarios. It also describes how to link your tenant to an Azure subscription to ensure correct billing and feature access.
 
-## Monthly active users (MAU) billing model
+For the latest pricing details, see [External ID pricing](https://aka.ms/ExternalIDPricing).
 
-Billing for External ID is based on monthly active users (MAU); that is, the count of unique external users who authenticate to your tenants within a calendar month. To determine the total number of MAU, we combine active users from all workforce and external tenants that are linked to a subscription.
+## External ID billing model
+
+The basic External ID billing model is based on monthly active users (MAU), which is the count of unique external users who authenticate to your tenants within a calendar month. To determine the total number of MAUs, we combine MAUs from all workforce and external tenants that are linked to a subscription.
 
 MAU billing helps reduce your costs by offering a free tier and flexible, predictable pricing. You can get started for free and pay for only what you use as your business grows.
 
@@ -38,12 +41,85 @@ The MAU billing model for External ID applies to all guest users. Guest users in
 
 For more info about the differences between internal and external guests, see [Understand and manage the properties of B2B guest users](user-properties.md).
 
-## External ID pricing
+## Premium add-ons
 
-External ID consists of a core offer and premium add-ons. For the latest information about usage billing and pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing).
+In addition to the basic MAU billing, External ID provides premium add-ons that extend functionality for advanced scenarios. Each add-on has its own billing model. The following table summarizes the available add-ons.
+
+| Add-on | Tenant configuration | Billing model | Description |
+|---|---|---|---|
+| **M2M Authentication** | External | Transaction-based | Authentication using OAuth 2.0 client credentials flows for machine-to-machine (M2M) authentication scenarios without user interaction. Charges are based on the number of authentication transactions. |
+| **SMS Phone Authentication** | Workforce, External | Transaction-based | Additional charges for each SMS-based authentication event (text only; voice isn't supported). For more information, see [Features and licenses for Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-licensing.md). |
+| **Go-Local** | External | MAU-based | Store external identity data in a specific geographic region to meet data residency requirements. Currently available only in Australia and Japan. |
+| **ID Governance** | Workforce | MAU-based | Govern guest users with premium features in Microsoft Entra ID Governance. For more information, see [Microsoft Entra ID Governance licensing for guest users](~/id-governance/microsoft-entra-id-governance-licensing-for-guest-users.md). |
+| **GSA for Guests** | Workforce | MAU-based | Global Secure Access (GSA) coverage for guest users in workforce tenants. |
 
 > [!NOTE]
-> Existing subscriptions to B2B collaboration under an earlier Azure Active Directory (Azure AD) External Identities P1/P2 tier remain valid. No migration is necessary. We'll communicate upgrade options when they're available.
+> Premium add-on charges are in addition to the basic MAU billing. For the latest information about add-on pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing).
+
+## Billing scenarios
+
+The following examples illustrate how basic MAU billing and premium add-ons work together. Each scenario indicates the tenant configurations it applies to (workforce or external). For more information, see [Tenant configurations](tenant-configurations.md). These scenarios are conceptual and don't include specific prices. For current pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing).
+
+### Scenario 1: Consumer app with basic sign-in (external tenant)
+
+A consumer-facing app registered in an external tenant has 10,000 users who sign in using email and password or social identity providers. No premium add-ons are enabled.
+
+- **Tenant configuration**: External
+- **Applicable add-on SKU**: None
+- **Meter type**: MAU
+- **MAU count**: 10,000
+- **Result**: No cost if MAU usage is within free limits.
+
+### Scenario 2: M2M Authentication (external tenant)
+
+A background service, such as a console app, runs continuously and authenticates with Microsoft Entra External ID using client credentials. The app calls an API on its own behalf without any user interaction and refreshes its access token hourly.
+
+- **Tenant configuration**: External
+- **Applicable add-on SKU**: M2M Authentication
+- **Meter type**: Transaction (M2M Authentication)
+- **MAU count**: 0 (M2M authentication doesn't involve user sign-ins, so no MAU charges apply)
+- **Description**: Transaction charges based on the number of client credential authentication requests; for example, one token refresh per hour produces approximately 720 transactions per month.
+- **Result**: Only M2M Authentication add-on charges apply. For current transaction pricing, see [External ID pricing](https://aka.ms/ExternalIDPricing).
+
+### Scenario 3: Consumer app with interactive users and M2M calls (external tenant)
+
+A consumer app in an external tenant has 5,000 users who sign in interactively. The app also uses M2M Authentication (client credentials) for background processing tasks, such as syncing data and sending notifications.
+
+- **Tenant configuration**: External
+- **Applicable add-on SKU**: M2M Authentication
+- **Meter type**: MAU and transaction (M2M Authentication)
+- **MAU count**: 5,000 (interactive users only; M2M Authentication calls don't count toward MAU)
+- **Description**: Transaction charges based on the number of client credential authentication requests.
+- **Result**: Microsoft Entra External ID Basic MAU charges for interactive users, plus M2M Authentication add-on charges for background processing.
+
+### Scenario 4: B2B collaboration with ID Governance (workforce tenant)
+
+An organization invites 2,000 external business partners as B2B collaboration guests in their workforce tenant. The organization uses ID Governance to manage machine learning assisted access reviews for guest users.
+
+- **Tenant configuration**: Workforce
+- **Applicable add-on SKU**: ID Governance
+- **Meter type**: MAU
+- **MAU count**: 2,000
+- **Description**: Charges for guests who trigger governance actions during the month, such as machine learning assisted access reviews; for more information, see [Microsoft Entra ID Governance licensing for guest users](~/id-governance/microsoft-entra-id-governance-licensing-for-guest-users.md).
+- **Result**: Microsoft Entra External ID Basic MAU charges plus ID Governance add-on charges.
+
+### Scenario 5: Consumer app with data residency (external tenant)
+
+A consumer app in an external tenant has 8,000 users who sign in interactively. The organization enables the Go-Local add-on to store external identity data in a specific geographic region to meet data residency requirements. The Go-Local add-on is currently available only in Australia and Japan.
+
+- **Tenant configuration**: External
+- **Applicable add-on SKU**: Go-Local
+- **Meter type**: MAU
+- **MAU count**: 8,000
+- **Description**: MAU-based charges for storing external identity data in the selected region, in addition to the basic MAU charges.
+- **Result**: Microsoft Entra External ID Basic MAU charges plus Go-Local add-on charges.
+
+## Subscription requirements
+
+External ID requires an Azure subscription for billing. The following sections describe how to link a workforce or external tenant to a subscription. For pricing details, see [External ID pricing](https://aka.ms/ExternalIDPricing).
+
+> [!NOTE]
+> If you previously subscribed to B2B collaboration under an Azure AD External Identities P1/P2 SKU, see the [External ID pricing](https://aka.ms/ExternalIDPricing) page for information about current pricing options and any available upgrade paths.
 
 <a name='link-your-azure-ad-tenant-to-a-subscription'></a>
 

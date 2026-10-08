@@ -1,8 +1,7 @@
 ---
 title: EDR and antivirus coexistence with Global Secure Access client
 description: Learn about endpoint detection and response and antivirus solution coexistence with Global Secure Access client.
-author: jricketts
-ms.author: jricketts
+ms.reviewer: jricketts
 ms.topic: concept-article
 ms.date: 03/28/2025
 

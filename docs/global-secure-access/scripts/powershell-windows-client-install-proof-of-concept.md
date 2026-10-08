@@ -1,8 +1,6 @@
 ---
 title: PowerShell Sample - Install the Global Secure Access Windows Client as Proof of Concept
 description: Install the Global Secure Access Windows client as a proof of concept. This script automates installation and applies essential configurations.
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: sample
 ms.date: 11/18/2025
 ms.reviewer: JeffBley
@@ -56,7 +54,7 @@ $RegistrySettings = @(
     @{ Key="HKLM:\SOFTWARE\Policies\Microsoft\Edge"; Name="BuiltInDnsClientEnabled"; Type="DWord"; Value=0 },
     @{ Key="HKLM:\SOFTWARE\Policies\Microsoft\Edge"; Name="QuicAllowed"; Type="DWord"; Value=0 },
     # Chrome DoH and QUIC settings
-    @{ Key="HKLM:\SOFTWARE\Policies\Google\Chrome"; Name="DnsOverHttpsMode"; ype="String"; Value="off" },
+    @{ Key="HKLM:\SOFTWARE\Policies\Google\Chrome"; Name="DnsOverHttpsMode"; Type="String"; Value="off" },
     @{ Key="HKLM:\SOFTWARE\Policies\Google\Chrome"; Name="QuicAllowed"; Type="DWord"; Value=0 }
 )
 # --- Track whether the IPv4-preferred setting was already correct ---
@@ -179,7 +177,7 @@ $nonBrowserSettings = $RegistrySettings | Where-Object {
 foreach ($rk in $nonBrowserSettings) {
     Ensure-RegistryValue -Key $rk.Key -Name $rk.Name -Type $rk.Type -Value $rk.Value
 }
-# 2) Detect browsers via registry only 
+# 2) Detect browsers via registry only
 $edgeFound    = Get-InstalledApp -Name 'Microsoft Edge'
 $chromeFound  = Get-InstalledApp -Name 'Google Chrome'
 $firefoxFound = Get-InstalledApp -Name 'Firefox'  # also catches "Mozilla Firefox"
@@ -304,7 +302,7 @@ try {
 $PromptForReboot = (-not $WasIpv4PreferredAlreadyCorrect) -and $NowIpv4PreferredCorrect
 if ($PromptForReboot) {
     # Prompt for reboot at the end ONLY if the DisabledComponents value was changed by this script
-    $choice = Read-Host "Change of the IPv4Preffered registry key won't take effect until device reboot. Do you want to reboot now? (Y/N)"
+    $choice = Read-Host "Change of the IPv4Preferred registry key won't take effect until device reboot. Do you want to reboot now? (Y/N)"
     if ($choice -match '^[Yy]$') {
         Write-Host "Rebooting system..."
         Restart-Computer -Force

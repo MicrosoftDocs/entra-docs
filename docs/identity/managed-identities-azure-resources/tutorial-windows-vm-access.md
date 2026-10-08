@@ -5,7 +5,6 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 05/28/2024
 ms.custom: devx-track-arm-template, linux-related-content
-
 appliesto:
 zone_pivot_groups: identity-windows-vm-access
 ---

@@ -1,10 +1,8 @@
 ---
 title: Shadow AI discovery in Global Secure Access
 description: Learn how Shadow AI discovery in Global Secure Access provides network-based visibility into unsanctioned AI applications and tools used in your organization.
-author: jenniferf-skc
-ms.author: jfields
 ms.topic: concept-article
-ms.date: 03/31/2026
+ms.date: 06/04/2026
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 
@@ -62,7 +60,12 @@ The Global Secure Access dashboard also features widgets that summarize shadow A
 | Examples | Personal cloud storage, unauthorized SaaS tools | AI chatbots, AI Model Provider APIs, SaaS MCP servers, AI code generators |
 | Detection | Application discovery and cloud app analytics | Generative AI apps and tools filtering in application usage analytics |
 
+## Shadow AI discovery vs. Generative AI Insights
+
+Shadow AI discovery and [Generative AI Insights](concept-generative-ai-insights.md) are complementary. Shadow AI discovery uses the Microsoft Defender for Cloud Apps cloud app catalog to identify which Generative AI SaaS applications users access. Generative AI Insights uses TLS inspection and deep packet inspection to log the actual prompt content and Model Context Protocol (MCP) operations sent to those services. Use both together for layered visibility — Shadow AI discovery for application-level inventory and risk scoring, and Generative AI Insights for event-level prompt and MCP payloads.
+
 ## Related content
 
 - [What is application usage analytics?](overview-application-usage-analytics.md)
 - [Application discovery for Global Secure Access](how-to-application-discovery.md)
+- [Generative AI Insights in Global Secure Access](concept-generative-ai-insights.md)

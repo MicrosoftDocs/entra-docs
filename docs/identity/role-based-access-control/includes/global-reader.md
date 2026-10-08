@@ -111,7 +111,7 @@ Users with this role **cannot** do the following:
 > | microsoft.insights/allEntities/allProperties/read | Read all aspects of Viva Insights |
 > | microsoft.microsoft365.organizationalData/allEntities/allProperties/read | Read all aspects of organizational data in Microsoft 365 |
 > | microsoft.networkAccess/allEntities/allProperties/read | Read all aspects of Microsoft Entra Network Access |
-> | microsoft.office365.copilot/allEntities/allProperties/read | Read all settings for Microsoft 365 Copilot |
+> | microsoft.office365.copilot/allEntities/allProperties/read | Read all settings for Microsoft Copilot |
 > | microsoft.office365.fileStorageContainers/allEntities/allProperties/read | Read entities and permissions of SharePoint Embedded containers |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
 > | microsoft.office365.messageCenter/securityMessages/read | Read security messages in Message Center in the Microsoft 365 admin center |

@@ -2,8 +2,8 @@
 title: Self-service password reset deep dive
 description: How does self-service password reset work
 ms.topic: concept-article
-ms.date: 03/04/2025
-ms.reviewer: tilarso
+ms.date: 10/05/2026
+ms.reviewer: tilarso, marisanchez
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # How it works: Microsoft Entra self-service password reset
@@ -39,7 +39,7 @@ After the SSPR portal is displayed in the required language, the user is prompte
     * If the authentication methods aren't configured, the user is advised to contact their administrator to reset their password.
   * If the policy requires two methods, check that the user has the appropriate data defined for at least two of the authentication methods enabled by the administrator policy.
     * If the authentication methods aren't configured, the user is advised to contact their administrator to reset their password.
-  * If an Azure administrator role is assigned to the user, then the strong two-gate password policy is enforced. For more information, see [Administrator reset policy differences](concept-sspr-policy.md#administrator-reset-policy-differences).
+  * If a Microsoft Entra administrator role is assigned to the user, then the strong two-gate password policy is enforced. For more information, see [Administrator reset policy differences](concept-sspr-policy.md#administrator-reset-policy-differences).
 * Checks to see if the user's password is managed on-premises, such as if the Microsoft Entra tenant is using federated, pass-through authentication, or password hash synchronization:
   * If SSPR writeback is configured and the user's password is managed on-premises, the user is allowed to proceed to authenticate and reset their password.
   * If SSPR writeback isn't deployed and the user's password is managed on-premises, the user is asked to contact their administrator to reset their password.
@@ -115,7 +115,9 @@ If a user doesn't register the minimum number of required methods, they see an e
 
 #### Mobile app and SSPR
 
-When using a mobile app as a method for password reset, like Microsoft Authenticator, the following considerations apply if an organization hasn't [migrated to the centralized Authentication methods policy](how-to-authentication-methods-manage.md):
+For SSPR, Microsoft Authenticator, software OATH tokens, and hardware OATH tokens count as a single authentication method. This behavior applies whether or not an organization has [migrated to the centralized Authentication methods policy](how-to-authentication-methods-manage.md). A user can't use a combination of these methods to satisfy a requirement for two authentication methods.
+
+If an organization hasn't migrated to the centralized Authentication methods policy, the following considerations also apply when users reset their passwords with a mobile app such as Microsoft Authenticator:
 
 * When administrators require one method be used to reset a password, verification code is the only option available.
 * When administrators require two methods be used to reset a password, users are able to use notification **OR** verification code in addition to any other enabled methods.

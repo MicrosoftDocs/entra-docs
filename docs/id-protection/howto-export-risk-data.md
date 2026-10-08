@@ -29,7 +29,7 @@ To export risk data for storage and analysis, you need:
 
 ## Diagnostic settings
 
-Organizations can choose to store or export **RiskyUsers**, **UserRiskEvents**, **RiskyServicePrincipals**, and **ServicePrincipalRiskEvents** data by configuring diagnostic settings in Microsoft Entra ID to export the data. You can integrate the data with a Log Analytics workspace, archive data to a storage account, stream data to an event hub, or send data to a partner solution.
+Organizations can choose to store or export **RiskyUsers**, **UserRiskEvents**, **RiskyServicePrincipals**, **ServicePrincipalRiskEvents**, **RiskyAgents**, and **AgentRiskEvents** data by configuring diagnostic settings in Microsoft Entra ID to export the data. You can integrate the data with a Log Analytics workspace, archive data to a storage account, stream data to an event hub, or send data to a partner solution.
 
 The endpoint you select for exporting the logs must be set up before you can configure diagnostic settings. For a quick summary of the methods available for log storage and analysis, see [How to access activity logs in Microsoft Entra ID](../identity/monitoring-health/howto-access-activity-logs.md). 
 
@@ -55,12 +55,24 @@ Integrating risk data with Log Analytics provides robust data analysis and visua
 
 You need to configure a Log Analytics workspace before you can export and then query the data. Once you configured a Log Analytics workspace and exported the data with diagnostic settings, go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Monitoring & health** > **Log Analytics**. Then, with Log Analytics, you can query data using built-in or custom Kusto queries.
 
-The following tables are of most interest to Microsoft Entra ID Protection administrators:
+> [!IMPORTANT]
+> The names you select in **diagnostic settings** are not the same as the **table names** you use in Kusto (KQL) queries.
+> - **Diagnostic setting category** = what you enable for export
+> - **Log Analytics table name** = what you query (usually prefixed with `AAD`)
 
-- RiskyUsers - Provides data like the **Risky users** report.
-- UserRiskEvents - Provides data like the **Risk detections** report.
-- RiskyServicePrincipals - Provides data like the **Risky workload identities** report.
-- ServicePrincipalRiskEvents - Provides data like the **Workload identity detections** report.
+### Diagnostic setting categories vs Log Analytics table names
+
+Use this mapping when you enable export and when you write queries:
+
+| Report / signal | Diagnostic setting category (enable export) | Log Analytics table name (use in queries) | Table reference |
+| --- | --- | --- | --- |
+| Risky users | `RiskyUsers` | `AADRiskyUsers` | [AADRiskyUsers](/azure/azure-monitor/reference/tables/aadriskyusers) |
+| Risk detections (users) | `UserRiskEvents` | `AADUserRiskEvents` | [AADUserRiskEvents](/azure/azure-monitor/reference/tables/aaduserriskevents) |
+| Risky workload identities | `RiskyServicePrincipals` | `AADRiskyServicePrincipals` | [AADRiskyServicePrincipals](/azure/azure-monitor/reference/tables/aadriskyserviceprincipals) |
+| Workload identity detections | `ServicePrincipalRiskEvents` | `AADServicePrincipalRiskEvents` | [AADServicePrincipalRiskEvents](/azure/azure-monitor/reference/tables/aadserviceprincipalriskevents) |
+| Risky agents | `RiskyAgents` | `AADRiskyAgents` | [AADRiskyAgents](/azure/azure-monitor/reference/tables/aadriskyagents) |
+| Agent identity detections | `AgentRiskEvents` | `AADAgentRiskEvents` | [AADAgentRiskEvents](/azure/azure-monitor/reference/tables/aadagentriskevents) |
+
 
 > [!NOTE]
 > Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID don't appear.

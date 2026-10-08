@@ -6,10 +6,7 @@ ms.service: entra-id
 ms.topic: how-to
 ---
 
-# Recover user authentication methods using Microsoft Entra Backup and Recovery (Preview)
-
-> [!IMPORTANT]
-> Microsoft Entra Backup and Recovery is currently in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Recover user authentication methods using Microsoft Entra Backup and Recovery
 
 Learn how to recover user authentication methods ("user secrets") in Microsoft Entra ID when they were accidentally or maliciously edited or deleted.
 
@@ -51,6 +48,8 @@ Before restoring, determine whether the activity was accidental or malicious:
 If the cause is unclear, **default to treating the incident as malicious** in line with Zero Trust recovery practices.
 
 ## Recovery guidance
+
+Use the following guidance to recover from accidental and malicious changes to user authentication methods.
 
 ### Accidental changes or deletions
 

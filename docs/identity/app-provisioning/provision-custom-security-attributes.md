@@ -72,7 +72,7 @@ This example includes custom security attributes that you could add to your tena
 
    :::image type="content" source="media/provision-custom-security-attributes/attribute-mapping.png" alt-text="Screenshot of the attribute mapping screen.":::
 
-1. Define source attributes that you want to store sensitive HR data, then check the **Show advanced options** box to open the attribute list.
+1. Define source attributes that you want to store sensitive HR data, then select the **Advanced Options** dropdown to open the attribute list.
 1. Select **Edit attribute list for API** to identify those attributes that you want to test.
 
    :::image type="content" source="media/provision-custom-security-attributes/show-advanced-options.png" alt-text="Screenshot of the Edit attribute list for API screen.":::
@@ -348,7 +348,7 @@ With this topology, here is how the end-to-end flow works:
 1. The app creates/updates the user account in on-premises Active Directory using the Employee ID as the matching identifier.  
 1. Microsoft Entra Connect Sync / Cloud Sync synchronizes the user profile to Microsoft Entra ID.  
 1. If you’ve configured Workday Writeback, email or phone number information is written back to Workday.  
-1. The **Workday-to-Microsoft Entra ID provisioning** app is configured to only process updates and set confidential attributes as custom security attributes. Use the schema editor under **Show advanced options** to remove default attribute mappings like `accountEnabled` and `isSoftDeleted` that are not relevant in this scenario.  
+1. The **Workday-to-Microsoft Entra ID provisioning** app is configured to only process updates and set confidential attributes as custom security attributes. Use **Edit schema** under the **Advanced Options** dropdown to remove default attribute mappings like `accountEnabled` and `isSoftDeleted` that are not relevant in this scenario.  
 
 :::image type="content" source="media/provision-custom-security-attributes/attribute-mapping-hybrid.png" alt-text="Screenshot of attribute mapping for hybrid users.":::
 

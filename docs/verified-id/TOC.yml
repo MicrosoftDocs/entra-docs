@@ -1,133 +1,181 @@
 - name: Microsoft Entra Verified ID documentation
   href: index.yml
-- name: Overview
+- name: Get started
   expanded: true
   items:
   - name: Introduction to Microsoft Entra Verified ID
     href: decentralized-identifier-overview.md
-  - name: What's new
-    href: whats-new.md
-- name: Tutorials
-  expanded: true
-  items:
+  - name: Microsoft Entra Verified ID architecture
+    href: introduction-to-verifiable-credentials-architecture.md
   - name: Quick setup
     href: verifiable-credentials-configure-tenant-quick.md
   - name: Advanced setup
     href: verifiable-credentials-configure-tenant.md
-  - name: Issue a verifiable credential
+  - name: Issue your first credential
     href: verifiable-credentials-configure-issuer.md
-  - name: Verify a verifiable credential
+  - name: Verify your first credential
     href: verifiable-credentials-configure-verifier.md
-  - name: Using Face Check
-    href: using-facecheck.md
-  - name: Using Verified ID with Entitlement Management
-    href: ~/id-governance/entitlement-management-verified-id-settings.md
-- name: Concepts
+- name: Scenarios
   expanded: true
   items:
-  - name: Face Check pricing
-    href: verified-id-pricing.md
-  - name: OpenID Connect protocol details
-    href: issuer-openid.md
-  - name: Account recovery
-    href: ~/identity/authentication/concept-account-recovery-overview.md
-  - name: Plan and design 
+  - name: Workforce and external user management
     items:
-    - name: Architecture planning overview
-      href: introduction-to-verifiable-credentials-architecture.md
-    - name: Plan your issuance solution
-      href: plan-issuance-solution.md
-    - name: Plan your verification solution
-      href: plan-verification-solution.md
-  - name: Remote onboarding
-    href: remote-onboarding-new-employees-id-verification.md
-  - name: Verified helpdesk
-    href: helpdesk-with-verified-id.md
+    - name: Remote employee onboarding
+      href: remote-onboarding-new-employees-id-verification.md
+    - name: External user onboarding
+      href: ~/id-governance/entitlement-management-verified-id-settings.md
+    - name: Cross-organization credential planning
+      href: plan-verification-solution.md#accessing-applications-outside-organization-boundaries
+    - name: Account recovery
+      href: ~/identity/authentication/concept-account-recovery-overview.md
+    - name: Verified helpdesk
+      href: helpdesk-with-verified-id.md
+  - name: Developer platform
+    items:
+    - name: Build a verifier web app
+      href: verifiable-credentials-configure-verifier.md
+    - name: Build an issuer service
+      href: verifiable-credentials-configure-issuer.md
+    - name: Integrate with ID Governance
+      href: ~/id-governance/entitlement-management-verified-id-settings.md
+  - name: Security and compliance
+    items:
+    - name: High-assurance verification with Face Check
+      href: using-facecheck.md
+    - name: Revoke credentials
+      href: how-to-issuer-revoke.md
+    - name: Rotate signing keys
+      href: how-to-rotate-keys.md
+    - name: Upgrade signing keys
+      href: signing-key-upgrade.md
+    - name: Multi-region reliability planning
+      href: plan-verification-solution.md#plan-for-reliability
+  - name: Partner ecosystem
+    items:
+    - name: Integrate an identity verification partner
+      href: integration-guidance.md
+    - name: Explore identity verification partners
+      href: idv-partners.md
+    - name: Explore services partners
+      href: services-partners.md
 - name: How-to guides
   expanded: true
   items:
-  - name: How to customize your credentials
-    href: credential-design.md
-  - name: Create verifiable credentials
+  - name: IT admins
     items:
-    - name: Directory based - Employee
+    - name: Configure a Verified ID tenant
+      href: verifiable-credentials-configure-tenant.md
+    - name: Configure Request Service API access
+      href: get-started-request-api.md
+    - name: Configure Verified ID with ID Governance
+      href: ~/id-governance/entitlement-management-verified-id-settings.md
+    - name: Register your decentralized ID
+      href: how-to-register-didwebsite.md
+    - name: Verify domain ownership
+      href: how-to-dnsbind.md
+    - name: Rotate signing keys
+      href: how-to-rotate-keys.md
+    - name: Upgrade signing keys
+      href: signing-key-upgrade.md
+    - name: Revoke a credential
+      href: how-to-issuer-revoke.md
+    - name: Opt out of Verified ID
+      href: how-to-opt-out.md
+    - name: Manage Verified ID with the Admin API
+      href: admin-api.md
+  - name: Developers
+    items:
+    - name: Call the Request Service REST API
+      href: get-started-request-api.md
+    - name: Build an issuance request
+      href: issuance-request-api.md
+    - name: Build a presentation request
+      href: presentation-request-api.md
+    - name: Create credentials with directory-based claims
       href: how-to-use-quickstart-verifiedemployee.md
-    - name: Id token hint attestation
+    - name: Create credentials with an ID token hint attestation
       href: how-to-use-quickstart.md
-    - name: Id token attestation
-      href: how-to-use-quickstart-idtoken.md      
-    - name: Presentation attestation
+    - name: Create credentials with an ID token attestation
+      href: how-to-use-quickstart-idtoken.md
+    - name: Create credentials with a presentation attestation
       href: how-to-use-quickstart-presentation.md
-    - name: Self issued attestation
+    - name: Create credentials with a self-issued attestation
       href: how-to-use-quickstart-selfissued.md
-    - name: Multiple attestations
+    - name: Create credentials with multiple attestations
       href: how-to-use-quickstart-multiple.md
-  - name: Find credentials in the Verified ID Network
-    href: how-use-vcnetwork.md
-  - name: Revoking a credential
-    href: how-to-issuer-revoke.md
-  - name: Register decentralized ID
-    href: how-to-register-didwebsite.md
-  - name: Verify domain ownership
-    href: how-to-dnsbind.md
-  - name: Rotate signing keys
-    href: how-to-rotate-keys.md
-  - name: Upgrade signing key
-    href: signing-key-upgrade.md
-  - name: Opt out of Verified ID service
-    href: how-to-opt-out.md
-  - name: Using the Authenticator
-    href: using-authenticator.md
-  - name: Using the Request Service REST API
-    href: get-started-request-api.md
-  - name: Verified ID partner ecosystem
+    - name: Use the Verified ID Network
+      href: how-use-vcnetwork.md
+    - name: Add did:web:path support
+      href: did-web-path.md
+    - name: Register a did:web identifier
+      href: how-to-register-didwebsite.md
+  - name: Partners
     items:
-    - name: IDV partners
-      href: idv-partners.md
-    - name: Services partners
-      href: services-partners.md
-    - name: Integration guidance
+    - name: Integrate Verified ID APIs
       href: integration-guidance.md
-- name: Samples
-  expanded: true
+    - name: Identity verification partner gallery
+      href: idv-partners.md
+    - name: Services partner gallery
+      href: services-partners.md
+  - name: End users
+    items:
+    - name: Use Verified ID with Microsoft Authenticator
+      href: using-authenticator.md
+    - name: Use Face Check
+      href: using-facecheck.md
+    - name: Review frequently asked questions
+      href: verifiable-credentials-faq.md
+- name: Plan and design
   items:
-  - name: Sample Applications
-    href: https://github.com/Azure-Samples/active-directory-verifiable-credentials
-  - name: End to End Demo
-    href: https://woodgroveemployee.azurewebsites.net/
-- name: Reference
-  expanded: true
+  - name: Plan an issuance solution
+    href: plan-issuance-solution.md
+  - name: Plan a verification solution
+    href: plan-verification-solution.md
+  - name: Customize credentials
+    href: credential-design.md
+  - name: Understand issuer service communication
+    href: issuer-openid.md
+  - name: Review supported standards
+    href: verifiable-credentials-standards.md
+- name: Training
   items:
-  - name: Issuance API specification
+  - name: Manage security controls for identity and access
+    href: https://learn.microsoft.com/training/modules/manage-security-controls-identity-access/
+  - name: Introduction to Microsoft Entra Verified ID
+    href: https://learn.microsoft.com/training/modules/manage-security-controls-identity-access/26-microsoft-entra-verified-id
+  - name: Configure Microsoft Entra Verified ID
+    href: https://learn.microsoft.com/training/modules/manage-security-controls-identity-access/27-configure-microsoft-entra-verified-id
+- name: API reference
+  items:
+  - name: Issuance request
     href: issuance-request-api.md
-  - name: Presentation API specification
+  - name: Presentation request
     href: presentation-request-api.md
-  - name: Rules and Display definition model
-    href: rules-and-display-definitions-model.md
-  - name: Admin API specification
+  - name: Admin API
     href: admin-api.md
-  - name: Verified ID Network API specification
+  - name: Verified ID Network API
     href: vc-network-api.md
+  - name: Rules and display definition
+    href: rules-and-display-definitions-model.md
   - name: API error codes
     href: error-codes.md
-  - name: Supported standards
-    href: verifiable-credentials-standards.md
-  - name: Enable did:web:path support
-    href: did-web-path.md
-- name: Resources
-  expanded: true
+- name: Samples and demos
   items:
-  - name: FAQ
+  - name: Issue credentials with a sample application
+    href: verifiable-credentials-configure-issuer.md
+  - name: Run the end-to-end Authenticator demo
+    href: using-authenticator.md
+  - name: Use the Face Check demo
+    href: using-facecheck.md
+  - name: Deploy the verified helpdesk sample
+    href: helpdesk-with-verified-id.md
+- name: Resources
+  items:
+  - name: What's new
+    href: whats-new.md
+  - name: Frequently asked questions
     href: verifiable-credentials-faq.md
-  - name: How to create a developer account
+  - name: Face Check pricing
+    href: verified-id-pricing.md
+  - name: Create a developer tenant
     href: how-to-create-a-free-developer-account.md
-  - name: Industry working group for all things Decentralized ID (DID)
-    href: https://identity.foundation
-  - name: DID marketing Overview
-    href: https://aka.ms/didexplained
-  - name: Decentralized identity blog
-    href: https://techcommunity.microsoft.com/tag/decentralized-identities
-  - name: Video overview of decentralized identities
-    href: https://www.youtube.com/watch?v=Whc9Im-U0Wg
-
-  

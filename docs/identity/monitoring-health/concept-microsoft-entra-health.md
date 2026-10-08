@@ -23,7 +23,7 @@ Scenario monitoring and SLA Attainment are available in the Microsoft Entra Heal
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Entra ID** > **Monitoring & health** > **Health**.
     - The **Health Monitoring** tab contains a summary of the signals and alerts on the available health scenarios.
-    - The **SLA Attainment** tab displays the user authentication availability for Microsoft Entra ID per month. For more informtion, see [SLA performance for Microsoft Entra ID](reference-sla-performance.md).
+    - The **SLA Attainment** tab displays the user authentication availability for Microsoft Entra ID per month. For more information, see [SLA performance for Microsoft Entra ID](reference-sla-performance.md).
 
 ## How Microsoft Entra Health monitoring (preview) works
 
@@ -33,7 +33,7 @@ Scenario Monitoring in Microsoft Entra Health is built on two key components: si
 
 1. These signals are fed into our anomaly detection service.
 
-1. When the anomaly detection service identifies a significant change to a pattern in the signal, it triggers an alert. 
+1. When the anomaly detection service identifies a significant change to a pattern in the signal, it triggers an alert.
 
 1. When the alert is triggered, an email notification is sent to a set of users, preselected by the tenant admin. This email notification prompts recipients to investigate and determine if there's a problem.
 
@@ -50,7 +50,7 @@ The following key scenarios can be monitored in Microsoft Entra Health:
 - User sign-in requests that require a compliant device through a Conditional Access policy.
 - User sign-in requests to applications using SAML authentication.
 
-The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. 
+The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities.
 
 :::image type="content" source="media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa.png" alt-text="Screenshot of the MFA scenario monitoring data." lightbox="media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa-expanded.png":::
 

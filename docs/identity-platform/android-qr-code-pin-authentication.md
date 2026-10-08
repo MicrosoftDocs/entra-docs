@@ -1,9 +1,7 @@
 ---
 title: Set up QR Code and PIN Authentication in Android App
 description: Learn how to configure your Android app to use QR code and PIN authentication using the Microsoft Authentication Library for Android.
-author: henrymbuguakiarie
 manager: pmwongera
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice:
 ms.topic: concept-article

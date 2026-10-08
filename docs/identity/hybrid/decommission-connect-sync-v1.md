@@ -1,7 +1,6 @@
 ---
 title: 'Decommissioning Azure AD Connect V1'
 description: This article describes Azure AD Connect V1 decommissioning and how to migrate to V2.
-
 documentationcenter: ''
 editor: ''
 ms.topic: concept-article

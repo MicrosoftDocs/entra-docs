@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. After you add Google as one of your user flow's sign-in options, customers can sign up and sign in to your application with a Google account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+By setting up federation with Google, you allow customers to sign in to your applications with their own Google accounts. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
 
 ## Prerequisites
 
@@ -94,24 +94,12 @@ To configure Google federation by using PowerShell, follow these steps:
 Use the client ID and client secret from the app you created in [Create a Google application](#create-a-google-application) step.
 
 
-## Add Google identity provider to a user flow
+## Enable users to sign in and sign up with the identity provider
 
-At this point, the Google identity provider has been set up in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the Google identity provider to a user flow:
-
-1. In your external tenant, browse to **Entra ID** > **External Identities** > **User flows**.
-1. Select the user flow where you want to add the Google identity provider.
-
-1. Under Settings, select **Identity providers.**
-
-1. Under **Other Identity Providers**, select **Google**.
-
-   <!-- ![Screenshot that shows how to add Google identity provider a user flow.](./media/sign-in-with-google/add-google-idp-to-user-flow.png)-->
-
-1. Select **Save**.
+After you configure Google as an identity provider, add it to a user flow to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md).
 
 ## Related content
 
-- [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
 - [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

@@ -2,11 +2,10 @@
 title: Configure Rootly for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Rootly.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 05/20/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Rootly so that I can control who has access to Rootly, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Rootly for Single sign-on with Microsoft Entra ID
 
@@ -106,7 +105,15 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Rootly SSO
 
-To configure single sign-on on **Rootly** side, you need to send the downloaded **Certificate (PEM)** and appropriate copied URLs from the application configuration to [Rootly support team](mailto:support@rootly.com). They set this setting to have the SAML SSO connection set properly on both sides. For more information, refer [this](https://docs.rootly.com/integrations/sso#sv-installation) link.
+Use the previously copied URL(s) and PEM Certificate to configure single sign-on on **Rootly** side.
+
+1. Identity Provider ID: `Microsoft Entra Identifier`
+1. Identity Login URL: `Your Login URL`
+1. Identity Logout Url: `Your Login URL`
+1. IDP Certificate: `Content of your Certificate PEM file`
+1. Domain Names: `Your company domain used for SSO`
+
+Now go ahead Enable `Enable and require SSO` and Save your SSO setup in Rootly.
 
 ### Create Rootly test user
 

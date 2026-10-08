@@ -2,9 +2,7 @@
 title: Enable MFA in an Angular SPA by Using Native Authentication JavaScript SDK
 description: Learn how to enable multifactor authentication in an Angular single-page application that uses native authentication JavaScript SDK
 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

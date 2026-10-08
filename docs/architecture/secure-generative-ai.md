@@ -1,11 +1,9 @@
 ---
 title: Secure Generative AI with Microsoft Entra
 description: Learn how to mitigate specific security challenges that Generative AI (Gen AI) poses to ensure organizational security with Microsoft Entra.
-author: gargi-sinha
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.topic: best-practice
 ms.date: 06/20/2025
-ms.reviewer: joflore
 ms.custom: sfi-ga-nochange
 #CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses, so that I can ensure organizational security with Microsoft Entra.
 ms.subservice: architecture
@@ -125,4 +123,4 @@ Ideally, all users follow access policies to secure access to organizational res
 
 - [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) helps support security professionals in end-to-end scenarios such as incident response, threat hunting, intelligence gathering, and posture management.
 - [Microsoft Purview Information Barriers](/purview/information-barriers) are policies that can prevent individuals or groups from communicating with each other. [Information barriers in Microsoft Teams](/purview/information-barriers-teams) can determine and prevent unauthorized collaborations.
-- For [Microsoft 365 Copilot requirements](/microsoft-365-copilot/microsoft-365-copilot-requirements), review [Enterprise data protection in Copilot for Microsoft 365 and Microsoft Copilot](/copilot/microsoft-365/enterprise-data-protection#what-is-enterprise-data-protection-in-copilot-for-microsoft-365-and-microsoft-copilot).
+- For [Microsoft Copilot requirements](/microsoft-365-copilot/microsoft-365-copilot-requirements), review [Enterprise data protection in Copilot for Microsoft 365 and Microsoft Copilot](/copilot/microsoft-365/enterprise-data-protection#what-is-enterprise-data-protection-in-copilot-for-microsoft-365-and-microsoft-copilot).

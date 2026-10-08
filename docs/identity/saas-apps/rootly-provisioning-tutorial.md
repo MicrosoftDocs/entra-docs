@@ -1,14 +1,11 @@
 ---
 title: Configure Rootly for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Rootly.
-author: jeevansd
-manager: pmwongera
 ms.topic: how-to
 ms.date: 04/16/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Rootly so that I can streamline the user management process and ensure that users have the appropriate access to Rootly.
----
+--- 
 
 # Configure Rootly for automatic user provisioning with Microsoft Entra ID
 
@@ -77,7 +74,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the **Tenant URL** field, enter your Rootly Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Rootly. If the connection fails, ensure your Rootly account has the required admin permissions and try again.
 
    > [!NOTE]
-   > Enter `https://docs.rootly.com/integrations/scim` in the **Tenant URL**.
+   > Enter `https://rootly.com/scim` in the **Tenant URL**.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 

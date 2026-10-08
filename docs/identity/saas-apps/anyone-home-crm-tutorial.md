@@ -2,11 +2,10 @@
 title: Configure Anyone Home CRM for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Anyone Home CRM.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Anyone Home CRM so that I can control who has access to Anyone Home CRM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Anyone Home CRM for Single sign-on with Microsoft Entra ID
 

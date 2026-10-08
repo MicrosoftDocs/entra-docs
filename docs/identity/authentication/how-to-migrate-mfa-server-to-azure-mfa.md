@@ -4,8 +4,7 @@ description: Step-by-step guidance to migrate from MFA Server on-premises to Mic
 ms.custom: has-azure-ad-ps-ref, sfi-ga-nochange
 ms.topic: how-to
 ms.date: 03/04/2025
-author: Gargi-Sinha
-ms.reviewer: jpettere
+ms.reviewer: jpettere, gasinh
 ---
 # Migrate from MFA Server to Microsoft Entra multifactor authentication
 

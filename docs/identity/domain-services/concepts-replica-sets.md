@@ -22,6 +22,9 @@ You create each replica set in a virtual network. Each virtual network must be p
 
 All replica sets are placed in the same Active Directory site. As the result, all changes are propagated using intrasite replication for quick convergence.
 
+> [!IMPORTANT]
+> Microsoft Entra Domain Services replica sets require network connectivity between all virtual networks hosting replica sets. Replica sets are deployed within a single Active Directory site and rely on a fully meshed virtual network topology to support directory replication. Network architectures that don't provide direct connectivity between replica-set virtual networks can cause authentication, domain controller communication, and Netlogon-related issues for applications and services that depend on Microsoft Entra Domain Services. Review replica-set networking requirements before deploying workloads across multiple regions.
+
 > [!NOTE]
 > It's not possible to define separate sites and define replication settings between replica sets.
 

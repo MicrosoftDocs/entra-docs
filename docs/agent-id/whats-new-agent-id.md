@@ -1,9 +1,6 @@
 ---
 title: What's new in Microsoft Entra Agent ID
 description: Learn about new features and updates in Microsoft Entra Agent ID at general availability, including non-Microsoft integrations, migration guides, and enterprise governance.
-author: shlipsey3
-ms.author: sarahlipsey
-ms.service: entra
 ms.topic: whats-new
 ms.date: 05/01/2026
 ai-usage: ai-assisted
@@ -31,7 +28,7 @@ Microsoft Entra Agent ID introduces new identity constructs and authentication p
 - [AI-guided setup](agent-id-ai-guided-setup.md) (New) - Automate onboarding with an AI coding agent that walks you through blueprint creation, credential configuration, and agent identity provisioning.
 - [Agent identity deletion](concept-agent-identity-deletion.md) (New) - Learn about the automated cascade cleanup process and soft-delete functionality for agent identities.
 - [Authentication with the Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md) (New) - Overview of the sidecar pattern for agent authentication.
-- [Configure SDK for agent identities](microsoft-entra-sdk-for-agent-identities.md) - SDK configuration for token acquisition.
+- [Configure Microsoft Entra ID Auth SDK (sidecar) for agent identities](microsoft-entra-sdk-for-agent-identities.md) - SDK configuration for token acquisition.
 - [Run the sidecar for local development](sidecar-local-development.md) (New) - Local development setup for the Auth SDK.
 - [Validate agent tokens in a downstream API](how-to-validate-agent-tokens-downstream-api.md) (New) - Token validation guidance for APIs that receive agent tokens.
 - [Configure non-Microsoft agents with Agent ID](configure-third-party-agents.md) (New) - Integration patterns (sidecar and federation) for platforms like AWS, GCP, and n8n.
@@ -58,7 +55,6 @@ Conditional Access and ID Protection features extend Microsoft Entra Agent ID to
 
 - [Conditional Access for agents](/entra/identity/conditional-access/agent-id) (Updated)- Improved guidance and detailed scenarios for Conditional Access policies, plus new templates for agent-specific policies.
 - [Block access for high-risk agent identities](../identity/conditional-access/policy-agent-block-high-risk.md) (New) - Conditional Access template to block sign-ins from risky agent identities.
-- [Block access for high-risk agent's user account](../identity/conditional-access/policy-agent-user-account.md) (New) - Conditional Access template to block sign-ins from risky agents' user accounts.
 - [Autonomous agent access policy](../identity/conditional-access/policy-autonomous-agents.md) (New) - Conditional Access template for autonomous agents without user context.
 - [On behalf of agent access policy](../identity/conditional-access/policy-on-behalf-of-agents.md) (New) - Conditional Access template for agents acting on behalf of users.
 

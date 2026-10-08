@@ -4,6 +4,7 @@ titleSuffix: Microsoft Entra Agent ID
 description: This article explains how access packages provide governance for agent identity access to resources.
 ms.date: 05/01/2026
 ms.topic: concept-article
+ 
 
 #customer-intent: As an IT admin, I want to configure access packages for agent identities so that I can ensure their access is intentional, auditable, and time-bound.
 ---
@@ -19,6 +20,7 @@ Before creating an access package, confirm the following prerequisites are met i
 1. Agents are using Microsoft Entra Agent ID agent identities, or service principals, for authorization to access resources.
 1. The authorization is one of:
    - Agents need their identity to be assigned OAuth *application permissions* for a target resource, such as Microsoft Graph or an application, to be able to access a target resource's APIs.
+   - Agents need their identity to be assigned OAuth *delegated permissions* for a target resource, such as Microsoft Graph or an application, to be able to assist a user when accessing a target resource's APIs.
    - Agents need their identity to be assigned as members of groups.
    - Agents need their identity to be assigned to directory roles. The allowable roles are listed in [Microsoft Entra roles allowed for agents](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents).
 2. You have or can create an entitlement management catalog suitable to hold those resources. The access package that you'll be creating, and any resources included in it, will be added to the catalog. For more information, see [create a catalog](/entra/id-governance/entitlement-management-catalog-create).
@@ -45,7 +47,7 @@ As agent identities and service principals can't be added through access package
 1. Select **Next: Resource roles**. On the **Resource roles** tab, you select the resource roles to include in the access package. Access packages for agent identities can have security group memberships, directory roles, or API permissions as resource roles. For more information, see [add a group](/entra/id-governance/entitlement-management-access-package-resources#add-a-group-or-team-resource-role), [add a Microsoft Entra role](/entra/id-governance/entitlement-management-access-package-resources#add-a-microsoft-entra-role-assignment), and [add an API permission](/entra/id-governance/entitlement-management-access-package-resources#add-an-api-permission-preview). Don't add application roles, SAP roles, or SharePoint Online site roles to an access package for agent identities.
 
     > [!TIP]
-    > If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](/entra/id-governance/entitlement-management-access-package-resources) later.
+    > If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](/entra/id-governance/entitlement-management-access-package-resources) later. For API permissions, resource ownership validation occurs both when you onboard permissions to an access package and when you add them to an access package. This validation helps ensure that only authorized resource owners can introduce or expand access to API permissions through access packages.
 
 1. Select **Next: Requests**. On the **Requests** tab, you create the first policy to specify who can request the access package. in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**. In **Select specific scope**, select the option of **All agents**.
 
@@ -75,6 +77,24 @@ Agents can then be assigned access packages through three different request path
 - An administrator can [directly assign the agent identity or agent's user account to the access package](/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity).
 
 After submission, the access request is routed to designated approvers based on the access package policy configuration.
+
+## Request an access package on behalf of another user
+
+Users with the appropriate permissions can request access packages on behalf of another user in their organization.
+
+1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com/). For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
+
+1. On the My Access Portal page, select **Access packages**.
+
+1. On the Access packages page, locate the access package you want to request for a direct report and select **Request**.
+
+1. On the Request pane under **Request details**, select requesting for **Others**.
+
+1. Select **Anyone in your organization** and search for the user you want to submit the request for.
+
+   [![Screenshot of selecting Anyone in your organization when requesting an access package on behalf of another user.](../id-governance/media/entitlement-management-request-behalf/request-access-package-for-anyone.png)](../id-governance/media/entitlement-management-request-behalf/request-access-package-for-anyone.png#lightbox)
+
+1. Continue with the remaining request steps to complete the access package request on behalf of the user.
 
 ## Access assignment lifecycle
 

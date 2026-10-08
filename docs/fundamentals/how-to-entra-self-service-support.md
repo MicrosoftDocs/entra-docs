@@ -1,8 +1,6 @@
 ---
 title: Microsoft Entra Self-Service Support
 description: Discover how Microsoft Entra Self-Service Support uses AI and Microsoft Graph data to analyze product logs, resolve issues, and enhance IT admin workflows.
-author: shlipsey3
-ms.author: sarahlipsey
 ms.reviewer: tychusnyanga
 ms.date: 03/09/2026
 ms.topic: how-to

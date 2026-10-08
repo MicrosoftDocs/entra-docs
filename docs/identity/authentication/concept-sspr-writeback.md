@@ -46,6 +46,9 @@ To get started with SSPR writeback, complete either one or both of the following
 
 You can deploy Microsoft Entra Connect and cloud sync side-by-side in different domains to target different sets of users. This helps existing users continue to writeback password changes while adding the option in cases where users are in disconnected domains because of a company merger or split. Microsoft Entra Connect and cloud sync can be configured in different domains so users from one domain can use Microsoft Entra Connect while users in another domain use cloud sync. Cloud sync can also provide higher availability because it doesn't rely on a single instance of Microsoft Entra Connect. For a feature comparison between the two deployment options, see [Comparison between Microsoft Entra Connect and cloud sync](~/identity/hybrid/cloud-sync/connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync). 
 
+> [!NOTE]
+> When Microsoft Entra Connect Cloud Sync and Microsoft Entra Connect Sync coexist and are configured for the same domain, all password writeback operations for users synchronized from that domain are processed by the Cloud Sync agent.
+
 ## How password writeback works
 
 When a user account configured for federation, password hash synchronization (or, in the case of a Microsoft Entra Connect deployment, pass-through authentication) attempts to reset or change a password in the cloud, the following actions occur:

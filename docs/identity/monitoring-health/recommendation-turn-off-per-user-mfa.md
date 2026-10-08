@@ -4,7 +4,6 @@ description: Learn why you should turn off per user MFA in Microsoft Entra ID wi
 ms.topic: how-to
 ms.date: 04/28/2026
 ms.reviewer: deawari
-
 # Customer intent: As an IT admin, I need to know how many users in my tenant are using per-user MFA so I can make a plan to switch to Conditional Access MFA.
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: Configure Microsoft Entra External ID with Azure Web Application Firewall
 description: Learn how to configure Microsoft Entra External ID with Azure Web Application Firewall.
-author: gargi-sinha
-ms.author: gasinh
 ms.reviewer: kengaderdus
 ms.topic: how-to
 ms.custom: it-pro

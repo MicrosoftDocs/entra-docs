@@ -1,9 +1,7 @@
 ---
 title: Claims customization
 description: Learn about the custom claims policy and claims mapping policy types, which are used to modify the claims emitted in tokens in the Microsoft identity platform.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.custom:
 ms.date: 06/02/2023
 ms.reviewer: ludwignick

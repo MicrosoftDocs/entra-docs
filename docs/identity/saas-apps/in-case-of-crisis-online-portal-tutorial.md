@@ -2,11 +2,10 @@
 title: Configure In Case of Crisis - Online Portal for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Online Portal.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Online Portal so that I can control who has access to In Case of Crisis - Online Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure In Case of Crisis - Online Portal for Single sign-on with Microsoft Entra ID
 

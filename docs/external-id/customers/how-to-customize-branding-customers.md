@@ -11,6 +11,9 @@ ms.custom: it-pro, sfi-image-nochange
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
+> [!NOTE]
+> The branding customizations described in this article apply to **browser-delegated authentication**, where users sign in through a Microsoft-hosted sign-in page. If you use [native authentication](concept-choose-authentication-approach.md), you own the sign-in UI and manage branding directly in your application code.
+
 After creating a new external tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
 You can also create user flows programmatically using the Company Branding Graph API.
 

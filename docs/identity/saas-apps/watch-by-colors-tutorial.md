@@ -1,12 +1,11 @@
 ---
 title: Configure Watch by Colors for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Watch by Colors.
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Watch by Colors so that I can control who has access to Watch by Colors, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure Watch by Colors for Single sign-on with Microsoft Entra ID
 

@@ -2,7 +2,6 @@
 title: 'Phase 2: Classify apps and plan pilot'
 description: This article describes phase 2 of planning migration of applications from AD FS to Microsoft Entra ID
 ms.topic: concept-article
-
 ms.date: 08/25/2024
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management

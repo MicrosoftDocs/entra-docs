@@ -5,8 +5,6 @@ ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 04/29/2026
-author: FaithOmbongi
-ms.author: ombongifaith
 ---
 
 Assign the Customer Delegated Admin Relationship Administrator role to users who need to do the following tasks:

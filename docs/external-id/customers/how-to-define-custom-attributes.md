@@ -15,6 +15,9 @@ ai-usage: ai-assisted
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Collect custom user attributes during B2B collaboration sign-up](../user-flow-add-custom-attributes.md).
 
+> [!NOTE]
+> This article covers attribute collection for **browser-delegated authentication** using user flows. If you use **native authentication**, you collect attributes through the MSAL SDK with the [native authentication user attribute builder](/entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json). For help choosing an approach, see [Choose an authentication approach](concept-choose-authentication-approach.md).
+
 If your app requires more information than the built-in user attributes provide, you can add your own attributes. These attributes are called *custom user attributes*.
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.

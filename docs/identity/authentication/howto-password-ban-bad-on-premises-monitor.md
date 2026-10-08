@@ -4,8 +4,6 @@ description: Learn how to monitor and review logs for Microsoft Entra Password P
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.reviewer: jsimmons
-
-
 ms.custom:
 ---
 # Monitor and review logs for on-premises Microsoft Entra Password Protection environments

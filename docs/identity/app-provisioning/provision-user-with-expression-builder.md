@@ -86,6 +86,7 @@ The process checks for specific users based on UPN and applies a custom modifica
 
 - **Test Extensively:** Always test expressions in a non-production environment to verify functionality. 
 - **Character Limitations:** Ensure the transformed username doesn’t exceed character limits specified by the application (for example, GitHub has a 39-character limit). 
+- **Expression Limitations:** The maximum supported length for a single attribute mapping expression is **10,000 characters**.
 - **Documentation:** Maintain clear documentation of expressions and changes for troubleshooting and future reference. 
 
 ## Tools and steps for testing 

@@ -3,8 +3,6 @@
 metadata:
   title: Verify Microsoft Entra hybrid join state
   description: Verify configurations for Microsoft Entra hybrid joined devices
-  author: owinfreyATL
-  ms.author: owinfrey
   ms.reviewer: sandeo
   ms.date: 11/25/2024
   ms.service: entra-id

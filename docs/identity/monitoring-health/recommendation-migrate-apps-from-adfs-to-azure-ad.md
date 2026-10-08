@@ -1,7 +1,6 @@
 ---
 title: Recommendation to migrate applications away from AD FS
 description: Learn about the recommendation to migrate application authentication from AD FS to Microsoft Entra ID
-
 ms.topic: how-to
 ms.date: 04/28/2026
 ms.reviewer: jadedsouza

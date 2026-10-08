@@ -2,7 +2,7 @@
 title: How to use workbooks with Global Secure Access
 description: Workbooks provide rich, interactive reports for Global Secure Access. Learn how to integrate workbooks with log analytics for Global Secure Access.
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 06/04/2026
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin, I need to learn how to use workbooks with Global Secure Access so I can better manage the solution.
@@ -37,6 +37,7 @@ The Global Secure Access categories are:
 |Audit logs (Preview) | `AuditLogs` |
 |Enriched Microsoft 365 logs (Preview) |`EnrichedOffice365AuditLogs`   |
 |Remote Network Health Logs (Preview) |`RemoteNetworkHealthLogs` |
+|Generative AI Insights logs (Preview) |`NetworkAccessGenerativeAIInsights` |
 
 :::image type="content" source="media/how-to-use-workbooks/add-diagnostic-setting.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the Global Secure Access logs categories selected." lightbox="media/how-to-use-workbooks/add-diagnostic-setting.png":::
 

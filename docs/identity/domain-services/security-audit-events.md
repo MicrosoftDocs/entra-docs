@@ -196,6 +196,39 @@ AADDomainServicesAccountLogon
 | summarize count()
 ```
 
+### Sample query 7
+
+View all Kerberos ticket-granting (event ID 4768) and service ticket (event ID 4769) events that used RC4 encryption in the last seven days, to identify workloads and service accounts that still rely on RC4:
+
+```Kusto
+let EncryptionTypeFromHex = (hex_value: int) {
+    case(
+        hex_value == 0x1, "DES-CRC",
+        hex_value == 0x3, "DES-MD5",
+        hex_value == 0x11, "AES128-SHA96",
+        hex_value == 0x12, "AES256-SHA96",
+        hex_value == 0x13, "AES128-SHA256",
+        hex_value == 0x14, "AES256-SHA384",
+        hex_value == 0x17, "RC4",
+        "Unknown"
+    )
+};
+AADDomainServicesAccountLogon
+| where TimeGenerated >= ago(7d)
+| where OperationName has "4768" or OperationName has "4769"
+| parse ResultDescription with * "Ticket Encryption Type:\t" EncryptionType "\n" *
+| where EncryptionType has "0x17"
+| parse ResultDescription with * "Account Name:\t\t" AccountName "\n" *
+| parse ResultDescription with * "Service Name:\t\t" ServiceName "\n" *
+| extend EncryptionTypeName = EncryptionTypeFromHex(toint(EncryptionType))
+| project TimeGenerated, OperationName, AccountName, ServiceName, EncryptionType, EncryptionTypeName
+| summarize Count = count() by AccountName, ServiceName, EncryptionType, EncryptionTypeName
+| order by Count desc
+```
+
+> [!TIP]
+> Encryption type `0x17` indicates RC4-HMAC. Use this query to identify RC4 dependencies before disabling RC4 in your managed domain's [security settings](secure-your-domain.md). For more information about the RC4 deprecation timeline, see [CVE-2026-20833](https://www.cve.org/CVERecord?id=CVE-2026-20833).
+
 ## Audit security and DNS event categories
 
 Domain Services security and DNS audits align with traditional auditing for traditional AD DS domain controllers. In hybrid environments, you can reuse existing audit patterns so the same logic may be used when analyzing the events. Depending on the scenario you need to troubleshoot or analyze, the different audit event categories need to be targeted.

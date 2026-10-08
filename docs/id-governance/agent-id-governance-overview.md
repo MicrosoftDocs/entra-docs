@@ -2,7 +2,8 @@
 title: Governing Agent Identities
 description: This article describes governing agent identities.
 ms.topic: concept-article #Required; leave this attribute/value as-is.
-ms.date: 10/25/2025
+ms.date: 06/05/2026
+ai-usage: ai-assisted
 
 #Customer Intent: As an Identity Governance administrator, I want to learn how to use Microsoft Entra to manage lifecycle and access to resources for agent identities within my organization.
 ---
@@ -15,7 +16,7 @@ This allows agent identities to be governed with Microsoft Entra features in the
 
 ## License requirements
 
-[!INCLUDE [entra-agent-id-license](../includes/licensing-agent-id.md)]
+[!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
 ## Agent identities basics
 
@@ -46,7 +47,7 @@ The agent identity and the agent user allow AI agents to take on digital identit
 When created, agent identities have limited permissions, such as OAuth 2 delegated permission scopes [inherited from their parent agent identity blueprint](../agent-id/configure-inheritable-permissions-blueprints.md). In addition, agent identities can have resource access assigned to them directly via access packages. Agents can request an access package for own agent IDs, or have their owner or sponsor request one on their behalf. With access packages, you're able to assign agent identities access to the following resources:
 
 - Security Group memberships
-- [Application OAuth API permissions](../identity/enterprise-apps/assign-agent-identities-to-applications.md), including Graph application permissions
+- [OAuth API permissions](../identity/enterprise-apps/assign-agent-identities-to-applications.md), delegated and application permissions for Microsoft Graph and applications
 - [Microsoft Entra roles](../agent-id/authorization-agent-id.md#microsoft-entra-role-assignments-for-agent-identities)
 
 To use access packages for agent identities, configure an access package with the required policy settings. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents**.
@@ -65,6 +66,12 @@ After submission, the access request is routed to designated approvers based on 
 When the agent identity has received an access package assignment with an expiry date, and if a sponsor is set on the agent identity, as the expiry date approaches, the sponsor receives notifications about the pending expiration. The sponsor then has two options: they can request an extension of the access package (if permitted by policy), or they can allow the access package assignment to expire. If the sponsor requests an extension, this request can trigger a new approval cycle, where approvers again confirm whether continued access is appropriate. If the sponsor takes no action, the access package assignment automatically expires on its end date, and the agent identity loses access to the target resources.
 
 For a guide on creating an access package for agents, see: [access packages for agent identities in Microsoft Entra Agent ID](../agent-id/agent-access-packages.md). For a guide on assigning identities to an existing access package, see: [View, add, and remove assignments for an access package in entitlement management](entitlement-management-access-package-assignments.md).
+
+## Conditional Access for agent identities
+
+Entitlement management controls which resources an agent identity can be assigned. To also control the conditions under which an agent identity can access those resources, you can apply Conditional Access to agent identities. Conditional Access policies evaluate agent context and risk—including agent identity risk from Microsoft Entra ID Protection—before granting access. You can apply these policies at the agent identity blueprint level so that all agent identities created from a blueprint inherit them.
+
+For more information, see [Conditional Access for agents](../identity/conditional-access/agent-id.md) and [Identity Protection for agents](../id-protection/concept-risky-agents.md).
 
 ## Management of agents
 

@@ -1,11 +1,10 @@
 ---
 title: Tutorial to configure Datawiza to enable Microsoft Entra multifactor authentication  and single sign-on to Oracle Hyperion EPM
 description: Enable Microsoft Entra multifactor authentication and single sign-on for an Oracle Hyperion EPM using Datawiza Access Proxy (DAP)
-author: gargi-sinha
 manager: martinco
 ms.topic: tutorial
 ms.date: 11/01/2023
-ms.author: gasinh
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM, so that I can enhance the security of user sign-ins and provide seamless access to the application.
@@ -48,7 +47,7 @@ Learn about the service provider-initiated flow in [Datawiza with Microsoft Entr
 Ensure the following prerequisites are met:
 
 * An Azure subscription
-  * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free)
+  * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * A Microsoft Entra tenant linked to the Azure subscription
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](../../fundamentals/create-new-tenant.md)
 * Docker and Docker Compose

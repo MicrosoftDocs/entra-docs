@@ -1,9 +1,7 @@
 ---
 title: "What's new in the Microsoft identity platform docs"
 description: "New and updated articles in the Microsoft identity platform documentation."
-author: henrymbuguakiarie
 manager: pmwongera
-ms.author: henrymbugua
 ms.date: 01/10/2026
 ms.service: identity-platform
 

@@ -39,11 +39,10 @@ The logic of this diagram is as follows:
 1.  **Is the access package hidden?** This checks the specific "hidden" setting directly on the access package's properties (under "Edit"). If set to "Yes," the package is hidden from the browse/search view, regardless of policies.
 
 1.  **Does at least one enabled policy exist for the access package where 'Who can request' matches the end-user?** This is the final, crucial policy check. The system looks for *at least one policy* associated with the access package that meets ALL these criteria:
-    1.  The policy itself is enabled (the 'Enable new requests' setting in the policy UI is toggled on).
 
-    1.  The policy's "*Who can request*" setting logically includes the current user based on their identity, group memberships, or connected organization affiliation.
+    1. The policy's "*Who can get access*" setting logically includes the current user based on their identity, group memberships, or connected organization affiliation. Policies set to "None (Administrator direct assignments only)" don't make a package visible in the My Access portal.
 
-    1.  Policies set to "None (Administrator direct assignments only)" don't make a package visible for Browse or searching.
+    1. The policy's '*Who can request access*' setting must have the 'Self' option checked so users can request access for themselves. If a manager is trying to request access for one of their direct reports the 'Manager' option must be checked.
 
 If **all** these checks pass, then the access package is Visible in the user's browse/search view. Otherwise, it's not visible.
 

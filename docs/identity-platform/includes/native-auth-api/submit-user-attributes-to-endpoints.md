@@ -1,11 +1,9 @@
 ---
-author: kengaderdus
 manager: dougeby
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: include
 ms.date: 04/09/2024
-ms.author: kengaderdus
 ---
 
 In the Microsoft Entra admin center, you can configure user attributes as required or optional. This configuration determines how Microsoft Entra responds when you make a call to its endpoints. Optional attributes are not mandatory for the sign-up flow to complete. Therefore, when all attributes are optional, they must be submitted before the username is verified. Otherwise, the sign-up completes without the optional attributes.

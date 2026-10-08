@@ -4,10 +4,7 @@ description: Manage your device's local administrator password with Microsoft En
 
 ms.topic: how-to
 ms.date: 01/16/2024
-
-ms.author: sandeo
-author: sandeo-MSFT
-ms.reviewer: joflore
+ms.reviewer: joflore, sandeo
 ms.custom: references_regions
 ---
 # Windows Local Administrator Password Solution in Microsoft Entra ID

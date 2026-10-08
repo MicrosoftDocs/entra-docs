@@ -2,11 +2,10 @@
 title: Configure MyWorkDrive for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and MyWorkDrive.
 
-ms.reviewer: celested
 ms.topic: how-to
 ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and MyWorkDrive so that I can control who has access to MyWorkDrive, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 # Configure MyWorkDrive for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate MyWorkDrive with Microsoft Entra ID. When you integrate MyWorkDrive with Microsoft Entra ID, you can:
@@ -81,9 +80,9 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
     > These values aren't real. Update these values with the actual Reply URL and Sign-On URL. Input your own company's MyWorkDrive Server host name, such as: 
     > 
-    > Reply URL: `https://yourserver.yourdomain.com/SAML/AssertionConsumerService.aspx`
+    > Reply URL: `https://yourserver.contoso.com/SAML/AssertionConsumerService.aspx`
     > 
-    > Sign-on URL:`https://yourserver.yourdomain.com/Account/Login-saml`
+    > Sign-on URL:`https://yourserver.contoso.com/Account/Login-saml`
     > 
     > Contact [MyWorkDrive support team](mailto:support@myworkdrive.com) if you're unsure how to setup your own host name and TLS/SSL certificate for these values.
 

@@ -1,7 +1,6 @@
 ---
 title: 'Accounts for integrating with Active Directory'
 description: This article describes the required accounts for each of the synchronization tools.
-
 ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025

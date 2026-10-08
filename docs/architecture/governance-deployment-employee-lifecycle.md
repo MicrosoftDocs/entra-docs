@@ -1,11 +1,10 @@
 ---
 title: Microsoft Entra ID Governance deployment guide for employee lifecycle automation
 description: Learn how to deploy employee lifecycle automation in Microsoft Entra ID Governance.
-author: gargi-sinha
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 04/17/2025
-ms.author: gasinh
+ms.reviewer: gasinh
 
 #customer intent: My goal is to deploy Microsoft Entra ID Governance in my test and production environments.
 ---
@@ -167,7 +166,6 @@ The [Microsoft Entra ID application gallery](../identity/saas-apps/tutorial-list
 * [Salesforce](/azure/active-directory/saas-apps/salesforce-provisioning-tutorial)
 * [Box](/azure/active-directory/saas-apps/box-userprovisioning-tutorial)
 * [Cisco Webex](/azure/active-directory/saas-apps/cisco-webex-provisioning-tutorial)
-* [Workplace by Facebook](/azure/active-directory/saas-apps/workplace-by-facebook-provisioning-tutorial)
 * [Zoom](/azure/active-directory/saas-apps/zoom-provisioning-tutorial)
 
 ### (Optional) Provision to on-premises apps

@@ -1,11 +1,9 @@
 ---
 title: Plan a Tenant Restrictions v1 Migration to Tenant Restrictions v2
 description: Learn about tenant-level restrictions and controls for users, groups, and applications, along with policy management in a cloud-based portal.
-author: gargi-sinha
 ms.topic: how-to
 ms.date: 02/12/2024
-ms.author: gasinh
-ms.reviewer: jebley
+ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps-article, sfi-image-nochange
 #customer intent: As an IT admin responsible for managing access to cloud services, I want to restrict access to approved resources for users in my organization, so that I can ensure security and compliance.

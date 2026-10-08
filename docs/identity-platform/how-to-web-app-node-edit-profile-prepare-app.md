@@ -1,9 +1,7 @@
 ---
 title: Set up a Node.js web application for profile editing
 description: Learn how to set up your Node.js web application for profile editing with multifactor authentication protection in your external tenant
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025

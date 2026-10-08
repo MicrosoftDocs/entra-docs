@@ -3,7 +3,7 @@ title: 'Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID'
 description: This article describes the prerequisites and hardware requirements you need for cloud sync.
 
 ms.topic: how-to
-ms.date: 09/29/2025
+ms.date: 07/27/2026
 ms.subservice: hybrid-cloud-sync
 ---
 
@@ -19,14 +19,7 @@ You need the following to use Microsoft Entra Cloud Sync:
 
 - A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
 
-- Microsoft Entra Cloud Sync agent must be installed on a domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016. We recommend Windows Server 2022. You can deploy Microsoft Entra Cloud Sync on Windows Server 2016, but since it's in extended support, you might need [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for this configuration. Installing on unsupported versions of Windows Server may cause service failures or unexpected behavior.
-
-
-  > [!IMPORTANT]
-  > **Windows Server 2025 is NOT supported.** 
-  > There is a known issue on Windows Server 2025 that can cause Microsoft Entra Cloud Sync to encounter synchronization problems. If you upgraded to Windows Server 2025, make sure you have installed [October 20, 2025 - KB5070773](https://support.microsoft.com/topic/october-20-2025-kb5070773-os-build-26100-6901-out-of-band-f8effaa1-1c73-41e5-bcb3-e58a46c7601e) update, or later. After installing this update, restart the server for the changes to take effect. 
-  > Windows Server 2025 support for Microsoft Entra Cloud Sync is planned for a future release.
-  
+- Microsoft Entra Cloud Sync agent must be installed on a domain-joined server. We recommend using Windows Server 2025 or Windows Server 2022. You can also deploy Microsoft Entra Cloud Sync on older Windows Server versions that are in extended support; however, support for this configuration may require [a paid support program](/lifecycle/policies/fixed#extended-support).
 
 - This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
 
@@ -62,7 +55,7 @@ A group Managed Service Account is a managed domain account that provides automa
 - The Active Directory schema in the gMSA domain's forest needs to be updated to Windows Server 2012 or later.
 - [PowerShell RSAT modules](/windows-server/remote/remote-server-administration-tools) on a domain controller.
 - At least one domain controller in the domain must be running Windows Server 2012 or later.
-- A domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016 for the agent installation.
+- A domain-joined server that runs Windows Server 2025, Windows Server 2022, Windows Server 2019, or Windows Server 2016 for the agent installation.
 
 ### Custom gMSA account
 
@@ -85,7 +78,7 @@ For more information on how to prepare your Active Directory for group Managed S
 
 ## In the Microsoft Entra admin center
 
-1. Create a cloud-only Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only Hybrid Identity Administrator account](~/fundamentals/how-to-create-delete-users.yml). Finishing this step is critical to ensure that you don't get locked out of your tenant.
+1. Create a cloud-only Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant if your on-premises services fail or become unavailable. Learn about how to [add a cloud-only Hybrid Identity Administrator account](~/fundamentals/how-to-create-delete-users.md). Finishing this step is critical to ensure that you don't get locked out of your tenant.
 1. Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ## In your directory in Active Directory
@@ -94,7 +87,7 @@ Run the [IdFix tool](/microsoft-365/enterprise/set-up-directory-synchronization)
 
 ## In your on-premises environment
 
-1. Identify a domain-joined host server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016 with a minimum of 4-GB RAM and .NET 4.7.1+ runtime.
+1. Identify a domain-joined host server that runs Windows Server 2025, Windows Server 2022, Windows Server 2019, or Windows Server 2016 with a minimum of 4-GB RAM and .NET 4.7.1+ runtime.
 2. The PowerShell execution policy on the local server must be set to Undefined or RemoteSigned.
 3. If there's a firewall between your servers and Microsoft Entra ID, see [Firewall and proxy requirements](#firewall-and-proxy-requirements).
 

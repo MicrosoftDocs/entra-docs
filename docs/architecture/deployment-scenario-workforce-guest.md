@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra Suite deployment scenario - Workforce and guest lifecycle
 description: Configure Microsoft Entra Suite products for hiring new remote employees and providing them with secure and seamless access to apps and resources.
-ms.author: gasinh
-author: gargi-sinha
+ms.reviewer: gasinh
 ms.topic: concept-article
 ms.date: 06/13/2024
 ms.custom: sfi-ga-nochange, sfi-image-nochange

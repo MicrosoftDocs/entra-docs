@@ -1,7 +1,6 @@
 ---
 title: Unexpected Error When Performing Consent to an Application
 description: This article discusses errors that can occur during the process of consenting to an application and what you can do about them.
-
 ms.topic: troubleshooting
 ms.date: 02/27/2025
 ms.reviewer: phsignor

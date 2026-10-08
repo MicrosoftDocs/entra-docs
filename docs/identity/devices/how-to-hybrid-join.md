@@ -4,7 +4,6 @@ description: Learn how to configure Microsoft Entra hybrid join.
 
 ms.topic: how-to
 ms.date: 06/27/2025
-
 ms.reviewer: sandeo
 ---
 # Configure Microsoft Entra hybrid join

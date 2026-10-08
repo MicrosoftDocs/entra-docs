@@ -1,8 +1,6 @@
 ---
-author: kengaderdus
 ms.topic: include
 ms.date: 05/05/2023
-ms.author: kengaderdus
 ---
 To identify your app as a public client, follow these steps:
 

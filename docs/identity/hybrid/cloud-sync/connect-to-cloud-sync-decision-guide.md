@@ -1,23 +1,21 @@
 ---
-title: 'Migrate from Microsoft Entra Connect to Cloud Sync: Decision Guide'
-description: 'Compare Microsoft Entra Connect and Cloud Sync technical capabilities to make informed migration decisions. Understand feature differences, limitations, and migration timing.'
+title: Microsoft Entra Cloud Sync migration decision guide
+description: Compare Microsoft Entra Connect and Cloud Sync capabilities, including device synchronization, to assess migration readiness and plan next steps.
 ms.topic: concept-article
-ms.date: 02/17/2025
+ms.date: 10/06/2026
 ms.subservice: hybrid-cloud-sync
-author: omondiatieno
-ms.author: jomondi
-ms.custom: customer-intent
+ms.custom: customer-intent, msecd-doc-authoring-1023
 
-#customer-intent: As an IT architect or administrator, I want to evaluate migrating from Microsoft Entra Connect to Cloud Sync so that I can make informed decisions about modernizing my hybrid identity infrastructure.
+#customer intent: As an IT architect or administrator, I want to evaluate migrating from Microsoft Entra Connect to Cloud Sync so that I can make informed decisions about modernizing my hybrid identity infrastructure.
 ai-usage: ai-assisted
 
 ---
 
 # Migrate from Microsoft Entra Connect to Cloud Sync: Decision Guide
 
-Microsoft Entra Cloud Sync represents Microsoft's strategic direction for hybrid identity synchronization, offering a modern, cloud-managed approach to synchronizing users, groups, and contacts between Active Directory and Microsoft Entra ID. As organizations evaluate their hybrid identity infrastructure, understanding the technical benefits and migration readiness is essential for making informed decisions.
+Microsoft Entra Cloud Sync represents Microsoft's strategic direction for hybrid identity synchronization. It provides cloud-managed synchronization of users, groups, and contacts between Active Directory and Microsoft Entra ID. When device sync is enabled, Cloud Sync can synchronize Active Directory computer objects to Microsoft Entra ID for hybrid join.
 
-This decision guide helps IT architects and decision makers evaluate migration from Microsoft Entra Connect to Cloud Sync by comparing technical capabilities, identifying architectural advantages, and providing migration readiness assessments. For basic overview information, see [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md), and for step-by-step migration procedures, see [Migrating from Microsoft Entra Connect to Microsoft Entra Cloud Sync](migrate-azure-ad-connect-to-cloud-sync.md).
+This decision guide helps IT architects and decision makers evaluate migration from Microsoft Entra Connect to Cloud Sync by comparing technical capabilities, identifying architectural advantages, and providing migration readiness assessments. For basic overview information, see [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md). For step-by-step migration procedures, see [Migrating from Microsoft Entra Connect to Microsoft Entra Cloud Sync](migrate-azure-ad-connect-to-cloud-sync.md).
 
 New identity and synchronization features are being developed primarily on the Cloud Sync platform, making it the recommended path forward for most organizations.
 
@@ -45,7 +43,7 @@ Agents automatically receive updates and security patches from Microsoft without
 
 ### Advanced disconnected forest capabilities
 
-Cloud Sync natively supports synchronization from multiple disconnected Active Directory forests. These scenarios are commonly required during mergers, acquisitions, or complex organizational structures. Unlike Connect sync, which requires complicated configurations or multiple instances for disconnected forests, Cloud Sync handles these scenarios through its multi-tenant architecture.
+Cloud Sync natively supports synchronization from multiple disconnected Active Directory forests. These scenarios are commonly required during mergers, acquisitions, or complex organizational structures. Unlike Connect sync, which requires complicated configurations or multiple instances for disconnected forests, Cloud Sync handles these scenarios through its multitenant architecture.
 
 Each disconnected forest can have dedicated agents while maintaining unified management through the cloud service. This capability simplifies complex organizational scenarios and reduces the infrastructure complexity traditionally required for multi-forest synchronization.
 
@@ -63,13 +61,13 @@ The following table provides a detailed comparison of technical capabilities bet
 | **Single Connected Forest** | ✓ | ✓ | Both support standard single-forest topologies |
 | **Multiple Connected Forests** | ✓ | ✓ | Both support multiple connected forest scenarios |
 | **Disconnected Forest Support** | ✗ | ✓ | Cloud Sync enables M&A scenarios without forest consolidation |
-| **Device Synchronization** | ✓ | ✗ | Connect supports Hybrid Azure AD Join; not currently supported in Cloud Sync |
+| **Device Synchronization** | ✓ | ✓ | Both support device synchronization for Microsoft Entra hybrid join; enable device sync separately in Cloud Sync |
 | **Multiple Active Sync Instances** | ✗ | ✓ | Cloud Sync agents provide automatic failover and load distribution |
 | **Scale Limits per Domain** | Unlimited | 150K objects | Cloud Sync currently supports up to 150,000 objects per domain |
 | **Large Group Support** | 250K members | 50K members | Connect supports larger groups; Cloud Sync limited to 50,000 members |
 | **Password Hash Synchronization** | ✓ | ✓ | Full parity for password synchronization capabilities |
 | **Password Writeback** | ✓ | ✓ | SSPR writeback supported in both platforms |
-| **Pass-Through Authentication Config** | ✓ | ✗ | PTA configuration managed separately from sync in Cloud Sync |
+| **Pass-Through Authentication Config** | ✓ | ✗ | PTA configuration managed separately from sync in Cloud Sync; PTA and Seamless SSO remain functional after migration |
 | **ADFS Integration Setup** | ✓ | ✗ | Federation configuration requires separate tools in Cloud Sync |
 | **Exchange Hybrid Attributes** | ✓ | ✓ | Full support for Exchange hybrid scenarios |
 | **Directory Extensions (1-15)** | ✓ | ✓ | Standard extension attribute synchronization supported |
@@ -91,6 +89,8 @@ The following table provides a detailed comparison of technical capabilities bet
 | **Seamless Single Sign-On** | ✓ | ✓ | Both platforms support seamless SSO |
 | **US Government Cloud** | ✓ | ✓ | Both support sovereign cloud deployments |
 
+For configuration steps, see [Configure device sync with Microsoft Entra Cloud Sync](device-sync.md).
+
 ## Migration readiness assessment
 
 Based on your current requirements and the feature comparison in the table above, assess your migration readiness using these scenarios:
@@ -101,8 +101,8 @@ Your organization can migrate immediately if you meet all these criteria:
 
 - **Object Scale**: Fewer than 150,000 objects per Active Directory domain
 - **Group Size**: Groups with fewer than 50,000 members  
-- **Device Management**: Not using Hybrid Azure AD Join, or willing to transition to Cloud Kerberos Trust
-- **Authentication**: Using Password Hash Sync or managing ADFS/PTA configurations separately
+- **Device Management**: If you use Microsoft Entra hybrid join, include [device sync](device-sync.md) in your Cloud Sync migration plan
+- **Authentication**: Using Password Hash Sync or managing ADFS/PTA configurations separately.
 - **Filtering**: Using OU-based filtering rather than complex attribute-based rules
 - **Forest Configuration**: Single forest or connected forests (no disconnected forest requirements)
 
@@ -112,7 +112,6 @@ Organizations matching this profile gain immediate benefits from Cloud Sync's ar
 
 Consider planning migration based on feature availability if you have these requirements that might become supported:
 
-- **Device Synchronization**: Currently rely on Hybrid Azure AD Join device synchronization
 - **Advanced Filtering**: Use complex attribute-based filtering beyond current Cloud Sync capabilities
 - **User Provisioning to AD**: Need cloud-to-AD user provisioning capabilities
 

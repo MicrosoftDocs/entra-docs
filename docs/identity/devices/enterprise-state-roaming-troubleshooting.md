@@ -4,7 +4,6 @@ description: Provides answers to some questions IT administrators might have abo
 
 ms.topic: troubleshooting
 ms.date: 06/27/2025
-
 ms.reviewer: sempofu, micrider
 ---
 # Troubleshooting Enterprise State Roaming settings in Microsoft Entra ID

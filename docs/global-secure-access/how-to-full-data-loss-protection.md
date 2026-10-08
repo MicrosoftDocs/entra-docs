@@ -1,8 +1,6 @@
 ---
 title: "Create a custom Data Loss Prevention profile with the Global Secure Access and Netskope integration"
 description: "Learn how to protect your organization with a custom Data Loss Prevention (DLP) profile powered by Netskope."
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: how-to   
 ms.date: 11/07/2025
 ms.reviewer: abhijeetsinha

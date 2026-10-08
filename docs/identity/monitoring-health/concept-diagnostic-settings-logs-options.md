@@ -77,6 +77,14 @@ The `RiskyServicePrincipals` logs provide information about service principals t
 
 The `ServicePrincipalRiskEvents` provide details around the risky sign-in events for service principals. These logs might include any identified suspicious events related to the service principal accounts. For more information, see [Securing workload identities](~/id-protection/concept-workload-identity-risk.md).
 
+### Risky agents
+
+The `RiskyAgents` logs provide information about agents that Microsoft Entra ID Protection detected as risky. Agent risk represents the probability that an agent identity is compromised. For more information, see [ID Protection for agents](~/id-protection/concept-risky-agents.md).
+
+### Agent risk events
+
+The `AgentRiskEvents` logs capture details about the individual risk detections that contribute to an agent being flagged as risky. For more information, see [ID Protection for agents](~/id-protection/concept-risky-agents.md).
+
 ### Enriched Microsoft 365 audit logs
 
 The `EnrichedOffice365AuditLogs` are associated with the enriched logs you can enable for Microsoft Entra Internet Access. Selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet to secure access to your Microsoft 365 traffic *and* you enabled the enriched logs. For more information, see [How to use the Global Secure Access enriched Microsoft 365 logs](/entra/global-secure-access/how-to-view-enriched-logs).

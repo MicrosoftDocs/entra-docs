@@ -1,13 +1,11 @@
 ---
 title: Microsoft account (MSA) Server Side API Reference
 description: Comprehensive guide for understanding and using the Microsoft Authentication Library (MSAL) and Microsoft Account (MSA) Server Side APIs.
-author: OwenRichards1
 manager: pmwongera
 
 ms.service: identity-platform
 ms.topic: reference
 ms.date: 03/19/2024
-ms.author: owenrichards
 ms.reviewer: asteen
 ms.custom: 
 #Customer intent: As a customer, I intend to understand the Microsoft Account (MSA) Server Side API, their parameters, and how to use them in the development of applications that integrate with Microsoft accounts.

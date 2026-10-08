@@ -1,7 +1,6 @@
 ---
 title: Application Management certificates frequently asked questions
 description: Learn answers to frequently asked questions (FAQ) about managing certificates for apps using Microsoft Entra ID as an Identity Provider (IdP).  
-
 ms.topic: faq
 ms.date: 05/21/2025
 ms.reviewer: sureshja, saumadan

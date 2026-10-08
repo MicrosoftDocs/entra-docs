@@ -1,5 +1,5 @@
 ---
-title: Update user attributes with Lifecycle Workflows (Preview)
+title: Update user attributes with Lifecycle Workflows
 description: Learn how to update user attributes using the Update user attributes task in Lifecycle Workflows.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to update user attributes automatically using Lifecycle Workflows so that user information stays accurate throughout the identity lifecycle.
 ---
 
-# Update user attributes with Lifecycle Workflows (Preview)
+# Update user attributes with Lifecycle Workflows
 
 Lifecycle Workflows allow you to automate the updating of user attributes as part of joiner, mover, and leaver scenarios. The **Update user attributes** task enables you to set or clear attribute values for users in your organization when lifecycle events occur, such as a department change or an employee leaving.
 
@@ -24,20 +24,22 @@ This article walks you through configuring a workflow with the Update user attri
 
 The Update user attributes task supports the following attribute types:
 
-- Built-in user attributes (for example, `department`, `jobTitle`, `city`)
-- On-premises extension attributes (for example, `extensionAttribute1` through `extensionAttribute15`)
-- Directory extension attributes
+- Built-in user attributes for cloud-managed users (for example, `department`, `jobTitle`, `employeeLeaveDateTime`)
+- On-premises extension attributes for cloud-managed users (for example, `extensionAttribute1` through `extensionAttribute15`)
+- Directory extension attributes for cloud-managed users and users synced from on-premises AD
 
 > [!NOTE]
 > Custom security attributes are not supported with this task.
+
+> [!NOTE]
+> For datetime attributes, you can specify either a specific date or use `system.now`. When set to `system.now`, the attribute will be set to the date when the task is processed.
 
 ## Limitations
 
 Before configuring this task, be aware of the following limitations:
 
 - **Up to 10 attributes** can be updated per task instance.
-- **Synced users are not supported.** This task doesn't support updating attributes for users synchronized from Active Directory Domain Services (AD DS). The task runs only for cloud-managed users.
-- **The `employeeLeaveDateTime` attribute is not currently supported.** Support for this attribute is planned for general availability.
+- For **users synced from on-premises AD**, this task supports **directory extension attributes only**.
 
 ## Configure the Update user attributes task using the Microsoft Entra admin center
 
@@ -51,7 +53,7 @@ To add the Update user attributes task to a workflow using the Microsoft Entra a
 
 1. On the workflow screen, select **Tasks**.
 
-1. Select **Add task**, and then select **Update user attributes (Preview)** from the list of available tasks.
+1. Select **Add task**, and then select **Update user attributes** from the list of available tasks.
 
     :::image type="content" source="media/how-to-lifecycle-workflow-update-user-attributes/select-update-user-attributes-task.png" alt-text="Screenshot showing the Select tasks panel with Update user attributes (Preview) selected.":::
 

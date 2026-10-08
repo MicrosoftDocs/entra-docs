@@ -4,7 +4,6 @@ description: Learn how to use a quickstart to create custom credentials from oth
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 01/21/2025
-
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for self-asserted claims scenario. 
 ---
 

@@ -2,7 +2,6 @@
 title: Your sign-in was blocked
 description: Troubleshoot a blocked sign-in to the Microsoft Application Network portal. 
 ms.topic: troubleshooting
-
 ms.date: 04/29/2025
 ms.reviewer: jeedes
 ms.custom: enterprise-apps

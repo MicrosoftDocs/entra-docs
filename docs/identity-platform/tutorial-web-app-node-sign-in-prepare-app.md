@@ -1,9 +1,7 @@
 ---
 title: 'Sign in users in a Node.js/Express web app by using Microsoft identity platform'
 description: Set up node web app project that signs in users into customer facing app by in an external tenant or employees in a workforce tenant
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: tutorial
 #Customer intent: As a developer, devops, I want to learn about how to build a Node.js/Express web app that signs in users into customer facing app by in an external tenant or employees in a workforce tenant by using Microsoft identity platform'

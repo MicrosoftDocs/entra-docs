@@ -1,7 +1,7 @@
 ---
 title: Bulk download group membership list - Azure portal
 description: Download group members in bulk in the Microsoft Entra admin center.
-ms.date: 12/05/2025
+ms.date: 06/18/2026
 ms.topic: how-to
 ms.custom: it-pro
 ms.reviewer: yuan.karppanen
@@ -25,9 +25,8 @@ To download all members of a specific group:
     :::image type="content" source="media/bulk-operations/group-members-tab.png" alt-text="Screenshot of a selected group's Members tab listing users and service principals.":::
 
 1. On the **Members** page command bar, select **Download members**.
-    If you see a **Bulk operations** menu instead, select **Bulk operations** > **Download members**.
 
-    :::image type="content" source="media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
+    If you see a **Bulk operations** menu instead, select **Bulk operations** > **Download members**.
 
 1. Enter a filename and select **Start bulk operation**.
 

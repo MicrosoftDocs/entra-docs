@@ -2,11 +2,9 @@
 title: Migrate applications away from secret-based authentication
 description: Migrate applications away from secret-based authentication to improve security and user experience.
 
-author: garrodonnell
 
 ms.topic: concept-article
 ms.date: 03/19/2025
-ms.author: godonnell
 
 #customer intent: As an IT admin currently using secret-based authentication, I want to migrate my applications to a more secure and user-friendly authentication method, so that I can improve security and user experience.
 ---

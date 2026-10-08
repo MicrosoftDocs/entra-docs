@@ -12,8 +12,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up federation with Microsoft account (live.com) using OpenID Connect (OIDC) identity provider, you enable users to sign up and sign in to your applications using their existing Microsoft accounts (MSA).
-After you add Microsoft account (live.com) as one of your user flow sign-in options, customers can sign up and sign in to your application by using their Microsoft account.
+Setting up federation with Microsoft account (live.com) by using an OpenID Connect (OIDC) identity provider and adding it to your user flow enables users to sign up and sign in to your applications by using their existing Microsoft accounts (MSA).
 
 ## Prerequisites
 
@@ -75,21 +74,11 @@ Once you have configured your Microsoft account (live.com) as an application, yo
 
    :::image type="content" source="media/how-to-microsoft-accounts-federation-customers/msa-setup.png" alt-text="Screenshot of the Basics tab for an Open ID Connect identity provider configured for Microsoft account, including endpoint, issuer, client ID, secret, and scope values.":::
 
-## Add OIDC identity provider to a user flow
+## Enable users to sign in and sign up with the identity provider
 
-At this point, the MSA identity provider is set up in your external tenant, but it isn't yet available on sign-in pages. To add the OIDC identity provider to a user flow:
-
-1. In your external tenant, browse to **Entra ID** > **External Identities** > **User flows**.
-1. Select the user flow where you want to add the OIDC identity provider.
-1. Under **Settings**, select **Identity providers**.
-1. Under **Other Identity Providers**, select the identity provider you created, which is **Microsoft Account**.
-
-   :::image type="content" source="media/how-to-microsoft-accounts-federation-customers/msa-idp-list.png" alt-text="Screenshot of the user flow Identity providers page with Microsoft Account selected under Other identity providers.":::
-
-1. Select **Save**.
+After you configure Microsoft account as an identity provider, add it to a user flow to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md).
 
 ## Related content
 
-- [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
 - [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

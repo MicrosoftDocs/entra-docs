@@ -1,13 +1,11 @@
 ---
 title: Disable the SCIM Provisioning API in Microsoft Entra ID
 description: Learn how to disable the SCIM Provisioning API feature in the Microsoft Entra admin center to stop all API access and billing.
-author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/31/2026
-ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 

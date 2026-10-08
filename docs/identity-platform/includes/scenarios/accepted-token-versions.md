@@ -1,10 +1,8 @@
 ---
-author: cilwerner
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: include
 ms.date: 08/29/2025
-ms.author: cwerner
 ms.custom:
 ---
 

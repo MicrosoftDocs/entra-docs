@@ -5,6 +5,7 @@ ms.topic: overview
 ms.date: 12/13/2024
 ms.reviewer: elkuzmen
 ms.custom: sfi-ga-nochange
+ai-usage: ai-assisted
 ---
 # What is self-service sign-up for Microsoft Entra ID?
 
@@ -12,6 +13,9 @@ ms.custom: sfi-ga-nochange
 ## Overview
 
 This article explains how to use self-service sign-up to populate an organization in Microsoft Entra ID, part of Microsoft Entra. If you want to take over a domain name from an unmanaged Microsoft Entra organization, see [Take over an unmanaged tenant as administrator](domains-admin-takeover.md).
+
+> [!NOTE]
+> This article covers self-service sign-up for email-verified users in Microsoft Entra ID organizations. For self-service sign-up experiences for external users, such as B2B collaboration users or customers, see [Self-service sign-up in Microsoft Entra External ID](~/external-id/self-service-sign-up-overview.md).
 
 ## Why use self-service sign-up?
 

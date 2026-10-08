@@ -1,9 +1,6 @@
 ---
 title: Sign in with alias
 description: Learn how to sign in and sign up with alias/username with External ID for customer identity and access management (CIAM). Get detailed steps to enable username as a sign-in identifier and create users with both email address and username. 
-ms.author: godonnell
-author: garrodonnell
-manager: dougeby
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: how-to
@@ -225,6 +222,9 @@ Also, if you configure a custom regex for both the sign-up attribute validation 
 ## Prefill or assign usernames (preview) 
 
 Like other attributes, you can customize signup by pre-filling username or assigning it after gathering other user information. To prefill the value, use a custom extension with the [onAttributeCollectionStart](../../identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md) event, and configure how it is presented via Page Layout or [via Microsoft Graph](how-to-define-custom-attributes.md#configure-attribute-visibility-and-editability-with-microsoft-graph). If you need to assign, modify, or validate the username after collecting more details, use the [onAttributeCollectionSubmit](../../identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md) event.
+
+> [!NOTE]
+> If the username field is hidden from the user and the username value is assigned programmatically, make sure that the username value is unique or sign-up will be blocked.
 
 ## Test signing in with the alias or username
 

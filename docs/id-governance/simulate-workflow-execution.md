@@ -1,5 +1,5 @@
 ---
-title: Simulate workflow execution using the What-if tool (Preview)
+title: Simulate workflow execution using the What-if tool
 description: Learn how to use the What-if tool in Lifecycle Workflows to simulate workflow execution and preview results without impacting actual users.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to simulate workflow execution using the What-if tool so that I can preview results without impacting actual users.
 ---
 
-# Simulate workflow execution using the What-if tool (Preview)
+# Simulate workflow execution using the What-if tool
 
 The What-if tool in Lifecycle Workflows lets you evaluate workflow execution before it runs for your users. Using the What-if tool, you can:
 
@@ -20,7 +20,7 @@ The What-if tool in Lifecycle Workflows lets you evaluate workflow execution bef
 The primary goal of the What-if tool is to help you identify and resolve misconfigurations and prevent accidental workflow executions before processing begins.
 
 > [!NOTE]
-> The What-if tool is currently in public preview. Workflows with change-based trigger types, such as attribute changes and group membership changes, aren't currently supported.
+> Workflows with change-based trigger types, such as attribute changes and group membership changes, aren't currently supported.
 
 ## Prerequisites
 

@@ -3,8 +3,6 @@ title: Backup Authentication System for Microsoft Entra ID
 description: Explore the resilience features of Microsoft Entra ID's backup authentication system, designed to maintain authentication availability for users and services.
 ms.topic: concept-article
 ms.date: 07/22/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: ludwignick
 ms.custom:
@@ -157,7 +155,6 @@ The backup authentication system is supported in all cloud environments except M
 | VMware Boxer | Yes | Protected |
 | walkMe | No | SAML SP-initiated |
 | Workday | No | SAML SP-initiated |
-| Workplace from Facebook | No | SAML SP-initiated |
 | Zoom | No | SAML SP-initiated |
 | Zscaler | Yes \* | Protected |
 | Zscaler Private Access (ZPA) | No | SAML SP-initiated |

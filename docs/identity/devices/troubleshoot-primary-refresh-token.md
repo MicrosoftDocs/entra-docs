@@ -6,8 +6,6 @@ description: Troubleshoot primary refresh token issues during authentication thr
 ms.topic: troubleshooting
 ms.date: 02/23/2026
 
-ms.author: gudlapreethi
-author: GudlaPreethi
 editor: v-jsitser
 ms.reviewer: gudlapreethi, bemey, filuz, robgarcia, v-leedennis
 ---
@@ -412,7 +410,7 @@ Common general network-related issues.
 1. To begin the error tracing session, enter the following command:
 
    ```powershell
-   .\Start-auth.ps1 -v -acceptEULA
+   .\Start-auth.ps1 -vAuth -acceptEULA
    ```
 
 1. Switch the Windows user account to go to your problem user's session.

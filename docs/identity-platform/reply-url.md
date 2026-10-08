@@ -1,9 +1,7 @@
 ---
 title: Redirect URI (reply URL) best practices and limitations
 description: A description of the best practices and limitations of redirect URIs in the Microsoft identity platform.
-author: henrymbuguakiarie
 manager: pmwongera
-ms.author: henrymbugua
 ms.date: 05/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform

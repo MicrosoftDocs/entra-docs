@@ -3,9 +3,6 @@ title: Remove Passwords from Microsoft Entra ID
 description: Removing password usage from Entra through Password scrambling to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
 ms.topic: how-to
 ms.date: 01/28/2026
-
-ms.author: justinha
-author: sipower
 ms.reviewer: sipower
 
 ms.collection: M365-identity-device-management

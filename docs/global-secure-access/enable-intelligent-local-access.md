@@ -2,9 +2,7 @@
 title: Enable Intelligent Local Network
 description: Learn how to enable the Intelligent Local Access (ILA) capability for Microsoft Entra Private Access, which optimizes traffic flow for clients accessing Entra apps via private networks.
 ms.topic: how-to
-ms.date: 11/07/2025
-ms.author: jfields
-author: jenniferf-skc
+ms.date: 06/03/2026
 ms.reviewer: dhruvinshah
 ai-usage: ai-assisted
 
@@ -70,6 +68,14 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 6.  Select **Create**.
 
 :::image type="content" source="media/enable-intelligent-local-access/create-private-network.png" alt-text="A screenshot of the page where you create a private network." lightbox="media/enable-intelligent-local-access/create-private-network.png":::
+
+## Best practices
+
+Keep the number of Private networks to a minimum. A Private network identifies that a client is connected to a specific network. It isn't intended to indicate whether an individual application is accessible within that network.
+
+In this context, a network doesn't necessarily refer to a single, restricted physical network. It can represent a logical network that consists of multiple physical networks where the same applications are accessible.
+
+Create a single Private network definition for each logical network. Then assign all Private Access applications that are accessible from that network to that Private network.
 
 ## Verify ILA flow on the client
 

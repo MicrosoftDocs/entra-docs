@@ -1,8 +1,6 @@
 ---
 title: How to add device links to remote networks
 description: Learn how to add and delete customer premises equipment device links to remote networks for Global Secure Access.
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.topic: how-to
 ms.date: 03/23/2026
 ms.reviewer: absinh

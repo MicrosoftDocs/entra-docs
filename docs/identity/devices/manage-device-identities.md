@@ -2,7 +2,7 @@
 title: Manage devices in Microsoft Entra ID using the Microsoft Entra admin center
 description: This article describes how to use the Microsoft Entra admin center to manage device identities and monitor related event information.
 ms.topic: how-to
-ms.date: 02/03/2026
+ms.date: 06/17/2026
 ms.reviewer: myra-ramdenbourg
 ms.custom: sfi-image-nochange
 ---
@@ -83,7 +83,7 @@ If a device is managed in another management authority, like Microsoft Intune, b
 You can use a device ID to verify the device ID details on the device or to troubleshoot via PowerShell. To access the copy option, select the device.
 
 ![Screenshot that shows a device ID and the copy button.](./media/manage-device-identities/device-details.png)
-  
+
 ## View or copy BitLocker keys
 
 You can view and copy BitLocker keys to allow users to recover encrypted drives. These keys are available only for Windows devices that are encrypted and store their keys in Microsoft Entra ID. You can find these keys when you view a device's details by selecting **Show Recovery Key**. Selecting **Show Recovery Key** generates an audit log entry, which you can find in the `KeyManagement` category.
@@ -156,27 +156,31 @@ You must be assigned one of the following roles to read or modify device setting
 - [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) (read only)
 - [Windows 365 Administrator](../role-based-access-control/permissions-reference.md#windows-365-administrator) (read only)
 
+> [!TIP]
+> If users observe errors when attempting registering or joining devices, ensure the settings for **[register](/editor/MicrosoftDocs/entra-docs-pr/docs%2Fidentity%2Fdevices%2Fmanage-device-identities.md/main/295390ca-aab1-5f76-adce-5faa90dc55b0/concept-device-registration.md)** or **[join](/editor/MicrosoftDocs/entra-docs-pr/docs%2Fidentity%2Fdevices%2Fmanage-device-identities.md/main/295390ca-aab1-5f76-adce-5faa90dc55b0/concept-directory-join.md)** are configured appropriately for their supported OS platforms. Different operating systems support register or join respectively.
+
 ![Screenshot that shows device settings related to Microsoft Entra ID.](./media/manage-device-identities/device-settings-azure-portal.png)
 
 - **Users may join devices to Microsoft Entra ID**: This setting enables you to select the users who can register their devices as Microsoft Entra joined devices. The default is **All**.
 
-   > [!NOTE]
-   > The **Users may join devices to Microsoft Entra ID** setting is applicable only to Microsoft Entra join on Windows 10 or newer. This setting doesn't apply to Microsoft Entra hybrid joined devices, [Microsoft Entra joined VMs in Azure](./howto-vm-sign-in-azure-ad-windows.md#enable-microsoft-entra-sign-in-for-a-windows-virtual-machine-in-azure), or Microsoft Entra joined devices that use [Windows Autopilot self-deployment mode](/autopilot/self-deploying) because these methods work in a userless context.
-
+  > [!NOTE]
+  > The **Users may join devices to Microsoft Entra ID** setting is applicable only to Microsoft Entra join on Windows 10 or newer, macOS, or Linux. This setting doesn't apply to Microsoft Entra hybrid joined devices, [Microsoft Entra joined VMs in Azure](./howto-vm-sign-in-azure-ad-windows.md#enable-microsoft-entra-sign-in-for-a-windows-virtual-machine-in-azure), or Microsoft Entra joined devices that use [Windows Autopilot self-deployment mode](/autopilot/self-deploying) because these methods work in a userless context.
+  
 - **Users may register their devices with Microsoft Entra ID**: You need to configure this setting to allow users to register Windows 10 or newer personal, iOS, Android, and macOS devices with Microsoft Entra ID. If you select **None**, devices aren't allowed to register with Microsoft Entra ID. Enrollment with Microsoft Intune or mobile device management for Microsoft 365 requires registration. If you've configured either of these services, **ALL** is selected, and **NONE** is unavailable.
 - **Require multifactor authentication to register or join devices with Microsoft Entra ID**: 
-   - We recommend organizations use the [Register or join devices user action](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in Conditional Access to enforce multifactor authentication. You must configure this toggle to **No** if you use a [Conditional Access policy to require multifactor authentication](../conditional-access/policy-all-users-device-registration.md). 
-   - This setting allows you to specify whether users are required to provide another authentication factor to join or register their devices to Microsoft Entra ID. The default is **No**. We recommend that you require multifactor authentication when a device is registered or joined. Before you enable multifactor authentication for this service, you must ensure that multifactor authentication is configured for users that register their devices. For more information on Microsoft Entra multifactor authentication services, see [getting started with Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md). This setting might not work with third-party identity providers.
-
-   > [!NOTE]
-   > The **Require multifactor authentication to register or join devices with Microsoft Entra ID** setting applies to devices that are either Microsoft Entra joined (with some exceptions) or Microsoft Entra registered. This setting doesn't apply to Microsoft Entra hybrid joined devices, [Microsoft Entra joined VMs in Azure](./howto-vm-sign-in-azure-ad-windows.md#enable-microsoft-entra-sign-in-for-a-windows-virtual-machine-in-azure), or Microsoft Entra joined devices that use [Windows Autopilot self-deployment mode](/autopilot/self-deploying).
-
+  - We recommend organizations use the [Register or join devices user action](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in Conditional Access to enforce multifactor authentication. You must configure this toggle to **No** if you use a [Conditional Access policy to require multifactor authentication](../conditional-access/policy-all-users-device-registration.md). 
+  - This setting allows you to specify whether users are required to provide another authentication factor to join or register their devices to Microsoft Entra ID. The default is **No**. We recommend that you require multifactor authentication when a device is registered or joined. Before you enable multifactor authentication for this service, you must ensure that multifactor authentication is configured for users that register their devices. For more information on Microsoft Entra multifactor authentication services, see [getting started with Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md). This setting might not work with third-party identity providers.
+    
+  > [!NOTE]
+  > The **Require multifactor authentication to register or join devices with Microsoft Entra ID** setting applies to devices that are either Microsoft Entra joined (with some exceptions) or Microsoft Entra registered. This setting doesn't apply to Microsoft Entra hybrid joined devices, [Microsoft Entra joined VMs in Azure](./howto-vm-sign-in-azure-ad-windows.md#enable-microsoft-entra-sign-in-for-a-windows-virtual-machine-in-azure), or Microsoft Entra joined devices that use [Windows Autopilot self-deployment mode](/autopilot/self-deploying).
+  
 - **Maximum number of devices**: This setting enables you to select the maximum number of Microsoft Entra joined or Microsoft Entra registered devices that a user can have in Microsoft Entra ID. If users reach this limit, they can't add more devices until one or more of the existing devices are removed. The default value is **50**. You can increase the value up to 100. If you enter a value above 100, Microsoft Entra ID sets it to 100. You can also use **Unlimited** to enforce no limit other than existing quota limits.
 
-   > [!NOTE]
-   > The **Maximum number of devices** setting applies to devices that are either Microsoft Entra joined or Microsoft Entra registered. This setting doesn't apply to Microsoft Entra hybrid joined devices.
-
-- **Manage Additional local administrators on Microsoft Entra joined devices**: This setting allows you to select the users who are granted local administrator rights on a device. These users are added to the Device Administrators role in Microsoft Entra ID. 
+  > [!NOTE]
+  > The **Maximum number of devices** setting applies to devices that are either Microsoft Entra joined or Microsoft Entra registered. This setting doesn't apply to Microsoft Entra hybrid joined devices.
+  
+- **Manage Additional local administrators on Microsoft Entra joined devices**: This setting lets you select users who are granted local administrator rights on all Microsoft Entra joined devices in the tenant. These users are assigned to the Microsoft Entra Joined Device Local Administrator role, which applies tenant-wide.
+- **Registering user is added as local administrator on the device during Microsoft Entra join**: This setting controls whether users who perform Microsoft Entra join are added to the local Administrators group on the device they join. This setting affects local device administrator membership only. It doesn't assign a Microsoft Entra directory role, such as Global Administrator, and it doesn't add the user to the Microsoft Entra Joined Device Local Administrator role. To verify the result, check the local Administrators group on the device or use a device management tool. In Microsoft Graph, this setting is represented by the `azureADJoin.localAdmins.registeringUsers` property of the [device registration policy](/graph/api/resources/deviceregistrationpolicy).
 - **Enable Microsoft Entra Local Administrator Password Solution (LAPS) (preview)**: LAPS is the management of local account passwords on Windows devices. LAPS provides a solution to securely manage and retrieve the built-in local admin password. With cloud version of LAPS, customers can enable storing and rotation of local admin passwords for both Microsoft Entra ID and Microsoft Entra hybrid join devices. To learn how to manage LAPS in Microsoft Entra ID, see [the overview article](howto-manage-local-admin-passwords.md).
 
 - **Restrict non-admin users from recovering the BitLocker key(s) for their owned devices**: Admins can block self-service BitLocker key access to the registered owner of the device. Default users without the BitLocker read permission are unable to view or copy their BitLocker key(s) for their owned devices. You must be at least a [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) to update this setting. 
@@ -225,4 +229,5 @@ You can also search for specific entries.
 ## Next steps
 
 - [How to manage stale devices in Microsoft Entra ID](manage-stale-devices.md)
+
 - [Troubleshoot pending device state](/troubleshoot/azure/active-directory/pending-devices)

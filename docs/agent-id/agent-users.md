@@ -1,5 +1,5 @@
 ---
-title:  Learn about the agent's user account in Microsoft Entra Agent ID
+title: Learn about the agent's user account in Microsoft Entra Agent ID
 description: This article explains the concept of the agent's user account, how it functions within Microsoft Entra ID, and its relationship with agent identities.
 titleSuffix: Microsoft Entra Agent ID
 ms.date: 11/04/2025
@@ -74,6 +74,20 @@ The agent's user account operates under specific security constraints to ensure 
 
 - Credential limitations: The agent's user account can't have credentials like passwords or passkeys. The only credential type it supports is the agent identity reference to its parent. So even if the agent's user account behaves as a user, its credentials are confidential client credentials.
 
-- Administrative role restrictions: The agent's user account can't be assigned privileged administrator roles. This limitation provides an important security boundary, preventing potential elevation of privileges.
+- Administrative role restrictions: The agent's user account can't be assigned privileged administrator roles. This limitation provides an important security boundary, preventing potential elevation of privileges. The agent's user account can be assigned with custom roles.
 
-- Permission model: The agent's user account typically has permissions similar to guest users, with more capabilities for enumerating users and groups. The agent's user account can't be assigned privileged admin roles. Custom role assignment and role-assignable groups aren't available to the agent's user account. For more information, see [Microsoft Graph permissions reference](/graph/permissions-reference)
+- Permission model: The agent's user account typically has permissions similar to guest users, with more capabilities for enumerating users and groups.
+
+## Provisioning agent user accounts for Microsoft 365
+
+To fully provision an agent's user account with digital worker capabilities such as a mailbox, Teams presence, or HR system integration, create the agent through Microsoft Teams. Agent 365 and the Agent 365 SDK provide the foundation for agent user accounts to fully participate in Microsoft 365.
+
+> [!NOTE]
+> Creating an agent's user account directly through the Microsoft Graph API establishes the identity in Microsoft Entra but doesn't provision Microsoft 365 capabilities. Use the Graph API approach only for scenarios that don't require Microsoft 365 participation.
+
+For more information, see the [Microsoft 365 Agents SDK documentation](/microsoft-365/agents-sdk/).
+
+## Related content
+
+- [Agent's user account OAuth flow](agent-user-oauth-flow.md)
+- [Plan your agent identity architecture](how-to-plan-agent-identity-architecture.md)

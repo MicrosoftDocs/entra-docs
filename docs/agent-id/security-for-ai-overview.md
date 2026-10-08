@@ -2,10 +2,7 @@
 title: Microsoft Entra security for AI overview
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how Microsoft Entra provides identity-based security controls for AI agents, applications, and services through authentication, governance, and Zero Trust policy enforcement.
-author: omondiatieno
-ms.author: jomondi
-ms.date: 03/04/2026
-ms.service: entra-id
+ms.date: 05/08/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 
@@ -69,7 +66,7 @@ Microsoft Entra Agent ID enables organizations to:
 
 - **Register and manage agents**: Create and manage agent identity blueprints as templates and agent identities as individual instances with parent-child relationships, enabling centralized metadata management and automatic organization into security collections.
 
-- **Assign secure, scalable identities**: The [Microsoft Entra Agent identity platform](identity-platform/what-is-agent-id-platform.md) enables you to assign identities to agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols. It provides agent-to-agent discovery and authorization based on standard protocols such as MCP and A2A.
+- **Assign secure, scalable identities**: The [Microsoft Entra Agent identity platform](identity-platform/what-is-agent-id-platform.md) enables you to assign identities to agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols. It provides agent-to-agent discovery and authorization based on standard protocols such as Model Context Protocol (MCP) and agent-to-agent (A2A).
 
 - **Log and monitor agent activity**: All authentication and actions performed by agents are logged in Microsoft Entra ID and viewable through the Microsoft Entra admin center for compliance and audit purposes.
 
@@ -106,6 +103,8 @@ As organizations deploy more AI agents, identity governance becomes critical to 
 - Govern agent identities at scale, from deployment to expiration.
 - Ensure sponsors and owners are assigned and maintained for each agent identity, preventing orphaned agent identities.
 - Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
+- Apply Conditional Access rules, permissions, and governance controls at the [blueprint level](identity-platform/agent-blueprint.md) so all current and future agent instances inherit them automatically, with the ability to disable an entire class of agents in a single operation.
+- Maintain a complete inventory of all agent identities through centralized discovery and management in the Microsoft Entra admin center and [Microsoft Graph](/graph/api/resources/agentidentity), preventing shadow AI and enabling organizations to track agents across the full lifecycle — from registration and credential management through deactivation and decommissioning.
 
 For more information, see [Identity governance for agents](/entra/id-governance/agent-id-governance-overview).
 

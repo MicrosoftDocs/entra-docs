@@ -1,9 +1,7 @@
 ---
 title: Sign in users in a single-page app by using native authentication SDK
 description: Configure a React single-page app with native authentication SDK to let users sign up, sign in, sign out, and reset passwords. Start with this quickstart.
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: quickstart

@@ -17,6 +17,9 @@ ms.custom: it-pro, seo-july-2024
 
 With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, a Microsoft Entra ID tenant, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
+> [!NOTE]
+> Federated identity providers (Facebook, Google, Apple, Microsoft Entra ID, and custom OIDC or SAML/WS-Fed providers) are available only with **browser-delegated authentication**. **Native authentication** supports local account methods only—email with one-time passcode (OTP) and email with password. If your app requires social or federated sign-in, use browser-delegated authentication. For details, see [Choose an authentication approach](concept-choose-authentication-approach.md).
+
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
 ## Email and password sign-in

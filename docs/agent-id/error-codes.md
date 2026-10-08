@@ -15,27 +15,57 @@ This article provides a comprehensive reference for error codes you might encoun
 
 The [OAuth2.0 spec](https://tools.ietf.org/html/rfc6749#section-5.2) provides guidance on how to handle errors during authentication using the `error` portion of the error response. For more information on handling error code and the possible `error` field values, see the [Microsoft identity platform and OAuth 2.0 error codes documentation](/entra/identity-platform/reference-error-codes#handling-error-codes-in-your-application).
 
-## Microsoft agent identity platform error codes
+## Quota and limit errors
 
-The following table describes the error codes specific to the Microsoft agent identity platform.
+These errors occur when you exceed the tenant quota or the maximum number of agent identity blueprints or agent identities.
 
-| Error | Description |
+| Error code | Description |
 |---|---|
-| `AgentBlueprint_NotSupportedOnApiVersion` | Agent identity blueprints aren't supported on the API version used in this request. |
-| `AgentBlueprint_IncompatibleProperty` | A property specified in the request is incompatible with agent identity blueprints and can't be set. |
-| `AgentBlueprint_IncompatibleProperty_NullPropertyName` | A property in the request is incompatible with agent identity blueprints and can't be set. |
-| `AgentBlueprintPrincipal_AgentIdentity_IncompatibleProperty` | A property specified in the request is incompatible with agent identity and can't be set. |
-| `AgentBlueprintPrincipal_IncompatibleProperty` | A property specified in the request is incompatible with agent identity blueprint principals and can't be set. |
-| `AgentBlueprintPrincipal_requireAgentBlueprint` | Agent identity blueprint principals can only be created for Agent Blueprints. |
+| `Agent_Directory_QuotaExceeded` | Agent identity blueprints and/or agent identities have exceeded 95% of the tenant resource quota. To create more, you must permanently delete unneeded blueprints or identities. |
 | `AgentBlueprint_LimitExceeded` | You've reached the maximum number of agent identity blueprints allowed including active and soft-deleted items. To create more, you must permanently delete unneeded blueprints. |
 | `AgentIdentity_LimitExceeded` | You've reached the maximum number of agent identities allowed including active and soft-deleted entries. To add more, you must permanently delete unneeded agent identities. |
-| `AgentIdentity_AgentBlueprintPrincipalDoesNotExist` | The required agent identity blueprint principal doesn't exist for the specified agent identity blueprint ID. |
-| `AgentIdentity_IncompatibleParentType` | The specified Application (AppId) isn't an Agent Blueprint. The *AgentIdentityBlueprintId* must be set to the *AppId* of a valid agent identity blueprint. |
-| `Error_AgentIdentitiesCreatingAgentIdentitiesNotAllowed` | Agent identities can't create other agent identities. To create an agent identity, use the associated agent identity blueprint principal or nonagent blueprint service principal with the required permissions. |
-| `Error_AgentBlueprintCannotCreateAssociatedIdentity` | Agent identity blueprints can't create agent identities that are associated with another agent identity blueprint. To create this agent identity, either use the agent identity blueprint that's associated with the agent identity, or perform the operation with a different principal that has the required roles/permissions to create agent identities. |
-| `Error_AgentIdentitySelfCreateRequired` | Applications can only create agent identities under themselves. The provided *AgentIdentityBlueprintId* doesn't match the calling application's *AppId*. |
+
+## Agent identity blueprint errors
+
+These errors occur when a request includes properties or API versions that agent identity blueprints don't support.
+
+| Error code | Description |
+|---|---|
+| `AgentBlueprint_IncompatibleProperty` | A property specified in the request is incompatible with agent identity blueprints and can't be set. |
+| `AgentBlueprint_IncompatibleProperty_NullPropertyName` | A property in the request is incompatible with agent identity blueprints and can't be set. |
+| `AgentBlueprint_NotSupportedOnApiVersion` | Agent identity blueprints aren't supported on the API version used in this request. |
+
+## Agent identity blueprint principal errors
+
+These errors occur when a request includes properties, API versions, or parent resources that agent identity blueprint principals don't support.
+
+| Error code | Description |
+|---|---|
+| `AgentBlueprintPrincipal_AgentIdentity_IncompatibleProperty` | A property specified in the request is incompatible with agent identity and can't be set. |
+| `AgentBlueprintPrincipal_IncompatibleProperty` | A property specified in the request is incompatible with agent identity blueprint principals and can't be set. |
 | `AgentBlueprintPrincipal_NotSupportedOnApiVersion` | Agent identity blueprint principals aren't supported on the API version used in this request. |
+| `AgentBlueprintPrincipal_RequireAgentBlueprint` | Agent identity blueprint principals can only be created for Agent Blueprints. |
+
+## Agent identity errors
+
+These errors occur when a request references a missing blueprint principal, an incompatible parent type, or unsupported credentials or API versions for agent identities.
+
+| Error code | Description |
+|---|---|
+| `AgentIdentity_AgentBlueprintPrincipalDoesNotExist` | The required agent identity blueprint principal doesn't exist for the specified agent identity blueprint ID. |
+| `AgentIdentity_CredentialsNotSupported` | Credentials are not supported for agent identities. All credentials must be added to the agent identity blueprint. |
+| `AgentIdentity_IncompatibleParentType` | The specified Application (AppId) isn't an Agent Blueprint. The *AgentIdentityBlueprintId* must be set to the *AppId* of a valid agent identity blueprint. |
 | `AgentIdentity_NotSupportedOnApiVersion` | Agent identities aren't supported on the API version used in this request. |
+
+## Agent identity creation errors
+
+These errors occur when the calling principal isn't allowed to create the requested agent identity.
+
+| Error code | Description |
+|---|---|
+| `Error_AgentBlueprintCannotCreateAssociatedIdentity` | Agent identity blueprints can't create agent identities that are associated with another agent identity blueprint. To create this agent identity, either use the agent identity blueprint that's associated with the agent identity, or perform the operation with a different principal that has the required roles/permissions to create agent identities. |
+| `Error_AgentIdentitiesCreatingAgentIdentitiesNotAllowed` | Agent identities can't create other agent identities. To create an agent identity, use the associated agent identity blueprint principal or nonagent blueprint service principal with the required permissions. |
+| `Error_AgentIdentitySelfCreateRequired` | Applications can only create agent identities under themselves. The provided *AgentIdentityBlueprintId* doesn't match the calling application's *AppId*. |
 
 ## Get help
 

@@ -3,8 +3,6 @@ title: "Troubleshoot the Windows Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.topic: troubleshooting
 ms.date: 02/24/2026
-ms.author: jayrusso
-author: HULKsmashGithub
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.

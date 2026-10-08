@@ -2,13 +2,11 @@
 title: Configure myPolicies for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to myPolicies.
 
-author: jeevansd
 ms.topic: how-to
 ms.date: 04/13/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to myPolicies so that I can streamline the user management process and ensure that users have the appropriate access to myPolicies.
----
+--- 
 
 # Configure myPolicies for automatic user provisioning with Microsoft Entra ID
 
@@ -81,11 +79,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Provisioning** tab.
 
-	![Screenshot of Provisioning tab automatic.](common/provisioning.png)
+	![Screenshot of the Provisioning tab in the myPolicies application.](common/provisioning.png)
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+	![Screenshot of the new application provisioning configuration page.](common/application-provisioning.png)
 
 1. In the **Tenant URL** field, enter your myPolicies Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to myPolicies. If the connection fails, ensure your myPolicies account has the required admin permissions and try again.
 

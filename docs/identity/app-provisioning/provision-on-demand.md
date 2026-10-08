@@ -20,7 +20,7 @@ Use on-demand provisioning to provision a user or group in seconds. Among other 
 ## How to use on-demand provisioning
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as the [Application Owner](/entra/identity/enterprise-apps/overview-assign-app-owners) or an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 ::: zone pivot="app-provisioning"
 
@@ -153,7 +153,7 @@ The **View details** section displays the attributes that were modified in the t
 
 ## Frequently asked questions
 
-* **Do you need to turn provisioning off to use on-demand provisioning?** For applications that use a long-lived bearer token or a user name and password for authorization, no more steps are required. Applications that use OAuth for authorization currently require the provisioning job to be stopped before using on-demand provisioning. Applications such as G Suite, Box, Workplace by Facebook, and Slack fall into this category. Work is in progress to support on-demand provisioning for all applications without having to stop provisioning jobs.
+* **Do you need to turn provisioning off to use on-demand provisioning?** For applications that use a long-lived bearer token or a user name and password for authorization, no more steps are required. Applications that use OAuth for authorization currently require the provisioning job to be stopped before using on-demand provisioning. Applications such as G Suite, Box, and Slack fall into this category. Work is in progress to support on-demand provisioning for all applications without having to stop provisioning jobs.
 
 * **How long does on-demand provisioning take?** On-demand provisioning typically takes less than 30 seconds.
 

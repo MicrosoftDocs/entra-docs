@@ -2,9 +2,7 @@
 title: Call an API in Android app by using native authentication
 description: Learn how to acquire multiple access tokens and call an API in Android app by using native authentication.
 
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial

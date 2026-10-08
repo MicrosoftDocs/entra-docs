@@ -1,12 +1,10 @@
 ---
 title: include file
 description: include file
-author: OwenRichards1
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: include
 ms.date: 05/07/2019
-ms.author: owenrichards
 ms.reviewer: jmprieur
 ms.custom: include file
 ---

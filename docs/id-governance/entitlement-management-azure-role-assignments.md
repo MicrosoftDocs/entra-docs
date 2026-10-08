@@ -1,8 +1,6 @@
 ---
-title: Assign Azure Role-based access control (RBAC) Roles - Entitlement management (Preview)
+title: Assign Azure Role-based access control (RBAC) Roles - Entitlement management
 description: Assign Azure RBAC roles to access packages and catalogs in Microsoft Entra Entitlement Management. Learn how to manage access with least privilege principles.
-author: owinfreyATL
-ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
@@ -11,7 +9,7 @@ ms.date: 04/07/2026
 #CustomerIntent: As an IT administrator, I want to assign Azure RBAC roles to access packages so that I can manage resource access efficiently.
 ---
 
-# Assign Azure Role-based access control (RBAC) Roles (Preview)
+# Assign Azure Role-based access control (RBAC) Roles
 
 
 Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, Teams, and [Microsoft Entra Roles](entitlement-management-roles.md). To manage access to Azure resources, You can assign access to Azure RBAC roles directly to Access packages and Catalogs.
@@ -74,7 +72,7 @@ To assign an Azure RBAC role to a catalog within entitlement management, you'd d
 
 1. On the Catalogs page, open the catalog you want to add the Azure resource role to and select **Add Resources**.
 
-1. On the add resources page, select **Azure Resources (Preview)**.
+1. On the add resources page, select **Azure Resources**.
     :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-resources-catalog.png" alt-text="Screenshot of Azure resources within the available resources on the catalog add resources page.":::
 1. On the **Select Azure Resources** pane, select either **Subscription** or **Management Group**.
     :::image type="content" source="media/entitlement-management-azure-role-assignments/select-azure-resource-type.png" alt-text="Screenshot of selecting the Azure resource type.":::
@@ -97,7 +95,7 @@ After you add an Azure resource to a catalog, you're now able to add it as a res
 
 1. On the access package overview page, select **Resources**.
      :::image type="content" source="media/entitlement-management-azure-role-assignments/access-package-resource-roles.png" alt-text="Screenshot of resource role option on an existing access package.":::
-1. On the add resources page, select **Azure Resources (Preview)**.
+1. On the add resources page, select **Azure Resources**.
 
 1. On the **Select Azure Resources** pane, select either **Subscription** or **Management Group**.
     :::image type="content" source="media/entitlement-management-azure-role-assignments/select-azure-resource-type.png" alt-text="Screenshot of selecting the Azure resource type.":::
@@ -117,4 +115,3 @@ After you add an Azure resource to a catalog, you're now able to add it as a res
 ## Related content
 
 - [Assign Microsoft Entra roles (Preview)](entitlement-management-roles.md)
-

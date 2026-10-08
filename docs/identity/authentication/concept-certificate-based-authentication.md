@@ -3,8 +3,7 @@ title: Microsoft Entra CBA Overview
 description: Learn about Microsoft Entra certificate-based authentication (CBA) without federation.
 ms.topic: overview
 ms.date: 03/04/2025
-author: vimrang
-ms.reviewer: vranganathan
+ms.reviewer: vranganathan, vimrang
 ms.custom: has-adal-ref
 ---
 

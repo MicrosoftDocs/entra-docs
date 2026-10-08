@@ -40,7 +40,7 @@ Agents participate in several distinct token flow patterns, each designed for sp
 
 ### Tokens in user delegation scenarios
 
-User delegation scenarios enable agent applications to operate on behalf of users. In this scenario, tokens preserve user identity while identifying the agent identity blueprint as the acting entity. The OBO protocol requires token audience to match the client ID. However, for agent identity (agent ID), the incoming token has the audience of the agent identity blueprint.
+User delegation scenarios enable agent applications to operate on behalf of users. In this scenario, tokens preserve user identity while identifying the agent identity blueprint as the acting entity. The on-behalf-of (OBO) protocol requires token audience to match the client ID. However, for agent identity (agent ID), the incoming token has the audience of the agent identity blueprint.
 In this scenario, tokens have the following key characteristics:
 
 - Maintain user identity context throughout operations

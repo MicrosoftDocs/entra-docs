@@ -1,71 +1,57 @@
 ---
-title: Create a monitor (preview)
+title: Create a configuration monitor
 titleSuffix: Microsoft Entra ID Governance
-description: Learn how to create and configure a tenant configuration monitor in Microsoft Entra Tenant Governance to track configuration drift
+description: Learn how to create a configuration monitor in Microsoft Entra Tenant Governance to evaluate a tenant against a configuration baseline and report drift
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 07/28/2026
 ---
 
-<!-- source: Create_and_Update_Configuration_Monitor_LearnStyle.docx -->
+<!-- source: Tenant Governance - Create a new configuration monitor how-to.docx -->
 
-# Create and update a configuration monitor (preview)
+# Create a configuration monitor
 
-[!INCLUDE [entra-tenant-governance-preview-note](~/includes/entra-tenant-governance-preview-note.md)]
+Configuration monitors evaluate a tenant against a configuration baseline and report configuration drift. Use a monitor when you want to track whether a tenant stays aligned with a known-good configuration.
 
-This article describes how to create and update a configuration monitor in the [Microsoft Entra admin center](https://entra.microsoft.com). A configuration monitor periodically evaluates your tenant configuration against a configuration baseline. It records configuration drifts when the actual state differs from the desired state.
+## Prerequisites
 
-## Before you begin
+- The tenant has licenses for **Tenant Governance Basic** or **Tenant Governance Premium**. For current licensing requirements, see [Microsoft Entra Tenant Governance licensing](licensing.md).
+- Tenant Governance Basic includes a quota for the number of resources that you can monitor. If the resources in the monitor cause the tenant to exceed its quota, monitor creation fails. An organization gets additional quota for monitored resources for each Tenant Governance Premium license it has.
+- The signed-in user is in a Microsoft Entra privileged role and has permission to create configuration monitors. The user must also have read permissions for the resource types included in the monitor's configuration baseline.
+- The Tenant Configuration Management service has permissions for the workloads and resource types included in the monitor baseline. To assign or remove permissions for the service, see [Configure configuration management service permissions](how-to-set-up-permissions-tenant-monitoring.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+## Start monitor creation
 
-1. Verify that your tenant has a license for Microsoft Entra Tenant Governance.
+To start creating a configuration monitor, follow these steps:
 
-1. Verify that you have the required Microsoft Graph application permissions for the resource types included in your configuration baseline.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user with the required role and permissions.
+1. Browse to **Tenant Governance** > **Monitors**.
+1. Select **New**.
 
-> [!TIP]
-> Although you can author a configuration baseline directly in the wizard, in most scenarios it's easiest to prepare the baseline before you start monitor creation. One approach is to copy the baseline from an existing monitor. To learn more, see [Configuration management](configuration-management.md).
+## Complete the monitor wizard
 
-## Create a configuration monitor
+Complete the wizard steps to configure and create the monitor:
 
-Use these steps to create a new configuration monitor. The monitor creation wizard guides you through **Permissions**, **Configuration baseline**, and **Review**.
+1. On **Settings**, enter a unique monitor name of at least eight characters and an optional description.
+1. On **Configuration baseline**, upload a baseline JSON file or select **Import from snapshot**. If you select **Import from snapshot**, search by snapshot name, select a snapshot, and then select **Import**. You can use the in-page editor to manually compose or edit the configuration baseline.
+1. On **Permissions**, review whether the service has permission to:
 
-### Step 1: Permissions
+   - Read the required Microsoft Graph resources, to monitor Microsoft Entra or Intune resources.
+   - Authenticate to Exchange, to monitor Exchange, Defender, or Purview resources.
+   - Use the **Teams Reader** role, to monitor Teams resources.
 
-On the **Permissions** page, review the Microsoft Graph application permissions required to evaluate the resource types defined in the configuration baseline. Add or remove permissions as needed, then grant all required permissions before you proceed.
+   > [!NOTE]
+   > This step doesn't evaluate whether the user is authorized to create a monitor with the selected resources. It also doesn't show or validate whether the permissions assigned to the configuration management service locally within Exchange Online, Defender, or Purview are sufficient to create a monitor with resources in those services.
 
-Select **Next** to continue.
+1. On **Review**, review the summary and create the monitor.
 
-### Step 2: Configuration baseline
+After you create the monitor, it runs automatically on a periodic schedule. Monitor results are available after the monitor runs for the first time, between zero and six hours after creation.
 
-On the **Configuration baseline** page, write, paste, or upload the JSON file that defines the desired configuration state for the resources you want to monitor. The JSON includes the configuration baseline and elements that define the display name and description of the monitor. The monitor evaluates this baseline each time it runs.
+To learn how to review monitor results and configuration drift, see [View monitor results and manage monitors](how-to-see-monitor-results.md).
 
-After you validate the baseline, select **Next**.
-
-### Step 3: Review
-
-On the **Review** page, confirm the monitor name, description, and configuration baseline. Verify that the resource count matches what you intend.
-
-Select **Create monitor** to create the configuration monitor.
-
-## Update an existing configuration monitor
-
-To update an existing configuration monitor:
-
-1. Browse to **Tenant Governance** > **Configuration management** > **Monitors**.
-1. Find the monitor you want to update and select the edit (pencil) icon next to its name.
-
-The update wizard uses the same steps as creating a monitor: **Permissions** → **Configuration baseline** → **Review**.
-
-When you update an existing configuration monitor, the updated settings replace the existing monitor definition.
-
-> [!IMPORTANT]
-> When you change an existing monitor, Tenant Governance automatically deletes all previously generated monitor results and configuration drifts. The updated monitor records results and configuration drifts again each time it runs.
->
-> After you create or update a monitor, you might need to wait up to six hours for the monitor to run. After the monitor runs, view monitor results and configuration drifts.
-
-## Next steps
+## Related content
 
 - [Configuration management](configuration-management.md)
-- [See monitor results and configuration drifts](how-to-see-monitor-results.md)
-- [Update or delete a monitor](how-to-update-delete-monitor.md)
-- [Set up permissions for tenant monitoring](how-to-set-up-permissions-tenant-monitoring.md)
+- [configurationMonitor](/graph/api/resources/configurationmonitor?view=graph-rest-1.0&preserve-view=true)
+- [configurationBaseline](/graph/api/resources/configurationbaseline?view=graph-rest-1.0&preserve-view=true)
+- [Configure configuration management service permissions](how-to-set-up-permissions-tenant-monitoring.md)
+- [Create configuration snapshots](how-to-create-snapshots.md)

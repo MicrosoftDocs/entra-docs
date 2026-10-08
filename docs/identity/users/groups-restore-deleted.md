@@ -22,7 +22,7 @@ User Administrator and Partner Tier 1 Support | Can restore any deleted Microsof
 User | Can restore any deleted Microsoft 365 or cloud security group that they own
 
 > [!NOTE]
-> Soft delete is available for Microsoft 365 groups with assigned membership, Microsoft 365 groups with dynamic membership, and cloud security groups.
+> Soft delete is available for Microsoft 365 groups with assigned membership, Microsoft 365 groups with dynamic membership, and cloud security groups. Soft delete and restore for cloud security groups is in preview and available only in public clouds.
 
 > [!IMPORTANT]
 > Soft delete for security groups isn't supported in the following scenarios:

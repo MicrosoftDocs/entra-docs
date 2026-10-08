@@ -1,9 +1,7 @@
 ---
 title: Refresh tokens in the Microsoft identity platform
 description: Learn about refresh tokens that are used in the Microsoft identity platform.
-author: cilwerner
 manager: pmwongera
-ms.author: cwerner
 ms.date: 11/05/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform

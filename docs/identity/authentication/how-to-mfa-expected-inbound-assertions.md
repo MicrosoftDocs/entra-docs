@@ -3,8 +3,6 @@ title: Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with
 description: Explains Microsoft Entra ID multifactor authentication (MFA) SAML/WSFed assertions.
 ms.topic: how-to
 ms.date: 03/04/2025
-
-author: brozbab
 ms.reviewer: bozbayburtlu
 ---
 # Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP

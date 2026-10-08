@@ -2,8 +2,6 @@
 metadata:
   title: Transport Layer Security Inspection Frequently Asked Questions   
   description: "Get answers to common questions about Transport Layer Security (TLS) inspection."
-  author: HULKsmashGithub
-  ms.author: jayrusso
   ms.topic: faq   
   ms.date: 05/28/2025
 
@@ -76,6 +74,7 @@ sections:
           - Microsigner
           - Microsoft Graph
           - Microsoft Login Services
+          - Microsoft Office 365
           - O2 Moje Login
           - OpenSpace Solutions
           - Power BI External

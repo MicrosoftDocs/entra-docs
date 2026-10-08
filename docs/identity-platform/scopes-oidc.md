@@ -1,9 +1,7 @@
 ---
 title: Scopes and permissions in the Microsoft identity platform
 description: Learn about openID connect scopes and permissions in the Microsoft identity platform endpoint.
-author: omondiatieno
 manager: pmwongera
-ms.author: jomondi
 ms.date: 07/24/2025
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
@@ -30,11 +28,11 @@ The same is true for any third-party resources that integrate with the Microsoft
 - Write to a user's calendar
 - Send mail as a user
 
-Because of these types of permission definitions, the resource has fine-grained control over its data and how API functionality is exposed. A third-party app can request these permissions from users and administrators, who must approve the request before the app can access data or act on a user's behalf.
+Because of these permission definitions, the resource has fine-grained control over its data and how API functionality is exposed. A third-party app can request these permissions from users and administrators, who must approve the request before the app can access data or act on a user's behalf.
 
-When a resource's functionality is chunked into small permission sets, third-party apps can be built to request only the permissions that they need to perform their function. Users and administrators can know what data the app can access. And they can be more confident that the app isn't behaving with malicious intent. Developers should always abide by the principle of least privilege, asking for only the permissions they need for their applications to function.
+When a resource's functionality is divided into fine-grained permissions, third-party apps can be built to request only the permissions that they need to perform their function. Users and administrators can know what data the app can access. And they can be more confident that the app isn't behaving with malicious intent. Developers should always abide by the principle of least privilege, asking for only the permissions they need for their applications to function.
 
-In OAuth 2.0, these types of permission sets are called *scopes*. They're also often referred to as *permissions*. In the Microsoft identity platform, a permission is represented as a string value. An app requests the permissions it needs by specifying the permission in the `scope` query parameter. Identity platform supports several well-defined [OpenID Connect scopes](#openid-connect-scopes) and resource-based permissions (each permission is indicated by appending the permission value to the resource's identifier or application ID URI). For example, the permission string `https://graph.microsoft.com/Calendars.Read` is used to request permission to read users calendars in Microsoft Graph.
+In OAuth 2.0, these permissions are called *scopes*, though they're often referred to as *permissions*. In the Microsoft identity platform, a permission is represented as a string value. An app requests the permissions it needs by specifying the permission in the `scope` query parameter. Identity platform supports several well-defined [OpenID Connect scopes](#openid-connect-scopes) and resource-based permissions (each permission is indicated by appending the permission value to the resource's identifier or application ID URI). For example, the permission string `https://graph.microsoft.com/Calendars.Read` is used to request permission to read users calendars in Microsoft Graph.
 
 ## Admin-restricted permissions
 
@@ -172,6 +170,22 @@ Some resource URIs have a trailing forward slash, for example, `https://contoso.
 In this case, a trailing slash on the resource URI means the slash must be present when the token is requested.  So when you request a token for `https://management.azure.com/` and use `.default`, you must request `https://management.azure.com//.default` (notice the double slash!).
 
 In general, if you verify that the token is being issued, and if the token is being rejected by the API that should accept it, consider adding a second forward slash and trying again.
+
+## Preauthorization
+
+Preauthorization enables a resource application owner to grant permissions to client apps without requiring users to see a consent prompt for the set of permissions that are preauthorized. Resource owners can preauthorize client apps in the Azure portal or by using PowerShell and APIs like Microsoft Graph.
+
+In most cases, customer-facing applications in Microsoft Entra External ID require preauthorization because they're intended for users outside the organization who can't consent to the permissions the application requests. Preauthorization ensures these users can access the application without being prompted for consent.
+
+Preauthorized permissions always appear in the relevant token claims. Not all preauthorized permissions can be granted in all tenants.
+
+### Internal permissions between Microsoft services
+
+Microsoft services calling other Microsoft services on your behalf or in your tenant might be authorized using preauthorization. Preauthorized permissions appear in token claims, similar to permissions granted through other methods like consent.
+
+In some cases, these requests use preauthorized permissions that are created specifically for service-to-service requests and aren't available to external developers. These permissions might also grant access to internal business data or other sensitive content that isn't exposed in public APIs. Following internal naming conventions, some of these service-to-service permissions might have claim values like `MS-{permissionName}` or `_A.AA`.
+
+Customers who see such values in token claims should know that this is expected behavior and represents normal access between Microsoft services, as described in our Terms of Service.
 
 ## See also
 

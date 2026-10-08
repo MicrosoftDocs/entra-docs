@@ -5,7 +5,6 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.custom: devx-track-dotnet, devx-track-extended-java
 ms.date: 11/11/2025
-
 ---
 
 # How to use managed identities for Azure resources on an Azure VM to acquire an access token 

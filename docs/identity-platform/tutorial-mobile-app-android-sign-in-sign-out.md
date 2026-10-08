@@ -1,9 +1,7 @@
 ---
 title: Add sign-in in your Android app by using Microsoft identity platform
 description: Learn how to add sign-in in your Android app with an external tenant or workforce tenant by using Microsoft identity platform. 
-author: henrymbuguakiarie
 manager: pmwongera
-ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 01/27/2025

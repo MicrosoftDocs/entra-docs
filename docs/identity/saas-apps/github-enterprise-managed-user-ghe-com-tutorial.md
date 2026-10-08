@@ -2,11 +2,10 @@
 title: Configure GitHub Enterprise Managed User - GHE.com for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User - GHE.com.
 
-ms.reviewer: jomondi
 ms.topic: how-to
 ms.date: 06/28/2024
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User so that I can control who has access to GitHub Enterprise Managed User, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
----
+--- 
 
 # Configure GitHub Enterprise Managed User - GHE.com for Single sign-on with Microsoft Entra ID
 

@@ -205,5 +205,5 @@ You can use the following cmdlets to configure the policy in more detail. For mo
 For more information on Microsoft Entra groups, see:
 
 
-- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
 - [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

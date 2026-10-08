@@ -21,10 +21,10 @@ Group-based assignment requires Microsoft Entra ID P1 or P2 edition. Nested grou
 
 For greater control, certain types of enterprise applications can be configured to require user assignment. For more information on requiring user assignment for an app, see [Manage access to an application](what-is-access-management.md#requiring-user-assignment-for-an-app). Applications that require users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
 
-Prior to integration with Microsoft Entra, your application may already have one or more users. Using the account discovery functionality, you can generate a report of all the users in your application, identify which users have matching accounts in Entra, and which users are local to your application with one click. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). This enables you to simplify onboarding to Entra, while also pereodically monitoring for unauthorized access. 
+Prior to integration with Microsoft Entra, your application may already have one or more users. Using the account discovery functionality, you can generate a report of all the users in your application, identify which users have matching accounts in Entra, and which users are local to your application with one click. Learn more about the account discovery functionality [here](~/identity/app-provisioning/how-to-account-discovery.md). This enables you to simplify onboarding to Entra, while also periodically monitoring for unauthorized access.
 
 > [!NOTE]
-> If you encounter limitations when managing groups through the portal, such as with application access policy groups, consider using alternative methods like [PowerShell](#assign-users-and-groups-to-an-application-using-microsoft-graph-powershell) or [Microsoft Graph API](#assign-users-and-groups-to-an-application-using-microsoft-graph-api). 
+> If you encounter limitations when managing groups through the portal, such as with application access policy groups, consider using alternative methods like [PowerShell](#assign-users-and-groups-to-an-application-using-microsoft-graph-powershell) or [Microsoft Graph API](#assign-users-and-groups-to-an-application-using-microsoft-graph-api).
 
 ## Prerequisites
 
@@ -119,7 +119,7 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
 
     > [!NOTE]
     >The default AppRole ID is `00000000-0000-0000-0000-000000000000`. This role is assigned when no specific AppRole is defined for a service principal.
- 
+
 1. Assign the AppRole name to the `$app_role_name` variable. In this example, we want to assign Britta Simon the Analyst (Limited access) Role.
 
     ```powershell
@@ -147,7 +147,7 @@ To assign a group to an enterprise app, replace `Get-EntraUser` with `Get-EntraG
     $user = Get-Entrauser -ObjectId "<objectId>"
     $spo = Get-EntraServicePrincipal -ObjectId "<objectId>"
 
-    #Get the ID of role assignment 
+    #Get the ID of role assignment
     $assignments = Get-EntraServicePrincipalAppRoleAssignedTo -ObjectId $spo.ObjectId | Where {$_.PrincipalDisplayName -eq $user.DisplayName}
 
     #if you run the following, it will show you what is assigned what
@@ -189,7 +189,7 @@ $assignments | ForEach-Object {
 ## Assign users and groups to an application using Microsoft Graph PowerShell
 
 1. Open an elevated Windows PowerShell command prompt.
-1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Use the following script to assign a user to an application:
 
     ```powershell
@@ -213,63 +213,63 @@ $assignments | ForEach-Object {
 
 ### Example
 
-This example assigns the user Britta Simon to the Microsoft Workplace Analytics application using Microsoft Graph PowerShell. 
-  
+This example assigns the user Britta Simon to the Microsoft Workplace Analytics application using Microsoft Graph PowerShell.
+
 1. In PowerShell, assign the corresponding values to the variables `$userId`, `$app_name`, and `$app_role_name`.
-  
-    ```powershell  
-    # Assign the values to the variables  
-    $userId = "<Britta Simon's user ID>"  
-    $app_name = "Workplace Analytics"  
-    ```  
-   
-1. In this example, we don't know the exact name of the application role we want to assign to Britta Simon. Run the following command to get the service principal ($sp) using the service principal display name.  
-  
-    ```powershell  
-    # Get the service principal for the app  
-    $sp = Get-MgServicePrincipal -Filter "displayName eq '$app_name'"  
-    ```  
-   
-1. Run the following command to find the app roles exposed by the service principal.  
-  
-    ```powershell  
-    # Get the app roles exposed by the service principal  
-    $appRoles = $sp.AppRoles  
-    # Display the app roles  
-    $appRoles | ForEach-Object {  
-        Write-Output "AppRole: $($_.DisplayName) - ID: $($_.Id)"  
-    }  
-    ```  
-  
-    > [!NOTE]  
-    > The default AppRole ID is `00000000-0000-0000-0000-000000000000`. This role is assigned when no specific AppRole is defined for a service principal.  
-   
-1. Assign the role name to the `$app_role_name` variable. In this example, we want to assign Britta Simon the Analyst (Limited access) Role.  
-  
-    ```powershell  
-    # Assign the values to the variables  
-    $app_role_name = "Analyst (Limited access)"  
-    $appRoleId = ($sp.AppRoles | Where-Object { $_.DisplayName -eq $app_role_name }).Id  
-    ```  
-   
-1. Prepare the parameters and run the following command to assign the user to the app role.  
-  
-    ```powershell  
-    # Prepare parameters for the role assignment  
-    $params = @{  
-        "PrincipalId" = $userId  
-        "ResourceId" = $sp.Id  
-        "AppRoleId" = $appRoleId  
-    }  
-  
-    # Assign the user to the app role  
-    New-MgUserAppRoleAssignment -UserId $userId -BodyParameter $params |   
-        Format-List Id, AppRoleId, CreationTime, PrincipalDisplayName,   
-        PrincipalId, PrincipalType, ResourceDisplayName, ResourceId  
+
+    ```powershell
+    # Assign the values to the variables
+    $userId = "<Britta Simon's user ID>"
+    $app_name = "Workplace Analytics"
+    ```
+
+1. In this example, we don't know the exact name of the application role we want to assign to Britta Simon. Run the following command to get the service principal ($sp) using the service principal display name.
+
+    ```powershell
+    # Get the service principal for the app
+    $sp = Get-MgServicePrincipal -Filter "displayName eq '$app_name'"
+    ```
+
+1. Run the following command to find the app roles exposed by the service principal.
+
+    ```powershell
+    # Get the app roles exposed by the service principal
+    $appRoles = $sp.AppRoles
+    # Display the app roles
+    $appRoles | ForEach-Object {
+        Write-Output "AppRole: $($_.DisplayName) - ID: $($_.Id)"
+    }
+    ```
+
+    > [!NOTE]
+    > The default AppRole ID is `00000000-0000-0000-0000-000000000000`. This role is assigned when no specific AppRole is defined for a service principal.
+
+1. Assign the role name to the `$app_role_name` variable. In this example, we want to assign Britta Simon the Analyst (Limited access) Role.
+
+    ```powershell
+    # Assign the values to the variables
+    $app_role_name = "Analyst (Limited access)"
+    $appRoleId = ($sp.AppRoles | Where-Object { $_.DisplayName -eq $app_role_name }).Id
+    ```
+
+1. Prepare the parameters and run the following command to assign the user to the app role.
+
+    ```powershell
+    # Prepare parameters for the role assignment
+    $params = @{
+        "PrincipalId" = $userId
+        "ResourceId" = $sp.Id
+        "AppRoleId" = $appRoleId
+    }
+
+    # Assign the user to the app role
+    New-MgUserAppRoleAssignment -UserId $userId -BodyParameter $params |
+        Format-List Id, AppRoleId, CreationTime, PrincipalDisplayName,
+        PrincipalId, PrincipalType, ResourceDisplayName, ResourceId
     ```
 
 To assign a group to an enterprise app, replace `Get-MgUser` with `Get-MgGroup` and replace `New-MgUserAppRoleAssignment` with `New-MgGroupAppRoleAssignment`.
-    
+
 For more information on how to assign a group to an application role, see the documentation for [New-MgGroupAppRoleAssignment](/powershell/module/microsoft.graph.applications/new-mggroupapproleassignment).
 
 ## Unassign users and groups from an application using Microsoft Graph PowerShell
@@ -291,13 +291,13 @@ For more information on how to assign a group to an application role, see the do
     ```
 1. Run the following command to show the list of users assigned to the application
 
-    ```powershell   
+    ```powershell
     $assignments | Select *
     ```
 
 1. Run the following command to remove the AppRole assignment.
 
-    ```powershell   
+    ```powershell
     Remove-MgServicePrincipalAppRoleAssignedTo -AppRoleAssignmentId  '<AppRoleAssignment-id>' -ServicePrincipalId $sp.Id
     ```
 
@@ -350,8 +350,8 @@ $assignments | ForEach-Object {
     GET https://graph.microsoft.com/v1.0/users/{userPrincipalName}
     ```
 
-1. Assign the user to the application. 
-   
+1. Assign the user to the application.
+
     ```http
     POST https://graph.microsoft.com/v1.0/servicePrincipals/{resource-servicePrincipal-id}/appRoleAssignedTo
 

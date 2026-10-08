@@ -1,11 +1,9 @@
 ---
 title: Microsoft Entra Conditional Access Optimization Agent settings
 description: Explore the settings available for the Microsoft Entra Conditional Access Optimization Agent with Microsoft Security Copilot.
-ms.author: sarahlipsey
-author: shlipsey3
 ms.reviewer: jodah
 
-ms.date: 04/09/2026
+ms.date: 05/22/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -21,7 +19,7 @@ The Conditional Access Optimization Agent helps organizations improve their secu
 The agent settings described in this article cover standard options like triggers, notifications, and scope. But the settings also include advanced options like custom instructions, Intune integrations, and permissions.
 
 > [!IMPORTANT]
-> The ServiceNow integration, file upload capability, and activity-based runs in the Conditional Access Optimization Agent are currently in PREVIEW.
+> The ServiceNow integration and activity-based runs in the Conditional Access Optimization Agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## How to configure agent settings
@@ -119,6 +117,21 @@ At this time, the agent's communication is one direction, so you can receive not
 
 The Conditional Access Optimization Agent can pull from two different knowledge sources to make suggestions that are tailored to your organization's unique setup.
 
+### Files
+
+The Conditional Access Optimization Agent includes a mechanism to provide specific instructions about your organization. These instructions can include information such as Conditional Access policy naming conventions, unique procedures, and organizational structure so the agent suggestions are even more relevant to your environment. These uploaded files make up the knowledge base for the agent. For more information, see [Conditional Access Optimization Agent knowledge base](conditional-access-agent-optimization-knowledge-base.md).
+
+> [!IMPORTANT]
+> Your data stays within the agent and isn't used for model training.
+
+To add a file to the knowledge base:
+
+1. Browse to **Conditional Access Optimization Agent** > **Settings** > **Files**.
+1. Select the **Upload** button.
+1. Either drag and drop the file into the panel that opens or select the **Upload file** space to navigate to the file on your computer.
+
+The agent processes the file and analyzes it to ensure it includes the necessary information.
+
 ### Custom instructions
 
 You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to:
@@ -144,21 +157,6 @@ For more information about how to use custom instructions, check out the followi
 > [!VIDEO 5879a0f7-3644-4e34-a8ce-b186b8e5f128]
 
 Some of the content in the video, such as the user interface elements, is subject to change as the agent is updated frequently.
-
-### Files (Preview)
-
-The Conditional Access Optimization Agent includes a mechanism to provide specific instructions about your organization. These instructions can include information such as Conditional Access policy naming conventions, unique procedures, and organizational structure so the agent suggestions are even more relevant to your environment. These uploaded files make up the knowledge base for the agent. For more information, see [Conditional Access Optimization Agent knowledge base](conditional-access-agent-optimization-knowledge-base.md).
-
-> [!IMPORTANT]
-> Your data stays within the agent and isn't used for model training.
-
-To add a file to the knowledge base:
-
-1. Browse to **Conditional Access Optimization Agent** > **Settings** > **Files**.
-1. Select the **Upload** button.
-1. Either drag and drop the file into the panel that opens or select the **Upload file** space to navigate to the file on your computer.
-
-The agent processes the file and analyzes it to ensure it includes the necessary information.
 
 ## Plugins
 

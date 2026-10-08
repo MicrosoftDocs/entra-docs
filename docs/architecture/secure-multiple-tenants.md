@@ -1,10 +1,9 @@
 ---
 title: Resource isolation with multiple tenants to secure with Microsoft Entra ID
 description: Introduction to resource isolation with multiple tenants in Microsoft Entra ID.
-author: gargi-sinha
 ms.topic: concept-article
 ms.date: 7/5/2022
-ms.author: gasinh
+ms.reviewer: gasinh
 
 ms.subservice: architecture
 ---

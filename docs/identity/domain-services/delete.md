@@ -1,7 +1,6 @@
 ---
 title: Delete Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to disable, or delete, a Microsoft Entra Domain Services managed domain
-
 ms.assetid: 89e407e1-e1e0-49d1-8b89-de11484eee46
 ms.topic: how-to
 ms.date: 01/21/2025

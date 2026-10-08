@@ -1,9 +1,7 @@
 ---
 title: "Tutorial: Prepare an Angular single-page app (SPA) for authentication"
 description: Prepare an Angular single-page app (SPA) in a Microsoft Entra tenant to manage authentication and secure user access.
-author: garrodonnell
 manager: dougeby
-ms.author: godonnell
 ms.date: 02/20/2025
 ms.service: identity-platform
 ms.topic: tutorial

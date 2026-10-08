@@ -159,7 +159,7 @@ AuditLogs
 | project-rename source_tenant= AADTenantId
 ````
 
-  - Monitor for changes to cross-tenant access policies allowing / disallowing sync. 
+  - Monitor for changes to cross-tenant access policies allowing / disallowing sync.
 
 ```
 AuditLogs
@@ -178,7 +178,7 @@ AuditLogs
 - Create a default block outbound policy and only allow users to sign in as guests to approved tenants with their corporate identity. This will ensure isolation of tenants and cross flow of information between tenants.
 - Limit external user access to a pre-defined list of tenants using [tenant restrictions](/entra/external-id/tenant-restrictions-v2).
 - Verify guest access restriction is not set to ‘Guest users have the same access as members (most inclusive).
-- Check if ‘Enable guest self-service sign up via user flows’ is disabled. Self-service sign up flow allows creation of guest identities in the tenant without initiation from internal users. 
+- Check if ‘Enable guest self-service sign up via user flows’ is disabled. Self-service sign up flow allows creation of guest identities in the tenant without initiation from internal users.
 
 
 ### Defense in Depth
@@ -187,14 +187,14 @@ AuditLogs
 
 - Define [access control policies](~/external-id/authentication-conditional-access.md) to control access to resources.
 - Design Conditional Access policies with external users in mind.
-- Check if a sign in frequency Conditional Accesspolicy is applied to all guest sign ins. The sign in frequency should be limited to a maximum of 24 hours. Tokens of guests signing in from unmanaged devices are at a higher risk of token exfiltration and token replay attacks. Limiting the token lifetime reduces the exposure from this risk. This will ensure that even if a token is exfiltrated the threat actor has a limited window of usage. 
+- Check if a sign in frequency Conditional Access policy is applied to all guest sign ins. The sign in frequency should be limited to a maximum of 24 hours. Tokens of guests signing in from unmanaged devices are at a higher risk of token exfiltration and token replay attacks. Limiting the token lifetime reduces the exposure from this risk. This will ensure that even if a token is exfiltrated the threat actor has a limited window of usage.
 - Create dedicated Conditional Access policies for external accounts. If your organization is using the [**all users** dynamic membership group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
 
 <a name='monitoring-your-multi-tenant-environment'></a>
 
 **Govern cross-tenant access**
 
-- [Govern](~/identity/multi-tenant-organizations/cross-tenant-synchronization-governance.md) cross-tenant access using entitlement management, access reviews, and lifecycle workflows. 
+- [Govern](~/identity/multi-tenant-organizations/cross-tenant-synchronization-governance.md) cross-tenant access using entitlement management, access reviews, and lifecycle workflows.
 
 **Restricted Management Units**
 

@@ -114,7 +114,7 @@ items:
       items:
       - name: Authentication with the Auth SDK (sidecar)
         href: authentication-with-auth-sdk-sidecar.md
-      - name: Configure SDK for agent identities
+      - name: Configure Entra ID Auth SDK (sidecar) for agent identities
         href: microsoft-entra-sdk-for-agent-identities.md
       - name: Run the sidecar for local development
         href: sidecar-local-development.md
@@ -128,6 +128,8 @@ items:
         href: call-api-custom.md
       - name: Call Azure services
         href: call-api-azure-services.md
+      - name: Secure an MCP server with Microsoft Entra ID
+        href: secure-mcp-server-with-entra-id.md
     - name: Integrate third-party agent platforms
       items:
       - name: Configure third-party agents with Agent ID
@@ -143,7 +145,7 @@ items:
     items:
     - name: Assign agents to applications
       href: /entra/identity/enterprise-apps/assign-agent-identities-to-applications?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
-    - name: Maintain agent sponsors and lifecycle
+    - name: Agent identity sponsor tasks in Lifecycle Workflows
       href: /entra/id-governance/agent-sponsor-tasks?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
     - name: Manage agent identities in your organization
       href: manage-agent-identities-admin.md
@@ -162,7 +164,7 @@ items:
     items:
     - name: Migrate custom app registrations
       href: migrate-custom-app-registrations-to-agent-id.md
-    - name: Migrate Copilot Studio agents
+    - name: Recreate Copilot Studio agents with Entra Agent ID
       href: migrate-copilot-studio-agents-to-agent-id.md
   
   # REFERENCE ######################

@@ -74,13 +74,21 @@ One option for small companies is to use a single Microsoft Entra tenant, while 
 
 ## Connector load balancing
 
-When you add multiple connectors to a connector group, the group selects which connector handles each request.
+When you add multiple connectors to a connector group, the group selects which connector handles each request. Routing options include Random (default) and Session persistence.
+
+You can change the traffic routing behavior per Global Secure Access application. For more information about traffic routing options and when to use them, see [How to configure per-app access using Global Secure Access applications](how-to-configure-per-app-access.md#configure-traffic-routing-for-the-app). For Microsoft Graph details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
 
 ### Random
 
 Random is the default traffic routing method. New requests for a Global Secure Access application are distributed across the available connectors in the assigned connector group.
 
-You can change the traffic routing behavior per Global Secure Access application. For more information about traffic routing options and when to use them, see [How to configure per-app access using Global Secure Access applications](how-to-configure-per-app-access.md#configure-traffic-routing-for-the-app). For Microsoft Graph details, see [onPremisesPublishing resource type](/graph/api/resources/onpremisespublishing?view=graph-rest-beta&preserve-view=true).
+### Session persistence
+
+Session persistence, also called session affinity, consistently routes every request from a given user and device to the same connector within a group for the duration of a session. This approach is useful for applications that rely on connector egress IP for authentication and access control lists (ACLs). It ensures continuity and reduces the need for repeated authentication or data retrieval.
+
+> [!TIP]
+> Session persistence only works with Microsoft Entra Private Access applications, not Microsoft Entra application proxy applications.
+
 
 ## Sample configurations
 

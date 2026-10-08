@@ -11,7 +11,7 @@ ms.date: 02/27/2025
 
 ### How can you find resources that have a managed identity?
 
-You can find the list of resources that have a system-assigned managed identity by using the following Azure CLI Command: 
+You can find the list of resources that have a system-assigned managed identity by using the following Azure CLI Command:
 
 ```azurecli-interactive
 az resource list --query "[?identity.type=='SystemAssigned'].{Name:name, principalId:identity.principalId}" --output table
@@ -32,7 +32,7 @@ You can keep your users from creating user-assigned managed identities using [Az
 2. Choose **Definitions**
 3. Select **+ Policy definition** and enter the necessary information.
 4. In the policy rule section, paste:
-    
+
     ```json
     {
       "mode": "All",
@@ -47,7 +47,7 @@ You can keep your users from creating user-assigned managed identities using [Az
       },
       "parameters": {}
     }
-    
+
     ```
 
 After creating the policy, assign it to the resource group that you would like to use.
@@ -109,12 +109,12 @@ The security boundary of the identity is the resource to which it's attached. Fo
 
 No, if you move a subscription to another directory, you have to manually re-create them and grant Azure role assignments again.
 
-- For system assigned managed identities: disable and re-enable. 
+- For system assigned managed identities: disable and re-enable.
 - For user assigned managed identities: delete, re-create, and attach them again to the necessary resources (for example, virtual machines)
 
 ### Can I use a managed identity to access a resource in a different directory/tenant?
 
-No, managed identities don't currently support cross-directory scenarios. 
+No, managed identities don't currently support cross-directory scenarios.
 
 ### Are there any rate limits that apply to managed identities?
 
@@ -133,13 +133,57 @@ Moving a user-assigned managed identity to a different resource group isn't supp
 
 Managed identity tokens are cached by the underlying Azure infrastructure for performance and resiliency purposes: the back-end services for managed identities maintain a cache per resource URI for around 24 hours. It can take several hours for changes to a managed identity's permissions to take effect, for example. Today, it isn't possible to force a managed identity's token to be refreshed before its expiry. For more information, see [Limitation of using managed identities for authorization](managed-identity-best-practice-recommendations.md#limitation-of-using-managed-identities-for-authorization).
 
-### Are managed identities soft deleted? 
+### Are managed identities soft deleted?
 
 Yes, Managed Identities are soft deleted for 30 days. You can view the soft deleted managed identity service principal, but you can't restore or permanently delete it.
 
 ### What happens to tokens after a managed identity is deleted?
 
 When a managed identity is deleted, an Azure resource that was previously associated with that identity can no longer request new tokens for that identity. Tokens that were issued before the identity was deleted will still be valid until their original expiry. Some target endpoints' authorization systems may carry out other checks in the directory for the identity, in which case the request fails as the object can't be found. However some systems, like Azure RBAC, will continue to accept requests from that token until it expires.
+
+## Directory object quota for managed identities
+
+Each managed identity has a service principal in Microsoft Entra ID. This service principal counts toward the tenant's directory object quota, together with other directory objects such as users, groups, applications, devices, and service principals.
+
+To preserve directory capacity for other essential objects, creation of a managed identity is blocked when the new service principal would cause directory usage to reach or exceed **98%** of the tenant's total directory object quota.
+
+The 98% threshold applies to total directory object usage. It isn't a separate quota that counts only managed identities.
+
+> [!IMPORTANT]
+> This validation affects the creation of new managed identity service principals. Existing managed identities continue to work, and their ability to obtain tokens isn't affected.
+
+### Operations affected by the quota
+
+The directory quota validation can affect the following operations:
+
+- Creating a user-assigned managed identity.
+- Enabling a system-assigned managed identity on an Azure resource.
+- Re-enabling a system-assigned managed identity if the operation requires a new service principal.
+
+Assigning an existing user-assigned managed identity to another Azure resource doesn't create another service principal. Therefore, the assignment doesn't consume another directory object and isn't blocked by this validation.
+
+### How the 98% threshold works
+
+Before Microsoft Entra creates the service principal for a managed identity, it evaluates the tenant's current directory object usage.
+
+Creation is blocked if adding the service principal would cause directory usage to reach or exceed 98% of the tenant's total quota.
+
+For example, if a tenant has a quota of 300,000 directory objects, the managed identity creation threshold is 294,000 objects. A request that would increase usage to 294,000 objects is blocked.
+
+The remaining capacity is available for other directory operations and essential objects. It doesn't increase the tenant's total directory object quota.
+
+### Error message
+
+When managed identity creation is blocked, you receive an error similar to the following message:
+
+> The directory object quota limit for the Tenant has been reached. Creation of new managed identities is blocked. Please ask your administrator to increase the directory quota limit or delete objects to reduce the used quota.
+
+> [!IMPORTANT]
+> Soft-deleted objects count towards the overall quota usage.
+
+### Resolve a blocked managed identity operation
+
+After directory usage falls below the 98% threshold, or after Microsoft Support increases the tenant's quota, retry creating or enabling the managed identity.
 
 ## Next steps
 

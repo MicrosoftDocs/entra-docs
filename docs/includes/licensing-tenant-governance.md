@@ -1,15 +1,16 @@
 ---
 title: include file
 description: include file
-author: barclayn
+author: kenwith
 ms.service: entra-id
 ms.topic: include
-ms.date: 03/17/2026
-ms.author: barclayn
-ms.custom: include file
+ms.date: 07/29/2026
+ms.author: kenwith
+ms.custom: include file, msecd-doc-authoring-1018
+ai-usage: ai-assisted
 ---
 
-The following table shows what features associated with Tenant Governance are available with each license.
+The following tables show which Tenant Governance features are available with each license.
 
 > [!NOTE]
 > Microsoft Entra P1 is also included in Microsoft 365 E3 and Microsoft 365 Business Premium. Microsoft Entra P2 is also included in Microsoft 365 E5. Microsoft Entra ID Governance is also included in Microsoft Entra Suite and Microsoft 365 E7.
@@ -18,8 +19,8 @@ The following table shows what features associated with Tenant Governance are av
 
 | Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
 |---|---|---|---|---|
-| Single tenant configuration monitoring and drift reporting | | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day | ✅ Up to 30 monitors, up to 800 configuration resources per tenant per day |
-| Single tenant configuration snapshots | | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs | ✅ Up to 20,000 resources per tenant per month, up to 12 active snapshot jobs |
+| Single tenant configuration monitoring and drift reporting | | ✅ Up to 30 monitors and 800 configuration resources per tenant per day | ✅ Up to 30 monitors and 800 configuration resources per tenant per day | ✅ Base capacity plus 10 additional configuration resources per day for each license |
+| Single tenant configuration snapshots | | ✅ Up to 20,000 resources per tenant per month and 12 active snapshot jobs | ✅ Up to 20,000 resources per tenant per month and 12 active snapshot jobs | ✅ Base capacity plus 35 additional configuration resources per month for each license |
 
 ### Related tenants
 

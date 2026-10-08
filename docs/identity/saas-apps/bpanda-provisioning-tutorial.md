@@ -3,15 +3,12 @@ title: Configure Bpanda for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Bpanda.
 
 
-author: jeevansd
-manager: pmwongera
 
 ms.topic: how-to
 ms.date: 02/27/2026
-ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bpanda so that I can streamline the user management process and ensure that users have the appropriate access to Bpanda.
----
+--- 
 
 # Configure Bpanda for automatic user provisioning with Microsoft Entra ID
 
@@ -25,6 +22,8 @@ This article describes the steps you need to perform in both Bpanda and Microsof
 > * Keep user attributes synchronized between Microsoft Entra ID and Bpanda
 > * Provision groups and group memberships in Bpanda
 > * Single sign-on to Bpanda (recommended)
+> * Client Credentials authentication supported.
+> * Long lived bearer token authentication supported.
 
 ## Prerequisites
 

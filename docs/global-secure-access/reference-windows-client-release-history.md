@@ -1,16 +1,17 @@
 ---
-title: Global Secure Access Client for Windows Release Notes
-description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
+title: Global Secure Access Client Release Notes
+description: Review Global Secure Access client for Windows release notes, including new features, fixes, minimum versions, and Windows Update upgrade behavior.
 ms.topic: reference
-ms.date: 04/27/2026
-ms.author: jayrusso
-author: HULKsmashGithub
+ms.date: 08/26/2026
 ms.reviewer: lirazbarak
+ms.custom: msecd-doc-authoring-1023
 ai-usage: ai-assisted
-
+#customer intent: As an IT administrator, I want to review Global Secure Access client releases and upgrade behavior so that I can keep Windows devices current.
 ---
 # Global Secure Access client for Windows release notes
-This article lists the released versions of the Global Secure Access client for Windows and the changes in each version.   
+IT administrators can use these release notes to track new features, fixes, minimum versions, and upgrade behavior for the Global Secure Access client for Windows.
+
+Starting in November 2026, the client also receives upgrades through Windows Update. For details, see [Automatic upgrades from Windows Update](#automatic-upgrades-from-windows-update).
 
 ## Download the latest version
 You can download the current version of the Global Secure Access client from the Microsoft Entra admin center.
@@ -19,6 +20,58 @@ You can download the current version of the Global Secure Access client from the
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted." lightbox="media/reference-windows-client-release-history/client-download-screen.png":::
+
+## Automatic upgrades from Windows Update
+
+> [!IMPORTANT]
+> Starting in November 2026, the Global Secure Access client automatically receives upgrades through Windows Update.
+
+Devices receive these upgrades when they run the following client versions or later:
+
+| Platform | Minimum client version |
+| --- | --- |
+| Windows x64 | 2.31.125 |
+| Windows on Arm | 2.32.294 |
+
+### Opt out of automatic upgrades
+
+To opt out of automatic upgrades, use the following parameter when you install or upgrade the client. Run the installer from a command line, or deploy it through your mobile device management (MDM) solution.
+
+```cmd
+<Global Secure Access installer file> /quiet /norestart EnableWindowsUpdates=0
+```
+
+> [!IMPORTANT]
+> If you opt out of automatic upgrades, you're responsible for keeping the Global Secure Access client up to date on those devices. Devices that run older client versions don't receive the latest features, fixes, and security updates.
+
+## Version 2.32.294
+Released for download on August 26, 2026.
+### Functional changes
+- Adds a **Prefer local network** option for cases where the local subnet overlaps with private applications, such as when printing or casting. The option appears in the client settings when an administrator enables it.
+- Accelerates the creation of new tunnels for an improved tunneling experience.
+### Other changes
+- The client installer includes .NET Runtime version 10.0.9.
+- Removes LastMile for Office 365 telemetry from the Global Secure Access client.
+- New telemetries are available.
+- Accessibility improvements.
+- Miscellaneous bug fixes and improvements.
+
+## Version 2.31.125
+Released for download on June 2, 2026.
+### Functional changes
+- Adds an account picker to the **Sign Out** flow to make it easier to sign in to a different account. The picker appears on Microsoft Entra-registered devices and on Microsoft Entra-joined devices that have the appropriate registry key set.
+- Adds a **Single Windows user session detected** health check test. The Global Secure Access client currently supports one interactive session in Windows.
+- Shows active channels in the **Connections** tab in this order: Microsoft Entra, Microsoft 365, Private, Internet.
+- The client status distinguishes between **network is disconnected** and **no internet connectivity**.
+- Enhancement to Intelligent Local Access: adds an information bar in the **Connections** tab that indicates when the device is connected to a private network.
+- Detects and tunnels agentic network connections.
+### Other changes
+- The client installer includes .NET Runtime version 8.0.26.
+- Performance improvements when opening new connections.
+- The **Global Secure Access Forwarding Profile Service** is configured to automatically restart on failure.
+- New telemetries are available.
+- Accessibility improvements.
+- Miscellaneous bug fixes and improvements.
 
 ## Version 2.28.96
 Released for download on April 27, 2026.

@@ -37,7 +37,7 @@ In this article, you learn how to:
 
 ## Configure your test user account
 
-1. [Create a new user](../fundamentals/how-to-create-delete-users.yml#create-a-new-user) to use in your testing.
+1. [Create a new user](../fundamentals/how-to-create-delete-users.md#create-a-new-user) to use in your testing.
 
 1. Sign in with your new user. The user name would be something like meganb@yourtenant.onmicrosoft.com. You must change your password.
 

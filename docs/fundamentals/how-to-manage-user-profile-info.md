@@ -164,9 +164,6 @@ The following settings can be managed from **User settings**.
   - [Guest invite setting](~/external-id/external-collaboration-settings-configure.md)
   - [External user leave settings](~/external-id/self-service-sign-up-user-flow.yml#enable-self-service-sign-up-for-your-tenant)
   - Collaboration restrictions
-- Manage user feature settings
-  - Users can use preview features for My Apps
-  - Administrators can access My Staff
 
 ## Edit multiple users at once
 
@@ -210,6 +207,6 @@ This new Microsoft Entra admin center update allows editing certain user attribu
 
 ## Related content
 
-- [Add or delete users](how-to-create-delete-users.yml)
+- [Add or delete users](how-to-create-delete-users.md)
 - [Assign roles to users](how-subscriptions-associated-directory.md)
-- [Create a basic group and add members](how-to-manage-groups.yml)
+- [Create a basic group and add members](how-to-manage-groups.md)

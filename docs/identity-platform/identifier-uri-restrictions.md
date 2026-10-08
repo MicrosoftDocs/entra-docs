@@ -2,8 +2,6 @@
 title: Restrictions on identifier URIs of Microsoft Entra applications
 description: Understand why an app management policy may block the addition of an identifier URI, and learn more about the policy and the restrictions it enforces on identifier URIs
 ms.date: 1/29/2025
-author: arcrowe
-ms.author: arcrowe
 editor: 
 ms.reviewer: arcrowe
 ms.service: identity-platform

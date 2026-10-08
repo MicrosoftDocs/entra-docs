@@ -35,6 +35,14 @@ This approach provides:
 
 This series of exercises covers the fundamentals of Internet Access. The exercises assume that you follow them in order. If you skip around, you might miss a step. For example, in the baseline web-filtering tutorial, you create a security profile and assign it to a Microsoft Entra Conditional Access policy. Subsequent labs instruct you to assign the new policy to this existing security profile rather than creating a new security profile and Conditional Access policy each time.
 
+## Prerequisites
+
+To complete this tutorial series, you need the following:
+
+- Microsoft Entra ID tenant with P1 and either Microsoft Entra Internet Access or Microsoft Entra Suite licenses.
+- Either Global Admin role or both of the following roles: Global Secure Access Admin, Security Admin.
+- A Windows 11 device (must be Entra joined or hybrid joined) with internet access.
+
 ## Learning progression
 
 Each lab builds on the previous one and follows a logical progression.

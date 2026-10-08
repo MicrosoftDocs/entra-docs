@@ -2,8 +2,6 @@
 title: Mark an app as publisher verified
 description: Describes how to mark an app as publisher verified. When an application is marked as publisher verified, it means that the publisher (application developer) verified the authenticity of their organization using a Cloud Partner Program (CPP) account that completed the verification process and associated this CPP account with that application registration.
 manager: dougeby
-author: garrodonnell
-ms.author: godonnell
 ms.custom: 
 ms.date: 05/31/2024
 ms.reviewer: 

@@ -1,8 +1,6 @@
 ---
 title: Application Usage Analytics Overview
 description: "Gain visibility into application traffic to gain insights into app categories, risk scores, transactions, and organizational usage patterns."
-author: HULKsmashGithub
-ms.author: jayrusso
 ms.topic: overview
 ms.date: 03/19/2026
 ms.reviewer: kerenSemel

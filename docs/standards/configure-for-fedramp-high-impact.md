@@ -4,10 +4,10 @@ description: Overview of how you can meet a FedRAMP High Impact level for your o
 ms.service: entra
 ms.subservice: standards
 ms.topic: how-to
-author: gargi-sinha
-ms.author: gasinh
 manager: martinco
-ms.reviewer: martinco
+author: janicericketts
+ms.author: jricketts
+ms.reviewer: martinco, gasinh
 ms.date: 03/09/2023
 ms.custom: it-pro
 ---

@@ -1,13 +1,11 @@
 ---
 title: Guidance for using user Source of Authority (SOA) in Microsoft Entra ID
 description: Streamline user management with User Source of Authority (SOA) in Microsoft Entra ID. Minimize your AD footprint and ensure a smooth migration to the cloud.
-author: owinfreyATL
 manager: dougeby
 ms.topic: concept-article
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.date: 09/30/2025
-ms.author: owinfrey
-ms.reviewer: dahnyahk
+ms.reviewer: dhanyahk
 ---
 
 

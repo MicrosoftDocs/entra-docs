@@ -32,6 +32,10 @@ As part of supporting users no matter where they fall in the Joiner-Mover-Leaver
 
 1.  Under the **Days of inactivity**, enter the number of days you want the trigger to run for if exceeded, and then select **Next**.
     :::image type="content" source="media/lifecycle-workflow-inactive-users/inactivity-trigger.png" alt-text="Screenshot of days of inactivity.":::
+
+    > [!NOTE]
+    > Sign-in inactivity is determined by the `lastSuccessfulSignInDateTime` attribute.
+
 1. On the **Scope** page, enter the scope you want for the trigger, and then select **Next**.
 
 1. On the **Review Tasks** page, select the task you want to run for the users who you consider to be inactive and select **Review + Create**.

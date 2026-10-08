@@ -2,10 +2,8 @@
 title: Add sign-in in Android app by using native authentication
 description: Learn how to add sign-in and sign-out with email one-time passcode or username and password in Android app by using native authentication.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external
@@ -38,6 +36,8 @@ In this tutorial, you:
 To sign in a user using the one-time passcode, collect the email and send an email containing a one-time passcode for the user to verify their email. When the user enters a valid one-time passcode, the app signs them in. 
 
 To sign in a user using username (email) and password, collect the email and password from the user. If the username and password are valid, the app signs in the user.
+
+If the **Username** built-in user attribute is enabled in your tenant's sign-up user flow, the `username` parameter in sign-in accepts either the user's email address or their username (alias). No separate sign-in logic is needed to support alias-based sign-in.
 
 To sign in a user, you need to: 
 

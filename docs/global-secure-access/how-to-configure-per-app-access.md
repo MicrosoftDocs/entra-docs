@@ -190,14 +190,13 @@ Content-Type: application/json
 
 Replace `{appRegistrationObjectId}` with the application registration's object ID. You can find this value in the Microsoft Entra admin center under **Identity** > **Applications** > **App registrations** by selecting the app registration for your Global Secure Access application and copying the **Object ID** from the **Overview** page. To return to the default behavior, set `trafficRoutingMethod` to `random`. For more information, see [Update application](/graph/api/application-update?view=graph-rest-beta&preserve-view=true). 
 
-To confirm that the configuration was committed, retrieve the app registration object with a `GET` request and review the `onPremisesPublishing.trafficRoutingMethod` value:
+To confirm that the configuration was committed, retrieve the app registration object with a $select parameter and `GET` request to review the `onPremisesPublishing.trafficRoutingMethod` value:
 
 ```http
 GET https://graph.microsoft.com/beta/applications/{appRegistrationObjectId}
 ```
 
-For more information, see [Get application](/graph/api/application-get?view=graph-rest-beta&preserve-view=true).
-
+For more information, see [Get application](/graph/api/application-get?view=graph-rest-beta&preserve-view=true) and [Customize Microsoft Graph responses with query parameters](/graph/query-parameters?tabs=http#select)
 ## Enable or disable access with the Global Secure Access Client
 
 You can enable or disable access to the Global Secure Access app using the Global Secure Access Client. This option is selected by default, but can be disabled, so the FQDNs and IP addresses included in the app segments aren't tunneled through the service.

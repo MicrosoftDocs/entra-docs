@@ -1,8 +1,7 @@
 ---
 title: Microsoft Entra Suite deployment scenarios introduction
 description: The Microsoft Entra Suite deployment scenarios article series provides guidance regarding the Microsoft Entra Suite. 
-ms.author: gasinh
-author: gargi-sinha
+ms.reviewer: gasinh
 ms.topic: concept-article
 ms.date: 06/13/2024
 

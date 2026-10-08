@@ -1,9 +1,7 @@
 ---
 title: Quickstart - Call a web API from a sample Nodejs web app
 description: Learn how to configure a Node.js web app code sample to sign in users and call an API in an external tenant.
-author: kengaderdus
 manager: dougeby
-ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: quickstart

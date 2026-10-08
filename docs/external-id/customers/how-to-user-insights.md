@@ -2,13 +2,17 @@
 title: Analyze user activity in Microsoft Entra External ID
 description: Learn about how to analyze user activity and engagement for your registered application in the external tenant.
 ms.topic: how-to
-ms.date: 09/16/2025
+ms.date: 05/19/2026
 ms.custom: it-pro, sfi-image-nochange
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to learn about data analytics into user activity and engagement for  registered applications.
 ---
 # Gain insights into your app users’ activity
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+> [!IMPORTANT]
+> **User Insights is being retired on August 31, 2026.** Plan to migrate to Azure Monitor and Log Analytics before the retirement date. See [Migrate from User Insights](#migrate-from-user-insights) for recommended alternatives and next steps.
 
 The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This feature can help you uncover valuable insights that can aid strategic decisions and drive business growth.
 
@@ -127,7 +131,23 @@ To fetch the user insights data, you can create a Power BI report using custom c
 Power BI comes with Power Query Editor that can help you clean and shape your data. You can remove unnecessary columns, handle missing values, and apply transformations such as merging, grouping, filtering, and many more. For more information, see the [Query Editor overview](/power-bi/transform-model/desktop-query-overview).
 
 
+## Migrate from User Insights
+
+User Insights is being retired on **August 31, 2026**. After that date, the Application user activity dashboards and the Microsoft Graph `reports/userInsights/*` (beta) endpoints stop returning data. To keep visibility into user activity, sign-ins, and MFA usage, migrate to the alternatives in this section before the retirement date. There's no end-user impact, and historical dashboard data isn't migrated automatically.
+
+### Recommended alternatives
+
+- **Azure Monitor with Log Analytics (recommended).** Route Microsoft Entra sign-in and audit logs to a Log Analytics workspace, then use [Microsoft Entra workbooks](/entra/identity/monitoring-health/howto-use-workbooks) or KQL queries against the `SigninLogs` and `AuditLogs` tables to reproduce the User Insights views. For setup, see [Set up Azure Monitor in an external tenant](how-to-azure-monitor.md) and [Integrate Microsoft Entra logs with Azure Monitor logs](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs).
+- **Microsoft Graph sign-in and audit log APIs.** For custom reports and pipelines, replace calls to `reports/userInsights/*` with [List signIns](/graph/api/signin-list), [List directoryAudits](/graph/api/directoryaudit-list), and the [reports API](/graph/api/resources/report).
+
+### Next steps
+
+Before August 31, 2026, inventory the dashboards, Power BI reports, and app registrations that depend on User Insights or the `reports/userInsights/*` endpoints, then rebuild the views by using Azure Monitor or the Microsoft Graph activity log APIs.
+
 ## Related content
 
+* [Set up Azure Monitor in an external tenant](how-to-azure-monitor.md)
+* [Integrate Microsoft Entra logs with Azure Monitor logs](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs)
+* [Microsoft Graph signIns API](/graph/api/signin-list)
 * [Manage admin accounts](how-to-manage-admin-accounts.md)
 * [Manage customer accounts](how-to-manage-customer-accounts.md)

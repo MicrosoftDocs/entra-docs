@@ -5,7 +5,7 @@ ms.reviewer: celested
 ms.topic: how-to
 ms.date: 11/21/2022
 ms.custom: sfi-image-nochange
----
+--- 
 
 # FortiGate Azure Virtual Machine Deployment Guide
 

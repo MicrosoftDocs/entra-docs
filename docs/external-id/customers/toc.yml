@@ -48,6 +48,8 @@ items:
       href: how-to-migrate-passwords-just-in-time.md
     - name: Migrate from Azure AD B2C
       items:
+        - name: Analyze custom policies
+          href: how-to-analyze-azure-ad-b2c-custom-policies.md
         - name: Plan your migration
           href: plan-your-migration-from-b2c-to-external-id.md
         - name: HSC mode limitations
@@ -58,8 +60,8 @@ items:
           href: enable-external-id-high-scale-compatibility-mode.md
         - name: Troubleshoot HSC mode
           href: troubleshoot-high-scale-compatibility-mode.md
-        - name: Services and integration partners
-          href: services-integration-partners.md
+    - name: Migrate from Amazon Cognito
+      href: migrate-from-cognito-to-external-id.md
 - name: Security
   expanded: false
   items:
@@ -100,6 +102,8 @@ items:
       href: how-to-region-code-opt-in.md
     - name: Sign in with a username
       href: how-to-sign-in-alias.md
+    - name: Sign in with passkeys
+      href: how-to-sign-in-with-passkey.md
     - name: Native authentication
       items:
         - name: Overview
@@ -176,6 +180,8 @@ items:
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                     - name: Add social sign-in
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Add custom headers to network requests
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-custom-headers?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Angular
               items:
                 - name: Sign up
@@ -192,6 +198,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Add social sign-in
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-social-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Add custom headers to network requests
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-custom-headers?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app tutorials
       items: 
         - name: Node/Express.js
@@ -303,6 +311,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback
                   href: /entra/identity-platform/tutorial-native-authentication-android-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Add custom headers to network requests
+                  href: /entra/identity-platform/tutorial-native-authentication-android-custom-headers?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Call an API
                   href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                   displayName: multiple access token 
@@ -430,8 +440,8 @@ items:
           href: ../direct-federation-overview.md
         - name: Configure SAML/WS-Fed IdP federation
           href: ../direct-federation.md
-        - name: Self-service sign-up for federated users
-          href: how-to-saml-ws-federation-self-service-sign-up.md
+        - name: Add an identity provider to a user flow
+          href: how-to-add-identity-provider-to-user-flow-customers.md
     - name: Integrate apps 
       items:
         - name: Web app
@@ -472,6 +482,8 @@ items:
       href: concept-user-attributes.md
     - name: Adding your own business logic
       href: concept-custom-extensions.md
+    - name: Use Microsoft Entra Verified ID
+      href: verified-id-setup-issuance-presentation.md
     - name: Custom authentication extensions
       items:
         - name: Custom claims provider

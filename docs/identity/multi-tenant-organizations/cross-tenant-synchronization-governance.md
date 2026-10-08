@@ -4,8 +4,7 @@ description: Learn to govern and manage identity and access lifecycles across mu
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 03/18/2026
-ms.author: gasinh
-author: gargi-sinha
+ms.reviewer: gasinh
 manager: martinco
 ms.custom: it-pro
 #customer intent: I'm an IT admin and I need to manage user identity lifecycles across multiple tenants. My goal is to provision, synchronize, and deprovision users with automation.

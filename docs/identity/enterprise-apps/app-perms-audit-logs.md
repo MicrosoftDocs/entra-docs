@@ -1,7 +1,6 @@
 ---
 title: View Activity logs of application permissions
 description: Understand how to view the activity logs of what permissions are being granted and revoked for applications in my directory.
-
 ms.topic: how-to
 ms.date: 04/28/2025
 ms.reviewer: ergreenl
