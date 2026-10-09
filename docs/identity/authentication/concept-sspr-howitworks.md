@@ -71,14 +71,14 @@ This password change experience is separate from SSPR. Users don't need to be re
 
 To use this feature, users need a Microsoft Entra ID P1 or P2 license.
 
-### Enable password changes with passwordless authentication
+### Allow password change after secure sign-in
 
 By default, passwordless users can't change their password without entering their current password. To enable the experience, you need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. Select **Password**, and then select **Configure**.
-1. Enable **Allow passwordless password change in My Sign-ins**.
+1. Enable **Allow password change after secure sign-in.**
 1. Select **Save**.
 
 The setting applies to all users in the tenant. You can't target or exclude individual users or groups.
