@@ -447,6 +447,8 @@
           href: workflow-sensitivity-labels.md 
         - name: Agent Identity Sponsor Tasks
           href: agent-sponsor-tasks.md       
+      - name: Agent lifecycle policies
+        href: agent-lifecycle-policies.md
       - name: Guest Lifecycle Policies
         href: guest-lifecycle-policies.md
       - name: Manage sponsored guests in My Access
