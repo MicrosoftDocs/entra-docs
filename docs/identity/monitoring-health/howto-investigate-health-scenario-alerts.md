@@ -281,4 +281,6 @@ Content-Type: application/json
 
 - [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring MFA](scenario-health-sign-ins-mfa.md)
+- [Agent ID interactive sign-ins](scenario-health-agent-id-interactive-sign-ins.md)
+- [Agent ID autonomous sign-ins](scenario-health-agent-id-autonomous-sign-ins.md)
 - [Microsoft Graph Health monitoring alerts API documentation](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)

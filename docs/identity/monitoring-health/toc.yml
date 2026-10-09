@@ -117,6 +117,10 @@ items:
       href: scenario-health-sign-ins-compliant-managed-device.md
     - name: Sign-ins requiring MFA
       href: scenario-health-sign-ins-mfa.md
+    - name: Agent ID interactive sign-ins
+      href: scenario-health-agent-id-interactive-sign-ins.md
+    - name: Agent ID autonomous sign-ins
+      href: scenario-health-agent-id-autonomous-sign-ins.md
     - name: Sign-ins to applications using SAML auth
       href: scenario-health-sign-ins-saml-auth.md 
   - name: Microsoft Entra Recommendations 
