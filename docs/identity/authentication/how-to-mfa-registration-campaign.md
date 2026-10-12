@@ -230,11 +230,11 @@ An **eligible passkey** must meet the applicable profile requirements. Registeri
 
 For **unrestricted, synced-only, and device-bound-only profiles**, the campaign evaluates whether a qualifying credential is available for the user’s current OS and browser combination.
 
-A credential registered on the account doesn’t necessarily suppress the nudge on every platform. It must qualify under the applicable profile and satisfy the platform-specific rule.
+A passkey registered on the account doesn’t necessarily suppress the nudge on every platform. It must qualify under the applicable profile and satisfy the platform-specific rule.
 
-The following table shows which available credential types suppress the nudge on each platform.
+The following table shows which available passkey types suppress the nudge on each platform.
 
-| Available credential type | Windows + Chrome | Windows + other browsers | macOS + Chrome | macOS + other browsers | iOS | Android |
+| Available passkey type | Windows + Chrome | Windows + other browsers | macOS + Chrome | macOS + other browsers | iOS | Android |
 | --- | --- | --- | --- | --- | --- | --- |
 | Windows Hello for Business | ✓ | ✓ | — | — | — | — |
 | Microsoft Entra passkey on Windows | ✓ | ✓ | — | — | — | — |
