@@ -12,7 +12,7 @@ ms.custom: it-pro, sfi-image-nochange
 
 This article describes how to use permissions granted by custom roles in Microsoft Entra ID to address your application and agent management needs. In Microsoft Entra ID, you can delegate Application and agent creation and management permissions in the following ways:
 
-- [Restricting who can create applications](#restrict-who-can-create-applications) and manage the applications they create. By default in Microsoft Entra ID, all users can register applications and manage all aspects of applications they create. This can be restricted to only allow selected people that permission.
+- [Restricting who can create applications](#restrict-who-can-create-applications-and-agents) and manage the applications they create. By default in Microsoft Entra ID, all users can register applications and manage all aspects of applications they create. This can be restricted to only allow selected people that permission.
 - [Assigning one or more owners to an application](#assign-application-owners). This is a simple way to grant someone the ability to manage all aspects of Microsoft Entra configuration for a specific application.
 - [Assigning a built-in administrative role](#assign-built-in-application-administrator-roles) that grants access to manage configuration in Microsoft Entra ID for all applications. This is the recommended way to grant IT experts access to manage broad application configuration permissions without granting access to manage other parts of Microsoft Entra not related to application configuration.
 - [Creating a custom role](#create-and-assign-a-custom-role-preview) defining very specific permissions and assigning it to someone either to the scope of a single application as a limited owner, or at the directory scope (all applications) as a limited administrator.
@@ -108,7 +108,7 @@ You don't have permission to register applications in the <directoryName> direct
 
 **Cause**
 
-You can't register the application in the directory because your directory administrator has [restricted who can create applications](#restrict-who-can-create-applications).
+You can't register the application in the directory because your directory administrator has [restricted who can create applications](#restrict-who-can-create-applications-and-agents).
 
 **Solution**
 
