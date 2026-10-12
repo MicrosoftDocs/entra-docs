@@ -260,7 +260,7 @@ The following examples assume that all other campaign requirements are met and t
 | --- | --- |
 | User 1 has an unrestricted profile, and their **only** registered passkey is Windows Hello for Business. They sign in on Windows with Chrome. | The nudge is suppressed for that platform. |
 | User 1 then signs in on macOS with Chrome. | The user is nudged to register a compatible passkey. Their Windows Hello for Business credential doesn’t suppress the macOS nudge. |
-| A user has an AAGUID-restricted profile and has registered a passkey that meets its requirements. | The nudge is suppressed across OS and browser combinations under that profile’s rule; the platform table isn’t used. |
+| User 2 has a device-bound profile with attestation enforced. They have registered an eligible attested passkey. | The nudge is suppressed across OS and browser combinations under that profile’s rule; the platform table isn’t used. |
 
 ## Enable the registration campaign policy by using Graph Explorer
 
