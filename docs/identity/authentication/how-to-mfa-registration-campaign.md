@@ -224,7 +224,7 @@ Some passkey profiles evaluate credentials separately for each OS and browser co
 | **AAGUID-restricted** | No | After the user registers **one eligible passkey**, the nudge is suppressed across OS and browser combinations under this profile’s rule. |
 | **Device-bound with attestation enforced** | No | After the user registers **one eligible passkey**, the nudge is suppressed across OS and browser combinations under this profile’s rule. |
 
-An **eligible passkey** must meet the applicable profile requirements. Registering a passkey that doesn’t meet those requirements doesn’t satisfy the profile’s nudge-suppression condition. Windows Hello for Business registration behavior is separate from passkey profile restrictions.
+An **eligible passkey** must meet the applicable profile requirements. Registering a passkey that doesn’t meet those requirements doesn’t satisfy the profile’s nudge-suppression condition. Windows Hello for Business registration doesn’t follow passkey profile restrictions. For example, a user assigned to a synced-only passkey profile can still register Windows Hello for Business.
 
 ### Step 2: Evaluate the platform, when required
 
