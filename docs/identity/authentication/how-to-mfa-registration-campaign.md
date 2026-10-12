@@ -208,7 +208,7 @@ To enable a registration campaign in the Microsoft Entra admin center, follow th
 
 After a user meets the registration campaign’s eligibility requirements, their passkey profile determines whether existing registered passkeys suppress the nudge across all platforms or only for the current operating system and browser combination (platform). **Start with the profile table. Use the platform table only when platform-specific evaluation applies.**
 
-These rules apply to passkey campaigns in both the **Enabled** and **Microsoft managed** states. They are separate from the Microsoft managed profile eligibility check, which determines whether a user is eligible for the campaign.
+These rules apply to passkey campaigns in both the **Enabled** and **Microsoft managed** states. They are separate from [passkey profile eligibility for the Microsoft managed registration campaign](#passkey-profile-eligibility-for-microsoft-managed-registration-campaign). In the **Microsoft managed** state, only users assigned to at least one eligible passkey profile are nudged. In contrast, when the registration campaign is set to **Enabled**, any user who is enabled for passkeys can be nudged, regardless of their passkey profile.
 
 <a id="how-the-passkey-profile-affects-the-nudge-evaluation"></a>
 
