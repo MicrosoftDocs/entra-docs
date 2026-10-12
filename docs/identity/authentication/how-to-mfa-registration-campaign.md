@@ -483,7 +483,7 @@ Yes. Registration campaigns support embedded browser views in certain applicatio
 
 ### Can users be nudged within an SSO session?
 
-The nudge doesn't trigger if the user is already signed in with SSO.
+Yes, during interactive sign-ins that satisfy multifactor authentication (MFA), provided users meet the registration campaign's other eligibility requirements. Silent SSO events that occur without user interaction, such as refresh token redemption, don't display nudges.
 
 ### Can users be nudged on a mobile device?
 
