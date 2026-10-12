@@ -1,8 +1,8 @@
 ---
-title: Delegate application management administrator permissions
-description: Grant permissions for application access management in Microsoft Entra ID
+title: Delegate application and agent management administrator permissions
+description: Grant permissions for application and agent access management in Microsoft Entra ID
 ms.topic: how-to
-ms.date: 11/17/2024
+ms.date: 10/12/2026
 ms.reviewer: vincesm
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to reduce overusing highly-privileged administrator roles by delegating app access management to lower-privilege roles.
@@ -10,7 +10,7 @@ ms.custom: it-pro, sfi-image-nochange
 
 # Delegate app registration permissions in Microsoft Entra ID
 
-This article describes how to use permissions granted by custom roles in Microsoft Entra ID to address your application management needs. In Microsoft Entra ID, you can delegate Application creation and management permissions in the following ways:
+This article describes how to use permissions granted by custom roles in Microsoft Entra ID to address your application and agent management needs. In Microsoft Entra ID, you can delegate Application and agent creation and management permissions in the following ways:
 
 - [Restricting who can create applications](#restrict-who-can-create-applications) and manage the applications they create. By default in Microsoft Entra ID, all users can register applications and manage all aspects of applications they create. This can be restricted to only allow selected people that permission.
 - [Assigning one or more owners to an application](#assign-application-owners). This is a simple way to grant someone the ability to manage all aspects of Microsoft Entra configuration for a specific application.
@@ -19,9 +19,9 @@ This article describes how to use permissions granted by custom roles in Microso
 
 It's important to consider granting access using one of the above methods for two reasons. First, delegating the ability to perform administrative tasks reduces highly-privileged administrator overhead. Second, using limited permissions improves your security posture and reduces the potential for unauthorized access. For guidelines about role security planning, see [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md).
 
-## Restrict who can create applications
+## Restrict who can create applications and agents
 
-By default in Microsoft Entra ID, all users can register applications and manage all aspects of applications they create. Everyone also has the ability to consent to apps accessing company data on their behalf. You can choose to selectively grant those permissions by setting the global switches to 'No' and adding the selected users to the Application Developer role.
+By default in Microsoft Entra ID, all users can register applications and manage all aspects of applications they create. They are also able to create an agent identity blueprint, create agent identities of those agents, and manage all aspects of the agents they create. Everyone also has the ability to consent to apps and agents accessing company data on their behalf. You can choose to selectively grant those permissions by setting the global switches to 'No' and adding the selected users to the Application Developer role.
 
 ### To disable the default ability to create application registrations or consent to applications
 
@@ -40,6 +40,18 @@ To disable the default ability to create application registrations or consent to
 1. Select the **Do not allow user consent** option.
 
     This will disable the default ability for users to consent to applications accessing company data on their behalf.
+
+### To disable the default ability to create new agents (agent identity blueprints)
+
+By default, users in your organization can create agent identity blueprints. To restrict creation to administrators and users assigned the Agent ID Developer role, turn off **Users can create agent blueprints**.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator).
+
+1. Browse to **Entra ID** > **Users** > **User settings**.
+
+1. Set the **Users can create agent blueprints** setting to **No**.
+
+    This will disable the default ability for users to create new agents within Entra.
 
 ### Grant individual permissions to create and consent to applications when the default ability is disabled
 
