@@ -32,7 +32,7 @@ Before you follow the steps in this article, enable passkeys and create a passke
     iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
   > [!NOTE]
-  > On iOS, users can't use cross-device registration if you enable attestation. On Android, cross-device registration supports attestation.
+  > On iOS, users can only register attested passkeys directly in the Authenticator app. On Android, users can register attested passkeys directly in the Authenticator app and by using a cross-device registration flow.
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
