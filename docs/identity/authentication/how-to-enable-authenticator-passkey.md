@@ -32,7 +32,7 @@ Before you follow the steps in this article, enable passkeys and create a passke
     iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
   > [!NOTE]
-  > Users can't use cross-device registration if you enable attestation. 
+  > On iOS, users can only register attested passkeys directly in the Authenticator app. On Android, users can register attested passkeys directly in the Authenticator app and by using a cross-device registration flow.
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](concept-fido2-compatibility.md).
 
@@ -88,7 +88,7 @@ When attestation is enabled, Microsoft Entra ID verifies the legitimacy of the p
 > [!NOTE]
 > For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
 
-Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows don't support registration of attested passkeys.
+On iOS, users can only register attested passkeys directly in the Authenticator app. On Android, users can register attested passkeys directly in the Authenticator app and by using a cross-device registration flow.
 
 ## Authenticator AAGUIDs
 
