@@ -291,6 +291,8 @@ items:
         items:
           - name: Enable Intelligent Local Access (preview)
             href: enable-intelligent-local-access.md
+          - name: Home network support (preview)
+            href: how-to-configure-home-network-support.md
           - name: Kerberos single sign-on (SSO)
             href: how-to-configure-kerberos-sso.md
           - name: Source IP anchoring
