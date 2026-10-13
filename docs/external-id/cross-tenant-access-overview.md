@@ -18,6 +18,7 @@ This article covers cross-tenant access settings for managing B2B collaboration 
 
 There are no limits to the number of organizations you can add in cross-tenant access settings.
 
+
 ## Manage external access with inbound and outbound settings
 
 The external identities cross-tenant access settings manage how you collaborate with other Microsoft Entra organizations. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. 
