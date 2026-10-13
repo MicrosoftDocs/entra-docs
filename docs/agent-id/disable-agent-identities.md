@@ -29,7 +29,7 @@ Disabling an agent identity or agent identity blueprint in your tenant might hav
 
 - Existing agents running in your organization might begin to fail.
 - Microsoft product experiences that assume agent identity availability (for example, Copilot Studio agents, Security Copilot scenario agents, Microsoft Entra Conditional Access Optimization Agent) might fail or fall back to standard service principals that lack agent-specific tracking and controls.
-- If you globally disable an agent identity blueprint in your tenant which has had principals and child identities created in other tenants, then related agents in those tenants may fail or lose functionality.
+- If you disable a multi-tenant agent identity blueprint in all tenants, and the blueprint had principals and child identities created in other tenants, then related agents in those tenants may fail or lose functionality.
 
 ## Monitor for agent identity creation and activity
 
@@ -77,11 +77,11 @@ To disable an agent identity blueprint:
 1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
 1. Select the agent identity blueprint you want to disable then select **Disable**.
 
-To globally disable an agent identity blueprint: 
+To disable an agent identity blueprint in all tenants: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator).
 1. Browse to **Entra ID** > **Agents** > **Agent blueprints**.
-1. Select the agent identity blueprint you want to globally disable then select **Disable globally**.
+1. Select the agent identity blueprint you want to globally disable, select the **Disable** menu and then choose **Disable in all tenants**.
 
 ## Create Conditional Access policies to disable agent activities
 
