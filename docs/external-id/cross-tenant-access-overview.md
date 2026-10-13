@@ -18,6 +18,7 @@ This article covers cross-tenant access settings for managing B2B collaboration 
 
 There are no limits to the number of organizations you can add in cross-tenant access settings.
 
+
 ## Manage external access with inbound and outbound settings
 
 The external identities cross-tenant access settings manage how you collaborate with other Microsoft Entra organizations. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. 
@@ -153,7 +154,7 @@ For more information, see the [Configure Microsoft cloud settings for B2B collab
 
 - To configure cross-tenant access settings in the Azure portal, you need an account with at least [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), or a [custom role](#custom-roles-for-managing-cross-tenant-access-settings).
 
-- To configure trust settings or apply access settings to specific users, groups, or applications, you need a Microsoft Entra ID P1 license. The license is required on the tenant that you configure. For B2B direct connect, where mutual trust relationship with another Microsoft Entra organization is required, you need a Microsoft Entra ID P1 license in both tenants. 
+- To configure trust settings, change the default redemption order, or apply access settings to specific users, groups, or applications, you need a Microsoft Entra ID P1 license. The license is required on the tenant that you configure. For B2B direct connect, where mutual trust relationship with another Microsoft Entra organization is required, you need a Microsoft Entra ID P1 license in both tenants. 
 
 - Cross-tenant access settings are used to manage B2B collaboration and B2B direct connect with other Microsoft Entra organizations. For B2B collaboration with non-Microsoft Microsoft Entra identities (for example, social identities or non-IT managed external accounts), use [external collaboration settings](external-collaboration-settings-configure.md). External collaboration settings include B2B collaboration options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
 
