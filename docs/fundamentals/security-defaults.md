@@ -221,6 +221,106 @@ After administrators disable security defaults, organizations should immediately
 
 [!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
+## Manage individual Security Defaults protections (preview)
+
+Organizations need to protect their accounts from common identity attacks, even when they don't have the resources to build and maintain custom security policies. Security Defaults provides a Microsoft-managed security baseline that helps protect accounts with multifactor authentication (MFA) and blocks vulnerable or commonly abused sign-in methods.
+
+The original Security Defaults experience uses one on/off setting for all protections. The updated experience introduces individual rules, so administrators can see what each protection does, whom it covers, and whether it's enabled. You can change one protection without turning off the others.
+
+This article explains how to manage these protections in **Microsoft Entra ID Free**. Security Defaults is available at no extra cost; no P1 or P2 license is required for the baseline protections.
+
+> [!IMPORTANT]
+> The updated experience is in private preview for selected Microsoft Entra ID Free tenants. Available protections can vary during the preview.
+
+### Why use Security Defaults?
+
+- **Start with a Microsoft-managed baseline.** Use preconfigured protections without creating and maintaining your own policies.
+- **Understand your settings.** Review the purpose, scope, and state of each protection.
+- **Manage protections individually.** Change a specific protection while leaving the other rules in place.
+
+### Relationship to Conditional Access
+
+The updated Security Defaults baseline can work alongside customer-created Conditional Access policies. Unlike the original experience, it doesn't require you to disable Security Defaults to use Conditional Access.
+
+Security Defaults provides the common baseline across free and premium tenants. In the updated model, the management location is:
+
+- **Microsoft Entra ID Free:** Manage individual protections on the **Security Defaults** page, using the steps in this article.
+- **Microsoft Entra ID P1 or P2:** Manage the same baseline as a Microsoft-managed **Security Defaults policy plan** in **Conditional Access**.
+
+Organizations can use custom Conditional Access policies for additional requirements, such as device compliance or location-based controls. Creating those policies requires the appropriate premium license.
+
+At sign-in, every applicable Security Defaults rule and Conditional Access policy must be satisfied. The baseline and custom policies work together; one doesn't replace the other.
+
+### Security Defaults protections
+
+The updated experience brings together four Microsoft-managed rules. Each rule defines the sign-ins it covers and the protection it applies. Microsoft manages the rule definitions, while administrators control whether each rule is enabled.
+
+#### Require MFA for administrators
+
+Administrator accounts can change settings, manage users, and access sensitive resources. Requiring MFA helps protect those accounts if a password is stolen.
+
+This rule requires MFA for administrator sign-ins that match its scope. Open the rule to see the administrator roles and resources it covers.
+
+#### Require MFA for all users
+
+Ordinary user accounts also need protection. An attacker who gains access to a user account can read information or use that account to target other people in the organization.
+
+This rule requires MFA for all users within its scope, including administrators. It broadens the original Security Defaults behavior from requiring MFA **when necessary** to requiring MFA for the sign-ins covered by the rule.
+
+Users who haven't registered an authentication method might be asked to do so during sign-in. A valid existing MFA sign-in can satisfy the requirement, so users won't necessarily receive a new MFA prompt every time.
+
+#### Block legacy authentication
+
+Legacy authentication refers to older sign-in methods that don't support MFA, such as basic authentication used by older mail clients and applications.
+
+When enabled, this rule blocks sign-ins that use legacy authentication. Applications and devices that depend on those methods need to use modern authentication to continue signing in.
+
+#### Block device code flow
+
+Device code flow lets an application or device ask the user to complete sign-in in a separate browser. It's useful for devices with limited input capabilities, but attackers can abuse it by tricking users into entering a code that gives the attacker access.
+
+When enabled, this rule blocks sign-ins that use device code flow. Applications and devices that rely on this flow need an alternative sign-in method.
+
+### Required roles
+
+To view and change Security Defaults protections, use one of the following Microsoft Entra roles:
+
+- **Conditional Access Administrator**
+- **Security Administrator**
+- **Global Administrator**
+
+**Global Reader** and **Security Reader** can view the protections but can't change them.
+
+Use the least-privileged role needed for the task. Conditional Access Administrator is recommended for managing these settings.
+
+### Manage a protection
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with one of the roles that can change protections.
+2. Switch to the free tenant enabled for your private preview.
+3. Open the access link provided in your preview invitation.
+4. On the **Security Defaults** page, select the name of a protection.
+5. Review its description, current state, and the users, roles, or resources it covers.
+6. Turn the protection on or off and follow the confirmation prompt. If you're turning it off, provide the requested feedback.
+7. Confirm that the updated state is shown on the page.
+
+The change applies to the tenant, not just the administrator making it. Each rule is managed independently. For example, turning off the administrator MFA rule can still leave administrators covered by the all-users MFA rule.
+
+Microsoft recommends keeping protections enabled. Turning off a protection reduces security for the sign-ins it covers.
+
+### Prepare your organization
+
+Before enabling or changing protections:
+
+- **Prepare users for MFA.** Make sure administrators and users can complete registration and authentication. Users can review their registered methods through [My Account](https://myprofile.microsoft.com).
+- **Review application compatibility.** Identify applications or devices that rely on legacy authentication or device code flow and plan an alternative sign-in method.
+- **Inform your support team.** Explain the MFA change and how to help users who have trouble registering or signing in.
+
+### Moving to the updated experience
+
+Microsoft introduces the updated controls through a phased rollout. When your tenant receives the update, you manage the Microsoft-provided rules individually instead of using the original single setting. You don't need to recreate the rules.
+
+Rollout communications explain changes to your tenant's protections, including any planned device code flow enablement. Review each rule's state when the update arrives and prepare users for the broader all-users MFA requirement.
+
 ## Next steps
 
 - [Blog: Introducing security defaults](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/introducing-security-defaults/ba-p/1061414)
