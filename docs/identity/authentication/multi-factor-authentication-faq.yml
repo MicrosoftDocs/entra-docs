@@ -55,10 +55,11 @@ sections:
           For more information, see the [end-user troubleshooting guide](https://support.microsoft.com/account-billing/common-problems-with-two-step-verification-for-a-work-or-school-account-63acbb9b-16a1-47b9-8619-6a865e8071a5).
           
       - question: |
-          Why might SMS or voice options appear only after selecting **Show more verification methods**?
+          Why might SMS or voice options not appear in the initial list of authentication options?
         answer: |
-          In some authentication flows, when a user has SMS or voice and at least one non-telephony verification method available, Microsoft Entra ID might show the non-telephony methods first. SMS and voice are still available by selecting **Show more verification methods**.
-
+          When a user has at least one non-telephony verification method available in addition to SMS or voice, Microsoft Entra ID might show the non-telephony methods first.
+          In this case, **SMS and voice verification options remain available and will appear by selecting 'Show more verification methods'. 
+          
           If SMS or voice is the only available method for the flow, the method display experience remains unchanged.
 
           Help desk teams can reassure users that SMS and voice haven't been removed. Encourage users to register and use stronger methods, such as Microsoft Authenticator or passkeys, when available.
@@ -66,7 +67,7 @@ sections:
       - question: |
           Why might selecting the SMS or voice option again not immediately send another code?
         answer: |
-          After a valid SMS or voice code has been sent, **there is a waiting period of a few minutes before another code can be sent. If a user selects the same method again during this waiting period, another code might not be sent.** Users should wait for the code already requested to arrive. Previously sent codes remain valid during the waiting period.
+          After a valid SMS or voice code has been sent, **there might be a waiting period of a few minutes before another code can be sent. If a user selects the same method again during this waiting period, another code might not be sent.** Users should wait for the code already requested to arrive. Previously sent codes remain valid during the waiting period.
 
           If a code does not arrive by the time the waiting period has passed, users can request another code using the same experience they use today. If another verification method is available, they can also use that method instead.
 
