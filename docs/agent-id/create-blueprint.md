@@ -21,9 +21,10 @@ You can create an agent identity blueprint in two ways:
 
 To create an agent identity blueprint, you need:
 
+
 - [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is the least privileged role required to grant Microsoft Graph Application permissions.
 - [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator) is required to grant Microsoft Graph delegated permissions.
-- Both [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) and [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles can create agent identity blueprints and agent identity blueprint principals.
+- If the organization-wide setting **Users can create agent blueprints** is set to **Yes**, any user within the tenant can create an agent identity blueprint and its agent identity blueprint principal. Otherwise, both [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) and [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles can create agent identity blueprints and agent identity blueprint principals.
     - [Agent ID Developer](../identity/role-based-access-control/permissions-reference.md#agent-id-developer) can configure federated identity credentials on an agent identity blueprint.
     - [Agent ID Administrator](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) can configure federated identity credentials on an agent identity blueprint and is required to add a secret or certificate credential.
 - If using PowerShell, version 7 is required.

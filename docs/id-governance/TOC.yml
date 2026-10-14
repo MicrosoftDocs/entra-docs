@@ -12,14 +12,16 @@
 - name: Scenarios
   expanded: true
   items:
-  - name: What are identity governance use cases? 
+  - name: What are identity governance use cases?
     href: scenarios/identity-governance-use-cases.md 
   - name: Understanding least privileged
     href: scenarios/least-privileged.md
   - name: Microsoft Entra ID Governance Deployment Introduction
     href: ~/architecture/governance-deployment-intro.md
-  - name: Microsoft Entra SAP IAG integration (Preview)
+  - name: Microsoft Entra SAP IAG integration
     href: entitlement-management-sap-integration.md
+  - name: Integrate SAP Access Control (Preview)
+    href: entitlement-management-sap-ac-integration.md
   - name: Govern the employee and guest lifecycle
     items:
     - name: Govern the employee lifecycle
@@ -447,8 +449,6 @@
           href: workflow-sensitivity-labels.md 
         - name: Agent Identity Sponsor Tasks
           href: agent-sponsor-tasks.md       
-      - name: Agent lifecycle policies
-        href: agent-lifecycle-policies.md
       - name: Guest Lifecycle Policies
         href: guest-lifecycle-policies.md
       - name: Manage sponsored guests in My Access
@@ -498,4 +498,3 @@
       href: tutorial-prepare-user-accounts.md 
     - name: Configure a Logic App for Lifecycle Workflow use
       href: configure-logic-app-lifecycle-workflows.md
-      
