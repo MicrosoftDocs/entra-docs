@@ -58,7 +58,7 @@ sections:
           Why might SMS or voice options not appear in the initial list of authentication options?
         answer: |
           When a user has at least one non-telephony verification method available in addition to SMS or voice, Microsoft Entra ID might show the non-telephony methods first.
-          In this case, **SMS and voice verification options remain available and will appear by selecting 'Show more verification methods'. 
+          In this case, **SMS and voice verification options remain available** and will appear by selecting **Show more verification methods**. 
           
           If SMS or voice is the only available method for the flow, the method display experience remains unchanged.
 
