@@ -3,7 +3,7 @@ title: Add Microsoft Entra ID for customer sign-in
 description: Learn how to configure a Microsoft Entra ID tenant as an OpenID Connect identity provider in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
 ms.topic: how-to
 ms.date: 10/13/2026
-ms.custom: it-pro, msecd-doc-authoring-1012
+ms.custom: it-pro, msecd-doc-authoring-1026
 ai-usage: ai-assisted
 
 #customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
@@ -153,6 +153,8 @@ Error `40015` means that authentication at the external identity provider succee
 
 **How is adding Microsoft Entra ID as a custom OIDC federation different from inviting Microsoft Entra ID users as B2B guests?**
 
+Invited users from another Microsoft Entra tenant use the [default invitation redemption flow](../redemption-experience.md#invitation-redemption-flow) unless your application explicitly routes them to the custom OIDC identity provider.
+
 With Microsoft Entra ID federation:
 
 - User authentication always occurs in the home Microsoft Entra ID tenant.
@@ -193,5 +195,5 @@ Yes. You can configure multiple Microsoft Entra ID tenants as separate custom OI
 ## Related content
 
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
-- [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
+- [Route invited users to an external identity provider](how-to-invite-external-identity-provider-users-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

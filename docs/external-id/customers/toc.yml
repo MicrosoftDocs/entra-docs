@@ -373,6 +373,8 @@ items:
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
+        - name: Route invited users to an external identity provider
+          href: how-to-invite-external-identity-provider-users-customers.md
     - name: Enable password reset
       href: how-to-enable-password-reset-customers.md
     - name: Monitor and troubleshoot
