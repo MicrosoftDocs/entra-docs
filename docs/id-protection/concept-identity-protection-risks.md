@@ -31,7 +31,7 @@ Select a risk detection from the list to view the description of the risk detect
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
 | [Anomalous Token (sign-in)](#anomalous-token-sign-in) | Real-time or Offline | Premium | anomalousToken | 
 | [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
-| [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
+| [Atypical travel](#atypical-travel) | Real-time | Premium | unlikelyTravel |
 | [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
 | [Malicious IP address](#malicious-ip-address) | Offline | Premium | maliciousIPAddress |
 | [Mass Access to Sensitive Files](#mass-access-to-sensitive-files) | Offline | Premium | mcasFinSuspiciousFileAccess |
