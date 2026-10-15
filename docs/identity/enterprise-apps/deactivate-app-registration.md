@@ -2,7 +2,8 @@
 title: Deactivate an app registration
 description: Learn how to deactivate an app registration in Microsoft Entra ID to prevent token issuance while preserving application configuration.
 ms.topic: how-to
-ms.date: 03/16/2026
+ai-usage: ai-assisted
+ms.date: 10/15/2026
 ms.reviewer: ariels
 ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
 #Customer intent: As an IT admin, I want to immediately stop a suspicious or unused application from accessing resources in my organization while keeping all its settings intact so I can investigate potential security issues and easily restore access if needed.
@@ -14,7 +15,7 @@ Deactivating an app registration provides a reversible way to prevent the applic
 
 Unlike permanently deleting an application, deactivation preserves all application metadata, permissions, and configuration settings, making it easy to reactivate the application if needed. The application remains visible in your tenant's enterprise applications list, but users can't sign in and no new tokens are issued.
 
-This article shows you how to deactivate an enterprise application, view deactivated applications, and reactivate them when necessary.
+This article shows you how to deactivate an app registration, view deactivated applications, and reactivate them when necessary.
 
 ## Prerequisites
 
@@ -135,7 +136,7 @@ You can view deactivated applications to monitor their status and track which ap
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to  **App registrations**.
 1. Select the **Deactivated applications** tab.
-1. Alternatively, navigate to the **Enterprise apps** pane and check on a given enterprise app under **Manage** -> **Properties** -> **Activation status**.
+1. To view the related enterprise application's summary status, browse to **Enterprise apps**, select the application, and then select **Manage** > **Properties** > **Activation status**. This status also includes tenant-local sign-in disablement and Microsoft disablement; it isn't specific to app registration deactivation.
 
     :::image type="content" source="media/deactivate-app-registration/view-activation-status.png" alt-text="Screenshot showing the Activation status field in the Enterprise app Properties page displaying whether an application is active or deactivated.":::
 
@@ -156,7 +157,7 @@ You can view deactivated applications to monitor their status and track which ap
 ---
 
 > [!IMPORTANT]
-> Deactivation must be performed on the app registration (application object). The deactivated state is then reflected on the enterprise app (service principal object). You can't deactivate the service principal directly. You can only disable sign-in on the service principal, by using set `accountEnabled = false`.
+> The **Deactivate** operation applies to the app registration (application object), and its deactivated state is reflected on the enterprise application (service principal object). Separately, disabling sign-in on the tenant-local service principal (`accountEnabled=false`) is sufficient for its **Activation status** to show **Deactivated**, even when the app registration isn't deactivated. The label alone doesn't identify the cause. See [Activation status](application-properties.md#activation-status) to distinguish the conditions and choose the appropriate recovery guidance.
 
 ## Investigate deactivated applications
 
@@ -167,6 +168,8 @@ Based on your investigation, take appropriate action such as escalating to secur
 ## Reactivate an application
 
 To reactivate an application using Microsoft Graph API or Microsoft Entra admin center, you need at least the [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role or a custom role with the `microsoft.directory/applications/disablement/update` action.
+
+Reactivate the app registration in its home tenant. This doesn't enable tenant-local sign-in if a service principal's `accountEnabled` remains `false`, and it doesn't override Microsoft disablement. If only tenant-local sign-in is disabled, follow [Restore tenant-local sign-in](disable-user-sign-in-portal.md#restore-tenant-local-sign-in) instead.
 
 ## [Microsoft Entra admin center](#tab/admin-center)
 
