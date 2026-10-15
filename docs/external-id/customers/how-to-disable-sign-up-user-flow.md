@@ -2,9 +2,10 @@
 title: Disable sign-up in a sign-up and sign-in user flow
 description: Disable sign-up in your user flow with Microsoft Graph API. Prevent new registrations and allow only sign-in for your external users. 
 ms.topic: how-to
-ms.date: 06/30/2025
-ms.custom: it-pro, seo-july-2024, sfi-image-nochange
-#Customer intent: As a developer or IT admin, I want to disable sign-up in a user flow so that only existing external users can sign in. 
+ms.date: 10/12/2026
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange, msecd-doc-authoring-1026
+ai-usage: ai-assisted
+#Customer intent: As a developer or IT admin, I want to disable sign-up in a user flow so that only existing external users can sign in.
 ---
 
 # Disable sign-up in a sign-up and sign-in user flow
@@ -56,12 +57,13 @@ Follow these steps to disable the sign-up flow:
 
     Replace `{user-flow-id}` with the user flow ID that you obtained in the previous step. Notice the `isSignUpAllowed` parameter is set to *false*. To re-enable sign-up, make a call to the Microsoft Graph API endpoint, but set the `isSignUpAllowed` parameter to *true*.   
 
-## Next steps
+## Next step
 
-- [Add your application to the user flow](how-to-user-flow-add-application.md)
-- [Create custom user attributes and customize the order of the attributes on the sign-up page](how-to-define-custom-attributes.md).
-
+> [!div class="nextstepaction"]
+> [Test your user flow](./how-to-test-user-flows.md)
 
 ## Related content
 
-- [Test your user flow](./how-to-test-user-flows.md).
+- [Add your application to the user flow](how-to-user-flow-add-application.md)
+- [Create custom user attributes and customize the order of the attributes on the sign-up page](how-to-define-custom-attributes.md)
+- [Route invited users to an external identity provider](how-to-invite-external-identity-provider-users-customers.md)

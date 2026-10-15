@@ -31,7 +31,7 @@ Select a risk detection from the list to view the description of the risk detect
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
 | [Anomalous Token (sign-in)](#anomalous-token-sign-in) | Real-time or Offline | Premium | anomalousToken | 
 | [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
-| [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
+| [Atypical travel](#atypical-travel) | Real-time | Premium | unlikelyTravel |
 | [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
 | [Malicious IP address](#malicious-ip-address) | Offline | Premium | maliciousIPAddress |
 | [Mass Access to Sensitive Files](#mass-access-to-sensitive-files) | Offline | Premium | mcasFinSuspiciousFileAccess |
@@ -120,9 +120,9 @@ This risk detection type indicates sign-ins from an anonymous IP address (for ex
 
 This risk detection type identifies two sign-ins originating from geographically distant locations, where at least one of the locations might also be atypical for the user, given past behavior. The algorithm takes into account multiple factors including the time between the two sign-ins and the time it would take for the user to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
-The algorithm ignores obvious "false positives" contributing to the impossible travel conditions, such as VPNs and locations regularly used by other users in the organization. The system has an initial learning period of the earliest of 14 days or 10 logins, during which it learns a new user's sign-in behavior. 
+The system uses adaptive learning to learn a new user's sign-in behavior.
 
-- Calculated offline
+- Calculated in real-time
 - License requirement: Microsoft Entra ID P2
 - [Tips for investigating atypical travel detections.](howto-identity-protection-investigate-risk.md#atypical-travel-detections)
 

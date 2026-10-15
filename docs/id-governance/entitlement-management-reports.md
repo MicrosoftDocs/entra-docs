@@ -4,7 +4,7 @@ description: Learn how to view the identity assignments report and audit logs in
 editor: jocastel-MSFT
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 09/03/2026
+ms.date: 10/15/2026
 ms.reviewer: jocastel
 ai-usage: ai-assisted
 ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1026
@@ -168,7 +168,7 @@ The workbook *Application role assignment activity* shows if there have been cha
 
 ## View access package drift
 
-Access package drift reports show where access to governed groups and enterprise applications no longer matches entitlement management policies. You can use this report to find users who have direct resource access without an access package assignment, and users who have an active access package assignment without the expected group membership or application assignment.
+Access package drift reports show where access to governed groups and enterprise applications no longer matches entitlement management policies. You can use this report to find users / agent IDs who have direct resource access without an access package assignment, and users / agent IDs who have an active access package assignment without the expected group membership or application assignment.
 
 Access package drift reports are in preview.
 

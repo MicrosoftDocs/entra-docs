@@ -1,10 +1,10 @@
 ---
 title: Add OIDC for customer sign-in
-description: Learn how to set up OpenID Connect as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
+description: Learn how to set up OpenID Connect as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing identities.
 ms.topic: how-to
-ms.date: 07/29/2026
+ms.date: 10/12/2026
 ms.reviewer: brozbab
-ms.custom: it-pro, msecd-doc-authoring-1012
+ms.custom: it-pro, msecd-doc-authoring-1026
 ai-usage: ai-assisted
 
 #customer intent: As a developer, devops, or it administrator, I want to learn how to add an OpenID Connect identity provider for my external tenant.
@@ -13,13 +13,20 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-By setting up federation with a custom-configured OpenID Connect (OIDC) identity provider, you enable users to sign in to your applications using their existing accounts from the federated external provider. This OIDC federation allows authentication with various providers that adhere to the OpenID Connect protocol. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+By setting up federation with a custom-configured OpenID Connect (OIDC) identity provider, you enable users to sign up and sign in to your applications using their existing accounts from the federated external provider. This OIDC federation allows authentication with various providers that adhere to the OpenID Connect protocol.
+
+After you configure an OIDC identity provider, there are two ways to enable users to authenticate with it:
+
+- **Add the identity provider to a user flow**: Adding the identity provider to a user flow displays a sign-in button on the sign-in page, allowing users to self-register and sign in. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md).
+- **Invite users**: Have your application pass `domain_hint` in the authorization request to route invitation redemption to the configured OIDC provider. See [Route invited users to an external identity provider](how-to-invite-external-identity-provider-users-customers.md).
+
+For an overview of supported options, see [Authentication methods and identity providers for customers](concept-authentication-methods-customers.md).
 
 ## Prerequisites
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
 - A [registered application](/entra/identity-platform/quickstart-register-app) in the external tenant.
-- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) associated with your application.
 
 ## Set up your OpenID Connect identity provider
 
@@ -80,7 +87,7 @@ After you configure your identity provider, complete this step to configure a ne
    - **OpenID Issuer URI**: The entity of your identity provider that issues access tokens for your application. For example, if you use OpenID Connect to [federate with your Azure AD B2C](how-to-b2c-federation-customers.md), your issuer URI looks like: `https://login.b2clogin.com/{tenant}/v2.0/`. The issuer URI is a case-sensitive URL that uses the https scheme. It contains scheme, host, and optionally port number and path components, but no query or fragment components.
    
    > [!NOTE]
-   > To federate with a Microsoft Entra ID tenant, see [Add a Microsoft Entra ID tenant as an OpenID Connect identity provider](how-to-entra-id-federation-customers.md). OIDC federation also isn't compatible with the [Invite external user (preview)](/entra/external-id/customers/concept-supported-features-customers#identity-providers-and-authentication-methods) feature.
+   > For Microsoft Entra ID configuration details, see [Add a Microsoft Entra ID tenant as an OpenID Connect identity provider](how-to-entra-id-federation-customers.md). Users who select this provider during self-service sign-up authenticate through custom OIDC. Invited users from another Microsoft Entra tenant use [native Microsoft Entra federation by default](../redemption-experience.md#invitation-redemption-flow), unless your application [routes them to the custom OIDC provider with `domain_hint`](how-to-invite-external-identity-provider-users-customers.md).
 
    - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Provide a client secret when you select a `client_secret`-based authentication method.
    - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post` and `client_secret_jwt` authentication methods are supported. Although the admin center UI might display `private_key_jwt` as an option, this method isn't currently supported and shouldn't be selected.
@@ -98,7 +105,10 @@ Therefore, OpenID Connect external identity provider configuration doesn't suppo
 
 ## Enable users to sign in and sign up with the identity provider
 
-After you configure the OIDC identity provider, add it to a user flow to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md).
+Choose how users authenticate with the configured OIDC identity provider:
+
+- **Self-service sign-up**: [Add the identity provider to the user flow](how-to-add-identity-provider-to-user-flow-customers.md).
+- **Invitations**: [Invite users](how-to-invite-external-identity-provider-users-customers.md) and route invitation redemption with `domain_hint`. You don't need to add the identity provider to the user flow.
 
 ## Make email optional for external identity provider sign-up
 
@@ -177,4 +187,5 @@ To apply the change:
 ## Related content
 
 - [Add a Microsoft Entra ID tenant as an OIDC identity provider](how-to-entra-id-federation-customers.md)
+- [Route invited users to an external identity provider](how-to-invite-external-identity-provider-users-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)
