@@ -2,7 +2,8 @@
 title: Disable user sign-in for application
 description: Learn how to prevent users from signing in to an application in Microsoft Entra ID and prevent tokens from being issued.
 ms.topic: how-to
-ms.date: 03/03/2025
+ai-usage: ai-assisted
+ms.date: 10/15/2026
 ms.reviewer: ergreenl
 ms.custom: it-pro, enterprise-apps, no-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
@@ -17,7 +18,7 @@ There might be situations while configuring or managing an application where you
 In this article, you learn how to prevent users from signing in to an application in Microsoft Entra ID through both the Microsoft Entra admin center and PowerShell. If you're looking for how to block specific users from accessing an application, use [user or group assignment](./assign-user-or-group-access-portal.md).
 
 > [!NOTE]
-> The steps in this article disable user sign-in for a single tenant. If you need to globally disable an application across all tenants (for multitenant apps), consider [deactivating the application](deactivate-application-portal.md) instead, which prevents all token issuance globally.
+> The steps in this article disable user sign-in for a single tenant by setting the service principal's `accountEnabled` property to `false`. This also makes the enterprise application's **Activation status** show **Deactivated**. The label doesn't necessarily mean that the app registration is deactivated. If you need to disable an application across all tenants, see [Deactivate an app registration](deactivate-app-registration.md).
 
 ## Prerequisites
 
@@ -110,6 +111,12 @@ Content-type: application/json
 ```
 
 :::zone-end
+
+## Restore tenant-local sign-in
+
+Before restoring sign-in, review why it was disabled and confirm that restoring access is appropriate. With the permissions listed in [Prerequisites](#prerequisites) in the affected tenant, set **Enabled for users to sign-in?** to **Yes** and select **Save**. For programmatic updates, set the service principal's `accountEnabled` property to `true` instead of `false`.
+
+Enabling tenant-local sign-in doesn't override app registration deactivation or Microsoft disablement. If **Activation status** still shows **Deactivated**, check the other conditions described in [Activation status](application-properties.md#activation-status).
 
 ## Related content
 
