@@ -25,6 +25,8 @@
   expanded: true
 - name: Concepts
   items:
+  - name: Risk-based anti-bot verification (CAPTCHA)
+    href: concept-telephony-risk-based-captcha.md
   - name: Authentication methods
     items:
     - name: Authentication methods policy migration
