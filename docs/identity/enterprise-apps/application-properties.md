@@ -3,7 +3,7 @@ title: 'Properties of an enterprise application'
 description: Learn about the properties of an enterprise application in Microsoft Entra ID.
 ms.topic: concept-article
 ai-usage: ai-assisted
-ms.date: 01/31/2025
+ms.date: 10/15/2026
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
 
@@ -14,11 +14,31 @@ ms.custom: enterprise-apps
 
 This article describes the properties that you can configure for an enterprise application in your Microsoft Entra tenant. To configure the properties, see [Configure enterprise application properties](add-application-portal-configure.md).
 
+## Activation status
+
+**Activation status** summarizes disablement conditions for the enterprise application. It shows **Deactivated** if any of the following conditions applies:
+
+- Sign-in is disabled for the service principal in your tenant (`accountEnabled=false`).
+- The app registration is deactivated (`isDisabled=true` on the app registration), which is reflected on the service principal.
+- Microsoft has disabled the application (`disabledByMicrosoftStatus=DisabledDueToViolationOfServicesAgreement`).
+
+The label alone doesn't identify which condition applies or prove that the app registration is deactivated. More than one condition can apply.
+
+| Condition | How to check | Guidance |
+|---|---|---|
+| Tenant-local sign-in disablement | Check **Enabled for users to sign-in?** on the enterprise application's **Properties** page, or read the service principal's `accountEnabled` property in Microsoft Graph. | Review why sign-in was disabled before restoring it. To restore tenant-local sign-in, set **Enabled for users to sign-in?** to **Yes** and save, or set `accountEnabled=true`. See [Disable user sign-in](disable-user-sign-in-portal.md). |
+| App registration deactivation | Check the app registration's **State** in its home tenant, or read the application object's `isDisabled` property in Microsoft Graph. | An authorized administrator in the application's home tenant can [reactivate the app registration](deactivate-app-registration.md#reactivate-an-application). |
+| Microsoft disablement | Read the service principal's `disabledByMicrosoftStatus` property in Microsoft Graph. | See [Protect against consent phishing](protect-against-consent-phishing.md#recommended-response-and-remediation) for investigation and remediation guidance. |
+
+You need appropriate permissions in the tenant where you make a change. Enabling tenant-local sign-in doesn't override app registration deactivation or Microsoft disablement. Reactivating the app registration doesn't enable a service principal whose `accountEnabled` remains `false`.
+
 ## Enabled for users to sign in?
 
 If this option is set to **Yes**, then assigned users are able to sign in to the application from the My Apps portal, the User access URL, or by navigating to the application URL directly. If assignment is required, then only users who are assigned to the application are able to sign-in. If assignment is required, applications must be assigned to get a token.
 
 If this option is set to **No**, then no users are able to sign in to the application, even if they're assigned to it. Tokens aren't issued for the application. This setting not only prevents users from signing in but also restricts service principals from accessing the application using application permissions.
+
+This setting maps to the service principal's `accountEnabled` property in your tenant. Setting it to **No** (`accountEnabled=false`) also makes **Activation status** show **Deactivated**, even if the app registration isn't deactivated. For instructions, see [Disable user sign-in for an application](disable-user-sign-in-portal.md).
 
 ## Name
 
