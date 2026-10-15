@@ -3,7 +3,8 @@ title: macOS Platform single sign-on known issues and troubleshooting
 description: Identify and resolve known issues with macOS Platform single sign-on (PSSO).
 
 ms.topic: troubleshooting
-ms.date: 12/19/2024
+ms.date: 10/15/2026
+ai-usage: ai-assisted
 
 manager: pmwongera
 ms.reviewer: brianmel, miepping
@@ -131,6 +132,33 @@ IT Admins should also enable Keyvault recovery to ensure data can be recovered i
 Users can reset the local password via Apple ID or an admin recovery key. 
 
 ## Known issues
+
+### Authentication errors after locking or waking a Mac
+
+On a Mac registered with Platform SSO, apps such as Microsoft Teams, Outlook, and Microsoft 365 Copilot might show sign-in errors after you wake or unlock the device. The error might include `4ut1e`, `-42008`, or "Failed to sign the request". These errors aren't unique to this issue and can have other causes.
+
+This issue can occur when an app requests a token before macOS unlocks the user's keybag, which protects cryptographic keys. Token decryption or request signing can fail while those keys are unavailable, and the resulting error can appear after you unlock the device.
+
+#### Mitigation
+
+If you're using an affected Mac, unlock the device and retry signing in. Contact your IT administrator if the issue recurs.
+
+If you're an administrator managing devices with macOS 14 or later, enable **Use Shared Device Keys** in the Platform SSO configuration. This setting allows Platform SSO to access device authentication keys before the user unlocks the device and helps prevent this condition.
+
+> [!IMPORTANT]
+> Changing **Use Shared Device Keys** in an existing deployment triggers device re-registration with Microsoft Entra ID. Plan the rollout and notify users before deploying the change.
+
+1. Edit the existing Platform SSO profile in your mobile device management (MDM) service. Under **Platform SSO**, set **Use Shared Device Keys** to **Enabled**. For Microsoft Intune, see [Create the Platform SSO policy in Intune](/intune/device-configuration/settings-catalog/configure-platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune).
+1. Deploy the updated profile to the affected devices and have users complete the required re-registration.
+1. On an affected Mac, open the **Terminal** app and run the following command to check the effective configuration:
+
+    ```console
+    app-sso platform -s
+    ```
+
+1. Confirm that `sharedDeviceKeys` is `true` in the output.
+
+If the issue persists with Shared Device Keys enabled in the effective configuration, collect Company Portal diagnostic logs and a sysdiagnose capture. Include the timestamps of the errors and follow the steps in [Report an issue](#report-an-issue).
 
 ### Unexpected/frequent re-registration prompts on macOS Sequoia
 
