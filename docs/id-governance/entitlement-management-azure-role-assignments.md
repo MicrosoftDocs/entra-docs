@@ -48,6 +48,8 @@ at the selected Management Group or Subscription. This check ensures that the ad
 
 If any of these checks fail, onboarding of the Azure resource into the catalog fails.
 
+The Resource Provider Microsoft.EntitlementManagement must be registered at subscription level in order to be able to add the subscription to the catalog. Reference: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types
+
 ### Azure RBAC requirements for adding a role to an access package
 
 After a Subscription or Management Group has been onboarded into a catalog, an Access Package administrator can add Azure RBAC roles at:
