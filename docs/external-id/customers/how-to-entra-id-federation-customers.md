@@ -2,7 +2,7 @@
 title: Add Microsoft Entra ID for customer sign-in
 description: Learn how to configure a Microsoft Entra ID tenant as an OpenID Connect identity provider in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
 ms.topic: how-to
-ms.date: 10/13/2026
+ms.date: 10/16/2026
 ms.custom: it-pro, msecd-doc-authoring-1026
 ai-usage: ai-assisted
 
@@ -180,9 +180,12 @@ When `domain_hint` is used, a domain confirmation dialog appears to ensure the u
 
 There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The `domain_hint` value for Microsoft Entra ID should be the domain name, for example `domain_hint=contoso.onmicrosoft.com`. For more information, see [Issuer Acceleration](./concept-authentication-methods-customers.md#issuer-acceleration).
 
-**Can I hide other identity provider buttons and show only Microsoft Entra ID?**
+**Can I hide specific identity provider buttons?**
 
-You can hide identity provider buttons by not including them in the user flow, but new users can only register if `domain_hint` is used.
+No, the identity provider buttons cannot be hidden.
+
+> [!NOTE]
+> If an identity provider is removed from the user flow, users will no longer be able to sign up or redeem invitations using that identity provider. `domain_hint` does not address this limitation.
 
 **Are ID tokens returned as opaque values?**
 

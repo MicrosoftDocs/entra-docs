@@ -52,7 +52,7 @@ Before you begin the process of governing application access from Microsoft Entr
   * **Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2** and its prerequisite, either Microsoft Entra ID P2 or Enterprise Mobility + Security (EMS) E5
   * **Microsoft Entra Suite**
 
-   Your tenant needs to have at least as many licenses as the number of member (non-guest) users who are governed, including those users that have or can request access to the applications, approve, or review access to the applications. With an appropriate license for those users, you can then govern access to up to 1500 applications per user. For more information, see [example license scenarios](licensing-fundamentals.md#example-license-scenarios).
+   Your tenant needs to have at least as many licenses as the number of member (non-guest) users who are governed, including those users that have or can request access to the applications, approve, or review access to the applications. With an appropriate license for those users, you can then govern access to up to 1500 applications per user. For more information, see [license scenarios](licensing-fundamentals.md).
 
 * **If you will be governing guest's access to the application, link your Microsoft Entra tenant to a subscription for MAU billing**. This step is necessary prior to having a guest request or review their access. For more information, see [billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md).
 
