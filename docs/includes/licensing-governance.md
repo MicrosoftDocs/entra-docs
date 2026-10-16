@@ -9,7 +9,7 @@ ms.author: owinfrey
 ms.custom: include file
 ---
 
-The following table shows the licensing requirements for Microsoft Entra ID Governance features for member users. Microsoft Entra Suite includes all features of Microsoft Entra ID Governance. Microsoft 365 E7 also includes all ID Governance features through the Entra Suite and Agent 365. Licensing information and example license scenarios for Entitlement management, Access reviews, and Lifecycle Workflows are provided following the table.
+The following table shows the licensing requirements for Microsoft Entra ID Governance features for member users. Microsoft Entra Suite includes all features of Microsoft Entra ID Governance. Microsoft 365 E7 also includes all ID Governance features through the Entra Suite and Agent 365. Licensing information for Entitlement management, Access reviews, and Lifecycle Workflows are provided following the table.
 
 ### Features by license
 
@@ -99,30 +99,9 @@ The following table shows what features associated with identity governance are 
 
 Using this feature requires a Microsoft Entra ID Governance subscription for your organization's member users. Some capabilities within this feature can operate with a Microsoft Entra ID P2 subscription. Some capabilities within this feature require guest billing.
 
-#### Example license scenarios
-
-Here are some example license scenarios to help you determine the number of licenses you must have.
-
-| Scenario | Calculation | Number of licenses |
-| --- | --- | --- |
-| An Identity Governance Administrator at Woodgrove Bank creates initial catalogs. One of the policies specifies that **All employees** (2,000 employees) can request a specific set of access packages. 150 employees request the access packages. | 2,000 employees who **can** request the access packages | 2,000 |
-| An Identity Governance Administrator at Woodgrove Bank creates initial catalogs. They create an auto-assignment policy that grants **All members of the Sales department** (350 employees) access to a specific set of access packages. 350 employees are auto-assigned to the access packages. | 350 employees need licenses. | 351 |
-
 ### Access reviews
 
 Using this feature requires a Microsoft Entra ID Governance subscription for your organization's member users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature might operate with a Microsoft Entra ID P2 subscription. Some capabilities within this feature require guest billing.
-
-#### Example license scenarios
-
-Here are some example license scenarios to help you determine the number of licenses you must have.
-
-| Scenario | Calculation | Number of licenses |
-| --- | --- | --- |
-| An administrator creates an access review of Group A with 75 member users and 1 group owner, and assigns the group owner as the reviewer. | 1 license for the group owner as reviewer, and 75 licenses for the 75 users. | 76 |
-| An administrator creates an access review of Group B with 500 member users and 3 group owners, and assigns the 3 group owners as reviewers. | 500 licenses for users, and 3 licenses for each group owner as reviewers. | 503 |
-| An administrator creates an access review of Group B with 500 member users. Makes it a self-review. | 500 licenses for each user as self-reviewers  | 500 |
-| An administrator creates an access review of Group C with 50 member users. Makes it a self-review. | 50 licenses for each user as self-reviewers. | 50 |
-| An administrator creates an access review of Group D with 6 member users. Makes it a self-review. | 6 licenses for each user as self-reviewers. No additional licenses are required.  | 6 |
 
 ### Lifecycle Workflows
 
@@ -134,10 +113,3 @@ With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 - Create up to 100 custom task extensions to be used in your workflows.
 
 Using this feature requires a Microsoft Entra ID Governance subscription for your organization's member users. Some capabilities within this feature require guest billing.
-
-#### Example license scenarios
-
-| Scenario | Calculation | Number of licenses |
-| --- | --- | --- |
-| A Lifecycle Workflows Administrator creates a workflow to add new hires in the Marketing department to the Marketing teams group. 250 new hire member users are assigned to the Marketing teams group via this workflow once. Other 150 new hire member users are assigned to the Marketing teams group via this workflow later the same year. | 1 license for the Lifecycle Workflows Administrator, and 400 licenses for the users. | 401 |
-| A Lifecycle Workflows Administrator creates a workflow to pre-offboard a group of employees before their last day of employment. The scope of users who will be pre-offboarded are 40 users once.  We offboard 40 licensed users.  Now, we can re-assign these 40 licenses and assign 10 more licenses later in the year to pre-offboard 50 more users.| 50 licenses for users, and 1 license for the Lifecycle Workflows Administrator. | 51 |
