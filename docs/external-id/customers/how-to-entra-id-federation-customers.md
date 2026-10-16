@@ -109,7 +109,7 @@ Content-type: application/json
   "identities": [
     {
       "signInType": "federated",
-      "issuer": "https://login.microsoftonline.com/<entra-tenant-id>/v2.0/<entra-external-tenant-id>",
+      "issuer": "https://login.microsoftonline.com/<entra-tenant-primary-domain-name>/v2.0<entra-external-tenant-id>",
       "issuerAssignedId": "<entra-tenant-user-object-id>"
     }
   ]
@@ -118,7 +118,7 @@ Content-type: application/json
 
 Replace the following values:
 
-- `<entra-tenant-id>`: The directory (tenant) ID of the source Microsoft Entra ID tenant.
+- `<entra-tenant-primary-domain-name>`: The directory (tenant) primary domain name of the source Microsoft Entra ID tenant. For example, `contoso.onmicrosoft.com`.
 - `<entra-external-tenant-id>`: The directory (tenant) ID of the External ID tenant.
 - `<entra-tenant-user-object-id>`: The object ID of the user in the source Microsoft Entra ID tenant.
 
