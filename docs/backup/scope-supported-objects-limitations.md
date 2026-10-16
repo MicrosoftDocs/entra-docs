@@ -1,7 +1,7 @@
 ---
 title: Supported objects and recoverable properties in Microsoft Entra Backup and Recovery
 description: Learn which Microsoft Entra Backup and Recovery object types and properties are supported, and understand current limitations
-ms.date: 08/25/2026
+ms.date: 10/16/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
@@ -130,6 +130,10 @@ Recovery supports these authentication method policies:
 
 For reference, view the full set of authentication methods policy properties in the [Microsoft Graph authenticationMethodConfiguration resource type](/graph/api/resources/authenticationmethodconfiguration).
 
+## Authentication strength policy
+
+All properties of authentication strength policies are in scope for backup and recovery. View all authentication strength policy properties in the [Microsoft Graph authenticationStrengthPolicy resource type](/graph/api/resources/authenticationstrengthpolicy#properties).
+
 ## Application
 
 Recovery for **application** objects supports these properties:
@@ -183,9 +187,12 @@ Service principal recovery is the anchor for related permissions. When a service
 
 ### OAuth2 (delegated) permission grant
 
-OAuth2 permission grant represents the delegated permissions granted to an application's service principal. An administrator can create delegated permission grants when a user consents to an application's request to access an API, or an administrator can grant them on behalf of all users. Permission grants that an admin creates on behalf of all users are in scope. You can identify these permission grants by `consentType` = `AllPrincipals` and `principalId` = `null`.
+An OAuth2 permission grant represents the delegated permissions granted to an application's service principal. Permission grants created through either user consent or administrator consent on behalf of all users are in scope for backup and recovery:
 
-Permission grants created as a result of user consent aren't supported. View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
+- User consent grants have `consentType` = `Principal` and `principalId` set to the user's ID.
+- Administrator consent grants on behalf of all users have `consentType` = `AllPrincipals` and `principalId` = `null`.
+
+View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
 
 OAuth2 permission grants aren’t recovered independently. For difference report and recovery scoping, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
 
