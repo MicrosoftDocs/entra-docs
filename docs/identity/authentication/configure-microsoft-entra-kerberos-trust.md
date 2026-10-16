@@ -14,9 +14,12 @@ ai-usage: ai-assisted
 
 # Configure Microsoft Entra Kerberos trust
 
-Microsoft Entra Kerberos trust establishes an inbound trust relationship in which on-premises Active Directory Domain Services (AD DS) trusts Microsoft Entra ID as a Kerberos Key Distribution Center (KDC). This trust enables hybrid identity organizations to use modern credentials for applications and allows Microsoft Entra ID to become the trusted source for cloud and on-premises authentication.
+Microsoft Entra Kerberos trust creates a Trusted Domain Object in on-premises Active Directory Domain Services (AD DS) that represents Microsoft Entra ID as a trusted Kerberos realm, `KERBEROS.MICROSOFTONLINE.COM`. The trust is inbound from the perspective of the AD DS domain: Microsoft Entra ID trusts the Kerberos tickets that your domain controllers issue, so clients that authenticate to Active Directory can obtain Kerberos service tickets from Microsoft Entra ID for resources such as Azure Files and Azure SQL Managed Instance. This design is also called the incoming trust-based flow.
 
 This article explains how to create the Trusted Domain Object, configure clients to retrieve Kerberos tickets, rotate the Kerberos key, and remove the trust configuration.
+
+> [!NOTE]
+> The Trusted Domain Object isn't required for Windows Hello for Business cloud Kerberos trust or for passwordless security key (FIDO2) sign-in to on-premises resources. Those scenarios need only the Microsoft Entra Kerberos server object, which you create with `Set-AzureADKerberosServer` without the `-SetupCloudTrust` parameter. For more information, see [Enable passwordless security key sign-in to on-premises resources](howto-authentication-passwordless-security-key-on-premises.md).
 
 ## Prerequisites
 
@@ -33,7 +36,7 @@ To create and configure the Microsoft Entra Kerberos Trusted Domain Object, use 
 
 ### Register the Trusted Domain Object with Microsoft Entra ID
 
-Use the Azure AD Hybrid Authentication Management PowerShell module to set up a Trusted Domain Object in the Active Directory domain and register trust information with Microsoft Entra ID. This action creates an inbound trust relationship, which enables on-premises Active Directory to trust Microsoft Entra ID.
+Use the Azure AD Hybrid Authentication Management PowerShell module to set up a Trusted Domain Object in the Active Directory domain and register trust information with Microsoft Entra ID. This action creates an inbound trust relationship, which enables Microsoft Entra ID to trust on-premises Active Directory.
 
 You only need to set up the Trusted Domain Object once per domain. If you already set up this object for your domain, skip this section and proceed to [Configure clients to retrieve Kerberos tickets](#configure-clients-to-retrieve-kerberos-tickets).
 
