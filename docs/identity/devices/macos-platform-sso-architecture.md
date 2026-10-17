@@ -1,11 +1,11 @@
 ---
-title: "Architecture and authentication flow for macOS Platform SSO (Apple) with Microsoft Entra ID"
+title: "Architecture and authentication flow for macOS Platform SSO with Microsoft Entra ID"
 description: "Understand how macOS Platform SSO registration, device keys, the Platform SSO PRT, app SSO, and Platform Credentials work with Microsoft Entra ID."
 ms.topic: concept-article
 ms.date: 10/14/2026
 ---
 
-# Architecture and authentication flow for macOS Platform SSO (Apple) with Microsoft Entra ID
+# Architecture and authentication flow for macOS Platform SSO with Microsoft Entra ID
 
 macOS Platform Single Sign-on (PSSO) integrates a user's organizational identity with macOS. When PSSO is configured with Microsoft Entra ID, a managed Mac can establish a device-bound identity, register a local user, and provide single sign-on (SSO) to supported applications and websites.
 
@@ -23,7 +23,7 @@ With Microsoft Entra ID:
 - **The device management service** deploys the Extensible SSO policy and PSSO configuration.
 - **The Microsoft Enterprise SSO plug-in** registers the Mac and user with Microsoft Entra ID and supplies the identity-provider configuration required by macOS.
 - **macOS Platform SSO (Apple)** owns the operating-system experience. It invokes registration, protects platform credentials, coordinates authentication, and makes the resulting Platform SSO PRT available to the Microsoft SSO extension through Apple's supported framework.
-- **Microsoft Entra ID** registers the device and user credential, verifies the registered credential, validates the user and device proofs, and issues the Platform SSO Primary Refresh Token (PRT).
+- **Microsoft Entra ID** verifies the registered credential, validates the user and device proofs, and issues the Platform SSO Primary Refresh Token (PRT).
 - **Applications and browsers** request access to resources and receive only the tokens or sessions intended for them.
 
 [![Diagram that shows Platform SSO roles and responsibilities.](media/macos-platform-sso-architecture/platform-sso-public-01-architecture.png)](media/macos-platform-sso-architecture/platform-sso-public-01-architecture.png#lightbox)
@@ -36,9 +36,9 @@ With Microsoft Entra ID:
 | --- | --- |
 | Microsoft Intune or another supported MDM | Deploy the Extensible SSO configuration and select the PSSO authentication method |
 | Company Portal for macOS | Deliver the Microsoft Enterprise SSO plug-in used for Microsoft Entra PSSO |
-| Microsoft Enterprise SSO plug-in | Perform Microsoft Entra device and user registration and provide identity-provider configuration to macOS |
+| Microsoft Enterprise SSO plug-in | Perform Microsoft Entra device and user registration with Microsoft Entra and provide identity-provider configuration to macOS |
 | macOS Platform SSO (Apple) | Coordinate registration and authentication, protect platform credentials, and integrate the organizational identity with macOS |
-| Microsoft Entra ID | Register the device and credential, verify the registered credential, validate the user and device proofs, and issue the Platform SSO PRT |
+| Microsoft Entra ID |verify the registered credential, validate the user and device proofs, and issue the Platform SSO PRT |
 | Secure Enclave | Protect device-bound keys and, with the UserSecureEnclaveKey method, the user-bound key |
 | Apps and browsers | Request resource tokens or web sessions backed by the Platform SSO foundation |
 
