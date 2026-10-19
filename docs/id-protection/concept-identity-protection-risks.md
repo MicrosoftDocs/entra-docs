@@ -3,8 +3,10 @@ title: What are risk detections?
 description: Explore the full list of risk detections and their corresponding risk event types, along with a description of each risk event type.
 ms.service: entra-id-protection
 ms.topic: reference
-ms.date: 04/22/2026
+ms.date: 10/19/2026
 ms.reviewer: lvandenende
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # What are risk detections?
@@ -61,6 +63,7 @@ Select a risk detection from the list to view the description of the risk detect
 | [Microsoft Entra threat intelligence (user)](#microsoft-entra-threat-intelligence-user) | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
 | [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium | attemptedPrtAccess |
 | [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium | suspiciousAPITraffic |
+| [Suspicious credential addition](#suspicious-credential-addition) | Real-time | Premium | TBD |
 | [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
 
@@ -296,6 +299,17 @@ This risk detection type is discovered using information provided by Microsoft D
 This risk detection is reported when abnormal GraphAPI traffic or directory enumeration is observed. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in the environment. 
 
 - Calculated offline
+- License requirement: Microsoft Entra ID P2
+
+### Suspicious credential addition
+
+<!-- TODO: Confirm the Premium license requirement and replace the TBD riskEventType in the user risk detections table before publishing. -->
+
+This detection identifies when a new authentication method is added to an account under suspicious circumstances. This might indicate that an attacker has accessed the account and is trying to maintain access by registering a new credential.
+
+Microsoft Entra ID Protection raises user risk when this activity is detected, allowing organizations to respond through their configured risk-based policies.
+
+- Calculated in real-time
 - License requirement: Microsoft Entra ID P2
 
 ### Suspicious sending patterns 
