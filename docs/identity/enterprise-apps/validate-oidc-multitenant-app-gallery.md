@@ -1,7 +1,7 @@
 ---
 title: Validate an OIDC app for Microsoft Entra App Gallery onboarding
 description: Use the Microsoft Entra App Validator browser extension to validate your single-tenant or multitenant OpenID Connect app and generate a Test ID for app gallery publishing.
-author: hkinyunyu
+author: HildaK-pm
 manager: msteele
 ms.service: entra-id
 ms.subservice: enterprise-apps
