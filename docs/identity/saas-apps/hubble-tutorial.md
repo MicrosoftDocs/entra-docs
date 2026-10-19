@@ -25,10 +25,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
-* Hubble supports **SP** initiated SSO.
-
-> [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+* Hubble supports **SP** and **IDP** initiated SSO.  
 
 ## Add Hubble from the gallery
 
@@ -71,11 +68,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** box, type the URL:
-    `https://api.hubble-docs.com/api/v1/organizations/samls/metadata`
+    a. In the **Identifier** box, type the **Entity ID** value shown on the Hubble SSO configuration page.
 
-    b. In the **Reply URL** text box, type the URL:
-    `https://api.hubble-docs.com/api/v1/organizations/samls/acs`
+    b. In the **Reply URL** text box, type the **ACS URL** value shown on the Hubble SSO configuration page.
 
     c. In the **Sign-on URL** text box, type the URL:
     `https://app.hubble-docs.com/saml-login`
