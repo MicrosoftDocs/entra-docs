@@ -34,6 +34,7 @@ During preview:
 
 - You can create up to 10 custom Private Access traffic forwarding profiles.
 - A Private Access application must be included in the default Private Access profile before it can be selected for a custom profile.
+- Switching to v2 is a non-reversible action. All previous configurations get carried over with no changes to end user traffic.
 
 ## View Private Access profiles
 
