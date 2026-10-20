@@ -196,7 +196,7 @@ Access package drift reports include:
 - Enterprise applications that have application role assignments without corresponding access package assignments.
 - Active access package assignments where the expected group membership or application assignment is missing.
 
-To review access package drift with Microsoft Graph, use the [List accessDriftSummary API](https://learn.microsoft.com/en-us/graph/api/accessdriftsummary-list?view=graph-rest-beta).
+To review access package drift with Microsoft Graph, use the [List accessDriftSummary API](https://learn.microsoft.com/graph/api/accessdriftsummary-list?view=graph-rest-beta).
 
 To review access package drift through the Microsoft Entra admin center:
 
