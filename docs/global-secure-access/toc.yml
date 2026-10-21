@@ -460,6 +460,8 @@ items:
             href: how-to-zscaler-coexistence.md
           - name: Coexistence with Netskope
             href: how-to-netskope-coexistence.md
+          - name: Coexistence with Infoblox
+            href: how-to-infoblox-coexistence.md
       - name: Find a Microsoft services partner
         href: how-to-find-microsoft-services-partners.md
 - name: Reference
