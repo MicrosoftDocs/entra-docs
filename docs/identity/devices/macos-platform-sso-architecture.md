@@ -68,7 +68,7 @@ The registration certificate contains the device signing public key and binds it
 
 ## User registration
 
-User registration associates the local macOS user with a Microsoft Entra identity and provisions the authentication method selected by the administrator.
+User registration associates the local macOS user with a Microsoft Entra identity and provisions the authentication method selected by the administrator. More details in the Authentication methods section below.
 
 The supported methods are:
 
@@ -76,17 +76,53 @@ The supported methods are:
 - UserSecureEnclaveKey
 - Smart Card
 
-With the UserSecureEnclaveKey method, user registration also provisions a hardware-bound user key:
-
-1. The user completes Microsoft Entra authentication and any required multifactor authentication.
-2. macOS creates or accesses a user key protected by the Secure Enclave.
-3. The public key is registered with Microsoft Entra ID and associated with the user and device.
-4. The private key remains protected on the Mac.
-5. The extension completes the user's PSSO configuration.
-
 [![Diagram that shows the Platform SSO device and user registration sequence.](media/macos-platform-sso-architecture/platform-sso-public-02-registration.png)](media/macos-platform-sso-architecture/platform-sso-public-02-registration.png#lightbox)
 
 *Figure 2. Device registration establishes device trust; user registration associates a user and authentication method with the Mac.*
+
+## Authentication methods
+
+The authentication method determines how the user proves their identity.
+
+### Password
+
+With the Password method, macOS synchronizes the local account password with the user's Microsoft Entra password:
+
+1. After Platform SSO user registration completes, macOS Platform SSO (Apple) prompts the user to enter their Microsoft Entra password.
+2. macOS uses the user's Microsoft Entra username and password to request a Platform SSO PRT. The request also includes device proof that binds it to the registered Mac.
+3. Microsoft Entra ID verifies the credential, validates the device proof and issues the PRT.
+4. After the PRT is issued successfully, macOS updates the local account password to match the Microsoft Entra password.
+5. If the Microsoft Entra password changes later, macOS prompts the user to authenticate and updates the local password to keep the passwords synchronized.
+
+This method reduces the number of passwords the user must manage, but it isn't passwordless or phishing-resistant
+
+### UserSecureEnclaveKey
+
+With the UserSecureEnclaveKey method, user registration also provisions a hardware-bound user key:
+
+1. macOS Platform SSO (Apple) generates a user key protected by the Secure Enclave.
+2. The user completes Microsoft Entra authentication and any additional authentication required to register the key.
+3. The public key is registered with Microsoft Entra ID and associated with the user and registered Mac.
+4. The private key remains protected by the Secure Enclave and isn't exported from the Mac.
+5. The Microsoft Enterprise SSO plug-in completes the user's Platform SSO configuration.
+6. When requesting a Platform SSO PRT, macOS creates an assertion and signs it with the Secure Enclave-protected private key. The request also includes device proof that binds it to the registered Mac.
+7. Microsoft Entra ID verifies the assertion with the registered public key, validates the user and device proofs, and issues the PRT. 
+
+The local account password remains a separate local credential and is never updated as part of PSSO with this auth method. Microsoft recommends  UserSecureEnclaveKey  for most Platform SSO deployments.
+
+### SmartCard
+
+With the Smart Card method, the user proves their identity by using a certificate and its associated private key:
+
+1. The user completes the required smart card and PIN interaction.
+2. macOS creates an authentication assertion and uses the smart card's private key to sign it. The private key remains on the smart card and isn't exported.
+3. The PRT request includes the signed assertion, the associated certificate information, and device proof that binds the request to the registered Mac.
+4. Microsoft Entra certificate-based authentication validates the certificate, user mapping, signed assertion, and device proof before Microsoft Entra ID issues the Platform SSO PRT.
+
+[![Diagram that shows a comparison of Platform SSO authentication methods.](media/macos-platform-sso-architecture/platform-sso-public-04-authentication-methods.png)](media/macos-platform-sso-architecture/platform-sso-public-04-authentication-methods.png#lightbox)
+
+*Figure 3. Password, UserSecureEnclaveKey, and Smart Card are alternative methods for producing user authentication proof.*
+
 
 ## Identity-provider configuration
 
@@ -97,7 +133,8 @@ After registration, the Microsoft extension supplies macOS with the configuratio
 - The active authentication method.
 - The application, audience, and scopes used by the protocol.
 - The requirements for validating service responses.
-- The representation of method-specific authentication proof.
+- The request format for the selected authentication method.
+- Kerberos TGT mapping as applicable.
 
 macOS persists this information through Apple's PSSO framework. This arrangement allows macOS to coordinate login, unlock, account management, credential refresh, and System Settings experiences while Microsoft remains responsible for Microsoft Entra registration and service-specific validation.
 
@@ -115,34 +152,33 @@ The Microsoft Entra SSO credential used by PSSO is a hardware-bound PRT. The use
 8. macOS decrypts, validates, and saves the Platform SSO PRT using operating-system protections.
 9. macOS makes the PRT available to the Microsoft SSO extension through Apple's PSSO framework.
 10. The extension uses the PRT to obtain app-specific tokens or complete supported web SSO.
+11. macOS manages Platform SSO PRT refresh automatically. If the Platform SSO tokens are missing, expired, or more than four hours old, macOS Platform SSO attempts to refresh them or obtain new tokens from Microsoft Entra ID.
 
 The user's password, private key used by UserSecureEnclaveKey, or smart-card private key isn't converted into a PRT. Those credentials prove the user's identity. Microsoft Entra ID issues the PRT after validating that proof and the registered device context.
 
 [![Diagram that shows how macOS obtains and protects the Platform SSO PRT.](media/macos-platform-sso-architecture/platform-sso-public-03-authentication.png)](media/macos-platform-sso-architecture/platform-sso-public-03-authentication.png#lightbox)
 
-*Figure 3. macOS sends the device-bound authentication request, protects the returned Platform SSO PRT, and shares it with the Microsoft SSO extension.*
+*Figure 4. macOS sends the device-bound authentication request, protects the returned Platform SSO PRT, and shares it with the Microsoft SSO extension.*
 
-## Authentication methods
+## Obtain Kerberos TGTs
 
-The authentication method changes how the user proves identity. It doesn't change the broader device-registration and app-SSO architecture.
+In addition to the Platform SSO PRT, Microsoft Entra ID can return Kerberos ticket-granting tickets (TGTs) in the protected Platform SSO response:
 
-### Password
+- A cloud TGT for accessing cloud resources that use Microsoft Entra Kerberos.
+- An on-premises TGT for accessing resources in an on-premises Active Directory Domain Services environment.
 
-The Microsoft Entra password and local macOS password are synchronized according to PSSO policy. The authentication request remains bound to the registered Mac. This method reduces the number of passwords the user manages, but it isn't passwordless or phishing-resistant.
+The TGTs are separate from the Platform SSO PRT, even though Microsoft Entra ID returns them in the same authentication response.
 
-### UserSecureEnclaveKey
+The high-level flow is:
 
-A hardware-bound user key is protected by the Secure Enclave. When fresh proof is required, macOS requests a signature from the private key and Microsoft Entra ID verifies it with the registered public key. The private key doesn't leave the Mac. The local account password remains a separate local credential.
-
-Microsoft recommends the UserSecureEnclaveKey auth method for most PSSO deployments.
-
-### SmartCard
-
-The user proves identity with a certificate and its associated private key. The user completes the required card and PIN interaction, and the smart card signs the authentication proof without exporting the private key. Microsoft Entra certificate-based authentication validates the certificate, signature, user mapping, registered device, and policy.
-
-[![Diagram that shows a comparison of Platform SSO authentication methods.](media/macos-platform-sso-architecture/platform-sso-public-04-authentication-methods.png)](media/macos-platform-sso-architecture/platform-sso-public-04-authentication-methods.png#lightbox)
-
-*Figure 4. Password, UserSecureEnclaveKey, and Smart Card are alternative methods for producing user authentication proof.*
+1. The Microsoft Enterprise SSO plug-in configures macOS Platform SSO (Apple) to request available Kerberos TGTs from Microsoft Entra ID.
+2. The SSO plug-in supplies macOS Platform SSO (Apple) with Kerberos ticket mappings that identify the cloud and on-premises TGT fields in the Microsoft Entra response.
+3. macOS Platform SSO (Apple) sends a Platform SSO PRT request to Microsoft Entra ID. Based on the configuration supplied by the SSO plug-in, the request indicates that available Kerberos TGTs should be returned alongside the PRT in the same protected response.
+4. Microsoft Entra ID verifies the registered credential and validates the user and device proofs. It then returns the Platform SSO PRT and any available cloud or on-premises TGTs in the protected response.
+5. macOS Platform SSO (Apple) decrypts and validates the response.
+6. Based on the configured TGT mappings, macOS imports the selected TGTs into a Kerberos credential cache. If **custom_tgt_setting**  isn't specified, the SSO plug-in maps both the cloud and on-premises TGTs by default. Administrators can configure it to map both TGTs, only the cloud TGT, only the on-premises TGT, or neither TGT.
+7. If the Kerberos SSO extension is configured with **usePlatformSSOTGT** enabled, macOS makes Platform SSO TGT available to the extension when the ticket’s realm matches the realm requested by the extension.
+8. The Kerberos SSO extension uses the matching TGT to obtain service tickets for cloud or on-premises Kerberos resources without prompting the user to authenticate again, provided that the TGT remains valid and the resource configuration permits SSO.
 
 ## Application and browser SSO
 
@@ -193,6 +229,7 @@ The complete conceptual lifecycle is:
 10. Supported applications and browsers use the extension to obtain their own tokens or sessions.
 11. When policy requires new proof, macOS invokes the configured authentication method again.
 12. With UserSecureEnclaveKey, the Platform Credential can also answer supported WebAuthn passkey challenges.
+13. macOS(Apple) maintains the registration state on the machine, and may re-trigger the registration flow if needed.
 
 ## Related content
 
