@@ -26,7 +26,7 @@ You can enable and manage Explicit Forward Proxy by using the Microsoft Entra ad
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Go to **Global Secure Access** > **Session management**, and then select the **Explicit Forward Proxy** tab.
+1. Navigate to **Global Secure Access** > **Connect** -> **Explicit Forward Proxy**.
 
 1. Set the **Internet Access** toggle to **Enabled**. By default, smart session management is enabled when you enable Explicit Forward Proxy.
 
