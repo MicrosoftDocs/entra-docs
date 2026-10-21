@@ -3,7 +3,7 @@ title: 'Properties of an enterprise application'
 description: Learn about the properties of an enterprise application in Microsoft Entra ID.
 ms.topic: concept-article
 ai-usage: ai-assisted
-ms.date: 10/15/2026
+ms.date: 10/20/2026
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
 
@@ -28,7 +28,7 @@ The label alone doesn't identify which condition applies or prove that the app r
 |---|---|---|
 | Tenant-local sign-in disablement | Check **Enabled for users to sign-in?** on the enterprise application's **Properties** page, or read the service principal's `accountEnabled` property in Microsoft Graph. | Review why sign-in was disabled before restoring it. To restore tenant-local sign-in, set **Enabled for users to sign-in?** to **Yes** and save, or set `accountEnabled=true`. See [Disable user sign-in](disable-user-sign-in-portal.md). |
 | App registration deactivation | Check the app registration's **State** in its home tenant, or read the application object's `isDisabled` property in Microsoft Graph. | An authorized administrator in the application's home tenant can [reactivate the app registration](deactivate-app-registration.md#reactivate-an-application). |
-| Microsoft disablement | Read the service principal's `disabledByMicrosoftStatus` property in Microsoft Graph. | See [Protect against consent phishing](protect-against-consent-phishing.md#recommended-response-and-remediation) for investigation and remediation guidance. |
+| Microsoft disablement | Read the service principal's `disabledByMicrosoftStatus` property in Microsoft Graph. | Tenant administrators can't reverse Microsoft disablement by enabling tenant-local sign-in or reactivating the app registration. See [Protect against consent phishing](protect-against-consent-phishing.md#recommended-response-and-remediation) for investigation guidance and support options if you believe the disablement is an error. |
 
 You need appropriate permissions in the tenant where you make a change. Enabling tenant-local sign-in doesn't override app registration deactivation or Microsoft disablement. Reactivating the app registration doesn't enable a service principal whose `accountEnabled` remains `false`.
 
