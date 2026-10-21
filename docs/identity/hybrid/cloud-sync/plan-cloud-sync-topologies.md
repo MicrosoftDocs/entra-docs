@@ -3,8 +3,11 @@ title: Microsoft Entra Cloud Sync supported topologies and scenarios
 description: Learn about various on-premises and Microsoft Entra topologies that use Microsoft Entra Cloud Sync.
 
 ms.topic: concept-article
-ms.date: 04/09/2025
+ms.date: 10/21/2026
 ms.subservice: hybrid-cloud-sync
+ms.custom: msecd-doc-authoring-1028
+ai-usage: ai-assisted
+#customer intent: As a hybrid identity administrator, I want to identify supported Cloud Sync topologies so that I can plan synchronization and a safe manual migration pilot.
 ---
 
 
@@ -52,9 +55,12 @@ This scenario topology is similar to the multi-forest scenario. However, this on
 
 ![Diagram that shows a single-forest topology with a single Microsoft Entra tenant.](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
 
-The piloting scenario involves the existence of both Microsoft Entra Connect and Microsoft Entra Cloud Sync in the same forest and scoping the users and groups accordingly. NOTE: An object should be in scope in only one of the tools. 
+The piloting scenario involves Microsoft Entra Connect Sync and Cloud Sync in the same forest. Connect Sync and Cloud Sync must not simultaneously export normal changes for the same object and attribute set. During the documented manual phased-migration process, objects can remain in Connect Sync scope while `cloudNoFlow` and `JoinNoFlow` rules prevent normal Connect Sync exports and preserve required references.
 
-For an example of this scenario see [Tutorial: Pilot Microsoft Entra Cloud Sync in an existing synced AD forest](tutorial-pilot-aadc-aadccp.md)
+For the documented process, see [Create a custom user inbound rule](tutorial-pilot-aadc-aadccp.md#create-a-custom-user-inbound-rule) in the manual migration tutorial.
+
+> [!IMPORTANT]
+> Don't remove objects from Connect Sync scope before migration and reference validation are complete. Early scope removal can result in unintended reference removals. Follow [Plan scope removal from Microsoft Entra Connect Sync](tutorial-pilot-aadc-aadccp.md#plan-scope-removal-from-microsoft-entra-connect-sync).
 
 ### Merging objects from disconnected sources 
 

@@ -2,16 +2,23 @@
 title: Tutorial - Migrate to Microsoft Entra Cloud Sync for a Synced Active Directory Forest
 description: Learn how to migrate to Microsoft Entra Cloud Sync for a synced Active Directory forest.
 ms.topic: tutorial
-ms.date: 09/29/2025
+ms.date: 10/21/2026
 ms.subservice: hybrid-cloud-sync
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1028
+ai-usage: ai-assisted
+#customer intent: As a hybrid identity administrator, I want to pilot a documented manual migration so that I can validate Cloud Sync and object references before cutover.
 ---
 
 # Tutorial: Migrate to Microsoft Entra Cloud Sync for a synced Active Directory forest
 
 This tutorial walks you through how to migrate to Microsoft Entra Cloud Sync for a test Active Directory forest that was synced by using Microsoft Entra Connect Sync.
 
-This article provides information for a basic migration. Review the [Migrate to Microsoft Entra Cloud Sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before you attempt to migrate your production environment.
+Use this tutorial to pilot the documented manual migration process. Review the [Migrate to Microsoft Entra Cloud Sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before you attempt to migrate your production environment.
+
+> [!IMPORTANT]
+> This tutorial describes an advanced manual migration for a test or pilot environment. If the [guided migration tool](migrate-connect-sync-cloud-sync-tool.md) is available and the readiness review confirms eligibility, use the guided tool instead.
+>
+> Don't remove objects from Connect Sync scope before migration and reference validation are complete. Review [Plan scope removal from Microsoft Entra Connect Sync](#plan-scope-removal-from-microsoft-entra-connect-sync) before you begin.
 
 In this tutorial, you learn how to:
 
@@ -39,7 +46,7 @@ Before you try this tutorial, consider the following items:
 
 - Ensure that the objects in the pilot scope have `ms-ds-consistencyGUID` populated so that Microsoft Entra Cloud Sync hard matches the objects.
 
-  Microsoft Entra Connect Sync doesn't populate `ms-ds-consistencyGUID` by default for group objects.
+    Microsoft Entra Connect Sync doesn't populate `ms-ds-consistencyGUID` by default for group objects. Review the [source-anchor guidance](../connect/plan-connect-design-concepts.md#using-ms-ds-consistencyguid-as-sourceanchor) for the documented differences between object types.
 
 - Follow the steps in this tutorial precisely. This configuration is for advanced scenarios.
 
@@ -133,6 +140,9 @@ In the Microsoft Entra Connect Synchronization Rules Editor, create an inbound s
    ![Screenshot that shows the sync rule transformations.](media/tutorial-migrate-aadc-aadccp/user-4.png)
    
 Follow the same steps for all object types (user, group, and contact). Repeat the steps according to the configured Active Directory connector or Active Directory forest.
+
+> [!NOTE]
+> This tutorial doesn't provide a device migration procedure. Device synchronization requires separate Cloud Sync configuration. Review the [Device Sync documentation](device-sync.md) and [guided migration-tool limits](migrate-connect-sync-cloud-sync-tool.md#prerequisites) before planning a device migration.
 
 ## Create a custom user outbound rule
 
@@ -240,3 +250,8 @@ To recover, readd the affected objects to Microsoft Entra Connect Sync scope and
 
 - [What is provisioning?](../what-is-provisioning.md)
 - [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)
+- [Guided migration tool](migrate-connect-sync-cloud-sync-tool.md)
+- [Migration overview](migrate-azure-ad-connect-to-cloud-sync.md)
+- [Migration decision guide](connect-to-cloud-sync-decision-guide.md)
+- [Migration FAQ](cloud-sync-migration-faq.yml)
+- [Configure Device Sync](device-sync.md)
