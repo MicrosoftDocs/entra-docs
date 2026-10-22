@@ -32,7 +32,7 @@ In the third scenario, Global Secure Access handles all Microsoft 365 traffic. N
 
 In the fourth scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Netskope only captures Private application traffic.
 
-1. **[Microsoft Entra Private Access and Microsoft Entra Microsoft Access with Netskope Internet Access](#microsoft-entra-private-access-and-microsoft-entra-microsoft-access-with-netskope-internet-access)**
+5. **[Microsoft Entra Private Access and Microsoft Entra Microsoft Access with Netskope Internet Access](#microsoft-entra-private-access-and-microsoft-entra-microsoft-access-with-netskope-internet-access)**
 
 In the fifth scenario, Global Secure Access handles private application and Microsoft 365 traffic. Netskope only captures internet traffic.
 
