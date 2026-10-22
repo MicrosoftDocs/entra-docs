@@ -2,7 +2,8 @@
 title: Configure Puzzel for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Puzzel.
 ms.topic: how-to
-ms.date: 08/10/2026
+ms.date: 10/22/2026
+ai-usage: ai-assisted
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Puzzel so that I can streamline the user management process and ensure that users have the appropriate access to Puzzel.
 --- 
@@ -11,6 +12,15 @@ ms.date: 08/10/2026
 
 This article describes the steps you need to perform in both Puzzel and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Puzzel](https://www.puzzel.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
+
+> [!IMPORTANT]
+> To improve the security posture of application provisioning, Microsoft is retiring the **OAuth 2.0 Authorization Code Grant** for this application.
+>
+> **Migrate** affected provisioning jobs to **OAuth 2.0 Client Credentials Grant by March 31, 2027**, to avoid disruption to provisioning. After this date, provisioning jobs that continue to use Authorization Code Grant might stop working and could eventually be removed from the service.
+>
+> **This change doesn't affect SSO.** Existing provisioned users can continue signing in, but new users won't be provisioned and changes to existing users and groups won't be synchronized while provisioning isn't functioning.
+>
+> Follow [Configure Puzzel for automatic user provisioning with Microsoft Entra ID](puzzel-provisioning-tutorial.md#configure-automatic-user-provisioning-for-puzzel-in-microsoft-entra-id) in this article to migrate to OAuth 2.0 Client Credentials Grant.
 
 ## Supported capabilities
 > [!div class="checklist"]
