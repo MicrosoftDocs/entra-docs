@@ -66,6 +66,8 @@
         href: /graph/api/resources/tenantappmanagementpolicy?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
       - name: Specific apps and service principals
         href: /graph/api/resources/appmanagementpolicy?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
+  - name: Troubleshoot revoked application credentials
+    href: troubleshoot-revoked-credentials.md
   - name: Reference
     items:
     - name: Federated identity credentials considerations and limitations
