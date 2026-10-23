@@ -33,8 +33,7 @@ Custom PAC files allow you to:
 > While custom PAC file hosting validates basic JavaScript, it does not validate your intent for traffic routing and JavaScript logic that was implemented. We recommend that you approach PAC files as any other custom code artifact and review the code before relying on it in production. One way to achieve this is to use AI tools to review proposed PAC file contents and check it for validity, syntax, and intended logic. Example prompt: "Analyze this custom proxy automatic configuration file for explicit forward proxy. Check for syntax and routing decisions logic. Produce a report that includes details on what conditions influence routing decisions."
 
 1. Sign in to the [Microsoft Entra Admin Center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Connect** > **Session Management**.
-1. Select the **Explicit Forward Proxy** tab.
+1. Browse to **Global Secure Access** > **Connect** > **Explicit Forward Proxy**.
 1. In the **Internet Access** section, select the link to download the default PAC file for your tenant.
 :::image type="content" source="media/how-to-custom-proxy-autoconfiguration-files/download-template.png" alt-text="Screenshot of the Explicit Forward Proxy configuration page." lightbox="media/how-to-custom-proxy-autoconfiguration-files/download-template.png":::
 
