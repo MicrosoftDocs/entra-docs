@@ -173,6 +173,8 @@ items:
         href: index-employeeid-attribute-entra-id-to-active-directory.md
       - name: Insufficient access rights error
         href: insufficient-access-rights-error-troubleshooting.md
+      - name: Intermittent timeouts and slow performance
+        href: hr-intermittent-timeouts-slow-performance.md
     - name: Troubleshoot API-driven inbound provisioning
       items: 
       - name: Inbound provisioning API issues
