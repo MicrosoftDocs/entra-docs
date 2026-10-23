@@ -59,6 +59,9 @@ To get started with SSPR, complete the following tutorial:
 
 ## [**Allow password change after secure sign-in.**](#tab/secure-sign-in)
 
+> [!NOTE]
+> This feature rolls out across all clouds starting in late October 2026, with rollout expected to complete by the end of November 2026. If you don't see the setting in your tenant, the rollout might not have reached your tenant yet.
+
 Passwordless users can change their cloud password from **Security info** without knowing or entering their current password. Before they create a new password, they sign in with one of the following passwordless methods:
 
 * Microsoft Entra certificate-based authentication (CBA).
