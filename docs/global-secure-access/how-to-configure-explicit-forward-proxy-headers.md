@@ -21,7 +21,7 @@ You can configure Explicit Forward Proxy (preview) to rely on the private IP add
 
 ## Configuration steps
 
-1. Go to the Microsoft Entra admin center. Under **Global Secure Access** > **Session management** > **Explicit Forward Proxy**, select the **HTTP Header Session Management** checkbox.
+1. Go to the Microsoft Entra Admin Center. Under **Global Secure Access** > **Connect** > **Explicit Forward Proxy**, select the **HTTP Header Session Management** checkbox.
 
 1. Configure your outbound proxy service to intercept traffic to `*.internet.efp.globalsecureaccess.microsoft.com`.
 
