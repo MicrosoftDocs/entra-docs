@@ -3,8 +3,9 @@ title: 'Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID'
 description: This article describes the prerequisites and hardware requirements you need for cloud sync.
 
 ms.topic: how-to
-ms.date: 07/27/2026
+ms.date: 10/22/2026
 ms.subservice: hybrid-cloud-sync
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Prerequisites for Microsoft Entra Cloud Sync
@@ -29,6 +30,12 @@ You need the following to use Microsoft Entra Cloud Sync:
 
 - High availability refers to the Microsoft Entra Cloud Sync's ability to operate continuously without failure for a long time. By having multiple active agents installed and running, Microsoft Entra Cloud Sync can continue to function even if one agent should fail. Microsoft recommends having 3 active agents installed for high availability.
 - On-premises firewall configurations.
+
+### Active Directory site configuration
+
+The Microsoft Entra provisioning agent uses standard Active Directory domain controller discovery mechanisms. Incorrect DNS configuration, subnet-to-site mappings, or site configuration can cause synchronization failures, performance issues, or intermittent connectivity problems.
+
+Ensure that servers hosting provisioning agents are in correctly defined Active Directory sites. In **Active Directory Sites and Services**, associate each server's IP subnet with the appropriate site. Proper site and DNS configuration helps the agent discover appropriate domain controllers and can improve synchronization reliability and performance.
 
 
 ## Harden your Microsoft Entra provisioning agent server
