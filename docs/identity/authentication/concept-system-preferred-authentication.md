@@ -2,7 +2,7 @@
 title: System-preferred authentication in Microsoft Entra ID
 description: Learn how system-preferred authentication evaluates methods to prompt users with the most secure sign-in option for both first-factor and second-factor authentication.
 ms.topic: overview
-ms.date: 10/07/2026
+ms.date: 10/23/2026
 ms.reviewer: msft-poulomi
 ms.custom: msecd-doc-authoring-1012
 ai-usage: ai-assisted
@@ -12,13 +12,13 @@ ai-usage: ai-assisted
 
 # System-preferred authentication
 
-System-preferred authentication prompts users to sign in by using the most secure method they registered. It's an important security enhancement for users who authenticate by using less secure methods like passwords or SMS.
+System-preferred authentication prompts users to sign in by using their most secure registered authentication method. For passkeys, it also considers the device and browser the user is signing in from to prioritize a passkey they can use locally. It's an important security enhancement for users who authenticate by using less secure methods like passwords or SMS.
 
-For example, if a user registered both a password and a passkey, system-preferred authentication prompts the user to sign in with the passkey instead of the password. The user can still choose to sign in by using another method, but they're first prompted to try the most secure method they registered.
+For example, when system-preferred authentication applies to first-factor sign-in, a user with both a password and a passkey available on their current device is prompted to use the passkey instead of the password. Registering a passkey on one device doesn't mean the user is prompted to use it on every device. The user can still choose another allowed sign-in method.
 
 System-preferred authentication is a Microsoft managed setting, which is a [three-state policy](#authentication-method-feature-configuration-properties) (enabled, disabled, or Microsoft managed). If you don't want to enable system-preferred authentication, change the state from **Microsoft managed** to **Disabled**, or exclude users and groups from the policy.
 
-After system-preferred authentication is enabled, the authentication system does all the work. Users don't need to set any authentication method as their default because the system always determines and presents the most secure method they registered.
+After system-preferred authentication is enabled, users don't need to set a default authentication method. The system selects the preferred method for the applicable authentication step. For passkeys, the initial experience can differ between devices and browsers.
 
 ## How system-preferred authentication applies to sign-in
 
@@ -35,23 +35,115 @@ Both **Enabled** and **Microsoft managed** modes allow administrators to include
 
 > [!NOTE]
 > System-preferred authentication is scoped to users, not devices. Administrators include or exclude users or groups but can't assign the feature to specific devices or device groups.
+>
+> This policy scope doesn't mean users see the same passkey prompt on every device. Passkey selection also considers the device and browser used for sign-in.
 
 ### Known limitations
 
 - When you change the policy for a target group, the change might not take effect on the user's very next sign-in. It applies to all subsequent sign-ins after that.
 - Conditional Access policy is validated only for second-factor authentication and doesn't apply to first-factor authentication. Authentication happens first, and then Conditional Access evaluates authorization. System-preferred authentication doesn't override Conditional Access policies or authentication strength requirements.
 
-### Windows Hello for Business and macOS Platform SSO at first-factor sign-in
+### How passkeys are selected for the current device
 
-Windows Hello for Business and macOS Platform SSO are device-bound passkeys that work only as a first factor. Because the **Microsoft managed** state applies system-preferred authentication at the first factor, these credentials can be offered before the password.
+When a passkey is the preferred authentication method, **system-preferred authentication prioritizes a local passkey when one is available**. A local passkey is one the user can access through the current device's built-in authenticator or a passkey provider available on that device or in that browser. The user doesn't need to switch to another device to use it.
 
-To avoid prompting users for a device-bound credential that they don't use or can't complete on their current device, system-preferred authentication offers Windows Hello for Business or macOS Platform SSO at the first factor only when the user most recently signed in with a passkey. The behavior depends on which passkeys the user registered:
+> [!IMPORTANT]
+> **The first passkey prompt is a starting point, not a restriction.** Regardless of which passkey experience is shown first, users can navigate the browser or operating system's passkey options to use any of their registered local or portable passkeys that is accessible, supported, and allowed by your organization's policies. They don't need to use the suggested passkey or wait for an attempt to fail. See [Choose another passkey or sign-in method](#choose-another-passkey-or-sign-in-method).
 
-- If the user has a passkey other than Windows Hello for Business or macOS Platform SSO, system-preferred authentication prompts for the passkey at the first factor, just as it already prompts for that passkey at second-factor sign-in.
-- If the user's only registered passkey is Windows Hello for Business or macOS Platform SSO, and the user most recently signed in with a passkey, system-preferred authentication prompts for passkey sign-in at the first factor.
-- If the user's only registered passkey is Windows Hello for Business or macOS Platform SSO, and the user's most recent sign-in wasn't with a passkey, system-preferred authentication skips it at the first factor and prompts the next highest-ranked method in the user's credential order instead.
+For example, if a user has a passkey available on their Windows PC and another passkey on their phone, the local passkey experience is prioritized over asking them to use the phone.
 
-Users can always select **Sign in another way** to choose a different registered method.
+**Local doesn't mean the same provider on every device or browser.** In Chrome, a passkey saved in Google Password Manager can be the local option. On Windows, Windows Hello for Business can be the local option. The browser and operating system determine which available local provider is displayed, so a user with multiple local passkeys isn't necessarily prompted for Windows Hello first.
+
+The exact experience also depends on browser and operating system support. If the device or browser can't be identified reliably, the browser or operating system presents its default passkey experience.
+
+> [!NOTE]
+> A registered passkey isn't necessarily accessible on the device being used. For example, a synced passkey must be available in the user's passkey provider, and the user might need to sign in to that provider or browser profile. A passkey prompt doesn't guarantee that a matching passkey is present.
+
+#### Device-bound, nonportable passkeys
+
+System-preferred authentication includes logic for device-bound, nonportable platform credentials: **Windows Hello for Business**, **Microsoft Entra passkey on Windows**, and **macOS Platform SSO**. These credentials stay on the device where they're created. They aren't synced to other devices and can't be used from another device through cross-device QR code sign-in.
+
+System-preferred authentication uses the operating system to decide whether to offer one of these platform experiences. Using the credential still requires its private key on the original device:
+
+| Registered credential | Prompt can appear on | Credential works on |
+| --- | --- | --- |
+| Windows Hello for Business | Windows. | Only the Windows PC where the credential was created. |
+| [Microsoft Entra passkey on Windows](how-to-authentication-entra-passkeys-on-windows.md) | Windows. | Only the Windows PC where the passkey was created. |
+| macOS Platform SSO | macOS. | Only the Mac where the credential was created. |
+
+**These credentials aren't offered on incompatible platforms:**
+
+- Windows Hello for Business and Microsoft Entra passkey on Windows aren't offered on non-Windows devices, including a Mac, iPhone, iPad, Android device, or Linux device.
+- macOS Platform SSO isn't offered on non-macOS devices.
+
+If no other applicable passkey is registered, system-preferred authentication continues with the next applicable registered authentication method.
+
+> [!NOTE]
+> Microsoft Entra ID can identify the operating system, but it can't confirm before the prompt that the current device holds the credential's private key. A user might therefore receive a prompt on a compatible operating system even when the credential isn't available on that device. If no matching credential is available, the user needs to choose another allowed sign-in method.
+
+These credential types also differ in where they apply during authentication:
+
+- **Windows Hello for Business and macOS Platform SSO:** First-factor only. In the **Microsoft managed** state, their platform experiences can be offered before the password on a compatible operating system. Completing sign-in requires the credential on the current device.
+- **Microsoft Entra passkey on Windows:** A separate FIDO2 passkey type that isn't subject to this first-factor-only limitation.
+
+> [!NOTE]
+> This nonportable behavior is different from a passkey on a phone that supports cross-device sign-in, or a security key that the user can connect to another supported device. Selecting **Sign in another way** lets the user choose another allowed method; it doesn't make a nonportable credential usable on another device.
+
+#### Examples of passkey selection
+
+The table answers one question: **Which local passkey experience is prioritized on this device and browser?** Each first-factor example assumes:
+
+- System-preferred authentication is **Microsoft managed**.
+- The user has only the passkeys listed in that row.
+- The local passkey is accessible and allowed by the user's authentication policies.
+
+Other registered passkey providers can change which local experience appears first. These examples don't change the overall [authentication method ranking](#how-does-system-preferred-authentication-determine-the-most-secure-method).
+
+| Where the user signs in | Passkeys registered for the account | Local experience prioritized |
+| --- | --- | --- |
+| Windows PC, Microsoft Edge | Windows Hello for Business on this PC, and a passkey in Microsoft Authenticator on a phone | **Windows Hello for Business on this PC**, rather than switching to the phone to use the Authenticator passkey. |
+| Windows PC, Google Chrome | A passkey in Google Password Manager accessible in Chrome, and Windows Hello for Business on this PC | **Google Password Manager in Chrome.** Being on Windows doesn't mean Windows Hello is always shown first. |
+| Mac, Google Chrome | A passkey in Google Password Manager accessible in Chrome, and Windows Hello for Business on a Windows PC | **Google Password Manager in Chrome.** The Windows Hello credential from the Windows PC isn't used on the Mac. |
+| Mac, Google Chrome | macOS Platform SSO on this Mac, with no passkey saved in Google Password Manager for this account | **macOS Platform SSO on this Mac.** Chrome can use the local platform experience when there's no matching Google Password Manager passkey. |
+| iPhone running iOS 17 or later, Safari | A passkey in Microsoft Authenticator on this iPhone, with Authenticator enabled as an iOS passkey provider, and Windows Hello for Business on a Windows PC | **The Authenticator passkey on this iPhone.** The user selects it through the iOS passkey options and verifies with Face ID, Touch ID, or the device PIN. The Windows Hello credential isn't offered on the iPhone. |
+
+#### Other passkey experiences
+
+When the registered passkey types and current platform don't lead to a local passkey experience, the user isn't necessarily prompted for a password. Other possible experiences include:
+
+- **A passkey on a phone that supports cross-device sign-in:** The user might see a QR code to scan with that phone.
+- **A FIDO2 security key as their only passkey:** The user is prompted to insert or tap the key on a supported device and browser.
+- **Only nonportable passkeys for a different operating system:** For example, the user has Windows Hello for Business or Microsoft Entra passkey on Windows but is signing in on an iPhone, Android device, or Mac. Those Windows credentials aren't offered. The user is prompted for the next applicable registered authentication method instead.
+
+These are separate cases, not a fallback sequence. If the user has both a phone passkey and a security key, which experience is offered first depends on their device, browser, and passkey types.
+
+##### Example: Sign in on Windows with an Authenticator passkey on an iPhone
+
+In this example, system-preferred authentication is **Microsoft managed**, and passkey is the preferred method. The user's only passkey is in Microsoft Authenticator on their iPhone. Both the Windows PC and iPhone need Bluetooth and an internet connection.
+
+1. The user starts sign-in in Microsoft Edge on the Windows PC.
+1. Because the passkey is on the phone, the PC offers a cross-device passkey experience with a QR code.
+1. The user scans the QR code with the iPhone's **Camera** app.
+1. The user verifies with Face ID, Touch ID, or the device PIN on the iPhone.
+1. Sign-in completes on the Windows PC.
+
+This is **passkey authentication**, not an Authenticator push notification.
+
+If the same user signs in directly on the iPhone, they can use that Authenticator passkey on the iPhone without scanning a QR code from another device, as shown in the table. For detailed steps, see [Sign in with passkeys in Authenticator](how-to-sign-in-passkey-authenticator.md).
+
+#### Choose another passkey or sign-in method
+
+Users can choose a different passkey even when the suggested one is available. They don't have to cancel sign-in or first try the suggested passkey. Through the browser or operating system's passkey options, they can choose:
+
+- **Another local passkey:** Use a different passkey provider available on the current device.
+- **A security key:** Connect or tap a supported key containing their registered passkey.
+- **A passkey on another device:** Use a supported cross-device experience, such as scanning a QR code with a phone.
+
+The option names and available choices vary by browser and operating system. Choosing another passkey doesn't make a nonportable credential usable away from its original device.
+
+If the user cancels the passkey prompt or the attempt fails, they're returned to the sign-in method picker. They can select passkey sign-in again to reopen the passkey options, or select **Sign in another way** when shown to choose another allowed registered method.
+
+All choices remain subject to your organization's authentication policies and Conditional Access requirements.
 
 ## Enable system-preferred authentication in the Microsoft Entra admin center
 
@@ -125,7 +217,7 @@ Content-Type: application/json
 
 ### How does system-preferred authentication determine the most secure method?
 
-When a user signs in, the authentication process checks which methods are registered. The user is prompted to sign in with the most secure method according to the following order. The method order is dynamic and updates as the security landscape changes. Users can always cancel and choose a different available sign-in method. If your organization has Conditional Access policies that require specific authentication methods, those policies continue to take priority over the system-preferred authentication order.
+When a user signs in, the authentication process checks which methods are registered. The user is prompted to sign in with the most secure applicable method according to the following order. For passkeys, the system also considers the device and browser, as described in [How passkeys are selected for the current device](#how-passkeys-are-selected-for-the-current-device). The method order is dynamic and updates as the security landscape changes. Users can always cancel and choose a different available sign-in method. If your organization has Conditional Access policies that require specific authentication methods, those policies continue to take priority over the system-preferred authentication order.
 
 When in the **Microsoft managed** state, the system evaluates available credentials and selects the highest-ranked method for both first-factor and second-factor authentication.
 
@@ -141,7 +233,7 @@ When in the **Microsoft managed** state, the system evaluates available credenti
 | 8 | QR code | Frontline worker | 1FA |
 | 9 | Password | — | 1FA |
 
-<sup>1</sup>Includes security keys, passkeys in Authenticator app, synced passkeys, Windows Hello for Business, and macOS Platform SSO.
+<sup>1</sup>Includes security keys, passkeys in Authenticator app, synced passkeys, Windows Hello for Business, Microsoft Entra passkey on Windows, and macOS Platform SSO. This row ranks passkeys relative to other authentication methods; it doesn't mean every registered passkey is usable on every device. See [Device-bound, nonportable passkeys](#device-bound-nonportable-passkeys) for platform restrictions. Windows Hello for Business and macOS Platform SSO apply only to first-factor sign-in.
 
 <sup>2</sup>Includes hardware or software TOTP from Microsoft Authenticator, Authenticator Lite, or third-party applications.
 
@@ -162,7 +254,7 @@ For federated users, first-factor sign-in is unchanged. System-preferred authent
 
 ### How does system-preferred authentication affect first-factor sign-in?
 
-When set to **Microsoft managed**, the system applies the credential ranking to both first-factor and second-factor authentication. For example, if a user has both a password and a passkey registered, they're prompted with the passkey at first-factor sign-in instead of the password. The user can still select other sign-in options.
+When set to **Microsoft managed**, the system applies the credential ranking to both first-factor and second-factor authentication. For example, if a user has both a password and a passkey available on their current device, they're prompted with the passkey at first-factor sign-in instead of the password. Nonportable platform credentials aren't offered on incompatible operating systems: Windows Hello for Business and Microsoft Entra passkey on Windows aren't offered on non-Windows devices, and macOS Platform SSO isn't offered on non-macOS devices. For more examples, see [Examples of passkey selection](#examples-of-passkey-selection). The user can still select other allowed sign-in options.
 
 When set to **Enabled**, the credential ranking applies only to second-factor authentication. First-factor sign-in behavior remains unchanged.
 
