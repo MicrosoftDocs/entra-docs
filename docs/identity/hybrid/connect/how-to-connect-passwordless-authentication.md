@@ -1,8 +1,6 @@
 ---
 title: Sign in to Microsoft Entra Connect Sync by using passwordless authentication
 description: Learn how to sign in to Microsoft Entra Connect Sync by using passwordless authentication methods such as FIDO2 security keys and passkeys.
-author: omondiatieno
-ms.author: jomondi
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: how-to

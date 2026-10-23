@@ -4,8 +4,7 @@ description: This document describes the cause of "Health service data isn't up 
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
-ms.custom: sfi-image-nochange
+ms.date: 09/10/2026
 ---
 
 # Health service data isn't up to date alert
@@ -21,9 +20,9 @@ The service gets the data from agents that are running on the on-premises machin
 
 ## Understanding the alert
 
-The **Alert Details** blade shows when the alert occurred and was last detected. A background process that runs every two hours generates and re-evaluates the alert. In the following example, the initial alert occurred on 03/10 at 9:59 AM. The alert still existed on 03/12 at 10:00 AM when the alert was evaluated again. The blade also details the time the Health Service last received a particular data type. 
- 
- ![Microsoft Entra Connect Health alert details](./media/how-to-connect-health-data-freshness/data-freshness-details.png)
+Select the alert row to open the alert details panel. The panel shows when the alert was raised and last detected, the affected servers, resolution guidance, and related documentation. A background process that runs every two hours generates and re-evaluates the alert.
+
+:::image type="content" source="media/how-to-connect-health-data-freshness/connect-health-data-freshness-alert-details.png" alt-text="Screenshot of Connect Health data freshness alert details with callouts for the issue, recommended fix, and affected servers." lightbox="media/how-to-connect-health-data-freshness/connect-health-data-freshness-alert-details.png":::
  
 The following table maps service types to corresponding required data types:
 
@@ -46,7 +45,7 @@ The steps required to diagnose the issue is given below. The first is a set of b
 
 * Make sure the latest versions of the agents are installed. View [release history](reference-connect-health-version-history.md). 
 * Make sure that Microsoft Entra Connect Health Agents services are **running** on the machine. For example, Connect Health for AD FS should have two services.
-  ![Verify Microsoft Entra Connect Health](./media/how-to-connect-health-agent-install/install5.png)
+  ![Screenshot of the Microsoft Entra Connect Health agent connectivity verification results.](./media/how-to-connect-health-agent-install/install5.png)
 
 * Make sure to go over and meet the [prerequisites](how-to-connect-health-agent-install.md#prerequisites).
 * Use [test connectivity tool](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) to discover connectivity issues.

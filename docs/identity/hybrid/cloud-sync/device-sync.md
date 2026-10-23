@@ -1,26 +1,26 @@
 ---
-title: Configure device sync with Microsoft Entra Cloud Sync (preview)
+title: Configure device sync with Microsoft Entra Cloud Sync
 description: Learn how to configure Microsoft Entra Cloud Sync to synchronize Active Directory computer objects to Microsoft Entra ID.
 author: mmacy-msft
 ms.author: marshmacy
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
 ms.topic: how-to
-ms.custom: msecd-doc-authoring-1017
-ms.date: 07/21/2026
+ms.custom: msecd-doc-authoring-1028
+ms.date: 10/21/2026
 ai-usage: ai-generated
 
 #customer intent: As a hybrid identity administrator, I want to synchronize Active Directory computer objects to Microsoft Entra ID so that devices can become Microsoft Entra hybrid joined.
 ---
 
-# Configure device sync with Microsoft Entra Cloud Sync (preview)
+# Configure device sync with Microsoft Entra Cloud Sync
 
 Device sync lets you synchronize computer objects from Active Directory (AD) to Microsoft Entra ID by using the `AD2AADDeviceSync` job in an **AD to Microsoft Entra ID** Cloud Sync configuration. After synchronization, the devices can become Microsoft Entra hybrid joined.
 
 Device sync is disabled by default. Before you begin, make sure your environment meets the prerequisites. Then configure a service connection point (SCP), enable device sync, provision a device on demand, manage device sync with Microsoft Graph, and recover deleted devices.
 
-> [!IMPORTANT]
-> Device sync with Microsoft Entra Cloud Sync is in preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> [!NOTE]
+> This article explains how to configure Device Sync in Microsoft Entra Cloud Sync. It doesn't describe how the guided migration tool transfers Device Sync from Microsoft Entra Connect Sync. Review the [migration-tool prerequisites](migrate-connect-sync-cloud-sync-tool.md#prerequisites) before planning migration from Connect Sync. For platform capabilities and available migration paths, see the [migration decision guide](connect-to-cloud-sync-decision-guide.md#comparison-between-microsoft-entra-connect-and-cloud-sync) and [migration overview](migrate-azure-ad-connect-to-cloud-sync.md#choose-a-migration-path).
 
 ## Prerequisites
 

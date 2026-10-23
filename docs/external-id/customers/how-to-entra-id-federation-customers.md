@@ -2,8 +2,8 @@
 title: Add Microsoft Entra ID for customer sign-in
 description: Learn how to configure a Microsoft Entra ID tenant as an OpenID Connect identity provider in Microsoft Entra External ID, enabling users to sign in using their existing organizational accounts.
 ms.topic: how-to
-ms.date: 03/09/2026
-ms.custom: it-pro, msecd-doc-authoring-1012
+ms.date: 10/16/2026
+ms.custom: it-pro, msecd-doc-authoring-1026
 ai-usage: ai-assisted
 
 #customer intent: As a developer, DevOps, or IT administrator, I want to learn how to add a Microsoft Entra ID tenant as an OpenID Connect identity provider in my external tenant.
@@ -55,12 +55,23 @@ After you register the external tenant in the Microsoft Entra ID tenant, add it 
 |---------|-------|
 | **Display name** | A name your users see during sign-in, for example *Sign in with Contoso*. |
 | **Well-known endpoint** | `https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration` |
-| **OpenID Issuer URI** | `https://login.microsoftonline.com/<tenant-ID>/v2.0`, where `<tenant-ID>` is the directory (tenant) ID of the Microsoft Entra ID tenant. If using `domain_hint` for IdP acceleration, use the domain-based issuer format `https://login.microsoftonline.com/<domain-name>/v2.0` rather than tenant ID, where `<domain-name>` is the primary domain name of the Microsoft Entra ID tenant. |
+| **OpenID Issuer URI** | `https://login.microsoftonline.com/<tenant-ID>/v2.0`, where `<tenant-ID>` is the directory (tenant) ID of the Microsoft Entra ID tenant, or `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0`, where `contoso.onmicrosoft.com` is the tenant's `onmicrosoft.com` domain. If you use `domain_hint`, use the corresponding `onmicrosoft.com` domain-based issuer. See the known limitation and [Use domain_hint](#use-domain_hint) guidance below. |
 | **Client ID** | The application (client) ID from the app registration you created in the Microsoft Entra ID tenant. |
 | **Client Authentication** | `client_secret` |
 | **Client Secret** | The client secret value you recorded from the app registration. |
 | **Scope** | `openid profile` |
 | **Response type** | `code` |
+
+> [!NOTE]
+> **Current known limitation:** When you configure a Microsoft Entra ID tenant as an OpenID Connect identity provider, use either the tenant ID (GUID) or the tenant's `onmicrosoft.com` domain in the **OpenID Issuer URI**. For example, use `https://login.microsoftonline.com/<tenant-ID>/v2.0` or `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0`.
+>
+> Currently, using another verified custom domain, such as `contoso.com`, as the issuer domain isn't supported. Use the tenant's `onmicrosoft.com` domain when a domain-based issuer is required.
+
+### Use domain_hint
+
+To accelerate sign-in to the Microsoft Entra ID identity provider, pass the tenant's domain name in the `domain_hint` parameter. For example, use `domain_hint=contoso.onmicrosoft.com`. Don't use the tenant ID (GUID) as the `domain_hint` value.
+
+When you use `domain_hint`, configure the **OpenID Issuer URI** with the corresponding `onmicrosoft.com` domain. For example, for `domain_hint=contoso.onmicrosoft.com`, use `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0`.
 
 ## Enable users to sign in and sign up with the identity provider
 
@@ -69,6 +80,15 @@ After you configure the Microsoft Entra ID identity provider, there are multiple
 ### Add the identity provider to a user flow
 
 Add the identity provider to a [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) to allow sign-in and sign-up with the identity provider. See [Add an identity provider to a user flow](how-to-add-identity-provider-to-user-flow-customers.md). An external user can then self-register in the External ID tenant. When the user selects the federated Microsoft Entra ID identity provider on the sign-in page and authenticates with their organizational account, a user account is automatically created in the external tenant.
+
+> [!IMPORTANT]
+> If you change the issuer or other configuration of an existing OpenID Connect identity provider, the associated user flow might continue using the previous configuration. If the updated identity provider configuration isn't reflected during sign-in, refresh the user-flow configuration:
+>
+> 1. Remove the identity provider from the user flow.
+> 1. Save the user flow.
+> 1. Add the identity provider back to the user flow.
+> 1. Save the user flow again.
+> 1. Test the sign-in flow again.
 
 ### Create the user with Microsoft Graph API
 
@@ -89,7 +109,7 @@ Content-type: application/json
   "identities": [
     {
       "signInType": "federated",
-      "issuer": "https://login.microsoftonline.com/<entra-tenant-id>/v2.0/<entra-external-tenant-id>",
+      "issuer": "https://login.microsoftonline.com/<entra-tenant-primary-domain-name>/v2.0<entra-external-tenant-id>",
       "issuerAssignedId": "<entra-tenant-user-object-id>"
     }
   ]
@@ -98,7 +118,7 @@ Content-type: application/json
 
 Replace the following values:
 
-- `<entra-tenant-id>`: The directory (tenant) ID of the source Microsoft Entra ID tenant.
+- `<entra-tenant-primary-domain-name>`: The directory (tenant) primary domain name of the source Microsoft Entra ID tenant. For example, `contoso.onmicrosoft.com`.
 - `<entra-external-tenant-id>`: The directory (tenant) ID of the External ID tenant.
 - `<entra-tenant-user-object-id>`: The object ID of the user in the source Microsoft Entra ID tenant.
 
@@ -108,14 +128,16 @@ Replace the following values:
 
 The email claim is required for External ID federation scenarios. Make sure the `email` claim is included in the application's **Token configuration** in the Microsoft Entra ID tenant used as the external identity provider.
 
-**I configured Microsoft Entra ID as my federated identity provider, but it doesn't appear on the sign-in page. What should I check?**
+**My Microsoft Entra ID identity provider doesn't appear on the sign-in page, or domain_hint doesn't redirect to it. What should I check?**
 
 Verify that the issuer URI and well-known OpenID configuration endpoint are correctly configured. An incorrect issuer or discovery endpoint prevents the identity provider from appearing during sign-in. Also check that:
 
 - The Microsoft Entra ID tenant is fully configured as a custom OIDC identity provider.
 - Required redirect URIs, issuer values, and scopes are present and correct.
 - The identity provider is added to the user flow, not just to the tenant.
-- Configuration changes have fully propagated. Re-saving or recreating the user flow after configuration changes often resolves this issue.
+- The **OpenID Issuer URI** uses either the Microsoft Entra ID tenant ID (GUID) or the tenant's `onmicrosoft.com` domain. Currently, other verified custom domains aren't supported for the issuer URI.
+- If you use `domain_hint`, specify the tenant's domain name rather than its tenant ID. For example, use `domain_hint=contoso.onmicrosoft.com` with the corresponding issuer URI `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0`.
+- If you changed the issuer or identity provider configuration after adding the provider to a user flow, refresh the user-flow configuration. Remove the identity provider from the user flow, save the flow, add the identity provider again, and save before retesting. See [Add the identity provider to a user flow](#add-the-identity-provider-to-a-user-flow) for the refresh steps.
 
 **What does the error `AADSTS500208: The domain is not a valid login domain for the account type` mean?**
 
@@ -130,6 +152,8 @@ Error `40015` means that authentication at the external identity provider succee
 - Required attributes (such as subject or email) aren't returned by the identity provider.
 
 **How is adding Microsoft Entra ID as a custom OIDC federation different from inviting Microsoft Entra ID users as B2B guests?**
+
+Invited users from another Microsoft Entra tenant use the [default invitation redemption flow](../redemption-experience.md#invitation-redemption-flow) unless your application explicitly routes them to the custom OIDC identity provider.
 
 With Microsoft Entra ID federation:
 
@@ -156,9 +180,12 @@ When `domain_hint` is used, a domain confirmation dialog appears to ensure the u
 
 There's limited support today. Domain-based acceleration using `domain_hint` is supported in specific configurations, but fully automatic redirection based solely on email domain for new users isn't yet supported. If domain-based routing is required, consider using explicit identity provider buttons or passing a `domain_hint` parameter when initiating sign-in. The `domain_hint` value for Microsoft Entra ID should be the domain name, for example `domain_hint=contoso.onmicrosoft.com`. For more information, see [Issuer Acceleration](./concept-authentication-methods-customers.md#issuer-acceleration).
 
-**Can I hide other identity provider buttons and show only Microsoft Entra ID?**
+**Can I hide specific identity provider buttons?**
 
-You can hide identity provider buttons by not including them in the user flow, but new users can only register if `domain_hint` is used.
+No, the identity provider buttons cannot be hidden.
+
+> [!NOTE]
+> If an identity provider is removed from the user flow, users will no longer be able to sign up or redeem invitations using that identity provider. `domain_hint` does not address this limitation.
 
 **Are ID tokens returned as opaque values?**
 
@@ -171,5 +198,5 @@ Yes. You can configure multiple Microsoft Entra ID tenants as separate custom OI
 ## Related content
 
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
-- [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
+- [Route invited users to an external identity provider](how-to-invite-external-identity-provider-users-customers.md)
 - [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

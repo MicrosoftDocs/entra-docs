@@ -2,9 +2,9 @@
 title: How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID.
 ms.topic: concept-article
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.date: 08/01/2025
-ms.reviewer: dhanyak
+ms.reviewer: dhanyahk
 ---
 
 # How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID

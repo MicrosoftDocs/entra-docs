@@ -12,14 +12,16 @@
 - name: Scenarios
   expanded: true
   items:
-  - name: What are identity governance use cases? 
+  - name: What are identity governance use cases?
     href: scenarios/identity-governance-use-cases.md 
   - name: Understanding least privileged
     href: scenarios/least-privileged.md
   - name: Microsoft Entra ID Governance Deployment Introduction
     href: ~/architecture/governance-deployment-intro.md
-  - name: Microsoft Entra SAP IAG integration (Preview)
+  - name: Microsoft Entra SAP IAG integration
     href: entitlement-management-sap-integration.md
+  - name: Integrate SAP Access Control (Preview)
+    href: entitlement-management-sap-ac-integration.md
   - name: Govern the employee and guest lifecycle
     items:
     - name: Govern the employee lifecycle
@@ -194,6 +196,8 @@
     items:
     - name: What is entitlement management?
       href: entitlement-management-overview.md
+    - name: Reconciliation overview
+      href: reconciliation-overview.md
     - name: Delegation and roles
       href: entitlement-management-delegate.md
     - name: Request process and emails
@@ -363,9 +367,9 @@
         href: access-reviews-application-preparation.md
       - name: Create an access review
         href: create-access-review.md
-      - name: Catalog access reviews (Preview)
+      - name: Catalog access reviews
         href: catalog-access-reviews.md
-      - name: Custom data provided resources (Preview)
+      - name: Custom data provided resources
         href: custom-data-resource-access-reviews.md      
       - name: Review access
         href: perform-access-review.md
@@ -445,6 +449,10 @@
           href: workflow-sensitivity-labels.md 
         - name: Agent Identity Sponsor Tasks
           href: agent-sponsor-tasks.md       
+      - name: Guest Lifecycle Policies
+        href: guest-lifecycle-policies.md
+      - name: Manage sponsored guests in My Access
+        href: manage-sponsored-guests-my-access.md
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
@@ -490,4 +498,3 @@
       href: tutorial-prepare-user-accounts.md 
     - name: Configure a Logic App for Lifecycle Workflow use
       href: configure-logic-app-lifecycle-workflows.md
-      

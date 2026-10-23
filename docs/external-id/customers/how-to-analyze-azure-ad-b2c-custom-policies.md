@@ -2,8 +2,6 @@
 title: Analyze Azure AD B2C custom policies for Microsoft Entra External ID migration
 description: Use the Migration Policy Analyzer to scan Azure AD B2C custom policies and generate a detailed migration assessment for Microsoft Entra External ID. Start your migration today.
 #customer intent: As an IT admin managing Azure AD B2C custom policies, I want to run the Migration Policy Analyzer against my policies so that I can scope the work required to migrate to Microsoft Entra External ID.
-author: garrodonnell
-ms.author: godonnell
 ms.reviewer: godonnell
 ms.date: 07/02/2026
 ms.topic: how-to

@@ -46,10 +46,6 @@ To configure provisioning, follow these steps.
 |4. View [default properties](#accidental-deletions-and-email-notifications)|View the default setting prior to enabling them and make changes where appropriate|
 |5. Enable [your configuration](#enable-your-configuration)|Once ready, enable the configuration and users/groups will begin synchronizing|
 
- >[!NOTE]
- >  During the configuration process the synchronization service account will be created with the format **ADToAADSyncServiceAccount@[TenantID].onmicrosoft.com** and you may get an error if multifactor authentication is enabled for the synchronization service account, or other interactive authentication policies are accidentally enabled for the synchronization account. Removing multifactor authentication or any interactive authentication policies for the synchronization service account should resolve the error and you can complete the configuration smoothly.
-
-
 ## Scope provisioning to specific users and groups
 By default the provisioning agent will synchronize a subset of the users and groups from your Active Directory. You can further scope the agent to synchronize specific users and groups by using on-premises Active Directory groups or organizational units. 
 

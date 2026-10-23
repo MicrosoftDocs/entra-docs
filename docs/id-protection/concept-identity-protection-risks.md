@@ -3,8 +3,12 @@ title: What are risk detections?
 description: Explore the full list of risk detections and their corresponding risk event types, along with a description of each risk event type.
 ms.service: entra-id-protection
 ms.topic: reference
-ms.date: 04/22/2026
+ms.date: 10/21/2026
 ms.reviewer: lvandenende
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
+
+#customer intent: As an administrator, I want to understand Microsoft Entra ID Protection risk detections so that I can identify suspicious activity in my organization.
 ---
 
 # What are risk detections?
@@ -31,7 +35,7 @@ Select a risk detection from the list to view the description of the risk detect
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
 | [Anomalous Token (sign-in)](#anomalous-token-sign-in) | Real-time or Offline | Premium | anomalousToken | 
 | [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
-| [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
+| [Atypical travel](#atypical-travel) | Real-time | Premium | unlikelyTravel |
 | [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
 | [Malicious IP address](#malicious-ip-address) | Offline | Premium | maliciousIPAddress |
 | [Mass Access to Sensitive Files](#mass-access-to-sensitive-files) | Offline | Premium | mcasFinSuspiciousFileAccess |
@@ -61,6 +65,7 @@ Select a risk detection from the list to view the description of the risk detect
 | [Microsoft Entra threat intelligence (user)](#microsoft-entra-threat-intelligence-user) | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
 | [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium | attemptedPrtAccess |
 | [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium | suspiciousAPITraffic |
+| [Suspicious credential addition](#suspicious-credential-addition) | Real-time | Premium | suspiciousCredentialAddition |
 | [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
 
@@ -120,9 +125,9 @@ This risk detection type indicates sign-ins from an anonymous IP address (for ex
 
 This risk detection type identifies two sign-ins originating from geographically distant locations, where at least one of the locations might also be atypical for the user, given past behavior. The algorithm takes into account multiple factors including the time between the two sign-ins and the time it would take for the user to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
-The algorithm ignores obvious "false positives" contributing to the impossible travel conditions, such as VPNs and locations regularly used by other users in the organization. The system has an initial learning period of the earliest of 14 days or 10 logins, during which it learns a new user's sign-in behavior. 
+The system uses adaptive learning to learn a new user's sign-in behavior.
 
-- Calculated offline
+- Calculated in real-time
 - License requirement: Microsoft Entra ID P2
 - [Tips for investigating atypical travel detections.](howto-identity-protection-investigate-risk.md#atypical-travel-detections)
 
@@ -296,6 +301,13 @@ This risk detection type is discovered using information provided by Microsoft D
 This risk detection is reported when abnormal GraphAPI traffic or directory enumeration is observed. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in the environment. 
 
 - Calculated offline
+- License requirement: Microsoft Entra ID P2
+
+### Suspicious credential addition
+
+This detection identifies when a new authentication method is added to an account under suspicious circumstances. This activity might indicate that an attacker has accessed the account and registered a new credential.
+
+- Calculated in real-time
 - License requirement: Microsoft Entra ID P2
 
 ### Suspicious sending patterns 

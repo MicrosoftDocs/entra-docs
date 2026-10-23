@@ -20,6 +20,40 @@ You can download the current version of the Private Access Sensor from the Micro
 1. Browse to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors**.
 1. Select **Download private access sensor**.
 
+## Version 2.2.79
+ 
+Released for download on September 29, 2026.
+ 
+### Over-the-air automatic updates
+ 
+- Adds automatic downloads and installation of future sensor updates.
+ 
+> [!NOTE]
+> Upgrading from version 2.2.42 requires a one-time installation of the full sensor installer from the Microsoft Entra admin center to enable OTA updates.
+ 
+### Security enhancements
+ 
+- Extends Kerberos policy enforcement to UDP alongside TCP.
+- Hardens network packet validation and removes the local registry break-glass override in favor of cloud policy.
+ 
+### Access enforcement
+ 
+- Matches non-wildcard SPNs and requested Kerberos service names (`sname`) by their owning Active Directory account SID, rather than relying only on exact service-name strings. This extends protection to aliases of the same account. Existing name-based matching is retained when account resolution is unavailable.
+- Corrects wildcard SPN matching. Wildcard rules remain name-based.
+ 
+### Diagnostics and telemetry
+ 
+- Improves Kerberos transport, service-name resolution, and firewall diagnostics.
+ 
+### Bug fixes
+ 
+- Includes bug fixes and minor improvements.
+ 
+### Upgrade considerations
+ 
+- Allow inbound TCP and UDP on port 1337.
+- IPv6 Kerberos traffic is unsupported and blocked; use IPv4.
+
 ## Version 2.2.42
 
 Released for download on June 16, 2026.

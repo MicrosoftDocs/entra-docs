@@ -22,6 +22,7 @@ Before you begin, make sure that you have:
 
 - A HiBob tenant and permission to install and configure Bob Marketplace integrations.
 - A Microsoft Entra tenant connected to the target Active Directory environment.
+- A [Microsoft Entra ID P1, Microsoft Entra ID P2, or Microsoft Entra ID Governance license](../../id-governance/licensing-fundamentals.md#api-driven-provisioning). You need enough licenses for every identity that the integration sources through API-driven provisioning.
 - The [Microsoft Entra provisioning agent](../hybrid/cloud-sync/how-to-install.md) installed and configured for the target Active Directory domain.
 - The Active Directory domain name and organizational unit (OU) in which HiBob should create or update users.
 - A Microsoft Entra account with the [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) or Global Administrator role to grant consent to the following API permissions:

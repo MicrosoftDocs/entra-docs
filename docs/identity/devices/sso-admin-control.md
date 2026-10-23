@@ -18,9 +18,9 @@ manager: asteen
 IT administrators can now **automatically accept SSO permissions** on managed Windows devices using a supported registry setting. In this context, SSO, or single sign-on, refers to using the Microsoft credentials from a user’s Windows sign-in to access other Microsoft apps and services without any prompts. This new capability is available beginning with the **July 2026 monthly security update** for Windows 11, version 24H2 and 25H2 via the [2026—KB5101650](https://support.microsoft.com/en-us/servicing/os/windows-11/2026/07/july-14-2026-kb5101650-os-builds-26200-8875-and-26100-8875) security update.
 
 > [!IMPORTANT]
-> - **Scope:** ✅ Applies only to **Windows** **managed enterprise devices** with Microsoft Entra ID accounts  
-> - **Personal accounts:**  ❌ No admin control available — Prompts remain for personal Microsoft accounts (MSA)  
-> - **Unmanaged devices:** ❌ No admin control available  —prompts remain for non-policy-controlled environments  
+> - **Scope:** ✅ Applies only to **Windows** **managed enterprise devices** with Microsoft Entra ID accounts
+> - **Personal accounts:**  ❌ No admin control available — Prompts remain for personal Microsoft accounts (MSA)
+> - **Unmanaged devices:** ❌ No admin control available  —prompts remain for non-policy-controlled environments
 > - **Supported OS:** Windows 11, version 24H2 and 25H2 (with the [2026—KB5101650](https://support.microsoft.com/en-us/servicing/os/windows-11/2026/07/july-14-2026-kb5101650-os-builds-26200-8875-and-26100-8875) security update)
 
 
@@ -39,11 +39,11 @@ For managed enterprise environments, some organizations wanted additional flexib
 
 Starting with the security update (as stated above) for Windows 11, version 24H2 and 25H2, IT administrators can deploy the following registry policy to automatically accept SSO permissions on managed devices: 
 
-> **Registry Path:** HKLM\SOFTWARE\Policies\Microsoft\Windows\AAD    
+> **Registry Path:** HKLM\SOFTWARE\Policies\Microsoft\Windows\AAD 
 > **Value:** AutoAcceptSsoPermission (DWORD) = 1 
 
 
-![The image displays the registry editor on windows. The first line shows the path of "Computer\HKEY_LOCAL_MACHIEN\SOFTWARE\Policies\Microsoft\AAD. Below that, there is a tree view and a content pane to the right. The treeview shows "Policies", with children of "Adobe", "Google", "Microsoft", and "Microsoft has a child value of "AAD". To the right, we see the registry key that is being created. The name is "AutoAcceptSsoPermission", and to the right a pop up is displayed for creating/editing a new value with ValueName of AutoAcceptSsoPermission, ValueData as 1, and Base has a value of "Hexadecimal".](media/sso-admin-control/sso-admin-control-registry-path.png)
+![The image displays the registry editor on windows. The first line shows the path of "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AAD. Below that, there is a tree view and a content pane to the right. The treeview shows "Policies", with children of "Adobe", "Google", "Microsoft", and "Microsoft has a child value of "AAD". To the right, we see the registry key that is being created. The name is "AutoAcceptSsoPermission", and to the right a pop up is displayed for creating/editing a new value with ValueName of AutoAcceptSsoPermission, ValueData as 1, and Base has a value of "Hexadecimal".](media/sso-admin-control/sso-admin-control-registry-path.png)
 
 ## Getting started
 

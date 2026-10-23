@@ -70,7 +70,7 @@ items:
       href: app-gallery-sso-requirements.md
     - name: User provisioning requirements for App Gallery
       href: app-gallery-user-provisioning-requirements.md
-    - name: Validate an OIDC multitenant app
+    - name: Validate an OIDC app
       href: validate-oidc-multitenant-app-gallery.md
     - name: Validate a SAML single sign-on app
       href: validate-saml-single-sign-on-app-gallery.md

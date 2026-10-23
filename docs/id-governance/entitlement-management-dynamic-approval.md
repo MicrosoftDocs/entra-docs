@@ -2,10 +2,10 @@
 title: Externally determine the approval requirements for an access package using custom extensions
 description: A how-to guide on dynamically determining the approval requirements for an access package externally using a custom extension.
 ms.subservice: entitlement-management
-ms.topic: how-to 
+ms.topic: how-to
 ms.date: 11/04/2025
 
-#Customer Intent: As an IT admin, I want to create custom extensions so that I can determine approvers of an access package externally. 
+#Customer Intent: As an IT admin, I want to create custom extensions so that I can determine approvers of an access package externally.
 ---
 
 
@@ -14,8 +14,8 @@ ms.date: 11/04/2025
 In entitlement management, approvers for access package requests can either be directly assigned, or determined dynamically. Entitlement management natively supports dynamically determining approvers such as the requestors manager, their second-level manager, or a sponsor from a connected organization:
 
 :::image type="content" source="media/entitlement-management-dynamic-approval/native-support-diagram.png" alt-text="Screenshot of native support of approvers in Entitlement management." lightbox="media/entitlement-management-dynamic-approval/native-support-diagram.png":::
- 
-With the introduction of [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview) you are now able to dynamically determine approval requirements for each access package assignment request based on your organizations specific business logic. The access package assignment request process will pause until your business logic hosted in Azure Logic Apps returns a [approval stage](/graph/api/resources/accesspackageapprovalstage) which will then be leveraged in the subequent approval process via the [My Access portal](https://myaccess.microsoft.com). For example, if access requests must be approved by the department head of the person requesting an access package this feature allows you to query an external system, such as your human resources (HR) system, to on-the-fly look up the current department head and assign them as the approver for the given access request.
+
+With the introduction of [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview) you are now able to dynamically determine approval requirements for each access package assignment request based on your organizations specific business logic. The access package assignment request process will pause until your business logic hosted in Azure Logic Apps returns a [approval stage](/graph/api/resources/accesspackageapprovalstage) which will then be leveraged in the subsequent approval process via the [My Access portal](https://myaccess.microsoft.com). For example, if access requests must be approved by the department head of the person requesting an access package this feature allows you to query an external system, such as your human resources (HR) system, to on-the-fly look up the current department head and assign them as the approver for the given access request.
 
 :::image type="content" source="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png" alt-text="Screenshot of example of determining approvers using custom extensions." lightbox="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png":::
 
@@ -32,7 +32,7 @@ Want to learn how this feature can use SAP organizational business context for a
 ## Prerequisites
 
 - At least the [Entitlement Management Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) role of the catalog where the custom extension will be created or exists.
-- At least the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) on the Logic App itself, the resource group, subscription, or management group that the logic app is in. 
+- At least the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) on the Logic App itself, the resource group, subscription, or management group that the logic app is in.
 
 ## Create the custom extension and Azure Logic App
 
@@ -54,7 +54,7 @@ To create a custom extension, and its underlying Azure Logic App, you'd do the f
     :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approval-stage.png" alt-text="Screenshot of the custom extension approval stage option.":::
 1. On the **Details** page, choose a subscription, resource group, and name for the logic app being created. Once you've entered this information, select **Create a logic app**. Once the logic app is created, select **Next**.
 
-1. On the **Review + create** page, make sure all your details are correct, then select **Create**. 
+1. On the **Review + create** page, make sure all your details are correct, then select **Create**.
 
 
 ## Reference the custom extension in an access package assignment policy
@@ -68,12 +68,12 @@ Once you've created the custom extension and logic app, you can reference the cu
 1. On the access package overview page, select **Policies**, and select the policy to edit.
     :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-policies-list.png" alt-text="Screenshot of the policies list for an access package.":::
 1.  On the **Edit policy** page under **Requests**, set the **Require approval** box to yes, and you're able to add your custom extension as an approver. The example here shows the custom extension being used as the first approver.
-  :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approver.png" alt-text="Screenshot of the custom extension as first approver in access package policy.":::  
+  :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approver.png" alt-text="Screenshot of the custom extension as first approver in access package policy.":::
 1. Select **Update**.
 
 Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**.
 
-  :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
+  :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::
 
 ## Set logic app assigned identity and assign its role
 
@@ -88,11 +88,11 @@ With the Azure logic app created, you must enable its system-assigned identity, 
     :::image type="content" source="media/entitlement-management-dynamic-approval/enable-logic-app-identity.png" alt-text="Screenshot of enabling logic app system assigned managed identity.":::
 1. Select **Save**.
 
-1. Back in the Microsoft Entra admin center as at least the role of [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles), go to the catalog where you created the custom extension, and select **Roles and administrators**.   
+1. Back in the Microsoft Entra admin center as at least the role of [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles), go to the catalog where you created the custom extension, and select **Roles and administrators**.
 
 1. On the roles and administrators page, select **Add access package assignment manager**, and select the logic app you created.
     :::image type="content" source="media/entitlement-management-dynamic-approval/add-logic-app-role.png" alt-text="Screenshot of adding logic app as access package assignment manager for a catalog.":::
-  
+
 
 ## Configure the logic app and corresponding business logic
 
@@ -110,9 +110,9 @@ With the Azure Logic App given the access package assignment manager role for th
     - Authentication Type: Managed identity
     - Managed Identity: System-assigned managed identity
     - Audience: https://graph.microsoft.com
-1. Under HTTP Settings, disable **Asynchronous Pattern**. 
+1. Under HTTP Settings, disable **Asynchronous Pattern**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/disable-asynchronous-pattern.png" alt-text="Screenshot of disabling asynchronous pattern in a logic app http call.":::
-1. After you've made changes to the HTTP trigger, select **Save**. 
+1. After you've made changes to the HTTP trigger, select **Save**.
 
 ## Add business logic to the logic app
 
@@ -144,7 +144,7 @@ To verify that the custom extension works, you can request access to the access 
 
 1. On the requests page, select the request you want to view details of and confirm that the access package was successfully delivered.
     :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-request-details.png" alt-text="viewing the details of the request for the access package.":::
-    
+
 
 ## HTTP action example
 

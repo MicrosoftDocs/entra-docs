@@ -2,14 +2,11 @@
 title: Plan your SSO integration with Microsoft Entra ID (ISVs)
 description: High-level planning and decision guide for Independent Software Vendors (ISVs) preparing to integrate single sign-on (SSO) with Microsoft Entra ID.
 
-author: omondiatieno
-manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
 ms.date: 06/04/2026
-ms.author: jomondi
 ms.reviewer: hkinyunyu
 ms.custom: enterprise-apps-article, msecd-doc-authoring-1013
 ai-usage: ai-assisted

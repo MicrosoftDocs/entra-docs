@@ -1,12 +1,9 @@
 ---
 title: Microsoft identity platform OIDC extensibility reference
 description: Map each Microsoft identity platform OpenID Connect (OIDC) extensibility surface to the configuration article and the Microsoft Graph API resource that programs it.
-author: jenniferf-skc
-manager: pmwongera
 ms.service: identity-platform
 ms.topic: reference
 ms.date: 06/23/2026
-ms.author: jfields
 ms.reviewer: jmprieur, ludwignick
 ai-usage: ai-assisted
 

@@ -373,8 +373,14 @@ items:
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
+        - name: Route invited users to an external identity provider
+          href: how-to-invite-external-identity-provider-users-customers.md
     - name: Enable password reset
       href: how-to-enable-password-reset-customers.md
+    - name: Use Microsoft Entra Verified ID
+      href: verified-id-setup-issuance-presentation.md
+    - name: Identity verification integration
+      href: identity-verification-integration.md
     - name: Monitor and troubleshoot
       items:
         - name: User activity insights
@@ -482,8 +488,6 @@ items:
       href: concept-user-attributes.md
     - name: Adding your own business logic
       href: concept-custom-extensions.md
-    - name: Use Microsoft Entra Verified ID
-      href: verified-id-setup-issuance-presentation.md
     - name: Custom authentication extensions
       items:
         - name: Custom claims provider

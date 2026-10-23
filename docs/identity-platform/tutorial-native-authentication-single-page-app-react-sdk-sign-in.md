@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you learn how to sign in users into a React single-page app (SPA) by using native authentication JavaScript SDK. 
+In this tutorial, you learn how to sign in users into a React single-page app (SPA) by using native authentication JavaScript SDK.
 
 In this tutorial, you:
 
@@ -35,13 +35,13 @@ In this section, you create the form that collects the user's sign-in informatio
 
 1. Create a folder called *src/app/sign-in*.
 
-1. Create *sign-in/components/InitialForm.tsx* file, then paste the code from [sign-in/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/InitialForm.tsx). This component displays a form that collects a user's username (email). 
+1. Create *sign-in/components/InitialForm.tsx* file, then paste the code from [sign-in/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/InitialForm.tsx). This component displays a form that collects a user's username (email).
 
-1. If your choice of authentication method is email and one-time passcode, create a *sign-in/components/CodeForm.tsx* file, then paste the code from [sign-in/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/CodeForm.tsx). If the administrator sets email one-time passcode as the sign-in flow in the Microsoft Entra admin center, this component displays a form to collect the one-time passcode from the user. 
+1. If your choice of authentication method is email and one-time passcode, create a *sign-in/components/CodeForm.tsx* file, then paste the code from [sign-in/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/CodeForm.tsx). If the administrator sets email one-time passcode as the sign-in flow in the Microsoft Entra admin center, this component displays a form to collect the one-time passcode from the user.
 
 1. If your choice of authentication method is email and password, create a *sign-in/components/PasswordForm.tsx* file, then paste the code from [sign-in/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/PasswordForm.tsx). This component displays a form that collects a user's password.
 
-1. Create a *sign-in/components/UserInfo.tsx* file, then paste the code from [sign-in/components/UserInfo.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/UserInfo.tsx). This component displays a signed-in user's username and sign-in status. 
+1. Create a *sign-in/components/UserInfo.tsx* file, then paste the code from [sign-in/components/UserInfo.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/UserInfo.tsx). This component displays a signed-in user's username and sign-in status.
 
 
 ## Handle form interactions
@@ -62,7 +62,7 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
       SignInCompletedState,
       AuthFlowStateBase,
     } from "@azure/msal-browser/custom-auth";
-    
+
     export default function SignIn() {
         const [authClient, setAuthClient] = useState<ICustomAuthPublicClientApplication | null>(null);
         const [username, setUsername] = useState("");
@@ -75,39 +75,39 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
         const [data, setData] = useState<CustomAuthAccountData | undefined>(undefined);
         const [loadingAccountStatus, setLoadingAccountStatus] = useState(true);
         const [isSignedIn, setCurrentSignInStatus] = useState(false);
-    
+
         useEffect(() => {
             const initializeApp = async () => {
                 const appInstance = await CustomAuthPublicClientApplication.create(customAuthConfig);
                 setAuthClient(appInstance);
             };
-    
+
             initializeApp();
         }, []);
-    
+
         useEffect(() => {
             const checkAccount = async () => {
                 if (!authClient) return;
-    
+
                 const accountResult = authClient.getCurrentAccount();
-    
+
                 if (accountResult.isCompleted()) {
                     setCurrentSignInStatus(true);
                 }
-    
+
                 setData(accountResult.data);
-    
+
                 setLoadingAccountStatus(false);
             };
-    
+
             checkAccount();
         }, [authClient]);
-    
+
         const renderForm = () => {
             if (loadingAccountStatus) {
                 return;
             }
-    
+
             if (isSignedIn || signInState instanceof SignInCompletedState) {
                 return <UserInfo userData={data} />;
             }
@@ -127,10 +127,10 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
             if (signInState instanceof SignInCodeRequiredState) {
                 return <CodeForm onSubmit={handleCodeSubmit} code={code} setCode={setCode} loading={loading} />;
             }
-    
+
             return <InitialForm onSubmit={startSignIn} username={username} setUsername={setUsername} loading={loading} />;
         };
-    
+
         return (
             <div style={styles.container}>
                 <h2 style={styles.h2}>Sign In</h2>
@@ -150,17 +150,17 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
         e.preventDefault();
         setError("");
         setLoading(true);
-    
+
         if (!authClient) return;
-    
+
         // Start the sign-in flow
         const result = await authClient.signIn({
             username,
         });
-    
-        // Thge result may have the different states,
-        // such as Password required state, OTP code rquired state, Failed state and Completed state.
-    
+
+        // The result may have the different states,
+        // such as Password required state, OTP code required state, Failed state and Completed state.
+
         if (result.isFailed()) {
             if (result.error?.isUserNotFound()) {
                 setError("User not found");
@@ -168,18 +168,18 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
                 setError("Username is invalid");
             } else if (result.error?.isPasswordIncorrect()) {
                 setError("Password is invalid");
-    
+
             } else {
                 setError(`An error occurred: ${result.error?.errorData?.errorDescription}`);
             }
         }
-    
+
         if (result.isCompleted()) {
             setData(result.data);
         }
-    
+
         setSignInState(result.state);
-    
+
         setLoading(false);
     };
     ```
@@ -189,7 +189,7 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
     > [!NOTE]
     > The `username` parameter accepts either the user's email address or their username (alias) when the **Username** built-in user attribute is enabled in your tenant's user flow. The user can input either value to sign in. To enable the attribute, see [Enable username in the sign-in identifier policy](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
 
-- If your choice of authentication flow is email and one-time passcode, submit the one-time passcode by using the following code snippet. See a full example at [sign-in/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx) to learn where to place the code snippet: 
+- If your choice of authentication flow is email and one-time passcode, submit the one-time passcode by using the following code snippet. See a full example at [sign-in/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx) to learn where to place the code snippet:
 
 
     ```typescript
@@ -197,12 +197,12 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
         e.preventDefault();
         setError("");
         setLoading(true);
-    
+
         if (signInState instanceof SignInCodeRequiredState) {
             const result = await signInState.submitCode(code);
-    
+
             // the result object may have the different states, such as Failed state and Completed state.
-    
+
             if (result.isFailed()) {
                 if (result.error?.isInvalidCode()) {
                     setError("Invalid code");
@@ -210,30 +210,30 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
                     setError(result.error?.errorData?.errorDescription || "An error occurred while verifying the code");
                 }
             }
-    
+
             if (result.isCompleted()) {
                 setData(result.data);
                 setSignInState(result.state);
             }
         }
-    
+
         setLoading(false);
     };
     ```
 
     Sign in state's `submitCode()` submits the one-time passcode.
 
-- If your choice of authentication flow is email and password, submit the user's password by using the following code snippet. See a full example at [sign-in/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx) to learn where to place the code snippet: 
-    
+- If your choice of authentication flow is email and password, submit the user's password by using the following code snippet. See a full example at [sign-in/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx) to learn where to place the code snippet:
+
     ```typescript
     const handlePasswordSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError("");
         setLoading(true);
-    
+
         if (signInState instanceof SignInPasswordRequiredState) {
             const result = await signInState.submitPassword(password);
-    
+
             if (result.isFailed()) {
                 if (result.error?.isInvalidPassword()) {
                     setError("Incorrect password");
@@ -243,14 +243,14 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
                     );
                 }
             }
-    
+
             if (result.isCompleted()) {
                 setData(result.data);
-    
+
                 setSignInState(result.state);
             }
         }
-    
+
         setLoading(false);
     };
     ```
@@ -273,7 +273,7 @@ One of the errors that can result from the `signIn()` method is `result.error?.i
 
 ## Run and test your app
 
-Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-your-app) to run your app, then test sign-in flow. 
+Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-your-app) to run your app, then test sign-in flow.
 
 ## Related content
 

@@ -3,7 +3,6 @@ title: Enable Microsoft Entra passkey on Windows
 description: Learn how Microsoft Entra passkey on Windows enables phishing-resistant authentication with work or school accounts by using Windows Hello as a FIDO2 passkey provider.
 #customer intent: As an administrator, I want to understand Microsoft Entra passkeys on Windows so users with work and school accounts can sign in by using phishing-resistant multifactor authentication.
 author: hanki71
-ms.author: justinha
 ms.date: 07/05/2026
 ms.topic: how-to
 ms.service: entra-id

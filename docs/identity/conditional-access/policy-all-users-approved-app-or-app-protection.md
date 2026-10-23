@@ -48,7 +48,7 @@ Organizations can choose to deploy this policy using the following steps or usin
 1. Select **Create** to enable your policy.
 
 > [!NOTE]
-> When a policy is created in report-only mode for "Require app protection policy" control, your sign-in log may show the result as "Report-only: Failure" in "Conditional Access" tab when all configured policy conditions were satisfied. This is because the control was not satisified in report-only mode. Once you enabled the policy, the control is applied to the app and the sign-in will not be blocked.
+> When a policy is created in report-only mode for "Require app protection policy" control, your sign-in log may show the result as "Report-only: Failure" in "Conditional Access" tab when all configured policy conditions were satisfied. This is because the control was not satisfied in report-only mode. Once you enabled the policy, the control is applied to the app and the sign-in will not be blocked.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

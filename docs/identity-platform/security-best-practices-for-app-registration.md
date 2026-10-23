@@ -2,7 +2,7 @@
 title: Security best practices for application properties
 description: Learn about the best practices and general guidance for security related application properties in Microsoft Entra ID.
 manager: pmwongera
-ms.date: 01/06/2023
+ms.date: 10/01/2026
 ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
@@ -116,7 +116,7 @@ After the application configuration has been updated to use v2.0 tokens, ensure 
 
 When an application has a service principal provisioned into a tenant,  that service principal can be customized by a tenant admin. This is true regardless of whether that tenant is the application's home tenant or a foreign tenant. Those customization abilities can allow for modifications that the app owner didn't expect, leading to security risks. For example, credentials can be added to the service principal, even though credentials should typically be owned and controlled by the app developer and owner.
 
-To reduce this risk, applications should [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md). When configuring app instance lock, always lock every sensitive property available. Configuring this property is especially critical for multitenant applications - meaning applications used in multiple tenants or organizations - but can and should be set by all applications.
+To reduce this risk, applications should [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md). When configuring app instance lock, always lock every sensitive property available. This is especially critical for multitenant applications, but single-tenant applications should also use app instance lock to protect their sensitive properties.
 
 ## Permissions
 
@@ -141,4 +141,3 @@ Consider the following guidance related to specifying application owners:
 ## Check Entra recommendations
 
 The [Microsoft Entra recommendations](../identity/monitoring-health/overview-recommendations.md) feature helps monitor the status of your tenant so you don't have to. These recommendations help ensure your tenant is in a secure and healthy state while also helping you maximize the value of the features available in Microsoft Entra ID. Periodically review any active Microsoft Entra recommendations that pertain to app properties or app configuration to keep your app ecosystem in a healthy state.
-

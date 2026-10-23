@@ -11,7 +11,7 @@ permissions:
   
 on:
   schedule:
-  - cron: '0 */6 * * *'
+  - cron: '0 17 * * 1'
 
 jobs:
   stale:
@@ -19,23 +19,24 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-    - uses: actions/stale@f7176fd3007623b69d27091f9b9d4ab7995f0a06 # v5.2.1
+    - uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        days-before-pr-stale: 120
-        days-before-pr-close: 130
+        days-before-pr-stale: 5
+        days-before-pr-close: 30
         stale-pr-label: 'inactive'
         close-pr-label: 'auto-close'
         exempt-pr-label: 'keep-open'
+        exempt-draft-pr: 'true'
         stale-pr-message: > 
-           This pull request has been inactive for 120 days. If you are finished with your changes, resolve any merge conflicts and/or validation warnings, and add a **#sign-off** comment. For instructions, see the [MSec Docs Self-Serve Playbook](https://aka.ms/MSecDocsSelfServePlaybook).
+           This pull request has been inactive for five days. If you are finished with your changes, resolve any merge conflicts and/or validation warnings, and add a **#sign-off** comment. If you are still working on this PR or it's not yet ready to merge, please change its status to Draft. For instructions, see the [MSec Docs Self-Serve Playbook](https://aka.ms/MSecDocsSelfServePlaybook).
            <br/>
-           <br/>If this PR is inactive for 10 more days it will be closed automatically. Thank you!
+           <br/>If this PR is inactive for 25 more days, it will be closed automatically. Thank you!
            <br/>
-           <br/>If you have a question, post on the MSEC Documentation Excellence Program [Ask an Admin](https://teams.microsoft.com/l/channel/19%3A0cdb9988d02e4f78bef37d571686ec5b%40thread.tacv2/Ask%20an%20Admin?groupId=8b6faa31-5d02-4e94-90eb-f1944d5c40fd&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47) Teams channel.      
+           <br/>If you have questions, post on the MSEC Documentation Excellence Program [Ask an Admin](https://teams.microsoft.com/l/channel/19%3A0cdb9988d02e4f78bef37d571686ec5b%40thread.tacv2/Ask%20an%20Admin?groupId=8b6faa31-5d02-4e94-90eb-f1944d5c40fd&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47) Teams channel.      
         close-pr-message: >
-           This pull request has been inactive for 130 days. At this time we're closing the PR.
+           This pull request has been inactive for 30 days. At this time, we're closing the PR.
            <br/>
            <br/>If you decide to continue working on your changes, you can reopen the PR and continue working. Thank you!
            <br/>
-           <br/>If you have a question, post on the MSEC Documentation Excellence Program [Ask an Admin](https://teams.microsoft.com/l/channel/19%3A0cdb9988d02e4f78bef37d571686ec5b%40thread.tacv2/Ask%20an%20Admin?groupId=8b6faa31-5d02-4e94-90eb-f1944d5c40fd&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47) Teams channel.
+           <br/>If you have questions, post on the MSEC Documentation Excellence Program [Ask an Admin](https://teams.microsoft.com/l/channel/19%3A0cdb9988d02e4f78bef37d571686ec5b%40thread.tacv2/Ask%20an%20Admin?groupId=8b6faa31-5d02-4e94-90eb-f1944d5c40fd&tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47) Teams channel.

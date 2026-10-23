@@ -2,7 +2,7 @@
 title: Microsoft Entra ID and SAP SuccessFactors integration reference
 description: Technical deep dive into SAP SuccessFactors-HR driven provisioning for Microsoft Entra ID.
 ms.topic: reference
-ms.date: 12/15/2025
+ms.date: 08/20/2026
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 ---
@@ -16,6 +16,8 @@ ai-usage: ai-assisted
 * [SuccessFactors Writeback](~/identity/saas-apps/sap-successfactors-writeback-tutorial.md)
 
 This article explains how the integration works and how you can customize the provisioning behavior for different HR scenarios. 
+
+For SAP SuccessFactors inbound provisioning, you can configure optional single-valued source attributes to clear their mapped target attributes when SAP SuccessFactors returns a null or empty value. For configuration and verification guidance, see [Clear attribute values (Preview)](clear-attribute-values.md).
 
 Microsoft Entra also supports single-sign on to SuccessFactors. For more information, see [Microsoft Entra single sign-on (SSO) integration with SuccessFactors](~/identity/saas-apps/successfactors-tutorial.md).
 

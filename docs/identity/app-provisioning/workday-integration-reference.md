@@ -2,8 +2,9 @@
 title: Microsoft Entra ID and Workday integration reference
 description: Technical deep dive into Workday-HR driven provisioning in Microsoft Entra ID
 ms.topic: reference
-ms.date: 03/04/2025
+ms.date: 08/20/2026
 ms.reviewer: chmutali
+ai-usage: ai-assisted
 ---
 
 # How Microsoft Entra provisioning integrates with Workday
@@ -15,6 +16,8 @@ ms.reviewer: chmutali
 * [Workday Writeback](~/identity/saas-apps/workday-writeback-tutorial.md)
 
 This article explains how the integration works and how you can customize the provisioning behavior for different HR scenarios. 
+
+For Workday inbound provisioning, you can configure optional single-valued source attributes to clear their mapped target attributes when Workday returns a null or empty value. For configuration and verification guidance, see [Clear attribute values (Preview)](clear-attribute-values.md).
 
 ## Establishing connectivity 
 

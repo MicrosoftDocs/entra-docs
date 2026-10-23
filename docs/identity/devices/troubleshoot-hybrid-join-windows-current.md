@@ -18,7 +18,7 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
 - [Enterprise state roaming](./enterprise-state-roaming-enable.md)
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
 
-> [!NOTE] 
+> [!NOTE]
 > To troubleshoot the common device registration issues, use [Device Registration Troubleshooter Tool](/samples/azure-samples/dsregtool/dsregtool/).
 
 ## Troubleshoot join failures
@@ -295,7 +295,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 
 | Error code | Reason | Resolution |
 | --- | --- | --- |
-| **NTE_BAD_KEYSET** (0x80090016/-2146893802) | The Trusted Platform Module (TPM) operation failed or was invalid. | This error indicates that the keyset doesn't exist. This error happens when the TPM is cleared on the systems, or when there's a bad sysprep image. <br><br> Avoid clearing the TPM in BIOS or Windows settings. If the TPM is cleared, users might need to recover by removing and readding accounts to fix the problem, especially when they have multiple WAM accounts. Ensure that the machine from which the sysprep image was created isn't Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. |
+| **NTE_BAD_KEYSET** (0x80090016/-2146893802) | The Trusted Platform Module (TPM) operation failed or was invalid. | This error indicates that the keyset doesn't exist. This error happens when the TPM is cleared on the systems, or when there's a bad sysprep image. <br><br> Avoid clearing the TPM in BIOS or Windows settings. If the TPM is cleared, users might need to recover by removing and reading accounts to fix the problem, especially when they have multiple WAM accounts. Ensure that the machine from which the sysprep image was created isn't Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. |
 | **TPM_E_PCP_INTERNAL_ERROR** (0x80290407/-2144795641) | Generic TPM error. | Disable TPM on devices with this error. Windows 10 versions 1809 and later automatically detect TPM failures and complete Microsoft Entra hybrid join without using the TPM. |
 | **TPM_E_NOTFIPS** (0x80280036/-2144862154) | TPM in FIPS mode isn't currently supported. | Disable TPM on devices with this error. Windows 10 version 1809 automatically detects TPM failures and completes the Microsoft Entra hybrid join without using the TPM. |
 | **NTE_AUTHENTICATION_IGNORED** (0x80090031/-2146893775) | TPM is locked out. | Transient error. Wait for the cool-down period. The join attempt should succeed after a while. For more information, see [TPM fundamentals](/windows/security/hardware-security/tpm/tpm-fundamentals#anti-hammering). |
@@ -339,20 +339,20 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 1. Select **Switch Account** to toggle back to the admin session that's running the tracing.
 1. From the elevated PowerShell session, run `.\stop-auth.ps1`.
 1. Zip (compress) and send the folder *Authlogs* from the folder where the scripts were executed.
-    
+
 ## Troubleshoot post-join authentication issues
 
 ### Step 1: Retrieve the PRT status by using `dsregcmd /status`
 
-1. Open a Command Prompt window. 
-   > [!NOTE] 
-   > To get the Primary Refresh Token (PRT) status, open the Command Prompt window in the context of the logged-in user. 
+1. Open a Command Prompt window.
+   > [!NOTE]
+   > To get the Primary Refresh Token (PRT) status, open the Command Prompt window in the context of the logged-in user.
 
-1. Run `dsregcmd /status`. 
+1. Run `dsregcmd /status`.
 
-   The "SSO state" section provides the current PRT status. 
+   The "SSO state" section provides the current PRT status.
 
-   If the AzureAdPrt field is set to *NO*, there was an error acquiring the PRT status from Microsoft Entra ID. 
+   If the AzureAdPrt field is set to *NO*, there was an error acquiring the PRT status from Microsoft Entra ID.
 
 1. If the AzureAdPrtUpdateTime is more than four hours, there's likely an issue with refreshing the PRT. Lock and unlock the device to force the PRT refresh, and then check to see whether the time updates.
 
@@ -373,7 +373,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 +----------------------------------------------------------------------+
 ```
 
-### Step 2: Find the error code 
+### Step 2: Find the error code
 
 **From the `dsregcmd` output**
 
@@ -405,14 +405,14 @@ The "Attempt Status" field under the "AzureAdPrt" field provides the status of t
 
 **From the Microsoft Entra analytics and operational logs**
 
-Use Event Viewer to look for the log entries logged by the Microsoft Entra CloudAP plug-in during PRT acquisition. 
+Use Event Viewer to look for the log entries logged by the Microsoft Entra CloudAP plug-in during PRT acquisition.
 
 <!-- docutune:disable -->
-1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **AAD**. 
+1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **AAD**.
 <!-- docutune:enable -->
 
    > [!NOTE]
-   > The CloudAP plug-in logs error events in the operational logs, and it logs the info events in the analytics logs. The analytics and operational log events are both required to troubleshoot issues. 
+   > The CloudAP plug-in logs error events in the operational logs, and it logs the info events in the analytics logs. The analytics and operational log events are both required to troubleshoot issues.
 
 1. Event 1006 in the analytics logs denotes the start of the PRT acquisition flow, and event 1007 in the analytics logs denotes the end of the PRT acquisition flow. All events in the Microsoft Entra logs (analytics and operational) that are logged between events 1006 and 1007 were logged as part of the PRT acquisition flow.
 

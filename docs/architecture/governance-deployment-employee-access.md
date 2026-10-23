@@ -11,7 +11,7 @@ ms.reviewer: gasinh
 
 # Microsoft Entra ID Governance deployment guide to assign employee access
 
-Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. Learn how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements. 
+Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. Learn how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements.
 
 The following products and services appear in this guide:
 
@@ -21,24 +21,24 @@ The following products and services appear in this guide:
 * [Access reviews](../id-governance/access-reviews-overview.md)
 * Privileged Identity Manager [(PIM) for Groups](../id-governance/access-reviews-overview.md)
 
-Use this scenario to help determine the need for Microsoft Entra ID Governance to create and grant access for your organization. Learn how you can simplify the employee experience with automated workflows, access assignments, access reviews, and expiration. 
+Use this scenario to help determine the need for Microsoft Entra ID Governance to create and grant access for your organization. Learn how you can simplify the employee experience with automated workflows, access assignments, access reviews, and expiration.
 
 ## Timelines
 
-Timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
+Timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment.
 
-1. Entitlement management - 1 hour 
+1. Entitlement management - 1 hour
 2. Auto assignment policy - 1 hour
 3. Custom extensions - 2 hours
-4. Access reviews - 2 hours  
+4. Access reviews - 2 hours
 
 ### Access requests: workflows and approvals
 
-[Entitlement management](../id-governance/entitlement-management-overview.md) is an identity governance feature to manage employee access to resources. Automate access request workflows, access assignments, access reviews, and expiration. Provide users with self-service resource access requests. To do so, define self-service policy and workflow: 
+[Entitlement management](../id-governance/entitlement-management-overview.md) is an identity governance feature to manage employee access to resources. Automate access request workflows, access assignments, access reviews, and expiration. Provide users with self-service resource access requests. To do so, define self-service policy and workflow:
 
-* Enable multistage approval workflows, separation of duties enforcement, and recurring access recertification 
+* Enable multistage approval workflows, separation of duties enforcement, and recurring access recertification
 * Use custom workflows for access lifecycles with Azure Logic Apps
-* Configure time-limited access  
+* Configure time-limited access
 
 ## Deploy entitlement management
 
@@ -48,15 +48,15 @@ Timelines show approximate delivery stage duration and are based on scenario com
 
 ### Separation of duties
 
-In entitlement management, you can configure policy for user groups and access packages. Conversely, with separation of duties, you can disable requests if a user is assigned to other access packages, or the user is a member of an incompatible group. Generate reports of users with incompatible access rights. Create alerts when users are granted access to applications. 
+In entitlement management, you can configure policy for user groups and access packages. Conversely, with separation of duties, you can disable requests if a user is assigned to other access packages, or the user is a member of an incompatible group. Generate reports of users with incompatible access rights. Create alerts when users are granted access to applications.
 
-You can learn to [configure separation of duties checks for an access package](../id-governance/entitlement-management-access-package-incompatible.md). 
+You can learn to [configure separation of duties checks for an access package](../id-governance/entitlement-management-access-package-incompatible.md).
 
 ### Create an autoassignment policy
 
-In this area of access policy, **birthright assignment** refers to automatically granting resource access based on user properties. Creating assignments works similarly. User properties match, or don’t match, a policy's membership rules. Use rules to determine access package assignment based on user properties, similar to [dynamic groups](../identity/users/groups-create-rule.md). Add or remove assignments, based on rule criteria. 
+In this area of access policy, **birthright assignment** refers to automatically granting resource access based on user properties. Creating assignments works similarly. User properties match, or don’t match, a policy's membership rules. Use rules to determine access package assignment based on user properties, similar to [dynamic groups](../identity/users/groups-create-rule.md). Add or remove assignments, based on rule criteria.
 
-In the following screenshot see the **Edit policy dialog**, with the **Create auto assignment policy** tab.  
+In the following screenshot see the **Edit policy dialog**, with the **Create auto assignment policy** tab.
 
    [ ![Screenshot of the Create auto assignment policy tab on the Edit policy dialog.](media/governance-deployment/edit-policy.png)](media/governance-deployment/edit-policy-expanded.png#lightbox)
 
@@ -69,9 +69,9 @@ See the following video to learn more about policy assignment.</br></br>
 
 ### Custom workflows with Azure Logic Apps
 
-Create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/), using the visual designer and prebuilt operations. 
+Create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/), using the visual designer and prebuilt operations.
 
-To extend governance workflows, integrate Logic Apps with entitlement management: 
+To extend governance workflows, integrate Logic Apps with entitlement management:
 
 * An access package request is created or approved
 * An access package assignment is granted or removed
@@ -96,25 +96,25 @@ To extend governance workflows, integrate Logic Apps with entitlement management
  >[!NOTE]
  >To consider custom extensions, ensure you understand Azure Logic Apps functionality. For more information, see the previous section.
 
-1. Go to [Trigger Azure Logic Apps with custom extensions in entitlement management](/azure/active-directory/governance/entitlement-management-logic-apps-integration). 
+1. Go to [Trigger Azure Logic Apps with custom extensions in entitlement management](/azure/active-directory/governance/entitlement-management-logic-apps-integration).
 2. Use the instructions to create and add a custom extension to a catalog.
 3. Edit the custom extension.
 3. Add custom extensions to an access package.
 
-See the following video to learn about custom extenstions and access packages in Microsoft Entra ID Governance.
+See the following video to learn about custom extensions and access packages in Microsoft Entra ID Governance.
 
 > [!VIDEO 4fdc4503-b3c9-42b7-b36b-375aea3024a9]
 
 
 ## Access recertification: Access reviews
 
-For access recertification, you can review access rights with recurring [access reviews](../id-governance/access-reviews-overview.md). Manage group membership, resource access, and role assignments, also meet compliance requirements.  
+For access recertification, you can review access rights with recurring [access reviews](../id-governance/access-reviews-overview.md). Manage group membership, resource access, and role assignments, also meet compliance requirements.
 
-Administrators determine review scope, then create reviews in access reviews, Microsoft Entra enterprise apps, [Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM), or entitlement management. 
+Administrators determine review scope, then create reviews in access reviews, Microsoft Entra enterprise apps, [Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM), or entitlement management.
 
    [ ![Diagram of review creation for administrators.](media/governance-deployment/select-scope.png)](media/governance-deployment/select-scope-expanded.png#lightbox)
 
-The **New access review** dialog appears with the **Review type** tab. Find options for review type, scope, and other configuration details. 
+The **New access review** dialog appears with the **Review type** tab. Find options for review type, scope, and other configuration details.
 
 ### Reviewers
 
@@ -124,26 +124,26 @@ Administrators assign primary and fallback reviewers during access review creati
 
 The My Access dashboard shows a reviewer's pending approvals and recommendations.
 
-   [ ![Diagram of pending reviewes.](media/governance-deployment/select-reviewer.png)](media/governance-deployment/select-reviewer-expanded.png#lightbox)
+   [ ![Diagram of pending reviews.](media/governance-deployment/select-reviewer.png)](media/governance-deployment/select-reviewer-expanded.png#lightbox)
 
 ### Multistage reviews
 
-[Multistage reviews](../id-governance/using-multi-stage-reviews.md) reduce the burden on individual reviewers and help achieve consensus across reviewers. Fallback reviewers help decide unreviewed decisions. Review stage configuration includes indicating the number of stages.  
+[Multistage reviews](../id-governance/using-multi-stage-reviews.md) reduce the burden on individual reviewers and help achieve consensus across reviewers. Fallback reviewers help decide unreviewed decisions. Review stage configuration includes indicating the number of stages.
 
    [ ![Diagram of the access funnel.](media/governance-deployment/access-funnel.png)](media/governance-deployment/access-funnel-expanded.png#lightbox)
 
-Use the **New access review** dialog, and **Reviews** tab to configure review stages, reviewers, duration, and more.  
+Use the **New access review** dialog, and **Reviews** tab to configure review stages, reviewers, duration, and more.
 
    [ ![Diagram of the New access review dialog.](media/governance-deployment/new-access-review.png)](media/governance-deployment/new-access-review-expanded.png#lightbox)
 
 ### Automated decision criteria
 
-During access review configuration, you can indicate various decision criteria, including reviewer decision helpers. Other options include: 
+During access review configuration, you can indicate various decision criteria, including reviewer decision helpers. Other options include:
 
 * Response triggers
 * Account inactivity
 * Justification requirements
-* Alerts and notifications 
+* Alerts and notifications
 
 The **New access review** dialog, and **Settings** tab, with decision helper options highlighted.
 
@@ -151,40 +151,40 @@ The **New access review** dialog, and **Settings** tab, with decision helper opt
 
 ### Inactive user reviews
 
-If users haven't signed in to the tenant within a designated duration, they're considered inactive. This behavior is adjusted for application assignment reviews, or a user's last activity in an app. To get started, define what inactive means for your organization. 
+If users haven't signed in to the tenant within a designated duration, they're considered inactive. This behavior is adjusted for application assignment reviews, or a user's last activity in an app. To get started, define what inactive means for your organization.
 
 
-Learn how to [detect and investigate inactive user accounts](../identity/monitoring-health/howto-manage-inactive-user-accounts.md). 
+Learn how to [detect and investigate inactive user accounts](../identity/monitoring-health/howto-manage-inactive-user-accounts.md).
 
-The **New access review** dialog, and **Review type** tab, with inactivity options highlighted. 
+The **New access review** dialog, and **Review type** tab, with inactivity options highlighted.
 
    [ ![Screenshot of the New access review dialog and the Review type tab.](media/governance-deployment/new-review-type.png)](media/governance-deployment/new-review-type-expanded.png#lightbox)
 
 ### Review recommendations
 
-Reviewers can use machine-learning derived [recommendations](../id-governance/review-recommendations-access-reviews.md) to help make access decisions. Recommendations detect User-to-Group Affiliation, based on reporting-structure proximity. Users distant from group members have **low affiliation**. 
+Reviewers can use machine-learning derived [recommendations](../id-governance/review-recommendations-access-reviews.md) to help make access decisions. Recommendations detect User-to-Group Affiliation, based on reporting-structure proximity. Users distant from group members have **low affiliation**.
 
    > [!NOTE]
    >User-to-Group Affiliation is available for users in your directory. However, groups of more than 600 users aren't supported. Ensure users have a manager attribute.
 
 ## Access review for PIM for Groups
 
-You can grant users just-in-time (JIT) membership and group ownership with [Privileged Identity Management (PIM) for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md). Reviews include active group members and eligible members. 
+You can grant users just-in-time (JIT) membership and group ownership with [Privileged Identity Management (PIM) for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md). Reviews include active group members and eligible members.
 
-Learn to [create access reviews for PIM for Groups](../id-governance/create-access-review-pim-for-groups.md). 
+Learn to [create access reviews for PIM for Groups](../id-governance/create-access-review-pim-for-groups.md).
 
    > [!NOTE]
-   >Access reviews can determine inactivity for up to two years.  
+   >Access reviews can determine inactivity for up to two years.
 
-The **New access review** dialog, and **Review type** dialog with options for scope and more. 
+The **New access review** dialog, and **Review type** dialog with options for scope and more.
 
    [ ![Screenshot of the New access review dialog, the Review type tab.](media/governance-deployment/new-review-scope.png)](media/governance-deployment/new-review-scope-expanded.png#lightbox)
 
 ## Access review history report
 
-With access reviews, authorized users can create downloadable review-history reports for more insight on reviewer decisions, time frames, and more. Use filters to include review types and results. 
+With access reviews, authorized users can create downloadable review-history reports for more insight on reviewer decisions, time frames, and more. Use filters to include review types and results.
 
-The **Identity Governance** dialog, in the **Review History** area, with the **Review History** option highlighted. 
+The **Identity Governance** dialog, in the **Review History** area, with the **Review History** option highlighted.
 
 ## Deploy access reviews
 

@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 Global Secure Access network controls enable you to implement granular access controls for Microsoft Copilot Studio agents. You can apply network security policies including web content filtering, threat intelligence filtering and network file filtering to agent traffic. This capability provides similar security controls for agents that you use for other traffic types in your organization.
 
-Microsoft Entra integrates with Microsoft Copilot Studio to provide network security controls for agent interactions. This integration allows organizations to apply security policies, monitor agent traffic with the Global Secure Access visibility platform, and ensure secure communication between agents and external resources. 
+Microsoft Entra integrates with Microsoft Copilot Studio to provide network security controls for agent interactions. This integration allows organizations to apply security policies, monitor agent traffic with the Global Secure Access visibility platform, and ensure secure communication between agents and external resources.
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ After enabling network controls, you can enforce Global Secure Access security p
 1. Select **Create policy**.
 1. Enter a descriptive name and a description for the policy, then select **Next**.
 1. Select **Add rule**.
-1. Configure rules based on your security to Copilot Studio agent requirements. For example, block access to `Web respositories`, `Illegal software`, not safe for work (NSFW) sites, and more.
+1. Configure rules based on your security to Copilot Studio agent requirements. For example, block access to `Web repositories`, `Illegal software`, not safe for work (NSFW) sites, and more.
 1. Select **Next** to review the policy.
 1. Select **Create policy**.
 
@@ -79,7 +79,7 @@ Regular monitoring and maintenance ensure your security configuration remains ef
 - The enforcement feature supports only the baseline profile. Network security policies apply per tenant.
 - Global Secure Access partner ecosystem integrations, such as third-party Data Loss Prevention (DLP), aren't supported.
 - Copilot Studio Bing search network transactions (including knowledge from _public websites_ and _Wikipedia_) aren't supported.
-- Network requests to Dataverse and Azure SQL knowledge sources aren't supported. 
+- Network requests to Dataverse and Azure SQL knowledge sources aren't supported.
 - Network requests to the following custom tools aren't supported: prompt, agent flow, Computer Use, and child agents.
 - Network requests to Large Language Model (LLM), either for orchestration or results enhancement, aren't supported.
 - Only specific Copilot Studio connectors are supported with network security controls. Refer to the [Copilot Studio documentation](/power-platform/admin/security/secure-web-ai-gateway-agents) for the list of supported connectors.

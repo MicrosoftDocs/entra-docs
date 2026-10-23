@@ -1,10 +1,10 @@
 ---
 title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to convert group management from Active Directory Domain Services to Microsoft Entra ID by using Group Source of Authority (SOA).
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.topic: how-to
 ms.date: 10/13/2025
-ms.reviewer: dhanyak
+ms.reviewer: dhanyahk
 ---
 
 # Configure Group Source of Authority (SOA)
@@ -74,7 +74,7 @@ If you want to provision the group back to AD DS, plan to complete the following
 1. Convert the Source of Authority (SOA) when ready. 
 1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
 
-For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/tutorial-group-provisioning.md).
+For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 ## Convert SOA for a test group
 
@@ -565,5 +565,5 @@ To scope a group for Source of Authority operations within an Administrative Uni
 ## Related content
 
 - [Group SOA overview](concept-source-of-authority-overview.md)
-- [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning)
+- [Provision users and groups from Microsoft Entra ID to Active Directory](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory)
 - [onPremisesSyncBehavior Microsoft Graph API](/graph/api/resources/onpremisessyncbehavior)

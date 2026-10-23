@@ -1,8 +1,6 @@
 ---
 title: AI agent discovery in Global Secure Access (preview)
 description: Learn how AI agent discovery in Global Secure Access provides network-level visibility into managed and shadow AI agents reaching the internet from your environment.
-author: jenniferf-skc
-ms.author: jfields
 ms.topic: concept-article
 ms.date: 06/02/2026
 ms.reviewer: kerenSemel

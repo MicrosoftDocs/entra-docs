@@ -155,7 +155,6 @@ The backup authentication system is supported in all cloud environments except M
 | VMware Boxer | Yes | Protected |
 | walkMe | No | SAML SP-initiated |
 | Workday | No | SAML SP-initiated |
-| Workplace from Facebook | No | SAML SP-initiated |
 | Zoom | No | SAML SP-initiated |
 | Zscaler | Yes \* | Protected |
 | Zscaler Private Access (ZPA) | No | SAML SP-initiated |

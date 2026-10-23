@@ -74,9 +74,9 @@ The agent's user account operates under specific security constraints to ensure 
 
 - Credential limitations: The agent's user account can't have credentials like passwords or passkeys. The only credential type it supports is the agent identity reference to its parent. So even if the agent's user account behaves as a user, its credentials are confidential client credentials.
 
-- Administrative role restrictions: The agent's user account can't be assigned privileged administrator roles. This limitation provides an important security boundary, preventing potential elevation of privileges.
+- Administrative role restrictions: The agent's user account can't be assigned privileged administrator roles. This limitation provides an important security boundary, preventing potential elevation of privileges. The agent's user account can be assigned with custom roles.
 
-- Permission model: The agent's user account typically has permissions similar to guest users, with more capabilities for enumerating users and groups. The agent's user account can't be assigned privileged admin roles. Custom role assignment and role-assignable groups aren't available to the agent's user account. For more information, see [Microsoft Graph permissions reference](/graph/permissions-reference)
+- Permission model: The agent's user account typically has permissions similar to guest users, with more capabilities for enumerating users and groups.
 
 ## Provisioning agent user accounts for Microsoft 365
 

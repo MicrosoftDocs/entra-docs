@@ -4,8 +4,6 @@ titleSuffix: Microsoft Entra Agent ID
 description: Deploy n8n on Azure Container Apps and secure AI agent workflows with Microsoft Entra Agent ID and Microsoft Graph MCP Server for Enterprise.
 ms.topic: how-to
 ms.date: 06/15/2026
-author: Dickson-Mwendia
-ms.author: dmwendia
 ms.reviewer: astaykov
 ms.custom: msecd-doc-authoring-1013
 ai-usage: ai-assisted

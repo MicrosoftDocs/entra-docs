@@ -5,13 +5,13 @@ ms.service: entra-external-id
 ms.topic: how-to
 author: mmacy-msft
 ms.author: marshmacy
-ms.date: 09/09/2026
+ms.date: 10/06/2026
 ai-usage: ai-assisted
-ms.custom: it-pro, msecd-doc-authoring-1017
-#Customer intent: As a developer or IT admin, I want to enable passkey (FIDO2) sign-in for my external tenant so that customers can use phishing-resistant, passwordless authentication.
+ms.custom: it-pro, msecd-doc-authoring-1030
+#customer intent: As a developer or IT admin, I want to enable passkey (FIDO2) sign-in for my external tenant so that customers can use phishing-resistant, passwordless authentication.
 ---
 
-# Sign in with passkeys
+# Sign in with passkeys in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -211,7 +211,7 @@ No. Registration requires the customer's physical presence and local biometric o
 
 ### Are there low-privilege APIs for building a credential management experience?
 
-Not yet. Low-privilege credential management APIs for passkeys are on the roadmap. Currently, use the [FIDO2 provisioning APIs](/graph/api/resources/fido2authenticationmethod) to build your credential management experience.
+No. Use the [FIDO2 provisioning APIs](/graph/api/resources/fido2authenticationmethod) to build your credential management experience.
 
 ### Can I use the same passkey across multiple domains (related origins)?
 

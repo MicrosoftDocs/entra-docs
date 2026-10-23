@@ -12,7 +12,7 @@ You can use the cloud sync attribute mapping feature to map attributes between y
 
  :::image type="content" source="media/how-to-attribute-mapping/new-ux-mapping-1.png" alt-text="Screenshot of new UX screen attribute mapping." lightbox="media/how-to-attribute-mapping/new-ux-mapping-1.png":::
 
- The following document guides you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID.  If you're looking for information on attribute mapping from Microsoft Entra ID to AD, see [ Attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping-entra-to-active-directory.md).
+ The following document guides you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID.  If you're looking for information on attribute mapping from Microsoft Entra ID to AD, see [Configure Microsoft Entra ID to Active Directory provisioning](how-to-configure-entra-to-active-directory.md).
 
 You can customize (change, delete, or create) the default attribute mappings according to your business needs. For a list of attributes that are synchronized, see [Attributes synchronized to Microsoft Entra ID](../connect/reference-connect-sync-attributes-synchronized.md).
 
@@ -117,31 +117,6 @@ Use the following steps for configuring attribute mapping with a [AD to Microsof
  12. Once the save is successful you'll see a notification on the right.
 
  :::image type="content" source="media/how-to-attribute-mapping/new-ux-mapping-6.png" alt-text="Screenshot of successful schema save." lightbox="media/how-to-attribute-mapping/new-ux-mapping-6.png":::
-
-<a name='add-an-attribute-mapping---microsoft-entra-id-to-ad-preview'></a>
-
-## Add an attribute mapping - Microsoft Entra ID to Active Directory 
-Use the following steps for configuring attribute mapping with a [Microsoft Entra ID to Active Directory configuration](how-to-configure-entra-to-active-directory.md).
-
-[!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
- 3. Under **Configuration**, select your Microsoft Entra ID to Active Directory configuration.
- 4. On the left, select **Attribute mapping**.
- 5. At the top, ensure that you have the correct object type selected.  That is, user, group, or contact.
- 6. Click **Add attribute mapping**.
-
- :::image type="content" source="media/how-to-attribute-mapping/entra-to-ad-1.png" alt-text="Screenshot of adding an attribute mapping for Microsoft Entra ID to Active Directory." lightbox="media/how-to-attribute-mapping/entra-to-ad-1.png":::
-
- 7. Select the mapping type. The mapping type can be one of the following:
-     - **Direct**: The target attribute is populated with the value of an attribute of the linked object in Active Directory.
-     - **Constant**: The target attribute is populated with a specific string that you specify.
-     - **Expression**: The target attribute is populated based on the result of a script-like expression. 
-     - **None**: The target attribute is left unmodified. 
-    
- 8. Depending on what you have selected in the previous step, different options  are available for filling in.  
- 9. Select when to apply this mapping, and then select **Apply**.
- 10. Back on the **Attribute mappings** screen, you should see your new attribute mapping.
- 11. Select **Save schema**.  You'll be notified that once you save the schema, a synchronization occurs.  Click **OK**.
- 12. Once the save is successful you'll see a notification on the right.
 
 ## Test your attribute mapping
 

@@ -25,6 +25,8 @@
   expanded: true
 - name: Concepts
   items:
+  - name: Risk-based anti-bot verification (CAPTCHA)
+    href: concept-telephony-risk-based-captcha.md
   - name: Authentication methods
     items:
     - name: Authentication methods policy migration
@@ -113,8 +115,8 @@
     items:
     - name: Introduction to Microsoft Entra Kerberos
       href: kerberos.md
-    - name: Kerberos server key rotation
-      href: kerberos-server-key-rotation.md
+    - name: Configure Microsoft Entra Kerberos trust
+      href: configure-microsoft-entra-kerberos-trust.md
     - name: FAQ
       href: kerberos-faq.yml
   - name: Self-service password reset
@@ -164,6 +166,9 @@
         href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
     - name: Passkey (FIDO2) authentication
       items:
+      - name: Passkey browser authentication for federated identity providers
+        href: concept-passkey-browser-authentication-federated-identity-provider.md
+        displayName: passkey,federated,identity provider,android,ios,macOS,third-party
       - name: Enable passkeys (FIDO2)
         href: how-to-authentication-passkeys-fido2.md
       - name: Enable Entra passkey on Windows

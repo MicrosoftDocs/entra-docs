@@ -5,43 +5,44 @@ ms.assetid: 19e3cf15-f150-46a3-a10c-2990702cd700
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 05/26/2026
-ms.custom: sfi-image-nochange
+ms.date: 09/10/2026
 ---
 # Using Microsoft Entra Connect Health with AD DS
 The following documentation is specific to monitoring Active Directory Domain Services with Microsoft Entra Connect Health. The supported versions of AD DS are Windows Server 2016, 2019, 2022, and 2025.
 
 For more information on monitoring AD FS with Microsoft Entra Connect Health, see [Using Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md). Additionally, for information on monitoring Microsoft Entra Connect (Sync) with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health for Sync](how-to-connect-health-sync.md).
 
-![Microsoft Entra Connect Health for AD DS](./media/how-to-connect-health-adds/domainservicesnapshot.PNG)
+Open [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth), select **AD DS services**, and then select a service. The service page provides:
+
+* An **Essentials** section with forest and monitoring information.
+* Summary cards for domain controllers, replication status, and alerts.
+* Performance charts for LDAP successful binds, NTLM authentications, and Kerberos authentications.
+
+:::image type="content" source="media/how-to-connect-health-adds/connect-health-adds-overview.png" alt-text="Screenshot of the Connect Health AD DS service overview with callouts for forest details, the domain controller list, and replication status." lightbox="media/how-to-connect-health-adds/connect-health-adds-overview.png":::
 
 <a name='alerts-for-azure-ad-connect-health-for-ad-ds'></a>
 
 ## Alerts for Microsoft Entra Connect Health for AD DS
-The Alerts section within Microsoft Entra Connect Health for AD DS, provides you a list of active and resolved alerts, related to your domain controllers. Selecting an active or resolved alert opens a new blade with additional information, along with resolution steps, and links to supporting documentation. Each alert type can have one or more instances, which correspond to each of the domain controllers affected by that particular alert. Near the bottom of the alert blade, you can double-click an affected domain controller to open an additional blade with more details about that alert instance.
+The **Alerts** page lists active and resolved alerts related to your domain controllers. Select an alert row to open the details panel, which contains alert metadata, affected servers, resolution guidance, related documentation, and a feedback option.
 
-Within this blade, you can enable email notifications for alerts and change the time range in view. Expanding the time range allows you to see prior resolved alerts.
-
-![Microsoft Entra Connect Sync error](./media/how-to-connect-health-adds/aadconnect-health-adds-alerts.png)
+Use the command bar to refresh the list, change the time range to include older resolved alerts, or open notification settings. You can also search the alert list.
 
 ## Domain Controllers Dashboard
-This dashboard provides a topological view of your environment, along with key operational metrics and health status of each of your monitored domain controllers. The presented metrics help to quickly identify, any domain controllers that might require further investigation. By default, only a subset of the columns is displayed. However, you can find the entire set of available columns, by double-clicking the columns command. Selecting the columns that you most care about turns this dashboard into a single and easy place to view the health of your AD DS environment.
+On the service page, select **View all domain controllers** to open the domain controllers list. The list shows operational metrics and the health status of monitored domain controllers.
 
-![Domain Controllers](./media/how-to-connect-health-adds/aadconnect-health-adds-domainsandsites-dashboard.png)
-
-Domain controllers can be grouped by their respective domain or site, which is helpful for understanding the environment topology. Lastly, if you double-click the blade header, the dashboard maximizes to utilize the available screen real-estate. This larger view is helpful when multiple columns are displayed.
+Use **Group by domain** or **Group by site** to understand the environment topology. You can search by domain controller name, domain, site, role, or status; include or exclude monitored and not-monitored domain controllers; and use **Choose columns** to customize the table.
 
 ## Replication Status Dashboard
-This dashboard provides a view of the replication status and replication topology of your monitored domain controllers. The status of the most recent replication attempt is listed, along with helpful documentation for any error that is found. You can double-click a domain controller with an error, to open a new blade with information such as: details about the error, recommended resolution steps, and links to troubleshooting documentation.
+On the service page, select **View replication details** to view the replication status and topology of monitored domain controllers. The page shows the status of the most recent replication attempt and can be grouped by domain or site. Use search to find a domain controller, and expand groups to review source and destination domain controllers, naming context, status, and the last attempted replication.
 
-![Replication Status](./media/how-to-connect-health-adds/aadconnect-health-adds-replication.png)
+Select a replication error to open the **Replication Error Details** panel. The panel includes the source and target domain controllers, naming context, site, domain, last attempted and successful synchronization times, recommended fix, and related troubleshooting link when available.
 
 ## Monitoring
-This feature provides graphical trends of different performance counters, which are continuously collected from each of the monitored domain controllers. Performance of a domain controller can easily be compared across all other monitored domain controllers in your forest. Additionally, you can see various performance counters side by side, which is helpful when troubleshooting issues in your environment.
+The service page shows 24-hour graphical trends for three default performance counters: LDAP successful binds, NTLM authentications, and Kerberos authentications. Compare the charts to identify authentication-volume changes, and then select **View detailed monitoring** for a metric to open a larger view and change the time range.
 
-![Monitoring](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
+:::image type="content" source="media/how-to-connect-health-adds/connect-health-adds-performance-monitoring.png" alt-text="Screenshot of Connect Health AD DS monitoring with callouts for comparing LDAP, NTLM, and Kerberos trends and opening detailed monitoring." lightbox="media/how-to-connect-health-adds/connect-health-adds-performance-monitoring.png":::
 
-By default, we have preselected four performance counters; however, you can include others by clicking the filter command and selecting or deselecting any desired performance counters. Additionally, you can double-click a performance counter graph to open a new blade, which includes data points for each of the monitored domain controllers.
+Select **View all Performance Metrics** to open the full collection. Use **Manage counters** to select the metrics you want to display, drag charts to reorder them, and select a chart to compare data for monitored domain controllers over the available time ranges.
 
 ## Related links
 * [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md)

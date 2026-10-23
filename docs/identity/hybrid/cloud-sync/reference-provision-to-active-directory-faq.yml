@@ -5,14 +5,25 @@ metadata:
   manager: mwongerapk
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 06/09/2026
+  ms.date: 08/19/2026
   ms.subservice: hybrid-cloud-sync
+  ai-usage: ai-assisted
+  ms.custom: msecd-doc-authoring-1023
     
 title: Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ
 summary: |
   Read about frequently asked questions for provisioning to Active Directory with Microsoft Entra Cloud Sync.
 
 sections:
+  - name: Provisioning users to Active Directory
+    questions:
+      - question: |
+          Why does a provisioned user keep reverting to the original organizational unit after I change the target container?
+        answer: |
+          This behavior is expected. The default `parentDistinguishedName` expression uses the user's `onPremisesDistinguishedName` attribute when that attribute is populated, and falls back to the constant target container only when it's empty. Because the cloud is the source of authority, the location recorded on the cloud object wins, so changing the target container doesn't move an already-provisioned user, and moving the object manually in Active Directory is reverted on the next sync cycle.
+
+          To move the user, either update the target container mapping (which moves every user that matches the mapping rules) or update that user's `onPremisesDistinguishedName` attribute in Microsoft Entra ID. For the steps, see [Move a provisioned user to a different organizational unit](how-to-configure-entra-to-active-directory.md#move-a-provisioned-user-to-a-different-organizational-unit).
+
   - name: Provisioning groups to Active Directory
     questions:
       - question: |
@@ -32,42 +43,42 @@ sections:
       - question:
           Can I continue to use the "Group writeback" field through MS Graph and Microsoft Entra admin center for setting groups in scope for provisioning to AD using Microsoft Entra Cloud Sync?
         answer:
-          No, this field isn't currently used for determining the scope of groups being provisioned to AD using Cloud Sync. You have to use the Microsoft Entra Cloud Sync configuration experience in the portal to set scope. For more information, see [Using directory extensions with group provisioning to Active Directory](.//tutorial-directory-extension-group-provisioning.md).
+          No, this field isn't currently used for determining the scope of groups being provisioned to AD using Cloud Sync. You have to use the Microsoft Entra Cloud Sync configuration experience in the portal to set scope. For more information, see [Use directory extensions when provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
       - question:
           If I am following the steps outlined in Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync, will this impact my synchronization from Active Directory to Microsoft Entra ID with Microsoft Entra Connect?
         answer:
           No, following the migration steps for moving from group writeback V2 to Microsoft Entra cloud sync will not affect synchronization between AD and Microsoft Entra ID.
 
-  - name: AD group enforcement (preview)
+  - name: AD user and group enforcement (preview)
     questions:
       - question: |
-          What object types does AD group enforcement support?
+          What object types does AD enforcement support?
         answer: |
-          Groups are supported in this preview. Users aren't supported, but the AD team plans to add support for users in a future release.
+          Users and groups are supported in this preview.
       - question: |
           When I install the provisioning agent, will enforcement be enabled on all of my Active Directory objects?
         answer: |
-          No. In addition to installing the policy on the primary domain controller emulator (PDCe), you must explicitly mark each group as in scope. Configure the attribute mapping in group provisioning to Active Directory to set the `msDS-ObjectSoa` attribute on the groups you want to protect. Groups without the attribute set aren't enforced.
+          No. In addition to installing the policy, you must mark each user or group for enforcement. Configure the applicable user or group attribute mapping in provisioning to Active Directory to set the `msDS-ObjectSoa` attribute on the objects you want to protect. Objects without the attribute set aren't enforced.
       - question: |
-          Can I define a break-glass account for emergency changes to a protected group?
+          Can I define a break-glass account for emergency changes to a protected user or group?
         answer: |
-          Yes. You can add the security identifier (SID) of an authorized user or group to the policy so that account can make changes to enforced groups when the provisioning service isn't available. For more information, see [Enforce that Active Directory group changes only come from Microsoft Entra](how-to-ad-group-enforcement.md).
+          Yes. You can add the security identifier (SID) of an authorized user or group to the policy so that account can make changes to enforced objects when the provisioning service isn't available. For more information, see [Configure AD user and group enforcement](how-to-active-directory-object-enforcement.md#break-glass-accounts).
       - question: |
           If group A is marked for enforcement, can it be added as a member of group B that isn't marked for enforcement?
         answer: |
           Yes. Group A can be added as a member of group B. However, changes to the members of group A can still only be made by the provisioning service.
       - question: |
-          What happens if a change is made on a domain controller that doesn't have AD group enforcement enabled?
+          What happens if a change is made on a domain controller that doesn't have AD object enforcement enabled?
         answer: |
           The change is processed. For full enforcement across the domain, every domain controller must have the feature enabled, either by installing the cumulative Windows Server update plus the matching Group Policy MSI, or by running a Windows Server Insider Preview build that has the feature already enabled.
       - question: |
           How does this feature change the Active Directory role-based access control (RBAC) model?
         answer: |
-          AD group enforcement is additive to the existing RBAC model. It places another restriction on top of the existing role assignments, without giving any user extra access.
+          AD object enforcement is additive to the existing RBAC model. It places another restriction on top of the existing role assignments, without giving any user extra access.
       - question: |
           What role is required to enable the policy?
         answer: |
-          Domain Admin is required to run the PowerShell script that installs the policy on the PDCe role domain controller.
+          Domain Admin is required to run the PowerShell script that installs the policy. Run the script on the machine where the Microsoft Entra Cloud Sync provisioning agent is installed.
       - question: |
           How do I see enforcement events in the event log?
         answer: |

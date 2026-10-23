@@ -1,10 +1,10 @@
 ---
 title: Configure user Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to transfer user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
-ms.subservice: hybrid
+ms.subservice: hybrid-cloud-sync
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 04/15/2026
-ms.reviewer: dhanyak
+ms.reviewer: dhanyahk
 ai-usage: ai-assisted
 
 #CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.

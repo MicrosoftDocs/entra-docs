@@ -2,7 +2,7 @@
 title: Choose a telephony provider for SMS and voice authentication
 description: Learn about Choose Your Own Telephony Provider for SMS and voice authentication in Microsoft Entra ID.
 ms.topic: concept-article
-ms.date: 08/05/2026
+ms.date: 09/23/2026
 ai-usage: ai-generated
 
 # Customer intent: As an identity administrator, I want to understand Choose Your Own Telephony Provider so that I can plan continued use of SMS or voice authentication.
@@ -15,7 +15,16 @@ Microsoft Entra ID will support Choose Your Own Telephony Provider, which lets o
 Microsoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2.md), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.
 
 > [!IMPORTANT]
-> Choose Your Own Telephony Provider isn't available to configure yet. Provider information becomes available beginning September 18, 2026, and configuration becomes available beginning October 30, 2026.
+> Choose Your Own Telephony Provider isn't available to configure yet. Information about the providers participating in the private preview is available now. The configuration experience becomes available beginning October 30, 2026.
+
+## Available telephony providers
+
+Soprano and Telesign are the initial telephony providers available during the private preview. More providers will become available by general availability.
+
+Review pricing and other commercial details for the available provider offers:
+
+- Soprano: [Per-user offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_user) or [per-transaction offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_transaction) in Microsoft Security Store.
+- Telesign: [Telesign Verify for Microsoft Entra](https://securitystore.microsoft.com/solutions/telesigncorporation1779799505747.telesign-verify-cyot-azure) in Microsoft Security Store.
 
 ## How Choose Your Own Telephony Provider works
 
