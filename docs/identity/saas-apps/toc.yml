@@ -3820,6 +3820,8 @@
         href: ~/identity/app-provisioning/on-premises-scim-provisioning.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: ScreenSteps
         href: screensteps-provisioning-tutorial.md
+      - name: Secure Cloud User Integration
+        href: secure-cloud-user-integration-provisioning-tutorial.md
       - name: SecureLogin
         href: secure-login-provisioning-tutorial.md
       - name: Sentry
