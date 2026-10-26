@@ -29,6 +29,8 @@
     href: concept-conditional-access-policies.md
   - name: Conditional Access for agents
     href: agent-id.md
+  - name: Policy plans (preview)
+    href: concept-conditional-access-policy-plans.md
   - name: Assignments
     items: 
      - name: Users, groups, and roles
@@ -100,6 +102,12 @@
       href: policy-autonomous-agents.md
     - name: Secure agents that act as users
       href: policy-agent-user.md
+  - name: Policy plans (preview)
+    items:
+    - name: Create a policy plan
+      href: how-to-create-conditional-access-policy-plan.md
+    - name: Migrate policies to a policy plan
+      href: how-to-migrate-conditional-access-policy-plan.md
   - name: Recommended policies
     items: 
     - name: Block legacy authentication
