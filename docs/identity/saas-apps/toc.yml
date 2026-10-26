@@ -2491,6 +2491,8 @@
         href: sectigo-certificate-manager-tutorial.md
       - name: Seculio
         href: seculio-tutorial.md
+      - name: Secure Cloud User Integration
+        href: secure-cloud-user-integration-tutorial.md
       - name: SECURE DELIVER
         href: securedeliver-tutorial.md
       - name: SquaREcruit
