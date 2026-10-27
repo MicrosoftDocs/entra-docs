@@ -61,19 +61,19 @@ Before you configure Snowflake for automatic user provisioning with Microsoft En
     select system$generate_scim_access_token('AAD_PROVISIONING');
    ```
  
-  This script performs the following tasks:
+   This script performs the following tasks:
 
-  1. Uses the `ACCOUNTADMIN` role.
+   * Uses the `ACCOUNTADMIN` role.
 
-    ![Screenshot of a worksheet in the Snowflake UI with the SCIM access token called out.](media/Snowflake-provisioning-tutorial/step-2.png)
+     ![Screenshot of a worksheet in the Snowflake UI with the SCIM access token called out.](media/Snowflake-provisioning-tutorial/step-2.png)
 
-  1. Creates the custom role `AAD_PROVISIONER`. The users in Snowflake created by Microsoft Entra ID are owned by the scoped down `AAD_PROVISIONER` role.
+   * Creates the custom role `AAD_PROVISIONER`. The users in Snowflake created by Microsoft Entra ID are owned by the scoped down `AAD_PROVISIONER` role.
 
-    ![Screenshot showing the custom role.](media/Snowflake-provisioning-tutorial/step-3.png)
+     ![Screenshot showing the custom role.](media/Snowflake-provisioning-tutorial/step-3.png)
 
-  1. Let the `ACCOUNTADMIN` role create the security integration that uses the `AAD_PROVISIONER` custom role.  The value `AAD_PROVISIONER` is case-sensitive and must always be capitalized.
+   * Let the `ACCOUNTADMIN` role create the security integration that uses the `AAD_PROVISIONER` custom role.  The value `AAD_PROVISIONER` is case-sensitive and must always be capitalized.
 
-    ![Screenshot showing the security integrations.](media/Snowflake-provisioning-tutorial/step-4.png)
+     ![Screenshot showing the security integrations.](media/Snowflake-provisioning-tutorial/step-4.png)
 
 1. Create and copy the authorization token to the clipboard and store securely for later use. The access token expires after six months and a new access token can be generated with this statement. For more information, see [SYSTEM$GENERATE_SCIM_ACCESS_TOKEN](https://docs.snowflake.com/en/sql-reference/functions/system_generate_scim_access_token).
 
