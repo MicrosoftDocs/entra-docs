@@ -117,11 +117,11 @@ Follow these steps to enable Microsoft Entra SSO.
     
 	![The Snowflake admin](./media/snowflake-tutorial/account.png)
 
-1. Create a SQL notebook, paste the following, but do not run it.
+1. Create a SQL notebook, paste the following, but do not run it. For more information, see the [CREATE SECURITY INTEGRATION (SAML2)](https://docs.snowflake.com/en/sql-reference/sql/create-security-integration-saml2) guide on how to create a SAML2 security integration in Snowflake.
 
     ```
     CREATE [ OR REPLACE ] SECURITY INTEGRATION [ IF NOT EXISTS ]
-    <name>
+    <your security integration name goes here>
     TYPE = SAML2
     ENABLED = TRUE | FALSE
     SAML2_ISSUER = '<EntityID/Issuer value which you have copied>'
@@ -157,16 +157,14 @@ Follow these steps to enable Microsoft Entra SSO.
 
   - [ SAML2_SNOWFLAKE_ISSUER_URL = '<string_literal>' ] 
 
-```
-    alter security integration `<your security integration name goes here>` set SAML2_SNOWFLAKE_ISSUER_URL = `https://<organization_name>-<account name>.snowflakecomputing.com`;
-```
+   ```
+    alter security integration '<your security integration name goes here>' set SAML2_SNOWFLAKE_ISSUER_URL = 'https://<organization_name>-<account name>.snowflakecomputing.com';
+   ```
 
   - [ SAML2_SNOWFLAKE_ACS_URL = '<string_literal>' ]
-```
-    alter security integration `<your security integration name goes here>` set SAML2_SNOWFLAKE_ACS_URL = `https://<organization_name>-<account name>.snowflakecomputing.com/fed/login`;
-```
-> [!NOTE]
-> Follow [this](https://docs.snowflake.com/en/sql-reference/sql/create-security-integration.html) guide to know more about how to create a SAML2 security integration.
+   ```
+    alter security integration '<your security integration name goes here>' set SAML2_SNOWFLAKE_ACS_URL = 'https://<organization_name>-<account name>.snowflakecomputing.com/fed/login';
+   ```
 
 > [!NOTE]
 > If you have an existing SSO setup using `saml_identity_provider` account parameter, then follow [this](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-advanced.html) guide to migrate it to the SAML2 security integration.
