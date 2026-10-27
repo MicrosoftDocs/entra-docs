@@ -2,7 +2,7 @@
 title: How to manage the Internet Access profile
 description: Learn how to manage the Internet Access traffic forwarding profile for Microsoft Entra Internet Access.
 ms.topic: how-to
-ms.date: 08/02/2026
+ms.date: 10/26/2026
 ms.subservice: entra-internet-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -38,6 +38,21 @@ The Internet Access policies include:
 - **Default Acquire** Contains predefined traffic that gets acquired by the Internet traffic profile. This includes internet traffic on ports 80, 443 over TCP. The policy takes lowest precedence after all bypass and custom acquire rules are evaluated. You can't change rules in this policy.
 - **Agentic Acquire** A special policy that signals the Global Secure Access client to acquire all web traffic that originates from local AI agents running on the device, such as GitHub Copilot CLI, Claude CLI, and similar local agents. Enable it to deploy Global Secure Access for agentic (AI agent) protection side by side with another SWG vendor that covers user traffic. You can't change rules in this policy.
 
+## Apply security policies to acquired traffic
+
+Acquisition rules determine which traffic the Internet Access profile forwards to Global Secure Access. They don't define a cloud firewall **Allow** or **Block** decision.
+
+After configuring acquisition, configure the security policies required for that traffic. Use cloud firewall to allow or block connections based on the supported destination, port, and protocol conditions. Ensure the acquisition configuration covers the traffic that your firewall rules are intended to protect.
+
+For example, a cloud firewall rule for UDP traffic doesn't cause the **Default Acquire** policy to acquire UDP. Configure acquisition for the required destination, port, and protocol before validating firewall enforcement.
+
+Choose the configuration steps for your traffic source:
+
+- [Configure cloud firewall for Global Secure Access clients (preview)](how-to-configure-cloud-firewall-clients.md).
+- [Configure cloud firewall for remote networks](how-to-configure-cloud-firewall.md).
+
+For broader acquisition, see [Acquire traffic with wildcard destinations](#acquire-traffic-with-wildcard-destinations-preview).
+
 ## How to add a custom bypass policy
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 2. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
@@ -61,6 +76,33 @@ The Internet Access policies include:
 
 > [!NOTE]
 > Traffic is evaluated from top to bottom, which means it only gets acquired by the Internet traffic profile if it’s not being bypassed in one of the bypass rules.
+
+## Acquire traffic with wildcard destinations (preview)
+
+For client traffic, **Custom Acquire** supports the FQDN wildcard `*` and the IPv4 subnet `0.0.0.0/0`. Use these destinations to acquire traffic beyond the default TCP ports 80 and 443, including nonstandard TCP ports and UDP.
+
+To configure broad acquisition for named destinations and direct-IP traffic:
+
+1. Browse to **Global Secure Access > Connect > Traffic forwarding** and open the Internet Access profile's acquisition rules.
+1. Expand **Custom Acquire** and select **Add rule**.
+1. Configure each of the following rules, using the destination type, destination, ports, and protocol shown in the table.
+1. Enable **Custom Acquire** and save your changes.
+
+| Destination type | Destination | Ports | Protocol |
+| --- | --- | --- | --- |
+| FQDN | `*` | `0-65535` | TCP |
+| FQDN | `*` | `0-65535` | UDP |
+| IP subnet | `0.0.0.0/0` | `0-65535` | TCP |
+| IP subnet | `0.0.0.0/0` | `0-65535` | UDP |
+
+Keep the bypass policies in place. Traffic matching a bypass rule remains excluded even when it also matches a wildcard acquisition rule. Private Access routing takes precedence over Internet Access; traffic routed through Private Access isn't subject to Internet Access cloud firewall rules.
+
+The `0.0.0.0/0` destination covers IPv4, not IPv6. You can restrict the port ranges and destinations instead of using this broad acquisition configuration.
+
+> [!IMPORTANT]
+> QUIC acquisition and blocking through cloud firewall are supported in the preview, but end-to-end QUIC forwarding isn't supported. An Allow rule for UDP port 443 doesn't enable supported end-to-end QUIC connectivity.
+
+Acquisition wildcard syntax doesn't define firewall-rule FQDN matching behavior. For firewall configuration and the specific-port acquisition example, see [Configure cloud firewall for Global Secure Access clients](how-to-configure-cloud-firewall-clients.md).
 
 ## How to enable agentic acquire policy
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/en-us/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
