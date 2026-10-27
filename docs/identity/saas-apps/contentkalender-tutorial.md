@@ -78,10 +78,9 @@ Follow these steps to enable Microsoft Entra SSO.
    a. In the **Identifier** text box, type the URL:
     `https://db.contentkalender.app` 
 
-   b. In the **Reply URL** text box, type the URL:
+   b. In the **Reply URL** text box, type the following URLs. Select **Add another reply URL** to add the second URL:
    `https://db.contentkalender.app/api:TRiyKmLW:production/sso/callback`
-   and
-   'https://db.contentkalender.app/api:TRiyKmLW:beta/sso/callback'
+   `https://db.contentkalender.app/api:TRiyKmLW:beta/sso/callback`
    
    c. In the **Sign on URL** text box, type the URL:
    `https://contentkalender.app`
