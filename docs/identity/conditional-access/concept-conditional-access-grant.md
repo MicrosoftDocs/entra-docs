@@ -90,7 +90,7 @@ For policies that target agent users, combine this control with scoping conditio
 
 You can use the Microsoft Defender for Endpoint app with the approved client app policy in Intune to set the device compliance policy to Conditional Access policies. There's no exclusion required for the Microsoft Defender for Endpoint app while you're setting up Conditional Access. Although Microsoft Defender for Endpoint on Android and iOS (app ID dd47d17a-3194-4d86-bfd5-c6ae6f5651e3) isn't an approved app, it has permission to report device security posture. This permission enables the flow of compliance information to Conditional Access.
 
-Similarly, the **Require device to be marked as compliant** doesn't block Microsoft Authenticator app access to the `UserAuthenticationMethod.Read` scope. Authenticator needs access to the `UserAuthenticationMethod.Read` scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to `UserAuthenticationMethod.ReadWrite` to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
+Microsoft Authenticator requires `UserAuthenticationMethod.ReadWrite` access to register credentials. When this permission is used in a delegated context by Microsoft Authenticator, access required for credential registration isn't blocked by the **Require device to be marked as compliant** grant control. This exception doesn't apply to application permissions. Requests using the `UserAuthenticationMethod.ReadWrite` application permission remain subject to the **Require device to be marked as compliant** check.
 
 <a name='require-hybrid-azure-ad-joined-device'></a>
 
