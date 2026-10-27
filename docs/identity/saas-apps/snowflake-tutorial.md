@@ -108,7 +108,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Snowflake SSO
 
-1. In a different web browser window, sign in to Snowflake as a Security Administrator.
+1. In a different web browser window, sign in to Snowflake as an Account Administrator.
 
 1. **Switch Role** to **ACCOUNTADMIN**, by selecting **profile** on the top right side of page.
 
@@ -117,20 +117,11 @@ Follow these steps to enable Microsoft Entra SSO.
     
 	![The Snowflake admin](./media/snowflake-tutorial/account.png)
 
-1. Open the **downloaded Base 64 certificate** in notepad. Copy the value between “-----BEGIN CERTIFICATE-----” and “-----END CERTIFICATE-----" and paste this content into the **SAML2_X509_CERT**.
-
-1. In the **SAML2_ISSUER**, paste **Identifier** value, which you copied previously.
-
-1. In the **SAML2_SSO_URL**, paste **Login URL** value, which you copied previously.
-
-1. In the **SAML2_PROVIDER**, give the value like `CUSTOM`.
-
-1. Select the **All Queries** and select **Run**.
-
-    ![Snowflake sql](./media/snowflake-tutorial/certificate.png)
+1. Create a SQL notebook, paste the following, but do not run it.
 
     ```
     CREATE [ OR REPLACE ] SECURITY INTEGRATION [ IF NOT EXISTS ]
+    <name>
     TYPE = SAML2
     ENABLED = TRUE | FALSE
     SAML2_ISSUER = '<EntityID/Issuer value which you have copied>'
@@ -148,18 +139,32 @@ Follow these steps to enable Microsoft Entra SSO.
     [ SAML2_SNOWFLAKE_ACS_URL = '<string_literal>' ]
     ```
 
-If you're using a new Snowflake URL with an organization name as the sign in URL, it's necessary to update the following parameters:
+1. Set the name of the SAML integration. 
 
-Alter the integration to add Snowflake Issuer URL and SAML2 Snowflake ACS URL, please follow  the step-6 in [this](https://community.snowflake.com/s/knowledgebase) article for more information.
+1. Open the **downloaded Base 64 certificate** in a text editor such as Notepad. Copy the value between “-----BEGIN CERTIFICATE-----” and “-----END CERTIFICATE-----" and paste this content into the **SAML2_X509_CERT**.
 
-1. [ SAML2_SNOWFLAKE_ISSUER_URL = '<string_literal>' ] 
+1. In the **SAML2_ISSUER**, paste **Identifier** value, which you copied previously.
 
+1. In the **SAML2_SSO_URL**, paste **Login URL** value, which you copied previously.
+
+1. In the **SAML2_PROVIDER**, give the value like `CUSTOM`.
+
+1. Select the **All Queries** and select **Run**.
+
+    ![Snowflake sql](./media/snowflake-tutorial/certificate.png)
+
+1. If you're using a new Snowflake URL with an organization name as the sign in URL, it's necessary to update the following parameters by altering the integration to add Snowflake Issuer URL and SAML2 Snowflake ACS URL.
+
+  - [ SAML2_SNOWFLAKE_ISSUER_URL = '<string_literal>' ] 
+
+```
     alter security integration `<your security integration name goes here>` set SAML2_SNOWFLAKE_ISSUER_URL = `https://<organization_name>-<account name>.snowflakecomputing.com`;
+```
 
-2. [ SAML2_SNOWFLAKE_ACS_URL = '<string_literal>' ]
-
+  - [ SAML2_SNOWFLAKE_ACS_URL = '<string_literal>' ]
+```
     alter security integration `<your security integration name goes here>` set SAML2_SNOWFLAKE_ACS_URL = `https://<organization_name>-<account name>.snowflakecomputing.com/fed/login`;
-
+```
 > [!NOTE]
 > Follow [this](https://docs.snowflake.com/en/sql-reference/sql/create-security-integration.html) guide to know more about how to create a SAML2 security integration.
 
@@ -168,11 +173,11 @@ Alter the integration to add Snowflake Issuer URL and SAML2 Snowflake ACS URL, p
 
 ### Create Snowflake test user
 
-To enable Microsoft Entra users to sign in to Snowflake, they must be provisioned into Snowflake. In Snowflake, provisioning is a manual task.
+To enable Microsoft Entra users to sign in to Snowflake, they must be provisioned into Snowflake.
 
 **To provision a user account, perform the following steps:**
 
-1. Sign in to Snowflake as a Security Administrator.
+1. Sign in to Snowflake as an Account Administrator.
 
 2. **Switch Role** to **ACCOUNTADMIN**, by selecting **profile** on the top right side of page.  
 
@@ -211,4 +216,5 @@ Once you've validated that SSO works and rolled it out in your organization, we 
 
 ## Related content
 
-Once you configure Snowflake you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+* Snowflake supports [automated user provisioning and deprovisioning](snowflake-provisioning-tutorial.md).
+* Once you configure Snowflake you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
