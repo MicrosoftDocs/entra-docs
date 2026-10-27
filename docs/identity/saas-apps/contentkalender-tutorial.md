@@ -78,14 +78,12 @@ Follow these steps to enable Microsoft Entra SSO.
    a. In the **Identifier** text box, type the URL:
     `https://db.contentkalender.app` 
 
-   b. In the **Reply URL** text box, type the URL:
+   b. In the **Reply URL** text box, type the following URLs. Select **Add another reply URL** to add the second URL:
    `https://db.contentkalender.app/api:TRiyKmLW:production/sso/callback`
+   `https://db.contentkalender.app/api:TRiyKmLW:beta/sso/callback`
    
    c. In the **Sign on URL** text box, type the URL:
    `https://contentkalender.app`
-
-   d. In the **Logout URL** text box, type the URL:
-   `https://db.contentkalender.app/api:TRiyKmLW:production/sso/logout`
 
 1. Your Contentkalender application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Contentkalender expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
