@@ -1,5 +1,5 @@
 ---
-title: Configure Global Secure Access cloud firewall with remote networks for internet access
+title: Configure cloud firewall for remote networks
 description: Learn how to configure and use cloud firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 ms.topic: how-to
 ms.subservice: entra-private-access
@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 #customer intent: As a Global Secure Access administrator, I want to learn how to configure and use cloud firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 ---
 
-# Configure Global Secure Access cloud firewall
+# Configure cloud firewall for remote networks
 
 Global Secure Access cloud firewall protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches. 
 
