@@ -2,7 +2,7 @@
 title: How to manage the Internet Access profile
 description: Learn how to manage the Internet Access traffic forwarding profile for Microsoft Entra Internet Access.
 ms.topic: how-to
-ms.date: 10/26/2026
+ms.date: 10/27/2026
 ms.subservice: entra-internet-access 
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -96,6 +96,9 @@ To configure broad acquisition for named destinations and direct-IP traffic:
 | IP subnet | `0.0.0.0/0` | `0-65535` | UDP |
 
 Keep the bypass policies in place. Traffic matching a bypass rule remains excluded even when it also matches a wildcard acquisition rule. Private Access routing takes precedence over Internet Access; traffic routed through Private Access isn't subject to Internet Access cloud firewall rules.
+
+> [!NOTE]
+> DNS traffic acquisition isn't supported by the Internet Access traffic forwarding profile in this preview. Wildcard acquisition rules don't enable DNS acquisition, so cloud firewall policies don't filter DNS traffic. Configuring an FQDN destination doesn't enable DNS query acquisition.
 
 The `0.0.0.0/0` destination covers IPv4, not IPv6. You can restrict the port ranges and destinations instead of using this broad acquisition configuration.
 
