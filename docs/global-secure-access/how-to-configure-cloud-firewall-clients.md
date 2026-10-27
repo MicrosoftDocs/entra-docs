@@ -3,7 +3,7 @@ title: Configure cloud firewall for Global Secure Access clients (preview)
 description: Learn how to configure cloud firewall for traffic from Global Secure Access clients and verify Allow and Block decisions in Microsoft Entra Internet Access.
 ms.topic: how-to
 ms.subservice: entra-internet-access
-ms.date: 10/26/2026
+ms.date: 10/27/2026
 ms.custom: it-pro
 ai-usage: ai-generated
 
@@ -264,6 +264,8 @@ For more information, see [Global Secure Access network traffic logs](how-to-vie
 | Policy changes don't appear to apply. | Allow for the policy propagation interval and retry with a new connection. |
 
 ## Preview considerations
+
+The Internet Access traffic forwarding profile doesn't acquire DNS traffic in this preview, including with wildcard acquisition rules. Cloud firewall therefore doesn't support filtering DNS traffic. FQDN-based firewall rules match connections to named destinations; they don't filter DNS queries.
 
 The examples in this article cover IPv4 traffic over TCP and UDP. The `0.0.0.0/0` acquisition destination doesn't include IPv6, and these instructions don't configure IPv6 protection.
 
