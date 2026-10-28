@@ -3649,6 +3649,7 @@
   "EA Purchaser" : "da6647fb-7651-49ee-be91-c43c4877f0c4",
   "Department Admin" : "fb2cf67f-be5b-42e7-8025-4683c668f840",
   "Department Reader" : "db609904-a47f-4794-9be8-9bd86fbffd8a",
+  "Partner Admin Reader": "4f6144c0-a809-4c55-b3c8-7f9b7b15a1bf", 
   "Account Owner" : "c15c22c0-9faf-424c-9b7e-bd91c06a240b",
   "DefaultChannelAuthTenant (botframework.com)" : "d6d49420-f39b-4df7-a1dc-d59a935871db",
   "Microsoft tenant ID" : "72f988bf-86f1-41af-91ab-2d7cd011db47",
@@ -4120,5 +4121,12 @@
   "IAppHostPathMapper2MapPathMethod": "0f80e901-8f4c-449a-bf90-13d5d082f187",
   "MicrosoftEntraSecurityGroupEnableMIPLabels": "d209f6fa-3839-4d70-b83f-60b1c64d0e8f",
   "Microsoft.AzureStackHCI Provider": "1412d89f-b8a8-4111-b4fd-e82905cbd85d",
-  "Fabric Platform CMK": "61d6811f-7544-4e75-a1e6-1c59c0383311"
+  "Fabric Platform CMK": "61d6811f-7544-4e75-a1e6-1c59c0383311",
+  "Azure Durable task scheduler App ID": "887c6b43-ba92-4adb-a82b-73670fc48dac",
+  "Davis Instruments WeatherLink FarmBeats Connector": "30b00405-3b4e-4003-933c-0d96ce47d670",
+  "Avs Fleet Rp": "1a5e141d-70dd-4594-8442-9fc46fa48686",
+  "Discovery control-plane service App": "92c174ac-8e41-4815-a1b7-d81b19ab03ce",
+  "Azure Orbital Microsoft Planetary Computer Pro": "6388acc4-795e-43a9-a320-33075c1eb83b",
+  "Azure Automanage Account": "d828acde-4b48-47f5-a6e8-52460104a052",
+  "Microsoft.Azure.CertificateRegistration": "f3c21649-0979-4721-ac85-b0216b2cf413"
 }
