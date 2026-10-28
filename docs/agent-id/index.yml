@@ -63,6 +63,9 @@ conceptualContent:
         - url: /entra/id-governance/agent-sponsor-tasks?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
           itemType: how-to-guide
           text: Maintain agent sponsors and lifecycle
+        - url: /entra/id-governance/agent-default-inactivity-policy?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
+          itemType: how-to-guide
+          text: Default agent inactivity policy
     # Card - PROTECT
     - title: Protect agent access to resources
       links:

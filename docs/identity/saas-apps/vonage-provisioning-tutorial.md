@@ -2,8 +2,9 @@
 title: Configure Vonage for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Vonage.
 ms.topic: how-to
-ms.date: 04/06/2026
+ms.date: 10/22/2026
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Vonage so that I can streamline the user management process and ensure that users have the appropriate access to Vonage.
 --- 
 
@@ -11,14 +12,22 @@ ms.custom: sfi-image-nochange
 
 This article describes the steps you need to perform in both Vonage and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Vonage](https://www.vonage.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
+> [!IMPORTANT]
+> To improve the security posture of application provisioning, Microsoft is retiring the **OAuth 2.0 Authorization Code Grant** for this application.
+>
+> **Migrate affected provisioning jobs to OAuth2 Client Credentials Grant by March 31, 2027**, to avoid disruption to provisioning. After this date, provisioning jobs that continue to use Authorization Code Grant might stop working and could eventually be removed from the service.
+>
+> **This change doesn't affect SSO.** Existing provisioned users can continue signing in, but new users won't be provisioned and changes to existing users and groups won't be synchronized while provisioning isn't functioning.
+>
+> Follow the [Vonage SCIM migration guide](https://businesssupport.vonage.com/articles/Answer/SCIM-Migration-Microsoft) to migrate to OAuth2 Client Credentials Grant.
 
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Vonage.
-> * Remove users in Vonage when they don't require access anymore.
+> * Deactivate users in Vonage when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Vonage.
 > * [Single sign-on](vonage-tutorial.md) to Vonage (recommended).
-> * Code Auth Grant flow authentication supported.
+> * OAuth 2.0 Authorization Code Grant authentication is supported until April 1, 2027. After this date, only OAuth 2.0 Client Credentials authentication is supported.
 
 ## Prerequisites
 
@@ -27,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A [Vonage](https://www.vonage.com/) tenant.
-* A user account in Vonage with Admin permission(Account Super User).
+* A user account in Vonage with Admin permissions.
 
 
 ## Step 1: Plan your provisioning deployment
@@ -42,15 +51,30 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to [Vonage admin portal](http://admin.vonage.com) with an admin user.
 
-   ![Screenshot of Log in to vonage admin portal.](media/vonage-provisioning-tutorial/log-in.png)
+1. In the left navigation, select **Account** > **User Provisioning**. The **Cross-Domain Identity Management (SCIM)** settings page opens.
 
-1. Navigate to **Account > Single Sign-On Settings** on the left side menu.
+1. In the **Authentication Settings and Service Credentials** section, select **Microsoft Entra** as the identity provider. The **Authentication Method** dropdown is prepopulated with **OAuth 2.0 Client Credentials**.
 
-   ![Screenshot of Single sign on settings.](media/vonage-provisioning-tutorial/single-sign-on-settings.png)
+    > [!NOTE]
+    > When you change the credentials in Vonage, an existing provisioning job in Microsoft Entra ID may briefly continue using its current access token. These tokens typically expire one hour after they're issued and can't be refreshed after the credentials change in Vonage, which can cause temporary provisioning failures. Once you update the credentials in Microsoft Entra ID, subsequent sync cycles use the new credentials and retry failed provisioning operations. No additional action is needed for those failures.
 
-1. Select **User Settings** tab, toggle **Enable SCIM user provisioning** ON and select **Save**.
+1. In the **Ready to Generate Service Credentials** dialog, select **Continue**.
 
-![Screenshot of Enable scim.](media/vonage-provisioning-tutorial/enable-scim.png)
+1. Enter one or more identity provider administrator email addresses, and select **Generate Credentials**.
+
+1. Copy the following values from the dialog and save them in a secure location, such as a password manager. Each value has an individual copy icon.
+
+    | Field | Description |
+    | --- | --- |
+    | **Token Endpoint** | The token endpoint provided by Vonage. |
+    | **Tenant URL** | The tenant URL provided by Vonage. |
+    | **Client ID** | The automatically generated client ID. |
+    | **Client Secret ID** | The automatically generated client secret, which is visible only once. |
+
+1. After you copy all four values, select **Done** to close the dialog.
+
+    > [!WARNING]
+    > The **Client Secret ID** is permanently masked after you select **Done**. If you lose it, select **Regenerate** to generate a new secret.
 
 <a name='step-3-add-vonage-from-the-azure-ad-application-gallery'></a>
 
@@ -87,20 +111,24 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab.](common/provisioning.png)
 
-1. Select **+ New configuration**.
+1. For a new configuration, select **Overview** > **+ New configuration**.
 
-	![Screenshot of New configuration.](common/application-provisioning.png)
+    ![Screenshot of New configuration.](common/application-provisioning.png)
 
-1. Before the next step make sure you're authorized as Account Super User. For checking if the user is an Account Super User perform login at [Vonage admin portal](http://admin.vonage.com).
-   You should see on the top left side similar to the picture below.
+    To update an existing configuration, select **Connectivity**.
 
-   ![Screenshot of Provisioning tab user.](media/vonage-provisioning-tutorial/account-super-user.png)
+    ![Screenshot of Vonage provisioning connectivity settings.](media/vonage-provisioning-tutorial/connectivity.png)
 
-1. In the **Admin Credentials** section, select Authorize, make sure that you enter your Account Super User credentials, if it doesn't ask you to enter credentials make sure that you logged in with the Account Super User (you can check it http://admin.vonage.com/ on the upper left side, bellow your name you need to see "Account Super User"). Select **Test Connection** to ensure Microsoft Entra ID can connect to Vonage. If the connection fails, ensure your Vonage account has Admin permissions and try again.
+1. In **New configuration** or **Connectivity**, use the **Select authentication method** dropdown to change the authentication method. **OAuth2 client credentials grant** is selected by default for new configurations.
 
-   ![Screenshot of Token.](media/vonage-provisioning-tutorial/authorize.png)
+    > [!NOTE]
+    > For existing configurations, **OAuth 2.0 Authorization Code Grant** remains available as a fallback until April 1, 2027. After this date, the option will be removed. Migrate to **OAuth2 Client Credentials Grant** by March 31, 2027, to avoid provisioning disruption.
 
-1. Select **Create** to create your configuration.
+1. **Instructions for setting up OAuth2 Client Credentials Grant:** In **Tenant URL**, enter your Vonage tenant URL. Enter the client ID, client secret, and token endpoint retrieved from the Vonage portal in **Client identifier**, **Client secret**, and **OAuth token endpoint**, respectively. Select **Test connection** to validate the credentials.
+
+    ![Screenshot of the OAuth2 client credentials grant fields and Test connection button for Vonage provisioning.](media/vonage-provisioning-tutorial/client-credentials.png)
+
+1. Select **Create** for a new configuration or **Save** when updating the authentication configuration.
 
 1. Select **Properties** on the **Overview** page.
 
@@ -108,17 +136,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
-1. Select **Attribute Mapping** in the left panel and select **users**.
-
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Vonage in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Vonage for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Vonage API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
-
-   |Attribute|Type|Supported for filtering|
-   |---|---|---|
-   |userName|String|&check;
-   |active|Boolean|   
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
+1. Vonage uses preset attribute mappings for user provisioning. You can view these mappings by selecting **Attribute Mapping** in the left panel and then selecting **users**. To learn whether additional attributes are supported, see the Vonage documentation.
 
 1. To configure scoping filters, refer to the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -128,7 +146,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ## Step 6: Monitor your deployment
 
-[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
+Once you configure provisioning, use the following resources to monitor your deployment:
+
+   1. Use the [provisioning logs](../monitoring-health/concept-provisioning-logs.md) to determine which users are provisioned successfully or unsuccessfully.
+   2. Check the [progress bar](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion.
+   3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states in the [application provisioning quarantine status](../app-provisioning/application-provisioning-quarantine-status.md) article.
 
 ## More resources
 

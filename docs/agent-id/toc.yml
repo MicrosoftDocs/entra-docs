@@ -48,6 +48,8 @@ items:
         href: /entra/id-governance/agent-id-governance-overview?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Access packages for agents
         href: agent-access-packages.md
+      - name: Agent ID default inactivity policy
+        href: ../id-governance/agent-default-inactivity-policy.md
       - name: ID Protection for agents
         href: /entra/id-protection/concept-risky-agents?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Network controls for agents
