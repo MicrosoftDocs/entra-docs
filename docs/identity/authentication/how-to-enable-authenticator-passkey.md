@@ -197,7 +197,7 @@ Here are some workarounds:
 - You can exclude the **Microsoft Authenticator Credential Registration** resource from the Conditional Access policy.
 
   > [!NOTE]
-  > Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
+  > The Microsoft Authenticator Credential Registration resource will be available in November 2026. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
 
   As a Cloud Application Administrator or Application Administrator:
 
