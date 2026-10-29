@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in Bri
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* [A Brivo Onair Identity Connector tenant](https://www.brivo.com/lp/quote)
+* [A Brivo Onair Identity Connector tenant](https://www.brivo.com/contact/)
 * A user account in Brivo Onair Identity Connector with Senior Administrator permissions.
 
 ## Assigning users to Brivo Onair Identity Connector
