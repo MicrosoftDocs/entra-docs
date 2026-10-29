@@ -67,7 +67,7 @@ For more information about reviews for others, see: [Review access to groups & a
 In the My Access portal, you can view a list of agent identities that you own and sponsor. For more about managing and sponsoring agent identities, see: [Administrative relationships for agent identities (Owners, sponsors, and managers)](../agent-id/agent-owners-sponsors-managers.md).
 
 
-You're able to manage, approve, review, and enable the agent identities. For all agent identities you own or sponsor you're also able to see general information such as level of access, and agent identities activity. For more information on managing agent identities using the My Access portal, see: [Manage Agent (Preview)](../agent-id/manage-agent.md).
+You're able to manage, approve, review, and enable the agent identities. For all agent identities you own or sponsor you're also able to see general information such as level of access, and agent identities activity. For more information on managing agent identities using the My Access portal, see: [Manage Agent](../agent-id/manage-agent.md).
 
 ## Next step
 

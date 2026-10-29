@@ -132,6 +132,8 @@ items:
         href: call-api-azure-services.md
       - name: Secure an MCP server with Microsoft Entra ID
         href: secure-mcp-server-with-entra-id.md
+      - name: Govern agent access in PostgreSQL
+        href: govern-agent-access-azure-postgresql.md
     - name: Integrate third-party agent platforms
       items:
       - name: Configure third-party agents with Agent ID
