@@ -163,10 +163,14 @@ Register the connector using a token created offline.
 
    } 
    ```
-1. Once you have the token, create a `SecureString` using the token:
+1. Older version of the registration script `RegisterConnector.ps1` expect the token as `SecureString`. If you are using an older connector version create a `SecureString` using the token:
+
    ```powershell
-   $SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
+   $Token = $Token | ConvertTo-SecureString -AsPlainText -Force
    ```
+
+   If you are using a up-to-date version of the connector skip this step.
+   
 1. Run the following Windows PowerShell command, replacing `<tenant GUID>` with your directory ID. The `RegisterConnector.ps1` script is located in the connector installation folder (by default, `C:\Program Files\Microsoft Entra private network connector\`). If you're running the command from a different directory, provide the full path to the script.
 
    ```powershell
@@ -174,11 +178,17 @@ Register the connector using a token created offline.
        -modulePath "C:\Program Files\Microsoft Entra private network connector\Modules\" `
        -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" `
        -Authenticationmode Token `
-       -Token $SecureToken `
+       -Token $Token `
        -TenantId <tenant GUID> `
        -Feature ApplicationProxy
    ```
 1. Store the script or code in a secure location as it contains sensitive credential information.
+
+> [!TIP]
+> You can identify if you have to pass the token as plain `String` or as `SecureString` by checking the type of the `-Token` parameter: 
+> ```powershell
+> (Get-Command .\RegisterConnector.ps1).Parameters['Token'].ParameterType.Name
+> ```
 
 ## Next steps
 - [What is Global Secure Access?](overview-what-is-global-secure-access.md)
