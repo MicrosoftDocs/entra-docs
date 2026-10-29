@@ -14,7 +14,7 @@ Entitlement management is an [identity governance](identity-governance-overview.
 
 People in organizations need access to various groups, applications, and SharePoint Online sites to perform their job. Managing this access is challenging, as requirements change. New applications are added or identities need more access rights. This scenario gets more complicated when you collaborate with outside organizations. You might not know who in the other organization needs access to your organization's resources, and they won't know what applications, groups, or sites your organization is using.
 
-Entitlement management can help you more efficiently manage access to groups, applications, and SharePoint Online sites for internal identities, and also for identities outside your organization who need access to those resources. You can also use entitlement management in preview to assign groups, API permissions, and roles to agent IDs.
+Entitlement management can help you more efficiently manage access to groups, applications, and SharePoint Online sites for internal identities, and also for identities outside your organization who need access to those resources. You can also use entitlement management to assign groups, API permissions, and roles to agent IDs.
 
 ## Why use entitlement management?
 
@@ -62,7 +62,7 @@ Entitlement management introduces the concept of an *access package*. An access 
 - Membership of Microsoft 365 Groups and Teams
 - Assignment to Microsoft Entra enterprise applications, including SaaS applications and custom-integrated applications that support federation/single sign-on and/or provisioning
 - Membership of SharePoint Online sites
-- API permissions, for agents with agent IDs or service principals, in preview as part of Microsoft Entra Agent ID
+- API permissions, for agents with agent IDs or service principals, as part of Microsoft Entra Agent ID
 - SAP IAG business roles and other access rights, in preview
 
 You can also control access to other resources that rely upon Microsoft Entra security groups or Microsoft 365 Groups. For example:
@@ -131,7 +131,7 @@ To better understand entitlement management and its documentation, you can refer
 
 [!INCLUDE [active-directory-p2-governance-license.md](~/includes/entra-p2-governance-license.md)]
 
-### License requirements for assigning agents to access packages (preview)
+### License requirements for assigning agents to access packages
 
 [!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
