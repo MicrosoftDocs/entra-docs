@@ -29,7 +29,7 @@ These problems are compounded for identities who need access from another organi
 - No one person might know all of the specific individuals in other organization's directories to be able to invite them
 - Even if they were able to invite these identities, no one in that organization might remember to manage all of the identities access consistently
 
-Entitlement management can help address these challenges. To learn more about how customers have been using entitlement management, you can read the [Mississippi Division of Medicaid](https://customers.microsoft.com/story/1509263251891323344-mississippi-medicaid-microsoft-security-solutions), [Storebrand](https://customers.microsoft.com/story/1540760473505561700-storebrand-banking-microsoft-security-solutions), and [Digital Security and Resilience team at Microsoft](https://customers.microsoft.com/story/1805346232767723893-microsoft-microsoft-entra-id-governance-other-en-united-states) case studies. This video provides an overview of entitlement management and its value:
+Entitlement management can help address these challenges. To learn more about how organizations have been using entitlement management, see the [Digital Security and Resilience team at Microsoft](https://customers.microsoft.com/story/1805346232767723893-microsoft-microsoft-entra-id-governance-other-en-united-states) case study. This video provides an overview of entitlement management and its value:
 
 >[!VIDEO https://www.youtube.com/embed/_Lss6bFrnQ8]
 
