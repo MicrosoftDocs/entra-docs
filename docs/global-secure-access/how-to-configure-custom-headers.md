@@ -9,7 +9,7 @@ ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---
 
-# How to configure custom headers (preview)
+# How to configure custom headers
 
 
 Custom headers in Global Secure Access (GSA) lets you add custom HTTP headers to outbound web requests for specific destinations. You configure headers as part of a web filtering policy rule, so the headers are added only to traffic that matches the fully qualified domain names (FQDNs) that you select.
@@ -18,9 +18,6 @@ Custom headers in Global Secure Access (GSA) lets you add custom HTTP headers to
 > Custom headers are available only with Web Filtering (v2) policies. For more information, see [Web filtering in Global Secure Access (V2)](concept-web-filtering.md).
 
 The most common use case is tenant restrictions for software as a service (SaaS) applications. Some popular SaaS services understand specific HTTP headers that identifies your organization's approved tenant or workspace in that service. When you add the HTTP header understood by the SaaS provider, the SaaS application allows access to your approved tenant and blocks access to consumer tenants or tenants from other organizations. You can also use header modification to add any custom header that a destination service expects, such as an identifier or policy tag.
-
-> [!IMPORTANT]
-> Header modification is currently in preview. This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## How it works
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra AD object enforcement (Preview)
+title: Microsoft Entra AD object enforcement
 description: Configure the AD enforcement preview so that synced Active Directory objects can only be modified by the Microsoft Entra Cloud Sync provisioning service.
 author: dhanyahk
 ms.author: dhanyahk
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
 ms.topic: how-to
 ms.custom: msecd-doc-authoring-1023
-ms.date: 08/11/2026
+ms.date: 10/29/2026
 ai-usage: ai-assisted
 
 #customer intent: As a hybrid identity administrator, I want to restrict modifications of provisioned Active Directory users and groups to the Microsoft Entra Cloud Sync provisioning service so that on-premises changes can't bypass Microsoft Entra governance.

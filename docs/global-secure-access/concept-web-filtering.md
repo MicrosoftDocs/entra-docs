@@ -2,7 +2,7 @@
 title: Web filtering in Global Secure Access (V2)
 description: "Learn how the V2 web filtering object model works in Microsoft Entra Internet Access, including policies, rules, evaluation across security profiles, destination matching, and V1 coexistence."
 ms.topic: concept-article
-ms.date: 09/17/2026
+ms.date: 10/29/2026
 ms.subservice: entra-internet-access
 ai-usage: ai-assisted
 ---
@@ -35,14 +35,14 @@ This structure mirrors the structure used by other V2 security features, so the 
 The two models also differ in where the action lives and in how they behave when no rule matches:
 
 - In V1, a policy has no default action. It acts only when one of its rules matches, and the action is defined on the policy while its rules carry destinations only.
-- In V2, each rule carries its own action, and the policy defines a default action for traffic that doesn't match a rule. **Allow** and **Block** produce an outcome. The preview **Continue Evaluation** action passes evaluation to the web filtering policy in the next applicable security profile.
+- In V2, each rule carries its own action, and the policy defines a default action for traffic that doesn't match an enabled enforcement rule. **Allow** and **Block** stop V2 web filtering evaluation. The **Continue** default action (in preview) passes evaluation to the web filtering policy in the next applicable security profile, in profile-priority order. It doesn't pass evaluation to a different policy type, such as TLS inspection.
 
 The following table compares how policies are structured in each model.
 
 | Aspect | V1 (web content filtering) | V2 (web filtering) |
 | --- | --- | --- |
 | Policies per security profile | Multiple policies can be linked. | Exactly one policy. |
-| Default action | None. The policy acts only if a rule matches. | Yes. Applied when no rule matches. **Allow** and **Block** are terminal. **Continue Evaluation** is nonterminal and available in preview. |
+| Default action | None. The policy acts only if a rule matches. | Yes. Applied when no enabled enforcement rule matches. **Allow** and **Block** stop V2 web filtering evaluation. The **Continue** default action (in preview) evaluates the next applicable web filtering policy. |
 | Where the action is defined | On the policy. Rules carry destinations only. | On each rule, plus a policy default action. |
 
 ### FQDN destinations are handled as URLs
@@ -62,23 +62,44 @@ The following table summarizes the destination match types available in each mod
 Understanding how the V2 objects relate helps you plan your filtering configuration.
 
 - **Rule**: The unit that defines a destination (web category or URL) and the action to take (**Allow** or **Block**). Rules are evaluated in priority order within a policy.
-- **Policy**: A single web filtering policy contains one or more rules once configured. In V2, a security profile contains one web filtering policy. Each policy also defines a default action for traffic that doesn't match a rule. The action can produce an **Allow** or **Block** outcome or continue evaluation with another applicable security profile.
+- **Policy**: A single web filtering policy contains one or more rules once configured. In V2, a security profile contains one web filtering policy. Each policy also defines a default action for traffic that doesn't match an enabled enforcement rule. The action can produce an **Allow** or **Block** outcome or use **Continue** to evaluate the web filtering policy in the next applicable security profile.
 - **Security profile**: A grouping of filtering policies that you link to a Microsoft Entra Conditional Access policy to make enforcement user-aware and context-aware. For more information, see [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md).
 
 Conditional Access remains the delivery mechanism for user and context awareness. Security profiles are referenced by profile identifier (GUID) in Conditional Access session controls, and those references remain valid across the transition to V2.
 
 V2 web filtering rules don't currently support user or group targeting. Apply user and group assignments to the security profile through Conditional Access.
 
+## Use the Continue default action (in preview)
+
+Use **Continue** when you need independently managed web filtering policies to work together across security profiles. If no enabled enforcement rule matches in the current policy, **Continue** evaluates the web filtering policy in the next applicable security profile, in profile-priority order. Profiles without a V2 web filtering policy are skipped.
+
+**Continue** is a policy default action, not a rule action. It doesn't allow or block traffic itself, change which profiles apply to the user, or move evaluation to another policy type. It isn't Continuous Access Evaluation (CAE).
+
+For example, you can maintain separate Claude and ChatGPT override profiles instead of creating a profile for every combination of applications a user needs. Each profile contains its own V2 web filtering policy:
+
+| Security profile, in evaluation order | Web filtering rules | Default action |
+| --- | --- | --- |
+| Claude override | Allow Claude destinations. | **Continue** |
+| ChatGPT override | Allow ChatGPT destinations. | **Continue** |
+| Baseline | Enterprise web filtering rules. | **Block** |
+
+Assign both override profiles to a user through Conditional Access, with the Claude profile at a higher priority than the ChatGPT profile. When the user visits ChatGPT, no rule in the Claude policy matches, so its **Continue** default action passes evaluation to the ChatGPT policy. The ChatGPT Allow rule matches and stops V2 web filtering evaluation. Traffic that matches neither override reaches the Baseline, which applies its rules or its Block default action.
+
+A matching Allow or Block rule, or an Allow or Block default action, stops V2 web filtering evaluation before later profiles. The Baseline is a final fallback, not an additional check after an earlier Allow. It evaluates last and can't use **Continue** because it must produce an Allow or Block outcome. Existing policies aren't changed automatically; select **Continue** on each policy that needs this behavior.
+
+> [!IMPORTANT]
+> An Allow outcome stops V2 web filtering evaluation, but it doesn't override a V1 Block when both models are configured. For more information, see [How evaluation works across V1 and V2](#how-evaluation-works-across-v1-and-v2).
+
 ## Author a web filtering policy
 
 You create a web filtering policy in the Microsoft Entra admin center by browsing to **Global Secure Access** > **Secure** > **Web Filtering Policies (V2)** and selecting **Create policy**. The create experience is organized into **Basics**, **Policy settings**, and **Review** tabs.
 
 - On the **Basics** tab, you provide a name and description for the policy. The page also shows the policy evaluation order across Global Secure Access security modules.
-- On the **Policy settings** tab, you set the **Default action**, which is the predefined behavior applied when no rules in the policy match. You can set the default action to **Allow**, **Block**, or **Continue Evaluation**.
+- On the **Policy settings** tab, you set the **Default action**, which is the predefined behavior applied when no enabled enforcement rule in the policy matches. You can set the default action to **Allow**, **Block**, or **Continue**.
 - On the **Review** tab, you confirm the policy configuration before you create it.
 
 > [!NOTE]
-> **Continue Evaluation** is available in preview. When no rule matches, it evaluates the web filtering policy in the next applicable security profile in profile-priority order. You can't use **Continue Evaluation** for the Baseline Profile because the Baseline Profile evaluates last and must produce an **Allow** or **Block** outcome.
+> The **Continue** default action (in preview) passes evaluation to the web filtering policy in the next applicable security profile in profile-priority order when no enabled enforcement rule matches. You can't use **Continue** for the Baseline Profile because the Baseline Profile evaluates last and must produce an **Allow** or **Block** outcome.
 
 > [!NOTE]
 > A new policy is created without any rules. After you create the policy, add rules to define the destinations and actions it enforces.
@@ -119,11 +140,11 @@ V1 and V2 can run side by side during the transition. However, they use differen
 Review how your security profiles combine policy enforcement before you migrate:
 
 - **V1 can compose enforcement across profiles**: The V1 module evaluates policies from all applicable security profiles in priority order.
-- **V2 can compose enforcement across profiles**: Set the default action to **Continue Evaluation** on a non-Baseline policy to pass unmatched traffic to the web filtering policy in the next applicable security profile. A matching rule or an **Allow** or **Block** default action stops V2 web filtering evaluation.
+- **V2 can compose enforcement across profiles**: Set the default action to **Continue** on a non-Baseline policy to pass unmatched traffic to the web filtering policy in the next applicable security profile. A matching rule or an **Allow** or **Block** default action stops V2 web filtering evaluation.
 - **The Baseline Profile is terminal**: The Baseline Profile evaluates last and must use **Allow** or **Block** as its default action.
 - **V2 rules don't support user or group targeting**: You can't replace profile-level targeting by assigning users or groups to individual rules.
 
-Use **Continue Evaluation** when independently managed V2 policies need to contribute in profile-priority order. You can also consolidate intended outcomes into one V2 policy with ordered rules when separate profile assignments aren't required.
+Use **Continue** when independently managed V2 policies need to contribute in profile-priority order. You can also consolidate intended outcomes into one V2 policy with ordered rules when separate profile assignments aren't required.
 
 > [!IMPORTANT]
 > A like-for-like migration of individual policies might not produce like-for-like enforcement. Before you migrate, identify users who match multiple security profiles, compare their effective V1 policy with the proposed V2 policy, and test both allowed and blocked destinations.
@@ -132,7 +153,7 @@ Use **Continue Evaluation** when independently managed V2 policies need to contr
 
 When a user has both V1 and V2 policies applied, Global Secure Access evaluates them as two separate modules that run in sequence, not as one merged policy set:
 
-1. The V2 module runs first. It evaluates applicable security profiles in profile-priority order and skips profiles that don't contain a V2 web filtering policy. In each policy, a matched rule or an **Allow** or **Block** default action stops V2 evaluation. If no rule matches and the default action is **Continue Evaluation**, the module evaluates the web filtering policy in the next applicable security profile. The Baseline Profile evaluates last and produces a terminal outcome.
+1. The V2 module runs first. It evaluates applicable security profiles in profile-priority order and skips profiles that don't contain a V2 web filtering policy. In each policy, a matched rule or an **Allow** or **Block** default action stops V2 evaluation. If no enabled enforcement rule matches and the default action is **Continue**, the module evaluates the web filtering policy in the next applicable security profile. The Baseline Profile evaluates last and produces a terminal outcome.
 1. The V1 module runs second, only if V2 didn't block. If the V2 outcome is **Block**, the request is blocked and evaluation stops. If the V2 outcome is **Allow**, evaluation falls through to the V1 module, which evaluates all V1 policies linked to the user's profiles in priority order and applies the final action.
 
 The key consequence is that **Block** and **Allow** aren't symmetric across the two modules:
@@ -156,11 +177,11 @@ In short, a V2 policy can add blocks that override V1, but it can't force-allow 
 
 ### What if I rely on multiple security profiles?
 
-Use the preview **Continue Evaluation** default action on non-Baseline V2 policies that need to pass unmatched traffic to another applicable security profile. Keep an **Allow** or **Block** default action on the Baseline Profile so evaluation always ends with a terminal outcome.
+Use the **Continue** default action (in preview) on non-Baseline V2 policies that need to pass unmatched traffic to the web filtering policy in the next applicable security profile. Keep an **Allow** or **Block** default action on the Baseline Profile so evaluation always ends with a terminal outcome.
 
 ### How do I create equivalent behavior in V2?
 
-Use **Continue Evaluation** to keep policies in separate security profiles and evaluate them in profile-priority order, or consolidate the required destinations and actions into one V2 policy and use rule priority to control evaluation order. V2 rules don't support individual user or group assignments, so apply those assignments to security profiles through Conditional Access.
+Use **Continue** to keep policies in separate security profiles and evaluate them in profile-priority order, or consolidate the required destinations and actions into one V2 policy and use rule priority to control evaluation order. V2 rules don't support individual user or group assignments, so apply those assignments to security profiles through Conditional Access.
 
 ### Can I return to V1?
 
