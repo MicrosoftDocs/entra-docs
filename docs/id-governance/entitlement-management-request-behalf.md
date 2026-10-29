@@ -33,7 +33,7 @@ The ability for administrators to request on behalf of agent identities they own
 [!INCLUDE [active-directory-p2-governance-license.md](~/includes/entra-p2-governance-license.md)]
 > [!NOTE]
 > Both the manager/user (requestor) and the employee/user (target) must be licensed for Microsoft Entra ID Governance or Microsoft Entra Suite to use the on-behalf-of request feature.
-### License requirements for requesting on behalf of agent identities (preview)
+### License requirements for requesting on behalf of agent identities
 [!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 ## Configure an access package policy allowing on behalf of requests
 Follow these steps to edit the policies, allowing on behalf of requests, for an existing access package:

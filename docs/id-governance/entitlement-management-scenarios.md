@@ -105,7 +105,7 @@ There are several ways that you can configure entitlement management for your or
 1. [Sign in to the My Access portal](entitlement-management-request-access.md#sign-in-to-the-my-access-portal)
 1. View active access packages
 
-## Govern access for agents (preview)
+## Govern access for agents
 
 [!INCLUDE [licensing-agent-id-governance](../includes/licensing-agent-id-governance.md)]
 
