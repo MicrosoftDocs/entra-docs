@@ -370,6 +370,8 @@
         href: create-access-review.md
       - name: Catalog access reviews
         href: catalog-access-reviews.md
+      - name: Include access packages in catalog reviews (preview)
+        href: catalog-access-reviews-access-packages.md
       - name: Custom data provided resources
         href: custom-data-resource-access-reviews.md      
       - name: Review access

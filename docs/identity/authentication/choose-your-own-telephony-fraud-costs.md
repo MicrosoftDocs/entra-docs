@@ -81,7 +81,7 @@ Review SMS and voice volume in your provider's usage reports. A sudden increase 
 ## Related content
 
 - [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
-- [Monitor and troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+- [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
 - [Estimate telecom provider and Azure hosting costs](phone-providers-faq.yml#how-much-does-choose-your-own-telephony-provider-cost).
 - [Security Store](/security/store/what-is-security-store).

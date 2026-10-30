@@ -37,7 +37,7 @@ Universal CAE supports the following user-based signals:
 * Administrator explicitly revokes all refresh tokens for a user
 * High user risk detected by Microsoft Entra ID Protection
 
-Universal CAE supports the following device-based signals (preview):
+Universal CAE supports the following device-based signals:
 
 * Device from which GSA access is being performed is deleted or disabled
 * Device from which GSA access is being performed is detected to be in the non-compliant state

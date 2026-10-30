@@ -91,7 +91,7 @@ Before production use, test your design in a nonproduction environment:
 
 Evaluation mode doesn't call your provider. Repeat your tests after any change to code, routing, configuration, or your provider integration.
 
-To monitor each region and provider, see [Monitor and troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+To monitor each region and provider, see [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 
 ## Related content
 
@@ -101,7 +101,7 @@ To monitor each region and provider, see [Monitor and troubleshoot SMS and voice
 - [Reliability in Azure Functions](/azure/reliability/reliability-functions).
 - [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
 - [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md).
-- [Monitor and troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+- [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 - [CYOT sample documentation (epp-packages-193-1)](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/tree/epp-packages-193-1/docs).
 - [Optional multi-region onboarding with Azure Front Door (epp-packages-193-1)][sample-regions].
 - [Multi-provider implementation (epp-packages-193-1)][sample-fallback].
