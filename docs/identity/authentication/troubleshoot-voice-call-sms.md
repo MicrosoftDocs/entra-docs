@@ -1,164 +1,95 @@
 ---
-title: Troubleshoot SMS and voice with your own telecom provider
-description: Trace CYOT SMS and voice requests with audit logs, sign-in logs, and Function App logs to identify issues and contact the right support team.
+title: Troubleshoot MFA voice call and SMS problems
+description: Learn how to troubleshoot voice call and SMS problems with MFA, understand telecom delivery, and help Microsoft Support investigate delivery issues.
 ms.topic: how-to
-ms.date: 10/30/2026
-ai-usage: ai-assisted
+ms.date: 04/09/2026
 ms.custom: msecd-doc-authoring-1012
 ms.reviewer: xueca
-# Customer intent: As an authentication administrator, I want to identify and resolve CYOT authentication, integration, and telecom delivery issues.
+# Customer intent: As an authentication administrator, I want to troubleshoot voice call and SMS problems with multifactor authentication (MFA) for Microsoft Entra ID.
 ---
+# Troubleshoot MFA voice call and SMS problems
 
-# Troubleshoot SMS and voice with your own telecom provider
+This article explains how to investigate and resolve problems with voice call or SMS sign-in methods for multifactor authentication (MFA). It explains how telecom delivery works behind the scenes, what Microsoft can and can't see, and what to expect during an investigation.
 
-<a id="troubleshoot-mfa-voice-call-and-sms-problems"></a>
-<a id="monitor-and-troubleshoot-your-own-telephony-provider"></a>
-<a id="monitor-and-troubleshoot-sms-and-voice-with-your-own-telecom-provider"></a>
+## Move to modern, phishing-resistant authentication
 
-Use this article to trace SMS and voice requests end to end with Choose Your Own Telephony Provider (CYOT), find where a request stopped, and contact the right team to resolve it: Microsoft support, your Azure team, or your telecom provider.
+> [!IMPORTANT]
+> Microsoft is committed to helping organizations adopt modern, phishing-resistant authentication methods. While telecom-based MFA provides an important layer of security, methods like passkeys, certificate-based authentication, and Windows Hello for Business offer stronger protection against interception and social engineering attacks.
+>
+> These methods also avoid the delivery variability inherent in global telecom networks. Microsoft recommends transitioning to these more secure alternatives:
+>
+> - [Passkeys (FIDO2)](concept-authentication-passwordless.md#fido2-security-keys)
+> - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
+> - [Certificate-based authentication](concept-certificate-based-authentication.md)
 
-<a id="trace-the-request"></a>
-<a id="how-global-telecom-delivery-works"></a>
-<a id="the-journey-of-an-sms-or-voice-mfa-request"></a>
-<a id="understand-what-to-monitor"></a>
+## How global telecom delivery works
 
-## How a CYOT request flows
+Microsoft works with primary telecom providers that have global reach. These providers rely on their own networks of suppliers, who control the routes for SMS and voice calls through local end-carrier networks. This supply chain represents thousands of individual carriers and routes around the globe.
 
-Each request passes through four stages, and each stage is recorded in its own logs:
+Microsoft maintains robust processes to help ensure successful delivery of every SMS and voice MFA request. However, once a request leaves the Microsoft network, delivery is delegated to external telecom providers.
 
-| Stage | What happens | Where to look |
-|---|---|---|
-| 1. Microsoft Entra sends the request | Microsoft Entra requires an SMS or voice code and sends the request to your endpoint. | Microsoft Entra audit logs |
-| 2. Your endpoint processes it | Your Function App receives the request and sends it to your telecom provider. | Function App logs |
-| 3. Your provider delivers it | Your provider sends the SMS message or voice call to the user's phone. | Your provider's portal |
-| 4. The user signs in | The user enters the code, and Microsoft Entra completes authentication. | Microsoft Entra sign-in logs |
+These providers often share the same end routes and carriers in a given destination country/region but might operate under different contractual agreements or traffic priorities. As a result, routing a request through a different provider doesn't always resolve the issue — the new request might follow the same downstream path and encounter the same obstacle.
 
-## Find the request in audit logs
+## The journey of an SMS or voice MFA request
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a Reports Reader.
-1. Go to **Entra ID** > **Monitoring & health** > **Audit logs**, and select the **Directory** tab.
-1. Set the **Date range**, and add these filters: **Service: Azure MFA** and **Category: Authentication**.
-1. Leave **Activity** set to **All** so you see both successful and failed requests.
+When you sign in and an SMS or voice MFA challenge is triggered, Microsoft can confirm the following steps given a Correlation ID and timestamp:
 
-:::image type="content" source="media/troubleshoot-voice-call-sms/audit-logs.png" alt-text="Screenshot of Audit logs filtered by Service Azure MFA and Category Authentication, showing CyotDeliverySucceeded and CyotDeliveryFailed activities." lightbox="media/troubleshoot-voice-call-sms/audit-logs.png":::
+1. **Request received.** Microsoft Entra generates the MFA request and constructs the payload for the SMS or voice request with the expected Microsoft or company branding.
+1. **Provider selected.** Microsoft sends the request to one of multiple external third-party telecom providers matching your country code.
+1. **Channel matched.** The request is routed through the correct channel (SMS or voice) per your configuration, selection, and policy requirements.
+1. **Delivery confirmed.** The provider confirms receipt of the telecom request and marks it as successfully delivered with no alterations.
 
-Select the request to open **Audit Log Details**, and note these values:
+After the provider confirms delivery, the request enters external telecom networks where Microsoft doesn't have direct visibility. Problems that occur beyond this point require collaboration with the provider to investigate.
 
-| Field | What it tells you |
-|---|---|
-| Activity Type | `CyotDeliverySucceeded` means your endpoint accepted the request. `CyotDeliveryFailed` means it didn't complete. |
-| DeliveryMethod | `Cyot` for a live request through your provider. `CyotEvaluation` for an evaluation request. |
-| Channel | `Sms` or `Voice`. |
-| AuthenticationMethod | The method used, such as `OneWaySms` or `OneWayVoiceMobileOtp`. |
-| Correlation ID | The identifier to share with support. |
-| FailureReason | Why a failed request didn't complete. |
+## What can go wrong after delivery to the provider
 
-:::image type="content" source="media/troubleshoot-voice-call-sms/audit-log-details.png" alt-text="Screenshot of Audit Log Details for CyotDeliverySucceeded with DeliveryMethod Cyot and Channel Voice." lightbox="media/troubleshoot-voice-call-sms/audit-log-details.png":::
+After the request reaches an external telecom provider, two types of problems can occur.
 
-<a id="monitor-microsoft-entra-authentication"></a>
+### The call or message is dropped or blocked
 
-## Check sign-in logs
+The provider should confirm this issue to Microsoft. Common causes include:
 
-Use sign-in logs to confirm whether the user completed authentication.
+- **Device-level configuration.** Even when all steps to send the message are correct, the device itself could refuse the call or route it to voicemail. Microsoft automatically retries these failures across different providers.
+- **Carrier-level blocking.** The carrier might block the call or message due to international automated fraud detection systems.
+- **Regional availability issues.** In rare cases, the message is dropped due to availability issues in a specific country/region. Microsoft and its providers have robust retry and reroute mechanisms for these scenarios and post automated outage communications when the impact is broadly reported.
 
-1. Go to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
-1. Find the sign-in by user and time, and open it.
-1. On **Authentication Details**, review the method, whether the step succeeded, and the result detail.
+### The call or message is altered by a downstream carrier
 
-Sign-in logs show the method as **Text message** or **Voice**. To confirm that the request was sent through your provider, use audit logs.
+Because the provider already confirmed delivery, Microsoft can only see a successful delivery per its specification. When message content is altered:
 
-<a id="monitor-and-notify-operators"></a>
-<a id="monitor-the-azure-function"></a>
+- The customer should provide evidence that the message received on their device didn't appear with the expected branding or channel.
+- Microsoft collaborates with the provider to understand the end-carrier behavior taken on behalf of the request.
+- The provider will likely correct the route for the affected country code or phone number to avoid carriers that aren't honoring the original message contract.
 
-## Check Function App logs
+## What to expect during an investigation
 
-Use your Function App logs to see how your endpoint processed the request and what it returned to Microsoft Entra.
+Due to the complexity of global telecom routing and limited visibility beyond the provider, telecom delivery investigations involve coordination across multiple companies and stakeholders.
 
-1. In the Azure portal, open the Function App created by setup.
-1. Go to **Monitoring** > **Application Insights**, and open the linked Application Insights resource.
-1. Select **Logs**, and run the following query for the time of the attempt:
+### Timeline
 
-	```kusto
-	AppRequests
-	| where TimeGenerated > ago(1h)
-	| where Url has "/api/SendOtp"
-	| project TimeGenerated, ResultCode, Success, DurationMs, OperationId
-	| order by TimeGenerated desc
-	```
+Investigations into downstream customer-reported delivery issues can take 4–6 weeks. The provider checks their logs and, if no issue is found locally, queries downstream partners who might use additional providers.
 
-`ResultCode` shows what your Function App returned to Microsoft Entra. To see your provider's response for the same request, query `AppTraces` with its `OperationId`.
+### Root cause analysis (RCA) policy
 
-<a id="diagnose-a-symptom"></a>
-<a id="troubleshoot-by-symptom"></a>
-<a id="sms-or-voice-isnt-available"></a>
-<a id="the-azure-function-isnt-receiving-requests"></a>
-<a id="the-endpoint-returns-401-or-403"></a>
-<a id="the-request-times-out"></a>
-<a id="what-can-go-wrong-after-delivery-to-the-provider"></a>
-<a id="the-call-or-message-is-dropped-or-blocked"></a>
-<a id="the-call-or-message-is-altered-by-a-downstream-carrier"></a>
-<a id="the-provider-accepted-the-request-but-the-message-wasnt-received"></a>
-<a id="the-user-receives-the-code-but-authentication-fails"></a>
-<a id="troubleshoot-evaluation-mode"></a>
-<a id="troubleshoot-during-gradual-rollout"></a>
+Microsoft doesn't publish RCAs for issues that originate with external telecom providers. Carriers often don't share root cause details with Microsoft due to international visibility and competitive agreements.
 
-## Identify who can help
+## Help with the investigation
 
-Use what you see in audit logs to find the right contact.
+To help Microsoft Support investigate provider-related issues:
 
-| What you see | What to check | Contact |
-|---|---|---|
-| No CYOT activity in audit logs | Confirm the date range and filters, that the user is included in SMS or voice targeting, and that a new phone challenge was required. | Microsoft support |
-| Only `CyotEvaluation` activity | The profile is in **Evaluation**. Switch to **Production** to route traffic through your provider. | No support needed |
-| `CyotDeliveryFailed` with `EndpointClientError` | Your endpoint rejected the request. Check your Function App logs and authentication settings. | Your Azure team |
-| `CyotDeliveryFailed` with `EndpointServerError` | Your endpoint returned an error or didn't respond in time. Check your Function App logs and your provider's status. | Your Azure team |
-| `CyotDeliveryFailed` with `NonceMismatch` | Your endpoint's response didn't match what Microsoft Entra expects. Compare any customizations with the CYOT sample. | Your Azure team |
-| `CyotDeliverySucceeded`, but the user didn't receive the code | Your endpoint accepted the request. Check your provider's delivery records. | Your telecom provider |
-| The user received the code, but sign-in failed | Check the sign-in logs for an expired, reused, or incorrect code. | Microsoft support |
-| Delivery blocked to certain countries/regions, fraud blocks, or unexpected charges | Review your provider's fraud, destination, and spending controls. | Your telecom provider |
+- **Submit a Correlation ID and timestamp** for the sign-ins that need investigation. You can find these values in the [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md). The Correlation ID returns all Request IDs associated with the sign-in.
 
-> [!TIP]
-> When a request times out, check your provider's records before you try again. Your provider might have already accepted the original request.
+  To view the sign-in logs from the Microsoft Entra admin center:
 
-<a id="get-help"></a>
-<a id="determine-where-to-get-help"></a>
+  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+  1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 
-## Contact support
+  :::image type="content" source="media/troubleshoot-voice-call-sms/sign-in-log-correlation-id.png" alt-text="Screenshot that shows the Date and Correlation ID fields in the sign-in logs in the Microsoft Entra admin center." lightbox="media/troubleshoot-voice-call-sms/sign-in-log-correlation-id.png":::
 
-| Contact | Covers | How to reach |
-|---|---|---|
-| Microsoft support | Authentication method policy, Microsoft Entra authentication, and the request to your endpoint | [Get support for Microsoft Entra](/entra/fundamentals/how-to-get-support) |
-| Your Azure team | Your Function App, its configuration, and Azure resources | Internal. For Azure platform issues, contact Azure support. |
-| Your telecom provider | Provider account, delivery, fraud controls, and usage charges | Support details in the provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing |
-
-<a id="what-to-expect-during-an-investigation"></a>
-<a id="timeline"></a>
-<a id="root-cause-analysis-rca-policy"></a>
-<a id="help-with-the-investigation"></a>
-<a id="collect-information-before-contacting-support"></a>
-<a id="dont-include"></a>
-
-### Information to include
-
-- Tenant ID, channel (SMS or voice), and the UTC time of the attempt.
-- The audit log **Correlation ID**, `DeliveryMethod`, and `FailureReason`.
-- Your provider's transaction ID, if available.
-- Any recent configuration changes.
-
-<a id="move-to-modern-phishing-resistant-authentication"></a>
-<a id="send-sign-in-logs-to-azure-monitor"></a>
+- **Provide fresh samples.** End carriers often require Correlation IDs from the last 48–72 hours. Older requests may not propagate to the final end carrier in time for investigation. You may be asked to provide multiple samples.
+- **Provide evidence of altered messages.** If the message you received didn't appear with the expected branding or channel, share a screenshot or description of what you received.
 
 ## Related content
 
-- [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
-- [Plan for resiliency and high availability with your own telecom provider](choose-your-own-telephony-reliability.md).
-- [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md).
-- [Audit logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-audit-logs).
-- [Monitor Microsoft Entra sign-ins](/entra/identity/monitoring-health/concept-sign-ins).
-- [CYOT sign-in monitoring][sample-sign-in-monitoring].
-- [CYOT setup troubleshooting][sample-troubleshooting].
-- [Integrate Microsoft Entra logs with Azure Monitor](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs).
-- [Analyze Microsoft Entra activity logs with Log Analytics](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics).
-
-[sample-sign-in-monitoring]: https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/epp-packages-193-1/docs/SIGN-IN-MONITORING.md
-[sample-troubleshooting]: https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/epp-packages-193-1/setup/docs/Troubleshooting.md
+- [Voice call authentication method in Microsoft Entra ID](concept-authentication-phone-options.md)
+- [Configure and enable users for SMS-based authentication using Microsoft Entra ID](howto-authentication-sms-signin.md)

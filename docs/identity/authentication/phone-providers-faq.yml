@@ -31,7 +31,7 @@ sections:
         <a id="when-will-choose-your-own-telephony-provider-be-available"></a>
         <a id="when-is-choose-your-own-telephony-provider-available"></a>
 
-        CYOT is generally available starting October 30, 2026, for Microsoft Entra ID workforce tenants in global Azure. All tenants can use it, with no enrollment needed.
+        CYOT is generally available starting October 30, 2026, for Microsoft Entra ID workforce tenants in global Azure.
     - question: |
         Which telecom providers can I use?
       answer: |
@@ -150,7 +150,7 @@ sections:
         <a id="what-happens-if-cyot-production-delivery-fails"></a>
         <a id="where-do-i-start-if-authentication-isnt-working"></a>
 
-        If you're partway through a rollout, pause it. Then use [Monitor and troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider) to find where the request stopped and who to contact.
+        If you're partway through a rollout, pause it. Then use [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider) to find where the request stopped and who to contact.
     - question: |
         How do I plan for high availability?
       answer: |
@@ -189,7 +189,7 @@ additionalContent: |
 
   - [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
   - [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
-  - [Monitor and troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+  - [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
   - [Protect against telephony fraud with your own telecom provider](choose-your-own-telephony-fraud-costs.md).
   - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
   - [Estimate telecom provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
