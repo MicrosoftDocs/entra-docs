@@ -61,7 +61,7 @@
     items:
     - name: Telephony providers overview
       href: concept-phone-providers.md
-    - name: Set up SMS and voice by using APIs
+    - name: Set up SMS and voice with your own telecom providers
       href: how-to-set-up-sms-voice-api.md
     - name: Troubleshoot SMS and voice
       href: troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider

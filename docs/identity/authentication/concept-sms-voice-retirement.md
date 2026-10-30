@@ -2,7 +2,7 @@
 title: Passkeys by default and retirement of Microsoft-provided SMS and voice authentication
 description: Learn how to prepare for the retirement of Microsoft provided SMS and Voice authentication in Microsoft Entra ID and migrate users to passkeys.
 ms.topic: how-to
-ms.date: 10/30/2026
+ms.date: 09/23/2026
 author: marinasanchezz1
 ms.author: marisanchez
 ai-usage: ai-assisted
@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 To help enterprises adopt AI at scale, it is imperative for users to use secure authentication and move from phishable authentication methods to phishing-resistant authentication methods like [passkeys](concept-authentication-passkeys-fido2.md). Therefore, Microsoft Entra ID is making passkeys the default sign-in experience, so every organization gets phishing-resistant security by default. SMS and voice are no longer positioned as secure authentication methods and will no longer be provided natively in Entra ID.
 
-Starting September 1, 2026, passkeys become the default authentication experience and will be automatically enabled for users enabled for SMS or voice. From February 1, 2027, Microsoft-provided telephony delivery for SMS and voice will be retired for all users except Global Administrators and external users. For Global Administrators and external users, Microsoft-provided SMS and voice authentication will be retired on July 1, 2027. Customers who still require these methods should configure a telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/). Soprano and Telesign are supported for the October 30, 2026 CYOT general availability release. Infobip is coming soon. For provider and offer information, see [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
+Starting September 1, 2026, passkeys become the default authentication experience and will be automatically enabled for users enabled for SMS or voice. From February 1, 2027, Microsoft-provided telephony delivery for SMS and voice will be retired for all users except Global Administrators and external users. For Global Administrators and external users, Microsoft-provided SMS and voice authentication will be retired on July 1, 2027. Customers who still require these methods should configure a telephony provider through Microsoft Security Store. Soprano and Telesign are the initial providers available during the private preview, and more providers will become available by general availability. For provider and offer information, see [Choose a telephony provider for SMS and voice authentication](concept-phone-providers.md).
 
 Users who already sign in with passkeys, Windows Hello for Business, or another phishing-resistant method can continue using those methods. However, users who remain enabled for SMS or voice might still receive prompts to register passkeys on eligible devices. The July 1, 2027 retirement date applies to Global Administrators and external users. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. To check who in your tenant still uses SMS or Voice, see [Find active SMS or Voice users in your tenant](#1-find-users-enabled-for-sms-or-voice).
 
@@ -66,15 +66,14 @@ To configure a registration campaign for passkeys:
 1. Go to **Entra ID > Authentication methods > Registration campaign**.
 1. Set **State** to **Microsoft Managed** and target the security group of SMS and Voice users you created in step 1.
 
-### 3. Evaluate a telephony provider in [Microsoft Security Store](https://securitystore.microsoft.com/) for operational needs
+### 3. Evaluate a telephony provider in Microsoft Security Store for operational needs
 
-Microsoft recommends passkeys as the primary migration path for all users where possible. If you operate in a regulated industry or have an operational need for a telephony channel — for example, specific compliance regimes that require an out-of-band SMS, or scenarios where no other method is workable — you can use a telephony provider available through [Microsoft Security Store](https://securitystore.microsoft.com/) for those user segments.
+Microsoft recommends passkeys as the primary migration path for all users where possible. If you operate in a regulated industry or have an operational need for a telephony channel — for example, specific compliance regimes that require an out-of-band SMS, or scenarios where no other method is workable — you can use a telephony provider available through Microsoft Security Store for those user segments.
 
 1. Identify the specific user segments where you have a genuine regulatory or operational need for a telephony channel. Document the requirement, such as the applicable regulation or scenario.
-1. Review Soprano and Telesign and the available offers in [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
-1. Beginning October 30, 2026, customers who need to continue using SMS or voice can select and configure a telephony provider from [Microsoft Security Store](https://securitystore.microsoft.com/).
-1. Purchase your provider subscription through [Security Store](https://securitystore.microsoft.com/) and test targeting changes in a test tenant.
-1. In production, preserve the existing SMS or voice `includeTargets` and use evaluation mode plus `migrationPercentage` to validate and gradually roll out CYOT.
+1. Review the initial private-preview providers, Soprano and Telesign, and their offers in [Choose a telephony provider for SMS and voice authentication](concept-phone-providers.md). More providers will become available by general availability.
+1. Beginning October 30, 2026, customers who need to continue using SMS or voice can select and configure a telephony provider from Microsoft Security Store.
+1. Stand up the carrier contract through the marketplace flow and test with a pilot group before broad rollout.
 1. For every other user segment in your tenant, default to passkeys.
 
 
@@ -94,7 +93,7 @@ Use [end-user communication templates](https://aka.ms/mfatemplates) for email, T
 
 Beginning February 1, 2027, Microsoft-provided SMS and voice delivery will be retired in Microsoft Entra ID for all users except Global Administrators and external users. Internal guest users remain in scope for the February 1, 2027 retirement.
 
-If your tenant still has users in scope for the February 1, 2027 retirement enabled for SMS or voice and you haven't configured a telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/), those users can no longer use SMS or voice to complete MFA and sign in as usual.
+If your tenant still has users in scope for the February 1, 2027 retirement enabled for SMS or voice and you haven't configured a telephony provider through Microsoft Security Store, those users can no longer use SMS or voice to complete MFA and sign in as usual.
 
 After this date, users in scope for the February 1, 2027 retirement whose only available MFA method is SMS or voice are required to register a passkey during sign-in to continue accessing their account. This prompt is blocking. Users must register a passkey before they can continue signing in to their account.
 
@@ -129,7 +128,7 @@ Content-Type: application/json
 
 After this setting is applied, your tenant is excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines apply regardless of this setting for users in scope of the February 1 retirement. Global Administrators and external users instead follow the July 1, 2027 retirement date. Internal guest users remain on the February 1, 2027 retirement date.
 
-If your tenant still has users enabled for Microsoft-managed SMS or voice on their applicable retirement date, and you haven't configured a telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/), those users can no longer use SMS or voice to satisfy MFA requirements and continue signing in.
+If your tenant still has users enabled for Microsoft-managed SMS or voice on their applicable retirement date, and you haven't configured a telephony provider through Microsoft Security Store, those users can no longer use SMS or voice to satisfy MFA requirements and continue signing in.
 
 **There is no opt out for enforcement. This requirement applies to all tenants on the applicable retirement date for each user population.**
 

@@ -1,5 +1,5 @@
 ---
-title: Set up SMS and voice with your own telecom provider by using APIs
+title: Set up SMS and voice with your own telecom providers
 description: Deploy your telecom integration, validate evaluation mode, and gradually roll out SMS and voice delivery by using CYOT APIs.
 ms.topic: how-to
 ms.date: 10/30/2026
@@ -8,7 +8,7 @@ ai-usage: ai-assisted
 # Customer intent: As an identity administrator, I want to deploy a telecom integration and configure SMS and voice delivery through Microsoft Graph.
 ---
 
-# Set up SMS and voice with your own telecom provider by using APIs
+# Set up SMS and voice with your own telecom providers
 
 Use Choose Your Own Telephony Provider (CYOT) to deliver SMS and voice authentication through your organization's telephony provider. With CYOT, you purchase a supported provider offer through [Microsoft Security Store](https://securitystore.microsoft.com/), deploy the integration in your Azure subscription, and configure Microsoft Entra to route SMS or voice authentication through your provider.
 
