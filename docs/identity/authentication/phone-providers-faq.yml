@@ -1,97 +1,198 @@
 ### YamlMime:FAQ
 metadata:
-  title: Frequently asked questions about telephony providers in Microsoft Entra ID
-  description: Find answers to common questions about selecting, configuring, evaluating, and supporting Choose Your Own Telephony Provider for Microsoft Entra ID.
+  title: Frequently asked questions about Choose Your Own Telephony Provider
+  description: Find answers about CYOT provider selection, supported scenarios, costs, evaluation, migration, reliability, recovery, and support in Microsoft Entra ID.
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 09/20/2026
+  ms.date: 10/30/2026
   ai-usage: ai-assisted
-title: Frequently asked questions about telephony providers in Microsoft Entra ID
+title: Frequently asked questions
 
 summary: |
-  The following are frequently asked questions about Choose Your Own Telephony Provider in Microsoft Entra ID. For questions not answered here, ask the community on the [Microsoft Q&A question page for Microsoft Entra ID](/answers/topics/azure-active-directory.html).
+  <a id="frequently-asked-questions-about-choose-your-own-telephony-provider"></a>
+
+  These are common questions about Choose Your Own Telephony Provider (CYOT) in Microsoft Entra ID. For an overview, see [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
 
   This FAQ covers:
 
-  * [Provider selection and availability](#provider-selection-and-availability)
-  * [Costs and billing](#costs-and-billing)
-  * [Migration and evaluation](#migration-and-evaluation)
-  * [Support and troubleshooting](#support-and-troubleshooting)
+  - [Provider selection and availability](#provider-selection-and-availability).
+  - [Supported scenarios](#supported-scenarios).
+  - [Costs and billing](#costs-and-billing).
+  - [Evaluation and migration](#evaluation-and-migration).
+  - [Reliability and recovery](#reliability-and-recovery).
+  - [Support](#support).
 
 sections:
 - name: Provider selection and availability
   questions:
     - question: |
-        When will Choose Your Own Telephony Provider be available?
+        When is CYOT available?
       answer: |
-        Information about the telephony providers participating in the private preview is now available. The configuration experience will become available starting October 30, 2026.
+        <a id="when-will-choose-your-own-telephony-provider-be-available"></a>
+        <a id="when-is-choose-your-own-telephony-provider-available"></a>
 
-        Until the configuration experience is available, review the supported provider options and begin planning your migration from Microsoft-managed SMS and voice authentication.
+        CYOT is generally available starting October 30, 2026, for Microsoft Entra ID workforce tenants in global Azure. All tenants can use it, with no enrollment needed.
     - question: |
-        Which telephony providers are available during the private preview?
+        Which telecom providers can I use?
       answer: |
-        Soprano and Telesign are the initial telephony providers available during the private preview. More providers will become available by general availability.
+        <a id="which-telecom-providers-are-available"></a>
+        <a id="which-telephony-providers-are-available"></a>
+        <a id="which-telephony-providers-are-available-during-the-private-preview"></a>
 
-        Pricing and other commercial details for these providers are available in Microsoft Security Store.
+        You can choose Soprano or Telesign. Infobip is coming soon. For coverage, pricing, and terms, see [Available telecom providers](concept-phone-providers.md#available-telephony-providers) and each provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing.
     - question: |
-        Can I use my existing SMS provider?
+        Can I use my existing account with a provider?
       answer: |
-        Yes, you can use your existing provider if it's one of the supported telephony providers. If your current provider isn't supported, you will need to select a supported provider to continue using SMS or voice authentication after Microsoft-managed telephony is retired.
+        <a id="can-i-use-my-existing-sms-provider"></a>
+        <a id="can-i-use-my-existing-account-with-a-supported-telephony-provider"></a>
+
+        Check with your provider. Your provider might also need its own registration, such as sender registration.
     - question: |
-        Can I use Choose Your Own Telephony Provider to keep SMS sign-in as a primary authentication method?
+        Can I use a provider that isn't on the list?
       answer: |
-        No. The feature doesn't support SMS sign-in as a primary authentication method. The retirement of SMS sign-in as a primary authentication method applies even when you use Choose Your Own Telephony Provider. If your organization currently uses SMS sign-in for primary authentication, migrate users to supported alternatives based on their scenarios. Alternatives include passkeys, QR code authentication, FIDO2 security keys, and other authentication methods supported by Microsoft Entra ID.
+        <a id="can-i-use-a-telephony-provider-that-isnt-listed-as-a-supported-provider"></a>
+
+        CYOT supports the providers listed in [Available telecom providers](concept-phone-providers.md#available-telephony-providers). Check that list for providers as they're added.
     - question: |
-        Does this work with Microsoft Entra ID, Microsoft Entra External ID, and Azure AD B2C?
+        Can I use different providers for SMS and voice?
       answer: |
-        Choose Your Own Telephony Provider is currently available only for Microsoft Entra ID. Microsoft Entra External ID and Azure AD B2C aren't included.
+        <a id="can-i-configure-multiple-telephony-providers"></a>
+
+        Yes. You can use one provider for SMS and another for voice.
+
+- name: Supported scenarios
+  questions:
     - question: |
-        Can I configure multiple telephony providers?
+        Which Microsoft Entra products support CYOT?
       answer: |
-        Starting October 30, 2026, you can configure one telephony provider per channel: one provider for SMS and one provider for voice.
+        <a id="does-this-work-with-microsoft-entra-id-microsoft-entra-external-id-and-azure-ad-b2c"></a>
+        <a id="which-authentication-scenarios-support-cyot"></a>
+
+        CYOT is available for Microsoft Entra ID workforce tenants. It isn't currently available for Microsoft Entra External ID or Azure AD B2C.
+    - question: |
+        Can I use CYOT for SMS sign-in as a primary method?
+      answer: |
+        <a id="can-i-use-choose-your-own-telephony-provider-to-keep-sms-sign-in-as-a-primary-authentication-method"></a>
+        <a id="can-i-use-cyot-for-sms-sign-in-as-a-primary-authentication-method"></a>
+
+        No. CYOT supports SMS and voice as verification methods, not as primary sign-in. Move users who sign in with SMS to another supported method.
+
+        > [!IMPORTANT]
+        > Microsoft recommends phishing-resistant methods such as [passkeys](concept-authentication-passkeys-fido2.md). Use SMS or voice only for users with a business, regulatory, or technical need for it.
 
 - name: Costs and billing
   questions:
     - question: |
-        How much does Choose Your Own Telephony Provider cost?
+        How much does CYOT cost?
       answer: |
-        The primary cost is what your selected telephony provider charges for SMS and voice messages, based on the provider's pricing and your usage. The feature uses a routing function deployed in your Azure subscription to securely connect Microsoft Entra ID with your selected telephony provider. Standard Azure consumption charges apply to the routing function, but these costs are expected to be minimal for most customers compared to telephony provider charges.
+        <a id="do-budget-alerts-stop-charges"></a>
+        <a id="how-much-does-choose-your-own-telephony-provider-cost"></a>
 
-        Review pricing and other commercial details for the available provider offers:
+        Plan for two costs:
 
-        - Soprano: [Per-user offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_user) or [per-transaction offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_transaction) in Microsoft Security Store.
-        - Telesign: [Telesign Verify for Microsoft Entra](https://securitystore.microsoft.com/solutions/telesigncorporation1779799505747.telesign-verify-cyot-azure) in Microsoft Security Store.
+        - **Provider costs:** SMS and voice charges set by your provider's offer on [Microsoft Security Store](https://securitystore.microsoft.com/).
+        - **Azure costs:** the resources that host the integration in your subscription.
 
-- name: Migration and evaluation
+        For estimates, see [Estimate telecom provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
+    - question: |
+        Does Microsoft charge me for SMS and voice sent through my provider?
+      answer: |
+        <a id="does-microsoft-bill-me-for-sms-and-voice-sent-through-my-telephony-provider"></a>
+
+        Your provider sets SMS and voice charges under the offer you purchase in [Microsoft Security Store](https://securitystore.microsoft.com/). Azure hosting costs are billed to your Azure subscription.
+
+- name: Evaluation and migration
   questions:
     - question: |
-        How do I migrate?
+        How do I move to my own telecom provider?
       answer: |
-        Choose Your Own Telephony Provider will be available starting October 30, 2026. When it becomes available, you will configure the feature from the Microsoft Entra admin center.
+        <a id="migration-and-evaluation"></a>
+        <a id="how-do-i-migrate"></a>
+        <a id="do-i-deploy-another-endpoint-for-voice-after-setting-up-sms"></a>
+        <a id="how-do-i-move-to-my-own-telephony-provider"></a>
+        <a id="do-i-need-to-change-my-existing-sms-or-voice-user-targeting-to-use-cyot"></a>
 
-        Migration typically involves the following steps:
+        1. Subscribe to a provider offer in [Microsoft Security Store](https://securitystore.microsoft.com/).
+        1. Set up the integration in your Azure subscription.
+        1. Create an SMS and voice profile.
+        1. Evaluate the integration.
+        1. Roll out traffic to your provider.
 
-        1. Select a supported telephony provider and establish an account with that provider.
-        1. Deploy a routing function in your Azure subscription. The routing function securely sends authentication requests from Microsoft Entra ID to your provider.
-        1. Select the users or groups that will use the provider for SMS, voice, or both.
-        1. Evaluate the integration before it affects users.
-        1. Gradually enable the provider for production authentication traffic.
-
-        Detailed configuration and deployment instructions will be available when the feature is released. Complete your migration before the February 1, 2027 retirement of Microsoft-managed telephony to allow sufficient time for testing and a phased production rollout.
+        For details, see [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
     - question: |
-        Can I evaluate before switching my users to a new provider?
+        Can I test CYOT before I move traffic?
       answer: |
-        Yes. Evaluation mode lets you validate that authentication requests are successfully routed to your telephony provider without changing the authentication experience for your users.
+        <a id="can-i-evaluate-before-switching-my-users-to-a-new-provider"></a>
+        <a id="can-i-test-cyot-before-moving-authentication-delivery-to-my-provider"></a>
 
-        Your users continue to receive authentication messages through the currently active delivery method while you review the evaluation results. After you confirm that the integration is working as expected, you can enable the provider for production traffic and gradually expand the rollout.
+        Yes. **Evaluation** mode sends requests to your integration while Microsoft continues to deliver codes to users. Use `migrationPercentage` to set the evaluation sampling percentage when configuring the policy through APIs. To confirm delivery through your provider, switch to **Production** at a low traffic percentage.
+    - question: |
+        Can I move traffic gradually?
+      answer: |
+        <a id="can-i-move-traffic-to-my-provider-gradually"></a>
 
-- name: Support and troubleshooting
+        Yes. Increase the **Traffic routed through provider percentage** in stages, and check results before each increase.
+    - question: |
+        How long do policy changes take to apply?
+      answer: |
+        Changes to the authentication methods policy can take up to about an hour to apply.
+    - question: |
+        I lost the setup output when Cloud Shell closed. What do I do?
+      answer: |
+        Copy the deployment summary as soon as the script finishes. Cloud Shell sessions are temporary and can close when you switch tabs. If you lost it, find the deployed resources in the Azure portal.
+
+- name: Reliability and recovery
   questions:
     - question: |
-        What is the support model?
+        What should I do if SMS or voice codes aren't arriving?
       answer: |
-        Microsoft provides support for the Microsoft Entra ID platform, including the telephony provider configuration experience, authentication workflows, and the routing between Microsoft Entra ID and your telephony provider.
+        <a id="is-microsoft-managed-delivery-a-permanent-recovery-option"></a>
+        <a id="what-happens-if-cyot-production-delivery-fails"></a>
+        <a id="where-do-i-start-if-authentication-isnt-working"></a>
 
-        Your organization is responsible for managing its selected telephony provider relationship, including provider account configuration, service availability, message delivery, and issues related to SMS or voice delivery. For provider or message delivery issues, contact your provider's support team.
+        If you're partway through a rollout, pause it. Then use [Monitor and troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider) to find where the request stopped and who to contact.
+    - question: |
+        How do I plan for high availability?
+      answer: |
+        <a id="how-should-i-plan-for-higher-availability"></a>
 
-        Microsoft provides diagnostics and troubleshooting guidance to help determine whether an issue is related to the Microsoft Entra ID platform or the telephony provider integration.
+        You can deploy the integration across multiple Azure regions, review your provider's redundancy, and add a secondary provider. The multi-region and secondary-provider designs are sample-only guidance. Test failover before you rely on it. See [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
+
+- name: Support
+  questions:
+    - question: |
+        Who manages each part of CYOT?
+      answer: |
+        <a id="support-and-troubleshooting"></a>
+        <a id="who-operates-the-cyot-integration"></a>
+
+        | Owner | Responsibility |
+        |---|---|
+        | Microsoft | Microsoft Entra authentication and the handoff to your endpoint |
+        | Your organization | Deploying and running the integration, managing the provider account, and renewing integration credentials and certificates |
+        | Telecom provider | SMS and voice delivery, and fraud controls |
+    - question: |
+        Who do I contact for help?
+      answer: |
+        <a id="what-is-the-support-model"></a>
+        <a id="what-does-microsoft-support"></a>
+        <a id="when-should-i-contact-my-telephony-provider"></a>
+
+        | Issue | Contact |
+        |---|---|
+        | Microsoft Entra authentication, code validation, or the handoff to your endpoint | [Microsoft Support](/entra/fundamentals/how-to-get-support) |
+        | Your Azure Function or Azure resources | Your Azure team |
+        | Delivery, sender registration, destinations, fraud controls, or charges | Your telecom provider. Contact details are in its [Security Store](https://securitystore.microsoft.com/) listing. |
+
+additionalContent: |
+  ## Related content
+
+  - [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
+  - [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
+  - [Monitor and troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+  - [Protect against telephony fraud with your own telecom provider](choose-your-own-telephony-fraud-costs.md).
+  - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
+  - [Estimate telecom provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
+  - [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](concept-sms-voice-retirement.md).
+  - [CYOT costs and billing](#how-much-does-choose-your-own-telephony-provider-cost).
+  - [Microsoft Q&A question page for Microsoft Entra ID](/answers/topics/azure-active-directory.html).

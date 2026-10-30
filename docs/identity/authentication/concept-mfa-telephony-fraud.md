@@ -37,3 +37,4 @@ For Microsoft Entra External ID, the default SMS verification for external tenan
 * [Authentication methods in Microsoft Entra ID](concept-authentication-authenticator-app.md)
 * [Securing phone-based MFA in B2C](/azure/active-directory-b2c/phone-based-mfa)
 * [Regions that need to opt in for MFA telephony verification](concept-mfa-regional-opt-in.md)
+* [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md)

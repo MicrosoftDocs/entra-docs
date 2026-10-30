@@ -3,7 +3,7 @@ metadata:
   title: FAQ for Microsoft-provided SMS and voice retirement
   description: Frequently asked questions about the retirement of Microsoft-provided SMS and voice authentication in Microsoft Entra ID and the move to passkeys.
   ms.topic: faq
-  ms.date: 10/20/2026
+  ms.date: 10/30/2026
   author: marinasanchezz1
   ms.author: marisanchez
   ai-usage: ai-assisted
@@ -22,7 +22,7 @@ sections:
 
           Organizations that still require SMS or voice will continue to have that option through telephony providers when there is a legitimate business, regulatory, or technical need. This change is intended to modernize authentication while preserving flexibility for those scenarios.
 
-          Beginning September 1, 2026, passkeys will be automatically enabled for users currently enabled for SMS or voice. Beginning February 1, 2027, the retirement applies to all users except Global Administrators and external users. If you haven't configured a telephony provider through Microsoft Security Store, users in scope of the February 1 retirement can no longer use SMS or voice for MFA. Users in scope of that retirement whose only MFA method is SMS or voice will be required to register a passkey during sign-in before they can continue accessing their account. Global Administrators and external users follow a later retirement date of July 1, 2027. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. Tenants that have configured a telephony provider can continue using SMS or voice according to their organization's policies.
+          Beginning September 1, 2026, passkeys will be automatically enabled for users currently enabled for SMS or voice. Beginning February 1, 2027, the retirement applies to all users except Global Administrators and external users. If you haven't configured a telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/), users in scope of the February 1 retirement can no longer use SMS or voice for MFA. Users in scope of that retirement whose only MFA method is SMS or voice will be required to register a passkey during sign-in before they can continue accessing their account. Global Administrators and external users follow a later retirement date of July 1, 2027. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. Tenants that have configured a telephony provider can continue using SMS or voice according to their organization's policies.
       - question: |
           Do Global Administrators and external users have a different retirement date?
         answer: |
@@ -30,7 +30,7 @@ sections:
 
           Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date.
       - question: |
-          Will there be costs associated with using a telephony provider through Microsoft Security Store?
+          Will there be costs associated with using a telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/)?
         answer: |
           Yes. Pricing varies by telephony provider and region. Costs depend on your usage, geographic distribution, selected provider, and offer. Review the Soprano and Telesign offers in the [telephony provider FAQ](phone-providers-faq.yml#costs-and-billing) for specific pricing and commercial details.
 
@@ -44,15 +44,15 @@ sections:
       - question: |
           What about SSPR (self-service password reset)?
         answer: |
-          The retirement of native SMS and voice applies across Microsoft Entra, including SSPR. However, users can still use SMS and voice through a telephony provider available in Microsoft Security Store.
+          The retirement of native SMS and voice applies across Microsoft Entra, including SSPR. However, users can still use SMS and voice through a telephony provider available in [Microsoft Security Store](https://securitystore.microsoft.com/).
 
           Microsoft is also planning to introduce support to change password for users who authenticate with passwordless sign in. More details to come.
       - question: |
-          What's Microsoft Security Store?
+          What's [Microsoft Security Store](https://securitystore.microsoft.com/)?
         answer: |
-          Instead of Microsoft-provided SMS or voice, you can contract directly with a supported telephony provider through Microsoft Security Store. You get regional control and can select a provider that meets your local security and compliance requirements. This option is for customers who have a regulated or operational requirement for a telephony channel.
+          Instead of Microsoft-provided SMS or voice, you can contract directly with a supported telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/). You get regional control and can select a provider that meets your local security and compliance requirements. This option is for customers who have a regulated or operational requirement for a telephony channel.
 
-          Soprano and Telesign are the initial telephony providers available during the private preview. More providers will become available by general availability. The configuration experience becomes available beginning October 30, 2026. For provider and offer information, see [Choose a telephony provider for SMS and voice authentication](concept-phone-providers.md).
+          Soprano and Telesign are supported for the October 30, 2026 CYOT general availability release. Infobip is coming soon. For provider and offer information, see [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
       - question: |
           Where can I see if my tenant is in scope?
         answer: |
@@ -68,7 +68,7 @@ sections:
 
           - **FIDO2 security keys:** Use a supported hardware security key as a phishing-resistant alternative to mobile passkeys.
           - **Authenticator verification codes:** Use time-based one-time password (TOTP) codes generated by Microsoft Authenticator or another OATH TOTP-compatible app. TOTP doesn't depend on SMS delivery or push notifications, but isn't phishing-resistant and doesn't satisfy a Conditional Access policy that requires phishing-resistant authentication. For more information, see [OATH tokens](concept-authentication-oath-tokens.md).
-          - **A telephony provider:** If users still need SMS or voice for business, regulatory, or technical reasons, configure a supported provider through Microsoft Security Store and migrate those users before their applicable retirement date. See [Choose a telephony provider for SMS and voice authentication](concept-phone-providers.md).
+          - **A telephony provider:** If users still need SMS or voice for business, regulatory, or technical reasons, configure a supported provider through [Microsoft Security Store](https://securitystore.microsoft.com/) and migrate those users before their applicable retirement date. See [Choose a telephony provider for SMS and voice authentication](concept-phone-providers.md).
 
           After you enable software OATH tokens for users, they can use Microsoft Authenticator or another OATH TOTP-compatible app to generate verification codes. Third-party software OATH tokens are enabled for sign-in by default unless disabled by an administrator, providing an alternative where Microsoft Authenticator is unavailable. For more information, see [Manage third-party software OATH tokens](how-to-mfa-manage-oath-tokens.md#manage-third-party-software-oath-tokens).
 
@@ -113,7 +113,7 @@ sections:
 
           After this setting is applied, your tenant will be excluded from the automatic passkey enablement and Registration Campaign rollout during the opt-out period. Beginning February 1, 2027, standard passkey migration and enforcement timelines will apply regardless of this setting for users in scope of the February 1 retirement. Global Administrators and external users instead follow the July 1, 2027 retirement date. Internal guest users remain on the February 1, 2027 retirement date.
 
-          However, if your tenant still has users enabled for Microsoft-managed SMS or voice on their applicable retirement date, and you haven't configured a telephony provider through Microsoft Security Store, those users will no longer be able to use SMS or voice to satisfy MFA requirements and continue signing in.
+          However, if your tenant still has users enabled for Microsoft-managed SMS or voice on their applicable retirement date, and you haven't configured a telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/), those users will no longer be able to use SMS or voice to satisfy MFA requirements and continue signing in.
 
           After the applicable retirement date, users whose only available MFA method is SMS or voice will be required to register a passkey during sign-in to continue accessing their account.
 
@@ -121,19 +121,19 @@ sections:
       - question: |
           Will users receive a blocking passkey registration prompt if we configure a telephony provider?
         answer: |
-          No. If you configure a telephony provider through Microsoft Security Store and migrate all users who need SMS or voice before their applicable retirement date, those users won't receive the blocking passkey registration prompt as part of the SMS and voice retirement enforcement.
+          No. If you configure a telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/) and migrate all users who need SMS or voice before their applicable retirement date, those users won't receive the blocking passkey registration prompt as part of the SMS and voice retirement enforcement.
 
           Telephony providers are intended for organizations that have a business, regulatory, or technical need to continue using SMS or voice. Make sure that the provider is configured and that all affected users are migrated before their applicable retirement date. Global Administrators and external users follow the July 1, 2027 retirement date. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. Users who remain enabled for Microsoft-provided SMS or voice are still subject to the passkey registration requirement.
       - question: |
           Are customers going to get locked out of their accounts on the retirement date?
         answer: |
-          No. If customers do not configure a telephony provider by the applicable retirement date, users who still use SMS and voice will receive a blocking registration prompt to register a passkey. They will no longer be able to skip this prompt and will need to complete passkey registration before they can continue to sign in. Global Administrators and external users follow the July 1, 2027 retirement date. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. Organizations that need SMS or voice after retirement can choose a telephony provider through Microsoft Security Store.
+          No. If customers do not configure a telephony provider by the applicable retirement date, users who still use SMS and voice will receive a blocking registration prompt to register a passkey. They will no longer be able to skip this prompt and will need to complete passkey registration before they can continue to sign in. Global Administrators and external users follow the July 1, 2027 retirement date. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. Organizations that need SMS or voice after retirement can choose a telephony provider through [Microsoft Security Store](https://securitystore.microsoft.com/).
 
 additionalContent: |
   ## Related content
 
   - [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](concept-sms-voice-retirement.md)
-  - [Choose a telephony provider for SMS and voice authentication](concept-phone-providers.md)
+  - [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md)
   - [Frequently asked questions about telephony providers](phone-providers-faq.yml)
   - [What are authentication methods?](overview-authentication.md)
   - [Plan a passkey deployment](how-to-deploy-phishing-resistant-passwordless-authentication.md)
