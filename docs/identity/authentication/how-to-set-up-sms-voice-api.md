@@ -1,5 +1,5 @@
 ---
-title: Set up SMS and voice with your own telecom providers
+title: Set up SMS and voice
 description: Deploy your telecom integration, validate evaluation mode, and gradually roll out SMS and voice delivery by using CYOT APIs.
 ms.topic: how-to
 ms.date: 10/30/2026
@@ -8,7 +8,9 @@ ai-usage: ai-assisted
 # Customer intent: As an identity administrator, I want to deploy a telecom integration and configure SMS and voice delivery through Microsoft Graph.
 ---
 
-# Set up SMS and voice with your own telecom providers
+# Set up SMS and voice
+
+<a id="set-up-sms-and-voice-with-your-own-telecom-providers"></a>
 
 Use Choose Your Own Telephony Provider (CYOT) to deliver SMS and voice authentication through your organization's telephony provider. With CYOT, you purchase a supported provider offer through [Microsoft Security Store](https://securitystore.microsoft.com/), deploy the integration in your Azure subscription, and configure Microsoft Entra to route SMS or voice authentication through your provider.
 
@@ -60,10 +62,6 @@ The setup script deploys everything needed to connect Microsoft Entra ID to your
 
 After you approve, the script creates the Microsoft Entra application, deploys and secures the Azure resources, and applies your provider's configuration. Deployment usually takes a few minutes.
 
-You configure the authentication method policy in step 4.
-
-Your organization is responsible for renewing and rotating the integration's application credentials and certificates.
-
 ### Costs
 
 > [!IMPORTANT]
@@ -109,13 +107,7 @@ After deployment completes, return to your telecom provider's registration page 
 Configure each channel with the endpoint URL and application client ID from the deployment summary. Start in evaluation mode, validate the integration, and then gradually move delivery to your telecom provider.
 
 > [!WARNING]
-> CYOT uses the existing SMS or voice authentication method policy. Changes to the policy, including changes to `includeTargets`, also affect the existing SMS or voice configuration.
->
-> Before making updates, save the current SMS and voice settings by copying the full JSON responses from [Read the current policy](#read-the-current-policy).
->
-> In a production tenant, preserve the existing `includeTargets` configuration when adding CYOT settings. Changing or removing existing targets can affect users who rely on SMS or voice authentication.
->
-> Test targeting changes in a test tenant. In production, preserve the existing SMS or voice `includeTargets` and use evaluation mode plus `migrationPercentage` to validate and gradually roll out CYOT.
+> CYOT updates your existing SMS or voice authentication method policy, so any change also applies to current SMS and voice users. Before you update the policy, save the full JSON response from [Read the current policy](#read-the-current-policy). In production, keep your existing `includeTargets` unchanged, and use evaluation mode and `migrationPercentage` to roll out gradually. Test targeting changes in a test tenant.
 
 ### Read the current policy
 
@@ -162,13 +154,10 @@ Use `migrationPercentage` to set the evaluation sampling percentage.
 1. Read the policy again with **GET** and verify the endpoint URL, application client ID, evaluation-mode setting, migration percentage, and existing targets.
 1. Complete the [evaluation-mode tests](#test-evaluation-mode) in step 5.
 
-> [!NOTE]
-> To evaluate CYOT with a specific test user or group, perform the test in a test tenant and configure the appropriate `includeTargets` there.
-
 > [!IMPORTANT]
 > The JSON examples below contain the tested configuration values. Before using an example, replace the endpoint URL and application client ID with the values for your deployment.
 >
-> For evaluation mode, set `isEvaluationModeEnabled` to `true`. In a production tenant, preserve the `includeTargets` from your existing SMS or voice policy rather than replacing them with the values shown in the example. Use a test tenant if you want to validate CYOT with different target users or groups.
+> For evaluation mode, set `isEvaluationModeEnabled` to `true`. In a production tenant, preserve the `includeTargets` from your existing SMS or voice policy. Use a test tenant if you want to validate CYOT with different target users or groups.
 
 For SMS:
 
@@ -176,14 +165,6 @@ For SMS:
 {
   "@odata.type": "#microsoft.graph.smsAuthenticationMethodConfiguration",
   "state": "enabled",
-  "includeTargets": [
-    {
-      "targetType": "group",
-      "id": "all_users",
-      "isRegistrationRequired": false,
-      "isUsableForSignIn": false
-    }
-  ],
   "telecomProviderSettings": {
     "url": "<YOUR-ENDPOINT-URL>",
     "appId": "<YOUR-APPLICATION-CLIENT-ID>",
@@ -201,9 +182,6 @@ For Voice:
   "state": "enabled",
   "includeTargets": [
     {
-      "targetType": "group",
-      "id": "all_users",
-      "isRegistrationRequired": false,
       "verificationMode": "voiceOneTimePasscode"
     }
   ],

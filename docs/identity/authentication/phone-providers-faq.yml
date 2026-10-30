@@ -31,7 +31,7 @@ sections:
         <a id="when-will-choose-your-own-telephony-provider-be-available"></a>
         <a id="when-is-choose-your-own-telephony-provider-available"></a>
 
-        CYOT is generally available starting October 30, 2026, for Microsoft Entra ID workforce tenants in global Azure. All tenants can use it, with no enrollment needed.
+        CYOT is generally available starting October 30, 2026, for Microsoft Entra ID workforce tenants in global Azure.
     - question: |
         Which telecom providers can I use?
       answer: |
