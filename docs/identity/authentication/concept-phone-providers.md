@@ -107,7 +107,7 @@ See [Estimate telecom-provider and Azure hosting costs](phone-providers-faq.yml#
 
 To diagnose SMS or voice issues, identify whether the issue is in Microsoft Entra authentication and configuration, your CYOT integration, or telecom provider delivery.
 
-See [Troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider) for diagnostic guidance and information about where to get support.
+See [Troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider) for diagnostic guidance and information about where to get support.
 
 <a id="next-steps"></a>
 
@@ -116,7 +116,7 @@ See [Troubleshoot SMS and voice with your own telecom provider](troubleshoot-voi
 - [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
 - [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md).
 - [Plan for resiliency when using your own telecom provider](choose-your-own-telephony-reliability.md).
-- [Troubleshoot SMS and voice with your own telecom provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+- [Troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Estimate telecom-provider and Azure hosting costs](phone-providers-faq.yml#how-much-does-choose-your-own-telephony-provider-cost).
 - [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](concept-sms-voice-retirement.md).
 - [SMS-based authentication for Microsoft Entra ID](howto-authentication-sms-signin.md).

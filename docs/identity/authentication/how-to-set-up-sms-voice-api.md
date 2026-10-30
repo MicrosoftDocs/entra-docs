@@ -211,7 +211,7 @@ After evaluation succeeds:
 1. Increase `migrationPercentage` in increments until you reach `100`.
 1. Keep the endpoint URL, application client ID, and existing `includeTargets` unchanged while changing the migration percentage.
 1. [Validate authentication and telecom provider delivery](#check-each-rollout-stage) after each change.
-1. Increase the percentage after each stage validates successfully. To investigate an issue, hold at the current percentage and see [Monitor and troubleshoot](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+1. Increase the percentage after each stage validates successfully. To investigate an issue, hold at the current percentage and see [Monitor and troubleshoot](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 
 > [!IMPORTANT]
 > When each stage validates successfully, continue to 100 percent without delay. Completing your rollout early helps ensure uninterrupted authentication for your users. For dates, see [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](concept-sms-voice-retirement.md).
@@ -240,16 +240,16 @@ After evaluation succeeds, set `isEvaluationModeEnabled` to `false` and configur
 1. In the Microsoft Entra admin center, go to **Audit logs** and filter by **Service: Azure MFA**. Open the latest entry and confirm **Delivery Method** is `Cyot`.
 1. In your provider's portal, confirm the message was delivered.
 
-At a partial percentage, only some requests route through your provider, so make a few attempts. If something doesn't look right, see [Monitor and troubleshoot your own telephony provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+At a partial percentage, only some requests route through your provider, so make a few attempts. If something doesn't look right, see [Monitor and troubleshoot your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 
 ## Troubleshooting
 
 To diagnose integration issues, use the troubleshooting guide to identify whether the issue is with the Microsoft Entra configuration, Azure Function, telecom provider, or authentication flow.
 
-See [Monitor and troubleshoot your own telephony provider](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider) for diagnostic steps, logs, common issues, and remediation guidance.
+See [Monitor and troubleshoot your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider) for diagnostic steps, logs, common issues, and remediation guidance.
 
 ## Related content
 
-- [Monitor and troubleshoot](troubleshoot-voice-call-sms.md#monitor-and-troubleshoot-your-own-telephony-provider).
+- [Monitor and troubleshoot](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md).
 - [Plan for resiliency when using your own telecom provider](choose-your-own-telephony-reliability.md).
