@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 To ensure the security and manageability of agent identities for Microsoft customers, Microsoft Entra Agent ID provides a default inactivity policy to all tenants. This policy identifies inactive agent identities, notifies relevant users, and then proceeds to disable the identity if no new activity is detected. Organizations can use this default policy to clean up inactive agent identities regardless of their licensing status.
 
-The Agent ID default inactivity policy allows only limited customization. Customers who want to create custom lifecycle policies using additional policy rules and customization should ensure they have the appropriate license. More details here: [Agent lifecycle policies](/entra/id-governance/agent-lifecycle-policies.md)
+The Agent ID default inactivity policy allows only limited customization. Customers who want to create custom lifecycle policies using additional policy rules and customization should ensure they have the appropriate license. More details here: [Agent lifecycle policies](/entra/id-governance/agent-lifecycle-policies)
 
 > [!IMPORTANT]
 > Agent ID lifecycle policies are in preview. Preview features are provided without a service-level agreement and aren't recommended for production workloads. Certain features might not be supported or might have limited capabilities.
@@ -93,4 +93,4 @@ To learn more, see [Microsoft Entra Agent ID lifecycle policies](agent-lifecycle
 
 - [Governing Agent Identities](agent-id-governance-overview.md)
 - [Microsoft Entra Agent ID lifecycle policies](agent-lifecycle-policies.md)
-- [Manage agents in the end-user experience](/entra/agent-id/manage-agent-identities-end-user.md)
+- [Manage agents in the end-user experience](/entra/agent-id/manage-agent-identities-end-user)
