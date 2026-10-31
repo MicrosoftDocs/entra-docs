@@ -4,9 +4,9 @@ description: Describes service side features for Microsoft Entra Connect Sync se
 
 ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, msecd-doc-authoring-1032
 ms.topic: how-to
-ms.date: 07/03/2026
+ms.date: 10/30/2026
 ms.subservice: hybrid-connect
 ai-usage: ai-assisted
 ---
@@ -27,31 +27,30 @@ Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
 Get-MgDirectoryOnPremiseSynchronization | Select-Object -ExpandProperty Features | Format-List
 ```
 
-The result looks like this output:
+The result looks like this output. `AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled` is a property of the `Features` object, not an entry in `AdditionalProperties`.
 
 ```powershell
-BlockCloudObjectTakeoverThroughHardMatchEnabled  : False
-BlockSoftMatchEnabled                            : False
-BypassDirSyncOverridesEnabled                    : False
-CloudPasswordPolicyForPasswordSyncedUsersEnabled : False
-ConcurrentCredentialUpdateEnabled                : False
-ConcurrentOrgIdProvisioningEnabled               : False
-DeviceWritebackEnabled                           : False
-DirectoryExtensionsEnabled                       : True
-FopeConflictResolutionEnabled                    : False
-GroupWriteBackEnabled                            : False
-PasswordSyncEnabled                              : True
-PasswordWritebackEnabled                         : False
-QuarantineUponProxyAddressesConflictEnabled      : False
-QuarantineUponUpnConflictEnabled                 : False
-SoftMatchOnUpnEnabled                            : True
-SynchronizeUpnForManagedUsersEnabled             : False
-UnifiedGroupWritebackEnabled                     : True
-UserForcePasswordChangeOnLogonEnabled            : False
-UserWritebackEnabled                             : True
-AdditionalProperties                             : {
-       allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled : False
-}
+AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled : False
+BlockCloudObjectTakeoverThroughHardMatchEnabled      : False
+BlockSoftMatchEnabled                                : False
+BypassDirSyncOverridesEnabled                        : False
+CloudPasswordPolicyForPasswordSyncedUsersEnabled     : False
+ConcurrentCredentialUpdateEnabled                    : False
+ConcurrentOrgIdProvisioningEnabled                   : False
+DeviceWritebackEnabled                               : False
+DirectoryExtensionsEnabled                           : True
+FopeConflictResolutionEnabled                        : False
+GroupWriteBackEnabled                                : False
+PasswordSyncEnabled                                  : True
+PasswordWritebackEnabled                             : False
+QuarantineUponProxyAddressesConflictEnabled          : False
+QuarantineUponUpnConflictEnabled                     : False
+SoftMatchOnUpnEnabled                                : True
+SynchronizeUpnForManagedUsersEnabled                 : False
+UnifiedGroupWritebackEnabled                         : True
+UserForcePasswordChangeOnLogonEnabled                : False
+UserWritebackEnabled                                 : True
+AdditionalProperties                                 : {}
 ```
 
 > [!NOTE]
