@@ -27,7 +27,7 @@ Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
 Get-MgDirectoryOnPremiseSynchronization | Select-Object -ExpandProperty Features | Format-List
 ```
 
-The result looks like this output. `AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled` is a property of the `Features` object, not an entry in `AdditionalProperties`.
+The result looks like this output:
 
 ```powershell
 AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled : False
