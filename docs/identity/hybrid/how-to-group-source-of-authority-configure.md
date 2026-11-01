@@ -3,7 +3,7 @@ title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to convert group management from Active Directory Domain Services to Microsoft Entra ID by using Group Source of Authority (SOA).
 ms.subservice: hybrid-cloud-sync
 ms.topic: how-to
-ms.date: 10/13/2025
+ms.date: 10/31/2026
 ms.reviewer: dhanyahk
 ---
 
@@ -88,7 +88,11 @@ Follow these steps to convert the SOA for a test group:
    ```
 
 1. Verify that the group appears in the Microsoft Entra admin center as a synced group.
-1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as Groups admin.
+1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as a [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator). Alternatively, use Microsoft Graph PowerShell to perform the following operations with the cmdlets linked in [Related content](#related-content).
+
+   > [!NOTE]
+   > Microsoft Graph Explorer isn't supported in Azure China. Use Microsoft Graph PowerShell instead, and connect with `Connect-MgGraph -Environment China` and the permissions listed in [Prerequisites](#prerequisites). For other sovereign clouds, use `-Environment USGov` or `-Environment USGovDoD` as appropriate. See [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment). The following HTTP examples aren't PowerShell commands.
+
 1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 
    ```https
@@ -567,3 +571,9 @@ To scope a group for Source of Authority operations within an Administrative Uni
 - [Group SOA overview](concept-source-of-authority-overview.md)
 - [Provision users and groups from Microsoft Entra ID to Active Directory](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory)
 - [onPremisesSyncBehavior Microsoft Graph API](/graph/api/resources/onpremisessyncbehavior)
+
+| Documentation | Purpose |
+| --- | --- |
+| [Update-MgGroupOnPremiseSyncBehavior](/powershell/module/microsoft.graph.groups/update-mggrouponpremisesyncbehavior?view=graph-powershell-1.0) | Sets `IsCloudManaged` to convert group SOA. |
+| [Get-MgGroupOnPremiseSyncBehavior](/powershell/module/microsoft.graph.groups/get-mggrouponpremisesyncbehavior?view=graph-powershell-1.0) | Reads the group's SOA state. |
+| [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment) | Documents the `USGov`, `USGovDoD`, and `China` environments. |
