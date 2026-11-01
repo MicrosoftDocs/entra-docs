@@ -310,27 +310,54 @@ To scope a user for Source of Authority operations within an Administrative Unit
 
 ## Configure Contact SOA
 
-You're also able to transfer the SOA of contacts of users using the examples provided in this article. Contacts are items in Outlook where you can organize and save information about the people and organizations you communicate with. The following examples are of how you would transfer the SOA of contacts.
+You can also transfer the SOA of organizational contacts synchronized from AD DS to Microsoft Entra ID. These are directory objects accessed through `/contacts`, not personal contacts in a user's Outlook mailbox.
 
 > [!NOTE]
-> To transfer SOA of a Contact, the required permission is `Contacts-OnPremisesSyncBehavior.ReadWrite.All`.
+> To transfer contact SOA, grant `Contacts-OnPremisesSyncBehavior.ReadWrite.All` to the app used to call Microsoft Graph. For delegated access, sign in as a [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator). Follow the [consent procedure](#consent-permission-to-apps) with the contact permission instead of the user permission.
 
+Use Graph Explorer or Microsoft Graph PowerShell to read and update contact SOA. Microsoft Graph Explorer isn't supported in Azure China. For PowerShell, use the contact cmdlets in the `Microsoft.Graph.Identity.DirectoryManagement` module and connect with `-Environment China`. For other sovereign clouds, use `-Environment USGov` or `-Environment USGovDoD` as appropriate. See [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment).
 
-To confirm the contact SOA is cloud managed, you run the following API call:
+### Use Microsoft Graph API
+
+Replace `{ID}` with the object ID of your synchronized organizational contact. The following HTTP examples use the global cloud endpoint. For another cloud, use its [Microsoft Graph endpoint](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
+
+1. Read the existing SOA state. Before transfer, `isCloudManaged` is `false`:
 
    ```https
    GET https://graph.microsoft.com/v1.0/contacts/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
+1. Transfer contact SOA to the cloud by setting `isCloudManaged` to `true`:
 
-To update the cloud-managed contact, you can make the following API call:
+   ```http
+   PATCH https://graph.microsoft.com/v1.0/contacts/{ID}/onPremisesSyncBehavior
+   Content-Type: application/json
 
-```https
-   PATCH https://graph.microsoft.com/v1.0/contacts/{ID}/
-      {
-        "DisplayName": "Contact Name Updated"
-      }   
+   {
+       "isCloudManaged": true
+   }
    ```
+
+1. Repeat the GET request to verify that `isCloudManaged` is `true`.
+
+### Use Microsoft Graph PowerShell
+
+The following example reads, transfers, and verifies contact SOA in Azure China. Replace `<tenant-id>` and `<contact-object-id>` with your tenant and organizational contact IDs. For the global cloud, omit `-Environment China`.
+
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Connect-MgGraph -TenantId "<tenant-id>" -Environment China -Scopes "Contacts-OnPremisesSyncBehavior.ReadWrite.All"
+
+$contactId = "<contact-object-id>"
+Get-MgContactOnPremiseSyncBehavior -OrgContactId $contactId -Property "isCloudManaged"
+
+Update-MgContactOnPremiseSyncBehavior -OrgContactId $contactId -BodyParameter @{ isCloudManaged = $true }
+
+Get-MgContactOnPremiseSyncBehavior -OrgContactId $contactId -Property "isCloudManaged"
+```
+
+Verify that the final result shows `IsCloudManaged` as `True`. See the contact cmdlet references in [Related content](#related-content).
 
 ## Related content
 
@@ -341,4 +368,6 @@ To update the cloud-managed contact, you can make the following API call:
 | --- | --- |
 | [Update-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/update-mguseronpremisesyncbehavior?view=graph-powershell-1.0) | Sets `IsCloudManaged` to transfer user SOA. |
 | [Get-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/get-mguseronpremisesyncbehavior?view=graph-powershell-1.0) | Reads the user's SOA state. |
+| [Update-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgcontactonpremisesyncbehavior?view=graph-powershell-1.0) | Sets `IsCloudManaged` to transfer organizational contact SOA. |
+| [Get-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactonpremisesyncbehavior?view=graph-powershell-1.0) | Reads the organizational contact's SOA state. |
 | [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment) | Documents the `USGov`, `USGovDoD`, and `China` environments. |
