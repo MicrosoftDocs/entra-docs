@@ -552,6 +552,32 @@ Host *
 PubkeyAcceptedKeyTypes +ssh-rsa-cert-v01@openssh.com
 ```
 
+### Getting Permission Denied when trying to connect to a Red Hat Enterprise Linux VM after performing an in-place upgrade from RHEL 8.x to RHEL 9.x
+
+After an in-place upgrade of the VM from RHEL 8.x to RHEL 9.x, a Microsoft Entra ID SSH sign-in might fail with `Permission denied (publickey)` If the VM was configured for Microsoft Entra login before the upgrade.
+
+This issue happens as the package `aadsshlogin` may be removed automatically during the upgrade process because Leapp treats that as a third-party package.
+
+> [!NOTE]
+>Third-party packages may be removed automatically during the upgrade if they depend on official distribution content which is not present on the target system - therefore RPM dependencies of such packages cannot be satisfied and hence such packages cannot be installed on the target system. 
+For more information, see [Handling the migration of your custom and third-party applications](https://red.ht/customize-rhel-upgrade-actors)
+
+Workaround:
+
+The solution is to uninstall the AADLoginForLinux VM extension from the VM, and then reinstall it again.
+
+1. Uninstall the AADLoginForLinux extension on the VM:
+
+```azurecli-interactive
+az vm extension delete -g MyResourceGroup --vm-name MyVm -n AADSSHLoginForLinux
+```
+
+1. Install the AADSSHLoginForLinux extension on the VM:
+	
+```azurecli-interactive
+az vm extension set --publisher Microsoft.Azure.ActiveDirectory --name AADSSHLoginForLinux --resource-group myResourceGroup --vm-name myVM
+```
+
 ## Next steps
 
 - [What is a device identity?](overview.md)
