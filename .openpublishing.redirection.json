@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity/authentication/how-to-set-up-sms-voice-api.md",
+      "redirect_url": "/entra/identity/authentication/choose-your-own-telephony-set-up",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/external-id/customers/how-to-saml-ws-federation-self-service-sign-up.md",
       "redirect_url": "/entra/external-id/customers/how-to-add-identity-provider-to-user-flow-customers",
       "redirect_document_id": true

@@ -62,7 +62,7 @@
     - name: Telephony providers overview
       href: concept-phone-providers.md
     - name: Set up SMS and voice
-      href: how-to-set-up-sms-voice-api.md
+      href: choose-your-own-telephony-set-up.md
     - name: Troubleshoot SMS and voice
       href: choose-your-own-telephony-troubleshoot.md
     - name: Protect against telephony fraud

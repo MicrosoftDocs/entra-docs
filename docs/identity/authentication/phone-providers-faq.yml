@@ -118,14 +118,14 @@ sections:
         1. Evaluate the integration.
         1. Roll out traffic to your provider.
 
-        For details, see [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
+        For details, see [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
     - question: |
         Can I test CYOT before I move traffic?
       answer: |
         <a id="can-i-evaluate-before-switching-my-users-to-a-new-provider"></a>
         <a id="can-i-test-cyot-before-moving-authentication-delivery-to-my-provider"></a>
 
-        Yes. **Evaluation** mode sends requests to your integration while Microsoft continues to deliver codes to users. Use `migrationPercentage` to set the evaluation sampling percentage when configuring the policy through APIs. To confirm delivery through your provider, switch to **Production** at a low traffic percentage.
+        Yes. **Evaluation** mode sends requests to your integration while Microsoft continues to deliver codes to users. Set the **Evaluation sampling percentage** in your profile. To confirm delivery through your provider, switch to **Production** at a low traffic percentage.
     - question: |
         Can I move traffic gradually?
       answer: |
@@ -188,7 +188,7 @@ additionalContent: |
   ## Related content
 
   - [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
-  - [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
+  - [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
   - [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
   - [Protect against telephony fraud with your own telecom provider](choose-your-own-telephony-fraud-costs.md).
   - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).

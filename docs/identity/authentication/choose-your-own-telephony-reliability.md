@@ -52,7 +52,7 @@ Start with your requirements: which disruptions you must withstand, how quickly 
 
 ## Deploy across multiple regions
 
-A multi-region deployment uses Azure Front Door to expose one endpoint backed by Function Apps in two or more regions. Microsoft Entra ID calls the Front Door endpoint, and Front Door routes each request to a healthy region. Set it up manually after you validate a single-region deployment, because the setup script in [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md) deploys one region at a time.
+A multi-region deployment uses Azure Front Door to expose one endpoint backed by Function Apps in two or more regions. Microsoft Entra ID calls the Front Door endpoint, and Front Door routes each request to a healthy region. Set it up manually after you validate a single-region deployment, because the setup script in [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md) deploys one region at a time.
 
 When you plan a multi-region deployment:
 
@@ -99,7 +99,7 @@ To monitor each region and provider, see [Monitor and troubleshoot SMS and voice
 - [Azure Front Door multi-region deployment](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/FRONTDOOR.md).
 - [Secondary-provider design](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/MULTI-PROVIDER-IMPLEMENTATION.md).
 - [Reliability in Azure Functions](/azure/reliability/reliability-functions).
-- [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
+- [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
 - [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md).
 - [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 - [CYOT sample documentation (epp-packages-193-1)](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/tree/epp-packages-193-1/docs).
