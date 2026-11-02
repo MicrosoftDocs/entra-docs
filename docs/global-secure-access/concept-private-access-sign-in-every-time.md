@@ -42,5 +42,6 @@ Global Secure Access has a **five-minute reauthentication window**. It doesn't p
 
 ## Related content
 
+* [Configure sign-in every time for Microsoft Entra Private Access (preview)](how-to-configure-sign-in-every-time.md)
 * [Conditional Access adaptive session lifetime policies](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 * [Microsoft Entra Private Access overview](concept-private-access.md)
