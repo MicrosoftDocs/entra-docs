@@ -264,6 +264,8 @@ items:
     items:
       - name: Understand Private Access
         href: concept-private-access.md
+      - name: Sign-in every time (preview)
+        href: concept-private-access-sign-in-every-time.md
       - name: Connectors
         expanded: false
         items:
