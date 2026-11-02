@@ -3,7 +3,7 @@ title: Configure user Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to transfer user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
 ms.subservice: hybrid-cloud-sync
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 04/15/2026
+ms.date: 10/31/2026
 ms.reviewer: dhanyahk
 ai-usage: ai-assisted
 
@@ -98,7 +98,8 @@ Follow these steps to transfer the SOA for a test user:
    ```
 
 1. Verify that the user appears in the Microsoft Entra admin center as a synced user.
-1. Use Microsoft Graph API to transfer the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as user admin.
+1. Use Microsoft Graph API to transfer the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as a [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator). Alternatively, use Microsoft Graph PowerShell to perform the following operations with the cmdlets linked in [Related content](#related-content).
+
 1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your user. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 /graph/api/onpremisessyncbehavior-update
 
@@ -332,5 +333,8 @@ To update the cloud-managed contact, you can make the following API call:
 
 - [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID](user-source-of-authority-audit-monitor.md)
 - [Configure Group Source of Authority (SOA)](how-to-group-source-of-authority-configure.md)
-
-
+- [Update-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/update-mguseronpremisesyncbehavior)
+- [Get-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/get-mguseronpremisesyncbehavior)
+- [Update-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgcontactonpremisesyncbehavior)
+- [Get-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactonpremisesyncbehavior)
+- [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment)
