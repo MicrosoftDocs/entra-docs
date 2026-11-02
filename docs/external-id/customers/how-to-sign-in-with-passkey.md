@@ -85,12 +85,7 @@ The credential management experience should enable customers to:
 - View their registered passkeys.
 - Delete a passkey.
 
-Use the [Delete a credential method](../../identity-platform/reference-credential-management-api.md#delete-a-credential-method) endpoint for self-service deletion with delegated permissions.
-
-To support passkey management in your app, use the [passkey credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample demonstrates how signed-in customers can list and register their own passkeys by using the credential management API with delegated permissions. Follow the sample's README to configure and run the app.
-
-> [!IMPORTANT]
-> The sample's deletion flow still uses Microsoft Graph with high-privilege application permissions and a client secret in browser code. Run the sample only in a test tenant. Don't deploy it to production.
+To support passkey management in your app, use the [passkey credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample demonstrates how signed-in customers can list, register and delete their own passkeys by using the credential management API with delegated permissions. Follow the sample's README to configure and run the app.
 
 ## User experience
 

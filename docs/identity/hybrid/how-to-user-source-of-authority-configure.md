@@ -3,7 +3,7 @@ title: Configure user Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to transfer user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
 ms.subservice: hybrid-cloud-sync
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 04/15/2026
+ms.date: 11/02/2026
 ms.reviewer: dhanyahk
 ai-usage: ai-assisted
 
@@ -83,6 +83,23 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 :::image type="content" source="media/how-to-user-source-of-authority-configure/graph-permissions.png" alt-text="screenshot of graph permissions.":::
 
 
+### Connect with Microsoft Graph PowerShell
+
+As an alternative to Graph Explorer, use Microsoft Graph PowerShell. First, [install Microsoft Graph PowerShell](/powershell/microsoftgraph/installation), including the `Microsoft.Graph.Users` module.
+
+Permissions are granted to the application that calls Microsoft Graph. Consent granted to Graph Explorer doesn't grant permissions to the Microsoft Graph PowerShell application. Have an Application Administrator or Cloud Application Administrator grant the `User-OnPremisesSyncBehavior.ReadWrite.All` delegated permission to the PowerShell application by using the [consent procedure](#consent-permission-to-apps).
+
+Sign in as a Hybrid Administrator to perform SOA operations. Replace `<tenant-id>` with your tenant ID:
+
+```powershell
+Import-Module Microsoft.Graph.Users
+Connect-MgGraph -TenantId "<tenant-id>" -Scopes "User-OnPremisesSyncBehavior.ReadWrite.All"
+```
+
+By default, the connection targets the global cloud. For another cloud, add `-Environment China`, `-Environment USGov`, or `-Environment USGovDoD`, as appropriate. Use the same tenant and cloud settings whenever you reconnect. For more information, see [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment).
+
+The SOA permission doesn't grant permission to update user properties such as `displayName`. The display-name tests in the following procedure also require `User.ReadWrite.All`, with consent granted to the application you use for those tests.
+
 ## Transfer SOA for a test user
 
 > [!NOTE]
@@ -98,7 +115,8 @@ Follow these steps to transfer the SOA for a test user:
    ```
 
 1. Verify that the user appears in the Microsoft Entra admin center as a synced user.
-1. Use Microsoft Graph API to transfer the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as user admin.
+1. Use Microsoft Graph API to transfer the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as a [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator). Alternatively, use Microsoft Graph PowerShell to perform the following operations with the cmdlets linked in [Related content](#related-content).
+
 1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your user. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 /graph/api/onpremisessyncbehavior-update
 
@@ -111,7 +129,7 @@ Follow these steps to transfer the SOA for a test user:
 1. Confirm that the synced user is read-only. Because the user is managed on-premises, any write attempts to the user in the cloud fail. The error message differs for mail-enabled users, but updates still aren't allowed.
 
    > [!NOTE]
-   > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required User.ReadWrite.All permission.
+   > If this API fails with 403, in Graph Explorer use the **Modify permissions** tab to grant consent to `User.ReadWrite.All`. For Microsoft Graph PowerShell, have an administrator grant consent to `User.ReadWrite.All` for the PowerShell application. Then run `Disconnect-MgGraph` and reconnect with `Connect-MgGraph -TenantId "<tenant-id>" -Scopes "User-OnPremisesSyncBehavior.ReadWrite.All", "User.ReadWrite.All"`, including the same `-Environment` setting if applicable. These permissions enable the display-name test; they don't remove the restriction on updating an on-premises-managed user.
 
    ```https
    PATCH https://graph.microsoft.com/v1.0/users/{ID}/
@@ -124,7 +142,7 @@ Follow these steps to transfer the SOA for a test user:
  
 1. Search the Microsoft Entra admin center for the user. Verify that all user fields are greyed out, and that source is Windows Server AD DS.
 
-1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the user object you want to transfer to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
+1. Now you can update the SOA of the user to be cloud-managed. Run the following HTTP operation in Microsoft Graph Explorer, or use `Update-MgUserOnPremiseSyncBehavior -UserId "<user-object-id>" -BodyParameter @{ isCloudManaged = $true }` in Microsoft Graph PowerShell. Replace `<user-object-id>` with the object ID of the user you want to transfer to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
    PATCH https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior
@@ -332,5 +350,8 @@ To update the cloud-managed contact, you can make the following API call:
 
 - [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID](user-source-of-authority-audit-monitor.md)
 - [Configure Group Source of Authority (SOA)](how-to-group-source-of-authority-configure.md)
-
-
+- [Update-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/update-mguseronpremisesyncbehavior)
+- [Get-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/get-mguseronpremisesyncbehavior)
+- [Update-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgcontactonpremisesyncbehavior)
+- [Get-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactonpremisesyncbehavior)
+- [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment)
