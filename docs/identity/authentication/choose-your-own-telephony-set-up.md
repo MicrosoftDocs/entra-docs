@@ -196,7 +196,7 @@ Use a test user with a phone number registered for SMS or voice.
 ### Test in Evaluation
 
 1. In an InPrivate browser session, sign in as the test user and complete an SMS or voice authentication.
-1. In the Azure portal, go to your **Function App** > **SendOtp** > **Invocations** and open the latest transaction. In **Invocation details**, confirm **Evaluation request completed** with HTTP `200`.
+1. In the Azure portal, go to your **Function App** → **Functions** → **SendOtp** → **Invocations** and open the latest transaction. In **Invocation details**, confirm **Evaluation request completed** with HTTP `200`.
 1. In the Microsoft Entra admin center, go to **Monitoring & health** > **Audit logs** and filter by **Service: Azure MFA**. Open the latest entry and confirm **DeliveryMethod** is `CyotEvaluation`.
 
 <a id="test-telecom-provider-delivery"></a>
@@ -207,7 +207,7 @@ Use a test user with a phone number registered for SMS or voice.
 After evaluation succeeds, switch to **Production** and set your initial traffic percentage.
 
 1. In a new InPrivate browser session, sign in as the test user. Confirm the SMS or voice code arrives and authentication completes.
-1. In the Azure portal, go to your **Function App** > **Invocations** and open the latest transaction. In **Invocation details**, confirm the request completed with HTTP `200`.
+1. In the Azure portal, go to your **Function App** → **Functions** → **SendOtp** → **Invocations** and open the latest transaction. In **Invocation details**, confirm the request completed with HTTP `200`.
 1. In the Microsoft Entra admin center, go to **Audit logs** and filter by **Service: Azure MFA**. Open the latest entry and confirm **Delivery Method** is `Cyot`.
 1. In your provider's portal, confirm the message was delivered.
 
