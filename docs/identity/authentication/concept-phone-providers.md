@@ -45,7 +45,7 @@ Review pricing and other commercial details for the available provider offers:
 
 - Soprano: [Per-user offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_user) or [per-transaction offer](https://securitystore.microsoft.com/solutions/sopranodesignlimited1620113206416.soprano_entraid_per_transaction) in [Microsoft Security Store](https://securitystore.microsoft.com/).
 - Telesign: [Telesign Verify for Microsoft Entra](https://securitystore.microsoft.com/solutions/telesigncorporation1779799505747.telesign-verify-cyot-azure) in [Microsoft Security Store](https://securitystore.microsoft.com/).
-- Infobip.
+- Infobip: [Infobip offer](https://securitystore.microsoft.com/solutions/infobipdoo.infobip_microsoft_entra) in [Microsoft Security Store](https://securitystore.microsoft.com/).
 
 > [!NOTE]
 > Provider availability, coverage, pricing, and commercial terms can vary. Review the provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing for the latest information before purchasing.
@@ -70,7 +70,7 @@ At a high level, setting up CYOT involves:
 1. **Evaluate.** Validate the integration while Microsoft continues to deliver messages, so users aren't affected.
 1. **Roll out.** Move traffic to your provider gradually, validating at each stage.
 
-For detailed instructions, see [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
+For detailed instructions, see [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
 
 <a id="plan-your-choose-your-own-telephony-provider-deployment"></a>
 
@@ -113,7 +113,7 @@ See [Troubleshoot SMS and voice with your own telecom provider](choose-your-own-
 
 ## Related content
 
-- [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
+- [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
 - [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md).
 - [Plan for resiliency when using your own telecom provider](choose-your-own-telephony-reliability.md).
 - [Troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).

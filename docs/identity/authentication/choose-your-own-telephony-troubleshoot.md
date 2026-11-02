@@ -150,7 +150,7 @@ Use what you see in audit logs to find the right contact.
 
 ## Related content
 
-- [Set up SMS and voice with your own telecom provider by using APIs](how-to-set-up-sms-voice-api.md).
+- [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
 - [Plan for resiliency and high availability with your own telecom provider](choose-your-own-telephony-reliability.md).
 - [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md).
 - [Audit logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-audit-logs).
