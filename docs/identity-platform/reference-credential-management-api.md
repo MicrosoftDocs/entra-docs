@@ -21,12 +21,7 @@ The Microsoft Entra External ID credential management API lets your application 
 
 The credential management API complements Microsoft Entra [native authentication](concept-native-authentication.md), where your application hosts the sign-in experience instead of delegating it to a browser. Use the credential management API after a customer signs in.
 
-To support passkey management in your app, use the [passkey credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample demonstrates the listing and registration flows in this article by using delegated permissions. Follow the sample's README to configure and run the app.
-
-> [!IMPORTANT]
-> The sample's deletion flow still uses Microsoft Graph with high-privilege application permissions and a client secret in browser code. Run the sample only in a test tenant. Don't deploy it to production.
-
-For self-service deletion, use the [Delete a credential method](#delete-a-credential-method) endpoint rather than the sample's deletion flow.
+To support passkey management in your app, use the [passkey credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample demonstrates the listing, registration and deletion flows in this article by using delegated permissions. Follow the sample's README to configure and run the app.
 
 Successful resource responses use HAL+JSON (`application/hal+json`). Activation requests use JSON (`application/json`), delete success responses have no body, and errors use JSON.
 
