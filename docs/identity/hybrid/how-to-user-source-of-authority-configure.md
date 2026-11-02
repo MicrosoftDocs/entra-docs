@@ -335,4 +335,6 @@ To update the cloud-managed contact, you can make the following API call:
 - [Configure Group Source of Authority (SOA)](how-to-group-source-of-authority-configure.md)
 - [Update-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/update-mguseronpremisesyncbehavior?view=graph-powershell-1.0)
 - [Get-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/get-mguseronpremisesyncbehavior?view=graph-powershell-1.0)
+- [Update-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgcontactonpremisesyncbehavior?view=graph-powershell-1.0)
+- [Get-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactonpremisesyncbehavior?view=graph-powershell-1.0)
 - [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment)
