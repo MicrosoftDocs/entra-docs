@@ -3,8 +3,9 @@ title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to convert group management from Active Directory Domain Services to Microsoft Entra ID by using Group Source of Authority (SOA).
 ms.subservice: hybrid-cloud-sync
 ms.topic: how-to
-ms.date: 10/13/2025
+ms.date: 11/02/2026
 ms.reviewer: dhanyahk
+ai-usage: ai-assisted
 ---
 
 # Configure Group Source of Authority (SOA)
@@ -63,6 +64,23 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-group-source-of-authority-configure/consent.png":::
 
+### Connect with Microsoft Graph PowerShell
+
+As an alternative to Graph Explorer, use Microsoft Graph PowerShell. First, [install Microsoft Graph PowerShell](/powershell/microsoftgraph/installation), including the `Microsoft.Graph.Groups` module.
+
+Permissions are granted to the application that calls Microsoft Graph. Consent granted to Graph Explorer doesn't grant permissions to the Microsoft Graph PowerShell application. Have an Application Administrator or Cloud Application Administrator grant the `Group-OnPremisesSyncBehavior.ReadWrite.All` delegated permission to the PowerShell application by using the [consent procedure](#grant-permission-to-apps).
+
+Sign in as a Hybrid Administrator to perform SOA operations. Replace `<tenant-id>` with your tenant ID:
+
+```powershell
+Import-Module Microsoft.Graph.Groups
+Connect-MgGraph -TenantId "<tenant-id>" -Scopes "Group-OnPremisesSyncBehavior.ReadWrite.All"
+```
+
+By default, the connection targets the global cloud. For another cloud, add `-Environment China`, `-Environment USGov`, or `-Environment USGovDoD`, as appropriate. Use the same tenant and cloud settings whenever you reconnect. For more information, see [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment).
+
+The SOA permission doesn't grant permission to update group properties such as `displayName`. The display-name tests in the following procedure also require `Group.ReadWrite.All`, with consent granted to the application you use for those tests.
+
 ## Prepare groups for Group SOA conversion and provisioning
 
 If you want to provision the group back to AD DS, plan to complete the following steps to preserve the OU Path and set it in the **Group Provision to AD** configuration with the right mapping:
@@ -88,7 +106,8 @@ Follow these steps to convert the SOA for a test group:
    ```
 
 1. Verify that the group appears in the Microsoft Entra admin center as a synced group.
-1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as Groups admin.
+1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as a [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator). Alternatively, use Microsoft Graph PowerShell to perform the following operations with the cmdlets linked in [Related content](#related-content).
+
 1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 
    ```https
@@ -100,7 +119,7 @@ Follow these steps to convert the SOA for a test group:
 1. Confirm that the synced group is read-only. Because the group is managed on-premises, any write attempts to the group in the cloud fail. The error message differs for mail-enabled groups, but updates still aren't allowed.
 
    > [!NOTE]
-   > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required Group.ReadWrite.All permission.
+   > If this API fails with 403, in Graph Explorer use the **Modify permissions** tab to grant consent to `Group.ReadWrite.All`. For Microsoft Graph PowerShell, have an administrator grant consent to `Group.ReadWrite.All` for the PowerShell application. Then run `Disconnect-MgGraph` and reconnect with `Connect-MgGraph -TenantId "<tenant-id>" -Scopes "Group-OnPremisesSyncBehavior.ReadWrite.All", "Group.ReadWrite.All"`, including the same `-Environment` setting if applicable. These permissions enable the display-name test; they don't remove the restriction on updating an on-premises-managed group.
 
    ```https
    PATCH https://graph.microsoft.com/v1.0/groups/{ID}/
@@ -117,7 +136,7 @@ Follow these steps to convert the SOA for a test group:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced group properties.":::
 
-1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
+1. Now you can update the SOA of the group to be cloud-managed. Run the following HTTP operation in Microsoft Graph Explorer, or use `Update-MgGroupOnPremiseSyncBehavior -GroupId "<group-object-id>" -BodyParameter @{ isCloudManaged = $true }` in Microsoft Graph PowerShell. Replace `<group-object-id>` with the object ID of the group you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
    PATCH https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior
@@ -567,3 +586,6 @@ To scope a group for Source of Authority operations within an Administrative Uni
 - [Group SOA overview](concept-source-of-authority-overview.md)
 - [Provision users and groups from Microsoft Entra ID to Active Directory](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory)
 - [onPremisesSyncBehavior Microsoft Graph API](/graph/api/resources/onpremisessyncbehavior)
+- [Update-MgGroupOnPremiseSyncBehavior](/powershell/module/microsoft.graph.groups/update-mggrouponpremisesyncbehavior)
+- [Get-MgGroupOnPremiseSyncBehavior](/powershell/module/microsoft.graph.groups/get-mggrouponpremisesyncbehavior)
+- [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment)

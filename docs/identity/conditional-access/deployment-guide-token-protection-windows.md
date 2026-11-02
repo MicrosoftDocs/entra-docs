@@ -58,7 +58,7 @@ Token Protection on Windows platforms can be used to protect the following resou
 
 ### Known limitations
 
-- Office perpetual clients aren't supported.
+- Office perpetual clients version 2024 and later support Token Protection. Versions earlier than 2024 aren't supported.
 - The following applications don't support signing in using protected token flows and users are blocked when accessing Exchange and SharePoint: 
    - PowerShell modules accessing SharePoint
    - PowerQuery extension for Excel for users not in Current Channel updates
