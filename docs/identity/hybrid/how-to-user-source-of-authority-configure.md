@@ -333,8 +333,8 @@ To update the cloud-managed contact, you can make the following API call:
 
 - [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID](user-source-of-authority-audit-monitor.md)
 - [Configure Group Source of Authority (SOA)](how-to-group-source-of-authority-configure.md)
-- [Update-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/update-mguseronpremisesyncbehavior?view=graph-powershell-1.0)
-- [Get-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/get-mguseronpremisesyncbehavior?view=graph-powershell-1.0)
-- [Update-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgcontactonpremisesyncbehavior?view=graph-powershell-1.0)
-- [Get-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactonpremisesyncbehavior?view=graph-powershell-1.0)
+- [Update-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/update-mguseronpremisesyncbehavior)
+- [Get-MgUserOnPremiseSyncBehavior](/powershell/module/microsoft.graph.users/get-mguseronpremisesyncbehavior)
+- [Update-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgcontactonpremisesyncbehavior)
+- [Get-MgContactOnPremiseSyncBehavior](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgcontactonpremisesyncbehavior)
 - [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment)

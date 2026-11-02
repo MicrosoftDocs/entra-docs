@@ -568,6 +568,6 @@ To scope a group for Source of Authority operations within an Administrative Uni
 - [Group SOA overview](concept-source-of-authority-overview.md)
 - [Provision users and groups from Microsoft Entra ID to Active Directory](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory)
 - [onPremisesSyncBehavior Microsoft Graph API](/graph/api/resources/onpremisessyncbehavior)
-- [Update-MgGroupOnPremiseSyncBehavior](/powershell/module/microsoft.graph.groups/update-mggrouponpremisesyncbehavior?view=graph-powershell-1.0)
-- [Get-MgGroupOnPremiseSyncBehavior](/powershell/module/microsoft.graph.groups/get-mggrouponpremisesyncbehavior?view=graph-powershell-1.0)
+- [Update-MgGroupOnPremiseSyncBehavior](/powershell/module/microsoft.graph.groups/update-mggrouponpremisesyncbehavior)
+- [Get-MgGroupOnPremiseSyncBehavior](/powershell/module/microsoft.graph.groups/get-mggrouponpremisesyncbehavior)
 - [Microsoft Graph PowerShell cloud authentication](/powershell/microsoftgraph/authentication-commands#use-get-mgenvironment)
