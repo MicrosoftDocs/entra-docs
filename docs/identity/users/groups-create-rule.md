@@ -129,7 +129,7 @@ If an error occurs during processing of the membership rule for a specific group
 
 :::image type="content" source="./media/groups-create-rule/processing-error.png" alt-text="Screenshot of an alert that says dynamic group memberships have not been updated due to system delays.":::
 
-While the status is **Processing error**, membership isn't updated. Members from the last successful evaluation stay in the group, and users who newly match the rule aren't added. If the group is used to target policies or assignments, those users aren't covered.
+While the status is **Processing error**, membership isn't updated. Members from the last successful evaluation stay in the group, and no new members are added. If the group is used to target policies or assignments, users who should have joined it aren't covered.
 
 ## Related content
 
