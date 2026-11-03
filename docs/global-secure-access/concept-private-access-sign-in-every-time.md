@@ -24,9 +24,7 @@ Sign-in every time (preview) is currently supported only with the Global Secure 
 
 ## Scope enforcement by operating system
 
-You can use Conditional Access [device platform conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#device-platforms) to exclude non-Windows operating systems from policies that enforce sign-in every time.
-
-Excluded platforms aren't subject to sign-in every time enforcement by those policies.
+Depending on your requirements, you may want to allow access to these private applications from non-Windows devices, skipping sign in frequency requirements. You can use Conditional Access [device platform conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#device-platforms) to exclude non-Windows operating systems from policies that enforce sign-in every time.
 
 <a name='reauthentication-window'></a>
 
