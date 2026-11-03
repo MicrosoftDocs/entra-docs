@@ -141,44 +141,52 @@ items:
       href: ./scripts/powershell-invoke-entra-recovery.md
 - name: Concepts
   expanded: false
-  items: 
+  items:
   - name: Global Secure Access clients
     href: concept-clients.md
   - name: Bring your own device (BYOD)
     href: concept-bring-your-own-device.md
-  - name: Private network connector
-    href: concept-connectors.md
-  - name: Private network connector groups
-    href: concept-connector-groups.md
-  - name: Understand Private DNS
-    href: concept-private-name-resolution.md
   - name: Understand remote network connectivity
     href: concept-remote-network-connectivity.md
   - name: Universal Continuous Access Evaluation
     href: concept-universal-continuous-access-evaluation.md
-  - name: Application Usage Analytics
-    href: overview-application-usage-analytics.md
-  - name: Shadow AI discovery
-    href: concept-shadow-ai-discovery.md
-  - name: AI agent discovery (preview)
-    href: concept-ai-agent-discovery.md
-  - name: Generative AI Insights (preview)
-    href: concept-generative-ai-insights.md
-  - name: External user access
-    href: concept-external-user-access.md
-  - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
-    href: concept-secure-web-ai-gateway-agents.md
-  - name: Web filtering (V2)
-    href: concept-web-filtering.md
-  - name: Explicit Forward Proxy
+  - name: Private Access
     expanded: false
     items:
+    - name: Private network connector
+      href: concept-connectors.md
+    - name: Private network connector groups
+      href: concept-connector-groups.md
+    - name: Understand Private DNS
+      href: concept-private-name-resolution.md
+    - name: External user access
+      href: concept-external-user-access.md
+    - name: Sign-in every time (preview)
+      href: concept-private-access-sign-in-every-time.md
+  - name: Internet Access
+    expanded: false
+    items:
+    - name: Web filtering (V2)
+      href: concept-web-filtering.md
+    - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+      href: concept-secure-web-ai-gateway-agents.md
     - name: Understand Explicit Forward Proxy
       href: concept-explicit-forward-proxy.md
     - name: Explicit Forward Proxy session management
       href: concept-explicit-forward-proxy-session-management.md
     - name: Proxy automatic configuration (PAC) files
       href: concept-proxy-automatic-configuration-files.md
+  - name: Discovery and insights
+    expanded: false
+    items:
+    - name: Application Usage Analytics
+      href: overview-application-usage-analytics.md
+    - name: Shadow AI discovery
+      href: concept-shadow-ai-discovery.md
+    - name: AI agent discovery (preview)
+      href: concept-ai-agent-discovery.md
+    - name: Generative AI Insights (preview)
+      href: concept-generative-ai-insights.md
 - name: How-to guides
   expanded: true
   items:
@@ -264,8 +272,6 @@ items:
     items:
       - name: Understand Private Access
         href: concept-private-access.md
-      - name: Sign-in every time (preview)
-        href: concept-private-access-sign-in-every-time.md
       - name: Configure sign-in every time (preview)
         href: how-to-configure-sign-in-every-time.md
       - name: Connectors
