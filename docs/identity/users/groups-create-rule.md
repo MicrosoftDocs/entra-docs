@@ -89,6 +89,9 @@ If the rule that you entered isn't valid, the portal displays an explanation of 
 
 1. After you finish updating the rule, select **Save**.
 
+> [!NOTE]
+> When processing is on, a rule that references an unsupported property can't be saved. If processing is paused for the group, the rule is saved anyway, and the error appears only after you resume processing, when the status changes to **Processing error**.
+
 ## Turn on or off the welcome email
 
 When an admin creates a new Microsoft 365 group, the users who are added to the group receive a welcome email notification. Later, if any attributes of a user or device (only for security groups) change, all rules for dynamic membership groups in the organization are processed for changes. Users who are added then also receive the welcome notification.
@@ -125,6 +128,8 @@ The following status messages appear for **Last membership change**:
 If an error occurs during processing of the membership rule for a specific group, an alert appears on the top of the overview page for the group. If no pending updates for dynamic membership groups can be processed for all the groups within the organization for more than 24 hours, an alert appears above **All groups**.
 
 :::image type="content" source="./media/groups-create-rule/processing-error.png" alt-text="Screenshot of an alert that says dynamic group memberships have not been updated due to system delays.":::
+
+While the status is **Processing error**, membership isn't updated. Members from the last successful evaluation stay in the group, and users who newly match the rule aren't added. If the group is used to target policies or assignments, those users aren't covered.
 
 ## Related content
 
