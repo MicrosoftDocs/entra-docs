@@ -26,24 +26,24 @@ Before you begin, review the prerequisites, including the Global Secure Access c
 
 Start with specific higher-risk applications rather than all private applications. Choose applications where reauthentication adds protection and where the additional authentication prompts are appropriate for the users' work.
 
-Sign-in every time works with both Quick Access and per-app access. We recommend per-app targeting to avoid unexpected prompts for other resources included in a broad Quick Access configuration. For example, a Windows device joined to an on-premises domain opens a new network connection when it checks in with its domain controller. This connection might trigger an authentication prompt without an explicit user action to explain it. Setting up sign-in every time for specific per-app resources helps avoid these unexpected prompts.
+Sign-in every time works with both Quick Access and per-app access. We recommend per-app targeting to avoid unexpected prompts for other resources included in a broad Quick Access configuration. For example, Windows devices joined to an on-premises domain periodically check in with a domain controller, which may trigger a sign in frequency related authentication prompt without an explicit user action. Setting up sign-in every time for specific per-app resources that require it helps avoid unexpected sign in prompts.
 
-As a deployment best practice, we also recommend following [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md). Your emergency access accounts should be excluded from the sign-in every time policies.
+As a deployment best practice, we also recommend following [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md). Your emergency access accounts should be excluded from blocking policies, including the 'sign-in every time' policies.
 
 1. Work with application owners to identify the applications that need sign-in every time. For example:
 
     | Application | Example use |
     | --- | --- |
-    | Administrator jump box. | System administrators connect through SSH or RDP to manage sensitive infrastructure. |
-    | Financial system. | Staff submit or approve payments or other financial transactions. |
-    | Healthcare system. | Authorized staff access patient records or other sensitive clinical data. |
+    | Administrator jump box | System administrators connect through SSH or RDP to manage sensitive infrastructure |
+    | Financial system | Staff submit or approve payments or other financial transactions |
+    | Healthcare system | Authorized staff access patient records or other sensitive clinical data |
 
-1. Confirm that the five-minute Global Secure Access reauthentication window meets each application's requirements. This feature is triggered when a new network connection is established to the protected private application. It doesn't guarantee a fresh prompt for every command, transaction, or patient record. For the timing example, see [Reauthentication interval](concept-private-access-sign-in-every-time.md#reauthentication-interval).
+1. Understand that this feature is triggered when a new network connection is established to the protected private application. It doesn't guarantee a fresh prompt for every command, transaction, or patient record. For the timing example, see [Reauthentication interval](concept-private-access-sign-in-every-time.md#reauthentication-interval).
 1. Identify the corresponding Private Access enterprise applications. If the resources are part of a broad Quick Access configuration, consider [per-app access segmentation](tutorial-private-access-app-segmentation.md) to target them individually.
-1. Select a small pilot group that represents the applications and client platforms you plan to support. Confirm that pilot users already have the required application assignments; Conditional Access user targeting doesn't grant application access.
-1. Record the selected applications, pilot group, planned user scope, and exclusions. Keep existing Conditional Access protections in place.
+1. Select a small pilot group that represents the applications and client platforms you plan to support. Confirm that the sign-in frequency policies work as expected for these applications.
+1. Optionally, you could use **Report Only** mode in Conditional Access to validate which users the policy would apply to, and then use the Global Secure Access Traffic Logs to validate the versions of GSA client that these users are using.
 
-Use one Conditional Access policy for the selected applications that share this sign-in every time requirement and user scope. The feature doesn't have an application-specific interval to configure: select **Every time strict (preview)** and add relevant applications to the same policy as needed.
+Use one Conditional Access policy for the selected applications that share this sign-in every time requirement and user scope.
 
 ## Choose the platform scope
 
@@ -53,15 +53,13 @@ Decide how to handle unsupported platforms before enforcement. The choice determ
 
     | Approach | Policy scope | Expected behavior |
     | --- | --- | --- |
-    | Enforce only on Windows. | Use the **Device platforms** condition to include Windows and leave non-Windows platforms out of scope. | Supported Windows clients use sign-in every time. Other platforms aren't subject to this policy and can connect if their other access requirements are satisfied. |
-    | Require enforcement across targeted platforms. | Don't exclude platforms from the policy. | Supported Windows clients use sign-in every time. Global Secure Access blocks access from unsupported platforms or older Windows clients where enforcement applies. |
+    | Enforce only on Windows | Use the **Device platforms** condition to include Windows and leave non-Windows platforms out of scope | Supported Windows clients use sign-in every time. Other platforms aren't subject to this policy and can connect if their other access requirements are satisfied. |
+    | Require enforcement across targeted platforms  Don't exclude platforms from the policy | Supported Windows clients use sign-in every time. Global Secure Access blocks access from unsupported platforms or older Windows clients where enforcement applies. |
 
-1. Check Windows client versions for users in scope. Windows-only targeting doesn't distinguish client versions: Windows clients earlier than **2.34.222** are still blocked where enforcement applies.
-1. Agree on the platform choice with application owners and communicate expected prompts or blocked access to pilot users.
 
 For more information, see [Supported clients and platforms](concept-private-access-sign-in-every-time.md#supported-clients-and-platforms) and [Conditional Access device platform conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#device-platforms).
 
-## Create one Conditional Access policy
+## Create the Conditional Access policy
 
 Create the policy in the **Off** state so you can review its scope before enabling the pilot:
 
@@ -111,8 +109,9 @@ For help investigating policy results, see [Troubleshoot Conditional Access](~/i
 
 ## Expand deployment and monitor
 
-Expand the same policy only after the enforced pilot meets the application's requirements. Review client readiness and exclusions for each expansion.
+Expand the same policy only after the enforced pilot confirms desired reauthentication behavior. Review client readiness and exclusions for each expansion.
 
+1. Optionally, you could use **Report Only** mode in Conditional Access to validate which users the policy would apply to, and then use the Global Secure Access Traffic Logs to validate the versions of GSA client that these users are using. This will help you understand the impact of the broader enablement.
 1. Add approved user groups to the policy in stages, retaining any configured emergency access exclusions. Notify each group about reauthentication and supported clients.
 1. Add further selected Private Access applications under **Target resources** in the same policy as needed. Confirm that the policy's user and platform scope is appropriate for each addition, and repeat the pilot tests.
 1. Monitor sign-in results, unexpected access failures, and user feedback. Check that platform exclusions remain consistent with the access requirements agreed with application owners.
