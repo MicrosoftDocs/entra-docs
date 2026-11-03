@@ -1292,18 +1292,18 @@ With [Microsoft Entra resource policy](~/id-governance/tenant-governance/resourc
 
 |Audit Category|Activity|
 |---|---|
-|Resource Policy|Create resource policy assignment|
-|Resource Policy|Create resource policy definition|
-|Resource Policy|Delete resource policy assignment|
-|Resource Policy|Delete resource policy definition|
-|Resource Policy|Delete resource policy definition version|
-|Resource Policy|Permanently delete resource policy assignment|
-|Resource Policy|Permanently delete resource policy definition|
-|Resource Policy|Restore resource policy assignment|
-|Resource Policy|Restore resource policy definition|
-|Resource Policy|Update resource policy assignment|
-|Resource Policy|Update resource policy configuration|
-|Resource Policy|Update resource policy definition|
+|ResourcePolicy|Create resource policy assignment|
+|ResourcePolicy|Create resource policy definition|
+|ResourcePolicy|Delete resource policy assignment|
+|ResourcePolicy|Delete resource policy definition|
+|ResourcePolicy|Delete resource policy definition version|
+|ResourcePolicy|Permanently delete resource policy assignment|
+|ResourcePolicy|Permanently delete resource policy definition|
+|ResourcePolicy|Restore resource policy assignment|
+|ResourcePolicy|Restore resource policy definition|
+|ResourcePolicy|Update resource policy assignment|
+|ResourcePolicy|Update resource policy configuration|
+|ResourcePolicy|Update resource policy definition|
 
 ## Self-service group management
 
