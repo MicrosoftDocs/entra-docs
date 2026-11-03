@@ -2,7 +2,8 @@
 title: Configure Zendesk for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Zendesk.
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 11/03/2026
+ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zendesk so that I can streamline the user management process and ensure that users have the appropriate access to Zendesk.
 --- 
@@ -28,6 +29,13 @@ The scenario outlined in this article assumes that you already have the followin
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A user account in Zendesk with Admin rights.
 * A Zendesk tenant with the Professional plan or better enabled.
+
+> [!IMPORTANT]
+> As part of its [API token deprecation](https://support.zendesk.com/hc/en-us/articles/10840968198042-Announcing-the-removal-of-API-tokens-as-an-authentication-method-for-API-requests), Zendesk has restricted the creation of new API tokens starting October 27, 2026, and plans to permanently deactivate all API tokens on April 30, 2027.
+>
+> Customers setting up **Microsoft Entra automatic provisioning with Zendesk** who are unable to create an API token can contact **Zendesk Support or their Zendesk account manager** to request an exception that restores API-token creation access.
+>
+> Microsoft Entra is working to introduce **OAuth client credentials authentication** for the Zendesk provisioning connector, currently targeted for **mid-December 2026**. Until this support becomes available, customers can use the exception process above to configure new provisioning integrations.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
