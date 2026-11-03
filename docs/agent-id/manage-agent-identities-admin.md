@@ -117,7 +117,7 @@ To view agent sign-in logs:
 You can also retrieve agent sign-in events using Microsoft Graph:
 
 ```http
-GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=signInEventTypes/any(t: t eq 'servicePrincipal') and agent/agentType eq 'AgentIdentity'
+GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=signInEventTypes/any(t: t eq 'servicePrincipal') and agent/agentType eq 'agenticAppInstance'
 ```
 
 For full details on log types and access methods, see [Microsoft Entra Agent ID logs](sign-in-audit-logs-agents.md).
