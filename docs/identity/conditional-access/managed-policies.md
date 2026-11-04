@@ -157,7 +157,7 @@ Administrators can review policy impact in report-only mode, exclude emergency a
 
 ### Require remediation for high-risk users
 
-This policy requires users identified as high risk by Microsoft Entra ID Protection to remediate their risk before continuing to access organizational resources. A new security group is created alongside this policy to scope the affected users. Instead of blocking access entirely, this policy uses [adaptive risk remediation](/entra/id-protection/concept-identity-protection-user-experience) to guide users through the appropriate recovery flow based on their authentication method and the type of threat detected. For more information about the remediation experience, see [User self-remediation with Microsoft Entra ID Protection](/entra/id-protection/concept-identity-protection-user-experience).
+This policy requires users identified as high risk by Microsoft Entra ID Protection to remediate their risk before continuing to access organizational resources. A new security group named “Conditional Access: User Risk remediation” is created alongside this policy to scope the affected users. Microsoft populates this group with eligible active users registered for MFA, up to the tenant’s available Microsoft Entra ID P2 license count. Instead of blocking access entirely, this policy uses [adaptive risk remediation](/entra/id-protection/concept-identity-protection-user-experience) to guide users through the appropriate recovery flow based on their authentication method and the type of threat detected. For more information about the remediation experience, see [User self-remediation with Microsoft Entra ID Protection](/entra/id-protection/concept-identity-protection-user-experience).
 
 > [!NOTE]
 > **Hybrid tenants:** Eligible tenants have password hash sync enabled, so affected users can self-remediate through a secure password change after completing MFA. Ensure your users are registered for MFA. For more information, see [Considerations for cloud and hybrid users](/entra/id-protection/howto-identity-protection-remediate-unblock#considerations-for-cloud-and-hybrid-users).
@@ -165,6 +165,7 @@ This policy requires users identified as high risk by Microsoft Entra ID Protect
 This policy targets:
 
 - Organizations with Microsoft Entra ID P2 licenses
+- Organizations that don't already have an enabled customer-managed Conditional Access policy targeting user risk. Microsoft skips tenants that already have an enabled customer-managed Conditional Access policy targeting user risk. Existing user risk policies in Report-only or Off state don't prevent this Microsoft-managed policy from being created. This check is specific to user risk policies, not all Conditional Access policies.
 
 Key considerations:
 
@@ -173,7 +174,7 @@ Key considerations:
 - Authentication strength and sign-in frequency (every time) are automatically applied to ensure users reauthenticate with the required strength after session revocation.
 - This policy isn't supported for external and guest users.
   
-Administrators can review policy impact in report-only mode, exclude emergency access accounts, and move the policy to On when ready.
+Administrators can review policy impact in report-only mode, exclude emergency access accounts, and turn the policy On before the scheduled enforcement date. If the policy remains in Report-only, Microsoft automatically enables it according to the schedule communicated to your tenant.
 
 ## Upgrade from security defaults
 
