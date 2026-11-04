@@ -133,12 +133,12 @@ When a user or client application calls the web API, only clients with these sco
     "TenantId": "Enter_the_Tenant_Id_Here",
     "ClientId": "Enter_the_Application_Id_Here",
     "Scopes": {
-      "Read": ["ToDoList.Read", "ToDoList.ReadWrite"],
-      "Write": ["ToDoList.ReadWrite"]
+      "Read": "ToDoList.Read ToDoList.ReadWrite",
+      "Write": "ToDoList.ReadWrite"
     },
     "AppPermissions": {
-      "Read": ["ToDoList.Read.All", "ToDoList.ReadWrite.All"],
-      "Write": ["ToDoList.ReadWrite.All"]
+      "Read": "ToDoList.Read.All ToDoList.ReadWrite.All",
+      "Write": "ToDoList.ReadWrite.All"
     }
   },
   "Logging": {...},
