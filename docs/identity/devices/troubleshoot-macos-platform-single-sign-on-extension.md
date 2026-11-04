@@ -187,7 +187,7 @@ On a Mac registered with Platform SSO, apps might show sign-in errors such as `4
 On macOS 14 or later, enable **Use Shared Device Keys** in the Platform SSO configuration to help prevent this issue. This setting makes device authentication keys available before the user unlocks the device. For configuration details, see [Configure Platform SSO in Intune](/intune/device-configuration/settings-catalog/configure-platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune).
 
 > [!IMPORTANT]
-> Changing this setting in an existing deployment triggers device re-registration with Microsoft Entra ID.
+> Changing this setting in an existing deployment triggers a Platform SSO re-registration.
 
 ## Report an issue
 
