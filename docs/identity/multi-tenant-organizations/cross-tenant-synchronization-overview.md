@@ -1,9 +1,11 @@
 ---
 title: What is cross-tenant synchronization in Microsoft Entra ID?
 description: Learn about cross-tenant synchronization in Microsoft Entra ID.
+author: akhil-potturi
+ms.author: potturiakhil
 ms.topic: overview
-ms.date: 05/29/2026
-ms.custom: it-pro
+ms.date: 11/02/2026
+ms.custom: it-pro, msecd-doc-authoring-1032
 ms.reviewer: hafowler
 ai-usage: ai-assisted
 #customer intent: As a development, DevOps, or IT admin, I want to understand what cross-tenant synchronization is so that I can manage Microsoft Entra B2B collaboration across tenants in my organization.
@@ -267,9 +269,17 @@ If a group exists in the target tenant (created outside cross-tenant synchroniza
 | Supported | Security group (static and dynamic)<br/>Microsoft 365 group | Security group (static) |
 | Not supported | All other group types, such as:<br/>- Mail-enabled security groups<br/>- Shared mailbox<br/>- Dynamic distribution groups<br/>- Distribution groups | All other group types, such as:<br/>- Microsoft 365 groups<br/>- Mail-enabled security groups<br/>- Shared mailbox<br/>- Dynamic distribution groups<br/>- Distribution groups |
 
+#### Can I synchronize role-assignable groups?
+
+Yes, when role-enabled group sync is available in your environment. Enable inbound group synchronization and inbound role-enabled group synchronization in the target tenant, and configure a direct `isAssignableToRole` attribute mapping in the source tenant. Apply the mapping only during object creation, before adding role-assignable groups to the synchronization scope.
+
+Role-enabled group sync synchronizes the group's ability to receive role assignments. It doesn't copy role assignments from the source tenant. Assign the required roles separately in each target tenant.
+
+The `isAssignableToRole` property is set when the target group is created and can't be changed afterward. Adding the mapping doesn't convert previously synchronized non-role-assignable target groups. For configuration and replacement guidance, see [Configure role-enabled group sync](cross-tenant-synchronization-configure.md#configure-role-enabled-group-sync).
+
 #### What are the restrictions for synchronizing groups?
 
-- Creating groups as role assignable isn't currently supported.
+- Role-assignability is synchronized only during target group creation. Role assignments aren't synchronized.
 
 - Nested groups aren't supported.
 
