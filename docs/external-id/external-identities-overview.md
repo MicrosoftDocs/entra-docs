@@ -3,7 +3,7 @@
 title: Microsoft Entra External ID Overview
 description: Compare solutions for using Microsoft Entra External ID to work with people outside your organization, including B2B collaboration and Azure AD B2C.
 ms.topic: overview
-ms.date: 04/24/2026
+ms.date: 09/02/2026
 ms.collection: M365-identity-device-management
 ai-usage: ai-assisted
 # Customer intent: As a developer who creates apps for consumers and business customers, I want to understand the capabilities of Microsoft Entra External ID so that I can manage my customers' identity experiences and allow them to use their own credentials to sign in.
@@ -137,10 +137,12 @@ Organizations can use Microsoft Entra Conditional Access policies to enhance the
 
 #### Conditional Access and MFA in external tenants
 
-In external tenants, organizations can enforce MFA for customers by creating a Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support two methods for authentication as a second factor:
+In external tenants, organizations can enforce MFA for customers by creating a Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support the following authentication methods for MFA:
 
 - **Email one-time passcode**. After users sign in with their email and password, they're prompted for a passcode that's sent to their email.
 - **SMS-based authentication**. SMS is available as a second-factor authentication method for MFA for users in external tenants. Users who sign in with email and password, email and one-time passcode, or social identities like Google or Facebook are prompted for second verification through SMS.
+- **Time-based one-time password (TOTP)**. Users register Microsoft Authenticator or a supported third-party authenticator app and enter the temporary verification code from the app when MFA is required.
+- **Passkey (FIDO2)**. Passkeys are phishing-resistant credentials that can satisfy MFA in a single gesture and enable passwordless sign-in.
 
 [Learn more about authentication methods in external tenants](customers/concept-multifactor-authentication-customers.md).
 
