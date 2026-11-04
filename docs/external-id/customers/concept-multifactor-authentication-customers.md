@@ -1,13 +1,13 @@
 ---
 title: MFA in external tenants
-description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP), SMS, or passkeys (FIDO2) as a second verification method for sign-up and sign-in.
+description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP), SMS, time-based one-time passwords (TOTP), or passkeys (FIDO2) for verification.
 
 ms.topic: concept-article
-ms.date: 05/21/2026
+ms.date: 09/02/2026
 ms.custom: it-pro, references_regions
 ai-usage: ai-assisted
 
-#Customer intent: As a dev, devops, or it admin, I want to learn about ways to secure apps in my external tenant by adding multifactor authentication and enabling SMS, email one-time passcodes, and passkeys.
+#Customer intent: As a dev, devops, or it admin, I want to learn about ways to secure apps in my external tenant by adding multifactor authentication and enabling SMS, email one-time passcodes, TOTP, and passkeys.
 ---
 
 # Multifactor authentication in external tenants
@@ -18,6 +18,7 @@ Multifactor authentication (MFA) adds a layer of security to your applications b
 
 - Email one-time passcode
 - SMS-based authentication, available as an add-on ([see details](#sms-based-authentication)).
+- Time-based one-time password (TOTP) from Microsoft Authenticator or a supported third-party authenticator app ([see details](#time-based-one-time-password-totp)).
 - Passkey (FIDO2). Passkeys are a phishing-resistant authentication method that can satisfy MFA in a single gesture and also enable passwordless sign-in ([see details](#passkey-fido2)).
 
 Enforcing MFA enhances your organization's security by adding an extra layer of verification, making it more difficult for unauthorized users to gain access.
@@ -45,11 +46,11 @@ When you select identity provider options in your user flows, you define the fir
 
 Depending on which option you choose as the first factor, different second-factor verification methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md).
 
-- **Email with password or username with password**: For these first-factor methods, you can enable email one-time passcode, SMS, passkey (FIDO2), or a combination as second-factor verification methods for MFA.
-- **External identity providers**: You can enable email one-time passcode, SMS, or a combination as second-factor verification methods for MFA. Passkey (FIDO2) isn't currently available for users who sign in with an external identity provider.
-- **Email one-time passcode**: When email with one-time passcode is selected as the first-factor authentication method, it can't be used for second-factor verification. Therefore, only SMS-based verification can be enabled for MFA. Passkey (FIDO2) isn't currently available for email one-time passcode users.
+- **Email with password or username with password**: For these first-factor methods, you can enable email one-time passcode, SMS, TOTP, passkey (FIDO2), or a combination as second-factor verification methods for MFA.
+- **External identity providers**: You can enable email one-time passcode, SMS, TOTP, or a combination as second-factor verification methods for MFA. Passkey (FIDO2) isn't currently available for users who sign in with an external identity provider.
+- **Email one-time passcode**: When email with one-time passcode is selected as the first-factor authentication method, it can't be used for second-factor verification. You can enable SMS or TOTP for MFA. Passkey (FIDO2) isn't currently available for email one-time passcode users.
 
-For details, see [how to enable MFA methods in an external tenant](how-to-multifactor-authentication-customers.md#enable-email-one-time-passcode-as-an-mfa-method).
+For details, see [how to enable MFA methods in an external tenant](how-to-multifactor-authentication-customers.md).
 
 ## Email one-time passcode
 
@@ -86,6 +87,14 @@ SMS is an add-on feature and requires a [linked subscription](../external-identi
 ### Opt-in regions for SMS
 
 Starting January 2025, certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them for your application using the Microsoft Graph `onPhoneMethodLoadStartevent` policy. See [Regions requiring opt-in for SMS verification](how-to-region-code-opt-in.md).
+
+## Time-based one-time password (TOTP)
+
+TOTP is a standards-based method that generates a temporary verification code in Microsoft Authenticator or a supported third-party authenticator app. It works as a second-factor verification method for MFA in external tenants.
+
+When TOTP is enabled and MFA is required, users register an authenticator app by scanning a QR code. For subsequent MFA challenges, users enter the verification code displayed in their authenticator app.
+
+For setup steps, see [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md#enable-totp-as-an-mfa-method).
 
 ## Passkey (FIDO2)
 
