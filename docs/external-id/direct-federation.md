@@ -2,9 +2,10 @@
 title: Add a SAML/WS-Fed identity provider
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
 ms.topic: how-to
-ms.date: 04/08/2026
+ms.date: 11/05/2026
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange, msecd-doc-authoring-1012
+ai-usage: ai-assisted
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
@@ -111,59 +112,313 @@ Refer to the following tables for the required values.
 
 ### Step 3: Configure SAML/WS-Fed IdP federation in Microsoft Entra External ID
 
-Next, configure federation with the IdP configured in step 1 in Microsoft Entra External ID. You can use either the Microsoft Entra admin center or the [Microsoft Graph API](/graph/api/resources/samlorwsfedexternaldomainfederation). It might take 5-10 minutes before the federation policy takes effect. During this time, don't attempt to complete self-service sign-up or redeem an invitation for the federation domain. The following attributes are required:
+After your partner configures their IdP in step 2, configure federation in Microsoft Entra External ID. You can use the Microsoft Entra admin center, [Microsoft Graph](#to-configure-federation-using-the-microsoft-graph-api), or [Microsoft Graph PowerShell](#configure-federation-with-microsoft-graph-powershell). It might take 5-10 minutes before the federation policy takes effect. During this time, don't attempt to complete self-service sign-up or redeem an invitation for the federation domain. The following attributes are required:
 
-- Issuer URI of the partner's IdP
-- Passive authentication endpoint of partner IdP (only https is supported)
-- Certificate
+- Issuer URI of the partner's IdP.
+- Passive authentication endpoint of the partner's IdP. Only HTTPS is supported.
+- The public portion of the IdP's token-signing certificate.
 
 #### To add the IdP to your tenant in the Microsoft Entra admin center
-
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your tenant from the **Directories** menu.
 1. Browse to **Microsoft Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
 
-   :::image type="content" source="media/direct-federation/new-saml-wsfed-idp.png" alt-text="Screenshot showing button for adding a new SAML or WS-Fed IdP." lightbox="media/direct-federation/new-saml-wsfed-idp.png":::
+    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp.png" alt-text="Screenshot showing button for adding a new SAML or WS-Fed IdP." lightbox="media/direct-federation/new-saml-wsfed-idp.png":::
 
 1. On the **New SAML/WS-Fed IdP** page, enter the following:
-   - **Display name** - Enter a name to help you identify the partner's IdP.
-   - **Identity provider protocol** - Select **SAML** or **WS-Fed**.
-   - **Domainless** - Selecting **Domainless** enforces no domain check of the user's email address. For more details, see [Domainless SAML IdP federation](./direct-federation.md#domainless-saml-idp-federation).
-   - **Domain name of federating IdP** - Enter your partner’s IdP target domain name for federation. During this initial configuration, enter just one domain name. You can add more domains later.
+    - **Display name** - Enter a name to help you identify the partner's IdP.
+    - **Identity provider protocol** - Select **SAML** or **WS-Fed**.
+    - **Domainless** - For domain-based federation, leave this option cleared. To configure a SAML IdP without matching the user's email domain, see [Configure domainless SAML IdP federation](#configure-domainless-saml-idp-federation).
+    - **Domain name of federating IdP** - Enter your partner's IdP target domain name for federation. During this initial configuration, enter just one domain name. You can add more domains later.
 
     :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-parse.png" alt-text="Screenshot showing the new SAML or WS-Fed IdP page.":::
 
 1. Select a method for populating metadata. If you have a file that contains the metadata, you can automatically populate the fields by selecting **Parse metadata file** and browsing for the file. Or, you can select **Input metadata manually** and enter the following information:
 
-   - The **Issuer URI** of the partner's SAML IdP, or the **Entity ID** of the partner's WS-Fed IdP.
-   - The **Passive authentication endpoint** of the partner's SAML IdP, or the **Passive requestor endpoint** of the partner's WS-Fed IdP.
-   - **Certificate** - The signing certificate ID.
-   - **Metadata URL** - The location of the IdP's metadata for automatic renewal of the signing certificate.
+    - The **Issuer URI** of the partner's SAML IdP, or the **Entity ID** of the partner's WS-Fed IdP.
+    - The **Passive authentication endpoint** of the partner's SAML IdP, or the **Passive requestor endpoint** of the partner's WS-Fed IdP.
+    - **Certificate** - Enter the Base64-encoded public portion of the IdP's token-signing certificate.
+    - **Metadata URL** - The location of the IdP's metadata for automatic renewal of the signing certificate.
 
-   :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-input.png" alt-text="Screenshot showing metadata fields.":::
+    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-input.png" alt-text="Screenshot showing metadata fields.":::
 
-   > [!NOTE]
-   > Metadata URL is optional. However, we strongly recommend it. If you provide the metadata URL, Microsoft Entra ID can automatically renew the signing certificate when it expires. If the certificate is rotated for any reason before the expiration time or if you don't provide a metadata URL, Microsoft Entra ID is unable to renew it. In this case, you need to update the signing certificate manually.
+    > [!NOTE]
+    > Metadata URL is optional. However, we strongly recommend it. If you provide the metadata URL, Microsoft Entra ID can automatically renew the signing certificate when it expires. If the certificate is rotated for any reason before the expiration time or if you don't provide a metadata URL, Microsoft Entra ID is unable to renew it. In this case, you need to update the signing certificate manually.
 
 1. Select **Save**. The identity provider is added to the **SAML/WS-Fed identity providers** list.
 
-      :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the new entry." lightbox="media/direct-federation/new-saml-wsfed-idp-list.png":::
+    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the new entry." lightbox="media/direct-federation/new-saml-wsfed-idp-list.png":::
 
 1. (Optional) To add more domain names to this federating identity provider:
-   
-   1. Select the link in the **Domains** column.
 
-      :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-add-domain.png" alt-text="Screenshot showing the link for adding domains to the SAML/WS-Fed identity provider." lightbox="media/direct-federation/new-saml-wsfed-idp-add-domain.png":::
+    1. Select the link in the **Domains** column.
 
-   1. Next to **Domain name of federating IdP**, type the domain name, and then select **Add**. Repeat for each domain you want to add. When you're finished, select **Done**.
+        :::image type="content" source="media/direct-federation/new-saml-wsfed-idp-add-domain.png" alt-text="Screenshot showing the link for adding domains to the SAML/WS-Fed identity provider." lightbox="media/direct-federation/new-saml-wsfed-idp-add-domain.png":::
 
-      :::image type="content" source="media/direct-federation/add-domain.png" alt-text="Screenshot showing the Add button in the domain details pane.":::
+    1. Next to **Domain name of federating IdP**, type the domain name, and then select **Add**. Repeat for each domain you want to add. When you're finished, select **Done**.
+
+        :::image type="content" source="media/direct-federation/add-domain.png" alt-text="Screenshot showing the Add button in the domain details pane.":::
 
 #### To configure federation using the Microsoft Graph API
 
-You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-beta&preserve-view=true) resource type to set up federation with an identity provider that supports either the SAML or WS-Fed protocol.
+Use the Microsoft Graph v1.0 [samlOrWsFedExternalDomainFederation](/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0&preserve-view=true) resource to retrieve or create federation configurations. The examples in this section use SAML. To configure a WS-Fed IdP, use the partner's WS-Fed settings and set `preferredAuthenticationProtocol` to `wsFed`.
+
+For delegated access, sign in as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator). The access token must have the permissions required for the operation:
+
+| Operation | Microsoft Graph permission |
+| --- | --- |
+| List or retrieve federation configurations. | `Domain.Read.All` |
+| Create a federation configuration. | `IdentityProvider.ReadWrite.All` |
+| Delete a federation configuration. | `Domain.ReadWrite.All` or `IdentityProvider.ReadWrite.All` |
+
+Replace `{token}` with an access token for Microsoft Graph. The sample responses are illustrative and shortened for readability. IDs and configuration values differ in your tenant, and the certificate placeholder isn't a usable certificate.
+
+##### List SAML/WS-Fed IdP federations
+
+Use the following request to [list the SAML/WS-Fed federation configurations](/graph/api/samlorwsfedexternaldomainfederation-list?view=graph-rest-1.0&preserve-view=true) in your tenant:
+
+```http
+GET https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation
+Authorization: Bearer {token}
+```
+
+A successful request returns `200 OK` and a collection in `value`:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.samlOrWsFedExternalDomainFederation",
+      "id": "11111111-2222-3333-4444-555555555555",
+      "displayName": "Contoso SAML IdP",
+      "issuerUri": "https://idp.contoso.com/saml",
+      "passiveSignInUri": "https://idp.contoso.com/sso/saml",
+      "metadataExchangeUri": "https://idp.contoso.com/metadata",
+      "preferredAuthenticationProtocol": "saml",
+      "signingCertificate": "<Base64-encoded-signing-certificate>",
+      "domains": [
+        {
+          "id": "contoso.com"
+        }
+      ]
+    }
+  ]
+}
+```
+
+If the response includes `@odata.nextLink`, request that URL to retrieve the next page. Continue until no next link is returned. For more information, see [Paging Microsoft Graph data](/graph/paging).
+
+##### Find a federation by domain
+
+Use a `domains/any` filter to [find the federation configuration for a specific domain](/graph/api/samlorwsfedexternaldomainfederation-get?view=graph-rest-1.0&preserve-view=true). The following request filters for `contoso.com`.
+
+```http
+GET https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?$filter=domains/any(x:x/id%20eq%20'contoso.com')
+Authorization: Bearer {token}
+```
+
+The response is still a collection, even when only one federation matches:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.samlOrWsFedExternalDomainFederation",
+      "id": "11111111-2222-3333-4444-555555555555",
+      "displayName": "Contoso SAML IdP",
+      "issuerUri": "https://idp.contoso.com/saml",
+      "passiveSignInUri": "https://idp.contoso.com/sso/saml",
+      "metadataExchangeUri": "https://idp.contoso.com/metadata",
+      "preferredAuthenticationProtocol": "saml",
+      "signingCertificate": "<Base64-encoded-signing-certificate>",
+      "domains": [
+        {
+          "id": "contoso.com"
+        }
+      ]
+    }
+  ]
+}
+```
+
+If no federation matches the domain, `value` is an empty array.
+
+##### Get a federation by ID
+
+To retrieve one federation configuration, use its `id` from a list or domain-filter response:
+
+```http
+GET https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/11111111-2222-3333-4444-555555555555
+Authorization: Bearer {token}
+```
+
+The response contains a single federation object rather than a `value` collection:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "@odata.type": "#microsoft.graph.samlOrWsFedExternalDomainFederation",
+  "id": "11111111-2222-3333-4444-555555555555",
+  "displayName": "Contoso SAML IdP",
+  "issuerUri": "https://idp.contoso.com/saml",
+  "passiveSignInUri": "https://idp.contoso.com/sso/saml",
+  "metadataExchangeUri": "https://idp.contoso.com/metadata",
+  "preferredAuthenticationProtocol": "saml",
+  "signingCertificate": "<Base64-encoded-signing-certificate>",
+  "domains": [
+    {
+      "id": "contoso.com"
+    }
+  ]
+}
+```
+
+##### Create a domain-based SAML IdP
+
+Use the following request to [create a SAML federation configuration](/graph/api/samlorwsfedexternaldomainfederation-post?view=graph-rest-1.0&preserve-view=true) for `contoso.com`:
+
+```http
+POST https://graph.microsoft.com/v1.0/directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "@odata.type": "microsoft.graph.samlOrWsFedExternalDomainFederation",
+  "displayName": "Contoso SAML IdP",
+  "issuerUri": "https://idp.contoso.com/saml",
+  "passiveSignInUri": "https://idp.contoso.com/sso/saml",
+  "metadataExchangeUri": "https://idp.contoso.com/metadata",
+  "preferredAuthenticationProtocol": "saml",
+  "signingCertificate": "<Base64-encoded-signing-certificate>",
+  "domains": [
+    {
+      "@odata.type": "microsoft.graph.externalDomainName",
+      "id": "contoso.com"
+    }
+  ]
+}
+```
+
+Replace the example values with the partner's IdP settings:
+
+| Property | Example value and purpose |
+| --- | --- |
+| `displayName` | `Contoso SAML IdP`, a name that helps you identify the provider. |
+| `issuerUri` | `https://idp.contoso.com/saml`, the issuer URI that identifies the partner's IdP. |
+| `passiveSignInUri` | `https://idp.contoso.com/sso/saml`, the HTTPS endpoint for browser-based sign-in. |
+| `metadataExchangeUri` | `https://idp.contoso.com/metadata`, the IdP metadata URL. |
+| `preferredAuthenticationProtocol` | `saml` for a SAML IdP. |
+| `signingCertificate` | The Base64-encoded public portion of the IdP's token-signing certificate, not a certificate ID or a private key. |
+| `domains` | The external domains associated with the IdP, such as `contoso.com`. |
+
+A successful request returns `201 Created` and the resulting federation object. The following response shows its ID and display name:
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "id": "11111111-2222-3333-4444-555555555555",
+  "displayName": "Contoso SAML IdP"
+}
+```
+
+To create a SAML IdP that doesn't match users by email domain, see [Create a domainless SAML IdP with Microsoft Graph](#create-a-domainless-saml-idp-with-microsoft-graph).
+
+#### Configure federation with Microsoft Graph PowerShell
+
+Install the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation). These examples use [Invoke-MgGraphRequest](/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest) from the `Microsoft.Graph.Authentication` module to call the same v1.0 endpoints.
+
+Use an account with at least the External Identity Provider Administrator role. Replace the sample tenant ID, domain, federation ID, URLs, and certificate with your own values.
+
+##### List federations with PowerShell
+
+Connect to the tenant where you want to configure federation with `Domain.Read.All`. The following example retrieves each page of SAML/WS-Fed federation configurations:
+
+```powershell
+Connect-MgGraph -TenantId "<tenant-id>" -Scopes "Domain.Read.All"
+
+$uri = "https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation"
+
+do {
+    $result = Invoke-MgGraphRequest -Method GET -Uri $uri
+    $result.value | Format-List *
+    $uri = $result.'@odata.nextLink'
+} while ($uri)
+```
+
+##### Find a federation by domain with PowerShell
+
+The following example URL-encodes the filter and retrieves the configuration associated with `contoso.com`:
+
+```powershell
+Connect-MgGraph -TenantId "<tenant-id>" -Scopes "Domain.Read.All"
+
+$domain = "contoso.com"
+$filter = [Uri]::EscapeDataString("domains/any(x:x/id eq '$domain')")
+$uri = "https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation?`$filter=$filter"
+
+$result = Invoke-MgGraphRequest -Method GET -Uri $uri
+$result.value | Format-List *
+```
+
+##### Get a federation by ID with PowerShell
+
+Use the federation ID from a list or domain-filter response:
+
+```powershell
+Connect-MgGraph -TenantId "<tenant-id>" -Scopes "Domain.Read.All"
+
+$federationId = "11111111-2222-3333-4444-555555555555"
+$uri = "https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/$federationId"
+
+$result = Invoke-MgGraphRequest -Method GET -Uri $uri
+$result | Format-List *
+```
+
+##### Create a domain-based SAML IdP with PowerShell
+
+Connect with `IdentityProvider.ReadWrite.All`, prepare the request body, and create the federation configuration:
+
+```powershell
+Connect-MgGraph -TenantId "<tenant-id>" -Scopes "IdentityProvider.ReadWrite.All"
+
+$body = @{
+    "@odata.type" = "microsoft.graph.samlOrWsFedExternalDomainFederation"
+    displayName = "Contoso SAML IdP"
+    issuerUri = "https://idp.contoso.com/saml"
+    passiveSignInUri = "https://idp.contoso.com/sso/saml"
+    metadataExchangeUri = "https://idp.contoso.com/metadata"
+    preferredAuthenticationProtocol = "saml"
+    signingCertificate = "<Base64-encoded-signing-certificate>"
+    domains = @(
+        @{
+            "@odata.type" = "microsoft.graph.externalDomainName"
+            id = "contoso.com"
+        }
+    )
+} | ConvertTo-Json -Depth 10
+
+$result = Invoke-MgGraphRequest `
+    -Method POST `
+    -Uri "https://graph.microsoft.com/v1.0/directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation" `
+    -Body $body `
+    -ContentType "application/json"
+
+$result | Format-List *
+```
+
+To create a domainless SAML IdP instead, see [Create a domainless SAML IdP with PowerShell](#create-a-domainless-saml-idp-with-powershell).
 
 <a name='step-4-test-samlws-fed-idp-federation-in-azure-ad'></a>
 
@@ -203,15 +458,274 @@ When domainless federation is enabled:
 
 Users can then authenticate successfully using email addresses from any domain (for example, yahoo.com or gmail.com) when signing in with the external SAML IdP.
 
-To enable domainless federation for a new SAML IdP, follow these steps:
+> [!IMPORTANT]
+> Only one wildcard IdP can be configured per tenant. In Microsoft Graph, a domainless SAML IdP has a `domains` collection containing a single entry whose `id` is `*`. Don't combine the wildcard with specific domain names.
 
-- On the **New SAML/WS-Fed IdP** page, select **Domainless**. Selecting **Domainless** enforces no domain check of the user's email address.
+#### Create a new domainless SAML IdP in the Microsoft Entra admin center
 
-    :::image type="content" source="media/direct-federation/new-saml-wsfed-identity-provider-domain-less.png" alt-text="Screenshot showing the SAML/WS-Fed identity provider list with the domainless configuration." lightbox="media/direct-federation/new-saml-wsfed-identity-provider-domain-less.png":::
+To create a new domainless SAML IdP:
 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Browse to **Microsoft Entra ID** > **External Identities** > **All identity providers**.
+1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
+1. On the **New SAML/WS-Fed IdP** page, enter a **Display name**, such as `Contoso SAML IdP`, select **SAML** for **Identity provider protocol**, and select **Domainless**. You don't need to enter a specific federation domain.
+
+    :::image type="content" source="media/direct-federation/new-saml-wsfed-identity-provider-domain-less.png" alt-text="Screenshot showing the new SAML/WS-Fed identity provider page with Domainless selected." lightbox="media/direct-federation/new-saml-wsfed-identity-provider-domain-less.png":::
+
+1. Parse a metadata file or enter the issuer URI, passive authentication endpoint, signing certificate, and metadata URL manually, as described in [To add the IdP to your tenant in the Microsoft Entra admin center](#to-add-the-idp-to-your-tenant-in-the-microsoft-entra-admin-center).
+1. Select **Save**.
+
+#### Create a domainless SAML IdP with Microsoft Graph
+
+Use the same create endpoint and `IdentityProvider.ReadWrite.All` permission as for a [domain-based SAML IdP](#create-a-domain-based-saml-idp). Set the domain entry's `id` to `*`:
+
+```http
+POST https://graph.microsoft.com/v1.0/directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "@odata.type": "microsoft.graph.samlOrWsFedExternalDomainFederation",
+  "displayName": "Contoso SAML IdP",
+  "issuerUri": "https://idp.contoso.com/saml",
+  "passiveSignInUri": "https://idp.contoso.com/sso/saml",
+  "metadataExchangeUri": "https://idp.contoso.com/metadata",
+  "preferredAuthenticationProtocol": "saml",
+  "signingCertificate": "<Base64-encoded-signing-certificate>",
+  "domains": [
+    {
+      "@odata.type": "microsoft.graph.externalDomainName",
+      "id": "*"
+    }
+  ]
+}
+```
+
+A successful request returns `201 Created` and the new federation object. The following response is shortened:
+
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "id": "66666666-7777-8888-9999-000000000000",
+  "displayName": "Contoso SAML IdP"
+}
+```
+
+Retrieve the configuration by its returned ID and confirm that `domains` contains the wildcard entry.
+
+#### Create a domainless SAML IdP with PowerShell
+
+Use the `Microsoft.Graph.Authentication` module and an account with at least the External Identity Provider Administrator role, as described in [Configure federation with Microsoft Graph PowerShell](#configure-federation-with-microsoft-graph-powershell). The following example creates a domainless SAML IdP directly. Don't run both this example and the domain-based creation example for the same provider.
+
+```powershell
+Connect-MgGraph -TenantId "<tenant-id>" -Scopes "IdentityProvider.ReadWrite.All"
+
+$body = @{
+    "@odata.type" = "microsoft.graph.samlOrWsFedExternalDomainFederation"
+    displayName = "Contoso SAML IdP"
+    issuerUri = "https://idp.contoso.com/saml"
+    passiveSignInUri = "https://idp.contoso.com/sso/saml"
+    metadataExchangeUri = "https://idp.contoso.com/metadata"
+    preferredAuthenticationProtocol = "saml"
+    signingCertificate = "<Base64-encoded-signing-certificate>"
+    domains = @(
+        @{
+            "@odata.type" = "microsoft.graph.externalDomainName"
+            id = "*"
+        }
+    )
+} | ConvertTo-Json -Depth 10
+
+$result = Invoke-MgGraphRequest `
+    -Method POST `
+    -Uri "https://graph.microsoft.com/v1.0/directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation" `
+    -Body $body `
+    -ContentType "application/json"
+
+$result | Format-List *
+```
+
+### Update domain-based SAML federation to domainless federation
+
+You can change a domain-based SAML IdP to domainless by using the Microsoft Entra admin center, Microsoft Graph, or Microsoft Graph PowerShell. After any conversion, [update the associated user flows](#known-issues).
 
 > [!IMPORTANT]
-> When the **Domainless** field is selected, federation is configured as domainless. Microsoft Entra ID uses the **Issuer URI** to match incoming authentication requests instead of domain-based routing. Currently, only **one** wildcard IdP can be configured per tenant.    
+> If an existing guest can't sign in after the change, or if the IdP issuer URI has changed, [reset their redemption status](reset-redemption-status.md).
+
+#### Convert an existing SAML IdP in the Microsoft Entra admin center
+
+To change a domain-based SAML IdP to domainless in the admin center:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Browse to **Microsoft Entra ID** > **External Identities** > **All identity providers**.
+1. On **All identity providers**, select the **Custom** tab and locate the SAML IdP.
+1. Select the link in the **Domains** column to open the domain details pane.
+1. Select **Domainless**, and then select **Done**.
+
+    :::image type="content" source="media/direct-federation/edit-domains-domain-less.png" alt-text="Screenshot of the domain details pane with the Domainless option.":::
+
+#### Convert a domain-based SAML IdP with Microsoft Graph
+
+To convert a domain-based SAML IdP to domainless with Microsoft Graph, retrieve and save its settings, delete the existing configuration, and create a replacement with the wildcard domain.
+
+> [!IMPORTANT]
+> Deleting a federation configuration can prevent existing federated guests from signing in. Plan and test the change before you use it in production, and save the existing settings before deletion so that you can recreate the original configuration if needed. The replacement IdP has a new ID. Record any user flow associations before deletion. In an external tenant, add the replacement IdP to the appropriate [user flow](customers/how-to-add-identity-provider-to-user-flow-customers.md).
+
+Use `Domain.Read.All` to retrieve the configuration and `IdentityProvider.ReadWrite.All` to create the replacement. The latter permission also permits deletion. For delegated access, the administrator must have at least the External Identity Provider Administrator role.
+
+1. Get the existing SAML IdP by its ID:
+
+    ```http
+    GET https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/11111111-2222-3333-4444-555555555555
+    Authorization: Bearer {token}
+    ```
+
+1. Save the response and verify that it describes the SAML IdP you intend to replace. The following response shows an IdP associated with `contoso.com`:
+
+    ```http
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+
+    {
+      "@odata.type": "#microsoft.graph.samlOrWsFedExternalDomainFederation",
+      "id": "11111111-2222-3333-4444-555555555555",
+      "displayName": "Contoso SAML IdP",
+      "issuerUri": "https://idp.contoso.com/saml",
+      "passiveSignInUri": "https://idp.contoso.com/sso/saml",
+      "metadataExchangeUri": "https://idp.contoso.com/metadata",
+      "preferredAuthenticationProtocol": "saml",
+      "signingCertificate": "<Base64-encoded-signing-certificate>",
+      "domains": [
+        {
+          "id": "contoso.com"
+        }
+      ]
+    }
+    ```
+
+1. Prepare the replacement request before you delete the existing IdP. Keep the IdP's configuration values, remove the read-only `id` and any response-only OData annotations, and replace the `domains` collection with a single entry whose `id` is `*`. Confirm that your tenant doesn't already have another wildcard IdP.
+
+1. [Delete the existing federation configuration](/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0&preserve-view=true). Include its ID in the request URL; don't send DELETE to the collection URL.
+
+    ```http
+    DELETE https://graph.microsoft.com/v1.0/directory/federationConfigurations/11111111-2222-3333-4444-555555555555
+    Authorization: Bearer {token}
+    ```
+
+    A successful deletion returns:
+
+    ```http
+    HTTP/1.1 204 No Content
+    ```
+
+1. Create the replacement IdP with the saved settings and the wildcard domain:
+
+    ```http
+    POST https://graph.microsoft.com/v1.0/directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation
+    Authorization: Bearer {token}
+    Content-Type: application/json
+
+    {
+      "@odata.type": "microsoft.graph.samlOrWsFedExternalDomainFederation",
+      "displayName": "Contoso SAML IdP",
+      "issuerUri": "https://idp.contoso.com/saml",
+      "passiveSignInUri": "https://idp.contoso.com/sso/saml",
+      "metadataExchangeUri": "https://idp.contoso.com/metadata",
+      "preferredAuthenticationProtocol": "saml",
+      "signingCertificate": "<Base64-encoded-signing-certificate>",
+      "domains": [
+        {
+          "@odata.type": "microsoft.graph.externalDomainName",
+          "id": "*"
+        }
+      ]
+    }
+    ```
+
+    A successful request returns `201 Created` and the replacement federation object. The following response is shortened:
+
+    ```http
+    HTTP/1.1 201 Created
+    Content-Type: application/json
+
+    {
+      "id": "66666666-7777-8888-9999-000000000000",
+      "displayName": "Contoso SAML IdP"
+    }
+    ```
+
+1. Retrieve the replacement by its new ID and verify that `domains` contains `*`. Restore any user flow associations and test sign-in with the configured issuer URI, as described in [User flow for domainless SAML IdP federation](#user-flow-for-domainless-saml-idp-federation).
+
+#### Convert a domain-based SAML IdP with PowerShell
+
+Use the `Microsoft.Graph.Authentication` module and an account with at least the External Identity Provider Administrator role. This procedure deletes and recreates the federation configuration. Review the [Microsoft Graph conversion guidance](#convert-a-domain-based-saml-idp-with-microsoft-graph), including the deletion impact and replacement ID, before you run it.
+
+1. Connect to the target tenant with read and write permissions, retrieve the existing SAML IdP, and save its configuration. Replace the sample tenant ID and federation ID with your own values.
+
+    ```powershell
+    Connect-MgGraph -TenantId "<tenant-id>" -Scopes "Domain.Read.All", "IdentityProvider.ReadWrite.All"
+
+    $federationId = "11111111-2222-3333-4444-555555555555"
+    $readUri = "https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/$federationId"
+    $federation = Invoke-MgGraphRequest -Method GET -Uri $readUri -ErrorAction Stop
+
+    if ($federation.preferredAuthenticationProtocol -ne "saml") {
+        throw "Select a SAML federation configuration."
+    }
+
+    $federation | ConvertTo-Json -Depth 10 |
+        Set-Content -Path ".\contoso-saml-idp-backup.json" -Encoding utf8 -ErrorAction Stop
+    ```
+
+1. Prepare the replacement with the saved IdP settings and a wildcard domain. Don't include the existing federation ID in the create request. Review the backup and request body before you continue, and confirm that the tenant doesn't already have another wildcard IdP.
+
+    ```powershell
+    $body = @{
+        "@odata.type" = "microsoft.graph.samlOrWsFedExternalDomainFederation"
+        displayName = $federation.displayName
+        issuerUri = $federation.issuerUri
+        passiveSignInUri = $federation.passiveSignInUri
+        metadataExchangeUri = $federation.metadataExchangeUri
+        preferredAuthenticationProtocol = $federation.preferredAuthenticationProtocol
+        signingCertificate = $federation.signingCertificate
+        domains = @(
+            @{
+                "@odata.type" = "microsoft.graph.externalDomainName"
+                id = "*"
+            }
+        )
+    } | ConvertTo-Json -Depth 10
+
+    $body
+    ```
+
+1. Delete the existing configuration, and then create the replacement. These commands interrupt federation until the replacement is created. If creation fails after deletion, use the saved settings to recreate the original domain-based configuration.
+
+    ```powershell
+    $deleteUri = "https://graph.microsoft.com/v1.0/directory/federationConfigurations/$federationId"
+    Invoke-MgGraphRequest -Method DELETE -Uri $deleteUri -ErrorAction Stop
+
+    $result = Invoke-MgGraphRequest `
+        -Method POST `
+        -Uri "https://graph.microsoft.com/v1.0/directory/federationConfigurations/microsoft.graph.samlOrWsFedExternalDomainFederation" `
+        -Body $body `
+        -ContentType "application/json" `
+        -ErrorAction Stop
+
+    $result | Format-List *
+    ```
+
+1. Retrieve the replacement by its new ID and confirm that its domain entry is `*`:
+
+    ```powershell
+    $newFederationId = $result.id
+    $uri = "https://graph.microsoft.com/v1.0/directory/federationConfigurations/graph.samlOrWsFedExternalDomainFederation/$newFederationId"
+    Invoke-MgGraphRequest -Method GET -Uri $uri -ErrorAction Stop | Format-List *
+    ```
+
+1. [Update the associated user flows](#known-issues) and [test sign-in](#user-flow-for-domainless-saml-idp-federation).
 
 ### User flow for domainless SAML IdP federation
 After configuring domainless federation, you can invite guest users from the partner organization by following these steps:
@@ -227,9 +741,10 @@ After configuring domainless federation, you can invite guest users from the par
 
 ### Known issues
 
-The following known issue is being actively addressed and this section will be updated after the fix is available.
+Consider the following known issues when you configure domainless SAML IdP federation:
 
 - The IdP configuration gets deleted if an invalid domain name is entered even when the IdP config is not saved.
+- Whenever you convert a SAML IdP from domain-based to domainless, update the associated user flows. If you delete and recreate the IdP, first add the replacement IdP to each user flow. Then disable the IdP in the user flow, save, re-enable the IdP, and save again. For the user flow refresh procedure, see [Known limitations](customers/how-to-custom-oidc-federation-customers.md#known-limitations).
 
 ## How to update the certificate or configuration details
 
@@ -247,7 +762,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
      - **Display name** - Display name for the partner's organization.
      - **Identity provider protocol** - Select **SAML** or **WS-Fed**.
      - **Passive authentication endpoint** - The partner IdP's passive requestor endpoint.
-     - **Certificate** - The ID of the signing certificate. To renew it, enter a new certificate ID.
+     - **Certificate** - The Base64-encoded public portion of the IdP's token-signing certificate. To renew it, enter the new signing certificate.
      - **Metadata URL** - The URL containing the partner's metadata, used for automatic renewal of the signing certificate.
    - Select **Save**.
 
@@ -261,13 +776,10 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 
    :::image type="content" source="media/direct-federation/edit-domains.png" alt-text="Screenshot of the domain configuration page.":::
 
-1. To switch to domainless federation, select the **Domainless** checkbox, and then select **Done**.
+To switch to domainless federation, follow [Convert an existing SAML IdP in the Microsoft Entra admin center](#convert-an-existing-saml-idp-in-the-microsoft-entra-admin-center).
 
-   :::image type="content" source="media/direct-federation/edit-domains-domain-less.png" alt-text="Screenshot of the domain configuration page for domainless.":::
-
-
-   > [!NOTE]
-   > To remove federation with a partner, first delete all domains except one, and then follow the steps in the [next section](#how-to-remove-federation).
+> [!NOTE]
+> To remove federation with a partner, first delete all domains except one, and then follow the steps in [How to remove federation](#how-to-remove-federation).
 
 ## How to remove federation
 

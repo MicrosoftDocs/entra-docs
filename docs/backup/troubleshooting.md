@@ -198,7 +198,7 @@ Microsoft Entra Backup and Recovery is supported for workforce tenants only. Ext
 
 ### Hard-deleted objects
 
-Hard-deleted objects **cannot** be recovered. These objects aren't included in the difference report and can't be recreated or restored through a recovery job. To reduce the risk of hard deletion, consider configuring [protected actions](/entra/identity/role-based-access-control/protected-actions-overview).
+Hard-deleted objects **cannot** be recovered. These objects aren't included in the difference report and can't be recreated or restored through a recovery job. To reduce the risk of hard deletion, [configure Hard Deletion Protection](configure-hard-deletion-protection.md) for supported objects. You can also configure [protected actions](/entra/identity/role-based-access-control/protected-actions-overview) to protect hard-deletion permissions.
 
 ### On-premises synced objects
 
