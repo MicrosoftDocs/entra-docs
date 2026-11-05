@@ -4128,5 +4128,9 @@
   "Discovery control-plane service App": "92c174ac-8e41-4815-a1b7-d81b19ab03ce",
   "Azure Orbital Microsoft Planetary Computer Pro": "6388acc4-795e-43a9-a320-33075c1eb83b",
   "Azure Automanage Account": "d828acde-4b48-47f5-a6e8-52460104a052",
-  "Microsoft.Azure.CertificateRegistration": "f3c21649-0979-4721-ac85-b0216b2cf413"
-}
+  "Microsoft.Azure.CertificateRegistration": "f3c21649-0979-4721-ac85-b0216b2cf413",
+  "Durable Task Scheduler AppID":  "887c6b43-ba92-4adb-a82b-73670fc48dac",
+  "Azure IoT Central Admin Role": "ca310b8d-2f4a-44e0-a36e-957c202cd8d4",
+  "Azure IoT Central Operator Role": "ae2c9854-393b-4f97-8c42-479d70ce626e",
+  "Azure IoT Central Builder Role": "344138e9-8de4-4497-8c54-5237e96d6aaf"
+} 
