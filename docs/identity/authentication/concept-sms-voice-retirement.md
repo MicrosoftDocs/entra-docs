@@ -36,6 +36,9 @@ Microsoft recommends that you identify which users are enabled for SMS or Voice,
 
 To find users enabled for SMS or Voice, run this [PowerShell script](https://github.com/microsoft/entra-sms-voice-usage-analyzer). Ensure you have one of global reader, Authentication policy administrator, or Security reader roles enabled.
 
+> [!IMPORTANT]
+> However if you want the Registration Campaign to only affect users with SMS/Voice you have to add groups found by the Script in the Registration Campaign, else it will affect **All users**.
+
 ### 2. Move users to passkeys
 
 Passkeys are the default phishing-resistant credential for Microsoft Entra ID. They're tied to a device or a synced credential store, use cryptographic keys instead of shared secrets, and are resistant to phishing, SIM-swap, and replay attacks.
