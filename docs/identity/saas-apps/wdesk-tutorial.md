@@ -229,8 +229,11 @@ You can require users to sign in the Workiva application using SSO. If certain u
 
 ![Workiva Admin Requirement Setting](./wdesk-tutorial/ssorequireadmins.png)
 
-You can use Microsoft My Apps to test the application in any mode. When you select the Workiva tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to Workiva for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+## Technical Issues
+If you have technical issues with the SSO setup, contact the Workiva application support team through the [Workiva Support Center](https://support.workiva.com/hc/en-us).
 
 ## Related content
+Once you configure Workiva you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
 
-Once you configure Wdesk you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
+You can use Microsoft My Apps to test the application in any mode. When you select the Workiva tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to Workiva for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+
