@@ -2,7 +2,7 @@
 title: Install the Global Secure Access Client for Windows
 description: The Global Secure Access client helps secure network traffic at the user device. This article describes how to download and install the Windows client.
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 11/03/2026
 ms.reviewer: lirazbarak
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -419,11 +419,25 @@ Write-Output "Set $($setting.Key) to $($setting.Value)"
 
 </details>
 
+### Control QUIC with cloud firewall
+
+Keep QUIC enabled in users' browsers. To prevent QUIC connections from bypassing Microsoft Entra Internet Access inspection, use **Custom Acquire** to acquire UDP traffic on destination port `443` for the intended destinations, and use a cloud firewall **Block** rule for the same traffic. Keep **Default Acquire** enabled for TCP ports `80` and `443` so that applications that support fallback can connect over HTTPS using TCP.
+
+> [!NOTE]
+> This example acquires and blocks UDP port `443`, commonly used for HTTP/3 over QUIC. [RFC 9114, section 3.1](https://www.rfc-editor.org/rfc/rfc9114.html#section-3.1) permits HTTP/3 on any UDP port. If applications or servers use other destination ports, configure corresponding traffic acquisition and cloud firewall block rules. Blocking UDP port `443` alone doesn't block QUIC on other ports.
+
+Link the cloud firewall policy to a security profile, enable the policy link, and apply the profile to the intended users through Conditional Access. Creating a firewall rule alone doesn't configure traffic acquisition. For configuration and verification steps, see [Control QUIC traffic on UDP port 443](how-to-configure-cloud-firewall-clients.md#control-quic-traffic-on-udp-port-443).
+
+If you previously disabled browser QUIC specifically for Global Secure Access, remove that browser configuration after you verify Custom Acquire and cloud firewall blocking. Review other organizational requirements before changing existing browser policies.
+
+> [!IMPORTANT]
+> Cloud firewall for clients supports QUIC acquisition and blocking in preview, not end-to-end QUIC forwarding. An **Allow** rule for UDP port `443` doesn't enable supported end-to-end QUIC connectivity.
+
 ### Configure settings for Microsoft Entra Internet Access by using Intune
 
-Microsoft Entra Internet Access doesn't support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this limitation, disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls by using Intune.
+The Global Secure Access Windows client requires DNS over HTTPS to be disabled for FQDN-based traffic acquisition. Use the following Intune instructions to configure DNS over HTTPS separately from QUIC. Don't disable QUIC in the browser for this configuration.
 
-#### Disable QUIC in Microsoft Edge and Chrome by using Intune
+#### Disable DNS over HTTPS in Microsoft Edge and Chrome by using Intune
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration**.
 
@@ -442,21 +456,15 @@ Microsoft Entra Internet Access doesn't support DNS over HTTPS or Quick UDP Inte
 1. On the **Configuration settings** tab:
 
     1. Select **+ Add settings**.
-    1. In **Settings picker**, search for **QUIC**.
-    1. From the search results:
-        1. Select **Microsoft Edge**, and then select the **Allow QUIC protocol** setting.
-        1. Select **Google Chrome**, and then select the **Allow QUIC protocol** setting.
     1. In **Settings picker**, search for **DNS-over-HTTPS**.
     1. From the search results:
         1. Select **Microsoft Edge**, and then select the **Control the mode of DNS-over-HTTPS** setting.
         1. Select **Google Chrome**, and then select the **Control the mode of DNS-over-HTTPS** setting.
     1. Close **Settings picker**.
 
-1. For **Google Chrome**, set both toggles to **Disabled**.
+1. For **Google Chrome**, set **Control the mode of DNS-over-HTTPS** to **Disabled**.
 
-1. For **Microsoft Edge**, set both toggles to **Disabled**.
-
-    :::image type="content" source="media/how-to-install-windows-client/edge-chrome-profile.png" alt-text="Screenshot of the tab for configuring Microsoft Edge and Chrome settings." lightbox="media/how-to-install-windows-client/edge-chrome-profile.png":::
+1. For **Microsoft Edge**, set **Control the mode of DNS-over-HTTPS** to **Disabled**.
 
 1. Select **Next** twice.
 
@@ -472,7 +480,7 @@ Microsoft Entra Internet Access doesn't support DNS over HTTPS or Quick UDP Inte
 
 ### Configure Firefox browser settings
 
-Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to disable DNS over HTTPS and QUIC protocols in the Firefox browser.
+Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to disable DNS over HTTPS in the Firefox browser.
 
 Make sure to configure these scripts to run in 64-bit PowerShell.
 
@@ -488,11 +496,16 @@ Select the PowerShell scripts to expand them.
 ```powershell
 # Define the path to the Firefox policies.json file 
 
-$destination = "C:\Program Files\Mozilla Firefox\distribution\policies.json" $compliant = $false 
+$destination = "C:\Program Files\Mozilla Firefox\distribution\policies.json"
+$compliant = $false
 
 # Check if the file exists 
 
-if (Test-Path $destination) { try { # Read the file content $fileContent = Get-Content $destination -Raw if ($fileContent -and $fileContent.Trim().Length -gt 0) { # Parse JSON content $json = $fileContent | ConvertFrom-Json 
+if (Test-Path $destination) {
+    try {
+        $fileContent = Get-Content $destination -Raw -ErrorAction Stop
+        if ($fileContent -and $fileContent.Trim().Length -gt 0) {
+            $json = $fileContent | ConvertFrom-Json -ErrorAction Stop
 
        # Check if Preferences exist under policies 
         if ($json.policies -and $json.policies.Preferences) { 
@@ -507,17 +520,8 @@ if (Test-Path $destination) { try { # Read the file content $fileContent = Get-C
                 $prefs = $temp 
             } 
  
-            # Initialize compliance flags 
-            $quicCompliant = $false 
+            # Initialize compliance flag
             $dohCompliant = $false 
- 
-            # Check if QUIC is disabled and locked 
-            if ($prefs.ContainsKey("network.http.http3.enable")) { 
-                $val = $prefs["network.http.http3.enable"] 
-                if ($val.Value -eq $false -and $val.Status -eq "locked") { 
-                    $quicCompliant = $true 
-                } 
-            } 
  
             # Check if DNS over HTTPS is disabled and locked 
             if ($prefs.ContainsKey("network.trr.mode")) { 
@@ -527,8 +531,7 @@ if (Test-Path $destination) { try { # Read the file content $fileContent = Get-C
                 } 
             } 
  
-            # Set overall compliance if both settings are correct 
-            if ($quicCompliant -and $dohCompliant) { 
+            if ($dohCompliant) {
                 $compliant = $true 
             } 
         } 
@@ -542,7 +545,13 @@ if (Test-Path $destination) { try { # Read the file content $fileContent = Get-C
 
 # Output compliance result 
 
-if ($compliant) { Write-Output "Compliant" Exit 0 } else { Write-Output "Non-compliant" Exit 1 } 
+if ($compliant) {
+    Write-Output "Compliant"
+    exit 0
+} else {
+    Write-Output "Non-compliant"
+    exit 1
+}
 ```
 
 </details>
@@ -555,7 +564,10 @@ if ($compliant) { Write-Output "Compliant" Exit 0 } else { Write-Output "Non-com
 ```powershell
 # Define paths 
 
-$distributionDir = "C:\Program Files\Mozilla Firefox\distribution" $destination = Join-Path $distributionDir "policies.json" $backup = "$destination.bak" 
+$ErrorActionPreference = 'Stop'
+$distributionDir = "C:\Program Files\Mozilla Firefox\distribution"
+$destination = Join-Path $distributionDir "policies.json"
+$backup = "$destination.bak"
 
 # Initialize variable for existing JSON 
 
@@ -563,7 +575,17 @@ $existingJson = $null
 
 # Try to read and parse existing policies.json 
 
-if (Test-Path $destination) { $fileContent = Get-Content $destination -Raw if ($fileContent -and $fileContent.Trim().Length -gt 0) { try { $existingJson = $fileContent | ConvertFrom-Json } catch { Write-Warning "Existing policies.json is malformed. Starting fresh." } } } 
+if (Test-Path $destination) {
+    $fileContent = Get-Content $destination -Raw
+    if ($fileContent -and $fileContent.Trim().Length -gt 0) {
+        try {
+            $existingJson = $fileContent | ConvertFrom-Json
+        } catch {
+            Write-Warning "Failed to parse existing policies.json. No browser settings were changed: $_"
+            exit 1
+        }
+    }
+}
 
 #Create a new JSON structure if none exists 
 
@@ -571,26 +593,15 @@ if (-not $existingJson) { $existingJson = [PSCustomObject]@{ policies = [PSCusto
 
 # Ensure policies and Preferences nodes exist 
 
-if (-not $existingJson.policies) { $existingJson | Add-Member -MemberType NoteProperty -Name policies -Value ([PSCustomObject]@{}) } if (-not $existingJson.policies.Preferences) { $existingJson.policies | Add-Member -MemberType NoteProperty -Name Preferences -Value @{} } 
+if (-not $existingJson.policies) { $existingJson | Add-Member -MemberType NoteProperty -Name policies -Value ([PSCustomObject]@{}) }
+if (-not $existingJson.policies.Preferences) { $existingJson.policies | Add-Member -MemberType NoteProperty -Name Preferences -Value @{} }
 
 # Convert Preferences to hashtable if needed 
 
-if ($existingJson.policies.Preferences -isnot [hashtable]) { $prefs = @{} $existingJson.policies.Preferences.psobject.Properties | ForEach-Object { $prefs[$.Name] = $.Value } $existingJson.policies.Preferences = $prefs } 
+if ($existingJson.policies.Preferences -isnot [hashtable]) { $prefs = @{}; $existingJson.policies.Preferences.psobject.Properties | ForEach-Object { $prefs[$_.Name] = $_.Value }; $existingJson.policies.Preferences = $prefs }
 
-$prefObj = $existingJson.policies.Preferences $updated = $false 
-
-# Ensure QUIC is disabled and locked
-
-if (-not $prefObj.ContainsKey("network.http.http3.enable") -or $prefObj["network.http.http3.enable"].Value -ne $false -or $prefObj["network.http.http3.enable"].Status -ne "locked") { 
-
-$prefObj["network.http.http3.enable"] = @{ 
-    Value = $false 
-    Status = "locked" 
-} 
-$updated = $true 
-  
-
-} 
+$prefObj = $existingJson.policies.Preferences
+$updated = $false
 
 # Ensure DNS over HTTPS is disabled and locked 
 
@@ -605,7 +616,9 @@ $updated = $true
 
 # If any updates were made, back up and write the new JSON 
 
-if ($updated) { if (Test-Path $destination) { Copy-Item $destination $backup -Force } 
+if ($updated) {
+    New-Item -ItemType Directory -Path $distributionDir -Force | Out-Null
+    if (Test-Path $destination) { Copy-Item $destination $backup -Force }
 
 $jsonOut = $existingJson | ConvertTo-Json -Depth 10 -Compress 
 $utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($false) 
