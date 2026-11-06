@@ -2,7 +2,7 @@
 title: Security Administrator
 description: Security Administrator
 ms.topic: include
-ms.date: 01/26/2026
+ms.date: 11/06/2026
 ms.custom: include file
 ---
 
@@ -12,7 +12,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 
 | In | Can do |
 | --- | --- |
-| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Monitor security-related policies across Microsoft 365 services<br>Manage security threats and alerts<br>View reports |
+| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Monitor security-related policies across Microsoft 365 services<br>Manage security threats and alerts<br>View reports<br>View security costs and forecasts<br>Create and manage security budgets<br>Read Flex Plans |
 | [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for resetting passwords |
 | [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role<br>**Cannot** manage Microsoft Entra role assignments or settings |
 | [Microsoft Purview portal](/purview/purview-portal) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports |
