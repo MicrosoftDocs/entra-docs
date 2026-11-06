@@ -8,7 +8,7 @@ ms.custom: sfi-image-nochange
 --- 
 # Configure Workiva for Single sign-on with Microsoft Entra ID
 
-This article will walk a Workiva Org Security Admin through how to configure Single Sign-On with Azure Entra ID. Workiva has created an entirely self-service portal for configuring SSO. Workiva suggests designating a member of the IAM/IT team to do the configuration as well as make sure the authentication settings are complying with your company requirements.
+This article will walk a Workiva Org Security Admin through how to configure Single Sign-On with Microsoft Entra ID. Workiva has created an entirely self-service portal for configuring SSO. Workiva suggests designating a member of the IAM/IT team to do the configuration as well as make sure the authentication settings are complying with your company requirements.
 
 This is accomplished through a Workiva role called **Organization Security Admin** which gives no content access, just admin access to the authentication tab which contains SSO configuration settings. 
 > [!Caution]
@@ -21,7 +21,7 @@ This is accomplished through a Workiva role called **Organization Security Admin
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 
-## Supported Features
+## Supported features
 
 * Workiva supports **SAML 2.0** with a static SP URL
 * Workiva supports **SP** and **IdP** initiated SSO
@@ -49,15 +49,15 @@ To create an SSO configuration the assigned Org Security Admin will need to:
 	
 ![Workiva SSO Config Info](./wdesk-tutorial/configurationname.png)
 
-Then **Step 1 Workiva Metadata** will appear. The Org Security Admin will be able to obtain the **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** endpoints. There is also an option to download the actual Workiva .XML Metadata file which already contains the SSO endpoints. This information will need to be shared with your Azure Entra ID team.
+Then **Step 1 Workiva Metadata** will appear. The Org Security Admin will be able to obtain the **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** endpoints. There is also an option to download the actual Workiva .XML Metadata file which already contains the SSO endpoints. This information will need to be shared with your Microsoft Microsoft Entra ID team.
 
-![Workiva Metadata Entpoints](./wdesk-tutorial/workivametadata.png)
+![Workiva Metadata Endpoints](./wdesk-tutorial/workivametadata.png)
 
 The **Advanced options** toggle will display additional **Login URL** and the **Logout URL** if required for configuration.
 
 ![Workiva All Endpoints](./wdesk-tutorial/loginurl.png)
 
-## Add Workiva from the Azure Entra ID Gallery
+## Add Workiva from the Microsoft Entra ID Gallery
 
 To configure the integration of Workiva into Microsoft Entra ID, you need to add Workiva from the gallery to your list of managed SaaS apps.
 
@@ -99,7 +99,7 @@ Azure can either:
 
 ![How to Edit SAML Config in Azure](./wdesk-tutorial/editsaml.png)
 
-If manually, The **Org Security Admin** can follow the endpoint mapping below:
+If entered manually, the **Org Security Admin** can follow the endpoint mapping below:
 * The **Workiva Identifier (Entity ID)** will go into the **Azure Identifier (EntityID)**
 * The **Workiva Reply URL** will go into the **Azure Reply URL**
 * The **Workiva Sign on URL** will go into the **Azure Sign on URL**
@@ -126,11 +126,11 @@ On the **Set up Single Sign-On with SAML** page, in the **SAML Certificates** se
 
 Then under step 4 **Set up**, copy the appropriate URL(s) as per your requirement.
 	
-![Azure Unique User Identifier / Primary NameID](./wdesk-tutorial/azuremetadata.png)
+![Screenshot of the SAML Certificates section for downloading metadata](./wdesk-tutorial/azuremetadata.png)
 
 ## Configuring Workiva Identity Provider (IdP) Settings
 
-Once the Workiva Org Security Admin has the Azure Entra ID Metadata, they can access the SSO Configuration to import it in 3 different ways.
+Once the Workiva Org Security Admin has the Microsoft Entra ID Metadata, they can access the SSO Configuration to import it in 3 different ways.
 * **Federation metadata URL**
 * **Metadata XML file**
 * **Manual entry**
@@ -149,11 +149,11 @@ In the User Mapping section, set the **Mapping dropdown**, and select either:
 
 Click **Set Mapping** and there are two options for attribute mapping. 
 * **Import SSO IDs via file**
-	* Bulk assign SSO ID's corresponding to usernames via CSV
+	* Bulk assign SSO IDs corresponding to usernames via CSV
 * **Set all SSO IDs to Workiva username**
-	* Bulk assign SSO ID's to be Workiva usernames 
+	* Bulk assign SSO IDs to be Workiva usernames 
 > [!Note]
-> No necessary if the **Map users to their Workiva username** was previously selected
+> Not necessary if the **Map users to their Workiva username** was previously selected
 
 ![Workiva How to Set SSO IDs](./wdesk-tutorial/setmapping.png)
 
@@ -173,9 +173,9 @@ If you only need to adjust a single or small set of users you can use the **Sear
 
 ![Workiva Change Single SSO ID](./wdesk-tutorial/ssoidsingle.png)
 
-## Assign Users and Groups in Entra ID
+## Assign users and groups in Microsoft Entra ID
 
-If the Entra ID team has enabled **assignment required**, then users or groups will need to be assigned the Workiva application before they can access Workiva with SSO. 
+If the Microsoft Entra ID team has enabled **assignment required**, then users or groups will need to be assigned the Workiva application before they can access Workiva with SSO. 
 
 ## Activate the Workiva SSO Configuration
 
@@ -229,7 +229,7 @@ You can require users to sign in the Workiva application using SSO. If certain u
 
 ![Workiva Admin Requirement Setting](./wdesk-tutorial/ssorequireadmins.png)
 
-You can use Microsoft My Apps to test the application in any mode. When you select the Wdesk tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Wdesk for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can use Microsoft My Apps to test the application in any mode. When you select the Workiva tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to Workiva for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
