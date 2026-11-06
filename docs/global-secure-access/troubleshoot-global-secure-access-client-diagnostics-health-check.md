@@ -2,9 +2,10 @@
 title: "Troubleshoot the Windows Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.topic: troubleshooting
-ms.date: 02/24/2026
+ms.date: 11/06/2026
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ---
 # Troubleshoot the Global Secure Access client for Windows: Health check tab
@@ -327,31 +328,39 @@ To investigate the process dump file when a process crashes:
  :::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-filtered-logs.png" alt-text="Screenshot of the Event Viewer showing a filtered log list.":::
  1. Save the filtered log as a file and attach the log file to the support ticket.
 
-### QUIC not supported for Internet Access
-Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
+<a id="quic-not-supported-for-internet-access"></a>
+
+## Troubleshoot QUIC acquisition and blocking
+
+Keep QUIC enabled in Microsoft Edge, Chrome, and Firefox. To prevent QUIC connections from bypassing Internet Access inspection, acquire and block the traffic with **Custom Acquire** and cloud firewall instead of disabling QUIC in browsers.
+
+Cloud firewall for clients supports QUIC acquisition and blocking in preview, not end-to-end QUIC forwarding. An **Allow** rule for UDP port `443` doesn't enable supported end-to-end QUIC connectivity.
+
 > [!TIP]
 > QUIC is currently supported in Private Access and Microsoft 365 workloads.
 
-Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access.
+### Configure acquisition and enforcement
 
-### Disable QUIC in Microsoft Edge
-To disable QUIC in Microsoft Edge:
-1. Open Microsoft Edge.
-1. Paste `edge://flags/#enable-quic` in the address bar.
-1. Set the **Experimental QUIC protocol** drop-down to **Disabled**.
+1. In the Internet Access traffic forwarding profile, enable **Custom Acquire** and add a rule for the intended destinations with protocol **UDP** and destination port `443`. **Default Acquire** only acquires TCP ports `80` and `443`.
+1. Create an enabled cloud firewall rule for those destinations with protocol **UDP**, destination port `443`, and action **Block**. The rule blocks all matching UDP port `443` traffic, not only QUIC.
+1. Link the firewall policy to a security profile, enable the policy link, and apply the profile to the intended users through an enabled Conditional Access policy. Review matching rule and security profile priorities.
+1. Keep **Default Acquire** enabled for TCP ports `80` and `443` so that applications that support fallback can connect over HTTPS using TCP.
 
-### Disable QUIC in Chrome
-To disable QUIC in Google Chrome:
-1. Open Google Chrome.
-1. Paste `chrome://flags/#enable-quic` in the address bar.
-1. Set the **Experimental QUIC protocol** drop-down to **Disabled**.
+For prerequisites and detailed steps, see [Configure cloud firewall for Global Secure Access clients](how-to-configure-cloud-firewall-clients.md#control-quic-traffic-on-udp-port-443).
 
-### Disable QUIC in Mozilla Firefox
-To disable QUIC in Mozilla Firefox:
-1. Open Firefox.
-1. Paste `about:config` in the address bar.
-1. In the **Search preference name field**, paste `network.http.http3.enable`.
-1. Toggle the **network.http.http3.enable** option to **false**.
+### Verify effective QUIC blocking
+
+Browser QUIC settings don't establish whether cloud firewall blocks traffic. If your client version reports that QUIC is enabled in a browser, verify acquisition and enforcement with the following steps instead of disabling QUIC. These are manual troubleshooting steps, not an automated Health check test for cloud firewall.
+
+> [!NOTE]
+> Until the client health check is updated to recognize cloud firewall enforcement, it can still report a QUIC failure because QUIC is enabled in the browser. You can ignore this specific failure only after you verify traffic acquisition and a matching cloud firewall **Block** decision by following these steps. Continue to investigate all other failed health checks.
+
+1. Use **Advanced diagnostics** to confirm that the client acquires the test connection through the Internet Access traffic forwarding profile. Acquisition rules don't override traffic bypass exclusions.
+1. From a browser with QUIC enabled, make a new connection to a QUIC-capable destination covered by the acquisition and firewall rules.
+1. In **Global Secure Access** > **Monitor** > **Traffic logs**, open **Connections**. Find the UDP port `443` connection by its test time and destination, and confirm a logged **Block** decision. Review the associated security profile, policy, and rule information where available.
+1. Confirm that the application falls back to HTTPS over TCP and that the expected inspection or filtering applies.
+
+A UDP timeout alone doesn't prove cloud firewall enforcement. If you can't correlate the test connection with a logged **Block** decision, blocking isn't verified. Check acquisition, bypass exclusions, policy applicability, and rule priorities.
 
 ## Related content
 - [Install the Global Secure Access client for Windows](how-to-install-windows-client.md)
