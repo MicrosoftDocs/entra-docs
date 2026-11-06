@@ -5,16 +5,24 @@
   items:
   - name: Introduction to Microsoft Entra Verified ID
     href: decentralized-identifier-overview.md
-  - name: Microsoft Entra Verified ID architecture
-    href: introduction-to-verifiable-credentials-architecture.md
   - name: Quick setup
     href: verifiable-credentials-configure-tenant-quick.md
   - name: Advanced setup
     href: verifiable-credentials-configure-tenant.md
-  - name: Issue your first credential
-    href: verifiable-credentials-configure-issuer.md
-  - name: Verify your first credential
-    href: verifiable-credentials-configure-verifier.md
+- name: Concepts
+  items:
+  - name: Microsoft Entra Verified ID architecture
+    href: introduction-to-verifiable-credentials-architecture.md
+  - name: Plan an issuance solution
+    href: plan-issuance-solution.md
+  - name: Plan a verification solution
+    href: plan-verification-solution.md
+  - name: Customize credentials
+    href: credential-design.md
+  - name: Understand issuer service communication
+    href: issuer-openid.md
+  - name: Review supported standards
+    href: verifiable-credentials-standards.md
 - name: Scenarios
   expanded: true
   items:
@@ -63,8 +71,8 @@
   items:
   - name: IT admins
     items:
-    - name: Configure a Verified ID tenant
-      href: verifiable-credentials-configure-tenant.md
+    - name: Use Face Check
+      href: using-facecheck.md
     - name: Configure Request Service API access
       href: get-started-request-api.md
     - name: Configure Verified ID with ID Governance
@@ -85,12 +93,24 @@
       href: admin-api.md
   - name: Developers
     items:
+    - name: Issue your first credential
+      href: verifiable-credentials-configure-issuer.md
+    - name: Verify your first credential
+      href: verifiable-credentials-configure-verifier.md
     - name: Call the Request Service REST API
       href: get-started-request-api.md
     - name: Build an issuance request
       href: issuance-request-api.md
     - name: Build a presentation request
       href: presentation-request-api.md
+    - name: Use the Verified ID Network
+      href: how-use-vcnetwork.md
+    - name: Add did:web:path support
+      href: did-web-path.md
+    - name: Register a did:web identifier
+      href: how-to-register-didwebsite.md
+  - name: "Developers: credential creation"
+    items:
     - name: Create credentials with directory-based claims
       href: how-to-use-quickstart-verifiedemployee.md
     - name: Create credentials with an ID token hint attestation
@@ -103,12 +123,6 @@
       href: how-to-use-quickstart-selfissued.md
     - name: Create credentials with multiple attestations
       href: how-to-use-quickstart-multiple.md
-    - name: Use the Verified ID Network
-      href: how-use-vcnetwork.md
-    - name: Add did:web:path support
-      href: did-web-path.md
-    - name: Register a did:web identifier
-      href: how-to-register-didwebsite.md
   - name: Partners
     items:
     - name: Integrate Verified ID APIs
@@ -121,22 +135,10 @@
     items:
     - name: Use Verified ID with Microsoft Authenticator
       href: using-authenticator.md
-    - name: Use Face Check
-      href: using-facecheck.md
     - name: Review frequently asked questions
       href: verifiable-credentials-faq.md
-- name: Plan and design
-  items:
-  - name: Plan an issuance solution
-    href: plan-issuance-solution.md
-  - name: Plan a verification solution
-    href: plan-verification-solution.md
-  - name: Customize credentials
-    href: credential-design.md
-  - name: Understand issuer service communication
-    href: issuer-openid.md
-  - name: Review supported standards
-    href: verifiable-credentials-standards.md
+    - name: Review Face Check frequently asked questions
+      href: using-facecheck.md#frequently-asked-questions-for-face-check-with-microsoft-entra-verified-id
 - name: Training
   items:
   - name: Manage security controls for identity and access
