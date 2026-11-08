@@ -4132,5 +4132,9 @@
   "Durable Task Scheduler AppID":  "887c6b43-ba92-4adb-a82b-73670fc48dac",
   "Azure IoT Central Admin Role": "ca310b8d-2f4a-44e0-a36e-957c202cd8d4",
   "Azure IoT Central Operator Role": "ae2c9854-393b-4f97-8c42-479d70ce626e",
-  "Azure IoT Central Builder Role": "344138e9-8de4-4497-8c54-5237e96d6aaf"
+  "Azure IoT Central Builder Role": "344138e9-8de4-4497-8c54-5237e96d6aaf",
+  "Davis Instruments client ID": "30b00405-3b4e-4003-933c-0d96ce47d670",
+  "Azure Communication Services Clients": "2a04943b-b6a7-4f65-8786-2bb6131b59f6",
+  "Work IQ": "fdcc1f02-fc51-4226-8753-f668596af7f7",
+  "AI Services community forum": "09041fae-0b25-ec11-b6e6-000d3a4f0858"
 } 
