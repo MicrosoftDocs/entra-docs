@@ -100,6 +100,38 @@ Where the new password is stored depends on the identity environment:
 * **Hybrid tenant with password writeback enabled:** The password is updated in Microsoft Entra ID and written back to Active Directory.
 * **On-premises-only environment:** My Sign-Ins can't manage identities that don't exist in Microsoft Entra ID.
 
+### Example: Password change with a passkey
+
+In this example, a user who signs in with a phishing-resistant credential can change their password without entering the current one. The user still has a working phishing-resistant method. This isn't a self-service password reset (SSPR) flow or an account recovery flow.
+
+#### Scenario
+
+Contoso enables **Allow password change after secure sign-in.** and requires the built-in **Phishing-resistant MFA** authentication strength through Conditional Access. A user has a passkey and a password.
+
+#### Case 1: The user forgets their password but still has the passkey
+
+1. The user signs in with the passkey, which satisfies the Conditional Access policy.
+1. The user goes to [Security info](https://aka.ms/mysecurityinfo) in **My Sign-Ins** and selects **Change** next to **Password**.
+1. Because the user authenticated with a phishing-resistant credential, they aren't prompted for the current password. They set a new password and continue working.
+
+No administrator action, SSPR, or account recovery is required. The user continues to satisfy the phishing-resistant authentication requirement.
+
+#### Case 2: The user loses the passkey
+
+This is no longer a password change scenario. The user has lost the only credential that can satisfy Contoso's Conditional Access policy and must go through **account recovery** to re-establish their identity and register a new passkey. The password alone can't satisfy this policy.
+
+* If your organization has configured account recovery, the user starts recovery from the sign-in page, completes identity verification, receives a Temporary Access Pass (TAP), and registers a new passkey.
+* If account recovery isn't configured, an administrator can reset the user's password and issue a TAP so the user can register a new passkey.
+
+In both paths, the TAP is a temporary bootstrap credential. It doesn't satisfy the phishing-resistant authentication strength, so plan your Conditional Access and recovery design to allow the user to complete passkey registration. See [Account recovery overview](concept-account-recovery-overview.md) for the recommended recovery architecture.
+
+#### Summary
+
+| Situation | What the user still has | Path |
+| --- | --- | --- |
+| **Forgot password** | Passkey | Password change (this feature) |
+| **Lost passkey** | Password only | Account recovery |
+
 ---
 
 ## Require users to register when they sign in
