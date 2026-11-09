@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra Conditional Access policy plans reduce du
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 10/21/2026
+ms.date: 11/05/2026
 
 ms.author: etbasser
 author: ebasseri
@@ -22,23 +22,11 @@ Microsoft Entra Conditional Access policy plans group related rules under shared
 
 ## Why use policy plans?
 
-### Reduce policy sprawl
+As Conditional Access deployments grow, related policies often repeat the same user and application targeting, along with emergency access and service account exclusions. A single change can require updates across many policies, increasing administrative effort and the risk of inconsistent coverage or unintended lockouts.
 
-An organization might maintain separate Conditional Access policies for Windows, macOS, iOS, and Android when each platform requires different settings. Those policies can repeat the same user targeting and emergency access exclusions. Changes to that shared targeting must then be made in each policy.
+Global Secure Access deployments can require hundreds of network-scoped rules for the same users and applications. Managing that volume as standalone policies makes the policy estate harder to maintain and audit.
 
-With a plan, shared targeting is defined once and automatically applies to every scenario within that plan. Adding or removing an emergency access group in one place updates the shared targeting for all rules in the plan.
-
-### Eliminate duplicated exclusions
-
-Emergency access accounts, trusted service accounts, and privileged workstations appear in exclusion lists across many policies. Missed exclusions are a common source of unintended lockouts. Plans let administrators define these exclusions once, at the plan level, so no individual rule can accidentally omit them.
-
-### Scale for Global Secure Access
-
-Organizations that deploy Global Secure Access often need hundreds of network-scoped rules that target the same user population and application set. Plans allow the shared targeting to be defined once, with each rule focused only on the specific network scope it governs.
-
-### Apply consistent controls to agent activity
-
-Agent identities can act with their own permissions or on behalf of a user by using the user's permissions. A plan can define a shared condition, such as high agent risk, and use separate rules to protect agent users and autonomous agents. Without a plan, each scenario requires a standalone policy that repeats the shared condition.
+Securing agent access introduces additional scenarios with common conditions, such as agent risk. Repeating those conditions across separate policies adds duplication and makes coordinated changes more difficult.
 
 ## How plans work
 
@@ -46,7 +34,9 @@ A plan has three parts:
 
 - **Plan details**: Specify a name, description, optional tags, and individual or group owners. These details help teams understand the plan's purpose, accountability, and the potential impact of future changes. Designating owners doesn't affect who has permission to edit the plan, and plan details don't affect policy enforcement at runtime.
 - **Shared conditions**: Define optional include and exclude targeting that applies broadly. Shared conditions can include identities; resources such as applications; user actions; authentication context; risk levels; device platforms; network locations; and client app types.
-- **Rules**: Define the individual enforcement scenarios within the plan. Each rule adds the assignments and conditions that are specific to the scenario, along with its grant and session controls. Every policy plan must have at least one rule.
+- **Rules**: Define the individual enforcement scenarios within the plan. Each rule adds the assignments and conditions that are specific to the scenario, along with its grant and session controls. Every policy plan must have at least one rule, up to 100 per plan.
+
+Each tenant can have up to 100 plans.
 
 > [!NOTE]
 > Select **All resources** at the rule level. This assignment isn't available in shared conditions.
@@ -65,6 +55,8 @@ At sign-in time, Conditional Access combines a rule's conditions with the plan's
 
 > [!NOTE]
 > During preview, policy plans that target users with Location as a condition will be issued one-hour access tokens without instant IP enforcement check. For more information, see [Named location limitations](concept-continuous-access-evaluation.md#named-location-limitations).
+
+> [!VIDEO https://www.youtube.com/embed/BUI5LZPoHAs]
 
 ## Relationship to existing Conditional Access policies
 
