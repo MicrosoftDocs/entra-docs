@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 >
 > Customers setting up **Microsoft Entra automatic provisioning with Zendesk** who are unable to create an API token can contact **Zendesk Support or their Zendesk account manager** to request an exception that restores API-token creation access.
 >
-> Microsoft Entra is working to introduce **OAuth client credentials authentication** for the Zendesk provisioning connector, currently targeted for **mid-December 2026**. Until this support becomes available, customers can use the exception process above to configure new provisioning integrations.
+> Microsoft Entra is **working to introduce OAuth client credentials authentication** for the Zendesk provisioning connector. Until this support becomes available, customers can use the exception process above to configure new provisioning integrations.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).

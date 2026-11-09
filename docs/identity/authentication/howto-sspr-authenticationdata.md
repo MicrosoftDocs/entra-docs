@@ -1,10 +1,13 @@
 ---
 title: Prepopulate Contact Information for Self-Service Password Reset
 description: Learn how to prepopulate contact information for users of Microsoft Entra self-service password reset (SSPR) so that they can use the feature without completing a registration process.
+author: tilarso
+ms.author: tilarso
 ms.topic: how-to
-ms.date: 11/09/2026
+ms.date: 11/05/2026
 ms.reviewer: tilarso
 ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
+ai-usage: ai-assisted
 ---
 # Prepopulate user authentication contact information for Microsoft Entra self-service password reset (SSPR)
 
@@ -13,9 +16,7 @@ To use Microsoft Entra self-service password reset (SSPR), authentication inform
 Some organizations prefer to bootstrap this process through synchronization of authentication data that already exists in Active Directory Domain Services. This synchronized data is made available to Microsoft Entra ID and SSPR without requiring user interaction. When users need to change or reset their password, they can do so even if they haven't previously registered their contact information.
 
 > [!IMPORTANT]
-> Starting **Oct 5, 2026**, if your SSPR settings require users to register during sign-in, and enabled users don't have enough methods to complete SSPR, a registration campaign prompts affected users to register methods ahead of enforcement. Ensure users have registered at least one method that satisfies your SSPR policy. For more information, see [How to manage authentication methods](how-to-authentication-methods-manage.md).
->
-> Starting **Nov 9, 2026**, SSPR only accepts explicitly registered authentication methods. Directory-sourced properties, such as `mobilePhone`, `businessPhones`, and `otherMails`, that were never registered no longer work for SSPR verification.
+> Starting **February 2027**, SSPR will only accept explicitly registered authentication methods. Directory-sourced properties — such as `mobilePhone`, `businessPhones`, and `otherMails` — that were never registered will no longer work for SSPR verification.
 
 You can prepopulate authentication contact information if you meet the following requirements:
 

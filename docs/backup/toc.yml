@@ -17,6 +17,8 @@ items:
   items:
   - name: View available backups
     href: view-available-backups.md
+  - name: Configure Hard Deletion Protection
+    href: configure-hard-deletion-protection.md
   - name: Create and review difference reports
     href: create-review-difference-reports.md
   - name: Recover objects

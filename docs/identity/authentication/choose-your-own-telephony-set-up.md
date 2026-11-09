@@ -63,7 +63,11 @@ Use accounts with the following permissions:
 
 1. Purchase your provider's offer. For detailed purchasing instructions, see [Purchase and deploy a SaaS solution from Security Store](/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution).
 1. After you **Place Order**, select **Configure Account Now** and follow your provider's registration instructions.
-1. Keep the registration page available and return to the Microsoft Entra setup page. Continue to step 2; you'll complete registration in step 3 with the application ID from the deployment summary.
+1. Keep your provider's registration page open, but leave the **Application (client) ID** field blank. The setup script creates this ID in step 2.
+1. Return to the Microsoft Entra setup page and continue to step 2.
+
+> [!IMPORTANT]
+> Don't enter any other ID in the provider's **Application (client) ID** field, such as your tenant ID, subscription ID, or an existing app's ID. Use only the **Application (client) ID** from the step 2 deployment summary.
 
 <a id="step-2-set-up-the-integration"></a>
 
