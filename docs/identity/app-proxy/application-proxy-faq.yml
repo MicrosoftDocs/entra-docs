@@ -33,9 +33,17 @@ sections:
               For more information about Federated Identity Credentials, see [Overview of federated identity credentials in Microsoft Entra ID](/graph/api/resources/federatedidentitycredentials-overview).
 
       - question: |
+         Does Microsoft Entra application proxy support Internet Explorer or Edge IE mode?
+        answer: |
+              Internet Explorer and Microsoft Edge in IE mode are deprecated for use with Microsoft Entra application proxy.
+              
+              These legacy browser experiences aren't currently blocked and may continue to work with Application Proxy. However, due to technical limitations in legacy browsers, they will no longer receive Application Proxy security improvements. We strongly recommend that customers migrate to a modern browser to ensure they can benefit from the latest security protections and improvements.
+
+      - question: |
          Can I delete an application proxy app from the App registrations page in the Microsoft Entra admin center? 
         answer: |
               No, you should delete an application proxy app from the **Enterprise applications** area of the Microsoft Entra admin center. If you delete the application proxy app from the **App registrations** area of the Microsoft Entra admin center, then you could experience issues.
+
       - question: |
          What license is required to use Microsoft Entra application proxy?
         answer: |
