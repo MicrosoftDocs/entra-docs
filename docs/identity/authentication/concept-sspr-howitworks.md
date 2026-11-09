@@ -2,9 +2,9 @@
 title: Self-service password reset deep dive
 description: How does self-service password reset work
 ms.topic: concept-article
-ms.date: 10/05/2026
+ms.date: 11/09/2026
 ms.reviewer: tilarso, marisanchez
-ms.custom: sfi-ga-nochange, sfi-image-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1026
 ai-usage: ai-assisted
 ---
 # How it works: Microsoft Entra self-service password reset
@@ -59,16 +59,13 @@ To get started with SSPR, complete the following tutorial:
 
 ## [**Allow password change after secure sign-in.**](#tab/secure-sign-in)
 
-> [!IMPORTANT]
-> This feature rolls out across all clouds starting in late October 2026, with rollout expected to complete by the end of November 2026. If you don't see the setting in your tenant, the rollout might not have reached your tenant yet.
+**Allow password change after secure sign-in** helps your organization move users to passwordless authentication while supporting legacy applications that still require a password. Users can rely on passwordless authentication for everyday sign-ins without needing to remember their current password to change it.
 
-Passwordless users can change their cloud password from **Security info** without knowing or entering their current password. Before they create a new password, they sign in with one of the following passwordless methods:
+Instead of completing a traditional SSPR flow, passwordless users can change their cloud password directly from **Security info**. This provides a more seamless password change experience: users sign in with one of the following passwordless methods, then create a new password without entering their current one:
 
 * Microsoft Entra certificate-based authentication (CBA).
 * A passkey (FIDO2).
 * A Microsoft Authenticator passwordless phone sign-in notification.
-
-This experience helps users who primarily sign in without a password but still need a password for legacy applications.
 
 This password change experience is separate from SSPR. Users don't need to be registered for SSPR, and the number of authentication methods required by the SSPR policy doesn't apply.
 
