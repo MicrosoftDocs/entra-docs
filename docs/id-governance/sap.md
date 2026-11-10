@@ -76,6 +76,8 @@ Also see the following blog posts and SAP resources:
 - [Azure Application Gateway setup of SAML Single Sign On for Public and Internal SAP URLs](https://blogs.sap.com/2020/12/10/sap-on-azure-single-sign-on-configuration-using-saml-and-azure-active-directory-for-public-and-internal-urls/)
 - [Single sign on using Microsoft Entra Domain Services and Kerberos](https://blogs.sap.com/2018/08/03/your-sap-on-azure-part-8-single-sign-on-using-azure-ad-domain-services/)
 
+Joule, SAP's AI assistant, works across multiple connected SAP applications. For more information on enabling Joule in SAP Cloud Identity Services, see [Identity and Access Management for Joule](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/identity-and-access-management-for-joule).
+
 ### Provision identities into modern SAP applications
 
 After your users are in Microsoft Entra ID, you can provision accounts into the various SaaS and on-premises SAP applications that they need access to. For SAP applications which SAP Cloud Identity Services supports, you can use the [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) enterprise application in Microsoft Entra ID to provision users and groups from Microsoft Entra into SAP Cloud Identity Services. After you bring all the identities into SAP Cloud Identity Services, you can use SAP Cloud Identity Services - Identity Provisioning to provision the accounts from there into your SAP applications when required.
