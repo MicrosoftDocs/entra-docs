@@ -31,6 +31,8 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 ## Monitor guest accounts at scale with inactive guest insights
 
+> [!NOTE]
+> The inactive guest report updates once per day. Because of this refresh schedule, the total guest count in the report might differ from the current total in your tenant or the counts shown on the **ID Governance** dashboard or the **Users** blade.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **ID Governance** > **Dashboard**.
