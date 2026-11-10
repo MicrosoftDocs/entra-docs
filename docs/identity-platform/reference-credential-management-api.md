@@ -1,29 +1,29 @@
 ---
 title: Microsoft Entra External ID credential management API reference
-description: Use the Microsoft Entra External ID credential management API to let signed-in customers list, register, and delete their passkeys.
+description: Let signed-in users manage passkeys and update passwords with the Microsoft Entra External ID credential management API.
 author: mmacy-msft
 manager: dougeby
 ms.author: marshmacy
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
-ms.date: 10/29/2026
+ms.date: 11/06/2026
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1030
-#Customer intent: As an identity developer, I want to learn how to integrate the credential management API into my customer-facing app so that customers can list, register, and delete their own credential methods.
+#Customer intent: As an identity developer, I want to integrate the credential management API into my customer-facing app so that users can manage their own passkeys and update their passwords.
 ---
 
 # Microsoft Entra External ID credential management API reference
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-The Microsoft Entra External ID credential management API lets your application give signed-in customers a self-service flow for listing, registering, and deleting passkeys. Your application owns the client experience and calls the API on the customer's behalf.
+The Microsoft Entra External ID credential management API lets you add self-service credential management to your customer-facing application by using low-privilege delegated permissions. Through your application, signed-in users can list, register, and delete their passkeys, and update their existing password. Your application owns the client experience and calls the API on the user's behalf.
 
-The credential management API complements Microsoft Entra [native authentication](concept-native-authentication.md), where your application hosts the sign-in experience instead of delegating it to a browser. Use the credential management API after a customer signs in.
+The credential management API complements Microsoft Entra [native authentication](concept-native-authentication.md), where your application hosts the sign-in experience instead of delegating it to a browser. Use the credential management API after a user signs in.
 
-To support passkey management in your app, use the [passkey credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample demonstrates the listing, registration and deletion flows in this article by using delegated permissions. Follow the sample's README to configure and run the app.
+To support credential management in your app, use the [credential management sample app](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/main/passkey-sample). The sample calls the API by using delegated permissions. Follow the sample's README to configure and run the app.
 
-Successful resource responses use HAL+JSON (`application/hal+json`). Activation requests use JSON (`application/json`), delete success responses have no body, and errors use JSON.
+Successful resource responses use HAL+JSON (`application/hal+json`). Requests with a body, including passkey activation and password update requests, use JSON (`application/json`). Responses with status `204 No Content` have no body, and errors use JSON.
 
 ## Prerequisites
 
@@ -46,17 +46,17 @@ Before your app can acquire access tokens for the credential management API, pro
     }
     ```
 
-1. Add a delegated permission to your app for the credential management API. For passkeys, the least-privileged choice is `Me.UserAuthenticationMethod.Passkey.Read` (read) or `Me.UserAuthenticationMethod.Passkey.ReadWrite` (write). See [Authentication and authorization](#authentication-and-authorization) for the full list of accepted permissions. Grant admin consent if your tenant requires it.
+1. Add a delegated permission to your app for the credential management API. For passkeys, the least-privileged choice is `Me.UserAuthenticationMethod.Passkey.Read` (read) or `Me.UserAuthenticationMethod.Passkey.ReadWrite` (write). For passwords, use `Me.UserAuthenticationMethod.Password.Read` (read) or `Me.UserAuthenticationMethod.Password.ReadWrite` (write). See [Authentication and authorization](#authentication-and-authorization) for the full list of accepted permissions. Grant admin consent if your tenant requires it.
 
 ## Authentication and authorization
 
-The credential management API acts on behalf of a signed-in customer. Every endpoint URL has the form `https://{tenant-subdomain}.ciamlogin.com/{tenant-id}/api/v1.0/me/...`, where `{tenant-subdomain}` is your external tenant's subdomain, `{tenant-id}` is your external tenant's ID, and `me` is the customer whose access token you send with the request. Your application:
+The credential management API acts on behalf of a signed-in user. Every endpoint URL has the form `https://{tenant-subdomain}.ciamlogin.com/{tenant-id}/api/v1.0/me/...`, where `{tenant-subdomain}` is your external tenant's subdomain, `{tenant-id}` is your external tenant's ID, and `me` is the user whose access token you send with the request. Your application:
 
-1. Signs the customer in.
+1. Signs the user in.
 1. Obtains an access token for the credential management API.
 1. Includes that token on every call.
 
-Without a signed-in customer, `me` has no meaning and the call can't be authenticated. If you've worked with Microsoft Graph or other Microsoft Entra REST APIs, this follows the same model: standard OAuth 2.0 with delegated permissions.
+Without a signed-in user, `me` has no meaning and the call can't be authenticated. If you've worked with Microsoft Graph or other Microsoft Entra REST APIs, this follows the same model: standard OAuth 2.0 with delegated permissions.
 
 Include the access token in the standard HTTP `Authorization` header on every request:
 
@@ -66,55 +66,61 @@ Authorization: Bearer <access_token>
 
 ### Acquire a delegated access token
 
-Use a delegated access token to call the credential management API on behalf of the signed-in customer. The API rejects app-only tokens, including tokens acquired through the client credentials flow. When the customer signs in, request one of the permissions listed in [Required permissions](#required-permissions). The requested permission determines the token audience; you don't set the audience separately.
+Use a delegated access token to call the credential management API on behalf of the signed-in user. The API rejects app-only tokens, including tokens acquired through the client credentials flow. When the user signs in, request one of the permissions listed in [Required permissions](#required-permissions). The requested permission determines the token audience; you don't set the audience separately.
 
-The following diagram shows how a call is authenticated, from signing the customer in to calling the API with the resulting token.
+The following diagram shows how a call is authenticated, from signing the user in to calling the API with the resulting token.
 
-:::image type="content" source="media/reference-credential-management-api/authentication-authorization-flow.png" alt-text="Sequence diagram that shows your app signing the customer in to get an access token for the credential management API, then calling the API with that token while Microsoft Entra External ID validates it." lightbox="media/reference-credential-management-api/authentication-authorization-flow.png":::
+:::image type="content" source="media/reference-credential-management-api/authentication-authorization-flow.png" alt-text="Sequence diagram that shows your app signing the user in to get an access token for the credential management API, then calling the API with that token while Microsoft Entra External ID validates it." lightbox="media/reference-credential-management-api/authentication-authorization-flow.png":::
 
 Acquire the delegated token through the Microsoft Entra sign-in flow that applies to your application:
 
 - Single-page, mobile, and desktop apps: use the [Microsoft Authentication Library (MSAL)](msal-overview.md).
 - Server-side web apps: use the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) with PKCE.
-- Apps using native authentication: use the [native authentication API](reference-native-authentication-api.md) to sign in or sign up the customer, then redeem the result for an access token at the `/token` endpoint.
 
 > [!NOTE]
-> For native authentication, only the web experience is supported for now. Native authentication on mobile platforms (Android and iOS) isn't currently supported for the credential management API.
+> Access tokens acquired through [native authentication](reference-native-authentication-api.md) are currently supported by this API only for web apps. Mobile apps can use MSAL's browser-based sign-in to acquire tokens to [list authentication methods](#list-user-credential-methods), [delete passkeys](#delete-a-credential-method), and [update passwords](#update-a-password).
+>
+> Native passkey registration with Microsoft Entra External ID isn't currently supported on mobile platforms. Use the system browser to register passkeys.
 
 Pass the resulting token as `Authorization: Bearer <access_token>` on every credential management API call.
 
 ### Required permissions
 
-All permissions are delegated permissions exposed by the credential management API. Add one to your app registration and request it when you sign the customer in. Because this release supports passkeys only, the passkey-scoped permissions are the least-privileged choice.
+All permissions are delegated permissions exposed by the credential management API. Choose the least-privileged permission for each operation. Use a higher-privileged permission only if your app needs the additional access it provides. Add the permission your app needs to its registration and request it when you sign the user in.
 
-| Operation | Accepted delegated permissions (least privileged first) |
-| --- | --- |
-| Read (for example, listing the customer's passkeys) | `Me.UserAuthenticationMethod.Passkey.Read`, `Me.UserAuthenticationMethod.Read`, `Me.UserAuthenticationMethod.Passkey.ReadWrite`, `Me.UserAuthenticationMethod.ReadWrite` |
-| Write (for example, registering or deleting a passkey) | `Me.UserAuthenticationMethod.Passkey.ReadWrite`, `Me.UserAuthenticationMethod.ReadWrite` |
+| Operation | Least privileged permissions | Higher privileged permissions |
+| --- | --- | --- |
+| Read passkey methods | `Me.UserAuthenticationMethod.Passkey.Read` | `Me.UserAuthenticationMethod.Read`, `Me.UserAuthenticationMethod.Passkey.ReadWrite`, `Me.UserAuthenticationMethod.ReadWrite` |
+| Register or delete a passkey | `Me.UserAuthenticationMethod.Passkey.ReadWrite` | `Me.UserAuthenticationMethod.ReadWrite` |
+| Read password method | `Me.UserAuthenticationMethod.Password.Read` | `Me.UserAuthenticationMethod.Read`, `Me.UserAuthenticationMethod.Password.ReadWrite`, `Me.UserAuthenticationMethod.ReadWrite` |
+| Update a password or poll for its update status | `Me.UserAuthenticationMethod.Password.ReadWrite` | `Me.UserAuthenticationMethod.ReadWrite` |
 
 Application-only access (the client credentials flow) isn't supported.
 
 ## Continuation token
 
-When you call a multi-step operation such as registering a passkey, the credential management API returns a continuation token in the response. This token uniquely identifies the current flow and lets Microsoft Entra maintain state across its endpoints. Include the token in every subsequent request in that flow. It's valid only for a limited time and can only be used for the subsequent requests within the same flow.
+When you call a multi-step operation such as registering a passkey or updating a password, the credential management API returns a continuation token in the response. This token uniquely identifies the current flow and lets Microsoft Entra maintain state across its endpoints. Include the most recently returned token in each subsequent request in that flow. It's valid only for a limited time and can only be used for the subsequent requests within the same flow. Don't reuse it for another user, credential method, or operation.
 
 ## Supported credential methods
 
-In this release, the credential management API supports one type of credential method:
+The credential management API supports the following credential methods. The operations available for each method differ:
 
-| Method | URL segment (`{type}`) | Description |
-|--------|------------------------|-------------|
-| Passkey | `fido` | A phishing-resistant credential based on the WebAuthn standard. |
+| Method | URL segment (`{type}`) | Description | Operations |
+|--------|------------------------|-------------|------------|
+| Passkey | `fido` | A phishing-resistant credential based on the WebAuthn standard. | [List](#list-user-credential-methods), [provision](#provisioning), and [delete](#delete-a-credential-method). |
+| Password | `password` | The signed-in user's existing password credential method. | [List](#list-user-credential-methods) and [update](#update-a-password). |
 
 Other credential methods, such as software OATH one-time passcodes, email, phone, and recovery methods, aren't supported by this API yet.
 
+Listing and authorization are shared across credential methods. The provisioning and delete flows in this article apply to passkeys. Password updates use the separate [update flow](#update-a-password).
+
 ## List user credential methods
 
-Returns the credential methods the signed-in customer has currently registered, along with the method types they can still register. For example, your app calls this endpoint when rendering a page where the customer can review their existing passkeys and start registering a new one.
+This endpoint returns the signed-in user's credential methods, along with the method types they can still register. Call this endpoint when rendering a page where the user can review credential information and choose an available action, such as adding a passkey, deleting a passkey, or changing their password.
 
 The following sequence diagram shows the list flow.
 
-:::image type="content" source="media/reference-credential-management-api/list-credential-methods.png" alt-text="Sequence diagram that shows your app calling the list endpoint with the customer's access token and Microsoft Entra External ID returning the registered and available-to-register methods in HAL+JSON." lightbox="media/reference-credential-management-api/list-credential-methods.png":::
+:::image type="content" source="media/reference-credential-management-api/list-credential-methods.png" alt-text="Sequence diagram that shows your app calling the list endpoint with the user's access token and Microsoft Entra External ID returning the registered and available-to-register methods in HAL+JSON." lightbox="media/reference-credential-management-api/list-credential-methods.png":::
 
 See [Authentication and authorization](#authentication-and-authorization) for the access token your application needs to call this endpoint. This endpoint accepts any of the read or write permissions listed in [Required permissions](#required-permissions).
 
@@ -151,6 +157,8 @@ Request headers:
 This endpoint doesn't perform `Accept`-header content negotiation. The response is always `application/hal+json` regardless of the `Accept` header value.
 
 ### Success response
+
+The credential methods returned in the response can vary based on the delegated permissions (scopes) in the access token. See [Required permissions](#required-permissions).
 
 Here's an example of a successful response:
 
@@ -205,6 +213,21 @@ Content-Type: application/hal+json
             "name": "delete"
           }
         }
+      },
+      {
+        "id": "<password-method-id>",
+        "type": "password",
+        "lastUpdatedDateTime": "<timestamp>",
+        "_links": {
+          "self": {
+            "href": "/{tenant-id}/api/v1.0/me/methods/password/{password-method-id}",
+            "name": "self"
+          },
+          "update": {
+            "href": "/{tenant-id}/api/v1.0/me/methods/password/{password-method-id}",
+            "name": "update"
+          }
+        }
       }
     ]
   },
@@ -227,6 +250,10 @@ Content-Type: application/hal+json
       {
         "href": "/{tenant-id}/api/v1.0/me/methods/fido/{credential-id-2}",
         "name": "<credential-id-2>"
+      },
+      {
+        "href": "/{tenant-id}/api/v1.0/me/methods/password/{password-method-id}",
+        "name": "<password-method-id>"
       }
     ]
   }
@@ -237,10 +264,10 @@ Follow the returned HAL links instead of constructing operation URLs from identi
 
 | Property | Type | Required | Description |
 |----------|------|----------|-------------|
-| `_embedded.methods` | array of objects | Yes | Registered credential methods. The array is present even when the customer has no registered methods. |
+| `_embedded.methods` | array of objects | Yes | Registered credential methods. The array is present even when the user has no registered methods. |
 | `_links.self` | object | Yes | Link to the credential-method collection. |
-| `_links.enroll` | array of objects | No | Enrollment links, one for each credential type the customer can register. |
-| `_links.methods` | array of objects | No | Links to the customer's registered methods. |
+| `_links.enroll` | array of objects | No | Enrollment links, one for each credential type the user can register. |
+| `_links.methods` | array of objects | No | Links to the user's registered methods. |
 
 #### Registered passkey properties
 
@@ -257,14 +284,26 @@ Authenticator-specific properties can vary or be absent. For example, a nonattes
 | `attestationLevel` | string | No | Attestation level reported for the authenticator. |
 | `model` | string | No | Authenticator model. |
 | `passkeyType` | string | No | Passkey classification reported by the service. |
-| `displayName` | string | No | Customer-provided passkey name. |
+| `displayName` | string | No | User-provided passkey name. |
 | `_links` | object | Yes | `self` and `delete` links for the registered passkey. |
+
+#### Password method properties
+
+A password method contains information about the credential, not the password value. Follow its `update` link to [update the password](#update-a-password).
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `id` | string | Yes | Identifier of the existing password credential method. Treat it as opaque. |
+| `type` | string | Yes | Credential method type. The value is `password`. |
+| `lastUpdatedDateTime` | string | Yes | Time when the password was last updated. |
+| `_links.self` | object | Yes | Link to the registered password method. |
+| `_links.update` | object | Yes | Link to update the password. Use its `href` for the update request. |
 
 This endpoint can return `400`, `401`, or `403`. For the shared envelope and caller actions, see [Error responses](#error-responses).
 
 ## Provisioning
 
-Provisioning a passkey for the signed-in customer takes two HTTP calls. First, your application calls the begin registration endpoint, which returns WebAuthn creation options, a continuation token, and an `activate` link. The customer's authenticator uses the creation options to create a new passkey. Your application then calls the activate endpoint with the result to complete registration. Start this flow when the customer chooses to add a passkey in your application's credential-management experience.
+Provisioning a passkey for the signed-in user takes two HTTP calls. First, your application calls the begin registration endpoint, which returns WebAuthn creation options, a continuation token, and an `activate` link. The user's authenticator uses the creation options to create a new passkey. Your application then calls the activate endpoint with the result to complete registration. Start this flow when the user chooses to add a passkey in your application's credential-management experience.
 
 The following sequence diagram shows the two-step provisioning flow.
 
@@ -406,7 +445,7 @@ The `publicKey` object aligns with the common fields in [webauthnPublicKeyCreden
 | `hints` | array of strings | No | Optional authenticator hints. |
 | `extensions` | object | No | WebAuthn extension inputs. |
 
-Pass `publicKey` to the customer's authenticator to create the passkey. Preserve `continuationToken` exactly, and follow `_links.activate.href` for the activation request.
+Pass `publicKey` to the user's authenticator to create the passkey. Preserve `continuationToken` exactly, and follow `_links.activate.href` for the activation request.
 
 The begin registration endpoint can return `400`, `401`, `403`, or `500`. For the shared envelope and caller actions, see [Error responses](#error-responses).
 
@@ -463,8 +502,8 @@ A JSON object with the following fields:
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | `continuationToken` | string | Yes | The opaque token returned by the begin registration response. It carries the server-side state of the in-progress registration so Microsoft Entra can resume exactly where it left off. Treat it as opaque and don't parse or modify it. See [Continuation token](#continuation-token). |
-| `displayName` | string | No | A friendly name the customer gives the passkey, for example *My laptop*. |
-| `publicKeyCredential` | object | No | WebAuthn credential data produced by the customer's authenticator. |
+| `displayName` | string | No | A friendly name the user gives the passkey; for example, *My laptop*. |
+| `publicKeyCredential` | object | No | WebAuthn credential data produced by the user's authenticator. |
 
 The `publicKeyCredential` value is derived from the WebAuthn [PublicKeyCredential](https://www.w3.org/TR/webauthn-2/#iface-publickeycredential). The API flattens the credential ID, attestation response, and extension results into the following properties:
 
@@ -525,14 +564,14 @@ Authenticator-specific properties can vary or be absent. The activation endpoint
 
 ## Delete a credential method
 
-Permanently deletes one of the signed-in customer's registered passkeys. Use this endpoint after [listing the customer's credential methods](#list-user-credential-methods) and when the customer chooses to remove a passkey in your application's credential-management flow. Deletion is immediate and can't be undone. A replacement passkey is a new credential with no relation to the deleted passkey.
+Permanently deletes one of the signed-in user's registered passkeys. Use this endpoint after [listing the user's credential methods](#list-user-credential-methods) and when the user chooses to remove a passkey in your application's credential-management flow. Deletion is immediate and can't be undone. A replacement passkey is a new credential with no relation to the deleted passkey.
 
 > [!WARNING]
-> If the customer deletes the passkey they used to sign in to their current session, that session ends.
+> If the user deletes the passkey they used to sign in to their current session, that session ends.
 
 The following sequence diagram shows the delete flow.
 
-:::image type="content" source="media/reference-credential-management-api/delete-credential-method.png" alt-text="Sequence diagram that shows your app calling the delete endpoint with the customer's access token and Microsoft Entra External ID removing the passkey and returning 204 No Content." lightbox="media/reference-credential-management-api/delete-credential-method.png":::
+:::image type="content" source="media/reference-credential-management-api/delete-credential-method.png" alt-text="Sequence diagram that shows your app calling the delete endpoint with the user's access token and Microsoft Entra External ID removing the passkey and returning 204 No Content." lightbox="media/reference-credential-management-api/delete-credential-method.png":::
 
 See [Authentication and authorization](#authentication-and-authorization) for the access token your application needs to call this endpoint. This endpoint requires a write permission, `Me.UserAuthenticationMethod.Passkey.ReadWrite` or `Me.UserAuthenticationMethod.ReadWrite` (see [Required permissions](#required-permissions)).
 
@@ -560,7 +599,7 @@ Path parameters:
 | --- | --- | --- |
 | `tenant-id` | Yes | Your external tenant identifier, either the tenant ID (GUID) or a verified domain. Use a tenant-specific value, not `common`, `client`, `organizations`, or `consumers`. A GUID value must match the tenant in the access token. |
 | `type` | Yes | The credential method type to delete. Currently only `fido` (passkey) is supported. |
-| `id` | Yes | The identifier of the registered passkey to delete. Use the `id` (or follow the `delete` link) from [List user credential methods](#list-user-credential-methods), the source of truth for the customer's registered methods. |
+| `id` | Yes | The identifier of the registered passkey to delete. Use the `id` (or follow the `delete` link) from [List user credential methods](#list-user-credential-methods), the source of truth for the user's registered methods. |
 
 Request headers:
 
@@ -579,6 +618,196 @@ HTTP/1.1 204 No Content
 ```
 
 This endpoint can return `400`, `401`, or `403`. For the shared envelope and caller actions, see [Error responses](#error-responses).
+
+## Update a password
+
+This flow updates the signed-in user's existing password. Use this flow when the user knows their current password and chooses to change it in your application's credential-management experience.
+
+This flow isn't a forgotten-password recovery flow. For password recovery in native authentication, see [Self-service password reset](reference-native-authentication-api.md#self-service-password-reset-sspr).
+
+Password updates require polling to confirm completion. The following flowchart shows the two-step update flow.
+
+:::image type="content" source="media/reference-credential-management-api/update-password.png" alt-text="Flowchart that shows the user entering their current and new passwords, the app submitting the update, waiting for the polling interval, and polling with a continuation token to confirm completion." lightbox="media/reference-credential-management-api/update-password.png":::
+
+See [Authentication and authorization](#authentication-and-authorization) for the access token your application needs. Both the update and polling requests require `Me.UserAuthenticationMethod.Password.ReadWrite` or `Me.UserAuthenticationMethod.ReadWrite` (see [Required permissions](#required-permissions)).
+
+### Step 1: Submit the password update
+
+Start by [listing the user's credential methods](#list-user-credential-methods) and following the password method's `_links.update.href`.
+
+#### HTTP request
+
+```http
+PUT https://{tenant-subdomain}.ciamlogin.com/{tenant-id}/api/v1.0/me/methods/password/{id}
+```
+
+`{tenant-subdomain}` in the URL is your external tenant's subdomain; for example, *contoso* in *contoso.ciamlogin.com*.
+
+Sample request:
+
+```http
+PUT https://contoso.ciamlogin.com/8f1c8e2a-1234-4abc-9876-1f1e1d1c1b1a/api/v1.0/me/methods/password/{password-method-id} HTTP/1.1
+Host: contoso.ciamlogin.com
+Authorization: Bearer <access-token>
+Content-Type: application/json
+
+{
+  "currentPassword": "<current-password>",
+  "newPassword": "<new-password>"
+}
+```
+
+#### Request parameters
+
+Path parameters:
+
+| Name | Required | Description |
+|------|----------|-------------|
+| `tenant-id` | Yes | Your external tenant identifier, either the tenant ID (GUID) or a verified domain. Use a tenant-specific value, not `common`, `client`, `organizations`, or `consumers`. A GUID value must match the tenant in the access token. |
+| `id` | Yes | The identifier of the password method returned by [List user credential methods](#list-user-credential-methods). Follow `_links.update.href` rather than constructing the URL. |
+
+Request headers:
+
+| Name | Required | Value |
+|------|----------|-------|
+| `Authorization` | Yes | `Bearer <access-token>` |
+| `Content-Type` | Yes | `application/json` |
+
+#### Request body
+
+A JSON object with the following fields:
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| `currentPassword` | string | Yes | The user's current password |
+| `newPassword` | string | Yes | The user's new password |
+
+> [!IMPORTANT]
+> Don't log or persist the user's password values. Send them over HTTPS.
+
+#### Success response
+
+A successful update request returns `202 Accepted` with a continuation token and a link to poll for completion:
+
+```http
+HTTP/1.1 202 Accepted
+Content-Type: application/hal+json
+```
+
+```json
+{
+  "id": "<password-method-id>",
+  "type": "password",
+  "status": "running",
+  "pollInterval": "2",
+  "continuationToken": "<continuation-token>",
+  "state": "interactionRequired",
+  "action": "poll",
+  "_links": {
+    "self": {
+      "href": "/{tenant-id}/api/v1.0/me/methods/password/{password-method-id}",
+      "name": "self"
+    },
+    "pollUpdate": {
+      "href": "/{tenant-id}/api/v1.0/me/methods/password/{password-method-id}/pollUpdate",
+      "name": "pollUpdate"
+    }
+  }
+}
+```
+
+The response has the following properties:
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `id` | string | Yes | Identifier of the password method being updated. |
+| `type` | string | Yes | Credential method type. The value is `password`. |
+| `status` | string | Yes | Update status. `running` indicates that the update hasn't completed. |
+| `pollInterval` | string | Yes | Number of seconds to wait before the next polling request, represented as a string. |
+| `continuationToken` | string | Yes | Opaque state for the next polling request. Preserve it exactly and use the most recently returned value. |
+| `state` | string | Yes | Flow state. The value is `interactionRequired`. |
+| `action` | string | Yes | Next action. The value is `poll`. |
+| `_links` | object | Yes | `self` and `pollUpdate` links for the password-update flow. |
+
+The update endpoint can return `400`. For the shared envelope and caller actions, see [Error responses](#error-responses).
+
+### Step 2: Poll for the password update status
+
+Wait for the response's `pollInterval`, then follow `_links.pollUpdate.href`. Polling requests carry the continuation token, not the user's password values.
+
+#### HTTP request
+
+```http
+POST https://{tenant-subdomain}.ciamlogin.com/{tenant-id}/api/v1.0/me/methods/password/{id}/pollUpdate
+```
+
+`{tenant-subdomain}` in the URL is your external tenant's subdomain; for example, *contoso* in *contoso.ciamlogin.com*.
+
+Sample request:
+
+```http
+POST https://contoso.ciamlogin.com/8f1c8e2a-1234-4abc-9876-1f1e1d1c1b1a/api/v1.0/me/methods/password/{password-method-id}/pollUpdate HTTP/1.1
+Host: contoso.ciamlogin.com
+Authorization: Bearer <access-token>
+Content-Type: application/json
+
+{
+  "continuationToken": "<continuation-token>"
+}
+```
+
+#### Request parameters
+
+Path parameters:
+
+| Name | Required | Description |
+|------|----------|-------------|
+| `tenant-id` | Yes | Your external tenant identifier, either the tenant ID (GUID) or a verified domain. Use a tenant-specific value, not `common`, `client`, `organizations`, or `consumers`. A GUID value must match the tenant in the access token. |
+| `id` | Yes | The password method identifier from the update response. Follow `_links.pollUpdate.href` rather than constructing the URL. |
+
+Request headers:
+
+| Name | Required | Value |
+|------|----------|-------|
+| `Authorization` | Yes | `Bearer <access-token>` |
+| `Content-Type` | Yes | `application/json` |
+
+#### Request body
+
+A JSON object with the following field:
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| `continuationToken` | string | Yes | The latest continuation token returned by the update. See [Continuation token](#continuation-token). |
+
+#### Success response
+
+Here's an example of a successful response after the update completes:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/hal+json
+```
+
+```json
+{
+  "id": "<password-method-id>",
+  "type": "password",
+  "status": "succeeded"
+}
+```
+
+The response has the following properties:
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `id` | string | Yes | Identifier of the password method that was updated. |
+| `type` | string | Yes | Credential method type. The value is `password`. |
+| `status` | string | Yes | Update status. The value `succeeded` confirms that the password update completed. |
+
+Don't report success for a pending status, an unexpected response, or a failed request. Don't automatically resend the original password-update request if polling fails.
+
+The polling endpoint can return `400`. For the shared envelope and caller actions, see [Error responses](#error-responses).
 
 ## Error responses
 
@@ -608,13 +837,14 @@ The error response has the following properties:
 | `error.correlationId` | string | Yes | Identifier used to correlate the request across components. |
 | `error.target` | string | No | Request element associated with the error. |
 | `error.innerError` | object | No | Additional error details. |
+| `error.innerError.code` | string | No | Machine-readable detail code for the failure, when returned. |
 | `clientHints` | array of strings | No | Optional response-wide hint tokens. |
 
-The following status and code combinations are confirmed for these endpoints:
+The following generic errors are confirmed for these endpoints:
 
 | HTTP status | Error code | Confirmed causes |
 |-------------|------------|------------------|
-| `400 Bad Request` | `invalidRequest` | Missing or malformed bearer token, invalid token signature, expired token, app-only token, insufficient delegated scope, a non-specific tenant route, or invalid registration state such as a malformed continuation token. |
+| `400 Bad Request` | `invalidRequest` | Missing or malformed bearer token, invalid token signature, expired token, app-only token, insufficient delegated scope (`AADSTS10040176`), a non-specific tenant route, or invalid registration state such as a malformed continuation token. |
 | `401 Unauthorized` | `invalidRequest` | The token wasn't issued for the credential management API. |
 | `403 Forbidden` | `forbidden` | The tenant in the request URL doesn't match the tenant in the access token. |
 | `500 Internal Server Error` | `serverError` | The begin registration endpoint received an invalid WebAuthn creation-options response from an upstream component. |
@@ -629,3 +859,13 @@ Handle confirmed errors as follows:
 | `401 invalidRequest` | Request an accepted credential management API permission when acquiring the token, then retry the request. |
 | `403 forbidden` | Verify that the `{tenant-id}` in the request URL matches the tenant represented by the access token. |
 | `500 serverError` | Record `traceId` and `correlationId` for diagnostics. Don't assume that the operation succeeded. |
+
+### Password update errors
+
+The following status and code combinations are confirmed for the password-update and polling endpoints:
+
+| HTTP status | Error code | Confirmed causes |
+|-------------|------------|------------------|
+| `400 Bad Request` | `invalidRequest` | The update request body is malformed. |
+| `400 Bad Request` | `invalidRequest` | The polling request fails because the current password is incorrect. `error.innerError.code` is `invalidUserNameOrPassword`. |
+| `400 Bad Request` | `invalidRequest` | The polling request fails because the new password doesn't meet the tenant's password policy. `error.innerError.code` is `passwordTooWeak`. |
