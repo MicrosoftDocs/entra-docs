@@ -88,7 +88,7 @@ One of the most important parts of governing agent identities is making sure tha
 
 ## Agent identity lifecycle automation
 
-To ensure the security and manageability of agent identities for Microsoft customers, Microsoft Entra Agent ID provides a default inactivity policy to all tenants. This policy identifies inactive agent identities, notifies relevant users, and then proceeds to disable the identity if no new activity is detected. For more information, see [Microsoft Entra Agent ID default inactivity policy](agent-default-activity-policy.md) and [Entra Agent ID lifecycle policies](agent-lifecycle-policies.md).
+To ensure the security and manageability of agent identities for Microsoft customers, Microsoft Entra Agent ID provides a default inactivity policy to all tenants. This policy identifies inactive agent identities, notifies relevant users, and then proceeds to disable the identity if no new activity is detected. For more information, see [Microsoft Entra Agent ID default inactivity policy](agent-default-inactivity-policy.md) and [Entra Agent ID lifecycle policies](agent-lifecycle-policies.md).
 
 ## Related content
 
