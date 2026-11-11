@@ -2,8 +2,9 @@
 title: Configure TravelPerk for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TravelPerk.
 ms.topic: how-to
-ms.date: 03/25/2026
-ms.custom: sfi-image-nochange
+ms.date: 10/30/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1032
+ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TravelPerk so that I can streamline the user management process and ensure that users have the appropriate access to TravelPerk.
 --- 
 
@@ -78,8 +79,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ### To configure automatic user provisioning for TravelPerk in Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
    ![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -95,7 +96,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
 
-1. Under the **Admin Credentials** section, select **Authorize**. You're redirected to **TravelPerk**'s Login page. Input your **Username** and **Password** and select the **Sign In** button. Select **Authorize App** on the Authorization page. Select **Test Connection** to ensure Microsoft Entra ID can connect to TravelPerk. If the connection fails, ensure your SecureLogin account has Admin permissions and try again.
+    [!INCLUDE [provisioning-oauth-azure-portal](~/includes/provisioning-oauth-azure-portal.md)]
+
+1. Under the **Admin Credentials** section, select **Authorize**. You're redirected to **TravelPerk**'s Login page. Input your **Username** and **Password** and select the **Sign In** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to TravelPerk. If the connection fails, ensure your SecureLogin account has Admin permissions and try again.
 
    ![Admin Credentials](./media/travelperk-provisioning-tutorial/authorize.png)
 
