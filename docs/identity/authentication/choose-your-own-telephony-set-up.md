@@ -1,15 +1,16 @@
 ---
-title: Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center
-description: Use the Microsoft Entra admin center to set up your telecom integration, validate evaluation mode, and gradually roll out SMS and voice delivery.
+title: Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center
+description: Use the Microsoft Entra admin center to set up your telephony integration, validate evaluation mode, and gradually roll out SMS and voice delivery.
 ms.topic: how-to
 ms.date: 10/30/2026
 ai-usage: ai-assisted
 
-# Customer intent: As an identity administrator, I want to use the Microsoft Entra admin center to configure and test SMS and voice with my telecom provider.
+# Customer intent: As an identity administrator, I want to use the Microsoft Entra admin center to configure and test SMS and voice with my telephony provider.
 ---
 
-# Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center
+# Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center
 
+<a id="set-up-sms-and-voice-with-your-own-telecom-provider-in-the-microsoft-entra-admin-center"></a>
 <a id="set-up-sms-and-voice"></a>
 <a id="set-up-sms-and-voice-with-your-own-telecom-providers"></a>
 
@@ -49,17 +50,20 @@ Use accounts with the following permissions:
 > Before you begin, confirm that your Microsoft Entra policies allow the setup script to create the application and credentials it needs. If you use app management policies for credentials, multitenant apps, or custom Application ID URIs, review them with your Microsoft Entra administrator.
 
 <a id="step-1-subscribe-and-activate-the-provider"></a>
+<a id="step-1-purchase-and-activate-your-telecom-provider"></a>
 
-## Step 1: Purchase and activate your telecom provider
+<a id="step-1-purchase-and-activate-your-telecom-provider"></a>
+
+## Step 1: Purchase and activate your telephony provider
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Authentication Policy Administrator.
 1. Go to **Entra ID** > **Authentication methods** > **Policies** and select **Add telecom profile**. The **Set up an SMS or voice provider** page guides you through subscription, integration, and profile setup.
 
     :::image type="content" source="media/choose-your-own-telephony-set-up/setup-overview.png" alt-text="Redacted screenshot of the Set up an SMS or voice provider page and its three setup tasks." lightbox="media/choose-your-own-telephony-set-up/setup-overview.png":::
 
-1. Select **Subscribe to a telecom provider** and choose a supported telecom provider. Use **Get solution** to open its offer in [Microsoft Security Store](https://securitystore.microsoft.com/), or select an existing subscription with **Select details**. See [Available telephony providers](concept-phone-providers.md#available-telephony-providers).
+1. Select **Subscribe to an SMS or voice provider** and choose a supported telephony provider. Use **Get solution** to open its offer in [Microsoft Security Store](https://securitystore.microsoft.com/), or select an existing subscription with **Select details**. See [Available telephony providers](concept-phone-providers.md#available-telephony-providers).
 
-    :::image type="content" source="media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png" alt-text="Redacted screenshot of the telecom provider selection pane. Demo pricing and offer details are obscured." lightbox="media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png":::
+    :::image type="content" source="media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png" alt-text="Redacted screenshot of the telephony provider selection pane. Demo pricing and offer details are obscured." lightbox="media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png":::
 
 1. Purchase your provider's offer. For detailed purchasing instructions, see [Purchase and deploy a SaaS solution from Security Store](/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution).
 1. After you **Place Order**, select **Configure Account Now** and follow your provider's registration instructions.
@@ -73,20 +77,20 @@ Use accounts with the following permissions:
 
 ## Step 2: Deploy the integration
 
-On **Set up an SMS or voice provider**, select **Set up the provider integration**. Select the Azure hosting subscription and review the telecom provider configuration populated in the pane.
+On **Set up an SMS or voice provider**, select **Set up the provider integration**. Select the Azure hosting subscription and review the telephony provider configuration populated in the pane.
 
 :::image type="content" source="media/choose-your-own-telephony-set-up/integration-setup.png" alt-text="Redacted screenshot of the provider integration pane with subscription selection, Function App setup, registration guidance, and Verify." lightbox="media/choose-your-own-telephony-set-up/integration-setup.png":::
 
 ### What the setup script does
 
-The setup script deploys everything needed to connect Microsoft Entra ID to your telecom provider, so you don't have to create Azure resources by hand. It walks you through a few choices, then shows the full deployment plan. Nothing is created until you approve it.
+The setup script deploys everything needed to connect Microsoft Entra ID to your telephony provider, so you don't have to create Azure resources by hand. It walks you through a few choices, then shows the full deployment plan. Nothing is created until you approve it.
 
 After you approve, the script creates the Microsoft Entra application, deploys and secures the Azure resources, and applies your provider's configuration. Deployment usually takes a few minutes.
 
 ### Costs
 
 > [!IMPORTANT]
-> The integration runs on Azure resources in your subscription, billed based on your configuration and usage. To plan your budget, see [Estimate telecom-provider and Azure hosting costs](phone-providers-faq.yml#how-much-does-choose-your-own-telephony-provider-cost) before you deploy.
+> The integration runs on Azure resources in your subscription, billed based on your configuration and usage. To plan your budget, see [Estimate telephony-provider and Azure hosting costs](phone-providers-faq.yml#how-much-does-choose-your-own-telephony-provider-cost) before you deploy.
 
 ### Run the setup script
 
@@ -107,20 +111,26 @@ After you approve, the script creates the Microsoft Entra application, deploys a
     .\Setup-Epp.ps1
     ```
 
-1. Follow the prompts to select the customer tenant, hosting subscription, Azure region, telecom provider, runtime, and hosting plan. Use the configuration shown in the integration pane and approve the deployment plan.
+1. Follow the prompts to select the customer tenant, hosting subscription, Azure region, telephony provider, runtime, and hosting plan. Use the configuration shown in the integration pane and approve the deployment plan.
+
+    > [!TIP]
+    > **Choose region and plan for performance.** Deploy the Function App in the Azure region closest to your tenant's Microsoft Entra region. For low latency, use the Flex Consumption plan with one always-ready instance to avoid cold starts.
+
 1. Save the deployment summary, including its tenant ID, endpoint URL, and **Application (client) ID**. You need these values to complete provider registration and configure your profile.
 
 > [!IMPORTANT]
 > Copy these values before you leave the Cloud Shell window. Cloud Shell sessions are temporary and can end when you navigate away, and the output isn't saved.
 
-## Step 3: Complete telecom provider registration
+<a id="step-3-complete-telecom-provider-registration"></a>
 
-After deployment completes, return to your telecom provider's registration page to complete the provider setup.
+## Step 3: Complete telephony provider registration
 
-1. Provide the **Application (client) ID** created by the setup script when requested by your telecom provider.
+After deployment completes, return to your telephony provider's registration page to complete the provider setup.
+
+1. Provide the **Application (client) ID** created by the setup script when requested by your telephony provider.
 1. Complete any additional registration steps required by the provider.
 1. In [Microsoft Security Store](https://securitystore.microsoft.com/), go to **Management** > **My Solutions** and confirm that the **Subscription status** is '**Subscribed**' before continuing.
-1. Return to **Set up the provider integration** in the Microsoft Entra admin center and select **Verify** to check the telecom provider subscription.
+1. Return to **Set up the provider integration** in the Microsoft Entra admin center and select **Verify** to check the telephony provider subscription.
 
 <a id="step-3-create-an-sms-or-voice-profile"></a>
 
@@ -128,14 +138,14 @@ After deployment completes, return to your telecom provider's registration page 
 
 <a id="read-the-current-policy"></a>
 
-Create a profile for each intended channel. The wizard carries over the current channel's targets and populates the endpoint and application ID when you select the deployed Function App. Start in **Evaluation**, validate the integration, and then gradually move delivery to your telecom provider.
+Create a profile for each intended channel. The wizard carries over the current channel's targets and populates the endpoint and application ID when you select the deployed Function App. Start in **Evaluation**, validate the integration, and then gradually move delivery to your telephony provider.
 
 > [!WARNING]
 > **Target users** are shared with your existing SMS or voice policy, so any change here also affects users who sign in with SMS or voice today. Keep the current selections during rollout, and use a test tenant to try different users or groups.
 
 ### Configure CYOT settings
 
-1. Go to **Set up an SMS or voice provider** and select **Create an SMS or voice profile**.
+1. On **Set up an SMS or voice provider**, select **Create an SMS or voice profile**.
 1. On **Delivery channel**, select **SMS** or **Voice call**, then select **Next**. Each profile configures one delivery channel.
 
     :::image type="content" source="media/choose-your-own-telephony-set-up/delivery-channel.png" alt-text="Redacted screenshot of the Delivery channel step with SMS and Voice call options." lightbox="media/choose-your-own-telephony-set-up/delivery-channel.png":::
@@ -174,7 +184,7 @@ After evaluation succeeds:
 
 1. Keep the existing production targets and selected Function App unchanged.
 1. Review and save the profile changes. Confirm the saved plan, percentage, endpoint, application ID, and targets.
-1. Test [telecom provider delivery](#test-telecom-provider-delivery) before increasing traffic.
+1. Test [telephony provider delivery](#test-telecom-provider-delivery) before increasing traffic.
 
 <a id="step-5-gradually-roll-out"></a>
 
@@ -183,7 +193,7 @@ After evaluation succeeds:
 1. Keep the profile in **Production**.
 1. Increase **Traffic routed through provider percentage** in increments until you reach `100`.
 1. Keep the endpoint URL, application client ID, and existing production targets unchanged while updating the traffic percentage.
-1. [Validate authentication and telecom provider delivery](#check-each-rollout-stage) after every percentage change.
+1. [Validate authentication and telephony provider delivery](#check-each-rollout-stage) after every percentage change.
 1. Increase the percentage after each stage validates successfully. To investigate an issue, hold at the current percentage and see [Monitor and troubleshoot](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 
 > [!IMPORTANT]
@@ -219,12 +229,12 @@ At a partial percentage, only some requests route through your provider, so make
 
 ## Troubleshooting
 
-To diagnose integration issues, use the troubleshooting guide to identify whether the issue is with the Microsoft Entra configuration, Azure Function, telecom provider, or authentication flow.
+To diagnose integration issues, use the troubleshooting guide to identify whether the issue is with the Microsoft Entra configuration, Azure Function, telephony provider, or authentication flow.
 
 See [Monitor and troubleshoot your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider) for diagnostic steps, logs, common issues, and remediation guidance.
 
 ## Related content
 
-- [Monitor and troubleshoot your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
-- [Prevent telephony fraud when using your own telecom provider](choose-your-own-telephony-fraud-costs.md).
-- [Plan for resiliency when using your own telecom provider](choose-your-own-telephony-reliability.md).
+- [Troubleshoot SMS and voice with your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
+- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-costs.md).
+- [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
