@@ -25,7 +25,7 @@ With Microsoft Entra ID Governance you can implement the following scenarios for
 - Govern the access lifecycle
 - Secure privileged access for administration
 
-In addition, there are additional scenarios for AI aegnts. For more information, see [Governing agent identities](agent-id-governance-overview.md).
+In addition, there are additional scenarios for AI agents. For more information, see [Governing agent identities](agent-id-governance-overview.md).
 
 ## Identity lifecycle
 
