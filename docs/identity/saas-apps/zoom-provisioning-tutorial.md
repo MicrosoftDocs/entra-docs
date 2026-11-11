@@ -3,7 +3,9 @@ title: Configure Zoom for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom.
 
 ms.topic: how-to
-ms.date: 06/11/2026
+ms.date: 10/30/2026
+ms.custom: msecd-doc-authoring-1032
+ai-usage: ai-assisted
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zoom so that I can streamline the user management process and ensure that users have the appropriate access to Zoom.
 ---
@@ -56,8 +58,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ### Configure automatic user provisioning for Zoom in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Microsoft Entra ID** > **Enterprise applications** > **All applications**.
 
 	![Screenshot of the Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -72,6 +74,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Select **+ New configuration**.
 
 	![Screenshot of New configuration.](common/application-provisioning.png)
+
+    [!INCLUDE [provisioning-oauth-azure-portal](~/includes/provisioning-oauth-azure-portal.md)]
 
 1. Under the **Admin Credentials** section, select **OAuth2 Authorization Code Grant**. Enter `https://api.zoom.us/scim` in **Tenant URL**, select **Authorize**, make sure that you enter your Zoom account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zoom. If the connection fails, ensure your Zoom account has Admin permissions and try again.
 

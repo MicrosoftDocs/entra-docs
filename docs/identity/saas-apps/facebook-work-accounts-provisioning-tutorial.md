@@ -3,7 +3,9 @@ title: Configure Meta Work Accounts for automatic user provisioning with Microso
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Meta Work Accounts.
 
 ms.topic: how-to
-ms.date: 03/09/2026
+ms.date: 10/30/2026
+ms.custom: msecd-doc-authoring-1032
+ai-usage: ai-assisted
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Facebook Work Accounts so that I can streamline the user management process and ensure that users have the appropriate access to Facebook Work Accounts.
 --- 
@@ -52,8 +54,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ### To configure automatic user provisioning for Meta Work Accounts in Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
 1. In the applications list, select **Meta Work Accounts**.
 
@@ -62,6 +64,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Set **+ New configuration**.
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+
+    [!INCLUDE [provisioning-oauth-azure-portal](~/includes/provisioning-oauth-azure-portal.md)]
 
 1. Under the **Admin Credentials** section, select **Authorize**. You be redirected to **Meta Work Accounts**'s authorization page. Input your Meta Work Accounts username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Meta Work Accounts. If the connection fails, ensure your Meta Work Accounts account has Admin permissions and try again.
 
