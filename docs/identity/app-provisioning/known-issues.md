@@ -2,8 +2,10 @@
 title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
 ms.topic: troubleshooting
-ms.date: 03/31/2026
+ms.date: 11/09/2026
 ms.reviewer: arvinh
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
 
@@ -55,6 +57,12 @@ If the user in the target tenant is assigned an exchange license, cross-tenant s
 ### Configuring synchronization from target tenant
 
 Configuring synchronization from the target tenant isn't supported. All configurations must be done in the source tenant. The target administrator is able to turn off cross-tenant synchronization at any time.
+
+### Users removed from scope aren't deleted after an immediate restart
+
+If you remove a previously synchronized user from the scope of a cross-tenant synchronization job and restart the job before the next synchronization cycle, the user isn't deleted from the target tenant in subsequent cycles. The user remains in the target tenant until a change to the source user object causes the service to recognize that the user is out of scope and delete the user from the target tenant.
+
+After removing a user from scope, wait for the next synchronization cycle before restarting the job.
 
 ### Two users in the source tenant matched with the same user in the target tenant
 
