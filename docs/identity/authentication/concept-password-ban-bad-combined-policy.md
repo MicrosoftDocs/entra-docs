@@ -5,6 +5,7 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ms.topic: concept-article
 ms.date: 11/12/2026
 ms.reviewer: tilarso
+ai-usage: ai-generated
 ---
 # Combined password policy and check for weak passwords in Microsoft Entra ID
 
