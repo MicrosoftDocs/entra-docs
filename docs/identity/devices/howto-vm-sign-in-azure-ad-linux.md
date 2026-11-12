@@ -32,15 +32,15 @@ The following Linux distributions are currently supported for deployments in a s
 
 | Distribution | Version |
 | --- | --- |
-| AlmaLinux | AlmaLinux 8, AlmaLinux 9 |
+| AlmaLinux | AlmaLinux 8, AlmaLinux 9, AlmaLinux 10|
 | Azure Linux (formerly known as Common Base Linux Mariner)| CBL-Mariner 2.0, Azure Linux 3.0 |
-| Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
-| openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1 to 15.5, openSUSE Leap 15.6+ |
-| Oracle | Oracle Linux 8, Oracle Linux 9 |
+| Debian | Debian 9, Debian 10, Debian 11, Debian 12, Debian 13|
+| openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1 to 15.5, openSUSE Leap 15.6+, openSUSE Leap 16|
+| Oracle | Oracle Linux 8, Oracle Linux 9, Oracle Linux 10|
 | RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+, RHEL 9.0+, RHEL 10.1 |
-| Rocky | Rocky 8, Rocky 9 |
-| SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1 to 15.5, SLES 15.6+ |
-| Ubuntu | Ubuntu 16.04 to Ubuntu 24.04 |
+| Rocky | Rocky 8, Rocky 9, Rocky 10|
+| SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1 to 15.5, SLES 15.6+, SLES 16|
+| Ubuntu | Ubuntu 16.04 to Ubuntu 26.04 |
 
 > [!NOTE]
 > SUSE made a breaking change with version 15.6 that is incompatible with the older versions. Since the Microsoft Entra login VM extension always installs the latest package, this will not work on older SUSE versions. You can install the aadsshlogin packages from packages.microsoft.com for older SUSE versions. After adding the repo, one can manually install them with this command: `sudo zypper install aadsshlogin=1.0.027980001`.
@@ -210,12 +210,12 @@ To configure role assignments for your Microsoft Entra ID-enabled Linux VMs:
 
 1. Assign the following role. For detailed steps, see [Assign Azure roles by using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
-    | Setting | Value |
-    | --- | --- |
-    | Role | **Virtual Machine Administrator Login** or **Virtual Machine User Login** |
-    | Assign access to | User, group, service principal, or managed identity |
+ | Setting | Value |
+ | --- | --- |
+ | Role | **Virtual Machine Administrator Login** or **Virtual Machine User Login** |
+ | Assign access to | User, group, service principal, or managed identity |
 
-    ![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
+![Screenshot that shows the page for adding a role assignment.](../../media/common/add-role-assignment-page.png)
 
 After a few moments, the security principal is assigned the role at the selected scope.
 

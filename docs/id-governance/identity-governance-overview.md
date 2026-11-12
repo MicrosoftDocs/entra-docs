@@ -3,7 +3,7 @@ title: Microsoft Entra ID Governance
 description: Microsoft Entra ID Governance enables you to balance your organization's need for security and end user productivity with the right processes and visibility.
 editor: markwahl-msft
 ms.topic: overview
-ms.date: 11/09/2026
+ms.date: 05/08/2026
 ms.reviewer: markwahl-msft
 #Customer Intent: As an IT admin, I want to understand Microsoft Entra ID Governance so that I can balance security and end user productivity with the right processes and visibility.
 ---
@@ -25,6 +25,7 @@ With Microsoft Entra ID Governance you can implement the following scenarios for
 - Govern the access lifecycle
 - Secure privileged access for administration
 
+In addition, there are additional scenarios for AI agents. For more information, see [Governing agent identities](agent-id-governance-overview.md).
 
 ## Identity lifecycle
 
@@ -115,11 +116,11 @@ Once you've started using these identity governance features, you can easily aut
 
 ## Identity governance for agent identities
 
-With the addition of the Microsoft agent identity platform, managing an agent's identity and access in the same way as people is just as important in the governance lifecycle of your organization. Microsoft Entra Agent ID introduces [agent identities](../agent-id/what-is-microsoft-entra-agent-id.md) — purpose-built identity constructs for AI agents — with governance controls that address the unique challenges of autonomous and semi-autonomous agents operating at enterprise scale.
+With the addition of the Microsoft agent identity platform, managing an agent's identity and access in the same way as people is just as important in the governance lifecycle of your organization. Microsoft Entra Agent ID introduces [agent identities](../agent-id/what-is-microsoft-entra-agent-id.md) — purpose-built identity constructs for AI agents — with governance controls that address the unique challenges of all forms of agents operating at enterprise scale.  Agent identities are linked to [Agent identity blueprints](../agent-id/identity-platform/agent-blueprint.md) which serve as centralized templates that enable organizations to apply Conditional Access rules, permissions, and governance controls once and have all current and future agent instances inherit them automatically. This blueprint model allows administrators to govern, disable, or revoke permissions for an entire class of agents in a single operation.
 
-Every agent identity requires a human [sponsor](../agent-id/agent-owners-sponsors-managers.md) accountable for the agent's purpose, lifecycle decisions, and access reviews. When a sponsor moves or leaves the organization, a [Lifecycle Workflows task](lifecycle-workflow-tasks.md#transfer-agent-identity-sponsorships-to-manager) can transfer their sponsorships to their manager, so a human stays accountable for each agent. [Agent identity blueprints](../agent-id/identity-platform/agent-blueprint.md) serve as centralized templates that enable organizations to apply Conditional Access rules, permissions, and governance controls once and have all current and future agent instances inherit them automatically. This blueprint model allows administrators to govern, disable, or revoke permissions for an entire class of agents in a single operation.
+Every agent identity requires a human [sponsor](../agent-id/agent-owners-sponsors-managers.md) accountable for the agent's purpose and lifecycle decisions. [Lifecycle Workflows](agent-sponsor-tasks.md) automate sponsor transition notifications,so that if a person who sponsors agents moves or leaves the organization, these workflows enables sponsorship to automatically transfer, ensuring continuous human oversight.
 
-Agent identities are governed through the same [entitlement management](entitlement-management-overview.md) access packages available for human identities, providing time-bound, auditable access with approval workflows. Sponsors receive expiration notifications and can request extensions or let access expire. [Lifecycle Workflows](agent-sponsor-tasks.md) automate sponsor transition notifications when sponsorship changes occur. All agent identities are discoverable, searchable, and queryable through the Microsoft Entra admin center and Microsoft Graph, giving organizations centralized visibility to prevent agent sprawl and shadow AI.
+Access assignments to agent identities can be governed through the same [entitlement management](entitlement-management-overview.md) access packages available for human identities, providing time-bound, auditable access with approval workflows. Sponsors receive expiration notifications and can request extensions or let access expire.
 
 For more information, see [Governing agent identities](agent-id-governance-overview.md).
 

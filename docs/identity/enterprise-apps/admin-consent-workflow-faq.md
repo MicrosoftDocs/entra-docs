@@ -22,7 +22,7 @@ Reviewers can only see admin requests that are created after they're designated 
 
 ## As a reviewer, why do I see multiple requests for the same application?
   
-If an application is configured to use static and dynamic consent to request access to their user’s data, you'll see two admin consent requests. One request represents the static permissions, and the other represents the dynamic permissions.
+If an application is configured to use static and dynamic consent to request access to their user’s data, you'll see two admin consent requests. One request represents the static consent permissions, and the other represents the dynamic consent permissions.
 
 ## As a requestor, can I check the status of my request?
 

@@ -2,8 +2,9 @@
 title: Configure GitHub for automatic user provisioning in Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user organization membership in GitHub Enterprise Cloud.
 ms.topic: how-to
-ms.date: 04/08/2026
-ms.custom: sfi-image-nochange
+ms.date: 10/30/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1032
+ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub so that I can streamline the user management process and ensure that users have the appropriate access to GitHub.
 --- 
 # Configure GitHub for automatic user provisioning in Microsoft Entra ID
@@ -50,8 +51,8 @@ This section guides you through connecting your Microsoft Entra ID to GitHub's S
 
 ### Configure automatic user account provisioning to GitHub in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**.
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
 1. If you have already configured GitHub for single sign-on, search for your instance of GitHub using the search field.
 
@@ -64,6 +65,8 @@ This section guides you through connecting your Microsoft Entra ID to GitHub's S
 1. In the **Tenant URL** field, enter your GitHub Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GitHub. If the connection fails, ensure your GitHub account has the required admin permissions and try again.
 
    ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+
+    [!INCLUDE [provisioning-oauth-azure-portal](~/includes/provisioning-oauth-azure-portal.md)]
 
 1. In the new window, sign into GitHub using your Admin account. In the resulting authorization dialog, select the GitHub Organization that you want to enable provisioning for, and then select **Authorize**. Once completed, return to the Azure portal to complete the provisioning configuration.
 
