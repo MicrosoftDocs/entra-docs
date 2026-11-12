@@ -2,7 +2,7 @@
 title: Governing Agent Identities
 description: This article describes governing agent identities.
 ms.topic: concept-article #Required; leave this attribute/value as-is.
-ms.date: 05/08/2026
+ms.date: 11/12/2026
 ai-usage: ai-assisted
 
 #Customer Intent: As an Identity Governance administrator, I want to learn how to use Microsoft Entra to manage lifecycle and access to resources for agent identities within my organization.
