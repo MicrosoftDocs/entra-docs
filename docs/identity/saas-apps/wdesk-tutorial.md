@@ -47,15 +47,15 @@ To create an SSO configuration the assigned Org Security Admin will need to:
 
 **Name** this specific SSO configuration and **select** Azure as the **Identity Provider (IdP)**
 	
-![Workiva SSO Config Info](./wdesk-tutorial/configurationname.png)
+![Workiva SSO Config Info](./wdesk-tutorial/name.png)
 
 Then **Step 1 Workiva Metadata** will appear. The Org Security Admin will be able to obtain the **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** endpoints. There is also an option to download the actual Workiva .XML Metadata file which already contains the SSO endpoints. This information will need to be shared with your Microsoft Microsoft Entra ID team.
 
-![Workiva Metadata Endpoints](./wdesk-tutorial/workivametadata.png)
+![Workiva Metadata Endpoints](./wdesk-tutorial/data.png)
 
 The **Advanced options** toggle will display additional **Login URL** and the **Logout URL** if required for configuration.
 
-![Workiva All Endpoints](./wdesk-tutorial/loginurl.png)
+![Workiva All Endpoints](./wdesk-tutorial/login.png)
 
 ## Add Workiva from the Microsoft Entra ID Gallery
 
@@ -65,7 +65,7 @@ Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at
 
 Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
-![Find and Add Workiva App in Azure](./wdesk-tutorial/addapp.png)
+![Find and Add Workiva App in Azure](./wdesk-tutorial/add.png)
 
 In the **Search application** section, type **Workiva** in the search box.
 Select **Workiva** from results panel and then add the app. 
@@ -74,7 +74,7 @@ Select **Workiva** from results panel and then add the app.
 > If you plan on implementing SCIM you will need to create a custom application at this time
 
 
-![Workiva in Azure App Gallery](./wdesk-tutorial/workivagalleryapp.png)
+![Workiva in Azure App Gallery](./wdesk-tutorial/gallery.png)
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
@@ -89,7 +89,7 @@ Browse to **Entra ID** > **Enterprise apps** > **Workiva** > **Single sign-on**.
 
 On the **Select a single sign-on method** page, select **SAML**.
 
-![Where to find SSO in Azure](./wdesk-tutorial/entrasaml.png)
+![Where to find SSO in Azure](./wdesk-tutorial/start.png)
 
 On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings. 
 
@@ -97,7 +97,7 @@ Azure can either:
 * **Import** the Workiva metadata file to parse out the Workiva details.
 * **Manually enter** the Workiva endpoint information.
 
-![How to Edit SAML Config in Azure](./wdesk-tutorial/editsaml.png)
+![How to Edit SAML Config in Azure](./wdesk-tutorial/edit.png)
 
 If entered manually, the **Org Security Admin** can follow the endpoint mapping below:
 * The **Workiva Identifier (Entity ID)** will go into the **Azure Identifier (EntityID)**
@@ -111,14 +111,14 @@ If entered manually, the **Org Security Admin** can follow the endpoint mapping 
 
 Once the configuration is saved with the SSO endpoints, click on **Edit** by step 2 to adjust the Attribute and Claims.
 
-![Azure Attributes and Claims](./wdesk-tutorial/azureattributes.png)
+![Azure Attributes and Claims](./wdesk-tutorial/attributes.png)
 	
 The preferred setup is to **match** the **Workiva Username** (case-insensitive) to the **Unique User Identifier** (Primary NameID Attribute); this is commonly UPN or user email but is dependent on the Workiva usernames and company standards. Having these match will allow Workiva to automatically map the attribute to the Workiva username when the user logs in with SSO for the first time. 
 
 > [!Note]	
 > Workiva only needs the Unique User Identifier / Primary NameID and no additional claims are required. However, if you send additional claims such as user.given and user.surname Workiva support can troubleshoot SSO login issues easier. 
 
-![Azure Unique User Identifier / Primary NameID](./wdesk-tutorial/azurenameid.png)
+![Azure Unique User Identifier / Primary NameID](./wdesk-tutorial/primary.png)
 
 On the **Set up Single Sign-On with SAML** page, in the **SAML Certificates** section you can either:
 * Select **Download** to retrieve the **Federation Metadata XML** to import into Workiva.
@@ -126,7 +126,7 @@ On the **Set up Single Sign-On with SAML** page, in the **SAML Certificates** se
 
 Then under step 4 **Set up**, copy the appropriate URL(s) as per your requirement.
 	
-![Screenshot of the SAML Certificates section for downloading metadata](./wdesk-tutorial/azuremetadata.png)
+![Screenshot of the SAML Certificates section for downloading metadata](./wdesk-tutorial/metadata.png)
 
 ## Configuring Workiva Identity Provider (IdP) Settings
 
@@ -135,7 +135,7 @@ Once the Workiva Org Security Admin has the Microsoft Entra ID Metadata, they ca
 * **Metadata XML file**
 * **Manual entry**
 
-![Workiva Metadata Import Azure IdP Details](./wdesk-tutorial/workivametadataimport.png)
+![Workiva Metadata Import Azure IdP Details](./wdesk-tutorial/method.png)
 
 Workiva recommends selecting **Map user to their Workiva username** to set all the SSO IDs to match the Workiva usernames if possible. This allows Workiva to expect the incoming Unique User Identifier / Primary NameID attribute to match the Workiva username, ignoring any case sensitivity, when the user logs in and no extra Admin work is needed. However, if this is not an option then the SSO IDs can be manually mapped to the Workiva username before the user can access with SSO.
 
@@ -145,7 +145,7 @@ In the User Mapping section, set the **Mapping dropdown**, and select either:
 * **Map users manually**
 	* Will configure Workiva to expect the Org Security Admin to manually map the SSO ID to the corresponding username before they can access with SSO.
 
-![Workiva User Mapping Settings](./wdesk-tutorial/workivausermapping.png)
+![Workiva User Mapping Settings](./wdesk-tutorial/setting.png)
 
 Click **Set Mapping** and there are two options for attribute mapping. 
 * **Import SSO IDs via file**
@@ -155,7 +155,7 @@ Click **Set Mapping** and there are two options for attribute mapping.
 > [!Note]
 > Not necessary if the **Map users to their Workiva username** was previously selected
 
-![Workiva How to Set SSO IDs](./wdesk-tutorial/setmapping.png)
+![Workiva How to Set SSO IDs](./wdesk-tutorial/mapping.png)
 
 If you are unable to configure the SSO ID / Primary NameID attribute to match the Workiva username, the SSO ID/Workiva username mapping will need to be manually established 1 of 2 ways in the User Mapping area.
 * **Import SSO IDs via file** (bulk user mappings)
@@ -163,15 +163,15 @@ If you are unable to configure the SSO ID / Primary NameID attribute to match th
 
 Select **Import SSO IDs via file** to map users to the SSO IDs in a .csv mapping file. This can be used to bulk map the SSO IDs to users if they are not going to match the corresponding Workiva username. 
 
-![Workiva How import SSO IDs](./wdesk-tutorial/ssoidimport.png)
+![Workiva How import SSO IDs](./wdesk-tutorial/import.png)
 
 This method will have you download a template with 2 columns. The first column is for **Workiva Username** and the second column is for the corresponding **SSO ID**. Then **Browse** to file and upload the mapping.
 
-![Workiva Import Template File](./wdesk-tutorial/ssoidimportbrowse.png)
+![Workiva Import Template File](./wdesk-tutorial/browse.png)
 
 If you only need to adjust a single or small set of users you can use the **Search Users** field to find the user(s) by a string to manually map their SSO ID. 
 
-![Workiva Change Single SSO ID](./wdesk-tutorial/ssoidsingle.png)
+![Workiva Change Single SSO ID](./wdesk-tutorial/identify.png)
 
 ## Assign users and groups in Microsoft Entra ID
 
@@ -183,13 +183,13 @@ Once the SSO Configuration is complete and has been saved, select **Activate** t
 > [!Note]
 > This will not disable Workiva local authentication and users can continue to access with Workiva password and SSO until the SSO requirement setting is enabled.
 
-![Workiva Activate SSO](./wdesk-tutorial/workivassactivate.png)
+![Workiva Activate SSO](./wdesk-tutorial/activate.png)
 
 
 Workiva has a built in SAML activity log to help Org Security Admins troubleshoot any SSO issues. 
 More information on how to resolve those SAML errors can be found [here.](https://support.workiva.com/hc/en-us/articles/49026571296404-Resolve-common-SAML-single-sign-on-issues)
 
-![Workiva SAML Activity Log](./wdesk-tutorial/workivaactivitylog.png)
+![Workiva SAML Activity Log](./wdesk-tutorial/activity.png)
 
 
 ## Workiva SSO Exception List
@@ -197,13 +197,13 @@ Add users to the **SSO Exceptions List** if they need to sign in with their Work
 
 This view will let you **Search users** to see who is currently on the **SSO Exception List**. 
 
-![Workiva Search SSO Exception List](./wdesk-tutorial/exceptionsearch.png)
+![Workiva Search SSO Exception List](./wdesk-tutorial/search.png)
 
 To add users to the SSO exception list you can click on Add users and choose to: 
 * **Add users**
 * **Add users in bulk**
 
-![Workiva Search SSO Exception Add](./wdesk-tutorial/exceptionadd.png)
+![Workiva Search SSO Exception Add](./wdesk-tutorial/exception.png)
 
 **Add Users** will let you add users to the list and review the list. This will allow you to:
 * **Search Users**
@@ -211,7 +211,7 @@ To add users to the SSO exception list you can click on Add users and choose to:
 * **Role** (Org Workspace Admin or Org Security Admin)
 * **Status** (on Exception List or Not on Exception List)
 
-![Workiva Search SSO Exception Review](./wdesk-tutorial/exceptionreview.png)
+![Workiva Search SSO Exception Review](./wdesk-tutorial/review.png)
 
 ## Workiva SSO Requirement Settings
 You can require users to sign in the Workiva application using SSO. If certain users (ex: external auditors) still need to sign in using their username and password, add them to the **SSO Exception List**. 
@@ -222,12 +222,12 @@ You can require users to sign in the Workiva application using SSO. If certain u
 	* Check this on to force users to access with SSO except Org Security Admin (break glass) and anyone listed on the SSO Exception List. 
 
 
-![Workiva First Requirement Setting](./wdesk-tutorial/requiresso.png)
+![Workiva First Requirement Setting](./wdesk-tutorial/require.png)
 
 * **Force Org Security Admins to sign in using SSO**
 	* Check this on to also force Org Security Admins to sign in using SSO as well and can no longer bypass the SSO requirement.
 
-![Workiva Admin Requirement Setting](./wdesk-tutorial/ssorequireadmins.png)
+![Workiva Admin Requirement Setting](./wdesk-tutorial/requirement.png)
 
 ## Technical Issues
 If you have technical issues with the SSO setup, contact the Workiva application support team through the [Workiva Support Center](https://support.workiva.com/hc/en-us).
