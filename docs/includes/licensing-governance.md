@@ -95,7 +95,7 @@ The following table shows what features associated with identity governance are 
 |[Insights and reporting - Inactive guest accounts](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[Agent ID default inactivity policy (preview)](~/id-governance/agent-default-inactivity-policy.md) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Agent ID lifecycle policies (preview)](~/id-governance/agent-lifecycle-policies.md) |||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
+|[Agent ID lifecycle policies (preview)](~/id-governance/agent-lifecycle-policies.md) |||| |  | :white_check_mark: | :white_check_mark: |
 
 ### Entitlement Management
 
