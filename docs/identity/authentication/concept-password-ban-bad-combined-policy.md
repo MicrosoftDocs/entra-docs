@@ -5,7 +5,6 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ms.topic: concept-article
 ms.date: 11/12/2026
 ms.reviewer: tilarso
-ai-usage: ai-generated
 ---
 # Combined password policy and check for weak passwords in Microsoft Entra ID
 
@@ -44,7 +43,7 @@ The following expiration requirements apply to other providers that use Microsof
 
 | Property | Requirements |
 | --- | --- |
-| Password expiry duration (Maximum password age) |Default value: **No expiration** for tenants created around spring 2021 or later. Previously, the default was **90** days. For more information, see the [password policy FAQ](tutorial-password-policy-overview-frequently-asked-questions.md#what-is-the-default-password-expiration-period-shown-in-the-microsoft-365-admin-center). Check the current domain policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph PowerShell module. |
+| Password expiry duration (Maximum password age) |Default value: **No expiration** for tenants created around spring 2021 or later. Previously, the default was **90** days. You can check current policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph PowerShell module. |
 | Password expiry (Let passwords never expire) |Default value: **false** (indicates that password's have an expiration date).<br>The value can be configured for individual user accounts by using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) cmdlet.|
 
 ## Next steps
