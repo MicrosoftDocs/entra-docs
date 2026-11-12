@@ -4,7 +4,7 @@ description: include file
 author: kenwith
 ms.service: entra-id
 ms.topic: include
-ms.date: 07/29/2026
+ms.date: 10/27/2026
 ms.author: kenwith
 ms.custom: include file, msecd-doc-authoring-1018
 ai-usage: ai-assisted
@@ -40,3 +40,15 @@ The following tables show which Tenant Governance features are available with ea
 | Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
 |---|---|---|---|---|
 | New tenant creation with governance relationship | ✅ | ✅ | ✅ | ✅ |
+
+### Resource policy (preview)
+
+Most resource policy operations during preview require a Microsoft Entra ID Governance service plan, available with Microsoft Entra ID Governance or another offering that includes that service plan. Microsoft Entra P1 or P2 alone doesn't meet this requirement.
+
+| Feature | Free | Microsoft Entra P1 | Microsoft Entra P2 | Microsoft Entra ID Governance |
+| --- | --- | --- | --- | --- |
+| Most resource policy operations, including creating or editing definitions and assignments, activating assignments, and restoring deleted policies | | | | ✅ |
+| Browse and view policy definitions, including Rego source | ✅ | ✅ | ✅ | ✅ |
+| Delete policy definitions or assignments, or deactivate an assignment | ✅ | ✅ | ✅ | ✅ |
+
+The browsing, viewing, deletion, and deactivation exceptions don't remove role or API permission requirements.

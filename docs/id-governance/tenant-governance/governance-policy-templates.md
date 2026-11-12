@@ -3,15 +3,17 @@ title: Governance policy templates
 titleSuffix: Microsoft Entra ID Governance
 description: Learn about governance policy templates and how to use them to enforce consistent governance across tenants in Microsoft Entra
 ms.topic: concept-article
-ms.date: 07/01/2026
+ms.date: 10/12/2026
 ai-usage: ai-assisted
+# Customer intent: As a tenant administrator, I want to understand how governance policy templates define roles and application access so that I can establish consistent governance relationships across tenants.
 ---
-
-<!-- source: Governance policy templates.docx -->
 
 # Governance policy templates
 
 Governance policy templates are a foundational component of the Tenant Governance service, which helps organizations secure Microsoft Entra tenants at scale. Before establishing a governance relationship between tenants, create a governance policy template that defines the relationship behavior. These templates are reusable across distinct governance relationships, enabling consistent and scalable management of cross-tenant access.
+
+> [!NOTE]
+> Governance policy templates define cross-tenant access for governance relationships. They aren't [resource policy definitions](resource-policy-concepts.md), which use Rego to evaluate resource changes. Creating a governance policy template doesn't create a resource policy assignment.
 
 ## How governance policy templates work
 

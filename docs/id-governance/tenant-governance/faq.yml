@@ -3,7 +3,8 @@ metadata:
   title: Frequently asked questions for Microsoft Entra Tenant Governance
   description: Find answers to common questions about Microsoft Entra Tenant Governance, including discovery, governance relationships, and monitoring
   ms.topic: faq
-  ms.date: 03/17/2026
+  ms.date: 10/27/2026
+  ai-usage: ai-assisted
 title: Frequently asked questions for Microsoft Entra Tenant Governance
 summary: |
   This article answers frequently asked questions about Microsoft Entra Tenant Governance.
@@ -78,6 +79,13 @@ sections:
 
   - name: Configuration management
     questions:
+      - question: |
+          How does configuration management differ from resource policy?
+        answer: |
+          [Configuration management](configuration-management.md) detects drift from a baseline. [Resource policy (preview)](resource-policy-overview.md) evaluates matching Microsoft Graph requests and can block noncompliant changes. It doesn't scan or remediate preexisting resources.
+
+          Use the features together to detect drift and help prevent noncompliant changes. Check each feature's supported resources, permissions, and policy format; they aren't interchangeable.
+
       - question: |
           What Microsoft services and resources can I monitor?
         answer: |
