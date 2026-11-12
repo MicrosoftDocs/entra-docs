@@ -6,6 +6,7 @@ ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/12/2026
 ms.reviewer: vranganathan, vimrang
+ai-usage: ai-assisted
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
 ---
@@ -101,7 +102,7 @@ An administrator might need to revoke a user's sign-in sessions in scenarios suc
 - Entra outage where cached credentials are used which does not include CRL validation
 - other insider threats.
 
-Use [Revoke-MgUserSignInSession](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession) to invalidate the user's refresh tokens and browser session cookies. Run the command for each affected user. The operation resets **signInSessionsValidFromDateTime** to the current date and time; you don't set a future timestamp.
+Use [Revoke-MgUserSignInSession](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession) to invalidate the user's refresh tokens and browser session cookies. Run the command for each affected user. The operation resets **signInSessionsValidFromDateTime** to the current date and time.
 
 ```powershell
 # Authenticate to Microsoft Graph
@@ -111,7 +112,7 @@ Connect-MgGraph -Scopes "User.RevokeSessions.All"
 Revoke-MgUserSignInSession -UserId "test@contoso.com"
 ```
 
-Revocation can take a few minutes to take effect. For more information, see [Revoke sign-in sessions](/graph/api/user-revokesigninsessions). Revoking sessions doesn't revoke the certificate. Add the certificate to the CRL and publish the updated CRL so that certificate-based authentication rejects it after the CRL cache refreshes.
+Revocation can take a few minutes to take effect. For more information, see [Revoke sign-in sessions](/graph/api/user-revokesigninsessions). Revoking sessions doesn't revoke the certificate. To make sure the revocation persists, add the certificate to the CRL and publish a CRL whose **Effective Date** is later than the user's **signInSessionsValidFromDateTime** value.
 
 ## Enforce CRL validation for CAs
 
