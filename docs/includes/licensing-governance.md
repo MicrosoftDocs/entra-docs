@@ -94,7 +94,7 @@ The following table shows what features associated with identity governance are 
 |[Identity governance dashboard](~/id-governance/governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
-|[Agent ID default inactivity policy (preview)](~/id-governance/agent-default-inactivity-policy.md) |:white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
+|[Agent ID default inactivity policy (preview)](~/id-governance/agent-default-inactivity-policy.md) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Agent ID lifecycle policies (preview)](~/id-governance/agent-lifecycle-policies.md) |||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
 
 ### Entitlement Management
@@ -114,4 +114,4 @@ With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 - Manage and configure existing tasks to create workflows that are specific to your needs.
 - Create up to 100 custom task extensions to be used in your workflows.
 
-Using this feature, for tasks other than sponsor reassignment, requires a Microsoft Entra ID Governance subscription for your organization's member users. Some capabilities within this feature require guest billing.
+Using this feature, for tasks other than agent ID sponsor reassignment, requires a Microsoft Entra ID Governance subscription for your organization's member users. Some capabilities within this feature require guest billing.
