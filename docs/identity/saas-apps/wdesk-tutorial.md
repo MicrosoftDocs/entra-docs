@@ -65,7 +65,7 @@ Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at
 
 Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
-![Find and Add Workiva App in Azure](./wdesk-tutorial/add.png)
+![Find and Add Workiva App in Azure](./wdesk-tutorial/create.png)
 
 In the **Search application** section, type **Workiva** in the search box.
 Select **Workiva** from results panel and then add the app. 
@@ -106,7 +106,7 @@ If entered manually, the **Org Security Admin** can follow the endpoint mapping 
 * Leave the **Relay State** Blank
 * The **Workiva Logout URL** will go into the **Azure Logout URL (optional)**
 
-![Where Workiva Endpoints go in Azure Config](./wdesk-tutorial/workivaendpointsazure.png)
+![Where Workiva Endpoints go in Azure Config](./wdesk-tutorial/endpoints.png)
 
 
 Once the configuration is saved with the SSO endpoints, click on **Edit** by step 2 to adjust the Attribute and Claims.
