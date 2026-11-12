@@ -114,4 +114,4 @@ With Microsoft Entra ID Governance licenses for Lifecycle Workflows, you can:
 - Manage and configure existing tasks to create workflows that are specific to your needs.
 - Create up to 100 custom task extensions to be used in your workflows.
 
-Using this feature requires a Microsoft Entra ID Governance subscription for your organization's member users. Some capabilities within this feature require guest billing.
+Using this feature, for tasks other than sponsor reassignment, requires a Microsoft Entra ID Governance subscription for your organization's member users. Some capabilities within this feature require guest billing.
