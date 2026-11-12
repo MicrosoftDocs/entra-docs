@@ -7,9 +7,9 @@ ms.author: marshmacy
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
-ms.date: 11/06/2026
+ms.date: 11/10/2026
 ai-usage: ai-assisted
-ms.custom: msecd-doc-authoring-1030
+ms.custom: msecd-doc-authoring-1032
 #Customer intent: As an identity developer, I want to integrate the credential management API into my customer-facing app so that users can manage their own passkeys and update their passwords.
 ---
 
@@ -50,7 +50,9 @@ Before your app can acquire access tokens for the credential management API, pro
 
 ## Authentication and authorization
 
-The credential management API acts on behalf of a signed-in user. Every endpoint URL has the form `https://{tenant-subdomain}.ciamlogin.com/{tenant-id}/api/v1.0/me/...`, where `{tenant-subdomain}` is your external tenant's subdomain, `{tenant-id}` is your external tenant's ID, and `me` is the user whose access token you send with the request. Your application:
+The credential management API acts on behalf of a signed-in user. By default, endpoint URLs have the form `https://{tenant-subdomain}.ciamlogin.com/{tenant-id}/api/v1.0/me/...`, where `{tenant-subdomain}` is your external tenant's subdomain, `{tenant-id}` is your external tenant's ID, and `me` is the user whose access token you send with the request. For custom-domain configuration, see [Use a custom URL domain](#use-a-custom-url-domain).
+
+Your application:
 
 1. Signs the user in.
 1. Obtains an access token for the credential management API.
@@ -96,6 +98,63 @@ All permissions are delegated permissions exposed by the credential management A
 | Update a password or poll for its update status | `Me.UserAuthenticationMethod.Password.ReadWrite` | `Me.UserAuthenticationMethod.ReadWrite` |
 
 Application-only access (the client credentials flow) isn't supported.
+
+### Use a custom URL domain
+
+If your external tenant uses a custom URL domain, configure authentication, API requests, and passkey registration to use that domain. The examples below use `login.contoso.com`; replace it with your configured custom URL domain.
+
+Before continuing, complete [Enable custom URL domains for apps in external tenants](../external-id/customers/how-to-custom-url-domain.md) and verify that customers can sign in through the custom domain.
+
+1. **Update your authentication configuration.**
+
+    Use the custom domain in your sign-in authority, for example:
+
+    ```text
+    https://login.contoso.com/<tenant-id>
+    ```
+
+    For JavaScript applications using Microsoft Authentication Library (MSAL), add the custom hostname to `knownAuthorities`. Use the same authority when requesting a delegated access token for the credential management API. Keep the application's registered redirect URI configured for sign-in and token acquisition.
+
+2. **Update your API base URL.**
+
+    Replace `{tenant-subdomain}.ciamlogin.com` with your custom domain. Keep the tenant ID and API path. For example:
+
+    ```http
+    GET https://login.contoso.com/<tenant-id>/api/v1.0/me/methods
+    Authorization: Bearer <access-token>
+    ```
+
+    If your application uses a proxy, update the proxy's upstream API address to use the custom domain.
+
+3. **Resolve returned links against the custom-domain API origin.**
+
+    Continue following the API's returned links for enrollment, activation, and deletion. Resolve relative links against `https://login.contoso.com`, preserving the returned path and query parameters, not against your application's hostname.
+
+4. **Configure the passkey registration origin.**
+
+    Host the registration experience over HTTPS on the custom domain or a subdomain. For example, an application hosted at `https://auth.login.contoso.com` can register a passkey with the relying party (RP) ID `login.contoso.com`. The RP ID contains only the hostname, without a scheme, path, or port.
+
+5. **Override the default RP ID before creating the passkey.**
+
+    Currently, the begin-registration response returns `publicKey.rp.id` using your tenant's default hostname, such as `contoso.ciamlogin.com`. If you use a custom URL domain, you can override this value with your custom hostname before calling `navigator.credentials.create`.
+
+    In the example below, `customDomain` contains `login.contoso.com`, and `publicKey` contains the API's decoded WebAuthn creation options. Override `rp.id` while preserving the remaining creation options:
+
+    ```javascript
+    const publicKeyWithCustomDomain = {
+        ...publicKey,
+        rp: {
+            ...publicKey.rp,
+            id: customDomain,
+        },
+    };
+
+    const credential = await navigator.credentials.create({
+        publicKey: publicKeyWithCustomDomain,
+    });
+    ```
+
+    Complete the existing activation flow using the returned credential and activation link. Preserve the continuation token exactly.
 
 ## Continuation token
 
@@ -444,6 +503,8 @@ The `publicKey` object aligns with the common fields in [webauthnPublicKeyCreden
 | `attestation` | string | No | Requested attestation conveyance preference. |
 | `hints` | array of strings | No | Optional authenticator hints. |
 | `extensions` | object | No | WebAuthn extension inputs. |
+
+If your tenant uses a custom URL domain, configure the registration origin and override the default RP ID before creating the passkey. See [Use a custom URL domain](#use-a-custom-url-domain).
 
 Pass `publicKey` to the user's authenticator to create the passkey. Preserve `continuationToken` exactly, and follow `_links.activate.href` for the activation request.
 
