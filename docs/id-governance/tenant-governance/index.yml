@@ -1,13 +1,16 @@
 ### YamlMime:Landing
 
 title: Microsoft Entra tenant governance documentation
-summary: Microsoft Entra tenant governance helps organizations discover, manage, and govern tenants across their environment with centralized policies and cross-tenant delegated administration.
+summary: Microsoft Entra tenant governance helps organizations discover and govern tenants, monitor configuration drift, and use resource policies to help prevent noncompliant resource changes.
 
 metadata:
-  description: "Learn how to discover, manage, and govern Microsoft Entra tenants across your organization."
-  ms.date: 03/02/2026
+  description: "Learn how to discover and govern Microsoft Entra tenants, monitor configuration, and evaluate resource changes with policies."
+  ms.date: 10/12/2026
   ms.topic: landing-page
   titleSuffix: Microsoft Entra ID Governance
+  ai-usage: ai-assisted
+
+# Customer intent: As a tenant administrator, I want to find the Tenant Governance capability that addresses my tenant and resource configuration needs.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
@@ -37,6 +40,8 @@ landingContent:
             url: cross-tenant-delegated-administration.md
           - text: Configuration management
             url: configuration-management.md
+          - text: Resource policy (preview)
+            url: resource-policy-overview.md
 
   # Card
   - title: How-to guides
@@ -53,6 +58,16 @@ landingContent:
             url: configuration-management.md
           - text: Create a tenant
             url: how-to-create-tenant.md
+          - text: Safely deploy resource policy assignments
+            url: resource-policy-safe-deployment.md
+          - text: Manage resource policies in the Microsoft Entra admin center
+            url: resource-policy-manage-portal.md
+          - text: Analyze resource policy evaluation audit logs
+            url: resource-policy-logs.md
+      - linkListType: quickstart
+        links:
+          - text: Assign a built-in resource policy
+            url: resource-policy-quickstart-portal.md
 
   # Card
   - title: Reference
@@ -61,3 +76,5 @@ landingContent:
         links:
           - text: Frequently asked questions
             url: faq.yml
+          - text: Resource policy supported resources and actions
+            url: resource-policy-supported-resources.md
