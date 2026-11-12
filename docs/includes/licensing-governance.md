@@ -30,7 +30,7 @@ The following table shows what features associated with identity governance are 
 |**Lifecycle Workflows (LCW)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |**Microsoft 365 E7**|
 |[Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[LCW + Custom Extensions (Logic Apps)](~/id-governance/lifecycle-workflow-extensibility.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
-|[LCW + Agent Sponsorship tasks](~/id-governance/agent-sponsor-tasks.md)|||||| :white_check_mark: | :white_check_mark: |
+|[LCW + Agent ID sponsorship tasks](~/id-governance/agent-sponsor-tasks.md)|||||| :white_check_mark: | :white_check_mark: |
 |**Access reviews (AR)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** | **Microsoft 365 E7**|
 |[AR - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/access-reviews-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[AR - PIM For Groups (Preview)](~/id-governance/create-access-review-pim-for-groups.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
@@ -42,13 +42,13 @@ The following table shows what features associated with identity governance are 
 |**Entitlement management (EM)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |**Microsoft 365 E7**|
 |[EM - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[EM - Users assigned to access packages](~/id-governance/entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
-|[EM - Agents and service principals assigned to access packages](~/id-governance/entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package)|||||| :white_check_mark: | :white_check_mark: |
+|[EM - Agent IDs and service principals assigned to access packages](~/id-governance/entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package)|||||| :white_check_mark: | :white_check_mark: |
 |[EM - Users request access for themselves](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[EM - Admins directly assign a user assignments(including guests)](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-an-identity)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
-|[EM - Admins directly assign agents and service principals](../id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-identity)|||||| :white_check_mark: | :white_check_mark: |
+|[EM - Admins directly assign agent IDs and service principals](../id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-identity)|||||| :white_check_mark: | :white_check_mark: |
 |[EM - Admins directly assign any user - via email address for users not yet in your directory](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-identity)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[EM - Managers requesting on behalf of employees](~/id-governance/entitlement-management-request-behalf.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
-|[EM - Owners and sponsors request access on behalf of their agents or service principals](~/id-governance/entitlement-management-request-behalf.md#scenarios-for-requesting-on-behalf-of-agent-identities)|||||| :white_check_mark: | :white_check_mark: |
+|[EM - Owners and sponsors request access on behalf of their agent IDs or service principals](~/id-governance/entitlement-management-request-behalf.md#scenarios-for-requesting-on-behalf-of-agent-identities)|||||| :white_check_mark: | :white_check_mark: |
 |**EM - Supported resources**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |**Microsoft 365 E7**|
 |[EM - Groups and teams in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-a-group-or-team-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[EM - Eligible group ownerships and memberships in access packages (PIM for Groups)](~/id-governance/entitlement-management-access-package-eligible.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
@@ -64,7 +64,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Internal sponsors as approvers (from assignees' connected organizations)](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[EM - External sponsors as approvers (from assignees' connected organizations)](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[EM - Sponsors as approvers (from assignees' user profile)](~/id-governance/entitlement-management-access-package-approval-policy.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
-|[EM - Agent Sponsors as approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)|||||| :white_check_mark: | :white_check_mark: |
+|[EM - Agent ID sponsors as approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)|||||| :white_check_mark: | :white_check_mark: |
 |[EM - Externally determine approval requirements using custom extensions](~/id-governance/entitlement-management-dynamic-approval.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[EM - Collect additional requestor information for approval](~/id-governance/entitlement-management-access-package-approval-policy.md#collect-additional-requestor-information-for-approval)||| :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |**EM - Lifecycle**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** | **Microsoft Agent 365** |**Microsoft 365 E7**|
@@ -94,6 +94,8 @@ The following table shows what features associated with identity governance are 
 |[Identity governance dashboard](~/id-governance/governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
+|[Agent ID default inactivity policy (preview)](~/id-governance/agent-default-inactivity-policy.md) |:white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: || :white_check_mark: |
+|[Agent ID lifecycle policies (preview)](~/id-governance/agent-lifecycle-policies.md) |||| :white_check_mark: | :white_check_mark: || :white_check_mark: |
 
 ### Entitlement Management
 
