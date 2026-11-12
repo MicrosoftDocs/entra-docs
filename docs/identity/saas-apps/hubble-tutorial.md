@@ -3,7 +3,7 @@ title: Configure Hubble for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hubble.
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 10/22/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hubble so that I can control who has access to Hubble, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 --- 
 
@@ -25,10 +25,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
-* Hubble supports **SP** initiated SSO.
-
-> [!NOTE]
-> Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
+* Hubble supports **SP** and **IDP** initiated SSO.  
 
 ## Add Hubble from the gallery
 
@@ -71,11 +68,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** box, type the URL:
-    `https://api.hubble-docs.com/api/v1/organizations/samls/metadata`
+    a. In the **Identifier** box, type the **Entity ID** value shown on the Hubble SSO configuration page.
 
-    b. In the **Reply URL** text box, type the URL:
-    `https://api.hubble-docs.com/api/v1/organizations/samls/acs`
+    b. In the **Reply URL** text box, type the **ACS URL** value shown on the Hubble SSO configuration page.
 
     c. In the **Sign-on URL** text box, type the URL:
     `https://app.hubble-docs.com/saml-login`
@@ -96,16 +91,21 @@ To configure single sign-on on **Hubble** side, you need to upload the downloade
 
 In this section, you create a user called B.Simon in Hubble. Work with [Hubble client support team](mailto:cs@hubble-inc.jp) to add the users in the Hubble platform. Users must be created and activated before you use single sign-on.
 
-## Test SSO 
-
-In this section, you test your Microsoft Entra single sign-on configuration with following options. 
-
-* Select **Test this application**, this option redirects to Hubble Sign-on URL where you can initiate the login flow. 
-
-* Go to Hubble Sign-on URL directly and initiate the login flow from there.
-
-* You can use Microsoft My Apps. When you select the Hubble tile in the My Apps, this option redirects to Hubble Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
-
+## Test SSO  
+  
+In this section, you test your Microsoft Entra single sign-on configuration with following options.  
+  
+#### SP initiated:  
+  
+* Select **Test this application**, this option redirects to Hubble Sign-on URL where you can initiate the login flow.  
+  
+* Go to Hubble Sign-on URL directly and initiate the login flow from there.  
+  
+#### IDP initiated:  
+  
+* Select **Test this application**, and you should be automatically signed in to the Hubble for which you set up the SSO.  
+  
+You can also use Microsoft My Apps to test the application in any mode. When you select the Hubble tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Hubble for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/entra/identity/enterprise-apps/myapps-overview).
 ## Related content
 
 Once you configure Hubble you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
