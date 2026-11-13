@@ -170,8 +170,6 @@ The workbook *Application role assignment activity* shows if there have been cha
 
 Access package drift reports show where access to governed groups and enterprise applications no longer matches entitlement management policies. You can use this report to find users / agent IDs who have direct resource access without an access package assignment, and users / agent IDs who have an active access package assignment without the expected group membership or application assignment.
 
-Access package drift reports are in preview.
-
 Before you view access package drift reports, make sure your tenant has a Microsoft Entra ID Governance or Microsoft Entra Suite add-on license.
 
 To view access package drift reports in the Microsoft Entra admin center, use one of the following roles:
@@ -234,7 +232,7 @@ To review access package drift through the Microsoft Entra admin center:
 
 The downloadable report includes drift across all catalogs in the tenant. The download in the Microsoft Entra admin center can't be scoped to a single catalog.
 
-The report currently refreshes about once a day, so data can be up to 24 hours old. Because access package drift reports are in preview, this refresh schedule might change before general availability. Refer to the Access drift data as of timestamp on the page to confirm how current the results are. 
+The report currently refreshes about once a day, so data can be up to 24 hours old. Refer to the Access drift data as of timestamp on the page to confirm how current the results are. 
 
 Access package drift reports have the following limitations:
 
