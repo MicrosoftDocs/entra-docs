@@ -27,7 +27,7 @@ When staging mode is disabled, password sync resumes from the last recorded wate
 
 > [!WARNING]
 > Password sync catch-up can take an extended period of time after disabling staging mode. **Do not restart the sync services during catch-up** — stopping the service can cause PHS to resume from an earlier watermark when it starts again, which increases the time to become current.
-> 
+>
 A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure. In staging mode, you can still force an export by using the synchronization service manager.
 
 For those of you with knowledge of older sync technologies, the staging mode is different since the server has its own SQL database. This architecture allows the staging mode server to be located in a different datacenter.
@@ -106,8 +106,8 @@ You may need to perform a failover of the Sync Servers for several reasons, such
 - One staging Microsoft Entra Connect Sync Server
 - The staging server has the synchronization scheduler enabled and has synchronized with Microsoft Entra ID recently
 - In case of any updates in synchronization rules or in sync scope, run an initial sync cycle
-- Confirm that your Microsoft Entra Connect Sync Server is configured to [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md) 
-- [Verify ](#verify)the pending exports and confirm that there aren't significant updates, and such updates are expected
+- Confirm that your Microsoft Entra Connect Sync Server is configured to [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md)
+- [Verify](#verify)the pending exports and confirm that there aren't significant updates, and such updates are expected
 - Check if [Microsoft Entra Connect Health](whatis-azure-ad-connect.md#what-is-microsoft-entra-connect-health) agent is updated by checking the server in [Microsoft Entra Connect Health](https://aka.ms/aadconnecthealth) portal
 - Switch the current active server to staging mode, before switching the staging server to active
 
@@ -115,31 +115,31 @@ You may need to perform a failover of the Sync Servers for several reasons, such
 
 We need to ensure that only one Sync Server is syncing changes at any given time throughout this process. If the currently active Sync Server is reachable, you can perform the below steps to move it to Staging Mode. If it isn't reachable, ensure that the server or VM doesn't regain access unexpectedly either by shutting down the server or isolating it from outbound connections.
 
-1. For the currently active Microsoft Entra Connect server, open the Microsoft Entra Connect wizard and select "Configure staging mode" then Next: 
+1. For the currently active Microsoft Entra Connect server, open the Microsoft Entra Connect wizard and select "Configure staging mode" then Next:
 
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Staging Mode highlighted in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-menu.png)
 
-2. You need to sign into Microsoft Entra ID with Hybrid Identity Administrator credentials: 
+2. You need to sign into Microsoft Entra ID with Hybrid Identity Administrator credentials:
 
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Sign in prompt in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-sign-in.png)
 
-3. Tick the box for Staging Mode and select Next: 
+3. Tick the box for Staging Mode and select Next:
 
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Staging Mode configuration in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-staging-mode.png)
 
-4. The Microsoft Entra Connect server checks for installed components and then prompt you whether you want to start the sync process when the configuration change completes: 
+4. The Microsoft Entra Connect server checks for installed components and then prompt you whether you want to start the sync process when the configuration change completes:
 
 > [!div class="mx-imgBorder"]
-> ![Screenshot shows Ready to Configure screen in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-config.png) 
+> ![Screenshot shows Ready to Configure screen in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-config.png)
 
-Since the server is in staging mode, it won't write changes to Microsoft Entra ID, but retains any changes to the AD in its Connector Space, ready to write them. 
+Since the server is in staging mode, it won't write changes to Microsoft Entra ID, but retains any changes to the AD in its Connector Space, ready to write them.
 It's recommended to leave the sync process on for the server in Staging Mode, so if it becomes active, it will quickly take over and won't have to do a large sync to catch up to the current state of the Active Directory / Microsoft Entra objects in scope.
 
-5. After selecting to start the sync process and selecting Configure, the Microsoft Entra Connect server is configured into Staging Mode. 
-Once completed, a screen prompts you confirming the Staging Mode is enabled. 
+5. After selecting to start the sync process and selecting Configure, the Microsoft Entra Connect server is configured into Staging Mode.
+Once completed, a screen prompts you confirming the Staging Mode is enabled.
 You can select Exit to finish.
 
 6. You can confirm that the server is successfully in Staging Mode by opening Windows PowerShell, load the "ADSync" module and verify the ADSync Scheduler configuration, using the following commands:
@@ -147,9 +147,9 @@ You can select Exit to finish.
 ```powershell
 Import-Module ADSync
 Get-ADSyncScheduler
-``` 
- 
-From the results, verify the value of the "StagingModeEnabled" setting. If the server was successfully switched to staging mode, the value of this setting should be ***True*** like in the following example: 
+```
+
+From the results, verify the value of the "StagingModeEnabled" setting. If the server was successfully switched to staging mode, the value of this setting should be ***True*** like in the following example:
 
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Sync Service console on the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-verification.png)
@@ -162,32 +162,32 @@ At this point, all of our Microsoft Entra Connect Sync Servers should be in Stag
 
 We can now move our Staging Sync Server to Active mode and actively sync changes.
 
-1. Now move to the Microsoft Entra Connect server that was originally in Staging Mode and open the Microsoft Entra Connect wizard. 
+1. Now move to the Microsoft Entra Connect server that was originally in Staging Mode and open the Microsoft Entra Connect wizard.
 
- Select "Configure staging mode" and select Next: 
+ Select "Configure staging mode" and select Next:
 
 > [!div class="mx-imgBorder"]
-> ![Screenshot shows Staging Mode highlighted in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-menu.png) 
+> ![Screenshot shows Staging Mode highlighted in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-menu.png)
 
  The message at the bottom of the wizard indicates this server is in Staging Mode.
 
 2. Sign into Microsoft Entra ID, then go to the Staging Mode screen.
 
- Untick the box for Staging Mode and select Next. 
+ Untick the box for Staging Mode and select Next.
 
 > [!div class="mx-imgBorder"]
-> ![Screenshot shows Staging Mode configuration in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-staging-mode.png) 
+> ![Screenshot shows Staging Mode configuration in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-staging-mode.png)
 
- As per the warning on this page, it's important to ensure no other Microsoft Entra Connect server is actively syncing. 
+ As per the warning on this page, it's important to ensure no other Microsoft Entra Connect server is actively syncing.
 
  There should only be one active Microsoft Entra Connect Sync server at any time.
 
-3. When you're prompted to start the sync process, tick this box and select Configure: 
+3. When you're prompted to start the sync process, tick this box and select Configure:
 
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Ready to Configure screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-config.png)
 
-4. Once the process is finished you should get the below confirmation screen where you can select Exit to finish: 
+4. Once the process is finished you should get the below confirmation screen where you can select Exit to finish:
 
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Confirmation screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-confirmation.png)
@@ -389,7 +389,7 @@ else
 
 ## Next steps
 
-**Overview topics** 
+**Overview topics**
 
-* [Microsoft Entra Connect Sync: Understand and customize synchronization](how-to-connect-sync-whatis.md) 
-* [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md) 
+* [Microsoft Entra Connect Sync: Understand and customize synchronization](how-to-connect-sync-whatis.md)
+* [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md)

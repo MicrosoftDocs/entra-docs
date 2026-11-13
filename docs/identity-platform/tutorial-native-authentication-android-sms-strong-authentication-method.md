@@ -16,7 +16,7 @@ ms.custom:
 
 This tutorial demonstrates how to implement SMS strong authentication method registration into your Android app using native authentication. At least one strong authentication is mandatory for multifactor authentication (MFA) enabled users. Currently, we only support Email and SMS one-time passcode as strong authentication method.
 
-In this tutorial, you learn how to: 
+In this tutorial, you learn how to:
 
 - Register a strong authentication method for an MFA-enabled user.
 - Handle strong authentication method registration errors.
@@ -25,13 +25,13 @@ In this tutorial, you learn how to:
 
 1. Complete the steps in [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md).
 
-1. To enforce MFA for your customers, use the steps in [Add MFA to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add SMS MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA. 
+1. To enforce MFA for your customers, use the steps in [Add MFA to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add SMS MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA.
 
 1. If you'd like to explore our strong authentication method registration implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) before getting started.
 
 ## Add strong authentication method registration to the client configuration file
 
-> [!NOTE] 
+> [!NOTE]
 > Currently there's a known issue using the SMS one time passcode with the authority format:
 > `<tenantSubdomain>.ciamlogin.com/<tenantSubdomain>.onmicrosoft.com`
 > because of that the following format should be used:
@@ -71,16 +71,16 @@ To register a strong authentication method (SMS one-time passcode) for MFA-enabl
     - Collect an SMS one-time passcode from the user to fulfill two-factor authentication.
     - Resend one-time passcode (recommended).
 
-  
+
 2. Handle `StrongAuthMethodRegistrationRequired` sign in result:
 
    ```kotlin
     val parameters = NativeAuthSignInParameters(username = email)
-    parameters.password = password 
-    val signInResult: SignInResult = authClient.signIn(parameters) 
-   
+    parameters.password = password
+    val signInResult: SignInResult = authClient.signIn(parameters)
+
     when (actionResult) {
-        // Handle "strong authentication method registration required" result 
+        // Handle "strong authentication method registration required" result
         is SignInResult.StrongAuthMethodRegistrationRequired -> {
             val authMethod = actionResult.authMethods.first {it.challengeChannel.uppercase() == "SMS"}
             // Next Step: challengeAuthMethod using nextState
@@ -95,9 +95,9 @@ To register a strong authentication method (SMS one-time passcode) for MFA-enabl
     ```kotlin
     val registerStrongAuthState = signInResult.nextState
     val verificationContact = "<phone number>" // format should be "<+prefix phone_number>"
-    val params = NativeAuthChallengeAuthMethodParameters(authMethod, verififcationContact)
+    val params = NativeAuthChallengeAuthMethodParameters(authMethod, verificationContact)
     val challengeAuthResult = registerStrongAuthState.challengeAuthMethod(params)
-    
+
     when (challengeAuthResult) {
         is RegisterStrongAuthChallengeResult.VerificationRequired -> {
             // Next Step: submitChallenge using nextState
@@ -118,16 +118,16 @@ To register a strong authentication method (SMS one-time passcode) for MFA-enabl
     ```kotlin
     val registerStrongAuthVerificationRequiredState = challengeAuthResult.nextState
     val submitChallengeResult = registerStrongAuthVerificationRequiredState.submitChallenge(smsCode)
-    
+
     when (actionResult) {
         is SignInResult.Complete -> {
-            // Handle sign in success      
+            // Handle sign in success
         }
         is RegisterStrongAuthSubmitChallengeError -> {
             // Handle "register strong auth submit challenge" error
         }
         else -> {
-            // Handle unexpected result      
+            // Handle unexpected result
         }
     }
     ```
@@ -143,7 +143,7 @@ To handle errors that occur during strong authentication method registration, yo
 
     ```kotlin
     val challengeAuthResult = registerStrongAuthState.challengeAuthMethod(params)
-    
+
     if (challengeAuthResult is RegisterStrongAuthChallengeResult.VerificationRequired) {
         // Next Step: submit challenge
     } else if (challengeAuthResult is RegisterStrongAuthChallengeError) {
@@ -172,7 +172,7 @@ To handle errors that occur during strong authentication method registration, yo
 
     ```kotlin
     val submitChallengeResult = registerStrongAuthVerificationRequiredState.submitChallenge(challenge = smsCode)
-    
+
     if (submitChallengeResult is SignInResult.Complete) {
         // Handle sign in success
     } else if (submitChallengeResult is RegisterStrongAuthSubmitChallengeError) {
@@ -189,7 +189,7 @@ To handle errors that occur during strong authentication method registration, yo
     ```
 
     The `RegisterStrongAuthSubmitChallengeError` is handled after submitting the challenge using `registerStrongAuthVerificationRequiredState.submitChallenge(challenge = smsCode)`. Use the `isInvalidChallenge()` method to check for the specific error, such as, the submitted challenge is invalid. In this case, the previous state reference must be used to reperform the challenge submission.
- 
+
 ## Next steps
 
 - [Tutorial: Add self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)

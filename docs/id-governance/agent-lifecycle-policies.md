@@ -95,7 +95,7 @@ Policy actions define what actions can be taken when an agent identity does not 
 | --- | --- |
 | **Disable** | Disables the agent identity and prevents future sign-ins or usage. |
 | **Delete** | Soft Deletes the agent identity. |
-| **Disable and delete** | Disables the agent identity immediately and then deletes it after the configurable grace period.
+| **Disable and delete** | Disables the agent identity immediately and then deletes it after the configurable grace period. |
 
 1. Select the action that should be taken for the agent identities which do not fulfill the organizational policy rules.
 1. If you select **Disable and delete**, specify the number of days when delete action triggers after the disablement is completed.

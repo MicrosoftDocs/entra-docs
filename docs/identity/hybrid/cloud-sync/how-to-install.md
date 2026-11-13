@@ -44,30 +44,30 @@ To update an existing agent to use the Group Managed Service Account created dur
 
 
 
-## Enable password writeback in cloud sync 
+## Enable password writeback in cloud sync
 
-You can enable password writeback in SSPR directly in the portal or through PowerShell. 
+You can enable password writeback in SSPR directly in the portal or through PowerShell.
 
 ### Enable password writeback in the portal
-To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, using the portal, complete the following steps: 
+To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, using the portal, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
  2. Browse to **Entra ID** > **Password reset** > **On-premises integration**.
  3. Check the option for **Enable password write back for synced users** .
- 4. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Cloud Sync**.   
+ 4. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Cloud Sync**.
  5. Check the option for **Allow users to unlock accounts without resetting their password** to *Yes*.
  6. When ready, select **Save**.
 
 ### Using PowerShell
 
-To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, use the `Set-AADCloudSyncPasswordWritebackConfiguration` cmdlet and the tenant’s Global Administrator credentials: 
+To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, use the `Set-AADCloudSyncPasswordWritebackConfiguration` cmdlet and the tenant’s Global Administrator credentials:
 
-  ```   
-   Import-Module "C:\\Program Files\\Microsoft Azure AD Connect Provisioning Agent\\Microsoft.CloudSync.Powershell.dll" 
+  ```
+   Import-Module "C:\\Program Files\\Microsoft Azure AD Connect Provisioning Agent\\Microsoft.CloudSync.Powershell.dll"
    Set-AADCloudSyncPasswordWritebackConfiguration -Enable $true -Credential $(Get-Credential)
   ```
 
-For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment ](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
+For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
 
 ## Password hash synchronization and FIPS with cloud sync
 
@@ -93,7 +93,7 @@ For reference, your code should look like the following snippet:
 
 For information about security and FIPS, see [Microsoft Entra password hash sync, encryption, and FIPS compliance](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/aad-password-sync-encryption-and-fips-compliance/ba-p/243709).
 
-## Next steps 
+## Next steps
 
 - [What is provisioning?](../what-is-provisioning.md)
 - [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)

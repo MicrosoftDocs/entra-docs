@@ -18,19 +18,19 @@ You can see the available attributes by using [Microsoft Graph Explorer](https:/
 
 >[!NOTE]
 > In order to discover new Active Directory extension attributes, the provisioning agent needs to be restarted. You should restart the agent after the directory extensions have been created. For Microsoft Entra extension attributes, the agent doesn't need to be restarted.
- 
+
 <a name='syncing-directory-extensions-for-azure-active-directory-connect-cloud-sync-'></a>
 
-## Syncing directory extensions for Microsoft Entra Cloud Sync 
+## Syncing directory extensions for Microsoft Entra Cloud Sync
 
-You can use [directory extensions](/graph/api/resources/extensionproperty?view=graph-rest-1.0&preserve-view=true) to extend the synchronization schema directory definition in Microsoft Entra ID with your own attributes. 
+You can use [directory extensions](/graph/api/resources/extensionproperty?view=graph-rest-1.0&preserve-view=true) to extend the synchronization schema directory definition in Microsoft Entra ID with your own attributes.
 
 >[!Important]
 > Directory extension for Microsoft Entra Cloud Sync is only supported for applications with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` and the [Tenant Schema Extension App](../connect/how-to-connect-sync-feature-directory-extensions.md#configuration-changes-in-azure-ad-made-by-the-wizard) created by Microsoft Entra Connect.
 
-### Create application and service principal for directory extension 
+### Create application and service principal for directory extension
 
-You need to create an [application](/graph/api/resources/application) with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` if it doesn't exist and create a service principal for the application if it doesn't exist. 
+You need to create an [application](/graph/api/resources/application) with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` if it doesn't exist and create a service principal for the application if it doesn't exist.
 
 #### [**Graph PowerShell**](#tab/ps)
 
@@ -51,12 +51,12 @@ You need to create an [application](/graph/api/resources/application) with the i
    ```
 
    For more information, see [New-MgApplication](/powershell/module/microsoft.graph.applications/new-mgapplication).
- 
+
 1. Use the `$tenantId` variable from previous step to check if the service principal exists for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
 
    ```powershell
    $appId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").AppId
-     
+
    Get-MgServicePrincipal -Filter "AppId eq '$appId'"
    ```
 
@@ -64,7 +64,7 @@ You need to create an [application](/graph/api/resources/application) with the i
 
 1. If a service principal doesn't exist, use the `$appId variable` from the previous step to create a new service principal for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
 
-   ```powershell     
+   ```powershell
    New-MgServicePrincipal -AppId $appId
    ```
 
@@ -72,14 +72,14 @@ You need to create an [application](/graph/api/resources/application) with the i
 
 1. Use the `$tenantId` variable from previous step to create a directory extension in Microsoft Entra ID. For example, a new extension called 'GroupDN', of string type, for Group objects:
 
-   ```powershell     
+   ```powershell
    $appObjId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").Id
-     
+
    New-MgApplicationExtensionProperty -ApplicationId $appObjId -Name GroupDN -DataType String -TargetObjects Group
    ```
 
 #### [**Graph Explorer**](#tab/ge)
- 
+
 1. Check if application with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` exists.
 
    ```https
@@ -87,7 +87,7 @@ You need to create an [application](/graph/api/resources/application) with the i
    ```
 
    For more information, see [Get application](/graph/api/application-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
-     
+
 1. If the application doesn't exist, create the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
 
    ```https
@@ -99,7 +99,7 @@ You need to create an [application](/graph/api/resources/application) with the i
    "identifierUris": ["api://<tenant id>/CloudSyncCustomExtensionsApp"]
    }
    ```
-   
+
    For more information, see [create application](/graph/api/application-post-applications?view=graph-rest-1.0&tabs=http&preserve-view=true).
 
 1. Check if the service principal exists for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
@@ -116,19 +116,19 @@ You need to create an [application](/graph/api/resources/application) with the i
    Content-type: application/json
 
    {
-   "appId": 
+   "appId":
    "<application appId>"
    }
    ```
 
    For more information, see [create servicePrincipal](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http&preserve-view=true).
-     
+
 1. Create a directory extension in Microsoft Entra ID. For example, a new extension called 'GroupDN', of string type, for Group objects:
 
    ```https
    POST https://graph.microsoft.com/v1.0/applications/<ApplicationId>/extensionProperties
    Content-type: application/json
-     
+
    {
      "name": "GroupDN",
      "dataType": "String",
@@ -136,7 +136,7 @@ You need to create an [application](/graph/api/resources/application) with the i
      "targetObjects": [
          "Group"
      ]
-   }    
+   }
    ```
 
 ---
@@ -146,14 +146,14 @@ You can create directory extensions in Microsoft Entra ID in several different w
 |Method|Description|URL|
 |-----|-----|-----|
 |MS Graph|Create extensions using Microsoft Graph|[Create extensionProperty](/graph/api/application-post-extensionproperty?view=graph-rest-1.0&tabs=http&preserve-view=true)|
-|PowerShell|Create extensions using PowerShell|[New-MgApplicationExtensionProperty](/powershell/module/microsoft.graph.applications/new-mgapplicationextensionproperty)| 
-Using cloud sync and Microsoft Entra Connect|Create extensions using Microsoft Entra Connect|[Create an extension attribute using Microsoft Entra Connect](../../app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-using-azure-ad-connect)|
-|Customizing attributes to sync|Information on customizing, which attributes to synch|[Customize which attributes to synchronize with Microsoft Entra ID](../connect/how-to-connect-sync-feature-directory-extensions.md#select-which-attributes-to-synchronize-with-microsoft-entra-id)
+|PowerShell|Create extensions using PowerShell|[New-MgApplicationExtensionProperty](/powershell/module/microsoft.graph.applications/new-mgapplicationextensionproperty)|
+|Using cloud sync and Microsoft Entra Connect|Create extensions using Microsoft Entra Connect|[Create an extension attribute using Microsoft Entra Connect](../../app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-using-azure-ad-connect)|
+|Customizing attributes to sync|Information on customizing, which attributes to synch|[Customize which attributes to synchronize with Microsoft Entra ID](../connect/how-to-connect-sync-feature-directory-extensions.md#select-which-attributes-to-synchronize-with-microsoft-entra-id)|
 
 
 
 ## Use attribute mapping to map Directory Extensions
-If you extended Active Directory to include custom attributes, you can add these attributes and map them to users.  
+If you extended Active Directory to include custom attributes, you can add these attributes and map them to users.
 
 To discover and map attributes, select **Add attribute mapping** and the attributes become available in the drop-down under **source attribute**. Fill in the type of mapping you want and select **Apply**.
  [![Custom attribute mapping](media/custom-attribute-mapping/schema-1.png)](media/custom-attribute-mapping/schema-1.png#lightbox)

@@ -6,14 +6,14 @@ ms.topic: concept-article
 ms.date: 06/27/2026
 ms.reviewer: gasinh
 
-#customer intent: I need to understand subscriptions and billing, consumer app security, and how to prevent fraud tactics in Microsoft Entra External ID. 
+#customer intent: I need to understand subscriptions and billing, consumer app security, and how to prevent fraud tactics in Microsoft Entra External ID.
 ---
 
 # Microsoft Entra External ID deployment guide for security operations
 
-This document outlines security operations considerations to deploy [Microsoft Entra External ID](/entra/external-id/external-identities-overview), an extensible solution to add customer identity and access management (CIAM) solutions to your apps. This document emphasizes edge-based attacks, particularly bots targeting sign-up, and sign-in endpoints. These vectors are commonly exploited in external identity systems and demand layered, proactive, defense strategies. 
+This document outlines security operations considerations to deploy [Microsoft Entra External ID](/entra/external-id/external-identities-overview), an extensible solution to add customer identity and access management (CIAM) solutions to your apps. This document emphasizes edge-based attacks, particularly bots targeting sign-up, and sign-in endpoints. These vectors are commonly exploited in external identity systems and demand layered, proactive, defense strategies.
 
-Key topics covered include: 
+Key topics covered include:
 
 * [Tenant protection](#tenant-security-with-edge-protection-from-ddos-and-bot-attacks)
 * [Web application firewall (WAF) integration](#waf-configuration-considerations)
@@ -23,7 +23,7 @@ Key topics covered include:
 
 Special attention goes to processes to safeguard the sign-up and sign-in journeys from automated fraud, such as credential stuffing and International Revenue Share Fraud (IRSF). Find information on the importance of monitoring and alerting, continuous validation, usage tracking, and anomaly detection. These are actions essential for early threat detection and response. See the following diagram of a security operations flow.
 
-   [ ![Diagram of a security operations flow.](media/deployment-external/security-operations.png)](media/deployment-external/security-operations-expanded.png#lightbox)
+   [![Diagram of a security operations flow.](media/deployment-external/security-operations.png)](media/deployment-external/security-operations-expanded.png#lightbox)
 
 ## Tenant security with edge protection from DDoS and bot attacks
 
@@ -47,7 +47,7 @@ Learn more about [custom URL domains in external tenants](../external-id/custome
 
 In the following diagram, see the custom domain example.
 
-   [ ![Diagram of a custom domain.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
+   [![Diagram of a custom domain.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
 
 ## WAF configuration considerations
 
@@ -112,7 +112,7 @@ For native authentication API flows, see [Tutorial: Integrate third-party bot pr
 
 ### International Revenue Share Fraud
 
-An International Revenue Share Fraud (IRSF) is a financially driven attack possible when you expose short message service (SMS) verification on a publicly accessible endpoint. When you enable [Microsoft Entra multifactor authentication (MFA) on Microsoft Entra External ID](../external-id/customers/concept-multifactor-authentication-customers.md), IRSF attacks are possible. With SMS verification enabled, Microsoft Entra has two built-in protections: 
+An International Revenue Share Fraud (IRSF) is a financially driven attack possible when you expose short message service (SMS) verification on a publicly accessible endpoint. When you enable [Microsoft Entra multifactor authentication (MFA) on Microsoft Entra External ID](../external-id/customers/concept-multifactor-authentication-customers.md), IRSF attacks are possible. With SMS verification enabled, Microsoft Entra has two built-in protections:
 
 * **Telephony throttling** helps mitigate the risk of service outages and performance degradation
 * **CAPTCHA for SMS-based MFA** helps defend against automated attacks by distinguishing human users from bots. If a user is deemed high-risk, access is blocked, or a CAPTCHA challenge appears before an SMS verification code is sent.
@@ -127,7 +127,7 @@ As another layer of defense, we recommend you review the following table to cons
 
 ## Sign-in protection: Account takeover
 
-Account takeover means a user account is compromised. The attacker changes account credentials, such as email, password, or phone number. These actions prevent the account owner from regaining control. These attacks are accomplished with a password spray. 
+Account takeover means a user account is compromised. The attacker changes account credentials, such as email, password, or phone number. These actions prevent the account owner from regaining control. These attacks are accomplished with a password spray.
 
 Use multiple layers of defense to reduce the account compromise rate. Employ a combination of the following security controls.
 
@@ -143,11 +143,11 @@ An audit is actions taken to understand a system, its user activities, and relat
 
 ### Auditing and logs
 
-Microsoft Entra External ID stores sign-in and audit logs for 30 days. For retention and analysis, export this information to an external storage or tool. 
+Microsoft Entra External ID stores sign-in and audit logs for 30 days. For retention and analysis, export this information to an external storage or tool.
 
 Configure Azure Monitor as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor. For more information, see [Set up Azure Monitor in external tenants](../external-id/customers/how-to-azure-monitor.md).
 
-   [ ![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-expanded.png#lightbox)
+   [![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-expanded.png#lightbox)
 
 This configuration requires projecting a [Microsoft Azure resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) with the resources from the enterprise tenant to the Microsoft Entra tenant.
 
@@ -155,21 +155,21 @@ This configuration requires projecting a [Microsoft Azure resource group](/azure
 
 Monitoring helps ensure the efficient operation of identity and associated systems. These actions include establishing monitoring infrastructure, defining monitoring procedures, setting up dashboards or alerts, and creating a response protocol to handle alerts. See the following note, and a list of what to monitor.
 
-   > [!NOTE] 
+   > [!NOTE]
    > Monitor logs for exceptions and errors from the identity service. Also monitor dependent services such as WAFs and APIs that call in custom extensions.
 
 * **Availability** - Discover if the service is operational. Sometimes referred to as a heartbeat or health endpoint. Set it up on the monitoring system for it to execute frequently on in-use components. For custom extension APIs, we recommend you implement health endpoint monitoring. If you develop API using .NET, use health checks in ASP.NET Core to expose health endpoints. Monitoring availability is essential, but it might solely indicate service failures.
-* **Functionality** - Track functionality with synthetic transactions that mimic end-to-end user or system interactions involving dependencies: UI, API calls, logging. Many monitoring tools have features to automate multistep web experiences, like sign-up, profile edit, and MFA. 
+* **Functionality** - Track functionality with synthetic transactions that mimic end-to-end user or system interactions involving dependencies: UI, API calls, logging. Many monitoring tools have features to automate multistep web experiences, like sign-up, profile edit, and MFA.
 * **Performance** - Track performance with synthetic transactions and server-side instrumentation to gather performance-related telemetry. In distributed systems like identity access management (IAM) with dependencies, identify, and resolve performance issues. Deploy performance probes across customer locations and establish a baseline for identity experiences. Set up triggers and notifications to detect deviations from a baseline. A system isn't beneficial if it's available but performs poorly.
 
 Requests for authentication and identity come with a session correlation ID. When the identity system calls external custom extensions, this identifier is in the authentication context. To diagnose issues, log the identifier in the custom extension.
 
-   > [!NOTE] 
+   > [!NOTE]
    > Microsoft has a goal to enable client-side telemetry using analytics tools such as Google Analytics and Adobe Analytics.
 
 The following diagram illustrates monitoring and alerting setup.
 
-   [ ![Diagram of the setup for monitoring and alerting.](media/deployment-external/alerting-setup.png)](media/deployment-external/alerting-setup-expanded.png#lightbox)
+   [![Diagram of the setup for monitoring and alerting.](media/deployment-external/alerting-setup.png)](media/deployment-external/alerting-setup-expanded.png#lightbox)
 
 ### Service degradation and failure alerting setup
 
@@ -181,7 +181,7 @@ In large systems, some transactions fail. Incomplete identity experiences, somet
 |Sign-in||
 |Sign-up||
 |MFA by type: Email OTP, telephony OTP||
-|Browser type: Google Chrome, [Microsoft Edge](https://www.microsoft.com/edge/?url=https://aka.ms/MicrosoftSupport1&cs=3896570988&form=MA13FJ), </br>Mozilla Firefox, Apple Safari|
+|Browser type: Google Chrome, [Microsoft Edge](https://www.microsoft.com/edge/?url=https://aka.ms/MicrosoftSupport1&cs=3896570988&form=MA13FJ), </br>Mozilla Firefox, Apple Safari||
 |Mobile operating system: Android, iOS ||
 
 ### Continuous system validation
@@ -204,7 +204,7 @@ Microsoft Entra External ID has built-in dashboards with useful telemetry from k
 
 Microsoft Entra External ID pricing consists of a core offer and premium add-ons. Core offer billing is based on monthly active users ([MAUs](../external-id/external-identities-pricing.md)), the count of unique external users who authenticate to your tenants in a calendar month. A total comes from a combination of MAUs from workforce and external tenants linked to a subscription.
 
-See more information on the [pricing structure and billing model for Microsoft Entra External ID](../external-id/external-identities-pricing.md). 
+See more information on the [pricing structure and billing model for Microsoft Entra External ID](../external-id/external-identities-pricing.md).
 
 ### Costs and analysis
 View incurred costs on the cost analysis area of the subscription/resource group linked to the Microsoft Entra External ID tenant. If the MAU count is below the free tier, the bill is $0. Usage data, below the free tier, appears in the cost analysis.
@@ -215,7 +215,7 @@ In the [Microsoft Entra admin center](https://entra.microsoft.com), for the Micr
 * See the graph resource types in [dailyUserInsigntMetricsRoot resource type](/graph/api/resources/dailyuserinsightmetricsroot?view=graph-rest-beta&preserve-view=true).
 
 
-   >[!NOTE] 
+   >[!NOTE]
    > Data returned by the APIs isn't real-time and might be subject to scheduled processing.
 
 The following table correlates metric and a Microsoft Graph reference.
@@ -233,7 +233,7 @@ The following table correlates metric and a Microsoft Graph reference.
 
 In the [Microsoft Entra admin center](https://entra.microsoft.com), under Monitoring and health, select **Usage & insights**. View user data, over time, and other areas such as authentication, and MFA usage.
 
-   [ ![Diagram of the usage and insights dashboard.](media/deployment-external/usage-insights.png)](media/deployment-external/usage-insights-expanded.png#lightbox)
+   [![Diagram of the usage and insights dashboard.](media/deployment-external/usage-insights.png)](media/deployment-external/usage-insights-expanded.png#lightbox)
 
 ## Next steps
 

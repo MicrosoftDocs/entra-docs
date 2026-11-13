@@ -12,13 +12,13 @@ ms.custom: sfi-image-nochange
 
 Workflows contain specific tasks, which can run automatically against users based on the specified execution conditions. Automatic workflow scheduling is supported based on the employeeHireDate and employeeLeaveDateTime user attributes in Microsoft Entra ID.
 
-To take full advantage of Lifecycle Workflows, user provisioning should be automated, and the relevant scheduling attributes should be synchronized. 
+To take full advantage of Lifecycle Workflows, user provisioning should be automated, and the relevant scheduling attributes should be synchronized.
 
 ## Scheduling relevant attributes
 
 The following table shows the relevant scheduling (trigger) attributes and the methods of synchronization that are supported.
 
-|Attribute|Type|Supported in HR Inbound Provisioning|Supported in Microsoft Entra Connect cloud sync|Supported in Microsoft Entra Connect Sync| 
+|Attribute|Type|Supported in HR Inbound Provisioning|Supported in Microsoft Entra Connect cloud sync|Supported in Microsoft Entra Connect Sync|
 |-----|-----|-----|-----|-----|
 |employeeHireDate|DateTimeOffset|Yes|Yes|Yes|
 |employeeLeaveDateTime|DateTimeOffset|Yes|Yes|Yes|
@@ -49,7 +49,7 @@ For more information on expressions, see [Reference for writing expressions for 
 
 The expression examples in the table use endDate for SAP and StatusHireDate for Workday.  However, you can opt to use different attributes.
 
-For example, you might use StatusContinuousFirstDayOfWork instead of StatusHireDate for Workday.  In this instance your expression would be:  
+For example, you might use StatusContinuousFirstDayOfWork instead of StatusHireDate for Workday.  In this instance your expression would be:
 
    `FormatDateTime([StatusContinuousFirstDayOfWork], , "yyyy-MM-ddzzz", "yyyyMMddHHmmss.fZ")`
 
@@ -59,9 +59,9 @@ The following table has a list of suggested attributes and their scenario recomm
 |HR Attribute|HR System|Scenario|Microsoft Entra attribute|
 |-----|-----|-----|-----|
 |StatusHireDate|Workday|Joiner|EmployeeHireDate|
-|StatusContinuousFirstDayOfWork|Workday|Joiner|EmployeeHireDate|	
-StatusDateEnteredWorkforce|Workday|Joiner|EmployeeHireDate|
-StatusOriginalHireDate|Workday|Joiner|EmployeeHireDate|
+|StatusContinuousFirstDayOfWork|Workday|Joiner|EmployeeHireDate|
+|StatusDateEnteredWorkforce|Workday|Joiner|EmployeeHireDate|
+|StatusOriginalHireDate|Workday|Joiner|EmployeeHireDate|
 |StatusEndEmploymentDate|Workday|Leaver|EmployeeLeaveDateTime|
 |StatusResignationDate|Workday|Leaver|EmployeeLeaveDateTime|
 |StatusRetirementDate|Workday|Leaver|EmployeeLeaveDateTime|
@@ -89,7 +89,7 @@ To ensure timing accuracy of scheduled workflows, it’s crucial to consider:
  1. Under **Configuration**, select your configuration.
  1. Select **Click to edit mappings**. This link opens the **Attribute mappings** screen.
  1. Select **Add attribute**.
- 1. Fill in the following information: 
+ 1. Fill in the following information:
      - Mapping Type: Direct
      - Source attribute: msDS-cloudExtensionAttribute1
      - Default value: Leave blank
@@ -97,7 +97,7 @@ To ensure timing accuracy of scheduled workflows, it’s crucial to consider:
      - Apply this mapping: Always
      :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-cloud-attribute-mapping.png" alt-text="Screenshot of the cloud attribute mapping.":::
  1. Select **Apply**.
- 1. Back on the **Attribute mappings** screen, you should see your new attribute mapping.  
+ 1. Back on the **Attribute mappings** screen, you should see your new attribute mapping.
  1. Select **Save schema**.
 
 For more information on attributes, see [Attribute mapping in Microsoft Entra Connect cloud sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md).
@@ -124,7 +124,7 @@ The following example walks you through setting up a custom synchronization rule
      ![Screenshot of creating inbound synchronization rule transformations.](media/how-to-lifecycle-workflow-sync-attributes/create-inbound-rule-transformations.png)
    1.  Select **Add**.
    1. In the Synchronization Rules Editor, ensure the direction at the top is set to **Outbound**.
-   1. Select **Add Rule.**  
+   1. Select **Add Rule.**
    1. On the **Create Outbound synchronization rule** screen, enter the following information and select **Next**.
        - Name:  Out to Microsoft Entra ID - EmployeeHireDate
        - Connected System:  &lt;your tenant&gt;
@@ -151,7 +151,7 @@ For more information, see [How to customize a synchronization rule](../identity/
 
 ## Edit attribute mapping in the provisioning application
 
-After you set up your provisioning application, you can edit its attribute mapping. When the app is created, you get a list of default mappings between your HRM and Active Directory. From there, you can either edit the existing mapping or add a new mapping. 
+After you set up your provisioning application, you can edit its attribute mapping. When the app is created, you get a list of default mappings between your HRM and Active Directory. From there, you can either edit the existing mapping or add a new mapping.
 
 To update this mapping, follow these steps:
 
@@ -169,9 +169,9 @@ To update this mapping, follow these steps:
     :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/edit-attribute-list.png" alt-text="Screenshot of source API list.":::
     > [!NOTE]
     > The number and name of source attributes added depend on which attributes you're syncing from Active Directory.
-1.  Select Save. 
+1.  Select Save.
 
-1. From there, you must map the HRM attributes to the added Active Directory attributes. To do this, Add New Mapping using an Expression. 
+1. From there, you must map the HRM attributes to the added Active Directory attributes. To do this, Add New Mapping using an Expression.
 
 1. Your expression must match the formatting found in the [Understanding EmployeeHireDate and EmployeeLeaveDateTime formatting](how-to-lifecycle-workflow-sync-attributes.md#understanding-employeehiredate-and-employeeleavedatetime-formatting) section.
     :::image type="content" source="media/how-to-lifecycle-workflow-sync-attributes/attribute-formatting-expression.png" alt-text="Screenshot of setting attribute format.":::

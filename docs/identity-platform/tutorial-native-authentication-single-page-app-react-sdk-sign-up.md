@@ -137,7 +137,7 @@ In the code, find the placeholder:
 
 - `Enter_the_Application_Id_Here` then replace it with the Application (client) ID of the app you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` then replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
+- `Enter_the_Tenant_Subdomain_Here` then replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 ## Create UI components
 
@@ -149,7 +149,7 @@ This app collects user details such as given name, username (email), password, a
 
 1. Create a *sign-up/components/CodeForm.tsx* file, then paste the code from [sign-up/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/CodeForm.tsx). This component displays a form that collects a one-time passcode sent to the user. You require this form for either email with password or email with one-time passcode authentication method.
 
-1. If your choice of authentication method is *email with password*, create a *sign-up/components/PasswordForm.tsx* file, then paste the code from [sign-up/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/PasswordForm.tsx). This component displays a password input form. 
+1. If your choice of authentication method is *email with password*, create a *sign-up/components/PasswordForm.tsx* file, then paste the code from [sign-up/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/PasswordForm.tsx). This component displays a password input form.
 
 ## Handle form interaction
 
@@ -177,7 +177,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
 
         import { SignUpResultPage } from "./components/SignUpResult";
         import { CodeForm } from "./components/CodeForm";
-        import { PasswordForm } from "./components/PasswordForm";    
+        import { PasswordForm } from "./components/PasswordForm";
     export default function SignUpPassword() {
         const [authClient, setAuthClient] = useState<ICustomAuthPublicClientApplication | null>(null);
         const [firstName, setFirstName] = useState("");
@@ -194,7 +194,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
         const [signUpState, setSignUpState] = useState<AuthFlowStateBase | null>(null);
         const [loadingAccountStatus, setLoadingAccountStatus] = useState(true);
         const [isSignedIn, setSignInState] = useState(false);
-    
+
         useEffect(() => {
             const initializeApp = async () => {
                 const appInstance = await CustomAuthPublicClientApplication.create(customAuthConfig);
@@ -202,7 +202,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
             };
             initializeApp();
         }, []);
-    
+
         useEffect(() => {
             const checkAccount = async () => {
                 if (!authClient) return;
@@ -214,7 +214,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
             };
             checkAccount();
         }, [authClient]);
-    
+
         const renderForm = () => {
             if (loadingAccountStatus) {
                 return;
@@ -233,8 +233,8 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
                         loading={loading}
                     />
                 );
-            } 
-            //Uncomment the following block of code if your choice of authentication method is email with password 
+            }
+            //Uncomment the following block of code if your choice of authentication method is email with password
             /*
             else if(signUpState instanceof SignUpPasswordRequiredState) {
                 return <PasswordForm
@@ -284,7 +284,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
     const appInstance = await CustomAuthPublicClientApplication.create(customAuthConfig);
     setAuthClient(appInstance);
     ```
-    
+
 
 
 - To handle the initial form submission, use the following code snippet. See a full example at [sign-up/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx) to learn where to place the code snippet:
@@ -294,9 +294,9 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
         e.preventDefault();
         setError("");
         setLoading(true);
-    
+
         if (!authClient) return;
-    
+
         const attributes: UserAccountAttributes = {
             displayName: `${firstName} ${lastName}`,
             givenName: firstName,
@@ -305,18 +305,18 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
             city: city,
             country: country,
         };
-    
+
         const result = await authClient.signUp({
             username: email,
             attributes
         });
         const state = result.state;
-    
+
         if (result.isFailed()) {
             if (result.error?.isUserAlreadyExists()) {
                 setError("An account with this email already exists");
             } else if (result.error?.isInvalidUsername()) {
-                setError("Invalid uername");
+                setError("Invalid username");
             } else if (result.error?.isInvalidPassword()) {
                 setError("Invalid password");
             } else if (result.error?.isAttributesValidationFailed()) {
@@ -341,7 +341,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
         e.preventDefault();
         setError("");
         setLoading(true);
-    
+
         try {
             if (signUpState instanceof SignUpCodeRequiredState) {
                 const result = await signUpState.submitCode(code);
@@ -374,11 +374,11 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
             e.preventDefault();
             setError("");
             setLoading(true);
-    
+
             if (signUpState instanceof SignUpPasswordRequiredState) {
                 const result = await signUpState.submitPassword(password);
                 const state = result.state;
-    
+
                 if (result.isFailed()) {
                     if (result.error?.isInvalidPassword()) {
                         setError("Invalid password");
@@ -389,7 +389,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
                     setSignUpState(state);
                 }
             }
-    
+
             setLoading(false);
         };
     ```
@@ -457,7 +457,7 @@ One of the errors that can result from the `signUp()` method is `result.error?.i
 
 ## Optional: Sign in users automatically after sign-up
 
-After a user successfully signs up, you can directly sign them into the app without initiating a new sign-in flow. To do so, use the following code snippet. See a full example at [sign-up/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx): 
+After a user successfully signs up, you can directly sign them into the app without initiating a new sign-in flow. To do so, use the following code snippet. See a full example at [sign-up/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
 
 ```typescript
 if (signUpState instanceof SignUpCompletedState) {
@@ -466,7 +466,7 @@ if (signUpState instanceof SignUpCompletedState) {
     if (result.isFailed()) {
         setError(result.error?.errorData?.errorDescription || "An error occurred during auto sign-in");
     }
-    
+
     if (result.isCompleted()) {
         setData(result.data);
         setSignUpState(state);

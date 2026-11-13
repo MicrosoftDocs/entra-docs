@@ -67,10 +67,10 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 The following table lists related topics:
 
-Topic | Details
+Topic | Details |
 --------- | --------- |
-Steps to upgrade from Microsoft Entra Connect | Different methods to [upgrade from a previous version to the latest](how-to-upgrade-previous-version.md) Microsoft Entra Connect release.
-Required permissions | For permissions required to apply an update, see [Microsoft Entra Connect: Accounts and permissions](reference-connect-accounts-permissions.md#upgrade).
+Steps to upgrade from Microsoft Entra Connect | Different methods to [upgrade from a previous version to the latest](how-to-upgrade-previous-version.md) Microsoft Entra Connect release.|
+Required permissions | For permissions required to apply an update, see [Microsoft Entra Connect: Accounts and permissions](reference-connect-accounts-permissions.md#upgrade).|
 
 <a name='retiring-azure-ad-connect-1x-versions'></a>
 

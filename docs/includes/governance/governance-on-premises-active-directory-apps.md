@@ -49,7 +49,7 @@ For this scenario, only the following groups are supported:
 - Assigned or dynamic membership groups.
 - Contain on-premises synchronized users or cloud-created security groups.
 - On-premises synchronized users that are members of the cloud-created security group can be from the same domain or other domains from the same forest
-- The forest must support Universal groups because the cloud-created security group is written back to AD DS with [Universal group scope ](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope)
+- The forest must support Universal groups because the cloud-created security group is written back to AD DS with [Universal group scope](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope)
 - No more than 50,000 members
 - Each direct child nested group counts as one member in the referencing group
 
@@ -64,7 +64,7 @@ Before you convert the SOA, consider the following recommended steps:
 1. Move the groups you plan to convert the SOA for to specific organizational units if possible. If you can't move the groups, set the OU path for each group to the original OU path before you convert SOA of the groups. For more information about how to set the original OU path, see [Provision users and groups from Microsoft Entra ID to Active Directory](../../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 1. Make the SOA change.
 1. When provisioning the groups to AD DS, set the attribute mapping as explained in [Provision users and groups from Microsoft Entra ID to Active Directory](../../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
-1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups. 
+1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups.
 
 For more information about how to configure the target location for groups that are provisioned to AD DS, see [Configure the target container](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory#configure-the-target-container).
 
@@ -92,7 +92,7 @@ Use the following steps for applications to use the Group SOA option.
 
 For more information, see [Embracing cloud-first posture: Convert Group Source of Authority to the cloud (Preview)](../../identity/hybrid/concept-source-of-authority-overview.md).
 
-## Govern on-premises AD DS with newly provisioned cloud security groups 
+## Govern on-premises AD DS with newly provisioned cloud security groups
 
 In this scenario, you update the application to check for the SID, name, or distinguished name of a new groups created by Cloud Sync group provisioning. This scenario applies to:
 

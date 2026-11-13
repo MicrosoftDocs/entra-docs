@@ -20,9 +20,9 @@ The LargeObject error may be caused by other AD attributes. To confirm the cause
 To obtain the list of objects in your tenant with LargeObject errors, use one of the following methods:
 
  * If your tenant is enabled for Microsoft Entra Connect Health for sync, you can refer to the [Synchronization Error Report](./how-to-connect-health-sync.md) provided.
- 
+
  * The [Synchronization Service Manager Operations tab](./how-to-connect-sync-service-manager-ui-operations.md) displays the list of objects with LargeObject errors if you select the latest Export to Microsoft Entra operation.
- 
+
 ## Mitigation options
 Until the LargeObject error is resolved, other attribute changes to the same object cannot be exported to Microsoft Entra ID. To resolve the error, you can consider the following options:
 
@@ -103,7 +103,7 @@ The new sync rule must have the same **scoping filter** and **higher precedence*
     | --- | --- | --- |
     | Name | *Provide a name* | E.g., *“Out to Microsoft Entra ID – Custom override for userCertificate”* |
     | Description | *Provide a description* | E.g., *“If userCertificate attribute has more than 15 values, export NULL.”* |
-    | Connected System | *Select the Microsoft Entra Connector* |
+    | Connected System | *Select the Microsoft Entra Connector* | |
     | Connected System Object Type | **user** | |
     | Metaverse Object Type | **person** | |
     | Link Type | **Join** | |
@@ -118,7 +118,7 @@ The new sync rule must have the same **scoping filter** and **higher precedence*
     | Flow Type |**Expression** |
     | Target Attribute |**userCertificate** |
     | Source Attribute |*Use the following expression*: `IIF(IsNullOrEmpty([userCertificate]), NULL, IIF((Count([userCertificate])> 15),AuthoritativeNull,[userCertificate]))` |
-    
+
 6. Select the **Add** button to create the sync rule.
 
 ### Step 4: Verify the new sync rule on an existing object with LargeObject error

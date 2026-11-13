@@ -44,7 +44,7 @@ If application ID *2565bd9d-da50-47d4-8b85-4c97f669dc36* is missing from your Mi
     Install-Module Microsoft.Graph -Scope CurrentUser
     ```
 
-1. Now recreate the service principal using the [New-MgServicePrincipal][/powershell/module/microsoft.graph.applications/new-mgserviceprincipal] cmdlet:
+1. Now recreate the service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) cmdlet:
 
     ```powershell
     New-MgServicePrincipal -AppId "2565bd9d-da50-47d4-8b85-4c97f669dc36"
@@ -89,7 +89,7 @@ To recreate the Microsoft Entra application used for credential synchronization,
     Install-Module Microsoft.Graph -Scope CurrentUser
     Connect-MgGraph -Scopes "Application.ReadWrite.All"
     $app = Get-MgApplication -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
-    Remove-MgApplication -ApplicationId $app.Id   
+    Remove-MgApplication -ApplicationId $app.Id
     ```
 
 After you delete both applications, the Azure platform automatically recreates them and tries to resume password synchronization. The managed domain's health automatically updates itself within two hours and removes the alert.

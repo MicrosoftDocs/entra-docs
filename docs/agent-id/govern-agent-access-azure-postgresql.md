@@ -48,7 +48,7 @@ In this section, you'll enable agents to authenticate using Microsoft Entra agen
 1. In the Microsoft Entra Admin Center, go to **Microsoft Entra ID**, select **Groups**, and select **New group**.
 1. Set **Group type** to **Security**.
 1. Enter a **Group name** such as `pg-employees-readers`. Keep the name short; you will use it verbatim inside PostgreSQL.
-1. Leave membership type as **Assigned**, as Entitlement Management will be used to assign membership. Do not add any members yet. 
+1. Leave membership type as **Assigned**, as Entitlement Management will be used to assign membership. Do not add any members yet.
 1. Select **Create**.
 1. After creation, open the group and note the name and Object ID, which you'll use when creating the principal and role assignment in the PostgreSQL database.
 
@@ -68,9 +68,9 @@ If you have not enabled Microsoft Entra authentication in the database, then do 
 
 ### Create a table in the database
 
-Connect to your Azure Database for PostgreQL server using the Entra admin account you just configured. 
+Connect to your Azure Database for PostgreQL server using the Entra admin account you just configured.
 
-Once connected, confirm you have an `employees` table. If you don't have a table with that name in your PostgreSQL database, connect to PostgreSQL and create that table. 
+Once connected, confirm you have an `employees` table. If you don't have a table with that name in your PostgreSQL database, connect to PostgreSQL and create that table.
 
 ### Create the database role for the security group to read from that database
 
@@ -99,7 +99,7 @@ SELECT * FROM pgaadauth_list_principals(false);
 
 You should see `pg-employees-readers` listed with `r` (SELECT) privileges on the `employees` table.
 
-## Create an access package to assign agent identites to the security group
+## Create an access package to assign agent identities to the security group
 
 Entitlement Management lets you define an *access package* that bundles the security group membership and attach a policy describing how identities, including agent identities, can request access.
 
@@ -191,9 +191,9 @@ Now that the agent's identity is a member of the security group, when it connect
    * Conditional Access policies assigned to the blueprint principal are satisfied.
    * The `Fmi_Path` value resolves to a known agent identity within the tenant.
 
-1. If the checks were successful, Microsoft Entra ID provides a response to the agent with the intermediate token. 
+1. If the checks were successful, Microsoft Entra ID provides a response to the agent with the intermediate token.
 
-   This token consists of a short-lived JWT, the intermediate token, issued for the `api://AzureADTokenExchange` audience. 
+   This token consists of a short-lived JWT, the intermediate token, issued for the `api://AzureADTokenExchange` audience.
 
 1. The agent obtains from Microsoft Entra ID a PostgreSQL access token.
 
@@ -218,7 +218,7 @@ Now that the agent's identity is a member of the security group, when it connect
 
 1. If the checks are successful, Microsoft Entra ID provides a response with a token for the resource.
 
-   The response includes a short-lived JWT access token issued for the `https://ossrdbms-aad.database.windows.net` audience. 
+   The response includes a short-lived JWT access token issued for the `https://ossrdbms-aad.database.windows.net` audience.
 
 1. The agent connects to the database.
 
