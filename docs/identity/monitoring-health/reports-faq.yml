@@ -7,7 +7,7 @@ metadata:
   ms.service: entra-id
   ms.topic: faq
   ms.subservice: monitoring-health
-  ms.date: 05/06/2025
+  ms.date: 11/09/2026
   ms.reviewer: egreenberg14
 
 title: Frequently asked questions around Microsoft Entra monitoring and health
@@ -206,7 +206,7 @@ sections:
           Conditional Access status can have the following values:
           
           - **Not Applied**: There was no Conditional Access policy with the user and app in scope. 
-          - **Success**: There was a Conditional Access policy with the user and app in scope and Conditional Access policies were successfully satisfied. 
+          - **Success**: At least one Conditional Access policy with the user and app in scope was evaluated during sign-in. An evaluated policy didn't necessarily apply, so check the result of each policy on the **Conditional Access** tab. 
           - **Failure**: The sign-in satisfied the user and application condition of at least one Conditional Access policy and grant controls are either not satisfied or set to block access.
               
       - question: |
