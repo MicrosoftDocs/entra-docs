@@ -116,7 +116,7 @@ Monitor sign-in and audit log activity from the emergency accounts and trigger n
 
 ### Prerequisites
 
-- [Send Microsoft Entra sign-in logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to Azure Monitor.
+- [Send Microsoft Entra sign-in logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to Azure Monitor. Include both the **SignInLogs** and **NonInteractiveUserSignInLogs** categories in the diagnostic setting.
 
 ### Obtain Object IDs of the emergency access accounts
 
@@ -152,25 +152,27 @@ Monitor sign-in and audit log activity from the emergency accounts and trigger n
     
         > [!NOTE]
         > For each additional emergency access account you want to include, add another `or UserId == "ObjectGuid"` to the query.
+        >
+        > The queries include both `SigninLogs` (interactive sign-ins) and `AADNonInteractiveUserSignInLogs` (non-interactive sign-ins). After the initial interactive sign-in, an active session continues to generate non-interactive sign-ins, such as token refreshes. Including non-interactive sign-ins ensures you keep receiving alerts for as long as the emergency access account's session is in use, not only when the account first signs in.
                 
         Sample queries:
         ```kusto
         // Search for a single Object ID (UserID)
-        SigninLogs
+        union SigninLogs, AADNonInteractiveUserSignInLogs
         | where UserId == "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
         | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
         
         ```kusto
         // Search for multiple Object IDs (UserIds)
-        SigninLogs
+        union SigninLogs, AADNonInteractiveUserSignInLogs
         | where UserId == "00aa00aa-bb11-cc22-dd33-44ee44ee44ee" or UserId == "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
         | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
         
         ```kusto
         // Search for a single UserPrincipalName
-        SigninLogs
+        union SigninLogs, AADNonInteractiveUserSignInLogs
         | where UserPrincipalName == "user@yourdomain.onmicrosoft.com"
         | project TimeGenerated, UserPrincipalName, UserId, IPAddress, ResultType, ResultDescription
         ```
