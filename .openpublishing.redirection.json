@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "docs/id-governance/tenant-governance/drift-correction.md",
+      "redirect_url": "/entra/id-governance/tenant-governance/configuration-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/id-governance/tenant-governance/how-to-correct-configuration-drift.md",
+      "redirect_url": "/entra/id-governance/tenant-governance/how-to-see-monitor-results",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/identity/authentication/how-to-set-up-sms-voice-api.md",
       "redirect_url": "/entra/identity/authentication/choose-your-own-telephony-set-up",
       "redirect_document_id": true
