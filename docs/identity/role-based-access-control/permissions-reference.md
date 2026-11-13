@@ -2,7 +2,7 @@
 title: Microsoft Entra Built-in Roles
 description: Learn what each Microsoft Entra built-in role can do, from Global Administrator to Reports Reader. Find role descriptions, permissions, and template IDs.
 ms.topic: reference
-ms.date: 11/03/2026
+ms.date: 11/13/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ai-usage: ai-assisted
@@ -46,6 +46,7 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
 > | [Azure DevOps Administrator](#azure-devops-administrator) | Manage Azure DevOps policies and settings. | e3973bdf-4987-49ae-837a-ba8e231c7286 |
 > | [Azure Information Protection Administrator](#azure-information-protection-administrator) | Can manage all aspects of the Azure Information Protection product. | 7495fdc4-34c4-4d15-a289-98788ce399fd |
+> | [B2B Policy Administrator](#b2b-policy-administrator) | Create, read, update, and delete B2B management policies, and set the tenant-default policy. | ddc7372f-4ece-4e8d-8010-1b36d9992d23 |
 > | [B2C IEF Keyset Administrator](#b2c-ief-keyset-administrator) | Can manage secrets for federation and encryption in the Identity Experience Framework (IEF).<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | aaf43236-0c0d-4d5f-883a-6955382ac081 |
 > | [B2C IEF Policy Administrator](#b2c-ief-policy-administrator) | Can create and manage trust framework policies in the Identity Experience Framework (IEF). | 3edaf663-341e-4475-9f94-5c398ef6c070 |
 > | [Billing Administrator](#billing-administrator) | Can perform common billing related tasks like updating payment information. | b0f54661-2d74-4c50-afa3-1ec803f12efe |
@@ -255,6 +256,10 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 ## Azure Information Protection Administrator
 
 [!INCLUDE [azure-information-protection-administrator](includes/azure-information-protection-administrator.md)]
+
+## B2B Policy Administrator
+
+[!INCLUDE [b2b-policy-administrator](includes/b2b-policy-administrator.md)]
 
 ## B2C IEF Keyset Administrator
 
