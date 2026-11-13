@@ -238,6 +238,7 @@ systemctl start microsoft-identity-device-broker
 | 6 | Device unregistration failed |
 | 7 | Cleanup operation failed |
 | 8 | User canceled cleanup operation |
+
 ## Security Architecture
 
 ### Privilege Separation

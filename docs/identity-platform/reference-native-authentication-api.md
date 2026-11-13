@@ -1457,7 +1457,7 @@ POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-|`continuation_token` | Yes |  The [Continuation token](#continuation-token) that Microsoft Entra returns from the `/register/v1.0/introspect ` endpoint |
+|`continuation_token` | Yes |  The [Continuation token](#continuation-token) that Microsoft Entra returns from the `/register/v1.0/introspect` endpoint |
 | `challenge_type` | Yes | The challenge type of the authentication method. Current type is *oob*. |
 |`challenge_target` | Yes | The email or phone number that the user wants to register.  |
 |`challenge_channel` | No | The channel to send the challenge on. Supported challenge channel values: *email, sms*. |

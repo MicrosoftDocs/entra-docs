@@ -2,7 +2,7 @@
 title: Restrictions on identifier URIs of Microsoft Entra applications
 description: Understand why an app management policy may block the addition of an identifier URI, and learn more about the policy and the restrictions it enforces on identifier URIs
 ms.date: 1/29/2025
-editor: 
+editor:
 ms.reviewer: arcrowe
 ms.service: identity-platform
 
@@ -20,7 +20,7 @@ The [`identifierUri`](#what-are-identifier-uris) - also referred to as `Applicat
 
 ## Enforcing secure patterns with policy
 
-Microsoft has introduced a security setting that protects against insecure configuration of identifier URIs (also called 'App ID URIs') on Microsoft Entra applications.   This security setting ensures that newly added URIs on v1 applications comply with the [secure patterns](#secure-patterns) outlined above. 
+Microsoft has introduced a security setting that protects against insecure configuration of identifier URIs (also called 'App ID URIs') on Microsoft Entra applications.   This security setting ensures that newly added URIs on v1 applications comply with the [secure patterns](#secure-patterns) outlined above.
 
 ### Policy behavior
 
@@ -36,7 +36,7 @@ When it isn't enabled, some insecure patterns can still be used. For example, UR
 
 ### Enabling and managing the policy
 
-Microsoft may have already enabled this policy in your organization to improve its security. You can check by running [this script](https://aka.ms/check-identifier-uri-protection-state).  
+Microsoft may have already enabled this policy in your organization to improve its security. You can check by running [this script](https://aka.ms/check-identifier-uri-protection-state).
 
 Even if Microsoft enabled the policy in your organization, a tenant administrator still has full control over it. They can [grant exemptions](https://aka.ms/identifier-uri-protection-grant-exemptions) to a specific Microsoft Entra application, to themselves, to another user in the organization, or to any service or process the organization uses.   Or, an administrator can [disable the policy](https://aka.ms/disable-identifier-uri-protection) (**not recommended**).
 
@@ -54,7 +54,7 @@ There are three possible ways that you can add an identifier URI to your app. We
     :::image type="content" source="media/identifier-uri-restrictions/update-access-token-version-cropped.png" alt-text="Screenshot of update token version experience." lightbox="media/identifier-uri-restrictions/update-access-token-version.png":::
 
     However, you should **proceed with caution when making this change**. This is because once the app has been updated to the v2.0 token format, it won't be able to switch back to v1.0 tokens if it has noncompliant identifier URIs configured, unless it's been granted an exemption (see option 3).
-1. If you need to add a noncompliant identifier URI to your app before you're able to update to the v2.0 token format, you can request your administrator to [grant your app an exemption](https://aka.ms/identifier-uri-protection-grant-exemptions). 
+1. If you need to add a noncompliant identifier URI to your app before you're able to update to the v2.0 token format, you can request your administrator to [grant your app an exemption](https://aka.ms/identifier-uri-protection-grant-exemptions).
 
 ## Additional security settings
 
@@ -69,7 +69,7 @@ When this protection is enabled, new custom identifier URIs can't be added to an
 
 Once this protection is enabled, if anyone in your organization attempts to add a custom identifier URI to a v1 application, they'll receive an error like:
 
-```The newly added URI {uri} must comply with the format 'api://{appId}' or 'api://{tenantId}/{appId}' as per the default app management policy of your organization. If the requestedAccessTokenVersion is set to 2, this restriction may not apply. See https://aka.ms/identifier-uri-addition-error for more information on this error. ```
+```The newly added URI {uri} must comply with the format 'api://{appId}' or 'api://{tenantId}/{appId}' as per the default app management policy of your organization. If the requestedAccessTokenVersion is set to 2, this restriction may not apply. See https://aka.ms/identifier-uri-addition-error for more information on this error.```
 
 This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim. We recommend enabling it if possible, but Microsoft won't enable it on your behalf.
 
@@ -89,7 +89,7 @@ Identifier URIs are configured using the 'Expose an API' page in [App registrati
 
 ### How do these policies work?
 
-The enforcements are turned on by configuring an organization's [app management policies](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta&preserve-view=true). A tenant administrator can turn it on or off.   Microsoft is enabling it by default in some organizations during the months of June and July 2025.  
+The enforcements are turned on by configuring an organization's [app management policies](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta&preserve-view=true). A tenant administrator can turn it on or off.   Microsoft is enabling it by default in some organizations during the months of June and July 2025.
 
 [Learn how to check if the protection has been enabled in your organization](https://aka.ms/check-identifier-uri-protection-state)
 

@@ -24,9 +24,9 @@ In this article, you learn how to manage built-in and custom app consent policie
 ## App consent policy segments
 An app consent policy consists of one or more "include" condition sets and zero or more "exclude" condition sets. For an event to be considered in an app consent policy, it must match *at least* one "include" condition set, and must not match *any* "exclude" condition set. The exclusion and inclusions are used to determine whether the actor affected by the given policy can grant consent or not.
 
-There are three main parts of app consent policies: 
+There are three main parts of app consent policies:
 - **Metadata:** Properties of an app consent policy hold information such as the ID, the description, and the display name of the consent policy.
-- **Included condition sets:** A collection of condition sets that a given app consent request must match *at least one of* for the policy to pass. This collection must have at least *one* condition set. Each condition set contains rules that describe characteristics of an app consent request, such as verified publisher status, permissions requested, and more. 
+- **Included condition sets:** A collection of condition sets that a given app consent request must match *at least one of* for the policy to pass. This collection must have at least *one* condition set. Each condition set contains rules that describe characteristics of an app consent request, such as verified publisher status, permissions requested, and more.
 - **Excluded condition sets:** A collection of condition sets that a given app consent request shouldn't match *any* of to pass. This collection can be empty (it can contain zero excluded condition sets). Each condition set contains rules that describe characteristics of an app consent request, such as verified publisher status, permissions requested, and more.
 
 
@@ -84,7 +84,7 @@ Similarly, a user or service principal can be given the ability to grant consent
   - Privileged Role Administrator directory role
   - A custom directory role with the necessary [permissions to manage app consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
   - The Microsoft Graph app role (application permission) `Policy.ReadWrite.PermissionGrant` when connecting as an app or a service
-- Familiarize yourself with (Permission grant condition sets)[/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0]
+- Familiarize yourself with [Permission grant condition sets](/graph/api/resources/permissiongrantconditionset?view=graph-rest-1.0)
 :::zone pivot="ms-powershell"
 
 To manage app consent policies for applications with Microsoft Graph PowerShell, connect to [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true).
@@ -127,7 +127,7 @@ Follow these steps to create a custom app consent policy:
     DisplayName = "My first custom consent policy"
     Description = "This is a sample custom app consent policy."
    }
-     
+
    New-MgPolicyPermissionGrantPolicy @params
    ```
 
@@ -238,7 +238,7 @@ Follow these steps to create a custom app consent policy:
    ```http
    POST https://graph.microsoft.com/v1.0/policies/permissionGrantPolicies/{ my-custom-policy }/includes
    Content-Type: application/json
-   
+
    {
      "permissionType": "delegated",
      "PermissionClassification": "low",
@@ -254,7 +254,7 @@ Follow these steps to create a custom app consent policy:
    ```http
    POST https://graph.microsoft.com/v1.0/policies/permissionGrantPolicies/my-custom-policy /excludes
    Content-Type: application/json
-   
+
    {
      "permissionType": "delegated",
      "resourceApplication": "00001111-aaaa-2222-bbbb-3333cccc4444 "

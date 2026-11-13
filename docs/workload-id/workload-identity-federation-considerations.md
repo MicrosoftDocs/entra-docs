@@ -9,7 +9,7 @@ ms.custom: aaddev, references_regions
 
 # Important considerations and restrictions for federated identity credentials
 
-This article describes important considerations, restrictions, and limitations for federated identity credentials on Microsoft Entra apps and user-assigned managed identities.  
+This article describes important considerations, restrictions, and limitations for federated identity credentials on Microsoft Entra apps and user-assigned managed identities.
 
 For more information on the scenarios enabled by federated identity credentials, see [workload identity federation overview](workload-identity-federation.md).
 
@@ -31,8 +31,8 @@ Creation of federated identity credentials is currently **not supported** on use
 
 - Malaysia South
 
-Support for creating federated identity credentials on user assigned identities in these regions will be gradually rolled out. 
-Resources in this region which need to use federated identity credentials, can do so by leveraging a user assigned managed identity created in a supported region. 
+Support for creating federated identity credentials on user assigned identities in these regions will be gradually rolled out.
+Resources in this region which need to use federated identity credentials, can do so by leveraging a user assigned managed identity created in a supported region.
 
 ## Supported signing algorithms and issuers
 
@@ -54,7 +54,7 @@ To avoid this issue, wait a short time after adding the federated identity crede
 
 *Applies to: user-assigned managed identities*
 
-Creating multiple federated identity credentials under the same user-assigned managed identity concurrently triggers concurrency detection logic, which causes requests to fail with 409-conflict HTTP status code.  
+Creating multiple federated identity credentials under the same user-assigned managed identity concurrently triggers concurrency detection logic, which causes requests to fail with 409-conflict HTTP status code.
 
 [Terraform Provider for Azure (Resource Manager)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) version 3.40.0 introduces an [update](https://github.com/hashicorp/terraform-provider-azurerm/pull/20003) which creates multiple federated identity credentials sequentially instead of concurrently.  Versions earlier than 3.40.0 can cause failures in pipelines when multiple federated identities are created. We recommend you use [Terraform Provider for Azure (Resource Manager) v3.40.0](https://github.com/hashicorp/terraform-provider-azurerm/tree/main) or later so that multiple federated identity credentials are created sequentially.
 
@@ -65,72 +65,72 @@ If federated identity credentials are provisioned in a loop, you can [provision 
 You can also provision multiple new federated identity credentials sequentially using the *dependsOn* property. The following Azure Resource Manager template (ARM template) example creates three new federated identity credentials sequentially on a user-assigned managed identity by using the *dependsOn* property:
 
 ```json
-{ 
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#", 
-    "contentVersion": "1.0.0.0", 
-    "parameters": { 
-        "userAssignedIdentities_parent_uami_name": { 
-            "defaultValue": "parent_uami", 
-            "type": "String" 
-        } 
-    }, 
-    "variables": {}, 
-    "resources": [ 
-        { 
-            "type": "Microsoft.ManagedIdentity/userAssignedIdentities", 
-            "apiVersion": "2022-01-31-preview", 
-            "name": "[parameters('userAssignedIdentities_parent_uami_name')]", 
-            "location": "eastus" 
-        }, 
-        { 
-            "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials", 
-            "apiVersion": "2022-01-31-preview", 
-            "name": "[concat(parameters('userAssignedIdentities_parent_uami_name'), '/fic01')]", 
-            "dependsOn": [ 
-                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentities_parent_uami_name'))]" 
-            ], 
-            "properties": { 
-                "issuer": "https://kubernetes-oauth.azure.com", 
-                "subject": "fic01", 
-                "audiences": [ 
-                    "api://AzureADTokenExchange" 
-                ] 
-            } 
-        }, 
-        { 
-            "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials", 
-            "apiVersion": "2022-01-31-preview", 
-            "name": "[concat(parameters('userAssignedIdentities_parent_uami_name'), '/fic02')]", 
-            "dependsOn": [ 
-                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentities_parent_uami_name'))]", 
-                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials', parameters('userAssignedIdentities_parent_uami_name'), 'fic01')]" 
-            ], 
-            "properties": { 
-                "issuer": "https://kubernetes-oauth.azure.com", 
-                "subject": "fic02", 
-                "audiences": [ 
-                    "api://AzureADTokenExchange" 
-                ] 
-            } 
-        }, 
-        { 
-            "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials", 
-            "apiVersion": "2022-01-31-preview", 
-            "name": "[concat(parameters('userAssignedIdentities_parent_uami_name'), '/fic03')]", 
-            "dependsOn": [ 
-                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentities_parent_uami_name'))]", 
-                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials', parameters('userAssignedIdentities_parent_uami_name'), 'fic02')]" 
-            ], 
-            "properties": { 
-                "issuer": "https://kubernetes-oauth.azure.com", 
-                "subject": "fic03", 
-                "audiences": [ 
-                    "api://AzureADTokenExchange" 
-                ] 
-            } 
-        } 
-    ] 
-} 
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "userAssignedIdentities_parent_uami_name": {
+            "defaultValue": "parent_uami",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+            "apiVersion": "2022-01-31-preview",
+            "name": "[parameters('userAssignedIdentities_parent_uami_name')]",
+            "location": "eastus"
+        },
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials",
+            "apiVersion": "2022-01-31-preview",
+            "name": "[concat(parameters('userAssignedIdentities_parent_uami_name'), '/fic01')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentities_parent_uami_name'))]"
+            ],
+            "properties": {
+                "issuer": "https://kubernetes-oauth.azure.com",
+                "subject": "fic01",
+                "audiences": [
+                    "api://AzureADTokenExchange"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials",
+            "apiVersion": "2022-01-31-preview",
+            "name": "[concat(parameters('userAssignedIdentities_parent_uami_name'), '/fic02')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentities_parent_uami_name'))]",
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials', parameters('userAssignedIdentities_parent_uami_name'), 'fic01')]"
+            ],
+            "properties": {
+                "issuer": "https://kubernetes-oauth.azure.com",
+                "subject": "fic02",
+                "audiences": [
+                    "api://AzureADTokenExchange"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials",
+            "apiVersion": "2022-01-31-preview",
+            "name": "[concat(parameters('userAssignedIdentities_parent_uami_name'), '/fic03')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentities_parent_uami_name'))]",
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials', parameters('userAssignedIdentities_parent_uami_name'), 'fic02')]"
+            ],
+            "properties": {
+                "issuer": "https://kubernetes-oauth.azure.com",
+                "subject": "fic03",
+                "audiences": [
+                    "api://AzureADTokenExchange"
+                ]
+            }
+        }
+    ]
+}
 ```
 
 ## Azure policy
@@ -140,22 +140,22 @@ You can also provision multiple new federated identity credentials sequentially 
 It's possible to use a deny [Azure Policy](/azure/governance/policy/overview) as in the following ARM template example:
 
 ```json
-{ 
-"policyRule": { 
-            "if": { 
-                "field": "type", 
-                "equals": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials" 
-            }, 
-            "then": { 
-                "effect": "deny" 
-            } 
-        } 
+{
+"policyRule": {
+            "if": {
+                "field": "type",
+                "equals": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials"
+            },
+            "then": {
+                "effect": "deny"
+            }
+        }
 }
 ```
 
 ## Throttling limits
 
-*Applies to: user-assigned managed identities*  
+*Applies to: user-assigned managed identities*
 
 The following table describes limits on requests to the user-assigned managed identities REST APIS.  If you exceed a throttling limit, you receive an HTTP 429 error.
 
@@ -175,9 +175,9 @@ The following error codes may be returned when creating, updating, getting, list
 | HTTP code         | Error message    | Comments    |
 |-------------------|----------------|----------------|
 | 405 | The request format was unexpected: Support for federated identity credentials not enabled. | Federated identity credentials aren't enabled in this region. Refer to “Currently Supported regions”. |
-| 400 | Federated identity credentials must have exactly one audience.| Currently, federated identity credentials support a single audience “api://AzureADTokenExchange”.| 
+| 400 | Federated identity credentials must have exactly one audience.| Currently, federated identity credentials support a single audience “api://AzureADTokenExchange”.|
 | 400 | Federated Identity Credential from HTTP body has empty properties | All federated identity credential properties are mandatory. |
 | 400 | Federated Identity Credential name '{ficName}' is invalid. | Alphanumeric, dash, underscore, no more than 3-120 symbols. First symbol is alphanumeric. |
 | 404 | The parent user-assigned identity doesn't exist. | Check user assigned identity name in federated identity credentials resource path. |
 | 400 | Issuer and subject combination already exists for this Managed Identity. | This is a constraint. List all federated identity credentials associated with the user-assigned identity to find existing federated identity credential. |
-| 409 | Conflict | Concurrent write request to federated identity credential resources under the same user-assigned identity has been denied.
+| 409 | Conflict | Concurrent write request to federated identity credential resources under the same user-assigned identity has been denied. |

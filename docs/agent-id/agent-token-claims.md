@@ -17,7 +17,7 @@ Clients using agent identities are expected to treat the access tokens issued to
 
 ## Core token claim types
 
-Tokens issued for identities used for resource access include claims that you'd normally expect to see in access tokens that Microsoft Entra issues. For more information, see [access token claim reference](/entra/identity-platform/access-token-claims-reference). The following example shows a sample access token issued to an agent acting autonomously. 
+Tokens issued for identities used for resource access include claims that you'd normally expect to see in access tokens that Microsoft Entra issues. For more information, see [access token claim reference](/entra/identity-platform/access-token-claims-reference). The following example shows a sample access token issued to an agent acting autonomously.
 
 ```json
 {
@@ -48,7 +48,7 @@ Tokens issued for identities used for resource access include claims that you'd 
 
 In v2 tokens, you see `azp` instead of `appid`. They both refer to the application ID of the agent identity.
 
-You'd notice that the token includes a few claims that aren't previously seen in access tokens issued to applications. The following optional claims are also supported to identify that the tokens are for agent identities. They also provide more context in which the agent identity is acting. 
+You'd notice that the token includes a few claims that aren't previously seen in access tokens issued to applications. The following optional claims are also supported to identify that the tokens are for agent identities. They also provide more context in which the agent identity is acting.
 
 - `xms_tnt_fct`
 - `xms_sub_fct`
@@ -138,8 +138,8 @@ In this scenario, the agent identity is acting on behalf of a human user. The ac
 
 | Claim Name  | Description                                             |
 | ----------- | ------------------------------------------------------- |
-| `tid `       | Tenant ID of the customer tenant                       |
-| `idtyp `     | `user` (indicating the subject is a user)              |
+| `tid`        | Tenant ID of the customer tenant                       |
+| `idtyp`      | `user` (indicating the subject is a user)              |
 | `xms_idrel`  | `1` (indicating a member user; others possible too)    |
 | `azp` / `appid` | Application ID of the agent identity                |
 | `scp`         | Delegated permissions granted to the agent identity   |

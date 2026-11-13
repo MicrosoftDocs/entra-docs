@@ -46,7 +46,7 @@ For a list of URLs and IP addresses you need to open in your firewall, see [Offi
 <a name='table-3---azure-ad-connect-and-ad-fs-federation-serverswap'></a>
 
 ## Table 3 - Microsoft Entra Connect and AD FS Federation Servers/WAP
-This table describes the ports and protocols that are required for communication between the Microsoft Entra Connect server and AD FS Federation/WAP servers.  
+This table describes the ports and protocols that are required for communication between the Microsoft Entra Connect server and AD FS Federation/WAP servers.
 
 | Protocol | Ports | Description |
 | --- | --- | --- |
@@ -73,6 +73,7 @@ This table describes the ports and protocols that are required for communication
 The following tables describes the ports and protocols that are required for communication between the Microsoft Entra Connect and Microsoft Entra ID.
 
 ### Table 6a - Pass-through Authentication with SSO
+
 | Protocol | Ports | Description |
 | --- | --- | --- |
 | HTTP |80 (TCP)|Used to download CRLs (Certificate Revocation Lists) to verify TLS/SSL certificates. Also needed for the connector auto-update capability to function properly. |
@@ -84,7 +85,7 @@ In addition, Microsoft Entra Connect needs to be able to make direct IP connecti
 
 | Protocol | Ports | Description |
 | --- | --- | --- |
-| HTTPS |443 (TCP)|Used to enable SSO registration (required only for the SSO registration process).
+| HTTPS |443 (TCP)|Used to enable SSO registration (required only for the SSO registration process).|
 
 In addition, Microsoft Entra Connect needs to be able to make direct IP connections to the [Azure data center IP ranges](https://www.microsoft.com/download/details.aspx?id=41653). Again, this is only required for the SSO registration process.
 
@@ -96,7 +97,7 @@ The following tables describe the endpoints, ports, and protocols that are requi
 <a name='table-7a---ports-and-protocols-for-azure-ad-connect-health-agent-for-ad-fssync-and-azure-ad'></a>
 
 ### Table 7a - Ports and Protocols for Microsoft Entra Connect Health agent for (AD FS/Sync) and Microsoft Entra ID
-This table describes the following outbound ports and protocols that are required for communication between the Microsoft Entra Connect Health agents and Microsoft Entra ID.  
+This table describes the following outbound ports and protocols that are required for communication between the Microsoft Entra Connect Health agents and Microsoft Entra ID.
 
 | Protocol | Ports | Description |
 | --- | --- | --- |

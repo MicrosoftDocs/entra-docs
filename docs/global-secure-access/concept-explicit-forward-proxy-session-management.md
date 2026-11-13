@@ -32,7 +32,7 @@ Each time a PAC file is requested, a new session ID is generated. Using unique s
 
 ## HTTP header session management
 
-You can configure your organization's outbound proxy service to inject the `x-ms-gsa-efp-forwarded-for` header to all traffic for `*.interent.efp.globalsecureaccess.microsoft.com` with a unique IP address of the device (for example, internal IP address). This configuration allows Explicit Forward Proxy to use `x-ms-gsa-efp-forwarded-for` values to map authenticated users to Explicit Forward Proxy sessions.
+You can configure your organization's outbound proxy service to inject the `x-ms-gsa-efp-forwarded-for` header to all traffic for `*.internet.efp.globalsecureaccess.microsoft.com` with a unique IP address of the device (for example, internal IP address). This configuration allows Explicit Forward Proxy to use `x-ms-gsa-efp-forwarded-for` values to map authenticated users to Explicit Forward Proxy sessions.
 
 ## IP-based session affinity
 

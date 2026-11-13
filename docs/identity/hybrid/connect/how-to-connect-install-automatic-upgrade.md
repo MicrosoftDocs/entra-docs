@@ -15,7 +15,7 @@ For security reasons the agent that performs the automatic upgrade validates the
 >[!NOTE]
 > Microsoft Entra Connect follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
 >
-> Product governed by the Modern Policy follow a [continuous support and servicing model](/lifecycle/overview/product-end-of-support-overview). Customers must take the latest update to remain supported. 
+> Product governed by the Modern Policy follow a [continuous support and servicing model](/lifecycle/overview/product-end-of-support-overview). Customers must take the latest update to remain supported.
 >
 > For products and services governed by the Modern Lifecycle Policy, Microsoft's policy is to provide a minimum 30 days' notification when customers are required to take action in order to avoid significant degradation to the normal use of the product or service.
 
@@ -51,7 +51,7 @@ Automatic upgrade will not be eligible to proceed if any of the following condit
 
 | Result Message | Description |
 | --- | --- |
-|UpgradeNotSupportedTLSVersionIncorrect|Your TLS version is lower than 1.2. Follow [our guide](reference-connect-tls-enforcement.md) to update your TLS.
+|UpgradeNotSupportedTLSVersionIncorrect|Your TLS version is lower than 1.2. Follow [our guide](reference-connect-tls-enforcement.md) to update your TLS.|
 |UpgradeNotSupportedCustomizedSyncRules|There are custom synchronization rules configured in Microsoft Entra Connect. <br/>**Note:** After version 2.2.1.0, this condition no longer prevents auto upgrade.|
 |UpgradeNotSupportedInvalidPersistedState|The installation isn't an Express settings or a DirSync upgrade.|
 |UpgradeNotSupportedNonLocalDbInstall|You aren't using a SQL Server Express LocalDB database.|
@@ -73,11 +73,11 @@ It's also possible to get a result that isn't an UpgradeResult, that is, *AADHea
 
 Then, make sure you allow the required URLs in your proxy or firewall. Automatic update is using Microsoft Entra Connect Health as described in the [overview](#overview). If you use a proxy, make sure Health is configured to use a [proxy server](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). Also test the [Health connectivity](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service) to Microsoft Entra ID.
 
-With the connectivity to Microsoft Entra ID verified, it's time to look into the eventlogs. Start the event viewer and look in the **Application** eventlog. Add an eventlog filter for the source **Microsoft Entra Connect Upgrade** and the event ID range **300-399**.  
-![Screenshot that shows the "Filter Current Log" window with "Event sources" and the "Include/Exclude" Event IDs box highlighted.](./media/how-to-connect-install-automatic-upgrade/eventlogfilter.png)  
+With the connectivity to Microsoft Entra ID verified, it's time to look into the eventlogs. Start the event viewer and look in the **Application** eventlog. Add an eventlog filter for the source **Microsoft Entra Connect Upgrade** and the event ID range **300-399**.
+![Screenshot that shows the "Filter Current Log" window with "Event sources" and the "Include/Exclude" Event IDs box highlighted.](./media/how-to-connect-install-automatic-upgrade/eventlogfilter.png)
 
-You can now see the eventlogs associated with the status for automatic upgrade.  
-![Eventlog filter for automatic upgrade](./media/how-to-connect-install-automatic-upgrade/eventlogresult.png)  
+You can now see the eventlogs associated with the status for automatic upgrade.
+![Eventlog filter for automatic upgrade](./media/how-to-connect-install-automatic-upgrade/eventlogresult.png)
 
 The result code has a prefix with an overview of the state.
 
