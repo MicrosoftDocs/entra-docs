@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 services: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 11/08/2026
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JFrog Artifactory so that I can control who has access to JFrog Artifactory, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 --- 
 
@@ -66,19 +66,33 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    a. In the **Identifier** text box, type a value using the following pattern:
-    `<SERVERNAME>.jfrog.io`
+    a. In the **Identifier** text box, type the JFrog Platform URL, including the scheme:
+
+    | Deployment | Identifier |
+    | ---------- | ---------- |
+    | JFrog Cloud | `https://<servername>.jfrog.io` |
+    | Self-hosted | The platform Custom Base URL, for example `https://artifactory.company.com` |
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<SERVERNAME>.jfrog.io/<SERVERNAME>/webapp/saml/loginResponse`
+
+    | Deployment | Reply URL |
+    | ---------- | --------- |
+    | JFrog Cloud | `https://<servername>.jfrog.io/ui/api/v1/auth/saml/loginResponse/<setting_name>` |
+    | Self-hosted | `<JFROG-URL>/ui/api/v1/auth/saml/loginResponse/<setting_name>` |
+
+    `<setting_name>` is the **Display Name** of the SAML provider that you create in the JFrog Platform under **Administration** > **Authentication** > **SAML SSO**. For more information, see [Configure SAML SSO with Azure](https://docs.jfrog.com/administration/docs/saml-sso#saml-sso-configuration-with-azure).
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<SERVERNAME>.jfrog.io/<SERVERNAME>/webapp/`
+
+    | Deployment | Sign-on URL |
+    | ---------- | ----------- |
+    | JFrog Cloud | `https://<servername>.jfrog.io/ui/login` |
+    | Self-hosted | `<JFROG-URL>/ui/login` |
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [JFrog Artifactory support team](https://support.jfrog.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign-on URL for your JFrog Platform. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. JFrog Artifactory application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -90,11 +104,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| ---- | ---------------- |
 	| email | user.mail |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
-	![Screenshot shows the Certificate download link.](common/certificateraw.png "Certificate")
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. On the **Set up JFrog Artifactory** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up JFrog Artifactory** section, copy the **Login URL**, **Logout URL**, and **Microsoft Entra Identifier** values.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
@@ -102,11 +116,26 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 ## Configure JFrog Artifactory SSO
 
-To configure single sign-on on **JFrog Artifactory** side, you need to send the downloaded **Certificate (Raw)** and appropriate copied URLs from Microsoft Entra admin center to [JFrog Artifactory support team](https://support.jfrog.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on the JFrog Platform, a JFrog Platform administrator enters the Microsoft Entra values in the JFrog UI. You don't need to contact JFrog Support.
+
+1. In the Microsoft Entra admin center, download **Certificate (Base64)** and copy the **Login URL**, **Logout URL**, and **Microsoft Entra Identifier** values, as described in the previous section.
+1. In the JFrog Platform, go to **Administration** > **Authentication** > **SAML SSO** and select **Add Settings**.
+1. Map the Microsoft Entra values to the JFrog Platform fields:
+
+    | JFrog Platform field | Value from Microsoft Entra |
+    | -------------------- | -------------------------- |
+    | **SAML Login URL** | **Login URL** |
+    | **SAML Logout URL** | **Logout URL** |
+    | **Identity Provider Entity ID (Issuer)** | **Microsoft Entra Identifier** |
+    | **SAML Certificate** | **Certificate (Base64)** |
+
+1. Enable **SAML Integration** and save.
+
+To create users on first sign-in, enable **Auto Create Artifactory Users** on the same screen.
 
 ### Create JFrog Artifactory test user
 
-In this section, a user called Britta Simon is created in JFrog Artifactory. JFrog Artifactory supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in JFrog Artifactory, a new one is created after authentication.
+JFrog Artifactory supports just-in-time user provisioning through the **Auto Create Artifactory Users** setting on the **SAML SSO** screen. When this setting is enabled, a user who doesn't already exist in JFrog Artifactory, such as B.Simon, is created after the first successful authentication. There's no separate step to create the test user.
 
 ## Test SSO 
 
