@@ -209,7 +209,7 @@ When configured, BitLocker keys for Windows 10 or newer devices are stored on th
 
 When you delete a Microsoft Entra device that was associated with a Windows Autopilot object the following three scenarios can occur if the device will be repurposed in future:
 
-- With Windows Autopilot user-driven deployments without using pre-provisioning, a new Microsoft Entra device is created, but isn’t being tagged with the ZTDID.
+- With Windows Autopilot user-driven deployments without using pre-provisioning, a new Microsoft Entra device is created but isn’t tagged with the ZTDID.
 - With Windows Autopilot self-deploying mode deployments, they'll fail because an associate Microsoft Entra device can’t be found. (This failure is a security mechanism to make sure that no "impostor" devices try to join Microsoft Entra ID with no credentials.) The failure indicates a ZTDID mismatch.
 - With Windows Autopilot pre-provisioning deployments, they fail because an associated Microsoft Entra device can’t be found. (Behind the scenes, pre-provisioning deployments use the same self-deploying mode process, so they enforce the same security mechanisms.)
 
