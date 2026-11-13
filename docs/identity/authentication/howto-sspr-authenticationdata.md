@@ -16,7 +16,7 @@ To use Microsoft Entra self-service password reset (SSPR), authentication inform
 Some organizations prefer to bootstrap this process through synchronization of authentication data that already exists in Active Directory Domain Services. This synchronized data is made available to Microsoft Entra ID and SSPR without requiring user interaction. When users need to change or reset their password, they can do so even if they haven't previously registered their contact information.
 
 > [!IMPORTANT]
-> Starting **February 2027**, SSPR will only accept explicitly registered authentication methods. Directory-sourced properties — such as `mobilePhone`, `businessPhone`, and `otherMails` — that were never registered will no longer work for SSPR verification.
+> Starting **February 2027**, SSPR will only accept explicitly registered authentication methods. Directory-sourced properties — such as `mobilePhone`, `businessPhones`, and `otherMails` — that were never registered will no longer work for SSPR verification.
 
 You can prepopulate authentication contact information if you meet the following requirements:
 
