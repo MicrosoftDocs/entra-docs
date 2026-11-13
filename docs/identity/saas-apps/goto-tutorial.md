@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Select **Set additional URLs** and perform the following steps if you wish to configure the application in **SP** initiated mode:
 
 	a. In the **Sign-on URL** text box, type the URL:
-    `https://authentication.gotoinc.com/login?service=https%3A%2F%2Fmyaccount.gotoinc.com`
+    `https://identity.goto.com/login?service=https%3A%2F%2Fmyaccount.goto.com`
 
 1. Your GoTo application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **Unique User Identifier** is mapped with **user.userprincipalname**. GoTo application expects **Unique User Identifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
