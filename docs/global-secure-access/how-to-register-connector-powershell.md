@@ -163,13 +163,13 @@ Register the connector using a token created offline.
 
    } 
    ```
-1. Older version of the registration script `RegisterConnector.ps1` expect the token as `SecureString`. If you are using an older connector version create a `SecureString` using the token:
+1. Older versions of the registration script `RegisterConnector.ps1` expect the token as `SecureString`. If you are using an older connector version create a `SecureString` using the token:
 
    ```powershell
    $Token = $Token | ConvertTo-SecureString -AsPlainText -Force
    ```
 
-   If you are using a up-to-date version of the connector skip this step.
+   If you are using an up-to-date version of the connector, skip this step.
    
 1. Run the following Windows PowerShell command, replacing `<tenant GUID>` with your directory ID. The `RegisterConnector.ps1` script is located in the connector installation folder (by default, `C:\Program Files\Microsoft Entra private network connector\`). If you're running the command from a different directory, provide the full path to the script.
 
