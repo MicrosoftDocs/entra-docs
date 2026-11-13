@@ -3,7 +3,7 @@ title: Manage agent identities in your organization
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to manage agent identities across your organization. View, disable, govern, and monitor agents using the Microsoft Entra admin center and Conditional Access.
 ms.topic: how-to
-ms.date: 05/01/2026
+ms.date: 11/10/2026
 ms.custom: msecd-doc-authoring-108
 
 #customer intent: As an IT administrator, I want a unified guide for managing agent identities in my organization so that I can efficiently view, govern, monitor, and secure agents across the full management lifecycle.
@@ -156,7 +156,7 @@ For detailed information on risk types, detection mechanisms, and response actio
 
 Each agent identity should have an accountable human sponsor responsible for lifecycle and access decisions. Key governance behaviors include:
 
-- **Automatic sponsor transfer**: If a sponsor leaves the organization, Microsoft Entra ID automatically reassigns sponsorship to the sponsor's manager.
+- **Sponsor transfer**: When a sponsor moves or leaves the organization, a mover or leaver workflow with the **Transfer agent identity sponsorships to manager** task reassigns their sponsorships to their manager. Without such a workflow, sponsorship isn't transferred, and deleting the sponsor's account removes them as a sponsor. Restoring the account makes them a sponsor again.
 - **Expiration notifications**: Sponsors receive notifications when access package assignments approach expiration. Sponsors can request an extension (which triggers a new approval cycle) or let assignments expire.
 - **Access request pathways**: Access packages can be requested through three pathways: the agent's own programmatic request, a sponsor on behalf of the agent, or an admin direct assignment.
 
@@ -164,14 +164,15 @@ Access packages can grant Security Group memberships, Application OAuth API perm
 
 For the full governance overview including access package configuration and sponsor policies, see [Governing Agent Identities](/entra/id-governance/agent-id-governance-overview).
 
-### Automate sponsor notifications with Lifecycle Workflows
+### Automate sponsor changes with Lifecycle Workflows
 
-Lifecycle Workflows provides two automated tasks for agent identity sponsorship:
+Lifecycle Workflows provides three automated tasks for agent identity sponsorship:
 
 - Send email to manager about sponsorship changes
 - Send email to cosponsors about sponsor changes
+- Transfer agent identity sponsorships to manager
 
-Both tasks are **mover and leaver** category tasks: they trigger only under mover or leaver workflow templates, not joiner templates. This ensures continuity of sponsorship when an agent's sponsor changes roles or leaves the organization.
+All three tasks are **mover and leaver** category tasks: they trigger only under mover or leaver workflow templates, not joiner templates. This ensures continuity of sponsorship when an agent's sponsor changes roles or leaves the organization.
 
 For step-by-step workflow configuration, see [Agent identity sponsor tasks in Lifecycle Workflows](/entra/id-governance/agent-sponsor-tasks).
 
