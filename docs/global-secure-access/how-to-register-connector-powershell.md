@@ -163,7 +163,7 @@ Register the connector using a token created offline.
 
    } 
    ```
-1. Older versions of the registration script `RegisterConnector.ps1` expect the token as `SecureString`. If you are using an older connector version create a `SecureString` using the token:
+ 1. Older versions of the registration script `RegisterConnector.ps1` expect the token as a `SecureString`. If you're using an older connector version, create a `SecureString` from the token:
 
    ```powershell
    $Token = $Token | ConvertTo-SecureString -AsPlainText -Force
