@@ -18,15 +18,15 @@ An access package manager can configure policies to require approval for users t
 
 The first step is to sign in to the My Access portal where you can request access to an access package.
 
-**Prerequisite role:** Requestor
+**Prerequisite role:** No role required, but the user must be in scope of the access package. 
 
-1. Look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID. For US Government, the domain might be `https://myaccess.microsoft.us` instead.
+1. If you're going to be working with another organization, look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID. For US Government, the domain might be `https://myaccess.microsoft.us` instead. Open the link.
  
     `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
     > [!NOTE]
     > When signing into My Access via your directory hint link, you're required to reauthenticate with your sign-in credentials.
 
-1. Open the link.
+1. If you know the resource in your organization that you need access to, then you can launch My Access at `https://myaccess.microsoft.com` or, for US Government, `https://myaccess.microsoft.us`, so you can search for and request the acecss package with that resource.
 
 1. Sign in to the My Access portal.
 
@@ -34,15 +34,15 @@ The first step is to sign in to the My Access portal where you can request acces
 
 ## Request an access package
 
-Once you find the access package in the My Access portal, you can submit a request for either yourself, or a direct employee.
+Once you find the access package in the My Access portal, you can submit a request for either yourself, a direct employee, or an agent.
 
-**Prerequisite role:** Requestor
+**Prerequisite role:** No role required, but the user must be in scope of the access package.
 
-1. Find the access package in the list. If necessary, you can search by typing a search string. You can search by name, description, or resources.
+1. Find the access package in the list. If you didn't receive a link for a specific access package, you can search by typing a search string. You can search by name, description, or resources.
  
 1. To request access, you can either select the row or select **Request**.
 
-1. On the Request details pane, select whether or not you're requesting the access package for yourself, or a direct employee.
+1. On the Request details pane, select whether or not you're requesting the access package for yourself, or a direct employee, or an agent.
     :::image type="content" source="media/entitlement-management-request-behalf/manager-request-package.png" alt-text="Screenshot of manager requesting package.":::
 1. Review the details of the access package, then select **Continue**.
 
@@ -52,9 +52,9 @@ Once you find the access package in the My Access portal, you can submit a reque
 
 1. Set the **Request for specific period?** toggle to request access to the access package for a set duration of time:
 
-    1. If you don't need access for a specific period, set the **Request for specific period?** toggle to **No**.
+    1. If the person or agent receiving access will need it indefinitely, set the **Request for specific period?** toggle to **No**.
 
-    1. If you need access for a certain time period, set the **Request for specific period?** toggle to **Yes**. Then, specify the start date and end date for access.
+    1. If the person or agent receiving access will only need access for a certain time period, set the **Request for specific period?** toggle to **Yes**. Then, specify the start date and end date for access.
 
         ![My Access portal - Request access](./media/entitlement-management-shared/my-access-request-access.png)
 
@@ -89,7 +89,7 @@ For more information on this process, see: [Request access packages on-behalf-of
 
 When you request access to an access package, your request might be denied or your request might expire if approvers don't respond in time. If you need access, you can try again and resubmit your request. The following procedure explains how to resubmit an access request:
 
-**Prerequisite role:** Requestor
+**Prerequisite role:** None, other than being an authorized user in the tenant
 
 1. Sign in to the **My Access** portal.
 
