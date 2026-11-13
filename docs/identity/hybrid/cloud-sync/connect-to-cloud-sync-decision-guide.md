@@ -70,6 +70,7 @@ The following table provides a detailed comparison of technical capabilities bet
 | **Large Group Support** | 250K members | 50K members | Connect supports larger groups; Cloud Sync limited to 50,000 members |
 | **Password Hash Synchronization** | ✓ | ✓ | Full parity for password synchronization capabilities |
 | **Password Writeback** | ✓ | ✓ | SSPR writeback supported in both platforms |
+| **Microsoft Entra Domain Services** | ✓ | ✗ | Domain Services needs legacy NTLM and Kerberos password hashes for users synchronized from Active Directory. [Enable password hash sync for Microsoft Entra Domain Services](../../domain-services/tutorial-configure-password-hash-sync.md) documents this only for Connect Sync. |
 | **Pass-Through Authentication Config** | ✓ | ✗ | PTA configuration managed separately from sync in Cloud Sync; PTA and Seamless SSO remain functional after migration |
 | **ADFS Integration Setup** | ✓ | ✗ | Federation configuration requires separate tools in Cloud Sync |
 | **Exchange Hybrid Attributes** | ✓ | ✓ | Full support for Exchange hybrid scenarios |
