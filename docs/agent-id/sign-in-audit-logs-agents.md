@@ -101,9 +101,9 @@ To get started, follow these instructions to work with recommendations using Mic
 
 ### Retrieve agent identity sign-in events
 
-To retrieve only sign-in events where Microsoft Entra Agent ID was involved, you need to find events initiated by a service principal where the agent type is `AgentIdentity`. Use the following Microsoft Graph request:
+To retrieve only sign-in events where Microsoft Entra Agent ID was involved, you need to find events initiated by a service principal where the agent type is `agenticAppInstance` (shown as **Agent Identity** in the Microsoft Entra admin center). Use the following Microsoft Graph request:
 
 ```http
-GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=signInEventTypes/any(t: t eq 'servicePrincipal') and agent/agentType eq 'AgentIdentity'
+GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=signInEventTypes/any(t: t eq 'servicePrincipal') and agent/agentType eq 'agenticAppInstance'
 ```
 ---
