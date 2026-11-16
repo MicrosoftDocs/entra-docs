@@ -16,6 +16,15 @@ From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micros
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
+## 1.1.2509.0
+
+**Release date:** November 17, 2026
+
+### Changes
+
+- Fixed an issue that could prevent autoupgrade from functioning.
+- Security hardening improvements.
+
 ## 1.1.2507.0
 
 **Release date:** October 8, 2026
