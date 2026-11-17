@@ -144,6 +144,8 @@ items:
   items:
   - name: Global Secure Access clients
     href: concept-clients.md
+  - name: Secure enterprise browser (preview)
+    href: concept-secure-enterprise-browser.md
   - name: Bring your own device (BYOD)
     href: concept-bring-your-own-device.md
   - name: Understand remote network connectivity
@@ -190,6 +192,23 @@ items:
 - name: How-to guides
   expanded: true
   items:
+  - name: Browser-based access
+    expanded: false
+    items:
+    - name: Configure Global Secure Access secure enterprise browser settings (preview)
+      href: how-to-configure-global-secure-access-browser-settings.md
+    - name: Configure Global Secure Access policy in Microsoft Edge secure enterprise browser settings (preview)
+      href: how-to-configure-global-secure-access-edge-policy.md
+    - name: Configure Explicit Forward Proxy
+      href: how-to-configure-explicit-forward-proxy.md
+    - name: Configure a Conditional Access policy for Explicit Forward Proxy
+      href: how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md
+    - name: Configure HTTP header session management for Explicit Forward Proxy
+      href: how-to-configure-explicit-forward-proxy-headers.md
+    - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune mobile application management
+      href: how-to-configure-explicit-forward-proxy-intune-policy.md
+    - name: Configure custom PAC file hosting for Explicit Forward Proxy
+      href: how-to-custom-proxy-file-hosting.md
   - name: Install the Global Secure Access client
     expanded: false
     items:
@@ -365,19 +384,6 @@ items:
         href: how-to-configure-mcp-firewall.md
       - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
         href: how-to-secure-web-ai-gateway-agents.md
-  - name: Explicit Forward Proxy
-    expanded: false
-    items:
-      - name: Configure Explicit Forward Proxy
-        href: how-to-configure-explicit-forward-proxy.md
-      - name: Configure a Conditional Access policy for Explicit Forward Proxy
-        href: how-to-configure-conditional-access-policy-for-explicit-forward-proxy.md
-      - name: Configure HTTP header session management
-        href: how-to-configure-explicit-forward-proxy-headers.md
-      - name: Configure Explicit Forward Proxy for Microsoft Edge with Intune mobile application management
-        href: how-to-configure-explicit-forward-proxy-intune-policy.md
-      - name: Configure custom proxy automatic configuration file hosting
-        href: how-to-custom-proxy-file-hosting.md    
   - name: Logs and monitoring
     expanded: false
     items:
@@ -423,6 +429,8 @@ items:
   - name: Troubleshoot
     expanded: false
     items:
+      - name: Troubleshoot secure enterprise browser
+        href: troubleshoot-secure-enterprise-browser.md
       - name: Troubleshoot the Global Secure Access client
         expanded: false
         items:
