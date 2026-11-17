@@ -3,7 +3,7 @@ title: Disable agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to disable agent identities in your Microsoft Entra ID tenant using Conditional Access policies and creation restrictions.
 ms.topic: how-to
-ms.date: 11/05/2026
+ms.date: 11/17/2026
 ms.reviewer: dastrock
 ai-usage: ai-assisted
 #Customer intent: As a security administrator managing agent identities in my tenant, I want to disable agent identities to prevent their use in my organization so that I can maintain strict control over identity types and reduce potential security risks from AI agents.
@@ -43,7 +43,7 @@ For more information, see [agent sign-in logs](sign-in-audit-logs-agents.md)
 
 ## Approaches to disabling agent identities
 
-After reviewing agent activity, choose the approach that matches your scenario. Disabling agents in the Microsoft Entra admin center is object-scoped — it targets a specific blueprint or agent identity without affecting others. Conditional Access policies are tenant-wide enforcement that block token issuance for broad categories of identities, without modifying any agent identities or blueprints. The two approaches can be combined. Applying Conditional Access policies in your tenant requires the Microsoft Entra ID P1 license.
+After reviewing agent activity, choose the approach that matches your scenario. Disabling agents in the Microsoft Entra admin center is object-scoped — it targets a specific blueprint or agent identity without affecting others. Conditional Access policies are tenant-wide enforcement that block token issuance for broad categories of identities, without modifying any agent identities or blueprints. The two approaches can be combined. Conditional Access for agents requires Microsoft 365 E7, or a Microsoft Agent 365 license paired with at least Microsoft Entra ID P1 or Microsoft 365 E3. For more information, see [Conditional Access for agents](~/identity/conditional-access/agent-id.md#requirements-and-licensing).
 
 Conditional Access policies can block authentication and token issuance of agent identities. Applying the policies prevents existing and new agent identities from authenticating, but it doesn't prevent the creation of agent identities in your tenant. 
 
@@ -57,9 +57,9 @@ We recommend running these policies in [report-only mode](/entra/identity/condit
 
 - You want to prevent all agent identities across your tenant from authenticating, including those you didn't create, without modifying individual objects.
     - [Policy 1: Block agent identity authentication](#policy-1-block-agent-identity-authentication).
-- You want to prevent agents that act on behalf of users from receiving tokens (for example, agents performing delegated actions), without disabling the agent identity objects themselves
+- You want to prevent agents that act as users through their own agent's user account from receiving tokens (for example, agents that have their own mailbox), without disabling the agent identity objects themselves.
     - [Policy 2: Block agent's user account authentication](#policy-2-block-agents-user-account-authentication).
-- You want to prevent human users from signing into agents or triggering agent actions on their behalf, while leaving agent-to-agent and autonomous flows unaffected
+- You want to prevent human users from signing into agents or triggering agent actions on their behalf, while leaving agent-to-agent and autonomous flows unaffected.
     - [Policy 3: Block users signing into agents](#policy-3-block-users-signing-into-agents).
 - You need to enforce a temporary, reversible, tenant-wide hold on all agent authentication for compliance or incident response purposes, apply all three policies in report-only mode first, then enforce them.
 

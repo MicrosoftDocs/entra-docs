@@ -3,7 +3,7 @@ title: Manage agent identities in your organization
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to manage agent identities across your organization. View, disable, govern, and monitor agents using the Microsoft Entra admin center and Conditional Access.
 ms.topic: how-to
-ms.date: 11/06/2026
+ms.date: 11/17/2026
 ms.custom: msecd-doc-authoring-108
 ai-usage: ai-assisted
 
@@ -26,7 +26,7 @@ Different management tasks require different roles and licenses. The following t
 | View agent identities | Microsoft Entra user account | No admin role needed for viewing. |
 | Manage agent identities | Agent ID Administrator or Cloud Application Administrator | Agent identity owners can manage their own agents without these roles. |
 | Create agent blueprints | Agent ID Developer | User is added as owner of the blueprint and its service principal. |
-| Configure Conditional Access policies | Conditional Access Administrator | Requires Microsoft Entra ID P1 license. |
+| Configure Conditional Access policies | Conditional Access Administrator | Requires Microsoft 365 E7, or Microsoft Agent 365 with at least Microsoft Entra ID P1 or Microsoft 365 E3. See [Conditional Access for agents](~/identity/conditional-access/agent-id.md#requirements-and-licensing). |
 | View ID Protection risk reports | Security Administrator, Security Operator, or Security Reader | Requires Microsoft Entra ID P2 license during preview. |
 | Configure Lifecycle Workflows | Lifecycle Workflows Administrator | &nbsp; |
 
