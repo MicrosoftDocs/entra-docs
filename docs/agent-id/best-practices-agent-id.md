@@ -2,7 +2,7 @@
 title: Best practices for Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
 description: Learn operational best practices for designing, securing, and governing AI agent identities with Microsoft Entra Agent ID, including blueprint design, credential management, access controls, and monitoring strategies.
-ms.date: 03/27/2026
+ms.date: 11/06/2026
 ms.topic: best-practice
 ai-usage: ai-assisted
 ms.reviewer: kylemar
@@ -14,65 +14,75 @@ ms.reviewer: kylemar
 
 This article provides operational best practices for designing, securing, and governing AI agent identities with Microsoft Entra Agent ID. These recommendations help you make informed decisions when planning agent deployments, managing credentials, enforcing access policies, and monitoring agent activity.
 
-For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md) and [Key concepts](identity-platform/key-concepts.md).
+For foundational concepts, see [What is Microsoft Entra Agent ID?](what-is-microsoft-entra-agent-id.md) and [Key concepts](key-concepts.md). To build an agent, start with [Choose an integration path](choose-agent-integration-path.md); you don't need to complete architecture planning before following a tutorial.
 
 ## Design agent identity blueprints
 
-[Agent identity blueprints](identity-platform/agent-blueprint.md) are templates that define the security posture for all agent instances of a common kind. Thoughtful blueprint design is the foundation of well-governed agent deployments.
+[Agent identity blueprints](agent-blueprint.md) define authentication settings and the security posture for one or more agents. Thoughtful blueprint design is the foundation of well-governed agent deployments.
 
 - **Plan blueprints before deploying agents.** Define required settings, permissions, and metadata in the blueprint up front rather than creating ad-hoc service principals. This ensures a consistent, governed rollout across all instances. For guidance on structuring your identity model, see [Plan your agent identity architecture](how-to-plan-agent-identity-architecture.md).
 
-- **Provision a unique identity per agent instance.** Avoid sharing identities between different agents. Distinct identities improve traceability and let you disable or update one agent without impacting others. The blueprint model makes scaling with unique identities manageable because credentials live on the blueprint, not each instance. For instructions, see [Create and delete agent identities](identity-platform/create-delete-agent-identities.md).
+- **Give separately managed agents distinct identities.** Separate identities when agents need independent access, accountability, or lifecycle controls. Multiple replicas, processes, or user sessions of the same logical agent don't by themselves require new identities. For fleet provisioning, see [Create and delete agent identities](create-delete-agent-identities.md).
 
-- **Assign a sponsor and an owner at creation time.** Every blueprint and agent identity must have a [sponsor](identity-platform/agent-owners-sponsors-managers.md); the person or group accountable for the agent's purpose. Assign an owner (technical admin) as well. Periodically verify that these assignments are current, especially when personnel changes occur.
+- **Assign a sponsor and an owner at creation time.** Every blueprint and agent identity must have a [sponsor](agent-owners-sponsors-managers.md), the person or supported group accountable for the agent's purpose. Assign an owner (technical admin) as well. Periodically verify that these assignments are current, especially when personnel changes occur.
 
-- **Provide descriptive metadata.** Fill in the description, tags, and verified publisher fields on each blueprint to clearly document the agent's purpose, scope, and owning team. Good metadata improves discovery and helps colleagues understand the agent's role at a glance. For blueprint setup details, see [Create an agent identity blueprint](identity-platform/create-blueprint.md).
+- **Provide descriptive metadata.** Fill in the description, tags, and verified publisher fields on each blueprint to clearly document the agent's purpose, scope, and owning team. Good metadata improves discovery and helps colleagues understand the agent's role at a glance. For blueprint setup details, see [Create an agent identity blueprint](create-blueprint.md).
 
-- **Apply policies at the blueprint level.** Associate Conditional Access rules, API permissions, and governance controls with the blueprint so that all current and future agent instances inherit them automatically. Disabling a blueprint instantly blocks all its agent identities. This option provides a rapid kill-switch when needed. For details, see [Conditional Access for agents](/entra/identity/conditional-access/agent-id).
+- **Separate policy targeting from permission grants.** Use blueprint-level policy controls where supported. API permissions aren't automatically inherited just because a blueprint declares them: fleet inheritance requires both consent and [configuration of inheritable permissions](concept-inheritable-permissions.md). A cloud or local single-instance agent receives grants directly, without a blueprint principal. For policy details, see [Conditional Access for agents](~/identity/conditional-access/agent-id.md).
 
 - **Use the Agent ID framework for all agents.** Don't create AI agents as plain app registrations or service principals outside the Agent ID framework. Always use the supported [creation channels](agent-id-creation-channels.md) so agents are tracked as agent identities with built-in sponsor accountability and lifecycle controls.
 
-- **Create agent's user accounts only when necessary.** [Agent's user accounts](identity-platform/agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent's user accounts because they add complexity with licenses, group memberships, and user-level policies.
+- **Create agent's user accounts only when necessary.** [Agent's user accounts](agent-users.md) should only be created for scenarios that truly require a user object, such as an agent needing a mailbox or Teams presence. If your agent can operate with app credentials alone, avoid agent's user accounts because they add complexity with licenses, group memberships, and user-level policies.
 
 ## Guardrails for AI coding assistants
 
-AI coding assistants often default to creating a standard app registration when asked to build an agent, because that's the traditional workload identity pattern. Add the following to your repository's `.github/copilot-instructions.md` or `AGENTS.md` file so AI coding assistants use agent identities correctly:
+AI coding assistants often default to creating a standard app registration when asked to build an agent, because that's the traditional workload identity pattern. Keep these guardrails visible in your instructions:
+
+- Start with the [scenario tutorial](choose-agent-integration-path.md), rather than assuming every agent needs a fleet.
+- Provision the supported Agent ID object type, not an ordinary app registration labeled as an agent.
+- Keep the management client, upstream client, downstream API, and runtime agent identities separate.
+- Match the SDK to the scenario: standard Microsoft.Identity.Web APIs for a cloud agent, Microsoft.Identity.Web.AgentIdentities with explicit child selection for a fleet, and MSAL without a client credential for a local public client.
+- Distinguish human-user OBO from a dedicated agent-user account.
+- Verify tenant enablement, operator authorization, management consent, and target API grants. Record object IDs separately from client IDs.
+
+Copy the following sample into your repository's `.github/copilot-instructions.md` or `AGENTS.md` file:
 
 ```markdown
 ## Microsoft Entra Agent ID
-- To give an AI agent its own identity in Microsoft Entra, create an agent identity blueprint, then create agent identities from it.
-- Don't create or reuse a standard app registration or service principal to represent an agent. Never use `az ad app create`, `New-MgApplication`, `New-AzADApplication`, or `POST /applications` to create an agent identity.
-- In .NET, use the Microsoft.Identity.Web.AgentIdentities package: call builder.Services.AddAgentIdentities(), then acquire tokens with WithAgentIdentity(agentIdentity) (app-only) or WithAgentUserIdentity(agentIdentity, user) (on behalf of a user).
-- Requires the Agent ID Developer or Agent ID Administrator role and the AgentIdentityBlueprint.Create permission.
-- Reference: /entra/agent-id/how-to-plan-agent-identity-architecture
+- Start with the scenario tutorial at /entra/agent-id/choose-agent-integration-path. Don't impose a fleet topology on a cloud or local agent.
+- Use the tutorial's supported Agent ID provisioning request, including the derived blueprint type where specified. An ordinary app registration doesn't represent an Agent ID.
+- Keep management, upstream client, downstream API, and agent identities distinct. Ordinary app registrations can still be required for those non-agent roles.
+- For a cloud ASP.NET Core agent, follow Microsoft.Identity.Web's standard client APIs. For a fleet, follow Microsoft.Identity.Web.AgentIdentities and select the child agent explicitly. For a local public client, follow MSAL and don't add a client credential.
+- A human user's OBO request and a dedicated agent-user account are different scenarios; don't substitute WithAgentUserIdentity for human-user OBO.
+- Verify tenant availability, operator authorization, management-client consent, and target API grants before claiming setup succeeded. Record object IDs separately from client IDs.
 ```
 
 ## Manage credentials securely
 
-Credential management is critical to preventing unauthorized access through agent identities. For detailed steps, see [Create an agent identity blueprint](identity-platform/create-blueprint.md).
+Credential management is critical to preventing unauthorized access through agent identities. For detailed steps, see [Create an agent identity blueprint](create-blueprint.md).
 
 - **Use managed identities or certificates in production.** For production agents, prefer [federated identity credentials](/entra/identity/managed-identities-azure-resources/overview) (managed identities) or certificates over client secrets. Managed identities eliminate stored secrets entirely. Use client secrets only for initial development or testing, and rotate them out before going live.
 
-- **Isolate credentials per blueprint.** Don't reuse the same credential across unrelated blueprints. If you have separate environments (dev, test, prod), use separate blueprints or environment-specific federated credentials so that a compromise in one environment doesn't affect others. For setup instructions, see [Create an agent identity blueprint](identity-platform/create-blueprint.md).
+- **Isolate credentials per blueprint.** Don't reuse the same credential across unrelated blueprints. If you have separate environments (dev, test, prod), use separate blueprints or environment-specific federated credentials so that a compromise in one environment doesn't affect others. For setup instructions, see [Create an agent identity blueprint](create-blueprint.md).
 
 - **Store credentials securely.** Store certificate private keys in [Azure Key Vault](/azure/key-vault/general/overview) or an HSM. If using federated credentials tied to a managed identity, limit the managed identity's scope. Establish a rotation schedule to rotate certificates at least annually even though blueprints allow long-lived credentials.
 
-- **Align OAuth flows with agent scenarios.** Use the appropriate [OAuth flow](identity-platform/agent-oauth-protocols.md) for your agent's operating model:
+- **Align OAuth flows with agent scenarios.** Use the appropriate [OAuth flow](agent-oauth-protocols.md) for your agent's operating model:
   - For autonomous agents with no user context, use the client credentials flow with only the required app permissions.
-  - For interactive agents acting on behalf of a user, use the on-behalf-of (OBO) flow so user access policies and consent apply.
+  - For a cloud agent API receiving a signed-in user's request, use the on-behalf-of (OBO) flow. Local public clients use authorization code flow with PKCE.
   - Avoid granting app permissions when delegated permissions would suffice.
 
 - **Monitor token usage after deployment.** Review [sign-in logs](sign-in-audit-logs-agents.md) to confirm agents are using the intended authentication method and credential type. Periodically audit the API permissions consented on each blueprint to prevent privilege creep.
 
 ## Enforce access controls
 
-Apply the same Zero Trust principles to agent identities as you do to user identities. For detailed configuration, see [Conditional Access for agents](/entra/identity/conditional-access/agent-id) and [Identity Protection for agents](/entra/id-protection/concept-risky-agents).
+Apply the same Zero Trust principles to agent identities as you do to user identities. For detailed configuration, see [Conditional Access for agents](~/identity/conditional-access/agent-id.md) and [Identity Protection for agents](/entra/id-protection/concept-risky-agents).
 
 - **Segment agents with custom security attributes.** Define organization-wide attributes such as `Environment`, `Department`, or `DataSensitivity` and assign them to agent identities. Use these attributes in Conditional Access policy conditions to apply fine-grained controls at scale, for example, blocking non-production agents from accessing production resources. For details, see [Assign custom security attributes](/entra/identity/users/users-custom-security-attributes).
 
 - **Block high-risk agents automatically.** Deploy a Conditional Access policy that blocks agent identities flagged with high risk levels by [Identity Protection](/entra/id-protection/concept-risky-agents). This is analogous to blocking risky users and ensures compromised agents are cut off immediately.
 
-- **Create agent-specific Conditional Access policies.** Don't rely on user-targeted policies for agents. Agents can't satisfy interactive controls like MFA, so create separate policies that use identity filters, risk signals, and named locations as control points. Use report-only mode to test policies before enforcing them. For step-by-step guidance, see [Conditional Access for agents](/entra/identity/conditional-access/agent-id).
+- **Create agent-specific Conditional Access policies.** Don't rely on user-targeted policies for agents. Agents can't satisfy interactive controls like MFA, so create separate policies that use identity filters, risk signals, and named locations as control points. Use report-only mode to test policies before enforcing them. For step-by-step guidance, see [Conditional Access for agents](~/identity/conditional-access/agent-id.md).
 
 - **Review existing policies for agent impact.** Audit broad policies (like "All users must use MFA") to ensure they don't unintentionally block agent flows. Refactor to exclude agent identities and create dedicated agent policies with appropriate controls.
 
@@ -88,7 +98,7 @@ Effective governance prevents agent sprawl and ensures agents remain accountable
 
 - **Include agents in access reviews.** Configure periodic [access reviews](/entra/id-governance/access-reviews-overview) that include agent identities. Have sponsors attest every 6-12 months that each agent is still needed and properly configured. If a sponsor doesn't confirm, evaluate the agent for decommissioning.
 
-- **Monitor for orphaned agents.** Develop a quarterly review process to identify agents with missing sponsors, outdated metadata, or no recent activity. Reassign sponsorship or decommission unused agents. For a centralized view, see [View and filter agent identities](identity-platform/agent-lists.md).
+- **Monitor for orphaned agents.** Develop a quarterly review process to identify agents with missing sponsors, outdated metadata, or no recent activity. Reassign sponsorship or decommission unused agents. For a centralized view, see [View and filter agent identities](agent-lists.md).
 
 - **Use access packages for standardized access.** For agents with common access patterns (for example, a fleet of customer support agents), use [access packages](agent-access-packages.md) to grant time-bound, auditable access through approval workflows rather than direct permission assignments.
 
@@ -114,13 +124,13 @@ Continuous monitoring ensures agents operate within expected boundaries. For log
 
 Smooth agent deployments require alignment between developers building agents and IT administrators governing them.
 
-- **Use supported creation channels.** Build agents through [Copilot Studio, Graph APIs, or the Agent 365 CLI](agent-id-creation-channels.md) rather than manual Graph calls that might miss required properties. These tools handle blueprint creation, credential binding, and instance setup automatically.
+- **Use the procedure for your creation channel.** A managed platform can provision identities for you. For direct Microsoft Graph provisioning, preserve the tutorial's required object types, properties, and headers, and verify each returned object. Don't assume every [creation channel](agent-id-creation-channels.md) automates credentials, consent, and runtime setup.
 
-- **Establish a production handshake process.** When a new agent moves to production, have an identity admin verify its Microsoft Entra Agent ID settings: confirm the blueprint and sponsor are correct, required permissions are consented, Conditional Access policies apply, and the agent is in appropriate groups or administrative units.
+- **Establish a production handshake process.** When a new agent moves to production, have an identity admin verify its Microsoft Entra Agent ID settings: confirm the blueprint and sponsor are correct, required permissions are consented, and Conditional Access policies apply. Verify any group assignments against the [agent identity restrictions](faq.yml); agent identities can't be added to administrative units.
 
 - **Test in nonproduction environments.** Use a separate development tenant or sandbox to validate agent authentication flows, Conditional Access policies, and permission configurations before deploying to production.
 
-- **Treat agent configurations as code.** Check blueprint definitions, permission configurations, and setup scripts into source control. This prevents configuration drift, enables peer review, and provides institutional memory for how agents are integrated with Microsoft Entra ID.
+- **Treat nonsecret agent configurations as code.** Check blueprint definitions, permission configurations, and setup scripts into source control, but exclude tokens, secrets, private keys, and certificate passwords. This supports peer review and helps prevent configuration drift.
 
 ## Related content
 

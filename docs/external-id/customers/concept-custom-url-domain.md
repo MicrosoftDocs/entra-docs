@@ -1,17 +1,20 @@
 ---
-title: Overview of custom URL domains for External ID
-description: Learn about setting up custom URL domains to personalize the authentication sign-in endpoints for the external customers and consumers of your app.
+title: Custom URL Domains
+description: Learn when a custom URL domain is required and how it routes authentication requests for your Microsoft Entra External ID applications.
 ms.topic: concept-article
-ms.date: 09/16/2025
-ms.custom: it-pro, sfi-image-nochange
+ms.date: 11/11/2026
+ms.custom: it-pro, sfi-image-nochange, msecd-doc-authoring-1030
+ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to learn about personalizing my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 
-# Custom URL domains in external tenants
+# Custom URL domains in Microsoft Entra External ID
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+A custom URL domain lets you use your own authentication endpoint names in Microsoft Entra External ID.
 
-A custom URL domain allows you to brand your application’s sign-in endpoints with your own custom URL domain instead of Microsoft’s default domain name.
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
+
+The current Native Authentication API and Bring Your Own UX (BYO UX) require a tenant-verified custom domain for all service API call URLs. Verify and configure that domain before integrating either approach. Microsoft-hosted authentication can also use a custom URL domain for a consistent sign-in address.
 
 :::image type="content" source="./media/concept-custom-url-domain/custom-domain-user-experience-small.png" alt-text="Screenshot demonstrates an External ID custom URL domain user experience." lightbox="./media/concept-custom-url-domain/custom-domain-user-experience.png":::
 

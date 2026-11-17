@@ -2,20 +2,20 @@
 title: Customize the browser language
 description: Learn about how to customize the browser language for your app's authentication experience to provide a personalized sign-in.
 ms.topic: how-to
-ms.date: 04/24/2026
-ms.custom: it-pro
+ms.date: 11/11/2026
+ms.custom: it-pro, msecd-doc-authoring-1030
 ai-usage: ai-assisted
 
 # Customer intent: As a developer, DevOps engineer, or IT admin, I want to add customized browser languages to my app's authentication experience.
 ---
 # Customize browser language for authentication experience
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
-
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Language customization in Microsoft Entra External ID](../user-flow-customize-language.md).
 
-This article explains how to customize the browser language for your app's authentication experience. By personalizing the sign-in process based on browser language, you can deliver a tailored experience for your users and override default branding settings.
+This article explains how to customize the browser language on Microsoft-hosted authentication pages. These settings override hosted branding text; they don't configure native or self-hosted interface text.
+
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
 
 ## Prerequisites
 

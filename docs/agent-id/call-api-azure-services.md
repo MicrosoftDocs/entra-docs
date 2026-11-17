@@ -1,208 +1,103 @@
 ---
 title: Call Azure services from an agent using .NET Azure SDK
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to call Azure services using .NET Azure SDK from an agent using agent identities.
+description: Call Azure services as an agent by using MicrosoftIdentityTokenCredential and the .NET Azure SDK.
 ms.topic: how-to
-ms.date: 05/01/2026
+ms.date: 11/05/2026
+ai-usage: ai-assisted
 ms.reviewer: jmprieur
-#Customer intent: As a developer building AI agents, I want to call Azure services from my agent using agent identities so that the agent can securely access Azure resources like Storage and Key Vault.
+#Customer intent: As a developer building a cloud agent, I want to call Azure services as the agent so that Azure RBAC controls its unattended access.
 ---
 
 # Call Azure services from your agent using .NET Azure SDK
 
-This article guides you on how to call Azure services from your agent. To authenticate to Azure services such as Azure Storage or Azure Key Vault using agent identities, use the `MicrosoftIdentityTokenCredential` class from *Microsoft.Identity.Web.Azure*. The `MicrosoftIdentityTokenCredential` class implements Azure SDK's `TokenCredential` interface, enabling seamless integration between *Microsoft.Identity.Web* and Azure SDK clients.
+Read blob data with the agent's own identity, without a signed-in user's delegated access. Azure services authorize the Agent ID through Azure role-based access control (Azure RBAC).
 
-[!INCLUDE [Common call API content](./includes/call-api-common-dotnet.md)]
+In this article, you adapt an ASP.NET Core agent's token acquisition to Azure SDK clients. Assign the minimum role at the narrowest resource scope.
 
-## Implementation steps
+## Prerequisites
 
-1. Install the Azure integration package and the *Microsoft.Identity.Web.AgentIdentities* package to add support for agent identities.
+- The [blueprint credential and ASP.NET Core services](call-api-custom.md#configure-the-blueprint-credential), including token acquisition. Reuse the local certificate configuration when running on a workstation. This example doesn't require the custom API's app role or consent grant.
+- An existing storage account and an `agent-data` blob container. Replace `<storage-account>` in the example with the account name.
+- An Azure data-plane role assignment for the **agent identity's object ID** on that container or account, not for the blueprint or its managed identity credential.
 
-    ```bash
-    dotnet add package Microsoft.Identity.Web.Azure
-    dotnet add package Microsoft.Identity.Web.AgentIdentities
-    ```
+Install the integration package and Blob Storage SDK from the agent project's directory:
 
-1. Install the Azure SDK package you want to use, for example, Azure Storage:
+```dotnetcli
+dotnet add package Microsoft.Identity.Web.Azure
+dotnet add package Azure.Storage.Blobs
+```
 
-    ```bash
-    dotnet add package Azure.Storage.Blobs
-    ```
+## Configure the token credential
 
-1. Configure your services to add Azure token credential support:
+Register `MicrosoftIdentityTokenCredential` with dependency injection:
 
-    ```csharp
-    using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-    using Microsoft.Identity.Web;
+Add the following registration before `builder.Build()` in `Program.cs`, and merge the `using` directive with those at the top of the file.
 
-    var builder = WebApplication.CreateBuilder(args);
+```csharp
+using Microsoft.Identity.Web;
 
-    // Add authentication
-    builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"))
-        .EnableTokenAcquisitionToCallDownstreamApi()
-        .AddInMemoryTokenCaches();
+builder.Services.AddMicrosoftIdentityAzureTokenCredential();
+```
 
-    // Add Azure token credential support
-    builder.Services.AddMicrosoftIdentityAzureTokenCredential();
+The credential uses the Microsoft.Identity.Web configuration established in the parent journey. Use a managed identity federated credential in hosted environments.
 
-    builder.Services.AddControllersWithViews();
-    var app = builder.Build();
-    app.UseAuthentication();
-    app.UseAuthorization();
-    app.MapControllers();
-    app.Run();
-    ```
+[!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
-1. Configure Azure token credential options in *appsettings.json*
+## Call Azure Blob Storage as the agent
 
-    [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
+Inject `MicrosoftIdentityTokenCredential` and request an app-only token with the shared client ID configured in the parent journey:
 
-    ```json
+The following is a service component, not a complete `Program.cs`. Put the class in `AgentStorageService.cs`, register it with `builder.Services.AddScoped<AgentStorageService>()` before `builder.Build()`, and invoke `ListBlobsAsync()` from an authorized application operation. Preserve the parent journey's `AgentUser` policy on any endpoint that triggers this app-only operation.
+
+```csharp
+using Azure.Storage.Blobs;
+using Microsoft.Identity.Web;
+
+public sealed class AgentStorageService
+{
+    private readonly MicrosoftIdentityTokenCredential _credential;
+
+    public AgentStorageService(MicrosoftIdentityTokenCredential credential)
     {
-      "AzureAd": {
-        "Instance": "https://login.microsoftonline.com/",
-        "TenantId": "<your-tenant-id>",
-        "ClientId": "<agent-blueprint-id>",
-
-       // Other client credentials available. See <https://aka.ms/ms-id-web/client-credentials>
-        "ClientCredentials": [
-          {
-            "SourceType": "ClientSecret",
-            "ClientSecret": "your-client-secret"
-          }
-        ]
-      }
+        _credential = credential;
     }
-    ```
 
-1. Acquire a token credential from the service provider and use it with Azure SDK clients.
+    public async Task<IReadOnlyList<string>> ListBlobsAsync()
+    {
+        _credential.Options.RequestAppToken = true;
 
-    1. For agent identities, you can acquire either an app only token (autonomous agents) or an on-behalf of user token (interactive agents) by using the `WithAgentIdentity` method. For app only tokens, set the `RequestAppToken` property to `true`. For delegated on-behalf of user tokens, don't set the `RequestAppToken` property or explicitly set it to `false`.
+        var serviceClient = new BlobServiceClient(
+            new Uri("https://<storage-account>.blob.core.windows.net"),
+            _credential);
+        var container = serviceClient.GetBlobContainerClient("agent-data");
+        var names = new List<string>();
 
-        ```csharp
-        using Microsoft.Identity.Web;
-
-        public class AgentService
+        await foreach (var blob in container.GetBlobsAsync())
         {
-            private readonly MicrosoftIdentityTokenCredential _credential;
-
-            public AgentService(MicrosoftIdentityTokenCredential credential)
-            {
-                _credential = credential;
-            }
-
-            // Call Azure service with the agent identity for app only scenario
-            public async Task<List<string>> ListBlobsForAgentAppOnlyAsync(string agentIdentity)
-            {
-                // Configure for agent identity
-                _credential.Options.WithAgentIdentity(agentIdentity);
-                _credential.Options.RequestAppToken = true;
-
-                var blobClient = new BlobServiceClient(
-                    new Uri("https://myaccount.blob.core.windows.net"),
-                    _credential);
-
-                var container = blobClient.GetBlobContainerClient("agent-data");
-                var blobs = new List<string>();
-
-                await foreach (var blob in container.GetBlobsAsync())
-                {
-                    blobs.Add(blob.Name);
-                }
-
-                return blobs;
-            }
-
-            // Call Azure service with the agent identity for on-behalf of user scenario
-            public async Task<List<string>> ListBlobsForAgentOnBehalfOfUserAsync(string agentIdentity)
-            {
-                // Configure for agent identity
-                _credential.Options.WithAgentIdentity(agentIdentity);
-                _credential.Options.RequestAppToken = false;
-
-                var blobClient = new BlobServiceClient(
-                    new Uri("https://myaccount.blob.core.windows.net"),
-                    _credential);
-
-                var container = blobClient.GetBlobContainerClient("agent-data");
-                var blobs = new List<string>();
-
-                await foreach (var blob in container.GetBlobsAsync())
-                {
-                    blobs.Add(blob.Name);
-                }
-
-                return blobs;
-            }
+            names.Add(blob.Name);
         }
-        ```
 
+        return names;
+    }
+}
+```
 
-    1. You can also acquire a token for an agent's user account. To do this, you can use either User Principal Name (UPN) or Object Identity (OID) to identify the agent's user account.
+`RequestAppToken = true` selects autonomous, app-only access. For a user-delegated Azure call, use [Call an Azure service as a user](aspnet-core-call-azure-api-as-user.md).
 
-        For object ID:
+The Agent ID needs an appropriate data-plane role, such as **Storage Blob Data Reader**. A management-plane role such as **Reader** doesn't grant access to blob data.
 
-        ```csharp
-        using Microsoft.Identity.Web;
+Use the same credential with other Azure SDK clients, including Azure Key Vault clients. Replace the endpoint and role with the values required by the target service.
 
-        public class AgentService
-        {
-            private readonly MicrosoftIdentityTokenCredential _credential;
+For a container containing test blobs, `ListBlobsAsync()` should return their names; an empty container returns an empty list. A storage `403` requires checking the agent's data-plane role and target resource separately from successful token acquisition. Don't grant a management-plane role to fix missing blob data access.
 
-            public AgentService(MicrosoftIdentityTokenCredential credential)
-            {
-                _credential = credential;
-            }
+## Next step
 
-            // Use object ID to identify the agent's user account
-            public async Task<List<string>> ListBlobsForAgentUserByOidAsync(string agentIdentity)
-            {
-                // Configure for agent identity
-                string userOid = "user-object-id";
-                _credential.Options.WithAgentUserIdentity(agentIdentity, userOid);
-
-                var blobClient = new BlobServiceClient(
-                    new Uri("https://myaccount.blob.core.windows.net"),
-                    _credential);
-
-                var container = blobClient.GetBlobContainerClient("agent-data");
-                var blobs = new List<string>();
-
-                await foreach (var blob in container.GetBlobsAsync())
-                {
-                    blobs.Add(blob.Name);
-                }
-
-                return blobs;
-            }
-
-            // Use UPN to identify the agent's user account
-            public async Task<List<string>> ListBlobsForAgentUserByUpnAsync(string agentIdentity)
-            {
-                // Configure for agent identity
-                string userUpn = "user@contoso.com";
-
-                _credential.Options.WithAgentUserIdentity(agentIdentity, userUpn);
-
-                var blobClient = new BlobServiceClient(
-                    new Uri("https://myaccount.blob.core.windows.net"),
-                    _credential);
-
-                var container = blobClient.GetBlobContainerClient("agent-data");
-                var blobs = new List<string>();
-
-                await foreach (var blob in container.GetBlobsAsync())
-                {
-                    blobs.Add(blob.Name);
-                }
-
-                return blobs;
-            }
-        }
-        ```
+[Authenticate users to the agent API](aspnet-core-authenticate-users.md)
 
 ## Related content
 
-- [Call custom APIs](./call-api-custom.md)
-- [Call Microsoft Graph](./call-api-microsoft-graph.md)
+- [Call a custom API as an agent](call-api-custom.md)
+- [Azure built-in roles](/azure/role-based-access-control/built-in-roles)
+- [Authorize access to blobs using Microsoft Entra ID](/azure/storage/blobs/authorize-access-azure-active-directory)
+- [Call an Azure service as a user](aspnet-core-call-azure-api-as-user.md)

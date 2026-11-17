@@ -68,10 +68,16 @@
       href: how-to-set-up-governance-relationship.md
     - name: Update a governance relationship
       href: how-to-update-governance-relationship.md
+    - name: Manage expiration and renewal (Preview)
+      href: how-to-manage-relationship-expiration.md
+    - name: Set up multi-tier relationships (Preview)
+      href: how-to-set-up-multi-tier-governance.md
     - name: Terminate a governance relationship
       href: how-to-terminate-governance-relationship.md
     - name: Use delegated administration
       href: how-to-delegated-administration.md
+    - name: Switch between governed tenants (Preview)
+      href: how-to-switch-governed-tenants.md
     - name: Monitor governing tenant activity
       href: how-to-monitor-governing-activity.md
     - name: Create a secure tenant

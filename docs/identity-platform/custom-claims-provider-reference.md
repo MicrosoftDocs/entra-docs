@@ -1,6 +1,6 @@
 ---
-title: Custom claims provider reference
-description: Reference documentation for custom claims providers
+title: OnTokenIssuanceStart event reference
+description: REST API schema and claims mapping policy reference for the OnTokenIssuanceStart event.
 manager: pmwongera
 ms.custom: 
 ms.date: 05/25/2025
@@ -12,7 +12,7 @@ titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
-# Custom claims provider reference
+# OnTokenIssuanceStart event reference
 
 In this how-to guide, you can learn about the REST API schema and claims mapping policy structure for custom claim provider events.
 

@@ -2,9 +2,12 @@
 title: Authentication Methods Activity
 description: Overview of the authentication methods that users register to sign in and reset passwords.
 ms.topic: how-to
-ms.date: 10/22/2025
+ms.date: 11/09/2026
 ms.reviewer: dawoo
-ms.custom: sfi-ga-nochange, sfi-image-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-108
+author: tilarso
+ms.author: tilarso
+ai-usage: ai-assisted
 ---
 # Authentication Methods Activity 
 
@@ -126,6 +129,20 @@ The registration details report shows the following information for each user:
 
   ![Screenshot of registration and reset events](media/how-to-authentication-methods-usage-insights/registration-and-reset-logs.png)
   
+## Identity verification reporting
+
+To view a user's identity verification status and history, use at least the [Security Reader](../role-based-access-control/permissions-reference.md#security-reader) role.
+
+Identity verification reporting provides account-level status and history and passkey-level provenance. These records answer different questions from the registration and usage totals in this dashboard.
+
+- Review [identity verification status and history](concept-authentication-methods-manage.md#identity-verification-status-and-history) on the user's separate **Identity verification** page for account-level context.
+- Review **Credential assurance** and [passkey credential provenance](concept-authentication-passkeys-fido2.md#credential-provenance) by selecting a passkey on the user's **Authentication methods** page and opening its details. See [Credential assurance classification](concept-authentication-passkeys-fido2.md#credential-assurance-classification-preview) for **Low**, **Medium**, and **High**. During preview, classification and provenance are available only for passkeys.
+- Use [audit logs](../monitoring-health/concept-audit-logs.md) to investigate changes to verification or provenance. Use sign-in records to review the policy evaluation and result of an access attempt separately.
+
+Enable tenant-wide collection before viewing status and history. See [Identity verification collection prerequisites](concept-authentication-verified-id.md#prerequisites). For the reporting entitlement, see [Identity verification licensing](../../fundamentals/licensing.md#identity-verification); the dashboard licensing above doesn't establish eligibility for identity verification reporting.
+
+For possible events and scenario markers, see [Verified ID audit activities](../monitoring-health/reference-audit-activities.md#verified-id). Identity verification audit events are separate from the dashboard's registration and usage totals. Don't apply the dashboard's reporting latency to audit logs.
+
 ## Limitations
 
 - The data in the report is not updated in real-time and may reflect a latency of up to 36 hours. It's possible for the reporting of a few users to fall out of that time range in rare cases. In that case, recheck the report after 24 hours.

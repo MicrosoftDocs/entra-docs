@@ -1,128 +1,133 @@
 ---
-title: Validate agent identity tokens in a downstream API
+title: Secure a web API with Microsoft Entra ID
+description: Configure a web API to validate Agent ID access tokens and authorize requests from agents and users.
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to validate Microsoft Entra Agent ID tokens in a downstream API by checking the signature, issuer, audience, and agent identity marker claim.
 ms.topic: how-to
-ms.date: 04/28/2026
-ms.custom: msecd-doc-authoring-1012
+ms.date: 11/05/2026
 ai-usage: ai-assisted
+ms.reviewer: dastrock
 
-#customer intent: As an API developer, I want to validate Microsoft Entra Agent ID tokens in my downstream API so that I can verify that requests come from authenticated agents with the correct identity.
-
+#customer-intent: As an API developer, I want to validate Agent ID tokens so that only authorized agents and users can call my API.
 ---
 
-# Validate agent identity tokens in a downstream API
+# Secure a web API with Microsoft Entra ID
 
-When an AI agent calls your API through the Microsoft Entra ID Auth SDK (sidecar), the request includes a `Bearer` token. Your API validates this token to confirm the request comes from an authenticated agent with the correct permissions. If validation fails, your API returns HTTP 401 with a reason.
+A downstream API must validate every access token before it trusts the Agent ID, user, or permissions represented by the token. Use a supported authentication middleware or token-validation library instead of parsing tokens in application code.
 
-This article explains the validation checks and shows how to configure and run a sample weather API that validates agent identity tokens end-to-end.
+This article covers Microsoft identity platform v2.0 access tokens.
 
-## Prerequisites
+The API registration must expose the delegated scope or application role that each endpoint requires, and the calling client or agent must have the corresponding grant. For an assembled local delegated test, follow [Call a custom API as a user](aspnet-core-call-custom-api-as-user.md). For app-only caller setup and consent, follow [Call a custom API as an agent](call-api-custom.md).
 
-- **Docker Desktop** (macOS / Windows) or **Docker Engine** (Linux).
-- A **Microsoft Entra tenant** with an agent identity blueprint and an agent identity. For setup steps, see [Create an agent blueprint](create-blueprint.md) and [Create and delete agent identities](create-delete-agent-identities.md).
-- An agent identity token for testing. You can get one from the [sidecar local development sample](sidecar-local-development.md) or from the scripts in the [Microsoft Entra Agent ID samples repository](https://github.com/microsoft/entra-agentid-samples).
+## Configure token validation
 
-## Token validation checks
+Configure the API with:
 
-Your downstream API should perform four checks on every incoming agent identity token:
+- The Microsoft Entra tenant or accepted issuer set.
+- The API's Application ID URI or client ID as the expected audience.
+- Microsoft identity platform signing-key discovery.
+- The delegated scopes or application roles required by each operation.
 
-| Check | What it verifies | Details |
-|---|---|---|
-| **Signature** | The token isn't tampered with. | Verify the RS256 signature against the JSON Web Key Set (JWKS) at `https://login.microsoftonline.com/<tenant>/discovery/v2.0/keys`. |
-| **Issuer** | Microsoft Entra ID issued the token. | The `iss` claim matches `https://sts.windows.net/<tenant>/` or `https://login.microsoftonline.com/<tenant>/v2.0`. |
-| **Audience** | The token is intended for your API. | The `aud` claim matches your API's expected audience value. |
-| **Agent identity marker** | The token was issued to an agent, not a regular app. | The `xms_par_app_azp` claim is present in agent identity tokens and absent in standard app-only tokens. This claim identifies the blueprint that created the agent. |
+For ASP.NET Core, use Microsoft.Identity.Web. For other frameworks, use a Microsoft-supported JWT validation library.
 
-When all four checks pass, your API can trust and process the request.
+For complete registration and framework guidance, see [Configure protected web API apps](/entra/identity-platform/scenario-protected-web-api-app-configuration).
 
-## How the sample weather API works
+## Configure an ASP.NET Core API
 
-The [Microsoft Entra Agent ID samples repository](https://github.com/microsoft/entra-agentid-samples) includes a sample weather API that demonstrates these validation checks. The sample API is a minimal Flask app that acts as the downstream API your agent calls. It validates incoming agent identity tokens and returns real weather data from [Open-Meteo](https://open-meteo.com).
+Install Microsoft.Identity.Web:
 
-Both the [local development (Ollama)](sidecar-local-development.md) and AWS (Bedrock) sidecar samples call the same weather API container. The sample consists of three files:
+```dotnetcli
+dotnet add package Microsoft.Identity.Web
+```
 
-- **`app.py`:** Flask app with route handlers, token validation logic, and Open-Meteo client.
-- **`Dockerfile`:** Uses `python:3.13-slim` as the base image. Runs `gunicorn app:app` on port 8080.
-- **`requirements.txt`:** Dependencies: `flask`, `pyjwt[crypto]`, `cryptography`, `requests`, `gunicorn`.
-
-The API exposes two endpoints:
-
-- **`GET /weather?city=<name>`:** Validates the `Authorization: Bearer <token>` header and returns weather data for the specified city.
-- **`GET /healthz`:** Returns a health status without requiring token validation.
-
-The following diagram shows how tokens flow from the agent through the sidecar to the weather API. The agent never contacts Microsoft Entra ID directly. Instead, the sidecar acquires a token (TR) on behalf of the agent identity, and the agent passes that token to the weather API in the `Authorization: Bearer` header.
-
-:::image type="content" source="media/how-to-validate-agent-tokens-downstream-api/agent-token-flow-to-downstream-api.png" alt-text="Diagram showing the agent caller sending a Bearer token to the weather API, which verifies the token and calls Open-Meteo." lightbox="media/how-to-validate-agent-tokens-downstream-api/agent-token-flow-to-downstream-api.png":::
-
-The agent identity token, TR, is issued by Microsoft Entra ID through the sidecar. It contains the claims your API validates, including the `xms_par_app_azp` agent identity marker. For a detailed breakdown of all tokens in the flow, see [Run the sidecar for local development](sidecar-local-development.md#understand-the-token-flow).
-
-Token validation libraries differ across ecosystems (Python, Node.js, .NET). This sample uses PyJWT with the `cryptography` backend for RS256 signature verification. When you build your own downstream API, choose the equivalent JWT validation library for your technology stack.
-
-## Configure the sample weather API
-
-The sample weather API accepts the following environment variables:
-
-| Variable | Required | Default | Purpose |
-|---|---|---|---|
-| `TENANT_ID` | Yes | — | Your Microsoft Entra tenant ID, used to build the JWKS URL and verify the issuer claim. |
-| `EXPECTED_AUDIENCE` | No | `https://graph.microsoft.com` | The expected `aud` claim value. Defaults to Microsoft Graph so that the same agent tokens work for local testing. |
-| `PORT` | No | `8080` | The HTTP port the API listens on. |
-
-## Run the sample weather API
-
-To run the weather API as a standalone container and test token validation:
-
-1. Clone the repository and navigate to the weather API directory:
-
-    ```bash
-    git clone https://github.com/microsoft/entra-agentid-samples.git
-    cd entra-agentid-samples/sidecar/weather-api
-    ```
-
-1. Build and run the container:
-
-    ```bash
-    docker build -t weather-api:local .
-    docker run --rm -p 8080:8080 \
-      -e TENANT_ID=<your-tenant-id> \
-      -e EXPECTED_AUDIENCE=https://graph.microsoft.com \
-      weather-api:local
-    ```
-
-1. Send a request with an agent identity token:
-
-    ```bash
-    curl -H "Authorization: Bearer $TOKEN" \
-         "http://localhost:8080/weather?city=Dallas"
-    ```
-
-The API returns a JSON response that includes both the weather data and the token validation results:
+Configure the tenant and API registration:
 
 ```json
 {
-  "city": "Dallas",
-  "temperature": 61,
-  "temperature_unit": "F",
-  "condition": "Overcast",
-  "humidity": 93,
-  "wind_speed": 8,
-  "is_agent_identity": true,
-  "agent_app_id": "<agent-app-id from xms_par_app_azp>",
-  "validated_by": "Agent Identity Token",
-  "data_source": "Open-Meteo API (Real-time)"
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "TenantId": "<tenant-id>",
+    "ClientId": "<downstream-api-client-id>"
+  }
 }
 ```
 
-The `is_agent_identity`, `agent_app_id`, and `validated_by` fields confirm token validation:
+Register token validation and protect delegated and app-only endpoints:
 
-- **`is_agent_identity`:** Set to `true` when the `xms_par_app_azp` claim is present, which confirms the token was issued to an agent identity rather than a standard app registration.
-- **`agent_app_id`:** The value of the `xms_par_app_azp` claim, which identifies the blueprint application that created the agent identity.
-- **`validated_by`:** The validation method applied to the token. Displays `Agent Identity Token` when the agent marker claim is present.
+```csharp
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.Resource;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddMicrosoftIdentityWebApiAuthentication(
+    builder.Configuration);
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy(
+        "AgentApplication",
+        policy => policy.RequireRole("Agent.Access"));
+});
+
+var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapGet("/data-for-user", (HttpContext context) =>
+{
+    context.VerifyUserHasAnyAcceptedScope("access_as_user");
+    return Results.Ok();
+})
+.RequireAuthorization();
+
+app.MapGet("/data-for-agent", () => Results.Ok())
+    .RequireAuthorization("AgentApplication");
+
+app.Run();
+```
+
+Replace `access_as_user` with the delegated scope exposed by the API. Replace `Agent.Access` with the application role assigned to the Agent ID.
+
+`AddMicrosoftIdentityWebApiAuthentication` validates the token signature, issuer, audience, and lifetime. `VerifyUserHasAnyAcceptedScope` enforces the delegated `scp` claim. `RequireRole` enforces the application permission in the `roles` claim.
+
+For more complete authorization patterns, see [Verify scopes and app roles in a protected web API](/entra/identity-platform/scenario-protected-web-api-verification-scope-app-roles).
+
+Test each endpoint with a token issued for **this downstream API**, not the agent's inbound token. With the required scope or role, the sample returns `200 OK`. Without a token or with the wrong audience, expect `401`. With an otherwise valid token for this API that lacks the required scope or role, expect rejection. Use the linked walkthroughs for token acquisition; don't return or log tokens to inspect them.
+
+## Validate the token
+
+Reject the request unless all of these checks succeed:
+
+1. **Signature:** The token is signed by a trusted Microsoft Entra signing key.
+1. **Issuer:** The `iss` claim matches an issuer accepted by the API.
+1. **Audience:** The `aud` claim identifies this API.
+1. **Lifetime:** The token is within its valid time window.
+1. **Tenant:** The `tid` claim is allowed by the API's tenant policy.
+1. **Client:** The authorized-party claim identifies an allowed client or blueprint where the API restricts callers.
+1. **Agent identity:** Agent-specific claims, including the Agent ID relationship claims expected by the scenario, are present and valid.
+1. **Permission:** Delegated requests contain the required `scp` value; app-only requests contain the required `roles` value.
+
+Don't authorize a request based only on the presence of an Agent ID claim. Apply the same issuer, audience, lifetime, and permission checks used for other Microsoft Entra access tokens.
+
+## Distinguish access types
+
+| Access type | User context | Permission claim | API authorization |
+| --- | --- | --- | --- |
+| Agent acting as itself | None | `roles` | Verify the required application role and Agent ID. |
+| Agent acting for a signed-in user | Signed-in user | `scp` | Verify the scope, user authorization, and Agent ID. |
+| Agent acting as its user account | Agent's user account | `scp` | Verify the scope, account authorization, and Agent ID relationship. |
+
+## Return authorization errors
+
+- Return `401 Unauthorized` when the token is missing or invalid.
+- Return `403 Forbidden` when the token is valid but lacks the required permission or resource access.
+
+Don't include tokens or sensitive claim values in logs.
 
 ## Related content
 
-- [Token claims reference](agent-token-claims.md)
-- [Authentication with Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md)
-- [Run the sidecar for local development](sidecar-local-development.md)
-- [Microsoft Entra Agent ID samples repository](https://github.com/microsoft/entra-agentid-samples)
+- [Configure protected web API apps](/entra/identity-platform/scenario-protected-web-api-app-configuration)
+- [Verify scopes and app roles in a protected web API](/entra/identity-platform/scenario-protected-web-api-verification-scope-app-roles)
+- [Agent identity token claims](agent-token-claims.md)
+- [Microsoft identity platform access tokens](/entra/identity-platform/access-tokens)

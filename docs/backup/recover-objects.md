@@ -1,10 +1,11 @@
 ---
 title: Recover objects using Microsoft Entra Backup and Recovery
 description: Learn how to recover objects to a previous state using Microsoft Entra Backup and Recovery from difference reports or backups
-ms.date: 03/02/2026
+ms.date: 10/19/2026
 ms.service: entra-id
 ms.topic: how-to
 ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1026
 ---
 
 # Recover objects using Microsoft Entra Backup and Recovery
@@ -21,7 +22,7 @@ Key details:
 
 ## Prerequisites
 
-The tenant must meet the [Backup and Recovery prerequisites](overview.md#prerequisites), including **Microsoft Entra ID P1 or P2** licenses. To recover objects, you need the **Microsoft Entra Backup Administrator** role.
+The tenant must meet the [Backup and Recovery prerequisites](overview.md#prerequisites) for the selected plan. To recover objects, you need the **Microsoft Entra Backup Administrator** role.
 
 ## Recover from a difference report
 

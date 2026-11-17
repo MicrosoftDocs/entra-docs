@@ -5,7 +5,10 @@ ms.reviewer: tilarso
 ms.service: entra-id
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-108
-ms.date: 04/30/2026
+ms.date: 10/08/2026
+author: tilarso
+ms.author: tilarso
+ai-usage: ai-assisted
 
 #customer intent: As an identity administrator, I want to understand the authentication methods available in Microsoft Entra ID so that I can choose the right methods for my organization's security and user experience requirements.
 
@@ -66,9 +69,9 @@ The following phishing-resistant authentication methods are available in Microso
 
 Verified ID is an identity verification capability in Microsoft Entra ID — not a traditional authentication method. It can't be used to satisfy authentication requirements like sign-in, MFA, or SSPR. Instead, Verified ID provides cryptographic proof of a user's verified identity for scenarios where trust must be re-established, such as account recovery when all authentication methods are lost.
 
-Identity verification profiles control which users can participate in Verified ID flows, which provider performs verification, and how identity claims are validated. Admins configure profiles through the Account Recovery setup wizard in the Microsoft Entra admin center, and the Verified ID policy page provides visibility into profile assignments and global exclusions.
+Identity verification profiles control which users can participate in Verified ID flows, which provider performs verification, and how identity claims are validated. Profiles support recovery, onboarding, and verification for access. Manage shared profiles under **Verified ID** > **ID verification profiles** in the Microsoft Entra admin center. The Account Recovery setup wizard remains the entry point for recovery-specific configuration, and the Verified ID policy page provides visibility into profile assignments and global exclusions.
 
-For more information, see [Verified ID identity verification overview](concept-authentication-verified-id.md).
+For profile setup and credential support, see [Verified ID identity verification overview](concept-authentication-verified-id.md). For user-level records, see [Manage user authentication methods](concept-authentication-methods-manage.md) and [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md).
 
 ## High-assurance account recovery
 

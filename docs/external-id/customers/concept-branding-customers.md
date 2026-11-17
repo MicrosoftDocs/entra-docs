@@ -1,18 +1,18 @@
 ---
-title: Customize the company branding
-description: Learn how to customize the sign-in and sign-up experiences for your customers.
+title: Authentication Branding
+description: Learn how to customize Microsoft-hosted sign-in and sign-up pages in Microsoft Entra External ID with company branding, text, and languages.
 ms.topic: concept-article
-ms.date: 01/07/2025
-ms.custom: it-pro, sfi-image-nochange
-#Customer intent: As an it admin, I want to know how can I customize my customers' sign-in experiences, including company branding and languages customizations.
+ms.date: 11/13/2026
+ms.custom: it-pro, sfi-image-nochange, msecd-doc-authoring-1030
+ai-usage: ai-assisted
+#customer intent: As an IT administrator, I want to understand branding and language options so that I can customize Microsoft-hosted authentication pages for my customers.
 ---
 
-# Customize the look and feel of the authentication experience for the external tenant
+# Customize Microsoft Entra External ID authentication branding
 
-> [!NOTE]
-> The branding customizations described in this article apply to **browser-delegated authentication**, where users sign in through a Microsoft-hosted sign-in page. If you use [native authentication](concept-choose-authentication-approach.md), you build and control the sign-in UI directly in your app, so branding is managed in your application code.
+After creating an external tenant, you can customize the Microsoft-hosted pages customers use to sign in, sign up, or sign out. The tenant comes with neutral branding that you can tailor to your company's needs. Add a background image or color, favicon, layout, header, and footer, or upload custom CSS. These settings customize the hosted authentication pages, not your application's interface. For more information, see [Customize the neutral branding in your external tenant](how-to-customize-branding-customers.md).
 
-After creating a new external tenant, you can customize the appearance of your web-based applications for customers who sign in, sign up, or sign out to personalize their end-user experience. The external tenant comes with a default neutral branding that doesn’t include any existing Microsoft branding. However, this neutral default branding can be customized to meet your company’s specific needs. You have the flexibility to add a custom background image or color, favicon, layout, header, and footer to your authentication experience. You can add each custom branding property individually to the custom sign-in page, or you can upload a custom CSS. For more information, see [Customize the neutral branding in your external tenant](how-to-customize-branding-customers.md).
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
 
 If the custom company branding fails to load, the sign-in page reverts to the neutral branding. 
 
@@ -22,9 +22,9 @@ The following list and image outline the elements of the neutral branding sign-i
 1. Favicon.
 1. Banner logo.
 1. Footer as a page layout element.
-1. Footer hyperlinks, for example,  Privacy & cookies, Terms of use and troubleshooting details also known as ellipsis in the right bottom corner of the screen.
+1. Footer links, such as **Privacy & cookies** and **Terms of use**, and troubleshooting details available from the ellipsis menu.
 
-   :::image type="content" source="media/how-to-customize-branding-customers/ciam-neutral-branding.png" alt-text="Screenshot of the neutral branding." lightbox="media/how-to-customize-branding-customers/ciam-neutral-branding.png":::
+   :::image type="content" source="media/how-to-customize-branding-customers/ciam-neutral-branding.png" alt-text="Screenshot of a neutral sign-in page with numbered branding elements." lightbox="media/how-to-customize-branding-customers/ciam-neutral-branding.png":::
 
 As a comparison, here’s how the [default Microsoft sign-in experience](~/fundamentals/how-to-customize-branding.md) in a Microsoft Entra ID tenant looks:
 
@@ -32,20 +32,26 @@ As a comparison, here’s how the [default Microsoft sign-in experience](~/funda
 
 
 
+## Preview customization options
+
+The [modern UX and customization overview](../customization-overview.md) covers the Fluent experience, Basic and Advanced styling, and custom HTML with optional JavaScript. These new capabilities are configured through application branding themes; this section doesn't extend them to default company branding. Microsoft retains control of authentication fields and actions.
+
+These capabilities are scheduled to become available in preview on December 7, 2026, for external tenants with the preview enabled. The existing company-branding procedures continue to apply to default branding.
+
 ## Text customization
 
-You might have different requirements for the information you want to collect during sign-up and sign-in. The external tenant comes with a built-in set of information stored in attributes, such as Given Name, Surname, City, and Postal Code. In the external tenant, we have two options to add custom text to the sign-up and sign-in experience. The function is available under each user flow during language customization and also under **Company Branding**. Although we have two ways to customize strings, both ways modify the same JSON file. The most recent change made either via **User flows** or via **Company Branding** will always override the previous one.
+You can customize text for built-in attributes, such as Given Name, Surname, City, and Postal Code, on Microsoft-hosted sign-up and sign-in pages. Customize strings under **Company Branding** or through language customization in **User flows**. Both options modify the same JSON file, so the most recent change overrides the previous one.
 
 ## Language customization
 
-You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements. If you don't make any changes to the elements, the default elements will be displayed.
-In the tenant, you can add a custom language to the sign-in experience under **Company Branding** or to a specific user flow under **User flows**. The language customization is available for a list of languages. For more information, see [Customize the language of the authentication experience](how-to-customize-languages-customers.md).
+Customize branding elements for users who sign in with a specific browser language. Elements you don't customize retain their defaults.
+Add language customizations under **Company Branding** or for a specific user flow under **User flows**. For supported languages and instructions, see [Customize the language of the authentication experience](how-to-customize-languages-customers.md).
 
 ## Microsoft Graph APIs
 
 You can also manage company branding and configure all assets programmatically. 
 - For the default branding, use the [organizationalBranding resource type](/graph/api/resources/organizationalbranding) and its associated methods.
-- To customize branding based on locale, using the [organizationalBrandingLocalization resource type](/graph/api/resources/organizationalbrandinglocalization) resource type and its associated methods.
+- To customize branding based on locale, use the [organizationalBrandingLocalization resource type](/graph/api/resources/organizationalbrandinglocalization) and its associated methods.
 
 ## Next steps
 - [Customize the user experience for your customers](how-to-customize-branding-customers.md)

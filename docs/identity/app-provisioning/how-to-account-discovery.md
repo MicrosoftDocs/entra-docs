@@ -28,6 +28,8 @@ This classification gives you visibility into who has access to your application
 > Group discovery, including group memberships, is currently in preview.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
+In addition to account discovery, Microsoft Entra can also discover the agent non-human identities in an application that have excessive privileges. For more information, see [Detection and remediation of overprivileged agent identities (Preview)](/entra/id-governance/dynamic-permissions-overview).
+
 ## Prerequisites
 
 Before you can use account discovery, the following must be in place:

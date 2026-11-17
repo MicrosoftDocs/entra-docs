@@ -3,7 +3,8 @@ title: Tokens in Microsoft agent identity platform
 description: Learn about tokens in the Microsoft agent identity platform, including token types, claims structure, authentication flows, and how tokens enable secure communication between agent applications and resources.
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
-ms.date: 11/10/2025
+ms.date: 11/06/2026
+ai-usage: ai-assisted
 ms.reviewer: jmprieur
 
 #customer-intent: As a developer working with agent applications, I want to understand how tokens work in the Microsoft agent identity platform, so that I can properly implement authentication, authorization, and security patterns in my agent solutions.
@@ -32,7 +33,7 @@ Agent tokens include specialized claims that identify the type and role of entit
 
 - Identity type claims (`idtyp`): Distinguish between user and application contexts, enabling appropriate policy application and security enforcement.
 
-- Identity relationship claims (`xms_idrel`): Describe the relationship between the token subject and the resource tenant, supporting multi-tenancy and guest access scenarios.
+- Identity relationship claims (`xms_idrel`): Describe the relationship between the token subject and the resource tenant, supporting multitenancy and guest access scenarios.
 
 ## Token flow patterns
 
@@ -40,11 +41,11 @@ Agents participate in several distinct token flow patterns, each designed for sp
 
 ### Tokens in user delegation scenarios
 
-User delegation scenarios enable agent applications to operate on behalf of users. In this scenario, tokens preserve user identity while identifying the agent identity blueprint as the acting entity. The on-behalf-of (OBO) protocol requires token audience to match the client ID. However, for agent identity (agent ID), the incoming token has the audience of the agent identity blueprint.
+User delegation scenarios enable agents to operate on behalf of users. A downstream access token preserves the user's identity as the subject and identifies the agent identity as the actor. For a multi-instance agent, the incoming user token targets the blueprint's client ID. For a single-instance agent, it targets the client ID shared by the blueprint and agent identity. The downstream token targets the API being called, not the agent.
 In this scenario, tokens have the following key characteristics:
 
 - Maintain user identity context throughout operations
-- Include delegated permissions granted to the agent identity blueprint
+- Include delegated permissions granted to the agent identity, directly or through supported blueprint inheritance.
 - Enable policy evaluation at both user and application levels
 - Support both interactive and background operations
 
@@ -52,11 +53,11 @@ The agent identity receives delegated permissions that can be directly assigned 
 
 ### Tokens in application-only scenarios
 
-Application-only scenarios represent autonomous operations where agent identity blueprints act on their own behalf without user context.
+Application-only scenarios represent autonomous operations where agent identities act on their own behalf without user context.
 
 In this scenario, tokens have the following key characteristics:
 
-- Represent the agent identity blueprint's own identity
+- Represent the agent identity as both actor and subject.
 - Include application-level permissions directly assigned by the tenant administrator
 - Enable unscoped access within granted permission boundaries. Delegated permissions aren't applied.
 - Support fully autonomous background operations
@@ -72,7 +73,7 @@ In this scenario, tokens have the following key characteristics:
 - Include scoped delegated permissions
 - Require explicit assignment to agent identities
 
-In this scenario, the agent identity blueprint impersonates the agent identity, which then impersonates the assigned agent's user account. Access is scoped to delegated permissions assigned to the agent identity, ensuring the agent can't exceed its granted permissions even when operating with user context. The agent's user account can only be used when assigned to an agent identity and can't authenticate independently.
+In the blueprint exchange pattern, the agent identity blueprint impersonates the agent identity, which then impersonates the assigned agent's user account. Access is scoped to delegated permissions assigned to the agent identity, ensuring the agent can't exceed its granted permissions even when operating with user context. The agent's user account can only be used when assigned to an agent identity and can't authenticate independently.
 
 ## Nonagentic API integration
 
@@ -84,11 +85,13 @@ Platforms that create agents and integrate with Microsoft Entra Agent ID don't r
 
 ## Tenancy models and token behavior
 
-All tokens contain a tenant ID (`tid`) representing the organization's tenant. Tokens are bounded within the tenant of the agent identity. Each agent identity receives tokens scoped to its operational tenant. Agent identities can't access resources outside their assigned customer tenant. Permission inheritance flows directly from parent to child entities.
+All tokens contain a tenant ID (`tid`) representing the organization's tenant. Tokens are bounded within the tenant of the agent identity. Each agent identity receives tokens scoped to its operational tenant. Agent identities can't access resources outside their assigned customer tenant. Supported permission inheritance applies to multi-instance blueprint-to-child exchanges; a single-instance agent has direct grants and no blueprint principal.
 
 ## Token validation
 
 Clients using agent identities are expected to treat the access tokens issued to them to use at resource servers as opaque, and not try to parse them. However, resource servers that receive access tokens issued to agents need to parse the tokens to validate them and extract claims for authorization purposes.
+
+Use the API's authentication middleware to validate the token before reading claims. For framework setup and permission enforcement, see [Secure a web API with Microsoft Entra ID](how-to-validate-agent-tokens-downstream-api.md).
 
 Resource servers should validate agent tokens by:
 
@@ -104,21 +107,7 @@ Token claims enable policy engines to:
 - Apply appropriate conditional access policies
 - Generate accurate audit logs
 
-Example of the validation process would be to do the following actions:
-
-- Check if a token was issued for an agent identity and for which agent blueprint.
-
-    ```csharp
-    HttpContext.User.GetParentAgentBlueprint()
-    ```
-
-- Check if a token was issued for an agent's user account identity.
-
-    ```csharp
-    HttpContext.User.IsAgentUserIdentity()
-    ```
-
-These two extensions methods, apply to both `ClaimsIdentity` and `ClaimsPrincipal`.
+[!INCLUDE [Validate tokens from agent identities](includes/validate-tokens.md)]
 
 ## Audit and logging integration
 

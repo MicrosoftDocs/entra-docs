@@ -1,94 +1,139 @@
 ---
-title: Grant agents access to Microsoft 365 resources
-description: Learn how to grant access to agents through consent, manual authorization, and other authorization systems for Microsoft 365 resources.
+title: Grant delegated permissions to an agent identity
+description: Request or grant consent for OAuth scopes used by an agent to call APIs on behalf of a signed-in user.
 ms.topic: how-to
-ms.date: 05/01/2026
+ms.date: 11/06/2026
+ai-usage: ai-assisted
 ms.reviewer: ergreenl
-
-#Customer intent: As an IT administrator managing agent identities, I want to understand how to grant agents access to Microsoft 365 resources through various authorization methods, so that I can properly configure consent, manual authorization, and other authorization systems for agents in my organization.
+#Customer intent: As a developer, I want to request consent for the minimum delegated permissions my agent needs to call APIs for a signed-in user.
 ---
 
-# Grant agents access to Microsoft 365 resources
+# Grant delegated permissions to an agent identity
 
-This article provides guidance on how to grant access to agents through consent, manual authorization, and other authorization systems. Learn about the different methods available for authorizing agents to access Microsoft 365 resources and when to use each approach.
+Delegated permissions, also called OAuth scopes, let an agent call a downstream API on behalf of a signed-in user. Each scope defines an operation the agent can perform with that user's access. Consent records whether a user or administrator approved the requested scopes for the agent identity.
 
-## Prerequisites
+An agent needs consent before it can use the OAuth On-Behalf-Of (OBO) flow to get a downstream access token. Request only the scopes required for the current task. Add other scopes later when the agent introduces features that need them.
 
-- An agent identity blueprint and at least one agent identity created from it.
-- An agent identity blueprint with a valid redirect URI.
+In this article, you choose a consent method and request or grant the scopes your agent needs.
 
-## How to request consent (delegated or application permissions)
+## Choose a consent method
 
-Users or administrators can grant agents access to data by consenting to API permissions during the OAuth flow. This section explains how to request consent for delegated and application permissions for your agents.
+You can grant delegated permissions to an agent identity in three ways:
 
-### When to use delegated or application permissions
+| Method | Who grants consent | Use it when |
+| --- | --- | --- |
+| [Authorization request](#method-1-request-user-consent-with-an-authorization-request) | A user, for themselves | The permission allows user consent and the user is present. |
+| [Admin consent endpoint](#method-2-request-administrator-consent-with-the-admin-consent-endpoint) | An administrator, for the organization | The permission requires administrator consent, or the organization approves the agent in advance. |
+| [Microsoft Graph](#method-3-grant-consent-with-microsoft-graph) | An administrator or automation, for the organization or one user | You grant consent programmatically, such as when you provision an agent. |
 
-The type of permissions you request depends on how your agent operates and what resources it needs to access.
+Methods 1 and 2 use the agent identity's client ID; method 3 uses its service principal object ID. For identifier meanings, see [Record the identifiers for your scenario](key-concepts.md#record-the-identifiers-for-your-scenario).
 
-Use delegated permissions when your interactive agent needs to act on behalf of a signed-in user. For example, read that user's mail, calendar, or files. Delegated access is carried in the token's scp claim.
+For an introduction to scopes and consent, see [OAuth 2.0 scopes and OpenID Connect scopes](/entra/identity-platform/scopes-oidc) and [Permissions and consent in the Microsoft identity platform](/entra/identity-platform/permissions-consent-overview).
 
-Use application permissions when your autonomous agent runs without a user present and requires app-only access. For example, to read all users' profiles. App permissions appear in the token's roles claim.
+## Choose delegated permissions
 
-For more information, see [permissions and consent overview](../identity-platform/permissions-consent-overview.md)
+Start with the operations the agent performs, and identify the least-privileged delegated permissions that support them:
 
-### How consent works
+- For Microsoft Graph, use the [Microsoft Graph permissions reference](/graph/permissions-reference).
+- For a custom API, use the scopes exposed by the API owner.
+- Check whether each permission allows user consent or requires administrator consent.
 
-For delegated permissions, when you redirect the user to the Microsoft identity platform `/authorize` endpoint, they review scopes such as `User.Read` and `Mail.Read`. If consent is granted, Microsoft Entra ID records an OAuth2PermissionGrant from your agent (client) to the resource such as Microsoft Graph. Future delegated tokens for that resource include the approved scopes in `scp` without reprompting unless consent changes. If your app requests consent for admin restricted permissions, your users get an error. An admin requests these permissions directly. For more information, see [admin-restricted permissions](/entra/identity-platform/scopes-oidc#admin-restricted-permissions).
+The downstream API includes the granted delegated permissions in the access token's `scp` claim.
 
-### Building the consent URL
+## Method 1: Request user consent with an authorization request
 
-When building your consent URL, the client ID should be your agent identity's ID. 
+Direct the signed-in user to the authorization endpoint to consent on their own behalf. Use the agent identity client ID as the OAuth client. For single-instance agents, it is shared with the blueprint; for fleets, use the selected agent's client ID, not the blueprint's.
 
-For more information, see [requesting permissions through consent](#how-to-request-consent-delegated-or-application-permissions). Some permissions require consent from an administrator before they can be granted within a tenant. For more information, see [admin consent on the Microsoft identity platform](/entra/identity-platform/v2-admin-consent)
+The blueprint must have a registered web redirect URI. The consent-only authorization request uses `response_type=none`. It records consent without returning an access token.
 
-## How to manually grant authorization (delegated or application)
+```text
+https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/authorize
+?client_id=<agent-identity-client-id>
+&response_type=none
+&redirect_uri=<registered-redirect-uri>
+&response_mode=query
+&scope=https%3A%2F%2Fgraph.microsoft.com%2FUser.Read
+&state=<opaque-state-value>
+```
 
-You can create the underlying authorization objects directly. It's useful for situations where you want to automate authorization or when you want to avoid interactive prompts.
+Replace the example scope with the fully qualified downstream scopes the agent needs. Validate `state` when the browser returns to the redirect URI to prevent request forgery.
 
-- [Manually grant delegated permissions](/graph/api/oauth2permissiongrant-post). Set your client ID as the agent identity ID.
-- [Manually grant application permissions (app role assignment)](/graph/api/serviceprincipal-post-approleassignments). Set your principal ID as the agent identity ID.
+For authorization-request parameters, see the [OAuth 2.0 authorization code flow](/entra/identity-platform/v2-oauth2-auth-code-flow).
 
-## How to manage access through access packages
+## Method 2: Request administrator consent with the admin consent endpoint
 
-Using access packages, you can enable standardized access for many AI Agents with the same access needs. The access package can include Entra roles, OAuth2 delegated and application permission grants and security group memberships. Agents can then request an access package, or a sponsor or admin can request for them, and once approved, the agent identity or agent's user account receives the access rights until the assignment is revoked or expires. For more information, see [access packages for agent identities](agent-access-packages.md).
+An administrator can grant delegated permissions for the entire organization when:
 
-## Other authorization systems
+- The permission requires administrator consent.
+- User consent is turned off or restricted in the tenant.
+- The organization wants to preapprove the agent before any user accesses it.
 
-Agents can be authorized in several ways beyond app-role assignments, group memberships and OAuth2 permission grants. These alternative systems offer flexibility for assigning access tailored to different platforms, services, and security requirements. The following sections summarize some of the many methods for agent authorization.
+Direct the administrator to the admin consent endpoint:
 
-### Azure role-based access control (Azure RBAC)
+```text
+https://login.microsoftonline.com/<tenant-id>/v2.0/adminconsent
+?client_id=<agent-identity-client-id>
+&redirect_uri=<registered-redirect-uri>
+&scope=https%3A%2F%2Fgraph.microsoft.com%2FUser.Read%20https%3A%2F%2Fgraph.microsoft.com%2FMail.Read
+&state=<opaque-state-value>
+```
 
-Assign Azure roles to the agent identity at the narrowest scope (resource, resource group, subscription). For example, you can grant the Key Vault Reader role on a single vault so the agent can read secrets without needing broad directory or tenant permissions. For more information and step-by-step guidance, see [Azure RBAC documentation](/azure/role-based-access-control/built-in-roles).
+| Parameter | Description |
+| --- | --- |
+| `client_id` | Client ID of the agent identity. For single-instance agents, this is shared with the blueprint. For fleets, don't use the blueprint client ID. |
+| `redirect_uri` | A registered redirect URI on the blueprint app registration. |
+| `scope` | Space-separated, percent-encoded fully qualified downstream scopes. |
+| `state` | Opaque value validated on return to prevent request forgery. |
 
-### Microsoft Entra roles
+After the administrator authenticates and approves, Microsoft Entra redirects to the redirect URI. Validate `state` before processing the response.
 
-Some low-privilege directory roles might be assignable to agents for metadata or read scenarios. High-privilege roles are blocked for agents by platform policy. To learn more about Microsoft Entra roles and PIM, see [Microsoft Entra roles](/entra/identity/role-based-access-control/permissions-reference).
+## Method 3: Grant consent with Microsoft Graph
 
-### Exchange RBAC
+Create an `oauth2PermissionGrant` to record tenant-wide admin consent for the agent identity:
 
-Exchange RBAC (Role-Based Access Control) lets administrators delegate permissions to Exchange resources. It ensures agents can get granular authorization, such as autonomous access to one mailbox or a few mailboxes. For information, see [Role Based Access Control for Applications in Exchange Online](/exchange/permissions-exo/application-rbac)
+```http
+POST https://graph.microsoft.com/v1.0/oauth2PermissionGrants
+Content-Type: application/json
+Authorization: Bearer <admin-token>
 
-### Teams Resource-Specific Consent (RSC)
+{
+  "clientId": "<agent-identity-service-principal-object-id>",
+  "consentType": "AllPrincipals",
+  "resourceId": "<resource-api-service-principal-object-id>",
+  "scope": "User.Read Mail.Read"
+}
+```
 
-Teams Resource-Specific Consent (RSC) enables granular permission assignments for agents within Microsoft Teams. RSC allows you to grant permissions to an app or agent on a per-team basis, rather than at the tenant level. This approach is especially useful when you want to limit access to only the resources and data within specific teams. Such data includes channels, messages, or roster information, without granting broader organizational permissions. For more information, see [Resource-specific consent for your Teams app](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
+| Property | Description |
+| --- | --- |
+| `clientId` | Object ID of the agent identity's service principal. |
+| `consentType` | `AllPrincipals` for tenant-wide admin consent. Use `Principal` with a `principalId` for single-user consent. |
+| `resourceId` | Object ID of the resource API's service principal in the tenant. |
+| `scope` | Space-separated scope names (not URLs). For example, `User.Read Mail.Read`. |
 
-### Permissions for agent communication across Microsoft 365 channels
+To find the resource API's service principal object ID, query by its app ID:
 
-An agent with its own identity (Agent ID) can communicate across Microsoft 365 surfaces, including sending and receiving Outlook email, receiving and responding to comments in OneDrive and SharePoint files, and sending and receiving messages from Teams chats and channels. Each surface the agent communicates in requires specific permissions, which you declare in the agent identity blueprint's required resource access, and which a tenant admin must consent to before the agent can send or receive anything there.
+```http
+GET https://graph.microsoft.com/v1.0/servicePrincipals?$filter=appId eq '<resource-app-id>'&$select=id,displayName
+```
 
-| Channel | Displayed as | Inbound (channel → agent)<br>Receiving events | Outbound (agent → channel)<br>Sending responses |
-|---|---|---|---|
-| `email` | Outlook | `Mail.Read` or `Mail.ReadWrite` | `Mail.Send` or `Mail.ReadWrite` |
-| `spo.files.comments` | OneDrive and SharePoint | `Files.Read.All` or `Files.ReadWrite.All` | `Files.ReadWrite.All` |
-| `teams-chat` | Teams chats | `Chat.Read` or `Chat.ReadWrite` | `Chat.ReadWrite` or `ChatMessage.Send` |
-| `teams-channel` | Teams channels | `ChannelMessage.Read.All` | `ChannelMessage.Send` |
+The Microsoft Graph app ID is always `00000003-0000-0000-c000-000000000000`. For a custom API, use the app registration's application (client) ID.
 
-### Custom (third‑party) APIs
+A successful request returns `201 Created`. Update an existing grant with `PATCH` instead of creating a duplicate.
 
-Agents can call other OAuth‑protected APIs. Ensure the resource application and its service principal exist in the tenant, define required scopes/app roles, and follow the same delegated or app‑permission flows. For more information, see Microsoft's guide to permissions and consent in the Microsoft identity platform.
+## Verify consent
+
+Request a new downstream access token after consent changes. Confirm that its `scp` claim contains the delegated scopes required by the operation.
+
+If OBO returns a consent-related error, verify:
+
+- The requested scope matches a delegated permission exposed by the downstream API.
+- The user or an administrator granted that scope to the agent identity.
+- The authorization request used the agent identity client ID (the shared client ID for a single-instance agent).
 
 ## Related content
 
-- [Authentication protocols in agents](agent-oauth-protocols.md)
-- [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)
-- [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)
+- [Grant Microsoft Graph application permissions to an agent identity](grant-application-permissions-agent-identity.md)
+- [Call a custom API as a user with ASP.NET Core](aspnet-core-call-custom-api-as-user.md)
+- [Call a custom API as a user with the Auth SDK sidecar](sidecar-call-custom-api-as-user.md)
+- [Microsoft identity platform On-Behalf-Of flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow)

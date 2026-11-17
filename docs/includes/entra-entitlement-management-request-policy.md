@@ -6,18 +6,20 @@ ms.service: entra-id
 ms.topic: include
 ms.date: 04/29/2026
 ms.author: owinfrey
-ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
+ms.custom: include file, sfi-ga-nochange, msecd-doc-authoring-1032
 ---
 
-## Allow users, service principals, and agent identities in your directory to request the access package
+<a name="allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package"></a>
+
+## Allow users, agent users (preview), service principals, and agent identities in your directory to request the access package
 
 Use the following steps if you want to allow identities in your directory to be able to request this access package. When you're defining the request policy, you can specify individual identities or (more commonly) groups of identities. For example, your organization might already have a group such as **All employees**. If that group is added in the policy for identities who can request access, any member of that group can then request access.
 
-1. In the **Who can get access** section, select **For users, service principals, and agent identities in your directory**.
+1. In the **Who can get access** section, select **For users, agent users (preview), service principals, and agent identities in your directory**.
 
     When you select this option, new options appear so you can refine who in your directory can request this access package.
 
-    ![Screenshot that shows the option for allowing users and groups in the directory to request an access package.](./media/entitlement-management-request-policy/for-users-in-your-directory.png)
+    ![Screenshot that shows who can get access to an access package, including the All agent users (Preview) option.](./media/entitlement-management-request-policy/for-users-in-your-directory.png)
 
 1. Select one of the following options:
 
@@ -26,6 +28,7 @@ Use the following steps if you want to allow identities in your directory to be 
     | **Specific users and groups** | Choose this option if you want only the users and groups in your directory that you specify to be able to request this access package. |
     | **All members (excluding guests)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
     | **All users (including guests)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
+    | **All agent users (preview)** | Choose this option if you want all agent users in your directory to be able to have access assigned to them. |
     | **All Service principals** | Choose this option if you want all service principals in your directory to be able to request this access package. |
     | **All agents** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
 

@@ -53,8 +53,6 @@ Hard Deletion Protection doesn't prevent soft deletion. It gives you time to inv
 
 When a selected set includes a protected object, the permanent-deletion action is blocked.
 
-<!-- TODO: Replace this paragraph with the final customer-facing blocked-deletion message and add a screenshot when the UX text is finalized. -->
-
 ## Enable Hard Deletion Protection
 
 In the Microsoft Entra admin center, you can protect up to 20 objects of one object type in each operation. Objects that already have protection enabled aren't available for selection.
