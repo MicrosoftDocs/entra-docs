@@ -171,11 +171,11 @@ Content-Type: application/json
 }
 ```
 
-To change the priority of every dynamic membership group in your tenant that uses MemberOf, you can use Microsoft Graph PowerShell. The following script requires the `Microsoft.Graph.Authentication` and `Microsoft.Graph.Groups` modules. Before you run it, replace `<tenant-id>` with your tenant ID. The script shows how many groups it found, changes the priority of each group to Standard, and then lists each group's priority so that you can confirm the change.
+To change the priority of every dynamic membership group in your tenant that uses MemberOf, you can use Microsoft Graph PowerShell. The following script requires version 2.41.2 or later of the `Microsoft.Graph.Authentication` and `Microsoft.Graph.Groups` modules. Before you run it, replace `<tenant-id>` with your tenant ID. The script shows how many groups it found, changes the priority of each group to Standard, and then lists each group's priority so that you can confirm the change.
 
 ```powershell
-Import-Module Microsoft.Graph.Authentication -RequiredVersion 2.41.2 -ErrorAction Stop
-Import-Module Microsoft.Graph.Groups -RequiredVersion 2.41.2 -ErrorAction Stop
+Import-Module Microsoft.Graph.Authentication -MinimumVersion 2.41.2 -ErrorAction Stop
+Import-Module Microsoft.Graph.Groups -MinimumVersion 2.41.2 -ErrorAction Stop
 Connect-MgGraph -TenantId "<tenant-id>" `
     -Scopes "Group.ReadWrite.All" -ErrorAction Stop
 
