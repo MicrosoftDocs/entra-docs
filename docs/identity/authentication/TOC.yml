@@ -131,8 +131,16 @@
     items:
     - name: Introduction to Microsoft Entra Kerberos
       href: kerberos.md
+    - name: Configure optional group SID claims
+      href: configure-optional-group-claims-kerberos.md
+    - name: Configure on-premises resource access for cloud-only identities
+      href: configure-cloud-only-identities-on-premises-access-kerberos.md
+    - name: Kerberos server key rotation
+      href: kerberos-server-key-rotation.md
     - name: Configure Microsoft Entra Kerberos trust
       href: configure-microsoft-entra-kerberos-trust.md
+    - name: Troubleshoot Microsoft Entra Kerberos
+      href: troubleshoot-microsoft-entra-kerberos.md
     - name: FAQ
       href: kerberos-faq.yml
   - name: Self-service password reset

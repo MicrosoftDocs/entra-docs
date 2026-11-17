@@ -1,8 +1,9 @@
 ---
 title: Microsoft agent identity platform error codes
 description: Learn about the Agent ID, Agent Blueprint, and Agent Identity error codes.
-ms.date: 11/05/2026
+ms.date: 11/16/2026
 ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ms.reviewer: ryankabir
 ms.topic: error-reference
 #Customer intent: As a developer troubleshooting errors, I want to understand the meaning and possible resolutions for the Agent ID error codes, so that I can effectively debug and fix issues in my application.
@@ -33,7 +34,7 @@ These errors occur when you exceed the tenant quota or the maximum number of age
 
 | Error code | Description |
 |---|---|
-| `Agent_Directory_QuotaExceeded` | Agent identity blueprints and/or agent identities have exceeded 95% of the tenant resource quota. To create more, you must permanently delete unneeded blueprints or identities. |
+| `Agent_Directory_QuotaExceeded` | Agent identity blueprints or agent identities have reached their resource quota (80% of the tenant's overall resource quota by default). This error also occurs when total directory object usage reaches the separate creation threshold (95% by default). To create more, reduce the relevant usage or request a higher directory object quota. |
 | `AgentBlueprint_LimitExceeded` | You've reached the maximum number of agent identity blueprints allowed including active and soft-deleted items. To create more, you must permanently delete unneeded blueprints. |
 | `AgentIdentity_LimitExceeded` | You've reached the maximum number of agent identities allowed including active and soft-deleted entries. To add more, you must permanently delete unneeded agent identities. |
 

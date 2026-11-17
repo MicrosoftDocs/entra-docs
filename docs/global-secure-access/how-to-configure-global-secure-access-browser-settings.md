@@ -11,7 +11,7 @@ ms.author: alexpav
 
 # Configure Global Secure Access secure enterprise browser settings (preview)
 
-Configure secure enterprise browser with Microsoft Edge and Global Secure Access to give employees browser-only access to private web applications. You can also protect internet and Microsoft 365 browsing. This configuration supports company-owned Windows kiosks and virtual desktop infrastructure (VDI) devices without installing the Global Secure Access client.
+Configure secure enterprise browser with Microsoft Edge and Global Secure Access to give employees browser-only access to private web applications and protect browsing activity of users signed in to Microsoft Edge for Business using your organization's work account.
 
 Enable the traffic types for secure enterprise browser using the Entra admin center, and then use the Microsoft 365 Admin center to configure an Edge Management Service (EMS) policy. This preview supports Windows and macOS.
 
@@ -22,6 +22,7 @@ Enable the traffic types for secure enterprise browser using the Entra admin cen
 - The **Application Administrator** role to assign users to traffic forwarding profiles and to configure Private Access enterprise applications and connector groups.
 - Licenses for the Global Secure Access capabilities you plan to use. See [Global Secure Access licensing](overview-what-is-global-secure-access.md#licensing-overview).
 - The [Edge Administrator](../identity/role-based-access-control/permissions-reference.md#edge-administrator) role, the least-privileged role to configure and assign the Edge policy in the M365 admin center.
+- Configuration allowing for [M365 targeted releases](/microsoft-365/admin/manage/release-options-in-office-365) in your tenant. Alternatively, you can access the M365 admin center using the secure enterprise browser settings preview URL https://admin.cloud.microsoft/?flagOverrides=EnableEdgeGSA:true#/Edge/PolicyConfiguration/id/SecurityProtections .
 - Microsoft Edge for Windows or macOS, version **157.0.4341.46** or newer.
 - Work accounts in your tenant for the employees who use the feature. Business-to-business (B2B) guest accounts aren't supported because users can't sign in to Edge with those accounts.
 - For Private Access, private web applications configured by fully qualified domain name (FQDN) and the associated private network connectors. See [Configure per-app access](how-to-configure-per-app-access.md).

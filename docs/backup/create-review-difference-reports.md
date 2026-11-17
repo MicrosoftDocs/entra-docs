@@ -49,7 +49,7 @@ You set the scope when you create the report. You can't change it afterward.
 
 1. Go to **Backup and recovery** > **Backups**. Select a backup from the list, and then select **Create difference report**.
 
-   :::image type="content" source="media/create-review-difference-reports/create-difference-report-backups-page.png#lightbox" alt-text="Screenshot of the Backups page showing available backups with a Create difference report button in the toolbar.":::
+   :::image type="content" source="media/create-review-difference-reports/create-difference-report-backups-page.png#lightbox" alt-text="Screenshot of the Backups page with a backup selected and the Create difference report pane open.":::
 
    Backups are created automatically once per day. Only retained backups appear for selection. The report compares the selected backup with the current tenant state.
 
@@ -57,19 +57,11 @@ You set the scope when you create the report. You can't change it afterward.
 
    - **Include all objects in their previous state**: Compares all supported objects in the tenant.
 
-     :::image type="content" source="media/create-review-difference-reports/create-difference-report-all-objects.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the Include all objects in their previous state option selected.":::
-
    - **Include only certain types of objects**: Limits the report to selected object types, such as Users and Groups.
-
-     :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-types.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the Include only certain types of objects option selected.":::
 
    - **Include only specific objects by their ID**: Limits the report to specific objects by their object IDs. Enter up to 100 object IDs across different object types.
 
-     :::image type="content" source="media/create-review-difference-reports/create-difference-report-object-ids.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the Include only specific objects by ID selected.":::
-
 1. Select **Create difference report** to start the report.
-
-   :::image type="content" source="media/create-review-difference-reports/create-difference-report-submit.png#lightbox" alt-text="Screenshot of the Create difference report dialog with the cursor hovering over the Create difference report button, ready to submit the report.":::
 
 ## Cancel a difference report
 
@@ -79,7 +71,7 @@ Cancel a difference report while it's in progress. Canceled reports don't displa
 
 1. Select the in-progress report, and then select **Cancel** in the toolbar.
 
-   :::image type="content" source="media/create-review-difference-reports/cancel-difference-report.png#lightbox" alt-text="Screenshot of the Difference Reports page showing one report in progress and two completed reports, with the Cancel button visible in the toolbar.":::
+   :::image type="content" source="media/create-review-difference-reports/cancel-difference-report.png#lightbox" alt-text="Screenshot of the Difference Reports page showing an in-progress report selected, a completed report, and the Cancel button highlighted in the toolbar.":::
 
 ## Check difference report statuses
 
@@ -99,11 +91,9 @@ A difference report reflects the current tenant state at the time the report was
 
 1. Go to **Backup and recovery** > **Difference reports**. The list shows each report's status, backup details (ID, timestamp, and availability), and scoping criteria. It also shows creation and completion times, and the number of objects and links in the report.
 
-   :::image type="content" source="media/create-review-difference-reports/difference-reports-list.png#lightbox" alt-text="Screenshot of the Difference Reports list page showing report statuses, backup timestamps, and filtering details for three difference reports.":::
-
 1. Select a completed difference report to view its details.
 
-   :::image type="content" source="media/create-review-difference-reports/difference-reports-completed.png#lightbox" alt-text="Screenshot of the Difference Reports list page showing three completed reports with backup and object details.":::
+   :::image type="content" source="media/create-review-difference-reports/difference-reports-completed.png#lightbox" alt-text="Screenshot of the Difference Reports page showing two completed reports with one report ID highlighted.":::
 
 1. Review the difference report content. The report lists each object that changed, along with the recovery action that applies during recovery.
 
