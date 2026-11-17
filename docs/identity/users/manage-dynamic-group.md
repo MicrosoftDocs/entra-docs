@@ -2,7 +2,7 @@
 title: Understand and manage dynamic group processing in Microsoft Entra ID
 description: Learn how dynamic group management works. 
 ms.topic: concept-article
-ms.date: 04/08/2025
+ms.date: 11/16/2026
 ms.reviewer: mbhargava
 ai-usage: ai-assisted
 ---
@@ -28,7 +28,7 @@ The three biggest factors that influence processing and can cause membership upd
 
 - **Number of object changes**: A high volume of user or device changes can create a long processing queue and extend the processing time. Examples include changes to extension attributes, device additions or removals, and bulk user updates.
 
-- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.
+- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match` or `Contains` can increase processing time. Rule complexity is also a contributing factor.
 
 > [!NOTE]
 > Stale devices and inactive user accounts can remain in scope for dynamic membership rules and can be added to groups when they satisfy the rule conditions. Review and clean up [stale devices](/entra/identity/devices/manage-stale-devices) and [inactive users](/entra/identity/monitoring-health/howto-manage-inactive-user-accounts) so your dynamic groups include only the objects you intend to manage.
@@ -60,7 +60,7 @@ Don't unpause the groups immediately. Wait a minimum of 24 hours to allow group 
 
 - Use fewer `-or` operators. Instead, use the `-in` operator to group rules into a single criterion. Grouping rules makes them easier to evaluate.  
 
-- Avoid the use of the [`memberOf`](groups-dynamic-rule-member-of.md) operator if possible. It's currently in preview, and it comes with bugs and limitations. It can also introduce more complexity, particularly if a tenant has a large number of groups or frequent updates. The recommendation is to delete existing `memberOf` groups in your tenant.
+- The earlier [`memberOf` preview](groups-dynamic-rule-member-of.md) was deprecated because it could slow dynamic membership processing for the tenant. MemberOf Next uses separate processing on a twice-daily schedule. For requirements and migration guidance, see [Move existing MemberOf groups to MemberOf Next](groups-dynamic-rule-advanced.md#move-existing-memberof-groups-to-memberof-next).
 
 For more help with optimizing dynamic group processing, review [Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-rule-more-efficient.md).
 
