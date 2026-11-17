@@ -19,7 +19,7 @@ Use these capabilities to scope governance controls, including entitlement manag
 Groups that use MemberOf Next or Transitive Reports To update on a schedule, twice a day. You put a group on this schedule by setting its priority to **Standard**. Your existing dynamic membership groups aren't affected and keep working the way they do today.
 
 > [!NOTE]
-> In the Microsoft Entra admin center, in Microsoft Graph, and in the rule syntax, MemberOf Next is still called **MemberOf**, and the rule syntax hasn't changed. You don't need to rewrite your existing MemberOf rules. To move an existing MemberOf group to MemberOf Next, change the group's priority to **Standard**. For more information, see "Move existing MemberOf groups to MemberOf Next" later in this article.
+> In the Microsoft Entra admin center, in Microsoft Graph, and in the rule syntax, MemberOf Next is still called **MemberOf**, and the rule syntax hasn't changed. You don't need to rewrite your existing MemberOf rules. To move an existing MemberOf group to MemberOf Next, change the group's priority to **Standard**. For more information, see [Move existing MemberOf groups to MemberOf Next](#move-existing-memberof-groups-to-memberof-next) later in this article.
 
 > [!IMPORTANT]
 > MemberOf Next and Transitive Reports To are currently in PREVIEW. This information relates to a prerelease product that might be modified before it's released. Review the preview limitations before you use these rules.
@@ -46,15 +46,15 @@ Here's what to expect from a Standard priority group:
 ## Prerequisites
 
 - One of the following Microsoft Entra roles. Use the least privileged role that meets your needs.
-  - Groups Administrator
-  - User Administrator
-  - Intune Administrator, for security groups only. This role can't manage Microsoft 365 groups.
-  - Global Administrator
-- Microsoft Entra ID Governance licenses in your tenant. See "License requirements."
+  - [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+  - [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+  - [Intune Administrator](~/identity/role-based-access-control/permissions-reference.md#intune-administrator), for security groups only. This role can't manage Microsoft 365 groups.
+  - [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+- Microsoft Entra ID Governance licenses in your tenant. See [License requirements](#license-requirements).
 
 ## License requirements
 
-MemberOf Next and Transitive Reports To require Microsoft Entra ID Governance. Microsoft Entra ID Governance is also included in other Microsoft license plans. For the current list, see "[Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md)."
+MemberOf Next and Transitive Reports To require Microsoft Entra ID Governance. Microsoft Entra ID Governance is also included in other Microsoft license plans. For the current list, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md).
 
 For member users in your tenant, you must have enough licenses that include Microsoft Entra ID Governance to cover:
 
@@ -65,9 +65,9 @@ Count each user only once, even if they belong to multiple groups that use these
 
 For example, if these groups contain 1,000 unique member users and two administrators who aren’t included in those groups configure them, your tenant needs at least 1,002 licenses that include Microsoft Entra ID Governance.
 
-Licensing requirements for other dynamic membership groups are unchanged. For more information, see [License requirements for dynamic membership groups](groups-dynamic-membership.md)
+Licensing requirements for other dynamic membership groups are unchanged. For more information, see [License requirements for dynamic membership groups](groups-dynamic-membership.md#license-requirements).
 
-For licensing prerequisites for advanced dynamic groups capabilities, see "[Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md)."
+For licensing prerequisites for advanced dynamic groups capabilities, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md).
 
 If your tenant no longer has Microsoft Entra ID Governance licenses, groups that use these rules stop updating and show a processing error on the group's overview page.
 
@@ -103,7 +103,7 @@ What stays the same is the name you see in the product and the rule syntax, so y
 
 MemberOf Next and Transitive Reports To are built for governance scenarios in large tenants and run on dedicated processing. That's why they're part of Microsoft Entra ID Governance.
 
-For retirement and migration guidance for the earlier preview, see "Configure dynamic membership groups with the memberOf operator."
+For retirement and migration guidance for the earlier preview, see [Deprecated memberOf preview for dynamic membership groups](groups-dynamic-rule-member-of.md).
 
 ### Rule syntax
 
@@ -119,11 +119,11 @@ For a group of devices:
 device.memberOf -any (group.objectId -in ['<groupObjectId1>', '<groupObjectId2>'])
 ```
 
-Replace each placeholder with the object ID of a source group. The syntax is the same as in the earlier memberOf preview. With MemberOf Next, you can also combine the rule with other expressions. See "Combine MemberOf Next with other expressions" later in this article.
+Replace each placeholder with the object ID of a source group. The syntax is the same as in the earlier memberOf preview. With MemberOf Next, you can also combine the rule with other expressions. See [Combine MemberOf Next with other expressions](#combine-memberof-next-with-other-expressions) later in this article.
 
 ### Create a group with MemberOf Next
 
-1. Sign in to the Microsoft Entra admin center as at least a Groups Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. Select **New group**.
 1. For **Group type**, select **Security** or **Microsoft 365**, and then enter a group name.
@@ -132,6 +132,9 @@ Replace each placeholder with the object ID of a source group. The syntax is the
 1. Select **Add dynamic query**.
 1. In the rule builder, open the **Operator** list and select **MemberOf**.
 1. In **Value**, enter the object IDs of the source groups, separated by commas. The rule appears in the **Rule syntax** box.
+
+    :::image type="content" source="./media/groups-dynamic-rule-advanced/member-of-rule-builder.png" alt-text="Screenshot of the dynamic membership rule builder with the MemberOf operator, a source group object ID, and the generated rule syntax.":::
+
 1. Select **Save rule**, and then select **Create**.
 
 ### Combine MemberOf Next with other expressions
@@ -139,7 +142,7 @@ Replace each placeholder with the object ID of a source group. The syntax is the
 You can narrow a MemberOf Next rule with other expressions. For example, this rule includes members of a source group who are located in Redmond:
 
 ```text
-user.memberOf -any (group.objectId -in [‘77a8c4ab-f93d-47e7-8dd9-f464b2541342’]) -and user.city -eq "Redmond"
+user.memberOf -any (group.objectId -in ['77a8c4ab-f93d-47e7-8dd9-f464b2541342']) -and user.city -eq "Redmond"
 ```
 
 After you select **MemberOf** in the rule builder, you can't add more expressions there. To add them, edit the rule in the **Rule syntax** box.
@@ -238,7 +241,7 @@ The following tips can help you use the rule properly:
 
 ### Create a group with Transitive Reports To
 
-1. Sign in to the Microsoft Entra admin center as at least a Groups Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. Select **New group**.
 1. For **Group type**, select **Security** or **Microsoft 365**, and then enter a group name.
@@ -247,6 +250,9 @@ The following tips can help you use the rule properly:
 1. Select **Add dynamic query**.
 1. In the rule builder, open the **Operator** list and select **TransitiveReportsTo**.
 1. In **Value**, enter the manager's object ID. The rule appears in the **Rule syntax** box.
+
+    :::image type="content" source="./media/groups-dynamic-rule-advanced/transitive-reports-to-rule-builder.png" alt-text="Screenshot of the dynamic membership rule builder with the TransitiveReportsTo operator, a manager object ID, and the generated rule syntax.":::
+
 1. Select **Save rule**, and then select **Create**.
 
 ### Combine Transitive Reports To with other expressions
@@ -267,7 +273,7 @@ You can also use MemberOf Next in the membership rule of a dynamic administrativ
 
 ## Check whether a group is up to date
 
-Open the group's page in the Microsoft Entra admin center to see its processing status and when the membership was last updated. If processing failed, the page shows the error. For more information, see "Check the processing status for a rule."
+Open the group's page in the Microsoft Entra admin center to see its processing status and when the membership was last updated. If processing failed, the page shows the error. For more information, see [Check the processing status for a rule](groups-create-rule.md#check-the-processing-status-for-a-rule).
 
 ## Preview limitations
 
