@@ -276,6 +276,8 @@ items:
         href: concept-microsoft-traffic-profile.md
       - name: Create a Private Access profile
         href: how-to-create-traffic-forwarding-profile.md
+      - name: Create a Device Access profile (preview)
+        href: how-to-create-device-access-profile.md
       - name: Manage the Microsoft profile
         href: how-to-manage-microsoft-profile.md
       - name: Manage Private Access profiles
