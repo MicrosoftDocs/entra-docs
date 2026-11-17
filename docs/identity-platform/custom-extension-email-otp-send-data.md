@@ -1,22 +1,22 @@
 ---
-title: Retrieve and return data from an emailOtpSend event
-description: Reference documentation for a custom authentication extension that invokes the emailOtpSend event for External ID customer configurations.
+title: OnOtpSend event reference
+description: Reference documentation for a custom authentication extension that invokes the OnOtpSend event for External ID customer configurations.
 manager: pmwongera
 ms.date: 05/20/2025
 ms.service: identity-platform
 
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
-#customer intent: As developer creating a custom authentication extension for user sign-up and password rest flows, I want to understand the REST API schema for the emailOtpSend event in order to design and implement a REST API to customize the verification email.
+#customer intent: As developer creating a custom authentication extension for user sign-up and password rest flows, I want to understand the REST API schema for the OnOtpSend event in order to design and implement a REST API to customize the verification email.
 ---
 
-# Email OTP send event reference
+# OnOtpSend event reference
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-To configure a custom email provider for [email one time passcode (OTP) send](custom-extension-email-otp-get-started.md) events, you  create a custom authentication extension and invoke it at specific points in the user flow. When the **emailOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. 
+To configure a custom email provider for [email one time passcode (OTP) send](custom-extension-email-otp-get-started.md) events, you create a custom authentication extension and invoke it at specific points in the user flow. When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own.
 
-The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid to send the one-time passcode with your custom email template, from address, email subject and more. This article describes the REST API schema for the emailOtpSend event.
+The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid to send the one-time passcode with your custom email template, from address, email subject and more. This article describes the REST API schema for the OnOtpSend event.
 
 ## Request to the external REST API
 

@@ -3,7 +3,9 @@ title: Configure Amazon Business for automatic user provisioning with Microsoft 
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business.
 
 ms.topic: how-to
-ms.date: 02/20/2026
+ms.date: 10/30/2026
+ms.custom: msecd-doc-authoring-1032
+ai-usage: ai-assisted
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business so that I can streamline the user management process and ensure that users have the appropriate access to Amazon Business.
 
@@ -76,8 +78,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ### To configure automatic user provisioning for Amazon Business in Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -92,6 +94,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Set **+ New configuration**.
 
 	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+
+    [!INCLUDE [provisioning-oauth-azure-portal](~/includes/provisioning-oauth-azure-portal.md)]
 
 1. Under the **Admin Credentials** section, input your Amazon Business Tenant URL, Authorization Endpoint. Select **Test Connection** to ensure Microsoft Entra ID can connect to Amazon Business. If the connection fails, ensure your Amazon Business account has Admin permissions and try again.
 

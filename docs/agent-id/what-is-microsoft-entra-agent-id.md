@@ -22,7 +22,7 @@ Microsoft Entra Agent ID brings together identity management, access protection,
 
 The [Microsoft Entra Agent identity platform](what-is-agent-id-platform.md) enables developers to create and manage [agent identities](what-are-agent-identities.md), which are specialized identity constructs built for AI agents. Agent identity blueprints serve as templates for creating individual agent identities with parent-child relationships, enabling consistent security policies across large numbers of agents. The platform supports standard protocols such as OAuth 2.0, Model Context Protocol (MCP), and agent-to-agent (A2A) for authentication and agent-to-agent communication.
 
-Microsoft Entra Agent ID works with agents built on Microsoft and non-Microsoft platforms. Organizations can [integrate third-party agents](configure-third-party-agents.md) from platforms such as AWS Bedrock and n8n by using the Microsoft Entra ID Auth SDK (sidecar) or workload identity federation, giving every agent a governed identity regardless of where it was built.
+Microsoft Entra Agent ID works with agents built on Microsoft and non-Microsoft platforms. Organizations can [integrate third-party agents](choose-agent-integration-path.md) from platforms such as AWS Bedrock and n8n by using the Microsoft Entra ID Auth SDK (sidecar) or workload identity federation, giving every agent a governed identity regardless of where it was built.
 
 ## Security and governance for agents
 
@@ -40,6 +40,8 @@ For details on how these capabilities work for agents, see:
 ## How to get started
 
 [!INCLUDE [licensing-agent-id](../includes/licensing-agent-id.md)]
+
+To build or connect an agent, [choose an integration path](choose-agent-integration-path.md). To administer an existing deployment, start with [Manage agent identities](manage-agent-identities-admin.md) and its owner, sponsor, and access controls.
 
 ## Related content
 

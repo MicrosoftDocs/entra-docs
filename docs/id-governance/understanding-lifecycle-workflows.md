@@ -3,8 +3,8 @@ title: 'Understanding lifecycle workflows'
 description: Describes an overview of Lifecycle workflows and the various parts.
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 08/21/2026
-ms.custom: sfi-image-nochange
+ms.date: 11/03/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1026
 #Customer Intent: As an IT admin, I want to understand lifecycle workflows and their components so that I can effectively use them to automate identity lifecycle processes.
 ---
 # Understanding lifecycle workflows 
@@ -49,6 +49,8 @@ Creating a workflow via the Microsoft Entra admin center requires the use of a t
   [![Understanding workflow template diagram.](media/understanding-lifecycle-workflows/workflow-3.png)](media/understanding-lifecycle-workflows/workflow-3.png#lightbox)
 
 The template, depending on its category, defines which tasks are available to be used, and then guides you through the creation of the workflow. The template provides input for basic description, execution conditions, and task information.  
+
+For the identity-verification onboarding templates (preview), select an ID verification profile with purpose `all` or `onboarding`. These templates add a **Select identity verification profile** step between scope configuration and task review. This profile-selection step is specific to the identity-verification templates. For configuration, registration paths, and constraints, see [Onboard users with identity verification (Preview)](how-to-onboard-users-with-identity-verification.md).
 
 >[!NOTE]
 >Depending on the template you select, the options that will be available may vary. The images in this document use the [**Onboarding pre-hire employee**](lifecycle-workflow-templates.md#onboard-pre-hire-employee) template to illustrate the parts of a workflow.

@@ -3,7 +3,9 @@ title: 'Automate identity lifecycle management with Microsoft Entra ID Governanc
 description: Describes overview of identity lifecycle management for Microsoft Entra ID Governance.
 ms.workload: identity
 ms.topic: overview
-ms.date: 04/09/2025
+ms.date: 11/03/2026
+ms.custom: msecd-doc-authoring-1026
+#customer intent: As an identity administrator, I want to understand identity lifecycle automation options so that I can choose how to automate provisioning and onboarding in my organization.
 ---
 
 # Automate identity lifecycle management with Microsoft Entra ID Governance
@@ -41,6 +43,8 @@ For more information see [What is HR driven provisioning?](~/identity/app-provis
 ## Automatic workflow tasks with Lifecycle Workflows
 
 - [Lifecycle workflows](../what-are-lifecycle-workflows.md) automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day.
+
+The identity-verification onboarding templates (preview) support pre-hire verification and new-hire credential registration. See [Onboard users with identity verification (Preview)](../how-to-onboard-users-with-identity-verification.md) for workflow configuration, inline passkey registration, and the Temporary Access Pass (TAP) alternative with Conditional Access-protected registration.
 
 ## Automatic assignment policies in entitlement management
 - [Automatic assignment policies in entitlement management](../entitlement-management-access-package-auto-assignment-policy.md) add and remove a user's group memberships, application roles, and SharePoint site roles, based on changes to the user's attributes. Users can also upon request, be assigned to groups, Teams, Microsoft Entra roles, Azure resource roles, and SharePoint Online sites, using [entitlement management](../entitlement-management-scenarios.md) and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md).

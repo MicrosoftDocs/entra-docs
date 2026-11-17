@@ -3,7 +3,7 @@ title: Known Limitations for Global Secure Access
 ms.reviewer: teresayao
 description: Discover the known limitations of Global Secure Access, including platform-specific issues and mitigations, to ensure seamless deployment and management.
 ms.topic: reference
-ms.date: 09/29/2026
+ms.date: 11/03/2026
 ms.custom: agent-id-ignite, msecd-doc-authoring-1026
 ai-usage: ai-assisted
 
@@ -161,11 +161,11 @@ The client only tunnels traffic sent using sockets. It doesn't tunnel traffic in
 The Global Secure Access client doesn't support concurrent sessions on the same machine. This limitation applies to Remote Desktop Protocol (RDP) servers and Virtual Desktop Infrastructure (VDI) solutions like Azure Virtual Desktop (AVD) that are configured for multi-session.
 
 #### QUIC not supported for Internet Access
-Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
+End-to-end QUIC forwarding isn't supported in Internet Access. Cloud firewall for clients supports QUIC acquisition and blocking in preview.
 > [!TIP]
 > QUIC is currently supported in Private Access and Microsoft 365 workloads.
 
-Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
+Keep QUIC enabled in browsers. Use **Custom Acquire** to acquire UDP traffic on destination port `443` for the intended destinations, and use cloud firewall to block that traffic. Apply the firewall policy through the security profile for the intended users. Applications that support fallback can then use HTTPS over TCP. **Default Acquire** on TCP port `443` doesn't acquire UDP port `443`, and an **Allow** rule doesn't enable supported end-to-end QUIC forwarding. For configuration and verification steps, see [Control QUIC traffic on UDP port 443](how-to-configure-cloud-firewall-clients.md#control-quic-traffic-on-udp-port-443).
 
 #### WSL 2 connectivity
 When the Global Secure Access client for Windows is enabled on the host machine, outgoing connections from the Windows Subsystem for Linux (WSL) 2 environment might be blocked. To fix this issue, create a `.wslconfig` file that sets dnsTunneling to **false**. This way, all traffic from the WSL bypasses Global Secure Access and goes directly to the network. For more information, see [Advanced settings configuration in WSL](/windows/wsl/wsl-config#wslconfig).
@@ -192,10 +192,11 @@ For network traffic that is tunneled to the cloud service, the application serve
 - If the network is in **shared** mode, you can install the Global Secure Access client on a virtual machine running macOS, as long as the client isn't also installed on the host machine.
 
 #### QUIC not supported for Internet Access
-Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
+End-to-end QUIC forwarding isn't supported in Internet Access. Cloud firewall for clients supports QUIC acquisition and blocking in preview.
 > [!TIP]
 > QUIC is currently supported in Private Access and Microsoft 365 workloads.
-Administrators can disable QUIC protocol on browsers, triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
+
+Keep QUIC enabled in browsers. Use **Custom Acquire** to acquire UDP traffic on destination port `443` for the intended destinations, and use cloud firewall to block that traffic. Apply the firewall policy through the security profile for the intended users. Applications that support fallback can then use HTTPS over TCP. **Default Acquire** on TCP port `443` doesn't acquire UDP port `443`, and an **Allow** rule doesn't enable supported end-to-end QUIC forwarding. For configuration and verification steps, see [Control QUIC traffic on UDP port 443](how-to-configure-cloud-firewall-clients.md#control-quic-traffic-on-udp-port-443).
 
 ### [Android client](#tab/android-client)
 Known limitations for the Global Secure Access client for Android include:

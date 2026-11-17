@@ -2,8 +2,9 @@
 title: Configure Dropbox for Business for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Dropbox for Business.
 ms.topic: how-to
-ms.date: 04/06/2026
-ms.custom: sfi-image-nochange
+ms.date: 10/30/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1032
+ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Dropbox Business so that I can streamline the user management process and ensure that users have the appropriate access to Dropbox Business.
 --- 
 
@@ -62,8 +63,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ### To configure automatic user provisioning for Dropbox for Business in Microsoft Entra ID:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -82,6 +83,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the **Tenant URL** field, input your Dropbox Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Dropbox. If the connection fails, ensure your Dropbox account has the required admin permissions and try again.
 
 	![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
+
+    [!INCLUDE [provisioning-oauth-azure-portal](~/includes/provisioning-oauth-azure-portal.md)]
 
 1. On the **Sign-in to Dropbox for Business to link with Microsoft Entra ID** dialog, sign in to your Dropbox for Business tenant and verify your identity.
 

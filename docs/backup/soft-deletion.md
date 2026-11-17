@@ -63,7 +63,7 @@ Understanding the difference between soft deletion and hard deletion is critical
 
 If an object is **hard deleted**, it's permanently removed and **can't be recovered**. The only option is to create a new object, which results in a new object ID and loss of prior configuration and relationships.
 
-Microsoft Entra Backup and Recovery **doesn't support recovery of hard-deleted objects**. Organizations can use capabilities such as Microsoft Entra Conditional Access to add a layer of protection for sensitive permissions, including hard deletion of directory objects. For more information, see [What are protected actions in Microsoft Entra ID?](/entra/identity/role-based-access-control/protected-actions-overview).
+Microsoft Entra Backup and Recovery **doesn't support recovery of hard-deleted objects**. To block permanent deletion of a supported object during the first seven days after it's soft deleted, [configure Hard Deletion Protection](configure-hard-deletion-protection.md). You can also use Microsoft Entra Conditional Access to protect sensitive permissions, including hard deletion of directory objects. For more information, see [What are protected actions in Microsoft Entra ID?](/entra/identity/role-based-access-control/protected-actions-overview).
 
 ### Why soft deletion matters
 
@@ -79,4 +79,5 @@ When combined with soft deletion, Microsoft Entra Backup and Recovery enables or
 ## Next steps
 
 - Learn how to recover deleted objects or restore modified objects to a previous state using Microsoft Entra Backup and Recovery: [Recover objects](recover-objects.md)
+- Protect supported objects from immediate permanent deletion: [Configure Hard Deletion Protection](configure-hard-deletion-protection.md)
 - Understand how to reduce the risk of permanent data loss: [What are protected actions in Microsoft Entra ID?](/entra/identity/role-based-access-control/protected-actions-overview)

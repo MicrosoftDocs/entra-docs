@@ -3,7 +3,8 @@ title: Manage agents in end user experience
 description: Learn how to manage agent identities in the end user experience within Microsoft Entra. View, control, and take action on agents you own or sponsor with ease.
 ms.custom: entra-id-governance
 ms.topic: how-to
-ms.date: 05/01/2026
+ms.date: 11/06/2026
+ai-usage: ai-assisted
 
 #CustomerIntent: As an agent identity owner, I want to manage the agents I own so that I can control their access and functionality.
 ---
@@ -37,7 +38,10 @@ The Manage Agents feature in Microsoft Entra lets you view and control, [agent i
 
 1. To disable an agent, select it from the list and choose **Disable agent**. This blocks users from being able to access it and prevents it from being issued tokens. This has the same effect as disabling the agent from the admin center.
 
-1. To re-enable, select the agent that is disabled and choose **Enable agent**. This allows users to access it, and allows it to be issued tokens. Note that sponsors can't re-enable agents. They will need an owner or admin's help if one of their agents needs to be re-enabled.
+    > [!NOTE]
+    > Sponsors can't re-enable agents. Ask an owner or administrator to re-enable an agent that a sponsor disabled.
+
+1. To re-enable an agent, an owner or administrator selects the disabled agent and chooses **Enable agent**. This allows users to access the agent and allows it to be issued tokens.
 
 [!INCLUDE [entitlement-management-request-behalf-agent](../includes/governance/entitlement-management-request-behalf-agent.md)]
 
@@ -45,5 +49,5 @@ The Manage Agents feature in Microsoft Entra lets you view and control, [agent i
 
 - [Manage agent identities in your organization](manage-agent-identities-admin.md) - Full agent management overview including roles, security, and governance.
 - [View and filter agent identities in your tenant](agent-lists.md) - For organization-wide agent viewing, filtering, and search.
-- If an agent needs other access packages, [Request an access package on behalf of an agent identity](../id-governance/entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity)
+- If an agent needs other access packages, [Request an access package on behalf of an agent identity](../id-governance/entitlement-management-request-behalf.md#scenarios-for-requesting-on-behalf-of-agent-identities)
 - [Governing Agent Identities](/entra/id-governance/agent-id-governance-overview) - Understand sponsor responsibilities and access package governance.

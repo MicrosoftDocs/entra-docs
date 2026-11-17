@@ -25,11 +25,19 @@
   expanded: true
 - name: Concepts
   items:
-  - name: Risk-based anti-bot verification (CAPTCHA)
-    href: concept-telephony-risk-based-captcha.md
+  - name: High assurance (preview)
+    href: ../../verified-id/high-assurance.md
+  - name: Sign-in security and resilience
+    items:
+    - name: Risk-based anti-bot verification (CAPTCHA)
+      href: concept-telephony-risk-based-captcha.md
+    - name: Resilient access controls
+      href: concept-resilient-controls.md
+    - name: Web browser cookies
+      href: concept-authentication-web-browser-cookies.md
   - name: Authentication methods
     items:
-    - name: Authentication methods policy migration
+    - name: Authentication methods policy
       href: concept-authentication-methods-manage.md
     - name: Temporary Access Pass
       href: howto-authentication-temporary-access-pass.md
@@ -149,17 +157,23 @@
       href: concept-password-ban-bad-on-premises.md
   - name: Security information registration
     href: concept-registration-mfa-sspr-combined.md
-  - name: Resilient access controls
-    href: concept-resilient-controls.md
-  - name: Web browser cookies
-    href: concept-authentication-web-browser-cookies.md
   expanded: true
 - name: How-to guides
   items:
-  - name: Manage authentication methods
-    href: how-to-authentication-methods-manage.md
-  - name: Temporary Access Pass
-    href: howto-authentication-temporary-access-pass.md
+  - name: Authentication method setup
+    items:
+    - name: Plan identity-verified onboarding (preview)
+      href: ../../verified-id/high-assurance.md#deployment-sequence
+    - name: Migrate to the Authentication methods policy
+      href: how-to-authentication-methods-manage.md
+    - name: Temporary Access Pass
+      href: howto-authentication-temporary-access-pass.md
+    - name: Enable QR code auth method
+      href: how-to-authentication-qr-code.md
+    - name: Use email address sign-in
+      href: howto-authentication-use-email-signin.md
+    - name: Use Microsoft managed settings
+      href: concept-authentication-default-enablement.md
   - name: Phishing-resistant MFA
     items:
     - name: Plan phishing-resistant passwordless authentication
@@ -319,25 +333,22 @@
         href: howto-mfa-nps-extension-rdg.md
       - name: VPN
         href: howto-mfa-nps-extension-vpn.md
-  - name: Enable QR code auth method
-    href: how-to-authentication-qr-code.md
   - name: Use SMS-based authentication
     items:
     - name: Manage
       href: howto-authentication-sms-signin.md
-    - name: Passkey by default and SMS/Voice retirement
-      href: concept-sms-voice-retirement.md
-      items:
-      - name: SMS/Voice retirement FAQ
-        href: concept-sms-voice-retirement-faq.yml
     - name: Supported apps for SMS-based authentication
       href: how-to-authentication-sms-supported-apps.md
     - name: Two-way SMS unsupported
       href: how-to-authentication-two-way-sms-unsupported.md
-  - name: Use email address sign-in
-    href: howto-authentication-use-email-signin.md
-  - name: Use Microsoft managed settings
-    href: concept-authentication-default-enablement.md
+  - name: Passkey by default and SMS/Voice retirement
+    items:
+    - name: Overview
+      href: concept-sms-voice-retirement.md
+    - name: User and admin retirement experience
+      href: concept-sms-voice-retirement-experience.md
+    - name: SMS/Voice retirement FAQ
+      href: concept-sms-voice-retirement-faq.yml
   - name: Security info registration
     items:
     - name: Combined MFA and SSPR registration

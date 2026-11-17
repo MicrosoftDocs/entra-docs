@@ -2,19 +2,22 @@
 title: User profile attributes
 description: User profile attributes that you can collect from the user during sign-up, and how to extend user profile attributes by using custom user attributes.
 ms.topic: concept-article
-ms.date: 04/28/2025
-ms.custom: it-pro, sfi-image-nochange
-#Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID extends user profile attributes by using custom user attributes. 
+ms.date: 11/13/2026
+ms.custom: it-pro, sfi-image-nochange, msecd-doc-authoring-1030
+ai-usage: ai-assisted
+#customer intent: As an application developer or IT administrator, I want to choose built-in and custom user attributes so that I can collect the profile information my app needs during sign-up.
 ---
 
 # User profile attributes
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
-
 The user attributes you collect during sign-up are stored with the user's profile in your directory. You can choose from built-in user attributes or create custom user attributes.
 
-- [Built-in user attributes](#built-in-user-attributes), such as city, country/region, email address, and so on, are available in Microsoft Entra External ID. You can choose the built-in user attributes you want to collect during sign-up.
-- For any additional information you want to collect, you can create [custom user attributes](#custom-user-attributes). Several custom input controls can be added to the sign-up page to collect the attributes, including text boxes, radio buttons, and check boxes. The following example shows how custom input controls can be used to collect attributes for loyalty number, terms of use consent for terms of use, and privacy policy consent.
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
+
+Page layout and input-control settings in this article apply to Microsoft-hosted authentication. For the Native Authentication API integrations, use the [attribute collection contract](~/identity-platform/concept-native-authentication-user-attributes.md).
+
+- [Built-in user attributes](#built-in-user-attributes), such as city, country/region, and email address, are available in Microsoft Entra External ID. Choose the attributes your app needs during sign-up.
+- For any additional information you want to collect, you can create [custom user attributes](#custom-user-attributes). Several custom input controls can be added to the sign-up page to collect the attributes, including text boxes, radio buttons, and check boxes. The following example shows custom input controls for a loyalty number, consent to terms of use, and privacy policy consent.
    
    :::image type="content" source="media/concept-user-attributes/attribute-collection-page-types-reduced.png" border="false" alt-text="Screenshot of a sign-up page with terms of use and privacy policy checkboxes." lightbox="media/concept-user-attributes/attribute-collection-page-types.png":::
 
@@ -24,52 +27,52 @@ Microsoft Entra External ID has built-in user attributes you can collect during 
 
 This table summarizes the built-in user attributes you can collect during the sign-up flow:
  
-<!---kengaderdus added this section to be used by devs who reference user profile attributes programmatically such those who use native authentication API-->
-
 - *Label in Microsoft Entra admin center* is the name of the user attribute as it appears in the Microsoft Entra admin center. 
-- *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of the Microsoft Graph API. You use this name when you want to use this user attribute programmatically, such as in [native authentication](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- *Programmable name* is the name of the user attribute as used in the [user resource](/graph/api/resources/user/#properties) of the Microsoft Graph API. For authentication-specific fields, see the [native authentication attribute contract](~/identity-platform/concept-native-authentication-user-attributes.md).
 - *Data type* is the user attribute's data type.
 
-|  Label in Microsoft Entra admin center| Programmable name |     Data type   |  Remarks    |
-|-----------------------|-------------------------|------------------------|------------------------|
-|City|city|String|Maximum length is 128 characters.|
-|Country/Region|country|String|Maximum length is 128 characters.|
-|Display Name|displayName|String|Maximum length is 256 characters.|
-|Email Address| email| String | This property can't contain accent characters. In the [native authentication API](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), this attribute is referenced as *username*.|
-|Given Name|givenName|String|Maximum length is 64 characters.|
-|Job Title|jobTitle|String|Maximum length is 128 characters.|
-|Postal Code|postalCode	|String|Maximum length is 40 characters.|
-|State/Province|state|String|Maximum length is 128 characters.|
-|Street Address|streetAddress|String|Maximum length is 1024 characters.|
-|Surname|surname|String|Maximum length is 64 characters.|
+| Label in Microsoft Entra admin center | Programmable name | Data type | Remarks |
+| ----------------------- | ------------------------- | ------------------------ | ------------------------ |
+| City | city | String | Maximum length is 128 characters. |
+| Country/Region | country | String | Maximum length is 128 characters. |
+| Display Name | displayName | String | Maximum length is 256 characters. |
+| Email Address | email | String | This property can't contain accent characters. For API field names, follow the returned `attributeId` in the [native authentication attribute contract](~/identity-platform/concept-native-authentication-user-attributes.md). V1 uses *username* for the email identifier. |
+| Given Name | givenName | String | Maximum length is 64 characters. |
+| Job Title | jobTitle | String | Maximum length is 128 characters. |
+| Postal Code | postalCode	| String | Maximum length is 40 characters. |
+| State/Province | state | String | Maximum length is 128 characters. |
+| Street Address | streetAddress | String | Maximum length is 1024 characters. |
+| Surname | surname | String | Maximum length is 64 characters. |
 
 ## Custom user attributes
 
-If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
+If your app requires more information than the built-in user attributes provide, you can add your own attributes. These are called *custom user attributes*.
 
-To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
+To define a custom user attribute, create it at the tenant level so it can be used in any user flow in the tenant. Then assign it to your sign-up user flow. Microsoft-hosted page layout settings control how it appears on Microsoft-hosted pages; your app or self-hosted website controls its own presentation.
 
-Learn how to create custom user attributes [Create custom user attributes](how-to-define-custom-attributes.md#create-custom-user-attributes) article.
+For instructions, see [Create custom user attributes](how-to-define-custom-attributes.md#create-custom-user-attributes).
 
 ### Custom user attributes input types
 
-Before you use custom user attributes, determine the best way to gather user input for each custom attribute you want to collect. You can collect information from your users during sign-up by using the following input type controls:
+The following input controls describe Microsoft-hosted page layouts. With Embedded native authentication or BYO UX, use the descriptors returned by the Native Authentication API to build your interface.
 
-  - String text box
-  - Radio buttons
-  - Multiselect checkboxes
-  - Numeric text box
-  - Single-select checkbox
+Before you use custom user attributes, choose the input control for each attribute:
+
+  - String text box.
+  - Radio buttons.
+  - Multiselect checkboxes.
+  - Numeric text box.
+  - Single-select checkbox.
   
 Refer to this table to find the appropriate data types and user input types:
 
-|Data type  |User input type     |Description  |
-|-----------|--------------------|-------------|
-|String     |TextBox             |Free-form text entry field.         |
-|String     |RadioSingleSelect   |Series of radio buttons with only one selection allowed. The **Text** for individual radio buttons can include hyperlinks formatted in Markdown language.          |
-|String     |CheckboxMultiSelect |Series of one or more checkboxes with multiple selections allowed. The **Text** for individual checkboxes can include hyperlinks formatted in Markdown language.        |
-|Boolean    |CheckboxSingleSelect|Single boolean checkbox with a label. The **Label** for the checkbox can include hyperlinks formatted in Markdown language.      |
-|Int        |NumericTextBox      |Free-form integer entry.         |
+| Data type | User input type | Description |
+| ----------- | -------------------- | ------------- |
+| String | TextBox | Free-form text entry field. |
+| String | RadioSingleSelect | Series of radio buttons with only one selection allowed. The **Text** for individual radio buttons can include hyperlinks formatted in Markdown language. |
+| String | CheckboxMultiSelect | Series of one or more checkboxes with multiple selections allowed. The **Text** for individual checkboxes can include hyperlinks formatted in Markdown language. |
+| Boolean | CheckboxSingleSelect | Single boolean checkbox with a label. The **Label** for the checkbox can include hyperlinks formatted in Markdown language. |
+| Int | NumericTextBox | Free-form integer entry. |
 
 Checkboxes and radio buttons can include hyperlinks to other content, such as terms of use and privacy policies. The example at the beginning of this article shows a sign-up page that combines built-in attributes and custom attributes. In the example:
 
@@ -77,7 +80,7 @@ Checkboxes and radio buttons can include hyperlinks to other content, such as te
 - The **Loyalty Number** is a custom attribute with a free-form entry field that accepts a numeric integer. You can configure this format using the **Int** data type and **NumericTextBox** user input type.
 - The **terms of use** and **privacy policy** custom attributes are separate, single-select checkboxes with labels containing hyperlinks. You can configure a single checkbox using the **Boolean** data type, which defaults to the **CheckboxSingleSelect** user input type. Use Markdown language to add hyperlinks to the checkbox label.
 
-Learn how to configure their user attributes input types in [Configure the user input types](how-to-define-custom-attributes.md#configure-the-user-input-types-and-page-layout) article.
+To configure attribute input controls, see [Configure the user input types](how-to-define-custom-attributes.md#configure-the-user-input-types-and-page-layout).
 
 ### Where custom user attributes are stored
 
@@ -86,15 +89,23 @@ Custom user attributes are also known as directory extension attributes because 
  - `{appId-without-hyphens}` is the stripped version of the client ID for the *b2c-extensions-app*. 
  - `{custom-attribute-name}` is the name you assigned to the custom attribute.
 
-For example, if the client ID of the *b2c-extensions-app* is `2588a-bcdwh-tfeehj-jeeqw-ertc` and the attribute name is:
-- *loyaltyNumber*, then the custom attribute is named as`extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber`.
-- *Loyalty Number* then the custom attribute is named as`extension_2588abcdwhtfeehjjeeqwertc_LoyaltyNumber`. You remove the space and use camel case to separate the words.
+For example, if the client ID of the *b2c-extensions-app* is `00001111-aaaa-2222-bbbb-3333cccc4444` and the attribute name is:
+- *loyaltyNumber*, then the custom attribute is named `extension_00001111aaaa2222bbbb3333cccc4444_loyaltyNumber`.
+- *Loyalty Number*, then the custom attribute is named `extension_00001111aaaa2222bbbb3333cccc4444_LoyaltyNumber`. You remove the space and use camel case to separate the words.
 
 Use the [Find the application ID for the extensions app](how-to-define-custom-attributes.md) article to learn how to find the application ID for the *b2c-extensions-app* registered in your external tenant.
+
+## Attribute collection in your interface
+
+For Embedded native authentication and BYO UX, follow the [native authentication attribute contract](~/identity-platform/concept-native-authentication-user-attributes.md). Use exact returned `attributeId` values, current requirements, and validation metadata rather than copying the directory property table into a request. Native Authentication API submissions use string values even when the directory attribute has a Boolean or integer data type.
+
+For an existing V1 SDK integration, use the [MSAL Android library](https://github.com/AzureAD/microsoft-authentication-library-for-android) for library-specific attribute types. Those types aren't the response schema for the Native Authentication API.
 
 ## Microsoft Graph APIs
 
 User attributes are referred to as *user flow attributes* in Microsoft Graph. Use the [identityUserFlowAttribute resource type](/graph/api/resources/identityuserflowattribute) and its associated methods to manage both built-in and custom user flow attributes.
+
+These management APIs have their own permission and resource-token requirements. Signing in through the Native Authentication API doesn't grant directory-management access.
 
 ## Related content
 
@@ -102,4 +113,4 @@ User attributes are referred to as *user flow attributes* in Microsoft Graph. Us
 
 - [Learn more about creating a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).
 
-- [Native authentication MSAL Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md).
+- [The native authentication attribute collection contract](~/identity-platform/concept-native-authentication-user-attributes.md).

@@ -2,7 +2,9 @@
 title: Configure Swit for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Swit.
 ms.topic: how-to
-ms.date: 04/14/2026
+ms.date: 10/30/2026
+ms.custom: msecd-doc-authoring-1032
+ai-usage: ai-assisted
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Swit so that I can streamline the user management process and ensure that users have the appropriate access to Swit.
 --- 
@@ -58,8 +60,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ### Configure automatic user provisioning for Swit in Microsoft Entra ID
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -74,6 +76,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Select **+ New configuration**.
 
 	![Screenshot of the New configuration option on the Provisioning page.](common/application-provisioning.png)
+
+    [!INCLUDE [provisioning-oauth-azure-portal](~/includes/provisioning-oauth-azure-portal.md)]
 
 1. In the **Admin Credentials** section, select Authorize, make sure that you enter your Swit account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Swit. If the connection fails, ensure your Swit account has Admin permissions and try again.
 

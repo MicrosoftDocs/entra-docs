@@ -4,6 +4,8 @@ description: Protect your organization by implementing Conditional Access polici
 ms.topic: how-to
 ms.date: 03/24/2026
 ms.reviewer: lhuangnorth, cokoopma
+ms.custom: msecd-doc-authoring-108
+ai-usage: ai-assisted
 ---
 # Require multifactor authentication for elevated sign-in risk
 
@@ -26,6 +28,8 @@ The sign-in risk-based policy prevents users from registering MFA during risky s
 
 ## Related content
 
+- [Create an identity verification profile](../authentication/concept-authentication-verified-id.md#create-and-manage-identity-verification-profiles) with **Profile purpose** set to **All** or **Verification** before configuring identity verification for risk remediation. For tenant-issued credentials, select **Verification**.
+- [Configure risk policies](../../id-protection/howto-identity-protection-configure-risk-policies.md).
 - [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
 - [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)

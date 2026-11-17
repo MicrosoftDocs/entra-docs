@@ -2,8 +2,8 @@
 title: What's new in multitenant organization documentation
 description: Learn about the new features and documentation improvements in multitenant organizations for Microsoft Entra ID.
 ms.topic: overview
-ms.date: 03/18/2026
-ms.custom: it-pro
+ms.date: 11/02/2026
+ms.custom: it-pro, msecd-doc-authoring-1032
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
@@ -19,6 +19,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| November 2026 | Cross-tenant synchronization | Preview support for role-enabled group synchronization lets you create role-assignable groups across tenants in the same cloud. Configure inbound settings and a creation-only attribute mapping, then verify the target groups. Role assignments aren't synchronized. See [Role-assignable group synchronization](cross-tenant-synchronization-overview.md#can-i-synchronize-role-assignable-groups) and [Configure role-enabled group sync](cross-tenant-synchronization-configure.md?pivots=same-cloud-synchronization#configure-role-enabled-group-sync). |
 | August 2026 | Cross-tenant synchronization | Revised configuration steps for updated Overview, Attribute mapping, Provisioning configuration, and Basics settings pages. See [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md). |
 | March 2026 | Cross-tenant synchronization | Added support for security group synchronization (same cloud) in preview. See [Group synchronization](cross-tenant-synchronization-overview.md#group-synchronization) and [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md?pivots=same-cloud-synchronization). |
 

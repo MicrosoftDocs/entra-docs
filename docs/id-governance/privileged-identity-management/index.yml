@@ -45,9 +45,13 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Activate my Microsoft Entra roles
-            url: pim-how-to-activate-role.yml
+            url: pim-how-to-activate-role.md
           - text: Activate my Azure resource roles
-            url: pim-resource-roles-activate-your-roles.yml
+            url: pim-resource-roles-activate-your-roles.md
+          - text: Connect to an Azure Virtual Machine from the My Access portal
+            url: pim-connect-virtual-machine-my-access.md
+          - text: My Access portal (preview)
+            url: ../my-access-portal-overview.md#activate-eligible-role-assignments
 
   # Card
   - title: Assign roles
@@ -58,6 +62,10 @@ landingContent:
             url: pim-how-to-add-role-to-user.md
           - text: Assign Azure resource roles
             url: pim-resource-roles-assign-roles.md
+          - text: Assign eligibility for groups
+            url: groups-assign-member-owner.md
+          - text: Assign app roles (preview)
+            url: app-roles-assign.md
 
   # Card
   - title: Approve requests
@@ -78,3 +86,5 @@ landingContent:
             url: pim-how-to-change-default-settings.md
           - text: Configure Azure resource role settings 
             url: pim-resource-roles-configure-role-settings.md
+          - text: Configure PIM for Groups settings
+            url: groups-role-settings.md

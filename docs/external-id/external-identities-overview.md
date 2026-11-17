@@ -3,9 +3,10 @@
 title: Microsoft Entra External ID Overview
 description: Compare solutions for using Microsoft Entra External ID to work with people outside your organization, including B2B collaboration and Azure AD B2C.
 ms.topic: overview
-ms.date: 04/24/2026
+ms.date: 11/11/2026
 ms.collection: M365-identity-device-management
 ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 # Customer intent: As a developer who creates apps for consumers and business customers, I want to understand the capabilities of Microsoft Entra External ID so that I can manage my customers' identity experiences and allow them to use their own credentials to sign in.
 ---
 
@@ -32,11 +33,13 @@ External ID is a flexible solution for both:
 
 Organizations and developers can use [External ID in an external tenant](customers/overview-customers-ciam.md) as their CIAM solution when publishing their apps to consumers and business customers.
 
-You can create a separate Microsoft Entra tenant in an external configuration to manage your apps and user accounts separately from your workforce. Within this tenant, you can configure custom-branded sign-up experiences and user management features:
+You can create a separate Microsoft Entra tenant in an external configuration to manage your apps and user accounts separately from your workforce. For customer-app authentication, choose Microsoft-hosted authentication, Embedded native authentication, or Bring Your Own UX (BYO UX). See [Choose an authentication approach](customers/concept-choose-authentication-approach.md) for selection criteria and current availability.
+
+Within this tenant, configure authentication experiences and user management for your apps:
 
 - Set up self-service registration flows that define the sign-up steps that customers follow and the sign-in methods that they can use. These methods include email and password, one-time passcodes, or social accounts from Google or Facebook.
 
-- Create a custom experience for users who sign in to your apps by configuring branding settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text for sign-ins across your apps.
+- For Microsoft-hosted authentication, customize sign-in pages by configuring company branding for your tenant. Add your own background images, colors, company logos, and text for sign-ins across your apps.
 
 - Collect information from customers during sign-up by selecting from built-in user attributes or adding your own custom attributes.
 
@@ -85,7 +88,7 @@ The following table compares the scenarios that you can enable with External ID.
 | Intended for | Collaborating with business partners from external organizations like suppliers, partners, and vendors. These users might or might not have Microsoft Entra ID or managed IT. | Consumers and business customers of your app. These users are managed in a Microsoft Entra tenant that's configured for external apps and users. |
 | User management | You manage B2B collaboration users in the same workforce tenant as employees but typically annotate them as guest users. You can manage guest users the same way as employees and add them to the same groups. You can use [cross-tenant access settings](cross-tenant-access-overview.md) to determine which users have access to B2B collaboration. | You manage app users in an external tenant that you create for consumers of your application. Users in an external tenant have different [default permissions](customers/reference-user-permissions.md) than users in a workforce tenant. The external tenant is separate from the organization's employee directory. |
 | Single sign-on (SSO) | SSO to all Microsoft Entra-connected apps is supported. For example, you can provide access to Microsoft 365 or on-premises apps, and to other SaaS apps such as Salesforce or Workday. | SSO to apps registered in the external tenant is supported. SSO to Microsoft 365 or to other Microsoft SaaS apps isn't supported. |
-| Company branding | The default state for the authentication experience is a Microsoft design. Administrators can customize the guest sign-in experience with their company branding. | The default branding for the external tenant is neutral and doesn't include any existing Microsoft branding. Administrators can customize the branding for the organization or per application.  [Learn more](customers/concept-branding-customers.md). |  
+| Company branding | The default state for the authentication experience is a Microsoft design. Administrators can customize the guest sign-in experience with their company branding. | For Microsoft-hosted authentication, the default branding is neutral and doesn't include any existing Microsoft branding. Administrators can customize the branding for the organization or per application. [Learn more](customers/concept-branding-customers.md). |
 | Microsoft cloud settings | [Supported](cross-cloud-settings.md). | Not applicable. |
 | Entitlement management | [Supported](~/id-governance/entitlement-management-overview.md). | Not applicable. |
 
@@ -137,10 +140,12 @@ Organizations can use Microsoft Entra Conditional Access policies to enhance the
 
 #### Conditional Access and MFA in external tenants
 
-In external tenants, organizations can enforce MFA for customers by creating a Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support two methods for authentication as a second factor:
+In external tenants, organizations can enforce MFA for customers by creating a Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support the following authentication methods for MFA:
 
 - **Email one-time passcode**. After users sign in with their email and password, they're prompted for a passcode that's sent to their email.
 - **SMS-based authentication**. SMS is available as a second-factor authentication method for MFA for users in external tenants. Users who sign in with email and password, email and one-time passcode, or social identities like Google or Facebook are prompted for second verification through SMS.
+- **Time-based one-time password (TOTP)**. Users register Microsoft Authenticator or a supported third-party authenticator app and enter the temporary verification code from the app when MFA is required.
+- **Passkey (FIDO2)**. Passkeys are phishing-resistant credentials that can satisfy MFA in a single gesture and enable passwordless sign-in.
 
 [Learn more about authentication methods in external tenants](customers/concept-multifactor-authentication-customers.md).
 

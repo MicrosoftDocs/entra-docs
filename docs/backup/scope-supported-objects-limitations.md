@@ -1,11 +1,11 @@
 ---
 title: Supported objects and recoverable properties in Microsoft Entra Backup and Recovery
 description: Learn which Microsoft Entra Backup and Recovery object types and properties are supported, and understand current limitations
-ms.date: 08/25/2026
+ms.date: 10/19/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
-ms.custom: msecd-doc-authoring-1023
+ms.custom: msecd-doc-authoring-1026
 #customer intent: As an identity administrator, I want to understand which tenant objects and properties Microsoft Entra Backup and Recovery supports so that I can plan backup and recovery operations.
 ---
 
@@ -130,6 +130,10 @@ Recovery supports these authentication method policies:
 
 For reference, view the full set of authentication methods policy properties in the [Microsoft Graph authenticationMethodConfiguration resource type](/graph/api/resources/authenticationmethodconfiguration).
 
+## Authentication strength policy
+
+All properties of authentication strength policies are in scope for backup and recovery. View all authentication strength policy properties in the [Microsoft Graph authenticationStrengthPolicy resource type](/graph/api/resources/authenticationstrengthpolicy#properties).
+
 ## Application
 
 Recovery for **application** objects supports these properties:
@@ -183,9 +187,12 @@ Service principal recovery is the anchor for related permissions. When a service
 
 ### OAuth2 (delegated) permission grant
 
-OAuth2 permission grant represents the delegated permissions granted to an application's service principal. An administrator can create delegated permission grants when a user consents to an application's request to access an API, or an administrator can grant them on behalf of all users. Permission grants that an admin creates on behalf of all users are in scope. You can identify these permission grants by `consentType` = `AllPrincipals` and `principalId` = `null`.
+An OAuth2 permission grant represents the delegated permissions granted to an application's service principal. Permission grants created through either user consent or administrator consent on behalf of all users are in scope for backup and recovery:
 
-Permission grants created as a result of user consent aren't supported. View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
+- User consent grants have `consentType` = `Principal` and `principalId` set to the user's ID.
+- Administrator consent grants on behalf of all users have `consentType` = `AllPrincipals` and `principalId` = `null`.
+
+View OAuth2 (delegated) permission grant properties in the [Microsoft Graph oauth2PermissionGrant resource type](/graph/api/resources/oauth2permissiongrant#properties).
 
 OAuth2 permission grants aren’t recovered independently. For difference report and recovery scoping, service principals, OAuth2 permission grants, and app role assignments are grouped under a single filter in the Microsoft Entra admin center.
 
@@ -234,11 +241,13 @@ Consider the following limitations when you use Microsoft Entra Backup and Recov
 
 ### Job completion time
 
-Completion time for difference reports and recovery depends on **data loading** and **processing**.
+Completion time for difference reports and recovery depends on the backup plan and the amount of processing required.
 
-The first time you access a backup through a difference report or recovery, the recovery service loads the backup data. This loading takes a fixed amount of time, even for small tenants. The service reuses loaded data across operations that reference the same backup, so subsequent operations complete faster. Creating a difference report before recovery can reduce recovery time by preloading the data.
+The first time you access a Standard backup through a difference report or recovery, the recovery service loads the backup data. This loading takes a fixed amount of time, even for small tenants. The service reuses loaded data across operations that reference the same backup, so subsequent operations complete faster. Creating a difference report before recovery can reduce recovery time by preloading the data.
 
-After data loading completes, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
+Difference reports and recovery against Premium backups skip data loading, including the first recovery against a selected backup.
+
+After any required data loading completes, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
 
 ### Hard-deleted objects
 

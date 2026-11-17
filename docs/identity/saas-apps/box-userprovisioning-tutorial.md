@@ -2,8 +2,9 @@
 title: Configure Box for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Box .
 ms.topic: how-to
-ms.date: 03/02/2026
-ms.custom: sfi-image-nochange
+ms.date: 10/30/2026
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1032
+ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Box so that I can streamline the user management process and ensure that users have the appropriate access to Box.
 --- 
 # Configure Box for automatic user provisioning with Microsoft Entra ID
@@ -80,8 +81,8 @@ If automatic provisioning is enabled, then the assigned users and/or groups are 
 
 The objective of this section is to outline how to enable provisioning of Active Directory user accounts to Box.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**.
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Microsoft Entra ID** > **Enterprise applications**.
 
 2. If you have already configured Box for single sign-on, search for your instance of Box using the search field. Otherwise, select **Add** and search for **Box** in the application gallery. Select Box from the search results, and add it to your list of applications.
 
@@ -90,6 +91,8 @@ The objective of this section is to outline how to enable provisioning of Active
 1. Select **+ New configuration**.
 
 	![Screenshot for the new configuration steps into the box.](common/application-provisioning.png)
+
+    [!INCLUDE [provisioning-oauth-azure-portal](~/includes/provisioning-oauth-azure-portal.md)]
 
 5. Under the **Admin Credentials** section, select **Authorize** to open a Box login dialog in a new browser window.
 

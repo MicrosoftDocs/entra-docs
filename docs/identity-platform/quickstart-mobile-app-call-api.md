@@ -47,7 +47,7 @@ In this article, you do the following tasks:
 * Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* A web API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](../external-id/customers/sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
+* A web API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the [ASP.NET Core web API quickstart](quickstart-web-api-dotnet-protect-app.md?tabs=aspnet-core) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
     - Configure API scopes
     - Configure app roles
@@ -62,7 +62,7 @@ In this article, you do the following tasks:
 * Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID*
-* An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample iOS mobile app](../external-id/customers/sample-native-authentication-ios-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
+* An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the [ASP.NET Core web API quickstart](quickstart-web-api-dotnet-protect-app.md?tabs=aspnet-core) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
     - Configure API scopes.
     - Configure app roles.
@@ -194,14 +194,14 @@ To build and run your app, follow these steps:
 
 #### [Android](#tab/android-external)
 
-- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](../external-id/customers/how-to-run-native-authentication-sample-android-app.md).
+- [Embedded native authentication Android SDK and samples](how-to-migrate-native-authentication-v1-v2.md#android-migration).
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 - [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).
 
 #### [iOS/macOS](#tab/ios-macos-external)
 
-- [Sign in users in sample iOS (Swift) mobile app by using native authentication](../external-id/customers/how-to-run-native-authentication-sample-ios-app.md).
+- [Embedded native authentication Apple SDK and samples](how-to-migrate-native-authentication-v1-v2.md#ios-migration).
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 - [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).

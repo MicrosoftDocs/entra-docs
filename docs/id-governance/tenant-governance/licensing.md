@@ -6,7 +6,7 @@ author: tafra00
 ms.author: tazkiaafra
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 09/14/2026
+ms.date: 11/11/2026
 ms.custom: msecd-doc-authoring-1018
 ai-usage: ai-assisted
 
@@ -90,6 +90,16 @@ One administrator enables Related tenants discovery for the tenant. After discov
 Secure add-on tenant creation is available with Microsoft Entra Free for paid Microsoft customers. A premium Microsoft Entra license isn't required, but the customer's existing tenant must be associated with a paid Microsoft cloud subscription. Customers who use only a free tenant or trial subscription can't create more tenants from the Microsoft Entra admin center.
 
 For more information about the general tenant creation requirements, see [Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md).
+
+### Resource policy (preview)
+
+Most resource policy operations during preview require a Microsoft Entra ID Governance service plan, available with Microsoft Entra ID Governance or an offering such as Microsoft Entra Suite. Microsoft Entra P1 or P2 alone doesn't meet this requirement.
+
+The [features-by-license tables](#features-by-license) list required operations and exceptions for built-in and custom policies. Role and API permission requirements still apply to operations that don't require this service plan.
+
+An enabled assignment in `doNotEnforce` mode still evaluates requests. Creating or editing that assignment requires the service plan; switching to `doNotEnforce` isn't the same as deactivating it.
+
+For feature behavior and availability, see [What is Microsoft Entra resource policy?](resource-policy-overview.md). To assign a built-in policy, see the [built-in policy quickstart](resource-policy-quickstart-portal.md).
 
 ## Related content
 

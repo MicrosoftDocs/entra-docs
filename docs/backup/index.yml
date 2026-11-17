@@ -21,6 +21,10 @@ landingContent:
             url: overview.md
       - linkListType: concept
         links:
+          - text: Standard and Premium plans
+            url: backup-recovery-plans.md
+          - text: Premium pricing
+            url: backup-recovery-premium-pricing.md
           - text: Backup, difference report, and recovery model
             url: backup-difference-report-recovery-model.md
           - text: Supported objects and recoverable properties
@@ -35,6 +39,8 @@ landingContent:
         links:
           - text: View available backups
             url: view-available-backups.md
+          - text: Configure Hard Deletion Protection
+            url: configure-hard-deletion-protection.md
           - text: Create and review difference reports
             url: create-review-difference-reports.md
           - text: Recover objects

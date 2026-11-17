@@ -2,8 +2,9 @@
 title: User default permissions in external tenants
 description: Learn about the default permissions for users in an external tenant. 
 ms.topic: reference
-ms.date: 03/10/2025
-ms.custom: it-pro
+ms.date: 11/12/2026
+ms.custom: it-pro, msecd-doc-authoring-1030
+ai-usage: ai-assisted
 ---
 
 # Default user permissions in external tenants
@@ -34,6 +35,8 @@ The following table describes the default permissions assigned to a user in an e
 | ------------ | --------- |
 | Users and contacts | <ul><li>Read and update their own profile through the app profile management experience<li>Change their own password</li><li>Sign in with a local or social account</li></ul> |
 | Applications | <ul><li>Access applications</li><li>Revoke consent to applications</li></ul> |
+
+App ownership is supported, but default permissions differ from workforce tenants. Owners, including invited users, should be assigned the Application Developer role to manage credentials and other properties of owned app registrations. The Application Administrator and Cloud Application Administrator roles provide broader application-management permissions, regardless of ownership. For users who need to manage only app registrations they own, Application Developer is the least-privileged built-in role.
 
 ## Microsoft Graph APIs and permissions
 

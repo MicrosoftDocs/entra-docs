@@ -1,11 +1,11 @@
 ---
 title: Backup, difference report, and recovery model in Microsoft Entra Backup and Recovery
 description: Understand how Microsoft Entra Backup and Recovery creates backups, generates difference reports, and recovers tenant objects to a previous state
-ms.date: 08/25/2026
+ms.date: 10/19/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
-ms.custom: msecd-doc-authoring-1023
+ms.custom: msecd-doc-authoring-1026
 #customer intent: As an identity administrator, I want to understand how backups, difference reports, and recovery work so that I can compare tenant changes and recover supported objects.
 ---
 
@@ -35,18 +35,29 @@ Changes for users and groups synchronized from on-premises Active Directory appe
 
 ### First-time difference report generation
 
-The first time you create a difference report, you might experience a delay as backup data loads before the difference calculation starts. Check the progress of report generation in the **Difference Reports** section.
+When you create a difference report against a Standard backup whose data hasn't already been loaded, the backup data loads before the difference calculation starts. A difference report against a Premium backup skips data loading and starts with difference calculation. Check the progress of report generation in the **Difference Reports** section.
 
-| Tenant size | Estimated data loading time for first-time report generation | 
-|---|---| 
-| 1-50,000 objects | Up to 1 hour | 
-| 50,000-300,000 objects | Up to 1 hour 30 minutes | 
-| 300,000-1,000,000 objects | Up to 2 hours | 
-| More than 1,000,000 objects | Up to 2 hours and 30 minutes | 
+For Standard backups that require data loading, use the following estimates:
 
-The second time you create a difference report against the same backup, the report doesn't need the data loading step, so it finishes faster.
+| Tenant size | Estimated data loading time for Standard backups |
+|---|---|
+| 1-50,000 objects | Up to 1 hour |
+| 50,001-300,000 objects | Up to 1 hour 30 minutes |
+| 300,001-1,000,000 objects | Up to 2 hours |
+| More than 1,000,000 objects | Up to 2 hours and 30 minutes |
 
-Difference calculation depends on the changes that have happened between the backup state and the current state. For 100,000 object and/or link changes, full report generation could take approximately 45 minutes to complete.  
+After data loading, difference calculation time depends on the number of changes between the backup state and the current state. For 100,000 object and/or link changes, the calculation can take approximately 45 minutes.
+
+### Example: First difference report performance
+
+The following example compares first-time difference report generation for Standard and Premium. The selected backup contains 300,000 objects, and 100,000 objects have changed since it was taken. For Standard, assume no previous operation has loaded the backup data.
+
+| Plan | Data loading | Difference calculation | Total report generation |
+|---|---|---|---|
+| **Standard** | Up to 1 hour 30 minutes | Up to 45 minutes | Up to 2 hours 15 minutes |
+| **Premium** | Skipped | Up to 45 minutes | Up to 45 minutes |
+
+After data loads for a Standard backup, subsequent difference reports and recovery operations against the same backup don't repeat the data loading phase.
 
 > [!NOTE]
 > Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
@@ -59,13 +70,15 @@ When you recover your tenant, apply filters to control which objects to recover:
 - **By object ID**: Supply the object type and object ID to recover a specific object.
 - **All changes**: Recover all changed objects to the state captured in the selected backup.
 
-Recovery performance depends on the number of changes to be recovered. Recovering 500,000 changes can take up to 30 hours.
+If no previous operation has loaded a backup, recovery under the Standard plan begins with data loading. Under the Premium plan, recovery skips this phase.
+
+Recovery performance depends on the number of changes to be recovered. Recovering 500,000 changes can take up to 30 hours, excluding any time required for data loading.
 
 > [!NOTE]
 > Time estimates are approximate and provided for general planning purposes only. Actual performance might differ significantly based on concurrent network activities, resource availability, and tenant size.
 
 > [!IMPORTANT]
-> Only one job can run at a time, including difference reports and recovery jobs. For example, if a difference report is running in your tenant, you can't start a recovery job. Wait until the current job finishes before starting a new one.
+> Only one job can run at a time, including difference reports and recovery jobs. For example, if a difference report is running in your tenant, you can't start a recovery job. Wait until the current job finishes or cancel it before starting a new one.
 
 ## Recovery model
 
@@ -81,7 +94,7 @@ The type of change from the backup state determines the recovery action:
 Backup and Recovery doesn't create new objects or hard-delete objects from your tenant.
 
 > [!WARNING]
-> Hard-deleted objects can't be recovered. Configure [protected actions](/entra/identity/role-based-access-control/protected-actions-overview) to prevent unwanted hard deletions.
+> Hard-deleted objects can't be recovered. [Configure Hard Deletion Protection](configure-hard-deletion-protection.md) to block permanent deletion of supported objects during the first seven days after they're soft deleted. You can also configure [protected actions](/entra/identity/role-based-access-control/protected-actions-overview) to protect hard-deletion permissions.
 
 For soft-deleted users, Microsoft 365 Groups, cloud security groups, application registrations, and service principals, you can also use [soft deletion](soft-deletion.md) within the 30-day retention window.
 

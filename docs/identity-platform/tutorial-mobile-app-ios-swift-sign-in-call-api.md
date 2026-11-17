@@ -104,7 +104,7 @@ In this tutorial, you:
 ## Prerequisites
 
 - [Tutorial: Sign in users in iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-sign-in.md)
-- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample iOS mobile app](../external-id/customers/sample-native-authentication-ios-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
+- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the [ASP.NET Core web API quickstart](quickstart-web-api-dotnet-protect-app.md?tabs=aspnet-core) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
     - Register a web API application.
     - Configure API scopes.
@@ -169,8 +169,8 @@ Upon completion, it checks for any errors during the request. If an error occurs
 ## Related content
 
 - [Sign in users in sample iOS (Swift) mobile app](../external-id/customers/sample-mobile-app-ios-swift-sign-in.md)
-- [Sign in users and call an API in sample iOS mobile app by using native authentication](../external-id/customers/sample-native-authentication-ios-sample-app-call-web-api.md)
-- [Tutorial: Prepare your iOS/macOS app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-ios-macos-app.md)
+- [Embedded native authentication overview](concept-native-authentication.md).
+- [Apple SDK compatibility and migration](how-to-migrate-native-authentication-v1-v2.md#ios-migration).
 
 
 ::: zone-end

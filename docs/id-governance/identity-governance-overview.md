@@ -3,7 +3,8 @@ title: Microsoft Entra ID Governance
 description: Microsoft Entra ID Governance enables you to balance your organization's need for security and end user productivity with the right processes and visibility.
 editor: markwahl-msft
 ms.topic: overview
-ms.date: 05/08/2026
+ms.date: 11/03/2026
+ms.custom: msecd-doc-authoring-1026
 ms.reviewer: markwahl-msft
 #Customer Intent: As an IT admin, I want to understand Microsoft Entra ID Governance so that I can balance security and end user productivity with the right processes and visibility.
 ---
@@ -25,6 +26,7 @@ With Microsoft Entra ID Governance you can implement the following scenarios for
 - Govern the access lifecycle
 - Secure privileged access for administration
 
+In addition, there are additional scenarios for AI agents. For more information, see [Governing agent identities](agent-id-governance-overview.md).
 
 ## Identity lifecycle
 
@@ -37,7 +39,7 @@ For many organizations, identity lifecycle for employees and other workers is ti
 In Microsoft Entra ID Governance, you can [automate the identity lifecycle](https://youtu.be/NxSu3JEsxmY?si=fuY8nV4Fg5DbMArd) for these individuals using:
 
 - [inbound provisioning from your organization's HR sources](../identity/app-provisioning/plan-cloud-hr-provision.md), including retrieving from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID.
-- [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day.
+- [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day. The identity-verification onboarding templates (preview) also support [pre-hire verification and new-hire credential registration](how-to-onboard-users-with-identity-verification.md).
 - [automatic assignment policies in entitlement management](entitlement-management-access-package-auto-assignment-policy.md) to add and remove a user's group memberships, application roles, and SharePoint site roles, based on changes to the user's attributes.
 - [user provisioning](what-is-provisioning.md) to create, update, and remove user accounts in other applications, with connectors to [hundreds of cloud and on-premises applications](apps.md) via SCIM, LDAP and SQL.
 
@@ -111,17 +113,22 @@ Once you've started using these identity governance features, you can easily aut
 | Removing guest accounts that have no access package assignments |[Manage the lifecycle of external users](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users) |
 | Provisioning users into on-premises and cloud applications that have their own directories or databases | [Configure automatic user provisioning](../identity/app-provisioning/user-provisioning.md) with user assignments or [scoping filters](../identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) |
 | Other scheduled tasks | [Automate identity governance tasks with Azure Automation](identity-governance-automation.md) and Microsoft Graph via the [Microsoft.Graph.Identity.Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) PowerShell module|
-|Discover orphan or local accounts in your applications|[Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) users in your applications.|
+| Discover orphan or local accounts in your applications|[Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) users in your applications. |
+| Agent permission assignment|[Assigning access to agent identities](agent-id-governance-overview.md#assigning-access-to-agent-identities) |
+| Agent identity lifecycle|[Entra Agent ID lifecycle policies](agent-lifecycle-policies.md) |
+| Discover overpermissioned agent non-human identities in applications|[Detection and remediation of overprivileged agent identities (Preview)](dynamic-permissions-overview.md) |
 
 ## Identity governance for agent identities
 
-With the addition of the Microsoft agent identity platform, managing an agent's identity and access in the same way as people is just as important in the governance lifecycle of your organization. Microsoft Entra Agent ID introduces [agent identities](../agent-id/what-is-microsoft-entra-agent-id.md) — purpose-built identity constructs for AI agents — with governance controls that address the unique challenges of autonomous and semi-autonomous agents operating at enterprise scale.
+With the addition of the Microsoft agent identity platform, managing an agent's identity and access in the same way as people is just as important in the governance lifecycle of your organization. Microsoft Entra Agent ID introduces [agent identities](../agent-id/what-is-microsoft-entra-agent-id.md) — purpose-built identity constructs for AI agents — with governance controls that address the unique challenges of all forms of agents operating at enterprise scale.  Agent identities are linked to [Agent identity blueprints](../agent-id/identity-platform/agent-blueprint.md) which serve as centralized templates that enable organizations to apply Conditional Access rules, permissions, and governance controls once and have all current and future agent instances inherit them automatically. This blueprint model allows administrators to govern, disable, or revoke permissions for an entire class of agents in a single operation.
 
-Every agent identity requires a human [sponsor](../agent-id/agent-owners-sponsors-managers.md) accountable for the agent's purpose, lifecycle decisions, and access reviews. If a sponsor leaves the organization, sponsorship automatically transfers to their manager, ensuring continuous human oversight. [Agent identity blueprints](../agent-id/identity-platform/agent-blueprint.md) serve as centralized templates that enable organizations to apply Conditional Access rules, permissions, and governance controls once and have all current and future agent instances inherit them automatically. This blueprint model allows administrators to govern, disable, or revoke permissions for an entire class of agents in a single operation.
+Every agent identity requires a human [sponsor](../agent-id/agent-owners-sponsors-managers.md) accountable for the agent's purpose and lifecycle decisions. [Lifecycle Workflows](agent-sponsor-tasks.md) automate sponsor transition notifications,so that if a person who sponsors agents moves or leaves the organization, these workflows enables sponsorship to automatically transfer, ensuring continuous human oversight.
 
-Agent identities are governed through the same [entitlement management](entitlement-management-overview.md) access packages available for human identities, providing time-bound, auditable access with approval workflows. Sponsors receive expiration notifications and can request extensions or let access expire. [Lifecycle Workflows](agent-sponsor-tasks.md) automate sponsor transition notifications when sponsorship changes occur. All agent identities are discoverable, searchable, and queryable through the Microsoft Entra admin center and Microsoft Graph, giving organizations centralized visibility to prevent agent sprawl and shadow AI.
+Access assignments to agent identities can be governed through the same [entitlement management](entitlement-management-overview.md) access packages available for human identities, providing time-bound, auditable access with approval workflows. Sponsors receive expiration notifications and can request extensions or let access expire.
 
-For more information, see [Governing agent identities](agent-id-governance-overview.md).
+Microsoft Entra can also discover the agent non-human identities in an application that have excessive privileges. For more information, see [Detection and remediation of overprivileged agent identities (Preview)](dynamic-permissions-overview.md).
+
+For more information, see [Governing agent identities and access](agent-id-governance-overview.md).
 
 ## Next steps
 

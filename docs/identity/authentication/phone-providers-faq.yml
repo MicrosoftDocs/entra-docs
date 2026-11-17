@@ -33,13 +33,14 @@ sections:
 
         CYOT is generally available starting October 30, 2026, for Microsoft Entra ID workforce tenants in global Azure.
     - question: |
-        Which telecom providers can I use?
+        Which telephony providers can I use?
       answer: |
+        <a id="which-telecom-providers-can-i-use"></a>
         <a id="which-telecom-providers-are-available"></a>
         <a id="which-telephony-providers-are-available"></a>
         <a id="which-telephony-providers-are-available-during-the-private-preview"></a>
 
-        You can choose Soprano, Telesign, or Infobip. For coverage, pricing, and terms, see [Available telecom providers](concept-phone-providers.md#available-telephony-providers) and each provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing.
+        You can choose Soprano, Telesign, or Infobip. For coverage, pricing, and terms, see [Available telephony providers](concept-phone-providers.md#available-telephony-providers) and each provider's [Microsoft Security Store](https://securitystore.microsoft.com/) listing.
     - question: |
         Can I use my existing account with a provider?
       answer: |
@@ -52,7 +53,7 @@ sections:
       answer: |
         <a id="can-i-use-a-telephony-provider-that-isnt-listed-as-a-supported-provider"></a>
 
-        CYOT supports the providers listed in [Available telecom providers](concept-phone-providers.md#available-telephony-providers). Check that list for providers as they're added.
+        CYOT supports the providers listed in [Available telephony providers](concept-phone-providers.md#available-telephony-providers). Check that list for providers as they're added.
     - question: |
         Can I use different providers for SMS and voice?
       answer: |
@@ -93,7 +94,7 @@ sections:
         - **Provider costs:** SMS and voice charges set by your provider's offer on [Microsoft Security Store](https://securitystore.microsoft.com/).
         - **Azure costs:** the resources that host the integration in your subscription.
 
-        For estimates, see [Estimate telecom provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
+        For estimates, see [Estimate telephony provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
     - question: |
         Does Microsoft charge me for SMS and voice sent through my provider?
       answer: |
@@ -104,12 +105,12 @@ sections:
 - name: Evaluation and migration
   questions:
     - question: |
-        How do I move to my own telecom provider?
+        How do I move to my own telephony provider?
       answer: |
         <a id="migration-and-evaluation"></a>
         <a id="how-do-i-migrate"></a>
         <a id="do-i-deploy-another-endpoint-for-voice-after-setting-up-sms"></a>
-        <a id="how-do-i-move-to-my-own-telephony-provider"></a>
+        <a id="how-do-i-move-to-my-own-telecom-provider"></a>
         <a id="do-i-need-to-change-my-existing-sms-or-voice-user-targeting-to-use-cyot"></a>
 
         1. Subscribe to a provider offer in [Microsoft Security Store](https://securitystore.microsoft.com/).
@@ -118,7 +119,7 @@ sections:
         1. Evaluate the integration.
         1. Roll out traffic to your provider.
 
-        For details, see [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
+        For details, see [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
     - question: |
         Can I test CYOT before I move traffic?
       answer: |
@@ -150,7 +151,7 @@ sections:
         <a id="what-happens-if-cyot-production-delivery-fails"></a>
         <a id="where-do-i-start-if-authentication-isnt-working"></a>
 
-        If you're partway through a rollout, pause it. Then use [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider) to find where the request stopped and who to contact.
+        If you're partway through a rollout, pause it. Then use [Monitor and troubleshoot SMS and voice with your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider) to find where the request stopped and who to contact.
     - question: |
         How do I plan for high availability?
       answer: |
@@ -170,7 +171,7 @@ sections:
         |---|---|
         | Microsoft | Microsoft Entra authentication and the handoff to your endpoint |
         | Your organization | Deploying and running the integration, managing the provider account, and renewing integration credentials and certificates |
-        | Telecom provider | SMS and voice delivery, and fraud controls |
+        | Telephony provider | SMS and voice delivery, and fraud controls |
     - question: |
         Who do I contact for help?
       answer: |
@@ -182,17 +183,17 @@ sections:
         |---|---|
         | Microsoft Entra authentication, code validation, or the handoff to your endpoint | [Microsoft Support](/entra/fundamentals/how-to-get-support) |
         | Your Azure Function or Azure resources | Your Azure team |
-        | Delivery, sender registration, destinations, fraud controls, or charges | Your telecom provider. Contact details are in its [Security Store](https://securitystore.microsoft.com/) listing. |
+        | Delivery, sender registration, destinations, fraud controls, or charges | Your telephony provider. Contact details are in its [Security Store](https://securitystore.microsoft.com/) listing.
 
 additionalContent: |
   ## Related content
 
   - [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
-  - [Set up SMS and voice with your own telecom provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
-  - [Monitor and troubleshoot SMS and voice with your own telecom provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
-  - [Protect against telephony fraud with your own telecom provider](choose-your-own-telephony-fraud-costs.md).
+  - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
+  - [Troubleshoot SMS and voice with your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
+  - [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-costs.md).
   - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
-  - [Estimate telecom provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
+  - [Estimate provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
   - [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](concept-sms-voice-retirement.md).
-  - [CYOT costs and billing](#how-much-does-choose-your-own-telephony-provider-cost).
-  - [Microsoft Q&A question page for Microsoft Entra ID](/answers/topics/azure-active-directory.html).
+  - [Frequently asked questions](#how-much-does-choose-your-own-telephony-provider-cost).
+  - [Community Center | Not monitored](/answers/topics/azure-active-directory.html).

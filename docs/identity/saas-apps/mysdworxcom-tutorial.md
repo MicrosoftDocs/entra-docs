@@ -80,11 +80,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure my.sdworx.com SSO
 
-To configure single sign-on on **my.sdworx.com** side, you need to send the **App Federation Metadata Url** to [my.sdworx.com support team](mailto:prod_cloud&busoper_middleware&hostsol@sdworx.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **my.sdworx.com** side, you need to send the **App Federation Metadata Url** to [my.sdworx.com support team](mailto:Integrated_Federated_Services@sdworx.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create my.sdworx.com test user
 
-In this section, you create a user called Britta Simon at my.sdworx.com. Work with [my.sdworx.com support team](mailto:prod_cloud&busoper_middleware&hostsol@sdworx.com) to add the users in the my.sdworx.com platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon at my.sdworx.com. Work with [my.sdworx.com support team](mailto:Integrated_Federated_Services@sdworx.com) to add the users in the my.sdworx.com platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

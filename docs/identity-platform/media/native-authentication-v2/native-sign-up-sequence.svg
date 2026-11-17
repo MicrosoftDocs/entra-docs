@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1732" viewBox="0 0 1120 1732" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Representative native authentication sign-up sequence</title>
+<desc id="diagram-description">Sign-up collects response-defined attributes and handles verification or method registration as requested. The user flow determines the sign-up method. Authorization resumes only when the response permits continuation.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#243746"/></marker></defs>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#16324f;font-size:18px}
+.heading{font-size:21px;font-weight:600}.actor{fill:#eaf3fb;stroke:#315a7d;stroke-width:1.6}.actor-text{font-weight:600}
+.lifeline{stroke:#75899a;stroke-width:1.3;stroke-dasharray:6 5}.request,.reply{fill:none;stroke:#243746;stroke-width:1.8}
+.reply{stroke-dasharray:6 4}.group{fill:#f7faff;stroke:#8094a6;stroke-width:1.3}.group-label{font-size:17px;font-weight:600}
+.message{paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round}.group-label{paint-order:stroke;stroke:#f7faff;stroke-width:6px;stroke-linejoin:round}
+.separator{stroke:#8094a6;stroke-dasharray:5 4}.note{fill:#fff8df;stroke:#8b753a}.note-text{font-size:17px}
+.footer{font-size:16px}
+</style>
+<rect width="1120" height="1732" fill="white"/>
+<text class="heading" x="25" y="30" text-anchor="start"><tspan x="25" dy="0">Representative native authentication sign-up sequence</tspan></text>
+<rect class="group" x="25" y="469" width="1070" height="784" rx="3"/><text class="group-label" x="37" y="496" text-anchor="start"><tspan x="37" dy="0">loop: While state is interactionRequired; actions can repeat</tspan></text>
+<rect class="group" x="40" y="511" width="1040" height="718" rx="3"/><text class="group-label" x="52" y="538" text-anchor="start"><tspan x="52" dy="0">alt: collectAttributes</tspan></text>
+<line class="lifeline" x1="120" y1="126" x2="120" y2="1687"/><rect class="actor" x="40" y="56" width="160" height="70" rx="5"/><text class="actor-text" x="120" y="98" text-anchor="middle"><tspan x="120" dy="0">User</tspan></text>
+<line class="lifeline" x1="520" y1="126" x2="520" y2="1687"/><rect class="actor" x="405" y="56" width="230" height="70" rx="5"/><text class="actor-text" x="520" y="98" text-anchor="middle"><tspan x="520" dy="0">Client application</tspan></text>
+<line class="lifeline" x1="960" y1="126" x2="960" y2="1687"/><rect class="actor" x="830" y="56" width="260" height="70" rx="5"/><text class="actor-text" x="960" y="86" text-anchor="middle"><tspan x="960" dy="0">Native Authentication</tspan><tspan x="960" dy="23">API</tspan></text>
+<text class="message" x="740" y="172" text-anchor="middle"><tspan x="740" dy="0">Start authorization challenge</tspan></text>
+<line class="request" x1="520" y1="201" x2="960" y2="201" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="245" text-anchor="middle"><tspan x="740" dy="0">401: continuation_token and sign_up link</tspan></text>
+<line class="reply" x1="960" y1="274" x2="520" y2="274" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="318" text-anchor="middle"><tspan x="740" dy="0">Start sign-up with the current token</tspan></text>
+<line class="request" x1="520" y1="347" x2="960" y2="347" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="391" text-anchor="middle"><tspan x="740" dy="0">Current action and requested attribute</tspan><tspan x="740" dy="23">descriptors</tspan></text>
+<line class="reply" x1="960" y1="443" x2="520" y2="443" marker-end="url(#arrow)"/>
+<text class="message" x="320" y="571" text-anchor="middle"><tspan x="320" dy="0">Request attributes described by the</tspan><tspan x="320" dy="23">response</tspan></text>
+<line class="reply" x1="520" y1="623" x2="120" y2="623" marker-end="url(#arrow)"/>
+<text class="message" x="320" y="667" text-anchor="middle"><tspan x="320" dy="0">Requested attribute values</tspan></text>
+<line class="request" x1="120" y1="696" x2="520" y2="696" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="740" text-anchor="middle"><tspan x="740" dy="0">Submit attributeId values with current token</tspan></text>
+<line class="request" x1="520" y1="769" x2="960" y2="769" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="813" text-anchor="middle"><tspan x="740" dy="0">Next state, action, links, and token</tspan></text>
+<line class="reply" x1="960" y1="842" x2="520" y2="842" marker-end="url(#arrow)"/>
+<line class="separator" x1="40" y1="868" x2="1080" y2="868"/>
+<text class="group-label" x="52" y="893" text-anchor="start"><tspan x="52" dy="0">challenge, verify, enroll, or activate</tspan></text>
+<text class="message" x="320" y="934" text-anchor="middle"><tspan x="320" dy="0">Request the input required by the</tspan><tspan x="320" dy="23">current action</tspan></text>
+<line class="reply" x1="520" y1="986" x2="120" y2="986" marker-end="url(#arrow)"/>
+<text class="message" x="320" y="1030" text-anchor="middle"><tspan x="320" dy="0">Requested input, when needed</tspan></text>
+<line class="request" x1="120" y1="1059" x2="520" y2="1059" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="1103" text-anchor="middle"><tspan x="740" dy="0">Follow the current allowed operation</tspan></text>
+<line class="request" x1="520" y1="1132" x2="960" y2="1132" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="1176" text-anchor="middle"><tspan x="740" dy="0">Next state, action, links, and token</tspan></text>
+<line class="reply" x1="960" y1="1205" x2="520" y2="1205" marker-end="url(#arrow)"/>
+<rect class="note" x="30" y="1277" width="1060" height="51" rx="4"/>
+<text class="note-text" x="560" y="1300" text-anchor="middle"><tspan x="560" dy="0">Submitting email can send a passcode and return verify without a separate challenge request.</tspan></text>
+<text class="message" x="740" y="1372" text-anchor="middle"><tspan x="740" dy="0">Follow continue link with continuation_token</tspan></text>
+<line class="request" x1="520" y1="1401" x2="960" y2="1401" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="1445" text-anchor="middle"><tspan x="740" dy="0">Authorization code</tspan></text>
+<line class="reply" x1="960" y1="1474" x2="520" y2="1474" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="1518" text-anchor="middle"><tspan x="740" dy="0">Exchange authorization code at token</tspan><tspan x="740" dy="23">endpoint</tspan></text>
+<line class="request" x1="520" y1="1570" x2="960" y2="1570" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="1614" text-anchor="middle"><tspan x="740" dy="0">Tokens</tspan></text>
+<line class="reply" x1="960" y1="1643" x2="520" y2="1643" marker-end="url(#arrow)"/>
+<text class="footer" x="25" y="1718" text-anchor="start"><tspan x="25" dy="0">Representative successful path. Follow the current response rather than a fixed sequence.</tspan></text>
+</svg>

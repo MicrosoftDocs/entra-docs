@@ -181,7 +181,7 @@ items:
         href: inbound-provisioning-api-issues.md
     - name: Manage provisioning configuration
       items:
-      - name: Clear attribute values (Preview)
+      - name: Clear attribute values
         href: clear-attribute-values.md
       - name: Enable accidental deletions prevention
         href: accidental-deletions.md

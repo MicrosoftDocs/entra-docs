@@ -118,5 +118,6 @@ After running your workflow on-demand and checking that everything is working fi
 :::image type="content" source="media/tutorial-lifecycle-workflows/enable-schedule.png" alt-text="Screenshot of enabling workflow schedule." lightbox="media/tutorial-lifecycle-workflows/enable-schedule.png":::
 
 ## Next steps
+- [Onboard users with identity verification (Preview)](how-to-onboard-users-with-identity-verification.md)
 - [Tutorial: Preparing user accounts for Lifecycle workflows](tutorial-prepare-user-accounts.md)
 - [Automate employee onboarding tasks before their first day of work using Lifecycle Workflows APIs](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow)

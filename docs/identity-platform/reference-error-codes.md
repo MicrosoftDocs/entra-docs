@@ -199,6 +199,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50156 | Device tokens are not supported for V2 resource. |
 | AADSTS50157 | User redirection required for routing. |
 | AADSTS50158 | External security challenge not satisfied. User will be redirected to another page or authentication provider to satisfy additional authentication challenges. The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone doesn't indicate a failure on your users' part to sign in. The sign in logs may indicate that this challenge was successfully passed or failed. |
+| AADSTS501581 | The selected external provider authentication method configuration does not exist or is not enabled. |
 | AADSTS50159 | Claims sent by external provider are not enough. |
 | AADSTS50160 | Different target tenant is preferred. |
 | AADSTS50161 | Failed to validate authorization url of external claims provider. |

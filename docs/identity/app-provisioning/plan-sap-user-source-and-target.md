@@ -226,7 +226,7 @@ In this section, you:
 
 ### Update the Windows Server AD user schema
 
-If you're provisioning users into Windows Server AD and Microsoft Entra ID, ensure that your Windows Server AD environment and associated Microsoft Entra agents are ready to transport users into and out of Windows Server AD with the necessary schema for your SAP applications.
+If you're provisioning users into Windows Server AD and Microsoft Entra ID, ensure that your Windows Server AD environment and associated Microsoft Entra provisioning agents are ready to transport users into and out of Windows Server AD with the necessary schema for your SAP applications.
 
 If you don't use Windows Server AD, skip to the next section.
 

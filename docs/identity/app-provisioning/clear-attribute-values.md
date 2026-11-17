@@ -1,5 +1,5 @@
 ---
-title: Clear attribute values (Preview)
+title: Clear attribute values
 description: Learn how to clear target attribute values when a source attribute has a null or empty value in Microsoft Entra provisioning.
 ms.topic: how-to
 ms.date: 08/20/2026
@@ -7,7 +7,7 @@ ms.reviewer: cmmdesai
 ai-usage: ai-assisted
 ---
 
-# Clear attribute values (Preview)
+# Clear attribute values
 
 Microsoft Entra provisioning can clear an existing target attribute value when the corresponding source attribute is null or empty. This capability also referred to as "null value provisioning" is useful when a value is removed from your system of record and the corresponding value must also be removed from the target system.
 
@@ -16,7 +16,7 @@ Microsoft Entra provisioning can clear an existing target attribute value when t
 
 The configuration for clearing attribute values is consistent across supported provisioning integrations. However, the source schema editor and the way a source system represents a null value can vary by integration.
 
-## Preview scope and limitations
+## Scope and limitations
 
 - Clearing attribute values is available in preview for:
   - API-driven inbound provisioning to Microsoft Entra ID and on-premises Active Directory.

@@ -2,8 +2,9 @@
 title: Configure GoTo for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to GoTo.
 ms.topic: how-to
-ms.date: 04/07/2026
+ms.date: 10/19/2026
 ms.custom: sfi-image-nochange
+ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GoTo so that I can streamline the user management process and ensure that users have the appropriate access to GoTo.
 --- 
 
@@ -12,6 +13,15 @@ ms.custom: sfi-image-nochange
 This article describes the steps you need to perform in both GoTo and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [GoTo](https://www.goto.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
+> [!IMPORTANT]
+> To improve the security posture of application provisioning, Microsoft is retiring the **OAuth 2.0 Authorization Code Grant** for this application.
+> 
+> **Migrate affected provisioning jobs to OAuth2 Client Credentials Grant by March 31, 2027**, to avoid disruption to provisioning. After this date, provisioning jobs that continue to use Authorization Code Grant might stop working and could eventually be removed from the service.
+>
+> **This change doesn't affect SSO.** Existing provisioned users can continue signing in, but new users won't be provisioned and changes to existing users and groups won't be synchronized while provisioning isn't functioning.
+>
+> Follow [Configure automatic user provisioning to GoTo](#step-5-configure-automatic-user-provisioning-to-goto) in this article to migrate to OAuth2 Client Credentials Grant.
+
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in GoTo
@@ -19,13 +29,14 @@ This article describes the steps you need to perform in both GoTo and Microsoft 
 > * Keep user attributes synchronized between Microsoft Entra ID and GoTo
 > * Provision groups and group memberships in GoTo
 > * [Single sign-on](./goto-tutorial.md) to GoTo (recommended)
-> * Code Auth Grant flow authentication supported.
+> * OAuth2 Client Credentials Grant authentication is supported.
 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+
 * An organization created in the GoTo Organization Center with at least one verified domain 
 * A user account in the GoTo Organization Center with [permission](https://support.goto.com/meeting/help/manage-organization-users-g2m710102) to configure provisioning (for example, organization administrator role with Read & Write permissions) as shown in Step 2.
 
@@ -38,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure GoTo to support provisioning with Microsoft Entra ID
 
-1. Log in to the [Organization Center](https://organization.logmeininc.com).
+1. Log in to the [Organization Center](https://organization.goto.com).
 
 1. The domain used in your account's email address is the domain that you're prompted to verify within 10 days.  
 
@@ -63,7 +74,7 @@ The scenario outlined in this article assumes that you already have the followin
       * Location: `http://<yourdomain>/goto-verification-code.txt`
       * Contents: `goto-verification-code=00aa00aa-bb11-cc22-dd33-44ee44ee44ee`
 
-1. Once you have added the DNS record or TXT file, return to [Organization Center](https://organization.logmeininc.com) and select **Verify**.
+1. Once you have added the DNS record or TXT file, return to [Organization Center](https://organization.goto.com) and select **Verify**.
 
 1. You have now created an organization in the Organization Center by verifying your domain, and the account used during this verification process is now the organization admin.
 
@@ -88,31 +99,35 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-	![Enterprise applications blade](common/enterprise-applications.png)
+    :::image type="content" source="common/enterprise-applications.png" alt-text="Screenshot of Enterprise applications in the Microsoft Entra admin center.":::
 
 1. In the applications list, select **GoTo**.
 
-	![The GoTo link in the Applications list](common/all-applications.png)
+    :::image type="content" source="common/all-applications.png" alt-text="Screenshot of the applications list where you select GoTo.":::
 
 1. Select the **Provisioning** tab.
 
-	![Provisioning tab](common/provisioning.png)
+    :::image type="content" source="common/provisioning.png" alt-text="Screenshot of the Provisioning tab for the enterprise application.":::
 
 1. Select **+ New configuration**.
 
-	![Screenshot of Provisioning tab automatic.](common/application-provisioning.png)
+    :::image type="content" source="common/application-provisioning.png" alt-text="Screenshot of the provisioning page where you create a new configuration.":::
 
-1. Under the **Admin Credentials** section, select **Authorize**. You're redirected to **GoTo**'s authorization page. Enter your GoTo username and select the **Next** button. Enter your GoTo password and select the **Sign In** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to GoTo. If the connection fails, ensure your GoTo account has Admin permissions and try again.
+1. In the GoTo Organization Center, create a new OAuth client for Microsoft Entra user provisioning. Securely store the client ID and client secret so you can use them in the next step.
 
- 	![authorization](./media/goto-provisioning-tutorial/admin.png)
+    :::image type="content" source="./media/goto-provisioning-tutorial/oauth-clients-add-client.png" alt-text="Screenshot of the OAuth Clients tab in the GoTo Organization Center with the Add a client button." lightbox="./media/goto-provisioning-tutorial/oauth-clients-add-client.png":::
 
-      ![login](./media/goto-provisioning-tutorial/username.png)
+    :::image type="content" source="./media/goto-provisioning-tutorial/add-oauth-client.png" alt-text="Screenshot of the Add OAuth client dialog configured for the OAuth 2.0 Client Credentials grant.":::
 
-      ![connection](./media/goto-provisioning-tutorial/password.png)
+    :::image type="content" source="./media/goto-provisioning-tutorial/oauth-client-created-secret.png" alt-text="Screenshot of the Client created dialog with a Copy button for the client secret.":::
+
+1. In **Select authentication method**, select **OAuth2 client credentials grant**. In **Tenant URL**, enter your GoTo tenant URL. Enter the client ID, client secret, and token endpoint retrieved from the GoTo Organization Center in **Client identifier**, **Client secret**, and **OAuth token endpoint**, respectively. Select **Test connection** to validate the credentials.
+
+    :::image type="content" source="common/automatic-provisioning-admin-credentials.png" alt-text="Screenshot of the admin credentials fields for configuring automatic provisioning.":::
 
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
+    :::image type="content" source="common/provisioning-properties.png" alt-text="Screenshot of the provisioning properties for configuring email notifications.":::
 
 1. Select **Attribute Mapping** in the left panel and select **users**.
 

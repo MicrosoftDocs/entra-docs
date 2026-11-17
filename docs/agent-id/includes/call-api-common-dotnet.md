@@ -1,5 +1,6 @@
 ---
-ms.date: 11/04/2025
+ms.date: 11/05/2026
+ai-usage: ai-assisted
 ms.topic: include
 # Purpose:
 # To guide users on how to call APIs using agent identities in .NET.
@@ -9,5 +10,6 @@ To call an API from an agent, you need to obtain an access token that the agent 
 
 ## Prerequisites
 
-- An agent identity with appropriate permissions to call the target API. You need a user for the on-behalf-of flow.
-- An agent's user account with appropriate permissions to call the target API.
+- An agent identity with the permissions required by the target API.
+- For human-user OBO calls, a signed-in user's access token issued for the agent API, plus the required downstream delegated grant.
+- Only for dedicated-agent-user calls, an agent's user account with the required resource access. App-only and human-user OBO calls don't require this account.

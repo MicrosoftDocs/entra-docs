@@ -2,10 +2,11 @@
 title: "Add and manage app credentials in Microsoft Entra ID"
 description: Learn to configure certificates, client secrets, and federated credentials in Microsoft Entra for secure app authentication.
 manager: pmwongera
-ms.custom:
-ms.date: 03/26/2025
+ms.custom: msecd-doc-authoring-1030
+ms.date: 11/12/2026
 ms.service: identity-platform
 ms.topic: how-to
+ai-usage: ai-assisted
 #Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
 ---
 
@@ -16,6 +17,8 @@ When building confidential client applications, managing credentials effectively
 ## Prerequisites
 
 [Quickstart: Register an app in Microsoft Entra ID](quickstart-register-app.md).
+
+In Microsoft Entra External ID external tenants, app owners, including invited users, should be assigned the Application Developer role to manage credentials and other properties of owned app registrations. The Application Administrator and Cloud Application Administrator roles provide broader application-management permissions, regardless of ownership. For details about default permissions and application-management roles, see [Default user permissions in external tenants](~/external-id/customers/reference-user-permissions.md#default-permissions).
 
 ## Add a credential to your application
 

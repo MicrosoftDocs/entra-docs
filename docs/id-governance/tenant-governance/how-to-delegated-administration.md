@@ -3,7 +3,7 @@ title: Use cross-tenant delegated administration
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to use cross-tenant delegated administration to sign in to and manage governed tenants using your governing tenant credentials
 ms.topic: how-to
-ms.date: 07/27/2026
+ms.date: 11/11/2026
 ai-usage: ai-assisted
 ---
 
@@ -23,8 +23,9 @@ Cross-tenant delegated administration enables administrators in a governing tena
 
 After the governance relationship is active and GDAP role assignments are in place, members of the configured security group can sign in to the governed tenant. Confirm that your account is a member of a security group in the governing tenant that's assigned roles in the governance policy template.
 
-You can sign in to a governed tenant in two ways:
+You can sign in to a governed tenant in the following ways:
 
+- From the **Governed tenants** view under **Entra ID** > **Overview** > **Manage tenants** (Preview). This view discovers tenants based on active relationships and active delegated-role group membership. See [Switch between governed tenants](how-to-switch-governed-tenants.md).
 - From the **Governed tenants** page in the Microsoft Entra admin center.
 - By opening a supported admin portal URL directly.
 

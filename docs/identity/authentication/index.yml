@@ -7,23 +7,14 @@ metadata:
   title: Microsoft Entra authentication documentation
   description: Learn how to manage and deploy Microsoft Entra self-service password reset, multifactor authentication, custom banned password list, and smart lockout.
   ms.topic: landing-page
-  ms.date: 11/05/2025
+  ms.date: 11/03/2026
+  ms.custom: msecd-doc-authoring-108
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
-  # Card
-  - title: About authentication
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is authentication?
-            url: overview-authentication.md
-          - text: Authentication methods in Microsoft Entra ID
-            url: overview-authentication.md
-
   # Card
   - title: Deploy phishing-resistant authentication
     linkLists:
@@ -51,20 +42,44 @@ landingContent:
             url: how-to-certificate-based-authentication.md
 
   # Card
-  - title: Microsoft Entra account recovery
+  - title: About authentication
     linkLists:
+      - linkListType: overview
+        links:
+          - text: What is authentication?
+            url: overview-authentication.md
+          - text: Authentication methods in Microsoft Entra ID
+            url: overview-authentication.md
+
+  # Card
+  - title: High assurance (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Microsoft Entra High Assurance overview
+            url: ../../verified-id/high-assurance.md
       - linkListType: concept
         links:
           - text: What is Microsoft Entra account recovery?
             url: concept-account-recovery-overview.md
           - text: FAQs about Microsoft Entra account recovery
             url: self-service-account-recovery.yml
+          - text: Passkeys (FIDO2)
+            url: concept-authentication-passkeys-fido2.md
       - linkListType: how-to-guide
         links:
           - text: Configure Microsoft Entra account recovery
             url: how-to-account-recovery-enable.md
           - text: How users can recover their accounts
             url: how-to-account-recovery-for-users.md
+          - text: Configure identity verification profiles
+            url: concept-authentication-verified-id.md#create-and-manage-identity-verification-profiles
+          - text: Plan identity-verified onboarding
+            url: ../../verified-id/high-assurance.md#deployment-sequence
+          - text: Require identity verification with Conditional Access
+            url: ../conditional-access/policy-require-identity-verification.md
+          - text: Configure risk policies
+            url: ../../id-protection/howto-identity-protection-configure-risk-policies.md
 
   # Card
   - title: Enable Microsoft Entra multifactor authentication
@@ -83,5 +98,3 @@ landingContent:
         links:
           - text: Deployment guide for Microsoft Entra multifactor authentication
             url: howto-mfa-getstarted.md
-
-

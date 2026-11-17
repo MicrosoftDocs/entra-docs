@@ -134,9 +134,9 @@ additionalContent:
         - title: OAuth protocols for agents
           summary: Understand how agents authenticate using OAuth 2.0 flows optimized for AI workloads.
           url: ./agent-oauth-protocols.md
-        - title: Configure third-party agents
-          summary: Integrate agents from platforms like AWS Bedrock and n8n with Agent ID.
-          url: ./configure-third-party-agents.md
+        - title: Choose an integration path
+          summary: Choose how to integrate an agent with Agent ID based on its platform and hosting model.
+          url: ./choose-agent-integration-path.md
         - title: Call Microsoft Graph API
           summary: Access Microsoft 365 data and services from your agents.
           url: ./call-api-microsoft-graph.md

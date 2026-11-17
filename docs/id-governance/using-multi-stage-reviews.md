@@ -1,23 +1,23 @@
 ---
-title: Using multi-stage reviews to meet your attestation and certification needs - Microsoft Entra
-description: Learn how to use multi-stage reviews to design more efficient reviews with Microsoft Entra.
+title: Using multi-stage access reviews to meet your attestation and certification needs - Microsoft Entra
+description: Learn how to use multi-stage access reviews to design more efficient reviews with Microsoft Entra.
 editor: florianf
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.reviewer: florianf
-#Customer Intent: As an IT admin, I want to use multi-stage reviews so that I can design more efficient attestation and certification processes.
+#Customer Intent: As an IT admin, I want to use multi-stage access reviews so that I can design more efficient attestation and certification processes.
 ---
  
-# Using multi-stage reviews to meet your attestation and certification needs with Microsoft Entra 
+# Using multi-stage access reviews to meet your attestation and certification needs with Microsoft Entra 
 
 Microsoft Entra access reviews support up to three review stages, in which multiple types of reviewers engage in determining who still needs access to company resources. These reviews could be for membership in groups or teams, access to applications, assignments to privileged roles, or access package assignments. When review administrators configure the review for automatic application of decisions, at the end of the review period, access is revoked for denied users.
 
-## Use cases for multi-stage reviews
+## Use cases for multi-stage access reviews
 
 Multi-stage access reviews allow you and your organization to enable complex workflows to meet recertification and audit requirements calling for multiple reviewers to attest to access for users in a particular sequence. It also helps you design more efficient reviews for your resource owners and auditors by reducing the number of decisions each reviewer is accountable for. This approach allows for combining otherwise disjoint, separate reviews for the same resource, to be combined in one access review.
 
-:::image type="content" source="media/using-multi-stage-reviews/new-access-reviews.png" alt-text="Screenshot of admin experience to configure multi-stage reviews." lightbox="media/using-multi-stage-reviews/new-access-reviews.png":::
+:::image type="content" source="media/using-multi-stage-reviews/new-access-reviews.png" alt-text="Screenshot of admin experience to configure multi-stage access reviews." lightbox="media/using-multi-stage-reviews/new-access-reviews.png":::
 
 Here are some scenarios you might want to consider:
 
@@ -45,7 +45,7 @@ The configuration for this scenario would look like this:
 
 ## Assign alternate reviewers to weigh in on unreviewed decisions 
 
-For scenarios that you need decisions recorded and need to make sure that access is preserved for the right people, multi-stage reviews let you progress a subset of reviewees to the next stage, that potentially needs a second reviewer audience for double-checking or decision making. Use this pattern to ensure that there are fewer unreviewed users or users marked as **Don’t know**, by progressing these reviewees to another stage, and having another group of reviewers take decisions.
+For scenarios that you need decisions recorded and need to make sure that access is preserved for the right people, multi-stage access reviews let you progress a subset of reviewees to the next stage, that potentially needs a second reviewer audience for double-checking or decision making. Use this pattern to ensure that there are fewer unreviewed users or users marked as **Don’t know**, by progressing these reviewees to another stage, and having another group of reviewers take decisions.
 
 An example would be a review that contains two stages that determine access to an application. In the review settings, the review administrator chooses to **Show previous stage(s) decisions to later stage reviewers**. For **Reviewees going to the next stage**, the decisions that need confirmation would be added: to ensure all reviewees have a decision, select **reviewees marked as ‘Don’t know’** and **Not reviewed reviewees**, so that later-stage reviewers only see the undecided or unsure reviewees to retain the right access.
 
@@ -76,13 +76,13 @@ An example would be a review of a group that grants an IT exception, that an adm
  |Reviewees going to the next stage|Select **Approved reviewees**|
  |If reviewers don’t respond|Remove Access|
 
-:::image type="content" source="media/using-multi-stage-reviews/multi-stage-reviews.png" alt-text="Screenshot of multi-stage reviews." lightbox="media/using-multi-stage-reviews/multi-stage-reviews.png":::
+:::image type="content" source="media/using-multi-stage-reviews/multi-stage-reviews.png" alt-text="Screenshot of multi-stage access reviews." lightbox="media/using-multi-stage-reviews/multi-stage-reviews.png":::
 
 ## Guest user reviews
 
 Guest user reviews help organizations that use Microsoft Entra B2B for collaboration. These guest users’ access should be reviewed regularly to check on whether these guest users have the right access still, and that collaboration is still desired, so revoking access or a cleanup of guest user accounts that are no longer needed is possible.
 
-This scenario can be configured with multi-stage reviews similar to how the "Reduce burden on later stage reviewers" scenario works. First, ask guest users to self-review and attest their continued interest and need for collaboration, including the requirement to provide a business justification. Only self-approved guests are progressed to a later stage, where a sponsor or other employee approves or denies continued access or collaboration.
+This scenario can be configured with multi-stage access reviews similar to how the "Reduce burden on later stage reviewers" scenario works. First, ask guest users to self-review and attest their continued interest and need for collaboration, including the requirement to provide a business justification. Only self-approved guests are progressed to a later stage, where a sponsor or other employee approves or denies continued access or collaboration.
 
 For guest user reviews, also consider leveraging the **Inactive users (on tenant level) only** setting. This will scope the review to inactive external users that haven't signed in to the resource tenant in the number of specified days.
 
@@ -111,7 +111,7 @@ Depending on your review needs, guest users that aren’t responding to the revi
 
 Review administrators define the duration of every review stage and therefore, how much time reviewers in their stage have to record their decisions. Each stage can be configured to have its own duration, to cater for availability and expectation of reviewers.
 
-:::image type="content" source="media/using-multi-stage-reviews/using-multi-stage-reviews.png" alt-text="Screenshot of using multi-stage reviews." lightbox="media/using-multi-stage-reviews/using-multi-stage-reviews.png":::
+:::image type="content" source="media/using-multi-stage-reviews/using-multi-stage-reviews.png" alt-text="Screenshot of using multi-stage access reviews." lightbox="media/using-multi-stage-reviews/using-multi-stage-reviews.png":::
 
 Each review stage stays open for reviewers to add decisions for the length of the duration. Review administrators can stop a running stage and automatically progress the overall review to the next review stage on the reviewer overview page, by selecting **Stop current stage**.
 

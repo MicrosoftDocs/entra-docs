@@ -34,6 +34,22 @@
     items:
     - name: Configuration management
       href: configuration-management.md
+    - name: Configuration baseline templates (Preview)
+      href: configuration-baseline-templates.md
+    - name: Configuration deployments (Preview)
+      href: configuration-deployments.md
+  - name: Resource policy (preview)
+    items:
+    - name: Resource policy overview
+      href: resource-policy-overview.md
+    - name: Resource policy concepts
+      href: resource-policy-concepts.md
+    - name: Author policies with Rego
+      href: resource-policy-rego.md
+    - name: Resource policy parameters
+      href: resource-policy-parameters.md
+    - name: How resource policy evaluation works
+      href: resource-policy-evaluation.md
 
 - name: How-to guides
   expanded: true
@@ -52,10 +68,16 @@
       href: how-to-set-up-governance-relationship.md
     - name: Update a governance relationship
       href: how-to-update-governance-relationship.md
+    - name: Manage expiration and renewal (Preview)
+      href: how-to-manage-relationship-expiration.md
+    - name: Set up multi-tier relationships (Preview)
+      href: how-to-set-up-multi-tier-governance.md
     - name: Terminate a governance relationship
       href: how-to-terminate-governance-relationship.md
     - name: Use delegated administration
       href: how-to-delegated-administration.md
+    - name: Switch between governed tenants (Preview)
+      href: how-to-switch-governed-tenants.md
     - name: Monitor governing tenant activity
       href: how-to-monitor-governing-activity.md
     - name: Create a secure tenant
@@ -66,14 +88,46 @@
       href: how-to-set-up-permissions-tenant-monitoring.md
     - name: Create configuration snapshots
       href: how-to-create-snapshots.md
+    - name: Use configuration baseline templates (Preview)
+      href: how-to-use-configuration-baseline-templates.md
+    - name: Create a configuration deployment (Preview)
+      href: how-to-create-configuration-deployment.md
     - name: Create a configuration monitor
       href: how-to-create-monitor.md
     - name: Update or delete a monitor
       href: how-to-update-delete-monitor.md
     - name: View monitor results and manage monitors
       href: how-to-see-monitor-results.md
+  - name: Resource policy (preview)
+    items:
+    - name: "Quickstart: Assign and test a built-in resource policy"
+      href: resource-policy-quickstart-portal.md
+    - name: "Tutorial: Observe and enforce a built-in resource policy"
+      href: resource-policy-tutorial-portal.md
+    - name: Manage policies in the Microsoft Entra admin center
+      href: resource-policy-manage-portal.md
+    - name: Configure a privileged-read app
+      href: resource-policy-privileged-read-app.md
+    - name: Test and troubleshoot a policy
+      href: resource-policy-test-troubleshoot.md
+    - name: Safely deploy policy assignments
+      href: resource-policy-safe-deployment.md
+    - name: Analyze evaluation audit logs
+      href: resource-policy-logs.md
+    - name: Export logs (optional)
+      href: resource-policy-export-logs.md
+    - name: Update and retire policies
+      href: resource-policy-lifecycle.md
 
 - name: Reference
   items:
   - name: FAQ
     href: faq.yml
+  - name: Resource policy (preview)
+    items:
+    - name: Supported resources and actions
+      href: resource-policy-supported-resources.md
+    - name: Service limits
+      href: resource-policy-service-limits.md
+    - name: Known issues
+      href: resource-policy-known-issues.md

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1467" viewBox="0 0 1280 1467" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Bring Your Own UX browser handoff and completion sequence</title>
+<desc id="diagram-description">The browser carries authorization into the self-hosted page, the page follows Native Authentication API responses through its configured proxy integration, and a top-level browser form finishes the original authorization request. The relying application redeems the code.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#243746"/></marker></defs>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#16324f;font-size:18px}
+.heading{font-size:21px;font-weight:600}.actor{fill:#eaf3fb;stroke:#315a7d;stroke-width:1.6}.actor-text{font-weight:600}
+.lifeline{stroke:#75899a;stroke-width:1.3;stroke-dasharray:6 5}.request,.reply{fill:none;stroke:#243746;stroke-width:1.8}
+.reply{stroke-dasharray:6 4}.group{fill:#f7faff;stroke:#8094a6;stroke-width:1.3}.group-label{font-size:17px;font-weight:600}
+.message{paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round}.group-label{paint-order:stroke;stroke:#f7faff;stroke-width:6px;stroke-linejoin:round}
+.separator{stroke:#8094a6;stroke-dasharray:5 4}.note{fill:#fff8df;stroke:#8b753a}.note-text{font-size:17px}
+.footer{font-size:16px}
+</style>
+<rect width="1280" height="1467" fill="white"/>
+<text class="heading" x="25" y="30" text-anchor="start"><tspan x="25" dy="0">Bring Your Own UX browser handoff and completion sequence</tspan></text>
+<rect class="group" x="25" y="610" width="1230" height="232" rx="3"/><text class="group-label" x="37" y="637" text-anchor="start"><tspan x="37" dy="0">loop: While the current response requires authentication interactions</tspan></text>
+<line class="lifeline" x1="150" y1="126" x2="150" y2="1422"/><rect class="actor" x="35" y="56" width="230" height="70" rx="5"/><text class="actor-text" x="150" y="98" text-anchor="middle"><tspan x="150" dy="0">Relying application</tspan></text>
+<line class="lifeline" x1="460" y1="126" x2="460" y2="1422"/><rect class="actor" x="345" y="56" width="230" height="70" rx="5"/><text class="actor-text" x="460" y="98" text-anchor="middle"><tspan x="460" dy="0">Top-level browser</tspan></text>
+<line class="lifeline" x1="770" y1="126" x2="770" y2="1422"/><rect class="actor" x="655" y="56" width="230" height="70" rx="5"/><text class="actor-text" x="770" y="86" text-anchor="middle"><tspan x="770" dy="0">Self-hosted</tspan><tspan x="770" dy="23">authentication page</tspan></text>
+<line class="lifeline" x1="1120" y1="126" x2="1120" y2="1422"/><rect class="actor" x="1000" y="56" width="240" height="70" rx="5"/><text class="actor-text" x="1120" y="86" text-anchor="middle"><tspan x="1120" dy="0">Microsoft Entra</tspan><tspan x="1120" dy="23">External ID</tspan></text>
+<text class="message" x="305" y="172" text-anchor="middle"><tspan x="305" dy="0">Start authorization</tspan></text>
+<line class="request" x1="150" y1="201" x2="460" y2="201" marker-end="url(#arrow)"/>
+<text class="message" x="790" y="245" text-anchor="middle"><tspan x="790" dy="0">OAuth authorization request</tspan></text>
+<line class="request" x1="460" y1="274" x2="1120" y2="274" marker-end="url(#arrow)"/>
+<text class="message" x="790" y="318" text-anchor="middle"><tspan x="790" dy="0">HTML handoff form: context and initialResponse</tspan></text>
+<line class="reply" x1="1120" y1="347" x2="460" y2="347" marker-end="url(#arrow)"/>
+<text class="message" x="615" y="391" text-anchor="middle"><tspan x="615" dy="0">Form POST to configured page</tspan><tspan x="615" dy="23">URL</tspan></text>
+<line class="request" x1="460" y1="443" x2="770" y2="443" marker-end="url(#arrow)"/>
+<text class="message" x="754" y="487" text-anchor="end"><tspan x="754" dy="0">Decode envelopes; check</tspan><tspan x="754" dy="23">expected configuration and</tspan><tspan x="754" dy="23">destinations</tspan></text>
+<path class="request" d="M 770 562 H 915 V 584 H 770" marker-end="url(#arrow)"/>
+<text class="message" x="945" y="670" text-anchor="middle"><tspan x="945" dy="0">Returned API link, input, and</tspan><tspan x="945" dy="23">continuationToken through proxy</tspan></text>
+<line class="request" x1="770" y1="722" x2="1120" y2="722" marker-end="url(#arrow)"/>
+<text class="message" x="945" y="766" text-anchor="middle"><tspan x="945" dy="0">Updated state, action, links, and</tspan><tspan x="945" dy="23">token</tspan></text>
+<line class="reply" x1="1120" y1="818" x2="770" y2="818" marker-end="url(#arrow)"/>
+<rect class="note" x="30" y="866" width="1220" height="51" rx="4"/>
+<text class="note-text" x="640" y="889" text-anchor="middle"><tspan x="640" dy="0">Finish only at state: continue, using its returned finish link and current token.</tspan></text>
+<text class="message" x="615" y="961" text-anchor="middle"><tspan x="615" dy="0">Submit the finish form</tspan></text>
+<line class="request" x1="770" y1="990" x2="460" y2="990" marker-end="url(#arrow)"/>
+<text class="message" x="790" y="1034" text-anchor="middle"><tspan x="790" dy="0">Top-level form POST with continuation_token</tspan></text>
+<line class="request" x1="460" y1="1063" x2="1120" y2="1063" marker-end="url(#arrow)"/>
+<text class="message" x="790" y="1107" text-anchor="middle"><tspan x="790" dy="0">Authorization response and browser session</tspan></text>
+<line class="reply" x1="1120" y1="1136" x2="460" y2="1136" marker-end="url(#arrow)"/>
+<text class="message" x="305" y="1180" text-anchor="middle"><tspan x="305" dy="0">Authorization code and</tspan><tspan x="305" dy="23">original OAuth state</tspan></text>
+<line class="request" x1="460" y1="1232" x2="150" y2="1232" marker-end="url(#arrow)"/>
+<text class="message" x="635" y="1276" text-anchor="middle"><tspan x="635" dy="0">Redeem authorization code</tspan></text>
+<line class="request" x1="150" y1="1305" x2="1120" y2="1305" marker-end="url(#arrow)"/>
+<text class="message" x="635" y="1349" text-anchor="middle"><tspan x="635" dy="0">Tokens</tspan></text>
+<line class="reply" x1="1120" y1="1378" x2="150" y2="1378" marker-end="url(#arrow)"/>
+<text class="footer" x="25" y="1453" text-anchor="start"><tspan x="25" dy="0">Representative successful path. Follow the current response rather than a fixed sequence.</tspan></text>
+</svg>

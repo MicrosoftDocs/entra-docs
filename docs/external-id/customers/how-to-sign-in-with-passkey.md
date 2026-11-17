@@ -5,7 +5,7 @@ ms.service: entra-external-id
 ms.topic: how-to
 author: mmacy-msft
 ms.author: marshmacy
-ms.date: 10/24/2026
+ms.date: 11/11/2026
 ai-usage: ai-assisted
 ms.custom: it-pro, msecd-doc-authoring-1030
 #customer intent: As a developer or IT admin, I want to enable passkey (FIDO2) sign-in for my external tenant so that customers can use phishing-resistant, passwordless authentication.
@@ -13,11 +13,11 @@ ms.custom: it-pro, msecd-doc-authoring-1030
 
 # Sign in with passkeys in Microsoft Entra External ID
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
-
 Passkeys give customers a phishing-resistant way to sign in to consumer applications built on Microsoft Entra External ID. Customers can use face, fingerprint, PIN, or a security key instead of remembering passwords or entering one-time codes.
 
-In an external tenant, you can use passkeys in two ways:
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
+
+For Microsoft-hosted authentication in an external tenant, you can use passkeys in two ways:
 
 - **Passwordless sign-in.** The user enters their email or username. If a passkey is available, they're prompted to sign in with face, fingerprint, PIN, or a security key. The passkey completes first-factor authentication and also satisfies multifactor authentication (MFA) requirements.
 - **Passkey for MFA.** The user signs in with their email or username and password. If a passkey is registered, they complete MFA with the passkey — a phishing-resistant alternative to traditional verification methods. For more about MFA options, see [MFA in external tenants](concept-multifactor-authentication-customers.md).
@@ -26,7 +26,6 @@ In an external tenant, you can use passkeys in two ways:
 
 - A Microsoft Entra external tenant. [Create a free trial](https://aka.ms/ciam-free-trial) or use an existing external tenant.
 - An account with at least the [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) role to configure passkey policies.
-- A [custom URL domain](how-to-custom-url-domain.md) configured for your tenant. Passkeys are registered against the custom URL as the relying party.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) associated with your application.
 - An app that's [registered](../../identity-platform/quickstart-register-app.md) in your external tenant and added to the sign-up and sign-in user flow.
 

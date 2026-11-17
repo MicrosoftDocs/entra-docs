@@ -3,7 +3,8 @@ title: macOS Platform single sign-on known issues and troubleshooting
 description: Identify and resolve known issues with macOS Platform single sign-on (PSSO).
 
 ms.topic: troubleshooting
-ms.date: 12/19/2024
+ms.date: 11/04/2026
+ai-usage: ai-assisted
 
 manager: pmwongera
 ms.reviewer: brianmel, miepping
@@ -178,6 +179,15 @@ If a user has per user MFA enabled on the account where PSSO is being set up, yo
 ### PSSO reregistration required after password reset initiated from FileVault recovery or MDM-driven recovery
 
 Because Secure Enclave keys are protected by your local account password, password resets that occur without providing this password (such as FileVault or MDM-based recovery) resets the Secure Enclave. Resetting the Secure Enclave renders keys previously stored for this account inaccessible. Devices whose Secure Enclave keys are lost must be reregistered to use Platform SSO.
+
+### Authentication errors after locking or waking a Mac
+
+On a Mac registered with Platform SSO, apps might show sign-in errors such as `4ut1e`, `-42008`, or "Failed to sign the request" after you wake or unlock the device. This can happen when token requests start before macOS unlocks the user's cryptographic keys, causing token decryption or request signing to fail. These errors can also have other causes.
+
+On macOS 14 or later, enable **Use Shared Device Keys** in the Platform SSO configuration to help prevent this issue. This setting makes device authentication keys available before the user unlocks the device. For configuration details, see [Configure Platform SSO in Intune](/intune/device-configuration/settings-catalog/configure-platform-sso-macos#step-2---create-the-platform-sso-policy-in-intune).
+
+> [!IMPORTANT]
+> Changing this setting in an existing deployment triggers a Platform SSO re-registration.
 
 ## Report an issue
 
