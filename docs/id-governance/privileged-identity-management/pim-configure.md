@@ -2,9 +2,9 @@
 title: What is Privileged Identity Management?
 description: Provides an overview of Microsoft Entra Privileged Identity Management (PIM).
 ms.topic: overview
-ms.date: 10/26/2026
+ms.date: 11/17/2026
 ms.reviewer: ilyal
-ms.custom: pim, azuread-video-2020, content-engagement, sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1031
+ms.custom: pim, azuread-video-2020, content-engagement, sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1032
 ai-usage: ai-assisted
 #Customer Intent: As an IT administrator, I want to understand what Privileged Identity Management is and how it can help secure my organization's privileged access to critical resources.
 ---
@@ -51,6 +51,18 @@ Privileged Identity Management provides time-based and approval-based role activ
 - Prevent removal of the **last active Global Administrator** and **Privileged Role Administrator** role assignments
 
 The available capabilities depend on the PIM provider. For the app roles preview's workflows, see [PIM for app roles (preview)](concept-pim-for-app-roles.md).
+
+## Privileged access capabilities in preview
+
+PIM also includes preview capabilities for role activation, agent access, and privileged sessions. Licensing and setup requirements vary by feature; see the linked guides for prerequisites.
+
+- **Activate roles in My Access.** Activate eligible Microsoft Entra roles, Azure resource roles, and group membership or ownership from one portal. See [Role activation in My Access (preview)](../my-access-portal-overview.md#activate-eligible-role-assignments).
+- **Govern Azure resource access for agents.** Assign eligible Azure resource roles to agents and agent identities so they can activate access when needed. See [Eligible assignments for agents (preview)](pim-resource-roles-assign-roles.md#eligible-assignments-for-agents-preview) and [Agent identity activation (preview)](pim-resource-roles-activate-your-roles.md?pivots=api#activate-an-agent-identity-with-azure-resource-manager-api-preview).
+- **Connect to virtual machines.** Use My Access to activate existing eligible access for Azure virtual machines or supported Azure Arc-enabled Linux servers. Then connect through an available path, including Azure Bastion. See [Virtual machine connections in My Access (preview)](pim-connect-virtual-machine-my-access.md).
+- **Review session activity and recordings.** Session analytics show PIM role lifecycle and Azure Bastion connection activity, not commands run inside a virtual machine. With Azure Bastion Premium and recording configured, you can review recordings of supported connections. See [Session analytics (preview)](azure-pim-resource-rbac.md#review-session-activity-preview) and [Azure Bastion session recordings (preview)](azure-pim-resource-rbac.md#review-azure-bastion-session-recordings).
+- **Manage active sessions.** Find and disconnect selected active Azure Bastion sessions without deactivating the user's role assignments. See [Session management in PIM (preview)](pim-manage-bastion-sessions.md).
+- **Activate a lower-privileged role.** When the eligible role's policy allows it, select an available lower-privileged Azure resource role. You can optionally request a Microsoft Security Copilot recommendation based on your justification when the Copilot prerequisites are met. See [Least-privilege role activation (preview)](pim-resource-roles-configure-role-settings.md#allow-least-privilege-role-activation) and [Role recommendations with Microsoft Security Copilot](pim-resource-roles-activate-your-roles.md?pivots=my-access#get-a-role-recommendation-with-microsoft-security-copilot).
+- **Reduce standing access.** Convert selected active Azure resource role assignments to eligible assignments that require activation before use. See [Active-to-eligible assignment conversion (preview)](pim-resource-roles-assign-roles.md?pivots=portal#convert-active-role-assignments-to-eligible-role-assignments).
 
 ## What can I do with it?
 
