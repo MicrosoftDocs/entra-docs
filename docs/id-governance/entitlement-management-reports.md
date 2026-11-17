@@ -200,7 +200,7 @@ To review access package drift through the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **ID Governance** > **Access Guardian** > **Reports** > **Access Drift**.
+1. Browse to **ID Governance** > **Entitlement Management** > **Reports** > **Access Drift**.
 
     The Access Drift page shows an **Access drift data as of** timestamp and lists only resources where drift is detected. If the same resource is included in more than one catalog, the resource appears once for each catalog.
 
