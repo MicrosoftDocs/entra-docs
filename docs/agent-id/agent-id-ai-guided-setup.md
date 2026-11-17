@@ -1,28 +1,26 @@
 ---
 title: AI-guided setup for Microsoft Entra Agent ID
-description: Describes how to use an AI coding agent to automate the onboarding process for Microsoft Entra Agent ID, including blueprint creation, credential configuration, and agent identity provisioning.
+description: Use an AI coding assistant to provision a fleet blueprint and agent identities, review permissions, verify objects, and plan separate runtime integration.
 ms.topic: how-to
-ms.date: 05/12/2026
+ms.date: 11/05/2026
 ms.reviewer: arluca
 ai-usage: ai-assisted
 ---
 
 # AI-guided setup for Microsoft Entra Agent ID
 
-Onboarding to Microsoft Entra Agent ID involves multiple steps: creating an agent identity blueprint, configuring credentials, setting up identifier URIs and scopes, creating blueprint principals, and provisioning agent identities. Each step has its own prerequisites, validation checks, and decision points.
+This workflow helps you provision a fleet of separately managed agents: it creates a multi-instance blueprint, configures its credentials and scopes, creates a blueprint principal, and provisions child identities. If you're building a cloud or local agent rather than a hosting platform, start with [Choose an integration path](choose-agent-integration-path.md). The skill described here isn't the single-instance or local public-client setup procedure.
 
-This AI-guided setup automates this entire workflow by using an AI coding agent (such as GitHub Copilot in VS Code) to execute the steps on your behalf. Instead of navigating between multiple documentation pages and running commands manually, you provide the AI agent with a single instruction file and it walks you through the process interactively. This instruction file is available as a Skill and can be accessed in more than one way.
+An AI coding assistant, such as GitHub Copilot in VS Code, can use a skill to help execute the provisioning steps. You remain responsible for reviewing proposed changes, arranging administrator approvals, and checking the results. Skill behavior depends on its version and the assistant; its completion summary isn't evidence of runtime authorization.
 
 ## Benefits
 
-The AI-guided setup offers several advantages over the manual workflow:
+The assistant can help assemble provisioning commands, suggest names, and explain error responses. Before allowing changes:
 
-- **Single entry point**: One instruction file replaces the need to navigate between multiple documentation pages. The AI agent follows the steps in order and handles transitions automatically.
-- **Automated prerequisite validation**: The AI agent validates that you have the correct Microsoft Entra roles, that the required tools and Graph modules are installed, and that required permissions are configured with admin consent before making any API calls.
-- **Smart defaults and auto-detection**: The AI agent queries your tenant for existing user information and resource details, then uses those values as suggestions when collecting configuration inputs.
-- **Derived naming conventions**: You provide a single display name for your agent, and the AI agent derives all related resource names (blueprint, blueprint principal, agent identities, identifier URIs) using consistent patterns.
-- **Inline error handling**: When a command fails, the AI agent analyzes the error, suggests a fix, and retries rather than requiring you to search through troubleshooting documentation. This error handling is especially valuable for Agent ID-specific pitfalls like permission propagation delays and OData header requirements.
-- **Idempotent operations**: The AI agent checks whether resources already exist before creating them, making it safe to rerun the setup if a previous attempt was interrupted.
+- Confirm the intended tenant, operator, management client, and required consent. Ask the administrator to approve only the operations your setup requires.
+- Review the sponsor, owner, credential type, and identity count. Don't accept defaults that create a fleet when your scenario needs one cloud or local agent.
+- Record the existing objects and the [identifiers for your scenario](key-concepts.md#record-the-identifiers-for-your-scenario). Before rerunning an interrupted setup, inspect what already exists; don't assume the skill is idempotent.
+- Keep secrets, private keys, and access tokens out of prompts and logs. Review any proposed role or permission changes rather than treating a failed request as a reason to grant broader access.
 
 ## Prerequisites
 
@@ -80,7 +78,7 @@ If you already have a working agent project (Python, Node.js, or .NET) that need
 The AI-guided setup uses a skill, which is a single instruction file that contains all the steps and validation checks. You can access the skill in one of two ways:
 
 - **Through the GitHub Copilot for Azure extension** (recommended): Install the [GitHub Copilot for Azure VS Code extension](/azure/developer/github-copilot-azure/introduction). The Microsoft Entra Agent ID skill activates automatically when you ask about Agent ID setup in Copilot Chat.
-- **Directly from GitHub**: Use the standalone [Microsoft Entra Agent ID skill](https://github.com/microsoft/GitHub-Copilot-for-Azure/blob/main/plugin/skills/entra-agent-id/SKILL.md) by referencing it in your Copilot Chat prompt.
+- **Directly from GitHub**: Use the standalone [Microsoft Entra Agent ID skill](https://github.com/microsoft/GitHub-Copilot-for-Azure/blob/main/plugins/azure-skills/skills/entra-agent-id/SKILL.md) by referencing it in your Copilot Chat prompt.
 
 ### Step 1: Open your project in VS Code
 
@@ -104,7 +102,7 @@ If you have the GitHub Copilot for Azure extension installed, ask Copilot to set
 If you don't have the extension, reference the skill directly from GitHub:
 
 ```text
-Follow the steps in https://github.com/microsoft/GitHub-Copilot-for-Azure/blob/main/plugin/skills/entra-agent-id/SKILL.md
+Follow the steps in https://github.com/microsoft/GitHub-Copilot-for-Azure/blob/main/plugins/azure-skills/skills/entra-agent-id/SKILL.md
 ```
 
 The AI agent reads the skill and begins the guided setup. It works through the steps sequentially:
@@ -133,17 +131,18 @@ The AI agent pauses at specific points to collect input from you:
 > [!TIP]
 > The AI agent shows real values from your Microsoft Entra tenant as examples when it asks for configuration inputs. You can accept the suggestions or provide your own values.
 
-### Step 5: Verify in the Microsoft Entra admin center
+### Step 5: Verify provisioning and runtime separately
 
 After the setup completes, the AI agent provides instructions on how to verify the resources:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an [Agent ID Developer](/entra/identity/role-based-access-control/permissions-reference#agent-id-developer).
-2. Browse to **Entra ID** > **Agents** > **Agent identities** to see your new agent identity blueprint and any agent identities created under it.
-3. Verify the blueprint has the correct credentials, identifier URI, and scope configured.
+1. Browse to **Entra ID** > **Agents** > **Agent blueprints** to find the blueprint, then **Agent identities** to find its child identities.
+1. Verify the blueprint's credentials, identifier URI, and scope. Check the returned object types and parent relationships, not just display names. Confirm that the fleet blueprint principal exists.
+1. Continue with the [fleet runtime tutorial](plan-agent-fleet.md) for your language and access scenario. Acquire the intended agent's token and make an authorized call to the target API. A provisioned object, compiled application, or issued token alone doesn't establish that the API operation works.
 
 ## What the AI-guided setup covers
 
-The AI-guided setup automates the following stages of the Agent ID integration:
+Use these source procedures to review the assistant's proposed provisioning steps:
 
 | Stage | What happens | Related documentation |
 |---|---|---|
@@ -158,9 +157,9 @@ The AI-guided setup automates the following stages of the Agent ID integration:
 > [!NOTE]
 > The AI-guided setup doesn't replace the need to integrate Agent ID into your agent's code. You should understand how your agent [acquires tokens](create-delete-agent-identities.md#get-an-access-token-using-agent-identity-blueprint) and perform operations using its agent identity. The guided setup creates the identity infrastructure your agent code uses.
 
-## Common pitfalls the AI-guided setup handles
+## Common provisioning pitfalls
 
-The Agent ID APIs have several requirements that the AI-guided setup detects and resolves automatically, but they're not obvious requirements. Understanding these pitfalls can be helpful if you need to debug issues or extend the setup.
+Review these requirements when checking generated commands or recovering from a failure. Don't assume the assistant detects every prerequisite or resolves an authorization denial.
 
 ### OData-Version header is required
 
@@ -174,7 +173,7 @@ Creating an agent identity blueprint (`POST /applications`) does **not** automat
 400: The Agent Blueprint Principal for the Agent Blueprint does not exist.
 ```
 
-The AI-guided setup always creates the blueprint principal immediately after the blueprint. It also handles the idempotent case. If a previous run created the blueprint but crashed before creating the principal, the setup detects this event and creates the missing principal.
+Check for an existing principal before creating it. If a previous run stopped after blueprint creation, create the missing principal using the recorded blueprint `appId`. This requirement applies to this fleet workflow, not single-instance blueprints.
 
 ### Sponsors are required
 
@@ -186,34 +185,11 @@ Sponsors are required and can be users, groups with dynamic membership, or unifi
 
 The AI-guided setup only accepts **User** objects for sponsor assignment and uses the `/users/{objectId}` URL format (not `/directoryObjects/` or `/servicePrincipals/`). The setup resolves the current user's object ID and uses it as the default sponsor. To assign a [supported group](agent-owners-sponsors-managers.md#sponsors) as sponsor for a blueprint, use the Microsoft Graph API directly.
 
-### Permission propagation takes 30–120+ seconds
+### Diagnose authorization before retrying
 
-After you grant admin consent for Agent ID permissions, newly granted permissions don't appear in tokens immediately. The token endpoint serves cached claims, and propagation can take 30-120 seconds or more.
+New consent can take time to appear in a newly acquired token, but a `403 Forbidden` response doesn't by itself prove a propagation delay. First inspect the Graph error code, management client, tenant, granted scopes, and operator authorization. See [Agent identity error codes](error-codes.md).
 
-The AI-guided setup handles recent permission changes by retrying operations with exponential backoff when a 403 is received. If you're scripting this manually, implement retry logic:
-
-```powershell
-# Example: Retry with backoff after admin consent
-$maxRetries = 5
-for ($i = 0; $i -lt $maxRetries; $i++) {
-    try {
-        # Attempt the operation
-        $result = Invoke-MgGraphRequest -Method POST -Uri $uri -Body $body
-        break
-    } catch {
-        if ($_.Exception.Response.StatusCode -eq 403 -and $i -lt $maxRetries - 1) {
-            $wait = 20 * ($i + 1)
-            Write-Host "Permission not yet propagated. Retrying in $wait seconds..."
-            Start-Sleep -Seconds $wait
-            # Disconnect and reconnect to force a fresh token
-            Disconnect-MgGraph
-            Connect-MgGraph -Scopes $scopes
-        } else {
-            throw
-        }
-    }
-}
-```
+If an administrator just granted the required permission, wait briefly, reconnect with the same explicit management client ID, tenant, and scopes, and check `Get-MgContext` before retrying. Use bounded retries only for a confirmed transient condition. Stop and retain the status, error code, and request ID if the denial persists; don't silently exhaust retries or broaden permissions.
 
 ### Agent identities can't have password credentials
 
@@ -237,7 +213,7 @@ When adding federated identity credentials (FIC) for managed identity federation
 POST /applications/{blueprint-obj-id}/microsoft.graph.agentIdentityBlueprint/federatedIdentityCredentials
 ```
 
-Using the `/applications/{id}/federatedIdentityCredentials` path might work for agent identity blueprints, but it's not supported and isn't recommended.
+Use the supported request in [Configure credentials for the agent identity blueprint](create-blueprint.md#configure-credentials-for-the-agent-identity-blueprint). The placeholder is the blueprint's object ID, not its client ID. Preserve the request's OData header and verify that the credential's issuer, subject, and audience match the hosting identity.
 
 ### Token issuer varies by endpoint version
 
@@ -245,7 +221,7 @@ When validating tokens in your agent backend, be aware of the following variatio
 - v1.0 tokens use issuer `https://sts.windows.net/{tenant-id}/`
 - v2.0 tokens use issuer `https://login.microsoftonline.com/{tenant-id}/v2.0`
 
-Accept both formats in your token validation logic.
+Use the resource API's supported token-validation library and metadata configuration for its expected token version. Don't simply allow both issuer strings or disable issuer validation to get past a failure. See [Validate agent tokens in a downstream API](how-to-validate-agent-tokens-downstream-api.md).
 
 ## Troubleshooting
 
@@ -255,7 +231,7 @@ If the AI agent describes commands but doesn't execute them, make sure you're us
 
 ### AI agent skips validation steps
 
-The instruction file enforces strict step ordering. If the AI agent appears to skip a step, remind it to follow the instructions from the beginning. For example:
+A skill provides instructions, not an enforcement mechanism. If the assistant skips a step, stop before more changes and request the missing evidence. For example:
 
 ```text
 Please start from Step 1 in the setup instructions and work through each step in order.
@@ -266,7 +242,7 @@ Please start from Step 1 in the setup instructions and work through each step in
 The most common causes of 403 errors:
 
 - **Using Azure CLI or `DefaultAzureCredential` tokens**: Azure CLI tokens include `Directory.AccessAsUser.All`, which Agent Identity APIs reject outright. Use `Connect-MgGraph` with explicit delegated scopes, or a dedicated app registration with `client_credentials`. See the [authentication warning](#required-microsoft-graph-permissions) in the prerequisites.
-- **Permission propagation delay**: Wait 1–2 minutes after admin consent and retry. The AI-guided setup handles this automatically with retry logic.
+- **Recent permission change**: After verifying consent and operator authorization, wait briefly and reacquire a token using the same management client and tenant. Don't classify every denial as propagation.
 - **Missing admin consent**: Verify that the required permissions have admin consent granted in the [Microsoft Entra admin center](https://entra.microsoft.com/) under **App registrations** > your client app > **API permissions**.
 
 ### Blueprint creation succeeds but returns a standard application
@@ -295,7 +271,7 @@ Your tenant might have credential lifecycle policies that restrict the maximum l
 
 If you need to change configuration values after the setup, you can:
 
-- Rerun the AI-guided setup with updated values. The idempotent checks skip resources that already exist correctly.
+- Inspect the existing objects and request only the required updates. Before rerunning setup, confirm which resources the installed skill will reuse and which it will create.
 - Use Microsoft Graph PowerShell to update specific properties with `PATCH` requests.
 
 ## Next steps

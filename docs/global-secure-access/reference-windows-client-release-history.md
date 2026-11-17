@@ -2,7 +2,7 @@
 title: Global Secure Access Client Release Notes
 description: Review Global Secure Access client for Windows release notes, including new features, fixes, minimum versions, and Windows Update upgrade behavior.
 ms.topic: reference
-ms.date: 10/19/2026
+ms.date: 11/16/2026
 ms.reviewer: lirazbarak
 ms.custom: msecd-doc-authoring-1023
 ai-usage: ai-assisted
@@ -44,7 +44,18 @@ To opt out of automatic upgrades, use the following parameter when you install o
 > [!IMPORTANT]
 > If you opt out of automatic upgrades, you're responsible for keeping the Global Secure Access client up to date on those devices. Devices that run older client versions don't receive the latest features, fixes, and security updates.
 
+## Version 2.35.136 (preview)
+Released for download on November 16, 2026.
+### Functional changes
+- Adds support for Device Access for pre-logon scenarios (preview).
+- The user interface indicates when the client is configured through the forwarding profile to acquire only agentic traffic.
+### Other changes
+- Memory improvements.
+- Telemetry changes.
+- Miscellaneous bug fixes and improvements.
+
 ## Version 2.34.222
+Released for download on October 19, 2026.
 ### Functional changes
 - Adds support for [Web sign-in for Windows](/windows/security/identity-protection/web-sign-in).
 - When Private Access is enabled and the device isn't directly connected to the corporate network, Windows Firewall doesn't activate the domain profile.

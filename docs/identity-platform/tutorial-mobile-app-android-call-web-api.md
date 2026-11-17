@@ -31,7 +31,7 @@ In this tutorial, you:
 #### [External tenant configuration](#tab/android-external)
 
 - [Tutorial: Add add sign-in to an Android app by using Microsoft identity platform](tutorial-mobile-app-android-sign-in-sign-out.md)
-- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](quickstart-native-authentication-android-call-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
+- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the [ASP.NET Core web API quickstart](quickstart-web-api-dotnet-protect-app.md?tabs=aspnet-core) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
     - Register a web API application
     - Configure API scopes

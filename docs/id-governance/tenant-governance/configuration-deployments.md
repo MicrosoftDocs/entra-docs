@@ -2,7 +2,7 @@
 title: Configuration deployments (Preview)
 description: Learn how configuration deployments apply baseline settings to home and governed tenants in Microsoft Entra Tenant Governance.
 ms.topic: concept-article
-ms.date: 11/12/2026
+ms.date: 11/17/2026
 ai-usage: ai-generated
 # Customer intent: As a tenant administrator, I want to understand deployments so that I can apply approved configuration and handle failures.
 ---
@@ -77,7 +77,7 @@ The following details view illustrates a partially successful deployment and its
 
 ## Validate after deployment
 
-Create or update a monitor for the deployed baseline and target tenant. A successful monitor evaluation provides evidence that the actual configuration aligns with the expected values. Later monitor runs detect changes after deployment.
+Create or update a monitor for the deployed baseline and target tenant. Verify that a monitor run succeeds with zero detected drifts to confirm that the monitored configuration matches the baseline. A successful execution status alone doesn't mean that no drift was detected. Later monitor runs detect changes after deployment.
 
 On **Ongoing monitoring** in the deployment wizard, select **Yes** to create a separate monitor from the same configuration. If monitor creation fails, the deployment can still exist; review the warning and create the monitor separately.
 

@@ -5,6 +5,7 @@ ms.topic: how-to
 ms.date: 04/23/2026
 ms.custom: pim, sfi-ga-nochange
 #Customer Intent: As an approver, I want to review and approve or deny role activation requests to ensure appropriate access to Microsoft Entra roles.
+zone_pivot_groups: pim-role-approval-methods
 ---
 # Approve or deny requests for Microsoft Entra roles in Privileged Identity Management
 
@@ -19,6 +20,8 @@ Privileged Identity Management (PIM) in Microsoft Entra ID allows you to configu
 
 As a delegated approver, you receive an email notification when a Microsoft Entra role request is pending your approval. You can view these pending requests in Privileged Identity Management.
 
+::: zone pivot="portal"
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **ID Governance** > **Privileged Identity Management** > **Approve requests**.
@@ -26,6 +29,10 @@ As a delegated approver, you receive an email notification when a Microsoft Entr
     :::image type="content" source="./media/azure-ad-pim-approval-workflow/resources-approve-pane.png" alt-text="Screenshot showing the Approve requests page showing request to review Microsoft Entra roles.":::
 
     In the **Requests for role activations** section, you can see a list of requests pending your approval.
+
+::: zone-end
+
+::: zone pivot="api"
 
 ## View pending requests using Microsoft Graph API
 
@@ -83,14 +90,22 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
 } 
 ````
 
+::: zone-end
+
 ## Approve requests
 
 > [!NOTE]
 > Approvers aren't able to approve their own role activation requests. Additionally, service principals aren't allowed to approve requests.
 
+::: zone pivot="portal"
+
  1. Find and select the request that you want to approve. An approve or deny page appears.
  1. In the **Justification** box, enter the business justification.
  1. Select **Submit**. At this point, the system sends an Azure notification of your approval.
+
+::: zone-end
+
+::: zone pivot="api"
 
 ## Approve pending requests using Microsoft Graph API
 
@@ -146,11 +161,17 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignmentApproval
 
 Successful PATCH calls generate an empty response.
 
+::: zone-end
+
+::: zone pivot="portal"
+
 ## Deny requests
 
  1. Find and select the request that you want to deny. An approve or deny page appears.
  1. In the **Justification** box, enter the business justification.
  1. Select **Deny**. A notification appears with your denial.
+
+::: zone-end
 
 ## Workflow notifications
 

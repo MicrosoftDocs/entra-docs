@@ -1,125 +1,170 @@
 ---
-title: Control user access to agents
-description: Learn how to control user and agent access to applications using app roles and the assignmentRequired property for secure access management.
- 
+title: Control access to agents with app roles
+description: Use app roles to control which users, groups, and applications can access an agent.
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/06/2026
+ai-usage: ai-assisted
 ms.reviewer: ergreenl
-#Customer intent: As an IT administrator managing agent identities, I want to control user and agent access to applications using app roles and assignment requirements, so that I can enforce least privilege access and prevent unauthorized usage of agents.
+#Customer intent: As an administrator, I want to use app roles to control which users, groups, and applications can access an agent.
 ---
 
-# Control user access to agents
+# Control access to agents with app roles
 
-This article describes how to control user and agent access to applications using app roles and the `assignmentRequired` property. It covers defining app roles, enforcing explicit role assignments, assigning roles using Microsoft Graph or the Microsoft Entra admin center, and best practices for secure access management.
+App roles define who can access an agent and what they can do. Use them to restrict agent operations to approved users, groups, or client applications.
+
+In this article, you define an inbound access role, assign it to a caller, and enforce it in the agent API. Where you define the role depends on whether the agent uses a single-instance blueprint or a fleet.
 
 ## Prerequisites
 
-- An existing agent identity blueprint already created and configured
-- Agent ID Administrator role for managing agent identities and assignments
-- Application Administrator or Cloud Application Administrator role for managing app roles and assignmentRequired properties
-- *AppRoleAssignment.ReadWrite.All* permission for Microsoft Graph API operations if using programmatic approach.
+- A blueprint and its agent API service principal.
+- An authorized Microsoft Graph management client for role configuration. For delegated single-instance management, the signed-in user must own the agent identity or have the **Agent ID Administrator** role. See [Update servicePrincipal](/graph/api/serviceprincipal-update?view=graph-rest-beta&preserve-view=true) for the applicable API permissions.
+- **Application Administrator** or **Cloud Application Administrator** to manage user and group app role assignments.
+- `AppRoleAssignment.ReadWrite.All` and the appropriate read permission for programmatic assignments.
 
-## What are app roles?
+For the single-instance cloud journey, the API's service principal is the **agent identity**, not a blueprint principal. Use its object ID as `<agent-api-service-principal-object-id>` in the requests in this article. A single-instance blueprint has no blueprint principal. For the advanced fleet journey, use the fleet's **blueprint principal** instead; its assignments apply across the fleet.
 
-App roles define logical permissions or access levels for an application. They're declared in the agent identity blueprint and can be assigned to users, groups, service principals, or agent identities. The following section shows an example app role definition:
+## Define app roles
 
-```json
+Choose the definition location for your instance mode:
+
+| Instance mode | Define the inbound role on | Assign the role on |
+| --- | --- | --- |
+| Single-instance | The blueprint application and the Agent ID service principal, using the same role GUID and value. | The Agent ID service principal. |
+| Fleet | The blueprint application. | The blueprint principal that represents the fleet API. |
+
+Use one role when everyone has the same access level. For example, use `Agent.User` for standard tasks and add `Agent.Admin` only if you expose administrative tasks. Keep role values stable because your authorization policies check them.
+
+### Declare the role on the blueprint
+
+Define `Agent.User` in the blueprint application's `appRoles` collection. For a single-instance agent, also complete the next section to make the same role available on its Agent ID.
+
+Read the blueprint's existing `appRoles` first. The following request is for a blueprint with no existing roles. For an existing collection, include the existing role definitions you intend to retain; updating `appRoles` replaces the collection. Omit the read-only `origin` field from requests.
+
+Replace `<agent-user-role-id>` with a new GUID and save it for the assignment step:
+
+```http
+PATCH https://graph.microsoft.com/beta/applications/<blueprint-object-id>
+Content-Type: application/json
+Authorization: Bearer <management-access-token>
+
 {
-  "id": "b1a2c3d4-e5f6-7890-abcd-ef1234567890",
-  "allowedMemberTypes": ["User", "Application"],
-  "description": "Grants ability to invoke agent actions",
-  "displayName": "AgentInvoker",
-  "isEnabled": true,
-  "value": "AgentInvoker"
+  "@odata.type": "#microsoft.graph.agentIdentityBlueprint",
+  "appRoles": [
+    {
+      "id": "<agent-user-role-id>",
+      "allowedMemberTypes": ["User"],
+      "description": "Use standard agent features",
+      "displayName": "Agent user",
+      "isEnabled": true,
+      "value": "Agent.User"
+    }
+  ]
 }
 ```
 
-- `allowedMemberTypes` controls who can be assigned (users, apps, or both).
-- `value` is the string that appears in the token's roles claim when assigned.
+### Single-instance user access
 
-If an agent identity blueprint exposes no app-roles, the default app-role `<guid of all zeros>` can be used to assign principals to the agent identity.
+For a single-instance agent, publish the same user role directly in the Agent ID's `appRoles` collection. Use the **same GUID and value** as the blueprint declaration, not a second role GUID. The blueprint-only declaration doesn't make the role available for assignment on the Agent ID. The service-principal-only definition doesn't complete the blueprint configuration used in this procedure.
 
-When designing app roles for your agent applications, define granular roles that separate duties and responsibilities. For example, create specific roles like "AgentInvoker" for users who can call agent actions and "AgentAdmin" for users who can manage agent configurations. This approach provides better security control and makes it easier to audit access patterns.
-
-## What is assignmentRequired?
-
-The assignmentRequired property on an application or agent identity determines whether role assignment is mandatory for access.
-
-- `assignmentRequired = true` → Only principals explicitly assigned an app role can sign in or call the agent identity.
-- `assignmentRequired = false` → Any authenticated principal can access the agent identity (subject to other conditions).
-
-## Why use assignmentRequired?
-
-You might use the assignmentRequired property for the following reasons:
-
-- Enforces least privilege by requiring explicit assignment.
-- Prevents accidental access by users or agents who weren't intended to use the agent.
-
-Enable `assignmentRequired` for sensitive agent identity blueprints to enforce explicit role assignment and ensure only authorized principals can access critical agent functionality. If users can access an application without explicit assignment, it indicates that `assignmentRequired` is set to `false`. Change this setting to true and assign roles explicitly to maintain security controls.
-
-## Configure assignmentRequired
-
-The following example uses the Update application API to set the `assignmentRequired` property.
+Read the Agent ID's existing roles first and retain their definitions in the update. For an Agent ID with no existing roles, send:
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/applications/<agent-app-id>
+PATCH https://graph.microsoft.com/beta/servicePrincipals/<agent-api-service-principal-object-id>
 Content-Type: application/json
-Authorization: Bearer <token>
+Authorization: Bearer <management-access-token>
+
+{
+  "appRoles": [
+    {
+      "id": "<agent-user-role-id>",
+      "allowedMemberTypes": ["User"],
+      "description": "Use standard agent features",
+      "displayName": "Agent user",
+      "isEnabled": true,
+      "value": "Agent.User"
+    }
+  ]
+}
+```
+
+This is role configuration on two separate objects, not permission inheritance or a downstream API grant. Don't create a blueprint principal for a single-instance agent.
+
+The service-principal definition supports `User` for users and groups. Don't add `Application` to this request: roles assignable to client applications must be defined on an application object. This single-instance procedure covers inbound user access, not application-only callers. See the [appRole resource reference](/graph/api/resources/approle).
+
+### Fleet access
+
+For a fleet, use the blueprint declaration without the single-instance service-principal update. Include `User` in `allowedMemberTypes` for users or groups and `Application` for client applications. For the application-level procedure, see [Add app roles to an application](~/identity-platform/howto-add-app-roles-in-apps.md). Use the blueprint principal, not a child Agent ID, as the resource for inbound assignments.
+
+## Verify the role on the resource principal
+
+Before requiring or assigning a role, read back the blueprint with `GET https://graph.microsoft.com/beta/applications/<blueprint-object-id>?$select=appRoles` and the agent API principal with `GET https://graph.microsoft.com/v1.0/servicePrincipals/<agent-api-service-principal-object-id>?$select=appRoles`. Use an authorized management client, not the agent's runtime token.
+
+Confirm that the principal's `appRoles` contains the role's exact `id` and `value`, that `isEnabled` is `true`, and that `allowedMemberTypes` includes the intended assignee type.
+
+If an assignment returns `Permission being assigned was not found on application`, check the role definition on the resource principal and the assignment's `resourceId` and `appRoleId`. For a single-instance agent, complete the direct definition above if you defined the role only on the blueprint. Don't create a blueprint principal, substitute another resource, or remove the API's role check. Continue only after the intended principal exposes the role.
+
+## Require an app role assignment
+
+Set `appRoleAssignmentRequired` on the agent API service principal. When the property is `true`, Microsoft Entra ID issues an access token for the agent API only to assigned users and applications.
+
+```http
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/<agent-api-service-principal-object-id>
+Content-Type: application/json
+Authorization: Bearer <access-token>
 
 {
   "appRoleAssignmentRequired": true
 }
 ```
 
-The `assignmentRequired` property ensures that only principals explicitly assigned an app role can access the agent identity blueprint, enforcing least privilege and preventing accidental access.
+For more information, see the [Microsoft Graph update API reference](/graph/api/serviceprincipal-update).
 
-## Assign app roles to control access
+## Assign an app role
 
-App roles are granted through app role assignments. They link a principal (user, group, or agent identity) to a specific app role on the target agent identity. If an agent identity fails to access an application after configuration, verify that an `appRoleAssignment` is created for the agent identity using the APIs shown in the following example.
-
-### Assign an app role to a user
-
-The following example uses the Grant an `appRoleAssignment` to a user API to assign an app role to a user.
+Assign the app role to a user on the agent API service principal:
 
 ```http
-POST https://graph.microsoft.com/v1.0/users/<user-id>/appRoleAssignments
-Authorization: Bearer <token with AppRoleAssignment.ReadWrite.All>
+POST https://graph.microsoft.com/v1.0/users/<user-object-id>/appRoleAssignments
 Content-Type: application/json
+Authorization: Bearer <access-token>
 
 {
-  "principalId": "<user-id>",
-  "resourceId": "<agent-identity-blueprint-principal-id>",
+  "principalId": "<user-object-id>",
+  "resourceId": "<agent-api-service-principal-object-id>",
   "appRoleId": "<app-role-id>"
 }
 ```
 
-### Assign an app role to an agent identity
+Use the GUID saved when you defined `Agent.User` as `<app-role-id>`. For a group, create the assignment through the group's app role assignments. For a fleet role that allows `Application`, create a client application's assignment through that client's service principal. In every case, use the agent API service principal's object ID as `resourceId`.
 
-The following example uses the Grant an `appRoleAssignment` to a service principal API to assign an app role to an agent identity.
+## Enforce app roles in the agent API
 
-```http
-POST https://graph.microsoft.com/v1.0/servicePrincipals/<agent-identity-id>/appRoleAssignments
-Authorization: Bearer <token with AppRoleAssignment.ReadWrite.All>
-Content-Type: application/json
+When an assigned user or application gets an access token for the agent API, Microsoft Entra ID includes the assigned app role values in the token's `roles` claim. The agent API checks that claim before it allows the requested operation.
 
+After [configuring authentication and token validation](aspnet-core-authenticate-users.md), add an authorization policy that requires the app role:
+
+In `Program.cs`, merge the policy registration into `builder.Services.AddAuthorization` before `builder.Build()`. Place the endpoint mapping after the authentication and authorization middleware and before `app.Run()`; the two parts of this fragment aren't adjacent in a complete application.
+
+```csharp
+builder.Services.AddAuthorization(options =>
 {
-  "principalId": "<agent-identity-id>",
-  "resourceId": "<agent-identity-blueprint-principal-id>",
-  "appRoleId": "<app-role-id>"
-}
+    options.AddPolicy(
+        "AgentUser",
+        policy => policy.RequireRole("Agent.User"));
+});
+
+app.MapPost("/tasks", () => Results.Accepted())
+    .RequireAuthorization("AgentUser");
 ```
 
-## Verify role assignment
+`AddAuthorization` registers the ASP.NET Core authorization services. `RequireRole` checks the authenticated identity for the `Agent.User` role. Microsoft.Identity.Web recognizes Microsoft Entra app roles in the access token's `roles` claim.
 
-To verify your role assignment, be sure to take the following actions:
+Call `UseAuthentication` before `UseAuthorization` in the middleware pipeline, as shown in the authentication article. Request a new access token after changing an assignment. When troubleshooting, verify the assignment on the agent API service principal and the token's `roles` claim.
 
-- List `appRoleAssignments` for the user or agent identity.
-- Check the roles claim in the token after sign-in.
-
-If roles claims are missing from tokens, verify that the assignment exists with the correct appRoleId, then request a new token. Regularly audit these assignments using Microsoft Graph or the Microsoft Entra admin center to ensure they remain appropriate and remove any unnecessary access.
+With a new token for the agent API and the assigned `Agent.User` role, the sample `POST /tasks` returns `202 Accepted`. Without a token, expect `401`; an otherwise valid token without that role is rejected with `403` if the tenant issues it. When assignment is required, Microsoft Entra ID might reject sign-in or token issuance before the request reaches your API.
 
 ## Related content
 
-- [Application manifest reference](../identity-platform/reference-app-manifest.md)
-- [Microsoft Entra roles and permissions for agent identities](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents)
-- [conditional access for enhanced security controls](../identity/conditional-access/overview.md)
+- [Authenticate users to an ASP.NET Core agent API](aspnet-core-authenticate-users.md)
+- [Add app roles to an application](/entra/identity-platform/howto-add-app-roles-in-apps)
+- [Role-based authorization in ASP.NET Core](/aspnet/core/security/authorization/roles)

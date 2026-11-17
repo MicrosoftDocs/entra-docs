@@ -2,9 +2,12 @@
 title: Assign Azure resource roles in Privileged Identity Management
 description: Learn how to assign Azure resource roles in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 08/06/2026
-ms.custom: sfi-ga-nochange, sfi-image-nochange
+ms.date: 11/16/2026
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1031
 #Customer Intent: As an Azure resource administrator, I want to assign Azure resource roles using PIM to provide just-in-time access to subscriptions, resource groups, and other Azure resources.
+ms.author: tamimsangrar
+ai-usage: ai-assisted
+zone_pivot_groups: pim-azure-role-assignment-methods
 ---
 # Assign Azure resource roles in Privileged Identity Management
 
@@ -23,9 +26,14 @@ With Microsoft Entra Privileged Identity Management (PIM), you can manage the bu
 
 Privileged Identity Management supports both built-in and custom Azure roles. For more information on Azure custom roles, see [Azure custom roles](/azure/role-based-access-control/custom-roles).
 
+<a name="eligible-assignments-for-agents-preview"></a>
+
+> [!NOTE]
+> Agents and agent identities can receive and activate eligible Azure resource role assignments in preview. Each agent or agent identity requires an [E7 license](~/id-governance/licensing-fundamentals.md#privileged-identity-management).
+
 ## Role assignment conditions
 
-You can use the Azure attribute-based access control (Azure ABAC) to add conditions on eligible role assignments using Microsoft Entra PIM for Azure resources. With Microsoft Entra PIM, your end users must activate an eligible role assignment to get permission to perform certain actions. Using conditions in Microsoft Entra PIM enables you not only to limit a user's role permissions to a resource using fine-grained conditions, but also to use Microsoft Entra PIM to secure the role assignment with a time-bound setting, approval workflow, audit trail, and so on.
+Use Azure attribute-based access control (Azure ABAC) conditions to limit permissions in eligible Azure resource role assignments. Assignees must activate eligible assignments before they can use the permissions. PIM combines fine-grained resource conditions with time-bound assignments, approval workflows, and an audit trail.
 
 > [!NOTE]
 > When a role is assigned, the assignment:
@@ -40,9 +48,11 @@ Currently, the following built-in roles can have conditions added:
 
 For more information, see [What is Azure attribute-based access control (Azure ABAC)](/azure/role-based-access-control/conditions-overview).
 
+::: zone pivot="portal"
+
 ## Assign a role
 
-Follow these steps to make a user eligible for an Azure resource role.
+Follow these steps to assign an Azure resource role to a user, group, agent, or agent identity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a User Access Administrator.
 
@@ -63,7 +73,7 @@ Follow these steps to make a user eligible for an Azure resource role.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-select-role.png" alt-text="Screenshot of the new assignment pane.":::
 
-1. Select a member or group you want to assign to the role and then choose **Select**.
+1. Select the user, group, agent, or agent identity you want to assign to the role and then choose **Select**.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-select-member-or-group.png" alt-text="Screenshot that demonstrates how to select a member or group pane.":::
 
@@ -73,7 +83,7 @@ Follow these steps to make a user eligible for an Azure resource role.
 
     Microsoft Entra PIM for Azure resources provides two distinct assignment types:
 
-    - **Eligible** assignments require the member to activate the role before using it. Administrator may require role member to perform certain actions before role activation, which might include performing a multifactor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers.
+    - **Eligible** assignments require the member to activate the role before using it. Depending on the role settings, activation might require multifactor authentication (MFA), a business justification, or approval from designated approvers.
 
     - **Active** assignments don't require the member to activate the role before usage. Members assigned as active have the privileges assigned ready to use. This type of assignment is also available to customers who don't use Microsoft Entra PIM.
 
@@ -92,6 +102,43 @@ Follow these steps to make a user eligible for an Azure resource role.
 1. After the new role assignment is created, a status notification is displayed.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-new-assignment-notification.png" alt-text="Screenshot of a new assignment notification.":::
+
+<a name="convert-active-assignments-to-eligible-assignments"></a>
+
+<a name="convert-active-role-assignments-to-eligible-role-assignments"></a>
+
+## Convert active role assignments to eligible role assignments (Preview)
+
+Use the 'Assignments (Preview)' blade to change selected active Azure resource role assignments to eligible role assignments.
+
+Enhanced Azure role assignment conversion is in preview. You can convert permanent active and time-bound active Azure resource role assignments to eligible role assignments.
+
+Existing PIM licensing for Azure resources applies unchanged to users and groups. Eligible assignments for agents and agent identities require an E7 license. See [PIM licensing requirements](~/id-governance/licensing-fundamentals.md#privileged-identity-management).
+
+The existing permissions for managing role assignments apply: you need the **Owner** or **User Access Administrator** role at the scope you want to manage.
+
+When the role assignment conversion takes effect, the eligible role assignment replaces the active role assignment. The user must activate the eligible role assignment. The eligible role assignment's **Start time** and **End time** define when the user can request activation, not the duration of each role activation. Role activation duration follows the [role's activation settings](pim-resource-roles-configure-role-settings.md#activation-maximum-duration).
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Open **Privileged Identity Management**, select **Azure resources**, and select the Azure scope you want to manage.
+1. Select **Assignments (Preview)**, and then select **Active Assignments**.
+1. Select the role assignments you want to change, and then select **Manage Assignments**.
+
+    :::image type="content" source="media/pim-resource-roles-assign-roles/active-assignment-manage.png" alt-text="Screenshot of Active Assignments with a role assignment selected and the Manage Assignments action available." lightbox="media/pim-resource-roles-assign-roles/active-assignment-manage.png":::
+
+1. In **Update Assignments**, under **Target Assignment Type**, select **Eligible (Recommended)**.
+1. Under **Assignment duration**, select **Time-bound**, and specify **Start time** and **End time**.
+
+    :::image type="content" source="media/pim-resource-roles-assign-roles/update-assignment-to-eligible.png" alt-text="Screenshot of Update Assignments with Eligible and Time-bound selected and the eligibility start and end times shown." lightbox="media/pim-resource-roles-assign-roles/update-assignment-to-eligible.png":::
+
+1. Select **Save**.
+1. Review **Eligible Assignments** to check the role assignment type and duration.
+
+After setup, users can [activate their eligible Azure resource role assignments in My Access](pim-resource-roles-activate-your-roles.md?pivots=my-access#activate-an-azure-resource-role-in-my-access).
+
+::: zone-end
+
+::: zone pivot="api"
 
 ## Assign a role using Azure Resource Manager API
 
@@ -188,6 +235,10 @@ Status code: 201
 }
 ````
 
+::: zone-end
+
+::: zone pivot="portal"
+
 ## Update or remove an existing role assignment
 
 Follow these steps to update or remove an existing role assignment.
@@ -215,6 +266,8 @@ Follow these steps to update or remove an existing role assignment.
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-abac-update-remove.png" alt-text="Screenshot that demonstrates how to update or remove attributes of a role assignment." lightbox="./media/pim-resource-roles-assign-roles/resources-abac-update-remove.png":::
 
     For information about extending a role assignment, see [Extend or renew Azure resource roles in Privileged Identity Management](pim-resource-roles-renew-extend.md).
+
+::: zone-end
 
 ## Next steps
 

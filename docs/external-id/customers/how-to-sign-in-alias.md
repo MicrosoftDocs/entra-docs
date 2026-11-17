@@ -4,16 +4,16 @@ description: Learn how to sign in and sign up with alias/username with External 
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 01/13/2026
-ms.custom: it-pro
+ms.date: 11/11/2026
+ms.custom: it-pro, msecd-doc-authoring-1030
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to enable sign in with alias/username through the Microsoft Entra admin center and Graph API.
 ---
 # Sign in with an alias or username
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
-
 You can allow users who sign in with an email address and password also sign up or sign in with a username and password. A username, also called an alternate sign-in identifier, can be a customer ID, account number, or another identifier that you choose.
+
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
 
 :::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option.":::
 

@@ -58,5 +58,5 @@ The authentication events trigger for Azure Functions allows you to implement a 
 
 ## See also
 
-- [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
-- [Custom claims provider reference](custom-claims-provider-reference.md) article.
+- [Create a REST API for the OnTokenIssuanceStart event in Azure Functions](custom-extension-tokenissuancestart-setup.md)
+- [OnTokenIssuanceStart event reference](custom-claims-provider-reference.md) article.

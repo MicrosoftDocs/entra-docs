@@ -50,7 +50,7 @@ Workforce and external tenants have different capabilities and limitations. Choo
 
 ## Getting started
 
-Choose your preferred [application scenario](authentication-flows-app-scenarios.md). Each of these scenario paths has an overview and links to a quickstart to help you get started:
+Choose your preferred [application scenario](authentication-flows-app-scenarios.md). Use the following guides to get started:
 
 Browser based authentication (Workforce and External tenants):
 
@@ -63,10 +63,9 @@ Browser based authentication (Workforce and External tenants):
 
 
 Native authentication (External tenants only):
-- [React Single-page app (SPA)](quickstart-native-authentication-single-page-app-react-sign-in.md)
-- [Android app](quickstart-native-authentication-android-sign-in.md)
-- [iOS app](quickstart-native-authentication-ios-sign-in.md)
-- [macOS app](quickstart-native-authentication-macos-sign-in.md)
+- [React Next.js single-page app (SPA)](quickstart-native-authentication.md).
+- [Android SDK and sample guidance](how-to-migrate-native-authentication-v1-v2.md#android-migration).
+- [iOS and macOS SDK guidance](how-to-migrate-native-authentication-v1-v2.md#ios-migration).
 
 For a more in-depth look at building applications using the Microsoft identity platform, see our multipart tutorial series for the following applications:
 
@@ -75,11 +74,6 @@ Browser based authentication (Workforce and External tenants):
 - [React Single-page app (SPA)](tutorial-single-page-app-react-prepare-app.md)
 - [ASP.NET Core Web app](tutorial-web-app-dotnet-prepare-app.md)
 - [ASP.NET Core API](tutorial-web-api-dotnet-register-app.md)
-
-Native authentication (External tenants only):
-- [React Single-page app (SPA)](tutorial-native-authentication-single-page-app-react-sign-up.md)
-- [Android Kotlin app](tutorial-native-authentication-prepare-android-app.md)
-- [iOS/macOS Switch app](tutorial-native-authentication-prepare-ios-macos-app.md)
 
 As you work with the Microsoft identity platform to integrate authentication and authorization in your apps, you can refer to this image that outlines the most common app scenarios and their identity components. Select the image to view it full-size.
 

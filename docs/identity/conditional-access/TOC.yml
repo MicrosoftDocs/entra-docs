@@ -124,6 +124,8 @@
       href: policy-risk-based-sign-in.md
     - name: Require remediation for risky users
       href: policy-risk-based-user.md
+    - name: Require identity verification (preview)
+      href: policy-require-identity-verification.md
     - name: Require authentication strength for device registration
       href: policy-all-users-device-registration.md
     - name: Require device compliance

@@ -1,5 +1,63 @@
 ### YamlMime:ZonePivotGroups
 groups:
+- id: pim-azure-role-activation-portals
+  title: PIM activation
+  prompt: Choose a method
+  pivots:
+  - id: entra-admin-center
+    title: Microsoft Entra admin center
+  - id: my-access
+    title: My Access portal
+  - id: azure-portal
+    title: Azure portal
+  - id: api
+    title: API
+  - id: azure-mobile-app
+    title: Azure mobile app
+- id: pim-entra-role-activation-methods
+  title: PIM activation
+  prompt: Choose a method
+  pivots:
+  - id: entra-admin-center
+    title: Microsoft Entra admin center
+  - id: my-access
+    title: My Access portal
+  - id: api
+    title: API
+  - id: azure-mobile-app
+    title: Azure mobile app
+- id: pim-role-assignment-methods
+  title: PIM role assignment
+  prompt: Choose a method
+  pivots:
+  - id: portal
+    title: Microsoft Entra admin center
+  - id: api
+    title: API
+- id: pim-azure-role-assignment-methods
+  title: PIM role assignment
+  prompt: Choose a method
+  pivots:
+  - id: portal
+    title: Azure portal
+  - id: api
+    title: API
+- id: pim-role-approval-methods
+  title: PIM approval
+  prompt: Choose a method
+  pivots:
+  - id: portal
+    title: Portal
+  - id: api
+    title: API
+- id: pim-activation-portals
+  title: PIM activation
+  prompt: Choose a portal
+  pivots:
+  - id: entra-admin-center
+    title: Microsoft Entra admin center
+  - id: my-access
+    title: My Access portal
 # Owner: kenwith, rolyon
 ## Zone pivot with Azure portal, Azure AD PowerShell, Microsoft Graph PowerShell, Microsoft Graph
 - id: identity-pivot-portal-aadpowershell-mspowershell-msgraph

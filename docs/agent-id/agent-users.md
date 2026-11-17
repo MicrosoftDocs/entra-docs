@@ -1,8 +1,9 @@
 ---
 title: Learn about the agent's user account in Microsoft Entra Agent ID
-description: This article explains the concept of the agent's user account, how it functions within Microsoft Entra ID, and its relationship with agent identities.
+description: Learn when an agent needs its own user account, how the account relates to its parent agent identity, and which authentication and access restrictions apply.
 titleSuffix: Microsoft Entra Agent ID
-ms.date: 11/04/2025
+ms.date: 11/06/2026
+ai-usage: ai-assisted
 ms.topic: concept-article
 
 #customer intent: As a developer or IT administrator, I want to understand the agent's user account and its capabilities so that I can determine when to create it and how to manage agents that need to act as digital workers in my organization.
@@ -11,15 +12,15 @@ ms.reviewer: yukarppa
 
 # The agent's user account in Microsoft Entra Agent ID
 
-The agent's user account is a specialized identity type designed to bridge the gap between agents and human user capabilities. The agent's user account enables AI-powered applications to interact with systems and services that require user identities, while maintaining appropriate security boundaries and management controls. It allows organizations to manage the agent's access using similar capabilities as they do for human users.
+Create an agent's user account only when the agent needs its own user identity to access a resource. This optional account belongs to a parent agent identity; it isn't the human user who signs in to an agent. If your agent instead calls an API on behalf of a signed-in human, use [user-delegated access](aspnet-core-call-custom-api-as-user.md).
 
 ## Example of agent's user account scenarios
 
 Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate as an autonomous application. In certain scenarios, an agent needs to act as a user, functioning essentially as a digital worker. The following are example scenarios where the agent's user account would be applicable:
 
--  The organization needs long-term digital employees that function as team members with mailboxes, chat access, and inclusion in HR systems.
-- The agent needs to access APIs or resources that are only available to user identities
-- The agent needs to participate in collaborative workflows as a team member
+- The organization needs long-term digital employees that function as team members with mailboxes, chat access, and inclusion in HR systems.
+- The agent needs to access APIs or resources that are only available to user identities.
+- The agent needs to participate in collaborative workflows as a team member.
 
 For these reasons, the agent's user account is created. The agent's user account is optional and should only be created for interactions where the agent needs to act as a user or access resources restricted to user accounts.
 
@@ -50,7 +51,7 @@ Admins manage the lifecycle of an agent's user account. An admin user can delete
 
 The authentication model for the agent's user account differs significantly from human-user accounts:
 
-- **Federated identity credentials**: Authentication happens through credentials assigned to the agent's user account. In production systems, use Federated Identity Credentials (FIC). These credentials are used for authenticating both the agent identity blueprint and the agent identity. The credential assigned to the user is used for authenticating across the agent ecosystem.
+- **Blueprint credentials**: The blueprint authenticates with its configured credential, such as a federated identity credential. The associated agent identity then obtains tokens for its dedicated agent user through their parent relationship. Don't assign a federated credential, password, or certificate directly to the agent's user account. For the exchange, see [Agent user OAuth flow](agent-user-oauth-flow.md).
 
 - **Restricted credential model**: The agent's user account doesn't have regular credentials like passwords. Instead, it's restricted to using the credentials provided through its parent relationship. This restriction on credentials, along with restrictions on interactive sign-in, ensures that the agent's user account can't be used like a standard user account.
 

@@ -2,9 +2,10 @@
 title: Start using PIM
 description: Learn how to enable and get started using Privileged Identity Management (PIM) in the Microsoft Entra admin center.
 ms.topic: how-to
-ms.date: 04/23/2026
+ms.date: 10/26/2026
 ms.reviewer: shaunliu
-ms.custom: pim, sfi-ga-nochange
+ms.custom: pim, sfi-ga-nochange, msecd-doc-authoring-1031
+ai-usage: ai-assisted
 #Customer Intent: As an IT administrator, I want to enable and start using PIM in my organization to manage privileged access.
 ---
 # Start using Privileged Identity Management
@@ -19,17 +20,25 @@ This article describes how to enable Privileged Identity Management (PIM) and ge
 
 To use Privileged Identity Management, you must have a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md).
 
-## Activation of role assignments 
- 
+PIM for app roles (preview) requires Microsoft Entra ID Governance licenses.
+
+License coverage is required for users with eligible or time-bound app role assignments and for request approvers.
+
+At preview launch, licensed tenants receive access to PIM for app roles automatically. No tenant enrollment or enablement step is required.
+
+PIM for app roles (preview) is available in all clouds. There are no additional tenant prerequisites or exclusions beyond the licensing requirement.
+
+## Activation of role assignments
+
 When a Microsoft Entra tenant has a Microsoft Entra ID P2 or Microsoft Entra ID Governance license, users with active role assignments can do the following:
 - Open the **Roles and administrators** page in Microsoft Entra ID and select a role.
 - Open the **Privileged Identity Management** page.
 - Make calls to PIM using the [Microsoft Entra roles API](/graph/identity-network-access-overview/).
 
  Microsoft Entra enables PIM for the tenant in the following ways:
-- Starting immediately, you can create eligible or time-bound assignments for Microsoft Entra roles; 
-- Global Administrators or Privileged Role Administrators may start receiving other emails, such as the PIM weekly digest; 
-- The PIM service principal name (MS–PIM) may get mentioned in audit log events related to role assignment management. 
+- Starting immediately, you can create eligible or time-bound assignments for Microsoft Entra roles;
+- Global Administrators or Privileged Role Administrators may start receiving other emails, such as the PIM weekly digest;
+- The PIM service principal name (MS–PIM) may get mentioned in audit log events related to role assignment management.
 
 These behaviors are expected and shouldn't affect your workflows.
 
@@ -41,7 +50,7 @@ Here are the recommended tasks to prepare Privileged Identity Management to mana
 
 1. [Configure Microsoft Entra role settings](pim-how-to-change-default-settings.md)
 1. [Give eligible assignments](pim-how-to-add-role-to-user.md)
-1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.yml)
+1. [Allow eligible users to activate their Microsoft Entra role just-in-time](pim-how-to-activate-role.md)
 
 ## Prepare PIM for Azure roles
 
@@ -50,7 +59,21 @@ Here are the recommended tasks to prepare Privileged Identity Management to mana
 1. [Discover Azure resources](pim-resource-roles-discover-resources.md)
 1. [Configure Azure role settings](pim-resource-roles-configure-role-settings.md)
 1. [Give eligible assignments](pim-resource-roles-assign-roles.md)
-1. [Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.yml)
+1. [Allow eligible users to activate their Azure roles just-in-time](pim-resource-roles-activate-your-roles.md)
+
+## Prepare PIM for app roles (preview)
+
+Use PIM for app roles to give users eligible assignments to roles defined by an application. Users activate those assignments when they need access and deactivate them when they finish. For background, see [PIM for app roles (preview)](concept-pim-for-app-roles.md).
+
+Applications with existing app roles can be managed directly in PIM. No application onboarding or bring-under-management step is required.
+
+Here are the recommended tasks to prepare Privileged Identity Management to manage app roles:
+
+1. [Configure app role settings](app-roles-settings.md).
+1. [Give eligible app role assignments](app-roles-assign.md).
+1. [Allow eligible users to activate their app roles just-in-time](app-roles-activate.md).
+
+To open the app role experience, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and browse to **ID Governance** > **Privileged Identity Management** > **App Roles (Preview)**.
 
 ## Navigate to your tasks
 
@@ -60,13 +83,14 @@ Once Privileged Identity Management is set up, you can learn your way around.
 
 | Menu item | Description |
 | --- | --- |
-| **My roles**  | Displays a list of eligible and active roles assigned to you. **My roles** is where you can activate any assigned eligible roles. |
+| **My roles** | Displays a list of eligible and active roles assigned to you. **My roles** is where you can activate any assigned eligible roles. |
 | **My requests** | Displays your pending requests to activate eligible role assignments. |
 | **Approve requests** | Displays a list of requests to activate eligible roles by users in your directory that you can approve. |
 | **Review access** | Lists active access reviews you're assigned to complete, whether you're reviewing access for yourself or someone else. |
 | **Microsoft Entra roles** | Displays a dashboard and settings for Privileged Role Administrators to manage Microsoft Entra role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization. |
 | **Groups** | Manage just-in-time membership in the group or just-in-time ownership of the group. Groups can be used to provide access to Microsoft Entra roles, Azure roles, and various other scenarios. To manage a Microsoft Entra group in PIM, you must bring it under management in PIM. |
-| **Azure resources** | Displays a dashboard and settings for Privileged Role Administrators to manage Azure resource role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization.|
+| **Azure resources** | Displays a dashboard and settings for Privileged Role Administrators to manage Azure resource role assignments. This dashboard is disabled for anyone who isn't a Privileged Role Administrator. These users have access to a special dashboard titled **My view**. The **My view** dashboard only displays information about the user accessing the dashboard, not the entire organization. |
+| **App Roles (Preview)** | Displays a list of applications. Select an application to work with its app roles. Available management and self-service tasks depend on your permissions and assignments. |
 | **My audit history** | View your PIM audit history, including all role activations and assignments. |
 | **Troubleshoot** | Get help diagnosing and resolving common PIM issues. |
 | **New support request** | Create a support request for PIM-related issues. |
@@ -75,3 +99,4 @@ Once Privileged Identity Management is set up, you can learn your way around.
 
 - [Assign Microsoft Entra roles in Privileged Identity Management](pim-how-to-add-role-to-user.md)
 - [Manage Azure resource access in Privileged Identity Management](pim-resource-roles-discover-resources.md)
+- [Learn about PIM for app roles (preview)](concept-pim-for-app-roles.md).

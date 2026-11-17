@@ -80,7 +80,7 @@ Acquire the delegated token through the Microsoft Entra sign-in flow that applie
 - Server-side web apps: use the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) with PKCE.
 
 > [!NOTE]
-> Access tokens acquired through [native authentication](reference-native-authentication-api.md) are currently supported by this API only for web apps. Mobile apps can use MSAL's browser-based sign-in to acquire tokens to [list authentication methods](#list-user-credential-methods), [delete passkeys](#delete-a-credential-method), and [update passwords](#update-a-password).
+> Access tokens acquired through [native authentication](reference-native-authentication-api-v1.md) are currently supported by this API only for web apps. Mobile apps can use MSAL's browser-based sign-in to acquire tokens to [list authentication methods](#list-user-credential-methods), [delete passkeys](#delete-a-credential-method), and [update passwords](#update-a-password).
 >
 > Native passkey registration with Microsoft Entra External ID isn't currently supported on mobile platforms. Use the system browser to register passkeys.
 
@@ -684,7 +684,7 @@ This endpoint can return `400`, `401`, or `403`. For the shared envelope and cal
 
 This flow updates the signed-in user's existing password. Use this flow when the user knows their current password and chooses to change it in your application's credential-management experience.
 
-This flow isn't a forgotten-password recovery flow. For password recovery in native authentication, see [Self-service password reset](reference-native-authentication-api.md#self-service-password-reset-sspr).
+This flow isn't a forgotten-password recovery flow. For password recovery in native authentication, see [Self-service password reset](reference-native-authentication-api-v1.md#self-service-password-reset-sspr).
 
 Password updates require polling to confirm completion. The following flowchart shows the two-step update flow.
 

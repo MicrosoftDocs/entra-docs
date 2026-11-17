@@ -1,11 +1,14 @@
 ---
 title: Perform Account Recovery in Microsoft Entra ID
-description: Learn how end users can recover their Microsoft Entra ID accounts through identity verification when all authentication methods are lost. Follow the step-by-step recovery process.
+description: Recover your Microsoft Entra ID account when you lose all authentication methods. Follow identity verification and register replacement methods.
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/02/2026
+ms.date: 11/12/2026
+author: tilarso
+ms.author: tilarso
+ai-usage: ai-assisted
 ms.reviewer: tilarso
-ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1012
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1026
 
 #customer intent: As an end user, I want to recover my Microsoft Entra ID account when I've lost all authentication methods so that I can regain access without contacting the help desk.
 
@@ -15,11 +18,17 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1012
 
 Users can recover their accounts in a few simple steps. This article describes how users discover and start the account recovery process and what to expect during identity verification through an organization's configured provider.
 
+## Prerequisites
+
+Before you begin, install Microsoft Authenticator version 6.2610.7075 or later for Android, or version 6.8.58 or later for iOS.
+
 ## Video: Recover your work or school account in Microsoft Entra ID
 
 > [!VIDEO https://www.youtube.com/embed/5ivST2bw7uQ]
 
 ## User steps
+
+These steps describe the default Temporary Access Pass (TAP)-based experience. If your organization explicitly enables registration without a TAP, complete the identity verification and account-validation prompts. Then follow [Complete registration without a TAP](#complete-registration-without-a-tap) instead of the TAP sign-in steps.
 
 1. Start by attempting to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com](https://login.microsoftonline.com).
 1. You're presented with an initial authentication method to sign in with.
@@ -49,11 +58,35 @@ Users can recover their accounts in a few simple steps. This article describes h
     
 1. When you're prompted, select **Open** and unlock Microsoft Authenticator.
 1. You're asked to complete a quick Face Check before your account ownership can be validated. 
-1. When the process is complete, you get a Temporary Access Pass. Copy this code and select **Sign in**. 
+1. When the process is complete, you get a Temporary Access Pass. Copy this code and select **Sign in**.
 1. Finally, you're redirected to [Security info](https://mysignins.microsoft.com/security-info), where you can register a new authentication method and fully regain access. 
 
-    :::image type="content" border="true" source="media/how-to-account-recovery-for-users/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery." lightbox="media/how-to-account-recovery-for-users/create-passkey.png":::   
+    :::image type="content" border="true" source="media/how-to-account-recovery-for-users/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery." lightbox="media/how-to-account-recovery-for-users/create-passkey.png":::
 
+
+<a id="complete-registration-in-the-proposed-tap-free-path"></a>
+
+## Complete registration without a TAP
+
+This path applies only when your organization explicitly enables the preview option to stop issuing a TAP. TAP issuance is on by default. If you receive a TAP, follow the user steps above; the absence of a TAP isn't enough to determine that the TAP-free path is enabled.
+
+> [!NOTE]
+> When your organization requires passkey attestation, registration without a TAP is supported only on Android. On iOS, you continue to receive a TAP, even when your organization's TAP issuance setting is off, because the TAP-free registration path doesn't support attestation on iOS. Follow the TAP-based steps above.
+
+The provider's identity verification steps can still vary. Complete account validation first, then continue to authentication method registration in the same recovery session without receiving a TAP.
+
+1. Complete your organization's identity verification and account-validation prompts.
+1. On a supported device, continue to My Sign-ins when the recovery experience directs you there.
+1. Complete the passkey registration prompts for your organization's supported method.
+1. If registration can't complete, contact your organization's support team rather than assuming identity verification alone restored account access.
+
+Ask your support team to confirm the supported device and registration path; successful identity verification alone doesn't guarantee that registration can complete.
+
+### Distinguish expected behavior from an error
+
+An evaluation-mode result doesn't restore your account. In the TAP-based experience, a missing TAP can indicate an account-matching or TAP policy problem, as described below. In the TAP-free experience, not receiving a TAP is expected only after successful validation and a supported transition to registration.
+
+If you aren't sure which experience your organization enabled, ask your support team. TAP-free session expiration and retry instructions still need verification; don't apply the TAP-expiration instructions to that session.
 
 ## Troubleshooting
 
@@ -92,7 +125,7 @@ The identity verification provider commonly does their own facial biometric chec
 
 Sometimes changing the lighting environment or using a different available government document can help.
 
-:::image type="content" border="true" source="media/how-to-account-recovery-for-users/mismatch.png" alt-text="Screenshot that shows a name mismatch error during identity verification provider document validation." lightbox="media/how-to-account-recovery-for-users/mismatch.png":::   
+:::image type="content" border="true" source="media/how-to-account-recovery-for-users/mismatch.png" alt-text="Screenshot that shows a name mismatch error during identity verification provider document validation." lightbox="media/how-to-account-recovery-for-users/mismatch.png":::
 
 ### Errors when completing Face Check
 

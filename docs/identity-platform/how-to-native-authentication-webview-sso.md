@@ -1,143 +1,127 @@
 ---
-title: Implement Single Sign-On from Native Apps to Embedded Web Views
-description: Learn how to implement SSO between a native mobile app and a web resource in an embedded web view using Microsoft Entra External ID native authentication.
-ms.service: identity-platform
-ms.subservice: external
+title: Authenticate an embedded webview from a native app
+description: Use a resource access token to open an authenticated embedded webview and establish a web resource's own session with Microsoft Entra External ID.
 ms.topic: how-to
-ms.custom: msecd-doc-authoring-105
-ms.date: 04/04/2026
+ms.custom: msecd-doc-authoring-1030
+ms.date: 11/13/2026
 ai-usage: ai-assisted
-
-#customer intent: As a mobile developer, I want to implement single sign-on between my native app and an embedded web view so that users can access web resources without encountering a second login prompt.
+#customer intent: As a mobile developer, I want to implement single sign-on between my native app and an embedded webview so that users can access my web resource without a second sign-in prompt.
 ---
 
-# Implement single sign-on from native apps to embedded web views
+# Authenticate an embedded webview from a native app
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-When your mobile app includes web-based features like a profile update page or rewards dashboard, users expect a seamless single sign-on experience. They shouldn't encounter a second login prompt after already signing in through the native app.
+[!INCLUDE [applies-to-authentication-native](../external-id/includes/applies-to-authentication-native.md)]
 
-This article shows you how to implement single sign-on (SSO) between a native mobile application and a web resource hosted in an embedded web view (for example, `WKWebView` on iOS or `WebView` on Android). Unlike system browsers, embedded web views allow you to manipulate network requests before they're sent. This capability enables your app to inject the user's authentication state directly into request headers.
+Use a resource access token to open an authenticated web page inside your native app. This guide connects a user signed in through Microsoft Entra External ID to an HTTPS web resource your team controls, such as your app's rewards page, without a second sign-in prompt.
 
-The recommended flow works as follows:
+You need a native app with a working sign-in flow and a web resource that can validate bearer tokens. This resource-token flow provides single sign-on (SSO) to that resource in the embedded webview.
 
-1. The user signs in through the mobile app's native UI using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md).
-1. Before loading the web view, the app retrieves a valid access token from the SDK or API.
-1. The app loads the web view with a custom request that includes the access token in the `Authorization: Bearer <access_token>` header.
-1. The web resource validates the token and grants access immediately.
+[!INCLUDE [native-authentication-public-preview](~/external-id/includes/native-authentication-public-preview.md)]
 
-The following diagram shows the interaction between the web resource, mobile app, SDK, and the identity service (ESTS):
+The resource-token pattern for embedded webviews is generally available. It establishes a session for your web resource, independently of the Native Authentication API's support contract.
 
-:::image type="content" source="./media/native-authentication/common/native-application-sign-in-with-web-view-authentication.png" alt-text="Sequence diagram showing the SSO flow where the mobile app signs in via SDK, receives tokens, and loads the web view with the access token in the Authorization header.":::
+<a id="implement-single-sign-on-from-native-apps-to-embedded-web-views"></a>
+<a id="implement-single-sign-on-from-native-apps-to-embedded-webviews"></a>
 
 ## Prerequisites
 
-- A mobile app with native authentication configured using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md). If you're using the SDK and haven't set up your app yet, see [Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md) or [Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
-- A completed sign-in flow in your native app. For guidance, see [Sign in users in an Android mobile app](quickstart-native-authentication-android-sign-in.md) or [Sign in users in an iOS mobile app](quickstart-native-authentication-ios-sign-in.md).
-- A web resource served over HTTPS (TLS). Don't send tokens over HTTP.
-- A shared client identity (application ID) between the mobile app and the web resource. For details, see [Limitations and configuration requirements](#limitations-and-configuration-requirements).
+- An app configured for Embedded native authentication in an external tenant. See [Configure an application](how-to-native-authentication-configure-app.md).
+- A native app with a working sign-in flow. See the [sign-in reference](reference-native-authentication-sign-in.md).
+- An HTTPS web resource with exposed delegated scopes and server-side token validation. See [Expose a web API](quickstart-configure-app-expose-web-apis.md#add-a-scope).
+- Permission for the native app to request those scopes. See [Configure access to your web API](quickstart-configure-app-access-web-apis.md#add-permissions-to-access-your-web-api).
+- An embedded webview that can send an `Authorization` header with its initial request.
 
 ## Sign in with native authentication
 
-Complete the standard sign-in flow using the Native Auth SDK or the [native authentication API](reference-native-authentication-api.md). When sign-in succeeds using the SDK, it caches the access token, ID token, and refresh token securely. If you use the API directly, your app is responsible for securely storing the tokens it receives.
+Request access for the resource you intend to open, rather than reusing a token issued for a different API.
 
-For detailed sign-in implementation steps, see:
+1. Start authorization with the web resource's required scopes in the initial `scope` parameter. Request only the permissions needed for the page's operations.
+1. Complete the sign-in actions returned by the service. Follow the returned links and use the latest continuation token for the active transaction.
+1. When the service returns `state: continue`, follow `_links.continue` to resume authorization.
+1. Exchange the returned authorization code for tokens. Use the response's `access_token` for the web resource, not the `id_token` or a continuation token.
 
-- **Android**: [Sign in users in an Android (Kotlin) mobile app](tutorial-native-authentication-android-sign-in-sign-out.md)
-- **iOS/macOS**: [Sign in users in an iOS (Swift) mobile app](tutorial-native-authentication-ios-macos-sign-in-sign-out.md)
+For the authorization and token request contracts, see the [Native Authentication API reference](reference-native-authentication.md).
+
+For existing V1 integrations, see the [V1 API reference](reference-native-authentication-api-v1.md) and its [SDK library references](reference-native-authentication-api-v1.md#sdk-references) for your platform.
+
+The following diagram illustrates the resource-token flow with a V1 SDK:
+
+:::image type="content" source="./media/native-authentication/common/native-application-sign-in-with-web-view-authentication.png" alt-text="Sequence diagram showing an app signing in through an SDK and sending an access token in the embedded webview request.":::
 
 ## Retrieve the access token
 
-When the user triggers the action to open the web view, ensure the app has a valid, unexpired access token before loading the web resource.
+Before opening the webview, get a valid, unexpired access token for the resource.
 
-If you use the Native Auth SDK, request a token silently. The SDK provides a `getAccessToken()` method that retrieves a valid token from the cache or silently refreshes it. For details on acquiring access tokens with specific scopes, see:
+1. Check the token response's expiration metadata rather than parsing the access token in the client.
+1. If the app doesn't have a usable token for the required resource and scopes, complete authorization to obtain one before loading the page.
+1. Keep the token in the native app's protected authentication state until you construct the request. Don't expose it in page scripts, diagnostics, or a URL.
 
-- **Android**: [Acquire multiple access tokens](tutorial-native-authentication-android-sign-in-call-api.md)
-- **iOS/macOS**: [Acquire multiple access tokens](tutorial-native-authentication-ios-sign-in-call-api.md)
+Access tokens are validated by the receiving resource, not by the native client. See [Access tokens](access-tokens.md).
 
-If you use the native authentication API directly, your app retrieves tokens through the API's `/oauth/v2.0/token` endpoint. For details, see [Native authentication API reference](reference-native-authentication-api.md).
-
-Request the token with the exact scopes required by the web resource. For scope requirements, see [Limitations and configuration requirements](#limitations-and-configuration-requirements).
+For V1 SDK token acquisition, use the platform's [SDK library reference](reference-native-authentication-api-v1.md#sdk-references). Request the scopes described in [Limitations and configuration requirements](#limitations-and-configuration-requirements).
 
 ## Load the web view with authentication
 
-There are two methods to pass the authentication state to the web view. The recommended approach uses authorization headers. A cookie-based fallback is available for legacy scenarios but is discouraged.
+Send the token in the initial request to the intended web resource. This procedure establishes the web resource's session.
 
-### Option A: Use a bearer token via HTTP header (recommended)
+<a id="option-a-use-a-bearer-token-via-http-header-recommended"></a>
 
-Inject the access token directly into the `Authorization` header of the initial HTTP request used to load the web view. This is the most secure and robust method.
+1. Construct the HTTPS URL for your web resource without including the token in its path, query, or fragment.
+1. Create the initial webview request with `Authorization: Bearer <access-token>`, replacing `<access-token>` with the access token for the web resource.
+1. Load that request in the embedded webview.
+1. Restrict bearer-token delivery to the intended resource. Don't forward the header to unrelated origins when handling navigation or redirects.
 
-This approach is preferred because it:
+<a id="option-b-use-cookies-fallback-only"></a>
 
-- **Is stateless**: It doesn't rely on persistent cookies on the client side.
-- **Isolates the token**: It strictly limits the token to this specific request flow.
-- **Avoids web-based attack vectors**: It sidesteps common security issues associated with browser-managed sessions.
-
-To load the web view with header-based authentication:
-
-1. Construct the URL for the web resource. Ensure it uses HTTPS.
-1. Create a custom network request object.
-1. Add the header `Authorization: Bearer <access_token>` to the request.
-1. Load the request into the web view component (for example, `WKWebView` on iOS or `WebView` on Android).
-
-<!-- TODO: Add platform-specific code examples for iOS (WKWebView) and Android (WebView). Use approved fake GUIDs from the SFI sensitive identifiers list for any sample values. -->
-
-### Option B: Use cookies (fallback only)
-
-If the target web resource can't handle header-based authentication (for example, certain legacy single-page applications), you can inject the token as a cookie. This approach is generally discouraged because of security risks.
-
-Injecting cookies into a web view entrusts the authentication state to a browser-managed mechanism. This makes the session "ambient" (automatically attached to requests), which exposes the app to standard web attack classes:
-
-- **XSS (cross-site scripting)**: The session is vulnerable to hijacking if the web content is compromised.
-- **CSRF (cross-site request forgery)**: There's a risk of unintended authenticated requests.
-- **Session fixation**: An attacker might control the session state.
-- **Compliance**: This approach conflicts with security best practices (for example, MASTG-KNOW-0018) regarding persisting sensitive state in web view cookie jars.
-
-> [!WARNING]
-> The cookie-based approach is conditionally approved and generally discouraged. Use it only when the target web resource can't support header-based authentication.
-
-If you use the cookie-based approach, these requirements apply:
-
-- Use server-issued session cookies where possible.
-- Avoid placing raw access tokens directly into cookies.
-- Set cookies with the `HttpOnly`, `Secure`, and appropriate `SameSite` attributes.
-- Enforce strict CSRF protection on the server side.
+Use bearer authentication for the initial request and let the server issue the application session cookie after validation. Keep the raw access token in the native app's protected authentication state.
 
 ## Validate and persist the token on the backend
 
-When the request reaches the web resource, the backend processes the token to establish the session.
+The web resource validates the access token and authorizes the requested operation before creating a session.
 
 ### Validate the token
 
-The web server intercepts incoming requests and verifies the token's signature and claims. For ASP.NET Core backends, use `Microsoft.Identity.Web` (MISE) to handle validation automatically.
+Use the resource's token-validation middleware before returning protected content.
 
-Ensure the token's audience (`aud`) claim matches the web API's identifier and the issuer (`iss`) claim matches the expected authority.
+1. Validate the token's signature, issuer, and lifetime against the resource's trusted Microsoft Entra configuration.
+1. Verify that the `aud` claim identifies the receiving resource.
+1. Verify the delegated scopes required for the requested operation and the user's authorization to access the data.
+1. Reject the request if validation or authorization fails. Don't create a session from an invalid token.
 
-<!-- TODO: Add link to token validation guidance -->
-<!-- TODO: When adding code examples, use approved fake GUIDs from the SFI sensitive identifiers list for any client IDs, tenant IDs, or token values -->
+For the audience and permission checks, see [Validate access-token claims](claims-validation.md).
 
 ### Persist the session
 
-The web view doesn't persist custom headers on subsequent navigation events (for example, when the user selects a link). To maintain the authenticated state after the initial request, the server issues a standard session cookie (`Set-Cookie`) upon successful validation of the initial bearer token.
+Establish a server-managed session for subsequent webview navigation.
 
-Configure the session cookie with the following attributes:
+1. After successful token validation, issue the web resource's session cookie through `Set-Cookie`.
+1. Set `HttpOnly`, `Secure`, and the `SameSite` policy appropriate for the application's navigation. Apply server-side protection against cross-site request forgery for cookie-authenticated operations.
+1. Use the session cookie for subsequent requests to that web resource. Don't store the raw access token in the cookie.
 
-- `HttpOnly`
-- `Secure`
-- An appropriate `SameSite` policy
+## Verify access and sign-out
+
+Signing out of the native app doesn't terminate the web resource's session or other application and browser sessions. Clear each session through its own sign-out mechanism.
+
+Test both resource authorization and the session that the webview retains.
+
+1. Sign in to the native app and open the web resource. Confirm that the expected user's page opens without another sign-in prompt.
+1. Navigate to another protected page in the same web resource. Confirm that its server-issued session cookie maintains the session.
+1. Test an expired token, a token issued for a different resource, and a token without the required scope. Confirm that none establishes an authorized session.
+1. Sign out and clear authentication state in both the native app and the web resource. Reopen the protected page and confirm that the old web session no longer grants access.
+1. Check that application and server diagnostics exclude tokens, cookies, credentials, and personal data.
 
 ## Limitations and configuration requirements
 
-To ensure the token issued to the mobile app is accepted by the web resource, keep the following configurations in mind:
+The token's audience and permissions identify the web resource and authorized operations. The native client and resource can have separate app registrations.
 
-- **Shared client identity**: The mobile app and web app should share the same client ID (application ID). If they have different IDs, the backend rejects the mobile app's token as an audience mismatch.
-- **Scope alignment**: The mobile app requests the access token with the exact scopes required by the web resource (for example, `Profile.Read`, `Orders.Write`).
+This integration requires control over the web resource's bearer-token validation and session creation.
 
-> [!NOTE]
-> This solution is tailored specifically for the web view scenario. A more generic solution that extends SSO capabilities to system browsers and other complex scenarios is planned for a future release.
+The resulting cookie belongs to your web resource. It doesn't create a browser-wide Microsoft Entra session or enable profile or credential-management APIs.
 
 ## Related content
 
-- [Native authentication in Microsoft Entra External ID](concept-native-authentication.md)
-- [Native authentication web fallback](concept-native-authentication-web-fallback.md)
-- [Native authentication API reference](reference-native-authentication-api.md)
+- [Embedded native authentication overview](concept-native-authentication.md).
+- [Embedded native authentication web fallback](concept-native-authentication-web-fallback.md).
+- [The Native Authentication API reference](reference-native-authentication.md).

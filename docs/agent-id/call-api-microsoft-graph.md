@@ -1,138 +1,83 @@
 ---
-title: Call Microsoft Graph API from an agent using .NET
+title: Call Microsoft Graph as an agent with ASP.NET Core
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to call Microsoft Graph API from an agent using agent identities or agents' user accounts, including authentication configuration and implementation steps.
+description: Configure GraphServiceClient to call Microsoft Graph with an app-only token for an agent identity.
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/05/2026
+ai-usage: ai-assisted
 ms.reviewer: jmprieur
-#Customer intent: As a developer building AI agents, I want to call Microsoft Graph API from my agent using agent identities so that the agent can access organizational data and resources securely.
+#Customer intent: As a developer building a cloud agent, I want to call Microsoft Graph as the agent so that unattended operations use its application permissions.
 ---
 
-# Call a Microsoft Graph API from an agent using .NET
+# Call Microsoft Graph as an agent with ASP.NET Core
 
-This article explains how to call a Microsoft Graph API from an agent using agent identities or an agent's user account.
+List directory users with the agent's application permissions, not the inbound caller's delegated access.
 
-[!INCLUDE [Common call API content](./includes/call-api-common-dotnet.md)]
+In this article, you configure `GraphServiceClient` to obtain a Microsoft Graph token for the agent while the agent API separately authorizes the caller.
 
-## Call a Microsoft Graph API
+## Prerequisites
 
-1. Install the *Microsoft.Identity.Web.GraphServiceClient* that handles authentication for the Graph SDK and the *Microsoft.Identity.Web.AgentIdentities* package to add support for agent identities.
+- The Microsoft Graph application permissions required by the operation.
+- Application permissions granted to the agent identity with admin consent. See [Grant Microsoft Graph application permissions to an agent identity](grant-application-permissions-agent-identity.md).
+- The [blueprint credential and ASP.NET Core services](call-api-custom.md#configure-the-blueprint-credential), including token acquisition and the `AgentUser` inbound authorization policy. Reuse its local certificate configuration for workstation testing. You don't need that walkthrough's custom API app role or consent grant for this Microsoft Graph example.
 
-    ```bash
-    dotnet add package Microsoft.Identity.Web.GraphServiceClient
-    dotnet add package Microsoft.Identity.Web.AgentIdentities
-    ```
+## Add Microsoft Graph
 
-1. Add the support for Microsoft Graph and agent identities in your service collection.
+Install the integration package:
 
-    ```csharp
-    using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-    using Microsoft.Identity.Web;
-    
-    var builder = WebApplication.CreateBuilder(args);
-    
-    // Add authentication (web app or web API)
-    builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"))
-        .EnableTokenAcquisitionToCallDownstreamApi()
-        .AddInMemoryTokenCaches();
-    
-    // Add Microsoft Graph support
-    builder.Services.AddMicrosoftGraph();
-    
-    // Add Agent Identities support
-    builder.Services.AddAgentIdentities();
-    
-    var app = builder.Build();
-    app.UseAuthentication();
-    app.UseAuthorization();
-    app.Run();
-    ``` 
+```dotnetcli
+dotnet add package Microsoft.Identity.Web.GraphServiceClient
+```
 
-1. Configure Graph and agent identity options in *appsettings.json*.
+Register `GraphServiceClient` with the services configured in the parent article. For app-only access, call `builder.Services.AddMicrosoftGraph` with `options.BaseUrl` set to `https://graph.microsoft.com/v1.0` and `options.Scopes` set to `["https://graph.microsoft.com/.default"]`. Use the configured client ID directly; don't add `WithAgentIdentity`.
 
-    [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
+Place this registration before `builder.Build()` in the agent API's `Program.cs`.
 
-    ```json
-    {
-      "AzureAd": {
-        "Instance": "https://login.microsoftonline.com/",
-        "TenantId": "<your-tenant-id>",
-        "ClientId": "<agent-blueprint-client-id>",
-        "ClientCredentials": [
-          {
-            "SourceType": "ClientSecret",
-            "ClientSecret": "your-client-secret"
-          }
-        ]
-      },
-      "DownstreamApis": {
-        "MicrosoftGraph": {
-          "BaseUrl": "https://graph.microsoft.com/v1.0",
-          "Scopes": ["User.Read", "User.ReadBasic.All"]
-        }
-      }
-    }
-    ```
+```csharp
+builder.Services.AddMicrosoftGraph(options =>
+{
+    options.BaseUrl = "https://graph.microsoft.com/v1.0";
+    options.Scopes = ["https://graph.microsoft.com/.default"];
+});
+```
 
-    > [!NOTE]
-    > Configure only the Microsoft Graph permissions your agent needs, and make sure the `Scopes` you set match the Graph resources your code calls. These examples use `User.Read` and `User.ReadBasic.All`; calling other resources requires their corresponding permissions.
+## Call Microsoft Graph
 
-1. You can now get the `GraphServiceClient` injecting it in your service or from the service provider and call Microsoft Graph.
+Set `RequestAppToken` to `true` so `GraphServiceClient` acquires an app-only token for the agent identity:
 
-  - For agent identities, you can acquire either an app only token (autonomous agents) or an on-behalf of user token (interactive agents) by using the `WithAgentIdentity` method. For app only tokens, set the `RequestAppToken` property to `true`. For delegated on-behalf of user tokens, don't set the `RequestAppToken` property or explicitly set it to `false`.
+Merge the following `using` directives with those at the top of `Program.cs`, and insert the endpoint before its single `app.Run()`. You can omit the custom API endpoint.
 
-      ```csharp
-      using Microsoft.Graph;
-      using Microsoft.Identity.Web;
+```csharp
+using Microsoft.Graph;
+using Microsoft.Identity.Web;
 
-      // Get the GraphServiceClient
-      GraphServiceClient graphServiceClient = serviceProvider.GetRequiredService<GraphServiceClient>();
-        
-      string agentIdentity = "agent-identity-guid";
-        
-      // Call Microsoft Graph APIs with the agent identity for app only scenario
-      var usersAppOnly = await graphServiceClient.Users
-          .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
-          {
-              options.WithAgentIdentity(agentIdentity);
-              options.RequestAppToken = true; // Set to true for app only
-          }));
+app.MapGet("/graph-users", async (GraphServiceClient graphClient) =>
+{
+    var users = await graphClient.Users.GetAsync(request =>
+        request.Options.WithAuthenticationOptions(options =>
+        {
+            options.RequestAppToken = true;
+        }));
 
-      // Call Microsoft Graph APIs with the agent identity for on-behalf of user scenario
-      var usersOnBehalfOfUser = await graphServiceClient.Users
-          .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
-          {
-              options.WithAgentIdentity(agentIdentity);
-              options.RequestAppToken = false; // False to show it's on-behalf of user
-          }));
-      ```
+    return Results.Ok(users?.Value);
+})
+.RequireAuthorization("AgentUser");
+```
 
-    - For agent's user account identities, you can specify either User Principal Name (UPN) or Object Identity (OID) to identify the agent's user account by using the `WithAgentUserIdentity` method.
+The client uses the shared client ID and blueprint credential configured in the parent article. Don't add an Agent ID override. The example requires an application permission that can list users, such as `User.Read.All`. Grant only the permissions required by your calls.
 
-        ```csharp
-        using Microsoft.Graph;
-        using Microsoft.Identity.Web;
+## Verify the Graph call
 
-        // Get the GraphServiceClient
-        GraphServiceClient graphServiceClient = serviceProvider.GetRequiredService<GraphServiceClient>();
-        
-        string agentIdentity = "agent-identity-guid";
-        
-        // Call Microsoft Graph APIs with the agent's user account identity using UPN
-        string userUpn = "user-upn";
-        var me = await graphServiceClient.Me
-            .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
-                options.WithAgentUserIdentity(agentIdentity, userUpn)));
-        
-        // Or using OID
-        string userOid = "user-object-id";
-        var meByOid = await graphServiceClient.Me
-            .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
-                options.WithAgentUserIdentity(agentIdentity, userOid)));
-        ```
+Follow the parent journey's [API access test](call-api-custom.md#verify-api-access), replacing `/custom-api` with `/graph-users`. Expect `200` and a JSON collection of users when the agent has the required Graph application permission. This endpoint returns the first response page, not necessarily every user in the directory.
+
+Without an inbound token, expect `401`. With an otherwise valid token missing `Agent.User`, expect `403` if the tenant issues that token. A downstream Graph failure causes the sample to throw rather than returning that same status from the agent. Verify Graph consent on the agent identity separately from the caller's role assignment.
+
+## Next step
+
+[Authenticate users to the agent API](aspnet-core-authenticate-users.md)
 
 ## Related content
 
-- [Call custom APIs](./call-api-custom.md)
-- [Call Azure SDKs](./call-api-azure-services.md)
+- [Call a custom API as an agent](call-api-custom.md)
+- [Microsoft Graph permissions reference](/graph/permissions-reference)
+- [Call Microsoft Graph as a user](aspnet-core-call-graph-as-user.md)

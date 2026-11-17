@@ -22,7 +22,7 @@ If you have a Microsoft Entra ID P2 license and [Privileged Identity Management 
 | --- | --- |
 | Microsoft Entra admin center | [Assign Microsoft Entra roles in Privileged Identity Management](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md) |
 | Microsoft Graph PowerShell | [Tutorial: Assign Microsoft Entra roles in Privileged Identity Management using Microsoft Graph PowerShell](/powershell/microsoftgraph/tutorial-pim) |
-| Microsoft Graph API | [Manage Microsoft Entra role assignments using PIM APIs](/graph/api/resources/privilegedidentitymanagementv3-overview)<br/>[Assign Microsoft Entra roles in Privileged Identity Management](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md#assign-a-role-using-microsoft-graph-api) |
+| Microsoft Graph API | [Manage Microsoft Entra role assignments using PIM APIs](/graph/api/resources/privilegedidentitymanagementv3-overview)<br/>[Assign Microsoft Entra roles in Privileged Identity Management](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md?pivots=api#assign-a-role-using-microsoft-graph-api) |
 
 ## Prerequisites
 

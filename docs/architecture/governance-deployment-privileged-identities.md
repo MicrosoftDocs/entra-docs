@@ -109,7 +109,7 @@ Learn how to [manage Microsoft Entra role assignments with PIM APIs](/graph/api/
 
 Azure resource role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. 
 
-Learn to [configure Azure resource role settings in PIM](../id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md), then how to [activate them](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.yml). 
+Learn to [configure Azure resource role settings in PIM](../id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md), then how to [activate them](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md).
 
 ## PIM for Groups
 

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1397" viewBox="0 0 1120 1397" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Native authentication response-driven sequence</title>
+<desc id="diagram-description">The application starts authorization, follows a returned journey, handles the current action and latest continuation token, then resumes authorization and exchanges its code for tokens.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#243746"/></marker></defs>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#16324f;font-size:18px}
+.heading{font-size:21px;font-weight:600}.actor{fill:#eaf3fb;stroke:#315a7d;stroke-width:1.6}.actor-text{font-weight:600}
+.lifeline{stroke:#75899a;stroke-width:1.3;stroke-dasharray:6 5}.request,.reply{fill:none;stroke:#243746;stroke-width:1.8}
+.reply{stroke-dasharray:6 4}.group{fill:#f7faff;stroke:#8094a6;stroke-width:1.3}.group-label{font-size:17px;font-weight:600}
+.message{paint-order:stroke;stroke:white;stroke-width:5px;stroke-linejoin:round}.group-label{paint-order:stroke;stroke:#f7faff;stroke-width:6px;stroke-linejoin:round}
+.separator{stroke:#8094a6;stroke-dasharray:5 4}.note{fill:#fff8df;stroke:#8b753a}.note-text{font-size:17px}
+.footer{font-size:16px}
+</style>
+<rect width="1120" height="1397" fill="white"/>
+<text class="heading" x="25" y="30" text-anchor="start"><tspan x="25" dy="0">Native authentication response-driven sequence</tspan></text>
+<rect class="group" x="25" y="542" width="1070" height="355" rx="3"/><text class="group-label" x="37" y="569" text-anchor="start"><tspan x="37" dy="0">loop: While state is interactionRequired</tspan></text>
+<line class="lifeline" x1="120" y1="126" x2="120" y2="1352"/><rect class="actor" x="40" y="56" width="160" height="70" rx="5"/><text class="actor-text" x="120" y="98" text-anchor="middle"><tspan x="120" dy="0">User</tspan></text>
+<line class="lifeline" x1="520" y1="126" x2="520" y2="1352"/><rect class="actor" x="405" y="56" width="230" height="70" rx="5"/><text class="actor-text" x="520" y="98" text-anchor="middle"><tspan x="520" dy="0">Client application</tspan></text>
+<line class="lifeline" x1="960" y1="126" x2="960" y2="1352"/><rect class="actor" x="830" y="56" width="260" height="70" rx="5"/><text class="actor-text" x="960" y="86" text-anchor="middle"><tspan x="960" dy="0">Native Authentication</tspan><tspan x="960" dy="23">API</tspan></text>
+<text class="message" x="320" y="172" text-anchor="middle"><tspan x="320" dy="0">Start authentication</tspan></text>
+<line class="request" x1="120" y1="201" x2="520" y2="201" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="245" text-anchor="middle"><tspan x="740" dy="0">Start authorization challenge</tspan></text>
+<line class="request" x1="520" y1="274" x2="960" y2="274" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="318" text-anchor="middle"><tspan x="740" dy="0">401: continuation_token and journey links</tspan></text>
+<line class="reply" x1="960" y1="347" x2="520" y2="347" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="391" text-anchor="middle"><tspan x="740" dy="0">Follow an offered journey link</tspan></text>
+<line class="request" x1="520" y1="420" x2="960" y2="420" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="464" text-anchor="middle"><tspan x="740" dy="0">State, action, allowed links, and</tspan><tspan x="740" dy="23">continuationToken</tspan></text>
+<line class="reply" x1="960" y1="516" x2="520" y2="516" marker-end="url(#arrow)"/>
+<text class="message" x="320" y="602" text-anchor="middle"><tspan x="320" dy="0">Request input when the action needs it</tspan></text>
+<line class="reply" x1="520" y1="631" x2="120" y2="631" marker-end="url(#arrow)"/>
+<text class="message" x="320" y="675" text-anchor="middle"><tspan x="320" dy="0">Provide requested input, when needed</tspan></text>
+<line class="request" x1="120" y1="704" x2="520" y2="704" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="748" text-anchor="middle"><tspan x="740" dy="0">Follow allowed link with current</tspan><tspan x="740" dy="23">continuationToken</tspan></text>
+<line class="request" x1="520" y1="800" x2="960" y2="800" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="844" text-anchor="middle"><tspan x="740" dy="0">Updated state, action, links, and token</tspan></text>
+<line class="reply" x1="960" y1="873" x2="520" y2="873" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="941" text-anchor="middle"><tspan x="740" dy="0">Follow continue link with continuation_token</tspan></text>
+<line class="request" x1="520" y1="970" x2="960" y2="970" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="1014" text-anchor="middle"><tspan x="740" dy="0">Authorization code</tspan></text>
+<line class="reply" x1="960" y1="1043" x2="520" y2="1043" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="1087" text-anchor="middle"><tspan x="740" dy="0">Exchange authorization code at token</tspan><tspan x="740" dy="23">endpoint</tspan></text>
+<line class="request" x1="520" y1="1139" x2="960" y2="1139" marker-end="url(#arrow)"/>
+<text class="message" x="740" y="1183" text-anchor="middle"><tspan x="740" dy="0">Tokens</tspan></text>
+<line class="reply" x1="960" y1="1212" x2="520" y2="1212" marker-end="url(#arrow)"/>
+<text class="message" x="320" y="1256" text-anchor="middle"><tspan x="320" dy="0">Continue in the authenticated</tspan><tspan x="320" dy="23">application</tspan></text>
+<line class="reply" x1="520" y1="1308" x2="120" y2="1308" marker-end="url(#arrow)"/>
+<text class="footer" x="25" y="1383" text-anchor="start"><tspan x="25" dy="0">Representative successful path. Follow the current response rather than a fixed sequence.</tspan></text>
+</svg>
