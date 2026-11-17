@@ -27,6 +27,7 @@ The scenario outlined in this article assumes that you already have the followin
 In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Deskradar supports **SP and IDP** initiated SSO
+* Deskradar supports **Just In Time** user provisioning.
 
 ## Add Deskradar from the gallery
 
@@ -110,28 +111,27 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Deskradar SSO
 
-1. In a different web browser window, sign in to your Deskradar company site as an administrator
+1. In a different web browser window, sign in to your Deskradar company site as an administrator.
 
-1. Open **Team** panel by selecting the icon in the Sidebar.
+1. Open the **Team** page by selecting the icon in the Sidebar.
 
-1. Switch to **Authentication** tab.
+1. Switch to the **Single Sign-On** tab.
 
-1. On the **SAML 2.0** tab, enter the **Login URL** and **Microsoft Entra Identifier** values, which you copied previously into the following fields:
+1. Enable the **SAML 2.0** authentication method.
 
-    - **SAML SSO URL**: The **Login URL** value that you copied previously.
-    - **Identity Provider Issuer**: The **Microsoft Entra Identifier** value that you copied previously.
+1. In the **SAML SSO URL** field, enter the **Login URL** value, which you copied previously.
 
-	a. Enable **SAML** authentication method.
+1. In the **Identity Provider Issuer** field, enter the **Microsoft Entra Identifier** value, which you copied previously.
 
-	b. In the **SAML SSO URL** textbox, enter the **Login URL** value, which you copied previously.
+1. Open the downloaded **Certificate (Base64)** file with a text editor and copy and paste its content into the **Public Certificate** field in Deskradar.
 
-	c. In the **Identity Provider Issuer** textbox, enter the **Microsoft Entra Identifier** value, which you copied previously.
+1. Select **Save settings**.
 
-1. Open the downloaded **Certificate (Base64)** file with a text editor and copy and paste its content into **Public Certificate** field in Deskradar.
+For a step-by-step guide with screenshots, see [Single Sign-On with Microsoft Entra ID](https://docs.deskradar.com/sso/microsoft/entra) in the Deskradar documentation.
 
 ### Create Deskradar test user
 
-In this section, you create a user called B.Simon in Deskradar. Work with [Deskradar Client support team](mailto:support@deskradar.com) to add the users in the Deskradar platform. Users must be created and activated before you use single sign-on.
+In this section, a user called B.Simon is created in Deskradar. Deskradar supports just-in-time user provisioning. There's no action item for you in this section. If a user doesn't already exist in Deskradar, a new one with the Viewer role is created after authentication.
 
 ## Test SSO 
 
