@@ -1,10 +1,11 @@
 ---
 title: Create and review difference reports in Microsoft Entra Backup and Recovery
 description: Learn how to create and review difference reports to compare your tenant with a backup in Microsoft Entra Backup and Recovery
-ms.date: 03/02/2026
+ms.date: 10/19/2026
 ms.service: entra-id
 ms.topic: how-to
 ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1026
 ---
 
 # Create and review difference reports in Microsoft Entra Backup and Recovery
@@ -21,6 +22,7 @@ Key details:
 - A difference report ID identifies the comparison job.
 - Create multiple difference reports from the same backup, but only one report can run at a time.
 - Difference reports are retained for up to seven days after completion.
+- Difference reports against Premium backups skip the data loading phase. The first report against an unloaded Standard backup loads the backup data before calculating differences.
 
 > [!TIP]
 > Create a difference report before starting recovery so you can review and understand the changes in your tenant.
@@ -29,7 +31,7 @@ Key details:
 
 You need at least the **Microsoft Entra Backup Reader** role to review difference reports. To review and create difference reports, you need the **Microsoft Entra Backup Administrator** role. The **Global Administrator** role also includes these permissions.
 
-The tenant must meet the [Backup and Recovery prerequisites](overview.md#prerequisites), including **Microsoft Entra ID P1 or P2** licenses.
+The tenant must meet the [Backup and Recovery prerequisites](overview.md#prerequisites) for the selected plan.
 
 ## Scope a difference report
 
@@ -85,7 +87,7 @@ Difference reports move through these statuses as they're created and processed:
 
 | Status | Description |
 |---|---|
-| **Loading data** | The system loads data from the selected backup for comparison with the current tenant state. If you previously used the backup for a difference report or recovery, this step might finish quickly. |
+| **Loading data** | For a Standard backup, the system loads data from the selected backup for comparison with the current tenant state. If you previously used the backup for a difference report or recovery, the service reuses the loaded data. Difference reports against Premium backups skip this phase. |
 | **In progress** | The system calculates differences between the backup and the current tenant state. Duration depends on the number of objects and the scope of the report. |
 | **Completed** | The difference report finished processing and is ready for review. |
 | **Failed** | The difference report couldn't be generated because of an error. |
