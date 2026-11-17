@@ -200,8 +200,6 @@ Here are some workarounds:
 
   > [!NOTE]
   > The Microsoft Authenticator Credential Registration resource will be available at the end of November 2026. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
-  >
-  > This workaround requires Microsoft Authenticator version **6.2607.4697 or later** for Android.
 
   1. As a **Cloud Application Administrator** or **Application Administrator**, manually provision the **Microsoft Authenticator Credential Registration** app by using one of the [supported methods for creating an enterprise application from a multitenant app](~/identity/enterprise-apps/create-service-principal-cross-tenant.md?pivots=ms-graph). Use the following details:
 
@@ -228,6 +226,8 @@ Here are some workarounds:
       ```
 
       To opt in selected users instead, replace `"All"` with their tenant user object IDs. Updating `includeUsers` replaces the existing list.
+
+  1. This workaround requires Microsoft Authenticator version **6.2607.4697 or later** for Android and version **6.8.56 or later** for iOS.
 
   1. As a **Conditional Access Administrator**, exclude **Microsoft Authenticator Credential Registration** from the Conditional Access policies scoped to **All resources** that block passkey registration.
 
