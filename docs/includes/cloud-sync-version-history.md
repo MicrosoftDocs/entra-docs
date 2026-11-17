@@ -20,10 +20,13 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 **Release date:** November 17, 2026
 
-### Changes
+### Fixes
 
 - Fixed an issue that could prevent autoupgrade from functioning.
-- Security hardening improvements.
+
+### Security hardening
+
+- Implemented additional security hardening improvements for ECMA2Host and PHS.
 
 ## 1.1.2507.0
 
