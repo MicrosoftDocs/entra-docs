@@ -3,7 +3,9 @@ title: What are lifecycle workflows?
 description: Get an overview of the lifecycle workflow feature of Microsoft Entra ID.
 ms.subservice: lifecycle-workflows
 ms.topic: overview
-ms.date: 03/12/2026
+ms.date: 11/03/2026
+ms.custom: msecd-doc-authoring-1026
+ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to understand what lifecycle workflows are so that I can evaluate how to automate identity lifecycle management in my organization.
 ---
 
@@ -55,6 +57,7 @@ Those capabilities can help ensure a holistic experience by allowing you to remo
 You can use lifecycle workflows to address any of the following conditions:
 
 - **Automating and extending user orientation and HR provisioning**: Use lifecycle workflows when you want to extend your HR provisioning scenarios by automating tasks such as generating temporary passwords and emailing managers. If you currently have a manual process for orientation, use lifecycle workflows as part of an automated process.
+- **Identity verification during onboarding (preview)**: Use the identity-verification templates and tasks to initiate pre-hire verification and configure new-hire credential registration with Verified ID and FaceCheck. For registration paths, device constraints, and account eligibility considerations, see [Onboard users with identity verification (Preview)](how-to-onboard-users-with-identity-verification.md).
 - **Automating dynamic group memberships**: When groups in your organization are well defined, you can automate user membership in those groups. Benefits and differences from dynamic group memberships include:
   - Lifecycle workflows manage static groups, where you don't need a dynamic group rule.
   - There's no need to have one rule per group. Lifecycle workflow rules determine the scope of users to execute workflows against, not which group.
@@ -80,4 +83,5 @@ With Lifecycle Workflows, you can:
 
 - [Create a custom workflow by using the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md)
 - [Create a lifecycle workflow](create-lifecycle-workflow.md)
+- [Onboard users with identity verification (Preview)](how-to-onboard-users-with-identity-verification.md)
 - [Manage lifecycle workflows with Microsoft Security Copilot](../security-copilot/entra-lifecycle-workflows.md)

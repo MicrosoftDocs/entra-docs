@@ -26,6 +26,8 @@
     items:
     - name: Govern the employee lifecycle
       href: scenarios/govern-the-employee-lifecycle.md
+    - name: Onboard users with identity verification (Preview)
+      href: how-to-onboard-users-with-identity-verification.md
     - name: Plan new governance scenarios for business partners and external users
       href: scenarios/govern-guest-lifecycle-new-project.md
     - name: Microsoft Entra ID Governance deployment guide for employee lifecycle automation

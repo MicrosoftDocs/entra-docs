@@ -3,7 +3,8 @@ title: Microsoft Entra ID Governance
 description: Microsoft Entra ID Governance enables you to balance your organization's need for security and end user productivity with the right processes and visibility.
 editor: markwahl-msft
 ms.topic: overview
-ms.date: 05/08/2026
+ms.date: 11/03/2026
+ms.custom: msecd-doc-authoring-1026
 ms.reviewer: markwahl-msft
 #Customer Intent: As an IT admin, I want to understand Microsoft Entra ID Governance so that I can balance security and end user productivity with the right processes and visibility.
 ---
@@ -38,7 +39,7 @@ For many organizations, identity lifecycle for employees and other workers is ti
 In Microsoft Entra ID Governance, you can [automate the identity lifecycle](https://youtu.be/NxSu3JEsxmY?si=fuY8nV4Fg5DbMArd) for these individuals using:
 
 - [inbound provisioning from your organization's HR sources](../identity/app-provisioning/plan-cloud-hr-provision.md), including retrieving from Workday and SuccessFactors, to automatically maintain user identities in both Active Directory and Microsoft Entra ID.
-- [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day.
+- [lifecycle workflows](what-are-lifecycle-workflows.md) to automate workflow tasks that run at certain key events, such before a new employee is scheduled to start work at the organization, as they change status during their time in the organization, and as they leave the organization. For example, a workflow can be configured to send an email with a temporary access pass to a new user's manager, or a welcome email to the user, on their first day. The identity-verification onboarding templates (preview) also support [pre-hire verification and new-hire credential registration](how-to-onboard-users-with-identity-verification.md).
 - [automatic assignment policies in entitlement management](entitlement-management-access-package-auto-assignment-policy.md) to add and remove a user's group memberships, application roles, and SharePoint site roles, based on changes to the user's attributes.
 - [user provisioning](what-is-provisioning.md) to create, update, and remove user accounts in other applications, with connectors to [hundreds of cloud and on-premises applications](apps.md) via SCIM, LDAP and SQL.
 

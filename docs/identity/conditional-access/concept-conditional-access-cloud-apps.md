@@ -3,6 +3,7 @@ title: Targeting Resources in Conditional Access Policies
 description: Learn how to configure Conditional Access policies to target specific resources, actions, and authentication contexts in Microsoft Entra ID.
 ms.topic: concept-article
 ms.date: 03/24/2026
+ai-usage: ai-assisted
 ms.reviewer: kvenkit
 ms.custom:
   - has-azure-ad-ps-ref
@@ -10,6 +11,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:07/25/2025
   - ai-gen-description
+  - msecd-doc-authoring-108
 ---
 # Conditional Access: Target resources
 
@@ -137,6 +139,14 @@ Applying a Conditional Access policy to **All resources (formerly 'All cloud app
 > [!IMPORTANT]
 > Microsoft recommends creating a baseline multifactor authentication policy targeting all users and all resources (without any resource exclusions), like the one explained in [Require multifactor authentication for all users](policy-all-users-mfa-strength.md).
 
+### Exclude onboarding and recovery from All resources policies (preview)
+
+Policies targeting **All resources** also apply to onboarding and account recovery events unless you enable the global user-action exclusion. These policies can require credentials or other controls that users can't satisfy before they establish or restore their authentication methods.
+
+Under **Entra ID** > **Conditional Access** > **Settings (Preview)**, **Global exclusions** exposes the **Account onboarding and recovery (Preview)** setting. When enabled, it excludes the **Account onboarding and recovery** user action from policies targeting **All resources**. Policies that directly target the user action still apply.
+
+This is a global user-action exclusion, not a resource exclusion configured in an individual policy. It doesn't exclude users from ordinary application access policies. Review the tenant-wide impact and protect the bootstrap journey with a policy targeting the user action. For steps and validation guidance, see [Enable the global onboarding and recovery exclusion](policy-require-identity-verification.md#enable-the-global-onboarding-and-recovery-exclusion-preview).
+
 ### Legacy Conditional Access behavior when an ALL resources policy has a resource exclusion
 
 > [!WARNING]
@@ -205,7 +215,7 @@ Applying a Conditional Access policy to All agent resources enforces the policy 
 
 ## User actions
 
-User actions are tasks that a user performs. Conditional Access supports two user actions:
+User actions are tasks that a user performs. Conditional Access supports the following user actions:
 
 - **Register security information**: This user action lets Conditional Access policies enforce rules when users try to register their security information. For more information, see [Combined security information registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md).
 
@@ -219,6 +229,19 @@ User actions are tasks that a user performs. Conditional Access supports two use
 
 > [!WARNING]
 > If a Conditional Access policy is configured with the **Register or join devices** user action, set **Entra ID** > **Devices** > **Overview** > **Device Settings** - `Require Multifactor Authentication to register or join devices with Microsoft Entra` to **No**. Otherwise, Conditional Access policies with this user action aren't properly enforced. Learn more about this device setting in [Configure device settings](~/identity/devices/manage-device-identities.md#configure-device-settings).
+
+### Account onboarding and recovery (preview)
+
+<a id="onboard-and-recover-account-preview"></a>
+
+Use **Account onboarding and recovery** to apply Conditional Access to onboarding and recovery, separately from ordinary resource access. Before configuring an identity verification requirement, [create an eligible identity verification profile](../authentication/concept-authentication-verified-id.md#create-and-manage-identity-verification-profiles). Follow [Require identity verification with Conditional Access](policy-require-identity-verification.md#configure-an-onboarding-and-recovery-policy) to configure and test the policy.
+
+Creating a user-action policy doesn't automatically exclude the journey from **All resources** policies. To remove that overlap while retaining policies targeting the user action, [enable the global onboarding and recovery exclusion](policy-require-identity-verification.md#enable-the-global-onboarding-and-recovery-exclusion-preview).
+
+> [!NOTE]
+> **Terms of use**, **Require authentication strength**, and most other Microsoft Entra-specific controls aren't supported for this action. These limitations don't apply to ordinary resource-access policies. Review the [control limitations](policy-require-identity-verification.md#review-control-limitations) before rollout. Don't use report-only results as proof that an onboarding or recovery policy is evaluated or enforced.
+>
+> Risk-based Conditional Access policies currently don't apply to onboarding actions.
 
 ## Authentication context
 
