@@ -1,18 +1,21 @@
 ---
 title: Create an agent identity blueprint
-description: Learn how to create an agent identity blueprint that serves as a template for multiple agent identities using Microsoft Graph APIs and PowerShell.
+description: Learn how to create an agent identity blueprint for one or more agent identities by using Microsoft Graph APIs and PowerShell.
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: how-to
-ms.date: 04/27/2026
+ms.date: 11/06/2026
 ms.reviewer: dastrock
-#customer-intent: As a developer or IT administrator, I want to create an agent identity blueprint that defines the security and permissions template for my agent identities, so that I can efficiently manage multiple agents with consistent security policies.
+ai-usage: ai-assisted
+#customer-intent: As a developer or IT administrator, I want to create an agent identity blueprint that defines the security and permissions template for my agent identities, so that I can manage agents with consistent security policies.
 ---
 
 # Create an agent identity blueprint
 
-An [agent identity blueprint](agent-blueprint.md) is used to create agent identities and request tokens using those agent identities. During the process for creating an agent identity blueprint, you set the [owner and sponsor](agent-owners-sponsors-managers.md) of that blueprint, to establish accountability and administrative relationships. You also configure an identifier URI and define a scope for agents created from this blueprint if the agent is designed to receive incoming requests from other agents and users.
+Set up the registration your fleet runtime uses to create agent identities and request tokens for them. You'll assign an owner and sponsor, configure the runtime credential, and expose an inbound scope if users or client applications call the fleet.
 
-You can create an agent identity blueprint in two ways:
+This procedure is for a platform that hosts separately managed agents. For a cloud agent or an agent installed on an end-user device, use [Create an identity for your agent](create-single-instance-agent.md) instead.
+
+Create the fleet's blueprint by using either approach:
 
 - **Microsoft Entra admin center** — Use the wizard for a quick setup that creates the blueprint and its principal.
 - **Microsoft Graph API or PowerShell** — Create and fully configure the blueprint programmatically, including credentials, identifier URIs, scopes, and the blueprint principal in a single workflow.
@@ -20,7 +23,6 @@ You can create an agent identity blueprint in two ways:
 ## Prerequisites
 
 To create an agent identity blueprint, you need:
-
 
 - [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is the least privileged role required to grant Microsoft Graph Application permissions.
 - [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator) is required to grant Microsoft Graph delegated permissions.
@@ -33,7 +35,9 @@ To create an agent identity blueprint, you need:
 
 ## Prepare your environment
 
-To streamline the process, take a few moments to get your environment set up for the right permissions.
+Before you create the blueprint, authorize the client that will call Microsoft Graph.
+
+Identify the operator who creates objects and the administrator who approves the management client's permissions. Runtime API access is a separate grant: completing blueprint setup doesn't authorize an agent to call Microsoft Graph or your downstream API.
 
 ### Authorize a client to create agent identity blueprints
 
@@ -46,11 +50,19 @@ In this article, you use Microsoft Graph PowerShell or another client to create 
 
 The steps in this guide use all delegated permissions, but you can use application permissions for those scenarios that require them.
 
+Use a separate public management app registered in your tenant, not the agent's runtime client ID. Follow [Set up the management client](create-single-instance-agent.md#set-up-the-management-client), but request the four delegated permissions above and `User.Read` for this procedure. The linked section explains the public-client redirect URI, administrator consent, and Windows browser sign-in fallback; its single-instance preview enablement requirement doesn't apply to this fleet procedure.
+
+Install `Microsoft.Graph.Authentication` and `Microsoft.Graph.Users` to use `Connect-MgGraph`, `Invoke-MgGraphRequest`, and `Get-MgUser`. Install `Microsoft.Graph.Applications` before using the application cmdlets in later sections.
+
 To connect to all of the required scopes for Microsoft Graph PowerShell, run the following command:
 
 ```powershell
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint.AddRemoveCreds.All", "AgentIdentityBlueprint.UpdateAuthProperties.All", "AgentIdentityBlueprintPrincipal.Create", "User.Read" -TenantId <your-tenant-id>
+Connect-MgGraph -ClientId "<management-app-client-id>" -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint.AddRemoveCreds.All", "AgentIdentityBlueprint.UpdateAuthProperties.All", "AgentIdentityBlueprintPrincipal.Create", "User.Read" -TenantId "<your-tenant-id>" -ContextScope Process
 ```
+
+Check `Get-MgContext` before proceeding. Its account, tenant, client ID, and scopes must match this management setup. If context is empty or a scope is missing, stop and resolve sign-in or consent rather than retrying object creation. Retain the same `-ClientId` and tenant in later connections.
+
+Use the [identifier worksheet](key-concepts.md#record-the-identifiers-for-your-scenario) to keep object IDs separate from client IDs.
 
 ## Create an agent identity blueprint
 
@@ -85,6 +97,8 @@ For more information on managing agent identity blueprints, see [Manage agent id
 
 To create an agent identity blueprint using code, use the Microsoft Graph API or PowerShell.
 
+The following Microsoft Graph v1.0 requests use the default multi-instance setting required by the fleet tutorials. Keep that default; the [instance mode](agent-blueprint.md#instance-modes-preview) can't be changed after creation.
+
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 This step creates the agent identity blueprint, assigns an owner and sponsor, and requires the following details:
@@ -112,7 +126,7 @@ Authorization: Bearer <token>
 
 ```
 
-After creating the agent identity blueprint, record the value of the `appId` for the next step.
+From the `201 Created` response, record both `id` (the blueprint object ID for application updates) and `appId` (the client ID for authentication and principal creation).
 
 ### [Microsoft Graph PowerShell](#tab/powershell)
 
@@ -123,7 +137,7 @@ This step creates the agent identity blueprint application, using the current us
 - Create the agent identity blueprint application.
 
 ```powershell
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create","User.Read" -TenantId <your-tenant-id>
+Connect-MgGraph -ClientId "<management-app-client-id>" -Scopes "AgentIdentityBlueprint.Create","User.Read" -TenantId "<your-tenant-id>" -ContextScope Process
 
 $currentUser = Get-MgContext | Select-Object -ExpandProperty Account
 $user = Get-MgUser -UserId $currentUser
@@ -150,13 +164,15 @@ $response
 
 ```
 
-After creating the agent identity blueprint, record the value of the `appId` from the output.
+Record both `id` and `appId` from the output. The blueprint object `id` addresses `/applications/{id}`; `appId` identifies the OAuth client and is used to create its blueprint principal.
 
 ---
 
 ## Configure credentials for the agent identity blueprint
 
-To request access tokens using the agent identity blueprint, you must add a [client credential](../identity-platform/v2-oauth2-client-creds-grant-flow.md). We recommend using a [managed identity](../identity/managed-identities-azure-resources/overview.md) as a federated identity credential (FIC) for production deployments. Managed identities allow you to obtain Microsoft Entra tokens without having to manage any credentials. For more information, see [Managed identities for Azure resources](../identity/managed-identities-azure-resources/overview.md).
+For a confidential-client blueprint, add a [client credential](../identity-platform/v2-oauth2-client-creds-grant-flow.md) to request access tokens. We recommend using a [managed identity](../identity/managed-identities-azure-resources/overview.md) as a federated identity credential (FIC) for production deployments. Managed identities allow you to obtain Microsoft Entra tokens without having to manage any credentials. For more information, see [Managed identities for Azure resources](../identity/managed-identities-azure-resources/overview.md).
+
+Don't distribute a blueprint credential with an agent installed on an end-user device. For that scenario, follow the public-client setup in [Authenticate a local agent with Microsoft Entra ID](authenticate-local-agent.md).
 
 Other kinds of app credentials including `keyCredentials` and `passwordCredentials` are supported, but not recommended for production. They can be convenient for local development and testing or where managed identities won't work, but these options don't align with security best practices. For more information, see [Security best practices for application properties](../identity-platform/security-best-practices-for-app-registration.md#credentials-including-certificates-and-secrets).
 
@@ -166,7 +182,7 @@ Keep in mind that to use a managed identity you must run your code on an Azure s
 
 To send this request:
 - You need the `AgentIdentityBlueprint.AddRemoveCreds.All` permission.
-- Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
+- Replace the `<agent-blueprint-id>` placeholder with the blueprint application's object `id`, not its application (client) `appId`.
 - Replace the  `<managed-identity-principal-id>` placeholder with the ID of your managed identity.
 
 Add a managed identity as a credential using the following request:
@@ -192,12 +208,14 @@ Authorization: Bearer <token>
 This step includes the following distinct tasks:
 
 - Connect to your tenant with the `AgentIdentityBlueprint.AddRemoveCreds.All` scope.
-- Add a managed identity as a credential for the agent identity blueprint using the previously created agent identity blueprint principal.
+- Add a managed identity as a credential on the blueprint application. This step doesn't require a blueprint principal and also applies to a blueprint created through the cloud-agent tutorial.
+
+Set `$applicationId` to the blueprint application's object `id`, not its application (client) `appId`.
 
 ```powershell
 Install-Module Microsoft.Graph.Applications -Scope CurrentUser -Force
 
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId <your-tenant-id>
+Connect-MgGraph -ClientId "<management-app-client-id>" -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId "<your-tenant-id>" -ContextScope Process
 
 $applicationId = "<agent-blueprint-id>"
 
@@ -221,7 +239,7 @@ For scenarios where managed identities won't work or if you're creating a bluepr
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
-To send this request, you first need to obtain an access token with the delegated permission `AgentIdentityBlueprint.AddRemoveCreds.All`
+To send this request, first obtain an access token with the delegated permission `AgentIdentityBlueprint.AddRemoveCreds.All`. Replace `<future-expiration-in-UTC>` with a future UTC time in ISO 8601 format that complies with your tenant's credential lifetime policy.
 
 ```http
 POST https://graph.microsoft.com/v1.0/applications/<agent-blueprint-id>/addPassword
@@ -231,7 +249,7 @@ Authorization: Bearer <token>
 {
   "passwordCredential": {
     "displayName": "My Secret",
-    "endDateTime": "2026-08-05T23:59:59Z"
+    "endDateTime": "<future-expiration-in-UTC>"
   }
 }
 ```
@@ -239,7 +257,7 @@ Authorization: Bearer <token>
 ### [Microsoft Graph PowerShell](#tab/powershell)
 
 ```powershell
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId <your-tenant-id>
+Connect-MgGraph -ClientId "<management-app-client-id>" -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId "<your-tenant-id>" -ContextScope Process
 
 $applicationId = "<agent-blueprint-application-id>"
 
@@ -271,24 +289,28 @@ If the agents created with the blueprint will support interactive agents, where 
 
 ## Configure identifier URI and scope
 
-To receive incoming requests from users and other agents, like for any web API, you need to define an identifier URI and OAuth scope for your agent identity blueprint:
+Expose an identifier URI and delegated scope so clients can request access tokens for your agent API. Use the blueprint's object ID to address the application and its client ID in the `api://` URI.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To send this request:
 - You need the permission `AgentIdentityBlueprint.UpdateAuthProperties.All`.
-- Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
+- Replace `<agent-blueprint-object-id>` with the blueprint application's object `id` for the `/applications/` path.
+- Replace `<agent-blueprint-app-id>` with the blueprint's application (client) `appId` in the `api://` URI.
 - You need a Globally Unique Identifier (GUID). In PowerShell, run `[guid]::NewGuid()` or use an online GUID generator. Copy the generated GUID and use it to replace the `<generate-a-guid>` placeholder.
 
+The examples below configure a new blueprint with no existing scopes. For an existing blueprint, read `identifierUris` and `api.oauth2PermissionScopes` first and retain their existing entries in the update. These collections are replaced, not appended. If you arrived here from the cloud-agent walkthrough, use its management client to send the HTTP request; its consented `AgentIdentityBlueprint.ReadWrite.All` permission also permits the update.
+
 ```http
-PATCH https://graph.microsoft.com/v1.0/applications/<agent-blueprint-id>
+PATCH https://graph.microsoft.com/v1.0/applications/<agent-blueprint-object-id>
 OData-Version: 4.0
 Content-Type: application/json
 Authorization: Bearer <token>
 
 {
-    "identifierUris": ["api://<agent-blueprint-id>"],
+    "identifierUris": ["api://<agent-blueprint-app-id>"],
     "api": {
+      "requestedAccessTokenVersion": 2,
       "oauth2PermissionScopes": [
         {
           "adminConsentDescription": "Allow the application to access the agent on behalf of the signed-in user.",
@@ -314,10 +336,11 @@ This step includes the following distinct tasks:
 - Configure the URI and scope for the new agent identity blueprint.
 
 ```powershell
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.UpdateAuthProperties.All" -TenantId <your-tenant-id>
+Connect-MgGraph -ClientId "<management-app-client-id>" -Scopes "AgentIdentityBlueprint.UpdateAuthProperties.All" -TenantId "<your-tenant-id>" -ContextScope Process
 
-$AppId = "<agent-blueprint-id>"
-$IdentifierUri = "api://<agent-blueprint-id>"
+$blueprintObjectId = "<agent-blueprint-object-id>"
+$blueprintAppId = "<agent-blueprint-app-id>"
+$IdentifierUri = "api://$blueprintAppId"
 $ScopeId = [guid]::NewGuid()
 
 # Construct the OAuth2 permission scope
@@ -330,9 +353,9 @@ $scope = @{
     value = "access_agent"
 }
 
-Update-MgApplication -ApplicationId $AppId `
+Update-MgApplication -ApplicationId $blueprintObjectId `
     -IdentifierUris @($IdentifierUri) `
-    -Api @{ oauth2PermissionScopes = @($scope) }
+    -Api @{ requestedAccessTokenVersion = 2; oauth2PermissionScopes = @($scope) }
 ```
 
 ---
@@ -340,6 +363,9 @@ Update-MgApplication -ApplicationId $AppId `
 ## Create an agent blueprint principal
 
 In this step, you create a principal for the agent identity blueprint. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
+
+> [!IMPORTANT]
+> Complete this section only for a multi-instance blueprint. A single-instance blueprint doesn't create an agent identity blueprint principal.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -359,14 +385,12 @@ Authorization: Bearer <token>
 ### [Microsoft Graph PowerShell](#tab/powershell)
 
 
-After creating the agent identity blueprint, create an agent identity blueprint principal using the newly created agent identity blueprint `appId`.
-
-Connect-MgGraph -Scopes "AgentIdentityBlueprintPrincipal.Create" -TenantId `<your-tenant-id>`
+After creating the agent identity blueprint, create an agent identity blueprint principal using its `appId`.
 
 ```powershell
-Connect-MgGraph -Scopes "AgentIdentityBlueprintPrincipal.Create" -TenantId
+Connect-MgGraph -ClientId "<management-app-client-id>" -Scopes "AgentIdentityBlueprintPrincipal.Create" -TenantId "<your-tenant-id>" -ContextScope Process
 $body = @{
-    appId   = "<agent-blueprint-client-id>"
+    appId = "<agent-blueprint-app-id>"
 }
 Invoke-MgGraphRequest -Method POST `
         -Uri "https://graph.microsoft.com/v1.0/serviceprincipals/microsoft.graph.agentIdentityBlueprintPrincipal" `
@@ -376,7 +400,9 @@ Invoke-MgGraphRequest -Method POST `
 
 ---
 
-Your agent blueprint is now ready and visible in the [Microsoft Entra admin center](https://entra.microsoft.com). In the next step, you'll use this blueprint to [create agent identities](create-delete-agent-identities.md).
+Save the returned principal's `id` separately from the blueprint's `id` and `appId`. Check that its `appId` matches the blueprint's client ID before creating child identities. If you used the admin center wizard, it already created this principal; don't create another one.
+
+Your blueprint and principal are now provisioned. The next step is to [create agent identities](create-delete-agent-identities.md). Token acquisition and an authorized call to the target API are later verification steps; visibility in the admin center alone doesn't prove runtime access.
 
 ## Register agents in the Agent 365 registry
 
@@ -384,7 +410,7 @@ After you create an agent identity blueprint, register it in the [Agent 365 regi
 
 ### Use the Microsoft 365 Agents SDK (Recommended)
 
-The [Microsoft 365 Agents SDK](/microsoft-365/agents-sdk/) is now generally available and is the recommended way to build and provision agents. The SDK The SDK handles agent identity creation and registration in the Agent 365 registry for you, so your agent identities will appear automatically with no extra code. If you are starting a new agent project, or have flexibility to migrate existing code, use the SDK. It's the simplest, most durable path and avoids the need to coordinate multiple API calls yourself.
+The [Microsoft 365 Agents SDK](/microsoft-365/agents-sdk/) is now generally available and is the recommended way to build and provision agents. The SDK handles agent identity creation and registration in the Agent 365 registry, so your agent identities appear without separate registration code. If you're starting a new agent project or can migrate existing code, use the SDK to avoid coordinating these API calls yourself.
 
 ### Use the Agent 365 CLI
 

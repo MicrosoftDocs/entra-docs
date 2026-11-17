@@ -3,7 +3,7 @@ title: Disable agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to disable agent identities in your Microsoft Entra ID tenant using Conditional Access policies and creation restrictions.
 ms.topic: how-to
-ms.date: 04/29/2026
+ms.date: 11/05/2026
 ms.reviewer: dastrock
 ai-usage: ai-assisted
 #Customer intent: As a security administrator managing agent identities in my tenant, I want to disable agent identities to prevent their use in my organization so that I can maintain strict control over identity types and reduce potential security risks from AI agents.
@@ -109,7 +109,7 @@ The following steps help create a Conditional Access policy to block issuance of
    1. Select **Block**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to create the policy.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -166,7 +166,7 @@ The following steps help create a Conditional Access policy to block issuance of
    1. Select **Block access**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to create the policy.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -220,7 +220,7 @@ The following steps help create a Conditional Access policy to block issuance of
    1. Select **Block**.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select **Create** to create the policy.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
