@@ -33,7 +33,7 @@ The Microsoft Entra ID Governance for Government and Microsoft Entra ID Governan
 
 ### Governance products and prerequisites
 
-The Microsoft Entra ID Governance capabilities are currently available in six standalone products. These six products provide the same identity governance capabilities. The difference between the six products is that they have different prerequisites.
+The Microsoft Entra ID Governance capabilities for employees are currently available in six standalone products. These six products provide the same identity governance capabilities. The difference between the six products is that they have different prerequisites.
 
 - A subscription to **Microsoft Entra ID Governance** or **Microsoft Entra ID Governance for Government**, listed in the product terms as the **Microsoft Entra ID Governance (User SL)** product, requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM` or `AAD_PREMIUM_P2` service plan. Examples of products meeting this prerequisite include **Microsoft Entra ID P1**, **Microsoft 365 E3/E5/A3/A5/G3/G5** or **Enterprise Mobility + Security E3/E5**.
 - A subscription to **Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2** or **Microsoft Entra ID Governance Add-on for Microsoft Entra ID P2 for Government**, listed in the product terms as the **Microsoft Entra ID Governance P2** product, requires that the tenant also have an active subscription to another product, one that contains the `AAD_PREMIUM_P2` service plan. Examples of products meeting this prerequisite include **Microsoft Entra ID P2**, **Microsoft 365 E5/A5/G5**, **Enterprise Mobility + Security E5**, **Microsoft 365 E5/F5 Security** or **Microsoft 365 F5 Security + Compliance**.

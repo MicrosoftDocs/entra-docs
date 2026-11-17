@@ -113,7 +113,10 @@ Once you've started using these identity governance features, you can easily aut
 | Removing guest accounts that have no access package assignments |[Manage the lifecycle of external users](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users) |
 | Provisioning users into on-premises and cloud applications that have their own directories or databases | [Configure automatic user provisioning](../identity/app-provisioning/user-provisioning.md) with user assignments or [scoping filters](../identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) |
 | Other scheduled tasks | [Automate identity governance tasks with Azure Automation](identity-governance-automation.md) and Microsoft Graph via the [Microsoft.Graph.Identity.Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) PowerShell module|
-|Discover orphan or local accounts in your applications|[Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) users in your applications.|
+| Discover orphan or local accounts in your applications|[Discover existing](~/identity/app-provisioning/how-to-account-discovery.md) users in your applications. |
+| Agent permission assignment|[Assigning access to agent identities](agent-id-governance-overview.md#assigning-access-to-agent-identities) |
+| Agent identity lifecycle|[Entra Agent ID lifecycle policies](agent-lifecycle-policies.md) |
+| Discover overpermissioned agent non-human identities in applications|[Detection and remediation of overprivileged agent identities (Preview)](dynamic-permissions-overview.md) |
 
 ## Identity governance for agent identities
 
@@ -123,7 +126,9 @@ Every agent identity requires a human [sponsor](../agent-id/agent-owners-sponsor
 
 Access assignments to agent identities can be governed through the same [entitlement management](entitlement-management-overview.md) access packages available for human identities, providing time-bound, auditable access with approval workflows. Sponsors receive expiration notifications and can request extensions or let access expire.
 
-For more information, see [Governing agent identities](agent-id-governance-overview.md).
+Microsoft Entra can also discover the agent non-human identities in an application that have excessive privileges. For more information, see [Detection and remediation of overprivileged agent identities (Preview)](dynamic-permissions-overview.md).
+
+For more information, see [Governing agent identities and access](agent-id-governance-overview.md).
 
 ## Next steps
 

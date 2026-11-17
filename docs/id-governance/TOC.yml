@@ -143,6 +143,10 @@
 - name: Tutorials
   expanded: true
   items:
+    - name: Dynamic permissions
+      items:
+      - name: Mitigate permission risk of AI agents (Preview)
+        href: tutorial-dynamic-permissions-prevent-excessive-permissions.md
     - name: Entitlement Management
       items:
       - name: Manage access to resources
@@ -195,6 +199,10 @@
 - name: Concepts
   expanded: true
   items:
+  - name: Dynamic permissions
+    items:
+    - name: What is Dynamic permissions?
+      href: dynamic-permissions-overview.md
   - name: Entitlement management
     items:
     - name: What is entitlement management?
@@ -254,6 +262,14 @@
 - name: How-to guides
   expanded: true
   items:
+  - name: Dynamic permissions
+    items:
+    - name: Manage separation of duties (preview)
+      href: dynamic-permissions-manage-separation-duties.md
+    - name: Manage dynamic permissions settings for a catalog (preview)
+      href: dynamic-permissions-manage-catalog-settings.md
+    - name: View detections and remediations (Preview)
+      href: dynamic-permissions-review-detections-remediations.md
   - name: Entitlement management
     items:
     - name: Common scenarios
@@ -465,6 +481,12 @@
 - name: Reference
   expanded: true
   items:
+  - name: Dynamic permissions
+    items:
+    - name: Privilege levels
+      href: dynamic-permissions-privilege-levels.md
+    - name: Data collection
+      href: dynamic-permissions-data-collection.md
   - name: Identity Governance Dashboard
     href: governance-dashboard.md
   - name: Identity Governance service limits
