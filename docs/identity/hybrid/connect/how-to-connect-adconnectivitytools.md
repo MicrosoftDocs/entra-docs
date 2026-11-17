@@ -3,8 +3,11 @@ title: 'Microsoft Entra Connect: What is the ADConnectivityTool PowerShell Modul
 description: This document introduces the new ADConnectivity PowerShell module and how it can be used to help troubleshoot.
 
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 11/16/2026
 ms.subservice: hybrid-connect
+ms.custom: msecd-doc-authoring-1032
+ai-usage: ai-assisted
+# Customer intent: As an IT administrator, I want to locate and use the ADConnectivityTool PowerShell module so that I can troubleshoot Microsoft Entra Connect connectivity.
 ---
 
 # Troubleshoot Microsoft Entra connectivity with the ADConnectivityTool PowerShell module
@@ -14,7 +17,7 @@ The ADConnectivity tool is a PowerShell module that is used in one of the follow
 - During installation, when a network connectivity problem prevents the successful validation of the Active Directory credentials.
 - Post installation by a user who calls the functions from a PowerShell session.
 
-The tool is located in: **C:\Program Files\Microsoft Entra Connect\Tools\ADConnectivityTool.psm1**.
+The tool is located in: **C:\Program Files\Microsoft Azure Active Directory Connect\Tools\ADConnectivityTool.psm1**.
 
 ## ADConnectivityTool during installation
 
