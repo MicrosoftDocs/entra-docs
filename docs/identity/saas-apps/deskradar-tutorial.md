@@ -9,7 +9,7 @@ ms.custom: sfi-image-nochange
 
 # Configure Deskradar for Single sign-on with Microsoft Entra ID
 
-In this article,  you learn how to integrate Deskradar with Microsoft Entra ID. When you integrate Deskradar with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Deskradar with Microsoft Entra ID. Deskradar is seating chart software for organizations where employees have assigned desks or private offices. It shows each building and floor as an interactive floor plan, with people, desks, rooms, and shared resources marked on it. When you integrate Deskradar with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Deskradar.
 * Enable your users to be automatically signed-in to Deskradar with their Microsoft Entra accounts.
