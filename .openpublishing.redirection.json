@@ -1,6 +1,351 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity-platform/concept-native-authentication-challenge-types.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#v1-challenge-types-and-capabilities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/concept-native-authentication-user-attribute-builder.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#submitting-user-attributes-to-endpoints",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/how-to-native-authentication-cors-solution-production-environment.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#browser-cors-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/how-to-native-authentication-cors-solution-test-environment.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#browser-cors-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#browser-cors-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/quickstart-native-authentication-android-call-api.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/quickstart-native-authentication-android-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/quickstart-native-authentication-ios-call-api.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/quickstart-native-authentication-ios-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/quickstart-native-authentication-macos-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/reference-native-authentication-sdk-v1.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#sdk-references",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-custom-headers.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-email-one-time-passcode-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-email-strong-authentication-method.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-identity-provider-sign-in-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-self-service-password-reset.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-sign-in-call-api.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-sms-one-time-passcode-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-sms-strong-authentication-method.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-android-support-web-fallback.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-macos-identity-provider-sign-in-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-macos-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-macos-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-sign-in-call-api.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-swift-custom-headers.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-swift-email-strong-authentication-method.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-swift-sms-one-time-passcode-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-ios-swift-sms-strong-authentication-method.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-prepare-android-app.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-prepare-ios-macos-app.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-angular-register-strong-method.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-angular-reset-password.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-angular-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-angular-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-angular-social-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-javascript-custom-headers.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-enable-mfa.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-register-strong-method.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-reset-password.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#browser-cors-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/tutorial-native-authentication-single-page-app-react-social-sign-in.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/tutorial-third-party-account-take-over-protection-native-api.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/tutorial-third-party-bot-protection-native-api-sign-up.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/concept-native-authentication-sms-mfa-third-party-fraud-protection.md",
+      "redirect_url": "/entra/identity-platform/concept-native-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/concept-customization-customers.md",
+      "redirect_url": "/entra/external-id/customization-overview",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/external-id/customers/how-to-customize-base-experience-customers.md",
+      "redirect_url": "/entra/external-id/modern-authentication-experience",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/external-id/customers/how-to-customize-fluent-experience-customers.md",
+      "redirect_url": "/entra/external-id/styling",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/external-id/customers/how-to-customize-html-javascript-customers.md",
+      "redirect_url": "/entra/external-id/custom-html-javascript",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/external-id/customers/customization-overview.md",
+      "redirect_url": "/entra/external-id/customization-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/modern-authentication-experience.md",
+      "redirect_url": "/entra/external-id/modern-authentication-experience",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/fluent-styling.md",
+      "redirect_url": "/entra/external-id/styling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/custom-html-javascript.md",
+      "redirect_url": "/entra/external-id/custom-html-javascript",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/fluent-styling.md",
+      "redirect_url": "/entra/external-id/styling",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/id-governance/tenant-governance/drift-correction.md",
       "redirect_url": "/entra/id-governance/tenant-governance/configuration-management",
       "redirect_document_id": false
@@ -1266,27 +1611,27 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-run-native-authentication-sample-android-app.md",
-      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-android-sign-in",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-run-native-authentication-sample-ios-app.md",
-      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-ios-sign-in",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-run-native-authentication-sample-macos-app.md",
-      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-macos-sign-in",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-native-authentication-android-sample-app-call-web-api.md",
-      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-android-call-api",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-native-authentication-ios-sample-app-call-web-api.md",
-      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-ios-call-api",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
@@ -1306,12 +1651,12 @@
     },
     {
       "source_path_from_root": "/docs/identity-platform/reference-native-authentication-overview.md",
-      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-otp.md",
-      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
@@ -1351,7 +1696,7 @@
     },
     {
       "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
-      "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
@@ -1491,32 +1836,32 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-ios-app.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-sign-out.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-sign-out",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-user-after-sign-up.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-self-service-password-reset.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-self-service-password-reset",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-support-web-fallback.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
@@ -1561,42 +1906,42 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-password-user-attributes.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-password.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-email-one-time-passcode.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-username-password-user-attributes.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-up-with-username-password.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/concept-native-authentication-challenge-types.md",
-      "redirect_url": "/entra/identity-platform/concept-native-authentication-challenge-types",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#v1-challenge-types-and-capabilities",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/concept-native-authentication-user-attribute-builder.md",
-      "redirect_url": "/entra/identity-platform/concept-native-authentication-user-attribute-builder",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#submitting-user-attributes-to-endpoints",
       "redirect_document_id": false
     },
     {
@@ -1891,12 +2236,12 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-with-username-password.md",
-      "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-ios-sign-in-sign-out",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
@@ -2586,72 +2931,72 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-native-authentication-cors-solution-production-environment.md",
-      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-production-environment",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#browser-cors-requirements",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-native-authentication-cors-solution-test-environment.md",
-      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-test-environment",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#browser-cors-requirements",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/quickstart-native-authentication-single-page-app-react-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-reset-password.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-set-up-local-cors.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#browser-cors-requirements",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-in.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-android-app.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-prepare-android-app",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-sign-out",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-after-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-self-service-password-reset.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-support-web-fallback.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-support-web-fallback",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-call-api.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
       "redirect_document_id": false
     },
     {
@@ -2806,37 +3151,37 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-prepare-ios-macos-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-sign-out.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-self-service-password-reset.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-call-api.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
@@ -3703,6 +4048,11 @@
       "source_path": "docs/identity/conditional-access/policy-on-behalf-of-agents.md",
       "redirect_url": "/entra/identity/conditional-access/policy-autonomous-agents",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity-platform/reference-native-authentication-api.md",
+      "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1",
+      "redirect_document_id": true
     }
   ]
 }

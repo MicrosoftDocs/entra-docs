@@ -1,12 +1,12 @@
 ---
 title: Customize the sign-in experience for your application with branding themes
 description: Learn how to create branding themes and apply them to the sign-in experience for your application in Microsoft Entra ID.
-ms.date: 08/18/2026
+ms.date: 11/13/2026
 ms.reviewer:
 ms.topic: how-to
-ms.custom: msecd-doc-authoring-1015
+ms.custom: msecd-doc-authoring-1026
 ai-usage: ai-assisted
-#Customer intent: As a developer integrating with Microsoft Entra ID, I want to customize the sign-in experience for my application.
+#customer intent: As an administrator, I want to create and assign branding themes so that I can customize the sign-in experience for individual applications.
 
 ---
 
@@ -18,6 +18,9 @@ This article describes how you can create multiple branding themes for different
 
 > [!IMPORTANT]
 > For external tenants, branding themes is generally available. For Microsoft Entra ID tenants, branding themes is in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+> [!IMPORTANT]
+> The modern authentication experience, new customization capabilities, and redesigned branding themes experience for Microsoft Entra External ID are scheduled to become available in public preview on December 7, 2026. For more information, see the [Microsoft Entra External ID customization overview](../external-id/customization-overview.md).
 
 ## Prerequisites
 
