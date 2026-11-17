@@ -113,11 +113,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your Deskradar company site as an administrator.
 
-1. Open the **Team** page by selecting the icon in the Sidebar.
+1. Open **Settings** in the sidebar, then select **Single sign-on**.
 
-1. Switch to the **Single Sign-On** tab.
-
-1. Enable the **SAML 2.0** authentication method.
+1. Turn on **SAML 2.0 authentication**.
 
 1. In the **SAML SSO URL** field, enter the **Login URL** value, which you copied previously.
 
