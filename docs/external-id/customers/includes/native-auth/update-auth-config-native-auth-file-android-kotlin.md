@@ -1,4 +1,8 @@
 ---
+author: csmulligan
+ms.author: cmulligan
+ms.service: entra-external-id
+ms.subservice: external
 ms.topic: include
 ms.date: 04/29/2024
 ---
@@ -23,4 +27,4 @@ ms.date: 04/29/2024
         }
     ```
 
-  The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. Learn more [challenge types](../../concept-native-authentication-challenge-types.md).
+  The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. Learn more [challenge types](~/identity-platform/reference-native-authentication-api-v1.md#v1-challenge-types-and-capabilities).

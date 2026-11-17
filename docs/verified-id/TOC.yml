@@ -5,6 +5,8 @@
   items:
   - name: Introduction to Microsoft Entra Verified ID
     href: decentralized-identifier-overview.md
+  - name: What's new
+    href: whats-new.md
   - name: Quick setup
     href: verifiable-credentials-configure-tenant-quick.md
   - name: Advanced setup
@@ -21,6 +23,8 @@
     href: credential-design.md
   - name: Understand issuer service communication
     href: issuer-openid.md
+  - name: High assurance (preview)
+    href: high-assurance.md
   - name: Review supported standards
     href: verifiable-credentials-standards.md
 - name: Scenarios
@@ -73,6 +77,8 @@
     items:
     - name: Use Face Check
       href: using-facecheck.md
+    - name: Create an ID verification profile
+      href: how-to-create-id-verification-profile.md
     - name: Configure Request Service API access
       href: get-started-request-api.md
     - name: Configure Verified ID with ID Governance
@@ -135,6 +141,8 @@
     items:
     - name: Use Verified ID with Microsoft Authenticator
       href: using-authenticator.md
+    - name: Get a Verified ID through My Account
+      href: how-to-get-verified-id-my-account.md
     - name: Review frequently asked questions
       href: verifiable-credentials-faq.md
     - name: Review Face Check frequently asked questions
@@ -173,8 +181,6 @@
     href: helpdesk-with-verified-id.md
 - name: Resources
   items:
-  - name: What's new
-    href: whats-new.md
   - name: Frequently asked questions
     href: verifiable-credentials-faq.md
   - name: Face Check pricing

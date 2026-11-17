@@ -1,78 +1,63 @@
 ---
 title: Learn how agent identity deletion works
-description: Learn how deleting an agent identity blueprint triggers automatic cleanup of child agent identities in Microsoft Entra, and how to restore deleted objects.
+description: Learn what Microsoft Graph documents about deleting agent identity objects and which related-object behavior requires confirmation.
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
-ms.date: 05/15/2026
+ms.date: 11/06/2026
 ai-usage: ai-assisted
 
-#Customer intent: As an IT admin or developer, I want to understand what happens when I delete an agent identity blueprint so I can plan for cleanup and restoration.
+#Customer intent: As an IT admin or developer, I want to understand the documented deletion and recovery behavior for agent identity objects so I can plan cleanup without assuming undocumented cascade behavior.
 ---
 
 # Agent identity deletion
 
-When you delete an agent identity blueprint or its principal, Microsoft Entra automatically cleans up all child agent identities and agents' user accounts with a *cascade cleanup* process. You don't need to manually query and delete each one. Understanding when and how this cascade cleanup happens helps you plan for restoration if needed.
+Microsoft Graph documents soft deletion and recovery for agent identity and application objects. Its public delete API references don't specify whether deleting an agent identity blueprint or blueprint principal also deletes child agent identities or associated agent user accounts. Don't rely on a cascade unless Microsoft confirms the behavior for your scenario.
 
-Agent identity blueprints and their associated objects follow the same soft deletion and hard deletion behavior as other app registrations and service principals in Microsoft Entra. For a full overview of that process, see [Deleting and recovering applications FAQ](../identity/enterprise-apps/delete-recover-faq.yml). This article focuses on what's unique to agent identity deletion.
+For general application soft-deletion behavior, see [Deleting and recovering applications FAQ](../identity/enterprise-apps/delete-recover-faq.yml). This article separates the behavior documented for individual Graph objects from related-object behavior that isn't specified in those API references.
 
 ## Object relationships
 
-The following objects are involved in the agent identity deletion lifecycle. The cascade cleanup process is based on these relationships.
-
-| Object | Directory object type | Relationship |
+| Object | Directory object type | Documented relationship or operation |
 |---|---|---|
-| Agent identity blueprint | Application | Parent of the blueprint principal |
-| Agent identity blueprint principal | Service principal | The principal for the blueprint |
-| Agent identity | Service principal | Child of the blueprint principal |
-| Agent's user account | User | Paired 1:1 with an agent identity |
+| Agent identity blueprint | Application | Delete the application object by using the Graph application delete API. |
+| Agent identity blueprint principal | Service principal | Delete the service principal by using the Graph servicePrincipal delete API. |
+| Agent identity | `agentIdentity` service principal | The `agentIdentityBlueprintId` property identifies its blueprint. Delete an agent identity by using the Graph agentIdentity delete API. |
+| Agent user | `agentUser`, a specialized user subtype | The [agentUser resource](/graph/api/resources/agentuser?view=graph-rest-beta&preserve-view=true) has a one-to-one relationship with a parent agent identity. The agentIdentity delete API doesn't specify what happens to the associated agent user. Check that object separately. |
 
 ## Disable versus delete
 
 Before deleting a blueprint, consider whether disabling is the right action instead.
 
-- **Disable**: Prevents the blueprint principal or its agent identities from authenticating, but leaves all objects in place. Use this when you want to temporarily stop agent activity, investigate an issue, or decommission agents gradually. Objects remain in the directory and count toward quota.
-- **Delete**: Removes the agent identity blueprint or its agent identity blueprint principal from the directory and triggers cascade cleanup of child agent identities. Use this when you're permanently retiring a blueprint and all agents created from it. Deletion can't be undone after the 30-day soft-deletion window expires.
+- **Disable**: Prevents the blueprint principal or its agent identities from authenticating, but leaves objects in place. Use this when you want to temporarily stop agent activity or investigate an issue. For more information, see [Disable agent identities](disable-agent-identities.md).
+- **Delete**: Sends a delete request for the specific Graph object addressed. The [application delete API](/graph/api/application-delete) documents a 30-day recovery period for deleted applications. The [agentIdentity delete API](/graph/api/agentidentity-delete?view=graph-rest-beta&preserve-view=true) documents the same period for deleted agent identities.
 
-For information on disabling agent identities, see [Disable agent identities](disable-agent-identities.md).
+## Related-object cleanup and restoration
 
-## Cascade cleanup
+Use the API that matches the object you intend to delete:
 
-When you delete an agent identity blueprint or its agent identity blueprint principal, Microsoft Entra automatically soft deletes all associated child agent identities and agents' user accounts. This cleanup is asynchronous.
+- Delete a blueprint application with `DELETE /applications/{applicationObjectId}`.
+- Delete a blueprint principal with `DELETE /servicePrincipals/{servicePrincipalId}`.
+- Delete one agent identity with `DELETE /servicePrincipals/{id}/microsoft.graph.agentIdentity`.
 
-The cascade process works as follows:
+The public Graph API references describe deletion of the addressed object. They don't specify whether deleting a blueprint application or principal triggers cleanup of child agent identities or associated agent users. The [Graph restore API](/graph/api/directory-deleteditems-restore) specifies that restoring an application doesn't automatically restore its associated service principal; restore that principal separately. The API references don't specify cleanup timing, an internal cleanup actor, or whether restoring a parent restores or reverses changes to child objects.
 
-1. **You delete the agent identity blueprint or agent identity blueprint principal**: The object is soft deleted and moves to the recycle bin.
-1. **Microsoft Entra triggers automatic cleanup**: A background task soft deletes all child agent identities and agents' user accounts associated with the deleted blueprint.
-1. **Objects are restorable for 30 days**: Soft-deleted objects can be restored within 30 days. After that, they're permanently deleted.
+Before deletion, record the object IDs you might need to recover. After the operation, check each related object independently. If an object was soft deleted, restore that object by its own ID; don't assume that restoring a blueprint or its principal restores related objects.
 
-> [!IMPORTANT]
-> If you restore the agent identity blueprint principal before the background cleanup runs, child agent identities aren't affected. After the cleanup runs, each child identity must be restored individually. Restoring the agent identity blueprint principal doesn't reverse cascade deletions that already occurred.
+For restore steps, see [Delete and restore agent identity objects](howto-delete-agent-identity.md).
 
-### Cascade cleanup in audit logs
+## Audit logs
 
-When the background cleanup task deletes agent identities, the deletions appear in your tenant's [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md). These entries have the following characteristics:
+Review the tenant's [Microsoft Entra audit logs](~/identity/monitoring-health/concept-audit-logs.md) to investigate recorded directory operations. The Graph delete API references don't specify a particular internal cleanup actor or audit sequence for related objects.
 
-| Audit log field | Value |
-|---|---|
-| **Activity** | Delete service principal |
-| **Initiated by (actor)** | Application: *Delete Agent Identities Task* |
-| **Actor App ID** | (blank) |
+## Quota considerations
 
-The actor is shown as an application named **Delete Agent Identities Task** with no app ID. This is expected because the cleanup is performed by an internal Microsoft Entra background process, not by an external application or user.
+The public Graph API references document soft deletion and a 30-day recovery period for agent identities and applications. They don't specify an agent identity-specific quota, a maximum number of agent identities per blueprint, a maximum number of inheritable resource apps, or when quota becomes available after deletion. Check current Microsoft Entra service limits and confirm Agent ID-specific limits before capacity planning. Don't assume that soft deletion immediately frees quota.
 
-> [!NOTE]
-> The cascade cleanup runs asynchronously after the blueprint is deleted. It might not run immediately — there can be a delay of hours or days between the blueprint deletion and the cleanup of child agent identities. Each child identity deletion appears as a separate audit log entry.
-
-## Orphaned objects and quota considerations
-
-When an agent identity blueprint principal is permanently deleted, any associated agent identities and agents' user accounts that weren't deleted become **orphaned objects** and become soft-deleted. Orphaned objects can't authenticate but continue to count toward directory quota until they're permanently deleted after the 30-day retention period expires.
-
-Agent identity deletion follows the same quota rules as other Microsoft Entra objects. Soft-deleted objects continue to count toward quota limits until permanently deleted. For general quota information, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
-
-One consideration specific to agent identities: if you're using app-only permissions and are at the 250 agent identity limit for a blueprint, deleting an agent identity doesn't free up space until it's permanently deleted. By default, permanent deletion happens automatically after the 30-day retention period expires. If you need to free up quota immediately, you can force permanent deletion of soft-deleted agent identities. For steps, see [Permanently delete agent identity objects](howto-delete-agent-identity.md#permanently-delete-agent-identity-objects). Agent identity blueprints also follow this 250 limit when using app-only permissions.
+For general directory limits, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
 ## Related content
 
 - [Create and delete agent identities](create-delete-agent-identities.md)
+- [Delete and restore agent identity objects](howto-delete-agent-identity.md)
 - [Deleting and recovering applications FAQ](../identity/enterprise-apps/delete-recover-faq.yml)
 - [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md)

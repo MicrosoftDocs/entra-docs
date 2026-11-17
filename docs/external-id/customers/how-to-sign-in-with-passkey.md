@@ -5,7 +5,7 @@ ms.service: entra-external-id
 ms.topic: how-to
 author: mmacy-msft
 ms.author: marshmacy
-ms.date: 10/24/2026
+ms.date: 11/11/2026
 ai-usage: ai-assisted
 ms.custom: it-pro, msecd-doc-authoring-1030
 #customer intent: As a developer or IT admin, I want to enable passkey (FIDO2) sign-in for my external tenant so that customers can use phishing-resistant, passwordless authentication.
@@ -13,11 +13,11 @@ ms.custom: it-pro, msecd-doc-authoring-1030
 
 # Sign in with passkeys in Microsoft Entra External ID
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
-
 Passkeys give customers a phishing-resistant way to sign in to consumer applications built on Microsoft Entra External ID. Customers can use face, fingerprint, PIN, or a security key instead of remembering passwords or entering one-time codes.
 
-In an external tenant, you can use passkeys in two ways:
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
+
+For Microsoft-hosted authentication in an external tenant, you can use passkeys in two ways:
 
 - **Passwordless sign-in.** The user enters their email or username. If a passkey is available, they're prompted to sign in with face, fingerprint, PIN, or a security key. The passkey completes first-factor authentication and also satisfies multifactor authentication (MFA) requirements.
 - **Passkey for MFA.** The user signs in with their email or username and password. If a passkey is registered, they complete MFA with the passkey — a phishing-resistant alternative to traditional verification methods. For more about MFA options, see [MFA in external tenants](concept-multifactor-authentication-customers.md).

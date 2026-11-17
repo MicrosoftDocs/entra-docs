@@ -2,10 +2,12 @@
 title: View audit report for Azure resource roles in Privileged Identity Management (PIM)
 description: View activity and audit history for Azure resource roles in Privileged Identity Management (PIM).
 ms.topic: how-to
-ms.date: 04/23/2026
-ms.reviewer: shaunliu
-ms.custom: sfi-image-nochange
+ms.date: 11/17/2026
+ms.reviewer: ilyal
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1032
 #Customer Intent: As an administrator, I want to view activity and audit history for Azure resource roles to monitor privileged access and maintain compliance.
+ms.author: tamimsangrar
+ai-usage: ai-assisted
 ---
 # View activity and audit history for Azure resource roles in Privileged Identity Management
 
@@ -128,6 +130,121 @@ My audit enables you to view your personal role activity.
     :::image type="content" source="media/azure-pim-resource-rbac/audit-event-target-type.png" alt-text="Screenshot showing how to check the target type.":::
 
 Typically, the log event immediately above the approval event is an event for **Add member to role completed** where the **Initiated by (actor)** is the requester. In most cases, you won't need to find the requester in the approval request from an auditing perspective.
+
+<a name="review-session-activity"></a>
+
+<a name="review-session-activity-preview"></a>
+
+## View session activity (preview)
+
+Use Session Analytics to view an identity's PIM role lifecycle and Azure Bastion connection activity for a selected Azure subscription or resource group. The view covers role activation, Bastion access to an Azure Virtual Machine, and role deactivation or expiration. It doesn't show Azure resource operations, such as creating a resource group, or commands run inside a virtual machine.
+
+For graphical recordings, use [Session Recordings](#review-azure-bastion-session-recordings). Recordings have separate setup and viewing requirements.
+
+### Session Analytics prerequisites
+
+Microsoft Entra ID Governance licensing is required for Session Analytics in preview. See [Microsoft Entra ID Governance licensing fundamentals](../licensing-fundamentals.md).
+
+Configure diagnostic settings on each Azure Bastion host you want to monitor to send `BastionAuditLogs` to a Log Analytics workspace. Use a workspace in the same tenant. Only Azure Bastion audit logs need this routing for Session Analytics. You don't need to route additional PIM log sources to the workspace.
+
+Complete [Set up Azure Bastion audit-log collection](#set-up-azure-bastion-audit-log-collection) with the setup roles, then [verify Bastion log collection](#verify-bastion-log-collection). Use the separate roles listed in [View Session Analytics](#view-session-analytics) to view the results.
+
+### Set up Azure Bastion audit-log collection
+
+Configure the destination for each host before viewing its Bastion connection activity. If log collection is already configured, continue to [Verify Bastion log collection](#verify-bastion-log-collection).
+
+For setup with an existing Log Analytics workspace, use these recommended roles:
+
+| Resource | Recommended role | Role assignment scope |
+| --- | --- | --- |
+| Azure Bastion host | **Monitoring Contributor** | The Azure Bastion resource. |
+| Existing Log Analytics workspace | **Monitoring Contributor** | The Log Analytics workspace. |
+
+These are sufficient built-in setup recommendations, not minimum permissions. Custom roles can grant narrower permissions. See [Monitoring Contributor permissions](/azure/azure-monitor/fundamentals/roles-permissions-security#monitoring-contributor) and [Log Analytics workspace permissions](/azure/azure-monitor/logs/manage-access#azure-rbac).
+
+1. Create or reuse a Log Analytics workspace in the same tenant. Follow [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace) for creation steps and permissions.
+1. For each Azure Bastion host you want to monitor, follow [Diagnostic settings in Azure Monitor](/azure/azure-monitor/data-collection/diagnostic-settings) to configure a setting, for example, `SendToLogAnalytics`, that sends `BastionAuditLogs` to the workspace. For the log category and `MicrosoftAzureBastionAuditLogs` table, see [Azure Bastion resource logs](/azure/bastion/monitor-bastion-reference#resource-logs).
+1. Before viewing Bastion activity in PIM, [verify the host's connection records](#verify-bastion-log-collection) in the destination workspace.
+
+### Verify Bastion log collection
+
+Use the **Log Analytics Reader** role on the destination Log Analytics workspace to check for Bastion connection records before viewing Bastion activity in PIM.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. After a user connects through a monitored Bastion host, check for that connection's records in the workspace's `MicrosoftAzureBastionAuditLogs` table. Use `_ResourceId` to identify the Bastion host, `TargetResourceId` to identify the virtual machine, and `SessionStartTime` to check the connection time. For column details, see [MicrosoftAzureBastionAuditLogs](/azure/azure-monitor/reference/tables/microsoftazurebastionauditlogs).
+
+    If the expected record isn't present, verify the host's [diagnostic settings](#set-up-azure-bastion-audit-log-collection), the destination workspace, and the time range you're checking before viewing Bastion activity in PIM.
+
+After verifying log collection, continue to [View Session Analytics](#view-session-analytics).
+
+### View Session Analytics
+
+To view Session Analytics, you need both of the following:
+
+- At least the **Reports Reader** role in Microsoft Entra ID.
+- The **Azure resource and Log Analytics workspace viewing roles**.
+
+If your directory role assignment is eligible, activate it before viewing Session Analytics. See [Microsoft Entra activity-log prerequisites](~/identity/monitoring-health/howto-access-activity-logs.md#prerequisites).
+
+The following Azure resource and workspace viewing roles apply at the listed resource scopes. These are separate from the [setup roles](#set-up-azure-bastion-audit-log-collection).
+
+| Resource | Role | Role assignment scope |
+| --- | --- | --- |
+| Log Analytics workspace | **Log Analytics Reader** | The Log Analytics workspace. |
+| Azure Bastion host | **Reader** | The Azure Bastion resource. |
+| Azure Virtual Machine | **Reader** | The Azure Virtual Machine resource. |
+| Network interface | **Reader** | The Azure Virtual Machine's network interface. |
+| Virtual network | **Reader** | The relevant virtual network, including a peered virtual network where applicable. |
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Open **Privileged Identity Management**, select **Azure resources**, and select the Azure subscription or resource group whose activity you want to view.
+1. Under **Activity**, select **Session Analytics (Preview)**.
+1. Use **Date range** or search by identity, role, or scope to find the activity you want to view.
+
+    :::image type="content" source="media/azure-pim-resource-rbac/session-analytics-activity.png" alt-text="Screenshot of Session Analytics showing a role activation with its scope, start and end times, and filtering controls." lightbox="media/azure-pim-resource-rbac/session-analytics-activity.png":::
+
+1. View the identity, activated role, scope, scope type, and start and end times. Select **Refresh** to reload the results.
+
+<a name="review-azure-bastion-session-recordings"></a>
+
+<a name="review-azure-bastion-session-recordings-preview"></a>
+
+## View Azure Bastion session recordings (preview)
+
+Use Session Recordings to find recording-enabled Azure Bastion hosts in the selected scope and open their graphical recordings.
+
+### Session Recordings prerequisites
+
+- Microsoft Entra ID Governance licensing is required for the PIM Session Recordings view in preview. See [Microsoft Entra ID Governance licensing fundamentals](../licensing-fundamentals.md).
+- Azure Bastion must use the **Premium** SKU with session recording and storage configured. Follow [Record Bastion sessions](/azure/bastion/session-recording) for setup and storage requirements.
+- To view or list recordings in Azure Bastion, you need the **Storage Blob Data Reader** role. Follow the [Bastion recording guide](/azure/bastion/session-recording#prerequisites) for the viewing requirements.
+
+### Azure Bastion recording support
+
+A recording-enabled Azure Bastion Premium host records RDP and SSH connections through that host. It records all connections through the host, not just connections initiated from My Access. The following table summarizes supported and unsupported connection combinations for graphical recording:
+
+| Protocol | Authentication | Client | Graphical recording |
+| --- | --- | --- | --- |
+| **SSH** | Microsoft Entra ID or other supported SSH authentication. | Azure portal (browser). | Supported. |
+| **RDP** | Supported authentication other than Microsoft Entra ID. | Azure portal (browser). | Supported. |
+| **RDP** | Microsoft Entra ID. | Azure portal (browser). | Not supported concurrently with Microsoft Entra ID RDP. |
+| **RDP or SSH** | Any authentication method. | Native client. | Not supported. |
+
+Use this table when selecting a connection method for a recording requirement. For recording setup and considerations, see [Record Bastion sessions](/azure/bastion/session-recording). For Microsoft Entra connection requirements, see [Configure Microsoft Entra ID authentication for Azure Bastion](/azure/bastion/bastion-entra-id-authentication).
+
+<a name="open-session-recordings"></a>
+
+### Session Recordings (Preview)
+
+After recording setup is complete, use the PIM view to locate the host and open its recordings.
+
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Open **Privileged Identity Management** and select **Azure resources**. Use the scope selector to select the **subscription or resource group that contains the Azure Bastion host** whose recordings you want to view.
+1. Under **Activity**, select **Session Recordings (Preview)**.
+
+    :::image type="content" source="media/azure-pim-resource-rbac/session-recordings-hosts.png" alt-text="Screenshot of Session Recordings listing Azure Bastion hosts with recording enabled." lightbox="media/azure-pim-resource-rbac/session-recordings-hosts.png":::
+
+1. Select a Bastion host to open its recordings in the Bastion experience.
 
 ## Next steps
 

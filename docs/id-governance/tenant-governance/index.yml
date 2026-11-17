@@ -5,7 +5,7 @@ summary: Microsoft Entra tenant governance helps organizations discover and gove
 
 metadata:
   description: "Learn how to discover and govern Microsoft Entra tenants, monitor configuration, and evaluate resource changes with policies."
-  ms.date: 10/12/2026
+  ms.date: 11/11/2026
   ms.topic: landing-page
   titleSuffix: Microsoft Entra ID Governance
   ai-usage: ai-assisted
@@ -52,12 +52,24 @@ landingContent:
             url: how-to-enable-tenant-discovery.md
           - text: Set up a governance relationship
             url: how-to-set-up-governance-relationship.md
+          - text: Manage expiration and renewal (Preview)
+            url: how-to-manage-relationship-expiration.md
+          - text: Set up multi-tier relationships (Preview)
+            url: how-to-set-up-multi-tier-governance.md
+          - text: Switch between governed tenants (Preview)
+            url: how-to-switch-governed-tenants.md
           - text: Use delegated administration and monitor activity
             url: how-to-delegated-administration.md
           - text: Configuration management
             url: configuration-management.md
           - text: Create a tenant
             url: how-to-create-tenant.md
+
+  # Card
+  - title: Resource policy guides (preview)
+    linkLists:
+      - linkListType: how-to-guide
+        links:
           - text: Safely deploy resource policy assignments
             url: resource-policy-safe-deployment.md
           - text: Manage resource policies in the Microsoft Entra admin center

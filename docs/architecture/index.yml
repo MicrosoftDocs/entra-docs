@@ -11,6 +11,8 @@ metadata:
   ms.service: entra
   ms.subservice: architecture
   ms.topic: landing-page
+  ai-usage: ai-assisted
+  ms.custom: msecd-doc-authoring-108
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 

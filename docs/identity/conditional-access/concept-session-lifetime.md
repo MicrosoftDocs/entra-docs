@@ -29,6 +29,9 @@ Before exploring how to configure the policy, examine the default configuration.
 
 Sign-in frequency specifies how long a user can access a resource before being asked to sign in again.
 
+> [!NOTE]
+> Microsoft Entra External ID supports sign-in frequency for both Microsoft-hosted and native authentication. For native authentication, the policy prevents token issuance during refresh token grants when reauthentication is required. Your app must handle the failed token refresh and prompt the user to sign in again. For external tenant feature scope, see [Supported Conditional Access features](../../external-id/customers/concept-supported-features-customers.md#conditional-access).
+
 The Microsoft Entra ID default configuration for user sign-in frequency is a rolling window of 90 days. It might seem sensible to ask users for credentials often, but this approach can backfire. Users who habitually enter credentials without thinking might unintentionally provide them to malicious prompts.
 
 Not asking a user to sign back in might seem alarming, but any IT policy violation revokes the session. Examples include a password change, a noncompliant device, or an account being disabled. You can also explicitly [revoke users’ sessions using Microsoft Graph PowerShell](/powershell/module/microsoft.graph.users.actions/revoke-mgusersigninsession). The Microsoft Entra ID default configuration is: **don’t ask users to provide their credentials if the security posture of their sessions hasn’t changed.**

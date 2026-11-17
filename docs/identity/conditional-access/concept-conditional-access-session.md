@@ -4,8 +4,9 @@ description: Learn how session controls in Microsoft Entra Conditional Access po
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 03/24/2026
+ms.date: 11/04/2026
 ms.reviewer: joflore
+ai-usage: ai-assisted
 ---
 # Conditional Access: Session
 
@@ -19,6 +20,8 @@ In a Microsoft Entra External ID [external tenant](/entra/external-id/customers/
 
 - Sign-in frequency
 - Persistent browser session
+
+Sign-in frequency applies to both Microsoft-hosted and native authentication. For native authentication, the policy prevents token issuance during refresh token grants when reauthentication is required. Your app must handle the failed token refresh and prompt the user to sign in again. Persistent browser session controls apply to browser-based sessions. For more information, see [Conditional Access and sign-in frequency](../../identity-platform/concept-native-authentication.md#conditional-access-and-sign-in-frequency).
 
 ## Application enforced restrictions
 

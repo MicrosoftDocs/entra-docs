@@ -1,31 +1,32 @@
 ---
 title: Secure an Amazon Bedrock agent with Microsoft Entra Agent ID
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to use the Microsoft Entra ID Auth SDK (sidecar) to secure an Amazon Bedrock AI agent with its own identity for calling downstream APIs.
+description: Add an identity to an Amazon Bedrock agent with the Microsoft Entra ID Auth SDK sidecar. Then call a protected API.
 ms.topic: how-to
-ms.date: 04/30/2026
+ms.date: 11/06/2026
 ms.reviewer: razi.rais
 ms.custom: msecd-doc-authoring-1012
+ai-usage: ai-assisted
 
 #customer intent: As a developer building AI agents on Amazon Bedrock, I want to secure my agent with Microsoft Entra Agent ID so that it can call downstream APIs with its own identity.
 ---
 
 # Secure an Amazon Bedrock agent with Microsoft Entra Agent ID
 
-This guide shows you how to secure an [Amazon Bedrock](https://aws.amazon.com/bedrock/) agent by using the Microsoft Entra ID Auth SDK (sidecar) to authenticate to downstream APIs. The sidecar runs as a separate container and handles all credential management and token exchange with Microsoft Entra ID. Your agent requests an authorization header from the sidecar, and the sidecar handles the OAuth 2.0 exchange with Microsoft Entra ID.
+This article shows you how to use the Microsoft Entra ID Auth SDK sidecar with an [Amazon Bedrock](https://aws.amazon.com/bedrock/) agent. The sidecar holds the Microsoft Entra blueprint credential, obtains and caches downstream access tokens, and returns authorization headers to the agent. The agent holds the selected AWS credential for Bedrock and passes the authorization header to the protected API.
 
 ## Prerequisites
 
 Before you begin, make sure you have:
 
 - A Microsoft Entra tenant.
-- An Azure subscription.
+- An Azure subscription for the Microsoft Entra and optional Azure deployment resources.
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (macOS/Windows) or Docker Engine with Compose v2 (Linux).
 - [PowerShell 7+](/powershell/scripting/install/installing-powershell).
 - [Azure CLI](/cli/azure/install-azure-cli).
 - [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 - An AWS account with Bedrock model access enabled for Anthropic Claude 3 Haiku (or your preferred model). Enable access in the AWS Bedrock console under **Model access** > **Manage model access**.
-- **Global Administrator** role for first-time Microsoft Entra setup. Use [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure) to activate this role just-in-time.
+- **Global Administrator** role for the first-time Microsoft Entra setup and consent steps. Use [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure) to activate this role only when needed.
 
 ## Clone the sample repository
 
@@ -36,9 +37,9 @@ Before you begin, make sure you have:
    cd entra-agentid-samples/sidecar/aws
    ```
 
-## Architecture
+## Review the architecture
 
-The Microsoft Entra ID Auth SDK (sidecar) sits between your agent and Microsoft Entra ID. The agent never talks to Microsoft Entra ID directly and never manages credentials. It asks the sidecar for an `Authorization` header to call a downstream API. Amazon Bedrock handles LLM inference separately, without having to worry about identity.
+The Microsoft Entra ID Auth SDK sidecar is the token broker between the agent and Microsoft Entra ID. The agent requests an `Authorization` header from the sidecar and passes the header to the downstream API. Bedrock authentication remains separate: the agent container uses the AWS credential that you configure for model inference.
 
 :::image type="content" source="media/integrate-aws-bedrock-agent/bedrock-sidecar-token-flow.png" alt-text="Diagram showing the token flow between the Bedrock agent, sidecar, Microsoft Entra ID, and Weather API." lightbox="media/integrate-aws-bedrock-agent/bedrock-sidecar-token-flow.png":::
 
@@ -54,9 +55,10 @@ The request flows through these steps:
 1. The Flask app sends the query to AWS Bedrock (Claude) via the LangGraph ReAct agent.
 1. When Claude decides it needs weather data, it calls the `get_weather` tool.
 1. The tool asks the sidecar for an authorization header by calling `GET /AuthorizationHeader?AgentIdentity={agentId}`.
-1. The sidecar authenticates to Microsoft Entra ID using OAuth 2.0 (client credentials or on-behalf-of (OBO) exchange).
-1. Microsoft Entra ID returns the requested token (TR) to the sidecar.
-1. The agent calls the weather API with `Authorization: Bearer TR`.
+1. The sidecar authenticates to Microsoft Entra ID by using a client credential. For OBO, it also exchanges the signed-in user's token.
+1. Microsoft Entra ID returns the downstream access token (TR) to the sidecar.
+1. The sidecar returns an authorization header to the agent.
+1. The agent passes the authorization header to the weather API.
 1. The weather API validates TR and returns the weather JSON response.
 
 ### Understand the token flow
@@ -67,7 +69,7 @@ Three tokens are involved in the identity exchange:
 |---|---|---|---|
 | **Tc** | Signed-in user | OBO flow only | MSAL.js in the browser |
 | **T1** | Blueprint app | Both flows | Sidecar (client credentials) |
-| **TR** | Agent (downstream API) | Both flows | Sidecar-app-only (autonomous) or OBO exchange |
+| **TR** | Agent identity for the downstream API | Both flows | Sidecar app-only (autonomous) or OBO exchange |
 
 In the autonomous flow, the sidecar uses client credentials to get T1, then exchanges it for TR scoped to the downstream API. In the OBO flow, the sidecar also receives Tc (the user's token) and performs an OBO exchange to get TR that acts on behalf of the signed-in user.
 
@@ -90,10 +92,10 @@ The sample supports three ways to authenticate to Amazon Bedrock. Choose the tie
 
 - **Temporary STS credentials:** Best for local development with AWS SSO. Set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN` in your `.env` file. These credentials expire after approximately one hour.
 - **Bedrock API key:** Best for demos and workshops. Set `AWS_BEARER_TOKEN_BEDROCK` in your `.env` file. Scoped to Bedrock only with a configurable lifetime.
-- **OIDC federation:** Best for production deployments on Azure App Service. Uses `AWS_ROLE_ARN` and `AWS_WEB_IDENTITY_TOKEN_FILE` set by the platform. No secrets stored anywhere.
+- **OIDC federation:** Use workload identity federation instead of a stored AWS secret. The Azure Container Apps deployment configures `AWS_ROLE_ARN`, `AWS_WEB_IDENTITY_TOKEN_FILE`, and a token-refresher container.
 
 > [!TIP]
-> For production deployments, see the [Azure App Service deployment guide](https://github.com/microsoft/entra-agentid-samples/blob/dev/sidecar/aws/DEPLOY-AZURE-APP-SERVICE.md) for step-by-step instructions on setting up OIDC federation between Azure and AWS with zero stored secrets.
+> For a deployment that uses workload identity federation between Azure and AWS, see the [Azure Container Apps deployment guide](https://github.com/microsoft/entra-agentid-samples/blob/dev/deploy/azure/container-apps/aws/README.md). This is a separate deployment path. Follow its configuration and verification steps rather than reusing the local Docker Compose settings unchanged.
 
 ## Select a Bedrock model
 
@@ -111,16 +113,16 @@ Override the default by setting `BEDROCK_MODEL_ID` in your `.env` file. You must
 
 ## Create the Microsoft Entra objects (first-time setup)
 
-If you already have a `.env` file from a previous run with `BLUEPRINT_APP_ID` populated, skip to [Configure environment variables](#configure-environment-variables).
+If you're reusing a previous setup, confirm that its blueprint, agent identity, required permissions, and sidecar credential are still valid before skipping to [Configure environment variables](#configure-environment-variables). A populated `BLUEPRINT_APP_ID` alone doesn't establish readiness. Confirm the SPA configuration too if you plan to use OBO.
 
-Run the following commands once per tenant to create the Blueprint app, Agent ID, and the SPA app used for OBO sign-in.
+Run the following commands once per tenant to create the agent identity blueprint, agent identity, and the SPA app used for OBO sign-in.
 
-1. Create the Blueprint app and Agent ID for the autonomous flow by following the PowerShell workflow in [Create an agent identity blueprint](create-blueprint.md) and [Create agent identities](create-delete-agent-identities.md). At the end you have:
+1. Create the agent identity blueprint and agent identity for the autonomous flow by following the PowerShell workflow in [Create an agent identity blueprint](create-blueprint.md) and [Create agent identities](create-delete-agent-identities.md). At the end you have:
 
-   - **`TENANT_ID`:** Your Microsoft Entra tenant.
-   - **`BLUEPRINT_APP_ID`:** Blueprint app registration.
-   - **`BLUEPRINT_CLIENT_SECRET`:** Client secret for the Blueprint.
-   - **`AGENT_CLIENT_ID`:** The Agent ID created from the Blueprint.
+   - **`TENANT_ID`:** Your Microsoft Entra tenant ID.
+   - **`BLUEPRINT_APP_ID`:** Client ID of the blueprint app registration.
+   - **`BLUEPRINT_CLIENT_SECRET`:** Client secret that the sidecar uses for local development.
+   - **`AGENT_CLIENT_ID`:** Client ID of the agent identity created from the blueprint.
 
 1. (Optional) Create the SPA app and configure OBO. This step is required only if you want to use the OBO identity flow:
     
@@ -155,7 +157,7 @@ The sidecar supports multiple credential types through the `AzureAd__ClientCrede
 - **`KeyVault`:** Certificate from Azure Key Vault.
 - **`StoreWithThumbprint`:** Certificate from local machine store.
 
-1.  Create a local `.env` configuration file from the included template. This file stores your tenant, app, and AWS credentials:
+1. Create a local `.env` configuration file from the included template. For local development, this file supplies the sidecar with its Microsoft Entra credential and the agent container with its AWS credential:
 
    **Bash:**
 
@@ -172,9 +174,9 @@ The sidecar supports multiple credential types through the `AzureAd__ClientCrede
 1. Set the following variables in your `.env` file:
 
    - **`TENANT_ID`:** Your Microsoft Entra tenant ID.
-   - **`BLUEPRINT_APP_ID`:** Blueprint app registration. The sidecar authenticates as this app.
-   - **`BLUEPRINT_CLIENT_SECRET`:** Blueprint client secret (local development only).
-   - **`AGENT_CLIENT_ID`:** Your Agent ID. Appears as the `AgentIdentity` query parameter.
+   - **`BLUEPRINT_APP_ID`:** Client ID of the blueprint app registration. The sidecar authenticates as this app.
+   - **`BLUEPRINT_CLIENT_SECRET`:** Blueprint client secret held by the sidecar for local development.
+   - **`AGENT_CLIENT_ID`:** Client ID of your agent identity. The agent passes it in the `AgentIdentity` query parameter.
    - **`CLIENT_SPA_APP_ID`:** SPA app ID used by MSAL.js for browser sign-in (OBO only).
    - **`AWS_REGION`:** AWS region for Bedrock, such as `us-east-2`.
    - **`BEDROCK_MODEL_ID`:** Model ID. Default: `us.anthropic.claude-3-haiku-20240307-v1:0`.
@@ -225,11 +227,15 @@ The sidecar supports multiple credential types through the `AzureAd__ClientCrede
    - **Execution Mode:** `Direct` (skip LLM) or `Bedrock` (LangChain ReAct agent on Claude).
    - **Identity Flow:** `Autonomous` (app-only token) or `OBO` (acts for a signed-in user).
 
+   For the first check, use **Direct** with **Autonomous** to test the sidecar and protected API independently of Bedrock and browser sign-in. After that succeeds, select Bedrock or OBO for the scenario you need.
+
 1. If you select **OBO**, select **Sign in** to authenticate through the MSAL.js popup.
 
 1. Type a query like *"Weather in Dallas?"* and select **Send**.
 
 1. Watch the **Identity Trace** panel on the right side for a step-by-step breakdown of every token exchange and API call. The panel shows color-coded JWT cards for each token (Tc, T1, TR) with decoded claims.
+
+Confirm that the protected weather API call succeeds and returns weather data before proceeding. A running container or `bedrock_available: true` verifies neither sidecar token acquisition nor API authorization. Keep token-bearing traces local and don't include them in screenshots or support requests.
 
 ## Troubleshoot common issues
 
@@ -260,6 +266,8 @@ When you finish testing, stop the local containers to free system resources. Cho
 > [!IMPORTANT]
 > `docker compose down` removes only the local Docker containers. Microsoft Entra objects (agent blueprint, Agent ID, SPA app registration) are tenant-side state and persist. Delete them manually in the Microsoft Entra admin center if you no longer need them.
 
+Delete only objects created for this test after confirming that no other sample or agent uses them. Remove the local `.env` file when you no longer need its credentials.
+
 ```bash
 # Stop containers but keep volumes and images for faster restarts
 docker compose down
@@ -271,5 +279,5 @@ docker compose down -v --rmi all
 ## Related content
 
 - [Authentication with Microsoft Entra ID Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md)
-- [Integrate third-party agents with Microsoft Entra Agent ID](configure-third-party-agents.md)
-- [Microsoft Entra ID Auth SDK (sidecar) container image](https://mcr.microsoft.com/en-us/artifact/mar/entra-sdk/auth-sidecar)
+- [Choose an integration path for an agent](choose-agent-integration-path.md)
+- [Microsoft Entra ID Auth SDK (sidecar) container image tags](https://mcr.microsoft.com/v2/entra-sdk/auth-sidecar/tags/list)

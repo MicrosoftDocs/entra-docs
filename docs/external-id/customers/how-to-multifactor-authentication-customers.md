@@ -2,20 +2,22 @@
 title: Add multifactor authentication (MFA) to a customer app
 description: Learn how to add multifactor authentication (MFA) methods, including email one-time passcode, SMS, and time-based one-time password (TOTP), to a customer app.
 ms.topic: how-to
-ms.date: 09/02/2026
-ms.custom: it-pro, sfi-image-nochange
+ms.date: 11/11/2026
+ms.custom: it-pro, sfi-image-nochange, msecd-doc-authoring-1030
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
 ---
 
 # Add multifactor authentication (MFA) to an app
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+Multifactor authentication (MFA) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in.
 
-Multifactor authentication (MFA) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support the following methods for authentication as a second factor:
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
+
+The following user experiences describe Microsoft-hosted authentication. Tenant policy configuration is shared, but runtime method and enrollment support varies by integration.
 
 - **Email one-time passcode**: After the user signs in with their email and password, they are prompted for a passcode that is sent to their email. To allow the use of email one-time passcodes for MFA, set your local account authentication method to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in won't be able to use it for MFA secondary verification.
-- **SMS-based authentication**: While SMS isn't an option for first factor authentication, it's available as a second factor for MFA. Users who sign in with email and password, email and one-time passcode, or social identities like Google, Facebook or Apple, are prompted for second verification using SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA to confirm they're not a robot before sending the SMS code for verification. It also provides safeguards against [telephony fraud](how-to-region-code-opt-in.md). SMS is an add-on feature. Your tenant must be [linked](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription) to an active, valid subscription. [Learn more](concept-multifactor-authentication-customers.md#sms-based-authentication)
+- **SMS-based authentication**: While SMS isn't an option for first factor authentication, it's available as a second factor for MFA. Users who sign in with email and password, email and one-time passcode, or social identities like Google, Facebook or Apple, are prompted for second verification using SMS. SMS MFA includes automatic fraud checks. On Microsoft-hosted pages, these checks can require a CAPTCHA before an SMS code is sent. It also provides safeguards against [telephony fraud](how-to-region-code-opt-in.md). SMS is an add-on feature. Your tenant must be [linked](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription) to an active, valid subscription. [Learn more](concept-multifactor-authentication-customers.md#sms-based-authentication)
 - **Time-based one-time password (TOTP)**: Users register Microsoft Authenticator or a supported third-party authenticator app. When MFA is required, they enter the temporary verification code from the app.
 - **Passkey (FIDO2)**: Passkeys provide phishing-resistant, passwordless authentication that satisfies MFA in a single gesture (face, fingerprint, PIN, or security key). Users can also use a passkey as a primary, passwordless sign-in method. For setup, see [Sign in with passkeys](how-to-sign-in-with-passkey.md).
 

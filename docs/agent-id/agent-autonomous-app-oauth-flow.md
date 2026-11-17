@@ -3,14 +3,17 @@ title: Agent autonomous app OAuth flow - App-only protocol
 description: Learn how agent identities operate autonomously without user context using app-only protocol with OAuth 2.0 client credentials flows.
 titleSuffix: Microsoft Entra Agent ID
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 11/03/2026
 ms.reviewer: jmprieur
+ai-usage: ai-assisted
 #Customer intent: As a developer implementing autonomous agent scenarios, I want to understand the app-only protocol so that I can enable agents to act independently using client credentials flows.
 ---
 
 # Agent autonomous app OAuth flow - App-only protocol
 
-App-only operations enable agent identities to act autonomously without user context, using client credentials flows. The agent identity (actor) is used to obtain a token for itself (subject). To obtain this token, the agent identity blueprint impersonates the agent identity. Subjects use app-only access but are supposed to be only assigned the permissions necessary. Tenant administrators grant all permissions.
+App-only operations enable agent identities to act autonomously without user context, using client credentials flows. The agent identity is both the actor and subject. An administrator grants the application permissions required for the operation.
+
+The protocol below describes **multi-instance** Agent IDs, where the blueprint impersonates a child identity. A single-instance Agent ID instead requests a token directly with the shared client ID and a credential configured on the blueprint. It doesn't use the intermediate T1 token or `fmi_path`. For that request, see [Request an app-only token for a single-instance Agent ID](authenticate-single-instance-agent.md#request-an-app-only-token).
 
 Agent identity blueprints can only impersonate their child agent identities. Only a single agent identity blueprint can impersonate an agent identity. An agent identity blueprint can impersonate many agent identities, but no agent identity can be owned by multiple blueprints. Agent identities are always single-tenant regardless of their parent Agent identity blueprint's tenancy model. Each agent identity operates within one tenant's security and policy boundaries.
 
@@ -57,7 +60,7 @@ The following are the protocol steps.
     &grant_type=client_credentials
     ```
 
-1. Microsoft Entra ID issues an app-only resource access token (TR) to the agent identity after validating T1. Microsoft Entra ID validates that T1 (aud) == Agent identity parent app == Agent identity blueprint
+1. Microsoft Entra ID issues an app-only resource access token (TR) to the agent identity after validating T1. T1's audience is the token-exchange resource requested in step 1, not the blueprint. Microsoft Entra ID validates that T1 is bound to the blueprint and that its subject resolves to the child agent identity performing the exchange. The resource token represents the agent identity, not the blueprint.
 
 ## Sequence diagram
 

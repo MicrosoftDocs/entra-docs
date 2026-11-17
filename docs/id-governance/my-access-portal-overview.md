@@ -1,11 +1,14 @@
 ---
 title: What is the My Access portal? - Microsoft Entra
-description: A description of the My Access portal where users can manage access within Microsoft Entra.
+description: Learn how the My Access portal helps you request and review access, activate eligible roles, and connect to supported resources in Microsoft Entra.
+ms.author: tamimsangrar
 ms.topic: overview
-ms.date: 12/10/2024
+ms.date: 11/17/2026
+ms.custom: msecd-doc-authoring-1032
+ai-usage: ai-assisted
 
 
-#Customer Intent: As a user, I want to understand the My Access portal so that I can manage my access to resources within Microsoft Entra.
+#customer intent: As a user, I want to understand the My Access portal so that I can manage my access to resources within Microsoft Entra.
 ---
 
 
@@ -20,6 +23,8 @@ Users access the My Access portal to:
 - Review access for themselves
 - Review access for users
 - Manage and review access for agents managed
+- Activate eligible role assignments with Microsoft Entra Privileged Identity Management (PIM).
+- View active and eligible role assignments, activate eligible roles when needed, and connect to Azure Virtual Machines and supported Azure Arc-enabled Linux servers.
 
 Administrators, via the Microsoft Entra admin center, can configure:
 
@@ -62,13 +67,39 @@ For more information about self-reviews, see: [Review your access to resources i
 
 For more information about reviews for others, see: [Review access to groups & applications in access reviews](perform-access-review.md).
 
+<a name="activate-eligible-roles"></a>
+
+<a name="activate-eligible-role-assignments"></a>
+
+## Activate eligible role assignments (Preview)
+
+Use [**Roles**](https://aka.ms/pim/roles) in the My Access portal to activate your eligible role assignments in Microsoft Entra Privileged Identity Management (PIM). You can activate Microsoft Entra roles, Azure resource roles, and group membership or ownership when you need access.
+
+Role activation through **Roles** is in preview.
+
+For activation instructions, see:
+
+- [Activate eligible Microsoft Entra roles](privileged-identity-management/pim-how-to-activate-role.md?pivots=my-access#activate-a-microsoft-entra-role-in-my-access).
+- [Activate eligible Azure resource roles](privileged-identity-management/pim-resource-roles-activate-your-roles.md?pivots=my-access#activate-an-azure-resource-role-in-my-access).
+- [Activate group membership or ownership](privileged-identity-management/groups-activate-roles.md?pivots=my-access#activate-group-membership-or-ownership-in-my-access).
+
+<a name="connect-to-resources"></a>
+
+## Connect to resources (Preview)
+
+Use [**Resource Connections**](https://aka.ms/pim/resource-connections) in the My Access portal to view your active and eligible role assignments for Azure Virtual Machines and supported Azure Arc-enabled Linux servers, activate eligible roles when needed, and connect using an available connection method.
+
+For setup requirements and connection instructions, see [Connect to an Azure Virtual Machine](privileged-identity-management/pim-connect-virtual-machine-my-access.md).
+
 ## Manage agents
 
 In the My Access portal, you can view a list of agent identities that you own and sponsor. For more about managing and sponsoring agent identities, see: [Administrative relationships for agent identities (Owners, sponsors, and managers)](../agent-id/agent-owners-sponsors-managers.md).
 
 
-You're able to manage, approve, review, and enable the agent identities. For all agent identities you own or sponsor you're also able to see general information such as level of access, and agent identities activity. For more information on managing agent identities using the My Access portal, see: [Manage Agent](../agent-id/manage-agent.md).
+You're able to manage, approve, review, and enable the agent identities. For all agent identities you own or sponsor you're also able to see general information such as level of access, and agent identities activity. For more information on managing agent identities using the My Access portal, see: [Manage Agent](../agent-id/manage-agent-identities-end-user.md).
 
-## Next step
+<a name="next-step"></a>
+
+## Next steps
 
 - [What are access reviews? - Microsoft Entra](access-reviews-overview.md)

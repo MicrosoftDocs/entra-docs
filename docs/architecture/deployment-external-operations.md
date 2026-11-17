@@ -3,7 +3,8 @@ title: Microsoft Entra External ID deployment guide for security operations
 description: Learn about edge protection, domains, subscriptions, consumer app security, and fraud tactics in security operations for Microsoft Entra External ID.
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 06/27/2026
+ms.date: 11/13/2026
+ms.custom: msecd-doc-authoring-1030
 ms.reviewer: gasinh
 
 #customer intent: I need to understand subscriptions and billing, consumer app security, and how to prevent fraud tactics in Microsoft Entra External ID. 
@@ -23,7 +24,7 @@ Key topics covered include:
 
 Special attention goes to processes to safeguard the sign-up and sign-in journeys from automated fraud, such as credential stuffing and International Revenue Share Fraud (IRSF). Find information on the importance of monitoring and alerting, continuous validation, usage tracking, and anomaly detection. These are actions essential for early threat detection and response. See the following diagram of a security operations flow.
 
-   [ ![Diagram of a security operations flow.](media/deployment-external/security-operations.png)](media/deployment-external/security-operations-expanded.png#lightbox)
+   [![Diagram of a security operations flow.](media/deployment-external/security-operations.png)](media/deployment-external/security-operations-expanded.png#lightbox)
 
 ## Tenant security with edge protection from DDoS and bot attacks
 
@@ -47,7 +48,7 @@ Learn more about [custom URL domains in external tenants](../external-id/custome
 
 In the following diagram, see the custom domain example.
 
-   [ ![Diagram of a custom domain.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
+   [![Diagram of a custom domain.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
 
 ## WAF configuration considerations
 
@@ -71,7 +72,7 @@ CIAM applications authenticate with Microsoft Entra External ID using protocols 
 |Security considerations|Details|
 |---|---|
 |Prefer certificates over secrets|When possible, use X.509 certificate credentials instead of password secrets. While secrets are easier to set up, certificates offer stronger security and can be the default method to acquire tokens.</br> Currently, managed identities and workload identities aren't available in Microsoft Entra External ID.|
-|Enforce credential usage policies|Configure application authentication method policies to restrict or block the use of secrets. If you use secrets, set expirations to minimize exposure.|
+|Manage credential lifetimes|Application management policies aren't available in external tenants. If you use client secrets, set expirations to minimize exposure.|
 |Avoid credentials on public client apps|For applications that are public client apps, ensure no credentials are configured on the app registration. An example is apps with user sign-in via public endpoints. These apps shouldn't require client secrets or certificates.|
 |Audit credentials regularly|To ensure credentials are used, and haven't expired, periodically review credentials assigned to applications. Remove stale or unused credentials, avoid credential sharing between applications, and limit credentials per app.|
 |Scan application code for sensitive data|To detect application credentials, use static analysis tools like a credential scanner. Use the tool for other sensitive information in source code. Build artifacts before they're committed or deployed.|
@@ -90,7 +91,7 @@ An important component of deployment planning is securing custom authentication 
 
 |Consideration|Details|
 |---|---|
-|Scale|- Match RPS coming from Microsoft Entra External ID </br> - Respond within the timeout window with HTTP codes as per custom extensions guidance |
+|Scale|- Match RPS coming from Microsoft Entra External ID </br> - Respond within the timeout window with HTTP codes as per custom extensions guidance|
 |Security|- Ensure requests come from Microsoft Entra External ID. Microsoft datacenter ranges are documented. To lock the incoming requests, use ranges.</br> - To protect API from attacks such as DDoS, use a WAF in front of REST API. This effort ensures attacks are mitigated if REST API endpoint is targeted.</br> - To raise alerts for REST API or API experiencing security related challenges such as DDoS, use audits and logging with monitoring.|
 |Resiliency|- Scale up and down seamlessly </br> - To ensure a low or no effect on quality of service, recover REST API service and fault tolerance|
 
@@ -104,11 +105,9 @@ In this section, learn how to protect users from sign-up fraud. The user flow de
 |Reputation email filtering|To mitigate the risk of fraudulent email accounts, implement domain validation. Restrict sign-up from email addresses with poor reputations, or known associations with malicious activity. Microsoft Entra External ID supports custom extensions during sign-up. To evaluate the reputation of the email domain, invoke a REST API during the sign-up flow. Based on the reputation score, the system allows or blocks the sign-up request.|
 |IP email filtering|To reduce the risk of fraudulent account creation, we advise you to restrict sign-ups from anonymous proxies or IP addresses tied to Autonomous System Numbers (ASNs) outside your organization's business regions. This strategy helps reduce exposure to high-risk or untrusted traffic sources.</br> Microsoft Entra External ID supports custom authentication extensions to invoke during the sign-up process. Use these extensions to call a REST API to assess the reputation or geolocation of the IP address initiating the sign-up request. Use this process during email one-time password (OTP) verification.|
 |Excessive OTPs from one IP address or ASN|Implement monitoring and alerting when a high volume of email OTP requests originates from the same IP address, ASN, or location. For example, trigger an alert if email OTPs come from a single IP or similar geo-coordinates in a short time.|
-|Sign-up protection (Security Store)|Use Microsoft-built native integrations with [Arkose Labs](../external-id/customers/how-to-integrate-fraud-protection.md?pivots=arkose) and [HUMAN Security](../external-id/customers/how-to-integrate-fraud-protection.md?pivots=human) to detect and block bot-driven sign-ups and fake account creation. Configured through the Microsoft Security Store in the Microsoft Entra admin center.|
+|Sign-up protection (Security Store)|Use Microsoft-built integrations with [Arkose Labs](../external-id/customers/how-to-integrate-fraud-protection.md?pivots=arkose) and [HUMAN Security](../external-id/customers/how-to-integrate-fraud-protection.md?pivots=human) to detect and block bot-driven sign-ups and fake account creation in Microsoft-hosted sign-up flows. Configured through the Microsoft Security Store in the Microsoft Entra admin center.|
 
-To strengthen defenses, Microsoft Entra External ID integrates with industry-leading non-Microsoft fraud protection providers through the [Microsoft Security Store](https://securitystore.microsoft.com). Native, Microsoft-built integrations are available for **Arkose Labs** and **HUMAN Security**, which deliver comprehensive bot detection and fake-account-prevention capabilities during the sign-up flow. For configuration steps, see [Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection](../external-id/customers/how-to-integrate-fraud-protection.md).
-
-For native authentication API flows, see [Tutorial: Integrate third-party bot protection with Native API sign-up flows](../external-id/customers/tutorial-third-party-bot-protection-native-api-sign-up.md).
+For Microsoft-hosted sign-up flows, Microsoft Entra External ID integrates with non-Microsoft fraud protection providers through the [Microsoft Security Store](https://securitystore.microsoft.com). Microsoft-built integrations are available for **Arkose Labs** and **HUMAN Security** to detect bots and prevent fake-account creation. For configuration steps, see [Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection](../external-id/customers/how-to-integrate-fraud-protection.md).
 
 ### International Revenue Share Fraud
 
@@ -121,8 +120,8 @@ As another layer of defense, we recommend you review the following table to cons
 
 |Security control|Description|
 |---|---|
-|WAF: Bot protection| To trigger OTP messages during sign-up, enable the frontline of defense against IRSF attacks, typically driven by bots that generate high-volume traffic.|
-|Regions that require MFA telephony verification opt-in |Help prevent telephony-based fraud: Microsoft doesn't automatically enable phone-based MFA verification for some country or region codes. To support sign-in from these regions, an administrator submits a support request to opt in and enable telephony verification for those codes. To allow traffic from deactivated regions, activate them with the Microsoft Graph API. For more information, see [Regional opt-in for MFA telephony verification with external tenants](../external-id/customers/how-to-region-code-opt-in.md).|
+|WAF: Bot protection|To trigger OTP messages during sign-up, enable the frontline of defense against IRSF attacks, typically driven by bots that generate high-volume traffic.|
+|Regions that require MFA telephony verification opt-in|Help prevent telephony-based fraud: Microsoft doesn't automatically enable phone-based MFA verification for some country or region codes. To support sign-in from these regions, an administrator submits a support request to opt in and enable telephony verification for those codes. To allow traffic from deactivated regions, activate them with the Microsoft Graph API. For more information, see [Regional opt-in for MFA telephony verification with external tenants](../external-id/customers/how-to-region-code-opt-in.md).|
 |Excessive SMS OTPs from one IP address or ASN.|Implement monitoring and alerting for a high volume of SMS one-time password (OTP) requests originating from the same IP address, ASN, or geographic location. For example, trigger an alert for excessive SMS OTPs from a single IP or geo-coordinates in a short time. This scenario can indicate an IRSF attack.</br> To improve accuracy and reduce noise, refine the alert criteria. Focus on unsuccessful OTP requests by users. In IRSF scenarios, attackers typically don't complete authentication. Then want to generate SMS traffic to phone numbers for financial gain. Use this approach to see potentially malicious activity while minimizing false positives.|
 
 ## Sign-in protection: Account takeover
@@ -147,7 +146,7 @@ Microsoft Entra External ID stores sign-in and audit logs for 30 days. For reten
 
 Configure Azure Monitor as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor. For more information, see [Set up Azure Monitor in external tenants](../external-id/customers/how-to-azure-monitor.md).
 
-   [ ![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-expanded.png#lightbox)
+   [![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-expanded.png#lightbox)
 
 This configuration requires projecting a [Microsoft Azure resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) with the resources from the enterprise tenant to the Microsoft Entra tenant.
 
@@ -169,7 +168,7 @@ Requests for authentication and identity come with a session correlation ID. Whe
 
 The following diagram illustrates monitoring and alerting setup.
 
-   [ ![Diagram of the setup for monitoring and alerting.](media/deployment-external/alerting-setup.png)](media/deployment-external/alerting-setup-expanded.png#lightbox)
+   [![Diagram of the setup for monitoring and alerting.](media/deployment-external/alerting-setup.png)](media/deployment-external/alerting-setup-expanded.png#lightbox)
 
 ### Service degradation and failure alerting setup
 
@@ -181,23 +180,23 @@ In large systems, some transactions fail. Incomplete identity experiences, somet
 |Sign-in||
 |Sign-up||
 |MFA by type: Email OTP, telephony OTP||
-|Browser type: Google Chrome, [Microsoft Edge](https://www.microsoft.com/edge/?url=https://aka.ms/MicrosoftSupport1&cs=3896570988&form=MA13FJ), </br>Mozilla Firefox, Apple Safari|
-|Mobile operating system: Android, iOS ||
+|Browser type: Google Chrome, [Microsoft Edge](https://www.microsoft.com/edge/?url=https://aka.ms/MicrosoftSupport1&cs=3896570988&form=MA13FJ), </br>Mozilla Firefox, Apple Safari||
+|Mobile operating system: Android, iOS||
 
 ### Continuous system validation
 
-Changes in environments are inevitable. An automated continuous validation environment helps catch issues caused by changes. You can use the same syntactic monitoring infrastructure to set up this validation automation.
+Changes in environments are inevitable. An automated continuous validation environment helps catch issues caused by changes. You can use the same synthetic monitoring infrastructure to set up this validation automation.
 
 Synthetic transactions can reference applications and APIs used for token acquisition, validation, and integration components such as API managers and service buses. We recommend you maintain versions of supported services, operating systems, and runtime environments. Each component continuously reports test success or failure. This action ensures identity services availability and early detection of potential failures.
 
 ### Dashboards: Operational telemetry and security insights
 
-Microsoft Entra External ID has built-in dashboards with useful telemetry from key areas such as authentication trends, MFA usage, and protections related to SMS verification. Use insights to maintain visibility into your identity system health and threat posture. For your deployment and operational strategy, we recommended you incorporate regular metrics monitoring. Detect anomalies, assess risk exposure, and ensure the effectiveness of security controls. Use the following table to see metrics and details. For more information, see [Gain insights into your app users' activity](../external-id/customers/how-to-user-insights.md).
+Microsoft Entra External ID has built-in dashboards with useful telemetry from key areas such as authentication trends, MFA usage, and protections related to SMS verification. Use insights to maintain visibility into your identity system health and threat posture. For your deployment and operational strategy, we recommend you incorporate regular metrics monitoring. Detect anomalies, assess risk exposure, and ensure the effectiveness of security controls. Use the following table to see metrics and details. For more information, see [Gain insights into your app users' activity](../external-id/customers/how-to-user-insights.md).
 
 |Metric|Details|
 |---|---|
-|Authentications|The Authentications dashboard summary has daily and monthly authentications in the tenant.</br> - Daily authentications for 30 days </br> - Daily authentications by operating system </br> - Monthly authentications for 12 months, by location |
-|MFA usage|The MFA Usage dashboard summary has monthly MFA authentication performance for applications. View the following trends: </br> - Users registered for MFA </br> - MFA types used, with success and failure count for 12 months </br> - CAPTCHA triggers and activity for 30 days |
+|Authentications|The Authentications dashboard summary has daily and monthly authentications in the tenant.</br> - Daily authentications for 30 days </br> - Daily authentications by operating system </br> - Monthly authentications for 12 months, by location|
+|MFA usage|The MFA Usage dashboard summary has monthly MFA authentication performance for applications. View the following trends: </br> - Users registered for MFA </br> - MFA types used, with success and failure count for 12 months </br> - CAPTCHA triggers and activity for 30 days|
 |Telecom|To understand telecom MFA performance, use the dashboard metrics for actionable insights into SMS MFA usage. Note the following states.</br>**Allowed** - Users who received an SMS during sign-in or sign-up.</br>**Blocked** - Users who didn't receive an SMS. If telecom MFA is blocked, users are notified to try alternate authentication.</br>**Challenged** - This feature is for unusual behavior. See it when a CAPTCHA challenge appears before the SMS goes. The following metrics also appear: </br> - **Users unable to complete CAPTCHA** - Track users that didn't pass the CAPTCHA challenge. If warranted, you can assess if the CAPTCHA is too difficult for legitimate users. Make needed adjustments to balance security and accessibility.</br> - **Users that completed CAPTCHA** - Review users that completed the CAPTCHA challenge. Get insight into how CAPTCHA protects users from automated attacks while it enables legitimate users to authenticate.|
 
 ## Microsoft Entra External ID core offer and add-ons
@@ -209,10 +208,10 @@ See more information on the [pricing structure and billing model for Microsoft E
 ### Costs and analysis
 View incurred costs on the cost analysis area of the subscription/resource group linked to the Microsoft Entra External ID tenant. If the MAU count is below the free tier, the bill is $0. Usage data, below the free tier, appears in the cost analysis.
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com), for the Microsoft External ID tenant, use the usage and insight dashboard to view utilization details, even when usage is below the free tier.
+In the [Microsoft Entra admin center](https://entra.microsoft.com), for the Microsoft Entra External ID tenant, use the usage and insight dashboard to view utilization details, even when usage is below the free tier.
 
 * Learn how to [list monthly activeUsers in Microsoft Graph](/graph/api/monthlyuserinsightmetricsroot-list-activeusers?view=graph-rest-beta&tabs=http&preserve-view=true).
-* See the graph resource types in [dailyUserInsigntMetricsRoot resource type](/graph/api/resources/dailyuserinsightmetricsroot?view=graph-rest-beta&preserve-view=true).
+* See the graph resource types in [dailyUserInsightMetricsRoot resource type](/graph/api/resources/dailyuserinsightmetricsroot?view=graph-rest-beta&preserve-view=true).
 
 
    >[!NOTE] 
@@ -222,9 +221,9 @@ The following table correlates metric and a Microsoft Graph reference.
 
 |Metric|Graph reference|Description|
 |---|---|---|
-|activeUsers|[activeUsersMetric](/graph/api/resources/activeusersmetric?view=graph-rest-beta&preserve-view=true) ||
+|activeUsers|[activeUsersMetric](/graph/api/resources/activeusersmetric?view=graph-rest-beta&preserve-view=true)||
 |authentications|[authenticationsMetric](/graph/api/resources/authenticationsmetric?view=graph-rest-beta&preserve-view=true)||
-|mfaCompletions|[mfaCompletionMetric](/graph/api/resources/mfacompletionmetric?view=graph-rest-beta&preserve-view=true) ||
+|mfaCompletions|[mfaCompletionMetric](/graph/api/resources/mfacompletionmetric?view=graph-rest-beta&preserve-view=true)||
 |signUps|[userSignUpMetric](/graph/api/resources/usersignupmetric?view=graph-rest-beta&preserve-view=true)||
 |summary|[insightSummary](/graph/api/resources/insightsummary?view=graph-rest-beta&preserve-view=true)||
 |userCount|[userCountMetric](/graph/api/resources/usercountmetric?view=graph-rest-beta&preserve-view=true)||
@@ -233,7 +232,7 @@ The following table correlates metric and a Microsoft Graph reference.
 
 In the [Microsoft Entra admin center](https://entra.microsoft.com), under Monitoring and health, select **Usage & insights**. View user data, over time, and other areas such as authentication, and MFA usage.
 
-   [ ![Diagram of the usage and insights dashboard.](media/deployment-external/usage-insights.png)](media/deployment-external/usage-insights-expanded.png#lightbox)
+   [![Diagram of the usage and insights dashboard.](media/deployment-external/usage-insights.png)](media/deployment-external/usage-insights-expanded.png#lightbox)
 
 ## Next steps
 
@@ -242,6 +241,5 @@ In the [Microsoft Entra admin center](https://entra.microsoft.com), under Monito
 * [Customer authentication experience](deployment-external-customer-authentication.md)
 * [Authentication and access control architecture](deployment-external-authentication-access-control.md)
 * [Security fundamentals for external tenants](../external-id/customers/concept-security-customers.md)
-
 
 

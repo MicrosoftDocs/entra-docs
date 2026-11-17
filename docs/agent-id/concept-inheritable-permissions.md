@@ -19,6 +19,8 @@ Understanding the relationship between these configurations and how they affect 
 
 ## Required resource access
 
+Permission inheritance applies to fleets that use a multi-instance blueprint and blueprint principal. A cloud or local single-instance agent has no blueprint principal and receives [permission grants directly](authenticate-single-instance-agent.md). It can still declare required resource access, but those declarations alone don't grant access.
+
 Required resource access is the agent identity blueprint's initial declaration of the APIs and permissions that the blueprint's child agent identities need to operate. It's expressed as a set of target resource applications and the specific delegated scopes and application roles the agent requests.
 
 Required resource access serves as the agent's list of static consent permissions. When a tenant administrator reviews the agent for approval, this list makes the consent decision explicit and reviewable. It answers the question: *"What does this agent need to function?"*

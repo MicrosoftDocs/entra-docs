@@ -13,6 +13,8 @@ ai-usage: ai-assisted
 
 This article shows how to register a passkey in Microsoft Authenticator on your iOS or Android device.
 
+If you're preparing to enable passkey registration for identity-verified onboarding or recovery (preview), first review [Passkey registration during identity-verified onboarding and recovery (preview)](how-to-enable-authenticator-passkey.md#passkey-registration-during-identity-verified-onboarding-and-recovery-preview). That section covers the additional Authenticator app, passkey-provider, and Android work-profile requirements for those journeys.
+
 ## [**iOS**](#tab/iOS)
 
 You can register by signing in to the Authenticator app directly, by using [Security info](https://aka.ms/mysecurityinfo), or from your mobile device browser or through cross-device registration by using another device, such as a laptop. Your mobile device needs to run iOS version 17 or later.

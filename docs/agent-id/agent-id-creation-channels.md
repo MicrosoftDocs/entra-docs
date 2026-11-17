@@ -2,7 +2,8 @@
 title: How are agent identities created?
 description: Learn about the ways to create Microsoft Entra agent identity blueprints, agent identities, and agents' user accounts as well as monitor and control their introduction into your tenant.
 ms.topic: concept-article
-ms.date: 04/16/2026
+ms.date: 11/05/2026
+ai-usage: ai-assisted
 ms.reviewer: dastrock
 
 #customer intent: As an IAM or security administrator, I want to understand how agent identities are created so that I can monitor and control their introduction into my tenant.
@@ -26,7 +27,7 @@ Administrators who work in identity and access management and security need clea
 
 * Indicates a managed experience channel
 
-When an agent identity blueprint is added to your tenant through one of the managed experiences, an **agent identity blueprint principal** object is also created in the tenant. This principal is assigned privileges to create agent identities and agents' user accounts in the tenant. If an agent identity blueprint is added through the Microsoft Graph API, CLI, PowerShell, or Infrastructure as Code tools channels, the associated principal must be manually created.
+For fleet blueprints, managed creation experiences also create an **agent identity blueprint principal** in the tenant. An administrator can grant this principal permissions to create agent identities and agents' user accounts. If you create a fleet blueprint directly through Microsoft Graph or a tool that doesn't provision its principal, [create that principal explicitly](create-blueprint.md#create-an-agent-blueprint-principal). The [cloud and local agent provisioning procedure](create-single-instance-agent.md) doesn't use a blueprint principal.
 
 In addition to the channels listed in the previous table, any system with an agent identity blueprint principal in your tenant becomes a channel for the agent identity and agent's user account creation:
 
@@ -63,7 +64,7 @@ Creating an agent identity with these tools requires one of the following permis
 | Scenario | Permissions required |
 | --- | --- |
 | User creates agent identity via Microsoft Entra admin center, Microsoft Graph, or PowerShell/CLI | User must be assigned **Agent ID Developer**, **Agent ID Administrator**, or **AI Administrator** role. |
-| Client creates agent identity via Microsoft Graph, using delegated permissions | User must be assigned **Agent ID Administrator** role. Client must be granted **AgentIdentity.Create.All** or **AgentIdentity.ReadWrite.Al** delegated permission. |
+| Client creates agent identity via Microsoft Graph, using delegated permissions | User must be assigned **Agent ID Administrator** role. Client must be granted **AgentIdentity.Create.All** or **AgentIdentity.ReadWrite.All** delegated permission. |
 | Client creates agent identity via Microsoft Graph, using delegated permissions | User must be an **owner** of the agent identity blueprint or agent identity blueprint principal (owners added at any time have this permission). Client must be granted **AgentIdentity.Create.All**, **AgentIdentity.ReadWrite.All**, or **AgentIdentity.ReadWrite.ManagedBy** delegated permission. No Agent ID role is required. |
 | Client creates agent identity via Microsoft Graph, using application permissions | Client must be granted **AgentIdentity.Create.All** application permission. |
 
@@ -95,14 +96,14 @@ When users sign in for the first time to third-party agents, the Microsoft Entra
 
 ## Agent identity blueprint principals
 
-Once an agent identity blueprint principal is created in your tenant, the principal is assigned privileges to create agent identities and agents' user accounts. The principal can also update and delete any of the identities it creates. The following table describes permissions that can be given to these principals:
+An agent identity blueprint principal can't create agent identities or agents' user accounts until an administrator grants it the corresponding permission. Once granted, the principal can also update and delete any of the identities it creates. The following table describes permissions that can be given to these principals:
 
 | Entity | Permission | Comments |
 | ------ | ---------- | -------- |
-| Agent identity | `AgentIdentity.CreateAsManager` (application permission) | This permission is automatically granted to any agent identity blueprint principal in the tenant. It allows the principal to create agent identities, and update and delete the agent identities it creates. This permission can't be revoked. To prevent a principal from creating agent identities, you must disable it or remove the principal from the tenant. Principals are limited to a maximum of 250 agent identity creations. |
+| Agent identity | `AgentIdentity.CreateAsManager` (application permission) | A Microsoft Entra ID administrator must grant this permission to an agent identity blueprint principal. Once granted, the principal can create agent identities, and update and delete the agent identities it creates. The permission can be revoked. Principals are limited to a maximum of 250 agent identity creations. |
 | Agent's user account | `AgentIdUser.ReadWrite.IdentityParentedBy` (application permission) | A Microsoft Entra ID administrator must grant this permission to an agent identity blueprint principal. Once granted, the principal can create agents' user accounts, and update and delete any users it creates. The permission can be revoked. |
 
-Administrators can control agent identity creation via this channel by limiting which agent identity blueprints are added to their tenant as agent identity blueprint principals. For more information on these permissions, see [Agent identity permissions reference](authorization-agent-id.md).
+Administrators control agent identity creation through this channel by choosing which agent identity blueprint principals receive these permissions. For more information on these permissions, see [Agent identity permissions reference](authorization-agent-id.md).
 
 ## Auditing and monitoring agent identity creation
 
@@ -115,5 +116,5 @@ All agent identity creations are recorded in Microsoft Entra audit logs. Using a
 
 ## Related content
 
-- [Create and delete agent identities](identity-platform/create-delete-agent-identities.md)
-- [Create agent identity blueprints](identity-platform/create-blueprint.md)
+- [Create and delete agent identities](create-delete-agent-identities.md)
+- [Create agent identity blueprints](create-blueprint.md)

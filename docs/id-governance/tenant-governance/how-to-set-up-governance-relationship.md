@@ -3,7 +3,8 @@ title: Set up a governance relationship
 titleSuffix: Microsoft Entra ID Governance
 description: Learn how to set up a governance relationship between a governing and governed tenant using the handshake process in Microsoft Entra
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 11/11/2026
+ai-usage: ai-assisted
 ---
 
 <!-- source: How to set up a governance relationship.docx -->
@@ -35,6 +36,8 @@ Before you can set up a governance relationship, you must create a governance po
     - **Delegated administration**: Select one or more Microsoft Entra built-in roles and assign them to a role assignable security group in the governing tenant. Members of this group can use their governing tenant credentials to sign in to the governed tenant without needing an account in the governed tenant. Each group can have multiple role assignments, and each policy template can have multiple groups defined.
 
     - **Multitenant application management**: Select a custom, multitenant application. The governed tenant creates a service principal with the same permissions when you establish the relationship.
+
+    - **Relationship lifetime (Preview)**: Optionally set a whole number from 1 to 730 days. The governed tenant reviews and approves the lifetime with the request. Leaving it unset creates a non-expiring relationship. For details, see [Manage relationship expiration and renewal](how-to-manage-relationship-expiration.md).
 
 ## Set up a governance relationship using a three-step handshake
 Use the three-step handshake when there's no preexisting billing signal or active relationship between the two tenants.
@@ -118,6 +121,10 @@ When you successfully create a governance relationship, Tenant Governance provis
     - If you configured multitenant application management, Tenant Governance creates the corresponding service principal and its permissions.
 
 ## Related content
+- [Manage relationship expiration and renewal](how-to-manage-relationship-expiration.md)
+
+- [Set up multi-tier governance relationships](how-to-set-up-multi-tier-governance.md)
+
 - [Update a governance relationship](how-to-update-governance-relationship.md)
 
 - [Terminate a governance relationship](how-to-terminate-governance-relationship.md)

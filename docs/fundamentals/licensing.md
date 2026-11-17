@@ -2,7 +2,11 @@
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
 ms.topic: concept-article
-ms.date: 06/18/2026
+ms.date: 10/07/2026
+author: tilarso
+ms.author: tilarso
+ms.custom: msecd-doc-authoring-108
+ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to understand Microsoft Entra licensing so that I can choose the right license tier for my organization's needs.
 ---
 
@@ -29,6 +33,10 @@ This article discusses licensing options for the Microsoft Entra product family.
 ## Authentication
 
 [!INCLUDE [Authentication](../includes/licensing-authentication.md)]
+
+## Identity verification
+
+[!INCLUDE [Identity verification](../includes/licensing-identity-verification.md)]
 
 ## Managed identities
 
