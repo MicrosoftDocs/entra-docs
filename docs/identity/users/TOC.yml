@@ -114,6 +114,8 @@
         href: groups-create-rule.md
       - name: Dynamic group rule syntax
         href: groups-dynamic-membership.md
+      - name: MemberOf Next and Transitive Reports To (preview)
+        href: groups-dynamic-rule-advanced.md
       - name: Validate a membership rule
         href: groups-dynamic-rule-validation.md
       - name: Create more efficient rules
