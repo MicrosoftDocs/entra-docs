@@ -133,8 +133,6 @@ Replace each placeholder with the object ID of a source group. The syntax is the
 1. In the rule builder, open the **Operator** list and select **MemberOf**.
 1. In **Value**, enter the object IDs of the source groups, separated by commas. The rule appears in the **Rule syntax** box.
 
-    :::image type="content" source="./media/groups-dynamic-rule-advanced/member-of-rule-builder.png" alt-text="Screenshot of the dynamic membership rule builder with the MemberOf operator, a source group object ID, and the generated rule syntax.":::
-
 1. Select **Save rule**, and then select **Create**.
 
 ### Combine MemberOf Next with other expressions
@@ -142,7 +140,7 @@ Replace each placeholder with the object ID of a source group. The syntax is the
 You can narrow a MemberOf Next rule with other expressions. For example, this rule includes members of a source group who are located in Redmond:
 
 ```text
-user.memberOf -any (group.objectId -in ['77a8c4ab-f93d-47e7-8dd9-f464b2541342']) -and user.city -eq "Redmond"
+user.memberOf -any (group.objectId -in ['aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb']) -and user.city -eq "Redmond"
 ```
 
 After you select **MemberOf** in the rule builder, you can't add more expressions there. To add them, edit the rule in the **Rule syntax** box.
@@ -250,8 +248,6 @@ The following tips can help you use the rule properly:
 1. Select **Add dynamic query**.
 1. In the rule builder, open the **Operator** list and select **TransitiveReportsTo**.
 1. In **Value**, enter the manager's object ID. The rule appears in the **Rule syntax** box.
-
-    :::image type="content" source="./media/groups-dynamic-rule-advanced/transitive-reports-to-rule-builder.png" alt-text="Screenshot of the dynamic membership rule builder with the TransitiveReportsTo operator, a manager object ID, and the generated rule syntax.":::
 
 1. Select **Save rule**, and then select **Create**.
 

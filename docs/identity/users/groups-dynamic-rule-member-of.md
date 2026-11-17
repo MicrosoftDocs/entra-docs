@@ -16,8 +16,6 @@ ai-usage: ai-assisted
 >
 > For current capabilities, requirements, and setup instructions, see [Use MemberOf Next and Transitive Reports To in dynamic membership groups (preview)](groups-dynamic-rule-advanced.md). To move existing groups to MemberOf Next, see [Move existing MemberOf groups to MemberOf Next](groups-dynamic-rule-advanced.md#move-existing-memberof-groups-to-memberof-next).
 
-## Overview
-
 The earlier `memberOf` preview in Microsoft Entra ID enabled admins to create dynamic membership groups and administrative units that populated by adding members of other groups. Apps that couldn't read group-based membership previously could read the flattened membership of these `memberOf` groups. These groups could also be used for licensing assignments.
 
 The following diagram illustrates how the earlier preview populated Dynamic-Group-A with direct members of Security-Group-X and Security-Group-Y. Members of nested groups inside Security-Group-X and Security-Group-Y weren't included in Dynamic-Group-A.
