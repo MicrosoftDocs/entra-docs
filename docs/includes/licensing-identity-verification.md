@@ -22,7 +22,7 @@ Review the licensing requirements for each capability in your identity verificat
 
 The following table shows identity verification features by license. A check mark indicates that the feature is included, and **Add-on** indicates a separate purchase. Blank cells indicate that the feature isn't included.
 
-| Feature | Free | Microsoft Entra ID P1 | Microsoft Entra ID P2 | Microsoft Entra ID Governance | Microsoft Entra Suite | Microsoft 365 E7 |
+| Feature \*\* | Free | Microsoft Entra ID P1 | Microsoft Entra ID P2 | Microsoft Entra ID Governance | Microsoft Entra Suite | Microsoft 365 E7 |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: |
 | Core Verified ID credential issuance and verification | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Face Check | Add-on | Add-on | Add-on | Add-on | :white_check_mark: | :white_check_mark: |
@@ -37,3 +37,5 @@ The following table shows identity verification features by license. A check mar
 | Self-service Verified ID issuance in My Account | :white_check_mark: \* | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 \* Free includes self-service issuance of Employee ID only.
+
+\*\* If your scenario uses an identity verification provider, purchase the provider's services separately through the [Microsoft Security Store](https://securitystore.microsoft.com/). These services aren't included in the Microsoft Entra licenses listed in the table.
