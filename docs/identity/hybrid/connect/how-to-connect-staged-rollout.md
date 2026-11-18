@@ -2,7 +2,7 @@
 title: 'Microsoft Entra Connect: Cloud authentication via Staged Rollout'
 description: This article explains how to migrate from federated authentication, to cloud authentication, by using a Staged Rollout.
 ms.topic: how-to
-ms.date: 09/15/2026
+ms.date: 11/11/2026
 ai-usage: ai-assisted
 ms.subservice: hybrid-connect
 ms.custom: sfi-image-nochange
@@ -81,13 +81,15 @@ The following scenarios are supported for Staged Rollout. The feature works only
 
 - Autopilot enrollment is supported in Staged Rollout with Windows 10 version 1909 or later. 
 
+- Self-service password reset (SSPR) with password writeback to an on-premises domain for users in password hash synchronization (PHS) staged rollout. To use this scenario, [enable password writeback with Microsoft Entra Cloud Sync](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
+
 ## Unsupported scenarios
 
 The following scenarios aren't supported for Staged Rollout:
 
 - Legacy authentication such as POP3 and SMTP aren't supported.
 
-- Self-service password reset (SSPR) with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. Although it works in some cases, SSPR can't be guaranteed to work consistently when staged rollout is enabled.
+- SSPR with password writeback through Microsoft Entra Connect Sync.
 
 - Certain applications send the "domain_hint" query parameter to Microsoft Entra ID during authentication. These flows continue, and users who are enabled for Staged Rollout continue to use federation for authentication.
 
