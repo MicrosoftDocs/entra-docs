@@ -183,6 +183,6 @@ Microsoft-hosted consent or account-selection pages can still appear during norm
 
 ## Related content
 
-- [Bring Your Own UX authentication overview](concept-bring-your-own-ux.md).
-- [Configure Bring Your Own UX authentication](how-to-configure-bring-your-own-ux.md).
-- [Native authentication flow concepts](~/identity-platform/concept-native-authentication-flow.md).
+- [Bring Your Own UX authentication overview](concept-bring-your-own-ux.md)
+- [Configure Bring Your Own UX authentication](how-to-configure-bring-your-own-ux.md)
+- [Native authentication flow concepts](~/identity-platform/concept-native-authentication-flow.md)

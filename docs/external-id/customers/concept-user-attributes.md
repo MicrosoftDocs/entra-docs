@@ -97,7 +97,7 @@ Use the [Find the application ID for the extensions app](how-to-define-custom-at
 
 ## Attribute collection in your interface
 
-For Embedded native authentication and BYO UX, follow the [native authentication attribute contract](~/identity-platform/concept-native-authentication-user-attributes.md). Use exact returned `attributeId` values, current requirements, and validation metadata rather than copying the directory property table into a request. Native Authentication API submissions use string values even when the directory attribute has a Boolean or integer data type.
+For Embedded native authentication and BYO UX, follow the [native authentication attribute contract](~/identity-platform/concept-native-authentication-user-attributes.md). Use exact returned `attributeId` values, current requirements, and validation metadata rather than copying the directory property table into a request. Submissions to the Native Authentication API use string values even when the directory attribute has a Boolean or integer data type.
 
 For an existing V1 SDK integration, use the [MSAL Android library](https://github.com/AzureAD/microsoft-authentication-library-for-android) for library-specific attribute types. Those types aren't the response schema for the Native Authentication API.
 

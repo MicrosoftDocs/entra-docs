@@ -59,7 +59,7 @@ This later-operation step-up capability applies to Microsoft-hosted authenticati
 
 When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in the Microsoft Entra admin center under **Entra ID** > **Authentication methods**.
 
-With Microsoft-hosted authentication, the first-factor choice determines which second-factor methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md). Native Authentication API and SDK availability is scoped separately in the comparison.
+With Microsoft-hosted authentication, the first-factor choice determines which second-factor methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md). Availability through the Native Authentication API or SDK is scoped separately in the comparison.
 
 The following method combinations describe Microsoft-hosted coverage. For the Native Authentication API and BYO UX, the supported second factors are email and SMS, subject to the same restriction against reusing email OTP as both factors.
 

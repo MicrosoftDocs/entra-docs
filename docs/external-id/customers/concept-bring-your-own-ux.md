@@ -157,11 +157,11 @@ Use these boundaries when designing the page and relying application:
 
 ## Implement BYO UX
 
-- [Configure Bring Your Own UX authentication](how-to-configure-bring-your-own-ux.md).
-- [Implement the BYO UX handoff and finish protocol](reference-bring-your-own-ux.md).
-- [Handle native authentication flow responses](~/identity-platform/concept-native-authentication-flow.md).
+- [Configure Bring Your Own UX authentication](how-to-configure-bring-your-own-ux.md)
+- [Implement the BYO UX handoff and finish protocol](reference-bring-your-own-ux.md)
+- [Handle native authentication flow responses](~/identity-platform/concept-native-authentication-flow.md)
 
 ## Related content
 
-- [Choose an authentication approach](concept-choose-authentication-approach.md).
-- [Native authentication user attributes](~/identity-platform/concept-native-authentication-user-attributes.md).
+- [Choose an authentication approach](concept-choose-authentication-approach.md)
+- [Native authentication user attributes](~/identity-platform/concept-native-authentication-user-attributes.md)

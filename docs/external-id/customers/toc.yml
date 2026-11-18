@@ -88,14 +88,6 @@ items:
               href: ../direct-federation.md
             - name: Add an identity provider to a user flow
               href: how-to-add-identity-provider-to-user-flow-customers.md
-    - name: Bring Your Own UX authentication
-      items:
-        - name: Overview
-          href: concept-bring-your-own-ux.md
-        - name: Configure Bring Your Own UX
-          href: how-to-configure-bring-your-own-ux.md
-        - name: API and protocol reference
-          href: reference-bring-your-own-ux.md
     - name: Multifactor authentication overview
       href: concept-multifactor-authentication-customers.md
     - name: Multifactor authentication setup
@@ -110,22 +102,16 @@ items:
       items:
         - name: Overview
           href: ~/identity-platform/concept-native-authentication.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Migrate from V1 to V2
-          href: /entra/identity-platform/how-to-migrate-native-authentication-v1-v2?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Configure an application
+          href: ~/identity-platform/how-to-native-authentication-configure-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: SDK quickstart
+          href: ~/identity-platform/quickstart-native-authentication.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Flow and actions
           href: /entra/identity-platform/concept-native-authentication-flow?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: User attributes
           href: /entra/identity-platform/concept-native-authentication-user-attributes?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Browser integration and CORS
           href: /entra/identity-platform/concept-native-authentication-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Web fallback
-          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-    - name: Embedded native authentication how-to guides
-      items:
-        - name: Configure an application
-          href: ~/identity-platform/how-to-native-authentication-configure-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: SDK quickstart
-          href: ~/identity-platform/quickstart-native-authentication.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Local CORS proxy
           href: ~/identity-platform/how-to-native-authentication-cors-local.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Azure Functions CORS proxy
@@ -134,6 +120,18 @@ items:
           href: ~/identity-platform/how-to-native-authentication-cors-front-door.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Authenticate an embedded webview
           href: ~/identity-platform/how-to-native-authentication-webview-sso.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Web fallback
+          href: /entra/identity-platform/concept-native-authentication-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Migrate from V1 to V2
+          href: /entra/identity-platform/how-to-migrate-native-authentication-v1-v2?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Bring Your Own UX authentication
+      items:
+        - name: Overview
+          href: concept-bring-your-own-ux.md
+        - name: Configure Bring Your Own UX
+          href: how-to-configure-bring-your-own-ux.md
+        - name: API and protocol reference
+          href: reference-bring-your-own-ux.md
 - name: Application tutorials
   expanded: false
   items:
@@ -464,17 +462,19 @@ items:
       href: reference-oidc-claims-mapping-customers.md
     - name: Embedded native authentication
       items:
-        - name: The Native Authentication API
-          href: ~/identity-platform/reference-native-authentication.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-          displayName: Embedded native authentication, the Native Authentication API, native auth
-        - name: Sign-in
-          href: /entra/identity-platform/reference-native-authentication-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Sign-up
-          href: /entra/identity-platform/reference-native-authentication-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Password reset
-          href: /entra/identity-platform/reference-native-authentication-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-    - name: Native Authentication API V1 reference
-      href: ~/identity-platform/reference-native-authentication-api-v1.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Native Authentication API V2
+          items:
+            - name: Overview
+              href: ~/identity-platform/reference-native-authentication.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+              displayName: Embedded native authentication, the Native Authentication API V2, native auth
+            - name: Sign-in
+              href: /entra/identity-platform/reference-native-authentication-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Sign-up
+              href: /entra/identity-platform/reference-native-authentication-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Password reset
+              href: /entra/identity-platform/reference-native-authentication-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Native Authentication API V1
+          href: ~/identity-platform/reference-native-authentication-api-v1.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: MSAL references
       items:
         - name: MSAL.NET

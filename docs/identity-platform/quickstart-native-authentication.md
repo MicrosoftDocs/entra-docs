@@ -14,7 +14,7 @@ ai-usage: ai-generated
 
 [!INCLUDE [applies-to-authentication-native](../external-id/includes/applies-to-authentication-native.md)]
 
-In this quickstart, you configure a React Next.js sample for Embedded native authentication with Microsoft Authentication Library (MSAL) for JavaScript 5.29.0. The email-and-password journey uses a tenant-verified custom domain with Cross-Origin Resource Sharing (CORS) at the edge.
+In this quickstart, you configure a React Next.js sample for Embedded native authentication with Microsoft Authentication Library (MSAL) for JavaScript 5.29.1. The email-and-password journey uses a tenant-verified custom domain with Cross-Origin Resource Sharing (CORS) at the edge.
 
 [!INCLUDE [native-authentication-public-preview](~/external-id/includes/native-authentication-public-preview.md)]
 
@@ -43,7 +43,7 @@ The sample has a unified launcher for V1 and V2. Use the pinned revision and SDK
 1. Install the exact SDK version with the sample dependencies:
 
     ```bash
-    npm install --save-exact "@azure/msal-browser@5.29.0"
+    npm install --save-exact "@azure/msal-browser@5.29.1"
     ```
 
 <a id="configure-the-application-and-proxy"></a>

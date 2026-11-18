@@ -16,7 +16,7 @@ Self-service password reset (SSPR) in Microsoft Entra External ID gives customer
 
 ## How the password reset process works
 
-For Microsoft-hosted authentication, self-service password reset (SSPR) supports email one-time passcode (Email OTP) and SMS. When SSPR is enabled, users who forget their password can verify their identity using a configured recovery method. After entering the passcode, the user is prompted to create a new password. Native Authentication API and SDK recovery availability must be checked separately in the comparison.
+For Microsoft-hosted authentication, self-service password reset (SSPR) supports email one-time passcode (Email OTP) and SMS. When SSPR is enabled, users who forget their password can verify their identity using a configured recovery method. After entering the passcode, the user is prompted to create a new password. Password-recovery availability through the Native Authentication API or SDK is scoped separately in the comparison.
 
 The Microsoft-hosted password-reset process works as follows:
 
