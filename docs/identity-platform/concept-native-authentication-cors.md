@@ -3,14 +3,14 @@ title: Embedded native authentication CORS concepts
 description: Understand CORS and proxy requirements for SPAs with Embedded native authentication and BYO UX websites, and why native Android and iOS calls don't need CORS.
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-1030
-ms.date: 11/13/2026
+ms.date: 11/17/2026
 ai-usage: ai-generated
 #customer intent: As an application developer, I want to understand browser proxy requirements so that I can plan a native authentication integration that preserves the API contract.
 ---
 
 # Embedded native authentication CORS concepts
 
-Cross-Origin Resource Sharing (CORS) controls whether browser code can read a response from another origin. Single-page applications (SPAs) with Embedded native authentication and Bring Your Own UX (BYO UX) websites need a proxy or edge CORS policy for cross-origin Native Authentication API calls.
+Cross-Origin Resource Sharing (CORS) controls whether browser code can read a response from another origin. Single-page applications (SPAs) with Embedded native authentication and Bring Your Own UX (BYO UX) websites need a proxy or edge CORS policy for cross-origin calls to the Native Authentication API.
 
 Android and iOS apps that call the API through native HTTP transports don't need CORS or a CORS proxy. They call the configured service authority directly. The requirements in this article apply to browser requests, not those native API calls.
 
@@ -40,7 +40,7 @@ The proxy preserves the API operations, bodies, and transaction state. Forwardin
 
 ## Service authority and proxy transport
 
-Current Embedded native authentication and BYO UX service API URLs use a tenant-verified custom authentication domain and the tenant GUID:
+For the browser integrations covered in this article, Embedded native authentication and BYO UX service API URLs use a tenant-verified custom authentication domain and the tenant GUID:
 
 ```text
 https://<tenant-verified-custom-domain>/<tenant-GUID>
@@ -55,7 +55,7 @@ For example, the service authority might be `https://login.contoso.com/aaaabbbb-
 
 With that local prefix, a service path of `/<tenant-GUID>/api/v2.0/signin/start` maps to `/api/api/v2.0/signin/start`. The first `/api` is the proxy prefix; the second belongs to the service path. OAuth requests similarly map to `/api/oauth2/v2.0/authorize-challenge` or `/api/oauth2/v2.0/token`.
 
-Don't configure a `ciamlogin.com` address as the application's service API authority. Platform-managed origin routing behind a verified custom domain doesn't replace this requirement. See [Configure the API authority](how-to-native-authentication-configure-app.md#configure-the-api-authority).
+For these browser integrations, don't configure a `ciamlogin.com` address as the application's service API authority. Platform-managed origin routing behind a verified custom domain doesn't replace this requirement. Non-browser clients using native HTTP transports don't require a custom domain. See [Configure the API authority](how-to-native-authentication-configure-app.md#configure-the-api-authority).
 
 ## Proxy contract
 

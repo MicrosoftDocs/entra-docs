@@ -4,7 +4,7 @@ description: Compare Microsoft Entra External ID authentication approaches to ch
 ai-usage: ai-assisted
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-1030
-ms.date: 11/12/2026
+ms.date: 11/17/2026
 
 #customer intent: As an IT administrator, architect, or application developer, I want to compare authentication approaches so that I can choose an appropriate experience and ownership model for each customer-facing app.
 ---
@@ -66,17 +66,15 @@ Evaluate Microsoft-hosted authentication when you want authentication pages host
 
 Evaluate Embedded native authentication when you want authentication interactions integrated into your application's interface. Your team builds the screens and handles credentials, state, and integration. Confirm platform and SDK support in the [native authentication overview](../../identity-platform/concept-native-authentication.md). For method and journey support, use the [methods and journeys comparison](concept-supported-features-customers.md#methods-and-journeys-by-approach) and [browser fallback requirements](~/identity-platform/concept-native-authentication-web-fallback.md).
 
-The current Native Authentication API requires a [tenant-verified custom domain](concept-custom-url-domain.md) for all service API calls. For a browser-based single-page application (SPA), also plan a cross-origin resource sharing (CORS) proxy or edge policy. Android and iOS apps using native HTTP transports don't need CORS or a CORS proxy. Enable the required methods in your tenant and test the journeys your app needs.
+The Native Authentication API V2 requires a [tenant-verified custom domain](concept-custom-url-domain.md) for browser-based apps, such as single-page applications (SPAs), to help protect against cross-site request forgery (CSRF). Also plan a cross-origin resource sharing (CORS) proxy or edge policy for cross-origin browser calls. Non-browser clients, such as Android and iOS apps using native HTTP transports, don't require a custom domain or CORS configuration. Enable the required methods in your tenant and test the journeys your app needs.
 
 <a name="when-to-use-bring-your-own-ux"></a>
 
 ## Bring Your Own UX
 
-Evaluate BYO UX when you want a separate authentication website with its own design and release cycle, whether for one application or several. Your team hosts and manages the page while Microsoft Entra External ID verifies credentials and applies policy. The site uses HTTPS on a tenant-verified domain; all service API calls also use a tenant-verified custom domain.
+With Bring Your Own UX (BYO UX), you control and operate the authentication website instead of using Microsoft-hosted pages. Unlike embedded native authentication, the authentication website runs separately from your applications and can serve multiple apps.
 
-Applications that use BYO UX start sign-in with Microsoft Entra External ID through standard [browser-based integration patterns](samples-ciam-all.md). BYO UX guidance focuses on implementing the authentication website, including its API calls and CORS proxy. An existing browser session can satisfy authentication without presenting the website.
-
-For architecture, requirements, and implementation guidance, see the [Bring Your Own UX overview](concept-bring-your-own-ux.md).
+Choose BYO UX when you want more control over the presentation and user experience than Microsoft-hosted custom branding provides, or if you want a sign-in website you can share across applications and update independently of their releases. Your team takes responsibility for hosting and maintaining the website. For details, see the [Bring Your Own UX overview](concept-bring-your-own-ux.md).
 
 <a name="security-considerations"></a>
 

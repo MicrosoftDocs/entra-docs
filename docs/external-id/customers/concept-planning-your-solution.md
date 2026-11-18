@@ -3,7 +3,7 @@ title: Plan a Deployment
 description: Plan a Microsoft Entra External ID deployment, from creating an external tenant and choosing an authentication approach to integrating and securing sign-in.
 ai-usage: ai-assisted
 ms.topic: concept-article
-ms.date: 11/12/2026
+ms.date: 11/17/2026
 
 ms.custom: it-pro, seo-july-2024, msecd-doc-authoring-1030
 #customer intent: As an application developer or IT administrator, I want to plan a customer identity deployment so that I can configure and secure sign-in for my applications.
@@ -69,7 +69,7 @@ Register your app in your external tenant to establish its application identity.
 | --- | --- | --- | --- |
 | Redirect URI | Register a callback URI for your app. | Configure the redirect required by your platform or browser integration, separately from direct native code redemption. | Register a web-type redirect URI, including for public clients. |
 | Client type | Choose the registration for your app's platform. | Public client; enable public client flows. | Public or confidential client. |
-| Service API authority | Default tenant domain or a custom URL domain. | Tenant-verified custom domain for the current API. | Tenant-verified custom domain for API calls. |
+| Service API authority | Default tenant domain or a custom URL domain. | The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, not for non-browser clients using native HTTP transports. | Tenant-verified custom domain for API calls. |
 | Integration setup | Configure hosted sign-in. | Enable native authentication for the app. | Use Microsoft Graph beta to configure your self-hosted authentication page. |
 
 After registration, configure your application and tenant identifiers. Keep confidential-client credentials on the server; don't place client secrets in mobile apps or browser code.
@@ -122,7 +122,7 @@ Plan MFA and review security for your customer-facing apps. Configure tenant pol
 Customize the sign-in look and feel and extend it with your own business logic. You can configure Microsoft-hosted pages, manage the interface in your app with Embedded native authentication, or host your own page with BYO UX.
 
 - **Customize branding** *(Microsoft-hosted pages)*. Apply your logo, colors, and language strings to the sign-in pages. See [Customize the sign-in look and feel](concept-branding-customers.md).
-- **Use a custom URL domain.** All service API calls for the current Native Authentication API and BYO UX use a tenant-verified custom domain. See [Custom URL domain](concept-custom-url-domain.md).
+- **Use a custom URL domain where required.** The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as SPAs, but not for non-browser clients, such as iOS and Android apps using native HTTP transports. BYO UX requires a tenant-verified custom domain. See [Custom URL domain](concept-custom-url-domain.md).
 - **Add custom authentication extensions.** Extend the flow with server-side logic. Event availability can differ by approach and API or SDK version. See [Custom authentication extensions](concept-custom-extensions.md).
 
 ## Next steps

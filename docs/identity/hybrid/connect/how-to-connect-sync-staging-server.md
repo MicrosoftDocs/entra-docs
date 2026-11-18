@@ -4,9 +4,11 @@ description: This topic describes operational tasks for Microsoft Entra Connect 
 ms.assetid: b29c1790-37a3-470f-ab69-3cee824d220d
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 04/09/2025
+ms.date: 11/18/2026
 ms.subservice: hybrid-connect
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange, msecd-doc-authoring-1032
+ai-usage: ai-assisted
+#customer intent: As an identity administrator, I want to configure a staging server and plan disaster recovery so that I can maintain Microsoft Entra Connect Sync availability.
 ---
 
 # Microsoft Entra Connect: Staging server and disaster recovery
@@ -28,7 +30,7 @@ When staging mode is disabled, password sync resumes from the last recorded wate
 > [!WARNING]
 > Password sync catch-up can take an extended period of time after disabling staging mode. **Do not restart the sync services during catch-up** — stopping the service can cause PHS to resume from an earlier watermark when it starts again, which increases the time to become current.
 > 
-A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure. In staging mode, you can still force an export by using the synchronization service manager.
+When the synchronization cycle is enabled, a server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID. It can quickly take over the responsibilities of another server in the event of a failure. Although you can manually force an export by using **Synchronization Service Manager**, exporting changes from a staging server isn't supported. Having more than one active Microsoft Entra Connect Sync server for the same Microsoft Entra tenant also isn't supported.
 
 For those of you with knowledge of older sync technologies, the staging mode is different since the server has its own SQL database. This architecture allows the staging mode server to be located in a different datacenter.
 

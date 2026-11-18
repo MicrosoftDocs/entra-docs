@@ -7,7 +7,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: concept-article
 ms.custom: msecd-doc-authoring-1030
-ms.date: 11/13/2026
+ms.date: 11/17/2026
 ai-usage: ai-generated
 #customer intent: As an application developer, I want to understand the authentication flow so that my client handles policy changes without assuming a fixed endpoint sequence.
 ---
@@ -26,7 +26,7 @@ The native authentication flow is a response-driven transaction. Microsoft Entra
 
 The initial authorization challenge request contains the application ID, requested scopes, and optional claims. If authentication is required, its `401 InsufficientAuthorization` response contains a continuation token and journey links. This response is an invitation to interact, not a failed password check.
 
-Use the configured tenant-verified custom domain and tenant GUID for every service API call. This authority applies to authorization, native interactions, and token exchange. See [Operations and authority](reference-native-authentication.md#operations-and-authority).
+Use the configured service authority consistently for authorization, native interactions, and token exchange. The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as SPAs, but not for non-browser clients, such as iOS and Android apps using native HTTP transports. The examples use a custom domain and tenant GUID. See [Operations and authority](reference-native-authentication.md#operations-and-authority).
 
 Sign-in, sign-up, and password reset all return to authorization when the service returns `state: continue`. Your application posts the latest continuation token to the returned `continue` link. It then exchanges the resulting authorization code at the token endpoint.
 

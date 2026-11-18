@@ -131,5 +131,5 @@ Remove the custom authentication configuration when you no longer want the appli
 
 ## Related content
 
-- [Bring Your Own UX authentication overview](concept-bring-your-own-ux.md).
-- [BYO UX API and protocol reference](reference-bring-your-own-ux.md).
+- [Bring Your Own UX authentication overview](concept-bring-your-own-ux.md)
+- [BYO UX API and protocol reference](reference-bring-your-own-ux.md)

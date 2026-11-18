@@ -2,7 +2,7 @@
 title: Migrate Embedded native authentication from V1 to V2
 description: Update a V1 integration for response-driven Embedded native authentication, including SDK interfaces, authorization, attributes, errors, and tokens.
 ms.topic: how-to
-ms.date: 11/13/2026
+ms.date: 11/17/2026
 ms.custom: msecd-doc-authoring-1030
 ai-usage: ai-generated
 #customer intent: As an application developer, I want to migrate my V1 integration so that my app follows the V2 authentication contract.
@@ -38,10 +38,12 @@ The `/oauth2/v2.0` segment identifies the OAuth endpoint used by both V1 and V2.
 
 ## Configure the service authority
 
-Use a tenant-verified custom domain for every current API call, including OAuth authorization start, native operations, authorization continuation, and token redemption.
+The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as SPAs, to help protect against cross-site request forgery (CSRF). Non-browser clients, such as Android and iOS apps using native HTTP transports, don't require a custom domain. An embedded browser or webview isn't a native HTTP transport. BYO UX remains browser-based and requires a tenant-verified custom domain.
+
+If you use a custom domain, apply it consistently to OAuth authorization start, native operations, authorization continuation, and token redemption:
 
 1. Set the service authority to `https://<tenant-verified-custom-domain>/<tenant-GUID>`.
-1. Configure that authority through the selected SDK's existing properties:
+1. Configure that custom-domain authority through the selected SDK's existing properties:
 
     - **Android:** Set `authorities[0].type` to `CIAM` and `authorities[0].authority_url` to the full service authority.
     - **iOS and macOS:** Create `MSALCIAMAuthority` with the full URL and pass it to `MSALNativeAuthPublicClientApplicationConfig(clientId:authority:challengeTypes:)`. Don't use the `tenantSubdomain` convenience initializer, which constructs the default login host.
@@ -50,7 +52,7 @@ Use a tenant-verified custom domain for every current API call, including OAuth 
 1. For SDK browser calls, set the required `customAuth.authApiProxyUrl` string to the same full custom-domain authority and configure CORS at that edge. This route doesn't use an application proxy's local transport prefix. Apply the [shared proxy contract](concept-native-authentication-cors.md#proxy-contract) for origins, preflight, SDK headers, and success and error responses.
 1. For direct HTTP integration, resolve relative returned links against the service authority. Before sending credentials or continuation tokens, reject an unexpected hostname or tenant path. If your browser integration uses proxy transport mapping, apply it only after validating the service destination.
 
-CORS and proxy configuration apply to cross-origin browser calls from SPAs with Embedded native authentication and BYO UX websites. Android and iOS apps using native HTTP transports call the service authority directly and don't need a CORS proxy.
+CORS and proxy configuration apply to cross-origin browser calls from SPAs with Embedded native authentication and BYO UX websites. Android and iOS apps using native HTTP transports call their configured service authority directly and don't need a CORS proxy. For these non-browser clients, retain the SDK's documented authority configuration if you don't use a custom domain. Validate returned links against the configured authority in either case.
 
 ## SDK compatibility
 
@@ -58,9 +60,9 @@ Use the following Microsoft Authentication Library (MSAL) versions or later for 
 
 | Platform | SDK and minimum version | V2 interface |
 | --- | --- | --- |
-| **Android** | [MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android) (`com.microsoft.identity.client:msal`) 8.7.0 or later. | `INativeAuthPublicClientApplication.signInV2`, `signUpV2`, and `resetPasswordV2`; unified `NativeAuthResultV2` results. |
-| **iOS and macOS** | [MSAL for iOS and macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc) 2.18.1 or later. | `MSALNativeAuthPublicClientApplication` V2 entry points; scenario-specific parameter types, shared `MSALNativeAuthFlowDelegate`, and typed per-state delegates. |
-| **JavaScript and TypeScript** | [MSAL for JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js) (`@azure/msal-browser`) 5.29.0 or later. | `ICustomAuthPublicClientApplicationV2` with `signInV2`, `signUpV2`, and `resetPasswordV2`; use the matching V2 input, result, and state types. |
+| **Android** | [MSAL for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android/) (`com.microsoft.identity.client:msal`) 8.7.0 or later. | `INativeAuthPublicClientApplication.signInV2`, `signUpV2`, and `resetPasswordV2`; unified `NativeAuthResultV2` results. |
+| **iOS and macOS** | [MSAL for iOS and macOS releases](https://github.com/AzureAD/microsoft-authentication-library-for-objc/releases) 2.18.1 or later. | `MSALNativeAuthPublicClientApplication` V2 entry points; scenario-specific parameter types, shared `MSALNativeAuthFlowDelegate`, and typed per-state delegates. |
+| **JavaScript and TypeScript** | [MSAL for JavaScript releases](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases) (`@azure/msal-browser`) 5.29.1 or later. | `ICustomAuthPublicClientApplicationV2` with `signInV2`, `signUpV2`, and `resetPasswordV2`; use the matching V2 input, result, and state types. |
 
 Display only methods returned for the transaction. Use the shared [method and journey matrix](../external-id/customers/concept-supported-features-customers.md#methods-and-journeys-by-approach) for service capabilities, then check the selected SDK implementation:
 
@@ -72,7 +74,7 @@ Display only methods returned for the transaction. Use the shared [method and jo
 
 Keep the existing client factory, but replace V1 parameter objects with `NativeAuthSignInParametersV2`, `NativeAuthSignUpParametersV2`, and `NativeAuthResetPasswordParametersV2`. Pass them to `signInV2`, `signUpV2`, and `resetPasswordV2`. Select V2 through these entry points, not a configuration flag.
 
-The [Android sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample/tree/adacfe21414333128300c722c9031d4663938d7c) demonstrates V1 and V2 journeys.
+The [Android sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) demonstrates V1 and V2 journeys.
 
 - Dispatch `NativeAuthResultV2` after every entry point and continuation. Retain the returned `nextState`.
 - Classify rejected attributes with `NativeAuthErrorV2.isInvalidAttributes()` and retry `AttributesRequiredStateV2.submitAttributes(...)` on the retained state. Attribute-validation errors don't expose a new state.
@@ -87,7 +89,7 @@ The [Android sample](https://github.com/Azure-Samples/ms-identity-ciam-native-au
 
 Use `MSALNativeAuthSignInParametersV2`, `MSALNativeAuthSignUpParametersV2`, and `MSALNativeAuthResetPasswordParametersV2` with their respective V2 entry points.
 
-The [Apple sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample/tree/85ef82afd59572ade876011bad516fd631761dd4) demonstrates V1 and V2 journeys. Follow the sample's setup instructions for its platform requirements.
+The [iOS sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample) demonstrates V1 and V2 journeys. Follow the sample's setup instructions for its platform requirements.
 
 - Implement `MSALNativeAuthFlowDelegate` and each required per-state protocol. The callback handler needs to conform to the corresponding state protocol.
 - Handle `onFlowCompleted(result:scenario:)` and `onFlowError(error:scenario:)`. Missing state-protocol implementation produces `isNotImplemented`.
@@ -98,7 +100,7 @@ The [Apple sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth
 
 ### JavaScript migration
 
-The factory remains `CustomAuthPublicClientApplication.create(customAuthConfig)` and returns `ICustomAuthPublicClientApplicationV2`. The [unified JavaScript sample](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/tree/49c4e250a1e6eb97e2b813e9fce6670c996a2808/typescript/native-auth/react-nextjs-sample) demonstrates the matching V2 interfaces.
+The factory remains `CustomAuthPublicClientApplication.create(customAuthConfig)` and returns `ICustomAuthPublicClientApplicationV2`. The [unified JavaScript samples](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples) include a React Next.js sample that demonstrates the matching V2 interfaces.
 
 - Replace V1 entry points with `signInV2`, `signUpV2`, and `resetPasswordV2`, passing the intended scopes and claims.
 - Check `result.isFailed()` before inspecting state. Then use `result.isState("stateName")` and retain `result.state`.
@@ -130,7 +132,7 @@ Update your transport layer and orchestration together to implement the V2 reque
 
 1. Add the authorization-challenge operation and V2 native JSON requests.
 1. Separate OAuth form encoding from native JSON encoding. Use the latest continuation token with the correct property spelling for the endpoint.
-1. Replace constructed next-operation URLs with the links in the latest response. Resolve relative links against the custom-domain service authority, validate the hostname and tenant path, and reject an unexpected destination before sending secrets.
+1. Replace constructed next-operation URLs with the links in the latest response. Resolve relative links against the configured service authority, validate the hostname and tenant path, and reject an unexpected destination before sending secrets.
 1. Replace V1 challenge-type and capability branching with dispatch on the latest `state` and `action`. Select an available operation through application flow logic or user choice. Handle unknown optional fields and links without interrupting supported operations.
 
 | Integration point | V1 | V2 |
@@ -238,7 +240,7 @@ Verify each supported journey against your test tenant before replacing the exis
 | **Native redirect or browser-required error** | The app stops native processing even when the response has no continuation token or links, then offers only a separately configured browser integration. |
 | **Unusable required response** | The app shows a clear failure or offers a supported browser sign-in without promising preservation of native progress. |
 | **Throttling or ambiguous network failure** | The app respects retry guidance and doesn't automatically replay credential verification or password updates. |
-| **Custom-domain routing** | OAuth start, native operations, authorization continuation, and token redemption use the verified custom domain and tenant GUID. A local proxy prefix remains transport configuration only. |
+| **Service authority routing** | OAuth start, native operations, authorization continuation, and token redemption use the configured authority consistently. Browser-based apps require a verified custom domain and tenant GUID; non-browser native HTTP clients don't require a custom domain. A local proxy prefix remains transport configuration only. |
 | **Unexpected link authority** | No credential or continuation token is sent to a different hostname or tenant path. |
 | **API access and sign-out** | The intended resource accepts the correctly scoped access token; app-managed credentials and account UI are cleared on sign-out. Native logout doesn't terminate other application or browser sessions. |
 

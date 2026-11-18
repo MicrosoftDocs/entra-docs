@@ -2,7 +2,7 @@
 title: Custom URL Domains
 description: Learn when a custom URL domain is required and how it routes authentication requests for your Microsoft Entra External ID applications.
 ms.topic: concept-article
-ms.date: 11/11/2026
+ms.date: 11/17/2026
 ms.custom: it-pro, sfi-image-nochange, msecd-doc-authoring-1030
 ai-usage: ai-assisted
 #Customer intent: As a dev, devops, or it admin, I want to learn about personalizing my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
@@ -14,7 +14,7 @@ A custom URL domain lets you use your own authentication endpoint names in Micro
 
 [!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
 
-The current Native Authentication API and Bring Your Own UX (BYO UX) require a tenant-verified custom domain for all service API call URLs. Verify and configure that domain before integrating either approach. Microsoft-hosted authentication can also use a custom URL domain for a consistent sign-in address.
+The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as single-page applications (SPAs), to help protect against cross-site request forgery (CSRF). Non-browser clients, such as iOS and Android apps using native HTTP transports, don't require a custom domain. Bring Your Own UX (BYO UX) remains browser-based and requires a tenant-verified custom domain for its service API calls. Verify and configure the domain before integrating a browser-based approach. Microsoft-hosted authentication can also use a custom URL domain for a consistent sign-in address.
 
 :::image type="content" source="./media/concept-custom-url-domain/custom-domain-user-experience-small.png" alt-text="Screenshot demonstrates an External ID custom URL domain user experience." lightbox="./media/concept-custom-url-domain/custom-domain-user-experience.png":::
 

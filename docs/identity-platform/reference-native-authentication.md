@@ -1,5 +1,5 @@
 ---
-title: Native Authentication API reference
+title: Native Authentication API V2 reference
 description: Implement authorization, credential challenges, token acquisition, response handling, and diagnostics with the Native Authentication API.
 author: adamstoffel
 ms.author: adamstoffel
@@ -7,12 +7,12 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
 ms.custom: msecd-doc-authoring-1030
-ms.date: 11/16/2026
+ms.date: 11/17/2026
 ai-usage: ai-generated
 #customer intent: As an application developer, I want the shared API contract so that I can implement customer authentication and acquire tokens.
 ---
 
-# Native authentication API v2 reference
+# Native Authentication API V2 reference
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -28,13 +28,15 @@ For an existing V1 integration, use the [V1 API reference](reference-native-auth
 
 - An external tenant and an application configured for public client and native authentication flows. See [Configure an application](how-to-native-authentication-configure-app.md).
 - A user flow associated with the application.
-- A tenant-verified custom URL domain configured for all service API calls.
+- For browser-based apps, such as SPAs, a tenant-verified custom URL domain configured for service API calls.
 - The delegated permissions and consent required by your target resource, if you request access to an API.
 - For SPAs with Embedded native authentication and BYO UX websites, a proxy or edge policy that implements the [browser proxy requirements](#browser-proxy-requirements).
 
 ## Operations and authority
 
-The examples use `https://{custom_domain}/{tenant}`, where `custom_domain` is a tenant-verified authentication domain, such as `login.contoso.com`, and `tenant` is its Directory (tenant) ID, a GUID. `client_id` is the Application (client) ID. All service API call URLs use this custom domain, including authorization challenges and token exchange. See [Configure the API authority](how-to-native-authentication-configure-app.md#configure-the-api-authority).
+The examples use `https://{custom_domain}/{tenant}`, where `custom_domain` is a tenant-verified authentication domain, such as `login.contoso.com`, and `tenant` is its Directory (tenant) ID, a GUID. `client_id` is the Application (client) ID. In these examples, all service API call URLs use this custom domain, including authorization challenges and token exchange.
+
+The Native Authentication API V2 requires a tenant-verified custom domain for browser-based apps, such as SPAs, to help protect against cross-site request forgery (CSRF). Non-browser clients, such as iOS and Android apps using native HTTP transports, don't require a custom domain. An embedded browser or webview isn't a native HTTP transport. BYO UX remains browser-based and requires a tenant-verified custom domain. See [Configure the API authority](how-to-native-authentication-configure-app.md#configure-the-api-authority).
 
 Except for the initial authorization request and token exchange, use the URL advertised by the current response. Method IDs are opaque. Resolve relative links against the configured authority origin, validate the destination, and retain the returned path and query unchanged.
 
