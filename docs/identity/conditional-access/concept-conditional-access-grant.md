@@ -2,8 +2,11 @@
 title: How to Configure Grant Controls in Microsoft Entra
 description: Learn how to configure grant controls in Microsoft Entra Conditional Access policies to secure access to your organization's resources effectively.
 ms.topic: concept-article
-ms.date: 06/02/2026
+ms.date: 10/06/2026
+author: tilarso
+ms.author: tilarso
 ai-usage: ai-assisted
+#customer intent: As an administrator, I want to understand Conditional Access grant controls so that I can choose appropriate requirements for resource access.
 ms.reviewer: lhuangnorth, jogro
 ms.custom:
   - sfi-image-nochange
@@ -11,6 +14,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:08/28/2025
   - ai-gen-description
+  - msecd-doc-authoring-108
 ---
 # Conditional Access: Grant
 
@@ -37,6 +41,7 @@ Admins can choose to enforce one or more controls when granting access. These co
 - [Require approved client app](./policy-all-users-device-compliance.md)
 - [Require app protection policy](./policy-all-users-device-compliance.md)
 - [Require password change](#require-password-change)
+- [Require identity verification](#require-identity-verification)
 
 When admins choose to combine these options, they can use the following methods:
 
@@ -230,6 +235,31 @@ When a user is required to remediate risk with this control selected, users are 
 ### Terms of use
 
 If your organization created terms of use, other options might be visible under grant controls. These options allow admins to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
+
+## Require identity verification
+
+The identity verification grant control requires users to verify their identity for protected access. Configure an eligible verification profile and apply the requirement to the supported resource or action scope in your tenant.
+
+Identity verification and credential provenance are distinct. An identity verification requirement doesn't, by itself, establish the provenance of the specific credential used at sign-in. During preview, credential provenance is recorded only for passkey credentials.
+
+
+Check [Identity verification licensing](../../fundamentals/licensing.md#identity-verification) for the requirements that apply to your scenario. License requirements for identity verification are separate from the existing generic authentication-strength guidance.
+
+Configure an eligible [identity verification profile](../authentication/concept-authentication-verified-id.md#create-and-manage-identity-verification-profiles), then follow the guide for your scenario:
+
+- [Require identity verification for resource access](policy-require-identity-verification.md#configure-a-resource-access-policy) for resource policy design, supported issuance testing, and failure handling.
+- [Protect onboarding and recovery](policy-require-identity-verification.md#configure-an-onboarding-and-recovery-policy) for bootstrap policy boundaries.
+- [Configure risk policies](../../id-protection/howto-identity-protection-configure-risk-policies.md) for the separate risk scenario.
+
+Use onboarding and recovery user-action targeting to protect bootstrap separately from ordinary resource access. Confirm the target and exclusion options available in your tenant. Preserve emergency access, and keep exclusions scoped and approved rather than removing ordinary resource protection.
+
+> [!NOTE]
+> **Terms of use** and **Require authentication strength** aren't supported for the onboarding and recovery user action. Most other Microsoft Entra-specific controls also aren't supported for this action. Review the [onboarding and recovery control limitations](policy-require-identity-verification.md#review-control-limitations) before combining controls. This limitation doesn't apply to ordinary resource-access policies.
+
+**Require risk remediation** remains a distinct control with the behavior described above. The identity verification requirement isn't a rename or an automatic change to that control.
+
+Report-only evaluation isn't enforcement and doesn't prove that verification completed. Report-only guidance excludes user-action policies from evaluation; don't rely on it for onboarding and recovery without confirming support for that action.
+
 
 ## Multiple grant controls
 

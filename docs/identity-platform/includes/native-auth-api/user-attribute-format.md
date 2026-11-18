@@ -2,7 +2,8 @@
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: include
-ms.date: 05/07/2024
+ms.date: 11/11/2026
+ms.custom: msecd-doc-authoring-1030
 ---
 
 You specify the information you want to collect from the user by configuring the user flow settings in the Microsoft Entra admin center. Use the [Collect custom user attributes during sign-up](../../../external-id/customers/how-to-define-custom-attributes.md) article to learn how to collect values for both built-in and custom attributes.
@@ -33,8 +34,8 @@ Learn more about user attributes input types in [Custom user attributes input ty
 
 ### How to reference user attributes 
 
-When you [create a sign-up user-flow](../../../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center are different from how you reference them in the native authentication API.
+When you [create a sign-up user-flow](../../../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md), you configure user attributes that you want to collect from the user during sign-up. The names of the user attributes in the Microsoft Entra admin center are different from how you reference them in the Native Authentication API.
 
 For example, *Display Name* in the Microsoft Entra admin center is referenced as *displayName* in the API.
 
-Use the [User profile attributes](../../../external-id/customers/concept-user-attributes.md) article to learn how to reference both built-in and custom user attributes in the native authentication API.
+Use the [User profile attributes](../../../external-id/customers/concept-user-attributes.md) article to learn how to reference both built-in and custom user attributes in the Native Authentication API.

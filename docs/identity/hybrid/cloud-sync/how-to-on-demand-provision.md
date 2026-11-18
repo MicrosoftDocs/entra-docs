@@ -3,8 +3,11 @@ title: 'On-demand provisioning in Microsoft Entra Cloud Sync'
 description: This article describes how to use the cloud sync feature of Microsoft Entra Connect to test configuration changes.
 
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 11/17/2026
 ms.subservice: hybrid-cloud-sync
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
+#customer intent: As an administrator, I want to test cloud sync configuration changes for a user so that I can verify synchronization to Microsoft Entra ID.
 ---
 
 # On-demand provisioning - Active Directory to Microsoft Entra ID
@@ -21,6 +24,10 @@ For additional information and an example see the following video.
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=abcf1d11-c101-49a6-ab56-cdc45cc34817]
 
 ## Validate a user
+
+> [!NOTE]
+> On-demand provisioning from Active Directory to Microsoft Entra ID supports only user objects. Group objects aren't supported.
+
 To use on-demand provisioning, follow these steps:
 
  [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]

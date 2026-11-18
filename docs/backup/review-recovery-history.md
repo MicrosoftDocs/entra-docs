@@ -30,8 +30,6 @@ To view available recovery history in your tenant, you must sign in with at leas
 
 1. In the left navigation pane, select **Recovery History** under **Backup and recovery**.
 
-   :::image type="content" source="media/review-recovery-history/recovery-history-page.png#lightbox" alt-text="Screenshot of the Recovery History page showing recovery operations with Status, Backup timestamp, Recovery started, and Modified objects columns.":::
-
    The Recovery History page displays all recent recovery operations in your tenant. From this page:
 
    - View the **Recovery ID** for each operation.
@@ -40,8 +38,6 @@ To view available recovery history in your tenant, you must sign in with at leas
    - Review when the recovery started and completed.
    - See how many objects and links the recovery modified.
    - Filter or search recovery records to narrow results.
-
-   :::image type="content" source="media/review-recovery-history/recovery-history-details.png#lightbox" alt-text="Screenshot of the Recovery History page showing multiple recovery operations with status and timestamp details.":::
 
 > [!NOTE]
 > The system automatically removes recovery history seven days after recovery completes.
@@ -52,7 +48,7 @@ Recovery operations move through these statuses as the system applies changes to
 
 | Status | Description |
 |---|---|
-| **Loading data** | The system is loading data from the selected backup to prepare for recovery. If you already used the backup to create a difference report or a prior recovery, this step might finish quickly. |
+| **Loading data** | The system is loading data from the selected backup to prepare for recovery. If you already used the backup to create a difference report or a prior recovery, the service reuses the loaded data. |
 | **In progress** | The system is applying recovery actions to restore objects to the backup state. The duration of this step depends on the number and type of changes being applied.|
 | **Completed** | The recovery completed successfully, and the system applied all supported changes.|
 | **Completed with warnings** | The recovery completed, but some changes couldn't be applied. Review the failed changes to understand which objects weren't restored and why.|

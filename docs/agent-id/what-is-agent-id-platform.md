@@ -2,7 +2,8 @@
 title: What is the Microsoft agent identity platform
 titleSuffix: Microsoft Entra Agent ID
 description: Learn about the Microsoft Agent Identity Platform, a comprehensive identity, and authorization framework designed specifically for AI agents. Key concepts include agent registry, authentication protocols, tokens, claims, and agent discovery capabilities.
-ms.date: 10/24/2025
+ms.date: 11/05/2026
+ai-usage: ai-assisted
 ms.topic: concept-article
 ms.reviewer: dastrock
 
@@ -21,6 +22,8 @@ This overview introduces the core components of the Microsoft agent identity pla
 
 [!INCLUDE [entra-agent-id-license-note](../includes/licensing-agent-id.md)]
 
+To build or connect an agent, [choose an integration path](choose-agent-integration-path.md) based on its platform and hosting environment. To administer existing identities, start with [Manage agent identities](manage-agent-identities-admin.md).
+
 ## Platform architecture overview
 
 The Microsoft agent identity platform is built on several foundational technical components that work together to provide a complete identity and authorization solution for AI agents:
@@ -29,7 +32,7 @@ The Microsoft agent identity platform is built on several foundational technical
 
 - **SDKs**: Software development kits that enable developers to integrate with the Microsoft agent identity platform. SDKs abstract the complexity of token acquisition and protocol handling, making it straightforward for platforms that build agents to incorporate identity management into their applications. Microsoft agent identity platform includes two SDKs: Microsoft Identity Web (.NET) and the Microsoft Entra ID Auth SDK (sidecar).
 
-- **Agent management**: A comprehensive agent metadata store and administrative interface within the Microsoft Entra admin center that enables administrators to discover, view, configure, and manage agents. The platform provides the agent registry that is a centralized repository for registering and managing agents across an organization.
+- **Agent management**: The Microsoft Entra admin center provides identity-management views for agent identities and blueprints. Microsoft Agent 365 provides the broader organizational agent registry. For which experience to use, see [Agent registry convergence](agent-registry-convergence.md).
 
 These technical components work together with the identity constructs described in the following section to provide complete platform functionality.
 
@@ -53,4 +56,4 @@ The Microsoft agent identity platform is designed to work seamlessly across the 
 - **Platforms and services that create agents**: Platforms that create and manage agents can integrate with the Microsoft agent identity platform to secure agents. This includes Microsoft-owned platforms like Copilot Studio and non-Microsoft platforms such as Amazon Web Services (AWS) Bedrock, n8n, and other agent frameworks that support OAuth 2.0 and OpenID Connect. Organizations can onboard agents from these platforms by using the [Microsoft Entra ID Auth SDK (sidecar)](authentication-with-auth-sdk-sidecar.md) or [workload identity federation](/entra/workload-id/workload-identity-federation), with no platform-specific credential management required.
 - **Extended Microsoft identity and security products**: Integration with Conditional Access, identity protection, identity governance, Global Secure Access, and other security services enable comprehensive agent security.
 
-This interoperability ensures that organizations can build, deploy, and manage agent identities consistently regardless of where agents are created or deployed. For step-by-step guidance on integrating non-Microsoft agents, see [Integrate third-party agents with Microsoft Entra Agent ID](configure-third-party-agents.md).
+This interoperability ensures that organizations can build, deploy, and manage agent identities consistently regardless of where agents are created or deployed. For step-by-step guidance on integrating non-Microsoft agents, see [Choose an integration path for an agent](choose-agent-integration-path.md).

@@ -1,52 +1,73 @@
 ---
-title: Native authentication web fallback
-description: Learn how you can use web fallback to improve the resilience of your customer apps that use native authentication. 
-manager: dougeby
-ms.service: identity-platform 
-ms.subservice: external
+title: Embedded native authentication web fallback overview
+description: Understand unsupported native interactions, separate browser sign-in, and the boundaries between restarting and resuming authentication.
 ms.topic: concept-article
-ms.date:  08/08/2025
-
-#Customer intent: As a developer, devops, I want to learn more native authentication web fallback, so that I can enable it in my client apps.
+ms.date: 11/13/2026
+ms.custom: msecd-doc-authoring-1030
+ai-usage: ai-assisted
+#customer intent: As an application developer, I want to understand browser fallback so that my app can offer recovery when it can't complete a native interaction.
 ---
 
-# Native authentication web fallback
+# Embedded native authentication web fallback overview
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-Web fallback allows a client app that uses native authentication to use browser-delegated authentication as a fallback mechanism to improve resilience. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide.
+[!INCLUDE [applies-to-authentication-native](../external-id/includes/applies-to-authentication-native.md)]
 
-All client apps that use native authentications needs to support web fallback.
+An Embedded native authentication interaction can require behavior that your app can't complete natively. Browser fallback is a recovery path that starts a separate, configured browser sign-in. It doesn't resume the native transaction.
 
-## Web fallback flow
+[!INCLUDE [native-authentication-public-preview](~/external-id/includes/native-authentication-public-preview.md)]
 
-This flow shows how web fallback can happen: 
- 
-- The client app collects initial information from the user and starts the authentication flow by making a request to Microsoft Entra. 
-- Microsoft Entra returns a success or error response. A success response indicates the client app can continue making requests Microsoft Entra. An error response can indicate the client can continue to prompt the user for more information and continue to make requests to Microsoft Entra. The error response can also indicate the client needs to use browser-delegated authentication.
-- If the error response indicates the client needs to use browser-delegated authentication, the client continues the authentication flow in the browser.
+<a name="web-fallback-flow"></a>
 
-### Example scenario
+## Service-required and client-initiated fallback
 
-Let's look at an example when it's possible for Microsoft Entra to indicate that the client needs to use browser-delegated authentication:
+The API uses states, actions, and links to describe the next interaction. A client can present available actions or apply application flow logic to select an allowed operation.
 
-- In the Microsoft Entra admin center, an administrator configures an app to use email with password authentication method. 
-- This configuration means Microsoft Entra requires the client app to have the ability to collect an email (username) and password from user. The client app communicates this ability to Microsoft Entra by sending *password* challenge type. Learn more about challenge types in [Native authentication challenge types](concept-native-authentication-challenge-types.md) article.
-- The client app should also validate the email by submitting a one-time passcode that the server sends to the user's email. The client app communicates this ability to Microsoft Entra by sending *oob* challenge type. Learn more about challenge types in [Native authentication challenge types](concept-native-authentication-challenge-types.md) article  
-- If the client app doesn't send both *oob* and *password* challenge types, Microsoft Entra interprets it as the client app's inability to fulfill the set requirement. In this case, Microsoft Entra returns an error that indicates the client needs to use browser-delegated authentication.
+The Native Authentication API can return the following response:
 
-## Support web fallback 
+```json
+{
+    "state": "redirect"
+}
+```
 
-If Microsoft Entra's response indicates that the client app needs to fall back to the browser-delegated authentication, we recommend you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md). 
+This response can contain only `state`. It doesn't supply a continuation token or a browser handoff URL. Stop the native transaction instead of requiring `action`, `continuationToken`, or `_links` on this response.
 
-Learn how to support web fallback in the following apps when you use native authentication:
-- [Android apps](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback).
-- [iOS/macOS apps](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback).
-- [Single-page apps](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md).
+At the OAuth boundary, browser-required handling can instead use `invalid_grant` with `web_redirect_required`. Handle that OAuth error separately from native JSON states.
 
+A client can also reach a response it can't safely process: an unknown required action, a missing required field, an unsupported credential interaction, or malformed data. Offer a separately configured browser sign-in if your app has one, or show a clear failure without marking the user signed in.
+
+Unknown optional properties or links are different. Ignore those additions while processing the required fields; their presence alone doesn't require a switch to the browser.
+
+## Transaction and user-experience boundaries
+
+A separate browser sign-in restarts authentication; it doesn't preserve native progress.
+
+Native continuation tokens belong to the active transaction and current operation. They aren't general-purpose browser sign-in tokens. Don't add passwords, one-time passcodes (OTPs), native continuation tokens, or security tokens to browser URLs. Let the configured authorization flow handle its registered redirect. Keep authorization codes and other credentials out of logs and telemetry. Use the configured interactive authorization flow, not an arbitrary URL supplied by untrusted content.
+
+The browser flow can have different interactions from the native flow. Don't mark the app signed in until its configured authentication integration reports success. If the user cancels or the browser flow fails, retain a clear signed-out or incomplete state.
+
+<a name="example-scenario"></a>
+<a name="support-web-fallback"></a>
+<a id="sdk-and-api-boundaries"></a>
+
+## Browser integration
+
+Use a supported browser-delegated integration to open the browser and handle its registered redirect. The [mobile quickstart](quickstart-mobile-app-sign-in.md?pivots=external) and [single-page app quickstart](quickstart-single-page-app-sign-in.md?pivots=external) describe those integration paths. Keep browser completion, cancellation, and error handling separate from native transaction processing.
+
+For an application configured with Bring Your Own UX (BYO UX), normal browser authorization uses the configured self-hosted page. A native `redirect` response isn't a URL or parameter for bypassing that configuration to Microsoft-hosted pages. Use the configured browser authorization flow rather than a constructed bypass URL.
+
+If your app doesn't have a supported browser path, explain that the interaction can't be completed. Don't automatically replay credentials or switch the active transaction to V1.
+
+## V1 fallback
+
+V1 clients need to support web fallback. The client declares its supported interactions through challenge types. For example, an email-with-password user flow requires both `oob` and `password`; omitting either can cause the service to require browser authentication. See [V1 challenge types](reference-native-authentication-api-v1.md#v1-challenge-types-and-capabilities).
+
+For existing SDK integrations, use the [SDK library references](reference-native-authentication-api-v1.md#sdk-references) for fallback interfaces. V1 fallback starts a separate browser sign-in, not a resumable native-to-browser continuation.
 
 ## Related content
 
-- [Tutorial: Support web fallback in Android app](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback)
-- [Tutorial: Support web fallback in iOS/macOS app](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback)
-- [Tutorial: Support web fallback in SPA that uses native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md)
+- [Embedded native authentication flow](concept-native-authentication-flow.md).
+- [The Native Authentication API reference](reference-native-authentication.md).
+- [Migrate from Native Authentication API V1 to V2](how-to-migrate-native-authentication-v1-v2.md).

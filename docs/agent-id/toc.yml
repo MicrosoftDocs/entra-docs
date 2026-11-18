@@ -30,8 +30,12 @@ items:
         href: agent-owners-sponsors-managers.md
     - name: Authentication and authorization
       items:
+      - name: Understand agent SSO, provisioning, and authorization
+        href: understand-agent-sso-provisioning-authorization.md
       - name: Authorization in Entra Agent ID
         href: authorization-agent-id.md
+      - name: Client ID Metadata Documents (CIMD)
+        href: client-id-metadata-documents.md
       - name: Inheritable permissions
         href: concept-inheritable-permissions.md
       - name: Tokens in Microsoft agent identity platform
@@ -49,7 +53,7 @@ items:
       - name: Access packages for agents
         href: agent-access-packages.md
       - name: Agent ID default inactivity policy
-        href: ../id-governance/agent-default-inactivity-policy.md
+        href: /entra/id-governance/agent-default-inactivity-policy?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: ID Protection for agents
         href: /entra/id-protection/concept-risky-agents?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
       - name: Network controls for agents
@@ -71,17 +75,33 @@ items:
       href: best-practices-agent-id.md
     
   # BUILD / IMPLEMENT ######################
-  - name: Create and configure agents
+  - name: Integrate agents with Entra
     expanded: true
     items:
     - name: AI-guided setup
       href: agent-id-ai-guided-setup.md
+    - name: Choose an integration path
+      href: choose-agent-integration-path.md
+    - name: Build local agents with CIMD
+      href: configure-client-id-metadata-document.md
+    - name: Build local agents with MSAL.NET
+      items:
+      - name: 1. Sign in users
+        href: authenticate-local-agent.md
+      - name: 2. Call APIs as a user
+        href: authenticate-local-agent-call-apis.md
     - name: Create agent identity objects
       items:
       - name: Create an agent blueprint
         href: create-blueprint.md
+      - name: Create an identity for your agent
+        href: create-single-instance-agent.md
+      - name: Authentication for a single-instance agent identity
+        href: authenticate-single-instance-agent.md
       - name: Create and delete agent identities
         href: create-delete-agent-identities.md
+      - name: Create and delete an agent's user account
+        href: create-delete-agent-user-account.md
       - name: Learn about agent identity deletion
         href: concept-agent-identity-deletion.md
       - name: Delete and restore agent identity objects
@@ -102,17 +122,39 @@ items:
         href: configure-inheritable-permissions-blueprints.md
       - name: Grant agent access to Microsoft 365
         href: grant-agent-access-microsoft-365.md
+      - name: Grant application permissions
+        href: grant-application-permissions-agent-identity.md
       - name: Control user access to agents
         href: control-user-access-agents.md
-      - name: Autonomous agents
+    - name: Build cloud agents with ASP.NET Core
+      items:
+      - name: 1. Call APIs as an agent
         items:
-        - name: Authenticate and acquire tokens for autonomous agents
-          href: autonomous-agent-authentication-authorization-flow.md
-      - name: Interactive agents
+        - name: Custom APIs
+          href: call-api-custom.md
+        - name: Azure services
+          href: call-api-azure-services.md
+        - name: Microsoft Graph
+          href: call-api-microsoft-graph.md
+      - name: 2. Call APIs as an agent user
+        href: agent-user-oauth-flow.md
+      - name: 3. Authenticate users
+        href: aspnet-core-authenticate-users.md
+      - name: 4. Control user access to agents
+        href: control-user-access-agents.md
+      - name: 5. Grant delegated permissions
+        href: grant-agent-access-microsoft-365.md
+      - name: 6. Call APIs as a user
         items:
         - name: Authenticate users and request user tokens
           href: interactive-agent-authentication-authorization-flow.md
-    - name: Use the Microsoft Entra Auth SDK (sidecar)
+        - name: Custom APIs
+          href: aspnet-core-call-custom-api-as-user.md
+        - name: Azure services
+          href: aspnet-core-call-azure-api-as-user.md
+        - name: Microsoft Graph
+          href: aspnet-core-call-graph-as-user.md
+    - name: Build cloud agents with Entra Auth SDK (sidecar)
       items:
       - name: Authentication with the Auth SDK (sidecar)
         href: authentication-with-auth-sdk-sidecar.md
@@ -120,8 +162,62 @@ items:
         href: microsoft-entra-sdk-for-agent-identities.md
       - name: Run the sidecar for local development
         href: sidecar-local-development.md
+      - name: 1. Call APIs as an agent
+        items:
+        - name: Custom APIs
+          href: sidecar-call-custom-api-as-agent.md
+        - name: Azure services
+          href: sidecar-call-azure-api-as-agent.md
+        - name: Microsoft Graph
+          href: sidecar-call-graph-as-agent.md
+      - name: 2. Call APIs as an agent user
+        href: sidecar-call-microsoft-365-as-agent-user.md
+      - name: 3. Authenticate users
+        href: sidecar-authenticate-users.md
+      - name: 4. Control user access to agents
+        href: sidecar-control-user-access-agents.md
+      - name: 5. Call APIs as a user
+        items:
+        - name: Custom APIs
+          href: sidecar-call-custom-api-as-user.md
+        - name: Azure services
+          href: sidecar-call-azure-api-as-user.md
+        - name: Microsoft Graph
+          href: sidecar-call-graph-as-user.md
       - name: Validate agent tokens in a downstream API
         href: how-to-validate-agent-tokens-downstream-api.md
+    - name: Build an agent fleet with ASP.NET Core
+      items:
+      - name: Plan an agent fleet
+        href: plan-agent-fleet.md
+      - name: Set up the blueprint for a fleet
+        href: set-up-blueprint-agent-fleet.md
+      - name: 1. Provision agent identities
+        href: aspnet-core-fleet-provision-agent-identities.md
+      - name: 2. Call APIs as an agent
+        href: aspnet-core-fleet-call-apis-as-agent.md
+      - name: 3. Call APIs as an agent user
+        href: aspnet-core-fleet-call-apis-as-agent-user.md
+      - name: 4. Authenticate users and route to agents
+        href: aspnet-core-fleet-authenticate-users.md
+      - name: 5. Call APIs as a user
+        href: aspnet-core-fleet-call-apis-as-user.md
+    - name: Build an agent fleet with Entra Auth SDK (sidecar)
+      items:
+      - name: Plan an agent fleet
+        href: plan-agent-fleet.md
+      - name: Set up the blueprint for a fleet
+        href: set-up-blueprint-agent-fleet.md
+      - name: 1. Provision agent identities
+        href: sidecar-fleet-provision-agent-identities.md
+      - name: 2. Call APIs as an agent
+        href: sidecar-fleet-call-apis-as-agent.md
+      - name: 3. Call APIs as an agent user
+        href: sidecar-fleet-call-apis-as-agent-user.md
+      - name: 4. Authenticate users and route to agents
+        href: sidecar-fleet-authenticate-users.md
+      - name: 5. Call APIs as a user
+        href: sidecar-fleet-call-apis-as-user.md
     - name: Call APIs and services
       items:
       - name: Call Microsoft Graph API
@@ -134,13 +230,19 @@ items:
         href: secure-mcp-server-with-entra-id.md
       - name: Govern agent access in PostgreSQL
         href: govern-agent-access-azure-postgresql.md
-    - name: Integrate third-party agent platforms
+    - name: Build with agent platforms
       items:
-      - name: Configure third-party agents with Agent ID
-        href: configure-third-party-agents.md
-      - name: Secure an Amazon Bedrock agent
+      - name: Microsoft Foundry
+        href: integrate-microsoft-foundry-agent.md
+      - name: Copilot Studio
+        href: integrate-copilot-studio-agent.md
+      - name: Amazon Bedrock
         href: integrate-aws-bedrock-agent.md
-      - name: Secure an n8n agent
+      - name: Amazon Web Services
+        href: integrate-aws-agent.md
+      - name: Google Cloud Platform
+        href: integrate-google-cloud-agent.md
+      - name: n8n
         href: integrate-n8n-agent.md
 
   # DEPLOY AND SCALE ######################
@@ -153,6 +255,8 @@ items:
       href: /entra/id-governance/agent-sponsor-tasks?toc=/entra/agent-id/toc.json&bc=/entra/agent-id/breadcrumb/toc.json
     - name: Manage agent identities in your organization
       href: manage-agent-identities-admin.md
+    - name: Manage Client ID Metadata Document (CIMD) clients
+      href: manage-client-id-metadata-document-clients.md
     - name: Disable agent identities
       href: disable-agent-identities.md
     - name: View and filter agent identities (admin center)
@@ -174,6 +278,12 @@ items:
   # REFERENCE ######################
   - name: Reference
     items:
+    - name: OAuth client credentials grant
+      href: agent-autonomous-app-oauth-flow.md
+    - name: OAuth authorization code grant
+      href: agent-authorization-code-oauth-flow.md
+    - name: OAuth on-behalf-of flow
+      href: agent-on-behalf-of-oauth-flow.md
     - name: Token claims reference
       href: agent-token-claims.md
     - name: FAQ

@@ -85,25 +85,29 @@
           href: how-applications-are-added.md
         - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
-    - name: Customization and extensibility
+    - name: Custom authentication extensions
+      displayName: Custom Authentication Extensions
+      href: custom-extension-overview.md
+    - name: Custom claims provider
+      href: custom-claims-provider-overview.md
+    - name: Embedded native authentication
       items:
-      - name: Custom Authentication Extensions
-        displayName: Custom Authentication Extensions
-        items:
-          - name: Overview
-            href: custom-extension-overview.md
-          - name: Custom claims provider
-            href: custom-claims-provider-overview.md
-      - name: Native authentication
-        items:
-          - name: Native authentication
-            href: concept-native-authentication.md
-          - name: Native authentication challenge types
-            href: concept-native-authentication-challenge-types.md
-          - name: Native authentication web fallback
-            href: concept-native-authentication-web-fallback.md
-          - name: Native authentication user attribute builder
-            href: concept-native-authentication-user-attribute-builder.md
+        - name: Overview
+          href: concept-native-authentication.md
+        - name: Migrate from V1 to V2
+          href: how-to-migrate-native-authentication-v1-v2.md
+        - name: Configure an application
+          href: how-to-native-authentication-configure-app.md
+        - name: SDK quickstart
+          href: quickstart-native-authentication.md
+        - name: Flow and actions
+          href: concept-native-authentication-flow.md
+        - name: User attributes
+          href: concept-native-authentication-user-attributes.md
+        - name: Browser integration and CORS
+          href: concept-native-authentication-cors.md
+        - name: Web fallback and transaction boundaries
+          href: concept-native-authentication-web-fallback.md
     - name: Security
       displayName: least privilege, secure app configuration, Conditional Access
       items:
@@ -118,8 +122,6 @@
         - name: Content Security Policy (CSP) overview
           href: content-security-policy.md
           displayName: CSP, security headers, XSS protection
-        - name: Native authentication fraud protection for SMS MFA
-          href: concept-native-authentication-sms-mfa-third-party-fraud-protection.md
         - name: Tokens and claims
           items:
             - name: Tokens and claims overview
@@ -146,22 +148,10 @@
   items:
     - name: SPA authentication
       href: index-spa.yml
-    - name: Quickstart
-      items: 
-          - name: Browser-delegated authentication
-            items:
-            - name: Sign in users
-              href: quickstart-single-page-app-sign-in.md?pivots=workforce
-          - name: Native authentication
-            items:
-              - name: Use API
-                items:
-                  - name: Sign in users in a React SPA
-                    href: quickstart-native-authentication-single-page-app-react-sign-in.md
-              - name: Use SDK
-                items:
-                - name: Sign in users in SPA
-                  href: quickstart-native-authentication-single-page-app-sdk-sign-in.md
+    - name: Quickstart - sign in users
+      href: quickstart-single-page-app-sign-in.md?pivots=workforce
+    - name: Quickstart - embedded native authentication SDK
+      href: quickstart-native-authentication.md
     - name: Tutorials
       items:
         - name: JavaScript
@@ -174,97 +164,39 @@
               href: tutorial-single-page-app-javascript-sign-in-sign-out.md
         - name: React
           items:
-            - name: Browser-delegated authentication
-              items:
-              - name: Prepare your app
-                href: tutorial-single-page-app-react-prepare-app.md
-              - name: Add sign in and sign out
-                href: tutorial-single-page-app-react-configure-authentication.md
-              - name: Sign in users
-                href: tutorial-single-page-app-react-sign-in-sign-out.md
-            - name: Native authentication
-              items:
-                - name: Use API
-                  items:
-                  - name: Sign up
-                    href: tutorial-native-authentication-single-page-app-react-sign-up.md
-                  - name: Set up local CORS
-                    href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
-                  - name: Sign in
-                    href: tutorial-native-authentication-single-page-app-react-sign-in.md
-                  - name: Reset password
-                    href: tutorial-native-authentication-single-page-app-react-reset-password.md
-                - name: Use SDK
-                  items:
-                  - name: Sign up
-                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-up.md
-                  - name: Sign in
-                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-in.md
-                  - name: Reset password
-                    href: tutorial-native-authentication-single-page-app-react-sdk-reset-password.md
-                  - name: Support web fallback
-                    href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md
-                  - name: Register strong authentication method
-                    href: tutorial-native-authentication-single-page-app-react-register-strong-method.md
-                  - name: Enable MFA
-                    href: tutorial-native-authentication-single-page-app-react-enable-mfa.md
-                  - name: Add social sign-in
-                    href: tutorial-native-authentication-single-page-app-react-social-sign-in.md
-                  - name: Add custom headers to network requests
-                    href: tutorial-native-authentication-single-page-app-javascript-custom-headers.md
+            - name: Prepare your app
+              href: tutorial-single-page-app-react-prepare-app.md
+            - name: Add sign in and sign out
+              href: tutorial-single-page-app-react-configure-authentication.md
+            - name: Sign in users
+              href: tutorial-single-page-app-react-sign-in-sign-out.md
         - name: Angular
           items:
-            - name: Browser-delegated authentication
-              items:
-              - name: Prepare your app
-                href: tutorial-single-page-apps-angular-prepare-app.md
-              - name: Sign in users
-                href: tutorial-single-page-apps-angular-sign-in-users-app.md
-              - name: Extract user data and test app
-                href: tutorial-single-page-apps-angular-extract-user-data.md
-            - name: Native authentication
-              items:
-              - name: Sign up
-                href: tutorial-native-authentication-single-page-app-angular-sign-up.md
-              - name: Sign in
-                href: tutorial-native-authentication-single-page-app-angular-sign-in.md
-              - name: Reset password
-                href: tutorial-native-authentication-single-page-app-angular-reset-password.md
-              - name: Support web fallback
-                href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md 
-              - name: Register strong authentication method
-                href: tutorial-native-authentication-single-page-app-angular-register-strong-method.md
-              - name: Enable MFA
-                href: tutorial-native-authentication-single-page-app-angular-enable-mfa.md
-              - name: Add social sign-in
-                href: tutorial-native-authentication-single-page-app-angular-social-sign-in.md
-              - name: Add custom headers to network requests
-                href: tutorial-native-authentication-single-page-app-javascript-custom-headers.md
+            - name: Prepare your app
+              href: tutorial-single-page-apps-angular-prepare-app.md
+            - name: Sign in users
+              href: tutorial-single-page-apps-angular-sign-in-users-app.md
+            - name: Extract user data and test app
+              href: tutorial-single-page-apps-angular-extract-user-data.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
     - name: How-to
       items:
-        - name: Browser-delegated authentication
-          items:
-            - name: SPA that signs in users and calls web API
-              items:
-                - name: Code configuration
-                  href: scenario-spa-app-configuration.md
-                - name: Sign in and sign out
-                  href: scenario-spa-sign-in.md
-                - name: Acquire token for an API
-                  href: scenario-spa-acquire-token.md
-                - name: Call a web API
-                  href: scenario-spa-call-api.md
-        - name: Native authentication
-          items:
-            - name: Set up local CORS
-              href: how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md
-            - name: Set up CORS in test environment
-              href: how-to-native-authentication-cors-solution-test-environment.md
-            - name: Set up CORS in production
-              href: how-to-native-authentication-cors-solution-production-environment.md
+        - name: SPA code configuration
+          href: scenario-spa-app-configuration.md
+        - name: SPA sign in and sign out
+          href: scenario-spa-sign-in.md
+        - name: Acquire a token for an API
+          href: scenario-spa-acquire-token.md
+        - name: Call a web API
+          href: scenario-spa-call-api.md
+        - name: Embedded native authentication local CORS proxy
+          href: how-to-native-authentication-cors-local.md
+        - name: Embedded native authentication Azure Functions CORS proxy
+          href: how-to-native-authentication-cors-azure-functions.md
+        - name: Embedded native authentication Azure Front Door CORS proxy
+          href: how-to-native-authentication-cors-front-door.md
 - name: Web app
   items:
     - name: Web app authentication
@@ -457,32 +389,10 @@
   items:
     - name: Mobile app authentication
       href: index-mobile.yml
-    - name: Quickstart
-      items: 
-        - name: Browser-delegated authentication
-          items: 
-            - name: Sign in users
-              href: quickstart-mobile-app-sign-in.md?pivots=workforce
-            - name: Call a web API
-              href: quickstart-mobile-app-call-api.md
-        - name: Native authentication
-          items:
-            - name: Android (Kotlin)
-              items:
-                - name: Sign in users
-                  href: quickstart-native-authentication-android-sign-in.md
-                - name: Sign in users and call an API
-                  href: quickstart-native-authentication-android-call-api.md
-            - name: macOS (Swift)
-              items:
-                - name: Sign in users
-                  href: quickstart-native-authentication-macos-sign-in.md
-            - name: iOS (Swift)
-              items:
-                - name: Sign in users
-                  href: quickstart-native-authentication-ios-sign-in.md
-                - name: Sign in users and call an API
-                  href: quickstart-native-authentication-ios-call-api.md
+    - name: Quickstart - sign in users
+      href: quickstart-mobile-app-sign-in.md?pivots=workforce
+    - name: Quickstart - call a web API
+      href: quickstart-mobile-app-call-api.md
     - name: Tutorials
       items:
         - name: .NET MAUI
@@ -505,79 +415,18 @@
                   href: tutorial-mobile-app-android-sign-in-sign-out.md?tabs=workforce-tenant
                 - name: Call web API
                   href: tutorial-mobile-app-android-call-web-api.md?tabs=workforce-tenant
-            - name: Native authentication
-              items:
-                - name: Prepare Android app
-                  href: tutorial-native-authentication-prepare-android-app.md
-                - name: Sign up
-                  href: tutorial-native-authentication-android-sign-up.md
-                  displayName: email OTP, email one-time passcode, email and password
-                - name: Sign in and sign out
-                  href: tutorial-native-authentication-android-sign-in-sign-out.md
-                  displayName: email OTP, email one-time passcode, email and password
-                - name: Auto-sign in after sign-up
-                  href: tutorial-native-authentication-android-sign-in-after-sign-up.md
-                - name: Add email OTP sign-in
-                  href: tutorial-native-authentication-android-email-one-time-passcode-sign-in.md
-                - name: Federated identity provider sign-in and sign-up using web flow
-                  href: tutorial-native-authentication-android-identity-provider-sign-in-sign-up.md
-                - name: Register email strong authentication method
-                  href: tutorial-native-authentication-android-email-strong-authentication-method.md
-                - name: Add SMS OTP sign-in
-                  href: tutorial-native-authentication-android-sms-one-time-passcode-sign-in.md
-                - name: Register SMS strong authentication method
-                  href: tutorial-native-authentication-android-sms-strong-authentication-method.md
-                - name: Self-service password reset
-                  href: tutorial-native-authentication-android-self-service-password-reset.md
-                - name: Support web fallback
-                  href: tutorial-native-authentication-android-support-web-fallback.md
-                - name: Add custom headers to network requests
-                  href: tutorial-native-authentication-android-custom-headers.md
-                - name: Call an API
-                  href: tutorial-native-authentication-android-sign-in-call-api.md
-                  displayName: multiple access token
             - name: Enable Shared Device Mode in your app using MSAL
               href: tutorial-v2-shared-device-mode.md
             - name: Set up an Android device in Shared Device Mode
               href: tutorial-mobile-android-device-shared-mode.md
         - name: iOS and macOS
           items:
-            - name: Browser-delegated authentication
-              items:
-                - name: Prepare app
-                  href: tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce-tenant
-                - name: Sign in users
-                  href: tutorial-mobile-app-ios-swift-sign-in.md?pivots=workforce-tenant
-                - name: Call an API
-                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md?pivots=workforce-tenant
-            - name: Native authentication
-              items:
-                - name: Prepare iOS/macOS app
-                  href: tutorial-native-authentication-prepare-ios-macos-app.md
-                - name: Sign up
-                  href: tutorial-native-authentication-ios-macos-sign-up.md
-                - name: Sign in and sign out
-                  href: tutorial-native-authentication-ios-macos-sign-in-sign-out.md
-                - name: Auto-sign in after sign-up
-                  href: tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md
-                - name: Add email OTP sign-in
-                  href: tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in.md
-                - name: Federated identity provider sign-in and sign-up using web flow
-                  href: tutorial-native-authentication-ios-macos-identity-provider-sign-in-sign-up.md
-                - name: Register email strong authentication method
-                  href: tutorial-native-authentication-ios-swift-email-strong-authentication-method.md
-                - name: Add SMS OTP sign-in
-                  href: tutorial-native-authentication-ios-swift-sms-one-time-passcode-sign-in.md
-                - name: Register SMS strong authentication method
-                  href: tutorial-native-authentication-ios-swift-sms-strong-authentication-method.md
-                - name: Self-service password reset
-                  href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
-                - name: Support web fallback
-                  href: tutorial-native-authentication-ios-macos-support-web-fallback.md
-                - name: Add custom headers to network requests
-                  href: tutorial-native-authentication-ios-swift-custom-headers.md
-                - name: Call an API
-                  href: tutorial-native-authentication-ios-sign-in-call-api.md
+            - name: Prepare app
+              href: tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce-tenant
+            - name: Sign in users
+              href: tutorial-mobile-app-ios-swift-sign-in.md?pivots=workforce-tenant
+            - name: Call an API
+              href: tutorial-mobile-app-ios-swift-sign-in-call-api.md?pivots=workforce-tenant
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#mobile
@@ -612,7 +461,11 @@
               href: /entra/msal/objc/single-sign-on-macos-ios
             - name: Calling a web API
               href: scenario-mobile-call-api.md
-        - name: Implement WebView SSO with native authentication
+        - name: Configure embedded native authentication
+          href: how-to-native-authentication-configure-app.md
+        - name: Embedded native authentication SDK quickstart
+          href: quickstart-native-authentication.md
+        - name: Authenticate an embedded webview
           href: how-to-native-authentication-webview-sso.md
 - name: Service, daemon, script
   items:
@@ -723,9 +576,9 @@
                 - name: Create attribute collection start and submit events
                   href: custom-extension-attribute-collection.md
                 - name: Retrieve data from attribute collection start event
-                  href: custom-extension-OnAttributeCollectionStart-retrieve-return-data.md
+                  href: custom-extension-onattributecollectionstart-retrieve-return-data.md
                 - name: Retrieve data from attribute collection submit event
-                  href: custom-extension-OnAttributeCollectionSubmit-retrieve-return-data.md
+                  href: custom-extension-onattributecollectionsubmit-retrieve-return-data.md
             - name: Custom email provider
               items: 
                 - name: Configure a custom email provider for one time code send events
@@ -994,8 +847,18 @@
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
-    - name: Native authentication API reference
-      href: reference-native-authentication-api.md
+    - name: The Native Authentication API
+      items:
+        - name: Shared API contract
+          href: reference-native-authentication.md
+        - name: Sign-in
+          href: reference-native-authentication-sign-in.md
+        - name: Sign-up
+          href: reference-native-authentication-sign-up.md
+        - name: Password reset
+          href: reference-native-authentication-password-reset.md
+    - name: Native Authentication API V1 reference
+      href: reference-native-authentication-api-v1.md
     - name: Credential management API reference
       href: reference-credential-management-api.md
     - name: Endpoint reference

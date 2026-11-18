@@ -3,6 +3,7 @@ title: Create an access package in entitlement management
 description: Learn how to create an access package of resources that you want to share in Microsoft Entra entitlement management.
 ms.subservice: entitlement-management
 ms.topic: how-to
+ms.custom: msecd-doc-authoring-1032
 ms.date: 08/25/2024
 #Customer Intent: As an IT admin, I want to create an access package so that I can share resources with users who need access.
 ---
@@ -107,7 +108,7 @@ On the **Requests** tab, you create the first policy to specify who can request 
 
 ![Screenshot that shows the Requests tab for a new access package.](./media/entitlement-management-access-package-create/requests.png)
 
-Depending on which identities you want to be able to request this access package, perform the steps in one of the following sections [Allow users, service principals, and agent identities in your directory to request the access package](#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package), [Allow identities not in your directory to request the access package](#allow-identities-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for identities who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
+Depending on which identities you want to be able to request this access package, perform the steps in one of the following sections [Allow users, agent users, service principals, and agent identities in your directory to request the access package](#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package), [Allow identities not in your directory to request the access package](#allow-identities-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for identities who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
 
 [!INCLUDE [Entitlement management request policy](../includes/entra-entitlement-management-request-policy.md)]
 

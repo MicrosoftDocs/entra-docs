@@ -2,7 +2,9 @@
 title: Configure Torii for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Torii.
 ms.topic: how-to
-ms.date: 04/09/2026
+ms.date: 11/18/2026
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Torii so that I can streamline the user management process and ensure that users have the appropriate access to Torii.
 --- 
@@ -53,7 +55,10 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Screenshot of Copy API Key.](media/torii-provisioning-tutorial/copy-key.png)
    
-1. **Torii Tenant Url:** `https://api.toriihq.com/v1.0/scim/v2` is entered in the **Tenant URL** field in the Provisioning tab of your Torii application.
+1. In the **Tenant URL** field in the Provisioning tab of your Torii application, enter the URL for your Torii region:
+
+    * US: `https://api.toriihq.com/v1.0/scim/v2`.
+    * EU: `https://api.euc.toriihq.com/v1.0/scim/v2`.
 
 <a name='step-3-add-torii-from-the-azure-ad-application-gallery'></a>
 

@@ -1,5 +1,5 @@
 ---
-title: Retrieve and return data from an OnAttributeCollectionSubmit event
+title: OnAttributeCollectionSubmit event reference
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionSubmit event for External ID customer configurations.
 manager: pmwongera
 ms.date: 09/16/2025
@@ -10,7 +10,7 @@ titleSuffix: Microsoft identity platform
 #customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionSubmit event, so that I can design and implement my own REST API to handle attribute collection requests and responses when the user submits attribute entries.
 ---
 
-# Retrieve and return data from an OnAttributeCollectionSubmit event
+# OnAttributeCollectionSubmit event reference
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 

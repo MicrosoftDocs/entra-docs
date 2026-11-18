@@ -2,7 +2,7 @@
 title: What's new in Microsoft Entra Agent ID
 description: Learn about new features and updates in Microsoft Entra Agent ID at general availability, including non-Microsoft integrations, migration guides, and enterprise governance.
 ms.topic: whats-new
-ms.date: 05/01/2026
+ms.date: 10/23/2026
 ai-usage: ai-assisted
 
 #customer-intent: As an IT admin or developer, I want to understand what's new in Microsoft Entra Agent ID at general availability so that I can take advantage of new features for securing AI agents in my organization.
@@ -14,6 +14,26 @@ ai-usage: ai-assisted
 Microsoft Entra Agent ID is now generally available. This release brings first-class identity and access management to AI agents, enabling organizations to authenticate, authorize, govern, and protect agent identities at enterprise scale. Microsoft Entra Agent ID extends Zero Trust principles to AI workloads with purpose-built identity constructs, specialized OAuth flows, and comprehensive security controls.
 
 This article summarizes the key capabilities and documentation currently available.
+
+## Local agent authentication (preview)
+
+Microsoft Entra Agent ID now supports local agents as OAuth public clients. An agent running on an endpoint device can sign in a Microsoft Entra user and request delegated access to protected services by using the authorization code flow with PKCE, without storing or presenting a client credential.
+
+- [Authenticate a local agent with Microsoft Entra ID](authenticate-local-agent.md) - Register a public-client Agent ID, configure MSAL, or use a CIMD URL as the client ID.
+
+## Agent identity blueprint instance modes (preview)
+
+Agent identity blueprints can be configured for one Agent ID or multiple Agent IDs per tenant. A single-instance blueprint uses the same OAuth client ID for the blueprint and its one Agent ID in every tenant. A multi-instance blueprint can create a fleet of Agent IDs with distinct client IDs.
+
+- [Agent identity blueprint instance modes](agent-blueprint.md#instance-modes-preview) - Compare the two topologies and configure the immutable `isSingleInstance` setting.
+
+## Client ID Metadata Document support (preview)
+
+Microsoft Entra ID now supports Client ID Metadata Documents (CIMD). CIMD lets an OAuth client use a public HTTPS metadata URL as its client ID. This model enables MCP clients to connect to Entra-protected MCP servers without requiring every client to be registered with Microsoft Entra ID in advance.
+
+- [Client ID Metadata Documents in Microsoft Entra ID](client-id-metadata-documents.md) - Learn how CIMD works, when to use it, and which limitations apply.
+- [Configure a client to use a Client ID Metadata Document](configure-client-id-metadata-document.md) - Publish client metadata and request delegated access tokens.
+- [Manage CIMD clients in Microsoft Entra ID](manage-client-id-metadata-document-clients.md) - Add, approve, monitor, disable, and remove CIMD-backed agent identities.
 
 ## Manage AI agents at scale
 
@@ -31,7 +51,6 @@ Microsoft Entra Agent ID introduces new identity constructs and authentication p
 - [Configure Microsoft Entra ID Auth SDK (sidecar) for agent identities](microsoft-entra-sdk-for-agent-identities.md) - SDK configuration for token acquisition.
 - [Run the sidecar for local development](sidecar-local-development.md) (New) - Local development setup for the Auth SDK.
 - [Validate agent tokens in a downstream API](how-to-validate-agent-tokens-downstream-api.md) (New) - Token validation guidance for APIs that receive agent tokens.
-- [Configure non-Microsoft agents with Agent ID](configure-third-party-agents.md) (New) - Integration patterns (sidecar and federation) for platforms like AWS, GCP, and n8n.
 - [Secure an Amazon Bedrock agent](integrate-aws-bedrock-agent.md) (New) - Step-by-step guide for securing Bedrock agents with Agent ID.
 - [Secure an n8n agent](integrate-n8n-agent.md) (New) - Deploy n8n on Azure with Agent ID integration.
 - [Migrate custom app registrations](migrate-custom-app-registrations-to-agent-id.md) (New) - Move agents using standard app registrations to Agent ID.
@@ -54,9 +73,9 @@ Microsoft Entra ID Governance extends lifecycle and access management capabiliti
 Conditional Access and ID Protection features extend Microsoft Entra Agent ID to help secure agent identities and their access to resources:
 
 - [Conditional Access for agents](/entra/identity/conditional-access/agent-id) (Updated)- Improved guidance and detailed scenarios for Conditional Access policies, plus new templates for agent-specific policies.
-- [Block access for high-risk agent identities](../identity/conditional-access/policy-agent-block-high-risk.md) (New) - Conditional Access template to block sign-ins from risky agent identities.
+- [Block access for high-risk agent identities](/entra/identity/conditional-access/policy-agent-block-high-risk) (New) - Conditional Access template to block sign-ins from risky agent identities.
 - [Autonomous agent access policy](../identity/conditional-access/policy-autonomous-agents.md) (New) - Conditional Access template for autonomous agents without user context.
-- [On behalf of agent access policy](../identity/conditional-access/policy-on-behalf-of-agents.md) (New) - Conditional Access template for agents acting on behalf of users.
+- [On behalf of agent access policy](/entra/identity/conditional-access/policy-on-behalf-of-agents) (New) - Conditional Access template for agents acting on behalf of users.
 
 ## Related content
 
