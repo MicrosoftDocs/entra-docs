@@ -31,7 +31,7 @@ MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs d
 > After you enable this capability, your Azure virtual machine will be Microsoft Entra joined. You can't join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension. Conditional Access isn't supported with Windows Server with Microsoft Entra join extension in Azure Windows virtual machines.
 
 > [!IMPORTANT]
-> If your tenant admin has opted in to the [public preview for managing Windows Server using Intune](https://techcommunity.microsoft.com/blog/IntuneCustomerSuccess/manage-windows-servers-alongside-pcs-with-microsoft-intune/4572643), verify the scope and understand whether qualifying devices might be automatically enrolled when the Entra extension is deployed. 
+> If your tenant admin has opted in to the [public preview for managing Windows Server using Intune](https://aka.ms/IntuneServerPreview), verify the scope and understand whether qualifying devices might be automatically enrolled when the Entra extension is deployed. 
 
 ## Requirements
 
