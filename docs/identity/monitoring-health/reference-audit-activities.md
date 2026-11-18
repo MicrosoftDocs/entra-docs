@@ -2,7 +2,7 @@
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
 ms.topic: reference
-ms.date: 11/09/2026
+ms.date: 11/16/2026
 ms.reviewer: dhanyahk
 
 #customer-intent: As a Microsoft Entra administrator, I want to understand all available audit log activities and categories so I can effectively monitor and track changes within my tenant.
@@ -1285,6 +1285,25 @@ Many of the activities captured in the PIM audit logs are similar, so take note 
 |RoleManagement|Update member in PIM denied by admin (extend/renew)|
 |RoleManagement|Update member in PIM requested (extend)|
 |RoleManagement|Update role setting in PIM|
+
+## Resource policy
+
+With [Microsoft Entra resource policy](~/id-governance/tenant-governance/resource-policy-overview.md), you can prevent resource configuration changes that don't meet your organization's requirements. Resource policy audit logs record changes to policy definitions, assignments, and configuration.
+
+|Audit Category|Activity|
+|---|---|
+|ResourcePolicy|Create resource policy assignment|
+|ResourcePolicy|Create resource policy definition|
+|ResourcePolicy|Delete resource policy assignment|
+|ResourcePolicy|Delete resource policy definition|
+|ResourcePolicy|Delete resource policy definition version|
+|ResourcePolicy|Permanently delete resource policy assignment|
+|ResourcePolicy|Permanently delete resource policy definition|
+|ResourcePolicy|Restore resource policy assignment|
+|ResourcePolicy|Restore resource policy definition|
+|ResourcePolicy|Update resource policy assignment|
+|ResourcePolicy|Update resource policy configuration|
+|ResourcePolicy|Update resource policy definition|
 
 ## Self-service group management
 
