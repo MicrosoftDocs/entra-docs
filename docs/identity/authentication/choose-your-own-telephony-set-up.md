@@ -56,6 +56,9 @@ Use accounts with the following permissions:
 
 ## Step 1: Purchase and activate your telephony provider
 
+> [!NOTE]
+> Before purchasing a telephony provider offer, check [Microsoft Marketplace geographic availability](/partner-center/marketplace-offers/marketplace-geo-availability-currencies). If Marketplace purchasing is unavailable in your billing country or region, contact your Microsoft field team to discuss Bring Your Own Telephony (BYOT).
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Authentication Policy Administrator.
 1. Go to **Entra ID** > **Authentication methods** > **Policies** and select **Add telecom profile**. The **Set up an SMS or voice provider** page guides you through subscription, integration, and profile setup.
 
@@ -160,7 +163,10 @@ Create a profile for each intended channel. The wizard carries over the current 
 
     :::image type="content" source="media/choose-your-own-telephony-set-up/evaluation-plan.png" alt-text="Redacted screenshot of the Evaluation plan, Microsoft-managed delivery explanation, and evaluation sampling control." lightbox="media/choose-your-own-telephony-set-up/evaluation-plan.png":::
 
-1. On **Function App**, select the Function App deployed for the channel's integration. The wizard populates its **Function App URL** and **App ID**, along with subscription and resource details. Compare the endpoint and application client ID with the deployment summary, then select **Next**.
+1. On **Function App**, select the deployed Function App from the **Function App** dropdown. The wizard populates its **Function App URL** and **App ID**, along with subscription and resource details. Compare the function endpoint URL and **App ID** with the deployment summary, then select **Next**.
+
+    > [!NOTE]
+    > Select **Custom Function App URL** only if you're using a custom-hosted endpoint outside Azure. If you deployed the Function App using the provided PowerShell script, select it from the **Function App** dropdown instead.
 
     :::image type="content" source="media/choose-your-own-telephony-set-up/select-function-app.png" alt-text="Redacted screenshot of Function App selection and automatically populated endpoint, application, subscription, and resource details." lightbox="media/choose-your-own-telephony-set-up/select-function-app.png":::
 
@@ -236,5 +242,5 @@ See [Monitor and troubleshoot your own telephony provider](choose-your-own-telep
 ## Related content
 
 - [Troubleshoot SMS and voice with your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
-- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-costs.md).
+- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-protection.md).
 - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).

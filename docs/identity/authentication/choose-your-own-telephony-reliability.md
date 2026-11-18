@@ -101,7 +101,7 @@ To monitor each region and provider, see [Monitor and troubleshoot SMS and voice
 - [Configure multiple phone providers](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/MULTI-PROVIDER-IMPLEMENTATION.md).
 - [Reliability in Azure Functions](/azure/reliability/reliability-functions).
 - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
-- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-costs.md).
+- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-protection.md).
 - [Troubleshoot SMS and voice with your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Documentation](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/tree/epp-packages-193-1/docs).
 - [Azure Front Door multi-region deployment][sample-regions].

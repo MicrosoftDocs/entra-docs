@@ -74,7 +74,7 @@
     - name: Troubleshoot SMS and voice
       href: choose-your-own-telephony-troubleshoot.md
     - name: Protect against telephony fraud
-      href: choose-your-own-telephony-fraud-costs.md
+      href: choose-your-own-telephony-fraud-protection.md
     - name: Plan for resiliency
       href: choose-your-own-telephony-reliability.md
     - name: Telephony providers FAQ

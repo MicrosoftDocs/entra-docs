@@ -33,6 +33,10 @@ sections:
 
         CYOT is generally available starting October 30, 2026, for Microsoft Entra ID workforce tenants in global Azure.
     - question: |
+        Can I purchase a telephony provider offer in my country or region?
+      answer: |
+        Check [Microsoft Marketplace geographic availability](/partner-center/marketplace-offers/marketplace-geo-availability-currencies) for purchase availability in your billing country or region. If Marketplace purchasing is unavailable, contact your Microsoft field team to discuss Bring Your Own Telephony (BYOT).
+    - question: |
         Which telephony providers can I use?
       answer: |
         <a id="which-telecom-providers-can-i-use"></a>
@@ -191,7 +195,7 @@ additionalContent: |
   - [Choose your own telephony provider for SMS and voice authentication](concept-phone-providers.md).
   - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
   - [Troubleshoot SMS and voice with your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
-  - [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-costs.md).
+  - [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-protection.md).
   - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
   - [Estimate provider and Azure hosting costs](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md).
   - [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](concept-sms-voice-retirement.md).

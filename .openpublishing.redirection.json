@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity/authentication/choose-your-own-telephony-fraud-costs.md",
+      "redirect_url": "/entra/identity/authentication/choose-your-own-telephony-fraud-protection",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/identity-platform/concept-native-authentication-challenge-types.md",
       "redirect_url": "/entra/identity-platform/reference-native-authentication-api-v1#v1-challenge-types-and-capabilities",
       "redirect_document_id": false
