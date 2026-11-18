@@ -82,7 +82,7 @@ Before moving production authentication traffic to CYOT, consider fraud protecti
 
 Work with your telephony provider to configure the fraud protection, destination, usage, and spending controls appropriate for your organization's traffic and risk requirements.
 
-See [Prevent telephony fraud when using your own telephony provider](choose-your-own-telephony-fraud-costs.md).
+See [Prevent telephony fraud when using your own telephony provider](choose-your-own-telephony-fraud-protection.md).
 
 ### Plan for resiliency
 
@@ -114,7 +114,7 @@ See [Troubleshoot SMS and voice with your own telephony provider](choose-your-ow
 ## Related content
 
 - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
-- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-costs.md).
+- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-protection.md).
 - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
 - [Troubleshoot SMS and voice with your own telephony provider](choose-your-own-telephony-troubleshoot.md#monitor-and-troubleshoot-your-own-telephony-provider).
 - [Frequently asked questions](phone-providers-faq.yml#how-much-does-choose-your-own-telephony-provider-cost).

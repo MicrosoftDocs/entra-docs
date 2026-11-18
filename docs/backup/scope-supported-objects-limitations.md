@@ -1,11 +1,11 @@
 ---
 title: Supported objects and recoverable properties in Microsoft Entra Backup and Recovery
 description: Learn which Microsoft Entra Backup and Recovery object types and properties are supported, and understand current limitations
-ms.date: 10/16/2026
+ms.date: 10/19/2026
 ms.service: entra-id
 ms.topic: concept-article
 ai-usage: ai-assisted
-ms.custom: msecd-doc-authoring-1023
+ms.custom: msecd-doc-authoring-1026
 #customer intent: As an identity administrator, I want to understand which tenant objects and properties Microsoft Entra Backup and Recovery supports so that I can plan backup and recovery operations.
 ---
 
@@ -241,11 +241,13 @@ Consider the following limitations when you use Microsoft Entra Backup and Recov
 
 ### Job completion time
 
-Completion time for difference reports and recovery depends on **data loading** and **processing**.
+Completion time for difference reports and recovery depends on the backup plan and the amount of processing required.
 
-The first time you access a backup through a difference report or recovery, the recovery service loads the backup data. This loading takes a fixed amount of time, even for small tenants. The service reuses loaded data across operations that reference the same backup, so subsequent operations complete faster. Creating a difference report before recovery can reduce recovery time by preloading the data.
+The first time you access a Standard backup through a difference report or recovery, the recovery service loads the backup data. This loading takes a fixed amount of time, even for small tenants. The service reuses loaded data across operations that reference the same backup, so subsequent operations complete faster. Creating a difference report before recovery can reduce recovery time by preloading the data.
 
-After data loading completes, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
+Difference reports and recovery against Premium backups skip data loading, including the first recovery against a selected backup.
+
+After any required data loading completes, the operation moves into processing. For difference reports, processing identifies changes between the backup and the current tenant. For recovery, processing applies the required changes to restore the backup state. Processing time varies based on the number of objects, the scope of the operation, and the number of changes involved.
 
 ### Hard-deleted objects
 

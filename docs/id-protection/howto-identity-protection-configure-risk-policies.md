@@ -3,7 +3,11 @@ title: Risk policies - Microsoft Entra ID Protection
 description: Enable and configure risk policies in Microsoft Entra ID Protection.
 
 ms.topic: how-to
-ms.date: 10/30/2025
+ms.date: 10/08/2026
+author: tilarso
+ms.author: tilarso
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-108
 ms.reviewer: cokoopma
 ---
 # Configure and enable risk policies
@@ -23,6 +27,12 @@ There are two types of [risk policies](concept-identity-protection-policies.md) 
 - The Microsoft Entra ID P2 or Microsoft Entra Suite license is required for full access to Microsoft Entra ID Protection features.
     - For a detailed list of capabilities for each license tier, see [What is Microsoft Entra ID Protection](overview-identity-protection.md).
 - The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role is the least privileged role required to **create or edit Conditional Access policies**.
+- If your policy requires identity verification, [create an eligible identity verification profile](../identity/authentication/concept-authentication-verified-id.md#create-and-manage-identity-verification-profiles) before configuring the policy. Set **Profile purpose** to **All** or **Verification**, and choose a provider and credential type that support your risk scenario. **All** supports identity verification providers; for tenant-issued credentials, select **Verification**. Don't use an **Onboarding**- or **Recovery**-purpose profile for this resource-access policy.
+- For identity verification tests, prepare eligible test users, permissions for the verification and investigation views, and the applicable [identity verification licensing](../fundamentals/licensing.md#identity-verification).
+- To view verification status and history during validation, enable verification data collection. See the [Verified ID authentication method prerequisites](../identity/authentication/concept-authentication-verified-id.md#prerequisites).
+
+    > [!NOTE]
+    > Creating an identity verification profile automatically enables **Collect identity verification history**; otherwise, enable it in the authentication methods policy under **Verified ID** > **Configure** > **Data collection**.
 
 ## Choosing acceptable risk levels
 
@@ -57,7 +67,9 @@ When **Require risk remediation** is selected, two settings are automatically ap
 
 Require Microsoft Entra multifactor authentication when sign-in risk level is **Medium** or **High**. This configuration allows users to prove it's them by using one of their registered authentication methods, remediating the sign-in risk.
 
-We also recommend including the [sign-in frequency session control](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time) to require reauthentication for risky sign-ins. A successful "strong authentication" usually via multifactor authentication or passwordless authentication, is the only way to self-remediate sign-in risk, regardless of the risk level.
+We also recommend including the [sign-in frequency session control](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time) to require reauthentication for risky sign-ins. For policies that require multifactor authentication, successful strong authentication via multifactor authentication or passwordless authentication remediates sign-in risk.
+
+For the separate identity verification remediation path, see [Configure identity verification for risk](#configure-identity-verification-for-risk).
 
 ## Enable policies
 
@@ -76,6 +88,37 @@ Before organizations enable these policies, they should take action to [investig
 ### Sign-in risk policy in Conditional Access
 
 [!INCLUDE [conditional-access-policy-sign-in-risk](../includes/conditional-access-policy-sign-in-risk.md)]
+
+## Configure identity verification for risk
+
+Use **Require Identity Verification (preview)** with a **User risk** or **Sign-in risk** condition to require identity verification as a risk-remediation action. Successful verification remediates the risk targeted by the triggering policy: user risk or sign-in risk. Failed verification doesn't remediate risk. Check verification completion, the access decision, and the risk record separately.
+
+The independent **Require risk remediation** control manages adaptive remediation based on the observed threat and authentication method. It isn't an identity-verification-specific challenge. Don't treat these two controls as interchangeable or copy session revocation and reauthentication behavior from one to the other.
+
+Use a narrowly scoped test before rollout:
+
+1. Define the risk condition, test users, and protected resources for your scenario. Create separate policies for user risk and sign-in risk; don't combine both conditions in one policy.
+1. Configure an eligible identity verification profile and credential type for the scenario. Set **Profile purpose** to **All** or **Verification**, and confirm that the profile applies to the pilot users.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a **Conditional Access Administrator**.
+1. Browse to **Entra ID** > **Conditional Access**, select **New policy**, and enter a meaningful policy name.
+1. Under **Assignments**, select **Users or workload identities**. Include the approved pilot users or groups and exclude your organization's emergency access accounts.
+1. Under **Target resources** > **Include**, select the resources in your pilot. This is a resource-access policy, not a policy targeting the **Account onboarding and recovery** user action.
+1. Under **Conditions**, configure one risk condition:
+
+    - For **User risk**, set **Configure** to **Yes** and select the user-risk levels for your pilot.
+    - For **Sign-in risk**, set **Configure** to **Yes** and select the sign-in-risk levels for your pilot.
+
+    Select **Done**. Don't combine the two risk conditions in one policy. Use [Choosing acceptable risk levels](#choosing-acceptable-risk-levels) to plan your selection.
+
+1. Under **Conditions** > **Client apps**, set **Configure** to **Yes** and select only **Browser** and **Mobile apps and desktop clients**. Legacy client types aren't supported for identity verification step-up.
+1. Under **Access controls** > **Grant**, select **Grant access**, select **Require identity verification**, and select **Select**. Don't substitute **Require risk remediation** or assume that control's automatic grant and session settings apply.
+1. Review interactions with existing policies and safe-rollout guidance. Don't add broad resource exclusions as a workaround for credential issuance. Don't copy the onboarding and recovery user-action configuration into a risk-based resource-access policy.
+1. Set **Enable policy** to **Report-only** and select **Create** for initial policy-impact evaluation. See [Configure a risk-based identity verification policy](../identity/conditional-access/policy-require-identity-verification.md#configure-a-risk-based-policy) for the scenario boundaries.
+1. Record separate success criteria for verification completion, the access decision, and the expected risk outcome. Confirm whether session revocation, reauthentication, or another action applies to this flow.
+1. Use report-only evaluation to review which policies could apply. Report-only mode doesn't trigger identity verification. Test the interactive verification journey separately with approved test cases in the test environment; a nonblocking evaluation isn't proof that the user completed remediation. Don't manufacture risk on production users.
+1. Validate the [user's verification journey](concept-identity-protection-user-experience.md#identity-verification-for-risk), then [verify the remediation outcome](howto-identity-protection-remediate-unblock.md#validate-identity-verification-remediation) before expanding the policy.
+
+<!-- TODO: Conditional Access and ID Protection SMEs: confirm risk-flow permissions, supported credential eligibility, and session behavior before publication. -->
 
 ## Migrate risk policies to Conditional Access
 

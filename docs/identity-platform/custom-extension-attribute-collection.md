@@ -1,5 +1,5 @@
 ---
-title: Create a custom authentication extension for attribute collection start and submit events (preview)
+title: Create a custom authentication extension for OnAttributeCollectionStart and OnAttributeCollectionSubmit events (preview)
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.
 manager: pmwongera
 ms.date: 09/16/2025
@@ -10,7 +10,7 @@ ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Create a custom authentication extension for attribute collection start and submit events
+# Create a custom authentication extension for OnAttributeCollectionStart and OnAttributeCollectionSubmit events
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -734,5 +734,5 @@ To test your custom authentication extension, follow these steps:
 
 ## Next steps
 
-- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-retrieve-return-data.md)
-- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-retrieve-return-data.md)
+- [OnAttributeCollectionStart event reference](custom-extension-onattributecollectionstart-retrieve-return-data.md)
+- [OnAttributeCollectionSubmit event reference](custom-extension-onattributecollectionsubmit-retrieve-return-data.md)

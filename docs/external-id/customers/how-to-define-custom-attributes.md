@@ -1,30 +1,41 @@
 ---
-title: Define custom attributes
-description: Learn how to create and define new custom attributes to be collected from users during sign-up and sign-in.
+title: Define Custom User Attributes
+description: Learn how to define custom user attributes in Microsoft Entra External ID and add them to user flows to collect customer information during sign-up.
 ms.topic: how-to
-ms.date: 03/27/2026
-ms.custom: it-pro, sfi-image-nochange
+ms.date: 11/11/2026
+ms.custom: it-pro, sfi-image-nochange, msecd-doc-authoring-1030
 ai-usage: ai-assisted
-#Customer intent: As a developer, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
+#customer intent: As a developer or IT administrator, I want to add custom attributes to a user flow so that I can collect customer information during sign-up.
 ---
 
-# Collect custom user attributes during external tenant sign-up
+# Collect custom user attributes during Microsoft Entra External ID sign-up
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+Define custom user attributes in your external tenant, then add them to a sign-up user flow to collect the information your app needs.
+
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
 
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Collect custom user attributes during B2B collaboration sign-up](../user-flow-add-custom-attributes.md).
 
-> [!NOTE]
-> This article covers attribute collection for **browser-delegated authentication** using user flows. If you use **native authentication**, you collect attributes through the MSAL SDK with the [native authentication user attribute builder](/entra/identity-platform/concept-native-authentication-user-attribute-builder?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json). For help choosing an approach, see [Choose an authentication approach](concept-choose-authentication-approach.md).
+For the Native Authentication API integrations, follow the [attribute collection contract](~/identity-platform/concept-native-authentication-user-attributes.md). For SDK setup, see the [platform-specific integration guidance](~/identity-platform/concept-native-authentication.md#how-to-use-native-authentication).
+
+For an existing V1 SDK integration, see the [MSAL Android library](https://github.com/AzureAD/microsoft-authentication-library-for-android) for library-specific attribute types. Those types don't replace the response-driven attribute contract.
 
 If your app requires more information than the built-in user attributes provide, you can add your own attributes. These attributes are called *custom user attributes*.
 
-To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
+Create a custom user attribute at the tenant level so it's available to any user flow in the tenant. Then add it to your sign-up user flow. For Microsoft-hosted pages, you can also configure how it appears on the sign-up page.
 
 Learn more about custom user attributes in the [User profile attributes](concept-user-attributes.md) article.
 
+## Prerequisites
+
+- An [external tenant](how-to-create-external-tenant-portal.md).
+- Permission to manage custom user attributes and the user flow in that tenant.
+- An existing [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) to which you can add attributes.
+
 ## Create custom user attributes
+
+To make a custom attribute available to user flows in your tenant, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -36,7 +47,7 @@ Learn more about custom user attributes in the [User profile attributes](concept
 
 1. Select **Add**. In the **Add an attribute** pane, enter a **Name** for the custom attribute (for example, "Terms of use").
 
-1. In **Data Type**, choose **String**, **Boolean**, or **Int** depending on the [type of data and user input control](concept-user-attributes.md#custom-user-attributes-input-types) you want to create. **String** attributes have a default user input type value of **TextBox**, but you're able to change this in a later step (for example if you want to configure radio buttons or multiselect checkboxes).
+1. In **Data Type**, choose **String**, **Boolean**, or **Int** depending on the [type of data and user input control](concept-user-attributes.md#custom-user-attributes-input-types) you want to create. **String** attributes default to **TextBox**. For Microsoft-hosted pages, you can change the input type to radio buttons or multiselect checkboxes under **Page layouts**.
 
 1. (Optional) In **Description**, enter a description of the custom attribute for internal use. This description isn't visible to the user.
 
@@ -56,7 +67,7 @@ Follow these steps to add custom user attributes to a user flow you've already c
 
 1. Select the user flow from the list.
 
-1. Select **User attributes**. The list includes any custom user attributes you defined as described in the previous section. For example, the new **Terms of use** attribute now appears in the list. Choose all the attributes you want to collect from the user during sign-up.
+1. Select **User attributes**. The list includes any custom user attributes you created in the tenant, such as **Terms of use**. Choose all the attributes you want to collect from the user during sign-up.
 
    :::image type="content" source="media/how-to-define-custom-attributes/user-attributes.png" alt-text="Screenshot of the user attribute options on the Create a user flow page." lightbox="media/how-to-define-custom-attributes/user-attributes.png":::
 
@@ -64,7 +75,9 @@ Follow these steps to add custom user attributes to a user flow you've already c
 
 ### Configure the user input types and page layout
   
-On the **Page layout** page, you can indicate which attributes are required and arrange the display order. You can also edit attribute labels, create radio buttons or checkboxes, and add hyperlinks to more content (such as terms of use or a privacy policy).
+These page layout settings control Microsoft-hosted attribute collection pages.
+
+On the **Page layout** page, you can indicate which attributes are required and arrange the display order. You can also edit attribute labels, create radio buttons or checkboxes, and add hyperlinks to content such as terms of use or a privacy policy. To configure the hosted page, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -78,9 +91,9 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 1. Configure checkboxes or radio buttons:
 
-   - **Single-select checkbox**: A Boolean attribute type renders as a single-select checkbox on the sign-up page. To configure the text that displays next to the checkbox, select and edit the value in the **Label** column. Use Markdown language to add hyperlinks. For details, see [To configure a single-select checkbox (CheckboxSingleSelect)](#configure-a-single-select-checkbox-checkboxsingleselect)
-   - **Multiselect checkboxes**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the **CheckboxMultiSelect** user input type and enter the values. For details, see [To configure multiselect checkboxes (CheckboxMultiSelect)](#configure-multiselect-checkboxes-checkboxmultiselect).
-   - **Radio buttons**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the **RadioSingleSelect** user input type and enter the values. For details, see [To configure radio buttons (RadioSingleSelect)](#configure-radio-buttons-radiosingleselect)
+    - **Single-select checkbox**: A Boolean attribute type renders as a single-select checkbox on the sign-up page. To configure the text that displays next to the checkbox, select and edit the value in the **Label** column. Use Markdown language to add hyperlinks. For details, see [To configure a single-select checkbox (CheckboxSingleSelect)](#configure-a-single-select-checkbox-checkboxsingleselect).
+    - **Multiselect checkboxes**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the **CheckboxMultiSelect** user input type and enter the values. For details, see [To configure multiselect checkboxes (CheckboxMultiSelect)](#configure-multiselect-checkboxes-checkboxmultiselect).
+    - **Radio buttons**: Find the **String** data type attribute you want to configure, and select the value in the **User Input Type** column to open the editor pane. Choose the **RadioSingleSelect** user input type and enter the values. For details, see [To configure radio buttons (RadioSingleSelect)](#configure-radio-buttons-radiosingleselect).
 
 1. Change the order of display by selecting an attribute and choosing **Move up**, **Move down**, **Move to top**, or **Move to bottom**.
 
@@ -98,13 +111,13 @@ To configure a single-select checkbox, follow these steps:
 
 1. Select the value in the **Label** column and enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks. For example:
 
-   - To configure the label for a **Terms of use** attribute, you could enter:
+    - To configure the label for a **Terms of use** attribute, you could enter:
 
-      `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use)`.
+        `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use)`.
 
-   - Or, you could combine your terms of use and privacy policy into a single required checkbox:
+    - Or, you could combine your terms of use and privacy policy into a single required checkbox:
 
-      `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use) and the [privacy policy](https://woodgrove.com/privacy)`.
+        `I have read and agree to the [terms of use](https://woodgrove.com/terms-of-use) and the [privacy policy](https://woodgrove.com/privacy)`.
 
 1. Select **Ok**.
 
@@ -115,7 +128,9 @@ To configure a single-select checkbox, follow these steps:
 
 ### Configure multiselect checkboxes (CheckboxMultiSelect)
 
-An attribute with a String data type can be configured as a CheckboxMultiSelect user input type, which is a series of one or more checkboxes that appear under the attribute label. The user can select one or more checkboxes. You can define the text for individual checkboxes and include hyperlinks to other content. Making this attribute "Required" means that the user must select at least one of the checkboxes.
+A String attribute can use the CheckboxMultiSelect input type to display one or more checkboxes under the attribute label. Define text and optional hyperlinks for each checkbox. Users can select multiple checkboxes; marking the attribute **Required** means they must select at least one.
+
+To configure multiselect checkboxes, follow these steps:
 
 1. On the **Page layouts** page, find the attribute with data type of **String** that you want to configure as a series of checkboxes.
 
@@ -127,9 +142,9 @@ An attribute with a String data type can be configured as a CheckboxMultiSelect 
 
 1. For each checkbox you want to add, start on a new line and enter the following information:
 
-   - Under **Text**, enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks.
+    - Under **Text**, enter the text you want to display next to the checkbox. Use Markdown language to add hyperlinks.
 
-   - Under **Values**, enter a value to be written on the user object and returned as the claim if the user selects the checkbox.
+    - Under **Values**, enter a value to be written on the user object and returned as the claim if the user selects the checkbox.
 
 1. Select **Ok**.
 
@@ -139,7 +154,9 @@ An attribute with a String data type can be configured as a CheckboxMultiSelect 
 
 ### Configure radio buttons (RadioSingleSelect)
 
-An attribute with a String data type can be configured as a RadioSingleSelect user input type, which is a series of radio buttons that appear under the attribute label. The user can select only one radio button. You can define the text for individual radio buttons and include hyperlinks to other content.
+A String attribute can use the RadioSingleSelect input type to display radio buttons under the attribute label. Users can select only one option. You can define text and optional hyperlinks for each radio button.
+
+To configure radio buttons, follow these steps:
 
 1. On the **Page layouts** page, find the attribute with data type of **String** that you want to configure as a radio button or series of radio buttons.
 
@@ -151,9 +168,9 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 
 1. For each radio button you want to add, start on a new line and enter the following information:
 
-   - Under **Text**, enter the text you want to display next to the radio button. Use Markdown language to add hyperlinks.
+    - Under **Text**, enter the text you want to display next to the radio button. Use Markdown language to add hyperlinks.
 
-   - Under **Values**, enter a value to be written on the user object and returned as the claim if the user selects the radio button.
+    - Under **Values**, enter a value to be written on the user object and returned as the claim if the user selects the radio button.
 
 1. Select **Ok**.
 
@@ -172,10 +189,12 @@ Each attribute supports the following flags:
 
 Examples:
 
-- To show the attribute on the page but prevent users from editing it, set `hidden` to `false` and `editable` to `false` .
+- To show the attribute on the page but prevent users from editing it, set `hidden` to `false` and `editable` to `false`.
 - To hide the attribute from the page while still allowing it to be set programmatically, set `hidden` to `true` and `editable` to `true`. For example, you can assign a value to the attribute by [creating a custom authentication extension for an attribute collection submit event](~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
 
 To set the hidden and editable flags using Microsoft Graph, use the [authenticationAttributeCollectionInputConfiguration](/graph/api/resources/authenticationattributecollectioninputconfiguration) resource type. For reference, see the example on [updating the page layout of a self-service sign up user flow](/graph/api/authenticationeventsflow-update#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
+
+The Native Authentication API has its own attribute descriptors and submission fields. Use its [attribute collection contract](~/identity-platform/concept-native-authentication-user-attributes.md), not the Graph configuration property names, when collecting values in your interface.
 
 ## Find the application ID for the extensions app
 
@@ -189,16 +208,18 @@ Use these steps to find the application ID for the extensions app:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. Select the application **b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.**
-1. On the **Overview** page, use the **Application (client) ID** value, for example: `12345678-abcd-1234-1234-ab123456789`, but remove the hyphens.
+1. On the **Overview** page, use the **Application (client) ID** value, for example: `00001111-aaaa-2222-bbbb-3333cccc4444`, but remove the hyphens.
 
-For example, if you create a custom attribute named **loyaltyNumber**, refer to it as `extension_12345678abcd12341234ab123456789_loyaltyNumber`
+For example, if you create a custom attribute named **loyaltyNumber**, refer to it as `extension_00001111aaaa2222bbbb3333cccc4444_loyaltyNumber`.
 
 ## Add custom user attributes to the ID token
 
-When users sign-in to your app, the app receives an ID token, which includes the user details. These details are called token claims. If needed, you can include a custom user attribute to be available as a claim in the ID token that's returned to your app. To do so, follow the steps in [Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md) article.
+When users sign in to your app, it receives an ID token containing user details called claims. You can include custom user attributes as claims. For instructions, see [Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md).
 
-## Next steps
+<a id="next-steps"></a>
 
-[Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md).
+## Related content
 
-[Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).
+- [Add attributes to the ID token returned to your application](how-to-add-attributes-to-token.md).
+- [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md).
+- [The native authentication attribute collection contract](~/identity-platform/concept-native-authentication-user-attributes.md).

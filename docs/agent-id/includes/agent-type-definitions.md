@@ -3,14 +3,15 @@
 ms.service: entra
  
 ms.topic: include
-ms.date: 06/19/2026
+ms.date: 11/05/2026
+ai-usage: ai-assisted
 ms.custom: include file
 # Purpose:
 # To define the difference between interactive and autonomous agents in the context of agent identities.
 ---
 ### Interactive agents
 
-Interactive agents perform specific tasks on demand on behalf of a signed-in user, often through a chat interface. Tasks include analyzing customer data for sales recommendations or answering support questions with escalation to human representatives. These agents are granted Microsoft Entra delegated permissions that allow them to act on behalf of users using the on-behalf-of (OBO) authentication flow. Common scenarios include customer support assistants, research helpers, and real-time collaboration agents.
+Interactive agents perform tasks on behalf of a signed-in user, often through a chat interface. Examples include analyzing customer data or answering support questions. Delegated permissions limit access to the permissions granted to the client and the user's own access. A local public client uses authorization code flow with PKCE. A hosted agent API receiving a user token uses the on-behalf-of (OBO) flow to call a downstream API as that user.
 
 ### Autonomous agents
 

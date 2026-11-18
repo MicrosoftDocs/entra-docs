@@ -6,6 +6,10 @@ items:
 - name: Concepts
   expanded: true
   items:
+  - name: Standard and Premium plans
+    href: backup-recovery-plans.md
+  - name: Premium pricing
+    href: backup-recovery-premium-pricing.md
   - name: Backup, difference report, and recovery model
     href: backup-difference-report-recovery-model.md
   - name: Supported objects and recoverable properties

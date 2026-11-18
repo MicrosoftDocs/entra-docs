@@ -99,6 +99,9 @@ conceptualContent:
         - text: Microsoft Entra architecture
           url: /entra/architecture/architecture
           itemType: architecture
+        - text: High assurance (preview)
+          url: ./verified-id/high-assurance.md
+          itemType: overview
         - text: Deploy Microsoft Entra ID
           url: /entra/architecture/deployment-plans
           itemType: get-started

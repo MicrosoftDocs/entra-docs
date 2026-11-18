@@ -153,7 +153,7 @@ Use what you see in audit logs to find the right contact.
 
 - [Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center](choose-your-own-telephony-set-up.md).
 - [Plan for resiliency and high availability](choose-your-own-telephony-reliability.md).
-- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-costs.md).
+- [Protect against telephony fraud with your own telephony provider](choose-your-own-telephony-fraud-protection.md).
 - [What are Microsoft Entra audit logs?](/entra/identity/monitoring-health/concept-audit-logs).
 - [What are Microsoft Entra sign-in logs?](/entra/identity/monitoring-health/concept-sign-ins).
 - [Monitor Microsoft Entra ID sign-ins][sample-sign-in-monitoring].

@@ -2,7 +2,8 @@
 title: What's new for Microsoft Entra Verified ID
 description: Explore recent Microsoft Entra Verified ID features, improvements, and service changes so you can plan updates and use new capabilities.
 ms.topic: whats-new
-ms.date: 10/08/2026
+ms.date: 11/07/2026
+ai-usage: ai-assisted
 ms.custom: references_regions, msecd-doc-authoring-1026
 #customer intent: As a Microsoft Entra Verified ID issuer, verifier, or developer, I want to review product updates so that I can use new capabilities as they become available.
 
@@ -14,6 +15,14 @@ ms.custom: references_regions, msecd-doc-authoring-1026
 ## Overview
 
 This article summarizes the latest features, improvements, and service changes for Microsoft Entra Verified ID. Use it to understand new capabilities and plan updates to issuer or verifier implementations.
+
+## November 2026
+
+- **ID verification profiles**: Learn how to [create and manage ID verification profiles](how-to-create-id-verification-profile.md) for account recovery, onboarding, and verification at sign-in.
+- **My Account Verified ID issuance**: Learn how to [get your Microsoft Entra Verified ID from My Account](how-to-get-verified-id-my-account.md), including profile-based self-service issuance.
+- **Identity verification (IDV) partner gallery: two new Security Store integrations**: Added [Entrust](https://securitystore.microsoft.com/solutions/entrustdatacard.entrust_identity_verification_prod) and [Persona](https://securitystore.microsoft.com/solutions/persona-identities.persona_idv) as [Security Store integration partners](idv-partners.md#security-store-integration-partners).
+
+- **High assurance overview (preview)**: Read the [Microsoft Entra high assurance overview](high-assurance.md) for guidance on identity-verified onboarding, resource access, risk remediation, and account recovery.
 
 ## October 2026
 

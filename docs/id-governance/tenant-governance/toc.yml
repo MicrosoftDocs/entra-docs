@@ -34,6 +34,10 @@
     items:
     - name: Configuration management
       href: configuration-management.md
+    - name: Configuration baseline templates (Preview)
+      href: configuration-baseline-templates.md
+    - name: Configuration deployments (Preview)
+      href: configuration-deployments.md
   - name: Resource policy (preview)
     items:
     - name: Resource policy overview
@@ -64,10 +68,16 @@
       href: how-to-set-up-governance-relationship.md
     - name: Update a governance relationship
       href: how-to-update-governance-relationship.md
+    - name: Manage expiration and renewal (Preview)
+      href: how-to-manage-relationship-expiration.md
+    - name: Set up multi-tier relationships (Preview)
+      href: how-to-set-up-multi-tier-governance.md
     - name: Terminate a governance relationship
       href: how-to-terminate-governance-relationship.md
     - name: Use delegated administration
       href: how-to-delegated-administration.md
+    - name: Switch between governed tenants (Preview)
+      href: how-to-switch-governed-tenants.md
     - name: Monitor governing tenant activity
       href: how-to-monitor-governing-activity.md
     - name: Create a secure tenant
@@ -78,6 +88,10 @@
       href: how-to-set-up-permissions-tenant-monitoring.md
     - name: Create configuration snapshots
       href: how-to-create-snapshots.md
+    - name: Use configuration baseline templates (Preview)
+      href: how-to-use-configuration-baseline-templates.md
+    - name: Create a configuration deployment (Preview)
+      href: how-to-create-configuration-deployment.md
     - name: Create a configuration monitor
       href: how-to-create-monitor.md
     - name: Update or delete a monitor

@@ -2,10 +2,12 @@
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
 ms.topic: how-to
-ms.date: 04/23/2026
+ms.date: 11/17/2026
 ms.reviewer: ilyal
-ms.custom: pim, sfi-image-nochange
+ms.custom: pim, sfi-image-nochange, msecd-doc-authoring-1032
 #Customer Intent: As an administrator, I want to assign eligible membership or ownership for groups in PIM to enable just-in-time access for users who need temporary group permissions.
+ms.author: tamimsangrar
+ai-usage: ai-assisted
 ---
 # Assign eligibility for a group in Privileged Identity Management
 
@@ -80,6 +82,22 @@ Follow these steps to make a user an eligible member or owner of a group.
     :::image type="content" source="media/pim-for-groups/pim-group-5.png" alt-text="Screenshot of where to configure the setting for add assignments." lightbox="media/pim-for-groups/pim-group-5.png":::
 
 1. Select **Assign**.
+
+## Convert active membership or ownership assignments to eligible assignments (preview)
+
+Use the enhanced **Assignments** experience to change selected active group membership or ownership assignments to eligible assignments. This experience is in preview and is rolling out.
+
+The [required permissions](#permissions) and [PIM for Groups licensing requirements](~/id-governance/licensing-fundamentals.md#privileged-identity-management) still apply.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the [required permissions](#permissions).
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
+1. Select the group you want to manage.
+1. Open **Assignments**, and then select **Active assignments**.
+1. Select the membership or ownership assignments you want to convert, and then select **Manage Assignments**.
+1. Change the assignment type to **Eligible**, and save your changes.
+1. Review **Eligible assignments** to confirm that the selected membership or ownership assignments are eligible.
+
+Users must [activate their eligible group membership or ownership](groups-activate-roles.md) when they need to use it.
 
 ## Update or remove an existing role assignment
 

@@ -138,6 +138,7 @@ For answers to common questions about the SMS and voice retirement, telephony pr
 
 ## Related links
 
+- [User and admin experience during retirement](concept-sms-voice-retirement-experience.md)
 - [What are authentication methods?](overview-authentication.md)
 - [Plan a passkey deployment](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 - [Authentication methods activity report](howto-authentication-methods-activity.md)

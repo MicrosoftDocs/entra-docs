@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Governance deployment guide to govern privileged identities
+title: Microsoft Entra ID Governance deployment guide to govern privileged identities and access
 description: Learn how to govern privileged identities and their access in Microsoft Entra ID Governance.
 ms.service: entra-id-governance
 ms.topic: concept-article
@@ -9,7 +9,7 @@ ms.reviewer: gasinh
 #customer intent: I want to understand how to deploy Microsoft Entra ID Governance in my test and production environments.
 ---
 
-# Microsoft Entra ID Governance deployment guide to govern privileged identities 
+# Microsoft Entra ID Governance deployment guide to govern privileged identities and their access
 
 Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. You can discover how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements. 
 
@@ -109,7 +109,7 @@ Learn how to [manage Microsoft Entra role assignments with PIM APIs](/graph/api/
 
 Azure resource role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. 
 
-Learn to [configure Azure resource role settings in PIM](../id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md), then how to [activate them](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.yml). 
+Learn to [configure Azure resource role settings in PIM](../id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md), then how to [activate them](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md).
 
 ## PIM for Groups
 

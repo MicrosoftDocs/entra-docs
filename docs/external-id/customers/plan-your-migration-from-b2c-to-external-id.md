@@ -2,8 +2,9 @@
 title: Plan your migration from Azure AD B2C to External ID
 description: Choose between the standard migration approach and High Scale Compatibility (HSC) mode when moving from Azure AD B2C to Microsoft Entra External ID.
 ms.topic: concept-article
-ms.date: 03/13/2026
+ms.date: 11/11/2026
 ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Plan your migration from Azure AD B2C to External ID
@@ -44,7 +45,7 @@ HSC mode migration might be a good choice if **all** the following are true:
 ### Decision summary
 
 | Standard migration | High Scale Compatibility (HSC) mode migration |
-|---|---|
+| --- | --- |
 | **Best for**: Most tenants<br>**Typical trigger**: Below high-scale thresholds<br>**Identity approach**: Plan to migrate users (and, where required, credentials) as part of moving to External ID<br>**Coexistence**: Not designed for long-running side-by-side operation at very large scale<br>**Feature coverage**: Broadest compatibility | **Best for**: Very large Azure AD B2C tenants<br>**Typical trigger**: ~5 million+ directory objects and scale-driven constraints<br>**Identity approach**: Keep existing users and credentials in place while migrating applications in phases<br>**Coexistence**: Azure AD B2C and External ID run side by side in the same tenant and might require schema updates<br>**Feature coverage**: Significant feature gaps today — no social identity providers, no passkeys, no age gating, no admin portal experience, and limited Conditional Access. See [HSC mode limitations](#hsc-mode-limitations) |
 
 If your tenant meets the HSC mode eligibility criteria, review both approaches below before deciding. The standard approach might still be the better fit depending on your feature requirements.
@@ -175,7 +176,7 @@ Review these limitations carefully before enabling HSC mode. They apply in addit
 
 **Security and fraud prevention**
 
-- Third-party fraud protection integration for web-hosted (browser-based) sign-in and sign-up flows isn't supported in HSC mode. Native authentication API flows can integrate with third-party fraud protection by using a web application firewall (WAF) in front of the native authentication endpoints. For implementation guidance, see [Integrate third-party bot protection with native authentication](tutorial-third-party-bot-protection-native-api-sign-up.md) and [Integrate third-party account takeover protection with native authentication](tutorial-third-party-account-take-over-protection-native-api.md).
+- Third-party fraud protection integration for web-hosted (browser-based) sign-in and sign-up flows isn't supported in HSC mode.
 
 **User experience and compliance**
 

@@ -1,12 +1,13 @@
 ---
 title: Configure Azure resource role settings in PIM
-description: Learn how to configure Azure resource role settings in Privileged Identity Management (PIM).
+description: Learn how to configure Azure resource role settings in Microsoft Entra Privileged Identity Management (PIM) to manage activation and role assignment requirements.
+ms.author: tamimsangrar
 ms.topic: how-to
-ms.date: 04/23/2026
+ms.date: 11/17/2026
 ms.reviewer: tamimsangrar
-ms.custom: sfi-ga-nochange, sfi-image-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1032
 ai-usage: ai-assisted
-#Customer Intent: As an administrator, I want to configure role settings for Azure resource roles including approval workflows, MFA requirements, and assignment duration.
+#customer intent: As an administrator, I want to configure Azure resource role settings so that role assignments follow my organization's access requirements.
 ---
 # Configure Azure resource role settings in Privileged Identity Management
 
@@ -47,6 +48,26 @@ This section discusses options for role settings.
 ### Activation maximum duration
 
 Use the **Activation maximum duration** slider to set the maximum time, in hours, that an activation request for a role assignment remains active before it expires. This value can be from 1 to 24 hours.
+
+<a name="allow-transitive-role-activation"></a>
+
+<a name="allow-least-privilege-role-activation"></a>
+
+### Allow least-privilege role activation (Preview)
+
+**Allow least-privilege role activation** lets an eligible user choose an available lower-privileged Azure resource role. The lower-privileged role's permissions must be a subset of the permissions of the role the user is eligible for. Configure this setting on the policy for the role the user is eligible for.
+
+The eligible role's policy governs approval, authentication, justification, and activation maximum duration, even when the user selects a lower-privileged role. The selected role's policy doesn't replace these controls for this activation.
+
+For example, a user eligible for **Contributor** on a resource group can select **Reader** at that scope. If the Contributor policy requires approval, authentication, and justification and limits activation to two hours, those controls still apply to the Reader activation.
+
+1. [Open role settings](#open-role-settings) for the Azure resource role that users are eligible for and select **Edit**.
+1. On the **Activation** tab, select **Allow least-privilege role activation**.
+1. Review the remaining activation controls, and select **Update** to save the policy.
+
+:::image type="content" source="media/pim-resource-roles-configure-role-settings/allow-least-privilege-role-activation.png" alt-text="Screenshot of the Activation tab for an Azure resource role with Allow least-privilege role activation enabled." lightbox="media/pim-resource-roles-configure-role-settings/allow-least-privilege-role-activation.png":::
+
+In the [My Access portal](../my-access-portal-overview.md), users can then [select a lower-privileged role](pim-resource-roles-activate-your-roles.md?pivots=my-access#activate-an-azure-resource-role-in-my-access). Manual selection doesn't require Microsoft Security Copilot. If Security Copilot is available to the user, they can optionally request a role recommendation before submitting the activation request.
 
 ### On activation, require multifactor authentication
 
@@ -159,3 +180,4 @@ On the **Notifications** tab on the **Role settings** page, Privileged Identity 
 
 - [Assign Azure resource roles in Privileged Identity Management](pim-resource-roles-assign-roles.md)
 - [Configure security alerts for Azure resource roles in Privileged Identity Management](pim-resource-roles-configure-alerts.md)
+- [Configure PIM-only mode for Azure resources](pim-how-to-enable-pim-only-mode.md)

@@ -2,7 +2,7 @@
 title: Service limits and restrictions
 description: Usage constraints and other service limits for the Microsoft Entra service
 ms.topic: reference
-ms.date: 10/01/2026
+ms.date: 11/13/2026
 ms.custom: aaddev;it-pro, msecd-doc-authoring-1030
 ms.reviewer: vincesm
 ai-usage: ai-assisted

@@ -2,9 +2,10 @@
 title: Configure Tenant Restrictions - Microsoft Entra ID
 description: Use tenant restrictions to control the types of external accounts that users can use on your networks and the devices that you manage. 
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 11/04/2026
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
+ai-usage: ai-assisted
 #customer intent: As an IT admin, I want to configure tenant restrictions v2 so that I can control access to external apps and enhance security for users who sign in from my organization's networks or devices.
 ---
 
@@ -192,7 +193,7 @@ To configure default tenant restrictions:
    :::image type="content" source="media/tenant-restrictions-v2/tenant-restrictions-default-external-users-block.png" alt-text="Screenshot that shows settings for access status on the tab for external users and groups.":::
 
    > [!NOTE]
-   > Default settings can't be scoped to individual accounts or groups, so **Applies to** always equals **All &lt;your tenant&gt; users and groups**. Be aware that if you block access for all users and groups, you also need to block access to all external applications (on the **External applications** tab).
+   > Default settings can't be scoped to individual users or groups. To block all external applications, select **Block access** on both tabs and **All external applications**. To block only specific applications, select **Block access** on both tabs and **Select external applications**.
 
 1. Select the **External applications** tab. Under **Access status**, choose one of the following options:
 
@@ -280,7 +281,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 1. Under **Applies to**, select one of the following options:
 
    - **All external applications**: Applies the action that you chose under **Access status** to all external applications.
-   - **Select external applications**: Applies the action that you chose under **Access status** to all external applications.
+   - **Select external applications**: Applies the action that you chose under **Access status** to the external applications that you select.
 
    For the Microsoft accounts example in this article, we choose **Select external applications**.
 
@@ -309,6 +310,51 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 > - Device traffic that doesn't come from users. Examples include traffic for Autopilot, Windows Update, and organizational data collection.
 > - B2B authentication of consumer accounts.
 > - Passthrough authentication, used by many Azure apps and Office.com, where apps use Microsoft Entra ID to sign in consumer users in a consumer context.
+
+#### Block personal Microsoft account access to Microsoft Copilot
+
+Use tenant restrictions v2 to block personal Microsoft account access to Microsoft Copilot while allowing access to other applications. This example configures organization-specific settings for the Microsoft accounts tenant. It doesn't change your default tenant restrictions for other organizations.
+
+Use this configuration only if you want to allow personal Microsoft account access to applications that aren't on the block list. For government cloud support, see [Known limitations](#known-limitations).
+
+1. Follow the [steps for specific partners](#step-2-configure-tenant-restrictions-v2-for-specific-partners) to add or select the Microsoft accounts organization with tenant ID `9188040d-6c67-4c5b-b112-36a304b66dad`, and open its **Tenant restrictions** settings.
+
+1. Select **Customize settings**. On the **External users and groups** tab, configure the following settings:
+
+    1. **Access status**: **Block access**
+    1. **Applies to**: **All Microsoft Accounts users and groups**
+
+    User-level restrictions aren't supported for Microsoft accounts.
+
+1. On the **External applications** tab, review the current **Access status** and any selected applications before making changes. Then configure the following settings:
+
+    1. **Access status**: **Block access**
+    1. **Applies to**: **Select external applications**
+
+1. Add all three Microsoft Copilot applications listed below. If matching entries appear under **Add Microsoft applications**, select them. For any app that isn't listed, choose **Add other applications** and enter its application ID manually:
+
+    | Microsoft Copilot application | Application ID                         |
+    |-------------------------------|----------------------------------------|
+    | Web                           | `4765445b-32c6-49b0-83e6-1d93765276ca` |
+    | Desktop                       | `0ec893e0-5785-4de6-99da-4ed124e5296c` |
+    | Mobile                        | `d3590ed6-52b3-4102-aeff-aad2292ab01c` |
+
+    :::image type="content" source="media/tenant-restrictions-v2/copilot-block-personal-accounts.png" alt-text="Screenshot of the Add other external applications pane with the three Microsoft Copilot application IDs entered.":::
+
+    > [!NOTE]
+    > The Copilot mobile app ID `d3590ed6-52b3-4102-aeff-aad2292ab01c` is shared with other Microsoft apps, including Office and OneDrive. Blocking this ID might also affect personal account sign-ins to those apps.
+
+1. Select **Submit**, and then review the selected applications.
+
+    1. If you're switching from **Allow access** to **Block access**, remove any previously allowed applications that you don't want to block.
+    1. If you're updating an existing block list, make sure it still includes every application you want to block.
+
+1. Select **Save**.
+
+> [!IMPORTANT]
+> These steps configure only the server-side cloud policy. To enforce the policy, you must also [configure tenant restrictions v2 on the client side](#configure-tenant-restrictions-v2-on-the-client-side). The enforcement method determines which devices, browsers, and applications are protected.
+
+Microsoft Copilot also supports _Sign in with Apple_ and _Sign in with Google_ for personal accounts. When tenant restrictions v2 is enforced, blocking personal account access to Microsoft Copilot also blocks access through these sign-in options.
 
 ## Configure tenant restrictions v2 on the client side
 
@@ -683,6 +729,8 @@ Use Microsoft Graph to get policy information.
 - Tenant restrictions v2 is supported on all clouds.
 
 - TRv2 does not enforce restrictions on cross-cloud requests at the authentication plane, so access is permitted during authentication. However, TRv2 does block cross-cloud requests at the data plane. As a result, when using Windows Group Policy (GPO), users will be unable to access TRv2-enlightened resources across cloud boundaries.
+
+- Application-specific blocking of personal Microsoft account sign-ins, such as to Microsoft Copilot, is supported only for tenants in Entra public cloud (Worldwide and Office 365 GCC). Tenants in other clouds can't use tenant restrictions v2 policies to block these cross-cloud sign-ins to Microsoft accounts. Instead, use [tenant restrictions v1](~/identity/enterprise-apps/tenant-restrictions.md#blocking-consumer-applications) to block personal Microsoft account sign-ins to public cloud applications.
 
 - Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy if the corporate proxy uses a certificate trust chain outside Apple system root certificates. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers using untrusted certificates. Apple does not support customers adding their own PKI certificates to the Apple system trusted root certificates store. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling which uses a certificate trusted by Apple systems. 
 

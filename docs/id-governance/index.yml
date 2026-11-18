@@ -1,10 +1,10 @@
 ### YamlMime:Landing
 
 title: Microsoft Entra ID Governance documentation
-summary: Microsoft Entra ID Governance helps you to protect, monitor, and audit access to critical assets while ensuring employee productivity.
+summary: Microsoft Entra ID Governance helps you to protect, monitor, and audit access to critical assets.
 
 metadata: 
-  description: "Learn how to protect, monitor, and audit access to critical assets while ensuring employee productivity."
+  description: "Learn how to protect, monitor, and audit access to critical assets."
   ms.date: 11/25/2024
   ms.subservice: entitlement-management
   ms.topic: landing-page
@@ -30,7 +30,7 @@ landingContent:
         links:
           - text: Microsoft Entra ID Governance licensing fundamentals
             url: licensing-fundamentals.md
-          - text: Identity Governance dashboard (Preview)
+          - text: Identity Governance dashboard
             url: governance-dashboard.md 
           - text: Identity Governance service limits
             url: governance-service-limits.md                
@@ -47,6 +47,8 @@ landingContent:
             url:  scenarios/govern-guest-lifecycle-new-project.md  
           - text: Govern access for applications in your environment
             url:  identity-governance-applications-prepare.md  
+          - text: Govern agent identities and their access
+            url:  agent-id-governance-overview.md
   
   # Card
   - title: Govern the lifecycle of access to groups, apps, and sites
@@ -67,7 +69,7 @@ landingContent:
             url: entitlement-management-delegate.md
   
   # Card
-  - title: Recertify access to groups, apps, and privileged roles
+  - title: Recertify app access, group and role memberships
     linkLists:
       - linkListType: overview
         links:
@@ -81,7 +83,7 @@ landingContent:
             url: perform-access-review.md
   
   # Card
-  - title: Govern the lifecycle of users as they join, move within, and leave organizations
+  - title: Govern the lifecycle of users as they join, move within, and leave the organization
     linkLists:
       - linkListType: overview
         links:

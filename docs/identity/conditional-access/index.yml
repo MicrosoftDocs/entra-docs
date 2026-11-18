@@ -67,6 +67,8 @@ landingContent:
             url: policy-block-by-location.md
           - text: Require compliant device
             url: policy-alt-all-users-compliant-hybrid-or-mfa.md
+          - text: Require identity verification (preview)
+            url: policy-require-identity-verification.md
 
   # Card
   - title: Conditional Access optimization agent
