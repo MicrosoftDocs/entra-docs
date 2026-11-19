@@ -16,7 +16,7 @@ Microsoft Entra resource policy separates the logic that identifies noncompliant
 A policy definition describes a configuration requirement and the requests to which it applies.
 
 - A **built-in policy** provides Microsoft-managed, read-only logic that you can assign without authoring Rego. Use the `builtInDefinitions` collection to discover available definitions and versions.
-- A **custom policy** contains Rego that you author and manage.
+- A **custom policy** contains [Rego](https://www.openpolicyagent.org/docs/policy-language) that you author and manage.
 
 A custom definition has a `uniqueName` that identifies it across versions. Its Rego package uses `graph.<uniqueName>["X.Y.Z"]` to identify the name and version. Metadata describes the policy, and `__metadata__.selector` identifies its target resource type or action and operations.
 

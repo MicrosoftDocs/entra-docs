@@ -34,7 +34,7 @@ Start with the [built-in policy quickstart](resource-policy-quickstart-portal.md
 
 ## Author a custom policy
 
-If a built-in policy doesn't meet your needs, author a custom policy in Rego, the declarative policy language used by Open Policy Agent. Define which requests the policy evaluates and the requirements they must meet.
+If a built-in policy doesn't meet your needs, author a custom policy in [Rego](https://www.openpolicyagent.org/docs/policy-language), the declarative policy language used by Open Policy Agent. Define which requests the policy evaluates and the requirements they must meet.
 
 The policy's `deny` rule identifies noncompliance. The assignment's enforcement mode determines whether that result blocks the request.
 
