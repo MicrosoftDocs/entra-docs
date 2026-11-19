@@ -2,8 +2,9 @@
 title: "Quickstart: Assign and test a built-in Microsoft Entra resource policy (preview)"
 description: Assign a built-in resource policy in report-only mode and compare simulated compliant and noncompliant requests without creating applications.
 ms.topic: quickstart
-ms.date: 11/11/2026
+ms.date: 11/17/2026
 ai-usage: ai-generated
+ms.custom: msecd-doc-authoring-1030
 # Customer intent: As a tenant administrator, I want to assign and test a built-in policy so that I can understand its decisions without writing Rego or creating applications.
 ---
 
@@ -56,6 +57,8 @@ Use the **Require a department prefix for application names** built-in policy. T
 
 Use `evaluateAssignedPolicies` in Graph Explorer to compare names with and without an allowed prefix, without creating applications. The action evaluates all applicable assignments, so find `enforce_application_name_prefix` in `details` to identify this quickstart's results.
 
+Another enforced assignment can block either simulated request, even when the name meets this policy's requirements.
+
 The evaluation action reflects saved assignment settings without waiting for [changes to propagate to real requests](resource-policy-evaluation.md#assignment-propagation).
 
 Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) with the same account and tenant you used in the Microsoft Entra admin center. Confirm that Graph Explorer has the delegated permissions listed in [Prerequisites](#prerequisites).
@@ -88,7 +91,7 @@ Use `Inventory-Taker`, which doesn't start with any of the configured department
 1. Select **Run query**.
 1. In **Response preview**, inspect the evaluation result. Select **Expand** if you need more space.
 
-With this report-only assignment, expect **200 OK** and the following fields:
+With this report-only assignment, expect **200 OK**. If no other assignment affects the overall result, expect the following fields:
 
 | Field | Value |
 | --- | --- |
@@ -102,7 +105,7 @@ The matching entry in `details` includes this reason:
 
 > The application name needs an allowed department prefix. Add a prefix from allowed_departments, then try again.
 
-**200 OK** means the evaluation completed, not that the name is compliant. The `deny` effect identifies the violation; `isBlocked: false` reflects report-only mode. Other applicable assignments can affect the overall result.
+**200 OK** means the evaluation completed, not that the name is compliant. The `deny` effect in the matching entry identifies the naming violation. This report-only assignment doesn't block the request; `isBlocked: false` means no other assignment blocked it either.
 
 ### Check a compliant application name
 
@@ -113,7 +116,7 @@ Use `Sales-Inventory-Taker`, which starts with the configured `Sales-` prefix.
 1. Select **Run query**.
 1. In **Response preview**, find the result for `enforce_application_name_prefix`.
 
-With this configuration, expect **200 OK** and the following fields:
+With this configuration, expect **200 OK**. If no other assignment affects the overall result, expect the following fields:
 
 | Field | Value |
 | --- | --- |
@@ -122,11 +125,11 @@ With this configuration, expect **200 OK** and the following fields:
 | `details[].assignmentUniqueName` | `enforce_application_name_prefix` |
 | `details[].appliedPolicyEffects` | `compliant` |
 
-The response message is:
+When all applicable assignments are compliant, the response message is:
 
 > Resource is compliant with assigned policies.
 
-Both examples return `isBlocked: false`. Compare the policy effects to distinguish compliance from a report-only violation.
+If no other assignment blocks either request, both examples return `isBlocked: false`. Compare `details[].appliedPolicyEffects` for `enforce_application_name_prefix` to distinguish compliance from a report-only violation.
 
 ## 3. Clean up or continue
 

@@ -2,14 +2,15 @@
 title: Author Microsoft Entra resource policies with Rego (preview)
 description: Learn the Rego structure, normalized request input, applicability rules, parameters, and Microsoft Graph read functions used by resource policies.
 ms.topic: concept-article
-ms.date: 11/11/2026
+ms.date: 11/19/2026
 ai-usage: ai-generated
+ms.custom: msecd-doc-authoring-1030
 # Customer intent: As a policy author, I want to understand the resource policy Rego contract so that I can create and test custom policies.
 ---
 
 # Author Microsoft Entra resource policies with Rego (preview)
 
-Use Rego to author a custom Microsoft Entra resource policy when a built-in policy doesn't meet your requirements. Rego evaluates structured data against declarative rules. Resource policy uses those rules to identify noncompliant Microsoft Graph requests.
+Use [Rego](https://www.openpolicyagent.org/docs/policy-language) to author a custom Microsoft Entra resource policy when a built-in policy doesn't meet your requirements. Rego evaluates structured data against declarative rules. Resource policy uses those rules to identify noncompliant Microsoft Graph requests.
 
 You don't need to author Rego to [assign a built-in policy](resource-policy-quickstart-portal.md).
 
@@ -135,18 +136,62 @@ The service normalizes the request into an `input` object before evaluation.
 | `input.request.resourceKeys` | Keys of the target resource, when the request identifies an existing resource. |
 | `input.resource` | The normalized request body, when the request has a body. |
 
-For example, a normalized request body for application creation can include:
+For example, the following request creates a security group with two existing users as members. It includes the [required group properties](/graph/api/group-post-groups?view=graph-rest-1.0&preserve-view=true) and uses `members@odata.bind` for the member references:
+
+```http
+POST https://graph.microsoft.com/v1.0/groups
+Content-Type: application/json
+
+{
+  "displayName": "Contoso-Inventory-Takers",
+  "groupTypes": [],
+  "mailEnabled": false,
+  "mailNickname": "contoso-inventory-takers",
+  "securityEnabled": true,
+  "members@odata.bind": [
+    "https://graph.microsoft.com/v1.0/users/11111111-1111-1111-1111-111111111111",
+    "https://graph.microsoft.com/v1.0/users/22222222-2222-2222-2222-222222222222"
+  ]
+}
+```
+
+For a delegated caller, the corresponding normalized input can look like this. All member, application, tenant, and caller IDs in these examples are placeholders:
 
 ```json
 {
+  "request": {
+    "apiVersion": "v1.0",
+    "authContext": {
+      "isAppOnly": false,
+      "appid": "33333333-3333-3333-3333-333333333333",
+      "tid": "44444444-4444-4444-4444-444444444444",
+      "oid": "55555555-5555-5555-5555-555555555555",
+      "idtyp": "user"
+    },
+    "uriSegments": [
+      {
+        "name": "groups",
+        "type": "microsoft.graph.group"
+      }
+    ]
+  },
   "resource": {
-    "displayName": "Contoso-Inventory",
-    "signInAudience": "AzureADMyOrg"
+    "displayName": "Contoso-Inventory-Takers",
+    "groupTypes": [],
+    "mailEnabled": false,
+    "mailNickname": "contoso-inventory-takers",
+    "securityEnabled": true,
+    "members@odata.bind": [
+      "https://graph.microsoft.com/v1.0/users/11111111-1111-1111-1111-111111111111",
+      "https://graph.microsoft.com/v1.0/users/22222222-2222-2222-2222-222222222222"
+    ]
   }
 }
 ```
 
-This fragment illustrates `input.resource`; it isn't a complete normalized input document.
+The member bindings remain an array of URLs in `input.resource`. In Rego, access them with `input.resource["members@odata.bind"]`.
+
+The request URI contributes only the `groups` segment to `input.request.uriSegments`; the member bindings don't add URI segments. `input.request.resourceKeys` is absent because the request creates a group rather than addressing an existing group.
 
 Properties can be absent. For example, the request might not have a body or a target resource key. Don't treat an absent property as proof of a particular identity type. `input.request.authContext.isAppOnly` is a Boolean.
 
@@ -178,30 +223,78 @@ Configure the [privileged-read application](resource-policy-privileged-read-app.
 
 The function takes a request object containing `relativePathUri`, including the Microsoft Graph API version. The result contains an HTTP response `code` and response `data`.
 
-The following fragment checks that an existing application's display name starts with `Contoso-` after an update. Use it as the `deny` logic for an application policy whose selector sets `operations` to `["updateOrUpsert"]`. It uses the proposed name when the update supplies `displayName`, or the existing name from the read response when the update omits it:
+### Example: Retain at least two user owners for a group
+
+Suppose a group must retain at least two owners of type user. A client submits the following request to remove an owner:
+
+```http
+DELETE /beta/groups/{groupId}/owners/{ownerId}/$ref
+```
+
+The policy needs the current owners to decide whether that removal would meet the requirement. It uses `fetchAsPolicy()` to make a separate read-only `GET` request:
+
+```http
+GET /beta/groups/{groupId}/owners?$select=id,displayName
+```
+
+The `GET` request returns the owners collection, which `fetchAsPolicy()` exposes in `data.value`. The following illustrative result contains two user owners and one service-principal owner:
+
+```json
+{
+  "code": 200,
+  "data": {
+    "value": [
+      {
+        "@odata.type": "#microsoft.graph.user",
+        "id": "00000000-0000-0000-0000-000000000001",
+        "displayName": "Owner A"
+      },
+      {
+        "@odata.type": "#microsoft.graph.user",
+        "id": "00000000-0000-0000-0000-000000000002",
+        "displayName": "Owner B"
+      },
+      {
+        "@odata.type": "#microsoft.graph.servicePrincipal",
+        "id": "00000000-0000-0000-0000-000000000003",
+        "displayName": "Group automation"
+      }
+    ]
+  }
+}
+```
+
+The following `deny` fragment makes that read and filters the returned collection to user owners. It excludes the owner being removed and checks that at least two distinct user IDs remain:
 
 ```rego
 default deny := true
 
 deny := false if {
+    group_id := input.request.uriSegments[0].keys.id
+    removed_owner_id := input.request.uriSegments[1].keys.id
+
     response := fetchAsPolicy({
         "relativePathUri": sprintf(
-            "/%s/applications/%s?$select=displayName",
-            [input.request.apiVersion, input.request.resourceKeys.id]
+            "/%s/groups/%s/owners?$select=id,displayName",
+            [input.request.apiVersion, group_id]
         )
     })
     response.code == 200
-    name_after_update := object.get(
-        object.get(input, "resource", {}),
-        "displayName",
-        response.data.displayName
-    )
-    is_string(name_after_update)
-    startswith(name_after_update, "Contoso-")
+
+    remaining_user_owner_ids := {owner.id |
+        some owner in response.data.value
+        owner["@odata.type"] == "#microsoft.graph.user"
+        owner.id != removed_owner_id
+    }
+
+    count(remaining_user_owner_ids) >= 2
 }
 ```
 
-Use this pattern only when normalized input contains the required resource key. The example reports noncompliance if the read fails, required data is missing, or the name check fails. The assignment's enforcement mode determines whether that result blocks the request.
+With the illustrated collection, removing Owner A or Owner B reports noncompliance because only one user owner would remain. Removing the service-principal owner satisfies the requirement because both user owners remain. The assignment's enforcement mode determines whether noncompliance blocks the request.
+
+> [!NOTE]
+> This fragment focuses on fetching and processing a collection. It assumes applicability is already restricted to owner-reference deletion and that the required normalized request keys are present. Policy metadata, applicability rules, and additional input and response checks aren't shown. It doesn't follow paged results or provide an atomic guarantee against concurrent owner changes.
 
 Additional reads increase latency and consume Microsoft Graph request capacity. Request only the properties you need, prefer a specific resource to a collection, and don't rely on paging. Keep calls within the [additional-read limits](resource-policy-service-limits.md#additional-read-limits).
 

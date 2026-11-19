@@ -131,3 +131,5 @@
       href: resource-policy-service-limits.md
     - name: Known issues
       href: resource-policy-known-issues.md
+    - name: Resource policy - Microsoft Graph API
+      href: /graph/api/resources/entra-resource-policy-overview
