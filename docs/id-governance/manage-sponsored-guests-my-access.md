@@ -8,10 +8,7 @@ ai-usage: ai-assisted
 #Customer Intent: As a guest sponsor, I want to manage the guests I sponsor so that their access aligns with their continued business need.
 ---
 
-# Manage sponsored guests in My Account (preview)
-
-> [!IMPORTANT]
-> Sponsored guest management in My Account is currently in preview. Preview features are provided without a service-level agreement and aren't recommended for production workloads. Certain features might not be supported or might have limited capabilities.
+# Manage sponsored guests in My Account
 
 A sponsor helps manage a Microsoft Entra guest user's lifecycle and continued access to organizational resources. Sponsors are typically familiar with why a guest collaborates with the organization and whether that access is still needed.
 
