@@ -12,7 +12,7 @@ As cybersecurity threats evolve, multifactor authentication (MFA) has become a c
 
 The Microsoft Authenticator app provides either notifications for quick approval or generates time-based codes for more traditional MFA entry. This app is compatible with various assistive technologies, including screen readers, making it accessible for users with visual impairments. It also offers flexibility for individuals who prefer not to rely solely on SMS or voice calls.
 
-**Keyboard shortcut:** To remove a work or school account which is partially restored, press **Shift+F10**.
+**Keyboard shortcut:** On the Microsoft Authenticator app home page, press **Shift+F10** to remove a work or school account that isn't restored.
 
 [Download Microsoft Authenticator](https://www.microsoft.com/security/mobile-authenticator-app?msockid=04750fac1789618938f71b4a16ee6056).
 
