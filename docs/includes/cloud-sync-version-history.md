@@ -18,11 +18,7 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 ## 1.1.2509.0
 
-**Release date:** November 17, 2026
-
-### Fixes
-
-- Fixed an issue that could prevent autoupgrade from functioning.
+**Release date:** November 19, 2026
 
 ### Security hardening
 
