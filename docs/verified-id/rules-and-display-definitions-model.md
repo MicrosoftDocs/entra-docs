@@ -4,12 +4,12 @@ description: Rules and Display Definition Reference
 documentationCenter: ''
 ms.topic: how-to
 ms.date: 01/31/2025
-#Customer intent: As an administrator, I am looking for information to help me disable 
+#Customer intent: As an administrator, I am looking for information to help me disable
 ---
 
 # Rules and display definition reference
 
-  
+
 
 ## Overview
 
@@ -24,7 +24,7 @@ Rules and Display definitions are used to define a credential. You can read more
 | `vc`| [vcType](#vctype-type) | verifiable credential types for this contract |
 
 The attestation type example in JSON. Notice that `selfIssued` is a single instance while the others are collections. For examples of how to use the attestation type, see [Sample JSON rules definitions](how-to-use-quickstart-multiple.md#sample-json-rules-definitions) in the How-to guides.
- 
+
 ```json
 "attestations": {
   "idTokens": [],
@@ -129,6 +129,7 @@ When you want the user to enter information themselves. This type is also called
 ```
 
 ## displayModel type
+
 | Property | Type | Description |
 | -------- | -------- | -------- |
 |`locale`| string | the locale of this display |
@@ -137,6 +138,7 @@ When you want the user to enter information themselves. This type is also called
 |`claims`| [displayClaims](#displayclaims-type) array | labels for the claims included in the verifiable credential |
 
 ### displayCredential type
+
 | Property | Type | Description |
 | -------- | -------- | -------- |
 |`title`| string | title of the credential |

@@ -15,7 +15,7 @@ With entitlement management, you can collaborate with people outside your organi
 
 ## What is a connected organization?
 
-A connected organization is another organization that you have a relationship with. In order for the users in that organization to be able to access your resources, such as your SharePoint Online sites or apps, you need a representation of that organization's users in that directory. Because in most cases the users in that organization aren't already in your Microsoft Entra directory, you can use entitlement management to bring them into your Microsoft Entra directory as needed.  
+A connected organization is another organization that you have a relationship with. In order for the users in that organization to be able to access your resources, such as your SharePoint Online sites or apps, you need a representation of that organization's users in that directory. Because in most cases the users in that organization aren't already in your Microsoft Entra directory, you can use entitlement management to bring them into your Microsoft Entra directory as needed.
 
 If you want to provide a path for anyone to request access, and you aren't sure which organizations those new users might be from, then you can configure an [access package assignment policy for users not in your directory](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory). In that policy, select the option of **All users (All connected organizations + any new external users)**. If the requestor is approved, and they don’t belong to a connected organization in your directory, a connected organization will automatically be created for them.
 
@@ -44,7 +44,7 @@ In this case, you can configure two connected organizations, then one access pac
 1. When external users with a user principal name that has a domain of *contoso.com* request the access package, they authenticate using email. This email domain matches the Contoso-connected organization and the user will be allowed to request the package. After they request, [how access works for external users](entitlement-management-external-users.md?#how-access-works-for-external-users) describes how the B2B user is then invited and access is assigned for the external user.
 1. In addition, external users that are using an organizational account from the Graphic Design Institute tenant would match the Graphic Design Institute-connected organization and be allowed to request the access package. And, because Graphic Design Institute uses Microsoft Entra ID, any users with a principal name that matches another [verified domain](~/fundamentals/add-custom-domain.md#verify-your-custom-domain-name) that's added to the Graphic Design Institute tenant, such as *graphicdesigninstitute.example*, would also be able to request access packages by using the same policy.
 
-[ ![Diagram of connected organizations in example and their relationships with an assignment policy and with a tenant.](./media/entitlement-management-organization/connected-organization-example.png) ](./media/entitlement-management-organization/connected-organization-example-expanded.png#lightbox)
+[![Diagram of connected organizations in example and their relationships with an assignment policy and with a tenant.](./media/entitlement-management-organization/connected-organization-example.png)](./media/entitlement-management-organization/connected-organization-example-expanded.png#lightbox)
 
 How users from the Microsoft Entra directory or domain authenticate depends on the authentication type. The authentication types for connected organizations are:
 
@@ -91,12 +91,12 @@ To add an external Microsoft Entra directory or domain as a connected organizati
 
 1. In the search box, enter a domain name to search for the Microsoft Entra directory or domain. You can also add domains that aren't associated with any Microsoft Entra directory. Be sure to enter the entire domain name.
 
-1. Confirm that the organization name(s) and authentication type(s) are correct. User sign in, prior to being able to access the MyAccess portal, depends on the authentication type for their organization.  If the authentication type for a connected organization is Microsoft Entra ID, all users with an account in that organization's directory, with any verified domain of that Microsoft Entra directory, will sign into their directory, and then can request access to access packages that allow that connected organization. If the authentication type is One-time passcode, this allows users with email addresses from just that domain to visit the MyAccess portal. After they authenticate with the passcode, the user can make a request.  
+1. Confirm that the organization name(s) and authentication type(s) are correct. User sign in, prior to being able to access the MyAccess portal, depends on the authentication type for their organization.  If the authentication type for a connected organization is Microsoft Entra ID, all users with an account in that organization's directory, with any verified domain of that Microsoft Entra directory, will sign into their directory, and then can request access to access packages that allow that connected organization. If the authentication type is One-time passcode, this allows users with email addresses from just that domain to visit the MyAccess portal. After they authenticate with the passcode, the user can make a request.
 
     ![The "Select directories + domains" pane](./media/entitlement-management-organization/organization-select-directories-domains.png)
 
     > [!NOTE]
-    > Access from some domains could be blocked by the Microsoft Entra business to business (B2B) allow or deny list. In addition, users who have an email address that has the same domain as a connected organization configured for Microsoft Entra authentication, but who do not authenticate to that Microsoft Entra directory, will not be recognized as part of that connected organization. For more information, see [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md).  
+    > Access from some domains could be blocked by the Microsoft Entra business to business (B2B) allow or deny list. In addition, users who have an email address that has the same domain as a connected organization configured for Microsoft Entra authentication, but who do not authenticate to that Microsoft Entra directory, will not be recognized as part of that connected organization. For more information, see [Allow or block invitations to B2B users from specific organizations](~/external-id/allow-deny-list.md).
 
 1. Select **Add** to add the Microsoft Entra directory or domain. **You can add multiple Microsoft Entra directories and domains**.
 
@@ -118,7 +118,7 @@ To add an external Microsoft Entra directory or domain as a connected organizati
 
     ![The "Review + create" pane](./media/entitlement-management-organization/organization-review-create.png)
 
-## Update a connected organization 
+## Update a connected organization
 
 If the connected organization changes to a different domain, the organization's name changes, or you want to change the sponsors, you can update the connected organization by following the instructions in this section.
 
@@ -128,7 +128,7 @@ If the connected organization changes to a different domain, the organization's 
 
 1. On the Connected organizations page, select the connected organization you want to update.
 
-1. In the connected organization's overview pane, select **Edit** to change the organization name, description, or state.  
+1. In the connected organization's overview pane, select **Edit** to change the organization name, description, or state.
 
 1. In the **Directory + domain** pane, select **Update directory + domain** to change to a different directory or domain.
 
@@ -181,8 +181,8 @@ There are two different states for connected organizations in entitlement manage
     Configured connected organizations show up in the pickers for connected organizations and will be in scope for any policies that target “all configured connected organizations”.
 
 - A **proposed** connected organization is a connected organization that has been automatically created, but hasn't had an administrator create or approve the organization. When a user signs up for an access package outside of a configured connected organization, any automatically created connected organizations are in the **proposed** state since no administrator in the tenant set-up that partnership.
-    
-    Proposed connected organizations aren't in scope for the “all configured connected organizations” setting on any policies but can be used in policies only for policies targeting specific organizations. 
+
+    Proposed connected organizations aren't in scope for the “all configured connected organizations” setting on any policies but can be used in policies only for policies targeting specific organizations.
 
 Only users from configured connected organizations can request access packages that are available to users from all configured organizations. Users from proposed connected organizations have an experience as if there's no connected organization for that domain; can only see and request access packages scoped to their specific organization or scoped to any user. If you have policies in your tenant that allow “all configured connected organizations”, ensure that you don't convert proposed connected organizations for social identity providers to configured.
 

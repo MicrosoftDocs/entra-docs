@@ -9,7 +9,7 @@ ms.custom: sfi-image-nochange
 
 # Provision Active Directory to Microsoft Entra ID - Configuration
 
-The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID. If you are looking for information on provisioning from Microsoft Entra ID to AD, see [ Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID. If you are looking for information on provisioning from Microsoft Entra ID to AD, see [Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 
 The following documentation demonstrates the new guided user experience for Microsoft Entra Cloud Sync.
 
@@ -23,13 +23,13 @@ For additional information and an example of how to configure cloud sync, see th
 To configure provisioning, follow these steps.
 
  [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
- 
- 
+
+
  3. Select **New configuration**.
  4. Select **AD to Microsoft Entra ID sync**.
  :::image type="content" source="media/how-to-configure/configure-1.png" alt-text="Screenshot of adding a configuration." lightbox="media/how-to-configure/configure-1.png":::
- 5. On the configuration screen, select your domain and whether to enable password hash sync.  Click **Create**.  
- 
+ 5. On the configuration screen, select your domain and whether to enable password hash sync.  Click **Create**.
+
  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
  6.  The **Get started** screen will open.  From here, you can continue configuring cloud sync.
@@ -47,23 +47,23 @@ To configure provisioning, follow these steps.
 |5. Enable [your configuration](#enable-your-configuration)|Once ready, enable the configuration and users/groups will begin synchronizing|
 
 ## Scope provisioning to specific users and groups
-By default the provisioning agent will synchronize a subset of the users and groups from your Active Directory. You can further scope the agent to synchronize specific users and groups by using on-premises Active Directory groups or organizational units. 
+By default the provisioning agent will synchronize a subset of the users and groups from your Active Directory. You can further scope the agent to synchronize specific users and groups by using on-premises Active Directory groups or organizational units.
 
   :::image type="content" source="media/how-to-configure/new-ux-configure-4.png" alt-text="Screenshot of scoping filters icon." lightbox="media/how-to-configure/new-ux-configure-4.png":::
 
 
-You can configure groups and organizational units within a configuration. 
+You can configure groups and organizational units within a configuration.
  >[!NOTE]
- >  You cannot use nested groups with group scoping.  Nested objects beyond the first level will not be included when scoping using security groups. Only use group scope filtering for pilot scenarios as there are limitations to syncing large groups. 
- 
+ >  You cannot use nested groups with group scoping.  Nested objects beyond the first level will not be included when scoping using security groups. Only use group scope filtering for pilot scenarios as there are limitations to syncing large groups.
+
  1.  On the **Getting started** configuration screen.  Click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
 
    :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot of scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
- 
+
  2. Select the scoping filter. The filter can be one of the following:
      - **All users**: Scopes the configuration to apply to all users that are being synchronized.
      - **Selected security groups**: Scopes the configuration to apply to specific security groups.
-     - **Selected organizational units**: Scopes the configuration to apply to specific OUs. 
+     - **Selected organizational units**: Scopes the configuration to apply to specific OUs.
  3. For security groups and organizational units, supply the appropriate distinguished name and click **Add**.
  4. Once your scoping filters are configured, click **Save**.
  5. After saving, you should see a message telling you what you still need to do to configure cloud sync.  You can click the link to continue.
@@ -71,12 +71,12 @@ You can configure groups and organizational units within a configuration.
  7. Once you've changed the scope, you should [restart provisioning](#restart-provisioning) to initiate an immediate synchronization of the changes.
 
 ## Attribute mapping
-Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID.  
+Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID.
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-6.png" alt-text="Screenshot of map attributes icon." lightbox="media/how-to-configure/new-ux-configure-6.png":::
 
 
-You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings.  
+You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings.
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-7.png" alt-text="Screenshot of default attribute mappings." lightbox="media/how-to-configure/new-ux-configure-7.png":::
 
@@ -90,11 +90,11 @@ For more information, see [attribute mapping](how-to-attribute-mapping.md).
 Microsoft Entra Cloud Sync allows you to extend the directory with extensions and provides for custom attribute mapping.  For more information see [Directory extensions and custom attribute mapping](custom-attribute-mapping.md).
 
 ## On-demand provisioning
-Microsoft Entra Cloud Sync allows you to test configuration changes, by applying these changes to a single user or group.  
+Microsoft Entra Cloud Sync allows you to test configuration changes, by applying these changes to a single user or group.
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-8.png" alt-text="Screenshot of test icon." lightbox="media/how-to-configure/new-ux-configure-8.png":::
 
-You can use this to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.  
+You can use this to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-9.png" alt-text="Screenshot of on-demand provisioning." lightbox="media/how-to-configure/new-ux-configure-9.png":::
 
@@ -109,13 +109,13 @@ The default properties section provides information on accidental deletions and 
 
 :::image type="content" source="media/how-to-configure/new-ux-configure-10.png" alt-text="Screenshot of default properties icon." lightbox="media/how-to-configure/new-ux-configure-10.png":::
 
-The accidental delete feature is designed to protect you from accidental configuration changes and changes to your on-premises directory that would affect many users and groups.  
+The accidental delete feature is designed to protect you from accidental configuration changes and changes to your on-premises directory that would affect many users and groups.
 
 This feature allows you to:
 
-- configure the ability to prevent accidental deletes automatically. 
-- Set the # of objects (threshold) beyond which the configuration will take effect 
-- set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario 
+- configure the ability to prevent accidental deletes automatically.
+- Set the # of objects (threshold) beyond which the configuration will take effect
+- set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario
 
 For more information, see [Accidental deletes](how-to-accidental-deletes.md)
 
@@ -135,8 +135,8 @@ Click **Enable configuration** to enable it.
 ## Quarantines
 Cloud sync monitors the health of your configuration and places unhealthy objects in a quarantine state. If most or all of the calls made against the target system consistently fail because of an error, for example, invalid admin credentials, the sync job is marked as in quarantine.  For more information, see the troubleshooting section on [quarantines](how-to-troubleshoot.md#provisioning-quarantined-problems).
 
-## Restart provisioning 
-If you don't want to wait for the next scheduled run, trigger the provisioning run by using the **Restart sync** button. 
+## Restart provisioning
+If you don't want to wait for the next scheduled run, trigger the provisioning run by using the **Restart sync** button.
  [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  4. Under **Configuration**, select your configuration.
 
@@ -169,7 +169,7 @@ When you [uninstall](how-to-automatic-upgrade.md#uninstall-the-agent) or stop a 
 
 If you don't want to wait for automatic cleanup, you can manually remove the agent configuration from the portal by deleting the configuration associated with the agent.
 
-## Next steps 
+## Next steps
 
 - [What is provisioning?](../what-is-provisioning.md)
 - [What is Microsoft Entra Cloud Sync?](what-is-cloud-sync.md)

@@ -59,6 +59,6 @@ Entra account. For more information about how to configure app proxy, see [Add a
 
 
 ## Related content
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Group provisioning to AD DS using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync migration](migrate-group-writeback.md)

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.custom: it-pro
 ---
 
-# Monitor and clean up stale guest accounts using access reviews 
+# Monitor and clean up stale guest accounts using access reviews
 
 
 ## Overview
@@ -89,8 +89,8 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
     | Review recurrence | Select your preference from the drop-down|
     |Start date| Select a date|
     |End| Select your preference |
-    | **Specify reviewees to go to the next stage** | | 
-    | Reviewees going to the next stage | Select reviewees. For example, select users who self-approved or responded **Don't know**.
+    | **Specify reviewees to go to the next stage** | |
+    | Reviewees going to the next stage | Select reviewees. For example, select users who self-approved or responded **Don't know**. |
 
     ![Screenshot shows the first stage review for multi-stage review for guests to self-attest continued access.](./media/clean-up-stale-guest-accounts/first-stage-review-for-multi-stage-review.png)
 
@@ -134,7 +134,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
     | Select what to review | **Teams + Groups** |
     | Review scope | **Select Teams + groups** |
     | Group | Select the dynamic group |
-    | Scope | **Guest users only**
+    | Scope | **Guest users only** |
     | Inactive users (on tenant level) only | Check the box |
     | Days inactive | Enter the number of days that constitutes inactivity |
 
@@ -150,8 +150,8 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
     | Property | Value |
     |:----|:---|
     | **Specify reviewers** |  |
-    | Select reviewers | Select **Group owner(s)** or a user or group.<br>(Optional) To enable the process to remain automated, select a reviewer who will take no action.|  
-    | **Specify recurrence of review**| | 
+    | Select reviewers | Select **Group owner(s)** or a user or group.<br>(Optional) To enable the process to remain automated, select a reviewer who will take no action.|
+    | **Specify recurrence of review**| |
     | Duration (in days) | Enter or select a value based on your preference|
     | Review recurrence | Select your preference from the drop-down |
     | Start date | Select a date |

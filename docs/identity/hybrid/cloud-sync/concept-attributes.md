@@ -14,11 +14,11 @@ An object in Microsoft Entra ID, like any directory, is a programmatic high-leve
 
 Properties in Microsoft Entra ID are the elements responsible for storing information about an instance of an object in Microsoft Entra ID.
 
-The Microsoft Entra schema defines the rules for which properties might be used in an entry, the kinds of values that those properties might have, and how users might interact with those values. 
+The Microsoft Entra schema defines the rules for which properties might be used in an entry, the kinds of values that those properties might have, and how users might interact with those values.
 
 Microsoft Entra ID has two types of properties:
 - **Built-in properties**: Properties that are predefined by the Microsoft Entra schema. These properties provide different uses and might or might not be accessible.
-- **Directory extensions**: Properties that are provided so that you can customize Microsoft Entra ID for your own use. For example, if you've extended your on-premises Active Directory with a certain attribute and want to flow that attribute, you can use one of the custom properties that's provided. 
+- **Directory extensions**: Properties that are provided so that you can customize Microsoft Entra ID for your own use. For example, if you've extended your on-premises Active Directory with a certain attribute and want to flow that attribute, you can use one of the custom properties that's provided.
 
 Each cloud sync configuration includes a [synchronization schema](/graph/api/resources/synchronization-synchronizationschema). This synchronization schema defines what objects will be synchronized and how they are synchronized.
 
@@ -33,7 +33,7 @@ Attribute synchronization might be direct, where the value in Microsoft Entra ID
 
 For example, if you had the mail attribute "john.smith@contoso.com" and needed to strip out the "@contoso.com" portion and flow only the value "john.smith," you'd use something like this:
 
-`Replace([mail], "@contoso.com", , ,"", ,)`  
+`Replace([mail], "@contoso.com", , ,"", ,)`
 
 **Sample input/output:** <br>
 
@@ -47,11 +47,11 @@ The following table lists common attributes and how they're synchronized to Micr
 
 |On-premises Active Directory|Mapping type|Microsoft Entra ID|
 |-----|-----|-----|
-|cn|Direct|commonName
+|cn|Direct|commonName|
 |countryCode|Direct|countryCode|
 |displayName|Direct|displayName|
 |givenName|Expression|givenName|
-|objectGUID|Direct|sourceAnchorBinary|	
+|objectGUID|Direct|sourceAnchorBinary|
 |userPrincipalName|Direct|userPrincipalName|
 |proxyAddress|Direct|ProxyAddress|
 
@@ -231,7 +231,7 @@ To view the cloud sync configuration synchronization schema and verify it, follo
             }
     ```
 1. Now run the query `https://graph.microsoft.com/beta/serviceprincipals/{Service Principal Id}/synchronization/jobs/{AD2AAD Provisioning id}/schema`.
- 
+
 
 
    Replace `{Service Principal Id}` and `{AD2ADD Provisioning Id}` with your values.
@@ -239,7 +239,7 @@ To view the cloud sync configuration synchronization schema and verify it, follo
 1. This query returns the [synchronization schema](/graph/api/resources/synchronization-synchronizationschema).
 
    ![Returned schema](media/concept-attributes/schema-1.png)
- 
+
 ## Next steps
 
 - [What is provisioning?](../what-is-provisioning.md)

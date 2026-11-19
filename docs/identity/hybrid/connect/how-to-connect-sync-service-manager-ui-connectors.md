@@ -15,6 +15,7 @@ ms.custom: H1Hack27Feb2017, sfi-image-nochange
 The Connectors tab is used to manage all systems the sync engine is connected to.
 
 ## Connector actions
+
 | Action | Comment |
 | --- | --- |
 | Create |Not supported. For connecting additional AD forests, use the configuration wizard. |
@@ -44,10 +45,10 @@ The search connector space action is useful to find objects and troubleshoot dat
 
 ![Screenshot that shows the "Search Connector Space" window.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearch.png)
 
-Start by selecting a **scope**. You can search based on data (RDN, DN, Anchor, Sub-Tree), or state of the object (all other options).  
-![Screenshot that shows the "Scope" drop-down menu.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchscope.png)  
-If you, for example, do a Sub-Tree search, you get all objects in one OU.  
-![Screenshot that shows an example of a "Sub-Tree" search.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchsubtree.png)  
+Start by selecting a **scope**. You can search based on data (RDN, DN, Anchor, Sub-Tree), or state of the object (all other options).
+![Screenshot that shows the "Scope" drop-down menu.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchscope.png)
+If you, for example, do a Sub-Tree search, you get all objects in one OU.
+![Screenshot that shows an example of a "Sub-Tree" search.](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchsubtree.png)
 From this grid you can select an object, select **properties**, and [follow it](tshoot-connect-object-not-syncing.md) from the source connector space, through the metaverse, and to the target connector space.
 
 ### Changing the AD DS account password

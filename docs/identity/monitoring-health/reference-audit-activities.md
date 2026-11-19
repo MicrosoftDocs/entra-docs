@@ -12,7 +12,7 @@ ms.reviewer: dhanyahk
 
 Microsoft Entra audit logs collect all traceable activities within your Microsoft Entra tenant. Audit logs can be used to determine who made a change to service, user, group, or other item.
 
-This article provides a comprehensive list of the audit categories and their related activities. To jump to a specific audit category, use the "In this article" section. 
+This article provides a comprehensive list of the audit categories and their related activities. To jump to a specific audit category, use the "In this article" section.
 
 Audit log activities and categories change periodically. The tables are updated regularly, but might not be in sync with what is available in Microsoft Entra ID. Provide us with feedback if you think there's a missing audit category or activity.
 
@@ -110,14 +110,14 @@ With [Microsoft Entra ID Governance access reviews](~/id-governance/manage-user-
 
 Configuration changes for application provisioning, HR provisioning, cross-tenant synchronization, and [Microsoft Entra Connect cloud sync](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md), are found in this log. The provisioning service only has one audit category in the logs. For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](~/identity/monitoring-health/concept-audit-logs.md).
 
-|Audit Category|Activity|Description| 
+|Audit Category|Activity|Description|
 |---|---|---|
 |ProvisioningManagement|Add provisioning configuration|A new provisioning configuration has been created.|
 |ProvisioningManagement|Delete provisioning configuration|The provisioning configuration has been deleted.|
 |ProvisioningManagement|Disable/pause provisioning configuration|The provisioning job has been disabled / paused.|
 |ProvisioningManagement|Enable/restart provisioning configuration|The provisioning job as been restarted.|
 |ProvisioningManagement|Enable/start provisioning configuration|The provisioning job has been started.|
-|ProvisioningManagement|Execution|The provisioning job is executing. There are various events that can be emitted including ProvisioningJobStartedInitialSync, ProvisioningJobStartedIncrementalSync, ProvisioningJobComplete and ProvisioningJobDisabled.
+|ProvisioningManagement|Execution|The provisioning job is executing. There are various events that can be emitted including ProvisioningJobStartedInitialSync, ProvisioningJobStartedIncrementalSync, ProvisioningJobComplete and ProvisioningJobDisabled.|
 |ProvisioningManagement|Export|The provisioning job has exported a change to the target system (ex: create a user).|
 |ProvisioningManagement|Import|The provisioning job imported the object from the source system (ex: import the user properties in Entra before provisioning the account into Salesforce).|
 |ProvisioningManagement|Other||
@@ -910,7 +910,7 @@ Use these logs to monitor changes to Entitlement Management settings. Entitlemen
 |EntitlementManagement|Extend access package assignment|
 |EntitlementManagement|Failed access package assignment request|
 |EntitlementManagement|Fulfill access package assignment request|
-|EntitlementManagement|Fulfill access package resource assignment|	
+|EntitlementManagement|Fulfill access package resource assignment|
 |EntitlementManagement|Partially fulfill access package assignment request|
 |EntitlementManagement|Ready to fulfill access package assignment request|
 |EntitlementManagement|Remove Entitlement Management role assignment|

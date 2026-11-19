@@ -16,6 +16,7 @@ This topic is the home for information on federation-related functionalities for
 <a name='azure-ad-connect-federation-topics'></a>
 
 ## Microsoft Entra Connect: federation topics
+
 | Topic | What it covers and when to read it |
 |:--- |:--- |
 | **Microsoft Entra Connect user sign-in options** | |
@@ -32,7 +33,7 @@ This topic is the home for information on federation-related functionalities for
 | [Update the TLS/SSL certificate](how-to-connect-fed-ssl-update.md)| Update the TLS/SSL certificate for an AD FS farm. |
 | [Renew federation certificates for Microsoft 365 and Microsoft Entra ID](how-to-connect-fed-o365-certs.md)|Renew your O365 certificate with Microsoft Entra ID.|
 | **Other federation configuration** | |
-| [Federate multiple instances of Microsoft Entra ID with single instance of AD FS](how-to-connect-fed-single-adfs-multitenant-federation.md) | Federate multiple Microsoft Entra ID with single AD FS farm| 
+| [Federate multiple instances of Microsoft Entra ID with single instance of AD FS](how-to-connect-fed-single-adfs-multitenant-federation.md) | Federate multiple Microsoft Entra ID with single AD FS farm|
 | [Add a custom company logo/illustration](how-to-connect-fed-management.md#customlogo) |Modify the sign-in experience by specifying the custom logo that is shown on the AD FS sign-in page. |
 | [Add a sign-in description](how-to-connect-fed-management.md#addsignindescription) |Change the sign-in description on the AD FS sign-in page. |
 | [Modify AD FS claim rules](how-to-connect-fed-management.md#modclaims) |Modify or add claim rules in AD FS that correspond to Microsoft Entra Connect Sync configuration. |

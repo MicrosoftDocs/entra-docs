@@ -29,7 +29,7 @@ Before you deploy the Pass-through Authentication agent, verify whether a firewa
 > [!IMPORTANT]
 > The following guidance applies only to the following:
 > - the pass-through authentication agent
-> - [Microsoft Entra private network connector](~/identity/app-proxy/overview-what-is-app-proxy.md) 
+> - [Microsoft Entra private network connector](~/identity/app-proxy/overview-what-is-app-proxy.md)
 >
 > For information on URLS for the Microsoft Entra provisioning agent see the [installation pre-requisites](/azure/active-directory/cloud-sync/how-to-prerequisites)  for cloud sync.
 
@@ -38,7 +38,7 @@ Before you deploy the Pass-through Authentication agent, verify whether a firewa
 |-----|-----|
 |&#42;.msappproxy.us</br>&#42;.servicebus.usgovcloudapi.net|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
 |`mscrl.microsoft.us:80` </br>`crl.microsoft.us:80` </br>`ocsp.msocsp.us:80` </br>`www.microsoft.us:80`| The agent uses these URLs to verify certificates.|
-|login.windows.us </br>secure.aadcdn.microsoftonline-p.com </br>&#42;.microsoftonline.us </br>&#42;.microsoftonline-p.us </br>&#42;.msauth.net </br>&#42;.msauthimages.net </br>&#42;.msecnd.net</br>&#42;.msftauth.net </br>&#42;.msftauthimages.net</br>&#42;.phonefactor.net </br>enterpriseregistration.windows.net</br>management.azure.com </br>policykeyservice.dc.ad.msft.net</br>ctldl.windowsupdate.us:80| The agent uses these URLs during the registration process.
+|login.windows.us </br>secure.aadcdn.microsoftonline-p.com </br>&#42;.microsoftonline.us </br>&#42;.microsoftonline-p.us </br>&#42;.msauth.net </br>&#42;.msauthimages.net </br>&#42;.msecnd.net</br>&#42;.msftauth.net </br>&#42;.msftauthimages.net</br>&#42;.phonefactor.net </br>enterpriseregistration.windows.net</br>management.azure.com </br>policykeyservice.dc.ad.msft.net</br>ctldl.windowsupdate.us:80| The agent uses these URLs during the registration process.|
 
 ### Install the agent for the Azure Government cloud
 
@@ -56,7 +56,7 @@ Follow these steps to install the agent for the Azure Government cloud:
    For Application Proxy:
 
    ```
-   MicrosoftEntraPrivateNetworkConnectorInstaller.exe ENVIRONMENTNAME="AzureUSGovernment" 
+   MicrosoftEntraPrivateNetworkConnectorInstaller.exe ENVIRONMENTNAME="AzureUSGovernment"
    ```
 
 ## Single sign-on
