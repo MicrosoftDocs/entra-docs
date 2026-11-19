@@ -30,20 +30,20 @@ items:
         href: agent-owners-sponsors-managers.md
     - name: Authentication and authorization
       items:
-      - name: Understand agent SSO, provisioning, and authorization
-        href: understand-agent-sso-provisioning-authorization.md
-      - name: Authorization in Entra Agent ID
+      - name: Choose an authentication protocol
+        href: agent-oauth-protocols.md
+      - name: Understand agent tokens
+        href: agent-tokens.md
+      - name: Understand agent authorization
         href: authorization-agent-id.md
+      - name: Understand inheritable permissions
+        href: concept-inheritable-permissions.md
       - name: Client ID Metadata Documents (CIMD)
         href: client-id-metadata-documents.md
-      - name: Inheritable permissions
-        href: concept-inheritable-permissions.md
-      - name: Tokens in Microsoft agent identity platform
-        href: agent-tokens.md
-      - name: Authentication protocols for agents
-        href: agent-oauth-protocols.md
-      - name: Consent and sign-in process
+      - name: Sign-in and consent experience for users
         href: sign-in-process.md
+      - name: Agent SSO, provisioning, and ID-JAG
+        href: understand-agent-sso-provisioning-authorization.md
     - name: Governance and protection
       items:
       - name: Conditional Access for agents
@@ -82,14 +82,6 @@ items:
       href: agent-id-ai-guided-setup.md
     - name: Choose an integration path
       href: choose-agent-integration-path.md
-    - name: Build local agents with CIMD
-      href: configure-client-id-metadata-document.md
-    - name: Build local agents with MSAL.NET
-      items:
-      - name: 1. Sign in users
-        href: authenticate-local-agent.md
-      - name: 2. Call APIs as a user
-        href: authenticate-local-agent-call-apis.md
     - name: Create agent identity objects
       items:
       - name: Create an agent blueprint
@@ -110,22 +102,38 @@ items:
         href: manage-agent-blueprint.md
       - name: Manage owners and sponsors
         href: manage-owners-sponsors-agents.md
-    - name: Authentication, authorization, and permissions
+    - name: Configure access and permissions
       items:
-      - name: Autonomous agent app OAuth flow
-        href: agent-autonomous-app-oauth-flow.md
-      - name: On-behalf-of OAuth flow
-        href: agent-on-behalf-of-oauth-flow.md
-      - name: Agent's user account OAuth flow
-        href: agent-user-oauth-flow.md
+      - name: Control access to agents with app roles
+        href: control-user-access-agents.md
+      - name: Grant delegated permissions
+        href: grant-agent-access-microsoft-365.md
+      - name: Grant Microsoft Graph application permissions
+        href: grant-application-permissions-agent-identity.md
       - name: Configure inheritable permissions
         href: configure-inheritable-permissions-blueprints.md
-      - name: Grant agent access to Microsoft 365
-        href: grant-agent-access-microsoft-365.md
-      - name: Grant application permissions
-        href: grant-application-permissions-agent-identity.md
-      - name: Control user access to agents
-        href: control-user-access-agents.md
+    - name: Build with agent platforms
+      items:
+      - name: Microsoft Foundry
+        href: integrate-microsoft-foundry-agent.md
+      - name: Copilot Studio
+        href: integrate-copilot-studio-agent.md
+      - name: Amazon Bedrock
+        href: integrate-aws-bedrock-agent.md
+      - name: Amazon Web Services
+        href: integrate-aws-agent.md
+      - name: Google Cloud Platform
+        href: integrate-google-cloud-agent.md
+      - name: n8n
+        href: integrate-n8n-agent.md
+    - name: Build local agents with MSAL.NET
+      items:
+      - name: 1. Sign in users
+        href: authenticate-local-agent.md
+      - name: 2. Call APIs as a user
+        href: authenticate-local-agent-call-apis.md
+    - name: Build local agents with CIMD
+      href: configure-client-id-metadata-document.md
     - name: Build cloud agents with ASP.NET Core
       items:
       - name: 1. Call APIs as an agent
@@ -220,30 +228,10 @@ items:
         href: sidecar-fleet-call-apis-as-user.md
     - name: Call APIs and services
       items:
-      - name: Call Microsoft Graph API
-        href: call-api-microsoft-graph.md
-      - name: Call custom APIs
-        href: call-api-custom.md
-      - name: Call Azure services
-        href: call-api-azure-services.md
       - name: Secure an MCP server with Microsoft Entra ID
         href: secure-mcp-server-with-entra-id.md
       - name: Govern agent access in PostgreSQL
         href: govern-agent-access-azure-postgresql.md
-    - name: Build with agent platforms
-      items:
-      - name: Microsoft Foundry
-        href: integrate-microsoft-foundry-agent.md
-      - name: Copilot Studio
-        href: integrate-copilot-studio-agent.md
-      - name: Amazon Bedrock
-        href: integrate-aws-bedrock-agent.md
-      - name: Amazon Web Services
-        href: integrate-aws-agent.md
-      - name: Google Cloud Platform
-        href: integrate-google-cloud-agent.md
-      - name: n8n
-        href: integrate-n8n-agent.md
 
   # DEPLOY AND SCALE ######################
   - name: Deploy and scale
