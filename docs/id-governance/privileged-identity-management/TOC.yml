@@ -10,6 +10,8 @@
     href: ~/id-governance/licensing-fundamentals.md
   - name: PIM for Groups
     href: concept-pim-for-groups.md
+  - name: PIM for app roles (preview)
+    href: concept-pim-for-app-roles.md
   - name: Roles you can't manage with PIM 
     href: pim-roles.md
   - name: Secure privileged access in Microsoft Entra ID
@@ -27,8 +29,10 @@
     href: pim-deployment-plan.md
   - name: Start using PIM
     href: pim-getting-started.md
-  - name: Configure custom extensions for role activation (Preview)
+  - name: Configure custom extensions for role activation
     href: privileged-identity-management-custom-extensions.md
+  - name: Configure PIM-only mode for Azure (preview)
+    href: pim-how-to-enable-pim-only-mode.md
   - name: Bring under management
     items:
     - name: Azure resources
@@ -43,14 +47,18 @@
       href: pim-resource-roles-assign-roles.md
     - name: Groups
       href: groups-assign-member-owner.md
+    - name: App roles (preview)
+      href: app-roles-assign.md
   - name: Activate
     items:
     - name: Microsoft Entra roles
-      href: pim-how-to-activate-role.yml
+      href: pim-how-to-activate-role.md
     - name: Azure roles
-      href: pim-resource-roles-activate-your-roles.yml
+      href: pim-resource-roles-activate-your-roles.md
     - name: Groups
       href: groups-activate-roles.md 
+    - name: App roles (preview)
+      href: app-roles-activate.md
   - name: Approve
     items:
     - name: Microsoft Entra roles
@@ -59,6 +67,8 @@
       href: pim-resource-roles-approval-workflow.md
     - name: Groups
       href: groups-approval-workflow.md
+    - name: App roles (preview)
+      href: app-roles-approval-workflow.md
   - name: Extend or renew
     items:
     - name: Microsoft Entra roles
@@ -67,6 +77,8 @@
       href: pim-resource-roles-renew-extend.md
     - name: Groups
       href: groups-renew-extend.md
+    - name: App roles (preview)
+      href: app-roles-renew-extend.md
   - name: Set role settings
     items:
     - name: Microsoft Entra roles
@@ -81,6 +93,8 @@
       href: pim-resource-roles-configure-role-settings.md
     - name: Groups
       href: groups-role-settings.md
+    - name: App roles (preview)
+      href: app-roles-settings.md
   - name: Set up alerts
     items:
     - name: Microsoft Entra roles
@@ -97,6 +111,8 @@
       href: azure-pim-resource-rbac.md
     - name: Groups
       href: groups-audit.md
+    - name: App roles (preview)
+      href: app-roles-audit.md
   - name: Review access
     items:
     - name: Microsoft Entra roles and Azure resource roles
@@ -109,6 +125,10 @@
         href: pim-complete-roles-and-resource-roles-review.md
       - name: Review access to privileged roles - Microsoft Graph
         href: /graph/tutorial-accessreviews-roleassignments?toc=/entra/identity/privileged-identity-management/toc.json&bc=/entra/identity/id-governance/privileged-identity-management/breadcrumb/toc.json
+  - name: Connect to an Azure Virtual Machine from the My Access portal
+    href: pim-connect-virtual-machine-my-access.md
+  - name: Monitor and disconnect Azure Bastion sessions
+    href: pim-manage-bastion-sessions.md
   - name: Discovery & Insights for Microsoft Entra roles
     href: pim-security-wizard.md
   - name: Elevate access to manage Azure subscriptions

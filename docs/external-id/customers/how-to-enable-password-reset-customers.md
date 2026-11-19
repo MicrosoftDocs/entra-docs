@@ -2,22 +2,23 @@
 title: Enable self-service password reset
 description: Learn how to enable self-service password reset so your customers can reset their own passwords without admin assistance.
 ms.topic: how-to
-ms.date: 09/16/2025
-ms.custom: it-pro, sfi-image-nochange
+ms.date: 11/11/2026
+ms.custom: it-pro, sfi-image-nochange, msecd-doc-authoring-1030
+ai-usage: ai-assisted
 #Customer intent: As an it admin, I want to enable self-service password reset so my customers can reset their own passwords without admin assistance.
 ---
 
 # Enable self-service password reset
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
-
 Self-service password reset (SSPR) in Microsoft Entra External ID gives customers the ability to change or reset their password, with no administrator or help desk involvement. If a customer's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work.
+
+[!INCLUDE [authentication-approaches](../includes/applies-to-authentication-approaches.md)]
 
 ## How the password reset process works
 
-Self-service password reset (SSPR) supports two authentication methods: email one-time passcode (Email OTP) and SMS. When SSPR is enabled, users who forget their password can verify their identity using either Email OTP or SMS. With one-time passcode authentication, a passcode is sent by email or SMS. After entering the passcode, the user is prompted to create a new password.
+For Microsoft-hosted authentication, self-service password reset (SSPR) supports email one-time passcode (Email OTP) and SMS. When SSPR is enabled, users who forget their password can verify their identity using a configured recovery method. After entering the passcode, the user is prompted to create a new password. Password-recovery availability through the Native Authentication API or SDK is scoped separately in the comparison.
 
-The process works as follows:
+The Microsoft-hosted password-reset process works as follows:
 
 1. From the app, the user selects **Sign in**.
 1. On the sign-in page, they enter their email address and choose **Next**.

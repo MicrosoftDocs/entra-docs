@@ -1,5 +1,5 @@
 ---
-title: Create a REST API for a token issuance event in Azure Functions
+title: Create a REST API for the OnTokenIssuanceStart event in Azure Functions
 description: Learn how to use the Authentication events trigger for Azure Functions library to create a trigger function that uses the token issuance start event.  
 manager: pmwongera
 ms.custom: 
@@ -12,7 +12,7 @@ zone_pivot_groups: custom-auth-extension
 #Customer intent: As a developer, I want to create an Azure Function app with for a token issuance start event using the Azure Functions client library for .NET, and deploy it to the Azure portal, or create the app directly on the Azure portal.
 ---
 
-# Create a REST API for a token issuance start event in Azure Functions
+# Create a REST API for the OnTokenIssuanceStart event in Azure Functions
 
 ::: zone pivot="azure-portal"
 
@@ -427,4 +427,8 @@ By default, the code has been set up for authentication in the Azure portal usin
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Configure a custom claims provider token issuance event](./custom-extension-tokenissuancestart-configuration.md)
+> [Configure a custom claims provider for the OnTokenIssuanceStart event](./custom-extension-tokenissuancestart-configuration.md)
+
+## See also
+
+- [OnTokenIssuanceStart event reference](./custom-claims-provider-reference.md)

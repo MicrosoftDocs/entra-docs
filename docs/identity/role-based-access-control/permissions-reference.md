@@ -2,7 +2,7 @@
 title: Microsoft Entra Built-in Roles
 description: Learn what each Microsoft Entra built-in role can do, from Global Administrator to Reports Reader. Find role descriptions, permissions, and template IDs.
 ms.topic: reference
-ms.date: 07/17/2026
+ms.date: 11/03/2026
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ai-usage: ai-assisted
@@ -125,6 +125,9 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 > | [Purview Workload Content Reader](#purview-workload-content-reader) | Read data from Microsoft 365 when accessing from the Microsoft Purview portal. | e07494ad-1654-4dd2-922e-6f81a71bf00f |
 > | [Purview Workload Content Writer](#purview-workload-content-writer) | Read and edit data from Microsoft 365 when accessing from the Microsoft Purview portal. | 02d5655b-c1cf-4e5f-98da-5fb919085bf6 |
 > | [Reports Reader](#reports-reader) | Can read sign-in and audit reports. | 4a5d8f65-41da-4de4-8968-e035b65339cf |
+> | [Resource Policy Administrator](#resource-policy-administrator) | Can manage resource policy definitions, assignments, tenant-wide configuration, and evaluation. | c0c46a03-c257-4f91-ab71-3c7e59c89d97 |
+> | [Resource Policy Evaluator](#resource-policy-evaluator) | Can evaluate a supplied resource policy without reading or changing policy definitions or assignments. | 1dae4b79-8aea-40ab-9ad0-30d3ab1fa9c1 |
+> | [Resource Policy Reader](#resource-policy-reader) | Can read resource policy definitions, assignments, and tenant-wide configuration, and evaluate policies without making changes. | 311877b7-9a2e-4337-81c2-068a250eaa22 |
 > | [Search Administrator](#search-administrator) | Can create and manage all aspects of Microsoft Search settings. | 0964bb5e-9bdb-4d7b-ac29-58e794862a40 |
 > | [Search Editor](#search-editor) | Can create and manage the editorial content such as bookmarks, Q and As, locations, floorplan. | 8835291a-918c-4fd7-a9ce-faa49f0cf7d9 |
 > | [Security Administrator](#security-administrator) | Can read security information and reports, and manage configuration in Microsoft Entra ID and Office 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 194ae4cb-b126-40b2-bd5b-6091b380977d |
@@ -568,6 +571,18 @@ This article lists the permissions used by **built-in** roles. Only a subset of 
 ## Reports Reader
 
 [!INCLUDE [reports-reader](includes/reports-reader.md)]
+
+## Resource Policy Administrator
+
+[!INCLUDE [resource-policy-administrator](includes/resource-policy-administrator.md)]
+
+## Resource Policy Evaluator
+
+[!INCLUDE [resource-policy-evaluator](includes/resource-policy-evaluator.md)]
+
+## Resource Policy Reader
+
+[!INCLUDE [resource-policy-reader](includes/resource-policy-reader.md)]
 
 ## Search Administrator
 

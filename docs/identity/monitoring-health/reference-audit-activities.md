@@ -2,7 +2,7 @@
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
 ms.topic: reference
-ms.date: 03/25/2025
+ms.date: 11/16/2026
 ms.reviewer: dhanyahk
 
 #customer-intent: As a Microsoft Entra administrator, I want to understand all available audit log activities and categories so I can effectively monitor and track changes within my tenant.
@@ -1286,6 +1286,25 @@ Many of the activities captured in the PIM audit logs are similar, so take note 
 |RoleManagement|Update member in PIM requested (extend)|
 |RoleManagement|Update role setting in PIM|
 
+## Resource policy
+
+With [Microsoft Entra resource policy](~/id-governance/tenant-governance/resource-policy-overview.md), you can prevent resource configuration changes that don't meet your organization's requirements. Resource policy audit logs record changes to policy definitions, assignments, and configuration.
+
+|Audit Category|Activity|
+|---|---|
+|ResourcePolicy|Create resource policy assignment|
+|ResourcePolicy|Create resource policy definition|
+|ResourcePolicy|Delete resource policy assignment|
+|ResourcePolicy|Delete resource policy definition|
+|ResourcePolicy|Delete resource policy definition version|
+|ResourcePolicy|Permanently delete resource policy assignment|
+|ResourcePolicy|Permanently delete resource policy definition|
+|ResourcePolicy|Restore resource policy assignment|
+|ResourcePolicy|Restore resource policy definition|
+|ResourcePolicy|Update resource policy assignment|
+|ResourcePolicy|Update resource policy configuration|
+|ResourcePolicy|Update resource policy definition|
+
 ## Self-service group management
 
 Users in your tenant can manage many aspects of their group memberships on their own. Use the Self-service group management logs to help troubleshoot issues with these scenarios.
@@ -1390,8 +1409,20 @@ The Self-service password management logs provide insight into changes made to p
 
 ## Verified ID
 
+Microsoft Entra Verified ID audit events have a `loggedByService` value of `Verified ID`. Possible identity verification journey events use `RequestManagement`. Issuance, presentation, partner validation and billing, and administration events use `ResourceManagement`. The table isn't a required event sequence.
+
 |Audit Category|Activity|
 |---|---|
+|RequestManagement|Account recovery completed|
+|RequestManagement|Account recovery failed|
+|RequestManagement|Account recovery initiated|
+|RequestManagement|Verified ID issuance requested|
+|RequestManagement|Verified ID onboarding completed|
+|RequestManagement|Verified ID onboarding failed|
+|RequestManagement|Verified ID onboarding initiated|
+|RequestManagement|Verified ID verification completed|
+|RequestManagement|Verified ID verification initiated|
+|ResourceManagement|Certified Partner validation and billing completed successfully|
 |ResourceManagement|Create authority|
 |ResourceManagement|Create authorization policy|
 |ResourceManagement|Create contract|
@@ -1408,7 +1439,23 @@ The Self-service password management logs provide insight into changes made to p
 |ResourceManagement|Update contract|
 |ResourceManagement|Update issuance policy|
 |ResourceManagement|Update linked domains|
+|ResourceManagement|Verifiable Credential Issued|
+|ResourceManagement|Verifiable Credential Presentation Failed|
+|ResourceManagement|Verifiable Credential Presented|
 
+For lifecycle events, review `additionalDetails` to distinguish the scenario:
+
+- Onboarding events use `scenario=OnboardingScenario` and `purpose=Onboarding`.
+- Authentication verification events use `scenario=AuthenticationScenario` and `purpose=Verification`.
+- When included, `onboardingDayType` identifies `DayZero` or `DayOne`. Don't infer the day type when the field isn't present.
+
+`Verified ID issuance requested` records a request, not confirmation of issuance. Credential issuance and presentation are separate from verification completion. `Verified ID verification completed` and `Verified ID onboarding completed` record different outcomes. Authority and contract updates aren't ID verification profile updates.
+
+Issuance, presentation, and partner events don't by themselves identify a My Account, recovery, or onboarding journey. Use available correlation fields to investigate related records. Partner validation and billing completion doesn't establish completion of the user's entire journey.
+
+A successful initiation event doesn't establish that the journey completed. Verification or onboarding completion doesn't independently establish a passkey's assurance level, a Conditional Access grant, or risk remediation. Review account verification history, the individual passkey's credential assurance, sign-in results, and risk records separately.
+
+<!-- TODO: Monitoring SMEs: confirm the event catalog and scenario markers against the target release, available diagnostic fields, minimum audit-read permissions, retention, and latency. The observed events don't establish a universal schema or guaranteed sequence. -->
 
 ## Next steps
 

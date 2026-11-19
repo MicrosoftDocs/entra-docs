@@ -21,6 +21,10 @@ landingContent:
             url: overview.md
       - linkListType: concept
         links:
+          - text: Standard and Premium plans
+            url: backup-recovery-plans.md
+          - text: Premium pricing
+            url: backup-recovery-premium-pricing.md
           - text: Backup, difference report, and recovery model
             url: backup-difference-report-recovery-model.md
           - text: Supported objects and recoverable properties

@@ -1,10 +1,13 @@
 ---
 title: Lifecycle Workflows templates and categories
-description: Conceptual article discussing workflow templates and categories with Lifecycle Workflows.
+description: Explore Lifecycle Workflows templates for joiners, movers, and leavers, including identity-verification onboarding templates, triggers, and default tasks.
+author: rogulati
+ms.author: rogulati
 ms.subservice: lifecycle-workflows
 ms.topic: concept-article
-ms.date: 04/25/2026
-ms.custom: template-concept
+ms.date: 11/03/2026
+ms.custom: template-concept, msecd-doc-authoring-1026
+ai-usage: ai-assisted
 #Customer Intent: As an IT admin, I want to understand lifecycle workflow templates and categories so that I can choose the right templates for my workflows.
 ---
 
@@ -14,12 +17,14 @@ Lifecycle Workflows allows you to automate the lifecycle management process for 
 
 ## Lifecycle Workflows built-in templates
 
-Lifecycle Workflows currently have 14 built-in templates you can use or customize:
+Lifecycle Workflows currently have 16 built-in templates you can use or customize:
 
-:::image type="content" source="media/lifecycle-workflow-templates/templates-list.png" alt-text="Screenshot of a list of lifecycle workflow templates." lightbox="media/lifecycle-workflow-templates/templates-list.png":::
+:::image type="content" source="media/lifecycle-workflow-templates/templates-list.png" alt-text="Screenshot of the workflow template gallery showing 16 templates, including the two identity verification templates." lightbox="media/lifecycle-workflow-templates/templates-list.png":::
 
 The list of templates is as follows:
 
+- [Pre-hire identity verification initiation (Preview)](lifecycle-workflow-templates.md#pre-hire-identity-verification-initiation-preview)
+- [New Hire employee onboarding with identity verification (Preview)](lifecycle-workflow-templates.md#new-hire-employee-onboarding-with-identity-verification-preview)
 - [Onboard pre-hire employee](lifecycle-workflow-templates.md#onboard-pre-hire-employee)
 - [Onboard new hire employee](lifecycle-workflow-templates.md#onboard-new-hire-employee)
 - [Post-Onboarding of an employee](lifecycle-workflow-templates.md#post-onboarding-of-an-employee)
@@ -39,6 +44,50 @@ For a complete guide on creating a new workflow from a template, see: [Tutorial:
 
 > [!NOTE]
 > Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
+
+### Pre-hire identity verification initiation (Preview)
+
+The **Pre-hire identity verification initiation (Preview)** template completes initial identity verification activities for new employees before their first day of work. This pre-hire phase is Day 0.
+
+:::image type="content" source="media/lifecycle-workflow-templates/employee-identity-verification-template.png" alt-text="Screenshot of the pre-hire identity verification template summary, with a trigger seven days before employeeHireDate and two enabled tasks." lightbox="media/lifecycle-workflow-templates/employee-identity-verification-template.png":::
+
+The default parameters and tasks for the **Pre-hire identity verification initiation (Preview)** template are as follows:
+
+| Parameter | Description | Customizable |
+|-----------|-------------|--------------|
+| **Category** | Joiner | ❌ |
+| **Trigger type** | Time based attribute | ✔️ |
+| **Trigger details** | Days from event, Event timing, Event user attribute | ✔️ |
+| **Days from event** | 7 | ✔️ |
+| **Event timing** | Before | ❌ |
+| **Event user attribute** | `employeeHireDate` | ❌ |
+| **Scope** | Rule based. The Marketing department rule in the screenshot is an example. | ✔️ |
+| **ID verification profile** | A profile with purpose set to `all` or `onboarding`. | ✔️ |
+| **Tasks** | **Select verification profile for identity verification (Preview)**<br>**Send manager verification status email (Preview)** | ✔️ |
+
+You select the profile in the **Verified ID Profile** dropdown on the **Select identity verification profile** page. For profile configuration, see [Create an ID verification profile](../verified-id/how-to-create-id-verification-profile.md).
+
+### New Hire employee onboarding with identity verification (Preview)
+
+The **New Hire employee onboarding with identity verification (Preview)** template enables new employees to onboard on their first day of work using identity verification. This new-hire phase is Day 1.
+
+:::image type="content" source="media/lifecycle-workflow-templates/new-hire-identity-verification-template.png" alt-text="Screenshot of the new-hire identity verification template summary, with a trigger on employeeHireDate and three enabled tasks." lightbox="media/lifecycle-workflow-templates/new-hire-identity-verification-template.png":::
+
+The default parameters and tasks for the **New Hire employee onboarding with identity verification (Preview)** template are as follows:
+
+| Parameter | Description | Customizable |
+|-----------|-------------|--------------|
+| **Category** | Joiner | ❌ |
+| **Trigger type** | Time based attribute | ✔️ |
+| **Trigger details** | Days from event, Event timing, Event user attribute | ✔️ |
+| **Days from event** | 0 | ❌ |
+| **Event timing** | On | ❌ |
+| **Event user attribute** | `employeeHireDate` | ✔️ |
+| **Scope** | Rule based. The Marketing department rule in the screenshot is an example. | ✔️ |
+| **ID verification profile** | A profile with purpose set to `all` or `onboarding`. | ✔️ |
+| **Tasks** | **Enable User Account**<br>**Select verification for Verified ID presentation (Preview)**<br>**Send manager verification status email (Preview)** | ✔️ |
+
+You select the profile in the **Verified ID Profile** dropdown on the **Select identity verification profile** page. For profile configuration, see [Create an ID verification profile](../verified-id/how-to-create-id-verification-profile.md).
 
 ### Onboard pre-hire employee
 

@@ -3,7 +3,9 @@ title: 'Govern the employee lifecycle with Microsoft Entra ID Governance'
 description: Describes overview of identity lifecycle management and what is meant by governing the employee lifecycle.
 ms.subservice: entitlement-management
 ms.topic: overview
-ms.date: 04/09/2025
+ms.date: 11/03/2026
+ms.custom: msecd-doc-authoring-1026
+#customer intent: As an identity administrator, I want to understand employee and guest identity lifecycles so that I can plan provisioning, onboarding, and access changes in my organization.
 ---
 
 # Govern the employee and guest lifecycle with Microsoft Entra ID Governance
@@ -45,6 +47,8 @@ When planning identity lifecycle management for employees, or other individuals 
 - Leave - when an individual leaves the scope of needing access, access may need to be removed, and subsequently the identity may no longer be required by applications other than for audit or forensics purposes
 
 So for example, if a new employee joins your organization and that employee has never been affiliated with your organization before, that employee requires a new digital identity, represented as a user account in Microsoft Entra ID. The creation of this account would fall into a "Joiner" process, which could be automated if there was a system of record such as Workday that could indicate when the new employee starts work. Later, if your organization has an employee move from say, Sales to Marketing, they would fall into a "Mover" process. This move would require removing the access rights they had in the Sales organization, which they no longer require, and granting them rights in the Marketing organization that they new require.
+
+Account provisioning is separate from identity verification and credential registration. For employee onboarding, the Lifecycle Workflows identity-verification templates (preview) support pre-hire verification and new-hire credential registration. See [Onboard users with identity verification (Preview)](../how-to-onboard-users-with-identity-verification.md) for configuration and registration constraints. Review guest eligibility separately before applying this employee journey to a guest account.
 
 ## Identity lifecycle management for guests
 

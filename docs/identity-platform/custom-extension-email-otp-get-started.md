@@ -1,6 +1,6 @@
 ---
-title: Configure a custom email provider for one time passcode send events
-description: Learn how to configure and set up a custom email provider with the One Time Passcode Send event type.
+title: Configure a custom email provider for the OnOtpSend event
+description: Learn how to configure and set up a custom email provider with the OnOtpSend event.
 manager: pmwongera
 ms.reviewer: 
 ms.date: 06/25/2025
@@ -11,7 +11,7 @@ ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra External ID customer, I want to learn how to configure a custom email provider for one time passcode send events, so that I can use my own email provider to send one time passcodes.
 ---
 
-# Configure a custom email provider for one time passcode send events
+# Configure a custom email provider for the OnOtpSend event
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -445,6 +445,7 @@ PATCH https://graph.microsoft.com/beta/identity/authenticationEventListeners/{cu
 
 ## See also
 
-- [Configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md)
-- [Create a custom authentication extension for attribute collection start and submit events](./custom-extension-attribute-collection.md)
-- [Custom claims provider reference](custom-claims-provider-reference.md)
+- [OnOtpSend event reference](custom-extension-email-otp-send-data.md)
+- [Configure a custom claims provider for the OnTokenIssuanceStart event](custom-extension-tokenissuancestart-configuration.md)
+- [Create a custom authentication extension for OnAttributeCollectionStart and OnAttributeCollectionSubmit events](./custom-extension-attribute-collection.md)
+- [OnTokenIssuanceStart event reference](custom-claims-provider-reference.md)

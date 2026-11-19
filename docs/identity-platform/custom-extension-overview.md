@@ -137,6 +137,6 @@ For more information, see [Create a custom authentication extension for account 
 ## Related content
 
 - Learn more about [custom claims providers](custom-claims-provider-overview.md)
-- [Create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application
-- [Configure a custom email provider for one time passcode send events](custom-extension-email-otp-get-started.md)
+- [Create a custom authentication extension for OnAttributeCollectionStart and OnAttributeCollectionSubmit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application
+- [Configure a custom email provider for the OnOtpSend event](custom-extension-email-otp-get-started.md)
 - [Create a custom authentication extension for account recovery claim validation](tutorial-custom-authentication-extension-account-recovery.md)

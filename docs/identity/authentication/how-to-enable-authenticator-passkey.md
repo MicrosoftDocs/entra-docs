@@ -2,10 +2,10 @@
 title: Enable and support passkeys in Authenticator for Microsoft Entra ID
 description: Learn about Authenticator-specific requirements, configuration, and troubleshooting for passkeys in Microsoft Authenticator for Microsoft Entra ID.
 ms.topic: how-to
-ms.date: 10/02/2026
+ms.date: 11/04/2026
 ms.reviewer: mjsantani, guptashi, tilarso
 ms.collection: M365-identity-device-management
-ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-1013
+ms.custom: sfi-ga-nochange, sfi-image-nochange, msecd-doc-authoring-108
 ai-usage: ai-assisted
 # Customer intent: As a Microsoft Entra administrator, I want to learn about Authenticator-specific requirements for passkeys so I can enable and support them for my users.
 ---
@@ -159,6 +159,8 @@ This section covers issues that users might see when they use passkeys in Authen
 
 Passkeys on Android are used only from the profile where they're stored. If a passkey is stored in an Android Work profile, it's used from that profile. If a passkey is stored in an Android Personal profile, it's used from that profile. To make sure that users can access and use the passkey they need, users with both an Android Personal profile and an Android Work profile should create their passkeys in Authenticator for each profile.
 
+For identity-verified onboarding and recovery during preview, users enrolled through Android Management API (AM API) should complete the journey with TAP issuance instead of being required to set up a passkey. See [Passkey registration during Identity-verified onboarding and recovery (preview)](#identity-verified-onboarding-and-recovery-during-preview).
+
 ### Workarounds for an authentication strength Conditional Access policy loop
 
 Users can get in a loop when they try to add a passkey in Authenticator if a Conditional Access policy requires phishing-resistant authentication to access **All resources (formerly 'All cloud apps')**. For example:
@@ -194,14 +196,12 @@ Here are some workarounds:
 
   <sup>1</sup>For users to register new sign-in methods, your grant control for the mobile policy needs to match your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info).
 
-- You can exclude the **Microsoft Authenticator Credential Registration** resource from the Conditional Access policy.
+- You can exclude the **Microsoft Authenticator Credential Registration** resource from the Conditional Access policy. To use this resource for passkey registration, you must also opt in users by using the Microsoft Graph API.
 
   > [!NOTE]
-  > The Microsoft Authenticator Credential Registration resource will be available in November 2026. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
+  > The Microsoft Authenticator Credential Registration resource will be available at the end of November 2026. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
 
-  As a Cloud Application Administrator or Application Administrator:
-
-  1. Manually provision the **Microsoft Authenticator Credential Registration** app by using one of the [supported methods for creating an enterprise application from a multitenant app](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=ms-graph). Use the following details:
+  1. As a **Cloud Application Administrator** or **Application Administrator**, manually provision the **Microsoft Authenticator Credential Registration** app by using one of the [supported methods for creating an enterprise application from a multitenant app](~/identity/enterprise-apps/create-service-principal-cross-tenant.md?pivots=ms-graph). Use the following details:
 
       - **App ID**: `6aa00308-ea33-4caa-90d6-ae905d8cb51b`
       - **Required role**: Cloud Application Administrator or Application Administrator
@@ -214,7 +214,22 @@ Here are some workarounds:
       }
       ```
 
-  1. After you provision the app, **Microsoft Authenticator Credential Registration** appears as a resource in Conditional Access. Exclude it from any Conditional Access policies scoped to **All resources** to unblock passkey registration in Microsoft Authenticator.
+  1. As a **Conditional Access Administrator**, opt in users to the dedicated registration resource. In Microsoft Graph Explorer, use the `Policy.ReadWrite.ConditionalAccess` permission to make a `PATCH` request to `https://graph.microsoft.com/beta/identity/conditionalAccess/settings` with the following body:
+
+      ```json
+      {
+        "authenticatorPasskeyRegistrationResourceMapping": {
+          "isEnabled": true,
+          "includeUsers": ["All"]
+        }
+      }
+      ```
+
+      To opt in selected users instead, replace `"All"` with their tenant user object IDs. Updating `includeUsers` replaces the existing list.
+
+  1. This workaround requires Microsoft Authenticator version **6.2607.4697 or later** for Android and version **6.8.56 or later** for iOS.
+
+  1. As a **Conditional Access Administrator**, exclude **Microsoft Authenticator Credential Registration** from the Conditional Access policies scoped to **All resources** that block passkey registration.
 
 > [!NOTE]
 > With any workaround, users must also satisfy any Conditional Access policy that targets **Register security info** or they can't register the passkey. If you have other conditions set up with the **All resources** policies, those conditions must be met when the passkey is registered.
@@ -242,6 +257,40 @@ Here are some workarounds:
 
 > [!NOTE]
 > With any proposed workaround, users must also satisfy any Conditional Access policy that targets **Register security info** or they can't register the passkey. If you have other conditions set up with the **All resources** policies, they also must be met before users can register a passkey.
+
+<a id="identity-verified-onboarding-and-recovery-during-preview"></a>
+
+## Passkey registration during Identity-verified onboarding and recovery (preview)
+
+The minimum Authenticator app versions listed below apply to identity verification step-up, onboarding, and recovery.
+
+Before deploying identity-verified onboarding or recovery with passkey setup:
+
+- **Authenticator app:** Before registering device-bound passkeys in Microsoft Authenticator, meet the requirements for your platform and enable Authenticator as a passkey provider.
+
+  - **Android:** Install Microsoft Authenticator version **6.2610.7075** or later. Earlier versions can't complete passkey setup during onboarding or recovery.
+
+    Enable Authenticator as a passkey provider:
+
+    1. Open device **Settings** and search for **Passkey**, or open **Passwords & accounts**.
+    1. Under **Additional providers**, enable **Authenticator**.
+
+    Settings names vary by device manufacturer and Android version. For Android work profiles, also review the [enrollment-method and app-deployment requirements](../conditional-access/policy-require-identity-verification.md#android-work-profile-compatibility-during-preview).
+
+  - **iOS:** Install Microsoft Authenticator version **6.8.58** or later. Earlier versions can't complete passkey setup.
+
+    Enable Authenticator as a passkey provider:
+
+    1. On **iOS 18**, open **Settings** > **General** > **AutoFill & Passwords**. On **iOS 17**, open **Settings** > **Passwords** > **Password Options**.
+    1. Turn on **AutoFill Passwords and Passkeys**.
+    1. Under **AutoFill From**, select **Authenticator**.
+
+  For detailed instructions, see [Register passkeys in Authenticator](how-to-register-passkey-authenticator.md).
+- For Android users enrolled through Android Management API (AM API), configure onboarding and recovery to issue a [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md) at completion instead of requiring passkey setup. Those journeys remain supported, but a device-bound passkey created in the personal profile can't currently be used from the work profile.
+
+For Android identity verification step-up with a device-compliance requirement, review [work-profile compatibility and deployment prerequisites](../conditional-access/policy-require-identity-verification.md#android-work-profile-compatibility-during-preview). The Android Management API (AM API) restriction and Enterprise Mobility Management API (EMM API) app-deployment requirements apply to that policy combination, not to all Authenticator use.
+
+For step-up or recovery initiated from a mobile app, also review [Link to Windows compatibility](../conditional-access/policy-require-identity-verification.md#link-to-windows-compatibility).
 
 ## Register a passkey in Authenticator
 

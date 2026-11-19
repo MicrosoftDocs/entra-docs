@@ -1,7 +1,9 @@
 ---
 title: Microsoft agent identity platform error codes
 description: Learn about the Agent ID, Agent Blueprint, and Agent Identity error codes.
-ms.date: 12/02/2025
+ms.date: 11/16/2026
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ms.reviewer: ryankabir
 ms.topic: error-reference
 #Customer intent: As a developer troubleshooting errors, I want to understand the meaning and possible resolutions for the Agent ID error codes, so that I can effectively debug and fix issues in my application.
@@ -9,7 +11,18 @@ ms.topic: error-reference
 
 # Microsoft agent identity platform error codes
 
-This article provides a comprehensive reference for error codes you might encounter when working with the Microsoft agent identity platform.
+This article explains Microsoft Graph errors for agent identity objects. OAuth sign-in failures and local tooling failures use different diagnostics; use the routes below before changing a directory object or its permissions.
+
+## Identify the failing layer
+
+| Failure | Start here |
+| --- | --- |
+| Local browser, WAM, or missing Microsoft Graph sign-in context. | [Management-client sign-in](create-single-instance-agent.md#set-up-the-management-client). An empty `Get-MgContext` isn't successful authentication. |
+| OAuth response containing `AADSTS` or token acquisition failure. | [Microsoft identity platform error codes](~/identity-platform/reference-error-codes.md). Confirm tenant, client ID, audience, and the scenario's required consent. |
+| Microsoft Graph HTTP error while provisioning or updating objects. | The tables in this article and [Microsoft Graph error responses](/graph/errors). |
+| API returns `401` or `403` after a token is acquired. | Your API's token validation and authorization requirements. A token request succeeding doesn't prove that its audience, scopes, roles, or resource access match the API operation. |
+
+For a failed Graph request, retain the HTTP status, `error.code`, `error.message`, request timestamp, and `request-id` response header. Record which operation and tenant failed, but don't include tokens, secrets, or private keys in support requests. Distinguish the [object and client IDs](key-concepts.md#record-the-identifiers-for-your-scenario) before retrying. Don't treat every `403` as a propagation delay or grant broader permissions without diagnosing the denial.
 
 ## Handling error codes in your application
 
@@ -21,7 +34,7 @@ These errors occur when you exceed the tenant quota or the maximum number of age
 
 | Error code | Description |
 |---|---|
-| `Agent_Directory_QuotaExceeded` | Agent identity blueprints and/or agent identities have exceeded 95% of the tenant resource quota. To create more, you must permanently delete unneeded blueprints or identities. |
+| `Agent_Directory_QuotaExceeded` | Agent identity blueprints or agent identities have reached their resource quota (80% of the tenant's overall resource quota by default). This error also occurs when total directory object usage reaches the separate creation threshold (95% by default). To create more, reduce the relevant usage or request a higher directory object quota. |
 | `AgentBlueprint_LimitExceeded` | You've reached the maximum number of agent identity blueprints allowed including active and soft-deleted items. To create more, you must permanently delete unneeded blueprints. |
 | `AgentIdentity_LimitExceeded` | You've reached the maximum number of agent identities allowed including active and soft-deleted entries. To add more, you must permanently delete unneeded agent identities. |
 
@@ -52,7 +65,7 @@ These errors occur when a request references a missing blueprint principal, an i
 
 | Error code | Description |
 |---|---|
-| `AgentIdentity_AgentBlueprintPrincipalDoesNotExist` | The required agent identity blueprint principal doesn't exist for the specified agent identity blueprint ID. |
+| `AgentIdentity_AgentBlueprintPrincipalDoesNotExist` | For a fleet, [create the blueprint principal](create-blueprint.md#create-an-agent-blueprint-principal) and check that its `appId` matches the blueprint. For a single-instance agent, don't create a principal; use the [single-instance provisioning request](create-single-instance-agent.md#provision-the-agent-identity), which references the blueprint object ID. |
 | `AgentIdentity_CredentialsNotSupported` | Credentials are not supported for agent identities. All credentials must be added to the agent identity blueprint. |
 | `AgentIdentity_IncompatibleParentType` | The specified Application (AppId) isn't an Agent Blueprint. The *AgentIdentityBlueprintId* must be set to the *AppId* of a valid agent identity blueprint. |
 | `AgentIdentity_NotSupportedOnApiVersion` | Agent identities aren't supported on the API version used in this request. |
