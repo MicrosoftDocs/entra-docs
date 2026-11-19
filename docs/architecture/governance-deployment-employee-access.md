@@ -58,7 +58,7 @@ In this area of access policy, **birthright assignment** refers to automatically
 
 In the following screenshot see the **Edit policy dialog**, with the **Create auto assignment policy** tab.
 
-   [ ![Screenshot of the Create auto assignment policy tab on the Edit policy dialog.](media/governance-deployment/edit-policy.png)](media/governance-deployment/edit-policy-expanded.png#lightbox)
+   [![Screenshot of the Create auto assignment policy tab on the Edit policy dialog.](media/governance-deployment/edit-policy.png)](media/governance-deployment/edit-policy-expanded.png#lightbox)
 
 For more information, you can learn about [groups and access rights in Microsoft Entra ID](../fundamentals/how-to-manage-groups.md)
 
@@ -112,7 +112,7 @@ For access recertification, you can review access rights with recurring [access 
 
 Administrators determine review scope, then create reviews in access reviews, Microsoft Entra enterprise apps, [Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM), or entitlement management.
 
-   [ ![Diagram of review creation for administrators.](media/governance-deployment/select-scope.png)](media/governance-deployment/select-scope-expanded.png#lightbox)
+   [![Diagram of review creation for administrators.](media/governance-deployment/select-scope.png)](media/governance-deployment/select-scope-expanded.png#lightbox)
 
 The **New access review** dialog appears with the **Review type** tab. Find options for review type, scope, and other configuration details.
 
@@ -120,21 +120,21 @@ The **New access review** dialog appears with the **Review type** tab. Find opti
 
 Administrators assign primary and fallback reviewers during access review creation. An email notifies reviewers of pending reviews. You can assign users to self-review or assign resource owners to review their resources. For self-reviews, you can remove privileges if the user denies or doesn't respond.
 
-   [ ![Diagram of reviewer assignment steps for administrators.](media/governance-deployment/select-reviewer.png)](media/governance-deployment/select-reviewer-expanded.png#lightbox)
+   [![Diagram of reviewer assignment steps for administrators.](media/governance-deployment/select-reviewer.png)](media/governance-deployment/select-reviewer-expanded.png#lightbox)
 
 The My Access dashboard shows a reviewer's pending approvals and recommendations.
 
-   [ ![Diagram of pending reviews.](media/governance-deployment/select-reviewer.png)](media/governance-deployment/select-reviewer-expanded.png#lightbox)
+   [![Diagram of pending reviews.](media/governance-deployment/select-reviewer.png)](media/governance-deployment/select-reviewer-expanded.png#lightbox)
 
 ### Multistage reviews
 
 [Multistage reviews](../id-governance/using-multi-stage-reviews.md) reduce the burden on individual reviewers and help achieve consensus across reviewers. Fallback reviewers help decide unreviewed decisions. Review stage configuration includes indicating the number of stages.
 
-   [ ![Diagram of the access funnel.](media/governance-deployment/access-funnel.png)](media/governance-deployment/access-funnel-expanded.png#lightbox)
+   [![Diagram of the access funnel.](media/governance-deployment/access-funnel.png)](media/governance-deployment/access-funnel-expanded.png#lightbox)
 
 Use the **New access review** dialog, and **Reviews** tab to configure review stages, reviewers, duration, and more.
 
-   [ ![Diagram of the New access review dialog.](media/governance-deployment/new-access-review.png)](media/governance-deployment/new-access-review-expanded.png#lightbox)
+   [![Diagram of the New access review dialog.](media/governance-deployment/new-access-review.png)](media/governance-deployment/new-access-review-expanded.png#lightbox)
 
 ### Automated decision criteria
 
@@ -147,7 +147,7 @@ During access review configuration, you can indicate various decision criteria, 
 
 The **New access review** dialog, and **Settings** tab, with decision helper options highlighted.
 
-   [ ![Screenshot of the New access review dialog and the Settings tab.](media/governance-deployment/new-review-settings.png)](media/governance-deployment/new-review-settings-expanded.png#lightbox)
+   [![Screenshot of the New access review dialog and the Settings tab.](media/governance-deployment/new-review-settings.png)](media/governance-deployment/new-review-settings-expanded.png#lightbox)
 
 ### Inactive user reviews
 
@@ -158,7 +158,7 @@ Learn how to [detect and investigate inactive user accounts](../identity/monitor
 
 The **New access review** dialog, and **Review type** tab, with inactivity options highlighted.
 
-   [ ![Screenshot of the New access review dialog and the Review type tab.](media/governance-deployment/new-review-type.png)](media/governance-deployment/new-review-type-expanded.png#lightbox)
+   [![Screenshot of the New access review dialog and the Review type tab.](media/governance-deployment/new-review-type.png)](media/governance-deployment/new-review-type-expanded.png#lightbox)
 
 ### Review recommendations
 
@@ -178,7 +178,7 @@ Learn to [create access reviews for PIM for Groups](../id-governance/create-acce
 
 The **New access review** dialog, and **Review type** dialog with options for scope and more.
 
-   [ ![Screenshot of the New access review dialog, the Review type tab.](media/governance-deployment/new-review-scope.png)](media/governance-deployment/new-review-scope-expanded.png#lightbox)
+   [![Screenshot of the New access review dialog, the Review type tab.](media/governance-deployment/new-review-scope.png)](media/governance-deployment/new-review-scope-expanded.png#lightbox)
 
 ## Access review history report
 

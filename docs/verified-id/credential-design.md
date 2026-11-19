@@ -3,18 +3,18 @@ title: Customize your Microsoft Entra Verified ID
 description: This article shows you how to create your own custom verifiable credential.
 ms.topic: how-to
 ms.date: 12/13/2024
-# Customer intent: As a developer, I am looking for information about how to enable my users to control their own information. 
+# Customer intent: As a developer, I am looking for information about how to enable my users to control their own information.
 ---
 
 # Customize your verifiable credentials
 
-  
+
 
 ## Overview
 
-Verifiable credential (VC) definitions are made up of two components, *display* definitions and *rules* definitions. A display definition controls the branding of the credential and styling of the claims. A rules definition determines what users need to provide before they receive a verifiable credential.  
+Verifiable credential (VC) definitions are made up of two components, *display* definitions and *rules* definitions. A display definition controls the branding of the credential and styling of the claims. A rules definition determines what users need to provide before they receive a verifiable credential.
 
-This article explains how to modify both types of definitions to meet the requirements of your organization. 
+This article explains how to modify both types of definitions to meet the requirements of your organization.
 
 ## Display definition: wallet credential visuals
 
@@ -22,7 +22,7 @@ Microsoft Entra Verified ID offers a limited set of options that can be used to 
 
 Microsoft Authenticator, being a decentralized identities wallet, displays verifiable credentials that are issued to users as cards. As a VC administrator, you can choose card colors, icons, and text strings to match your organization's brand.
 
-:::image type="content" source="media/credential-design/detailed-view.png" alt-text="Screenshot of a verified credential card in Authenticator, calling out key elements."::: 
+:::image type="content" source="media/credential-design/detailed-view.png" alt-text="Screenshot of a verified credential card in Authenticator, calling out key elements.":::
 
 Cards also contain customizable fields. You can use these fields to let users know the purpose of the card, the attributes it contains, and more.
 
@@ -33,7 +33,7 @@ The display definition is a simple JSON document that describes how the wallet a
 > [!NOTE]
 > This display model is currently used only by Microsoft Authenticator.
 
-The display definition has the following structure. The logo URI, if specified as a URL, must be a URL publicly available on the internet. 
+The display definition has the following structure. The logo URI, if specified as a URL, must be a URL publicly available on the internet.
 
 ```json
 {
@@ -90,7 +90,7 @@ The rules definition is a simple JSON document that describes important properti
 
 ### Attestations
 
-The following four attestation types are currently available to be configured in the rules definition. They are different ways of providing claims used by the Microsoft Entra Verified ID issuing service to be inserted into a verifiable credential and attest to that information with your decentralized identifier (DID). Multiple attestation types can be used in the rules definition. 
+The following four attestation types are currently available to be configured in the rules definition. They are different ways of providing claims used by the Microsoft Entra Verified ID issuing service to be inserted into a verifiable credential and attest to that information with your decentralized identifier (DID). Multiple attestation types can be used in the rules definition.
 
 * **ID token**: When this option is configured, you need to provide an OpenID Connect configuration URI and include the claims that should be included in the verifiable credential. Users are prompted to **Sign in** on the **Authenticator** app to meet this requirement and add the associated claims from their account. To configure this option, see this [how-to guide](how-to-use-quickstart-idtoken.md).
 
@@ -103,13 +103,13 @@ The following four attestation types are currently available to be configured in
 
 For more information about the rules JSON model, see [rulesModel type](rules-and-display-definitions-model.md#rulesmodel-type).
 
-### Credential types 
+### Credential types
 
 All verifiable credentials must declare their *type* in their [rules definition](rules-and-display-definitions-model.md#rulesmodel-type). The credential type distinguishes a verifiable credentials schema from other credentials and it ensures interoperability between issuers and verifiers. To indicate a credential type, provide one or more credential types that the credential satisfies. Each type is represented by a unique string. Often, a URI is used to ensure global uniqueness. The URI doesn't need to be addressable. It's treated as a string. As an example, a diploma credential issued by Contoso University might declare the following types:
 
 | Type | Purpose |
 | ---- | ------- |
-| `https://schema.org/EducationalCredential` | Declares that diplomas issued by Contoso University contain attributes defined by the schema.org `EducationaCredential` object. |
+| `https://schema.org/EducationalCredential` | Declares that diplomas issued by Contoso University contain attributes defined by the schema.org `EducationalCredential` object. |
 | `https://schemas.ed.gov/universityDiploma2020` | Declares that diplomas issued by Contoso University contain attributes defined by the U.S. Department of Education. |
 | `https://schemas.contoso.edu/diploma2020` | Declares that diplomas issued by Contoso University contain attributes defined by Contoso University. |
 

@@ -20,7 +20,7 @@ In most organizations, end-users initiate the process of inviting business partn
 
 ## Use Entitlement Management to grant and revoke access
 
-Entitlement management features enable the [automated lifecycle of external identities](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users) with access to resources. By establishing processes and procedures to manage access through Entitlement Management, and publishing resources through Access Packages, keeping track of external user access to resources becomes a far less complicated problem to solve. When managing access through [Entitlement Management Access Packages](entitlement-management-overview.md) in Microsoft Entra ID, your organization can centrally define and manage access for your users, and users from partner organizations alike. Entitlement Management uses approvals and assignments of Access Packages to track where external users have requested and been assigned access. If an external user loses all of their assignments, Entitlement Management can remove these external users automatically from the tenant. 
+Entitlement management features enable the [automated lifecycle of external identities](entitlement-management-external-users.md#manage-the-lifecycle-of-external-users) with access to resources. By establishing processes and procedures to manage access through Entitlement Management, and publishing resources through Access Packages, keeping track of external user access to resources becomes a far less complicated problem to solve. When managing access through [Entitlement Management Access Packages](entitlement-management-overview.md) in Microsoft Entra ID, your organization can centrally define and manage access for your users, and users from partner organizations alike. Entitlement Management uses approvals and assignments of Access Packages to track where external users have requested and been assigned access. If an external user loses all of their assignments, Entitlement Management can remove these external users automatically from the tenant.
 
 ## Find guests not invited through Entitlement Management
 
@@ -31,7 +31,7 @@ The script is available on [GitHub](https://github.com/microsoft/access-reviews-
 - Have an assignment for a privileged role in the tenant
 - Have an assignment to an application in the tenant
 
-The output also includes the individual domains for each of these external identities. 
+The output also includes the individual domains for each of these external identities.
 
 >[!NOTE]
 >The script previously referenced is a sample script that checks for group membership, role assignments, and application assignments in Microsoft Entra ID. There could be other assignments in applications that external users received outside of Microsoft Entra ID, such as SharePoint (direct membership assignment) or Azure RBAC or Azure DevOps.
@@ -60,8 +60,8 @@ To create an Access Review for external identities, you'd follow these steps:
 
 1. Select **Teams + Groups** and then select the group you noted earlier that contains the external identities to set the **Review scope**.
 
-1. Set the **Scope** as **Guest users only**. 
-    [ ![Screenshot of limiting the scope of the review to guest users only.](media/access-reviews-external-users/guest-users-only.png) ](media/access-reviews-external-users/guest-users-only.png#lightbox)
+1. Set the **Scope** as **Guest users only**.
+    [![Screenshot of limiting the scope of the review to guest users only.](media/access-reviews-external-users/guest-users-only.png)](media/access-reviews-external-users/guest-users-only.png#lightbox)
 1. In the **Upon completion settings** section, you can select **Block users from signing-in for 30 days, then remove user from the tenant** under the **Action to apply on denied users** option. For more information, see: [Disable and delete external identities with Microsoft Entra access reviews](access-reviews-external-users.md#disable-and-delete-external-identities-with-microsoft-entra-access-reviews).
 
 1. After the access review is created, the guest user must certify their access before the review finishes. This is done by the guest approving or not approving their access within the My Access portal. For a full step-by-step guide, see: [Review access to groups and applications in access reviews](perform-access-review.md).
@@ -74,7 +74,7 @@ For a detailed step-by-step guide, see: [Create an access review of groups and a
 
 ## Disable and delete external identities with Microsoft Entra access reviews
 
-In addition to the option of removing unwanted external identities from resources such as groups or applications, Microsoft Entra access reviews can block external identities from signing-in to your tenant and delete the external identities from your tenant after 30 days. Once you select **Block user from signing-in for 30 days, then remove user from the tenant**, the review stays in the “applying” state for 30 days. During this period, you can't view or configure settings, results, reviewers, or audit logs under the current review. 
+In addition to the option of removing unwanted external identities from resources such as groups or applications, Microsoft Entra access reviews can block external identities from signing-in to your tenant and delete the external identities from your tenant after 30 days. Once you select **Block user from signing-in for 30 days, then remove user from the tenant**, the review stays in the “applying” state for 30 days. During this period, you can't view or configure settings, results, reviewers, or audit logs under the current review.
 
 ![upon completion settings](media/access-reviews-external-users/upon-completion-settings.png)
 

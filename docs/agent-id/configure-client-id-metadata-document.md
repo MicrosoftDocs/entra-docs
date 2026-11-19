@@ -26,24 +26,22 @@ To complete this procedure, you need:
 - A stable public HTTPS endpoint where you can publish a JSON document.
 - An MCP server secured with Microsoft Entra ID. See [Prepare the MCP server](#prepare-the-mcp-server).
 - A Microsoft Entra tenant in which CIMD support is available.
-- A tenant administrator who can [add the CIMD client and grant delegated permissions](manage-client-id-metadata-document-clients.md#add-a-cimd-client-in-the-admin-center) when user consent isn't available. Give the administrator the document URL, target resource, and requested scopes before testing sign-in.
-
-The client must be able to open a browser for user sign-in. CIMD clients can't use the client credentials grant.
+- A tenant administrator who can [add the CIMD client and grant delegated permissions](manage-client-id-metadata-document-clients.md#add-via-admin-center) when user consent isn't available. Give the administrator the document URL, target resource, and requested scopes before testing sign-in.
 
 ## Prepare the MCP server
 
-A CIMD client has no app registration, so it learns everything about the MCP server from the server's protected resource metadata and from Microsoft Entra ID. Set up the server by following [Secure an MCP server with Microsoft Entra ID](secure-mcp-server-with-entra-id.md). That article covers registering the server, exposing a delegated scope, publishing protected resource metadata, and validating access tokens.
+A CIMD client learns everything about the MCP server from the server's protected resource metadata and from Microsoft Entra ID. Set up the server by following [Secure an MCP server with Microsoft Entra ID](secure-mcp-server-with-entra-id.md). That article covers registering the server, exposing a delegated scope, publishing protected resource metadata, and validating access tokens.
 
-Then confirm the following settings. The examples in this article use an MCP server at `https://mcp.contoso.com` that exposes the `mcp.access` scope.
+Host the MCP endpoint at a nonempty path with no trailing slash, such as `https://mcp.contoso.com/mcp`. Don't use the host root: some MCP clients append a slash, causing token acquisition to fail because the resource identifier no longer matches. Microsoft Entra ID doesn't accept trailing slashes on Application ID URIs.
+
+Then confirm the following settings. The examples in this article use an MCP server at `https://mcp.contoso.com/mcp` that exposes the `mcp.access` scope.
 
 | Setting | Required value | Example |
 | --- | --- | --- |
-| Application ID URI of the server's app registration | The server's canonical URL. | `https://mcp.contoso.com` |
-| `resource` in the protected resource metadata | The same value as the Application ID URI. The client sends this value in its `resource` parameter, and Microsoft Entra ID issues the token with this audience. | `https://mcp.contoso.com` |
-| `authorization_servers` in the protected resource metadata | The Microsoft Entra authorization server URL for the tenant, or `common` for a multitenant server. | `https://login.microsoftonline.com/{tenant}/oauth21/2026-08` |
-| `scopes_supported` in the protected resource metadata | The delegated scope that the client requests. | `mcp.access` |
-| Who can consent to the delegated scope | **Admins and users** lets users consent to the client themselves, if the tenant's consent policy permits it. **Admins only** requires an administrator to approve the client. | Admins and users |
-| Supported account types | **Multiple Entra ID tenants** when `authorization_servers` uses `common`. | Single tenant |
+| Application ID URI of the server's app registration | The server's canonical endpoint URL, with a nonempty path and no trailing slash. | `https://mcp.contoso.com/mcp` |
+| `resource` in the protected resource metadata | The same value as the Application ID URI. The client sends this value in its `resource` parameter; the v2 access token's `aud` is the resource application's client-ID GUID. | `https://mcp.contoso.com/mcp` |
+| `authorization_servers` in the protected resource metadata | The Microsoft Entra authorization server URL for the tenant, or `organizations` for a multitenant server. | `https://login.microsoftonline.com/{tenant}/oauth21/2026-08` |
+| `scopes_supported` in the protected resource metadata | The fully qualified delegated scope that the client requests. | `https://mcp.contoso.com/mcp/mcp.access` |
 
 Verify that the server publishes its metadata:
 
@@ -51,7 +49,7 @@ Verify that the server publishes its metadata:
 GET https://mcp.contoso.com/.well-known/oauth-protected-resource
 ```
 
-The response must contain the `resource`, `authorization_servers`, and `scopes_supported` values from the preceding table. The MCP server doesn't need CIMD-specific token-validation logic. Microsoft Entra ID issues the access token, and the server validates it like any other access token.
+The response must contain the `resource`, `authorization_servers`, and `scopes_supported` values from the preceding table.
 
 ## Publish the metadata document
 
@@ -78,22 +76,20 @@ Content-Type: application/json
   "response_types": [
     "code"
   ],
-  "token_endpoint_auth_method": "none",
-  "scope": "offline_access https://mcp.contoso.com/mcp.access"
+  "token_endpoint_auth_method": "none"
 }
 ```
 
 Follow these requirements:
 
 - Use an HTTPS URL with a nonempty path.
-- Don't include user information or a fragment in the URL.
 - Set `client_id` to the exact URL that serves the document.
 - Keep the URL short and stable. It can appear in consent and administration experiences.
 - List every redirect URI that the client might use. Microsoft Entra ID uses exact string matching.
 - Use HTTPS redirect URIs. Loopback redirect URIs can be used for local native-client scenarios where the applicable OAuth specification permits them.
 - Don't rely on HTTP redirects when Microsoft Entra ID retrieves the document.
 - Return a successful HTTP status and a valid JSON response.
-- Don't use a shared client secret. Set `token_endpoint_auth_method` to `none` for a public client.
+- Set `token_endpoint_auth_method` to `none`. Don't use a client secret or a private-key client assertion during preview.
 
 The document format is defined by the [OAuth Client ID Metadata Document specification](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/).
 
@@ -104,7 +100,7 @@ The document format is defined by the [OAuth Client ID Metadata Document specifi
 
 Before sending a URL as a client ID, confirm that the authorization server for the target tenant supports CIMD.
 
-1. Identify the authorization server. For an MCP server, fetch its protected resource metadata from `<server-url>/.well-known/oauth-protected-resource` and read the `authorization_servers` value:
+1. Identify the authorization server. For an MCP server, fetch its protected resource metadata from the URL advertised in its `WWW-Authenticate` header and read the `authorization_servers` value. The following example hosts metadata at the server origin, separately from the `/mcp` endpoint:
 
     ```http
     GET https://mcp.contoso.com/.well-known/oauth-protected-resource
@@ -112,7 +108,7 @@ Before sending a URL as a client ID, confirm that the authorization server for t
 
     ```json
     {
-      "resource": "https://mcp.contoso.com",
+      "resource": "https://mcp.contoso.com/mcp",
       "authorization_servers": ["https://login.microsoftonline.com/{tenant}/oauth21/2026-08"]
     }
     ```
@@ -133,8 +129,6 @@ Before sending a URL as a client ID, confirm that the authorization server for t
     }
     ```
 
-    The response contains other properties that aren't shown here, including `authorization_endpoint` and `token_endpoint`. A client that uses metadata discovery, such as an MCP client, sends its requests to those endpoints. The following examples use the Microsoft Entra v2.0 endpoints, which also support CIMD client IDs.
-
 Don't send a CIMD client ID when the property is missing or `false`. Fall back to a registered client ID or another registration method that the authorization server supports.
 
 ## Send the authorization request
@@ -142,12 +136,12 @@ Don't send a CIMD client ID when the property is missing or `false`. Fall back t
 Set `client_id` to the URL of your metadata document. For an MCP server, also include the protected resource URL in the `resource` parameter.
 
 ```http
-GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize
+GET https://login.microsoftonline.com/{tenant}/oauth21/2026-08/authorize
     ?client_id=https%3A%2F%2Fclient.contoso.com%2Foauth%2Fclient-metadata.json
     &response_type=code
     &redirect_uri=https%3A%2F%2Fclient.contoso.com%2Foauth%2Fcallback
-    &scope=offline_access%20https%3A%2F%2Fmcp.contoso.com%2Fmcp.access
-    &resource=https%3A%2F%2Fmcp.contoso.com
+    &scope=offline_access%20https%3A%2F%2Fmcp.contoso.com%2Fmcp%2Fmcp.access
+    &resource=https%3A%2F%2Fmcp.contoso.com%2Fmcp
     &code_challenge={PKCE_challenge}
     &code_challenge_method=S256
     &state={opaque_value}
@@ -164,21 +158,17 @@ Microsoft Entra ID retrieves and validates the metadata document. The requested 
 
 Depending on tenant policy and whether an administrator added the client in advance, the user might:
 
-- Continue without a new prompt because an administrator already granted consent.
-- Consent to low-risk delegated permissions.
+- Continue without a new prompt because an administrator already granted the required scopes for all users in the tenant.
+- Consent to the specific delegated permissions allowed by the tenant's consent policy.
 - Be told that administrator approval is required.
 - Be blocked from adding the client.
 
-The authorization request is one way to grant delegated permissions to the client's agent identity. For the other methods, including administrator consent, see [Grant delegated permissions to an agent identity](grant-agent-access-microsoft-365.md).
-
-During preview, grant permissions through the sign-in and consent endpoints or Microsoft Graph, not the portal permissions experience. The admin consent request workflow is disabled for Agent ID, including CIMD clients. In a default tenant, plan for an administrator to add the client and grant consent before users sign in; don't rely on user consent being available.
-
 ## Redeem the authorization code
 
-After Microsoft Entra ID returns an authorization code, redeem it at the tenant's v2 token endpoint:
+After Microsoft Entra ID returns an authorization code, validate the `state` value, then redeem the authorization code at the `token_endpoint` returned by the versioned discovery document:
 
 ```http
-POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
+POST https://login.microsoftonline.com/{tenant}/oauth21/2026-08/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=https%3A%2F%2Fclient.contoso.com%2Foauth%2Fclient-metadata.json&
@@ -186,13 +176,9 @@ grant_type=authorization_code&
 code={authorization_code}&
 redirect_uri=https%3A%2F%2Fclient.contoso.com%2Foauth%2Fcallback&
 code_verifier={PKCE_code_verifier}&
-scope=https%3A%2F%2Fmcp.contoso.com%2Fmcp.access&
-resource=https%3A%2F%2Fmcp.contoso.com
+scope=https%3A%2F%2Fmcp.contoso.com%2Fmcp%2Fmcp.access&
+resource=https%3A%2F%2Fmcp.contoso.com%2Fmcp
 ```
-
-Validate the `state` value before redeeming the code. Store tokens using the secure storage provided by the client platform.
-
-The access token is issued to the resource, not to the CIMD client. The client uses the token to call the protected resource in the same way as another OAuth client.
 
 ## Troubleshoot common failures
 
@@ -201,7 +187,10 @@ The access token is issued to the resource, not to the CIMD client. The client u
 | The metadata document can't be retrieved | Confirm that the URL is publicly reachable over HTTPS, returns a successful response directly, and doesn't redirect. |
 | The client ID is rejected | Confirm that the requested `client_id`, the retrieval URL, and the document's `client_id` are identical. |
 | The redirect URI is rejected | Compare the requested redirect URI with the document, including scheme, host, path, port, case, and trailing slash. |
-| The user can't approve the client | Review the tenant's user consent policy and whether the requested permissions require administrator consent. |
+| Token acquisition fails with a host-root or trailing-slash resource URL | Host the MCP endpoint at a path such as `/mcp` without a trailing slash. Use that exact URL for the Application ID URI, metadata `resource`, and OAuth `resource` parameter. |
+| The user can't approve the client | Review assigned consent policies, risk-based step-up consent, and whether the requested permissions require administrator consent. Under the strict posture, an administrator grants scopes for all users. Under the loose posture, follow the CIMD policy and risk-based step-up configuration in the management article. |
+| CIMD isn't discovered or the URL client ID is rejected by the authorization server | Use the versioned `/oauth21/2026-08` discovery document and the endpoints it advertises. Confirm that `client_id_metadata_document_supported` is `true`. |
+| The MCP server returns HTTP 401 after token acquisition | Check server-side signature, lifetime, tenant, issuer, and audience validation. Don't equate the versioned discovery identifier with the token's tenant-specific `/v2.0` issuer. |
 | The token has the wrong audience | Send the MCP server's canonical URL as `resource` and request a scope exposed by that resource. |
 | A client with the URL already exists | Reuse the existing tenant-local identity. Only one CIMD-backed identity for a canonical URL can exist in a tenant. |
 | The client stopped working after a URL change | Restore the original URL or onboard the new URL as a new identity and obtain consent again. |

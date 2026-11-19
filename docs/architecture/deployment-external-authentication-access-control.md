@@ -33,7 +33,7 @@ The following table summarizes the application integration options for OAuth 2 a
 
 The following diagram of OAuth 2 and OIDC flows shows OAuth application integration options.
 
-   [ ![Diagram of OAuth 2 and OIDC flow with OAuth app integration options.](media/deployment-external/oauth-flows.png)](media/deployment-external/oauth-flows-expanded.png#lightbox)
+   [![Diagram of OAuth 2 and OIDC flow with OAuth app integration options.](media/deployment-external/oauth-flows.png)](media/deployment-external/oauth-flows-expanded.png#lightbox)
 
 Application integration options for SAML are based on the service-provider (SP) initiated flow. The SAML flow is detailed in authentication with Microsoft Entra ID.
 
@@ -45,7 +45,7 @@ See the [custom authentication extensions overview](../identity-platform/custom-
 
 The following diagram shows a custom authentication flow.
 
-   [ ![Diagram of a custom extension flow.](media/deployment-external/custom-authentication-extension.png)](media/deployment-external/custom-authentication-extension-expanded.png#lightbox)
+   [![Diagram of a custom extension flow.](media/deployment-external/custom-authentication-extension.png)](media/deployment-external/custom-authentication-extension-expanded.png#lightbox)
 
 ### API and event handler considerations
 

@@ -9,7 +9,7 @@ ms.custom: references_regions
 
 # Plan your Microsoft Entra Verified ID issuance solution
 
-  
+
 
 
 ## Overview
@@ -18,7 +18,7 @@ It’s important to plan your issuance solution so that in addition to issuing c
 
 ## Scope of guidance
 
-This article covers the technical aspects of planning for a verifiable credential (VC) issuance solution. The Microsoft solution for verifiable credentials follows the World Wide Web Consortium (W3C) [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model/) and [Decentralized Identifiers (DIDs) V1.0](https://www.w3.org/TR/did-core/) standards so can interoperate with non-Microsoft services. However, the examples in this content reflect the Microsoft solution stack for verifiable credentials. 
+This article covers the technical aspects of planning for a verifiable credential (VC) issuance solution. The Microsoft solution for verifiable credentials follows the World Wide Web Consortium (W3C) [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model/) and [Decentralized Identifiers (DIDs) V1.0](https://www.w3.org/TR/did-core/) standards so can interoperate with non-Microsoft services. However, the examples in this content reflect the Microsoft solution stack for verifiable credentials.
 
 Out of scope for this content is articles covering supporting technologies that aren't specific to issuance solutions. For example, websites are used in a verifiable credential issuance solution but planning a website deployment isn't covered in detail.
 
@@ -37,7 +37,7 @@ As part of your plan for an issuance solution, you must design a solution that e
 
 You need access to a Microsoft Entra tenant to host Microsoft Entra Verified ID. The Microsoft Entra tenant provides an Identity and Access Management (IAM) control plane for the resources part of the solution.
 
-Each tenant uses the multitenant Microsoft Entra Verified ID service, and has a decentralized identifier (DID). The DID provides proof that the issuer owns the domain incorporated into the DID. The DID is used by the subject and the verifier to validate the issuer. 
+Each tenant uses the multitenant Microsoft Entra Verified ID service, and has a decentralized identifier (DID). The DID provides proof that the issuer owns the domain incorporated into the DID. The DID is used by the subject and the verifier to validate the issuer.
 
 ### Microsoft Azure services
 
@@ -45,7 +45,7 @@ Each tenant uses the multitenant Microsoft Entra Verified ID service, and has a 
 
 The **Azure Key Vault** service stores your issuer keys, which are generated when you initiate the Microsoft Entra Verified ID issuance service. The keys and metadata are used to execute credential management operations and provide message security.
 
-Each issuer has a single key set used for signing, updating, and recovery. This key set is used for every issuance of every verifiable credential you produce. 
+Each issuer has a single key set used for signing, updating, and recovery. This key set is used for every issuance of every verifiable credential you produce.
 
 **Microsoft Entra Verified ID Service** is used to store credential metadata and definitions; specifically, the rules and display definitions for your credentials.
 
@@ -62,9 +62,9 @@ Each issuer has a single key set used for signing, updating, and recovery. This 
 
 The Microsoft Entra Verified ID service enables you to issue and revoke VCs based on your configuration. The service:
 
-* Provisions the decentralized identifier (DID). Each issuer has a single DID per tenant.   
+* Provisions the decentralized identifier (DID). Each issuer has a single DID per tenant.
 
-* Provisions key sets to Key Vault. 
+* Provisions key sets to Key Vault.
 
 * Stores the configuration metadata used by the issuance service and Microsoft Authenticator.
 
@@ -82,11 +82,11 @@ Microsoft Entra Verified ID currently supports Web as trust system [DID Web](htt
 
 Microsoft Authenticator is the mobile application. The Authenticator orchestrates the interactions between the user, the Microsoft Entra Verified ID service and the contract used to issue VCs. It acts as a digital wallet in which the holder of the VC stores the VC, including the private key of the subject of the VC. Authenticator is also the mechanism used to present VCs for verification.
 
-### Issuance business logic 
+### Issuance business logic
 
 :::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-business-logic.png" alt-text="Diagram showing the Verified ID issuance business logic.":::
 
-Your issuance solution includes a web front end where users request a VC, an identity store and or other attribute store to obtain values for claims about the subject, and other backend services. 
+Your issuance solution includes a web front end where users request a VC, an identity store and or other attribute store to obtain values for claims about the subject, and other backend services.
 
 A web front end serves issuance requests to the subject’s wallet by generating deep links or QR codes. Based on the configuration of the contract, other components might be required to satisfy the requirements to create a VC.
 
@@ -94,11 +94,11 @@ These services provide supporting roles that don't necessarily need to integrate
 
 * **OpenID Connect (OIDC)-compliant service or services** are used to obtain id_tokens needed to issue the VC. Existing identity systems such as Microsoft Entra ID or Azure AD B2C can provide the OIDC-compliant service, as can custom solutions such as Identity Server.
 
-* **Attribute stores** – Attribute stores might be outside of directory services and provide attributes needed to issue a VC. For example, a student information system might provide claims about degrees earned. 
+* **Attribute stores** – Attribute stores might be outside of directory services and provide attributes needed to issue a VC. For example, a student information system might provide claims about degrees earned.
 
 * **Additional middle-tier services** that contain business rules for lookups, validating, billing, and any other runtime checks and workflows needed to issue credentials.
 
-For more information on setting up your web front end, see the tutorial [Configure your Microsoft Entra ID to issue verifiable credentials](./verifiable-credentials-configure-tenant.md). 
+For more information on setting up your web front end, see the tutorial [Configure your Microsoft Entra ID to issue verifiable credentials](./verifiable-credentials-configure-tenant.md).
 
 ## Credential design considerations
 
@@ -118,7 +118,7 @@ With Microsoft Entra Verified ID, the most common credential use cases are:
 
 **Identity Verification**: a credential is issued based on multiple criteria. Multiple criteria might include verifying the authenticity of government-issued documents like a passport or driver’s license and correlating the information in that document with other information such as:
 
-* a user’s selfie 
+* a user’s selfie
 
 * verification of liveness
 
@@ -126,7 +126,7 @@ This kind of credential is a good fit for identity onboarding scenarios of new e
 
 :::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-identity-verification-use-case.png" alt-text="Diagram showing the identity verification use case.":::
 
-**Proof of employment/membership**: a credential is issued to prove a relationship between the user and an institution. This kind of credential is a good fit to access loosely coupled business-to-business applications, such as retailers offering discounts to employees or students. One main value of VCs is their portability: Once issued, the user can use the VC in many scenarios. 
+**Proof of employment/membership**: a credential is issued to prove a relationship between the user and an institution. This kind of credential is a good fit to access loosely coupled business-to-business applications, such as retailers offering discounts to employees or students. One main value of VCs is their portability: Once issued, the user can use the VC in many scenarios.
 
 :::image type="content" source="media/plan-issuance-solution/plan-for-issuance-solution-employment-proof-use-case.png" alt-text="Diagram showing the proof of employment use case.":::
 
@@ -138,7 +138,7 @@ As part of the design process, investigate industry-specific schemas, namespaces
 
 Common schemas are an area where standards are still emerging. One example of such an effort is the [Verifiable Credentials for Education Task Force](https://github.com/w3c-ccg/vc-ed). Investigate and contribute to emerging standards in your organization's industry.
 
-### Credential type and attributes 
+### Credential type and attributes
 
 After establishing the use case for a credential, you need to decide the credential type and what attributes to include in the credential. Verifiers can read the claims in the VC presented by the users.
 
@@ -146,7 +146,7 @@ All verifiable credentials must declare their *type* in their [rules definition]
 
 | **Type** | **Purpose** |
 | ---- | ------- |
-| `https://schema.org/EducationalCredential` | Declares that diplomas issued by Contoso University contain attributes defined by the schema.org `EducationaCredential` object. |
+| `https://schema.org/EducationalCredential` | Declares that diplomas issued by Contoso University contain attributes defined by the schema.org `EducationalCredential` object. |
 | `https://schemas.ed.gov/universityDiploma2020` | Declares that diplomas issued by Contoso University contain attributes defined by the U.S. Department of Education. |
 | `https://schemas.contoso.edu/diploma2020` | Declares that diplomas issued by Contoso University contain attributes defined by Contoso University. |
 
@@ -168,12 +168,12 @@ As with any solution, you must plan for performance. The key areas to focus on a
 
 The following section covers areas to consider when planning for performance:
 
-* The Microsoft Entra Verified ID issuance service is deployed in West Europe, North Europe, West US 2, West Central US, Australia, and Japan Azure regions. If your Microsoft Entra tenant resides within EU, the Microsoft Entra Verified ID service is in EU too. 
+* The Microsoft Entra Verified ID issuance service is deployed in West Europe, North Europe, West US 2, West Central US, Australia, and Japan Azure regions. If your Microsoft Entra tenant resides within EU, the Microsoft Entra Verified ID service is in EU too.
 
 * To limit latency, deploy your issuance frontend website and key vault in the region chosen earlier.
 
 Model based on throughput:
-* The Issuer service is subject to [Azure Key Vault service limits](/azure/key-vault/general/service-limits). 
+* The Issuer service is subject to [Azure Key Vault service limits](/azure/key-vault/general/service-limits).
 
 *  For Azure Key Vault, there are three signing operations involved in each VC issuance:
 
@@ -183,7 +183,7 @@ Model based on throughput:
 
       * One for the contract download
 
-* You can't control throttling; however, review the [Azure Key Vault throttling guidance](/azure/key-vault/general/overview-throttling). 
+* You can't control throttling; however, review the [Azure Key Vault throttling guidance](/azure/key-vault/general/overview-throttling).
 
 * If you're planning a large rollout and onboarding of VCs, consider batching VC creation to ensure you don't exceed limits.
 
@@ -193,7 +193,7 @@ For scalability, consider implementing metrics for the following items:
 
    * Define the logical phases of your issuance process. For example:
 
-   * Initial request 
+   * Initial request
 
    * Servicing of the QR code or deep link
 
@@ -215,7 +215,7 @@ For scalability, consider implementing metrics for the following items:
 
    * [Azure Key Vault monitoring and alerting](/azure/key-vault/general/alert)
 
-* Monitor the components used for your business logic layer. 
+* Monitor the components used for your business logic layer.
 
 ### Plan for reliability
 
@@ -225,15 +225,15 @@ To plan for reliability:
 
    * [Azure Key Vault availability and redundancy - Azure Key Vault](/azure/key-vault/general/disaster-recovery-guidance)
 
-* For frontend and business layer, your solution can manifest in an unlimited number of ways. As with any solution, for the dependencies you identify, ensure that the dependencies are resilient and monitored. 
+* For frontend and business layer, your solution can manifest in an unlimited number of ways. As with any solution, for the dependencies you identify, ensure that the dependencies are resilient and monitored.
 
 If the rare event that the Microsoft Entra Verified ID issuance service or Azure Key Vault services become unavailable, the entire solution becomes unavailable.
 
 ### Plan for compliance
 
-Your organization may have specific compliance needs related to your industry, type of transactions, or country/region of operation. 
+Your organization may have specific compliance needs related to your industry, type of transactions, or country/region of operation.
 
-**Data residency**: The Microsoft Entra Verified ID issuance service is deployed in a subset of Azure regions. The service is used for compute functions only. Values of verifiable credentials aren't stored in Microsoft systems. However, as part of the issuance process, personal data is sent and used when issuing VCs. Using the VC service shouldn't impact data residency requirements. If you store any personal information as a part of identity verification, ensure you store it in a manner and region that meets your compliance requirements. For Azure-related guidance, visit the [Microsoft Trust Center](https://www.microsoft.com/trust-center/product-overview?msockid=2ce50c5bc6a76e4f228818f9c7c66f79). 
+**Data residency**: The Microsoft Entra Verified ID issuance service is deployed in a subset of Azure regions. The service is used for compute functions only. Values of verifiable credentials aren't stored in Microsoft systems. However, as part of the issuance process, personal data is sent and used when issuing VCs. Using the VC service shouldn't impact data residency requirements. If you store any personal information as a part of identity verification, ensure you store it in a manner and region that meets your compliance requirements. For Azure-related guidance, visit the [Microsoft Trust Center](https://www.microsoft.com/trust-center/product-overview?msockid=2ce50c5bc6a76e4f228818f9c7c66f79).
 
 **Revoking credentials**: Determine if your organization needs to revoke credentials. For example, an admin may need to revoke credentials when an employee leaves the company. For more information, see [Revoke a previously issued verifiable credential](how-to-issuer-revoke.md).
 
@@ -249,7 +249,7 @@ When planning for operations, it's critical you develop a schema to use for trou
 
 * If you're an identity verification service issuing VCs on behalf of multiple customers, monitor and mitigate by customer or contract ID for customer-facing reporting and billing.
 
-* If you're an identity verification service issuing VCs on behalf of multiple customers, use the customer or contract ID for customer-facing reporting and billing, monitoring, and mitigating. 
+* If you're an identity verification service issuing VCs on behalf of multiple customers, use the customer or contract ID for customer-facing reporting and billing, monitoring, and mitigating.
 
 ## Plan for security
 
@@ -257,19 +257,19 @@ As part of your design considerations focused on security, consider the followin
 
 * For key management:
 
-   * Create a dedicated Key Vault for VC issuance. Limit Azure Key Vault permissions to the Microsoft Entra Verified ID issuance service and the issuance service frontend website service principal. 
+   * Create a dedicated Key Vault for VC issuance. Limit Azure Key Vault permissions to the Microsoft Entra Verified ID issuance service and the issuance service frontend website service principal.
 
    * Treat Azure Key Vault as a highly privileged system - Azure Key Vault issues credentials to customers. No human identities should have standing permissions over the Azure Key Vault service. Administrators should have only just-in-time access to Key Vault. For more best practices for Azure Key Vault usage, refer to [Azure Security Baseline for Key Vault](/security/benchmark/azure/baselines/key-vault-security-baseline).
 
 * For service principal that represents the issuance frontend website:
 
-   * Define a dedicated service principal to authorize access Azure Key Vault. If your website is on Azure, use an [Azure Managed Identity](~/identity/managed-identities-azure-resources/overview.md). 
+   * Define a dedicated service principal to authorize access Azure Key Vault. If your website is on Azure, use an [Azure Managed Identity](~/identity/managed-identities-azure-resources/overview.md).
 
-   * Treat the service principal that represents the website and the user as a single trust boundary. While it's possible to create multiple websites, there's only one key set for the issuance solution. 
+   * Treat the service principal that represents the website and the user as a single trust boundary. While it's possible to create multiple websites, there's only one key set for the issuance solution.
 
 For security logging and monitoring, we recommend the following items:
 
-* Enable logging and alerting of Azure Key Vault to track credential issuance operations, key extraction attempts, permission changes, and to monitor and send alert for configuration changes. More information can be found at [How to enable Key Vault logging](/azure/key-vault/general/howto-logging). 
+* Enable logging and alerting of Azure Key Vault to track credential issuance operations, key extraction attempts, permission changes, and to monitor and send alert for configuration changes. More information can be found at [How to enable Key Vault logging](/azure/key-vault/general/howto-logging).
 
 * Archive logs in a security information and event management (SIEM) systems, such as [Microsoft Sentinel](https://azure.microsoft.com/services/azure-sentinel) for long-term retention.
 
@@ -287,9 +287,9 @@ For guidance on managing your Azure environment, we recommend you review the [Mi
 
 ## Other considerations
 
-When you complete your POC, gather all the information and documentation generated, and consider tearing down the issuer configuration. 
+When you complete your POC, gather all the information and documentation generated, and consider tearing down the issuer configuration.
 
-For more information on Key Vault implementation and operation, refer to [Best practices to use Key Vault](/azure/key-vault/general/best-practices). For more information on Securing your Microsoft Entra tenants using Microsoft Entra ID, refer to [Introduction to delegated administration and isolated environments](https://aka.ms/AzureADSecuredAzure). 
+For more information on Key Vault implementation and operation, refer to [Best practices to use Key Vault](/azure/key-vault/general/best-practices). For more information on Securing your Microsoft Entra tenants using Microsoft Entra ID, refer to [Introduction to delegated administration and isolated environments](https://aka.ms/AzureADSecuredAzure).
 
 ## Next steps
 

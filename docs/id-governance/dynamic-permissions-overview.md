@@ -5,7 +5,7 @@ author: markwahl-msft
 ms.author: mwahl
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 11/16/2026
+ms.date: 11/19/2026
 ms.custom: msecd-doc-authoring-1032
 ms.reviewer: markwahl-msft
 ai-usage: ai-assisted
@@ -64,9 +64,9 @@ The separation of duties preview is separate from the generally available [separ
 
 ## Task-scoped permission assignment based on intent
 
-A separate preview enables task-scoped permission assignment so agents can dynamically request permissions for a specific task, based on the task's intent. This approach was demonstrated at Microsoft Ignite and described in the Microsoft Security blog, [Agents are your newest insiders. Security must move at their speed.](https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/).
+In addition to the detection and remediation preview, a second dynamic permissions preview enables task-scoped permission assignment, allowing agents to dynamically request permissions for a specific task. Dynamic permissions translates the agent's intent and the task it's trying to accomplish into the least-privilege permissions needed to complete that task. This approach was demonstrated at Microsoft Ignite and described in the Microsoft Security blog, [Agents are your newest insiders. Security must move at their speed.](https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/)
 
-The same input used to assess excessive access, starting with privilege level and separation of duties conflicts, inform task-scoped permission requests. Organizational policy sets the boundaries. Within those boundaries, an agent receives only the permissions needed for an approved task, for only as long as needed. Permissions can be reduced or removed as the task changes or completes.
+Privilege level and separation of duties conflicts inform both excessive-access assessments and task-scoped permission requests. Organizational policy sets the boundaries. Within those boundaries, an agent receives only the permissions needed for a task, for only as long as needed. Permissions can be reduced or removed as the task changes or completes.
 
 Interested customers and ISVs are invited to partner with Microsoft to preview task-scoped permission assignment. To request participation in that preview, [sign up for dynamic permissions updates](https://aka.ms/DynamicPermissionsPreview).
 

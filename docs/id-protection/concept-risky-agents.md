@@ -12,9 +12,9 @@ As organizations adopt, build, and deploy autonomous AI agents, the need to moni
 
 ## Prerequisites
 
-### Roles 
+### Roles
 
-To use our Risky Agent reports, you must have one of the following administrator roles assigned. 
+To use our Risky Agent reports, you must have one of the following administrator roles assigned.
 - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)
 - [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator)
 - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)
@@ -27,7 +27,7 @@ Starting soon, ID Protection for agents will require a [Microsoft Agent 365 lice
 
 ## How it works
 
-Because agents can operate autonomously and on behalf of a user, they can display unique sign-in behavior. Agents can take initiative, interact with sensitive data, and operate at scale. Microsoft Entra ID Protection for agents identifies and mitigates risks associated with these capabilities. **Learning Mode** automatically suppresses behavioral alerts for agents that lack sufficient activity history, preventing false positives during onboarding and after periods of inactivity. A separate detection runs in parallel to ensure genuinely malicious early-life behavior is still caught. Once an agent exhibits suspicious behavior, ID Protection flags the activity as risky. 
+Because agents can operate autonomously and on behalf of a user, they can display unique sign-in behavior. Agents can take initiative, interact with sensitive data, and operate at scale. Microsoft Entra ID Protection for agents identifies and mitigates risks associated with these capabilities. **Learning Mode** automatically suppresses behavioral alerts for agents that lack sufficient activity history, preventing false positives during onboarding and after periods of inactivity. A separate detection runs in parallel to ensure genuinely malicious early-life behavior is still caught. Once an agent exhibits suspicious behavior, ID Protection flags the activity as risky.
 
 ## Activities contributing to risk
 
@@ -39,11 +39,11 @@ The following table provides the anomalous activities that can contribute to the
 | Agent risk detection | Description | riskEventType |
 |---------------------|------------------------------------|----|
 | Confirmed compromised | Admin confirmed agent compromised | adminConfirmedAgentCompromised |
-| Early life malicious activity | Newly created agent immediately exhibited multiple suspicious behavior patterns, acting like an attacker.| earlyLifeMaliciousActivity
+| Early life malicious activity | Newly created agent immediately exhibited multiple suspicious behavior patterns, acting like an attacker.| earlyLifeMaliciousActivity |
 | Entra Directory Reconnaissance | Agent performed suspicious reconnaissance or high-risk directory operations. | entraDirectoryReconnaissance |
 | Failed access attempt | Agent attempted and failed to access resources for which it isn't authorized. This detection can indicate an attacker is attempting to replay an agent's token against an unauthorized resource. | failedAccessAttempt |
 | Microsoft Entra threat intelligence | Microsoft identified activity that is consistent with known attack patterns based on its internal and external threat intelligence sources. | threatIntelligenceAccount |
-| Sign-in spike | Agent made a higher number of sign-ins compared to its usual sign-in frequency. This spike can be an indicator that an attacker is using automation or a toolkit. | signInSpike | 
+| Sign-in spike | Agent made a higher number of sign-ins compared to its usual sign-in frequency. This spike can be an indicator that an attacker is using automation or a toolkit. | signInSpike |
 | Suspicious credential usage | This detection flags when new credentials are added to agent blueprints and then actually used. | suspiciousCredentialUsage |
 | Unfamiliar resource access | Agent targeted resources that it doesn't usually access. This detection can mean that an attacker is trying to access sensitive resources beyond the agent's intended purpose. | unfamiliarResourceAccess |
 
@@ -56,14 +56,14 @@ You can also navigate directly to the **Risky Agents** report from the ID Protec
 :::image type="content" source="media/concept-risky-agents/risky-agents-report.png" alt-text="Screenshot showing the Risky agents report." lightbox="media/concept-risky-agents/risky-agents-report.png":::
 
 You can take action on agents directly from the report, including:
-- **Confirm compromise**: Select after manual investigation or automated detection confirms the account is compromised. This step is useful as part of incident response to prevent further damage. Confirm compromise automatically sets the risk level to High and creates an event in the agent's **Risk detections**. This action triggers risk-based Conditional Access policies that are configured to block access on High Agent Risk. 
+- **Confirm compromise**: Select after manual investigation or automated detection confirms the account is compromised. This step is useful as part of incident response to prevent further damage. Confirm compromise automatically sets the risk level to High and creates an event in the agent's **Risk detections**. This action triggers risk-based Conditional Access policies that are configured to block access on High Agent Risk.
 - **Confirm safe**: Marks the user as safe after investigation and clears any active risk state for that user by setting risk level to None. Use this option when you want to mark a false positive and for the system to avoid flagging similar activity.
-- **Dismiss risk**: Tells the system that the detected risk for an agent is no longer relevant after investigation, or is a benign true positive where you want the system to continue to flag similar activity.  
+- **Dismiss risk**: Tells the system that the detected risk for an agent is no longer relevant after investigation, or is a benign true positive where you want the system to continue to flag similar activity.
 - **Disable**: Prevents all sign-ins for that agent across Microsoft Entra ID and connected apps.
 
 ## View the risky agent details
 
-In the risky agent report, select an entry to view the full details including the corresponding risk detections for that agent. Just like with all ID Protection risk reports, you can take action on the agent directly from the report or from the details view. 
+In the risky agent report, select an entry to view the full details including the corresponding risk detections for that agent. Just like with all ID Protection risk reports, you can take action on the agent directly from the report or from the details view.
 
 **Risky agent details** include:
 - Agent display name and ID

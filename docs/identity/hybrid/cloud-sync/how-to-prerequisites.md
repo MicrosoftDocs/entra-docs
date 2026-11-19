@@ -44,12 +44,12 @@ We recommend that you harden your Microsoft Entra provisioning agent server to d
 - We recommend hardening the Microsoft Entra provisioning agent server as a Control Plane (formerly Tier 0) asset by following the guidance provided in [Secure Privileged Access](/security/privileged-access-workstations/overview) and [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model).
 - Restrict administrative access to the Microsoft Entra provisioning agent server to only domain administrators or other tightly controlled security groups.
 - Create a [dedicated account for all personnel with privileged access](/windows-server/identity/securing-privileged-access/securing-privileged-access). Administrators shouldn't be browsing the web, checking their email, and doing day-to-day productivity tasks with highly privileged accounts.
-- Follow the guidance provided in [Securing privileged access](/security/privileged-access-workstations/overview). 
+- Follow the guidance provided in [Securing privileged access](/security/privileged-access-workstations/overview).
 - Deny use of NTLM authentication with the Microsoft Entra provisioning agent server. Here are some ways to do this: [Restricting NTLM on the Microsoft Entra provisioning agent Server](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers) and [Restricting NTLM on a domain](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-ntlm-authentication-in-this-domain)
-- Ensure every machine has a unique local administrator password. For more information, see [Local Administrator Password Solution (Windows LAPS)](/windows-server/identity/laps/laps-overview) can configure unique random passwords on each workstation and server store them in Active Directory protected by an ACL. Only eligible authorized users can read or request the reset of these local administrator account passwords. Additional guidance for operating an environment with Windows LAPS and privileged access workstations (PAWs) can be found in [Operational standards based on clean source principle](/security/privileged-access-workstations/privileged-access-access-model#operational-standards-based-on-clean-source-principle). 
-- Implement dedicated [privileged access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) for all personnel with privileged access to your organization's information systems. 
+- Ensure every machine has a unique local administrator password. For more information, see [Local Administrator Password Solution (Windows LAPS)](/windows-server/identity/laps/laps-overview) can configure unique random passwords on each workstation and server store them in Active Directory protected by an ACL. Only eligible authorized users can read or request the reset of these local administrator account passwords. Additional guidance for operating an environment with Windows LAPS and privileged access workstations (PAWs) can be found in [Operational standards based on clean source principle](/security/privileged-access-workstations/privileged-access-access-model#operational-standards-based-on-clean-source-principle).
+- Implement dedicated [privileged access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) for all personnel with privileged access to your organization's information systems.
 - Follow these [additional guidelines](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) to reduce the attack surface of your Active Directory environment.
-- Follow the [Monitor changes to federation configuration](../connect/how-to-connect-monitor-federation-changes.md) to set up alerts to monitor changes to the trust established between your IdP and Microsoft Entra ID. 
+- Follow the [Monitor changes to federation configuration](../connect/how-to-connect-monitor-federation-changes.md) to set up alerts to monitor changes to the trust established between your IdP and Microsoft Entra ID.
 - Enable multifactor authentication (MFA) for all users that have privileged access in Microsoft Entra ID or in AD. One security issue with using Microsoft Entra provisioning agent is that if an attacker can get control over the Microsoft Entra provisioning agent server they can manipulate users in Microsoft Entra ID. To prevent an attacker from using these capabilities to take over Microsoft Entra accounts, MFA offers protections. For example, even if an attacker manages to reset a user's password using the Microsoft Entra provisioning agent, they still can't bypass the second factor.
 
 
@@ -158,8 +158,8 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
   |`*.msappproxy.net`</br>`*.servicebus.windows.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
   |`*.microsoftonline.com`</br>`*.microsoft.com`</br>`*.msappproxy.com`</br>`*.windowsazure.com`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
    |`mscrl.microsoft.com:80` </br>`crl.microsoft.com:80` </br>`ocsp.msocsp.com:80` </br>`www.microsoft.com:80`| The agent uses these URLs to verify certificates.|
-   |`login.windows.net`</br> `login.live.com`|The agent uses these URLs during the registration process.
-   |`aadcdn.msauth.net`</br>`aadcdn.msftauth.net`</br>`www.msftconnecttest.com`|The agent uses these URLs during the registration process.
+   |`login.windows.net`</br> `login.live.com`|The agent uses these URLs during the registration process.|
+   |`aadcdn.msauth.net`</br>`aadcdn.msftauth.net`</br>`www.msftconnecttest.com`|The agent uses these URLs during the registration process.|
 
 
 
@@ -169,7 +169,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
  |-----|-----|
  |`*.msappproxy.us`</br>`*.servicebus.usgovcloudapi.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
  |`mscrl.microsoft.us:80` </br>`crl.microsoft.us:80` </br>`ocsp.msocsp.us:80` </br>`www.microsoft.us:80`| The agent uses these URLs to verify certificates.|
- |`login.windows.us` </br>`secure.aadcdn.microsoftonline-p.com` </br>`*.microsoftonline.us` </br>`*.microsoftonline-p.us` </br>`*.msauth.net` </br>`*.msauthimages.net` </br>`*.msecnd.net`</br>`*.msftauth.net` </br>`*.msftauthimages.net`</br>`*.phonefactor.net` </br>`enterpriseregistration.windows.net`</br>`management.azure.com` </br>`policykeyservice.dc.ad.msft.net`</br>`ctldl.windowsupdate.us:80` </br>`aadcdn.msftauthimages.us` </br>`*.microsoft.us` </br>`msauthimages.us` </br>`msftauthimages.us`| The agent uses these URLs during the registration process.
+ |`login.windows.us` </br>`secure.aadcdn.microsoftonline-p.com` </br>`*.microsoftonline.us` </br>`*.microsoftonline-p.us` </br>`*.msauth.net` </br>`*.msauthimages.net` </br>`*.msecnd.net`</br>`*.msftauth.net` </br>`*.msftauthimages.net`</br>`*.phonefactor.net` </br>`enterpriseregistration.windows.net`</br>`management.azure.com` </br>`policykeyservice.dc.ad.msft.net`</br>`ctldl.windowsupdate.us:80` </br>`aadcdn.msftauthimages.us` </br>`*.microsoft.us` </br>`msauthimages.us` </br>`msftauthimages.us`| The agent uses these URLs during the registration process.|
 
 
 
@@ -209,7 +209,7 @@ When using OU scoping filter
 - Nested OUs are supported (that is, you **can** sync an OU that has 130 nested OUs, but you **can't** sync 60 separate OUs in the same configuration).
 
 >[!NOTE]
->At this time, it isn't possible to check the scoping configuration size to determine if it is near to, reached, or exceeded the 4 MB character limit, which includes metadata. 
+>At this time, it isn't possible to check the scoping configuration size to determine if it is near to, reached, or exceeded the 4 MB character limit, which includes metadata.
 
 ### Password Hash Sync
 
