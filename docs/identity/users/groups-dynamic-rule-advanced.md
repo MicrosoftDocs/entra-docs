@@ -296,7 +296,7 @@ These limits also apply:
 - Standard priority is available only for groups that use MemberOf Next or Transitive Reports To. A rule that uses only user or device attributes can't use Standard priority.
 - MemberOf Next includes only the direct members of each source group. Members of nested groups aren't included. Source groups must have assigned membership. A dynamic membership group can't be a source group.
 - You can't combine MemberOf Next or Transitive Reports To with the `-match` or `-notMatch` operators.
-- In the rule builder, you can't add expressions after you select **MemberOf** or **TransitiveReportsTo**. Use the **Rule syntax** box.
+- In the rule builder, **Add expression** isn't available after you select **MemberOf** or **TransitiveReportsTo**. To add more expressions, select **Edit** under **Rule syntax** and edit the rule there.
 - Transitive Reports To works only with users. You can't use it to add devices to a group or combine it with device properties.
 - You can't use **Validate Rules** to test a rule that uses MemberOf Next or Transitive Reports To.
 - If processing is paused for a group when you change its rule, the rule is saved without being checked. Any error appears on the group's page in the Microsoft Entra admin center after you resume processing.
