@@ -4,7 +4,7 @@ description: Step-by-step instructions and examples for using managed identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.custom: devx-track-dotnet, devx-track-extended-java
-ms.date: 11/11/2025
+ms.date: 11/20/2026
 ---
 
 # How to use managed identities for Azure resources on an Azure VM to acquire an access token 
@@ -12,6 +12,8 @@ ms.date: 11/11/2025
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 This article provides various code and script examples for token acquisition. It also contains guidance about handling token expiration and HTTP errors.
+
+Treat access tokens as credentials. Don't write tokens or token responses to logs or console output.
 
 ## Prerequisites
 
@@ -124,7 +126,7 @@ For more information, see [Use a user-assigned managed identity](/dotnet/azure/s
 ```csharp
 using System;
 using System.Net.Http;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 // Construct HttpClient
 var httpClient = new HttpClient
@@ -152,12 +154,12 @@ catch (HttpRequestException)
     throw;
 }
 
-// Parse response using Newtonsoft.Json
+// Parse response using System.Text.Json
 var content = await response.Content.ReadAsStringAsync();
-var obj = JObject.Parse(content);
-var accessToken = obj["access_token"];
+using var document = JsonDocument.Parse(content);
+var accessToken = document.RootElement.GetProperty("access_token").GetString();
 
-Console.WriteLine(accessToken);
+Console.WriteLine("Access token acquired.");
 ```
 
 ## Get a token using Java
@@ -195,7 +197,7 @@ class GetMSIToken {
  
                 if("access_token".equals(fieldName)){
                     String accesstoken = parser.getValueAsString();
-                    System.out.println("Access Token: " + accesstoken.substring(0,5)+ "..." + accesstoken.substring(accesstoken.length()-5));
+                    System.out.println("Access token acquired.");
                     return;
                 }
             }
@@ -270,10 +272,8 @@ func main() {
       return
     }
 
-    // Print HTTP response and marshalled response body elements to console
+    // Print response status and nonsecret metadata
     fmt.Println("Response status:", resp.Status)
-    fmt.Println("access_token: ", r.AccessToken)
-    fmt.Println("refresh_token: ", r.RefreshToken)
     fmt.Println("expires_in: ", r.ExpiresIn)
     fmt.Println("expires_on: ", r.ExpiresOn)
     fmt.Println("not_before: ", r.NotBefore)
@@ -290,7 +290,7 @@ The following example demonstrates how to use the managed identities for Azure r
 2. Use the access token to call an Azure Resource Manager REST API and get information about the VM. Be sure to substitute your subscription ID, resource group name, and virtual machine name for `<SUBSCRIPTION-ID>`, `<RESOURCE-GROUP>`, and `<VM-NAME>`, respectively.
 
 ```azurepowershell
-Invoke-RestMethod -Method GET -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -Headers @{Metadata="true"}
+$response = Invoke-RestMethod -Method GET -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -Headers @{Metadata="true"}
 ```
 
 Example of how to parse the access token from the response:
@@ -301,7 +301,6 @@ $response = Invoke-RestMethod -Method GET `
                             -Uri "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=$resource" `
                             -Headers @{ Metadata="true" }
 $accessToken = $response.access_token
-Write-Host "Access token using a User-Assigned Managed Identity is $accessToken"
 
 # Use the access token to get resource information for the VM
 $secureToken = $accessToken | ConvertTo-SecureString -AsPlainText
@@ -317,7 +316,7 @@ Write-Host "JSON returned from call to get VM info: $($vmInfoRest.content)"
 ## Get a token using CURL
 
 ```bash
-curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true -s
+response=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true -s)
 ```
 
 Example of how to parse the access token from the response:
@@ -325,7 +324,6 @@ Example of how to parse the access token from the response:
 ```bash
 response=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true -s)
 access_token=$(echo $response | python -c 'import sys, json; print (json.load(sys.stdin)["access_token"])')
-echo Access token using a User-Assigned Managed Identity is $access_token
 ```
 
 ## Token caching
