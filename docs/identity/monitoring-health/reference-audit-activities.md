@@ -2,7 +2,7 @@
 title: Microsoft Entra audit log activity reference
 description: Get an overview of the audit activities that can be logged in your audit logs in Microsoft Entra ID.
 ms.topic: reference
-ms.date: 11/16/2026
+ms.date: 11/18/2026
 ms.reviewer: dhanyahk
 
 #customer-intent: As a Microsoft Entra administrator, I want to understand all available audit log activities and categories so I can effectively monitor and track changes within my tenant.
@@ -565,12 +565,15 @@ Use these logs to see when changes were made to your [Conditional Access policie
 |---|---|
 |Policy|Add AuthenticationContextClassReference|
 |Policy|Add Conditional Access policy|
+|Policy|Add Conditional Access policy plan|
 |Policy|Add named location|
 |Policy|Delete AuthenticationContextClassReference|
 |Policy|Delete Conditional Access policy|
+|Policy|Delete Conditional Access policy plan|
 |Policy|Delete named location|
 |Policy|Update AuthenticationContextClassReference|
 |Policy|Update Conditional Access policy|
+|Policy|Update Conditional Access policy plan|
 |Policy|Update continuous access evaluation|
 |Policy|Update named location|
 |Policy|Update security defaults|
