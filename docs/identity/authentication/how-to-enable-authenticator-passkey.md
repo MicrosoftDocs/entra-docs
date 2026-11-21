@@ -199,7 +199,7 @@ Here are some workarounds:
 - You can exclude the **Microsoft Authenticator Credential Registration** resource from the Conditional Access policy. To use this resource for passkey registration, you must also opt in users by using the Microsoft Graph API.
 
   > [!NOTE]
-  > The Microsoft Authenticator Credential Registration resource will be available at the end of November 2026. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
+  > The Microsoft Authenticator Credential Registration resource will be available in Jan 2027. Before you can exclude the resource from a Conditional Access policy, you must provision the Microsoft Authenticator Credential Registration enterprise application in your tenant.
 
   1. As a **Cloud Application Administrator** or **Application Administrator**, manually provision the **Microsoft Authenticator Credential Registration** app by using one of the [supported methods for creating an enterprise application from a multitenant app](~/identity/enterprise-apps/create-service-principal-cross-tenant.md?pivots=ms-graph). Use the following details:
 
