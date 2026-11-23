@@ -2,7 +2,7 @@
 title: How to manage local administrators on Microsoft Entra joined devices
 description: Learn how to assign Azure roles to the local administrators group of a Windows device.
 ms.topic: how-to
-ms.date: 06/17/2026
+ms.date: 11/23/2026
 ms.reviewer: 
 ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
@@ -71,7 +71,7 @@ Organizations can use Intune to manage these policies using [Custom OMA-URI Sett
 
 - Managing local administrators using Microsoft Entra groups isn't applicable to Microsoft Entra hybrid joined or Microsoft Entra registered devices.
 
-- Microsoft Entra groups deployed to a device with this policy don't apply to remote desktop connections. To control remote desktop permissions for Microsoft Entra joined devices, you need to add the individual user's SID to the appropriate group.
+- Microsoft Entra groups deployed to a device with this policy don't apply to remote desktop connections or Server Message Block (SMB) access to administrative shares, such as `\\<device>\C$` or `\\<device>\Admin$`. To grant these permissions on Microsoft Entra joined devices, add the individual user's SID to the appropriate local group. For administrative shares, add the user to the local Administrators group.
 
 > [!IMPORTANT]
 > Windows sign-in with Microsoft Entra ID supports evaluation of up to 20 groups for administrator rights. We recommend having no more than 20 Microsoft Entra groups on each device, and having a user as a member in no more than 20 groups, to ensure that administrator rights are correctly assigned. This limitation also applies to nested groups.
