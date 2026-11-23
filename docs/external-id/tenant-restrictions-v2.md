@@ -407,7 +407,7 @@ To ensure that sign-ins are restricted on all devices and apps in your corporate
 > [!IMPORTANT]
 > Tenant restrictions v1 and v2 on the proxy require decryption of requests to sign-in URLs such as login.microsoftonline.com. Microsoft supports the decryption of traffic for those sign-in domains for the purpose of header insertion for tenant restrictions. This decryption is a valid exception to the policies at [Use third-party network devices or solutions with Microsoft 365](/microsoft-365/troubleshoot/miscellaneous/office-365-third-party-network-devices).
 >
-> Exclude `device.login.microsoftonline.com`, `certauth.login.microsoftonline.com`, and `*.certauth.login.microsoftonline.com` from TLS inspection and header injection. These exclusions preserve [device authentication](~/identity/devices/how-to-hybrid-join.md#network-connectivity-requirements) and [certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#how-does-microsoft-entra-certificate-based-authentication-work).
+> TLS inspection and header injection can interfere with authentication flows that use client certificates. Test your proxy configuration to verify that tenant restrictions v2 is enforced and that authentication flows like device authentication and certificate-based authentication still work.
 
 #### Tenant restrictions v2 with no support for break and inspect
 
