@@ -16,6 +16,14 @@ From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micros
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
+## 1.1.2509.0
+
+**Release date:** November 23, 2026
+
+### Security hardening
+
+- Implemented additional security hardening improvements for ECMA2Host and PHS.
+
 ## 1.1.2507.0
 
 **Release date:** October 8, 2026

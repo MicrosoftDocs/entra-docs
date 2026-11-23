@@ -1,5 +1,5 @@
 ---
-title: Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center
+title: Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center (CYOT)
 description: Use the Microsoft Entra admin center to set up your telephony integration, validate evaluation mode, and gradually roll out SMS and voice delivery.
 ms.topic: how-to
 ms.date: 10/30/2026
@@ -8,8 +8,9 @@ ai-usage: ai-assisted
 # Customer intent: As an identity administrator, I want to use the Microsoft Entra admin center to configure and test SMS and voice with my telephony provider.
 ---
 
-# Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center
+# Set up SMS and voice with your own telephony provider in the Microsoft Entra admin center (CYOT)
 
+<a id="set-up-sms-and-voice-with-your-own-telephony-provider-in-the-microsoft-entra-admin-center"></a>
 <a id="set-up-sms-and-voice-with-your-own-telecom-provider-in-the-microsoft-entra-admin-center"></a>
 <a id="set-up-sms-and-voice"></a>
 <a id="set-up-sms-and-voice-with-your-own-telecom-providers"></a>
@@ -64,7 +65,7 @@ Use accounts with the following permissions:
 
     :::image type="content" source="media/choose-your-own-telephony-set-up/setup-overview.png" alt-text="Redacted screenshot of the Set up an SMS or voice provider page and its three setup tasks." lightbox="media/choose-your-own-telephony-set-up/setup-overview.png":::
 
-1. Select **Subscribe to an SMS or voice provider** and choose a supported telephony provider. Use **Get solution** to open its offer in [Microsoft Security Store](https://securitystore.microsoft.com/), or select an existing subscription with **Select details**. See [Available telephony providers](concept-phone-providers.md#available-telephony-providers).
+1. Select **Subscribe to an SMS or voice provider** and choose a supported telephony provider. Use **Get solution** to open its offer in [Microsoft Security Store](https://securitystore.microsoft.com/), or select an existing subscription with **Select details**. See [Available telephony providers](concept-telephony-providers.md#available-telephony-providers).
 
     :::image type="content" source="media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png" alt-text="Redacted screenshot of the telephony provider selection pane. Demo pricing and offer details are obscured." lightbox="media/choose-your-own-telephony-set-up/subscribe-telecom-provider.png":::
 
@@ -93,7 +94,7 @@ After you approve, the script creates the Microsoft Entra application, deploys a
 ### Costs
 
 > [!IMPORTANT]
-> The integration runs on Azure resources in your subscription, billed based on your configuration and usage. To plan your budget, see [Estimate telephony-provider and Azure hosting costs](phone-providers-faq.yml#how-much-does-choose-your-own-telephony-provider-cost) before you deploy.
+> The integration runs on Azure resources in your subscription, billed based on your configuration and usage. To plan your budget, see [Estimate telephony-provider and Azure hosting costs](telephony-providers-faq.yml#how-much-does-choose-your-own-telephony-provider-cost) before you deploy.
 
 ### Run the setup script
 

@@ -108,7 +108,7 @@ Users migrated before their retirement date can continue using SMS or voice in s
 
 Configuring a provider without completing user migration isn't sufficient. Test delivery and sign-in for the intended users before rollout.
 
-For setup guidance, see [Choose a telephony provider for SMS and voice authentication](concept-phone-providers.md).
+For setup guidance, see [Choose a telephony provider for SMS and voice authentication](concept-telephony-providers.md).
 
 For users migrated to your telephony provider (CYOT), the usual SMS verification flow is unchanged. The following screens show the user entering their username and password, selecting **Text** on **Verify your identity**, and entering the text message code to complete sign-in. **Call** remains available as another verification option. This flow doesn't require the user to register a passkey because of retirement.
 
@@ -144,7 +144,7 @@ Before retirement, review every browser and device combination affected users ne
 
 The method must be supported in the affected session, enabled for the user, and allowed by applicable Conditional Access policies and authentication strengths. Installing Microsoft Authenticator alone isn't enough; the user needs to complete the relevant registration and setup.
 
-If SMS or voice is still required, configure a supported [customer-managed telephony provider](concept-phone-providers.md) and complete migration for the affected users. Before retirement, test the same browser and device combinations the users need. Customer-managed telephony provides a separate SMS or voice path; it doesn't add passkey support.
+If SMS or voice is still required, configure a supported [customer-managed telephony provider](concept-telephony-providers.md) and complete migration for the affected users. Before retirement, test the same browser and device combinations the users need. Customer-managed telephony provides a separate SMS or voice path; it doesn't add passkey support.
 
 If a user reaches this screen, direct them to [My Sign-Ins](https://aka.ms/mysignins) and have them use their existing SMS or voice registration to verify their identity and register another method. If they can't complete registration or still can't sign in, contact your support team. Don't tell them to skip registration or assume another SMS code allows them to continue to the application. Confirm the replacement method works with their actual session and access policies, not just their primary browser.
 
@@ -375,7 +375,7 @@ Complete alternative-method registration outside the NPS connection flow. Don't 
 
 ### Customer-managed telephony for NPS
 
-If SMS or voice is still required, configure a supported [customer-managed telephony provider](concept-phone-providers.md) for the affected users when available for your tenant. Complete migration and test the NPS-protected connections before retirement reaches your tenant.
+If SMS or voice is still required, configure a supported [customer-managed telephony provider](concept-telephony-providers.md) for the affected users when available for your tenant. Complete migration and test the NPS-protected connections before retirement reaches your tenant.
 
 Customer-managed telephony doesn't change the methods supported by the client. Validate the provider, deployment, and connection together rather than assuming every telephony option works with every NPS flow.
 
@@ -437,7 +437,7 @@ Review all passkey profiles assigned to the affected users, including the **Tele
 
 More restrictions can make registration more complicated. Make sure users have a device or authenticator that supports an allowed passkey type and can complete setup in their browser. The retirement prompt doesn't bypass those requirements. If no allowed passkey can be registered on the current device, the user sees the retirement guidance shown in [Scenario 6](#scenario-6-the-passkey-profile-doesnt-allow-registration-on-the-current-device).
 
-If affected users can't complete registration and need immediate sign-in relief, configure a supported [telephony provider (CYOT)](concept-phone-providers.md) and complete their migration. This restores SMS or voice sign-in for those migrated users in supported scenarios.
+If affected users can't complete registration and need immediate sign-in relief, configure a supported [telephony provider (CYOT)](concept-telephony-providers.md) and complete their migration. This restores SMS or voice sign-in for those migrated users in supported scenarios.
 
 ### What if another registration campaign or Conditional Access prompt applies?
 
@@ -451,6 +451,6 @@ This precedence is about the prompt shown to the user, not a policy bypass. Pass
 - [SMS and voice retirement FAQ](concept-sms-voice-retirement-faq.yml).
 - [Passkey compatibility matrix](concept-fido2-compatibility.md).
 - [Enable passkeys for your organization](how-to-authentication-passkeys-fido2.md).
-- [Choose a telephony provider](concept-phone-providers.md).
+- [Choose a telephony provider](concept-telephony-providers.md).
 - [How self-service password reset works](concept-sspr-howitworks.md).
 - [NPS extension for Microsoft Entra multifactor authentication](howto-mfa-nps-extension.md).

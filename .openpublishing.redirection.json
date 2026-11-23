@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity/authentication/concept-phone-providers.md",
+      "redirect_url": "/entra/identity/authentication/concept-telephony-providers",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity/authentication/phone-providers-faq.yml",
+      "redirect_url": "/entra/identity/authentication/telephony-providers-faq",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/identity/authentication/choose-your-own-telephony-fraud-costs.md",
       "redirect_url": "/entra/identity/authentication/choose-your-own-telephony-fraud-protection",
       "redirect_document_id": true
