@@ -65,20 +65,22 @@
       href: concept-authentication-security-questions.md
     - name: Remove passwords from Microsoft Entra ID
       href: how-to-plan-password-scramble-phishing-resistant-passwordless-authentication.md
-  - name: Choose your own telephony provider (CYOT)
+  - name: Telephony providers
     items:
-    - name: Telephony providers overview
-      href: concept-phone-providers.md
-    - name: Set up SMS and voice
+    - name: Overview
+      href: concept-telephony-providers.md
+    - name: Set up in the admin center (CYOT)
       href: choose-your-own-telephony-set-up.md
-    - name: Troubleshoot SMS and voice
-      href: choose-your-own-telephony-troubleshoot.md
+    - name: Set up using APIs (BYOT)
+      href: bring-your-own-telephony-set-up.md
     - name: Protect against telephony fraud
       href: choose-your-own-telephony-fraud-protection.md
     - name: Plan for resiliency
       href: choose-your-own-telephony-reliability.md
-    - name: Telephony providers FAQ
-      href: phone-providers-faq.yml
+    - name: Monitor and troubleshoot
+      href: choose-your-own-telephony-troubleshoot.md
+    - name: Frequently asked questions
+      href: telephony-providers-faq.yml
   - name: Conditional Access authentication strength
     items:
     - name: Overview
