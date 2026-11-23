@@ -2,7 +2,7 @@
 title: Configure Tenant Restrictions - Microsoft Entra ID
 description: Use tenant restrictions to control the types of external accounts that users can use on your networks and the devices that you manage. 
 ms.topic: how-to
-ms.date: 11/04/2026
+ms.date: 11/23/2026
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 ai-usage: ai-assisted
@@ -386,15 +386,28 @@ To ensure that sign-ins are restricted on all devices and apps in your corporate
 
 1. On your corporate proxy, send the tenant restrictions v2 header to the following Microsoft sign-in domains:
 
+   - accounts.accesscontrol.windows.net
+   - autologon.microsoftazuread-sso.com
+   - clientconfig.microsoftonline-p.net
+   - login-us.microsoftonline.com
    - login.live.com
    - login.microsoft.com
+   - login.microsoftonline-p.com
    - login.microsoftonline.com
    - login.windows.net
+   - logincert.microsoftonline.com
+   - loginex.microsoftonline.com
+   - nexus.microsoftonline-p.com
+   - sts.windows.net
 
-   This header enforces your tenant restrictions v2 policy on all sign-ins on your network. This header doesn't block anonymous access to Teams meetings, SharePoint files, or other resources that don't require authentication.
+   If your environment uses other Microsoft sign-in host names, configure your proxy to send the tenant restrictions v2 header to those host names as well.
+
+   For proxy-based enforcement, tenant restrictions v2 policies aren't enforced on sign-in requests that don't include the header. This header doesn't block anonymous access to Teams meetings, SharePoint files, or other resources that don't require authentication.
 
 > [!IMPORTANT]
 > Tenant restrictions v1 and v2 on the proxy require decryption of requests to sign-in URLs such as login.microsoftonline.com. Microsoft supports the decryption of traffic for those sign-in domains for the purpose of header insertion for tenant restrictions. This decryption is a valid exception to the policies at [Use third-party network devices or solutions with Microsoft 365](/microsoft-365/troubleshoot/miscellaneous/office-365-third-party-network-devices).
+>
+> Exclude `device.login.microsoftonline.com`, `certauth.login.microsoftonline.com`, and `*.certauth.login.microsoftonline.com` from TLS inspection and header injection. These exclusions preserve [device authentication](~/identity/devices/how-to-hybrid-join.md#network-connectivity-requirements) and [certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#how-does-microsoft-entra-certificate-based-authentication-work).
 
 #### Tenant restrictions v2 with no support for break and inspect
 
