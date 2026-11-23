@@ -18,7 +18,7 @@ This article explains the prerequisites and steps to configure both User, and Co
 
 | Requirement | Description |
 |-------------|-------------|
-| **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of users.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
+| **Roles** | [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) is required to call the Microsoft Graph APIs to read and update SOA of users.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
 | **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to consent to this permission](how-to-user-source-of-authority-configure.md#consent-permission-to-apps) using the Microsoft Entra Admin Center. |
 | **License needed** | Microsoft Entra Free license. |
 | **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). To use [Contact SOA](#configure-contact-soa), version [2.5.79.0](../../identity/hybrid/connect/reference-connect-version-history.md#25790).  |
@@ -89,7 +89,7 @@ As an alternative to Graph Explorer, use Microsoft Graph PowerShell. First, [ins
 
 Permissions are granted to the application that calls Microsoft Graph. Consent granted to Graph Explorer doesn't grant permissions to the Microsoft Graph PowerShell application. Have an Application Administrator or Cloud Application Administrator grant the `User-OnPremisesSyncBehavior.ReadWrite.All` delegated permission to the PowerShell application by using the [consent procedure](#consent-permission-to-apps).
 
-Sign in as a Hybrid Administrator to perform SOA operations. Replace `<tenant-id>` with your tenant ID:
+Sign in as a Hybrid Identity Administrator to perform SOA operations. Replace `<tenant-id>` with your tenant ID:
 
 ```powershell
 Import-Module Microsoft.Graph.Users
@@ -115,7 +115,7 @@ Follow these steps to transfer the SOA for a test user:
    ```
 
 1. Verify that the user appears in the Microsoft Entra admin center as a synced user.
-1. Use Microsoft Graph API to transfer the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as a [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator). Alternatively, use Microsoft Graph PowerShell to perform the following operations with the cmdlets linked in [Related content](#related-content).
+1. Use Microsoft Graph API to transfer the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as a [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator). Alternatively, use Microsoft Graph PowerShell to perform the following operations with the cmdlets linked in [Related content](#related-content).
 
 1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your user. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 /graph/api/onpremisessyncbehavior-update
