@@ -1,6 +1,6 @@
 ---
-title: Unified risk signals in Microsoft Entra ID Protection
-description: Learn how unified risk signals correlate identity risk across Microsoft Entra ID Protection and Microsoft Defender to calculate compounded user risk.
+title: Unified user risk signals in Microsoft Entra ID Protection
+description: Learn how unified user risk signals correlate identity risk across Microsoft Entra ID Protection and Microsoft Defender to calculate compounded user risk.
 ms.topic: concept-article
 ms.date: 06/30/2026
 ms.reviewer: sandeo
@@ -8,19 +8,19 @@ ms.custom: msecd-doc-authoring-scenarios
 ai-usage: ai-assisted
 ---
 
-# Unified risk signals in Microsoft Entra ID Protection
+# Unified user risk signals in Microsoft Entra ID Protection
 
-Microsoft Entra ID Protection enhances user risk assessment by aggregating correlated risk signals from Microsoft Entra ID Protection, Microsoft Defender, and other Microsoft security products. Instead of evaluating alerts in isolation, unified risk signals correlate identity-related signals across products and evaluate them together within the same time window. This compounded approach detects coordinated or stealthy attacks that individual alerts might miss.
+Microsoft Entra ID Protection enhances user risk assessment by aggregating correlated risk signals from Microsoft Entra ID Protection, Microsoft Defender, and other Microsoft security products. Instead of evaluating alerts in isolation, unified user risk signals correlate identity-related signals across products and evaluate them together within the same time window. This compounded approach detects coordinated or stealthy attacks that individual alerts might miss.
 
 As a result, users who previously appeared as medium risk based on isolated signals might be elevated to high risk when multiple related detections are combined. This improves detection of advanced or low-signal attacks and increases the number of high-risk users identified, which can automatically trigger your risk-based Conditional Access policies.
 
 ## Prerequisites
 
-Unified risk signals require the following:
+Unified user risk signals require the following:
 
 - **Microsoft Entra ID P2** — Enables user risk and sign-in risk detection, ID Protection policies, risk-based Conditional Access, and advanced identity analytics.
 - **Microsoft 365 E5** (recommended) — Includes Microsoft Entra ID P2 plus Microsoft Defender for Endpoint, Microsoft Defender for Identity, Microsoft Defender for Office 365, and Microsoft Purview for full cross-product signal correlation.
-- **Microsoft Defender for Identity** — Must be configured. Enabling unified risk signals without Microsoft Defender for Identity doesn't result in compounding of user risk.
+- **Microsoft Defender for Identity** — Must be configured. Enabling unified user risk signals without Microsoft Defender for Identity doesn't result in compounding of user risk.
 
 ### Required roles
 
@@ -57,7 +57,7 @@ The correlation uses four key factors:
 
 ### What changed compared to previous behavior
 
-Previously, the system could reduce risk over time but couldn't increase a user's risk level solely based on the accumulation of nonhigh alerts. With unified risk signals, Microsoft Entra ID Protection can now elevate a user's risk to **High** based on multiple medium or low-confidence signals occurring together.
+Previously, the system could reduce risk over time but couldn't increase a user's risk level solely based on the accumulation of nonhigh alerts. With unified user risk signals, Microsoft Entra ID Protection can now elevate a user's risk to **High** based on multiple medium or low-confidence signals occurring together.
 
 ## Account sets and linked accounts
 
@@ -69,7 +69,7 @@ Microsoft Defender for Identity can contribute risk signals from **account sets*
 
 If one of these linked accounts is under active attack, Microsoft Defender for Identity continues to detect suspicious activity and raise new Identity Risk signals for the account set. These signals are sent back to Microsoft Entra ID Protection and reaggregated into the user's overall risk score.
 
-For linked Microsoft Entra accounts, unified risk uses the **maximum risk level** across all linked accounts.
+For linked Microsoft Entra accounts, unified user risk uses the **maximum risk level** across all linked accounts.
 
 > [!NOTE]
 > Even if the Microsoft Entra ID account itself appears unchanged, the user's risk can reelevate repeatedly as long as the underlying attack against a linked account persists. For more information about how accounts are linked in Microsoft Defender, see [Link or unlink an account to an identity](/defender-for-identity/manage-related-identities-accounts).
@@ -106,9 +106,9 @@ For more information, see [Investigate identities in Microsoft Defender](/defend
 > [!IMPORTANT]
 > There might be sync issues for some alerts due to the risk decay logic. This can result in alerts showing in Microsoft Entra or Microsoft Defender but not the other. This resolves itself once the alert is decayed on both sides within 24 hours.
 
-Risk detection events stream to Microsoft Defender and Microsoft Sentinel with no changes to existing data flows. As unified risk signals roll out, you might notice an increase in **Blocked by Conditional Access** events. This indicates the system is correctly identifying and stopping coordinated attack activity that previously appeared benign when alerts were evaluated independently.
+Risk detection events stream to Microsoft Defender and Microsoft Sentinel with no changes to existing data flows. As unified user risk signals roll out, you might notice an increase in **Blocked by Conditional Access** events. This indicates the system is correctly identifying and stopping coordinated attack activity that previously appeared benign when alerts were evaluated independently.
 
-## Troubleshoot unified risk signals
+## Troubleshoot unified user risk signals
 
 ### Dismissed risk keeps returning
 
@@ -142,7 +142,7 @@ The following table shows examples of how risk compounding improves detection ac
 
 ## Support boundaries
 
-Unified risk signals span Microsoft Entra ID Protection and Microsoft Defender. Cases are triaged based on where the customer starts:
+Unified user risk signals span Microsoft Entra ID Protection and Microsoft Defender. Cases are triaged based on where the customer starts:
 
 - **Starting from Microsoft Entra** (ID Protection, Conditional Access): Owned by the Identity Protection Service team.
 - **Starting from Microsoft Defender**: Owned by the Defender support team, even if the risk calculation includes Microsoft Entra ID Protection signals.
