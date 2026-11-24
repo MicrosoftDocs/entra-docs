@@ -24,10 +24,10 @@ App role assignments support the following assignees:
 
 You can create permanent or time-bound assignments, subject to the app role's settings.
 
-PIM for app roles (preview) requires E7 licenses.
+
 
 > [!NOTE]
-> Agents and agent identities can receive eligible app role assignments in preview. Each agent or agent identity requires an E7 license. Existing assignment-management permissions remain unchanged.
+> PIM for app roles (preview) requires a **Microsoft 365 E7** license plan to preview. Agents and agent identities can receive eligible app role assignments in preview. Capabilities are subject to change and licensing requirements have not yet been announced. Existing assignment-management permissions remain unchanged.
 
 To create, update, or remove app role assignments in Microsoft Entra PIM, you must be an owner of the target service principal or have one of the following roles:
 

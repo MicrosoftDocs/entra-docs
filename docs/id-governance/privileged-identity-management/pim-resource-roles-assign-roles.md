@@ -29,7 +29,7 @@ Privileged Identity Management supports both built-in and custom Azure roles. Fo
 <a name="eligible-assignments-for-agents-preview"></a>
 
 > [!NOTE]
-> Agents and agent identities can receive and activate eligible Azure resource role assignments in preview. Each agent or agent identity requires an [E7 license](~/id-governance/licensing-fundamentals.md#privileged-identity-management).
+> Agents and agent identities can receive and activate eligible Azure resource role assignments in preview. This requires a **Microsoft 365 E7** license plan to preview. Capabilities are subject to change and licensing requirements have not yet been announced.
 
 ## Role assignment conditions
 
