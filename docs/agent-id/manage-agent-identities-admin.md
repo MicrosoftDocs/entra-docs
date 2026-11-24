@@ -3,7 +3,7 @@ title: Manage agent identities in your organization
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to manage agent identities across your organization. View, disable, govern, and monitor agents using the Microsoft Entra admin center and Conditional Access.
 ms.topic: how-to
-ms.date: 11/10/2026
+ms.date: 11/24/2026
 ms.custom: msecd-doc-authoring-108
 ai-usage: ai-assisted
 
@@ -155,7 +155,7 @@ For detailed information on risk types, detection mechanisms, and response actio
 
 Each agent identity should have an accountable human sponsor responsible for lifecycle and access decisions. Key governance behaviors include:
 
-- **Sponsor transfer**: When a sponsor moves or leaves the organization, a mover or leaver workflow with the **Transfer agent identity sponsorships to manager** task reassigns their sponsorships to their manager. Without such a workflow, sponsorship isn't transferred, and deleting the sponsor's account removes them as a sponsor. Restoring the account makes them a sponsor again.
+- **Sponsor transfer**: When a sponsor moves or leaves the organization, a mover or leaver workflow with the **Transfer agent identity sponsorships to manager** task reassigns their sponsorships to their manager. Without such a workflow, sponsorship isn't transferred, and deleting the sponsor's account removes them as a sponsor. Restoring the account makes them a sponsor again. Neither change appears in the agent identity's audit logs as a **Remove user sponsor** or **Add user sponsor** activity. The sponsor's audit logs record **Delete user** and **Restore user**.
 - **Expiration notifications**: Sponsors receive notifications when access package assignments approach expiration. Sponsors can request an extension (which triggers a new approval cycle) or let assignments expire.
 - **Access request pathways**: Access packages can be requested through three pathways: the agent's own programmatic request, a sponsor on behalf of the agent, or an admin direct assignment.
 
