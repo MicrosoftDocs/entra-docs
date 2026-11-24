@@ -20,7 +20,7 @@ Use Microsoft Entra Privileged Identity Management (PIM) to allow eligible role 
 This article is for members who need to activate their Azure resource role in Privileged Identity Management.
 
 > [!NOTE]
-> Agents and agent identities can receive and activate eligible Azure resource role assignments in preview. Each agent or agent identity requires an E7 license. See [agent preview requirements](pim-resource-roles-assign-roles.md#eligible-assignments-for-agents-preview). For activation, see [Agent identity API activation (preview)](pim-resource-roles-activate-your-roles.md?pivots=api#activate-an-agent-identity-with-azure-resource-manager-api-preview).
+>  Agents and agent identities can receive and activate eligible Azure resource role assignments in preview. This requires a **Microsoft 365 E7** license plan to preview. Capabilities are subject to change and licensing requirements have not yet been announced.  See [agent preview requirements](pim-resource-roles-assign-roles.md#eligible-assignments-for-agents-preview). For activation, see [Agent identity API activation (preview)](pim-resource-roles-activate-your-roles.md?pivots=api#activate-an-agent-identity-with-azure-resource-manager-api-preview).
 
 Choose the method you will use to activate your Azure role assignment.
 
