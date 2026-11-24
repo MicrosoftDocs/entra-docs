@@ -343,6 +343,8 @@ items:
       href: methods-for-removing-user-access.md
     - name: Restrict password addition to apps
       href: block-password-addition.md
+    - name: Restrict multitenant apps
+      href: restrict-multitenant-apps.md
   - name: Resources
     items:
         - name: Migration resources

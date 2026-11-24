@@ -16,7 +16,7 @@ ai-usage: ai-generated
 The current preview configuration below allows connections from any IPv4 address (`0.0.0.0/0`) and requires programmatic access token (PAT) authentication.
 
 1. Sign in to your Snowflake account as a user with the `ACCOUNTADMIN` role.
-1. Open a SQL worksheet in your Snowflake workspace and paste the following script into it. Don't run the script until you update the warehouse name. The script creates a dedicated service user, assigns the `ACCOUNTADMIN` role, configures a network policy, and generates a PAT:
+1. Open a SQL worksheet in your Snowflake workspace and paste the following script into it. Don't run the script until you update the warehouse name. The warehouse name is case sensitive. The script creates a dedicated service user, assigns the `ACCOUNTADMIN` role, configures a network policy, and generates a PAT:
 
     ```sql
     USE ROLE ACCOUNTADMIN;

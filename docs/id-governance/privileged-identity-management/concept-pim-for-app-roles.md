@@ -17,10 +17,9 @@ App roles let an application owner define roles that an application uses to make
 
 With PIM for app roles, you can use policies similar to those in PIM for Microsoft Entra roles and PIM for Azure resources. You can require approval for app role activation, enforce multifactor authentication (MFA), require justification, and limit maximum activation time.
 
-PIM for app roles (preview) requires E7 licenses.
 
 > [!NOTE]
-> Agents and agent identities can receive eligible app role assignments in preview. Each agent or agent identity requires an E7 license. Existing assignment-management permissions remain unchanged.
+> PIM for app roles (preview) requires a **Microsoft 365 E7** license plan to preview. Agents and agent identities can receive eligible app role assignments in preview. Capabilities are subject to change and licensing requirements have not yet been announced. Existing assignment-management permissions remain unchanged.
 
 ## What is PIM for app roles?
 
