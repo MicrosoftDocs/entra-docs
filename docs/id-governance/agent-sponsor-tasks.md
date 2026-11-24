@@ -3,7 +3,7 @@ title: Agent identity sponsor tasks in Lifecycle Workflows
 description: This article describes workflow tasks that involve sponsors of agent identities.
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 10/25/2025
+ms.date: 11/24/2026
 
 #Customer Intent: As a lifecycle workflows administrator, I want to create workflows that target agent identity sponsors so that agent identity sponsor management can be streamlined.
 ---
@@ -43,6 +43,8 @@ To create a workflow that notifies the manager or cosponsors of an existing agen
 
 1. On the **Tasks** page, select which sponsor related tasks you want to include and select **Next**.
     :::image type="content" source="media/manage-agent-sponsors/sponsor-workflow-tasks.png" alt-text="Screenshot of the sponsor workflow tasks.":::
+    > [!NOTE]
+    > **Send email to co-sponsors about sponsor changes** fails when the agent identity has no other sponsor, and **Send email to manager about sponsorship changes** fails when the manager has no email address. In the leaver template, both email tasks run before **Transfer agent identity sponsorships to manager** and **Continue workflow execution on error** isn't selected, so a failed email task cancels the transfer. To make sure the transfer runs, select **Continue workflow execution on error** for both email tasks. A run where an email task fails then ends with the status **Completed with errors**.
 1. Review the created workflow, and then select **Create**. 
 
 ## Related content
