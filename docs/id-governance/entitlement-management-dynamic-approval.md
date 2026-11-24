@@ -3,7 +3,9 @@ title: Externally determine the approval requirements for an access package usin
 description: A how-to guide on dynamically determining the approval requirements for an access package externally using a custom extension.
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/24/2026
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 
 #Customer Intent: As an IT admin, I want to create custom extensions so that I can determine approvers of an access package externally.
 ---
@@ -125,7 +127,9 @@ With the logic app configured for communication with Microsoft Entra, you can no
 1. On the HTTP pane under **Parameters**, scroll down to **Body** and enter your logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard).
     :::image type="content" source="media/entitlement-management-dynamic-approval/logic-app-business-logic.png" alt-text="Screenshot of adding business logic to logic app.":::
     > [!NOTE]
-    > For an example of the body action see: [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
+    > The callback can return the person for whom access is requested, also known as the assignee or target, as an approver, allowing them to approve their own request. Entitlement management prevents self-approval with its built-in approval options. However, this extensibility pattern gives you full flexibility to determine approvers and doesn't enforce this protection. You are responsible for ensuring that your business logic excludes the person receiving access from the approvers returned in the callback if you want to prevent self-approval.
+    >
+    > For an example of the HTTP request body, see [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
 1. When finished adding your business logic, select **save**.
 
 
