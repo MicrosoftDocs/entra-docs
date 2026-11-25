@@ -141,6 +141,8 @@
       href: kerberos-server-key-rotation.md
     - name: Configure Microsoft Entra Kerberos trust
       href: configure-microsoft-entra-kerberos-trust.md
+    - name: Enable Kerberos channel binding
+      href: kerberos-channel-binding.md
     - name: Troubleshoot Microsoft Entra Kerberos
       href: troubleshoot-microsoft-entra-kerberos.md
     - name: FAQ
