@@ -115,10 +115,11 @@ You can use Microsoft's web browser sign-in experience (login.microsoft.com) to 
 
 :::image type="content" source="media/concept-authentication-qr-code/sign-in-web.png" alt-text="Screenshot that shows web sign-in experience.":::
 
+Note that at this time custom tenant endpoints are unsupported.
 
 ### Mobile app sign-in experience 
 
-You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add QR code as an option on the sign-in page. Then users can scan the QR code with two fewer clicks. This optimized sign-in experience is available in BlueFletch and Jamf app launchers.
+You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) Android and iOS to add QR code as an option on the sign-in page. Then users can scan the QR code with two fewer clicks. This optimized sign-in experience is available in BlueFletch and Jamf app launchers.
 
 For more information about how to optimize the sign-in experience or suppress camera consent prompt, see: 
 
