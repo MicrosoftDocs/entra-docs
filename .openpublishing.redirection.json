@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity/hybrid/connect/how-to-connect-sso-channel-binding.md",
+      "redirect_url": "/entra/identity/authentication/kerberos-channel-binding",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/identity/authentication/concept-phone-providers.md",
       "redirect_url": "/entra/identity/authentication/concept-telephony-providers",
       "redirect_document_id": true

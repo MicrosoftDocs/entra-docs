@@ -426,6 +426,7 @@ For configuration details, see [Configure optional group claims for Kerberos tic
 
 ## Related content
 
+- [Enable channel binding for Kerberos sign-in](kerberos-channel-binding.md).
 - [Microsoft Entra cloud-first identity guidance](~/identity/hybrid/guidance-it-architects-source-of-authority.md)
 - [Transfer user source of authority to Microsoft Entra ID](~/identity/hybrid/user-source-of-authority-overview.md)
 - [Provision Microsoft Entra ID objects to Active Directory](~/identity/hybrid/cloud-sync/overview-provision-entra-id-to-active-directory.md)

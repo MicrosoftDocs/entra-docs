@@ -65,6 +65,7 @@ Browse to **Entra ID** > **Monitoring & health** > **Sign-ins** in the [[Microso
 
 Use the following checklist to troubleshoot Seamless SSO problems:
 
+- If failures start after you enable Kerberos channel binding, check for TLS inspection and client CBT compatibility. See [Enable channel binding for Kerberos sign-in](~/identity/authentication/kerberos-channel-binding.md#troubleshoot-failures-after-enforcement).
 - Ensure that the Seamless SSO feature is enabled in Microsoft Entra Connect. If you can't enable the feature (for example, due to a blocked port), ensure that you have all the [prerequisites](how-to-connect-sso-quick-start.md#step-1-check-the-prerequisites) in place.
 - If you have enabled both [Microsoft Entra join](~/identity/devices/overview.md) and Seamless SSO on your tenant, ensure that the issue is not with Microsoft Entra join. SSO from Microsoft Entra join takes precedence over Seamless SSO if the device is both registered with Microsoft Entra ID and domain-joined. With SSO from Microsoft Entra join the user sees a sign-in tile that says "Connected to Windows".
 - Ensure that the Microsoft Entra URL (`https://autologon.microsoftazuread-sso.com`) is part of the user's Intranet zone settings.
