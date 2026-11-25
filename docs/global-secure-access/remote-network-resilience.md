@@ -49,7 +49,7 @@ If you prioritize productivity, set up a default route for traffic. This way, if
 > **Recommendation**: Set up a default route and configure an IP SLA Layer 7 health probe to monitor the endpoint.
 
 To set up a default route:
-1. Configure an IP SLA Layer 7 health probe to monitor the endpoint `http://m365.remote-network.edgediagnostic.globalsecureaccess.microsoft.com:6544/ping`. For guidance, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
+1. Configure an IP SLA Layer 7 health probe to monitor the endpoint `http://m365.remote-network.edgediagnostic.globalsecureaccess.microsoft.com:6543/ping`. For guidance, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
 1. Alternatively, set the probe to monitor IP address `198.18.1.101`. Statically send these IP addresses over the Global Secure Access IPsec tunnel from your CPE. We're adding this IP address to the Microsoft 365 BGP route advertisement.
 
 > [!NOTE]
