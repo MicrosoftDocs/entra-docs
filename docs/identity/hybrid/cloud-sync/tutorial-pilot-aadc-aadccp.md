@@ -114,7 +114,7 @@ In the Microsoft Entra Connect Synchronization Rules Editor, create an inbound s
 
     - **Name**: Give the rule a meaningful name.
     - **Description**: Add a meaningful description.
-    - **Connected System**: Choose the Microsoft Entra connector for which you're writing the custom sync rule.
+    - **Connected System**: Choose the Active Directory connector for which you're writing the custom sync rule.
     - **Connected System Object Type**: Select **user**.
     - **Metaverse Object Type**: Select **person**.
     - **Link Type**: Select **Join**.
