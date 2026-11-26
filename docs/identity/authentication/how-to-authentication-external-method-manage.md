@@ -25,7 +25,11 @@ To configure external MFA, you need the following information from your external
 
 ## Manage external MFA in the Microsoft Entra admin center
 
-External MFAs are managed with the Microsoft Entra ID Authentication methods policy, just like built-in methods. 
+External MFAs are managed with the Microsoft Entra ID Authentication methods policy, just like built-in methods.
+
+### Limitations
+
+- You may not add more than six external MFA methods per tenant.
 
 ### Configure external MFA in the admin center
 
