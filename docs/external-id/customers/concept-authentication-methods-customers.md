@@ -137,7 +137,7 @@ When you federate with Facebook, Google, Apple, or a custom OpenID Connect IdP, 
 You can use the following `domain_hint` values to go directly to the sign-in page for these identity providers:
 
 - **Facebook**: `domain_hint=facebook`.
-- **Google**: `domain_hint=google`.
+- **Google**: `domain_hint=Google`. The value is case-sensitive: `google` returns `AADSTS90023` and `google.com` shows the sign-in page instead of redirecting.
 - **Apple**: `domain_hint=apple`.
 - **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax such as `"www.linkedin.com"` for LinkedIn.
 - **Custom OIDC - Microsoft Entra ID**: For a custom OIDC Microsoft Entra ID identity provider, use the tenant's domain name, such as `domain_hint=contoso.onmicrosoft.com`.
