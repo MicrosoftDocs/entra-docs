@@ -27,6 +27,12 @@ sections:
           Are passkeys in Microsoft Entra quantum proof?
         answer: |
           Passkeys aren't fully quantum safe today, but Microsoft has a published [roadmap](https://www.microsoft.com/en-us/security/blog/2025/08/20/quantum-safe-security-progress-towards-next-generation-cryptography/) to make Microsoft Entra authentication, including passkeys, quantum safe through post-quantum cryptography, with full transition targeted by 2033.
+      - question: |
+          Can federated users sign in with a passkey without going through their federated identity provider?
+        answer: |
+          Yes. Passkey credentials (including FIDO2 security keys and synced passkeys) are always validated by Microsoft Entra ID directly, not by an external identity provider. After registration, the passkey is used to authenticate the user against Microsoft Entra ID.
+
+          On the web sign-in surface, whether the passkey is offered as the first credential option or the user needs to select **Sign-in options** to choose it depends on browser and device state. In either case, the authentication is completed by Microsoft Entra ID.
 
   - name: Synced passkey FAQs
     questions:
