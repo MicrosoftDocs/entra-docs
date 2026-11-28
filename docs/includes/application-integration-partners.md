@@ -59,6 +59,27 @@ Leading provider of Mainframe, Healthcare and ERP integrations. More can be foun
 * EPIC
 * SAP ECC
 
+### Joinly
+#### Description
+Joinly is a modern Identity and Access Management (IAM) and Identity Governance and Administration (IGA) platform focused on HR-driven provisioning. Joinly integrates Human Capital Management (HCM) systems directly with Microsoft Entra ID to automate the full employee lifecycle: joiner, mover, and leaver.  
+
+The Joinly SCIM Gateway enables provisioning and deprovisioning of users, groups, and access entitlements for applications that don't natively support Microsoft Entra ID or SCIM. The platform also includes functionality for role mining, access reviews, and provisioning logs, making it a suitable choice for mid-market organizations that want advanced IAM capabilities without requiring Microsoft Entra ID P2 licensing.  
+
+Joinly supports hybrid environments by combining SCIM provisioning with Robotic Process Automation (RPA) for systems without APIs, ensuring integration coverage across modern SaaS platforms as well as legacy applications.  
+
+#### Contact information
+* Company website: https://joinly.app/en
+* SCIM Gateway: https://joinly.app/en/product/scim-gateway
+* Contact information: https://joinly.app/en/contact  
+
+#### Popular applications supported
+* HR and payroll systems: AFAS, Visma | Raet, Youforce, Personio, Nmbrs  
+* IT service management: TOPdesk, IFS Ultimo  
+* Collaboration and productivity: Microsoft 365, Google Workspace  
+* Finance and ERP: Exact Online, Twinfield  
+* Marketing and CRM: HubSpot, Salesforce, ActiveCampaign  
+* Education and healthcare: Magister, Nedap ONS  
+
 ### KloudIdentity
 #### Description
 
