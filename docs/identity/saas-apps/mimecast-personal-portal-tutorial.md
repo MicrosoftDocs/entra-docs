@@ -25,7 +25,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
-* Mimecast supports **SP and IDP** initiated SSO.
+* Mimecast supports **SP or IDP** initiated SSO.
  
 ## Add Mimecast from the gallery
 
@@ -66,17 +66,21 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section,  if you wish to configure the application in IDP initiated mode, perform the following steps:
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
 	a. In the **Identifier** textbox, type a URL using one of the following patterns:
 
     | Region  |  Value | 
 	| --------------- | --------------- |
 	| Europe          | `https://eu-api.mimecast.com/sso/<accountcode>`|
+    | Germany         | `https://de-api.mimecast.com/sso/<accountcode>`|
 	| United States   | `https://us-api.mimecast.com/sso/<accountcode>`|
+	| United States (USB) | `https://usb-api.mimecast.com/sso/<accountcode>`|
+	| Canada          | `https://ca-api.mimecast.com/sso/<accountcode>`|
 	| South Africa    | `https://za-api.mimecast.com/sso/<accountcode>`|
 	| Australia       | `https://au-api.mimecast.com/sso/<accountcode>`|
 	| Offshore        | `https://jer-api.mimecast.com/sso/<accountcode>`|
+	| USPCOM        | `https://uspcom-api.mimecast-pscom-us.com/sso/<accountcode>`|
 
 	> [!NOTE]
 	> You find the `accountcode` value in the Mimecast under **Account** > **Settings** > **Account Code**. Append the `accountcode` to the Identifier.
@@ -86,22 +90,48 @@ Follow these steps to enable Microsoft Entra SSO.
 	| Region  |  Value |
 	| --------------- | --------------- |
 	| Europe          | `https://eu-api.mimecast.com/login/saml`|
+	| Germany          | `https://de-api.mimecast.com/login/saml`|
 	| United States   | `https://us-api.mimecast.com/login/saml`|
+	| United States (USB)  | `https://usb-api.mimecast.com/login/saml`|
+	| Canada   | `https://ca-api.mimecast.com/login/saml`|
 	| South Africa    | `https://za-api.mimecast.com/login/saml`|
 	| Australia       | `https://au-api.mimecast.com/login/saml`|
 	| Offshore        | `https://jer-api.mimecast.com/login/saml`|
+	| USPCOM        | `https://uspcom-api.mimecast-pscom-us.com/login/saml`|
 
-1. If you wish to configure the application in **SP** initiated mode:
+2. You can configure the application in either SP initiated mode or IDP initiated mode,
+   
+    a. If you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** textbox, type one of the following URLs:
 
 	| Region  |  Value |
 	| --------------- | --------------- |
 	| Europe          | `https://eu-api.mimecast.com/login/saml`|
+	| Germany          | `https://de-api.mimecast.com/login/saml`|
 	| United States   | `https://us-api.mimecast.com/login/saml`|
+	| United States (USB) | `https://usb-api.mimecast.com/login/saml`|
+	| Canada    | `https://ca-api.mimecast.com/login/saml`|
 	| South Africa    | `https://za-api.mimecast.com/login/saml`|
 	| Australia       | `https://au-api.mimecast.com/login/saml`|
 	| Offshore        | `https://jer-api.mimecast.com/login/saml`|
+    | USPCOM        | `https://uspcom-api.mimecast-pscom-us.com/login/saml`|
+
+    b. If you wish to configure the application in **IDP** initiated mode:
+
+    In the **Sign-on URL** textbox, type one of the following URLs:
+
+	| Region  |  Value |
+	| --------------- | --------------- |
+	| Europe          | `https://eu-api.mimecast.com/login/sso/mpp`|
+	| Germany          | `https://de-api.mimecast.com/login/sso/mpp`|
+	| United States   | `https://us-api.mimecast.com/login/sso/mpp`|
+	| United States (USB) | `https://usb-api.mimecast.com/login/sso/mpp`|
+	| Canada    | `https://ca-api.mimecast.com/login/sso/mpp`|
+	| South Africa    | `https://za-api.mimecast.com/login/sso/mpp`|
+	| Australia       | `https://au-api.mimecast.com/login/sso/mpp`|
+	| Offshore        | `https://jer-api.mimecast.com/login/sso/mpp`|
+    | USPCOM        | `https://uspcom-api.mimecast-pscom-us.com/login/sso/mpp`|
 
 1. Select **Save**.
 
@@ -125,7 +155,7 @@ Follow these steps to enable Microsoft Entra SSO.
     
     ![Screenshot shows the Application tab with Authentication Profiles selected.](./media/mimecast-personal-portal-tutorial/authentication-profiles.png)
 
-1. Select **New Authentication Profile** tab.
+1. Select either **New Authentication Profile** tab or if you want to change login for all user, select **Default Authentication Profile**.
 
 	![Screenshot shows new Authentication Profile selected.](./media/mimecast-personal-portal-tutorial/new-authenticatio-profile.png)
 
@@ -145,7 +175,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	d. Make sure you uncheck **Use Password protected Context** and **Use Integrated Authentication Context** checkboxes.
 
-	e. Select **Save**.
+	e. Select **Save and Exit**.
+
+    f. Select **Authentication Settings** tab.
+
+    g. Select the Application Setting that you want to use
+
+    h. Use the **Lookup** button to find the **Authentication Profile** you want to reference.
+
+    i. Click **Select** on the lookup page.
+
+    j. Select **Save and Exit**.
 
 ### Create Mimecast test user
 
@@ -175,27 +215,28 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	d. Select **Force Change at Login** checkbox.
 
-	e. Select **Save**.
+    e. For the **Authentication Setting** select the Authentication Setting (via the Lookup button) that you just created or updated.
 
 	f. To assign roles to the user, select **Role Edit** and assign the required role to user as per your organization requirement.
 
     ![Screenshot shows Address Settings where you can select Role Edit.](./media/mimecast-personal-portal-tutorial/assign-role.png)
 
+    g. Select **Save and Exit**.
 
 ## Test SSO 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
 #### SP initiated:
 
-* Select **Test this application**, this option redirects to Mimecast  Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Mimecast Sign on URL where you can initiate the login flow.  
 
 * Go to Mimecast  Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Select **Test this application**, and you should be automatically signed in to the Mimecast  for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Mimecast for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you select the Mimecast  tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Mimecast  for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Mimecast tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Mimecast for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
